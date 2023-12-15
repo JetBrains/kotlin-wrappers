@@ -2,16 +2,22 @@
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{anchorEl: 'anchorEl', anchorPosition: 'anchorPosition', none: 'none'}/*union*/)""")
+@JsVirtual
 sealed external interface PopoverReference {
     companion object {
+        @JsValue("anchorEl")
         val anchorEl: PopoverReference
+
+        @JsValue("anchorPosition")
         val anchorPosition: PopoverReference
+
+        @JsValue("none")
         val none: PopoverReference
     }
 }

@@ -2,25 +2,42 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-// language=JavaScript
-@JsName("""(/*union*/{root: 'MuiIcon-root', colorPrimary: 'MuiIcon-colorPrimary', colorSecondary: 'MuiIcon-colorSecondary', colorAction: 'MuiIcon-colorAction', colorError: 'MuiIcon-colorError', colorDisabled: 'MuiIcon-colorDisabled', fontSizeInherit: 'MuiIcon-fontSizeInherit', fontSizeSmall: 'MuiIcon-fontSizeSmall', fontSizeLarge: 'MuiIcon-fontSizeLarge'}/*union*/)""")
+@JsVirtual
 sealed external interface MuiIcon {
     companion object {
+        @JsValue("MuiIcon-root")
         val root: ClassName
+
+        @JsValue("MuiIcon-colorPrimary")
         val colorPrimary: ClassName
+
+        @JsValue("MuiIcon-colorSecondary")
         val colorSecondary: ClassName
+
+        @JsValue("MuiIcon-colorAction")
         val colorAction: ClassName
+
+        @JsValue("MuiIcon-colorError")
         val colorError: ClassName
+
+        @JsValue("MuiIcon-colorDisabled")
         val colorDisabled: ClassName
+
+        @JsValue("MuiIcon-fontSizeInherit")
         val fontSizeInherit: ClassName
+
+        @JsValue("MuiIcon-fontSizeSmall")
         val fontSizeSmall: ClassName
+
+        @JsValue("MuiIcon-fontSizeLarge")
         val fontSizeLarge: ClassName
     }
 }

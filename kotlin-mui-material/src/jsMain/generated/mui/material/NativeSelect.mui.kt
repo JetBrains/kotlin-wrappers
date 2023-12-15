@@ -2,28 +2,51 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-// language=JavaScript
-@JsName("""(/*union*/{root: 'MuiNativeSelect-root', select: 'MuiNativeSelect-select', multiple: 'MuiNativeSelect-multiple', filled: 'MuiNativeSelect-filled', outlined: 'MuiNativeSelect-outlined', standard: 'MuiNativeSelect-standard', icon: 'MuiNativeSelect-icon', iconOpen: 'MuiNativeSelect-iconOpen', iconFilled: 'MuiNativeSelect-iconFilled', iconOutlined: 'MuiNativeSelect-iconOutlined', iconStandard: 'MuiNativeSelect-iconStandard', nativeInput: 'MuiNativeSelect-nativeInput'}/*union*/)""")
+@JsVirtual
 sealed external interface MuiNativeSelect {
     companion object {
+        @JsValue("MuiNativeSelect-root")
         val root: ClassName
+
+        @JsValue("MuiNativeSelect-select")
         val select: ClassName
+
+        @JsValue("MuiNativeSelect-multiple")
         val multiple: ClassName
+
+        @JsValue("MuiNativeSelect-filled")
         val filled: ClassName
+
+        @JsValue("MuiNativeSelect-outlined")
         val outlined: ClassName
+
+        @JsValue("MuiNativeSelect-standard")
         val standard: ClassName
+
+        @JsValue("MuiNativeSelect-icon")
         val icon: ClassName
+
+        @JsValue("MuiNativeSelect-iconOpen")
         val iconOpen: ClassName
+
+        @JsValue("MuiNativeSelect-iconFilled")
         val iconFilled: ClassName
+
+        @JsValue("MuiNativeSelect-iconOutlined")
         val iconOutlined: ClassName
+
+        @JsValue("MuiNativeSelect-iconStandard")
         val iconStandard: ClassName
+
+        @JsValue("MuiNativeSelect-nativeInput")
         val nativeInput: ClassName
     }
 }

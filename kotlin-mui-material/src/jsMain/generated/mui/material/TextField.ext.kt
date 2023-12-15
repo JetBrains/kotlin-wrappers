@@ -2,33 +2,48 @@
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{outlined: 'outlined', standard: 'standard', filled: 'filled'}/*union*/)""")
+@JsVirtual
 sealed external interface TextFieldVariants {
     companion object {
+        @JsValue("outlined")
         val outlined: TextFieldVariants
+
+        @JsValue("standard")
         val standard: TextFieldVariants
+
+        @JsValue("filled")
         val filled: TextFieldVariants
     }
 }
 
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{primary: 'primary', secondary: 'secondary', error: 'error', info: 'info', success: 'success', warning: 'warning'}/*union*/)""")
+@JsVirtual
 sealed external interface TextFieldColor {
     companion object {
+        @JsValue("primary")
         val primary: TextFieldColor
+
+        @JsValue("secondary")
         val secondary: TextFieldColor
+
+        @JsValue("error")
         val error: TextFieldColor
+
+        @JsValue("info")
         val info: TextFieldColor
+
+        @JsValue("success")
         val success: TextFieldColor
+
+        @JsValue("warning")
         val warning: TextFieldColor
     }
 }

@@ -2,20 +2,27 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-// language=JavaScript
-@JsName("""(/*union*/{root: 'MuiFormControl-root', marginNormal: 'MuiFormControl-marginNormal', marginDense: 'MuiFormControl-marginDense', fullWidth: 'MuiFormControl-fullWidth'}/*union*/)""")
+@JsVirtual
 sealed external interface MuiFormControl {
     companion object {
+        @JsValue("MuiFormControl-root")
         val root: ClassName
+
+        @JsValue("MuiFormControl-marginNormal")
         val marginNormal: ClassName
+
+        @JsValue("MuiFormControl-marginDense")
         val marginDense: ClassName
+
+        @JsValue("MuiFormControl-fullWidth")
         val fullWidth: ClassName
     }
 }

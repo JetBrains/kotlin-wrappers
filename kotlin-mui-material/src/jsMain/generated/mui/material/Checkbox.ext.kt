@@ -2,20 +2,34 @@
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{primary: 'primary', secondary: 'secondary', error: 'error', info: 'info', success: 'success', warning: 'warning', default: 'default'}/*union*/)""")
+@JsVirtual
 sealed external interface CheckboxColor {
     companion object {
+        @JsValue("primary")
         val primary: CheckboxColor
+
+        @JsValue("secondary")
         val secondary: CheckboxColor
+
+        @JsValue("error")
         val error: CheckboxColor
+
+        @JsValue("info")
         val info: CheckboxColor
+
+        @JsValue("success")
         val success: CheckboxColor
+
+        @JsValue("warning")
         val warning: CheckboxColor
+
+        @JsValue("default")
         val default: CheckboxColor
     }
 }

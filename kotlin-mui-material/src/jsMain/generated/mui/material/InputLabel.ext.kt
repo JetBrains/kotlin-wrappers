@@ -2,28 +2,33 @@
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{standard: 'standard', outlined: 'outlined', filled: 'filled'}/*union*/)""")
+@JsVirtual
 sealed external interface InputLabelVariant {
     companion object {
+        @JsValue("standard")
         val standard: InputLabelVariant
+
+        @JsValue("outlined")
         val outlined: InputLabelVariant
+
+        @JsValue("filled")
         val filled: InputLabelVariant
     }
 }
 
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{dense: 'dense'}/*union*/)""")
+@JsVirtual
 sealed external interface InputLabelMargin {
     companion object {
+        @JsValue("dense")
         val dense: InputLabelMargin
     }
 }

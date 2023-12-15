@@ -2,15 +2,19 @@
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{js: 'js', css: 'css'}/*union*/)""")
+@JsVirtual
 sealed external interface HiddenImplementation {
     companion object {
+        @JsValue("js")
         val js: HiddenImplementation
+
+        @JsValue("css")
         val css: HiddenImplementation
     }
 }

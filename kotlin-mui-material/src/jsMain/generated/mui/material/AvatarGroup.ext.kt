@@ -2,16 +2,22 @@
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{circular: 'circular', rounded: 'rounded', square: 'square'}/*union*/)""")
+@JsVirtual
 sealed external interface AvatarGroupVariant {
     companion object {
+        @JsValue("circular")
         val circular: AvatarGroupVariant
+
+        @JsValue("rounded")
         val rounded: AvatarGroupVariant
+
+        @JsValue("square")
         val square: AvatarGroupVariant
     }
 }

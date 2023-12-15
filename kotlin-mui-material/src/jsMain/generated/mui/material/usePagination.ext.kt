@@ -2,20 +2,34 @@
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{page: 'page', first: 'first', last: 'last', next: 'next', previous: 'previous', startEllipsis: 'start-ellipsis', endEllipsis: 'end-ellipsis'}/*union*/)""")
+@JsVirtual
 sealed external interface UsePaginationItemType {
     companion object {
+        @JsValue("page")
         val page: UsePaginationItemType
+
+        @JsValue("first")
         val first: UsePaginationItemType
+
+        @JsValue("last")
         val last: UsePaginationItemType
+
+        @JsValue("next")
         val next: UsePaginationItemType
+
+        @JsValue("previous")
         val previous: UsePaginationItemType
+
+        @JsValue("start-ellipsis")
         val startEllipsis: UsePaginationItemType
+
+        @JsValue("end-ellipsis")
         val endEllipsis: UsePaginationItemType
     }
 }

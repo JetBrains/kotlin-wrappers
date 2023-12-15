@@ -2,22 +2,33 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-// language=JavaScript
-@JsName("""(/*union*/{root: 'MuiListSubheader-root', colorPrimary: 'MuiListSubheader-colorPrimary', colorInherit: 'MuiListSubheader-colorInherit', gutters: 'MuiListSubheader-gutters', inset: 'MuiListSubheader-inset', sticky: 'MuiListSubheader-sticky'}/*union*/)""")
+@JsVirtual
 sealed external interface MuiListSubheader {
     companion object {
+        @JsValue("MuiListSubheader-root")
         val root: ClassName
+
+        @JsValue("MuiListSubheader-colorPrimary")
         val colorPrimary: ClassName
+
+        @JsValue("MuiListSubheader-colorInherit")
         val colorInherit: ClassName
+
+        @JsValue("MuiListSubheader-gutters")
         val gutters: ClassName
+
+        @JsValue("MuiListSubheader-inset")
         val inset: ClassName
+
+        @JsValue("MuiListSubheader-sticky")
         val sticky: ClassName
     }
 }

@@ -2,16 +2,22 @@
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{standard: 'standard', outlined: 'outlined', filled: 'filled'}/*union*/)""")
+@JsVirtual
 sealed external interface SelectVariant {
     companion object {
+        @JsValue("standard")
         val standard: SelectVariant
+
+        @JsValue("outlined")
         val outlined: SelectVariant
+
+        @JsValue("filled")
         val filled: SelectVariant
     }
 }

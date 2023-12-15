@@ -2,15 +2,19 @@
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{horizontal: 'horizontal', vertical: 'vertical'}/*union*/)""")
+@JsVirtual
 sealed external interface Orientation {
     companion object {
+        @JsValue("horizontal")
         val horizontal: Orientation
+
+        @JsValue("vertical")
         val vertical: Orientation
     }
 }

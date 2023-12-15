@@ -2,22 +2,33 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-// language=JavaScript
-@JsName("""(/*union*/{root: 'MuiFormControlLabel-root', labelPlacementStart: 'MuiFormControlLabel-labelPlacementStart', labelPlacementTop: 'MuiFormControlLabel-labelPlacementTop', labelPlacementBottom: 'MuiFormControlLabel-labelPlacementBottom', label: 'MuiFormControlLabel-label', asterisk: 'MuiFormControlLabel-asterisk'}/*union*/)""")
+@JsVirtual
 sealed external interface MuiFormControlLabel {
     companion object {
+        @JsValue("MuiFormControlLabel-root")
         val root: ClassName
+
+        @JsValue("MuiFormControlLabel-labelPlacementStart")
         val labelPlacementStart: ClassName
+
+        @JsValue("MuiFormControlLabel-labelPlacementTop")
         val labelPlacementTop: ClassName
+
+        @JsValue("MuiFormControlLabel-labelPlacementBottom")
         val labelPlacementBottom: ClassName
+
+        @JsValue("MuiFormControlLabel-label")
         val label: ClassName
+
+        @JsValue("MuiFormControlLabel-asterisk")
         val asterisk: ClassName
     }
 }

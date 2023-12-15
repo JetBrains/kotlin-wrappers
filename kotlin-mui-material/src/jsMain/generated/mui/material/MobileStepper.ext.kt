@@ -2,30 +2,39 @@
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{text: 'text', dots: 'dots', progress: 'progress'}/*union*/)""")
+@JsVirtual
 sealed external interface MobileStepperVariant {
     companion object {
+        @JsValue("text")
         val text: MobileStepperVariant
+
+        @JsValue("dots")
         val dots: MobileStepperVariant
+
+        @JsValue("progress")
         val progress: MobileStepperVariant
     }
 }
 
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{bottom: 'bottom', top: 'top', static: 'static'}/*union*/)""")
+@JsVirtual
 sealed external interface MobileStepperPosition {
     companion object {
+        @JsValue("bottom")
         val bottom: MobileStepperPosition
+
+        @JsValue("top")
         val top: MobileStepperPosition
+
+        @JsValue("static")
         val static: MobileStepperPosition
     }
 }

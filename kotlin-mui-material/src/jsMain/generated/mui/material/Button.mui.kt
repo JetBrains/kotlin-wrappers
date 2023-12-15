@@ -2,63 +2,150 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-// language=JavaScript
-@JsName(
-    """(/*union*/{root: 'MuiButton-root', text: 'MuiButton-text', textInherit: 'MuiButton-textInherit', textPrimary: 'MuiButton-textPrimary', textSecondary: 'MuiButton-textSecondary', textSuccess: 'MuiButton-textSuccess', textError: 'MuiButton-textError', textInfo: 'MuiButton-textInfo', textWarning: 'MuiButton-textWarning', outlined: 'MuiButton-outlined', outlinedInherit: 'MuiButton-outlinedInherit', outlinedPrimary: 'MuiButton-outlinedPrimary', outlinedSecondary: 'MuiButton-outlinedSecondary', outlinedSuccess: 'MuiButton-outlinedSuccess', outlinedError: 'MuiButton-outlinedError', outlinedInfo: 'MuiButton-outlinedInfo', outlinedWarning: 'MuiButton-outlinedWarning', contained: 'MuiButton-contained', containedInherit: 'MuiButton-containedInherit', containedPrimary: 'MuiButton-containedPrimary', containedSecondary: 'MuiButton-containedSecondary', containedSuccess: 'MuiButton-containedSuccess', containedInfo: 'MuiButton-containedInfo', containedError: 'MuiButton-containedError', containedWarning: 'MuiButton-containedWarning', disableElevation: 'MuiButton-disableElevation', colorInherit: 'MuiButton-colorInherit', textSizeSmall: 'MuiButton-textSizeSmall', textSizeMedium: 'MuiButton-textSizeMedium', textSizeLarge: 'MuiButton-textSizeLarge', outlinedSizeSmall: 'MuiButton-outlinedSizeSmall', outlinedSizeMedium: 'MuiButton-outlinedSizeMedium', outlinedSizeLarge: 'MuiButton-outlinedSizeLarge', containedSizeSmall: 'MuiButton-containedSizeSmall', containedSizeMedium: 'MuiButton-containedSizeMedium', containedSizeLarge: 'MuiButton-containedSizeLarge', sizeSmall: 'MuiButton-sizeSmall', sizeMedium: 'MuiButton-sizeMedium', sizeLarge: 'MuiButton-sizeLarge', fullWidth: 'MuiButton-fullWidth', startIcon: 'MuiButton-startIcon', endIcon: 'MuiButton-endIcon', iconSizeSmall: 'MuiButton-iconSizeSmall', iconSizeMedium: 'MuiButton-iconSizeMedium', iconSizeLarge: 'MuiButton-iconSizeLarge'}/*union*/)"""
-)
+@JsVirtual
 sealed external interface MuiButton {
     companion object {
+        @JsValue("MuiButton-root")
         val root: ClassName
+
+        @JsValue("MuiButton-text")
         val text: ClassName
+
+        @JsValue("MuiButton-textInherit")
         val textInherit: ClassName
+
+        @JsValue("MuiButton-textPrimary")
         val textPrimary: ClassName
+
+        @JsValue("MuiButton-textSecondary")
         val textSecondary: ClassName
+
+        @JsValue("MuiButton-textSuccess")
         val textSuccess: ClassName
+
+        @JsValue("MuiButton-textError")
         val textError: ClassName
+
+        @JsValue("MuiButton-textInfo")
         val textInfo: ClassName
+
+        @JsValue("MuiButton-textWarning")
         val textWarning: ClassName
+
+        @JsValue("MuiButton-outlined")
         val outlined: ClassName
+
+        @JsValue("MuiButton-outlinedInherit")
         val outlinedInherit: ClassName
+
+        @JsValue("MuiButton-outlinedPrimary")
         val outlinedPrimary: ClassName
+
+        @JsValue("MuiButton-outlinedSecondary")
         val outlinedSecondary: ClassName
+
+        @JsValue("MuiButton-outlinedSuccess")
         val outlinedSuccess: ClassName
+
+        @JsValue("MuiButton-outlinedError")
         val outlinedError: ClassName
+
+        @JsValue("MuiButton-outlinedInfo")
         val outlinedInfo: ClassName
+
+        @JsValue("MuiButton-outlinedWarning")
         val outlinedWarning: ClassName
+
+        @JsValue("MuiButton-contained")
         val contained: ClassName
+
+        @JsValue("MuiButton-containedInherit")
         val containedInherit: ClassName
+
+        @JsValue("MuiButton-containedPrimary")
         val containedPrimary: ClassName
+
+        @JsValue("MuiButton-containedSecondary")
         val containedSecondary: ClassName
+
+        @JsValue("MuiButton-containedSuccess")
         val containedSuccess: ClassName
+
+        @JsValue("MuiButton-containedInfo")
         val containedInfo: ClassName
+
+        @JsValue("MuiButton-containedError")
         val containedError: ClassName
+
+        @JsValue("MuiButton-containedWarning")
         val containedWarning: ClassName
+
+        @JsValue("MuiButton-disableElevation")
         val disableElevation: ClassName
+
+        @JsValue("MuiButton-colorInherit")
         val colorInherit: ClassName
+
+        @JsValue("MuiButton-textSizeSmall")
         val textSizeSmall: ClassName
+
+        @JsValue("MuiButton-textSizeMedium")
         val textSizeMedium: ClassName
+
+        @JsValue("MuiButton-textSizeLarge")
         val textSizeLarge: ClassName
+
+        @JsValue("MuiButton-outlinedSizeSmall")
         val outlinedSizeSmall: ClassName
+
+        @JsValue("MuiButton-outlinedSizeMedium")
         val outlinedSizeMedium: ClassName
+
+        @JsValue("MuiButton-outlinedSizeLarge")
         val outlinedSizeLarge: ClassName
+
+        @JsValue("MuiButton-containedSizeSmall")
         val containedSizeSmall: ClassName
+
+        @JsValue("MuiButton-containedSizeMedium")
         val containedSizeMedium: ClassName
+
+        @JsValue("MuiButton-containedSizeLarge")
         val containedSizeLarge: ClassName
+
+        @JsValue("MuiButton-sizeSmall")
         val sizeSmall: ClassName
+
+        @JsValue("MuiButton-sizeMedium")
         val sizeMedium: ClassName
+
+        @JsValue("MuiButton-sizeLarge")
         val sizeLarge: ClassName
+
+        @JsValue("MuiButton-fullWidth")
         val fullWidth: ClassName
+
+        @JsValue("MuiButton-startIcon")
         val startIcon: ClassName
+
+        @JsValue("MuiButton-endIcon")
         val endIcon: ClassName
+
+        @JsValue("MuiButton-iconSizeSmall")
         val iconSizeSmall: ClassName
+
+        @JsValue("MuiButton-iconSizeMedium")
         val iconSizeMedium: ClassName
+
+        @JsValue("MuiButton-iconSizeLarge")
         val iconSizeLarge: ClassName
     }
 }

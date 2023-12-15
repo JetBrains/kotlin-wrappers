@@ -2,27 +2,48 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-// language=JavaScript
-@JsName("""(/*union*/{root: 'MuiAppBar-root', positionFixed: 'MuiAppBar-positionFixed', positionAbsolute: 'MuiAppBar-positionAbsolute', positionSticky: 'MuiAppBar-positionSticky', positionStatic: 'MuiAppBar-positionStatic', positionRelative: 'MuiAppBar-positionRelative', colorDefault: 'MuiAppBar-colorDefault', colorPrimary: 'MuiAppBar-colorPrimary', colorSecondary: 'MuiAppBar-colorSecondary', colorInherit: 'MuiAppBar-colorInherit', colorTransparent: 'MuiAppBar-colorTransparent'}/*union*/)""")
+@JsVirtual
 sealed external interface MuiAppBar {
     companion object {
+        @JsValue("MuiAppBar-root")
         val root: ClassName
+
+        @JsValue("MuiAppBar-positionFixed")
         val positionFixed: ClassName
+
+        @JsValue("MuiAppBar-positionAbsolute")
         val positionAbsolute: ClassName
+
+        @JsValue("MuiAppBar-positionSticky")
         val positionSticky: ClassName
+
+        @JsValue("MuiAppBar-positionStatic")
         val positionStatic: ClassName
+
+        @JsValue("MuiAppBar-positionRelative")
         val positionRelative: ClassName
+
+        @JsValue("MuiAppBar-colorDefault")
         val colorDefault: ClassName
+
+        @JsValue("MuiAppBar-colorPrimary")
         val colorPrimary: ClassName
+
+        @JsValue("MuiAppBar-colorSecondary")
         val colorSecondary: ClassName
+
+        @JsValue("MuiAppBar-colorInherit")
         val colorInherit: ClassName
+
+        @JsValue("MuiAppBar-colorTransparent")
         val colorTransparent: ClassName
     }
 }

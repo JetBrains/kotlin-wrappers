@@ -2,15 +2,19 @@
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{body: 'body', paper: 'paper'}/*union*/)""")
+@JsVirtual
 sealed external interface DialogScroll {
     companion object {
+        @JsValue("body")
         val body: DialogScroll
+
+        @JsValue("paper")
         val paper: DialogScroll
     }
 }

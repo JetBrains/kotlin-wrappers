@@ -2,15 +2,19 @@
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{left: 'left', right: 'right'}/*union*/)""")
+@JsVirtual
 sealed external interface TabScrollButtonDirection {
     companion object {
+        @JsValue("left")
         val left: TabScrollButtonDirection
+
+        @JsValue("right")
         val right: TabScrollButtonDirection
     }
 }

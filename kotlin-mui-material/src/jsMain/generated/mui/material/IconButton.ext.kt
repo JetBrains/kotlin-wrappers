@@ -2,35 +2,54 @@
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{inherit: 'inherit', default: 'default', primary: 'primary', secondary: 'secondary', error: 'error', info: 'info', success: 'success', warning: 'warning'}/*union*/)""")
+@JsVirtual
 sealed external interface IconButtonColor {
     companion object {
+        @JsValue("inherit")
         val inherit: IconButtonColor
+
+        @JsValue("default")
         val default: IconButtonColor
+
+        @JsValue("primary")
         val primary: IconButtonColor
+
+        @JsValue("secondary")
         val secondary: IconButtonColor
+
+        @JsValue("error")
         val error: IconButtonColor
+
+        @JsValue("info")
         val info: IconButtonColor
+
+        @JsValue("success")
         val success: IconButtonColor
+
+        @JsValue("warning")
         val warning: IconButtonColor
     }
 }
 
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{start: 'start', end: 'end', false: false}/*union*/)""")
+@JsVirtual
 sealed external interface IconButtonEdge {
     companion object {
+        @JsValue("start")
         val start: IconButtonEdge
+
+        @JsValue("end")
         val end: IconButtonEdge
+
+        @JsValue("`false`")
         val `false`: IconButtonEdge
     }
 }

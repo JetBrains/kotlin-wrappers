@@ -2,35 +2,72 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-// language=JavaScript
-@JsName("""(/*union*/{root: 'MuiAlert-root', filled: 'MuiAlert-filled', outlined: 'MuiAlert-outlined', standard: 'MuiAlert-standard', standardSuccess: 'MuiAlert-standardSuccess', standardInfo: 'MuiAlert-standardInfo', standardWarning: 'MuiAlert-standardWarning', standardError: 'MuiAlert-standardError', outlinedSuccess: 'MuiAlert-outlinedSuccess', outlinedInfo: 'MuiAlert-outlinedInfo', outlinedWarning: 'MuiAlert-outlinedWarning', outlinedError: 'MuiAlert-outlinedError', filledSuccess: 'MuiAlert-filledSuccess', filledInfo: 'MuiAlert-filledInfo', filledWarning: 'MuiAlert-filledWarning', filledError: 'MuiAlert-filledError', icon: 'MuiAlert-icon', message: 'MuiAlert-message', action: 'MuiAlert-action'}/*union*/)""")
+@JsVirtual
 sealed external interface MuiAlert {
     companion object {
+        @JsValue("MuiAlert-root")
         val root: ClassName
+
+        @JsValue("MuiAlert-filled")
         val filled: ClassName
+
+        @JsValue("MuiAlert-outlined")
         val outlined: ClassName
+
+        @JsValue("MuiAlert-standard")
         val standard: ClassName
+
+        @JsValue("MuiAlert-standardSuccess")
         val standardSuccess: ClassName
+
+        @JsValue("MuiAlert-standardInfo")
         val standardInfo: ClassName
+
+        @JsValue("MuiAlert-standardWarning")
         val standardWarning: ClassName
+
+        @JsValue("MuiAlert-standardError")
         val standardError: ClassName
+
+        @JsValue("MuiAlert-outlinedSuccess")
         val outlinedSuccess: ClassName
+
+        @JsValue("MuiAlert-outlinedInfo")
         val outlinedInfo: ClassName
+
+        @JsValue("MuiAlert-outlinedWarning")
         val outlinedWarning: ClassName
+
+        @JsValue("MuiAlert-outlinedError")
         val outlinedError: ClassName
+
+        @JsValue("MuiAlert-filledSuccess")
         val filledSuccess: ClassName
+
+        @JsValue("MuiAlert-filledInfo")
         val filledInfo: ClassName
+
+        @JsValue("MuiAlert-filledWarning")
         val filledWarning: ClassName
+
+        @JsValue("MuiAlert-filledError")
         val filledError: ClassName
+
+        @JsValue("MuiAlert-icon")
         val icon: ClassName
+
+        @JsValue("MuiAlert-message")
         val message: ClassName
+
+        @JsValue("MuiAlert-action")
         val action: ClassName
     }
 }

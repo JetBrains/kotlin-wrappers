@@ -2,34 +2,51 @@
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{inherit: 'inherit', primary: 'primary', secondary: 'secondary', success: 'success', error: 'error', info: 'info', warning: 'warning'}/*union*/)""")
+@JsVirtual
 sealed external interface ButtonColor {
     companion object {
+        @JsValue("inherit")
         val inherit: ButtonColor
+
+        @JsValue("primary")
         val primary: ButtonColor
+
+        @JsValue("secondary")
         val secondary: ButtonColor
+
+        @JsValue("success")
         val success: ButtonColor
+
+        @JsValue("error")
         val error: ButtonColor
+
+        @JsValue("info")
         val info: ButtonColor
+
+        @JsValue("warning")
         val warning: ButtonColor
     }
 }
 
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{text: 'text', outlined: 'outlined', contained: 'contained'}/*union*/)""")
+@JsVirtual
 sealed external interface ButtonVariant {
     companion object {
+        @JsValue("text")
         val text: ButtonVariant
+
+        @JsValue("outlined")
         val outlined: ButtonVariant
+
+        @JsValue("contained")
         val contained: ButtonVariant
     }
 }

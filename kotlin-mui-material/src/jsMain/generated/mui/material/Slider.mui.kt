@@ -2,39 +2,84 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-// language=JavaScript
-@JsName("""(/*union*/{root: 'MuiSlider-root', colorPrimary: 'MuiSlider-colorPrimary', colorSecondary: 'MuiSlider-colorSecondary', marked: 'MuiSlider-marked', vertical: 'MuiSlider-vertical', dragging: 'MuiSlider-dragging', rail: 'MuiSlider-rail', track: 'MuiSlider-track', trackFalse: 'MuiSlider-trackFalse', trackInverted: 'MuiSlider-trackInverted', thumb: 'MuiSlider-thumb', mark: 'MuiSlider-mark', markActive: 'MuiSlider-markActive', markLabel: 'MuiSlider-markLabel', markLabelActive: 'MuiSlider-markLabelActive', sizeSmall: 'MuiSlider-sizeSmall', thumbColorPrimary: 'MuiSlider-thumbColorPrimary', thumbColorSecondary: 'MuiSlider-thumbColorSecondary', thumbSizeSmall: 'MuiSlider-thumbSizeSmall', valueLabel: 'MuiSlider-valueLabel', valueLabelOpen: 'MuiSlider-valueLabelOpen', valueLabelCircle: 'MuiSlider-valueLabelCircle', valueLabelLabel: 'MuiSlider-valueLabelLabel'}/*union*/)""")
+@JsVirtual
 sealed external interface MuiSlider {
     companion object {
+        @JsValue("MuiSlider-root")
         val root: ClassName
+
+        @JsValue("MuiSlider-colorPrimary")
         val colorPrimary: ClassName
+
+        @JsValue("MuiSlider-colorSecondary")
         val colorSecondary: ClassName
+
+        @JsValue("MuiSlider-marked")
         val marked: ClassName
+
+        @JsValue("MuiSlider-vertical")
         val vertical: ClassName
+
+        @JsValue("MuiSlider-dragging")
         val dragging: ClassName
+
+        @JsValue("MuiSlider-rail")
         val rail: ClassName
+
+        @JsValue("MuiSlider-track")
         val track: ClassName
+
+        @JsValue("MuiSlider-trackFalse")
         val trackFalse: ClassName
+
+        @JsValue("MuiSlider-trackInverted")
         val trackInverted: ClassName
+
+        @JsValue("MuiSlider-thumb")
         val thumb: ClassName
+
+        @JsValue("MuiSlider-mark")
         val mark: ClassName
+
+        @JsValue("MuiSlider-markActive")
         val markActive: ClassName
+
+        @JsValue("MuiSlider-markLabel")
         val markLabel: ClassName
+
+        @JsValue("MuiSlider-markLabelActive")
         val markLabelActive: ClassName
+
+        @JsValue("MuiSlider-sizeSmall")
         val sizeSmall: ClassName
+
+        @JsValue("MuiSlider-thumbColorPrimary")
         val thumbColorPrimary: ClassName
+
+        @JsValue("MuiSlider-thumbColorSecondary")
         val thumbColorSecondary: ClassName
+
+        @JsValue("MuiSlider-thumbSizeSmall")
         val thumbSizeSmall: ClassName
+
+        @JsValue("MuiSlider-valueLabel")
         val valueLabel: ClassName
+
+        @JsValue("MuiSlider-valueLabelOpen")
         val valueLabelOpen: ClassName
+
+        @JsValue("MuiSlider-valueLabelCircle")
         val valueLabelCircle: ClassName
+
+        @JsValue("MuiSlider-valueLabelLabel")
         val valueLabelLabel: ClassName
     }
 }

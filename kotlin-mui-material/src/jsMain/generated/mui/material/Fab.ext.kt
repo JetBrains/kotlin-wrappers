@@ -2,34 +2,51 @@
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{inherit: 'inherit', primary: 'primary', secondary: 'secondary', default: 'default', success: 'success', error: 'error', info: 'info', warning: 'warning'}/*union*/)""")
+@JsVirtual
 sealed external interface FabColor {
     companion object {
+        @JsValue("inherit")
         val inherit: FabColor
+
+        @JsValue("primary")
         val primary: FabColor
+
+        @JsValue("secondary")
         val secondary: FabColor
+
+        @JsValue("default")
         val default: FabColor
+
+        @JsValue("success")
         val success: FabColor
+
+        @JsValue("error")
         val error: FabColor
+
+        @JsValue("info")
         val info: FabColor
+
+        @JsValue("warning")
         val warning: FabColor
     }
 }
 
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{circular: 'circular', extended: 'extended'}/*union*/)""")
+@JsVirtual
 sealed external interface FabVariant {
     companion object {
+        @JsValue("circular")
         val circular: FabVariant
+
+        @JsValue("extended")
         val extended: FabVariant
     }
 }

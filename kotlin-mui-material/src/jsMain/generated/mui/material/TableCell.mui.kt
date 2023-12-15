@@ -2,29 +2,54 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-// language=JavaScript
-@JsName("""(/*union*/{root: 'MuiTableCell-root', head: 'MuiTableCell-head', body: 'MuiTableCell-body', footer: 'MuiTableCell-footer', sizeSmall: 'MuiTableCell-sizeSmall', sizeMedium: 'MuiTableCell-sizeMedium', paddingCheckbox: 'MuiTableCell-paddingCheckbox', paddingNone: 'MuiTableCell-paddingNone', alignLeft: 'MuiTableCell-alignLeft', alignCenter: 'MuiTableCell-alignCenter', alignRight: 'MuiTableCell-alignRight', alignJustify: 'MuiTableCell-alignJustify', stickyHeader: 'MuiTableCell-stickyHeader'}/*union*/)""")
+@JsVirtual
 sealed external interface MuiTableCell {
     companion object {
+        @JsValue("MuiTableCell-root")
         val root: ClassName
+
+        @JsValue("MuiTableCell-head")
         val head: ClassName
+
+        @JsValue("MuiTableCell-body")
         val body: ClassName
+
+        @JsValue("MuiTableCell-footer")
         val footer: ClassName
+
+        @JsValue("MuiTableCell-sizeSmall")
         val sizeSmall: ClassName
+
+        @JsValue("MuiTableCell-sizeMedium")
         val sizeMedium: ClassName
+
+        @JsValue("MuiTableCell-paddingCheckbox")
         val paddingCheckbox: ClassName
+
+        @JsValue("MuiTableCell-paddingNone")
         val paddingNone: ClassName
+
+        @JsValue("MuiTableCell-alignLeft")
         val alignLeft: ClassName
+
+        @JsValue("MuiTableCell-alignCenter")
         val alignCenter: ClassName
+
+        @JsValue("MuiTableCell-alignRight")
         val alignRight: ClassName
+
+        @JsValue("MuiTableCell-alignJustify")
         val alignJustify: ClassName
+
+        @JsValue("MuiTableCell-stickyHeader")
         val stickyHeader: ClassName
     }
 }

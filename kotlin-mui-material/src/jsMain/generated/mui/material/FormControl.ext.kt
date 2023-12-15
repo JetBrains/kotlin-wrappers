@@ -2,47 +2,65 @@
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{primary: 'primary', secondary: 'secondary', error: 'error', info: 'info', success: 'success', warning: 'warning'}/*union*/)""")
+@JsVirtual
 sealed external interface FormControlColor {
     companion object {
+        @JsValue("primary")
         val primary: FormControlColor
+
+        @JsValue("secondary")
         val secondary: FormControlColor
+
+        @JsValue("error")
         val error: FormControlColor
+
+        @JsValue("info")
         val info: FormControlColor
+
+        @JsValue("success")
         val success: FormControlColor
+
+        @JsValue("warning")
         val warning: FormControlColor
     }
 }
 
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{standard: 'standard', outlined: 'outlined', filled: 'filled'}/*union*/)""")
+@JsVirtual
 sealed external interface FormControlVariant {
     companion object {
+        @JsValue("standard")
         val standard: FormControlVariant
+
+        @JsValue("outlined")
         val outlined: FormControlVariant
+
+        @JsValue("filled")
         val filled: FormControlVariant
     }
 }
 
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{dense: 'dense', normal: 'normal', none: 'none'}/*union*/)""")
+@JsVirtual
 sealed external interface FormControlMargin {
     companion object {
+        @JsValue("dense")
         val dense: FormControlMargin
+
+        @JsValue("normal")
         val normal: FormControlMargin
+
+        @JsValue("none")
         val none: FormControlMargin
     }
 }

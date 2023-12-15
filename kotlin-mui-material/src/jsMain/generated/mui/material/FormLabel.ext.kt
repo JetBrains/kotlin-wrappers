@@ -2,21 +2,33 @@
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 typealias FormLabelBaseProps = react.dom.html.LabelHTMLAttributes<web.html.HTMLLabelElement>
 
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{primary: 'primary', secondary: 'secondary', error: 'error', info: 'info', success: 'success', warning: 'warning'}/*union*/)""")
+@JsVirtual
 sealed external interface FormLabelColor {
     companion object {
+        @JsValue("primary")
         val primary: FormLabelColor
+
+        @JsValue("secondary")
         val secondary: FormLabelColor
+
+        @JsValue("error")
         val error: FormLabelColor
+
+        @JsValue("info")
         val info: FormLabelColor
+
+        @JsValue("success")
         val success: FormLabelColor
+
+        @JsValue("warning")
         val warning: FormLabelColor
     }
 }

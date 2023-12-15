@@ -2,17 +2,25 @@
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{left: 'left', right: 'right', up: 'up', down: 'down'}/*union*/)""")
+@JsVirtual
 sealed external interface SlideDirection {
     companion object {
+        @JsValue("left")
         val left: SlideDirection
+
+        @JsValue("right")
         val right: SlideDirection
+
+        @JsValue("up")
         val up: SlideDirection
+
+        @JsValue("down")
         val down: SlideDirection
     }
 }

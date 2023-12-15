@@ -2,25 +2,42 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-// language=JavaScript
-@JsName("""(/*union*/{root: 'MuiInputAdornment-root', filled: 'MuiInputAdornment-filled', outlined: 'MuiInputAdornment-outlined', standard: 'MuiInputAdornment-standard', positionStart: 'MuiInputAdornment-positionStart', positionEnd: 'MuiInputAdornment-positionEnd', disablePointerEvents: 'MuiInputAdornment-disablePointerEvents', hiddenLabel: 'MuiInputAdornment-hiddenLabel', sizeSmall: 'MuiInputAdornment-sizeSmall'}/*union*/)""")
+@JsVirtual
 sealed external interface MuiInputAdornment {
     companion object {
+        @JsValue("MuiInputAdornment-root")
         val root: ClassName
+
+        @JsValue("MuiInputAdornment-filled")
         val filled: ClassName
+
+        @JsValue("MuiInputAdornment-outlined")
         val outlined: ClassName
+
+        @JsValue("MuiInputAdornment-standard")
         val standard: ClassName
+
+        @JsValue("MuiInputAdornment-positionStart")
         val positionStart: ClassName
+
+        @JsValue("MuiInputAdornment-positionEnd")
         val positionEnd: ClassName
+
+        @JsValue("MuiInputAdornment-disablePointerEvents")
         val disablePointerEvents: ClassName
+
+        @JsValue("MuiInputAdornment-hiddenLabel")
         val hiddenLabel: ClassName
+
+        @JsValue("MuiInputAdornment-sizeSmall")
         val sizeSmall: ClassName
     }
 }

@@ -2,29 +2,54 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-// language=JavaScript
-@JsName("""(/*union*/{root: 'MuiInput-root', formControl: 'MuiInput-formControl', colorSecondary: 'MuiInput-colorSecondary', underline: 'MuiInput-underline', sizeSmall: 'MuiInput-sizeSmall', multiline: 'MuiInput-multiline', fullWidth: 'MuiInput-fullWidth', input: 'MuiInput-input', inputSizeSmall: 'MuiInput-inputSizeSmall', inputMultiline: 'MuiInput-inputMultiline', inputAdornedStart: 'MuiInput-inputAdornedStart', inputAdornedEnd: 'MuiInput-inputAdornedEnd', inputTypeSearch: 'MuiInput-inputTypeSearch'}/*union*/)""")
+@JsVirtual
 sealed external interface MuiInput {
     companion object {
+        @JsValue("MuiInput-root")
         val root: ClassName
+
+        @JsValue("MuiInput-formControl")
         val formControl: ClassName
+
+        @JsValue("MuiInput-colorSecondary")
         val colorSecondary: ClassName
+
+        @JsValue("MuiInput-underline")
         val underline: ClassName
+
+        @JsValue("MuiInput-sizeSmall")
         val sizeSmall: ClassName
+
+        @JsValue("MuiInput-multiline")
         val multiline: ClassName
+
+        @JsValue("MuiInput-fullWidth")
         val fullWidth: ClassName
+
+        @JsValue("MuiInput-input")
         val input: ClassName
+
+        @JsValue("MuiInput-inputSizeSmall")
         val inputSizeSmall: ClassName
+
+        @JsValue("MuiInput-inputMultiline")
         val inputMultiline: ClassName
+
+        @JsValue("MuiInput-inputAdornedStart")
         val inputAdornedStart: ClassName
+
+        @JsValue("MuiInput-inputAdornedEnd")
         val inputAdornedEnd: ClassName
+
+        @JsValue("MuiInput-inputTypeSearch")
         val inputTypeSearch: ClassName
     }
 }

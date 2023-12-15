@@ -2,31 +2,60 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-// language=JavaScript
-@JsName("""(/*union*/{root: 'MuiFilledInput-root', colorSecondary: 'MuiFilledInput-colorSecondary', underline: 'MuiFilledInput-underline', adornedStart: 'MuiFilledInput-adornedStart', adornedEnd: 'MuiFilledInput-adornedEnd', sizeSmall: 'MuiFilledInput-sizeSmall', multiline: 'MuiFilledInput-multiline', hiddenLabel: 'MuiFilledInput-hiddenLabel', input: 'MuiFilledInput-input', inputSizeSmall: 'MuiFilledInput-inputSizeSmall', inputHiddenLabel: 'MuiFilledInput-inputHiddenLabel', inputMultiline: 'MuiFilledInput-inputMultiline', inputAdornedStart: 'MuiFilledInput-inputAdornedStart', inputAdornedEnd: 'MuiFilledInput-inputAdornedEnd', inputTypeSearch: 'MuiFilledInput-inputTypeSearch'}/*union*/)""")
+@JsVirtual
 sealed external interface MuiFilledInput {
     companion object {
+        @JsValue("MuiFilledInput-root")
         val root: ClassName
+
+        @JsValue("MuiFilledInput-colorSecondary")
         val colorSecondary: ClassName
+
+        @JsValue("MuiFilledInput-underline")
         val underline: ClassName
+
+        @JsValue("MuiFilledInput-adornedStart")
         val adornedStart: ClassName
+
+        @JsValue("MuiFilledInput-adornedEnd")
         val adornedEnd: ClassName
+
+        @JsValue("MuiFilledInput-sizeSmall")
         val sizeSmall: ClassName
+
+        @JsValue("MuiFilledInput-multiline")
         val multiline: ClassName
+
+        @JsValue("MuiFilledInput-hiddenLabel")
         val hiddenLabel: ClassName
+
+        @JsValue("MuiFilledInput-input")
         val input: ClassName
+
+        @JsValue("MuiFilledInput-inputSizeSmall")
         val inputSizeSmall: ClassName
+
+        @JsValue("MuiFilledInput-inputHiddenLabel")
         val inputHiddenLabel: ClassName
+
+        @JsValue("MuiFilledInput-inputMultiline")
         val inputMultiline: ClassName
+
+        @JsValue("MuiFilledInput-inputAdornedStart")
         val inputAdornedStart: ClassName
+
+        @JsValue("MuiFilledInput-inputAdornedEnd")
         val inputAdornedEnd: ClassName
+
+        @JsValue("MuiFilledInput-inputTypeSearch")
         val inputTypeSearch: ClassName
     }
 }

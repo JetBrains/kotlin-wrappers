@@ -2,24 +2,39 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-// language=JavaScript
-@JsName("""(/*union*/{root: 'MuiMobileStepper-root', positionBottom: 'MuiMobileStepper-positionBottom', positionTop: 'MuiMobileStepper-positionTop', positionStatic: 'MuiMobileStepper-positionStatic', dots: 'MuiMobileStepper-dots', dot: 'MuiMobileStepper-dot', dotActive: 'MuiMobileStepper-dotActive', progress: 'MuiMobileStepper-progress'}/*union*/)""")
+@JsVirtual
 sealed external interface MuiMobileStepper {
     companion object {
+        @JsValue("MuiMobileStepper-root")
         val root: ClassName
+
+        @JsValue("MuiMobileStepper-positionBottom")
         val positionBottom: ClassName
+
+        @JsValue("MuiMobileStepper-positionTop")
         val positionTop: ClassName
+
+        @JsValue("MuiMobileStepper-positionStatic")
         val positionStatic: ClassName
+
+        @JsValue("MuiMobileStepper-dots")
         val dots: ClassName
+
+        @JsValue("MuiMobileStepper-dot")
         val dot: ClassName
+
+        @JsValue("MuiMobileStepper-dotActive")
         val dotActive: ClassName
+
+        @JsValue("MuiMobileStepper-progress")
         val progress: ClassName
     }
 }

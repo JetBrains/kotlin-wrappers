@@ -2,32 +2,45 @@
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{primary: 'primary', secondary: 'secondary', error: 'error', info: 'info', success: 'success', warning: 'warning'}/*union*/)""")
+@JsVirtual
 sealed external interface InputBaseColor {
     companion object {
+        @JsValue("primary")
         val primary: InputBaseColor
+
+        @JsValue("secondary")
         val secondary: InputBaseColor
+
+        @JsValue("error")
         val error: InputBaseColor
+
+        @JsValue("info")
         val info: InputBaseColor
+
+        @JsValue("success")
         val success: InputBaseColor
+
+        @JsValue("warning")
         val warning: InputBaseColor
     }
 }
 
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{dense: 'dense', none: 'none'}/*union*/)""")
+@JsVirtual
 sealed external interface InputBaseMargin {
     companion object {
+        @JsValue("dense")
         val dense: InputBaseMargin
+
+        @JsValue("none")
         val none: InputBaseMargin
     }
 }

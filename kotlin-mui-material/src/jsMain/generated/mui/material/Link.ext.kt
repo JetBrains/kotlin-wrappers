@@ -2,16 +2,22 @@
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{none: 'none', hover: 'hover', always: 'always'}/*union*/)""")
+@JsVirtual
 sealed external interface LinkUnderline {
     companion object {
+        @JsValue("none")
         val none: LinkUnderline
+
+        @JsValue("hover")
         val hover: LinkUnderline
+
+        @JsValue("always")
         val always: LinkUnderline
     }
 }

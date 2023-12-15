@@ -2,32 +2,41 @@
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 typealias TableCellBaseProps = react.dom.html.TdHTMLAttributes<web.html.HTMLTableCellElement>
 
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{asc: 'asc', desc: 'desc', false: false}/*union*/)""")
+@JsVirtual
 sealed external interface SortDirection {
     companion object {
+        @JsValue("asc")
         val asc: SortDirection
+
+        @JsValue("desc")
         val desc: SortDirection
+
+        @JsValue("`false`")
         val `false`: SortDirection
     }
 }
 
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{head: 'head', body: 'body', footer: 'footer'}/*union*/)""")
+@JsVirtual
 sealed external interface TableCellVariant {
     companion object {
+        @JsValue("head")
         val head: TableCellVariant
+
+        @JsValue("body")
         val body: TableCellVariant
+
+        @JsValue("footer")
         val footer: TableCellVariant
     }
 }
@@ -35,15 +44,18 @@ sealed external interface TableCellVariant {
 typealias TableCellAlign = react.dom.html.TdAlign /* 'inherit' | 'left' | 'center' | 'right' | 'justify' */
 
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{normal: 'normal', checkbox: 'checkbox', none: 'none'}/*union*/)""")
+@JsVirtual
 sealed external interface TableCellPadding {
     companion object {
+        @JsValue("normal")
         val normal: TableCellPadding
+
+        @JsValue("checkbox")
         val checkbox: TableCellPadding
+
+        @JsValue("none")
         val none: TableCellPadding
     }
 }
