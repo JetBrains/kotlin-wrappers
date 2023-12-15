@@ -2,21 +2,30 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.lab
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-// language=JavaScript
-@JsName("""(/*union*/{root: 'MuiTimelineOppositeContent-root', positionRight: 'MuiTimelineOppositeContent-positionRight', positionLeft: 'MuiTimelineOppositeContent-positionLeft', positionAlternate: 'MuiTimelineOppositeContent-positionAlternate', positionAlternateReverse: 'MuiTimelineOppositeContent-positionAlternateReverse'}/*union*/)""")
+@JsVirtual
 sealed external interface MuiTimelineOppositeContent {
     companion object {
+        @JsValue("MuiTimelineOppositeContent-root")
         val root: ClassName
+
+        @JsValue("MuiTimelineOppositeContent-positionRight")
         val positionRight: ClassName
+
+        @JsValue("MuiTimelineOppositeContent-positionLeft")
         val positionLeft: ClassName
+
+        @JsValue("MuiTimelineOppositeContent-positionAlternate")
         val positionAlternate: ClassName
+
+        @JsValue("MuiTimelineOppositeContent-positionAlternateReverse")
         val positionAlternateReverse: ClassName
     }
 }

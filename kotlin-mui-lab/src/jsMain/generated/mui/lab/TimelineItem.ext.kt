@@ -2,17 +2,25 @@
 
 package mui.lab
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{left: 'left', right: 'right', alternate: 'alternate', alternateReverse: 'alternate-reverse'}/*union*/)""")
+@JsVirtual
 sealed external interface TimelineItemPosition {
     companion object {
+        @JsValue("left")
         val left: TimelineItemPosition
+
+        @JsValue("right")
         val right: TimelineItemPosition
+
+        @JsValue("alternate")
         val alternate: TimelineItemPosition
+
+        @JsValue("alternate-reverse")
         val alternateReverse: TimelineItemPosition
     }
 }
