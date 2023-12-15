@@ -2,15 +2,19 @@
 
 package mui.base
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{ltr: 'ltr', rtl: 'rtl'}/*union*/)""")
+@JsVirtual
 sealed external interface PopperDirection {
     companion object {
+        @JsValue("ltr")
         val ltr: PopperDirection
+
+        @JsValue("rtl")
         val rtl: PopperDirection
     }
 }

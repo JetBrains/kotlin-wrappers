@@ -18,7 +18,7 @@ external interface UseTabsParameters {
      * The component orientation (layout flow direction).
      * @default 'horizontal'
      */
-    var orientation: mui.types.Orientation?
+    var orientation: mui.material.Orientation?
 
     /**
      * The direction of the text.

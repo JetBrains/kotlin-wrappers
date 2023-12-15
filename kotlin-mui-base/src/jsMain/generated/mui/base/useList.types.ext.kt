@@ -2,29 +2,36 @@
 
 package mui.base
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{DOM: 'DOM', activeDescendant: 'activeDescendant'}/*union*/)""")
+@JsVirtual
 sealed external interface FocusManagementType {
     companion object {
+        @JsValue("DOM")
         val DOM: FocusManagementType
+
+        @JsValue("activeDescendant")
         val activeDescendant: FocusManagementType
     }
 }
 
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{none: 'none', single: 'single', multiple: 'multiple'}/*union*/)""")
+@JsVirtual
 sealed external interface SelectionMode {
     companion object {
+        @JsValue("none")
         val none: SelectionMode
+
+        @JsValue("single")
         val single: SelectionMode
+
+        @JsValue("multiple")
         val multiple: SelectionMode
     }
 }

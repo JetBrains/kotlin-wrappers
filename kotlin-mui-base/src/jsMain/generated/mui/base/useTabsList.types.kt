@@ -41,7 +41,7 @@ external interface UseTabsListReturnValue {
     /**
      * The component orientation (layout flow direction).
      */
-    var orientation: mui.types.Orientation
+    var orientation: mui.material.Orientation
 
     var rootRef: react.RefCallback<web.dom.Element>?
 
