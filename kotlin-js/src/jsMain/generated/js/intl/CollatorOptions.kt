@@ -7,7 +7,7 @@ sealed external interface CollatorOptions {
     var localeMatcher: String /* "lookup" | "best fit" */?
     var numeric: Boolean?
     var caseFirst: String /* "upper" | "lower" | "false" */?
-    var sensitivity: String /* "base" | "accent" | "case" | "variant" */?
-    var collation: String /* "big5han" | "compat" | "dict" | "direct" | "ducet" | "emoji" | "eor" | "gb2312" | "phonebk" | "phonetic" | "pinyin" | "reformed" | "searchjl" | "stroke" | "trad" | "unihan" | "zhuyin" */?
+    var sensitivity: Sensitivity?
+    var collation: Collation?
     var ignorePunctuation: Boolean?
 }

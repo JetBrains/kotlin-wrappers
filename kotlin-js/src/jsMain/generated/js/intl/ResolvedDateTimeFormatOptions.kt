@@ -17,10 +17,10 @@ sealed external interface ResolvedDateTimeFormatOptions {
     var minute: String?
     var second: String?
     var timeZoneName: String?
-    var formatMatcher: String /* "best fit" | "basic" */?
-    var dateStyle: String /* "full" | "long" | "medium" | "short" */?
-    var timeStyle: String /* "full" | "long" | "medium" | "short" */?
-    var hourCycle: String /* "h11" | "h12" | "h23" | "h24" */?
-    var dayPeriod: String /* "narrow" | "short" | "long" */?
+    var formatMatcher: FormatMatcher?
+    var dateStyle: DateStyle?
+    var timeStyle: TimeStyle?
+    var hourCycle: HourCycle?
+    var dayPeriod: DayPeriod?
     var fractionalSecondDigits: Int /* 1 | 2 | 3 */?
 }

@@ -13,11 +13,11 @@ sealed external interface ResolvedNumberFormatOptions {
     var minimumSignificantDigits: Int?
     var maximumSignificantDigits: Int?
     var useGrouping: Boolean
-    var compactDisplay: String /* "short" | "long" */?
-    var notation: String /* "standard" | "scientific" | "engineering" | "compact" */?
-    var signDisplay: String /* "auto" | "never" | "always" | "exceptZero" */?
+    var compactDisplay: CompactDisplay?
+    var notation: Notation?
+    var signDisplay: SignDisplay?
     var unit: String?
-    var unitDisplay: String /* "short" | "long" | "narrow" */?
+    var unitDisplay: UnitDisplay?
     var currencyDisplay: String?
     var currencySign: String?
 }
