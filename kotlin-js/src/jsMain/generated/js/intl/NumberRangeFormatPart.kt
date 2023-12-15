@@ -4,5 +4,5 @@ package js.intl
 
 sealed external interface NumberRangeFormatPart :
     NumberFormatPart {
-    var source: String /* "startRange" | "endRange" | "shared" */
+    var source: PartSource
 }
