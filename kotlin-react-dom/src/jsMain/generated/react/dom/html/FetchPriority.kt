@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package react.dom.html
 
-// language=JavaScript
-@JsName("""(/*union*/{high: 'high', low: 'low', auto: 'auto'}/*union*/)""")
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
+@JsVirtual
 sealed external interface FetchPriority {
     companion object {
+        @JsValue("high")
         val high: FetchPriority
+
+        @JsValue("low")
         val low: FetchPriority
+
+        @JsValue("auto")
         val auto: FetchPriority
     }
 }
