@@ -1,20 +1,37 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package node.inspector
 
 import node.events.EventType
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 
-// language=JavaScript
-@JsName("""(/*union*/{BREAKPOINT_RESOLVED: 'Debugger.breakpointResolved', PAUSED: 'Debugger.paused', RESUMED: 'Debugger.resumed', SCRIPT_FAILED_TO_PARSE: 'Debugger.scriptFailedToParse', SCRIPT_PARSED: 'Debugger.scriptParsed'}/*union*/)""")
-external object DebuggerEvent {
-    object BREAKPOINT_RESOLVED : EventType
-    object PAUSED : EventType
-    object RESUMED : EventType
-    object SCRIPT_FAILED_TO_PARSE : EventType
-    object SCRIPT_PARSED : EventType
+@JsVirtual
+sealed external interface DebuggerEvent {
+    companion object {
+        @JsValue("Debugger.breakpointResolved")
+        val BREAKPOINT_RESOLVED: BREAKPOINT_RESOLVED
+
+        @JsValue("Debugger.paused")
+        val PAUSED: PAUSED
+
+        @JsValue("Debugger.resumed")
+        val RESUMED: RESUMED
+
+        @JsValue("Debugger.scriptFailedToParse")
+        val SCRIPT_FAILED_TO_PARSE: SCRIPT_FAILED_TO_PARSE
+
+        @JsValue("Debugger.scriptParsed")
+        val SCRIPT_PARSED: SCRIPT_PARSED
+    }
+
+    sealed interface BREAKPOINT_RESOLVED : EventType
+    sealed interface PAUSED : EventType
+    sealed interface RESUMED : EventType
+    sealed interface SCRIPT_FAILED_TO_PARSE : EventType
+    sealed interface SCRIPT_PARSED : EventType
 }

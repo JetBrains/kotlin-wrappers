@@ -8,15 +8,38 @@
 package node.inspector
 
 import node.events.EventType
+import seskar.js.JsVirtual
 
-// language=JavaScript
-@JsName("""(/*union*/{CONSOLE_APICALLED: 'Runtime.consoleAPICalled', EXCEPTION_REVOKED: 'Runtime.exceptionRevoked', EXCEPTION_THROWN: 'Runtime.exceptionThrown', EXECUTION_CONTEXT_CREATED: 'Runtime.executionContextCreated', EXECUTION_CONTEXT_DESTROYED: 'Runtime.executionContextDestroyed', EXECUTION_CONTEXTS_CLEARED: 'Runtime.executionContextsCleared', INSPECT_REQUESTED: 'Runtime.inspectRequested'}/*union*/)""")
-external object RuntimeEvent {
-    object CONSOLE_APICALLED : EventType
-    object EXCEPTION_REVOKED : EventType
-    object EXCEPTION_THROWN : EventType
-    object EXECUTION_CONTEXT_CREATED : EventType
-    object EXECUTION_CONTEXT_DESTROYED : EventType
-    object EXECUTION_CONTEXTS_CLEARED : EventType
-    object INSPECT_REQUESTED : EventType
+@JsVirtual
+sealed external interface RuntimeEvent {
+    companion object {
+        @JsName("Runtime.consoleAPICalled")
+        val CONSOLE_APICALLED: CONSOLE_APICALLED
+
+        @JsName("Runtime.exceptionRevoked")
+        val EXCEPTION_REVOKED: EXCEPTION_REVOKED
+
+        @JsName("Runtime.exceptionThrown")
+        val EXCEPTION_THROWN: EXCEPTION_THROWN
+
+        @JsName("Runtime.executionContextCreated")
+        val EXECUTION_CONTEXT_CREATED: EXECUTION_CONTEXT_CREATED
+
+        @JsName("Runtime.executionContextDestroyed")
+        val EXECUTION_CONTEXT_DESTROYED: EXECUTION_CONTEXT_DESTROYED
+
+        @JsName("Runtime.executionContextsCleared")
+        val EXECUTION_CONTEXTS_CLEARED: EXECUTION_CONTEXTS_CLEARED
+
+        @JsName("Runtime.inspectRequested")
+        val INSPECT_REQUESTED: INSPECT_REQUESTED
+    }
+
+    sealed interface CONSOLE_APICALLED : EventType
+    sealed interface EXCEPTION_REVOKED : EventType
+    sealed interface EXCEPTION_THROWN : EventType
+    sealed interface EXECUTION_CONTEXT_CREATED : EventType
+    sealed interface EXECUTION_CONTEXT_DESTROYED : EventType
+    sealed interface EXECUTION_CONTEXTS_CLEARED : EventType
+    sealed interface INSPECT_REQUESTED : EventType
 }

@@ -1,17 +1,25 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package node.inspector
 
 import node.events.EventType
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 
-// language=JavaScript
-@JsName("""(/*union*/{DATA_COLLECTED: 'NodeTracing.dataCollected', TRACING_COMPLETE: 'NodeTracing.tracingComplete'}/*union*/)""")
-external object NodeTracingEvent {
-    object DATA_COLLECTED : EventType
-    object TRACING_COMPLETE : EventType
+@JsVirtual
+sealed external interface NodeTracingEvent {
+    companion object {
+        @JsValue("NodeTracing.dataCollected")
+        val DATA_COLLECTED: DATA_COLLECTED
+
+        @JsValue("NodeTracing.tracingComplete")
+        val TRACING_COMPLETE: TRACING_COMPLETE
+    }
+
+    sealed interface DATA_COLLECTED : EventType
+    sealed interface TRACING_COMPLETE : EventType
 }

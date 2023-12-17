@@ -1,16 +1,21 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package node.inspector
 
 import node.events.EventType
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 
-// language=JavaScript
-@JsName("""(/*union*/{WAITING_FOR_DISCONNECT: 'NodeRuntime.waitingForDisconnect'}/*union*/)""")
-external object NodeRuntimeEvent {
-    object WAITING_FOR_DISCONNECT : EventType
+@JsVirtual
+sealed external interface NodeRuntimeEvent {
+    companion object {
+        @JsValue("NodeRuntime.waitingForDisconnect")
+        val WAITING_FOR_DISCONNECT: WAITING_FOR_DISCONNECT
+    }
+
+    sealed interface WAITING_FOR_DISCONNECT : EventType
 }
