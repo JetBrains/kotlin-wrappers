@@ -42,22 +42,18 @@ export default {
 
             const name = next(node.name)
 
-            const keys = entries.map(([key]) => key)
-
-            const body = keys
-                .map(key => `val ${key}: ${name}`)
+            const body = entries
+                .map(([key, value]) => (
+                    `
+@seskar.js.JsValue("${value}")
+val ${key}: ${name}
+                    `.trim()
+                ))
                 .join("\n")
 
-            const jsName = entries
-                .map(([key, value]) => `${key}: '${value}'`)
-                .join(", ")
-
             return `
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{${jsName}}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface ${name} {
 companion object {
 ${body}

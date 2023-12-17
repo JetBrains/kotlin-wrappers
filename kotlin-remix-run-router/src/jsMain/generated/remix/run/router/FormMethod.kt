@@ -9,17 +9,23 @@ package remix.run.router
  * RouterState
  */
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{GET: 'GET', POST: 'POST', PUT: 'PUT', PATCH: 'PATCH', DELETE: 'DELETE'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface FormMethod {
     companion object {
+        @seskar.js.JsValue("GET")
         val GET: FormMethod
+
+        @seskar.js.JsValue("POST")
         val POST: FormMethod
+
+        @seskar.js.JsValue("PUT")
         val PUT: FormMethod
+
+        @seskar.js.JsValue("PATCH")
         val PATCH: FormMethod
+
+        @seskar.js.JsValue("DELETE")
         val DELETE: FormMethod
     }
 }
