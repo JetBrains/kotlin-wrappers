@@ -10,7 +10,8 @@ import seskar.js.JsValue
 import seskar.js.JsVirtual
 
 @JsVirtual
-sealed external interface AutoFillContactField {
+sealed external interface AutoFillContactField :
+    AutoFillField {
     companion object {
         @JsValue("email")
         val email: AutoFillContactField

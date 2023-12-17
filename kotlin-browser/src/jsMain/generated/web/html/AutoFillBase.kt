@@ -10,7 +10,8 @@ import seskar.js.JsValue
 import seskar.js.JsVirtual
 
 @JsVirtual
-sealed external interface AutoFillBase {
+sealed external interface AutoFillBase :
+    AutoFill {
     companion object {
         @JsValue("")
         val none: AutoFillBase
