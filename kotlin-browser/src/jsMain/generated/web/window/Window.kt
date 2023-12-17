@@ -76,6 +76,13 @@ sealed external class Window :
      */
     var ondeviceorientation: EventHandler<DeviceOrientationEvent>?
 
+    /**
+     * Available only in secure contexts.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/deviceorientationabsolute_event)
+     */
+    var ondeviceorientationabsolute: EventHandler<DeviceOrientationEvent>?
+
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/opener) */
     var opener: Any?
 

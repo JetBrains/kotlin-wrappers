@@ -96,9 +96,4 @@ external interface WindowEventHandlers {
     var onunhandledrejection: EventHandler<PromiseRejectionEvent>?
         get() = definedExternally
         set(value) = definedExternally
-
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/unload_event) */
-    var onunload: EventHandler<Event>?
-        get() = definedExternally
-        set(value) = definedExternally
 }

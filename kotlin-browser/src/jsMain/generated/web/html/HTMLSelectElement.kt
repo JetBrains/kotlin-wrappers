@@ -187,5 +187,8 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/setCustomValidity)
      */
     fun setCustomValidity(error: String)
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/showPicker) */
+    fun showPicker()
     // [name: number]: HTMLOptionElement | HTMLOptGroupElement
 }

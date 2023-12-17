@@ -161,6 +161,8 @@ protected constructor() :
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/readyState) */
     val readyState: Short
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/remote) */
     val remote: RemotePlayback
 
     /**

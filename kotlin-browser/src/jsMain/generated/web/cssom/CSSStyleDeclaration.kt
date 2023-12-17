@@ -1164,9 +1164,6 @@ sealed external class CSSStyleDeclaration :
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-line-clamp) */
     var webkitLineClamp: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-mask-composite) */
-    var webkitMaskComposite: String
-
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-text-fill-color) */
     var webkitTextFillColor: String
 
