@@ -18,6 +18,13 @@ external interface ColumnSizingOptions {
     var enableColumnResizing: Boolean?
 
     /**
+     * Enables or disables right-to-left support for resizing the column. defaults to 'ltr'.
+     * [API Docs](https://tanstack.com/table/v8/docs/api/features/column-sizing#rtl)
+     * [Guide](https://tanstack.com/table/v8/docs/guide/column-sizing)
+     */
+    var columnResizeDirection: ColumnResizeDirection?
+
+    /**
      * If provided, this function will be called with an `updaterFn` when `state.columnSizing` changes. This overrides the default internal state management, so you will also need to supply `state.columnSizing` from your own managed state.
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/column-sizing#oncolumnsizingchange)
      * [Guide](https://tanstack.com/table/v8/docs/guide/column-sizing)

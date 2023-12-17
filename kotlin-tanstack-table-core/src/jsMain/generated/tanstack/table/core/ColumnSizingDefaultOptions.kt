@@ -3,4 +3,4 @@
 package tanstack.table.core
 
 sealed external interface ColumnSizingDefaultOptions :
-    ColumnSizingOptions /* Pick<ColumnSizingOptions, 'columnResizeMode' | 'onColumnSizingChange' | 'onColumnSizingInfoChange'> */
+    ColumnSizingOptions /* Pick<ColumnSizingOptions, 'columnResizeMode' | 'onColumnSizingChange' | 'onColumnSizingInfoChange' | 'columnResizeDirection'> */
