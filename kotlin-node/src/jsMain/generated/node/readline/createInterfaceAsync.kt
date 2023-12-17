@@ -4,6 +4,8 @@
 
 package node.readline
 
+import js.promise.Promise
+
 /**
  * The `readlinePromises.createInterface()` method creates a new `readlinePromises.Interface` instance.
  *

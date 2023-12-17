@@ -3,18 +3,41 @@
 package node.fs
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{CLOSE: 'close', DRAIN: 'drain', ERROR: 'error', FINISH: 'finish', OPEN: 'open', PIPE: 'pipe', READY: 'ready', UNPIPE: 'unpipe'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface WriteStreamEvent : node.events.EventType {
-    object CLOSE : WriteStreamEvent
-    object DRAIN : WriteStreamEvent
-    object ERROR : WriteStreamEvent
-    object FINISH : WriteStreamEvent
-    object OPEN : WriteStreamEvent
-    object PIPE : WriteStreamEvent
-    object READY : WriteStreamEvent
-    object UNPIPE : WriteStreamEvent
+    sealed interface CLOSE : WriteStreamEvent
+    sealed interface DRAIN : WriteStreamEvent
+    sealed interface ERROR : WriteStreamEvent
+    sealed interface FINISH : WriteStreamEvent
+    sealed interface OPEN : WriteStreamEvent
+    sealed interface PIPE : WriteStreamEvent
+    sealed interface READY : WriteStreamEvent
+    sealed interface UNPIPE : WriteStreamEvent
+
+    companion object {
+        @seskar.js.JsValue("close")
+        val CLOSE: CLOSE
+
+        @seskar.js.JsValue("drain")
+        val DRAIN: DRAIN
+
+        @seskar.js.JsValue("error")
+        val ERROR: ERROR
+
+        @seskar.js.JsValue("finish")
+        val FINISH: FINISH
+
+        @seskar.js.JsValue("open")
+        val OPEN: OPEN
+
+        @seskar.js.JsValue("pipe")
+        val PIPE: PIPE
+
+        @seskar.js.JsValue("ready")
+        val READY: READY
+
+        @seskar.js.JsValue("unpipe")
+        val UNPIPE: UNPIPE
+    }
 }

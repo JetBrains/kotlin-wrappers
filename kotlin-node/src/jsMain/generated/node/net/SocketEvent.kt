@@ -3,19 +3,45 @@
 package node.net
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{CLOSE: 'close', CONNECT: 'connect', DATA: 'data', DRAIN: 'drain', END: 'end', ERROR: 'error', LOOKUP: 'lookup', READY: 'ready', TIMEOUT: 'timeout'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface SocketEvent : node.events.EventType {
-    object CLOSE : SocketEvent
-    object CONNECT : SocketEvent
-    object DATA : SocketEvent
-    object DRAIN : SocketEvent
-    object END : SocketEvent
-    object ERROR : SocketEvent
-    object LOOKUP : SocketEvent
-    object READY : SocketEvent
-    object TIMEOUT : SocketEvent
+    sealed interface CLOSE : SocketEvent
+    sealed interface CONNECT : SocketEvent
+    sealed interface DATA : SocketEvent
+    sealed interface DRAIN : SocketEvent
+    sealed interface END : SocketEvent
+    sealed interface ERROR : SocketEvent
+    sealed interface LOOKUP : SocketEvent
+    sealed interface READY : SocketEvent
+    sealed interface TIMEOUT : SocketEvent
+
+    companion object {
+        @seskar.js.JsValue("close")
+        val CLOSE: CLOSE
+
+        @seskar.js.JsValue("connect")
+        val CONNECT: CONNECT
+
+        @seskar.js.JsValue("data")
+        val DATA: DATA
+
+        @seskar.js.JsValue("drain")
+        val DRAIN: DRAIN
+
+        @seskar.js.JsValue("end")
+        val END: END
+
+        @seskar.js.JsValue("error")
+        val ERROR: ERROR
+
+        @seskar.js.JsValue("lookup")
+        val LOOKUP: LOOKUP
+
+        @seskar.js.JsValue("ready")
+        val READY: READY
+
+        @seskar.js.JsValue("timeout")
+        val TIMEOUT: TIMEOUT
+    }
 }

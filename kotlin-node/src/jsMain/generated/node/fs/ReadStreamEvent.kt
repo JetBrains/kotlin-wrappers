@@ -3,19 +3,45 @@
 package node.fs
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{CLOSE: 'close', DATA: 'data', END: 'end', ERROR: 'error', OPEN: 'open', PAUSE: 'pause', READABLE: 'readable', READY: 'ready', RESUME: 'resume'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface ReadStreamEvent : node.events.EventType {
-    object CLOSE : ReadStreamEvent
-    object DATA : ReadStreamEvent
-    object END : ReadStreamEvent
-    object ERROR : ReadStreamEvent
-    object OPEN : ReadStreamEvent
-    object PAUSE : ReadStreamEvent
-    object READABLE : ReadStreamEvent
-    object READY : ReadStreamEvent
-    object RESUME : ReadStreamEvent
+    sealed interface CLOSE : ReadStreamEvent
+    sealed interface DATA : ReadStreamEvent
+    sealed interface END : ReadStreamEvent
+    sealed interface ERROR : ReadStreamEvent
+    sealed interface OPEN : ReadStreamEvent
+    sealed interface PAUSE : ReadStreamEvent
+    sealed interface READABLE : ReadStreamEvent
+    sealed interface READY : ReadStreamEvent
+    sealed interface RESUME : ReadStreamEvent
+
+    companion object {
+        @seskar.js.JsValue("close")
+        val CLOSE: CLOSE
+
+        @seskar.js.JsValue("data")
+        val DATA: DATA
+
+        @seskar.js.JsValue("end")
+        val END: END
+
+        @seskar.js.JsValue("error")
+        val ERROR: ERROR
+
+        @seskar.js.JsValue("open")
+        val OPEN: OPEN
+
+        @seskar.js.JsValue("pause")
+        val PAUSE: PAUSE
+
+        @seskar.js.JsValue("readable")
+        val READABLE: READABLE
+
+        @seskar.js.JsValue("ready")
+        val READY: READY
+
+        @seskar.js.JsValue("resume")
+        val RESUME: RESUME
+    }
 }

@@ -3,15 +3,29 @@
 package node.dgram
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{CLOSE: 'close', CONNECT: 'connect', ERROR: 'error', LISTENING: 'listening', MESSAGE: 'message'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface SocketEvent : node.events.EventType {
-    object CLOSE : SocketEvent
-    object CONNECT : SocketEvent
-    object ERROR : SocketEvent
-    object LISTENING : SocketEvent
-    object MESSAGE : SocketEvent
+    sealed interface CLOSE : SocketEvent
+    sealed interface CONNECT : SocketEvent
+    sealed interface ERROR : SocketEvent
+    sealed interface LISTENING : SocketEvent
+    sealed interface MESSAGE : SocketEvent
+
+    companion object {
+        @seskar.js.JsValue("close")
+        val CLOSE: CLOSE
+
+        @seskar.js.JsValue("connect")
+        val CONNECT: CONNECT
+
+        @seskar.js.JsValue("error")
+        val ERROR: ERROR
+
+        @seskar.js.JsValue("listening")
+        val LISTENING: LISTENING
+
+        @seskar.js.JsValue("message")
+        val MESSAGE: MESSAGE
+    }
 }

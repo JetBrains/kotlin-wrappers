@@ -3,18 +3,41 @@
 package node.readline
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{CLOSE: 'close', LINE: 'line', PAUSE: 'pause', RESUME: 'resume', SIGCONT: 'SIGCONT', SIGINT: 'SIGINT', SIGTSTP: 'SIGTSTP', HISTORY: 'history'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface InterfaceEvent : node.events.EventType {
-    object CLOSE : InterfaceEvent
-    object LINE : InterfaceEvent
-    object PAUSE : InterfaceEvent
-    object RESUME : InterfaceEvent
-    object SIGCONT : InterfaceEvent
-    object SIGINT : InterfaceEvent
-    object SIGTSTP : InterfaceEvent
-    object HISTORY : InterfaceEvent
+    sealed interface CLOSE : InterfaceEvent
+    sealed interface LINE : InterfaceEvent
+    sealed interface PAUSE : InterfaceEvent
+    sealed interface RESUME : InterfaceEvent
+    sealed interface SIGCONT : InterfaceEvent
+    sealed interface SIGINT : InterfaceEvent
+    sealed interface SIGTSTP : InterfaceEvent
+    sealed interface HISTORY : InterfaceEvent
+
+    companion object {
+        @seskar.js.JsValue("close")
+        val CLOSE: CLOSE
+
+        @seskar.js.JsValue("line")
+        val LINE: LINE
+
+        @seskar.js.JsValue("pause")
+        val PAUSE: PAUSE
+
+        @seskar.js.JsValue("resume")
+        val RESUME: RESUME
+
+        @seskar.js.JsValue("SIGCONT")
+        val SIGCONT: SIGCONT
+
+        @seskar.js.JsValue("SIGINT")
+        val SIGINT: SIGINT
+
+        @seskar.js.JsValue("SIGTSTP")
+        val SIGTSTP: SIGTSTP
+
+        @seskar.js.JsValue("history")
+        val HISTORY: HISTORY
+    }
 }

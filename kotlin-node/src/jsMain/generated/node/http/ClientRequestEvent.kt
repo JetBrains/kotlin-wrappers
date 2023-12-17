@@ -3,24 +3,65 @@
 package node.http
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{ABORT: 'abort', CONNECT: 'connect', CONTINUE: 'continue', INFORMATION: 'information', RESPONSE: 'response', SOCKET: 'socket', TIMEOUT: 'timeout', UPGRADE: 'upgrade', CLOSE: 'close', DRAIN: 'drain', ERROR: 'error', FINISH: 'finish', PIPE: 'pipe', UNPIPE: 'unpipe'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface ClientRequestEvent : node.events.EventType {
-    object ABORT : ClientRequestEvent
-    object CONNECT : ClientRequestEvent
-    object CONTINUE : ClientRequestEvent
-    object INFORMATION : ClientRequestEvent
-    object RESPONSE : ClientRequestEvent
-    object SOCKET : ClientRequestEvent
-    object TIMEOUT : ClientRequestEvent
-    object UPGRADE : ClientRequestEvent
-    object CLOSE : ClientRequestEvent
-    object DRAIN : ClientRequestEvent
-    object ERROR : ClientRequestEvent
-    object FINISH : ClientRequestEvent
-    object PIPE : ClientRequestEvent
-    object UNPIPE : ClientRequestEvent
+    sealed interface ABORT : ClientRequestEvent
+    sealed interface CONNECT : ClientRequestEvent
+    sealed interface CONTINUE : ClientRequestEvent
+    sealed interface INFORMATION : ClientRequestEvent
+    sealed interface RESPONSE : ClientRequestEvent
+    sealed interface SOCKET : ClientRequestEvent
+    sealed interface TIMEOUT : ClientRequestEvent
+    sealed interface UPGRADE : ClientRequestEvent
+    sealed interface CLOSE : ClientRequestEvent
+    sealed interface DRAIN : ClientRequestEvent
+    sealed interface ERROR : ClientRequestEvent
+    sealed interface FINISH : ClientRequestEvent
+    sealed interface PIPE : ClientRequestEvent
+    sealed interface UNPIPE : ClientRequestEvent
+
+    companion object {
+        @seskar.js.JsValue("abort")
+        val ABORT: ABORT
+
+        @seskar.js.JsValue("connect")
+        val CONNECT: CONNECT
+
+        @seskar.js.JsValue("continue")
+        val CONTINUE: CONTINUE
+
+        @seskar.js.JsValue("information")
+        val INFORMATION: INFORMATION
+
+        @seskar.js.JsValue("response")
+        val RESPONSE: RESPONSE
+
+        @seskar.js.JsValue("socket")
+        val SOCKET: SOCKET
+
+        @seskar.js.JsValue("timeout")
+        val TIMEOUT: TIMEOUT
+
+        @seskar.js.JsValue("upgrade")
+        val UPGRADE: UPGRADE
+
+        @seskar.js.JsValue("close")
+        val CLOSE: CLOSE
+
+        @seskar.js.JsValue("drain")
+        val DRAIN: DRAIN
+
+        @seskar.js.JsValue("error")
+        val ERROR: ERROR
+
+        @seskar.js.JsValue("finish")
+        val FINISH: FINISH
+
+        @seskar.js.JsValue("pipe")
+        val PIPE: PIPE
+
+        @seskar.js.JsValue("unpipe")
+        val UNPIPE: UNPIPE
+    }
 }

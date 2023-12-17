@@ -3,15 +3,29 @@
 package node.net
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{CLOSE: 'close', CONNECTION: 'connection', ERROR: 'error', LISTENING: 'listening', DROP: 'drop'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface ServerEvent : node.events.EventType {
-    object CLOSE : ServerEvent
-    object CONNECTION : ServerEvent
-    object ERROR : ServerEvent
-    object LISTENING : ServerEvent
-    object DROP : ServerEvent
+    sealed interface CLOSE : ServerEvent
+    sealed interface CONNECTION : ServerEvent
+    sealed interface ERROR : ServerEvent
+    sealed interface LISTENING : ServerEvent
+    sealed interface DROP : ServerEvent
+
+    companion object {
+        @seskar.js.JsValue("close")
+        val CLOSE: CLOSE
+
+        @seskar.js.JsValue("connection")
+        val CONNECTION: CONNECTION
+
+        @seskar.js.JsValue("error")
+        val ERROR: ERROR
+
+        @seskar.js.JsValue("listening")
+        val LISTENING: LISTENING
+
+        @seskar.js.JsValue("drop")
+        val DROP: DROP
+    }
 }

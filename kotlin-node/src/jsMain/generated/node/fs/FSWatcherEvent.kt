@@ -3,13 +3,21 @@
 package node.fs
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{CHANGE: 'change', ERROR: 'error', CLOSE: 'close'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface FSWatcherEvent : node.events.EventType {
-    object CHANGE : FSWatcherEvent
-    object ERROR : FSWatcherEvent
-    object CLOSE : FSWatcherEvent
+    sealed interface CHANGE : FSWatcherEvent
+    sealed interface ERROR : FSWatcherEvent
+    sealed interface CLOSE : FSWatcherEvent
+
+    companion object {
+        @seskar.js.JsValue("change")
+        val CHANGE: CHANGE
+
+        @seskar.js.JsValue("error")
+        val ERROR: ERROR
+
+        @seskar.js.JsValue("close")
+        val CLOSE: CLOSE
+    }
 }

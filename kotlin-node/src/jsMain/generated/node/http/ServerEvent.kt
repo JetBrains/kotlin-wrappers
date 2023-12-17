@@ -3,21 +3,53 @@
 package node.http
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{CLOSE: 'close', CONNECTION: 'connection', ERROR: 'error', LISTENING: 'listening', CHECKCONTINUE: 'checkContinue', CHECKEXPECTATION: 'checkExpectation', CLIENTERROR: 'clientError', CONNECT: 'connect', DROPREQUEST: 'dropRequest', REQUEST: 'request', UPGRADE: 'upgrade'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface ServerEvent : node.events.EventType {
-    object CLOSE : ServerEvent
-    object CONNECTION : ServerEvent
-    object ERROR : ServerEvent
-    object LISTENING : ServerEvent
-    object CHECKCONTINUE : ServerEvent
-    object CHECKEXPECTATION : ServerEvent
-    object CLIENTERROR : ServerEvent
-    object CONNECT : ServerEvent
-    object DROPREQUEST : ServerEvent
-    object REQUEST : ServerEvent
-    object UPGRADE : ServerEvent
+    sealed interface CLOSE : ServerEvent
+    sealed interface CONNECTION : ServerEvent
+    sealed interface ERROR : ServerEvent
+    sealed interface LISTENING : ServerEvent
+    sealed interface CHECKCONTINUE : ServerEvent
+    sealed interface CHECKEXPECTATION : ServerEvent
+    sealed interface CLIENTERROR : ServerEvent
+    sealed interface CONNECT : ServerEvent
+    sealed interface DROPREQUEST : ServerEvent
+    sealed interface REQUEST : ServerEvent
+    sealed interface UPGRADE : ServerEvent
+
+    companion object {
+        @seskar.js.JsValue("close")
+        val CLOSE: CLOSE
+
+        @seskar.js.JsValue("connection")
+        val CONNECTION: CONNECTION
+
+        @seskar.js.JsValue("error")
+        val ERROR: ERROR
+
+        @seskar.js.JsValue("listening")
+        val LISTENING: LISTENING
+
+        @seskar.js.JsValue("checkContinue")
+        val CHECKCONTINUE: CHECKCONTINUE
+
+        @seskar.js.JsValue("checkExpectation")
+        val CHECKEXPECTATION: CHECKEXPECTATION
+
+        @seskar.js.JsValue("clientError")
+        val CLIENTERROR: CLIENTERROR
+
+        @seskar.js.JsValue("connect")
+        val CONNECT: CONNECT
+
+        @seskar.js.JsValue("dropRequest")
+        val DROPREQUEST: DROPREQUEST
+
+        @seskar.js.JsValue("request")
+        val REQUEST: REQUEST
+
+        @seskar.js.JsValue("upgrade")
+        val UPGRADE: UPGRADE
+    }
 }

@@ -3,16 +3,33 @@
 package node.childProcess
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{CLOSE: 'close', DISCONNECT: 'disconnect', ERROR: 'error', EXIT: 'exit', MESSAGE: 'message', SPAWN: 'spawn'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface ChildProcessEvent : node.events.EventType {
-    object CLOSE : ChildProcessEvent
-    object DISCONNECT : ChildProcessEvent
-    object ERROR : ChildProcessEvent
-    object EXIT : ChildProcessEvent
-    object MESSAGE : ChildProcessEvent
-    object SPAWN : ChildProcessEvent
+    sealed interface CLOSE : ChildProcessEvent
+    sealed interface DISCONNECT : ChildProcessEvent
+    sealed interface ERROR : ChildProcessEvent
+    sealed interface EXIT : ChildProcessEvent
+    sealed interface MESSAGE : ChildProcessEvent
+    sealed interface SPAWN : ChildProcessEvent
+
+    companion object {
+        @seskar.js.JsValue("close")
+        val CLOSE: CLOSE
+
+        @seskar.js.JsValue("disconnect")
+        val DISCONNECT: DISCONNECT
+
+        @seskar.js.JsValue("error")
+        val ERROR: ERROR
+
+        @seskar.js.JsValue("exit")
+        val EXIT: EXIT
+
+        @seskar.js.JsValue("message")
+        val MESSAGE: MESSAGE
+
+        @seskar.js.JsValue("spawn")
+        val SPAWN: SPAWN
+    }
 }

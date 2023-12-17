@@ -25,25 +25,30 @@ export default function (node, context, render) {
                 return [key, value]
             })
 
-        const keys = entries.map(([key]) => karakum.escapeIdentifier(key))
-        const uniqueKeys = Array.from(new Set(keys))
+        const keys = entries.map(([key]) => key)
 
-        const body = uniqueKeys
-            .map(key => `object ${key} : ${name}`)
+        const body = keys
+            .map(key => `sealed interface ${key} : ${name}`)
             .join("\n")
 
-        const jsName = entries
-            .map(([key, value]) => `${key}: '${value}'`)
-            .join(", ")
+        const companionBody = entries
+            .map(([key, value]) => (
+                `
+@seskar.js.JsValue("${value}")
+val ${key}: ${key}
+                    `.trim()
+            ))
+            .join("\n")
 
         return `
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{${jsName}}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface ${name} {
 ${body}
+
+companion object {
+${companionBody}
+}
 }
         `
     }

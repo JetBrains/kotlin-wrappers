@@ -4,18 +4,41 @@
 package node.crypto
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{rsa: 'rsa', rsaPss: 'rsa-pss', dsa: 'dsa', ec: 'ec', ed25519: 'ed25519', ed448: 'ed448', x25519: 'x25519', x448: 'x448'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface KeyType {
-    object rsa : KeyType
-    object rsaPss : KeyType
-    object dsa : KeyType
-    object ec : KeyType
-    object ed25519 : KeyType
-    object ed448 : KeyType
-    object x25519 : KeyType
-    object x448 : KeyType
+    sealed interface rsa : KeyType
+    sealed interface rsaPss : KeyType
+    sealed interface dsa : KeyType
+    sealed interface ec : KeyType
+    sealed interface ed25519 : KeyType
+    sealed interface ed448 : KeyType
+    sealed interface x25519 : KeyType
+    sealed interface x448 : KeyType
+
+    companion object {
+        @seskar.js.JsValue("rsa")
+        val rsa: rsa
+
+        @seskar.js.JsValue("rsa-pss")
+        val rsaPss: rsaPss
+
+        @seskar.js.JsValue("dsa")
+        val dsa: dsa
+
+        @seskar.js.JsValue("ec")
+        val ec: ec
+
+        @seskar.js.JsValue("ed25519")
+        val ed25519: ed25519
+
+        @seskar.js.JsValue("ed448")
+        val ed448: ed448
+
+        @seskar.js.JsValue("x25519")
+        val x25519: x25519
+
+        @seskar.js.JsValue("x448")
+        val x448: x448
+    }
 }

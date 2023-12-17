@@ -4,13 +4,21 @@
 package node.crypto
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{pem: 'pem', der: 'der', jwk: 'jwk'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface KeyFormat {
-    object pem : KeyFormat
-    object der : KeyFormat
-    object jwk : KeyFormat
+    sealed interface pem : KeyFormat
+    sealed interface der : KeyFormat
+    sealed interface jwk : KeyFormat
+
+    companion object {
+        @seskar.js.JsValue("pem")
+        val pem: pem
+
+        @seskar.js.JsValue("der")
+        val der: der
+
+        @seskar.js.JsValue("jwk")
+        val jwk: jwk
+    }
 }
