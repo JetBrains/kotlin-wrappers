@@ -1,8 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:JsQualifier("globalThis")
+
 @file:Suppress(
     "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
-    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package web.uievents
@@ -21,7 +22,6 @@ external interface TouchEventInit : EventModifierInit {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent)
  */
-@JsName("globalThis.TouchEvent")
 open external class TouchEvent(
     override val type: EventType<TouchEvent>,
     init: TouchEventInit = definedExternally,
