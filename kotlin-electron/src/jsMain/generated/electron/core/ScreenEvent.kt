@@ -3,13 +3,21 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{DISPLAY_ADDED: 'display-added', DISPLAY_METRICS_CHANGED: 'display-metrics-changed', DISPLAY_REMOVED: 'display-removed'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface ScreenEvent : node.events.EventType {
-    object DISPLAY_ADDED : ScreenEvent
-    object DISPLAY_METRICS_CHANGED : ScreenEvent
-    object DISPLAY_REMOVED : ScreenEvent
+    sealed interface DISPLAY_ADDED : ScreenEvent
+    sealed interface DISPLAY_METRICS_CHANGED : ScreenEvent
+    sealed interface DISPLAY_REMOVED : ScreenEvent
+
+    companion object {
+        @seskar.js.JsValue("display-added")
+        val DISPLAY_ADDED: DISPLAY_ADDED
+
+        @seskar.js.JsValue("display-metrics-changed")
+        val DISPLAY_METRICS_CHANGED: DISPLAY_METRICS_CHANGED
+
+        @seskar.js.JsValue("display-removed")
+        val DISPLAY_REMOVED: DISPLAY_REMOVED
+    }
 }

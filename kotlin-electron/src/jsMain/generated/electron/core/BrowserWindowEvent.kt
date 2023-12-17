@@ -3,48 +3,153 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName(
-    """(/*union*/{ALWAYS_ON_TOP_CHANGED: 'always-on-top-changed', APP_COMMAND: 'app-command', BLUR: 'blur', CLOSE: 'close', CLOSED: 'closed', ENTER_FULL_SCREEN: 'enter-full-screen', ENTER_HTML_FULL_SCREEN: 'enter-html-full-screen', FOCUS: 'focus', HIDE: 'hide', LEAVE_FULL_SCREEN: 'leave-full-screen', LEAVE_HTML_FULL_SCREEN: 'leave-html-full-screen', MAXIMIZE: 'maximize', MINIMIZE: 'minimize', MOVE: 'move', MOVED: 'moved', NEW_WINDOW_FOR_TAB: 'new-window-for-tab', PAGE_TITLE_UPDATED: 'page-title-updated', READY_TO_SHOW: 'ready-to-show', RESIZE: 'resize', RESIZED: 'resized', RESPONSIVE: 'responsive', RESTORE: 'restore', ROTATE_GESTURE: 'rotate-gesture', SCROLL_TOUCH_BEGIN: 'scroll-touch-begin', SCROLL_TOUCH_EDGE: 'scroll-touch-edge', SCROLL_TOUCH_END: 'scroll-touch-end', SESSION_END: 'session-end', SHEET_BEGIN: 'sheet-begin', SHEET_END: 'sheet-end', SHOW: 'show', SWIPE: 'swipe', SYSTEM_CONTEXT_MENU: 'system-context-menu', UNMAXIMIZE: 'unmaximize', UNRESPONSIVE: 'unresponsive', WILL_MOVE: 'will-move', WILL_RESIZE: 'will-resize'}/*union*/)"""
-)
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface BrowserWindowEvent : node.events.EventType {
-    object ALWAYS_ON_TOP_CHANGED : BrowserWindowEvent
-    object APP_COMMAND : BrowserWindowEvent
-    object BLUR : BrowserWindowEvent
-    object CLOSE : BrowserWindowEvent
-    object CLOSED : BrowserWindowEvent
-    object ENTER_FULL_SCREEN : BrowserWindowEvent
-    object ENTER_HTML_FULL_SCREEN : BrowserWindowEvent
-    object FOCUS : BrowserWindowEvent
-    object HIDE : BrowserWindowEvent
-    object LEAVE_FULL_SCREEN : BrowserWindowEvent
-    object LEAVE_HTML_FULL_SCREEN : BrowserWindowEvent
-    object MAXIMIZE : BrowserWindowEvent
-    object MINIMIZE : BrowserWindowEvent
-    object MOVE : BrowserWindowEvent
-    object MOVED : BrowserWindowEvent
-    object NEW_WINDOW_FOR_TAB : BrowserWindowEvent
-    object PAGE_TITLE_UPDATED : BrowserWindowEvent
-    object READY_TO_SHOW : BrowserWindowEvent
-    object RESIZE : BrowserWindowEvent
-    object RESIZED : BrowserWindowEvent
-    object RESPONSIVE : BrowserWindowEvent
-    object RESTORE : BrowserWindowEvent
-    object ROTATE_GESTURE : BrowserWindowEvent
-    object SCROLL_TOUCH_BEGIN : BrowserWindowEvent
-    object SCROLL_TOUCH_EDGE : BrowserWindowEvent
-    object SCROLL_TOUCH_END : BrowserWindowEvent
-    object SESSION_END : BrowserWindowEvent
-    object SHEET_BEGIN : BrowserWindowEvent
-    object SHEET_END : BrowserWindowEvent
-    object SHOW : BrowserWindowEvent
-    object SWIPE : BrowserWindowEvent
-    object SYSTEM_CONTEXT_MENU : BrowserWindowEvent
-    object UNMAXIMIZE : BrowserWindowEvent
-    object UNRESPONSIVE : BrowserWindowEvent
-    object WILL_MOVE : BrowserWindowEvent
-    object WILL_RESIZE : BrowserWindowEvent
+    sealed interface ALWAYS_ON_TOP_CHANGED : BrowserWindowEvent
+    sealed interface APP_COMMAND : BrowserWindowEvent
+    sealed interface BLUR : BrowserWindowEvent
+    sealed interface CLOSE : BrowserWindowEvent
+    sealed interface CLOSED : BrowserWindowEvent
+    sealed interface ENTER_FULL_SCREEN : BrowserWindowEvent
+    sealed interface ENTER_HTML_FULL_SCREEN : BrowserWindowEvent
+    sealed interface FOCUS : BrowserWindowEvent
+    sealed interface HIDE : BrowserWindowEvent
+    sealed interface LEAVE_FULL_SCREEN : BrowserWindowEvent
+    sealed interface LEAVE_HTML_FULL_SCREEN : BrowserWindowEvent
+    sealed interface MAXIMIZE : BrowserWindowEvent
+    sealed interface MINIMIZE : BrowserWindowEvent
+    sealed interface MOVE : BrowserWindowEvent
+    sealed interface MOVED : BrowserWindowEvent
+    sealed interface NEW_WINDOW_FOR_TAB : BrowserWindowEvent
+    sealed interface PAGE_TITLE_UPDATED : BrowserWindowEvent
+    sealed interface READY_TO_SHOW : BrowserWindowEvent
+    sealed interface RESIZE : BrowserWindowEvent
+    sealed interface RESIZED : BrowserWindowEvent
+    sealed interface RESPONSIVE : BrowserWindowEvent
+    sealed interface RESTORE : BrowserWindowEvent
+    sealed interface ROTATE_GESTURE : BrowserWindowEvent
+    sealed interface SCROLL_TOUCH_BEGIN : BrowserWindowEvent
+    sealed interface SCROLL_TOUCH_EDGE : BrowserWindowEvent
+    sealed interface SCROLL_TOUCH_END : BrowserWindowEvent
+    sealed interface SESSION_END : BrowserWindowEvent
+    sealed interface SHEET_BEGIN : BrowserWindowEvent
+    sealed interface SHEET_END : BrowserWindowEvent
+    sealed interface SHOW : BrowserWindowEvent
+    sealed interface SWIPE : BrowserWindowEvent
+    sealed interface SYSTEM_CONTEXT_MENU : BrowserWindowEvent
+    sealed interface UNMAXIMIZE : BrowserWindowEvent
+    sealed interface UNRESPONSIVE : BrowserWindowEvent
+    sealed interface WILL_MOVE : BrowserWindowEvent
+    sealed interface WILL_RESIZE : BrowserWindowEvent
+
+    companion object {
+        @seskar.js.JsValue("always-on-top-changed")
+        val ALWAYS_ON_TOP_CHANGED: ALWAYS_ON_TOP_CHANGED
+
+        @seskar.js.JsValue("app-command")
+        val APP_COMMAND: APP_COMMAND
+
+        @seskar.js.JsValue("blur")
+        val BLUR: BLUR
+
+        @seskar.js.JsValue("close")
+        val CLOSE: CLOSE
+
+        @seskar.js.JsValue("closed")
+        val CLOSED: CLOSED
+
+        @seskar.js.JsValue("enter-full-screen")
+        val ENTER_FULL_SCREEN: ENTER_FULL_SCREEN
+
+        @seskar.js.JsValue("enter-html-full-screen")
+        val ENTER_HTML_FULL_SCREEN: ENTER_HTML_FULL_SCREEN
+
+        @seskar.js.JsValue("focus")
+        val FOCUS: FOCUS
+
+        @seskar.js.JsValue("hide")
+        val HIDE: HIDE
+
+        @seskar.js.JsValue("leave-full-screen")
+        val LEAVE_FULL_SCREEN: LEAVE_FULL_SCREEN
+
+        @seskar.js.JsValue("leave-html-full-screen")
+        val LEAVE_HTML_FULL_SCREEN: LEAVE_HTML_FULL_SCREEN
+
+        @seskar.js.JsValue("maximize")
+        val MAXIMIZE: MAXIMIZE
+
+        @seskar.js.JsValue("minimize")
+        val MINIMIZE: MINIMIZE
+
+        @seskar.js.JsValue("move")
+        val MOVE: MOVE
+
+        @seskar.js.JsValue("moved")
+        val MOVED: MOVED
+
+        @seskar.js.JsValue("new-window-for-tab")
+        val NEW_WINDOW_FOR_TAB: NEW_WINDOW_FOR_TAB
+
+        @seskar.js.JsValue("page-title-updated")
+        val PAGE_TITLE_UPDATED: PAGE_TITLE_UPDATED
+
+        @seskar.js.JsValue("ready-to-show")
+        val READY_TO_SHOW: READY_TO_SHOW
+
+        @seskar.js.JsValue("resize")
+        val RESIZE: RESIZE
+
+        @seskar.js.JsValue("resized")
+        val RESIZED: RESIZED
+
+        @seskar.js.JsValue("responsive")
+        val RESPONSIVE: RESPONSIVE
+
+        @seskar.js.JsValue("restore")
+        val RESTORE: RESTORE
+
+        @seskar.js.JsValue("rotate-gesture")
+        val ROTATE_GESTURE: ROTATE_GESTURE
+
+        @seskar.js.JsValue("scroll-touch-begin")
+        val SCROLL_TOUCH_BEGIN: SCROLL_TOUCH_BEGIN
+
+        @seskar.js.JsValue("scroll-touch-edge")
+        val SCROLL_TOUCH_EDGE: SCROLL_TOUCH_EDGE
+
+        @seskar.js.JsValue("scroll-touch-end")
+        val SCROLL_TOUCH_END: SCROLL_TOUCH_END
+
+        @seskar.js.JsValue("session-end")
+        val SESSION_END: SESSION_END
+
+        @seskar.js.JsValue("sheet-begin")
+        val SHEET_BEGIN: SHEET_BEGIN
+
+        @seskar.js.JsValue("sheet-end")
+        val SHEET_END: SHEET_END
+
+        @seskar.js.JsValue("show")
+        val SHOW: SHOW
+
+        @seskar.js.JsValue("swipe")
+        val SWIPE: SWIPE
+
+        @seskar.js.JsValue("system-context-menu")
+        val SYSTEM_CONTEXT_MENU: SYSTEM_CONTEXT_MENU
+
+        @seskar.js.JsValue("unmaximize")
+        val UNMAXIMIZE: UNMAXIMIZE
+
+        @seskar.js.JsValue("unresponsive")
+        val UNRESPONSIVE: UNRESPONSIVE
+
+        @seskar.js.JsValue("will-move")
+        val WILL_MOVE: WILL_MOVE
+
+        @seskar.js.JsValue("will-resize")
+        val WILL_RESIZE: WILL_RESIZE
+    }
 }

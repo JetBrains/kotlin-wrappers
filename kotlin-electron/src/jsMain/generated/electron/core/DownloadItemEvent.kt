@@ -3,12 +3,17 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{DONE: 'done', UPDATED: 'updated'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface DownloadItemEvent : node.events.EventType {
-    object DONE : DownloadItemEvent
-    object UPDATED : DownloadItemEvent
+    sealed interface DONE : DownloadItemEvent
+    sealed interface UPDATED : DownloadItemEvent
+
+    companion object {
+        @seskar.js.JsValue("done")
+        val DONE: DONE
+
+        @seskar.js.JsValue("updated")
+        val UPDATED: UPDATED
+    }
 }

@@ -3,12 +3,17 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{DETACH: 'detach', MESSAGE: 'message'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface DebuggerEvent : node.events.EventType {
-    object DETACH : DebuggerEvent
-    object MESSAGE : DebuggerEvent
+    sealed interface DETACH : DebuggerEvent
+    sealed interface MESSAGE : DebuggerEvent
+
+    companion object {
+        @seskar.js.JsValue("detach")
+        val DETACH: DETACH
+
+        @seskar.js.JsValue("message")
+        val MESSAGE: MESSAGE
+    }
 }

@@ -3,17 +3,37 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{ABORT: 'abort', CLOSE: 'close', ERROR: 'error', FINISH: 'finish', LOGIN: 'login', REDIRECT: 'redirect', RESPONSE: 'response'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface ClientRequestEvent : node.events.EventType {
-    object ABORT : ClientRequestEvent
-    object CLOSE : ClientRequestEvent
-    object ERROR : ClientRequestEvent
-    object FINISH : ClientRequestEvent
-    object LOGIN : ClientRequestEvent
-    object REDIRECT : ClientRequestEvent
-    object RESPONSE : ClientRequestEvent
+    sealed interface ABORT : ClientRequestEvent
+    sealed interface CLOSE : ClientRequestEvent
+    sealed interface ERROR : ClientRequestEvent
+    sealed interface FINISH : ClientRequestEvent
+    sealed interface LOGIN : ClientRequestEvent
+    sealed interface REDIRECT : ClientRequestEvent
+    sealed interface RESPONSE : ClientRequestEvent
+
+    companion object {
+        @seskar.js.JsValue("abort")
+        val ABORT: ABORT
+
+        @seskar.js.JsValue("close")
+        val CLOSE: CLOSE
+
+        @seskar.js.JsValue("error")
+        val ERROR: ERROR
+
+        @seskar.js.JsValue("finish")
+        val FINISH: FINISH
+
+        @seskar.js.JsValue("login")
+        val LOGIN: LOGIN
+
+        @seskar.js.JsValue("redirect")
+        val REDIRECT: REDIRECT
+
+        @seskar.js.JsValue("response")
+        val RESPONSE: RESPONSE
+    }
 }

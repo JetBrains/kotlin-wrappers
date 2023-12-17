@@ -3,12 +3,17 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{CONSOLE_MESSAGE: 'console-message', REGISTRATION_COMPLETED: 'registration-completed'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface ServiceWorkersEvent : node.events.EventType {
-    object CONSOLE_MESSAGE : ServiceWorkersEvent
-    object REGISTRATION_COMPLETED : ServiceWorkersEvent
+    sealed interface CONSOLE_MESSAGE : ServiceWorkersEvent
+    sealed interface REGISTRATION_COMPLETED : ServiceWorkersEvent
+
+    companion object {
+        @seskar.js.JsValue("console-message")
+        val CONSOLE_MESSAGE: CONSOLE_MESSAGE
+
+        @seskar.js.JsValue("registration-completed")
+        val REGISTRATION_COMPLETED: REGISTRATION_COMPLETED
+    }
 }

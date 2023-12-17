@@ -3,11 +3,13 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{MESSAGE: 'message'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface ParentPortEvent : node.events.EventType {
-    object MESSAGE : ParentPortEvent
+    sealed interface MESSAGE : ParentPortEvent
+
+    companion object {
+        @seskar.js.JsValue("message")
+        val MESSAGE: MESSAGE
+    }
 }

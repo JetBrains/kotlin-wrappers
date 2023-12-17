@@ -3,11 +3,13 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{RECEIVED_APNS_NOTIFICATION: 'received-apns-notification'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface PushNotificationsEvent : node.events.EventType {
-    object RECEIVED_APNS_NOTIFICATION : PushNotificationsEvent
+    sealed interface RECEIVED_APNS_NOTIFICATION : PushNotificationsEvent
+
+    companion object {
+        @seskar.js.JsValue("received-apns-notification")
+        val RECEIVED_APNS_NOTIFICATION: RECEIVED_APNS_NOTIFICATION
+    }
 }

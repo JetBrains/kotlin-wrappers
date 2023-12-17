@@ -3,11 +3,13 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{CHANGED: 'changed'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface CookiesEvent : node.events.EventType {
-    object CHANGED : CookiesEvent
+    sealed interface CHANGED : CookiesEvent
+
+    companion object {
+        @seskar.js.JsValue("changed")
+        val CHANGED: CHANGED
+    }
 }

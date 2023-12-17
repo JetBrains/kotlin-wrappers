@@ -3,13 +3,21 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{EXIT: 'exit', MESSAGE: 'message', SPAWN: 'spawn'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface UtilityProcessEvent : node.events.EventType {
-    object EXIT : UtilityProcessEvent
-    object MESSAGE : UtilityProcessEvent
-    object SPAWN : UtilityProcessEvent
+    sealed interface EXIT : UtilityProcessEvent
+    sealed interface MESSAGE : UtilityProcessEvent
+    sealed interface SPAWN : UtilityProcessEvent
+
+    companion object {
+        @seskar.js.JsValue("exit")
+        val EXIT: EXIT
+
+        @seskar.js.JsValue("message")
+        val MESSAGE: MESSAGE
+
+        @seskar.js.JsValue("spawn")
+        val SPAWN: SPAWN
+    }
 }

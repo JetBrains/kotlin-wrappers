@@ -3,11 +3,13 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{TRANSACTIONS_UPDATED: 'transactions-updated'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface InAppPurchaseEvent : node.events.EventType {
-    object TRANSACTIONS_UPDATED : InAppPurchaseEvent
+    sealed interface TRANSACTIONS_UPDATED : InAppPurchaseEvent
+
+    companion object {
+        @seskar.js.JsValue("transactions-updated")
+        val TRANSACTIONS_UPDATED: TRANSACTIONS_UPDATED
+    }
 }

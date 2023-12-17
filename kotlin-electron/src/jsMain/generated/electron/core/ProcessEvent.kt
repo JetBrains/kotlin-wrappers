@@ -3,11 +3,13 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{LOADED: 'loaded'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface ProcessEvent : node.events.EventType {
-    object LOADED : ProcessEvent
+    sealed interface LOADED : ProcessEvent
+
+    companion object {
+        @seskar.js.JsValue("loaded")
+        val LOADED: LOADED
+    }
 }

@@ -3,43 +3,133 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName(
-    """(/*union*/{ACCESSIBILITY_SUPPORT_CHANGED: 'accessibility-support-changed', ACTIVATE: 'activate', ACTIVITY_WAS_CONTINUED: 'activity-was-continued', BEFORE_QUIT: 'before-quit', BROWSER_WINDOW_BLUR: 'browser-window-blur', BROWSER_WINDOW_CREATED: 'browser-window-created', BROWSER_WINDOW_FOCUS: 'browser-window-focus', CERTIFICATE_ERROR: 'certificate-error', CHILD_PROCESS_GONE: 'child-process-gone', CONTINUE_ACTIVITY: 'continue-activity', CONTINUE_ACTIVITY_ERROR: 'continue-activity-error', DID_BECOME_ACTIVE: 'did-become-active', GPU_INFO_UPDATE: 'gpu-info-update', GPU_PROCESS_CRASHED: 'gpu-process-crashed', LOGIN: 'login', NEW_WINDOW_FOR_TAB: 'new-window-for-tab', OPEN_FILE: 'open-file', OPEN_URL: 'open-url', QUIT: 'quit', READY: 'ready', RENDER_PROCESS_GONE: 'render-process-gone', RENDERER_PROCESS_CRASHED: 'renderer-process-crashed', SECOND_INSTANCE: 'second-instance', SELECT_CLIENT_CERTIFICATE: 'select-client-certificate', SESSION_CREATED: 'session-created', UPDATE_ACTIVITY_STATE: 'update-activity-state', WEB_CONTENTS_CREATED: 'web-contents-created', WILL_CONTINUE_ACTIVITY: 'will-continue-activity', WILL_FINISH_LAUNCHING: 'will-finish-launching', WILL_QUIT: 'will-quit', WINDOW_ALL_CLOSED: 'window-all-closed'}/*union*/)"""
-)
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface AppEvent : node.events.EventType {
-    object ACCESSIBILITY_SUPPORT_CHANGED : AppEvent
-    object ACTIVATE : AppEvent
-    object ACTIVITY_WAS_CONTINUED : AppEvent
-    object BEFORE_QUIT : AppEvent
-    object BROWSER_WINDOW_BLUR : AppEvent
-    object BROWSER_WINDOW_CREATED : AppEvent
-    object BROWSER_WINDOW_FOCUS : AppEvent
-    object CERTIFICATE_ERROR : AppEvent
-    object CHILD_PROCESS_GONE : AppEvent
-    object CONTINUE_ACTIVITY : AppEvent
-    object CONTINUE_ACTIVITY_ERROR : AppEvent
-    object DID_BECOME_ACTIVE : AppEvent
-    object GPU_INFO_UPDATE : AppEvent
-    object GPU_PROCESS_CRASHED : AppEvent
-    object LOGIN : AppEvent
-    object NEW_WINDOW_FOR_TAB : AppEvent
-    object OPEN_FILE : AppEvent
-    object OPEN_URL : AppEvent
-    object QUIT : AppEvent
-    object READY : AppEvent
-    object RENDER_PROCESS_GONE : AppEvent
-    object RENDERER_PROCESS_CRASHED : AppEvent
-    object SECOND_INSTANCE : AppEvent
-    object SELECT_CLIENT_CERTIFICATE : AppEvent
-    object SESSION_CREATED : AppEvent
-    object UPDATE_ACTIVITY_STATE : AppEvent
-    object WEB_CONTENTS_CREATED : AppEvent
-    object WILL_CONTINUE_ACTIVITY : AppEvent
-    object WILL_FINISH_LAUNCHING : AppEvent
-    object WILL_QUIT : AppEvent
-    object WINDOW_ALL_CLOSED : AppEvent
+    sealed interface ACCESSIBILITY_SUPPORT_CHANGED : AppEvent
+    sealed interface ACTIVATE : AppEvent
+    sealed interface ACTIVITY_WAS_CONTINUED : AppEvent
+    sealed interface BEFORE_QUIT : AppEvent
+    sealed interface BROWSER_WINDOW_BLUR : AppEvent
+    sealed interface BROWSER_WINDOW_CREATED : AppEvent
+    sealed interface BROWSER_WINDOW_FOCUS : AppEvent
+    sealed interface CERTIFICATE_ERROR : AppEvent
+    sealed interface CHILD_PROCESS_GONE : AppEvent
+    sealed interface CONTINUE_ACTIVITY : AppEvent
+    sealed interface CONTINUE_ACTIVITY_ERROR : AppEvent
+    sealed interface DID_BECOME_ACTIVE : AppEvent
+    sealed interface GPU_INFO_UPDATE : AppEvent
+    sealed interface GPU_PROCESS_CRASHED : AppEvent
+    sealed interface LOGIN : AppEvent
+    sealed interface NEW_WINDOW_FOR_TAB : AppEvent
+    sealed interface OPEN_FILE : AppEvent
+    sealed interface OPEN_URL : AppEvent
+    sealed interface QUIT : AppEvent
+    sealed interface READY : AppEvent
+    sealed interface RENDER_PROCESS_GONE : AppEvent
+    sealed interface RENDERER_PROCESS_CRASHED : AppEvent
+    sealed interface SECOND_INSTANCE : AppEvent
+    sealed interface SELECT_CLIENT_CERTIFICATE : AppEvent
+    sealed interface SESSION_CREATED : AppEvent
+    sealed interface UPDATE_ACTIVITY_STATE : AppEvent
+    sealed interface WEB_CONTENTS_CREATED : AppEvent
+    sealed interface WILL_CONTINUE_ACTIVITY : AppEvent
+    sealed interface WILL_FINISH_LAUNCHING : AppEvent
+    sealed interface WILL_QUIT : AppEvent
+    sealed interface WINDOW_ALL_CLOSED : AppEvent
+
+    companion object {
+        @seskar.js.JsValue("accessibility-support-changed")
+        val ACCESSIBILITY_SUPPORT_CHANGED: ACCESSIBILITY_SUPPORT_CHANGED
+
+        @seskar.js.JsValue("activate")
+        val ACTIVATE: ACTIVATE
+
+        @seskar.js.JsValue("activity-was-continued")
+        val ACTIVITY_WAS_CONTINUED: ACTIVITY_WAS_CONTINUED
+
+        @seskar.js.JsValue("before-quit")
+        val BEFORE_QUIT: BEFORE_QUIT
+
+        @seskar.js.JsValue("browser-window-blur")
+        val BROWSER_WINDOW_BLUR: BROWSER_WINDOW_BLUR
+
+        @seskar.js.JsValue("browser-window-created")
+        val BROWSER_WINDOW_CREATED: BROWSER_WINDOW_CREATED
+
+        @seskar.js.JsValue("browser-window-focus")
+        val BROWSER_WINDOW_FOCUS: BROWSER_WINDOW_FOCUS
+
+        @seskar.js.JsValue("certificate-error")
+        val CERTIFICATE_ERROR: CERTIFICATE_ERROR
+
+        @seskar.js.JsValue("child-process-gone")
+        val CHILD_PROCESS_GONE: CHILD_PROCESS_GONE
+
+        @seskar.js.JsValue("continue-activity")
+        val CONTINUE_ACTIVITY: CONTINUE_ACTIVITY
+
+        @seskar.js.JsValue("continue-activity-error")
+        val CONTINUE_ACTIVITY_ERROR: CONTINUE_ACTIVITY_ERROR
+
+        @seskar.js.JsValue("did-become-active")
+        val DID_BECOME_ACTIVE: DID_BECOME_ACTIVE
+
+        @seskar.js.JsValue("gpu-info-update")
+        val GPU_INFO_UPDATE: GPU_INFO_UPDATE
+
+        @seskar.js.JsValue("gpu-process-crashed")
+        val GPU_PROCESS_CRASHED: GPU_PROCESS_CRASHED
+
+        @seskar.js.JsValue("login")
+        val LOGIN: LOGIN
+
+        @seskar.js.JsValue("new-window-for-tab")
+        val NEW_WINDOW_FOR_TAB: NEW_WINDOW_FOR_TAB
+
+        @seskar.js.JsValue("open-file")
+        val OPEN_FILE: OPEN_FILE
+
+        @seskar.js.JsValue("open-url")
+        val OPEN_URL: OPEN_URL
+
+        @seskar.js.JsValue("quit")
+        val QUIT: QUIT
+
+        @seskar.js.JsValue("ready")
+        val READY: READY
+
+        @seskar.js.JsValue("render-process-gone")
+        val RENDER_PROCESS_GONE: RENDER_PROCESS_GONE
+
+        @seskar.js.JsValue("renderer-process-crashed")
+        val RENDERER_PROCESS_CRASHED: RENDERER_PROCESS_CRASHED
+
+        @seskar.js.JsValue("second-instance")
+        val SECOND_INSTANCE: SECOND_INSTANCE
+
+        @seskar.js.JsValue("select-client-certificate")
+        val SELECT_CLIENT_CERTIFICATE: SELECT_CLIENT_CERTIFICATE
+
+        @seskar.js.JsValue("session-created")
+        val SESSION_CREATED: SESSION_CREATED
+
+        @seskar.js.JsValue("update-activity-state")
+        val UPDATE_ACTIVITY_STATE: UPDATE_ACTIVITY_STATE
+
+        @seskar.js.JsValue("web-contents-created")
+        val WEB_CONTENTS_CREATED: WEB_CONTENTS_CREATED
+
+        @seskar.js.JsValue("will-continue-activity")
+        val WILL_CONTINUE_ACTIVITY: WILL_CONTINUE_ACTIVITY
+
+        @seskar.js.JsValue("will-finish-launching")
+        val WILL_FINISH_LAUNCHING: WILL_FINISH_LAUNCHING
+
+        @seskar.js.JsValue("will-quit")
+        val WILL_QUIT: WILL_QUIT
+
+        @seskar.js.JsValue("window-all-closed")
+        val WINDOW_ALL_CLOSED: WINDOW_ALL_CLOSED
+    }
 }

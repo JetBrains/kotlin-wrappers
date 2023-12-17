@@ -3,16 +3,33 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{ACTION: 'action', CLICK: 'click', CLOSE: 'close', FAILED: 'failed', REPLY: 'reply', SHOW: 'show'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface NotificationEvent : node.events.EventType {
-    object ACTION : NotificationEvent
-    object CLICK : NotificationEvent
-    object CLOSE : NotificationEvent
-    object FAILED : NotificationEvent
-    object REPLY : NotificationEvent
-    object SHOW : NotificationEvent
+    sealed interface ACTION : NotificationEvent
+    sealed interface CLICK : NotificationEvent
+    sealed interface CLOSE : NotificationEvent
+    sealed interface FAILED : NotificationEvent
+    sealed interface REPLY : NotificationEvent
+    sealed interface SHOW : NotificationEvent
+
+    companion object {
+        @seskar.js.JsValue("action")
+        val ACTION: ACTION
+
+        @seskar.js.JsValue("click")
+        val CLICK: CLICK
+
+        @seskar.js.JsValue("close")
+        val CLOSE: CLOSE
+
+        @seskar.js.JsValue("failed")
+        val FAILED: FAILED
+
+        @seskar.js.JsValue("reply")
+        val REPLY: REPLY
+
+        @seskar.js.JsValue("show")
+        val SHOW: SHOW
+    }
 }

@@ -3,33 +3,93 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName(
-    """(/*union*/{EXTENSION_LOADED: 'extension-loaded', EXTENSION_READY: 'extension-ready', EXTENSION_UNLOADED: 'extension-unloaded', HID_DEVICE_ADDED: 'hid-device-added', HID_DEVICE_REMOVED: 'hid-device-removed', HID_DEVICE_REVOKED: 'hid-device-revoked', PRECONNECT: 'preconnect', SELECT_HID_DEVICE: 'select-hid-device', SELECT_SERIAL_PORT: 'select-serial-port', SELECT_USB_DEVICE: 'select-usb-device', SERIAL_PORT_ADDED: 'serial-port-added', SERIAL_PORT_REMOVED: 'serial-port-removed', SERIAL_PORT_REVOKED: 'serial-port-revoked', SPELLCHECK_DICTIONARY_DOWNLOAD_BEGIN: 'spellcheck-dictionary-download-begin', SPELLCHECK_DICTIONARY_DOWNLOAD_FAILURE: 'spellcheck-dictionary-download-failure', SPELLCHECK_DICTIONARY_DOWNLOAD_SUCCESS: 'spellcheck-dictionary-download-success', SPELLCHECK_DICTIONARY_INITIALIZED: 'spellcheck-dictionary-initialized', USB_DEVICE_ADDED: 'usb-device-added', USB_DEVICE_REMOVED: 'usb-device-removed', USB_DEVICE_REVOKED: 'usb-device-revoked', WILL_DOWNLOAD: 'will-download'}/*union*/)"""
-)
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface SessionEvent : node.events.EventType {
-    object EXTENSION_LOADED : SessionEvent
-    object EXTENSION_READY : SessionEvent
-    object EXTENSION_UNLOADED : SessionEvent
-    object HID_DEVICE_ADDED : SessionEvent
-    object HID_DEVICE_REMOVED : SessionEvent
-    object HID_DEVICE_REVOKED : SessionEvent
-    object PRECONNECT : SessionEvent
-    object SELECT_HID_DEVICE : SessionEvent
-    object SELECT_SERIAL_PORT : SessionEvent
-    object SELECT_USB_DEVICE : SessionEvent
-    object SERIAL_PORT_ADDED : SessionEvent
-    object SERIAL_PORT_REMOVED : SessionEvent
-    object SERIAL_PORT_REVOKED : SessionEvent
-    object SPELLCHECK_DICTIONARY_DOWNLOAD_BEGIN : SessionEvent
-    object SPELLCHECK_DICTIONARY_DOWNLOAD_FAILURE : SessionEvent
-    object SPELLCHECK_DICTIONARY_DOWNLOAD_SUCCESS : SessionEvent
-    object SPELLCHECK_DICTIONARY_INITIALIZED : SessionEvent
-    object USB_DEVICE_ADDED : SessionEvent
-    object USB_DEVICE_REMOVED : SessionEvent
-    object USB_DEVICE_REVOKED : SessionEvent
-    object WILL_DOWNLOAD : SessionEvent
+    sealed interface EXTENSION_LOADED : SessionEvent
+    sealed interface EXTENSION_READY : SessionEvent
+    sealed interface EXTENSION_UNLOADED : SessionEvent
+    sealed interface HID_DEVICE_ADDED : SessionEvent
+    sealed interface HID_DEVICE_REMOVED : SessionEvent
+    sealed interface HID_DEVICE_REVOKED : SessionEvent
+    sealed interface PRECONNECT : SessionEvent
+    sealed interface SELECT_HID_DEVICE : SessionEvent
+    sealed interface SELECT_SERIAL_PORT : SessionEvent
+    sealed interface SELECT_USB_DEVICE : SessionEvent
+    sealed interface SERIAL_PORT_ADDED : SessionEvent
+    sealed interface SERIAL_PORT_REMOVED : SessionEvent
+    sealed interface SERIAL_PORT_REVOKED : SessionEvent
+    sealed interface SPELLCHECK_DICTIONARY_DOWNLOAD_BEGIN : SessionEvent
+    sealed interface SPELLCHECK_DICTIONARY_DOWNLOAD_FAILURE : SessionEvent
+    sealed interface SPELLCHECK_DICTIONARY_DOWNLOAD_SUCCESS : SessionEvent
+    sealed interface SPELLCHECK_DICTIONARY_INITIALIZED : SessionEvent
+    sealed interface USB_DEVICE_ADDED : SessionEvent
+    sealed interface USB_DEVICE_REMOVED : SessionEvent
+    sealed interface USB_DEVICE_REVOKED : SessionEvent
+    sealed interface WILL_DOWNLOAD : SessionEvent
+
+    companion object {
+        @seskar.js.JsValue("extension-loaded")
+        val EXTENSION_LOADED: EXTENSION_LOADED
+
+        @seskar.js.JsValue("extension-ready")
+        val EXTENSION_READY: EXTENSION_READY
+
+        @seskar.js.JsValue("extension-unloaded")
+        val EXTENSION_UNLOADED: EXTENSION_UNLOADED
+
+        @seskar.js.JsValue("hid-device-added")
+        val HID_DEVICE_ADDED: HID_DEVICE_ADDED
+
+        @seskar.js.JsValue("hid-device-removed")
+        val HID_DEVICE_REMOVED: HID_DEVICE_REMOVED
+
+        @seskar.js.JsValue("hid-device-revoked")
+        val HID_DEVICE_REVOKED: HID_DEVICE_REVOKED
+
+        @seskar.js.JsValue("preconnect")
+        val PRECONNECT: PRECONNECT
+
+        @seskar.js.JsValue("select-hid-device")
+        val SELECT_HID_DEVICE: SELECT_HID_DEVICE
+
+        @seskar.js.JsValue("select-serial-port")
+        val SELECT_SERIAL_PORT: SELECT_SERIAL_PORT
+
+        @seskar.js.JsValue("select-usb-device")
+        val SELECT_USB_DEVICE: SELECT_USB_DEVICE
+
+        @seskar.js.JsValue("serial-port-added")
+        val SERIAL_PORT_ADDED: SERIAL_PORT_ADDED
+
+        @seskar.js.JsValue("serial-port-removed")
+        val SERIAL_PORT_REMOVED: SERIAL_PORT_REMOVED
+
+        @seskar.js.JsValue("serial-port-revoked")
+        val SERIAL_PORT_REVOKED: SERIAL_PORT_REVOKED
+
+        @seskar.js.JsValue("spellcheck-dictionary-download-begin")
+        val SPELLCHECK_DICTIONARY_DOWNLOAD_BEGIN: SPELLCHECK_DICTIONARY_DOWNLOAD_BEGIN
+
+        @seskar.js.JsValue("spellcheck-dictionary-download-failure")
+        val SPELLCHECK_DICTIONARY_DOWNLOAD_FAILURE: SPELLCHECK_DICTIONARY_DOWNLOAD_FAILURE
+
+        @seskar.js.JsValue("spellcheck-dictionary-download-success")
+        val SPELLCHECK_DICTIONARY_DOWNLOAD_SUCCESS: SPELLCHECK_DICTIONARY_DOWNLOAD_SUCCESS
+
+        @seskar.js.JsValue("spellcheck-dictionary-initialized")
+        val SPELLCHECK_DICTIONARY_INITIALIZED: SPELLCHECK_DICTIONARY_INITIALIZED
+
+        @seskar.js.JsValue("usb-device-added")
+        val USB_DEVICE_ADDED: USB_DEVICE_ADDED
+
+        @seskar.js.JsValue("usb-device-removed")
+        val USB_DEVICE_REMOVED: USB_DEVICE_REMOVED
+
+        @seskar.js.JsValue("usb-device-revoked")
+        val USB_DEVICE_REVOKED: USB_DEVICE_REVOKED
+
+        @seskar.js.JsValue("will-download")
+        val WILL_DOWNLOAD: WILL_DOWNLOAD
+    }
 }

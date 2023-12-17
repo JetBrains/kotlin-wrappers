@@ -3,14 +3,25 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{ACCENT_COLOR_CHANGED: 'accent-color-changed', COLOR_CHANGED: 'color-changed', HIGH_CONTRAST_COLOR_SCHEME_CHANGED: 'high-contrast-color-scheme-changed', INVERTED_COLOR_SCHEME_CHANGED: 'inverted-color-scheme-changed'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface SystemPreferencesEvent : node.events.EventType {
-    object ACCENT_COLOR_CHANGED : SystemPreferencesEvent
-    object COLOR_CHANGED : SystemPreferencesEvent
-    object HIGH_CONTRAST_COLOR_SCHEME_CHANGED : SystemPreferencesEvent
-    object INVERTED_COLOR_SCHEME_CHANGED : SystemPreferencesEvent
+    sealed interface ACCENT_COLOR_CHANGED : SystemPreferencesEvent
+    sealed interface COLOR_CHANGED : SystemPreferencesEvent
+    sealed interface HIGH_CONTRAST_COLOR_SCHEME_CHANGED : SystemPreferencesEvent
+    sealed interface INVERTED_COLOR_SCHEME_CHANGED : SystemPreferencesEvent
+
+    companion object {
+        @seskar.js.JsValue("accent-color-changed")
+        val ACCENT_COLOR_CHANGED: ACCENT_COLOR_CHANGED
+
+        @seskar.js.JsValue("color-changed")
+        val COLOR_CHANGED: COLOR_CHANGED
+
+        @seskar.js.JsValue("high-contrast-color-scheme-changed")
+        val HIGH_CONTRAST_COLOR_SCHEME_CHANGED: HIGH_CONTRAST_COLOR_SCHEME_CHANGED
+
+        @seskar.js.JsValue("inverted-color-scheme-changed")
+        val INVERTED_COLOR_SCHEME_CHANGED: INVERTED_COLOR_SCHEME_CHANGED
+    }
 }

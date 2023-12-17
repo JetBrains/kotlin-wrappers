@@ -3,12 +3,17 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{MENU_WILL_CLOSE: 'menu-will-close', MENU_WILL_SHOW: 'menu-will-show'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface MenuEvent : node.events.EventType {
-    object MENU_WILL_CLOSE : MenuEvent
-    object MENU_WILL_SHOW : MenuEvent
+    sealed interface MENU_WILL_CLOSE : MenuEvent
+    sealed interface MENU_WILL_SHOW : MenuEvent
+
+    companion object {
+        @seskar.js.JsValue("menu-will-close")
+        val MENU_WILL_CLOSE: MENU_WILL_CLOSE
+
+        @seskar.js.JsValue("menu-will-show")
+        val MENU_WILL_SHOW: MENU_WILL_SHOW
+    }
 }

@@ -3,11 +3,13 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{UPDATED: 'updated'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface NativeThemeEvent : node.events.EventType {
-    object UPDATED : NativeThemeEvent
+    sealed interface UPDATED : NativeThemeEvent
+
+    companion object {
+        @seskar.js.JsValue("updated")
+        val UPDATED: UPDATED
+    }
 }

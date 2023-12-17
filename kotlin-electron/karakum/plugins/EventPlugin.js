@@ -126,21 +126,27 @@ export default {
             const keys = entries.map(([key]) => key)
 
             const body = keys
-                .map(key => `object ${key} : ${name}`)
+                .map(key => `sealed interface ${key} : ${name}`)
                 .join("\n")
 
-            const jsName = entries
-                .map(([key, value]) => `${key}: '${value}'`)
-                .join(", ")
+            const companionBody = entries
+                .map(([key, value]) => (
+                    `
+@seskar.js.JsValue("${value}")
+val ${key}: ${key}
+                    `.trim()
+                ))
+                .join("\n")
 
             const declaration = `
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{${jsName}}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface ${name} : node.events.EventType {
 ${body}
+
+companion object {
+${companionBody}
+}
 }
             `
 

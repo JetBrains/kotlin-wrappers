@@ -3,27 +3,77 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{BALLOON_CLICK: 'balloon-click', BALLOON_CLOSED: 'balloon-closed', BALLOON_SHOW: 'balloon-show', CLICK: 'click', DOUBLE_CLICK: 'double-click', DRAG_END: 'drag-end', DRAG_ENTER: 'drag-enter', DRAG_LEAVE: 'drag-leave', DROP: 'drop', DROP_FILES: 'drop-files', DROP_TEXT: 'drop-text', MOUSE_DOWN: 'mouse-down', MOUSE_ENTER: 'mouse-enter', MOUSE_LEAVE: 'mouse-leave', MOUSE_MOVE: 'mouse-move', MOUSE_UP: 'mouse-up', RIGHT_CLICK: 'right-click'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface TrayEvent : node.events.EventType {
-    object BALLOON_CLICK : TrayEvent
-    object BALLOON_CLOSED : TrayEvent
-    object BALLOON_SHOW : TrayEvent
-    object CLICK : TrayEvent
-    object DOUBLE_CLICK : TrayEvent
-    object DRAG_END : TrayEvent
-    object DRAG_ENTER : TrayEvent
-    object DRAG_LEAVE : TrayEvent
-    object DROP : TrayEvent
-    object DROP_FILES : TrayEvent
-    object DROP_TEXT : TrayEvent
-    object MOUSE_DOWN : TrayEvent
-    object MOUSE_ENTER : TrayEvent
-    object MOUSE_LEAVE : TrayEvent
-    object MOUSE_MOVE : TrayEvent
-    object MOUSE_UP : TrayEvent
-    object RIGHT_CLICK : TrayEvent
+    sealed interface BALLOON_CLICK : TrayEvent
+    sealed interface BALLOON_CLOSED : TrayEvent
+    sealed interface BALLOON_SHOW : TrayEvent
+    sealed interface CLICK : TrayEvent
+    sealed interface DOUBLE_CLICK : TrayEvent
+    sealed interface DRAG_END : TrayEvent
+    sealed interface DRAG_ENTER : TrayEvent
+    sealed interface DRAG_LEAVE : TrayEvent
+    sealed interface DROP : TrayEvent
+    sealed interface DROP_FILES : TrayEvent
+    sealed interface DROP_TEXT : TrayEvent
+    sealed interface MOUSE_DOWN : TrayEvent
+    sealed interface MOUSE_ENTER : TrayEvent
+    sealed interface MOUSE_LEAVE : TrayEvent
+    sealed interface MOUSE_MOVE : TrayEvent
+    sealed interface MOUSE_UP : TrayEvent
+    sealed interface RIGHT_CLICK : TrayEvent
+
+    companion object {
+        @seskar.js.JsValue("balloon-click")
+        val BALLOON_CLICK: BALLOON_CLICK
+
+        @seskar.js.JsValue("balloon-closed")
+        val BALLOON_CLOSED: BALLOON_CLOSED
+
+        @seskar.js.JsValue("balloon-show")
+        val BALLOON_SHOW: BALLOON_SHOW
+
+        @seskar.js.JsValue("click")
+        val CLICK: CLICK
+
+        @seskar.js.JsValue("double-click")
+        val DOUBLE_CLICK: DOUBLE_CLICK
+
+        @seskar.js.JsValue("drag-end")
+        val DRAG_END: DRAG_END
+
+        @seskar.js.JsValue("drag-enter")
+        val DRAG_ENTER: DRAG_ENTER
+
+        @seskar.js.JsValue("drag-leave")
+        val DRAG_LEAVE: DRAG_LEAVE
+
+        @seskar.js.JsValue("drop")
+        val DROP: DROP
+
+        @seskar.js.JsValue("drop-files")
+        val DROP_FILES: DROP_FILES
+
+        @seskar.js.JsValue("drop-text")
+        val DROP_TEXT: DROP_TEXT
+
+        @seskar.js.JsValue("mouse-down")
+        val MOUSE_DOWN: MOUSE_DOWN
+
+        @seskar.js.JsValue("mouse-enter")
+        val MOUSE_ENTER: MOUSE_ENTER
+
+        @seskar.js.JsValue("mouse-leave")
+        val MOUSE_LEAVE: MOUSE_LEAVE
+
+        @seskar.js.JsValue("mouse-move")
+        val MOUSE_MOVE: MOUSE_MOVE
+
+        @seskar.js.JsValue("mouse-up")
+        val MOUSE_UP: MOUSE_UP
+
+        @seskar.js.JsValue("right-click")
+        val RIGHT_CLICK: RIGHT_CLICK
+    }
 }

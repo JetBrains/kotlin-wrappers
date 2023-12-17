@@ -3,12 +3,17 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{CLOSE: 'close', MESSAGE: 'message'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface MessagePortMainEvent : node.events.EventType {
-    object CLOSE : MessagePortMainEvent
-    object MESSAGE : MessagePortMainEvent
+    sealed interface CLOSE : MessagePortMainEvent
+    sealed interface MESSAGE : MessagePortMainEvent
+
+    companion object {
+        @seskar.js.JsValue("close")
+        val CLOSE: CLOSE
+
+        @seskar.js.JsValue("message")
+        val MESSAGE: MESSAGE
+    }
 }

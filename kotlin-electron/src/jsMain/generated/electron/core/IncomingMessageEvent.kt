@@ -3,14 +3,25 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{ABORTED: 'aborted', DATA: 'data', END: 'end', ERROR: 'error'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface IncomingMessageEvent : node.events.EventType {
-    object ABORTED : IncomingMessageEvent
-    object DATA : IncomingMessageEvent
-    object END : IncomingMessageEvent
-    object ERROR : IncomingMessageEvent
+    sealed interface ABORTED : IncomingMessageEvent
+    sealed interface DATA : IncomingMessageEvent
+    sealed interface END : IncomingMessageEvent
+    sealed interface ERROR : IncomingMessageEvent
+
+    companion object {
+        @seskar.js.JsValue("aborted")
+        val ABORTED: ABORTED
+
+        @seskar.js.JsValue("data")
+        val DATA: DATA
+
+        @seskar.js.JsValue("end")
+        val END: END
+
+        @seskar.js.JsValue("error")
+        val ERROR: ERROR
+    }
 }
