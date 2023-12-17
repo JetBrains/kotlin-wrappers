@@ -1,15 +1,19 @@
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package react.beautiful.dnd
 
-// language=JavaScript
-@JsName("""(/*union*/{DROP: 'DROP', CANCEL: 'CANCEL'}/*union*/)""")
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
+@JsVirtual
 sealed external interface DropReason {
     companion object {
+        @JsValue("DROP")
         val DROP: DropReason
+
+        @JsValue("CANCEL")
         val CANCEL: DropReason
     }
 }
