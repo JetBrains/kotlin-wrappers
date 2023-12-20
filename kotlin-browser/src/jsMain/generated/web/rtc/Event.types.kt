@@ -14,9 +14,6 @@ inline val Event.Companion.CONNECTION_STATE_CHANGE: EventType<Event>
 inline val Event.Companion.GATHERING_STATE_CHANGE: EventType<Event>
     get() = EventType("gatheringstatechange")
 
-inline val Event.Companion.ICE_CANDIDATE_ERROR: EventType<Event>
-    get() = EventType("icecandidateerror")
-
 inline val Event.Companion.ICE_CONNECTION_STATE_CHANGE: EventType<Event>
     get() = EventType("iceconnectionstatechange")
 

@@ -51,7 +51,7 @@ external class RTCPeerConnection(
     var onicecandidate: EventHandler<RTCPeerConnectionIceEvent>?
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/icecandidateerror_event) */
-    var onicecandidateerror: EventHandler<Event>?
+    var onicecandidateerror: EventHandler<RTCPeerConnectionIceErrorEvent>?
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/iceconnectionstatechange_event) */
     var oniceconnectionstatechange: EventHandler<Event>?

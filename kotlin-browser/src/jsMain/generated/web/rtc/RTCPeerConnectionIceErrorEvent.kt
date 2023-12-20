@@ -36,5 +36,5 @@ open external class RTCPeerConnectionIceErrorEvent(
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnectionIceErrorEvent/url) */
     val url: String
 
-    companion object
+    companion object : RTCPeerConnectionIceErrorEventTypes
 }
