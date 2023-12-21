@@ -16,4 +16,7 @@ sealed external class CSSImportRule :
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/styleSheet) */
     val styleSheet: CSSStyleSheet?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/supportsText) */
+    val supportsText: String?
 }
