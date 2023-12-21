@@ -32,7 +32,7 @@ tasks.withType<KotlinCompile<*>>().configureEach {
 
 tasks.withType<KotlinJsCompile>().configureEach {
     kotlinOptions {
-        moduleKind = "commonjs"
+        moduleKind = "es"
         useEsClasses = true
     }
 }
