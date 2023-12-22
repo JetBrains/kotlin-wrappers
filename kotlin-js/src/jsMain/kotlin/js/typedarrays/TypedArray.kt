@@ -1,7 +1,3 @@
-@file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-)
-
 package js.typedarrays
 
 import js.buffer.ArrayBufferView
@@ -10,9 +6,10 @@ import js.core.JsTuple2
 import js.core.MutableArrayLike
 import js.core.ReadonlyArray
 import js.iterable.IterableIterator
+import seskar.js.JsSpecialName
 
 // language=typescript
-@JsName("(Object.getPrototypeOf(Uint8Array))")
+@JsSpecialName("(Object.getPrototypeOf(Uint8Array))")
 sealed external class TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* Number? */> :
     ArrayBufferView,
     MutableArrayLike<T>,
