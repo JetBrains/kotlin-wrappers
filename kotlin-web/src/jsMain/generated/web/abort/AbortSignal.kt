@@ -2,6 +2,7 @@
 
 package web.abort
 
+import js.errors.JsError
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
@@ -24,14 +25,14 @@ sealed external class AbortSignal :
     var onabort: EventHandler<Event>?
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/reason) */
-    val reason: Any?
+    val reason: JsError?
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/throwIfAborted) */
     fun throwIfAborted()
 
     companion object {
         /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/abort_static) */
-        fun abort(reason: Any? = definedExternally): AbortSignal
+        fun abort(reason: JsError = definedExternally): AbortSignal
 
         /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/timeout_static) */
         fun timeout(milliseconds: Number): AbortSignal

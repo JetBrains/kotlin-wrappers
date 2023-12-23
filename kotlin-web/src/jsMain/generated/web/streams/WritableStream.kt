@@ -4,6 +4,7 @@ package web.streams
 
 import js.core.Transferable
 import js.core.Void
+import js.errors.JsError
 import js.promise.Promise
 
 /**
@@ -19,7 +20,7 @@ open external class WritableStream<W>(
     val locked: Boolean
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStream/abort) */
-    fun abort(reason: Any? = definedExternally): Promise<Void>
+    fun abort(reason: JsError = definedExternally): Promise<Void>
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStream/close) */
     fun close(): Promise<Void>

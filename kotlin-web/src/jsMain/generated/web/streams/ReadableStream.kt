@@ -5,6 +5,7 @@ package web.streams
 import js.core.JsTuple2
 import js.core.Transferable
 import js.core.Void
+import js.errors.JsError
 import js.promise.Promise
 
 /**
@@ -25,7 +26,7 @@ external class ReadableStream<R>(
     val locked: Boolean
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/cancel) */
-    fun cancel(reason: Any? = definedExternally): Promise<Void>
+    fun cancel(reason: JsError = definedExternally): Promise<Void>
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/getReader) */
     fun getReader(): ReadableStreamDefaultReader<R>

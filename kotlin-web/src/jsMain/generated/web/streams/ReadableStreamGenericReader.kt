@@ -7,6 +7,7 @@
 package web.streams
 
 import js.core.Void
+import js.errors.JsError
 import js.promise.Promise
 
 sealed external interface ReadableStreamGenericReader {
@@ -15,5 +16,5 @@ sealed external interface ReadableStreamGenericReader {
         get() = definedExternally
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/cancel) */
-    fun cancel(reason: Any? = definedExternally): Promise<Void> = definedExternally
+    fun cancel(reason: JsError = definedExternally): Promise<Void> = definedExternally
 }

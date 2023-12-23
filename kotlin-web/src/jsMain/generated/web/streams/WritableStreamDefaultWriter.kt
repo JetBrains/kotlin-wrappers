@@ -3,6 +3,7 @@
 package web.streams
 
 import js.core.Void
+import js.errors.JsError
 import js.promise.Promise
 
 /**
@@ -23,7 +24,7 @@ external class WritableStreamDefaultWriter<W>(
     val ready: Promise<Void>
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/abort) */
-    fun abort(reason: Any? = definedExternally): Promise<Void>
+    fun abort(reason: JsError = definedExternally): Promise<Void>
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/close) */
     fun close(): Promise<Void>

@@ -2,6 +2,8 @@
 
 package web.abort
 
+import js.errors.JsError
+
 /**
  * A controller object that allows you to abort one or more DOM requests as and when desired.
  *
@@ -20,5 +22,5 @@ open external class AbortController {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortController/abort)
      */
-    fun abort(reason: Any? = definedExternally)
+    fun abort(reason: JsError = definedExternally)
 }
