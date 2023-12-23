@@ -3,13 +3,13 @@ package js.collections
 import js.core.JsTuple2
 import js.core.ReadonlyArray
 import js.iterable.IterableIterator
-import js.iterable.JsIterator
+import js.iterable.JsIterable
 
 @JsName("Set")
-external class JsSet<T> : MutableSetLike<T> {
-    constructor()
-    constructor(values: JsIterator<T>?)
-    constructor(values: ReadonlyArray<T>?)
+external class JsSet<T>(
+    values: JsIterable<T> = definedExternally,
+) : MutableSetLike<T> {
+    constructor(values: ReadonlyArray<T>)
 
     override val size: Int
 
