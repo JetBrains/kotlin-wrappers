@@ -1,6 +1,6 @@
 package react.dom.test
 
-import js.core.globalThis
+import js.globals.globalThis
 import kotlinx.coroutines.test.TestResult
 import kotlinx.coroutines.test.TestScope
 import kotlinx.coroutines.test.runTest

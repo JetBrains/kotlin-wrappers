@@ -1,3 +1,3 @@
-package js.core
+package js.globals
 
 external val globalThis: dynamic

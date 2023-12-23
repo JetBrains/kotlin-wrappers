@@ -1,7 +1,7 @@
 package styled.sheets
 
 import js.core.asList
-import js.core.globalThis
+import js.globals.globalThis
 import web.html.HTMLStyleElement
 import web.scheduling.requestIdleCallback
 import web.timers.setTimeout
