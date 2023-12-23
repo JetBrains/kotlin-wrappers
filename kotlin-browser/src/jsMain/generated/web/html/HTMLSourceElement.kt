@@ -21,7 +21,9 @@ protected constructor() :
      */
     var media: MediaQuery
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/sizes) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/sizes)
+     */
     var sizes: String
 
     /**
@@ -31,7 +33,9 @@ protected constructor() :
      */
     var src: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/srcset) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/srcset)
+     */
     var srcset: String
 
     /**

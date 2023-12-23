@@ -12,12 +12,16 @@ external interface SpeechSynthesisErrorEventInit : SpeechSynthesisEventInit {
     var error: SpeechSynthesisErrorCode
 }
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisErrorEvent) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisErrorEvent)
+ */
 open external class SpeechSynthesisErrorEvent(
     override val type: EventType<SpeechSynthesisErrorEvent>,
     init: SpeechSynthesisErrorEventInit,
 ) : SpeechSynthesisEvent {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisErrorEvent/error) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisErrorEvent/error)
+     */
     val error: SpeechSynthesisErrorCode
 
     companion object : SpeechSynthesisErrorEventTypes

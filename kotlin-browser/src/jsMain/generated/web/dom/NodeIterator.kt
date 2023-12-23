@@ -10,24 +10,38 @@ import js.core.JsLong
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeIterator)
  */
 sealed external class NodeIterator {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeIterator/filter) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeIterator/filter)
+     */
     val filter: NodeFilter?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeIterator/pointerBeforeReferenceNode) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeIterator/pointerBeforeReferenceNode)
+     */
     val pointerBeforeReferenceNode: Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeIterator/referenceNode) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeIterator/referenceNode)
+     */
     val referenceNode: Node
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeIterator/root) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeIterator/root)
+     */
     val root: Node
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeIterator/whatToShow) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeIterator/whatToShow)
+     */
     val whatToShow: JsLong
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeIterator/nextNode) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeIterator/nextNode)
+     */
     fun nextNode(): Node?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeIterator/previousNode) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeIterator/previousNode)
+     */
     fun previousNode(): Node?
 }

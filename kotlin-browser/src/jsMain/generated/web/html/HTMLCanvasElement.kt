@@ -33,7 +33,9 @@ protected constructor() :
      */
     var width: Int
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/captureStream) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/captureStream)
+     */
     fun captureStream(frameRequestRate: Number = definedExternally): MediaStream
 
     /**
@@ -47,7 +49,9 @@ protected constructor() :
         options: O? = definedExternally,
     ): T?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/toBlob) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/toBlob)
+     */
     fun toBlob(
         callback: BlobCallback,
         type: String = definedExternally,
@@ -65,6 +69,8 @@ protected constructor() :
         quality: Number = definedExternally,
     ): String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/transferControlToOffscreen) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/transferControlToOffscreen)
+     */
     fun transferControlToOffscreen(): OffscreenCanvas
 }

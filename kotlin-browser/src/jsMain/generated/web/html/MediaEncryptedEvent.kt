@@ -16,15 +16,21 @@ external interface MediaEncryptedEventInit : EventInit {
     var initDataType: String?
 }
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaEncryptedEvent) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaEncryptedEvent)
+ */
 open external class MediaEncryptedEvent(
     override val type: EventType<MediaEncryptedEvent>,
     init: MediaEncryptedEventInit = definedExternally,
 ) : Event {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaEncryptedEvent/initData) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaEncryptedEvent/initData)
+     */
     val initData: ArrayBuffer?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaEncryptedEvent/initDataType) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaEncryptedEvent/initDataType)
+     */
     val initDataType: String
 
     companion object : MediaEncryptedEventTypes

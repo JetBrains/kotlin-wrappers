@@ -19,7 +19,9 @@ protected constructor() :
     HTMLMediaElement,
     CanvasImageSource,
     TexImageSource {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/disablePictureInPicture) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/disablePictureInPicture)
+     */
     var disablePictureInPicture: Boolean
 
     /**
@@ -29,13 +31,19 @@ protected constructor() :
      */
     var height: Double
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/enterpictureinpicture_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/enterpictureinpicture_event)
+     */
     var onenterpictureinpicture: EventHandler<Event>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/leavepictureinpicture_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/leavepictureinpicture_event)
+     */
     var onleavepictureinpicture: EventHandler<Event>?
 
-    /** Gets or sets the playsinline of the video element. for example, On iPhone, video elements will now be allowed to play inline, and will not automatically enter fullscreen mode when playback begins. */
+    /**
+     * Gets or sets the playsinline of the video element. for example, On iPhone, video elements will now be allowed to play inline, and will not automatically enter fullscreen mode when playback begins.
+     */
     var playsInline: Boolean
 
     /**
@@ -67,10 +75,14 @@ protected constructor() :
     var width: Double
     fun cancelVideoFrameCallback(requestId: VideoFrameRequestId)
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/getVideoPlaybackQuality) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/getVideoPlaybackQuality)
+     */
     fun getVideoPlaybackQuality(): VideoPlaybackQuality
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/requestPictureInPicture) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/requestPictureInPicture)
+     */
     fun requestPictureInPicture(): Promise<PictureInPictureWindow>
     fun requestVideoFrameCallback(callback: VideoFrameRequestCallback): VideoFrameRequestId
 }

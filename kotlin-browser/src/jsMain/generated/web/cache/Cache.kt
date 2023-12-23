@@ -16,16 +16,22 @@ import web.url.URL
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache)
  */
 sealed external class Cache {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/add) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/add)
+     */
     fun add(request: Request): Promise<Void>
     fun add(request: String): Promise<Void>
     fun add(request: URL): Promise<Void>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/addAll) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/addAll)
+     */
     fun addAll(requests: ReadonlyArray<Request>): Promise<Void>
     fun addAll(requests: ReadonlyArray<String>): Promise<Void>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/delete) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/delete)
+     */
     fun delete(
         request: Request,
         options: CacheQueryOptions = definedExternally,
@@ -41,7 +47,9 @@ sealed external class Cache {
         options: CacheQueryOptions = definedExternally,
     ): Promise<Boolean>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/keys) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/keys)
+     */
     fun keys(
         request: Request = definedExternally,
         options: CacheQueryOptions = definedExternally,
@@ -57,7 +65,9 @@ sealed external class Cache {
         options: CacheQueryOptions = definedExternally,
     ): Promise<ReadonlyArray<Request>>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/match) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/match)
+     */
     fun match(
         request: Request,
         options: CacheQueryOptions = definedExternally,
@@ -73,7 +83,9 @@ sealed external class Cache {
         options: CacheQueryOptions = definedExternally,
     ): Promise<Response?>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/matchAll) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/matchAll)
+     */
     fun matchAll(
         request: Request = definedExternally,
         options: CacheQueryOptions = definedExternally,
@@ -89,7 +101,9 @@ sealed external class Cache {
         options: CacheQueryOptions = definedExternally,
     ): Promise<ReadonlyArray<Response>>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/put) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/put)
+     */
     fun put(
         request: Request,
         response: Response,

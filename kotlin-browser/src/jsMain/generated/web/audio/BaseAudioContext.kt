@@ -10,7 +10,9 @@ import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext)
+ */
 sealed external class BaseAudioContext :
     EventTarget {
     /**
@@ -20,74 +22,116 @@ sealed external class BaseAudioContext :
      */
     val audioWorklet: AudioWorklet
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/currentTime) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/currentTime)
+     */
     val currentTime: Double
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/destination) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/destination)
+     */
     val destination: AudioDestinationNode
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/listener) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/listener)
+     */
     val listener: AudioListener
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/statechange_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/statechange_event)
+     */
     var onstatechange: EventHandler<Event>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/sampleRate) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/sampleRate)
+     */
     val sampleRate: Int
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/state) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/state)
+     */
     val state: AudioContextState
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createAnalyser) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createAnalyser)
+     */
     fun createAnalyser(): AnalyserNode
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createBiquadFilter) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createBiquadFilter)
+     */
     fun createBiquadFilter(): BiquadFilterNode
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createBuffer) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createBuffer)
+     */
     fun createBuffer(
         numberOfChannels: Number,
         length: Number,
         sampleRate: Number,
     ): AudioBuffer
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createBufferSource) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createBufferSource)
+     */
     fun createBufferSource(): AudioBufferSourceNode
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createChannelMerger) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createChannelMerger)
+     */
     fun createChannelMerger(numberOfInputs: Number = definedExternally): ChannelMergerNode
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createChannelSplitter) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createChannelSplitter)
+     */
     fun createChannelSplitter(numberOfOutputs: Number = definedExternally): ChannelSplitterNode
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createConstantSource) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createConstantSource)
+     */
     fun createConstantSource(): ConstantSourceNode
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createConvolver) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createConvolver)
+     */
     fun createConvolver(): ConvolverNode
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createDelay) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createDelay)
+     */
     fun createDelay(maxDelayTime: Number = definedExternally): DelayNode
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createDynamicsCompressor) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createDynamicsCompressor)
+     */
     fun createDynamicsCompressor(): DynamicsCompressorNode
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createGain) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createGain)
+     */
     fun createGain(): GainNode
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createIIRFilter) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createIIRFilter)
+     */
     fun createIIRFilter(
         feedforward: ReadonlyArray<Double>,
         feedback: ReadonlyArray<Double>,
     ): IIRFilterNode
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createOscillator) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createOscillator)
+     */
     fun createOscillator(): OscillatorNode
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createPanner) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createPanner)
+     */
     fun createPanner(): PannerNode
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createPeriodicWave) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createPeriodicWave)
+     */
     fun createPeriodicWave(
         real: ReadonlyArray<Double>,
         imag: ReadonlyArray<Double>,
@@ -100,13 +144,19 @@ sealed external class BaseAudioContext :
         constraints: PeriodicWaveConstraints = definedExternally,
     ): PeriodicWave
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createStereoPanner) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createStereoPanner)
+     */
     fun createStereoPanner(): StereoPannerNode
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createWaveShaper) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createWaveShaper)
+     */
     fun createWaveShaper(): WaveShaperNode
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/decodeAudioData) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/decodeAudioData)
+     */
     fun decodeAudioData(
         audioData: ArrayBuffer,
         successCallback: DecodeSuccessCallback? = definedExternally,

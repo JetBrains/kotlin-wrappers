@@ -11,10 +11,14 @@ import js.promise.Promise
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LockManager)
  */
 sealed external class LockManager {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/LockManager/query) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LockManager/query)
+     */
     fun query(): Promise<LockManagerSnapshot>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/LockManager/request) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LockManager/request)
+     */
     fun request(
         name: String,
         callback: LockGrantedCallback,

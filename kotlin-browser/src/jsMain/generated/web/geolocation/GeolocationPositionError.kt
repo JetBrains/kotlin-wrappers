@@ -2,12 +2,18 @@
 
 package web.geolocation
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationPositionError) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationPositionError)
+ */
 sealed external class GeolocationPositionError {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationPositionError/code) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationPositionError/code)
+     */
     val code: Short
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationPositionError/message) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationPositionError/message)
+     */
     val message: String
     val PERMISSION_DENIED: Short
     val POSITION_UNAVAILABLE: Short

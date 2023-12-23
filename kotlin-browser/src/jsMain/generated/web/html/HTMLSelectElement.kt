@@ -14,10 +14,14 @@ open external class HTMLSelectElement
 protected constructor() :
     HTMLElement,
     JsIterable<HTMLOptionElement> {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/autocomplete) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/autocomplete)
+     */
     var autocomplete: AutoFill
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/disabled) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/disabled)
+     */
     var disabled: Boolean
 
     /**
@@ -27,7 +31,9 @@ protected constructor() :
      */
     val form: HTMLFormElement?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/labels) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/labels)
+     */
     val labels: NodeListOf<HTMLLabelElement>
 
     /**
@@ -72,7 +78,9 @@ protected constructor() :
      */
     var selectedIndex: Int
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/selectedOptions) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/selectedOptions)
+     */
     val selectedOptions: HTMLCollectionOf<HTMLOptionElement>
 
     /**
@@ -177,7 +185,9 @@ protected constructor() :
     override fun remove()
     fun remove(index: Int)
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/reportValidity) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/reportValidity)
+     */
     fun reportValidity(): Boolean
 
     /**
@@ -188,7 +198,9 @@ protected constructor() :
      */
     fun setCustomValidity(error: String)
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/showPicker) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/showPicker)
+     */
     fun showPicker()
     // [name: number]: HTMLOptionElement | HTMLOptGroupElement
 }

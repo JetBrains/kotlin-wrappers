@@ -7,74 +7,120 @@ import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation)
+ */
 open external class Animation(
     effect: AnimationEffect? = definedExternally,
     timeline: AnimationTimeline? = definedExternally,
 ) : EventTarget {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/currentTime) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/currentTime)
+     */
     var currentTime: CSSNumberish?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/effect) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/effect)
+     */
     var effect: AnimationEffect?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/finished) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/finished)
+     */
     val finished: Promise<Animation>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/id) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/id)
+     */
     var id: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/cancel_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/cancel_event)
+     */
     var oncancel: EventHandler<AnimationPlaybackEvent>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/finish_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/finish_event)
+     */
     var onfinish: EventHandler<AnimationPlaybackEvent>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/remove_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/remove_event)
+     */
     var onremove: EventHandler<Event>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/pending) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/pending)
+     */
     val pending: Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/playState) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/playState)
+     */
     val playState: AnimationPlayState
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/playbackRate) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/playbackRate)
+     */
     var playbackRate: Double
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/ready) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/ready)
+     */
     val ready: Promise<Animation>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/replaceState) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/replaceState)
+     */
     val replaceState: AnimationReplaceState
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/startTime) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/startTime)
+     */
     var startTime: CSSNumberish?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/timeline) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/timeline)
+     */
     var timeline: AnimationTimeline?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/cancel) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/cancel)
+     */
     fun cancel()
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/commitStyles) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/commitStyles)
+     */
     fun commitStyles()
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/finish) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/finish)
+     */
     fun finish()
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/pause) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/pause)
+     */
     fun pause()
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/persist) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/persist)
+     */
     fun persist()
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/play) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/play)
+     */
     fun play()
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/reverse) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/reverse)
+     */
     fun reverse()
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/updatePlaybackRate) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/updatePlaybackRate)
+     */
     fun updatePlaybackRate(playbackRate: Number)
 }

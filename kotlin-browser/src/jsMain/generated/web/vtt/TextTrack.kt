@@ -75,7 +75,9 @@ sealed external class TextTrack :
      */
     var mode: TextTrackMode
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/cuechange_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/cuechange_event)
+     */
     var oncuechange: EventHandler<Event>?
 
     /**

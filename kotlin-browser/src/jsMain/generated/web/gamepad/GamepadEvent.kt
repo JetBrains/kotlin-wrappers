@@ -24,7 +24,9 @@ open external class GamepadEvent(
     override val type: EventType<GamepadEvent>,
     init: GamepadEventInit,
 ) : Event {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadEvent/gamepad) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadEvent/gamepad)
+     */
     val gamepad: Gamepad
 
     companion object : GamepadEventTypes

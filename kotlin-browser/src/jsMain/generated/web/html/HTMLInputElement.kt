@@ -18,10 +18,14 @@ open external class HTMLInputElement
 protected constructor() :
     HTMLElement,
     PopoverInvokerElement {
-    /** Sets or retrieves a comma-separated list of content types. */
+    /**
+     * Sets or retrieves a comma-separated list of content types.
+     */
     var accept: String
 
-    /** Sets or retrieves a text alternative to the graphic. */
+    /**
+     * Sets or retrieves a text alternative to the graphic.
+     */
     var alt: String
 
     /**
@@ -32,13 +36,19 @@ protected constructor() :
     var autocomplete: AutoFill
     var capture: String
 
-    /** Sets or retrieves the state of the check box or radio button. */
+    /**
+     * Sets or retrieves the state of the check box or radio button.
+     */
     var checked: Boolean
 
-    /** Sets or retrieves the state of the check box or radio button. */
+    /**
+     * Sets or retrieves the state of the check box or radio button.
+     */
     var defaultChecked: Boolean
 
-    /** Sets or retrieves the initial contents of the object. */
+    /**
+     * Sets or retrieves the initial contents of the object.
+     */
     var defaultValue: String
     var dirName: String
     var disabled: Boolean
@@ -50,7 +60,9 @@ protected constructor() :
      */
     var files: FileList?
 
-    /** Retrieves a reference to the form that the object is embedded in. */
+    /**
+     * Retrieves a reference to the form that the object is embedded in.
+     */
     val form: HTMLFormElement?
 
     /**
@@ -95,10 +107,14 @@ protected constructor() :
      */
     var height: Double
 
-    /** When set, overrides the rendering of checkbox controls so that the current value is not visible. */
+    /**
+     * When set, overrides the rendering of checkbox controls so that the current value is not visible.
+     */
     var indeterminate: Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/labels) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/labels)
+     */
     val labels: NodeListOf<HTMLLabelElement>?
 
     /**
@@ -108,13 +124,19 @@ protected constructor() :
      */
     val list: HTMLDataListElement?
 
-    /** Defines the maximum acceptable value for an input element with type="number".When used with the min and step attributes, lets you control the range and increment (such as only even numbers) that the user can enter into an input field. */
+    /**
+     * Defines the maximum acceptable value for an input element with type="number".When used with the min and step attributes, lets you control the range and increment (such as only even numbers) that the user can enter into an input field.
+     */
     var max: String
 
-    /** Sets or retrieves the maximum number of characters that the user can enter in a text control. */
+    /**
+     * Sets or retrieves the maximum number of characters that the user can enter in a text control.
+     */
     var maxLength: Int
 
-    /** Defines the minimum acceptable value for an input element with type="number". When used with the max and step attributes, lets you control the range and increment (such as even numbers only) that the user can enter into an input field. */
+    /**
+     * Defines the minimum acceptable value for an input element with type="number". When used with the max and step attributes, lets you control the range and increment (such as even numbers only) that the user can enter into an input field.
+     */
     var min: String
     var minLength: Int
 
@@ -125,7 +147,9 @@ protected constructor() :
      */
     var multiple: Boolean
 
-    /** Sets or retrieves the name of the object. */
+    /**
+     * Sets or retrieves the name of the object.
+     */
     var name: String
 
     /**
@@ -150,23 +174,35 @@ protected constructor() :
      */
     var required: Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/selectionDirection) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/selectionDirection)
+     */
     var selectionDirection: SelectionDirection?
 
-    /** Gets or sets the end position or offset of a text selection. */
+    /**
+     * Gets or sets the end position or offset of a text selection.
+     */
     var selectionEnd: Int?
 
-    /** Gets or sets the starting position or offset of a text selection. */
+    /**
+     * Gets or sets the starting position or offset of a text selection.
+     */
     var selectionStart: Int?
     var size: Int
 
-    /** The address or URL of the a media resource that is to be considered. */
+    /**
+     * The address or URL of the a media resource that is to be considered.
+     */
     var src: String
 
-    /** Defines an increment or jump between values that you want to allow the user to enter. When used with the max and min attributes, lets you control the range and increment (for example, allow only even numbers) that the user can enter into an input field. */
+    /**
+     * Defines an increment or jump between values that you want to allow the user to enter. When used with the max and min attributes, lets you control the range and increment (for example, allow only even numbers) that the user can enter into an input field.
+     */
     var step: String
 
-    /** Returns the content type of the object. */
+    /**
+     * Returns the content type of the object.
+     */
     var type: InputType
 
     /**
@@ -183,19 +219,29 @@ protected constructor() :
      */
     val validity: ValidityState
 
-    /** Returns the value of the data at the cursor's current position. */
+    /**
+     * Returns the value of the data at the cursor's current position.
+     */
     var value: String
 
-    /** Returns a Date object representing the form control's value, if applicable; otherwise, returns null. Can be set, to change the value. Throws an "InvalidStateError" DOMException if the control isn't date- or time-based. */
+    /**
+     * Returns a Date object representing the form control's value, if applicable; otherwise, returns null. Can be set, to change the value. Throws an "InvalidStateError" DOMException if the control isn't date- or time-based.
+     */
     var valueAsDate: Date?
 
-    /** Returns the input field value as a number. */
+    /**
+     * Returns the input field value as a number.
+     */
     var valueAsNumber: Double
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/webkitEntries) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/webkitEntries)
+     */
     val webkitEntries: ReadonlyArray<FileSystemEntry>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/webkitdirectory) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/webkitdirectory)
+     */
     var webkitdirectory: Boolean
 
     /**
@@ -219,7 +265,9 @@ protected constructor() :
      */
     fun checkValidity(): Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/reportValidity) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/reportValidity)
+     */
     fun reportValidity(): Boolean
 
     /**
@@ -237,7 +285,9 @@ protected constructor() :
      */
     fun setCustomValidity(error: String)
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/setRangeText) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/setRangeText)
+     */
     fun setRangeText(replacement: String)
     fun setRangeText(
         replacement: String,
@@ -260,7 +310,9 @@ protected constructor() :
         direction: SelectionDirection = definedExternally,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/showPicker) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/showPicker)
+     */
     fun showPicker()
 
     /**

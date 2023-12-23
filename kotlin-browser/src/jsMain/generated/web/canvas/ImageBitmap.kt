@@ -5,7 +5,9 @@ package web.canvas
 import js.core.Transferable
 import web.gl.TexImageSource
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmap) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmap)
+ */
 sealed external class ImageBitmap :
     CanvasImageSource,
     TexImageSource,

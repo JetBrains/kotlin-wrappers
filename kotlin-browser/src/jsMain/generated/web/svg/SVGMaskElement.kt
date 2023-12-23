@@ -9,21 +9,33 @@ package web.svg
  */
 sealed external class SVGMaskElement :
     SVGElement {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMaskElement/height) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMaskElement/height)
+     */
     val height: SVGAnimatedLength
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMaskElement/maskContentUnits) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMaskElement/maskContentUnits)
+     */
     val maskContentUnits: SVGAnimatedEnumeration
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMaskElement/maskUnits) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMaskElement/maskUnits)
+     */
     val maskUnits: SVGAnimatedEnumeration
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMaskElement/width) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMaskElement/width)
+     */
     val width: SVGAnimatedLength
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMaskElement/x) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMaskElement/x)
+     */
     val x: SVGAnimatedLength
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMaskElement/y) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMaskElement/y)
+     */
     val y: SVGAnimatedLength
 }

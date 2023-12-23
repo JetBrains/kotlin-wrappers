@@ -27,16 +27,24 @@ open external class DeviceMotionEvent(
     override val type: EventType<DeviceMotionEvent>,
     init: DeviceMotionEventInit = definedExternally,
 ) : Event {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceMotionEvent/acceleration) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceMotionEvent/acceleration)
+     */
     val acceleration: DeviceMotionEventAcceleration?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceMotionEvent/accelerationIncludingGravity) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceMotionEvent/accelerationIncludingGravity)
+     */
     val accelerationIncludingGravity: DeviceMotionEventAcceleration?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceMotionEvent/interval) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceMotionEvent/interval)
+     */
     val interval: Double
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceMotionEvent/rotationRate) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceMotionEvent/rotationRate)
+     */
     val rotationRate: DeviceMotionEventRotationRate?
 
     companion object : DeviceMotionEventTypes

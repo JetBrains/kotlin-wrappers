@@ -27,19 +27,29 @@ open external class ExtendableMessageEvent(
     override val type: EventType<ExtendableMessageEvent>,
     init: ExtendableMessageEventInit = definedExternally,
 ) : ExtendableEvent {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/data) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/data)
+     */
     val data: Any?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/lastEventId) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/lastEventId)
+     */
     val lastEventId: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/origin) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/origin)
+     */
     val origin: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/ports) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/ports)
+     */
     val ports: ReadonlyArray<MessagePort>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/source) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/source)
+     */
     val source: Any /* Client | ServiceWorker | MessagePort */?
 
     companion object : ExtendableMessageEventTypes

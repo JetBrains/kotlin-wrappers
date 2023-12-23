@@ -20,18 +20,28 @@ external class OfflineAudioContext(
         sampleRate: Number,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/length) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/length)
+     */
     val length: Int
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/complete_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/complete_event)
+     */
     var oncomplete: EventHandler<OfflineAudioCompletionEvent>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/resume) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/resume)
+     */
     fun resume(): Promise<Void>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/startRendering) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/startRendering)
+     */
     fun startRendering(): Promise<AudioBuffer>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/suspend) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/suspend)
+     */
     fun suspend(suspendTime: Number): Promise<Void>
 }

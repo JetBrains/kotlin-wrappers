@@ -12,22 +12,34 @@ import web.vtt.TextTrack
 open external class HTMLTrackElement
 protected constructor() :
     HTMLElement {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/default) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/default)
+     */
     var default: Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/kind) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/kind)
+     */
     var kind: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/label) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/label)
+     */
     var label: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/readyState) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/readyState)
+     */
     val readyState: Short
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/src) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/src)
+     */
     var src: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/srclang) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/srclang)
+     */
     var srclang: String
 
     /**

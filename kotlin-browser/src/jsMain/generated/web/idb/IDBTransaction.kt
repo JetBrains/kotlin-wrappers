@@ -8,7 +8,9 @@ import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction)
+ */
 sealed external class IDBTransaction :
     EventTarget {
     /**
@@ -18,7 +20,9 @@ sealed external class IDBTransaction :
      */
     val db: IDBDatabase
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/durability) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/durability)
+     */
     val durability: IDBTransactionDurability
 
     /**
@@ -42,13 +46,19 @@ sealed external class IDBTransaction :
      */
     val objectStoreNames: DOMStringList
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/abort_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/abort_event)
+     */
     var onabort: EventHandler<Event>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/complete_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/complete_event)
+     */
     var oncomplete: EventHandler<Event>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/error_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/error_event)
+     */
     var onerror: EventHandler<Event>?
 
     /**
@@ -58,7 +68,9 @@ sealed external class IDBTransaction :
      */
     fun abort()
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/commit) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/commit)
+     */
     fun commit()
 
     /**

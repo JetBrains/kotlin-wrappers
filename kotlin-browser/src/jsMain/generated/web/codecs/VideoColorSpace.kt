@@ -2,22 +2,34 @@
 
 package web.codecs
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoColorSpace) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoColorSpace)
+ */
 external class VideoColorSpace(
     init: VideoColorSpaceInit = definedExternally,
 ) {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoColorSpace/fullRange) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoColorSpace/fullRange)
+     */
     val fullRange: Boolean?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoColorSpace/matrix) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoColorSpace/matrix)
+     */
     val matrix: VideoMatrixCoefficients?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoColorSpace/primaries) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoColorSpace/primaries)
+     */
     val primaries: VideoColorPrimaries?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoColorSpace/transfer) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoColorSpace/transfer)
+     */
     val transfer: VideoTransferCharacteristics?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoColorSpace/toJSON) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoColorSpace/toJSON)
+     */
     fun toJSON(): VideoColorSpaceInit
 }

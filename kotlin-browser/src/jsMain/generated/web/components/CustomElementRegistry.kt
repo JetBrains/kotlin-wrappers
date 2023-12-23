@@ -7,24 +7,36 @@ import web.dom.Node
 import web.html.HTMLElement
 import web.html.HtmlTagName
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry)
+ */
 sealed external class CustomElementRegistry {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/define) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/define)
+     */
     fun <T : P, P : HTMLElement> define(
         name: HtmlTagName<T>,
         constructor: CustomElementConstructor<T>,
         options: ElementDefinitionOptions<P> = definedExternally,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/get) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/get)
+     */
     operator fun <T : HTMLElement> get(name: HtmlTagName<T>): CustomElementConstructor<T>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/getName) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/getName)
+     */
     fun <T : HTMLElement> getName(constructor: CustomElementConstructor<T>): HtmlTagName<T>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/upgrade) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/upgrade)
+     */
     fun upgrade(root: Node)
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/whenDefined) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/whenDefined)
+     */
     fun <T : HTMLElement> whenDefined(name: HtmlTagName<T>): Promise<CustomElementConstructor<T>>
 }

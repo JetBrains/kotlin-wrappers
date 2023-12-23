@@ -24,7 +24,9 @@ open external class PushEvent(
     override val type: EventType<PushEvent>,
     init: PushEventInit = definedExternally,
 ) : ExtendableEvent {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushEvent/data) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushEvent/data)
+     */
     val data: PushMessageData?
 
     companion object : PushEventTypes

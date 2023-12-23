@@ -2,21 +2,33 @@
 
 package web.cssom
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule)
+ */
 sealed external class CSSImportRule :
     CSSRule {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/href) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/href)
+     */
     val href: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/layerName) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/layerName)
+     */
     val layerName: String?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/media) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/media)
+     */
     val media: MediaList
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/styleSheet) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/styleSheet)
+     */
     val styleSheet: CSSStyleSheet?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/supportsText) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/supportsText)
+     */
     val supportsText: String?
 }

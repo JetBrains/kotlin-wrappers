@@ -15,15 +15,21 @@ external interface MediaQueryListEventInit : EventInit {
     var media: MediaQuery?
 }
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent)
+ */
 open external class MediaQueryListEvent(
     override val type: EventType<MediaQueryListEvent>,
     init: MediaQueryListEventInit = definedExternally,
 ) : Event {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent/matches) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent/matches)
+     */
     val matches: Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent/media) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent/media)
+     */
     val media: MediaQuery
 
     companion object : MediaQueryListEventTypes

@@ -19,25 +19,37 @@ external class Headers(
     constructor(init: ReadonlyRecord<String, String>)
     constructor(init: Headers)
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/append) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/append)
+     */
     fun append(
         name: String,
         value: String,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/delete) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/delete)
+     */
     fun delete(name: String)
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/get) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/get)
+     */
     operator fun get(name: String): String?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/getSetCookie) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/getSetCookie)
+     */
     fun getSetCookie(): ReadonlyArray<String>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/has) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/has)
+     */
     fun has(name: String): Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/set) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/set)
+     */
     operator fun set(
         name: String,
         value: String,

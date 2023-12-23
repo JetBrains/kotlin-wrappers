@@ -6,23 +6,35 @@ import web.geometry.DOMPoint
 import web.geometry.DOMPointInit
 import web.geometry.DOMPointReadOnly
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement)
+ */
 sealed external class SVGGeometryElement :
     SVGGraphicsElement {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/pathLength) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/pathLength)
+     */
     val pathLength: SVGAnimatedNumber
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/getPointAtLength) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/getPointAtLength)
+     */
     fun getPointAtLength(distance: Number): DOMPoint
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/getTotalLength) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/getTotalLength)
+     */
     fun getTotalLength(): Number
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/isPointInFill) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/isPointInFill)
+     */
     fun isPointInFill(point: DOMPointInit = definedExternally): Boolean
     fun isPointInFill(point: DOMPointReadOnly /* DOMPointInit */): Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/isPointInStroke) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/isPointInStroke)
+     */
     fun isPointInStroke(point: DOMPointInit = definedExternally): Boolean
     fun isPointInStroke(point: DOMPointReadOnly /* DOMPointInit */): Boolean
 }

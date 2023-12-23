@@ -7,11 +7,15 @@ import web.rendering.OffscreenRenderingContext
 import web.rendering.RenderingContext
 import web.rendering.RenderingContextId
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmapRenderingContext) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmapRenderingContext)
+ */
 sealed external class ImageBitmapRenderingContext :
     OffscreenRenderingContext,
     RenderingContext {
-    /** Returns the canvas element that the context is bound to. */
+    /**
+     * Returns the canvas element that the context is bound to.
+     */
     val canvas: Any /* HTMLCanvasElement | OffscreenCanvas */
 
     /**

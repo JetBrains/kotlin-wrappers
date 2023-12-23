@@ -13,26 +13,40 @@ import web.buffer.Blob
 import web.streams.ReadableStream
 
 sealed external interface Body {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/body) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/body)
+     */
     val body: ReadableStream<Uint8Array>?
         get() = definedExternally
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/bodyUsed) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/bodyUsed)
+     */
     val bodyUsed: Boolean
         get() = definedExternally
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/arrayBuffer) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/arrayBuffer)
+     */
     fun arrayBuffer(): Promise<ArrayBuffer> = definedExternally
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/blob) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/blob)
+     */
     fun blob(): Promise<Blob> = definedExternally
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/formData) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/formData)
+     */
     fun formData(): Promise<FormData> = definedExternally
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/json) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/json)
+     */
     fun json(): Promise<*> = definedExternally
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/text) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/text)
+     */
     fun text(): Promise<String> = definedExternally
 }

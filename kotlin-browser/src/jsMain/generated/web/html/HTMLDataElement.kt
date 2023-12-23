@@ -10,6 +10,8 @@ package web.html
 open external class HTMLDataElement
 protected constructor() :
     HTMLElement {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDataElement/value) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDataElement/value)
+     */
     var value: String
 }

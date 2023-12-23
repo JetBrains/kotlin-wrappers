@@ -39,6 +39,8 @@ sealed external class DataTransferItem {
      */
     fun getAsString(callback: FunctionStringCallback?)
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItem/webkitGetAsEntry) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItem/webkitGetAsEntry)
+     */
     fun webkitGetAsEntry(): FileSystemEntry?
 }

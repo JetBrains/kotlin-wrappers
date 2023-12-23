@@ -22,18 +22,24 @@ sealed external class FileSystemDirectoryHandle :
         options: FileSystemGetDirectoryOptions = definedExternally,
     ): Promise<FileSystemDirectoryHandle>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/getFileHandle) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/getFileHandle)
+     */
     fun getFileHandle(
         name: String,
         options: FileSystemGetFileOptions = definedExternally,
     ): Promise<FileSystemFileHandle>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/removeEntry) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/removeEntry)
+     */
     fun removeEntry(
         name: String,
         options: FileSystemRemoveOptions = definedExternally,
     ): Promise<Void>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/resolve) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/resolve)
+     */
     fun resolve(possibleDescendant: FileSystemHandle): Promise<ReadonlyArray<String>?>
 }

@@ -57,13 +57,19 @@ sealed external class Navigator :
     val credentials: CredentialsContainer
     val doNotTrack: String?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/geolocation) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/geolocation)
+     */
     val geolocation: Geolocation
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/maxTouchPoints) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/maxTouchPoints)
+     */
     val maxTouchPoints: Int
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/mediaCapabilities) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/mediaCapabilities)
+     */
     val mediaCapabilities: MediaCapabilities
 
     /**
@@ -73,10 +79,14 @@ sealed external class Navigator :
      */
     val mediaDevices: MediaDevices
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/mediaSession) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/mediaSession)
+     */
     val mediaSession: MediaSession
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/permissions) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/permissions)
+     */
     val permissions: Permissions
 
     /**
@@ -86,10 +96,14 @@ sealed external class Navigator :
      */
     val serviceWorker: ServiceWorkerContainer
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/userActivation) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/userActivation)
+     */
     val userActivation: UserActivation
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/wakeLock) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/wakeLock)
+     */
     val wakeLock: WakeLock
 
     /**
@@ -99,7 +113,9 @@ sealed external class Navigator :
      */
     fun canShare(data: ShareData = definedExternally): Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/getGamepads) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/getGamepads)
+     */
     fun getGamepads(): ReadonlyArray<Gamepad?>
 
     /**
@@ -119,7 +135,9 @@ sealed external class Navigator :
         supportedConfigurations: ReadonlyArray<MediaKeySystemConfiguration>,
     ): Promise<MediaKeySystemAccess>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/sendBeacon) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/sendBeacon)
+     */
     fun sendBeacon(
         url: String,
         data: BodyInit? = definedExternally,
@@ -137,6 +155,8 @@ sealed external class Navigator :
      */
     fun share(data: ShareData = definedExternally): Promise<Void>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/vibrate) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/vibrate)
+     */
     fun vibrate(pattern: VibratePattern): Boolean
 }

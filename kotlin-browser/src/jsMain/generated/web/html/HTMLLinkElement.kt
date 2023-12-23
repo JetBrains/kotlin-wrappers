@@ -16,29 +16,43 @@ open external class HTMLLinkElement
 protected constructor() :
     HTMLElement,
     LinkStyle {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/as) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/as)
+     */
     var `as`: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/crossOrigin) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/crossOrigin)
+     */
     var crossOrigin: CrossOrigin?
     var disabled: Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/fetchPriority) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/fetchPriority)
+     */
     var fetchPriority: String
 
-    /** Sets or retrieves a destination URL or an anchor point. */
+    /**
+     * Sets or retrieves a destination URL or an anchor point.
+     */
     var href: String
 
-    /** Sets or retrieves the language code of the object. */
+    /**
+     * Sets or retrieves the language code of the object.
+     */
     var hreflang: String
     var imageSizes: String
     var imageSrcset: String
     var integrity: String
 
-    /** Sets or retrieves the media type. */
+    /**
+     * Sets or retrieves the media type.
+     */
     var media: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/referrerPolicy) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/referrerPolicy)
+     */
     var referrerPolicy: ReferrerPolicy
 
     /**
@@ -48,12 +62,18 @@ protected constructor() :
      */
     var rel: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/relList) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/relList)
+     */
     val relList: DOMTokenList
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/sizes) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/sizes)
+     */
     val sizes: DOMTokenList
 
-    /** Sets or retrieves the MIME type of the object. */
+    /**
+     * Sets or retrieves the MIME type of the object.
+     */
     var type: String
 }

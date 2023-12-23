@@ -13,19 +13,29 @@ import web.dom.NodeListOf
 open external class HTMLOutputElement
 protected constructor() :
     HTMLElement {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/defaultValue) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/defaultValue)
+     */
     var defaultValue: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/form) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/form)
+     */
     val form: HTMLFormElement?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/htmlFor) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/htmlFor)
+     */
     val htmlFor: DOMTokenList
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/labels) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/labels)
+     */
     val labels: NodeListOf<HTMLLabelElement>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/name) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/name)
+     */
     var name: String
 
     /**
@@ -35,10 +45,14 @@ protected constructor() :
      */
     val type: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/validationMessage) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/validationMessage)
+     */
     val validationMessage: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/validity) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/validity)
+     */
     val validity: ValidityState
 
     /**
@@ -50,15 +64,23 @@ protected constructor() :
      */
     var value: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/willValidate) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/willValidate)
+     */
     val willValidate: Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/checkValidity) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/checkValidity)
+     */
     fun checkValidity(): Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/reportValidity) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/reportValidity)
+     */
     fun reportValidity(): Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/setCustomValidity) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/setCustomValidity)
+     */
     fun setCustomValidity(error: String)
 }

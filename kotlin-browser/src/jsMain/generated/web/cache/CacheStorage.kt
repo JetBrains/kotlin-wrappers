@@ -15,16 +15,24 @@ import web.url.URL
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage)
  */
 sealed external class CacheStorage {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/delete) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/delete)
+     */
     fun delete(cacheName: String): Promise<Boolean>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/has) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/has)
+     */
     fun has(cacheName: String): Promise<Boolean>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/keys) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/keys)
+     */
     fun keys(): Promise<ReadonlyArray<String>>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/match) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/match)
+     */
     fun match(
         request: Request,
         options: MultiCacheQueryOptions = definedExternally,
@@ -40,6 +48,8 @@ sealed external class CacheStorage {
         options: MultiCacheQueryOptions = definedExternally,
     ): Promise<Response?>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/open) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/open)
+     */
     fun open(cacheName: String): Promise<Cache>
 }

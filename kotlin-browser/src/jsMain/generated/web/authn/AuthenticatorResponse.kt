@@ -10,6 +10,8 @@ import js.buffer.ArrayBuffer
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AuthenticatorResponse)
  */
 sealed external class AuthenticatorResponse {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/AuthenticatorResponse/clientDataJSON) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AuthenticatorResponse/clientDataJSON)
+     */
     val clientDataJSON: ArrayBuffer
 }

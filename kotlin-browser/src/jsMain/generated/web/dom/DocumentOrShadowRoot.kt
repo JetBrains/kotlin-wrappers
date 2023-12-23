@@ -24,7 +24,9 @@ external interface DocumentOrShadowRoot {
     val activeElement: Element?
         get() = definedExternally
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/adoptedStyleSheets) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/adoptedStyleSheets)
+     */
     var adoptedStyleSheets: ReadonlyArray<CSSStyleSheet>
         get() = definedExternally
         set(value) = definedExternally
@@ -37,11 +39,15 @@ external interface DocumentOrShadowRoot {
     val fullscreenElement: Element?
         get() = definedExternally
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pictureInPictureElement) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pictureInPictureElement)
+     */
     val pictureInPictureElement: Element?
         get() = definedExternally
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pointerLockElement) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pointerLockElement)
+     */
     val pointerLockElement: Element?
         get() = definedExternally
 
@@ -68,6 +74,8 @@ external interface DocumentOrShadowRoot {
         y: Number,
     ): ReadonlyArray<Element> = definedExternally
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/getAnimations) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/getAnimations)
+     */
     fun getAnimations(): ReadonlyArray<Animation> = definedExternally
 }

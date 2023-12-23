@@ -2,7 +2,9 @@
 
 package web.reporting
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReportBody) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReportBody)
+ */
 sealed external class ReportBody {
     fun toJSON(): Any
 }

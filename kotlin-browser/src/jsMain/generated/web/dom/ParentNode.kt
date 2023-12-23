@@ -17,7 +17,9 @@ import web.svg.SvgTagName
 
 sealed external interface ParentNode :
     Node {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/childElementCount) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/childElementCount)
+     */
     val childElementCount: Int
         get() = definedExternally
 

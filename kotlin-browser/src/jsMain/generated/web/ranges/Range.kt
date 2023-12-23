@@ -21,16 +21,24 @@ sealed external class Range :
      */
     val commonAncestorContainer: Node
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/cloneContents) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/cloneContents)
+     */
     fun cloneContents(): DocumentFragment
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/cloneRange) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/cloneRange)
+     */
     fun cloneRange(): Range
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/collapse) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/collapse)
+     */
     fun collapse(toStart: Boolean = definedExternally)
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/compareBoundaryPoints) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/compareBoundaryPoints)
+     */
     fun compareBoundaryPoints(
         how: Number,
         sourceRange: Range,
@@ -46,25 +54,39 @@ sealed external class Range :
         offset: Number,
     ): Number
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/createContextualFragment) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/createContextualFragment)
+     */
     fun createContextualFragment(fragment: String): DocumentFragment
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/deleteContents) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/deleteContents)
+     */
     fun deleteContents()
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/detach) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/detach)
+     */
     fun detach()
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/extractContents) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/extractContents)
+     */
     fun extractContents(): DocumentFragment
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/getBoundingClientRect) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/getBoundingClientRect)
+     */
     fun getBoundingClientRect(): DOMRect
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/getClientRects) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/getClientRects)
+     */
     fun getClientRects(): DOMRectList
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/insertNode) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/insertNode)
+     */
     fun insertNode(node: Node)
 
     /**
@@ -74,43 +96,63 @@ sealed external class Range :
      */
     fun intersectsNode(node: Node): Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/isPointInRange) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/isPointInRange)
+     */
     fun isPointInRange(
         node: Node,
         offset: Number,
     ): Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/selectNode) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/selectNode)
+     */
     fun selectNode(node: Node)
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/selectNodeContents) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/selectNodeContents)
+     */
     fun selectNodeContents(node: Node)
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/setEnd) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/setEnd)
+     */
     fun setEnd(
         node: Node,
         offset: Number,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/setEndAfter) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/setEndAfter)
+     */
     fun setEndAfter(node: Node)
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/setEndBefore) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/setEndBefore)
+     */
     fun setEndBefore(node: Node)
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/setStart) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/setStart)
+     */
     fun setStart(
         node: Node,
         offset: Number,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/setStartAfter) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/setStartAfter)
+     */
     fun setStartAfter(node: Node)
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/setStartBefore) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/setStartBefore)
+     */
     fun setStartBefore(node: Node)
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/surroundContents) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/surroundContents)
+     */
     fun surroundContents(newParent: Node)
     val START_TO_START: Short
     val START_TO_END: Short

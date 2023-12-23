@@ -15,12 +15,16 @@ external interface FontFaceSetLoadEventInit : EventInit {
     var fontfaces: ReadonlyArray<FontFace>?
 }
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSetLoadEvent) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSetLoadEvent)
+ */
 open external class FontFaceSetLoadEvent(
     override val type: EventType<FontFaceSetLoadEvent>,
     init: FontFaceSetLoadEventInit = definedExternally,
 ) : Event {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSetLoadEvent/fontfaces) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSetLoadEvent/fontfaces)
+     */
     val fontfaces: ReadonlyArray<FontFace>
 
     companion object

@@ -21,20 +21,30 @@ sealed external class AbortSignal :
      */
     val aborted: Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/abort_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/abort_event)
+     */
     var onabort: EventHandler<Event>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/reason) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/reason)
+     */
     val reason: JsError?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/throwIfAborted) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/throwIfAborted)
+     */
     fun throwIfAborted()
 
     companion object {
-        /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/abort_static) */
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/abort_static)
+         */
         fun abort(reason: JsError = definedExternally): AbortSignal
 
-        /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/timeout_static) */
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/timeout_static)
+         */
         fun timeout(milliseconds: Number): AbortSignal
     }
 }

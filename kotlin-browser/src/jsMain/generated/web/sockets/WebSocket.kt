@@ -61,16 +61,24 @@ external class WebSocket(
      */
     val extensions: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/close_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/close_event)
+     */
     var onclose: EventHandler<CloseEvent>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/error_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/error_event)
+     */
     var onerror: EventHandler<Event>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/message_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/message_event)
+     */
     var onmessage: EventHandler<MessageEvent<*>>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/open_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/open_event)
+     */
     var onopen: EventHandler<Event>?
 
     /**

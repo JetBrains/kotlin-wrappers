@@ -6,7 +6,9 @@ import js.core.ReadonlyArray
 import js.typedarrays.Float32Array
 import js.typedarrays.Float64Array
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix)
+ */
 external class DOMMatrix(
     init: String = definedExternally,
 ) : DOMMatrixReadOnly {
@@ -57,7 +59,9 @@ external class DOMMatrix(
         rotZ: Number = definedExternally,
     ): DOMMatrix
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/scale3dSelf) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/scale3dSelf)
+     */
     fun scale3dSelf(
         scale: Number = definedExternally,
         originX: Number = definedExternally,
@@ -65,7 +69,9 @@ external class DOMMatrix(
         originZ: Number = definedExternally,
     ): DOMMatrix
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/scaleSelf) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/scaleSelf)
+     */
     fun scaleSelf(
         scaleX: Number = definedExternally,
         scaleY: Number = definedExternally,

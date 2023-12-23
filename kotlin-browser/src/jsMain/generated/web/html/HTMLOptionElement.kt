@@ -17,7 +17,9 @@ protected constructor() :
      */
     var defaultSelected: Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionElement/disabled) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionElement/disabled)
+     */
     var disabled: Boolean
 
     /**

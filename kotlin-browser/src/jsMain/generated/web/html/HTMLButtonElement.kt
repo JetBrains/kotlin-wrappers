@@ -14,7 +14,9 @@ open external class HTMLButtonElement
 protected constructor() :
     HTMLElement,
     PopoverInvokerElement {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/disabled) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/disabled)
+     */
     var disabled: Boolean
 
     /**
@@ -59,7 +61,9 @@ protected constructor() :
      */
     var formTarget: WindowName
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/labels) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/labels)
+     */
     val labels: NodeListOf<HTMLLabelElement>
 
     /**
@@ -104,10 +108,14 @@ protected constructor() :
      */
     val willValidate: Boolean
 
-    /** Returns whether a form will validate when it is submitted, without having to submit it. */
+    /**
+     * Returns whether a form will validate when it is submitted, without having to submit it.
+     */
     fun checkValidity(): Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/reportValidity) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/reportValidity)
+     */
     fun reportValidity(): Boolean
 
     /**

@@ -8,10 +8,14 @@ package web.html
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaError)
  */
 sealed external class MediaError {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaError/code) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaError/code)
+     */
     val code: Short
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaError/message) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaError/message)
+     */
     val message: String
     val MEDIA_ERR_ABORTED: Short
     val MEDIA_ERR_NETWORK: Short

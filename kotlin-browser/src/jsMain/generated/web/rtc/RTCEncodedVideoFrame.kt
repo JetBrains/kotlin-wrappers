@@ -5,17 +5,27 @@ package web.rtc
 import js.buffer.ArrayBuffer
 import js.core.JsLong
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedVideoFrame) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedVideoFrame)
+ */
 sealed external class RTCEncodedVideoFrame {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedVideoFrame/data) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedVideoFrame/data)
+     */
     var data: ArrayBuffer
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedVideoFrame/timestamp) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedVideoFrame/timestamp)
+     */
     val timestamp: JsLong
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedVideoFrame/type) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedVideoFrame/type)
+     */
     val type: RTCEncodedVideoFrameType
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedVideoFrame/getMetadata) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedVideoFrame/getMetadata)
+     */
     fun getMetadata(): RTCEncodedVideoFrameMetadata
 }

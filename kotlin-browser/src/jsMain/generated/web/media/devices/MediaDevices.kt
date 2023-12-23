@@ -19,18 +19,28 @@ import web.media.streams.MediaTrackSupportedConstraints
  */
 sealed external class MediaDevices :
     EventTarget {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/devicechange_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/devicechange_event)
+     */
     var ondevicechange: EventHandler<Event>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/enumerateDevices) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/enumerateDevices)
+     */
     fun enumerateDevices(): Promise<ReadonlyArray<MediaDeviceInfo>>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getDisplayMedia) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getDisplayMedia)
+     */
     fun getDisplayMedia(options: DisplayMediaStreamOptions = definedExternally): Promise<MediaStream>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getSupportedConstraints) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getSupportedConstraints)
+     */
     fun getSupportedConstraints(): MediaTrackSupportedConstraints
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia)
+     */
     fun getUserMedia(constraints: MediaStreamConstraints = definedExternally): Promise<MediaStream>
 }

@@ -9,7 +9,9 @@ import web.html.HTMLFormElement
 import web.html.ValidityState
 import web.html.ValidityStateFlags
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals)
+ */
 sealed external class ElementInternals :
     ARIAMixin {
     /**

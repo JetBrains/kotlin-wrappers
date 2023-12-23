@@ -25,10 +25,14 @@ open external class IDBVersionChangeEvent(
     override val type: EventType<IDBVersionChangeEvent>,
     init: IDBVersionChangeEventInit = definedExternally,
 ) : Event {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBVersionChangeEvent/newVersion) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBVersionChangeEvent/newVersion)
+     */
     val newVersion: JsLong?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBVersionChangeEvent/oldVersion) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBVersionChangeEvent/oldVersion)
+     */
     val oldVersion: JsLong
 
     companion object : IDBVersionChangeEventTypes

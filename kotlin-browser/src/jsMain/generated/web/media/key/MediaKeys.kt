@@ -12,9 +12,13 @@ import js.promise.Promise
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys)
  */
 sealed external class MediaKeys {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/createSession) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/createSession)
+     */
     fun createSession(sessionType: MediaKeySessionType = definedExternally): MediaKeySession
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/setServerCertificate) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/setServerCertificate)
+     */
     fun setServerCertificate(serverCertificate: BufferSource): Promise<Boolean>
 }

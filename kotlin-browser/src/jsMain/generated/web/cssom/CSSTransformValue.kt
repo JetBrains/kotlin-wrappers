@@ -8,18 +8,26 @@ import js.core.ReadonlyArray
 import js.iterable.IterableIterator
 import web.geometry.DOMMatrix
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTransformValue) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTransformValue)
+ */
 external class CSSTransformValue(
     transforms: ReadonlyArray<CSSTransformComponent>,
 ) : CSSStyleValue,
     ListLike<CSSTransformComponent> {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTransformValue/is2D) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTransformValue/is2D)
+     */
     val is2D: Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTransformValue/length) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTransformValue/length)
+     */
     override val length: Int
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTransformValue/toMatrix) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTransformValue/toMatrix)
+     */
     fun toMatrix(): DOMMatrix
 
     override fun entries(): IterableIterator<JsTuple2<Int, CSSTransformComponent>>

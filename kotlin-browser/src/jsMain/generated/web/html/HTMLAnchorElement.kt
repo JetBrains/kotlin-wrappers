@@ -15,7 +15,9 @@ open external class HTMLAnchorElement
 protected constructor() :
     HTMLElement,
     HTMLHyperlinkElementUtils {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/download) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/download)
+     */
     var download: String
 
     /**
@@ -26,7 +28,9 @@ protected constructor() :
     var hreflang: String
     var ping: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/referrerPolicy) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/referrerPolicy)
+     */
     var referrerPolicy: ReferrerPolicy
 
     /**
@@ -36,7 +40,9 @@ protected constructor() :
      */
     var rel: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/relList) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/relList)
+     */
     val relList: DOMTokenList
 
     /**
@@ -53,6 +59,8 @@ protected constructor() :
      */
     var text: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/type) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/type)
+     */
     var type: String
 }

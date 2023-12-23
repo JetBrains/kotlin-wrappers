@@ -14,21 +14,33 @@ sealed external class SVGImageElement :
     SVGGraphicsElement,
     SVGURIReference,
     HTMLOrSVGImageElement {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/crossorigin) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/crossorigin)
+     */
     var crossOrigin: CrossOrigin?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/height) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/height)
+     */
     val height: SVGAnimatedLength
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/preserveAspectRatio) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/preserveAspectRatio)
+     */
     val preserveAspectRatio: SVGAnimatedPreserveAspectRatio
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/width) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/width)
+     */
     val width: SVGAnimatedLength
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/x) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/x)
+     */
     val x: SVGAnimatedLength
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/y) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/y)
+     */
     val y: SVGAnimatedLength
 }

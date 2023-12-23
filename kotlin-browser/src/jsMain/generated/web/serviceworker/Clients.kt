@@ -8,16 +8,24 @@ import js.promise.Promise
 import web.url.URL
 
 sealed external class Clients {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/claim) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/claim)
+     */
     fun claim(): Promise<Void>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/get) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/get)
+     */
     operator fun get(id: String): Promise<Client?>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/matchAll) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/matchAll)
+     */
     fun <T : ClientQueryOptions> matchAll(options: T = definedExternally): Promise<ReadonlyArray<Client /* | WindowClient */>>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/openWindow) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/openWindow)
+     */
     fun openWindow(url: String): Promise<WindowClient?>
     fun openWindow(url: URL): Promise<WindowClient?>
 }

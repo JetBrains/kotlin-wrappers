@@ -20,21 +20,31 @@ external interface RTCTrackEventInit : EventInit {
     var transceiver: RTCRtpTransceiver
 }
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTrackEvent) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTrackEvent)
+ */
 open external class RTCTrackEvent(
     override val type: EventType<RTCTrackEvent>,
     init: RTCTrackEventInit,
 ) : Event {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTrackEvent/receiver) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTrackEvent/receiver)
+     */
     val receiver: RTCRtpReceiver
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTrackEvent/streams) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTrackEvent/streams)
+     */
     val streams: ReadonlyArray<MediaStream>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTrackEvent/track) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTrackEvent/track)
+     */
     val track: MediaStreamTrack
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTrackEvent/transceiver) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTrackEvent/transceiver)
+     */
     val transceiver: RTCRtpTransceiver
 
     companion object : RTCTrackEventTypes

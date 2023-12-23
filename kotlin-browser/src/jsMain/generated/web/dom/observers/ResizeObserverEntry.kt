@@ -6,18 +6,28 @@ import js.core.ReadonlyArray
 import web.dom.Element
 import web.geometry.DOMRectReadOnly
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry)
+ */
 sealed external class ResizeObserverEntry {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry/borderBoxSize) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry/borderBoxSize)
+     */
     val borderBoxSize: ReadonlyArray<ResizeObserverSize>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry/contentBoxSize) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry/contentBoxSize)
+     */
     val contentBoxSize: ReadonlyArray<ResizeObserverSize>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry/contentRect) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry/contentRect)
+     */
     val contentRect: DOMRectReadOnly
     val devicePixelContentBoxSize: ReadonlyArray<ResizeObserverSize>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry/target) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry/target)
+     */
     val target: Element
 }

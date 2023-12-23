@@ -3,7 +3,9 @@
 package web.canvas
 
 sealed external interface CanvasImageData {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/createImageData) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/createImageData)
+     */
     fun createImageData(
         sw: Number,
         sh: Number,
@@ -12,7 +14,9 @@ sealed external interface CanvasImageData {
 
     fun createImageData(imagedata: ImageData): ImageData
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/getImageData) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/getImageData)
+     */
     fun getImageData(
         sx: Number,
         sy: Number,
@@ -21,7 +25,9 @@ sealed external interface CanvasImageData {
         settings: ImageDataSettings = definedExternally,
     ): ImageData
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/putImageData) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/putImageData)
+     */
     fun putImageData(
         imagedata: ImageData,
         dx: Number,

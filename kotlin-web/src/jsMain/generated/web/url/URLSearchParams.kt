@@ -8,7 +8,9 @@ import js.core.ReadonlyArray
 import js.core.ReadonlyRecord
 import js.iterable.IterableIterator
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams)
+ */
 external class URLSearchParams(
     init: ReadonlyArray<JsTuple2<String, String>> = definedExternally,
 ) : MapLike<String, String> {
@@ -16,7 +18,9 @@ external class URLSearchParams(
     constructor(init: String)
     constructor(init: URLSearchParams)
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/size) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/size)
+     */
     val size: Int
 
     /**
@@ -73,7 +77,9 @@ external class URLSearchParams(
         value: String,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/sort) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/sort)
+     */
     fun sort()
 
     override fun entries(): IterableIterator<JsTuple2<String, String>>

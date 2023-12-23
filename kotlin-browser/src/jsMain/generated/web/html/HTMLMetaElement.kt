@@ -12,13 +12,19 @@ import web.cssom.MediaQuery
 open external class HTMLMetaElement
 protected constructor() :
     HTMLElement {
-    /** Gets or sets meta-information to associate with httpEquiv or name. */
+    /**
+     * Gets or sets meta-information to associate with httpEquiv or name.
+     */
     var content: String
 
-    /** Gets or sets information used to bind the value of a content attribute of a meta element to an HTTP response header. */
+    /**
+     * Gets or sets information used to bind the value of a content attribute of a meta element to an HTTP response header.
+     */
     var httpEquiv: String
     var media: MediaQuery
 
-    /** Sets or retrieves the value specified in the content attribute of the meta object. */
+    /**
+     * Sets or retrieves the value specified in the content attribute of the meta object.
+     */
     var name: String
 }

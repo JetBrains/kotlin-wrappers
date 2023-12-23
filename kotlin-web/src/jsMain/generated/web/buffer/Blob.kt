@@ -18,25 +18,37 @@ open external class Blob(
     blobParts: ReadonlyArray<BlobPart> = definedExternally,
     options: BlobPropertyBag = definedExternally,
 ) {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/size) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/size)
+     */
     val size: JsLong
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/type) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/type)
+     */
     val type: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/arrayBuffer) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/arrayBuffer)
+     */
     fun arrayBuffer(): Promise<ArrayBuffer>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/slice) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/slice)
+     */
     fun slice(
         start: Number = definedExternally,
         end: Number = definedExternally,
         contentType: String = definedExternally,
     ): Blob
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/stream) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/stream)
+     */
     fun stream(): ReadableStream<Uint8Array>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/text) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/text)
+     */
     fun text(): Promise<String>
 }

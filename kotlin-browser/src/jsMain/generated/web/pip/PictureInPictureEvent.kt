@@ -14,12 +14,16 @@ external interface PictureInPictureEventInit : EventInit {
     var pictureInPictureWindow: PictureInPictureWindow
 }
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PictureInPictureEvent) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PictureInPictureEvent)
+ */
 open external class PictureInPictureEvent(
     override val type: EventType<PictureInPictureEvent>,
     init: PictureInPictureEventInit,
 ) : Event {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PictureInPictureEvent/pictureInPictureWindow) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PictureInPictureEvent/pictureInPictureWindow)
+     */
     val pictureInPictureWindow: PictureInPictureWindow
 
     companion object

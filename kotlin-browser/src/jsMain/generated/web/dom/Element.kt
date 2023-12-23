@@ -41,7 +41,9 @@ abstract external class Element :
     NonDocumentTypeChildNode,
     ParentNode,
     Slottable {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/attributes) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/attributes)
+     */
     val attributes: NamedNodeMap
 
     /**
@@ -58,16 +60,24 @@ abstract external class Element :
      */
     var className: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/clientHeight) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/clientHeight)
+     */
     val clientHeight: Int
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/clientLeft) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/clientLeft)
+     */
     val clientLeft: Int
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/clientTop) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/clientTop)
+     */
     val clientTop: Int
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/clientWidth) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/clientWidth)
+     */
     val clientWidth: Int
 
     /**
@@ -91,17 +101,25 @@ abstract external class Element :
      */
     val namespaceURI: String?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/fullscreenchange_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/fullscreenchange_event)
+     */
     var onfullscreenchange: EventHandler<Event>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/fullscreenerror_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/fullscreenerror_event)
+     */
     var onfullscreenerror: EventHandler<Event>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/outerHTML) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/outerHTML)
+     */
     var outerHTML: String
     override val ownerDocument: Document
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/part) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/part)
+     */
     val part: DOMTokenList
 
     /**
@@ -111,16 +129,24 @@ abstract external class Element :
      */
     val prefix: String?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/scrollHeight) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/scrollHeight)
+     */
     val scrollHeight: Int
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/scrollLeft) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/scrollLeft)
+     */
     var scrollLeft: Double
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/scrollTop) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/scrollTop)
+     */
     var scrollTop: Double
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/scrollWidth) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/scrollWidth)
+     */
     val scrollWidth: Int
 
     /**
@@ -162,7 +188,9 @@ abstract external class Element :
     fun <T : MathMLElement> closest(selector: MathMLTagName<T>): T?
     fun closest(selector: String): Element?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/computedStyleMap) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/computedStyleMap)
+     */
     fun computedStyleMap(): StylePropertyMapReadOnly
 
     /**
@@ -189,19 +217,27 @@ abstract external class Element :
      */
     fun getAttributeNames(): ReadonlyArray<String>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getAttributeNode) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getAttributeNode)
+     */
     fun getAttributeNode(qualifiedName: String): Attr?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getAttributeNodeNS) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getAttributeNodeNS)
+     */
     fun getAttributeNodeNS(
         namespace: String?,
         localName: String,
     ): Attr?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getBoundingClientRect) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getBoundingClientRect)
+     */
     fun getBoundingClientRect(): DOMRect
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getClientRects) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getClientRects)
+     */
     fun getClientRects(): DOMRectList
 
     /**
@@ -211,7 +247,9 @@ abstract external class Element :
      */
     fun getElementsByClassName(classNames: String): HTMLCollectionOf<Element>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getElementsByTagName) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getElementsByTagName)
+     */
     fun <T : HTMLElement> getElementsByTagName(qualifiedName: HtmlTagName<T>): HTMLCollectionOf<T>
     fun <T : SVGElement> getElementsByTagName(qualifiedName: SvgTagName<T>): HTMLCollectionOf<T>
     fun <T : MathMLElement> getElementsByTagName(qualifiedName: MathMLTagName<T>): HTMLCollectionOf<T>
@@ -255,22 +293,30 @@ abstract external class Element :
      */
     fun hasAttributes(): Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/hasPointerCapture) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/hasPointerCapture)
+     */
     fun hasPointerCapture(pointerId: Number): Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/insertAdjacentElement) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/insertAdjacentElement)
+     */
     fun insertAdjacentElement(
         where: InsertPosition,
         element: Element,
     ): Element?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/insertAdjacentHTML) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/insertAdjacentHTML)
+     */
     fun insertAdjacentHTML(
         position: InsertPosition,
         text: String,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/insertAdjacentText) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/insertAdjacentText)
+     */
     fun insertAdjacentText(
         where: InsertPosition,
         data: String,
@@ -283,7 +329,9 @@ abstract external class Element :
      */
     fun matches(selectors: String): Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/releasePointerCapture) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/releasePointerCapture)
+     */
     fun releasePointerCapture(pointerId: Number)
 
     /**
@@ -303,7 +351,9 @@ abstract external class Element :
         localName: String,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/removeAttributeNode) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/removeAttributeNode)
+     */
     fun removeAttributeNode(attr: Attr): Attr
 
     /**
@@ -315,27 +365,37 @@ abstract external class Element :
      */
     fun requestFullscreen(options: FullscreenOptions = definedExternally): Promise<Void>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/requestPointerLock) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/requestPointerLock)
+     */
     fun requestPointerLock()
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/scroll) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/scroll)
+     */
     fun scroll(options: ScrollToOptions = definedExternally)
     fun scroll(
         x: Number,
         y: Number,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/scrollBy) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/scrollBy)
+     */
     fun scrollBy(options: ScrollToOptions = definedExternally)
     fun scrollBy(
         x: Number,
         y: Number,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/scrollIntoView) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/scrollIntoView)
+     */
     fun scrollIntoView(options: ScrollIntoViewOptions = definedExternally)
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/scrollTo) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/scrollTo)
+     */
     fun scrollTo(options: ScrollToOptions = definedExternally)
     fun scrollTo(
         x: Number,
@@ -363,13 +423,19 @@ abstract external class Element :
         value: String,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/setAttributeNode) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/setAttributeNode)
+     */
     fun setAttributeNode(attr: Attr): Attr?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/setAttributeNodeNS) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/setAttributeNodeNS)
+     */
     fun setAttributeNodeNS(attr: Attr): Attr?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/setPointerCapture) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/setPointerCapture)
+     */
     fun setPointerCapture(pointerId: Number)
 
     /**

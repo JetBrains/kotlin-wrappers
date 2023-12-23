@@ -12,9 +12,13 @@ import js.core.Void
 external class CountQueuingStrategy(
     init: QueuingStrategyInit,
 ) : QueuingStrategy<Void> {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CountQueuingStrategy/highWaterMark) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CountQueuingStrategy/highWaterMark)
+     */
     override val highWaterMark: Int
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CountQueuingStrategy/size) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CountQueuingStrategy/size)
+     */
     override val size: QueuingStrategySize<Void>
 }

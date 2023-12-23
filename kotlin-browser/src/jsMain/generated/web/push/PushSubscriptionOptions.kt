@@ -10,9 +10,13 @@ import js.buffer.ArrayBuffer
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushSubscriptionOptions)
  */
 sealed external class PushSubscriptionOptions {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushSubscriptionOptions/applicationServerKey) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushSubscriptionOptions/applicationServerKey)
+     */
     val applicationServerKey: ArrayBuffer?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushSubscriptionOptions/userVisibleOnly) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushSubscriptionOptions/userVisibleOnly)
+     */
     val userVisibleOnly: Boolean
 }

@@ -10,6 +10,8 @@ package web.html
 open external class HTMLLegendElement
 protected constructor() :
     HTMLElement {
-    /** Retrieves a reference to the form that the object is embedded in. */
+    /**
+     * Retrieves a reference to the form that the object is embedded in.
+     */
     val form: HTMLFormElement?
 }

@@ -4,11 +4,15 @@
 
 package web.assembly
 
-/** [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/Instance) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/Instance)
+ */
 external class Instance(
     module: Module,
     importObject: Imports = definedExternally,
 ) {
-    /** [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/Instance/exports) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/Instance/exports)
+     */
     val exports: Exports
 }

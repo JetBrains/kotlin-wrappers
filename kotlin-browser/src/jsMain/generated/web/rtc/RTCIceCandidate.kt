@@ -10,48 +10,78 @@ package web.rtc
 external class RTCIceCandidate(
     init: RTCIceCandidateInit = definedExternally,
 ) {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/address) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/address)
+     */
     val address: String?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/candidate) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/candidate)
+     */
     val candidate: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/component) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/component)
+     */
     val component: RTCIceComponent?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/foundation) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/foundation)
+     */
     val foundation: String?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/port) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/port)
+     */
     val port: Int?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/priority) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/priority)
+     */
     val priority: Int?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/protocol) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/protocol)
+     */
     val protocol: RTCIceProtocol?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/relatedAddress) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/relatedAddress)
+     */
     val relatedAddress: String?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/relatedPort) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/relatedPort)
+     */
     val relatedPort: Number?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/sdpMLineIndex) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/sdpMLineIndex)
+     */
     val sdpMLineIndex: Number?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/sdpMid) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/sdpMid)
+     */
     val sdpMid: String?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/tcpType) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/tcpType)
+     */
     val tcpType: RTCIceTcpCandidateType?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/type) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/type)
+     */
     val type: RTCIceCandidateType?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/usernameFragment) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/usernameFragment)
+     */
     val usernameFragment: String?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/toJSON) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/toJSON)
+     */
     fun toJSON(): RTCIceCandidateInit
 }

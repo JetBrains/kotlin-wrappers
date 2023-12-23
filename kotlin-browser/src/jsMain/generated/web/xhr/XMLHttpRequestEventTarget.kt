@@ -6,7 +6,9 @@ import web.events.EventHandler
 import web.events.EventTarget
 import web.events.ProgressEvent
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequestEventTarget) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequestEventTarget)
+ */
 sealed external class XMLHttpRequestEventTarget :
     EventTarget {
     var onabort: EventHandler<ProgressEvent<*>>?

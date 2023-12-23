@@ -9,16 +9,22 @@ package web.xpath
 import web.dom.Node
 
 external interface XPathEvaluatorBase {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createExpression) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createExpression)
+     */
     fun createExpression(
         expression: String,
         resolver: XPathNSResolver? = definedExternally,
     ): XPathExpression = definedExternally
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createNSResolver) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createNSResolver)
+     */
     fun createNSResolver(nodeResolver: Node): Node = definedExternally
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/evaluate) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/evaluate)
+     */
     fun evaluate(
         expression: String,
         contextNode: Node,

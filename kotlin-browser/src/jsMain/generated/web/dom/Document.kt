@@ -159,7 +159,9 @@ open external class Document :
      */
     val head: HTMLHeadElement
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/hidden) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/hidden)
+     */
     val hidden: Boolean
 
     /**
@@ -190,16 +192,24 @@ open external class Document :
      */
     val links: HTMLCollectionOf<HTMLElement /* HTMLAnchorElement | HTMLAreaElement */>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/fullscreenchange_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/fullscreenchange_event)
+     */
     var onfullscreenchange: EventHandler<Event>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/fullscreenerror_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/fullscreenerror_event)
+     */
     var onfullscreenerror: EventHandler<Event>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pointerlockchange_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pointerlockchange_event)
+     */
     var onpointerlockchange: EventHandler<Event>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pointerlockerror_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pointerlockerror_event)
+     */
     var onpointerlockerror: EventHandler<Event>?
 
     /**
@@ -210,11 +220,15 @@ open external class Document :
      */
     var onreadystatechange: EventHandler<Event>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/visibilitychange_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/visibilitychange_event)
+     */
     var onvisibilitychange: EventHandler<Event>?
     override val ownerDocument: Void
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pictureInPictureEnabled) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pictureInPictureEnabled)
+     */
     val pictureInPictureEnabled: Boolean
 
     /**
@@ -245,10 +259,14 @@ open external class Document :
      */
     val scripts: HTMLCollectionOf<HTMLScriptElement>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/scrollingElement) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/scrollingElement)
+     */
     val scrollingElement: Element?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/timeline) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/timeline)
+     */
     val timeline: DocumentTimeline
 
     /**
@@ -258,7 +276,9 @@ open external class Document :
      */
     var title: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/visibilityState) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/visibilityState)
+     */
     val visibilityState: DocumentVisibilityState
 
     /**
@@ -285,7 +305,9 @@ open external class Document :
      */
     fun createAttribute(localName: String): Attr
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createAttributeNS) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createAttributeNS)
+     */
     fun createAttributeNS(
         namespace: String?,
         qualifiedName: String,
@@ -411,10 +433,14 @@ open external class Document :
      */
     fun exitFullscreen(): Promise<Void>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/exitPictureInPicture) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/exitPictureInPicture)
+     */
     fun exitPictureInPicture(): Promise<Void>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/exitPointerLock) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/exitPointerLock)
+     */
     fun exitPointerLock()
 
     /**
@@ -477,7 +503,9 @@ open external class Document :
      */
     fun hasFocus(): Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/hasStorageAccess) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/hasStorageAccess)
+     */
     fun hasStorageAccess(): Promise<Boolean>
 
     /**
@@ -518,7 +546,9 @@ open external class Document :
         features: String,
     ): WindowProxy?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/requestStorageAccess) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/requestStorageAccess)
+     */
     fun requestStorageAccess(): Promise<Void>
 
     /**

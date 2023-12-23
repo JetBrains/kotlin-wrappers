@@ -10,36 +10,58 @@ import js.core.JsLong
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TreeWalker)
  */
 sealed external class TreeWalker {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/TreeWalker/currentNode) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TreeWalker/currentNode)
+     */
     var currentNode: Node
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/TreeWalker/filter) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TreeWalker/filter)
+     */
     val filter: NodeFilter?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/TreeWalker/root) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TreeWalker/root)
+     */
     val root: Node
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/TreeWalker/whatToShow) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TreeWalker/whatToShow)
+     */
     val whatToShow: JsLong
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/TreeWalker/firstChild) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TreeWalker/firstChild)
+     */
     fun firstChild(): Node?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/TreeWalker/lastChild) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TreeWalker/lastChild)
+     */
     fun lastChild(): Node?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/TreeWalker/nextNode) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TreeWalker/nextNode)
+     */
     fun nextNode(): Node?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/TreeWalker/nextSibling) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TreeWalker/nextSibling)
+     */
     fun nextSibling(): Node?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/TreeWalker/parentNode) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TreeWalker/parentNode)
+     */
     fun parentNode(): Node?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/TreeWalker/previousNode) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TreeWalker/previousNode)
+     */
     fun previousNode(): Node?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/TreeWalker/previousSibling) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TreeWalker/previousSibling)
+     */
     fun previousSibling(): Node?
 }

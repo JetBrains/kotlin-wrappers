@@ -17,10 +17,14 @@ sealed external class MessagePort :
     EventTarget,
     MessageEventSource,
     Transferable {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/message_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/message_event)
+     */
     var onmessage: EventHandler<MessageEvent<*>>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/messageerror_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/messageerror_event)
+     */
     var onmessageerror: EventHandler<MessageEvent<*>>?
 
     /**

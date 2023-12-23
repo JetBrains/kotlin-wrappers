@@ -8,19 +8,29 @@ import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport)
+ */
 sealed external class RTCDtlsTransport :
     EventTarget {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/iceTransport) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/iceTransport)
+     */
     val iceTransport: RTCIceTransport
     var onerror: EventHandler<Event>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/statechange_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/statechange_event)
+     */
     var onstatechange: EventHandler<Event>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/state) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/state)
+     */
     val state: RTCDtlsTransportState
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/getRemoteCertificates) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/getRemoteCertificates)
+     */
     fun getRemoteCertificates(): ReadonlyArray<ArrayBuffer>
 }

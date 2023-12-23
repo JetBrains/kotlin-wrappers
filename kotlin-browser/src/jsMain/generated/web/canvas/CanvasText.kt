@@ -3,7 +3,9 @@
 package web.canvas
 
 sealed external interface CanvasText {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fillText) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fillText)
+     */
     fun fillText(
         text: String,
         x: Number,
@@ -11,10 +13,14 @@ sealed external interface CanvasText {
         maxWidth: Number = definedExternally,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/measureText) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/measureText)
+     */
     fun measureText(text: String): TextMetrics
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/strokeText) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/strokeText)
+     */
     fun strokeText(
         text: String,
         x: Number,

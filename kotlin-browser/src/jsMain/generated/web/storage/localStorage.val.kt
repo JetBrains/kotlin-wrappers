@@ -2,5 +2,7 @@
 
 package web.storage
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/localStorage) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/localStorage)
+ */
 external val localStorage: Storage

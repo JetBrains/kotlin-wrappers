@@ -2,5 +2,7 @@
 
 package web.device
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/devicePixelRatio) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/devicePixelRatio)
+ */
 external val devicePixelRatio: Double

@@ -6,23 +6,31 @@ import js.buffer.ArrayBufferView
 import js.core.ReadonlyArray
 
 sealed external interface WebGL2RenderingContextBase {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/beginQuery) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/beginQuery)
+     */
     fun beginQuery(
         target: GLenum,
         query: WebGLQuery,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/beginTransformFeedback) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/beginTransformFeedback)
+     */
     fun beginTransformFeedback(primitiveMode: GLenum)
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bindBufferBase) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bindBufferBase)
+     */
     fun bindBufferBase(
         target: GLenum,
         index: GLuint,
         buffer: WebGLBuffer?,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bindBufferRange) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bindBufferRange)
+     */
     fun bindBufferRange(
         target: GLenum,
         index: GLuint,
@@ -31,22 +39,30 @@ sealed external interface WebGL2RenderingContextBase {
         size: GLsizeiptr,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bindSampler) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bindSampler)
+     */
     fun bindSampler(
         unit: GLuint,
         sampler: WebGLSampler?,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bindTransformFeedback) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bindTransformFeedback)
+     */
     fun bindTransformFeedback(
         target: GLenum,
         tf: WebGLTransformFeedback?,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bindVertexArray) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bindVertexArray)
+     */
     fun bindVertexArray(array: WebGLVertexArrayObject?)
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/blitFramebuffer) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/blitFramebuffer)
+     */
     fun blitFramebuffer(
         srcX0: GLint,
         srcY0: GLint,
@@ -60,7 +76,9 @@ sealed external interface WebGL2RenderingContextBase {
         filter: GLenum,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/clearBuffer) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/clearBuffer)
+     */
     fun clearBufferfi(
         buffer: GLenum,
         drawbuffer: GLint,
@@ -68,7 +86,9 @@ sealed external interface WebGL2RenderingContextBase {
         stencil: GLint,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/clearBuffer) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/clearBuffer)
+     */
     fun clearBufferfv(
         buffer: GLenum,
         drawbuffer: GLint,
@@ -76,7 +96,9 @@ sealed external interface WebGL2RenderingContextBase {
         srcOffset: Int /* GLuint */?,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/clearBuffer) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/clearBuffer)
+     */
     fun clearBufferiv(
         buffer: GLenum,
         drawbuffer: GLint,
@@ -84,7 +106,9 @@ sealed external interface WebGL2RenderingContextBase {
         srcOffset: Int /* GLuint */?,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/clearBuffer) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/clearBuffer)
+     */
     fun clearBufferuiv(
         buffer: GLenum,
         drawbuffer: GLint,
@@ -92,14 +116,18 @@ sealed external interface WebGL2RenderingContextBase {
         srcOffset: Int /* GLuint */?,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/clientWaitSync) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/clientWaitSync)
+     */
     fun clientWaitSync(
         sync: WebGLSync,
         flags: GLbitfield,
         timeout: GLuint64,
     ): GLenum
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/compressedTexImage3D) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/compressedTexImage3D)
+     */
     fun compressedTexImage3D(
         target: GLenum,
         level: GLint,
@@ -125,7 +153,9 @@ sealed external interface WebGL2RenderingContextBase {
         srcLengthOverride: GLuint?,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/compressedTexSubImage3D) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/compressedTexSubImage3D)
+     */
     fun compressedTexSubImage3D(
         target: GLenum,
         level: GLint,
@@ -155,7 +185,9 @@ sealed external interface WebGL2RenderingContextBase {
         srcLengthOverride: GLuint?,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/copyBufferSubData) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/copyBufferSubData)
+     */
     fun copyBufferSubData(
         readTarget: GLenum,
         writeTarget: GLenum,
@@ -164,7 +196,9 @@ sealed external interface WebGL2RenderingContextBase {
         size: GLsizeiptr,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/copyTexSubImage3D) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/copyTexSubImage3D)
+     */
     fun copyTexSubImage3D(
         target: GLenum,
         level: GLint,
@@ -177,34 +211,54 @@ sealed external interface WebGL2RenderingContextBase {
         height: GLsizei,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/createQuery) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/createQuery)
+     */
     fun createQuery(): WebGLQuery?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/createSampler) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/createSampler)
+     */
     fun createSampler(): WebGLSampler?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/createTransformFeedback) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/createTransformFeedback)
+     */
     fun createTransformFeedback(): WebGLTransformFeedback?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/createVertexArray) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/createVertexArray)
+     */
     fun createVertexArray(): WebGLVertexArrayObject?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/deleteQuery) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/deleteQuery)
+     */
     fun deleteQuery(query: WebGLQuery?)
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/deleteSampler) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/deleteSampler)
+     */
     fun deleteSampler(sampler: WebGLSampler?)
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/deleteSync) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/deleteSync)
+     */
     fun deleteSync(sync: WebGLSync?)
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/deleteTransformFeedback) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/deleteTransformFeedback)
+     */
     fun deleteTransformFeedback(tf: WebGLTransformFeedback?)
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/deleteVertexArray) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/deleteVertexArray)
+     */
     fun deleteVertexArray(vertexArray: WebGLVertexArrayObject?)
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/drawArraysInstanced) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/drawArraysInstanced)
+     */
     fun drawArraysInstanced(
         mode: GLenum,
         first: GLint,
@@ -212,10 +266,14 @@ sealed external interface WebGL2RenderingContextBase {
         instanceCount: GLsizei,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/drawBuffers) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/drawBuffers)
+     */
     fun drawBuffers(buffers: ReadonlyArray<GLenum>)
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/drawElementsInstanced) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/drawElementsInstanced)
+     */
     fun drawElementsInstanced(
         mode: GLenum,
         count: GLsizei,
@@ -224,7 +282,9 @@ sealed external interface WebGL2RenderingContextBase {
         instanceCount: GLsizei,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/drawRangeElements) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/drawRangeElements)
+     */
     fun drawRangeElements(
         mode: GLenum,
         start: GLuint,
@@ -234,19 +294,27 @@ sealed external interface WebGL2RenderingContextBase {
         offset: GLintptr,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/endQuery) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/endQuery)
+     */
     fun endQuery(target: GLenum)
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/endTransformFeedback) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/endTransformFeedback)
+     */
     fun endTransformFeedback()
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/fenceSync) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/fenceSync)
+     */
     fun fenceSync(
         condition: GLenum,
         flags: GLbitfield,
     ): WebGLSync?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/framebufferTextureLayer) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/framebufferTextureLayer)
+     */
     fun framebufferTextureLayer(
         target: GLenum,
         attachment: GLenum,
@@ -255,27 +323,35 @@ sealed external interface WebGL2RenderingContextBase {
         layer: GLint,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getActiveUniformBlockName) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getActiveUniformBlockName)
+     */
     fun getActiveUniformBlockName(
         program: WebGLProgram,
         uniformBlockIndex: GLuint,
     ): String?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getActiveUniformBlockParameter) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getActiveUniformBlockParameter)
+     */
     fun getActiveUniformBlockParameter(
         program: WebGLProgram,
         uniformBlockIndex: GLuint,
         pname: GLenum,
     ): Any?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getActiveUniforms) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getActiveUniforms)
+     */
     fun getActiveUniforms(
         program: WebGLProgram,
         uniformIndices: ReadonlyArray<GLuint>,
         pname: GLenum,
     ): Any?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getBufferSubData) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getBufferSubData)
+     */
     fun getBufferSubData(
         target: GLenum,
         srcByteOffset: GLintptr,
@@ -284,74 +360,98 @@ sealed external interface WebGL2RenderingContextBase {
         length: GLuint?,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getFragDataLocation) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getFragDataLocation)
+     */
     fun getFragDataLocation(
         program: WebGLProgram,
         name: String,
     ): GLint
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getIndexedParameter) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getIndexedParameter)
+     */
     fun getIndexedParameter(
         target: GLenum,
         index: GLuint,
     ): Any?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getInternalformatParameter) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getInternalformatParameter)
+     */
     fun getInternalformatParameter(
         target: GLenum,
         internalformat: GLenum,
         pname: GLenum,
     ): Any?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getQuery) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getQuery)
+     */
     fun getQuery(
         target: GLenum,
         pname: GLenum,
     ): WebGLQuery?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getQueryParameter) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getQueryParameter)
+     */
     fun getQueryParameter(
         query: WebGLQuery,
         pname: GLenum,
     ): Any?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getSamplerParameter) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getSamplerParameter)
+     */
     fun getSamplerParameter(
         sampler: WebGLSampler,
         pname: GLenum,
     ): Any?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getSyncParameter) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getSyncParameter)
+     */
     fun getSyncParameter(
         sync: WebGLSync,
         pname: GLenum,
     ): Any?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getTransformFeedbackVarying) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getTransformFeedbackVarying)
+     */
     fun getTransformFeedbackVarying(
         program: WebGLProgram,
         index: GLuint,
     ): WebGLActiveInfo?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getUniformBlockIndex) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getUniformBlockIndex)
+     */
     fun getUniformBlockIndex(
         program: WebGLProgram,
         uniformBlockName: String,
     ): GLuint
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getUniformIndices) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getUniformIndices)
+     */
     fun getUniformIndices(
         program: WebGLProgram,
         uniformNames: ReadonlyArray<String>,
     ): ReadonlyArray<GLuint>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/invalidateFramebuffer) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/invalidateFramebuffer)
+     */
     fun invalidateFramebuffer(
         target: GLenum,
         attachments: ReadonlyArray<GLenum>,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/invalidateSubFramebuffer) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/invalidateSubFramebuffer)
+     */
     fun invalidateSubFramebuffer(
         target: GLenum,
         attachments: ReadonlyArray<GLenum>,
@@ -361,28 +461,44 @@ sealed external interface WebGL2RenderingContextBase {
         height: GLsizei,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/isQuery) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/isQuery)
+     */
     fun isQuery(query: WebGLQuery?): GLboolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/isSampler) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/isSampler)
+     */
     fun isSampler(sampler: WebGLSampler?): GLboolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/isSync) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/isSync)
+     */
     fun isSync(sync: WebGLSync?): GLboolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/isTransformFeedback) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/isTransformFeedback)
+     */
     fun isTransformFeedback(tf: WebGLTransformFeedback?): GLboolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/isVertexArray) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/isVertexArray)
+     */
     fun isVertexArray(vertexArray: WebGLVertexArrayObject?): GLboolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/pauseTransformFeedback) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/pauseTransformFeedback)
+     */
     fun pauseTransformFeedback()
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/readBuffer) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/readBuffer)
+     */
     fun readBuffer(src: GLenum)
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/renderbufferStorageMultisample) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/renderbufferStorageMultisample)
+     */
     fun renderbufferStorageMultisample(
         target: GLenum,
         samples: GLsizei,
@@ -391,24 +507,32 @@ sealed external interface WebGL2RenderingContextBase {
         height: GLsizei,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/resumeTransformFeedback) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/resumeTransformFeedback)
+     */
     fun resumeTransformFeedback()
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/samplerParameter) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/samplerParameter)
+     */
     fun samplerParameterf(
         sampler: WebGLSampler,
         pname: GLenum,
         param: GLfloat,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/samplerParameter) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/samplerParameter)
+     */
     fun samplerParameteri(
         sampler: WebGLSampler,
         pname: GLenum,
         param: GLint,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/texImage3D) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/texImage3D)
+     */
     fun texImage3D(
         target: GLenum,
         level: GLint,
@@ -462,7 +586,9 @@ sealed external interface WebGL2RenderingContextBase {
         srcOffset: Int, /* GLuint */
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/texStorage2D) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/texStorage2D)
+     */
     fun texStorage2D(
         target: GLenum,
         levels: GLsizei,
@@ -471,7 +597,9 @@ sealed external interface WebGL2RenderingContextBase {
         height: GLsizei,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/texStorage3D) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/texStorage3D)
+     */
     fun texStorage3D(
         target: GLenum,
         levels: GLsizei,
@@ -481,7 +609,9 @@ sealed external interface WebGL2RenderingContextBase {
         depth: GLsizei,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/texSubImage3D) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/texSubImage3D)
+     */
     fun texSubImage3D(
         target: GLenum,
         level: GLint,
@@ -525,20 +655,26 @@ sealed external interface WebGL2RenderingContextBase {
         srcOffset: Int /* GLuint */?,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/transformFeedbackVaryings) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/transformFeedbackVaryings)
+     */
     fun transformFeedbackVaryings(
         program: WebGLProgram,
         varyings: ReadonlyArray<String>,
         bufferMode: GLenum,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
+     */
     fun uniform1ui(
         location: WebGLUniformLocation?,
         v0: GLuint,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
+     */
     fun uniform1uiv(
         location: WebGLUniformLocation?,
         data: Uint32List,
@@ -546,14 +682,18 @@ sealed external interface WebGL2RenderingContextBase {
         srcLength: GLuint?,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
+     */
     fun uniform2ui(
         location: WebGLUniformLocation?,
         v0: GLuint,
         v1: GLuint,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
+     */
     fun uniform2uiv(
         location: WebGLUniformLocation?,
         data: Uint32List,
@@ -561,7 +701,9 @@ sealed external interface WebGL2RenderingContextBase {
         srcLength: GLuint?,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
+     */
     fun uniform3ui(
         location: WebGLUniformLocation?,
         v0: GLuint,
@@ -569,7 +711,9 @@ sealed external interface WebGL2RenderingContextBase {
         v2: GLuint,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
+     */
     fun uniform3uiv(
         location: WebGLUniformLocation?,
         data: Uint32List,
@@ -577,7 +721,9 @@ sealed external interface WebGL2RenderingContextBase {
         srcLength: GLuint?,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
+     */
     fun uniform4ui(
         location: WebGLUniformLocation?,
         v0: GLuint,
@@ -586,7 +732,9 @@ sealed external interface WebGL2RenderingContextBase {
         v3: GLuint,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
+     */
     fun uniform4uiv(
         location: WebGLUniformLocation?,
         data: Uint32List,
@@ -594,14 +742,18 @@ sealed external interface WebGL2RenderingContextBase {
         srcLength: GLuint?,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformBlockBinding) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformBlockBinding)
+     */
     fun uniformBlockBinding(
         program: WebGLProgram,
         uniformBlockIndex: GLuint,
         uniformBlockBinding: GLuint,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
+     */
     fun uniformMatrix2x3fv(
         location: WebGLUniformLocation?,
         transpose: GLboolean,
@@ -610,7 +762,9 @@ sealed external interface WebGL2RenderingContextBase {
         srcLength: GLuint?,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
+     */
     fun uniformMatrix2x4fv(
         location: WebGLUniformLocation?,
         transpose: GLboolean,
@@ -619,7 +773,9 @@ sealed external interface WebGL2RenderingContextBase {
         srcLength: GLuint?,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
+     */
     fun uniformMatrix3x2fv(
         location: WebGLUniformLocation?,
         transpose: GLboolean,
@@ -628,7 +784,9 @@ sealed external interface WebGL2RenderingContextBase {
         srcLength: GLuint?,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
+     */
     fun uniformMatrix3x4fv(
         location: WebGLUniformLocation?,
         transpose: GLboolean,
@@ -637,7 +795,9 @@ sealed external interface WebGL2RenderingContextBase {
         srcLength: GLuint?,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
+     */
     fun uniformMatrix4x2fv(
         location: WebGLUniformLocation?,
         transpose: GLboolean,
@@ -646,7 +806,9 @@ sealed external interface WebGL2RenderingContextBase {
         srcLength: GLuint?,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
+     */
     fun uniformMatrix4x3fv(
         location: WebGLUniformLocation?,
         transpose: GLboolean,
@@ -655,13 +817,17 @@ sealed external interface WebGL2RenderingContextBase {
         srcLength: GLuint?,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/vertexAttribDivisor) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/vertexAttribDivisor)
+     */
     fun vertexAttribDivisor(
         index: GLuint,
         divisor: GLuint,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/vertexAttribI) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/vertexAttribI)
+     */
     fun vertexAttribI4i(
         index: GLuint,
         x: GLint,
@@ -670,13 +836,17 @@ sealed external interface WebGL2RenderingContextBase {
         w: GLint,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/vertexAttribI) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/vertexAttribI)
+     */
     fun vertexAttribI4iv(
         index: GLuint,
         values: Int32List,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/vertexAttribI) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/vertexAttribI)
+     */
     fun vertexAttribI4ui(
         index: GLuint,
         x: GLuint,
@@ -685,13 +855,17 @@ sealed external interface WebGL2RenderingContextBase {
         w: GLuint,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/vertexAttribI) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/vertexAttribI)
+     */
     fun vertexAttribI4uiv(
         index: GLuint,
         values: Uint32List,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/vertexAttribIPointer) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/vertexAttribIPointer)
+     */
     fun vertexAttribIPointer(
         index: GLuint,
         size: GLint,
@@ -700,7 +874,9 @@ sealed external interface WebGL2RenderingContextBase {
         offset: GLintptr,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/waitSync) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/waitSync)
+     */
     fun waitSync(
         sync: WebGLSync,
         flags: GLbitfield,

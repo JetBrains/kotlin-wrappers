@@ -10,18 +10,28 @@ import js.core.DOMHighResTimeStamp
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEntry)
  */
 sealed external class PerformanceEntry {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEntry/duration) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEntry/duration)
+     */
     val duration: DOMHighResTimeStamp
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEntry/entryType) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEntry/entryType)
+     */
     val entryType: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEntry/name) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEntry/name)
+     */
     val name: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEntry/startTime) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEntry/startTime)
+     */
     val startTime: DOMHighResTimeStamp
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEntry/toJSON) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEntry/toJSON)
+     */
     open fun toJSON(): Any
 }

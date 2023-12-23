@@ -15,7 +15,9 @@ external interface FormDataEventInit : EventInit {
     var formData: FormData
 }
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormDataEvent) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormDataEvent)
+ */
 open external class FormDataEvent(
     override val type: EventType<FormDataEvent>,
     init: FormDataEventInit,

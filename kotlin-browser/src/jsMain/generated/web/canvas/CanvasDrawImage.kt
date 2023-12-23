@@ -3,7 +3,9 @@
 package web.canvas
 
 sealed external interface CanvasDrawImage {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/drawImage) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/drawImage)
+     */
     fun drawImage(
         image: CanvasImageSource,
         dx: Number,

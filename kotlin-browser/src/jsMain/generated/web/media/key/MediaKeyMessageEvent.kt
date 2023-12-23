@@ -26,10 +26,14 @@ open external class MediaKeyMessageEvent(
     override val type: EventType<MediaKeyMessageEvent>,
     init: MediaKeyMessageEventInit,
 ) : Event {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyMessageEvent/message) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyMessageEvent/message)
+     */
     val message: ArrayBuffer
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyMessageEvent/messageType) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyMessageEvent/messageType)
+     */
     val messageType: MediaKeyMessageType
 
     companion object : MediaKeyMessageEventTypes

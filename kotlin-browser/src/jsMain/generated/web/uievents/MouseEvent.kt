@@ -31,70 +31,114 @@ open external class MouseEvent(
     override val type: EventType<MouseEvent>,
     init: MouseEventInit = definedExternally,
 ) : UIEvent {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/altKey) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/altKey)
+     */
     val altKey: Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/button) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/button)
+     */
     val button: Short
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/buttons) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/buttons)
+     */
     val buttons: Short
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/clientX) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/clientX)
+     */
     val clientX: Int
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/clientY) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/clientY)
+     */
     val clientY: Int
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/ctrlKey) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/ctrlKey)
+     */
     val ctrlKey: Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/layerX) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/layerX)
+     */
     val layerX: Int
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/layerY) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/layerY)
+     */
     val layerY: Int
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/metaKey) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/metaKey)
+     */
     val metaKey: Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/movementX) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/movementX)
+     */
     val movementX: Double
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/movementY) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/movementY)
+     */
     val movementY: Double
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/offsetX) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/offsetX)
+     */
     val offsetX: Double
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/offsetY) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/offsetY)
+     */
     val offsetY: Double
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/pageX) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/pageX)
+     */
     val pageX: Double
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/pageY) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/pageY)
+     */
     val pageY: Double
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/relatedTarget) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/relatedTarget)
+     */
     val relatedTarget: EventTarget?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/screenX) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/screenX)
+     */
     val screenX: Int
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/screenY) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/screenY)
+     */
     val screenY: Int
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/shiftKey) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/shiftKey)
+     */
     val shiftKey: Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/x) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/x)
+     */
     val x: Double
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/y) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/y)
+     */
     val y: Double
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/getModifierState) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/getModifierState)
+     */
     fun getModifierState(keyArg: ModifierKeyCode): Boolean
 
     companion object : MouseEventTypes

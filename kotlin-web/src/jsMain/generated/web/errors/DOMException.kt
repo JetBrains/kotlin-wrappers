@@ -15,10 +15,14 @@ open external class DOMException(
     message: String = definedExternally,
     name: JsErrorName = definedExternally,
 ) : JsError {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMException/message) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMException/message)
+     */
     override val message: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMException/name) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMException/name)
+     */
     val name: JsErrorName
 
     companion object {

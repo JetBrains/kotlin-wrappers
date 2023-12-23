@@ -24,7 +24,9 @@ open external class RTCPeerConnectionIceEvent(
     override val type: EventType<RTCPeerConnectionIceEvent>,
     init: RTCPeerConnectionIceEventInit = definedExternally,
 ) : Event {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnectionIceEvent/candidate) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnectionIceEvent/candidate)
+     */
     val candidate: RTCIceCandidate?
 
     companion object : RTCPeerConnectionIceEventTypes

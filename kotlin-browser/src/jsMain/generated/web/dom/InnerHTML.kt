@@ -7,7 +7,9 @@
 package web.dom
 
 external interface InnerHTML {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/innerHTML) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/innerHTML)
+     */
     var innerHTML: String
         get() = definedExternally
         set(value) = definedExternally

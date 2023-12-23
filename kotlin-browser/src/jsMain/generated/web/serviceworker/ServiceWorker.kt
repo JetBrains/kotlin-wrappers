@@ -21,16 +21,24 @@ sealed external class ServiceWorker :
     EventTarget,
     AbstractWorker,
     MessageEventSource {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/statechange_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/statechange_event)
+     */
     var onstatechange: EventHandler<Event>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/scriptURL) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/scriptURL)
+     */
     val scriptURL: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/state) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/state)
+     */
     val state: ServiceWorkerState
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/postMessage) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/postMessage)
+     */
     fun postMessage(
         message: Any?,
         transfer: ReadonlyArray<Transferable>,

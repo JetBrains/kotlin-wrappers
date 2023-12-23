@@ -2,5 +2,7 @@
 
 package web.storage
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)
+ */
 external val sessionStorage: Storage

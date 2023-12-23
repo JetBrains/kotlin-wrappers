@@ -13,7 +13,9 @@ import web.animations.KeyframeAnimationOptions
 import web.animations.PropertyIndexedKeyframes
 
 sealed external interface Animatable {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/animate) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/animate)
+     */
     fun animate(
         keyframes: ReadonlyArray<Keyframe>?,
         options: Number = definedExternally,
@@ -34,6 +36,8 @@ sealed external interface Animatable {
         options: KeyframeAnimationOptions,
     ): Animation = definedExternally
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getAnimations) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getAnimations)
+     */
     fun getAnimations(options: GetAnimationsOptions = definedExternally): ReadonlyArray<Animation> = definedExternally
 }

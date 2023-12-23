@@ -2,5 +2,7 @@
 
 package web.idb
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/indexedDB) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/indexedDB)
+ */
 external val indexedDB: IDBFactory

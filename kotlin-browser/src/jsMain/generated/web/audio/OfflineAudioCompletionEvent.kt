@@ -23,7 +23,9 @@ open external class OfflineAudioCompletionEvent(
     override val type: EventType<OfflineAudioCompletionEvent>,
     init: OfflineAudioCompletionEventInit,
 ) : Event {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioCompletionEvent/renderedBuffer) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioCompletionEvent/renderedBuffer)
+     */
     val renderedBuffer: AudioBuffer
 
     companion object : OfflineAudioCompletionEventTypes

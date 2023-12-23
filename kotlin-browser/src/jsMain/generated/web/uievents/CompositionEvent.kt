@@ -21,7 +21,9 @@ open external class CompositionEvent(
     override val type: EventType<CompositionEvent>,
     init: CompositionEventInit = definedExternally,
 ) : UIEvent {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CompositionEvent/data) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CompositionEvent/data)
+     */
     val data: String
 
     companion object : CompositionEventTypes

@@ -2,6 +2,8 @@
 
 package web.performance
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformancePaintTiming) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformancePaintTiming)
+ */
 sealed external class PerformancePaintTiming :
     PerformanceEntry

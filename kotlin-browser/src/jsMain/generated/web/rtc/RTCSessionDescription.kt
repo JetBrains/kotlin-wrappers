@@ -10,12 +10,18 @@ package web.rtc
 external class RTCSessionDescription(
     init: RTCSessionDescriptionInit,
 ) {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSessionDescription/sdp) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSessionDescription/sdp)
+     */
     val sdp: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSessionDescription/type) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSessionDescription/type)
+     */
     val type: RTCSdpType
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSessionDescription/toJSON) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSessionDescription/toJSON)
+     */
     fun toJSON(): Any
 }

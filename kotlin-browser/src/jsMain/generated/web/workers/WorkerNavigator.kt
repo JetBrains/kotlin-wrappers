@@ -18,9 +18,13 @@ sealed external class WorkerNavigator :
     NavigatorLocks,
     NavigatorOnLine,
     NavigatorStorage {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerNavigator/mediaCapabilities) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerNavigator/mediaCapabilities)
+     */
     val mediaCapabilities: MediaCapabilities
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerNavigator/permissions) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerNavigator/permissions)
+     */
     val permissions: Permissions
 }

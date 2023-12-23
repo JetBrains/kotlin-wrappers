@@ -8,7 +8,9 @@ import web.events.EventTarget
 import web.messaging.MessageEvent
 import web.url.URL
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource)
+ */
 external class EventSource(
     url: String,
     init: EventSourceInit = definedExternally,
@@ -18,13 +20,19 @@ external class EventSource(
         init: EventSourceInit = definedExternally,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/error_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/error_event)
+     */
     var onerror: EventHandler<Event>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/message_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/message_event)
+     */
     var onmessage: EventHandler<MessageEvent<*>>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/open_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/open_event)
+     */
     var onopen: EventHandler<Event>?
 
     /**

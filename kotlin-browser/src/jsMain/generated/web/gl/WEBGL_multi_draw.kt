@@ -5,7 +5,9 @@ package web.gl
 import js.typedarrays.Int32Array
 
 sealed external interface WEBGL_multi_draw {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WEBGL_multi_draw/multiDrawArraysInstancedWEBGL) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WEBGL_multi_draw/multiDrawArraysInstancedWEBGL)
+     */
     fun multiDrawArraysInstancedWEBGL(
         mode: GLenum,
         firstsList: Int32Array, /*  | GLint[] */
@@ -17,7 +19,9 @@ sealed external interface WEBGL_multi_draw {
         drawcount: GLsizei,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WEBGL_multi_draw/multiDrawArraysWEBGL) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WEBGL_multi_draw/multiDrawArraysWEBGL)
+     */
     fun multiDrawArraysWEBGL(
         mode: GLenum,
         firstsList: Int32Array, /*  | GLint[] */
@@ -27,7 +31,9 @@ sealed external interface WEBGL_multi_draw {
         drawcount: GLsizei,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WEBGL_multi_draw/multiDrawElementsInstancedWEBGL) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WEBGL_multi_draw/multiDrawElementsInstancedWEBGL)
+     */
     fun multiDrawElementsInstancedWEBGL(
         mode: GLenum,
         countsList: Int32Array, /*  | GLsizei[] */
@@ -40,7 +46,9 @@ sealed external interface WEBGL_multi_draw {
         drawcount: GLsizei,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WEBGL_multi_draw/multiDrawElementsWEBGL) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WEBGL_multi_draw/multiDrawElementsWEBGL)
+     */
     fun multiDrawElementsWEBGL(
         mode: GLenum,
         countsList: Int32Array, /*  | GLsizei[] */

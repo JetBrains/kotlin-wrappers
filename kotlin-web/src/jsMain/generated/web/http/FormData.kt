@@ -18,7 +18,9 @@ external class FormData(
     form: EventTarget /* HTMLFormElement */ = definedExternally,
     submitter: EventTarget /* HTMLElement */? = definedExternally,
 ) : MapLike<String, FormDataEntryValue> {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData/append) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData/append)
+     */
     fun append(
         name: String,
         value: String,
@@ -35,19 +37,29 @@ external class FormData(
         filename: String = definedExternally,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData/delete) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData/delete)
+     */
     fun delete(name: String)
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData/get) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData/get)
+     */
     operator fun get(name: String): FormDataEntryValue?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData/getAll) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData/getAll)
+     */
     fun getAll(name: String): ReadonlyArray<FormDataEntryValue>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData/has) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData/has)
+     */
     fun has(name: String): Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData/set) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData/set)
+     */
     operator fun set(
         name: String,
         value: String,

@@ -5,7 +5,9 @@ package web.canvas
 import js.promise.Promise
 import web.buffer.Blob
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/createImageBitmap) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/createImageBitmap)
+ */
 external fun createImageBitmap(
     image: CanvasImageSource,
     options: ImageBitmapOptions? = definedExternally,

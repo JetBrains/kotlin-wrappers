@@ -30,10 +30,14 @@ sealed external class CanvasRenderingContext2D :
     CanvasTransform,
     CanvasUserInterface,
     RenderingContext {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/canvas) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/canvas)
+     */
     val canvas: HTMLCanvasElement
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/getContextAttributes) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/getContextAttributes)
+     */
     fun getContextAttributes(): CanvasRenderingContext2DSettings
 
     companion object {

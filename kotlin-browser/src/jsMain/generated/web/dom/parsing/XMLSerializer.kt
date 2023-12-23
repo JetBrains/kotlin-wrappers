@@ -10,6 +10,8 @@ import web.dom.Node
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLSerializer)
  */
 external class XMLSerializer {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLSerializer/serializeToString) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLSerializer/serializeToString)
+     */
     fun serializeToString(root: Node): String
 }

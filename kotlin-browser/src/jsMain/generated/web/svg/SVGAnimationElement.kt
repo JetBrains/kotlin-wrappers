@@ -2,11 +2,15 @@
 
 package web.svg
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimationElement) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimationElement)
+ */
 sealed external class SVGAnimationElement :
     SVGElement,
     SVGTests {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimationElement/targetElement) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimationElement/targetElement)
+     */
     val targetElement: SVGElement?
     fun beginElement()
     fun beginElementAt(offset: Number)

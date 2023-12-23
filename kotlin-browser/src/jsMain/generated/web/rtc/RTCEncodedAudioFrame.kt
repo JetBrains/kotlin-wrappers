@@ -5,14 +5,22 @@ package web.rtc
 import js.buffer.ArrayBuffer
 import js.core.JsLong
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedAudioFrame) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedAudioFrame)
+ */
 sealed external class RTCEncodedAudioFrame {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedAudioFrame/data) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedAudioFrame/data)
+     */
     var data: ArrayBuffer
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedAudioFrame/timestamp) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedAudioFrame/timestamp)
+     */
     val timestamp: JsLong
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedAudioFrame/getMetadata) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedAudioFrame/getMetadata)
+     */
     fun getMetadata(): RTCEncodedAudioFrameMetadata
 }

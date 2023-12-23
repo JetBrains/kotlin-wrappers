@@ -13,6 +13,8 @@ external class MediaStreamAudioSourceNode(
     context: AudioContext,
     options: MediaStreamAudioSourceOptions,
 ) : AudioNode {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamAudioSourceNode/mediaStream) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamAudioSourceNode/mediaStream)
+     */
     val mediaStream: MediaStream
 }

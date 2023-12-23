@@ -33,16 +33,24 @@ protected constructor() :
      */
     val complete: Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/crossOrigin) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/crossOrigin)
+     */
     var crossOrigin: CrossOrigin?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/currentSrc) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/currentSrc)
+     */
     val currentSrc: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/decoding) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/decoding)
+     */
     var decoding: ImageDecoding
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/fetchPriority) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/fetchPriority)
+     */
     var fetchPriority: String
 
     /**
@@ -80,10 +88,14 @@ protected constructor() :
      */
     val naturalWidth: Int
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/referrerPolicy) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/referrerPolicy)
+     */
     var referrerPolicy: ReferrerPolicy
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/sizes) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/sizes)
+     */
     var sizes: String
 
     /**
@@ -93,7 +105,9 @@ protected constructor() :
      */
     var src: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/srcset) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/srcset)
+     */
     var srcset: String
 
     /**
@@ -110,12 +124,18 @@ protected constructor() :
      */
     var width: Double
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/x) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/x)
+     */
     val x: Double
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/y) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/y)
+     */
     val y: Double
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/decode) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/decode)
+     */
     fun decode(): Promise<Void>
 }

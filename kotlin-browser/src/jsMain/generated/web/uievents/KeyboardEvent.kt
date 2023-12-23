@@ -27,34 +27,54 @@ open external class KeyboardEvent(
     override val type: EventType<KeyboardEvent>,
     init: KeyboardEventInit = definedExternally,
 ) : UIEvent {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/altKey) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/altKey)
+     */
     val altKey: Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/code) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/code)
+     */
     val code: KeyCode
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/ctrlKey) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/ctrlKey)
+     */
     val ctrlKey: Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/isComposing) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/isComposing)
+     */
     val isComposing: Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/key) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/key)
+     */
     val key: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/location) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/location)
+     */
     val location: Short
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/metaKey) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/metaKey)
+     */
     val metaKey: Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/repeat) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/repeat)
+     */
     val repeat: Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/shiftKey) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/shiftKey)
+     */
     val shiftKey: Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/getModifierState) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/getModifierState)
+     */
     fun getModifierState(keyArg: ModifierKeyCode): Boolean
     val DOM_KEY_LOCATION_STANDARD: Short
     val DOM_KEY_LOCATION_LEFT: Short

@@ -17,15 +17,21 @@ external interface PromiseRejectionEventInit : EventInit {
     var reason: JsError?
 }
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PromiseRejectionEvent) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PromiseRejectionEvent)
+ */
 open external class PromiseRejectionEvent(
     override val type: EventType<PromiseRejectionEvent>,
     init: PromiseRejectionEventInit,
 ) : Event {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PromiseRejectionEvent/promise) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PromiseRejectionEvent/promise)
+     */
     val promise: Promise<*>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PromiseRejectionEvent/reason) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PromiseRejectionEvent/reason)
+     */
     val reason: JsError?
 
     companion object : PromiseRejectionEventTypes

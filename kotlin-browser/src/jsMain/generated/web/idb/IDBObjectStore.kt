@@ -174,7 +174,9 @@ sealed external class IDBObjectStore {
     fun getKey(query: IDBValidKey): IDBRequest<IDBValidKey?>
     fun getKey(query: IDBKeyRange): IDBRequest<IDBValidKey?>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/index) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/index)
+     */
     fun index(name: String): IDBIndex
 
     /**

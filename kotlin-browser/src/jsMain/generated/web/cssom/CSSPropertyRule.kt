@@ -2,18 +2,28 @@
 
 package web.cssom
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPropertyRule) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPropertyRule)
+ */
 sealed external class CSSPropertyRule :
     CSSRule {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPropertyRule/inherits) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPropertyRule/inherits)
+     */
     val inherits: Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPropertyRule/initialValue) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPropertyRule/initialValue)
+     */
     val initialValue: String?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPropertyRule/name) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPropertyRule/name)
+     */
     val name: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPropertyRule/syntax) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPropertyRule/syntax)
+     */
     val syntax: String
 }

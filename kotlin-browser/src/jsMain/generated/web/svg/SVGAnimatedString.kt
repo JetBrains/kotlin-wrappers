@@ -8,9 +8,13 @@ package web.svg
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedString)
  */
 sealed external class SVGAnimatedString {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedString/animVal) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedString/animVal)
+     */
     val animVal: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedString/baseVal) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedString/baseVal)
+     */
     var baseVal: String
 }

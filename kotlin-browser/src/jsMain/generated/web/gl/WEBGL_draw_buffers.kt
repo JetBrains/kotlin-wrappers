@@ -5,7 +5,9 @@ package web.gl
 import js.core.ReadonlyArray
 
 sealed external interface WEBGL_draw_buffers {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WEBGL_draw_buffers/drawBuffersWEBGL) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WEBGL_draw_buffers/drawBuffersWEBGL)
+     */
     fun drawBuffersWEBGL(buffers: ReadonlyArray<GLenum>)
     val COLOR_ATTACHMENT0_WEBGL: GLenum
     val COLOR_ATTACHMENT1_WEBGL: GLenum

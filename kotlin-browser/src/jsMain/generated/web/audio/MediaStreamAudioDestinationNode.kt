@@ -4,11 +4,15 @@ package web.audio
 
 import web.media.streams.MediaStream
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamAudioDestinationNode) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamAudioDestinationNode)
+ */
 external class MediaStreamAudioDestinationNode(
     context: AudioContext,
     options: AudioNodeOptions = definedExternally,
 ) : AudioNode {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamAudioDestinationNode/stream) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamAudioDestinationNode/stream)
+     */
     val stream: MediaStream
 }

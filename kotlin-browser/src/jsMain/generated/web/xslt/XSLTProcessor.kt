@@ -12,38 +12,54 @@ import web.dom.Node
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XSLTProcessor)
  */
 open external class XSLTProcessor {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/XSLTProcessor/clearParameters) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XSLTProcessor/clearParameters)
+     */
     fun clearParameters()
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/XSLTProcessor/getParameter) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XSLTProcessor/getParameter)
+     */
     fun getParameter(
         namespaceURI: String?,
         localName: String,
     ): Any
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/XSLTProcessor/importStylesheet) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XSLTProcessor/importStylesheet)
+     */
     fun importStylesheet(style: Node)
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/XSLTProcessor/removeParameter) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XSLTProcessor/removeParameter)
+     */
     fun removeParameter(
         namespaceURI: String?,
         localName: String,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/XSLTProcessor/reset) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XSLTProcessor/reset)
+     */
     fun reset()
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/XSLTProcessor/setParameter) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XSLTProcessor/setParameter)
+     */
     fun setParameter(
         namespaceURI: String?,
         localName: String,
         value: Any?,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/XSLTProcessor/transformToDocument) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XSLTProcessor/transformToDocument)
+     */
     fun transformToDocument(source: Node): Document
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/XSLTProcessor/transformToFragment) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XSLTProcessor/transformToFragment)
+     */
     fun transformToFragment(
         source: Node,
         output: Document,

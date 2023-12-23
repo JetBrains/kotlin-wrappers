@@ -14,6 +14,8 @@ sealed external class ProcessingInstruction :
     LinkStyle {
     override val ownerDocument: Document
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ProcessingInstruction/target) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ProcessingInstruction/target)
+     */
     val target: String
 }

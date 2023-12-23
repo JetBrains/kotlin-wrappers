@@ -2,5 +2,7 @@
 
 package web.viewport
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/visualViewport) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/visualViewport)
+ */
 external val visualViewport: VisualViewport

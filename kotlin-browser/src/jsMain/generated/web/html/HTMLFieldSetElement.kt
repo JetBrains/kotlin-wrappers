@@ -10,7 +10,9 @@ package web.html
 open external class HTMLFieldSetElement
 protected constructor() :
     HTMLElement {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/disabled) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/disabled)
+     */
     var disabled: Boolean
 
     /**
@@ -27,7 +29,9 @@ protected constructor() :
      */
     val form: HTMLFormElement?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/name) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/name)
+     */
     var name: String
 
     /**
@@ -58,10 +62,14 @@ protected constructor() :
      */
     val willValidate: Boolean
 
-    /** Returns whether a form will validate when it is submitted, without having to submit it. */
+    /**
+     * Returns whether a form will validate when it is submitted, without having to submit it.
+     */
     fun checkValidity(): Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/reportValidity) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/reportValidity)
+     */
     fun reportValidity(): Boolean
 
     /**

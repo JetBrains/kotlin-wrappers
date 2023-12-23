@@ -22,7 +22,9 @@ open external class ExtendableEvent(
     override val type: EventType<ExtendableEvent>,
     init: ExtendableEventInit = definedExternally,
 ) : Event {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableEvent/waitUntil) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableEvent/waitUntil)
+     */
     fun waitUntil(f: Promise<*>)
 
     companion object : ExtendableEventTypes

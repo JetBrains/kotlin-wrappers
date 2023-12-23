@@ -24,7 +24,9 @@ open external class ClipboardEvent(
     override val type: EventType<ClipboardEvent>,
     init: ClipboardEventInit = definedExternally,
 ) : Event {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardEvent/clipboardData) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardEvent/clipboardData)
+     */
     val clipboardData: DataTransfer?
 
     companion object : ClipboardEventTypes

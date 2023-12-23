@@ -12,7 +12,9 @@ import web.gl.TexImageSource
 import web.rendering.OffscreenRenderingContext
 import web.rendering.RenderingContextId
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas)
+ */
 external class OffscreenCanvas(
     width: Number,
     height: Number,

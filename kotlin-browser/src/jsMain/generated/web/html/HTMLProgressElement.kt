@@ -12,7 +12,9 @@ import web.dom.NodeListOf
 open external class HTMLProgressElement
 protected constructor() :
     HTMLElement {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLProgressElement/labels) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLProgressElement/labels)
+     */
     val labels: NodeListOf<HTMLLabelElement>
 
     /**

@@ -8,12 +8,18 @@ package web.device
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceMotionEventAcceleration)
  */
 sealed external interface DeviceMotionEventAcceleration {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceMotionEventAcceleration/x) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceMotionEventAcceleration/x)
+     */
     val x: Double?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceMotionEventAcceleration/y) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceMotionEventAcceleration/y)
+     */
     val y: Double?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceMotionEventAcceleration/z) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceMotionEventAcceleration/z)
+     */
     val z: Double?
 }

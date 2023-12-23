@@ -68,7 +68,9 @@ sealed external class Node :
      */
     val nodeType: Short
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/nodeValue) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/nodeValue)
+     */
     var nodeValue: String?
 
     /**
@@ -99,10 +101,14 @@ sealed external class Node :
      */
     val previousSibling: ChildNode?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/textContent) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/textContent)
+     */
     var textContent: String?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/appendChild) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/appendChild)
+     */
     fun <T : Node> appendChild(node: T): T
 
     /**
@@ -140,13 +146,17 @@ sealed external class Node :
      */
     fun hasChildNodes(): Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/insertBefore) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/insertBefore)
+     */
     fun <T : Node> insertBefore(
         node: T,
         child: Node?,
     ): T
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/isDefaultNamespace) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/isDefaultNamespace)
+     */
     fun isDefaultNamespace(namespace: String?): Boolean
 
     /**
@@ -156,13 +166,19 @@ sealed external class Node :
      */
     fun isEqualNode(otherNode: Node?): Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/isSameNode) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/isSameNode)
+     */
     fun isSameNode(otherNode: Node?): Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/lookupNamespaceURI) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/lookupNamespaceURI)
+     */
     fun lookupNamespaceURI(prefix: String?): String?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/lookupPrefix) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/lookupPrefix)
+     */
     fun lookupPrefix(namespace: String?): String?
 
     /**
@@ -172,101 +188,157 @@ sealed external class Node :
      */
     fun normalize()
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/removeChild) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/removeChild)
+     */
     fun <T : Node> removeChild(child: T): T
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/replaceChild) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/replaceChild)
+     */
     fun <T : Node> replaceChild(
         node: Node,
         child: T,
     ): T
 
-    /** node is an element. */
+    /**
+     * node is an element.
+     */
     val ELEMENT_NODE: Short
     val ATTRIBUTE_NODE: Short
 
-    /** node is a Text node. */
+    /**
+     * node is a Text node.
+     */
     val TEXT_NODE: Short
 
-    /** node is a CDATASection node. */
+    /**
+     * node is a CDATASection node.
+     */
     val CDATA_SECTION_NODE: Short
     val ENTITY_REFERENCE_NODE: Short
     val ENTITY_NODE: Short
 
-    /** node is a ProcessingInstruction node. */
+    /**
+     * node is a ProcessingInstruction node.
+     */
     val PROCESSING_INSTRUCTION_NODE: Short
 
-    /** node is a Comment node. */
+    /**
+     * node is a Comment node.
+     */
     val COMMENT_NODE: Short
 
-    /** node is a document. */
+    /**
+     * node is a document.
+     */
     val DOCUMENT_NODE: Short
 
-    /** node is a doctype. */
+    /**
+     * node is a doctype.
+     */
     val DOCUMENT_TYPE_NODE: Short
 
-    /** node is a DocumentFragment node. */
+    /**
+     * node is a DocumentFragment node.
+     */
     val DOCUMENT_FRAGMENT_NODE: Short
     val NOTATION_NODE: Short
 
-    /** Set when node and other are not in the same tree. */
+    /**
+     * Set when node and other are not in the same tree.
+     */
     val DOCUMENT_POSITION_DISCONNECTED: Short
 
-    /** Set when other is preceding node. */
+    /**
+     * Set when other is preceding node.
+     */
     val DOCUMENT_POSITION_PRECEDING: Short
 
-    /** Set when other is following node. */
+    /**
+     * Set when other is following node.
+     */
     val DOCUMENT_POSITION_FOLLOWING: Short
 
-    /** Set when other is an ancestor of node. */
+    /**
+     * Set when other is an ancestor of node.
+     */
     val DOCUMENT_POSITION_CONTAINS: Short
 
-    /** Set when other is a descendant of node. */
+    /**
+     * Set when other is a descendant of node.
+     */
     val DOCUMENT_POSITION_CONTAINED_BY: Short
     val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
 
     companion object {
-        /** node is an element. */
+        /**
+         * node is an element.
+         */
         val ELEMENT_NODE: Short
         val ATTRIBUTE_NODE: Short
 
-        /** node is a Text node. */
+        /**
+         * node is a Text node.
+         */
         val TEXT_NODE: Short
 
-        /** node is a CDATASection node. */
+        /**
+         * node is a CDATASection node.
+         */
         val CDATA_SECTION_NODE: Short
         val ENTITY_REFERENCE_NODE: Short
         val ENTITY_NODE: Short
 
-        /** node is a ProcessingInstruction node. */
+        /**
+         * node is a ProcessingInstruction node.
+         */
         val PROCESSING_INSTRUCTION_NODE: Short
 
-        /** node is a Comment node. */
+        /**
+         * node is a Comment node.
+         */
         val COMMENT_NODE: Short
 
-        /** node is a document. */
+        /**
+         * node is a document.
+         */
         val DOCUMENT_NODE: Short
 
-        /** node is a doctype. */
+        /**
+         * node is a doctype.
+         */
         val DOCUMENT_TYPE_NODE: Short
 
-        /** node is a DocumentFragment node. */
+        /**
+         * node is a DocumentFragment node.
+         */
         val DOCUMENT_FRAGMENT_NODE: Short
         val NOTATION_NODE: Short
 
-        /** Set when node and other are not in the same tree. */
+        /**
+         * Set when node and other are not in the same tree.
+         */
         val DOCUMENT_POSITION_DISCONNECTED: Short
 
-        /** Set when other is preceding node. */
+        /**
+         * Set when other is preceding node.
+         */
         val DOCUMENT_POSITION_PRECEDING: Short
 
-        /** Set when other is following node. */
+        /**
+         * Set when other is following node.
+         */
         val DOCUMENT_POSITION_FOLLOWING: Short
 
-        /** Set when other is an ancestor of node. */
+        /**
+         * Set when other is an ancestor of node.
+         */
         val DOCUMENT_POSITION_CONTAINS: Short
 
-        /** Set when other is a descendant of node. */
+        /**
+         * Set when other is a descendant of node.
+         */
         val DOCUMENT_POSITION_CONTAINED_BY: Short
         val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }

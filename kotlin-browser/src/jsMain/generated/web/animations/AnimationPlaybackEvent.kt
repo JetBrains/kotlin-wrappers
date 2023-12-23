@@ -15,15 +15,21 @@ external interface AnimationPlaybackEventInit : EventInit {
     var timelineTime: CSSNumberish?
 }
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationPlaybackEvent) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationPlaybackEvent)
+ */
 open external class AnimationPlaybackEvent(
     override val type: EventType<AnimationPlaybackEvent>,
     init: AnimationPlaybackEventInit = definedExternally,
 ) : Event {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationPlaybackEvent/currentTime) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationPlaybackEvent/currentTime)
+     */
     val currentTime: CSSNumberish?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationPlaybackEvent/timelineTime) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationPlaybackEvent/timelineTime)
+     */
     val timelineTime: CSSNumberish?
 
     companion object : AnimationPlaybackEventTypes

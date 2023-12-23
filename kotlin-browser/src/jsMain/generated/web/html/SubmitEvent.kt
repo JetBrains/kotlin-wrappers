@@ -14,7 +14,9 @@ external interface SubmitEventInit : EventInit {
     var submitter: HTMLElement?
 }
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubmitEvent) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubmitEvent)
+ */
 open external class SubmitEvent(
     override val type: EventType<SubmitEvent>,
     init: SubmitEventInit = definedExternally,

@@ -2,7 +2,9 @@
 
 package web.geometry
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad)
+ */
 external class DOMQuad(
     p1: DOMPointInit = definedExternally,
     p2: DOMPointInit = definedExternally,
@@ -16,19 +18,29 @@ external class DOMQuad(
         p4: DOMPointReadOnly, /* DOMPointInit */
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/p1) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/p1)
+     */
     val p1: DOMPoint
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/p2) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/p2)
+     */
     val p2: DOMPoint
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/p3) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/p3)
+     */
     val p3: DOMPoint
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/p4) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/p4)
+     */
     val p4: DOMPoint
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/getBounds) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/getBounds)
+     */
     fun getBounds(): DOMRect
     fun toJSON(): Any
 

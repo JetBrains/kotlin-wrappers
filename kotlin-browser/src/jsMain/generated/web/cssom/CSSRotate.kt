@@ -2,7 +2,9 @@
 
 package web.cssom
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRotate) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRotate)
+ */
 external class CSSRotate(
     angle: CSSNumericValue,
 ) : CSSTransformComponent {
@@ -13,15 +15,23 @@ external class CSSRotate(
         angle: CSSNumericValue,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRotate/angle) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRotate/angle)
+     */
     var angle: CSSNumericValue
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRotate/x) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRotate/x)
+     */
     var x: CSSNumberish
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRotate/y) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRotate/y)
+     */
     var y: CSSNumberish
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRotate/z) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRotate/z)
+     */
     var z: CSSNumberish
 }

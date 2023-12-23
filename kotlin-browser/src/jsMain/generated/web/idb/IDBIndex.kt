@@ -10,10 +10,14 @@ import js.core.ReadonlyArray
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex)
  */
 sealed external class IDBIndex {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/keyPath) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/keyPath)
+     */
     val keyPath: Any /* string | string[] */
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/multiEntry) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/multiEntry)
+     */
     val multiEntry: Boolean
 
     /**
@@ -30,7 +34,9 @@ sealed external class IDBIndex {
      */
     val objectStore: IDBObjectStore
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/unique) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/unique)
+     */
     val unique: Boolean
 
     /**

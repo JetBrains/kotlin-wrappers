@@ -17,9 +17,13 @@ sealed external class SourceBufferList :
     EventTarget,
     ArrayLike<SourceBuffer>,
     JsIterable<SourceBuffer> {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBufferList/addsourcebuffer_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBufferList/addsourcebuffer_event)
+     */
     var onaddsourcebuffer: EventHandler<Event>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBufferList/removesourcebuffer_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBufferList/removesourcebuffer_event)
+     */
     var onremovesourcebuffer: EventHandler<Event>?
 }

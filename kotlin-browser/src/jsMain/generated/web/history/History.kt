@@ -10,25 +10,39 @@ import web.url.URL
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History)
  */
 sealed external class History {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/length) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/length)
+     */
     val length: Int
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/scrollRestoration) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/scrollRestoration)
+     */
     var scrollRestoration: ScrollRestoration
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/state) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/state)
+     */
     val state: Any?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/back) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/back)
+     */
     fun back()
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/forward) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/forward)
+     */
     fun forward()
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/go) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/go)
+     */
     fun go(delta: Number = definedExternally)
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/pushState) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/pushState)
+     */
     fun pushState(
         data: Any?,
         unused: String,
@@ -41,7 +55,9 @@ sealed external class History {
         url: URL?,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/replaceState) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/replaceState)
+     */
     fun replaceState(
         data: Any?,
         unused: String,

@@ -2,18 +2,26 @@
 
 package web.cssom
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSScale) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSScale)
+ */
 external class CSSScale(
     x: CSSNumberish,
     y: CSSNumberish,
     z: CSSNumberish = definedExternally,
 ) : CSSTransformComponent {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSScale/x) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSScale/x)
+     */
     var x: CSSNumberish
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSScale/y) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSScale/y)
+     */
     var y: CSSNumberish
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSScale/z) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSScale/z)
+     */
     var z: CSSNumberish
 }

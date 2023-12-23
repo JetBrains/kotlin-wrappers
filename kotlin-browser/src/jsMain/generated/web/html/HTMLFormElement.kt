@@ -104,10 +104,14 @@ protected constructor() :
      */
     fun checkValidity(): Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/reportValidity) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/reportValidity)
+     */
     fun reportValidity(): Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/requestSubmit) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/requestSubmit)
+     */
     fun requestSubmit(submitter: HTMLElement? = definedExternally)
 
     /**

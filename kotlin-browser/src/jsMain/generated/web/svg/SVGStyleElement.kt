@@ -15,9 +15,13 @@ sealed external class SVGStyleElement :
     LinkStyle {
     var disabled: Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStyleElement/media) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStyleElement/media)
+     */
     var media: MediaQuery
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStyleElement/title) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStyleElement/title)
+     */
     var title: String
 }

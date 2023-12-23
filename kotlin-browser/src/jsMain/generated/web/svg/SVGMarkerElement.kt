@@ -2,35 +2,55 @@
 
 package web.svg
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement)
+ */
 sealed external class SVGMarkerElement :
     SVGElement,
     SVGFitToViewBox {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/markerHeight) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/markerHeight)
+     */
     val markerHeight: SVGAnimatedLength
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/markerUnits) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/markerUnits)
+     */
     val markerUnits: SVGAnimatedEnumeration
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/markerWidth) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/markerWidth)
+     */
     val markerWidth: SVGAnimatedLength
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/orientAngle) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/orientAngle)
+     */
     val orientAngle: SVGAnimatedAngle
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/orientType) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/orientType)
+     */
     val orientType: SVGAnimatedEnumeration
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/refX) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/refX)
+     */
     val refX: SVGAnimatedLength
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/refY) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/refY)
+     */
     val refY: SVGAnimatedLength
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/setOrientToAngle) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/setOrientToAngle)
+     */
     fun setOrientToAngle(angle: SVGAngle)
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/setOrientToAuto) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/setOrientToAuto)
+     */
     fun setOrientToAuto()
     val SVG_MARKERUNITS_UNKNOWN: Short
     val SVG_MARKERUNITS_USERSPACEONUSE: Short

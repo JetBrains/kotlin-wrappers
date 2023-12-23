@@ -43,7 +43,9 @@ protected constructor() :
      */
     var controls: Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/crossOrigin) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/crossOrigin)
+     */
     var crossOrigin: CrossOrigin?
 
     /**
@@ -60,7 +62,9 @@ protected constructor() :
      */
     var currentTime: Double
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/defaultMuted) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/defaultMuted)
+     */
     var defaultMuted: Boolean
 
     /**
@@ -70,7 +74,9 @@ protected constructor() :
      */
     var defaultPlaybackRate: Double
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/disableRemotePlayback) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/disableRemotePlayback)
+     */
     var disableRemotePlayback: Boolean
 
     /**
@@ -122,10 +128,14 @@ protected constructor() :
      */
     val networkState: Short
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/encrypted_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/encrypted_event)
+     */
     var onencrypted: EventHandler<MediaEncryptedEvent>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/waitingforkey_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/waitingforkey_event)
+     */
     var onwaitingforkey: EventHandler<Event>?
 
     /**
@@ -156,13 +166,19 @@ protected constructor() :
      */
     var preload: String /* "none" | "metadata" | "auto" | "" */
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/preservesPitch) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/preservesPitch)
+     */
     var preservesPitch: Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/readyState) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/readyState)
+     */
     val readyState: Short
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/remote) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/remote)
+     */
     val remote: RemotePlayback
 
     /**
@@ -193,10 +209,14 @@ protected constructor() :
      */
     var src: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/srcObject) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/srcObject)
+     */
     var srcObject: MediaProvider?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/textTracks) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/textTracks)
+     */
     val textTracks: TextTrackList
 
     /**
@@ -206,7 +226,9 @@ protected constructor() :
      */
     var volume: Double
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/addTextTrack) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/addTextTrack)
+     */
     fun addTextTrack(
         kind: TextTrackKind,
         label: String = definedExternally,
@@ -220,7 +242,9 @@ protected constructor() :
      */
     fun canPlayType(type: String): CanPlayTypeResult
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/fastSeek) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/fastSeek)
+     */
     fun fastSeek(time: Number)
 
     /**

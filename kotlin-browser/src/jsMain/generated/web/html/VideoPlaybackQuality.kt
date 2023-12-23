@@ -10,12 +10,18 @@ import js.core.DOMHighResTimeStamp
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoPlaybackQuality)
  */
 sealed external class VideoPlaybackQuality {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoPlaybackQuality/creationTime) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoPlaybackQuality/creationTime)
+     */
     val creationTime: DOMHighResTimeStamp
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoPlaybackQuality/droppedVideoFrames) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoPlaybackQuality/droppedVideoFrames)
+     */
     val droppedVideoFrames: Int
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoPlaybackQuality/totalVideoFrames) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoPlaybackQuality/totalVideoFrames)
+     */
     val totalVideoFrames: Int
 }

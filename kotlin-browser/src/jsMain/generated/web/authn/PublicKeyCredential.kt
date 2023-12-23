@@ -15,20 +15,30 @@ sealed external class PublicKeyCredential :
     Credential {
     val authenticatorAttachment: String?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/rawId) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/rawId)
+     */
     val rawId: ArrayBuffer
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/response) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/response)
+     */
     val response: AuthenticatorResponse
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/getClientExtensionResults) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/getClientExtensionResults)
+     */
     fun getClientExtensionResults(): AuthenticationExtensionsClientOutputs
 
     companion object {
-        /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/isConditionalMediationAvailable) */
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/isConditionalMediationAvailable)
+         */
         fun isConditionalMediationAvailable(): Promise<Boolean>
 
-        /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/isUserVerifyingPlatformAuthenticatorAvailable_static) */
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/isUserVerifyingPlatformAuthenticatorAvailable_static)
+         */
         fun isUserVerifyingPlatformAuthenticatorAvailable(): Promise<Boolean>
     }
 }

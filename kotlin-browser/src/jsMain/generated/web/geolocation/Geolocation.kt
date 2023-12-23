@@ -8,17 +8,23 @@ package web.geolocation
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Geolocation)
  */
 sealed external class Geolocation {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Geolocation/clearWatch) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Geolocation/clearWatch)
+     */
     fun clearWatch(watchId: GeolocationWatchId)
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Geolocation/getCurrentPosition) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Geolocation/getCurrentPosition)
+     */
     fun getCurrentPosition(
         successCallback: PositionCallback,
         errorCallback: PositionErrorCallback? = definedExternally,
         options: PositionOptions = definedExternally,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Geolocation/watchPosition) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Geolocation/watchPosition)
+     */
     fun watchPosition(
         successCallback: PositionCallback,
         errorCallback: PositionErrorCallback? = definedExternally,

@@ -16,15 +16,21 @@ external interface BlobEventInit {
     var timecode: DOMHighResTimeStamp?
 }
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BlobEvent) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BlobEvent)
+ */
 open external class BlobEvent(
     override val type: EventType<BlobEvent>,
     init: BlobEventInit,
 ) : Event {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BlobEvent/data) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BlobEvent/data)
+     */
     val data: Blob
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BlobEvent/timecode) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BlobEvent/timecode)
+     */
     val timecode: DOMHighResTimeStamp
 
     companion object : BlobEventTypes

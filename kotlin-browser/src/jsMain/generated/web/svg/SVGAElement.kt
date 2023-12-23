@@ -15,6 +15,8 @@ sealed external class SVGAElement :
     var rel: String
     val relList: DOMTokenList
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/target) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/target)
+     */
     val target: SVGAnimatedString
 }

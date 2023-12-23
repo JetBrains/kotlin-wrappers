@@ -11,7 +11,9 @@ import web.streams.GenericTransformStream
 import web.streams.ReadableStream
 import web.streams.WritableStream
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextEncoderStream) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextEncoderStream)
+ */
 open external class TextEncoderStream :
     GenericTransformStream,
     TextEncoderCommon {

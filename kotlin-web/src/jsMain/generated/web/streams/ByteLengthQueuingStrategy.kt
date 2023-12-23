@@ -12,9 +12,13 @@ import js.buffer.ArrayBufferView
 external class ByteLengthQueuingStrategy(
     init: QueuingStrategyInit,
 ) : QueuingStrategy<ArrayBufferView> {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ByteLengthQueuingStrategy/highWaterMark) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ByteLengthQueuingStrategy/highWaterMark)
+     */
     override val highWaterMark: Int
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ByteLengthQueuingStrategy/size) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ByteLengthQueuingStrategy/size)
+     */
     override val size: QueuingStrategySize<ArrayBufferView>
 }

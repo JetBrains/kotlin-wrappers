@@ -7,61 +7,97 @@ import web.events.EventHandler
 import web.events.EventTarget
 import web.media.streams.MediaStream
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder)
+ */
 external class MediaRecorder(
     stream: MediaStream,
     options: MediaRecorderOptions = definedExternally,
 ) : EventTarget {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/audioBitsPerSecond) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/audioBitsPerSecond)
+     */
     val audioBitsPerSecond: Int
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/mimeType) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/mimeType)
+     */
     val mimeType: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/dataavailable_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/dataavailable_event)
+     */
     var ondataavailable: EventHandler<BlobEvent>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/error_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/error_event)
+     */
     var onerror: EventHandler<Event>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/pause_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/pause_event)
+     */
     var onpause: EventHandler<Event>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/resume_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/resume_event)
+     */
     var onresume: EventHandler<Event>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/start_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/start_event)
+     */
     var onstart: EventHandler<Event>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/stop_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/stop_event)
+     */
     var onstop: EventHandler<Event>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/state) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/state)
+     */
     val state: RecordingState
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/stream) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/stream)
+     */
     val stream: MediaStream
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/videoBitsPerSecond) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/videoBitsPerSecond)
+     */
     val videoBitsPerSecond: Int
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/pause) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/pause)
+     */
     fun pause()
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/requestData) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/requestData)
+     */
     fun requestData()
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/resume) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/resume)
+     */
     fun resume()
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/start) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/start)
+     */
     fun start(timeslice: Number = definedExternally)
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/stop) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/stop)
+     */
     fun stop()
 
     companion object {
-        /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/isTypeSupported_static) */
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/isTypeSupported_static)
+         */
         fun isTypeSupported(type: String): Boolean
     }
 }

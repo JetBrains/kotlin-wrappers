@@ -11,12 +11,18 @@ import js.promise.Promise
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySystemAccess)
  */
 sealed external class MediaKeySystemAccess {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySystemAccess/keySystem) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySystemAccess/keySystem)
+     */
     val keySystem: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySystemAccess/createMediaKeys) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySystemAccess/createMediaKeys)
+     */
     fun createMediaKeys(): Promise<MediaKeys>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySystemAccess/getConfiguration) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySystemAccess/getConfiguration)
+     */
     fun getConfiguration(): MediaKeySystemConfiguration
 }

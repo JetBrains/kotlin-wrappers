@@ -10,7 +10,9 @@ external interface ElementCSSInlineStyle {
     val attributeStyleMap: StylePropertyMap
         get() = definedExternally
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/style) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/style)
+     */
     val style: CSSStyleDeclaration
         get() = definedExternally
 }

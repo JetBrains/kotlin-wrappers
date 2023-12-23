@@ -3,6 +3,8 @@
 package web.navigator
 
 sealed external interface NavigatorCookies {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/cookieEnabled) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/cookieEnabled)
+     */
     val cookieEnabled: Boolean
 }

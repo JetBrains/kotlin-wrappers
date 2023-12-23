@@ -20,7 +20,9 @@ protected constructor() :
      */
     val contentDocument: Document?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/contentWindow) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/contentWindow)
+     */
     val contentWindow: WindowProxy?
 
     /**
@@ -100,10 +102,14 @@ protected constructor() :
      */
     fun checkValidity(): Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/getSVGDocument) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/getSVGDocument)
+     */
     fun getSVGDocument(): Document?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/reportValidity) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/reportValidity)
+     */
     fun reportValidity(): Boolean
 
     /**

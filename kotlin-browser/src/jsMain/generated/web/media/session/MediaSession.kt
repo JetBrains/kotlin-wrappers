@@ -2,20 +2,30 @@
 
 package web.media.session
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession)
+ */
 sealed external class MediaSession {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession/metadata) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession/metadata)
+     */
     var metadata: MediaMetadata?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession/playbackState) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession/playbackState)
+     */
     var playbackState: MediaSessionPlaybackState
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession/setActionHandler) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession/setActionHandler)
+     */
     fun setActionHandler(
         action: MediaSessionAction,
         handler: MediaSessionActionHandler?,
     )
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession/setPositionState) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession/setPositionState)
+     */
     fun setPositionState(state: MediaPositionState = definedExternally)
 }

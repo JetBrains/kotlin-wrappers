@@ -6,7 +6,9 @@ import web.events.EventHandler
 import web.events.EventTarget
 import web.messaging.MessageEvent
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel)
+ */
 external class BroadcastChannel(
     name: String,
 ) : EventTarget {
@@ -17,10 +19,14 @@ external class BroadcastChannel(
      */
     val name: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/message_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/message_event)
+     */
     var onmessage: EventHandler<MessageEvent<*>>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/messageerror_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/messageerror_event)
+     */
     var onmessageerror: EventHandler<MessageEvent<*>>?
 
     /**

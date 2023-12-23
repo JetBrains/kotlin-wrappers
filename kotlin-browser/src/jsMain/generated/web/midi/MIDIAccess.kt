@@ -13,15 +13,23 @@ import web.events.EventTarget
  */
 sealed external class MIDIAccess :
     EventTarget {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIAccess/inputs) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIAccess/inputs)
+     */
     val inputs: MIDIInputMap
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIAccess/statechange_event) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIAccess/statechange_event)
+     */
     var onstatechange: EventHandler<Event>?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIAccess/outputs) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIAccess/outputs)
+     */
     val outputs: MIDIOutputMap
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIAccess/sysexEnabled) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIAccess/sysexEnabled)
+     */
     val sysexEnabled: Boolean
 }

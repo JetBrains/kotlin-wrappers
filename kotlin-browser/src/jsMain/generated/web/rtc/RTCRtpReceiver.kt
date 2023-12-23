@@ -12,29 +12,45 @@ import web.media.streams.MediaStreamTrack
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver)
  */
 sealed external class RTCRtpReceiver {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/track) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/track)
+     */
     val track: MediaStreamTrack
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/transform) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/transform)
+     */
     var transform: RTCRtpTransform?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/transport) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/transport)
+     */
     val transport: RTCDtlsTransport?
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/getContributingSources) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/getContributingSources)
+     */
     fun getContributingSources(): ReadonlyArray<RTCRtpContributingSource>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/getParameters) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/getParameters)
+     */
     fun getParameters(): RTCRtpReceiveParameters
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/getStats) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/getStats)
+     */
     fun getStats(): Promise<RTCStatsReport>
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/getSynchronizationSources) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/getSynchronizationSources)
+     */
     fun getSynchronizationSources(): ReadonlyArray<RTCRtpSynchronizationSource>
 
     companion object {
-        /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/getCapabilities_static) */
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/getCapabilities_static)
+         */
         fun getCapabilities(kind: String): RTCRtpCapabilities?
     }
 }

@@ -2,5 +2,7 @@
 
 package web.speech
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/speechSynthesis) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/speechSynthesis)
+ */
 external val speechSynthesis: SpeechSynthesis

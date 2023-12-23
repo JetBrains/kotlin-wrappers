@@ -5,11 +5,17 @@ package web.rtc
 import js.core.EpochTimeStamp
 import js.core.ReadonlyArray
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCCertificate) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCCertificate)
+ */
 sealed external class RTCCertificate {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCCertificate/expires) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCCertificate/expires)
+     */
     val expires: EpochTimeStamp
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCCertificate/getFingerprints) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCCertificate/getFingerprints)
+     */
     fun getFingerprints(): ReadonlyArray<RTCDtlsFingerprint>
 }

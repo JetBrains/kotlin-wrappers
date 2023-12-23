@@ -10,7 +10,9 @@ package web.html
 open external class HTMLOListElement
 protected constructor() :
     HTMLElement {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOListElement/reversed) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOListElement/reversed)
+     */
     var reversed: Boolean
 
     /**
@@ -20,6 +22,8 @@ protected constructor() :
      */
     var start: Int
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOListElement/type) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOListElement/type)
+     */
     var type: String
 }

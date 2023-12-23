@@ -6,7 +6,9 @@ import seskar.js.JsValue
 import web.rendering.OffscreenRenderingContext
 import web.rendering.RenderingContextId
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvasRenderingContext2D) */
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvasRenderingContext2D)
+ */
 sealed external class OffscreenCanvasRenderingContext2D :
     CanvasCompositing,
     CanvasDrawImage,
@@ -26,7 +28,9 @@ sealed external class OffscreenCanvasRenderingContext2D :
     OffscreenRenderingContext {
     val canvas: OffscreenCanvas
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvasRenderingContext2D/commit) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvasRenderingContext2D/commit)
+     */
     fun commit()
 
     companion object {

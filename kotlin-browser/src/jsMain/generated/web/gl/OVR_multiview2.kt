@@ -3,7 +3,9 @@
 package web.gl
 
 sealed external interface OVR_multiview2 {
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/OVR_multiview2/framebufferTextureMultiviewOVR) */
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OVR_multiview2/framebufferTextureMultiviewOVR)
+     */
     fun framebufferTextureMultiviewOVR(
         target: GLenum,
         attachment: GLenum,
