@@ -13,7 +13,7 @@ sealed external class FileSystemHandle {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemHandle/kind)
      */
-    val kind: FileSystemHandleKind
+    open val kind: FileSystemHandleKind
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemHandle/name)

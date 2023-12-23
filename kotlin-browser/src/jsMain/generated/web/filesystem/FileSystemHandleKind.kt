@@ -13,9 +13,12 @@ import seskar.js.JsVirtual
 sealed external interface FileSystemHandleKind {
     companion object {
         @JsValue("directory")
-        val directory: FileSystemHandleKind
+        val directory: directory
 
         @JsValue("file")
-        val file: FileSystemHandleKind
+        val file: file
     }
+
+    sealed interface directory : FileSystemHandleKind
+    sealed interface file : FileSystemHandleKind
 }

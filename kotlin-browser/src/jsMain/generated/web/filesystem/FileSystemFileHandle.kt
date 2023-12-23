@@ -12,8 +12,11 @@ import web.file.File
  */
 sealed external class FileSystemFileHandle :
     FileSystemHandle {
-    /* val kind: "file" */
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/createWritable) */
+    override val kind: FileSystemHandleKind.file
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/createWritable)
+     */
     fun createWritable(options: FileSystemCreateWritableOptions = definedExternally): Promise<FileSystemWritableFileStream>
 
     /**

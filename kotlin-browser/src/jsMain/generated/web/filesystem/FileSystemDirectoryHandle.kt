@@ -15,8 +15,11 @@ import js.promise.Promise
 sealed external class FileSystemDirectoryHandle :
     FileSystemHandle,
     AsyncMapLike<String, FileSystemHandle> {
-    /* val kind: "directory" */
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/getDirectoryHandle) */
+    override val kind: FileSystemHandleKind.directory
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/getDirectoryHandle)
+     */
     fun getDirectoryHandle(
         name: String,
         options: FileSystemGetDirectoryOptions = definedExternally,
