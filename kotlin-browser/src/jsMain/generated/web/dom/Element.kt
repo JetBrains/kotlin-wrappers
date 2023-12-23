@@ -8,6 +8,7 @@ import js.promise.Promise
 import web.aria.ARIAMixin
 import web.components.ShadowRoot
 import web.components.ShadowRootInit
+import web.components.Slottable
 import web.cssom.StylePropertyMapReadOnly
 import web.events.Event
 import web.events.EventHandler
