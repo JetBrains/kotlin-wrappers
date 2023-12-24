@@ -4,6 +4,7 @@ package web.html
 
 import js.iterable.JsIterable
 import web.dom.NodeListOf
+import web.validation.ValidityState
 
 /**
  * A <select> HTML Element. These elements also share all of the properties and methods of other HTML elements via the HTMLElement interface.

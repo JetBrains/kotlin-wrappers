@@ -3,6 +3,7 @@
 package web.html
 
 import web.dom.Document
+import web.validation.ValidityState
 import web.window.WindowProxy
 
 /**

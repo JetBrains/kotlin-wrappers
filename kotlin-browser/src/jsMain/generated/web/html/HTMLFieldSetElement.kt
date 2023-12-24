@@ -2,6 +2,8 @@
 
 package web.html
 
+import web.validation.ValidityState
+
 /**
  * Provides special properties and methods (beyond the regular HTMLElement interface it also has available to it by inheritance) for manipulating the layout and presentation of <fieldset> elements.
  *

@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package web.html
+package web.validation
 
 sealed external interface ValidityStateFlags {
     var badInput: Boolean?

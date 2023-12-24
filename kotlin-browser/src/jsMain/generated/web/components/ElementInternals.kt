@@ -6,8 +6,8 @@ import web.aria.ARIAMixin
 import web.dom.NodeList
 import web.html.HTMLElement
 import web.html.HTMLFormElement
-import web.html.ValidityState
-import web.html.ValidityStateFlags
+import web.validation.ValidityState
+import web.validation.ValidityStateFlags
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals)

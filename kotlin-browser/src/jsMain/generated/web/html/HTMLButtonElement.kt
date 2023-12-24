@@ -3,6 +3,7 @@
 package web.html
 
 import web.dom.NodeListOf
+import web.validation.ValidityState
 import web.window.WindowName
 
 /**

@@ -3,6 +3,7 @@
 package web.html
 
 import web.dom.NodeListOf
+import web.validation.ValidityState
 
 /**
  * Provides special properties and methods for manipulating the layout and presentation of <textarea> elements.

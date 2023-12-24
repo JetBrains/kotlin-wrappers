@@ -4,6 +4,7 @@ package web.html
 
 import web.dom.DOMTokenList
 import web.dom.NodeListOf
+import web.validation.ValidityState
 
 /**
  * Provides properties and methods (beyond those inherited from HTMLElement) for manipulating the layout and presentation of <output> elements.

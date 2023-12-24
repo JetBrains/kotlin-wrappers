@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package web.html
+package web.validation
 
 /**
  * The validity states that an element can be in, with respect to constraint validation. Together, they help explain why an element's value fails to validate, if it's not valid.
