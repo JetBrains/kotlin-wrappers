@@ -9,8 +9,8 @@ import web.cssom.TransitionEvent
 import web.events.Event
 import web.events.EventHandler
 import web.events.ProgressEvent
-import web.html.FormDataEvent
-import web.html.SubmitEvent
+import web.form.FormDataEvent
+import web.form.SubmitEvent
 import web.uievents.*
 
 external interface GlobalEventHandlers {

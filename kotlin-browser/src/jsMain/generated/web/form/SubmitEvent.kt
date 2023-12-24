@@ -4,11 +4,12 @@
     "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
 )
 
-package web.html
+package web.form
 
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType
+import web.html.HTMLElement
 
 external interface SubmitEventInit : EventInit {
     var submitter: HTMLElement?
