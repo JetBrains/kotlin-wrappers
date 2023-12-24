@@ -2,7 +2,7 @@
 
 package react.router.dom
 
-import web.http.FormData
+import web.form.FormData
 
 
 sealed external interface GetFormSubmissionInfoResult {

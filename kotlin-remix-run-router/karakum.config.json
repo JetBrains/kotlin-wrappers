@@ -25,7 +25,7 @@
             "web.url.URL"
         ],
         "ShouldRevalidateFunctionArgs.kt": [
-            "web.http.FormData",
+            "web.form.FormData",
             "web.url.URL"
         ],
         "UrlHistoryOptions.kt": [
@@ -46,7 +46,7 @@
             "web.http.ResponseInit"
         ],
         "Submission.kt": [
-            "web.http.FormData"
+            "web.form.FormData"
         ],
         "SuccessResult.kt": [
             "web.http.Headers"
@@ -55,19 +55,19 @@
             "web.http.Headers"
         ],
         "FetcherStatesLoading.kt": [
-            "web.http.FormData"
+            "web.form.FormData"
         ],
         "FetcherStatesSubmitting.kt": [
-            "web.http.FormData"
+            "web.form.FormData"
         ],
         "LazyRouteFunction.kt": [
             "js.promise.Promise"
         ],
         "NavigationStatesLoading.kt": [
-            "web.http.FormData"
+            "web.form.FormData"
         ],
         "NavigationStatesSubmitting.kt": [
-            "web.http.FormData"
+            "web.form.FormData"
         ],
         "Router.kt": [
             "js.promise.Promise",
@@ -89,7 +89,7 @@
             "web.http.Headers"
         ],
         "SubmissionNavigateOptions.kt": [
-            "web.http.FormData"
+            "web.form.FormData"
         ],
         "BlockerFunctionArgs.kt": [
             "remix.run.router.Action as HistoryAction"

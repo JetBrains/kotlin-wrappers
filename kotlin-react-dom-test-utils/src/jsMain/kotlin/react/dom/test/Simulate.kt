@@ -7,8 +7,8 @@ import web.clipboard.ClipboardEventInit
 import web.cssom.TransitionEventInit
 import web.events.EventInit
 import web.events.ProgressEventInit
+import web.form.SubmitEventInit
 import web.html.MediaEncryptedEventInit
-import web.html.SubmitEventInit
 import web.uievents.*
 
 /**

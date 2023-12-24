@@ -3,7 +3,7 @@
 
 package remix.run.router
 
-import web.http.FormData
+import web.form.FormData
 import web.url.URL
 
 /**

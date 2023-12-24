@@ -2,7 +2,7 @@
 
 package remix.run.router
 
-import web.http.FormData
+import web.form.FormData
 
 
 sealed external interface FetcherStatesLoading<TData /* default is Any? */> {

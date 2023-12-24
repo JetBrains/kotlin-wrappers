@@ -55,11 +55,11 @@
       "web.html.HTMLButtonElement",
       "web.html.HTMLFormElement",
       "web.html.HTMLInputElement",
-      "web.http.FormData",
+        "web.form.FormData",
       "web.url.URLSearchParams"
     ],
     "GetFormSubmissionInfoResult.kt": [
-      "web.http.FormData",
+        "web.form.FormData",
       "web.url.URL"
     ],
     "getSearchParamsForLocation.kt": [
