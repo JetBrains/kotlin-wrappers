@@ -6,6 +6,7 @@ import web.aria.ARIAMixin
 import web.dom.NodeList
 import web.html.HTMLElement
 import web.html.HTMLFormElement
+import web.validation.ValidationTarget
 import web.validation.ValidityState
 import web.validation.ValidityStateFlags
 
@@ -13,7 +14,8 @@ import web.validation.ValidityStateFlags
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals)
  */
 sealed external class ElementInternals :
-    ARIAMixin {
+    ARIAMixin,
+    ValidationTarget {
     /**
      * Returns the form owner of internals's target element.
      *
@@ -40,35 +42,35 @@ sealed external class ElementInternals :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/validationMessage)
      */
-    val validationMessage: String
+    override val validationMessage: String
 
     /**
      * Returns the ValidityState object for internals's target element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/validity)
      */
-    val validity: ValidityState
+    override val validity: ValidityState
 
     /**
      * Returns true if internals's target element will be validated when the form is submitted; false otherwise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/willValidate)
      */
-    val willValidate: Boolean
+    override val willValidate: Boolean
 
     /**
      * Returns true if internals's target element has no validity problems; false otherwise. Fires an invalid event at the element in the latter case.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/checkValidity)
      */
-    fun checkValidity(): Boolean
+    override fun checkValidity(): Boolean
 
     /**
      * Returns true if internals's target element has no validity problems; otherwise, returns false, fires an invalid event at the element, and (if the event isn't canceled) reports the problem to the user.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/reportValidity)
      */
-    fun reportValidity(): Boolean
+    override fun reportValidity(): Boolean
 
     /**
      * Sets both the state and submission value of internals's target element to value.
