@@ -4,6 +4,7 @@ package web.html
 
 import web.dom.DOMTokenList
 import web.dom.NodeListOf
+import web.form.FormControl
 import web.validation.ValidityState
 
 /**
@@ -13,7 +14,8 @@ import web.validation.ValidityState
  */
 open external class HTMLOutputElement
 protected constructor() :
-    HTMLElement {
+    HTMLElement,
+    FormControl {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/defaultValue)
      */
@@ -22,7 +24,7 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/form)
      */
-    val form: HTMLFormElement?
+    override val form: HTMLFormElement?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/htmlFor)
@@ -37,7 +39,7 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/name)
      */
-    var name: String
+    override var name: String
 
     /**
      * Returns the string "output".
@@ -49,12 +51,12 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/validationMessage)
      */
-    val validationMessage: String
+    override val validationMessage: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/validity)
      */
-    val validity: ValidityState
+    override val validity: ValidityState
 
     /**
      * Returns the element's current value.
@@ -68,20 +70,20 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/willValidate)
      */
-    val willValidate: Boolean
+    override val willValidate: Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/checkValidity)
      */
-    fun checkValidity(): Boolean
+    override fun checkValidity(): Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/reportValidity)
      */
-    fun reportValidity(): Boolean
+    override fun reportValidity(): Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/setCustomValidity)
      */
-    fun setCustomValidity(error: String)
+    override fun setCustomValidity(error: String)
 }

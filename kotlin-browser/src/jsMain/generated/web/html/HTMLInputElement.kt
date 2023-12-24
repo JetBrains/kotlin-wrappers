@@ -7,6 +7,7 @@ import web.autofill.AutoFill
 import web.dom.NodeListOf
 import web.file.FileList
 import web.filesystem.FileSystemEntry
+import web.form.FormControl
 import web.validation.ValidityState
 import web.window.WindowName
 import kotlin.js.Date
@@ -19,7 +20,8 @@ import kotlin.js.Date
 open external class HTMLInputElement
 protected constructor() :
     HTMLElement,
-    PopoverInvokerElement {
+    PopoverInvokerElement,
+    FormControl {
     /**
      * Sets or retrieves a comma-separated list of content types.
      */
@@ -65,7 +67,7 @@ protected constructor() :
     /**
      * Retrieves a reference to the form that the object is embedded in.
      */
-    val form: HTMLFormElement?
+    override val form: HTMLFormElement?
 
     /**
      * Overrides the action attribute (where the data on a form is sent) on the parent form element.
@@ -152,7 +154,7 @@ protected constructor() :
     /**
      * Sets or retrieves the name of the object.
      */
-    var name: String
+    override var name: String
 
     /**
      * Gets or sets a string containing a regular expression that the user's input must match.
@@ -212,14 +214,14 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/validationMessage)
      */
-    val validationMessage: String
+    override val validationMessage: String
 
     /**
      * Returns a  ValidityState object that represents the validity states of an element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/validity)
      */
-    val validity: ValidityState
+    override val validity: ValidityState
 
     /**
      * Returns the value of the data at the cursor's current position.
@@ -258,19 +260,19 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/willValidate)
      */
-    val willValidate: Boolean
+    override val willValidate: Boolean
 
     /**
      * Returns whether a form will validate when it is submitted, without having to submit it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/checkValidity)
      */
-    fun checkValidity(): Boolean
+    override fun checkValidity(): Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/reportValidity)
      */
-    fun reportValidity(): Boolean
+    override fun reportValidity(): Boolean
 
     /**
      * Makes the selection equal to the current object.
@@ -285,7 +287,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/setCustomValidity)
      */
-    fun setCustomValidity(error: String)
+    override fun setCustomValidity(error: String)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/setRangeText)

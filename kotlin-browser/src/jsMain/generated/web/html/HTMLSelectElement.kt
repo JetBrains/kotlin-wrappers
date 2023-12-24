@@ -5,6 +5,7 @@ package web.html
 import js.iterable.JsIterable
 import web.autofill.AutoFill
 import web.dom.NodeListOf
+import web.form.FormControl
 import web.validation.ValidityState
 
 /**
@@ -15,7 +16,8 @@ import web.validation.ValidityState
 open external class HTMLSelectElement
 protected constructor() :
     HTMLElement,
-    JsIterable<HTMLOptionElement> {
+    JsIterable<HTMLOptionElement>,
+    FormControl {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/autocomplete)
      */
@@ -31,7 +33,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/form)
      */
-    val form: HTMLFormElement?
+    override val form: HTMLFormElement?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/labels)
@@ -57,7 +59,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/name)
      */
-    var name: String
+    override var name: String
 
     /**
      * Returns an HTMLOptionsCollection of the list of options.
@@ -104,14 +106,14 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/validationMessage)
      */
-    val validationMessage: String
+    override val validationMessage: String
 
     /**
      * Returns a  ValidityState object that represents the validity states of an element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/validity)
      */
-    val validity: ValidityState
+    override val validity: ValidityState
 
     /**
      * Sets or retrieves the value which is returned to the server when the form control is submitted.
@@ -125,7 +127,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/willValidate)
      */
-    val willValidate: Boolean
+    override val willValidate: Boolean
 
     /**
      * Adds an element to the areas, controlRange, or options collection.
@@ -159,7 +161,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/checkValidity)
      */
-    fun checkValidity(): Boolean
+    override fun checkValidity(): Boolean
 
     /**
      * Retrieves a select object or an object from an options collection.
@@ -190,7 +192,7 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/reportValidity)
      */
-    fun reportValidity(): Boolean
+    override fun reportValidity(): Boolean
 
     /**
      * Sets a custom error message that is displayed when a form is submitted.
@@ -198,7 +200,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/setCustomValidity)
      */
-    fun setCustomValidity(error: String)
+    override fun setCustomValidity(error: String)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/showPicker)

@@ -4,6 +4,7 @@ package web.html
 
 import web.autofill.AutoFill
 import web.dom.NodeListOf
+import web.form.FormControl
 import web.validation.ValidityState
 
 /**
@@ -13,7 +14,8 @@ import web.validation.ValidityState
  */
 open external class HTMLTextAreaElement
 protected constructor() :
-    HTMLElement {
+    HTMLElement,
+    FormControl {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/autocomplete)
      */
@@ -34,7 +36,7 @@ protected constructor() :
     /**
      * Retrieves a reference to the form that the object is embedded in.
      */
-    val form: HTMLFormElement?
+    override val form: HTMLFormElement?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/labels)
@@ -50,7 +52,7 @@ protected constructor() :
     /**
      * Sets or retrieves the name of the object.
      */
-    var name: String
+    override var name: String
 
     /**
      * Gets or sets a text string that is displayed in an input field as a hint or prompt to users as the format or type of information they need to enter.The text appears in an input field until the user puts focus on the field.
@@ -96,12 +98,12 @@ protected constructor() :
     /**
      * Returns the error message that would be displayed if the user submits the form, or an empty string if no error message. It also triggers the standard error message, such as "this is a required field". The result is that the user sees validation messages without actually submitting.
      */
-    val validationMessage: String
+    override val validationMessage: String
 
     /**
      * Returns a  ValidityState object that represents the validity states of an element.
      */
-    val validity: ValidityState
+    override val validity: ValidityState
 
     /**
      * Retrieves or sets the text in the entry field of the textArea element.
@@ -111,7 +113,7 @@ protected constructor() :
     /**
      * Returns whether an element will successfully validate based on forms validation rules and constraints.
      */
-    val willValidate: Boolean
+    override val willValidate: Boolean
 
     /**
      * Sets or retrieves how to handle wordwrapping in the object.
@@ -121,12 +123,12 @@ protected constructor() :
     /**
      * Returns whether a form will validate when it is submitted, without having to submit it.
      */
-    fun checkValidity(): Boolean
+    override fun checkValidity(): Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/reportValidity)
      */
-    fun reportValidity(): Boolean
+    override fun reportValidity(): Boolean
 
     /**
      * Highlights the input area of a form element.
@@ -137,7 +139,7 @@ protected constructor() :
      * Sets a custom error message that is displayed when a form is submitted.
      * @param error Sets a custom error message that is displayed when a form is submitted.
      */
-    fun setCustomValidity(error: String)
+    override fun setCustomValidity(error: String)
     fun setRangeText(replacement: String)
     fun setRangeText(
         replacement: String,

@@ -3,6 +3,7 @@
 package web.html
 
 import web.dom.NodeListOf
+import web.form.FormControl
 import web.validation.ValidityState
 import web.window.WindowName
 
@@ -14,7 +15,8 @@ import web.window.WindowName
 open external class HTMLButtonElement
 protected constructor() :
     HTMLElement,
-    PopoverInvokerElement {
+    PopoverInvokerElement,
+    FormControl {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/disabled)
      */
@@ -25,7 +27,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/form)
      */
-    val form: HTMLFormElement?
+    override val form: HTMLFormElement?
 
     /**
      * Overrides the action attribute (where the data on a form is sent) on the parent form element.
@@ -72,7 +74,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/name)
      */
-    var name: String
+    override var name: String
 
     /**
      * Gets the classification and default behavior of the button.
@@ -86,14 +88,14 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/validationMessage)
      */
-    val validationMessage: String
+    override val validationMessage: String
 
     /**
      * Returns a  ValidityState object that represents the validity states of an element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/validity)
      */
-    val validity: ValidityState
+    override val validity: ValidityState
 
     /**
      * Sets or retrieves the default or selected value of the control.
@@ -107,21 +109,21 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/willValidate)
      */
-    val willValidate: Boolean
+    override val willValidate: Boolean
 
     /**
      * Returns whether a form will validate when it is submitted, without having to submit it.
      */
-    fun checkValidity(): Boolean
+    override fun checkValidity(): Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/reportValidity)
      */
-    fun reportValidity(): Boolean
+    override fun reportValidity(): Boolean
 
     /**
      * Sets a custom error message that is displayed when a form is submitted.
      * @param error Sets a custom error message that is displayed when a form is submitted.
      */
-    fun setCustomValidity(error: String)
+    override fun setCustomValidity(error: String)
 }

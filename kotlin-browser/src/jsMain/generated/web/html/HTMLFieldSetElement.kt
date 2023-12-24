@@ -2,6 +2,7 @@
 
 package web.html
 
+import web.form.FormControl
 import web.validation.ValidityState
 
 /**
@@ -11,7 +12,8 @@ import web.validation.ValidityState
  */
 open external class HTMLFieldSetElement
 protected constructor() :
-    HTMLElement {
+    HTMLElement,
+    FormControl {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/disabled)
      */
@@ -29,12 +31,12 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/form)
      */
-    val form: HTMLFormElement?
+    override val form: HTMLFormElement?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/name)
      */
-    var name: String
+    override var name: String
 
     /**
      * Returns the string "fieldset".
@@ -48,35 +50,35 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/validationMessage)
      */
-    val validationMessage: String
+    override val validationMessage: String
 
     /**
      * Returns a  ValidityState object that represents the validity states of an element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/validity)
      */
-    val validity: ValidityState
+    override val validity: ValidityState
 
     /**
      * Returns whether an element will successfully validate based on forms validation rules and constraints.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/willValidate)
      */
-    val willValidate: Boolean
+    override val willValidate: Boolean
 
     /**
      * Returns whether a form will validate when it is submitted, without having to submit it.
      */
-    fun checkValidity(): Boolean
+    override fun checkValidity(): Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/reportValidity)
      */
-    fun reportValidity(): Boolean
+    override fun reportValidity(): Boolean
 
     /**
      * Sets a custom error message that is displayed when a form is submitted.
      * @param error Sets a custom error message that is displayed when a form is submitted.
      */
-    fun setCustomValidity(error: String)
+    override fun setCustomValidity(error: String)
 }

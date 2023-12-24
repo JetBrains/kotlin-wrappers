@@ -3,6 +3,7 @@
 package web.html
 
 import web.dom.Document
+import web.form.FormControl
 import web.validation.ValidityState
 import web.window.WindowProxy
 
@@ -13,7 +14,8 @@ import web.window.WindowProxy
  */
 open external class HTMLObjectElement
 protected constructor() :
-    HTMLElement {
+    HTMLElement,
+    FormControl {
     /**
      * Retrieves the document object of the page or frame.
      *
@@ -38,7 +40,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/form)
      */
-    val form: HTMLFormElement?
+    override val form: HTMLFormElement?
 
     /**
      * Sets or retrieves the height of the object.
@@ -52,7 +54,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/name)
      */
-    var name: String
+    override var name: String
 
     /**
      * Sets or retrieves the MIME type of the object.
@@ -73,14 +75,14 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/validationMessage)
      */
-    val validationMessage: String
+    override val validationMessage: String
 
     /**
      * Returns a  ValidityState object that represents the validity states of an element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/validity)
      */
-    val validity: ValidityState
+    override val validity: ValidityState
 
     /**
      * Sets or retrieves the width of the object.
@@ -94,14 +96,14 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/willValidate)
      */
-    val willValidate: Boolean
+    override val willValidate: Boolean
 
     /**
      * Returns whether a form will validate when it is submitted, without having to submit it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/checkValidity)
      */
-    fun checkValidity(): Boolean
+    override fun checkValidity(): Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/getSVGDocument)
@@ -111,7 +113,7 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/reportValidity)
      */
-    fun reportValidity(): Boolean
+    override fun reportValidity(): Boolean
 
     /**
      * Sets a custom error message that is displayed when a form is submitted.
@@ -119,5 +121,5 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/setCustomValidity)
      */
-    fun setCustomValidity(error: String)
+    override fun setCustomValidity(error: String)
 }
