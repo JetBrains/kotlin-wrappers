@@ -4,7 +4,7 @@
     "NOTHING_TO_INLINE",
 )
 
-package web.html
+package web.autofill
 
 sealed external interface AutoFill
 

@@ -2,6 +2,7 @@
 
 package web.html
 
+import web.autofill.AutoFill
 import web.dom.NodeListOf
 import web.validation.ValidityState
 

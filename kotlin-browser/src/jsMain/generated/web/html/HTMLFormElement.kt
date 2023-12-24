@@ -4,6 +4,7 @@ package web.html
 
 import js.core.ArrayLike
 import js.iterable.JsIterable
+import web.autofill.AutoFillBase
 import web.dom.DOMTokenList
 import web.dom.Element
 import web.window.WindowTarget

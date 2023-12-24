@@ -3,6 +3,7 @@
 package web.html
 
 import js.iterable.JsIterable
+import web.autofill.AutoFill
 import web.dom.NodeListOf
 import web.validation.ValidityState
 

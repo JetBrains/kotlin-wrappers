@@ -4,7 +4,7 @@
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
-package web.html
+package web.autofill
 
 import seskar.js.JsValue
 import seskar.js.JsVirtual
