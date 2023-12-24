@@ -6,28 +6,24 @@ external interface CustomElementCallbacks {
     /**
      * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Web_components#connectedcallback)
      */
-    var connectedCallback: (() -> Unit)?
+    val connectedCallback: (() -> Unit)?
         get() = definedExternally
-        set(value) = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Web_components#disconnectedcallback)
      */
-    var disconnectedCallback: (() -> Unit)?
+    val disconnectedCallback: (() -> Unit)?
         get() = definedExternally
-        set(value) = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Web_components#adoptedcallback)
      */
-    var adoptedCallback: (() -> Unit)?
+    val adoptedCallback: (() -> Unit)?
         get() = definedExternally
-        set(value) = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Web_components#attributechangedcallback)
      */
-    var attributeChangedCallback: AttributeChangedCallback?
+    val attributeChangedCallback: AttributeChangedCallback?
         get() = definedExternally
-        set(value) = definedExternally
 }
