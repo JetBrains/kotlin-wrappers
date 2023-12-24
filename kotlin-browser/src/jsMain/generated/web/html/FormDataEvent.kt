@@ -9,7 +9,7 @@ package web.html
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType
-import web.http.FormData
+import web.form.FormData
 
 external interface FormDataEventInit : EventInit {
     var formData: FormData

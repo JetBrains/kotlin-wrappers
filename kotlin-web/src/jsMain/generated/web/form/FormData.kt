@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package web.http
+package web.form
 
 import js.collections.MapLike
 import js.core.JsTuple2

@@ -78,8 +78,8 @@ sealed external class ElementInternals :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/setFormValue)
      */
     fun setFormValue(
-        value: Any /* File | String | FormData */?,
-        state: Any /* File | String | FormData */? = definedExternally,
+        value: Any /* File | string | FormData */?,
+        state: Any /* File | string | FormData */? = definedExternally,
     )
 
     /**

@@ -7,7 +7,7 @@ import web.buffer.Blob
 import web.dom.Document
 import web.events.Event
 import web.events.EventHandler
-import web.http.FormData
+import web.form.FormData
 import web.url.URL
 import web.url.URLSearchParams
 

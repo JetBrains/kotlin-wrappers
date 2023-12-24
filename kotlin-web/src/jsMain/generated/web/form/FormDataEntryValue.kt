@@ -1,5 +1,5 @@
 // Automatically generated - do not modify!
 
-package web.http
+package web.form
 
 typealias FormDataEntryValue = Any /* File | string */

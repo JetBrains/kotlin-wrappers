@@ -10,6 +10,7 @@ import js.buffer.ArrayBuffer
 import js.promise.Promise
 import js.typedarrays.Uint8Array
 import web.buffer.Blob
+import web.form.FormData
 import web.streams.ReadableStream
 
 sealed external interface Body {
