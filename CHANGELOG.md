@@ -2,7 +2,7 @@
 
 **BREAKING CHANGE**
 
-* Form related types moved in `web.form` package
+* Form-related types moved to `web.form` package
 
 ## pre.661
 
