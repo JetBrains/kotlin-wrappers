@@ -2,6 +2,7 @@
 
 package web.abort
 
+import js.core.ReadonlyArray
 import js.errors.JsError
 import web.events.Event
 import web.events.EventHandler
@@ -41,6 +42,11 @@ sealed external class AbortSignal :
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/abort_static)
          */
         fun abort(reason: JsError = definedExternally): AbortSignal
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/any_static)
+         */
+        fun any(values: ReadonlyArray<AbortSignal>): AbortSignal
 
         /**
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/timeout_static)
