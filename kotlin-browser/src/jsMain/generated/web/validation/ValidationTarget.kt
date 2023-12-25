@@ -8,5 +8,4 @@ external interface ValidationTarget {
     val willValidate: Boolean
     fun checkValidity(): Boolean
     fun reportValidity(): Boolean
-    fun setCustomValidity(error: String)
 }

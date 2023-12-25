@@ -125,5 +125,5 @@ protected constructor() :
      * Sets a custom error message that is displayed when a form is submitted.
      * @param error Sets a custom error message that is displayed when a form is submitted.
      */
-    override fun setCustomValidity(error: String)
+    fun setCustomValidity(error: String)
 }

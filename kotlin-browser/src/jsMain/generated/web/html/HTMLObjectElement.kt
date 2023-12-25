@@ -121,5 +121,5 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/setCustomValidity)
      */
-    override fun setCustomValidity(error: String)
+    fun setCustomValidity(error: String)
 }

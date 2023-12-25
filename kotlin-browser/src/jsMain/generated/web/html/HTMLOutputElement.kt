@@ -85,5 +85,5 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/setCustomValidity)
      */
-    override fun setCustomValidity(error: String)
+    fun setCustomValidity(error: String)
 }
