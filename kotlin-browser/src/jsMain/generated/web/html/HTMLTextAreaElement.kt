@@ -41,7 +41,7 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/labels)
      */
-    val labels: NodeListOf<HTMLLabelElement>
+    override val labels: NodeListOf<HTMLLabelElement>
 
     /**
      * Sets or retrieves the maximum number of characters that the user can enter in a text control.

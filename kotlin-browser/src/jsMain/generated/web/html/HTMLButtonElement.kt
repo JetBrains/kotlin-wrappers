@@ -67,7 +67,7 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/labels)
      */
-    val labels: NodeListOf<HTMLLabelElement>
+    override val labels: NodeListOf<HTMLLabelElement>
 
     /**
      * Sets or retrieves the name of the object.

@@ -119,7 +119,7 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/labels)
      */
-    val labels: NodeListOf<HTMLLabelElement>?
+    override val labels: NodeListOf<HTMLLabelElement>?
 
     /**
      * Specifies the ID of a pre-defined datalist of options for an input element.

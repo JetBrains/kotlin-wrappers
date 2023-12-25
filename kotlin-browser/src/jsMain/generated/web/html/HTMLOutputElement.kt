@@ -34,7 +34,7 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/labels)
      */
-    val labels: NodeListOf<HTMLLabelElement>
+    override val labels: NodeListOf<HTMLLabelElement>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/name)

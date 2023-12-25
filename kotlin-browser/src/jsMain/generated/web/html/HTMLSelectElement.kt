@@ -38,7 +38,7 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/labels)
      */
-    val labels: NodeListOf<HTMLLabelElement>
+    override val labels: NodeListOf<HTMLLabelElement>
 
     /**
      * Sets or retrieves the number of objects in a collection.
