@@ -9,7 +9,6 @@ package web.fonts
 import js.collections.MutableSetLike
 import js.core.ReadonlyArray
 import js.promise.Promise
-import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
 
@@ -22,17 +21,17 @@ sealed external interface FontFaceSet :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/loading_event)
      */
-    var onloading: EventHandler<Event>?
+    var onloading: EventHandler<FontFaceSetLoadEvent>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/loadingdone_event)
      */
-    var onloadingdone: EventHandler<Event>?
+    var onloadingdone: EventHandler<FontFaceSetLoadEvent>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/loadingerror_event)
      */
-    var onloadingerror: EventHandler<Event>?
+    var onloadingerror: EventHandler<FontFaceSetLoadEvent>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/ready)

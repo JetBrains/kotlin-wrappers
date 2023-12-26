@@ -6,7 +6,6 @@ import js.core.ReadonlyArray
 import js.core.Void
 import js.promise.Promise
 import js.promise.PromiseLike
-import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
 
@@ -28,7 +27,7 @@ external class PaymentRequest(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/paymentmethodchange_event)
      */
-    var onpaymentmethodchange: EventHandler<Event>?
+    var onpaymentmethodchange: EventHandler<PaymentMethodChangeEvent>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/abort)

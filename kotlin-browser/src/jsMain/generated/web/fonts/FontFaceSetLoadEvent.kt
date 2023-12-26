@@ -27,5 +27,5 @@ open external class FontFaceSetLoadEvent(
      */
     val fontfaces: ReadonlyArray<FontFace>
 
-    companion object
+    companion object : FontFaceSetLoadEventTypes
 }

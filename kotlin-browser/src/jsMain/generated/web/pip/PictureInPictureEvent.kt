@@ -26,5 +26,5 @@ open external class PictureInPictureEvent(
      */
     val pictureInPictureWindow: PictureInPictureWindow
 
-    companion object
+    companion object : PictureInPictureEventTypes
 }

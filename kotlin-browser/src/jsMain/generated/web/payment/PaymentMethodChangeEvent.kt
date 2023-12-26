@@ -32,5 +32,5 @@ open external class PaymentMethodChangeEvent(
      */
     val methodName: String
 
-    companion object
+    companion object : PaymentMethodChangeEventTypes
 }

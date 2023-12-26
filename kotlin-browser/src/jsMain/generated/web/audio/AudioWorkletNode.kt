@@ -2,7 +2,7 @@
 
 package web.audio
 
-import web.events.Event
+import web.errors.ErrorEvent
 import web.events.EventHandler
 import web.messaging.MessagePort
 
@@ -19,7 +19,7 @@ external class AudioWorkletNode(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletNode/processorerror_event)
      */
-    var onprocessorerror: EventHandler<Event>?
+    var onprocessorerror: EventHandler<ErrorEvent>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletNode/parameters)

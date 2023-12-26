@@ -13,4 +13,8 @@ sealed external interface ErrorEventTypes {
     @JsValue("error")
     val ERROR: EventType<ErrorEvent>
         get() = definedExternally
+
+    @JsValue("processorerror")
+    val PROCESSOR_ERROR: EventType<ErrorEvent>
+        get() = definedExternally
 }
