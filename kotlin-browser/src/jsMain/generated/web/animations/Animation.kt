@@ -3,7 +3,6 @@
 package web.animations
 
 import js.promise.Promise
-import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
 
@@ -47,7 +46,7 @@ open external class Animation(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/remove_event)
      */
-    var onremove: EventHandler<Event>?
+    var onremove: EventHandler<AnimationPlaybackEvent>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/pending)

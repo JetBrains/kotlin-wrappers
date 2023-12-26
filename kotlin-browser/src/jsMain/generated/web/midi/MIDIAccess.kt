@@ -2,7 +2,6 @@
 
 package web.midi
 
-import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
 
@@ -21,7 +20,7 @@ sealed external class MIDIAccess :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIAccess/statechange_event)
      */
-    var onstatechange: EventHandler<Event>?
+    var onstatechange: EventHandler<MIDIConnectionEvent>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIAccess/outputs)

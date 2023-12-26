@@ -26,5 +26,5 @@ open external class RTCErrorEvent(
      */
     val error: RTCError
 
-    companion object
+    companion object : RTCErrorEventTypes
 }

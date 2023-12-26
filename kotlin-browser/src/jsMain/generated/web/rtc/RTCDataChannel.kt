@@ -74,7 +74,7 @@ sealed external class RTCDataChannel :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/error_event)
      */
-    var onerror: EventHandler<Event>?
+    var onerror: EventHandler<RTCErrorEvent>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/message_event)

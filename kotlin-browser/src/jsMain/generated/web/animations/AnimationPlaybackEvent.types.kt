@@ -17,4 +17,8 @@ sealed external interface AnimationPlaybackEventTypes {
     @JsValue("finish")
     val FINISH: EventType<AnimationPlaybackEvent>
         get() = definedExternally
+
+    @JsValue("remove")
+    val REMOVE: EventType<AnimationPlaybackEvent>
+        get() = definedExternally
 }

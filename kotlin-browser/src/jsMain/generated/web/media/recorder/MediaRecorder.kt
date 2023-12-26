@@ -2,6 +2,7 @@
 
 package web.media.recorder
 
+import web.errors.ErrorEvent
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
@@ -32,7 +33,7 @@ external class MediaRecorder(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/error_event)
      */
-    var onerror: EventHandler<Event>?
+    var onerror: EventHandler<ErrorEvent>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/pause_event)

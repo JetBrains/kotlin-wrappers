@@ -17,7 +17,7 @@ sealed external class RTCDtlsTransport :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/iceTransport)
      */
     val iceTransport: RTCIceTransport
-    var onerror: EventHandler<Event>?
+    var onerror: EventHandler<RTCErrorEvent>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/statechange_event)
