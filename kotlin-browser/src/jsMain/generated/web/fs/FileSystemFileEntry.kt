@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package web.filesystem
+package web.fs
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileEntry)

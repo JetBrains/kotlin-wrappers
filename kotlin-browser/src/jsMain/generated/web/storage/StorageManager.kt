@@ -3,7 +3,7 @@
 package web.storage
 
 import js.promise.Promise
-import web.filesystem.FileSystemDirectoryHandle
+import web.fs.FileSystemDirectoryHandle
 
 /**
  * Available only in secure contexts.

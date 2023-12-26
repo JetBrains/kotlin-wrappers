@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package web.filesystem
+package web.fs
 
 import js.core.Void
 import js.promise.Promise

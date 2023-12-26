@@ -6,8 +6,8 @@ import js.core.ReadonlyArray
 import web.autofill.AutoFill
 import web.dom.NodeListOf
 import web.file.FileList
-import web.filesystem.FileSystemEntry
 import web.form.FormControl
+import web.fs.FileSystemEntry
 import web.validation.ValidityState
 import web.window.WindowName
 import kotlin.js.Date

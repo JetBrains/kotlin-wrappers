@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package web.filesystem
+package web.fs
 
 sealed external interface WriteParams {
     var data: Any /* BufferSource | Blob | string */?

@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package web.filesystem
+package web.fs
 
 import js.collections.AsyncMapLike
 import js.core.ReadonlyArray

@@ -4,7 +4,7 @@
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
-package web.filesystem
+package web.fs
 
 import seskar.js.JsValue
 import seskar.js.JsVirtual

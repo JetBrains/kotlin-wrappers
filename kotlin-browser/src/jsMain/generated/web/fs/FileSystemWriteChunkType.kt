@@ -1,5 +1,5 @@
 // Automatically generated - do not modify!
 
-package web.filesystem
+package web.fs
 
 typealias FileSystemWriteChunkType = Any /* BufferSource | Blob | string | WriteParams */
