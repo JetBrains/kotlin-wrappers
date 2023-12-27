@@ -27,7 +27,6 @@ sealed external class WebGL2RenderingContext :
         val STENCIL: GLenum
         val RED: GLenum
         val RGB8: GLenum
-        val RGBA8: GLenum
         val RGB10_A2: GLenum
         val TEXTURE_BINDING_3D: GLenum
         val UNPACK_SKIP_IMAGES: GLenum
@@ -538,6 +537,7 @@ sealed external class WebGL2RenderingContext :
         val RENDERBUFFER: GLenum
         val RGBA4: GLenum
         val RGB5_A1: GLenum
+        val RGBA8: GLenum
         val RGB565: GLenum
         val DEPTH_COMPONENT16: GLenum
         val STENCIL_INDEX8: GLenum

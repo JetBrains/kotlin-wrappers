@@ -1166,6 +1166,7 @@ sealed external interface WebGLRenderingContextBase {
     val RENDERBUFFER: GLenum
     val RGBA4: GLenum
     val RGB5_A1: GLenum
+    val RGBA8: GLenum
     val RGB565: GLenum
     val DEPTH_COMPONENT16: GLenum
     val STENCIL_INDEX8: GLenum

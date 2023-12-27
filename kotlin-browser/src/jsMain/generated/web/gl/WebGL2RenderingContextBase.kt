@@ -895,7 +895,6 @@ sealed external interface WebGL2RenderingContextBase {
     val STENCIL: GLenum
     val RED: GLenum
     val RGB8: GLenum
-    val RGBA8: GLenum
     val RGB10_A2: GLenum
     val TEXTURE_BINDING_3D: GLenum
     val UNPACK_SKIP_IMAGES: GLenum

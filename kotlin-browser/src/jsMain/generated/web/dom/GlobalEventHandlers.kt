@@ -60,7 +60,7 @@ external interface GlobalEventHandlers {
         set(value) = definedExternally
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/beforeinput_event)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/beforeinput_event)
      */
     var onbeforeinput: EventHandler<InputEvent>?
         get() = definedExternally
@@ -307,7 +307,7 @@ external interface GlobalEventHandlers {
         set(value) = definedExternally
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/input_event)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/input_event)
      */
     var oninput: EventHandler<Event>?
         get() = definedExternally
@@ -381,7 +381,7 @@ external interface GlobalEventHandlers {
         set(value) = definedExternally
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/lostpointercapture_event)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/lostpointercapture_event)
      */
     var onlostpointercapture: EventHandler<PointerEvent>?
         get() = definedExternally
