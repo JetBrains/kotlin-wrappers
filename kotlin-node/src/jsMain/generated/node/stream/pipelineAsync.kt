@@ -7,20 +7,26 @@ package node.stream
 import js.core.ReadonlyArray
 import js.promise.Promise
 
-external fun <A : PipelineSource<Any?>, B : PipelineDestination<A, Any?>> pipeline(
+
+@JsName("pipeline")
+external fun <A : PipelineSource<Any?>, B : PipelineDestination<A, Any?>> pipelineAsync(
     source: A,
     destination: B,
     options: PipelineOptions = definedExternally,
 ): PipelinePromise<B>
 
-external fun <A : PipelineSource<Any?>, T1 : PipelineTransform<A, Any?>, B : PipelineDestination<T1, Any?>> pipeline(
+
+@JsName("pipeline")
+external fun <A : PipelineSource<Any?>, T1 : PipelineTransform<A, Any?>, B : PipelineDestination<T1, Any?>> pipelineAsync(
     source: A,
     transform1: T1,
     destination: B,
     options: PipelineOptions = definedExternally,
 ): PipelinePromise<B>
 
-external fun <A : PipelineSource<Any?>, T1 : PipelineTransform<A, Any?>, T2 : PipelineTransform<T1, Any?>, B : PipelineDestination<T2, Any?>> pipeline(
+
+@JsName("pipeline")
+external fun <A : PipelineSource<Any?>, T1 : PipelineTransform<A, Any?>, T2 : PipelineTransform<T1, Any?>, B : PipelineDestination<T2, Any?>> pipelineAsync(
     source: A,
     transform1: T1,
     transform2: T2,
@@ -28,7 +34,9 @@ external fun <A : PipelineSource<Any?>, T1 : PipelineTransform<A, Any?>, T2 : Pi
     options: PipelineOptions = definedExternally,
 ): PipelinePromise<B>
 
-external fun <A : PipelineSource<Any?>, T1 : PipelineTransform<A, Any?>, T2 : PipelineTransform<T1, Any?>, T3 : PipelineTransform<T2, Any?>, B : PipelineDestination<T3, Any?>> pipeline(
+
+@JsName("pipeline")
+external fun <A : PipelineSource<Any?>, T1 : PipelineTransform<A, Any?>, T2 : PipelineTransform<T1, Any?>, T3 : PipelineTransform<T2, Any?>, B : PipelineDestination<T3, Any?>> pipelineAsync(
     source: A,
     transform1: T1,
     transform2: T2,
@@ -37,7 +45,9 @@ external fun <A : PipelineSource<Any?>, T1 : PipelineTransform<A, Any?>, T2 : Pi
     options: PipelineOptions = definedExternally,
 ): PipelinePromise<B>
 
-external fun <A : PipelineSource<Any?>, T1 : PipelineTransform<A, Any?>, T2 : PipelineTransform<T1, Any?>, T3 : PipelineTransform<T2, Any?>, T4 : PipelineTransform<T3, Any?>, B : PipelineDestination<T4, Any?>> pipeline(
+
+@JsName("pipeline")
+external fun <A : PipelineSource<Any?>, T1 : PipelineTransform<A, Any?>, T2 : PipelineTransform<T1, Any?>, T3 : PipelineTransform<T2, Any?>, T4 : PipelineTransform<T3, Any?>, B : PipelineDestination<T4, Any?>> pipelineAsync(
     source: A,
     transform1: T1,
     transform2: T2,

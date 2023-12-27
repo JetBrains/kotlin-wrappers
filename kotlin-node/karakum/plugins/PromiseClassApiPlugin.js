@@ -5,7 +5,7 @@ function isPromiseType(node) {
     return (
         ts.isTypeReferenceNode(node)
         && ts.isIdentifier(node.typeName)
-        && node.typeName.text === "Promise"
+        && node.typeName.text.endsWith("Promise")
     )
 }
 

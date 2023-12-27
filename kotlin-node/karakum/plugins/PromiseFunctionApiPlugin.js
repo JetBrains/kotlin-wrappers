@@ -5,7 +5,7 @@ function isPromiseType(node) {
     return (
         ts.isTypeReferenceNode(node)
         && ts.isIdentifier(node.typeName)
-        && node.typeName.text === "Promise"
+        && node.typeName.text.endsWith("Promise")
     )
 }
 
@@ -117,7 +117,14 @@ export default {
                 ?.join(", ")
 
             const returnType = next(node.type)
-            const returnTypePayload = next(node.type.typeArguments[0])
+            let returnTypePayload = next(node.type.typeArguments[0])
+            if (
+                ts.isTypeReferenceNode(node.type)
+                && ts.isIdentifier(node.type.typeName)
+                && node.type.typeName.text === "PipelinePromise"
+            ) {
+                returnTypePayload = "Any?"
+            }
 
             const body = karakum.convertParameterDeclarations(node, context, next, {
                 strategy: "function",
