@@ -52,9 +52,13 @@ external class ReadStream : node.stream.Readable {
     fun addListener(event: ReadStreamEvent.READABLE, listener: () -> Unit): Unit /* this */
     fun addListener(event: ReadStreamEvent.READY, listener: () -> Unit): Unit /* this */
     fun addListener(event: ReadStreamEvent.RESUME, listener: () -> Unit): Unit /* this */
-    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
-    fun addListener(event: js.core.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun addListener(
+        event: js.core.Symbol,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ): Unit /* this */
+
     fun on(event: ReadStreamEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun on(event: ReadStreamEvent.DATA, listener: (chunk: Any /* Buffer | string */) -> Unit): Unit /* this */
     fun on(event: ReadStreamEvent.END, listener: () -> Unit): Unit /* this */
@@ -64,9 +68,9 @@ external class ReadStream : node.stream.Readable {
     fun on(event: ReadStreamEvent.READABLE, listener: () -> Unit): Unit /* this */
     fun on(event: ReadStreamEvent.READY, listener: () -> Unit): Unit /* this */
     fun on(event: ReadStreamEvent.RESUME, listener: () -> Unit): Unit /* this */
-    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
-    fun on(event: js.core.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun on(event: js.core.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun once(event: ReadStreamEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun once(event: ReadStreamEvent.DATA, listener: (chunk: Any /* Buffer | string */) -> Unit): Unit /* this */
     fun once(event: ReadStreamEvent.END, listener: () -> Unit): Unit /* this */
@@ -76,9 +80,9 @@ external class ReadStream : node.stream.Readable {
     fun once(event: ReadStreamEvent.READABLE, listener: () -> Unit): Unit /* this */
     fun once(event: ReadStreamEvent.READY, listener: () -> Unit): Unit /* this */
     fun once(event: ReadStreamEvent.RESUME, listener: () -> Unit): Unit /* this */
-    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
-    fun once(event: js.core.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun once(event: js.core.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun prependListener(event: ReadStreamEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun prependListener(
         event: ReadStreamEvent.DATA,
@@ -92,9 +96,16 @@ external class ReadStream : node.stream.Readable {
     fun prependListener(event: ReadStreamEvent.READABLE, listener: () -> Unit): Unit /* this */
     fun prependListener(event: ReadStreamEvent.READY, listener: () -> Unit): Unit /* this */
     fun prependListener(event: ReadStreamEvent.RESUME, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun prependListener(
+        event: String,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ): Unit /* this */
 
-    fun prependListener(event: js.core.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun prependListener(
+        event: js.core.Symbol,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ): Unit /* this */
+
     fun prependOnceListener(event: ReadStreamEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(
         event: ReadStreamEvent.DATA,
@@ -112,9 +123,12 @@ external class ReadStream : node.stream.Readable {
     fun prependOnceListener(event: ReadStreamEvent.READABLE, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(event: ReadStreamEvent.READY, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(event: ReadStreamEvent.RESUME, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun prependOnceListener(
+        event: String,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ): Unit /* this */
 
-    fun prependOnceListener(
+    override fun prependOnceListener(
         event: js.core.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */

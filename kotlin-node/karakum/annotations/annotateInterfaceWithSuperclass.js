@@ -23,6 +23,9 @@ const interfacesWithSuperclass = [
     // fs
     "FSWatcher",
     "StatWatcher",
+
+    // stream
+    "Stream"
 ]
 
 export default (node) => {

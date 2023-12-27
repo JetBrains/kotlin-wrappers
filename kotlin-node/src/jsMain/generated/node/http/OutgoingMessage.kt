@@ -54,7 +54,7 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
      * @since v0.9.12
      * @param callback Optional function to be called when a timeout occurs. Same as binding to the `timeout` event.
      */
-    fun setTimeout(msecs: Number, callback: () -> Unit = definedExternally): Unit /* this */
+    open fun setTimeout(msecs: Number, callback: () -> Unit = definedExternally): Unit /* this */
 
     /**
      * Sets a single header value for the header object.

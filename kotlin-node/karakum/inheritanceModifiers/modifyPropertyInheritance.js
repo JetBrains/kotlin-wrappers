@@ -20,6 +20,37 @@ export default (node) => {
                     && node.parent.name?.text === "ChildProcess"
                 )
             )
+            || (
+                sourceFileName.endsWith("stream.d.ts")
+                && (
+                    (
+                        node.name.text === "closed"
+                        || node.name.text === "errored"
+                        || node.name.text === "destroyed"
+                    )
+                    && node.parent
+                    && node.parent.name?.text === "Readable"
+                )
+            )
+            || (
+                sourceFileName.endsWith("stream.d.ts")
+                && (
+                    (
+                        node.name.text === "writableEnded"
+                        || node.name.text === "writableFinished"
+                        || node.name.text === "writableHighWaterMark"
+                        || node.name.text === "writableLength"
+                        || node.name.text === "writableObjectMode"
+                        || node.name.text === "writableCorked"
+                        || node.name.text === "writableNeedDrain"
+                        || node.name.text === "closed"
+                        || node.name.text === "errored"
+                        || node.name.text === "destroyed"
+                    )
+                    && node.parent
+                    && node.parent.name?.text === "Writable"
+                )
+            )
         )
     ) {
         return "open"

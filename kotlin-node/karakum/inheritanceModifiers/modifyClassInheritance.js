@@ -40,6 +40,15 @@ export default (node) => {
                     || node.name.text === "Socket"
                 )
             )
+            || (
+                sourceFileName.endsWith("stream.d.ts")
+                && (
+                    node.name.text === "Readable"
+                    || node.name.text === "Writable"
+                    || node.name.text === "Duplex"
+                    || node.name.text === "Transform"
+                )
+            )
         )
     ) {
         return "open"

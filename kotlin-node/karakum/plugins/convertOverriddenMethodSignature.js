@@ -7,18 +7,10 @@ const overriddenProps = {
         "toString": null,
     },
 
-    // http
-    "ClientRequest": {
-        "setTimeout": "setClientRequestTimeout",
-    },
-
-    // net
-    "Socket": {
-        "setEncoding": "setNetSocketEncoding",
-        "pause": null,
-        "resume": null,
-        "end": ["endNetSocket", signature => signature.length === 1]
-    },
+    // stream
+    "Readable": {
+        "read": "readOrNull"
+    }
 }
 
 export default function (node, context, render) {

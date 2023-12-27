@@ -15,7 +15,9 @@
         "<nodeModules>/@types/node/net.d.ts",
         "<nodeModules>/@types/node/tls.d.ts",
         "<nodeModules>/@types/node/readline.d.ts",
-        "<nodeModules>/@types/node/readline/promises.d.ts"
+        "<nodeModules>/@types/node/readline/promises.d.ts",
+        "<nodeModules>/@types/node/stream.d.ts",
+        "<nodeModules>/@types/node/stream/promises.d.ts"
     ],
     "output": "src/jsMain/generated",
     "ignoreOutput": [
@@ -24,14 +26,12 @@
         "**/NodeModule.kt",
         "**/Dict.kt",
         "**/ReadOnlyDict.kt",
-
         "**/AbortController.kt",
         "**/AbortSignal.kt",
         "**/Array.kt",
         "**/ReadonlyArray.kt",
         "**/String.kt",
         "**/structuredClone.kt",
-
         "**/ArrayBufferView.kt",
         "**/TypedArray.kt",
         "**/Uint8ClampedArray.kt",
@@ -39,13 +39,10 @@
         "**/*16Array.kt",
         "**/*32Array.kt",
         "**/*64Array.kt",
-
         "**/__promisify__.kt",
         "**/__promisify__*.kt",
-
         "**/childProcess/exec/**",
         "**/childProcess/execfile/**",
-
         "**/buffer/atob.kt",
         "**/buffer/btoa.kt",
         "**/buffer/__Blob.kt",
@@ -54,10 +51,8 @@
         "**/buffer/File.kt",
         "**/buffer/FileOptions.kt",
         "**/buffer/FileOptionsEndings.kt",
-
         "**/crypto/generatekeypair/**",
         "**/crypto/webcrypto/**",
-
         "**/dns/lookupservice/**",
         "**/dns/resolve/**",
         "**/dns/Resolver.kt",
@@ -65,10 +60,9 @@
         "**/dns/setDefaultResultOrderAsync.kt",
         "**/dns/SetDefaultResultOrderOrderAsync.kt",
         "**/dns/setServersAsync.kt",
-
         "**/events/global/nodejs/EventEmitter.kt",
-
-        "**/readline/createInterface.kt"
+        "**/readline/createInterface.kt",
+        "**/stream/internal.kt"
     ],
     "libraryName": "node",
     "libraryNameOutputPrefix": true,
@@ -76,106 +70,90 @@
     "moduleNameMapper": {
         "^node/async_hooks": "node:async_hooks",
         "^async_hooks": "node:async_hooks",
-
         "^node/child_process": "node:child_process",
         "^child_process": "node:child_process",
-
         "^node/buffer": "node:buffer",
         "^buffer": "node:buffer",
-
         "^node/crypto": "node:crypto",
         "^crypto": "node:crypto",
-
         "^node/dgram": "node:dgram",
         "^dgram": "node:dgram",
-
         "^node/dns": "node:dns",
         "^dns": "node:dns",
-
         "^node/events": "node:events",
         "^events": "node:events",
-
         "^node/fs": "node:fs",
         "^fs": "node:fs",
-
         "^node/http": "node:http",
         "^http": "node:http",
-
         "^node/net": "node:net",
         "^net": "node:net",
-
         "^node/tls": "node:tls",
         "^tls": "node:tls",
-
         "^node/readline": "node:readline",
-        "^readline": "node:readline"
+        "^readline": "node:readline",
+        "^node/stream": "node:stream",
+        "^stream#internal": "node:stream",
+        "^stream": "node:stream"
     },
     "packageNameMapper": {
         "promises/(.+)\\.kt": "$1Async.kt",
         "SuspendAsync.kt": "Suspend.kt",
         "AsyncOptionsAsync.kt": "OptionsAsync.kt",
-
         "^node/RequireResolve.kt": "node/NodeRequireResolve.kt",
         "^nodejs": "node",
-
         "^node/async_hooks/namespace.kt": "node/asyncHooks/nodeNamespace.kt",
         "^node/asyncHooks.kt": "node/asyncHooks/asyncHooks.kt",
         "^async_hooks": "node/asyncHooks",
-
         "^node/child_process/namespace.kt": "node/childProcess/nodeNamespace.kt",
         "^node/childProcess.kt": "node/childProcess/childProcessNamespace.kt",
         "^child_process": "node/childProcess",
-
         "^node/buffer/namespace.kt": "node/buffer/nodeNamespace.kt",
         "^node/buffer/global/namespace.kt": "node/buffer/nodeGlobalNamespace.kt",
         "^node/buffer.kt": "node/buffer/bufferModule.kt",
         "^buffer/global/namespace.kt": "node/buffer/globalNamespace.kt",
         "^buffer": "node/buffer",
         "buffer/global/(.+)\\.kt": "buffer/$1.kt",
-
         "^node/crypto/namespace.kt": "node/crypto/nodeNamespace.kt",
         "^node/crypto.kt": "node/crypto/crypto.kt",
         "^crypto": "node/crypto",
         "crypto/sign.kt": "crypto/sign.fun.kt",
         "crypto/verify.kt": "crypto/verify.fun.kt",
         "crypto/diffieHellman.kt": "crypto/diffieHellman.fun.kt",
-
         "^node/dgram/namespace.kt": "node/dgram/nodeNamespace.kt",
         "^node/dgram.kt": "node/dgram/dgram.kt",
         "^dgram": "node/dgram",
-
         "^node/dns/namespace.kt": "node/dns/nodeNamespace.kt",
         "^node/dns.kt": "node/dns/dns.kt",
         "^dns": "node/dns",
-
         "^node/events/namespace.kt": "node/events/nodeNamespace.kt",
         "^node/events.kt": "node/events/events.kt",
         "^events/eventemitter/namespace.kt": "node/events/eventEmitterNamespace.kt",
         "^events": "node/events",
         "events/eventemitter/Abortable.kt": "events/Abortable.kt",
-
         "^node/fs/namespace.kt": "node/fs/nodeNamespace.kt",
         "^node/fs.kt": "node/fs/fs.kt",
         "^fs": "node/fs",
         "fs/StatfsOptions.kt": "fs/StatfsOptions.fun.kt",
         "fs/realpathsync/native.kt": "fs/realpathSync/native.kt",
         "fs/symlink/Type.kt": "fs/SymlinkType.kt",
-
         "^node/http/namespace.kt": "node/http/nodeNamespace.kt",
         "^node/http.kt": "node/http/http.kt",
         "^http": "node/http",
-
         "^node/net/namespace.kt": "node/net/nodeNamespace.kt",
         "^node/net.kt": "node/net/net.kt",
         "^net": "node/net",
-
         "^node/tls/namespace.kt": "node/tls/nodeNamespace.kt",
         "^node/tls.kt": "node/tls/tls.kt",
         "^tls": "node/tls",
-
         "^node/readline/namespace.kt": "node/readline/nodeNamespace.kt",
         "^node/readline.kt": "node/readline/readlineNamespace.kt",
-        "^readline": "node/readline"
+        "^readline": "node/readline",
+        "^node/stream/namespace.kt": "node/stream/nodeNamespace.kt",
+        "^node/stream.kt": "node/stream/streamNamespace.kt",
+        "^stream": "node/stream",
+        "stream/internal/namespace.kt": "stream/internalNamespace.kt",
+        "stream/internal/(.+)\\.kt": "stream/$1.kt"
     },
     "importInjector": {
         "Async.kt": [
@@ -184,7 +162,6 @@
         "Suspend.kt": [
             "js.promise.await"
         ],
-
         "ReadableStream.kt": [
             "js.typedarrays.Uint8Array",
             "node.events.EventEmitter"
@@ -197,7 +174,6 @@
             "js.typedarrays.Uint8Array",
             "node.events.EventEmitter"
         ],
-
         "buffer/Buffer.kt": [
             "js.buffer.ArrayBuffer",
             "js.buffer.SharedArrayBuffer",
@@ -219,7 +195,6 @@
         "buffer/transcode.kt": [
             "js.typedarrays.Uint8Array"
         ],
-
         "childProcess/ChildProcess.kt": [
             "node.events.EventEmitter",
             "node.stream.Pipe",
@@ -276,7 +251,6 @@
         "childProcess/spawnSync.kt": [
             "js.core.ReadonlyArray"
         ],
-
         "crypto/Cipher.kt": [
             "node.stream.TransformOptions"
         ],
@@ -313,7 +287,6 @@
         "crypto/hkdfSync.kt": [
             "js.buffer.ArrayBuffer"
         ],
-
         "dgram/Socket.kt": [
             "js.core.ReadonlyArray",
             "js.typedarrays.Uint8Array",
@@ -323,14 +296,12 @@
         "dgram/SocketOptions.kt": [
             "node.events.Abortable"
         ],
-
         "dns/setServers.kt": [
             "js.core.ReadonlyArray"
         ],
         "dns/ResolverAsync.kt": [
             "js.promise.await"
         ],
-
         "events/Abortable.kt": [
             "web.abort.AbortSignal"
         ],
@@ -341,7 +312,6 @@
         "events/StaticEventEmitterOptions.kt": [
             "web.abort.AbortSignal"
         ],
-
         "fs/Dir.kt": [
             "js.iterable.AsyncIterable",
             "js.promise.Promise"
@@ -455,7 +425,6 @@
         "fs/writevSync.kt": [
             "js.core.ReadonlyArray"
         ],
-
         "http/Agent.kt": [
             "node.events.EventEmitter",
             "node.net.Socket"
@@ -493,7 +462,6 @@
         "http/request.kt": [
             "node.url.URL"
         ],
-
         "net/ListenOptions.kt": [
             "node.events.Abortable"
         ],
@@ -509,14 +477,12 @@
         "net/SocketConstructorOpts.kt": [
             "web.abort.AbortSignal"
         ],
-
         "tls/TLSSocket.kt": [
             "node.crypto.X509Certificate"
         ],
         "tls/namespace.kt": [
             "js.core.ReadonlyArray"
         ],
-
         "readline/Interface.kt": [
             "node.events.EventEmitter",
             "node.events.Abortable"
@@ -527,46 +493,84 @@
         ],
         "readline/ReadlineAsync.kt": [
             "js.promise.await"
+        ],
+        "stream/addAbortSignal.kt": [
+            "web.abort.AbortSignal"
+        ],
+        "stream/Duplex.kt": [
+            "js.buffer.ArrayBuffer",
+            "js.core.Object",
+            "js.iterable.AsyncIterable",
+            "js.promise.Promise",
+            "web.buffer.Blob as NodeBlob"
+        ],
+        "stream/FinishedOptions.kt": [
+            "node.events.Abortable"
+        ],
+        "stream/pipeline.kt": [
+            "js.core.ReadonlyArray"
+        ],
+        "stream/pipelineAsync.kt": [
+            "js.core.ReadonlyArray"
+        ],
+        "stream/PipelineDestinationIterableFunction.kt": [
+            "js.iterable.AsyncIterable"
+        ],
+        "stream/PipelineDestinationPromiseFunction.kt": [
+            "js.promise.Promise",
+            "js.iterable.AsyncIterable"
+        ],
+        "stream/PipelineOptions.kt": [
+            "web.abort.AbortSignal"
+        ],
+        "stream/pipelineSuspend.kt": [
+            "js.core.ReadonlyArray"
+        ],
+        "stream/Readable.kt": [
+            "js.typedarrays.Uint8Array",
+            "js.iterable.AsyncIterable",
+            "node.ReadableStreamPipeOptions",
+            "node.WritableStream"
+        ],
+        "stream/StreamOptions.kt": [
+            "node.events.Abortable"
+        ],
+        "stream/Stream.kt": [
+            "node.events.EventEmitter"
+        ],
+        "stream/Writable.kt": [
+            "node.events.EventEmitter",
+            "js.typedarrays.Uint8Array"
         ]
     },
     "namespaceStrategy": {
         "NodeJS": "package",
-
         "async_hooks": "package",
         "node:async_hooks": "ignore",
-
         "child_process": "package",
         "node:child_process": "ignore",
-
         "buffer": "package",
         "node:buffer": "ignore",
-
         "crypto": "package",
         "node:crypto": "ignore",
-
         "dgram": "package",
         "node:dgram": "ignore",
-
         "dns": "package",
         "node:dns": "ignore",
-
         "events": "package",
         "node:events": "ignore",
-
         "fs": "package",
         "node:fs": "ignore",
-
         "http": "package",
         "node:http": "ignore",
-
         "net": "package",
         "node:net": "ignore",
-
         "tls": "package",
         "node:tls": "ignore",
-
         "readline": "package",
-        "node:readline": "ignore"
+        "node:readline": "ignore",
+        "stream": "package",
+        "node:stream": "ignore"
     },
     "conflictResolutionStrategy": {
         "LookupServiceResultPayload": "replace",
@@ -590,7 +594,9 @@
         "FileHandleWriteResultPayloadAsync.kt": "replace",
         "FileHandleWriteStringResultPayloadAsync.kt": "replace",
         "ExecStringOptions.kt": "replace",
-        "ExecFileObjectEncodingOptions.kt": "replace"
+        "ExecFileObjectEncodingOptions.kt": "replace",
+        "ReadableStreamPipeOptions": "replace",
+        "WritableWritevChunksItem": "replace"
     },
     "compilerOptions": {
         "types": [

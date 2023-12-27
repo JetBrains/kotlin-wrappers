@@ -248,5 +248,5 @@ open external class IncomingMessage : node.stream.Readable {
      * as an argument to any listeners on the event.
      * @since v0.3.0
      */
-    fun destroy(error: Throwable /* JsError */ = definedExternally): Unit /* this */
+    override fun destroy(error: Throwable /* JsError */): Unit /* this */
 }

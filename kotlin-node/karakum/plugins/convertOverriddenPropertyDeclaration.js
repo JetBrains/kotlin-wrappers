@@ -6,6 +6,26 @@ const overriddenProps = {
     "Socket": {
         "destroyed": "netSocketDestroyed"
     },
+
+    // stream
+    "Readable": {
+        "readable": null
+    },
+    "Writable": {
+        "writable": "readonlyWritable"
+    },
+    "Duplex": {
+        "writable": "duplexWritable",
+        "writableEnded": null,
+        "writableFinished": null,
+        "writableHighWaterMark": null,
+        "writableLength": null,
+        "writableObjectMode": null,
+        "writableCorked": null,
+        "writableNeedDrain": null,
+        "closed": null,
+        "errored": null,
+    }
 }
 
 export default function (node, context, render) {

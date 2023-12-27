@@ -25,6 +25,14 @@ function hasConflictingOverloads(node) {
         || node.name.text === "realpathSync"
         || node.name.text === "watch"
         || isNativeRealpathSync(node)
+
+        || (
+            node.name.text === "pipeline"
+
+            && node.type
+            && ts.isTypeReferenceNode(node.type)
+            && ts.isQualifiedName(node.type.typeName)
+        )
     )
 }
 
@@ -92,6 +100,16 @@ function isConflictingOverload(node, signature) {
                     && node.type.typeName.text === "AsyncIterable"
                 )
             )
+        )
+        || (
+            node.name.text === "pipeline"
+
+            && signature[2]
+            && signature[2].parameter.dotDotDotToken
+
+            && node.type
+            && ts.isTypeReferenceNode(node.type)
+            && ts.isQualifiedName(node.type.typeName)
         )
     )
 }

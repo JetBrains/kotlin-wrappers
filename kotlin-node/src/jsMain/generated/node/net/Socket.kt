@@ -39,14 +39,14 @@ open external class Socket : node.stream.Duplex {
      * @since v0.1.90
      * @param [encoding='utf8'] Only used when data is `string`.
      */
-    fun write(
+    override fun write(
         buffer: Uint8Array,
-        cb: (err: Throwable /* JsError */? /* use undefined for default */) -> Unit = definedExternally,
+        cb: (err: Throwable /* JsError */? /* use undefined for default */) -> Unit,
     ): Boolean
 
-    fun write(
+    override fun write(
         buffer: String,
-        cb: (err: Throwable /* JsError */? /* use undefined for default */) -> Unit = definedExternally,
+        cb: (err: Throwable /* JsError */? /* use undefined for default */) -> Unit,
     ): Boolean
 
     fun write(
@@ -55,10 +55,10 @@ open external class Socket : node.stream.Duplex {
         cb: (err: Throwable /* JsError */? /* use undefined for default */) -> Unit = definedExternally,
     ): Boolean
 
-    fun write(
+    override fun write(
         str: String,
-        encoding: node.buffer.BufferEncoding = definedExternally,
-        cb: (err: Throwable /* JsError */? /* use undefined for default */) -> Unit = definedExternally,
+        encoding: node.buffer.BufferEncoding,
+        cb: (err: Throwable /* JsError */? /* use undefined for default */) -> Unit,
     ): Boolean
 
     /**
@@ -90,9 +90,7 @@ open external class Socket : node.stream.Duplex {
      * @since v0.1.90
      * @return The socket itself.
      */
-
-    @JsName("setEncoding")
-    fun setNetSocketEncoding(encoding: node.buffer.BufferEncoding = definedExternally): Unit /* this */
+    override fun setEncoding(encoding: node.buffer.BufferEncoding): Unit /* this */
 
     /**
      * Pauses the reading of data. That is, `'data'` events will not be emitted.
@@ -318,24 +316,17 @@ open external class Socket : node.stream.Duplex {
      * @param callback Optional callback for when the socket is finished.
      * @return The socket itself.
      */
+    override fun end(cb: () -> Unit): Unit /* this */
+    override fun end(data: Uint8Array, cb: () -> Unit): Unit /* this */
 
-    @JsName("end")
-    fun endNetSocket(callback: () -> Unit = definedExternally): Unit /* this */
-
-    fun end(buffer: Uint8Array, callback: () -> Unit = definedExternally): Unit /* this */
-
-    fun end(buffer: String, callback: () -> Unit = definedExternally): Unit /* this */
+    override fun end(data: String, cb: () -> Unit): Unit /* this */
     fun end(
         str: Uint8Array,
         encoding: node.buffer.BufferEncoding = definedExternally,
-        callback: () -> Unit = definedExternally,
+        cb: () -> Unit = definedExternally,
     ): Unit /* this */
 
-    fun end(
-        str: String,
-        encoding: node.buffer.BufferEncoding = definedExternally,
-        callback: () -> Unit = definedExternally,
-    ): Unit /* this */
+    override fun end(str: String, encoding: node.buffer.BufferEncoding, cb: () -> Unit): Unit /* this */
 
     /**
      * events.EventEmitter
@@ -349,7 +340,7 @@ open external class Socket : node.stream.Duplex {
      *   8. ready
      *   9. timeout
      */
-    open fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun addListener(event: SocketEvent.CLOSE, listener: (hadError: Boolean) -> Unit): Unit /* this */
     fun addListener(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
     fun addListener(event: SocketEvent.DATA, listener: (data: node.buffer.Buffer) -> Unit): Unit /* this */
@@ -363,9 +354,9 @@ open external class Socket : node.stream.Duplex {
 
     fun addListener(event: SocketEvent.READY, listener: () -> Unit): Unit /* this */
     fun addListener(event: SocketEvent.TIMEOUT, listener: () -> Unit): Unit /* this */
-    open fun emit(event: String, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Boolean
+    override fun emit(event: String, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Boolean
 
-    open fun emit(event: js.core.Symbol, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Boolean
+    override fun emit(event: js.core.Symbol, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Boolean
     fun emit(event: SocketEvent.CLOSE, hadError: Boolean): Boolean
     fun emit(event: SocketEvent.CONNECT): Boolean
     fun emit(event: SocketEvent.DATA, data: node.buffer.Buffer): Boolean
@@ -390,7 +381,7 @@ open external class Socket : node.stream.Duplex {
 
     fun emit(event: SocketEvent.READY): Boolean
     fun emit(event: SocketEvent.TIMEOUT): Boolean
-    open fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun on(event: SocketEvent.CLOSE, listener: (hadError: Boolean) -> Unit): Unit /* this */
     fun on(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
     fun on(event: SocketEvent.DATA, listener: (data: node.buffer.Buffer) -> Unit): Unit /* this */
@@ -404,7 +395,7 @@ open external class Socket : node.stream.Duplex {
 
     fun on(event: SocketEvent.READY, listener: () -> Unit): Unit /* this */
     fun on(event: SocketEvent.TIMEOUT, listener: () -> Unit): Unit /* this */
-    open fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun once(event: SocketEvent.CLOSE, listener: (hadError: Boolean) -> Unit): Unit /* this */
     fun once(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
     fun once(event: SocketEvent.DATA, listener: (data: node.buffer.Buffer) -> Unit): Unit /* this */
@@ -418,7 +409,11 @@ open external class Socket : node.stream.Duplex {
 
     fun once(event: SocketEvent.READY, listener: () -> Unit): Unit /* this */
     fun once(event: SocketEvent.TIMEOUT, listener: () -> Unit): Unit /* this */
-    open fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun prependListener(
+        event: String,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ): Unit /* this */
+
     fun prependListener(event: SocketEvent.CLOSE, listener: (hadError: Boolean) -> Unit): Unit /* this */
     fun prependListener(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
     fun prependListener(event: SocketEvent.DATA, listener: (data: node.buffer.Buffer) -> Unit): Unit /* this */
@@ -432,7 +427,7 @@ open external class Socket : node.stream.Duplex {
 
     fun prependListener(event: SocketEvent.READY, listener: () -> Unit): Unit /* this */
     fun prependListener(event: SocketEvent.TIMEOUT, listener: () -> Unit): Unit /* this */
-    open fun prependOnceListener(
+    override fun prependOnceListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */

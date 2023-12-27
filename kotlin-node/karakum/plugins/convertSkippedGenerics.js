@@ -16,6 +16,21 @@ export default function (node, context, render) {
     if (
         ts.isTypeReferenceNode(node)
         && ts.isQualifiedName(node.typeName)
+        && ts.isIdentifier(node.typeName.left)
+        && node.typeName.left.text === "streamWeb"
+        && (
+            node.typeName.right.text === "ReadableStream"
+            || node.typeName.right.text === "WritableStream"
+        )
+        && !node.typeArguments
+        && sourceFileName.endsWith("stream.d.ts")
+    ) {
+        return `${render(node.typeName)}<*>`
+    }
+
+    if (
+        ts.isTypeReferenceNode(node)
+        && ts.isQualifiedName(node.typeName)
         && (
             node.typeName.right.text === "TypedArray"
         )

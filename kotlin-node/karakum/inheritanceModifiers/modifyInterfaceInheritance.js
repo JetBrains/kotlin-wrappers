@@ -35,6 +35,12 @@ export default (node) => {
                     || node.name.text === "RefCounted"
                 )
             )
+            || (
+                sourceFileName.endsWith("stream.d.ts")
+                && (
+                    node.name.text === "TransformOptions"
+                )
+            )
         )
     ) {
         return ""

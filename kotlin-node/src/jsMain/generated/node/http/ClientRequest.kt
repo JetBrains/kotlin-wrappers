@@ -147,9 +147,7 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
      * @param timeout Milliseconds before a request times out.
      * @param callback Optional function to be called when a timeout occurs. Same as binding to the `'timeout'` event.
      */
-
-    @JsName("setTimeout")
-    fun setClientRequestTimeout(timeout: Number, callback: () -> Unit = definedExternally): Unit /* this */
+    override fun setTimeout(msecs: Number, callback: () -> Unit): Unit /* this */
 
     /**
      * Once a socket is assigned to this request and is connected `socket.setNoDelay()` will be called.
@@ -203,9 +201,12 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
     fun addListener(event: ClientRequestEvent.FINISH, listener: () -> Unit): Unit /* this */
     fun addListener(event: ClientRequestEvent.PIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
     fun addListener(event: ClientRequestEvent.UNPIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
-    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
-    fun addListener(event: js.core.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun addListener(
+        event: js.core.Symbol,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ): Unit /* this */
 
     /**
      * @deprecated
@@ -232,9 +233,9 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
     fun on(event: ClientRequestEvent.FINISH, listener: () -> Unit): Unit /* this */
     fun on(event: ClientRequestEvent.PIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
     fun on(event: ClientRequestEvent.UNPIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
-    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
-    fun on(event: js.core.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun on(event: js.core.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     /**
      * @deprecated
@@ -261,9 +262,9 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
     fun once(event: ClientRequestEvent.FINISH, listener: () -> Unit): Unit /* this */
     fun once(event: ClientRequestEvent.PIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
     fun once(event: ClientRequestEvent.UNPIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
-    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
-    fun once(event: js.core.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun once(event: js.core.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     /**
      * @deprecated
@@ -306,9 +307,15 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
         listener: (src: node.stream.Readable) -> Unit,
     ): Unit /* this */
 
-    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun prependListener(
+        event: String,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ): Unit /* this */
 
-    fun prependListener(event: js.core.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun prependListener(
+        event: js.core.Symbol,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ): Unit /* this */
 
     /**
      * @deprecated
@@ -355,9 +362,12 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
         listener: (src: node.stream.Readable) -> Unit,
     ): Unit /* this */
 
-    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun prependOnceListener(
+        event: String,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ): Unit /* this */
 
-    fun prependOnceListener(
+    override fun prependOnceListener(
         event: js.core.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
