@@ -15,6 +15,11 @@ sealed external class FileSystemFileHandle :
     override val kind: FileSystemHandleKind.file
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/createSyncAccessHandle)
+     */
+    fun createSyncAccessHandle(): Promise<FileSystemSyncAccessHandle>
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/createWritable)
      */
     fun createWritable(options: FileSystemCreateWritableOptions = definedExternally): Promise<FileSystemWritableFileStream>
