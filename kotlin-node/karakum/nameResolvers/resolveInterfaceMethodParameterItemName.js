@@ -29,7 +29,13 @@ export default (node, context) => {
     if (!interfaceNode) return null
     if (!ts.isInterfaceDeclaration(interfaceNode)) return null
 
-    const parentName = interfaceNode.name.text
+    let parentName = interfaceNode.name.text
+    if (parentName === "DuplexOptions") {
+        parentName = "WritableOptions"
+    }
+    if (parentName === "TransformOptions") {
+        parentName = "WritableOptions"
+    }
 
     return `${karakum.capitalize(parentName)}${karakum.capitalize(methodName)}${karakum.capitalize(parameterName)}Item`
 }

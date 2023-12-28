@@ -11,29 +11,22 @@ sealed external interface DuplexOptions : ReadableOptions, WritableOptions {
     var readableHighWaterMark: Double?
     var writableHighWaterMark: Double?
     var writableCorked: Double?
-    fun construct(
-        `this`: Duplex,
-        callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit,
-    ): Unit
-
-    fun read(`this`: Duplex, size: Number): Unit
-    fun write(
-        `this`: Duplex,
-        chunk: Any?,
+    override fun construct(/* this: Duplex, */ callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit): Unit
+    override fun read(/* this: Duplex, */ size: Number): Unit
+    override fun write(
+        /* this: Duplex, */ chunk: Any?,
         encoding: node.buffer.BufferEncoding,
         callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit,
     ): Unit
 
-    fun writev(
-        `this`: Duplex,
-        chunks: Array<DuplexOptionsWritevChunksItem>,
+    override fun writev(
+        /* this: Duplex, */ chunks: Array<WritableOptionsWritevChunksItem>,
         callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit,
-    ): Unit
+    )
 
-    fun final(`this`: Duplex, callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit): Unit
-    fun destroy(
-        `this`: Duplex,
-        error: Throwable /* JsError */?,
+    override fun final(/* this: Duplex, */ callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit): Unit
+    override fun destroy(
+        /* this: Duplex, */ error: Throwable /* JsError */?,
         callback: (error: Throwable /* JsError */?) -> Unit,
     ): Unit
 }

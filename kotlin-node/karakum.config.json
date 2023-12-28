@@ -596,7 +596,8 @@
         "ExecStringOptions.kt": "replace",
         "ExecFileObjectEncodingOptions.kt": "replace",
         "ReadableStreamPipeOptions": "replace",
-        "WritableWritevChunksItem": "replace"
+        "WritableWritevChunksItem": "replace",
+        "WritableOptionsWritevChunksItem": "replace"
     },
     "compilerOptions": {
         "types": [

@@ -269,5 +269,32 @@ export default (node, context) => {
         return "override"
     }
 
+    if (
+        ts.isMethodSignature(node)
+        && ts.isIdentifier(node.name)
+        && (
+            (
+                sourceFileName.endsWith("stream.d.ts")
+                && (
+                    (
+                        node.name.text === "construct"
+                        || node.name.text === "read"
+                        || node.name.text === "write"
+                        || node.name.text === "writev"
+                        || node.name.text === "final"
+                        || node.name.text === "destroy"
+                    )
+                    && node.parent
+                    && (
+                        node.parent.name.text === "DuplexOptions"
+                        || node.parent.name.text === "TransformOptions"
+                    )
+                )
+            )
+        )
+    ) {
+        return "override"
+    }
+
     return null
 }

@@ -5,42 +5,30 @@ package node.stream
 
 
 external interface TransformOptions : DuplexOptions {
-    fun construct(
-        `this`: Transform,
-        callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit,
-    ): Unit
-
-    fun read(`this`: Transform, size: Number): Unit
-    fun write(
-        `this`: Transform,
-        chunk: Any?,
+    override fun construct(/* this: Transform, */ callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit): Unit
+    override fun read(/* this: Transform, */ size: Number): Unit
+    override fun write(
+        /* this: Transform, */ chunk: Any?,
         encoding: node.buffer.BufferEncoding,
         callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit,
     ): Unit
 
-    fun writev(
-        `this`: Transform,
-        chunks: Array<TransformOptionsWritevChunksItem>,
+    override fun writev(
+        /* this: Transform, */ chunks: Array<WritableOptionsWritevChunksItem>,
         callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit,
     ): Unit
 
-    fun final(
-        `this`: Transform,
-        callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit,
-    ): Unit
-
-    fun destroy(
-        `this`: Transform,
-        error: Throwable /* JsError */?,
+    override fun final(/* this: Transform, */ callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit): Unit
+    override fun destroy(
+        /* this: Transform, */ error: Throwable /* JsError */?,
         callback: (error: Throwable /* JsError */?) -> Unit,
     ): Unit
 
     fun transform(
-        `this`: Transform,
-        chunk: Any?,
+        /* this: Transform, */ chunk: Any?,
         encoding: node.buffer.BufferEncoding,
         callback: TransformCallback,
     ): Unit
 
-    fun flush(`this`: Transform, callback: TransformCallback): Unit
+    fun flush(/* this: Transform, */ callback: TransformCallback): Unit
 }
