@@ -5,6 +5,12 @@ package web.push
 import js.buffer.ArrayBuffer
 import web.buffer.Blob
 
+/**
+ * This Push API interface provides methods which let you retrieve the push data sent by a server in various formats.
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushMessageData)
+ */
 sealed external class PushMessageData {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushMessageData/arrayBuffer)

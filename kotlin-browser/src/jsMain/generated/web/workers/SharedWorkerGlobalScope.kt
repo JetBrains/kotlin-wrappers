@@ -5,6 +5,9 @@ package web.workers
 import web.events.EventHandler
 import web.messaging.MessageEvent
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorkerGlobalScope)
+ */
 sealed external class SharedWorkerGlobalScope :
     WorkerGlobalScope {
     /**

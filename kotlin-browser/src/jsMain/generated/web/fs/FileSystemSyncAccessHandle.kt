@@ -4,6 +4,11 @@ package web.fs
 
 import js.buffer.AllowSharedBufferSource
 
+/**
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle)
+ */
 sealed external class FileSystemSyncAccessHandle {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle/close)

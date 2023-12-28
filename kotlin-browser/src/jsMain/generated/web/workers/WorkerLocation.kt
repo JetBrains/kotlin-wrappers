@@ -2,6 +2,11 @@
 
 package web.workers
 
+/**
+ * The absolute location of the script executed by the Worker. Such an object is initialized for each worker and is available via the WorkerGlobalScope.location property obtained by calling self.location.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerLocation)
+ */
 sealed external class WorkerLocation {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerLocation/hash)

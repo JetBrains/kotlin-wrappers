@@ -5,6 +5,11 @@ package web.file
 import js.buffer.ArrayBuffer
 import web.buffer.Blob
 
+/**
+ * Allows to read File or Blob objects in a synchronous way.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReaderSync)
+ */
 external class FileReaderSync {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReaderSync/readAsArrayBuffer)

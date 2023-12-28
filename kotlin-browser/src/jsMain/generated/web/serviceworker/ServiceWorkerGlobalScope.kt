@@ -10,6 +10,11 @@ import web.messaging.MessageEvent
 import web.push.PushEvent
 import web.workers.WorkerGlobalScope
 
+/**
+ * This ServiceWorker API interface represents the global execution context of a service worker.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope)
+ */
 sealed external class ServiceWorkerGlobalScope :
     WorkerGlobalScope {
     /**
