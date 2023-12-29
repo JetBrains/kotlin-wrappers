@@ -5,7 +5,7 @@ package web.history
 import web.url.URL
 
 /**
- * Allows manipulation of the browser session history, that is the pages visited in the tab or frame that the current page is loaded in.
+ * Allows manipulation of the browser session history, that is the pages visited in the tab or frame that the current page is loaded in.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History)
  */

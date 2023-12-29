@@ -5,7 +5,7 @@ package web.html
 import web.cssom.MediaQuery
 
 /**
- * Contains descriptive metadata about a document. It inherits all of the properties and methods described in the HTMLElement interface.
+ * Contains descriptive metadata about a document. It inherits all of the properties and methods described in the HTMLElement interface.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMetaElement)
  */

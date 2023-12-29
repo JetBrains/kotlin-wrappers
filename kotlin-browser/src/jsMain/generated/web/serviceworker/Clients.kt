@@ -8,7 +8,7 @@ import js.promise.Promise
 import web.url.URL
 
 /**
- * Provides access to Client objects. Access it via self.clients within a service worker.
+ * Provides access to Client objects. Access it via self.clients within a service worker.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients)
  */
