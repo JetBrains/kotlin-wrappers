@@ -126,7 +126,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/networkState)
      */
-    val networkState: Short
+    val networkState: NetworkState
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/encrypted_event)
@@ -174,7 +174,7 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/readyState)
      */
-    val readyState: Short
+    val readyState: ReadyState
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/remote)
@@ -281,25 +281,28 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/setSinkId)
      */
     fun setSinkId(sinkId: String): Promise<Void>
-    val NETWORK_EMPTY: Short
-    val NETWORK_IDLE: Short
-    val NETWORK_LOADING: Short
-    val NETWORK_NO_SOURCE: Short
-    val HAVE_NOTHING: Short
-    val HAVE_METADATA: Short
-    val HAVE_CURRENT_DATA: Short
-    val HAVE_FUTURE_DATA: Short
-    val HAVE_ENOUGH_DATA: Short
+    val NETWORK_EMPTY: NetworkState
+    val NETWORK_IDLE: NetworkState
+    val NETWORK_LOADING: NetworkState
+    val NETWORK_NO_SOURCE: NetworkState
+    val HAVE_NOTHING: ReadyState
+    val HAVE_METADATA: ReadyState
+    val HAVE_CURRENT_DATA: ReadyState
+    val HAVE_FUTURE_DATA: ReadyState
+    val HAVE_ENOUGH_DATA: ReadyState
 
     companion object {
-        val NETWORK_EMPTY: Short
-        val NETWORK_IDLE: Short
-        val NETWORK_LOADING: Short
-        val NETWORK_NO_SOURCE: Short
-        val HAVE_NOTHING: Short
-        val HAVE_METADATA: Short
-        val HAVE_CURRENT_DATA: Short
-        val HAVE_FUTURE_DATA: Short
-        val HAVE_ENOUGH_DATA: Short
+        val NETWORK_EMPTY: NetworkState
+        val NETWORK_IDLE: NetworkState
+        val NETWORK_LOADING: NetworkState
+        val NETWORK_NO_SOURCE: NetworkState
+        val HAVE_NOTHING: ReadyState
+        val HAVE_METADATA: ReadyState
+        val HAVE_CURRENT_DATA: ReadyState
+        val HAVE_FUTURE_DATA: ReadyState
+        val HAVE_ENOUGH_DATA: ReadyState
     }
+
+    sealed interface NetworkState
+    sealed interface ReadyState
 }
