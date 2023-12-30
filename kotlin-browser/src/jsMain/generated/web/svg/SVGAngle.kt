@@ -8,27 +8,29 @@ package web.svg
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle)
  */
 sealed external class SVGAngle {
-    val unitType: Short
+    val unitType: UnitType
     var value: Double
     var valueAsString: String
     var valueInSpecifiedUnits: Double
-    fun convertToSpecifiedUnits(unitType: Number)
+    fun convertToSpecifiedUnits(unitType: UnitType)
     fun newValueSpecifiedUnits(
-        unitType: Number,
+        unitType: UnitType,
         valueInSpecifiedUnits: Number,
     )
 
-    val SVG_ANGLETYPE_UNKNOWN: Short
-    val SVG_ANGLETYPE_UNSPECIFIED: Short
-    val SVG_ANGLETYPE_DEG: Short
-    val SVG_ANGLETYPE_RAD: Short
-    val SVG_ANGLETYPE_GRAD: Short
+    val SVG_ANGLETYPE_UNKNOWN: UnitType
+    val SVG_ANGLETYPE_UNSPECIFIED: UnitType
+    val SVG_ANGLETYPE_DEG: UnitType
+    val SVG_ANGLETYPE_RAD: UnitType
+    val SVG_ANGLETYPE_GRAD: UnitType
 
     companion object {
-        val SVG_ANGLETYPE_UNKNOWN: Short
-        val SVG_ANGLETYPE_UNSPECIFIED: Short
-        val SVG_ANGLETYPE_DEG: Short
-        val SVG_ANGLETYPE_RAD: Short
-        val SVG_ANGLETYPE_GRAD: Short
+        val SVG_ANGLETYPE_UNKNOWN: UnitType
+        val SVG_ANGLETYPE_UNSPECIFIED: UnitType
+        val SVG_ANGLETYPE_DEG: UnitType
+        val SVG_ANGLETYPE_RAD: UnitType
+        val SVG_ANGLETYPE_GRAD: UnitType
     }
+
+    sealed interface UnitType
 }

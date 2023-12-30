@@ -14,7 +14,7 @@ import web.geometry.DOMMatrixReadOnly
 sealed external class SVGTransform {
     val angle: Double
     val matrix: DOMMatrix
-    val type: Short
+    val type: Type
     fun setMatrix(matrix: DOMMatrix2DInit = definedExternally)
     fun setMatrix(matrix: DOMMatrixReadOnly /* DOMMatrix2DInit */)
     fun setRotate(
@@ -35,21 +35,23 @@ sealed external class SVGTransform {
         ty: Number,
     )
 
-    val SVG_TRANSFORM_UNKNOWN: Short
-    val SVG_TRANSFORM_MATRIX: Short
-    val SVG_TRANSFORM_TRANSLATE: Short
-    val SVG_TRANSFORM_SCALE: Short
-    val SVG_TRANSFORM_ROTATE: Short
-    val SVG_TRANSFORM_SKEWX: Short
-    val SVG_TRANSFORM_SKEWY: Short
+    val SVG_TRANSFORM_UNKNOWN: Type
+    val SVG_TRANSFORM_MATRIX: Type
+    val SVG_TRANSFORM_TRANSLATE: Type
+    val SVG_TRANSFORM_SCALE: Type
+    val SVG_TRANSFORM_ROTATE: Type
+    val SVG_TRANSFORM_SKEWX: Type
+    val SVG_TRANSFORM_SKEWY: Type
 
     companion object {
-        val SVG_TRANSFORM_UNKNOWN: Short
-        val SVG_TRANSFORM_MATRIX: Short
-        val SVG_TRANSFORM_TRANSLATE: Short
-        val SVG_TRANSFORM_SCALE: Short
-        val SVG_TRANSFORM_ROTATE: Short
-        val SVG_TRANSFORM_SKEWX: Short
-        val SVG_TRANSFORM_SKEWY: Short
+        val SVG_TRANSFORM_UNKNOWN: Type
+        val SVG_TRANSFORM_MATRIX: Type
+        val SVG_TRANSFORM_TRANSLATE: Type
+        val SVG_TRANSFORM_SCALE: Type
+        val SVG_TRANSFORM_ROTATE: Type
+        val SVG_TRANSFORM_SKEWX: Type
+        val SVG_TRANSFORM_SKEWY: Type
     }
+
+    sealed interface Type
 }
