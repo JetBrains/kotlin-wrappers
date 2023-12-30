@@ -40,7 +40,7 @@ external class EventSource(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/readyState)
      */
-    val readyState: Short
+    val readyState: ReadyState
 
     /**
      * Returns the URL providing the event stream.
@@ -62,13 +62,15 @@ external class EventSource(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/close)
      */
     fun close()
-    val CONNECTING: Short
-    val OPEN: Short
-    val CLOSED: Short
+    val CONNECTING: ReadyState
+    val OPEN: ReadyState
+    val CLOSED: ReadyState
 
     companion object {
-        val CONNECTING: Short
-        val OPEN: Short
-        val CLOSED: Short
+        val CONNECTING: ReadyState
+        val OPEN: ReadyState
+        val CLOSED: ReadyState
     }
+
+    sealed interface ReadyState
 }

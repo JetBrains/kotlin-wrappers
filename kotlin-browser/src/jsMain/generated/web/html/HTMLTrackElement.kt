@@ -30,7 +30,7 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/readyState)
      */
-    val readyState: Short
+    val readyState: ReadyState
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/src)
@@ -48,15 +48,17 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/track)
      */
     val track: TextTrack
-    val NONE: Short
-    val LOADING: Short
-    val LOADED: Short
-    val ERROR: Short
+    val NONE: ReadyState
+    val LOADING: ReadyState
+    val LOADED: ReadyState
+    val ERROR: ReadyState
 
     companion object {
-        val NONE: Short
-        val LOADING: Short
-        val LOADED: Short
-        val ERROR: Short
+        val NONE: ReadyState
+        val LOADING: ReadyState
+        val LOADED: ReadyState
+        val ERROR: ReadyState
     }
+
+    sealed interface ReadyState
 }

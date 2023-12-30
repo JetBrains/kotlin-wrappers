@@ -28,7 +28,7 @@ open external class XMLHttpRequest :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/readyState)
      */
-    val readyState: Short
+    val readyState: ReadyState
 
     /**
      * Returns the response body.
@@ -201,17 +201,19 @@ open external class XMLHttpRequest :
         value: String,
     )
 
-    val UNSENT: Short
-    val OPENED: Short
-    val HEADERS_RECEIVED: Short
-    val LOADING: Short
-    val DONE: Short
+    val UNSENT: ReadyState
+    val OPENED: ReadyState
+    val HEADERS_RECEIVED: ReadyState
+    val LOADING: ReadyState
+    val DONE: ReadyState
 
     companion object {
-        val UNSENT: Short
-        val OPENED: Short
-        val HEADERS_RECEIVED: Short
-        val LOADING: Short
-        val DONE: Short
+        val UNSENT: ReadyState
+        val OPENED: ReadyState
+        val HEADERS_RECEIVED: ReadyState
+        val LOADING: ReadyState
+        val DONE: ReadyState
     }
+
+    sealed interface ReadyState
 }

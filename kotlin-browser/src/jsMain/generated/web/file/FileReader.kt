@@ -83,13 +83,15 @@ open external class FileReader :
         encoding: String = definedExternally,
     )
 
-    val EMPTY: Short
-    val LOADING: Short
-    val DONE: Short
+    val EMPTY: ReadyState
+    val LOADING: ReadyState
+    val DONE: ReadyState
 
     companion object {
-        val EMPTY: Short
-        val LOADING: Short
-        val DONE: Short
+        val EMPTY: ReadyState
+        val LOADING: ReadyState
+        val DONE: ReadyState
     }
+
+    sealed interface ReadyState
 }

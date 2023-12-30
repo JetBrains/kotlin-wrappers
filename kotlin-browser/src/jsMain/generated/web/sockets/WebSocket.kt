@@ -93,7 +93,7 @@ external class WebSocket(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/readyState)
      */
-    val readyState: Short
+    val readyState: ReadyState
 
     /**
      * Returns the URL that was used to establish the WebSocket connection.
@@ -121,15 +121,17 @@ external class WebSocket(
     fun send(data: ArrayBufferLike)
     fun send(data: Blob)
     fun send(data: ArrayBufferView)
-    val CONNECTING: Short
-    val OPEN: Short
-    val CLOSING: Short
-    val CLOSED: Short
+    val CONNECTING: ReadyState
+    val OPEN: ReadyState
+    val CLOSING: ReadyState
+    val CLOSED: ReadyState
 
     companion object {
-        val CONNECTING: Short
-        val OPEN: Short
-        val CLOSING: Short
-        val CLOSED: Short
+        val CONNECTING: ReadyState
+        val OPEN: ReadyState
+        val CLOSING: ReadyState
+        val CLOSED: ReadyState
     }
+
+    sealed interface ReadyState
 }
