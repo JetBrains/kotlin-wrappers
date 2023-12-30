@@ -28,7 +28,7 @@ sealed external class XPathResult {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XPathResult/resultType)
      */
-    val resultType: Short
+    val resultType: ResultType
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XPathResult/singleNodeValue)
@@ -54,27 +54,29 @@ sealed external class XPathResult {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XPathResult/snapshotItem)
      */
     fun snapshotItem(index: Int): Node?
-    val ANY_TYPE: Short
-    val NUMBER_TYPE: Short
-    val STRING_TYPE: Short
-    val BOOLEAN_TYPE: Short
-    val UNORDERED_NODE_ITERATOR_TYPE: Short
-    val ORDERED_NODE_ITERATOR_TYPE: Short
-    val UNORDERED_NODE_SNAPSHOT_TYPE: Short
-    val ORDERED_NODE_SNAPSHOT_TYPE: Short
-    val ANY_UNORDERED_NODE_TYPE: Short
-    val FIRST_ORDERED_NODE_TYPE: Short
+    val ANY_TYPE: ResultType
+    val NUMBER_TYPE: ResultType
+    val STRING_TYPE: ResultType
+    val BOOLEAN_TYPE: ResultType
+    val UNORDERED_NODE_ITERATOR_TYPE: ResultType
+    val ORDERED_NODE_ITERATOR_TYPE: ResultType
+    val UNORDERED_NODE_SNAPSHOT_TYPE: ResultType
+    val ORDERED_NODE_SNAPSHOT_TYPE: ResultType
+    val ANY_UNORDERED_NODE_TYPE: ResultType
+    val FIRST_ORDERED_NODE_TYPE: ResultType
 
     companion object {
-        val ANY_TYPE: Short
-        val NUMBER_TYPE: Short
-        val STRING_TYPE: Short
-        val BOOLEAN_TYPE: Short
-        val UNORDERED_NODE_ITERATOR_TYPE: Short
-        val ORDERED_NODE_ITERATOR_TYPE: Short
-        val UNORDERED_NODE_SNAPSHOT_TYPE: Short
-        val ORDERED_NODE_SNAPSHOT_TYPE: Short
-        val ANY_UNORDERED_NODE_TYPE: Short
-        val FIRST_ORDERED_NODE_TYPE: Short
+        val ANY_TYPE: ResultType
+        val NUMBER_TYPE: ResultType
+        val STRING_TYPE: ResultType
+        val BOOLEAN_TYPE: ResultType
+        val UNORDERED_NODE_ITERATOR_TYPE: ResultType
+        val ORDERED_NODE_ITERATOR_TYPE: ResultType
+        val UNORDERED_NODE_SNAPSHOT_TYPE: ResultType
+        val ORDERED_NODE_SNAPSHOT_TYPE: ResultType
+        val ANY_UNORDERED_NODE_TYPE: ResultType
+        val FIRST_ORDERED_NODE_TYPE: ResultType
     }
+
+    sealed interface ResultType
 }
