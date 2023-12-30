@@ -66,7 +66,7 @@ sealed external class Node :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/nodeType)
      */
-    val nodeType: Type
+    val nodeType: NodeType
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/nodeValue)
@@ -204,144 +204,142 @@ sealed external class Node :
     /**
      * node is an element.
      */
-    val ELEMENT_NODE: Type
-    val ATTRIBUTE_NODE: Type
+    val ELEMENT_NODE: NodeType
+    val ATTRIBUTE_NODE: NodeType
 
     /**
      * node is a Text node.
      */
-    val TEXT_NODE: Type
+    val TEXT_NODE: NodeType
 
     /**
      * node is a CDATASection node.
      */
-    val CDATA_SECTION_NODE: Type
-    val ENTITY_REFERENCE_NODE: Type
-    val ENTITY_NODE: Type
+    val CDATA_SECTION_NODE: NodeType
+    val ENTITY_REFERENCE_NODE: NodeType
+    val ENTITY_NODE: NodeType
 
     /**
      * node is a ProcessingInstruction node.
      */
-    val PROCESSING_INSTRUCTION_NODE: Type
+    val PROCESSING_INSTRUCTION_NODE: NodeType
 
     /**
      * node is a Comment node.
      */
-    val COMMENT_NODE: Type
+    val COMMENT_NODE: NodeType
 
     /**
      * node is a document.
      */
-    val DOCUMENT_NODE: Type
+    val DOCUMENT_NODE: NodeType
 
     /**
      * node is a doctype.
      */
-    val DOCUMENT_TYPE_NODE: Type
+    val DOCUMENT_TYPE_NODE: NodeType
 
     /**
      * node is a DocumentFragment node.
      */
-    val DOCUMENT_FRAGMENT_NODE: Type
-    val NOTATION_NODE: Type
+    val DOCUMENT_FRAGMENT_NODE: NodeType
+    val NOTATION_NODE: NodeType
 
     /**
      * Set when node and other are not in the same tree.
      */
-    val DOCUMENT_POSITION_DISCONNECTED: Type
+    val DOCUMENT_POSITION_DISCONNECTED: NodeType
 
     /**
      * Set when other is preceding node.
      */
-    val DOCUMENT_POSITION_PRECEDING: Type
+    val DOCUMENT_POSITION_PRECEDING: NodeType
 
     /**
      * Set when other is following node.
      */
-    val DOCUMENT_POSITION_FOLLOWING: Type
+    val DOCUMENT_POSITION_FOLLOWING: NodeType
 
     /**
      * Set when other is an ancestor of node.
      */
-    val DOCUMENT_POSITION_CONTAINS: Type
+    val DOCUMENT_POSITION_CONTAINS: NodeType
 
     /**
      * Set when other is a descendant of node.
      */
-    val DOCUMENT_POSITION_CONTAINED_BY: Type
-    val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Type
+    val DOCUMENT_POSITION_CONTAINED_BY: NodeType
+    val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: NodeType
 
     companion object {
         /**
          * node is an element.
          */
-        val ELEMENT_NODE: Type
-        val ATTRIBUTE_NODE: Type
+        val ELEMENT_NODE: NodeType
+        val ATTRIBUTE_NODE: NodeType
 
         /**
          * node is a Text node.
          */
-        val TEXT_NODE: Type
+        val TEXT_NODE: NodeType
 
         /**
          * node is a CDATASection node.
          */
-        val CDATA_SECTION_NODE: Type
-        val ENTITY_REFERENCE_NODE: Type
-        val ENTITY_NODE: Type
+        val CDATA_SECTION_NODE: NodeType
+        val ENTITY_REFERENCE_NODE: NodeType
+        val ENTITY_NODE: NodeType
 
         /**
          * node is a ProcessingInstruction node.
          */
-        val PROCESSING_INSTRUCTION_NODE: Type
+        val PROCESSING_INSTRUCTION_NODE: NodeType
 
         /**
          * node is a Comment node.
          */
-        val COMMENT_NODE: Type
+        val COMMENT_NODE: NodeType
 
         /**
          * node is a document.
          */
-        val DOCUMENT_NODE: Type
+        val DOCUMENT_NODE: NodeType
 
         /**
          * node is a doctype.
          */
-        val DOCUMENT_TYPE_NODE: Type
+        val DOCUMENT_TYPE_NODE: NodeType
 
         /**
          * node is a DocumentFragment node.
          */
-        val DOCUMENT_FRAGMENT_NODE: Type
-        val NOTATION_NODE: Type
+        val DOCUMENT_FRAGMENT_NODE: NodeType
+        val NOTATION_NODE: NodeType
 
         /**
          * Set when node and other are not in the same tree.
          */
-        val DOCUMENT_POSITION_DISCONNECTED: Type
+        val DOCUMENT_POSITION_DISCONNECTED: NodeType
 
         /**
          * Set when other is preceding node.
          */
-        val DOCUMENT_POSITION_PRECEDING: Type
+        val DOCUMENT_POSITION_PRECEDING: NodeType
 
         /**
          * Set when other is following node.
          */
-        val DOCUMENT_POSITION_FOLLOWING: Type
+        val DOCUMENT_POSITION_FOLLOWING: NodeType
 
         /**
          * Set when other is an ancestor of node.
          */
-        val DOCUMENT_POSITION_CONTAINS: Type
+        val DOCUMENT_POSITION_CONTAINS: NodeType
 
         /**
          * Set when other is a descendant of node.
          */
-        val DOCUMENT_POSITION_CONTAINED_BY: Type
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Type
+        val DOCUMENT_POSITION_CONTAINED_BY: NodeType
+        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: NodeType
     }
-
-    sealed interface Type
 }
