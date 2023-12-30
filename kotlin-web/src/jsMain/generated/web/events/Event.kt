@@ -59,7 +59,7 @@ open external class Event(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Event/eventPhase)
      */
-    val eventPhase: Short
+    val eventPhase: EventPhase
 
     /**
      * Returns true if event was dispatched by the user agent, and false otherwise.
@@ -114,15 +114,15 @@ open external class Event(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Event/stopPropagation)
      */
     fun stopPropagation()
-    val NONE: Short
-    val CAPTURING_PHASE: Short
-    val AT_TARGET: Short
-    val BUBBLING_PHASE: Short
+    val NONE: EventPhase
+    val CAPTURING_PHASE: EventPhase
+    val AT_TARGET: EventPhase
+    val BUBBLING_PHASE: EventPhase
 
     companion object : EventTypes {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+        val NONE: EventPhase
+        val CAPTURING_PHASE: EventPhase
+        val AT_TARGET: EventPhase
+        val BUBBLING_PHASE: EventPhase
     }
 }
