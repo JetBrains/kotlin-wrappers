@@ -9,7 +9,7 @@ package web.uievents
 import web.events.EventType
 
 external interface WheelEventInit : MouseEventInit {
-    var deltaMode: Short?
+    var deltaMode: DeltaMode?
     var deltaX: Double?
     var deltaY: Double?
     var deltaZ: Double?
@@ -27,7 +27,7 @@ open external class WheelEvent(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent/deltaMode)
      */
-    val deltaMode: Short
+    val deltaMode: DeltaMode
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent/deltaX)
@@ -43,13 +43,13 @@ open external class WheelEvent(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent/deltaZ)
      */
     val deltaZ: Double
-    val DOM_DELTA_PIXEL: Short
-    val DOM_DELTA_LINE: Short
-    val DOM_DELTA_PAGE: Short
+    val DOM_DELTA_PIXEL: DeltaMode
+    val DOM_DELTA_LINE: DeltaMode
+    val DOM_DELTA_PAGE: DeltaMode
 
     companion object : WheelEventTypes {
-        val DOM_DELTA_PIXEL: Short
-        val DOM_DELTA_LINE: Short
-        val DOM_DELTA_PAGE: Short
+        val DOM_DELTA_PIXEL: DeltaMode
+        val DOM_DELTA_LINE: DeltaMode
+        val DOM_DELTA_PAGE: DeltaMode
     }
 }
