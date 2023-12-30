@@ -14,7 +14,7 @@ external interface KeyboardEventInit : EventModifierInit {
     var code: KeyCode?
     var isComposing: Boolean?
     var key: String?
-    var location: Short?
+    var location: KeyLocation?
     var repeat: Boolean?
 }
 
@@ -55,7 +55,7 @@ open external class KeyboardEvent(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/location)
      */
-    val location: Short
+    val location: KeyLocation
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/metaKey)
@@ -76,15 +76,15 @@ open external class KeyboardEvent(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/getModifierState)
      */
     fun getModifierState(keyArg: ModifierKeyCode): Boolean
-    val DOM_KEY_LOCATION_STANDARD: Short
-    val DOM_KEY_LOCATION_LEFT: Short
-    val DOM_KEY_LOCATION_RIGHT: Short
-    val DOM_KEY_LOCATION_NUMPAD: Short
+    val DOM_KEY_LOCATION_STANDARD: KeyLocation
+    val DOM_KEY_LOCATION_LEFT: KeyLocation
+    val DOM_KEY_LOCATION_RIGHT: KeyLocation
+    val DOM_KEY_LOCATION_NUMPAD: KeyLocation
 
     companion object : KeyboardEventTypes {
-        val DOM_KEY_LOCATION_STANDARD: Short
-        val DOM_KEY_LOCATION_LEFT: Short
-        val DOM_KEY_LOCATION_RIGHT: Short
-        val DOM_KEY_LOCATION_NUMPAD: Short
+        val DOM_KEY_LOCATION_STANDARD: KeyLocation
+        val DOM_KEY_LOCATION_LEFT: KeyLocation
+        val DOM_KEY_LOCATION_RIGHT: KeyLocation
+        val DOM_KEY_LOCATION_NUMPAD: KeyLocation
     }
 }
