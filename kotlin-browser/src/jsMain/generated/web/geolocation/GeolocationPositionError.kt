@@ -9,19 +9,21 @@ sealed external class GeolocationPositionError {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationPositionError/code)
      */
-    val code: Short
+    val code: Code
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationPositionError/message)
      */
     val message: String
-    val PERMISSION_DENIED: Short
-    val POSITION_UNAVAILABLE: Short
-    val TIMEOUT: Short
+    val PERMISSION_DENIED: Code
+    val POSITION_UNAVAILABLE: Code
+    val TIMEOUT: Code
 
     companion object {
-        val PERMISSION_DENIED: Short
-        val POSITION_UNAVAILABLE: Short
-        val TIMEOUT: Short
+        val PERMISSION_DENIED: Code
+        val POSITION_UNAVAILABLE: Code
+        val TIMEOUT: Code
     }
+
+    sealed interface Code
 }
