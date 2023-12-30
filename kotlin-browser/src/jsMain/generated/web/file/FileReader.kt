@@ -53,7 +53,7 @@ open external class FileReader :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/readyState)
      */
-    val readyState: Short
+    val readyState: ReadyState
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/result)
