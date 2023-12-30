@@ -40,7 +40,7 @@ sealed external class Range :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/compareBoundaryPoints)
      */
     fun compareBoundaryPoints(
-        how: Number,
+        how: CompareMethod,
         sourceRange: Range,
     ): Number
 
@@ -154,15 +154,17 @@ sealed external class Range :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/surroundContents)
      */
     fun surroundContents(newParent: Node)
-    val START_TO_START: Short
-    val START_TO_END: Short
-    val END_TO_END: Short
-    val END_TO_START: Short
+    val START_TO_START: CompareMethod
+    val START_TO_END: CompareMethod
+    val END_TO_END: CompareMethod
+    val END_TO_START: CompareMethod
 
     companion object {
-        val START_TO_START: Short
-        val START_TO_END: Short
-        val END_TO_END: Short
-        val END_TO_START: Short
+        val START_TO_START: CompareMethod
+        val START_TO_END: CompareMethod
+        val END_TO_END: CompareMethod
+        val END_TO_START: CompareMethod
     }
+
+    sealed interface CompareMethod
 }
