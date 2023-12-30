@@ -12,7 +12,7 @@ sealed external class SVGFEConvolveMatrixElement :
     SVGFilterPrimitiveStandardAttributes {
     val bias: SVGAnimatedNumber
     val divisor: SVGAnimatedNumber
-    val edgeMode: SVGAnimatedEnumeration
+    val edgeMode: SVGAnimatedEnumeration<Short>
     val in1: SVGAnimatedString
     val kernelMatrix: SVGAnimatedNumberList
     val kernelUnitLengthX: SVGAnimatedNumber

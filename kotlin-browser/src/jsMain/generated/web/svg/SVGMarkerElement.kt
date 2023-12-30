@@ -16,7 +16,7 @@ sealed external class SVGMarkerElement :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/markerUnits)
      */
-    val markerUnits: SVGAnimatedEnumeration
+    val markerUnits: SVGAnimatedEnumeration<Short>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/markerWidth)
@@ -31,7 +31,7 @@ sealed external class SVGMarkerElement :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/orientType)
      */
-    val orientType: SVGAnimatedEnumeration
+    val orientType: SVGAnimatedEnumeration<Short>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/refX)

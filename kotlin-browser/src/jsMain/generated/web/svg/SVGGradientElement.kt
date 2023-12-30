@@ -11,8 +11,8 @@ sealed external class SVGGradientElement :
     SVGElement,
     SVGURIReference {
     val gradientTransform: SVGAnimatedTransformList
-    val gradientUnits: SVGAnimatedEnumeration
-    val spreadMethod: SVGAnimatedEnumeration
+    val gradientUnits: SVGAnimatedEnumeration<Short>
+    val spreadMethod: SVGAnimatedEnumeration<Short>
     val SVG_SPREADMETHOD_UNKNOWN: Short
     val SVG_SPREADMETHOD_PAD: Short
     val SVG_SPREADMETHOD_REFLECT: Short

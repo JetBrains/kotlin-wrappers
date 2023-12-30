@@ -10,8 +10,8 @@ package web.svg
 sealed external class SVGTextPathElement :
     SVGTextContentElement,
     SVGURIReference {
-    val method: SVGAnimatedEnumeration
-    val spacing: SVGAnimatedEnumeration
+    val method: SVGAnimatedEnumeration<Short>
+    val spacing: SVGAnimatedEnumeration<Short>
     val startOffset: SVGAnimatedLength
     val TEXTPATH_METHODTYPE_UNKNOWN: Short
     val TEXTPATH_METHODTYPE_ALIGN: Short

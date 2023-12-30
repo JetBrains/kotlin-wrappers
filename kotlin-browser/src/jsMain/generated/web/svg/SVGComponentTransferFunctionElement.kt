@@ -15,7 +15,7 @@ sealed external class SVGComponentTransferFunctionElement :
     val offset: SVGAnimatedNumber
     val slope: SVGAnimatedNumber
     val tableValues: SVGAnimatedNumberList
-    val type: SVGAnimatedEnumeration
+    val type: SVGAnimatedEnumeration<Short>
     val SVG_FECOMPONENTTRANSFER_TYPE_UNKNOWN: Short
     val SVG_FECOMPONENTTRANSFER_TYPE_IDENTITY: Short
     val SVG_FECOMPONENTTRANSFER_TYPE_TABLE: Short

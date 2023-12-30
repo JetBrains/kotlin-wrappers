@@ -18,7 +18,7 @@ sealed external class SVGFEColorMatrixElement :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEColorMatrixElement/type)
      */
-    val type: SVGAnimatedEnumeration
+    val type: SVGAnimatedEnumeration<Short>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEColorMatrixElement/values)

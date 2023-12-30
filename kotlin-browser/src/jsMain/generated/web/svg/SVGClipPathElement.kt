@@ -12,7 +12,7 @@ sealed external class SVGClipPathElement :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGClipPathElement/clipPathUnits)
      */
-    val clipPathUnits: SVGAnimatedEnumeration
+    val clipPathUnits: SVGAnimatedEnumeration<Short>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGClipPathElement/transform)

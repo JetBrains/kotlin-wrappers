@@ -13,8 +13,8 @@ sealed external class SVGFEDisplacementMapElement :
     val in1: SVGAnimatedString
     val in2: SVGAnimatedString
     val scale: SVGAnimatedNumber
-    val xChannelSelector: SVGAnimatedEnumeration
-    val yChannelSelector: SVGAnimatedEnumeration
+    val xChannelSelector: SVGAnimatedEnumeration<Short>
+    val yChannelSelector: SVGAnimatedEnumeration<Short>
     val SVG_CHANNEL_UNKNOWN: Short
     val SVG_CHANNEL_R: Short
     val SVG_CHANNEL_G: Short

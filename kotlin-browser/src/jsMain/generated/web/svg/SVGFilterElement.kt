@@ -10,9 +10,9 @@ package web.svg
 sealed external class SVGFilterElement :
     SVGElement,
     SVGURIReference {
-    val filterUnits: SVGAnimatedEnumeration
+    val filterUnits: SVGAnimatedEnumeration<Short>
     val height: SVGAnimatedLength
-    val primitiveUnits: SVGAnimatedEnumeration
+    val primitiveUnits: SVGAnimatedEnumeration<Short>
     val width: SVGAnimatedLength
     val x: SVGAnimatedLength
     val y: SVGAnimatedLength

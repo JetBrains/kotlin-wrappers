@@ -16,7 +16,7 @@ sealed external class SVGFECompositeElement :
     val k2: SVGAnimatedNumber
     val k3: SVGAnimatedNumber
     val k4: SVGAnimatedNumber
-    val operator: SVGAnimatedEnumeration
+    val operator: SVGAnimatedEnumeration<Short>
     val SVG_FECOMPOSITE_OPERATOR_UNKNOWN: Short
     val SVG_FECOMPOSITE_OPERATOR_OVER: Short
     val SVG_FECOMPOSITE_OPERATOR_IN: Short

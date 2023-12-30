@@ -14,7 +14,7 @@ import web.geometry.DOMRect
  */
 sealed external class SVGTextContentElement :
     SVGGraphicsElement {
-    val lengthAdjust: SVGAnimatedEnumeration
+    val lengthAdjust: SVGAnimatedEnumeration<Short>
     val textLength: SVGAnimatedLength
     fun getCharNumAtPosition(point: DOMPointInit = definedExternally): Number
     fun getCharNumAtPosition(point: DOMPointReadOnly /* DOMPointInit */): Number

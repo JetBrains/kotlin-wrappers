@@ -7,7 +7,7 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedEnumeration)
  */
-sealed external class SVGAnimatedEnumeration {
-    val animVal: Short
-    var baseVal: Short
+sealed external class SVGAnimatedEnumeration<T> {
+    val animVal: T
+    var baseVal: T
 }

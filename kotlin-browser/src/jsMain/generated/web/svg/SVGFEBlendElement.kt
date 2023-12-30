@@ -12,7 +12,7 @@ sealed external class SVGFEBlendElement :
     SVGFilterPrimitiveStandardAttributes {
     val in1: SVGAnimatedString
     val in2: SVGAnimatedString
-    val mode: SVGAnimatedEnumeration
+    val mode: SVGAnimatedEnumeration<Short>
     val SVG_FEBLEND_MODE_UNKNOWN: Short
     val SVG_FEBLEND_MODE_NORMAL: Short
     val SVG_FEBLEND_MODE_MULTIPLY: Short

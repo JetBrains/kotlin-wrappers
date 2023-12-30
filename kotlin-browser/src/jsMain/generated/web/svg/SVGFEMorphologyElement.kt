@@ -11,7 +11,7 @@ sealed external class SVGFEMorphologyElement :
     SVGElement,
     SVGFilterPrimitiveStandardAttributes {
     val in1: SVGAnimatedString
-    val operator: SVGAnimatedEnumeration
+    val operator: SVGAnimatedEnumeration<Short>
     val radiusX: SVGAnimatedNumber
     val radiusY: SVGAnimatedNumber
     val SVG_MORPHOLOGY_OPERATOR_UNKNOWN: Short

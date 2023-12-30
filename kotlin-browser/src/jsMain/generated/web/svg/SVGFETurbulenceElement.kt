@@ -14,8 +14,8 @@ sealed external class SVGFETurbulenceElement :
     val baseFrequencyY: SVGAnimatedNumber
     val numOctaves: SVGAnimatedInteger
     val seed: SVGAnimatedNumber
-    val stitchTiles: SVGAnimatedEnumeration
-    val type: SVGAnimatedEnumeration
+    val stitchTiles: SVGAnimatedEnumeration<Short>
+    val type: SVGAnimatedEnumeration<Short>
     val SVG_TURBULENCE_TYPE_UNKNOWN: Short
     val SVG_TURBULENCE_TYPE_FRACTALNOISE: Short
     val SVG_TURBULENCE_TYPE_TURBULENCE: Short
