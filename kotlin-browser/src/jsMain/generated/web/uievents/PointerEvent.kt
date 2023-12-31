@@ -89,6 +89,10 @@ open external class PointerEvent(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/getCoalescedEvents)
      */
     fun getCoalescedEvents(): ReadonlyArray<PointerEvent>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/getPredictedEvents)
+     */
     fun getPredictedEvents(): ReadonlyArray<PointerEvent>
 
     companion object : PointerEventTypes
