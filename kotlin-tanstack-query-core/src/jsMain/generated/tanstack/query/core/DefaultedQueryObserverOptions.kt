@@ -6,4 +6,4 @@
 
 package tanstack.query.core
 
-typealias DefaultedQueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey> = Union /* WithRequired<QueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey>, 'throwOnError' | 'refetchOnReconnect'> */
+typealias DefaultedQueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey> = Union /* WithRequired<QueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey>, 'throwOnError' | 'refetchOnReconnect' | 'queryHash'> */
