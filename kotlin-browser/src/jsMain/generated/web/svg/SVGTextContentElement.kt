@@ -14,7 +14,7 @@ import web.geometry.DOMRect
  */
 sealed external class SVGTextContentElement :
     SVGGraphicsElement {
-    val lengthAdjust: SVGAnimatedEnumeration<Short>
+    val lengthAdjust: SVGAnimatedEnumeration<LengthAdjust>
     val textLength: SVGAnimatedLength
     fun getCharNumAtPosition(point: DOMPointInit = definedExternally): Number
     fun getCharNumAtPosition(point: DOMPointReadOnly /* DOMPointInit */): Number
@@ -29,13 +29,15 @@ sealed external class SVGTextContentElement :
         nchars: Number,
     ): Number
 
-    val LENGTHADJUST_UNKNOWN: Short
-    val LENGTHADJUST_SPACING: Short
-    val LENGTHADJUST_SPACINGANDGLYPHS: Short
+    val LENGTHADJUST_UNKNOWN: LengthAdjust
+    val LENGTHADJUST_SPACING: LengthAdjust
+    val LENGTHADJUST_SPACINGANDGLYPHS: LengthAdjust
 
     companion object {
-        val LENGTHADJUST_UNKNOWN: Short
-        val LENGTHADJUST_SPACING: Short
-        val LENGTHADJUST_SPACINGANDGLYPHS: Short
+        val LENGTHADJUST_UNKNOWN: LengthAdjust
+        val LENGTHADJUST_SPACING: LengthAdjust
+        val LENGTHADJUST_SPACINGANDGLYPHS: LengthAdjust
     }
+
+    sealed interface LengthAdjust
 }

@@ -16,22 +16,24 @@ sealed external class SVGFECompositeElement :
     val k2: SVGAnimatedNumber
     val k3: SVGAnimatedNumber
     val k4: SVGAnimatedNumber
-    val operator: SVGAnimatedEnumeration<Short>
-    val SVG_FECOMPOSITE_OPERATOR_UNKNOWN: Short
-    val SVG_FECOMPOSITE_OPERATOR_OVER: Short
-    val SVG_FECOMPOSITE_OPERATOR_IN: Short
-    val SVG_FECOMPOSITE_OPERATOR_OUT: Short
-    val SVG_FECOMPOSITE_OPERATOR_ATOP: Short
-    val SVG_FECOMPOSITE_OPERATOR_XOR: Short
-    val SVG_FECOMPOSITE_OPERATOR_ARITHMETIC: Short
+    val operator: SVGAnimatedEnumeration<Operator>
+    val SVG_FECOMPOSITE_OPERATOR_UNKNOWN: Operator
+    val SVG_FECOMPOSITE_OPERATOR_OVER: Operator
+    val SVG_FECOMPOSITE_OPERATOR_IN: Operator
+    val SVG_FECOMPOSITE_OPERATOR_OUT: Operator
+    val SVG_FECOMPOSITE_OPERATOR_ATOP: Operator
+    val SVG_FECOMPOSITE_OPERATOR_XOR: Operator
+    val SVG_FECOMPOSITE_OPERATOR_ARITHMETIC: Operator
 
     companion object {
-        val SVG_FECOMPOSITE_OPERATOR_UNKNOWN: Short
-        val SVG_FECOMPOSITE_OPERATOR_OVER: Short
-        val SVG_FECOMPOSITE_OPERATOR_IN: Short
-        val SVG_FECOMPOSITE_OPERATOR_OUT: Short
-        val SVG_FECOMPOSITE_OPERATOR_ATOP: Short
-        val SVG_FECOMPOSITE_OPERATOR_XOR: Short
-        val SVG_FECOMPOSITE_OPERATOR_ARITHMETIC: Short
+        val SVG_FECOMPOSITE_OPERATOR_UNKNOWN: Operator
+        val SVG_FECOMPOSITE_OPERATOR_OVER: Operator
+        val SVG_FECOMPOSITE_OPERATOR_IN: Operator
+        val SVG_FECOMPOSITE_OPERATOR_OUT: Operator
+        val SVG_FECOMPOSITE_OPERATOR_ATOP: Operator
+        val SVG_FECOMPOSITE_OPERATOR_XOR: Operator
+        val SVG_FECOMPOSITE_OPERATOR_ARITHMETIC: Operator
     }
+
+    sealed interface Operator
 }

@@ -10,22 +10,25 @@ package web.svg
 sealed external class SVGTextPathElement :
     SVGTextContentElement,
     SVGURIReference {
-    val method: SVGAnimatedEnumeration<Short>
-    val spacing: SVGAnimatedEnumeration<Short>
+    val method: SVGAnimatedEnumeration<Method>
+    val spacing: SVGAnimatedEnumeration<Spacing>
     val startOffset: SVGAnimatedLength
-    val TEXTPATH_METHODTYPE_UNKNOWN: Short
-    val TEXTPATH_METHODTYPE_ALIGN: Short
-    val TEXTPATH_METHODTYPE_STRETCH: Short
-    val TEXTPATH_SPACINGTYPE_UNKNOWN: Short
-    val TEXTPATH_SPACINGTYPE_AUTO: Short
-    val TEXTPATH_SPACINGTYPE_EXACT: Short
+    val TEXTPATH_METHODTYPE_UNKNOWN: Method
+    val TEXTPATH_METHODTYPE_ALIGN: Method
+    val TEXTPATH_METHODTYPE_STRETCH: Method
+    val TEXTPATH_SPACINGTYPE_UNKNOWN: Spacing
+    val TEXTPATH_SPACINGTYPE_AUTO: Spacing
+    val TEXTPATH_SPACINGTYPE_EXACT: Spacing
 
     companion object {
-        val TEXTPATH_METHODTYPE_UNKNOWN: Short
-        val TEXTPATH_METHODTYPE_ALIGN: Short
-        val TEXTPATH_METHODTYPE_STRETCH: Short
-        val TEXTPATH_SPACINGTYPE_UNKNOWN: Short
-        val TEXTPATH_SPACINGTYPE_AUTO: Short
-        val TEXTPATH_SPACINGTYPE_EXACT: Short
+        val TEXTPATH_METHODTYPE_UNKNOWN: Method
+        val TEXTPATH_METHODTYPE_ALIGN: Method
+        val TEXTPATH_METHODTYPE_STRETCH: Method
+        val TEXTPATH_SPACINGTYPE_UNKNOWN: Spacing
+        val TEXTPATH_SPACINGTYPE_AUTO: Spacing
+        val TEXTPATH_SPACINGTYPE_EXACT: Spacing
     }
+
+    sealed interface Method
+    sealed interface Spacing
 }

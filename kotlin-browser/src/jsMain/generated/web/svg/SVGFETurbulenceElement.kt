@@ -14,21 +14,24 @@ sealed external class SVGFETurbulenceElement :
     val baseFrequencyY: SVGAnimatedNumber
     val numOctaves: SVGAnimatedInteger
     val seed: SVGAnimatedNumber
-    val stitchTiles: SVGAnimatedEnumeration<Short>
-    val type: SVGAnimatedEnumeration<Short>
-    val SVG_TURBULENCE_TYPE_UNKNOWN: Short
-    val SVG_TURBULENCE_TYPE_FRACTALNOISE: Short
-    val SVG_TURBULENCE_TYPE_TURBULENCE: Short
-    val SVG_STITCHTYPE_UNKNOWN: Short
-    val SVG_STITCHTYPE_STITCH: Short
-    val SVG_STITCHTYPE_NOSTITCH: Short
+    val stitchTiles: SVGAnimatedEnumeration<StitchTiles>
+    val type: SVGAnimatedEnumeration<Type>
+    val SVG_TURBULENCE_TYPE_UNKNOWN: Type
+    val SVG_TURBULENCE_TYPE_FRACTALNOISE: Type
+    val SVG_TURBULENCE_TYPE_TURBULENCE: Type
+    val SVG_STITCHTYPE_UNKNOWN: StitchTiles
+    val SVG_STITCHTYPE_STITCH: StitchTiles
+    val SVG_STITCHTYPE_NOSTITCH: StitchTiles
 
     companion object {
-        val SVG_TURBULENCE_TYPE_UNKNOWN: Short
-        val SVG_TURBULENCE_TYPE_FRACTALNOISE: Short
-        val SVG_TURBULENCE_TYPE_TURBULENCE: Short
-        val SVG_STITCHTYPE_UNKNOWN: Short
-        val SVG_STITCHTYPE_STITCH: Short
-        val SVG_STITCHTYPE_NOSTITCH: Short
+        val SVG_TURBULENCE_TYPE_UNKNOWN: Type
+        val SVG_TURBULENCE_TYPE_FRACTALNOISE: Type
+        val SVG_TURBULENCE_TYPE_TURBULENCE: Type
+        val SVG_STITCHTYPE_UNKNOWN: StitchTiles
+        val SVG_STITCHTYPE_STITCH: StitchTiles
+        val SVG_STITCHTYPE_NOSTITCH: StitchTiles
     }
+
+    sealed interface StitchTiles
+    sealed interface Type
 }
