@@ -18,25 +18,25 @@ sealed external class SVGFEColorMatrixElement :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEColorMatrixElement/type)
      */
-    val type: SVGAnimatedEnumeration<Short>
+    val type: SVGAnimatedEnumeration<Type>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEColorMatrixElement/values)
      */
     val values: SVGAnimatedNumberList
-    val SVG_FECOLORMATRIX_TYPE_UNKNOWN: Mode
-    val SVG_FECOLORMATRIX_TYPE_MATRIX: Mode
-    val SVG_FECOLORMATRIX_TYPE_SATURATE: Mode
-    val SVG_FECOLORMATRIX_TYPE_HUEROTATE: Mode
-    val SVG_FECOLORMATRIX_TYPE_LUMINANCETOALPHA: Mode
+    val SVG_FECOLORMATRIX_TYPE_UNKNOWN: Type
+    val SVG_FECOLORMATRIX_TYPE_MATRIX: Type
+    val SVG_FECOLORMATRIX_TYPE_SATURATE: Type
+    val SVG_FECOLORMATRIX_TYPE_HUEROTATE: Type
+    val SVG_FECOLORMATRIX_TYPE_LUMINANCETOALPHA: Type
 
     companion object {
-        val SVG_FECOLORMATRIX_TYPE_UNKNOWN: Mode
-        val SVG_FECOLORMATRIX_TYPE_MATRIX: Mode
-        val SVG_FECOLORMATRIX_TYPE_SATURATE: Mode
-        val SVG_FECOLORMATRIX_TYPE_HUEROTATE: Mode
-        val SVG_FECOLORMATRIX_TYPE_LUMINANCETOALPHA: Mode
+        val SVG_FECOLORMATRIX_TYPE_UNKNOWN: Type
+        val SVG_FECOLORMATRIX_TYPE_MATRIX: Type
+        val SVG_FECOLORMATRIX_TYPE_SATURATE: Type
+        val SVG_FECOLORMATRIX_TYPE_HUEROTATE: Type
+        val SVG_FECOLORMATRIX_TYPE_LUMINANCETOALPHA: Type
     }
 
-    sealed interface Mode
+    sealed interface Type
 }
