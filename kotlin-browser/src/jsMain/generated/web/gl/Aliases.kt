@@ -3,9 +3,9 @@
 package web.gl
 
 typealias GLbitfield = Number
-typealias GLboolean = Number
+typealias GLboolean = Boolean
 typealias GLclampf = Number
-typealias GLenum = Number
+typealias GLenum = Short
 typealias GLfloat = Number
 typealias GLint = Number
 typealias GLint64 = Number
