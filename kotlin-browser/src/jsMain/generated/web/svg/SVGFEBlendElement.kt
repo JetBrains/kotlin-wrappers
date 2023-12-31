@@ -12,42 +12,44 @@ sealed external class SVGFEBlendElement :
     SVGFilterPrimitiveStandardAttributes {
     val in1: SVGAnimatedString
     val in2: SVGAnimatedString
-    val mode: SVGAnimatedEnumeration<Short>
-    val SVG_FEBLEND_MODE_UNKNOWN: Short
-    val SVG_FEBLEND_MODE_NORMAL: Short
-    val SVG_FEBLEND_MODE_MULTIPLY: Short
-    val SVG_FEBLEND_MODE_SCREEN: Short
-    val SVG_FEBLEND_MODE_DARKEN: Short
-    val SVG_FEBLEND_MODE_LIGHTEN: Short
-    val SVG_FEBLEND_MODE_OVERLAY: Short
-    val SVG_FEBLEND_MODE_COLOR_DODGE: Short
-    val SVG_FEBLEND_MODE_COLOR_BURN: Short
-    val SVG_FEBLEND_MODE_HARD_LIGHT: Short
-    val SVG_FEBLEND_MODE_SOFT_LIGHT: Short
-    val SVG_FEBLEND_MODE_DIFFERENCE: Short
-    val SVG_FEBLEND_MODE_EXCLUSION: Short
-    val SVG_FEBLEND_MODE_HUE: Short
-    val SVG_FEBLEND_MODE_SATURATION: Short
-    val SVG_FEBLEND_MODE_COLOR: Short
-    val SVG_FEBLEND_MODE_LUMINOSITY: Short
+    val mode: SVGAnimatedEnumeration<Mode>
+    val SVG_FEBLEND_MODE_UNKNOWN: Mode
+    val SVG_FEBLEND_MODE_NORMAL: Mode
+    val SVG_FEBLEND_MODE_MULTIPLY: Mode
+    val SVG_FEBLEND_MODE_SCREEN: Mode
+    val SVG_FEBLEND_MODE_DARKEN: Mode
+    val SVG_FEBLEND_MODE_LIGHTEN: Mode
+    val SVG_FEBLEND_MODE_OVERLAY: Mode
+    val SVG_FEBLEND_MODE_COLOR_DODGE: Mode
+    val SVG_FEBLEND_MODE_COLOR_BURN: Mode
+    val SVG_FEBLEND_MODE_HARD_LIGHT: Mode
+    val SVG_FEBLEND_MODE_SOFT_LIGHT: Mode
+    val SVG_FEBLEND_MODE_DIFFERENCE: Mode
+    val SVG_FEBLEND_MODE_EXCLUSION: Mode
+    val SVG_FEBLEND_MODE_HUE: Mode
+    val SVG_FEBLEND_MODE_SATURATION: Mode
+    val SVG_FEBLEND_MODE_COLOR: Mode
+    val SVG_FEBLEND_MODE_LUMINOSITY: Mode
 
     companion object {
-        val SVG_FEBLEND_MODE_UNKNOWN: Short
-        val SVG_FEBLEND_MODE_NORMAL: Short
-        val SVG_FEBLEND_MODE_MULTIPLY: Short
-        val SVG_FEBLEND_MODE_SCREEN: Short
-        val SVG_FEBLEND_MODE_DARKEN: Short
-        val SVG_FEBLEND_MODE_LIGHTEN: Short
-        val SVG_FEBLEND_MODE_OVERLAY: Short
-        val SVG_FEBLEND_MODE_COLOR_DODGE: Short
-        val SVG_FEBLEND_MODE_COLOR_BURN: Short
-        val SVG_FEBLEND_MODE_HARD_LIGHT: Short
-        val SVG_FEBLEND_MODE_SOFT_LIGHT: Short
-        val SVG_FEBLEND_MODE_DIFFERENCE: Short
-        val SVG_FEBLEND_MODE_EXCLUSION: Short
-        val SVG_FEBLEND_MODE_HUE: Short
-        val SVG_FEBLEND_MODE_SATURATION: Short
-        val SVG_FEBLEND_MODE_COLOR: Short
-        val SVG_FEBLEND_MODE_LUMINOSITY: Short
+        val SVG_FEBLEND_MODE_UNKNOWN: Mode
+        val SVG_FEBLEND_MODE_NORMAL: Mode
+        val SVG_FEBLEND_MODE_MULTIPLY: Mode
+        val SVG_FEBLEND_MODE_SCREEN: Mode
+        val SVG_FEBLEND_MODE_DARKEN: Mode
+        val SVG_FEBLEND_MODE_LIGHTEN: Mode
+        val SVG_FEBLEND_MODE_OVERLAY: Mode
+        val SVG_FEBLEND_MODE_COLOR_DODGE: Mode
+        val SVG_FEBLEND_MODE_COLOR_BURN: Mode
+        val SVG_FEBLEND_MODE_HARD_LIGHT: Mode
+        val SVG_FEBLEND_MODE_SOFT_LIGHT: Mode
+        val SVG_FEBLEND_MODE_DIFFERENCE: Mode
+        val SVG_FEBLEND_MODE_EXCLUSION: Mode
+        val SVG_FEBLEND_MODE_HUE: Mode
+        val SVG_FEBLEND_MODE_SATURATION: Mode
+        val SVG_FEBLEND_MODE_COLOR: Mode
+        val SVG_FEBLEND_MODE_LUMINOSITY: Mode
     }
+
+    sealed interface Mode
 }

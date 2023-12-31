@@ -12,7 +12,7 @@ sealed external class SVGFEConvolveMatrixElement :
     SVGFilterPrimitiveStandardAttributes {
     val bias: SVGAnimatedNumber
     val divisor: SVGAnimatedNumber
-    val edgeMode: SVGAnimatedEnumeration<Short>
+    val edgeMode: SVGAnimatedEnumeration<EdgeMode>
     val in1: SVGAnimatedString
     val kernelMatrix: SVGAnimatedNumberList
     val kernelUnitLengthX: SVGAnimatedNumber
@@ -22,15 +22,17 @@ sealed external class SVGFEConvolveMatrixElement :
     val preserveAlpha: SVGAnimatedBoolean
     val targetX: SVGAnimatedInteger
     val targetY: SVGAnimatedInteger
-    val SVG_EDGEMODE_UNKNOWN: Short
-    val SVG_EDGEMODE_DUPLICATE: Short
-    val SVG_EDGEMODE_WRAP: Short
-    val SVG_EDGEMODE_NONE: Short
+    val SVG_EDGEMODE_UNKNOWN: EdgeMode
+    val SVG_EDGEMODE_DUPLICATE: EdgeMode
+    val SVG_EDGEMODE_WRAP: EdgeMode
+    val SVG_EDGEMODE_NONE: EdgeMode
 
     companion object {
-        val SVG_EDGEMODE_UNKNOWN: Short
-        val SVG_EDGEMODE_DUPLICATE: Short
-        val SVG_EDGEMODE_WRAP: Short
-        val SVG_EDGEMODE_NONE: Short
+        val SVG_EDGEMODE_UNKNOWN: EdgeMode
+        val SVG_EDGEMODE_DUPLICATE: EdgeMode
+        val SVG_EDGEMODE_WRAP: EdgeMode
+        val SVG_EDGEMODE_NONE: EdgeMode
     }
+
+    sealed interface EdgeMode
 }

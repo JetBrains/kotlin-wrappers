@@ -24,17 +24,19 @@ sealed external class SVGFEColorMatrixElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEColorMatrixElement/values)
      */
     val values: SVGAnimatedNumberList
-    val SVG_FECOLORMATRIX_TYPE_UNKNOWN: Short
-    val SVG_FECOLORMATRIX_TYPE_MATRIX: Short
-    val SVG_FECOLORMATRIX_TYPE_SATURATE: Short
-    val SVG_FECOLORMATRIX_TYPE_HUEROTATE: Short
-    val SVG_FECOLORMATRIX_TYPE_LUMINANCETOALPHA: Short
+    val SVG_FECOLORMATRIX_TYPE_UNKNOWN: Mode
+    val SVG_FECOLORMATRIX_TYPE_MATRIX: Mode
+    val SVG_FECOLORMATRIX_TYPE_SATURATE: Mode
+    val SVG_FECOLORMATRIX_TYPE_HUEROTATE: Mode
+    val SVG_FECOLORMATRIX_TYPE_LUMINANCETOALPHA: Mode
 
     companion object {
-        val SVG_FECOLORMATRIX_TYPE_UNKNOWN: Short
-        val SVG_FECOLORMATRIX_TYPE_MATRIX: Short
-        val SVG_FECOLORMATRIX_TYPE_SATURATE: Short
-        val SVG_FECOLORMATRIX_TYPE_HUEROTATE: Short
-        val SVG_FECOLORMATRIX_TYPE_LUMINANCETOALPHA: Short
+        val SVG_FECOLORMATRIX_TYPE_UNKNOWN: Mode
+        val SVG_FECOLORMATRIX_TYPE_MATRIX: Mode
+        val SVG_FECOLORMATRIX_TYPE_SATURATE: Mode
+        val SVG_FECOLORMATRIX_TYPE_HUEROTATE: Mode
+        val SVG_FECOLORMATRIX_TYPE_LUMINANCETOALPHA: Mode
     }
+
+    sealed interface Mode
 }
