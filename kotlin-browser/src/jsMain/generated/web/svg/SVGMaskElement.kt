@@ -17,12 +17,12 @@ sealed external class SVGMaskElement :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMaskElement/maskContentUnits)
      */
-    val maskContentUnits: SVGAnimatedEnumeration<Short>
+    val maskContentUnits: SVGAnimatedEnumeration<SVGUnitTypes.Type>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMaskElement/maskUnits)
      */
-    val maskUnits: SVGAnimatedEnumeration<Short>
+    val maskUnits: SVGAnimatedEnumeration<SVGUnitTypes.Type>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMaskElement/width)

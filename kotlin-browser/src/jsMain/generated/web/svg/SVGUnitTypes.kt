@@ -8,13 +8,15 @@ package web.svg
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGUnitTypes)
  */
 sealed external class SVGUnitTypes {
-    val SVG_UNIT_TYPE_UNKNOWN: Short
-    val SVG_UNIT_TYPE_USERSPACEONUSE: Short
-    val SVG_UNIT_TYPE_OBJECTBOUNDINGBOX: Short
+    val SVG_UNIT_TYPE_UNKNOWN: Type
+    val SVG_UNIT_TYPE_USERSPACEONUSE: Type
+    val SVG_UNIT_TYPE_OBJECTBOUNDINGBOX: Type
 
     companion object {
-        val SVG_UNIT_TYPE_UNKNOWN: Short
-        val SVG_UNIT_TYPE_USERSPACEONUSE: Short
-        val SVG_UNIT_TYPE_OBJECTBOUNDINGBOX: Short
+        val SVG_UNIT_TYPE_UNKNOWN: Type
+        val SVG_UNIT_TYPE_USERSPACEONUSE: Type
+        val SVG_UNIT_TYPE_OBJECTBOUNDINGBOX: Type
     }
+
+    sealed interface Type
 }

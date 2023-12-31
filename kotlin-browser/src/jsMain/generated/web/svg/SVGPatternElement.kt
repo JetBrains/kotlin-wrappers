@@ -12,9 +12,9 @@ sealed external class SVGPatternElement :
     SVGFitToViewBox,
     SVGURIReference {
     val height: SVGAnimatedLength
-    val patternContentUnits: SVGAnimatedEnumeration<Short>
+    val patternContentUnits: SVGAnimatedEnumeration<SVGUnitTypes.Type>
     val patternTransform: SVGAnimatedTransformList
-    val patternUnits: SVGAnimatedEnumeration<Short>
+    val patternUnits: SVGAnimatedEnumeration<SVGUnitTypes.Type>
     val width: SVGAnimatedLength
     val x: SVGAnimatedLength
     val y: SVGAnimatedLength
