@@ -11,7 +11,7 @@ import web.events.EventInit
 import web.events.EventType
 
 external interface CloseEventInit : EventInit {
-    var code: Int?
+    var code: Short?
     var reason: String?
     var wasClean: Boolean?
 }
@@ -30,7 +30,7 @@ open external class CloseEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CloseEvent/code)
      */
-    val code: Int
+    val code: Short
 
     /**
      * Returns the WebSocket connection close reason provided by the server.
