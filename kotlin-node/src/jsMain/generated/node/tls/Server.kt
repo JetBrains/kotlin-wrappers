@@ -91,9 +91,9 @@ external class Server : node.net.Server {
         listener: (line: node.buffer.Buffer, tlsSocket: TLSSocket) -> Unit,
     ): Unit /* this */
 
-    override fun emit(event: String, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Boolean
+    override fun emit(event: String, vararg args: Any?): Boolean
 
-    override fun emit(event: js.core.Symbol, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Boolean
+    override fun emit(event: js.core.Symbol, vararg args: Any?): Boolean
     fun emit(event: ServerEvent.TLSCLIENTERROR, err: Throwable /* JsError */, tlsSocket: TLSSocket): Boolean
     fun emit(
         event: ServerEvent.NEWSESSION,

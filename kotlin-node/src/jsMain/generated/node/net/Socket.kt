@@ -354,9 +354,9 @@ open external class Socket : node.stream.Duplex {
 
     fun addListener(event: SocketEvent.READY, listener: () -> Unit): Unit /* this */
     fun addListener(event: SocketEvent.TIMEOUT, listener: () -> Unit): Unit /* this */
-    override fun emit(event: String, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Boolean
+    override fun emit(event: String, vararg args: Any?): Boolean
 
-    override fun emit(event: js.core.Symbol, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Boolean
+    override fun emit(event: js.core.Symbol, vararg args: Any?): Boolean
     fun emit(event: SocketEvent.CLOSE, hadError: Boolean): Boolean
     fun emit(event: SocketEvent.CONNECT): Boolean
     fun emit(event: SocketEvent.DATA, data: node.buffer.Buffer): Boolean

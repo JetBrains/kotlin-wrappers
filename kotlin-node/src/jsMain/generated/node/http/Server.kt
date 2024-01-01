@@ -150,7 +150,7 @@ external class Server<Request : IncomingMessage, Response : ServerResponse<*>> :
         listener: (req: Request, socket: node.stream.Duplex, head: node.buffer.Buffer) -> Unit,
     ): Unit /* this */
 
-    override fun emit(event: String, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Boolean
+    override fun emit(event: String, vararg args: Any?): Boolean
     fun emit(event: ServerEvent.CLOSE): Boolean
     fun emit(event: ServerEvent.CONNECTION, socket: Socket): Boolean
     fun emit(event: ServerEvent.ERROR, err: Throwable /* JsError */): Boolean

@@ -297,9 +297,9 @@ open external class Writable : Stream, node.WritableStream {
     fun emit(event: WritableEvent.FINISH): Boolean
     fun emit(event: WritableEvent.PIPE, src: Readable): Boolean
     fun emit(event: WritableEvent.UNPIPE, src: Readable): Boolean
-    open fun emit(event: String, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Boolean
+    open fun emit(event: String, vararg args: Any?): Boolean
 
-    open fun emit(event: js.core.Symbol, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Boolean
+    open fun emit(event: js.core.Symbol, vararg args: Any?): Boolean
     fun on(event: WritableEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun on(event: WritableEvent.DRAIN, listener: () -> Unit): Unit /* this */
     fun on(event: WritableEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */

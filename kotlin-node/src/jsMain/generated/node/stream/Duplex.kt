@@ -119,9 +119,9 @@ open external class Duplex : Readable, Writable {
     fun emit(event: DuplexEvent.READABLE): Boolean
     fun emit(event: DuplexEvent.RESUME): Boolean
     fun emit(event: DuplexEvent.UNPIPE, src: Readable): Boolean
-    override fun emit(event: String, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Boolean
+    override fun emit(event: String, vararg args: Any?): Boolean
 
-    override fun emit(event: js.core.Symbol, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Boolean
+    override fun emit(event: js.core.Symbol, vararg args: Any?): Boolean
     fun on(event: DuplexEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun on(event: DuplexEvent.DATA, listener: (chunk: Any?) -> Unit): Unit /* this */
     fun on(event: DuplexEvent.DRAIN, listener: () -> Unit): Unit /* this */

@@ -306,7 +306,7 @@ open external class EventEmitter {
      * ```
      * @since v0.1.26
      */
-    open fun emit(eventName: EventType, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Boolean
+    open fun emit(eventName: EventType, vararg args: Any?): Boolean
 
 
     /**

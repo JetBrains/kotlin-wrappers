@@ -435,9 +435,9 @@ open external class Readable : Stream, node.ReadableStream {
     fun emit(event: ReadableEvent.PAUSE): Boolean
     fun emit(event: ReadableEvent.READABLE): Boolean
     fun emit(event: ReadableEvent.RESUME): Boolean
-    open fun emit(event: String, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Boolean
+    open fun emit(event: String, vararg args: Any?): Boolean
 
-    open fun emit(event: js.core.Symbol, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Boolean
+    open fun emit(event: js.core.Symbol, vararg args: Any?): Boolean
     fun on(event: ReadableEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun on(event: ReadableEvent.DATA, listener: (chunk: Any?) -> Unit): Unit /* this */
     fun on(event: ReadableEvent.END, listener: () -> Unit): Unit /* this */

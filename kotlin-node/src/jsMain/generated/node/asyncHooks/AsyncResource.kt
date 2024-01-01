@@ -80,7 +80,7 @@ external class AsyncResource {
     fun <This, Result> runInAsyncScope(
         fn: Function<Result>, /* (this: This, ...args: any[]) => Result */
         thisArg: This = definedExternally,
-        vararg args: Any?, /* js.core.ReadonlyArray<Any?> */
+        vararg args: Any?,
     ): Result
 
     /**

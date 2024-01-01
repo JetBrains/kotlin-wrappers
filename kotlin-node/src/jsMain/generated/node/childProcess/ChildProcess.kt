@@ -502,9 +502,9 @@ open external class ChildProcess : EventEmitter {
     ): Unit /* this */
 
     fun addListener(event: ChildProcessEvent.SPAWN, listener: () -> Unit): Unit /* this */
-    fun emit(event: String, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Boolean
+    fun emit(event: String, vararg args: Any?): Boolean
 
-    fun emit(event: js.core.Symbol, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Boolean
+    fun emit(event: js.core.Symbol, vararg args: Any?): Boolean
     fun emit(event: ChildProcessEvent.CLOSE, code: Double?, signal: node.process.Signals?): Boolean
     fun emit(event: ChildProcessEvent.DISCONNECT): Boolean
     fun emit(event: ChildProcessEvent.ERROR, err: Throwable /* JsError */): Boolean

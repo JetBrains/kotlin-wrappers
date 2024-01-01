@@ -1808,7 +1808,7 @@ sealed external class Buffer : Uint8Array {
          * Creates a new Buffer using the passed {data}
          * @param values to create a new Buffer
          */
-        fun of(vararg items: Any? /* js.core.ReadonlyArray<Double> */): Buffer
+        fun of(vararg items: Double): Buffer
 
         /**
          * Returns `true` if `obj` is a `Buffer`, `false` otherwise.
