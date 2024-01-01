@@ -12,5 +12,13 @@ export default function (node, context, render) {
     ) {
         return "js.core.ReadonlyRecord"
     }
+
+    if (
+        ts.isIdentifier(node)
+        && ts.isTypeReferenceNode(node.parent)
+        && node.text === "Iterable"
+    ) {
+        return "js.iterable.JsIterable"
+    }
     return null
 }

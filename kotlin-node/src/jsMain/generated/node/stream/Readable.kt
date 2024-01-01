@@ -517,7 +517,7 @@ open external class Readable : Stream, node.ReadableStream {
         /**
          * A utility method for creating Readable Streams out of iterators.
          */
-        fun from(iterable: Iterable<Any?>, options: ReadableOptions = definedExternally): Readable
+        fun from(iterable: js.iterable.JsIterable<Any?>, options: ReadableOptions = definedExternally): Readable
 
         fun from(iterable: AsyncIterable<Any?>, options: ReadableOptions = definedExternally): Readable
 

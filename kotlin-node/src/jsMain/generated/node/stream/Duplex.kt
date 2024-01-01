@@ -244,7 +244,7 @@ open external class Duplex : Readable, Writable {
 
         fun from(src: String): Duplex
 
-        fun from(src: Iterable<Any?>): Duplex
+        fun from(src: js.iterable.JsIterable<Any?>): Duplex
 
         fun from(src: AsyncIterable<Any?>): Duplex
 

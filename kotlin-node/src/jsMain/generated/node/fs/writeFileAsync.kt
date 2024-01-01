@@ -94,7 +94,7 @@ external fun writeFileAsync(
 @JsName("writeFile")
 external fun writeFileAsync(
     file: PathLike,
-    data: Iterable<Any /* string | NodeJS.ArrayBufferView */>,
+    data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: (WriteFileAsyncOptions)? = definedExternally,
 ): Promise<Unit>
 
@@ -102,7 +102,7 @@ external fun writeFileAsync(
 @JsName("writeFile")
 external fun writeFileAsync(
     file: PathLike,
-    data: Iterable<Any /* string | NodeJS.ArrayBufferView */>,
+    data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: node.buffer.BufferEncoding? = definedExternally,
 ): Promise<Unit>
 
@@ -174,7 +174,7 @@ external fun writeFileAsync(
 @JsName("writeFile")
 external fun writeFileAsync(
     file: FileHandle,
-    data: Iterable<Any /* string | NodeJS.ArrayBufferView */>,
+    data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: (WriteFileAsyncOptions)? = definedExternally,
 ): Promise<Unit>
 
@@ -182,7 +182,7 @@ external fun writeFileAsync(
 @JsName("writeFile")
 external fun writeFileAsync(
     file: FileHandle,
-    data: Iterable<Any /* string | NodeJS.ArrayBufferView */>,
+    data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: node.buffer.BufferEncoding? = definedExternally,
 ): Promise<Unit>
 

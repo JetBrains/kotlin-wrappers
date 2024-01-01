@@ -49,7 +49,7 @@ suspend fun writeFile(
 
 suspend fun writeFile(
     file: PathLike,
-    data: Iterable<Any /* string | NodeJS.ArrayBufferView */>,
+    data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: (WriteFileAsyncOptions)? = undefined.unsafeCast<Nothing>(),
 ): Unit =
     writeFileAsync(
@@ -59,7 +59,7 @@ suspend fun writeFile(
 
 suspend fun writeFile(
     file: PathLike,
-    data: Iterable<Any /* string | NodeJS.ArrayBufferView */>,
+    data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: node.buffer.BufferEncoding? = undefined.unsafeCast<Nothing>(),
 ): Unit =
     writeFileAsync(
@@ -149,7 +149,7 @@ suspend fun writeFile(
 
 suspend fun writeFile(
     file: FileHandle,
-    data: Iterable<Any /* string | NodeJS.ArrayBufferView */>,
+    data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: (WriteFileAsyncOptions)? = undefined.unsafeCast<Nothing>(),
 ): Unit =
     writeFileAsync(
@@ -159,7 +159,7 @@ suspend fun writeFile(
 
 suspend fun writeFile(
     file: FileHandle,
-    data: Iterable<Any /* string | NodeJS.ArrayBufferView */>,
+    data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: node.buffer.BufferEncoding? = undefined.unsafeCast<Nothing>(),
 ): Unit =
     writeFileAsync(
