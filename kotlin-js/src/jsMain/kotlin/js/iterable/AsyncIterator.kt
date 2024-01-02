@@ -10,7 +10,7 @@ package js.iterable
 
 import js.promise.Promise
 
-sealed external interface AsyncIterator<out T> {
+external interface AsyncIterator<out T> {
     fun next(): Promise<IteratorResult<T, *>>
 
     inline operator fun iterator(): SuspendableIterator<T> =
