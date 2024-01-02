@@ -169,6 +169,20 @@ external class Scene(options: ConstructorOptions) {
     var nearToFarDistance2D: Double
 
     /**
+     * The vertical exaggeration of the scene.
+     * When set to 1.0, no exaggeration is applied.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#verticalExaggeration">Online Documentation</a>
+     */
+    var verticalExaggeration: Double
+
+    /**
+     * The reference height for vertical exaggeration of the scene.
+     * When set to 0.0, the exaggeration is applied relative to the ellipsoid surface.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#verticalExaggerationRelativeHeight">Online Documentation</a>
+     */
+    var verticalExaggerationRelativeHeight: Double
+
+    /**
      * This property is for debugging only; it is not for production use.
      *
      * A function that determines what commands are executed.  As shown in the examples below,

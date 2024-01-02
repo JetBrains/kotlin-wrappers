@@ -266,6 +266,18 @@ external class Ellipsoid(
     ): Cartesian3?
 
     /**
+     * Computes the ellipsoid curvatures at a given position on the surface.
+     * @param [surfacePosition] The position on the ellipsoid surface where curvatures will be calculated.
+     * @param [result] The cartesian to which to copy the result, or undefined to create and return a new instance.
+     * @return The local curvature of the ellipsoid surface at the provided position, in east and north directions.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Ellipsoid.html#getLocalCurvature">Online Documentation</a>
+     */
+    fun getLocalCurvature(
+        surfacePosition: Cartesian3,
+        result: Cartesian2? = definedExternally,
+    ): Cartesian2
+
+    /**
      * Computes an approximation of the surface area of a rectangle on the surface of an ellipsoid using
      * Gauss-Legendre 10th order quadrature.
      * @param [rectangle] The rectangle used for computing the surface area.
