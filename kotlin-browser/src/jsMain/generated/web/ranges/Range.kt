@@ -12,7 +12,7 @@ import web.geometry.DOMRectList
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range)
  */
-sealed external class Range :
+external class Range :
     AbstractRange {
     /**
      * Returns the node, furthest away from the document, that is an ancestor of both range's start node and end node.

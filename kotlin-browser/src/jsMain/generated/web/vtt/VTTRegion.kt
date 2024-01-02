@@ -5,7 +5,7 @@ package web.vtt
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VTTRegion)
  */
-sealed external class VTTRegion {
+external class VTTRegion {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VTTRegion/id)
      */

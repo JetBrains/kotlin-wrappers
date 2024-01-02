@@ -11,7 +11,7 @@ import web.events.EventTarget
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource)
  */
-sealed external class MediaSource :
+external class MediaSource :
     EventTarget {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/activeSourceBuffers)
