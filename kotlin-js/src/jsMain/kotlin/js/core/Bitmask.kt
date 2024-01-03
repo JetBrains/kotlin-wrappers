@@ -13,7 +13,7 @@ external interface Bitmask<T : Bitmask<T>> {
     inline val value: Int
         get() = unsafeCast<Int>()
 
-    inline infix fun or(other: T): T =
+    inline operator fun plus(other: T): T =
         (value or other.value).unsafeCast<T>()
 
     inline operator fun contains(other: T): Boolean =
