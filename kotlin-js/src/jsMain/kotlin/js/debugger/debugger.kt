@@ -1,4 +1,4 @@
-package web.debugger
+package js.debugger
 
 import js.core.Void
 
