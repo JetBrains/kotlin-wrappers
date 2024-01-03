@@ -1,4 +1,7 @@
-package js.core
+package js.reflect
+
+import js.core.ReadonlyArray
+import js.core.TypedPropertyDescriptor
 
 external interface ProxyHandler<T : Any> {
     interface PropertyName /* string | symbol */
