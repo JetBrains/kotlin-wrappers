@@ -11,8 +11,8 @@ import web.events.EventType
 import web.keyboard.ModifierKeyCode
 
 external interface MouseEventInit : EventModifierInit {
-    var button: Short?
-    var buttons: Short?
+    var button: MouseButton?
+    var buttons: MouseButtons?
     var clientX: Int?
     var clientY: Int?
     var movementX: Double?
@@ -39,12 +39,12 @@ open external class MouseEvent(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/button)
      */
-    val button: Short
+    val button: MouseButton
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/buttons)
      */
-    val buttons: Short
+    val buttons: MouseButtons
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/clientX)
