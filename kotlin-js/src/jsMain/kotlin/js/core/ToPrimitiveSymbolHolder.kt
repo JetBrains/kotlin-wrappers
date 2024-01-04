@@ -6,7 +6,7 @@ package js.core
 
 import seskar.js.JsNative
 
-external interface toPrimitiveSymbolHolder {
+external interface ToPrimitiveSymbolHolder {
     @JsNative
     operator fun get(
         key: Symbol.toPrimitive,

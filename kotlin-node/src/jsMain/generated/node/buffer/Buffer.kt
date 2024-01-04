@@ -1802,7 +1802,7 @@ sealed external class Buffer : Uint8Array {
          */
         fun from(str: WithImplicitCoercion<String>, encoding: BufferEncoding = definedExternally): Buffer
 
-        fun from(str: js.core.toPrimitiveSymbolHolder, encoding: BufferEncoding = definedExternally): Buffer
+        fun from(str: js.core.ToPrimitiveSymbolHolder, encoding: BufferEncoding = definedExternally): Buffer
 
         /**
          * Creates a new Buffer using the passed {data}
