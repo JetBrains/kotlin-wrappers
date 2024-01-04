@@ -1,3 +1,17 @@
+## pre.680
+
+**BREAKING CHANGE**
+
+* Split `js.core` package
+    * `js.symbol`
+        * `Symbol`
+    * `js.memory`
+        * `FinalizationRegistry`
+        * `WeakRef`
+    * `web.time`
+        * `DOMHighResTimeStamp`
+        * `EpochTimeStamp`
+
 ## pre.672
 
 **BREAKING CHANGE**
