@@ -2,7 +2,7 @@
 
 package web.animations
 
-import js.core.DOMHighResTimeStamp
+import web.time.DOMHighResTimeStamp
 
 sealed external interface DocumentTimelineOptions {
     var originTime: DOMHighResTimeStamp?

@@ -2,7 +2,7 @@
 
 package web.performance
 
-import js.core.DOMHighResTimeStamp
+import web.time.DOMHighResTimeStamp
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceServerTiming)

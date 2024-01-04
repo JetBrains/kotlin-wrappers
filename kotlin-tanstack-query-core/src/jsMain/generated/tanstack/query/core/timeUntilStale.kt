@@ -4,7 +4,7 @@
 
 package tanstack.query.core
 
-import js.core.EpochTimeStamp
+import web.time.EpochTimeStamp
 
 external fun timeUntilStale(
     updatedAt: EpochTimeStamp,

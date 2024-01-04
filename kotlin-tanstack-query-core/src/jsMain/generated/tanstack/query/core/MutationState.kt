@@ -2,7 +2,7 @@
 
 package tanstack.query.core
 
-import js.core.EpochTimeStamp
+import web.time.EpochTimeStamp
 
 external interface MutationState<TData, TError, TVariables, TContext> {
     val context: TContext?

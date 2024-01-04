@@ -2,7 +2,7 @@
 
 package web.html
 
-import js.core.DOMHighResTimeStamp
+import web.time.DOMHighResTimeStamp
 
 /**
  * Returned by the HTMLVideoElement.getVideoPlaybackQuality() method and contains metrics that can be used to determine the playback quality of a video.

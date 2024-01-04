@@ -2,9 +2,9 @@
 
 package web.dom.observers
 
-import js.core.DOMHighResTimeStamp
 import web.dom.Element
 import web.geometry.DOMRectReadOnly
+import web.time.DOMHighResTimeStamp
 
 /**
  * This Intersection Observer API interface describes the intersection between the target element and its root container at a specific moment of transition.

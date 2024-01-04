@@ -3,8 +3,8 @@
 package web.push
 
 import js.buffer.ArrayBuffer
-import js.core.EpochTimeStamp
 import js.promise.Promise
+import web.time.EpochTimeStamp
 
 /**
  * This Push API interface provides a subcription's URL endpoint and allows unsubscription from a push service.

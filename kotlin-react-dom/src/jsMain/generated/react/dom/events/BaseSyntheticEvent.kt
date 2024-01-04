@@ -2,9 +2,9 @@
 
 package react.dom.events
 
-import js.core.DOMHighResTimeStamp
 import web.events.Event
 import web.events.EventType
+import web.time.DOMHighResTimeStamp
 
 external interface BaseSyntheticEvent<out E : Event, out C : Any, out T : Any> {
     val nativeEvent: E

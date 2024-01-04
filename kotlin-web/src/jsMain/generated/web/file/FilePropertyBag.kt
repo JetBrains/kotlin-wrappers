@@ -2,8 +2,8 @@
 
 package web.file
 
-import js.core.EpochTimeStamp
 import web.buffer.BlobPropertyBag
+import web.time.EpochTimeStamp
 
 sealed external interface FilePropertyBag :
     BlobPropertyBag {

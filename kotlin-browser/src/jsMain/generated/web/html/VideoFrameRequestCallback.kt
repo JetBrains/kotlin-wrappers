@@ -2,7 +2,7 @@
 
 package web.html
 
-import js.core.DOMHighResTimeStamp
+import web.time.DOMHighResTimeStamp
 
 typealias VideoFrameRequestCallback = (
     now: DOMHighResTimeStamp,

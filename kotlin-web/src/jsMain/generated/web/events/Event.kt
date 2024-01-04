@@ -6,8 +6,8 @@
 
 package web.events
 
-import js.core.DOMHighResTimeStamp
 import js.core.ReadonlyArray
+import web.time.DOMHighResTimeStamp
 
 external interface EventInit {
     var bubbles: Boolean?

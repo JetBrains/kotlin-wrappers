@@ -6,10 +6,10 @@
 
 package web.media.recorder
 
-import js.core.DOMHighResTimeStamp
 import web.buffer.Blob
 import web.events.Event
 import web.events.EventType
+import web.time.DOMHighResTimeStamp
 
 external interface BlobEventInit {
     var data: Blob

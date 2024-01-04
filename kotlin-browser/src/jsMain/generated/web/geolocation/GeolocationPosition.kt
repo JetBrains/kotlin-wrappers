@@ -2,7 +2,7 @@
 
 package web.geolocation
 
-import js.core.EpochTimeStamp
+import web.time.EpochTimeStamp
 
 /**
  * Available only in secure contexts.

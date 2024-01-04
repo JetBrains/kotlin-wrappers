@@ -2,8 +2,8 @@
 
 package web.midi
 
-import js.core.DOMHighResTimeStamp
 import js.core.ReadonlyArray
+import web.time.DOMHighResTimeStamp
 
 /**
  * Available only in secure contexts.

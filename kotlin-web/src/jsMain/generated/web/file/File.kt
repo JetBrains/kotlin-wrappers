@@ -2,10 +2,10 @@
 
 package web.file
 
-import js.core.EpochTimeStamp
 import js.core.ReadonlyArray
 import web.buffer.Blob
 import web.buffer.BlobPart
+import web.time.EpochTimeStamp
 
 /**
  * Provides information about files and allows JavaScript in a web page to access their content.

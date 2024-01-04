@@ -2,8 +2,8 @@
 
 package web.gamepad
 
-import js.core.DOMHighResTimeStamp
 import js.core.ReadonlyArray
+import web.time.DOMHighResTimeStamp
 
 /**
  * This Gamepad API interface defines an individual gamepad or other controller, allowing access to information such as button presses, axis positions, and id.

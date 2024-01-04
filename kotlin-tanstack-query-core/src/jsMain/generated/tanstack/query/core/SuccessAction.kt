@@ -2,7 +2,7 @@
 
 package tanstack.query.core
 
-import js.core.EpochTimeStamp
+import web.time.EpochTimeStamp
 
 external interface SuccessAction<TData> {
     var data: TData?

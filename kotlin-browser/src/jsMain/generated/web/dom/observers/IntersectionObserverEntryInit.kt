@@ -2,9 +2,9 @@
 
 package web.dom.observers
 
-import js.core.DOMHighResTimeStamp
 import web.dom.Element
 import web.geometry.DOMRectInit
+import web.time.DOMHighResTimeStamp
 
 sealed external interface IntersectionObserverEntryInit {
     var boundingClientRect: DOMRectInit

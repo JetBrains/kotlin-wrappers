@@ -2,7 +2,7 @@
 
 package web.rtc
 
-import js.core.DOMHighResTimeStamp
+import web.time.DOMHighResTimeStamp
 
 sealed external interface RTCStats {
     var id: String

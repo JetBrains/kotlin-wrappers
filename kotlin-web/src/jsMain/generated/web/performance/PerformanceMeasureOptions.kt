@@ -2,7 +2,7 @@
 
 package web.performance
 
-import js.core.DOMHighResTimeStamp
+import web.time.DOMHighResTimeStamp
 
 sealed external interface PerformanceMeasureOptions {
     var detail: Any?

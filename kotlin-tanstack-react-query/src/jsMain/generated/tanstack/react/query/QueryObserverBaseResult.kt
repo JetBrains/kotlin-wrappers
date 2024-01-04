@@ -2,10 +2,10 @@
 
 package tanstack.react.query
 
-import js.core.EpochTimeStamp
 import js.promise.Promise
 import tanstack.query.core.QueryObserverResult
 import tanstack.query.core.QueryStatus
+import web.time.EpochTimeStamp
 
 external interface QueryObserverBaseResult<TData, TError> {
     val data: TData?
