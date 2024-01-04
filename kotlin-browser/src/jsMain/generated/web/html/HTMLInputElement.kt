@@ -55,6 +55,10 @@ protected constructor() :
      */
     var defaultValue: String
     var dirName: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/disabled)
+     */
     var disabled: Boolean
 
     /**

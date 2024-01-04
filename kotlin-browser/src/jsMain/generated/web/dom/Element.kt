@@ -176,6 +176,10 @@ abstract external class Element :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/attachShadow)
      */
     fun attachShadow(init: ShadowRootInit): ShadowRoot
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/checkVisibility)
+     */
     fun checkVisibility(options: CheckVisibilityOptions = definedExternally): Boolean
 
     /**
