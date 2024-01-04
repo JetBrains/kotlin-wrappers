@@ -273,7 +273,7 @@ open external class _Interface : EventEmitter {
 
     fun emit(event: String, vararg args: Any?): Boolean
 
-    fun emit(event: js.core.Symbol, vararg args: Any?): Boolean
+    fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
     fun emit(event: InterfaceEvent.CLOSE): Boolean
     fun emit(event: InterfaceEvent.LINE, input: String): Boolean
     fun emit(event: InterfaceEvent.PAUSE): Boolean

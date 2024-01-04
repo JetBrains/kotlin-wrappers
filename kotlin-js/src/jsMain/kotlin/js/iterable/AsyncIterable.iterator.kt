@@ -1,6 +1,6 @@
 package js.iterable
 
-import js.core.Symbol
+import js.symbol.Symbol
 
 @PublishedApi
 internal fun <T> iteratorFor(

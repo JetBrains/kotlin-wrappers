@@ -11,9 +11,9 @@
 package react
 
 import js.core.ReadonlyArray
-import js.core.Symbol
 import js.core.delete
 import js.core.jso
+import js.symbol.Symbol
 
 // child array
 private val CHILD_ARRAY: Symbol = Symbol("@@child-array")

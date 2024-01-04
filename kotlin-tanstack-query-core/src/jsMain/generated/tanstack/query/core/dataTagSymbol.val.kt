@@ -2,6 +2,6 @@
 
 package tanstack.query.core
 
-import js.core.Symbol
+import js.symbol.Symbol
 
 external object dataTagSymbol : Symbol

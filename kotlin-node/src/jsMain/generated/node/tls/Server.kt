@@ -93,7 +93,7 @@ external class Server : node.net.Server {
 
     override fun emit(event: String, vararg args: Any?): Boolean
 
-    override fun emit(event: js.core.Symbol, vararg args: Any?): Boolean
+    override fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
     fun emit(event: ServerEvent.TLSCLIENTERROR, err: Throwable /* JsError */, tlsSocket: TLSSocket): Boolean
     fun emit(
         event: ServerEvent.NEWSESSION,

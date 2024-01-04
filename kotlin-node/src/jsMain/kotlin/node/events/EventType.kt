@@ -1,6 +1,6 @@
 package node.events
 
-import js.core.Symbol
+import js.symbol.Symbol
 
 external interface EventType
 

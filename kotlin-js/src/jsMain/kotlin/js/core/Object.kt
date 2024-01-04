@@ -1,5 +1,7 @@
 package js.core
 
+import js.symbol.Symbol
+
 external class Object internal constructor() {
     fun hasOwnProperty(v: String): Boolean
     fun isPrototypeOf(v: Any): Boolean

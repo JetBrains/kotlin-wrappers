@@ -4,7 +4,7 @@
 
 package js.reflect
 
-import js.core.Symbol
+import js.symbol.Symbol
 import seskar.js.JsNative
 
 external interface HasInstanceSymbolHolder {

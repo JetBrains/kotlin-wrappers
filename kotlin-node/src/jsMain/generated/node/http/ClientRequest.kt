@@ -204,7 +204,7 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
     override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     override fun addListener(
-        event: js.core.Symbol,
+        event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
@@ -235,7 +235,7 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
     fun on(event: ClientRequestEvent.UNPIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
     override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
-    override fun on(event: js.core.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     /**
      * @deprecated
@@ -264,7 +264,7 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
     fun once(event: ClientRequestEvent.UNPIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
     override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
-    override fun once(event: js.core.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     /**
      * @deprecated
@@ -313,7 +313,7 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
     ): Unit /* this */
 
     override fun prependListener(
-        event: js.core.Symbol,
+        event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
@@ -368,7 +368,7 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
     ): Unit /* this */
 
     override fun prependOnceListener(
-        event: js.core.Symbol,
+        event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 }

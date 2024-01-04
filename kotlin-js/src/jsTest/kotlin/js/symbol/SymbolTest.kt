@@ -1,4 +1,4 @@
-package js.core
+package js.symbol
 
 import kotlin.test.Ignore
 import kotlin.test.Test

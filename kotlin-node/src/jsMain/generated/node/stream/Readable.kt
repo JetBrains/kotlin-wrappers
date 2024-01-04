@@ -424,7 +424,7 @@ open external class Readable : Stream, node.ReadableStream {
     open fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     open fun addListener(
-        event: js.core.Symbol,
+        event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
@@ -437,7 +437,7 @@ open external class Readable : Stream, node.ReadableStream {
     fun emit(event: ReadableEvent.RESUME): Boolean
     open fun emit(event: String, vararg args: Any?): Boolean
 
-    open fun emit(event: js.core.Symbol, vararg args: Any?): Boolean
+    open fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
     fun on(event: ReadableEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun on(event: ReadableEvent.DATA, listener: (chunk: Any?) -> Unit): Unit /* this */
     fun on(event: ReadableEvent.END, listener: () -> Unit): Unit /* this */
@@ -447,7 +447,7 @@ open external class Readable : Stream, node.ReadableStream {
     fun on(event: ReadableEvent.RESUME, listener: () -> Unit): Unit /* this */
     open fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
-    open fun on(event: js.core.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    open fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun once(event: ReadableEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun once(event: ReadableEvent.DATA, listener: (chunk: Any?) -> Unit): Unit /* this */
     fun once(event: ReadableEvent.END, listener: () -> Unit): Unit /* this */
@@ -457,7 +457,7 @@ open external class Readable : Stream, node.ReadableStream {
     fun once(event: ReadableEvent.RESUME, listener: () -> Unit): Unit /* this */
     open fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
-    open fun once(event: js.core.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    open fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun prependListener(event: ReadableEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun prependListener(event: ReadableEvent.DATA, listener: (chunk: Any?) -> Unit): Unit /* this */
     fun prependListener(event: ReadableEvent.END, listener: () -> Unit): Unit /* this */
@@ -468,7 +468,7 @@ open external class Readable : Stream, node.ReadableStream {
     open fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     open fun prependListener(
-        event: js.core.Symbol,
+        event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
@@ -489,7 +489,7 @@ open external class Readable : Stream, node.ReadableStream {
     ): Unit /* this */
 
     open fun prependOnceListener(
-        event: js.core.Symbol,
+        event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
@@ -503,7 +503,7 @@ open external class Readable : Stream, node.ReadableStream {
     open fun removeListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     open fun removeListener(
-        event: js.core.Symbol,
+        event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 

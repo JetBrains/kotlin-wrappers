@@ -628,8 +628,8 @@ open external class EventEmitter {
          * `'error'` event is emitted, therefore the process will still crash if no
          * regular `'error'` listener is installed.
          */
-        val errorMonitor: /* unique */ js.core.Symbol
-        val captureRejectionSymbol: /* unique */ js.core.Symbol
+        val errorMonitor: /* unique */ js.symbol.Symbol
+        val captureRejectionSymbol: /* unique */ js.symbol.Symbol
 
         /**
          * Sets or gets the default captureRejection value for all emitters.

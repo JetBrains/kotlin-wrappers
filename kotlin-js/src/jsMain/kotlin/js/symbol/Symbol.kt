@@ -1,4 +1,4 @@
-package js.core
+package js.symbol
 
 import seskar.js.JsPrimitive
 

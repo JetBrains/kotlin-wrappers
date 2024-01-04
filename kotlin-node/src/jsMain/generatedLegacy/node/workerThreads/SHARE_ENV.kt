@@ -4,6 +4,6 @@
 
 package node.workerThreads
 
-import js.core.Symbol
+import js.symbol.Symbol
 
 external val SHARE_ENV: Symbol

@@ -105,7 +105,7 @@ open external class Duplex : Readable, Writable {
     override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     override fun addListener(
-        event: js.core.Symbol,
+        event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
@@ -122,7 +122,7 @@ open external class Duplex : Readable, Writable {
     fun emit(event: DuplexEvent.UNPIPE, src: Readable): Boolean
     override fun emit(event: String, vararg args: Any?): Boolean
 
-    override fun emit(event: js.core.Symbol, vararg args: Any?): Boolean
+    override fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
     fun on(event: DuplexEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun on(event: DuplexEvent.DATA, listener: (chunk: Any?) -> Unit): Unit /* this */
     fun on(event: DuplexEvent.DRAIN, listener: () -> Unit): Unit /* this */
@@ -136,7 +136,7 @@ open external class Duplex : Readable, Writable {
     fun on(event: DuplexEvent.UNPIPE, listener: (src: Readable) -> Unit): Unit /* this */
     override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
-    override fun on(event: js.core.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun once(event: DuplexEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun once(event: DuplexEvent.DATA, listener: (chunk: Any?) -> Unit): Unit /* this */
     fun once(event: DuplexEvent.DRAIN, listener: () -> Unit): Unit /* this */
@@ -150,7 +150,7 @@ open external class Duplex : Readable, Writable {
     fun once(event: DuplexEvent.UNPIPE, listener: (src: Readable) -> Unit): Unit /* this */
     override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
-    override fun once(event: js.core.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun prependListener(event: DuplexEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun prependListener(event: DuplexEvent.DATA, listener: (chunk: Any?) -> Unit): Unit /* this */
     fun prependListener(event: DuplexEvent.DRAIN, listener: () -> Unit): Unit /* this */
@@ -168,7 +168,7 @@ open external class Duplex : Readable, Writable {
     ): Unit /* this */
 
     override fun prependListener(
-        event: js.core.Symbol,
+        event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
@@ -189,7 +189,7 @@ open external class Duplex : Readable, Writable {
     ): Unit /* this */
 
     override fun prependOnceListener(
-        event: js.core.Symbol,
+        event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
@@ -207,7 +207,7 @@ open external class Duplex : Readable, Writable {
     override fun removeListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     override fun removeListener(
-        event: js.core.Symbol,
+        event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 

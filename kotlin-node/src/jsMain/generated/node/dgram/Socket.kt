@@ -573,7 +573,7 @@ external class Socket : EventEmitter {
 
     fun emit(event: String, vararg args: Any?): Boolean
 
-    fun emit(event: js.core.Symbol, vararg args: Any?): Boolean
+    fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
     fun emit(event: SocketEvent.CLOSE): Boolean
     fun emit(event: SocketEvent.CONNECT): Boolean
     fun emit(event: SocketEvent.ERROR, err: Throwable /* JsError */): Boolean

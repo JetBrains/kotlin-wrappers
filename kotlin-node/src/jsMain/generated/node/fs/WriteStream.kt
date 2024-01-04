@@ -62,7 +62,7 @@ external class WriteStream : node.stream.Writable {
     override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     override fun addListener(
-        event: js.core.Symbol,
+        event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
@@ -76,7 +76,7 @@ external class WriteStream : node.stream.Writable {
     fun on(event: WriteStreamEvent.UNPIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
     override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
-    override fun on(event: js.core.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun once(event: WriteStreamEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun once(event: WriteStreamEvent.DRAIN, listener: () -> Unit): Unit /* this */
     fun once(event: WriteStreamEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
@@ -87,7 +87,7 @@ external class WriteStream : node.stream.Writable {
     fun once(event: WriteStreamEvent.UNPIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
     override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
-    override fun once(event: js.core.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun prependListener(event: WriteStreamEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun prependListener(event: WriteStreamEvent.DRAIN, listener: () -> Unit): Unit /* this */
     fun prependListener(
@@ -106,7 +106,7 @@ external class WriteStream : node.stream.Writable {
     ): Unit /* this */
 
     override fun prependListener(
-        event: js.core.Symbol,
+        event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
@@ -136,7 +136,7 @@ external class WriteStream : node.stream.Writable {
     ): Unit /* this */
 
     override fun prependOnceListener(
-        event: js.core.Symbol,
+        event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 }

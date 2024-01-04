@@ -4,7 +4,6 @@
 
 package js.symbol
 
-import js.core.Symbol
 import seskar.js.JsNative
 
 external interface ToStringSymbolHolder {

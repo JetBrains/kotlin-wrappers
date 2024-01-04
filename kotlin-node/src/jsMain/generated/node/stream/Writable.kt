@@ -287,7 +287,7 @@ open external class Writable : Stream, node.WritableStream {
     open fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     open fun addListener(
-        event: js.core.Symbol,
+        event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
@@ -299,7 +299,7 @@ open external class Writable : Stream, node.WritableStream {
     fun emit(event: WritableEvent.UNPIPE, src: Readable): Boolean
     open fun emit(event: String, vararg args: Any?): Boolean
 
-    open fun emit(event: js.core.Symbol, vararg args: Any?): Boolean
+    open fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
     fun on(event: WritableEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun on(event: WritableEvent.DRAIN, listener: () -> Unit): Unit /* this */
     fun on(event: WritableEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
@@ -308,7 +308,7 @@ open external class Writable : Stream, node.WritableStream {
     fun on(event: WritableEvent.UNPIPE, listener: (src: Readable) -> Unit): Unit /* this */
     open fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
-    open fun on(event: js.core.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    open fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun once(event: WritableEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun once(event: WritableEvent.DRAIN, listener: () -> Unit): Unit /* this */
     fun once(event: WritableEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
@@ -317,7 +317,7 @@ open external class Writable : Stream, node.WritableStream {
     fun once(event: WritableEvent.UNPIPE, listener: (src: Readable) -> Unit): Unit /* this */
     open fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
-    open fun once(event: js.core.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    open fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun prependListener(event: WritableEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun prependListener(event: WritableEvent.DRAIN, listener: () -> Unit): Unit /* this */
     fun prependListener(event: WritableEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
@@ -327,7 +327,7 @@ open external class Writable : Stream, node.WritableStream {
     open fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     open fun prependListener(
-        event: js.core.Symbol,
+        event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
@@ -347,7 +347,7 @@ open external class Writable : Stream, node.WritableStream {
     ): Unit /* this */
 
     open fun prependOnceListener(
-        event: js.core.Symbol,
+        event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
@@ -360,7 +360,7 @@ open external class Writable : Stream, node.WritableStream {
     open fun removeListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     open fun removeListener(
-        event: js.core.Symbol,
+        event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 

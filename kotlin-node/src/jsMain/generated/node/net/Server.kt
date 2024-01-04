@@ -195,7 +195,7 @@ open external class Server : EventEmitter {
 
     open fun emit(event: String, vararg args: Any?): Boolean
 
-    open fun emit(event: js.core.Symbol, vararg args: Any?): Boolean
+    open fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
     fun emit(event: ServerEvent.CLOSE): Boolean
     fun emit(event: ServerEvent.CONNECTION, socket: Socket): Boolean
     fun emit(event: ServerEvent.ERROR, err: Throwable /* JsError */): Boolean

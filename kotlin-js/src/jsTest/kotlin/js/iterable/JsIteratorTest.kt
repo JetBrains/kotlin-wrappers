@@ -1,7 +1,7 @@
 package js.iterable
 
 import js.collections.JsSet
-import js.core.Symbol
+import js.symbol.Symbol
 import kotlin.test.Test
 import kotlin.test.assertEquals
 

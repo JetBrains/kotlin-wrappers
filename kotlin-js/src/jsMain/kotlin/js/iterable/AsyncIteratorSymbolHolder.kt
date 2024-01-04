@@ -4,7 +4,7 @@
 
 package js.iterable
 
-import js.core.Symbol
+import js.symbol.Symbol
 import seskar.js.JsNative
 
 sealed external interface AsyncIteratorSymbolHolder<out V : Function<AsyncIterator<*>>> {

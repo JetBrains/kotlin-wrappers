@@ -299,7 +299,7 @@ external class TLSSocket : node.net.Socket {
     fun addListener(event: TLSSocketEvent.KEYLOG, listener: (line: node.buffer.Buffer) -> Unit): Unit /* this */
     override fun emit(event: String, vararg args: Any?): Boolean
 
-    override fun emit(event: js.core.Symbol, vararg args: Any?): Boolean
+    override fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
     fun emit(event: TLSSocketEvent.OCSPRESPONSE, response: node.buffer.Buffer): Boolean
     fun emit(event: TLSSocketEvent.SECURECONNECT): Boolean
     fun emit(event: TLSSocketEvent.SESSION, session: node.buffer.Buffer): Boolean
