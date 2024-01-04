@@ -14,7 +14,7 @@ export default function (node, context, render) {
         && ts.isIdentifier(node.members[0].name.expression.name)
         && node.members[0].name.expression.name.text === "toPrimitive"
     ) {
-        return "js.core.ToPrimitiveSymbolHolder"
+        return "js.symbol.ToPrimitiveSymbolHolder"
     }
 
 

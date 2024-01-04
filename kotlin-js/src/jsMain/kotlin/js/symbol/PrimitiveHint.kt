@@ -2,7 +2,7 @@
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
-package js.core
+package js.symbol
 
 import seskar.js.JsValue
 import seskar.js.JsVirtual

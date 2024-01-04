@@ -1,3 +1,3 @@
-package js.core
+package js.symbol
 
 typealias ToString = () -> String

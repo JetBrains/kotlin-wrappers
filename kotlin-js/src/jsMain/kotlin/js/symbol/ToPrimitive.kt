@@ -1,4 +1,4 @@
-package js.core
+package js.symbol
 
 typealias ToPrimitive = (
     hint: PrimitiveHint?,
