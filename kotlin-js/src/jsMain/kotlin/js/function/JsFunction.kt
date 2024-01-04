@@ -4,7 +4,8 @@ package js.function
 
 import js.core.*
 
-sealed external interface JsFunction<in A : JsTuple, out R>
+@JsExternalInheritorsOnly
+external interface JsFunction<in A : JsTuple, out R>
 
 inline fun <R> JsFunction(noinline fn: () -> R): JsFunction<JsTuple, R> =
     fn.unsafeCast<JsFunction<JsTuple, R>>()
