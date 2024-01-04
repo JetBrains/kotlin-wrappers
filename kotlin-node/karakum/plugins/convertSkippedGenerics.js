@@ -42,7 +42,10 @@ export default function (node, context, render) {
     if (
         ts.isTypeReferenceNode(node)
         && ts.isIdentifier(node.typeName)
-        && node.typeName.text === "Function"
+        && (
+            node.typeName.text === "Function"
+            || node.typeName.text === "AsyncGeneratorFunction"
+        )
         && !node.typeArguments
     ) {
         if (

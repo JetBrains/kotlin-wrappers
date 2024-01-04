@@ -17,7 +17,7 @@ sealed external interface DuplexOptions : ReadableOptions, WritableOptions {
         /* this: Duplex, */ chunk: Any?,
         encoding: node.buffer.BufferEncoding,
         callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit,
-    )
+    ): Unit
 
     override fun writev(
         /* this: Duplex, */ chunks: Array<WritableOptionsWritevChunksItem>,

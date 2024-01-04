@@ -501,6 +501,7 @@
             "js.buffer.ArrayBuffer",
             "js.core.Object",
             "js.iterable.AsyncIterable",
+            "js.generator.AsyncGeneratorFunction",
             "js.promise.Promise",
             "web.buffer.Blob as NodeBlob"
         ],
