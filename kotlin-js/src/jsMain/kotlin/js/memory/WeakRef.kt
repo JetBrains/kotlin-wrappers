@@ -1,4 +1,4 @@
-package js.core
+package js.memory
 
 external class WeakRef<T : Any>(
     target: T,
