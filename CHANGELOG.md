@@ -1,3 +1,13 @@
+## pre.681
+
+**BREAKING CHANGE**
+
+* Split `js.core` package
+    * `js.array`
+        * `ReadonlyArray`, `ArrayLike`, `JsTuple`, …
+    * `js.objects`
+        * `Object`, `Record`, `jso`, …
+
 ## pre.680
 
 **BREAKING CHANGE**
