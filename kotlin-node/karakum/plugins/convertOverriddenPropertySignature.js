@@ -71,7 +71,15 @@ const overriddenProps = {
     "TlsOptions": {
         "sessionTimeout": null,
         "ticketKeys": null,
-    }
+    },
+
+    // url
+    "UrlWithParsedQuery": {
+        "query": "parsedQuery",
+    },
+    "UrlWithStringQuery": {
+        "query": "stringQuery",
+    },
 }
 
 export default function (node, context, render) {

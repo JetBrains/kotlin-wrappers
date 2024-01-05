@@ -17,21 +17,51 @@ function isNativeRealpathSync(node) {
 }
 
 function hasConflictingOverloads(node) {
+    const sourceFileName = node.getSourceFile()?.fileName ?? "generated.d.ts"
+
     return node.name && (
-        node.name.text === "mkdirSync"
-        || node.name.text === "mkdtempSync"
-        || node.name.text === "readdirSync"
-        || node.name.text === "readlinkSync"
-        || node.name.text === "realpathSync"
-        || node.name.text === "watch"
-        || isNativeRealpathSync(node)
-
+        (
+            (
+                sourceFileName.endsWith("fs.d.ts")
+                || sourceFileName.endsWith("fs/promises.d.ts")
+            )
+            && (
+                node.name.text === "mkdirSync"
+                || node.name.text === "mkdtempSync"
+                || node.name.text === "readdirSync"
+                || node.name.text === "readlinkSync"
+                || node.name.text === "realpathSync"
+                || node.name.text === "watch"
+                || isNativeRealpathSync(node)
+            )
+        )
         || (
-            node.name.text === "pipeline"
+            sourceFileName.endsWith("stream.d.ts")
+            && (
+                (
+                    node.name.text === "pipeline"
 
-            && node.type
-            && ts.isTypeReferenceNode(node.type)
-            && ts.isQualifiedName(node.type.typeName)
+                    && node.type
+                    && ts.isTypeReferenceNode(node.type)
+                    && ts.isQualifiedName(node.type.typeName)
+                )
+            )
+        )
+        || (
+            sourceFileName.endsWith("url.d.ts")
+            && (
+                (
+                    node.name.text === "parse"
+
+                    && node.type
+                    && ts.isTypeReferenceNode(node.type)
+                    && ts.isIdentifier(node.type.typeName)
+                    && (
+                        node.type.typeName.text === "UrlWithStringQuery"
+                        || node.type.typeName.text === "UrlWithParsedQuery"
+                    )
+                )
+            )
         )
     )
 }
@@ -110,6 +140,31 @@ function isConflictingOverload(node, signature) {
             && node.type
             && ts.isTypeReferenceNode(node.type)
             && ts.isQualifiedName(node.type.typeName)
+        )
+        || (
+            node.name.text === "parse"
+
+            && signature[1]
+            && (
+                (
+                    ts.isLiteralTypeNode(signature[1].type)
+                    && signature[1].type.literal.kind === ts.SyntaxKind.TrueKeyword
+
+                    && node.type
+                    && ts.isTypeReferenceNode(node.type)
+                    && ts.isIdentifier(node.type.typeName)
+                    && node.type.typeName.text === "UrlWithParsedQuery"
+                )
+                || (
+                    ts.isLiteralTypeNode(signature[1].type)
+                    && signature[1].type.literal.kind === ts.SyntaxKind.FalseKeyword
+
+                    && node.type
+                    && ts.isTypeReferenceNode(node.type)
+                    && ts.isIdentifier(node.type.typeName)
+                    && node.type.typeName.text === "UrlWithStringQuery"
+                )
+            )
         )
     )
 }

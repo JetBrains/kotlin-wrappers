@@ -20,7 +20,8 @@
         "<nodeModules>/@types/node/stream.d.ts",
         "<nodeModules>/@types/node/stream/promises.d.ts",
         "<nodeModules>/@types/node/tls.d.ts",
-        "<nodeModules>/@types/node/tty.d.ts"
+        "<nodeModules>/@types/node/tty.d.ts",
+        "<nodeModules>/@types/node/url.d.ts"
     ],
     "output": "src/jsMain/generated",
     "ignoreOutput": [
@@ -70,7 +71,10 @@
         "**/path/posix/**",
         "**/path/win32/**",
         "**/readline/createInterface.kt",
-        "**/stream/internal.kt"
+        "**/stream/internal.kt",
+        "**/url/global/**",
+        "**/url/URL.kt",
+        "**/url/URLSearchParams.kt"
     ],
     "libraryName": "node",
     "libraryNameOutputPrefix": true,
@@ -108,7 +112,9 @@
         "^node/tls": "node:tls",
         "^tls": "node:tls",
         "^node/tty": "node:tty",
-        "^tty": "node:tty"
+        "^tty": "node:tty",
+        "^node/url": "node:url",
+        "^url": "node:url"
     },
     "packageNameMapper": {
         "promises/(.+)\\.kt": "$1Async.kt",
@@ -177,7 +183,11 @@
         "^tls": "node/tls",
         "^node/tty/namespace.kt": "node/tty/nodeNamespace.kt",
         "^node/tty.kt": "node/tty/tty.kt",
-        "^tty": "node/tty"
+        "^tty": "node/tty",
+        "^node/url/namespace.kt": "node/url/nodeNamespace.kt",
+        "^node/url.kt": "node/url/url.kt",
+        "^url": "node/url",
+        "url/Url.kt": "url/Url.interface.kt"
     },
     "importInjector": {
         "Async.kt": [
@@ -566,6 +576,12 @@
         ],
         "tls/namespace.kt": [
             "js.core.ReadonlyArray"
+        ],
+        "url/urlToHttpOptions.kt": [
+            "node.http.ClientRequestArgs"
+        ],
+        "url/UrlWithParsedQuery.kt": [
+            "node.querystring.ParsedUrlQuery"
         ]
     },
     "namespaceStrategy": {
@@ -601,7 +617,9 @@
         "tls": "package",
         "node:tls": "ignore",
         "tty": "package",
-        "node:tty": "ignore"
+        "node:tty": "ignore",
+        "url": "package",
+        "node:url": "ignore"
     },
     "conflictResolutionStrategy": {
         "LookupServiceResultPayload": "replace",
