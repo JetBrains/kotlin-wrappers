@@ -4,6 +4,8 @@
 
 package js.core
 
+import js.objects.JsoDsl
+
 inline fun <T : Any> jso(): T =
     js("({})")
 

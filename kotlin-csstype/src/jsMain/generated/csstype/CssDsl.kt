@@ -2,6 +2,6 @@
 
 package csstype
 
-import js.core.JsoDsl
+import js.objects.JsoDsl
 
 typealias CssDsl = JsoDsl

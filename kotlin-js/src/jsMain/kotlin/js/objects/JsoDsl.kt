@@ -1,4 +1,4 @@
-package js.core
+package js.objects
 
 @DslMarker
 @Target(AnnotationTarget.CLASS, AnnotationTarget.TYPE)
