@@ -11,8 +11,8 @@ import seskar.js.JsIntValue
 import seskar.js.JsVirtual
 
 @JsVirtual
-sealed external interface MouseButtons
-    : Bitmask<MouseButtons> {
+sealed external interface MouseButtons :
+    Bitmask<MouseButtons> {
     companion object {
         /**
          * No button or un-initialized
