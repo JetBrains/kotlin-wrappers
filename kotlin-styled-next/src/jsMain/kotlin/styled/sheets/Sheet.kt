@@ -1,6 +1,6 @@
 package styled.sheets
 
-import js.core.asList
+import js.array.asList
 import web.cssom.CSSStyleSheet
 import web.dom.document
 import web.html.HTMLStyleElement

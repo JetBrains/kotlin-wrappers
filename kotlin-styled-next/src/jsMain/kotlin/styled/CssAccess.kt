@@ -1,6 +1,6 @@
 package styled
 
-import js.core.asList
+import js.array.asList
 import js.objects.jso
 import web.buffer.Blob
 import web.buffer.BlobPart

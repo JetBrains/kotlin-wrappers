@@ -1,6 +1,6 @@
 package styled
 
-import js.core.JsArray
+import js.array.JsArray
 import js.objects.Object
 import kotlinext.js.js
 import kotlinx.css.CssDeclarations

@@ -1,7 +1,7 @@
 package test
 
 import TestScope
-import js.core.asList
+import js.array.asList
 import kotlinx.css.*
 import react.FC
 import react.Props

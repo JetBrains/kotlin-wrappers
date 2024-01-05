@@ -1,6 +1,6 @@
 package styled.sheets
 
-import js.core.asList
+import js.array.asList
 import js.globals.globalThis
 import web.html.HTMLStyleElement
 import web.scheduling.requestIdleCallback

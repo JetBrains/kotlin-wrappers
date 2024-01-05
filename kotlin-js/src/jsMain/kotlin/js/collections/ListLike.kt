@@ -1,6 +1,6 @@
 package js.collections
 
-import js.core.ArrayLike
+import js.array.ArrayLike
 
 external interface ListLike<out T> :
     ArrayLike<T>,

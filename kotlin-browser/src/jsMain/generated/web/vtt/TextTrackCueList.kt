@@ -2,7 +2,7 @@
 
 package web.vtt
 
-import js.core.ArrayLike
+import js.array.ArrayLike
 import js.iterable.JsIterable
 
 /**

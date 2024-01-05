@@ -2,7 +2,7 @@
 
 package web.svg
 
-import js.core.ArrayLike
+import js.array.ArrayLike
 import js.iterable.JsIterable
 import web.geometry.DOMPoint
 

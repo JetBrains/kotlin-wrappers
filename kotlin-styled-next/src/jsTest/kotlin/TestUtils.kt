@@ -1,4 +1,4 @@
-import js.core.asList
+import js.array.asList
 import js.promise.Promise
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope

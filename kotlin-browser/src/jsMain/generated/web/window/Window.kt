@@ -2,7 +2,7 @@
 
 package web.window
 
-import js.core.ArrayLike
+import js.array.ArrayLike
 import js.core.ReadonlyArray
 import js.core.Transferable
 import web.device.DeviceMotionEvent

@@ -2,7 +2,7 @@
     "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
 )
 
-package js.core
+package js.array
 
 import seskar.js.JsNative
 
