@@ -21,6 +21,9 @@ export default function (node, context, render) {
         if (node.right.text === "ProcessEnv") {
             return `node.process.ProcessEnv`
         }
+        if (node.right.text === "Platform") {
+            return `node.process.Platform`
+        }
 
         return `node.${render(node.right)}`
     }
