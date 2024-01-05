@@ -1,6 +1,6 @@
 package react.select
 
-import js.core.jso
+import js.objects.jso
 import react.ChildrenBuilder
 import react.ReactDsl
 

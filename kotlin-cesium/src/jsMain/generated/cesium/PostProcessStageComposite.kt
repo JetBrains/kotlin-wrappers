@@ -9,7 +9,7 @@
 package cesium
 
 import js.core.ReadonlyArray
-import js.core.jso
+import js.objects.jso
 
 /**
  * A collection of [PostProcessStage]s or other post-process composite stages that execute together logically.

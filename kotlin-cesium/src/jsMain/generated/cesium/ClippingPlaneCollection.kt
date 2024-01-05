@@ -9,7 +9,7 @@
 package cesium
 
 import js.core.ReadonlyArray
-import js.core.jso
+import js.objects.jso
 
 /**
  * Specifies a set of clipping planes. Clipping planes selectively disable rendering in a region on the

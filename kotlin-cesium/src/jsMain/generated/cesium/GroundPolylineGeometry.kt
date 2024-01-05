@@ -9,7 +9,7 @@
 package cesium
 
 import js.core.ReadonlyArray
-import js.core.jso
+import js.objects.jso
 
 /**
  * A description of a polyline on terrain or 3D Tiles. Only to be used with [GroundPolylinePrimitive].

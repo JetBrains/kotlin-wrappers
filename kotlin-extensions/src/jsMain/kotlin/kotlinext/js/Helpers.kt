@@ -1,7 +1,7 @@
 package kotlinext.js
 
-import js.core.jso
 import js.objects.Object
+import js.objects.jso
 
 inline fun js(builder: dynamic.() -> Unit): dynamic =
     jso(builder)

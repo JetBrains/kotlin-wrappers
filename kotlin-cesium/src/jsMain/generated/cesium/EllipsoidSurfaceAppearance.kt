@@ -8,7 +8,7 @@
 
 package cesium
 
-import js.core.jso
+import js.objects.jso
 
 /**
  * An appearance for geometry on the surface of the ellipsoid like [PolygonGeometry]

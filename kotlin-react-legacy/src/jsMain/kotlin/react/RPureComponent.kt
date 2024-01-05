@@ -1,6 +1,6 @@
 package react
 
-import js.core.jso
+import js.objects.jso
 
 abstract class RPureComponent<P : Props, S : State> : PureComponent<P, S> {
     constructor() : super() {

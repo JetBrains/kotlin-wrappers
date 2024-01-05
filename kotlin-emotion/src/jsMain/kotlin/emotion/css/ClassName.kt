@@ -1,7 +1,7 @@
 package emotion.css
 
 import csstype.PropertiesBuilder
-import js.core.jso
+import js.objects.jso
 import web.cssom.ClassName
 
 inline fun ClassName(

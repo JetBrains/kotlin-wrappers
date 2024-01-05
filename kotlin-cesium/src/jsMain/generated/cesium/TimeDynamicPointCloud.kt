@@ -8,7 +8,7 @@
 
 package cesium
 
-import js.core.jso
+import js.objects.jso
 
 /**
  * Provides playback of time-dynamic point cloud data.

@@ -9,7 +9,7 @@
 package cesium
 
 import js.core.ReadonlyArray
-import js.core.jso
+import js.objects.jso
 
 /**
  * A primitive represents geometry in the [Scene].  The geometry can be from a single [GeometryInstance]

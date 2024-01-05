@@ -12,7 +12,7 @@ package react
 
 import js.core.ReadonlyArray
 import js.core.delete
-import js.core.jso
+import js.objects.jso
 import js.symbol.Symbol
 
 // child array

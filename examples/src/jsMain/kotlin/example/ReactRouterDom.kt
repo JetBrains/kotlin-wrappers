@@ -1,6 +1,6 @@
 package example
 
-import js.core.jso
+import js.objects.jso
 import react.FC
 import react.create
 import react.dom.html.ReactHTML.div

@@ -4,7 +4,7 @@
 
 package popper.core.modifiers
 
-import js.core.jso
+import js.objects.jso
 import popper.core.Padding
 
 inline fun PaddingFunction(

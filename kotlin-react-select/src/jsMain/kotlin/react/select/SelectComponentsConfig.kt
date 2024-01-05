@@ -1,6 +1,6 @@
 package react.select
 
-import js.core.jso
+import js.objects.jso
 import react.ComponentType
 
 external interface SelectComponentsConfig<Option : Any, Group : GroupBase<Option>> {

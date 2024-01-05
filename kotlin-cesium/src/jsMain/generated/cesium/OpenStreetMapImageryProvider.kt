@@ -8,7 +8,7 @@
 
 package cesium
 
-import js.core.jso
+import js.objects.jso
 
 /**
  * An imagery provider that provides tiled imagery hosted by OpenStreetMap

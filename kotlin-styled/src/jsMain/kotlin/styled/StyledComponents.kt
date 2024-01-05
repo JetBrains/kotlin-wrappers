@@ -1,6 +1,6 @@
 package styled
 
-import js.core.jso
+import js.objects.jso
 import js.promise.Promise
 import kotlinx.css.CssBuilder
 import kotlinx.css.CssDsl

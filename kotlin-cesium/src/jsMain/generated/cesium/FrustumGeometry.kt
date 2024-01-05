@@ -9,7 +9,7 @@
 package cesium
 
 import js.core.ReadonlyArray
-import js.core.jso
+import js.objects.jso
 
 /**
  * Describes a frustum at the given the origin and orientation.

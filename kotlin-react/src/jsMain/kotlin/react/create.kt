@@ -1,6 +1,6 @@
 package react
 
-import js.core.jso
+import js.objects.jso
 
 fun <P : Props> ElementType<P>.create(): ReactElement<P> =
     createElement(this)

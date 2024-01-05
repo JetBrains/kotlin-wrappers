@@ -10,7 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
-import js.core.jso
+import js.objects.jso
 import web.dom.Element
 
 /**

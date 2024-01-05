@@ -1,6 +1,6 @@
 package mui.material.styles
 
-import js.core.jso
+import js.objects.jso
 import web.cssom.Transition
 
 inline fun Transitions.create(

@@ -4,7 +4,7 @@
 
 package ringui
 
-import js.core.jso
+import js.objects.jso
 
 external interface Color {
     var r: Short

@@ -8,7 +8,7 @@
 
 package cesium
 
-import js.core.jso
+import js.objects.jso
 
 /**
  * Geometry instancing allows one [Geometry] object to be positions in several

@@ -11,7 +11,7 @@
 package cesium
 
 import js.core.Void
-import js.core.jso
+import js.objects.jso
 import js.promise.Promise
 
 /**

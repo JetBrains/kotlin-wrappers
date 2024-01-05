@@ -5,9 +5,9 @@
 package mui.material.styles
 
 import csstype.PropertiesBuilder
-import js.core.jso
 import js.objects.ReadonlyRecord
 import js.objects.Record
+import js.objects.jso
 import react.CSSProperties
 
 external interface TypographyOptions :

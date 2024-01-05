@@ -8,8 +8,8 @@
 
 package cesium
 
-import js.core.jso
 import js.objects.ReadonlyRecord
+import js.objects.jso
 
 /**
  * A user defined GLSL shader used with [Model] as well

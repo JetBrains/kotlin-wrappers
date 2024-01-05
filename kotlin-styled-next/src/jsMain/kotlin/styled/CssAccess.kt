@@ -1,7 +1,7 @@
 package styled
 
 import js.core.asList
-import js.core.jso
+import js.objects.jso
 import web.buffer.Blob
 import web.buffer.BlobPart
 import web.cssom.CSSStyleSheet

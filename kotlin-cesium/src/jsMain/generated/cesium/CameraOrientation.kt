@@ -2,7 +2,7 @@
 
 package cesium
 
-import js.core.jso
+import js.objects.jso
 
 sealed external interface CameraOrientation
 

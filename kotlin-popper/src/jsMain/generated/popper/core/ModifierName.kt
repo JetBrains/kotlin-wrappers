@@ -2,7 +2,7 @@
 
 package popper.core
 
-import js.core.jso
+import js.objects.jso
 
 external interface ModifierName<Options> : Name
 

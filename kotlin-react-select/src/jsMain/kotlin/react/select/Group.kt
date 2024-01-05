@@ -1,7 +1,7 @@
 package react.select
 
 import js.core.ReadonlyArray
-import js.core.jso
+import js.objects.jso
 
 fun <Option, Group : GroupBase<Option>> Group(
     label: String?,

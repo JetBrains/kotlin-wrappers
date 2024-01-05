@@ -8,7 +8,7 @@
 
 package cesium
 
-import js.core.jso
+import js.objects.jso
 
 /**
  * An appearance defines the full GLSL vertex and fragment shaders and the

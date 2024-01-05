@@ -1,7 +1,7 @@
 package styled
 
 import js.core.delete
-import js.core.jso
+import js.objects.jso
 import kotlinext.js.clone
 import kotlinx.css.CssBuilder
 import kotlinx.css.CssDsl

@@ -1,7 +1,7 @@
 package react
 
 import js.core.ReadonlyArray
-import js.core.jso
+import js.objects.jso
 
 internal fun createElementOrNull(
     block: @ReactDsl ChildrenBuilder.() -> Unit,

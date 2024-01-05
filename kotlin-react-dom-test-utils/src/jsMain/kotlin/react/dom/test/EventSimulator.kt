@@ -1,6 +1,6 @@
 package react.dom.test
 
-import js.core.jso
+import js.objects.jso
 import seskar.js.JsNative
 import web.dom.Element
 import web.events.EventInit

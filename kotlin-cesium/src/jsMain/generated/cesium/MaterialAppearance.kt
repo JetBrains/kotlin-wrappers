@@ -8,7 +8,7 @@
 
 package cesium
 
-import js.core.jso
+import js.objects.jso
 
 /**
  * An appearance for arbitrary geometry (as opposed to [EllipsoidSurfaceAppearance], for example)

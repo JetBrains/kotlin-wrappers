@@ -8,8 +8,8 @@
 
 package cesium
 
-import js.core.jso
 import js.objects.ReadonlyRecord
+import js.objects.jso
 
 /**
  * A schema containing classes and enums.

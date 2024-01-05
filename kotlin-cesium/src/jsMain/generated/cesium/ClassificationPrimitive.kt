@@ -8,7 +8,7 @@
 
 package cesium
 
-import js.core.jso
+import js.objects.jso
 
 /**
  * A classification primitive represents a volume enclosing geometry in the [Scene] to be highlighted.

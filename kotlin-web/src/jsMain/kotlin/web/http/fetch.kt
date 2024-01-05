@@ -1,7 +1,7 @@
 package web.http
 
-import js.core.jso
 import js.errors.name
+import js.objects.jso
 import js.promise.catch
 import kotlinx.coroutines.suspendCancellableCoroutine
 import web.abort.AbortController

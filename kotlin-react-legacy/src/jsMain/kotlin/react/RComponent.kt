@@ -1,6 +1,6 @@
 package react
 
-import js.core.jso
+import js.objects.jso
 
 abstract class RComponent<P : Props, S : State> : Component<P, S> {
     constructor() : super() {

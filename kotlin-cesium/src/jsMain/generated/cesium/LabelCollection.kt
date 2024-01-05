@@ -8,7 +8,7 @@
 
 package cesium
 
-import js.core.jso
+import js.objects.jso
 
 /**
  * A renderable collection of labels.  Labels are viewport-aligned text positioned in the 3D scene.

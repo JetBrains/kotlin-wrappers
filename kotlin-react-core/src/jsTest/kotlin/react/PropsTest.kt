@@ -1,6 +1,6 @@
 package react
 
-import js.core.jso
+import js.objects.jso
 import kotlin.test.Test
 import kotlin.test.assertEquals
 

@@ -1,8 +1,8 @@
 package example
 
 import emotion.react.css
-import js.core.jso
 import js.objects.Object
+import js.objects.jso
 import react.*
 import react.dom.html.HTMLAttributes
 import react.dom.html.ReactHTML.div

@@ -9,7 +9,7 @@
 package cesium
 
 import js.core.ReadonlyArray
-import js.core.jso
+import js.objects.jso
 
 /**
  * Runs a post-process stage on either the texture rendered by the scene or the output of a previous post-process stage.

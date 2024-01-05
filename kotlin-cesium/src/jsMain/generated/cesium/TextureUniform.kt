@@ -8,7 +8,7 @@
 
 package cesium
 
-import js.core.jso
+import js.objects.jso
 import js.typedarrays.Uint8Array
 
 /**

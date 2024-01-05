@@ -6,7 +6,7 @@
 
 package csstype
 
-import js.core.jso
+import js.objects.jso
 import web.cssom.*
 
 interface RuleBuilder<T : Any> : Rules {

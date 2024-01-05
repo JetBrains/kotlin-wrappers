@@ -8,7 +8,7 @@
 
 package cesium
 
-import js.core.jso
+import js.objects.jso
 
 /**
  * An appearance for [PolylineGeometry] that supports shading with materials.

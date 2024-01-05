@@ -4,7 +4,6 @@
 
 package js.objects
 
-import js.core.jso
 import seskar.js.JsNative
 
 external interface Record<K : Any, V>

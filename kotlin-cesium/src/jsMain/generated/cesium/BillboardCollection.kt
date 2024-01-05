@@ -8,7 +8,7 @@
 
 package cesium
 
-import js.core.jso
+import js.objects.jso
 
 /**
  * A renderable collection of billboards.  Billboards are viewport-aligned

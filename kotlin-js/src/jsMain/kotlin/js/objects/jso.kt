@@ -2,9 +2,7 @@
     "NOTHING_TO_INLINE",
 )
 
-package js.core
-
-import js.objects.JsoDsl
+package js.objects
 
 inline fun <T : Any> jso(): T =
     js("({})")

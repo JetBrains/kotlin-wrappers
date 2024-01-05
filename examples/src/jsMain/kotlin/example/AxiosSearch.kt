@@ -1,7 +1,7 @@
 package example
 
 import emotion.react.css
-import js.core.jso
+import js.objects.jso
 import js.promise.Promise
 import js.promise.catch
 import react.FC

@@ -8,7 +8,7 @@
 
 package cesium
 
-import js.core.jso
+import js.objects.jso
 
 /**
  * A tiling scheme for geometry referenced to a simple [GeographicProjection] where

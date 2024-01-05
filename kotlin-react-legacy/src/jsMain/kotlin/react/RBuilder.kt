@@ -1,6 +1,6 @@
 package react
 
-import js.core.jso
+import js.objects.jso
 import kotlinext.js.js
 import kotlin.reflect.KClass
 
