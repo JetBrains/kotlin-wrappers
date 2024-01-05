@@ -1,10 +1,10 @@
 package styled
 
 import js.core.JsArray
-import js.core.Object
+import js.objects.Object
 import kotlinext.js.js
-import kotlinx.css.StyledElementBuilder
 import kotlinx.css.StyledElement
+import kotlinx.css.StyledElementBuilder
 import react.dom.RDOMBuilder
 import react.dom.setProp
 

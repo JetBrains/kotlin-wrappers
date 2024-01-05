@@ -1,6 +1,6 @@
 package redux
 
-import js.core.Object
+import js.objects.Object
 import kotlinext.js.assign
 import kotlinext.js.js
 

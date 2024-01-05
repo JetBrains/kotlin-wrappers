@@ -1,7 +1,7 @@
 package react
 
-import js.core.Object
 import js.core.jso
+import js.objects.Object
 
 fun <T : Any, P : PropsWithRef<T>> ForwardRef(
     block: @ReactDsl ChildrenBuilder.(props: P) -> Unit,

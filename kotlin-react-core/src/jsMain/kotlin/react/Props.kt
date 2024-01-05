@@ -8,7 +8,7 @@
 
 package react
 
-import js.core.Object
+import js.objects.Object
 
 @JsExternalInheritorsOnly
 external interface Props {

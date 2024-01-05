@@ -1,8 +1,8 @@
 package react.select
 
 import csstype.PropertiesBuilder
-import js.core.Object
 import js.core.jso
+import js.objects.Object
 import react.Props
 
 typealias StylesConfigFunction<P /* Props */> = (

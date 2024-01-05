@@ -1,7 +1,7 @@
 package kotlinext.js
 
-import js.core.Object
 import js.core.ReadonlyArray
+import js.objects.Object
 
 fun Any.asJsObject(): Object = unsafeCast<Object>()
 

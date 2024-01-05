@@ -1,6 +1,6 @@
 package react
 
-import js.core.Object
+import js.objects.Object
 
 fun <P : Props> kotlinMemo(
     type: ComponentType<P>,

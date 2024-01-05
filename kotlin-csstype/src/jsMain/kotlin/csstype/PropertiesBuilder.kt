@@ -4,7 +4,7 @@
 
 package csstype
 
-import js.core.Object
+import js.objects.Object
 
 sealed class PropertiesBuilder :
     Properties,

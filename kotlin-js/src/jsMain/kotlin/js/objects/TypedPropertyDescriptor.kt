@@ -1,4 +1,4 @@
-package js.core
+package js.objects
 
 external interface TypedPropertyDescriptor<T> {
     var configurable: Boolean?

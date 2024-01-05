@@ -1,3 +1,3 @@
-package js.core
+package js.objects
 
 typealias PropertyKey = Any /* string | number | symbol */

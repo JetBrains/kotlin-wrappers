@@ -2,8 +2,8 @@ package emotion.styled
 
 import csstype.PropertiesBuilder
 import emotion.react.Theme
-import js.core.Object
 import js.core.jso
+import js.objects.Object
 import react.ElementType
 import react.Props
 import react.PropsWithClassName

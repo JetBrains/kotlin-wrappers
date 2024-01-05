@@ -1,8 +1,8 @@
 package js.reflect
 
-import js.core.PropertyKey
 import js.core.ReadonlyArray
-import js.core.TypedPropertyDescriptor
+import js.objects.PropertyKey
+import js.objects.TypedPropertyDescriptor
 
 external object Reflect {
     /**
