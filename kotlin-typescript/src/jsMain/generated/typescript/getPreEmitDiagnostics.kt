@@ -4,7 +4,7 @@
 
 package typescript
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 external fun getPreEmitDiagnostics(
     program: Program,

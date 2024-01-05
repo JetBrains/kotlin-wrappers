@@ -1,3 +1,3 @@
-package js.core
+package js.array
 
 typealias ReadonlyArray<T> = Array<out T>

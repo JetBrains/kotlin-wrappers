@@ -8,7 +8,7 @@
 
 package cesium
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /**
  * Describes a KmlTour, which uses KmlTourFlyTo, and KmlTourWait to

@@ -26,5 +26,5 @@ external interface SSLConfigConfig {
      * 0x0004, while to disable TLS_ECDH_ECDSA_WITH_RC4_128_SHA, specify 0xC002. Note
      * that TLSv1.3 ciphers cannot be disabled using this mechanism.
      */
-    var disabledCipherSuites: js.core.ReadonlyArray<Double>?
+    var disabledCipherSuites: js.array.ReadonlyArray<Double>?
 }

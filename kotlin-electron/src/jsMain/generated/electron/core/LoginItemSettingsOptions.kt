@@ -17,5 +17,5 @@ external interface LoginItemSettingsOptions {
      *
      * @platform win32
      */
-    var args: js.core.ReadonlyArray<String>?
+    var args: js.array.ReadonlyArray<String>?
 }

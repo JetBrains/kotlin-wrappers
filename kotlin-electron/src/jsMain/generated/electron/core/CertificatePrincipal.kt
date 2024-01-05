@@ -24,12 +24,12 @@ external interface CertificatePrincipal {
     /**
      * Organization names.
      */
-    var organizations: js.core.ReadonlyArray<String>
+    var organizations: js.array.ReadonlyArray<String>
 
     /**
      * Organization Unit names.
      */
-    var organizationUnits: js.core.ReadonlyArray<String>
+    var organizationUnits: js.array.ReadonlyArray<String>
 
     /**
      * State or province.

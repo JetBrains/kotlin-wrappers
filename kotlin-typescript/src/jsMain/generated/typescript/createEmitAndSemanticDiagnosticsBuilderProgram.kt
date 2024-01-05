@@ -4,7 +4,7 @@
 
 package typescript
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /**
  * Create the builder that can handle the changes in program and iterate through changed files

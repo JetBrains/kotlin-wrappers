@@ -156,7 +156,7 @@ external interface Protocol {
      * their responses by default. The `stream` flag configures those elements to
      * correctly expect streaming responses.
      */
-    fun registerSchemesAsPrivileged(customSchemes: js.core.ReadonlyArray<CustomScheme>): Unit
+    fun registerSchemesAsPrivileged(customSchemes: js.array.ReadonlyArray<CustomScheme>): Unit
 
     /**
      * Whether the protocol was successfully registered

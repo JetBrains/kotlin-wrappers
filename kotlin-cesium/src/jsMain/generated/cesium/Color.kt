@@ -8,7 +8,7 @@
 
 package cesium
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /**
  * A color, specified using red, green, blue, and alpha values,

@@ -12,7 +12,7 @@ external interface ThumbarButton {
      * Control specific states and behaviors of the button. By default, it is
      * `['enabled']`.
      */
-    var flags: js.core.ReadonlyArray<String>?
+    var flags: js.array.ReadonlyArray<String>?
 
     /**
      * The icon showing in thumbnail toolbar.

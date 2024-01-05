@@ -8,7 +8,7 @@
 
 package cesium
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /**
  * An observable collection of [Entity] instances where each entity has a unique id.

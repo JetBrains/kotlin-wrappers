@@ -8,7 +8,7 @@ import node.events.Abortable
 
 sealed external interface ForkOptions : ProcessEnvOptions, MessagingOptions, Abortable {
     var execPath: String?
-    var execArgv: js.core.ReadonlyArray<String>?
+    var execArgv: js.array.ReadonlyArray<String>?
     var silent: Boolean?
 
     /**

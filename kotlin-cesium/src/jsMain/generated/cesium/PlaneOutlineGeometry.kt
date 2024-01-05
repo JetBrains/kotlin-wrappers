@@ -4,7 +4,7 @@
 
 package cesium
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /**
  * Describes geometry representing the outline of a plane centered at the origin, with a unit width and length.

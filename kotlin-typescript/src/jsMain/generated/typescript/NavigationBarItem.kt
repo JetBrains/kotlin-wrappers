@@ -2,7 +2,7 @@
 
 package typescript
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /**
  * Navigation bar interface designed for visual studio's dual-column layout.

@@ -17,7 +17,7 @@ sealed external interface Module {
 
     /** @deprecated since v14.6.0 Please use `require.main` and `module.children` instead. */
     var parent: Module?
-    var children: js.core.ReadonlyArray<Module>
+    var children: js.array.ReadonlyArray<Module>
 
     /**
      * @since v11.14.0
@@ -25,5 +25,5 @@ sealed external interface Module {
      * The directory name of the module. This is usually the same as the path.dirname() of the module.id.
      */
     var path: String
-    var paths: js.core.ReadonlyArray<String>
+    var paths: js.array.ReadonlyArray<String>
 }

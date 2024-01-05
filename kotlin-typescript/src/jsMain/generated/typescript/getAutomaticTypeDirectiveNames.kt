@@ -4,7 +4,7 @@
 
 package typescript
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /**
  * Given a set of options, returns the set of type directive names

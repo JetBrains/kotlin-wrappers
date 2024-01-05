@@ -2,7 +2,7 @@
 
 package web.speech
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget

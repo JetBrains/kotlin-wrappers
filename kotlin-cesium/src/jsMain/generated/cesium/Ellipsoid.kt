@@ -4,7 +4,7 @@
 
 package cesium
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /**
  * A quadratic surface defined in Cartesian coordinates by the equation

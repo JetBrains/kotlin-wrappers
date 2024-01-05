@@ -8,7 +8,7 @@
 
 package cesium
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /**
  * A bounding rectangle given by a corner, width and height.

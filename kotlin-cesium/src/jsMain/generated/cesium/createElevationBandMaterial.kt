@@ -4,7 +4,7 @@
 
 package cesium
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /**
  * Creates a [Material] that combines multiple layers of color/gradient bands and maps them to terrain heights.

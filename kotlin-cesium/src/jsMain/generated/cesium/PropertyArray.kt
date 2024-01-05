@@ -4,7 +4,7 @@
 
 package cesium
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /**
  * A [Property] whose value is an array whose items are the computed value

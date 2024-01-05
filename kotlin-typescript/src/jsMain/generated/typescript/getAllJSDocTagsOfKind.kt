@@ -4,7 +4,7 @@
 
 package typescript
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /** Gets all JSDoc tags of a specified kind */
 external fun getAllJSDocTagsOfKind(

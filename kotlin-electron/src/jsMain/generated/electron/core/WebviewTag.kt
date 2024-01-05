@@ -752,7 +752,7 @@ external interface WebviewTag {
      *
      * See webContents.send for examples.
      */
-    fun send(channel: String, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Promise<Unit>
+    fun send(channel: String, vararg args: Any? /* js.array.ReadonlyArray<Any?> */): Promise<Unit>
 
     /**
      * Sends an input `event` to the page.
@@ -775,7 +775,7 @@ external interface WebviewTag {
     fun sendToFrame(
         frameId: js.array.JsTuple2<Double, Double>,
         channel: String,
-        vararg args: Any?, /* js.core.ReadonlyArray<Any?> */
+        vararg args: Any?, /* js.array.ReadonlyArray<Any?> */
     ): Promise<Unit>
 
     /**

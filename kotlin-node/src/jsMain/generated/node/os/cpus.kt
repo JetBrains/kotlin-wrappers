@@ -63,4 +63,4 @@ package node.os
  * are always 0.
  * @since v0.3.3
  */
-external fun cpus(): js.core.ReadonlyArray<CpuInfo>
+external fun cpus(): js.array.ReadonlyArray<CpuInfo>

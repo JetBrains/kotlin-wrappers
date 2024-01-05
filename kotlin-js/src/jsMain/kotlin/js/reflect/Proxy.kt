@@ -1,6 +1,6 @@
 package js.reflect
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import js.objects.TypedPropertyDescriptor
 
 external interface ProxyHandler<T : Any> {

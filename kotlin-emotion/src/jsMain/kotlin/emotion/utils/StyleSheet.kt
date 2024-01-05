@@ -1,6 +1,6 @@
 package emotion.utils
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import web.html.HTMLElement
 import web.html.HTMLStyleElement
 

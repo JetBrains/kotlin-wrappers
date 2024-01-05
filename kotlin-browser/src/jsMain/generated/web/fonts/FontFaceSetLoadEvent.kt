@@ -6,7 +6,7 @@
 
 package web.fonts
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType

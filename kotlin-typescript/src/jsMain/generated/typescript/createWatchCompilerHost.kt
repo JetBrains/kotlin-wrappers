@@ -4,7 +4,7 @@
 
 package typescript
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /**
  * Create the watch compiler host for either configFile or fileNames and its options

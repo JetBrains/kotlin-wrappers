@@ -4,7 +4,7 @@
 
 package cesium
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /**
  * Content pipeline functions for geometries.

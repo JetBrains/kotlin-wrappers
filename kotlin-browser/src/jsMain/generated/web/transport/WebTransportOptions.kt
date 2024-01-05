@@ -2,7 +2,7 @@
 
 package web.transport
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 sealed external interface WebTransportOptions {
     var allowPooling: Boolean?

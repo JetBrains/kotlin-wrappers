@@ -4,7 +4,7 @@
 
 package mui.system
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import js.objects.Record
 
 external interface Breakpoints {

@@ -2,6 +2,6 @@
 
 package tanstack.query.core
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 typealias QueriesObserverListener = (result: ReadonlyArray<QueryObserverResult<*, *>>) -> Unit

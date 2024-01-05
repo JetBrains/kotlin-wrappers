@@ -38,7 +38,7 @@ sealed external interface Router {
      * Return the routes for this router instance
      */
 
-    val routes: js.core.ReadonlyArray<AgnosticDataRouteObject>
+    val routes: js.array.ReadonlyArray<AgnosticDataRouteObject>
 
     /**
      * @internal
@@ -196,7 +196,7 @@ sealed external interface Router {
      * HMR needs to pass in-flight route updates to React Router
      * TODO: Replace this with granular route update APIs (addRoute, updateRoute, deleteRoute)
      */
-    fun _internalSetRoutes(routes: js.core.ReadonlyArray<AgnosticRouteObject>): Unit
+    fun _internalSetRoutes(routes: js.array.ReadonlyArray<AgnosticRouteObject>): Unit
 
     /**
      * @internal

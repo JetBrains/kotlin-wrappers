@@ -1,7 +1,7 @@
 package js.collections
 
 import js.array.JsTuple2
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 external class WeakMap<in K : Any, V>(
     entries: ReadonlyArray<JsTuple2<K, V>>? = definedExternally,

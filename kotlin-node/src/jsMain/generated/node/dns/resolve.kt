@@ -19,55 +19,55 @@ package node.dns
  */
 external fun resolve(
     hostname: String,
-    callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<String>) -> Unit,
+    callback: (err: node.ErrnoException?, addresses: js.array.ReadonlyArray<String>) -> Unit,
 ): Unit
 
 external fun resolve(
     hostname: String,
     rrtype: ResourceRecordType.A,
-    callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<String>) -> Unit,
+    callback: (err: node.ErrnoException?, addresses: js.array.ReadonlyArray<String>) -> Unit,
 ): Unit
 
 external fun resolve(
     hostname: String,
     rrtype: ResourceRecordType.AAAA,
-    callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<String>) -> Unit,
+    callback: (err: node.ErrnoException?, addresses: js.array.ReadonlyArray<String>) -> Unit,
 ): Unit
 
 external fun resolve(
     hostname: String,
     rrtype: ResourceRecordType.ANY,
-    callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<AnyRecord>) -> Unit,
+    callback: (err: node.ErrnoException?, addresses: js.array.ReadonlyArray<AnyRecord>) -> Unit,
 ): Unit
 
 external fun resolve(
     hostname: String,
     rrtype: ResourceRecordType.CNAME,
-    callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<String>) -> Unit,
+    callback: (err: node.ErrnoException?, addresses: js.array.ReadonlyArray<String>) -> Unit,
 ): Unit
 
 external fun resolve(
     hostname: String,
     rrtype: ResourceRecordType.MX,
-    callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<MxRecord>) -> Unit,
+    callback: (err: node.ErrnoException?, addresses: js.array.ReadonlyArray<MxRecord>) -> Unit,
 ): Unit
 
 external fun resolve(
     hostname: String,
     rrtype: ResourceRecordType.NAPTR,
-    callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<NaptrRecord>) -> Unit,
+    callback: (err: node.ErrnoException?, addresses: js.array.ReadonlyArray<NaptrRecord>) -> Unit,
 ): Unit
 
 external fun resolve(
     hostname: String,
     rrtype: ResourceRecordType.NS,
-    callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<String>) -> Unit,
+    callback: (err: node.ErrnoException?, addresses: js.array.ReadonlyArray<String>) -> Unit,
 ): Unit
 
 external fun resolve(
     hostname: String,
     rrtype: ResourceRecordType.PTR,
-    callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<String>) -> Unit,
+    callback: (err: node.ErrnoException?, addresses: js.array.ReadonlyArray<String>) -> Unit,
 ): Unit
 
 external fun resolve(
@@ -79,13 +79,13 @@ external fun resolve(
 external fun resolve(
     hostname: String,
     rrtype: ResourceRecordType.SRV,
-    callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<SrvRecord>) -> Unit,
+    callback: (err: node.ErrnoException?, addresses: js.array.ReadonlyArray<SrvRecord>) -> Unit,
 ): Unit
 
 external fun resolve(
     hostname: String,
     rrtype: ResourceRecordType.TXT,
-    callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<js.core.ReadonlyArray<String>>) -> Unit,
+    callback: (err: node.ErrnoException?, addresses: js.array.ReadonlyArray<js.array.ReadonlyArray<String>>) -> Unit,
 ): Unit
 
 external fun resolve(

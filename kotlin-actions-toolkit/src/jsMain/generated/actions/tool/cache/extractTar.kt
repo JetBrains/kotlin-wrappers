@@ -2,7 +2,7 @@
 
 package actions.tool.cache
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import js.promise.await
 
 suspend fun extractTar(

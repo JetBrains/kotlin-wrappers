@@ -115,7 +115,7 @@ external class Session : NodeEventEmitter {
      */
     fun on(
         event: SessionEvent.SELECT_SERIAL_PORT,
-        listener: (event: Event, portList: js.core.ReadonlyArray<SerialPort>, webContents: WebContents, callback: (portId: String) -> Unit) -> Unit,
+        listener: (event: Event, portList: js.array.ReadonlyArray<SerialPort>, webContents: WebContents, callback: (portId: String) -> Unit) -> Unit,
     ): Unit /* this */
 
     /**
@@ -321,7 +321,7 @@ external class Session : NodeEventEmitter {
 
     fun once(
         event: SessionEvent.SELECT_SERIAL_PORT,
-        listener: (event: Event, portList: js.core.ReadonlyArray<SerialPort>, webContents: WebContents, callback: (portId: String) -> Unit) -> Unit,
+        listener: (event: Event, portList: js.array.ReadonlyArray<SerialPort>, webContents: WebContents, callback: (portId: String) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun once(
@@ -461,7 +461,7 @@ external class Session : NodeEventEmitter {
 
     fun addListener(
         event: SessionEvent.SELECT_SERIAL_PORT,
-        listener: (event: Event, portList: js.core.ReadonlyArray<SerialPort>, webContents: WebContents, callback: (portId: String) -> Unit) -> Unit,
+        listener: (event: Event, portList: js.array.ReadonlyArray<SerialPort>, webContents: WebContents, callback: (portId: String) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun addListener(
@@ -601,7 +601,7 @@ external class Session : NodeEventEmitter {
 
     fun removeListener(
         event: SessionEvent.SELECT_SERIAL_PORT,
-        listener: (event: Event, portList: js.core.ReadonlyArray<SerialPort>, webContents: WebContents, callback: (portId: String) -> Unit) -> Unit,
+        listener: (event: Event, portList: js.array.ReadonlyArray<SerialPort>, webContents: WebContents, callback: (portId: String) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
@@ -786,7 +786,7 @@ external class Session : NodeEventEmitter {
      * **Note:** This API cannot be called before the `ready` event of the `app` module
      * is emitted.
      */
-    fun getAllExtensions(): js.core.ReadonlyArray<Extension>
+    fun getAllExtensions(): js.array.ReadonlyArray<Extension>
 
     /**
      * resolves with blob data.
@@ -809,7 +809,7 @@ external class Session : NodeEventEmitter {
     /**
      * an array of paths to preload scripts that have been registered.
      */
-    fun getPreloads(): js.core.ReadonlyArray<String>
+    fun getPreloads(): js.array.ReadonlyArray<String>
 
     /**
      * An array of language codes the spellchecker is enabled for.  If this list is
@@ -821,7 +821,7 @@ external class Session : NodeEventEmitter {
      * languages. On macOS, this API will return whichever languages have been
      * configured by the OS.
      */
-    fun getSpellCheckerLanguages(): js.core.ReadonlyArray<String>
+    fun getSpellCheckerLanguages(): js.array.ReadonlyArray<String>
 
     /**
      * The absolute file system path where data for this session is persisted on disk.
@@ -851,7 +851,7 @@ external class Session : NodeEventEmitter {
      * An array of all words in app's custom dictionary. Resolves when the full
      * dictionary is loaded from disk.
      */
-    fun listWordsInSpellCheckerDictionary(): Promise<js.core.ReadonlyArray<String>>
+    fun listWordsInSpellCheckerDictionary(): Promise<js.array.ReadonlyArray<String>>
 
     /**
      * resolves when the extension is loaded.
@@ -1004,7 +1004,7 @@ external class Session : NodeEventEmitter {
      * Adds scripts that will be executed on ALL web contents that are associated with
      * this session just before normal `preload` scripts run.
      */
-    fun setPreloads(preloads: js.core.ReadonlyArray<String>): Unit
+    fun setPreloads(preloads: js.array.ReadonlyArray<String>): Unit
 
     /**
      * Resolves when the proxy setting process is complete.
@@ -1103,7 +1103,7 @@ external class Session : NodeEventEmitter {
      * **Note:** On macOS the OS spellchecker is used and will detect your language
      * automatically.  This API is a no-op on macOS.
      */
-    fun setSpellCheckerLanguages(languages: js.core.ReadonlyArray<String>): Unit
+    fun setSpellCheckerLanguages(languages: js.array.ReadonlyArray<String>): Unit
 
     /**
      * Sets the SSL configuration for the session. All subsequent network requests will
@@ -1132,7 +1132,7 @@ external class Session : NodeEventEmitter {
      * classes (this is also the default behavior if a handler is not defined). To
      * clear the handler, call `setUSBProtectedClassesHandler(null)`.
      */
-    fun setUSBProtectedClassesHandler(handler: ((details: USBProtectedClassesHandlerHandlerDetails) -> js.core.ReadonlyArray<String>)?): Unit
+    fun setUSBProtectedClassesHandler(handler: ((details: USBProtectedClassesHandlerHandlerDetails) -> js.array.ReadonlyArray<String>)?): Unit
 
     /**
      * Overrides the `userAgent` and `acceptLanguages` for this session.
@@ -1151,7 +1151,7 @@ external class Session : NodeEventEmitter {
      * isn't in this array will result in an error.
      *
      */
-    val availableSpellCheckerLanguages: js.core.ReadonlyArray<String>
+    val availableSpellCheckerLanguages: js.array.ReadonlyArray<String>
 
     /**
      * A `Cookies` object for this session.

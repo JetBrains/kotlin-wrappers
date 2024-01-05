@@ -13,4 +13,4 @@ import js.promise.Promise
  */
 
 @JsName("resolvePtr")
-external fun resolvePtrAsync(hostname: String): Promise<js.core.ReadonlyArray<String>>
+external fun resolvePtrAsync(hostname: String): Promise<js.array.ReadonlyArray<String>>

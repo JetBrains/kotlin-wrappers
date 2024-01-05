@@ -11,6 +11,6 @@ sealed external interface CreateMemoryRouterOpts {
     var basename: String?
     var future: RouterFutureConfig?
     var hydrationData: HydrationState?
-    var initialEntries: js.core.ReadonlyArray<InitialEntry>?
+    var initialEntries: js.array.ReadonlyArray<InitialEntry>?
     var initialIndex: Double?
 }

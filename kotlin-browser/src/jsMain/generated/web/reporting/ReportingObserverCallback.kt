@@ -2,7 +2,7 @@
 
 package web.reporting
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 typealias ReportingObserverCallback = (
     reports: ReadonlyArray<Report>,

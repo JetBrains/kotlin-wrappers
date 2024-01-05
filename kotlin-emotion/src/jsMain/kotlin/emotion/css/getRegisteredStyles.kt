@@ -2,7 +2,7 @@
 
 package emotion.css
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import web.cssom.ClassName
 
 external fun getRegisteredStyles(

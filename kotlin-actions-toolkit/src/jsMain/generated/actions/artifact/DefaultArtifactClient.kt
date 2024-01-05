@@ -4,7 +4,7 @@
 
 package actions.artifact
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import js.promise.Promise
 
 sealed external class DefaultArtifactClient : ArtifactClient {

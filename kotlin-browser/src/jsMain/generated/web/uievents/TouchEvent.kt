@@ -8,7 +8,7 @@
 
 package web.uievents
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import web.events.EventType
 
 external interface TouchEventInit : EventModifierInit {

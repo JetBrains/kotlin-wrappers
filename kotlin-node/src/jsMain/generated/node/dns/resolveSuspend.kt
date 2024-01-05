@@ -5,61 +5,61 @@ package node.dns
 import js.promise.await
 
 
-suspend fun resolve(hostname: String): js.core.ReadonlyArray<String> =
+suspend fun resolve(hostname: String): js.array.ReadonlyArray<String> =
     resolveAsync(
         hostname
     ).await()
 
 
-suspend fun resolve(hostname: String, rrtype: ResourceRecordType.A): js.core.ReadonlyArray<String> =
+suspend fun resolve(hostname: String, rrtype: ResourceRecordType.A): js.array.ReadonlyArray<String> =
     resolveAsync(
         hostname, rrtype
     ).await()
 
 
-suspend fun resolve(hostname: String, rrtype: ResourceRecordType.AAAA): js.core.ReadonlyArray<String> =
+suspend fun resolve(hostname: String, rrtype: ResourceRecordType.AAAA): js.array.ReadonlyArray<String> =
     resolveAsync(
         hostname, rrtype
     ).await()
 
 
-suspend fun resolve(hostname: String, rrtype: ResourceRecordType.ANY): js.core.ReadonlyArray<AnyRecord> =
+suspend fun resolve(hostname: String, rrtype: ResourceRecordType.ANY): js.array.ReadonlyArray<AnyRecord> =
     resolveAsync(
         hostname, rrtype
     ).await()
 
 
-suspend fun resolve(hostname: String, rrtype: ResourceRecordType.CAA): js.core.ReadonlyArray<CaaRecord> =
+suspend fun resolve(hostname: String, rrtype: ResourceRecordType.CAA): js.array.ReadonlyArray<CaaRecord> =
     resolveAsync(
         hostname, rrtype
     ).await()
 
 
-suspend fun resolve(hostname: String, rrtype: ResourceRecordType.CNAME): js.core.ReadonlyArray<String> =
+suspend fun resolve(hostname: String, rrtype: ResourceRecordType.CNAME): js.array.ReadonlyArray<String> =
     resolveAsync(
         hostname, rrtype
     ).await()
 
 
-suspend fun resolve(hostname: String, rrtype: ResourceRecordType.MX): js.core.ReadonlyArray<MxRecord> =
+suspend fun resolve(hostname: String, rrtype: ResourceRecordType.MX): js.array.ReadonlyArray<MxRecord> =
     resolveAsync(
         hostname, rrtype
     ).await()
 
 
-suspend fun resolve(hostname: String, rrtype: ResourceRecordType.NAPTR): js.core.ReadonlyArray<NaptrRecord> =
+suspend fun resolve(hostname: String, rrtype: ResourceRecordType.NAPTR): js.array.ReadonlyArray<NaptrRecord> =
     resolveAsync(
         hostname, rrtype
     ).await()
 
 
-suspend fun resolve(hostname: String, rrtype: ResourceRecordType.NS): js.core.ReadonlyArray<String> =
+suspend fun resolve(hostname: String, rrtype: ResourceRecordType.NS): js.array.ReadonlyArray<String> =
     resolveAsync(
         hostname, rrtype
     ).await()
 
 
-suspend fun resolve(hostname: String, rrtype: ResourceRecordType.PTR): js.core.ReadonlyArray<String> =
+suspend fun resolve(hostname: String, rrtype: ResourceRecordType.PTR): js.array.ReadonlyArray<String> =
     resolveAsync(
         hostname, rrtype
     ).await()
@@ -71,7 +71,7 @@ suspend fun resolve(hostname: String, rrtype: ResourceRecordType.SOA): SoaRecord
     ).await()
 
 
-suspend fun resolve(hostname: String, rrtype: ResourceRecordType.SRV): js.core.ReadonlyArray<SrvRecord> =
+suspend fun resolve(hostname: String, rrtype: ResourceRecordType.SRV): js.array.ReadonlyArray<SrvRecord> =
     resolveAsync(
         hostname, rrtype
     ).await()
@@ -80,7 +80,7 @@ suspend fun resolve(hostname: String, rrtype: ResourceRecordType.SRV): js.core.R
 suspend fun resolve(
     hostname: String,
     rrtype: ResourceRecordType.TXT,
-): js.core.ReadonlyArray<js.core.ReadonlyArray<String>> =
+): js.array.ReadonlyArray<js.array.ReadonlyArray<String>> =
     resolveAsync(
         hostname, rrtype
     ).await()

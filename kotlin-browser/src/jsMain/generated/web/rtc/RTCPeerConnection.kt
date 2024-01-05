@@ -2,7 +2,7 @@
 
 package web.rtc
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import js.core.Void
 import js.promise.Promise
 import web.crypto.Algorithm

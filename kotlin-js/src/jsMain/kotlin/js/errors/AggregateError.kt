@@ -1,6 +1,6 @@
 package js.errors
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 external class AggregateError(
     errors: ReadonlyArray<JsError>,

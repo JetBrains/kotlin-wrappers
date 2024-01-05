@@ -4,7 +4,7 @@
 
 package cesium
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /**
  * A tile in a [Cesium3DTileset].  When a tile is first created, its content is not loaded;

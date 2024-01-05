@@ -3,7 +3,7 @@
 package dateio.core
 
 import js.array.JsTuple2
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 external interface DateIOFormats<TLibFormatToken : Any> {
     /** Localized full date @example "Jan 1, 2019" */

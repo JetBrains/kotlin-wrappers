@@ -4,7 +4,7 @@
 
 package actions.glob
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 external class Path {
     var segments: ReadonlyArray<String>

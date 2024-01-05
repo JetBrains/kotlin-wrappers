@@ -14,7 +14,7 @@ external interface IpcMainEvent : Event {
     /**
      * A list of MessagePorts that were transferred with this message
      */
-    var ports: js.core.ReadonlyArray<MessagePortMain>
+    var ports: js.array.ReadonlyArray<MessagePortMain>
 
     /**
      * The internal ID of the renderer process that sent this message

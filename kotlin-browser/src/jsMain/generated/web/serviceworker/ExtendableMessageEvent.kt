@@ -6,7 +6,7 @@
 
 package web.serviceworker
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import web.events.EventType
 import web.messaging.MessagePort
 

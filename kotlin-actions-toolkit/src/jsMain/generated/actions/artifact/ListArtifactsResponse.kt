@@ -2,7 +2,7 @@
 
 package actions.artifact
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 sealed external interface ListArtifactsResponse {
     var count: Number

@@ -2,7 +2,7 @@
 
 package web.push
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import js.promise.Promise
 import web.permissions.PermissionState
 

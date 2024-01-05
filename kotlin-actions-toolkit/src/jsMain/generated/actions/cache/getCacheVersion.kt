@@ -4,7 +4,7 @@
 
 package actions.cache
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 external fun getCacheVersion(
     paths: ReadonlyArray<String>,

@@ -13,13 +13,13 @@ package node.dns
  */
 external fun resolve4(
     hostname: String,
-    callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<String>) -> Unit,
+    callback: (err: node.ErrnoException?, addresses: js.array.ReadonlyArray<String>) -> Unit,
 ): Unit
 
 external fun resolve4(
     hostname: String,
     options: ResolveWithTtlOptions,
-    callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<RecordWithTtl>) -> Unit,
+    callback: (err: node.ErrnoException?, addresses: js.array.ReadonlyArray<RecordWithTtl>) -> Unit,
 ): Unit
 
 external fun resolve4(

@@ -2,7 +2,7 @@
 
 package react
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 external object Children {
     fun <T> map(children: ReactNode?, handler: (ReactNode) -> T): ReadonlyArray<T>?

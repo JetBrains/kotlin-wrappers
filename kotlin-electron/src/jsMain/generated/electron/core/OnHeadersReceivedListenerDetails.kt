@@ -21,5 +21,5 @@ external interface OnHeadersReceivedListenerDetails {
     var timestamp: Double
     var statusLine: String
     var statusCode: Double
-    var responseHeaders: js.objects.ReadonlyRecord<String, js.core.ReadonlyArray<String>>?
+    var responseHeaders: js.objects.ReadonlyRecord<String, js.array.ReadonlyArray<String>>?
 }

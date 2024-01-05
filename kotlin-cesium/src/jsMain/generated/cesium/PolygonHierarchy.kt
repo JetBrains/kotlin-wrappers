@@ -8,7 +8,7 @@
 
 package cesium
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /**
  * An hierarchy of linear rings which define a polygon and its holes.

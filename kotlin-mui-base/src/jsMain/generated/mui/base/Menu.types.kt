@@ -2,7 +2,7 @@
 
 package mui.base
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import web.cssom.ClassName
 
 external interface MenuProps :

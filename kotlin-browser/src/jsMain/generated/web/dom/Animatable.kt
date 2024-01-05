@@ -6,7 +6,7 @@
 
 package web.dom
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import web.animations.Animation
 import web.animations.Keyframe
 import web.animations.KeyframeAnimationOptions

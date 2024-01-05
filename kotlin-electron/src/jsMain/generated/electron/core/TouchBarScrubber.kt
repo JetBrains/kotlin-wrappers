@@ -25,7 +25,7 @@ external class TouchBarScrubber : NodeEventEmitter {
      * value immediately updates the control in the touch bar. Updating deep properties
      * inside this array **does not update the touch bar**.
      */
-    var items: js.core.ReadonlyArray<ScrubberItem>
+    var items: js.array.ReadonlyArray<ScrubberItem>
 
     /**
      * A `string` representing the mode of this scrubber. Updating this value

@@ -5,7 +5,7 @@
 package tanstack.query.core
 
 import js.array.JsTuple2
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import js.promise.Promise
 
 open external class QueryClient(config: QueryClientConfig = definedExternally) {

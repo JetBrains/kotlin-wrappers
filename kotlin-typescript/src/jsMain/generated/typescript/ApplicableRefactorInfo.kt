@@ -2,7 +2,7 @@
 
 package typescript
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /**
  * A set of one or more available refactoring actions, grouped under a parent refactoring.

@@ -15,4 +15,4 @@ import js.promise.Promise
  */
 
 @JsName("reverse")
-external fun reverseAsync(ip: String): Promise<js.core.ReadonlyArray<String>>
+external fun reverseAsync(ip: String): Promise<js.array.ReadonlyArray<String>>

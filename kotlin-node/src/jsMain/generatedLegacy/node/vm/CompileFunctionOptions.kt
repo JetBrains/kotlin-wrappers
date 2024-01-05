@@ -2,7 +2,7 @@
 
 package node.vm
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import node.buffer.Buffer
 
 sealed external interface CompileFunctionOptions : BaseOptions {

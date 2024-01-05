@@ -4,8 +4,8 @@
 
 package js.typedarrays
 
+import js.array.ReadonlyArray
 import js.buffer.ArrayBufferLike
-import js.core.ReadonlyArray
 import js.iterable.JsIterable
 
 open external class Float32Array(

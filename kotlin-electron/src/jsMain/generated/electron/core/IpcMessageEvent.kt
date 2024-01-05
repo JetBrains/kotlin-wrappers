@@ -10,5 +10,5 @@ external interface IpcMessageEvent : Event {
      */
     var frameId: js.array.JsTuple2<Double, Double>
     var channel: String
-    var args: js.core.ReadonlyArray<Any?>
+    var args: js.array.ReadonlyArray<Any?>
 }

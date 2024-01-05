@@ -14,4 +14,4 @@ import js.promise.Promise
  */
 
 @JsName("resolveCaa")
-external fun resolveCaaAsync(hostname: String): Promise<js.core.ReadonlyArray<CaaRecord>>
+external fun resolveCaaAsync(hostname: String): Promise<js.array.ReadonlyArray<CaaRecord>>

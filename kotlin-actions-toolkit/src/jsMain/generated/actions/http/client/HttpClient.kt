@@ -4,7 +4,7 @@
 
 package actions.http.client
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import js.errors.JsError
 import js.promise.Promise
 

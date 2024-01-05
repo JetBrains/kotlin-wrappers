@@ -26,7 +26,7 @@ sealed external interface Performance {
      * `performance.getEntriesByType()` and `performance.getEntriesByName()`.
      * @since v16.7.0
      */
-    fun getEntries(): js.core.ReadonlyArray<PerformanceEntry>
+    fun getEntries(): js.array.ReadonlyArray<PerformanceEntry>
 
     /**
      * Returns a list of `PerformanceEntry` objects in chronological order with respect to `performanceEntry.startTime`
@@ -35,7 +35,7 @@ sealed external interface Performance {
      * @param type
      * @since v16.7.0
      */
-    fun getEntriesByName(name: String, type: EntryType = definedExternally): js.core.ReadonlyArray<PerformanceEntry>
+    fun getEntriesByName(name: String, type: EntryType = definedExternally): js.array.ReadonlyArray<PerformanceEntry>
 
     /**
      * Returns a list of `PerformanceEntry` objects in chronological order with respect to `performanceEntry.startTime`
@@ -43,7 +43,7 @@ sealed external interface Performance {
      * @param type
      * @since v16.7.0
      */
-    fun getEntriesByType(type: EntryType): js.core.ReadonlyArray<PerformanceEntry>
+    fun getEntriesByType(type: EntryType): js.array.ReadonlyArray<PerformanceEntry>
 
     /**
      * Creates a new PerformanceMark entry in the Performance Timeline.

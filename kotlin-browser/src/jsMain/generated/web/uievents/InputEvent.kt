@@ -6,7 +6,7 @@
 
 package web.uievents
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import web.data.DataTransfer
 import web.events.EventType
 import web.ranges.StaticRange

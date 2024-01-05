@@ -7,7 +7,7 @@ package react.router
 import remix.run.router.RouterState
 
 external fun _renderMatches(
-    matches: js.core.ReadonlyArray<RouteMatch<*>>?,
-    parentMatches: js.core.ReadonlyArray<RouteMatch<*>> = definedExternally,
+    matches: js.array.ReadonlyArray<RouteMatch<*>>?,
+    parentMatches: js.array.ReadonlyArray<RouteMatch<*>> = definedExternally,
     dataRouterState: (RouterState)? = definedExternally,
 ): react.ReactElement<*>?

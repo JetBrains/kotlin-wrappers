@@ -2,7 +2,7 @@
 
 package web.canvas
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 sealed external interface CanvasPathDrawingStyles {
     /**

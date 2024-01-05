@@ -20,7 +20,7 @@ external interface SaveDialogOptions {
      * be used.
      */
     var buttonLabel: String?
-    var filters: js.core.ReadonlyArray<FileFilter>?
+    var filters: js.array.ReadonlyArray<FileFilter>?
 
     /**
      * Message to display above text fields.

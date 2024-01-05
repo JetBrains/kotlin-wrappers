@@ -2,7 +2,7 @@
 
 package web.gamepad
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import web.time.DOMHighResTimeStamp
 
 /**

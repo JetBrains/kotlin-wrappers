@@ -12,143 +12,146 @@ external class Resolver {
     constructor (options: ResolverOptions = definedExternally)
 
     fun cancel(): Unit
-    var getServers: () -> js.core.ReadonlyArray<String>
+    var getServers: () -> js.array.ReadonlyArray<String>
 
     @JsName("resolve")
-    fun resolveAsync(hostname: String): Promise<js.core.ReadonlyArray<String>>
+    fun resolveAsync(hostname: String): Promise<js.array.ReadonlyArray<String>>
 
 
     @Suppress(
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",
         "INLINE_EXTERNAL_DECLARATION",
     )
-    suspend inline fun resolve(hostname: String): js.core.ReadonlyArray<String> =
+    suspend inline fun resolve(hostname: String): js.array.ReadonlyArray<String> =
         resolveAsync(
             hostname
         ).await()
 
 
     @JsName("resolve")
-    fun resolveAsync(hostname: String, rrtype: ResourceRecordType.A): Promise<js.core.ReadonlyArray<String>>
+    fun resolveAsync(hostname: String, rrtype: ResourceRecordType.A): Promise<js.array.ReadonlyArray<String>>
 
 
     @Suppress(
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",
         "INLINE_EXTERNAL_DECLARATION",
     )
-    suspend inline fun resolve(hostname: String, rrtype: ResourceRecordType.A): js.core.ReadonlyArray<String> =
+    suspend inline fun resolve(hostname: String, rrtype: ResourceRecordType.A): js.array.ReadonlyArray<String> =
         resolveAsync(
             hostname, rrtype
         ).await()
 
 
     @JsName("resolve")
-    fun resolveAsync(hostname: String, rrtype: ResourceRecordType.AAAA): Promise<js.core.ReadonlyArray<String>>
+    fun resolveAsync(hostname: String, rrtype: ResourceRecordType.AAAA): Promise<js.array.ReadonlyArray<String>>
 
 
     @Suppress(
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",
         "INLINE_EXTERNAL_DECLARATION",
     )
-    suspend inline fun resolve(hostname: String, rrtype: ResourceRecordType.AAAA): js.core.ReadonlyArray<String> =
+    suspend inline fun resolve(hostname: String, rrtype: ResourceRecordType.AAAA): js.array.ReadonlyArray<String> =
         resolveAsync(
             hostname, rrtype
         ).await()
 
 
     @JsName("resolve")
-    fun resolveAsync(hostname: String, rrtype: ResourceRecordType.ANY): Promise<js.core.ReadonlyArray<AnyRecord>>
+    fun resolveAsync(hostname: String, rrtype: ResourceRecordType.ANY): Promise<js.array.ReadonlyArray<AnyRecord>>
 
 
     @Suppress(
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",
         "INLINE_EXTERNAL_DECLARATION",
     )
-    suspend inline fun resolve(hostname: String, rrtype: ResourceRecordType.ANY): js.core.ReadonlyArray<AnyRecord> =
+    suspend inline fun resolve(hostname: String, rrtype: ResourceRecordType.ANY): js.array.ReadonlyArray<AnyRecord> =
         resolveAsync(
             hostname, rrtype
         ).await()
 
 
     @JsName("resolve")
-    fun resolveAsync(hostname: String, rrtype: ResourceRecordType.CAA): Promise<js.core.ReadonlyArray<CaaRecord>>
+    fun resolveAsync(hostname: String, rrtype: ResourceRecordType.CAA): Promise<js.array.ReadonlyArray<CaaRecord>>
 
 
     @Suppress(
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",
         "INLINE_EXTERNAL_DECLARATION",
     )
-    suspend inline fun resolve(hostname: String, rrtype: ResourceRecordType.CAA): js.core.ReadonlyArray<CaaRecord> =
+    suspend inline fun resolve(hostname: String, rrtype: ResourceRecordType.CAA): js.array.ReadonlyArray<CaaRecord> =
         resolveAsync(
             hostname, rrtype
         ).await()
 
 
     @JsName("resolve")
-    fun resolveAsync(hostname: String, rrtype: ResourceRecordType.CNAME): Promise<js.core.ReadonlyArray<String>>
+    fun resolveAsync(hostname: String, rrtype: ResourceRecordType.CNAME): Promise<js.array.ReadonlyArray<String>>
 
 
     @Suppress(
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",
         "INLINE_EXTERNAL_DECLARATION",
     )
-    suspend inline fun resolve(hostname: String, rrtype: ResourceRecordType.CNAME): js.core.ReadonlyArray<String> =
+    suspend inline fun resolve(hostname: String, rrtype: ResourceRecordType.CNAME): js.array.ReadonlyArray<String> =
         resolveAsync(
             hostname, rrtype
         ).await()
 
 
     @JsName("resolve")
-    fun resolveAsync(hostname: String, rrtype: ResourceRecordType.MX): Promise<js.core.ReadonlyArray<MxRecord>>
+    fun resolveAsync(hostname: String, rrtype: ResourceRecordType.MX): Promise<js.array.ReadonlyArray<MxRecord>>
 
 
     @Suppress(
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",
         "INLINE_EXTERNAL_DECLARATION",
     )
-    suspend inline fun resolve(hostname: String, rrtype: ResourceRecordType.MX): js.core.ReadonlyArray<MxRecord> =
+    suspend inline fun resolve(hostname: String, rrtype: ResourceRecordType.MX): js.array.ReadonlyArray<MxRecord> =
         resolveAsync(
             hostname, rrtype
         ).await()
 
 
     @JsName("resolve")
-    fun resolveAsync(hostname: String, rrtype: ResourceRecordType.NAPTR): Promise<js.core.ReadonlyArray<NaptrRecord>>
+    fun resolveAsync(hostname: String, rrtype: ResourceRecordType.NAPTR): Promise<js.array.ReadonlyArray<NaptrRecord>>
 
 
     @Suppress(
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",
         "INLINE_EXTERNAL_DECLARATION",
     )
-    suspend inline fun resolve(hostname: String, rrtype: ResourceRecordType.NAPTR): js.core.ReadonlyArray<NaptrRecord> =
+    suspend inline fun resolve(
+        hostname: String,
+        rrtype: ResourceRecordType.NAPTR,
+    ): js.array.ReadonlyArray<NaptrRecord> =
         resolveAsync(
             hostname, rrtype
         ).await()
 
 
     @JsName("resolve")
-    fun resolveAsync(hostname: String, rrtype: ResourceRecordType.NS): Promise<js.core.ReadonlyArray<String>>
+    fun resolveAsync(hostname: String, rrtype: ResourceRecordType.NS): Promise<js.array.ReadonlyArray<String>>
 
 
     @Suppress(
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",
         "INLINE_EXTERNAL_DECLARATION",
     )
-    suspend inline fun resolve(hostname: String, rrtype: ResourceRecordType.NS): js.core.ReadonlyArray<String> =
+    suspend inline fun resolve(hostname: String, rrtype: ResourceRecordType.NS): js.array.ReadonlyArray<String> =
         resolveAsync(
             hostname, rrtype
         ).await()
 
 
     @JsName("resolve")
-    fun resolveAsync(hostname: String, rrtype: ResourceRecordType.PTR): Promise<js.core.ReadonlyArray<String>>
+    fun resolveAsync(hostname: String, rrtype: ResourceRecordType.PTR): Promise<js.array.ReadonlyArray<String>>
 
 
     @Suppress(
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",
         "INLINE_EXTERNAL_DECLARATION",
     )
-    suspend inline fun resolve(hostname: String, rrtype: ResourceRecordType.PTR): js.core.ReadonlyArray<String> =
+    suspend inline fun resolve(hostname: String, rrtype: ResourceRecordType.PTR): js.array.ReadonlyArray<String> =
         resolveAsync(
             hostname, rrtype
         ).await()
@@ -169,14 +172,14 @@ external class Resolver {
 
 
     @JsName("resolve")
-    fun resolveAsync(hostname: String, rrtype: ResourceRecordType.SRV): Promise<js.core.ReadonlyArray<SrvRecord>>
+    fun resolveAsync(hostname: String, rrtype: ResourceRecordType.SRV): Promise<js.array.ReadonlyArray<SrvRecord>>
 
 
     @Suppress(
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",
         "INLINE_EXTERNAL_DECLARATION",
     )
-    suspend inline fun resolve(hostname: String, rrtype: ResourceRecordType.SRV): js.core.ReadonlyArray<SrvRecord> =
+    suspend inline fun resolve(hostname: String, rrtype: ResourceRecordType.SRV): js.array.ReadonlyArray<SrvRecord> =
         resolveAsync(
             hostname, rrtype
         ).await()
@@ -186,7 +189,7 @@ external class Resolver {
     fun resolveAsync(
         hostname: String,
         rrtype: ResourceRecordType.TXT,
-    ): Promise<js.core.ReadonlyArray<js.core.ReadonlyArray<String>>>
+    ): Promise<js.array.ReadonlyArray<js.array.ReadonlyArray<String>>>
 
 
     @Suppress(
@@ -196,7 +199,7 @@ external class Resolver {
     suspend inline fun resolve(
         hostname: String,
         rrtype: ResourceRecordType.TXT,
-    ): js.core.ReadonlyArray<js.core.ReadonlyArray<String>> =
+    ): js.array.ReadonlyArray<js.array.ReadonlyArray<String>> =
         resolveAsync(
             hostname, rrtype
         ).await()
@@ -223,21 +226,21 @@ external class Resolver {
 
 
     @JsName("resolve4")
-    fun resolve4Async(hostname: String): Promise<js.core.ReadonlyArray<String>>
+    fun resolve4Async(hostname: String): Promise<js.array.ReadonlyArray<String>>
 
 
     @Suppress(
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",
         "INLINE_EXTERNAL_DECLARATION",
     )
-    suspend inline fun resolve4(hostname: String): js.core.ReadonlyArray<String> =
+    suspend inline fun resolve4(hostname: String): js.array.ReadonlyArray<String> =
         resolve4Async(
             hostname
         ).await()
 
 
     @JsName("resolve4")
-    fun resolve4Async(hostname: String, options: ResolveWithTtlOptions): Promise<js.core.ReadonlyArray<RecordWithTtl>>
+    fun resolve4Async(hostname: String, options: ResolveWithTtlOptions): Promise<js.array.ReadonlyArray<RecordWithTtl>>
 
 
     @Suppress(
@@ -247,7 +250,7 @@ external class Resolver {
     suspend inline fun resolve4(
         hostname: String,
         options: ResolveWithTtlOptions,
-    ): js.core.ReadonlyArray<RecordWithTtl> =
+    ): js.array.ReadonlyArray<RecordWithTtl> =
         resolve4Async(
             hostname, options
         ).await()
@@ -268,21 +271,21 @@ external class Resolver {
 
 
     @JsName("resolve6")
-    fun resolve6Async(hostname: String): Promise<js.core.ReadonlyArray<String>>
+    fun resolve6Async(hostname: String): Promise<js.array.ReadonlyArray<String>>
 
 
     @Suppress(
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",
         "INLINE_EXTERNAL_DECLARATION",
     )
-    suspend inline fun resolve6(hostname: String): js.core.ReadonlyArray<String> =
+    suspend inline fun resolve6(hostname: String): js.array.ReadonlyArray<String> =
         resolve6Async(
             hostname
         ).await()
 
 
     @JsName("resolve6")
-    fun resolve6Async(hostname: String, options: ResolveWithTtlOptions): Promise<js.core.ReadonlyArray<RecordWithTtl>>
+    fun resolve6Async(hostname: String, options: ResolveWithTtlOptions): Promise<js.array.ReadonlyArray<RecordWithTtl>>
 
 
     @Suppress(
@@ -292,7 +295,7 @@ external class Resolver {
     suspend inline fun resolve6(
         hostname: String,
         options: ResolveWithTtlOptions,
-    ): js.core.ReadonlyArray<RecordWithTtl> =
+    ): js.array.ReadonlyArray<RecordWithTtl> =
         resolve6Async(
             hostname, options
         ).await()
@@ -313,84 +316,84 @@ external class Resolver {
 
 
     @JsName("resolveAny")
-    fun resolveAnyAsync(hostname: String): Promise<js.core.ReadonlyArray<AnyRecord>>
+    fun resolveAnyAsync(hostname: String): Promise<js.array.ReadonlyArray<AnyRecord>>
 
 
     @Suppress(
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",
         "INLINE_EXTERNAL_DECLARATION",
     )
-    suspend inline fun resolveAny(hostname: String): js.core.ReadonlyArray<AnyRecord> =
+    suspend inline fun resolveAny(hostname: String): js.array.ReadonlyArray<AnyRecord> =
         resolveAnyAsync(
             hostname
         ).await()
 
 
     @JsName("resolveCname")
-    fun resolveCnameAsync(hostname: String): Promise<js.core.ReadonlyArray<String>>
+    fun resolveCnameAsync(hostname: String): Promise<js.array.ReadonlyArray<String>>
 
 
     @Suppress(
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",
         "INLINE_EXTERNAL_DECLARATION",
     )
-    suspend inline fun resolveCname(hostname: String): js.core.ReadonlyArray<String> =
+    suspend inline fun resolveCname(hostname: String): js.array.ReadonlyArray<String> =
         resolveCnameAsync(
             hostname
         ).await()
 
 
     @JsName("resolveMx")
-    fun resolveMxAsync(hostname: String): Promise<js.core.ReadonlyArray<MxRecord>>
+    fun resolveMxAsync(hostname: String): Promise<js.array.ReadonlyArray<MxRecord>>
 
 
     @Suppress(
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",
         "INLINE_EXTERNAL_DECLARATION",
     )
-    suspend inline fun resolveMx(hostname: String): js.core.ReadonlyArray<MxRecord> =
+    suspend inline fun resolveMx(hostname: String): js.array.ReadonlyArray<MxRecord> =
         resolveMxAsync(
             hostname
         ).await()
 
 
     @JsName("resolveNaptr")
-    fun resolveNaptrAsync(hostname: String): Promise<js.core.ReadonlyArray<NaptrRecord>>
+    fun resolveNaptrAsync(hostname: String): Promise<js.array.ReadonlyArray<NaptrRecord>>
 
 
     @Suppress(
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",
         "INLINE_EXTERNAL_DECLARATION",
     )
-    suspend inline fun resolveNaptr(hostname: String): js.core.ReadonlyArray<NaptrRecord> =
+    suspend inline fun resolveNaptr(hostname: String): js.array.ReadonlyArray<NaptrRecord> =
         resolveNaptrAsync(
             hostname
         ).await()
 
 
     @JsName("resolveNs")
-    fun resolveNsAsync(hostname: String): Promise<js.core.ReadonlyArray<String>>
+    fun resolveNsAsync(hostname: String): Promise<js.array.ReadonlyArray<String>>
 
 
     @Suppress(
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",
         "INLINE_EXTERNAL_DECLARATION",
     )
-    suspend inline fun resolveNs(hostname: String): js.core.ReadonlyArray<String> =
+    suspend inline fun resolveNs(hostname: String): js.array.ReadonlyArray<String> =
         resolveNsAsync(
             hostname
         ).await()
 
 
     @JsName("resolvePtr")
-    fun resolvePtrAsync(hostname: String): Promise<js.core.ReadonlyArray<String>>
+    fun resolvePtrAsync(hostname: String): Promise<js.array.ReadonlyArray<String>>
 
 
     @Suppress(
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",
         "INLINE_EXTERNAL_DECLARATION",
     )
-    suspend inline fun resolvePtr(hostname: String): js.core.ReadonlyArray<String> =
+    suspend inline fun resolvePtr(hostname: String): js.array.ReadonlyArray<String> =
         resolvePtrAsync(
             hostname
         ).await()
@@ -411,42 +414,42 @@ external class Resolver {
 
 
     @JsName("resolveSrv")
-    fun resolveSrvAsync(hostname: String): Promise<js.core.ReadonlyArray<SrvRecord>>
+    fun resolveSrvAsync(hostname: String): Promise<js.array.ReadonlyArray<SrvRecord>>
 
 
     @Suppress(
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",
         "INLINE_EXTERNAL_DECLARATION",
     )
-    suspend inline fun resolveSrv(hostname: String): js.core.ReadonlyArray<SrvRecord> =
+    suspend inline fun resolveSrv(hostname: String): js.array.ReadonlyArray<SrvRecord> =
         resolveSrvAsync(
             hostname
         ).await()
 
 
     @JsName("resolveTxt")
-    fun resolveTxtAsync(hostname: String): Promise<js.core.ReadonlyArray<js.core.ReadonlyArray<String>>>
+    fun resolveTxtAsync(hostname: String): Promise<js.array.ReadonlyArray<js.array.ReadonlyArray<String>>>
 
 
     @Suppress(
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",
         "INLINE_EXTERNAL_DECLARATION",
     )
-    suspend inline fun resolveTxt(hostname: String): js.core.ReadonlyArray<js.core.ReadonlyArray<String>> =
+    suspend inline fun resolveTxt(hostname: String): js.array.ReadonlyArray<js.array.ReadonlyArray<String>> =
         resolveTxtAsync(
             hostname
         ).await()
 
 
     @JsName("reverse")
-    fun reverseAsync(ip: String): Promise<js.core.ReadonlyArray<String>>
+    fun reverseAsync(ip: String): Promise<js.array.ReadonlyArray<String>>
 
 
     @Suppress(
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",
         "INLINE_EXTERNAL_DECLARATION",
     )
-    suspend inline fun reverse(ip: String): js.core.ReadonlyArray<String> =
+    suspend inline fun reverse(ip: String): js.array.ReadonlyArray<String> =
         reverseAsync(
             ip
         ).await()

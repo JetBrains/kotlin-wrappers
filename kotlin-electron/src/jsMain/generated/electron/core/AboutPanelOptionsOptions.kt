@@ -39,7 +39,7 @@ external interface AboutPanelOptionsOptions {
      *
      * @platform linux
      */
-    var authors: js.core.ReadonlyArray<String>?
+    var authors: js.array.ReadonlyArray<String>?
 
     /**
      * The app's website.

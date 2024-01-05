@@ -2,7 +2,7 @@
 
 package web.gl
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 sealed external interface WEBGL_draw_buffers {
     /**

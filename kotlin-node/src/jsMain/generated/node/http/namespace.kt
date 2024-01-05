@@ -15,7 +15,7 @@ package node.http
 
 /* import { TcpSocketConnectOpts, Socket, Server as NetServer, LookupFunction } from 'node:net'; */
 
-external val METHODS: js.core.ReadonlyArray<String>
+external val METHODS: js.array.ReadonlyArray<String>
 
 external val STATUS_CODES: HttpStatusCodes
 

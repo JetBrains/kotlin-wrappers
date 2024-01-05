@@ -6,8 +6,8 @@
 
 package web.fonts
 
+import js.array.ReadonlyArray
 import js.collections.MutableSetLike
-import js.core.ReadonlyArray
 import js.promise.Promise
 import web.events.EventHandler
 import web.events.EventTarget

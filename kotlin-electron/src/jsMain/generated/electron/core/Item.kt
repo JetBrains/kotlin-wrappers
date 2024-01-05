@@ -13,7 +13,7 @@ external interface Item {
     /**
      * The paths to the files being dragged. (`files` will override `file` field)
      */
-    var files: js.core.ReadonlyArray<String>?
+    var files: js.array.ReadonlyArray<String>?
 
     /**
      * The image must be non-empty on macOS.

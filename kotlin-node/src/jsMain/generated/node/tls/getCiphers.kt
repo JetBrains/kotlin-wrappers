@@ -20,4 +20,4 @@ package node.tls
  * ```
  * @since v0.10.2
  */
-external fun getCiphers(): js.core.ReadonlyArray<String>
+external fun getCiphers(): js.array.ReadonlyArray<String>

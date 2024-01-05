@@ -2,7 +2,7 @@
 
 package web.rtc
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import web.media.streams.MediaStream
 
 sealed external interface RTCRtpTransceiverInit {

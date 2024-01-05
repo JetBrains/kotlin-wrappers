@@ -2,7 +2,7 @@
 
 package typescript
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 sealed external interface TransformationContext : CoreTransformationContext {
     /** Records a request for a non-scoped emit helper in the current context. */

@@ -1,7 +1,7 @@
 package js.objects
 
 import js.array.JsTuple2
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import js.symbol.Symbol
 
 external class Object internal constructor() {

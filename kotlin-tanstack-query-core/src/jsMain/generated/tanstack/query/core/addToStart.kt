@@ -4,7 +4,7 @@
 
 package tanstack.query.core
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 external fun <T> addToStart(
     items: ReadonlyArray<T>,

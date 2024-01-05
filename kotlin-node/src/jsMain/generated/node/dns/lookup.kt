@@ -62,7 +62,7 @@ external fun lookup(
 external fun lookup(
     hostname: String,
     options: LookupAllOptions,
-    callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<LookupAddress>) -> Unit,
+    callback: (err: node.ErrnoException?, addresses: js.array.ReadonlyArray<LookupAddress>) -> Unit,
 ): Unit
 
 external fun lookup(

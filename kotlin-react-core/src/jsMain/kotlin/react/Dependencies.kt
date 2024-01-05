@@ -1,5 +1,5 @@
 package react
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 typealias Dependencies = ReadonlyArray<Any?>

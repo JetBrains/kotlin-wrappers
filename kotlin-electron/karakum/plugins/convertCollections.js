@@ -2,7 +2,7 @@ import ts from "typescript";
 
 export default function (node, context, render) {
     if (ts.isArrayTypeNode(node)) {
-        return `js.core.ReadonlyArray<${render(node.elementType)}>`
+        return `js.array.ReadonlyArray<${render(node.elementType)}>`
     }
 
     if (

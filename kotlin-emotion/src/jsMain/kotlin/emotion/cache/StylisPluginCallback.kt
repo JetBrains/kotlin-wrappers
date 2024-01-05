@@ -1,6 +1,6 @@
 package emotion.cache
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 typealias StylisPluginCallback = (
     element: StylisElement,

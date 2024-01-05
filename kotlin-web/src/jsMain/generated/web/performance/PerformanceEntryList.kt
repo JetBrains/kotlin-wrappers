@@ -2,6 +2,6 @@
 
 package web.performance
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 typealias PerformanceEntryList = ReadonlyArray<PerformanceEntry>

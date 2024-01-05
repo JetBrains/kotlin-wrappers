@@ -2,7 +2,7 @@
 
 package typescript
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 sealed external interface JSDocSignature : JSDocType, Declaration, Union.JSDocSignature_ {
     override val kind: SyntaxKind.JSDocSignature

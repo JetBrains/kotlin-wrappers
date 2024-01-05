@@ -9,5 +9,5 @@ sealed external interface RequireResolve {
     @seskar.js.JsNative
     operator fun invoke(id: String, options: RequireResolveOptions = definedExternally): String
 
-    fun paths(request: String): js.core.ReadonlyArray<String>?
+    fun paths(request: String): js.array.ReadonlyArray<String>?
 }

@@ -13,7 +13,7 @@ external interface ForkOptions {
     /**
      * List of string arguments passed to the executable.
      */
-    var execArgv: js.core.ReadonlyArray<String>?
+    var execArgv: js.array.ReadonlyArray<String>?
 
     /**
      * Current working directory of the child process.

@@ -2,7 +2,7 @@
 
 package web.serviceworker
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import js.promise.Promise
 import web.events.Event
 import web.events.EventHandler

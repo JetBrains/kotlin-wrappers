@@ -2,7 +2,7 @@
 
 package tanstack.table.core
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 external interface HeadersInstance<TData : RowData> {
     /**

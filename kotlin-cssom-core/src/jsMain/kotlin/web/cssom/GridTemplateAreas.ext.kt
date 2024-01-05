@@ -1,6 +1,6 @@
 package web.cssom
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 fun GridTemplateAreas(
     vararg values: Ident,

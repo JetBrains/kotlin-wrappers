@@ -18,7 +18,7 @@ external interface ContentTracing {
      * > **NOTE:** Electron adds a non-default tracing category called `"electron"`.
      * This category can be used to capture Electron-specific tracing events.
      */
-    fun getCategories(): Promise<js.core.ReadonlyArray<String>>
+    fun getCategories(): Promise<js.array.ReadonlyArray<String>>
 
     /**
      * Resolves with an object containing the `value` and `percentage` of trace buffer

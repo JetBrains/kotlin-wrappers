@@ -2,7 +2,7 @@
 
 package tanstack.virtual.core
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import web.dom.Element
 import web.dom.observers.ResizeObserverEntry
 import web.events.EventTarget

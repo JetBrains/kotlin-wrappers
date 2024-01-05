@@ -2,7 +2,7 @@
 
 package web.navigator
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 sealed external interface NavigatorLanguage {
     /**

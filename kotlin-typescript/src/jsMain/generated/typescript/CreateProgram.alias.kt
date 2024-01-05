@@ -2,7 +2,7 @@
 
 package typescript
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /** Create the program with rootNames and options, if they are undefined, oldProgram and new configFile diagnostics create new program */
 typealias CreateProgram<T /* : BuilderProgram */> = (

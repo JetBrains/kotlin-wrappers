@@ -5,13 +5,13 @@ package node.dns
 import js.promise.await
 
 
-suspend fun resolve6(hostname: String): js.core.ReadonlyArray<String> =
+suspend fun resolve6(hostname: String): js.array.ReadonlyArray<String> =
     resolve6Async(
         hostname
     ).await()
 
 
-suspend fun resolve6(hostname: String, options: ResolveWithTtlOptions): js.core.ReadonlyArray<RecordWithTtl> =
+suspend fun resolve6(hostname: String, options: ResolveWithTtlOptions): js.array.ReadonlyArray<RecordWithTtl> =
     resolve6Async(
         hostname, options
     ).await()

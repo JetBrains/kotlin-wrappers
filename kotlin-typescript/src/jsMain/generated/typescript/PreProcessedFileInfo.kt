@@ -2,7 +2,7 @@
 
 package typescript
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 sealed external interface PreProcessedFileInfo {
     var referencedFiles: ReadonlyArray<FileReference>

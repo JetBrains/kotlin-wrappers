@@ -4,7 +4,7 @@
 
 package tanstack.query.core
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 open external class QueryCache(config: QueryCacheConfig = definedExternally) : Subscribable<QueryCacheListener> {
     open var config: QueryCacheConfig

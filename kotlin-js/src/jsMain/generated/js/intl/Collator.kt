@@ -4,7 +4,7 @@
 
 package js.intl
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 external class Collator(
     locales: String = definedExternally,

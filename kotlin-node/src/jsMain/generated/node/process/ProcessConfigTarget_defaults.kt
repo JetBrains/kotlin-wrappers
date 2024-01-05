@@ -4,9 +4,9 @@ package node.process
 
 
 sealed external interface ProcessConfigTarget_defaults {
-    val cflags: js.core.ReadonlyArray<Any?>
+    val cflags: js.array.ReadonlyArray<Any?>
     val default_configuration: String
-    val defines: js.core.ReadonlyArray<String>
-    val include_dirs: js.core.ReadonlyArray<String>
-    val libraries: js.core.ReadonlyArray<String>
+    val defines: js.array.ReadonlyArray<String>
+    val include_dirs: js.array.ReadonlyArray<String>
+    val libraries: js.array.ReadonlyArray<String>
 }

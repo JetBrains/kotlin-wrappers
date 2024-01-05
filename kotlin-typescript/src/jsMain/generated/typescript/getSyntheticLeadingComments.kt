@@ -4,6 +4,6 @@
 
 package typescript
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 external fun getSyntheticLeadingComments(node: Node): ReadonlyArray<SynthesizedComment>?

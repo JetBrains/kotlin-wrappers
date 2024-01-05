@@ -4,7 +4,7 @@
 
 package cesium
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /**
  * Uses the Tridiagonal Matrix Algorithm, also known as the Thomas Algorithm, to solve

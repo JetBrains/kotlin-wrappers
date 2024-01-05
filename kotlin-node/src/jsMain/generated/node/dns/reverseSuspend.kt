@@ -5,7 +5,7 @@ package node.dns
 import js.promise.await
 
 
-suspend fun reverse(ip: String): js.core.ReadonlyArray<String> =
+suspend fun reverse(ip: String): js.array.ReadonlyArray<String> =
     reverseAsync(
         ip
     ).await()

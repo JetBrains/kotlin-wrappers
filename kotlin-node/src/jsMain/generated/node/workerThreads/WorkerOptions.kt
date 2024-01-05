@@ -11,20 +11,20 @@ sealed external interface WorkerOptions {
      * but the values will be available on the global `process.argv` as if they
      * were passed as CLI options to the script.
      */
-    var argv: js.core.ReadonlyArray<Any?>?
+    var argv: js.array.ReadonlyArray<Any?>?
     var env: Any? /* NodeJS.Dict<string> | typeof SHARE_ENV | undefined */
     var eval: Boolean?
     var workerData: Any?
     var stdin: Boolean?
     var stdout: Boolean?
     var stderr: Boolean?
-    var execArgv: js.core.ReadonlyArray<String>?
+    var execArgv: js.array.ReadonlyArray<String>?
     var resourceLimits: ResourceLimits?
 
     /**
      * Additional data to send in the first worker message.
      */
-    var transferList: js.core.ReadonlyArray<TransferListItem>?
+    var transferList: js.array.ReadonlyArray<TransferListItem>?
 
     /**
      * @default true

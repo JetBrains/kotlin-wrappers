@@ -125,7 +125,7 @@ external class IncomingMessage : NodeEventEmitter {
      * the associated values. Header names are not lowercased, and duplicates are not
      * merged.
      */
-    var rawHeaders: js.core.ReadonlyArray<String>
+    var rawHeaders: js.array.ReadonlyArray<String>
 
     /**
      * An `Integer` indicating the HTTP response status code.

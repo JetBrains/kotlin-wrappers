@@ -2,7 +2,7 @@
 
 package web.rtc
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 sealed external interface RTCConfiguration {
     var bundlePolicy: RTCBundlePolicy?

@@ -24,7 +24,7 @@ external interface LaunchItems {
      *
      * @platform win32
      */
-    var args: js.core.ReadonlyArray<String>
+    var args: js.array.ReadonlyArray<String>
 
     /**
      * one of `user` or `machine`. Indicates whether the registry entry is under

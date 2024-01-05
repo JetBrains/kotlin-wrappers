@@ -25,7 +25,7 @@ external class TouchBarSegmentedControl : NodeEventEmitter {
      * Updating this value immediately updates the control in the touch bar. Updating
      * deep properties inside this array **does not update the touch bar**.
      */
-    var segments: js.core.ReadonlyArray<SegmentedControlSegment>
+    var segments: js.array.ReadonlyArray<SegmentedControlSegment>
 
     /**
      * A `string` representing the controls current segment style. Updating this value

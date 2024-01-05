@@ -2,7 +2,7 @@
 
 package web.media.session
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaMetadata)

@@ -18,5 +18,5 @@ external interface JumpListSettings {
      * Windows will not display any custom category that contains any of the removed
      * items.
      */
-    var removedItems: js.core.ReadonlyArray<JumpListItem>
+    var removedItems: js.array.ReadonlyArray<JumpListItem>
 }

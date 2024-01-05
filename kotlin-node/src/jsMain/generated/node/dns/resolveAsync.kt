@@ -21,46 +21,46 @@ import js.promise.Promise
  */
 
 @JsName("resolve")
-external fun resolveAsync(hostname: String): Promise<js.core.ReadonlyArray<String>>
+external fun resolveAsync(hostname: String): Promise<js.array.ReadonlyArray<String>>
 
 
 @JsName("resolve")
-external fun resolveAsync(hostname: String, rrtype: ResourceRecordType.A): Promise<js.core.ReadonlyArray<String>>
+external fun resolveAsync(hostname: String, rrtype: ResourceRecordType.A): Promise<js.array.ReadonlyArray<String>>
 
 
 @JsName("resolve")
-external fun resolveAsync(hostname: String, rrtype: ResourceRecordType.AAAA): Promise<js.core.ReadonlyArray<String>>
+external fun resolveAsync(hostname: String, rrtype: ResourceRecordType.AAAA): Promise<js.array.ReadonlyArray<String>>
 
 
 @JsName("resolve")
-external fun resolveAsync(hostname: String, rrtype: ResourceRecordType.ANY): Promise<js.core.ReadonlyArray<AnyRecord>>
+external fun resolveAsync(hostname: String, rrtype: ResourceRecordType.ANY): Promise<js.array.ReadonlyArray<AnyRecord>>
 
 
 @JsName("resolve")
-external fun resolveAsync(hostname: String, rrtype: ResourceRecordType.CAA): Promise<js.core.ReadonlyArray<CaaRecord>>
+external fun resolveAsync(hostname: String, rrtype: ResourceRecordType.CAA): Promise<js.array.ReadonlyArray<CaaRecord>>
 
 
 @JsName("resolve")
-external fun resolveAsync(hostname: String, rrtype: ResourceRecordType.CNAME): Promise<js.core.ReadonlyArray<String>>
+external fun resolveAsync(hostname: String, rrtype: ResourceRecordType.CNAME): Promise<js.array.ReadonlyArray<String>>
 
 
 @JsName("resolve")
-external fun resolveAsync(hostname: String, rrtype: ResourceRecordType.MX): Promise<js.core.ReadonlyArray<MxRecord>>
+external fun resolveAsync(hostname: String, rrtype: ResourceRecordType.MX): Promise<js.array.ReadonlyArray<MxRecord>>
 
 
 @JsName("resolve")
 external fun resolveAsync(
     hostname: String,
     rrtype: ResourceRecordType.NAPTR,
-): Promise<js.core.ReadonlyArray<NaptrRecord>>
+): Promise<js.array.ReadonlyArray<NaptrRecord>>
 
 
 @JsName("resolve")
-external fun resolveAsync(hostname: String, rrtype: ResourceRecordType.NS): Promise<js.core.ReadonlyArray<String>>
+external fun resolveAsync(hostname: String, rrtype: ResourceRecordType.NS): Promise<js.array.ReadonlyArray<String>>
 
 
 @JsName("resolve")
-external fun resolveAsync(hostname: String, rrtype: ResourceRecordType.PTR): Promise<js.core.ReadonlyArray<String>>
+external fun resolveAsync(hostname: String, rrtype: ResourceRecordType.PTR): Promise<js.array.ReadonlyArray<String>>
 
 
 @JsName("resolve")
@@ -68,14 +68,14 @@ external fun resolveAsync(hostname: String, rrtype: ResourceRecordType.SOA): Pro
 
 
 @JsName("resolve")
-external fun resolveAsync(hostname: String, rrtype: ResourceRecordType.SRV): Promise<js.core.ReadonlyArray<SrvRecord>>
+external fun resolveAsync(hostname: String, rrtype: ResourceRecordType.SRV): Promise<js.array.ReadonlyArray<SrvRecord>>
 
 
 @JsName("resolve")
 external fun resolveAsync(
     hostname: String,
     rrtype: ResourceRecordType.TXT,
-): Promise<js.core.ReadonlyArray<js.core.ReadonlyArray<String>>>
+): Promise<js.array.ReadonlyArray<js.array.ReadonlyArray<String>>>
 
 
 @JsName("resolve")

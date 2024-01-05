@@ -58,4 +58,4 @@ package node.os
  * ```
  * @since v0.6.0
  */
-external fun networkInterfaces(): node.Dict<js.core.ReadonlyArray<NetworkInterfaceInfo>>
+external fun networkInterfaces(): node.Dict<js.array.ReadonlyArray<NetworkInterfaceInfo>>

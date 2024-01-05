@@ -15,5 +15,5 @@ package node.dns
  */
 external fun reverse(
     ip: String,
-    callback: (err: node.ErrnoException?, hostnames: js.core.ReadonlyArray<String>) -> Unit,
+    callback: (err: node.ErrnoException?, hostnames: js.array.ReadonlyArray<String>) -> Unit,
 ): Unit

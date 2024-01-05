@@ -4,7 +4,7 @@
 
 package node.fs
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /**
  * For detailed information, see the documentation of the asynchronous version of

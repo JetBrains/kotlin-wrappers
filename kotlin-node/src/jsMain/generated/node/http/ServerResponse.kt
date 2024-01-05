@@ -169,14 +169,14 @@ external class ServerResponse<Request : IncomingMessage /* default is IncomingMe
     fun writeHead(
         statusCode: Number,
         statusMessage: String = definedExternally,
-        headers: js.core.ReadonlyArray<OutgoingHttpHeader> = definedExternally,
+        headers: js.array.ReadonlyArray<OutgoingHttpHeader> = definedExternally,
     ): Unit /* this */
 
     fun writeHead(statusCode: Number, headers: OutgoingHttpHeaders = definedExternally): Unit /* this */
 
     fun writeHead(
         statusCode: Number,
-        headers: js.core.ReadonlyArray<OutgoingHttpHeader> = definedExternally,
+        headers: js.array.ReadonlyArray<OutgoingHttpHeader> = definedExternally,
     ): Unit /* this */
 
     /**

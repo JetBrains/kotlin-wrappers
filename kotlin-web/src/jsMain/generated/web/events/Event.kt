@@ -6,7 +6,7 @@
 
 package web.events
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import web.time.DOMHighResTimeStamp
 
 external interface EventInit {

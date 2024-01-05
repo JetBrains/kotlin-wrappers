@@ -124,7 +124,7 @@ open external class IncomingMessage : node.stream.Readable {
      * ```
      * @since v18.3.0, v16.17.0
      */
-    var headersDistinct: node.Dict<js.core.ReadonlyArray<String>>
+    var headersDistinct: node.Dict<js.array.ReadonlyArray<String>>
 
     /**
      * The raw request/response headers list exactly as they were received.
@@ -150,7 +150,7 @@ open external class IncomingMessage : node.stream.Readable {
      * ```
      * @since v0.11.6
      */
-    var rawHeaders: js.core.ReadonlyArray<String>
+    var rawHeaders: js.array.ReadonlyArray<String>
 
     /**
      * The request/response trailers object. Only populated at the `'end'` event.
@@ -163,14 +163,14 @@ open external class IncomingMessage : node.stream.Readable {
      * Only populated at the `'end'` event.
      * @since v18.3.0, v16.17.0
      */
-    var trailersDistinct: node.Dict<js.core.ReadonlyArray<String>>
+    var trailersDistinct: node.Dict<js.array.ReadonlyArray<String>>
 
     /**
      * The raw request/response trailer keys and values exactly as they were
      * received. Only populated at the `'end'` event.
      * @since v0.11.6
      */
-    var rawTrailers: js.core.ReadonlyArray<String>
+    var rawTrailers: js.array.ReadonlyArray<String>
 
     /**
      * Calls `message.socket.setTimeout(msecs, callback)`.

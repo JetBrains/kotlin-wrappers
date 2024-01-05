@@ -42,7 +42,7 @@ external class WebFrameMain : NodeEventEmitter {
     fun postMessage(
         channel: String,
         message: Any?,
-        transfer: js.core.ReadonlyArray<MessagePortMain> = definedExternally,
+        transfer: js.array.ReadonlyArray<MessagePortMain> = definedExternally,
     ): Unit
 
     /**
@@ -60,20 +60,20 @@ external class WebFrameMain : NodeEventEmitter {
      * The renderer process can handle the message by listening to `channel` with the
      * `ipcRenderer` module.
      */
-    fun send(channel: String, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Unit
+    fun send(channel: String, vararg args: Any? /* js.array.ReadonlyArray<Any?> */): Unit
 
     /**
      * A `WebFrameMain[]` collection containing the direct descendents of `frame`.
      *
      */
-    val frames: js.core.ReadonlyArray<WebFrameMain>
+    val frames: js.array.ReadonlyArray<WebFrameMain>
 
     /**
      * A `WebFrameMain[]` collection containing every frame in the subtree of `frame`,
      * including itself. This can be useful when traversing through all frames.
      *
      */
-    val framesInSubtree: js.core.ReadonlyArray<WebFrameMain>
+    val framesInSubtree: js.array.ReadonlyArray<WebFrameMain>
 
     /**
      * An `Integer` representing the id of the frame's internal FrameTreeNode instance.

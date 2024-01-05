@@ -14,4 +14,4 @@ import js.promise.Promise
  */
 
 @JsName("resolveCname")
-external fun resolveCnameAsync(hostname: String): Promise<js.core.ReadonlyArray<String>>
+external fun resolveCnameAsync(hostname: String): Promise<js.array.ReadonlyArray<String>>

@@ -2,7 +2,7 @@
 
 package typescript
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 sealed external interface SyntaxList : Node {
     override var kind: SyntaxKind.SyntaxList

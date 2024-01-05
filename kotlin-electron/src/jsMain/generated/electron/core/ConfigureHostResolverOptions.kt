@@ -29,7 +29,7 @@ external interface ConfigureHostResolverOptions {
      * automatically upgrade to DoH unless DoH is explicitly disabled, even if there
      * are no DoH servers provided in this list.
      */
-    var secureDnsServers: js.core.ReadonlyArray<String>?
+    var secureDnsServers: js.array.ReadonlyArray<String>?
 
     /**
      * Controls whether additional DNS query types, e.g. HTTPS (DNS type 65) will be

@@ -41,7 +41,7 @@ external class MessagePortMain : NodeEventEmitter {
      * Sends a message from the port, and optionally, transfers ownership of objects to
      * other browsing contexts.
      */
-    fun postMessage(message: Any?, transfer: js.core.ReadonlyArray<MessagePortMain> = definedExternally): Unit
+    fun postMessage(message: Any?, transfer: js.array.ReadonlyArray<MessagePortMain> = definedExternally): Unit
 
     /**
      * Starts the sending of messages queued on the port. Messages will be queued until

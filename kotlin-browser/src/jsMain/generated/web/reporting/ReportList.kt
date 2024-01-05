@@ -2,6 +2,6 @@
 
 package web.reporting
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 typealias ReportList = ReadonlyArray<Report>

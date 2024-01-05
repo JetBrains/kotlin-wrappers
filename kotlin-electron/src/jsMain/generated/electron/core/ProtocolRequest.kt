@@ -9,6 +9,6 @@ external interface ProtocolRequest {
     var headers: js.objects.ReadonlyRecord<String, String>
     var method: String
     var referrer: String
-    var uploadData: js.core.ReadonlyArray<UploadData>?
+    var uploadData: js.array.ReadonlyArray<UploadData>?
     var url: String
 }

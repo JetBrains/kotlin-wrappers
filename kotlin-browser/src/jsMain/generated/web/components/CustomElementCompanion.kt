@@ -2,7 +2,7 @@
 
 package web.components
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 external interface CustomElementCompanion {
     val formAssociated: Boolean?

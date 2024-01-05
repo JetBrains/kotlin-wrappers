@@ -8,7 +8,7 @@
 
 package cesium
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /**
  * A set of 4-dimensional coordinates used to represent rotation in 3-dimensional space.

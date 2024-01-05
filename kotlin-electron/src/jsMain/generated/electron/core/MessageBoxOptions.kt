@@ -23,7 +23,7 @@ external interface MessageBoxOptions {
      * Array of texts for buttons. On Windows, an empty array will result in one button
      * labeled "OK".
      */
-    var buttons: js.core.ReadonlyArray<String>?
+    var buttons: js.array.ReadonlyArray<String>?
 
     /**
      * Index of the button in the buttons array which will be selected by default when

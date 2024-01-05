@@ -16,7 +16,7 @@ sealed external interface ReadLineOptions {
      * check, otherwise the history caching mechanism is not initialized at all.
      * @default []
      */
-    var history: js.core.ReadonlyArray<String>?
+    var history: js.array.ReadonlyArray<String>?
     var historySize: Double?
     var prompt: String?
     var crlfDelay: Double?

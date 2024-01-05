@@ -2,7 +2,7 @@
 
 package tanstack.table.core
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 external interface ColumnDefBase<TData : RowData, TValue> : ColumnDefExtensions<TData, TValue> {
     var getUniqueValues: AccessorFn<TData, ReadonlyArray<Any?>>?

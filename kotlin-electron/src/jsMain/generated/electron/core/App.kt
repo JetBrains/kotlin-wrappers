@@ -325,7 +325,7 @@ external interface App : node.events.EventEmitter {
             /**
              * An array of the second instance's command line arguments
              */
-            argv: js.core.ReadonlyArray<String>,
+            argv: js.array.ReadonlyArray<String>,
             /**
              * The second instance's working directory
              */
@@ -347,7 +347,7 @@ external interface App : node.events.EventEmitter {
      */
     fun on(
         event: AppEvent.SELECT_CLIENT_CERTIFICATE,
-        listener: (event: Event, webContents: WebContents, url: String, certificateList: js.core.ReadonlyArray<Certificate>, callback: (certificate: Certificate? /* use undefined for default */) -> Unit) -> Unit,
+        listener: (event: Event, webContents: WebContents, url: String, certificateList: js.array.ReadonlyArray<Certificate>, callback: (certificate: Certificate? /* use undefined for default */) -> Unit) -> Unit,
     ): Unit /* this */
 
     /**
@@ -560,7 +560,7 @@ external interface App : node.events.EventEmitter {
             /**
              * An array of the second instance's command line arguments
              */
-            argv: js.core.ReadonlyArray<String>,
+            argv: js.array.ReadonlyArray<String>,
             /**
              * The second instance's working directory
              */
@@ -574,7 +574,7 @@ external interface App : node.events.EventEmitter {
 
     fun once(
         event: AppEvent.SELECT_CLIENT_CERTIFICATE,
-        listener: (event: Event, webContents: WebContents, url: String, certificateList: js.core.ReadonlyArray<Certificate>, callback: (certificate: Certificate? /* use undefined for default */) -> Unit) -> Unit,
+        listener: (event: Event, webContents: WebContents, url: String, certificateList: js.array.ReadonlyArray<Certificate>, callback: (certificate: Certificate? /* use undefined for default */) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun once(event: AppEvent.SESSION_CREATED, listener: (session: Session) -> Unit): Unit /* this */
@@ -745,7 +745,7 @@ external interface App : node.events.EventEmitter {
             /**
              * An array of the second instance's command line arguments
              */
-            argv: js.core.ReadonlyArray<String>,
+            argv: js.array.ReadonlyArray<String>,
             /**
              * The second instance's working directory
              */
@@ -759,7 +759,7 @@ external interface App : node.events.EventEmitter {
 
     fun addListener(
         event: AppEvent.SELECT_CLIENT_CERTIFICATE,
-        listener: (event: Event, webContents: WebContents, url: String, certificateList: js.core.ReadonlyArray<Certificate>, callback: (certificate: Certificate? /* use undefined for default */) -> Unit) -> Unit,
+        listener: (event: Event, webContents: WebContents, url: String, certificateList: js.array.ReadonlyArray<Certificate>, callback: (certificate: Certificate? /* use undefined for default */) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun addListener(event: AppEvent.SESSION_CREATED, listener: (session: Session) -> Unit): Unit /* this */
@@ -930,7 +930,7 @@ external interface App : node.events.EventEmitter {
             /**
              * An array of the second instance's command line arguments
              */
-            argv: js.core.ReadonlyArray<String>,
+            argv: js.array.ReadonlyArray<String>,
             /**
              * The second instance's working directory
              */
@@ -944,7 +944,7 @@ external interface App : node.events.EventEmitter {
 
     fun removeListener(
         event: AppEvent.SELECT_CLIENT_CERTIFICATE,
-        listener: (event: Event, webContents: WebContents, url: String, certificateList: js.core.ReadonlyArray<Certificate>, callback: (certificate: Certificate? /* use undefined for default */) -> Unit) -> Unit,
+        listener: (event: Event, webContents: WebContents, url: String, certificateList: js.array.ReadonlyArray<Certificate>, callback: (certificate: Certificate? /* use undefined for default */) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun removeListener(event: AppEvent.SESSION_CREATED, listener: (session: Session) -> Unit): Unit /* this */
@@ -1092,7 +1092,7 @@ external interface App : node.events.EventEmitter {
      * Array of `ProcessMetric` objects that correspond to memory and CPU usage
      * statistics of all the processes associated with the app.
      */
-    fun getAppMetrics(): js.core.ReadonlyArray<ProcessMetric>
+    fun getAppMetrics(): js.array.ReadonlyArray<ProcessMetric>
 
     /**
      * The current application directory.
@@ -1280,7 +1280,7 @@ external interface App : node.events.EventEmitter {
      * country code `FI` is used as the country code for preferred system languages
      * that do not have associated countries in the language name.
      */
-    fun getPreferredSystemLanguages(): js.core.ReadonlyArray<String>
+    fun getPreferredSystemLanguages(): js.array.ReadonlyArray<String>
 
     /**
      * The current system locale. On Windows and Linux, it is fetched using Chromium's
@@ -1370,7 +1370,7 @@ external interface App : node.events.EventEmitter {
     fun isDefaultProtocolClient(
         protocol: String,
         path: String = definedExternally,
-        args: js.core.ReadonlyArray<String> = definedExternally,
+        args: js.array.ReadonlyArray<String> = definedExternally,
     ): Boolean
 
     /**
@@ -1497,7 +1497,7 @@ external interface App : node.events.EventEmitter {
     fun removeAsDefaultProtocolClient(
         protocol: String,
         path: String = definedExternally,
-        args: js.core.ReadonlyArray<String> = definedExternally,
+        args: js.array.ReadonlyArray<String> = definedExternally,
     ): Boolean
 
     /**
@@ -1617,7 +1617,7 @@ external interface App : node.events.EventEmitter {
     fun setAsDefaultProtocolClient(
         protocol: String,
         path: String = definedExternally,
-        args: js.core.ReadonlyArray<String> = definedExternally,
+        args: js.array.ReadonlyArray<String> = definedExternally,
     ): Boolean
 
     /**
@@ -1673,7 +1673,7 @@ external interface App : node.events.EventEmitter {
      *
      * @platform win32
      */
-    fun setJumpList(categories: js.core.ReadonlyArray<JumpListCategory>?): (AppSetJumpListResult)
+    fun setJumpList(categories: js.array.ReadonlyArray<JumpListCategory>?): (AppSetJumpListResult)
 
     /**
      * To work with Electron's `autoUpdater` on Windows, which uses Squirrel, you'll
@@ -1740,7 +1740,7 @@ external interface App : node.events.EventEmitter {
      *
      * @platform win32
      */
-    fun setUserTasks(tasks: js.core.ReadonlyArray<Task>): Boolean
+    fun setUserTasks(tasks: js.array.ReadonlyArray<Task>): Boolean
 
     /**
      * Shows application windows after they were hidden. Does not automatically focus

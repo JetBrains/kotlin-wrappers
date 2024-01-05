@@ -5,6 +5,6 @@
 package remix.run.router
 
 external fun createStaticHandler(
-    routes: js.core.ReadonlyArray<AgnosticRouteObject>,
+    routes: js.array.ReadonlyArray<AgnosticRouteObject>,
     opts: CreateStaticHandlerOptions = definedExternally,
 ): StaticHandler

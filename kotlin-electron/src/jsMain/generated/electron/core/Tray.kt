@@ -115,7 +115,7 @@ open external class Tray : NodeEventEmitter {
             /**
              * The paths of the dropped files.
              */
-            files: js.core.ReadonlyArray<String>,
+            files: js.array.ReadonlyArray<String>,
         ) -> Unit,
     ): Unit /* this */
 
@@ -274,7 +274,7 @@ open external class Tray : NodeEventEmitter {
             /**
              * The paths of the dropped files.
              */
-            files: js.core.ReadonlyArray<String>,
+            files: js.array.ReadonlyArray<String>,
         ) -> Unit,
     ): Unit /* this */
 
@@ -395,7 +395,7 @@ open external class Tray : NodeEventEmitter {
             /**
              * The paths of the dropped files.
              */
-            files: js.core.ReadonlyArray<String>,
+            files: js.array.ReadonlyArray<String>,
         ) -> Unit,
     ): Unit /* this */
 
@@ -516,7 +516,7 @@ open external class Tray : NodeEventEmitter {
             /**
              * The paths of the dropped files.
              */
-            files: js.core.ReadonlyArray<String>,
+            files: js.array.ReadonlyArray<String>,
         ) -> Unit,
     ): Unit /* this */
 

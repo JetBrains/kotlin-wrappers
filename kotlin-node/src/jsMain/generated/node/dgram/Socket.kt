@@ -4,7 +4,7 @@
 
 package node.dgram
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import js.typedarrays.Uint8Array
 import node.events.EventEmitter
 import node.net.AddressInfo

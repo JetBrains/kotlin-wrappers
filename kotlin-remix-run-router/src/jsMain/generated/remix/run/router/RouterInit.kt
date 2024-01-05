@@ -10,7 +10,7 @@ import web.window.Window
  */
 
 sealed external interface RouterInit {
-    var routes: js.core.ReadonlyArray<AgnosticRouteObject>
+    var routes: js.array.ReadonlyArray<AgnosticRouteObject>
     var history: History
     var basename: String?
 

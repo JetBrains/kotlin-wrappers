@@ -2,7 +2,7 @@
 
 package web.payment
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 sealed external interface PaymentDetailsBase {
     var displayItems: ReadonlyArray<PaymentItem>?

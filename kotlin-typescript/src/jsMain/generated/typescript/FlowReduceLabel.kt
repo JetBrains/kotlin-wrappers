@@ -2,7 +2,7 @@
 
 package typescript
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 sealed external interface FlowReduceLabel : FlowNodeBase, Union.FlowReduceLabel_ {
     var target: FlowLabel

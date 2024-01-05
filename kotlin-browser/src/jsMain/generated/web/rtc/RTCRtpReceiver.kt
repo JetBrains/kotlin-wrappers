@@ -2,7 +2,7 @@
 
 package web.rtc
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import js.promise.Promise
 import web.media.streams.MediaStreamTrack
 

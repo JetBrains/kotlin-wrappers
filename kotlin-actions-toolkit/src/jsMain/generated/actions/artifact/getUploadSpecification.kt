@@ -4,7 +4,7 @@
 
 package actions.artifact
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 external fun getUploadSpecification(
     artifactName: String,

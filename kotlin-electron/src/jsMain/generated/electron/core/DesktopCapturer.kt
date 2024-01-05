@@ -17,5 +17,5 @@ external interface DesktopCapturer {
      * Catalina or higher, which can detected by
      * `systemPreferences.getMediaAccessStatus`.
      */
-    fun getSources(options: SourcesOptions): Promise<js.core.ReadonlyArray<DesktopCapturerSource>>
+    fun getSources(options: SourcesOptions): Promise<js.array.ReadonlyArray<DesktopCapturerSource>>
 }

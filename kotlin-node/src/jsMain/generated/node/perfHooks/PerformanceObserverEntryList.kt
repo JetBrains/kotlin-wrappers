@@ -45,7 +45,7 @@ sealed external interface PerformanceObserverEntryList {
      * ```
      * @since v8.5.0
      */
-    fun getEntries(): js.core.ReadonlyArray<PerformanceEntry>
+    fun getEntries(): js.array.ReadonlyArray<PerformanceEntry>
 
     /**
      * Returns a list of `PerformanceEntry` objects in chronological order
@@ -96,7 +96,7 @@ sealed external interface PerformanceObserverEntryList {
      * ```
      * @since v8.5.0
      */
-    fun getEntriesByName(name: String, type: EntryType = definedExternally): js.core.ReadonlyArray<PerformanceEntry>
+    fun getEntriesByName(name: String, type: EntryType = definedExternally): js.array.ReadonlyArray<PerformanceEntry>
 
     /**
      * Returns a list of `PerformanceEntry` objects in chronological order
@@ -137,5 +137,5 @@ sealed external interface PerformanceObserverEntryList {
      * ```
      * @since v8.5.0
      */
-    fun getEntriesByType(type: EntryType): js.core.ReadonlyArray<PerformanceEntry>
+    fun getEntriesByType(type: EntryType): js.array.ReadonlyArray<PerformanceEntry>
 }

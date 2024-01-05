@@ -4,6 +4,6 @@
 
 package typescript
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 external fun getSyntheticTrailingComments(node: Node): ReadonlyArray<SynthesizedComment>?

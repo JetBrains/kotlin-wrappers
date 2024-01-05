@@ -174,7 +174,7 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
      * ```
      * @since v15.13.0, v14.17.0
      */
-    fun getRawHeaderNames(): js.core.ReadonlyArray<String>
+    fun getRawHeaderNames(): js.array.ReadonlyArray<String>
 
     /**
      * @deprecated

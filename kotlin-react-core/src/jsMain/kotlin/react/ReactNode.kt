@@ -4,7 +4,7 @@
 
 package react
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 @JsExternalInheritorsOnly
 sealed external interface ReactNode

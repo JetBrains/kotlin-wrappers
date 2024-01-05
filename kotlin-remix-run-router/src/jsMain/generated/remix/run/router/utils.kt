@@ -12,7 +12,7 @@ external val immutableRouteKeys: js.collections.ReadonlySet<ImmutableRouteKey>
 /**
  * @private
  */
-external val joinPaths: (paths: js.core.ReadonlyArray<String>) -> String
+external val joinPaths: (paths: js.array.ReadonlyArray<String>) -> String
 
 /**
  * @private

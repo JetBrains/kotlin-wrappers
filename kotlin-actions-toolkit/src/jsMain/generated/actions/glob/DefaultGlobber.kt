@@ -4,7 +4,7 @@
 
 package actions.glob
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import js.promise.Promise
 
 sealed external class DefaultGlobber : Globber {

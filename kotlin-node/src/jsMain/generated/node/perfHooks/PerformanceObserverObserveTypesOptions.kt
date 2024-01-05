@@ -2,7 +2,7 @@
 
 package node.perfHooks
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 
 sealed external interface PerformanceObserverObserveTypesOptions {

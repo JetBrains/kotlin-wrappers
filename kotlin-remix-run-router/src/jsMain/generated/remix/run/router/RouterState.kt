@@ -24,7 +24,7 @@ sealed external interface RouterState {
     /**
      * The current set of route matches
      */
-    var matches: js.core.ReadonlyArray<AgnosticDataRouteMatch>
+    var matches: js.array.ReadonlyArray<AgnosticDataRouteMatch>
 
     /**
      * Tracks whether we've completed our initial data load

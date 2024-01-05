@@ -244,7 +244,7 @@
         "buffer/Buffer.kt": [
             "js.buffer.ArrayBuffer",
             "js.buffer.SharedArrayBuffer",
-            "js.core.ReadonlyArray",
+            "js.array.ReadonlyArray",
             "js.typedarrays.Uint8Array"
         ],
         "buffer/File.kt": [
@@ -302,21 +302,21 @@
             "js.promise.Promise"
         ],
         "childProcess/execFile.kt": [
-            "js.core.ReadonlyArray"
+            "js.array.ReadonlyArray"
         ],
         "childProcess/execFileSync.kt": [
-            "js.core.ReadonlyArray"
+            "js.array.ReadonlyArray"
         ],
         "childProcess/fork.kt": [
-            "js.core.ReadonlyArray"
+            "js.array.ReadonlyArray"
         ],
         "childProcess/spawn.kt": [
-            "js.core.ReadonlyArray",
+            "js.array.ReadonlyArray",
             "node.stream.Readable",
             "node.stream.Writable"
         ],
         "childProcess/spawnSync.kt": [
-            "js.core.ReadonlyArray"
+            "js.array.ReadonlyArray"
         ],
         "crypto/Cipher.kt": [
             "node.stream.TransformOptions"
@@ -355,7 +355,7 @@
             "js.buffer.ArrayBuffer"
         ],
         "dgram/Socket.kt": [
-            "js.core.ReadonlyArray",
+            "js.array.ReadonlyArray",
             "js.typedarrays.Uint8Array",
             "node.events.EventEmitter",
             "node.net.AddressInfo"
@@ -364,7 +364,7 @@
             "node.events.Abortable"
         ],
         "dns/setServers.kt": [
-            "js.core.ReadonlyArray"
+            "js.array.ReadonlyArray"
         ],
         "dns/ResolverAsync.kt": [
             "js.promise.await"
@@ -384,7 +384,7 @@
             "js.promise.Promise"
         ],
         "fs/FileHandleAsync.kt": [
-            "js.core.ReadonlyArray",
+            "js.array.ReadonlyArray",
             "js.promise.await",
             "js.typedarrays.Uint8Array",
             "web.streams.ReadableStream",
@@ -457,10 +457,10 @@
             "web.url.URL"
         ],
         "fs/readv.kt": [
-            "js.core.ReadonlyArray"
+            "js.array.ReadonlyArray"
         ],
         "fs/readvSync.kt": [
-            "js.core.ReadonlyArray"
+            "js.array.ReadonlyArray"
         ],
         "fs/realpath/native.kt": [
             "node.fs.BufferEncodingOption",
@@ -487,10 +487,10 @@
             "node.events.Abortable"
         ],
         "fs/writev.kt": [
-            "js.core.ReadonlyArray"
+            "js.array.ReadonlyArray"
         ],
         "fs/writevSync.kt": [
-            "js.core.ReadonlyArray"
+            "js.array.ReadonlyArray"
         ],
         "http/Agent.kt": [
             "node.events.EventEmitter",
@@ -513,7 +513,7 @@
             "node.net.Socket"
         ],
         "http/OutgoingMessage.kt": [
-            "js.core.ReadonlyArray",
+            "js.array.ReadonlyArray",
             "node.net.Socket"
         ],
         "http/Server.kt": [
@@ -551,13 +551,13 @@
             "node.asyncHooks.AsyncResource"
         ],
         "perfHooks/PerformanceObserverObserveTypesOptions.kt": [
-            "js.core.ReadonlyArray"
+            "js.array.ReadonlyArray"
         ],
         "process/MultipleResolveListener.kt": [
             "js.promise.Promise"
         ],
         "process/Process.interface.kt": [
-            "js.core.ReadonlyArray",
+            "js.array.ReadonlyArray",
             "js.collections.ReadonlySet",
             "js.promise.Promise",
             "node.Module",
@@ -607,10 +607,10 @@
             "node.events.Abortable"
         ],
         "stream/pipeline.kt": [
-            "js.core.ReadonlyArray"
+            "js.array.ReadonlyArray"
         ],
         "stream/pipelineAsync.kt": [
-            "js.core.ReadonlyArray"
+            "js.array.ReadonlyArray"
         ],
         "stream/PipelineDestinationIterableFunction.kt": [
             "js.iterable.AsyncIterable"
@@ -623,7 +623,7 @@
             "web.abort.AbortSignal"
         ],
         "stream/pipelineSuspend.kt": [
-            "js.core.ReadonlyArray"
+            "js.array.ReadonlyArray"
         ],
         "stream/Readable.kt": [
             "js.typedarrays.Uint8Array",
@@ -645,7 +645,7 @@
             "node.crypto.X509Certificate"
         ],
         "tls/namespace.kt": [
-            "js.core.ReadonlyArray"
+            "js.array.ReadonlyArray"
         ],
         "url/fileURLToPath.kt": [
             "web.url.URL"
@@ -664,7 +664,7 @@
             "node.querystring.ParsedUrlQuery"
         ],
         "workerThreads/Worker.kt": [
-            "js.core.ReadonlyArray",
+            "js.array.ReadonlyArray",
             "js.promise.Promise",
             "web.url.URL",
             "node.events.EventEmitter",

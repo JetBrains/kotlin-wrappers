@@ -2,7 +2,7 @@
 
 package ringui
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import react.ComponentClass
 import react.PropsWithClassName
 

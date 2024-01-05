@@ -4,9 +4,9 @@
 
 package web.assembly
 
+import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
 import js.buffer.BufferSource
-import js.core.ReadonlyArray
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/Module)

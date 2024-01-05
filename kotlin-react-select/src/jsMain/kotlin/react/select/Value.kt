@@ -5,7 +5,7 @@
 
 package react.select
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 sealed external interface Value<T : Any>
 

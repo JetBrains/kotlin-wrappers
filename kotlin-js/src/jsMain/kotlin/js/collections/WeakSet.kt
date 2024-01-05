@@ -1,6 +1,6 @@
 package js.collections
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 external class WeakSet<in T>(
     values: ReadonlyArray<T>? = definedExternally,

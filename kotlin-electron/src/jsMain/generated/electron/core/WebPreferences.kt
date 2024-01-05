@@ -207,7 +207,7 @@ external interface WebPreferences {
      * process of this app.  Useful for passing small bits of data down to renderer
      * process preload scripts.
      */
-    var additionalArguments: js.core.ReadonlyArray<String>?
+    var additionalArguments: js.array.ReadonlyArray<String>?
 
     /**
      * Whether to enable browser style consecutive dialog protection. Default is

@@ -12,5 +12,5 @@ package node.dns
  */
 external fun resolveMx(
     hostname: String,
-    callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<MxRecord>) -> Unit,
+    callback: (err: node.ErrnoException?, addresses: js.array.ReadonlyArray<MxRecord>) -> Unit,
 ): Unit

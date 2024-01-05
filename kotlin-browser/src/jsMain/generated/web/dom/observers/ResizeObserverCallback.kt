@@ -2,7 +2,7 @@
 
 package web.dom.observers
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 typealias ResizeObserverCallback = (
     entries: ReadonlyArray<ResizeObserverEntry>,

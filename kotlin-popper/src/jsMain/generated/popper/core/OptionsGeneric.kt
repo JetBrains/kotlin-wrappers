@@ -2,7 +2,7 @@
 
 package popper.core
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 external interface OptionsGeneric<TModifier> {
     var placement: Placement

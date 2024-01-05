@@ -13,4 +13,4 @@ import js.promise.Promise
  */
 
 @JsName("resolveNs")
-external fun resolveNsAsync(hostname: String): Promise<js.core.ReadonlyArray<String>>
+external fun resolveNsAsync(hostname: String): Promise<js.array.ReadonlyArray<String>>

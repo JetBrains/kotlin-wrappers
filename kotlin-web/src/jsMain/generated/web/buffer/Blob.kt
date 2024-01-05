@@ -2,9 +2,9 @@
 
 package web.buffer
 
+import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
 import js.core.JsLong
-import js.core.ReadonlyArray
 import js.promise.Promise
 import js.typedarrays.Uint8Array
 import web.streams.ReadableStream

@@ -2,7 +2,7 @@
 
 package mui.base
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import popper.core.Modifier
 import web.cssom.ClassName
 import web.dom.Element

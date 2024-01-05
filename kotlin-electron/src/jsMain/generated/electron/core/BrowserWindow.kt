@@ -703,12 +703,12 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @experimental
      */
-    fun getBrowserViews(): js.core.ReadonlyArray<BrowserView>
+    fun getBrowserViews(): js.array.ReadonlyArray<BrowserView>
 
     /**
      * All child windows.
      */
-    fun getChildWindows(): js.core.ReadonlyArray<BrowserWindow>
+    fun getChildWindows(): js.array.ReadonlyArray<BrowserWindow>
 
     /**
      * The `bounds` of the window's client area as `Object`.
@@ -718,12 +718,12 @@ open external class BrowserWindow : NodeEventEmitter {
     /**
      * Contains the window's client area's width and height.
      */
-    fun getContentSize(): js.core.ReadonlyArray<Double>
+    fun getContentSize(): js.array.ReadonlyArray<Double>
 
     /**
      * Contains the window's maximum width and height.
      */
-    fun getMaximumSize(): js.core.ReadonlyArray<Double>
+    fun getMaximumSize(): js.array.ReadonlyArray<Double>
 
     /**
      * Window id in the format of DesktopCapturerSource's id. For example
@@ -739,7 +739,7 @@ open external class BrowserWindow : NodeEventEmitter {
     /**
      * Contains the window's minimum width and height.
      */
-    fun getMinimumSize(): js.core.ReadonlyArray<Double>
+    fun getMinimumSize(): js.array.ReadonlyArray<Double>
 
     /**
      * The platform-specific handle of the window.
@@ -773,7 +773,7 @@ open external class BrowserWindow : NodeEventEmitter {
     /**
      * Contains the window's current position.
      */
-    fun getPosition(): js.core.ReadonlyArray<Double>
+    fun getPosition(): js.array.ReadonlyArray<Double>
 
     /**
      * The pathname of the file the window represents.
@@ -785,7 +785,7 @@ open external class BrowserWindow : NodeEventEmitter {
     /**
      * Contains the window's width and height.
      */
-    fun getSize(): js.core.ReadonlyArray<Double>
+    fun getSize(): js.array.ReadonlyArray<Double>
 
     /**
      * The title of the native window.
@@ -1441,7 +1441,7 @@ open external class BrowserWindow : NodeEventEmitter {
      * @experimental
      * @platform win32,linux
      */
-    fun setShape(rects: js.core.ReadonlyArray<Rectangle>): Unit
+    fun setShape(rects: js.array.ReadonlyArray<Rectangle>): Unit
 
     /**
      * Changes the attachment point for sheets on macOS. By default, sheets are
@@ -1511,7 +1511,7 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform win32
      */
-    fun setThumbarButtons(buttons: js.core.ReadonlyArray<ThumbarButton>): Boolean
+    fun setThumbarButtons(buttons: js.array.ReadonlyArray<ThumbarButton>): Boolean
 
     /**
      * Sets the region of the window to show as the thumbnail image displayed when
@@ -1829,7 +1829,7 @@ open external class BrowserWindow : NodeEventEmitter {
         /**
          * An array of all opened browser windows.
          */
-        fun getAllWindows(): js.core.ReadonlyArray<BrowserWindow>
+        fun getAllWindows(): js.array.ReadonlyArray<BrowserWindow>
 
         /**
          * The window that is focused in this application, otherwise returns `null`.

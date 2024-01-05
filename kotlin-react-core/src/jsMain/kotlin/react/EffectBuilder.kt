@@ -1,6 +1,6 @@
 package react
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 sealed external interface EffectBuilder {
     @JsName("push")

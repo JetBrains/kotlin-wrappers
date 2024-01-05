@@ -202,7 +202,7 @@ external class DownloadItem : NodeEventEmitter {
     /**
      * The complete URL chain of the item including any redirects.
      */
-    fun getURLChain(): js.core.ReadonlyArray<String>
+    fun getURLChain(): js.array.ReadonlyArray<String>
 
     /**
      * Whether the download has user gesture.

@@ -1,6 +1,6 @@
 package react.select
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import js.objects.jso
 
 fun <Option, Group : GroupBase<Option>> Group(

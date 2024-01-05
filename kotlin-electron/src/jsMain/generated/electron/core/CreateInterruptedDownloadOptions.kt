@@ -13,7 +13,7 @@ external interface CreateInterruptedDownloadOptions {
     /**
      * Complete URL chain for the download.
      */
-    var urlChain: js.core.ReadonlyArray<String>
+    var urlChain: js.array.ReadonlyArray<String>
     var mimeType: String?
 
     /**

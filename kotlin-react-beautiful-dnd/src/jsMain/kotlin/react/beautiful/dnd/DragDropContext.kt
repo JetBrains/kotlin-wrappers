@@ -2,7 +2,7 @@
 
 package react.beautiful.dnd
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import react.ComponentClass
 import react.PropsWithChildren
 import react.ReactNode

@@ -2,7 +2,7 @@
 
 package web.audio
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 sealed external interface WaveShaperOptions :
     AudioNodeOptions {

@@ -4,7 +4,7 @@
 
 package node.http
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import node.net.Socket
 
 /**

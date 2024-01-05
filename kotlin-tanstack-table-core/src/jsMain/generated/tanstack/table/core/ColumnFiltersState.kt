@@ -2,6 +2,6 @@
 
 package tanstack.table.core
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 typealias ColumnFiltersState = ReadonlyArray<ColumnFilter>

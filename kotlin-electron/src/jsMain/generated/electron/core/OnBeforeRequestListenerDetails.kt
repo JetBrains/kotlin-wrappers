@@ -19,5 +19,5 @@ external interface OnBeforeRequestListenerDetails {
     var resourceType: (OnBeforeRequestListenerDetailsResourceType)
     var referrer: String
     var timestamp: Double
-    var uploadData: js.core.ReadonlyArray<UploadData>
+    var uploadData: js.array.ReadonlyArray<UploadData>
 }

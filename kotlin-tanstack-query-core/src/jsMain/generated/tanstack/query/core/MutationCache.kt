@@ -4,7 +4,7 @@
 
 package tanstack.query.core
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import js.promise.Promise
 
 open external class MutationCache(config: MutationCacheConfig = definedExternally) :

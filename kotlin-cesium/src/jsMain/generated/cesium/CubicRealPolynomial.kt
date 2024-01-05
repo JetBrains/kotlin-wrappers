@@ -4,7 +4,7 @@
 
 package cesium
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /**
  * Defines functions for 3rd order polynomial functions of one variable with only real coefficients.

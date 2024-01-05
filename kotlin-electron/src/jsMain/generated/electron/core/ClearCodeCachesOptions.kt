@@ -10,5 +10,5 @@ external interface ClearCodeCachesOptions {
      * to be removed. If the list is empty then all entries in the cache directory will
      * be removed.
      */
-    var urls: js.core.ReadonlyArray<String>?
+    var urls: js.array.ReadonlyArray<String>?
 }

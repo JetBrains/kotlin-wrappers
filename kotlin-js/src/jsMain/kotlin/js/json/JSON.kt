@@ -1,6 +1,6 @@
 package js.json
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 external object JSON {
     /**

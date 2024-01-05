@@ -2,7 +2,7 @@
 
 package web.animations
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import web.dom.Element
 
 /**

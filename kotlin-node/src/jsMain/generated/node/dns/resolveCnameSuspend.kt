@@ -5,7 +5,7 @@ package node.dns
 import js.promise.await
 
 
-suspend fun resolveCname(hostname: String): js.core.ReadonlyArray<String> =
+suspend fun resolveCname(hostname: String): js.array.ReadonlyArray<String> =
     resolveCnameAsync(
         hostname
     ).await()

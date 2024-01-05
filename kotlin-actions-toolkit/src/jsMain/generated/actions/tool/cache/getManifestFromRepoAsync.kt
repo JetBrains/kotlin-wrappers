@@ -4,7 +4,7 @@
 
 package actions.tool.cache
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import js.promise.Promise
 
 @JsName("getManifestFromRepo")

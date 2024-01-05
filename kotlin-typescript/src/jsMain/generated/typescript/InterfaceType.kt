@@ -2,7 +2,7 @@
 
 package typescript
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /** Class and interface types (ObjectFlags.Class and ObjectFlags.Interface). */
 sealed external interface InterfaceType : ObjectType {

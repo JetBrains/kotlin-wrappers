@@ -2,7 +2,7 @@
 
 package web.share
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import web.file.File
 
 sealed external interface ShareData {

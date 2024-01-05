@@ -2,8 +2,8 @@
 
 package web.rtc
 
+import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
-import js.core.ReadonlyArray
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget

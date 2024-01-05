@@ -8,7 +8,7 @@ external interface TouchBarScrubberConstructorOptions {
     /**
      * An array of items to place in this scrubber.
      */
-    var items: js.core.ReadonlyArray<ScrubberItem>
+    var items: js.array.ReadonlyArray<ScrubberItem>
 
     /**
      * Called when the user taps an item that was not the last tapped item.

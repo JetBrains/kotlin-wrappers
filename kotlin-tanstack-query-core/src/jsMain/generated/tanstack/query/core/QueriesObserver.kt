@@ -9,7 +9,7 @@
 package tanstack.query.core
 
 import js.array.JsTuple3
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 open external class QueriesObserver<TCombinedResult>(
     client: QueryClient,

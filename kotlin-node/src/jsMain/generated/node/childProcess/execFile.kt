@@ -4,7 +4,7 @@
 
 package node.childProcess
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /**
  * The `child_process.execFile()` function is similar to {@link exec} except that it does not spawn a shell by default. Rather, the specified

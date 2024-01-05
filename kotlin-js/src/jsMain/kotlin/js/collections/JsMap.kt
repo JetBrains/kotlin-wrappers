@@ -1,7 +1,7 @@
 package js.collections
 
 import js.array.JsTuple2
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import js.iterable.IterableIterator
 
 @JsName("Map")

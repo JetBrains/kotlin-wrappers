@@ -11,5 +11,5 @@ sealed external interface InformationEvent {
     var httpVersionMajor: Double
     var httpVersionMinor: Double
     var headers: IncomingHttpHeaders
-    var rawHeaders: js.core.ReadonlyArray<String>
+    var rawHeaders: js.array.ReadonlyArray<String>
 }

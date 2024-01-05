@@ -2,7 +2,7 @@
 
 package web.geometry
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import js.typedarrays.Float32Array
 import js.typedarrays.Float64Array
 

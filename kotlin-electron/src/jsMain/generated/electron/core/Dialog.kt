@@ -180,7 +180,10 @@ external interface Dialog {
      * and a directory selector, so if you set `properties` to `['openFile',
      * 'openDirectory']` on these platforms, a directory selector will be shown.
      */
-    fun showOpenDialogSync(browserWindow: BrowserWindow, options: OpenDialogSyncOptions): js.core.ReadonlyArray<String>?
+    fun showOpenDialogSync(
+        browserWindow: BrowserWindow,
+        options: OpenDialogSyncOptions,
+    ): js.array.ReadonlyArray<String>?
 
     /**
      * the file paths chosen by the user; if the dialog is cancelled it returns
@@ -200,7 +203,7 @@ external interface Dialog {
      * and a directory selector, so if you set `properties` to `['openFile',
      * 'openDirectory']` on these platforms, a directory selector will be shown.
      */
-    fun showOpenDialogSync(options: OpenDialogSyncOptions): js.core.ReadonlyArray<String>?
+    fun showOpenDialogSync(options: OpenDialogSyncOptions): js.array.ReadonlyArray<String>?
 
     /**
      * Resolve with an object containing the following:

@@ -2,7 +2,7 @@
 
 package web.locks
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 sealed external interface LockManagerSnapshot {
     var held: ReadonlyArray<LockInfo>?

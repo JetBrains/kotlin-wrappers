@@ -2,7 +2,7 @@
 
 package web.idb
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import js.core.Void
 import web.dom.DOMStringList
 

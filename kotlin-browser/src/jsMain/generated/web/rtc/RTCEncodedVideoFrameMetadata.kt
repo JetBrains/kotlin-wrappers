@@ -2,8 +2,8 @@
 
 package web.rtc
 
+import js.array.ReadonlyArray
 import js.core.JsLong
-import js.core.ReadonlyArray
 
 sealed external interface RTCEncodedVideoFrameMetadata {
     var contributingSources: ReadonlyArray<Number>?

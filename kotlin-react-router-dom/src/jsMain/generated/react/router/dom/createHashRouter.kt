@@ -8,6 +8,6 @@ import react.router.RouteObject
 import remix.run.router.Router as RemixRouter
 
 external fun createHashRouter(
-    routes: js.core.ReadonlyArray<RouteObject>,
+    routes: js.array.ReadonlyArray<RouteObject>,
     opts: DOMRouterOpts = definedExternally,
 ): RemixRouter

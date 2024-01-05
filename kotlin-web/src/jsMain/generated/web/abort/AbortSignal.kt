@@ -2,7 +2,7 @@
 
 package web.abort
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import js.errors.JsError
 import web.events.Event
 import web.events.EventHandler

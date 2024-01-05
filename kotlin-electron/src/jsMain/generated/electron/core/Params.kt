@@ -103,7 +103,7 @@ external interface Params {
      * An array of suggested words to show the user to replace the `misspelledWord`.
      * Only available if there is a misspelled word and spellchecker is enabled.
      */
-    var dictionarySuggestions: js.core.ReadonlyArray<String>
+    var dictionarySuggestions: js.array.ReadonlyArray<String>
 
     /**
      * The character encoding of the frame on which the menu was invoked.

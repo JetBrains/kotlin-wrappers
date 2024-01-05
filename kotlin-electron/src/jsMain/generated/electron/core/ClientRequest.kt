@@ -75,7 +75,7 @@ external class ClientRequest : NodeEventEmitter {
      */
     fun on(
         event: ClientRequestEvent.REDIRECT,
-        listener: (statusCode: Double, method: String, redirectUrl: String, responseHeaders: js.objects.ReadonlyRecord<String, js.core.ReadonlyArray<String>>) -> Unit,
+        listener: (statusCode: Double, method: String, redirectUrl: String, responseHeaders: js.objects.ReadonlyRecord<String, js.array.ReadonlyArray<String>>) -> Unit,
     ): Unit /* this */
 
     fun on(
@@ -109,7 +109,7 @@ external class ClientRequest : NodeEventEmitter {
 
     fun once(
         event: ClientRequestEvent.REDIRECT,
-        listener: (statusCode: Double, method: String, redirectUrl: String, responseHeaders: js.objects.ReadonlyRecord<String, js.core.ReadonlyArray<String>>) -> Unit,
+        listener: (statusCode: Double, method: String, redirectUrl: String, responseHeaders: js.objects.ReadonlyRecord<String, js.array.ReadonlyArray<String>>) -> Unit,
     ): Unit /* this */
 
     fun once(
@@ -143,7 +143,7 @@ external class ClientRequest : NodeEventEmitter {
 
     fun addListener(
         event: ClientRequestEvent.REDIRECT,
-        listener: (statusCode: Double, method: String, redirectUrl: String, responseHeaders: js.objects.ReadonlyRecord<String, js.core.ReadonlyArray<String>>) -> Unit,
+        listener: (statusCode: Double, method: String, redirectUrl: String, responseHeaders: js.objects.ReadonlyRecord<String, js.array.ReadonlyArray<String>>) -> Unit,
     ): Unit /* this */
 
     fun addListener(
@@ -177,7 +177,7 @@ external class ClientRequest : NodeEventEmitter {
 
     fun removeListener(
         event: ClientRequestEvent.REDIRECT,
-        listener: (statusCode: Double, method: String, redirectUrl: String, responseHeaders: js.objects.ReadonlyRecord<String, js.core.ReadonlyArray<String>>) -> Unit,
+        listener: (statusCode: Double, method: String, redirectUrl: String, responseHeaders: js.objects.ReadonlyRecord<String, js.array.ReadonlyArray<String>>) -> Unit,
     ): Unit /* this */
 
     fun removeListener(

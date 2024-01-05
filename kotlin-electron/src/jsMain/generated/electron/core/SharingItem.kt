@@ -9,15 +9,15 @@ external interface SharingItem {
     /**
      * An array of files to share.
      */
-    var filePaths: js.core.ReadonlyArray<String>?
+    var filePaths: js.array.ReadonlyArray<String>?
 
     /**
      * An array of text to share.
      */
-    var texts: js.core.ReadonlyArray<String>?
+    var texts: js.array.ReadonlyArray<String>?
 
     /**
      * An array of URLs to share.
      */
-    var urls: js.core.ReadonlyArray<String>?
+    var urls: js.array.ReadonlyArray<String>?
 }

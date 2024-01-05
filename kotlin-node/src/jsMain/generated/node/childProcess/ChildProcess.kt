@@ -175,7 +175,7 @@ open external class ChildProcess : EventEmitter {
      * The `subprocess.spawnargs` property represents the full list of command-line
      * arguments the child process was launched with.
      */
-    val spawnargs: js.core.ReadonlyArray<String>
+    val spawnargs: js.array.ReadonlyArray<String>
 
     /**
      * The `subprocess.spawnfile` property indicates the executable file name of

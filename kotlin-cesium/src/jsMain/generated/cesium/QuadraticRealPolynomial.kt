@@ -4,7 +4,7 @@
 
 package cesium
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /**
  * Defines functions for 2nd order polynomial functions of one variable with only real coefficients.

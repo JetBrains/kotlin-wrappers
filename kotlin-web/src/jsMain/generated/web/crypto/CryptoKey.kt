@@ -2,7 +2,7 @@
 
 package web.crypto
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /**
  * The CryptoKey dictionary of the Web Crypto API represents a cryptographic key.

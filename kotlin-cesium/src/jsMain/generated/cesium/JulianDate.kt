@@ -8,7 +8,7 @@
 
 package cesium
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /**
  * Represents an astronomical Julian date, which is the number of days since noon on January 1, -4712 (4713 BC).

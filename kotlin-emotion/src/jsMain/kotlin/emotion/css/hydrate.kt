@@ -2,6 +2,6 @@
 
 package emotion.css
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 external fun hydrate(ids: ReadonlyArray<String>)

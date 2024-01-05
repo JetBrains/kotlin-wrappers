@@ -10,7 +10,7 @@
 
 package react
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import js.core.delete
 import js.objects.jso
 import js.symbol.Symbol

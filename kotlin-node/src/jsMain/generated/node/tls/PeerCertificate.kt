@@ -62,7 +62,7 @@ sealed external interface PeerCertificate {
     /**
      * The extended key usage, a set of OIDs.
      */
-    var ext_key_usage: js.core.ReadonlyArray<String>?
+    var ext_key_usage: js.array.ReadonlyArray<String>?
 
     /**
      * A string containing concatenated names for the subject,
@@ -73,7 +73,7 @@ sealed external interface PeerCertificate {
     /**
      * An array describing the AuthorityInfoAccess, used with OCSP.
      */
-    var infoAccess: node.Dict<js.core.ReadonlyArray<String>>?
+    var infoAccess: node.Dict<js.array.ReadonlyArray<String>>?
 
     /**
      * For RSA keys: The RSA bit size.

@@ -2,7 +2,7 @@
 
 package web.gl
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import web.canvas.PredefinedColorSpace
 
 sealed external interface WebGLRenderingContextBase {

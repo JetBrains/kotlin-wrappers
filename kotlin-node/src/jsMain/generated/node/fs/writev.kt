@@ -4,8 +4,8 @@
 
 package node.fs
 
+import js.array.ReadonlyArray
 import js.buffer.ArrayBufferView
-import js.core.ReadonlyArray
 
 /**
  * Write an array of `ArrayBufferView`s to the file specified by `fd` using`writev()`.

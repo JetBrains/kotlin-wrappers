@@ -455,7 +455,7 @@ external class WebContents : NodeEventEmitter {
             /**
              * Array of URLs.
              */
-            favicons: js.core.ReadonlyArray<String>,
+            favicons: js.array.ReadonlyArray<String>,
         ) -> Unit,
     ): Unit /* this */
 
@@ -549,7 +549,7 @@ external class WebContents : NodeEventEmitter {
      */
     fun on(
         event: WebContentsEvent.SELECT_BLUETOOTH_DEVICE,
-        listener: (event: Event, devices: js.core.ReadonlyArray<BluetoothDevice>, callback: (deviceId: String) -> Unit) -> Unit,
+        listener: (event: Event, devices: js.array.ReadonlyArray<BluetoothDevice>, callback: (deviceId: String) -> Unit) -> Unit,
     ): Unit /* this */
 
     /**
@@ -559,7 +559,7 @@ external class WebContents : NodeEventEmitter {
      */
     fun on(
         event: WebContentsEvent.SELECT_CLIENT_CERTIFICATE,
-        listener: (event: Event, url: String, certificateList: js.core.ReadonlyArray<Certificate>, callback: (certificate: Certificate) -> Unit) -> Unit,
+        listener: (event: Event, url: String, certificateList: js.array.ReadonlyArray<Certificate>, callback: (certificate: Certificate) -> Unit) -> Unit,
     ): Unit /* this */
 
     /**
@@ -882,7 +882,7 @@ external class WebContents : NodeEventEmitter {
             /**
              * Array of URLs.
              */
-            favicons: js.core.ReadonlyArray<String>,
+            favicons: js.array.ReadonlyArray<String>,
         ) -> Unit,
     ): Unit /* this */
 
@@ -932,12 +932,12 @@ external class WebContents : NodeEventEmitter {
     fun once(event: WebContentsEvent.RESPONSIVE, listener: Function<Unit>): Unit /* this */
     fun once(
         event: WebContentsEvent.SELECT_BLUETOOTH_DEVICE,
-        listener: (event: Event, devices: js.core.ReadonlyArray<BluetoothDevice>, callback: (deviceId: String) -> Unit) -> Unit,
+        listener: (event: Event, devices: js.array.ReadonlyArray<BluetoothDevice>, callback: (deviceId: String) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun once(
         event: WebContentsEvent.SELECT_CLIENT_CERTIFICATE,
-        listener: (event: Event, url: String, certificateList: js.core.ReadonlyArray<Certificate>, callback: (certificate: Certificate) -> Unit) -> Unit,
+        listener: (event: Event, url: String, certificateList: js.array.ReadonlyArray<Certificate>, callback: (certificate: Certificate) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun once(event: WebContentsEvent.UNRESPONSIVE, listener: Function<Unit>): Unit /* this */
@@ -1208,7 +1208,7 @@ external class WebContents : NodeEventEmitter {
             /**
              * Array of URLs.
              */
-            favicons: js.core.ReadonlyArray<String>,
+            favicons: js.array.ReadonlyArray<String>,
         ) -> Unit,
     ): Unit /* this */
 
@@ -1258,12 +1258,12 @@ external class WebContents : NodeEventEmitter {
     fun addListener(event: WebContentsEvent.RESPONSIVE, listener: Function<Unit>): Unit /* this */
     fun addListener(
         event: WebContentsEvent.SELECT_BLUETOOTH_DEVICE,
-        listener: (event: Event, devices: js.core.ReadonlyArray<BluetoothDevice>, callback: (deviceId: String) -> Unit) -> Unit,
+        listener: (event: Event, devices: js.array.ReadonlyArray<BluetoothDevice>, callback: (deviceId: String) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun addListener(
         event: WebContentsEvent.SELECT_CLIENT_CERTIFICATE,
-        listener: (event: Event, url: String, certificateList: js.core.ReadonlyArray<Certificate>, callback: (certificate: Certificate) -> Unit) -> Unit,
+        listener: (event: Event, url: String, certificateList: js.array.ReadonlyArray<Certificate>, callback: (certificate: Certificate) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun addListener(event: WebContentsEvent.UNRESPONSIVE, listener: Function<Unit>): Unit /* this */
@@ -1546,7 +1546,7 @@ external class WebContents : NodeEventEmitter {
             /**
              * Array of URLs.
              */
-            favicons: js.core.ReadonlyArray<String>,
+            favicons: js.array.ReadonlyArray<String>,
         ) -> Unit,
     ): Unit /* this */
 
@@ -1596,12 +1596,12 @@ external class WebContents : NodeEventEmitter {
     fun removeListener(event: WebContentsEvent.RESPONSIVE, listener: Function<Unit>): Unit /* this */
     fun removeListener(
         event: WebContentsEvent.SELECT_BLUETOOTH_DEVICE,
-        listener: (event: Event, devices: js.core.ReadonlyArray<BluetoothDevice>, callback: (deviceId: String) -> Unit) -> Unit,
+        listener: (event: Event, devices: js.array.ReadonlyArray<BluetoothDevice>, callback: (deviceId: String) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
         event: WebContentsEvent.SELECT_CLIENT_CERTIFICATE,
-        listener: (event: Event, url: String, certificateList: js.core.ReadonlyArray<Certificate>, callback: (certificate: Certificate) -> Unit) -> Unit,
+        listener: (event: Event, url: String, certificateList: js.array.ReadonlyArray<Certificate>, callback: (certificate: Certificate) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun removeListener(event: WebContentsEvent.UNRESPONSIVE, listener: Function<Unit>): Unit /* this */
@@ -1788,7 +1788,7 @@ external class WebContents : NodeEventEmitter {
      */
     fun executeJavaScriptInIsolatedWorld(
         worldId: Double,
-        scripts: js.core.ReadonlyArray<WebSource>,
+        scripts: js.array.ReadonlyArray<WebSource>,
         userGesture: Boolean = definedExternally,
     ): Promise<Any?>
 
@@ -1821,7 +1821,7 @@ external class WebContents : NodeEventEmitter {
     /**
      * Information about all Shared Workers.
      */
-    fun getAllSharedWorkers(): js.core.ReadonlyArray<SharedWorkerInfo>
+    fun getAllSharedWorkers(): js.array.ReadonlyArray<SharedWorkerInfo>
 
     /**
      * whether or not this WebContents will throttle animations and timers when the
@@ -1855,14 +1855,14 @@ external class WebContents : NodeEventEmitter {
      *
      * @deprecated
      */
-    fun getPrinters(): js.core.ReadonlyArray<PrinterInfo>
+    fun getPrinters(): js.array.ReadonlyArray<PrinterInfo>
 
     /**
      * Get the system printer list.
      *
      * Resolves with a `PrinterInfo[]`
      */
-    fun getPrintersAsync(): Promise<js.core.ReadonlyArray<PrinterInfo>>
+    fun getPrintersAsync(): Promise<js.array.ReadonlyArray<PrinterInfo>>
 
     /**
      * The Chromium internal `pid` of the associated renderer. Can be compared to the
@@ -2095,7 +2095,7 @@ external class WebContents : NodeEventEmitter {
     fun postMessage(
         channel: String,
         message: Any?,
-        transfer: js.core.ReadonlyArray<MessagePortMain> = definedExternally,
+        transfer: js.array.ReadonlyArray<MessagePortMain> = definedExternally,
     ): Unit
 
     /**
@@ -2193,7 +2193,7 @@ external class WebContents : NodeEventEmitter {
      *
      * For additional reading, refer to Electron's IPC guide.
      */
-    fun send(channel: String, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Unit
+    fun send(channel: String, vararg args: Any? /* js.array.ReadonlyArray<Any?> */): Unit
 
     /**
      * Sends an input `event` to the page. **Note:** The `BrowserWindow` containing the
@@ -2223,12 +2223,12 @@ external class WebContents : NodeEventEmitter {
      *
      * You can also read `frameId` from all incoming IPC messages in the main process.
      */
-    fun sendToFrame(frameId: Double, channel: String, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Unit
+    fun sendToFrame(frameId: Double, channel: String, vararg args: Any? /* js.array.ReadonlyArray<Any?> */): Unit
 
     fun sendToFrame(
         frameId: js.array.JsTuple2<Double, Double>,
         channel: String,
-        vararg args: Any?, /* js.core.ReadonlyArray<Any?> */
+        vararg args: Any?, /* js.array.ReadonlyArray<Any?> */
     ): Unit
 
     /**
@@ -2546,7 +2546,7 @@ external class WebContents : NodeEventEmitter {
          * An array of all `WebContents` instances. This will contain web contents for all
          * windows, webviews, opened devtools, and devtools extension background pages.
          */
-        fun getAllWebContents(): js.core.ReadonlyArray<WebContents>
+        fun getAllWebContents(): js.array.ReadonlyArray<WebContents>
 
         /**
          * The web contents that is focused in this application, otherwise returns `null`.

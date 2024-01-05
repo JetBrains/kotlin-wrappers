@@ -14,7 +14,7 @@ external interface OpenDialogReturnValue {
      * An array of file paths chosen by the user. If the dialog is cancelled this will
      * be an empty array.
      */
-    var filePaths: js.core.ReadonlyArray<String>
+    var filePaths: js.array.ReadonlyArray<String>
 
     /**
      * An array matching the `filePaths` array of base64 encoded strings which contains
@@ -23,5 +23,5 @@ external interface OpenDialogReturnValue {
      *
      * @platform darwin,mas
      */
-    var bookmarks: js.core.ReadonlyArray<String>?
+    var bookmarks: js.array.ReadonlyArray<String>?
 }

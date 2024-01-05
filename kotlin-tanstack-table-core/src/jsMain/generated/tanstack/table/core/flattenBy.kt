@@ -4,7 +4,7 @@
 
 package tanstack.table.core
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 external fun <TNode> flattenBy(
     arr: ReadonlyArray<TNode>,

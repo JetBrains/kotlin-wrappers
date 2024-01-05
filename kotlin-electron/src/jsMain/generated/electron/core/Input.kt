@@ -58,5 +58,5 @@ external interface Input {
     /**
      * See InputEvent.modifiers.
      */
-    var modifiers: js.core.ReadonlyArray<String>
+    var modifiers: js.array.ReadonlyArray<String>
 }

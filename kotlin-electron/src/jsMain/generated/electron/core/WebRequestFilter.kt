@@ -18,5 +18,5 @@ external interface WebRequestFilter {
      * Array of URL patterns that will be used to filter out the requests that do not
      * match the URL patterns.
      */
-    var urls: js.core.ReadonlyArray<String>
+    var urls: js.array.ReadonlyArray<String>
 }

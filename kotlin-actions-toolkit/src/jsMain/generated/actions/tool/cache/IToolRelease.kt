@@ -2,7 +2,7 @@
 
 package actions.tool.cache
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 sealed external interface IToolRelease {
     var version: String

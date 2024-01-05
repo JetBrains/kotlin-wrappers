@@ -60,7 +60,7 @@ external fun lookupAsync(hostname: String, options: LookupOneOptions): Promise<L
 
 
 @JsName("lookup")
-external fun lookupAsync(hostname: String, options: LookupAllOptions): Promise<js.core.ReadonlyArray<LookupAddress>>
+external fun lookupAsync(hostname: String, options: LookupAllOptions): Promise<js.array.ReadonlyArray<LookupAddress>>
 
 
 @JsName("lookup")

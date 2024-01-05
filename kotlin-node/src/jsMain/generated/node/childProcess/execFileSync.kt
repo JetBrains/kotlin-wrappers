@@ -4,7 +4,7 @@
 
 package node.childProcess
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /**
  * The `child_process.execFileSync()` method is generally identical to {@link execFile} with the exception that the method will not

@@ -2,8 +2,8 @@
 
 package web.codecs
 
+import js.array.ReadonlyArray
 import js.core.JsLong
-import js.core.ReadonlyArray
 import web.geometry.DOMRectInit
 
 sealed external interface VideoFrameBufferInit {

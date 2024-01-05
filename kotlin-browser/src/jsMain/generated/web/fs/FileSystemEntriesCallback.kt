@@ -2,7 +2,7 @@
 
 package web.fs
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 typealias FileSystemEntriesCallback = (
     entries: ReadonlyArray<FileSystemEntry>,

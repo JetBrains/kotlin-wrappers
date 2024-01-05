@@ -2,9 +2,9 @@
 
 package web.sockets
 
+import js.array.ReadonlyArray
 import js.buffer.ArrayBufferLike
 import js.buffer.ArrayBufferView
-import js.core.ReadonlyArray
 import web.buffer.Blob
 import web.events.Event
 import web.events.EventHandler

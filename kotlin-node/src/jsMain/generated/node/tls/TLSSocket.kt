@@ -172,7 +172,7 @@ external class TLSSocket : node.net.Socket {
      * @since v12.11.0
      * @return List of signature algorithms shared between the server and the client in the order of decreasing preference.
      */
-    fun getSharedSigalgs(): js.core.ReadonlyArray<String>
+    fun getSharedSigalgs(): js.array.ReadonlyArray<String>
 
     /**
      * For a client, returns the TLS session ticket if one is available, or`undefined`. For a server, always returns `undefined`.

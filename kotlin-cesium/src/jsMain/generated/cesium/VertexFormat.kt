@@ -4,7 +4,7 @@
 
 package cesium
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /**
  * A vertex format defines what attributes make up a vertex.  A VertexFormat can be provided

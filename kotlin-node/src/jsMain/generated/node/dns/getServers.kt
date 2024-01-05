@@ -20,4 +20,4 @@ package node.dns
  * ```
  * @since v0.11.3
  */
-external fun getServers(): js.core.ReadonlyArray<String>
+external fun getServers(): js.array.ReadonlyArray<String>

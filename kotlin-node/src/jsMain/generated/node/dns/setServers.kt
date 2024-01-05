@@ -4,7 +4,7 @@
 
 package node.dns
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /**
  * Sets the IP address and port of servers to be used when performing DNS

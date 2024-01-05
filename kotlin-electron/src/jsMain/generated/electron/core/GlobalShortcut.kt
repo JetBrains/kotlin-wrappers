@@ -52,7 +52,7 @@ external interface GlobalShortcut {
      * * "Media Previous Track"
      * * "Media Stop"
      */
-    fun registerAll(accelerators: js.core.ReadonlyArray<Accelerator>, callback: () -> Unit): Unit
+    fun registerAll(accelerators: js.array.ReadonlyArray<Accelerator>, callback: () -> Unit): Unit
 
     /**
      * Unregisters the global shortcut of `accelerator`.

@@ -4,8 +4,8 @@
 
 package node.fs
 
+import js.array.ReadonlyArray
 import js.buffer.ArrayBufferView
-import js.core.ReadonlyArray
 
 /**
  * Read from a file specified by `fd` and write to an array of `ArrayBufferView`s

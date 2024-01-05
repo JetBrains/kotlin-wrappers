@@ -20,7 +20,7 @@ external interface Screen : node.events.EventEmitter {
      */
     fun on(
         event: ScreenEvent.DISPLAY_METRICS_CHANGED,
-        listener: (event: Event, display: Display, changedMetrics: js.core.ReadonlyArray<String>) -> Unit,
+        listener: (event: Event, display: Display, changedMetrics: js.array.ReadonlyArray<String>) -> Unit,
     ): Unit /* this */
 
     /**
@@ -30,7 +30,7 @@ external interface Screen : node.events.EventEmitter {
     fun once(event: ScreenEvent.DISPLAY_ADDED, listener: (event: Event, newDisplay: Display) -> Unit): Unit /* this */
     fun once(
         event: ScreenEvent.DISPLAY_METRICS_CHANGED,
-        listener: (event: Event, display: Display, changedMetrics: js.core.ReadonlyArray<String>) -> Unit,
+        listener: (event: Event, display: Display, changedMetrics: js.array.ReadonlyArray<String>) -> Unit,
     ): Unit /* this */
 
     fun once(event: ScreenEvent.DISPLAY_REMOVED, listener: (event: Event, oldDisplay: Display) -> Unit): Unit /* this */
@@ -41,7 +41,7 @@ external interface Screen : node.events.EventEmitter {
 
     fun addListener(
         event: ScreenEvent.DISPLAY_METRICS_CHANGED,
-        listener: (event: Event, display: Display, changedMetrics: js.core.ReadonlyArray<String>) -> Unit,
+        listener: (event: Event, display: Display, changedMetrics: js.array.ReadonlyArray<String>) -> Unit,
     ): Unit /* this */
 
     fun addListener(
@@ -56,7 +56,7 @@ external interface Screen : node.events.EventEmitter {
 
     fun removeListener(
         event: ScreenEvent.DISPLAY_METRICS_CHANGED,
-        listener: (event: Event, display: Display, changedMetrics: js.core.ReadonlyArray<String>) -> Unit,
+        listener: (event: Event, display: Display, changedMetrics: js.array.ReadonlyArray<String>) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
@@ -84,7 +84,7 @@ external interface Screen : node.events.EventEmitter {
     /**
      * An array of displays that are currently available.
      */
-    fun getAllDisplays(): js.core.ReadonlyArray<Display>
+    fun getAllDisplays(): js.array.ReadonlyArray<Display>
 
     /**
      * The current absolute position of the mouse pointer.

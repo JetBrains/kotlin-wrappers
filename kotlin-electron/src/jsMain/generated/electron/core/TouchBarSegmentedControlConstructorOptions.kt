@@ -18,7 +18,7 @@ external interface TouchBarSegmentedControlConstructorOptions {
     /**
      * An array of segments to place in this control.
      */
-    var segments: js.core.ReadonlyArray<SegmentedControlSegment>
+    var segments: js.array.ReadonlyArray<SegmentedControlSegment>
 
     /**
      * The index of the currently selected segment, will update automatically with user

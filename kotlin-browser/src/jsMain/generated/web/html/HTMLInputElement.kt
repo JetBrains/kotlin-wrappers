@@ -2,7 +2,7 @@
 
 package web.html
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import web.autofill.AutoFill
 import web.dom.NodeListOf
 import web.file.FileList

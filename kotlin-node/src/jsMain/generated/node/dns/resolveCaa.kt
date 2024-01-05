@@ -13,5 +13,5 @@ package node.dns
  */
 external fun resolveCaa(
     hostname: String,
-    callback: (err: node.ErrnoException?, records: js.core.ReadonlyArray<CaaRecord>) -> Unit,
+    callback: (err: node.ErrnoException?, records: js.array.ReadonlyArray<CaaRecord>) -> Unit,
 ): Unit

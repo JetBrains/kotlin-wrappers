@@ -4,7 +4,7 @@
 
 package node.tls
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /* import { X509Certificate } from 'node:crypto'; */
 

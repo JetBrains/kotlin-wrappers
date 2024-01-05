@@ -2,6 +2,6 @@
 
 package actions.core
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 typealias SummaryTableRow = ReadonlyArray<Any /* SummaryTableCell | String */>

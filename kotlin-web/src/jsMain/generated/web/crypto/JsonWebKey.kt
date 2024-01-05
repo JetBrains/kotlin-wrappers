@@ -2,7 +2,7 @@
 
 package web.crypto
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 sealed external interface JsonWebKey {
     var alg: String?

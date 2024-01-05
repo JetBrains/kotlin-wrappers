@@ -46,7 +46,7 @@ external interface CrashReporter {
      *
      * **Note:** This method is only available in the main process.
      */
-    fun getUploadedReports(): js.core.ReadonlyArray<CrashReport>
+    fun getUploadedReports(): js.array.ReadonlyArray<CrashReport>
 
     /**
      * Whether reports should be submitted to the server. Set through the `start`

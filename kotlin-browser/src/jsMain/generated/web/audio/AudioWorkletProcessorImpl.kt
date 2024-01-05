@@ -6,7 +6,7 @@
 
 package web.audio
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import js.objects.Record
 import js.typedarrays.Float32Array
 

@@ -103,7 +103,7 @@ external class Cookies : NodeEventEmitter {
      * Sends a request to get all cookies matching `filter`, and resolves a promise
      * with the response.
      */
-    fun get(filter: CookiesGetFilter): Promise<js.core.ReadonlyArray<Cookie>>
+    fun get(filter: CookiesGetFilter): Promise<js.array.ReadonlyArray<Cookie>>
 
     /**
      * A promise which resolves when the cookie has been removed

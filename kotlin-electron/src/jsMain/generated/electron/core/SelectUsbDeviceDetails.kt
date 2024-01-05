@@ -5,6 +5,6 @@ package electron.core
 
 
 external interface SelectUsbDeviceDetails {
-    var deviceList: js.core.ReadonlyArray<USBDevice>
+    var deviceList: js.array.ReadonlyArray<USBDevice>
     var frame: WebFrameMain
 }

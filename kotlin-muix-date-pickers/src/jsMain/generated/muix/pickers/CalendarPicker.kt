@@ -4,7 +4,7 @@
 
 package muix.pickers
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import js.core.Void
 import js.promise.Promise
 import web.cssom.ClassName

@@ -9,7 +9,7 @@ external interface Product {
     /**
      * The total size of the content, in bytes.
      */
-    var contentLengths: js.core.ReadonlyArray<Double>
+    var contentLengths: js.array.ReadonlyArray<Double>
 
     /**
      * A string that identifies the version of the content.
@@ -24,12 +24,12 @@ external interface Product {
     /**
      * An array of discount offers
      */
-    var discounts: js.core.ReadonlyArray<ProductDiscount>
+    var discounts: js.array.ReadonlyArray<ProductDiscount>
 
     /**
      * The total size of the content, in bytes.
      */
-    var downloadContentLengths: js.core.ReadonlyArray<Double>
+    var downloadContentLengths: js.array.ReadonlyArray<Double>
 
     /**
      * A string that identifies the version of the content.

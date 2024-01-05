@@ -75,7 +75,7 @@ external class X509Certificate {
      * An array detailing the key usages for this certificate.
      * @since v15.6.0
      */
-    val keyUsage: js.core.ReadonlyArray<String>
+    val keyUsage: js.array.ReadonlyArray<String>
 
     /**
      * The issuer identification included in this certificate.

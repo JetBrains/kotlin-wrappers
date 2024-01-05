@@ -18,7 +18,7 @@ external class TouchBarColorPicker : NodeEventEmitter {
      * A `string[]` array representing the color picker's available colors to select.
      * Changing this value immediately updates the color picker in the touch bar.
      */
-    var availableColors: js.core.ReadonlyArray<String>
+    var availableColors: js.array.ReadonlyArray<String>
 
     /**
      * A `string` hex code representing the color picker's currently selected color.

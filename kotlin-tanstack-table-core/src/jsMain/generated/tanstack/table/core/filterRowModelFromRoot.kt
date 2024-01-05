@@ -4,7 +4,7 @@
 
 package tanstack.table.core
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 external fun <TData : RowData> filterRowModelFromRoot(
     rowsToFilter: ReadonlyArray<Row<TData>>,

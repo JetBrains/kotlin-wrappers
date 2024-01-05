@@ -3,8 +3,8 @@
 
 package node.process
 
+import js.array.ReadonlyArray
 import js.collections.ReadonlySet
-import js.core.ReadonlyArray
 import js.promise.Promise
 import node.Module
 import node.events.EventEmitter

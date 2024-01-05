@@ -11,13 +11,13 @@ package remix.run.router
  * @see https://reactrouter.com/utils/match-routes
  */
 external fun <RouteObjectType : AgnosticRouteObject /* default is AgnosticRouteObject */> matchRoutes(
-    routes: js.core.ReadonlyArray<RouteObjectType>,
+    routes: js.array.ReadonlyArray<RouteObjectType>,
     locationArg: Location<*>,
     basename: String = definedExternally,
-): js.core.ReadonlyArray<AgnosticRouteMatch<RouteObjectType>>?
+): js.array.ReadonlyArray<AgnosticRouteMatch<RouteObjectType>>?
 
 external fun <RouteObjectType : AgnosticRouteObject /* default is AgnosticRouteObject */> matchRoutes(
-    routes: js.core.ReadonlyArray<RouteObjectType>,
+    routes: js.array.ReadonlyArray<RouteObjectType>,
     locationArg: String,
     basename: String = definedExternally,
-): js.core.ReadonlyArray<AgnosticRouteMatch<RouteObjectType>>?
+): js.array.ReadonlyArray<AgnosticRouteMatch<RouteObjectType>>?

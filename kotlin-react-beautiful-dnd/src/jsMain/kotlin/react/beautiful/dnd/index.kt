@@ -1,6 +1,6 @@
 package react.beautiful.dnd
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import js.objects.ReadonlyRecord
 import react.*
 import react.dom.events.DragEventHandler

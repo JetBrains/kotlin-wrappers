@@ -76,7 +76,7 @@ external interface NotificationConstructorOptions {
      *
      * @platform darwin
      */
-    var actions: js.core.ReadonlyArray<NotificationAction>?
+    var actions: js.array.ReadonlyArray<NotificationAction>?
 
     /**
      * A custom title for the close button of an alert. An empty string will cause the

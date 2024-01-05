@@ -2,6 +2,6 @@
 
 package react.router
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 external fun useRoutes(routes: ReadonlyArray<RouteObject>): react.ReactElement<*>?

@@ -4,7 +4,7 @@
 
 package node.stream
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /**
  * A module method to pipe between streams and generators forwarding errors and

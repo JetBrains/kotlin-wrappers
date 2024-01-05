@@ -85,7 +85,7 @@ external class UtilityProcess : NodeEventEmitter {
      *
      * For example:
      */
-    fun postMessage(message: Any?, transfer: js.core.ReadonlyArray<MessagePortMain> = definedExternally): Unit
+    fun postMessage(message: Any?, transfer: js.array.ReadonlyArray<MessagePortMain> = definedExternally): Unit
 
     /**
      * A `Integer | undefined` representing the process identifier (PID) of the child
@@ -115,7 +115,7 @@ external class UtilityProcess : NodeEventEmitter {
         // Docs: https://electronjs.org/docs/api/utility-process
         fun fork(
             modulePath: String,
-            args: js.core.ReadonlyArray<String> = definedExternally,
+            args: js.array.ReadonlyArray<String> = definedExternally,
             options: ForkOptions = definedExternally,
         ): UtilityProcess
     }

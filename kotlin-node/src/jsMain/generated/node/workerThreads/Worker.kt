@@ -4,7 +4,7 @@
 
 package node.workerThreads
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import js.promise.Promise
 import node.events.EventEmitter
 import node.stream.Readable

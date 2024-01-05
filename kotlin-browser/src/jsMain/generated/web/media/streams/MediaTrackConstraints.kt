@@ -2,7 +2,7 @@
 
 package web.media.streams
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 sealed external interface MediaTrackConstraints :
     MediaTrackConstraintSet {

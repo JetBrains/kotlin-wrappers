@@ -4,7 +4,7 @@
 
 package cesium
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /**
  * A [Property] whose value is a key-value mapping of property names to the computed value of other properties.

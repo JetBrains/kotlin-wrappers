@@ -96,21 +96,21 @@ external class Agent : EventEmitter {
      * removed from the array on `'timeout'`.
      * @since v0.11.4
      */
-    val freeSockets: node.ReadOnlyDict<js.core.ReadonlyArray<Socket>>
+    val freeSockets: node.ReadOnlyDict<js.array.ReadonlyArray<Socket>>
 
     /**
      * An object which contains arrays of sockets currently in use by the
      * agent. Do not modify.
      * @since v0.3.6
      */
-    val sockets: node.ReadOnlyDict<js.core.ReadonlyArray<Socket>>
+    val sockets: node.ReadOnlyDict<js.array.ReadonlyArray<Socket>>
 
     /**
      * An object which contains queues of requests that have not yet been assigned to
      * sockets. Do not modify.
      * @since v0.5.9
      */
-    val requests: node.ReadOnlyDict<js.core.ReadonlyArray<IncomingMessage>>
+    val requests: node.ReadOnlyDict<js.array.ReadonlyArray<IncomingMessage>>
 
     /**
      * Destroy any sockets that are currently in use by the agent.

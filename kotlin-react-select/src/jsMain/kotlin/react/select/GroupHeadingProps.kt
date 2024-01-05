@@ -1,6 +1,6 @@
 package react.select
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import react.PropsWithChildren
 
 external interface GroupHeadingProps<Option : Any, Group : GroupBase<Option>> : PropsWithChildren {

@@ -231,7 +231,7 @@ open external class EventEmitter {
      * ```
      * @since v0.1.26
      */
-    open fun listeners(eventName: EventType): js.core.ReadonlyArray<Function<*>>
+    open fun listeners(eventName: EventType): js.array.ReadonlyArray<Function<*>>
 
 
     /**
@@ -263,7 +263,7 @@ open external class EventEmitter {
      * ```
      * @since v9.4.0
      */
-    open fun rawListeners(eventName: EventType): js.core.ReadonlyArray<Function<*>>
+    open fun rawListeners(eventName: EventType): js.array.ReadonlyArray<Function<*>>
 
 
     /**
@@ -472,14 +472,14 @@ open external class EventEmitter {
             emitter: _NodeEventTarget,
             eventName: EventType,
             options: StaticEventEmitterOptions = definedExternally,
-        ): Promise<js.core.ReadonlyArray<Any?>>
+        ): Promise<js.array.ReadonlyArray<Any?>>
 
 
         fun once(
             emitter: _DOMEventTarget,
             eventName: String,
             options: StaticEventEmitterOptions = definedExternally,
-        ): Promise<js.core.ReadonlyArray<Any?>>
+        ): Promise<js.array.ReadonlyArray<Any?>>
 
         /**
          * ```js
@@ -591,10 +591,10 @@ open external class EventEmitter {
          * ```
          * @since v15.2.0, v14.17.0
          */
-        fun getEventListeners(emitter: _DOMEventTarget, name: EventType): js.core.ReadonlyArray<Function<*>>
+        fun getEventListeners(emitter: _DOMEventTarget, name: EventType): js.array.ReadonlyArray<Function<*>>
 
 
-        fun getEventListeners(emitter: EventEmitter, name: EventType): js.core.ReadonlyArray<Function<*>>
+        fun getEventListeners(emitter: EventEmitter, name: EventType): js.array.ReadonlyArray<Function<*>>
 
 
         /**

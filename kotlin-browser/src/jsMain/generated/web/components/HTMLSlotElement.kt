@@ -2,7 +2,7 @@
 
 package web.components
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import web.dom.Element
 import web.dom.Node
 import web.html.HTMLElement

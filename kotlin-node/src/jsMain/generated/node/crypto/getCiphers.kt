@@ -16,4 +16,4 @@ package node.crypto
  * @since v0.9.3
  * @return An array with the names of the supported cipher algorithms.
  */
-external fun getCiphers(): js.core.ReadonlyArray<String>
+external fun getCiphers(): js.array.ReadonlyArray<String>

@@ -58,7 +58,7 @@ open external class Menu {
      * Each `Menu` consists of multiple `MenuItem`s and each `MenuItem` can have a
      * submenu.
      */
-    var items: js.core.ReadonlyArray<MenuItem>
+    var items: js.array.ReadonlyArray<MenuItem>
 
     companion object {
         /**

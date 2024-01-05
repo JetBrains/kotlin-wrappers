@@ -19,7 +19,7 @@ sealed external interface RouteObject {
     var shouldRevalidate: ShouldRevalidateFunction?
     var handle: Any?
     var index: Boolean?
-    var children: js.core.ReadonlyArray<RouteObject>?
+    var children: js.array.ReadonlyArray<RouteObject>?
     var element: react.ReactNode?
     var errorElement: react.ReactNode?
     var Component: react.ComponentType<*>?

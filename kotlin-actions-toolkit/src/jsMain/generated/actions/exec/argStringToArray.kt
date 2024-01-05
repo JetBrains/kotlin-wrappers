@@ -4,6 +4,6 @@
 
 package actions.exec
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 external fun argStringToArray(argString: String): ReadonlyArray<String>

@@ -10,7 +10,7 @@ package remix.run.router
  * provide an updated StaticHandlerContext suitable for a second SSR render
  */
 external fun getStaticContextFromError(
-    routes: js.core.ReadonlyArray<AgnosticDataRouteObject>,
+    routes: js.array.ReadonlyArray<AgnosticDataRouteObject>,
     context: StaticHandlerContext,
     error: Any?,
 ): StaticHandlerContext

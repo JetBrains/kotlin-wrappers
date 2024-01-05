@@ -56,7 +56,7 @@ external interface WebviewTagPrintOptions {
     /**
      * The page range to print.
      */
-    var pageRanges: js.core.ReadonlyArray<PageRanges>?
+    var pageRanges: js.array.ReadonlyArray<PageRanges>?
 
     /**
      * Set the duplex mode of the printed web page. Can be `simplex`, `shortEdge`, or

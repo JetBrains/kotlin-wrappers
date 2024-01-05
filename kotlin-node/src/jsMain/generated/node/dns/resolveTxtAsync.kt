@@ -15,4 +15,4 @@ import js.promise.Promise
  */
 
 @JsName("resolveTxt")
-external fun resolveTxtAsync(hostname: String): Promise<js.core.ReadonlyArray<js.core.ReadonlyArray<String>>>
+external fun resolveTxtAsync(hostname: String): Promise<js.array.ReadonlyArray<js.array.ReadonlyArray<String>>>

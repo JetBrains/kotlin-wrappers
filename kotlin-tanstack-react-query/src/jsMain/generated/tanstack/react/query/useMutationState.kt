@@ -4,7 +4,7 @@
 
 package tanstack.react.query
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import tanstack.query.core.QueryClient
 
 external fun <TResult> useMutationState(

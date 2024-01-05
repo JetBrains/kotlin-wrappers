@@ -13,4 +13,4 @@ import js.promise.Promise
  */
 
 @JsName("resolveMx")
-external fun resolveMxAsync(hostname: String): Promise<js.core.ReadonlyArray<MxRecord>>
+external fun resolveMxAsync(hostname: String): Promise<js.array.ReadonlyArray<MxRecord>>

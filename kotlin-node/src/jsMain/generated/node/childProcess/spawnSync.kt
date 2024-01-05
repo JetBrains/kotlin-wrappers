@@ -4,7 +4,7 @@
 
 package node.childProcess
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /**
  * The `child_process.spawnSync()` method is generally identical to {@link spawn} with the exception that the function will not return

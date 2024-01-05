@@ -2,7 +2,7 @@
 
 package node.test
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import web.abort.AbortSignal
 
 sealed external interface RunOptions {

@@ -2,8 +2,8 @@
 
 package web.fs
 
+import js.array.ReadonlyArray
 import js.collections.AsyncMapLike
-import js.core.ReadonlyArray
 import js.core.Void
 import js.promise.Promise
 

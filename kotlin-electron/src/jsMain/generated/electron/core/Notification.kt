@@ -205,7 +205,7 @@ open external class Notification : NodeEventEmitter {
     /**
      * A `NotificationAction[]` property representing the actions of the notification.
      */
-    var actions: js.core.ReadonlyArray<NotificationAction>
+    var actions: js.array.ReadonlyArray<NotificationAction>
 
     /**
      * A `string` property representing the body of the notification.

@@ -14,14 +14,14 @@ import js.promise.Promise
  */
 
 @JsName("resolve6")
-external fun resolve6Async(hostname: String): Promise<js.core.ReadonlyArray<String>>
+external fun resolve6Async(hostname: String): Promise<js.array.ReadonlyArray<String>>
 
 
 @JsName("resolve6")
 external fun resolve6Async(
     hostname: String,
     options: ResolveWithTtlOptions,
-): Promise<js.core.ReadonlyArray<RecordWithTtl>>
+): Promise<js.array.ReadonlyArray<RecordWithTtl>>
 
 
 @JsName("resolve6")

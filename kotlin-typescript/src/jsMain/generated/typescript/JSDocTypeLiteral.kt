@@ -2,7 +2,7 @@
 
 package typescript
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 sealed external interface JSDocTypeLiteral : JSDocType, Union.JSDocTypeLiteral_ {
     override val kind: SyntaxKind.JSDocTypeLiteral

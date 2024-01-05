@@ -5,7 +5,7 @@ package node.dns
 import js.promise.await
 
 
-suspend fun resolveCaa(hostname: String): js.core.ReadonlyArray<CaaRecord> =
+suspend fun resolveCaa(hostname: String): js.array.ReadonlyArray<CaaRecord> =
     resolveCaaAsync(
         hostname
     ).await()

@@ -35,7 +35,7 @@ external interface InAppPurchase : node.events.EventEmitter {
      *
      * Retrieves the product descriptions.
      */
-    fun getProducts(productIDs: js.core.ReadonlyArray<String>): Promise<js.core.ReadonlyArray<Product>>
+    fun getProducts(productIDs: js.array.ReadonlyArray<String>): Promise<js.array.ReadonlyArray<Product>>
 
     /**
      * the path to the receipt.

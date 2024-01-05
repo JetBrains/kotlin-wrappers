@@ -54,5 +54,5 @@ external interface LoginItemSettings {
      * @platform win32
      */
     var executableWillLaunchAtLogin: Boolean
-    var launchItems: js.core.ReadonlyArray<LaunchItems>
+    var launchItems: js.array.ReadonlyArray<LaunchItems>
 }

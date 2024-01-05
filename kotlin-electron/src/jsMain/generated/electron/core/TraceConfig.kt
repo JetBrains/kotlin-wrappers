@@ -18,25 +18,25 @@ external interface TraceConfig {
      * `*` at the end of the category name. See tracing categories for the list of
      * categories.
      */
-    var excluded_categories: js.core.ReadonlyArray<String>?
+    var excluded_categories: js.array.ReadonlyArray<String>?
 
     /**
      * a list of histogram names to report with the trace.
      */
-    var histogram_names: js.core.ReadonlyArray<String>?
+    var histogram_names: js.array.ReadonlyArray<String>?
 
     /**
      * a list of tracing categories to include. Can include glob-like patterns using
      * `*` at the end of the category name. See tracing categories for the list of
      * categories.
      */
-    var included_categories: js.core.ReadonlyArray<String>?
+    var included_categories: js.array.ReadonlyArray<String>?
 
     /**
      * a list of process IDs to include in the trace. If not specified, trace all
      * processes.
      */
-    var included_process_ids: js.core.ReadonlyArray<Double>?
+    var included_process_ids: js.array.ReadonlyArray<Double>?
 
     /**
      * if the `disabled-by-default-memory-infra` category is enabled, this contains

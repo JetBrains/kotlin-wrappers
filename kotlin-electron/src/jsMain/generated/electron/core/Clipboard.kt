@@ -11,7 +11,7 @@ external interface Clipboard {
     /**
      * An array of supported formats for the clipboard `type`.
      */
-    fun availableFormats(type: ClipboardAvailableFormatsType = definedExternally): js.core.ReadonlyArray<String>
+    fun availableFormats(type: ClipboardAvailableFormatsType = definedExternally): js.array.ReadonlyArray<String>
 
     /**
      * Clears the clipboard content.

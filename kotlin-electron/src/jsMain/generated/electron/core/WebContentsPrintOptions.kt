@@ -56,7 +56,7 @@ external interface WebContentsPrintOptions {
     /**
      * The page range to print. On macOS, only one range is honored.
      */
-    var pageRanges: js.core.ReadonlyArray<PageRanges>?
+    var pageRanges: js.array.ReadonlyArray<PageRanges>?
 
     /**
      * Set the duplex mode of the printed web page. Can be `simplex`, `shortEdge`, or

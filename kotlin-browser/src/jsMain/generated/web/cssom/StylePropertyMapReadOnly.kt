@@ -2,8 +2,8 @@
 
 package web.cssom
 
+import js.array.ReadonlyArray
 import js.collections.MapLike
-import js.core.ReadonlyArray
 import js.iterable.JsIterable
 
 /**

@@ -11,7 +11,7 @@ import web.http.Request
  */
 
 sealed external interface StaticHandler {
-    var dataRoutes: js.core.ReadonlyArray<AgnosticDataRouteObject>
+    var dataRoutes: js.array.ReadonlyArray<AgnosticDataRouteObject>
     fun query(
         request: Request,
         opts: StaticHandlerQueryOpts = definedExternally,

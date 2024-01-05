@@ -2,7 +2,7 @@
 
 package react.popper
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import js.promise.Promise
 import popper.core.Modifier
 import popper.core.Placement

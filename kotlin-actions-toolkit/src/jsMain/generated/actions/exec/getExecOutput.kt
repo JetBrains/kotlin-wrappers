@@ -2,7 +2,7 @@
 
 package actions.exec
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import js.promise.await
 
 suspend fun getExecOutput(

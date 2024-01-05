@@ -2,7 +2,7 @@
 
 package web.serviceworker
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import js.core.StructuredSerializeOptions
 import js.core.Transferable
 import web.events.Event

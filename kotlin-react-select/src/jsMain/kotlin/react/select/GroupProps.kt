@@ -1,6 +1,6 @@
 package react.select
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import react.ComponentType
 import react.PropsWithChildren
 import react.dom.html.HTMLAttributes

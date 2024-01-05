@@ -2,8 +2,8 @@
 
 package web.gl
 
+import js.array.ReadonlyArray
 import js.buffer.ArrayBufferView
-import js.core.ReadonlyArray
 
 sealed external interface WebGL2RenderingContextBase {
     /**

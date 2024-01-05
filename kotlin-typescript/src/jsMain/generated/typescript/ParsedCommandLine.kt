@@ -2,7 +2,7 @@
 
 package typescript
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /** Either a parsed command line or a parsed tsconfig.json */
 sealed external interface ParsedCommandLine {

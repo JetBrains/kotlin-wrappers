@@ -19,7 +19,7 @@ external interface OnResponseStartedListenerDetails {
     var resourceType: (OnResponseStartedListenerDetailsResourceType)
     var referrer: String
     var timestamp: Double
-    var responseHeaders: js.objects.ReadonlyRecord<String, js.core.ReadonlyArray<String>>?
+    var responseHeaders: js.objects.ReadonlyRecord<String, js.array.ReadonlyArray<String>>?
 
     /**
      * Indicates whether the response was fetched from disk cache.

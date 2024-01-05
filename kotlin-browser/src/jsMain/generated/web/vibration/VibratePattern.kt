@@ -2,6 +2,6 @@
 
 package web.vibration
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 typealias VibratePattern = ReadonlyArray<Int> /* | Int */

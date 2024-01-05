@@ -2,7 +2,7 @@
 
 package web.performance
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 sealed external interface PerformanceObserverInit {
     var buffered: Boolean?

@@ -34,7 +34,7 @@ external interface Settings {
      *
      * @platform win32
      */
-    var args: js.core.ReadonlyArray<String>?
+    var args: js.array.ReadonlyArray<String>?
 
     /**
      * `true` will change the startup approved registry key and `enable / disable` the

@@ -8,7 +8,7 @@
 
 package cesium
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /**
  * Represents a scalar value's lower and upper bound at a near distance and far distance in eye space.

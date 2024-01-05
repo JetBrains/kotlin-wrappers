@@ -2,6 +2,6 @@
 
 package tanstack.table.core
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 typealias AggregationFn<TData /* : RowData */> = (columnId: String, leafRows: ReadonlyArray<Row<TData>>, childRows: ReadonlyArray<Row<TData>>) -> Any

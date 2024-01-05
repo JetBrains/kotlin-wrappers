@@ -2,7 +2,7 @@
 
 package node.stream
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import js.promise.await
 
 

@@ -2,8 +2,8 @@
 
 package web.authn
 
+import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
-import js.core.ReadonlyArray
 
 /**
  * Available only in secure contexts.

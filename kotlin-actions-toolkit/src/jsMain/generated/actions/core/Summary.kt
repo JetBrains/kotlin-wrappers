@@ -4,7 +4,7 @@
 
 package actions.core
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import js.promise.Promise
 
 external class Summary {

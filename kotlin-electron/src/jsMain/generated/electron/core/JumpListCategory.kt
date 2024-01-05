@@ -10,7 +10,7 @@ external interface JumpListCategory {
      * Array of `JumpListItem` objects if `type` is `tasks` or `custom`, otherwise it
      * should be omitted.
      */
-    var items: js.core.ReadonlyArray<JumpListItem>?
+    var items: js.array.ReadonlyArray<JumpListItem>?
 
     /**
      * Must be set if `type` is `custom`, otherwise it should be omitted.

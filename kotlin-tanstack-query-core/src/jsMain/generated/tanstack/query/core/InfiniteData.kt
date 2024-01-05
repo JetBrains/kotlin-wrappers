@@ -2,7 +2,7 @@
 
 package tanstack.query.core
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 external interface InfiniteData<TData, TPageParam> {
     var pages: ReadonlyArray<TData>

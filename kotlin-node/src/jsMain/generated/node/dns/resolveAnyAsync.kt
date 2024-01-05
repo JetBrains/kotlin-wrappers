@@ -36,4 +36,4 @@ import js.promise.Promise
  */
 
 @JsName("resolveAny")
-external fun resolveAnyAsync(hostname: String): Promise<js.core.ReadonlyArray<AnyRecord>>
+external fun resolveAnyAsync(hostname: String): Promise<js.array.ReadonlyArray<AnyRecord>>

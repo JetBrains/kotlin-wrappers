@@ -3,9 +3,9 @@
 
 package node.buffer
 
+import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
 import js.buffer.SharedArrayBuffer
-import js.core.ReadonlyArray
 import js.typedarrays.Uint8Array
 
 

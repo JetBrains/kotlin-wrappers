@@ -4,7 +4,7 @@
 
 package node.childProcess
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import node.stream.Readable
 import node.stream.Writable
 

@@ -2,7 +2,7 @@
 
 package ringui
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import react.Key
 import react.ReactNode
 

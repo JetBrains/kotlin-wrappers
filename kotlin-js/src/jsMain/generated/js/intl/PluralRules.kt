@@ -4,7 +4,7 @@
 
 package js.intl
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 external class PluralRules(
     locales: String = definedExternally,

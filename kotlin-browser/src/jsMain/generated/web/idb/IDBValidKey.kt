@@ -6,8 +6,8 @@
 
 package web.idb
 
+import js.array.ReadonlyArray
 import js.buffer.BufferSource
-import js.core.ReadonlyArray
 import kotlin.js.Date
 
 sealed external interface IDBValidKey

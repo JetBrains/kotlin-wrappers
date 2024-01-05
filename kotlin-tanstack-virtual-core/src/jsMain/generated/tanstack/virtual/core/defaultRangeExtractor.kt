@@ -4,6 +4,6 @@
 
 package tanstack.virtual.core
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 external val defaultRangeExtractor: (range: Range) -> ReadonlyArray<Int>

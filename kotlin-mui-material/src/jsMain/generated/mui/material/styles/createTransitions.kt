@@ -2,7 +2,7 @@
 
 package mui.material.styles
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 external interface Easing {
     var easeInOut: String

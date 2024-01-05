@@ -17,7 +17,7 @@ suspend fun lookup(hostname: String, options: LookupOneOptions): LookupAddress =
     ).await()
 
 
-suspend fun lookup(hostname: String, options: LookupAllOptions): js.core.ReadonlyArray<LookupAddress> =
+suspend fun lookup(hostname: String, options: LookupAllOptions): js.array.ReadonlyArray<LookupAddress> =
     lookupAsync(
         hostname, options
     ).await()

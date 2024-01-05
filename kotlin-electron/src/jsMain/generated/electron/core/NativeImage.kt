@@ -54,7 +54,7 @@ external class NativeImage {
      * An array of all scale factors corresponding to representations for a given
      * nativeImage.
      */
-    fun getScaleFactors(): js.core.ReadonlyArray<Double>
+    fun getScaleFactors(): js.array.ReadonlyArray<Double>
 
     /**
      * If `scaleFactor` is passed, this will return the size corresponding to the image
@@ -172,7 +172,7 @@ external class NativeImage {
          */
         fun createFromNamedImage(
             imageName: String,
-            hslShift: js.core.ReadonlyArray<Double> = definedExternally,
+            hslShift: js.array.ReadonlyArray<Double> = definedExternally,
         ): NativeImage
 
         /**

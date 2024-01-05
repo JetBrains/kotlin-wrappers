@@ -5,7 +5,6 @@
 
 package js.array
 
-import js.core.ReadonlyArray
 import js.iterable.AsyncIterable
 import js.iterable.JsIterable
 import js.iterable.JsIterator

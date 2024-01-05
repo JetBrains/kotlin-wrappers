@@ -99,25 +99,25 @@ external interface MenuItemConstructorOptions {
      * implies that the menu item in question should be placed in the same “group” as
      * the item.
      */
-    var before: js.core.ReadonlyArray<String>?
+    var before: js.array.ReadonlyArray<String>?
 
     /**
      * Inserts this item after the item with the specified label. If the referenced
      * item doesn't exist the item will be inserted at the end of the menu.
      */
-    var after: js.core.ReadonlyArray<String>?
+    var after: js.array.ReadonlyArray<String>?
 
     /**
      * Provides a means for a single context menu to declare the placement of their
      * containing group before the containing group of the item with the specified
      * label.
      */
-    var beforeGroupContaining: js.core.ReadonlyArray<String>?
+    var beforeGroupContaining: js.array.ReadonlyArray<String>?
 
     /**
      * Provides a means for a single context menu to declare the placement of their
      * containing group after the containing group of the item with the specified
      * label.
      */
-    var afterGroupContaining: js.core.ReadonlyArray<String>?
+    var afterGroupContaining: js.array.ReadonlyArray<String>?
 }

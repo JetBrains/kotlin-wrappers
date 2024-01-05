@@ -50,7 +50,7 @@ external interface WebFrame : node.events.EventEmitter {
      */
     fun executeJavaScriptInIsolatedWorld(
         worldId: Double,
-        scripts: js.core.ReadonlyArray<WebSource>,
+        scripts: js.array.ReadonlyArray<WebSource>,
         userGesture: Boolean = definedExternally,
         callback: (result: Any?, error: Throwable /* JsError */) -> Unit = definedExternally,
     ): Promise<Any?>
@@ -92,7 +92,7 @@ external interface WebFrame : node.events.EventEmitter {
      * A list of suggested words for a given word. If the word is spelled correctly,
      * the result will be empty.
      */
-    fun getWordSuggestions(word: String): js.core.ReadonlyArray<String>
+    fun getWordSuggestions(word: String): js.array.ReadonlyArray<String>
 
     /**
      * The current zoom factor.

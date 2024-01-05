@@ -6,7 +6,7 @@
 
 package tanstack.query.core
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 inline fun <T : QueryKey> QueryKey(
     vararg keys: Comparable<*>,

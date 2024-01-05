@@ -4,7 +4,7 @@
 
 package typescript
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 external fun <T : BuilderProgram> createSolutionBuilder(
     host: SolutionBuilderHost<T>,

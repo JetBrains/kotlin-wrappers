@@ -15,11 +15,11 @@ external interface ClearStorageDataOptions {
      * `localstorage`, `shadercache`, `websql`, `serviceworkers`, `cachestorage`. If
      * not specified, clear all storage types.
      */
-    var storages: js.core.ReadonlyArray<String>?
+    var storages: js.array.ReadonlyArray<String>?
 
     /**
      * The types of quotas to clear, can contain: `temporary`, `syncable`. If not
      * specified, clear all quotas.
      */
-    var quotas: js.core.ReadonlyArray<String>?
+    var quotas: js.array.ReadonlyArray<String>?
 }

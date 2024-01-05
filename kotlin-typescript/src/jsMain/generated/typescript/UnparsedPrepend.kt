@@ -2,7 +2,7 @@
 
 package typescript
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 sealed external interface UnparsedPrepend : UnparsedSection, Union.UnparsedPrepend_ {
     override val kind: SyntaxKind.UnparsedPrepend

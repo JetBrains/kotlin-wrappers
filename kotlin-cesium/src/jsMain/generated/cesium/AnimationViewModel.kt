@@ -9,7 +9,7 @@
 
 package cesium
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /**
  * The view model for the [Animation] widget.

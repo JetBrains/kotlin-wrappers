@@ -2,7 +2,7 @@
 
 package popper.core.modifiers
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import seskar.js.JsValue
 
 external interface FlipOptions {

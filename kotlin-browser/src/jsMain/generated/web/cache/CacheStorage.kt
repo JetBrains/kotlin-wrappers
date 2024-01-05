@@ -2,7 +2,7 @@
 
 package web.cache
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import js.promise.Promise
 import web.http.Request
 import web.http.Response

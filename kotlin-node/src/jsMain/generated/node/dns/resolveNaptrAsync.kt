@@ -31,4 +31,4 @@ import js.promise.Promise
  */
 
 @JsName("resolveNaptr")
-external fun resolveNaptrAsync(hostname: String): Promise<js.core.ReadonlyArray<NaptrRecord>>
+external fun resolveNaptrAsync(hostname: String): Promise<js.array.ReadonlyArray<NaptrRecord>>

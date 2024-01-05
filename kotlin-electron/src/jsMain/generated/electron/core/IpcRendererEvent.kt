@@ -11,7 +11,7 @@ external interface IpcRendererEvent : Event {
     /**
      * A list of MessagePorts that were transferred with this message
      */
-    var ports: js.core.ReadonlyArray<MessagePort>
+    var ports: js.array.ReadonlyArray<MessagePort>
 
     /**
      * The `IpcRenderer` instance that emitted the event originally

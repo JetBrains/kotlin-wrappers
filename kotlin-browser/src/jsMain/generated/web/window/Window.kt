@@ -3,7 +3,7 @@
 package web.window
 
 import js.array.ArrayLike
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import js.core.Transferable
 import web.device.DeviceMotionEvent
 import web.device.DeviceOrientationEvent

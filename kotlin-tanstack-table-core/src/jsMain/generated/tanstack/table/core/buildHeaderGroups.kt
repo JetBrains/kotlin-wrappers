@@ -4,7 +4,7 @@
 
 package tanstack.table.core
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 external fun <TData : RowData> buildHeaderGroups(
     allColumns: ReadonlyArray<Column<TData, *>>,

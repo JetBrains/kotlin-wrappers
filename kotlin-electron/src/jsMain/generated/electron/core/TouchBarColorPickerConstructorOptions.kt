@@ -8,7 +8,7 @@ external interface TouchBarColorPickerConstructorOptions {
     /**
      * Array of hex color strings to appear as possible colors to select.
      */
-    var availableColors: js.core.ReadonlyArray<String>?
+    var availableColors: js.array.ReadonlyArray<String>?
 
     /**
      * The selected hex color in the picker, i.e `#ABCDEF`.

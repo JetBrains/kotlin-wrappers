@@ -2,7 +2,7 @@
 
 package tanstack.query.core
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 external interface QueriesObserverOptions<TCombinedResult> {
     var combine: (result: ReadonlyArray<QueryObserverResult<*, *>>) -> TCombinedResult

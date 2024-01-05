@@ -2,7 +2,7 @@
 
 package web.codecs
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import web.geometry.DOMRectInit
 
 sealed external interface VideoFrameCopyToOptions {

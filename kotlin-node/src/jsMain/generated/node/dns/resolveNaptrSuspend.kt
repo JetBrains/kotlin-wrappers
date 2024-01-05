@@ -5,7 +5,7 @@ package node.dns
 import js.promise.await
 
 
-suspend fun resolveNaptr(hostname: String): js.core.ReadonlyArray<NaptrRecord> =
+suspend fun resolveNaptr(hostname: String): js.array.ReadonlyArray<NaptrRecord> =
     resolveNaptrAsync(
         hostname
     ).await()

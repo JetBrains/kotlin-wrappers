@@ -8,5 +8,5 @@ external interface PageFaviconUpdatedEvent : Event {
     /**
      * Array of URLs.
      */
-    var favicons: js.core.ReadonlyArray<String>
+    var favicons: js.array.ReadonlyArray<String>
 }

@@ -10,7 +10,7 @@ package remix.run.router
  */
 external fun resolveTo(
     toArg: To,
-    routePathnames: js.core.ReadonlyArray<String>,
+    routePathnames: js.array.ReadonlyArray<String>,
     locationPathname: String,
     isPathRelative: Boolean = definedExternally,
 ): Path

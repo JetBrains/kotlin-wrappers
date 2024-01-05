@@ -15,4 +15,4 @@ package node.os
  * always `[0, 0, 0]`.
  * @since v0.3.3
  */
-external fun loadavg(): js.core.ReadonlyArray<Double>
+external fun loadavg(): js.array.ReadonlyArray<Double>

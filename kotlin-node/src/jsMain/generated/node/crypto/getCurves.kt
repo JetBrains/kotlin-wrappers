@@ -16,4 +16,4 @@ package node.crypto
  * @since v2.3.0
  * @return An array with the names of the supported elliptic curves.
  */
-external fun getCurves(): js.core.ReadonlyArray<String>
+external fun getCurves(): js.array.ReadonlyArray<String>

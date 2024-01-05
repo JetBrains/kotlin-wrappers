@@ -28,5 +28,5 @@ external interface OnBeforeRedirectListenerDetails {
      */
     var ip: String?
     var fromCache: Boolean
-    var responseHeaders: js.objects.ReadonlyRecord<String, js.core.ReadonlyArray<String>>?
+    var responseHeaders: js.objects.ReadonlyRecord<String, js.array.ReadonlyArray<String>>?
 }

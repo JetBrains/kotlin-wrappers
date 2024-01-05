@@ -8,7 +8,7 @@
 
 package cesium
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /**
  * Creates an instance of an AxisAlignedBoundingBox from the minimum and maximum points along the x, y, and z axes.

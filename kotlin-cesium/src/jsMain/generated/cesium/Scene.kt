@@ -8,7 +8,7 @@
 
 package cesium
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 import js.objects.jso
 import js.promise.Promise
 import web.dom.Element

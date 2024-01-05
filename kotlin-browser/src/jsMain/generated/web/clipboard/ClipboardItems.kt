@@ -2,6 +2,6 @@
 
 package web.clipboard
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 typealias ClipboardItems = ReadonlyArray<ClipboardItem>
