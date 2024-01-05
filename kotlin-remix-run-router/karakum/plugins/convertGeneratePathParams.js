@@ -7,7 +7,7 @@ export default function (node) {
         && ts.isFunctionDeclaration(node.parent.parent)
         && node.parent.parent.name.text === "generatePath"
     ) {
-        return "js.core.ReadonlyRecord<String, String>"
+        return "js.objects.ReadonlyRecord<String, String>"
     }
     return null
 }

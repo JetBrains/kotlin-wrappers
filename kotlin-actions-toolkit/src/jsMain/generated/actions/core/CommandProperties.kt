@@ -2,6 +2,6 @@
 
 package actions.core
 
-import js.core.Record
+import js.objects.Record
 
 typealias CommandProperties = Record<String, Any>

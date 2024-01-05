@@ -2,8 +2,8 @@ package emotion.css
 
 import csstype.CssDsl
 import csstype.Properties
-import js.core.Record
 import js.core.jso
+import js.objects.Record
 import web.cssom.AnimationName
 import web.cssom.Percentage
 import web.cssom.pct

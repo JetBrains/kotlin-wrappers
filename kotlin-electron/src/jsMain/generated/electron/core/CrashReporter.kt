@@ -38,7 +38,7 @@ external interface CrashReporter {
     /**
      * The current 'extra' parameters of the crash reporter.
      */
-    fun getParameters(): js.core.ReadonlyRecord<String, String>
+    fun getParameters(): js.objects.ReadonlyRecord<String, String>
 
     /**
      * Returns all uploaded crash reports. Each report contains the date and uploaded

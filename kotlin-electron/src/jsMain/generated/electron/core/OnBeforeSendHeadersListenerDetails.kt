@@ -20,5 +20,5 @@ external interface OnBeforeSendHeadersListenerDetails {
     var referrer: String
     var timestamp: Double
     var uploadData: js.core.ReadonlyArray<UploadData>?
-    var requestHeaders: js.core.ReadonlyRecord<String, String>
+    var requestHeaders: js.objects.ReadonlyRecord<String, String>
 }

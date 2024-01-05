@@ -56,7 +56,7 @@ external interface CrashReporterStartOptions {
      * crash reports generated from child processes, call `addExtraParameter` from the
      * child process.
      */
-    var extra: js.core.ReadonlyRecord<String, String>?
+    var extra: js.objects.ReadonlyRecord<String, String>?
 
     /**
      * Extra string key/value annotations that will be sent along with any crash
@@ -66,5 +66,5 @@ external interface CrashReporterStartOptions {
      * take precedence. By default, `productName` and the app version are included, as
      * well as the Electron version.
      */
-    var globalExtra: js.core.ReadonlyRecord<String, String>?
+    var globalExtra: js.objects.ReadonlyRecord<String, String>?
 }

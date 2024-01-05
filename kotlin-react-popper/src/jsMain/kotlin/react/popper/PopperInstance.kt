@@ -1,6 +1,6 @@
 package react.popper
 
-import js.core.Record
+import js.objects.Record
 import popper.core.ForceUpdate
 import popper.core.Name
 import popper.core.State

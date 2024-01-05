@@ -7,7 +7,7 @@
 package web.audio
 
 import js.core.ReadonlyArray
-import js.core.Record
+import js.objects.Record
 import js.typedarrays.Float32Array
 
 external interface AudioWorkletProcessorImpl :

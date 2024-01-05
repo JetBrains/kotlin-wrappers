@@ -2,6 +2,6 @@
 
 package tanstack.table.core
 
-import js.core.ReadonlyRecord
+import js.objects.ReadonlyRecord
 
 typealias ExpandedStateList = ReadonlyRecord<String, Boolean>

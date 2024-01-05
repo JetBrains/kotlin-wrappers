@@ -2,7 +2,7 @@
 
 package tanstack.table.core
 
-import js.core.ReadonlyRecord
+import js.objects.ReadonlyRecord
 
 external interface FiltersRow<TData : RowData> {
     /**

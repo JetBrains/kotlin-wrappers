@@ -98,7 +98,7 @@ external class IncomingMessage : NodeEventEmitter {
      * * For duplicate `cookie` headers, the values are joined together with '; '.
      * * For all other headers, the values are joined together with ', '.
      */
-    var headers: js.core.ReadonlyRecord<String, Any /* (string) | (string[]) */>
+    var headers: js.objects.ReadonlyRecord<String, Any /* (string) | (string[]) */>
 
     /**
      * A `string` indicating the HTTP protocol version number. Typical values are '1.0'

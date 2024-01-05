@@ -4,7 +4,7 @@
 
 package tanstack.table.core
 
-import js.core.ReadonlyRecord
+import js.objects.ReadonlyRecord
 
 external fun <TData : RowData> isSubRowSelected(
     row: Row<TData>,

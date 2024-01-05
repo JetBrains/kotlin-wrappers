@@ -63,7 +63,7 @@ external interface WebContentsPrintOptions {
      * `longEdge`.
      */
     var duplexMode: (WebContentsPrintOptionsDuplexMode)?
-    var dpi: js.core.ReadonlyRecord<String, Double>?
+    var dpi: js.objects.ReadonlyRecord<String, Double>?
 
     /**
      * string to be printed as page header.

@@ -1,6 +1,6 @@
 package emotion.utils
 
-import js.core.Record
+import js.objects.Record
 
 external interface EmotionCache {
     val inserted: Record<String, Any /* string | true */>

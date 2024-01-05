@@ -4,4 +4,4 @@
 package remix.run.router
 
 
-typealias RouteManifest = js.core.ReadonlyRecord<String, AgnosticDataRouteObject>
+typealias RouteManifest = js.objects.ReadonlyRecord<String, AgnosticDataRouteObject>

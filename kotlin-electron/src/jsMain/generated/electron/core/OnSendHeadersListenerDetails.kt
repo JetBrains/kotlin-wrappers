@@ -19,5 +19,5 @@ external interface OnSendHeadersListenerDetails {
     var resourceType: (OnSendHeadersListenerDetailsResourceType)
     var referrer: String
     var timestamp: Double
-    var requestHeaders: js.core.ReadonlyRecord<String, String>
+    var requestHeaders: js.objects.ReadonlyRecord<String, String>
 }

@@ -17,8 +17,8 @@ sealed external interface StaticHandlerContext {
     var actionData: RouteData?
     var errors: RouteData?
     var statusCode: Double
-    var loaderHeaders: js.core.ReadonlyRecord<String, Headers>
-    var actionHeaders: js.core.ReadonlyRecord<String, Headers>
-    var activeDeferreds: js.core.ReadonlyRecord<String, DeferredData>?
+    var loaderHeaders: js.objects.ReadonlyRecord<String, Headers>
+    var actionHeaders: js.objects.ReadonlyRecord<String, Headers>
+    var activeDeferreds: js.objects.ReadonlyRecord<String, DeferredData>?
     var _deepestRenderedBoundaryId: String?
 }

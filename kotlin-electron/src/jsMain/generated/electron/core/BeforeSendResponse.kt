@@ -10,5 +10,5 @@ external interface BeforeSendResponse {
     /**
      * When provided, request will be made with these headers.
      */
-    var requestHeaders: js.core.ReadonlyRecord<String, Any /* (string) | (string[]) */>?
+    var requestHeaders: js.objects.ReadonlyRecord<String, Any /* (string) | (string[]) */>?
 }

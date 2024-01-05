@@ -1,7 +1,7 @@
 package react.beautiful.dnd
 
 import js.core.ReadonlyArray
-import js.core.ReadonlyRecord
+import js.objects.ReadonlyRecord
 import react.*
 import react.dom.events.DragEventHandler
 import react.dom.events.TransitionEventHandler

@@ -10,7 +10,7 @@ external interface HeadersReceivedResponse {
     /**
      * When provided, the server is assumed to have responded with these headers.
      */
-    var responseHeaders: js.core.ReadonlyRecord<String, Any /* (string) | (string[]) */>?
+    var responseHeaders: js.objects.ReadonlyRecord<String, Any /* (string) | (string[]) */>?
 
     /**
      * Should be provided when overriding `responseHeaders` to change header status

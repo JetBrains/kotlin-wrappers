@@ -358,7 +358,7 @@ external interface SystemPreferences : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun postLocalNotification(event: String, userInfo: js.core.ReadonlyRecord<String, Any>): Unit
+    fun postLocalNotification(event: String, userInfo: js.objects.ReadonlyRecord<String, Any>): Unit
 
     /**
      * Posts `event` as native notifications of macOS. The `userInfo` is an Object that
@@ -368,7 +368,7 @@ external interface SystemPreferences : node.events.EventEmitter {
      */
     fun postNotification(
         event: String,
-        userInfo: js.core.ReadonlyRecord<String, Any>,
+        userInfo: js.objects.ReadonlyRecord<String, Any>,
         deliverImmediately: Boolean = definedExternally,
     ): Unit
 
@@ -378,7 +378,7 @@ external interface SystemPreferences : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun postWorkspaceNotification(event: String, userInfo: js.core.ReadonlyRecord<String, Any>): Unit
+    fun postWorkspaceNotification(event: String, userInfo: js.objects.ReadonlyRecord<String, Any>): Unit
 
     /**
      * resolves if the user has successfully authenticated with Touch ID.
@@ -399,7 +399,7 @@ external interface SystemPreferences : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun registerDefaults(defaults: js.core.ReadonlyRecord<String, Any /* (string) | (boolean) | (number) */>): Unit
+    fun registerDefaults(defaults: js.objects.ReadonlyRecord<String, Any /* (string) | (boolean) | (number) */>): Unit
 
     /**
      * Removes the `key` in `NSUserDefaults`. This can be used to restore the default
@@ -446,7 +446,7 @@ external interface SystemPreferences : node.events.EventEmitter {
      */
     fun subscribeLocalNotification(
         event: String?,
-        callback: (event: String, userInfo: js.core.ReadonlyRecord<String, Any>, `object`: String) -> Unit,
+        callback: (event: String, userInfo: js.objects.ReadonlyRecord<String, Any>, `object`: String) -> Unit,
     ): Double
 
     /**
@@ -476,7 +476,7 @@ external interface SystemPreferences : node.events.EventEmitter {
      */
     fun subscribeNotification(
         event: String?,
-        callback: (event: String, userInfo: js.core.ReadonlyRecord<String, Any>, `object`: String) -> Unit,
+        callback: (event: String, userInfo: js.objects.ReadonlyRecord<String, Any>, `object`: String) -> Unit,
     ): Double
 
     /**
@@ -493,7 +493,7 @@ external interface SystemPreferences : node.events.EventEmitter {
      */
     fun subscribeWorkspaceNotification(
         event: String?,
-        callback: (event: String, userInfo: js.core.ReadonlyRecord<String, Any>, `object`: String) -> Unit,
+        callback: (event: String, userInfo: js.objects.ReadonlyRecord<String, Any>, `object`: String) -> Unit,
     ): Double
 
     /**

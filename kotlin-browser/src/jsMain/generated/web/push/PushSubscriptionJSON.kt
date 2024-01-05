@@ -2,7 +2,7 @@
 
 package web.push
 
-import js.core.ReadonlyRecord
+import js.objects.ReadonlyRecord
 import web.time.EpochTimeStamp
 
 sealed external interface PushSubscriptionJSON {

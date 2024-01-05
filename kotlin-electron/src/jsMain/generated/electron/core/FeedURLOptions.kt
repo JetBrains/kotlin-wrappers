@@ -12,7 +12,7 @@ external interface FeedURLOptions {
      *
      * @platform darwin
      */
-    var headers: js.core.ReadonlyRecord<String, String>?
+    var headers: js.objects.ReadonlyRecord<String, String>?
 
     /**
      * Can be `json` or `default`, see the Squirrel.Mac README for more information.

@@ -3,7 +3,7 @@
 package popper.core
 
 import js.core.ReadonlyArray
-import js.core.Record
+import js.objects.Record
 
 external interface Modifier<Options> {
     var name: ModifierName<Options>

@@ -2,7 +2,7 @@
 
 package mui.system
 
-import js.core.Record
+import js.objects.Record
 
 external interface ResponsiveStyleValue<T : Any>
 

@@ -10,7 +10,7 @@ export default function (node, context, render) {
         && ts.isTypeReferenceNode(node.parent)
         && node.text === "Record"
     ) {
-        return "js.core.ReadonlyRecord"
+        return "js.objects.ReadonlyRecord"
     }
     return null
 }

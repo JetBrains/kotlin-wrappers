@@ -81,7 +81,7 @@ sealed external interface Router {
      * @param getKey               Function to get the key to use for restoration
      */
     fun enableScrollRestoration(
-        savedScrollPositions: js.core.ReadonlyRecord<String, Double>,
+        savedScrollPositions: js.objects.ReadonlyRecord<String, Double>,
         getScrollPosition: GetScrollPositionFunction,
         getKey: GetScrollRestorationKeyFunction = definedExternally,
     ): () -> Unit

@@ -593,7 +593,7 @@ external class WebContents : NodeEventEmitter {
              * The other `<webview>` parameters such as the `src` URL. This object can be
              * modified to adjust the parameters of the guest page.
              */
-            params: js.core.ReadonlyRecord<String, String>,
+            params: js.objects.ReadonlyRecord<String, String>,
         ) -> Unit,
     ): Unit /* this */
 
@@ -955,7 +955,7 @@ external class WebContents : NodeEventEmitter {
              * The other `<webview>` parameters such as the `src` URL. This object can be
              * modified to adjust the parameters of the guest page.
              */
-            params: js.core.ReadonlyRecord<String, String>,
+            params: js.objects.ReadonlyRecord<String, String>,
         ) -> Unit,
     ): Unit /* this */
 
@@ -1285,7 +1285,7 @@ external class WebContents : NodeEventEmitter {
              * The other `<webview>` parameters such as the `src` URL. This object can be
              * modified to adjust the parameters of the guest page.
              */
-            params: js.core.ReadonlyRecord<String, String>,
+            params: js.objects.ReadonlyRecord<String, String>,
         ) -> Unit,
     ): Unit /* this */
 
@@ -1623,7 +1623,7 @@ external class WebContents : NodeEventEmitter {
              * The other `<webview>` parameters such as the `src` URL. This object can be
              * modified to adjust the parameters of the guest page.
              */
-            params: js.core.ReadonlyRecord<String, String>,
+            params: js.objects.ReadonlyRecord<String, String>,
         ) -> Unit,
     ): Unit /* this */
 

@@ -12,5 +12,5 @@ package remix.run.router
  */
 external fun generatePath(
     originalPath: String,
-    params: js.core.ReadonlyRecord<String, String> = definedExternally,
+    params: js.objects.ReadonlyRecord<String, String> = definedExternally,
 ): String

@@ -2,6 +2,6 @@
 
 package popper.core
 
-import js.core.Record
+import js.objects.Record
 
 typealias OffsetData = Record<Placement, Offsets>

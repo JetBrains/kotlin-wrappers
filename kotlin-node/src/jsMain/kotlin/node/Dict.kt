@@ -2,6 +2,6 @@
 
 package node
 
-import js.core.Record
+import js.objects.Record
 
 typealias Dict<T> = Record<String, T>

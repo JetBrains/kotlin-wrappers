@@ -2,7 +2,7 @@
 
 package actions.exec
 
-import js.core.Record
+import js.objects.Record
 import node.buffer.Buffer
 
 sealed external interface ExecOptions {

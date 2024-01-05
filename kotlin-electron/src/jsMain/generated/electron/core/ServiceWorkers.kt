@@ -109,7 +109,7 @@ external class ServiceWorkers : NodeEventEmitter {
      * A ServiceWorkerInfo object where the keys are the service worker version ID and
      * the values are the information about that service worker.
      */
-    fun getAllRunning(): js.core.ReadonlyRecord<Double, ServiceWorkerInfo>
+    fun getAllRunning(): js.objects.ReadonlyRecord<Double, ServiceWorkerInfo>
 
     /**
      * Information about this service worker

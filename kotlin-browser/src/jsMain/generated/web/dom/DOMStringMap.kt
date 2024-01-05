@@ -2,7 +2,7 @@
 
 package web.dom
 
-import js.core.Record
+import js.objects.Record
 
 /**
  * Used by the dataset HTML attribute to represent data for custom attributes added to elements.

@@ -3,7 +3,7 @@
 package tanstack.table.core
 
 import js.core.ReadonlyArray
-import js.core.ReadonlyRecord
+import js.objects.ReadonlyRecord
 
 external interface RowModel<TData : RowData> {
     var rows: ReadonlyArray<Row<TData>>

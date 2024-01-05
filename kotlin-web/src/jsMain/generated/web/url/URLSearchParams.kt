@@ -5,8 +5,8 @@ package web.url
 import js.collections.MapLike
 import js.core.JsTuple2
 import js.core.ReadonlyArray
-import js.core.ReadonlyRecord
 import js.iterable.IterableIterator
+import js.objects.ReadonlyRecord
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams)

@@ -99,7 +99,7 @@ external class ServerResponse<Request : IncomingMessage /* default is IncomingMe
      * @param callback Will be called when the response message has been written
      */
     fun writeEarlyHints(
-        hints: js.core.ReadonlyRecord<String, Any /* string | string[] */>,
+        hints: js.objects.ReadonlyRecord<String, Any /* string | string[] */>,
         callback: () -> Unit = definedExternally,
     ): Unit
 

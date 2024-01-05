@@ -4,7 +4,7 @@
 
 package mui.system
 
-import js.core.Record
+import js.objects.Record
 
 external interface ThemeOptions {
     var shape: ShapeOptions?

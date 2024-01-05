@@ -9,7 +9,7 @@ external interface FilePathWithHeaders {
     /**
      * Additional headers to be sent.
      */
-    var headers: js.core.ReadonlyRecord<String, String>?
+    var headers: js.objects.ReadonlyRecord<String, String>?
 
     /**
      * The path to the file to send.

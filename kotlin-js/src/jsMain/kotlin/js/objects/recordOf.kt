@@ -1,4 +1,4 @@
-package js.core
+package js.objects
 
 fun <K : Any, V> recordOf(
     vararg pairs: Pair<K, V>,

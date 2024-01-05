@@ -2,8 +2,9 @@
     "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
 )
 
-package js.core
+package js.objects
 
+import js.core.jso
 import seskar.js.JsNative
 
 external interface Record<K : Any, V>

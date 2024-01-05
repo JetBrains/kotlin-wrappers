@@ -5,7 +5,7 @@ export default function (node, context, render) {
         ts.isTypeAliasDeclaration(node)
         && node.name.text === "Params"
     ) {
-        return `typealias ${render(node.name)} = js.core.ReadonlyRecord<String, String>`
+        return `typealias ${render(node.name)} = js.objects.ReadonlyRecord<String, String>`
     }
 
     if (

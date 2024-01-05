@@ -19,7 +19,7 @@ external interface OnCompletedListenerDetails {
     var resourceType: (OnCompletedListenerDetailsResourceType)
     var referrer: String
     var timestamp: Double
-    var responseHeaders: js.core.ReadonlyRecord<String, js.core.ReadonlyArray<String>>?
+    var responseHeaders: js.objects.ReadonlyRecord<String, js.core.ReadonlyArray<String>>?
     var fromCache: Boolean
     var statusCode: Double
     var statusLine: String

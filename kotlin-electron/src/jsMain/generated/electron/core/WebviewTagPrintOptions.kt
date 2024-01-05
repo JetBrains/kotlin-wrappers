@@ -63,7 +63,7 @@ external interface WebviewTagPrintOptions {
      * `longEdge`.
      */
     var duplexMode: (WebviewTagPrintOptionsDuplexMode)?
-    var dpi: js.core.ReadonlyRecord<String, Double>?
+    var dpi: js.objects.ReadonlyRecord<String, Double>?
 
     /**
      * string to be printed as page header.

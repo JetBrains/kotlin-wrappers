@@ -6,7 +6,7 @@
 
 package tanstack.table.core
 
-import js.core.ReadonlyRecord
+import js.objects.ReadonlyRecord
 
 sealed external interface ExpandedState /* true | Record<string, boolean> */
 

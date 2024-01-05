@@ -43,7 +43,7 @@ external interface TraceConfig {
      * optional additional configuration for data collection. See the Chromium
      * memory-infra docs for more information.
      */
-    var memory_dump_config: js.core.ReadonlyRecord<String, Any>?
+    var memory_dump_config: js.objects.ReadonlyRecord<String, Any>?
 
     /**
      * Can be `record-until-full`, `record-continuously`, `record-as-much-as-possible`

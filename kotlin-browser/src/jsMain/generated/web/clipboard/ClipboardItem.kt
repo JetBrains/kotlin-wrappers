@@ -3,7 +3,7 @@
 package web.clipboard
 
 import js.core.ReadonlyArray
-import js.core.ReadonlyRecord
+import js.objects.ReadonlyRecord
 import js.promise.Promise
 import web.buffer.Blob
 

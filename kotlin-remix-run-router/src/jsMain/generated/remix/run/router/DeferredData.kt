@@ -10,9 +10,9 @@ import web.http.ResponseInit
 
 
 external class DeferredData {
-    constructor (data: js.core.ReadonlyRecord<String, Any>, responseInit: ResponseInit = definedExternally)
+    constructor (data: js.objects.ReadonlyRecord<String, Any>, responseInit: ResponseInit = definedExternally)
 
-    var data: js.core.ReadonlyRecord<String, Any>
+    var data: js.objects.ReadonlyRecord<String, Any>
     var init: ResponseInit?
     var deferredKeys: js.core.ReadonlyArray<String>
     fun subscribe(fn: (aborted: Boolean, settledKey: String? /* use undefined for default */) -> Unit): () -> Boolean

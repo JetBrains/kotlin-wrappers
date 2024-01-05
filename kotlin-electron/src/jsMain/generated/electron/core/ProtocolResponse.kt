@@ -29,7 +29,7 @@ external interface ProtocolResponse {
      * An object containing the response headers. The keys must be string, and values
      * must be either string or Array of string.
      */
-    var headers: js.core.ReadonlyRecord<String, Any /* (string) | (string[]) */>?
+    var headers: js.objects.ReadonlyRecord<String, Any /* (string) | (string[]) */>?
 
     /**
      * The HTTP `method`. This is only used for file and URL responses.

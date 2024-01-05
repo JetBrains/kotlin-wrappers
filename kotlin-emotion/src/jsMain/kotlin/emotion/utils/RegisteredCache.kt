@@ -1,5 +1,5 @@
 package emotion.utils
 
-import js.core.Record
+import js.objects.Record
 
 typealias RegisteredCache = Record<String, String>
