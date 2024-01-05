@@ -10,6 +10,7 @@ const eventHandlerMethods = new Set([
     "removeListener",
     "prependListener",
     "prependOnceListener",
+    "listeners",
 ])
 
 function extractEventContainer(node) {

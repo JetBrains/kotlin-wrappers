@@ -24,6 +24,11 @@ const interfacesWithSuperclass = [
     "FSWatcher",
     "StatWatcher",
 
+    // process
+    "Process",
+    "ReadStream",
+    "WriteStream",
+
     // stream
     "Stream"
 ]

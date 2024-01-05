@@ -14,6 +14,7 @@
         "<nodeModules>/@types/node/http.d.ts",
         "<nodeModules>/@types/node/net.d.ts",
         "<nodeModules>/@types/node/path.d.ts",
+        "<nodeModules>/@types/node/process.d.ts",
         "<nodeModules>/@types/node/querystring.d.ts",
         "<nodeModules>/@types/node/readline.d.ts",
         "<nodeModules>/@types/node/readline/promises.d.ts",
@@ -70,6 +71,7 @@
         "**/path/PlatformPathSep.kt",
         "**/path/posix/**",
         "**/path/win32/**",
+        "**/process/global/namespace.kt",
         "**/readline/createInterface.kt",
         "**/stream/internal.kt",
         "**/url/global/**",
@@ -102,6 +104,8 @@
         "^net": "node:net",
         "^node/path": "node:path",
         "^path": "node:path",
+        "^node/process": "node:process",
+        "^process": "node:process",
         "^node/querystring": "node:querystring",
         "^querystring": "node:querystring",
         "^node/readline": "node:readline",
@@ -167,6 +171,11 @@
         "^node/path.kt": "node/path/path.kt",
         "^path/path": "node/path",
         "^path": "node/path",
+        "^node/process/namespace.kt": "node/process/nodeNamespace.kt",
+        "^node/process.kt": "node/process/process.kt",
+        "^process": "node/process",
+        "process/global/nodejs/(.+)\\.kt": "process/$1.kt",
+        "process/Process.kt": "process/Process.interface.kt",
         "^node/querystring/namespace.kt": "node/querystring/nodeNamespace.kt",
         "^node/querystring.kt": "node/querystring/querystring.kt",
         "^querystring": "node/querystring",
@@ -511,6 +520,34 @@
         "net/SocketConstructorOpts.kt": [
             "web.abort.AbortSignal"
         ],
+        "process/MultipleResolveListener.kt": [
+            "js.promise.Promise"
+        ],
+        "process/Process.interface.kt": [
+            "js.core.ReadonlyArray",
+            "js.collections.ReadonlySet",
+            "js.promise.Promise",
+            "node.Module",
+            "node.events.EventEmitter"
+        ],
+        "process/ProcessEnv.kt": [
+            "node.Dict"
+        ],
+        "process/ProcessVersions.kt": [
+            "node.Dict"
+        ],
+        "process/RejectionHandledListener.kt": [
+            "js.promise.Promise"
+        ],
+        "process/Socket.kt": [
+            "node.ReadWriteStream"
+        ],
+        "process/UnhandledRejectionListener.kt": [
+            "js.promise.Promise"
+        ],
+        "process/WorkerListener.kt": [
+            "node.workerThreads.Worker"
+        ],
         "readline/Interface.kt": [
             "node.events.EventEmitter",
             "node.events.Abortable"
@@ -608,6 +645,8 @@
         "node:net": "ignore",
         "path": "package",
         "node:path": "ignore",
+        "process": "package",
+        "node:process": "ignore",
         "querystring": "package",
         "node:querystring": "ignore",
         "readline": "package",

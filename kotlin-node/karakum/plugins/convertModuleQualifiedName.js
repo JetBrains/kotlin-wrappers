@@ -4,6 +4,7 @@ const modules = [
     "dns",
     "net",
     "stream",
+    "tty",
 ]
 
 export default function (node, context, render) {

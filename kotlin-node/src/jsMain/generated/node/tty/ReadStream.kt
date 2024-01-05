@@ -11,7 +11,7 @@ package node.tty
  * @since v0.5.8
  */
 
-external class ReadStream : node.net.Socket {
+open external class ReadStream : node.net.Socket {
     constructor (fd: Number, options: node.net.SocketConstructorOpts = definedExternally)
 
     /**

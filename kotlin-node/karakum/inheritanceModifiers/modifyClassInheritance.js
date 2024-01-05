@@ -49,6 +49,13 @@ export default (node) => {
                     || node.name.text === "Transform"
                 )
             )
+            || (
+                sourceFileName.endsWith("tty.d.ts")
+                && (
+                    node.name.text === "ReadStream"
+                    || node.name.text === "WriteStream"
+                )
+            )
         )
     ) {
         return "open"

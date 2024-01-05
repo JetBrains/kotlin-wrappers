@@ -11,7 +11,7 @@ package node.tty
  * @since v0.5.8
  */
 
-external class WriteStream : node.net.Socket {
+open external class WriteStream : node.net.Socket {
     constructor (fd: Number)
 
     override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
