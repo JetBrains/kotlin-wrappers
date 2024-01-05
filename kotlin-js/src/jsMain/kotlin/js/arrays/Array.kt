@@ -2,7 +2,7 @@
     "NOTHING_TO_INLINE",
 )
 
-package js.core
+package js.arrays
 
 inline fun <T> Array<T>.push(
     item: T,

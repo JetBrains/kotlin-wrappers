@@ -1,4 +1,4 @@
-package js.core
+package js.arrays
 
 fun <T> Sequence<T>.toTypedArray(): Array<T> {
     val array = emptyArray<T>()
