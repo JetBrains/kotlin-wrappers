@@ -7,6 +7,15 @@ const overriddenProps = {
         "destroyed": "netSocketDestroyed"
     },
 
+    // perf_hooks
+    "PerformanceMark": {
+        "duration": null,
+        "entryType": ["markEntryType", "EntryType"]
+    },
+    "PerformanceMeasure": {
+        "entryType": ["measureEntryType", "EntryType"]
+    },
+
     // stream
     "Readable": {
         "readable": null

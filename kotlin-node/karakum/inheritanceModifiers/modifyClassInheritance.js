@@ -56,6 +56,18 @@ export default (node) => {
                     || node.name.text === "WriteStream"
                 )
             )
+            || (
+                sourceFileName.endsWith("async_hooks.d.ts")
+                && (
+                    node.name.text === "AsyncResource"
+                )
+            )
+            || (
+                sourceFileName.endsWith("perf_hooks.d.ts")
+                && (
+                    node.name.text === "PerformanceEntry"
+                )
+            )
         )
     ) {
         return "open"

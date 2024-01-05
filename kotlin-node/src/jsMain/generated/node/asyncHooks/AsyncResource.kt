@@ -43,7 +43,7 @@ package node.asyncHooks
  * ```
  */
 
-external class AsyncResource {
+open external class AsyncResource {
     /**
      * AsyncResource() is meant to be extended. Instantiating a
      * new AsyncResource() also triggers init. If triggerAsyncId is omitted then

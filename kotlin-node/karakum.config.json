@@ -14,6 +14,7 @@
         "<nodeModules>/@types/node/http.d.ts",
         "<nodeModules>/@types/node/net.d.ts",
         "<nodeModules>/@types/node/path.d.ts",
+        "<nodeModules>/@types/node/perf_hooks.d.ts",
         "<nodeModules>/@types/node/process.d.ts",
         "<nodeModules>/@types/node/querystring.d.ts",
         "<nodeModules>/@types/node/readline.d.ts",
@@ -72,6 +73,7 @@
         "**/path/PlatformPathSep.kt",
         "**/path/posix/**",
         "**/path/win32/**",
+        "**/perfHooks/global/namespace.kt",
         "**/process/global/namespace.kt",
         "**/readline/createInterface.kt",
         "**/stream/internal.kt",
@@ -109,6 +111,8 @@
         "^net": "node:net",
         "^node/path": "node:path",
         "^path": "node:path",
+        "^node/perf_hooks": "node:perf_hooks",
+        "^perf_hooks": "node:perf_hooks",
         "^node/process": "node:process",
         "^process": "node:process",
         "^node/querystring": "node:querystring",
@@ -178,6 +182,9 @@
         "^node/path.kt": "node/path/path.kt",
         "^path/path": "node/path",
         "^path": "node/path",
+        "^node/perf_hooks/namespace.kt": "node/perfHooks/nodeNamespace.kt",
+        "^node/perfHooks.kt": "node/perfHooks/perfHooks.kt",
+        "^perf_hooks": "node/perfHooks",
         "^node/process/namespace.kt": "node/process/nodeNamespace.kt",
         "^node/process.kt": "node/process/process.kt",
         "^process": "node/process",
@@ -530,6 +537,12 @@
         "net/SocketConstructorOpts.kt": [
             "web.abort.AbortSignal"
         ],
+        "perfHooks/PerformanceObserver.kt": [
+            "node.asyncHooks.AsyncResource"
+        ],
+        "perfHooks/PerformanceObserverObserveTypesOptions.kt": [
+            "js.core.ReadonlyArray"
+        ],
         "process/MultipleResolveListener.kt": [
             "js.promise.Promise"
         ],
@@ -648,6 +661,9 @@
             "node.stream.Readable",
             "node.stream.Writable"
         ],
+        "workerThreads/WorkerPerformance.kt": [
+            "node.perfHooks.EventLoopUtilityFunction"
+        ],
         "workerThreads/moveMessagePortToContext.kt": [
             "web.messaging.MessagePort",
             "node.vm.Context"
@@ -683,6 +699,8 @@
         "node:net": "ignore",
         "path": "package",
         "node:path": "ignore",
+        "perf_hooks": "package",
+        "node:perf_hooks": "ignore",
         "process": "package",
         "node:process": "ignore",
         "querystring": "package",

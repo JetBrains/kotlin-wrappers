@@ -51,6 +51,17 @@ export default (node) => {
                     && node.parent.name?.text === "Writable"
                 )
             )
+            || (
+                sourceFileName.endsWith("perf_hooks.d.ts")
+                && (
+                    (
+                        node.name.text === "duration"
+                        || node.name.text === "entryType"
+                    )
+                    && node.parent
+                    && node.parent.name?.text === "PerformanceEntry"
+                )
+            )
         )
     ) {
         return "open"

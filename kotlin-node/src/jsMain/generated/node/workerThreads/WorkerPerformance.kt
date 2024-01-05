@@ -3,7 +3,9 @@
 
 package node.workerThreads
 
+import node.perfHooks.EventLoopUtilityFunction
+
 
 sealed external interface WorkerPerformance {
-    var eventLoopUtilization: Function<*> /* EventLoopUtilityFunction */
+    var eventLoopUtilization: EventLoopUtilityFunction
 }
