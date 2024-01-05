@@ -15,11 +15,12 @@
         "<nodeModules>/@types/node/net.d.ts",
         "<nodeModules>/@types/node/path.d.ts",
         "<nodeModules>/@types/node/querystring.d.ts",
-        "<nodeModules>/@types/node/tls.d.ts",
         "<nodeModules>/@types/node/readline.d.ts",
         "<nodeModules>/@types/node/readline/promises.d.ts",
         "<nodeModules>/@types/node/stream.d.ts",
-        "<nodeModules>/@types/node/stream/promises.d.ts"
+        "<nodeModules>/@types/node/stream/promises.d.ts",
+        "<nodeModules>/@types/node/tls.d.ts",
+        "<nodeModules>/@types/node/tty.d.ts"
     ],
     "output": "src/jsMain/generated",
     "ignoreOutput": [
@@ -99,13 +100,15 @@
         "^path": "node:path",
         "^node/querystring": "node:querystring",
         "^querystring": "node:querystring",
-        "^node/tls": "node:tls",
-        "^tls": "node:tls",
         "^node/readline": "node:readline",
         "^readline": "node:readline",
         "^node/stream": "node:stream",
         "^stream#internal": "node:stream",
-        "^stream": "node:stream"
+        "^stream": "node:stream",
+        "^node/tls": "node:tls",
+        "^tls": "node:tls",
+        "^node/tty": "node:tty",
+        "^tty": "node:tty"
     },
     "packageNameMapper": {
         "promises/(.+)\\.kt": "$1Async.kt",
@@ -161,9 +164,6 @@
         "^node/querystring/namespace.kt": "node/querystring/nodeNamespace.kt",
         "^node/querystring.kt": "node/querystring/querystring.kt",
         "^querystring": "node/querystring",
-        "^node/tls/namespace.kt": "node/tls/nodeNamespace.kt",
-        "^node/tls.kt": "node/tls/tls.kt",
-        "^tls": "node/tls",
         "^node/readline/namespace.kt": "node/readline/nodeNamespace.kt",
         "^node/readline.kt": "node/readline/readlineNamespace.kt",
         "^readline": "node/readline",
@@ -171,7 +171,13 @@
         "^node/stream.kt": "node/stream/streamNamespace.kt",
         "^stream": "node/stream",
         "stream/internal/namespace.kt": "stream/internalNamespace.kt",
-        "stream/internal/(.+)\\.kt": "stream/$1.kt"
+        "stream/internal/(.+)\\.kt": "stream/$1.kt",
+        "^node/tls/namespace.kt": "node/tls/nodeNamespace.kt",
+        "^node/tls.kt": "node/tls/tls.kt",
+        "^tls": "node/tls",
+        "^node/tty/namespace.kt": "node/tty/nodeNamespace.kt",
+        "^node/tty.kt": "node/tty/tty.kt",
+        "^tty": "node/tty"
     },
     "importInjector": {
         "Async.kt": [
@@ -495,12 +501,6 @@
         "net/SocketConstructorOpts.kt": [
             "web.abort.AbortSignal"
         ],
-        "tls/TLSSocket.kt": [
-            "node.crypto.X509Certificate"
-        ],
-        "tls/namespace.kt": [
-            "js.core.ReadonlyArray"
-        ],
         "readline/Interface.kt": [
             "node.events.EventEmitter",
             "node.events.Abortable"
@@ -560,6 +560,12 @@
         "stream/Writable.kt": [
             "node.events.EventEmitter",
             "js.typedarrays.Uint8Array"
+        ],
+        "tls/TLSSocket.kt": [
+            "node.crypto.X509Certificate"
+        ],
+        "tls/namespace.kt": [
+            "js.core.ReadonlyArray"
         ]
     },
     "namespaceStrategy": {
@@ -588,12 +594,14 @@
         "node:path": "ignore",
         "querystring": "package",
         "node:querystring": "ignore",
-        "tls": "package",
-        "node:tls": "ignore",
         "readline": "package",
         "node:readline": "ignore",
         "stream": "package",
-        "node:stream": "ignore"
+        "node:stream": "ignore",
+        "tls": "package",
+        "node:tls": "ignore",
+        "tty": "package",
+        "node:tty": "ignore"
     },
     "conflictResolutionStrategy": {
         "LookupServiceResultPayload": "replace",

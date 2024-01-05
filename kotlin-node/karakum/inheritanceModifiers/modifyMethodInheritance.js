@@ -264,6 +264,15 @@ export default (node, context) => {
                     && isGenericEventEmitterSignature(context)
                 )
             )
+            || (
+                sourceFileName.endsWith("tty.d.ts")
+                && (
+                    isEventEmitterMethodName(node.name.text)
+                    && node.parent
+                    && node.parent.name?.text === "WriteStream"
+                    && isGenericEventEmitterSignature(context)
+                )
+            )
         )
     ) {
         return "override"
