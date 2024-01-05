@@ -4,4 +4,4 @@
 package node.readline
 
 
-typealias CompleterResult = js.core.JsTuple2<js.core.ReadonlyArray<String>, String>
+typealias CompleterResult = js.array.JsTuple2<js.core.ReadonlyArray<String>, String>

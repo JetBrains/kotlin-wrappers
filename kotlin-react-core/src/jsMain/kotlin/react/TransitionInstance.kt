@@ -1,6 +1,6 @@
 package react
 
-import js.core.JsTuple2
+import js.array.JsTuple2
 
 typealias TransitionFunction = () -> Unit
 typealias TransitionStartFunction = (callback: TransitionFunction) -> Unit

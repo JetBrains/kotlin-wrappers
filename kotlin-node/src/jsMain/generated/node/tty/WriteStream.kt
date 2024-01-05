@@ -132,7 +132,7 @@ open external class WriteStream : node.net.Socket {
      * of columns and rows in the corresponding TTY.
      * @since v0.7.7
      */
-    fun getWindowSize(): js.core.JsTuple2<Double, Double>
+    fun getWindowSize(): js.array.JsTuple2<Double, Double>
 
     /**
      * A `number` specifying the number of columns the TTY currently has. This property

@@ -2226,7 +2226,7 @@ external class WebContents : NodeEventEmitter {
     fun sendToFrame(frameId: Double, channel: String, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Unit
 
     fun sendToFrame(
-        frameId: js.core.JsTuple2<Double, Double>,
+        frameId: js.array.JsTuple2<Double, Double>,
         channel: String,
         vararg args: Any?, /* js.core.ReadonlyArray<Any?> */
     ): Unit

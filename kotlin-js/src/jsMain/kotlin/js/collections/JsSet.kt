@@ -1,6 +1,6 @@
 package js.collections
 
-import js.core.JsTuple2
+import js.array.JsTuple2
 import js.core.ReadonlyArray
 import js.iterable.IterableIterator
 import js.iterable.JsIterable

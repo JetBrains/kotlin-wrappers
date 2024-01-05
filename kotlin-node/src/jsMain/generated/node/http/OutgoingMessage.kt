@@ -169,7 +169,7 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
      */
     fun addTrailers(headers: OutgoingHttpHeaders): Unit
 
-    fun addTrailers(headers: ReadonlyArray<js.core.JsTuple2<String, String>>): Unit
+    fun addTrailers(headers: ReadonlyArray<js.array.JsTuple2<String, String>>): Unit
 
     /**
      * Compulsorily flushes the message headers

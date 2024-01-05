@@ -5,7 +5,7 @@ export default function (node, context, render) {
         ts.isTupleTypeNode(node)
         && node.elements.length === 2
     ) {
-        return `js.core.JsTuple2<${render(node.elements[0])}, ${render(node.elements[1])}>`
+        return `js.array.JsTuple2<${render(node.elements[0])}, ${render(node.elements[1])}>`
     }
     return null
 }

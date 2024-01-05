@@ -1,9 +1,9 @@
 package js.typedarrays
 
+import js.array.JsTuple2
 import js.array.MutableArrayLike
 import js.buffer.ArrayBufferView
 import js.collections.ListLike
-import js.core.JsTuple2
 import js.core.ReadonlyArray
 import js.iterable.IterableIterator
 import seskar.js.JsSpecialName

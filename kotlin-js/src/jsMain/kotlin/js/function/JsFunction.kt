@@ -2,7 +2,7 @@
 
 package js.function
 
-import js.core.*
+import js.array.*
 
 @JsExternalInheritorsOnly
 external interface JsFunction<in A : JsTuple, out R>

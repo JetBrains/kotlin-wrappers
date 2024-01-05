@@ -2,7 +2,7 @@
 
 package react
 
-import js.core.JsTuple2
+import js.array.JsTuple2
 
 // [Example](https://popper.js.org/react-popper/v2/#example)
 

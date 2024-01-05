@@ -2,8 +2,8 @@
 
 package web.url
 
+import js.array.JsTuple2
 import js.collections.MapLike
-import js.core.JsTuple2
 import js.core.ReadonlyArray
 import js.iterable.IterableIterator
 import js.objects.ReadonlyRecord

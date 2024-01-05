@@ -773,7 +773,7 @@ external interface WebviewTag {
      * See webContents.sendToFrame for examples.
      */
     fun sendToFrame(
-        frameId: js.core.JsTuple2<Double, Double>,
+        frameId: js.array.JsTuple2<Double, Double>,
         channel: String,
         vararg args: Any?, /* js.core.ReadonlyArray<Any?> */
     ): Promise<Unit>

@@ -2,7 +2,7 @@
 
 package typescript
 
-import js.core.JsTuple2
+import js.array.JsTuple2
 import js.iterable.JsIterator
 
 /** ES6 Map interface, only read methods included. */

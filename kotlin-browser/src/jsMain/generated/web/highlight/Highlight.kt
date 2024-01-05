@@ -2,8 +2,8 @@
 
 package web.highlight
 
+import js.array.JsTuple2
 import js.collections.MutableSetLike
-import js.core.JsTuple2
 import js.iterable.IterableIterator
 import web.ranges.AbstractRange
 

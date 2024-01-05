@@ -9,7 +9,7 @@ export default function (node, context, render) {
             .map(typeParameter => render(typeParameter))
             .join(", ")
 
-        return `js.core.JsTuple3<${typeParameters}>`
+        return `js.array.JsTuple3<${typeParameters}>`
     }
     return null
 }

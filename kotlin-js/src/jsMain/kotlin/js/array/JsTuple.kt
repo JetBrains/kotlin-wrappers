@@ -6,7 +6,7 @@
     "NOTHING_TO_INLINE",
 )
 
-package js.core
+package js.array
 
 sealed external interface JsTuple {
     @JsName("length")

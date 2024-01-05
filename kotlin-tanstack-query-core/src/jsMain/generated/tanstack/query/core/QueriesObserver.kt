@@ -8,7 +8,7 @@
 
 package tanstack.query.core
 
-import js.core.JsTuple3
+import js.array.JsTuple3
 import js.core.ReadonlyArray
 
 open external class QueriesObserver<TCombinedResult>(

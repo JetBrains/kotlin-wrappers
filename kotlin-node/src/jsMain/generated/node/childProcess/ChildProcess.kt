@@ -121,7 +121,7 @@ open external class ChildProcess : EventEmitter {
      * not be successfully spawned.
      * @since v0.7.10
      */
-    open val stdio: js.core.JsTuple5<Writable?, // stdin
+    open val stdio: js.array.JsTuple5<Writable?, // stdin
             Readable?, // stdout
             Readable?, // stderr
             Any? /* Readable | Writable | null | undefined */, // extra

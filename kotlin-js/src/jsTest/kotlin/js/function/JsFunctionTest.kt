@@ -1,6 +1,6 @@
 package js.function
 
-import js.core.JsTuple2
+import js.array.JsTuple2
 import kotlin.test.Test
 import kotlin.test.assertEquals
 

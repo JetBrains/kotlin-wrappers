@@ -1,6 +1,6 @@
 package react
 
-import js.core.JsTuple2
+import js.array.JsTuple2
 
 typealias Reducer<S, A> = (state: S, action: A) -> S
 typealias Dispatch<A> = (action: A) -> Unit

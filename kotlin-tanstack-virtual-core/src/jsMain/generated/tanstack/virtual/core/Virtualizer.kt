@@ -4,8 +4,8 @@
 
 package tanstack.virtual.core
 
+import js.array.JsTuple2
 import js.collections.ReadonlyMap
-import js.core.JsTuple2
 import js.core.ReadonlyArray
 import web.dom.Element
 import web.events.EventTarget

@@ -4,7 +4,7 @@
 
 package tanstack.query.core
 
-import js.core.JsTuple2
+import js.array.JsTuple2
 import js.core.ReadonlyArray
 import js.promise.Promise
 
