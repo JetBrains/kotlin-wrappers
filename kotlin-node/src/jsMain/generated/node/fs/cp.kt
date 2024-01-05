@@ -4,7 +4,7 @@
 
 package node.fs
 
-import node.url.URL
+import web.url.URL
 
 /**
  * Asynchronously copies the entire directory structure from `src` to `dest`,

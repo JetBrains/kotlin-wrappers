@@ -4,7 +4,7 @@
 
 package node.http
 
-import node.url.URL
+import web.url.URL
 
 /**
  * Since most requests are GET requests without bodies, Node.js provides this

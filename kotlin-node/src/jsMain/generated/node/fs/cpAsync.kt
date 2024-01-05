@@ -5,7 +5,7 @@
 package node.fs
 
 import js.promise.Promise
-import node.url.URL
+import web.url.URL
 
 /**
  * Asynchronously copies the entire directory structure from `src` to `dest`,

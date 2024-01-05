@@ -22,7 +22,8 @@
         "<nodeModules>/@types/node/stream/promises.d.ts",
         "<nodeModules>/@types/node/tls.d.ts",
         "<nodeModules>/@types/node/tty.d.ts",
-        "<nodeModules>/@types/node/url.d.ts"
+        "<nodeModules>/@types/node/url.d.ts",
+        "<nodeModules>/@types/node/worker_threads.d.ts"
     ],
     "output": "src/jsMain/generated",
     "ignoreOutput": [
@@ -76,7 +77,11 @@
         "**/stream/internal.kt",
         "**/url/global/**",
         "**/url/URL.kt",
-        "**/url/URLSearchParams.kt"
+        "**/url/URLSearchParams.kt",
+        "**/workerThreads/global/namespace.kt",
+        "**/workerThreads/BroadcastChannel.kt",
+        "**/workerThreads/MessageChannel.kt",
+        "**/workerThreads/MessagePort.kt"
     ],
     "libraryName": "node",
     "libraryNameOutputPrefix": true,
@@ -118,7 +123,9 @@
         "^node/tty": "node:tty",
         "^tty": "node:tty",
         "^node/url": "node:url",
-        "^url": "node:url"
+        "^url": "node:url",
+        "^node/worker_threads": "node:worker_threads",
+        "^worker_threads": "node:worker_threads"
     },
     "packageNameMapper": {
         "promises/(.+)\\.kt": "$1Async.kt",
@@ -196,7 +203,10 @@
         "^node/url/namespace.kt": "node/url/nodeNamespace.kt",
         "^node/url.kt": "node/url/url.kt",
         "^url": "node/url",
-        "url/Url.kt": "url/Url.interface.kt"
+        "url/Url.kt": "url/Url.interface.kt",
+        "^node/worker_threads/namespace.kt": "node/workerThreads/nodeNamespace.kt",
+        "^node/workerThreads.kt": "node/workerThreads/workerThreads.kt",
+        "^worker_threads": "node/workerThreads"
     },
     "importInjector": {
         "Async.kt": [
@@ -421,16 +431,16 @@
             "js.typedarrays.Uint8Array"
         ],
         "fs/cp.kt": [
-            "node.url.URL"
+            "web.url.URL"
         ],
         "fs/cpAsync.kt": [
-            "node.url.URL"
+            "web.url.URL"
         ],
         "fs/cpSync.kt": [
-            "node.url.URL"
+            "web.url.URL"
         ],
         "fs/cpSuspend.kt": [
-            "node.url.URL"
+            "web.url.URL"
         ],
         "fs/readv.kt": [
             "js.core.ReadonlyArray"
@@ -476,12 +486,12 @@
             "node.net.TcpSocketConnectOpts"
         ],
         "http/ClientRequest.kt": [
-            "node.url.URL",
+            "web.url.URL",
             "node.net.Socket"
         ],
         "http/ClientRequestArgs.kt": [
             "web.abort.AbortSignal",
-            "node.url.URL",
+            "web.url.URL",
             "node.net.Socket",
             "node.net.LookupFunction"
         ],
@@ -500,10 +510,10 @@
             "node.net.Socket"
         ],
         "http/get.kt": [
-            "node.url.URL"
+            "web.url.URL"
         ],
         "http/request.kt": [
-            "node.url.URL"
+            "web.url.URL"
         ],
         "net/ListenOptions.kt": [
             "node.events.Abortable"
@@ -614,11 +624,39 @@
         "tls/namespace.kt": [
             "js.core.ReadonlyArray"
         ],
+        "url/fileURLToPath.kt": [
+            "web.url.URL"
+        ],
+        "url/format.kt": [
+            "web.url.URL"
+        ],
+        "url/pathToFileURL.kt":  [
+            "web.url.URL"
+        ],
         "url/urlToHttpOptions.kt": [
+            "web.url.URL",
             "node.http.ClientRequestArgs"
         ],
         "url/UrlWithParsedQuery.kt": [
             "node.querystring.ParsedUrlQuery"
+        ],
+        "workerThreads/Worker.kt": [
+            "js.core.ReadonlyArray",
+            "js.promise.Promise",
+            "web.url.URL",
+            "node.events.EventEmitter",
+            "node.stream.Readable",
+            "node.stream.Writable"
+        ],
+        "workerThreads/moveMessagePortToContext.kt": [
+            "web.messaging.MessagePort",
+            "node.vm.Context"
+        ],
+        "workerThreads/namespace.kt": [
+            "web.messaging.MessagePort"
+        ],
+        "workerThreads/receiveMessageOnPort.kt": [
+            "web.messaging.MessagePort"
         ]
     },
     "namespaceStrategy": {
@@ -658,7 +696,9 @@
         "tty": "package",
         "node:tty": "ignore",
         "url": "package",
-        "node:url": "ignore"
+        "node:url": "ignore",
+        "worker_threads": "package",
+        "node:worker_threads": "ignore"
     },
     "conflictResolutionStrategy": {
         "LookupServiceResultPayload": "replace",

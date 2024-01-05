@@ -5,6 +5,7 @@
 package node.url
 
 import node.http.ClientRequestArgs
+import web.url.URL
 
 /**
  * This utility function converts a URL object into an ordinary options object as

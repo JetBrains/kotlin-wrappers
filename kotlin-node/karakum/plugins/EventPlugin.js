@@ -4,6 +4,7 @@ import * as karakum from "karakum";
 const eventHandlerMethods = new Set([
     // nodejs style events
     "on",
+    "off",
     "once",
     "emit",
     "addListener",

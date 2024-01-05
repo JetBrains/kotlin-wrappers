@@ -5,7 +5,7 @@
 package node.http
 
 import node.net.Socket
-import node.url.URL
+import web.url.URL
 
 /**
  * This object is created internally and returned from {@link request}. It

@@ -4,6 +4,7 @@
 
 package node.url
 
+import web.url.URL
 
 /**
  * This function ensures the correct decodings of percent-encoded characters as

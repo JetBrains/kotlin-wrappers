@@ -4,6 +4,7 @@
 
 package node.url
 
+import web.url.URL
 
 /**
  * This function ensures that `path` is resolved absolutely, and that the URL

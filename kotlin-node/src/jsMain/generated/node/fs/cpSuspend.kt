@@ -3,7 +3,7 @@
 package node.fs
 
 import js.promise.await
-import node.url.URL
+import web.url.URL
 
 
 suspend fun cp(source: String, destination: String, opts: CopyOptions = undefined.unsafeCast<Nothing>()): Unit =

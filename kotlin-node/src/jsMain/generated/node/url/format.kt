@@ -4,6 +4,7 @@
 
 package node.url
 
+import web.url.URL
 
 /**
  * The `url.format()` method returns a formatted URL string derived from`urlObject`.

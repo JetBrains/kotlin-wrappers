@@ -4,7 +4,7 @@
 
 package node.http
 
-import node.url.URL
+import web.url.URL
 
 /**
  * `options` in `socket.connect()` are also supported.
