@@ -16,5 +16,5 @@ external class PluralRules(
     )
 
     fun resolvedOptions(): ResolvedPluralRulesOptions
-    fun select(n: Number): LDMLPluralRule
+    fun select(n: Int): LDMLPluralRule
 }
