@@ -2,6 +2,7 @@
 
 package web.navigator
 
+import js.core.JsLong
 import js.core.Void
 import js.promise.Promise
 
@@ -17,5 +18,5 @@ sealed external interface NavigatorBadge {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/setAppBadge)
      */
-    fun setAppBadge(contents: Number = definedExternally): Promise<Void>
+    fun setAppBadge(contents: JsLong = definedExternally): Promise<Void>
 }

@@ -84,7 +84,7 @@ sealed external class BaseAudioContext :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createChannelSplitter)
      */
-    fun createChannelSplitter(numberOfOutputs: Number = definedExternally): ChannelSplitterNode
+    fun createChannelSplitter(numberOfOutputs: Int = definedExternally): ChannelSplitterNode
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createConstantSource)
