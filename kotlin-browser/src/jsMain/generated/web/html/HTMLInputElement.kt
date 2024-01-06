@@ -299,8 +299,8 @@ protected constructor() :
     fun setRangeText(replacement: String)
     fun setRangeText(
         replacement: String,
-        start: Number,
-        end: Number,
+        start: Int,
+        end: Int,
         selectionMode: SelectionMode = definedExternally,
     )
 
@@ -313,8 +313,8 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/setSelectionRange)
      */
     fun setSelectionRange(
-        start: Number?,
-        end: Number?,
+        start: Int?,
+        end: Int?,
         direction: SelectionDirection = definedExternally,
     )
 
@@ -329,7 +329,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/stepDown)
      */
-    fun stepDown(n: Number = definedExternally)
+    fun stepDown(n: Int = definedExternally)
 
     /**
      * Increments a range input control's value by the value given by the Step attribute. If the optional parameter is used, will increment the input control's value by that value.
@@ -337,5 +337,5 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/stepUp)
      */
-    fun stepUp(n: Number = definedExternally)
+    fun stepUp(n: Int = definedExternally)
 }

@@ -42,52 +42,52 @@ external class DOMMatrix(
     fun preMultiplySelf(other: DOMMatrixInit = definedExternally): DOMMatrix
     fun preMultiplySelf(other: DOMMatrixReadOnly /* DOMMatrixInit */): DOMMatrix
     fun rotateAxisAngleSelf(
-        x: Number = definedExternally,
-        y: Number = definedExternally,
-        z: Number = definedExternally,
-        angle: Number = definedExternally,
+        x: Double = definedExternally,
+        y: Double = definedExternally,
+        z: Double = definedExternally,
+        angle: Double = definedExternally,
     ): DOMMatrix
 
     fun rotateFromVectorSelf(
-        x: Number = definedExternally,
-        y: Number = definedExternally,
+        x: Double = definedExternally,
+        y: Double = definedExternally,
     ): DOMMatrix
 
     fun rotateSelf(
-        rotX: Number = definedExternally,
-        rotY: Number = definedExternally,
-        rotZ: Number = definedExternally,
+        rotX: Double = definedExternally,
+        rotY: Double = definedExternally,
+        rotZ: Double = definedExternally,
     ): DOMMatrix
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/scale3dSelf)
      */
     fun scale3dSelf(
-        scale: Number = definedExternally,
-        originX: Number = definedExternally,
-        originY: Number = definedExternally,
-        originZ: Number = definedExternally,
+        scale: Double = definedExternally,
+        originX: Double = definedExternally,
+        originY: Double = definedExternally,
+        originZ: Double = definedExternally,
     ): DOMMatrix
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/scaleSelf)
      */
     fun scaleSelf(
-        scaleX: Number = definedExternally,
-        scaleY: Number = definedExternally,
-        scaleZ: Number = definedExternally,
-        originX: Number = definedExternally,
-        originY: Number = definedExternally,
-        originZ: Number = definedExternally,
+        scaleX: Double = definedExternally,
+        scaleY: Double = definedExternally,
+        scaleZ: Double = definedExternally,
+        originX: Double = definedExternally,
+        originY: Double = definedExternally,
+        originZ: Double = definedExternally,
     ): DOMMatrix
 
     fun setMatrixValue(transformList: String): DOMMatrix
-    fun skewXSelf(sx: Number = definedExternally): DOMMatrix
-    fun skewYSelf(sy: Number = definedExternally): DOMMatrix
+    fun skewXSelf(sx: Double = definedExternally): DOMMatrix
+    fun skewYSelf(sy: Double = definedExternally): DOMMatrix
     fun translateSelf(
-        tx: Number = definedExternally,
-        ty: Number = definedExternally,
-        tz: Number = definedExternally,
+        tx: Double = definedExternally,
+        ty: Double = definedExternally,
+        tz: Double = definedExternally,
     ): DOMMatrix
 
     companion object {

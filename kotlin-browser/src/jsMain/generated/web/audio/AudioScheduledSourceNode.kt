@@ -18,10 +18,10 @@ sealed external class AudioScheduledSourceNode :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioScheduledSourceNode/start)
      */
-    fun start(`when`: Number = definedExternally)
+    fun start(`when`: Double = definedExternally)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioScheduledSourceNode/stop)
      */
-    fun stop(`when`: Number = definedExternally)
+    fun stop(`when`: Double = definedExternally)
 }

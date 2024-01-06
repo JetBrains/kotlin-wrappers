@@ -3,6 +3,7 @@
 package web.abort
 
 import js.array.ReadonlyArray
+import js.core.JsLong
 import js.errors.JsError
 import web.events.Event
 import web.events.EventHandler
@@ -51,6 +52,6 @@ sealed external class AbortSignal :
         /**
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/timeout_static)
          */
-        fun timeout(milliseconds: Number): AbortSignal
+        fun timeout(milliseconds: JsLong): AbortSignal
     }
 }

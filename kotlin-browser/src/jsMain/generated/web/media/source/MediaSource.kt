@@ -72,8 +72,8 @@ external class MediaSource :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/setLiveSeekableRange)
      */
     fun setLiveSeekableRange(
-        start: Number,
-        end: Number,
+        start: Double,
+        end: Double,
     )
 
     companion object {

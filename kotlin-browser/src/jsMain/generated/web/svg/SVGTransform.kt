@@ -18,21 +18,21 @@ sealed external class SVGTransform {
     fun setMatrix(matrix: DOMMatrix2DInit = definedExternally)
     fun setMatrix(matrix: DOMMatrixReadOnly /* DOMMatrix2DInit */)
     fun setRotate(
-        angle: Number,
-        cx: Number,
-        cy: Number,
+        angle: Float,
+        cx: Float,
+        cy: Float,
     )
 
     fun setScale(
-        sx: Number,
-        sy: Number,
+        sx: Float,
+        sy: Float,
     )
 
-    fun setSkewX(angle: Number)
-    fun setSkewY(angle: Number)
+    fun setSkewX(angle: Float)
+    fun setSkewY(angle: Float)
     fun setTranslate(
-        tx: Number,
-        ty: Number,
+        tx: Float,
+        ty: Float,
     )
 
     val SVG_TRANSFORM_UNKNOWN: Type

@@ -38,7 +38,7 @@ sealed external class History {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/go)
      */
-    fun go(delta: Number = definedExternally)
+    fun go(delta: Int = definedExternally)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/pushState)

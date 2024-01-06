@@ -143,8 +143,8 @@ protected constructor() :
     fun setRangeText(replacement: String)
     fun setRangeText(
         replacement: String,
-        start: Number,
-        end: Number,
+        start: Int,
+        end: Int,
         selectionMode: SelectionMode = definedExternally,
     )
 
@@ -155,8 +155,8 @@ protected constructor() :
      * @param direction The direction in which the selection is performed.
      */
     fun setSelectionRange(
-        start: Number?,
-        end: Number?,
+        start: Int?,
+        end: Int?,
         direction: SelectionDirection = definedExternally,
     )
 }

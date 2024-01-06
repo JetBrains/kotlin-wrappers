@@ -17,19 +17,19 @@ sealed external interface CanvasFillStrokeStyles {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/createConicGradient)
      */
     fun createConicGradient(
-        startAngle: Number,
-        x: Number,
-        y: Number,
+        startAngle: Double,
+        x: Double,
+        y: Double,
     ): CanvasGradient
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/createLinearGradient)
      */
     fun createLinearGradient(
-        x0: Number,
-        y0: Number,
-        x1: Number,
-        y1: Number,
+        x0: Double,
+        y0: Double,
+        x1: Double,
+        y1: Double,
     ): CanvasGradient
 
     /**
@@ -44,11 +44,11 @@ sealed external interface CanvasFillStrokeStyles {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/createRadialGradient)
      */
     fun createRadialGradient(
-        x0: Number,
-        y0: Number,
-        r0: Number,
-        x1: Number,
-        y1: Number,
-        r1: Number,
+        x0: Double,
+        y0: Double,
+        r0: Double,
+        x1: Double,
+        y1: Double,
+        r1: Double,
     ): CanvasGradient
 }

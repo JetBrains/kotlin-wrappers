@@ -159,60 +159,60 @@ open external class DOMMatrixReadOnly(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/rotate)
      */
     fun rotate(
-        rotX: Number = definedExternally,
-        rotY: Number = definedExternally,
-        rotZ: Number = definedExternally,
+        rotX: Double = definedExternally,
+        rotY: Double = definedExternally,
+        rotZ: Double = definedExternally,
     ): DOMMatrix
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/rotateAxisAngle)
      */
     fun rotateAxisAngle(
-        x: Number = definedExternally,
-        y: Number = definedExternally,
-        z: Number = definedExternally,
-        angle: Number = definedExternally,
+        x: Double = definedExternally,
+        y: Double = definedExternally,
+        z: Double = definedExternally,
+        angle: Double = definedExternally,
     ): DOMMatrix
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/rotateFromVector)
      */
     fun rotateFromVector(
-        x: Number = definedExternally,
-        y: Number = definedExternally,
+        x: Double = definedExternally,
+        y: Double = definedExternally,
     ): DOMMatrix
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/scale)
      */
     fun scale(
-        scaleX: Number = definedExternally,
-        scaleY: Number = definedExternally,
-        scaleZ: Number = definedExternally,
-        originX: Number = definedExternally,
-        originY: Number = definedExternally,
-        originZ: Number = definedExternally,
+        scaleX: Double = definedExternally,
+        scaleY: Double = definedExternally,
+        scaleZ: Double = definedExternally,
+        originX: Double = definedExternally,
+        originY: Double = definedExternally,
+        originZ: Double = definedExternally,
     ): DOMMatrix
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/scale3d)
      */
     fun scale3d(
-        scale: Number = definedExternally,
-        originX: Number = definedExternally,
-        originY: Number = definedExternally,
-        originZ: Number = definedExternally,
+        scale: Double = definedExternally,
+        originX: Double = definedExternally,
+        originY: Double = definedExternally,
+        originZ: Double = definedExternally,
     ): DOMMatrix
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/skewX)
      */
-    fun skewX(sx: Number = definedExternally): DOMMatrix
+    fun skewX(sx: Double = definedExternally): DOMMatrix
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/skewY)
      */
-    fun skewY(sy: Number = definedExternally): DOMMatrix
+    fun skewY(sy: Double = definedExternally): DOMMatrix
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/toFloat32Array)
@@ -235,9 +235,9 @@ open external class DOMMatrixReadOnly(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/translate)
      */
     fun translate(
-        tx: Number = definedExternally,
-        ty: Number = definedExternally,
-        tz: Number = definedExternally,
+        tx: Double = definedExternally,
+        ty: Double = definedExternally,
+        tz: Double = definedExternally,
     ): DOMMatrix
 
     companion object {

@@ -14,7 +14,7 @@ sealed external class SVGFEDropShadowElement :
     val stdDeviationX: SVGAnimatedNumber
     val stdDeviationY: SVGAnimatedNumber
     fun setStdDeviation(
-        stdDeviationX: Number,
-        stdDeviationY: Number,
+        stdDeviationX: Float,
+        stdDeviationY: Float,
     )
 }

@@ -8,8 +8,8 @@ import web.dom.DocumentFragment
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VTTCue)
  */
 external class VTTCue(
-    startTime: Number,
-    endTime: Number,
+    startTime: Double,
+    endTime: Double,
     text: String,
 ) : TextTrackCue {
     /**

@@ -3,6 +3,7 @@
 package web.streams
 
 import js.buffer.ArrayBufferView
+import js.core.JsLong
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBRequest)
@@ -16,7 +17,7 @@ sealed external class ReadableStreamBYOBRequest {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBRequest/respond)
      */
-    fun respond(bytesWritten: Number)
+    fun respond(bytesWritten: JsLong)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBRequest/respondWithNewView)

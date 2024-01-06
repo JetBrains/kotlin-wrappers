@@ -16,7 +16,7 @@ sealed external class CanvasGradient {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasGradient/addColorStop)
      */
     fun addColorStop(
-        offset: Number,
+        offset: Double,
         color: String,
     )
 }

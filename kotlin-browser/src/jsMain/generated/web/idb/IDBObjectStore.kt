@@ -139,12 +139,12 @@ sealed external class IDBObjectStore {
      */
     fun getAll(
         query: IDBValidKey? = definedExternally,
-        count: Number = definedExternally,
+        count: Int = definedExternally,
     ): IDBRequest<ReadonlyArray<*>>
 
     fun getAll(
         query: IDBKeyRange?,
-        count: Number = definedExternally,
+        count: Int = definedExternally,
     ): IDBRequest<ReadonlyArray<*>>
 
     /**
@@ -156,12 +156,12 @@ sealed external class IDBObjectStore {
      */
     fun getAllKeys(
         query: IDBValidKey? = definedExternally,
-        count: Number = definedExternally,
+        count: Int = definedExternally,
     ): IDBRequest<ReadonlyArray<IDBValidKey>>
 
     fun getAllKeys(
         query: IDBKeyRange?,
-        count: Number = definedExternally,
+        count: Int = definedExternally,
     ): IDBRequest<ReadonlyArray<IDBValidKey>>
 
     /**

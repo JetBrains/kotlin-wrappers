@@ -30,15 +30,15 @@ sealed external interface CanvasDrawPath {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/isPointInPath)
      */
     fun isPointInPath(
-        x: Number,
-        y: Number,
+        x: Double,
+        y: Double,
         fillRule: CanvasFillRule = definedExternally,
     ): Boolean
 
     fun isPointInPath(
         path: Path2D,
-        x: Number,
-        y: Number,
+        x: Double,
+        y: Double,
         fillRule: CanvasFillRule = definedExternally,
     ): Boolean
 
@@ -46,14 +46,14 @@ sealed external interface CanvasDrawPath {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/isPointInStroke)
      */
     fun isPointInStroke(
-        x: Number,
-        y: Number,
+        x: Double,
+        y: Double,
     ): Boolean
 
     fun isPointInStroke(
         path: Path2D,
-        x: Number,
-        y: Number,
+        x: Double,
+        y: Double,
     ): Boolean
 
     /**

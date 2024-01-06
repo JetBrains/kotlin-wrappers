@@ -11,14 +11,14 @@ import web.gl.TexImageSource
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageData)
  */
 external class ImageData(
-    sw: Number,
-    sh: Number,
+    sw: Int,
+    sh: Int,
     settings: ImageDataSettings = definedExternally,
 ) : TexImageSource {
     constructor(
         data: Uint8ClampedArray,
-        sw: Number,
-        sh: Number = definedExternally,
+        sw: Int,
+        sh: Int = definedExternally,
         settings: ImageDataSettings = definedExternally,
     )
 

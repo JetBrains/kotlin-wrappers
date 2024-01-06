@@ -15,7 +15,7 @@ sealed external class SVGAngle {
     fun convertToSpecifiedUnits(unitType: UnitType)
     fun newValueSpecifiedUnits(
         unitType: UnitType,
-        valueInSpecifiedUnits: Number,
+        valueInSpecifiedUnits: Float,
     )
 
     val SVG_ANGLETYPE_UNKNOWN: UnitType

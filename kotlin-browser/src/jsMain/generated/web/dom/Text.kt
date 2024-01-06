@@ -25,5 +25,5 @@ open external class Text(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Text/splitText)
      */
-    fun splitText(offset: Number): Text
+    fun splitText(offset: Int): Text
 }

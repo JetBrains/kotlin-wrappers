@@ -3,6 +3,7 @@
 package web.idb
 
 import js.array.ReadonlyArray
+import js.core.JsLong
 import js.promise.Promise
 
 /**
@@ -42,6 +43,6 @@ sealed external class IDBFactory {
      */
     fun open(
         name: String,
-        version: Number = definedExternally,
+        version: JsLong = definedExternally,
     ): IDBOpenDBRequest
 }

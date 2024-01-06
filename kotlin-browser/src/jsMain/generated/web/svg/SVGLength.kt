@@ -15,7 +15,7 @@ sealed external class SVGLength {
     fun convertToSpecifiedUnits(unitType: UnitType)
     fun newValueSpecifiedUnits(
         unitType: UnitType,
-        valueInSpecifiedUnits: Number,
+        valueInSpecifiedUnits: Float,
     )
 
     val SVG_LENGTHTYPE_UNKNOWN: UnitType

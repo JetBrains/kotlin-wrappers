@@ -300,7 +300,7 @@ abstract external class Element :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/hasPointerCapture)
      */
-    fun hasPointerCapture(pointerId: Number): Boolean
+    fun hasPointerCapture(pointerId: Int): Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/insertAdjacentElement)
@@ -336,7 +336,7 @@ abstract external class Element :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/releasePointerCapture)
      */
-    fun releasePointerCapture(pointerId: Number)
+    fun releasePointerCapture(pointerId: Int)
 
     /**
      * Removes element's first attribute whose qualified name is qualifiedName.
@@ -379,8 +379,8 @@ abstract external class Element :
      */
     fun scroll(options: ScrollToOptions = definedExternally)
     fun scroll(
-        x: Number,
-        y: Number,
+        x: Double,
+        y: Double,
     )
 
     /**
@@ -388,8 +388,8 @@ abstract external class Element :
      */
     fun scrollBy(options: ScrollToOptions = definedExternally)
     fun scrollBy(
-        x: Number,
-        y: Number,
+        x: Double,
+        y: Double,
     )
 
     /**
@@ -402,8 +402,8 @@ abstract external class Element :
      */
     fun scrollTo(options: ScrollToOptions = definedExternally)
     fun scrollTo(
-        x: Number,
-        y: Number,
+        x: Double,
+        y: Double,
     )
 
     /**
@@ -440,7 +440,7 @@ abstract external class Element :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/setPointerCapture)
      */
-    fun setPointerCapture(pointerId: Number)
+    fun setPointerCapture(pointerId: Int)
 
     /**
      * If force is not given, "toggles" qualifiedName, removing it if it is present and adding it if it is not present. If force is true, adds qualifiedName. If force is false, removes qualifiedName.

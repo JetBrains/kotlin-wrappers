@@ -383,7 +383,7 @@ open external class Document :
      */
     fun createNodeIterator(
         root: Node,
-        whatToShow: Number = definedExternally,
+        whatToShow: Int = definedExternally,
         filter: NodeFilter? = definedExternally,
     ): NodeIterator
 
@@ -422,7 +422,7 @@ open external class Document :
      */
     fun createTreeWalker(
         root: Node,
-        whatToShow: Number = definedExternally,
+        whatToShow: Int = definedExternally,
         filter: NodeFilter? = definedExternally,
     ): TreeWalker
 

@@ -13,9 +13,9 @@ sealed external class SVGAnimationElement :
      */
     val targetElement: SVGElement?
     fun beginElement()
-    fun beginElementAt(offset: Number)
+    fun beginElementAt(offset: Float)
     fun endElement()
-    fun endElementAt(offset: Number)
+    fun endElementAt(offset: Float)
     fun getCurrentTime(): Number
     fun getSimpleDuration(): Number
     fun getStartTime(): Number

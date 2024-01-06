@@ -39,44 +39,44 @@ sealed external class AudioParam {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioParam/cancelAndHoldAtTime)
      */
-    fun cancelAndHoldAtTime(cancelTime: Number): AudioParam
+    fun cancelAndHoldAtTime(cancelTime: Double): AudioParam
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioParam/cancelScheduledValues)
      */
-    fun cancelScheduledValues(cancelTime: Number): AudioParam
+    fun cancelScheduledValues(cancelTime: Double): AudioParam
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioParam/exponentialRampToValueAtTime)
      */
     fun exponentialRampToValueAtTime(
-        value: Number,
-        endTime: Number,
+        value: Float,
+        endTime: Double,
     ): AudioParam
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioParam/linearRampToValueAtTime)
      */
     fun linearRampToValueAtTime(
-        value: Number,
-        endTime: Number,
+        value: Float,
+        endTime: Double,
     ): AudioParam
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioParam/setTargetAtTime)
      */
     fun setTargetAtTime(
-        target: Number,
-        startTime: Number,
-        timeConstant: Number,
+        target: Float,
+        startTime: Double,
+        timeConstant: Float,
     ): AudioParam
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioParam/setValueAtTime)
      */
     fun setValueAtTime(
-        value: Number,
-        startTime: Number,
+        value: Float,
+        startTime: Double,
     ): AudioParam
 
     /**
@@ -84,13 +84,13 @@ sealed external class AudioParam {
      */
     fun setValueCurveAtTime(
         values: ReadonlyArray<Double>,
-        startTime: Number,
-        duration: Number,
+        startTime: Double,
+        duration: Double,
     ): AudioParam
 
     fun setValueCurveAtTime(
         values: Float32Array,
-        startTime: Number,
-        duration: Number,
+        startTime: Double,
+        duration: Double,
     ): AudioParam
 }

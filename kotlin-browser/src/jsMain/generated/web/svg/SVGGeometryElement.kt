@@ -19,7 +19,7 @@ sealed external class SVGGeometryElement :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/getPointAtLength)
      */
-    fun getPointAtLength(distance: Number): DOMPoint
+    fun getPointAtLength(distance: Float): DOMPoint
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/getTotalLength)

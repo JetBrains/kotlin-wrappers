@@ -31,15 +31,15 @@ sealed external class CharacterData :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CharacterData/deleteData)
      */
     fun deleteData(
-        offset: Number,
-        count: Number,
+        offset: Int,
+        count: Int,
     )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CharacterData/insertData)
      */
     fun insertData(
-        offset: Number,
+        offset: Int,
         data: String,
     )
 
@@ -47,8 +47,8 @@ sealed external class CharacterData :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CharacterData/replaceData)
      */
     fun replaceData(
-        offset: Number,
-        count: Number,
+        offset: Int,
+        count: Int,
         data: String,
     )
 
@@ -56,7 +56,7 @@ sealed external class CharacterData :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CharacterData/substringData)
      */
     fun substringData(
-        offset: Number,
-        count: Number,
+        offset: Int,
+        count: Int,
     ): String
 }

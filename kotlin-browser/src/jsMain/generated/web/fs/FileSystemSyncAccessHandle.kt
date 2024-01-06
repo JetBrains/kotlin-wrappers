@@ -3,6 +3,7 @@
 package web.fs
 
 import js.buffer.AllowSharedBufferSource
+import js.core.JsLong
 
 /**
  * Available only in secure contexts.
@@ -36,7 +37,7 @@ sealed external class FileSystemSyncAccessHandle {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle/truncate)
      */
-    fun truncate(newSize: Number)
+    fun truncate(newSize: JsLong)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle/write)

@@ -20,5 +20,5 @@ external class Memory(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/Memory/grow)
      */
-    fun grow(delta: Number): Number
+    fun grow(delta: Int): Number
 }

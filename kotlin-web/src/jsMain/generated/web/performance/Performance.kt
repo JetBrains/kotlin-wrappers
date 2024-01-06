@@ -93,7 +93,7 @@ sealed external class Performance :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/setResourceTimingBufferSize)
      */
-    fun setResourceTimingBufferSize(maxSize: Number)
+    fun setResourceTimingBufferSize(maxSize: Int)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/toJSON)

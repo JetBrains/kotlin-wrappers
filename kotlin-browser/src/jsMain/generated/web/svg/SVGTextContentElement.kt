@@ -19,14 +19,14 @@ sealed external class SVGTextContentElement :
     fun getCharNumAtPosition(point: DOMPointInit = definedExternally): Number
     fun getCharNumAtPosition(point: DOMPointReadOnly /* DOMPointInit */): Number
     fun getComputedTextLength(): Number
-    fun getEndPositionOfChar(charnum: Number): DOMPoint
-    fun getExtentOfChar(charnum: Number): DOMRect
+    fun getEndPositionOfChar(charnum: Int): DOMPoint
+    fun getExtentOfChar(charnum: Int): DOMRect
     fun getNumberOfChars(): Number
-    fun getRotationOfChar(charnum: Number): Number
-    fun getStartPositionOfChar(charnum: Number): DOMPoint
+    fun getRotationOfChar(charnum: Int): Number
+    fun getStartPositionOfChar(charnum: Int): DOMPoint
     fun getSubStringLength(
-        charnum: Number,
-        nchars: Number,
+        charnum: Int,
+        nchars: Int,
     ): Number
 
     val LENGTHADJUST_UNKNOWN: LengthAdjust

@@ -2,6 +2,7 @@
 
 package web.canvas
 
+import js.core.JsLong
 import js.core.Transferable
 import js.promise.Promise
 import web.buffer.Blob
@@ -16,8 +17,8 @@ import web.rendering.RenderingContextId
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas)
  */
 external class OffscreenCanvas(
-    width: Number,
-    height: Number,
+    width: JsLong,
+    height: JsLong,
 ) : EventTarget,
     CanvasImageSource,
     TexImageSource,

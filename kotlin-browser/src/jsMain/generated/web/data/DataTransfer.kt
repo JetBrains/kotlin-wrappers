@@ -86,7 +86,7 @@ open external class DataTransfer {
      */
     fun setDragImage(
         image: Element,
-        x: Number,
-        y: Number,
+        x: Int,
+        y: Int,
     )
 }

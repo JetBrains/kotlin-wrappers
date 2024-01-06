@@ -59,31 +59,31 @@ sealed external class SubtleCrypto {
     fun deriveBits(
         algorithm: Algorithm,
         baseKey: CryptoKey,
-        length: Number,
+        length: Int,
     ): Promise<ArrayBuffer>
 
     fun deriveBits(
         algorithm: String,
         baseKey: CryptoKey,
-        length: Number,
+        length: Int,
     ): Promise<ArrayBuffer>
 
     fun deriveBits(
         algorithm: EcdhKeyDeriveParams,
         baseKey: CryptoKey,
-        length: Number,
+        length: Int,
     ): Promise<ArrayBuffer>
 
     fun deriveBits(
         algorithm: HkdfParams,
         baseKey: CryptoKey,
-        length: Number,
+        length: Int,
     ): Promise<ArrayBuffer>
 
     fun deriveBits(
         algorithm: Pbkdf2Params,
         baseKey: CryptoKey,
-        length: Number,
+        length: Int,
     ): Promise<ArrayBuffer>
 
     /**

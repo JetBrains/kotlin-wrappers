@@ -30,7 +30,7 @@ sealed external class RTCDTMFSender :
      */
     fun insertDTMF(
         tones: String,
-        duration: Number = definedExternally,
-        interToneGap: Number = definedExternally,
+        duration: Int = definedExternally,
+        interToneGap: Int = definedExternally,
     )
 }

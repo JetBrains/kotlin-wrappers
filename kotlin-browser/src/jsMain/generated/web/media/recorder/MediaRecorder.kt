@@ -88,7 +88,7 @@ external class MediaRecorder(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/start)
      */
-    fun start(timeslice: Number = definedExternally)
+    fun start(timeslice: Int = definedExternally)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/stop)

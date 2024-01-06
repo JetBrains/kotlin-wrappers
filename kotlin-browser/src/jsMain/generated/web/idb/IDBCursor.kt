@@ -48,7 +48,7 @@ sealed external class IDBCursor {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBCursor/advance)
      */
-    fun advance(count: Number)
+    fun advance(count: Int)
 
     /**
      * Advances the cursor to the next record in range.

@@ -66,9 +66,9 @@ sealed external class BaseAudioContext :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createBuffer)
      */
     fun createBuffer(
-        numberOfChannels: Number,
-        length: Number,
-        sampleRate: Number,
+        numberOfChannels: Int,
+        length: Int,
+        sampleRate: Float,
     ): AudioBuffer
 
     /**
@@ -79,7 +79,7 @@ sealed external class BaseAudioContext :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createChannelMerger)
      */
-    fun createChannelMerger(numberOfInputs: Number = definedExternally): ChannelMergerNode
+    fun createChannelMerger(numberOfInputs: Int = definedExternally): ChannelMergerNode
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createChannelSplitter)
@@ -99,7 +99,7 @@ sealed external class BaseAudioContext :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createDelay)
      */
-    fun createDelay(maxDelayTime: Number = definedExternally): DelayNode
+    fun createDelay(maxDelayTime: Double = definedExternally): DelayNode
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createDynamicsCompressor)

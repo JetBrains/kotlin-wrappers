@@ -46,35 +46,35 @@ sealed external class AudioNode :
      */
     fun connect(
         destinationNode: AudioNode,
-        output: Number = definedExternally,
-        input: Number = definedExternally,
+        output: Int = definedExternally,
+        input: Int = definedExternally,
     ): AudioNode
 
     fun connect(
         destinationParam: AudioParam,
-        output: Number = definedExternally,
+        output: Int = definedExternally,
     )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioNode/disconnect)
      */
     fun disconnect()
-    fun disconnect(output: Number)
+    fun disconnect(output: Int)
     fun disconnect(destinationNode: AudioNode)
     fun disconnect(
         destinationNode: AudioNode,
-        output: Number,
+        output: Int,
     )
 
     fun disconnect(
         destinationNode: AudioNode,
-        output: Number,
-        input: Number,
+        output: Int,
+        input: Int,
     )
 
     fun disconnect(destinationParam: AudioParam)
     fun disconnect(
         destinationParam: AudioParam,
-        output: Number,
+        output: Int,
     )
 }

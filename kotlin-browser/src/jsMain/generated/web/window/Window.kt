@@ -208,16 +208,16 @@ sealed external class Window :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/moveBy)
      */
     fun moveBy(
-        x: Number,
-        y: Number,
+        x: Double,
+        y: Double,
     )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/moveTo)
      */
     fun moveTo(
-        x: Number,
-        y: Number,
+        x: Double,
+        y: Double,
     )
 
     /**
@@ -268,16 +268,16 @@ sealed external class Window :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/resizeBy)
      */
     fun resizeBy(
-        x: Number,
-        y: Number,
+        x: Double,
+        y: Double,
     )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/resizeTo)
      */
     fun resizeTo(
-        width: Number,
-        height: Number,
+        width: Int,
+        height: Int,
     )
 
     /**
@@ -285,8 +285,8 @@ sealed external class Window :
      */
     fun scroll(options: ScrollToOptions = definedExternally)
     fun scroll(
-        x: Number,
-        y: Number,
+        x: Double,
+        y: Double,
     )
 
     /**
@@ -294,8 +294,8 @@ sealed external class Window :
      */
     fun scrollBy(options: ScrollToOptions = definedExternally)
     fun scrollBy(
-        x: Number,
-        y: Number,
+        x: Double,
+        y: Double,
     )
 
     /**
@@ -303,8 +303,8 @@ sealed external class Window :
      */
     fun scrollTo(options: ScrollToOptions = definedExternally)
     fun scrollTo(
-        x: Number,
-        y: Number,
+        x: Double,
+        y: Double,
     )
 
     /**

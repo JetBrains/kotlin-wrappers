@@ -121,5 +121,5 @@ open external class Animation(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/updatePlaybackRate)
      */
-    fun updatePlaybackRate(playbackRate: Number)
+    fun updatePlaybackRate(playbackRate: Double)
 }

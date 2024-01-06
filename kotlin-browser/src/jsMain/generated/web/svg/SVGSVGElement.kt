@@ -56,6 +56,6 @@ sealed external class SVGSVGElement :
     ): NodeListOf<SVGElement /* SVGCircleElement | SVGEllipseElement | SVGImageElement | SVGLineElement | SVGPathElement | SVGPolygonElement | SVGPolylineElement | SVGRectElement | SVGTextElement | SVGUseElement */>
 
     fun pauseAnimations()
-    fun setCurrentTime(seconds: Number)
+    fun setCurrentTime(seconds: Float)
     fun unpauseAnimations()
 }

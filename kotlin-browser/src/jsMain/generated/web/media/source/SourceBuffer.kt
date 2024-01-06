@@ -88,7 +88,7 @@ sealed external class SourceBuffer :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/remove)
      */
     fun remove(
-        start: Number,
-        end: Number,
+        start: Double,
+        end: Double,
     )
 }

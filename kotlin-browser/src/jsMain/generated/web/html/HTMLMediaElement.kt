@@ -244,7 +244,7 @@ sealed external class HTMLMediaElement :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/fastSeek)
      */
-    fun fastSeek(time: Number)
+    fun fastSeek(time: Double)
 
     /**
      * Resets the audio or video object and loads a new media resource.

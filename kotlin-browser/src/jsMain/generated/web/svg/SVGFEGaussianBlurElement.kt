@@ -14,7 +14,7 @@ sealed external class SVGFEGaussianBlurElement :
     val stdDeviationX: SVGAnimatedNumber
     val stdDeviationY: SVGAnimatedNumber
     fun setStdDeviation(
-        stdDeviationX: Number,
-        stdDeviationY: Number,
+        stdDeviationX: Float,
+        stdDeviationY: Float,
     )
 }

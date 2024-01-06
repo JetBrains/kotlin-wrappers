@@ -8,27 +8,27 @@ sealed external interface CanvasDrawImage {
      */
     fun drawImage(
         image: CanvasImageSource,
-        dx: Number,
-        dy: Number,
+        dx: Double,
+        dy: Double,
     )
 
     fun drawImage(
         image: CanvasImageSource,
-        dx: Number,
-        dy: Number,
-        dw: Number,
-        dh: Number,
+        dx: Double,
+        dy: Double,
+        dw: Double,
+        dh: Double,
     )
 
     fun drawImage(
         image: CanvasImageSource,
-        sx: Number,
-        sy: Number,
-        sw: Number,
-        sh: Number,
-        dx: Number,
-        dy: Number,
-        dw: Number,
-        dh: Number,
+        sx: Double,
+        sy: Double,
+        sw: Double,
+        sh: Double,
+        dx: Double,
+        dy: Double,
+        dw: Double,
+        dh: Double,
     )
 }

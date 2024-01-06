@@ -8,9 +8,9 @@ sealed external interface CanvasText {
      */
     fun fillText(
         text: String,
-        x: Number,
-        y: Number,
-        maxWidth: Number = definedExternally,
+        x: Double,
+        y: Double,
+        maxWidth: Double = definedExternally,
     )
 
     /**
@@ -23,8 +23,8 @@ sealed external interface CanvasText {
      */
     fun strokeText(
         text: String,
-        x: Number,
-        y: Number,
-        maxWidth: Number = definedExternally,
+        x: Double,
+        y: Double,
+        maxWidth: Double = definedExternally,
     )
 }

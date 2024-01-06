@@ -6,10 +6,10 @@ package web.geometry
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly)
  */
 open external class DOMPointReadOnly(
-    x: Number = definedExternally,
-    y: Number = definedExternally,
-    z: Number = definedExternally,
-    w: Number = definedExternally,
+    x: Double = definedExternally,
+    y: Double = definedExternally,
+    z: Double = definedExternally,
+    w: Double = definedExternally,
 ) {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/w)

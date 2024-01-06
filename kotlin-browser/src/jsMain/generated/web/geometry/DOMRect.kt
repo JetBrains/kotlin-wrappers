@@ -6,10 +6,10 @@ package web.geometry
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRect)
  */
 external class DOMRect(
-    x: Number = definedExternally,
-    y: Number = definedExternally,
-    width: Number = definedExternally,
-    height: Number = definedExternally,
+    x: Double = definedExternally,
+    y: Double = definedExternally,
+    width: Double = definedExternally,
+    height: Double = definedExternally,
 ) : DOMRectReadOnly {
     override var height: Double
     override var width: Double

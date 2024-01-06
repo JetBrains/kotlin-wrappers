@@ -20,26 +20,26 @@ sealed external interface CanvasTransform {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/rotate)
      */
-    fun rotate(angle: Number)
+    fun rotate(angle: Double)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/scale)
      */
     fun scale(
-        x: Number,
-        y: Number,
+        x: Double,
+        y: Double,
     )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setTransform)
      */
     fun setTransform(
-        a: Number,
-        b: Number,
-        c: Number,
-        d: Number,
-        e: Number,
-        f: Number,
+        a: Double,
+        b: Double,
+        c: Double,
+        d: Double,
+        e: Double,
+        f: Double,
     )
 
     fun setTransform(transform: DOMMatrix2DInit = definedExternally)
@@ -49,19 +49,19 @@ sealed external interface CanvasTransform {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/transform)
      */
     fun transform(
-        a: Number,
-        b: Number,
-        c: Number,
-        d: Number,
-        e: Number,
-        f: Number,
+        a: Double,
+        b: Double,
+        c: Double,
+        d: Double,
+        e: Double,
+        f: Double,
     )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/translate)
      */
     fun translate(
-        x: Number,
-        y: Number,
+        x: Double,
+        y: Double,
     )
 }

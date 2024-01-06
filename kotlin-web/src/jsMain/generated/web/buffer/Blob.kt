@@ -37,8 +37,8 @@ open external class Blob(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/slice)
      */
     fun slice(
-        start: Number = definedExternally,
-        end: Number = definedExternally,
+        start: JsLong = definedExternally,
+        end: JsLong = definedExternally,
         contentType: String = definedExternally,
     ): Blob
 

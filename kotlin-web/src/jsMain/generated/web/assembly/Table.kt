@@ -25,7 +25,7 @@ external class Table(
      * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/Table/grow)
      */
     fun grow(
-        delta: Number,
+        delta: Int,
         value: Any? = definedExternally,
     ): Number
 

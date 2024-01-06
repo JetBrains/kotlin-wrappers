@@ -45,8 +45,8 @@ external class AudioBufferSourceNode(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioBufferSourceNode/start)
      */
     fun start(
-        `when`: Number = definedExternally,
-        offset: Number = definedExternally,
-        duration: Number = definedExternally,
+        `when`: Double = definedExternally,
+        offset: Double = definedExternally,
+        duration: Double = definedExternally,
     )
 }

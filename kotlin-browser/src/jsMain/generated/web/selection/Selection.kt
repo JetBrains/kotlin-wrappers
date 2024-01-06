@@ -56,7 +56,7 @@ sealed external class Selection {
      */
     fun collapse(
         node: Node?,
-        offset: Number = definedExternally,
+        offset: Int = definedExternally,
     )
 
     /**
@@ -92,7 +92,7 @@ sealed external class Selection {
      */
     fun extend(
         node: Node,
-        offset: Number = definedExternally,
+        offset: Int = definedExternally,
     )
 
     /**
@@ -129,9 +129,9 @@ sealed external class Selection {
      */
     fun setBaseAndExtent(
         anchorNode: Node,
-        anchorOffset: Number,
+        anchorOffset: Int,
         focusNode: Node,
-        focusOffset: Number,
+        focusOffset: Int,
     )
 
     /**
@@ -139,6 +139,6 @@ sealed external class Selection {
      */
     fun setPosition(
         node: Node?,
-        offset: Number = definedExternally,
+        offset: Int = definedExternally,
     )
 }

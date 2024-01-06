@@ -2,6 +2,7 @@
 
 package web.fs
 
+import js.core.JsLong
 import js.core.Void
 import js.promise.Promise
 import web.streams.WritableStream
@@ -16,12 +17,12 @@ sealed external class FileSystemWritableFileStream :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemWritableFileStream/seek)
      */
-    fun seek(position: Number): Promise<Void>
+    fun seek(position: JsLong): Promise<Void>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemWritableFileStream/truncate)
      */
-    fun truncate(size: Number): Promise<Void>
+    fun truncate(size: JsLong): Promise<Void>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemWritableFileStream/write)
