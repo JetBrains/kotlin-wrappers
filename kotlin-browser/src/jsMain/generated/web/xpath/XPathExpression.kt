@@ -15,7 +15,7 @@ sealed external class XPathExpression {
      */
     fun evaluate(
         contextNode: Node,
-        type: Number = definedExternally,
+        type: Short = definedExternally,
         result: XPathResult? = definedExternally,
     ): XPathResult
 }
