@@ -143,7 +143,7 @@ protected constructor() :
 
     fun add(
         element: HTMLOptionElement,
-        before: Number?,
+        before: Int?,
     )
 
     fun add(
@@ -153,7 +153,7 @@ protected constructor() :
 
     fun add(
         element: HTMLOptGroupElement,
-        before: Number?,
+        before: Int?,
     )
 
     /**

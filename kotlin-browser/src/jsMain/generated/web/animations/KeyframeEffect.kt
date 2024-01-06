@@ -11,7 +11,7 @@ import web.dom.Element
 external class KeyframeEffect(
     target: Element?,
     keyframes: ReadonlyArray<Keyframe>?,
-    options: Number = definedExternally,
+    options: Double = definedExternally,
 ) : AnimationEffect {
     constructor(
         target: Element?,
@@ -22,7 +22,7 @@ external class KeyframeEffect(
     constructor(
         target: Element?,
         keyframes: PropertyIndexedKeyframes?,
-        options: Number = definedExternally,
+        options: Double = definedExternally,
     )
 
     constructor(

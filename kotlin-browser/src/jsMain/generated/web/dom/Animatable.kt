@@ -18,7 +18,7 @@ sealed external interface Animatable {
      */
     fun animate(
         keyframes: ReadonlyArray<Keyframe>?,
-        options: Number = definedExternally,
+        options: Double = definedExternally,
     ): Animation = definedExternally
 
     fun animate(
@@ -28,7 +28,7 @@ sealed external interface Animatable {
 
     fun animate(
         keyframes: PropertyIndexedKeyframes?,
-        options: Number = definedExternally,
+        options: Double = definedExternally,
     ): Animation = definedExternally
 
     fun animate(

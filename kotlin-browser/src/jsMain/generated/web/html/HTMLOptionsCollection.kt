@@ -47,7 +47,7 @@ sealed external class HTMLOptionsCollection :
 
     fun add(
         element: HTMLOptionElement,
-        before: Number?,
+        before: Int?,
     )
 
     fun add(
@@ -57,7 +57,7 @@ sealed external class HTMLOptionsCollection :
 
     fun add(
         element: HTMLOptGroupElement,
-        before: Number?,
+        before: Int?,
     )
 
     /**
