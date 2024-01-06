@@ -72,12 +72,12 @@ external class Response(
          */
         fun redirect(
             url: String,
-            status: Number = definedExternally,
+            status: Short = definedExternally,
         ): Response
 
         fun redirect(
             url: URL,
-            status: Number = definedExternally,
+            status: Short = definedExternally,
         ): Response
     }
 }
