@@ -3,7 +3,6 @@
 package web.rtc
 
 import js.buffer.ArrayBuffer
-import js.core.JsLong
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedVideoFrame)
@@ -17,7 +16,7 @@ sealed external class RTCEncodedVideoFrame {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedVideoFrame/timestamp)
      */
-    val timestamp: JsLong
+    val timestamp: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedVideoFrame/type)

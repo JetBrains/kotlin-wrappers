@@ -4,8 +4,8 @@ package web.animations
 
 sealed external interface ComputedKeyframe {
     var composite: CompositeOperationOrAuto
-    var computedOffset: Int
+    var computedOffset: Double
     var easing: String
-    var offset: Int?
+    var offset: Double?
     // [property: string]: string | number | null | undefined
 }

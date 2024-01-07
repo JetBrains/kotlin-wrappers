@@ -5,6 +5,6 @@ package web.animations
 sealed external interface Keyframe {
     var composite: CompositeOperationOrAuto?
     var easing: String?
-    var offset: Int?
+    var offset: Double?
     // [property: string]: string | number | null | undefined
 }
