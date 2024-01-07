@@ -22,7 +22,7 @@ sealed external class TimeRanges {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TimeRanges/end)
      */
-    fun end(index: Int): Number
+    fun end(index: Int): Double
 
     /**
      * Returns the time for the start of the range with the given index.
@@ -31,5 +31,5 @@ sealed external class TimeRanges {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TimeRanges/start)
      */
-    fun start(index: Int): Number
+    fun start(index: Int): Double
 }

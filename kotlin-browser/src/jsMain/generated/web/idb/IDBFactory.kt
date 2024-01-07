@@ -22,7 +22,7 @@ sealed external class IDBFactory {
     fun cmp(
         first: Any?,
         second: Any?,
-    ): Number
+    ): Short
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBFactory/databases)

@@ -16,18 +16,18 @@ sealed external class SVGTextContentElement :
     SVGGraphicsElement {
     val lengthAdjust: SVGAnimatedEnumeration<LengthAdjust>
     val textLength: SVGAnimatedLength
-    fun getCharNumAtPosition(point: DOMPointInit = definedExternally): Number
-    fun getCharNumAtPosition(point: DOMPointReadOnly /* DOMPointInit */): Number
-    fun getComputedTextLength(): Number
+    fun getCharNumAtPosition(point: DOMPointInit = definedExternally): Int
+    fun getCharNumAtPosition(point: DOMPointReadOnly /* DOMPointInit */): Int
+    fun getComputedTextLength(): Float
     fun getEndPositionOfChar(charnum: Int): DOMPoint
     fun getExtentOfChar(charnum: Int): DOMRect
-    fun getNumberOfChars(): Number
-    fun getRotationOfChar(charnum: Int): Number
+    fun getNumberOfChars(): Int
+    fun getRotationOfChar(charnum: Int): Float
     fun getStartPositionOfChar(charnum: Int): DOMPoint
     fun getSubStringLength(
         charnum: Int,
         nchars: Int,
-    ): Number
+    ): Float
 
     val LENGTHADJUST_UNKNOWN: LengthAdjust
     val LENGTHADJUST_SPACING: LengthAdjust

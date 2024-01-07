@@ -123,7 +123,7 @@ sealed external class Node :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/compareDocumentPosition)
      */
-    fun compareDocumentPosition(other: Node): Number
+    fun compareDocumentPosition(other: Node): Short
 
     /**
      * Returns true if other is an inclusive descendant of node, and false otherwise.

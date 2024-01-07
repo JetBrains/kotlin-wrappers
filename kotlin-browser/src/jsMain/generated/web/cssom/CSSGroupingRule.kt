@@ -25,5 +25,5 @@ sealed external class CSSGroupingRule :
     fun insertRule(
         rule: String,
         index: Int = definedExternally,
-    ): Number
+    ): Int
 }

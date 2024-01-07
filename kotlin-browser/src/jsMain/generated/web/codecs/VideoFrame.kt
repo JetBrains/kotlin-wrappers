@@ -78,7 +78,7 @@ external class VideoFrame(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/allocationSize)
      */
-    fun allocationSize(options: VideoFrameCopyToOptions = definedExternally): Number
+    fun allocationSize(options: VideoFrameCopyToOptions = definedExternally): Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/clone)

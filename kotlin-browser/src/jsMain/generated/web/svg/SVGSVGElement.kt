@@ -43,7 +43,7 @@ sealed external class SVGSVGElement :
     fun createSVGTransformFromMatrix(matrix: DOMMatrix2DInit = definedExternally): SVGTransform
     fun createSVGTransformFromMatrix(matrix: DOMMatrixReadOnly /* DOMMatrix2DInit */): SVGTransform
     fun deselectAll()
-    fun getCurrentTime(): Number
+    fun getCurrentTime(): Float
     fun getElementById(elementId: String): Element
     fun getEnclosureList(
         rect: DOMRectReadOnly,

@@ -24,7 +24,7 @@ sealed external class SVGGeometryElement :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/getTotalLength)
      */
-    fun getTotalLength(): Number
+    fun getTotalLength(): Float
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/isPointInFill)

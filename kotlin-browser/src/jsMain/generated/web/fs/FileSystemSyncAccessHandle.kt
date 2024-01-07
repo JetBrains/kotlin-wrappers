@@ -24,7 +24,7 @@ sealed external class FileSystemSyncAccessHandle {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle/getSize)
      */
-    fun getSize(): Number
+    fun getSize(): JsLong
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle/read)
@@ -32,7 +32,7 @@ sealed external class FileSystemSyncAccessHandle {
     fun read(
         buffer: AllowSharedBufferSource,
         options: FileSystemReadWriteOptions = definedExternally,
-    ): Number
+    ): JsLong
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle/truncate)
@@ -45,5 +45,5 @@ sealed external class FileSystemSyncAccessHandle {
     fun write(
         buffer: AllowSharedBufferSource,
         options: FileSystemReadWriteOptions = definedExternally,
-    ): Number
+    ): JsLong
 }

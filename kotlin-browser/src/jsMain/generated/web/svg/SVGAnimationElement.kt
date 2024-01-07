@@ -16,7 +16,7 @@ sealed external class SVGAnimationElement :
     fun beginElementAt(offset: Float)
     fun endElement()
     fun endElementAt(offset: Float)
-    fun getCurrentTime(): Number
-    fun getSimpleDuration(): Number
-    fun getStartTime(): Number
+    fun getCurrentTime(): Float
+    fun getSimpleDuration(): Float
+    fun getStartTime(): Float
 }

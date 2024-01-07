@@ -18,7 +18,7 @@ external class Collator(
     fun compare(
         x: String,
         y: String,
-    ): Number
+    ): Int
 
     fun resolvedOptions(): ResolvedCollatorOptions
 }

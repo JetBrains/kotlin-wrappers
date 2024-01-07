@@ -42,7 +42,7 @@ external class Range :
     fun compareBoundaryPoints(
         how: CompareMethod,
         sourceRange: Range,
-    ): Number
+    ): Short
 
     /**
      * Returns −1 if the point is before the range, 0 if the point is in the range, and 1 if the point is after the range.
@@ -52,7 +52,7 @@ external class Range :
     fun comparePoint(
         node: Node,
         offset: Int,
-    ): Number
+    ): Short
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/createContextualFragment)
