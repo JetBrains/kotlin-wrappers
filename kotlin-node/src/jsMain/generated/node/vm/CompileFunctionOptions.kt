@@ -24,5 +24,5 @@ sealed external interface CompileFunctionOptions : BaseOptions {
     /**
      * An array containing a collection of context extensions (objects wrapping the current scope) to be applied while compiling
      */
-    var contextExtensions: js.core.ReadonlyArray<Any>?
+    var contextExtensions: js.array.ReadonlyArray<Any>?
 }

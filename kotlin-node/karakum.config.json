@@ -678,7 +678,7 @@
             "js.import.ImportMeta"
         ],
         "vm/compileFunction.kt": [
-            "js.core.ReadonlyArray"
+            "js.array.ReadonlyArray"
         ],
         "vm/measureMemory.kt": [
             "js.promise.Promise"

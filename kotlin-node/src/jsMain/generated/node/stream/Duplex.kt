@@ -7,7 +7,6 @@ package node.stream
 import js.buffer.ArrayBuffer
 import js.generator.AsyncGeneratorFunction
 import js.iterable.AsyncIterable
-import js.objects.Object
 import js.promise.Promise
 import web.buffer.Blob as NodeBlob
 

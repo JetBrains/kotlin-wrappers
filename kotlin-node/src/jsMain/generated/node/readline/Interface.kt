@@ -303,6 +303,7 @@ open external class _Interface : EventEmitter {
         event: InterfaceEvent.HISTORY,
         listener: (history: js.array.ReadonlyArray<String>) -> Unit,
     ): Unit /* this */
+
     fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun prependListener(event: InterfaceEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun prependListener(event: InterfaceEvent.LINE, listener: (input: String) -> Unit): Unit /* this */

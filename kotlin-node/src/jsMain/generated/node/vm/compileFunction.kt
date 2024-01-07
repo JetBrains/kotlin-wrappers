@@ -4,7 +4,7 @@
 
 package node.vm
 
-import js.core.ReadonlyArray
+import js.array.ReadonlyArray
 
 /**
  * Compiles the given code into the provided context (if no context is

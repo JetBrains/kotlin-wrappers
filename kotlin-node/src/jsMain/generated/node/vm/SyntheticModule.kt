@@ -12,7 +12,7 @@ external class SyntheticModule : Module {
      * @param evaluateCallback Called when the module is evaluated.
      */
     constructor (
-        exportNames: js.core.ReadonlyArray<String>,
+        exportNames: js.array.ReadonlyArray<String>,
         evaluateCallback: (`this`: SyntheticModule) -> Unit,
         options: SyntheticModuleOptions = definedExternally,
     )
