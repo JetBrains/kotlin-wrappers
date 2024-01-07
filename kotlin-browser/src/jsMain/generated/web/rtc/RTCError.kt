@@ -19,20 +19,20 @@ external class RTCError(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCError/receivedAlert)
      */
-    val receivedAlert: Number?
+    val receivedAlert: Int?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCError/sctpCauseCode)
      */
-    val sctpCauseCode: Number?
+    val sctpCauseCode: Int?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCError/sdpLineNumber)
      */
-    val sdpLineNumber: Number?
+    val sdpLineNumber: Int?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCError/sentAlert)
      */
-    val sentAlert: Number?
+    val sentAlert: Int?
 }

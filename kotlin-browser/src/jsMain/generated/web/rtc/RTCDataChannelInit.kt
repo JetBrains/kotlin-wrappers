@@ -3,9 +3,9 @@
 package web.rtc
 
 sealed external interface RTCDataChannelInit {
-    var id: Number?
-    var maxPacketLifeTime: Number?
-    var maxRetransmits: Number?
+    var id: Short?
+    var maxPacketLifeTime: Short?
+    var maxRetransmits: Short?
     var negotiated: Boolean?
     var ordered: Boolean?
     var protocol: String?

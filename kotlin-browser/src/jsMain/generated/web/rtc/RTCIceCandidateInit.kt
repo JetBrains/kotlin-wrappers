@@ -4,7 +4,7 @@ package web.rtc
 
 sealed external interface RTCIceCandidateInit {
     var candidate: String?
-    var sdpMLineIndex: Number?
+    var sdpMLineIndex: Short?
     var sdpMid: String?
     var usernameFragment: String?
 }

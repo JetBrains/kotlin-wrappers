@@ -2,45 +2,46 @@
 
 package web.rtc
 
+import js.core.JsLong
 import web.time.DOMHighResTimeStamp
 
 sealed external interface RTCInboundRtpStreamStats :
     RTCReceivedRtpStreamStats {
-    var audioLevel: Number?
-    var bytesReceived: Number?
-    var concealedSamples: Number?
-    var concealmentEvents: Number?
+    var audioLevel: Double?
+    var bytesReceived: JsLong?
+    var concealedSamples: JsLong?
+    var concealmentEvents: JsLong?
     var decoderImplementation: String?
     var estimatedPlayoutTimestamp: DOMHighResTimeStamp?
-    var fecPacketsDiscarded: Number?
-    var fecPacketsReceived: Number?
+    var fecPacketsDiscarded: JsLong?
+    var fecPacketsReceived: JsLong?
     var firCount: Int?
-    var frameHeight: Number?
-    var frameWidth: Number?
-    var framesDecoded: Number?
-    var framesDropped: Number?
-    var framesPerSecond: Number?
-    var framesReceived: Number?
-    var headerBytesReceived: Number?
-    var insertedSamplesForDeceleration: Number?
-    var jitterBufferDelay: Number?
+    var frameHeight: Int?
+    var frameWidth: Int?
+    var framesDecoded: Int?
+    var framesDropped: Int?
+    var framesPerSecond: Double?
+    var framesReceived: Int?
+    var headerBytesReceived: JsLong?
+    var insertedSamplesForDeceleration: JsLong?
+    var jitterBufferDelay: Double?
     var jitterBufferEmittedCount: Int?
-    var keyFramesDecoded: Number?
+    var keyFramesDecoded: Int?
     var lastPacketReceivedTimestamp: DOMHighResTimeStamp?
     var mid: String?
     var nackCount: Int?
-    var packetsDiscarded: Number?
+    var packetsDiscarded: JsLong?
     var pliCount: Int?
-    var qpSum: Number?
+    var qpSum: JsLong?
     var remoteId: String?
-    var removedSamplesForAcceleration: Number?
-    var silentConcealedSamples: Number?
-    var totalAudioEnergy: Number?
-    var totalDecodeTime: Number?
-    var totalInterFrameDelay: Number?
-    var totalProcessingDelay: Number?
-    var totalSamplesDuration: Number?
-    var totalSamplesReceived: Number?
-    var totalSquaredInterFrameDelay: Number?
+    var removedSamplesForAcceleration: JsLong?
+    var silentConcealedSamples: JsLong?
+    var totalAudioEnergy: Double?
+    var totalDecodeTime: Double?
+    var totalInterFrameDelay: Double?
+    var totalProcessingDelay: Double?
+    var totalSamplesDuration: Double?
+    var totalSamplesReceived: JsLong?
+    var totalSquaredInterFrameDelay: Double?
     var trackIdentifier: String
 }

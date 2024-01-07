@@ -29,12 +29,12 @@ sealed external class RTCDataChannel :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/bufferedAmountLowThreshold)
      */
-    var bufferedAmountLowThreshold: Number
+    var bufferedAmountLowThreshold: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/id)
      */
-    val id: Number?
+    val id: Short?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/label)
@@ -44,12 +44,12 @@ sealed external class RTCDataChannel :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/maxPacketLifeTime)
      */
-    val maxPacketLifeTime: Number?
+    val maxPacketLifeTime: Short?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/maxRetransmits)
      */
-    val maxRetransmits: Number?
+    val maxRetransmits: Short?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/negotiated)

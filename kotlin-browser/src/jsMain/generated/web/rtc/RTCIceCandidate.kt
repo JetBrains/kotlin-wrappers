@@ -53,12 +53,12 @@ external class RTCIceCandidate(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/relatedPort)
      */
-    val relatedPort: Number?
+    val relatedPort: Short?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/sdpMLineIndex)
      */
-    val sdpMLineIndex: Number?
+    val sdpMLineIndex: Short?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/sdpMid)

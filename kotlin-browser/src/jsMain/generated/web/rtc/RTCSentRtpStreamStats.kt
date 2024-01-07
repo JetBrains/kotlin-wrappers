@@ -2,8 +2,10 @@
 
 package web.rtc
 
+import js.core.JsLong
+
 sealed external interface RTCSentRtpStreamStats :
     RTCRtpStreamStats {
-    var bytesSent: Number?
-    var packetsSent: Number?
+    var bytesSent: JsLong?
+    var packetsSent: JsLong?
 }

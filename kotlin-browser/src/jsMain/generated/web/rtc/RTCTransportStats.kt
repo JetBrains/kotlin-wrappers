@@ -2,10 +2,12 @@
 
 package web.rtc
 
+import js.core.JsLong
+
 sealed external interface RTCTransportStats :
     RTCStats {
-    var bytesReceived: Number?
-    var bytesSent: Number?
+    var bytesReceived: JsLong?
+    var bytesSent: JsLong?
     var dtlsCipher: String?
     var dtlsState: RTCDtlsTransportState
     var localCertificateId: String?

@@ -14,12 +14,12 @@ sealed external class RTCSctpTransport :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSctpTransport/maxChannels)
      */
-    val maxChannels: Number?
+    val maxChannels: Short?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSctpTransport/maxMessageSize)
      */
-    val maxMessageSize: Number
+    val maxMessageSize: Double
     var onstatechange: EventHandler<Event>?
 
     /**

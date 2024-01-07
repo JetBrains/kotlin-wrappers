@@ -5,7 +5,7 @@ package web.rtc
 import web.time.DOMHighResTimeStamp
 
 sealed external interface RTCRtpContributingSource {
-    var audioLevel: Number?
+    var audioLevel: Double?
     var rtpTimestamp: Double
     var source: Number
     var timestamp: DOMHighResTimeStamp
