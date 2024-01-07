@@ -55,7 +55,7 @@ protected constructor() :
     fun toBlob(
         callback: BlobCallback,
         type: String = definedExternally,
-        quality: Number = definedExternally,
+        quality: Double = definedExternally,
     )
 
     /**
@@ -66,7 +66,7 @@ protected constructor() :
      */
     fun toDataURL(
         type: String = definedExternally,
-        quality: Number = definedExternally,
+        quality: Double = definedExternally,
     ): String
 
     /**

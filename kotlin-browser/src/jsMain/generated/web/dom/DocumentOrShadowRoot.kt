@@ -65,13 +65,13 @@ external interface DocumentOrShadowRoot {
      * @param y The y-offset
      */
     fun elementFromPoint(
-        x: Number,
-        y: Number,
+        x: Double,
+        y: Double,
     ): Element? = definedExternally
 
     fun elementsFromPoint(
-        x: Number,
-        y: Number,
+        x: Double,
+        y: Double,
     ): ReadonlyArray<Element> = definedExternally
 
     /**
