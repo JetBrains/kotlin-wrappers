@@ -58,7 +58,7 @@ external class VideoFrame(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/duration)
      */
-    val duration: Double?
+    val duration: JsLong?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/format)

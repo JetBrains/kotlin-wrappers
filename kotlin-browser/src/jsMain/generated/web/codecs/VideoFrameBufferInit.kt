@@ -12,7 +12,7 @@ sealed external interface VideoFrameBufferInit {
     var colorSpace: VideoColorSpaceInit?
     var displayHeight: Int?
     var displayWidth: Int?
-    var duration: Double?
+    var duration: JsLong?
     var format: VideoPixelFormat
     var layout: ReadonlyArray<PlaneLayout>?
     var timestamp: JsLong

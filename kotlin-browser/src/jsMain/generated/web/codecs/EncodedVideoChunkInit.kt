@@ -7,7 +7,7 @@ import js.core.JsLong
 
 sealed external interface EncodedVideoChunkInit {
     var data: AllowSharedBufferSource
-    var duration: Double?
+    var duration: JsLong?
     var timestamp: JsLong
     var type: EncodedVideoChunkType
 }
