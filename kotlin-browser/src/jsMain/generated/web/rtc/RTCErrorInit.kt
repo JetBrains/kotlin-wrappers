@@ -4,7 +4,7 @@ package web.rtc
 
 sealed external interface RTCErrorInit {
     var errorDetail: RTCErrorDetailType
-    var httpRequestStatusCode: Number?
+    var httpRequestStatusCode: Int?
     var receivedAlert: Int?
     var sctpCauseCode: Int?
     var sdpLineNumber: Int?
