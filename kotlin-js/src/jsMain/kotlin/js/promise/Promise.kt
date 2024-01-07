@@ -69,7 +69,7 @@ open external class Promise<out T>(
         fun <T> resolve(value: T): Promise<T>
         fun <T> resolve(value: PromiseResult<T>): Promise<T>
 
-        fun <T> withResolvers(): PromiseWithResolversResult<T>
+        fun <T> withResolvers(): PromiseWithResolvers<T>
     }
 }
 
