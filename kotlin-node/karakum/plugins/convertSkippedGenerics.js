@@ -49,6 +49,13 @@ export default function (node, context, render) {
         && !node.typeArguments
     ) {
         if (
+            node.typeName.text === "Function"
+            && ts.isIntersectionTypeNode(node.parent)
+        ) {
+            return "js.function.JsFunction<js.core.JsTuple, Any?>"
+        }
+
+        if (
             ts.isParameter(node.parent)
             && ts.isIdentifier(node.parent.name)
             && node.parent.name.text === "listener"

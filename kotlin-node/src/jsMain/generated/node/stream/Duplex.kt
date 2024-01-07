@@ -253,7 +253,7 @@ open external class Duplex : Readable, Writable {
 
         fun from(src: Promise<Any?>): Duplex
 
-        fun from(src: Object): Duplex
+        fun from(src: Any): Duplex
     }
 
 }

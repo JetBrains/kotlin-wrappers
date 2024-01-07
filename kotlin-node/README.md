@@ -11,7 +11,4 @@ Declarations in [src/jsMain/generatedLegacy](./src/jsMain/generatedLegacy) are g
 ### TODO:
 
 1) Fix numeric types
-2) Unseal interfaces in `generatedLegacy`:
-   * `ServerOpts`
-3) Improve anonymous type extraction (`privateKeyEncoding`)
-4) Get rid of `WithImplicitCoercion`
+2) Get rid of `WithImplicitCoercion`

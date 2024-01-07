@@ -25,6 +25,7 @@
         "<nodeModules>/@types/node/tls.d.ts",
         "<nodeModules>/@types/node/tty.d.ts",
         "<nodeModules>/@types/node/url.d.ts",
+        "<nodeModules>/@types/node/vm.d.ts",
         "<nodeModules>/@types/node/worker_threads.d.ts"
     ],
     "output": "src/jsMain/generated",
@@ -131,6 +132,8 @@
         "^tty": "node:tty",
         "^node/url": "node:url",
         "^url": "node:url",
+        "^node/vm": "node:vm",
+        "^vm": "node:vm",
         "^node/worker_threads": "node:worker_threads",
         "^worker_threads": "node:worker_threads"
     },
@@ -218,6 +221,9 @@
         "^node/url.kt": "node/url/url.kt",
         "^url": "node/url",
         "url/Url.kt": "url/Url.interface.kt",
+        "^node/vm/namespace.kt": "node/vm/nodeNamespace.kt",
+        "^node/vm.kt": "node/vm/vm.kt",
+        "^vm": "node/vm",
         "^node/worker_threads/namespace.kt": "node/workerThreads/nodeNamespace.kt",
         "^node/workerThreads.kt": "node/workerThreads/workerThreads.kt",
         "^worker_threads": "node/workerThreads"
@@ -597,7 +603,6 @@
         ],
         "stream/Duplex.kt": [
             "js.buffer.ArrayBuffer",
-            "js.core.Object",
             "js.iterable.AsyncIterable",
             "js.generator.AsyncGeneratorFunction",
             "js.promise.Promise",
@@ -663,6 +668,21 @@
         "url/UrlWithParsedQuery.kt": [
             "node.querystring.ParsedUrlQuery"
         ],
+        "vm/CompileFunctionResult.kt": [
+            "node.buffer.Buffer"
+        ],
+        "vm/Module.kt": [
+            "js.promise.Promise"
+        ],
+        "vm/SourceTextModuleOptions.kt": [
+            "js.import.ImportMeta"
+        ],
+        "vm/compileFunction.kt": [
+            "js.core.ReadonlyArray"
+        ],
+        "vm/measureMemory.kt": [
+            "js.promise.Promise"
+        ],
         "workerThreads/Worker.kt": [
             "js.array.ReadonlyArray",
             "js.promise.Promise",
@@ -727,6 +747,8 @@
         "node:tty": "ignore",
         "url": "package",
         "node:url": "ignore",
+        "vm": "package",
+        "node:vm": "ignore",
         "worker_threads": "package",
         "node:worker_threads": "ignore"
     },

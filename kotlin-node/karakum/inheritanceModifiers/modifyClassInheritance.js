@@ -68,6 +68,12 @@ export default (node) => {
                     node.name.text === "PerformanceEntry"
                 )
             )
+            || (
+                sourceFileName.endsWith("vm.d.ts")
+                && (
+                    node.name.text === "Module"
+                )
+            )
         )
     ) {
         return "open"

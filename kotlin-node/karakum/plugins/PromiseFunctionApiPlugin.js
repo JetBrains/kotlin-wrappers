@@ -10,11 +10,8 @@ function isPromiseType(node) {
 }
 
 function isPromiseFunction(node) {
-    const sourceFileName = node.getSourceFile()?.fileName ?? "generated.d.ts"
-
     return (
-        sourceFileName.endsWith("promises.d.ts")
-        && ts.isFunctionDeclaration(node)
+        ts.isFunctionDeclaration(node)
 
         && node.type
         && isPromiseType(node.type)
