@@ -44,14 +44,10 @@ export default function (node, context, render) {
         && ts.isIdentifier(node.typeName)
         && (
             node.typeName.text === "Function"
-            || node.typeName.text === "AsyncGeneratorFunction"
         )
         && !node.typeArguments
     ) {
-        if (
-            node.typeName.text === "Function"
-            && ts.isIntersectionTypeNode(node.parent)
-        ) {
+        if (ts.isIntersectionTypeNode(node.parent)) {
             return "js.function.JsFunction<js.array.JsTuple, Any?>"
         }
 
@@ -64,6 +60,17 @@ export default function (node, context, render) {
         }
 
         return `${render(node.typeName)}<*>`
+    }
+
+    if (
+        ts.isTypeReferenceNode(node)
+        && ts.isIdentifier(node.typeName)
+        && (
+            node.typeName.text === "AsyncGeneratorFunction"
+        )
+        && !node.typeArguments
+    ) {
+        return `${render(node.typeName)}<*, *, *, *>`
     }
 
     if (
