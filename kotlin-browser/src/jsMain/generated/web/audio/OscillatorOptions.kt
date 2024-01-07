@@ -4,8 +4,8 @@ package web.audio
 
 sealed external interface OscillatorOptions :
     AudioNodeOptions {
-    var detune: Double?
-    var frequency: Double?
+    var detune: Float?
+    var frequency: Float?
     var periodicWave: PeriodicWave?
     var type: OscillatorType?
 }

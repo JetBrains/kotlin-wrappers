@@ -14,7 +14,7 @@ external class VTTRegion {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VTTRegion/lines)
      */
-    var lines: Double
+    var lines: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VTTRegion/regionAnchorX)

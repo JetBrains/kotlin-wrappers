@@ -30,7 +30,7 @@ external class AudioBuffer(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioBuffer/sampleRate)
      */
-    val sampleRate: Int
+    val sampleRate: Float
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioBuffer/copyFromChannel)

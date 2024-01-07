@@ -16,7 +16,7 @@ sealed external class SVGSVGElement :
     SVGGraphicsElement,
     SVGFitToViewBox,
     WindowEventHandlers {
-    var currentScale: Double
+    var currentScale: Float
     val currentTranslate: DOMPointReadOnly
     val height: SVGAnimatedLength
     val width: SVGAnimatedLength

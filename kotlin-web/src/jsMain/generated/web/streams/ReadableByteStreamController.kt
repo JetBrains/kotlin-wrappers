@@ -19,7 +19,7 @@ sealed external class ReadableByteStreamController :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableByteStreamController/desiredSize)
      */
-    val desiredSize: Int?
+    val desiredSize: Double?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableByteStreamController/close)

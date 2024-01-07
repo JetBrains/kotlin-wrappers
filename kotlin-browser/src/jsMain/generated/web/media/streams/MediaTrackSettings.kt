@@ -12,9 +12,9 @@ sealed external interface MediaTrackSettings {
     var facingMode: String?
     var frameRate: Double?
     var groupId: String?
-    var height: Double?
+    var height: Int?
     var noiseSuppression: Boolean?
     var sampleRate: Int?
     var sampleSize: Int?
-    var width: Double?
+    var width: Int?
 }

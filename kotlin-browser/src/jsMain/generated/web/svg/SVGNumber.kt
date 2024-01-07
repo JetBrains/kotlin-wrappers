@@ -8,5 +8,5 @@ package web.svg
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumber)
  */
 sealed external class SVGNumber {
-    var value: Double
+    var value: Float
 }

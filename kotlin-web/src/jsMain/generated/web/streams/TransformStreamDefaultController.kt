@@ -11,7 +11,7 @@ sealed external class TransformStreamDefaultController<O> {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStreamDefaultController/desiredSize)
      */
-    val desiredSize: Int?
+    val desiredSize: Double?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStreamDefaultController/enqueue)

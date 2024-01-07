@@ -4,5 +4,5 @@ package web.audio
 
 sealed external interface StereoPannerOptions :
     AudioNodeOptions {
-    var pan: Double?
+    var pan: Float?
 }

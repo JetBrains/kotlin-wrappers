@@ -25,12 +25,12 @@ external class Touch(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/force)
      */
-    val force: Double
+    val force: Float
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/identifier)
      */
-    val identifier: Double
+    val identifier: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/pageX)
@@ -45,17 +45,17 @@ external class Touch(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/radiusX)
      */
-    val radiusX: Double
+    val radiusX: Float
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/radiusY)
      */
-    val radiusY: Double
+    val radiusY: Float
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/rotationAngle)
      */
-    val rotationAngle: Double
+    val rotationAngle: Float
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/screenX)

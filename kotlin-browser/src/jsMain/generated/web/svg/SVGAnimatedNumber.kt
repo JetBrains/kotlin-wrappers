@@ -8,6 +8,6 @@ package web.svg
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedNumber)
  */
 sealed external class SVGAnimatedNumber {
-    val animVal: Double
-    var baseVal: Double
+    val animVal: Float
+    var baseVal: Float
 }

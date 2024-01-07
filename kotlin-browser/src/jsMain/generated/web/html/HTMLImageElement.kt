@@ -58,7 +58,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/height)
      */
-    var height: Double
+    var height: Int
 
     /**
      * Sets or retrieves whether the image is a server-side image map.
@@ -122,17 +122,17 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/width)
      */
-    var width: Double
+    var width: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/x)
      */
-    val x: Double
+    val x: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/y)
      */
-    val y: Double
+    val y: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/decode)

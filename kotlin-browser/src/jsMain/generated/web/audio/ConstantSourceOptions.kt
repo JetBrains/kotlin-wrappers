@@ -3,5 +3,5 @@
 package web.audio
 
 sealed external interface ConstantSourceOptions {
-    var offset: Int?
+    var offset: Float?
 }

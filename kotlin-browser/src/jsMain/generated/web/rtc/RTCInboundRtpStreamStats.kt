@@ -25,7 +25,7 @@ sealed external interface RTCInboundRtpStreamStats :
     var headerBytesReceived: JsLong?
     var insertedSamplesForDeceleration: JsLong?
     var jitterBufferDelay: Double?
-    var jitterBufferEmittedCount: Int?
+    var jitterBufferEmittedCount: JsLong?
     var keyFramesDecoded: Int?
     var lastPacketReceivedTimestamp: DOMHighResTimeStamp?
     var mid: String?

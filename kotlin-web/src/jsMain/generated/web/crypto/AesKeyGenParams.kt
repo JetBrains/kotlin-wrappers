@@ -4,5 +4,5 @@ package web.crypto
 
 sealed external interface AesKeyGenParams :
     Algorithm {
-    var length: Int
+    var length: Short
 }

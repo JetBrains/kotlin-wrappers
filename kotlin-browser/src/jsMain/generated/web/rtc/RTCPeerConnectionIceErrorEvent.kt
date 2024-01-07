@@ -12,9 +12,9 @@ import web.events.EventType
 
 external interface RTCPeerConnectionIceErrorEventInit : EventInit {
     var address: String?
-    var errorCode: Int
+    var errorCode: Short
     var errorText: String?
-    var port: Int?
+    var port: Short?
     var url: String?
 }
 
@@ -33,13 +33,13 @@ open external class RTCPeerConnectionIceErrorEvent(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnectionIceErrorEvent/errorCode)
      */
-    val errorCode: Int
+    val errorCode: Short
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnectionIceErrorEvent/errorText)
      */
     val errorText: String
-    val port: Int?
+    val port: Short?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnectionIceErrorEvent/url)

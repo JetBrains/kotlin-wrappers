@@ -19,22 +19,22 @@ sealed external class AudioParam {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioParam/defaultValue)
      */
-    val defaultValue: Double
+    val defaultValue: Float
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioParam/maxValue)
      */
-    val maxValue: Double
+    val maxValue: Float
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioParam/minValue)
      */
-    val minValue: Double
+    val minValue: Float
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioParam/value)
      */
-    var value: Double
+    var value: Float
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioParam/cancelAndHoldAtTime)

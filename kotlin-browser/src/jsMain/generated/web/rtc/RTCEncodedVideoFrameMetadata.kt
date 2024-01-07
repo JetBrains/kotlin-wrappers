@@ -9,11 +9,11 @@ sealed external interface RTCEncodedVideoFrameMetadata {
     var contributingSources: ReadonlyArray<Number>?
     var dependencies: ReadonlyArray<Number>?
     var frameId: JsLong?
-    var height: Double?
+    var height: Short?
     var payloadType: Short /* unsigned byte */?
     var spatialIndex: Int?
     var synchronizationSource: Int?
     var temporalIndex: Int?
     var timestamp: JsLong?
-    var width: Double?
+    var width: Short?
 }

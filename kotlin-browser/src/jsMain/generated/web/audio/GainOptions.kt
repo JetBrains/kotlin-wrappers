@@ -4,5 +4,5 @@ package web.audio
 
 sealed external interface GainOptions :
     AudioNodeOptions {
-    var gain: Double?
+    var gain: Float?
 }

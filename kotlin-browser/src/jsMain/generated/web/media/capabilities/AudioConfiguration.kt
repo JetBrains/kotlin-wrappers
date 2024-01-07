@@ -2,8 +2,10 @@
 
 package web.media.capabilities
 
+import js.core.JsLong
+
 sealed external interface AudioConfiguration {
-    var bitrate: Int?
+    var bitrate: JsLong?
     var channels: String?
     var contentType: String
     var samplerate: Int?

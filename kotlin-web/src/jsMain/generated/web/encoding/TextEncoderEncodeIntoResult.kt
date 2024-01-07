@@ -2,7 +2,9 @@
 
 package web.encoding
 
+import js.core.JsLong
+
 sealed external interface TextEncoderEncodeIntoResult {
-    var read: Int
-    var written: Int
+    var read: JsLong
+    var written: JsLong
 }

@@ -7,5 +7,5 @@ import js.buffer.BufferSource
 sealed external interface AesCtrParams :
     Algorithm {
     var counter: BufferSource
-    var length: Int
+    var length: Short /* unsigned byte */
 }

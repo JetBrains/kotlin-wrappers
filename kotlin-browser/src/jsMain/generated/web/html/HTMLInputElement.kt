@@ -113,7 +113,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/height)
      */
-    var height: Double
+    var height: Int
 
     /**
      * When set, overrides the rendering of checkbox controls so that the current value is not visible.
@@ -257,7 +257,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/width)
      */
-    var width: Double
+    var width: Int
 
     /**
      * Returns whether an element will successfully validate based on forms validation rules and constraints.

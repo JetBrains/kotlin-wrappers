@@ -2,8 +2,6 @@
 
 package web.dom
 
-import js.core.JsLong
-
 /**
  * The nodes of a document subtree and a position within them.
  *
@@ -28,7 +26,7 @@ sealed external class TreeWalker {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TreeWalker/whatToShow)
      */
-    val whatToShow: JsLong
+    val whatToShow: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TreeWalker/firstChild)

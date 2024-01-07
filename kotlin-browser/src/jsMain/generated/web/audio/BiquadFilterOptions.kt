@@ -4,9 +4,9 @@ package web.audio
 
 sealed external interface BiquadFilterOptions :
     AudioNodeOptions {
-    var Q: Number?
-    var detune: Double?
-    var frequency: Double?
-    var gain: Double?
+    var Q: Float?
+    var detune: Float?
+    var frequency: Float?
+    var gain: Float?
     var type: BiquadFilterType?
 }

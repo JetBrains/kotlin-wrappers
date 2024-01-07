@@ -4,9 +4,9 @@ package web.audio
 
 sealed external interface DynamicsCompressorOptions :
     AudioNodeOptions {
-    var attack: Double?
-    var knee: Double?
-    var ratio: Double?
-    var release: Double?
-    var threshold: Double?
+    var attack: Float?
+    var knee: Float?
+    var ratio: Float?
+    var release: Float?
+    var threshold: Float?
 }

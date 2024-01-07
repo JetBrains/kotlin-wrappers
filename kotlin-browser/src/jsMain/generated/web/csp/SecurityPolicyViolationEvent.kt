@@ -21,7 +21,7 @@ external interface SecurityPolicyViolationEventInit : EventInit {
     var referrer: String?
     var sample: String?
     var sourceFile: String?
-    var statusCode: Int
+    var statusCode: Short
     var violatedDirective: String
 }
 
@@ -87,7 +87,7 @@ open external class SecurityPolicyViolationEvent(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/statusCode)
      */
-    val statusCode: Int
+    val statusCode: Short
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/violatedDirective)

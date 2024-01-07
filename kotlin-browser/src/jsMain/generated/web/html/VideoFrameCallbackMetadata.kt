@@ -7,12 +7,12 @@ import web.time.DOMHighResTimeStamp
 sealed external interface VideoFrameCallbackMetadata {
     var captureTime: DOMHighResTimeStamp?
     var expectedDisplayTime: DOMHighResTimeStamp
-    var height: Double
+    var height: Int
     var mediaTime: Double
     var presentationTime: DOMHighResTimeStamp
     var presentedFrames: Int
     var processingDuration: Double?
     var receiveTime: DOMHighResTimeStamp?
-    var rtpTimestamp: Double?
-    var width: Double
+    var rtpTimestamp: Int?
+    var width: Int
 }

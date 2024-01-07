@@ -13,5 +13,5 @@ protected constructor() :
     /**
      * Sets or retrieves the value of a list item.
      */
-    var value: Double
+    var value: Int
 }

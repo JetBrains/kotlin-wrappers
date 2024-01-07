@@ -29,7 +29,7 @@ external class DynamicsCompressorNode(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DynamicsCompressorNode/reduction)
      */
-    val reduction: Double
+    val reduction: Float
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DynamicsCompressorNode/release)

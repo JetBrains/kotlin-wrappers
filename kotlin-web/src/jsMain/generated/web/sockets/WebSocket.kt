@@ -5,6 +5,7 @@ package web.sockets
 import js.array.ReadonlyArray
 import js.buffer.ArrayBufferLike
 import js.buffer.ArrayBufferView
+import js.core.JsLong
 import web.buffer.Blob
 import web.events.Event
 import web.events.EventHandler
@@ -52,7 +53,7 @@ external class WebSocket(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/bufferedAmount)
      */
-    val bufferedAmount: Int
+    val bufferedAmount: JsLong
 
     /**
      * Returns the extensions selected by the server, if any.

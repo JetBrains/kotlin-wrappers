@@ -9,13 +9,13 @@ sealed external interface PannerOptions :
     var coneOuterGain: Double?
     var distanceModel: DistanceModelType?
     var maxDistance: Double?
-    var orientationX: Double?
-    var orientationY: Double?
-    var orientationZ: Double?
+    var orientationX: Float?
+    var orientationY: Float?
+    var orientationZ: Float?
     var panningModel: PanningModelType?
-    var positionX: Double?
-    var positionY: Double?
-    var positionZ: Double?
+    var positionX: Float?
+    var positionY: Float?
+    var positionZ: Float?
     var refDistance: Double?
     var rolloffFactor: Double?
 }

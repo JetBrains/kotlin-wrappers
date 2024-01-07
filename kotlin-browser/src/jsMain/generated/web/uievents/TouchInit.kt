@@ -9,13 +9,13 @@ sealed external interface TouchInit {
     var azimuthAngle: Double?
     var clientX: Double?
     var clientY: Double?
-    var force: Double?
-    var identifier: Double
+    var force: Float?
+    var identifier: Int
     var pageX: Double?
     var pageY: Double?
-    var radiusX: Double?
-    var radiusY: Double?
-    var rotationAngle: Double?
+    var radiusX: Float?
+    var radiusY: Float?
+    var rotationAngle: Float?
     var screenX: Double?
     var screenY: Double?
     var target: EventTarget

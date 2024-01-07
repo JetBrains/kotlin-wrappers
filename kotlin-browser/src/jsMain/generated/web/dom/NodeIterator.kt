@@ -2,8 +2,6 @@
 
 package web.dom
 
-import js.core.JsLong
-
 /**
  * An iterator over the members of a list of the nodes in a subtree of the DOM. The nodes will be returned in document order.
  *
@@ -33,7 +31,7 @@ sealed external class NodeIterator {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeIterator/whatToShow)
      */
-    val whatToShow: JsLong
+    val whatToShow: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeIterator/nextNode)

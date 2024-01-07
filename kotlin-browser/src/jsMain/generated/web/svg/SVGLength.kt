@@ -9,9 +9,9 @@ package web.svg
  */
 sealed external class SVGLength {
     val unitType: UnitType
-    var value: Double
+    var value: Float
     var valueAsString: String
-    var valueInSpecifiedUnits: Double
+    var valueInSpecifiedUnits: Float
     fun convertToSpecifiedUnits(unitType: UnitType)
     fun newValueSpecifiedUnits(
         unitType: UnitType,

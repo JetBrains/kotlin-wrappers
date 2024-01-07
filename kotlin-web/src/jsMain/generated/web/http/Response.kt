@@ -31,7 +31,7 @@ external class Response(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/status)
      */
-    val status: Int
+    val status: Short
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/statusText)

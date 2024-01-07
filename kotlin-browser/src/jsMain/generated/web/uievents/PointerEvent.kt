@@ -16,8 +16,8 @@ external interface PointerEventInit : MouseEventInit {
     var pointerId: Int?
     var pointerType: String?
     var predictedEvents: ReadonlyArray<PointerEvent>?
-    var pressure: Double?
-    var tangentialPressure: Double?
+    var pressure: Float?
+    var tangentialPressure: Float?
     var tiltX: Int?
     var tiltY: Int?
     var twist: Int?
@@ -56,12 +56,12 @@ open external class PointerEvent(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/pressure)
      */
-    val pressure: Double
+    val pressure: Float
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/tangentialPressure)
      */
-    val tangentialPressure: Double
+    val tangentialPressure: Float
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/tiltX)

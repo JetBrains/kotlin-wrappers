@@ -19,12 +19,12 @@ sealed external class VisualViewport :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/offsetLeft)
      */
-    val offsetLeft: Int
+    val offsetLeft: Double
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/offsetTop)
      */
-    val offsetTop: Int
+    val offsetTop: Double
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/resize_event)

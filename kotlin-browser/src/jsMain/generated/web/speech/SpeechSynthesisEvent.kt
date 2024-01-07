@@ -13,7 +13,7 @@ import web.events.EventType
 external interface SpeechSynthesisEventInit : EventInit {
     var charIndex: Int?
     var charLength: Int?
-    var elapsedTime: Double?
+    var elapsedTime: Float?
     var name: String?
     var utterance: SpeechSynthesisUtterance
 }
@@ -40,7 +40,7 @@ open external class SpeechSynthesisEvent(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisEvent/elapsedTime)
      */
-    val elapsedTime: Double
+    val elapsedTime: Float
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisEvent/name)

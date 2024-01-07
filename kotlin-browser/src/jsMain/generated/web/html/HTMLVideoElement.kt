@@ -29,7 +29,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/height)
      */
-    var height: Double
+    var height: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/enterpictureinpicture_event)
@@ -72,7 +72,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/width)
      */
-    var width: Double
+    var width: Int
     fun cancelVideoFrameCallback(requestId: VideoFrameRequestId)
 
     /**

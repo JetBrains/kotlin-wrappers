@@ -56,12 +56,12 @@ external class SpeechSynthesisUtterance(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/pitch)
      */
-    var pitch: Double
+    var pitch: Float
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/rate)
      */
-    var rate: Double
+    var rate: Float
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/text)
@@ -76,5 +76,5 @@ external class SpeechSynthesisUtterance(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/volume)
      */
-    var volume: Double
+    var volume: Float
 }

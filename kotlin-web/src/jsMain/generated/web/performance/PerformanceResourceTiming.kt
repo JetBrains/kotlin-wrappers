@@ -3,6 +3,7 @@
 package web.performance
 
 import js.array.ReadonlyArray
+import js.core.JsLong
 import web.time.DOMHighResTimeStamp
 
 /**
@@ -25,7 +26,7 @@ sealed external class PerformanceResourceTiming :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/decodedBodySize)
      */
-    val decodedBodySize: Int
+    val decodedBodySize: JsLong
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/domainLookupEnd)
@@ -40,7 +41,7 @@ sealed external class PerformanceResourceTiming :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/encodedBodySize)
      */
-    val encodedBodySize: Int
+    val encodedBodySize: JsLong
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/fetchStart)
@@ -95,7 +96,7 @@ sealed external class PerformanceResourceTiming :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/transferSize)
      */
-    val transferSize: Int
+    val transferSize: JsLong
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/workerStart)

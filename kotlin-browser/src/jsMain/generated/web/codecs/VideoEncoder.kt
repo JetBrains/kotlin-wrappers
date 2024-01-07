@@ -2,7 +2,6 @@
 
 package web.codecs
 
-import js.core.JsLong
 import js.core.Void
 import js.promise.Promise
 import web.events.Event
@@ -20,7 +19,7 @@ external class VideoEncoder(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/encodeQueueSize)
      */
-    val encodeQueueSize: JsLong
+    val encodeQueueSize: Int
     var ondequeue: EventHandler<Event>?
 
     /**

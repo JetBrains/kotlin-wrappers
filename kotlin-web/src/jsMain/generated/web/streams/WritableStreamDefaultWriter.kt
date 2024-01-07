@@ -22,7 +22,7 @@ external class WritableStreamDefaultWriter<W>(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/desiredSize)
      */
-    val desiredSize: Int?
+    val desiredSize: Double?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/ready)

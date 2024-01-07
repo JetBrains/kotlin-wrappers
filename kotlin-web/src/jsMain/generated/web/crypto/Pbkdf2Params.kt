@@ -7,6 +7,6 @@ import js.buffer.BufferSource
 sealed external interface Pbkdf2Params :
     Algorithm {
     var hash: HashAlgorithmIdentifier
-    var iterations: Double
+    var iterations: Int
     var salt: BufferSource
 }

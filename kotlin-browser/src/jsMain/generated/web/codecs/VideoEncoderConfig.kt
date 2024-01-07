@@ -2,18 +2,20 @@
 
 package web.codecs
 
+import js.core.JsLong
+
 sealed external interface VideoEncoderConfig {
     var alpha: AlphaOption?
     var avc: AvcEncoderConfig?
-    var bitrate: Int?
+    var bitrate: JsLong?
     var bitrateMode: VideoEncoderBitrateMode?
     var codec: String
     var displayHeight: Int?
     var displayWidth: Int?
     var framerate: Double?
     var hardwareAcceleration: HardwareAcceleration?
-    var height: Double
+    var height: Int
     var latencyMode: LatencyMode?
     var scalabilityMode: String?
-    var width: Double
+    var width: Int
 }

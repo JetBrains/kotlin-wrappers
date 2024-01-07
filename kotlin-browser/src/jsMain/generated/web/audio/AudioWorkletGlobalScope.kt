@@ -23,7 +23,7 @@ sealed external class AudioWorkletGlobalScope :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletGlobalScope/sampleRate)
      */
-    val sampleRate: Int
+    val sampleRate: Float
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletGlobalScope/registerProcessor)

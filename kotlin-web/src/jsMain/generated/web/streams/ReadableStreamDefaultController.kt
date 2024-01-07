@@ -12,7 +12,7 @@ sealed external class ReadableStreamDefaultController<R> :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultController/desiredSize)
      */
-    val desiredSize: Int?
+    val desiredSize: Double?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultController/close)

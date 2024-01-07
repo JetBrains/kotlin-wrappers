@@ -45,7 +45,7 @@ sealed external class BaseAudioContext :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/sampleRate)
      */
-    val sampleRate: Int
+    val sampleRate: Float
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/state)

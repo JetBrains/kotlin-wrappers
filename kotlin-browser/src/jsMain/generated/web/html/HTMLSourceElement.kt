@@ -12,7 +12,7 @@ import web.cssom.MediaQuery
 open external class HTMLSourceElement
 protected constructor() :
     HTMLElement {
-    var height: Double
+    var height: Int
 
     /**
      * Gets or sets the intended media type of the media source.
@@ -44,5 +44,5 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/type)
      */
     var type: String
-    var width: Double
+    var width: Int
 }

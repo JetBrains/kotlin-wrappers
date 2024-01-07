@@ -2,6 +2,8 @@
 
 package web.transport
 
+import js.core.JsLong
+
 sealed external interface WebTransportSendStreamOptions {
-    var sendOrder: Int?
+    var sendOrder: JsLong?
 }

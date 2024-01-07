@@ -8,5 +8,5 @@ sealed external interface AesGcmParams :
     Algorithm {
     var additionalData: BufferSource?
     var iv: BufferSource
-    var tagLength: Int?
+    var tagLength: Short /* unsigned byte */?
 }

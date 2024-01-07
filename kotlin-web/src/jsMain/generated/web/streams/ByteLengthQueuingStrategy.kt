@@ -15,7 +15,7 @@ external class ByteLengthQueuingStrategy(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ByteLengthQueuingStrategy/highWaterMark)
      */
-    override val highWaterMark: Int
+    override val highWaterMark: Double
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ByteLengthQueuingStrategy/size)

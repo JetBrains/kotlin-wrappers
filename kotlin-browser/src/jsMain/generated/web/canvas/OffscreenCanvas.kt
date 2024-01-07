@@ -30,7 +30,7 @@ external class OffscreenCanvas(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/height)
      */
-    var height: Double
+    var height: JsLong
     var oncontextlost: EventHandler<Event>?
     var oncontextrestored: EventHandler<Event>?
 
@@ -41,7 +41,7 @@ external class OffscreenCanvas(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/width)
      */
-    var width: Double
+    var width: JsLong
 
     /**
      * Returns a promise that will fulfill with a new Blob object representing a file containing the image in the OffscreenCanvas object.

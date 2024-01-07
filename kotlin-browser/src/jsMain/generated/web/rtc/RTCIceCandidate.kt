@@ -33,7 +33,7 @@ external class RTCIceCandidate(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/port)
      */
-    val port: Int?
+    val port: Short?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/priority)

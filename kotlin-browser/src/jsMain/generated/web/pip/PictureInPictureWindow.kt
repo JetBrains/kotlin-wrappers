@@ -14,7 +14,7 @@ sealed external class PictureInPictureWindow :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PictureInPictureWindow/height)
      */
-    val height: Double
+    val height: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PictureInPictureWindow/resize_event)
@@ -24,5 +24,5 @@ sealed external class PictureInPictureWindow :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PictureInPictureWindow/width)
      */
-    val width: Double
+    val width: Int
 }

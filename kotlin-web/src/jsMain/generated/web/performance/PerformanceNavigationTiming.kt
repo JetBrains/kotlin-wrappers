@@ -44,7 +44,7 @@ sealed external class PerformanceNavigationTiming :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/redirectCount)
      */
-    val redirectCount: Int
+    val redirectCount: Short
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/type)

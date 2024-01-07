@@ -45,7 +45,7 @@ external class VTTCue(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VTTCue/size)
      */
-    var size: Int
+    var size: Double
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VTTCue/snapToLines)

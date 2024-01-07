@@ -12,7 +12,7 @@ import web.geometry.DOMMatrixReadOnly
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform)
  */
 sealed external class SVGTransform {
-    val angle: Double
+    val angle: Float
     val matrix: DOMMatrix
     val type: Type
     fun setMatrix(matrix: DOMMatrix2DInit = definedExternally)
