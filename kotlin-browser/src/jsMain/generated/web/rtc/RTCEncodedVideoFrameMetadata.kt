@@ -10,7 +10,7 @@ sealed external interface RTCEncodedVideoFrameMetadata {
     var dependencies: ReadonlyArray<Number>?
     var frameId: JsLong?
     var height: Double?
-    var payloadType: Number?
+    var payloadType: Short /* unsigned byte */?
     var spatialIndex: Int?
     var synchronizationSource: Int?
     var temporalIndex: Int?

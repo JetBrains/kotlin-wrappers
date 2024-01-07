@@ -4,5 +4,5 @@ package web.rtc
 
 sealed external interface RTCRtpCodecParameters :
     RTCRtpCodec {
-    var payloadType: Number
+    var payloadType: Short /* unsigned byte */
 }

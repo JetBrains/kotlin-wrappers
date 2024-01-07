@@ -6,7 +6,7 @@ import js.array.ReadonlyArray
 
 sealed external interface RTCEncodedAudioFrameMetadata {
     var contributingSources: ReadonlyArray<Number>?
-    var payloadType: Number?
+    var payloadType: Short /* unsigned byte */?
     var sequenceNumber: Short?
     var synchronizationSource: Int?
 }

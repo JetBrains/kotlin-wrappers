@@ -4,7 +4,7 @@ package web.rtc
 
 sealed external interface RTCRtpCodec {
     var channels: Short?
-    var clockRate: Number
+    var clockRate: Int
     var mimeType: String
     var sdpFmtpLine: String?
 }

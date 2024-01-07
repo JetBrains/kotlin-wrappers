@@ -6,6 +6,6 @@ sealed external interface RTCRtpStreamStats :
     RTCStats {
     var codecId: String?
     var kind: String
-    var ssrc: Number
+    var ssrc: Int
     var transportId: String?
 }
