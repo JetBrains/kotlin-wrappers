@@ -8,7 +8,7 @@ import js.collections.ListLike
 import js.iterable.IterableIterator
 import seskar.js.JsSpecialName
 
-// language=typescript
+// language=JavaScript
 @JsSpecialName("(Object.getPrototypeOf(Uint8Array))")
 sealed external class TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* Number? */> :
     ArrayBufferView,
