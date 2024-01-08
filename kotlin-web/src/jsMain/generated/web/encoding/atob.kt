@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package web.buffer
+package web.encoding
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/atob)
