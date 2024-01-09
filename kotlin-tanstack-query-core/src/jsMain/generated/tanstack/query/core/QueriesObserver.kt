@@ -28,7 +28,10 @@ open external class QueriesObserver<TCombinedResult>(
     open fun getCurrentResult(): TCombinedResult
     open fun getQueries(): ReadonlyArray<Query<*, Error, *, QueryKey>>
     open fun getObservers(): ReadonlyArray<QueryObserver<*, Error, *, *, QueryKey>>
-    open fun getOptimisticResult(queries: ReadonlyArray<QueryObserverOptions<*, *, *, *, *, *>>): QueriesObserverOptimisticResult<TCombinedResult>
+    open fun getOptimisticResult(
+        queries: ReadonlyArray<QueryObserverOptions<*, *, *, *, *, *>>,
+        combine: CombineFn<TCombinedResult>?,
+    ): QueriesObserverOptimisticResult<TCombinedResult>
 }
 
 typealias QueriesObserverOptimisticResult<TCombinedResult> = JsTuple3<
