@@ -8,6 +8,7 @@ import js.buffer.ArrayBuffer
 import js.generator.AsyncGeneratorFunction
 import js.iterable.AsyncIterable
 import js.promise.Promise
+import seskar.js.JsMixin
 import web.buffer.Blob as NodeBlob
 
 /**
@@ -23,7 +24,7 @@ import web.buffer.Blob as NodeBlob
 
 @Suppress("MANY_CLASSES_IN_SUPERTYPE_LIST")
 
-open external class Duplex : Readable, Writable {
+open external class Duplex : Readable, @JsMixin Writable {
     constructor (opts: DuplexOptions = definedExternally)
 
     @JsName("writable")
