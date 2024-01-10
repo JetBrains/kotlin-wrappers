@@ -9,7 +9,7 @@ class AsyncIteratorTest {
 
     init {
         @Suppress("UNUSED_VARIABLE")
-        // language=JavaScript
+        // language=javascript
         val body = """
             return async function*() {
               yield await Promise.resolve(1);
@@ -18,7 +18,7 @@ class AsyncIteratorTest {
             }
         """.trimIndent()
 
-        // language=JavaScript
+        // language=javascript
         asyncGeneratorFn = js("new Function(body)()")
     }
 
