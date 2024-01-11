@@ -7,10 +7,20 @@ import js.collections.MutableSetLike
 import js.iterable.IterableIterator
 import web.ranges.AbstractRange
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Highlight)
+ */
 external class Highlight(
     vararg initialRanges: AbstractRange,
 ) : MutableSetLike<AbstractRange> {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Highlight/priority)
+     */
     var priority: Int
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Highlight/type)
+     */
     var type: HighlightType
 
     override val size: Int

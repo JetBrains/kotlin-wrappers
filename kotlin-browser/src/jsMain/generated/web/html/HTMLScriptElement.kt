@@ -16,6 +16,10 @@ protected constructor() :
     HTMLElement,
     HTMLOrSVGScriptElement {
     var async: Boolean
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/crossOrigin)
+     */
     var crossOrigin: CrossOrigin?
 
     /**

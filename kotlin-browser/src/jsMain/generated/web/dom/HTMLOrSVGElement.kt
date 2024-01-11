@@ -7,6 +7,9 @@
 package web.dom
 
 external interface HTMLOrSVGElement {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/autofocus)
+     */
     var autofocus: Boolean
         get() = definedExternally
         set(value) = definedExternally

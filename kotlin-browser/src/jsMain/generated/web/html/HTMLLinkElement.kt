@@ -41,6 +41,8 @@ protected constructor() :
 
     /**
      * Sets or retrieves the language code of the object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/hreflang)
      */
     var hreflang: String
     var imageSizes: String
