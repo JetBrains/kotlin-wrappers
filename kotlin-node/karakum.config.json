@@ -22,6 +22,7 @@
         "<nodeModules>/@types/node/readline/promises.d.ts",
         "<nodeModules>/@types/node/stream.d.ts",
         "<nodeModules>/@types/node/stream/promises.d.ts",
+        "<nodeModules>/@types/node/test.d.ts",
         "<nodeModules>/@types/node/tls.d.ts",
         "<nodeModules>/@types/node/tty.d.ts",
         "<nodeModules>/@types/node/url.d.ts",
@@ -79,6 +80,7 @@
         "**/process/global/namespace.kt",
         "**/readline/createInterface.kt",
         "**/stream/internal.kt",
+        "**/test/FunctionPropertyNames.kt",
         "**/url/global/**",
         "**/url/URL.kt",
         "**/url/URLSearchParams.kt",
@@ -126,6 +128,8 @@
         "^node/stream": "node:stream",
         "^stream#internal": "node:stream",
         "^stream": "node:stream",
+        "^node/test": "node:test",
+        "^test": "node:test",
         "^node/tls": "node:tls",
         "^tls": "node:tls",
         "^node/tty": "node:tty",
@@ -211,6 +215,9 @@
         "^stream": "node/stream",
         "stream/internal/namespace.kt": "stream/internalNamespace.kt",
         "stream/internal/(.+)\\.kt": "stream/$1.kt",
+        "^node/test/namespace.kt": "node/test/nodeNamespace.kt",
+        "^node/test.kt": "node/test/test.kt",
+        "^test": "node/test",
         "^node/tls/namespace.kt": "node/tls/nodeNamespace.kt",
         "^node/tls.kt": "node/tls/tls.kt",
         "^tls": "node/tls",
@@ -646,6 +653,40 @@
             "node.events.EventEmitter",
             "js.typedarrays.Uint8Array"
         ],
+        "test/HookOptions.kt": [
+            "web.abort.AbortSignal"
+        ],
+        "test/RunOptions.kt": [
+            "web.abort.AbortSignal"
+        ],
+        "test/TestContext.kt": [
+            "web.abort.AbortSignal"
+        ],
+        "test/TestContextTest.kt": [
+            "js.promise.Promise"
+        ],
+        "test/TestOptions.kt": [
+            "web.abort.AbortSignal"
+        ],
+        "test/test.kt": [
+            "js.promise.Promise"
+        ],
+        "test/describe/skip.kt": [
+            "node.test.SuiteFn",
+            "node.test.TestOptions"
+        ],
+        "test/describe/todo.kt": [
+            "node.test.SuiteFn",
+            "node.test.TestOptions"
+        ],
+        "test/it/skip.kt": [
+            "node.test.TestFn",
+            "node.test.TestOptions"
+        ],
+        "test/it/todo.kt": [
+            "node.test.TestFn",
+            "node.test.TestOptions"
+        ],
         "tls/TLSSocket.kt": [
             "node.crypto.X509Certificate"
         ],
@@ -741,6 +782,7 @@
         "node:readline": "ignore",
         "stream": "package",
         "node:stream": "ignore",
+        "node:test": "package",
         "tls": "package",
         "node:tls": "ignore",
         "tty": "package",

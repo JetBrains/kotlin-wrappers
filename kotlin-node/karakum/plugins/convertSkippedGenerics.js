@@ -74,6 +74,22 @@ export default function (node, context, render) {
     }
 
     if (
+        ts.isTypeReferenceNode(node)
+        && ts.isIdentifier(node.typeName)
+        && (
+            node.typeName.text === "MockFunctionCall"
+        )
+        && node.typeArguments
+        && node.typeArguments.length === 1
+    ) {
+        const typeArguments = node.typeArguments
+            ?.map(typeArgument => render(typeArgument))
+            ?.join(", ")
+
+        return `${render(node.typeName)}<${typeArguments}, *, *>`
+    }
+
+    if (
         ts.isExpressionWithTypeArguments(node)
         && ts.isIdentifier(node.expression)
         && node.expression.text === "OutgoingMessage"
