@@ -11,5 +11,20 @@ export default (node) => {
         return `@Suppress("MANY_CLASSES_IN_SUPERTYPE_LIST")`
     }
 
+    if (
+        ts.isExpressionWithTypeArguments(node)
+        && ts.isIdentifier(node.expression)
+        && node.expression.text === "Writable"
+
+        && node.parent
+        && ts.isHeritageClause(node.parent)
+
+        && node.parent.parent
+        && ts.isClassDeclaration(node.parent.parent)
+        && node.parent.parent.name?.text === "Duplex"
+    ) {
+        return `@seskar.js.JsMixin`
+    }
+
     return null
 }
