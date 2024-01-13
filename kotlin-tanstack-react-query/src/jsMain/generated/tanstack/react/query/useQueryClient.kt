@@ -6,4 +6,4 @@ package tanstack.react.query
 
 import tanstack.query.core.QueryClient
 
-external fun useQueryClient(queryClient: QueryClient? = definedExternally): QueryClient
+external fun useQueryClient(queryClient: QueryClient = definedExternally): QueryClient
