@@ -16,5 +16,17 @@ sealed external interface SliderColor {
 
         @JsValue("secondary")
         val secondary: SliderColor
+
+        @JsValue("error")
+        val error: SliderColor
+
+        @JsValue("info")
+        val info: SliderColor
+
+        @JsValue("success")
+        val success: SliderColor
+
+        @JsValue("warning")
+        val warning: SliderColor
     }
 }

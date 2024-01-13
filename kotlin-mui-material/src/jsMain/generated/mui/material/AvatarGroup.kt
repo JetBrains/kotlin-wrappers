@@ -51,6 +51,13 @@ external interface AvatarGroupProps :
     var max: Number?
 
     /**
+     * custom renderer of extraAvatars
+     * @param {number} surplus number of extra avatars
+     * @returns {React.ReactNode} custom element to display
+     */
+    var renderSurplus: ((surplus: Number) -> react.ReactNode)?
+
+    /**
      * The extra props for the slot components.
      * You can override the existing props or add new ones.
      *

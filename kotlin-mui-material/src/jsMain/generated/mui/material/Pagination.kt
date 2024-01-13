@@ -20,7 +20,7 @@ external interface PaginationProps :
     /**
      * The active color.
      * It supports both default and custom theme colors, which can be added as shown in the
-     * [palette customization guide](https://mui.com/material-ui/customization/palette/#adding-new-colors).
+     * [palette customization guide](https://mui.com/material-ui/customization/palette/#custom-colors).
      * @default 'standard'
      */
     var color: PaginationColor?
@@ -30,16 +30,12 @@ external interface PaginationProps :
      * This is important for screen reader users.
      *
      * For localization purposes, you can use the provided [translations](/material-ui/guides/localization/).
-     * @param {string} type The link or button type to format ('page' | 'first' | 'last' | 'next' | 'previous'). Defaults to 'page'.
+     * @param {string} type The link or button type to format ('page' | 'first' | 'last' | 'next' | 'previous' | 'start-ellipsis' | 'end-ellipsis'). Defaults to 'page'.
      * @param {number} page The page number to format.
      * @param {bool} selected If true, the current page is selected.
      * @returns {string}
      */
-    var getItemAriaLabel: ((
-        type: mui.system.Union, /* 'page' | 'first' | 'last' | 'next' | 'previous' */
-        page: Number,
-        selected: Boolean,
-    ) -> String)?
+    var getItemAriaLabel: ((type: mui.system.Union /* UsePaginationItem['type'] */, page: Number, selected: Boolean) -> String)?
 
     /**
      * Render the item.

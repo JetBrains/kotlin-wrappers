@@ -37,4 +37,16 @@ external interface AppBarClasses {
 
     /** Styles applied to the root element if `color="transparent"`. */
     var colorTransparent: ClassName
+
+    /** Styles applied to the root element if `color="error"`. */
+    var colorError: ClassName
+
+    /** Styles applied to the root element if `color="info"`. */
+    var colorInfo: ClassName
+
+    /** Styles applied to the root element if `color="success"`. */
+    var colorSuccess: ClassName
+
+    /** Styles applied to the root element if `color="warning"`. */
+    var colorWarning: ClassName
 }

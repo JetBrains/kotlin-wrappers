@@ -25,6 +25,18 @@ sealed external interface AppBarColor {
 
         @JsValue("transparent")
         val transparent: AppBarColor
+
+        @JsValue("error")
+        val error: AppBarColor
+
+        @JsValue("info")
+        val info: AppBarColor
+
+        @JsValue("success")
+        val success: AppBarColor
+
+        @JsValue("warning")
+        val warning: AppBarColor
     }
 }
 

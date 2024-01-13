@@ -33,5 +33,8 @@ sealed external interface MuiToggleButton {
 
         @JsValue("MuiToggleButton-sizeLarge")
         val sizeLarge: ClassName
+
+        @JsValue("MuiToggleButton-fullWidth")
+        val fullWidth: ClassName
     }
 }

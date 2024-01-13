@@ -31,6 +31,9 @@ external interface TablePaginationOwnProps : mui.system.PropsWithSx {
 
     /**
      * Props applied to the back arrow [`IconButton`](/material-ui/api/icon-button/) component.
+     *
+     * This prop is an alias for `slotProps.actions.previousButton` and will be overriden by it if both are used.
+     * @deprecated Use `slotProps.actions.previousButton` instead.
      */
     var backIconButtonProps: IconButtonProps?
 
@@ -45,6 +48,12 @@ external interface TablePaginationOwnProps : mui.system.PropsWithSx {
      * To enable server side pagination for an unknown number of items, provide -1.
      */
     var count: Number
+
+    /**
+     * If `true`, the component is disabled.
+     * @default false
+     */
+    var disabled: Boolean?
 
     /**
      * Accepts a function which returns a string value that provides a user-friendly name for the current page.
@@ -80,6 +89,9 @@ external interface TablePaginationOwnProps : mui.system.PropsWithSx {
 
     /**
      * Props applied to the next arrow [`IconButton`](/material-ui/api/icon-button/) element.
+     *
+     * This prop is an alias for `slotProps.actions.nextButton` and will be overriden by it if both are used.
+     * @deprecated Use `slotProps.actions.nextButton` instead.
      */
     var nextIconButtonProps: IconButtonProps?
 
@@ -120,6 +132,10 @@ external interface TablePaginationOwnProps : mui.system.PropsWithSx {
 
     /**
      * Props applied to the rows per page [`Select`](/material-ui/api/select/) element.
+     *
+     * This prop is an alias for `slotProps.select` and will be overriden by it if both are used.
+     * @deprecated Use `slotProps.select` instead.
+     *
      * @default {}
      */
     var SelectProps: SelectProps<*>?
@@ -135,6 +151,28 @@ external interface TablePaginationOwnProps : mui.system.PropsWithSx {
      * @default false
      */
     var showLastButton: Boolean?
+
+    /**
+     * The props used for each slot inside the TablePagination.
+     * @default {}
+     */
+    var slotProps: SlotProps?
+
+    interface SlotProps {
+        var actions: react.Props? /* TablePaginationActionsProps['slotProps'] */
+        var select: react.Props? /* Partial<SelectProps> */
+    }
+
+    /**
+     * The components used for each slot inside the TablePagination.
+     * Either a string to use a HTML element or a component.
+     * @default {}
+     */
+    var slots: Slots?
+
+    interface Slots {
+        var actions: react.ElementType<*>? /* TablePaginationActionsProps['slots'] */
+    }
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

@@ -22,6 +22,18 @@ sealed external interface MuiSlider {
         @JsValue("MuiSlider-colorSecondary")
         val colorSecondary: ClassName
 
+        @JsValue("MuiSlider-colorError")
+        val colorError: ClassName
+
+        @JsValue("MuiSlider-colorInfo")
+        val colorInfo: ClassName
+
+        @JsValue("MuiSlider-colorSuccess")
+        val colorSuccess: ClassName
+
+        @JsValue("MuiSlider-colorWarning")
+        val colorWarning: ClassName
+
         @JsValue("MuiSlider-marked")
         val marked: ClassName
 
@@ -66,6 +78,18 @@ sealed external interface MuiSlider {
 
         @JsValue("MuiSlider-thumbColorSecondary")
         val thumbColorSecondary: ClassName
+
+        @JsValue("MuiSlider-thumbColorError")
+        val thumbColorError: ClassName
+
+        @JsValue("MuiSlider-thumbColorInfo")
+        val thumbColorInfo: ClassName
+
+        @JsValue("MuiSlider-thumbColorSuccess")
+        val thumbColorSuccess: ClassName
+
+        @JsValue("MuiSlider-thumbColorWarning")
+        val thumbColorWarning: ClassName
 
         @JsValue("MuiSlider-thumbSizeSmall")
         val thumbSizeSmall: ClassName

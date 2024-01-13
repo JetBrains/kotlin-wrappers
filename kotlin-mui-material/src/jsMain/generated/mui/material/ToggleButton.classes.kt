@@ -31,4 +31,7 @@ external interface ToggleButtonClasses {
 
     /** Styles applied to the root element if `size="large"`. */
     var sizeLarge: ClassName
+
+    /** Styles applied to the root element if `fullWidth={true}`. */
+    var fullWidth: ClassName
 }

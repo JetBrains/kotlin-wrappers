@@ -45,5 +45,17 @@ sealed external interface MuiAppBar {
 
         @JsValue("MuiAppBar-colorTransparent")
         val colorTransparent: ClassName
+
+        @JsValue("MuiAppBar-colorError")
+        val colorError: ClassName
+
+        @JsValue("MuiAppBar-colorInfo")
+        val colorInfo: ClassName
+
+        @JsValue("MuiAppBar-colorSuccess")
+        val colorSuccess: ClassName
+
+        @JsValue("MuiAppBar-colorWarning")
+        val colorWarning: ClassName
     }
 }
