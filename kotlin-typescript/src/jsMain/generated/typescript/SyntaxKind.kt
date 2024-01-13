@@ -195,9 +195,11 @@ sealed external interface SyntaxKind {
         @JsIntValue(60)
         val QuestionQuestionToken: QuestionQuestionToken
 
+        /** Only the JSDoc scanner produces BacktickToken. The normal scanner produces NoSubstitutionTemplateLiteral and related kinds. */
         @JsIntValue(61)
         val BacktickToken: BacktickToken
 
+        /** Only the JSDoc scanner produces HashToken. The normal scanner produces PrivateIdentifier. */
         @JsIntValue(62)
         val HashToken: HashToken
 
@@ -984,6 +986,7 @@ sealed external interface SyntaxKind {
         @JsIntValue(323)
         val JSDoc: JSDoc
 
+        /** @deprecated Use SyntaxKind.JSDoc */
         @JsIntValue(323)
         val JSDocComment: JSDocComment
 
@@ -1186,7 +1189,7 @@ sealed external interface SyntaxKind {
         val LastJSDocTagNode: LastJSDocTagNode
     }
 
-    sealed interface Unknown : SyntaxKind
+    sealed interface Unknown : SyntaxKind, Union.SyntaxKind_Unknown
     sealed interface EndOfFileToken : SyntaxKind, Union.SyntaxKind_EndOfFileToken
     sealed interface SingleLineCommentTrivia : SyntaxKind, Union.SyntaxKind_SingleLineCommentTrivia
     sealed interface MultiLineCommentTrivia : SyntaxKind, Union.SyntaxKind_MultiLineCommentTrivia
@@ -1249,11 +1252,7 @@ sealed external interface SyntaxKind {
     sealed interface ColonToken : SyntaxKind, Union.SyntaxKind_ColonToken
     sealed interface AtToken : SyntaxKind, Union.SyntaxKind_AtToken
     sealed interface QuestionQuestionToken : SyntaxKind, Union.SyntaxKind_QuestionQuestionToken
-
-    /** Only the JSDoc scanner produces BacktickToken. The normal scanner produces NoSubstitutionTemplateLiteral and related kinds. */
     sealed interface BacktickToken : SyntaxKind, Union.SyntaxKind_BacktickToken
-
-    /** Only the JSDoc scanner produces HashToken. The normal scanner produces PrivateIdentifier. */
     sealed interface HashToken : SyntaxKind, Union.SyntaxKind_HashToken
     sealed interface EqualsToken : SyntaxKind, Union.SyntaxKind_EqualsToken
     sealed interface PlusEqualsToken : SyntaxKind, Union.SyntaxKind_PlusEqualsToken
@@ -1518,8 +1517,6 @@ sealed external interface SyntaxKind {
     sealed interface JSDocVariadicType : SyntaxKind
     sealed interface JSDocNamepathType : SyntaxKind
     sealed interface JSDoc : SyntaxKind
-
-    /** @deprecated Use SyntaxKind.JSDoc */
     sealed interface JSDocComment : SyntaxKind
     sealed interface JSDocText : SyntaxKind
     sealed interface JSDocTypeLiteral : SyntaxKind
