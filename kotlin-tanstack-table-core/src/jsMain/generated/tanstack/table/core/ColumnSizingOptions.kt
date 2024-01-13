@@ -19,7 +19,7 @@ external interface ColumnSizingOptions {
 
     /**
      * Enables or disables right-to-left support for resizing the column. defaults to 'ltr'.
-     * [API Docs](https://tanstack.com/table/v8/docs/api/features/column-sizing#rtl)
+     * [API Docs](https://tanstack.com/table/v8/docs/api/features/column-sizing#columnResizeDirection)
      * [Guide](https://tanstack.com/table/v8/docs/guide/column-sizing)
      */
     var columnResizeDirection: ColumnResizeDirection?

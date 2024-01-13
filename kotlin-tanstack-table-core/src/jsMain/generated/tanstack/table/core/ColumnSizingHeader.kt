@@ -2,6 +2,8 @@
 
 package tanstack.table.core
 
+import web.dom.Document
+
 external interface ColumnSizingHeader {
     /**
      * Returns an event handler function that can be used to resize the header. It can be used as an:
@@ -12,7 +14,7 @@ external interface ColumnSizingHeader {
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/column-sizing#getresizehandler)
      * [Guide](https://tanstack.com/table/v8/docs/guide/column-sizing)
      */
-    var getResizeHandler: () -> (event: Any) -> Unit
+    var getResizeHandler: (context: Document?) -> (event: Any) -> Unit
 
     /**
      * Returns the current size of the header.
