@@ -18,14 +18,9 @@ external interface InputLabelProps :
     FormLabelOwnProps
 
 external interface InputLabelOwnProps :
-    react.PropsWithChildren,
     mui.system.PropsWithSx,
+    react.PropsWithChildren,
     FormLabelOwnProps {
-    /**
-     * The content of the component.
-     */
-    override var children: react.ReactNode?
-
     /**
      * Override or extend the styles applied to the component.
      */

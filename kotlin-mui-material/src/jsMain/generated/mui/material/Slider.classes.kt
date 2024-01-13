@@ -14,6 +14,18 @@ external interface SliderClasses {
     /** Styles applied to the root element if `color="secondary"`. */
     var colorSecondary: ClassName
 
+    /** Styles applied to the root element if `color="error"`. */
+    var colorError: ClassName
+
+    /** Styles applied to the root element if `color="info"`. */
+    var colorInfo: ClassName
+
+    /** Styles applied to the root element if `color="success"`. */
+    var colorSuccess: ClassName
+
+    /** Styles applied to the root element if `color="warning"`. */
+    var colorWarning: ClassName
+
     /** Styles applied to the root element if `marks` is provided with at least one label. */
     var marked: ClassName
 
@@ -67,6 +79,18 @@ external interface SliderClasses {
 
     /** Styles applied to the thumb element if `color="secondary"`. */
     var thumbColorSecondary: ClassName
+
+    /** Styles applied to the thumb element if `color="error"`. */
+    var thumbColorError: ClassName
+
+    /** Styles applied to the thumb element if `color="info"`. */
+    var thumbColorInfo: ClassName
+
+    /** Styles applied to the thumb element if `color="success"`. */
+    var thumbColorSuccess: ClassName
+
+    /** Styles applied to the thumb element if `color="warning"`. */
+    var thumbColorWarning: ClassName
 
     /** Styles applied to the thumb element if `size="small"`. */
     var thumbSizeSmall: ClassName

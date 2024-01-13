@@ -21,7 +21,7 @@ external interface PaginationItemOwnProps : mui.system.PropsWithSx {
     /**
      * The active color.
      * It supports both default and custom theme colors, which can be added as shown in the
-     * [palette customization guide](https://mui.com/material-ui/customization/palette/#adding-new-colors).
+     * [palette customization guide](https://mui.com/material-ui/customization/palette/#custom-colors).
      * @default 'standard'
      */
     var color: PaginationItemColor?

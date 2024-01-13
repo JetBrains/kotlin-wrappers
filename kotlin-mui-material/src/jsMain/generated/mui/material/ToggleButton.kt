@@ -10,7 +10,6 @@ package mui.material
 
 import mui.material.styles.Theme
 import mui.system.SxProps
-import web.html.HTMLElement
 
 external interface ToggleButtonProps :
     ToggleButtonOwnProps,
@@ -35,7 +34,7 @@ external interface ToggleButtonOwnProps :
     /**
      * The color of the button when it is in an active state.
      * It supports both default and custom theme colors, which can be added as shown in the
-     * [palette customization guide](https://mui.com/material-ui/customization/palette/#adding-new-colors).
+     * [palette customization guide](https://mui.com/material-ui/customization/palette/#custom-colors).
      * @default 'standard'
      */
     var color: ToggleButtonColor?
@@ -64,7 +63,7 @@ external interface ToggleButtonOwnProps :
      * @param {React.MouseEvent<HTMLElement>} event The event source of the callback.
      * @param {any} value of the selected button.
      */
-    var onChange: ((event: react.dom.events.MouseEvent<HTMLElement, *>, value: dynamic) -> Unit)?
+    var onChange: ((event: react.dom.events.MouseEvent<web.html.HTMLElement, *>, value: dynamic) -> Unit)?
 
     /**
      * Callback fired when the button is clicked.
@@ -72,7 +71,7 @@ external interface ToggleButtonOwnProps :
      * @param {React.MouseEvent<HTMLElement>} event The event source of the callback.
      * @param {any} value of the selected button.
      */
-    var onClick: ((event: react.dom.events.MouseEvent<HTMLElement, *>, value: dynamic) -> Unit)?
+    var onClick: ((event: react.dom.events.MouseEvent<web.html.HTMLElement, *>, value: dynamic) -> Unit)?
 
     /**
      * If `true`, the button is rendered in an active state.
