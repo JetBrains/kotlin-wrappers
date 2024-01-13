@@ -154,14 +154,16 @@ external interface UseListParameters<ItemValue, State, CustomAction, CustomActio
      * based on the previous one and the performed action.
      */
     var stateReducer: Any? /* (state: State, action: ActionWithContext<ListAction<ItemValue> | CustomAction, ListActionContext<ItemValue> & CustomActionContext>) => State */
+
+    /**
+     * The name of the component using useList.
+     * For debugging purposes.
+     * @default 'useList'
+     */
+    var componentName: String?
 }
 
 external interface ListItemState {
-    /**
-     * If `true` the item is disabled.
-     */
-    var disabled: Boolean
-
     /**
      * Determines if the item is focusable (its focus is managed by the DOM).
      */
@@ -171,11 +173,6 @@ external interface ListItemState {
      * If `true` the item is highlighted.
      */
     var highlighted: Boolean
-
-    /**
-     * The 0-based index of the item.
-     */
-    var index: Number
 
     /**
      * If `true` the item is selected.

@@ -15,11 +15,11 @@ external interface UseMenuItemParameters {
 
     var id: String?
 
+    var label: String?
+
     var onClick: react.dom.events.MouseEventHandler<*>?
 
     var rootRef: react.Ref<web.dom.Element>
-
-    var label: String?
 }
 
 external interface UseMenuItemReturnValue {

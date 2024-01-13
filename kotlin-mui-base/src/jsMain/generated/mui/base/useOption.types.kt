@@ -15,13 +15,13 @@ external interface SelectOption<Value> {
 external interface UseOptionParameters<Value> {
     var disabled: Boolean
 
-    var label: react.ReactNode
+    var id: String?
 
-    var value: Value
+    var label: react.ReactNode
 
     var rootRef: react.Ref<web.dom.Element>?
 
-    var id: String?
+    var value: Value
 }
 
 external interface UseOptionReturnValue {
