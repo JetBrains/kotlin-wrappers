@@ -5,6 +5,7 @@
 package mui.base
 
 /**
+ * An unstyled menu item to be used within a Menu.
  *
  * Demos:
  *

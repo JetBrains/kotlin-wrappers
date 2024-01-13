@@ -19,7 +19,7 @@ external interface UseTabsListReturnValue {
      * Action dispatcher for the tabs list component.
      * Allows to programmatically control the tabs list.
      */
-    var dispatch: (action: Any /* ListAction<string | number> */) -> Unit
+    var dispatch: (action: Any /* ListAction<Any /* String | Number */ > */) -> Unit
 
     /**
      * Resolver for the root slot's props.

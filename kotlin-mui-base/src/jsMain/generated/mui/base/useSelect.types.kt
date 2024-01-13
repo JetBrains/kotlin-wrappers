@@ -120,6 +120,13 @@ external interface UseSelectParameters<OptionValue, Multiple> {
      * Set to `null` to deselect all options.
      */
     var value: Any? /* SelectValue<OptionValue, Multiple> */
+
+    /**
+     * The name of the component using useSelect.
+     * For debugging purposes.
+     * @default 'useSelect'
+     */
+    var componentName: String?
 }
 
 external interface UseSelectReturnValue<Value, Multiple> {
@@ -147,7 +154,7 @@ external interface UseSelectReturnValue<Value, Multiple> {
      * Action dispatcher for the select component.
      * Allows to programmatically control the select.
      */
-    var dispatch: (action: Any /* ListAction<Value> | SelectAction */) -> Unit
+    var dispatch: (action: Any /* ListAction<Value> | SelectAction<Value> */) -> Unit
 
     /**
      * Resolver for the button slot's props.
@@ -212,7 +219,15 @@ external interface UseSelectReturnValue<Value, Multiple> {
 external interface ButtonClickAction {
     var type: dynamic
 
-    var event: dynamic
+    var event: react.dom.events.MouseEvent<*, *>
+}
+
+external interface BrowserAutofillAction<OptionValue> {
+    var type: dynamic
+
+    var item: OptionValue
+
+    var event: react.dom.events.ChangeEvent<*>
 }
 
 external interface SelectInternalState {

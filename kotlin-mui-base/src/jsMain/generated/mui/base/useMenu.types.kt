@@ -6,9 +6,29 @@ import js.array.ReadonlyArray
 
 external interface UseMenuParameters {
     /**
+     * If `true` (Default) will focus the highligted item. If you set this prop to `false`
+     * the focus will not be moved inside the Menu component. This has severe accessibility implications
+     * and should only be considered if you manage focus otherwise.
+     * @default true
+     */
+    var autoFocus: Boolean?
+
+    /**
      * The id of the menu. If not provided, it will be generated.
      */
     var id: String?
+
+    /**
+     * If `true`, it will be possible to highlight disabled items.
+     * @default true
+     */
+    var disabledItemsFocusable: Boolean?
+
+    /**
+     * If `true`, the highlight will not wrap around the list if arrow keys are used.
+     * @default false
+     */
+    var disableListWrap: Boolean?
 
     /**
      * Callback fired when the menu items change.
@@ -19,6 +39,13 @@ external interface UseMenuParameters {
      * The ref to the menu's listbox node.
      */
     var listboxRef: react.Ref<web.dom.Element>?
+
+    /**
+     * The name of the component using useMenu.
+     * For debugging purposes.
+     * @default 'useMenu'
+     */
+    var componentName: String?
 }
 
 external interface UseMenuReturnValue {
@@ -31,7 +58,7 @@ external interface UseMenuReturnValue {
      * Action dispatcher for the menu component.
      * Allows to programmatically control the menu.
      */
-    var dispatch: (action: Any /* ListAction<string> */) -> Unit
+    var dispatch: (action: Any /* ListAction<String> */) -> Unit
 
     /**
      * Resolver for the listbox slot's props.

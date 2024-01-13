@@ -29,6 +29,11 @@ external interface MenuOwnProps :
      */
     var actions: react.Ref<MenuActions>?
 
+    /**
+     * The element based on which the menu is positioned.
+     */
+    var anchor: Any? /* PopperProps['anchorEl'] */
+
     override var children: react.ReactNode?
 
     override var className: ClassName?
