@@ -9,7 +9,21 @@ plugins {
 kotlin {
     js {
         moduleName = project.name
-        browser()
+
+        when (project.jsPlatform) {
+            JsPlatform.WEB -> {
+                browser()
+                nodejs()
+            }
+
+            JsPlatform.BROWSER -> {
+                browser()
+            }
+
+            JsPlatform.NODE -> {
+                nodejs()
+            }
+        }
     }
 
     val generatedDir = projectDir.resolve("src/jsMain/generated")
