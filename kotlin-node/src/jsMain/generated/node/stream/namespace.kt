@@ -15,4 +15,5 @@ package node.stream
 
 /* import * as streamWeb from 'node:stream/web'; */
 
+
 /* export = internal; */

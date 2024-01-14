@@ -24,8 +24,25 @@ export default function (node, context, render) {
         const bound = `${karakum.ifPresent(constraintType, it => ` : ${it}`)}${karakum.ifPresent(defaultType, it => ` default is ${it}`)}`
 
         return `${name}${karakum.ifPresent(bound, it => ` /* ${it} */`)}`
-
     }
+
+    if (
+        sourceFileName.endsWith("util.d.ts")
+        && ts.isTypeParameterDeclaration(node)
+        && node.parent
+        && ts.isTypeAliasDeclaration(node.parent)
+        && node.parent.name.text === "CustomPromisify"
+    ) {
+        const name = render(node.name)
+
+        const constraintType = node.constraint && render(node.constraint)
+        const defaultType = node.default && render(node.default)
+
+        const bound = `${karakum.ifPresent(constraintType, it => ` : ${it}`)}${karakum.ifPresent(defaultType, it => ` default is ${it}`)}`
+
+        return `${name}${karakum.ifPresent(bound, it => ` /* ${it} */`)}`
+    }
+
 
     return null
 }

@@ -9,6 +9,7 @@ package node.crypto
 
 /* import { PeerCertificate } from 'node:tls'; */
 
+
 /** @deprecated since v10.0.0 */
 external val fips: Boolean
 
@@ -39,6 +40,7 @@ external val fips: Boolean
 
 /** @deprecated since v10.0.0 */
 external val DEFAULT_ENCODING: node.buffer.BufferEncoding
+
 
 /**
  * A convenient alias for `crypto.webcrypto.subtle`.

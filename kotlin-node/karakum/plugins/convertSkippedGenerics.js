@@ -98,5 +98,14 @@ export default function (node, context, render) {
         return `${render(node.expression)}<IncomingMessage>`
     }
 
+    if (
+        ts.isExpressionWithTypeArguments(node)
+        && ts.isIdentifier(node.expression)
+        && node.expression.text === "Function"
+        && !node.typeArguments
+    ) {
+        return "js.function.JsFunction<js.array.JsTuple, Any?>"
+    }
+
     return null
 }

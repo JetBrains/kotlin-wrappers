@@ -273,6 +273,16 @@ export default (node, context) => {
                     && isGenericEventEmitterSignature(context)
                 )
             )
+            || (
+                sourceFileName.endsWith("util.d.ts")
+                && (
+                    (
+                        node.name.text === "toString"
+                    )
+                    && node.parent
+                    && node.parent.name?.text === "MIMEType"
+                )
+            )
         )
     ) {
         return "override"

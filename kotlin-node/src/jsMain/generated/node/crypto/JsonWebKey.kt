@@ -19,13 +19,11 @@ sealed external interface JsonWebKey {
     var x: String?
     var y: String?
 
-
     @seskar.js.JsNative
     operator fun get(key: String): Any?
 
 
     @seskar.js.JsNative
     operator fun set(key: String, value: Any?)
-
 
 }

@@ -15,6 +15,8 @@ export default (node) => {
             || node.parent.name.text === "PipelineSourceFunction"
             || node.parent.name.text === "PipelineTransform"
             || node.parent.name.text === "PipelineTransformSource"
+
+            || node.parent.name.text === "CustomPromisify"
         )
     ) {
         return `@Suppress("UNUSED_TYPEALIAS_PARAMETER")`

@@ -5,7 +5,6 @@ package node.http
 
 sealed external interface HttpStatusCodes {
 
-
     @seskar.js.JsNative
     operator fun get(key: Number): String?
 
@@ -20,6 +19,5 @@ sealed external interface HttpStatusCodes {
 
     @seskar.js.JsNative
     operator fun set(key: String, value: String?)
-
 
 }

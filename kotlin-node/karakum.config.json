@@ -26,6 +26,7 @@
         "<nodeModules>/@types/node/tls.d.ts",
         "<nodeModules>/@types/node/tty.d.ts",
         "<nodeModules>/@types/node/url.d.ts",
+        "<nodeModules>/@types/node/util.d.ts",
         "<nodeModules>/@types/node/vm.d.ts",
         "<nodeModules>/@types/node/worker_threads.d.ts"
     ],
@@ -70,7 +71,7 @@
         "**/dns/setDefaultResultOrderAsync.kt",
         "**/dns/SetDefaultResultOrderOrderAsync.kt",
         "**/dns/setServersAsync.kt",
-        "**/events/global/nodejs/EventEmitter.kt",
+        "**/events/global/**",
         "**/path/namespace.kt",
         "**/path/PlatformPathDelimiter.kt",
         "**/path/PlatformPathSep.kt",
@@ -84,6 +85,23 @@
         "**/url/global/**",
         "**/url/URL.kt",
         "**/url/URLSearchParams.kt",
+        "**/util/global/**",
+        "**/util/ExtractOptionValue.kt",
+        "**/util/IfDefaultsFalse.kt",
+        "**/util/IfDefaultsTrue.kt",
+        "**/util/ParsedOptionToken.kt",
+        "**/util/ParsedPositionals.kt",
+        "**/util/ParsedPositionalToken.kt",
+        "**/util/ParsedValues.kt",
+        "**/util/ParsedTokens.kt",
+        "**/util/PreciseParsedResults.kt",
+        "**/util/PreciseTokenForOptions.kt",
+        "**/util/TokenForOptions.kt",
+        "**/util/TextDecoder.kt",
+        "**/util/TextDecoderDecodeOptions.kt",
+        "**/util/TextDecoderOptions.kt",
+        "**/util/TextEncoder.kt",
+        "**/util/EncodeIntoResult.kt",
         "**/workerThreads/global/namespace.kt",
         "**/workerThreads/BroadcastChannel.kt",
         "**/workerThreads/MessageChannel.kt",
@@ -136,6 +154,10 @@
         "^tty": "node:tty",
         "^node/url": "node:url",
         "^url": "node:url",
+        "^node/util/types": "node:util/types",
+        "^util/types": "node:util/types",
+        "^node/util": "node:util",
+        "^util": "node:util",
         "^node/vm": "node:vm",
         "^vm": "node:vm",
         "^node/worker_threads": "node:worker_threads",
@@ -228,6 +250,9 @@
         "^node/url.kt": "node/url/url.kt",
         "^url": "node/url",
         "url/Url.kt": "url/Url.interface.kt",
+        "^node/util/namespace.kt": "node/util/nodeNamespace.kt",
+        "^node/util.kt": "node/util/util.kt",
+        "^util": "node/util",
         "^node/vm/namespace.kt": "node/vm/nodeNamespace.kt",
         "^node/vm.kt": "node/vm/vm.kt",
         "^vm": "node/vm",
@@ -709,6 +734,34 @@
         "url/UrlWithParsedQuery.kt": [
             "node.querystring.ParsedUrlQuery"
         ],
+        "util/MIMEParams.kt": [
+            "js.iterable.IterableIterator"
+        ],
+        "util/aborted.kt": [
+            "js.promise.Promise",
+            "web.abort.AbortSignal"
+        ],
+        "util/abortedSuspend.kt": [
+            "web.abort.AbortSignal"
+        ],
+        "util/callbackify.kt": [
+            "js.promise.Promise"
+        ],
+        "util/promisify.kt": [
+            "js.promise.Promise"
+        ],
+        "util/transferableAbortController.kt": [
+            "web.abort.AbortController"
+        ],
+        "util/transferableAbortSignal.kt": [
+            "web.abort.AbortSignal"
+        ],
+        "util/inspect/namespace.kt": [
+            "node.util.InspectOptions"
+        ],
+        "util/inspect/Styles.kt": [
+            "node.util.Style"
+        ],
         "vm/CompileFunctionResult.kt": [
             "node.buffer.Buffer"
         ],
@@ -789,6 +842,10 @@
         "node:tty": "ignore",
         "url": "package",
         "node:url": "ignore",
+        "util/types": "package",
+        "node:util/types": "ignore",
+        "util": "package",
+        "node:util": "ignore",
         "vm": "package",
         "node:vm": "ignore",
         "worker_threads": "package",

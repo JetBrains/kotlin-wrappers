@@ -9,4 +9,5 @@ package node.process
 
 /* import { Worker } from 'node:worker_threads'; */
 
+
 /* export = process; */
