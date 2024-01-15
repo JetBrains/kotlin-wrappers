@@ -6,10 +6,10 @@ import js.array.ReadonlyArray
 import js.buffer.ArrayBufferLike
 import js.buffer.ArrayBufferView
 import js.core.JsLong
-import web.buffer.Blob
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
+import web.file.Blob
 import web.messaging.MessageEvent
 import web.url.URL
 

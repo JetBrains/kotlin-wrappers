@@ -2,7 +2,6 @@
 
 package web.file
 
-import web.buffer.Blob
 import web.errors.DOMException
 import web.events.EventHandler
 import web.events.EventTarget

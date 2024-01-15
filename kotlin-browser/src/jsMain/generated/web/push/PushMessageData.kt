@@ -3,7 +3,7 @@
 package web.push
 
 import js.buffer.ArrayBuffer
-import web.buffer.Blob
+import web.file.Blob
 
 /**
  * This Push API interface provides methods which let you retrieve the push data sent by a server in various formats.

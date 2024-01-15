@@ -2,7 +2,7 @@
 
 package web.url
 
-import web.buffer.Blob
+import web.file.Blob
 
 /**
  * The URL interface represents an object providing static methods used for creating object URLs.

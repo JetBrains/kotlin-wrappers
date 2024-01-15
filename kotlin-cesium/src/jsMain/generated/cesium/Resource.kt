@@ -10,7 +10,7 @@ package cesium
 
 import js.buffer.ArrayBuffer
 import js.promise.Promise
-import web.buffer.Blob
+import web.file.Blob
 import web.xml.XMLDocument
 
 /**

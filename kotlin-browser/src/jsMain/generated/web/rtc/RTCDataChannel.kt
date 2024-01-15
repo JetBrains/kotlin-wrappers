@@ -4,10 +4,10 @@ package web.rtc
 
 import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferView
-import web.buffer.Blob
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
+import web.file.Blob
 import web.messaging.MessageEvent
 import web.sockets.BinaryType
 

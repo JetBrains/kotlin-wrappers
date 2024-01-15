@@ -5,7 +5,7 @@ package web.clipboard
 import js.array.ReadonlyArray
 import js.objects.ReadonlyRecord
 import js.promise.Promise
-import web.buffer.Blob
+import web.file.Blob
 
 /**
  * Available only in secure contexts.

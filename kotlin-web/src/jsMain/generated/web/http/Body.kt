@@ -9,7 +9,7 @@ package web.http
 import js.buffer.ArrayBuffer
 import js.promise.Promise
 import js.typedarrays.Uint8Array
-import web.buffer.Blob
+import web.file.Blob
 import web.form.FormData
 import web.streams.ReadableStream
 

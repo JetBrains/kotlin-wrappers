@@ -4,7 +4,7 @@
 
 package node.buffer
 
-import web.buffer.Blob
+import web.file.Blob
 
 /**
  * Resolves a `'blob:nodedata:...'` an associated `Blob` object registered using

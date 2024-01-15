@@ -3,7 +3,6 @@
 package web.file
 
 import js.buffer.ArrayBuffer
-import web.buffer.Blob
 
 /**
  * Allows to read File or Blob objects in a synchronous way.

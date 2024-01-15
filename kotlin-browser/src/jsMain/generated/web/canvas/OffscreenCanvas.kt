@@ -5,10 +5,10 @@ package web.canvas
 import js.core.JsLong
 import js.core.Transferable
 import js.promise.Promise
-import web.buffer.Blob
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
+import web.file.Blob
 import web.gl.TexImageSource
 import web.rendering.OffscreenRenderingContext
 import web.rendering.RenderingContextId
