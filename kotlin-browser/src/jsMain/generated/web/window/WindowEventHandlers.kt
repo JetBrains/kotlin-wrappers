@@ -9,6 +9,7 @@ import web.history.HashChangeEvent
 import web.history.PageTransitionEvent
 import web.history.PopStateEvent
 import web.messaging.MessageEvent
+import web.promise.PromiseRejectionEvent
 import web.storage.StorageEvent
 
 external interface WindowEventHandlers {

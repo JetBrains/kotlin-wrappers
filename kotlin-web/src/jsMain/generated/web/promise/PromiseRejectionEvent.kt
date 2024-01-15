@@ -4,7 +4,7 @@
     "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
 )
 
-package web.window
+package web.promise
 
 import js.errors.JsError
 import js.promise.Promise
