@@ -5,6 +5,6 @@ package node.vm
 
 
 sealed external interface RunningCodeOptions : RunningScriptOptions {
-    var cachedData: Any? /* Buffer | ArrayBufferView | undefined */
+    var cachedData: Any? /* ArrayBufferView | Buffer | undefined */
     var importModuleDynamically: ((specifier: String, script: Script, importAssertions: Any) -> Module)?
 }

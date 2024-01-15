@@ -12,6 +12,7 @@
         "<nodeModules>/@types/node/fs/promises.d.ts",
         "<nodeModules>/@types/node/globals.d.ts",
         "<nodeModules>/@types/node/http.d.ts",
+        "<nodeModules>/@types/node/inspector.d.ts",
         "<nodeModules>/@types/node/net.d.ts",
         "<nodeModules>/@types/node/os.d.ts",
         "<nodeModules>/@types/node/path.d.ts",
@@ -129,6 +130,8 @@
         "^fs": "node:fs",
         "^node/http": "node:http",
         "^http": "node:http",
+        "^node/inspector": "node:inspector",
+        "^inspector": "node:inspector",
         "^node/net": "node:net",
         "^net": "node:net",
         "^node/os": "node:os",
@@ -207,6 +210,9 @@
         "^node/http/namespace.kt": "node/http/nodeNamespace.kt",
         "^node/http.kt": "node/http/http.kt",
         "^http": "node/http",
+        "^node/inspector/namespace.kt": "node/inspector/nodeNamespace.kt",
+        "^node/inspector.kt": "node/inspector/inspector.kt",
+        "^inspector": "node/inspector",
         "^node/net/namespace.kt": "node/net/nodeNamespace.kt",
         "^node/net.kt": "node/net/net.kt",
         "^net": "node/net",
@@ -567,6 +573,9 @@
         "http/request.kt": [
             "web.url.URL"
         ],
+        "inspector/Session.kt": [
+            "node.events.EventEmitter"
+        ],
         "net/ListenOptions.kt": [
             "node.events.Abortable"
         ],
@@ -819,6 +828,8 @@
         "node:fs": "ignore",
         "http": "package",
         "node:http": "ignore",
+        "inspector": "package",
+        "node:inspector": "ignore",
         "net": "package",
         "node:net": "ignore",
         "os": "package",

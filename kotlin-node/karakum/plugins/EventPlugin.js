@@ -32,7 +32,8 @@ function extractEventContainer(node) {
                 && eventHandlerMethods.has(node.parent.parent.parent.name.text)
 
                 && node.parent.parent.parent.parent
-                && ts.isClassDeclaration(node.parent.parent.parent.parent))
+                && ts.isClassDeclaration(node.parent.parent.parent.parent)
+            )
             || (
                 ts.isMethodSignature(node.parent.parent.parent)
                 && ts.isIdentifier(node.parent.parent.parent.name)
