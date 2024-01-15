@@ -7,7 +7,7 @@
 package web.http
 
 import js.buffer.BufferSource
-import web.file.Blob
+import web.blob.Blob
 import web.form.FormData
 import web.streams.ReadableStream
 import web.url.URLSearchParams

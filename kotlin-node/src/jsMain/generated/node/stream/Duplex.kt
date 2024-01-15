@@ -8,7 +8,7 @@ import js.buffer.ArrayBuffer
 import js.generator.AsyncGeneratorFunction
 import js.iterable.AsyncIterable
 import js.promise.Promise
-import web.file.Blob as NodeBlob
+import web.blob.Blob as NodeBlob
 
 /**
  * Duplex streams are streams that implement both the `Readable` and `Writable` interfaces.

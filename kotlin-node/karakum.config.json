@@ -286,7 +286,7 @@
             "js.typedarrays.Uint8Array"
         ],
         "buffer/File.kt": [
-            "web.file.Blob"
+            "web.blob.Blob"
         ],
         "buffer/isAscii.kt": [
             "js.buffer.ArrayBuffer"
@@ -295,7 +295,7 @@
             "js.buffer.ArrayBuffer"
         ],
         "buffer/resolveObjectURL.kt": [
-            "web.file.Blob"
+            "web.blob.Blob"
         ],
         "buffer/transcode.kt": [
             "js.typedarrays.Uint8Array"
@@ -638,7 +638,7 @@
             "js.iterable.AsyncIterable",
             "js.generator.AsyncGeneratorFunction",
             "js.promise.Promise",
-            "web.file.Blob as NodeBlob"
+            "web.blob.Blob as NodeBlob"
         ],
         "stream/FinishedOptions.kt": [
             "node.events.Abortable"

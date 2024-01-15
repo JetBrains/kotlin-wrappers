@@ -3,6 +3,8 @@
 package web.file
 
 import js.array.ReadonlyArray
+import web.blob.Blob
+import web.blob.BlobPart
 import web.time.EpochTimeStamp
 
 /**

@@ -11,9 +11,9 @@ package cesium
 import js.array.ReadonlyArray
 import js.objects.jso
 import js.promise.Promise
+import web.blob.Blob
 import web.dom.Document
 import web.dom.Element
-import web.file.Blob
 import web.html.HTMLCanvasElement
 
 /**

@@ -2,7 +2,7 @@
 
 package cesium
 
-import web.file.Blob
+import web.blob.Blob
 
 /**
  * @property [kmz] The generated kmz file.

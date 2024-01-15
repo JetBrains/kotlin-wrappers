@@ -2,11 +2,11 @@ package styled
 
 import js.array.asList
 import js.objects.jso
+import web.blob.Blob
+import web.blob.BlobPart
 import web.cssom.CSSStyleSheet
 import web.dom.Element
 import web.dom.document
-import web.file.Blob
-import web.file.BlobPart
 import web.html.HTMLAnchorElement
 import web.location.location
 import web.storage.localStorage

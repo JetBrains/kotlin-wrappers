@@ -3,7 +3,7 @@
 package web.canvas
 
 import js.promise.Promise
-import web.file.Blob
+import web.blob.Blob
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/createImageBitmap)

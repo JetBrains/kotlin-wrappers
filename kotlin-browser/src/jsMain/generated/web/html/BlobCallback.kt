@@ -2,7 +2,7 @@
 
 package web.html
 
-import web.file.Blob
+import web.blob.Blob
 
 typealias BlobCallback = (
     blob: Blob?,

@@ -6,9 +6,9 @@
 
 package web.media.recorder
 
+import web.blob.Blob
 import web.events.Event
 import web.events.EventType
-import web.file.Blob
 import web.time.DOMHighResTimeStamp
 
 external interface BlobEventInit {
