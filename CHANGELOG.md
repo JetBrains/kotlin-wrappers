@@ -1,3 +1,10 @@
+## pre.685
+
+**BREAKING CHANGE**
+
+* `Blob` package fixed
+    * `web.buffer` -> `web.file`
+
 ## pre.681
 
 **BREAKING CHANGE**
