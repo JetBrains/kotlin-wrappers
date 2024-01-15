@@ -1,9 +1,8 @@
-## pre.685
+## pre.686
 
 **BREAKING CHANGE**
 
-* `Blob` package fixed
-    * `web.buffer` -> `web.file`
+* `Blob` separate feature-package `web.blob`
 
 ## pre.681
 
