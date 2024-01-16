@@ -2,7 +2,8 @@
 
 **BREAKING CHANGE**
 
-* `Blob` separate feature-package `web.blob`
+* `Blob` package changed
+    * `web.buffer` -> `web.blob`
 
 ## pre.681
 
@@ -49,7 +50,7 @@
 
 **BREAKING CHANGE**
 
-* Fixed packages for top-level functions:
+* Changed packages for top-level functions:
     * `web.animations`
         * `requestAnimationFrame`
     * `web.scheduling`
@@ -67,7 +68,7 @@
 
 **BREAKING CHANGE**
 
-* MUI subproject names fixed
+* MUI subproject names changed
     * `kotlin-mui` -> `kotlin-mui-material`
     * `kotlin-icons` -> `kotlin-icons-material`
 * React Select
