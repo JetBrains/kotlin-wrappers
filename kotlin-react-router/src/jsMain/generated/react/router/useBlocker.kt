@@ -14,8 +14,6 @@ import remix.run.router.BlockerFunction
  * cross-origin navigations.
  */
 
-@JsName("unstable_useBlocker")
 external fun useBlocker(shouldBlock: Boolean): Blocker
 
-@JsName("unstable_useBlocker")
 external fun useBlocker(shouldBlock: BlockerFunction): Blocker
