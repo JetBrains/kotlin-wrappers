@@ -10,7 +10,7 @@ sealed external interface CreateSourceFileOptions {
      * and files on disk, but needs to be done with a module resolution cache in scope to be performant.
      * This is usually `undefined` for compilations that do not have `moduleResolution` values of `node16` or `nodenext`.
      */
-    var impliedNodeFormat: NodeFormat?
+    var impliedNodeFormat: ResolutionMode?
 
     /**
      * Controls how module-y-ness is set for the given file. Usually the result of calling
@@ -18,4 +18,5 @@ sealed external interface CreateSourceFileOptions {
      * check specified by `isFileProbablyExternalModule` will be used to set the field.
      */
     var setExternalModuleIndicator: ((file: SourceFile) -> Unit)?
+    var jsDocParsingMode: JSDocParsingMode?
 }

@@ -13,7 +13,7 @@ package typescript
  */
 external fun <T : Node> visitEachChild(
     node: T,
-    visitor: Visitor,
+    visitor: Visitor<*, *>,
     context: TransformationContext,
 ): T
 
@@ -26,8 +26,8 @@ external fun <T : Node> visitEachChild(
  */
 external fun <T : Node> visitEachChild(
     node: T?,
-    visitor: Visitor,
+    visitor: Visitor<*, *>,
     context: TransformationContext,
-    nodesVisitor: dynamic /* typeof visitNodes */ = definedExternally,
-    tokenVisitor: Visitor = definedExternally,
+    nodesVisitor: NodeVisitor = definedExternally,
+    tokenVisitor: Visitor<*, *> = definedExternally,
 ): T?

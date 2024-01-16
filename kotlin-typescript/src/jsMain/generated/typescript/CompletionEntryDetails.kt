@@ -12,6 +12,5 @@ sealed external interface CompletionEntryDetails {
     var documentation: ReadonlyArray<SymbolDisplayPart>?
     var tags: ReadonlyArray<JSDocTagInfo>?
     var codeActions: ReadonlyArray<CodeAction>?
-
     var sourceDisplay: ReadonlyArray<SymbolDisplayPart>?
 }

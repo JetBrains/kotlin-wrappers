@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias ResolutionMode = ModuleKind /* ModuleKind.CommonJS | ModuleKind.ESNext */
+sealed external interface ResolutionMode /* ModuleKind.ESNext | ModuleKind.CommonJS | undefined */

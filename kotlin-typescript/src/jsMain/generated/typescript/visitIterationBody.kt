@@ -9,6 +9,6 @@ package typescript
  */
 external fun visitIterationBody(
     body: Statement,
-    visitor: Visitor,
+    visitor: Visitor<*, *>,
     context: TransformationContext,
 ): Statement

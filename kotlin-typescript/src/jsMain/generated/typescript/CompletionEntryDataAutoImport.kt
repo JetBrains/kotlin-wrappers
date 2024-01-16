@@ -8,6 +8,7 @@ sealed external interface CompletionEntryDataAutoImport {
      * in the case of InternalSymbolName.ExportEquals and InternalSymbolName.Default.
      */
     var exportName: String
+    var exportMapKey: ExportMapInfoKey?
     var moduleSpecifier: String?
 
     /** The file name declaring the export's module symbol, if it was an external module */

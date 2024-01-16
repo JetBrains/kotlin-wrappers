@@ -75,10 +75,6 @@ sealed external interface NodeBuilderFlags {
         @JsIntValue(65536)
         val AllowQualifiedNameInPlaceOfIdentifier: NodeBuilderFlags
 
-        /** @deprecated AllowQualifedNameInPlaceOfIdentifier. Use AllowQualifiedNameInPlaceOfIdentifier instead. */
-        @JsIntValue(65536)
-        val AllowQualifedNameInPlaceOfIdentifier: NodeBuilderFlags
-
         @JsIntValue(131072)
         val AllowAnonymousIdentifier: NodeBuilderFlags
 

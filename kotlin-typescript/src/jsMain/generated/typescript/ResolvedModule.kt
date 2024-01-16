@@ -15,4 +15,10 @@ sealed external interface ResolvedModule {
 
     /** True if `resolvedFileName` comes from `node_modules`. */
     var isExternalLibraryImport: Boolean?
+
+    /**
+     * True if the original module reference used a .ts extension to refer directly to a .ts file,
+     * which should produce an error during checking if emit is enabled.
+     */
+    var resolvedUsingTsExtension: Boolean?
 }

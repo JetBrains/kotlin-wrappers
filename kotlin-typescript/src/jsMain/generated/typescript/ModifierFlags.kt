@@ -16,81 +16,81 @@ sealed external interface ModifierFlags {
         val None: ModifierFlags
 
         @JsIntValue(1)
-        val Export: ModifierFlags
-
-        @JsIntValue(2)
-        val Ambient: ModifierFlags
-
-        @JsIntValue(4)
         val Public: ModifierFlags
 
-        @JsIntValue(8)
+        @JsIntValue(2)
         val Private: ModifierFlags
 
-        @JsIntValue(16)
+        @JsIntValue(4)
         val Protected: ModifierFlags
 
-        @JsIntValue(32)
-        val Static: ModifierFlags
-
-        @JsIntValue(64)
+        @JsIntValue(8)
         val Readonly: ModifierFlags
 
-        @JsIntValue(128)
-        val Accessor: ModifierFlags
-
-        @JsIntValue(256)
-        val Abstract: ModifierFlags
-
-        @JsIntValue(512)
-        val Async: ModifierFlags
-
-        @JsIntValue(1024)
-        val Default: ModifierFlags
-
-        @JsIntValue(2048)
-        val Const: ModifierFlags
-
-        @JsIntValue(4096)
-        val HasComputedJSDocModifiers: ModifierFlags
-
-        @JsIntValue(8192)
-        val Deprecated: ModifierFlags
-
-        @JsIntValue(16384)
+        @JsIntValue(16)
         val Override: ModifierFlags
 
-        @JsIntValue(32768)
+        @JsIntValue(32)
+        val Export: ModifierFlags
+
+        @JsIntValue(64)
+        val Abstract: ModifierFlags
+
+        @JsIntValue(128)
+        val Ambient: ModifierFlags
+
+        @JsIntValue(256)
+        val Static: ModifierFlags
+
+        @JsIntValue(512)
+        val Accessor: ModifierFlags
+
+        @JsIntValue(1024)
+        val Async: ModifierFlags
+
+        @JsIntValue(2048)
+        val Default: ModifierFlags
+
+        @JsIntValue(4096)
+        val Const: ModifierFlags
+
+        @JsIntValue(8192)
         val In: ModifierFlags
 
-        @JsIntValue(65536)
+        @JsIntValue(16384)
         val Out: ModifierFlags
 
-        @JsIntValue(131072)
+        @JsIntValue(32768)
         val Decorator: ModifierFlags
+
+        @JsIntValue(65536)
+        val Deprecated: ModifierFlags
+
+        @JsIntValue(268435456)
+        val HasComputedJSDocModifiers: ModifierFlags
 
         @JsIntValue(536870912)
         val HasComputedFlags: ModifierFlags
 
-        @JsIntValue(28)
+        @JsIntValue(7)
         val AccessibilityModifier: ModifierFlags
 
-        @JsIntValue(16476)
+        @JsIntValue(31)
         val ParameterPropertyModifier: ModifierFlags
 
-        @JsIntValue(24)
+        @JsIntValue(6)
         val NonPublicAccessibilityModifier: ModifierFlags
 
-        @JsIntValue(117086)
+        @JsIntValue(28895)
         val TypeScriptModifier: ModifierFlags
 
-        @JsIntValue(1025)
+        @JsIntValue(2080)
         val ExportDefault: ModifierFlags
 
-        @JsIntValue(258047)
+        @JsIntValue(131071)
         val All: ModifierFlags
 
-        @JsIntValue(126975)
+        @JsIntValue(98303)
         val Modifier: ModifierFlags
     }
 }

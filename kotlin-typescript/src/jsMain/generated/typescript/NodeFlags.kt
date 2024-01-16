@@ -22,81 +22,90 @@ sealed external interface NodeFlags {
         val Const: NodeFlags
 
         @JsIntValue(4)
-        val NestedNamespace: NodeFlags
+        val Using: NodeFlags
+
+        @JsIntValue(6)
+        val AwaitUsing: NodeFlags
 
         @JsIntValue(8)
-        val Synthesized: NodeFlags
+        val NestedNamespace: NodeFlags
 
         @JsIntValue(16)
-        val Namespace: NodeFlags
+        val Synthesized: NodeFlags
 
         @JsIntValue(32)
-        val OptionalChain: NodeFlags
+        val Namespace: NodeFlags
 
         @JsIntValue(64)
-        val ExportContext: NodeFlags
+        val OptionalChain: NodeFlags
 
         @JsIntValue(128)
-        val ContainsThis: NodeFlags
+        val ExportContext: NodeFlags
 
         @JsIntValue(256)
-        val HasImplicitReturn: NodeFlags
+        val ContainsThis: NodeFlags
 
         @JsIntValue(512)
-        val HasExplicitReturn: NodeFlags
+        val HasImplicitReturn: NodeFlags
 
         @JsIntValue(1024)
-        val GlobalAugmentation: NodeFlags
+        val HasExplicitReturn: NodeFlags
 
         @JsIntValue(2048)
-        val HasAsyncFunctions: NodeFlags
+        val GlobalAugmentation: NodeFlags
 
         @JsIntValue(4096)
-        val DisallowInContext: NodeFlags
+        val HasAsyncFunctions: NodeFlags
 
         @JsIntValue(8192)
-        val YieldContext: NodeFlags
+        val DisallowInContext: NodeFlags
 
         @JsIntValue(16384)
-        val DecoratorContext: NodeFlags
+        val YieldContext: NodeFlags
 
         @JsIntValue(32768)
-        val AwaitContext: NodeFlags
+        val DecoratorContext: NodeFlags
 
         @JsIntValue(65536)
-        val DisallowConditionalTypesContext: NodeFlags
+        val AwaitContext: NodeFlags
 
         @JsIntValue(131072)
-        val ThisNodeHasError: NodeFlags
+        val DisallowConditionalTypesContext: NodeFlags
 
         @JsIntValue(262144)
-        val JavaScriptFile: NodeFlags
+        val ThisNodeHasError: NodeFlags
 
         @JsIntValue(524288)
-        val ThisNodeOrAnySubNodesHasError: NodeFlags
+        val JavaScriptFile: NodeFlags
 
         @JsIntValue(1048576)
+        val ThisNodeOrAnySubNodesHasError: NodeFlags
+
+        @JsIntValue(2097152)
         val HasAggregatedChildData: NodeFlags
 
-        @JsIntValue(8388608)
+        @JsIntValue(16777216)
         val JSDoc: NodeFlags
 
-        @JsIntValue(67108864)
+        @JsIntValue(134217728)
         val JsonFile: NodeFlags
 
-        @JsIntValue(3)
+        @JsIntValue(7)
         val BlockScoped: NodeFlags
 
-        @JsIntValue(768)
+        @JsIntValue(6)
+        val Constant: NodeFlags
+
+        @JsIntValue(1536)
         val ReachabilityCheckFlags: NodeFlags
 
-        @JsIntValue(2816)
+        @JsIntValue(5632)
         val ReachabilityAndEmitFlags: NodeFlags
 
-        @JsIntValue(50720768)
+        @JsIntValue(101441536)
         val ContextFlags: NodeFlags
 
-        @JsIntValue(40960)
+        @JsIntValue(81920)
         val TypeExcludesFlags: NodeFlags
     }
 }

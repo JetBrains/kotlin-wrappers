@@ -16,12 +16,15 @@ sealed external interface ModuleResolutionKind {
         val Classic: ModuleResolutionKind
 
         @JsIntValue(2)
-        val NodeJs: ModuleResolutionKind
+        val Node10: ModuleResolutionKind
 
         @JsIntValue(3)
         val Node16: ModuleResolutionKind
 
         @JsIntValue(99)
         val NodeNext: ModuleResolutionKind
+
+        @JsIntValue(100)
+        val Bundler: ModuleResolutionKind
     }
 }

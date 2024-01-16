@@ -10,6 +10,7 @@ sealed external interface TypeChecker {
         node: Node,
     ): Type
 
+    fun getTypeOfSymbol(symbol: Symbol): Type
     fun getDeclaredTypeOfSymbol(symbol: Symbol): Type
     fun getPropertiesOfType(type: Type): ReadonlyArray<Symbol>
     fun getPropertyOfType(
@@ -194,6 +195,7 @@ sealed external interface TypeChecker {
     fun isUndefinedSymbol(symbol: Symbol): Boolean
     fun isArgumentsSymbol(symbol: Symbol): Boolean
     fun isUnknownSymbol(symbol: Symbol): Boolean
+    fun getMergedSymbol(symbol: Symbol): Symbol
     fun getConstantValue(node: dynamic /* EnumMember | PropertyAccessExpression | ElementAccessExpression */): dynamic /* string | number */
     fun isValidPropertyAccess(
         node: dynamic, /* PropertyAccessExpression | QualifiedName | ImportTypeNode */
@@ -217,6 +219,62 @@ sealed external interface TypeChecker {
     fun getApparentType(type: Type): Type
     fun getBaseConstraintOfType(type: Type): Type?
     fun getDefaultFromTypeParameter(type: Type): Type?
+
+    /**
+     * Gets the intrinsic `any` type. There are multiple types that act as `any` used internally in the compiler,
+     * so the type returned by this function should not be used in equality checks to determine if another type
+     * is `any`. Instead, use `type.flags & TypeFlags.Any`.
+     */
+    fun getAnyType(): Type
+    fun getStringType(): Type
+    fun getStringLiteralType(value: String): StringLiteralType
+    fun getNumberType(): Type
+    fun getNumberLiteralType(value: Int): NumberLiteralType
+    fun getBigIntType(): Type
+    fun getBooleanType(): Type
+    fun getFalseType(): Type
+    fun getTrueType(): Type
+    fun getVoidType(): Type
+
+    /**
+     * Gets the intrinsic `undefined` type. There are multiple types that act as `undefined` used internally in the compiler
+     * depending on compiler options, so the type returned by this function should not be used in equality checks to determine
+     * if another type is `undefined`. Instead, use `type.flags & TypeFlags.Undefined`.
+     */
+    fun getUndefinedType(): Type
+
+    /**
+     * Gets the intrinsic `null` type. There are multiple types that act as `null` used internally in the compiler,
+     * so the type returned by this function should not be used in equality checks to determine if another type
+     * is `null`. Instead, use `type.flags & TypeFlags.Null`.
+     */
+    fun getNullType(): Type
+    fun getESSymbolType(): Type
+
+    /**
+     * Gets the intrinsic `never` type. There are multiple types that act as `never` used internally in the compiler,
+     * so the type returned by this function should not be used in equality checks to determine if another type
+     * is `never`. Instead, use `type.flags & TypeFlags.Never`.
+     */
+    fun getNeverType(): Type
+
+    /**
+     * True if this type is the `Array` or `ReadonlyArray` type from lib.d.ts.
+     * This function will _not_ return true if passed a type which
+     * extends `Array` (for example, the TypeScript AST's `NodeArray` type).
+     */
+    fun isArrayType(type: Type): Boolean
+
+    /**
+     * True if this type is a tuple type. This function will _not_ return true if
+     * passed a type which extends from a tuple.
+     */
+    fun isTupleType(type: Type): Boolean
+
+    /**
+     * True if this type is assignable to `ReadonlyArray<any>`.
+     */
+    fun isArrayLikeType(type: Type): Boolean
     fun getTypePredicateOfSignature(signature: Signature): TypePredicate?
 
     /**

@@ -4,7 +4,7 @@ package typescript
 
 import js.array.ReadonlyArray
 
-sealed external interface JSDocTypeLiteral : JSDocType, Union.JSDocTypeLiteral_ {
+sealed external interface JSDocTypeLiteral : JSDocType, Declaration, Union.JSDocTypeLiteral_ {
     override val kind: SyntaxKind.JSDocTypeLiteral
     val jsDocPropertyTags: ReadonlyArray<JSDocPropertyLikeTag>?
 

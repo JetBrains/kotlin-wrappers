@@ -27,9 +27,5 @@ sealed external interface ExitStatus {
 
         @JsIntValue(4)
         val ProjectReferenceCycle_OutputsSkipped: ExitStatus
-
-        /** @deprecated Use ProjectReferenceCycle_OutputsSkipped instead. */
-        @JsIntValue(4)
-        val ProjectReferenceCycle_OutputsSkupped: ExitStatus
     }
 }

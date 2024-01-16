@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface JsxAttributes : ObjectLiteralExpressionBase<JsxAttributeLike> {
+sealed external interface JsxAttributes : PrimaryExpression, Declaration {
+    val properties: NodeArray<JsxAttributeLike>
     override val kind: SyntaxKind.JsxAttributes
     override val parent: JsxOpeningLikeElement
 }

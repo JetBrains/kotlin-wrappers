@@ -10,14 +10,14 @@ package typescript
  */
 external fun visitParameterList(
     nodes: NodeArray<ParameterDeclaration>,
-    visitor: Visitor,
+    visitor: Visitor<*, *>,
     context: TransformationContext,
     nodesVisitor: NodesVisitor = definedExternally,
 ): NodeArray<ParameterDeclaration>
 
 external fun visitParameterList(
     nodes: NodeArray<ParameterDeclaration>?,
-    visitor: Visitor,
+    visitor: Visitor<*, *>,
     context: TransformationContext,
     nodesVisitor: NodesVisitor = definedExternally,
 ): NodeArray<ParameterDeclaration>?

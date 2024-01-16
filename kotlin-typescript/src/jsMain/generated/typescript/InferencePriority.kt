@@ -12,6 +12,9 @@ import seskar.js.JsVirtual
 @JsVirtual
 sealed external interface InferencePriority {
     companion object {
+        @JsIntValue(0)
+        val None: InferencePriority
+
         @JsIntValue(1)
         val NakedTypeVariable: InferencePriority
 

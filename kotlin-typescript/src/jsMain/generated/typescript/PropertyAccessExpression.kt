@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface PropertyAccessExpression : MemberExpression, NamedDeclaration,
+sealed external interface PropertyAccessExpression : MemberExpression, NamedDeclaration, JSDocContainer, FlowContainer,
     Union.PropertyAccessExpression_ {
     override val kind: SyntaxKind.PropertyAccessExpression
     val expression: LeftHandSideExpression

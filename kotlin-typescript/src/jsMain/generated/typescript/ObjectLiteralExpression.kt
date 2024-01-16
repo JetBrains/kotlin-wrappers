@@ -3,6 +3,6 @@
 package typescript
 
 sealed external interface ObjectLiteralExpression : ObjectLiteralExpressionBase<ObjectLiteralElementLike>,
-    Union.ObjectLiteralExpression_ {
+    JSDocContainer, Union.ObjectLiteralExpression_ {
     override val kind: SyntaxKind.ObjectLiteralExpression
 }

@@ -19,79 +19,79 @@ sealed external interface EmitFlags {
         val SingleLine: EmitFlags
 
         @JsIntValue(2)
-        val AdviseOnEmitNode: EmitFlags
+        val MultiLine: EmitFlags
 
         @JsIntValue(4)
-        val NoSubstitution: EmitFlags
+        val AdviseOnEmitNode: EmitFlags
 
         @JsIntValue(8)
-        val CapturesThis: EmitFlags
+        val NoSubstitution: EmitFlags
 
         @JsIntValue(16)
-        val NoLeadingSourceMap: EmitFlags
+        val CapturesThis: EmitFlags
 
         @JsIntValue(32)
-        val NoTrailingSourceMap: EmitFlags
-
-        @JsIntValue(48)
-        val NoSourceMap: EmitFlags
+        val NoLeadingSourceMap: EmitFlags
 
         @JsIntValue(64)
-        val NoNestedSourceMaps: EmitFlags
+        val NoTrailingSourceMap: EmitFlags
+
+        @JsIntValue(96)
+        val NoSourceMap: EmitFlags
 
         @JsIntValue(128)
-        val NoTokenLeadingSourceMaps: EmitFlags
+        val NoNestedSourceMaps: EmitFlags
 
         @JsIntValue(256)
-        val NoTokenTrailingSourceMaps: EmitFlags
-
-        @JsIntValue(384)
-        val NoTokenSourceMaps: EmitFlags
+        val NoTokenLeadingSourceMaps: EmitFlags
 
         @JsIntValue(512)
-        val NoLeadingComments: EmitFlags
+        val NoTokenTrailingSourceMaps: EmitFlags
+
+        @JsIntValue(768)
+        val NoTokenSourceMaps: EmitFlags
 
         @JsIntValue(1024)
-        val NoTrailingComments: EmitFlags
-
-        @JsIntValue(1536)
-        val NoComments: EmitFlags
+        val NoLeadingComments: EmitFlags
 
         @JsIntValue(2048)
-        val NoNestedComments: EmitFlags
+        val NoTrailingComments: EmitFlags
+
+        @JsIntValue(3072)
+        val NoComments: EmitFlags
 
         @JsIntValue(4096)
-        val HelperName: EmitFlags
+        val NoNestedComments: EmitFlags
 
         @JsIntValue(8192)
-        val ExportName: EmitFlags
+        val HelperName: EmitFlags
 
         @JsIntValue(16384)
-        val LocalName: EmitFlags
+        val ExportName: EmitFlags
 
         @JsIntValue(32768)
-        val InternalName: EmitFlags
+        val LocalName: EmitFlags
 
         @JsIntValue(65536)
-        val Indented: EmitFlags
+        val InternalName: EmitFlags
 
         @JsIntValue(131072)
-        val NoIndentation: EmitFlags
+        val Indented: EmitFlags
 
         @JsIntValue(262144)
-        val AsyncFunctionBody: EmitFlags
+        val NoIndentation: EmitFlags
 
         @JsIntValue(524288)
-        val ReuseTempVariableScope: EmitFlags
+        val AsyncFunctionBody: EmitFlags
 
         @JsIntValue(1048576)
-        val CustomPrologue: EmitFlags
+        val ReuseTempVariableScope: EmitFlags
 
         @JsIntValue(2097152)
-        val NoHoisting: EmitFlags
+        val CustomPrologue: EmitFlags
 
         @JsIntValue(4194304)
-        val HasEndOfDeclarationMarker: EmitFlags
+        val NoHoisting: EmitFlags
 
         @JsIntValue(8388608)
         val Iterator: EmitFlags

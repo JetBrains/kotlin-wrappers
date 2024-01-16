@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface Identifier : PrimaryExpression, Declaration, Union.Identifier_ {
+sealed external interface Identifier : PrimaryExpression, Declaration, JSDocContainer, FlowContainer,
+    Union.Identifier_ {
     override val kind: SyntaxKind.Identifier
 
     /**
@@ -10,7 +11,6 @@ sealed external interface Identifier : PrimaryExpression, Declaration, Union.Ide
      * Text of identifier, but if the identifier begins with two underscores, this will begin with three.
      */
     val escapedText: __String
-    val originalKeywordKind: SyntaxKind?
-    var isInJSDocNamespace: Boolean?
     val text: String
+
 }

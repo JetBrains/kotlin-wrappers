@@ -37,1110 +37,1094 @@ sealed external interface SyntaxKind {
         val ConflictMarkerTrivia: ConflictMarkerTrivia
 
         @JsIntValue(8)
-        val NumericLiteral: NumericLiteral
+        val NonTextFileMarkerTrivia: NonTextFileMarkerTrivia
 
         @JsIntValue(9)
-        val BigIntLiteral: BigIntLiteral
+        val NumericLiteral: NumericLiteral
 
         @JsIntValue(10)
-        val StringLiteral: StringLiteral
+        val BigIntLiteral: BigIntLiteral
 
         @JsIntValue(11)
-        val JsxText: JsxText
+        val StringLiteral: StringLiteral
 
         @JsIntValue(12)
-        val JsxTextAllWhiteSpaces: JsxTextAllWhiteSpaces
+        val JsxText: JsxText
 
         @JsIntValue(13)
-        val RegularExpressionLiteral: RegularExpressionLiteral
+        val JsxTextAllWhiteSpaces: JsxTextAllWhiteSpaces
 
         @JsIntValue(14)
-        val NoSubstitutionTemplateLiteral: NoSubstitutionTemplateLiteral
+        val RegularExpressionLiteral: RegularExpressionLiteral
 
         @JsIntValue(15)
-        val TemplateHead: TemplateHead
+        val NoSubstitutionTemplateLiteral: NoSubstitutionTemplateLiteral
 
         @JsIntValue(16)
-        val TemplateMiddle: TemplateMiddle
+        val TemplateHead: TemplateHead
 
         @JsIntValue(17)
-        val TemplateTail: TemplateTail
+        val TemplateMiddle: TemplateMiddle
 
         @JsIntValue(18)
-        val OpenBraceToken: OpenBraceToken
+        val TemplateTail: TemplateTail
 
         @JsIntValue(19)
-        val CloseBraceToken: CloseBraceToken
+        val OpenBraceToken: OpenBraceToken
 
         @JsIntValue(20)
-        val OpenParenToken: OpenParenToken
+        val CloseBraceToken: CloseBraceToken
 
         @JsIntValue(21)
-        val CloseParenToken: CloseParenToken
+        val OpenParenToken: OpenParenToken
 
         @JsIntValue(22)
-        val OpenBracketToken: OpenBracketToken
+        val CloseParenToken: CloseParenToken
 
         @JsIntValue(23)
-        val CloseBracketToken: CloseBracketToken
+        val OpenBracketToken: OpenBracketToken
 
         @JsIntValue(24)
-        val DotToken: DotToken
+        val CloseBracketToken: CloseBracketToken
 
         @JsIntValue(25)
-        val DotDotDotToken: DotDotDotToken
+        val DotToken: DotToken
 
         @JsIntValue(26)
-        val SemicolonToken: SemicolonToken
+        val DotDotDotToken: DotDotDotToken
 
         @JsIntValue(27)
-        val CommaToken: CommaToken
+        val SemicolonToken: SemicolonToken
 
         @JsIntValue(28)
-        val QuestionDotToken: QuestionDotToken
+        val CommaToken: CommaToken
 
         @JsIntValue(29)
-        val LessThanToken: LessThanToken
+        val QuestionDotToken: QuestionDotToken
 
         @JsIntValue(30)
-        val LessThanSlashToken: LessThanSlashToken
+        val LessThanToken: LessThanToken
 
         @JsIntValue(31)
-        val GreaterThanToken: GreaterThanToken
+        val LessThanSlashToken: LessThanSlashToken
 
         @JsIntValue(32)
-        val LessThanEqualsToken: LessThanEqualsToken
+        val GreaterThanToken: GreaterThanToken
 
         @JsIntValue(33)
-        val GreaterThanEqualsToken: GreaterThanEqualsToken
+        val LessThanEqualsToken: LessThanEqualsToken
 
         @JsIntValue(34)
-        val EqualsEqualsToken: EqualsEqualsToken
+        val GreaterThanEqualsToken: GreaterThanEqualsToken
 
         @JsIntValue(35)
-        val ExclamationEqualsToken: ExclamationEqualsToken
+        val EqualsEqualsToken: EqualsEqualsToken
 
         @JsIntValue(36)
-        val EqualsEqualsEqualsToken: EqualsEqualsEqualsToken
+        val ExclamationEqualsToken: ExclamationEqualsToken
 
         @JsIntValue(37)
-        val ExclamationEqualsEqualsToken: ExclamationEqualsEqualsToken
+        val EqualsEqualsEqualsToken: EqualsEqualsEqualsToken
 
         @JsIntValue(38)
-        val EqualsGreaterThanToken: EqualsGreaterThanToken
+        val ExclamationEqualsEqualsToken: ExclamationEqualsEqualsToken
 
         @JsIntValue(39)
-        val PlusToken: PlusToken
+        val EqualsGreaterThanToken: EqualsGreaterThanToken
 
         @JsIntValue(40)
-        val MinusToken: MinusToken
+        val PlusToken: PlusToken
 
         @JsIntValue(41)
-        val AsteriskToken: AsteriskToken
+        val MinusToken: MinusToken
 
         @JsIntValue(42)
-        val AsteriskAsteriskToken: AsteriskAsteriskToken
+        val AsteriskToken: AsteriskToken
 
         @JsIntValue(43)
-        val SlashToken: SlashToken
+        val AsteriskAsteriskToken: AsteriskAsteriskToken
 
         @JsIntValue(44)
-        val PercentToken: PercentToken
+        val SlashToken: SlashToken
 
         @JsIntValue(45)
-        val PlusPlusToken: PlusPlusToken
+        val PercentToken: PercentToken
 
         @JsIntValue(46)
-        val MinusMinusToken: MinusMinusToken
+        val PlusPlusToken: PlusPlusToken
 
         @JsIntValue(47)
-        val LessThanLessThanToken: LessThanLessThanToken
+        val MinusMinusToken: MinusMinusToken
 
         @JsIntValue(48)
-        val GreaterThanGreaterThanToken: GreaterThanGreaterThanToken
+        val LessThanLessThanToken: LessThanLessThanToken
 
         @JsIntValue(49)
-        val GreaterThanGreaterThanGreaterThanToken: GreaterThanGreaterThanGreaterThanToken
+        val GreaterThanGreaterThanToken: GreaterThanGreaterThanToken
 
         @JsIntValue(50)
-        val AmpersandToken: AmpersandToken
+        val GreaterThanGreaterThanGreaterThanToken: GreaterThanGreaterThanGreaterThanToken
 
         @JsIntValue(51)
-        val BarToken: BarToken
+        val AmpersandToken: AmpersandToken
 
         @JsIntValue(52)
-        val CaretToken: CaretToken
+        val BarToken: BarToken
 
         @JsIntValue(53)
-        val ExclamationToken: ExclamationToken
+        val CaretToken: CaretToken
 
         @JsIntValue(54)
-        val TildeToken: TildeToken
+        val ExclamationToken: ExclamationToken
 
         @JsIntValue(55)
-        val AmpersandAmpersandToken: AmpersandAmpersandToken
+        val TildeToken: TildeToken
 
         @JsIntValue(56)
-        val BarBarToken: BarBarToken
+        val AmpersandAmpersandToken: AmpersandAmpersandToken
 
         @JsIntValue(57)
-        val QuestionToken: QuestionToken
+        val BarBarToken: BarBarToken
 
         @JsIntValue(58)
-        val ColonToken: ColonToken
+        val QuestionToken: QuestionToken
 
         @JsIntValue(59)
-        val AtToken: AtToken
+        val ColonToken: ColonToken
 
         @JsIntValue(60)
+        val AtToken: AtToken
+
+        @JsIntValue(61)
         val QuestionQuestionToken: QuestionQuestionToken
 
         /** Only the JSDoc scanner produces BacktickToken. The normal scanner produces NoSubstitutionTemplateLiteral and related kinds. */
-        @JsIntValue(61)
+        @JsIntValue(62)
         val BacktickToken: BacktickToken
 
         /** Only the JSDoc scanner produces HashToken. The normal scanner produces PrivateIdentifier. */
-        @JsIntValue(62)
+        @JsIntValue(63)
         val HashToken: HashToken
 
-        @JsIntValue(63)
+        @JsIntValue(64)
         val EqualsToken: EqualsToken
 
-        @JsIntValue(64)
+        @JsIntValue(65)
         val PlusEqualsToken: PlusEqualsToken
 
-        @JsIntValue(65)
+        @JsIntValue(66)
         val MinusEqualsToken: MinusEqualsToken
 
-        @JsIntValue(66)
+        @JsIntValue(67)
         val AsteriskEqualsToken: AsteriskEqualsToken
 
-        @JsIntValue(67)
+        @JsIntValue(68)
         val AsteriskAsteriskEqualsToken: AsteriskAsteriskEqualsToken
 
-        @JsIntValue(68)
+        @JsIntValue(69)
         val SlashEqualsToken: SlashEqualsToken
 
-        @JsIntValue(69)
+        @JsIntValue(70)
         val PercentEqualsToken: PercentEqualsToken
 
-        @JsIntValue(70)
+        @JsIntValue(71)
         val LessThanLessThanEqualsToken: LessThanLessThanEqualsToken
 
-        @JsIntValue(71)
+        @JsIntValue(72)
         val GreaterThanGreaterThanEqualsToken: GreaterThanGreaterThanEqualsToken
 
-        @JsIntValue(72)
+        @JsIntValue(73)
         val GreaterThanGreaterThanGreaterThanEqualsToken: GreaterThanGreaterThanGreaterThanEqualsToken
 
-        @JsIntValue(73)
+        @JsIntValue(74)
         val AmpersandEqualsToken: AmpersandEqualsToken
 
-        @JsIntValue(74)
+        @JsIntValue(75)
         val BarEqualsToken: BarEqualsToken
 
-        @JsIntValue(75)
+        @JsIntValue(76)
         val BarBarEqualsToken: BarBarEqualsToken
 
-        @JsIntValue(76)
+        @JsIntValue(77)
         val AmpersandAmpersandEqualsToken: AmpersandAmpersandEqualsToken
 
-        @JsIntValue(77)
+        @JsIntValue(78)
         val QuestionQuestionEqualsToken: QuestionQuestionEqualsToken
 
-        @JsIntValue(78)
+        @JsIntValue(79)
         val CaretEqualsToken: CaretEqualsToken
 
-        @JsIntValue(79)
+        @JsIntValue(80)
         val Identifier: Identifier
 
-        @JsIntValue(80)
+        @JsIntValue(81)
         val PrivateIdentifier: PrivateIdentifier
 
-        @JsIntValue(81)
+        @JsIntValue(83)
         val BreakKeyword: BreakKeyword
 
-        @JsIntValue(82)
+        @JsIntValue(84)
         val CaseKeyword: CaseKeyword
 
-        @JsIntValue(83)
+        @JsIntValue(85)
         val CatchKeyword: CatchKeyword
 
-        @JsIntValue(84)
+        @JsIntValue(86)
         val ClassKeyword: ClassKeyword
 
-        @JsIntValue(85)
+        @JsIntValue(87)
         val ConstKeyword: ConstKeyword
 
-        @JsIntValue(86)
+        @JsIntValue(88)
         val ContinueKeyword: ContinueKeyword
 
-        @JsIntValue(87)
+        @JsIntValue(89)
         val DebuggerKeyword: DebuggerKeyword
 
-        @JsIntValue(88)
+        @JsIntValue(90)
         val DefaultKeyword: DefaultKeyword
 
-        @JsIntValue(89)
+        @JsIntValue(91)
         val DeleteKeyword: DeleteKeyword
 
-        @JsIntValue(90)
+        @JsIntValue(92)
         val DoKeyword: DoKeyword
 
-        @JsIntValue(91)
+        @JsIntValue(93)
         val ElseKeyword: ElseKeyword
 
-        @JsIntValue(92)
+        @JsIntValue(94)
         val EnumKeyword: EnumKeyword
 
-        @JsIntValue(93)
+        @JsIntValue(95)
         val ExportKeyword: ExportKeyword
 
-        @JsIntValue(94)
+        @JsIntValue(96)
         val ExtendsKeyword: ExtendsKeyword
 
-        @JsIntValue(95)
+        @JsIntValue(97)
         val FalseKeyword: FalseKeyword
 
-        @JsIntValue(96)
+        @JsIntValue(98)
         val FinallyKeyword: FinallyKeyword
 
-        @JsIntValue(97)
+        @JsIntValue(99)
         val ForKeyword: ForKeyword
 
-        @JsIntValue(98)
+        @JsIntValue(100)
         val FunctionKeyword: FunctionKeyword
 
-        @JsIntValue(99)
+        @JsIntValue(101)
         val IfKeyword: IfKeyword
 
-        @JsIntValue(100)
+        @JsIntValue(102)
         val ImportKeyword: ImportKeyword
 
-        @JsIntValue(101)
+        @JsIntValue(103)
         val InKeyword: InKeyword
 
-        @JsIntValue(102)
+        @JsIntValue(104)
         val InstanceOfKeyword: InstanceOfKeyword
 
-        @JsIntValue(103)
+        @JsIntValue(105)
         val NewKeyword: NewKeyword
 
-        @JsIntValue(104)
+        @JsIntValue(106)
         val NullKeyword: NullKeyword
 
-        @JsIntValue(105)
+        @JsIntValue(107)
         val ReturnKeyword: ReturnKeyword
 
-        @JsIntValue(106)
+        @JsIntValue(108)
         val SuperKeyword: SuperKeyword
 
-        @JsIntValue(107)
+        @JsIntValue(109)
         val SwitchKeyword: SwitchKeyword
 
-        @JsIntValue(108)
+        @JsIntValue(110)
         val ThisKeyword: ThisKeyword
 
-        @JsIntValue(109)
+        @JsIntValue(111)
         val ThrowKeyword: ThrowKeyword
 
-        @JsIntValue(110)
+        @JsIntValue(112)
         val TrueKeyword: TrueKeyword
 
-        @JsIntValue(111)
+        @JsIntValue(113)
         val TryKeyword: TryKeyword
 
-        @JsIntValue(112)
+        @JsIntValue(114)
         val TypeOfKeyword: TypeOfKeyword
 
-        @JsIntValue(113)
+        @JsIntValue(115)
         val VarKeyword: VarKeyword
 
-        @JsIntValue(114)
+        @JsIntValue(116)
         val VoidKeyword: VoidKeyword
 
-        @JsIntValue(115)
+        @JsIntValue(117)
         val WhileKeyword: WhileKeyword
 
-        @JsIntValue(116)
+        @JsIntValue(118)
         val WithKeyword: WithKeyword
 
-        @JsIntValue(117)
+        @JsIntValue(119)
         val ImplementsKeyword: ImplementsKeyword
 
-        @JsIntValue(118)
+        @JsIntValue(120)
         val InterfaceKeyword: InterfaceKeyword
 
-        @JsIntValue(119)
+        @JsIntValue(121)
         val LetKeyword: LetKeyword
 
-        @JsIntValue(120)
+        @JsIntValue(122)
         val PackageKeyword: PackageKeyword
 
-        @JsIntValue(121)
+        @JsIntValue(123)
         val PrivateKeyword: PrivateKeyword
 
-        @JsIntValue(122)
+        @JsIntValue(124)
         val ProtectedKeyword: ProtectedKeyword
 
-        @JsIntValue(123)
+        @JsIntValue(125)
         val PublicKeyword: PublicKeyword
 
-        @JsIntValue(124)
+        @JsIntValue(126)
         val StaticKeyword: StaticKeyword
 
-        @JsIntValue(125)
+        @JsIntValue(127)
         val YieldKeyword: YieldKeyword
 
-        @JsIntValue(126)
+        @JsIntValue(128)
         val AbstractKeyword: AbstractKeyword
 
-        @JsIntValue(127)
+        @JsIntValue(129)
         val AccessorKeyword: AccessorKeyword
 
-        @JsIntValue(128)
+        @JsIntValue(130)
         val AsKeyword: AsKeyword
 
-        @JsIntValue(129)
+        @JsIntValue(131)
         val AssertsKeyword: AssertsKeyword
 
-        @JsIntValue(130)
+        @JsIntValue(132)
         val AssertKeyword: AssertKeyword
 
-        @JsIntValue(131)
+        @JsIntValue(133)
         val AnyKeyword: AnyKeyword
 
-        @JsIntValue(132)
+        @JsIntValue(134)
         val AsyncKeyword: AsyncKeyword
 
-        @JsIntValue(133)
+        @JsIntValue(135)
         val AwaitKeyword: AwaitKeyword
 
-        @JsIntValue(134)
+        @JsIntValue(136)
         val BooleanKeyword: BooleanKeyword
 
-        @JsIntValue(135)
+        @JsIntValue(137)
         val ConstructorKeyword: ConstructorKeyword
 
-        @JsIntValue(136)
+        @JsIntValue(138)
         val DeclareKeyword: DeclareKeyword
 
-        @JsIntValue(137)
+        @JsIntValue(139)
         val GetKeyword: GetKeyword
 
-        @JsIntValue(138)
+        @JsIntValue(140)
         val InferKeyword: InferKeyword
 
-        @JsIntValue(139)
+        @JsIntValue(141)
         val IntrinsicKeyword: IntrinsicKeyword
 
-        @JsIntValue(140)
+        @JsIntValue(142)
         val IsKeyword: IsKeyword
 
-        @JsIntValue(141)
+        @JsIntValue(143)
         val KeyOfKeyword: KeyOfKeyword
 
-        @JsIntValue(142)
+        @JsIntValue(144)
         val ModuleKeyword: ModuleKeyword
 
-        @JsIntValue(143)
+        @JsIntValue(145)
         val NamespaceKeyword: NamespaceKeyword
 
-        @JsIntValue(144)
+        @JsIntValue(146)
         val NeverKeyword: NeverKeyword
 
-        @JsIntValue(145)
+        @JsIntValue(147)
         val OutKeyword: OutKeyword
 
-        @JsIntValue(146)
+        @JsIntValue(148)
         val ReadonlyKeyword: ReadonlyKeyword
 
-        @JsIntValue(147)
+        @JsIntValue(149)
         val RequireKeyword: RequireKeyword
 
-        @JsIntValue(148)
+        @JsIntValue(150)
         val NumberKeyword: NumberKeyword
 
-        @JsIntValue(149)
+        @JsIntValue(151)
         val ObjectKeyword: ObjectKeyword
 
-        @JsIntValue(150)
+        @JsIntValue(152)
         val SatisfiesKeyword: SatisfiesKeyword
 
-        @JsIntValue(151)
+        @JsIntValue(153)
         val SetKeyword: SetKeyword
 
-        @JsIntValue(152)
+        @JsIntValue(154)
         val StringKeyword: StringKeyword
 
-        @JsIntValue(153)
+        @JsIntValue(155)
         val SymbolKeyword: SymbolKeyword
 
-        @JsIntValue(154)
+        @JsIntValue(156)
         val TypeKeyword: TypeKeyword
 
-        @JsIntValue(155)
+        @JsIntValue(157)
         val UndefinedKeyword: UndefinedKeyword
 
-        @JsIntValue(156)
+        @JsIntValue(158)
         val UniqueKeyword: UniqueKeyword
 
-        @JsIntValue(157)
+        @JsIntValue(159)
         val UnknownKeyword: UnknownKeyword
 
-        @JsIntValue(158)
-        val FromKeyword: FromKeyword
-
-        @JsIntValue(159)
-        val GlobalKeyword: GlobalKeyword
-
         @JsIntValue(160)
-        val BigIntKeyword: BigIntKeyword
+        val UsingKeyword: UsingKeyword
 
         @JsIntValue(161)
-        val OverrideKeyword: OverrideKeyword
+        val FromKeyword: FromKeyword
 
         @JsIntValue(162)
-        val OfKeyword: OfKeyword
+        val GlobalKeyword: GlobalKeyword
 
         @JsIntValue(163)
-        val QualifiedName: QualifiedName
+        val BigIntKeyword: BigIntKeyword
 
         @JsIntValue(164)
-        val ComputedPropertyName: ComputedPropertyName
+        val OverrideKeyword: OverrideKeyword
 
         @JsIntValue(165)
-        val TypeParameter: TypeParameter
+        val OfKeyword: OfKeyword
 
         @JsIntValue(166)
-        val Parameter: Parameter
+        val QualifiedName: QualifiedName
 
         @JsIntValue(167)
-        val Decorator: Decorator
+        val ComputedPropertyName: ComputedPropertyName
 
         @JsIntValue(168)
-        val PropertySignature: PropertySignature
+        val TypeParameter: TypeParameter
 
         @JsIntValue(169)
-        val PropertyDeclaration: PropertyDeclaration
+        val Parameter: Parameter
 
         @JsIntValue(170)
-        val MethodSignature: MethodSignature
+        val Decorator: Decorator
 
         @JsIntValue(171)
-        val MethodDeclaration: MethodDeclaration
+        val PropertySignature: PropertySignature
 
         @JsIntValue(172)
-        val ClassStaticBlockDeclaration: ClassStaticBlockDeclaration
+        val PropertyDeclaration: PropertyDeclaration
 
         @JsIntValue(173)
-        val Constructor: Constructor
+        val MethodSignature: MethodSignature
 
         @JsIntValue(174)
-        val GetAccessor: GetAccessor
+        val MethodDeclaration: MethodDeclaration
 
         @JsIntValue(175)
-        val SetAccessor: SetAccessor
+        val ClassStaticBlockDeclaration: ClassStaticBlockDeclaration
 
         @JsIntValue(176)
-        val CallSignature: CallSignature
+        val Constructor: Constructor
 
         @JsIntValue(177)
-        val ConstructSignature: ConstructSignature
+        val GetAccessor: GetAccessor
 
         @JsIntValue(178)
-        val IndexSignature: IndexSignature
+        val SetAccessor: SetAccessor
 
         @JsIntValue(179)
-        val TypePredicate: TypePredicate
+        val CallSignature: CallSignature
 
         @JsIntValue(180)
-        val TypeReference: TypeReference
+        val ConstructSignature: ConstructSignature
 
         @JsIntValue(181)
-        val FunctionType: FunctionType
+        val IndexSignature: IndexSignature
 
         @JsIntValue(182)
-        val ConstructorType: ConstructorType
+        val TypePredicate: TypePredicate
 
         @JsIntValue(183)
-        val TypeQuery: TypeQuery
+        val TypeReference: TypeReference
 
         @JsIntValue(184)
-        val TypeLiteral: TypeLiteral
+        val FunctionType: FunctionType
 
         @JsIntValue(185)
-        val ArrayType: ArrayType
+        val ConstructorType: ConstructorType
 
         @JsIntValue(186)
-        val TupleType: TupleType
+        val TypeQuery: TypeQuery
 
         @JsIntValue(187)
-        val OptionalType: OptionalType
+        val TypeLiteral: TypeLiteral
 
         @JsIntValue(188)
-        val RestType: RestType
+        val ArrayType: ArrayType
 
         @JsIntValue(189)
-        val UnionType: UnionType
+        val TupleType: TupleType
 
         @JsIntValue(190)
-        val IntersectionType: IntersectionType
+        val OptionalType: OptionalType
 
         @JsIntValue(191)
-        val ConditionalType: ConditionalType
+        val RestType: RestType
 
         @JsIntValue(192)
-        val InferType: InferType
+        val UnionType: UnionType
 
         @JsIntValue(193)
-        val ParenthesizedType: ParenthesizedType
+        val IntersectionType: IntersectionType
 
         @JsIntValue(194)
-        val ThisType: ThisType
+        val ConditionalType: ConditionalType
 
         @JsIntValue(195)
-        val TypeOperator: TypeOperator
+        val InferType: InferType
 
         @JsIntValue(196)
-        val IndexedAccessType: IndexedAccessType
+        val ParenthesizedType: ParenthesizedType
 
         @JsIntValue(197)
-        val MappedType: MappedType
+        val ThisType: ThisType
 
         @JsIntValue(198)
-        val LiteralType: LiteralType
+        val TypeOperator: TypeOperator
 
         @JsIntValue(199)
-        val NamedTupleMember: NamedTupleMember
+        val IndexedAccessType: IndexedAccessType
 
         @JsIntValue(200)
-        val TemplateLiteralType: TemplateLiteralType
+        val MappedType: MappedType
 
         @JsIntValue(201)
-        val TemplateLiteralTypeSpan: TemplateLiteralTypeSpan
+        val LiteralType: LiteralType
 
         @JsIntValue(202)
-        val ImportType: ImportType
+        val NamedTupleMember: NamedTupleMember
 
         @JsIntValue(203)
-        val ObjectBindingPattern: ObjectBindingPattern
+        val TemplateLiteralType: TemplateLiteralType
 
         @JsIntValue(204)
-        val ArrayBindingPattern: ArrayBindingPattern
+        val TemplateLiteralTypeSpan: TemplateLiteralTypeSpan
 
         @JsIntValue(205)
-        val BindingElement: BindingElement
+        val ImportType: ImportType
 
         @JsIntValue(206)
-        val ArrayLiteralExpression: ArrayLiteralExpression
+        val ObjectBindingPattern: ObjectBindingPattern
 
         @JsIntValue(207)
-        val ObjectLiteralExpression: ObjectLiteralExpression
+        val ArrayBindingPattern: ArrayBindingPattern
 
         @JsIntValue(208)
-        val PropertyAccessExpression: PropertyAccessExpression
+        val BindingElement: BindingElement
 
         @JsIntValue(209)
-        val ElementAccessExpression: ElementAccessExpression
+        val ArrayLiteralExpression: ArrayLiteralExpression
 
         @JsIntValue(210)
-        val CallExpression: CallExpression
+        val ObjectLiteralExpression: ObjectLiteralExpression
 
         @JsIntValue(211)
-        val NewExpression: NewExpression
+        val PropertyAccessExpression: PropertyAccessExpression
 
         @JsIntValue(212)
-        val TaggedTemplateExpression: TaggedTemplateExpression
+        val ElementAccessExpression: ElementAccessExpression
 
         @JsIntValue(213)
-        val TypeAssertionExpression: TypeAssertionExpression
+        val CallExpression: CallExpression
 
         @JsIntValue(214)
-        val ParenthesizedExpression: ParenthesizedExpression
+        val NewExpression: NewExpression
 
         @JsIntValue(215)
-        val FunctionExpression: FunctionExpression
+        val TaggedTemplateExpression: TaggedTemplateExpression
 
         @JsIntValue(216)
-        val ArrowFunction: ArrowFunction
+        val TypeAssertionExpression: TypeAssertionExpression
 
         @JsIntValue(217)
-        val DeleteExpression: DeleteExpression
+        val ParenthesizedExpression: ParenthesizedExpression
 
         @JsIntValue(218)
-        val TypeOfExpression: TypeOfExpression
+        val FunctionExpression: FunctionExpression
 
         @JsIntValue(219)
-        val VoidExpression: VoidExpression
+        val ArrowFunction: ArrowFunction
 
         @JsIntValue(220)
-        val AwaitExpression: AwaitExpression
+        val DeleteExpression: DeleteExpression
 
         @JsIntValue(221)
-        val PrefixUnaryExpression: PrefixUnaryExpression
+        val TypeOfExpression: TypeOfExpression
 
         @JsIntValue(222)
-        val PostfixUnaryExpression: PostfixUnaryExpression
+        val VoidExpression: VoidExpression
 
         @JsIntValue(223)
-        val BinaryExpression: BinaryExpression
+        val AwaitExpression: AwaitExpression
 
         @JsIntValue(224)
-        val ConditionalExpression: ConditionalExpression
+        val PrefixUnaryExpression: PrefixUnaryExpression
 
         @JsIntValue(225)
-        val TemplateExpression: TemplateExpression
+        val PostfixUnaryExpression: PostfixUnaryExpression
 
         @JsIntValue(226)
-        val YieldExpression: YieldExpression
+        val BinaryExpression: BinaryExpression
 
         @JsIntValue(227)
-        val SpreadElement: SpreadElement
+        val ConditionalExpression: ConditionalExpression
 
         @JsIntValue(228)
-        val ClassExpression: ClassExpression
+        val TemplateExpression: TemplateExpression
 
         @JsIntValue(229)
-        val OmittedExpression: OmittedExpression
+        val YieldExpression: YieldExpression
 
         @JsIntValue(230)
-        val ExpressionWithTypeArguments: ExpressionWithTypeArguments
+        val SpreadElement: SpreadElement
 
         @JsIntValue(231)
-        val AsExpression: AsExpression
+        val ClassExpression: ClassExpression
 
         @JsIntValue(232)
-        val NonNullExpression: NonNullExpression
+        val OmittedExpression: OmittedExpression
 
         @JsIntValue(233)
-        val MetaProperty: MetaProperty
+        val ExpressionWithTypeArguments: ExpressionWithTypeArguments
 
         @JsIntValue(234)
-        val SyntheticExpression: SyntheticExpression
+        val AsExpression: AsExpression
 
         @JsIntValue(235)
-        val SatisfiesExpression: SatisfiesExpression
+        val NonNullExpression: NonNullExpression
 
         @JsIntValue(236)
-        val TemplateSpan: TemplateSpan
+        val MetaProperty: MetaProperty
 
         @JsIntValue(237)
-        val SemicolonClassElement: SemicolonClassElement
+        val SyntheticExpression: SyntheticExpression
 
         @JsIntValue(238)
-        val Block: Block
+        val SatisfiesExpression: SatisfiesExpression
 
         @JsIntValue(239)
-        val EmptyStatement: EmptyStatement
+        val TemplateSpan: TemplateSpan
 
         @JsIntValue(240)
-        val VariableStatement: VariableStatement
+        val SemicolonClassElement: SemicolonClassElement
 
         @JsIntValue(241)
-        val ExpressionStatement: ExpressionStatement
+        val Block: Block
 
         @JsIntValue(242)
-        val IfStatement: IfStatement
+        val EmptyStatement: EmptyStatement
 
         @JsIntValue(243)
-        val DoStatement: DoStatement
+        val VariableStatement: VariableStatement
 
         @JsIntValue(244)
-        val WhileStatement: WhileStatement
+        val ExpressionStatement: ExpressionStatement
 
         @JsIntValue(245)
-        val ForStatement: ForStatement
+        val IfStatement: IfStatement
 
         @JsIntValue(246)
-        val ForInStatement: ForInStatement
+        val DoStatement: DoStatement
 
         @JsIntValue(247)
-        val ForOfStatement: ForOfStatement
+        val WhileStatement: WhileStatement
 
         @JsIntValue(248)
-        val ContinueStatement: ContinueStatement
+        val ForStatement: ForStatement
 
         @JsIntValue(249)
-        val BreakStatement: BreakStatement
+        val ForInStatement: ForInStatement
 
         @JsIntValue(250)
-        val ReturnStatement: ReturnStatement
+        val ForOfStatement: ForOfStatement
 
         @JsIntValue(251)
-        val WithStatement: WithStatement
+        val ContinueStatement: ContinueStatement
 
         @JsIntValue(252)
-        val SwitchStatement: SwitchStatement
+        val BreakStatement: BreakStatement
 
         @JsIntValue(253)
-        val LabeledStatement: LabeledStatement
+        val ReturnStatement: ReturnStatement
 
         @JsIntValue(254)
-        val ThrowStatement: ThrowStatement
+        val WithStatement: WithStatement
 
         @JsIntValue(255)
-        val TryStatement: TryStatement
+        val SwitchStatement: SwitchStatement
 
         @JsIntValue(256)
-        val DebuggerStatement: DebuggerStatement
+        val LabeledStatement: LabeledStatement
 
         @JsIntValue(257)
-        val VariableDeclaration: VariableDeclaration
+        val ThrowStatement: ThrowStatement
 
         @JsIntValue(258)
-        val VariableDeclarationList: VariableDeclarationList
+        val TryStatement: TryStatement
 
         @JsIntValue(259)
-        val FunctionDeclaration: FunctionDeclaration
+        val DebuggerStatement: DebuggerStatement
 
         @JsIntValue(260)
-        val ClassDeclaration: ClassDeclaration
+        val VariableDeclaration: VariableDeclaration
 
         @JsIntValue(261)
-        val InterfaceDeclaration: InterfaceDeclaration
+        val VariableDeclarationList: VariableDeclarationList
 
         @JsIntValue(262)
-        val TypeAliasDeclaration: TypeAliasDeclaration
+        val FunctionDeclaration: FunctionDeclaration
 
         @JsIntValue(263)
-        val EnumDeclaration: EnumDeclaration
+        val ClassDeclaration: ClassDeclaration
 
         @JsIntValue(264)
-        val ModuleDeclaration: ModuleDeclaration
+        val InterfaceDeclaration: InterfaceDeclaration
 
         @JsIntValue(265)
-        val ModuleBlock: ModuleBlock
+        val TypeAliasDeclaration: TypeAliasDeclaration
 
         @JsIntValue(266)
-        val CaseBlock: CaseBlock
+        val EnumDeclaration: EnumDeclaration
 
         @JsIntValue(267)
-        val NamespaceExportDeclaration: NamespaceExportDeclaration
+        val ModuleDeclaration: ModuleDeclaration
 
         @JsIntValue(268)
-        val ImportEqualsDeclaration: ImportEqualsDeclaration
+        val ModuleBlock: ModuleBlock
 
         @JsIntValue(269)
-        val ImportDeclaration: ImportDeclaration
+        val CaseBlock: CaseBlock
 
         @JsIntValue(270)
-        val ImportClause: ImportClause
+        val NamespaceExportDeclaration: NamespaceExportDeclaration
 
         @JsIntValue(271)
-        val NamespaceImport: NamespaceImport
+        val ImportEqualsDeclaration: ImportEqualsDeclaration
 
         @JsIntValue(272)
-        val NamedImports: NamedImports
+        val ImportDeclaration: ImportDeclaration
 
         @JsIntValue(273)
-        val ImportSpecifier: ImportSpecifier
+        val ImportClause: ImportClause
 
         @JsIntValue(274)
-        val ExportAssignment: ExportAssignment
+        val NamespaceImport: NamespaceImport
 
         @JsIntValue(275)
-        val ExportDeclaration: ExportDeclaration
+        val NamedImports: NamedImports
 
         @JsIntValue(276)
-        val NamedExports: NamedExports
+        val ImportSpecifier: ImportSpecifier
 
         @JsIntValue(277)
-        val NamespaceExport: NamespaceExport
+        val ExportAssignment: ExportAssignment
 
         @JsIntValue(278)
-        val ExportSpecifier: ExportSpecifier
+        val ExportDeclaration: ExportDeclaration
 
         @JsIntValue(279)
-        val MissingDeclaration: MissingDeclaration
+        val NamedExports: NamedExports
 
         @JsIntValue(280)
-        val ExternalModuleReference: ExternalModuleReference
+        val NamespaceExport: NamespaceExport
 
         @JsIntValue(281)
-        val JsxElement: JsxElement
+        val ExportSpecifier: ExportSpecifier
 
         @JsIntValue(282)
-        val JsxSelfClosingElement: JsxSelfClosingElement
+        val MissingDeclaration: MissingDeclaration
 
         @JsIntValue(283)
-        val JsxOpeningElement: JsxOpeningElement
+        val ExternalModuleReference: ExternalModuleReference
 
         @JsIntValue(284)
-        val JsxClosingElement: JsxClosingElement
+        val JsxElement: JsxElement
 
         @JsIntValue(285)
-        val JsxFragment: JsxFragment
+        val JsxSelfClosingElement: JsxSelfClosingElement
 
         @JsIntValue(286)
-        val JsxOpeningFragment: JsxOpeningFragment
+        val JsxOpeningElement: JsxOpeningElement
 
         @JsIntValue(287)
-        val JsxClosingFragment: JsxClosingFragment
+        val JsxClosingElement: JsxClosingElement
 
         @JsIntValue(288)
-        val JsxAttribute: JsxAttribute
+        val JsxFragment: JsxFragment
 
         @JsIntValue(289)
-        val JsxAttributes: JsxAttributes
+        val JsxOpeningFragment: JsxOpeningFragment
 
         @JsIntValue(290)
-        val JsxSpreadAttribute: JsxSpreadAttribute
+        val JsxClosingFragment: JsxClosingFragment
 
         @JsIntValue(291)
-        val JsxExpression: JsxExpression
+        val JsxAttribute: JsxAttribute
 
         @JsIntValue(292)
-        val CaseClause: CaseClause
+        val JsxAttributes: JsxAttributes
 
         @JsIntValue(293)
-        val DefaultClause: DefaultClause
+        val JsxSpreadAttribute: JsxSpreadAttribute
 
         @JsIntValue(294)
-        val HeritageClause: HeritageClause
+        val JsxExpression: JsxExpression
 
         @JsIntValue(295)
-        val CatchClause: CatchClause
+        val JsxNamespacedName: JsxNamespacedName
 
         @JsIntValue(296)
-        val AssertClause: AssertClause
+        val CaseClause: CaseClause
 
         @JsIntValue(297)
-        val AssertEntry: AssertEntry
+        val DefaultClause: DefaultClause
 
         @JsIntValue(298)
-        val ImportTypeAssertionContainer: ImportTypeAssertionContainer
+        val HeritageClause: HeritageClause
 
         @JsIntValue(299)
-        val PropertyAssignment: PropertyAssignment
+        val CatchClause: CatchClause
 
         @JsIntValue(300)
-        val ShorthandPropertyAssignment: ShorthandPropertyAssignment
+        val ImportAttributes: ImportAttributes
 
         @JsIntValue(301)
-        val SpreadAssignment: SpreadAssignment
-
-        @JsIntValue(302)
-        val EnumMember: EnumMember
+        val ImportAttribute: ImportAttribute
 
         @JsIntValue(303)
-        val UnparsedPrologue: UnparsedPrologue
+        val PropertyAssignment: PropertyAssignment
 
         @JsIntValue(304)
-        val UnparsedPrepend: UnparsedPrepend
+        val ShorthandPropertyAssignment: ShorthandPropertyAssignment
 
         @JsIntValue(305)
-        val UnparsedText: UnparsedText
+        val SpreadAssignment: SpreadAssignment
 
         @JsIntValue(306)
-        val UnparsedInternalText: UnparsedInternalText
-
-        @JsIntValue(307)
-        val UnparsedSyntheticReference: UnparsedSyntheticReference
-
-        @JsIntValue(308)
-        val SourceFile: SourceFile
-
-        @JsIntValue(309)
-        val Bundle: Bundle
-
-        @JsIntValue(310)
-        val UnparsedSource: UnparsedSource
-
-        @JsIntValue(311)
-        val InputFiles: InputFiles
+        val EnumMember: EnumMember
 
         @JsIntValue(312)
-        val JSDocTypeExpression: JSDocTypeExpression
+        val SourceFile: SourceFile
 
         @JsIntValue(313)
-        val JSDocNameReference: JSDocNameReference
-
-        @JsIntValue(314)
-        val JSDocMemberName: JSDocMemberName
-
-        @JsIntValue(315)
-        val JSDocAllType: JSDocAllType
+        val Bundle: Bundle
 
         @JsIntValue(316)
-        val JSDocUnknownType: JSDocUnknownType
+        val JSDocTypeExpression: JSDocTypeExpression
 
         @JsIntValue(317)
-        val JSDocNullableType: JSDocNullableType
+        val JSDocNameReference: JSDocNameReference
 
         @JsIntValue(318)
-        val JSDocNonNullableType: JSDocNonNullableType
+        val JSDocMemberName: JSDocMemberName
 
         @JsIntValue(319)
-        val JSDocOptionalType: JSDocOptionalType
+        val JSDocAllType: JSDocAllType
 
         @JsIntValue(320)
-        val JSDocFunctionType: JSDocFunctionType
+        val JSDocUnknownType: JSDocUnknownType
 
         @JsIntValue(321)
-        val JSDocVariadicType: JSDocVariadicType
+        val JSDocNullableType: JSDocNullableType
 
         @JsIntValue(322)
-        val JSDocNamepathType: JSDocNamepathType
+        val JSDocNonNullableType: JSDocNonNullableType
 
         @JsIntValue(323)
-        val JSDoc: JSDoc
-
-        /** @deprecated Use SyntaxKind.JSDoc */
-        @JsIntValue(323)
-        val JSDocComment: JSDocComment
+        val JSDocOptionalType: JSDocOptionalType
 
         @JsIntValue(324)
-        val JSDocText: JSDocText
+        val JSDocFunctionType: JSDocFunctionType
 
         @JsIntValue(325)
-        val JSDocTypeLiteral: JSDocTypeLiteral
+        val JSDocVariadicType: JSDocVariadicType
 
         @JsIntValue(326)
-        val JSDocSignature: JSDocSignature
+        val JSDocNamepathType: JSDocNamepathType
 
         @JsIntValue(327)
-        val JSDocLink: JSDocLink
+        val JSDoc: JSDoc
 
         @JsIntValue(328)
-        val JSDocLinkCode: JSDocLinkCode
+        val JSDocText: JSDocText
 
         @JsIntValue(329)
-        val JSDocLinkPlain: JSDocLinkPlain
+        val JSDocTypeLiteral: JSDocTypeLiteral
 
         @JsIntValue(330)
-        val JSDocTag: JSDocTag
+        val JSDocSignature: JSDocSignature
 
         @JsIntValue(331)
-        val JSDocAugmentsTag: JSDocAugmentsTag
+        val JSDocLink: JSDocLink
 
         @JsIntValue(332)
-        val JSDocImplementsTag: JSDocImplementsTag
+        val JSDocLinkCode: JSDocLinkCode
 
         @JsIntValue(333)
-        val JSDocAuthorTag: JSDocAuthorTag
+        val JSDocLinkPlain: JSDocLinkPlain
 
         @JsIntValue(334)
-        val JSDocDeprecatedTag: JSDocDeprecatedTag
+        val JSDocTag: JSDocTag
 
         @JsIntValue(335)
-        val JSDocClassTag: JSDocClassTag
+        val JSDocAugmentsTag: JSDocAugmentsTag
 
         @JsIntValue(336)
-        val JSDocPublicTag: JSDocPublicTag
+        val JSDocImplementsTag: JSDocImplementsTag
 
         @JsIntValue(337)
-        val JSDocPrivateTag: JSDocPrivateTag
+        val JSDocAuthorTag: JSDocAuthorTag
 
         @JsIntValue(338)
-        val JSDocProtectedTag: JSDocProtectedTag
+        val JSDocDeprecatedTag: JSDocDeprecatedTag
 
         @JsIntValue(339)
-        val JSDocReadonlyTag: JSDocReadonlyTag
+        val JSDocClassTag: JSDocClassTag
 
         @JsIntValue(340)
-        val JSDocOverrideTag: JSDocOverrideTag
+        val JSDocPublicTag: JSDocPublicTag
 
         @JsIntValue(341)
-        val JSDocCallbackTag: JSDocCallbackTag
+        val JSDocPrivateTag: JSDocPrivateTag
 
         @JsIntValue(342)
-        val JSDocEnumTag: JSDocEnumTag
+        val JSDocProtectedTag: JSDocProtectedTag
 
         @JsIntValue(343)
-        val JSDocParameterTag: JSDocParameterTag
+        val JSDocReadonlyTag: JSDocReadonlyTag
 
         @JsIntValue(344)
-        val JSDocReturnTag: JSDocReturnTag
+        val JSDocOverrideTag: JSDocOverrideTag
 
         @JsIntValue(345)
-        val JSDocThisTag: JSDocThisTag
+        val JSDocCallbackTag: JSDocCallbackTag
 
         @JsIntValue(346)
-        val JSDocTypeTag: JSDocTypeTag
+        val JSDocOverloadTag: JSDocOverloadTag
 
         @JsIntValue(347)
-        val JSDocTemplateTag: JSDocTemplateTag
+        val JSDocEnumTag: JSDocEnumTag
 
         @JsIntValue(348)
-        val JSDocTypedefTag: JSDocTypedefTag
+        val JSDocParameterTag: JSDocParameterTag
 
         @JsIntValue(349)
-        val JSDocSeeTag: JSDocSeeTag
+        val JSDocReturnTag: JSDocReturnTag
 
         @JsIntValue(350)
-        val JSDocPropertyTag: JSDocPropertyTag
+        val JSDocThisTag: JSDocThisTag
 
         @JsIntValue(351)
-        val SyntaxList: SyntaxList
+        val JSDocTypeTag: JSDocTypeTag
 
         @JsIntValue(352)
-        val NotEmittedStatement: NotEmittedStatement
+        val JSDocTemplateTag: JSDocTemplateTag
 
         @JsIntValue(353)
-        val PartiallyEmittedExpression: PartiallyEmittedExpression
+        val JSDocTypedefTag: JSDocTypedefTag
 
         @JsIntValue(354)
-        val CommaListExpression: CommaListExpression
+        val JSDocSeeTag: JSDocSeeTag
 
         @JsIntValue(355)
-        val MergeDeclarationMarker: MergeDeclarationMarker
+        val JSDocPropertyTag: JSDocPropertyTag
 
         @JsIntValue(356)
-        val EndOfDeclarationMarker: EndOfDeclarationMarker
+        val JSDocThrowsTag: JSDocThrowsTag
 
         @JsIntValue(357)
-        val SyntheticReferenceExpression: SyntheticReferenceExpression
+        val JSDocSatisfiesTag: JSDocSatisfiesTag
 
         @JsIntValue(358)
+        val SyntaxList: SyntaxList
+
+        @JsIntValue(359)
+        val NotEmittedStatement: NotEmittedStatement
+
+        @JsIntValue(360)
+        val PartiallyEmittedExpression: PartiallyEmittedExpression
+
+        @JsIntValue(361)
+        val CommaListExpression: CommaListExpression
+
+        @JsIntValue(362)
+        val SyntheticReferenceExpression: SyntheticReferenceExpression
+
+        @JsIntValue(363)
         val Count: Count
 
-        @JsIntValue(63)
+        @JsIntValue(64)
         val FirstAssignment: FirstAssignment
 
-        @JsIntValue(78)
+        @JsIntValue(79)
         val LastAssignment: LastAssignment
 
-        @JsIntValue(64)
+        @JsIntValue(65)
         val FirstCompoundAssignment: FirstCompoundAssignment
 
-        @JsIntValue(78)
+        @JsIntValue(79)
         val LastCompoundAssignment: LastCompoundAssignment
 
-        @JsIntValue(81)
+        @JsIntValue(83)
         val FirstReservedWord: FirstReservedWord
 
-        @JsIntValue(116)
+        @JsIntValue(118)
         val LastReservedWord: LastReservedWord
 
-        @JsIntValue(81)
+        @JsIntValue(83)
         val FirstKeyword: FirstKeyword
 
-        @JsIntValue(162)
+        @JsIntValue(165)
         val LastKeyword: LastKeyword
 
-        @JsIntValue(117)
+        @JsIntValue(119)
         val FirstFutureReservedWord: FirstFutureReservedWord
 
-        @JsIntValue(125)
+        @JsIntValue(127)
         val LastFutureReservedWord: LastFutureReservedWord
 
-        @JsIntValue(179)
+        @JsIntValue(182)
         val FirstTypeNode: FirstTypeNode
 
-        @JsIntValue(202)
+        @JsIntValue(205)
         val LastTypeNode: LastTypeNode
 
-        @JsIntValue(18)
+        @JsIntValue(19)
         val FirstPunctuation: FirstPunctuation
 
-        @JsIntValue(78)
+        @JsIntValue(79)
         val LastPunctuation: LastPunctuation
 
         @JsIntValue(0)
         val FirstToken: FirstToken
 
-        @JsIntValue(162)
+        @JsIntValue(165)
         val LastToken: LastToken
 
         @JsIntValue(2)
@@ -1149,43 +1133,43 @@ sealed external interface SyntaxKind {
         @JsIntValue(7)
         val LastTriviaToken: LastTriviaToken
 
-        @JsIntValue(8)
+        @JsIntValue(9)
         val FirstLiteralToken: FirstLiteralToken
 
-        @JsIntValue(14)
+        @JsIntValue(15)
         val LastLiteralToken: LastLiteralToken
 
-        @JsIntValue(14)
+        @JsIntValue(15)
         val FirstTemplateToken: FirstTemplateToken
 
-        @JsIntValue(17)
+        @JsIntValue(18)
         val LastTemplateToken: LastTemplateToken
 
-        @JsIntValue(29)
+        @JsIntValue(30)
         val FirstBinaryOperator: FirstBinaryOperator
 
-        @JsIntValue(78)
+        @JsIntValue(79)
         val LastBinaryOperator: LastBinaryOperator
 
-        @JsIntValue(240)
+        @JsIntValue(243)
         val FirstStatement: FirstStatement
 
-        @JsIntValue(256)
+        @JsIntValue(259)
         val LastStatement: LastStatement
 
-        @JsIntValue(163)
+        @JsIntValue(166)
         val FirstNode: FirstNode
 
-        @JsIntValue(312)
+        @JsIntValue(316)
         val FirstJSDocNode: FirstJSDocNode
 
-        @JsIntValue(350)
+        @JsIntValue(357)
         val LastJSDocNode: LastJSDocNode
 
-        @JsIntValue(330)
+        @JsIntValue(334)
         val FirstJSDocTagNode: FirstJSDocTagNode
 
-        @JsIntValue(350)
+        @JsIntValue(357)
         val LastJSDocTagNode: LastJSDocTagNode
     }
 
@@ -1197,6 +1181,7 @@ sealed external interface SyntaxKind {
     sealed interface WhitespaceTrivia : SyntaxKind, Union.SyntaxKind_WhitespaceTrivia
     sealed interface ShebangTrivia : SyntaxKind, Union.SyntaxKind_ShebangTrivia
     sealed interface ConflictMarkerTrivia : SyntaxKind, Union.SyntaxKind_ConflictMarkerTrivia
+    sealed interface NonTextFileMarkerTrivia : SyntaxKind
     sealed interface NumericLiteral : SyntaxKind, Union.SyntaxKind_NumericLiteral
     sealed interface BigIntLiteral : SyntaxKind, Union.SyntaxKind_BigIntLiteral
     sealed interface StringLiteral : SyntaxKind, Union.SyntaxKind_StringLiteral
@@ -1351,6 +1336,7 @@ sealed external interface SyntaxKind {
     sealed interface UndefinedKeyword : SyntaxKind, Union.SyntaxKind_UndefinedKeyword
     sealed interface UniqueKeyword : SyntaxKind, Union.SyntaxKind_UniqueKeyword
     sealed interface UnknownKeyword : SyntaxKind, Union.SyntaxKind_UnknownKeyword
+    sealed interface UsingKeyword : SyntaxKind, Union.SyntaxKind_UsingKeyword
     sealed interface FromKeyword : SyntaxKind, Union.SyntaxKind_FromKeyword
     sealed interface GlobalKeyword : SyntaxKind, Union.SyntaxKind_GlobalKeyword
     sealed interface BigIntKeyword : SyntaxKind, Union.SyntaxKind_BigIntKeyword
@@ -1485,26 +1471,19 @@ sealed external interface SyntaxKind {
     sealed interface JsxAttributes : SyntaxKind
     sealed interface JsxSpreadAttribute : SyntaxKind
     sealed interface JsxExpression : SyntaxKind
+    sealed interface JsxNamespacedName : SyntaxKind
     sealed interface CaseClause : SyntaxKind
     sealed interface DefaultClause : SyntaxKind
     sealed interface HeritageClause : SyntaxKind
     sealed interface CatchClause : SyntaxKind
-    sealed interface AssertClause : SyntaxKind
-    sealed interface AssertEntry : SyntaxKind
-    sealed interface ImportTypeAssertionContainer : SyntaxKind
+    sealed interface ImportAttributes : SyntaxKind
+    sealed interface ImportAttribute : SyntaxKind
     sealed interface PropertyAssignment : SyntaxKind
     sealed interface ShorthandPropertyAssignment : SyntaxKind
     sealed interface SpreadAssignment : SyntaxKind
     sealed interface EnumMember : SyntaxKind
-    sealed interface UnparsedPrologue : SyntaxKind
-    sealed interface UnparsedPrepend : SyntaxKind
-    sealed interface UnparsedText : SyntaxKind, Union.SyntaxKind_UnparsedText
-    sealed interface UnparsedInternalText : SyntaxKind, Union.SyntaxKind_UnparsedInternalText
-    sealed interface UnparsedSyntheticReference : SyntaxKind
     sealed interface SourceFile : SyntaxKind
     sealed interface Bundle : SyntaxKind
-    sealed interface UnparsedSource : SyntaxKind
-    sealed interface InputFiles : SyntaxKind
     sealed interface JSDocTypeExpression : SyntaxKind
     sealed interface JSDocNameReference : SyntaxKind
     sealed interface JSDocMemberName : SyntaxKind
@@ -1517,7 +1496,6 @@ sealed external interface SyntaxKind {
     sealed interface JSDocVariadicType : SyntaxKind
     sealed interface JSDocNamepathType : SyntaxKind
     sealed interface JSDoc : SyntaxKind
-    sealed interface JSDocComment : SyntaxKind
     sealed interface JSDocText : SyntaxKind
     sealed interface JSDocTypeLiteral : SyntaxKind
     sealed interface JSDocSignature : SyntaxKind
@@ -1536,6 +1514,7 @@ sealed external interface SyntaxKind {
     sealed interface JSDocReadonlyTag : SyntaxKind
     sealed interface JSDocOverrideTag : SyntaxKind
     sealed interface JSDocCallbackTag : SyntaxKind
+    sealed interface JSDocOverloadTag : SyntaxKind
     sealed interface JSDocEnumTag : SyntaxKind
     sealed interface JSDocParameterTag : SyntaxKind
     sealed interface JSDocReturnTag : SyntaxKind
@@ -1545,12 +1524,12 @@ sealed external interface SyntaxKind {
     sealed interface JSDocTypedefTag : SyntaxKind
     sealed interface JSDocSeeTag : SyntaxKind
     sealed interface JSDocPropertyTag : SyntaxKind
+    sealed interface JSDocThrowsTag : SyntaxKind
+    sealed interface JSDocSatisfiesTag : SyntaxKind
     sealed interface SyntaxList : SyntaxKind
     sealed interface NotEmittedStatement : SyntaxKind
     sealed interface PartiallyEmittedExpression : SyntaxKind
     sealed interface CommaListExpression : SyntaxKind
-    sealed interface MergeDeclarationMarker : SyntaxKind
-    sealed interface EndOfDeclarationMarker : SyntaxKind
     sealed interface SyntheticReferenceExpression : SyntaxKind
     sealed interface Count : SyntaxKind
     sealed interface FirstAssignment : SyntaxKind

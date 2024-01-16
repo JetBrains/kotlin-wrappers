@@ -54,25 +54,22 @@ sealed external interface ProgramHost<T : BuilderProgram> {
 
     /** If provided is used to get the environment variable */
     val getEnvironmentVariable: ((name: String) -> String?)?
-
-    /** If provided, used to resolve the module names, otherwise typescript's default module resolution */
-    val resolveModuleNames: ((
-        moduleNames: ReadonlyArray<String>,
+    val resolveModuleNameLiterals: ((
+        moduleLiterals: ReadonlyArray<StringLiteralLike>,
         containingFile: String,
-        reusedNames: ReadonlyArray<String>?,
+        redirectedReference: ResolvedProjectReference?,
+        options: CompilerOptions,
+        containingSourceFile: SourceFile,
+        reusedNames: ReadonlyArray<StringLiteralLike>?,
+    ) -> ReadonlyArray<ResolvedModuleWithFailedLookupLocations>)?
+    val resolveTypeReferenceDirectiveReferences: ((
+        typeDirectiveReferences: ReadonlyArray<Any /* T (FileReference | string) */>,
+        containingFile: String,
         redirectedReference: ResolvedProjectReference?,
         options: CompilerOptions,
         containingSourceFile: SourceFile?,
-    ) -> ReadonlyArray<ResolvedModule?>)?
-
-    /** If provided, used to resolve type reference directives, otherwise typescript's default resolution */
-    val resolveTypeReferenceDirectives: ((
-        typeReferenceDirectiveNames: dynamic, /* string[] | readonly FileReference[] */
-        containingFile: String,
-        redirectedReference: ResolvedProjectReference?,
-        options: CompilerOptions,
-        containingFileMode: NodeFormat?,
-    ) -> ReadonlyArray<ResolvedTypeReferenceDirective?>)?
+        reusedNames: ReadonlyArray<Any /* T (FileReference | string) */>?,
+    ) -> ReadonlyArray<ResolvedTypeReferenceDirectiveWithFailedLookupLocations>)?
 
     /** If provided along with custom resolveModuleNames or resolveTypeReferenceDirectives, used to determine if unchanged file path needs to re-resolve modules/type reference directives */
     val hasInvalidatedResolutions: ((filePath: Path) -> Boolean)?
@@ -81,4 +78,5 @@ sealed external interface ProgramHost<T : BuilderProgram> {
      * Returns the module resolution cache used by a provided `resolveModuleNames` implementation so that any non-name module resolution operations (eg, package.json lookup) can reuse it
      */
     val getModuleResolutionCache: (() -> ModuleResolutionCache?)?
+    var jsDocParsingMode: JSDocParsingMode?
 }

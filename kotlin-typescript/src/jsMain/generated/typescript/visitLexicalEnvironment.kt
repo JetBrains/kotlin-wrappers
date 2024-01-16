@@ -10,7 +10,7 @@ package typescript
  */
 external fun visitLexicalEnvironment(
     statements: NodeArray<Statement>,
-    visitor: Visitor,
+    visitor: Visitor<*, *>,
     context: TransformationContext,
     start: Int = definedExternally,
     ensureUseStrict: Boolean = definedExternally,

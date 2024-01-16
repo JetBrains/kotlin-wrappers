@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface MappedTypeNode : TypeNode, Declaration, Union.MappedTypeNode_ {
+sealed external interface MappedTypeNode : TypeNode, Declaration, LocalsContainer, Union.MappedTypeNode_ {
     override val kind: SyntaxKind.MappedType
     val readonlyToken: Union.MappedTypeNode_readonlyToken?
     val typeParameter: TypeParameterDeclaration

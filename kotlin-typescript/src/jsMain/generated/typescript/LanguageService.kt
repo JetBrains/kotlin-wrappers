@@ -57,7 +57,6 @@ sealed external interface LanguageService {
      * Gets global diagnostics related to the program configuration and compiler options.
      */
     fun getCompilerOptionsDiagnostics(): ReadonlyArray<Diagnostic>
-
     fun getSyntacticClassifications(
         fileName: String,
         span: TextSpan,
@@ -175,7 +174,7 @@ sealed external interface LanguageService {
         position: Int,
         findInStrings: Boolean,
         findInComments: Boolean,
-        providePrefixAndSuffixTextForRename: Boolean = definedExternally,
+        preferences: UserPreferences,
     ): ReadonlyArray<RenameLocation>?
 
     fun getSmartSelectionRange(
@@ -220,12 +219,12 @@ sealed external interface LanguageService {
     ): ReadonlyArray<DocumentHighlights>?
 
     fun getFileReferences(fileName: String): ReadonlyArray<ReferenceEntry>
-
     fun getNavigateToItems(
         searchValue: String,
         maxResultCount: Int = definedExternally,
         fileName: String = definedExternally,
         excludeDtsFiles: Boolean = definedExternally,
+        excludeLibFiles: Boolean = definedExternally,
     ): ReadonlyArray<NavigateToItem>
 
     fun getNavigationBarItems(fileName: String): ReadonlyArray<NavigationBarItem>
@@ -291,6 +290,7 @@ sealed external interface LanguageService {
         fileName: String,
         position: Int,
         options: DocCommentTemplateOptions = definedExternally,
+        formatOptions: FormatCodeSettings = definedExternally,
     ): TextInsertion?
 
     fun isValidBraceCompletionAtPosition(
@@ -307,6 +307,11 @@ sealed external interface LanguageService {
         fileName: String,
         position: Int,
     ): JsxClosingTagInfo?
+
+    fun getLinkedEditingRangeAtPosition(
+        fileName: String,
+        position: Int,
+    ): LinkedEditingInfo?
 
     fun getSpanOfEnclosingComment(
         fileName: String,
@@ -350,13 +355,19 @@ sealed external interface LanguageService {
         formatSettings: FormatCodeSettings = definedExternally,
     ): dynamic /* Promise<ApplyCodeActionCommandResult | ApplyCodeActionCommandResult[]> */
 
-
+    /**
+     * @param includeInteractiveActions Include refactor actions that require additional arguments to be
+     * passed when calling `getEditsForRefactor`. When true, clients should inspect the `isInteractive`
+     * property of each returned `RefactorActionInfo` and ensure they are able to collect the appropriate
+     * arguments for any interactive action before offering it.
+     */
     fun getApplicableRefactors(
         fileName: String,
         positionOrRange: dynamic, /* number | TextRange */
         preferences: UserPreferences?,
         triggerReason: RefactorTriggerReason = definedExternally,
         kind: String = definedExternally,
+        includeInteractiveActions: Boolean = definedExternally,
     ): ReadonlyArray<ApplicableRefactorInfo>
 
     fun getEditsForRefactor(
@@ -366,7 +377,16 @@ sealed external interface LanguageService {
         refactorName: String,
         actionName: String,
         preferences: UserPreferences?,
+        interactiveRefactorArguments: InteractiveRefactorArguments = definedExternally,
     ): RefactorEditInfo?
+
+    fun getMoveToRefactoringFileSuggestions(
+        fileName: String,
+        positionOrRange: dynamic, /* number | TextRange */
+        preferences: UserPreferences?,
+        triggerReason: RefactorTriggerReason = definedExternally,
+        kind: String = definedExternally,
+    ): dynamic /* { newFileName: string; files: string[]; } */
 
     fun organizeImports(
         args: OrganizeImportsArgs,
@@ -408,5 +428,6 @@ sealed external interface LanguageService {
         textRange: TextRange,
     ): ReadonlyArray<TextChange>
 
+    fun getSupportedCodeFixes(fileName: String = definedExternally): ReadonlyArray<String>
     fun dispose()
 }

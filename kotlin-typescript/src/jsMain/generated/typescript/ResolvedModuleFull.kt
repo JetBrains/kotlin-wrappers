@@ -12,6 +12,6 @@ sealed external interface ResolvedModuleFull : ResolvedModule {
      * Extension of resolvedFileName. This must match what's at the end of resolvedFileName.
      * This is optional for backwards-compatibility, but will be added if not provided.
      */
-    var extension: Extension
+    var extension: String
     var packageId: PackageId?
 }

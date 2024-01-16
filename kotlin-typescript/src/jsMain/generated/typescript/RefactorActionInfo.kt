@@ -29,4 +29,10 @@ sealed external interface RefactorActionInfo {
      * The hierarchical dotted name of the refactor action.
      */
     var kind: String?
+
+    /**
+     * Indicates that the action requires additional arguments to be passed
+     * when calling `getEditsForRefactor`.
+     */
+    var isInteractive: Boolean?
 }

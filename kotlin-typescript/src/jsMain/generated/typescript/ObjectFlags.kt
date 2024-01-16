@@ -12,6 +12,9 @@ import seskar.js.JsVirtual
 @JsVirtual
 sealed external interface ObjectFlags {
     companion object {
+        @JsIntValue(0)
+        val None: ObjectFlags
+
         @JsIntValue(1)
         val Class: ObjectFlags
 

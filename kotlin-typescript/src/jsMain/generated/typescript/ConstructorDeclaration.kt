@@ -3,9 +3,9 @@
 package typescript
 
 sealed external interface ConstructorDeclaration : FunctionLikeDeclarationBase, ClassElement, JSDocContainer,
-    Union.ConstructorDeclaration_ {
+    LocalsContainer, Union.ConstructorDeclaration_ {
     override val kind: SyntaxKind.Constructor
     override val parent: ClassLikeDeclaration
-    val modifiers: NodeArray<Modifier>?
+    val modifiers: NodeArray<ModifierLike>?
     override val body: FunctionBody?
 }

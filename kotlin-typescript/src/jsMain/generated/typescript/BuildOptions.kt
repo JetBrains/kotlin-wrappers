@@ -8,6 +8,11 @@ sealed external interface BuildOptions {
     var verbose: Boolean?
     var incremental: Boolean?
     var assumeChangesOnlyAffectDirectDependencies: Boolean?
+    var declaration: Boolean?
+    var declarationMap: Boolean?
+    var emitDeclarationOnly: Boolean?
+    var sourceMap: Boolean?
+    var inlineSourceMap: Boolean?
     var traceResolution: Boolean?
     // [option: string]: CompilerOptionsValue | undefined
 }

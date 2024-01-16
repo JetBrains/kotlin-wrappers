@@ -15,14 +15,10 @@ sealed external interface InvalidatedProjectKind {
         @JsIntValue(0)
         val Build: Build
 
-        @JsIntValue(1)
-        val UpdateBundle: UpdateBundle
-
         @JsIntValue(2)
         val UpdateOutputFileStamps: UpdateOutputFileStamps
     }
 
     sealed interface Build : InvalidatedProjectKind
-    sealed interface UpdateBundle : InvalidatedProjectKind
     sealed interface UpdateOutputFileStamps : InvalidatedProjectKind
 }

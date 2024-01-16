@@ -2,5 +2,4 @@
 
 package typescript
 
-@Suppress("UNUSED_TYPEALIAS_PARAMETER")
-sealed external interface VisitResult<T /* : Node */> /* T | readonly T[] | undefined */
+sealed external interface VisitResult<T /* : Node? */> /* T | readonly Node[] */

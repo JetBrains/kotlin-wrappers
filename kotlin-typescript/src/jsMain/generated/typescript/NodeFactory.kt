@@ -71,17 +71,12 @@ sealed external interface NodeFactory {
     fun createToken(token: SyntaxKind.NullKeyword): NullLiteral
     fun createToken(token: SyntaxKind.TrueKeyword): TrueLiteral
     fun createToken(token: SyntaxKind.FalseKeyword): FalseLiteral
-
-    // TODO: restore after alias update
-    // fun <TKind : PunctuationSyntaxKind> createToken(token: TKind): PunctuationToken<TKind>
-    // TODO: restore after alias update
-    // fun <TKind : KeywordTypeSyntaxKind> createToken(token: TKind): KeywordTypeNode<TKind>
-    // TODO: restore after alias update
-    // fun <TKind : ModifierSyntaxKind> createToken(token: TKind): ModifierToken<TKind>
-    // TODO: restore after alias update
-    // fun <TKind : KeywordSyntaxKind> createToken(token: TKind): KeywordToken<TKind>
-    // TODO: restore after alias update
-    // fun <TKind : SyntaxKind.Unknown | SyntaxKind.EndOfFileToken> createToken(token: TKind): Token<TKind>
+    fun createToken(token: SyntaxKind.EndOfFileToken): EndOfFileToken
+    fun createToken(token: SyntaxKind.Unknown): Token<SyntaxKind.Unknown>
+    fun <TKind : PunctuationSyntaxKind> createToken(token: TKind): PunctuationToken<TKind>
+    fun <TKind : KeywordTypeSyntaxKind> createToken(token: TKind): KeywordTypeNode<TKind>
+    fun <TKind : ModifierSyntaxKind> createToken(token: TKind): ModifierToken<TKind>
+    fun <TKind : KeywordSyntaxKind> createToken(token: TKind): KeywordToken<TKind>
     fun createSuper(): SuperExpression
     fun createThis(): ThisExpression
     fun createNull(): NullLiteral
@@ -221,14 +216,14 @@ sealed external interface NodeFactory {
     ): MethodDeclaration
 
     fun createConstructorDeclaration(
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         parameters: ReadonlyArray<ParameterDeclaration>,
         body: Block?,
     ): ConstructorDeclaration
 
     fun updateConstructorDeclaration(
         node: ConstructorDeclaration,
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         parameters: ReadonlyArray<ParameterDeclaration>,
         body: Block?,
     ): ConstructorDeclaration
@@ -292,14 +287,14 @@ sealed external interface NodeFactory {
     ): ConstructSignatureDeclaration
 
     fun createIndexSignature(
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         parameters: ReadonlyArray<ParameterDeclaration>,
         type: TypeNode,
     ): IndexSignatureDeclaration
 
     fun updateIndexSignature(
         node: IndexSignatureDeclaration,
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         parameters: ReadonlyArray<ParameterDeclaration>,
         type: TypeNode,
     ): IndexSignatureDeclaration
@@ -465,7 +460,7 @@ sealed external interface NodeFactory {
 
     fun createImportTypeNode(
         argument: TypeNode,
-        assertions: ImportTypeAssertionContainer = definedExternally,
+        attributes: ImportAttributes = definedExternally,
         qualifier: EntityName = definedExternally,
         typeArguments: ReadonlyArray<TypeNode> = definedExternally,
         isTypeOf: Boolean = definedExternally,
@@ -474,7 +469,7 @@ sealed external interface NodeFactory {
     fun updateImportTypeNode(
         node: ImportTypeNode,
         argument: TypeNode,
-        assertions: ImportTypeAssertionContainer?,
+        attributes: ImportAttributes?,
         qualifier: EntityName?,
         typeArguments: ReadonlyArray<TypeNode>?,
         isTypeOf: Boolean = definedExternally,
@@ -999,13 +994,13 @@ sealed external interface NodeFactory {
     ): Block
 
     fun createVariableStatement(
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         declarationList: dynamic, /* VariableDeclarationList | readonly VariableDeclaration[] */
     ): VariableStatement
 
     fun updateVariableStatement(
         node: VariableStatement,
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         declarationList: VariableDeclarationList,
     ): VariableStatement
 
@@ -1229,7 +1224,7 @@ sealed external interface NodeFactory {
     ): ClassDeclaration
 
     fun createInterfaceDeclaration(
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         name: dynamic, /* string | Identifier */
         typeParameters: ReadonlyArray<TypeParameterDeclaration>?,
         heritageClauses: ReadonlyArray<HeritageClause>?,
@@ -1238,7 +1233,7 @@ sealed external interface NodeFactory {
 
     fun updateInterfaceDeclaration(
         node: InterfaceDeclaration,
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         name: Identifier,
         typeParameters: ReadonlyArray<TypeParameterDeclaration>?,
         heritageClauses: ReadonlyArray<HeritageClause>?,
@@ -1246,7 +1241,7 @@ sealed external interface NodeFactory {
     ): InterfaceDeclaration
 
     fun createTypeAliasDeclaration(
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         name: dynamic, /* string | Identifier */
         typeParameters: ReadonlyArray<TypeParameterDeclaration>?,
         type: TypeNode,
@@ -1254,27 +1249,27 @@ sealed external interface NodeFactory {
 
     fun updateTypeAliasDeclaration(
         node: TypeAliasDeclaration,
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         name: Identifier,
         typeParameters: ReadonlyArray<TypeParameterDeclaration>?,
         type: TypeNode,
     ): TypeAliasDeclaration
 
     fun createEnumDeclaration(
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         name: dynamic, /* string | Identifier */
         members: ReadonlyArray<EnumMember>,
     ): EnumDeclaration
 
     fun updateEnumDeclaration(
         node: EnumDeclaration,
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         name: Identifier,
         members: ReadonlyArray<EnumMember>,
     ): EnumDeclaration
 
     fun createModuleDeclaration(
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         name: ModuleName,
         body: ModuleBody?,
         flags: NodeFlags = definedExternally,
@@ -1282,7 +1277,7 @@ sealed external interface NodeFactory {
 
     fun updateModuleDeclaration(
         node: ModuleDeclaration,
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         name: ModuleName,
         body: ModuleBody?,
     ): ModuleDeclaration
@@ -1306,7 +1301,7 @@ sealed external interface NodeFactory {
     ): NamespaceExportDeclaration
 
     fun createImportEqualsDeclaration(
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         isTypeOnly: Boolean,
         name: dynamic, /* string | Identifier */
         moduleReference: ModuleReference,
@@ -1314,25 +1309,25 @@ sealed external interface NodeFactory {
 
     fun updateImportEqualsDeclaration(
         node: ImportEqualsDeclaration,
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         isTypeOnly: Boolean,
         name: Identifier,
         moduleReference: ModuleReference,
     ): ImportEqualsDeclaration
 
     fun createImportDeclaration(
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         importClause: ImportClause?,
         moduleSpecifier: Expression,
-        assertClause: AssertClause = definedExternally,
+        attributes: ImportAttributes = definedExternally,
     ): ImportDeclaration
 
     fun updateImportDeclaration(
         node: ImportDeclaration,
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         importClause: ImportClause?,
         moduleSpecifier: Expression,
-        assertClause: AssertClause?,
+        attributes: ImportAttributes?,
     ): ImportDeclaration
 
     fun createImportClause(
@@ -1348,38 +1343,27 @@ sealed external interface NodeFactory {
         namedBindings: NamedImportBindings?,
     ): ImportClause
 
-    fun createAssertClause(
-        elements: NodeArray<AssertEntry>,
+    fun createImportAttributes(
+        elements: NodeArray<ImportAttribute>,
         multiLine: Boolean = definedExternally,
-    ): AssertClause
+    ): ImportAttributes
 
-    fun updateAssertClause(
-        node: AssertClause,
-        elements: NodeArray<AssertEntry>,
+    fun updateImportAttributes(
+        node: ImportAttributes,
+        elements: NodeArray<ImportAttribute>,
         multiLine: Boolean = definedExternally,
-    ): AssertClause
+    ): ImportAttributes
 
-    fun createAssertEntry(
-        name: AssertionKey,
+    fun createImportAttribute(
+        name: ImportAttributeName,
         value: Expression,
-    ): AssertEntry
+    ): ImportAttribute
 
-    fun updateAssertEntry(
-        node: AssertEntry,
-        name: AssertionKey,
+    fun updateImportAttribute(
+        node: ImportAttribute,
+        name: ImportAttributeName,
         value: Expression,
-    ): AssertEntry
-
-    fun createImportTypeAssertionContainer(
-        clause: AssertClause,
-        multiLine: Boolean = definedExternally,
-    ): ImportTypeAssertionContainer
-
-    fun updateImportTypeAssertionContainer(
-        node: ImportTypeAssertionContainer,
-        clause: AssertClause,
-        multiLine: Boolean = definedExternally,
-    ): ImportTypeAssertionContainer
+    ): ImportAttribute
 
     fun createNamespaceImport(name: Identifier): NamespaceImport
     fun updateNamespaceImport(
@@ -1413,32 +1397,32 @@ sealed external interface NodeFactory {
     ): ImportSpecifier
 
     fun createExportAssignment(
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         isExportEquals: Boolean?,
         expression: Expression,
     ): ExportAssignment
 
     fun updateExportAssignment(
         node: ExportAssignment,
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         expression: Expression,
     ): ExportAssignment
 
     fun createExportDeclaration(
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         isTypeOnly: Boolean,
         exportClause: NamedExportBindings?,
         moduleSpecifier: Expression = definedExternally,
-        assertClause: AssertClause = definedExternally,
+        attributes: ImportAttributes = definedExternally,
     ): ExportDeclaration
 
     fun updateExportDeclaration(
         node: ExportDeclaration,
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         isTypeOnly: Boolean,
         exportClause: NamedExportBindings?,
         moduleSpecifier: Expression?,
-        assertClause: AssertClause?,
+        attributes: ImportAttributes?,
     ): ExportDeclaration
 
     fun createNamedExports(elements: ReadonlyArray<ExportSpecifier>): NamedExports
@@ -1745,6 +1729,19 @@ sealed external interface NodeFactory {
         comment: dynamic, /* string | NodeArray<JSDocComment> */
     ): JSDocCallbackTag
 
+    fun createJSDocOverloadTag(
+        tagName: Identifier?,
+        typeExpression: JSDocSignature,
+        comment: dynamic /* string | NodeArray<JSDocComment> */ = definedExternally,
+    ): JSDocOverloadTag
+
+    fun updateJSDocOverloadTag(
+        node: JSDocOverloadTag,
+        tagName: Identifier?,
+        typeExpression: JSDocSignature,
+        comment: dynamic, /* string | NodeArray<JSDocComment> */
+    ): JSDocOverloadTag
+
     fun createJSDocAugmentsTag(
         tagName: Identifier?,
         className: dynamic, /* JSDocAugmentsTag["class"] */
@@ -1849,26 +1846,52 @@ sealed external interface NodeFactory {
     ): JSDocUnknownTag
 
     fun createJSDocDeprecatedTag(
-        tagName: Identifier,
+        tagName: Identifier?,
         comment: dynamic /* string | NodeArray<JSDocComment> */ = definedExternally,
     ): JSDocDeprecatedTag
 
     fun updateJSDocDeprecatedTag(
         node: JSDocDeprecatedTag,
-        tagName: Identifier,
+        tagName: Identifier?,
         comment: dynamic /* string | NodeArray<JSDocComment> */ = definedExternally,
     ): JSDocDeprecatedTag
 
     fun createJSDocOverrideTag(
-        tagName: Identifier,
+        tagName: Identifier?,
         comment: dynamic /* string | NodeArray<JSDocComment> */ = definedExternally,
     ): JSDocOverrideTag
 
     fun updateJSDocOverrideTag(
         node: JSDocOverrideTag,
-        tagName: Identifier,
+        tagName: Identifier?,
         comment: dynamic /* string | NodeArray<JSDocComment> */ = definedExternally,
     ): JSDocOverrideTag
+
+    fun createJSDocThrowsTag(
+        tagName: Identifier,
+        typeExpression: JSDocTypeExpression?,
+        comment: dynamic /* string | NodeArray<JSDocComment> */ = definedExternally,
+    ): JSDocThrowsTag
+
+    fun updateJSDocThrowsTag(
+        node: JSDocThrowsTag,
+        tagName: Identifier?,
+        typeExpression: JSDocTypeExpression?,
+        comment: dynamic /* string | NodeArray<JSDocComment> */ = definedExternally,
+    ): JSDocThrowsTag
+
+    fun createJSDocSatisfiesTag(
+        tagName: Identifier?,
+        typeExpression: JSDocTypeExpression,
+        comment: dynamic /* string | NodeArray<JSDocComment> */ = definedExternally,
+    ): JSDocSatisfiesTag
+
+    fun updateJSDocSatisfiesTag(
+        node: JSDocSatisfiesTag,
+        tagName: Identifier?,
+        typeExpression: JSDocTypeExpression,
+        comment: dynamic, /* string | NodeArray<JSDocComment> */
+    ): JSDocSatisfiesTag
 
     fun createJSDocText(text: String): JSDocText
     fun updateJSDocText(
@@ -1959,13 +1982,13 @@ sealed external interface NodeFactory {
     ): JsxFragment
 
     fun createJsxAttribute(
-        name: Identifier,
+        name: JsxAttributeName,
         initializer: JsxAttributeValue?,
     ): JsxAttribute
 
     fun updateJsxAttribute(
         node: JsxAttribute,
-        name: Identifier,
+        name: JsxAttributeName,
         initializer: JsxAttributeValue?,
     ): JsxAttribute
 
@@ -1990,6 +2013,17 @@ sealed external interface NodeFactory {
         node: JsxExpression,
         expression: Expression?,
     ): JsxExpression
+
+    fun createJsxNamespacedName(
+        namespace: Identifier,
+        name: Identifier,
+    ): JsxNamespacedName
+
+    fun updateJsxNamespacedName(
+        node: JsxNamespacedName,
+        namespace: Identifier,
+        name: Identifier,
+    ): JsxNamespacedName
 
     fun createCaseClause(
         expression: Expression,
@@ -2101,15 +2135,10 @@ sealed external interface NodeFactory {
         elements: ReadonlyArray<Expression>,
     ): CommaListExpression
 
-    fun createBundle(
-        sourceFiles: ReadonlyArray<SourceFile>,
-        prepends: dynamic /* (UnparsedSource | InputFiles)[] */ = definedExternally,
-    ): Bundle
-
+    fun createBundle(sourceFiles: ReadonlyArray<SourceFile>): Bundle
     fun updateBundle(
         node: Bundle,
         sourceFiles: ReadonlyArray<SourceFile>,
-        prepends: dynamic /* (UnparsedSource | InputFiles)[] */ = definedExternally,
     ): Bundle
 
     fun createComma(
@@ -2252,12 +2281,12 @@ sealed external interface NodeFactory {
         paramValue: Expression,
     ): CallExpression
 
-    fun createImmediatelyInvokedArrowFunction(statements: ReadonlyArray<Statement>): CallExpression
+    fun createImmediatelyInvokedArrowFunction(statements: ReadonlyArray<Statement>): ImmediatelyInvokedArrowFunction
     fun createImmediatelyInvokedArrowFunction(
         statements: ReadonlyArray<Statement>,
         param: ParameterDeclaration,
         paramValue: Expression,
-    ): CallExpression
+    ): ImmediatelyInvokedArrowFunction
 
     fun createVoidZero(): VoidExpression
     fun createExportDefault(expression: Expression): ExportAssignment
@@ -2268,5 +2297,28 @@ sealed external interface NodeFactory {
         kinds: OuterExpressionKinds = definedExternally,
     ): Expression
 
+    /**
+     * Updates a node that may contain modifiers, replacing only the modifiers of the node.
+     */
+    fun <T : HasModifiers> replaceModifiers(
+        node: T,
+        modifiers: dynamic, /* Modifier[] | ModifierFlags */
+    ): T
 
+    /**
+     * Updates a node that may contain decorators or modifiers, replacing only the decorators and modifiers of the node.
+     */
+    fun <T> replaceDecoratorsAndModifiers(
+        node: T,
+        modifiers: ReadonlyArray<ModifierLike>?,
+    ): T where T : HasModifiers,
+               T : HasDecorators
+
+    /**
+     * Updates a node that contains a property name, replacing only the name of the node.
+     */
+    fun <T : Any /* AccessorDeclaration | MethodDeclaration | MethodSignature | PropertyDeclaration | PropertySignature | PropertyAssignment */> replacePropertyName(
+        node: T,
+        name: dynamic, /* T["name"] */
+    ): T
 }

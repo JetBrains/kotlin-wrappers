@@ -78,11 +78,6 @@ sealed external interface TypeFormatFlags {
         @JsIntValue(8388608)
         val InTypeAlias: TypeFormatFlags
 
-        @JsIntValue(0)
-        val
-                /** @deprecated */
-                WriteOwnNameForAnyLike: TypeFormatFlags
-
         @JsIntValue(848330091)
         val NodeBuilderFlagsMask: TypeFormatFlags
     }

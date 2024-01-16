@@ -10,6 +10,7 @@ sealed external interface CompletionEntry {
     var kindModifiers: String?
     var sortText: String
     var insertText: String?
+    var filterText: String?
     var isSnippet: Boolean? /* true */
 
     /**
@@ -26,6 +27,13 @@ sealed external interface CompletionEntry {
     var isFromUncheckedFile: Boolean? /* true */
     var isPackageJsonImport: Boolean? /* true */
     var isImportStatementCompletion: Boolean? /* true */
+
+    /**
+     * For API purposes.
+     * Included for non-string completions only when `includeSymbol: true` option is passed to `getCompletionsAtPosition`.
+     * @example Get declaration of completion: `symbol.valueDeclaration`
+     */
+    var symbol: Symbol?
 
     /**
      * A property to be sent back to TS Server in the CompletionDetailsRequest, along with `name`,

@@ -9,6 +9,4 @@ sealed external interface ShorthandPropertyAssignment : ObjectLiteralElement, JS
     override val name: Identifier
     val equalsToken: EqualsToken?
     val objectAssignmentInitializer: Expression?
-
-
 }

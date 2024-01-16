@@ -4,4 +4,4 @@
 
 package typescript
 
-external val /* var */ unchangedTextChangeRange: TextChangeRange
+external val unchangedTextChangeRange: TextChangeRange

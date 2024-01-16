@@ -16,5 +16,5 @@ external fun resolveTypeReferenceDirective(
     host: ModuleResolutionHost,
     redirectedReference: ResolvedProjectReference = definedExternally,
     cache: TypeReferenceDirectiveResolutionCache = definedExternally,
-    resolutionMode: NodeFormat = definedExternally,
+    resolutionMode: ResolutionMode = definedExternally,
 ): ResolvedTypeReferenceDirectiveWithFailedLookupLocations

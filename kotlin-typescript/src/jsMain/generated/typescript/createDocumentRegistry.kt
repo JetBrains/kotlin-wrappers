@@ -7,4 +7,5 @@ package typescript
 external fun createDocumentRegistry(
     useCaseSensitiveFileNames: Boolean = definedExternally,
     currentDirectory: String = definedExternally,
+    jsDocParsingMode: JSDocParsingMode = definedExternally,
 ): DocumentRegistry

@@ -34,6 +34,4 @@ sealed external interface Node : ReadonlyTextRange {
         cbNode: (node: Node) -> T?,
         cbNodeArray: (nodes: NodeArray<Node>) -> T? = definedExternally,
     ): T?
-
-
 }

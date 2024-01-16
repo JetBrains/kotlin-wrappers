@@ -2,5 +2,7 @@
 
 package typescript
 
+import js.collections.JsMap
+
 /** SymbolTable based on ES6 Map interface. */
-typealias SymbolTable = UnderscoreEscapedMap<Symbol>
+typealias SymbolTable = JsMap<__String, Symbol>

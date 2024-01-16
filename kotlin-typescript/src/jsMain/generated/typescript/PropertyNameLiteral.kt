@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface PropertyNameLiteral /* Identifier | StringLiteralLike | NumericLiteral */
+sealed external interface PropertyNameLiteral /* Identifier | StringLiteralLike | NumericLiteral | JsxNamespacedName */

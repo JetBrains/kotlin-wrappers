@@ -7,6 +7,4 @@ sealed external interface PropertyAssignment : ObjectLiteralElement, JSDocContai
     override val parent: ObjectLiteralExpression
     override val name: PropertyName
     val initializer: Expression
-
-
 }

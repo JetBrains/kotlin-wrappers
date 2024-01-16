@@ -3,6 +3,6 @@
 package typescript
 
 sealed external interface IncompleteType : Union.IncompleteType_ {
-    var flags: TypeFlags
+    var flags: dynamic /* TypeFlags | 0 */
     var type: Type
 }

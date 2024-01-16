@@ -8,4 +8,5 @@ external fun createModuleResolutionCache(
     currentDirectory: String,
     getCanonicalFileName: (s: String) -> String,
     options: CompilerOptions = definedExternally,
+    packageJsonInfoCache: PackageJsonInfoCache = definedExternally,
 ): ModuleResolutionCache

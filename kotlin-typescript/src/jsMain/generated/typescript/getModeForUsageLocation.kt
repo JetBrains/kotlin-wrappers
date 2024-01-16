@@ -14,9 +14,6 @@ package typescript
  * @returns The final resolution mode of the import
  */
 external fun getModeForUsageLocation(
-    file: dynamic,
-    /* {
-    impliedNodeFormat?: SourceFile["impliedNodeFormat"];
-} */
+    file: dynamic, /* { impliedNodeFormat?: ResolutionMode; } */
     usage: StringLiteralLike,
-): ResolutionMode?
+): dynamic /* ModuleKind.CommonJS | ModuleKind.ESNext */

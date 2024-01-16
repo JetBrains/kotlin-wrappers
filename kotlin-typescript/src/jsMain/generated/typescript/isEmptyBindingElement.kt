@@ -4,4 +4,4 @@
 
 package typescript
 
-external fun isEmptyBindingElement(node: BindingElement): Boolean
+external fun isEmptyBindingElement(node: dynamic /* BindingElement | ArrayBindingElement */): Boolean

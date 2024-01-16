@@ -5,8 +5,8 @@ package typescript
 import js.array.ReadonlyArray
 
 sealed external interface ModuleResolutionHost {
-    fun fileExists(fileName: String): Boolean
-    fun readFile(fileName: String): String?
+    fun fileExists(path: String): Boolean
+    fun readFile(path: String): String?
     val trace: ((s: String) -> Unit)?
     val directoryExists: ((directoryName: String) -> Boolean)?
 

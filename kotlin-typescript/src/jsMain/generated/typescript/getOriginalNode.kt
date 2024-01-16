@@ -15,5 +15,5 @@ external fun getOriginalNode(node: Node?): Node?
 
 external fun <T : Node> getOriginalNode(
     node: Node?,
-    nodeTest: dynamic, /* (node: Node | undefined) => node is T */
+    nodeTest: (node: Node) -> Boolean, /* node is T */
 ): T?

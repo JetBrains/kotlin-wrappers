@@ -13,7 +13,6 @@ external fun <T, U> reduceEachTrailingCommentRange(
         kind: CommentKind,
         hasTrailingNewLine: Boolean,
         state: T,
-        memo: U,
     ) -> U,
     state: T,
     initial: U,

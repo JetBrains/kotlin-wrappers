@@ -13,4 +13,5 @@ sealed external interface RefactorEditInfo {
     var renameFilename: String?
     var renameLocation: Int?
     var commands: ReadonlyArray<CodeActionCommand>?
+    var notApplicableReason: String?
 }

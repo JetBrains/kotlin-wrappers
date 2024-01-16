@@ -3,4 +3,4 @@
 package typescript
 
 sealed external interface CallLikeExpression :
-    Node /* CallExpression | NewExpression | TaggedTemplateExpression | Decorator | JsxOpeningLikeElement */
+    Node /* CallExpression | NewExpression | TaggedTemplateExpression | Decorator | JsxOpeningLikeElement | InstanceofExpression */

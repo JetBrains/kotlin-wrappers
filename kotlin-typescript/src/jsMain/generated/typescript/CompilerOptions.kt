@@ -5,7 +5,9 @@ package typescript
 import js.array.ReadonlyArray
 
 sealed external interface CompilerOptions {
+    var allowImportingTsExtensions: Boolean?
     var allowJs: Boolean?
+    var allowArbitraryExtensions: Boolean?
     var allowSyntheticDefaultImports: Boolean?
     var allowUmdGlobalAccess: Boolean?
     var allowUnreachableCode: Boolean?
@@ -14,6 +16,7 @@ sealed external interface CompilerOptions {
     var baseUrl: String?
     var charset: String?
     var checkJs: Boolean?
+    var customConditions: ReadonlyArray<String>?
     var declaration: Boolean?
     var declarationMap: Boolean?
     var emitDeclarationOnly: Boolean?
@@ -28,6 +31,7 @@ sealed external interface CompilerOptions {
     var exactOptionalPropertyTypes: Boolean?
     var experimentalDecorators: Boolean?
     var forceConsistentCasingInFileNames: Boolean?
+    var ignoreDeprecations: String?
     var importHelpers: Boolean?
     var importsNotUsedAsValues: ImportsNotUsedAsValues?
     var inlineSourceMap: Boolean?
@@ -78,6 +82,8 @@ sealed external interface CompilerOptions {
     var incremental: Boolean?
     var tsBuildInfoFile: String?
     var removeComments: Boolean?
+    var resolvePackageJsonExports: Boolean?
+    var resolvePackageJsonImports: Boolean?
     var rootDir: String?
     var rootDirs: ReadonlyArray<String>?
     var skipLibCheck: Boolean?
@@ -100,6 +106,7 @@ sealed external interface CompilerOptions {
 
     /** Paths used to compute primary types search locations */
     var typeRoots: ReadonlyArray<String>?
+    var verbatimModuleSyntax: Boolean?
     var esModuleInterop: Boolean?
     var useDefineForClassFields: Boolean?
     // [option: string]: CompilerOptionsValue | TsConfigSourceFile | undefined

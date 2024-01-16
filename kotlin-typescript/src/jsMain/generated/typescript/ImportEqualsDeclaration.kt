@@ -11,7 +11,7 @@ sealed external interface ImportEqualsDeclaration : DeclarationStatement, JSDocC
     Union.ImportEqualsDeclaration_ {
     override val kind: SyntaxKind.ImportEqualsDeclaration
     override val parent: Union.ImportEqualsDeclaration_parent
-    val modifiers: NodeArray<Modifier>?
+    val modifiers: NodeArray<ModifierLike>?
     override val name: Identifier
     val isTypeOnly: Boolean
     val moduleReference: ModuleReference

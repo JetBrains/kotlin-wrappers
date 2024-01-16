@@ -10,5 +10,5 @@ package typescript
  */
 external fun getModeForFileReference(
     ref: dynamic, /* FileReference | string */
-    containingFileMode: NodeFormat,
-): ResolutionMode?
+    containingFileMode: ResolutionMode,
+): ResolutionMode

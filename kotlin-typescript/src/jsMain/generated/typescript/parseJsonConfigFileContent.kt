@@ -5,6 +5,7 @@
 package typescript
 
 import js.array.ReadonlyArray
+import js.collections.JsMap
 
 /**
  * Parse the contents of a config file (tsconfig.json).
@@ -21,6 +22,6 @@ external fun parseJsonConfigFileContent(
     configFileName: String = definedExternally,
     resolutionStack: ReadonlyArray<Path> = definedExternally,
     extraFileExtensions: ReadonlyArray<FileExtensionInfo> = definedExternally,
-    extendedConfigCache: Map<ExtendedConfigCacheEntry> = definedExternally,
+    extendedConfigCache: JsMap<String, ExtendedConfigCacheEntry> = definedExternally,
     existingWatchOptions: WatchOptions = definedExternally,
 ): ParsedCommandLine

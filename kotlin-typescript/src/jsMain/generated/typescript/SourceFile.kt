@@ -4,7 +4,7 @@ package typescript
 
 import js.array.ReadonlyArray
 
-sealed external interface SourceFile : Declaration, Union.SourceFile_ {
+sealed external interface SourceFile : Declaration, LocalsContainer, Union.SourceFile_ {
     override val kind: SyntaxKind.SourceFile
     val statements: NodeArray<Statement>
     val endOfFileToken: Token<SyntaxKind.EndOfFileToken>
@@ -46,7 +46,7 @@ sealed external interface SourceFile : Declaration, Union.SourceFile_ {
      * of `node`). If so, this field will be unset and source files will be considered to be
      * CommonJS-output-format by the node module transformer and type checker, regardless of extension or context.
      */
-    var impliedNodeFormat: NodeFormat?
+    var impliedNodeFormat: ResolutionMode?
     fun getLineAndCharacterOfPosition(pos: Int): LineAndCharacter
     fun getLineEndOfPosition(pos: Int): Int
     fun getLineStarts(): ReadonlyArray<Int>

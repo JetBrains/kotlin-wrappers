@@ -19,4 +19,4 @@ external fun getImpliedNodeFormatForFile(
     packageJsonInfoCache: PackageJsonInfoCache?,
     host: ModuleResolutionHost,
     options: CompilerOptions,
-): NodeFormat?
+): ResolutionMode

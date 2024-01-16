@@ -64,6 +64,14 @@ sealed external interface ScriptElementKind {
         @JsValue("local var")
         val localVariableElement: ScriptElementKind
 
+        /** using foo = ... */
+        @JsValue("using")
+        val variableUsingElement: ScriptElementKind
+
+        /** await using foo = ... */
+        @JsValue("await using")
+        val variableAwaitUsingElement: ScriptElementKind
+
         /**
          * Inside module and script only
          * function f() { }
@@ -143,13 +151,6 @@ sealed external interface ScriptElementKind {
 
         @JsValue("external module name")
         val externalModuleName: ScriptElementKind
-
-        /**
-         * <JsxTagName attribute1 attribute2={0} />
-         * @deprecated
-         */
-        @JsValue("JSX attribute")
-        val jsxAttribute: ScriptElementKind
 
         /** String literal */
         @JsValue("string")

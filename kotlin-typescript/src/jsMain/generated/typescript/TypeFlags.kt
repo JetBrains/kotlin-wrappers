@@ -102,8 +102,11 @@ sealed external interface TypeFlags {
         @JsIntValue(2944)
         val Literal: TypeFlags
 
-        @JsIntValue(109440)
+        @JsIntValue(109472)
         val Unit: TypeFlags
+
+        @JsIntValue(2976)
+        val Freshable: TypeFlags
 
         @JsIntValue(384)
         val StringOrNumberLiteral: TypeFlags

@@ -2,8 +2,8 @@
 
 package typescript
 
-sealed external interface ArrowFunction : Expression, FunctionLikeDeclarationBase, JSDocContainer,
-    Union.ArrowFunction_ {
+sealed external interface ArrowFunction : Expression, FunctionLikeDeclarationBase, JSDocContainer, LocalsContainer,
+    FlowContainer, Union.ArrowFunction_ {
     override val kind: SyntaxKind.ArrowFunction
     val modifiers: NodeArray<Modifier>?
     val equalsGreaterThanToken: EqualsGreaterThanToken

@@ -133,7 +133,7 @@ sealed external interface ListFormat {
         val ObjectLiteralExpressionProperties: ListFormat
 
         @JsIntValue(526226)
-        val ImportClauseEntries: ListFormat
+        val ImportAttributes: ListFormat
 
         @JsIntValue(8914)
         val ArrayLiteralExpressionElements: ListFormat

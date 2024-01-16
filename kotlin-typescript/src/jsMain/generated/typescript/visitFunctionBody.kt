@@ -10,7 +10,7 @@ package typescript
  */
 external fun visitFunctionBody(
     node: FunctionBody,
-    visitor: Visitor,
+    visitor: Visitor<*, *>,
     context: TransformationContext,
 ): FunctionBody
 
@@ -20,7 +20,7 @@ external fun visitFunctionBody(
  */
 external fun visitFunctionBody(
     node: FunctionBody?,
-    visitor: Visitor,
+    visitor: Visitor<*, *>,
     context: TransformationContext,
 ): FunctionBody?
 
@@ -30,6 +30,6 @@ external fun visitFunctionBody(
  */
 external fun visitFunctionBody(
     node: ConciseBody,
-    visitor: Visitor,
+    visitor: Visitor<*, *>,
     context: TransformationContext,
 ): ConciseBody

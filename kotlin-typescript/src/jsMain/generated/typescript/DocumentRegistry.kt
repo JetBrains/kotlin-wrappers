@@ -91,22 +91,6 @@ sealed external interface DocumentRegistry {
     ): SourceFile
 
     fun getKeyForCompilationSettings(settings: CompilerOptions): DocumentRegistryBucketKey
-    /**
-     * Informs the DocumentRegistry that a file is not needed any longer.
-     *
-     * Note: It is not allowed to call release on a SourceFile that was not acquired from
-     * this registry originally.
-     *
-     * @param fileName The name of the file to be released
-     * @param compilationSettings The compilation settings used to acquire the file
-     * @param scriptKind The script kind of the file to be released
-     */
-    /**@deprecated pass scriptKind and impliedNodeFormat for correctness */
-    fun releaseDocument(
-        fileName: String,
-        compilationSettings: CompilerOptions,
-        scriptKind: ScriptKind = definedExternally,
-    )
 
     /**
      * Informs the DocumentRegistry that a file is not needed any longer.
@@ -123,14 +107,14 @@ sealed external interface DocumentRegistry {
         fileName: String,
         compilationSettings: CompilerOptions,
         scriptKind: ScriptKind,
-        impliedNodeFormat: NodeFormat,
+        impliedNodeFormat: ResolutionMode,
     )
 
     fun releaseDocumentWithKey(
         path: Path,
         key: DocumentRegistryBucketKey,
         scriptKind: ScriptKind,
-        impliedNodeFormat: NodeFormat,
+        impliedNodeFormat: ResolutionMode,
     )
 
     fun reportStats(): String

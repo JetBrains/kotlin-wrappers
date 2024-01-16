@@ -3,10 +3,10 @@
 package typescript
 
 sealed external interface Scanner {
-    fun getStartPos(): Int
     fun getToken(): SyntaxKind
-    fun getTextPos(): Int
-    fun getTokenPos(): Int
+    fun getTokenFullStart(): Int
+    fun getTokenStart(): Int
+    fun getTokenEnd(): Int
     fun getTokenText(): String
     fun getTokenValue(): String
     fun hasUnicodeEscape(): Boolean
@@ -19,7 +19,6 @@ sealed external interface Scanner {
     fun reScanSlashToken(): SyntaxKind
     fun reScanAsteriskEqualsToken(): SyntaxKind
     fun reScanTemplateToken(isTaggedTemplate: Boolean): SyntaxKind
-    fun reScanTemplateHeadOrNoSubstitutionTemplate(): SyntaxKind
     fun scanJsxIdentifier(): SyntaxKind
     fun scanJsxAttributeValue(): SyntaxKind
     fun reScanJsxAttributeValue(): SyntaxKind
@@ -41,7 +40,9 @@ sealed external interface Scanner {
     fun setOnError(onError: ErrorCallback?)
     fun setScriptTarget(scriptTarget: ScriptTarget)
     fun setLanguageVariant(variant: LanguageVariant)
-    fun setTextPos(textPos: Int)
+    fun setScriptKind(scriptKind: ScriptKind)
+    fun setJSDocParsingMode(kind: JSDocParsingMode)
+    fun resetTokenState(pos: Int)
     fun <T> lookAhead(callback: () -> T): T
     fun <T> scanRange(
         start: Int,

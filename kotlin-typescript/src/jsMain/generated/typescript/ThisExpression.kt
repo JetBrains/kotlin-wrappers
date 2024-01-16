@@ -2,6 +2,6 @@
 
 package typescript
 
-sealed external interface ThisExpression : PrimaryExpression, Union.ThisExpression_ {
+sealed external interface ThisExpression : PrimaryExpression, FlowContainer, Union.ThisExpression_ {
     override val kind: SyntaxKind.ThisKeyword
 }

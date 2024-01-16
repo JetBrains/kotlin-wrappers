@@ -22,4 +22,5 @@ sealed external interface FormatCodeSettings : EditorSettings {
     val insertSpaceBeforeTypeAnnotation: Boolean?
     val indentMultiLineObjectLiteralBeginningOnBlankLine: Boolean?
     val semicolons: SemicolonPreference?
+    val indentSwitchCase: Boolean?
 }

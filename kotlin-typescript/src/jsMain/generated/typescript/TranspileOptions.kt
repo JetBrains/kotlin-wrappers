@@ -9,4 +9,5 @@ sealed external interface TranspileOptions {
     var moduleName: String?
     var renamedDependencies: MapLike<String>?
     var transformers: CustomTransformers?
+    var jsDocParsingMode: JSDocParsingMode?
 }
