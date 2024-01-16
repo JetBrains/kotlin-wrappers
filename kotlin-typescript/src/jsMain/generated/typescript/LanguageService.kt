@@ -3,6 +3,7 @@
 package typescript
 
 import js.array.ReadonlyArray
+import js.promise.Promise
 
 sealed external interface LanguageService {
     /** This is used as a part of restarting the language service. */
@@ -343,12 +344,12 @@ sealed external interface LanguageService {
     fun applyCodeActionCommand(
         action: CodeActionCommand,
         formatSettings: FormatCodeSettings = definedExternally,
-    ): js.promise.Promise<ApplyCodeActionCommandResult>
+    ): Promise<ApplyCodeActionCommandResult>
 
     fun applyCodeActionCommand(
         action: ReadonlyArray<CodeActionCommand>,
         formatSettings: FormatCodeSettings = definedExternally,
-    ): js.promise.Promise<ReadonlyArray<ApplyCodeActionCommandResult>>
+    ): Promise<ReadonlyArray<ApplyCodeActionCommandResult>>
 
     fun applyCodeActionCommand(
         action: dynamic, /* CodeActionCommand | CodeActionCommand[] */

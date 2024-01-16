@@ -3,6 +3,7 @@
 package typescript
 
 import js.array.ReadonlyArray
+import js.promise.Promise
 
 sealed external interface LanguageServiceHost : GetEffectiveTypeRootsHost, MinimalResolutionCacheHost {
     override fun getCompilationSettings(): CompilerOptions
@@ -64,7 +65,7 @@ sealed external interface LanguageServiceHost : GetEffectiveTypeRootsHost, Minim
      */
     val getCustomTransformers: (() -> CustomTransformers?)?
     val isKnownTypesPackageName: ((name: String) -> Boolean)?
-    val installPackage: ((options: InstallPackageOptions) -> js.promise.Promise<ApplyCodeActionCommandResult>)?
+    val installPackage: ((options: InstallPackageOptions) -> Promise<ApplyCodeActionCommandResult>)?
     val writeFile: ((
         fileName: String,
         content: String,
