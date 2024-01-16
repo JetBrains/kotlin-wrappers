@@ -3,6 +3,7 @@
 package typescript
 
 import js.array.ReadonlyArray
+import seskar.js.JsNative
 
 /**
  * A function that walks a node using the given visitor, lifting node arrays into single nodes,
@@ -17,14 +18,16 @@ import js.array.ReadonlyArray
  * For the canonical implementation of this type, @see {visitNode}.
  */
 sealed external interface NodeVisitor {
-    fun <TIn : Node?, TVisited : Node?, TOut : Node> /* native */ invoke(
+    @JsNative
+    operator fun <TIn : Node?, TVisited : Node?, TOut : Node> invoke(
         node: TIn,
         visitor: Visitor<TIn & Any, TVisited>,
         test: (node: Node) -> Boolean, /* node is TOut */
         lift: (node: ReadonlyArray<Node>) -> Node = definedExternally,
     ): dynamic /* TOut | (TIn & undefined) | (TVisited & undefined) */
 
-    fun <TIn : Node?, TVisited : Node?> /* native */ invoke(
+    @JsNative
+    operator fun <TIn : Node?, TVisited : Node?> invoke(
         node: TIn,
         visitor: Visitor<TIn & Any, TVisited>,
         test: (node: Node) -> Boolean = definedExternally,
