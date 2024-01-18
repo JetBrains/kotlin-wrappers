@@ -97,8 +97,39 @@ interface CssBuilder : StyledElement, RuleContainer {
         return selectorString(block)
     }
 
-    fun has(selector: String, block: RuleSet): Rule {
-        return "&:has($selector)"(block)
+    fun dir(vararg selector: String, block: RuleSet): Rule {
+        val selectorString = selector.joinToString { "&:dir($it)" }
+        return selectorString(block)
+    }
+
+    fun has(vararg selector: String, block: RuleSet): Rule {
+        val selectorString = selector.joinToString { "&:has($it)" }
+        return selectorString(block)
+    }
+
+    fun host(vararg selector: String, block: RuleSet): Rule {
+        val selectorString = selector.joinToString { "&:host($it)" }
+        return selectorString(block)
+    }
+
+    fun hostContext(vararg selector: String, block: RuleSet): Rule {
+        val selectorString = selector.joinToString { "&:host-context($it)" }
+        return selectorString(block)
+    }
+
+    fun `is`(vararg selector: String, block: RuleSet): Rule {
+        val selectorString = selector.joinToString { "&:is($it)" }
+        return selectorString(block)
+    }
+
+    fun lang(vararg selector: String, block: RuleSet): Rule {
+        val selectorString = selector.joinToString { "&:lang($it)" }
+        return selectorString(block)
+    }
+
+    fun where(vararg selector: String, block: RuleSet): Rule {
+        val selectorString = selector.joinToString { "&:where($it)" }
+        return selectorString(block)
     }
 
     fun ancestorHover(vararg selector: String, block: RuleSet): Rule {
