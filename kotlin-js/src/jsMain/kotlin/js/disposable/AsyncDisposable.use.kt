@@ -27,7 +27,7 @@ suspend inline fun <T : AsyncDisposable?, R> T.use(block: (T) -> R): R {
 @PublishedApi
 internal suspend fun AsyncDisposable?.closeFinally(cause: Throwable?) = when {
     this == null -> {}
-    cause == null -> this[Symbol.asyncDispose].invoke().await()
+    cause == null -> this[Symbol.asyncDispose]().await()
     else ->
         try {
             this[Symbol.asyncDispose]().await()
