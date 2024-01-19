@@ -13,6 +13,7 @@
         "<nodeModules>/@types/node/globals.d.ts",
         "<nodeModules>/@types/node/http.d.ts",
         "<nodeModules>/@types/node/inspector.d.ts",
+        "<nodeModules>/@types/node/module.d.ts",
         "<nodeModules>/@types/node/net.d.ts",
         "<nodeModules>/@types/node/os.d.ts",
         "<nodeModules>/@types/node/path.d.ts",
@@ -81,6 +82,7 @@
         "**/dns/SetDefaultResultOrderOrderAsync.kt",
         "**/dns/setServersAsync.kt",
         "**/events/global/**",
+        "**/module/global/**",
         "**/path/namespace.kt",
         "**/path/PlatformPathDelimiter.kt",
         "**/path/PlatformPathSep.kt",
@@ -140,6 +142,8 @@
         "^http": "node:http",
         "^node/inspector": "node:inspector",
         "^inspector": "node:inspector",
+        "^node/module": "node:module",
+        "^module": "node:module",
         "^node/net": "node:net",
         "^net": "node:net",
         "^node/os": "node:os",
@@ -225,6 +229,11 @@
         "^node/inspector/namespace.kt": "node/inspector/nodeNamespace.kt",
         "^node/inspector.kt": "node/inspector/inspector.kt",
         "^inspector": "node/inspector",
+        "^node/module/namespace.kt": "node/module/nodeNamespace.kt",
+        "^node/module.kt": "node/module/module.kt",
+        "^module/module": "node/module",
+        "^module": "node/module",
+        "module/Module.kt": "module/Module.class.kt",
         "^node/net/namespace.kt": "node/net/nodeNamespace.kt",
         "^node/net.kt": "node/net/net.kt",
         "^net": "node/net",
@@ -626,6 +635,13 @@
         "net/SocketConstructorOpts.kt": [
             "web.abort.AbortSignal"
         ],
+        "module/GlobalPreloadContext.kt": [
+            "web.messaging.MessagePort"
+        ],
+        "module/Module.class.kt": [
+            "web.url.URL",
+            "node.Require as NodeRequire"
+        ],
         "os/constants/namespace.kt": [
             "node.os.SignalConstants"
         ],
@@ -903,8 +919,21 @@
         "vm/Module.kt": [
             "js.promise.Promise"
         ],
+        "vm/ModuleLinkerExtra.kt": [
+            "node.module.ImportAttributes"
+        ],
+        "vm/RunningCodeInNewContextOptions.kt": [
+            "node.module.ImportAttributes"
+        ],
+        "vm/RunningCodeOptions.kt": [
+            "node.module.ImportAttributes"
+        ],
+        "vm/ScriptOptions.kt": [
+            "node.module.ImportAttributes"
+        ],
         "vm/SourceTextModuleOptions.kt": [
-            "js.import.ImportMeta"
+            "js.import.ImportMeta",
+            "node.module.ImportAttributes"
         ],
         "vm/compileFunction.kt": [
             "js.array.ReadonlyArray"
@@ -956,6 +985,8 @@
         "node:http": "ignore",
         "inspector": "package",
         "node:inspector": "ignore",
+        "module": "package",
+        "node:module": "ignore",
         "net": "package",
         "node:net": "ignore",
         "os": "package",

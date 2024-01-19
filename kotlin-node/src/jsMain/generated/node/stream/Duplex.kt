@@ -219,7 +219,7 @@ open external class Duplex : Readable,
     override var destroyed: Boolean
     override fun _construct(callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit): Unit
     override fun destroy(error: Throwable /* JsError */): Unit /* this */
-    override fun destroy() /* this */
+    override fun destroy(): Unit /* this */
 
     companion object {
         /**

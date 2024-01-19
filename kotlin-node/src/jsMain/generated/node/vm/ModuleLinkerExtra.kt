@@ -2,9 +2,11 @@
 
 package node.vm
 
+import node.module.ImportAttributes
+
 
 sealed external interface ModuleLinkerExtra {
     /** @deprecated Use `attributes` instead */
-    var assert: Any
-    var attributes: Any
+    var assert: ImportAttributes
+    var attributes: ImportAttributes
 }
