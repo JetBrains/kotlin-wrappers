@@ -5,7 +5,9 @@
 package node.events
 
 
-/* import internal = require('node:events'); */
+/* import { AsyncResource, AsyncResourceOptions } from "node:async_hooks"; */
+
+/* import internal = require("node:events"); */
 
 
 /* export = EventEmitter; */

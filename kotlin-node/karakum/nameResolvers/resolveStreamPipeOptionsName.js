@@ -18,7 +18,14 @@ export default (node, context) => {
     if (!method) return null
     if (!ts.isMethodDeclaration(method)) return null
     if (!ts.isIdentifier(method.name)) return null
-    if (method.name.text !== "pipe") return null
+    if (
+        method.name.text !== "pipe"
+        && method.name.text !== "compose"
+    ) {
+        return null
+    }
+
+    const methodName = method.name.text
 
     const classNode = getParent(method)
     if (!classNode) return null
@@ -26,5 +33,5 @@ export default (node, context) => {
     if (classNode.name === undefined) return null
     if (classNode.name.text !== "internal") return null
 
-    return "StreamPipeOptions"
+    return `Stream${karakum.capitalize(methodName)}Options`
 }

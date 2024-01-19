@@ -13,6 +13,15 @@ import web.abort.AbortSignal
 
 sealed external interface TestContext {
     /**
+     * This function is used to create a hook running before subtest of the current test.
+     * @param fn The hook function. If the hook uses callbacks, the callback function is passed as
+     *    the second argument. Default: A no-op function.
+     * @param options Configuration options for the hook.
+     * @since v18.17.0
+     */
+    var before: (fn: HookFn? /* use undefined for default */, options: HookOptions? /* use undefined for default */) -> Unit
+
+    /**
      * This function is used to create a hook running before each subtest of the current test.
      * @param fn The hook function. If the hook uses callbacks, the callback function is passed as
      *    the second argument. Default: A no-op function.
@@ -98,7 +107,7 @@ sealed external interface TestContext {
      *    passed as the second argument. Default: A no-op function.
      * @returns A {@link Promise} resolved with `undefined` once the test completes.
      */
-    var test: TestContextTest
+    var test: Any?
 
     /**
      * Each test provides its own MockTracker instance.

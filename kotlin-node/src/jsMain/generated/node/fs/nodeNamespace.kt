@@ -5,4 +5,4 @@
 package node.fs
 
 
-/* export * from 'fs'; */
+/* export * from "fs"; */

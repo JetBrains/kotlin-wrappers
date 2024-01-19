@@ -88,4 +88,5 @@ sealed external interface MockTracker {
      * Unlike `mock.reset()`, `mock.restoreAll()` does not disassociate the mocks from the `MockTracker` instance.
      */
     fun restoreAll(): Unit
+    var timers: MockTimers
 }

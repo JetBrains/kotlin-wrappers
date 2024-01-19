@@ -77,6 +77,22 @@ export default function (node, context, render) {
         ts.isTypeReferenceNode(node)
         && ts.isIdentifier(node.typeName)
         && (
+            node.typeName.text === "AsyncGenerator"
+        )
+        && node.typeArguments
+        && node.typeArguments.length === 2
+    ) {
+        const typeArguments = node.typeArguments
+            ?.map(typeArgument => render(typeArgument))
+            ?.join(", ")
+
+        return `${render(node.typeName)}<${typeArguments}, *>`
+    }
+
+    if (
+        ts.isTypeReferenceNode(node)
+        && ts.isIdentifier(node.typeName)
+        && (
             node.typeName.text === "MockFunctionCall"
         )
         && node.typeArguments

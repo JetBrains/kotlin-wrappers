@@ -4,7 +4,7 @@
 package node.test
 
 
-sealed external interface TestPass {
+sealed external interface TestPass : TestLocationInfo {
     /**
      * Additional execution metadata.
      */

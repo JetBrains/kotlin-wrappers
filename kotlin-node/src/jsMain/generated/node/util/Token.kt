@@ -5,10 +5,10 @@ package node.util
 
 
 typealias Token = Any /* OptionToken | {
-    kind: 'positional';
+    kind: "positional";
     index: number;
     value: string;
 } | {
-    kind: 'option-terminator';
+    kind: "option-terminator";
     index: number;
 } */

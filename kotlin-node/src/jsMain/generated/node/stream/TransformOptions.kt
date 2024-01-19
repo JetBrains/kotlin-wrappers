@@ -21,7 +21,7 @@ external interface TransformOptions : DuplexOptions {
     override fun final(/* this: Transform, */ callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit): Unit
     override fun destroy(
         /* this: Transform, */ error: Throwable /* JsError */?,
-        callback: (error: Throwable /* JsError */?) -> Unit,
+        callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit,
     ): Unit
 
     fun transform(

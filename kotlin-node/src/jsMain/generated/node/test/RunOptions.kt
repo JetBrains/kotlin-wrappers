@@ -41,4 +41,35 @@ sealed external interface RunOptions {
      * incremented from the primary's `process.debugPort`.
      */
     var inspectPort: Any? /* number | (() => number) | undefined */
+
+    /**
+     * That can be used to only run tests whose name matches the provided pattern.
+     * Test name patterns are interpreted as JavaScript regular expressions.
+     * For each test that is executed, any corresponding test hooks, such as `beforeEach()`, are also run.
+     */
+    var testNamePatterns: (Any /* string | RegExp | string[] | RegExp[] */)?
+
+    /**
+     * If truthy, the test context will only run tests that have the `only` option set
+     * @since v18.19.0
+     */
+    var only: Boolean?
+
+    /**
+     * A function that accepts the TestsStream instance and can be used to setup listeners before any tests are run.
+     */
+    var setup: ((root: Test) -> js.promise.PromiseResult<Unit>)?
+
+    /**
+     * Whether to run in watch mode or not.
+     * @default false
+     */
+    var watch: Boolean?
+
+    /**
+     * Running tests in a specific shard.
+     * @since v18.19.0
+     * @default undefined
+     */
+    var shard: TestShard?
 }

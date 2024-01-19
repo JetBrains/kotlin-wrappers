@@ -61,7 +61,7 @@ external fun readdirAsync(
 @JsName("readdir")
 external fun readdirAsync(
     path: PathLike,
-    options: String, /* 'buffer' */
+    options: String, /* "buffer" */
 ): Promise<js.array.ReadonlyArray<node.buffer.Buffer>>
 
 

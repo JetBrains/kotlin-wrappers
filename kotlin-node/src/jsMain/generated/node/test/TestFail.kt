@@ -4,7 +4,7 @@
 package node.test
 
 
-sealed external interface TestFail {
+sealed external interface TestFail : TestLocationInfo {
     /**
      * Additional execution metadata.
      */

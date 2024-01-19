@@ -5,4 +5,4 @@
 package node.childProcess
 
 
-/* export * from 'child_process'; */
+/* export * from "child_process"; */

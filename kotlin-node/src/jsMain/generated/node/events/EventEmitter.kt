@@ -4,8 +4,11 @@
 
 package node.events
 
+import js.disposable.Disposable
 import js.iterable.AsyncIterableIterator
 import js.promise.Promise
+import web.abort.AbortSignal
+import web.events.Event
 
 
 /**
@@ -24,7 +27,8 @@ import js.promise.Promise
 
 open external class EventEmitter {
     constructor (options: EventEmitterOptions = definedExternally)
-
+    /* [EventEmitter.captureRejectionSymbol]?(error: Error, event: string, ...args: any[]): void; */
+    /* [EventEmitter.captureRejectionSymbol]?(error: Error, event: string, ...args: any[]): void; */
     /**
      * Alias for `emitter.on(eventName, listener)`.
      * @since v0.1.26
@@ -598,6 +602,38 @@ open external class EventEmitter {
 
 
         /**
+         * Returns the currently set max amount of listeners.
+         *
+         * For `EventEmitter`s this behaves exactly the same as calling `.getMaxListeners` on
+         * the emitter.
+         *
+         * For `EventTarget`s this is the only way to get the max event listeners for the
+         * event target. If the number of event handlers on a single EventTarget exceeds
+         * the max set, the EventTarget will print a warning.
+         *
+         * ```js
+         * import { getMaxListeners, setMaxListeners, EventEmitter } from 'node:events';
+         *
+         * {
+         *   const ee = new EventEmitter();
+         *   console.log(getMaxListeners(ee)); // 10
+         *   setMaxListeners(11, ee);
+         *   console.log(getMaxListeners(ee)); // 11
+         * }
+         * {
+         *   const et = new EventTarget();
+         *   console.log(getMaxListeners(et)); // 10
+         *   setMaxListeners(11, et);
+         *   console.log(getMaxListeners(et)); // 11
+         * }
+         * ```
+         * @since v18.17.0
+         */
+        fun getMaxListeners(emitter: _DOMEventTarget): Double
+
+        fun getMaxListeners(emitter: EventEmitter): Double
+
+        /**
          * ```js
          * const {
          *   setMaxListeners,
@@ -618,6 +654,42 @@ open external class EventEmitter {
             n: Number = definedExternally,
             vararg eventTargets: Any, /* _DOMEventTarget | NodeJS.EventEmitter */
         ): Unit
+
+        /**
+         * Listens once to the `abort` event on the provided `signal`.
+         *
+         * Listening to the `abort` event on abort signals is unsafe and may
+         * lead to resource leaks since another third party with the signal can
+         * call `e.stopImmediatePropagation()`. Unfortunately Node.js cannot change
+         * this since it would violate the web standard. Additionally, the original
+         * API makes it easy to forget to remove listeners.
+         *
+         * This API allows safely using `AbortSignal`s in Node.js APIs by solving these
+         * two issues by listening to the event such that `stopImmediatePropagation` does
+         * not prevent the listener from running.
+         *
+         * Returns a disposable so that it may be unsubscribed from more easily.
+         *
+         * ```js
+         * import { addAbortListener } from 'node:events';
+         *
+         * function example(signal) {
+         *   let disposable;
+         *   try {
+         *     signal.addEventListener('abort', (e) => e.stopImmediatePropagation());
+         *     disposable = addAbortListener(signal, (e) => {
+         *       // Do something when signal is aborted.
+         *     });
+         *   } finally {
+         *     disposable?.[Symbol.dispose]();
+         *   }
+         * }
+         * ```
+         * @since v18.18.0
+         * @experimental
+         * @return Disposable that removes the `abort` listener.
+         */
+        fun addAbortListener(signal: AbortSignal, resource: (event: Event) -> Unit): Disposable
 
         /**
          * This symbol shall be used to install a listener for only monitoring `'error'`

@@ -125,8 +125,7 @@ open external class ChildProcess : EventEmitter {
             Readable?, // stdout
             Readable?, // stderr
             Any? /* Readable | Writable | null | undefined */, // extra
-            Any? /* Readable | Writable | null | undefined */// extra
-            >
+            Any? /* Readable | Writable | null | undefined */>
 
     /**
      * The `subprocess.killed` property indicates whether the child process

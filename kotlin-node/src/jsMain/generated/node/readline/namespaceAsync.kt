@@ -4,8 +4,8 @@
 
 package node.readline
 
-/* import { Interface as _Interface, ReadLineOptions, Completer, AsyncCompleter, Direction } from 'node:readline'; */
+/* import { AsyncCompleter, Completer, Direction, Interface as _Interface, ReadLineOptions } from "node:readline"; */
 
-/* import { Abortable } from 'node:events'; */
+/* import { Abortable } from "node:events"; */
 
-/* export * from 'readline/promises'; */
+/* export * from "readline/promises"; */

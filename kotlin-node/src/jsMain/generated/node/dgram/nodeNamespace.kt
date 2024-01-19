@@ -5,4 +5,4 @@
 package node.dgram
 
 
-/* export * from 'dgram'; */
+/* export * from "dgram"; */

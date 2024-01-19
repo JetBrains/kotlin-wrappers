@@ -13,3 +13,5 @@ Manual changes are prohibited.
 
 1) Fix numeric types
 2) Get rid of `WithImplicitCoercion`
+3) Support `captureRejectionSymbol` in `EventEmitter`
+4) Improve `TestEvent` typings

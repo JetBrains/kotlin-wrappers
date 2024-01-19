@@ -67,7 +67,7 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
 
     fun setHeader(name: String, value: String): Unit /* this */
 
-    fun setHeader(name: String, value: ReadonlyArray<String>): Unit /* this */
+    fun setHeader(name: String, value: Array<out String>): Unit /* this */
 
     /**
      * Append a single header value for the header object.
@@ -84,7 +84,7 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
      */
     fun appendHeader(name: String, value: String): Unit /* this */
 
-    fun appendHeader(name: String, value: ReadonlyArray<String>): Unit /* this */
+    fun appendHeader(name: String, value: Array<out String>): Unit /* this */
 
     /**
      * Gets the value of HTTP header with the given name. If such a name doesn't

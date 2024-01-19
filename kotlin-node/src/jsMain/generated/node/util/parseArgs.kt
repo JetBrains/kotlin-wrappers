@@ -45,6 +45,5 @@ package node.util
  *     or boolean values.
  *   - `positionals` Positional arguments.
  *   - `tokens` Detailed parse information (only if `tokens` was specified).
- *
  */
 external fun <T : ParseArgsConfig> parseArgs(config: T = definedExternally): ParsedResults<T>

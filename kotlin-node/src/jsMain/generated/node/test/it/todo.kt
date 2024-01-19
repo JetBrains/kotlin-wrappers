@@ -5,18 +5,29 @@
 
 package node.test.it
 
+import js.promise.Promise
 import node.test.TestFn
 import node.test.TestOptions
 
-// Shorthand for marking a test as `TODO`, same as `it([name], { todo: true }[, fn])`.
-external fun todo(
+/**
+ * Shorthand for marking a test as `TODO`, same as `it([name], { todo: true }[, fn])`.
+ */
+
+@JsName("todo")
+external fun todoAsync(
     name: String = definedExternally,
     options: TestOptions = definedExternally,
     fn: TestFn = definedExternally,
-): Unit
+): Promise<Unit>
 
-external fun todo(name: String = definedExternally, fn: TestFn = definedExternally): Unit
 
-external fun todo(options: TestOptions = definedExternally, fn: TestFn = definedExternally): Unit
+@JsName("todo")
+external fun todoAsync(name: String = definedExternally, fn: TestFn = definedExternally): Promise<Unit>
 
-external fun todo(fn: TestFn = definedExternally): Unit
+
+@JsName("todo")
+external fun todoAsync(options: TestOptions = definedExternally, fn: TestFn = definedExternally): Promise<Unit>
+
+
+@JsName("todo")
+external fun todoAsync(fn: TestFn = definedExternally): Promise<Unit>

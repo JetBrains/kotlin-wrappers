@@ -19,5 +19,5 @@ sealed external interface CommonExecOptions : CommonOptions {
     var stdio: StdioOptions?
     var killSignal: Any? /* NodeJS.Signals | number | undefined */
     var maxBuffer: Double?
-    var encoding: Any? /* BufferEncoding | 'buffer' | null | undefined */
+    var encoding: Any? /* BufferEncoding | "buffer" | null | undefined */
 }

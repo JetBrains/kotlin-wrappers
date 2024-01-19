@@ -17,5 +17,5 @@ sealed external interface ScriptOptions : BaseOptions {
      * Called during evaluation of this module when `import()` is called.
      * If this option is not specified, calls to `import()` will reject with `ERR_VM_DYNAMIC_IMPORT_CALLBACK_MISSING`.
      */
-    var importModuleDynamically: ((specifier: String, script: Script, importAssertions: Any) -> Module)?
+    var importModuleDynamically: ((specifier: String, script: Script, importAttributes: Any) -> Module)?
 }

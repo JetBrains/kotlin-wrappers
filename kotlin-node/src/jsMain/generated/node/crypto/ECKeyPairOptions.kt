@@ -4,11 +4,7 @@
 package node.crypto
 
 
-sealed external interface ECKeyPairOptions<PubF : KeyFormat, PrivF : KeyFormat> {
-    /**
-     * Name of the curve to use.
-     */
-    var namedCurve: String
+sealed external interface ECKeyPairOptions<PubF : KeyFormat, PrivF : KeyFormat> : ECKeyPairKeyObjectOptions {
     var publicKeyEncoding: ECKeyPairOptionsPublicKeyEncoding<PubF>
     var privateKeyEncoding: ECKeyPairOptionsPrivateKeyEncoding<PrivF>
 }

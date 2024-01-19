@@ -5,16 +5,7 @@
 package node
 
 
-// Same as module.exports
+// Make this a module
 
 
-/**
- * Only available if `--expose-gc` is passed to the process.
- */
-
-
-/*----------------------------------------------*
-*                                               *
-*               GLOBAL INTERFACES               *
-*                                               *
-*-----------------------------------------------*/
+// #endregion Fetch and friends

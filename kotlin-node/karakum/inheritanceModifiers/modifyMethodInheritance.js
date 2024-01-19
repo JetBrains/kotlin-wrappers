@@ -54,6 +54,16 @@ export default (node, context) => {
                 sourceFileName.endsWith("stream.d.ts")
                 && (
                     (
+                        node.name.text === "compose"
+                    )
+                    && node.parent
+                    && node.parent.name?.text === "internal"
+                )
+            )
+            || (
+                sourceFileName.endsWith("stream.d.ts")
+                && (
+                    (
                         node.name.text === "_destroy"
                         || node.name.text === "_construct"
                         || node.name.text === "destroy"

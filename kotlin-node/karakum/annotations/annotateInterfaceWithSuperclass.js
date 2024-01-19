@@ -20,6 +20,9 @@ const interfacesWithSuperclass = [
     "DecipherGCM",
     "DecipherOCB",
 
+    // events
+    "EventEmitterReferencingAsyncResource",
+
     // fs
     "FSWatcher",
     "StatWatcher",

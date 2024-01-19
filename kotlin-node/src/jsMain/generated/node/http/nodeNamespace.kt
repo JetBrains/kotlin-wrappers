@@ -5,4 +5,4 @@
 package node.http
 
 
-/* export * from 'http'; */
+/* export * from "http"; */

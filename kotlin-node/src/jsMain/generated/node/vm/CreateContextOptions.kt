@@ -24,5 +24,5 @@ sealed external interface CreateContextOptions {
     /**
      * If set to `afterEvaluate`, microtasks will be run immediately after the script has run.
      */
-    var microtaskMode: String /* 'afterEvaluate' */?
+    var microtaskMode: String /* "afterEvaluate" */?
 }

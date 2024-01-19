@@ -5,15 +5,15 @@
 package node.stream
 
 
-/* import { EventEmitter, Abortable } from 'node:events'; */
+/* import { Abortable, EventEmitter } from "node:events"; */
 
 /* import { Blob as NodeBlob } from "node:buffer"; */
 
-/* import * as streamPromises from 'node:stream/promises'; */
+/* import * as streamPromises from "node:stream/promises"; */
 
-/* import * as streamConsumers from 'node:stream/consumers'; */
+/* import * as streamConsumers from "node:stream/consumers"; */
 
-/* import * as streamWeb from 'node:stream/web'; */
+/* import * as streamWeb from "node:stream/web"; */
 
 
 /* export = internal; */

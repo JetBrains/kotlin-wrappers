@@ -5,14 +5,14 @@ package node.util
 
 
 typealias OptionToken = Any /* {
-    kind: 'option';
+    kind: "option";
     index: number;
     name: string;
     rawName: string;
     value: string;
     inlineValue: boolean;
 } | {
-    kind: 'option';
+    kind: "option";
     index: number;
     name: string;
     rawName: string;

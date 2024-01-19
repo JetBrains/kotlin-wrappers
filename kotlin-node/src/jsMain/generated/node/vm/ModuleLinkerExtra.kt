@@ -4,5 +4,7 @@ package node.vm
 
 
 sealed external interface ModuleLinkerExtra {
+    /** @deprecated Use `attributes` instead */
     var assert: Any
+    var attributes: Any
 }

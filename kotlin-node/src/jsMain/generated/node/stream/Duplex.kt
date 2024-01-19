@@ -61,7 +61,11 @@ open external class Duplex : Readable,
         callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit,
     ): Unit
 
-    override fun _destroy(error: Throwable /* JsError */?, callback: (error: Throwable /* JsError */?) -> Unit): Unit
+    override fun _destroy(
+        error: Throwable /* JsError */?,
+        callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit,
+    ): Unit
+
     override fun _final(callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit): Unit
     override fun write(
         chunk: Any?,

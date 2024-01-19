@@ -5,4 +5,4 @@
 package node.querystring
 
 
-/* export * from 'querystring'; */
+/* export * from "querystring"; */

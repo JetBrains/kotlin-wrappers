@@ -4,7 +4,7 @@
 package node.asyncHooks
 
 
-sealed external interface AsyncResourceOptions {
+external interface AsyncResourceOptions {
     /**
      * The ID of the execution context that created this async event.
      * @default executionAsyncId()

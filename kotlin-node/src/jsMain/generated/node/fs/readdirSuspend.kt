@@ -29,7 +29,7 @@ suspend fun readdir(path: PathLike, options: ReaddirBufferAsyncOptions): js.arra
     ).await()
 
 
-suspend fun readdir(path: PathLike, options: String /* 'buffer' */): js.array.ReadonlyArray<node.buffer.Buffer> =
+suspend fun readdir(path: PathLike, options: String /* "buffer" */): js.array.ReadonlyArray<node.buffer.Buffer> =
     readdirAsync(
         path, options
     ).await()

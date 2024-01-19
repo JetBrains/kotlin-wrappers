@@ -5,4 +5,4 @@
 package node.buffer
 
 
-/* export * from 'buffer'; */
+/* export * from "buffer"; */

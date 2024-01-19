@@ -3,7 +3,6 @@
 
 package node.buffer
 
-import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
 import js.buffer.SharedArrayBuffer
 import js.typedarrays.Uint8Array
@@ -16,7 +15,7 @@ sealed external class Buffer : Uint8Array {
     constructor (arrayBuffer: ArrayBuffer)
 
     constructor (arrayBuffer: SharedArrayBuffer)
-    constructor (array: ReadonlyArray<Any?>)
+    constructor (array: Array<out Any?>)
     constructor (buffer: Buffer)
 
     /**
@@ -1792,8 +1791,8 @@ sealed external class Buffer : Uint8Array {
          */
         fun from(data: Uint8Array): Buffer
 
-        fun from(data: ReadonlyArray<Double>): Buffer
-        fun from(data: WithImplicitCoercion<Any /* Uint8Array | ReadonlyArray<number> | string */>): Buffer
+        fun from(data: Array<out Double>): Buffer
+        fun from(data: WithImplicitCoercion<Any /* Uint8Array | readonly number[] | string */>): Buffer
 
         /**
          * Creates a new Buffer containing the given JavaScript string {str}.
@@ -1925,7 +1924,7 @@ sealed external class Buffer : Uint8Array {
          * @param list List of `Buffer` or {@link Uint8Array} instances to concatenate.
          * @param totalLength Total length of the `Buffer` instances in `list` when concatenated.
          */
-        fun concat(list: ReadonlyArray<Uint8Array>, totalLength: Number = definedExternally): Buffer
+        fun concat(list: Array<out Uint8Array>, totalLength: Number = definedExternally): Buffer
 
         /**
          * Copies the underlying memory of `view` into a new `Buffer`.
@@ -2008,7 +2007,11 @@ sealed external class Buffer : Uint8Array {
          */
         fun alloc(size: Number, fill: String = definedExternally, encoding: BufferEncoding = definedExternally): Buffer
 
-        fun alloc(size: Number, fill: Buffer = definedExternally, encoding: BufferEncoding = definedExternally): Buffer
+        fun alloc(
+            size: Number,
+            fill: Uint8Array = definedExternally,
+            encoding: BufferEncoding = definedExternally,
+        ): Buffer
 
         fun alloc(size: Number, fill: Double = definedExternally, encoding: BufferEncoding = definedExternally): Buffer
 

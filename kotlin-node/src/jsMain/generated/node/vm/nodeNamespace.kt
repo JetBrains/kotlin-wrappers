@@ -5,4 +5,4 @@
 package node.vm
 
 
-/* export * from 'vm'; */
+/* export * from "vm"; */

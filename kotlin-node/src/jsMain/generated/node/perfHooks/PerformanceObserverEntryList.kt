@@ -33,7 +33,6 @@ sealed external interface PerformanceObserverEntryList {
      *    *   }
      *    * ]
      *
-     *
      *   performance.clearMarks();
      *   performance.clearMeasures();
      *   observer.disconnect();

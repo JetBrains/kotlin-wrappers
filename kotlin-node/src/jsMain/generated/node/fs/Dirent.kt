@@ -66,4 +66,10 @@ external class Dirent {
      * @since v10.10.0
      */
     var name: String
+
+    /**
+     * The base path that this `fs.Dirent` object refers to.
+     * @since v18.17.0
+     */
+    var path: String
 }

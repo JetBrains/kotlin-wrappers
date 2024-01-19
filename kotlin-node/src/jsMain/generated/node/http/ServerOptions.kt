@@ -46,6 +46,14 @@ sealed external interface ServerOptions<Request : IncomingMessage, Response : Se
     var connectionsCheckingInterval: Double?
 
     /**
+     * Optionally overrides all `socket`s' `readableHighWaterMark` and `writableHighWaterMark`.
+     * This affects `highWaterMark` property of both `IncomingMessage` and `ServerResponse`.
+     * Default: @see stream.getDefaultHighWaterMark().
+     * @since v18.17.0
+     */
+    var highWaterMark: Double?
+
+    /**
      * Use an insecure HTTP parser that accepts invalid HTTP headers when `true`.
      * Using the insecure parser should be avoided.
      * See --insecure-http-parser for more information.

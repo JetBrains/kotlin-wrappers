@@ -4,6 +4,6 @@
 
 package node.dns
 
-/* import { LookupAddress, LookupOneOptions, LookupAllOptions, LookupOptions, AnyRecord, CaaRecord, MxRecord, NaptrRecord, SoaRecord, SrvRecord, ResolveWithTtlOptions, RecordWithTtl, ResolveOptions, ResolverOptions, } from 'node:dns'; */
+/* import { AnyRecord, CaaRecord, LookupAddress, LookupAllOptions, LookupOneOptions, LookupOptions, MxRecord, NaptrRecord, RecordWithTtl, ResolveOptions, ResolverOptions, ResolveWithTtlOptions, SoaRecord, SrvRecord, } from "node:dns"; */
 
-/* export * from 'dns/promises'; */
+/* export * from "dns/promises"; */

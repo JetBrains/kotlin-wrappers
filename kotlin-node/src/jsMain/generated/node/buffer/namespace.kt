@@ -5,9 +5,9 @@
 package node.buffer
 
 
-/* import { BinaryLike } from 'node:crypto'; */
+/* import { BinaryLike } from "node:crypto"; */
 
-/* import { ReadableStream as WebReadableStream } from 'node:stream/web'; */
+/* import { ReadableStream as WebReadableStream } from "node:stream/web"; */
 
 external val INSPECT_MAX_BYTES: Double
 
@@ -24,4 +24,4 @@ external val constants: BufferConstants
 
 /* export import btoa = globalThis.btoa; */
 
-/* import { Blob as NodeBlob } from 'buffer'; */
+/* import { Blob as NodeBlob } from "buffer"; */

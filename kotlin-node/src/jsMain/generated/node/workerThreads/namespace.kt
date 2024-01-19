@@ -6,21 +6,21 @@ package node.workerThreads
 
 import web.messaging.MessagePort
 
-/* import { Blob } from 'node:buffer'; */
+/* import { Blob } from "node:buffer"; */
 
-/* import { Context } from 'node:vm'; */
+/* import { Context } from "node:vm"; */
 
-/* import { EventEmitter } from 'node:events'; */
+/* import { EventEmitter } from "node:events"; */
 
-/* import { EventLoopUtilityFunction } from 'node:perf_hooks'; */
+/* import { EventLoopUtilityFunction } from "node:perf_hooks"; */
 
-/* import { FileHandle } from 'node:fs/promises'; */
+/* import { FileHandle } from "node:fs/promises"; */
 
-/* import { Readable, Writable } from 'node:stream'; */
+/* import { Readable, Writable } from "node:stream"; */
 
-/* import { URL } from 'node:url'; */
+/* import { URL } from "node:url"; */
 
-/* import { X509Certificate } from 'node:crypto'; */
+/* import { X509Certificate } from "node:crypto"; */
 
 external val isMainThread: Boolean
 
@@ -34,4 +34,4 @@ external val threadId: Double
 
 external val workerData: Any?
 
-/* import { BroadcastChannel as _BroadcastChannel, MessageChannel as _MessageChannel, MessagePort as _MessagePort, } from 'worker_threads'; */
+/* import { BroadcastChannel as _BroadcastChannel, MessageChannel as _MessageChannel, MessagePort as _MessagePort, } from "worker_threads"; */

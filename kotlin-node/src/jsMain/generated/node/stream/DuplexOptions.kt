@@ -27,6 +27,6 @@ sealed external interface DuplexOptions : ReadableOptions, WritableOptions {
     override fun final(/* this: Duplex, */ callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit): Unit
     override fun destroy(
         /* this: Duplex, */ error: Throwable /* JsError */?,
-        callback: (error: Throwable /* JsError */?) -> Unit,
+        callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit,
     ): Unit
 }

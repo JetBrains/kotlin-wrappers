@@ -685,6 +685,21 @@ sealed external interface Process : EventEmitter {
     fun hasUncaughtExceptionCaptureCallback(): Boolean
 
     /**
+     * This function enables or disables the Source Map v3 support for stack traces.
+     * It provides same features as launching Node.js process with commandline options --enable-source-maps.
+     * @since v16.6.0
+     * @experimental
+     */
+    fun setSourceMapsEnabled(value: Boolean): Unit
+
+    /**
+     * The `process.sourceMapsEnabled` property returns whether the [Source Map v3](https://sourcemaps.info/spec.html) support for stack traces is enabled.
+     * @since v18.19.0
+     * @experimental
+     */
+    val sourceMapsEnabled: Boolean
+
+    /**
      * The `process.version` property contains the Node.js version string.
      *
      * ```js
@@ -1093,10 +1108,17 @@ sealed external interface Process : EventEmitter {
     var hrtime: HRTime
 
     /**
+     * If the Node.js process was spawned with an IPC channel, the process.channel property is a reference to the IPC channel.
+     * If no IPC channel exists, this property is undefined.
+     * @since v7.1.0
+     */
+    var channel: (ProcessChannel)?
+
+    /**
      * If Node.js is spawned with an IPC channel, the `process.send()` method can be
      * used to send messages to the parent process. Messages will be received as a `'message'` event on the parent's `ChildProcess` object.
      *
-     * If Node.js was not spawned with an IPC channel, `process.send` will be`undefined`.
+     * If Node.js was not spawned with an IPC channel, `process.send` will be `undefined`.
      *
      * The message goes through serialization and parsing. The resulting message might
      * not be the same as what is originally sent.

@@ -5,4 +5,4 @@
 package node.tls
 
 
-/* export * from 'tls'; */
+/* export * from "tls"; */

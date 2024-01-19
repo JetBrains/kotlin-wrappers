@@ -4,8 +4,6 @@
 
 package node.dns
 
-import js.array.ReadonlyArray
-
 /**
  * Sets the IP address and port of servers to be used when performing DNS
  * resolution. The `servers` argument is an array of [RFC 5952](https://tools.ietf.org/html/rfc5952#section-6) formatted
@@ -34,4 +32,4 @@ import js.array.ReadonlyArray
  * @since v0.11.3
  * @param servers array of `RFC 5952` formatted addresses
  */
-external fun setServers(servers: ReadonlyArray<String>): Unit
+external fun setServers(servers: Array<out String>): Unit

@@ -13,7 +13,7 @@ sealed external interface StreamOptions<T : Stream> : Abortable {
     fun construct(/* this: T, */ callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit): Unit
     fun destroy(
         /* this: T, */ error: Throwable /* JsError */?,
-        callback: (error: Throwable /* JsError */?) -> Unit,
+        callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit,
     ): Unit
 
     var autoDestroy: Boolean?

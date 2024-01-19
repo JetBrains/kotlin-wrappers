@@ -41,6 +41,12 @@ export default (node) => {
                     node.name.text === "TransformOptions"
                 )
             )
+            || (
+                sourceFileName.endsWith("async_hooks.d.ts")
+                && (
+                    node.name.text === "AsyncResourceOptions"
+                )
+            )
         )
     ) {
         return ""

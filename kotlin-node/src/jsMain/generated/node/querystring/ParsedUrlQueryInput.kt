@@ -5,4 +5,4 @@ package node.querystring
 
 
 sealed external interface ParsedUrlQueryInput :
-    node.Dict<Any? /* string | number | boolean | ReadonlyArray<string> | ReadonlyArray<number> | ReadonlyArray<boolean> | null */>
+    node.Dict<Any? /* string | number | boolean | readonly string[] | readonly number[] | readonly boolean[] | null */>

@@ -35,7 +35,7 @@ external fun readdirSync(
  */
 external fun readdirSync(path: PathLike, options: ReaddirSyncBufferOptions): js.array.ReadonlyArray<node.buffer.Buffer>
 
-external fun readdirSync(path: PathLike, options: String /* 'buffer' */): js.array.ReadonlyArray<node.buffer.Buffer>
+external fun readdirSync(path: PathLike, options: String /* "buffer" */): js.array.ReadonlyArray<node.buffer.Buffer>
 
 /**
  * Synchronous readdir(3) - read a directory.

@@ -5,18 +5,29 @@
 
 package node.test.it
 
+import js.promise.Promise
 import node.test.TestFn
 import node.test.TestOptions
 
-// Shorthand for skipping a test, same as `it([name], { skip: true }[, fn])`.
-external fun skip(
+/**
+ * Shorthand for skipping a test, same as `it([name], { skip: true }[, fn])`.
+ */
+
+@JsName("skip")
+external fun skipAsync(
     name: String = definedExternally,
     options: TestOptions = definedExternally,
     fn: TestFn = definedExternally,
-): Unit
+): Promise<Unit>
 
-external fun skip(name: String = definedExternally, fn: TestFn = definedExternally): Unit
 
-external fun skip(options: TestOptions = definedExternally, fn: TestFn = definedExternally): Unit
+@JsName("skip")
+external fun skipAsync(name: String = definedExternally, fn: TestFn = definedExternally): Promise<Unit>
 
-external fun skip(fn: TestFn = definedExternally): Unit
+
+@JsName("skip")
+external fun skipAsync(options: TestOptions = definedExternally, fn: TestFn = definedExternally): Promise<Unit>
+
+
+@JsName("skip")
+external fun skipAsync(fn: TestFn = definedExternally): Promise<Unit>

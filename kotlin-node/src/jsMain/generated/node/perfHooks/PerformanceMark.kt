@@ -14,5 +14,5 @@ external class PerformanceMark : PerformanceEntry {
     override val entryType: EntryType
 
     @JsName("entryType")
-    val markEntryType: String /* 'mark' */
+    val markEntryType: String /* "mark" */
 }

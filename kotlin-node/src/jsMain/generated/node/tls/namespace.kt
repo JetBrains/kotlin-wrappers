@@ -4,13 +4,11 @@
 
 package node.tls
 
-import js.array.ReadonlyArray
+/* import { X509Certificate } from "node:crypto"; */
 
-/* import { X509Certificate } from 'node:crypto'; */
+/* import * as net from "node:net"; */
 
-/* import * as net from 'node:net'; */
-
-/* import * as stream from 'stream'; */
+/* import * as stream from "stream"; */
 
 external val CLIENT_RENEG_LIMIT: Double
 
@@ -58,4 +56,4 @@ external var DEFAULT_CIPHERS: String
  * format) used for verifying peer certificates. This is the default value
  * of the ca option to tls.createSecureContext().
  */
-external val rootCertificates: ReadonlyArray<String>
+external val rootCertificates: Array<out String>

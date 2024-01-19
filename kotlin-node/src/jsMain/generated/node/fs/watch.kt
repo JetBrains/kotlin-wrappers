@@ -33,7 +33,7 @@ external fun watch(
 
 external fun watch(
     filename: PathLike,
-    options: String, /* 'buffer' */
+    options: String, /* "buffer" */
     listener: WatchListener<node.buffer.Buffer> = definedExternally,
 ): FSWatcher
 

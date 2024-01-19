@@ -5,10 +5,10 @@
 package node.url
 
 
-/* import { Blob as NodeBlob } from 'node:buffer'; */
+/* import { Blob as NodeBlob } from "node:buffer"; */
 
-/* import { ClientRequestArgs } from 'node:http'; */
+/* import { ClientRequestArgs } from "node:http"; */
 
-/* import { ParsedUrlQuery, ParsedUrlQueryInput } from 'node:querystring'; */
+/* import { ParsedUrlQuery, ParsedUrlQueryInput } from "node:querystring"; */
 
-/* import { URL as _URL, URLSearchParams as _URLSearchParams } from 'url'; */
+/* import { URL as _URL, URLSearchParams as _URLSearchParams } from "url"; */

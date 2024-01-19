@@ -4,7 +4,7 @@
 package node.test
 
 
-sealed external interface TestStart {
+sealed external interface TestStart : TestLocationInfo {
     /**
      * The test name.
      */

@@ -6,6 +6,5 @@ package node.test
 
 /**
  * The type of a function under Suite.
- * If the test uses callbacks, the callback function is passed as an argument
  */
-typealias SuiteFn = (done: (result: Any? /* use undefined for default */) -> Unit) -> Unit
+typealias SuiteFn = (s: SuiteContext) -> js.promise.PromiseResult<Unit>

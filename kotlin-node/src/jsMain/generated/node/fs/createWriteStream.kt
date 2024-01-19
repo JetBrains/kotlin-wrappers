@@ -34,4 +34,4 @@ package node.fs
  */
 external fun createWriteStream(path: PathLike, options: node.buffer.BufferEncoding = definedExternally): WriteStream
 
-external fun createWriteStream(path: PathLike, options: StreamOptions = definedExternally): WriteStream
+external fun createWriteStream(path: PathLike, options: WriteStreamOptions = definedExternally): WriteStream

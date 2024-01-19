@@ -4,8 +4,6 @@
 
 package node.vm
 
-import js.array.ReadonlyArray
-
 /**
  * Compiles the given code into the provided context (if no context is
  * supplied, the current context is used), and returns it wrapped inside a
@@ -16,6 +14,6 @@ import js.array.ReadonlyArray
  */
 external fun compileFunction(
     code: String,
-    params: ReadonlyArray<String> = definedExternally,
+    params: Array<out String> = definedExternally,
     options: CompileFunctionOptions = definedExternally,
 ): CompileFunctionResult

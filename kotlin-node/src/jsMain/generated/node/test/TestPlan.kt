@@ -4,7 +4,7 @@
 package node.test
 
 
-sealed external interface TestPlan {
+sealed external interface TestPlan : TestLocationInfo {
     /**
      * The nesting level of the test.
      */

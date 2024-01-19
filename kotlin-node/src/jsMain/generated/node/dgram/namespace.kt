@@ -5,8 +5,8 @@
 package node.dgram
 
 
-/* import { AddressInfo } from 'node:net'; */
+/* import { AddressInfo } from "node:net"; */
 
-/* import * as dns from 'node:dns'; */
+/* import * as dns from "node:dns"; */
 
-/* import { EventEmitter, Abortable } from 'node:events'; */
+/* import { Abortable, EventEmitter } from "node:events"; */

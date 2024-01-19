@@ -5,9 +5,9 @@
 package node.process
 
 
-/* import * as tty from 'node:tty'; */
+/* import * as tty from "node:tty"; */
 
-/* import { Worker } from 'node:worker_threads'; */
+/* import { Worker } from "node:worker_threads"; */
 
 
 /* export = process; */

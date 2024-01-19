@@ -75,7 +75,7 @@ external fun mkdtemp(
  */
 external fun mkdtemp(
     prefix: String,
-    options: String, /* 'buffer' */
+    options: String, /* "buffer" */
     callback: (err: node.ErrnoException?, folder: node.buffer.Buffer) -> Unit,
 ): Unit
 

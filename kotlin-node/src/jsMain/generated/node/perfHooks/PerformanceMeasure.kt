@@ -12,5 +12,5 @@ external class PerformanceMeasure : PerformanceEntry {
     override val entryType: EntryType
 
     @JsName("entryType")
-    val measureEntryType: String /* 'measure' */
+    val measureEntryType: String /* "measure" */
 }

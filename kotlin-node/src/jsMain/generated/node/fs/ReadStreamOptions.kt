@@ -5,5 +5,6 @@ package node.fs
 
 
 sealed external interface ReadStreamOptions : StreamOptions {
+    var fs: CreateReadStreamFSImplementation?
     var end: Double?
 }

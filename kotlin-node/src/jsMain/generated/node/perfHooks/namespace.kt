@@ -5,9 +5,9 @@
 package node.perfHooks
 
 
-/* import { AsyncResource } from 'node:async_hooks'; */
+/* import { AsyncResource } from "node:async_hooks"; */
 
 
 external val performance: Performance
 
-/* import { performance as _performance } from 'perf_hooks'; */
+/* import { performance as _performance } from "perf_hooks"; */

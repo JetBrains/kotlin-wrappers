@@ -5,4 +5,4 @@
 package node.tty
 
 
-/* import * as net from 'node:net'; */
+/* import * as net from "node:net"; */

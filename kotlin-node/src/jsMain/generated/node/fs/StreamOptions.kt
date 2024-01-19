@@ -10,10 +10,6 @@ sealed external interface StreamOptions {
     var fd: Any? /* number | promises.FileHandle | undefined */
     var mode: Double?
     var autoClose: Boolean?
-
-    /**
-     * @default false
-     */
     var emitClose: Boolean?
     var start: Double?
     var highWaterMark: Double?

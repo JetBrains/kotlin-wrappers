@@ -4,7 +4,6 @@
 
 package node.dgram
 
-import js.array.ReadonlyArray
 import js.typedarrays.Uint8Array
 import node.events.EventEmitter
 import node.net.AddressInfo
@@ -168,6 +167,18 @@ external class Socket : EventEmitter {
     fun getSendBufferSize(): Double
 
     /**
+     * @since v18.8.0
+     * @return the number of bytes queued for sending.
+     */
+    fun getSendQueueSize(): Double
+
+    /**
+     * @since v18.8.0
+     * @return the number of send requests currently in the queue awaiting to be processed.
+     */
+    fun getSendQueueCount(): Double
+
+    /**
      * By default, binding a socket will cause it to block the Node.js process from
      * exiting as long as the socket is open. The `socket.unref()` method can be used
      * to exclude the socket from the reference counting that keeps the Node.js
@@ -298,7 +309,7 @@ external class Socket : EventEmitter {
     ): Unit
 
     fun send(
-        msg: ReadonlyArray<Any?>,
+        msg: Array<out Any?>,
         port: Number = definedExternally,
         address: String = definedExternally,
         callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
@@ -317,7 +328,7 @@ external class Socket : EventEmitter {
     ): Unit
 
     fun send(
-        msg: ReadonlyArray<Any?>,
+        msg: Array<out Any?>,
         port: Number = definedExternally,
         callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
     ): Unit
@@ -330,7 +341,7 @@ external class Socket : EventEmitter {
     ): Unit
 
     fun send(
-        msg: ReadonlyArray<Any?>,
+        msg: Array<out Any?>,
         callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
     ): Unit
 

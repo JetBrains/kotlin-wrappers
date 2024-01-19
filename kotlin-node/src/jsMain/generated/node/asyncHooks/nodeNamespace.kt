@@ -5,4 +5,4 @@
 package node.asyncHooks
 
 
-/* export * from 'async_hooks'; */
+/* export * from "async_hooks"; */

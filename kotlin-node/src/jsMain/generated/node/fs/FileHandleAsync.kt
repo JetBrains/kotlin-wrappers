@@ -3,7 +3,6 @@
 
 package node.fs
 
-import js.array.ReadonlyArray
 import js.promise.Promise
 import js.promise.await
 import js.typedarrays.Uint8Array
@@ -342,7 +341,7 @@ sealed external interface FileHandle {
      * @since v17.0.0
      * @experimental
      */
-    fun readableWebStream(): ReadableStream<*>
+    fun readableWebStream(options: ReadableWebStreamOptions = definedExternally): ReadableStream<*>
 
     /**
      * Asynchronously reads the entire contents of a file.
@@ -755,7 +754,7 @@ sealed external interface FileHandle {
 
     @JsName("writev")
     fun writevAsync(
-        buffers: ReadonlyArray<js.buffer.ArrayBufferView>,
+        buffers: Array<out js.buffer.ArrayBufferView>,
         position: Number = definedExternally,
     ): Promise<WriteVResult>
 
@@ -767,7 +766,7 @@ sealed external interface FileHandle {
         "DECLARATION_CANT_BE_INLINED",
     )
     suspend inline fun writev(
-        buffers: ReadonlyArray<js.buffer.ArrayBufferView>,
+        buffers: Array<out js.buffer.ArrayBufferView>,
         position: Number = definedExternally,
     ): WriteVResult =
         writevAsync(
@@ -783,7 +782,7 @@ sealed external interface FileHandle {
 
     @JsName("readv")
     fun readvAsync(
-        buffers: ReadonlyArray<js.buffer.ArrayBufferView>,
+        buffers: Array<out js.buffer.ArrayBufferView>,
         position: Number = definedExternally,
     ): Promise<ReadVResult>
 
@@ -795,7 +794,7 @@ sealed external interface FileHandle {
         "DECLARATION_CANT_BE_INLINED",
     )
     suspend inline fun readv(
-        buffers: ReadonlyArray<js.buffer.ArrayBufferView>,
+        buffers: Array<out js.buffer.ArrayBufferView>,
         position: Number = definedExternally,
     ): ReadVResult =
         readvAsync(

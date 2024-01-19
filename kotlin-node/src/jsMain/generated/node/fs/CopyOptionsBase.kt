@@ -27,6 +27,11 @@ sealed external interface CopyOptionsBase {
     var force: Boolean?
 
     /**
+     * Modifiers for copy operation. See `mode` flag of {@link copyFileSync()}
+     */
+    var mode: Double?
+
+    /**
      * When `true` timestamps from `src` will
      * be preserved.
      * @default false

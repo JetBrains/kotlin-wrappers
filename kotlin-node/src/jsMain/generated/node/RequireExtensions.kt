@@ -5,7 +5,7 @@ package node
 
 
 sealed external interface RequireExtensions : Dict<(m: Module, filename: String) -> Any?> {
-    /* '.js': (m: Module, filename: string) => any; */
-    /* '.json': (m: Module, filename: string) => any; */
-    /* '.node': (m: Module, filename: string) => any; */
+    /* ".js": (m: Module, filename: string) => any; */
+    /* ".json": (m: Module, filename: string) => any; */
+    /* ".node": (m: Module, filename: string) => any; */
 }

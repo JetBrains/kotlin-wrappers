@@ -5,4 +5,4 @@
 package node.workerThreads
 
 
-/* export * from 'worker_threads'; */
+/* export * from "worker_threads"; */

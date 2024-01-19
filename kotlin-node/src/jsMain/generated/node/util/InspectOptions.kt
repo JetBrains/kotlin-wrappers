@@ -89,7 +89,7 @@ sealed external interface InspectOptions {
      * the getter function.
      * @default false
      */
-    var getters: Any? /* 'get' | 'set' | boolean | undefined */
+    var getters: Any? /* "get" | "set" | boolean | undefined */
 
     /**
      * If set to `true`, an underscore is used to separate every three digits in all bigints and numbers.

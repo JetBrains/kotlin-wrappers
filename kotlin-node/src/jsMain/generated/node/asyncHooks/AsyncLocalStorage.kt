@@ -112,6 +112,7 @@ external class AsyncLocalStorage<T> {
      * ```
      * @since v13.10.0, v12.17.0
      */
+    fun <R> run(store: T, callback: () -> R): R
     fun <R, TArgs : js.array.ReadonlyArray<Any?>> run(
         store: T,
         callback: Function<R>, /* (...args: TArgs) => R */

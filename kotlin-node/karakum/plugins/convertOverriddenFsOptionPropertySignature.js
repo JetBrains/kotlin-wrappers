@@ -10,8 +10,16 @@ export default function (node, context, render) {
         && ts.isTypeLiteralNode(node.parent)
         && (
             node.name.text === "bigint"
-            || node.name.text === "recursive"
             || node.name.text === "throwIfNoEntry"
+            || (
+                node.name.text === "recursive"
+
+                && ts.isIntersectionTypeNode(node.parent.parent)
+                && node.parent.parent.types[0]
+                && ts.isTypeReferenceNode(node.parent.parent.types[0])
+                && ts.isIdentifier(node.parent.parent.types[0].typeName)
+                && node.parent.parent.types[0].typeName.text === "MakeDirectoryOptions"
+            )
             || (
                 node.name.text === "encoding"
 

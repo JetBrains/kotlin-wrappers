@@ -5,4 +5,4 @@
 package node.net
 
 
-/* export * from 'net'; */
+/* export * from "net"; */

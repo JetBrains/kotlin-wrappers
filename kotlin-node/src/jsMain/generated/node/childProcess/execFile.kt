@@ -4,8 +4,6 @@
 
 package node.childProcess
 
-import js.array.ReadonlyArray
-
 /**
  * The `child_process.execFile()` function is similar to {@link exec} except that it does not spawn a shell by default. Rather, the specified
  * executable `file` is spawned directly as a new process making it slightly more
@@ -73,13 +71,9 @@ external fun execFile(file: String): ChildProcess
 
 external fun execFile(file: String, options: (ExecFileObjectEncodingOptions)?): ChildProcess
 
-external fun execFile(file: String, args: ReadonlyArray<String>? = definedExternally): ChildProcess
+external fun execFile(file: String, args: (Array<out String>)? = definedExternally): ChildProcess
 
-external fun execFile(
-    file: String,
-    args: ReadonlyArray<String>?,
-    options: (ExecFileObjectEncodingOptions)?,
-): ChildProcess
+external fun execFile(file: String, args: (Array<out String>)?, options: (ExecFileObjectEncodingOptions)?): ChildProcess
 
 // no `options` definitely means stdout/stderr are `string`.
 external fun execFile(
@@ -89,7 +83,7 @@ external fun execFile(
 
 external fun execFile(
     file: String,
-    args: ReadonlyArray<String>?,
+    args: (Array<out String>)?,
     callback: (error: ExecFileException?, stdout: String, stderr: String) -> Unit,
 ): ChildProcess
 
@@ -102,7 +96,7 @@ external fun execFile(
 
 external fun execFile(
     file: String,
-    args: ReadonlyArray<String>?,
+    args: (Array<out String>)?,
     options: ExecFileOptionsWithBufferEncoding,
     callback: (error: ExecFileException?, stdout: node.buffer.Buffer, stderr: node.buffer.Buffer) -> Unit,
 ): ChildProcess
@@ -116,7 +110,7 @@ external fun execFile(
 
 external fun execFile(
     file: String,
-    args: ReadonlyArray<String>?,
+    args: (Array<out String>)?,
     options: ExecFileOptionsWithStringEncoding,
     callback: (error: ExecFileException?, stdout: String, stderr: String) -> Unit,
 ): ChildProcess
@@ -131,7 +125,7 @@ external fun execFile(
 
 external fun execFile(
     file: String,
-    args: ReadonlyArray<String>?,
+    args: (Array<out String>)?,
     options: ExecFileOptionsWithOtherEncoding,
     callback: (error: ExecFileException?, stdout: Any /* string | Buffer */, stderr: Any /* string | Buffer */) -> Unit,
 ): ChildProcess
@@ -145,7 +139,7 @@ external fun execFile(
 
 external fun execFile(
     file: String,
-    args: ReadonlyArray<String>?,
+    args: (Array<out String>)?,
     options: ExecFileOptions,
     callback: (error: ExecFileException?, stdout: String, stderr: String) -> Unit,
 ): ChildProcess
@@ -159,7 +153,7 @@ external fun execFile(
 
 external fun execFile(
     file: String,
-    args: ReadonlyArray<String>?,
+    args: (Array<out String>)?,
     options: (ExecFileObjectEncodingOptions)?,
     callback: ((error: ExecFileException?, stdout: Any /* string | Buffer */, stderr: Any /* string | Buffer */) -> Unit)?,
 ): ChildProcess

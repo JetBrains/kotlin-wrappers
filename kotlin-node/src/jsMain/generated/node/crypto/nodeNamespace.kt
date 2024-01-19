@@ -5,4 +5,4 @@
 package node.crypto
 
 
-/* export * from 'crypto'; */
+/* export * from "crypto"; */

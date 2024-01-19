@@ -17,12 +17,16 @@ sealed external interface TestsStream : node.ReadableStream {
     fun addListener(event: TestsStreamEvent.TEST_PASS, listener: (data: TestPass) -> Unit): Unit /* this */
     fun addListener(event: TestsStreamEvent.TEST_PLAN, listener: (data: TestPlan) -> Unit): Unit /* this */
     fun addListener(event: TestsStreamEvent.TEST_START, listener: (data: TestStart) -> Unit): Unit /* this */
+    fun addListener(event: TestsStreamEvent.TEST_STDERR, listener: (data: TestStderr) -> Unit): Unit /* this */
+    fun addListener(event: TestsStreamEvent.TEST_STDOUT, listener: (data: TestStdout) -> Unit): Unit /* this */
     fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun emit(event: TestsStreamEvent.TEST_DIAGNOSTIC, data: DiagnosticData): Boolean
     fun emit(event: TestsStreamEvent.TEST_FAIL, data: TestFail): Boolean
     fun emit(event: TestsStreamEvent.TEST_PASS, data: TestPass): Boolean
     fun emit(event: TestsStreamEvent.TEST_PLAN, data: TestPlan): Boolean
     fun emit(event: TestsStreamEvent.TEST_START, data: TestStart): Boolean
+    fun emit(event: TestsStreamEvent.TEST_STDERR, data: TestStderr): Boolean
+    fun emit(event: TestsStreamEvent.TEST_STDOUT, data: TestStdout): Boolean
     fun emit(event: String, vararg args: Any?): Boolean
 
     fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
@@ -31,12 +35,16 @@ sealed external interface TestsStream : node.ReadableStream {
     fun on(event: TestsStreamEvent.TEST_PASS, listener: (data: TestPass) -> Unit): Unit /* this */
     fun on(event: TestsStreamEvent.TEST_PLAN, listener: (data: TestPlan) -> Unit): Unit /* this */
     fun on(event: TestsStreamEvent.TEST_START, listener: (data: TestStart) -> Unit): Unit /* this */
+    fun on(event: TestsStreamEvent.TEST_STDERR, listener: (data: TestStderr) -> Unit): Unit /* this */
+    fun on(event: TestsStreamEvent.TEST_STDOUT, listener: (data: TestStdout) -> Unit): Unit /* this */
     fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun once(event: TestsStreamEvent.TEST_DIAGNOSTIC, listener: (data: DiagnosticData) -> Unit): Unit /* this */
     fun once(event: TestsStreamEvent.TEST_FAIL, listener: (data: TestFail) -> Unit): Unit /* this */
     fun once(event: TestsStreamEvent.TEST_PASS, listener: (data: TestPass) -> Unit): Unit /* this */
     fun once(event: TestsStreamEvent.TEST_PLAN, listener: (data: TestPlan) -> Unit): Unit /* this */
     fun once(event: TestsStreamEvent.TEST_START, listener: (data: TestStart) -> Unit): Unit /* this */
+    fun once(event: TestsStreamEvent.TEST_STDERR, listener: (data: TestStderr) -> Unit): Unit /* this */
+    fun once(event: TestsStreamEvent.TEST_STDOUT, listener: (data: TestStdout) -> Unit): Unit /* this */
     fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun prependListener(
         event: TestsStreamEvent.TEST_DIAGNOSTIC,
@@ -47,6 +55,8 @@ sealed external interface TestsStream : node.ReadableStream {
     fun prependListener(event: TestsStreamEvent.TEST_PASS, listener: (data: TestPass) -> Unit): Unit /* this */
     fun prependListener(event: TestsStreamEvent.TEST_PLAN, listener: (data: TestPlan) -> Unit): Unit /* this */
     fun prependListener(event: TestsStreamEvent.TEST_START, listener: (data: TestStart) -> Unit): Unit /* this */
+    fun prependListener(event: TestsStreamEvent.TEST_STDERR, listener: (data: TestStderr) -> Unit): Unit /* this */
+    fun prependListener(event: TestsStreamEvent.TEST_STDOUT, listener: (data: TestStdout) -> Unit): Unit /* this */
     fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun prependOnceListener(
         event: TestsStreamEvent.TEST_DIAGNOSTIC,
@@ -57,5 +67,7 @@ sealed external interface TestsStream : node.ReadableStream {
     fun prependOnceListener(event: TestsStreamEvent.TEST_PASS, listener: (data: TestPass) -> Unit): Unit /* this */
     fun prependOnceListener(event: TestsStreamEvent.TEST_PLAN, listener: (data: TestPlan) -> Unit): Unit /* this */
     fun prependOnceListener(event: TestsStreamEvent.TEST_START, listener: (data: TestStart) -> Unit): Unit /* this */
+    fun prependOnceListener(event: TestsStreamEvent.TEST_STDERR, listener: (data: TestStderr) -> Unit): Unit /* this */
+    fun prependOnceListener(event: TestsStreamEvent.TEST_STDOUT, listener: (data: TestStdout) -> Unit): Unit /* this */
     fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 }

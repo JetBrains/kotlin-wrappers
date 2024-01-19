@@ -7,10 +7,16 @@ sealed external interface TestFailDetails {
     /**
      * The duration of the test in milliseconds.
      */
-    var duration: Double
+    var duration_ms: Double
 
     /**
      * The error thrown by the test.
      */
     var error: Throwable /* JsError */
+
+    /**
+     * The type of the test, used to denote whether this is a suite.
+     * @since 18.17.0
+     */
+    var type: String /* "suite" */?
 }

@@ -5,4 +5,4 @@
 package node.dns
 
 
-/* export * from 'dns'; */
+/* export * from "dns"; */

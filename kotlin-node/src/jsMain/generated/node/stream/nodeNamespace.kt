@@ -5,6 +5,6 @@
 package node.stream
 
 
-/* import stream = require('stream'); */
+/* import stream = require("stream"); */
 
 /* export = stream; */

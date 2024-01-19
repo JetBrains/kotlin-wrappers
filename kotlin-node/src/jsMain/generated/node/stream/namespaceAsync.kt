@@ -4,6 +4,6 @@
 
 package node.stream
 
-/* import { FinishedOptions, PipelineSource, PipelineTransform, PipelineDestination, PipelinePromise, PipelineOptions } from 'node:stream'; */
+/* import { FinishedOptions, PipelineDestination, PipelineOptions, PipelinePromise, PipelineSource, PipelineTransform, } from "node:stream"; */
 
-/* export * from 'stream/promises'; */
+/* export * from "stream/promises"; */

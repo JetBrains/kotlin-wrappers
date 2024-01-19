@@ -5,4 +5,4 @@
 package node.tty
 
 
-/* export * from 'tty'; */
+/* export * from "tty"; */

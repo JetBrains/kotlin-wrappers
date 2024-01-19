@@ -5,6 +5,6 @@
 package node.path
 
 
-/* import path = require('path'); */
+/* import path = require("path"); */
 
 /* export = path; */

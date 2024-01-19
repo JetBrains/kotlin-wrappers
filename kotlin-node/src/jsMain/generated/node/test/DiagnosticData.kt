@@ -4,7 +4,7 @@
 package node.test
 
 
-sealed external interface DiagnosticData {
+sealed external interface DiagnosticData : TestLocationInfo {
     /**
      * The diagnostic message.
      */

@@ -5,6 +5,6 @@
 package node.events
 
 
-/* import events = require('events'); */
+/* import events = require("events"); */
 
 /* export = events; */

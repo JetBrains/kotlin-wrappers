@@ -9,33 +9,33 @@ package node.http
 sealed external interface IncomingHttpHeaders : node.Dict<Any /* string | string[] */> {
     var accept: String?
 
-    /* 'accept-language'?: string | undefined; */
-    /* 'accept-patch'?: string | undefined; */
-    /* 'accept-ranges'?: string | undefined; */
-    /* 'access-control-allow-credentials'?: string | undefined; */
-    /* 'access-control-allow-headers'?: string | undefined; */
-    /* 'access-control-allow-methods'?: string | undefined; */
-    /* 'access-control-allow-origin'?: string | undefined; */
-    /* 'access-control-expose-headers'?: string | undefined; */
-    /* 'access-control-max-age'?: string | undefined; */
-    /* 'access-control-request-headers'?: string | undefined; */
-    /* 'access-control-request-method'?: string | undefined; */
+    /* "accept-language"?: string | undefined; */
+    /* "accept-patch"?: string | undefined; */
+    /* "accept-ranges"?: string | undefined; */
+    /* "access-control-allow-credentials"?: string | undefined; */
+    /* "access-control-allow-headers"?: string | undefined; */
+    /* "access-control-allow-methods"?: string | undefined; */
+    /* "access-control-allow-origin"?: string | undefined; */
+    /* "access-control-expose-headers"?: string | undefined; */
+    /* "access-control-max-age"?: string | undefined; */
+    /* "access-control-request-headers"?: string | undefined; */
+    /* "access-control-request-method"?: string | undefined; */
     var age: String?
     var allow: String?
 
-    /* 'alt-svc'?: string | undefined; */
+    /* "alt-svc"?: string | undefined; */
     var authorization: String?
 
-    /* 'cache-control'?: string | undefined; */
+    /* "cache-control"?: string | undefined; */
     var connection: String?
 
-    /* 'content-disposition'?: string | undefined; */
-    /* 'content-encoding'?: string | undefined; */
-    /* 'content-language'?: string | undefined; */
-    /* 'content-length'?: string | undefined; */
-    /* 'content-location'?: string | undefined; */
-    /* 'content-range'?: string | undefined; */
-    /* 'content-type'?: string | undefined; */
+    /* "content-disposition"?: string | undefined; */
+    /* "content-encoding"?: string | undefined; */
+    /* "content-language"?: string | undefined; */
+    /* "content-length"?: string | undefined; */
+    /* "content-location"?: string | undefined; */
+    /* "content-range"?: string | undefined; */
+    /* "content-type"?: string | undefined; */
     var cookie: String?
     var date: String?
     var etag: String?
@@ -45,38 +45,38 @@ sealed external interface IncomingHttpHeaders : node.Dict<Any /* string | string
     var from: String?
     var host: String?
 
-    /* 'if-match'?: string | undefined; */
-    /* 'if-modified-since'?: string | undefined; */
-    /* 'if-none-match'?: string | undefined; */
-    /* 'if-unmodified-since'?: string | undefined; */
-    /* 'last-modified'?: string | undefined; */
+    /* "if-match"?: string | undefined; */
+    /* "if-modified-since"?: string | undefined; */
+    /* "if-none-match"?: string | undefined; */
+    /* "if-unmodified-since"?: string | undefined; */
+    /* "last-modified"?: string | undefined; */
     var location: String?
     var origin: String?
     var pragma: String?
 
-    /* 'proxy-authenticate'?: string | undefined; */
-    /* 'proxy-authorization'?: string | undefined; */
-    /* 'public-key-pins'?: string | undefined; */
+    /* "proxy-authenticate"?: string | undefined; */
+    /* "proxy-authorization"?: string | undefined; */
+    /* "public-key-pins"?: string | undefined; */
     var range: String?
     var referer: String?
 
-    /* 'retry-after'?: string | undefined; */
-    /* 'sec-websocket-accept'?: string | undefined; */
-    /* 'sec-websocket-extensions'?: string | undefined; */
-    /* 'sec-websocket-key'?: string | undefined; */
-    /* 'sec-websocket-protocol'?: string | undefined; */
-    /* 'sec-websocket-version'?: string | undefined; */
-    /* 'set-cookie'?: string[] | undefined; */
-    /* 'strict-transport-security'?: string | undefined; */
+    /* "retry-after"?: string | undefined; */
+    /* "sec-websocket-accept"?: string | undefined; */
+    /* "sec-websocket-extensions"?: string | undefined; */
+    /* "sec-websocket-key"?: string | undefined; */
+    /* "sec-websocket-protocol"?: string | undefined; */
+    /* "sec-websocket-version"?: string | undefined; */
+    /* "set-cookie"?: string[] | undefined; */
+    /* "strict-transport-security"?: string | undefined; */
     var tk: String?
     var trailer: String?
 
-    /* 'transfer-encoding'?: string | undefined; */
+    /* "transfer-encoding"?: string | undefined; */
     var upgrade: String?
 
-    /* 'user-agent'?: string | undefined; */
+    /* "user-agent"?: string | undefined; */
     var vary: String?
     var via: String?
     var warning: String?
-    /* 'www-authenticate'?: string | undefined; */
+    /* "www-authenticate"?: string | undefined; */
 }

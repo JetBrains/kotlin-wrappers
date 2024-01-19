@@ -5,8 +5,8 @@
 package node.net
 
 
-/* import * as stream from 'node:stream'; */
+/* import * as stream from "node:stream"; */
 
-/* import { Abortable, EventEmitter } from 'node:events'; */
+/* import { Abortable, EventEmitter } from "node:events"; */
 
-/* import * as dns from 'node:dns'; */
+/* import * as dns from "node:dns"; */

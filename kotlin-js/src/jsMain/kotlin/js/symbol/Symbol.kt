@@ -20,6 +20,8 @@ open external class Symbol {
     object toPrimitive : Symbol
     object toStringTag : Symbol
     object unscopables : Symbol
+    object dispose : Symbol
+    object asyncDispose : Symbol
 
     companion object {
         fun `for`(key: String): Symbol

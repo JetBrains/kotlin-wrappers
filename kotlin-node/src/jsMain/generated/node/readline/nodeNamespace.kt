@@ -5,4 +5,4 @@
 package node.readline
 
 
-/* export * from 'readline'; */
+/* export * from "readline"; */

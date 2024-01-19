@@ -5,6 +5,6 @@
 package node.process
 
 
-/* import process = require('process'); */
+/* import process = require("process"); */
 
 /* export = process; */

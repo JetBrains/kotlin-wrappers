@@ -5,15 +5,15 @@
 package node.http
 
 
-/* import * as stream from 'node:stream'; */
+/* import * as stream from "node:stream"; */
 
-/* import { URL } from 'node:url'; */
+/* import { URL } from "node:url"; */
 
-/* import { EventEmitter } from 'node:events'; */
+/* import { EventEmitter } from "node:events"; */
 
-/* import { LookupOptions } from 'node:dns'; */
+/* import { LookupOptions } from "node:dns"; */
 
-/* import { TcpSocketConnectOpts, Socket, Server as NetServer, LookupFunction } from 'node:net'; */
+/* import { LookupFunction, Server as NetServer, Socket, TcpSocketConnectOpts } from "node:net"; */
 
 external val METHODS: js.array.ReadonlyArray<String>
 

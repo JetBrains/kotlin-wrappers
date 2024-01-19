@@ -4,8 +4,6 @@
 
 package node.childProcess
 
-import js.array.ReadonlyArray
-
 /**
  * The `child_process.execFileSync()` method is generally identical to {@link execFile} with the exception that the method will not
  * return until the child process has fully closed. When a timeout has been
@@ -34,22 +32,18 @@ external fun execFileSync(file: String, options: ExecFileSyncOptionsWithBufferEn
 
 external fun execFileSync(file: String, options: ExecFileSyncOptions = definedExternally): Any /* string | Buffer */
 
-external fun execFileSync(file: String, args: ReadonlyArray<String>): node.buffer.Buffer
+external fun execFileSync(file: String, args: Array<out String>): node.buffer.Buffer
+
+external fun execFileSync(file: String, args: Array<out String>, options: ExecFileSyncOptionsWithStringEncoding): String
 
 external fun execFileSync(
     file: String,
-    args: ReadonlyArray<String>,
-    options: ExecFileSyncOptionsWithStringEncoding,
-): String
-
-external fun execFileSync(
-    file: String,
-    args: ReadonlyArray<String>,
+    args: Array<out String>,
     options: ExecFileSyncOptionsWithBufferEncoding,
 ): node.buffer.Buffer
 
 external fun execFileSync(
     file: String,
-    args: ReadonlyArray<String> = definedExternally,
+    args: Array<out String> = definedExternally,
     options: ExecFileSyncOptions = definedExternally,
 ): Any /* string | Buffer */

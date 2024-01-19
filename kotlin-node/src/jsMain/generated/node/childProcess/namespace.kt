@@ -5,12 +5,12 @@
 package node.childProcess
 
 
-/* import { ObjectEncodingOptions } from 'node:fs'; */
+/* import { ObjectEncodingOptions } from "node:fs"; */
 
-/* import { EventEmitter, Abortable } from 'node:events'; */
+/* import { Abortable, EventEmitter } from "node:events"; */
 
-/* import * as net from 'node:net'; */
+/* import * as net from "node:net"; */
 
-/* import { Writable, Readable, Stream, Pipe } from 'node:stream'; */
+/* import { Pipe, Readable, Stream, Writable } from "node:stream"; */
 
-/* import { URL } from 'node:url'; */
+/* import { URL } from "node:url"; */

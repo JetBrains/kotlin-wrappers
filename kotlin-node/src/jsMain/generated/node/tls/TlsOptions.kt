@@ -26,7 +26,6 @@ sealed external interface TlsOptions : SecureContextOptions, CommonConnectionOpt
     override var ticketKeys: node.buffer.Buffer?
 
     /**
-     *
      * @param socket
      * @param identity identity parameter sent from the client.
      * @return pre-shared key that must either be

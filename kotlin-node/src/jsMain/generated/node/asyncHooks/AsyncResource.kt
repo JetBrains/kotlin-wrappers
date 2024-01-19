@@ -98,7 +98,6 @@ open external class AsyncResource {
     fun asyncId(): Double
 
     /**
-     *
      * @return The same `triggerAsyncId` that is passed to the `AsyncResource` constructor.
      */
     fun triggerAsyncId(): Double

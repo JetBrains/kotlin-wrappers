@@ -4,6 +4,7 @@
 
 package node.test
 
+import js.promise.Promise
 
 /**
  * @since v18.6.0
@@ -12,14 +13,22 @@ package node.test
  * @param options Configuration options for the suite
  * @param fn The function under suite. Default: A no-op function.
  */
-external fun describe(
+
+@JsName("describe")
+external fun describeAsync(
     name: String = definedExternally,
     options: TestOptions = definedExternally,
     fn: SuiteFn = definedExternally,
-): Unit
+): Promise<Unit>
 
-external fun describe(name: String = definedExternally, fn: SuiteFn = definedExternally): Unit
 
-external fun describe(options: TestOptions = definedExternally, fn: SuiteFn = definedExternally): Unit
+@JsName("describe")
+external fun describeAsync(name: String = definedExternally, fn: SuiteFn = definedExternally): Promise<Unit>
 
-external fun describe(fn: SuiteFn = definedExternally): Unit
+
+@JsName("describe")
+external fun describeAsync(options: TestOptions = definedExternally, fn: SuiteFn = definedExternally): Promise<Unit>
+
+
+@JsName("describe")
+external fun describeAsync(fn: SuiteFn = definedExternally): Promise<Unit>

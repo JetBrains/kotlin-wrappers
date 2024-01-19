@@ -5,7 +5,7 @@
 package node.util
 
 
-/* import * as types from 'node:util/types'; */
+/* import * as types from "node:util/types"; */
 
 
 external val debug: (section: String, callback: ((fn: DebugLoggerFunction) -> Unit)? /* use undefined for default */) -> DebugLogger
@@ -13,4 +13,4 @@ external val debug: (section: String, callback: ((fn: DebugLoggerFunction) -> Un
 
 /* export { types }; */
 
-/* import { TextDecoder as _TextDecoder, TextEncoder as _TextEncoder } from 'util'; */
+/* import { TextDecoder as _TextDecoder, TextEncoder as _TextEncoder } from "util"; */

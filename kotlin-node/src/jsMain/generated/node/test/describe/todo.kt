@@ -5,18 +5,29 @@
 
 package node.test.describe
 
+import js.promise.Promise
 import node.test.SuiteFn
 import node.test.TestOptions
 
-// Shorthand for marking a suite as `TODO`, same as `describe([name], { todo: true }[, fn])`.
-external fun todo(
+/**
+ * Shorthand for marking a suite as `TODO`, same as `describe([name], { todo: true }[, fn])`.
+ */
+
+@JsName("todo")
+external fun todoAsync(
     name: String = definedExternally,
     options: TestOptions = definedExternally,
     fn: SuiteFn = definedExternally,
-): Unit
+): Promise<Unit>
 
-external fun todo(name: String = definedExternally, fn: SuiteFn = definedExternally): Unit
 
-external fun todo(options: TestOptions = definedExternally, fn: SuiteFn = definedExternally): Unit
+@JsName("todo")
+external fun todoAsync(name: String = definedExternally, fn: SuiteFn = definedExternally): Promise<Unit>
 
-external fun todo(fn: SuiteFn = definedExternally): Unit
+
+@JsName("todo")
+external fun todoAsync(options: TestOptions = definedExternally, fn: SuiteFn = definedExternally): Promise<Unit>
+
+
+@JsName("todo")
+external fun todoAsync(fn: SuiteFn = definedExternally): Promise<Unit>

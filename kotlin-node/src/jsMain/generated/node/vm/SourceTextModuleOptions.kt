@@ -12,7 +12,7 @@ sealed external interface SourceTextModuleOptions {
      * @default 'vm:module(i)' where i is a context-specific ascending index.
      */
     var identifier: String?
-    var cachedData: Any? /* ScriptOptions['cachedData'] | undefined */
+    var cachedData: Any? /* ScriptOptions["cachedData"] | undefined */
     var context: Context?
     var lineOffset: Double?
     var columnOffset: Double?
@@ -21,5 +21,5 @@ sealed external interface SourceTextModuleOptions {
      * Called during evaluation of this module to initialize the `import.meta`.
      */
     var initializeImportMeta: ((meta: ImportMeta, module: SourceTextModule) -> Unit)?
-    var importModuleDynamically: ((specifier: String, script: Script, importAssertions: Any) -> Module)?
+    var importModuleDynamically: ((specifier: String, script: Script, importAttributes: Any) -> Module)?
 }

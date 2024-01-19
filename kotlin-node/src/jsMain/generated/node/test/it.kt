@@ -4,6 +4,7 @@
 
 package node.test
 
+import js.promise.Promise
 
 /**
  * @since v18.6.0
@@ -13,14 +14,22 @@ package node.test
  * @param fn The function under test. If the test uses callbacks, the callback function is
  *    passed as the second argument. Default: A no-op function.
  */
-external fun it(
+
+@JsName("it")
+external fun itAsync(
     name: String = definedExternally,
     options: TestOptions = definedExternally,
     fn: TestFn = definedExternally,
-): Unit
+): Promise<Unit>
 
-external fun it(name: String = definedExternally, fn: TestFn = definedExternally): Unit
 
-external fun it(options: TestOptions = definedExternally, fn: TestFn = definedExternally): Unit
+@JsName("it")
+external fun itAsync(name: String = definedExternally, fn: TestFn = definedExternally): Promise<Unit>
 
-external fun it(fn: TestFn = definedExternally): Unit
+
+@JsName("it")
+external fun itAsync(options: TestOptions = definedExternally, fn: TestFn = definedExternally): Promise<Unit>
+
+
+@JsName("it")
+external fun itAsync(fn: TestFn = definedExternally): Promise<Unit>

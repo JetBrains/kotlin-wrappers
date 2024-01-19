@@ -11,6 +11,8 @@ sealed external interface TestsStreamEvent : node.events.EventType {
     sealed interface TEST_PASS : TestsStreamEvent
     sealed interface TEST_PLAN : TestsStreamEvent
     sealed interface TEST_START : TestsStreamEvent
+    sealed interface TEST_STDERR : TestsStreamEvent
+    sealed interface TEST_STDOUT : TestsStreamEvent
 
     companion object {
         @seskar.js.JsValue("test:diagnostic")
@@ -27,5 +29,11 @@ sealed external interface TestsStreamEvent : node.events.EventType {
 
         @seskar.js.JsValue("test:start")
         val TEST_START: TEST_START
+
+        @seskar.js.JsValue("test:stderr")
+        val TEST_STDERR: TEST_STDERR
+
+        @seskar.js.JsValue("test:stdout")
+        val TEST_STDOUT: TEST_STDOUT
     }
 }

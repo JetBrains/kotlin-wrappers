@@ -65,3 +65,22 @@ external fun testAsync(fn: TestFn = definedExternally): Promise<Unit>
  * The `node:test` module provides a standalone testing module.
  * @see [source](https://github.com/nodejs/node/blob/v18.x/lib/test.js)
  */
+
+
+/**
+ * The `node:test/reporters` module exposes the builtin-reporters for `node:test`.
+ * To access it:
+ *
+ * ```js
+ * import test from 'node:test/reporters';
+ * ```
+ *
+ * This module is only available under the `node:` scheme. The following will not
+ * work:
+ *
+ * ```js
+ * import test from 'test/reporters';
+ * ```
+ * @since v18.17.0
+ * @see [source](https://github.com/nodejs/node/blob/v18.17.0/lib/test/reporters.js)
+ */

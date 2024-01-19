@@ -33,6 +33,12 @@
     ],
     "output": "src/jsMain/generated",
     "ignoreOutput": [
+        "**/_FormData.kt",
+        "**/_Headers.kt",
+        "**/_Request.kt",
+        "**/_RequestInit.kt",
+        "**/_Response.kt",
+        "**/_ResponseInit.kt",
         "**/NodeRequire.kt",
         "**/NodeRequireResolve.kt",
         "**/NodeModule.kt",
@@ -69,6 +75,8 @@
         "**/dns/resolve/**",
         "**/dns/Resolver.kt",
         "**/dns/getServersAsync.kt",
+        "**/dns/getDefaultResultOrderAsync.kt",
+        "**/dns/GetDefaultResultOrderResultAsync.kt",
         "**/dns/setDefaultResultOrderAsync.kt",
         "**/dns/SetDefaultResultOrderOrderAsync.kt",
         "**/dns/setServersAsync.kt",
@@ -171,7 +179,7 @@
         "SuspendAsync.kt": "Suspend.kt",
         "AsyncOptionsAsync.kt": "OptionsAsync.kt",
         "^node/RequireResolve.kt": "node/NodeRequireResolve.kt",
-        "^nodejs": "node",
+        "^global/nodejs": "node",
         "^node/async_hooks/namespace.kt": "node/asyncHooks/nodeNamespace.kt",
         "^node/asyncHooks.kt": "node/asyncHooks/asyncHooks.kt",
         "^async_hooks": "node/asyncHooks",
@@ -179,6 +187,7 @@
         "^node/buffer/global/namespace.kt": "node/buffer/nodeGlobalNamespace.kt",
         "^node/buffer.kt": "node/buffer/bufferModule.kt",
         "^buffer/global/namespace.kt": "node/buffer/globalNamespace.kt",
+        "^buffer/global/nodejs/namespace.kt": "node/buffer/nodejsGlobalNamespace.kt",
         "^buffer": "node/buffer",
         "buffer/global/(.+)\\.kt": "buffer/$1.kt",
         "^node/child_process/namespace.kt": "node/childProcess/nodeNamespace.kt",
@@ -201,6 +210,9 @@
         "^events/eventemitter/namespace.kt": "node/events/eventEmitterNamespace.kt",
         "^events": "node/events",
         "events/eventemitter/Abortable.kt": "events/Abortable.kt",
+        "events/eventemitter/EventEmitterAsyncResource.kt": "events/EventEmitterAsyncResource.kt",
+        "events/eventemitter/EventEmitterAsyncResourceOptions.kt": "events/EventEmitterAsyncResourceOptions.kt",
+        "events/eventemitter/EventEmitterReferencingAsyncResource.kt": "events/EventEmitterReferencingAsyncResource.kt",
         "^node/fs/namespace.kt": "node/fs/nodeNamespace.kt",
         "^node/fs.kt": "node/fs/fs.kt",
         "^fs": "node/fs",
@@ -244,8 +256,22 @@
         "stream/internal/namespace.kt": "stream/internalNamespace.kt",
         "stream/internal/(.+)\\.kt": "stream/$1.kt",
         "^node/test/namespace.kt": "node/test/nodeNamespace.kt",
+        "^node/test/test/namespace.kt": "node/test/nodeTestNamespace.kt",
         "^node/test.kt": "node/test/test.kt",
         "^test": "node/test",
+        "test/test.kt": "test/test.fun.kt",
+        "TestLocationInfo.kt": "test/TestLocationInfo.kt",
+        "DiagnosticData.kt":"test/DiagnosticData.kt",
+        "TestFail.kt": "test/TestFail.kt",
+        "TestFailDetails.kt": "test/TestFailDetails.kt",
+        "TestPass.kt":"test/TestPass.kt",
+        "TestPassDetails.kt":"test/TestPassDetails.kt",
+        "TestPlan.kt": "test/TestPlan.kt",
+        "TestStart.kt":"test/TestStart.kt",
+        "TestStderr.kt": "test/TestStderr.kt",
+        "TestStdout.kt":"test/TestStdout.kt",
+        "TestEnqueue.kt": "test/TestEnqueue.kt",
+        "TestDequeue.kt":"test/TestDequeue.kt",
         "^node/tls/namespace.kt": "node/tls/nodeNamespace.kt",
         "^node/tls.kt": "node/tls/tls.kt",
         "^tls": "node/tls",
@@ -417,8 +443,17 @@
             "web.abort.AbortSignal"
         ],
         "events/EventEmitter.kt": [
+            "js.disposable.Disposable",
             "js.iterable.AsyncIterableIterator",
-            "js.promise.Promise"
+            "js.promise.Promise",
+            "web.abort.AbortSignal",
+            "web.events.Event"
+        ],
+        "events/EventEmitterAsyncResourceOptions.kt": [
+            "node.asyncHooks.AsyncResourceOptions"
+        ],
+        "events/EventEmitterReferencingAsyncResource.kt": [
+            "node.asyncHooks.AsyncResource"
         ],
         "events/StaticEventEmitterOptions.kt": [
             "web.abort.AbortSignal"
@@ -639,6 +674,9 @@
         "readline/ReadlineAsync.kt": [
             "js.promise.await"
         ],
+        "stream/ArrayOptions.kt": [
+            "web.abort.AbortSignal"
+        ],
         "stream/addAbortSignal.kt": [
             "web.abort.AbortSignal"
         ],
@@ -674,13 +712,19 @@
         "stream/Readable.kt": [
             "js.typedarrays.Uint8Array",
             "js.iterable.AsyncIterable",
+            "js.iterable.AsyncIterableIterator",
+            "js.promise.Promise",
             "node.ReadableStreamPipeOptions",
             "node.WritableStream"
+        ],
+        "stream/StreamComposeOptions.kt": [
+            "web.abort.AbortSignal"
         ],
         "stream/StreamOptions.kt": [
             "node.events.Abortable"
         ],
         "stream/Stream.kt": [
+            "js.iterable.AsyncIterable",
             "node.events.EventEmitter"
         ],
         "stream/Writable.kt": [
@@ -693,6 +737,12 @@
         "test/RunOptions.kt": [
             "web.abort.AbortSignal"
         ],
+        "test/SuiteContext.kt": [
+            "web.abort.AbortSignal"
+        ],
+        "test/Test.kt": [
+            "node.asyncHooks.AsyncResource"
+        ],
         "test/TestContext.kt": [
             "web.abort.AbortSignal"
         ],
@@ -702,24 +752,100 @@
         "test/TestOptions.kt": [
             "web.abort.AbortSignal"
         ],
-        "test/test.kt": [
+        "test/describe.kt": [
             "js.promise.Promise"
         ],
+        "test/describe/only.kt": [
+            "js.promise.Promise",
+            "node.test.SuiteFn",
+            "node.test.TestOptions"
+        ],
+        "test/describe/onlySuspend.kt": [
+            "js.promise.Promise",
+            "node.test.SuiteFn",
+            "node.test.TestOptions"
+        ],
         "test/describe/skip.kt": [
+            "js.promise.Promise",
+            "node.test.SuiteFn",
+            "node.test.TestOptions"
+        ],
+        "test/describe/skipSuspend.kt": [
+            "js.promise.Promise",
             "node.test.SuiteFn",
             "node.test.TestOptions"
         ],
         "test/describe/todo.kt": [
+            "js.promise.Promise",
             "node.test.SuiteFn",
             "node.test.TestOptions"
         ],
+        "test/describe/todoSuspend.kt": [
+            "js.promise.Promise",
+            "node.test.SuiteFn",
+            "node.test.TestOptions"
+        ],
+        "test/it.kt": [
+            "js.promise.Promise",
+            "node.test.TestFn",
+            "node.test.TestOptions"
+        ],
+        "test/it/only.kt": [
+            "js.promise.Promise",
+            "node.test.TestFn",
+            "node.test.TestOptions"
+        ],
+        "test/it/onlySuspend.kt": [
+            "js.promise.Promise",
+            "node.test.TestFn",
+            "node.test.TestOptions"
+        ],
         "test/it/skip.kt": [
+            "js.promise.Promise",
+            "node.test.TestFn",
+            "node.test.TestOptions"
+        ],
+        "test/it/skipSuspend.kt": [
+            "js.promise.Promise",
             "node.test.TestFn",
             "node.test.TestOptions"
         ],
         "test/it/todo.kt": [
+            "js.promise.Promise",
             "node.test.TestFn",
             "node.test.TestOptions"
+        ],
+        "test/it/todoSuspend.kt": [
+            "js.promise.Promise",
+            "node.test.TestFn",
+            "node.test.TestOptions"
+        ],
+        "test/only.kt": [
+            "js.promise.Promise"
+        ],
+        "test/skip.kt": [
+            "js.promise.Promise"
+        ],
+        "test/test.fun.kt": [
+            "js.promise.Promise"
+        ],
+        "test/todo.kt": [
+            "js.promise.Promise"
+        ],
+        "test/reporters/Spec.kt": [
+            "node.stream.Transform"
+        ],
+        "test/reporters/TestEventGenerator.kt": [
+            "js.generator.AsyncGenerator"
+        ],
+        "test/reporters/dot.kt": [
+            "js.generator.AsyncGenerator"
+        ],
+        "test/reporters/junit.kt": [
+            "js.generator.AsyncGenerator"
+        ],
+        "test/reporters/tap.kt": [
+            "js.generator.AsyncGenerator"
         ],
         "tls/TLSSocket.kt": [
             "node.crypto.X509Certificate"
@@ -863,11 +989,11 @@
         "node:worker_threads": "ignore"
     },
     "conflictResolutionStrategy": {
-        "LookupServiceResultPayload": "replace",
-        "AppendFileOptionsAsync": "replace",
-        "WriteFileOptionsAsync": "replace",
-        "LstatBigIntOptsAsync": "replace",
-        "LstatOptsAsync": "replace",
+        "LookupServiceResultPayloadAsync.kt": "replace",
+        "AppendFileOptionsAsync.kt": "replace",
+        "WriteFileOptionsAsync.kt": "replace",
+        "LstatBigIntOptsAsync.kt": "replace",
+        "LstatOptsAsync.kt": "replace",
         "MkdirOptionsAsync.kt": "replace",
         "MkdirRecursiveOptionsAsync.kt": "replace",
         "ReadFileOptionsAsync.kt": "replace",
@@ -885,9 +1011,10 @@
         "FileHandleWriteStringResultPayloadAsync.kt": "replace",
         "ExecStringOptions.kt": "replace",
         "ExecFileObjectEncodingOptions.kt": "replace",
-        "ReadableStreamPipeOptions": "replace",
-        "WritableWritevChunksItem": "replace",
-        "WritableOptionsWritevChunksItem": "replace"
+        "StreamComposeOptions.kt": "replace",
+        "ReadableStreamPipeOptions.kt": "replace",
+        "WritableWritevChunksItem.kt": "replace",
+        "WritableOptionsWritevChunksItem.kt": "replace"
     },
     "compilerOptions": {
         "types": [
