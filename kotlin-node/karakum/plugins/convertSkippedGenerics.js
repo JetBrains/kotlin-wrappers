@@ -48,7 +48,7 @@ export default function (node, context, render) {
         && !node.typeArguments
     ) {
         if (ts.isIntersectionTypeNode(node.parent)) {
-            return "js.function.JsFunction<js.array.JsTuple, Any?>"
+            return "js.function.JsFunction<Nothing, Any?>"
         }
 
         if (
@@ -120,7 +120,7 @@ export default function (node, context, render) {
         && node.expression.text === "Function"
         && !node.typeArguments
     ) {
-        return "js.function.JsFunction<js.array.JsTuple, Any?>"
+        return "js.function.JsFunction<Nothing, Any?>"
     }
 
     return null

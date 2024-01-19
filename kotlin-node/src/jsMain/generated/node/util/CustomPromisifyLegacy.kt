@@ -4,7 +4,6 @@
 package node.util
 
 
-sealed external interface CustomPromisifyLegacy<TCustom : Function<*>> :
-    js.function.JsFunction<js.array.JsTuple, Any?> {
+sealed external interface CustomPromisifyLegacy<TCustom : Function<*>> : js.function.JsFunction<Nothing, Any?> {
     var __promisify__: TCustom
 }

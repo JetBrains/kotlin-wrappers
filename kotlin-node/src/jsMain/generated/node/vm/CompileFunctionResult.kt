@@ -5,7 +5,7 @@ package node.vm
 import node.buffer.Buffer
 
 
-sealed external interface CompileFunctionResult : js.function.JsFunction<js.array.JsTuple, Any?> {
+sealed external interface CompileFunctionResult : js.function.JsFunction<Nothing, Any?> {
     var cachedData: Buffer?
     var cachedDataProduced: Boolean?
     var cachedDataRejected: Boolean?
