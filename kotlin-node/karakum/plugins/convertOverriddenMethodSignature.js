@@ -2,13 +2,8 @@ import ts from "typescript";
 import * as karakum from "karakum";
 
 const overriddenProps = {
-    // crypto
-    "X509Certificate": {
-        "toString": null,
-    },
-
     // stream
-    "Readable": {
+    "ReadableBase": {
         "read": "readOrNull"
     }
 }

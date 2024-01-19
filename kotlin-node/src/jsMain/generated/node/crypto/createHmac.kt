@@ -15,18 +15,20 @@ package node.crypto
  * display the available digest algorithms.
  *
  * The `key` is the HMAC key used to generate the cryptographic HMAC hash. If it is
- * a `KeyObject`, its type must be `secret`.
+ * a `KeyObject`, its type must be `secret`. If it is a string, please consider `caveats when using strings as inputs to cryptographic APIs`. If it was
+ * obtained from a cryptographically secure source of entropy, such as {@link randomBytes} or {@link generateKey}, its length should not
+ * exceed the block size of `algorithm` (e.g., 512 bits for SHA-256).
  *
  * Example: generating the sha256 HMAC of a file
  *
  * ```js
  * import {
- *   createReadStream
- * } from 'fs';
- * import { argv } from 'process';
+ *   createReadStream,
+ * } from 'node:fs';
+ * import { argv } from 'node:process';
  * const {
- *   createHmac
- * } = await import('crypto');
+ *   createHmac,
+ * } = await import('node:crypto');
  *
  * const filename = argv[2];
  *

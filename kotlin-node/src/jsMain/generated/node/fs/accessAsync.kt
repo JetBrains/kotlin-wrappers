@@ -13,14 +13,13 @@ import js.promise.Promise
  * (e.g.`fs.constants.W_OK | fs.constants.R_OK`). Check `File access constants` for
  * possible values of `mode`.
  *
- * If the accessibility check is successful, the promise is resolved with no
+ * If the accessibility check is successful, the promise is fulfilled with no
  * value. If any of the accessibility checks fail, the promise is rejected
  * with an [Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) object. The following example checks if the file`/etc/passwd` can be read and
  * written by the current process.
  *
  * ```js
- * import { access } from 'fs/promises';
- * import { constants } from 'fs';
+ * import { access, constants } from 'node:fs/promises';
  *
  * try {
  *   await access('/etc/passwd', constants.R_OK | constants.W_OK);

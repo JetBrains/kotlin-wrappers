@@ -10,7 +10,7 @@ package node.fs
  * possible exception are given to the completion callback.
  *
  * ```js
- * import { unlink } from 'fs';
+ * import { unlink } from 'node:fs';
  * // Assuming that 'path/file.txt' is a regular file.
  * unlink('path/file.txt', (err) => {
  *   if (err) throw err;

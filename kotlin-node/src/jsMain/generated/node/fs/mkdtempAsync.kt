@@ -17,10 +17,12 @@ import js.promise.Promise
  * object with an `encoding` property specifying the character encoding to use.
  *
  * ```js
- * import { mkdtemp } from 'fs/promises';
+ * import { mkdtemp } from 'node:fs/promises';
+ * import { join } from 'node:path';
+ * import { tmpdir } from 'node:os';
  *
  * try {
- *   await mkdtemp(path.join(os.tmpdir(), 'foo-'));
+ *   await mkdtemp(join(tmpdir(), 'foo-'));
  * } catch (err) {
  *   console.error(err);
  * }
@@ -29,9 +31,9 @@ import js.promise.Promise
  * The `fsPromises.mkdtemp()` method will append the six randomly selected
  * characters directly to the `prefix` string. For instance, given a directory`/tmp`, if the intention is to create a temporary directory _within_`/tmp`, the`prefix` must end with a trailing
  * platform-specific path separator
- * (`require('path').sep`).
+ * (`require('node:path').sep`).
  * @since v10.0.0
- * @return Fulfills with a string containing the filesystem path of the newly created temporary directory.
+ * @return Fulfills with a string containing the file system path of the newly created temporary directory.
  */
 
 @JsName("mkdtemp")

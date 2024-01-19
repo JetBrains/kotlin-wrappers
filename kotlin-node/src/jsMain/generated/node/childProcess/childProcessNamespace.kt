@@ -6,12 +6,12 @@ package node.childProcess
 
 
 /**
- * The `child_process` module provides the ability to spawn subprocesses in
+ * The `node:child_process` module provides the ability to spawn subprocesses in
  * a manner that is similar, but not identical, to [`popen(3)`](http://man7.org/linux/man-pages/man3/popen.3.html). This capability
  * is primarily provided by the {@link spawn} function:
  *
  * ```js
- * const { spawn } = require('child_process');
+ * const { spawn } = require('node:child_process');
  * const ls = spawn('ls', ['-lh', '/usr']);
  *
  * ls.stdout.on('data', (data) => {
@@ -51,8 +51,8 @@ package node.childProcess
  * without blocking the Node.js event loop. The {@link spawnSync} function provides equivalent functionality in a synchronous manner that blocks
  * the event loop until the spawned process either exits or is terminated.
  *
- * For convenience, the `child_process` module provides a handful of synchronous
- * and asynchronous alternatives to {@link spawn} and {@link spawnSync}. Each of these alternatives are implemented on
+ * For convenience, the `node:child_process` module provides a handful of
+ * synchronous and asynchronous alternatives to {@link spawn} and {@link spawnSync}. Each of these alternatives are implemented on
  * top of {@link spawn} or {@link spawnSync}.
  *
  * * {@link exec}: spawns a shell and runs a command within that
@@ -70,5 +70,5 @@ package node.childProcess
  * For certain use cases, such as automating shell scripts, the `synchronous counterparts` may be more convenient. In many cases, however,
  * the synchronous methods can have significant impact on performance due to
  * stalling the event loop while spawned processes complete.
- * @see [source](https://github.com/nodejs/node/blob/v18.0.0/lib/child_process.js)
+ * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/child_process.js)
  */

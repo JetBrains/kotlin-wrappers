@@ -8,17 +8,25 @@ import js.promise.Promise
 import js.promise.await
 import node.events.Abortable
 
+/**
+ * Instances of the `readlinePromises.Interface` class are constructed using the`readlinePromises.createInterface()` method. Every instance is associated with a
+ * single `input` `Readable` stream and a single `output` `Writable` stream.
+ * The `output` stream is used to print prompts for user input that arrives on,
+ * and is read from, the `input` stream.
+ * @since v17.0.0
+ */
 
 external class Interface : _Interface {
     /**
-     * The rl.question() method displays the query by writing it to the output, waits for user input to be provided on input,
-     * then invokes the callback function passing the provided input as the first argument.
+     * The `rl.question()` method displays the `query` by writing it to the `output`,
+     * waits for user input to be provided on `input`, then invokes the `callback`function passing the provided input as the first argument.
      *
-     * When called, rl.question() will resume the input stream if it has been paused.
+     * When called, `rl.question()` will resume the `input` stream if it has been
+     * paused.
      *
-     * If the readlinePromises.Interface was created with output set to null or undefined the query is not written.
+     * If the `Interface` was created with `output` set to `null` or`undefined` the `query` is not written.
      *
-     * If the question is called after rl.close(), it returns a rejected promise.
+     * If the question is called after `rl.close()`, it returns a rejected promise.
      *
      * Example usage:
      *
@@ -27,7 +35,7 @@ external class Interface : _Interface {
      * console.log(`Oh, so your favorite food is ${answer}`);
      * ```
      *
-     * Using an AbortSignal to cancel a question.
+     * Using an `AbortSignal` to cancel a question.
      *
      * ```js
      * const signal = AbortSignal.timeout(10_000);
@@ -39,9 +47,9 @@ external class Interface : _Interface {
      * const answer = await rl.question('What is your favorite food? ', { signal });
      * console.log(`Oh, so your favorite food is ${answer}`);
      * ```
-     *
      * @since v17.0.0
-     * @param query A statement or query to write to output, prepended to the prompt.
+     * @param query A statement or query to write to `output`, prepended to the prompt.
+     * @return A promise that is fulfilled with the user's input in response to the `query`.
      */
 
     @JsName("question")

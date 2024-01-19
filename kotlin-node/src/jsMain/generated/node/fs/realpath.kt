@@ -6,7 +6,7 @@ package node.fs
 
 
 /**
- * Asynchronously computes the canonical pathname by resolving `.`, `..` and
+ * Asynchronously computes the canonical pathname by resolving `.`, `..`, and
  * symbolic links.
  *
  * A canonical pathname is not necessarily unique. Hard links and bind mounts can

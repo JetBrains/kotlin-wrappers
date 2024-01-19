@@ -10,7 +10,7 @@ package node.util
  * Otherwise, returns `false`.
  *
  * ```js
- * const util = require('util');
+ * const util = require('node:util');
  *
  * util.isObject(5);
  * // Returns: false
@@ -22,6 +22,6 @@ package node.util
  * // Returns: false
  * ```
  * @since v0.11.5
- * @deprecated Since v4.0.0 - Deprecated: Use `value !== null && typeof value === 'object'` instead.
+ * @deprecated Since v4.0.0 - Use `value !== null && typeof value === 'object'` instead.
  */
 external fun isObject(`object`: Any?): Boolean

@@ -11,7 +11,7 @@ import node.tls.PeerCertificate
  * its information.
  *
  * ```js
- * const { X509Certificate } = await import('crypto');
+ * const { X509Certificate } = await import('node:crypto');
  *
  * const x509 = new X509Certificate('{... pem encoded cert ...}');
  *
@@ -47,7 +47,13 @@ external class X509Certificate {
 
     /**
      * The SHA-512 fingerprint of this certificate.
-     * @since v16.14.0
+     *
+     * Because computing the SHA-256 fingerprint is usually faster and because it is
+     * only half the size of the SHA-512 fingerprint, `x509.fingerprint256` may be
+     * a better choice. While SHA-512 presumably provides a higher level of security in
+     * general, the security of SHA-256 matches that of most algorithms that are
+     * commonly used to sign certificates.
+     * @since v17.2.0, v16.14.0
      */
     val fingerprint512: String
 
@@ -58,15 +64,39 @@ external class X509Certificate {
     val subject: String
 
     /**
-     * The subject alternative name specified for this certificate or `undefined`
-     * if not available.
+     * The subject alternative name specified for this certificate.
+     *
+     * This is a comma-separated list of subject alternative names. Each entry begins
+     * with a string identifying the kind of the subject alternative name followed by
+     * a colon and the value associated with the entry.
+     *
+     * Earlier versions of Node.js incorrectly assumed that it is safe to split this
+     * property at the two-character sequence `', '` (see [CVE-2021-44532](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44532)). However,
+     * both malicious and legitimate certificates can contain subject alternative names
+     * that include this sequence when represented as a string.
+     *
+     * After the prefix denoting the type of the entry, the remainder of each entry
+     * might be enclosed in quotes to indicate that the value is a JSON string literal.
+     * For backward compatibility, Node.js only uses JSON string literals within this
+     * property when necessary to avoid ambiguity. Third-party code should be prepared
+     * to handle both possible entry formats.
      * @since v15.6.0
      */
     val subjectAltName: String?
 
     /**
-     * The information access content of this certificate or `undefined` if not
-     * available.
+     * A textual representation of the certificate's authority information access
+     * extension.
+     *
+     * This is a line feed separated list of access descriptions. Each line begins with
+     * the access method and the kind of the access location, followed by a colon and
+     * the value associated with the access location.
+     *
+     * After the prefix denoting the access method and the kind of the access location,
+     * the remainder of each line might be enclosed in quotes to indicate that the
+     * value is a JSON string literal. For backward compatibility, Node.js only uses
+     * JSON string literals within this property when necessary to avoid ambiguity.
+     * Third-party code should be prepared to handle both possible entry formats.
      * @since v15.6.0
      */
     val infoAccess: String?

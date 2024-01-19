@@ -13,6 +13,7 @@ external class SocketAddress {
     constructor (options: SocketAddressInitOptions)
 
     /**
+     * Either \`'ipv4'\` or \`'ipv6'\`.
      * @since v15.14.0, v14.18.0
      */
     val address: String

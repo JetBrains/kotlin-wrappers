@@ -6,15 +6,15 @@ package node.dgram
 
 
 /**
- * The `dgram` module provides an implementation of UDP datagram sockets.
+ * The `node:dgram` module provides an implementation of UDP datagram sockets.
  *
  * ```js
- * import dgram from 'dgram';
+ * import dgram from 'node:dgram';
  *
  * const server = dgram.createSocket('udp4');
  *
  * server.on('error', (err) => {
- *   console.log(`server error:\n${err.stack}`);
+ *   console.error(`server error:\n${err.stack}`);
  *   server.close();
  * });
  *
@@ -30,5 +30,5 @@ package node.dgram
  * server.bind(41234);
  * // Prints: server listening 0.0.0.0:41234
  * ```
- * @see [source](https://github.com/nodejs/node/blob/v18.0.0/lib/dgram.js)
+ * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/dgram.js)
  */

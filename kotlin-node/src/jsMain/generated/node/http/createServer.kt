@@ -10,6 +10,37 @@ package node.http
  *
  * The `requestListener` is a function which is automatically
  * added to the `'request'` event.
+ *
+ * ```js
+ * import http from 'node:http';
+ *
+ * // Create a local server to receive data from
+ * const server = http.createServer((req, res) => {
+ *   res.writeHead(200, { 'Content-Type': 'application/json' });
+ *   res.end(JSON.stringify({
+ *     data: 'Hello World!',
+ *   }));
+ * });
+ *
+ * server.listen(8000);
+ * ```
+ *
+ * ```js
+ * import http from 'node:http';
+ *
+ * // Create a local server to receive data from
+ * const server = http.createServer();
+ *
+ * // Listen to the request event
+ * server.on('request', (request, res) => {
+ *   res.writeHead(200, { 'Content-Type': 'application/json' });
+ *   res.end(JSON.stringify({
+ *     data: 'Hello World!',
+ *   }));
+ * });
+ *
+ * server.listen(8000);
+ * ```
  * @since v0.1.13
  */
 external fun <Request : IncomingMessage, Response : ServerResponse<*>> createServer(requestListener: RequestListener<Request, Response> = definedExternally): Server<Request, Response>

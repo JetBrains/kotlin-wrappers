@@ -10,4 +10,5 @@ sealed external interface CreateWriteStreamOptions {
     var emitClose: Boolean?
     var start: Double?
     var highWaterMark: Double?
+    var flush: Boolean?
 }

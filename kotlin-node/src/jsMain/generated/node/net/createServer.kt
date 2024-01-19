@@ -26,7 +26,7 @@ package node.net
  * on port 8124:
  *
  * ```js
- * const net = require('net');
+ * const net = require('node:net');
  * const server = net.createServer((c) => {
  *   // 'connection' listener.
  *   console.log('client connected');
@@ -46,8 +46,8 @@ package node.net
  *
  * Test this by using `telnet`:
  *
- * ```console
- * $ telnet localhost 8124
+ * ```bash
+ * telnet localhost 8124
  * ```
  *
  * To listen on the socket `/tmp/echo.sock`:
@@ -60,8 +60,8 @@ package node.net
  *
  * Use `nc` to connect to a Unix domain socket server:
  *
- * ```console
- * $ nc -U /tmp/echo.sock
+ * ```bash
+ * nc -U /tmp/echo.sock
  * ```
  * @since v0.5.0
  * @param connectionListener Automatically set as a listener for the {@link 'connection'} event.

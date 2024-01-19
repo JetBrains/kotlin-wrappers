@@ -10,14 +10,17 @@ package node.crypto
  *
  * ```js
  * const {
- *   generateKey
- * } = await import('crypto');
+ *   generateKey,
+ * } = await import('node:crypto');
  *
- * generateKey('hmac', { length: 64 }, (err, key) => {
+ * generateKey('hmac', { length: 512 }, (err, key) => {
  *   if (err) throw err;
  *   console.log(key.export().toString('hex'));  // 46e..........620
  * });
  * ```
+ *
+ * The size of a generated HMAC key should not exceed the block size of the
+ * underlying hash function. See {@link createHmac} for more information.
  * @since v15.0.0
  * @param type The intended use of the generated secret key. Currently accepted values are `'hmac'` and `'aes'`.
  */

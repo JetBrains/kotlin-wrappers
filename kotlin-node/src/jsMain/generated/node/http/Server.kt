@@ -118,7 +118,8 @@ external class Server<Request : IncomingMessage, Response : ServerResponse<*>> :
     fun closeAllConnections(): Unit
 
     /**
-     * Closes all connections connected to this server which are not sending a request or waiting for a response.
+     * Closes all connections connected to this server which are not sending a request
+     * or waiting for a response.
      * @since v18.2.0
      */
     fun closeIdleConnections(): Unit

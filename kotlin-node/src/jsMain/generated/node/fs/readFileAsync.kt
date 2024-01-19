@@ -19,11 +19,25 @@ import js.promise.Promise
  * with an error. On FreeBSD, a representation of the directory's contents will be
  * returned.
  *
+ * An example of reading a `package.json` file located in the same directory of the
+ * running code:
+ *
+ * ```js
+ * import { readFile } from 'node:fs/promises';
+ * try {
+ *   const filePath = new URL('./package.json', import.meta.url);
+ *   const contents = await readFile(filePath, { encoding: 'utf8' });
+ *   console.log(contents);
+ * } catch (err) {
+ *   console.error(err.message);
+ * }
+ * ```
+ *
  * It is possible to abort an ongoing `readFile` using an `AbortSignal`. If a
  * request is aborted the promise returned is rejected with an `AbortError`:
  *
  * ```js
- * import { readFile } from 'fs/promises';
+ * import { readFile } from 'node:fs/promises';
  *
  * try {
  *   const controller = new AbortController();

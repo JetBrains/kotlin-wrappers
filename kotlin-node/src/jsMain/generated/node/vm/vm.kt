@@ -6,10 +6,10 @@ package node.vm
 
 
 /**
- * The `vm` module enables compiling and running code within V8 Virtual
+ * The `node:vm` module enables compiling and running code within V8 Virtual
  * Machine contexts.
  *
- * **The `vm` module is not a security**
+ * **The `node:vm` module is not a security**
  * **mechanism. Do not use it to run untrusted code.**
  *
  * JavaScript code can be compiled and run immediately or
@@ -24,7 +24,7 @@ package node.vm
  * code are reflected in the context object.
  *
  * ```js
- * const vm = require('vm');
+ * const vm = require('node:vm');
  *
  * const x = 1;
  *
@@ -41,5 +41,5 @@ package node.vm
  *
  * console.log(x); // 1; y is not defined.
  * ```
- * @see [source](https://github.com/nodejs/node/blob/v18.0.0/lib/vm.js)
+ * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/vm.js)
  */

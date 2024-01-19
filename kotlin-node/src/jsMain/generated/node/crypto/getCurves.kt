@@ -8,8 +8,8 @@ package node.crypto
 /**
  * ```js
  * const {
- *   getCurves
- * } = await import('crypto');
+ *   getCurves,
+ * } = await import('node:crypto');
  *
  * console.log(getCurves()); // ['Oakley-EC2N-3', 'Oakley-EC2N-4', ...]
  * ```

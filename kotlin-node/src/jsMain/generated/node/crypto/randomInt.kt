@@ -9,7 +9,7 @@ package node.crypto
  * Return a random integer `n` such that `min <= n < max`.  This
  * implementation avoids [modulo bias](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#Modulo_bias).
  *
- * The range (`max - min`) must be less than 2^48. `min` and `max` must
+ * The range (`max - min`) must be less than 248. `min` and `max` must
  * be [safe integers](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isSafeInteger).
  *
  * If the `callback` function is not provided, the random integer is
@@ -18,8 +18,8 @@ package node.crypto
  * ```js
  * // Asynchronous
  * const {
- *   randomInt
- * } = await import('crypto');
+ *   randomInt,
+ * } = await import('node:crypto');
  *
  * randomInt(3, (err, n) => {
  *   if (err) throw err;
@@ -30,8 +30,8 @@ package node.crypto
  * ```js
  * // Synchronous
  * const {
- *   randomInt
- * } = await import('crypto');
+ *   randomInt,
+ * } = await import('node:crypto');
  *
  * const n = randomInt(3);
  * console.log(`Random number chosen from (0, 1, 2): ${n}`);
@@ -40,8 +40,8 @@ package node.crypto
  * ```js
  * // With `min` argument
  * const {
- *   randomInt
- * } = await import('crypto');
+ *   randomInt,
+ * } = await import('node:crypto');
  *
  * const n = randomInt(1, 7);
  * console.log(`The dice rolled: ${n}`);

@@ -8,6 +8,6 @@ package node.dns
 /**
  * The `dns.promises` API provides an alternative set of asynchronous DNS methods
  * that return `Promise` objects rather than using callbacks. The API is accessible
- * via `require('dns').promises` or `require('dns/promises')`.
+ * via `require('node:dns').promises` or `require('node:dns/promises')`.
  * @since v10.6.0
  */

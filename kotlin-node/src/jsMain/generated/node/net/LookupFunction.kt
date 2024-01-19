@@ -4,4 +4,4 @@
 package node.net
 
 
-typealias LookupFunction = (hostname: String, options: node.dns.LookupOneOptions, callback: (err: node.ErrnoException?, address: String, family: Double) -> Unit) -> Unit
+typealias LookupFunction = (hostname: String, options: node.dns.LookupAllOptions, callback: (err: node.ErrnoException?, addresses: js.array.ReadonlyArray<node.dns.LookupAddress>) -> Unit) -> Unit

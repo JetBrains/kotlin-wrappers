@@ -6,11 +6,11 @@ package node.url
 
 
 /**
- * The `url` module provides utilities for URL resolution and parsing. It can be
- * accessed using:
+ * The `node:url` module provides utilities for URL resolution and parsing. It can
+ * be accessed using:
  *
  * ```js
- * import url from 'url';
+ * import url from 'node:url';
  * ```
- * @see [source](https://github.com/nodejs/node/blob/v18.0.0/lib/url.js)
+ * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/url.js)
  */

@@ -9,7 +9,7 @@ package node.util
  * Returns `true` if the given `object` is `undefined`. Otherwise, returns `false`.
  *
  * ```js
- * const util = require('util');
+ * const util = require('node:util');
  *
  * const foo = undefined;
  * util.isUndefined(5);

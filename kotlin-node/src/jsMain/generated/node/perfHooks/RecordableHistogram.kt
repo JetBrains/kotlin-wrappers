@@ -23,9 +23,8 @@ sealed external interface RecordableHistogram : Histogram {
     fun recordDelta(): Unit
 
     /**
-     * Adds the values from other to this histogram.
+     * Adds the values from `other` to this histogram.
      * @since v17.4.0, v16.14.0
-     * @param other Recordable Histogram to combine with
      */
     fun add(other: RecordableHistogram): Unit
 }

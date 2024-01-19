@@ -3,7 +3,7 @@ import * as karakum from "karakum";
 
 export default {
     setup(context) {
-        this.readableStreamMemberNodes = new Map()
+        this.writableStreamMemberNodes = new Map()
     },
 
     traverse(node) {
@@ -14,15 +14,29 @@ export default {
             && ts.isMethodSignature(node)
             && ts.isIdentifier(node.name)
             && (
-                node.name.text === "read"
-                || node.name.text === "pipe"
-                || node.name.text === "unshift"
+                node.name.text === "write"
+                || (
+                    node.name.text === "end"
+                    && node.parameters.length > 1
+                )
             )
 
             && ts.isInterfaceDeclaration(node.parent)
-            && node.parent.name.text === "ReadableStream"
+            && node.parent.name.text === "WritableStream"
         ) {
-            this.readableStreamMemberNodes.set(node.name.text, node)
+            this.writableStreamMemberNodes.set(node.name.text + node.parameters.length, node)
+        }
+
+        if (
+            sourceFileName.endsWith("globals.d.ts")
+            && ts.isPropertySignature(node)
+            && ts.isIdentifier(node.name)
+            && node.name.text === "writable"
+
+            && ts.isInterfaceDeclaration(node.parent)
+            && node.parent.name.text === "WritableStream"
+        ) {
+            this.writableStreamMemberNodes.set(node.name.text, node)
         }
     },
 
@@ -36,11 +50,15 @@ export default {
         if (
             sourceFileName.endsWith("stream.d.ts")
             && ts.isClassDeclaration(node)
-            && node?.name.text === "Readable"
+            && node?.name.text === "WritableBase"
             && !context.static
         ) {
-            return Array.from(this.readableStreamMemberNodes.values())
+            return Array.from(this.writableStreamMemberNodes.values())
                 .map(member => {
+                    if (ts.isPropertySignature(member)) {
+                        return `override ${render(member)}`
+                    }
+
                     const name = karakum.escapeIdentifier(render(member.name))
 
                     const typeParameters = member.typeParameters

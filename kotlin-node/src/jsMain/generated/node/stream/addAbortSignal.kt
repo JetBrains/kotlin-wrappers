@@ -7,18 +7,21 @@ package node.stream
 import web.abort.AbortSignal
 
 /**
+ * A stream to attach a signal to.
+ *
  * Attaches an AbortSignal to a readable or writeable stream. This lets code
  * control stream destruction using an `AbortController`.
  *
- * Calling `abort` on the `AbortController` corresponding to the passed`AbortSignal` will behave the same way as calling `.destroy(new AbortError())`on the stream.
+ * Calling `abort` on the `AbortController` corresponding to the passed`AbortSignal` will behave the same way as calling `.destroy(new AbortError())`on the stream, and `controller.error(new
+ * AbortError())` for webstreams.
  *
  * ```js
- * const fs = require('fs');
+ * const fs = require('node:fs');
  *
  * const controller = new AbortController();
  * const read = addAbortSignal(
  *   controller.signal,
- *   fs.createReadStream(('object.json'))
+ *   fs.createReadStream(('object.json')),
  * );
  * // Later, abort the operation closing the stream
  * controller.abort();
@@ -31,7 +34,7 @@ import web.abort.AbortSignal
  * setTimeout(() => controller.abort(), 10_000); // set a timeout
  * const stream = addAbortSignal(
  *   controller.signal,
- *   fs.createReadStream(('object.json'))
+ *   fs.createReadStream(('object.json')),
  * );
  * (async () => {
  *   try {
@@ -46,6 +49,37 @@ import web.abort.AbortSignal
  *     }
  *   }
  * })();
+ * ```
+ *
+ * Or using an `AbortSignal` with a ReadableStream:
+ *
+ * ```js
+ * const controller = new AbortController();
+ * const rs = new ReadableStream({
+ *   start(controller) {
+ *     controller.enqueue('hello');
+ *     controller.enqueue('world');
+ *     controller.close();
+ *   },
+ * });
+ *
+ * addAbortSignal(controller.signal, rs);
+ *
+ * finished(rs, (err) => {
+ *   if (err) {
+ *     if (err.name === 'AbortError') {
+ *       // The operation was cancelled
+ *     }
+ *   }
+ * });
+ *
+ * const reader = rs.getReader();
+ *
+ * reader.read().then(({ value, done }) => {
+ *   console.log(value); // hello
+ *   console.log(done); // false
+ *   controller.abort();
+ * });
  * ```
  * @since v15.4.0
  * @param signal A signal representing possible cancellation

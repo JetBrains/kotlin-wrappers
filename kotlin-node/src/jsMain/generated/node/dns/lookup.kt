@@ -8,8 +8,8 @@ package node.dns
 /**
  * Resolves a host name (e.g. `'nodejs.org'`) into the first found A (IPv4) or
  * AAAA (IPv6) record. All `option` properties are optional. If `options` is an
- * integer, then it must be `4` or `6` – if `options` is not provided, then IPv4
- * and IPv6 addresses are both returned if found.
+ * integer, then it must be `4` or `6` – if `options` is `0` or not provided, then
+ * IPv4 and IPv6 addresses are both returned if found.
  *
  * With the `all` option set to `true`, the arguments for `callback` change to`(err, addresses)`, with `addresses` being an array of objects with the
  * properties `address` and `family`.
@@ -21,14 +21,14 @@ package node.dns
  *
  * `dns.lookup()` does not necessarily have anything to do with the DNS protocol.
  * The implementation uses an operating system facility that can associate names
- * with addresses, and vice versa. This implementation can have subtle but
+ * with addresses and vice versa. This implementation can have subtle but
  * important consequences on the behavior of any Node.js program. Please take some
  * time to consult the `Implementation considerations section` before using`dns.lookup()`.
  *
  * Example usage:
  *
  * ```js
- * const dns = require('dns');
+ * const dns = require('node:dns');
  * const options = {
  *   family: 6,
  *   hints: dns.ADDRCONFIG | dns.V4MAPPED,

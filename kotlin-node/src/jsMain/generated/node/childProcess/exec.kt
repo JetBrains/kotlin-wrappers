@@ -12,7 +12,7 @@ package node.childProcess
  * need to be dealt with accordingly:
  *
  * ```js
- * const { exec } = require('child_process');
+ * const { exec } = require('node:child_process');
  *
  * exec('"/path/to/test file/test.sh" arg1 arg2');
  * // Double quotes are used so that the space in the path is not interpreted as
@@ -38,7 +38,7 @@ package node.childProcess
  * encoding, `Buffer` objects will be passed to the callback instead.
  *
  * ```js
- * const { exec } = require('child_process');
+ * const { exec } = require('node:child_process');
  * exec('cat *.js missing_file | wc -l', (error, stdout, stderr) => {
  *   if (error) {
  *     console.error(`exec error: ${error}`);
@@ -63,8 +63,8 @@ package node.childProcess
  * callback, but with two additional properties `stdout` and `stderr`.
  *
  * ```js
- * const util = require('util');
- * const exec = util.promisify(require('child_process').exec);
+ * const util = require('node:util');
+ * const exec = util.promisify(require('node:child_process').exec);
  *
  * async function lsExample() {
  *   const { stdout, stderr } = await exec('ls');
@@ -78,11 +78,11 @@ package node.childProcess
  * the error passed to the callback will be an `AbortError`:
  *
  * ```js
- * const { exec } = require('child_process');
+ * const { exec } = require('node:child_process');
  * const controller = new AbortController();
  * const { signal } = controller;
  * const child = exec('grep ssh', { signal }, (error) => {
- *   console.log(error); // an AbortError
+ *   console.error(error); // an AbortError
  * });
  * controller.abort();
  * ```

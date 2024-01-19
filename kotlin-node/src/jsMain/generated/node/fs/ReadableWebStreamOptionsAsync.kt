@@ -7,7 +7,7 @@ package node.fs
 sealed external interface ReadableWebStreamOptions {
     /**
      * Whether to open a normal or a `'bytes'` stream.
-     * @since v18.17.0
+     * @since v20.0.0
      */
     var type: String /* "bytes" */?
 }

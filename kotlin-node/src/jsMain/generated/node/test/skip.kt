@@ -8,7 +8,7 @@ import js.promise.Promise
 
 /**
  * Shorthand for skipping a test, same as `test([name], { skip: true }[, fn])`.
- * @since v18.17.0
+ * @since v20.2.0
  */
 
 @JsName("skip")

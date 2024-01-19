@@ -25,11 +25,11 @@ external class Script {
      * The globals are contained in the `context` object.
      *
      * ```js
-     * const vm = require('vm');
+     * const vm = require('node:vm');
      *
      * const context = {
      *   animal: 'cat',
-     *   count: 2
+     *   count: 2,
      * };
      *
      * const script = new vm.Script('count += 1; name = "kitty";');
@@ -62,7 +62,7 @@ external class Script {
      * contained within each individual `context`.
      *
      * ```js
-     * const vm = require('vm');
+     * const vm = require('node:vm');
      *
      * const script = new vm.Script('globalVar = "set"');
      *
@@ -91,7 +91,7 @@ external class Script {
      * executes that code multiple times:
      *
      * ```js
-     * const vm = require('vm');
+     * const vm = require('node:vm');
      *
      * global.globalVar = 0;
      *
@@ -114,6 +114,16 @@ external class Script {
      * Creates a code cache that can be used with the `Script` constructor's`cachedData` option. Returns a `Buffer`. This method may be called at any
      * time and any number of times.
      *
+     * The code cache of the `Script` doesn't contain any JavaScript observable
+     * states. The code cache is safe to be saved along side the script source and
+     * used to construct new `Script` instances multiple times.
+     *
+     * Functions in the `Script` source can be marked as lazily compiled and they are
+     * not compiled at construction of the `Script`. These functions are going to be
+     * compiled when they are invoked the first time. The code cache serializes the
+     * metadata that V8 currently knows about the `Script` that it can use to speed up
+     * future compilations.
+     *
      * ```js
      * const script = new vm.Script(`
      * function add(a, b) {
@@ -123,11 +133,14 @@ external class Script {
      * const x = add(1, 2);
      * `);
      *
-     * const cacheWithoutX = script.createCachedData();
+     * const cacheWithoutAdd = script.createCachedData();
+     * // In `cacheWithoutAdd` the function `add()` is marked for full compilation
+     * // upon invocation.
      *
      * script.runInThisContext();
      *
-     * const cacheWithX = script.createCachedData();
+     * const cacheWithAdd = script.createCachedData();
+     * // `cacheWithAdd` contains fully compiled function `add()`.
      * ```
      * @since v10.6.0
      */
@@ -135,11 +148,32 @@ external class Script {
 
     /** @deprecated in favor of `script.createCachedData()` */
     var cachedDataProduced: Boolean?
+
+    /**
+     * When `cachedData` is supplied to create the `vm.Script`, this value will be set
+     * to either `true` or `false` depending on acceptance of the data by V8\.
+     * Otherwise the value is `undefined`.
+     * @since v5.7.0
+     */
     var cachedDataRejected: Boolean?
     var cachedData: node.buffer.Buffer?
 
     /**
-     * When the script is compiled from a source that contains a source map magic comment, this property will be set to the URL of the source map.
+     * When the script is compiled from a source that contains a source map magic
+     * comment, this property will be set to the URL of the source map.
+     *
+     * ```js
+     * import vm from 'node:vm';
+     *
+     * const script = new vm.Script(`
+     * function myFunc() {}
+     * //# sourceMappingURL=sourcemap.json
+     * `);
+     *
+     * console.log(script.sourceMapURL);
+     * // Prints: sourcemap.json
+     * ```
+     * @since v19.1.0, v18.13.0
      */
     var sourceMapURL: String?
 }

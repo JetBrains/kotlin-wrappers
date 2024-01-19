@@ -14,27 +14,13 @@ export default {
             && ts.isMethodSignature(node)
             && ts.isIdentifier(node.name)
             && (
-                node.name.text === "write"
-                || (
-                    node.name.text === "end"
-                    && node.parameters.length > 1
-                )
+                node.name.text === "read"
+                || node.name.text === "pipe"
+                || node.name.text === "unshift"
             )
 
             && ts.isInterfaceDeclaration(node.parent)
-            && node.parent.name.text === "WritableStream"
-        ) {
-            this.readableStreamMemberNodes.set(node.name.text + node.parameters.length, node)
-        }
-
-        if (
-            sourceFileName.endsWith("globals.d.ts")
-            && ts.isPropertySignature(node)
-            && ts.isIdentifier(node.name)
-            && node.name.text === "writable"
-
-            && ts.isInterfaceDeclaration(node.parent)
-            && node.parent.name.text === "WritableStream"
+            && node.parent.name.text === "ReadableStream"
         ) {
             this.readableStreamMemberNodes.set(node.name.text, node)
         }
@@ -50,15 +36,11 @@ export default {
         if (
             sourceFileName.endsWith("stream.d.ts")
             && ts.isClassDeclaration(node)
-            && node?.name.text === "Writable"
+            && node?.name.text === "ReadableBase"
             && !context.static
         ) {
             return Array.from(this.readableStreamMemberNodes.values())
                 .map(member => {
-                    if (ts.isPropertySignature(member)) {
-                        return `override ${render(member)}`
-                    }
-
                     const name = karakum.escapeIdentifier(render(member.name))
 
                     const typeParameters = member.typeParameters

@@ -17,10 +17,10 @@ const overriddenProps = {
     },
 
     // stream
-    "Readable": {
+    "ReadableBase": {
         "readable": null
     },
-    "Writable": {
+    "WritableBase": {
         "writable": "readonlyWritable"
     },
     "Duplex": {

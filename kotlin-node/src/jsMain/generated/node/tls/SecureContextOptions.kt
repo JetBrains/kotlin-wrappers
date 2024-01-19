@@ -14,7 +14,6 @@ sealed external interface SecureContextOptions {
      * to reject the connection with a fatal alert. If a string is returned that does not match one of
      * the client's ALPN protocols, an error will be thrown.
      * This option cannot be used with the `ALPNProtocols` option, and setting both options will throw an error.
-     * @since v18.19.0
      */
     var ALPNCallback: ((arg: SecureContextOptionsALPNCallbackArg) -> String?)?
 

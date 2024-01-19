@@ -16,7 +16,7 @@ package node.workerThreads
  * This operation cannot be undone.
  *
  * ```js
- * const { MessageChannel, markAsUntransferable } = require('worker_threads');
+ * const { MessageChannel, markAsUntransferable } = require('node:worker_threads');
  *
  * const pooledBuffer = new ArrayBuffer(8);
  * const typedArray1 = new Uint8Array(pooledBuffer);

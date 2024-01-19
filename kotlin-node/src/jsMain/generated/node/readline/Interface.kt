@@ -24,7 +24,7 @@ open external class _Interface : EventEmitter {
      * > Instances of the `readline.Interface` class are constructed using the
      * > `readline.createInterface()` method.
      *
-     * @see https://nodejs.org/dist/latest-v10.x/docs/api/readline.html#readline_class_interface
+     * @see https://nodejs.org/dist/latest-v20.x/docs/api/readline.html#class-interfaceconstructor
      */
     constructor (
         input: node.ReadableStream,
@@ -46,7 +46,7 @@ open external class _Interface : EventEmitter {
      * > Instances of the `readline.Interface` class are constructed using the
      * > `readline.createInterface()` method.
      *
-     * @see https://nodejs.org/dist/latest-v10.x/docs/api/readline.html#readline_class_interface
+     * @see https://nodejs.org/dist/latest-v20.x/docs/api/readline.html#class-interfaceconstructor
      */
     constructor (options: ReadLineOptions)
 
@@ -73,7 +73,7 @@ open external class _Interface : EventEmitter {
      * const showResults = debounce(() => {
      *   console.log(
      *     '\n',
-     *     values.filter((val) => val.startsWith(rl.line)).join(' ')
+     *     values.filter((val) => val.startsWith(rl.line)).join(' '),
      *   );
      * }, 300);
      * process.stdin.on('keypress', (c, k) => {
@@ -97,7 +97,7 @@ open external class _Interface : EventEmitter {
 
     /**
      * The `rl.getPrompt()` method returns the current prompt used by `rl.prompt()`.
-     * @since v15.3.0
+     * @since v15.3.0, v14.17.0
      * @return the current prompt string
      */
     fun getPrompt(): String
@@ -109,13 +109,13 @@ open external class _Interface : EventEmitter {
     fun setPrompt(prompt: String): Unit
 
     /**
-     * The `rl.prompt()` method writes the `readline.Interface` instances configured`prompt` to a new line in `output` in order to provide a user with a new
+     * The `rl.prompt()` method writes the `Interface` instances configured`prompt` to a new line in `output` in order to provide a user with a new
      * location at which to provide input.
      *
      * When called, `rl.prompt()` will resume the `input` stream if it has been
      * paused.
      *
-     * If the `readline.Interface` was created with `output` set to `null` or`undefined` the prompt is not written.
+     * If the `Interface` was created with `output` set to `null` or`undefined` the prompt is not written.
      * @since v0.1.98
      * @param preserveCursor If `true`, prevents the cursor placement from being reset to `0`.
      */
@@ -128,11 +128,13 @@ open external class _Interface : EventEmitter {
      * When called, `rl.question()` will resume the `input` stream if it has been
      * paused.
      *
-     * If the `readline.Interface` was created with `output` set to `null` or`undefined` the `query` is not written.
+     * If the `Interface` was created with `output` set to `null` or`undefined` the `query` is not written.
      *
      * The `callback` function passed to `rl.question()` does not follow the typical
      * pattern of accepting an `Error` object or `null` as the first argument.
      * The `callback` is called with the provided answer as the only argument.
+     *
+     * An error will be thrown if calling `rl.question()` after `rl.close()`.
      *
      * Example usage:
      *
@@ -158,25 +160,6 @@ open external class _Interface : EventEmitter {
      *
      * setTimeout(() => ac.abort(), 10000);
      * ```
-     *
-     * If this method is invoked as it's util.promisify()ed version, it returns a
-     * Promise that fulfills with the answer. If the question is canceled using
-     * an `AbortController` it will reject with an `AbortError`.
-     *
-     * ```js
-     * const util = require('util');
-     * const question = util.promisify(rl.question).bind(rl);
-     *
-     * async function questionExample() {
-     *   try {
-     *     const answer = await question('What is you favorite food? ');
-     *     console.log(`Oh, so your favorite food is ${answer}`);
-     *   } catch (err) {
-     *     console.error('Question rejected', err);
-     *   }
-     * }
-     * questionExample();
-     * ```
      * @since v0.3.3
      * @param query A statement or query to write to `output`, prepended to the prompt.
      * @param callback A callback function that is invoked with the user's input in response to the `query`.
@@ -188,7 +171,7 @@ open external class _Interface : EventEmitter {
      * The `rl.pause()` method pauses the `input` stream, allowing it to be resumed
      * later if necessary.
      *
-     * Calling `rl.pause()` does not immediately pause other events (including`'line'`) from being emitted by the `readline.Interface` instance.
+     * Calling `rl.pause()` does not immediately pause other events (including`'line'`) from being emitted by the `Interface` instance.
      * @since v0.3.4
      */
     fun pause(): Unit /* this */
@@ -200,12 +183,12 @@ open external class _Interface : EventEmitter {
     fun resume(): Unit /* this */
 
     /**
-     * The `rl.close()` method closes the `readline.Interface` instance and
+     * The `rl.close()` method closes the `Interface` instance and
      * relinquishes control over the `input` and `output` streams. When called,
      * the `'close'` event will be emitted.
      *
      * Calling `rl.close()` does not immediately stop other events (including `'line'`)
-     * from being emitted by the `readline.Interface` instance.
+     * from being emitted by the `Interface` instance.
      * @since v0.1.98
      */
     fun close(): Unit
@@ -221,7 +204,7 @@ open external class _Interface : EventEmitter {
      * When called, `rl.write()` will resume the `input` stream if it has been
      * paused.
      *
-     * If the `readline.Interface` was created with `output` set to `null` or`undefined` the `data` and `key` are not written.
+     * If the `Interface` was created with `output` set to `null` or`undefined` the `data` and `key` are not written.
      *
      * ```js
      * rl.write('Delete this!');

@@ -13,7 +13,7 @@ import js.typedarrays.Uint8Array
  * The `mode` option only affects the newly created file. See {@link open} for more details.
  *
  * ```js
- * import { appendFileSync } from 'fs';
+ * import { appendFileSync } from 'node:fs';
  *
  * try {
  *   appendFileSync('message.txt', 'data to append');
@@ -26,7 +26,7 @@ import js.typedarrays.Uint8Array
  * If `options` is a string, then it specifies the encoding:
  *
  * ```js
- * import { appendFileSync } from 'fs';
+ * import { appendFileSync } from 'node:fs';
  *
  * appendFileSync('message.txt', 'data to append', 'utf8');
  * ```
@@ -36,7 +36,7 @@ import js.typedarrays.Uint8Array
  * not be closed automatically.
  *
  * ```js
- * import { openSync, closeSync, appendFileSync } from 'fs';
+ * import { openSync, closeSync, appendFileSync } from 'node:fs';
  *
  * let fd;
  *

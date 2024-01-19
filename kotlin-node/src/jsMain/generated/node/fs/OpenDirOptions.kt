@@ -5,6 +5,9 @@ package node.fs
 
 
 sealed external interface OpenDirOptions {
+    /**
+     * @default 'utf8'
+     */
     var encoding: node.buffer.BufferEncoding?
 
     /**
@@ -14,4 +17,9 @@ sealed external interface OpenDirOptions {
      * @default 32
      */
     var bufferSize: Double?
+
+    /**
+     * @default false
+     */
+    var recursive: Boolean?
 }

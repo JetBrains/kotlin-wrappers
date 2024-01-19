@@ -17,21 +17,21 @@ package node.crypto
  *
  * ```js
  * const {
- *   generateKeyPair
- * } = await import('crypto');
+ *   generateKeyPair,
+ * } = await import('node:crypto');
  *
  * generateKeyPair('rsa', {
  *   modulusLength: 4096,
  *   publicKeyEncoding: {
  *     type: 'spki',
- *     format: 'pem'
+ *     format: 'pem',
  *   },
  *   privateKeyEncoding: {
  *     type: 'pkcs8',
  *     format: 'pem',
  *     cipher: 'aes-256-cbc',
- *     passphrase: 'top secret'
- *   }
+ *     passphrase: 'top secret',
+ *   },
  * }, (err, publicKey, privateKey) => {
  *   // Handle errors and use the generated key pair.
  * });

@@ -10,7 +10,7 @@ import node.stream.Stream
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
- * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface) or
+ * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
  * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
  *
  * The `encoding` option is ignored if `data` is a buffer.
@@ -33,8 +33,8 @@ import node.stream.Stream
  * to be written.
  *
  * ```js
- * import { writeFile } from 'fs/promises';
- * import { Buffer } from 'buffer';
+ * import { writeFile } from 'node:fs/promises';
+ * import { Buffer } from 'node:buffer';
  *
  * try {
  *   const controller = new AbortController();

@@ -4,6 +4,7 @@
 
 package node.inspector
 
+import js.disposable.Disposable
 
 /**
  * Activate inspector on host and port. Equivalent to`node --inspect=[[host:]port]`, but can be done programmatically after node has
@@ -16,9 +17,10 @@ package node.inspector
  * @param [port='what was specified on the CLI'] Port to listen on for inspector connections. Optional.
  * @param [host='what was specified on the CLI'] Host to listen on for inspector connections. Optional.
  * @param [wait=false] Block until a client has connected. Optional.
+ * @returns Disposable that calls `inspector.close()`.
  */
 external fun open(
     port: Number = definedExternally,
     host: String = definedExternally,
     wait: Boolean = definedExternally,
-): Unit
+): Disposable

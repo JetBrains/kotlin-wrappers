@@ -9,7 +9,7 @@ import node.net.Socket
 /**
  * An `IncomingMessage` object is created by {@link Server} or {@link ClientRequest} and passed as the first argument to the `'request'` and `'response'` event respectively. It may be used to
  * access response
- * status, headers and data.
+ * status, headers, and data.
  *
  * Different from its `socket` value which is a subclass of `stream.Duplex`, the`IncomingMessage` itself extends `stream.Readable` and is created separately to
  * parse and emit the incoming HTTP headers and payload, as the underlying socket
@@ -51,7 +51,7 @@ open external class IncomingMessage : node.stream.Readable {
      * const req = http.request({
      *   host: '127.0.0.1',
      *   port: 8080,
-     *   method: 'POST'
+     *   method: 'POST',
      * }, (res) => {
      *   res.resume();
      *   res.on('end', () => {
@@ -96,7 +96,7 @@ open external class IncomingMessage : node.stream.Readable {
      * // { 'user-agent': 'curl/7.22.0',
      * //   host: '127.0.0.1:8000',
      * //   accept: '*' }
-     * console.log(request.getHeaders());
+     * console.log(request.headers);
      * ```
      *
      * Duplicates in raw headers are handled in the following ways, depending on the
@@ -104,15 +104,19 @@ open external class IncomingMessage : node.stream.Readable {
      *
      * * Duplicates of `age`, `authorization`, `content-length`, `content-type`,`etag`, `expires`, `from`, `host`, `if-modified-since`, `if-unmodified-since`,`last-modified`, `location`,
      * `max-forwards`, `proxy-authorization`, `referer`,`retry-after`, `server`, or `user-agent` are discarded.
+     * To allow duplicate values of the headers listed above to be joined,
+     * use the option `joinDuplicateHeaders` in {@link request} and {@link createServer}. See RFC 9110 Section 5.3 for more
+     * information.
      * * `set-cookie` is always an array. Duplicates are added to the array.
-     * * For duplicate `cookie` headers, the values are joined together with '; '.
-     * * For all other headers, the values are joined together with ', '.
+     * * For duplicate `cookie` headers, the values are joined together with `; `.
+     * * For all other headers, the values are joined together with `, `.
      * @since v0.1.5
      */
     var headers: IncomingHttpHeaders
 
     /**
-     * Similar to `message.headers`, but there is no join logic and the values are always arrays of strings, even for headers received just once.
+     * Similar to `message.headers`, but there is no join logic and the values are
+     * always arrays of strings, even for headers received just once.
      *
      * ```js
      * // Prints something like:
@@ -159,7 +163,8 @@ open external class IncomingMessage : node.stream.Readable {
     var trailers: node.Dict<String>
 
     /**
-     * Similar to `message.trailers`, but there is no join logic and the values are always arrays of strings, even for headers received just once.
+     * Similar to `message.trailers`, but there is no join logic and the values are
+     * always arrays of strings, even for headers received just once.
      * Only populated at the `'end'` event.
      * @since v18.3.0, v16.17.0
      */
@@ -200,14 +205,14 @@ open external class IncomingMessage : node.stream.Readable {
      * To parse the URL into its parts:
      *
      * ```js
-     * new URL(request.url, `http://${request.getHeaders().host}`);
+     * new URL(request.url, `http://${request.headers.host}`);
      * ```
      *
-     * When `request.url` is `'/status?name=ryan'` and`request.getHeaders().host` is `'localhost:3000'`:
+     * When `request.url` is `'/status?name=ryan'` and `request.headers.host` is`'localhost:3000'`:
      *
      * ```console
      * $ node
-     * > new URL(request.url, `http://${request.getHeaders().host}`)
+     * > new URL(request.url, `http://${request.headers.host}`)
      * URL {
      *   href: 'http://localhost:3000/status?name=ryan',
      *   origin: 'http://localhost:3000',

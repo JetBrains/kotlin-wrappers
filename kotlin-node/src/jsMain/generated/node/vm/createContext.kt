@@ -13,7 +13,7 @@ package node.vm
  * will remain unchanged.
  *
  * ```js
- * const vm = require('vm');
+ * const vm = require('node:vm');
  *
  * global.globalVar = 3;
  *

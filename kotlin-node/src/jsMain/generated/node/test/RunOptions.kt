@@ -51,7 +51,6 @@ sealed external interface RunOptions {
 
     /**
      * If truthy, the test context will only run tests that have the `only` option set
-     * @since v18.19.0
      */
     var only: Boolean?
 
@@ -68,7 +67,6 @@ sealed external interface RunOptions {
 
     /**
      * Running tests in a specific shard.
-     * @since v18.19.0
      * @default undefined
      */
     var shard: TestShard?

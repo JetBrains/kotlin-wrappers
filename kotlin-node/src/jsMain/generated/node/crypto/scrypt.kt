@@ -23,8 +23,8 @@ package node.crypto
  *
  * ```js
  * const {
- *   scrypt
- * } = await import('crypto');
+ *   scrypt,
+ * } = await import('node:crypto');
  *
  * // Using the factory defaults.
  * scrypt('password', 'salt', 64, (err, derivedKey) => {

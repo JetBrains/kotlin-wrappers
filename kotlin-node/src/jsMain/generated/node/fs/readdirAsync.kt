@@ -14,10 +14,10 @@ import js.promise.Promise
  * the filenames. If the `encoding` is set to `'buffer'`, the filenames returned
  * will be passed as `Buffer` objects.
  *
- * If `options.withFileTypes` is set to `true`, the resolved array will contain `fs.Dirent` objects.
+ * If `options.withFileTypes` is set to `true`, the returned array will contain `fs.Dirent` objects.
  *
  * ```js
- * import { readdir } from 'fs/promises';
+ * import { readdir } from 'node:fs/promises';
  *
  * try {
  *   const files = await readdir(path);

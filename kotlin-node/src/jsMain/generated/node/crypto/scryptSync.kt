@@ -23,8 +23,8 @@ package node.crypto
  *
  * ```js
  * const {
- *   scryptSync
- * } = await import('crypto');
+ *   scryptSync,
+ * } = await import('node:crypto');
  * // Using the factory defaults.
  *
  * const key1 = scryptSync('password', 'salt', 64);

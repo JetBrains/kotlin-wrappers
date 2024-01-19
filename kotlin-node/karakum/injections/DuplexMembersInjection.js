@@ -19,7 +19,7 @@ export default {
             )
 
             && ts.isClassDeclaration(node.parent)
-            && node.parent.name?.text === "Readable"
+            && node.parent.name?.text === "ReadableBase"
         ) {
             this.readableMemberNodes.set(node.name.text + node.parameters.length, node)
         }
@@ -31,7 +31,7 @@ export default {
             && node.name.text === "destroyed"
 
             && ts.isClassDeclaration(node.parent)
-            && node.parent.name?.text === "Readable"
+            && node.parent.name?.text === "ReadableBase"
         ) {
             this.readableMemberNodes.set(node.name.text, node)
         }

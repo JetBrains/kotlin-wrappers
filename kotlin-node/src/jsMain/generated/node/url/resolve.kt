@@ -10,7 +10,7 @@ package node.url
  * manner similar to that of a web browser resolving an anchor tag.
  *
  * ```js
- * const url = require('url');
+ * const url = require('node:url');
  * url.resolve('/one/two/three', 'four');         // '/one/two/four'
  * url.resolve('http://example.com/', '/one');    // 'http://example.com/one'
  * url.resolve('http://example.com/one', '/two'); // 'http://example.com/two'

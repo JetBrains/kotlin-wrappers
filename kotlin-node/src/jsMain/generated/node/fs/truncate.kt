@@ -11,7 +11,7 @@ package node.fs
  * first argument. In this case, `fs.ftruncate()` is called.
  *
  * ```js
- * import { truncate } from 'fs';
+ * import { truncate } from 'node:fs';
  * // Assuming that 'path/file.txt' is a regular file.
  * truncate('path/file.txt', (err) => {
  *   if (err) throw err;

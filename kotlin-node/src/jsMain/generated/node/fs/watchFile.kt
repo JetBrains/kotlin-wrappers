@@ -18,7 +18,7 @@ package node.fs
  * stat object:
  *
  * ```js
- * import { watchFile } from 'fs';
+ * import { watchFile } from 'node:fs';
  *
  * watchFile('message.text', (curr, prev) => {
  *   console.log(`the current mtime is: ${curr.mtime}`);
@@ -62,6 +62,5 @@ external fun watchFile(
 /**
  * Watch for changes on `filename`. The callback `listener` will be called each time the file is accessed.
  * @param filename A path to a file or directory. If a URL is provided, it must use the `file:` protocol.
- * @param listener The callback listener will be called each time the file is accessed.
  */
 external fun watchFile(filename: PathLike, listener: StatsListener): StatWatcher

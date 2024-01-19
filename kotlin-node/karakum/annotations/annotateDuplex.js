@@ -14,7 +14,7 @@ export default (node) => {
     if (
         ts.isExpressionWithTypeArguments(node)
         && ts.isIdentifier(node.expression)
-        && node.expression.text === "Writable"
+        && node.expression.text === "WritableBase"
 
         && node.parent
         && ts.isHeritageClause(node.parent)

@@ -28,6 +28,9 @@ package node.fs
  * The kernel ignores the position argument and always appends the data to
  * the end of the file.
  * @since v0.0.2
+ * @param [offset=0]
+ * @param [length=buffer.byteLength - offset]
+ * @param [position='null']
  */
 external fun <TBuffer : js.buffer.ArrayBufferView> write(
     fd: Number,

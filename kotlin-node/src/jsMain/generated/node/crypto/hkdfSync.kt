@@ -16,17 +16,17 @@ import js.buffer.ArrayBuffer
  * types, or if the derived key cannot be generated.
  *
  * ```js
- * import { Buffer } from 'buffer';
+ * import { Buffer } from 'node:buffer';
  * const {
- *   hkdfSync
- * } = await import('crypto');
+ *   hkdfSync,
+ * } = await import('node:crypto');
  *
  * const derivedKey = hkdfSync('sha512', 'key', 'salt', 'info', 64);
  * console.log(Buffer.from(derivedKey).toString('hex'));  // '24156e2...5391653'
  * ```
  * @since v15.0.0
  * @param digest The digest algorithm to use.
- * @param ikm The input keying material. It must be at least one byte in length.
+ * @param ikm The input keying material. Must be provided but can be zero-length.
  * @param salt The salt value. Must be provided but can be zero-length.
  * @param info Additional info value. Must be provided but can be zero-length, and cannot be more than 1024 bytes.
  * @param keylen The length of the key to generate. Must be greater than 0. The maximum allowable value is `255` times the number of bytes produced by the selected digest function (e.g. `sha512`

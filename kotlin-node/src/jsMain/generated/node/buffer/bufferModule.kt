@@ -17,7 +17,7 @@ package node.buffer
  * recommended to explicitly reference it via an import or require statement.
  *
  * ```js
- * import { Buffer } from 'buffer';
+ * import { Buffer } from 'node:buffer';
  *
  * // Creates a zero-filled Buffer of length 10.
  * const buf1 = Buffer.alloc(10);
@@ -48,5 +48,5 @@ package node.buffer
  * // Creates a Buffer containing the Latin-1 bytes [0x74, 0xe9, 0x73, 0x74].
  * const buf7 = Buffer.from('tést', 'latin1');
  * ```
- * @see [source](https://github.com/nodejs/node/blob/v18.0.0/lib/buffer.js)
+ * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/buffer.js)
  */

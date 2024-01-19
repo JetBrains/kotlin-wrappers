@@ -6,8 +6,8 @@ package node.fs
 
 
 /**
- * Unlike the 16 kb default `highWaterMark` for a `stream.Readable`, the stream
- * returned by this method has a default `highWaterMark` of 64 kb.
+ * Unlike the 16 KiB default `highWaterMark` for a `stream.Readable`, the stream
+ * returned by this method has a default `highWaterMark` of 64 KiB.
  *
  * `options` can include `start` and `end` values to read a range of bytes from
  * the file instead of the entire file. Both `start` and `end` are inclusive and
@@ -33,7 +33,7 @@ package node.fs
  * also required.
  *
  * ```js
- * import { createReadStream } from 'fs';
+ * import { createReadStream } from 'node:fs';
  *
  * // Create a stream from some character device.
  * const stream = createReadStream('/dev/input/event0');
@@ -61,7 +61,7 @@ package node.fs
  * An example to read the last 10 bytes of a file which is 100 bytes long:
  *
  * ```js
- * import { createReadStream } from 'fs';
+ * import { createReadStream } from 'node:fs';
  *
  * createReadStream('sample.txt', { start: 90, end: 99 });
  * ```

@@ -15,7 +15,7 @@ package node.dns
  * On an error, `err` is an `Error` object, where `err.code` is the error code.
  *
  * ```js
- * const dns = require('dns');
+ * const dns = require('node:dns');
  * dns.lookupService('127.0.0.1', 22, (err, hostname, service) => {
  *   console.log(hostname, service);
  *   // Prints: localhost ssh

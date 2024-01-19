@@ -12,7 +12,7 @@ import node.crypto.X509Certificate
  *
  * Instances of `tls.TLSSocket` implement the duplex `Stream` interface.
  *
- * Methods that return TLS connection metadata (e.g.{@link TLSSocket.getPeerCertificate} will only return data while the
+ * Methods that return TLS connection metadata (e.g.{@link TLSSocket.getPeerCertificate}) will only return data while the
  * connection is open.
  * @since v0.11.4
  */
@@ -66,13 +66,13 @@ external class TLSSocket : node.net.Socket {
     /**
      * Returns an object containing information on the negotiated cipher suite.
      *
-     * For example:
+     * For example, a TLSv1.2 protocol with AES256-SHA cipher:
      *
      * ```json
      * {
-     *     "name": "AES128-SHA256",
-     *     "standardName": "TLS_RSA_WITH_AES_128_CBC_SHA256",
-     *     "version": "TLSv1.2"
+     *     "name": "AES256-SHA",
+     *     "standardName": "TLS_RSA_WITH_AES_256_CBC_SHA",
+     *     "version": "SSLv3"
      * }
      * ```
      *

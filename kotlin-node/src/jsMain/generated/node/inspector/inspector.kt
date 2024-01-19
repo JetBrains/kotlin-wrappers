@@ -10,14 +10,21 @@ package node.inspector
 // Please see https://github.com/DefinitelyTyped/DefinitelyTyped/pull/19330
 // for more information.
 /**
- * The `inspector` module provides an API for interacting with the V8 inspector.
+ * The `node:inspector` module provides an API for interacting with the V8
+ * inspector.
  *
  * It can be accessed using:
  *
  * ```js
- * const inspector = require('inspector');
+ * import * as inspector from 'node:inspector/promises';
  * ```
- * @see [source](https://github.com/nodejs/node/blob/v18.0.0/lib/inspector.js)
+ *
+ * or
+ *
+ * ```js
+ * import * as inspector from 'node:inspector';
+ * ```
+ * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/inspector.js)
  */
 
 

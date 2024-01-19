@@ -13,9 +13,6 @@ package node.crypto
  * If an error occurs an `Error` will be thrown, otherwise the derived key will be
  * returned as a `Buffer`.
  *
- * If `digest` is `null`, `'sha1'` will be used. This behavior is deprecated,
- * please specify a `digest` explicitly.
- *
  * The `iterations` argument must be a number set as high as possible. The
  * higher the number of iterations, the more secure the derived key will be,
  * but will take a longer amount of time to complete.
@@ -27,21 +24,11 @@ package node.crypto
  *
  * ```js
  * const {
- *   pbkdf2Sync
- * } = await import('crypto');
+ *   pbkdf2Sync,
+ * } = await import('node:crypto');
  *
  * const key = pbkdf2Sync('secret', 'salt', 100000, 64, 'sha512');
  * console.log(key.toString('hex'));  // '3745e48...08d59ae'
- * ```
- *
- * The `crypto.DEFAULT_ENCODING` property may be used to change the way the`derivedKey` is returned. This property, however, is deprecated and use
- * should be avoided.
- *
- * ```js
- * import crypto from 'crypto';
- * crypto.DEFAULT_ENCODING = 'hex';
- * const key = crypto.pbkdf2Sync('secret', 'salt', 100000, 512, 'sha512');
- * console.log(key);  // '3745e48...aa39b34'
  * ```
  *
  * An array of supported digest functions can be retrieved using {@link getHashes}.

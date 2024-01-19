@@ -21,7 +21,7 @@ import js.promise.Promise
  *
  * `dnsPromises.lookup()` does not necessarily have anything to do with the DNS
  * protocol. The implementation uses an operating system facility that can
- * associate names with addresses, and vice versa. This implementation can have
+ * associate names with addresses and vice versa. This implementation can have
  * subtle but important consequences on the behavior of any Node.js program. Please
  * take some time to consult the `Implementation considerations section` before
  * using `dnsPromises.lookup()`.
@@ -29,7 +29,7 @@ import js.promise.Promise
  * Example usage:
  *
  * ```js
- * const dns = require('dns');
+ * const dns = require('node:dns');
  * const dnsPromises = dns.promises;
  * const options = {
  *   family: 6,

@@ -6,7 +6,8 @@ package node.crypto
 
 
 /**
- * Enables the FIPS compliant crypto provider in a FIPS-enabled Node.js build. Throws an error if FIPS mode is not available.
+ * Enables the FIPS compliant crypto provider in a FIPS-enabled Node.js build.
+ * Throws an error if FIPS mode is not available.
  * @since v10.0.0
  * @param bool `true` to enable FIPS mode.
  */

@@ -8,8 +8,8 @@ import web.url.URL
 
 /**
  * Since most requests are GET requests without bodies, Node.js provides this
- * convenience method. The only difference between this method and {@link request} is that it sets the method to GET and calls `req.end()`automatically. The callback must take care to consume the
- * response
+ * convenience method. The only difference between this method and {@link request} is that it sets the method to GET by default and calls `req.end()`automatically. The callback must take care to
+ * consume the response
  * data for reasons stated in {@link ClientRequest} section.
  *
  * The `callback` is invoked with a single argument that is an instance of {@link IncomingMessage}.
@@ -57,14 +57,14 @@ import web.url.URL
  * const server = http.createServer((req, res) => {
  *   res.writeHead(200, { 'Content-Type': 'application/json' });
  *   res.end(JSON.stringify({
- *     data: 'Hello World!'
+ *     data: 'Hello World!',
  *   }));
  * });
  *
  * server.listen(8000);
  * ```
  * @since v0.3.6
- * @param options Accepts the same `options` as {@link request}, with the `method` always set to `GET`. Properties that are inherited from the prototype are ignored.
+ * @param options Accepts the same `options` as {@link request}, with the method set to GET by default.
  */
 external fun get(options: RequestOptions, callback: (res: IncomingMessage) -> Unit = definedExternally): ClientRequest
 

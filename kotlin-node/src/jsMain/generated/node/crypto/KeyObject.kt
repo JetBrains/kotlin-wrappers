@@ -64,9 +64,10 @@ external class KeyObject {
     fun export(options: JwkKeyExportOptions = definedExternally): JsonWebKey
 
     /**
-     * Returns `true` or `false` depending on whether the keys have exactly the same type, value, and parameters.
-     * This method is not [constant time](https://en.wikipedia.org/wiki/Timing_attack).
-     * @since v16.15.0
+     * Returns `true` or `false` depending on whether the keys have exactly the same
+     * type, value, and parameters. This method is not [constant time](https://en.wikipedia.org/wiki/Timing_attack).
+     * @since v17.7.0, v16.15.0
+     * @param otherKeyObject A `KeyObject` with which to compare `keyObject`.
      */
     fun equals(otherKeyObject: KeyObject): Boolean
 
@@ -89,13 +90,13 @@ external class KeyObject {
          * Example: Converting a `CryptoKey` instance to a `KeyObject`:
          *
          * ```js
-         * const { webcrypto, KeyObject } = await import('crypto');
-         * const { subtle } = webcrypto;
+         * const { KeyObject } = await import('node:crypto');
+         * const { subtle } = globalThis.crypto;
          *
          * const key = await subtle.generateKey({
          *   name: 'HMAC',
          *   hash: 'SHA-256',
-         *   length: 256
+         *   length: 256,
          * }, true, ['sign', 'verify']);
          *
          * const keyObject = KeyObject.from(key);

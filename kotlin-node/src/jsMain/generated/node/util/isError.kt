@@ -9,7 +9,7 @@ package node.util
  * Returns `true` if the given `object` is an `Error`. Otherwise, returns`false`.
  *
  * ```js
- * const util = require('util');
+ * const util = require('node:util');
  *
  * util.isError(new Error());
  * // Returns: true
@@ -23,7 +23,7 @@ package node.util
  * possible to obtain an incorrect result when the `object` argument manipulates`@@toStringTag`.
  *
  * ```js
- * const util = require('util');
+ * const util = require('node:util');
  * const obj = { name: 'Error', message: 'an error occurred' };
  *
  * util.isError(obj);

@@ -10,7 +10,7 @@ package node.fs
  * Then call the `callback` argument with either true or false:
  *
  * ```js
- * import { exists } from 'fs';
+ * import { exists } from 'node:fs';
  *
  * exists('/etc/passwd', (e) => {
  *   console.log(e ? 'it exists' : 'no passwd!');
@@ -22,7 +22,7 @@ package node.fs
  * has only one boolean parameter. This is one reason `fs.access()` is recommended
  * instead of `fs.exists()`.
  *
- * Using `fs.exists()` to check for the existence of a file before calling`fs.open()`, `fs.readFile()` or `fs.writeFile()` is not recommended. Doing
+ * Using `fs.exists()` to check for the existence of a file before calling`fs.open()`, `fs.readFile()`, or `fs.writeFile()` is not recommended. Doing
  * so introduces a race condition, since other processes may change the file's
  * state between the two calls. Instead, user code should open/read/write the
  * file directly and handle the error raised if the file does not exist.
@@ -30,7 +30,7 @@ package node.fs
  * **write (NOT RECOMMENDED)**
  *
  * ```js
- * import { exists, open, close } from 'fs';
+ * import { exists, open, close } from 'node:fs';
  *
  * exists('myfile', (e) => {
  *   if (e) {
@@ -54,7 +54,7 @@ package node.fs
  * **write (RECOMMENDED)**
  *
  * ```js
- * import { open, close } from 'fs';
+ * import { open, close } from 'node:fs';
  * open('myfile', 'wx', (err, fd) => {
  *   if (err) {
  *     if (err.code === 'EEXIST') {
@@ -78,7 +78,7 @@ package node.fs
  * **read (NOT RECOMMENDED)**
  *
  * ```js
- * import { open, close, exists } from 'fs';
+ * import { open, close, exists } from 'node:fs';
  *
  * exists('myfile', (e) => {
  *   if (e) {
@@ -102,7 +102,7 @@ package node.fs
  * **read (RECOMMENDED)**
  *
  * ```js
- * import { open, close } from 'fs';
+ * import { open, close } from 'node:fs';
  *
  * open('myfile', 'r', (err, fd) => {
  *   if (err) {
@@ -128,7 +128,7 @@ package node.fs
  * file; the "recommended" examples are better because they use the file directly
  * and handle the error, if any.
  *
- * In general, check for the existence of a file only if the file won’t be
+ * In general, check for the existence of a file only if the file won't be
  * used directly, for example when its existence is a signal from another
  * process.
  * @since v0.0.2

@@ -18,7 +18,7 @@ import js.promise.Promise
  * Example using async iteration:
  *
  * ```js
- * import { opendir } from 'fs/promises';
+ * import { opendir } from 'node:fs/promises';
  *
  * try {
  *   const dir = await opendir('./');

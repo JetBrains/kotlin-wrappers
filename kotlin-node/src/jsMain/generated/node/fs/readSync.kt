@@ -11,6 +11,7 @@ package node.fs
  * For detailed information, see the documentation of the asynchronous version of
  * this API: {@link read}.
  * @since v0.1.21
+ * @param [position='null']
  */
 external fun readSync(
     fd: Number,

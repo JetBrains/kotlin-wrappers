@@ -69,7 +69,7 @@ external class Dirent {
 
     /**
      * The base path that this `fs.Dirent` object refers to.
-     * @since v18.17.0
+     * @since v20.1.0
      */
     var path: String
 }

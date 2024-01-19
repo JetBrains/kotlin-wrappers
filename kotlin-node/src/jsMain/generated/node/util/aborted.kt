@@ -8,9 +8,27 @@ import js.promise.Promise
 import web.abort.AbortSignal
 
 /**
- * Listens to abort event on the provided `signal` and returns a promise that is fulfilled when the `signal` is aborted.
- * If the passed `resource` is garbage collected before the `signal` is aborted, the returned promise shall remain pending indefinitely.
- * @param resource  Any non-null entity, reference to which is held weakly.
+ * Listens to abort event on the provided `signal` and
+ * returns a promise that is fulfilled when the `signal` is
+ * aborted. If the passed `resource` is garbage collected before the `signal` is
+ * aborted, the returned promise shall remain pending indefinitely.
+ *
+ * ```js
+ * import { aborted } from 'node:util';
+ *
+ * const dependent = obtainSomethingAbortable();
+ *
+ * aborted(dependent.signal, dependent).then(() => {
+ *   // Do something when dependent is aborted.
+ * });
+ *
+ * dependent.on('event', () => {
+ *   dependent.abort();
+ * });
+ * ```
+ * @since v19.7.0
+ * @experimental
+ * @param resource Any non-null entity, reference to which is held weakly.
  */
 
 @JsName("aborted")

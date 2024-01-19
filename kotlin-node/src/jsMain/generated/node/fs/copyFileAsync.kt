@@ -15,14 +15,13 @@ import js.promise.Promise
  * will be made to remove the destination.
  *
  * ```js
- * import { constants } from 'fs';
- * import { copyFile } from 'fs/promises';
+ * import { copyFile, constants } from 'node:fs/promises';
  *
  * try {
  *   await copyFile('source.txt', 'destination.txt');
  *   console.log('source.txt was copied to destination.txt');
  * } catch {
- *   console.log('The file could not be copied');
+ *   console.error('The file could not be copied');
  * }
  *
  * // By using COPYFILE_EXCL, the operation will fail if destination.txt exists.
@@ -30,7 +29,7 @@ import js.promise.Promise
  *   await copyFile('source.txt', 'destination.txt', constants.COPYFILE_EXCL);
  *   console.log('source.txt was copied to destination.txt');
  * } catch {
- *   console.log('The file could not be copied');
+ *   console.error('The file could not be copied');
  * }
  * ```
  * @since v10.0.0

@@ -25,8 +25,8 @@ import node.stream.TransformOptions
  * const {
  *   scrypt,
  *   randomFill,
- *   createCipheriv
- * } = await import('crypto');
+ *   createCipheriv,
+ * } = await import('node:crypto');
  *
  * const algorithm = 'aes-192-cbc';
  * const password = 'Password used to generate key';
@@ -60,17 +60,17 @@ import node.stream.TransformOptions
  * import {
  *   createReadStream,
  *   createWriteStream,
- * } from 'fs';
+ * } from 'node:fs';
  *
  * import {
- *   pipeline
- * } from 'stream';
+ *   pipeline,
+ * } from 'node:stream';
  *
  * const {
  *   scrypt,
  *   randomFill,
- *   createCipheriv
- * } = await import('crypto');
+ *   createCipheriv,
+ * } = await import('node:crypto');
  *
  * const algorithm = 'aes-192-cbc';
  * const password = 'Password used to generate key';
@@ -101,8 +101,8 @@ import node.stream.TransformOptions
  * const {
  *   scrypt,
  *   randomFill,
- *   createCipheriv
- * } = await import('crypto');
+ *   createCipheriv,
+ * } = await import('node:crypto');
  *
  * const algorithm = 'aes-192-cbc';
  * const password = 'Password used to generate key';

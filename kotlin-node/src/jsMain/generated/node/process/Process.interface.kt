@@ -20,7 +20,7 @@ sealed external interface Process : EventEmitter {
      * For example, to copy `process.stdin` to `process.stdout`:
      *
      * ```js
-     * import { stdin, stdout } from 'process';
+     * import { stdin, stdout } from 'node:process';
      *
      * stdin.pipe(stdout);
      * ```
@@ -64,7 +64,7 @@ sealed external interface Process : EventEmitter {
      * For example, assuming the following script for `process-args.js`:
      *
      * ```js
-     * import { argv } from 'process';
+     * import { argv } from 'node:process';
      *
      * // print process.argv
      * argv.forEach((val, index) => {
@@ -74,8 +74,8 @@ sealed external interface Process : EventEmitter {
      *
      * Launching the Node.js process as:
      *
-     * ```console
-     * $ node process-args.js one two=three four
+     * ```bash
+     * node process-args.js one two=three four
      * ```
      *
      * Would generate the output:
@@ -113,8 +113,8 @@ sealed external interface Process : EventEmitter {
      * the script name. These options are useful in order to spawn child processes with
      * the same execution environment as the parent.
      *
-     * ```console
-     * $ node --harmony script.js --version
+     * ```bash
+     * node --harmony script.js --version
      * ```
      *
      * Results in `process.execArgv`:
@@ -161,7 +161,7 @@ sealed external interface Process : EventEmitter {
      * the specified `directory` does not exist).
      *
      * ```js
-     * import { chdir, cwd } from 'process';
+     * import { chdir, cwd } from 'node:process';
      *
      * console.log(`Starting directory: ${cwd()}`);
      * try {
@@ -182,7 +182,7 @@ sealed external interface Process : EventEmitter {
      * process.
      *
      * ```js
-     * import { cwd } from 'process';
+     * import { cwd } from 'node:process';
      *
      * console.log(`Current directory: ${cwd()}`);
      * ```
@@ -194,7 +194,7 @@ sealed external interface Process : EventEmitter {
      * The port used by the Node.js debugger when enabled.
      *
      * ```js
-     * import process from 'process';
+     * import process from 'node:process';
      *
      * process.debugPort = 5858;
      * ```
@@ -207,12 +207,12 @@ sealed external interface Process : EventEmitter {
      * specific process warnings. These can be listened for by adding a handler to the `'warning'` event.
      *
      * ```js
-     * import { emitWarning } from 'process';
+     * import { emitWarning } from 'node:process';
      *
      * // Emit a warning with a code and additional detail.
      * emitWarning('Something happened!', {
      *   code: 'MY_WARNING',
-     *   detail: 'This is some additional information'
+     *   detail: 'This is some additional information',
      * });
      * // Emits:
      * // (node:56338) [MY_WARNING] Warning: Something happened!
@@ -222,7 +222,7 @@ sealed external interface Process : EventEmitter {
      * In this example, an `Error` object is generated internally by`process.emitWarning()` and passed through to the `'warning'` handler.
      *
      * ```js
-     * import process from 'process';
+     * import process from 'node:process';
      *
      * process.on('warning', (warning) => {
      *   console.warn(warning.name);    // 'Warning'
@@ -292,14 +292,14 @@ sealed external interface Process : EventEmitter {
      * to other `Worker` threads.
      * In other words, the following example would not work:
      *
-     * ```console
-     * $ node -e 'process.env.foo = "bar"' &#x26;&#x26; echo $foo
+     * ```bash
+     * node -e 'process.env.foo = "bar"' &#x26;&#x26; echo $foo
      * ```
      *
      * While the following will:
      *
      * ```js
-     * import { env } from 'process';
+     * import { env } from 'node:process';
      *
      * env.foo = 'bar';
      * console.log(env.foo);
@@ -310,7 +310,7 @@ sealed external interface Process : EventEmitter {
      * throw an error when the value is not a string, number, or boolean.
      *
      * ```js
-     * import { env } from 'process';
+     * import { env } from 'node:process';
      *
      * env.test = null;
      * console.log(env.test);
@@ -323,7 +323,7 @@ sealed external interface Process : EventEmitter {
      * Use `delete` to delete a property from `process.env`.
      *
      * ```js
-     * import { env } from 'process';
+     * import { env } from 'node:process';
      *
      * env.TEST = 1;
      * delete env.TEST;
@@ -334,7 +334,7 @@ sealed external interface Process : EventEmitter {
      * On Windows operating systems, environment variables are case-insensitive.
      *
      * ```js
-     * import { env } from 'process';
+     * import { env } from 'node:process';
      *
      * env.TEST = 1;
      * console.log(env.test);
@@ -343,10 +343,11 @@ sealed external interface Process : EventEmitter {
      *
      * Unless explicitly specified when creating a `Worker` instance,
      * each `Worker` thread has its own copy of `process.env`, based on its
-     * parent thread’s `process.env`, or whatever was specified as the `env` option
+     * parent thread's `process.env`, or whatever was specified as the `env` option
      * to the `Worker` constructor. Changes to `process.env` will not be visible
      * across `Worker` threads, and only the main thread can make changes that
-     * are visible to the operating system or to native add-ons.
+     * are visible to the operating system or to native add-ons. On Windows, a copy of`process.env` on a `Worker` instance operates in a case-sensitive manner
+     * unlike the main thread.
      * @since v0.1.27
      */
     var env: ProcessEnv
@@ -361,7 +362,7 @@ sealed external interface Process : EventEmitter {
      * To exit with a 'failure' code:
      *
      * ```js
-     * import { exit } from 'process';
+     * import { exit } from 'node:process';
      *
      * exit(1);
      * ```
@@ -380,7 +381,7 @@ sealed external interface Process : EventEmitter {
      * truncated and lost:
      *
      * ```js
-     * import { exit } from 'process';
+     * import { exit } from 'node:process';
      *
      * // This is an example of what *not* to do:
      * if (someConditionNotMet()) {
@@ -397,7 +398,7 @@ sealed external interface Process : EventEmitter {
      * scheduling any additional work for the event loop:
      *
      * ```js
-     * import process from 'process';
+     * import process from 'node:process';
      *
      * // How to properly set the exit code while letting
      * // the process exit gracefully.
@@ -414,7 +415,7 @@ sealed external interface Process : EventEmitter {
      * In `Worker` threads, this function stops the current thread rather
      * than the current process.
      * @since v0.1.13
-     * @param [code=0] The exit code.
+     * @param [code=0] The exit code. For string type, only integer strings (e.g.,'1') are allowed.
      */
     fun exit(code: Number = definedExternally): Nothing
 
@@ -685,25 +686,30 @@ sealed external interface Process : EventEmitter {
     fun hasUncaughtExceptionCaptureCallback(): Boolean
 
     /**
-     * This function enables or disables the Source Map v3 support for stack traces.
-     * It provides same features as launching Node.js process with commandline options --enable-source-maps.
-     * @since v16.6.0
-     * @experimental
-     */
-    fun setSourceMapsEnabled(value: Boolean): Unit
-
-    /**
      * The `process.sourceMapsEnabled` property returns whether the [Source Map v3](https://sourcemaps.info/spec.html) support for stack traces is enabled.
-     * @since v18.19.0
+     * @since v20.7.0
      * @experimental
      */
     val sourceMapsEnabled: Boolean
 
     /**
+     * This function enables or disables the [Source Map v3](https://sourcemaps.info/spec.html) support for
+     * stack traces.
+     *
+     * It provides same features as launching Node.js process with commandline options`--enable-source-maps`.
+     *
+     * Only source maps in JavaScript files that are loaded after source maps has been
+     * enabled will be parsed and loaded.
+     * @since v16.6.0, v14.18.0
+     * @experimental
+     */
+    fun setSourceMapsEnabled(value: Boolean): Unit
+
+    /**
      * The `process.version` property contains the Node.js version string.
      *
      * ```js
-     * import { version } from 'process';
+     * import { version } from 'node:process';
      *
      * console.log(`Version: ${version}`);
      * // Version: v14.8.0
@@ -721,7 +727,7 @@ sealed external interface Process : EventEmitter {
      * to load modules that were compiled against a different module ABI version.
      *
      * ```js
-     * import { versions } from 'process';
+     * import { versions } from 'node:process';
      *
      * console.log(versions);
      * ```
@@ -729,31 +735,40 @@ sealed external interface Process : EventEmitter {
      * Will generate an object similar to:
      *
      * ```console
-     * { node: '11.13.0',
-     *   v8: '7.0.276.38-node.18',
-     *   uv: '1.27.0',
-     *   zlib: '1.2.11',
-     *   brotli: '1.0.7',
-     *   ares: '1.15.0',
-     *   modules: '67',
-     *   nghttp2: '1.34.0',
-     *   napi: '4',
-     *   llhttp: '1.1.1',
-     *   openssl: '1.1.1b',
-     *   cldr: '34.0',
-     *   icu: '63.1',
-     *   tz: '2018e',
-     *   unicode: '11.0' }
+     * { node: '20.2.0',
+     *   acorn: '8.8.2',
+     *   ada: '2.4.0',
+     *   ares: '1.19.0',
+     *   base64: '0.5.0',
+     *   brotli: '1.0.9',
+     *   cjs_module_lexer: '1.2.2',
+     *   cldr: '43.0',
+     *   icu: '73.1',
+     *   llhttp: '8.1.0',
+     *   modules: '115',
+     *   napi: '8',
+     *   nghttp2: '1.52.0',
+     *   nghttp3: '0.7.0',
+     *   ngtcp2: '0.8.1',
+     *   openssl: '3.0.8+quic',
+     *   simdutf: '3.2.9',
+     *   tz: '2023c',
+     *   undici: '5.22.0',
+     *   unicode: '15.0',
+     *   uv: '1.44.2',
+     *   uvwasi: '0.0.16',
+     *   v8: '11.3.244.8-node.9',
+     *   zlib: '1.2.13' }
      * ```
      * @since v0.2.0
      */
     val versions: ProcessVersions
 
     /**
-     * The `process.config` property returns an `Object` containing the JavaScript
-     * representation of the configure options used to compile the current Node.js
-     * executable. This is the same as the `config.gypi` file that was produced when
-     * running the `./configure` script.
+     * The `process.config` property returns a frozen `Object` containing the
+     * JavaScript representation of the configure options used to compile the current
+     * Node.js executable. This is the same as the `config.gypi` file that was produced
+     * when running the `./configure` script.
      *
      * An example of the possible output looks like:
      *
@@ -775,7 +790,6 @@ sealed external interface Process : EventEmitter {
      *      node_shared_http_parser: 'false',
      *      node_shared_libuv: 'false',
      *      node_shared_zlib: 'false',
-     *      node_use_dtrace: 'false',
      *      node_use_openssl: 'true',
      *      node_shared_openssl: 'false',
      *      strict_aliasing: 'true',
@@ -784,13 +798,6 @@ sealed external interface Process : EventEmitter {
      *    }
      * }
      * ```
-     *
-     * The `process.config` property is **not** read-only and there are existing
-     * modules in the ecosystem that are known to extend, modify, or entirely replace
-     * the value of `process.config`.
-     *
-     * Modifying the `process.config` property, or any child-property of the`process.config` object has been deprecated. The `process.config` will be made
-     * read-only in a future release.
      * @since v0.7.7
      */
     val config: ProcessConfig
@@ -810,7 +817,7 @@ sealed external interface Process : EventEmitter {
      * other than kill the target process.
      *
      * ```js
-     * import process, { kill } from 'process';
+     * import process, { kill } from 'node:process';
      *
      * process.on('SIGHUP', () => {
      *   console.log('Got SIGHUP signal.');
@@ -838,7 +845,7 @@ sealed external interface Process : EventEmitter {
      * The `process.pid` property returns the PID of the process.
      *
      * ```js
-     * import { pid } from 'process';
+     * import { pid } from 'node:process';
      *
      * console.log(`This process is pid ${pid}`);
      * ```
@@ -851,7 +858,7 @@ sealed external interface Process : EventEmitter {
      * current process.
      *
      * ```js
-     * import { ppid } from 'process';
+     * import { ppid } from 'node:process';
      *
      * console.log(`The parent process is pid ${ppid}`);
      * ```
@@ -880,10 +887,10 @@ sealed external interface Process : EventEmitter {
 
     /**
      * The operating system CPU architecture for which the Node.js binary was compiled.
-     * Possible values are: `'arm'`, `'arm64'`, `'ia32'`, `'mips'`,`'mipsel'`, `'ppc'`,`'ppc64'`, `'s390'`, `'s390x'`, and `'x64'`.
+     * Possible values are: `'arm'`, `'arm64'`, `'ia32'`, `'loong64'`, `'mips'`,`'mipsel'`, `'ppc'`, `'ppc64'`, `'riscv64'`, `'s390'`, `'s390x'`, and `'x64'`.
      *
      * ```js
-     * import { arch } from 'process';
+     * import { arch } from 'node:process';
      *
      * console.log(`This processor architecture is ${arch}`);
      * ```
@@ -906,7 +913,7 @@ sealed external interface Process : EventEmitter {
      * * `'win32'`
      *
      * ```js
-     * import { platform } from 'process';
+     * import { platform } from 'node:process';
      *
      * console.log(`This platform is ${platform}`);
      * ```
@@ -935,6 +942,11 @@ sealed external interface Process : EventEmitter {
      * Gets the amount of memory available to the process (in bytes) based on
      * limits imposed by the OS. If there is no such constraint, or the constraint
      * is unknown, `undefined` is returned.
+     *
+     * See [`uv_get_constrained_memory`](https://docs.libuv.org/en/v1.x/misc.html#c.uv_get_constrained_memory) for more
+     * information.
+     * @since v19.6.0, v18.15.0
+     * @experimental
      */
     fun constrainedMemory(): Double?
 
@@ -949,7 +961,7 @@ sealed external interface Process : EventEmitter {
      * argument to the function, to get a diff reading.
      *
      * ```js
-     * import { cpuUsage } from 'process';
+     * import { cpuUsage } from 'node:process';
      *
      * const startUsage = cpuUsage();
      * // { user: 38579, system: 6986 }
@@ -974,7 +986,7 @@ sealed external interface Process : EventEmitter {
      * See the [Event Loop](https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/#process-nexttick) guide for more background.
      *
      * ```js
-     * import { nextTick } from 'process';
+     * import { nextTick } from 'node:process';
      *
      * console.log('start');
      * nextTick(() => {
@@ -992,7 +1004,7 @@ sealed external interface Process : EventEmitter {
      * I/O has occurred:
      *
      * ```js
-     * import { nextTick } from 'process';
+     * import { nextTick } from 'node:process';
      *
      * function MyThing(options) {
      *   this.setupOptions(options);
@@ -1040,7 +1052,7 @@ sealed external interface Process : EventEmitter {
      * The following approach is much better:
      *
      * ```js
-     * import { nextTick } from 'process';
+     * import { nextTick } from 'node:process';
      *
      * function definitelyAsync(arg, cb) {
      *   if (arg) {
@@ -1066,10 +1078,10 @@ sealed external interface Process : EventEmitter {
      * ```js
      * {
      *   name: 'node',
-     *   lts: 'Erbium',
-     *   sourceUrl: 'https://nodejs.org/download/release/v12.18.1/node-v12.18.1.tar.gz',
-     *   headersUrl: 'https://nodejs.org/download/release/v12.18.1/node-v12.18.1-headers.tar.gz',
-     *   libUrl: 'https://nodejs.org/download/release/v12.18.1/win-x64/node.lib'
+     *   lts: 'Hydrogen',
+     *   sourceUrl: 'https://nodejs.org/download/release/v18.12.0/node-v18.12.0.tar.gz',
+     *   headersUrl: 'https://nodejs.org/download/release/v18.12.0/node-v18.12.0-headers.tar.gz',
+     *   libUrl: 'https://nodejs.org/download/release/v18.12.0/win-x64/node.lib'
      * }
      * ```
      *
@@ -1178,7 +1190,7 @@ sealed external interface Process : EventEmitter {
      * dashes:
      *
      * ```js
-     * import { allowedNodeEnvironmentFlags } from 'process';
+     * import { allowedNodeEnvironmentFlags } from 'node:process';
      *
      * allowedNodeEnvironmentFlags.forEach((flag) => {
      *   // -r
@@ -1206,7 +1218,7 @@ sealed external interface Process : EventEmitter {
 
     /**
      * ```js
-     * import { resourceUsage } from 'process';
+     * import { resourceUsage } from 'node:process';
      *
      * console.log(resourceUsage());
      * &#47;*

@@ -39,7 +39,7 @@ package node.childProcess
  *     console.log(`Hello from ${process.argv[2]}!`);
  *   }, 1_000);
  * } else {
- *   const { fork } = require('child_process');
+ *   const { fork } = require('node:child_process');
  *   const controller = new AbortController();
  *   const { signal } = controller;
  *   const child = fork(__filename, ['child'], { signal });

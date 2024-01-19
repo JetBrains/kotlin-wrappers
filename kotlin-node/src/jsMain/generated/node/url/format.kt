@@ -10,15 +10,15 @@ import web.url.URL
  * The `url.format()` method returns a formatted URL string derived from`urlObject`.
  *
  * ```js
- * const url = require('url');
+ * const url = require('node:url');
  * url.format({
  *   protocol: 'https',
  *   hostname: 'example.com',
  *   pathname: '/some/path',
  *   query: {
  *     page: 1,
- *     format: 'json'
- *   }
+ *     format: 'json',
+ *   },
  * });
  *
  * // => 'https://example.com/some/path?page=1&#x26;format=json'

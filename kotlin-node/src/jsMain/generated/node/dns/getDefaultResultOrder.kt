@@ -10,6 +10,6 @@ package node.dns
  *
  * * `ipv4first`: for `verbatim` defaulting to `false`.
  * * `verbatim`: for `verbatim` defaulting to `true`.
- * @since v18.17.0
+ * @since v20.1.0
  */
 external fun getDefaultResultOrder(): GetDefaultResultOrderResult

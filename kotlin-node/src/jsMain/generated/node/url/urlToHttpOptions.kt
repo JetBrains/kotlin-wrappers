@@ -12,7 +12,7 @@ import web.url.URL
  * expected by the `http.request()` and `https.request()` APIs.
  *
  * ```js
- * import { urlToHttpOptions } from 'url';
+ * import { urlToHttpOptions } from 'node:url';
  * const myURL = new URL('https://a:b@測試?abc#foo');
  *
  * console.log(urlToHttpOptions(myURL));

@@ -10,8 +10,8 @@ export default function (node, context, render) {
         && ts.isClassDeclaration(node.parent)
         && node.parent.name
         && (
-            node.parent.name.text === "Readable"
-            || node.parent.name.text === "Writable"
+            node.parent.name.text === "ReadableBase"
+            || node.parent.name.text === "WritableBase"
         )
         && ts.isIdentifier(node.name)
         && node.name.text === "destroy"

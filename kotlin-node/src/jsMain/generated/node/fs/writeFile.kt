@@ -17,8 +17,8 @@ package node.fs
  * The `mode` option only affects the newly created file. See {@link open} for more details.
  *
  * ```js
- * import { writeFile } from 'fs';
- * import { Buffer } from 'buffer';
+ * import { writeFile } from 'node:fs';
+ * import { Buffer } from 'node:buffer';
  *
  * const data = new Uint8Array(Buffer.from('Hello Node.js'));
  * writeFile('message.txt', data, (err) => {
@@ -30,7 +30,7 @@ package node.fs
  * If `options` is a string, then it specifies the encoding:
  *
  * ```js
- * import { writeFile } from 'fs';
+ * import { writeFile } from 'node:fs';
  *
  * writeFile('message.txt', 'Hello Node.js', 'utf8', callback);
  * ```
@@ -48,8 +48,8 @@ package node.fs
  * to be written.
  *
  * ```js
- * import { writeFile } from 'fs';
- * import { Buffer } from 'buffer';
+ * import { writeFile } from 'node:fs';
+ * import { Buffer } from 'node:buffer';
  *
  * const controller = new AbortController();
  * const { signal } = controller;

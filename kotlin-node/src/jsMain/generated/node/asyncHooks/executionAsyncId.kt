@@ -7,9 +7,11 @@ package node.asyncHooks
 
 /**
  * ```js
- * import { executionAsyncId } from 'async_hooks';
+ * import { executionAsyncId } from 'node:async_hooks';
+ * import fs from 'node:fs';
  *
  * console.log(executionAsyncId());  // 1 - bootstrap
+ * const path = '.';
  * fs.open(path, 'r', (err, fd) => {
  *   console.log(executionAsyncId());  // 6 - open()
  * });

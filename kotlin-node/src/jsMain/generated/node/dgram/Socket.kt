@@ -29,8 +29,8 @@ external class Socket : EventEmitter {
      * When sharing a UDP socket across multiple `cluster` workers, the`socket.addMembership()` function must be called only once or an`EADDRINUSE` error will occur:
      *
      * ```js
-     * import cluster from 'cluster';
-     * import dgram from 'dgram';
+     * import cluster from 'node:cluster';
+     * import dgram from 'node:dgram';
      *
      * if (cluster.isPrimary) {
      *   cluster.fork(); // Works ok.
@@ -48,7 +48,7 @@ external class Socket : EventEmitter {
 
     /**
      * Returns an object containing the address information for a socket.
-     * For UDP sockets, this object will contain `address`, `family` and `port`properties.
+     * For UDP sockets, this object will contain `address`, `family`, and `port`properties.
      *
      * This method throws `EBADF` if called on an unbound socket.
      * @since v0.1.99
@@ -75,12 +75,12 @@ external class Socket : EventEmitter {
      * Example of a UDP server listening on port 41234:
      *
      * ```js
-     * import dgram from 'dgram';
+     * import dgram from 'node:dgram';
      *
      * const server = dgram.createSocket('udp4');
      *
      * server.on('error', (err) => {
-     *   console.log(`server error:\n${err.stack}`);
+     *   console.error(`server error:\n${err.stack}`);
      *   server.close();
      * });
      *
@@ -167,14 +167,14 @@ external class Socket : EventEmitter {
     fun getSendBufferSize(): Double
 
     /**
-     * @since v18.8.0
-     * @return the number of bytes queued for sending.
+     * @since v18.8.0, v16.19.0
+     * @return Number of bytes queued for sending.
      */
     fun getSendQueueSize(): Double
 
     /**
-     * @since v18.8.0
-     * @return the number of send requests currently in the queue awaiting to be processed.
+     * @since v18.8.0, v16.19.0
+     * @return Number of send requests currently in the queue awaiting to be processed.
      */
     fun getSendQueueCount(): Double
 
@@ -243,8 +243,8 @@ external class Socket : EventEmitter {
      * Example of sending a UDP packet to a port on `localhost`;
      *
      * ```js
-     * import dgram from 'dgram';
-     * import { Buffer } from 'buffer';
+     * import dgram from 'node:dgram';
+     * import { Buffer } from 'node:buffer';
      *
      * const message = Buffer.from('Some bytes');
      * const client = dgram.createSocket('udp4');
@@ -256,8 +256,8 @@ external class Socket : EventEmitter {
      * Example of sending a UDP packet composed of multiple buffers to a port on`127.0.0.1`;
      *
      * ```js
-     * import dgram from 'dgram';
-     * import { Buffer } from 'buffer';
+     * import dgram from 'node:dgram';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf1 = Buffer.from('Some ');
      * const buf2 = Buffer.from('bytes');
@@ -275,8 +275,8 @@ external class Socket : EventEmitter {
      * Example of sending a UDP packet using a socket connected to a port on`localhost`:
      *
      * ```js
-     * import dgram from 'dgram';
-     * import { Buffer } from 'buffer';
+     * import dgram from 'node:dgram';
+     * import { Buffer } from 'node:buffer';
      *
      * const message = Buffer.from('Some bytes');
      * const client = dgram.createSocket('udp4');
@@ -524,7 +524,7 @@ external class Socket : EventEmitter {
      * process active, allowing the process to exit even if the socket is still
      * listening.
      *
-     * Calling `socket.unref()` multiple times will have no addition effect.
+     * Calling `socket.unref()` multiple times will have no additional effect.
      *
      * The `socket.unref()` method returns a reference to the socket so calls can be
      * chained.

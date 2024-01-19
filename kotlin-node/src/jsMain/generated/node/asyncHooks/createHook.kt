@@ -17,11 +17,11 @@ package node.asyncHooks
  * specifics of all functions that can be passed to `callbacks` is in the `Hook Callbacks` section.
  *
  * ```js
- * import { createHook } from 'async_hooks';
+ * import { createHook } from 'node:async_hooks';
  *
  * const asyncHook = createHook({
  *   init(asyncId, type, triggerAsyncId, resource) { },
- *   destroy(asyncId) { }
+ *   destroy(asyncId) { },
  * });
  * ```
  *

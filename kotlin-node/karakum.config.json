@@ -34,6 +34,7 @@
     ],
     "output": "src/jsMain/generated",
     "ignoreOutput": [
+        "**/_File.kt",
         "**/_FormData.kt",
         "**/_Headers.kt",
         "**/_Request.kt",
@@ -514,6 +515,9 @@
         "fs/StatWatcher.kt": [
             "node.events.EventEmitter"
         ],
+        "fs/StreamOptions.kt": [
+            "web.abort.AbortSignal"
+        ],
         "fs/WatchOptions.kt": [
             "node.events.Abortable"
         ],
@@ -543,6 +547,13 @@
         ],
         "fs/cpSuspend.kt": [
             "web.url.URL"
+        ],
+        "fs/openAsBlob.kt": [
+            "js.promise.Promise",
+            "web.blob.Blob"
+        ],
+        "fs/openAsBlobSuspend.kt": [
+            "web.blob.Blob"
         ],
         "fs/readv.kt": [
             "js.array.ReadonlyArray"
@@ -619,6 +630,9 @@
         ],
         "inspector/Session.kt": [
             "node.events.EventEmitter"
+        ],
+        "inspector/open.kt": [
+            "js.disposable.Disposable"
         ],
         "net/ListenOptions.kt": [
             "node.events.Abortable"
@@ -725,7 +739,7 @@
         "stream/pipelineSuspend.kt": [
             "js.array.ReadonlyArray"
         ],
-        "stream/Readable.kt": [
+        "stream/ReadableBase.kt": [
             "js.typedarrays.Uint8Array",
             "js.iterable.AsyncIterable",
             "js.iterable.AsyncIterableIterator",
@@ -743,8 +757,7 @@
             "js.iterable.AsyncIterable",
             "node.events.EventEmitter"
         ],
-        "stream/Writable.kt": [
-            "node.events.EventEmitter",
+        "stream/WritableBase.kt": [
             "js.typedarrays.Uint8Array"
         ],
         "test/HookOptions.kt": [
@@ -767,6 +780,9 @@
         ],
         "test/TestOptions.kt": [
             "web.abort.AbortSignal"
+        ],
+        "test/TestsStream.kt": [
+            "node.stream.Readable"
         ],
         "test/describe.kt": [
             "js.promise.Promise"
@@ -853,6 +869,10 @@
         ],
         "test/reporters/TestEventGenerator.kt": [
             "js.generator.AsyncGenerator"
+        ],
+        "test/reporters/Lcov.kt": [
+            "node.stream.Transform",
+            "node.stream.TransformOptions"
         ],
         "test/reporters/dot.kt": [
             "js.generator.AsyncGenerator"
@@ -1044,7 +1064,7 @@
         "ExecFileObjectEncodingOptions.kt": "replace",
         "StreamComposeOptions.kt": "replace",
         "ReadableStreamPipeOptions.kt": "replace",
-        "WritableWritevChunksItem.kt": "replace",
+        "WritableBaseWritevChunksItem.kt": "replace",
         "WritableOptionsWritevChunksItem.kt": "replace"
     },
     "compilerOptions": {

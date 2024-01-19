@@ -6,10 +6,12 @@ package node.fs
 
 
 /**
- * Asynchronous statfs(2). Returns information about the mounted file system which contains path. The callback gets two arguments (err, stats) where stats is an <fs.StatFs> object.
- * In case of an error, the err.code will be one of Common System Errors.
+ * Asynchronous [`statfs(2)`](http://man7.org/linux/man-pages/man2/statfs.2.html). Returns information about the mounted file system which
+ * contains `path`. The callback gets two arguments `(err, stats)` where `stats`is an `fs.StatFs` object.
+ *
+ * In case of an error, the `err.code` will be one of `Common System Errors`.
+ * @since v19.6.0, v18.15.0
  * @param path A path to an existing file or directory on the file system to be queried.
- * @param callback
  */
 external fun statfs(path: PathLike, callback: (err: node.ErrnoException?, stats: StatsFs) -> Unit): Unit
 

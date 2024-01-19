@@ -9,7 +9,7 @@ package node.fs
  * Asynchronously reads the entire contents of a file.
  *
  * ```js
- * import { readFile } from 'fs';
+ * import { readFile } from 'node:fs';
  *
  * readFile('/etc/passwd', (err, data) => {
  *   if (err) throw err;
@@ -25,7 +25,7 @@ package node.fs
  * If `options` is a string, then it specifies the encoding:
  *
  * ```js
- * import { readFile } from 'fs';
+ * import { readFile } from 'node:fs';
  *
  * readFile('/etc/passwd', 'utf8', callback);
  * ```
@@ -35,7 +35,7 @@ package node.fs
  * will be returned.
  *
  * ```js
- * import { readFile } from 'fs';
+ * import { readFile } from 'node:fs';
  *
  * // macOS, Linux, and Windows
  * readFile('<directory>', (err, data) => {
@@ -52,7 +52,7 @@ package node.fs
  * request is aborted the callback is called with an `AbortError`:
  *
  * ```js
- * import { readFile } from 'fs';
+ * import { readFile } from 'node:fs';
  *
  * const controller = new AbortController();
  * const signal = controller.signal;

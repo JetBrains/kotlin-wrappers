@@ -31,5 +31,8 @@ sealed external interface EntryType {
 
         @seskar.js.JsValue("dns")
         val dns: EntryType
+
+        @seskar.js.JsValue("net")
+        val net: EntryType
     }
 }

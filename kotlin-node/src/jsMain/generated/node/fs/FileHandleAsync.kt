@@ -145,8 +145,8 @@ sealed external interface FileHandle {
         ).await()
 
     /**
-     * Unlike the 16 kb default `highWaterMark` for a `stream.Readable`, the stream
-     * returned by this method has a default `highWaterMark` of 64 kb.
+     * Unlike the 16 KiB default `highWaterMark` for a `stream.Readable`, the stream
+     * returned by this method has a default `highWaterMark` of 64 KiB.
      *
      * `options` can include `start` and `end` values to read a range of bytes from
      * the file instead of the entire file. Both `start` and `end` are inclusive and
@@ -164,7 +164,7 @@ sealed external interface FileHandle {
      * destroyed.  Set the `emitClose` option to `false` to change this behavior.
      *
      * ```js
-     * import { open } from 'fs/promises';
+     * import { open } from 'node:fs/promises';
      *
      * const fd = await open('/dev/input/event0');
      * // Create a stream from some character device.
@@ -190,7 +190,7 @@ sealed external interface FileHandle {
      * An example to read the last 10 bytes of a file which is 100 bytes long:
      *
      * ```js
-     * import { open } from 'fs/promises';
+     * import { open } from 'node:fs/promises';
      *
      * const fd = await open('sample.txt');
      * fd.createReadStream({ start: 90, end: 99 });
@@ -246,7 +246,7 @@ sealed external interface FileHandle {
      * device. The specific implementation is operating system and device specific.
      * Refer to the POSIX [`fsync(2)`](http://man7.org/linux/man-pages/man2/fsync.2.html) documentation for more detail.
      * @since v10.0.0
-     * @return Fufills with `undefined` upon success.
+     * @return Fulfills with `undefined` upon success.
      */
 
     @JsName("sync")
@@ -322,11 +322,13 @@ sealed external interface FileHandle {
     /**
      * Returns a `ReadableStream` that may be used to read the files data.
      *
-     * An error will be thrown if this method is called more than once or is called after the `FileHandle` is closed
-     * or closing.
+     * An error will be thrown if this method is called more than once or is called
+     * after the `FileHandle` is closed or closing.
      *
      * ```js
-     * import { open } from 'node:fs/promises';
+     * import {
+     *   open,
+     * } from 'node:fs/promises';
      *
      * const file = await open('./some/file/to/read');
      *
@@ -336,8 +338,8 @@ sealed external interface FileHandle {
      * await file.close();
      * ```
      *
-     * While the `ReadableStream` will read the file to completion, it will not close the `FileHandle` automatically. User code must still call the `fileHandle.close()` method.
-     *
+     * While the `ReadableStream` will read the file to completion, it will not
+     * close the `FileHandle` automatically. User code must still call the`fileHandle.close()` method.
      * @since v17.0.0
      * @experimental
      */
@@ -450,7 +452,8 @@ sealed external interface FileHandle {
         ).await()
 
     /**
-     * Convenience method to create a `readline` interface and stream over the file. For example:
+     * Convenience method to create a `readline` interface and stream over the file.
+     * See `filehandle.createReadStream()` for the options.
      *
      * ```js
      * import { open } from 'node:fs/promises';
@@ -461,9 +464,7 @@ sealed external interface FileHandle {
      *   console.log(line);
      * }
      * ```
-     *
      * @since v18.11.0
-     * @param options See `filehandle.createReadStream()` for the options.
      */
     fun readLines(options: CreateReadStreamOptions = definedExternally): ReadlineInterface
 
@@ -528,7 +529,7 @@ sealed external interface FileHandle {
      * The following example retains only the first four bytes of the file:
      *
      * ```js
-     * import { open } from 'fs/promises';
+     * import { open } from 'node:fs/promises';
      *
      * let filehandle = null;
      * try {
@@ -564,7 +565,7 @@ sealed external interface FileHandle {
         ).await()
 
     /**
-     * Change the file system timestamps of the object referenced by the `FileHandle` then resolves the promise with no arguments upon success.
+     * Change the file system timestamps of the object referenced by the `FileHandle` then fulfills the promise with no arguments upon success.
      * @since v10.0.0
      */
 
@@ -585,16 +586,16 @@ sealed external interface FileHandle {
 
     /**
      * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
-     * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface) or
+     * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
      * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
-     * The promise is resolved with no arguments upon success.
+     * The promise is fulfilled with no arguments upon success.
      *
      * If `options` is a string, then it specifies the `encoding`.
      *
      * The `FileHandle` has to support writing.
      *
      * It is unsafe to use `filehandle.writeFile()` multiple times on the same file
-     * without waiting for the promise to be resolved (or rejected).
+     * without waiting for the promise to be fulfilled (or rejected).
      *
      * If one or more `filehandle.write()` calls are made on a file handle and then a`filehandle.writeFile()` call is made, the data will be written from the
      * current position till the end of the file. It doesn't always write from the
@@ -671,20 +672,20 @@ sealed external interface FileHandle {
     /**
      * Write `buffer` to the file.
      *
-     * The promise is resolved with an object containing two properties:
+     * The promise is fulfilled with an object containing two properties:
      *
      * It is unsafe to use `filehandle.write()` multiple times on the same file
-     * without waiting for the promise to be resolved (or rejected). For this
+     * without waiting for the promise to be fulfilled (or rejected). For this
      * scenario, use `filehandle.createWriteStream()`.
      *
      * On Linux, positional writes do not work when the file is opened in append mode.
      * The kernel ignores the position argument and always appends the data to
      * the end of the file.
      * @since v10.0.0
-     * @param [offset=0] The start position from within `buffer` where the data to write begins.
+     * @param offset The start position from within `buffer` where the data to write begins.
      * @param [length=buffer.byteLength - offset] The number of bytes from `buffer` to write.
-     * @param position The offset from the beginning of the file where the data from `buffer` should be written. If `position` is not a `number`, the data will be written at the current position.
-     * See the POSIX pwrite(2) documentation for more detail.
+     * @param [position='null'] The offset from the beginning of the file where the data from `buffer` should be written. If `position` is not a `number`, the data will be written at the current
+     * position. See the POSIX pwrite(2) documentation for more detail.
      */
 
     @JsName("write")
@@ -739,16 +740,16 @@ sealed external interface FileHandle {
     /**
      * Write an array of [ArrayBufferView](https://developer.mozilla.org/en-US/docs/Web/API/ArrayBufferView) s to the file.
      *
-     * The promise is resolved with an object containing a two properties:
+     * The promise is fulfilled with an object containing a two properties:
      *
      * It is unsafe to call `writev()` multiple times on the same file without waiting
-     * for the promise to be resolved (or rejected).
+     * for the promise to be fulfilled (or rejected).
      *
      * On Linux, positional writes don't work when the file is opened in append mode.
      * The kernel ignores the position argument and always appends the data to
      * the end of the file.
      * @since v12.9.0
-     * @param position The offset from the beginning of the file where the data from `buffers` should be written. If `position` is not a `number`, the data will be written at the current
+     * @param [position='null'] The offset from the beginning of the file where the data from `buffers` should be written. If `position` is not a `number`, the data will be written at the current
      * position.
      */
 
@@ -776,7 +777,7 @@ sealed external interface FileHandle {
     /**
      * Read from a file and write to an array of [ArrayBufferView](https://developer.mozilla.org/en-US/docs/Web/API/ArrayBufferView) s
      * @since v13.13.0, v12.17.0
-     * @param position The offset from the beginning of the file where the data should be read from. If `position` is not a `number`, the data will be read from the current position.
+     * @param [position='null'] The offset from the beginning of the file where the data should be read from. If `position` is not a `number`, the data will be read from the current position.
      * @return Fulfills upon success an object containing two properties:
      */
 
@@ -806,7 +807,7 @@ sealed external interface FileHandle {
      * complete.
      *
      * ```js
-     * import { open } from 'fs/promises';
+     * import { open } from 'node:fs/promises';
      *
      * let filehandle;
      * try {

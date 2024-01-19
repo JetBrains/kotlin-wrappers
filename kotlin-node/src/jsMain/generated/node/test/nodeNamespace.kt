@@ -5,9 +5,11 @@
 package node.test
 
 
+/* import { Readable } from "node:stream"; */
+
 /* import { AsyncResource } from "node:async_hooks"; */
 
 
 external val mock: MockTracker
 
-/* export { after, afterEach, before, beforeEach, describe, it, mock, run, test, test as default }; */
+/* export { after, afterEach, before, beforeEach, describe, it, Mock, mock, only, run, skip, test, test as default, todo, }; */

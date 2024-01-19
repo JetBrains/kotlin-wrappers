@@ -6,10 +6,10 @@ package node.crypto
 
 
 /**
- * A convenient alias for `crypto.webcrypto.getRandomValues()`.
- * This implementation is not compliant with the Web Crypto spec,
- * to write web-compatible code use `crypto.webcrypto.getRandomValues()` instead.
+ * A convenient alias for {@link webcrypto.getRandomValues}. This
+ * implementation is not compliant with the Web Crypto spec, to write
+ * web-compatible code use {@link webcrypto.getRandomValues} instead.
  * @since v17.4.0
- * @returns Returns `typedArray`.
+ * @return Returns `typedArray`.
  */
 external fun <T : js.buffer.BufferSource> getRandomValues(typedArray: T): T

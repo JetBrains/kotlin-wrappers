@@ -10,12 +10,15 @@ package node.crypto
  *
  * ```js
  * const {
- *   generateKeySync
- * } = await import('crypto');
+ *   generateKeySync,
+ * } = await import('node:crypto');
  *
- * const key = generateKeySync('hmac', { length: 64 });
+ * const key = generateKeySync('hmac', { length: 512 });
  * console.log(key.export().toString('hex'));  // e89..........41e
  * ```
+ *
+ * The size of a generated HMAC key should not exceed the block size of the
+ * underlying hash function. See {@link createHmac} for more information.
  * @since v15.0.0
  * @param type The intended use of the generated secret key. Currently accepted values are `'hmac'` and `'aes'`.
  */

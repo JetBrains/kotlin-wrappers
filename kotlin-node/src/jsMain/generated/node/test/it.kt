@@ -7,12 +7,10 @@ package node.test
 import js.promise.Promise
 
 /**
- * @since v18.6.0
- * @param name The name of the test, which is displayed when reporting test results.
- *    Default: The `name` property of fn, or `'<anonymous>'` if `fn` does not have a name.
- * @param options Configuration options for the test
- * @param fn The function under test. If the test uses callbacks, the callback function is
- *    passed as the second argument. Default: A no-op function.
+ * Shorthand for `test()`.
+ *
+ * The `it()` function is imported from the `node:test` module.
+ * @since v18.6.0, v16.17.0
  */
 
 @JsName("it")

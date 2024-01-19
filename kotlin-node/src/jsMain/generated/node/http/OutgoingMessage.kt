@@ -8,8 +8,8 @@ import js.array.ReadonlyArray
 import node.net.Socket
 
 /**
- * This class serves as the parent class of {@link ClientRequest} and {@link ServerResponse}. It is an abstract of outgoing message from
- * the perspective of the participants of HTTP transaction.
+ * This class serves as the parent class of {@link ClientRequest} and {@link ServerResponse}. It is an abstract outgoing message from
+ * the perspective of the participants of an HTTP transaction.
  * @since v0.1.17
  */
 
@@ -34,7 +34,7 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
     val headersSent: Boolean
 
     /**
-     * Aliases of `outgoingMessage.socket`
+     * Alias of `outgoingMessage.socket`.
      * @since v0.3.0
      * @deprecated Since v15.12.0,v14.17.1 - Use `socket` instead.
      */
@@ -57,8 +57,9 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
     open fun setTimeout(msecs: Number, callback: () -> Unit = definedExternally): Unit /* this */
 
     /**
-     * Sets a single header value for the header object.
-     * If the header already exists in the to-be-sent headers, its value will be replaced. Use an array of strings to send multiple headers with the same name.
+     * Sets a single header value. If the header already exists in the to-be-sent
+     * headers, its value will be replaced. Use an array of strings to send multiple
+     * headers with the same name.
      * @since v0.4.0
      * @param name Header name
      * @param value Header value
@@ -72,12 +73,14 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
     /**
      * Append a single header value for the header object.
      *
-     * If the value is an array, this is equivalent of calling this method multiple times.
+     * If the value is an array, this is equivalent of calling this method multiple
+     * times.
      *
      * If there were no previous value for the header, this is equivalent of calling `outgoingMessage.setHeader(name, value)`.
      *
-     * Depending of the value of `options.uniqueHeaders` when the client request or the server were created,
-     * this will end up in the header being sent multiple times or a single time with values joined using `; `.
+     * Depending of the value of `options.uniqueHeaders` when the client request or the
+     * server were created, this will end up in the header being sent multiple times or
+     * a single time with values joined using `; `.
      * @since v18.3.0, v16.17.0
      * @param name Header name
      * @param value Header value
@@ -87,8 +90,8 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
     fun appendHeader(name: String, value: Array<out String>): Unit /* this */
 
     /**
-     * Gets the value of HTTP header with the given name. If such a name doesn't
-     * exist in message, it will be `undefined`.
+     * Gets the value of the HTTP header with the given name. If that header is not
+     * set, the returned value will be `undefined`.
      * @since v0.4.0
      * @param name Name of header
      */
@@ -102,8 +105,8 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
      * values. All header names are lowercase.
      *
      * The object returned by the `outgoingMessage.getHeaders()` method does
-     * not prototypically inherit from the JavaScript Object. This means that
-     * typical Object methods such as `obj.toString()`, `obj.hasOwnProperty()`,
+     * not prototypically inherit from the JavaScript `Object`. This means that
+     * typical `Object` methods such as `obj.toString()`, `obj.hasOwnProperty()`,
      * and others are not defined and will not work.
      *
      * ```js
@@ -118,8 +121,8 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
     fun getHeaders(): OutgoingHttpHeaders
 
     /**
-     * Returns an array of names of headers of the outgoing outgoingMessage. All
-     * names are lowercase.
+     * Returns an array containing the unique names of the current outgoing headers.
+     * All names are lowercase.
      * @since v7.7.0
      */
     fun getHeaderNames(): ReadonlyArray<String>
@@ -149,11 +152,11 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
     /**
      * Adds HTTP trailers (headers but at the end of the message) to the message.
      *
-     * Trailers are **only** be emitted if the message is chunked encoded. If not,
-     * the trailer will be silently discarded.
+     * Trailers will **only** be emitted if the message is chunked encoded. If not,
+     * the trailers will be silently discarded.
      *
      * HTTP requires the `Trailer` header to be sent to emit trailers,
-     * with a list of header fields in its value, e.g.
+     * with a list of header field names in its value, e.g.
      *
      * ```js
      * message.writeHead(200, { 'Content-Type': 'text/plain',
@@ -172,7 +175,7 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
     fun addTrailers(headers: ReadonlyArray<js.array.JsTuple2<String, String>>): Unit
 
     /**
-     * Compulsorily flushes the message headers
+     * Flushes the message headers.
      *
      * For efficiency reason, Node.js normally buffers the message headers
      * until `outgoingMessage.end()` is called or the first chunk of message data
@@ -180,7 +183,7 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
      * packet.
      *
      * It is usually desired (it saves a TCP round-trip), but not when the first
-     * data is not sent until possibly much later. `outgoingMessage.flushHeaders()`bypasses the optimization and kickstarts the request.
+     * data is not sent until possibly much later. `outgoingMessage.flushHeaders()`bypasses the optimization and kickstarts the message.
      * @since v1.6.0
      */
     fun flushHeaders(): Unit

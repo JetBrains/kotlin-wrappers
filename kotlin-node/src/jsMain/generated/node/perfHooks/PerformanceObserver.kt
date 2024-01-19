@@ -6,6 +6,9 @@ package node.perfHooks
 
 import node.asyncHooks.AsyncResource
 
+/**
+ * @since v8.5.0
+ */
 
 external class PerformanceObserver : AsyncResource {
     constructor (callback: PerformanceObserverCallback)
@@ -22,8 +25,8 @@ external class PerformanceObserver : AsyncResource {
      * ```js
      * const {
      *   performance,
-     *   PerformanceObserver
-     * } = require('perf_hooks');
+     *   PerformanceObserver,
+     * } = require('node:perf_hooks');
      *
      * const obs = new PerformanceObserver((list, observer) => {
      *   // Called once asynchronously. `list` contains three items.

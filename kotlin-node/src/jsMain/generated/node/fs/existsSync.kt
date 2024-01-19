@@ -15,7 +15,7 @@ package node.fs
  * Node.js callbacks. `fs.existsSync()` does not use a callback.
  *
  * ```js
- * import { existsSync } from 'fs';
+ * import { existsSync } from 'node:fs';
  *
  * if (existsSync('/etc/passwd'))
  *   console.log('The path exists.');

@@ -12,9 +12,9 @@ package node.module
  * does not add or remove exported names from the `ES Modules`.
  *
  * ```js
- * const fs = require('fs');
- * const assert = require('assert');
- * const { syncBuiltinESMExports } = require('module');
+ * const fs = require('node:fs');
+ * const assert = require('node:assert');
+ * const { syncBuiltinESMExports } = require('node:module');
  *
  * fs.readFile = newAPI;
  *
@@ -28,7 +28,7 @@ package node.module
  *
  * syncBuiltinESMExports();
  *
- * import('fs').then((esmFS) => {
+ * import('node:fs').then((esmFS) => {
  *   // It syncs the existing readFile property with the new value
  *   assert.strictEqual(esmFS.readFile, newAPI);
  *   // readFileSync has been deleted from the required fs

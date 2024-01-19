@@ -15,13 +15,13 @@ package node.asyncHooks
  * The following is an overview of the `AsyncResource` API.
  *
  * ```js
- * import { AsyncResource, executionAsyncId } from 'async_hooks';
+ * import { AsyncResource, executionAsyncId } from 'node:async_hooks';
  *
  * // AsyncResource() is meant to be extended. Instantiating a
  * // new AsyncResource() also triggers init. If triggerAsyncId is omitted then
  * // async_hook.executionAsyncId() is used.
  * const asyncResource = new AsyncResource(
- *   type, { triggerAsyncId: executionAsyncId(), requireManualDestroy: false }
+ *   type, { triggerAsyncId: executionAsyncId(), requireManualDestroy: false },
  * );
  *
  * // Run a function in the execution context of the resource. This will
@@ -59,9 +59,6 @@ open external class AsyncResource {
 
     /**
      * Binds the given function to execute to this `AsyncResource`'s scope.
-     *
-     * The returned function will have an `asyncResource` property referencing
-     * the `AsyncResource` to which the function is bound.
      * @since v14.8.0, v12.19.0
      * @param fn The function to bind to the current `AsyncResource`.
      */
@@ -105,9 +102,6 @@ open external class AsyncResource {
     companion object {
         /**
          * Binds the given function to the current execution context.
-         *
-         * The returned function will have an `asyncResource` property referencing
-         * the `AsyncResource` to which the function is bound.
          * @since v14.8.0, v12.19.0
          * @param fn The function to bind to the current execution context.
          * @param type An optional name to associate with the underlying `AsyncResource`.

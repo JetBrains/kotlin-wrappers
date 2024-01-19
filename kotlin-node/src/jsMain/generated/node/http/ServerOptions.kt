@@ -49,7 +49,7 @@ sealed external interface ServerOptions<Request : IncomingMessage, Response : Se
      * Optionally overrides all `socket`s' `readableHighWaterMark` and `writableHighWaterMark`.
      * This affects `highWaterMark` property of both `IncomingMessage` and `ServerResponse`.
      * Default: @see stream.getDefaultHighWaterMark().
-     * @since v18.17.0
+     * @since v20.1.0
      */
     var highWaterMark: Double?
 

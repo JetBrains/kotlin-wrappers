@@ -15,8 +15,8 @@ package node.asyncHooks
  * but having an object representing the top-level can be helpful.
  *
  * ```js
- * import { open } from 'fs';
- * import { executionAsyncId, executionAsyncResource } from 'async_hooks';
+ * import { open } from 'node:fs';
+ * import { executionAsyncId, executionAsyncResource } from 'node:async_hooks';
  *
  * console.log(executionAsyncId(), executionAsyncResource());  // 1 {}
  * open(new URL(import.meta.url), 'r', (err, fd) => {
@@ -28,11 +28,11 @@ package node.asyncHooks
  * use of a tracking `Map` to store the metadata:
  *
  * ```js
- * import { createServer } from 'http';
+ * import { createServer } from 'node:http';
  * import {
  *   executionAsyncId,
  *   executionAsyncResource,
- *   createHook
+ *   createHook,
  * } from 'async_hooks';
  * const sym = Symbol('state'); // Private symbol to avoid pollution
  *
@@ -42,7 +42,7 @@ package node.asyncHooks
  *     if (cr) {
  *       resource[sym] = cr[sym];
  *     }
- *   }
+ *   },
  * }).enable();
  *
  * const server = createServer((req, res) => {

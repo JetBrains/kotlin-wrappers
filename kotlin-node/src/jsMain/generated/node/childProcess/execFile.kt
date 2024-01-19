@@ -14,7 +14,7 @@ package node.childProcess
  * supported.
  *
  * ```js
- * const { execFile } = require('child_process');
+ * const { execFile } = require('node:child_process');
  * const child = execFile('node', ['--version'], (error, stdout, stderr) => {
  *   if (error) {
  *     throw error;
@@ -37,8 +37,8 @@ package node.childProcess
  * callback, but with two additional properties `stdout` and `stderr`.
  *
  * ```js
- * const util = require('util');
- * const execFile = util.promisify(require('child_process').execFile);
+ * const util = require('node:util');
+ * const execFile = util.promisify(require('node:child_process').execFile);
  * async function getVersion() {
  *   const { stdout } = await execFile('node', ['--version']);
  *   console.log(stdout);
@@ -54,11 +54,11 @@ package node.childProcess
  * the error passed to the callback will be an `AbortError`:
  *
  * ```js
- * const { execFile } = require('child_process');
+ * const { execFile } = require('node:child_process');
  * const controller = new AbortController();
  * const { signal } = controller;
  * const child = execFile('node', ['--version'], { signal }, (error) => {
- *   console.log(error); // an AbortError
+ *   console.error(error); // an AbortError
  * });
  * controller.abort();
  * ```

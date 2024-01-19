@@ -19,8 +19,8 @@ package node.crypto
  *
  * ```js
  * const {
- *   generateKeyPairSync
- * } = await import('crypto');
+ *   generateKeyPairSync,
+ * } = await import('node:crypto');
  *
  * const {
  *   publicKey,
@@ -29,14 +29,14 @@ package node.crypto
  *   modulusLength: 4096,
  *   publicKeyEncoding: {
  *     type: 'spki',
- *     format: 'pem'
+ *     format: 'pem',
  *   },
  *   privateKeyEncoding: {
  *     type: 'pkcs8',
  *     format: 'pem',
  *     cipher: 'aes-256-cbc',
- *     passphrase: 'top secret'
- *   }
+ *     passphrase: 'top secret',
+ *   },
  * });
  * ```
  *

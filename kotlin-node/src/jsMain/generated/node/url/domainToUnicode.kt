@@ -11,10 +11,8 @@ package node.url
  *
  * It performs the inverse operation to {@link domainToASCII}.
  *
- * This feature is only available if the `node` executable was compiled with `ICU` enabled. If not, the domain names are passed through unchanged.
- *
  * ```js
- * import url from 'url';
+ * import url from 'node:url';
  *
  * console.log(url.domainToUnicode('xn--espaol-zwa.com'));
  * // Prints español.com

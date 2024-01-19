@@ -20,9 +20,11 @@ package node.fs
  * object with an `encoding` property specifying the character encoding to use.
  *
  * ```js
- * import { mkdtemp } from 'fs';
+ * import { mkdtemp } from 'node:fs';
+ * import { join } from 'node:path';
+ * import { tmpdir } from 'node:os';
  *
- * mkdtemp(path.join(os.tmpdir(), 'foo-'), (err, directory) => {
+ * mkdtemp(join(tmpdir(), 'foo-'), (err, directory) => {
  *   if (err) throw err;
  *   console.log(directory);
  *   // Prints: /tmp/foo-itXde2 or C:\Users\...\AppData\Local\Temp\foo-itXde2
@@ -32,11 +34,11 @@ package node.fs
  * The `fs.mkdtemp()` method will append the six randomly selected characters
  * directly to the `prefix` string. For instance, given a directory `/tmp`, if the
  * intention is to create a temporary directory _within_`/tmp`, the `prefix`must end with a trailing platform-specific path separator
- * (`require('path').sep`).
+ * (`require('node:path').sep`).
  *
  * ```js
- * import { tmpdir } from 'os';
- * import { mkdtemp } from 'fs';
+ * import { tmpdir } from 'node:os';
+ * import { mkdtemp } from 'node:fs';
  *
  * // The parent directory for the new temporary directory
  * const tmpDir = tmpdir();
@@ -51,7 +53,7 @@ package node.fs
  * });
  *
  * // This method is *CORRECT*:
- * import { sep } from 'path';
+ * import { sep } from 'node:path';
  * mkdtemp(`${tmpDir}${sep}`, (err, directory) => {
  *   if (err) throw err;
  *   console.log(directory);

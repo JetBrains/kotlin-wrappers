@@ -10,7 +10,7 @@ package node.util
  * such a way that it is marked as deprecated.
  *
  * ```js
- * const util = require('util');
+ * const util = require('node:util');
  *
  * exports.obsoleteFunction = util.deprecate(() => {
  *   // Do something here.
@@ -26,7 +26,7 @@ package node.util
  * the warning will be emitted only once for that `code`.
  *
  * ```js
- * const util = require('util');
+ * const util = require('node:util');
  *
  * const fn1 = util.deprecate(someFunction, someMessage, 'DEP0001');
  * const fn2 = util.deprecate(someOtherFunction, someOtherMessage, 'DEP0001');

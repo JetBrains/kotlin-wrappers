@@ -23,9 +23,9 @@ import web.blob.Blob as NodeBlob
 
 @Suppress("MANY_CLASSES_IN_SUPERTYPE_LIST")
 
-open external class Duplex : Readable,
+open external class Duplex : ReadableBase,
     @seskar.js.JsMixin
-    Writable {
+    WritableBase {
     constructor (opts: DuplexOptions = definedExternally)
 
     @JsName("writable")
@@ -43,7 +43,7 @@ open external class Duplex : Readable,
     /**
      * If `false` then the stream will automatically end the writable side when the
      * readable side ends. Set initially by the `allowHalfOpen` constructor option,
-     * which defaults to `false`.
+     * which defaults to `true`.
      *
      * This can be changed manually to change the half-open behavior of an existing`Duplex` stream instance, but must be changed before the `'end'` event is
      * emitted.
@@ -57,7 +57,7 @@ open external class Duplex : Readable,
     ): Unit
 
     override fun _writev(
-        chunks: Array<WritableWritevChunksItem>,
+        chunks: Array<WritableBaseWritevChunksItem>,
         callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit,
     ): Unit
 
@@ -260,6 +260,20 @@ open external class Duplex : Readable,
         fun from(src: Promise<Any?>): Duplex
 
         fun from(src: Any): Duplex
+
+        /**
+         * A utility method for creating a web `ReadableStream` and `WritableStream` from a `Duplex`.
+         * @since v17.0.0
+         * @experimental
+         */
+        fun toWeb(streamDuplex: Duplex): DuplexToWebResult
+
+        /**
+         * A utility method for creating a `Duplex` from a web `ReadableStream` and `WritableStream`.
+         * @since v17.0.0
+         * @experimental
+         */
+        fun fromWeb(duplexStream: DuplexFromWebDuplexStream, options: DuplexOptions = definedExternally): Duplex
     }
 
 }

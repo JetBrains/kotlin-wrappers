@@ -6,11 +6,11 @@ package node.workerThreads
 
 
 /**
- * The `worker_threads` module enables the use of threads that execute JavaScript
- * in parallel. To access it:
+ * The `node:worker_threads` module enables the use of threads that execute
+ * JavaScript in parallel. To access it:
  *
  * ```js
- * const worker = require('worker_threads');
+ * const worker = require('node:worker_threads');
  * ```
  *
  * Workers (threads) are useful for performing CPU-intensive JavaScript operations.
@@ -22,14 +22,14 @@ package node.workerThreads
  *
  * ```js
  * const {
- *   Worker, isMainThread, parentPort, workerData
- * } = require('worker_threads');
+ *   Worker, isMainThread, parentPort, workerData,
+ * } = require('node:worker_threads');
  *
  * if (isMainThread) {
  *   module.exports = function parseJSAsync(script) {
  *     return new Promise((resolve, reject) => {
  *       const worker = new Worker(__filename, {
- *         workerData: script
+ *         workerData: script,
  *       });
  *       worker.on('message', resolve);
  *       worker.on('error', reject);
@@ -56,5 +56,5 @@ package node.workerThreads
  *
  * Worker threads inherit non-process-specific options by default. Refer to `Worker constructor options` to know how to customize worker thread options,
  * specifically `argv` and `execArgv` options.
- * @see [source](https://github.com/nodejs/node/blob/v18.0.0/lib/worker_threads.js)
+ * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/worker_threads.js)
  */

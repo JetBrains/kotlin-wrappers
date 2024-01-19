@@ -7,7 +7,8 @@ package node.util
 import js.iterable.IterableIterator
 
 /**
- * @since v18.13.0
+ * The `MIMEParams` API provides read and write access to the parameters of a`MIMEType`.
+ * @since v19.1.0, v18.13.0
  */
 
 external class MIMEParams {
@@ -18,12 +19,15 @@ external class MIMEParams {
 
     /**
      * Returns an iterator over each of the name-value pairs in the parameters.
+     * Each item of the iterator is a JavaScript `Array`. The first item of the array
+     * is the `name`, the second item of the array is the `value`.
      */
     fun entries(): IterableIterator<js.array.JsTuple2</* name: */ String, /* value: */ String>>
 
     /**
-     * Returns the value of the first name-value pair whose name is `name`.
-     * If there are no such pairs, `null` is returned.
+     * Returns the value of the first name-value pair whose name is `name`. If there
+     * are no such pairs, `null` is returned.
+     * @return or `null` if there is no name-value pair with the given `name`.
      */
     fun get(name: String): String?
 
@@ -34,13 +38,34 @@ external class MIMEParams {
 
     /**
      * Returns an iterator over the names of each name-value pair.
+     *
+     * ```js
+     * import { MIMEType } from 'node:util';
+     *
+     * const { params } = new MIMEType('text/plain;foo=0;bar=1');
+     * for (const name of params.keys()) {
+     *   console.log(name);
+     * }
+     * // Prints:
+     * //   foo
+     * //   bar
+     * ```
      */
     fun keys(): IterableIterator<String>
 
     /**
-     * Sets the value in the `MIMEParams` object associated with `name` to `value`.
-     * If there are any pre-existing name-value pairs whose names are `name`,
+     * Sets the value in the `MIMEParams` object associated with `name` to`value`. If there are any pre-existing name-value pairs whose names are `name`,
      * set the first such pair's value to `value`.
+     *
+     * ```js
+     * import { MIMEType } from 'node:util';
+     *
+     * const { params } = new MIMEType('text/plain;foo=0;bar=1');
+     * params.set('foo', 'def');
+     * params.set('baz', 'xyz');
+     * console.log(params.toString());
+     * // Prints: foo=def;bar=1;baz=xyz
+     * ```
      */
     fun set(name: String, value: String): Unit
 

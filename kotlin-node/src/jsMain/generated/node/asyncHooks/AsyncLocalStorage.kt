@@ -8,17 +8,17 @@ package node.asyncHooks
 /**
  * This class creates stores that stay coherent through asynchronous operations.
  *
- * While you can create your own implementation on top of the `async_hooks` module,`AsyncLocalStorage` should be preferred as it is a performant and memory safe
- * implementation that involves significant optimizations that are non-obvious to
- * implement.
+ * While you can create your own implementation on top of the `node:async_hooks`module, `AsyncLocalStorage` should be preferred as it is a performant and memory
+ * safe implementation that involves significant optimizations that are non-obvious
+ * to implement.
  *
  * The following example uses `AsyncLocalStorage` to build a simple logger
  * that assigns IDs to incoming HTTP requests and includes them in messages
  * logged within each request.
  *
  * ```js
- * import http from 'http';
- * import { AsyncLocalStorage } from 'async_hooks';
+ * import http from 'node:http';
+ * import { AsyncLocalStorage } from 'node:async_hooks';
  *
  * const asyncLocalStorage = new AsyncLocalStorage();
  *
@@ -197,20 +197,43 @@ external class AsyncLocalStorage<T> {
     companion object {
         /**
          * Binds the given function to the current execution context.
-         * @since v18.16.0
+         * @since v19.8.0
+         * @experimental
          * @param fn The function to bind to the current execution context.
-         * @returns A new function that calls `fn` within the captured execution context.
+         * @return A new function that calls `fn` within the captured execution context.
          */
         fun <Func : Function<Any?> /* (...args: any[]) => any */> bind(fn: Func): Func
 
         /**
-         * Captures the current execution context and returns a function that accepts a function as an argument.
-         * Whenever the returned function is called, it calls the function passed to it within the captured context.
-         * @since v18.16.0
+         * Captures the current execution context and returns a function that accepts a
+         * function as an argument. Whenever the returned function is called, it
+         * calls the function passed to it within the captured context.
+         *
+         * ```js
+         * const asyncLocalStorage = new AsyncLocalStorage();
+         * const runInAsyncScope = asyncLocalStorage.run(123, () => AsyncLocalStorage.snapshot());
+         * const result = asyncLocalStorage.run(321, () => runInAsyncScope(() => asyncLocalStorage.getStore()));
+         * console.log(result);  // returns 123
+         * ```
+         *
+         * AsyncLocalStorage.snapshot() can replace the use of AsyncResource for simple
+         * async context tracking purposes, for example:
+         *
+         * ```js
+         * class Foo {
+         *   #runInAsyncScope = AsyncLocalStorage.snapshot();
+         *
+         *   get() { return this.#runInAsyncScope(() => asyncLocalStorage.getStore()); }
+         * }
+         *
+         * const foo = asyncLocalStorage.run(123, () => new Foo());
+         * console.log(asyncLocalStorage.run(321, () => foo.get())); // returns 123
+         * ```
+         * @since v19.8.0
+         * @experimental
+         * @return A new function with the signature `(fn: (...args) : R, ...args) : R`.
          */
-        fun snapshot(): Any /* (<R, TArgs extends any[]>(fn: (...args: TArgs) => R, ...args: TArgs) => R) & {
-    asyncResource: AsyncResource;
-} */
+        fun snapshot(): Function<Any?> /* <R, TArgs extends any[]>(fn: (...args: TArgs) => R, ...args: TArgs) => R */
     }
 
 }

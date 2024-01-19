@@ -14,9 +14,10 @@ package node.perfHooks
  * * [High Resolution Time](https://www.w3.org/TR/hr-time-2)
  * * [Performance Timeline](https://w3c.github.io/performance-timeline/)
  * * [User Timing](https://www.w3.org/TR/user-timing/)
+ * * [Resource Timing](https://www.w3.org/TR/resource-timing-2/)
  *
  * ```js
- * const { PerformanceObserver, performance } = require('perf_hooks');
+ * const { PerformanceObserver, performance } = require('node:perf_hooks');
  *
  * const obs = new PerformanceObserver((items) => {
  *   console.log(items.getEntries()[0].duration);
@@ -33,5 +34,5 @@ package node.perfHooks
  *   performance.measure('A to B', 'A', 'B');
  * });
  * ```
- * @see [source](https://github.com/nodejs/node/blob/v18.0.0/lib/perf_hooks.js)
+ * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/perf_hooks.js)
  */

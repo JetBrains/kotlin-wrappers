@@ -13,7 +13,7 @@ import js.promise.Promise
  * first argument will be the rejection reason (or `null` if the `Promise`resolved), and the second argument will be the resolved value.
  *
  * ```js
- * const util = require('util');
+ * const util = require('node:util');
  *
  * async function fn() {
  *   return 'hello world';

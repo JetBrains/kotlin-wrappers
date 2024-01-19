@@ -31,7 +31,7 @@ package node.util
  * Circular references point to their anchor by using a reference index:
  *
  * ```js
- * const { inspect } = require('util');
+ * const { inspect } = require('node:util');
  *
  * const obj = {};
  * obj.a = [obj];
@@ -49,7 +49,7 @@ package node.util
  * The following example inspects all properties of the `util` object:
  *
  * ```js
- * const util = require('util');
+ * const util = require('node:util');
  *
  * console.log(util.inspect(util, { showHidden: true, depth: null }));
  * ```
@@ -57,7 +57,7 @@ package node.util
  * The following example highlights the effect of the `compact` option:
  *
  * ```js
- * const util = require('util');
+ * const util = require('node:util');
  *
  * const o = {
  *   a: [1, 2, [[
@@ -65,7 +65,7 @@ package node.util
  *       'eiusmod \ntempor incididunt ut labore et dolore magna aliqua.',
  *     'test',
  *     'foo']], 4],
- *   b: new Map([['za', 1], ['zb', 'test']])
+ *   b: new Map([['za', 1], ['zb', 'test']]),
  * };
  * console.log(util.inspect(o, { compact: true, depth: 5, breakLength: 80 }));
  *
@@ -114,7 +114,7 @@ package node.util
  * with no remaining strong references may be garbage collected at any time.
  *
  * ```js
- * const { inspect } = require('util');
+ * const { inspect } = require('node:util');
  *
  * const obj = { a: 1 };
  * const obj2 = { b: 2 };
@@ -128,13 +128,13 @@ package node.util
  * impact the result of `util.inspect()`.
  *
  * ```js
- * const { inspect } = require('util');
- * const assert = require('assert');
+ * const { inspect } = require('node:util');
+ * const assert = require('node:assert');
  *
  * const o1 = {
  *   b: [2, 3, 1],
  *   a: '`a` comes before `b`',
- *   c: new Set([2, 3, 1])
+ *   c: new Set([2, 3, 1]),
  * };
  * console.log(inspect(o1, { sorted: true }));
  * // { a: '`a` comes before `b`', b: [ 2, 3, 1 ], c: Set(3) { 1, 2, 3 } }
@@ -144,11 +144,11 @@ package node.util
  * const o2 = {
  *   c: new Set([2, 1, 3]),
  *   a: '`a` comes before `b`',
- *   b: [2, 3, 1]
+ *   b: [2, 3, 1],
  * };
  * assert.strict.equal(
  *   inspect(o1, { sorted: true }),
- *   inspect(o2, { sorted: true })
+ *   inspect(o2, { sorted: true }),
  * );
  * ```
  *
@@ -156,19 +156,25 @@ package node.util
  * numbers.
  *
  * ```js
- * const { inspect } = require('util');
+ * const { inspect } = require('node:util');
  *
  * const thousand = 1_000;
  * const million = 1_000_000;
  * const bigNumber = 123_456_789n;
  * const bigDecimal = 1_234.123_45;
  *
- * console.log(thousand, million, bigNumber, bigDecimal);
- * // 1_000 1_000_000 123_456_789n 1_234.123_45
+ * console.log(inspect(thousand, { numericSeparator: true }));
+ * // 1_000
+ * console.log(inspect(million, { numericSeparator: true }));
+ * // 1_000_000
+ * console.log(inspect(bigNumber, { numericSeparator: true }));
+ * // 123_456_789n
+ * console.log(inspect(bigDecimal, { numericSeparator: true }));
+ * // 1_234.123_45
  * ```
  *
  * `util.inspect()` is a synchronous method intended for debugging. Its maximum
- * output length is approximately 128 MB. Inputs that result in longer output will
+ * output length is approximately 128 MiB. Inputs that result in longer output will
  * be truncated.
  * @since v0.3.0
  * @param object Any JavaScript primitive or `Object`.

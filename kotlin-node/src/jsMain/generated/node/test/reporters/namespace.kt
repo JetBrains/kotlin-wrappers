@@ -5,6 +5,6 @@
 package node.test.reporters
 
 
-/* import { Transform } from "node:stream"; */
+/* import { Transform, TransformOptions } from "node:stream"; */
 
-/* export { dot, junit, Spec as spec, tap, TestEvent }; */
+/* export { dot, junit, Lcov as lcov, Spec as spec, tap, TestEvent }; */

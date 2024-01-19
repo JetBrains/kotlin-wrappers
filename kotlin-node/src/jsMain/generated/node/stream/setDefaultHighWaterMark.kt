@@ -7,7 +7,7 @@ package node.stream
 
 /**
  * Sets the default highWaterMark used by streams.
- * @since v18.17.0
+ * @since v19.9.0
  * @param objectMode
  * @param value highWaterMark value
  */

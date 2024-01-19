@@ -11,9 +11,9 @@ import js.array.ReadonlyArray
  * properly cleaning up and provide a callback when the pipeline is complete.
  *
  * ```js
- * const { pipeline } = require('stream');
- * const fs = require('fs');
- * const zlib = require('zlib');
+ * const { pipeline } = require('node:stream');
+ * const fs = require('node:fs');
+ * const zlib = require('node:zlib');
  *
  * // Use the pipeline API to easily pipe a series of streams
  * // together and get notified when the pipeline is fully done.
@@ -30,95 +30,11 @@ import js.array.ReadonlyArray
  *     } else {
  *       console.log('Pipeline succeeded.');
  *     }
- *   }
+ *   },
  * );
  * ```
  *
- * The `pipeline` API provides a promise version, which can also
- * receive an options argument as the last parameter with a`signal` `AbortSignal` property. When the signal is aborted,`destroy` will be called on the underlying pipeline, with
- * an`AbortError`.
- *
- * ```js
- * const { pipeline } = require('stream/promises');
- *
- * async function run() {
- *   await pipeline(
- *     fs.createReadStream('archive.tar'),
- *     zlib.createGzip(),
- *     fs.createWriteStream('archive.tar.gz')
- *   );
- *   console.log('Pipeline succeeded.');
- * }
- *
- * run().catch(console.error);
- * ```
- *
- * To use an `AbortSignal`, pass it inside an options object,
- * as the last argument:
- *
- * ```js
- * const { pipeline } = require('stream/promises');
- *
- * async function run() {
- *   const ac = new AbortController();
- *   const signal = ac.signal;
- *
- *   setTimeout(() => ac.abort(), 1);
- *   await pipeline(
- *     fs.createReadStream('archive.tar'),
- *     zlib.createGzip(),
- *     fs.createWriteStream('archive.tar.gz'),
- *     { signal },
- *   );
- * }
- *
- * run().catch(console.error); // AbortError
- * ```
- *
- * The `pipeline` API also supports async generators:
- *
- * ```js
- * const { pipeline } = require('stream/promises');
- * const fs = require('fs');
- *
- * async function run() {
- *   await pipeline(
- *     fs.createReadStream('lowercase.txt'),
- *     async function* (source, { signal }) {
- *       source.setEncoding('utf8');  // Work with strings rather than `Buffer`s.
- *       for await (const chunk of source) {
- *         yield await processChunk(chunk, { signal });
- *       }
- *     },
- *     fs.createWriteStream('uppercase.txt')
- *   );
- *   console.log('Pipeline succeeded.');
- * }
- *
- * run().catch(console.error);
- * ```
- *
- * Remember to handle the `signal` argument passed into the async generator.
- * Especially in the case where the async generator is the source for the
- * pipeline (i.e. first argument) or the pipeline will never complete.
- *
- * ```js
- * const { pipeline } = require('stream/promises');
- * const fs = require('fs');
- *
- * async function run() {
- *   await pipeline(
- *     async function* ({ signal }) {
- *       await someLongRunningfn({ signal });
- *       yield 'asd';
- *     },
- *     fs.createWriteStream('uppercase.txt')
- *   );
- *   console.log('Pipeline succeeded.');
- * }
- *
- * run().catch(console.error);
- * ```
+ * The `pipeline` API provides a `promise version`.
  *
  * `stream.pipeline()` will call `stream.destroy(err)` on all streams except:
  *
@@ -137,9 +53,9 @@ import js.array.ReadonlyArray
  * See the example below:
  *
  * ```js
- * const fs = require('fs');
- * const http = require('http');
- * const { pipeline } = require('stream');
+ * const fs = require('node:fs');
+ * const http = require('node:http');
+ * const { pipeline } = require('node:stream');
  *
  * const server = http.createServer((req, res) => {
  *   const fileStream = fs.createReadStream('./fileNotExist.txt');

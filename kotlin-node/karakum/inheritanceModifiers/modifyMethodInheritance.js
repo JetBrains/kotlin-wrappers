@@ -69,7 +69,7 @@ export default (node, context) => {
                         || node.name.text === "destroy"
                     )
                     && node.parent
-                    && node.parent.name?.text === "Readable"
+                    && node.parent.name?.text === "ReadableBase"
                 )
             )
             || (
@@ -92,7 +92,7 @@ export default (node, context) => {
                         || node.name.text === "destroy"
                     )
                     && node.parent
-                    && node.parent.name?.text === "Writable"
+                    && node.parent.name?.text === "WritableBase"
                 )
             )
             || (
@@ -101,8 +101,8 @@ export default (node, context) => {
                     isEventEmitterMethodName(node.name.text)
                     && node.parent
                     && (
-                        node.parent.name?.text === "Readable"
-                        || node.parent.name?.text === "Writable"
+                        node.parent.name?.text === "ReadableBase"
+                        || node.parent.name?.text === "WritableBase"
                     )
                     && isGenericEventEmitterSignature(context)
                 )
@@ -233,7 +233,7 @@ export default (node, context) => {
                         || node.name.text === "wrap"
                     )
                     && node.parent
-                    && node.parent.name?.text === "Readable"
+                    && node.parent.name?.text === "ReadableBase"
                 )
             )
             || (
@@ -244,7 +244,7 @@ export default (node, context) => {
                     && context.signature?.[0]?.parameter.type
                     && ts.isFunctionTypeNode(context.signature[0].parameter.type)
                     && node.parent
-                    && node.parent.name?.text === "Writable"
+                    && node.parent.name?.text === "WritableBase"
                 )
             )
             || (
@@ -293,6 +293,25 @@ export default (node, context) => {
                     && node.parent.name?.text === "MIMEType"
                 )
             )
+            || (
+                sourceFileName.endsWith("test.d.ts")
+                && (
+                    isEventEmitterMethodName(node.name.text)
+                    && node.parent
+                    && node.parent.name?.text === "TestsStream"
+                    && isGenericEventEmitterSignature(context)
+                )
+            )
+            || (
+                sourceFileName.endsWith("crypto.d.ts")
+                && (
+                    (
+                        node.name.text === "toString"
+                    )
+                    && node.parent
+                    && node.parent.name?.text === "X509Certificate"
+                )
+            )
         )
     ) {
         return "override"
@@ -318,6 +337,16 @@ export default (node, context) => {
                         node.parent.name.text === "DuplexOptions"
                         || node.parent.name.text === "TransformOptions"
                     )
+                )
+            )
+            || (
+                sourceFileName.endsWith("globals.d.ts")
+                && (
+                    (
+                        node.name.text === "toString"
+                    )
+                    && node.parent
+                    && node.parent.name.text === "CallSite"
                 )
             )
         )

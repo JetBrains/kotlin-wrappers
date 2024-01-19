@@ -7,6 +7,9 @@ package node.readline
 import js.promise.Promise
 import js.promise.await
 
+/**
+ * @since v17.0.0
+ */
 
 external class Readline {
     /**
@@ -15,19 +18,28 @@ external class Readline {
     constructor (stream: node.WritableStream, options: ReadlineOptions = definedExternally)
 
     /**
-     * The `rl.clearLine()` method adds to the internal list of pending action an action that clears current line of the associated `stream` in a specified direction identified by `dir`.
-     * Call `rl.commit()` to see the effect of this method, unless `autoCommit: true` was passed to the constructor.
+     * The `rl.clearLine()` method adds to the internal list of pending action an
+     * action that clears current line of the associated `stream` in a specified
+     * direction identified by `dir`.
+     * Call `rl.commit()` to see the effect of this method, unless `autoCommit: true`was passed to the constructor.
+     * @since v17.0.0
+     * @return this
      */
     fun clearLine(dir: Direction): Unit /* this */
 
     /**
-     * The `rl.clearScreenDown()` method adds to the internal list of pending action an action that clears the associated `stream` from the current position of the cursor down.
-     * Call `rl.commit()` to see the effect of this method, unless `autoCommit: true` was passed to the constructor.
+     * The `rl.clearScreenDown()` method adds to the internal list of pending action an
+     * action that clears the associated stream from the current position of the
+     * cursor down.
+     * Call `rl.commit()` to see the effect of this method, unless `autoCommit: true`was passed to the constructor.
+     * @since v17.0.0
+     * @return this
      */
     fun clearScreenDown(): Unit /* this */
 
     /**
-     * The `rl.commit()` method sends all the pending actions to the associated `stream` and clears the internal list of pending actions.
+     * The `rl.commit()` method sends all the pending actions to the associated`stream` and clears the internal list of pending actions.
+     * @since v17.0.0
      */
 
     @JsName("commit")
@@ -46,19 +58,29 @@ external class Readline {
         ).await()
 
     /**
-     * The `rl.cursorTo()` method adds to the internal list of pending action an action that moves cursor to the specified position in the associated `stream`.
-     * Call `rl.commit()` to see the effect of this method, unless `autoCommit: true` was passed to the constructor.
+     * The `rl.cursorTo()` method adds to the internal list of pending action an action
+     * that moves cursor to the specified position in the associated `stream`.
+     * Call `rl.commit()` to see the effect of this method, unless `autoCommit: true`was passed to the constructor.
+     * @since v17.0.0
+     * @return this
      */
     fun cursorTo(x: Number, y: Number = definedExternally): Unit /* this */
 
     /**
-     * The `rl.moveCursor()` method adds to the internal list of pending action an action that moves the cursor relative to its current position in the associated `stream`.
-     * Call `rl.commit()` to see the effect of this method, unless autoCommit: true was passed to the constructor.
+     * The `rl.moveCursor()` method adds to the internal list of pending action an
+     * action that moves the cursor _relative_ to its current position in the
+     * associated `stream`.
+     * Call `rl.commit()` to see the effect of this method, unless `autoCommit: true`was passed to the constructor.
+     * @since v17.0.0
+     * @return this
      */
     fun moveCursor(dx: Number, dy: Number): Unit /* this */
 
     /**
-     * The `rl.rollback()` method clears the internal list of pending actions without sending it to the associated `stream`.
+     * The `rl.rollback` methods clears the internal list of pending actions without
+     * sending it to the associated `stream`.
+     * @since v17.0.0
+     * @return this
      */
     fun rollback(): Unit /* this */
 }

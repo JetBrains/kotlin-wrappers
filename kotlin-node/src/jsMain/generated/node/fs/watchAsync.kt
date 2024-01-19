@@ -10,7 +10,7 @@ import js.iterable.AsyncIterable
  * Returns an async iterator that watches for changes on `filename`, where `filename`is either a file or a directory.
  *
  * ```js
- * const { watch } = require('fs/promises');
+ * const { watch } = require('node:fs/promises');
  *
  * const ac = new AbortController();
  * const { signal } = ac;

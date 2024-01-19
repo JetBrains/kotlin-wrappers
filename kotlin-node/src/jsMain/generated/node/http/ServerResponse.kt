@@ -47,10 +47,9 @@ external class ServerResponse<Request : IncomingMessage /* default is IncomingMe
     var statusMessage: String
 
     /**
-     * If set to `true`, Node.js will check whether the `Content-Length` header value
-     * and the size of the body, in bytes, are equal. Mismatching the
-     * `Content-Length` header value will result in an `Error` being thrown,
-     * identified by `code: 'ERR_HTTP_CONTENT_LENGTH_MISMATCH'`.
+     * If set to `true`, Node.js will check whether the `Content-Length`header value and the size of the body, in bytes, are equal.
+     * Mismatching the `Content-Length` header value will result
+     * in an `Error` being thrown, identified by `code:``'ERR_HTTP_CONTENT_LENGTH_MISMATCH'`.
      * @since v18.10.0, v16.18.0
      */
     var strictContentLength: Boolean
@@ -71,7 +70,7 @@ external class ServerResponse<Request : IncomingMessage /* default is IncomingMe
      * early hints message. The optional `callback` argument will be called when
      * the response message has been written.
      *
-     * Example:
+     * **Example**
      *
      * ```js
      * const earlyHintsLink = '</styles.css>; rel=preload; as=style';
@@ -85,15 +84,14 @@ external class ServerResponse<Request : IncomingMessage /* default is IncomingMe
      * ];
      * response.writeEarlyHints({
      *   'link': earlyHintsLinks,
-     *   'x-trace-id': 'id for diagnostics'
+     *   'x-trace-id': 'id for diagnostics',
      * });
      *
      * const earlyHintsCallback = () => console.log('early hints message sent');
      * response.writeEarlyHints({
-     *   'link': earlyHintsLinks
+     *   'link': earlyHintsLinks,
      * }, earlyHintsCallback);
      * ```
-     *
      * @since v18.11.0
      * @param hints An object containing the values of headers
      * @param callback Will be called when the response message has been written
@@ -121,7 +119,7 @@ external class ServerResponse<Request : IncomingMessage /* default is IncomingMe
      * response
      *   .writeHead(200, {
      *     'Content-Length': Buffer.byteLength(body),
-     *     'Content-Type': 'text/plain'
+     *     'Content-Type': 'text/plain',
      *   })
      *   .end(body);
      * ```
@@ -152,12 +150,12 @@ external class ServerResponse<Request : IncomingMessage /* default is IncomingMe
      * });
      * ```
      *
-     * `Content-Length` is given in bytes, not characters. Use `Buffer.byteLength()` to determine the length of the body in bytes. Node.js
-     * does not check whether `Content-Length` and the length of the body which has
+     * `Content-Length` is read in bytes, not characters. Use `Buffer.byteLength()` to determine the length of the body in bytes. Node.js
+     * will check whether `Content-Length` and the length of the body which has
      * been transmitted are equal or not.
      *
      * Attempting to set a header field name or value that contains invalid characters
-     * will result in a `TypeError` being thrown.
+     * will result in a \[`Error`\]\[\] being thrown.
      * @since v0.1.30
      */
     fun writeHead(
@@ -180,7 +178,7 @@ external class ServerResponse<Request : IncomingMessage /* default is IncomingMe
     ): Unit /* this */
 
     /**
-     * Sends an HTTP/1.1 102 Processing message to the client, indicating that
+     * Sends a HTTP/1.1 102 Processing message to the client, indicating that
      * the request body should be sent.
      * @since v10.0.0
      */

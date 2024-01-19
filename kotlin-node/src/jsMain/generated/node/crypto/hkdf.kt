@@ -15,10 +15,10 @@ import js.buffer.ArrayBuffer
  * of the input arguments specify invalid values or types.
  *
  * ```js
- * import { Buffer } from 'buffer';
+ * import { Buffer } from 'node:buffer';
  * const {
- *   hkdf
- * } = await import('crypto');
+ *   hkdf,
+ * } = await import('node:crypto');
  *
  * hkdf('sha512', 'key', 'salt', 'info', 64, (err, derivedKey) => {
  *   if (err) throw err;
@@ -27,7 +27,7 @@ import js.buffer.ArrayBuffer
  * ```
  * @since v15.0.0
  * @param digest The digest algorithm to use.
- * @param ikm The input keying material. It must be at least one byte in length.
+ * @param ikm The input keying material. Must be provided but can be zero-length.
  * @param salt The salt value. Must be provided but can be zero-length.
  * @param info Additional info value. Must be provided but can be zero-length, and cannot be more than 1024 bytes.
  * @param keylen The length of the key to generate. Must be greater than 0. The maximum allowable value is `255` times the number of bytes produced by the selected digest function (e.g. `sha512`

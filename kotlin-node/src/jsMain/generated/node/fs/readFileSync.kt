@@ -17,7 +17,7 @@ package node.fs
  * Similar to {@link readFile}, when the path is a directory, the behavior of`fs.readFileSync()` is platform-specific.
  *
  * ```js
- * import { readFileSync } from 'fs';
+ * import { readFileSync } from 'node:fs';
  *
  * // macOS, Linux, and Windows
  * readFileSync('<directory>');

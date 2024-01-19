@@ -76,4 +76,27 @@ sealed external interface CallSite {
      * Is this a constructor call?
      */
     fun isConstructor(): Boolean
+
+    /**
+     * is this an async call (i.e. await, Promise.all(), or Promise.any())?
+     */
+    fun isAsync(): Boolean
+
+    /**
+     * is this an async call to Promise.all()?
+     */
+    fun isPromiseAll(): Boolean
+
+    /**
+     * returns the index of the promise element that was followed in
+     * Promise.all() or Promise.any() for async stack traces, or null
+     * if the CallSite is not an async
+     */
+    fun getPromiseIndex(): Double?
+    fun getScriptNameOrSourceURL(): String
+    fun getScriptHash(): String
+    fun getEnclosingColumnNumber(): Double
+    fun getEnclosingLineNumber(): Double
+    fun getPosition(): Double
+    override fun toString(): String
 }

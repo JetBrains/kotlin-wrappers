@@ -12,8 +12,8 @@ sealed external interface PerformanceObserverEntryList {
      * ```js
      * const {
      *   performance,
-     *   PerformanceObserver
-     * } = require('perf_hooks');
+     *   PerformanceObserver,
+     * } = require('node:perf_hooks');
      *
      * const obs = new PerformanceObserver((perfObserverList, observer) => {
      *   console.log(perfObserverList.getEntries());
@@ -23,13 +23,15 @@ sealed external interface PerformanceObserverEntryList {
      *    *     name: 'test',
      *    *     entryType: 'mark',
      *    *     startTime: 81.465639,
-     *    *     duration: 0
+     *    *     duration: 0,
+     *    *     detail: null
      *    *   },
      *    *   PerformanceEntry {
      *    *     name: 'meow',
      *    *     entryType: 'mark',
      *    *     startTime: 81.860064,
-     *    *     duration: 0
+     *    *     duration: 0,
+     *    *     detail: null
      *    *   }
      *    * ]
      *
@@ -54,8 +56,8 @@ sealed external interface PerformanceObserverEntryList {
      * ```js
      * const {
      *   performance,
-     *   PerformanceObserver
-     * } = require('perf_hooks');
+     *   PerformanceObserver,
+     * } = require('node:perf_hooks');
      *
      * const obs = new PerformanceObserver((perfObserverList, observer) => {
      *   console.log(perfObserverList.getEntriesByName('meow'));
@@ -65,7 +67,8 @@ sealed external interface PerformanceObserverEntryList {
      *    *     name: 'meow',
      *    *     entryType: 'mark',
      *    *     startTime: 98.545991,
-     *    *     duration: 0
+     *    *     duration: 0,
+     *    *     detail: null
      *    *   }
      *    * ]
      *
@@ -78,7 +81,8 @@ sealed external interface PerformanceObserverEntryList {
      *    *     name: 'test',
      *    *     entryType: 'mark',
      *    *     startTime: 63.518931,
-     *    *     duration: 0
+     *    *     duration: 0,
+     *    *     detail: null
      *    *   }
      *    * ]
      *
@@ -104,8 +108,8 @@ sealed external interface PerformanceObserverEntryList {
      * ```js
      * const {
      *   performance,
-     *   PerformanceObserver
-     * } = require('perf_hooks');
+     *   PerformanceObserver,
+     * } = require('node:perf_hooks');
      *
      * const obs = new PerformanceObserver((perfObserverList, observer) => {
      *   console.log(perfObserverList.getEntriesByType('mark'));
@@ -115,13 +119,15 @@ sealed external interface PerformanceObserverEntryList {
      *    *     name: 'test',
      *    *     entryType: 'mark',
      *    *     startTime: 55.897834,
-     *    *     duration: 0
+     *    *     duration: 0,
+     *    *     detail: null
      *    *   },
      *    *   PerformanceEntry {
      *    *     name: 'meow',
      *    *     entryType: 'mark',
      *    *     startTime: 56.350146,
-     *    *     duration: 0
+     *    *     duration: 0,
+     *    *     detail: null
      *    *   }
      *    * ]
      *

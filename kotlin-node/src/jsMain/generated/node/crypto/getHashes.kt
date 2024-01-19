@@ -8,8 +8,8 @@ package node.crypto
 /**
  * ```js
  * const {
- *   getHashes
- * } = await import('crypto');
+ *   getHashes,
+ * } = await import('node:crypto');
  *
  * console.log(getHashes()); // ['DSA', 'DSA-SHA', 'DSA-SHA1', ...]
  * ```

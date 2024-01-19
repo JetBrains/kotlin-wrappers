@@ -11,7 +11,7 @@ import web.url.URL
  * control characters are correctly encoded when converting into a File URL.
  *
  * ```js
- * import { pathToFileURL } from 'url';
+ * import { pathToFileURL } from 'node:url';
  *
  * new URL('/foo#1', 'file:');           // Incorrect: file:///foo#1
  * pathToFileURL('/foo#1');              // Correct:   file:///foo%231 (POSIX)

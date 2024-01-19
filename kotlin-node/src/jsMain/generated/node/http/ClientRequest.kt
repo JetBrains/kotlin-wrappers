@@ -31,8 +31,11 @@ import web.url.URL
  *
  * For backward compatibility, `res` will only emit `'error'` if there is an`'error'` listener registered.
  *
- * Node.js does not check whether Content-Length and the length of the
- * body which has been transmitted are equal or not.
+ * Set `Content-Length` header to limit the response body size.
+ * If `response.strictContentLength` is set to `true`, mismatching the`Content-Length` header value will result in an `Error` being thrown,
+ * identified by `code:``'ERR_HTTP_CONTENT_LENGTH_MISMATCH'`.
+ *
+ * `Content-Length` value should be in bytes, not characters. Use `Buffer.byteLength()` to determine the length of the body in bytes.
  * @since v0.1.17
  */
 
@@ -69,7 +72,7 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
      * may run into a 'ECONNRESET' error.
      *
      * ```js
-     * const http = require('http');
+     * import http from 'node:http';
      *
      * // Server has a 5 seconds keep-alive timeout by default
      * http
@@ -93,7 +96,7 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
      * automatic error retry base on it.
      *
      * ```js
-     * const http = require('http');
+     * import http from 'node:http';
      * const agent = new http.Agent({ keepAlive: true });
      *
      * function retriableRequest() {

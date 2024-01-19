@@ -24,10 +24,11 @@ import web.url.URL
  * upload a file with a POST request, then write to the `ClientRequest` object.
  *
  * ```js
- * const http = require('http');
+ * import http from 'node:http';
+ * import { Buffer } from 'node:buffer';
  *
  * const postData = JSON.stringify({
- *   'msg': 'Hello World!'
+ *   'msg': 'Hello World!',
  * });
  *
  * const options = {
@@ -37,8 +38,8 @@ import web.url.URL
  *   method: 'POST',
  *   headers: {
  *     'Content-Type': 'application/json',
- *     'Content-Length': Buffer.byteLength(postData)
- *   }
+ *     'Content-Length': Buffer.byteLength(postData),
+ *   },
  * };
  *
  * const req = http.request(options, (res) => {
@@ -125,7 +126,7 @@ import web.url.URL
  *    * `'data'` any number of times, on the `res` object
  * * (connection closed here)
  * * `'aborted'` on the `res` object
- * * `'error'` on the `res` object with an error with message`'Error: aborted'` and code `'ECONNRESET'`.
+ * * `'error'` on the `res` object with an error with message`'Error: aborted'` and code `'ECONNRESET'`
  * * `'close'`
  * * `'close'` on the `res` object
  *
@@ -133,7 +134,7 @@ import web.url.URL
  * events will be emitted in the following order:
  *
  * * (`req.destroy()` called here)
- * * `'error'` with an error with message `'Error: socket hang up'` and code`'ECONNRESET'`
+ * * `'error'` with an error with message `'Error: socket hang up'` and code`'ECONNRESET'`, or the error with which `req.destroy()` was called
  * * `'close'`
  *
  * If `req.destroy()` is called before the connection succeeds, the following
@@ -141,7 +142,7 @@ import web.url.URL
  *
  * * `'socket'`
  * * (`req.destroy()` called here)
- * * `'error'` with an error with message `'Error: socket hang up'` and code`'ECONNRESET'`
+ * * `'error'` with an error with message `'Error: socket hang up'` and code`'ECONNRESET'`, or the error with which `req.destroy()` was called
  * * `'close'`
  *
  * If `req.destroy()` is called after the response is received, the following
@@ -152,7 +153,7 @@ import web.url.URL
  *    * `'data'` any number of times, on the `res` object
  * * (`req.destroy()` called here)
  * * `'aborted'` on the `res` object
- * * `'error'` on the `res` object with an error with message`'Error: aborted'` and code `'ECONNRESET'`.
+ * * `'error'` on the `res` object with an error with message `'Error: aborted'`and code `'ECONNRESET'`, or the error with which `req.destroy()` was called
  * * `'close'`
  * * `'close'` on the `res` object
  *
@@ -188,8 +189,9 @@ import web.url.URL
  * Setting the `timeout` option or using the `setTimeout()` function will
  * not abort the request or do anything besides add a `'timeout'` event.
  *
- * Passing an `AbortSignal` and then calling `abort` on the corresponding`AbortController` will behave the same way as calling `.destroy()` on the
- * request itself.
+ * Passing an `AbortSignal` and then calling `abort()` on the corresponding`AbortController` will behave the same way as calling `.destroy()` on the
+ * request. Specifically, the `'error'` event will be emitted with an error with
+ * the message `'AbortError: The operation was aborted'`, the code `'ABORT_ERR'`and the `cause`, if one was provided.
  * @since v0.3.6
  */
 external fun request(

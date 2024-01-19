@@ -19,7 +19,7 @@ import js.typedarrays.Uint8Array
  * sequence cannot be adequately represented in the target encoding. For instance:
  *
  * ```js
- * import { Buffer, transcode } from 'buffer';
+ * import { Buffer, transcode } from 'node:buffer';
  *
  * const newBuf = transcode(Buffer.from('€'), 'utf8', 'ascii');
  * console.log(newBuf.toString('ascii'));

@@ -20,7 +20,7 @@ package node.fs
  * By default, the stream will emit a `'close'` event after it has been
  * destroyed.  Set the `emitClose` option to `false` to change this behavior.
  *
- * By providing the `fs` option it is possible to override the corresponding `fs`implementations for `open`, `write`, `writev` and `close`. Overriding `write()`without `writev()` can reduce
+ * By providing the `fs` option it is possible to override the corresponding `fs`implementations for `open`, `write`, `writev`, and `close`. Overriding `write()`without `writev()` can reduce
  * performance as some optimizations (`_writev()`)
  * will be disabled. When providing the `fs` option, overrides for at least one of`write` and `writev` are required. If no `fd` option is supplied, an override
  * for `open` is also required. If `autoClose` is `true`, an override for `close`is also required.

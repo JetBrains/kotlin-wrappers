@@ -12,8 +12,8 @@ import js.promise.Promise
  * that returns promises.
  *
  * ```js
- * const util = require('util');
- * const fs = require('fs');
+ * const util = require('node:util');
+ * const fs = require('node:fs');
  *
  * const stat = util.promisify(fs.stat);
  * stat('.').then((stats) => {
@@ -26,8 +26,8 @@ import js.promise.Promise
  * Or, equivalently using `async function`s:
  *
  * ```js
- * const util = require('util');
- * const fs = require('fs');
+ * const util = require('node:util');
+ * const fs = require('node:fs');
  *
  * const stat = util.promisify(fs.stat);
  *
@@ -35,6 +35,8 @@ import js.promise.Promise
  *   const stats = await stat('.');
  *   console.log(`This directory is owned by ${stats.uid}`);
  * }
+ *
+ * callStat();
  * ```
  *
  * If there is an `original[util.promisify.custom]` property present, `promisify`will return its value, see `Custom promisified functions`.
@@ -48,7 +50,7 @@ import js.promise.Promise
  * work as expected unless handled specially:
  *
  * ```js
- * const util = require('util');
+ * const util = require('node:util');
  *
  * class Foo {
  *   constructor() {

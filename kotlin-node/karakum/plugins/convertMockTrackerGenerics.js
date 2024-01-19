@@ -2,10 +2,10 @@ import ts from "typescript"
 
 function isMockTrackerMethod(node) {
     return (
-        ts.isMethodSignature(node)
+        ts.isMethodDeclaration(node)
         && node.parent
-        && ts.isInterfaceDeclaration(node.parent)
-        && node.parent.name.text === "MockTracker"
+        && ts.isClassDeclaration(node.parent)
+        && node.parent.name?.text === "MockTracker"
     )
 }
 

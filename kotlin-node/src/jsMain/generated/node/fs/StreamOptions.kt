@@ -3,6 +3,8 @@
 
 package node.fs
 
+import web.abort.AbortSignal
+
 
 sealed external interface StreamOptions {
     var flags: String?
@@ -12,5 +14,6 @@ sealed external interface StreamOptions {
     var autoClose: Boolean?
     var emitClose: Boolean?
     var start: Double?
+    var signal: AbortSignal?
     var highWaterMark: Double?
 }

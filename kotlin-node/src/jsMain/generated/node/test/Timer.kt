@@ -11,13 +11,13 @@ sealed external interface Timer {
         @seskar.js.JsValue("setInterval")
         val setInterval: Timer
 
-        @seskar.js.JsValue("clearInterval")
-        val clearInterval: Timer
-
         @seskar.js.JsValue("setTimeout")
         val setTimeout: Timer
 
-        @seskar.js.JsValue("clearTimeout")
-        val clearTimeout: Timer
+        @seskar.js.JsValue("setImmediate")
+        val setImmediate: Timer
+
+        @seskar.js.JsValue("Date")
+        val Date: Timer
     }
 }

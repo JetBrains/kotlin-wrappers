@@ -8,7 +8,7 @@ import js.promise.Promise
 
 /**
  * Shorthand for marking a test as `TODO`, same as `test([name], { todo: true }[, fn])`.
- * @since v18.17.0
+ * @since v20.2.0
  */
 
 @JsName("todo")

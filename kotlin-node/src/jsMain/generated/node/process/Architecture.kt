@@ -29,6 +29,9 @@ sealed external interface Architecture {
         @seskar.js.JsValue("ppc64")
         val ppc64: Architecture
 
+        @seskar.js.JsValue("riscv64")
+        val riscv64: Architecture
+
         @seskar.js.JsValue("s390")
         val s390: Architecture
 

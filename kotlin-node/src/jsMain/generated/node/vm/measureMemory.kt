@@ -19,7 +19,7 @@ import js.promise.Promise
  * the memory occupied by each heap space in the current V8 instance.
  *
  * ```js
- * const vm = require('vm');
+ * const vm = require('node:vm');
  * // Measure the memory used by the main context.
  * vm.measureMemory({ mode: 'summary' })
  *   // This is the same as vm.measureMemory()

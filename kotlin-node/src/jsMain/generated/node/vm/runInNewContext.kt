@@ -17,11 +17,11 @@ package node.vm
  * variable and sets a new one. These globals are contained in the `contextObject`.
  *
  * ```js
- * const vm = require('vm');
+ * const vm = require('node:vm');
  *
  * const contextObject = {
  *   animal: 'cat',
- *   count: 2
+ *   count: 2,
  * };
  *
  * vm.runInNewContext('count += 1; name = "kitty"', contextObject);

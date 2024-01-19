@@ -6,4 +6,5 @@ package node.fs
 
 sealed external interface WriteStreamOptions : StreamOptions {
     var fs: CreateWriteStreamFSImplementation?
+    var flush: Boolean?
 }

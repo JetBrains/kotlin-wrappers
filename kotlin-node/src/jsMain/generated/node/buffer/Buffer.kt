@@ -24,7 +24,7 @@ sealed external class Buffer : Uint8Array {
      * written. However, partially encoded characters will not be written.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.alloc(256);
      *
@@ -61,7 +61,7 @@ sealed external class Buffer : Uint8Array {
      * as {@link constants.MAX_STRING_LENGTH}.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf1 = Buffer.allocUnsafe(26);
      *
@@ -103,7 +103,7 @@ sealed external class Buffer : Uint8Array {
      * In particular, `Buffer.from(buf.toJSON())` works like `Buffer.from(buf)`.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.from([0x1, 0x2, 0x3, 0x4, 0x5]);
      * const json = JSON.stringify(buf);
@@ -128,7 +128,7 @@ sealed external class Buffer : Uint8Array {
      * Returns `true` if both `buf` and `otherBuffer` have exactly the same bytes,`false` otherwise. Equivalent to `buf.compare(otherBuffer) === 0`.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf1 = Buffer.from('ABC');
      * const buf2 = Buffer.from('414243', 'hex');
@@ -153,7 +153,7 @@ sealed external class Buffer : Uint8Array {
      * * `-1` is returned if `target` should come _after_`buf` when sorted.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf1 = Buffer.from('ABC');
      * const buf2 = Buffer.from('BCD');
@@ -177,7 +177,7 @@ sealed external class Buffer : Uint8Array {
      * The optional `targetStart`, `targetEnd`, `sourceStart`, and `sourceEnd`arguments can be used to limit the comparison to specific ranges within `target`and `buf` respectively.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf1 = Buffer.from([1, 2, 3, 4, 5, 6, 7, 8, 9]);
      * const buf2 = Buffer.from([5, 6, 7, 8, 9, 1, 2, 3, 4]);
@@ -214,7 +214,7 @@ sealed external class Buffer : Uint8Array {
      * different function arguments.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * // Create two `Buffer` instances.
      * const buf1 = Buffer.allocUnsafe(26);
@@ -235,7 +235,7 @@ sealed external class Buffer : Uint8Array {
      * ```
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * // Create a `Buffer` and copy data from one region to an overlapping region
      * // within the same `Buffer`.
@@ -274,7 +274,7 @@ sealed external class Buffer : Uint8Array {
      * which is a superclass of `Buffer`. To copy the slice, use`Uint8Array.prototype.slice()`.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.from('buffer');
      *
@@ -313,7 +313,7 @@ sealed external class Buffer : Uint8Array {
      * Modifying the new `Buffer` slice will modify the memory in the original `Buffer`because the allocated memory of the two objects overlap.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * // Create a `Buffer` with the ASCII alphabet, take a slice, and modify one byte
      * // from the original `Buffer`.
@@ -340,7 +340,7 @@ sealed external class Buffer : Uint8Array {
      * end of `buf` rather than the beginning.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.from('buffer');
      *
@@ -368,7 +368,7 @@ sealed external class Buffer : Uint8Array {
      * `value` is interpreted and written as a two's complement signed integer.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.allocUnsafe(8);
      *
@@ -390,7 +390,7 @@ sealed external class Buffer : Uint8Array {
      * `value` is interpreted and written as a two's complement signed integer.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.allocUnsafe(8);
      *
@@ -412,7 +412,7 @@ sealed external class Buffer : Uint8Array {
      * This function is also available under the `writeBigUint64BE` alias.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.allocUnsafe(8);
      *
@@ -438,7 +438,7 @@ sealed external class Buffer : Uint8Array {
      * Writes `value` to `buf` at the specified `offset` as little-endian
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.allocUnsafe(8);
      *
@@ -469,7 +469,7 @@ sealed external class Buffer : Uint8Array {
      * This function is also available under the `writeUintLE` alias.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.allocUnsafe(6);
      *
@@ -499,7 +499,7 @@ sealed external class Buffer : Uint8Array {
      * This function is also available under the `writeUintBE` alias.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.allocUnsafe(6);
      *
@@ -527,7 +527,7 @@ sealed external class Buffer : Uint8Array {
      * when `value` is anything other than a signed integer.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.allocUnsafe(6);
      *
@@ -549,7 +549,7 @@ sealed external class Buffer : Uint8Array {
      * signed integer.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.allocUnsafe(6);
      *
@@ -572,7 +572,7 @@ sealed external class Buffer : Uint8Array {
      * This function is also available under the `readBigUint64BE` alias.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.from([0x00, 0x00, 0x00, 0x00, 0xff, 0xff, 0xff, 0xff]);
      *
@@ -596,7 +596,7 @@ sealed external class Buffer : Uint8Array {
      * This function is also available under the `readBigUint64LE` alias.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.from([0x00, 0x00, 0x00, 0x00, 0xff, 0xff, 0xff, 0xff]);
      *
@@ -641,7 +641,7 @@ sealed external class Buffer : Uint8Array {
      * This function is also available under the `readUintLE` alias.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.from([0x12, 0x34, 0x56, 0x78, 0x90, 0xab]);
      *
@@ -667,7 +667,7 @@ sealed external class Buffer : Uint8Array {
      * This function is also available under the `readUintBE` alias.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.from([0x12, 0x34, 0x56, 0x78, 0x90, 0xab]);
      *
@@ -693,7 +693,7 @@ sealed external class Buffer : Uint8Array {
      * supporting up to 48 bits of accuracy.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.from([0x12, 0x34, 0x56, 0x78, 0x90, 0xab]);
      *
@@ -711,7 +711,7 @@ sealed external class Buffer : Uint8Array {
      * supporting up to 48 bits of accuracy.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.from([0x12, 0x34, 0x56, 0x78, 0x90, 0xab]);
      *
@@ -734,7 +734,7 @@ sealed external class Buffer : Uint8Array {
      * This function is also available under the `readUint8` alias.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.from([1, -2]);
      *
@@ -762,7 +762,7 @@ sealed external class Buffer : Uint8Array {
      * This function is also available under the `readUint16LE` alias.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.from([0x12, 0x34, 0x56]);
      *
@@ -790,7 +790,7 @@ sealed external class Buffer : Uint8Array {
      * This function is also available under the `readUint16BE` alias.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.from([0x12, 0x34, 0x56]);
      *
@@ -816,7 +816,7 @@ sealed external class Buffer : Uint8Array {
      * This function is also available under the `readUint32LE` alias.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.from([0x12, 0x34, 0x56, 0x78]);
      *
@@ -842,7 +842,7 @@ sealed external class Buffer : Uint8Array {
      * This function is also available under the `readUint32BE` alias.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.from([0x12, 0x34, 0x56, 0x78]);
      *
@@ -866,7 +866,7 @@ sealed external class Buffer : Uint8Array {
      * Integers read from a `Buffer` are interpreted as two's complement signed values.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.from([-1, 5]);
      *
@@ -888,7 +888,7 @@ sealed external class Buffer : Uint8Array {
      * Integers read from a `Buffer` are interpreted as two's complement signed values.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.from([0, 5]);
      *
@@ -908,7 +908,7 @@ sealed external class Buffer : Uint8Array {
      * Integers read from a `Buffer` are interpreted as two's complement signed values.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.from([0, 5]);
      *
@@ -926,7 +926,7 @@ sealed external class Buffer : Uint8Array {
      * Integers read from a `Buffer` are interpreted as two's complement signed values.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.from([0, 0, 0, 5]);
      *
@@ -946,7 +946,7 @@ sealed external class Buffer : Uint8Array {
      * Integers read from a `Buffer` are interpreted as two's complement signed values.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.from([0, 0, 0, 5]);
      *
@@ -962,7 +962,7 @@ sealed external class Buffer : Uint8Array {
      * Reads a 32-bit, little-endian float from `buf` at the specified `offset`.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.from([1, 2, 3, 4]);
      *
@@ -980,7 +980,7 @@ sealed external class Buffer : Uint8Array {
      * Reads a 32-bit, big-endian float from `buf` at the specified `offset`.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.from([1, 2, 3, 4]);
      *
@@ -996,7 +996,7 @@ sealed external class Buffer : Uint8Array {
      * Reads a 64-bit, little-endian double from `buf` at the specified `offset`.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.from([1, 2, 3, 4, 5, 6, 7, 8]);
      *
@@ -1014,7 +1014,7 @@ sealed external class Buffer : Uint8Array {
      * Reads a 64-bit, big-endian double from `buf` at the specified `offset`.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.from([1, 2, 3, 4, 5, 6, 7, 8]);
      *
@@ -1031,7 +1031,7 @@ sealed external class Buffer : Uint8Array {
      * byte order _in-place_. Throws `ERR_INVALID_BUFFER_SIZE` if `buf.length` is not a multiple of 2.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf1 = Buffer.from([0x1, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8]);
      *
@@ -1053,7 +1053,7 @@ sealed external class Buffer : Uint8Array {
      * between UTF-16 little-endian and UTF-16 big-endian:
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.from('This is little-endian UTF-16', 'utf16le');
      * buf.swap16(); // Convert to big-endian UTF-16 text.
@@ -1068,7 +1068,7 @@ sealed external class Buffer : Uint8Array {
      * byte order _in-place_. Throws `ERR_INVALID_BUFFER_SIZE` if `buf.length` is not a multiple of 4.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf1 = Buffer.from([0x1, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8]);
      *
@@ -1095,7 +1095,7 @@ sealed external class Buffer : Uint8Array {
      * Throws `ERR_INVALID_BUFFER_SIZE` if `buf.length` is not a multiple of 8.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf1 = Buffer.from([0x1, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8]);
      *
@@ -1125,7 +1125,7 @@ sealed external class Buffer : Uint8Array {
      * This function is also available under the `writeUint8` alias.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.allocUnsafe(4);
      *
@@ -1157,7 +1157,7 @@ sealed external class Buffer : Uint8Array {
      * This function is also available under the `writeUint16LE` alias.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.allocUnsafe(4);
      *
@@ -1187,7 +1187,7 @@ sealed external class Buffer : Uint8Array {
      * This function is also available under the `writeUint16BE` alias.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.allocUnsafe(4);
      *
@@ -1217,7 +1217,7 @@ sealed external class Buffer : Uint8Array {
      * This function is also available under the `writeUint32LE` alias.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.allocUnsafe(4);
      *
@@ -1246,7 +1246,7 @@ sealed external class Buffer : Uint8Array {
      * This function is also available under the `writeUint32BE` alias.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.allocUnsafe(4);
      *
@@ -1276,7 +1276,7 @@ sealed external class Buffer : Uint8Array {
      * `value` is interpreted and written as a two's complement signed integer.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.allocUnsafe(2);
      *
@@ -1300,7 +1300,7 @@ sealed external class Buffer : Uint8Array {
      * The `value` is interpreted and written as a two's complement signed integer.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.allocUnsafe(2);
      *
@@ -1323,7 +1323,7 @@ sealed external class Buffer : Uint8Array {
      * The `value` is interpreted and written as a two's complement signed integer.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.allocUnsafe(2);
      *
@@ -1346,7 +1346,7 @@ sealed external class Buffer : Uint8Array {
      * The `value` is interpreted and written as a two's complement signed integer.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.allocUnsafe(4);
      *
@@ -1369,7 +1369,7 @@ sealed external class Buffer : Uint8Array {
      * The `value` is interpreted and written as a two's complement signed integer.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.allocUnsafe(4);
      *
@@ -1390,7 +1390,7 @@ sealed external class Buffer : Uint8Array {
      * undefined when `value` is anything other than a JavaScript number.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.allocUnsafe(4);
      *
@@ -1411,7 +1411,7 @@ sealed external class Buffer : Uint8Array {
      * undefined when `value` is anything other than a JavaScript number.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.allocUnsafe(4);
      *
@@ -1432,7 +1432,7 @@ sealed external class Buffer : Uint8Array {
      * other than a JavaScript number.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.allocUnsafe(8);
      *
@@ -1453,7 +1453,7 @@ sealed external class Buffer : Uint8Array {
      * other than a JavaScript number.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.allocUnsafe(8);
      *
@@ -1474,7 +1474,7 @@ sealed external class Buffer : Uint8Array {
      * the entire `buf` will be filled:
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * // Fill a `Buffer` with the ASCII character 'h'.
      *
@@ -1482,6 +1482,12 @@ sealed external class Buffer : Uint8Array {
      *
      * console.log(b.toString());
      * // Prints: hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+     *
+     * // Fill a buffer with empty string
+     * const c = Buffer.allocUnsafe(5).fill('');
+     *
+     * console.log(c.fill(''));
+     * // Prints: <Buffer 00 00 00 00 00>
      * ```
      *
      * `value` is coerced to a `uint32` value if it is not a string, `Buffer`, or
@@ -1492,7 +1498,7 @@ sealed external class Buffer : Uint8Array {
      * then only the bytes of that character that fit into `buf` are written:
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * // Fill a `Buffer` with character that takes up two bytes in UTF-8.
      *
@@ -1504,7 +1510,7 @@ sealed external class Buffer : Uint8Array {
      * fill data remains, an exception is thrown:
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.allocUnsafe(5);
      *
@@ -1516,7 +1522,7 @@ sealed external class Buffer : Uint8Array {
      * // Throws an exception.
      * ```
      * @since v0.5.0
-     * @param value The value with which to fill `buf`.
+     * @param value The value with which to fill `buf`. Empty value (string, Uint8Array, Buffer) is coerced to `0`.
      * @param [offset=0] Number of bytes to skip before starting to fill `buf`.
      * @param [end=buf.length] Where to stop filling `buf` (not inclusive).
      * @param [encoding='utf8'] The encoding for `value` if `value` is a string.
@@ -1553,7 +1559,7 @@ sealed external class Buffer : Uint8Array {
      * value between `0` and `255`.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.from('this is a buffer');
      *
@@ -1586,7 +1592,7 @@ sealed external class Buffer : Uint8Array {
      * behavior matches [`String.prototype.indexOf()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf).
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const b = Buffer.from('abcdef');
      *
@@ -1634,7 +1640,7 @@ sealed external class Buffer : Uint8Array {
      * rather than the first occurrence.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.from('this buffer is a buffer');
      *
@@ -1669,7 +1675,7 @@ sealed external class Buffer : Uint8Array {
      * This behavior matches [`String.prototype.lastIndexOf()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf).
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const b = Buffer.from('abcdef');
      *
@@ -1718,7 +1724,7 @@ sealed external class Buffer : Uint8Array {
      * Equivalent to `buf.indexOf() !== -1`.
      *
      * ```js
-     * import { Buffer } from 'buffer';
+     * import { Buffer } from 'node:buffer';
      *
      * const buf = Buffer.from('this is a buffer');
      *
@@ -1767,11 +1773,15 @@ sealed external class Buffer : Uint8Array {
          * Array entries outside that range will be truncated to fit into it.
          *
          * ```js
-         * import { Buffer } from 'buffer';
+         * import { Buffer } from 'node:buffer';
          *
          * // Creates a new Buffer containing the UTF-8 bytes of the string 'buffer'.
          * const buf = Buffer.from([0x62, 0x75, 0x66, 0x66, 0x65, 0x72]);
          * ```
+         *
+         * If `array` is an `Array`\-like object (that is, one with a `length` property of
+         * type `number`), it is treated as if it is an array, unless it is a `Buffer` or
+         * a `Uint8Array`. This means all other `TypedArray` variants get treated as an`Array`. To create a `Buffer` from the bytes backing a `TypedArray`, use `Buffer.copyBytesFrom()`.
          *
          * A `TypeError` will be thrown if `array` is not an `Array` or another type
          * appropriate for `Buffer.from()` variants.
@@ -1813,7 +1823,7 @@ sealed external class Buffer : Uint8Array {
          * Returns `true` if `obj` is a `Buffer`, `false` otherwise.
          *
          * ```js
-         * import { Buffer } from 'buffer';
+         * import { Buffer } from 'node:buffer';
          *
          * Buffer.isBuffer(Buffer.alloc(10)); // true
          * Buffer.isBuffer(Buffer.from('foo')); // true
@@ -1830,7 +1840,7 @@ sealed external class Buffer : Uint8Array {
          * or `false` otherwise.
          *
          * ```js
-         * import { Buffer } from 'buffer';
+         * import { Buffer } from 'node:buffer';
          *
          * console.log(Buffer.isEncoding('utf8'));
          * // Prints: true
@@ -1860,7 +1870,7 @@ sealed external class Buffer : Uint8Array {
          * string.
          *
          * ```js
-         * import { Buffer } from 'buffer';
+         * import { Buffer } from 'node:buffer';
          *
          * const str = '\u00bd + \u00bc = \u00be';
          *
@@ -1899,7 +1909,7 @@ sealed external class Buffer : Uint8Array {
          * truncated to `totalLength`.
          *
          * ```js
-         * import { Buffer } from 'buffer';
+         * import { Buffer } from 'node:buffer';
          *
          * // Create a single `Buffer` from a list of three `Buffer` instances.
          *
@@ -1928,10 +1938,19 @@ sealed external class Buffer : Uint8Array {
 
         /**
          * Copies the underlying memory of `view` into a new `Buffer`.
-         * @since v18.16.0
-         * @param view The `TypedArray` to copy.
-         * @param offset The starting offset within `view`.
-         * @param length The number of elements from `view` to copy.
+         *
+         * ```js
+         * const u16 = new Uint16Array([0, 0xffff]);
+         * const buf = Buffer.copyBytesFrom(u16, 1, 1);
+         * u16[1] = 0;
+         * console.log(buf.length); // 2
+         * console.log(buf[0]); // 255
+         * console.log(buf[1]); // 255
+         * ```
+         * @since v19.8.0
+         * @param view The {TypedArray} to copy.
+         * @param [offset=': 0'] The starting offset within `view`.
+         * @param [length=view.length - offset] The number of elements from `view` to copy.
          */
         fun copyBytesFrom(
             view: js.typedarrays.TypedArray<*, *>,
@@ -1943,7 +1962,7 @@ sealed external class Buffer : Uint8Array {
          * Compares `buf1` to `buf2`, typically for the purpose of sorting arrays of`Buffer` instances. This is equivalent to calling `buf1.compare(buf2)`.
          *
          * ```js
-         * import { Buffer } from 'buffer';
+         * import { Buffer } from 'node:buffer';
          *
          * const buf1 = Buffer.from('1234');
          * const buf2 = Buffer.from('0123');
@@ -1962,7 +1981,7 @@ sealed external class Buffer : Uint8Array {
          * Allocates a new `Buffer` of `size` bytes. If `fill` is `undefined`, the`Buffer` will be zero-filled.
          *
          * ```js
-         * import { Buffer } from 'buffer';
+         * import { Buffer } from 'node:buffer';
          *
          * const buf = Buffer.alloc(5);
          *
@@ -1970,12 +1989,12 @@ sealed external class Buffer : Uint8Array {
          * // Prints: <Buffer 00 00 00 00 00>
          * ```
          *
-         * If `size` is larger than {@link constants.MAX_LENGTH} or smaller than 0, `ERR_INVALID_ARG_VALUE` is thrown.
+         * If `size` is larger than {@link constants.MAX_LENGTH} or smaller than 0, `ERR_OUT_OF_RANGE` is thrown.
          *
          * If `fill` is specified, the allocated `Buffer` will be initialized by calling `buf.fill(fill)`.
          *
          * ```js
-         * import { Buffer } from 'buffer';
+         * import { Buffer } from 'node:buffer';
          *
          * const buf = Buffer.alloc(5, 'a');
          *
@@ -1987,7 +2006,7 @@ sealed external class Buffer : Uint8Array {
          * initialized by calling `buf.fill(fill, encoding)`.
          *
          * ```js
-         * import { Buffer } from 'buffer';
+         * import { Buffer } from 'node:buffer';
          *
          * const buf = Buffer.alloc(11, 'aGVsbG8gd29ybGQ=', 'base64');
          *
@@ -2016,13 +2035,13 @@ sealed external class Buffer : Uint8Array {
         fun alloc(size: Number, fill: Double = definedExternally, encoding: BufferEncoding = definedExternally): Buffer
 
         /**
-         * Allocates a new `Buffer` of `size` bytes. If `size` is larger than {@link constants.MAX_LENGTH} or smaller than 0, `ERR_INVALID_ARG_VALUE` is thrown.
+         * Allocates a new `Buffer` of `size` bytes. If `size` is larger than {@link constants.MAX_LENGTH} or smaller than 0, `ERR_OUT_OF_RANGE` is thrown.
          *
          * The underlying memory for `Buffer` instances created in this way is _not_
          * _initialized_. The contents of the newly created `Buffer` are unknown and _may contain sensitive data_. Use `Buffer.alloc()` instead to initialize`Buffer` instances with zeroes.
          *
          * ```js
-         * import { Buffer } from 'buffer';
+         * import { Buffer } from 'node:buffer';
          *
          * const buf = Buffer.allocUnsafe(10);
          *
@@ -2038,9 +2057,8 @@ sealed external class Buffer : Uint8Array {
          * A `TypeError` will be thrown if `size` is not a number.
          *
          * The `Buffer` module pre-allocates an internal `Buffer` instance of
-         * size `Buffer.poolSize` that is used as a pool for the fast allocation of new`Buffer` instances created using `Buffer.allocUnsafe()`,`Buffer.from(array)`, `Buffer.concat()`, and the
-         * deprecated`new Buffer(size)` constructor only when `size` is less than or equal
-         * to `Buffer.poolSize >> 1` (floor of `Buffer.poolSize` divided by two).
+         * size `Buffer.poolSize` that is used as a pool for the fast allocation of new`Buffer` instances created using `Buffer.allocUnsafe()`, `Buffer.from(array)`,
+         * and `Buffer.concat()` only when `size` is less than`Buffer.poolSize >>> 1` (floor of `Buffer.poolSize` divided by two).
          *
          * Use of this pre-allocated internal memory pool is a key difference between
          * calling `Buffer.alloc(size, fill)` vs. `Buffer.allocUnsafe(size).fill(fill)`.
@@ -2054,15 +2072,15 @@ sealed external class Buffer : Uint8Array {
         fun allocUnsafe(size: Number): Buffer
 
         /**
-         * Allocates a new `Buffer` of `size` bytes. If `size` is larger than {@link constants.MAX_LENGTH} or smaller than 0, `ERR_INVALID_ARG_VALUE` is thrown. A zero-length `Buffer` is created
-         * if `size` is 0.
+         * Allocates a new `Buffer` of `size` bytes. If `size` is larger than {@link constants.MAX_LENGTH} or smaller than 0, `ERR_OUT_OF_RANGE` is thrown. A zero-length `Buffer` is created if
+         * `size` is 0.
          *
          * The underlying memory for `Buffer` instances created in this way is _not_
          * _initialized_. The contents of the newly created `Buffer` are unknown and _may contain sensitive data_. Use `buf.fill(0)` to initialize
          * such `Buffer` instances with zeroes.
          *
          * When using `Buffer.allocUnsafe()` to allocate new `Buffer` instances,
-         * allocations under 4 KB are sliced from a single pre-allocated `Buffer`. This
+         * allocations under 4 KiB are sliced from a single pre-allocated `Buffer`. This
          * allows applications to avoid the garbage collection overhead of creating many
          * individually allocated `Buffer` instances. This approach improves both
          * performance and memory usage by eliminating the need to track and clean up as
@@ -2074,7 +2092,7 @@ sealed external class Buffer : Uint8Array {
          * then copying out the relevant bits.
          *
          * ```js
-         * import { Buffer } from 'buffer';
+         * import { Buffer } from 'node:buffer';
          *
          * // Need to keep around a few small chunks of memory.
          * const store = [];

@@ -9,6 +9,9 @@ package node.fs
  * For detailed information, see the documentation of the asynchronous version of
  * this API: {@link write}.
  * @since v0.1.21
+ * @param [offset=0]
+ * @param [length=buffer.byteLength - offset]
+ * @param [position='null']
  * @return The number of bytes written.
  */
 external fun writeSync(

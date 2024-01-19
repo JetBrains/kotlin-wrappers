@@ -24,11 +24,11 @@ import node.stream.WritableOptions
  * const {
  *   generateKeyPairSync,
  *   createSign,
- *   createVerify
- * } = await import('crypto');
+ *   createVerify,
+ * } = await import('node:crypto');
  *
  * const { privateKey, publicKey } = generateKeyPairSync('ec', {
- *   namedCurve: 'sect239k1'
+ *   namedCurve: 'sect239k1',
  * });
  *
  * const sign = createSign('SHA256');
@@ -49,8 +49,8 @@ import node.stream.WritableOptions
  * const {
  *   generateKeyPairSync,
  *   createSign,
- *   createVerify
- * } = await import('crypto');
+ *   createVerify,
+ * } = await import('node:crypto');
  *
  * const { privateKey, publicKey } = generateKeyPairSync('rsa', {
  *   modulusLength: 2048,

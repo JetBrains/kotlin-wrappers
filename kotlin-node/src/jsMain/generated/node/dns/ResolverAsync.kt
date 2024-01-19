@@ -7,6 +7,49 @@ package node.dns
 import js.promise.Promise
 import js.promise.await
 
+/**
+ * An independent resolver for DNS requests.
+ *
+ * Creating a new resolver uses the default server settings. Setting
+ * the servers used for a resolver using `resolver.setServers()` does not affect
+ * other resolvers:
+ *
+ * ```js
+ * const { Resolver } = require('node:dns').promises;
+ * const resolver = new Resolver();
+ * resolver.setServers(['4.4.4.4']);
+ *
+ * // This request will use the server at 4.4.4.4, independent of global settings.
+ * resolver.resolve4('example.org').then((addresses) => {
+ *   // ...
+ * });
+ *
+ * // Alternatively, the same code can be written using async-await style.
+ * (async function() {
+ *   const addresses = await resolver.resolve4('example.org');
+ * })();
+ * ```
+ *
+ * The following methods from the `dnsPromises` API are available:
+ *
+ * * `resolver.getServers()`
+ * * `resolver.resolve()`
+ * * `resolver.resolve4()`
+ * * `resolver.resolve6()`
+ * * `resolver.resolveAny()`
+ * * `resolver.resolveCaa()`
+ * * `resolver.resolveCname()`
+ * * `resolver.resolveMx()`
+ * * `resolver.resolveNaptr()`
+ * * `resolver.resolveNs()`
+ * * `resolver.resolvePtr()`
+ * * `resolver.resolveSoa()`
+ * * `resolver.resolveSrv()`
+ * * `resolver.resolveTxt()`
+ * * `resolver.reverse()`
+ * * `resolver.setServers()`
+ * @since v10.6.0
+ */
 
 external class Resolver {
     constructor (options: ResolverOptions = definedExternally)
@@ -325,6 +368,20 @@ external class Resolver {
     )
     suspend inline fun resolveAny(hostname: String): js.array.ReadonlyArray<AnyRecord> =
         resolveAnyAsync(
+            hostname
+        ).await()
+
+
+    @JsName("resolveCaa")
+    fun resolveCaaAsync(hostname: String): Promise<js.array.ReadonlyArray<CaaRecord>>
+
+
+    @Suppress(
+        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+        "INLINE_EXTERNAL_DECLARATION",
+    )
+    suspend inline fun resolveCaa(hostname: String): js.array.ReadonlyArray<CaaRecord> =
+        resolveCaaAsync(
             hostname
         ).await()
 

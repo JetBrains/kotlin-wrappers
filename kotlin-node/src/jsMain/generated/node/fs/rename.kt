@@ -15,7 +15,7 @@ package node.fs
  * See also: [`rename(2)`](http://man7.org/linux/man-pages/man2/rename.2.html).
  *
  * ```js
- * import { rename } from 'fs';
+ * import { rename } from 'node:fs';
  *
  * rename('oldFile.txt', 'newFile.txt', (err) => {
  *   if (err) throw err;

@@ -20,12 +20,12 @@ package node.crypto
  *
  * ```js
  * import {
- *   createReadStream
- * } from 'fs';
- * import { argv } from 'process';
+ *   createReadStream,
+ * } from 'node:fs';
+ * import { argv } from 'node:process';
  * const {
- *   createHash
- * } = await import('crypto');
+ *   createHash,
+ * } = await import('node:crypto');
  *
  * const filename = argv[2];
  *

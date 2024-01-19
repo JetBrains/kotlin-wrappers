@@ -9,9 +9,9 @@ package node.http
 
 /* import { URL } from "node:url"; */
 
-/* import { EventEmitter } from "node:events"; */
-
 /* import { LookupOptions } from "node:dns"; */
+
+/* import { EventEmitter } from "node:events"; */
 
 /* import { LookupFunction, Server as NetServer, Socket, TcpSocketConnectOpts } from "node:net"; */
 

@@ -7,19 +7,19 @@ package node.stream
 
 /**
  * A stream is an abstract interface for working with streaming data in Node.js.
- * The `stream` module provides an API for implementing the stream interface.
+ * The `node:stream` module provides an API for implementing the stream interface.
  *
  * There are many stream objects provided by Node.js. For instance, a `request to an HTTP server` and `process.stdout` are both stream instances.
  *
  * Streams can be readable, writable, or both. All streams are instances of `EventEmitter`.
  *
- * To access the `stream` module:
+ * To access the `node:stream` module:
  *
  * ```js
- * const stream = require('stream');
+ * const stream = require('node:stream');
  * ```
  *
- * The `stream` module is useful for creating new types of stream instances. It is
- * usually not necessary to use the `stream` module to consume streams.
- * @see [source](https://github.com/nodejs/node/blob/v18.0.0/lib/stream.js)
+ * The `node:stream` module is useful for creating new types of stream instances.
+ * It is usually not necessary to use the `node:stream` module to consume streams.
+ * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/stream.js)
  */

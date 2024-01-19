@@ -6,11 +6,14 @@ package node.stream
 
 
 /**
+ * A readable and/or writable stream/webstream.
+ *
  * A function to get notified when a stream is no longer readable, writable
  * or has experienced an error or a premature close event.
  *
  * ```js
- * const { finished } = require('stream');
+ * const { finished } = require('node:stream');
+ * const fs = require('node:fs');
  *
  * const rs = fs.createReadStream('archive.tar');
  *
@@ -28,21 +31,7 @@ package node.stream
  * Especially useful in error handling scenarios where a stream is destroyed
  * prematurely (like an aborted HTTP request), and will not emit `'end'`or `'finish'`.
  *
- * The `finished` API provides promise version:
- *
- * ```js
- * const { finished } = require('stream/promises');
- *
- * const rs = fs.createReadStream('archive.tar');
- *
- * async function run() {
- *   await finished(rs);
- *   console.log('Stream is done reading.');
- * }
- *
- * run().catch(console.error);
- * rs.resume(); // Drain the stream.
- * ```
+ * The `finished` API provides `promise version`.
  *
  * `stream.finished()` leaves dangling event listeners (in particular`'error'`, `'end'`, `'finish'` and `'close'`) after `callback` has been
  * invoked. The reason for this is so that unexpected `'error'` events (due to

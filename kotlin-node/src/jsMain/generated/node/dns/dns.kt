@@ -6,7 +6,7 @@ package node.dns
 
 
 /**
- * The `dns` module enables name resolution. For example, use it to look up IP
+ * The `node:dns` module enables name resolution. For example, use it to look up IP
  * addresses of host names.
  *
  * Although named for the [Domain Name System (DNS)](https://en.wikipedia.org/wiki/Domain_Name_System), it does not always use the
@@ -16,7 +16,7 @@ package node.dns
  * system do, use {@link lookup}.
  *
  * ```js
- * const dns = require('dns');
+ * const dns = require('node:dns');
  *
  * dns.lookup('example.org', (err, address, family) => {
  *   console.log('address: %j family: IPv%s', address, family);
@@ -24,13 +24,13 @@ package node.dns
  * // address: "93.184.216.34" family: IPv4
  * ```
  *
- * All other functions in the `dns` module connect to an actual DNS server to
+ * All other functions in the `node:dns` module connect to an actual DNS server to
  * perform name resolution. They will always use the network to perform DNS
  * queries. These functions do not use the same set of configuration files used by {@link lookup} (e.g. `/etc/hosts`). Use these functions to always perform
  * DNS queries, bypassing other name-resolution facilities.
  *
  * ```js
- * const dns = require('dns');
+ * const dns = require('node:dns');
  *
  * dns.resolve4('archive.org', (err, addresses) => {
  *   if (err) throw err;
@@ -49,5 +49,5 @@ package node.dns
  * ```
  *
  * See the `Implementation considerations section` for more information.
- * @see [source](https://github.com/nodejs/node/blob/v18.0.0/lib/dns.js)
+ * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/dns.js)
  */

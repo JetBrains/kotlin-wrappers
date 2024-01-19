@@ -11,5 +11,6 @@ package node.fs
  * For detailed information, see the documentation of the asynchronous version of
  * this API: {@link symlink}.
  * @since v0.1.31
+ * @param [type='null']
  */
 external fun symlinkSync(target: PathLike, path: PathLike, type: SymlinkType? = definedExternally): Unit

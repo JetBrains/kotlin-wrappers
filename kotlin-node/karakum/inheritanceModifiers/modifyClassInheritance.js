@@ -43,7 +43,9 @@ export default (node) => {
             || (
                 sourceFileName.endsWith("stream.d.ts")
                 && (
-                    node.name.text === "Readable"
+                    node.name.text === "ReadableBase"
+                    || node.name.text === "WritableBase"
+                    || node.name.text === "Readable"
                     || node.name.text === "Writable"
                     || node.name.text === "Duplex"
                     || node.name.text === "Transform"

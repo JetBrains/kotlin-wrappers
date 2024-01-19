@@ -9,4 +9,4 @@ package node.test
  * {@link TestContext} object. If the test uses callbacks, the callback function is passed as
  * the second argument.
  */
-typealias TestFn = (t: TestContext, done: (result: Any? /* use undefined for default */) -> Unit) -> Any?
+typealias TestFn = (t: TestContext, done: (result: Any? /* use undefined for default */) -> Unit) -> js.promise.PromiseResult<Unit>

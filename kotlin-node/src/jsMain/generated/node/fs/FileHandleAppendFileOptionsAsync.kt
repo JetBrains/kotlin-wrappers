@@ -3,4 +3,6 @@
 package node.fs
 
 
-sealed external interface FileHandleAppendFileAsyncOptions : ObjectEncodingOptions, FlagAndOpenMode
+sealed external interface FileHandleAppendFileAsyncOptions : ObjectEncodingOptions, FlagAndOpenMode {
+    var flush: Boolean?
+}

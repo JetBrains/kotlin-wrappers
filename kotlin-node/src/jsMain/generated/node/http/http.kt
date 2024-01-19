@@ -6,7 +6,7 @@ package node.http
 
 
 /**
- * To use the HTTP server and client one must `require('http')`.
+ * To use the HTTP server and client one must `require('node:http')`.
  *
  * The HTTP interfaces in Node.js are designed to support many features
  * of the protocol which have been traditionally difficult to use.
@@ -16,12 +16,12 @@ package node.http
  *
  * HTTP message headers are represented by an object like this:
  *
- * ```js
- * { 'content-length': '123',
- *   'content-type': 'text/plain',
- *   'connection': 'keep-alive',
- *   'host': 'example.com',
- *   'accept': '*' }
+ * ```json
+ * { "content-length": "123",
+ *   "content-type": "text/plain",
+ *   "connection": "keep-alive",
+ *   "host": "example.com",
+ *   "accept": "*" }
  * ```
  *
  * Keys are lowercased. Values are not modified.
@@ -44,5 +44,5 @@ package node.http
  *   'Host', 'example.com',
  *   'accepT', '*' ]
  * ```
- * @see [source](https://github.com/nodejs/node/blob/v18.0.0/lib/http.js)
+ * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/http.js)
  */

@@ -14,12 +14,19 @@ package node.tls
  * APIs that create secure contexts have no default value.
  *
  * The `tls.createSecureContext()` method creates a `SecureContext` object. It is
- * usable as an argument to several `tls` APIs, such as {@link createServer} and `server.addContext()`, but has no public methods.
+ * usable as an argument to several `tls` APIs, such as `server.addContext()`,
+ * but has no public methods. The {@link Server} constructor and the {@link createServer} method do not support the `secureContext` option.
  *
  * A key is _required_ for ciphers that use certificates. Either `key` or`pfx` can be used to provide it.
  *
  * If the `ca` option is not given, then Node.js will default to using [Mozilla's publicly trusted list of
      * CAs](https://hg.mozilla.org/mozilla-central/raw-file/tip/security/nss/lib/ckfw/builtins/certdata.txt).
+ *
+ * Custom DHE parameters are discouraged in favor of the new `dhparam: 'auto'`option. When set to `'auto'`, well-known DHE parameters of sufficient strength
+ * will be selected automatically. Otherwise, if necessary, `openssl dhparam` can
+ * be used to create custom parameters. The key length must be greater than or
+ * equal to 1024 bits or else an error will be thrown. Although 1024 bits is
+ * permissible, use 2048 bits or larger for stronger security.
  * @since v0.11.13
  */
 external fun createSecureContext(options: SecureContextOptions = definedExternally): SecureContext

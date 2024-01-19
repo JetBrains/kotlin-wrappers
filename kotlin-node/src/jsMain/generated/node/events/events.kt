@@ -29,7 +29,7 @@ package node.events
  * the `eventEmitter.emit()` method is used to trigger the event.
  *
  * ```js
- * const EventEmitter = require('events');
+ * import { EventEmitter } from 'node:events';
  *
  * class MyEmitter extends EventEmitter {}
  *
@@ -39,5 +39,5 @@ package node.events
  * });
  * myEmitter.emit('event');
  * ```
- * @see [source](https://github.com/nodejs/node/blob/v18.0.0/lib/events.js)
+ * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/events.js)
  */

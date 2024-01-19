@@ -15,5 +15,13 @@ package node.stream
 
 /* import * as streamWeb from "node:stream/web"; */
 
+/* import Stream = internal.Stream; */
+
+/* import Readable = internal.Readable; */
+
+/* import ReadableOptions = internal.ReadableOptions; */
+
+/* import WritableOptions = internal.WritableOptions; */
+
 
 /* export = internal; */

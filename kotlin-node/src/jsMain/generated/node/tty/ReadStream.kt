@@ -16,7 +16,10 @@ open external class ReadStream : node.net.Socket {
 
     /**
      * A `boolean` that is `true` if the TTY is currently configured to operate as a
-     * raw device. Defaults to `false`.
+     * raw device.
+     *
+     * This flag is always `false` when a process starts, even if the terminal is
+     * operating in raw mode. Its value will change with subsequent calls to`setRawMode`.
      * @since v0.7.7
      */
     var isRaw: Boolean

@@ -25,7 +25,7 @@ package node.fs
  * copy-on-write, then the operation will fail.
  *
  * ```js
- * import { copyFileSync, constants } from 'fs';
+ * import { copyFileSync, constants } from 'node:fs';
  *
  * // destination.txt will be created or overwritten by default.
  * copyFileSync('source.txt', 'destination.txt');

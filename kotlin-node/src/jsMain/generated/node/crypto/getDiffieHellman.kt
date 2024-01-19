@@ -7,9 +7,9 @@ package node.crypto
 
 /**
  * Creates a predefined `DiffieHellmanGroup` key exchange object. The
- * supported groups are: `'modp1'`, `'modp2'`, `'modp5'` (defined in [RFC 2412](https://www.rfc-editor.org/rfc/rfc2412.txt), but see `Caveats`) and `'modp14'`, `'modp15'`,`'modp16'`, `'modp17'`,
- * `'modp18'` (defined in [RFC 3526](https://www.rfc-editor.org/rfc/rfc3526.txt)). The
- * returned object mimics the interface of objects created by {@link createDiffieHellman}, but will not allow changing
+ * supported groups are listed in the documentation for `DiffieHellmanGroup`.
+ *
+ * The returned object mimics the interface of objects created by {@link createDiffieHellman}, but will not allow changing
  * the keys (with `diffieHellman.setPublicKey()`, for example). The
  * advantage of using this method is that the parties do not have to
  * generate nor exchange a group modulus beforehand, saving both processor
@@ -19,8 +19,8 @@ package node.crypto
  *
  * ```js
  * const {
- *   getDiffieHellman
- * } = await import('crypto');
+ *   getDiffieHellman,
+ * } = await import('node:crypto');
  * const alice = getDiffieHellman('modp14');
  * const bob = getDiffieHellman('modp14');
  *

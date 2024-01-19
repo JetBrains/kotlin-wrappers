@@ -16,7 +16,7 @@ package node.vm
  * the JavaScript [`eval()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval) function to run the same code:
  *
  * ```js
- * const vm = require('vm');
+ * const vm = require('node:vm');
  * let localVar = 'initial value';
  *
  * const vmResult = vm.runInThisContext('localVar = "vm";');
@@ -37,17 +37,17 @@ package node.vm
  * When using either `script.runInThisContext()` or {@link runInThisContext}, the code is executed within the current V8 global
  * context. The code passed to this VM context will have its own isolated scope.
  *
- * In order to run a simple web server using the `http` module the code passed to
- * the context must either call `require('http')` on its own, or have a reference
- * to the `http` module passed to it. For instance:
+ * In order to run a simple web server using the `node:http` module the code passed
+ * to the context must either call `require('node:http')` on its own, or have a
+ * reference to the `node:http` module passed to it. For instance:
  *
  * ```js
  * 'use strict';
- * const vm = require('vm');
+ * const vm = require('node:vm');
  *
  * const code = `
  * ((require) => {
- *   const http = require('http');
+ *   const http = require('node:http');
  *
  *   http.createServer((request, response) => {
  *     response.writeHead(200, { 'Content-Type': 'text/plain' });

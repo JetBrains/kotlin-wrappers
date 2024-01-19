@@ -108,13 +108,10 @@ open external class Socket : node.stream.Duplex {
 
     /**
      * Close the TCP connection by sending an RST packet and destroy the stream.
-     * If this TCP socket is in connecting status, it will send an RST packet
-     * and destroy this TCP socket once it is connected. Otherwise, it will call
-     * `socket.destroy` with an `ERR_SOCKET_CLOSED` Error. If this is not a TCP socket
-     * (for example, a pipe), calling this method will immediately throw
-     * an `ERR_INVALID_HANDLE_TYPE` Error.
-     * @since v18.3.0
-     * @return The socket itself.
+     * If this TCP socket is in connecting status, it will send an RST packet and destroy this TCP socket once it is connected.
+     * Otherwise, it will call `socket.destroy` with an `ERR_SOCKET_CLOSED` Error.
+     * If this is not a TCP socket (for example, a pipe), calling this method will immediately throw an `ERR_INVALID_HANDLE_TYPE` Error.
+     * @since v18.3.0, v16.17.0
      */
     fun resetAndDestroy(): Unit /* this */
 
@@ -209,6 +206,16 @@ open external class Socket : node.stream.Duplex {
     fun ref(): Unit /* this */
 
     /**
+     * This property is only present if the family autoselection algorithm is enabled in `socket.connect(options)`
+     * and it is an array of the addresses that have been attempted.
+     *
+     * Each address is a string in the form of `$IP:$PORT`.
+     * If the connection was successful, then the last address is the one that the socket is currently connected to.
+     * @since v19.4.0
+     */
+    val autoSelectFamilyAttemptedAddresses: js.array.ReadonlyArray<String>
+
+    /**
      * This property shows the number of characters buffered for writing. The buffer
      * may contain strings whose length after encoding is not yet known. So this number
      * is only an approximation of the number of bytes in the buffer.
@@ -249,9 +256,9 @@ open external class Socket : node.stream.Duplex {
     val connecting: Boolean
 
     /**
-     * This is `true` if the socket is not connected yet, either because `.connect()`
-     * has not yet been called or because it is still in the process of connecting (see `socket.connecting`).
-     * @since v10.16.0
+     * This is `true` if the socket is not connected yet, either because `.connect()`has not yet been called or because it is still in the process of connecting
+     * (see `socket.connecting`).
+     * @since v11.2.0, v10.16.0
      */
     val pending: Boolean
 
@@ -277,13 +284,17 @@ open external class Socket : node.stream.Duplex {
 
     /**
      * The string representation of the local IP family. `'IPv4'` or `'IPv6'`.
-     * @since v18.8.0
+     * @since v18.8.0, v16.18.0
      */
     val localFamily: String?
 
     /**
      * This property represents the state of the connection as a string.
-     * @see {https://nodejs.org/api/net.html#socketreadystate}
+     *
+     * * If the stream is connecting `socket.readyState` is `opening`.
+     * * If the stream is readable and writable, it is `open`.
+     * * If the stream is readable and not writable, it is `readOnly`.
+     * * If the stream is not readable and writable, it is `writeOnly`.
      * @since v0.5.0
      */
     val readyState: SocketReadyState
@@ -296,19 +307,22 @@ open external class Socket : node.stream.Duplex {
     val remoteAddress: String?
 
     /**
-     * The string representation of the remote IP family. `'IPv4'` or `'IPv6'`.
+     * The string representation of the remote IP family. `'IPv4'` or `'IPv6'`. Value may be `undefined` if
+     * the socket is destroyed (for example, if the client disconnected).
      * @since v0.11.14
      */
     val remoteFamily: String?
 
     /**
-     * The numeric representation of the remote port. For example, `80` or `21`.
+     * The numeric representation of the remote port. For example, `80` or `21`. Value may be `undefined` if
+     * the socket is destroyed (for example, if the client disconnected).
      * @since v0.5.10
      */
     val remotePort: Double?
 
     /**
-     * The socket timeout in milliseconds as set by socket.setTimeout(). It is undefined if a timeout has not been set.
+     * The socket timeout in milliseconds as set by `socket.setTimeout()`.
+     * It is `undefined` if a timeout has not been set.
      * @since v10.7.0
      */
     val timeout: Double?

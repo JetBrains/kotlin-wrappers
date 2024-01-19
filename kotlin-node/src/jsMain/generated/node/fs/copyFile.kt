@@ -26,7 +26,7 @@ package node.fs
  * copy-on-write, then the operation will fail.
  *
  * ```js
- * import { copyFile, constants } from 'fs';
+ * import { copyFile, constants } from 'node:fs';
  *
  * function callback(err) {
  *   if (err) throw err;

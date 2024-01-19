@@ -18,7 +18,7 @@ package node.fs
  * file:
  *
  * ```js
- * import { open, close, ftruncate } from 'fs';
+ * import { open, close, ftruncate } from 'node:fs';
  *
  * function closeFd(fd) {
  *   close(fd, (err) => {

@@ -39,6 +39,7 @@ sealed external interface BufferEncoding {
         /*
         Duplicated names were generated:
         utf8 for "utf-8"
+        utf16le for "utf-16le"
         ucs2 for "ucs-2"
         */
 

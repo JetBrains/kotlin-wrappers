@@ -13,8 +13,8 @@ package node.crypto
  * If the `callback` function is not provided, an error will be thrown.
  *
  * ```js
- * import { Buffer } from 'buffer';
- * const { randomFill } = await import('crypto');
+ * import { Buffer } from 'node:buffer';
+ * const { randomFill } = await import('node:crypto');
  *
  * const buf = Buffer.alloc(10);
  * randomFill(buf, (err, buf) => {
@@ -43,8 +43,8 @@ package node.crypto
  * distribution and have no meaningful lower or upper bounds.
  *
  * ```js
- * import { Buffer } from 'buffer';
- * const { randomFill } = await import('crypto');
+ * import { Buffer } from 'node:buffer';
+ * const { randomFill } = await import('node:crypto');
  *
  * const a = new Uint32Array(10);
  * randomFill(a, (err, buf) => {

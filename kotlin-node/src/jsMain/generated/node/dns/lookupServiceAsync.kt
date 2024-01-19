@@ -16,7 +16,7 @@ import js.promise.Promise
  * On error, the `Promise` is rejected with an `Error` object, where `err.code`is the error code.
  *
  * ```js
- * const dnsPromises = require('dns').promises;
+ * const dnsPromises = require('node:dns').promises;
  * dnsPromises.lookupService('127.0.0.1', 22).then((result) => {
  *   console.log(result.hostname, result.service);
  *   // Prints: localhost ssh

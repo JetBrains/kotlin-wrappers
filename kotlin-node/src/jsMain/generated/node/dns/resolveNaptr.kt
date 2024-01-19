@@ -6,7 +6,7 @@ package node.dns
 
 
 /**
- * Uses the DNS protocol to resolve regular expression based records (`NAPTR`records) for the `hostname`. The `addresses` argument passed to the `callback`function will contain an array of
+ * Uses the DNS protocol to resolve regular expression-based records (`NAPTR`records) for the `hostname`. The `addresses` argument passed to the `callback`function will contain an array of
  * objects with the following properties:
  *
  * * `flags`

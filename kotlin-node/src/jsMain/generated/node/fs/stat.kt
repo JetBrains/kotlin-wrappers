@@ -10,7 +10,10 @@ package node.fs
  *
  * In case of an error, the `err.code` will be one of `Common System Errors`.
  *
- * Using `fs.stat()` to check for the existence of a file before calling`fs.open()`, `fs.readFile()` or `fs.writeFile()` is not recommended.
+ * {@link stat} follows symbolic links. Use {@link lstat} to look at the
+ * links themselves.
+ *
+ * Using `fs.stat()` to check for the existence of a file before calling`fs.open()`, `fs.readFile()`, or `fs.writeFile()` is not recommended.
  * Instead, user code should open/read/write the file directly and handle the
  * error raised if the file is not available.
  *
@@ -27,7 +30,7 @@ package node.fs
  * The next program will check for the stats of the given paths:
  *
  * ```js
- * import { stat } from 'fs';
+ * import { stat } from 'node:fs';
  *
  * const pathsToCheck = ['./txtDir', './txtDir/file.txt'];
  *

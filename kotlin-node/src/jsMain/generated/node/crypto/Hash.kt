@@ -21,8 +21,8 @@ import node.stream.TransformOptions
  *
  * ```js
  * const {
- *   createHash
- * } = await import('crypto');
+ *   createHash,
+ * } = await import('node:crypto');
  *
  * const hash = createHash('sha256');
  *
@@ -44,9 +44,9 @@ import node.stream.TransformOptions
  * Example: Using `Hash` and piped streams:
  *
  * ```js
- * import { createReadStream } from 'fs';
- * import { stdout } from 'process';
- * const { createHash } = await import('crypto');
+ * import { createReadStream } from 'node:fs';
+ * import { stdout } from 'node:process';
+ * const { createHash } = await import('node:crypto');
  *
  * const hash = createHash('sha256');
  *
@@ -58,8 +58,8 @@ import node.stream.TransformOptions
  *
  * ```js
  * const {
- *   createHash
- * } = await import('crypto');
+ *   createHash,
+ * } = await import('node:crypto');
  *
  * const hash = createHash('sha256');
  *
@@ -88,8 +88,8 @@ external class Hash : node.stream.Transform {
      * ```js
      * // Calculate a rolling hash.
      * const {
-     *   createHash
-     * } = await import('crypto');
+     *   createHash,
+     * } = await import('node:crypto');
      *
      * const hash = createHash('sha256');
      *
@@ -107,7 +107,7 @@ external class Hash : node.stream.Transform {
      * @since v13.1.0
      * @param options `stream.transform` options
      */
-    fun copy(options: TransformOptions = definedExternally): Hash
+    fun copy(options: HashOptions = definedExternally): Hash
 
     /**
      * Updates the hash content with the given `data`, the encoding of which

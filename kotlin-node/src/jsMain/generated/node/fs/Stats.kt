@@ -8,7 +8,7 @@ package node.fs
 /**
  * A `fs.Stats` object provides information about a file.
  *
- * Objects returned from {@link stat}, {@link lstat} and {@link fstat} and
+ * Objects returned from {@link stat}, {@link lstat}, {@link fstat}, and
  * their synchronous counterparts are of this type.
  * If `bigint` in the `options` passed to those methods is true, the numeric values
  * will be `bigint` instead of `number`, and the object will contain additional

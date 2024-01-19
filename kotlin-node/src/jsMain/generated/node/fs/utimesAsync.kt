@@ -13,7 +13,7 @@ import js.promise.Promise
  *
  * * Values can be either numbers representing Unix epoch time, `Date`s, or a
  * numeric string like `'123456789.0'`.
- * * If the value can not be converted to a number, or is `NaN`, `Infinity` or`-Infinity`, an `Error` will be thrown.
+ * * If the value can not be converted to a number, or is `NaN`, `Infinity`, or`-Infinity`, an `Error` will be thrown.
  * @since v10.0.0
  * @return Fulfills with `undefined` upon success.
  */

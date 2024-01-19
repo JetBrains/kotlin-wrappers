@@ -8,8 +8,8 @@ package node.crypto
 /**
  * ```js
  * const {
- *   getCiphers
- * } = await import('crypto');
+ *   getCiphers,
+ * } = await import('node:crypto');
  *
  * console.log(getCiphers()); // ['aes-128-cbc', 'aes-128-ccm', ...]
  * ```

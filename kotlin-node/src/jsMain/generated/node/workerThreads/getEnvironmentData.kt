@@ -17,7 +17,7 @@ package node.workerThreads
  *   isMainThread,
  *   setEnvironmentData,
  *   getEnvironmentData,
- * } = require('worker_threads');
+ * } = require('node:worker_threads');
  *
  * if (isMainThread) {
  *   setEnvironmentData('Hello', 'World!');

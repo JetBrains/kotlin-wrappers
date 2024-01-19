@@ -12,11 +12,11 @@ package node.crypto
  * Instances of the `DiffieHellman` class can be created using the {@link createDiffieHellman} function.
  *
  * ```js
- * import assert from 'assert';
+ * import assert from 'node:assert';
  *
  * const {
- *   createDiffieHellman
- * } = await import('crypto');
+ *   createDiffieHellman,
+ * } = await import('node:crypto');
  *
  * // Generate Alice's keys...
  * const alice = createDiffieHellman(2048);
@@ -38,10 +38,15 @@ package node.crypto
 
 external class DiffieHellman {
     /**
-     * Generates private and public Diffie-Hellman key values, and returns
+     * Generates private and public Diffie-Hellman key values unless they have been
+     * generated or computed already, and returns
      * the public key in the specified `encoding`. This key should be
      * transferred to the other party.
      * If `encoding` is provided a string is returned; otherwise a `Buffer` is returned.
+     *
+     * This function is a thin wrapper around [`DH_generate_key()`](https://www.openssl.org/docs/man3.0/man3/DH_generate_key.html). In particular,
+     * once a private key has been generated or set, calling this function only updates
+     * the public key but does not generate a new private key.
      * @since v0.5.0
      * @param encoding The `encoding` of the return value.
      */
@@ -139,6 +144,9 @@ external class DiffieHellman {
      * Sets the Diffie-Hellman private key. If the `encoding` argument is provided,`privateKey` is expected
      * to be a string. If no `encoding` is provided, `privateKey` is expected
      * to be a `Buffer`, `TypedArray`, or `DataView`.
+     *
+     * This function does not automatically compute the associated public key. Either `diffieHellman.setPublicKey()` or `diffieHellman.generateKeys()` can be
+     * used to manually provide the public key or to automatically derive it.
      * @since v0.5.0
      * @param encoding The `encoding` of the `privateKey` string.
      */
@@ -149,7 +157,7 @@ external class DiffieHellman {
      * A bit field containing any warnings and/or errors resulting from a check
      * performed during initialization of the `DiffieHellman` object.
      *
-     * The following values are valid for this property (as defined in `constants`module):
+     * The following values are valid for this property (as defined in `node:constants` module):
      *
      * * `DH_CHECK_P_NOT_SAFE_PRIME`
      * * `DH_CHECK_P_NOT_PRIME`

@@ -6,12 +6,18 @@ package node.asyncHooks
 
 
 /**
- * The `async_hooks` module provides an API to track asynchronous resources. It
- * can be accessed using:
+ * We strongly discourage the use of the `async_hooks` API.
+ * Other APIs that can cover most of its use cases include:
+ *
+ * * `AsyncLocalStorage` tracks async context
+ * * `process.getActiveResourcesInfo()` tracks active resources
+ *
+ * The `node:async_hooks` module provides an API to track asynchronous resources.
+ * It can be accessed using:
  *
  * ```js
- * import async_hooks from 'async_hooks';
+ * import async_hooks from 'node:async_hooks';
  * ```
  * @experimental
- * @see [source](https://github.com/nodejs/node/blob/v18.0.0/lib/async_hooks.js)
+ * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/async_hooks.js)
  */

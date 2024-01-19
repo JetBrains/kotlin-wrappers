@@ -9,14 +9,14 @@ package node.tls
  * Creates a new {@link Server}. The `secureConnectionListener`, if provided, is
  * automatically set as a listener for the `'secureConnection'` event.
  *
- * The `ticketKeys` options is automatically shared between `cluster` module
+ * The `ticketKeys` options is automatically shared between `node:cluster` module
  * workers.
  *
  * The following illustrates a simple echo server:
  *
  * ```js
- * const tls = require('tls');
- * const fs = require('fs');
+ * const tls = require('node:tls');
+ * const fs = require('node:fs');
  *
  * const options = {
  *   key: fs.readFileSync('server-key.pem'),
@@ -26,7 +26,7 @@ package node.tls
  *   requestCert: true,
  *
  *   // This is necessary only if the client uses a self-signed certificate.
- *   ca: [ fs.readFileSync('client-cert.pem') ]
+ *   ca: [ fs.readFileSync('client-cert.pem') ],
  * };
  *
  * const server = tls.createServer(options, (socket) => {

@@ -20,8 +20,8 @@ package node.tls
  *
  * ```js
  * // Assumes an echo server that is listening on port 8000.
- * const tls = require('tls');
- * const fs = require('fs');
+ * const tls = require('node:tls');
+ * const fs = require('node:fs');
  *
  * const options = {
  *   // Necessary only if the server requires client certificate authentication.

@@ -16,7 +16,7 @@ package node.vm
  * The following example compiles and executes different scripts using a single `contextified` object:
  *
  * ```js
- * const vm = require('vm');
+ * const vm = require('node:vm');
  *
  * const contextObject = { globalVar: 1 };
  * vm.createContext(contextObject);

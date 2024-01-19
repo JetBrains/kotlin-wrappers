@@ -7,11 +7,14 @@ package node.test
 import js.promise.Promise
 
 /**
- * @since v18.6.0
- * @param name The name of the suite, which is displayed when reporting suite results.
- *    Default: The `name` property of fn, or `'<anonymous>'` if `fn` does not have a name.
- * @param options Configuration options for the suite
- * @param fn The function under suite. Default: A no-op function.
+ * The `describe()` function imported from the `node:test` module. Each
+ * invocation of this function results in the creation of a Subtest.
+ * After invocation of top level `describe` functions,
+ * all top level tests and suites will execute.
+ * @param [name='The name'] The name of the suite, which is displayed when reporting test results.
+ * @param options Configuration options for the suite. supports the same options as `test([name][, options][, fn])`.
+ * @param [fn='A no-op function'] The function under suite declaring all subtests and subsuites. The first argument to this function is a {@link SuiteContext} object.
+ * @return Immediately fulfilled with `undefined`.
  */
 
 @JsName("describe")

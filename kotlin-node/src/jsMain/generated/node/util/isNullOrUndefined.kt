@@ -10,7 +10,7 @@ package node.util
  * returns `false`.
  *
  * ```js
- * const util = require('util');
+ * const util = require('node:util');
  *
  * util.isNullOrUndefined(0);
  * // Returns: false

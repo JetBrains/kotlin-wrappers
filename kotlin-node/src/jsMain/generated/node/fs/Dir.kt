@@ -13,7 +13,7 @@ import js.promise.Promise
  * Created by {@link opendir}, {@link opendirSync}, or `fsPromises.opendir()`.
  *
  * ```js
- * import { opendir } from 'fs/promises';
+ * import { opendir } from 'node:fs/promises';
  *
  * try {
  *   const dir = await opendir('./');

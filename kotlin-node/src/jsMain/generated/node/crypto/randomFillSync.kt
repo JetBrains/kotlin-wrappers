@@ -9,8 +9,8 @@ package node.crypto
  * Synchronous version of {@link randomFill}.
  *
  * ```js
- * import { Buffer } from 'buffer';
- * const { randomFillSync } = await import('crypto');
+ * import { Buffer } from 'node:buffer';
+ * const { randomFillSync } = await import('node:crypto');
  *
  * const buf = Buffer.alloc(10);
  * console.log(randomFillSync(buf).toString('hex'));
@@ -26,8 +26,8 @@ package node.crypto
  * Any `ArrayBuffer`, `TypedArray` or `DataView` instance may be passed as`buffer`.
  *
  * ```js
- * import { Buffer } from 'buffer';
- * const { randomFillSync } = await import('crypto');
+ * import { Buffer } from 'node:buffer';
+ * const { randomFillSync } = await import('node:crypto');
  *
  * const a = new Uint32Array(10);
  * console.log(Buffer.from(randomFillSync(a).buffer,

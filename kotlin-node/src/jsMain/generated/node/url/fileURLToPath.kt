@@ -11,7 +11,7 @@ import web.url.URL
  * well as ensuring a cross-platform valid absolute path string.
  *
  * ```js
- * import { fileURLToPath } from 'url';
+ * import { fileURLToPath } from 'node:url';
  *
  * const __filename = fileURLToPath(import.meta.url);
  *

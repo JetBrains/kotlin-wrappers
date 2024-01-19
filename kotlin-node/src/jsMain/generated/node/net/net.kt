@@ -8,14 +8,14 @@ package node.net
 /**
  * > Stability: 2 - Stable
  *
- * The `net` module provides an asynchronous network API for creating stream-based
+ * The `node:net` module provides an asynchronous network API for creating stream-based
  * TCP or `IPC` servers ({@link createServer}) and clients
  * ({@link createConnection}).
  *
  * It can be accessed using:
  *
  * ```js
- * const net = require('net');
+ * const net = require('node:net');
  * ```
- * @see [source](https://github.com/nodejs/node/blob/v18.0.0/lib/net.js)
+ * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/net.js)
  */

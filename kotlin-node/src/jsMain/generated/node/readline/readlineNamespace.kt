@@ -6,7 +6,7 @@ package node.readline
 
 
 /**
- * The `readline` module provides an interface for reading data from a `Readable` stream (such as `process.stdin`) one line at a time.
+ * The `node:readline` module provides an interface for reading data from a `Readable` stream (such as `process.stdin`) one line at a time.
  *
  * To use the promise-based APIs:
  *
@@ -20,7 +20,7 @@ package node.readline
  * import * as readline from 'node:readline';
  * ```
  *
- * The following simple example illustrates the basic use of the `readline` module.
+ * The following simple example illustrates the basic use of the `node:readline`module.
  *
  * ```js
  * import * as readline from 'node:readline/promises';
@@ -37,5 +37,5 @@ package node.readline
  *
  * Once this code is invoked, the Node.js application will not terminate until the`readline.Interface` is closed because the interface waits for data to be
  * received on the `input` stream.
- * @see [source](https://github.com/nodejs/node/blob/v18.0.0/lib/readline.js)
+ * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/readline.js)
  */

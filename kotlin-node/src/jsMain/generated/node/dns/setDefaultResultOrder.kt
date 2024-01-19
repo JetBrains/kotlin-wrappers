@@ -11,7 +11,7 @@ package node.dns
  * * `ipv4first`: sets default `verbatim` `false`.
  * * `verbatim`: sets default `verbatim` `true`.
  *
- * The default is `ipv4first` and {@link setDefaultResultOrder} have higher
+ * The default is `verbatim` and {@link setDefaultResultOrder} have higher
  * priority than `--dns-result-order`. When using `worker threads`,{@link setDefaultResultOrder} from the main thread won't affect the default
  * dns orders in workers.
  * @since v16.4.0, v14.18.0

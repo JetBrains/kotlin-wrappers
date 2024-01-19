@@ -16,7 +16,7 @@ package node.fs
  * the method will return `undefined`.
  *
  * ```js
- * import { accessSync, constants } from 'fs';
+ * import { accessSync, constants } from 'node:fs';
  *
  * try {
  *   accessSync('etc/passwd', constants.R_OK | constants.W_OK);

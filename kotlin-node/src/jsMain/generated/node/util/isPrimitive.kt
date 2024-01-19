@@ -9,7 +9,7 @@ package node.util
  * Returns `true` if the given `object` is a primitive type. Otherwise, returns`false`.
  *
  * ```js
- * const util = require('util');
+ * const util = require('node:util');
  *
  * util.isPrimitive(5);
  * // Returns: true

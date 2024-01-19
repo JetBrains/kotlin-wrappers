@@ -17,8 +17,8 @@ package node.util
  * through the `constructor.super_` property.
  *
  * ```js
- * const util = require('util');
- * const EventEmitter = require('events');
+ * const util = require('node:util');
+ * const EventEmitter = require('node:events');
  *
  * function MyStream() {
  *   EventEmitter.call(this);
@@ -44,7 +44,7 @@ package node.util
  * ES6 example using `class` and `extends`:
  *
  * ```js
- * const EventEmitter = require('events');
+ * const EventEmitter = require('node:events');
  *
  * class MyStream extends EventEmitter {
  *   write(data) {

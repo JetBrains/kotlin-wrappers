@@ -6,8 +6,8 @@ package node.http
 
 
 /**
- * Set the maximum number of idle HTTP parsers. Default: 1000.
- * @param count
+ * Set the maximum number of idle HTTP parsers.
  * @since v18.8.0, v16.18.0
+ * @param [max=1000]
  */
-external fun setMaxIdleHTTPParsers(count: Number): Unit
+external fun setMaxIdleHTTPParsers(max: Number): Unit

@@ -8,7 +8,7 @@ import js.promise.Promise
 
 /**
  * Shorthand for marking a test as `only`, same as `test([name], { only: true }[, fn])`.
- * @since v18.17.0
+ * @since v20.2.0
  */
 
 @JsName("only")
