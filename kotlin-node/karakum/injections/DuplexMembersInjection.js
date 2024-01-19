@@ -72,6 +72,7 @@ export default {
                         }
                     })
                 })
+                .concat("override fun destroy(): Unit /* this */")
                 .join("\n")
         }
 

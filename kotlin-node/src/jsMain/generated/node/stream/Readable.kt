@@ -583,6 +583,8 @@ open external class Readable : Stream, node.ReadableStream {
      * @since v8.0.0
      * @param error Error which will be passed as payload in `'error'` event
      */
+    open fun destroy(): Unit /* this */
+
     open fun destroy(error: Throwable /* JsError */): Unit /* this */
 
     /**

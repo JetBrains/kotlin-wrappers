@@ -266,6 +266,8 @@ open external class Writable : Stream, node.WritableStream {
      * @since v8.0.0
      * @param error Optional, an error to emit with `'error'` event.
      */
+    open fun destroy(): Unit /* this */
+
     open fun destroy(error: Throwable /* JsError */): Unit /* this */
 
     /**
