@@ -8,8 +8,14 @@
 
 package js.iterable
 
-external interface AsyncIterable<out T> :
-    AsyncIteratorSymbolHolder<() -> AsyncIterator<T>> {
+import js.symbol.Symbol
+import seskar.js.JsNative
+
+external interface AsyncIterable<out T> {
+    @JsNative
+    operator fun get(
+        key: Symbol.asyncIterator,
+    ): () -> AsyncIterator<T> = definedExternally
 
     inline operator fun iterator(): SuspendableIterator<T> =
         iteratorFor(this)
