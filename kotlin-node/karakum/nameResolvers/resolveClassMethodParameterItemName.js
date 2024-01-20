@@ -34,8 +34,11 @@ export default (node, context) => {
     if (classNode.name === undefined) return null
 
     let parentName = classNode.name.text
-    if (parentName === "Duplex") {
-        parentName = "WritableBase"
+    if (
+        parentName === "WritableBase"
+        || parentName === "Duplex"
+    ) {
+        parentName = "Writable"
     }
 
     return `${karakum.capitalize(parentName)}${karakum.capitalize(methodName)}${karakum.capitalize(parameterName)}Item`

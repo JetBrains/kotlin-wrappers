@@ -5,13 +5,13 @@ package node.stream
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface WritableBaseEvent : node.events.EventType {
-    sealed interface CLOSE : WritableBaseEvent
-    sealed interface DRAIN : WritableBaseEvent
-    sealed interface ERROR : WritableBaseEvent
-    sealed interface FINISH : WritableBaseEvent
-    sealed interface PIPE : WritableBaseEvent
-    sealed interface UNPIPE : WritableBaseEvent
+sealed external interface WritableEvent : node.events.EventType {
+    sealed interface CLOSE : WritableEvent
+    sealed interface DRAIN : WritableEvent
+    sealed interface ERROR : WritableEvent
+    sealed interface FINISH : WritableEvent
+    sealed interface PIPE : WritableEvent
+    sealed interface UNPIPE : WritableEvent
 
     companion object {
         @seskar.js.JsValue("close")

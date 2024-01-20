@@ -72,10 +72,18 @@ export default {
             const sourceFileName = node.getSourceFile()?.fileName ?? "generated.d.ts"
             const namespace = typeScriptService?.findClosest(node, ts.isModuleDeclaration)
 
+            let containerName = name.text
+            if (containerName === "ReadableBase") {
+                containerName = "Readable"
+            }
+            if (containerName === "WritableBase") {
+                containerName = "Writable"
+            }
+
             const events = this.events.get(symbol) ?? {
                 sourceFileName,
                 namespace,
-                containerName: name.text,
+                containerName,
                 eventNames: new Set()
             }
 

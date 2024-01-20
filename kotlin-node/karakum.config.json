@@ -93,6 +93,8 @@
         "**/process/global/namespace.kt",
         "**/readline/createInterface.kt",
         "**/stream/internal.kt",
+        "**/stream/ReadableBase.kt",
+        "**/stream/WritableBase.kt",
         "**/test/FunctionPropertyNames.kt",
         "**/url/global/**",
         "**/url/URL.kt",
@@ -739,7 +741,7 @@
         "stream/pipelineSuspend.kt": [
             "js.array.ReadonlyArray"
         ],
-        "stream/ReadableBase.kt": [
+        "stream/Readable.kt": [
             "js.typedarrays.Uint8Array",
             "js.iterable.AsyncIterable",
             "js.iterable.AsyncIterableIterator",
@@ -757,7 +759,7 @@
             "js.iterable.AsyncIterable",
             "node.events.EventEmitter"
         ],
-        "stream/WritableBase.kt": [
+        "stream/Writable.kt": [
             "js.typedarrays.Uint8Array"
         ],
         "test/HookOptions.kt": [
@@ -1064,7 +1066,7 @@
         "ExecFileObjectEncodingOptions.kt": "replace",
         "StreamComposeOptions.kt": "replace",
         "ReadableStreamPipeOptions.kt": "replace",
-        "WritableBaseWritevChunksItem.kt": "replace",
+        "WritableWritevChunksItem.kt": "replace",
         "WritableOptionsWritevChunksItem.kt": "replace"
     },
     "compilerOptions": {

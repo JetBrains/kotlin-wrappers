@@ -18,7 +18,7 @@ function extractModifiers(member) {
 
 export default {
     setup(context) {
-        this.internalStreamNode = []
+        this.internalStreamNode = null
     },
 
     traverse(node) {

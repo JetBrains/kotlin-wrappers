@@ -23,9 +23,9 @@ import web.blob.Blob as NodeBlob
 
 @Suppress("MANY_CLASSES_IN_SUPERTYPE_LIST")
 
-open external class Duplex : ReadableBase,
+open external class Duplex : Readable,
     @seskar.js.JsMixin
-    WritableBase {
+    Writable {
     constructor (opts: DuplexOptions = definedExternally)
 
     @JsName("writable")
@@ -57,7 +57,7 @@ open external class Duplex : ReadableBase,
     ): Unit
 
     override fun _writev(
-        chunks: Array<WritableBaseWritevChunksItem>,
+        chunks: Array<WritableWritevChunksItem>,
         callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit,
     ): Unit
 

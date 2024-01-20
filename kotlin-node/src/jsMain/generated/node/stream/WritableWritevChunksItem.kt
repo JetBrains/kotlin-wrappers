@@ -3,7 +3,7 @@
 package node.stream
 
 
-sealed external interface WritableBaseWritevChunksItem {
+sealed external interface WritableWritevChunksItem {
     var chunk: Any?
     var encoding: node.buffer.BufferEncoding
 }
