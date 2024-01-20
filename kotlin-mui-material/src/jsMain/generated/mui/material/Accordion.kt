@@ -67,15 +67,25 @@ external interface AccordionProps :
     /**
      * The component used for the transition.
      * [Follow this guide](/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
-     * @default Collapse
+     * @deprecated Use `slots.transition` instead. This prop will be removed in v7.
      */
     var TransitionComponent: react.ComponentType<*>?
 
     /**
      * Props applied to the transition element.
      * By default, the element is based on this [`Transition`](http://reactcommunity.org/react-transition-group/transition/) component.
+     * @deprecated Use `slotProps.transition` instead. This prop will be removed in v7.
      */
     var TransitionProps: mui.material.transitions.TransitionProps?
+}
+
+external interface AccordionSlots {
+    /**
+     * The component that renders the transition.
+     * [Follow this guide](/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
+     * @default Collapse
+     */
+    var transition: react.ComponentType<*>?
 }
 
 /**

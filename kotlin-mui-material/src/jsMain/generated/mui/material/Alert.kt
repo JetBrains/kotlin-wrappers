@@ -75,7 +75,7 @@ external interface AlertProps :
      * The severity of the alert. This defines the color and icon used.
      * @default 'success'
      */
-    var severity: AlertColor?
+    var severity: mui.system.Union? /* AlertColor, AlertPropsColorOverrides */
 
     /**
      * Override the icon displayed before the children.
