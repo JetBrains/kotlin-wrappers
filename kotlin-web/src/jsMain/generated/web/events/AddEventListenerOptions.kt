@@ -3,10 +3,12 @@
 package web.events
 
 import web.abort.AbortSignal
+import web.abort.Abortable
 
 sealed external interface AddEventListenerOptions :
-    EventListenerOptions {
+    EventListenerOptions,
+    Abortable {
     var once: Boolean?
     var passive: Boolean?
-    var signal: AbortSignal?
+    override var signal: AbortSignal?
 }

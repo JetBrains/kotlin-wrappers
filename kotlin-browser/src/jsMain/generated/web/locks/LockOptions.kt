@@ -3,10 +3,12 @@
 package web.locks
 
 import web.abort.AbortSignal
+import web.abort.Abortable
 
-sealed external interface LockOptions {
+sealed external interface LockOptions :
+    Abortable {
     var ifAvailable: Boolean?
     var mode: LockMode?
-    var signal: AbortSignal?
+    override var signal: AbortSignal?
     var steal: Boolean?
 }

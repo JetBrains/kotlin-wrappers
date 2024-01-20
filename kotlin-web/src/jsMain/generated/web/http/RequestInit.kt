@@ -4,8 +4,10 @@ package web.http
 
 import js.core.Void
 import web.abort.AbortSignal
+import web.abort.Abortable
 
-sealed external interface RequestInit {
+sealed external interface RequestInit :
+    Abortable {
     /**
      * A BodyInit object or null to set request's body.
      */
@@ -65,7 +67,7 @@ sealed external interface RequestInit {
     /**
      * An AbortSignal to set request's signal.
      */
-    var signal: AbortSignal?
+    override var signal: AbortSignal?
 
     /**
      * Can only be null. Used to disassociate request from any Window.

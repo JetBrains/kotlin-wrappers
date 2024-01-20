@@ -3,10 +3,12 @@
 package web.credentials
 
 import web.abort.AbortSignal
+import web.abort.Abortable
 import web.authn.PublicKeyCredentialRequestOptions
 
-sealed external interface CredentialRequestOptions {
+sealed external interface CredentialRequestOptions :
+    Abortable {
     var mediation: CredentialMediationRequirement?
     var publicKey: PublicKeyCredentialRequestOptions?
-    var signal: AbortSignal?
+    override var signal: AbortSignal?
 }
