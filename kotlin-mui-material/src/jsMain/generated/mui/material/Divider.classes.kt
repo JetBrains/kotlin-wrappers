@@ -17,7 +17,9 @@ external interface DividerClasses {
     /** Styles applied to the root element if `variant="fullWidth"`. */
     var fullWidth: ClassName
 
-    /** Styles applied to the root element if `light={true}`. */
+    /** Styles applied to the root element if `light={true}`.
+     * @deprecated
+     */
     var light: ClassName
 
     /** Styles applied to the root element if `variant="middle"`. */
@@ -32,7 +34,9 @@ external interface DividerClasses {
     /** Styles applied to the root element if divider have text. */
     var withChildren: ClassName
 
-    /** Styles applied to the root element if divider have text and `orientation="vertical"`. */
+    /** Styles applied to the root element if divider have text and `orientation="vertical"`.
+     * @deprecated Combine the [.MuiDivider-withChildren](/material-ui/api/divider/#divider-classes-withChildren) and [.MuiDivider-vertical](/material-ui/api/divider/#divider-classes-vertical) classes instead.
+     */
     var withChildrenVertical: ClassName
 
     /** Styles applied to the root element if `textAlign="right" orientation="horizontal"`. */
