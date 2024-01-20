@@ -4,7 +4,7 @@
 package node.tls
 
 
-sealed external interface SecureContextOptions {
+external interface SecureContextOptions {
     /**
      * If set, this will be called when a client opens a connection using the ALPN extension.
      * One argument will be passed to the callback: an object containing `servername` and `protocols` fields,

@@ -6,7 +6,7 @@ package node.http
 import node.net.TcpSocketConnectOpts
 
 
-sealed external interface AgentOptions : TcpSocketConnectOpts {
+external interface AgentOptions : TcpSocketConnectOpts {
     /**
      * Keep sockets around in a pool to be used by other requests in the future. Default = false
      */

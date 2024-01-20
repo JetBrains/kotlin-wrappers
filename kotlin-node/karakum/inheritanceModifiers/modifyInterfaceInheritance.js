@@ -51,6 +51,7 @@ export default (node) => {
                 sourceFileName.endsWith("tls.d.ts")
                 && (
                     node.name.text === "ConnectionOptions"
+                    || node.name.text === "SecureContextOptions"
                     || node.name.text === "TlsOptions"
                 )
             )
@@ -58,6 +59,9 @@ export default (node) => {
                 sourceFileName.endsWith("http.d.ts")
                 && (
                     node.name.text === "IncomingHttpHeaders"
+                    || node.name.text === "AgentOptions"
+                    || node.name.text === "RequestOptions"
+                    || node.name.text === "ServerOptions"
                 )
             )
         )

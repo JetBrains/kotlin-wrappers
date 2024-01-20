@@ -11,7 +11,10 @@ function isInstanceType(node) {
 
 export default function (node, context, render) {
     const sourceFileName = node.getSourceFile()?.fileName ?? "generated.d.ts"
-    if (!sourceFileName.endsWith("http.d.ts")) return null
+    if (
+        !sourceFileName.endsWith("http.d.ts")
+        && !sourceFileName.endsWith("https.d.ts")
+    ) return null
 
     if (
         ts.isTypeParameterDeclaration(node)
@@ -23,6 +26,10 @@ export default function (node, context, render) {
             )
             || (
                 ts.isInterfaceDeclaration(node.parent)
+                && node.parent.name.text === "ServerOptions"
+            )
+            || (
+                ts.isTypeAliasDeclaration(node.parent)
                 && node.parent.name.text === "ServerOptions"
             )
             || (
@@ -80,12 +87,25 @@ export default function (node, context, render) {
         if (
             node.parent
             && ts.isTypeReferenceNode(node.parent)
-            && ts.isIdentifier(node.parent.typeName)
             && (
-                node.parent.typeName.text === "InstanceType"
-                || node.parent.typeName.text === "Server"
-                || node.parent.typeName.text === "ServerOptions"
-                || node.parent.typeName.text === "RequestListener"
+                (
+                    ts.isIdentifier(node.parent.typeName)
+                    && (
+                        node.parent.typeName.text === "InstanceType"
+                        || node.parent.typeName.text === "Server"
+                        || node.parent.typeName.text === "ServerOptions"
+                        || node.parent.typeName.text === "RequestListener"
+                    )
+                )
+                || (
+                    ts.isQualifiedName(node.parent.typeName)
+                    && (
+                        node.parent.typeName.right.text === "InstanceType"
+                        || node.parent.typeName.right.text === "Server"
+                        || node.parent.typeName.right.text === "ServerOptions"
+                        || node.parent.typeName.right.text === "RequestListener"
+                    )
+                )
             )
         ) {
             return null
@@ -110,6 +130,10 @@ export default function (node, context, render) {
                 )
                 || (
                     ts.isInterfaceDeclaration(typeParameterDeclaration.parent)
+                    && typeParameterDeclaration.parent.name.text === "ServerOptions"
+                )
+                || (
+                    ts.isTypeAliasDeclaration(typeParameterDeclaration.parent)
                     && typeParameterDeclaration.parent.name.text === "ServerOptions"
                 )
                 || (

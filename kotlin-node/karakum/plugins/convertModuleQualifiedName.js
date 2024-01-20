@@ -7,6 +7,7 @@ const modules = [
     "tty",
     "tls",
     "fs",
+    "http",
 ]
 
 export default function (node, context, render) {

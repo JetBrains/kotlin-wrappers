@@ -31,6 +31,7 @@ export default (node) => {
                 && (
                     node.name.text === "IncomingMessage"
                     || node.name.text === "OutgoingMessage"
+                    || node.name.text === "Agent"
                 )
             )
             || (

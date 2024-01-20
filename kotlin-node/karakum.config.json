@@ -13,6 +13,7 @@
         "<nodeModules>/@types/node/globals.d.ts",
         "<nodeModules>/@types/node/http.d.ts",
         "<nodeModules>/@types/node/http2.d.ts",
+        "<nodeModules>/@types/node/https.d.ts",
         "<nodeModules>/@types/node/inspector.d.ts",
         "<nodeModules>/@types/node/module.d.ts",
         "<nodeModules>/@types/node/net.d.ts",
@@ -84,6 +85,7 @@
         "**/dns/SetDefaultResultOrderOrderAsync.kt",
         "**/dns/setServersAsync.kt",
         "**/events/global/**",
+        "**/events/eventemitter/Abortable.kt",
         "**/module/global/**",
         "**/path/namespace.kt",
         "**/path/PlatformPathDelimiter.kt",
@@ -146,6 +148,8 @@
         "^http": "node:http",
         "^node/http2": "node:http2",
         "^http2": "node:http2",
+        "^node/https": "node:https",
+        "^https": "node:https",
         "^node/inspector": "node:inspector",
         "^inspector": "node:inspector",
         "^node/module": "node:module",
@@ -219,7 +223,6 @@
         "^node/events.kt": "node/events/events.kt",
         "^events/eventemitter/namespace.kt": "node/events/eventEmitterNamespace.kt",
         "^events": "node/events",
-        "events/eventemitter/Abortable.kt": "events/Abortable.kt",
         "events/eventemitter/EventEmitterAsyncResource.kt": "events/EventEmitterAsyncResource.kt",
         "events/eventemitter/EventEmitterAsyncResourceOptions.kt": "events/EventEmitterAsyncResourceOptions.kt",
         "events/eventemitter/EventEmitterReferencingAsyncResource.kt": "events/EventEmitterReferencingAsyncResource.kt",
@@ -235,6 +238,9 @@
         "^node/http2/namespace.kt": "node/http2/nodeNamespace.kt",
         "^node/http2.kt": "node/http2/http2.kt",
         "^http2": "node/http2",
+        "^node/https/namespace.kt": "node/https/nodeNamespace.kt",
+        "^node/https.kt": "node/https/https.kt",
+        "^https": "node/https",
         "^node/inspector/namespace.kt": "node/inspector/nodeNamespace.kt",
         "^node/inspector.kt": "node/inspector/inspector.kt",
         "^inspector": "node/inspector",
@@ -668,6 +674,28 @@
         "http2/getUnpackedSettings.kt": [
             "js.typedarrays.Uint8Array"
         ],
+        "https/RequestOptions.kt": [
+            "node.tls.PeerCertificate"
+        ],
+        "https/Server.kt": [
+            "node.http.IncomingMessage",
+            "node.http.ServerResponse",
+            "node.stream.Duplex"
+        ],
+        "https/ServerOptions.kt": [
+            "node.http.IncomingMessage",
+            "node.http.ServerResponse"
+        ],
+        "https/createServer.kt": [
+            "node.http.IncomingMessage",
+            "node.http.ServerResponse"
+        ],
+        "https/get.kt": [
+            "web.url.URL"
+        ],
+        "https/request.kt": [
+            "web.url.URL"
+        ],
         "inspector/Session.kt": [
             "node.events.EventEmitter"
         ],
@@ -1045,6 +1073,8 @@
         "node:http": "ignore",
         "http2": "package",
         "node:http2": "ignore",
+        "https": "package",
+        "node:https": "ignore",
         "inspector": "package",
         "node:inspector": "ignore",
         "module": "package",
@@ -1113,7 +1143,8 @@
         "ClientHttp2StreamOnListenerHeaders.kt": "replace",
         "ClientHttp2StreamOnceListenerHeaders.kt": "replace",
         "ClientHttp2StreamPrependListenerListenerHeaders.kt": "replace",
-        "ClientHttp2StreamPrependOnceListenerListenerHeaders.kt": "replace"
+        "ClientHttp2StreamPrependOnceListenerListenerHeaders.kt": "replace",
+        "ServerEmitRes.kt": "replace"
     },
     "compilerOptions": {
         "types": [

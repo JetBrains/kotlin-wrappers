@@ -63,7 +63,7 @@ import node.net.Socket
  * @since v0.3.4
  */
 
-external class Agent : EventEmitter {
+open external class Agent : EventEmitter {
     constructor (opts: AgentOptions = definedExternally)
 
     /**

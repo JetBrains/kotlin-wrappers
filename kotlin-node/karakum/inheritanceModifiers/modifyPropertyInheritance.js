@@ -81,6 +81,17 @@ export default (node) => {
                     && node.parent.parent.parent.name.text === "ExecFileException"
                 )
             )
+            || (
+                sourceFileName.endsWith("https.d.ts")
+                && (
+                    (
+                        node.name.text === "rejectUnauthorized"
+                    )
+                    && node.parent
+                    && ts.isInterfaceDeclaration(node.parent)
+                    && node.parent.name.text === "AgentOptions"
+                )
+            )
         )
     ) {
         return "override"

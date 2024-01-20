@@ -359,6 +359,15 @@ export default (node, context) => {
                     && isGenericEventEmitterSignature(context)
                 )
             )
+            || (
+                sourceFileName.endsWith("https.d.ts")
+                && (
+                    isEventEmitterMethodName(node.name.text)
+                    && node.parent
+                    && node.parent.name.text === "Server"
+                    && isGenericEventEmitterSignature(context)
+                )
+            )
         )
     ) {
         return "override"
