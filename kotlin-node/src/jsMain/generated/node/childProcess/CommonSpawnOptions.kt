@@ -3,7 +3,7 @@
 
 package node.childProcess
 
-import node.events.Abortable
+import web.abort.Abortable
 
 
 sealed external interface CommonSpawnOptions : CommonOptions, MessagingOptions, Abortable {

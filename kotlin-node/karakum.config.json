@@ -359,20 +359,20 @@
             "node.stream.Writable"
         ],
         "childProcess/CommonSpawnOptions.kt": [
-            "node.events.Abortable"
+            "web.abort.Abortable"
         ],
         "childProcess/ExecFileOptions.kt": [
-            "node.events.Abortable",
+            "web.abort.Abortable",
             "web.abort.AbortSignal"
         ],
         "childProcess/ExecOptions.kt": [
             "web.abort.AbortSignal"
         ],
         "childProcess/ForkOptions.kt": [
-            "node.events.Abortable"
+            "web.abort.Abortable"
         ],
         "childProcess/MessagingOptions.kt": [
-            "node.events.Abortable"
+            "web.abort.Abortable"
         ],
         "childProcess/ExecFileObjectEncodingOptions.kt": [
             "node.fs.ObjectEncodingOptions"
@@ -443,7 +443,7 @@
             "node.net.AddressInfo"
         ],
         "dgram/SocketOptions.kt": [
-            "node.events.Abortable"
+            "web.abort.Abortable"
         ],
         "dns/setServers.kt": [
             "js.array.ReadonlyArray"
@@ -482,7 +482,7 @@
             "node.readline.Interface as ReadlineInterface"
         ],
         "fs/FileHandleWriteFileOptionsAsync.kt": [
-            "node.events.Abortable"
+            "web.abort.Abortable"
         ],
         "fs/FileHandleWriteResultPayloadAsync.kt": [
             "js.typedarrays.Uint8Array"
@@ -491,22 +491,22 @@
             "node.events.EventEmitter"
         ],
         "fs/ReadFileOptions.kt": [
-            "node.events.Abortable"
+            "web.abort.Abortable"
         ],
         "fs/ReadFileOptionsAsync.kt": [
-            "node.events.Abortable"
+            "web.abort.Abortable"
         ],
         "fs/ReadFileBufferOptions.kt": [
-            "node.events.Abortable"
+            "web.abort.Abortable"
         ],
         "fs/ReadFileBufferOptionsAsync.kt": [
-            "node.events.Abortable"
+            "web.abort.Abortable"
         ],
         "fs/ReadFileStringOptions.kt": [
-            "node.events.Abortable"
+            "web.abort.Abortable"
         ],
         "fs/ReadFileStringOptionsAsync.kt": [
-            "node.events.Abortable"
+            "web.abort.Abortable"
         ],
         "fs/ReadStream.kt": [
             "node.stream.ReadableOptions"
@@ -521,7 +521,7 @@
             "web.abort.AbortSignal"
         ],
         "fs/WatchOptions.kt": [
-            "node.events.Abortable"
+            "web.abort.Abortable"
         ],
         "fs/WriteStream.kt": [
             "node.stream.WritableOptions"
@@ -585,7 +585,7 @@
             "node.stream.Stream"
         ],
         "fs/WriteFileOptionsAsync.kt": [
-            "node.events.Abortable"
+            "web.abort.Abortable"
         ],
         "fs/writev.kt": [
             "js.array.ReadonlyArray"
@@ -637,7 +637,7 @@
             "js.disposable.Disposable"
         ],
         "net/ListenOptions.kt": [
-            "node.events.Abortable"
+            "web.abort.Abortable"
         ],
         "net/OnReadOpts.kt": [
             "js.typedarrays.Uint8Array"
@@ -697,11 +697,11 @@
         ],
         "readline/Interface.kt": [
             "node.events.EventEmitter",
-            "node.events.Abortable"
+            "web.abort.Abortable"
         ],
         "readline/InterfaceAsync.kt": [
             "js.promise.await",
-            "node.events.Abortable"
+            "web.abort.Abortable"
         ],
         "readline/ReadlineAsync.kt": [
             "js.promise.await"
@@ -720,7 +720,7 @@
             "web.blob.Blob as NodeBlob"
         ],
         "stream/FinishedOptions.kt": [
-            "node.events.Abortable"
+            "web.abort.Abortable"
         ],
         "stream/pipeline.kt": [
             "js.array.ReadonlyArray"
@@ -753,7 +753,7 @@
             "web.abort.AbortSignal"
         ],
         "stream/StreamOptions.kt": [
-            "node.events.Abortable"
+            "web.abort.Abortable"
         ],
         "stream/Stream.kt": [
             "js.iterable.AsyncIterable",

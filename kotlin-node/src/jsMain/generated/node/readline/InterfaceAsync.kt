@@ -6,7 +6,7 @@ package node.readline
 
 import js.promise.Promise
 import js.promise.await
-import node.events.Abortable
+import web.abort.Abortable
 
 /**
  * Instances of the `readlinePromises.Interface` class are constructed using the`readlinePromises.createInterface()` method. Every instance is associated with a

@@ -3,7 +3,7 @@
 
 package node.net
 
-import node.events.Abortable
+import web.abort.Abortable
 
 
 sealed external interface ListenOptions : Abortable {

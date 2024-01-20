@@ -3,7 +3,7 @@
 
 package node.fs
 
-import node.events.Abortable
+import web.abort.Abortable
 
 
 sealed external interface WatchOptions : Abortable {

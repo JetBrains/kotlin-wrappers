@@ -3,7 +3,7 @@
 
 package node.stream
 
-import node.events.Abortable
+import web.abort.Abortable
 
 
 sealed external interface StreamOptions<T : Stream> : Abortable {

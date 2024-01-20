@@ -4,8 +4,8 @@
 
 package node.readline
 
-import node.events.Abortable
 import node.events.EventEmitter
+import web.abort.Abortable
 
 /**
  * Instances of the `readline.Interface` class are constructed using the`readline.createInterface()` method. Every instance is associated with a

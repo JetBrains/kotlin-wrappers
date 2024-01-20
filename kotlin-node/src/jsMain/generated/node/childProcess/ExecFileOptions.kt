@@ -3,8 +3,8 @@
 
 package node.childProcess
 
-import node.events.Abortable
 import web.abort.AbortSignal
+import web.abort.Abortable
 
 
 sealed external interface ExecFileOptions : CommonOptions, Abortable {

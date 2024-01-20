@@ -3,7 +3,7 @@
 
 package node.dgram
 
-import node.events.Abortable
+import web.abort.Abortable
 
 
 sealed external interface SocketOptions : Abortable {
