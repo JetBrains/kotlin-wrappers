@@ -47,6 +47,19 @@ export default (node) => {
                     node.name.text === "AsyncResourceOptions"
                 )
             )
+            || (
+                sourceFileName.endsWith("tls.d.ts")
+                && (
+                    node.name.text === "ConnectionOptions"
+                    || node.name.text === "TlsOptions"
+                )
+            )
+            || (
+                sourceFileName.endsWith("http.d.ts")
+                && (
+                    node.name.text === "IncomingHttpHeaders"
+                )
+            )
         )
     ) {
         return ""

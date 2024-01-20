@@ -4,7 +4,7 @@
 package node.tls
 
 
-sealed external interface ConnectionOptions : SecureContextOptions, CommonConnectionOptions {
+external interface ConnectionOptions : SecureContextOptions, CommonConnectionOptions {
     var host: String?
     var port: Double?
     var path: String?// Creates unix socket connection to path. If this option is specified, `host` and `port` are ignored.

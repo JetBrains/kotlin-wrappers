@@ -4,7 +4,7 @@
 package node.tls
 
 
-sealed external interface TlsOptions : SecureContextOptions, CommonConnectionOptions, node.net.ServerOpts {
+external interface TlsOptions : SecureContextOptions, CommonConnectionOptions, node.net.ServerOpts {
     /**
      * Abort the connection if the SSL/TLS handshake does not finish in the
      * specified number of milliseconds. A 'tlsClientError' is emitted on

@@ -10,7 +10,7 @@ package node.tls
  * @since v0.3.2
  */
 
-external class Server : node.net.Server {
+open external class Server : node.net.Server {
     constructor (secureConnectionListener: (socket: TLSSocket) -> Unit = definedExternally)
     constructor (options: TlsOptions, secureConnectionListener: (socket: TLSSocket) -> Unit = definedExternally)
 

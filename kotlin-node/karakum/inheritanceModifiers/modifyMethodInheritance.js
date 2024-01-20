@@ -12,7 +12,9 @@ function isEventEmitterMethodName(name) {
     )
 }
 
-function isGenericEventEmitterSignature(context) {
+function isGenericEventEmitterSignature(context, options = {}) {
+    const { symbolSignature = true } = options
+
     return (
         context.signature?.[0]?.parameter.type
         && (
@@ -21,6 +23,11 @@ function isGenericEventEmitterSignature(context) {
                 ts.isUnionTypeNode(context.signature[0].parameter.type)
                 && context.signature[0].parameter.type.types[0]
                 && context.signature[0].parameter.type.types[0].kind === ts.SyntaxKind.StringKeyword
+
+                && (
+                    symbolSignature
+                    || context.signature[0].type.kind !== ts.SyntaxKind.SymbolKeyword
+                )
             )
         )
     )
@@ -67,6 +74,7 @@ export default (node, context) => {
                         node.name.text === "_destroy"
                         || node.name.text === "_construct"
                         || node.name.text === "destroy"
+                        || node.name.text === "read"
                     )
                     && node.parent
                     && node.parent.name?.text === "ReadableBase"
@@ -312,6 +320,45 @@ export default (node, context) => {
                     && node.parent.name?.text === "X509Certificate"
                 )
             )
+            || (
+                sourceFileName.endsWith("http2.d.ts")
+                && (
+                    (
+                        node.name.text === "end"
+                        && !(
+                            context.signature?.length === 3
+                            && context.signature?.[0]?.parameter.type
+                            && ts.isTypeReferenceNode(context.signature[0].type)
+                            && ts.isIdentifier(context.signature[0].type.typeName)
+                            && context.signature[0].type.typeName.text === "Uint8Array"
+                        )
+                    )
+                    && node.parent
+                    && node.parent.name.text === "Http2ServerResponse"
+                )
+            )
+            || (
+                sourceFileName.endsWith("http2.d.ts")
+                && (
+                    (
+                        node.name.text === "read"
+                    )
+                    && node.parent
+                    && node.parent.name.text === "Http2ServerRequest"
+                )
+            )
+            || (
+                sourceFileName.endsWith("http2.d.ts")
+                && (
+                    isEventEmitterMethodName(node.name.text)
+                    && node.parent
+                    && (
+                        node.parent.name.text === "Http2ServerRequest"
+                        || node.parent.name.text === "Http2ServerResponse"
+                    )
+                    && isGenericEventEmitterSignature(context)
+                )
+            )
         )
     ) {
         return "override"
@@ -347,6 +394,34 @@ export default (node, context) => {
                     )
                     && node.parent
                     && node.parent.name.text === "CallSite"
+                )
+            )
+            || (
+                sourceFileName.endsWith("http2.d.ts")
+                && (
+                    isEventEmitterMethodName(node.name.text)
+                    && node.parent
+                    && (
+                        node.parent.name.text === "ClientHttp2Session"
+                        || node.parent.name.text === "ClientHttp2Stream"
+                        || node.parent.name.text === "Http2Stream"
+                        || node.parent.name.text === "ServerHttp2Session"
+                    )
+                    && isGenericEventEmitterSignature(context)
+                )
+            )
+            || (
+                sourceFileName.endsWith("http2.d.ts")
+                && (
+                    isEventEmitterMethodName(node.name.text)
+                    && node.parent
+                    && (
+                        node.parent.name.text === "Http2SecureServer"
+                        || node.parent.name.text === "Http2Server"
+                    )
+                    && isGenericEventEmitterSignature(context, {
+                        symbolSignature: node.name.text === "emit"
+                    })
                 )
             )
         )

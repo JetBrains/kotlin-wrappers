@@ -5,6 +5,11 @@ const overriddenProps = {
     // stream
     "ReadableBase": {
         "read": "readOrNull"
+    },
+
+    // http2
+    "Http2ServerRequest": {
+        "read": "readOrNull"
     }
 }
 
@@ -39,7 +44,7 @@ export default function (node, context, render) {
                 alias = overrideConfig
             }
 
-            const jsName = `@JsName("${name}")`
+            const inheritanceModifierService = context.lookupService(karakum.inheritanceModifierServiceKey)
 
             return karakum.convertParameterDeclarations(node, context, render, {
                 strategy: "function",
@@ -48,9 +53,15 @@ export default function (node, context, render) {
                         return `fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${name}(${parameters})${karakum.ifPresent(returnType, it => `: ${it}`)}`
                     }
 
+                    const inheritanceModifier = inheritanceModifierService?.resolveSignatureInheritanceModifier(node, signature, context)
+
+                    const jsName = inheritanceModifier !== "override"
+                        ? `@JsName("${name}")`
+                        : ""
+
                     return `
 ${jsName}
-fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${alias}(${parameters})${karakum.ifPresent(returnType, it => `: ${it}`)}
+${karakum.ifPresent(inheritanceModifier, it => `${it} `)}fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${alias}(${parameters})${karakum.ifPresent(returnType, it => `: ${it}`)}
                     `
                 }
             })

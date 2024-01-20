@@ -12,6 +12,7 @@
         "<nodeModules>/@types/node/fs/promises.d.ts",
         "<nodeModules>/@types/node/globals.d.ts",
         "<nodeModules>/@types/node/http.d.ts",
+        "<nodeModules>/@types/node/http2.d.ts",
         "<nodeModules>/@types/node/inspector.d.ts",
         "<nodeModules>/@types/node/module.d.ts",
         "<nodeModules>/@types/node/net.d.ts",
@@ -143,6 +144,8 @@
         "^fs": "node:fs",
         "^node/http": "node:http",
         "^http": "node:http",
+        "^node/http2": "node:http2",
+        "^http2": "node:http2",
         "^node/inspector": "node:inspector",
         "^inspector": "node:inspector",
         "^node/module": "node:module",
@@ -229,6 +232,9 @@
         "^node/http/namespace.kt": "node/http/nodeNamespace.kt",
         "^node/http.kt": "node/http/http.kt",
         "^http": "node/http",
+        "^node/http2/namespace.kt": "node/http2/nodeNamespace.kt",
+        "^node/http2.kt": "node/http2/http2.kt",
+        "^http2": "node/http2",
         "^node/inspector/namespace.kt": "node/inspector/nodeNamespace.kt",
         "^node/inspector.kt": "node/inspector/inspector.kt",
         "^inspector": "node/inspector",
@@ -630,6 +636,38 @@
         "http/request.kt": [
             "web.url.URL"
         ],
+        "http2/ClientSessionRequestOptions.kt": [
+            "web.abort.AbortSignal"
+        ],
+        "http2/ClientHttp2Session.kt": [
+            "node.http.OutgoingHttpHeaders"
+        ],
+        "http2/Http2ServerResponse.kt": [
+            "js.typedarrays.Uint8Array",
+            "node.http.OutgoingHttpHeaders"
+        ],
+        "http2/Http2Session.kt": [
+            "node.events.EventEmitter"
+        ],
+        "http2/Http2Stream.kt": [
+            "node.http.OutgoingHttpHeaders"
+        ],
+        "http2/IncomingHttpHeaders.kt": [
+            "node.http.IncomingHttpHeaders as Http1IncomingHttpHeaders"
+        ],
+        "http2/ServerHttp2Stream.kt": [
+            "node.http.OutgoingHttpHeaders"
+        ],
+        "http2/ServerSessionOptions.kt": [
+            "node.http.IncomingMessage",
+            "node.http.ServerResponse"
+        ],
+        "http2/ServerStreamFileResponseOptions.kt": [
+            "node.http.OutgoingHttpHeaders"
+        ],
+        "http2/getUnpackedSettings.kt": [
+            "js.typedarrays.Uint8Array"
+        ],
         "inspector/Session.kt": [
             "node.events.EventEmitter"
         ],
@@ -1005,6 +1043,8 @@
         "node:fs": "ignore",
         "http": "package",
         "node:http": "ignore",
+        "http2": "package",
+        "node:http2": "ignore",
         "inspector": "package",
         "node:inspector": "ignore",
         "module": "package",
@@ -1067,7 +1107,13 @@
         "StreamComposeOptions.kt": "replace",
         "ReadableStreamPipeOptions.kt": "replace",
         "WritableWritevChunksItem.kt": "replace",
-        "WritableOptionsWritevChunksItem.kt": "replace"
+        "WritableOptionsWritevChunksItem.kt": "replace",
+        "ClientHttp2StreamAddListenerListenerHeaders.kt": "replace",
+        "ClientHttp2StreamEmitHeaders.kt": "replace",
+        "ClientHttp2StreamOnListenerHeaders.kt": "replace",
+        "ClientHttp2StreamOnceListenerHeaders.kt": "replace",
+        "ClientHttp2StreamPrependListenerListenerHeaders.kt": "replace",
+        "ClientHttp2StreamPrependOnceListenerListenerHeaders.kt": "replace"
     },
     "compilerOptions": {
         "types": [

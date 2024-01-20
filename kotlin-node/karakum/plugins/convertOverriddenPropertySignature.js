@@ -67,6 +67,12 @@ const overriddenProps = {
         "keepAlive": null
     },
 
+    // http2
+    "Http2Stream": {
+        "closed": null,
+        "destroyed": "readonlyDestroyed"
+    },
+
     // tls
     "TlsOptions": {
         "sessionTimeout": null,

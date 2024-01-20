@@ -27,6 +27,12 @@ const interfacesWithSuperclass = [
     "FSWatcher",
     "StatWatcher",
 
+    // http2
+    "Http2SecureServer",
+    "Http2Server",
+    "Http2Session",
+    "Http2Stream",
+
     // process
     "Process",
     "ReadStream",

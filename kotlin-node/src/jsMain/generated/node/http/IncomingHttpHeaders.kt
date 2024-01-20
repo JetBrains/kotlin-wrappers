@@ -6,7 +6,7 @@ package node.http
 
 // incoming headers will never contain number
 
-sealed external interface IncomingHttpHeaders : node.Dict<Any /* string | string[] */> {
+external interface IncomingHttpHeaders : node.Dict<Any /* string | string[] */> {
     var accept: String?
 
     /* "accept-language"?: string | undefined; */

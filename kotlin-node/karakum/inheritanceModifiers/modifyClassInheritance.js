@@ -76,6 +76,12 @@ export default (node) => {
                     node.name.text === "Module"
                 )
             )
+            || (
+                sourceFileName.endsWith("tls.d.ts")
+                && (
+                    node.name.text === "Server"
+                )
+            )
         )
     ) {
         return "open"

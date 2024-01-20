@@ -29,6 +29,14 @@ const incompatibleParameterNames = {
             "timeout": "msecs",
         }
     },
+
+    // http2
+    "Http2ServerResponse": {
+        "end": {
+            "callback": "cb",
+            "data": ["str", method => method.parameters.length === 3]
+        }
+    },
 }
 
 export default function (node) {
@@ -45,7 +53,21 @@ export default function (node) {
         && node.parent.parent.name.text in incompatibleParameterNames[node.parent.parent.parent.name.text]
         && node.text in incompatibleParameterNames[node.parent.parent.parent.name.text][node.parent.parent.name.text]
     ) {
-        return incompatibleParameterNames[node.parent.parent.parent.name.text][node.parent.parent.name.text][node.text]
+        const method = node.parent.parent
+        const renameConfig = incompatibleParameterNames[node.parent.parent.parent.name.text][node.parent.parent.name.text][node.text]
+
+        let alias
+        let test = () => true
+
+        if (Array.isArray(renameConfig)) {
+            [alias, test] = renameConfig
+        } else {
+            alias = renameConfig
+        }
+
+        if (test(method)) {
+            return alias
+        }
     }
 
     if (
@@ -60,7 +82,21 @@ export default function (node) {
         && node.parent.parent.name.text in incompatibleParameterNames[node.parent.parent.parent.name.text]
         && node.text in incompatibleParameterNames[node.parent.parent.parent.name.text][node.parent.parent.name.text]
     ) {
-        return incompatibleParameterNames[node.parent.parent.parent.name.text][node.parent.parent.name.text][node.text]
+        const method = node.parent.parent
+        const renameConfig = incompatibleParameterNames[node.parent.parent.parent.name.text][node.parent.parent.name.text][node.text]
+
+        let alias
+        let test = () => true
+
+        if (Array.isArray(renameConfig)) {
+            [alias, test] = renameConfig
+        } else {
+            alias = renameConfig
+        }
+
+        if (test(method)) {
+            return alias
+        }
     }
     return null
 }

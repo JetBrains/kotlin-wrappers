@@ -178,7 +178,7 @@ open external class Readable : Stream, node.ReadableStream {
      */
 
     @JsName("read")
-    fun readOrNull(size: Number = definedExternally): Any?
+    open fun readOrNull(size: Number = definedExternally): Any?
 
 
     /**
