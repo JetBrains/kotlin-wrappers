@@ -3,8 +3,10 @@
 package web.streams
 
 import web.abort.AbortSignal
+import web.abort.Abortable
 
-sealed external interface StreamPipeOptions {
+sealed external interface StreamPipeOptions :
+    Abortable {
     var preventAbort: Boolean?
     var preventCancel: Boolean?
 
@@ -26,5 +28,5 @@ sealed external interface StreamPipeOptions {
      * The signal option can be set to an AbortSignal to allow aborting an ongoing pipe operation via the corresponding AbortController. In this case, this source readable stream will be canceled, and destination aborted, unless the respective options preventCancel or preventAbort are set.
      */
     var preventClose: Boolean?
-    var signal: AbortSignal?
+    override var signal: AbortSignal?
 }
