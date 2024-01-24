@@ -2,7 +2,7 @@ package js.errors
 
 import js.array.ReadonlyArray
 
-external class AggregateError(
+open external class AggregateError(
     errors: ReadonlyArray<JsError>,
     message: String? = definedExternally,
     options: ErrorOptions? = definedExternally,

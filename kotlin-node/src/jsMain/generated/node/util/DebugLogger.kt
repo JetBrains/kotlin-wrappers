@@ -4,6 +4,7 @@
 package node.util
 
 
-sealed external interface DebugLogger : js.function.JsFunction<js.array.JsTuple, Unit> {
+sealed external interface DebugLogger :
+    js.function.JsFunction<js.array.JsTuple1<String>, Unit> /* DebugLoggerFunction */ {
     var enabled: Boolean
 }

@@ -1,6 +1,6 @@
 package js.errors
 
-external class ReferenceError(
+open external class ReferenceError(
     message: String? = definedExternally,
     options: ErrorOptions? = definedExternally,
 ) : JsError

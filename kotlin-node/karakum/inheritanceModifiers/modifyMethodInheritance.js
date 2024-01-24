@@ -115,6 +115,17 @@ export default (node, context) => {
                     && isGenericEventEmitterSignature(context)
                 )
             )
+            || (
+                sourceFileName.endsWith("readline.d.ts")
+                && (
+                    isEventEmitterMethodName(node.name.text)
+                    && node.parent
+                    && (
+                        node.parent.name?.text === "Interface"
+                    )
+                    && isGenericEventEmitterSignature(context)
+                )
+            )
         )
     ) {
         return "open"
@@ -365,6 +376,15 @@ export default (node, context) => {
                     isEventEmitterMethodName(node.name.text)
                     && node.parent
                     && node.parent.name.text === "Server"
+                    && isGenericEventEmitterSignature(context)
+                )
+            )
+            || (
+                sourceFileName.endsWith("repl.d.ts")
+                && (
+                    isEventEmitterMethodName(node.name.text)
+                    && node.parent
+                    && node.parent.name.text === "REPLServer"
                     && isGenericEventEmitterSignature(context)
                 )
             )

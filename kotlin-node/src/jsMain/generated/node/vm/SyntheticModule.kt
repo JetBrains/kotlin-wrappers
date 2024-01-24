@@ -37,7 +37,7 @@ external class SyntheticModule : Module {
      */
     constructor (
         exportNames: js.array.ReadonlyArray<String>,
-        evaluateCallback: (`this`: SyntheticModule) -> Unit,
+        evaluateCallback: (/* this: SyntheticModule, */) -> Unit,
         options: SyntheticModuleOptions = definedExternally,
     )
 

@@ -1,6 +1,6 @@
 package js.errors
 
-external class SyntaxError(
+open external class SyntaxError(
     message: String? = definedExternally,
     options: ErrorOptions? = definedExternally,
 ) : JsError

@@ -24,6 +24,7 @@
         "<nodeModules>/@types/node/querystring.d.ts",
         "<nodeModules>/@types/node/readline.d.ts",
         "<nodeModules>/@types/node/readline/promises.d.ts",
+        "<nodeModules>/@types/node/repl.d.ts",
         "<nodeModules>/@types/node/stream.d.ts",
         "<nodeModules>/@types/node/stream/promises.d.ts",
         "<nodeModules>/@types/node/test.d.ts",
@@ -168,6 +169,8 @@
         "^querystring": "node:querystring",
         "^node/readline": "node:readline",
         "^readline": "node:readline",
+        "^node/repl": "node:repl",
+        "^repl": "node:repl",
         "^node/stream": "node:stream",
         "^stream#internal": "node:stream",
         "^stream": "node:stream",
@@ -274,6 +277,9 @@
         "^node/readline/namespace.kt": "node/readline/nodeNamespace.kt",
         "^node/readline.kt": "node/readline/readlineNamespace.kt",
         "^readline": "node/readline",
+        "^node/repl/namespace.kt": "node/repl/nodeNamespace.kt",
+        "^node/repl.kt": "node/repl/repl.kt",
+        "^repl": "node/repl",
         "^node/stream/namespace.kt": "node/stream/nodeNamespace.kt",
         "^node/stream.kt": "node/stream/streamNamespace.kt",
         "^stream": "node/stream",
@@ -772,6 +778,19 @@
         "readline/ReadlineAsync.kt": [
             "js.promise.await"
         ],
+        "repl/Recoverable.kt": [
+            "js.errors.SyntaxError"
+        ],
+        "repl/REPLEval.kt": [
+            "node.vm.Context"
+        ],
+        "repl/REPLServer.kt": [
+            "node.readline._Interface as Interface",
+            "node.vm.Context"
+        ],
+        "repl/Writer.kt": [
+            "node.util.InspectOptions"
+        ],
         "stream/ArrayOptions.kt": [
             "web.abort.AbortSignal"
         ],
@@ -1093,6 +1112,8 @@
         "node:querystring": "ignore",
         "readline": "package",
         "node:readline": "ignore",
+        "repl": "package",
+        "node:repl": "ignore",
         "stream": "package",
         "node:stream": "ignore",
         "node:test": "package",

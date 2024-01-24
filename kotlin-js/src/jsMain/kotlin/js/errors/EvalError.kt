@@ -1,6 +1,6 @@
 package js.errors
 
-external class EvalError(
+open external class EvalError(
     message: String? = definedExternally,
     options: ErrorOptions? = definedExternally,
 ) : JsError
