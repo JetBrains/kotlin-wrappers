@@ -39,7 +39,18 @@ const interfacesWithSuperclass = [
     "WriteStream",
 
     // stream
-    "Stream"
+    "Stream",
+
+    // zlib
+    "BrotliCompress",
+    "BrotliDecompress",
+    "Deflate",
+    "DeflateRaw",
+    "Gunzip",
+    "Gzip",
+    "Inflate",
+    "InflateRaw",
+    "Unzip",
 ]
 
 export default (node) => {

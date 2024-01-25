@@ -33,7 +33,8 @@
         "<nodeModules>/@types/node/url.d.ts",
         "<nodeModules>/@types/node/util.d.ts",
         "<nodeModules>/@types/node/vm.d.ts",
-        "<nodeModules>/@types/node/worker_threads.d.ts"
+        "<nodeModules>/@types/node/worker_threads.d.ts",
+        "<nodeModules>/@types/node/zlib.d.ts"
     ],
     "output": "src/jsMain/generated",
     "ignoreOutput": [
@@ -189,7 +190,9 @@
         "^node/vm": "node:vm",
         "^vm": "node:vm",
         "^node/worker_threads": "node:worker_threads",
-        "^worker_threads": "node:worker_threads"
+        "^worker_threads": "node:worker_threads",
+        "^node/zlib": "node:zlib",
+        "^zlib": "node:zlib"
     },
     "packageNameMapper": {
         "promises/(.+)\\.kt": "$1Async.kt",
@@ -320,7 +323,19 @@
         "^vm": "node/vm",
         "^node/worker_threads/namespace.kt": "node/workerThreads/nodeNamespace.kt",
         "^node/workerThreads.kt": "node/workerThreads/workerThreads.kt",
-        "^worker_threads": "node/workerThreads"
+        "^worker_threads": "node/workerThreads",
+        "^node/zlib/namespace.kt": "node/zlib/nodeNamespace.kt",
+        "^node/zlib.kt": "node/zlib/zlibNamespace.kt",
+        "^zlib": "node/zlib",
+        "zlib/brotliCompress.kt": "zlib/brotliCompress.fun.kt",
+        "zlib/brotliDecompress.kt": "zlib/brotliDecompress.fun.kt",
+        "zlib/gzip.kt": "zlib/gzip.fun.kt",
+        "zlib/gunzip.kt": "zlib/gunzip.fun.kt",
+        "zlib/deflate.kt": "zlib/deflate.fun.kt",
+        "zlib/deflateRaw.kt": "zlib/deflateRaw.fun.kt",
+        "zlib/inflate.kt": "zlib/inflate.fun.kt",
+        "zlib/inflateRaw.kt": "zlib/inflateRaw.fun.kt",
+        "zlib/unzip.kt": "zlib/unzip.fun.kt"
     },
     "importInjector": {
         "Async.kt": [
@@ -1130,7 +1145,9 @@
         "vm": "package",
         "node:vm": "ignore",
         "worker_threads": "package",
-        "node:worker_threads": "ignore"
+        "node:worker_threads": "ignore",
+        "zlib": "package",
+        "node:zlib": "ignore"
     },
     "conflictResolutionStrategy": {
         "LookupServiceResultPayloadAsync.kt": "replace",
