@@ -12,7 +12,7 @@ external interface SelectClasses {
     var listbox: ClassName
 
     /** Class name applied to the popper element. */
-    var popper: ClassName
+    var popup: ClassName
 
     /** State class applied to the root `button` element if `active={true}`. */
     var active: ClassName
