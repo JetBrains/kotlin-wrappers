@@ -125,7 +125,7 @@ external interface SelectOwnProps<OptionValue> :
     interface SlotProps {
         var root: react.Props? /* SlotComponentProps<'button', SelectRootSlotPropsOverrides, SelectOwnerState<OptionValue, Multiple>> */
         var listbox: react.Props? /* SlotComponentProps<'ul', SelectListboxSlotPropsOverrides, SelectOwnerState<OptionValue, Multiple>> */
-        var popper: react.Props? /* SlotComponentProps<typeof Popper, SelectPopperSlotPropsOverrides, SelectOwnerState<OptionValue, Multiple>> */
+        var popup: react.Props? /* SlotComponentProps<'div', SelectPopupSlotPropsOverrides & PopupProps, SelectOwnerState<OptionValue, Multiple>> */
     }
 
     /**
@@ -162,8 +162,8 @@ external interface SelectSlots {
     var listbox: react.ElementType<*>?
 
     /**
-     * The component that renders the popper.
-     * @default Popper
+     * The component that wraps the popup.
+     * @default 'div'
      */
-    var popper: react.ComponentType<*>?
+    var popup: react.ElementType<*>?
 }

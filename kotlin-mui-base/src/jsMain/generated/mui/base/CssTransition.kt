@@ -26,14 +26,6 @@ external interface CssTransitionProps :
     var exitClassName: ClassName?
 
     /**
-     * The name of the CSS property that is transitioned the longest (has the largest `transition-duration`) on enter.
-     * This is used to determine when the transition has ended.
-     * If not specified, the transition will be considered finished end when the first property is transitioned.
-     * If all properties have the same `transition-duration` (or there is just one transitioned property), this can be omitted.
-     */
-    var lastTransitionedPropertyOnEnter: String?
-
-    /**
      * The name of the CSS property that is transitioned the longest (has the largest `transition-duration`) on exit.
      * This is used to determine when the transition has ended.
      * If not specified, the transition will be considered finished end when the first property is transitioned.

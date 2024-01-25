@@ -19,7 +19,7 @@ sealed external interface MuiSelect {
         @JsValue("MuiSelect-listbox")
         val listbox: ClassName
 
-        @JsValue("MuiSelect-popper")
-        val popper: ClassName
+        @JsValue("MuiSelect-popup")
+        val popup: ClassName
     }
 }

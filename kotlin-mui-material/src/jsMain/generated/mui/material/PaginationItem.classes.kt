@@ -20,19 +20,31 @@ external interface PaginationItemClasses {
     /** Styles applied to the root element if `variant="text"`. */
     var text: ClassName
 
-    /** Styles applied to the root element if `variant="text"` and `color="primary"`. */
+    /** Styles applied to the root element if `variant="text"` and `color="primary"`.
+     *  @deprecated Combine the [.MuiPaginationItem-text](/material-ui/api/pagination-item/#pagination-item-classes-text)
+     *  and [.MuiPaginationItem-colorPrimary](/material-ui/api/pagination-item/#pagination-item-classes-colorPrimary) classes instead.
+     */
     var textPrimary: ClassName
 
-    /** Styles applied to the root element if `variant="text"` and `color="secondary"`. */
+    /** Styles applied to the root element if `variant="text"` and `color="secondary"`.
+     *  @deprecated Combine the [.MuiPaginationItem-text](/material-ui/api/pagination-item/#pagination-item-classes-text)
+     *  and [.MuiPaginationItem-colorSecondary](/material-ui/api/pagination-item/#pagination-item-classes-colorSecondary) classes instead.
+     */
     var textSecondary: ClassName
 
     /** Styles applied to the root element if `variant="outlined"`. */
     var outlined: ClassName
 
-    /** Styles applied to the root element if `variant="outlined"` and `color="primary"`. */
+    /** Styles applied to the root element if `variant="outlined"` and `color="primary"`.
+     * @deprecated Combine the [.MuiPaginationItem-outlined](/material-ui/api/pagination-item/#pagination-item-classes-outlined)
+     * and [.MuiPaginationItem-colorPrimary](/material-ui/api/pagination-item/#pagination-item-classes-colorPrimary) classes instead.
+     */
     var outlinedPrimary: ClassName
 
-    /** Styles applied to the root element if `variant="outlined"` and `color="secondary"`. */
+    /** Styles applied to the root element if `variant="outlined"` and `color="secondary"`.
+     * @deprecated Combine the [.MuiPaginationItem-outlined](/material-ui/api/pagination-item/#pagination-item-classes-outlined)
+     * and [.MuiPaginationItem-colorSecondary](/material-ui/api/pagination-item/#pagination-item-classes-colorSecondary) classes instead.
+     */
     var outlinedSecondary: ClassName
 
     /** Styles applied to the root element if `rounded="true"`. */
@@ -58,4 +70,10 @@ external interface PaginationItemClasses {
 
     /** Styles applied to the icon to display. */
     var icon: ClassName
+
+    /** Styles applied to the root element if `color="primary"`. */
+    var colorPrimary: ClassName
+
+    /** Styles applied to the root element if `color="secondary"`. */
+    var colorSecondary: ClassName
 }

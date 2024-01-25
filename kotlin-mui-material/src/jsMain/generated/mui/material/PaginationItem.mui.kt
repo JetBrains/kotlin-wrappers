@@ -57,5 +57,11 @@ sealed external interface MuiPaginationItem {
 
         @JsValue("MuiPaginationItem-icon")
         val icon: ClassName
+
+        @JsValue("MuiPaginationItem-colorPrimary")
+        val colorPrimary: ClassName
+
+        @JsValue("MuiPaginationItem-colorSecondary")
+        val colorSecondary: ClassName
     }
 }

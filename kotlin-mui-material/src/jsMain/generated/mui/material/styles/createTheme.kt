@@ -48,6 +48,8 @@ external interface Theme : BaseTheme {
     override var unstable_sx: (props: SxProps<Theme>) -> dynamic /* CSSObject from `@mui/styled-engine` */
 
     override var unstable_sxConfig: dynamic
+
+    var applyDarkStyles: (css: dynamic /* CSSObject from `@mui/styled-engine` */) -> dynamic /* CSSObject from `@mui/styled-engine` */
 }
 
 @JsName("default")
