@@ -83,6 +83,13 @@ export default (node) => {
                     node.name.text === "Server"
                 )
             )
+            || (
+                sourceFileName.endsWith("v8.d.ts")
+                && (
+                    node.name.text === "Serializer"
+                    || node.name.text === "Deserializer"
+                )
+            )
         )
     ) {
         return "open"

@@ -36,6 +36,7 @@
         "<nodeModules>/@types/node/tty.d.ts",
         "<nodeModules>/@types/node/url.d.ts",
         "<nodeModules>/@types/node/util.d.ts",
+        "<nodeModules>/@types/node/v8.d.ts",
         "<nodeModules>/@types/node/vm.d.ts",
         "<nodeModules>/@types/node/worker_threads.d.ts",
         "<nodeModules>/@types/node/zlib.d.ts"
@@ -201,6 +202,8 @@
         "^util/types": "node:util/types",
         "^node/util": "node:util",
         "^util": "node:util",
+        "^node/v8": "node:v8",
+        "^v8": "node:v8",
         "^node/vm": "node:vm",
         "^vm": "node:vm",
         "^node/worker_threads": "node:worker_threads",
@@ -347,6 +350,9 @@
         "^node/util/namespace.kt": "node/util/nodeNamespace.kt",
         "^node/util.kt": "node/util/util.kt",
         "^util": "node/util",
+        "^node/v8/namespace.kt": "node/v8/nodeNamespace.kt",
+        "^node/v8.kt": "node/v8/v8.kt",
+        "^v8": "node/v8",
         "^node/vm/namespace.kt": "node/vm/nodeNamespace.kt",
         "^node/vm.kt": "node/vm/vm.kt",
         "^vm": "node/vm",
@@ -1137,6 +1143,27 @@
         "util/inspect/Styles.kt": [
             "node.util.Style"
         ],
+        "v8/After.kt": [
+            "js.promise.Promise"
+        ],
+        "v8/Before.kt": [
+            "js.promise.Promise"
+        ],
+        "v8/Deserializer.kt": [
+            "js.buffer.ArrayBuffer"
+        ],
+        "v8/getHeapSnapshot.kt": [
+            "node.stream.Readable"
+        ],
+        "v8/Init.kt": [
+            "js.promise.Promise"
+        ],
+        "v8/Serializer.kt": [
+            "js.buffer.ArrayBuffer"
+        ],
+        "v8/Settled.kt": [
+            "js.promise.Promise"
+        ],
         "vm/CompileFunctionResult.kt": [
             "node.buffer.Buffer"
         ],
@@ -1250,6 +1277,8 @@
         "node:util/types": "ignore",
         "util": "package",
         "node:util": "ignore",
+        "v8": "package",
+        "node:v8": "ignore",
         "vm": "package",
         "node:vm": "ignore",
         "worker_threads": "package",
