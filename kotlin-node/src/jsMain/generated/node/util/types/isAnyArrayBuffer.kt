@@ -17,4 +17,4 @@ package node.util.types
  * ```
  * @since v10.0.0
  */
-external fun isAnyArrayBuffer(`object`: Any?): Boolean
+external fun isAnyArrayBuffer(`object`: Any?): Boolean /* object is ArrayBufferLike */

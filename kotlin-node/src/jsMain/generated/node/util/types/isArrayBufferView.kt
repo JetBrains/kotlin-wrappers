@@ -18,4 +18,4 @@ package node.util.types
  * ```
  * @since v10.0.0
  */
-external fun isArrayBufferView(`object`: Any?): Boolean
+external fun isArrayBufferView(`object`: Any?): Boolean /* object is NodeJS.ArrayBufferView */

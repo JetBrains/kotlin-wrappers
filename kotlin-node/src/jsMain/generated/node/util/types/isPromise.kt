@@ -13,4 +13,4 @@ package node.util.types
  * ```
  * @since v10.0.0
  */
-external fun isPromise(`object`: Any?): Boolean
+external fun isPromise(`object`: Any?): Boolean /* object is Promise<unknown> */

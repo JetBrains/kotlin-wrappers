@@ -16,4 +16,4 @@ package node.util.types
  * ```
  * @since v10.0.0
  */
-external fun isSymbolObject(`object`: Any?): Boolean
+external fun isSymbolObject(`object`: Any?): Boolean /* object is Symbol */

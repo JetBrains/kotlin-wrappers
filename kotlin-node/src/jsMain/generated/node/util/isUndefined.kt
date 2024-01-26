@@ -22,4 +22,4 @@ package node.util
  * @since v0.11.5
  * @deprecated Since v4.0.0 - Use `value === undefined` instead.
  */
-external fun isUndefined(`object`: Any?): Boolean
+external fun isUndefined(`object`: Any?): Boolean /* object is undefined */

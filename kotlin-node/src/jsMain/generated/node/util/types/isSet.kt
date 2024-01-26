@@ -13,6 +13,6 @@ package node.util.types
  * ```
  * @since v10.0.0
  */
-external fun <T> isSet(`object`: T): Boolean
+external fun <T> isSet(`object`: T): Boolean /* object is T extends ReadonlySet<any> ? (unknown extends T ? never : ReadonlySet<any>) : Set<unknown> */
 
-external fun <T> isSet(`object`: Any): Boolean
+external fun <T> isSet(`object`: Any): Boolean /* object is T extends ReadonlySet<any> ? (unknown extends T ? never : ReadonlySet<any>) : Set<unknown> */

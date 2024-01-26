@@ -1,5 +1,6 @@
 {
     "input": [
+        "<nodeModules>/@types/node/assert.d.ts",
         "<nodeModules>/@types/node/async_hooks.d.ts",
         "<nodeModules>/@types/node/buffer.d.ts",
         "<nodeModules>/@types/node/child_process.d.ts",
@@ -65,6 +66,10 @@
         "**/*64Array.kt",
         "**/__promisify__.kt",
         "**/__promisify__*.kt",
+        "**/assert/equal.kt",
+        "**/assert/notEqual.kt",
+        "**/assert/deepEqual.kt",
+        "**/assert/notDeepEqual.kt",
         "**/buffer/atob.kt",
         "**/buffer/btoa.kt",
         "**/buffer/__Blob.kt",
@@ -130,6 +135,8 @@
     "libraryNameOutputPrefix": true,
     "granularity": "top-level",
     "moduleNameMapper": {
+        "^node/assert": "node:assert/strict",
+        "^assert": "node:assert/strict",
         "^node/async_hooks": "node:async_hooks",
         "^async_hooks": "node:async_hooks",
         "^node/buffer": "node:buffer",
@@ -200,6 +207,12 @@
         "AsyncOptionsAsync.kt": "OptionsAsync.kt",
         "^node/RequireResolve.kt": "node/NodeRequireResolve.kt",
         "^global/nodejs": "node",
+        "^node/assert/namespace.kt": "node/assert/nodeNamespace.kt",
+        "^node/assert.kt": "node/assert/assertNamespace.kt",
+        "^assert/assert/namespace.kt": "node/assert/assertAssertNamespace.kt",
+        "^assert/assert.kt": "node/assert/assert.kt",
+        "^assert/assert": "node/assert",
+        "^assert": "node/assert",
         "^node/async_hooks/namespace.kt": "node/asyncHooks/nodeNamespace.kt",
         "^node/asyncHooks.kt": "node/asyncHooks/asyncHooks.kt",
         "^async_hooks": "node/asyncHooks",
@@ -361,6 +374,24 @@
             "js.buffer.SharedArrayBuffer",
             "js.array.ReadonlyArray",
             "js.typedarrays.Uint8Array"
+        ],
+        "assert/doesNotMatch.kt": [
+            "kotlin.js.RegExp"
+        ],
+        "assert/doesNotReject.kt": [
+            "js.promise.Promise"
+        ],
+        "assert/doesNotRejectSuspend.kt": [
+            "js.promise.Promise"
+        ],
+        "assert/match.kt": [
+            "kotlin.js.RegExp"
+        ],
+        "assert/rejects.kt": [
+            "js.promise.Promise"
+        ],
+        "assert/rejectsSuspend.kt": [
+            "js.promise.Promise"
         ],
         "buffer/File.kt": [
             "web.blob.Blob"
@@ -1087,6 +1118,8 @@
     },
     "namespaceStrategy": {
         "NodeJS": "package",
+        "assert": "package",
+        "node:assert": "ignore",
         "async_hooks": "package",
         "node:async_hooks": "ignore",
         "buffer": "package",

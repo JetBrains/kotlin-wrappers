@@ -483,7 +483,7 @@ open external class Readable : Stream, node.ReadableStream {
      * or `undefined` if no element was found.
      */
     fun <T> find(
-        fn: (data: Any?, options: ArrayOptions? /* use undefined for default */) -> Boolean,
+        fn: (data: Any?, options: ArrayOptions? /* use undefined for default */) -> Boolean, /* data is T */
         options: ArrayOptions = definedExternally,
     ): Promise<T?>
 

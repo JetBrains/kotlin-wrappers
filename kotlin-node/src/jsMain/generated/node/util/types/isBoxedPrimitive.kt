@@ -20,4 +20,4 @@ package node.util.types
  * ```
  * @since v10.11.0
  */
-external fun isBoxedPrimitive(`object`: Any?): Boolean
+external fun isBoxedPrimitive(`object`: Any?): Boolean /* object is String | Number | BigInt | Boolean | Symbol */

@@ -15,4 +15,4 @@ package node.util.types
  * ```
  * @since v10.0.0
  */
-external fun isStringObject(`object`: Any?): Boolean
+external fun isStringObject(`object`: Any?): Boolean /* object is String */

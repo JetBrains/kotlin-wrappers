@@ -13,4 +13,4 @@ package node.util.types
  * ```
  * @since v10.0.0
  */
-external fun isWeakSet(`object`: Any?): Boolean
+external fun isWeakSet(`object`: Any?): Boolean /* object is WeakSet<object> */

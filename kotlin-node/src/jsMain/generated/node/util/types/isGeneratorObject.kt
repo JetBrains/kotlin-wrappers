@@ -19,4 +19,4 @@ package node.util.types
  * ```
  * @since v10.0.0
  */
-external fun isGeneratorObject(`object`: Any?): Boolean
+external fun isGeneratorObject(`object`: Any?): Boolean /* object is Generator */

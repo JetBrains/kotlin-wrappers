@@ -13,4 +13,4 @@ package node.util.types
  * ```
  * @since v10.0.0
  */
-external fun isDate(`object`: Any?): Boolean
+external fun isDate(`object`: Any?): Boolean /* object is Date */

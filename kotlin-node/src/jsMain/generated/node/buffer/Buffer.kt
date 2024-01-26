@@ -1833,7 +1833,7 @@ sealed external class Buffer : Uint8Array {
          * ```
          * @since v0.1.101
          */
-        fun isBuffer(obj: Any?): Boolean
+        fun isBuffer(obj: Any?): Boolean /* obj is Buffer */
 
         /**
          * Returns `true` if `encoding` is the name of a supported character encoding,
@@ -1857,7 +1857,7 @@ sealed external class Buffer : Uint8Array {
          * @since v0.9.1
          * @param encoding A character encoding name to check.
          */
-        fun isEncoding(encoding: String): Boolean
+        fun isEncoding(encoding: String): Boolean /* encoding is BufferEncoding */
 
         /**
          * Returns the byte length of a string when encoded using `encoding`.

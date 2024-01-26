@@ -19,4 +19,4 @@ package node.util.types
  * ```
  * @since v10.0.0
  */
-external fun isBooleanObject(`object`: Any?): Boolean
+external fun isBooleanObject(`object`: Any?): Boolean /* object is Boolean */

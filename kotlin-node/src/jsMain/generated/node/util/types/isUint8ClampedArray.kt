@@ -15,4 +15,4 @@ package node.util.types
  * ```
  * @since v10.0.0
  */
-external fun isUint8ClampedArray(`object`: Any?): Boolean
+external fun isUint8ClampedArray(`object`: Any?): Boolean /* object is Uint8ClampedArray */

@@ -43,4 +43,4 @@ package node.util.types
  * ```
  * @since v10.0.0
  */
-external fun isNativeError(`object`: Any?): Boolean
+external fun isNativeError(`object`: Any?): Boolean /* object is Error */

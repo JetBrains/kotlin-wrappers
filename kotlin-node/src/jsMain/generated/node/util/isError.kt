@@ -35,4 +35,4 @@ package node.util
  * @since v0.6.0
  * @deprecated Since v4.0.0 - Use {@link types.isNativeError} instead.
  */
-external fun isError(`object`: Any?): Boolean
+external fun isError(`object`: Any?): Boolean /* object is Error */
