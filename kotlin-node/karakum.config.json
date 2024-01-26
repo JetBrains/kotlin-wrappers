@@ -27,6 +27,7 @@
         "<nodeModules>/@types/node/readline/promises.d.ts",
         "<nodeModules>/@types/node/repl.d.ts",
         "<nodeModules>/@types/node/stream.d.ts",
+        "<nodeModules>/@types/node/stream/consumers.d.ts",
         "<nodeModules>/@types/node/stream/promises.d.ts",
         "<nodeModules>/@types/node/test.d.ts",
         "<nodeModules>/@types/node/tls.d.ts",
@@ -298,6 +299,7 @@
         "^repl": "node/repl",
         "^node/stream/namespace.kt": "node/stream/nodeNamespace.kt",
         "^node/stream.kt": "node/stream/streamNamespace.kt",
+        "^node/stream/consumers.kt": "node/stream/consumers/consumers.kt",
         "^stream": "node/stream",
         "stream/internal/namespace.kt": "stream/internalNamespace.kt",
         "stream/internal/(.+)\\.kt": "stream/$1.kt",
@@ -892,6 +894,55 @@
         ],
         "stream/Writable.kt": [
             "js.typedarrays.Uint8Array"
+        ],
+        "stream/consumers/arrayBuffer.kt": [
+            "js.promise.Promise",
+            "js.buffer.ArrayBuffer",
+            "js.iterable.AsyncIterable",
+            "node.stream.Readable"
+        ],
+        "stream/consumers/arrayBufferSuspend.kt": [
+            "js.buffer.ArrayBuffer",
+            "js.iterable.AsyncIterable",
+            "node.stream.Readable"
+        ],
+        "stream/consumers/blob.kt": [
+            "js.promise.Promise",
+            "js.iterable.AsyncIterable",
+            "web.blob.Blob as NodeBlob",
+            "node.stream.Readable"
+        ],
+        "stream/consumers/blobSuspend.kt": [
+            "js.iterable.AsyncIterable",
+            "web.blob.Blob as NodeBlob",
+            "node.stream.Readable"
+        ],
+        "stream/consumers/buffer.kt": [
+            "js.promise.Promise",
+            "js.iterable.AsyncIterable",
+            "node.stream.Readable"
+        ],
+        "stream/consumers/bufferSuspend.kt": [
+            "js.iterable.AsyncIterable",
+            "node.stream.Readable"
+        ],
+        "stream/consumers/json.kt": [
+            "js.promise.Promise",
+            "js.iterable.AsyncIterable",
+            "node.stream.Readable"
+        ],
+        "stream/consumers/jsonSuspend.kt": [
+            "js.iterable.AsyncIterable",
+            "node.stream.Readable"
+        ],
+        "stream/consumers/text.kt": [
+            "js.promise.Promise",
+            "js.iterable.AsyncIterable",
+            "node.stream.Readable"
+        ],
+        "stream/consumers/textSuspend.kt": [
+            "js.iterable.AsyncIterable",
+            "node.stream.Readable"
         ],
         "test/HookOptions.kt": [
             "web.abort.AbortSignal"
