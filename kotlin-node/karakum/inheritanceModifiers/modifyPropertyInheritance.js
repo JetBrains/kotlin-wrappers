@@ -68,6 +68,29 @@ export default (node) => {
     }
 
     if (
+        ts.isPropertyDeclaration(node)
+        && ts.isIdentifier(node.name)
+        && (
+            (
+                sourceFileName.endsWith("diagnostics_channel.d.ts")
+                && (
+                    (
+                        node.name.text === "start"
+                        || node.name.text === "end"
+                        || node.name.text === "asyncStart"
+                        || node.name.text === "asyncEnd"
+                        || node.name.text === "error"
+                    )
+                    && node.parent
+                    && node.parent.name?.text === "TracingChannel"
+                )
+            )
+        )
+    ) {
+        return "override"
+    }
+
+    if (
         ts.isPropertySignature(node)
         && ts.isIdentifier(node.name)
         && (

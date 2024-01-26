@@ -6,6 +6,7 @@
         "<nodeModules>/@types/node/child_process.d.ts",
         "<nodeModules>/@types/node/crypto.d.ts",
         "<nodeModules>/@types/node/dgram.d.ts",
+        "<nodeModules>/@types/node/diagnostics_channel.d.ts",
         "<nodeModules>/@types/node/dns.d.ts",
         "<nodeModules>/@types/node/dns/promises.d.ts",
         "<nodeModules>/@types/node/events.d.ts",
@@ -148,6 +149,8 @@
         "^crypto": "node:crypto",
         "^node/dgram": "node:dgram",
         "^dgram": "node:dgram",
+        "^node/diagnostics_channel": "node:diagnostics_channel",
+        "^diagnostics_channel": "node:diagnostics_channel",
         "^node/dns": "node:dns",
         "^dns": "node:dns",
         "^node/events": "node:events",
@@ -236,6 +239,11 @@
         "^node/dgram/namespace.kt": "node/dgram/nodeNamespace.kt",
         "^node/dgram.kt": "node/dgram/dgram.kt",
         "^dgram": "node/dgram",
+        "^node/diagnostics_channel/namespace.kt": "node/diagnosticsChannel/nodeNamespace.kt",
+        "^node/diagnosticsChannel.kt": "node/diagnosticsChannel/diagnosticsChannel.kt",
+        "^diagnostics_channel": "node/diagnosticsChannel",
+        "diagnosticsChannel/channel.kt": "diagnosticsChannel/channel.fun.kt",
+        "diagnosticsChannel/tracingChannel.kt": "diagnosticsChannel/tracingChannel.fun.kt",
         "^node/dns/namespace.kt": "node/dns/nodeNamespace.kt",
         "^node/dns.kt": "node/dns/dns.kt",
         "^dns": "node/dns",
@@ -510,6 +518,12 @@
         ],
         "dgram/SocketOptions.kt": [
             "web.abort.Abortable"
+        ],
+        "diagnosticsChannel/Channel.kt": [
+            "node.asyncHooks.AsyncLocalStorage"
+        ],
+        "diagnosticsChannel/TracingChannel.kt": [
+            "js.promise.Promise"
         ],
         "dns/setServers.kt": [
             "js.array.ReadonlyArray"
@@ -1181,6 +1195,8 @@
         "node:crypto": "ignore",
         "dgram": "package",
         "node:dgram": "ignore",
+        "diagnostics_channel": "package",
+        "node:diagnostics_channel": "ignore",
         "dns": "package",
         "node:dns": "ignore",
         "events": "package",

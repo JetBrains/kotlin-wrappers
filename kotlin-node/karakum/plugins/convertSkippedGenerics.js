@@ -30,6 +30,26 @@ export default function (node, context, render) {
 
     if (
         ts.isTypeReferenceNode(node)
+        && ts.isIdentifier(node.typeName)
+        && node.typeName.text === "Channel"
+        && !node.typeArguments
+        && sourceFileName.endsWith("diagnostics_channel.d.ts")
+    ) {
+        return `${render(node.typeName)}<*, *>`
+    }
+
+    if (
+        ts.isExpressionWithTypeArguments(node)
+        && ts.isIdentifier(node.expression)
+        && node.expression.text === "TracingChannelCollection"
+        && !node.typeArguments
+        && sourceFileName.endsWith("diagnostics_channel.d.ts")
+    ) {
+        return `${render(node.expression)}<StoreType, ContextType>`
+    }
+
+    if (
+        ts.isTypeReferenceNode(node)
         && ts.isQualifiedName(node.typeName)
         && (
             node.typeName.right.text === "TypedArray"
