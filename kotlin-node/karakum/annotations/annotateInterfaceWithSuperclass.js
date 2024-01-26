@@ -12,6 +12,9 @@ const interfacesWithSuperclass = [
     "ExecException",
     "PromiseWithChild",
 
+    // cluster
+    "Cluster",
+
     // crypto
     "CipherCCM",
     "CipherGCM",

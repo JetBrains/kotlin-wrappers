@@ -20,6 +20,14 @@ export default function (node, context, render) {
         return "web.url.URL"
     }
 
+    if (
+        ts.isQualifiedName(node)
+        && ts.isIdentifier(node.left)
+        && node.left.text === "child"
+    ) {
+        return `node.childProcess.${render(node.right)}`
+    }
+
     for (const module of modules) {
         if (
             ts.isQualifiedName(node)

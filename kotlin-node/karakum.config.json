@@ -4,6 +4,7 @@
         "<nodeModules>/@types/node/async_hooks.d.ts",
         "<nodeModules>/@types/node/buffer.d.ts",
         "<nodeModules>/@types/node/child_process.d.ts",
+        "<nodeModules>/@types/node/cluster.d.ts",
         "<nodeModules>/@types/node/crypto.d.ts",
         "<nodeModules>/@types/node/dgram.d.ts",
         "<nodeModules>/@types/node/diagnostics_channel.d.ts",
@@ -148,6 +149,8 @@
         "^buffer": "node:buffer",
         "^node/child_process": "node:child_process",
         "^child_process": "node:child_process",
+        "^node/cluster": "node:cluster",
+        "^cluster": "node:cluster",
         "^node/crypto": "node:crypto",
         "^crypto": "node:crypto",
         "^node/dgram": "node:dgram",
@@ -239,6 +242,9 @@
         "^node/child_process/namespace.kt": "node/childProcess/nodeNamespace.kt",
         "^node/childProcess.kt": "node/childProcess/childProcessNamespace.kt",
         "^child_process": "node/childProcess",
+        "^node/cluster/namespace.kt": "node/cluster/nodeNamespace.kt",
+        "^node/cluster.kt": "node/cluster/clusterNamespace.kt",
+        "^cluster": "node/cluster",
         "^node/crypto/namespace.kt": "node/crypto/nodeNamespace.kt",
         "^node/crypto.kt": "node/crypto/crypto.kt",
         "^crypto": "node/crypto",
@@ -397,12 +403,6 @@
             "js.typedarrays.Uint8Array",
             "node.events.EventEmitter"
         ],
-        "buffer/Buffer.kt": [
-            "js.buffer.ArrayBuffer",
-            "js.buffer.SharedArrayBuffer",
-            "js.array.ReadonlyArray",
-            "js.typedarrays.Uint8Array"
-        ],
         "assert/doesNotMatch.kt": [
             "kotlin.js.RegExp"
         ],
@@ -420,6 +420,12 @@
         ],
         "assert/rejectsSuspend.kt": [
             "js.promise.Promise"
+        ],
+        "buffer/Buffer.kt": [
+            "js.buffer.ArrayBuffer",
+            "js.buffer.SharedArrayBuffer",
+            "js.array.ReadonlyArray",
+            "js.typedarrays.Uint8Array"
         ],
         "buffer/File.kt": [
             "web.blob.Blob"
@@ -491,6 +497,12 @@
         ],
         "childProcess/spawnSync.kt": [
             "js.array.ReadonlyArray"
+        ],
+        "cluster/Cluster.kt": [
+            "node.events.EventEmitter"
+        ],
+        "cluster/Worker.kt": [
+            "node.events.EventEmitter"
         ],
         "crypto/Cipher.kt": [
             "node.stream.TransformOptions"
@@ -1230,6 +1242,8 @@
         "node:buffer": "ignore",
         "child_process": "package",
         "node:child_process": "ignore",
+        "cluster": "package",
+        "node:cluster": "ignore",
         "crypto": "package",
         "node:crypto": "ignore",
         "dgram": "package",
