@@ -1,3 +1,5 @@
+// Automatically generated - do not modify!
+
 @file:Suppress(
     "WRONG_BODY_OF_EXTERNAL_DECLARATION",
     "INLINE_EXTERNAL_DECLARATION",
