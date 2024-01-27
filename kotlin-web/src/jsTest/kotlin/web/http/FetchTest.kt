@@ -1,8 +1,11 @@
 package web.http
 
+import js.errors.TypeError
 import js.globals.globalThis
 import js.promise.Promise
 import js.promise.await
+import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.async
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.runTest
@@ -60,6 +63,31 @@ class FetchTest {
         parentJob.cancel()
 
         assertTrue(isCanceled)
+    }
+
+    @Test
+    fun emulate_real_fetch_which_throws_error_on_cancellation() = runTest {
+        var isCanceled = false
+
+        globalThis.fetch = { request: Request ->
+            Promise<Nothing> { _, reject ->
+                request.signal.addEventHandler(Event.ABORT) {
+                    isCanceled = true
+
+                    reject(request.signal.reason ?: TypeError("Failed to fetch"))
+                }
+            }
+        }
+
+        val deferred = async { fetch(request) }
+        testScheduler.runCurrent()
+        deferred.cancel()
+
+        assertTrue(isCanceled)
+
+        assertFailsWith<CancellationException> {
+            deferred.await()
+        }
     }
 
     @Test
