@@ -6,7 +6,7 @@ fun CancellableContinuation<*>.toAbortSignal(): AbortSignal {
     val controller = AbortController()
 
     invokeOnCancellation {
-        controller.abort()
+        controller.abort(AbortException())
     }
 
     return controller.signal
