@@ -25,7 +25,7 @@ suspend fun fetch(
             .then { continuation.resume(it) }
             .catch { error ->
                 if (error.name != DOMException.AbortError) {
-                    continuation.resumeWithException(FetchException(error))
+                    continuation.resumeWithException(error)
                 }
             }
     }
