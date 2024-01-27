@@ -39,10 +39,9 @@ class FetchTest {
 
         assertFailsWith<IllegalStateException> {
             fetch(request)
-        }/*.also {
-            TODO: unwrap FetchException
+        }.also {
             assertEquals("Test error", it.message)
-        }*/
+        }
     }
 
     @Test
