@@ -4,10 +4,7 @@
 package node
 
 
-sealed external interface Module {
-    /**
-     * `true` if the module is running during the Node.js preload
-     */
+external interface Module {
     var isPreloading: Boolean
     var exports: Any?
     var require: Require
@@ -18,12 +15,6 @@ sealed external interface Module {
     /** @deprecated since v14.6.0 Please use `require.main` and `module.children` instead. */
     var parent: Module?
     var children: js.array.ReadonlyArray<Module>
-
-    /**
-     * @since v11.14.0
-     *
-     * The directory name of the module. This is usually the same as the path.dirname() of the module.id.
-     */
     var path: String
     var paths: js.array.ReadonlyArray<String>
 }

@@ -14,7 +14,11 @@ import node.stream.Duplex
  * @since v0.3.4
  */
 
-external class Server<Request : IncomingMessage, Response : ServerResponse<*>> : node.tls.Server {
+@Suppress("MANY_CLASSES_IN_SUPERTYPE_LIST")
+
+external class Server<Request : IncomingMessage, Response : ServerResponse<*>> : node.tls.Server,
+    @seskar.js.JsMixin
+    node.http.Server<Request, Response> {
     constructor (requestListener: node.http.RequestListener<Request, Response> = definedExternally)
     constructor (
         options: ServerOptions<Request, Response>,
@@ -25,13 +29,13 @@ external class Server<Request : IncomingMessage, Response : ServerResponse<*>> :
      * Closes all connections connected to this server.
      * @since v18.2.0
      */
-    fun closeAllConnections(): Unit
+    override fun closeAllConnections(): Unit
 
     /**
      * Closes all connections connected to this server which are not sending a request or waiting for a response.
      * @since v18.2.0
      */
-    fun closeIdleConnections(): Unit
+    override fun closeIdleConnections(): Unit
     override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun addListener(
         event: ServerEvent.KEYLOG,

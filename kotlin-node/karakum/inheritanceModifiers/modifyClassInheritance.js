@@ -32,6 +32,7 @@ export default (node) => {
                     node.name.text === "IncomingMessage"
                     || node.name.text === "OutgoingMessage"
                     || node.name.text === "Agent"
+                    || node.name.text === "Server"
                 )
             )
             || (

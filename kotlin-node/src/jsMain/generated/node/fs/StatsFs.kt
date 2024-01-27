@@ -40,4 +40,13 @@ package node.fs
  * @since v19.6.0, v18.15.0
  */
 
-external class StatsFs
+external class StatsFs : StatsFsBase<Double> {
+
+    override var type: Double
+    override var bsize: Double
+    override var blocks: Double
+    override var bfree: Double
+    override var bavail: Double
+    override var files: Double
+    override var ffree: Double
+}

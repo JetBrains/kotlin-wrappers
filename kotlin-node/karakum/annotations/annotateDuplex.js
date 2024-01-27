@@ -12,7 +12,8 @@ export default (node) => {
     }
 
     if (
-        ts.isExpressionWithTypeArguments(node)
+        sourceFileName.endsWith("stream.d.ts")
+        && ts.isExpressionWithTypeArguments(node)
         && ts.isIdentifier(node.expression)
         && node.expression.text === "WritableBase"
 

@@ -64,6 +64,12 @@ export default (node) => {
                     || node.name.text === "ServerOptions"
                 )
             )
+            || (
+                sourceFileName.endsWith("globals.d.ts")
+                && (
+                    node.name.text === "Module"
+                )
+            )
         )
     ) {
         return ""

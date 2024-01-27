@@ -58,6 +58,17 @@ export default (node, context) => {
                 )
             )
             || (
+                sourceFileName.endsWith("http.d.ts")
+                && (
+                    (
+                        node.name.text === "closeAllConnections"
+                        || node.name.text === "closeIdleConnections"
+                    )
+                    && node.parent
+                    && node.parent.name?.text === "Server"
+                )
+            )
+            || (
                 sourceFileName.endsWith("stream.d.ts")
                 && (
                     (
@@ -163,6 +174,17 @@ export default (node, context) => {
                         || node.parent.name?.text === "WriteStream"
                     )
                     && isGenericEventEmitterSignature(context)
+                )
+            )
+            || (
+                sourceFileName.endsWith("https.d.ts")
+                && (
+                    (
+                        node.name.text === "closeAllConnections"
+                        || node.name.text === "closeIdleConnections"
+                    )
+                    && node.parent
+                    && node.parent.name?.text === "Server"
                 )
             )
             || (

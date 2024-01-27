@@ -4,6 +4,8 @@
 
 package node.fs
 
+import kotlin.js.Date
+
 
 /**
  * A `fs.Stats` object provides information about a file.
@@ -66,4 +68,31 @@ package node.fs
  * @since v0.1.21
  */
 
-external class Stats
+external class Stats : StatsBase<Double> {
+
+    override fun isFile(): Boolean
+    override fun isDirectory(): Boolean
+    override fun isBlockDevice(): Boolean
+    override fun isCharacterDevice(): Boolean
+    override fun isSymbolicLink(): Boolean
+    override fun isFIFO(): Boolean
+    override fun isSocket(): Boolean
+    override var dev: Double
+    override var ino: Double
+    override var mode: Double
+    override var nlink: Double
+    override var uid: Double
+    override var gid: Double
+    override var rdev: Double
+    override var size: Double
+    override var blksize: Double
+    override var blocks: Double
+    override var atimeMs: Double
+    override var mtimeMs: Double
+    override var ctimeMs: Double
+    override var birthtimeMs: Double
+    override var atime: Date
+    override var mtime: Date
+    override var ctime: Date
+    override var birthtime: Date
+}

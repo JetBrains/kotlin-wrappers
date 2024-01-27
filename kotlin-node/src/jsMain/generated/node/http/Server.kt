@@ -11,7 +11,7 @@ import node.net.Server as NetServer
  * @since v0.1.17
  */
 
-external class Server<Request : IncomingMessage, Response : ServerResponse<*>> : NetServer {
+open external class Server<Request : IncomingMessage, Response : ServerResponse<*>> : NetServer {
     constructor (requestListener: RequestListener<Request, Response> = definedExternally)
     constructor (
         options: ServerOptions<Request, Response>,
@@ -115,14 +115,14 @@ external class Server<Request : IncomingMessage, Response : ServerResponse<*>> :
      * Closes all connections connected to this server.
      * @since v18.2.0
      */
-    fun closeAllConnections(): Unit
+    open fun closeAllConnections(): Unit
 
     /**
      * Closes all connections connected to this server which are not sending a request
      * or waiting for a response.
      * @since v18.2.0
      */
-    fun closeIdleConnections(): Unit
+    open fun closeIdleConnections(): Unit
     override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun addListener(event: ServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun addListener(event: ServerEvent.CONNECTION, listener: (socket: Socket) -> Unit): Unit /* this */

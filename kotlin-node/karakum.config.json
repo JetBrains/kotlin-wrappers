@@ -624,6 +624,9 @@
         "fs/StatsBase.kt": [
             "kotlin.js.Date"
         ],
+        "fs/Stats.kt": [
+            "kotlin.js.Date"
+        ],
         "fs/StatWatcher.kt": [
             "node.events.EventEmitter"
         ],
@@ -820,6 +823,8 @@
         ],
         "module/Module.class.kt": [
             "web.url.URL",
+            "node.Module as NodeModule",
+            "node.Require",
             "node.Require as NodeRequire"
         ],
         "os/constants/namespace.kt": [
