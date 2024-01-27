@@ -561,9 +561,6 @@
         "dns/ResolverAsync.kt": [
             "js.promise.await"
         ],
-        "events/Abortable.kt": [
-            "web.abort.AbortSignal"
-        ],
         "events/EventEmitter.kt": [
             "js.disposable.Disposable",
             "js.iterable.AsyncIterableIterator",
