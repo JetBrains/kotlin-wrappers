@@ -1,4 +1,8 @@
-## pre.686
+## pre.691
+
+**BREAKING CHANGE**
+
+* `fetch` throws original error instead of artificial `FetchException` wrapper exception
 
 **BREAKING CHANGE**
 
