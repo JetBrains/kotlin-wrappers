@@ -1,5 +1,11 @@
 package js.promise
 
 import js.errors.JsError
+import seskar.js.JsNative
 
-typealias PromiseReject = (JsError) -> Unit
+sealed external interface PromiseReject {
+    @JsNative
+    operator fun invoke(
+        reason: JsError = definedExternally,
+    )
+}
