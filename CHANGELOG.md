@@ -2,7 +2,7 @@
 
 **BREAKING CHANGE**
 
-* `fetch` throws original error instead of artificial `FetchException` wrapper exception
+* `fetch` throws the original error instead of an artificial `FetchException` wrapper exception
 
 **BREAKING CHANGE**
 
