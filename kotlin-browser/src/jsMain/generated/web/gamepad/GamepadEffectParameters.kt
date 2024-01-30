@@ -2,9 +2,11 @@
 
 package web.gamepad
 
+import js.core.JsLong
+
 sealed external interface GamepadEffectParameters {
-    var duration: Double?
-    var startDelay: Double?
+    var duration: JsLong?
+    var startDelay: JsLong?
     var strongMagnitude: Double?
     var weakMagnitude: Double?
 }
