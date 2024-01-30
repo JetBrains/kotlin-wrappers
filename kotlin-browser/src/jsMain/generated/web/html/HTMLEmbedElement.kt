@@ -14,6 +14,8 @@ protected constructor() :
     HTMLElement {
     /**
      * Sets or retrieves the height of the object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLEmbedElement/height)
      */
     var height: String
 
@@ -25,6 +27,8 @@ protected constructor() :
 
     /**
      * Sets or retrieves the width of the object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLEmbedElement/width)
      */
     var width: String
     fun getSVGDocument(): Document?

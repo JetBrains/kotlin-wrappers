@@ -46,5 +46,5 @@ sealed external class Gamepad {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Gamepad/timestamp)
      */
     val timestamp: DOMHighResTimeStamp
-    val vibrationActuator: GamepadHapticActuator?
+    val vibrationActuator: GamepadHapticActuator
 }

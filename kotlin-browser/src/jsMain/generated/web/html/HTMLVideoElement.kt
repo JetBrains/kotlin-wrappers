@@ -73,6 +73,10 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/width)
      */
     var width: Int
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/cancelVideoFrameCallback)
+     */
     fun cancelVideoFrameCallback(requestId: VideoFrameRequestId)
 
     /**
@@ -84,5 +88,9 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/requestPictureInPicture)
      */
     fun requestPictureInPicture(): Promise<PictureInPictureWindow>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/requestVideoFrameCallback)
+     */
     fun requestVideoFrameCallback(callback: VideoFrameRequestCallback): VideoFrameRequestId
 }
