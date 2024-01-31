@@ -9,7 +9,7 @@
 package js.intl
 
 external class Locale(
-    tag: BCP47LanguageTag,
+    tag: UnicodeBCP47LocaleIdentifier,
     options: LocaleOptions = definedExternally,
 ) : LocaleOptions {
     constructor(
