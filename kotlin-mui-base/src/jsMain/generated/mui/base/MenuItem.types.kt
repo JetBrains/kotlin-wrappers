@@ -46,6 +46,13 @@ external interface MenuItemOwnProps :
      * Used for keyboard text navigation matching.
      */
     var label: String?
+
+    /**
+     * If `true`, the menu item won't receive focus when the mouse moves over it.
+     *
+     * @default false
+     */
+    var disableFocusOnHover: Boolean?
 }
 
 external interface MenuItemSlots {

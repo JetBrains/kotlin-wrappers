@@ -197,17 +197,17 @@ external interface InputBaseProps :
     /**
      * Number of rows to display when multiline option is set to true.
      */
-    var rows: dynamic
+    var rows: Any? /* String or Number */
 
     /**
      * Maximum number of rows to display when multiline option is set to true.
      */
-    var maxRows: Int?
+    var maxRows: Any? /* String or Number */
 
     /**
      * Minimum number of rows to display when multiline option is set to true.
      */
-    var minRows: Int?
+    var minRows: Any? /* String or Number */
 
     /**
      * The size of the component.

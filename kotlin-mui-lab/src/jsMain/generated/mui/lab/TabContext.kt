@@ -13,7 +13,7 @@ external interface TabContextProps : react.PropsWithChildren {
     /**
      * The value of the currently selected `Tab`.
      */
-    var value: String
+    var value: Any /* String or Number */
 }
 
 external interface TabContextValue {

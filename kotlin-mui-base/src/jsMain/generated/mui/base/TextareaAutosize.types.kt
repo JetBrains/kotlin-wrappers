@@ -7,11 +7,11 @@ external interface TextareaAutosizeProps :
     /**
      * Maximum number of rows to display.
      */
-    var maxRows: Int?
+    var maxRows: Any? /* String or Number */
 
     /**
      * Minimum number of rows to display.
      * @default 1
      */
-    var minRows: Int?
+    var minRows: Any? /* String or Number */
 }
