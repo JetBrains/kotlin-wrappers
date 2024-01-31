@@ -30,7 +30,7 @@ external interface CollapseProps :
      * The width (horizontal) or height (vertical) of the container when collapsed.
      * @default '0px'
      */
-    var collapsedSize: dynamic
+    var collapsedSize: Any? /* String or Number */
 
     /**
      * The component used for the root node.

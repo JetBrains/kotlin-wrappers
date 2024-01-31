@@ -55,6 +55,8 @@ external interface Theme {
 
     var zIndex: dynamic
 
+    var applyStyles: dynamic
+
     var unstable_sxConfig: dynamic
 
     var unstable_sx: (props: SxProps<Theme>) -> dynamic /* CSSObject from `@mui/styled-engine` */
