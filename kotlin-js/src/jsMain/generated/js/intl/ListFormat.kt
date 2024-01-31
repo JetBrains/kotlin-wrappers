@@ -8,9 +8,24 @@ import js.array.ReadonlyArray
 import js.iterable.JsIterable
 
 external class ListFormat(
-    locales: LocalesArgument = definedExternally,
+    locales: UnicodeBCP47LocaleIdentifier = definedExternally,
     options: ListFormatOptions = definedExternally,
 ) {
+    constructor(
+        locales: Locale,
+        options: ListFormatOptions = definedExternally,
+    )
+
+    constructor(
+        locales: ReadonlyArray<UnicodeBCP47LocaleIdentifier>,
+        options: ListFormatOptions = definedExternally,
+    )
+
+    constructor(
+        locales: ReadonlyArray<Locale>,
+        options: ListFormatOptions = definedExternally,
+    )
+
     /**
      * Returns a string with a language-specific representation of the list.
      *

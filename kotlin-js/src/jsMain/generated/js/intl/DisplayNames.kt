@@ -4,10 +4,27 @@
 
 package js.intl
 
+import js.array.ReadonlyArray
+
 external class DisplayNames(
-    locales: LocalesArgument,
+    locales: UnicodeBCP47LocaleIdentifier,
     options: DisplayNamesOptions,
 ) {
+    constructor(
+        locales: Locale,
+        options: DisplayNamesOptions,
+    )
+
+    constructor(
+        locales: ReadonlyArray<UnicodeBCP47LocaleIdentifier>,
+        options: DisplayNamesOptions,
+    )
+
+    constructor(
+        locales: ReadonlyArray<Locale>,
+        options: DisplayNamesOptions,
+    )
+
     /**
      * Receives a code and returns a string based on the locale and options provided when instantiating
      * [`Intl.DisplayNames()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DisplayNames)

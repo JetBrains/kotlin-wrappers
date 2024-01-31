@@ -4,10 +4,27 @@
 
 package js.intl
 
+import js.array.ReadonlyArray
+
 external class Segmenter(
-    locales: LocalesArgument = definedExternally,
+    locales: UnicodeBCP47LocaleIdentifier = definedExternally,
     options: SegmenterOptions = definedExternally,
 ) {
+    constructor(
+        locales: Locale,
+        options: SegmenterOptions = definedExternally,
+    )
+
+    constructor(
+        locales: ReadonlyArray<UnicodeBCP47LocaleIdentifier>,
+        options: SegmenterOptions = definedExternally,
+    )
+
+    constructor(
+        locales: ReadonlyArray<Locale>,
+        options: SegmenterOptions = definedExternally,
+    )
+
     /**
      * Returns `Segments` object containing the segments of the input string, using the segmenter's locale and granularity.
      *
