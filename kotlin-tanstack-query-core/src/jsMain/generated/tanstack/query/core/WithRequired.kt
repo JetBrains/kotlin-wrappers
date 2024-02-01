@@ -6,4 +6,4 @@
 
 package tanstack.query.core
 
-typealias WithRequired<T, K> = Any
+typealias WithRequired<TTarget, TKey> = Any
