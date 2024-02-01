@@ -16,6 +16,10 @@ open external class HTMLIFrameElement
 protected constructor() :
     HTMLElement {
     var allow: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/allowFullscreen)
+     */
     var allowFullscreen: Boolean
 
     /**
@@ -38,6 +42,10 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/height)
      */
     var height: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/loading)
+     */
     var loading: String
 
     /**
