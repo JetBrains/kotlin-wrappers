@@ -52,4 +52,16 @@ external class DateTimeFormat(
         startDate: BigInt,
         endDate: BigInt,
     ): ReadonlyArray<DateTimeRangeFormatPart>
+
+    companion object {
+        fun supportedLocalesOf(
+            locales: String,
+            options: DateTimeFormatOptions = definedExternally,
+        ): ReadonlyArray<String>
+
+        fun supportedLocalesOf(
+            locales: ReadonlyArray<String>,
+            options: DateTimeFormatOptions = definedExternally,
+        ): ReadonlyArray<String>
+    }
 }

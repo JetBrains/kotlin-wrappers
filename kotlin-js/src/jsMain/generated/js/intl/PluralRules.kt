@@ -17,4 +17,16 @@ external class PluralRules(
 
     fun resolvedOptions(): ResolvedPluralRulesOptions
     fun select(n: Int): LDMLPluralRule
+
+    companion object {
+        fun supportedLocalesOf(
+            locales: String,
+            options: SupportedLocalesOptions = definedExternally,
+        ): ReadonlyArray<String>
+
+        fun supportedLocalesOf(
+            locales: ReadonlyArray<String>,
+            options: SupportedLocalesOptions = definedExternally,
+        ): ReadonlyArray<String>
+    }
 }

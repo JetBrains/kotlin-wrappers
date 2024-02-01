@@ -49,4 +49,39 @@ external class DisplayNames(
      * [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DisplayNames/resolvedOptions).
      */
     fun resolvedOptions(): ResolvedDisplayNamesOptions
+
+    companion object {
+        /**
+         * Returns an array containing those of the provided locales that are supported in display names without having to fall back to the runtime's default locale.
+         *
+         * @param locales A string with a BCP 47 language tag, or an array of such strings.
+         *   For the general form and interpretation of the `locales` argument, see the [Intl](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#locale_identification_and_negotiation)
+         *   page.
+         *
+         * @param options An object with a locale matcher.
+         *
+         * @returns An array of strings representing a subset of the given locale tags that are supported in display names without having to fall back to the runtime's default locale.
+         *
+         * [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DisplayNames/supportedLocalesOf).
+         */
+        fun supportedLocalesOf(
+            locales: UnicodeBCP47LocaleIdentifier = definedExternally,
+            options: SupportedLocalesOptions = definedExternally,
+        ): ReadonlyArray<UnicodeBCP47LocaleIdentifier>
+
+        fun supportedLocalesOf(
+            locales: Locale,
+            options: SupportedLocalesOptions = definedExternally,
+        ): ReadonlyArray<UnicodeBCP47LocaleIdentifier>
+
+        fun supportedLocalesOf(
+            locales: ReadonlyArray<UnicodeBCP47LocaleIdentifier>,
+            options: SupportedLocalesOptions = definedExternally,
+        ): ReadonlyArray<UnicodeBCP47LocaleIdentifier>
+
+        fun supportedLocalesOf(
+            locales: ReadonlyArray<Locale>,
+            options: SupportedLocalesOptions = definedExternally,
+        ): ReadonlyArray<UnicodeBCP47LocaleIdentifier>
+    }
 }

@@ -39,4 +39,16 @@ external class NumberFormat(
         start: BigInt,
         end: BigInt,
     ): ReadonlyArray<NumberRangeFormatPart>
+
+    companion object {
+        fun supportedLocalesOf(
+            locales: String,
+            options: NumberFormatOptions = definedExternally,
+        ): ReadonlyArray<String>
+
+        fun supportedLocalesOf(
+            locales: ReadonlyArray<String>,
+            options: NumberFormatOptions = definedExternally,
+        ): ReadonlyArray<String>
+    }
 }
