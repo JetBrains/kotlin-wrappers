@@ -43,5 +43,6 @@ sealed external interface UserPreferences {
     val organizeImportsNumericCollation: Boolean?
     val organizeImportsAccentCollation: Boolean?
     val organizeImportsCaseFirst: dynamic /* "upper" | "lower" | false */
+    val organizeImportsTypeOrder: dynamic /* "first" | "last" | "inline" */
     val excludeLibrarySymbolsInNavTo: Boolean?
 }

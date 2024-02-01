@@ -21,6 +21,9 @@ sealed external interface TypeFormatFlags {
         @JsIntValue(2)
         val WriteArrayAsGenericType: TypeFormatFlags
 
+        @JsIntValue(4)
+        val GenerateNamesForShadowedTypeParams: TypeFormatFlags
+
         @JsIntValue(8)
         val UseStructuralFallback: TypeFormatFlags
 
@@ -78,7 +81,7 @@ sealed external interface TypeFormatFlags {
         @JsIntValue(8388608)
         val InTypeAlias: TypeFormatFlags
 
-        @JsIntValue(848330091)
+        @JsIntValue(848330095)
         val NodeBuilderFlagsMask: TypeFormatFlags
     }
 }

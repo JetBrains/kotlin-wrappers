@@ -259,6 +259,24 @@ sealed external interface TypeChecker {
     fun getNeverType(): Type
 
     /**
+     * Returns true if the "source" type is assignable to the "target" type.
+     *
+     * ```ts
+     * declare const abcLiteral: ts.Type; // Type of "abc"
+     * declare const stringType: ts.Type; // Type of string
+     *
+     * isTypeAssignableTo(abcLiteral, abcLiteral); // true; "abc" is assignable to "abc"
+     * isTypeAssignableTo(abcLiteral, stringType); // true; "abc" is assignable to string
+     * isTypeAssignableTo(stringType, abcLiteral); // false; string is not assignable to "abc"
+     * isTypeAssignableTo(stringType, stringType); // true; string is assignable to string
+     * ```
+     */
+    fun isTypeAssignableTo(
+        source: Type,
+        target: Type,
+    ): Boolean
+
+    /**
      * True if this type is the `Array` or `ReadonlyArray` type from lib.d.ts.
      * This function will _not_ return true if passed a type which
      * extends `Array` (for example, the TypeScript AST's `NodeArray` type).
@@ -275,6 +293,13 @@ sealed external interface TypeChecker {
      * True if this type is assignable to `ReadonlyArray<any>`.
      */
     fun isArrayLikeType(type: Type): Boolean
+    fun resolveName(
+        name: String,
+        location: Node?,
+        meaning: SymbolFlags,
+        excludeGlobals: Boolean,
+    ): Symbol?
+
     fun getTypePredicateOfSignature(signature: Signature): TypePredicate?
 
     /**

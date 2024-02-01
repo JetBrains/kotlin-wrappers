@@ -44,5 +44,8 @@ sealed external interface ModuleKind {
 
         @JsIntValue(199)
         val NodeNext: ModuleKind
+
+        @JsIntValue(200)
+        val Preserve: ModuleKind
     }
 }

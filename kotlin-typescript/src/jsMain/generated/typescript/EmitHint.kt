@@ -32,5 +32,8 @@ sealed external interface EmitHint {
 
         @JsIntValue(6)
         val JsxAttributeValue: EmitHint
+
+        @JsIntValue(7)
+        val ImportTypeNodeAttributes: EmitHint
     }
 }

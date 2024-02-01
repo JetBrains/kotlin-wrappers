@@ -99,6 +99,9 @@ sealed external interface SymbolFlags {
         @JsIntValue(134217728)
         val ModuleExports: SymbolFlags
 
+        @JsIntValue(-1)
+        val All: SymbolFlags
+
         @JsIntValue(384)
         val Enum: SymbolFlags
 

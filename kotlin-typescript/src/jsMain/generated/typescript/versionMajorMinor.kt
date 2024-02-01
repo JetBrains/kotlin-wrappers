@@ -2,4 +2,4 @@
 
 package typescript
 
-const val versionMajorMinor = "5.3"
+const val versionMajorMinor = "5.4"

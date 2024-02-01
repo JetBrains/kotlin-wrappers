@@ -62,5 +62,11 @@ sealed external interface InternalSymbolName {
 
         @JsValue("this")
         val This: InternalSymbolName
+
+        @JsValue("__instantiationExpression")
+        val InstantiationExpression: InternalSymbolName
+
+        @JsValue("__importAttributes")
+        val ImportAttributes: InternalSymbolName
     }
 }
