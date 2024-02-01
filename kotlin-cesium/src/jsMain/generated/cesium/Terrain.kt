@@ -109,6 +109,53 @@ external class Terrain(terrainProviderPromise: Promise<TerrainProvider>) {
             var requestVertexNormals: Boolean?
             var requestWaterMask: Boolean?
         }
+
+        /**
+         * Creates a [Terrain] instance for [Cesium World Bathymetry](https://cesium.com/content/#cesium-world-bathymetry).
+         * ```
+         * // Create Cesium World Bathymetry with default settings
+         * const viewer = new Viewer("cesiumContainer", {
+         *   terrain: fromWorldBathymetry)
+         * });
+         * ```
+         * ```
+         * // Create Cesium World Terrain with normals.
+         * const viewer1 = new Viewer("cesiumContainer", {
+         *   terrain: fromWorldBathymetry({
+         *      requestVertexNormals: true
+         *    });
+         * });
+         * ```
+         * ```
+         * // Handle loading events
+         * const bathymetry = Terrain.fromWorldBathymetry();
+         *
+         * scene.setTerrain(bathymetry);
+         *
+         * bathymetry.readyEvent.addEventListener(provider => {
+         *   scene.globe.enableLighting = true;
+         *
+         *   bathymetry.provider.errorEvent.addEventListener(error => {
+         *     alert(`Encountered an error while loading bathymetric terrain tiles! ${error}`);
+         *   });
+         * });
+         *
+         * bathymetry.errorEvent.addEventListener(error => {
+         *   alert(`Encountered an error while creating bathymetric terrain! ${error}`);
+         * });
+         * ```
+         * @return An asynchronous helper object for a CesiumTerrainProvider
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Terrain.html#.fromWorldBathymetry">Online Documentation</a>
+         */
+        fun fromWorldBathymetry(options: FromWorldBathymetryOptions? = definedExternally): Terrain
+
+        /**
+         * @property [requestVertexNormals] Flag that indicates if the client should request additional lighting information from the server if available.
+         *   Default value - `false`
+         */
+        interface FromWorldBathymetryOptions {
+            var requestVertexNormals: Boolean?
+        }
     }
 }
 

@@ -91,8 +91,6 @@ external class PolylineGeometryUpdater(
 
     /**
      * Gets a value indicating if the geometry is time-varying.
-     * If true, all visualization is delegated to the [DynamicGeometryUpdater]
-     * returned by GeometryUpdater#createDynamicUpdater.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineGeometryUpdater.html#isDynamic">Online Documentation</a>
      */
     val isDynamic: Boolean

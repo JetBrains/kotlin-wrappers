@@ -21,13 +21,33 @@ sealed external interface HeightReference {
         val NONE: HeightReference
 
         /**
-         * The position is clamped to the terrain.
+         * The position is clamped to the terrain and 3D Tiles.
          */
         val CLAMP_TO_GROUND: HeightReference
 
         /**
-         * The position height is the height above the terrain.
+         * The position height is the height above the terrain and 3D Tiles.
          */
         val RELATIVE_TO_GROUND: HeightReference
+
+        /**
+         * The position is clamped to terain.
+         */
+        val CLAMP_TO_TERRAIN: HeightReference
+
+        /**
+         * The position height is the height above terrain.
+         */
+        val RELATIVE_TO_TERRAIN: HeightReference
+
+        /**
+         * The position is clamped to 3D Tiles.
+         */
+        val CLAMP_TO_3D_TILE: HeightReference
+
+        /**
+         * The position height is the height above 3D Tiles.
+         */
+        val RELATIVE_TO_3D_TILE: HeightReference
     }
 }

@@ -134,7 +134,7 @@ external object Transforms {
 
     /**
      * Computes a 4x4 transformation matrix from a reference frame with axes computed from the heading-pitch-roll angles
-     * centered at the provided origin to the provided ellipsoid's fixed reference frame. Heading is the rotation from the local north
+     * centered at the provided origin to the provided ellipsoid's fixed reference frame. Heading is the rotation from the local east
      * direction where a positive angle is increasing eastward. Pitch is the rotation from the local east-north plane. Positive pitch angles
      * are above the plane. Negative pitch angles are below the plane. Roll is the first rotation applied about the local east axis.
      * ```
@@ -167,7 +167,7 @@ external object Transforms {
 
     /**
      * Computes a quaternion from a reference frame with axes computed from the heading-pitch-roll angles
-     * centered at the provided origin. Heading is the rotation from the local north
+     * centered at the provided origin. Heading is the rotation from the local east
      * direction where a positive angle is increasing eastward. Pitch is the rotation from the local east-north plane. Positive pitch angles
      * are above the plane. Negative pitch angles are below the plane. Roll is the first rotation applied about the local east axis.
      * ```
@@ -199,7 +199,7 @@ external object Transforms {
     ): Quaternion
 
     /**
-     * Computes heading-pitch-roll angles from a transform in a particular reference frame. Heading is the rotation from the local north
+     * Computes heading-pitch-roll angles from a transform in a particular reference frame. Heading is the rotation from the local east
      * direction where a positive angle is increasing eastward. Pitch is the rotation from the local east-north plane. Positive pitch angles
      * are above the plane. Negative pitch angles are below the plane. Roll is the first rotation applied about the local east axis.
      * @param [transform] The transform

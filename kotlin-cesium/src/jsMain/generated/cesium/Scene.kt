@@ -280,6 +280,13 @@ external class Scene(options: ConstructorOptions) {
     var pickTranslucentDepth: Boolean
 
     /**
+     * Settings for atmosphere lighting effects affecting 3D Tiles and model rendering. This is not to be confused with
+     * [Scene.skyAtmosphere] which is responsible for rendering the sky.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#atmosphere">Online Documentation</a>
+     */
+    var atmosphere: Atmosphere
+
+    /**
      * Blends the atmosphere to geometry far from the camera for horizon views. Allows for additional
      * performance improvements by rendering less geometry and dispatching less terrain requests.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#fog">Online Documentation</a>

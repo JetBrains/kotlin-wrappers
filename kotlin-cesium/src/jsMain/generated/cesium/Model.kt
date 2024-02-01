@@ -332,9 +332,12 @@ sealed external class Model {
      * - The glTF cannot contain morph targets, skins, or animations.
      * - The glTF cannot contain the `EXT_mesh_gpu_instancing` extension.
      * - Only meshes with TRIANGLES can be used to classify other assets.
-     * - The position attribute is required.
+     * - The meshes must be watertight.
+     * - The POSITION attribute is required.
      * - If feature IDs and an index buffer are both present, all indices with the same feature id must occupy contiguous sections of the index buffer.
      * - If feature IDs are present without an index buffer, all positions with the same feature id must occupy contiguous sections of the position buffer.
+     *
+     * The 3D Tiles or terrain receiving the classification must be opaque.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Model.html#classificationType">Online Documentation</a>
      */
     val classificationType: ClassificationType
@@ -564,6 +567,8 @@ sealed external class Model {
          *   Default value - [SplitDirection.NONE]
          * @property [projectTo2D] Whether to accurately project the model's positions in 2D. If this is true, the model will be projected accurately to 2D, but it will use more memory to do so. If this is false, the model will use less memory and will still render in 2D / CV mode, but its positions may be inaccurate. This disables minimumPixelSize and prevents future modification to the model matrix. This also cannot be set after the model has loaded.
          *   Default value - `false`
+         * @property [enablePick] Whether to allow with CPU picking with `pick` when not using WebGL 2 or above. If using WebGL 2 or above, this option will be ignored. If using WebGL 1 and this is true, the `pick` operation will work correctly, but it will use more memory to do so. If running with WebGL 1 and this is false, the model will use less memory, but `pick` will always return `undefined`. This cannot be set after the model has loaded.
+         *   Default value - `false`
          * @property [featureIdLabel] Label of the feature ID set to use for picking and styling. For EXT_mesh_features, this is the feature ID's label property, or "featureId_N" (where N is the index in the featureIds array) when not specified. EXT_feature_metadata did not have a label field, so such feature ID sets are always labeled "featureId_N" where N is the index in the list of all feature Ids, where feature ID attributes are listed before feature ID textures. If featureIdLabel is an integer N, it is converted to the string "featureId_N" automatically. If both per-primitive and per-instance feature IDs are present, the instance feature IDs take priority.
          *   Default value - `"featureId_0"`
          * @property [instanceFeatureIdLabel] Label of the instance feature ID set used for picking and styling. If instanceFeatureIdLabel is set to an integer N, it is converted to the string "instanceFeatureId_N" automatically. If both per-primitive and per-instance feature IDs are present, the instance feature IDs take priority.
@@ -615,6 +620,7 @@ sealed external class Model {
             var showCreditsOnScreen: Boolean?
             var splitDirection: SplitDirection?
             var projectTo2D: Boolean?
+            var enablePick: Boolean?
             var featureIdLabel: String?
             var instanceFeatureIdLabel: String?
             var pointCloudShading: Any?

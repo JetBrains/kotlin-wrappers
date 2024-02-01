@@ -25,6 +25,18 @@ import js.promise.Promise
  * }
  * ```
  * ```
+ * // Allow camera to go inside and under 3D tileset
+ * try {
+ *   const tileset = await Cesium3DTileset.fromUrl(
+ *      "http://localhost:8002/tilesets/Seattle/tileset.json",
+ *      { disableCollision: true }
+ *   );
+ *   scene.primitives.add(tileset);
+ * } catch (error) {
+ *   console.error(`Error creating tileset: ${error}`);
+ * }
+ * ```
+ * ```
  * // Common setting for the skipLevelOfDetail optimization
  * const tileset = await Cesium3DTileset.fromUrl(
  *   "http://localhost:8002/tilesets/Seattle/tileset.json", {
@@ -43,8 +55,8 @@ import js.promise.Promise
  * const tileset = await Cesium3DTileset.fromUrl(
  *   "http://localhost:8002/tilesets/Seattle/tileset.json", {
  *      dynamicScreenSpaceError: true,
- *      dynamicScreenSpaceErrorDensity: 0.00278,
- *      dynamicScreenSpaceErrorFactor: 4.0,
+ *      dynamicScreenSpaceErrorDensity: 2.0e-4,
+ *      dynamicScreenSpaceErrorFactor: 24.0,
  *      dynamicScreenSpaceErrorHeightFalloff: 0.25
  * });
  * scene.primitives.add(tileset);
@@ -93,11 +105,10 @@ external class Cesium3DTileset(options: ConstructorOptions) {
     var preloadFlightDestinations: Boolean
 
     /**
-     * Optimization option. Whether the tileset should refine based on a dynamic screen space error. Tiles that are further
-     * away will be rendered with lower detail than closer tiles. This improves performance by rendering fewer
-     * tiles and making less requests, but may result in a slight drop in visual quality for tiles in the distance.
-     * The algorithm is biased towards "street views" where the camera is close to the ground plane of the tileset and looking
-     * at the horizon. In addition results are more accurate for tightly fitting bounding volumes like box and region.
+     * Optimization option. For street-level horizon views, use lower resolution tiles far from the camera. This reduces
+     * the amount of data loaded and improves tileset loading time with a slight drop in visual quality in the distance.
+     * This optimization is strongest when the camera is close to the ground plane of the tileset and looking at the
+     * horizon. Furthermore, the results are more accurate for tightly fitting bounding volumes like box and region.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#dynamicScreenSpaceError">Online Documentation</a>
      */
     var dynamicScreenSpaceError: Boolean
@@ -127,34 +138,42 @@ external class Cesium3DTileset(options: ConstructorOptions) {
     var foveatedTimeDelay: Double
 
     /**
-     * A scalar that determines the density used to adjust the dynamic screen space error, similar to [Fog]. Increasing this
-     * value has the effect of increasing the maximum screen space error for all tiles, but in a non-linear fashion.
-     * The error starts at 0.0 and increases exponentially until a midpoint is reached, and then approaches 1.0 asymptotically.
-     * This has the effect of keeping high detail in the closer tiles and lower detail in the further tiles, with all tiles
-     * beyond a certain distance all roughly having an error of 1.0.
+     * Similar to [Fog.density], this option controls the camera distance at which the [Cesium3DTileset.dynamicScreenSpaceError]
+     * optimization applies. Larger values will cause tiles closer to the camera to be affected. This value must be
+     * non-negative.
      *
-     * The dynamic error is in the range [0.0, 1.0) and is multiplied by `dynamicScreenSpaceErrorFactor` to produce the
-     * final dynamic error. This dynamic error is then subtracted from the tile's actual screen space error.
+     * This optimization works by rolling off the tile screen space error (SSE) with camera distance like a bell curve.
+     * This has the effect of selecting lower resolution tiles far from the camera. Near the camera, no adjustment is
+     * made. For tiles further away, the SSE is reduced by up to [Cesium3DTileset.dynamicScreenSpaceErrorFactor]
+     * (measured in pixels of error).
      *
-     * Increasing `dynamicScreenSpaceErrorDensity` has the effect of moving the error midpoint closer to the camera.
-     * It is analogous to moving fog closer to the camera.
+     * Increasing the density makes the bell curve narrower so tiles closer to the camera are affected. This is analagous
+     * to moving fog closer to the camera.
+     *
+     * When the density is 0, the optimization will have no effect on the tileset.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#dynamicScreenSpaceErrorDensity">Online Documentation</a>
      */
     var dynamicScreenSpaceErrorDensity: Double
 
     /**
-     * A factor used to increase the screen space error of tiles for dynamic screen space error. As this value increases less tiles
-     * are requested for rendering and tiles in the distance will have lower detail. If set to zero, the feature will be disabled.
+     * A parameter that controls the intensity of the [Cesium3DTileset.dynamicScreenSpaceError] optimization for
+     * tiles on the horizon. Larger values cause lower resolution tiles to load, improving runtime performance at a slight
+     * reduction of visual quality. The value must be non-negative.
+     *
+     * More specifically, this parameter represents the maximum adjustment to screen space error (SSE) in pixels for tiles
+     * far away from the camera. See [Cesium3DTileset.dynamicScreenSpaceErrorDensity] for more details about how
+     * this optimization works.
+     *
+     * When the SSE factor is set to 0, the optimization will have no effect on the tileset.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#dynamicScreenSpaceErrorFactor">Online Documentation</a>
      */
     var dynamicScreenSpaceErrorFactor: Double
 
     /**
-     * A ratio of the tileset's height at which the density starts to falloff. If the camera is below this height the
-     * full computed density is applied, otherwise the density falls off. This has the effect of higher density at
-     * street level views.
-     *
-     * Valid values are between 0.0 and 1.0.
+     * A ratio of the tileset's height that determines "street level" for the [Cesium3DTileset.dynamicScreenSpaceError]
+     * optimization. When the camera is below this height, the dynamic screen space error optimization will have the maximum
+     * effect, and it will roll off above this value. Valid values are between 0.0 and 1.0.
+     * <p>
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#dynamicScreenSpaceErrorHeightFalloff">Online Documentation</a>
      */
     var dynamicScreenSpaceErrorHeightFalloff: Double
@@ -419,6 +438,12 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#splitDirection">Online Documentation</a>
      */
     var splitDirection: SplitDirection
+
+    /**
+     * Whether to turn off collisions for camera collisions or picking. While this is  `true` the camera will be allowed to go in or below the tileset surface if [ScreenSpaceCameraController.enableCollisionDetection] is true.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#disableCollision">Online Documentation</a>
+     */
+    var disableCollision: Boolean
 
     /**
      * This property is for debugging only; it is not optimized for production use.
@@ -727,12 +752,15 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      * - The glTF cannot contain morph targets, skins, or animations.
      * - The glTF cannot contain the `EXT_mesh_gpu_instancing` extension.
      * - Only meshes with TRIANGLES can be used to classify other assets.
+     * - The meshes must be watertight.
      * - The `POSITION` semantic is required.
      * - If `_BATCHID`s and an index buffer are both present, all indices with the same batch id must occupy contiguous sections of the index buffer.
      * - If `_BATCHID`s are present with no index buffer, all positions with the same batch id must occupy contiguous sections of the position buffer.
      *
      * Additionally, classification is not supported for points or instanced 3D
      * models.
+     *
+     * The 3D Tiles or terrain receiving the classification must be opaque.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#classificationType">Online Documentation</a>
      */
     val classificationType: ClassificationType
@@ -870,6 +898,24 @@ external class Cesium3DTileset(options: ConstructorOptions) {
     fun destroy()
 
     /**
+     * Get the height of the loaded surface at a given cartographic. This function will only take into account meshes for loaded tiles, not neccisarily the most detailed tiles available for a tileset. This function will always return undefined when sampling a point cloud.
+     * ```
+     * const tileset = await Cesium3DTileset.fromIonAssetId(124624234);
+     * scene.primitives.add(tileset);
+     *
+     * const height = tileset.getHeight(scene.camera.positionCartographic, scene);
+     * ```
+     * @param [cartographic] The cartographic for which to find the height.
+     * @param [scene] The scene where visualization is taking place.
+     * @return The height of the cartographic or undefined if it could not be found.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#getHeight">Online Documentation</a>
+     */
+    fun getHeight(
+        cartographic: Cartographic,
+        scene: Scene,
+    ): Double?
+
+    /**
      * Initialization options for the Cesium3DTileset constructor
      * @property [show] Determines if the tileset will be shown.
      *   Default value - `true`
@@ -899,13 +945,13 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      *   Default value - `true`
      * @property [preferLeaves] Optimization option. Prefer loading of leaves first.
      *   Default value - `false`
-     * @property [dynamicScreenSpaceError] Optimization option. Reduce the screen space error for tiles that are further away from the camera.
-     *   Default value - `false`
-     * @property [dynamicScreenSpaceErrorDensity] Density used to adjust the dynamic screen space error, similar to fog density.
-     *   Default value - `0.00278`
-     * @property [dynamicScreenSpaceErrorFactor] A factor used to increase the computed dynamic screen space error.
-     *   Default value - `4.0`
-     * @property [dynamicScreenSpaceErrorHeightFalloff] A ratio of the tileset's height at which the density starts to falloff.
+     * @property [dynamicScreenSpaceError] Optimization option. For street-level horizon views, use lower resolution tiles far from the camera. This reduces the amount of data loaded and improves tileset loading time with a slight drop in visual quality in the distance.
+     *   Default value - `true`
+     * @property [dynamicScreenSpaceErrorDensity] Similar to [Fog.density], this option controls the camera distance at which the [Cesium3DTileset.dynamicScreenSpaceError] optimization applies. Larger values will cause tiles closer to the camera to be affected.
+     *   Default value - `2.0e-4`
+     * @property [dynamicScreenSpaceErrorFactor] A parameter that controls the intensity of the [Cesium3DTileset.dynamicScreenSpaceError] optimization for tiles on the horizon. Larger values cause lower resolution tiles to load, improving runtime performance at a slight reduction of visual quality.
+     *   Default value - `24.0`
+     * @property [dynamicScreenSpaceErrorHeightFalloff] A ratio of the tileset's height that determines where "street level" camera views occur. When the camera is below this height, the [Cesium3DTileset.dynamicScreenSpaceError] optimization will have the maximum effect, and it will roll off above this value.
      *   Default value - `0.25`
      * @property [progressiveResolutionHeightFraction] Optimization option. If between (0.0, 0.5], tiles at or above the screen space error for the reduced screen resolution of `progressiveResolutionHeightFraction*screenHeight` will be prioritized first. This can help get a quick layer of tiles down while full resolution tiles continue to load.
      *   Default value - `0.3`
@@ -958,14 +1004,19 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      *   Default value - `false`
      * @property [splitDirection] The [SplitDirection] split to apply to this tileset.
      *   Default value - [SplitDirection.NONE]
-     * @property [projectTo2D] Whether to accurately project the tileset to 2D. If this is true, the tileset will be projected accurately to 2D, but it will use more memory to do so. If this is false, the tileset will use less memory and will still render in 2D / CV mode, but its projected positions may be inaccurate. This cannot be set after the tileset has loaded.
+     * @property [disableCollision] Whether to turn off collisions for camera collisions or picking. While this is `true` the camera will be allowed to go in or below the tileset surface if [ScreenSpaceCameraController.enableCollisionDetection] is true.
+     *   Default value - `false`
+     * @property [projectTo2D] Whether to accurately project the tileset to 2D. If this is true, the tileset will be projected accurately to 2D, but it will use more memory to do so. If this is false, the tileset will use less memory and will still render in 2D / CV mode, but its projected positions may be inaccurate. This cannot be set after the tileset has been created.
+     *   Default value - `false`
+     * @property [enablePick] Whether to allow collision and CPU picking with `pick` when using WebGL 1. If using WebGL 2 or above, this option will be ignored. If using WebGL 1 and this is true, the `pick` operation will work correctly, but it will use more memory to do so. If running with WebGL 1 and this is false, the model will use less memory, but `pick` will always return `undefined`. This cannot be set after the tileset has loaded.
      *   Default value - `false`
      * @property [debugHeatmapTilePropertyName] The tile variable to colorize as a heatmap. All rendered tiles will be colorized relative to each other's specified variable value.
      * @property [debugFreezeFrame] For debugging only. Determines if only the tiles from last frame should be used for rendering.
      *   Default value - `false`
      * @property [debugColorizeTiles] For debugging only. When true, assigns a random color to each tile.
      *   Default value - `false`
-     * @property [enableDebugWireframe] For debugging only. This must be true for debugWireframe to work in WebGL1. This cannot be set after the tileset has loaded.
+     * @property [enableDebugWireframe] For debugging only. This must be true for debugWireframe to work in WebGL1. This cannot be set after the tileset has been created.
+     *   Default value - `false`
      * @property [debugWireframe] For debugging only. When true, render's each tile's content as a wireframe.
      *   Default value - `false`
      * @property [debugShowBoundingVolume] For debugging only. When true, renders the bounding volume for each tile.
@@ -1031,7 +1082,9 @@ external class Cesium3DTileset(options: ConstructorOptions) {
         var instanceFeatureIdLabel: String?
         var showCreditsOnScreen: Boolean?
         var splitDirection: SplitDirection?
+        var disableCollision: Boolean?
         var projectTo2D: Boolean?
+        var enablePick: Boolean?
         var debugHeatmapTilePropertyName: String?
         var debugFreezeFrame: Boolean?
         var debugColorizeTiles: Boolean?
@@ -1100,8 +1153,8 @@ external class Cesium3DTileset(options: ConstructorOptions) {
          * const tileset = await Cesium3DTileset.fromUrl(
          *   "http://localhost:8002/tilesets/Seattle/tileset.json", {
          *      dynamicScreenSpaceError: true,
-         *      dynamicScreenSpaceErrorDensity: 0.00278,
-         *      dynamicScreenSpaceErrorFactor: 4.0,
+         *      dynamicScreenSpaceErrorDensity: 2.0e-4,
+         *      dynamicScreenSpaceErrorFactor: 24.0,
          *      dynamicScreenSpaceErrorHeightFalloff: 0.25
          * });
          * scene.primitives.add(tileset);

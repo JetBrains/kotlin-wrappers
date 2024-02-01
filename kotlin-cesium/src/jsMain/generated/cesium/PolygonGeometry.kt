@@ -233,33 +233,6 @@ external class PolygonGeometry(options: ConstructorOptions) {
         ): Rectangle
 
         /**
-         * Returns the bounding rectangle given the provided options
-         * @param [result] An object in which to store the result.
-         * @return The result rectangle
-         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolygonGeometry.html#.computeRectangle">Online Documentation</a>
-         */
-        fun computeRectangle(
-            options: ComputeRectangleOptions,
-            result: Rectangle? = definedExternally,
-        ): Rectangle
-
-        /**
-         * @property [polygonHierarchy] A polygon hierarchy that can include holes.
-         * @property [granularity] The distance, in radians, between each latitude and longitude. Determines the number of positions sampled.
-         *   Default value - [Math.RADIANS_PER_DEGREE]
-         * @property [arcType] The type of line the polygon edges must follow. Valid options are [ArcType.GEODESIC] and [ArcType.RHUMB].
-         *   Default value - [ArcType.GEODESIC]
-         * @property [ellipsoid] The ellipsoid to be used as a reference.
-         *   Default value - [Ellipsoid.WGS84]
-         */
-        interface ComputeRectangleOptions {
-            var polygonHierarchy: PolygonHierarchy
-            var granularity: Double?
-            var arcType: ArcType?
-            var ellipsoid: Ellipsoid?
-        }
-
-        /**
          * Computes the geometric representation of a polygon, including its vertices, indices, and a bounding sphere.
          * @param [polygonGeometry] A description of the polygon.
          * @return The computed vertices and indices.

@@ -139,7 +139,8 @@ external class Entity {
     var tileset: Cesium3DTilesetGraphics?
 
     /**
-     * Gets or sets the orientation.
+     * Gets or sets the orientation in respect to Earth-fixed-Earth-centered (ECEF).
+     * Defaults to east-north-up at entity position.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Entity.html#orientation">Online Documentation</a>
      */
     var orientation: Property?

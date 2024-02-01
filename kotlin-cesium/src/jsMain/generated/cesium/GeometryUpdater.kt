@@ -107,8 +107,6 @@ external class GeometryUpdater(options: ConstructorOptions) {
 
     /**
      * Gets a value indicating if the geometry is time-varying.
-     * If true, all visualization is delegated to a DynamicGeometryUpdater
-     * returned by GeometryUpdater#createDynamicUpdater.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeometryUpdater.html#isDynamic">Online Documentation</a>
      */
     val isDynamic: Boolean

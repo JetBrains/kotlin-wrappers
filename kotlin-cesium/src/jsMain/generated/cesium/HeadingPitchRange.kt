@@ -10,7 +10,7 @@ package cesium
 
 /**
  * Defines a heading angle, pitch angle, and range in a local frame.
- * Heading is the rotation from the local north direction where a positive angle is increasing eastward.
+ * Heading is the rotation from the local east direction where a positive angle is increasing southward.
  * Pitch is the rotation from the local xy-plane. Positive pitch angles are above the plane. Negative pitch
  * angles are below the plane. Range is the distance from the center of the frame.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/HeadingPitchRange.html">Online Documentation</a>

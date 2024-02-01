@@ -97,7 +97,7 @@ external class Camera(scene: Scene) {
      * If set, the camera will not be able to rotate past this axis in either direction.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Camera.html#constrainedAxis">Online Documentation</a>
      */
-    var constrainedAxis: Cartesian3
+    var constrainedAxis: Cartesian3?
 
     /**
      * The factor multiplied by the the map size used to determine where to clamp the camera position
