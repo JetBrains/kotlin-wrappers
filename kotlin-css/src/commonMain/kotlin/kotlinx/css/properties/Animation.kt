@@ -47,7 +47,7 @@ class Animation(
     iterationCount: IterationCount = 1.times,
     direction: AnimationDirection = AnimationDirection.normal,
     fillMode: FillMode = FillMode.none,
-    playState: PlayState = PlayState.running
+    playState: PlayState = PlayState.running,
 ) : CssValue("$duration $timing $delay $iterationCount $direction $fillMode $playState $name")
 
 class Animations : StyleList<Animation>(", ") {

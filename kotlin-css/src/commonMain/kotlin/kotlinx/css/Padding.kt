@@ -4,7 +4,7 @@ data class Padding(
     val top: LinearDimension? = null,
     val right: LinearDimension? = null,
     val bottom: LinearDimension? = null,
-    val left: LinearDimension? = null
+    val left: LinearDimension? = null,
 ) {
     constructor(all: LinearDimension) : this(all, all, all, all)
     constructor(vertical: LinearDimension? = null, horizontal: LinearDimension? = null) : this(
@@ -41,7 +41,7 @@ var StyledElement.scrollPadding: Padding
     set(value) {
         val (top, right, bottom, left) = value
         if (top != null && right != null && bottom != null && left != null) {
-            put("scroll-padding", getShorthandValue(top, right, bottom, left))
+            put("scrollPadding", getShorthandValue(top, right, bottom, left))
         } else {
             top?.let { this.scrollPaddingTop = it }
             right?.let { this.scrollPaddingRight = it }

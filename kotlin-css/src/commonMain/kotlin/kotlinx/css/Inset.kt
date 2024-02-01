@@ -4,7 +4,7 @@ data class Inset(
     val top: LinearDimension,
     val right: LinearDimension,
     val bottom: LinearDimension,
-    val left: LinearDimension
+    val left: LinearDimension,
 ) : CssValue(
     getShorthandValue(top, right, bottom, left)
 ) {

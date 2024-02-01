@@ -12,21 +12,21 @@ var StyledElement.border: Border
     get() = error("")
 
 var StyledElement.borderTop: Border
-    set(value) = put("border-top", value.value)
+    set(value) = put("borderTop", value.value)
     @Deprecated("Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
 
 var StyledElement.borderRight: Border
-    set(value) = put("border-right", value.value)
+    set(value) = put("borderRight", value.value)
     @Deprecated("Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
 
 var StyledElement.borderBottom: Border
-    set(value) = put("border-bottom", value.value)
+    set(value) = put("borderBottom", value.value)
     @Deprecated("Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
 
 var StyledElement.borderLeft: Border
-    set(value) = put("border-left", value.value)
+    set(value) = put("borderLeft", value.value)
     @Deprecated("Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
