@@ -11,7 +11,7 @@ package remix.run.router
 sealed external interface LoaderFunction<Context /* default is Any? */> {
 
     @seskar.js.JsNative
-    operator fun invoke(args: LoaderFunctionArgs<Context>): Any? /* Promise<DataFunctionValue> | DataFunctionValue */
+    operator fun invoke(args: LoaderFunctionArgs<Context>): js.promise.PromiseResult<DataFunctionValue>
 
     var hydrate: Boolean?
 }
