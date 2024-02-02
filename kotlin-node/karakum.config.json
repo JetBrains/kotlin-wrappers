@@ -132,11 +132,12 @@
         "^assert": "node/assert",
         "^node/asyncHooks.kt": "node/asyncHooks/asyncHooks.kt",
         "^async_hooks": "node/asyncHooks",
-        "^node/buffer.kt": "node/buffer/bufferModule.kt",
-        "^buffer/global/namespace.kt": "node/buffer/globalNamespace.kt",
-        "^buffer/global/nodejs/namespace.kt": "node/buffer/globalNodejsNamespace.kt",
+        "^node/buffer.kt": "node/buffer/buffer.kt",
+        "^buffer/global/namespace.kt": "node/buffer/global.namespace.kt",
+        "^buffer/global/nodejs/namespace.kt": "node/buffer/global.nodejs.namespace.kt",
+        "^buffer/global/(.+)\\.kt": "buffer/$1.kt",
+        "^buffer/Buffer.kt": "node/buffer/Buffer.class.kt",
         "^buffer": "node/buffer",
-        "buffer/global/(.+)\\.kt": "buffer/$1.kt",
         "^node/childProcess.kt": "node/childProcess/childProcessNamespace.kt",
         "^child_process": "node/childProcess",
         "^node/cluster.kt": "node/cluster/clusterNamespace.kt",
@@ -285,7 +286,7 @@
         "assert/rejectsSuspend.kt": [
             "js.promise.Promise"
         ],
-        "buffer/Buffer.kt": [
+        "buffer/Buffer.class.kt": [
             "js.buffer.ArrayBuffer",
             "js.buffer.SharedArrayBuffer",
             "js.array.ReadonlyArray",
