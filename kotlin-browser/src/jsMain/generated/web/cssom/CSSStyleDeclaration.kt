@@ -1971,6 +1971,11 @@ sealed external class CSSStyleDeclaration :
     var zIndex: String
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/zoom)
+     */
+    var zoom: String
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/getPropertyPriority)
      */
     fun getPropertyPriority(property: String): String
