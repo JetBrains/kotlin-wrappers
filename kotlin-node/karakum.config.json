@@ -124,87 +124,119 @@
         "promises/(.+)\\.kt": "$1Async.kt",
         "SuspendAsync.kt": "Suspend.kt",
         "AsyncOptionsAsync.kt": "OptionsAsync.kt",
+
         "^global/nodejs": "node",
+
         "^node/assert.kt": "node/assert/assert.kt",
         "^assert/assert.kt": "node/assert/assert.fun.kt",
         "^assert/assert/namespace.kt": "node/assert/assert.fun.namespace.kt",
         "^assert/assert": "node/assert",
         "^assert": "node/assert",
+
         "^node/asyncHooks.kt": "node/asyncHooks/asyncHooks.kt",
         "^async_hooks": "node/asyncHooks",
+
         "^node/buffer.kt": "node/buffer/buffer.kt",
         "^buffer/global/namespace.kt": "node/buffer/global.namespace.kt",
         "^buffer/global/nodejs/namespace.kt": "node/buffer/global.nodejs.namespace.kt",
-        "^buffer/global/(.+)\\.kt": "buffer/$1.kt",
-        "^buffer/Buffer.kt": "node/buffer/Buffer.class.kt",
+        "^buffer/global/Buffer.kt": "node/buffer/Buffer.class.kt",
+        "^buffer/global/(.+)\\.kt": "node/buffer/$1.kt",
         "^buffer": "node/buffer",
-        "^node/childProcess.kt": "node/childProcess/childProcessNamespace.kt",
+
+        "^node/childProcess.kt": "node/childProcess/childProcess.kt",
+        "^child_process/ChildProcess.kt": "node/childProcess/ChildProcess.class.kt",
         "^child_process": "node/childProcess",
-        "^node/cluster.kt": "node/cluster/clusterNamespace.kt",
+
+        "^node/cluster.kt": "node/cluster/cluster.kt",
+        "^cluster/Cluster.kt": "node/cluster/Cluster.interface.kt",
         "^cluster": "node/cluster",
+
         "^node/crypto.kt": "node/crypto/crypto.kt",
+        "^crypto/sign.kt": "node/crypto/sign.fun.kt",
+        "^crypto/verify.kt": "node/crypto/verify.fun.kt",
+        "^crypto/diffieHellman.kt": "node/crypto/diffieHellman.fun.kt",
         "^crypto": "node/crypto",
-        "crypto/sign.kt": "crypto/sign.fun.kt",
-        "crypto/verify.kt": "crypto/verify.fun.kt",
-        "crypto/diffieHellman.kt": "crypto/diffieHellman.fun.kt",
+
         "^node/dgram.kt": "node/dgram/dgram.kt",
         "^dgram": "node/dgram",
+
         "^node/diagnosticsChannel.kt": "node/diagnosticsChannel/diagnosticsChannel.kt",
+        "^diagnostics_channel/channel.kt": "node/diagnosticsChannel/channel.fun.kt",
+        "^diagnostics_channel/tracingChannel.kt": "node/diagnosticsChannel/tracingChannel.fun.kt",
         "^diagnostics_channel": "node/diagnosticsChannel",
-        "diagnosticsChannel/channel.kt": "diagnosticsChannel/channel.fun.kt",
-        "diagnosticsChannel/tracingChannel.kt": "diagnosticsChannel/tracingChannel.fun.kt",
+
         "^node/dns.kt": "node/dns/dns.kt",
         "^dns": "node/dns",
+
         "^node/events.kt": "node/events/events.kt",
-        "^events/eventemitter/namespace.kt": "node/events/eventEmitterNamespace.kt",
+        "^events/eventemitter/namespace.kt": "node/events/EventEmitter.namespace.kt",
+        "^events/eventemitter/EventEmitterAsyncResource.kt": "node/events/EventEmitterAsyncResource.kt",
+        "^events/eventemitter/EventEmitterAsyncResourceOptions.kt": "node/events/EventEmitterAsyncResourceOptions.kt",
+        "^events/eventemitter/EventEmitterReferencingAsyncResource.kt": "node/events/EventEmitterReferencingAsyncResource.kt",
         "^events": "node/events",
-        "events/eventemitter/EventEmitterAsyncResource.kt": "events/EventEmitterAsyncResource.kt",
-        "events/eventemitter/EventEmitterAsyncResourceOptions.kt": "events/EventEmitterAsyncResourceOptions.kt",
-        "events/eventemitter/EventEmitterReferencingAsyncResource.kt": "events/EventEmitterReferencingAsyncResource.kt",
+
         "^node/fs.kt": "node/fs/fs.kt",
+        "^fs/StatfsOptions.kt": "node/fs/StatfsOptions.fun.kt",
+        "^fs/realpathsync/native.kt": "node/fs/realpathSync/native.kt",
+        "^fs/symlink/Type.kt": "node/fs/SymlinkType.kt",
         "^fs": "node/fs",
-        "fs/StatfsOptions.kt": "fs/StatfsOptions.fun.kt",
-        "fs/realpathsync/native.kt": "fs/realpathSync/native.kt",
-        "fs/symlink/Type.kt": "fs/SymlinkType.kt",
+
         "^node/http.kt": "node/http/http.kt",
         "^http": "node/http",
+
         "^node/http2.kt": "node/http2/http2.kt",
         "^http2": "node/http2",
+
         "^node/https.kt": "node/https/https.kt",
         "^https": "node/https",
+
         "^node/inspector.kt": "node/inspector/inspector.kt",
         "^inspector": "node/inspector",
+
         "^node/module.kt": "node/module/module.kt",
+        "^module/Module.kt": "node/module/Module.class.kt",
         "^module/module": "node/module",
         "^module": "node/module",
-        "module/Module.kt": "module/Module.class.kt",
+
         "^node/net.kt": "node/net/net.kt",
         "^net": "node/net",
+
         "^node/os.kt": "node/os/os.kt",
+        "^os/userInfo.kt": "node/os/userInfo.fun.kt",
         "^os": "node/os",
-        "os/userInfo.kt": "os/userInfo.fun.kt",
+
         "^node/path.kt": "node/path/path.kt",
         "^path/path": "node/path",
         "^path": "node/path",
+
         "^node/perfHooks.kt": "node/perfHooks/perfHooks.kt",
         "^perf_hooks": "node/perfHooks",
+
         "^node/process.kt": "node/process/process.kt",
+        "^process/global/nodejs/Process.kt": "node/process/Process.interface.kt",
+        "^process/global/nodejs/(.+)\\.kt": "node/process/$1.kt",
         "^process": "node/process",
-        "process/global/nodejs/(.+)\\.kt": "process/$1.kt",
-        "process/Process.kt": "process/Process.interface.kt",
+
         "^node/querystring.kt": "node/querystring/querystring.kt",
         "^querystring": "node/querystring",
-        "^node/readline.kt": "node/readline/readlineNamespace.kt",
+
+        "^node/readline.kt": "node/readline/readline.kt",
+        "^readline/ReadLine.kt": "node/readline/ReadLine.interface.kt",
         "^readline": "node/readline",
+
         "^node/repl.kt": "node/repl/repl.kt",
         "^repl": "node/repl",
-        "^node/stream.kt": "node/stream/streamNamespace.kt",
+
+        "^node/stream.kt": "node/stream/stream.kt",
         "^node/stream/consumers.kt": "node/stream/consumers/consumers.kt",
+        "^stream/internal/namespace.kt": "node/stream/internal.namespace.kt",
+        "^stream/internal/Stream.kt": "node/stream/Stream.class.kt",
+        "^stream/internal/(.+)\\.kt": "node/stream/$1.kt",
         "^stream": "node/stream",
-        "stream/internal/namespace.kt": "stream/internalNamespace.kt",
-        "stream/internal/(.+)\\.kt": "stream/$1.kt",
-        "^node/test.kt": "node/test/test.module.kt",
+
         "^node/test/test.kt": "node/test/test.fun.kt",
+        "^node/test/Test.kt": "node/test/Test.class.kt",
+        "^node/test.kt": "node/test/test.kt",
         "^node/test/test/namespace.kt": "node/test/test.fun.namespace.kt",
         "TestLocationInfo.kt": "test/TestLocationInfo.kt",
         "DiagnosticData.kt": "test/DiagnosticData.kt",
@@ -218,36 +250,48 @@
         "TestStdout.kt": "test/TestStdout.kt",
         "TestEnqueue.kt": "test/TestEnqueue.kt",
         "TestDequeue.kt": "test/TestDequeue.kt",
+
         "^node/tls.kt": "node/tls/tls.kt",
         "^tls": "node/tls",
+
         "^node/traceEvents.kt": "node/traceEvents/traceEvents.kt",
         "^trace_events": "node/traceEvents",
+
         "^node/tty.kt": "node/tty/tty.kt",
         "^tty": "node/tty",
+
         "^node/url.kt": "node/url/url.kt",
+        "^url/Url.kt": "node/url/Url.interface.kt",
         "^url": "node/url",
-        "url/Url.kt": "url/Url.interface.kt",
+
         "^node/util.kt": "node/util/util.kt",
         "^util": "node/util",
+
         "^node/v8.kt": "node/v8/v8.kt",
         "^v8": "node/v8",
+
         "^node/vm.kt": "node/vm/vm.kt",
         "^vm": "node/vm",
-        "^node/wasi.kt": "node/wasi/wasiNamespace.kt",
+
+        "^node/wasi.kt": "node/wasi/wasi.kt",
+        "^wasi/WASI.kt": "node/wasi/WASI.class.kt",
         "^wasi": "node/wasi",
+
         "^node/workerThreads.kt": "node/workerThreads/workerThreads.kt",
         "^worker_threads": "node/workerThreads",
-        "^node/zlib.kt": "node/zlib/zlibNamespace.kt",
-        "^zlib": "node/zlib",
-        "zlib/brotliCompress.kt": "zlib/brotliCompress.fun.kt",
-        "zlib/brotliDecompress.kt": "zlib/brotliDecompress.fun.kt",
-        "zlib/gzip.kt": "zlib/gzip.fun.kt",
-        "zlib/gunzip.kt": "zlib/gunzip.fun.kt",
-        "zlib/deflate.kt": "zlib/deflate.fun.kt",
-        "zlib/deflateRaw.kt": "zlib/deflateRaw.fun.kt",
-        "zlib/inflate.kt": "zlib/inflate.fun.kt",
-        "zlib/inflateRaw.kt": "zlib/inflateRaw.fun.kt",
-        "zlib/unzip.kt": "zlib/unzip.fun.kt"
+
+        "^node/zlib.kt": "node/zlib/zlib.kt",
+        "^zlib/Zlib.kt": "node/zlib/Zlib.interface.kt",
+        "^zlib/brotliCompress.kt": "node/zlib/brotliCompress.fun.kt",
+        "^zlib/brotliDecompress.kt": "node/zlib/brotliDecompress.fun.kt",
+        "^zlib/gzip.kt": "node/zlib/gzip.fun.kt",
+        "^zlib/gunzip.kt": "node/zlib/gunzip.fun.kt",
+        "^zlib/deflate.kt": "node/zlib/deflate.fun.kt",
+        "^zlib/deflateRaw.kt": "node/zlib/deflateRaw.fun.kt",
+        "^zlib/inflate.kt": "node/zlib/inflate.fun.kt",
+        "^zlib/inflateRaw.kt": "node/zlib/inflateRaw.fun.kt",
+        "^zlib/unzip.kt": "node/zlib/unzip.fun.kt",
+        "^zlib": "node/zlib"
     },
     "importInjector": {
         "Async.kt": [
@@ -307,7 +351,7 @@
         "buffer/transcode.kt": [
             "js.typedarrays.Uint8Array"
         ],
-        "childProcess/ChildProcess.kt": [
+        "childProcess/ChildProcess.class.kt": [
             "node.events.EventEmitter",
             "node.stream.Pipe",
             "node.stream.Readable",
@@ -363,7 +407,7 @@
         "childProcess/spawnSync.kt": [
             "js.array.ReadonlyArray"
         ],
-        "cluster/Cluster.kt": [
+        "cluster/Cluster.interface.kt": [
             "node.events.EventEmitter"
         ],
         "cluster/Worker.kt": [
@@ -799,7 +843,7 @@
         "stream/StreamOptions.kt": [
             "web.abort.Abortable"
         ],
-        "stream/Stream.kt": [
+        "stream/Stream.class.kt": [
             "js.iterable.AsyncIterable",
             "node.events.EventEmitter"
         ],
@@ -864,7 +908,7 @@
         "test/SuiteContext.kt": [
             "web.abort.AbortSignal"
         ],
-        "test/Test.kt": [
+        "test/Test.class.kt": [
             "node.asyncHooks.AsyncResource"
         ],
         "test/TestContext.kt": [
