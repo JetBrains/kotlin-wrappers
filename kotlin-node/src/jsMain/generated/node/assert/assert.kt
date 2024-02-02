@@ -6,10 +6,11 @@ package node.assert
 
 
 /**
- * An alias of {@link ok}.
- * @since v0.5.9
- * @param value The input that is checked for being truthy.
+ * The `node:assert` module provides a set of assertion functions for verifying
+ * invariants.
+ * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/assert.js)
  */
-external fun assert(value: Any?, message: String = definedExternally): Unit /* asserts value */
 
-external fun assert(value: Any?, message: Throwable /* JsError */ = definedExternally): Unit /* asserts value */
+
+/* import assert = require("assert"); */
+/* export = assert; */
