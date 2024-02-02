@@ -1317,10 +1317,5 @@
         "ClientHttp2StreamPrependListenerListenerHeaders.kt": "replace",
         "ClientHttp2StreamPrependOnceListenerListenerHeaders.kt": "replace",
         "ServerEmitRes.kt": "replace"
-    },
-    "compilerOptions": {
-        "types": [
-            "@types/node"
-        ]
     }
 }
