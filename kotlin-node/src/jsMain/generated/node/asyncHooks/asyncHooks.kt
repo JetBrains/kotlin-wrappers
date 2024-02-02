@@ -21,3 +21,6 @@ package node.asyncHooks
  * @experimental
  * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/async_hooks.js)
  */
+
+
+/* export * from "async_hooks"; */

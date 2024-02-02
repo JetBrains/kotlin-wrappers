@@ -15,3 +15,8 @@ package node.util
  * ```
  * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/util.js)
  */
+
+
+/* export * from "util"; */
+
+/* export * from "util/types"; */

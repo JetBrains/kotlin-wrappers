@@ -25,3 +25,6 @@ package node.fs
  * forms, and are accessible using both CommonJS syntax and ES6 Modules (ESM).
  * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/fs.js)
  */
+
+
+/* export * from "fs"; */

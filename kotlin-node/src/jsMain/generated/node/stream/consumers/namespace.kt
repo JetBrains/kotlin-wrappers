@@ -8,5 +8,3 @@ package node.stream.consumers
 /* import { Blob as NodeBlob } from "node:buffer"; */
 
 /* import { Readable } from "node:stream"; */
-
-/* export * from "stream/consumers"; */

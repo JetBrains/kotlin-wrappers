@@ -5,5 +5,3 @@
 package node.stream
 
 /* import { FinishedOptions, PipelineDestination, PipelineOptions, PipelinePromise, PipelineSource, PipelineTransform, } from "node:stream"; */
-
-/* export * from "stream/promises"; */

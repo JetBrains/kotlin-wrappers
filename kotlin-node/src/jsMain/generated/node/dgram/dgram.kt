@@ -32,3 +32,6 @@ package node.dgram
  * ```
  * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/dgram.js)
  */
+
+
+/* export * from "dgram"; */

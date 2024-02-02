@@ -19,3 +19,6 @@ package node.net
  * ```
  * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/net.js)
  */
+
+
+/* export * from "net"; */

@@ -14,3 +14,13 @@ package node.path
  * ```
  * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/path.js)
  */
+
+
+/* import path = require("path"); */
+/* export = path; */
+
+/* import path = require("path/posix"); */
+/* export = path; */
+
+/* import path = require("path/win32"); */
+/* export = path; */

@@ -11,3 +11,6 @@ package node.dns
  * via `require('node:dns').promises` or `require('node:dns/promises')`.
  * @since v10.6.0
  */
+
+
+/* export * from "dns/promises"; */

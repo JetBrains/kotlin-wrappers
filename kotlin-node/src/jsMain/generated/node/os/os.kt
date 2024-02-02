@@ -14,3 +14,6 @@ package node.os
  * ```
  * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/os.js)
  */
+
+
+/* export * from "os"; */

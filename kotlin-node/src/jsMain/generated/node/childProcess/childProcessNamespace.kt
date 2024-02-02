@@ -72,3 +72,6 @@ package node.childProcess
  * stalling the event loop while spawned processes complete.
  * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/child_process.js)
  */
+
+
+/* export * from "child_process"; */

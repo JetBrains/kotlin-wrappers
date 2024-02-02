@@ -76,3 +76,6 @@ package node.wasi
  * @experimental
  * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/wasi.js)
  */
+
+
+/* export * from "wasi"; */

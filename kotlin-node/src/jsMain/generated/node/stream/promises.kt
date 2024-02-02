@@ -3,3 +3,6 @@
 @file:JsModule("node:stream/promises")
 
 package node.stream
+
+
+/* export * from "stream/promises"; */

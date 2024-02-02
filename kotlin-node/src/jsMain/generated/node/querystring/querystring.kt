@@ -18,3 +18,6 @@ package node.querystring
  * when compatibility with browser code is desirable.
  * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/querystring.js)
  */
+
+
+/* export * from "querystring"; */

@@ -15,5 +15,3 @@ package node.fs
 /* import { Interface as ReadlineInterface } from "node:readline"; */
 
 external val constants: Any?
-
-/* export * from "fs/promises"; */

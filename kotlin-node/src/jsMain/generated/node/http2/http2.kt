@@ -15,3 +15,6 @@ package node.http2
  * @since v8.4.0
  * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/http2.js)
  */
+
+
+/* export * from "http2"; */

@@ -15,3 +15,6 @@ package node.fs
  * concurrent modifications on the same file or data corruption may occur.
  * @since v10.0.0
  */
+
+
+/* export * from "fs/promises"; */

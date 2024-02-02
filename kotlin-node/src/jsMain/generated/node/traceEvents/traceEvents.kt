@@ -103,3 +103,6 @@ package node.traceEvents
  * @experimental
  * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/trace_events.js)
  */
+
+
+/* export * from "trace_events"; */

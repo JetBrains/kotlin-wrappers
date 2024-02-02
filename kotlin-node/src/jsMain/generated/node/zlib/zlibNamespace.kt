@@ -97,3 +97,6 @@ package node.zlib
  * @since v0.5.8
  * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/zlib.js)
  */
+
+
+/* export * from "zlib"; */

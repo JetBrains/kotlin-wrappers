@@ -27,5 +27,3 @@ package node.http2
  * an array value in order to provide a list of headers considered sensitive.
  */
 external val sensitiveHeaders: js.symbol.Symbol
-
-/* export * from "http2"; */

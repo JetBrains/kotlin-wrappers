@@ -59,3 +59,7 @@ package node.cluster
  * On Windows, it is not yet possible to set up a named pipe server in a worker.
  * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/cluster.js)
  */
+
+
+/* export * from "cluster"; */
+/* export { default as default } from "cluster"; */

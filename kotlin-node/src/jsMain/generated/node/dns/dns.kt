@@ -51,3 +51,6 @@ package node.dns
  * See the `Implementation considerations section` for more information.
  * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/dns.js)
  */
+
+
+/* export * from "dns"; */

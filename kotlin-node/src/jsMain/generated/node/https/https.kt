@@ -10,3 +10,6 @@ package node.https
  * separate module.
  * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/https.js)
  */
+
+
+/* export * from "https"; */

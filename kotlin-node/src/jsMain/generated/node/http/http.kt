@@ -46,3 +46,6 @@ package node.http
  * ```
  * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/http.js)
  */
+
+
+/* export * from "http"; */

@@ -23,3 +23,7 @@ package node.stream
  * It is usually not necessary to use the `node:stream` module to consume streams.
  * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/stream.js)
  */
+
+
+/* import stream = require("stream"); */
+/* export = stream; */

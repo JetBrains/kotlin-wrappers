@@ -41,3 +41,7 @@ package node.events
  * ```
  * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/events.js)
  */
+
+
+/* import events = require("events"); */
+/* export = events; */

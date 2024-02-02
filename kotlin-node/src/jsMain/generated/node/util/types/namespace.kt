@@ -6,5 +6,3 @@ package node.util.types
 
 
 /* import { KeyObject, webcrypto } from "node:crypto"; */
-
-/* export * from "util/types"; */

@@ -30,3 +30,6 @@ package node.tty
  * manually create instances of the `tty.ReadStream` and `tty.WriteStream`classes.
  * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/tty.js)
  */
+
+
+/* export * from "tty"; */

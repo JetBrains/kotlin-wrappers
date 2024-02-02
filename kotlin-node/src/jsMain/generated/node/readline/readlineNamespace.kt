@@ -39,3 +39,6 @@ package node.readline
  * received on the `input` stream.
  * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/readline.js)
  */
+
+
+/* export * from "readline"; */

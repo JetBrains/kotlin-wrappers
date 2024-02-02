@@ -10,3 +10,7 @@ package node.assert
  * invariants.
  * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/assert.js)
  */
+
+
+/* import assert = require("assert"); */
+/* export = assert; */

@@ -15,3 +15,6 @@ package node.tls
  * ```
  * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/tls.js)
  */
+
+
+/* export * from "tls"; */

@@ -13,3 +13,6 @@ package node.v8
  * ```
  * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/v8.js)
  */
+
+
+/* export * from "v8"; */

@@ -43,3 +43,6 @@ package node.vm
  * ```
  * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/vm.js)
  */
+
+
+/* export * from "vm"; */

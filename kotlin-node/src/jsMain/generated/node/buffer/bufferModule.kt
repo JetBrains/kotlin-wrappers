@@ -50,3 +50,6 @@ package node.buffer
  * ```
  * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/buffer.js)
  */
+
+
+/* export * from "buffer"; */

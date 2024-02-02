@@ -29,3 +29,6 @@ package node.diagnosticsChannel
  * @since v15.1.0, v14.17.0
  * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/diagnostics_channel.js)
  */
+
+
+/* export * from "diagnostics_channel"; */

@@ -58,3 +58,6 @@ package node.workerThreads
  * specifically `argv` and `execArgv` options.
  * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/worker_threads.js)
  */
+
+
+/* export * from "worker_threads"; */

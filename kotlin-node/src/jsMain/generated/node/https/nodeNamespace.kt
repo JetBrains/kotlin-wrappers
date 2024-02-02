@@ -14,5 +14,3 @@ package node.https
 /* import { URL } from "node:url"; */
 
 external var globalAgent: Agent
-
-/* export * from "https"; */
