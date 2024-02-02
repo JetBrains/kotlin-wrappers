@@ -26,6 +26,15 @@ sealed external interface Router {
      * @internal
      * PRIVATE - DO NOT USE
      *
+     * Return the future config for the router
+     */
+
+    val future: FutureConfig
+
+    /**
+     * @internal
+     * PRIVATE - DO NOT USE
+     *
      * Return the current state of the router
      */
 

@@ -10,4 +10,5 @@ external fun _renderMatches(
     matches: js.array.ReadonlyArray<RouteMatch<*>>?,
     parentMatches: js.array.ReadonlyArray<RouteMatch<*>> = definedExternally,
     dataRouterState: (RouterState)? = definedExternally,
+    future: (FutureConfig)? = definedExternally,
 ): react.ReactElement<*>?

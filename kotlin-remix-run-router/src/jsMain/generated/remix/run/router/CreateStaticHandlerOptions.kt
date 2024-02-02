@@ -12,4 +12,5 @@ sealed external interface CreateStaticHandlerOptions {
      */
     var detectErrorBoundary: DetectErrorBoundaryFunction?
     var mapRouteProperties: MapRoutePropertiesFunction?
+    var future: StaticHandlerFutureConfig?
 }

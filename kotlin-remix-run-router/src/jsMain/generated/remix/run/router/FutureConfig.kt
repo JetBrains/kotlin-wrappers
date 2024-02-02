@@ -11,5 +11,7 @@ package remix.run.router
 sealed external interface FutureConfig {
     var v7_fetcherPersist: Boolean
     var v7_normalizeFormMethod: Boolean
+    var v7_partialHydration: Boolean
     var v7_prependBasename: Boolean
+    var v7_relativeSplatPath: Boolean
 }

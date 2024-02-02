@@ -21,8 +21,10 @@ sealed external interface RouteObject {
     var index: Boolean?
     var children: js.array.ReadonlyArray<RouteObject>?
     var element: react.ReactNode?
+    var hydrateFallbackElement: react.ReactNode?
     var errorElement: react.ReactNode?
     var Component: react.ComponentType<*>?
+    var HydrateFallback: react.ComponentType<*>?
     var ErrorBoundary: react.ComponentType<*>?
     var lazy: LazyRouteFunction<RouteObject>?
 }

@@ -11,10 +11,12 @@ external fun useRoutesImpl(
     routes: js.array.ReadonlyArray<RouteObject>,
     locationArg: Location<*> = definedExternally,
     dataRouterState: RouterState = definedExternally,
+    future: FutureConfig = definedExternally,
 ): react.ReactElement<*>?
 
 external fun useRoutesImpl(
     routes: js.array.ReadonlyArray<RouteObject>,
     locationArg: String = definedExternally,
     dataRouterState: RouterState = definedExternally,
+    future: FutureConfig = definedExternally,
 ): react.ReactElement<*>?

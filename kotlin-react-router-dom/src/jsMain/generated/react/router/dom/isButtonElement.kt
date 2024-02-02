@@ -5,4 +5,4 @@
 package react.router.dom
 
 
-external fun isButtonElement(value: Any?): Boolean
+external fun isButtonElement(value: Any?): Boolean /* object is HTMLButtonElement */

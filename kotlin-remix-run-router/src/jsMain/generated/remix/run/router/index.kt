@@ -18,6 +18,6 @@ package remix.run.router
 /** @internal */
 /* export type { RouteManifest as UNSAFE_RouteManifest } from "./utils"; */
 
-/* export { DeferredData as UNSAFE_DeferredData, ErrorResponseImpl as UNSAFE_ErrorResponseImpl, convertRoutesToDataRoutes as UNSAFE_convertRoutesToDataRoutes, convertRouteMatchToUiMatch as UNSAFE_convertRouteMatchToUiMatch, getPathContributingMatches as UNSAFE_getPathContributingMatches, } from "./utils"; */
+/* export { DeferredData as UNSAFE_DeferredData, ErrorResponseImpl as UNSAFE_ErrorResponseImpl, convertRoutesToDataRoutes as UNSAFE_convertRoutesToDataRoutes, convertRouteMatchToUiMatch as UNSAFE_convertRouteMatchToUiMatch, getResolveToMatches as UNSAFE_getResolveToMatches, } from "./utils"; */
 
 /* export { invariant as UNSAFE_invariant, warning as UNSAFE_warning, } from "./history"; */

@@ -1,6 +1,16 @@
 import ts from "typescript";
 import * as karakum from "karakum";
 
+function isReactNodeReference(node) {
+    return (
+        ts.isTypeReferenceNode(node)
+        && ts.isQualifiedName(node.typeName)
+        && ts.isIdentifier(node.typeName.left)
+        && node.typeName.left.text === "React"
+        && node.typeName.right.text === "ReactNode"
+    )
+}
+
 export default function (node, context, render) {
     if (
         ts.isPropertySignature(node)
@@ -8,11 +18,21 @@ export default function (node, context, render) {
         && node.questionToken
 
         && node.type
-        && ts.isTypeReferenceNode(node.type)
-        && ts.isQualifiedName(node.type.typeName)
-        && ts.isIdentifier(node.type.typeName.left)
-        && node.type.typeName.left.text === "React"
-        && node.type.typeName.right.text === "ReactNode"
+
+        && (
+            isReactNodeReference(node.type)
+            || (
+                ts.isUnionTypeNode(node.type)
+                && node.type.types.length === 2
+
+                && node.type.types[0]
+                && isReactNodeReference(node.type.types[0])
+
+                && node.type.types[1]
+                && ts.isLiteralTypeNode(node.type.types[1])
+                && node.type.types[1].literal.kind === ts.SyntaxKind.NullKeyword
+            )
+        )
     ) {
         const inheritanceModifierService = context.lookupService(karakum.inheritanceModifierServiceKey)
 

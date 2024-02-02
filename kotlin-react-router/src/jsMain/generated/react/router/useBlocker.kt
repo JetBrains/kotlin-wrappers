@@ -13,7 +13,6 @@ import remix.run.router.BlockerFunction
  * using half-filled form data.  This does not handle hard-reloads or
  * cross-origin navigations.
  */
-
 external fun useBlocker(shouldBlock: Boolean): Blocker
 
 external fun useBlocker(shouldBlock: BlockerFunction): Blocker

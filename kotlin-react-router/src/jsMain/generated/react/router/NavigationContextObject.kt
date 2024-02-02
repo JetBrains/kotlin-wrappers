@@ -8,4 +8,5 @@ sealed external interface NavigationContextObject {
     var basename: String
     var navigator: Navigator
     var static: Boolean
+    var future: NavigationContextObjectFuture
 }
