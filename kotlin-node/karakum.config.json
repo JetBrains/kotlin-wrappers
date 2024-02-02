@@ -275,7 +275,6 @@
         "stream/internal/(.+)\\.kt": "stream/$1.kt",
         "^node/test/test/namespace.kt": "node/test/nodeTestNamespace.kt",
         "^node/test.kt": "node/test/test.kt",
-        "^test": "node/test",
         "test/test.kt": "test/test.fun.kt",
         "TestLocationInfo.kt": "test/TestLocationInfo.kt",
         "DiagnosticData.kt": "test/DiagnosticData.kt",
