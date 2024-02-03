@@ -49,7 +49,12 @@ sealed external class Buffer : Uint8Array {
      */
     fun write(string: String, encoding: BufferEncoding = definedExternally): Double
     fun write(string: String, offset: Number, encoding: BufferEncoding = definedExternally): Double
-    fun write(string: String, offset: Number, length: Number, encoding: BufferEncoding = definedExternally): Double
+    fun write(
+        string: String,
+        offset: Number,
+        length: Number,
+        encoding: BufferEncoding = definedExternally,
+    ): Double
 
     /**
      * Decodes `buf` to a string according to the specified character encoding in`encoding`. `start` and `end` may be passed to decode only a subset of `buf`.
@@ -1809,9 +1814,15 @@ sealed external class Buffer : Uint8Array {
          * If provided, the {encoding} parameter identifies the character encoding.
          * If not provided, {encoding} defaults to 'utf8'.
          */
-        fun from(str: WithImplicitCoercion<String>, encoding: BufferEncoding = definedExternally): Buffer
+        fun from(
+            str: WithImplicitCoercion<String>,
+            encoding: BufferEncoding = definedExternally,
+        ): Buffer
 
-        fun from(str: js.symbol.ToPrimitiveSymbolHolder, encoding: BufferEncoding = definedExternally): Buffer
+        fun from(
+            str: js.symbol.ToPrimitiveSymbolHolder,
+            encoding: BufferEncoding = definedExternally,
+        ): Buffer
 
         /**
          * Creates a new Buffer using the passed {data}
@@ -1890,7 +1901,10 @@ sealed external class Buffer : Uint8Array {
          */
         fun byteLength(string: String, encoding: BufferEncoding = definedExternally): Double
 
-        fun byteLength(string: js.buffer.ArrayBufferView, encoding: BufferEncoding = definedExternally): Double
+        fun byteLength(
+            string: js.buffer.ArrayBufferView,
+            encoding: BufferEncoding = definedExternally,
+        ): Double
 
         fun byteLength(string: ArrayBuffer, encoding: BufferEncoding = definedExternally): Double
 
@@ -2024,7 +2038,11 @@ sealed external class Buffer : Uint8Array {
          * @param [fill=0] A value to pre-fill the new `Buffer` with.
          * @param [encoding='utf8'] If `fill` is a string, this is its encoding.
          */
-        fun alloc(size: Number, fill: String = definedExternally, encoding: BufferEncoding = definedExternally): Buffer
+        fun alloc(
+            size: Number,
+            fill: String = definedExternally,
+            encoding: BufferEncoding = definedExternally,
+        ): Buffer
 
         fun alloc(
             size: Number,
@@ -2032,7 +2050,11 @@ sealed external class Buffer : Uint8Array {
             encoding: BufferEncoding = definedExternally,
         ): Buffer
 
-        fun alloc(size: Number, fill: Double = definedExternally, encoding: BufferEncoding = definedExternally): Buffer
+        fun alloc(
+            size: Number,
+            fill: Double = definedExternally,
+            encoding: BufferEncoding = definedExternally,
+        ): Buffer
 
         /**
          * Allocates a new `Buffer` of `size` bytes. If `size` is larger than {@link constants.MAX_LENGTH} or smaller than 0, `ERR_OUT_OF_RANGE` is thrown.
