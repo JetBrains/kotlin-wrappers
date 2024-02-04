@@ -107,14 +107,6 @@ export default {
     },
 
     generate(context) {
-        const configurationService = context.lookupService(karakum.configurationServiceKey)
-        const configuration = configurationService?.configuration
-        if (configuration === undefined) throw new Error("EventPlugin can't work without ConfigurationService")
-
-        const namespaceInfoService = context.lookupService(karakum.namespaceInfoServiceKey)
-        const resolveNamespaceStrategy = namespaceInfoService?.resolveNamespaceStrategy?.bind(namespaceInfoService)
-        if (resolveNamespaceStrategy === undefined) throw new Error("EventPlugin can't work without NamespaceInfoService")
-
         const declarations = Array.from(this.events.values()).map(events => {
             const name = `${events.containerName}Event`
 
@@ -158,6 +150,6 @@ ${companionBody}
             }
         })
 
-        return karakum.generateDerivedDeclarations(declarations, configuration, resolveNamespaceStrategy);
+        return karakum.generateDerivedDeclarations(declarations, context);
     },
 }

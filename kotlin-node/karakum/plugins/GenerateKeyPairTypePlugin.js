@@ -107,14 +107,6 @@ export default {
     },
 
     generate(context) {
-        const configurationService = context.lookupService(karakum.configurationServiceKey)
-        const configuration = configurationService?.configuration
-        if (configuration === undefined) throw new Error("GenerateKeyPairTypePlugin can't work without ConfigurationService")
-
-        const namespaceInfoService = context.lookupService(karakum.namespaceInfoServiceKey)
-        const resolveNamespaceStrategy = namespaceInfoService?.resolveNamespaceStrategy?.bind(namespaceInfoService)
-        if (resolveNamespaceStrategy === undefined) throw new Error("GenerateKeyPairTypePlugin can't work without NamespaceInfoService")
-
         const declarations = Array.from(this.options).map(([name, formats]) => {
             const [originalName, publicFormat, privateFormat] = formats
 
@@ -126,6 +118,6 @@ export default {
             }
         })
 
-        return karakum.generateDerivedDeclarations(declarations, configuration, resolveNamespaceStrategy)
+        return karakum.generateDerivedDeclarations(declarations, context)
     },
 }

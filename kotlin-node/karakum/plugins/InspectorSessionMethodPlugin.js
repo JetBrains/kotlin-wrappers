@@ -48,14 +48,6 @@ export default {
     },
 
     generate(context) {
-        const configurationService = context.lookupService(karakum.configurationServiceKey)
-        const configuration = configurationService?.configuration
-        if (configuration === undefined) throw new Error("InspectorSessionMethodPlugin can't work without ConfigurationService")
-
-        const namespaceInfoService = context.lookupService(karakum.namespaceInfoServiceKey)
-        const resolveNamespaceStrategy = namespaceInfoService?.resolveNamespaceStrategy?.bind(namespaceInfoService)
-        if (resolveNamespaceStrategy === undefined) throw new Error("InspectorSessionMethodPlugin can't work without NamespaceInfoService")
-
         const name = "SessionMethod"
 
         const entries = Array.from(this.methods).map(eventName => {
@@ -97,6 +89,6 @@ ${companionBody}
             body: fileBody,
         }
 
-        return karakum.generateDerivedDeclarations([declaration], configuration, resolveNamespaceStrategy);
+        return karakum.generateDerivedDeclarations([declaration], context);
     },
 }

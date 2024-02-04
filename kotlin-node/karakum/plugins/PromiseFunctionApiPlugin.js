@@ -168,14 +168,6 @@ external fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${name}Async(
     },
 
     generate(context) {
-        const configurationService = context.lookupService(karakum.configurationServiceKey)
-        const configuration = configurationService?.configuration
-        if (configuration === undefined) throw new Error("PromiseApiPlugin can't work without ConfigurationService")
-
-        const namespaceInfoService = context.lookupService(karakum.namespaceInfoServiceKey)
-        const resolveNamespaceStrategy = namespaceInfoService?.resolveNamespaceStrategy?.bind(namespaceInfoService)
-        if (resolveNamespaceStrategy === undefined) throw new Error("PromiseApiPlugin can't work without NamespaceInfoService")
-
-        return karakum.generateDerivedDeclarations(this.promiseApiDeclarations, configuration, resolveNamespaceStrategy);
+        return karakum.generateDerivedDeclarations(this.promiseApiDeclarations, context);
     },
 }
