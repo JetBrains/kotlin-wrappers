@@ -7,17 +7,6 @@ package node.http2
 
 /* import EventEmitter = require("node:events"); */
 
-/* import * as fs from "node:fs"; */
-
-/* import * as net from "node:net"; */
-
-/* import * as stream from "node:stream"; */
-
-/* import * as tls from "node:tls"; */
-
-/* import * as url from "node:url"; */
-
-/* import { IncomingHttpHeaders as Http1IncomingHttpHeaders, IncomingMessage, OutgoingHttpHeaders, ServerResponse, } from "node:http"; */
 
 /* export { OutgoingHttpHeaders } from "node:http"; */
 

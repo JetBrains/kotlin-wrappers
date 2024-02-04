@@ -5,16 +5,6 @@
 package node.http
 
 
-/* import * as stream from "node:stream"; */
-
-/* import { URL } from "node:url"; */
-
-/* import { LookupOptions } from "node:dns"; */
-
-/* import { EventEmitter } from "node:events"; */
-
-/* import { LookupFunction, Server as NetServer, Socket, TcpSocketConnectOpts } from "node:net"; */
-
 external val METHODS: js.array.ReadonlyArray<String>
 
 external val STATUS_CODES: HttpStatusCodes

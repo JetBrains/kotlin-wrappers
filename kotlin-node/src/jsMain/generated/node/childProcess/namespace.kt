@@ -3,14 +3,3 @@
 @file:JsModule("node:child_process")
 
 package node.childProcess
-
-
-/* import { ObjectEncodingOptions } from "node:fs"; */
-
-/* import { Abortable, EventEmitter } from "node:events"; */
-
-/* import * as net from "node:net"; */
-
-/* import { Pipe, Readable, Stream, Writable } from "node:stream"; */
-
-/* import { URL } from "node:url"; */

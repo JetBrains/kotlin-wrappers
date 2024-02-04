@@ -5,8 +5,6 @@
 package node.events
 
 
-/* import { AsyncResource, AsyncResourceOptions } from "node:async_hooks"; */
-
 /* import internal = require("node:events"); */
 
 

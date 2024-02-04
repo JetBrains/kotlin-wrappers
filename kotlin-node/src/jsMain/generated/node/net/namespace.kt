@@ -3,10 +3,3 @@
 @file:JsModule("node:net")
 
 package node.net
-
-
-/* import * as stream from "node:stream"; */
-
-/* import { Abortable, EventEmitter } from "node:events"; */
-
-/* import * as dns from "node:dns"; */

@@ -3,6 +3,3 @@
 @file:JsModule("node:diagnostics_channel")
 
 package node.diagnosticsChannel
-
-
-/* import { AsyncLocalStorage } from "node:async_hooks"; */

@@ -5,11 +5,8 @@
 package node.cluster
 
 
-/* import * as child from "node:child_process"; */
-
 /* import EventEmitter = require("node:events"); */
 
-/* import * as net from "node:net"; */
 
 external val cluster: Cluster
 

@@ -3,7 +3,3 @@
 @file:JsModule("node:readline/promises")
 
 package node.readline
-
-/* import { AsyncCompleter, Completer, Direction, Interface as _Interface, ReadLineOptions } from "node:readline"; */
-
-/* import { Abortable } from "node:events"; */

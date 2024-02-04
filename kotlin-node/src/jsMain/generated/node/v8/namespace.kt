@@ -5,8 +5,6 @@
 package node.v8
 
 
-/* import { Readable } from "node:stream"; */
-
 /**
  * The `promiseHooks` interface can be used to track promise lifecycle events.
  * @since v17.1.0, v16.14.0

@@ -5,11 +5,6 @@
 package node.crypto
 
 
-/* import * as stream from "node:stream"; */
-
-/* import { PeerCertificate } from "node:tls"; */
-
-
 /** @deprecated since v10.0.0 */
 external val fips: Boolean
 

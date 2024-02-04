@@ -4,11 +4,6 @@
 
 package node.tls
 
-/* import { X509Certificate } from "node:crypto"; */
-
-/* import * as net from "node:net"; */
-
-/* import * as stream from "stream"; */
 
 external val CLIENT_RENEG_LIMIT: Double
 

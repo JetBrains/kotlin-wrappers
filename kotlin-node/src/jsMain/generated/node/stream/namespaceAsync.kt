@@ -3,5 +3,3 @@
 @file:JsModule("node:stream/promises")
 
 package node.stream
-
-/* import { FinishedOptions, PipelineDestination, PipelineOptions, PipelinePromise, PipelineSource, PipelineTransform, } from "node:stream"; */

@@ -3,10 +3,3 @@
 @file:JsModule("node:dgram")
 
 package node.dgram
-
-
-/* import { AddressInfo } from "node:net"; */
-
-/* import * as dns from "node:dns"; */
-
-/* import { Abortable, EventEmitter } from "node:events"; */

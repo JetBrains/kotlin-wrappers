@@ -3,8 +3,3 @@
 @file:JsModule("node:stream/consumers")
 
 package node.stream.consumers
-
-
-/* import { Blob as NodeBlob } from "node:buffer"; */
-
-/* import { Readable } from "node:stream"; */

@@ -5,9 +5,4 @@
 package node.module
 
 
-/* import { URL } from "node:url"; */
-
-/* import { MessagePort } from "node:worker_threads"; */
-
-
 /* export = Module; */

@@ -5,9 +5,6 @@
 package node.zlib
 
 
-/* import * as stream from "node:stream"; */
-
-
 // Allowed flush values.
 /** @deprecated Use `constants.Z_NO_FLUSH` */
 external val Z_NO_FLUSH: Double

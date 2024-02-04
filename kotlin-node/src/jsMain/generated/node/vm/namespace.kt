@@ -3,6 +3,3 @@
 @file:JsModule("node:vm")
 
 package node.vm
-
-
-/* import { ImportAttributes } from "node:module"; */

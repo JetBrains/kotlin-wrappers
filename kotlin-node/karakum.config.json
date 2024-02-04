@@ -259,6 +259,92 @@
         "^node/globals/globals.kt": "node/globals.kt",
         "^global/nodejs": "node"
     },
+    "importMapper": {
+        "node:async_hooks": "node.asyncHooks",
+        "(node:)?buffer": {
+            "Blob": "web.blob.Blob"
+        },
+        "node:child_process": {
+            "\\*": ""
+        },
+        "node:crypto": "node.crypto",
+        "node:dns$": {
+            "\\*": "",
+            ".+": "node.dns."
+        },
+        "node:dns/promises": {
+            "\\*": ""
+        },
+        "node:events": {
+            "Abortable": "web.abort.Abortable",
+            ".+": "node.events."
+        },
+        "node:fs": {
+            "\\*": "",
+            ".+": "node.fs."
+        },
+        "node:http": {
+            "\\*": "",
+            ".+": "node.http."
+        },
+        "node:module": "node.module",
+        "node:net": {
+            "\\*": "",
+            ".+": "node.net."
+        },
+        "node:os": "node.os",
+        "(node:)?perf_hooks": "node.perfHooks",
+        "node:querystring": "node.querystring",
+        "node:readline$": {
+            "Interface": "",
+            ".+": "node.readline."
+        },
+        "node:readline/promises": {
+            "\\*": ""
+        },
+        "(node:)?stream$": {
+            "\\*": "",
+            ".+": "node.stream."
+        },
+        "node:stream/promises": {
+            "\\*": ""
+        },
+        "node:stream/consumers": {
+            "\\*": ""
+        },
+        "node:stream/web": {
+            "\\*": "",
+            "ReadableStream": "web.streams.ReadableStream"
+        },
+        "node:test": "node.test",
+        "node:tls": {
+            "\\*": "",
+            ".+": "node.tls."
+        },
+        "node:tty": {
+            "\\*": ""
+        },
+        "(node:)?url": {
+            "\\*": "",
+            "URL": "web.url.URL",
+            "URLSearchParams": "web.url.URLSearchParams"
+        },
+        "(node:)?util$": {
+            "TextDecoder": "",
+            "TextEncoder": "",
+            ".+": "node.util."
+        },
+        "node:util/types": {
+            "\\*": ""
+        },
+        "node:vm": "node.vm",
+        "(node:)?worker_threads": {
+            "BroadcastChannel": "web.broadcast.BroadcastChannel",
+            "MessageChannel": "web.messaging.MessageChannel",
+            "MessagePort": "web.messaging.MessagePort",
+            ".+": "node.workerThreads."
+        }
+    },
     "importInjector": {
         "Async.kt": [
             "js.promise.Promise"
@@ -317,41 +403,11 @@
         "buffer/transcode.kt": [
             "js.typedarrays.Uint8Array"
         ],
-        "childProcess/ChildProcess.class.kt": [
-            "node.events.EventEmitter",
-            "node.stream.Pipe",
-            "node.stream.Readable",
-            "node.stream.Writable"
-        ],
-        "childProcess/ChildProcessByStdio.kt": [
-            "node.stream.Readable",
-            "node.stream.Writable"
-        ],
-        "childProcess/ChildProcessWithoutNullStreams.kt": [
-            "node.stream.Readable",
-            "node.stream.Writable"
-        ],
-        "childProcess/CommonSpawnOptions.kt": [
-            "web.abort.Abortable"
-        ],
         "childProcess/ExecFileOptions.kt": [
-            "web.abort.Abortable",
             "web.abort.AbortSignal"
         ],
         "childProcess/ExecOptions.kt": [
             "web.abort.AbortSignal"
-        ],
-        "childProcess/ForkOptions.kt": [
-            "web.abort.Abortable"
-        ],
-        "childProcess/MessagingOptions.kt": [
-            "web.abort.Abortable"
-        ],
-        "childProcess/ExecFileObjectEncodingOptions.kt": [
-            "node.fs.ObjectEncodingOptions"
-        ],
-        "childProcess/ExecObjectEncodingOptions.kt": [
-            "node.fs.ObjectEncodingOptions"
         ],
         "childProcess/PromiseWithChild.kt": [
             "js.promise.Promise"
@@ -366,9 +422,7 @@
             "js.array.ReadonlyArray"
         ],
         "childProcess/spawn.kt": [
-            "js.array.ReadonlyArray",
-            "node.stream.Readable",
-            "node.stream.Writable"
+            "js.array.ReadonlyArray"
         ],
         "childProcess/spawnSync.kt": [
             "js.array.ReadonlyArray"
@@ -397,9 +451,6 @@
         "crypto/Verify.kt": [
             "node.stream.WritableOptions"
         ],
-        "crypto/X509Certificate.kt": [
-            "node.tls.PeerCertificate"
-        ],
         "crypto/createDiffieHellman.kt": [
             "js.buffer.ArrayBuffer"
         ],
@@ -417,15 +468,7 @@
         ],
         "dgram/Socket.kt": [
             "js.array.ReadonlyArray",
-            "js.typedarrays.Uint8Array",
-            "node.events.EventEmitter",
-            "node.net.AddressInfo"
-        ],
-        "dgram/SocketOptions.kt": [
-            "web.abort.Abortable"
-        ],
-        "diagnosticsChannel/Channel.kt": [
-            "node.asyncHooks.AsyncLocalStorage"
+            "js.typedarrays.Uint8Array"
         ],
         "diagnosticsChannel/TracingChannel.kt": [
             "js.promise.Promise"
@@ -460,35 +503,10 @@
             "js.array.ReadonlyArray",
             "js.promise.await",
             "js.typedarrays.Uint8Array",
-            "web.streams.ReadableStream",
             "node.readline.Interface as ReadlineInterface"
-        ],
-        "fs/FileHandleWriteFileOptionsAsync.kt": [
-            "web.abort.Abortable"
         ],
         "fs/FileHandleWriteResultPayloadAsync.kt": [
             "js.typedarrays.Uint8Array"
-        ],
-        "fs/FSWatcher.kt": [
-            "node.events.EventEmitter"
-        ],
-        "fs/ReadFileOptions.kt": [
-            "web.abort.Abortable"
-        ],
-        "fs/ReadFileOptionsAsync.kt": [
-            "web.abort.Abortable"
-        ],
-        "fs/ReadFileBufferOptions.kt": [
-            "web.abort.Abortable"
-        ],
-        "fs/ReadFileBufferOptionsAsync.kt": [
-            "web.abort.Abortable"
-        ],
-        "fs/ReadFileStringOptions.kt": [
-            "web.abort.Abortable"
-        ],
-        "fs/ReadFileStringOptionsAsync.kt": [
-            "web.abort.Abortable"
         ],
         "fs/ReadStream.kt": [
             "node.stream.ReadableOptions"
@@ -499,14 +517,8 @@
         "fs/Stats.kt": [
             "kotlin.js.Date"
         ],
-        "fs/StatWatcher.kt": [
-            "node.events.EventEmitter"
-        ],
         "fs/StreamOptions.kt": [
             "web.abort.AbortSignal"
-        ],
-        "fs/WatchOptions.kt": [
-            "web.abort.Abortable"
         ],
         "fs/WriteStream.kt": [
             "node.stream.WritableOptions"
@@ -523,13 +535,7 @@
         "fs/appendFileSuspend.kt": [
             "js.typedarrays.Uint8Array"
         ],
-        "fs/cp.kt": [
-            "web.url.URL"
-        ],
         "fs/cpAsync.kt": [
-            "web.url.URL"
-        ],
-        "fs/cpSync.kt": [
             "web.url.URL"
         ],
         "fs/cpSuspend.kt": [
@@ -562,15 +568,10 @@
             "js.iterable.AsyncIterable"
         ],
         "fs/writeFileAsync.kt": [
-            "js.iterable.AsyncIterable",
-            "node.stream.Stream"
+            "js.iterable.AsyncIterable"
         ],
         "fs/writeFileSuspend.kt": [
-            "js.iterable.AsyncIterable",
-            "node.stream.Stream"
-        ],
-        "fs/WriteFileOptionsAsync.kt": [
-            "web.abort.Abortable"
+            "js.iterable.AsyncIterable"
         ],
         "fs/writev.kt": [
             "js.array.ReadonlyArray"
@@ -578,71 +579,20 @@
         "fs/writevSync.kt": [
             "js.array.ReadonlyArray"
         ],
-        "http/Agent.kt": [
-            "node.events.EventEmitter",
-            "node.net.Socket"
-        ],
-        "http/AgentOptions.kt": [
-            "node.net.TcpSocketConnectOpts"
-        ],
-        "http/ClientRequest.kt": [
-            "web.url.URL",
-            "node.net.Socket"
-        ],
         "http/ClientRequestArgs.kt": [
-            "web.abort.AbortSignal",
-            "web.url.URL",
-            "node.net.Socket",
-            "node.net.LookupFunction"
-        ],
-        "http/IncomingMessage.kt": [
-            "node.net.Socket"
+            "web.abort.AbortSignal"
         ],
         "http/OutgoingMessage.kt": [
-            "js.array.ReadonlyArray",
-            "node.net.Socket"
-        ],
-        "http/Server.kt": [
-            "node.net.Server as NetServer",
-            "node.net.Socket"
-        ],
-        "http/ServerResponse.kt": [
-            "node.net.Socket"
-        ],
-        "http/get.kt": [
-            "web.url.URL"
-        ],
-        "http/request.kt": [
-            "web.url.URL"
+            "js.array.ReadonlyArray"
         ],
         "http2/ClientSessionRequestOptions.kt": [
             "web.abort.AbortSignal"
         ],
-        "http2/ClientHttp2Session.kt": [
-            "node.http.OutgoingHttpHeaders"
-        ],
         "http2/Http2ServerResponse.kt": [
-            "js.typedarrays.Uint8Array",
-            "node.http.OutgoingHttpHeaders"
+            "js.typedarrays.Uint8Array"
         ],
         "http2/Http2Session.kt": [
             "node.events.EventEmitter"
-        ],
-        "http2/Http2Stream.kt": [
-            "node.http.OutgoingHttpHeaders"
-        ],
-        "http2/IncomingHttpHeaders.kt": [
-            "node.http.IncomingHttpHeaders as Http1IncomingHttpHeaders"
-        ],
-        "http2/ServerHttp2Stream.kt": [
-            "node.http.OutgoingHttpHeaders"
-        ],
-        "http2/ServerSessionOptions.kt": [
-            "node.http.IncomingMessage",
-            "node.http.ServerResponse"
-        ],
-        "http2/ServerStreamFileResponseOptions.kt": [
-            "node.http.OutgoingHttpHeaders"
         ],
         "http2/getUnpackedSettings.kt": [
             "js.typedarrays.Uint8Array"
@@ -652,8 +602,7 @@
         ],
         "https/Server.kt": [
             "node.http.IncomingMessage",
-            "node.http.ServerResponse",
-            "node.stream.Duplex"
+            "node.http.ServerResponse"
         ],
         "https/ServerOptions.kt": [
             "node.http.IncomingMessage",
@@ -663,26 +612,14 @@
             "node.http.IncomingMessage",
             "node.http.ServerResponse"
         ],
-        "https/get.kt": [
-            "web.url.URL"
-        ],
-        "https/request.kt": [
-            "web.url.URL"
-        ],
         "inspector/Session.kt": [
             "node.events.EventEmitter"
         ],
         "inspector/open.kt": [
             "js.disposable.Disposable"
         ],
-        "net/ListenOptions.kt": [
-            "web.abort.Abortable"
-        ],
         "net/OnReadOpts.kt": [
             "js.typedarrays.Uint8Array"
-        ],
-        "net/Server.kt": [
-            "node.events.EventEmitter"
         ],
         "net/Socket.kt": [
             "js.typedarrays.Uint8Array"
@@ -694,16 +631,12 @@
             "web.messaging.MessagePort"
         ],
         "module/Module.class.kt": [
-            "web.url.URL",
             "node.Module as NodeModule",
             "node.Require",
             "node.Require as NodeRequire"
         ],
         "os/constants/namespace.kt": [
             "node.os.SignalConstants"
-        ],
-        "perfHooks/PerformanceObserver.kt": [
-            "node.asyncHooks.AsyncResource"
         ],
         "perfHooks/PerformanceObserverObserveTypesOptions.kt": [
             "js.array.ReadonlyArray"
@@ -736,13 +669,8 @@
         "process/WorkerListener.kt": [
             "node.workerThreads.Worker"
         ],
-        "readline/Interface.kt": [
-            "node.events.EventEmitter",
-            "web.abort.Abortable"
-        ],
         "readline/InterfaceAsync.kt": [
-            "js.promise.await",
-            "web.abort.Abortable"
+            "js.promise.await"
         ],
         "readline/ReadlineAsync.kt": [
             "js.promise.await"
@@ -750,15 +678,8 @@
         "repl/Recoverable.kt": [
             "js.errors.SyntaxError"
         ],
-        "repl/REPLEval.kt": [
-            "node.vm.Context"
-        ],
         "repl/REPLServer.kt": [
-            "node.readline._Interface as Interface",
-            "node.vm.Context"
-        ],
-        "repl/Writer.kt": [
-            "node.util.InspectOptions"
+            "node.readline._Interface as Interface"
         ],
         "stream/ArrayOptions.kt": [
             "web.abort.AbortSignal"
@@ -819,51 +740,39 @@
         "stream/consumers/arrayBuffer.kt": [
             "js.promise.Promise",
             "js.buffer.ArrayBuffer",
-            "js.iterable.AsyncIterable",
-            "node.stream.Readable"
+            "js.iterable.AsyncIterable"
         ],
         "stream/consumers/arrayBufferSuspend.kt": [
             "js.buffer.ArrayBuffer",
-            "js.iterable.AsyncIterable",
-            "node.stream.Readable"
+            "js.iterable.AsyncIterable"
         ],
         "stream/consumers/blob.kt": [
             "js.promise.Promise",
-            "js.iterable.AsyncIterable",
-            "web.blob.Blob as NodeBlob",
-            "node.stream.Readable"
+            "js.iterable.AsyncIterable"
         ],
         "stream/consumers/blobSuspend.kt": [
-            "js.iterable.AsyncIterable",
-            "web.blob.Blob as NodeBlob",
-            "node.stream.Readable"
+            "js.iterable.AsyncIterable"
         ],
         "stream/consumers/buffer.kt": [
             "js.promise.Promise",
-            "js.iterable.AsyncIterable",
-            "node.stream.Readable"
+            "js.iterable.AsyncIterable"
         ],
         "stream/consumers/bufferSuspend.kt": [
-            "js.iterable.AsyncIterable",
-            "node.stream.Readable"
+            "js.iterable.AsyncIterable"
         ],
         "stream/consumers/json.kt": [
             "js.promise.Promise",
-            "js.iterable.AsyncIterable",
-            "node.stream.Readable"
+            "js.iterable.AsyncIterable"
         ],
         "stream/consumers/jsonSuspend.kt": [
-            "js.iterable.AsyncIterable",
-            "node.stream.Readable"
+            "js.iterable.AsyncIterable"
         ],
         "stream/consumers/text.kt": [
             "js.promise.Promise",
-            "js.iterable.AsyncIterable",
-            "node.stream.Readable"
+            "js.iterable.AsyncIterable"
         ],
         "stream/consumers/textSuspend.kt": [
-            "js.iterable.AsyncIterable",
-            "node.stream.Readable"
+            "js.iterable.AsyncIterable"
         ],
         "test/HookOptions.kt": [
             "web.abort.AbortSignal"
@@ -874,9 +783,6 @@
         "test/SuiteContext.kt": [
             "web.abort.AbortSignal"
         ],
-        "test/Test.class.kt": [
-            "node.asyncHooks.AsyncResource"
-        ],
         "test/TestContext.kt": [
             "web.abort.AbortSignal"
         ],
@@ -885,9 +791,6 @@
         ],
         "test/TestOptions.kt": [
             "web.abort.AbortSignal"
-        ],
-        "test/TestsStream.kt": [
-            "node.stream.Readable"
         ],
         "test/describe.kt": [
             "js.promise.Promise"
@@ -969,15 +872,8 @@
         "test/todo.kt": [
             "js.promise.Promise"
         ],
-        "test/reporters/Spec.kt": [
-            "node.stream.Transform"
-        ],
         "test/reporters/TestEventGenerator.kt": [
             "js.generator.AsyncGenerator"
-        ],
-        "test/reporters/Lcov.kt": [
-            "node.stream.Transform",
-            "node.stream.TransformOptions"
         ],
         "test/reporters/dot.kt": [
             "js.generator.AsyncGenerator"
@@ -987,9 +883,6 @@
         ],
         "test/reporters/tap.kt": [
             "js.generator.AsyncGenerator"
-        ],
-        "tls/TLSSocket.kt": [
-            "node.crypto.X509Certificate"
         ],
         "tls/namespace.kt": [
             "js.array.ReadonlyArray"
@@ -1004,11 +897,7 @@
             "web.url.URL"
         ],
         "url/urlToHttpOptions.kt": [
-            "web.url.URL",
-            "node.http.ClientRequestArgs"
-        ],
-        "url/UrlWithParsedQuery.kt": [
-            "node.querystring.ParsedUrlQuery"
+            "web.url.URL"
         ],
         "util/MIMEParams.kt": [
             "js.iterable.IterableIterator"
@@ -1047,9 +936,6 @@
         "v8/Deserializer.kt": [
             "js.buffer.ArrayBuffer"
         ],
-        "v8/getHeapSnapshot.kt": [
-            "node.stream.Readable"
-        ],
         "v8/Init.kt": [
             "js.promise.Promise"
         ],
@@ -1065,21 +951,8 @@
         "vm/Module.kt": [
             "js.promise.Promise"
         ],
-        "vm/ModuleLinkerExtra.kt": [
-            "node.module.ImportAttributes"
-        ],
-        "vm/RunningCodeInNewContextOptions.kt": [
-            "node.module.ImportAttributes"
-        ],
-        "vm/RunningCodeOptions.kt": [
-            "node.module.ImportAttributes"
-        ],
-        "vm/ScriptOptions.kt": [
-            "node.module.ImportAttributes"
-        ],
         "vm/SourceTextModuleOptions.kt": [
-            "js.import.ImportMeta",
-            "node.module.ImportAttributes"
+            "js.import.ImportMeta"
         ],
         "vm/compileFunction.kt": [
             "js.array.ReadonlyArray"
@@ -1089,18 +962,10 @@
         ],
         "workerThreads/Worker.kt": [
             "js.array.ReadonlyArray",
-            "js.promise.Promise",
-            "web.url.URL",
-            "node.events.EventEmitter",
-            "node.stream.Readable",
-            "node.stream.Writable"
-        ],
-        "workerThreads/WorkerPerformance.kt": [
-            "node.perfHooks.EventLoopUtilityFunction"
+            "js.promise.Promise"
         ],
         "workerThreads/moveMessagePortToContext.kt": [
-            "web.messaging.MessagePort",
-            "node.vm.Context"
+            "web.messaging.MessagePort"
         ],
         "workerThreads/namespace.kt": [
             "web.messaging.MessagePort"

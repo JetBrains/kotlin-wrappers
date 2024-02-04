@@ -5,8 +5,6 @@
 package node.dns
 
 
-/* import * as dnsPromises from "node:dns/promises"; */
-
 // Supported getaddrinfo flags.
 external val ADDRCONFIG: Double
 

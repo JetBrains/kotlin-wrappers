@@ -3,6 +3,3 @@
 @file:JsModule("node:tty")
 
 package node.tty
-
-
-/* import * as net from "node:net"; */
