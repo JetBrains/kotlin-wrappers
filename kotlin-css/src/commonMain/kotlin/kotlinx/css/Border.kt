@@ -7,26 +7,26 @@ class Border(width: LinearDimension, style: BorderStyle, color: Color = Color.cu
 }
 
 var StyledElement.border: Border
-    set(value) = put("border", value.value)
     @Deprecated("Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
+    set(value) = put("border", value.value)
 
 var StyledElement.borderTop: Border
-    set(value) = put("borderTop", value.value)
     @Deprecated("Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
+    set(value) = put("borderTop", value.value)
 
 var StyledElement.borderRight: Border
-    set(value) = put("borderRight", value.value)
     @Deprecated("Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
+    set(value) = put("borderRight", value.value)
 
 var StyledElement.borderBottom: Border
-    set(value) = put("borderBottom", value.value)
     @Deprecated("Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
+    set(value) = put("borderBottom", value.value)
 
 var StyledElement.borderLeft: Border
-    set(value) = put("borderLeft", value.value)
     @Deprecated("Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
+    set(value) = put("borderLeft", value.value)

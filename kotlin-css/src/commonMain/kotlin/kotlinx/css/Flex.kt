@@ -17,7 +17,7 @@ data class Flex(override val value: String) : CssValue(value) {
 }
 
 var StyledElement.flex: Flex
-    set(value) = put("flex", value.value)
     @Deprecated("Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
+    set(value) = put("flex", value.value)
 

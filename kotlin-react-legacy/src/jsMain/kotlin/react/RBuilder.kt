@@ -123,14 +123,14 @@ interface RElementBuilder<out P : Props> : RBuilder {
     }
 
     var key: Key?
-        @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
+        @Deprecated("Write-only property", level = DeprecationLevel.HIDDEN)
         get() = error("")
         set(value) {
             attrs.key = value
         }
 
     var ref: Ref<*>?
-        @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
+        @Deprecated("Write-only property", level = DeprecationLevel.HIDDEN)
         get() = error("")
         set(value) {
             attrs.ref = value

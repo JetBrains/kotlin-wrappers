@@ -23,6 +23,8 @@ data class Padding(
 }
 
 var StyledElement.padding: Padding
+    @Deprecated("Write-only property", level = DeprecationLevel.HIDDEN)
+    get() = error("")
     set(value) {
         val (top, right, bottom, left) = value
         if (top != null && right != null && bottom != null && left != null) {
@@ -34,10 +36,10 @@ var StyledElement.padding: Padding
             left?.let { this.paddingLeft = it }
         }
     }
-    @Deprecated("Write-only property", level = DeprecationLevel.HIDDEN)
-    get() = error("")
 
 var StyledElement.scrollPadding: Padding
+    @Deprecated("Write-only property", level = DeprecationLevel.HIDDEN)
+    get() = error("")
     set(value) {
         val (top, right, bottom, left) = value
         if (top != null && right != null && bottom != null && left != null) {
@@ -49,5 +51,3 @@ var StyledElement.scrollPadding: Padding
             left?.let { this.scrollPaddingLeft = it }
         }
     }
-    @Deprecated("Write-only property", level = DeprecationLevel.HIDDEN)
-    get() = error("")
