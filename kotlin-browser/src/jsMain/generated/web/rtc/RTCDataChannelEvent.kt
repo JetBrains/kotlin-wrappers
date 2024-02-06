@@ -7,12 +7,7 @@
 package web.rtc
 
 import web.events.Event
-import web.events.EventInit
 import web.events.EventType
-
-external interface RTCDataChannelEventInit : EventInit {
-    var channel: RTCDataChannel
-}
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannelEvent)

@@ -7,13 +7,7 @@
 package web.animations
 
 import web.events.Event
-import web.events.EventInit
 import web.events.EventType
-
-external interface AnimationPlaybackEventInit : EventInit {
-    var currentTime: CSSNumberish?
-    var timelineTime: CSSNumberish?
-}
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationPlaybackEvent)

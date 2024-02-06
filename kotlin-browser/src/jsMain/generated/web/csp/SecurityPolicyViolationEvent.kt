@@ -7,23 +7,7 @@
 package web.csp
 
 import web.events.Event
-import web.events.EventInit
 import web.events.EventType
-
-external interface SecurityPolicyViolationEventInit : EventInit {
-    var blockedURI: String?
-    var columnNumber: Int?
-    var disposition: SecurityPolicyViolationEventDisposition
-    var documentURI: String
-    var effectiveDirective: String
-    var lineNumber: Int?
-    var originalPolicy: String
-    var referrer: String?
-    var sample: String?
-    var sourceFile: String?
-    var statusCode: Short
-    var violatedDirective: String
-}
 
 /**
  * Inherits from Event, and represents the event object of an event sent on a document or worker when its content security policy is violated.

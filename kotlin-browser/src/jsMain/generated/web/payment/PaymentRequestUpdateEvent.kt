@@ -8,10 +8,7 @@ package web.payment
 
 import js.promise.PromiseLike
 import web.events.Event
-import web.events.EventInit
 import web.events.EventType
-
-external interface PaymentRequestUpdateEventInit : EventInit
 
 /**
  * This Payment Request API interface enables a web page to update the details of a PaymentRequest in response to a user action.

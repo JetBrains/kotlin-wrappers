@@ -9,11 +9,6 @@ package web.serviceworker
 import web.events.EventType
 import web.notifications.Notification
 
-external interface NotificationEventInit : ExtendableEventInit {
-    var action: String?
-    var notification: Notification
-}
-
 /**
  * The parameter passed into the onnotificationclick handler, the NotificationEvent interface represents a notification click event that is dispatched on the ServiceWorkerGlobalScope of a ServiceWorker.
  *

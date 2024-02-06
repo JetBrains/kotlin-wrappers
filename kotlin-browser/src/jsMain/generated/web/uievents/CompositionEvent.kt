@@ -8,10 +8,6 @@ package web.uievents
 
 import web.events.EventType
 
-external interface CompositionEventInit : UIEventInit {
-    var data: String?
-}
-
 /**
  * The DOM CompositionEvent represents events that occur due to the user indirectly entering text.
  *

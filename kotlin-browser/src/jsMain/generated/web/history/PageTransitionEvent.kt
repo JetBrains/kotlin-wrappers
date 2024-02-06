@@ -7,12 +7,7 @@
 package web.history
 
 import web.events.Event
-import web.events.EventInit
 import web.events.EventType
-
-external interface PageTransitionEventInit : EventInit {
-    var persisted: Boolean?
-}
 
 /**
  * The PageTransitionEvent is fired when a document is being loaded or unloaded.

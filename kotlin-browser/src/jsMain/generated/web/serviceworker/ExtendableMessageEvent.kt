@@ -10,14 +10,6 @@ import js.array.ReadonlyArray
 import web.events.EventType
 import web.messaging.MessagePort
 
-external interface ExtendableMessageEventInit : ExtendableEventInit {
-    var data: Any?
-    var lastEventId: String?
-    var origin: String?
-    var ports: ReadonlyArray<MessagePort>?
-    var source: Any /* Client | ServiceWorker | MessagePort */?
-}
-
 /**
  * This ServiceWorker API interface represents the event object of a message event fired on a service worker (when a channel message is received on the ServiceWorkerGlobalScope from another context) — extends the lifetime of such events.
  *

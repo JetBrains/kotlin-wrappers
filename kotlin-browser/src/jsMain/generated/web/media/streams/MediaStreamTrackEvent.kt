@@ -7,12 +7,7 @@
 package web.media.streams
 
 import web.events.Event
-import web.events.EventInit
 import web.events.EventType
-
-external interface MediaStreamTrackEventInit : EventInit {
-    var track: MediaStreamTrack
-}
 
 /**
  * Events which indicate that a MediaStream has had tracks added to or removed from the stream through calls to Media Stream API methods. These events are sent to the stream when these changes occur.

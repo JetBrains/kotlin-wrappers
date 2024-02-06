@@ -8,12 +8,7 @@ package web.clipboard
 
 import web.data.DataTransfer
 import web.events.Event
-import web.events.EventInit
 import web.events.EventType
-
-external interface ClipboardEventInit : EventInit {
-    var clipboardData: DataTransfer?
-}
 
 /**
  * Events providing information related to modification of the clipboard, that is cut, copy, and paste events.

@@ -8,12 +8,7 @@ package web.midi
 
 import js.typedarrays.Uint8Array
 import web.events.Event
-import web.events.EventInit
 import web.events.EventType
-
-external interface MIDIMessageEventInit : EventInit {
-    var data: Uint8Array?
-}
 
 /**
  * Available only in secure contexts.

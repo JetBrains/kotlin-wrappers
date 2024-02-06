@@ -7,13 +7,7 @@
 package web.history
 
 import web.events.Event
-import web.events.EventInit
 import web.events.EventType
-
-external interface HashChangeEventInit : EventInit {
-    var newURL: String?
-    var oldURL: String?
-}
 
 /**
  * Events that fire when the fragment identifier of the URL has changed.

@@ -7,12 +7,7 @@
 package web.history
 
 import web.events.Event
-import web.events.EventInit
 import web.events.EventType
-
-external interface PopStateEventInit : EventInit {
-    var state: Any?
-}
 
 /**
  * PopStateEvent is an event handler for the popstate event on the window.

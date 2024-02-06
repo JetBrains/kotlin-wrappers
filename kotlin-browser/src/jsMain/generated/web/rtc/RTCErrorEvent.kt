@@ -7,12 +7,7 @@
 package web.rtc
 
 import web.events.Event
-import web.events.EventInit
 import web.events.EventType
-
-external interface RTCErrorEventInit : EventInit {
-    var error: RTCError
-}
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCErrorEvent)

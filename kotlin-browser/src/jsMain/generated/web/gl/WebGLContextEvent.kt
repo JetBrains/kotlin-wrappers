@@ -7,12 +7,7 @@
 package web.gl
 
 import web.events.Event
-import web.events.EventInit
 import web.events.EventType
-
-external interface WebGLContextEventInit : EventInit {
-    var statusMessage: String?
-}
 
 /**
  * The WebContextEvent interface is part of the WebGL API and is an interface for an event that is generated in response to a status change to the WebGL rendering context.

@@ -7,16 +7,7 @@
 package web.storage
 
 import web.events.Event
-import web.events.EventInit
 import web.events.EventType
-
-external interface StorageEventInit : EventInit {
-    var key: String?
-    var newValue: String?
-    var oldValue: String?
-    var storageArea: Storage?
-    var url: String?
-}
 
 /**
  * A StorageEvent is sent to a window when a storage area it has access to is changed within the context of another document.

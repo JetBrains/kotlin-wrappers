@@ -7,12 +7,7 @@
 package web.rtc
 
 import web.events.Event
-import web.events.EventInit
 import web.events.EventType
-
-external interface RTCDTMFToneChangeEventInit : EventInit {
-    var tone: String?
-}
 
 /**
  * Events sent to indicate that DTMF tones have started or finished playing. This interface is used by the tonechange event.

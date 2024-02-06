@@ -7,12 +7,7 @@
 package web.midi
 
 import web.events.Event
-import web.events.EventInit
 import web.events.EventType
-
-external interface MIDIConnectionEventInit : EventInit {
-    var port: MIDIPort?
-}
 
 /**
  * Available only in secure contexts.

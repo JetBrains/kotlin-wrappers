@@ -7,13 +7,7 @@
 package web.rtc
 
 import web.events.Event
-import web.events.EventInit
 import web.events.EventType
-
-external interface RTCPeerConnectionIceEventInit : EventInit {
-    var candidate: RTCIceCandidate?
-    var url: String?
-}
 
 /**
  * Events that occurs in relation to ICE candidates with the target, usually an RTCPeerConnection. Only one event is of this type: icecandidate.

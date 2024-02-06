@@ -7,13 +7,7 @@
 package web.cssom
 
 import web.events.Event
-import web.events.EventInit
 import web.events.EventType
-
-external interface MediaQueryListEventInit : EventInit {
-    var matches: Boolean?
-    var media: MediaQuery?
-}
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent)

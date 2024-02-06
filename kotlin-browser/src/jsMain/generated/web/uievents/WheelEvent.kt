@@ -8,13 +8,6 @@ package web.uievents
 
 import web.events.EventType
 
-external interface WheelEventInit : MouseEventInit {
-    var deltaMode: DeltaMode?
-    var deltaX: Double?
-    var deltaY: Double?
-    var deltaZ: Double?
-}
-
 /**
  * Events that occur due to the user moving a mouse wheel or similar input device.
  *

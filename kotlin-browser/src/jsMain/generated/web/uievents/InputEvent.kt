@@ -11,14 +11,6 @@ import web.data.DataTransfer
 import web.events.EventType
 import web.ranges.StaticRange
 
-external interface InputEventInit : UIEventInit {
-    var data: String?
-    var dataTransfer: DataTransfer?
-    var inputType: String?
-    var isComposing: Boolean?
-    var targetRanges: ReadonlyArray<StaticRange>?
-}
-
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputEvent)
  */

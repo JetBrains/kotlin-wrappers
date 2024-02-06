@@ -13,15 +13,6 @@ import web.events.EventType
 import web.http.Request
 import web.http.Response
 
-external interface FetchEventInit : ExtendableEventInit {
-    var clientId: String?
-    var handled: Promise<Void>?
-    var preloadResponse: Promise<*>?
-    var replacesClientId: String?
-    var request: Request
-    var resultingClientId: String?
-}
-
 /**
  * This is the event type for fetch events dispatched on the service worker global scope. It contains information about the fetch, including the request and how the receiver will treat the response. It provides the event.respondWith() method, which allows us to provide a response to this fetch.
  *

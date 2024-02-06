@@ -7,13 +7,8 @@
 package web.form
 
 import web.events.Event
-import web.events.EventInit
 import web.events.EventType
 import web.html.HTMLElement
-
-external interface SubmitEventInit : EventInit {
-    var submitter: HTMLElement?
-}
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubmitEvent)

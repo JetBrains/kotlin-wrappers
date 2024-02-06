@@ -10,14 +10,6 @@ import web.events.EventType
 import web.keyboard.KeyCode
 import web.keyboard.ModifierKeyCode
 
-external interface KeyboardEventInit : EventModifierInit {
-    var code: KeyCode?
-    var isComposing: Boolean?
-    var key: String?
-    var location: KeyLocation?
-    var repeat: Boolean?
-}
-
 /**
  * KeyboardEvent objects describe a user interaction with the keyboard; each event describes a single interaction between the user and a key (or combination of a key with modifier keys) on the keyboard.
  *

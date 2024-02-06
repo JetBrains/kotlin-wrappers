@@ -9,12 +9,6 @@ package web.events
 import js.array.ReadonlyArray
 import web.time.DOMHighResTimeStamp
 
-external interface EventInit {
-    var bubbles: Boolean?
-    var cancelable: Boolean?
-    var composed: Boolean?
-}
-
 open external class Event(
     open val type: EventType<Event>,
     init: EventInit = definedExternally,

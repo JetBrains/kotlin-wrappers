@@ -7,16 +7,7 @@
 package web.speech
 
 import web.events.Event
-import web.events.EventInit
 import web.events.EventType
-
-external interface SpeechSynthesisEventInit : EventInit {
-    var charIndex: Int?
-    var charLength: Int?
-    var elapsedTime: Float?
-    var name: String?
-    var utterance: SpeechSynthesisUtterance
-}
 
 /**
  * This Web Speech API interface contains information about the current state of SpeechSynthesisUtterance objects that have been processed in the speech service.

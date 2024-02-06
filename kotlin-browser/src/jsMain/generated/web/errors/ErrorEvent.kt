@@ -7,16 +7,7 @@
 package web.errors
 
 import web.events.Event
-import web.events.EventInit
 import web.events.EventType
-
-external interface ErrorEventInit : EventInit {
-    var colno: Int?
-    var error: Any?
-    var filename: String?
-    var lineno: Int?
-    var message: String?
-}
 
 /**
  * Events providing information related to errors in scripts or in files.

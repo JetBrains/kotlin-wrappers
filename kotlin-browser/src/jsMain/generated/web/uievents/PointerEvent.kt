@@ -9,21 +9,6 @@ package web.uievents
 import js.array.ReadonlyArray
 import web.events.EventType
 
-external interface PointerEventInit : MouseEventInit {
-    var coalescedEvents: ReadonlyArray<PointerEvent>?
-    var height: Double?
-    var isPrimary: Boolean?
-    var pointerId: Int?
-    var pointerType: String?
-    var predictedEvents: ReadonlyArray<PointerEvent>?
-    var pressure: Float?
-    var tangentialPressure: Float?
-    var tiltX: Int?
-    var tiltY: Int?
-    var twist: Int?
-    var width: Double?
-}
-
 /**
  * The state of a DOM event produced by a pointer such as the geometry of the contact point, the device type that generated the event, the amount of pressure that was applied on the contact surface, etc.
  *

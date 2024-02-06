@@ -8,13 +8,7 @@ package web.idb
 
 import js.core.JsLong
 import web.events.Event
-import web.events.EventInit
 import web.events.EventType
-
-external interface IDBVersionChangeEventInit : EventInit {
-    var newVersion: JsLong?
-    var oldVersion: JsLong?
-}
 
 /**
  * This IndexedDB API interface indicates that the version of the database has changed, as the result of an IDBOpenDBRequest.onupgradeneeded event handler function.

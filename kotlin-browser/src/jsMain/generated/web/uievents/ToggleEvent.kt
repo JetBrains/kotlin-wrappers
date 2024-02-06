@@ -7,13 +7,7 @@
 package web.uievents
 
 import web.events.Event
-import web.events.EventInit
 import web.events.EventType
-
-external interface ToggleEventInit : EventInit {
-    var newState: String?
-    var oldState: String?
-}
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ToggleEvent)

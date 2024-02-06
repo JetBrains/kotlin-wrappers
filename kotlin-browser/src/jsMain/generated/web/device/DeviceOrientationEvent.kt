@@ -7,15 +7,7 @@
 package web.device
 
 import web.events.Event
-import web.events.EventInit
 import web.events.EventType
-
-external interface DeviceOrientationEventInit : EventInit {
-    var absolute: Boolean?
-    var alpha: Double?
-    var beta: Double?
-    var gamma: Double?
-}
 
 /**
  * The DeviceOrientationEvent provides web developers with information from the physical orientation of the device running the web page.

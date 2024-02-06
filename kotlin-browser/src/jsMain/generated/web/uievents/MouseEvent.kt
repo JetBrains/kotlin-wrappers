@@ -10,18 +10,6 @@ import web.events.EventTarget
 import web.events.EventType
 import web.keyboard.ModifierKeyCode
 
-external interface MouseEventInit : EventModifierInit {
-    var button: MouseButton?
-    var buttons: MouseButtons?
-    var clientX: Int?
-    var clientY: Int?
-    var movementX: Double?
-    var movementY: Double?
-    var relatedTarget: EventTarget?
-    var screenX: Int?
-    var screenY: Int?
-}
-
 /**
  * Events that occur due to the user interacting with a pointing device (such as a mouse). Common events using this interface include click, dblclick, mouseup, mousedown.
  *

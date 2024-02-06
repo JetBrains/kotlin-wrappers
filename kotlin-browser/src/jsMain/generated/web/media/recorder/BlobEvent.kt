@@ -11,11 +11,6 @@ import web.events.Event
 import web.events.EventType
 import web.time.DOMHighResTimeStamp
 
-external interface BlobEventInit {
-    var data: Blob
-    var timecode: DOMHighResTimeStamp?
-}
-
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BlobEvent)
  */

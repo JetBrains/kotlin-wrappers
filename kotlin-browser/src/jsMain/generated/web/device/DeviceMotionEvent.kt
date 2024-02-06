@@ -7,15 +7,7 @@
 package web.device
 
 import web.events.Event
-import web.events.EventInit
 import web.events.EventType
-
-external interface DeviceMotionEventInit : EventInit {
-    var acceleration: DeviceMotionEventAccelerationInit?
-    var accelerationIncludingGravity: DeviceMotionEventAccelerationInit?
-    var interval: Double?
-    var rotationRate: DeviceMotionEventRotationRateInit?
-}
 
 /**
  * The DeviceMotionEvent provides web developers with information about the speed of changes for the device's position and orientation.

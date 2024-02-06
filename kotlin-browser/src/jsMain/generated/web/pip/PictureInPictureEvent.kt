@@ -7,12 +7,7 @@
 package web.pip
 
 import web.events.Event
-import web.events.EventInit
 import web.events.EventType
-
-external interface PictureInPictureEventInit : EventInit {
-    var pictureInPictureWindow: PictureInPictureWindow
-}
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PictureInPictureEvent)

@@ -8,11 +8,6 @@ package web.payment
 
 import web.events.EventType
 
-external interface PaymentMethodChangeEventInit : PaymentRequestUpdateEventInit {
-    var methodDetails: Any?
-    var methodName: String?
-}
-
 /**
  * Available only in secure contexts.
  *

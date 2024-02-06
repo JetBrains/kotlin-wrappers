@@ -8,13 +8,7 @@ package web.media.key
 
 import js.buffer.ArrayBuffer
 import web.events.Event
-import web.events.EventInit
 import web.events.EventType
-
-external interface MediaKeyMessageEventInit : EventInit {
-    var message: ArrayBuffer
-    var messageType: MediaKeyMessageType
-}
 
 /**
  * This EncryptedMediaExtensions API interface contains the content and related data when the content decryption module generates a message for the session.

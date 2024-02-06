@@ -7,14 +7,7 @@
 package web.animations
 
 import web.events.Event
-import web.events.EventInit
 import web.events.EventType
-
-external interface AnimationEventInit : EventInit {
-    var animationName: String?
-    var elapsedTime: Double?
-    var pseudoElement: String?
-}
 
 /**
  * Events providing information related to animations.

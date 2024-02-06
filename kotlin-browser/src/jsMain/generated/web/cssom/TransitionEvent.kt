@@ -7,14 +7,7 @@
 package web.cssom
 
 import web.events.Event
-import web.events.EventInit
 import web.events.EventType
-
-external interface TransitionEventInit : EventInit {
-    var elapsedTime: Double?
-    var propertyName: String?
-    var pseudoElement: String?
-}
 
 /**
  * Events providing information related to transitions.

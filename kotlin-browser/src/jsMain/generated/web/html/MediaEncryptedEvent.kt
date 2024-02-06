@@ -8,13 +8,7 @@ package web.html
 
 import js.buffer.ArrayBuffer
 import web.events.Event
-import web.events.EventInit
 import web.events.EventType
-
-external interface MediaEncryptedEventInit : EventInit {
-    var initData: ArrayBuffer?
-    var initDataType: String?
-}
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaEncryptedEvent)

@@ -8,16 +8,7 @@ package web.messaging
 
 import js.array.ReadonlyArray
 import web.events.Event
-import web.events.EventInit
 import web.events.EventType
-
-external interface MessageEventInit<T> : EventInit {
-    var data: T?
-    var lastEventId: String?
-    var origin: String?
-    var ports: ReadonlyArray<MessagePort>?
-    var source: MessageEventSource?
-}
 
 /**
  * A message received by a target object.
