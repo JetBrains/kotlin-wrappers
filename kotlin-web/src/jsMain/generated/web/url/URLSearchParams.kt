@@ -29,7 +29,7 @@ external class URLSearchParams(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/append)
      */
     fun append(
-        name: String,
+        key: String,
         value: String,
     )
 
@@ -39,7 +39,7 @@ external class URLSearchParams(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/delete)
      */
     fun delete(
-        name: String,
+        key: String,
         value: String = definedExternally,
     )
 
@@ -48,14 +48,14 @@ external class URLSearchParams(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/get)
      */
-    operator fun get(name: String): String?
+    operator fun get(key: String): String?
 
     /**
      * Returns all the values association with a given search parameter.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/getAll)
      */
-    fun getAll(name: String): ReadonlyArray<String>
+    fun getAll(key: String): ReadonlyArray<String>
 
     /**
      * Returns a Boolean indicating if such a search parameter exists.
@@ -63,7 +63,7 @@ external class URLSearchParams(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/has)
      */
     fun has(
-        name: String,
+        key: String,
         value: String = definedExternally,
     ): Boolean
 
@@ -73,7 +73,7 @@ external class URLSearchParams(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/set)
      */
     operator fun set(
-        name: String,
+        key: String,
         value: String,
     )
 
