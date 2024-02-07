@@ -1,9 +1,10 @@
 package js.collections
 
 external interface ReadonlySet<out T> :
-    CollectionLike<@UnsafeVariance T, T> {
+    CollectionLike<@UnsafeVariance T, T>,
+    SetLike<T> {
 
-    val size: Int
+    override val size: Int
 
-    fun has(key: @UnsafeVariance T): Boolean
+    override fun has(key: @UnsafeVariance T): Boolean
 }
