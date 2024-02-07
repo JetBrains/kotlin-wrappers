@@ -4,17 +4,19 @@ package web.cssom
 
 import js.array.ReadonlyArray
 import js.collections.MapLike
+import js.collections.SetLike
 import js.iterable.JsIterable
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMapReadOnly)
  */
 sealed external class StylePropertyMapReadOnly :
-    MapLike<String, JsIterable<CSSStyleValue>> {
+    MapLike<String, JsIterable<CSSStyleValue>>,
+    SetLike<String> {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMapReadOnly/size)
      */
-    val size: Int
+    override val size: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMapReadOnly/get)
@@ -29,5 +31,5 @@ sealed external class StylePropertyMapReadOnly :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMapReadOnly/has)
      */
-    fun has(property: String): Boolean
+    override fun has(key: String): Boolean
 }
