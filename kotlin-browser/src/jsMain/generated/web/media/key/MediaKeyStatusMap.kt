@@ -3,7 +3,7 @@
 package web.media.key
 
 import js.buffer.BufferSource
-import js.collections.MapLike
+import js.collections.ReadonlyMap
 
 /**
  * This EncryptedMediaExtensions API interface is a read-only map of media key statuses by key IDs.
@@ -12,19 +12,19 @@ import js.collections.MapLike
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyStatusMap)
  */
 sealed external class MediaKeyStatusMap :
-    MapLike<BufferSource, MediaKeyStatus> {
+    ReadonlyMap<BufferSource, MediaKeyStatus> {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyStatusMap/size)
      */
-    val size: Int
+    override val size: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyStatusMap/get)
      */
-    operator fun get(keyId: BufferSource): MediaKeyStatus?
+    override operator fun get(key: BufferSource): MediaKeyStatus?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyStatusMap/has)
      */
-    fun has(keyId: BufferSource): Boolean
+    override fun has(key: BufferSource): Boolean
 }
