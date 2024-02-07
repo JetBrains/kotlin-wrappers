@@ -19,7 +19,7 @@ external class JsSet<T>(
     fun difference(other: ReadonlySet<T>): JsSet<T>
     override fun entries(): IterableIterator<JsTuple2<T, T>>
     override fun forEach(action: (value: T) -> Unit)
-    override fun has(value: T): Boolean
+    override fun has(key: T): Boolean
     fun intersection(other: ReadonlySet<T>): JsSet<T>
     fun isDisjointFrom(other: ReadonlySet<T>): Boolean
     fun isSubsetOf(other: ReadonlySet<T>): Boolean

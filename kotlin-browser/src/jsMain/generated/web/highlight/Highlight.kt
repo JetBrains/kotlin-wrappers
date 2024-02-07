@@ -30,7 +30,7 @@ external class Highlight(
     override fun delete(value: AbstractRange): Boolean
     override fun entries(): IterableIterator<JsTuple2<AbstractRange, AbstractRange>>
     override fun forEach(action: (value: AbstractRange) -> Unit)
-    override fun has(value: AbstractRange): Boolean
+    override fun has(key: AbstractRange): Boolean
     override fun keys(): IterableIterator<AbstractRange>
     override fun values(): IterableIterator<AbstractRange>
 }

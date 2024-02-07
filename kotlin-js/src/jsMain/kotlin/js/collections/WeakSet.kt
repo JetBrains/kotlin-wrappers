@@ -7,5 +7,5 @@ external class WeakSet<in T>(
 ) {
     fun add(value: T): WeakSet<T>
     fun delete(value: T): Boolean
-    fun has(value: T): Boolean
+    fun has(key: T): Boolean
 }

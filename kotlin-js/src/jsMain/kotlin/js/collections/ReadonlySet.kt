@@ -5,5 +5,5 @@ external interface ReadonlySet<out T> :
 
     val size: Int
 
-    fun has(value: @UnsafeVariance T): Boolean
+    fun has(key: @UnsafeVariance T): Boolean
 }
