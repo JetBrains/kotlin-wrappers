@@ -4,7 +4,7 @@ package web.url
 
 import js.array.JsTuple2
 import js.array.ReadonlyArray
-import js.collections.MapLike
+import js.collections.ReadonlyMap
 import js.iterable.IterableIterator
 import js.objects.ReadonlyRecord
 
@@ -13,7 +13,7 @@ import js.objects.ReadonlyRecord
  */
 external class URLSearchParams(
     init: ReadonlyArray<JsTuple2<String, String>> = definedExternally,
-) : MapLike<String, String> {
+) : ReadonlyMap<String, String> {
     constructor(init: ReadonlyRecord<String, String>)
     constructor(init: String)
     constructor(init: URLSearchParams)
@@ -21,7 +21,7 @@ external class URLSearchParams(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/size)
      */
-    val size: Int
+    override val size: Int
 
     /**
      * Appends a specified key/value pair as a new search parameter.
@@ -48,7 +48,7 @@ external class URLSearchParams(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/get)
      */
-    operator fun get(key: String): String?
+    override operator fun get(key: String): String?
 
     /**
      * Returns all the values association with a given search parameter.
@@ -62,9 +62,13 @@ external class URLSearchParams(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/has)
      */
+    override fun has(
+        key: String,
+    ): Boolean
+
     fun has(
         key: String,
-        value: String = definedExternally,
+        value: String,
     ): Boolean
 
     /**
