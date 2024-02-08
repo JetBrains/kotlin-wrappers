@@ -41,20 +41,12 @@ internal fun CssBuilder.getCssRules(outerSelector: String?, indent: String = "")
 
     handleRules.forEach { (selector, css) ->
         val resolvedSelector = resolveRelative(selector, outerSelector)
-        if (withMedia(resolvedSelector)) {
+        if (withContainer(resolvedSelector) || withMedia(resolvedSelector) || withSupports(resolvedSelector)) {
             result.add(
                 buildString {
                     appendLine("$indent$selector {")
                     css.getCssRules(outerSelector, "  $indent").forEach { appendLine(it); }
                     appendLine("$indent}")
-                }
-            )
-        } else if (withContainer(resolvedSelector) || withSupports(resolvedSelector)) {
-            result.add(
-                buildString {
-                    append("$indent$selector {\n")
-                    css.getCssRules("  $indent").forEach { appendLine(it); }
-                    append("$indent}\n")
                 }
             )
         } else {

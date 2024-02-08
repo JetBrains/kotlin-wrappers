@@ -1,3 +1,7 @@
+## 1.2.4
+
+Fix CSS container queries
+
 ## 1.2.3
 
 Do not assign a generated class name (`ksc-XXX`) if the `css` block is empty.

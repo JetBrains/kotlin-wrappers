@@ -16,23 +16,42 @@ import kotlin.test.assertEquals
  */
 class AtRulesTest : TestBase() {
     @Test
-    fun supports() = runTest {
-        val query = "(color: $firstColor)"
+    fun container() = runTest {
+        val query = "(max-width: 600px)"
         val styledComponent = fc<Props> {
-            styledDiv {
+            styledSpan {
                 css {
-                    supports(query) {
-                        "div" {
-                            color = firstColor
-                        }
+                    container(query) {
+                        textTransform = TextTransform.capitalize
                     }
                 }
-                div {}
             }
         }
-        val element = clearAndInject(styledComponent)
-        assertEquals(firstColor.toString(), element.childAt(0).color())
-        assertCssInjected("@supports $query", "color" to firstColor.toString())
+        clearAndInject(styledComponent)
+        assertCssInjected(
+            "@container $query",
+            "text-transform" to "capitalize",
+        )
+    }
+
+    @Test
+    fun containerName() = runTest {
+        val query = "(max-width: 600px)"
+        val containerName = ContainerName("foo")
+        val styledComponent = fc<Props> {
+            styledSpan {
+                css {
+                    container(containerName, query) {
+                        textTransform = TextTransform.capitalize
+                    }
+                }
+            }
+        }
+        clearAndInject(styledComponent)
+        assertCssInjected(
+            "@container ${containerName.value} $query",
+            "text-transform" to "capitalize",
+        )
     }
 
     @Test
@@ -48,6 +67,25 @@ class AtRulesTest : TestBase() {
         }
         clearAndInject(styledComponent)
         assertCssInjected("@font-face", "font-family" to "Roboto")
+    }
+
+    @Test
+    fun media() = runTest {
+        val query = "only screen and (max-width: 600px)"
+        val styledComponent = fc<Props> {
+            styledSpan {
+                css {
+                    media(query) {
+                        textTransform = TextTransform.capitalize
+                    }
+                }
+            }
+        }
+        clearAndInject(styledComponent)
+        assertCssInjected(
+            "@media $query",
+            "text-transform" to "capitalize",
+        )
     }
 
     @Test
@@ -70,21 +108,42 @@ class AtRulesTest : TestBase() {
     }
 
     @Test
-    fun media() = runTest {
-        val query = "only screen and (max-width: 600px)"
+    fun supports() = runTest {
+        val query = "(color: $firstColor)"
         val styledComponent = fc<Props> {
-            styledSpan {
+            styledDiv {
                 css {
-                    media(query) {
-                        textTransform = TextTransform.capitalize
+                    supports(query) {
+                        "div" {
+                            color = firstColor
+                        }
                     }
                 }
+                div {}
             }
         }
-        clearAndInject(styledComponent)
-        assertCssInjected(
-            "@media $query",
-            "text-transform" to "capitalize",
-        )
+        val element = clearAndInject(styledComponent)
+        assertEquals(firstColor.toString(), element.childAt(0).color())
+        assertCssInjected("@supports $query", "color" to firstColor.toString())
+    }
+
+    @Test
+    fun supportsSelector() = runTest {
+        val query = "(h2 > p)"
+        val styledComponent = fc<Props> {
+            styledDiv {
+                css {
+                    supportsSelector(query) {
+                        "div" {
+                            color = firstColor
+                        }
+                    }
+                }
+                div {}
+            }
+        }
+        val element = clearAndInject(styledComponent)
+        assertEquals(firstColor.toString(), element.childAt(0).color())
+        assertCssInjected("@supports selector($query)", "color" to firstColor.toString())
     }
 }

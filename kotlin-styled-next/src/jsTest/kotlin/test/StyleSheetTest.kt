@@ -228,7 +228,7 @@ class StyleSheetTest : TestBase() {
         assertCssInjected(
             ".$className.$className",
             "padding" to 80.px.toString(),
-            "border" to "none"
+            "border-style" to "none"
         )
 
         assertEquals("80px", element.getStyle().padding)
