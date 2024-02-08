@@ -62,10 +62,7 @@ external class URLSearchParams(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/has)
      */
-    override fun has(
-        key: String,
-    ): Boolean
-
+    override fun has(key: String): Boolean
     fun has(
         key: String,
         value: String,
