@@ -486,12 +486,6 @@
             "web.abort.AbortSignal",
             "web.events.Event"
         ],
-        "events/EventEmitterAsyncResourceOptions.kt": [
-            "node.asyncHooks.AsyncResourceOptions"
-        ],
-        "events/EventEmitterReferencingAsyncResource.kt": [
-            "node.asyncHooks.AsyncResource"
-        ],
         "events/StaticEventEmitterOptions.kt": [
             "web.abort.AbortSignal"
         ],
@@ -627,9 +621,6 @@
         "net/SocketConstructorOpts.kt": [
             "web.abort.AbortSignal"
         ],
-        "module/GlobalPreloadContext.kt": [
-            "web.messaging.MessagePort"
-        ],
         "module/Module.class.kt": [
             "node.Module as NodeModule",
             "node.Require",
@@ -666,9 +657,6 @@
         "process/UnhandledRejectionListener.kt": [
             "js.promise.Promise"
         ],
-        "process/WorkerListener.kt": [
-            "node.workerThreads.Worker"
-        ],
         "readline/InterfaceAsync.kt": [
             "js.promise.await"
         ],
@@ -691,11 +679,7 @@
             "js.buffer.ArrayBuffer",
             "js.iterable.AsyncIterable",
             "js.generator.AsyncGeneratorFunction",
-            "js.promise.Promise",
-            "web.blob.Blob as NodeBlob"
-        ],
-        "stream/FinishedOptions.kt": [
-            "web.abort.Abortable"
+            "js.promise.Promise"
         ],
         "stream/pipeline.kt": [
             "js.array.ReadonlyArray"
@@ -727,12 +711,8 @@
         "stream/StreamComposeOptions.kt": [
             "web.abort.AbortSignal"
         ],
-        "stream/StreamOptions.kt": [
-            "web.abort.Abortable"
-        ],
         "stream/Stream.class.kt": [
-            "js.iterable.AsyncIterable",
-            "node.events.EventEmitter"
+            "js.iterable.AsyncIterable"
         ],
         "stream/Writable.kt": [
             "js.typedarrays.Uint8Array"
