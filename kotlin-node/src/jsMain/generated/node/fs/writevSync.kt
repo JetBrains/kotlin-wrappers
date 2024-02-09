@@ -4,6 +4,9 @@
 
 package node.fs
 
+import js.array.ReadonlyArray
+import js.buffer.ArrayBufferView
+
 /**
  * For detailed information, see the documentation of the asynchronous version of
  * this API: {@link writev}.
@@ -13,6 +16,6 @@ package node.fs
  */
 external fun writevSync(
     fd: Number,
-    buffers: Array<out js.buffer.ArrayBufferView>,
+    buffers: ReadonlyArray<ArrayBufferView>,
     position: Number = definedExternally,
 ): Double

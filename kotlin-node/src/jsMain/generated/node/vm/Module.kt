@@ -110,7 +110,7 @@ open external class Module {
      * Corresponds to the `[[RequestedModules]]` field of [Cyclic Module Record](https://tc39.es/ecma262/#sec-cyclic-module-records) s in
      * the ECMAScript specification.
      */
-    var dependencySpecifiers: Array<out String>
+    var dependencySpecifiers: js.array.ReadonlyArray<String>
 
     /**
      * If the `module.status` is `'errored'`, this property contains the exception

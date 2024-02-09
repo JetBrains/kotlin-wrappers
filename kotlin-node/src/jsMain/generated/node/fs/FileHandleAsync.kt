@@ -3,6 +3,8 @@
 
 package node.fs
 
+import js.array.ReadonlyArray
+import js.buffer.ArrayBufferView
 import js.promise.Promise
 import js.promise.await
 import js.typedarrays.Uint8Array
@@ -279,7 +281,7 @@ sealed external interface FileHandle {
      */
 
     @JsName("read")
-    fun <T : js.buffer.ArrayBufferView> readAsync(
+    fun <T : ArrayBufferView> readAsync(
         buffer: T,
         offset: Double? = definedExternally,
         length: Double? = definedExternally,
@@ -293,7 +295,7 @@ sealed external interface FileHandle {
         "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
         "DECLARATION_CANT_BE_INLINED",
     )
-    suspend inline fun <T : js.buffer.ArrayBufferView> read(
+    suspend inline fun <T : ArrayBufferView> read(
         buffer: T,
         offset: Double? = definedExternally,
         length: Double? = definedExternally,
@@ -305,7 +307,7 @@ sealed external interface FileHandle {
 
 
     @JsName("read")
-    fun <T : js.buffer.ArrayBufferView /* default is node.buffer.Buffer */> readAsync(options: FileReadOptions<T> = definedExternally): Promise<FileReadResult<T>>
+    fun <T : ArrayBufferView /* default is node.buffer.Buffer */> readAsync(options: FileReadOptions<T> = definedExternally): Promise<FileReadResult<T>>
 
 
     @Suppress(
@@ -314,7 +316,7 @@ sealed external interface FileHandle {
         "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
         "DECLARATION_CANT_BE_INLINED",
     )
-    suspend inline fun <T : js.buffer.ArrayBufferView /* default is node.buffer.Buffer */> read(options: FileReadOptions<T> = definedExternally): FileReadResult<T> =
+    suspend inline fun <T : ArrayBufferView /* default is node.buffer.Buffer */> read(options: FileReadOptions<T> = definedExternally): FileReadResult<T> =
         readAsync(
             options
         ).await()
@@ -755,7 +757,7 @@ sealed external interface FileHandle {
 
     @JsName("writev")
     fun writevAsync(
-        buffers: Array<out js.buffer.ArrayBufferView>,
+        buffers: ReadonlyArray<ArrayBufferView>,
         position: Number = definedExternally,
     ): Promise<WriteVResult>
 
@@ -767,7 +769,7 @@ sealed external interface FileHandle {
         "DECLARATION_CANT_BE_INLINED",
     )
     suspend inline fun writev(
-        buffers: Array<out js.buffer.ArrayBufferView>,
+        buffers: ReadonlyArray<ArrayBufferView>,
         position: Number = definedExternally,
     ): WriteVResult =
         writevAsync(
@@ -782,10 +784,7 @@ sealed external interface FileHandle {
      */
 
     @JsName("readv")
-    fun readvAsync(
-        buffers: Array<out js.buffer.ArrayBufferView>,
-        position: Number = definedExternally,
-    ): Promise<ReadVResult>
+    fun readvAsync(buffers: ReadonlyArray<ArrayBufferView>, position: Number = definedExternally): Promise<ReadVResult>
 
 
     @Suppress(
@@ -795,7 +794,7 @@ sealed external interface FileHandle {
         "DECLARATION_CANT_BE_INLINED",
     )
     suspend inline fun readv(
-        buffers: Array<out js.buffer.ArrayBufferView>,
+        buffers: ReadonlyArray<ArrayBufferView>,
         position: Number = definedExternally,
     ): ReadVResult =
         readvAsync(

@@ -17,7 +17,7 @@ external class Http2ServerRequest : node.stream.Readable {
         stream: ServerHttp2Stream,
         headers: IncomingHttpHeaders,
         options: node.stream.ReadableOptions,
-        rawHeaders: Array<out String>,
+        rawHeaders: js.array.ReadonlyArray<String>,
     )
 
     /**

@@ -4,6 +4,8 @@
 
 package node.tls
 
+import js.array.ReadonlyArray
+
 
 external val CLIENT_RENEG_LIMIT: Double
 
@@ -51,4 +53,4 @@ external var DEFAULT_CIPHERS: String
  * format) used for verifying peer certificates. This is the default value
  * of the ca option to tls.createSecureContext().
  */
-external val rootCertificates: Array<out String>
+external val rootCertificates: ReadonlyArray<String>

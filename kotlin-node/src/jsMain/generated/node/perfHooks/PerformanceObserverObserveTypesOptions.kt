@@ -2,8 +2,10 @@
 
 package node.perfHooks
 
+import js.array.ReadonlyArray
+
 
 sealed external interface PerformanceObserverObserveTypesOptions {
-    var entryTypes: Array<out EntryType>
+    var entryTypes: ReadonlyArray<EntryType>
     var buffered: Boolean?
 }

@@ -4,6 +4,7 @@
 
 package node.dgram
 
+import js.array.ReadonlyArray
 import js.typedarrays.Uint8Array
 import node.events.EventEmitter
 import node.net.AddressInfo
@@ -309,7 +310,7 @@ external class Socket : EventEmitter {
     ): Unit
 
     fun send(
-        msg: Array<out Any?>,
+        msg: ReadonlyArray<Any?>,
         port: Number = definedExternally,
         address: String = definedExternally,
         callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
@@ -328,7 +329,7 @@ external class Socket : EventEmitter {
     ): Unit
 
     fun send(
-        msg: Array<out Any?>,
+        msg: ReadonlyArray<Any?>,
         port: Number = definedExternally,
         callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
     ): Unit
@@ -341,7 +342,7 @@ external class Socket : EventEmitter {
     ): Unit
 
     fun send(
-        msg: Array<out Any?>,
+        msg: ReadonlyArray<Any?>,
         callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
     ): Unit
 

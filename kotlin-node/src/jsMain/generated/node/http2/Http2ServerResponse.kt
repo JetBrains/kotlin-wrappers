@@ -244,7 +244,7 @@ external class Http2ServerResponse : node.stream.Writable {
 
     fun setHeader(name: String, value: String): Unit
 
-    fun setHeader(name: String, value: Array<out String>): Unit
+    fun setHeader(name: String, value: js.array.ReadonlyArray<String>): Unit
 
     /**
      * Sets the `Http2Stream`'s timeout value to `msecs`. If a callback is

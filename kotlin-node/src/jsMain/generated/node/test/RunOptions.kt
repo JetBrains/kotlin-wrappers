@@ -20,7 +20,7 @@ sealed external interface RunOptions {
      * An array containing the list of files to run.
      * If unspecified, the test runner execution model will be used.
      */
-    var files: (Array<out String>)?
+    var files: (js.array.ReadonlyArray<String>)?
 
     /**
      * Allows aborting an in-progress test execution.

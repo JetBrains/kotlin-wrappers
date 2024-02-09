@@ -85,7 +85,7 @@ sealed external interface ClientHttp2Session : Http2Session {
     ): Unit /* this */
 
     fun emit(event: ClientHttp2SessionEvent.ALTSVC, alt: String, origin: String, stream: Number): Boolean
-    fun emit(event: ClientHttp2SessionEvent.ORIGIN, origins: Array<out String>): Boolean
+    fun emit(event: ClientHttp2SessionEvent.ORIGIN, origins: js.array.ReadonlyArray<String>): Boolean
     fun emit(event: ClientHttp2SessionEvent.CONNECT, session: ClientHttp2Session, socket: node.net.Socket): Boolean
 
     fun emit(event: ClientHttp2SessionEvent.CONNECT, session: ClientHttp2Session, socket: node.tls.TLSSocket): Boolean

@@ -24,13 +24,13 @@ import js.buffer.ArrayBufferView
  */
 external fun readv(
     fd: Number,
-    buffers: Array<out ArrayBufferView>,
+    buffers: ReadonlyArray<ArrayBufferView>,
     cb: (err: node.ErrnoException?, bytesRead: Double, buffers: ReadonlyArray<ArrayBufferView>) -> Unit,
 ): Unit
 
 external fun readv(
     fd: Number,
-    buffers: Array<out ArrayBufferView>,
+    buffers: ReadonlyArray<ArrayBufferView>,
     position: Number,
     cb: (err: node.ErrnoException?, bytesRead: Double, buffers: ReadonlyArray<ArrayBufferView>) -> Unit,
 ): Unit

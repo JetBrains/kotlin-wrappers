@@ -4,6 +4,7 @@
 
 package node.workerThreads
 
+import js.array.ReadonlyArray
 import js.promise.Promise
 import node.events.EventEmitter
 import node.stream.Readable
@@ -137,7 +138,7 @@ external class Worker : EventEmitter {
      * See `port.postMessage()` for more details.
      * @since v10.5.0
      */
-    fun postMessage(value: Any?, transferList: Array<out TransferListItem> = definedExternally): Unit
+    fun postMessage(value: Any?, transferList: ReadonlyArray<TransferListItem> = definedExternally): Unit
 
     /**
      * Opposite of `unref()`, calling `ref()` on a previously `unref()`ed worker does _not_ let the program exit if it's the only active handle left (the default

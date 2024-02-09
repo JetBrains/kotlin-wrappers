@@ -512,5 +512,5 @@ external class Resolver {
         ).await()
 
     fun setLocalAddress(ipv4: String = definedExternally, ipv6: String = definedExternally): Unit
-    var setServers: (servers: Array<out String>) -> Unit
+    var setServers: (servers: js.array.ReadonlyArray<String>) -> Unit
 }

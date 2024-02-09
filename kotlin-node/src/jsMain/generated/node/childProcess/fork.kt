@@ -4,6 +4,8 @@
 
 package node.childProcess
 
+import js.array.ReadonlyArray
+
 /**
  * The `child_process.fork()` method is a special case of {@link spawn} used specifically to spawn new Node.js processes.
  * Like {@link spawn}, a `ChildProcess` object is returned. The
@@ -57,6 +59,6 @@ external fun fork(modulePath: String, options: ForkOptions = definedExternally):
 
 external fun fork(
     modulePath: String,
-    args: Array<out String> = definedExternally,
+    args: ReadonlyArray<String> = definedExternally,
     options: ForkOptions = definedExternally,
 ): ChildProcess
