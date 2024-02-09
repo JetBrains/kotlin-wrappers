@@ -3,7 +3,7 @@ import * as karakum from "karakum";
 
 export default {
     setup(context) {
-        this.moduleNodes = new Map()
+        this.moduleNodes = []
     },
 
     traverse(node) {
@@ -20,7 +20,7 @@ export default {
             && ts.isInterfaceDeclaration(node.parent)
             && node.parent.name.text === "Module"
         ) {
-            this.moduleNodes.set(node.name.text, node)
+            this.moduleNodes.push(node)
         }
     },
 
@@ -37,7 +37,7 @@ export default {
             && node?.name.text === "Module"
             && !context.static
         ) {
-            return Array.from(this.moduleNodes.values())
+            return this.moduleNodes
                 .map(member => {
                     return `override ${render(member)}`
                 })

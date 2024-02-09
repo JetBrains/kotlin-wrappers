@@ -3,7 +3,7 @@ import * as karakum from "karakum";
 
 export default {
     setup(context) {
-        this.statsBaseNodes = new Map()
+        this.statsBaseNodes = []
     },
 
     traverse(node) {
@@ -18,7 +18,7 @@ export default {
             && ts.isInterfaceDeclaration(node.parent)
             && node.parent.name.text === "StatsBase"
         ) {
-            this.statsBaseNodes.set(node.name.text + node.parameters.length, node)
+            this.statsBaseNodes.push(node)
         }
 
         if (
@@ -30,7 +30,7 @@ export default {
             && ts.isInterfaceDeclaration(node.parent)
             && node.parent.name.text === "StatsBase"
         ) {
-            this.statsBaseNodes.set(node.name.text, node)
+            this.statsBaseNodes.push(node)
         }
     },
 
@@ -47,7 +47,7 @@ export default {
             && node?.name.text === "Stats"
             && !context.static
         ) {
-            return Array.from(this.statsBaseNodes.values())
+            return this.statsBaseNodes
                 .map(member => {
                     if (ts.isPropertySignature(member)) {
                         const readonly = member.modifiers?.find(modifier => modifier.kind === ts.SyntaxKind.ReadonlyKeyword)

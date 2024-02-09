@@ -12,7 +12,7 @@ function convertConstructSignatureDeclaration(node, context, render) {
 
 export default {
     setup(context) {
-        this.bufferConstructorNode = []
+        this.bufferConstructorNode = null
     },
 
     traverse(node) {

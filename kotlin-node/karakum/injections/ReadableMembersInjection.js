@@ -19,7 +19,7 @@ function extractModifiers(member) {
 export default {
     setup(context) {
         this.readableBaseNode = null
-        this.readableStreamMemberNodes = new Map()
+        this.readableStreamMemberNodes = []
     },
 
     traverse(node) {
@@ -46,7 +46,7 @@ export default {
             && ts.isInterfaceDeclaration(node.parent)
             && node.parent.name.text === "ReadableStream"
         ) {
-            this.readableStreamMemberNodes.set(node.name.text, node)
+            this.readableStreamMemberNodes.push(node)
         }
     },
 
@@ -97,7 +97,7 @@ export default {
             && node?.name.text === "Readable"
             && !context.static
         ) {
-            const readableStreamMembers = Array.from(this.readableStreamMemberNodes.values())
+            const readableStreamMembers = this.readableStreamMemberNodes
                 .map(member => {
                     const name = karakum.escapeIdentifier(render(member.name))
 

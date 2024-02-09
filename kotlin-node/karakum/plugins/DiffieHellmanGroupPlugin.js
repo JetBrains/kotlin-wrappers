@@ -3,7 +3,7 @@ import * as karakum from "karakum";
 
 export default {
     setup(context) {
-        this.sourceDiffieHellmanGroupNode = []
+        this.sourceDiffieHellmanGroupNode = null
     },
 
     traverse(node) {

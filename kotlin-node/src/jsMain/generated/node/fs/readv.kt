@@ -4,6 +4,9 @@
 
 package node.fs
 
+import js.array.ReadonlyArray
+import js.buffer.ArrayBufferView
+
 /**
  * Read from a file specified by `fd` and write to an array of `ArrayBufferView`s
  * using `readv()`.
@@ -21,13 +24,13 @@ package node.fs
  */
 external fun readv(
     fd: Number,
-    buffers: Array<out js.buffer.ArrayBufferView>,
-    cb: (err: node.ErrnoException?, bytesRead: Double, buffers: js.array.ReadonlyArray<js.buffer.ArrayBufferView>) -> Unit,
+    buffers: Array<out ArrayBufferView>,
+    cb: (err: node.ErrnoException?, bytesRead: Double, buffers: ReadonlyArray<ArrayBufferView>) -> Unit,
 ): Unit
 
 external fun readv(
     fd: Number,
-    buffers: Array<out js.buffer.ArrayBufferView>,
+    buffers: Array<out ArrayBufferView>,
     position: Number,
-    cb: (err: node.ErrnoException?, bytesRead: Double, buffers: js.array.ReadonlyArray<js.buffer.ArrayBufferView>) -> Unit,
-)
+    cb: (err: node.ErrnoException?, bytesRead: Double, buffers: ReadonlyArray<ArrayBufferView>) -> Unit,
+): Unit

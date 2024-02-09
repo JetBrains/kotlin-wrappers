@@ -19,7 +19,7 @@ function extractModifiers(member) {
 export default {
     setup(context) {
         this.writableBaseNode = null
-        this.writableStreamMemberNodes = new Map()
+        this.writableStreamMemberNodes = []
     },
 
     traverse(node) {
@@ -48,7 +48,7 @@ export default {
             && ts.isInterfaceDeclaration(node.parent)
             && node.parent.name.text === "WritableStream"
         ) {
-            this.writableStreamMemberNodes.set(node.name.text + node.parameters.length, node)
+            this.writableStreamMemberNodes.push(node)
         }
 
         if (
@@ -60,7 +60,7 @@ export default {
             && ts.isInterfaceDeclaration(node.parent)
             && node.parent.name.text === "WritableStream"
         ) {
-            this.writableStreamMemberNodes.set(node.name.text, node)
+            this.writableStreamMemberNodes.push(node)
         }
     },
 
@@ -111,7 +111,7 @@ export default {
             && node?.name.text === "Writable"
             && !context.static
         ) {
-            const writableStreamMembers = Array.from(this.writableStreamMemberNodes.values())
+            const writableStreamMembers = this.writableStreamMemberNodes
                 .map(member => {
                     if (ts.isPropertySignature(member)) {
                         return `override ${render(member)}`

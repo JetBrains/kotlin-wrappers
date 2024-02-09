@@ -3,7 +3,7 @@ import * as karakum from "karakum";
 
 export default {
     setup(context) {
-        this.readableMemberNodes = new Map()
+        this.readableMemberNodes = []
     },
 
     traverse(node) {
@@ -21,7 +21,7 @@ export default {
             && ts.isClassDeclaration(node.parent)
             && node.parent.name?.text === "ReadableBase"
         ) {
-            this.readableMemberNodes.set(node.name.text + node.parameters.length, node)
+            this.readableMemberNodes.push(node)
         }
 
         if (
@@ -33,7 +33,7 @@ export default {
             && ts.isClassDeclaration(node.parent)
             && node.parent.name?.text === "ReadableBase"
         ) {
-            this.readableMemberNodes.set(node.name.text, node)
+            this.readableMemberNodes.push(node)
         }
     },
 
@@ -50,7 +50,7 @@ export default {
             && node?.name.text === "Duplex"
             && !context.static
         ) {
-            return Array.from(this.readableMemberNodes.values())
+            return this.readableMemberNodes
                 .map(member => {
                     if (ts.isPropertyDeclaration(member)) {
                         return `override ${render(member)}`
