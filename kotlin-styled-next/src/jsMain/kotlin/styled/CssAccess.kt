@@ -47,7 +47,16 @@ internal object GlobalCssAccess {
         link.href = blobUrl
         link.download = name
         document.body.appendChild(link)
-        link.dispatchEvent(MouseEvent(MouseEvent.CLICK, jso { bubbles = true; cancelable = true; view = window }))
+        val clickEvent = MouseEvent(
+            MouseEvent.CLICK,
+            // TODO: use strict factory after migration on Kotlin 2.0
+            jso<dynamic> {
+                bubbles = true
+                cancelable = true
+                view = window
+            }
+        )
+        link.dispatchEvent(clickEvent)
         document.body.removeChild(link)
     }
 
