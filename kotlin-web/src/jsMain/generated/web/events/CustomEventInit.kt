@@ -2,6 +2,6 @@
 
 package web.events
 
-external interface CustomEventInit<T> : EventInit {
+external interface CustomEventInit<out T> : EventInit {
     val detail: T?
 }
