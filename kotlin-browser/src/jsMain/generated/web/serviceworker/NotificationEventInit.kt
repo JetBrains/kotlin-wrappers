@@ -5,6 +5,6 @@ package web.serviceworker
 import web.notifications.Notification
 
 external interface NotificationEventInit : ExtendableEventInit {
-    var action: String?
-    var notification: Notification
+    val action: String?
+    val notification: Notification
 }

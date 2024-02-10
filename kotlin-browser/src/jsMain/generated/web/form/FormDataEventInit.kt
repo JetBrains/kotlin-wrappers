@@ -5,5 +5,5 @@ package web.form
 import web.events.EventInit
 
 external interface FormDataEventInit : EventInit {
-    var formData: FormData
+    val formData: FormData
 }

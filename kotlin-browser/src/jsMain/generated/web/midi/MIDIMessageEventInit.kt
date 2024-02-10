@@ -6,5 +6,5 @@ import js.typedarrays.Uint8Array
 import web.events.EventInit
 
 external interface MIDIMessageEventInit : EventInit {
-    var data: Uint8Array?
+    val data: Uint8Array?
 }

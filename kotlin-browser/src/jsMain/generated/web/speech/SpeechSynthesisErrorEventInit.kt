@@ -3,5 +3,5 @@
 package web.speech
 
 external interface SpeechSynthesisErrorEventInit : SpeechSynthesisEventInit {
-    var error: SpeechSynthesisErrorCode
+    val error: SpeechSynthesisErrorCode
 }

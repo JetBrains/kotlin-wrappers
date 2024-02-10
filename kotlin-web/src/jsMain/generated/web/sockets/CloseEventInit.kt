@@ -5,7 +5,7 @@ package web.sockets
 import web.events.EventInit
 
 external interface CloseEventInit : EventInit {
-    var code: Short?
-    var reason: String?
-    var wasClean: Boolean?
+    val code: Short?
+    val reason: String?
+    val wasClean: Boolean?
 }

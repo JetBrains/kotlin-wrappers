@@ -3,5 +3,5 @@
 package web.uievents
 
 external interface CompositionEventInit : UIEventInit {
-    var data: String?
+    val data: String?
 }

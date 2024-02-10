@@ -6,6 +6,6 @@ import web.events.EventInit
 import web.window.Window
 
 external interface UIEventInit : EventInit {
-    var detail: Int?
-    var view: Window?
+    val detail: Int?
+    val view: Window?
 }

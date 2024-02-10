@@ -6,9 +6,9 @@ import js.array.ReadonlyArray
 import web.messaging.MessagePort
 
 external interface ExtendableMessageEventInit : ExtendableEventInit {
-    var data: Any?
-    var lastEventId: String?
-    var origin: String?
-    var ports: ReadonlyArray<MessagePort>?
-    var source: Any /* Client | ServiceWorker | MessagePort */?
+    val data: Any?
+    val lastEventId: String?
+    val origin: String?
+    val ports: ReadonlyArray<MessagePort>?
+    val source: Any /* Client | ServiceWorker | MessagePort */?
 }

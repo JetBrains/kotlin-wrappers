@@ -3,6 +3,6 @@
 package web.payment
 
 external interface PaymentMethodChangeEventInit : PaymentRequestUpdateEventInit {
-    var methodDetails: Any?
-    var methodName: String?
+    val methodDetails: Any?
+    val methodName: String?
 }

@@ -5,5 +5,5 @@ package web.rtc
 import web.events.EventInit
 
 external interface RTCErrorEventInit : EventInit {
-    var error: RTCError
+    val error: RTCError
 }

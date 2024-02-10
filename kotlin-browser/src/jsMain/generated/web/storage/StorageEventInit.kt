@@ -5,9 +5,9 @@ package web.storage
 import web.events.EventInit
 
 external interface StorageEventInit : EventInit {
-    var key: String?
-    var newValue: String?
-    var oldValue: String?
-    var storageArea: Storage?
-    var url: String?
+    val key: String?
+    val newValue: String?
+    val oldValue: String?
+    val storageArea: Storage?
+    val url: String?
 }

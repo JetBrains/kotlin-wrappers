@@ -3,7 +3,7 @@
 package web.events
 
 external interface EventInit {
-    var bubbles: Boolean?
-    var cancelable: Boolean?
-    var composed: Boolean?
+    val bubbles: Boolean?
+    val cancelable: Boolean?
+    val composed: Boolean?
 }

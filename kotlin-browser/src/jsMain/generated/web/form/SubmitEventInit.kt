@@ -6,5 +6,5 @@ import web.events.EventInit
 import web.html.HTMLElement
 
 external interface SubmitEventInit : EventInit {
-    var submitter: HTMLElement?
+    val submitter: HTMLElement?
 }

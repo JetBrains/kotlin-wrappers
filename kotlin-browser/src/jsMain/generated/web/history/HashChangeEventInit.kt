@@ -5,6 +5,6 @@ package web.history
 import web.events.EventInit
 
 external interface HashChangeEventInit : EventInit {
-    var newURL: String?
-    var oldURL: String?
+    val newURL: String?
+    val oldURL: String?
 }

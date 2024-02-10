@@ -6,5 +6,5 @@ import js.array.ReadonlyArray
 import web.events.EventInit
 
 external interface FontFaceSetLoadEventInit : EventInit {
-    var fontfaces: ReadonlyArray<FontFace>?
+    val fontfaces: ReadonlyArray<FontFace>?
 }

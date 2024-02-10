@@ -5,5 +5,5 @@ package web.gamepad
 import web.events.EventInit
 
 external interface GamepadEventInit : EventInit {
-    var gamepad: Gamepad
+    val gamepad: Gamepad
 }

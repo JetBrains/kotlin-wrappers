@@ -6,6 +6,6 @@ import web.blob.Blob
 import web.time.DOMHighResTimeStamp
 
 external interface BlobEventInit {
-    var data: Blob
-    var timecode: DOMHighResTimeStamp?
+    val data: Blob
+    val timecode: DOMHighResTimeStamp?
 }

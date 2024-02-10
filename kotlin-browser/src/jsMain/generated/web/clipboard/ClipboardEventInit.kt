@@ -6,5 +6,5 @@ import web.data.DataTransfer
 import web.events.EventInit
 
 external interface ClipboardEventInit : EventInit {
-    var clipboardData: DataTransfer?
+    val clipboardData: DataTransfer?
 }

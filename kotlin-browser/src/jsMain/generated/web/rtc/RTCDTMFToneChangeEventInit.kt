@@ -5,5 +5,5 @@ package web.rtc
 import web.events.EventInit
 
 external interface RTCDTMFToneChangeEventInit : EventInit {
-    var tone: String?
+    val tone: String?
 }

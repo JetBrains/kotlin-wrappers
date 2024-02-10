@@ -5,6 +5,6 @@ package web.rtc
 import web.events.EventInit
 
 external interface RTCPeerConnectionIceEventInit : EventInit {
-    var candidate: RTCIceCandidate?
-    var url: String?
+    val candidate: RTCIceCandidate?
+    val url: String?
 }

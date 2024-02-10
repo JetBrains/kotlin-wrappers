@@ -5,6 +5,6 @@ package web.animations
 import web.events.EventInit
 
 external interface AnimationPlaybackEventInit : EventInit {
-    var currentTime: CSSNumberish?
-    var timelineTime: CSSNumberish?
+    val currentTime: CSSNumberish?
+    val timelineTime: CSSNumberish?
 }

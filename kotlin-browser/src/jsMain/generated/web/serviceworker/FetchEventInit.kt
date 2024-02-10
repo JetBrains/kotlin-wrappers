@@ -7,10 +7,10 @@ import js.promise.Promise
 import web.http.Request
 
 external interface FetchEventInit : ExtendableEventInit {
-    var clientId: String?
-    var handled: Promise<Void>?
-    var preloadResponse: Promise<*>?
-    var replacesClientId: String?
-    var request: Request
-    var resultingClientId: String?
+    val clientId: String?
+    val handled: Promise<Void>?
+    val preloadResponse: Promise<*>?
+    val replacesClientId: String?
+    val request: Request
+    val resultingClientId: String?
 }

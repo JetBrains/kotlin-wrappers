@@ -7,9 +7,9 @@ import web.data.DataTransfer
 import web.ranges.StaticRange
 
 external interface InputEventInit : UIEventInit {
-    var data: String?
-    var dataTransfer: DataTransfer?
-    var inputType: String?
-    var isComposing: Boolean?
-    var targetRanges: ReadonlyArray<StaticRange>?
+    val data: String?
+    val dataTransfer: DataTransfer?
+    val inputType: String?
+    val isComposing: Boolean?
+    val targetRanges: ReadonlyArray<StaticRange>?
 }

@@ -5,5 +5,5 @@ package web.history
 import web.events.EventInit
 
 external interface PopStateEventInit : EventInit {
-    var state: Any?
+    val state: Any?
 }

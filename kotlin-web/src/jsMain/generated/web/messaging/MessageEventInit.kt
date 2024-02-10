@@ -6,9 +6,9 @@ import js.array.ReadonlyArray
 import web.events.EventInit
 
 external interface MessageEventInit<T> : EventInit {
-    var data: T?
-    var lastEventId: String?
-    var origin: String?
-    var ports: ReadonlyArray<MessagePort>?
-    var source: MessageEventSource?
+    val data: T?
+    val lastEventId: String?
+    val origin: String?
+    val ports: ReadonlyArray<MessagePort>?
+    val source: MessageEventSource?
 }

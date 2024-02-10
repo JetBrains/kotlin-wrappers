@@ -5,16 +5,16 @@ package web.uievents
 import js.array.ReadonlyArray
 
 external interface PointerEventInit : MouseEventInit {
-    var coalescedEvents: ReadonlyArray<PointerEvent>?
-    var height: Double?
-    var isPrimary: Boolean?
-    var pointerId: Int?
-    var pointerType: String?
-    var predictedEvents: ReadonlyArray<PointerEvent>?
-    var pressure: Float?
-    var tangentialPressure: Float?
-    var tiltX: Int?
-    var tiltY: Int?
-    var twist: Int?
-    var width: Double?
+    val coalescedEvents: ReadonlyArray<PointerEvent>?
+    val height: Double?
+    val isPrimary: Boolean?
+    val pointerId: Int?
+    val pointerType: String?
+    val predictedEvents: ReadonlyArray<PointerEvent>?
+    val pressure: Float?
+    val tangentialPressure: Float?
+    val tiltX: Int?
+    val tiltY: Int?
+    val twist: Int?
+    val width: Double?
 }

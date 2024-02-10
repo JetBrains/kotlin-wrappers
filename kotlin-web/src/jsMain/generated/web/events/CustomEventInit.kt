@@ -3,5 +3,5 @@
 package web.events
 
 external interface CustomEventInit<T> : EventInit {
-    var detail: T?
+    val detail: T?
 }

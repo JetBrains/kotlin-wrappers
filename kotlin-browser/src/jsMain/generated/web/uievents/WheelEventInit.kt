@@ -3,8 +3,8 @@
 package web.uievents
 
 external interface WheelEventInit : MouseEventInit {
-    var deltaMode: DeltaMode?
-    var deltaX: Double?
-    var deltaY: Double?
-    var deltaZ: Double?
+    val deltaMode: DeltaMode?
+    val deltaX: Double?
+    val deltaY: Double?
+    val deltaZ: Double?
 }

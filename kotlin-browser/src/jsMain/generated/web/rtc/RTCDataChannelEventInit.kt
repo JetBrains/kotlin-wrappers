@@ -5,5 +5,5 @@ package web.rtc
 import web.events.EventInit
 
 external interface RTCDataChannelEventInit : EventInit {
-    var channel: RTCDataChannel
+    val channel: RTCDataChannel
 }

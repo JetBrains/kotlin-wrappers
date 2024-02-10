@@ -6,6 +6,6 @@ import js.buffer.ArrayBuffer
 import web.events.EventInit
 
 external interface MediaEncryptedEventInit : EventInit {
-    var initData: ArrayBuffer?
-    var initDataType: String?
+    val initData: ArrayBuffer?
+    val initDataType: String?
 }

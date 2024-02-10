@@ -6,6 +6,6 @@ import js.buffer.ArrayBuffer
 import web.events.EventInit
 
 external interface MediaKeyMessageEventInit : EventInit {
-    var message: ArrayBuffer
-    var messageType: MediaKeyMessageType
+    val message: ArrayBuffer
+    val messageType: MediaKeyMessageType
 }

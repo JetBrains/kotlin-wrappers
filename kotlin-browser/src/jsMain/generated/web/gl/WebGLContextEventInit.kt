@@ -5,5 +5,5 @@ package web.gl
 import web.events.EventInit
 
 external interface WebGLContextEventInit : EventInit {
-    var statusMessage: String?
+    val statusMessage: String?
 }

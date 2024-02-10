@@ -5,5 +5,5 @@ package web.pip
 import web.events.EventInit
 
 external interface PictureInPictureEventInit : EventInit {
-    var pictureInPictureWindow: PictureInPictureWindow
+    val pictureInPictureWindow: PictureInPictureWindow
 }

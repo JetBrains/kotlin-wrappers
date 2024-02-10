@@ -5,5 +5,5 @@ package web.uievents
 import web.data.DataTransfer
 
 external interface DragEventInit : MouseEventInit {
-    var dataTransfer: DataTransfer?
+    val dataTransfer: DataTransfer?
 }
