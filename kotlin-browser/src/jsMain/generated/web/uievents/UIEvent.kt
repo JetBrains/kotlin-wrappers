@@ -18,16 +18,17 @@ import web.window.Window
 open external class UIEvent(
     override val type: EventType<UIEvent>,
     init: UIEventInit = definedExternally,
-) : Event {
+) : Event,
+    UIEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UIEvent/detail)
      */
-    val detail: Int
+    override val detail: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UIEvent/view)
      */
-    val view: Window?
+    override val view: Window?
 
     companion object : UIEventTypes
 }

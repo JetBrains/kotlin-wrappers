@@ -15,16 +15,17 @@ import web.events.EventType
 open external class ToggleEvent(
     override val type: EventType<ToggleEvent>,
     init: ToggleEventInit = definedExternally,
-) : Event {
+) : Event,
+    ToggleEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ToggleEvent/newState)
      */
-    val newState: String
+    override val newState: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ToggleEvent/oldState)
      */
-    val oldState: String
+    override val oldState: String
 
     companion object
 }

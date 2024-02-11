@@ -16,11 +16,12 @@ import web.events.EventType
 open external class CompositionEvent(
     override val type: EventType<CompositionEvent>,
     init: CompositionEventInit = definedExternally,
-) : UIEvent {
+) : UIEvent,
+    CompositionEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CompositionEvent/data)
      */
-    val data: String
+    override val data: String
 
     companion object : CompositionEventTypes
 }
