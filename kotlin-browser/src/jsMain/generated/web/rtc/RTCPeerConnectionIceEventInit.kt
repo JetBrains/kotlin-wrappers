@@ -6,5 +6,4 @@ import web.events.EventInit
 
 external interface RTCPeerConnectionIceEventInit : EventInit {
     val candidate: RTCIceCandidate?
-    val url: String?
 }

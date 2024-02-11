@@ -10,7 +10,6 @@ external interface FetchEventInit : ExtendableEventInit {
     val clientId: String?
     val handled: Promise<Void>?
     val preloadResponse: Promise<*>?
-    val replacesClientId: String?
     val request: Request
     val resultingClientId: String?
 }
