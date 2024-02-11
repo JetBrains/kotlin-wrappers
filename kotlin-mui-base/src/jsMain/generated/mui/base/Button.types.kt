@@ -41,6 +41,12 @@ external interface ButtonOwnProps :
      * @default {}
      */
     var slots: ButtonSlots?
+
+    /**
+     * The HTML element that is ultimately rendered, for example 'button' or 'a'
+     * @default 'button'
+     */
+    override var rootElementName: String? /* keyof HTMLElementTagNameMap */
 }
 
 external interface ButtonSlots {

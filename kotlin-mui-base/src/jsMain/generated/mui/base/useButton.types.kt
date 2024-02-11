@@ -30,6 +30,12 @@ external interface UseButtonParameters {
      * @default 'button'
      */
     var type: dynamic /* React.ButtonHTMLAttributes<HTMLButtonElement>['type'] */
+
+    /**
+     * The HTML element, e.g.'button', 'a' etc
+     * @default ''
+     */
+    var rootElementName: String? /* keyof HTMLElementTagNameMap */
 }
 
 external interface UseButtonRootSlotOwnProps : react.Props {
