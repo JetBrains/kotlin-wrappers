@@ -4,18 +4,18 @@ package web.uievents
 
 sealed external interface EventModifierInit :
     UIEventInit {
-    var altKey: Boolean?
-    var ctrlKey: Boolean?
-    var metaKey: Boolean?
-    var modifierAltGraph: Boolean?
-    var modifierCapsLock: Boolean?
-    var modifierFn: Boolean?
-    var modifierFnLock: Boolean?
-    var modifierHyper: Boolean?
-    var modifierNumLock: Boolean?
-    var modifierScrollLock: Boolean?
-    var modifierSuper: Boolean?
-    var modifierSymbol: Boolean?
-    var modifierSymbolLock: Boolean?
-    var shiftKey: Boolean?
+    val altKey: Boolean?
+    val ctrlKey: Boolean?
+    val metaKey: Boolean?
+    val modifierAltGraph: Boolean?
+    val modifierCapsLock: Boolean?
+    val modifierFn: Boolean?
+    val modifierFnLock: Boolean?
+    val modifierHyper: Boolean?
+    val modifierNumLock: Boolean?
+    val modifierScrollLock: Boolean?
+    val modifierSuper: Boolean?
+    val modifierSymbol: Boolean?
+    val modifierSymbolLock: Boolean?
+    val shiftKey: Boolean?
 }
