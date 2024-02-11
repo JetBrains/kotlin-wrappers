@@ -17,21 +17,22 @@ import web.events.EventType
 open external class TransitionEvent(
     override val type: EventType<TransitionEvent>,
     init: TransitionEventInit = definedExternally,
-) : Event {
+) : Event,
+    TransitionEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransitionEvent/elapsedTime)
      */
-    val elapsedTime: Double
+    override val elapsedTime: Double
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransitionEvent/propertyName)
      */
-    val propertyName: String
+    override val propertyName: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransitionEvent/pseudoElement)
      */
-    val pseudoElement: String
+    override val pseudoElement: String
 
     companion object : TransitionEventTypes
 }

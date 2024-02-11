@@ -17,27 +17,28 @@ import web.events.EventType
 open external class CloseEvent(
     override val type: EventType<CloseEvent>,
     init: CloseEventInit = definedExternally,
-) : Event {
+) : Event,
+    CloseEventInit {
     /**
      * Returns the WebSocket connection close code provided by the server.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CloseEvent/code)
      */
-    val code: Short
+    override val code: Short
 
     /**
      * Returns the WebSocket connection close reason provided by the server.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CloseEvent/reason)
      */
-    val reason: String
+    override val reason: String
 
     /**
      * Returns true if the connection closed cleanly; false otherwise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CloseEvent/wasClean)
      */
-    val wasClean: Boolean
+    override val wasClean: Boolean
 
     companion object : CloseEventTypes
 }

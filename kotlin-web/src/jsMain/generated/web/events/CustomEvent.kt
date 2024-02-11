@@ -12,13 +12,14 @@ package web.events
 open external class CustomEvent<out T>(
     override val type: EventType<CustomEvent<T>>,
     init: CustomEventInit<T> = definedExternally,
-) : Event {
+) : Event,
+    CustomEventInit<T> {
     /**
      * Returns any custom data event was created with. Typically used for synthetic events.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomEvent/detail)
      */
-    val detail: T
+    override val detail: T
 
     companion object
 }

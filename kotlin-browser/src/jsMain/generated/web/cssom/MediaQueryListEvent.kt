@@ -15,16 +15,17 @@ import web.events.EventType
 open external class MediaQueryListEvent(
     override val type: EventType<MediaQueryListEvent>,
     init: MediaQueryListEventInit = definedExternally,
-) : Event {
+) : Event,
+    MediaQueryListEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent/matches)
      */
-    val matches: Boolean
+    override val matches: Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent/media)
      */
-    val media: MediaQuery
+    override val media: MediaQuery
 
     companion object : MediaQueryListEventTypes
 }

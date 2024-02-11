@@ -17,11 +17,12 @@ import web.events.EventType
 open external class RTCPeerConnectionIceEvent(
     override val type: EventType<RTCPeerConnectionIceEvent>,
     init: RTCPeerConnectionIceEventInit = definedExternally,
-) : Event {
+) : Event,
+    RTCPeerConnectionIceEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnectionIceEvent/candidate)
      */
-    val candidate: RTCIceCandidate?
+    override val candidate: RTCIceCandidate?
 
     companion object : RTCPeerConnectionIceEventTypes
 }

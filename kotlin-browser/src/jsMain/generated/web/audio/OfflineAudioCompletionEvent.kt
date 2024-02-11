@@ -17,11 +17,12 @@ import web.events.EventType
 open external class OfflineAudioCompletionEvent(
     override val type: EventType<OfflineAudioCompletionEvent>,
     init: OfflineAudioCompletionEventInit,
-) : Event {
+) : Event,
+    OfflineAudioCompletionEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioCompletionEvent/renderedBuffer)
      */
-    val renderedBuffer: AudioBuffer
+    override val renderedBuffer: AudioBuffer
 
     companion object : OfflineAudioCompletionEventTypes
 }

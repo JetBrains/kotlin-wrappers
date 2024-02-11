@@ -18,11 +18,12 @@ import web.events.EventType
 open external class ClipboardEvent(
     override val type: EventType<ClipboardEvent>,
     init: ClipboardEventInit = definedExternally,
-) : Event {
+) : Event,
+    ClipboardEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardEvent/clipboardData)
      */
-    val clipboardData: DataTransfer?
+    override val clipboardData: DataTransfer?
 
     companion object : ClipboardEventTypes
 }

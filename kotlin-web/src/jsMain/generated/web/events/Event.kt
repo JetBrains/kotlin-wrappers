@@ -12,27 +12,27 @@ import web.time.DOMHighResTimeStamp
 open external class Event(
     open val type: EventType<Event>,
     init: EventInit = definedExternally,
-) {
+) : EventInit {
     /**
      * Returns true or false depending on how event was initialized. True if event goes through its target's ancestors in reverse tree order, and false otherwise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Event/bubbles)
      */
-    val bubbles: Boolean
+    override val bubbles: Boolean
 
     /**
      * Returns true or false depending on how event was initialized. Its return value does not always carry meaning, but true can indicate that part of the operation during which event was dispatched, can be canceled by invoking the preventDefault() method.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Event/cancelable)
      */
-    val cancelable: Boolean
+    override val cancelable: Boolean
 
     /**
      * Returns true or false depending on how event was initialized. True if event invokes listeners past a ShadowRoot node that is the root of its target, and false otherwise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Event/composed)
      */
-    val composed: Boolean
+    override val composed: Boolean
 
     /**
      * Returns the object whose event listener's callback is currently being invoked.

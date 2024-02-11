@@ -17,16 +17,17 @@ import web.notifications.Notification
 open external class NotificationEvent(
     override val type: EventType<NotificationEvent>,
     init: NotificationEventInit,
-) : ExtendableEvent {
+) : ExtendableEvent,
+    NotificationEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotificationEvent/action)
      */
-    val action: String
+    override val action: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotificationEvent/notification)
      */
-    val notification: Notification
+    override val notification: Notification
 
     companion object : NotificationEventTypes
 }

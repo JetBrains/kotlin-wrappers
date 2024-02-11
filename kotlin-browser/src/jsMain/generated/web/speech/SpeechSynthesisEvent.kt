@@ -17,31 +17,32 @@ import web.events.EventType
 open external class SpeechSynthesisEvent(
     override val type: EventType<SpeechSynthesisEvent>,
     init: SpeechSynthesisEventInit,
-) : Event {
+) : Event,
+    SpeechSynthesisEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisEvent/charIndex)
      */
-    val charIndex: Int
+    override val charIndex: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisEvent/charLength)
      */
-    val charLength: Int
+    override val charLength: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisEvent/elapsedTime)
      */
-    val elapsedTime: Float
+    override val elapsedTime: Float
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisEvent/name)
      */
-    val name: String
+    override val name: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisEvent/utterance)
      */
-    val utterance: SpeechSynthesisUtterance
+    override val utterance: SpeechSynthesisUtterance
 
     companion object : SpeechSynthesisEventTypes
 }

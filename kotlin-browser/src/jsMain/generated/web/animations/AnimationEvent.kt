@@ -17,21 +17,22 @@ import web.events.EventType
 open external class AnimationEvent(
     override val type: EventType<AnimationEvent>,
     init: AnimationEventInit = definedExternally,
-) : Event {
+) : Event,
+    AnimationEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationEvent/animationName)
      */
-    val animationName: String
+    override val animationName: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationEvent/elapsedTime)
      */
-    val elapsedTime: Double
+    override val elapsedTime: Double
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationEvent/pseudoElement)
      */
-    val pseudoElement: String
+    override val pseudoElement: String
 
     companion object : AnimationEventTypes
 }

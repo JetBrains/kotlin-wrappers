@@ -17,11 +17,12 @@ import web.events.EventType
 open external class MediaStreamTrackEvent(
     override val type: EventType<MediaStreamTrackEvent>,
     init: MediaStreamTrackEventInit,
-) : Event {
+) : Event,
+    MediaStreamTrackEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrackEvent/track)
      */
-    val track: MediaStreamTrack
+    override val track: MediaStreamTrack
 
     companion object : MediaStreamTrackEventTypes
 }

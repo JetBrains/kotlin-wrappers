@@ -16,16 +16,17 @@ import web.events.EventType
 open external class MediaEncryptedEvent(
     override val type: EventType<MediaEncryptedEvent>,
     init: MediaEncryptedEventInit = definedExternally,
-) : Event {
+) : Event,
+    MediaEncryptedEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaEncryptedEvent/initData)
      */
-    val initData: ArrayBuffer?
+    override val initData: ArrayBuffer?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaEncryptedEvent/initDataType)
      */
-    val initDataType: String
+    override val initDataType: String
 
     companion object : MediaEncryptedEventTypes
 }

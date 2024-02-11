@@ -19,7 +19,8 @@ import web.events.EventType
 open external class PaymentRequestUpdateEvent(
     override val type: EventType<PaymentRequestUpdateEvent>,
     init: PaymentRequestUpdateEventInit = definedExternally,
-) : Event {
+) : Event,
+    PaymentRequestUpdateEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequestUpdateEvent/updateWith)
      */

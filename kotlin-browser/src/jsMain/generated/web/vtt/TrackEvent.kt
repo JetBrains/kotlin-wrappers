@@ -17,13 +17,14 @@ import web.events.EventType
 open external class TrackEvent(
     override val type: EventType<TrackEvent>,
     init: TrackEventInit = definedExternally,
-) : Event {
+) : Event,
+    TrackEventInit {
     /**
      * Returns the track object (TextTrack, AudioTrack, or VideoTrack) to which the event relates.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TrackEvent/track)
      */
-    val track: TextTrack?
+    override val track: TextTrack?
 
     companion object : TrackEventTypes
 }

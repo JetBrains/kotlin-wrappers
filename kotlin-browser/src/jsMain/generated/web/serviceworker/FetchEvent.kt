@@ -21,31 +21,32 @@ import web.http.Response
 open external class FetchEvent(
     override val type: EventType<FetchEvent>,
     init: FetchEventInit,
-) : ExtendableEvent {
+) : ExtendableEvent,
+    FetchEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/clientId)
      */
-    val clientId: String
+    override val clientId: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/handled)
      */
-    val handled: Promise<Void>
+    override val handled: Promise<Void>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/preloadResponse)
      */
-    val preloadResponse: Promise<*>
+    override val preloadResponse: Promise<*>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/request)
      */
-    val request: Request
+    override val request: Request
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/resultingClientId)
      */
-    val resultingClientId: String
+    override val resultingClientId: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/respondWith)

@@ -18,31 +18,32 @@ import web.messaging.MessagePort
 open external class ExtendableMessageEvent(
     override val type: EventType<ExtendableMessageEvent>,
     init: ExtendableMessageEventInit = definedExternally,
-) : ExtendableEvent {
+) : ExtendableEvent,
+    ExtendableMessageEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/data)
      */
-    val data: Any?
+    override val data: Any?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/lastEventId)
      */
-    val lastEventId: String
+    override val lastEventId: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/origin)
      */
-    val origin: String
+    override val origin: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/ports)
      */
-    val ports: ReadonlyArray<MessagePort>
+    override val ports: ReadonlyArray<MessagePort>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/source)
      */
-    val source: Any /* Client | ServiceWorker | MessagePort */?
+    override val source: Any /* Client | ServiceWorker | MessagePort */?
 
     companion object : ExtendableMessageEventTypes
 }

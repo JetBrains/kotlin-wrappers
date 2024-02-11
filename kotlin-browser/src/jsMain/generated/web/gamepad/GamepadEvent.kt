@@ -18,11 +18,12 @@ import web.events.EventType
 open external class GamepadEvent(
     override val type: EventType<GamepadEvent>,
     init: GamepadEventInit,
-) : Event {
+) : Event,
+    GamepadEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadEvent/gamepad)
      */
-    val gamepad: Gamepad
+    override val gamepad: Gamepad
 
     companion object : GamepadEventTypes
 }

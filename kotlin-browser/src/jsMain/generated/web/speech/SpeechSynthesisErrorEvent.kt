@@ -14,11 +14,12 @@ import web.events.EventType
 open external class SpeechSynthesisErrorEvent(
     override val type: EventType<SpeechSynthesisErrorEvent>,
     init: SpeechSynthesisErrorEventInit,
-) : SpeechSynthesisEvent {
+) : SpeechSynthesisEvent,
+    SpeechSynthesisErrorEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisErrorEvent/error)
      */
-    val error: SpeechSynthesisErrorCode
+    override val error: SpeechSynthesisErrorCode
 
     companion object : SpeechSynthesisErrorEventTypes
 }

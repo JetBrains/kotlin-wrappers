@@ -18,7 +18,8 @@ import web.events.EventType
 open external class ExtendableEvent(
     override val type: EventType<ExtendableEvent>,
     init: ExtendableEventInit = definedExternally,
-) : Event {
+) : Event,
+    ExtendableEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableEvent/waitUntil)
      */

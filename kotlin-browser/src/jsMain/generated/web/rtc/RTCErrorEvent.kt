@@ -15,11 +15,12 @@ import web.events.EventType
 open external class RTCErrorEvent(
     override val type: EventType<RTCErrorEvent>,
     init: RTCErrorEventInit,
-) : Event {
+) : Event,
+    RTCErrorEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCErrorEvent/error)
      */
-    val error: RTCError
+    override val error: RTCError
 
     companion object : RTCErrorEventTypes
 }

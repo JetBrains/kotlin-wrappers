@@ -17,20 +17,21 @@ import web.events.EventType
 open external class HashChangeEvent(
     override val type: EventType<HashChangeEvent>,
     init: HashChangeEventInit = definedExternally,
-) : Event {
+) : Event,
+    HashChangeEventInit {
     /**
      * Returns the URL of the session history entry that is now current.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HashChangeEvent/newURL)
      */
-    val newURL: String
+    override val newURL: String
 
     /**
      * Returns the URL of the session history entry that was previously current.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HashChangeEvent/oldURL)
      */
-    val oldURL: String
+    override val oldURL: String
 
     companion object : HashChangeEventTypes
 }

@@ -18,11 +18,12 @@ import web.serviceworker.ExtendableEvent
 open external class PushEvent(
     override val type: EventType<PushEvent>,
     init: PushEventInit = definedExternally,
-) : ExtendableEvent {
+) : ExtendableEvent,
+    PushEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushEvent/data)
      */
-    val data: PushMessageData?
+    override val data: PushMessageData?
 
     companion object : PushEventTypes
 }

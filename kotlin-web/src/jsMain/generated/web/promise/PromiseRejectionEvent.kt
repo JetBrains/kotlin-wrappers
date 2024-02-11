@@ -17,16 +17,17 @@ import web.events.EventType
 open external class PromiseRejectionEvent(
     override val type: EventType<PromiseRejectionEvent>,
     init: PromiseRejectionEventInit,
-) : Event {
+) : Event,
+    PromiseRejectionEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PromiseRejectionEvent/promise)
      */
-    val promise: Promise<*>
+    override val promise: Promise<*>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PromiseRejectionEvent/reason)
      */
-    val reason: JsError?
+    override val reason: JsError?
 
     companion object : PromiseRejectionEventTypes
 }

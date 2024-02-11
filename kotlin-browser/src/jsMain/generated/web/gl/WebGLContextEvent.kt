@@ -17,11 +17,12 @@ import web.events.EventType
 open external class WebGLContextEvent(
     override val type: EventType<WebGLContextEvent>,
     init: WebGLContextEventInit = definedExternally,
-) : Event {
+) : Event,
+    WebGLContextEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLContextEvent/statusMessage)
      */
-    val statusMessage: String
+    override val statusMessage: String
 
     companion object
 }

@@ -19,16 +19,17 @@ import web.events.EventType
 open external class MediaKeyMessageEvent(
     override val type: EventType<MediaKeyMessageEvent>,
     init: MediaKeyMessageEventInit,
-) : Event {
+) : Event,
+    MediaKeyMessageEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyMessageEvent/message)
      */
-    val message: ArrayBuffer
+    override val message: ArrayBuffer
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyMessageEvent/messageType)
      */
-    val messageType: MediaKeyMessageType
+    override val messageType: MediaKeyMessageType
 
     companion object : MediaKeyMessageEventTypes
 }

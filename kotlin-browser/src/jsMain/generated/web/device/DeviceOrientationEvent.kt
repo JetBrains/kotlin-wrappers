@@ -18,26 +18,27 @@ import web.events.EventType
 open external class DeviceOrientationEvent(
     override val type: EventType<DeviceOrientationEvent>,
     init: DeviceOrientationEventInit = definedExternally,
-) : Event {
+) : Event,
+    DeviceOrientationEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceOrientationEvent/absolute)
      */
-    val absolute: Boolean
+    override val absolute: Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceOrientationEvent/alpha)
      */
-    val alpha: Double?
+    override val alpha: Double?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceOrientationEvent/beta)
      */
-    val beta: Double?
+    override val beta: Double?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceOrientationEvent/gamma)
      */
-    val gamma: Double?
+    override val gamma: Double?
 
     companion object : DeviceOrientationEventTypes
 }

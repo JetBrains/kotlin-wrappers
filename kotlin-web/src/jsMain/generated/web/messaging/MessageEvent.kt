@@ -18,41 +18,42 @@ import web.events.EventType
 open external class MessageEvent<out T>(
     override val type: EventType<MessageEvent<T>>,
     init: MessageEventInit<T> = definedExternally,
-) : Event {
+) : Event,
+    MessageEventInit<T> {
     /**
      * Returns the data of the message.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent/data)
      */
-    val data: T
+    override val data: T
 
     /**
      * Returns the last event ID string, for server-sent events.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent/lastEventId)
      */
-    val lastEventId: String
+    override val lastEventId: String
 
     /**
      * Returns the origin of the message, for server-sent events and cross-document messaging.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent/origin)
      */
-    val origin: String
+    override val origin: String
 
     /**
      * Returns the MessagePort array sent with the message, for cross-document messaging and channel messaging.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent/ports)
      */
-    val ports: ReadonlyArray<MessagePort>
+    override val ports: ReadonlyArray<MessagePort>
 
     /**
      * Returns the WindowProxy of the source window, for cross-document messaging, and the MessagePort being attached, in the connect event fired at SharedWorkerGlobalScope objects.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent/source)
      */
-    val source: MessageEventSource?
+    override val source: MessageEventSource?
 
     companion object : MessageEventTypes
 }

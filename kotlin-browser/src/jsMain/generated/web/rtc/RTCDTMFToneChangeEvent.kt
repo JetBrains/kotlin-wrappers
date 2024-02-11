@@ -17,11 +17,12 @@ import web.events.EventType
 open external class RTCDTMFToneChangeEvent(
     override val type: EventType<RTCDTMFToneChangeEvent>,
     init: RTCDTMFToneChangeEventInit = definedExternally,
-) : Event {
+) : Event,
+    RTCDTMFToneChangeEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDTMFToneChangeEvent/tone)
      */
-    val tone: String
+    override val tone: String
 
     companion object : RTCDTMFToneChangeEventTypes
 }

@@ -17,66 +17,67 @@ import web.events.EventType
 open external class SecurityPolicyViolationEvent(
     override val type: EventType<SecurityPolicyViolationEvent>,
     init: SecurityPolicyViolationEventInit = definedExternally,
-) : Event {
+) : Event,
+    SecurityPolicyViolationEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/blockedURI)
      */
-    val blockedURI: String
+    override val blockedURI: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/columnNumber)
      */
-    val columnNumber: Int
+    override val columnNumber: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/disposition)
      */
-    val disposition: SecurityPolicyViolationEventDisposition
+    override val disposition: SecurityPolicyViolationEventDisposition
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/documentURI)
      */
-    val documentURI: String
+    override val documentURI: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/effectiveDirective)
      */
-    val effectiveDirective: String
+    override val effectiveDirective: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/lineNumber)
      */
-    val lineNumber: Int
+    override val lineNumber: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/originalPolicy)
      */
-    val originalPolicy: String
+    override val originalPolicy: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/referrer)
      */
-    val referrer: String
+    override val referrer: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/sample)
      */
-    val sample: String
+    override val sample: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/sourceFile)
      */
-    val sourceFile: String
+    override val sourceFile: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/statusCode)
      */
-    val statusCode: Short
+    override val statusCode: Short
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/violatedDirective)
      */
-    val violatedDirective: String
+    override val violatedDirective: String
 
     companion object : SecurityPolicyViolationEventTypes
 }
