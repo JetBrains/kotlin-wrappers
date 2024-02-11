@@ -16,7 +16,9 @@ external interface CardProps :
     react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
     mui.types.PropsWithComponent
 
-external interface CardOwnProps : mui.system.PropsWithSx {
+external interface CardOwnProps :
+    mui.system.PropsWithSx,
+    PaperOwnProps {
     /**
      * Override or extend the styles applied to the component.
      */
