@@ -340,6 +340,8 @@ class GridColumn(override val value: String) : CssValue(value) {
 }
 
 class GridColumnEnd(override val value: String) : CssValue(value) {
+    constructor(value: Int) : this(value.toString())
+
     companion object {
         val inherit = FlexBasis("inherit")
         val initial = FlexBasis("initial")
@@ -352,6 +354,8 @@ class GridColumnEnd(override val value: String) : CssValue(value) {
 }
 
 class GridColumnStart(override val value: String) : CssValue(value) {
+    constructor(value: Int) : this(value.toString())
+
     companion object {
         val inherit = FlexBasis("inherit")
         val initial = FlexBasis("initial")
@@ -376,6 +380,8 @@ class GridRow(override val value: String) : CssValue(value) {
 }
 
 class GridRowEnd(override val value: String) : CssValue(value) {
+    constructor(value: Int) : this(value.toString())
+
     companion object {
         val inherit = FlexBasis("inherit")
         val initial = FlexBasis("initial")
@@ -388,6 +394,8 @@ class GridRowEnd(override val value: String) : CssValue(value) {
 }
 
 class GridRowStart(override val value: String) : CssValue(value) {
+    constructor(value: Int) : this(value.toString())
+
     companion object {
         val inherit = FlexBasis("inherit")
         val initial = FlexBasis("initial")
