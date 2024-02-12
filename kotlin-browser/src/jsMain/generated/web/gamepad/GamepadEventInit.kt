@@ -4,6 +4,7 @@ package web.gamepad
 
 import web.events.EventInit
 
-external interface GamepadEventInit : EventInit {
+external interface GamepadEventInit :
+    EventInit {
     val gamepad: Gamepad
 }

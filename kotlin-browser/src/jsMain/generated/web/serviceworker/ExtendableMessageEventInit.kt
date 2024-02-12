@@ -5,7 +5,8 @@ package web.serviceworker
 import js.array.ReadonlyArray
 import web.messaging.MessagePort
 
-external interface ExtendableMessageEventInit : ExtendableEventInit {
+external interface ExtendableMessageEventInit :
+    ExtendableEventInit {
     val data: Any?
     val lastEventId: String?
     val origin: String?

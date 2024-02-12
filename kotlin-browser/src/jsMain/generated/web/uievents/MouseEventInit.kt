@@ -4,7 +4,8 @@ package web.uievents
 
 import web.events.EventTarget
 
-external interface MouseEventInit : EventModifierInit {
+external interface MouseEventInit :
+    EventModifierInit {
     val button: MouseButton?
     val buttons: MouseButtons?
     val clientX: Int?

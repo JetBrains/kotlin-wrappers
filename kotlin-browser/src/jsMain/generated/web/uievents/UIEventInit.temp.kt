@@ -16,7 +16,8 @@ inline fun UIEventInit(
     jso(block)
 
 external interface UIEventInitMutable :
-    UIEventInit, EventInitMutable {
+    UIEventInit,
+    EventInitMutable {
     override var detail: Int?
     override var view: Window?
 }

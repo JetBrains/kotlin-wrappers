@@ -4,4 +4,5 @@ package web.payment
 
 import web.events.EventInit
 
-external interface PaymentRequestUpdateEventInit : EventInit
+external interface PaymentRequestUpdateEventInit :
+    EventInit

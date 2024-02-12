@@ -4,7 +4,8 @@ package web.device
 
 import web.events.EventInit
 
-external interface DeviceOrientationEventInit : EventInit {
+external interface DeviceOrientationEventInit :
+    EventInit {
     val absolute: Boolean?
     val alpha: Double?
     val beta: Double?

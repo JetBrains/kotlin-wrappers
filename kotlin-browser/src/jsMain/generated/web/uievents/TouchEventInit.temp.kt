@@ -15,7 +15,8 @@ inline fun TouchEventInit(
     jso(block)
 
 external interface TouchEventInitMutable :
-    TouchEventInit, EventModifierInitMutable {
+    TouchEventInit,
+    EventModifierInitMutable {
     override var changedTouches: ReadonlyArray<Touch>?
     override var targetTouches: ReadonlyArray<Touch>?
     override var touches: ReadonlyArray<Touch>?

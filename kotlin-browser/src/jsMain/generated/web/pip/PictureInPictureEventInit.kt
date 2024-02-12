@@ -4,6 +4,7 @@ package web.pip
 
 import web.events.EventInit
 
-external interface PictureInPictureEventInit : EventInit {
+external interface PictureInPictureEventInit :
+    EventInit {
     val pictureInPictureWindow: PictureInPictureWindow
 }

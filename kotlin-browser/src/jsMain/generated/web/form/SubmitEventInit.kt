@@ -5,6 +5,7 @@ package web.form
 import web.events.EventInit
 import web.html.HTMLElement
 
-external interface SubmitEventInit : EventInit {
+external interface SubmitEventInit :
+    EventInit {
     val submitter: HTMLElement?
 }

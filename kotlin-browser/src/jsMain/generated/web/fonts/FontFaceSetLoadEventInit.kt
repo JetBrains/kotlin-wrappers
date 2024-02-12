@@ -5,6 +5,7 @@ package web.fonts
 import js.array.ReadonlyArray
 import web.events.EventInit
 
-external interface FontFaceSetLoadEventInit : EventInit {
+external interface FontFaceSetLoadEventInit :
+    EventInit {
     val fontfaces: ReadonlyArray<FontFace>?
 }

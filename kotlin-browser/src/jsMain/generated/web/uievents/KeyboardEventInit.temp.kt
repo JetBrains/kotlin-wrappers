@@ -15,7 +15,8 @@ inline fun KeyboardEventInit(
     jso(block)
 
 external interface KeyboardEventInitMutable :
-    KeyboardEventInit, EventModifierInitMutable {
+    KeyboardEventInit,
+    EventModifierInitMutable {
     override var code: KeyCode?
     override var isComposing: Boolean?
     override var key: String?

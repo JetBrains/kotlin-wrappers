@@ -15,7 +15,8 @@ inline fun MouseEventInit(
     jso(block)
 
 external interface MouseEventInitMutable :
-    MouseEventInit, EventModifierInitMutable {
+    MouseEventInit,
+    EventModifierInitMutable {
     override var button: MouseButton?
     override var buttons: MouseButtons?
     override var clientX: Int?

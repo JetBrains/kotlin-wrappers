@@ -4,4 +4,5 @@ package web.serviceworker
 
 import web.events.EventInit
 
-external interface ExtendableEventInit : EventInit
+external interface ExtendableEventInit :
+    EventInit

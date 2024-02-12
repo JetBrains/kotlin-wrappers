@@ -5,7 +5,8 @@ package web.messaging
 import js.array.ReadonlyArray
 import web.events.EventInit
 
-external interface MessageEventInit<out T> : EventInit {
+external interface MessageEventInit<out T> :
+    EventInit {
     val data: T?
     val lastEventId: String?
     val origin: String?

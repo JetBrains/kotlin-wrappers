@@ -4,6 +4,7 @@ package web.vtt
 
 import web.events.EventInit
 
-external interface TrackEventInit : EventInit {
+external interface TrackEventInit :
+    EventInit {
     val track: TextTrack?
 }

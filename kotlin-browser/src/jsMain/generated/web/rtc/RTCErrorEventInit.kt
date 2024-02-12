@@ -4,6 +4,7 @@ package web.rtc
 
 import web.events.EventInit
 
-external interface RTCErrorEventInit : EventInit {
+external interface RTCErrorEventInit :
+    EventInit {
     val error: RTCError
 }

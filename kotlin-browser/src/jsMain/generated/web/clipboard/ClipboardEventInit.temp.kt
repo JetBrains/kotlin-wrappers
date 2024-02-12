@@ -16,6 +16,7 @@ inline fun ClipboardEventInit(
     jso(block)
 
 external interface ClipboardEventInitMutable :
-    ClipboardEventInit, EventInitMutable {
+    ClipboardEventInit,
+    EventInitMutable {
     override var clipboardData: DataTransfer?
 }

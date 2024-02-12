@@ -4,7 +4,8 @@ package web.speech
 
 import web.events.EventInit
 
-external interface SpeechSynthesisEventInit : EventInit {
+external interface SpeechSynthesisEventInit :
+    EventInit {
     val charIndex: Int?
     val charLength: Int?
     val elapsedTime: Float?

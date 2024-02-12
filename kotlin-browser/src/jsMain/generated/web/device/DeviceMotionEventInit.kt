@@ -4,7 +4,8 @@ package web.device
 
 import web.events.EventInit
 
-external interface DeviceMotionEventInit : EventInit {
+external interface DeviceMotionEventInit :
+    EventInit {
     val acceleration: DeviceMotionEventAccelerationInit?
     val accelerationIncludingGravity: DeviceMotionEventAccelerationInit?
     val interval: Double?

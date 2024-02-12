@@ -4,7 +4,8 @@ package web.uievents
 
 import js.array.ReadonlyArray
 
-external interface PointerEventInit : MouseEventInit {
+external interface PointerEventInit :
+    MouseEventInit {
     val coalescedEvents: ReadonlyArray<PointerEvent>?
     val height: Double?
     val isPrimary: Boolean?

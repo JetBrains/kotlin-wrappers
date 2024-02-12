@@ -2,6 +2,7 @@
 
 package web.uievents
 
-external interface CompositionEventInit : UIEventInit {
+external interface CompositionEventInit :
+    UIEventInit {
     val data: String?
 }
