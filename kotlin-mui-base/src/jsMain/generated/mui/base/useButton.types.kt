@@ -35,7 +35,7 @@ external interface UseButtonParameters {
      * The HTML element, e.g.'button', 'a' etc
      * @default ''
      */
-    var rootElementName: String? /* keyof HTMLElementTagNameMap */
+    var rootElementName: web.html.HtmlTagName<*>?
 }
 
 external interface UseButtonRootSlotOwnProps : react.Props {
