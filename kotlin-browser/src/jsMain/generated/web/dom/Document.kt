@@ -566,4 +566,8 @@ open external class Document :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/writeln)
      */
     fun writeln(vararg text: String)
+
+    companion object {
+        fun parseHTMLUnsafe(html: String): Document
+    }
 }

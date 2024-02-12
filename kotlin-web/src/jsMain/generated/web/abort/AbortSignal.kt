@@ -47,7 +47,7 @@ sealed external class AbortSignal :
         /**
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/any_static)
          */
-        fun any(values: ReadonlyArray<AbortSignal>): AbortSignal
+        fun any(signals: ReadonlyArray<AbortSignal>): AbortSignal
 
         /**
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/timeout_static)

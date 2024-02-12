@@ -92,6 +92,8 @@ protected constructor() :
 
     /**
      * Retrieves the type of control.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/type)
      */
     val type: String
 

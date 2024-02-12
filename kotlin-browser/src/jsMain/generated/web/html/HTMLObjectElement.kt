@@ -64,13 +64,6 @@ protected constructor() :
     var type: String
 
     /**
-     * Sets or retrieves the URL, often with a bookmark extension (#name), to use as a client-side image map.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/useMap)
-     */
-    var useMap: String
-
-    /**
      * Returns the error message that would be displayed if the user submits the form, or an empty string if no error message. It also triggers the standard error message, such as "this is a required field". The result is that the user sees validation messages without actually submitting.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/validationMessage)

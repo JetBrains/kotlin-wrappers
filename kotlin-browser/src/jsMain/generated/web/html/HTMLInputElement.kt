@@ -210,6 +210,8 @@ protected constructor() :
 
     /**
      * Returns the content type of the object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/type)
      */
     var type: InputType
 

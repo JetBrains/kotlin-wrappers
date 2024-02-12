@@ -436,6 +436,7 @@ abstract external class Element :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/setAttributeNodeNS)
      */
     fun setAttributeNodeNS(attr: Attr): Attr?
+    fun setHTMLUnsafe(html: String)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/setPointerCapture)

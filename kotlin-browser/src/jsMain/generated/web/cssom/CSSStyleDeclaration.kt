@@ -540,6 +540,10 @@ sealed external class CSSStyleDeclaration :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/color)
      */
     var color: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/color-interpolation)
+     */
     var colorInterpolation: String
     var colorInterpolationFilters: String
 
@@ -1858,6 +1862,11 @@ sealed external class CSSStyleDeclaration :
     var transition: String
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition-behavior)
+     */
+    var transitionBehavior: String
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/transition-delay)
      */
     var transitionDelay: String
@@ -1932,6 +1941,11 @@ sealed external class CSSStyleDeclaration :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/white-space)
      */
     var whiteSpace: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/white-space-collapse)
+     */
+    var whiteSpaceCollapse: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/widows)

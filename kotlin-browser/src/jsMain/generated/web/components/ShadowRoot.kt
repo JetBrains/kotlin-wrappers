@@ -36,4 +36,5 @@ sealed external class ShadowRoot :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ShadowRoot/slotAssignment)
      */
     val slotAssignment: SlotAssignmentMode
+    fun setHTMLUnsafe(html: String)
 }
