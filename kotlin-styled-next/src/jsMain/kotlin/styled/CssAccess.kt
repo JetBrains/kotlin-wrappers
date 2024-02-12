@@ -7,10 +7,11 @@ import web.blob.BlobPart
 import web.cssom.CSSStyleSheet
 import web.dom.Element
 import web.dom.document
-import web.html.HTMLAnchorElement
+import web.html.HTML
 import web.location.location
 import web.storage.localStorage
 import web.uievents.MouseEvent
+import web.uievents.MouseEventInit
 import web.url.URL
 import web.window.window
 
@@ -43,14 +44,13 @@ internal object GlobalCssAccess {
     private fun downloadFile(blob: BlobPart, name: String) {
         val binaryData = arrayOf(blob)
         val blobUrl = URL.createObjectURL(Blob(binaryData, jso { type = "application/text" }))
-        val link = document.createElement("a") as HTMLAnchorElement
+        val link = document.createElement(HTML.a)
         link.href = blobUrl
         link.download = name
         document.body.appendChild(link)
         val clickEvent = MouseEvent(
             MouseEvent.CLICK,
-            // TODO: use strict factory after migration on Kotlin 2.0
-            jso<dynamic> {
+            MouseEventInit {
                 bubbles = true
                 cancelable = true
                 view = window
@@ -92,7 +92,9 @@ internal object GlobalCssAccess {
                 }.toTypedArray()
             }
 
-            override fun getCss(partialCss: String?) = mapNotNullRules { if (it.contains(partialCss ?: "")) it else null }
+            override fun getCss(partialCss: String?) =
+                mapNotNullRules { if (it.contains(partialCss ?: "")) it else null }
+
             override fun downloadCss(partialCss: String?, filename: String?) {
                 downloadFile(getCss(partialCss).joinToString("\n"), filename ?: "index.css")
             }
