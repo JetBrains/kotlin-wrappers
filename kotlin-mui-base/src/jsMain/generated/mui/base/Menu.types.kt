@@ -32,7 +32,7 @@ external interface MenuOwnProps :
     /**
      * The element based on which the menu is positioned.
      */
-    var anchor: Any? /* PopperProps['anchorEl'] */
+    var anchor: Any? /* PopupProps['anchor'] */
 
     override var children: react.ReactNode?
 
@@ -50,7 +50,7 @@ external interface MenuOwnProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<'div', MenuRootSlotPropsOverrides, MenuOwnerState> & Partial<React.ComponentPropsWithoutRef<typeof Popper>> */
+        var root: react.Props? /* SlotComponentProps<'div', MenuRootSlotPropsOverrides & PopupProps, MenuOwnerState> */
         var listbox: react.Props? /* SlotComponentProps<'ul', MenuListboxSlotPropsOverrides, MenuOwnerState> */
     }
 

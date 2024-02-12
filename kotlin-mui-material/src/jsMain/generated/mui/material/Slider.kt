@@ -202,6 +202,12 @@ external interface SliderOwnProps :
     var scale: ((value: Number) -> Number)?
 
     /**
+     * The granularity with which the slider can step through values when using Page Up/Page Down or Shift + Arrow Up/Arrow Down.
+     * @default 10
+     */
+    var shiftStep: Number?
+
+    /**
      * The size of the slider.
      * @default 'medium'
      */
