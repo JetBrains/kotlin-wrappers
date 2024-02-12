@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NOTHING_TO_INLINE",
-)
-
 package web.uievents
 
 import js.array.ReadonlyArray
