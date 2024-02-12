@@ -255,12 +255,30 @@ class FontWeight(override val value: String) : CssValue(value) {
     }
 }
 
+class GridArea(override val value: String) : CssValue(value) {
+    companion object {
+        val inherit = FlexBasis("inherit")
+        val initial = FlexBasis("initial")
+        val revert = FlexBasis("revert")
+        val revertLayer = FlexBasis("revert-layer")
+        val unset = FlexBasis("unset")
+
+        val auto = GridArea("auto")
+    }
+}
+
 class GridAutoColumns(override val value: String) : CssValue(value) {
     constructor(vararg dims: LinearDimension) : this(dims.joinToString(" "))
 
     constructor(vararg values: GridAutoColumns) : this(values.joinToString(" "))
 
     companion object {
+        val inherit = FlexBasis("inherit")
+        val initial = FlexBasis("initial")
+        val revert = FlexBasis("revert")
+        val revertLayer = FlexBasis("revert-layer")
+        val unset = FlexBasis("unset")
+
         val auto = GridAutoColumns("auto")
         val maxContent = GridAutoColumns("max-content")
         val minContent = GridAutoColumns("min-content")
@@ -293,6 +311,12 @@ class GridAutoRows(override val value: String) : CssValue(value) {
     constructor(vararg values: GridAutoRows) : this(values.joinToString(" "))
 
     companion object {
+        val inherit = FlexBasis("inherit")
+        val initial = FlexBasis("initial")
+        val revert = FlexBasis("revert")
+        val revertLayer = FlexBasis("revert-layer")
+        val unset = FlexBasis("unset")
+
         val auto = GridAutoRows("auto")
         val maxContent = GridAutoRows("max-content")
         val minContent = GridAutoRows("min-content")
@@ -305,48 +329,96 @@ class GridAutoRows(override val value: String) : CssValue(value) {
 
 class GridColumn(override val value: String) : CssValue(value) {
     companion object {
+        val inherit = FlexBasis("inherit")
+        val initial = FlexBasis("initial")
+        val revert = FlexBasis("revert")
+        val revertLayer = FlexBasis("revert-layer")
+        val unset = FlexBasis("unset")
+
         val auto = GridColumn("auto")
     }
 }
 
 class GridColumnEnd(override val value: String) : CssValue(value) {
     companion object {
+        val inherit = FlexBasis("inherit")
+        val initial = FlexBasis("initial")
+        val revert = FlexBasis("revert")
+        val revertLayer = FlexBasis("revert-layer")
+        val unset = FlexBasis("unset")
+
         val auto = GridColumnEnd("auto")
     }
 }
 
 class GridColumnStart(override val value: String) : CssValue(value) {
     companion object {
+        val inherit = FlexBasis("inherit")
+        val initial = FlexBasis("initial")
+        val revert = FlexBasis("revert")
+        val revertLayer = FlexBasis("revert-layer")
+        val unset = FlexBasis("unset")
+
         val auto = GridColumnStart("auto")
     }
 }
 
 class GridRow(override val value: String) : CssValue(value) {
     companion object {
+        val inherit = FlexBasis("inherit")
+        val initial = FlexBasis("initial")
+        val revert = FlexBasis("revert")
+        val revertLayer = FlexBasis("revert-layer")
+        val unset = FlexBasis("unset")
+
         val auto = GridRow("auto")
     }
 }
 
 class GridRowEnd(override val value: String) : CssValue(value) {
     companion object {
+        val inherit = FlexBasis("inherit")
+        val initial = FlexBasis("initial")
+        val revert = FlexBasis("revert")
+        val revertLayer = FlexBasis("revert-layer")
+        val unset = FlexBasis("unset")
+
         val auto = GridRowEnd("auto")
     }
 }
 
 class GridRowStart(override val value: String) : CssValue(value) {
     companion object {
+        val inherit = FlexBasis("inherit")
+        val initial = FlexBasis("initial")
+        val revert = FlexBasis("revert")
+        val revertLayer = FlexBasis("revert-layer")
+        val unset = FlexBasis("unset")
+
         val auto = GridRowStart("auto")
     }
 }
 
 class GridTemplate(override val value: String) : CssValue(value) {
     companion object {
+        val inherit = FlexBasis("inherit")
+        val initial = FlexBasis("initial")
+        val revert = FlexBasis("revert")
+        val revertLayer = FlexBasis("revert-layer")
+        val unset = FlexBasis("unset")
+
         val none = GridTemplate("none")
     }
 }
 
 class GridTemplateAreas(override val value: String) : CssValue(value) {
     companion object {
+        val inherit = FlexBasis("inherit")
+        val initial = FlexBasis("initial")
+        val revert = FlexBasis("revert")
+        val revertLayer = FlexBasis("revert-layer")
+        val unset = FlexBasis("unset")
+
         val none = GridTemplateAreas("none")
     }
 }
@@ -357,6 +429,12 @@ class GridTemplateColumns(override val value: String) : CssValue(value) {
     constructor(vararg values: GridAutoRows) : this(values.joinToString(" "))
 
     companion object {
+        val inherit = FlexBasis("inherit")
+        val initial = FlexBasis("initial")
+        val revert = FlexBasis("revert")
+        val revertLayer = FlexBasis("revert-layer")
+        val unset = FlexBasis("unset")
+
         val auto = GridTemplateColumns("auto")
         val maxContent = GridTemplateColumns("max-content")
         val minContent = GridTemplateColumns("min-content")
@@ -375,6 +453,12 @@ class GridTemplateRows(override val value: String) : CssValue(value) {
     constructor(vararg values: GridAutoRows) : this(values.joinToString(" "))
 
     companion object {
+        val inherit = FlexBasis("inherit")
+        val initial = FlexBasis("initial")
+        val revert = FlexBasis("revert")
+        val revertLayer = FlexBasis("revert-layer")
+        val unset = FlexBasis("unset")
+
         val auto = GridTemplateRows("auto")
         val maxContent = GridTemplateRows("max-content")
         val minContent = GridTemplateRows("min-content")
@@ -397,6 +481,12 @@ enum class Hyphens {
 
 class Image(override val value: String) : CssValue(value) {
     companion object {
+        val inherit = FlexBasis("inherit")
+        val initial = FlexBasis("initial")
+        val revert = FlexBasis("revert")
+        val revertLayer = FlexBasis("revert-layer")
+        val unset = FlexBasis("unset")
+
         val none = Image("none")
     }
 }
@@ -433,6 +523,26 @@ enum class JustifyContent {
 }
 
 enum class JustifyItems {
+    inherit, initial, revert, revertLayer, unset,
+
+    auto,
+    normal,
+    stretch,
+    center,
+    start,
+    end,
+    flexStart,
+    flexEnd,
+    selfStart,
+    selfEnd,
+    left,
+    right,
+    baseline;
+
+    override fun toString() = name.hyphenize()
+}
+
+enum class JustifySelf {
     inherit, initial, revert, revertLayer, unset,
 
     auto,
