@@ -440,6 +440,9 @@ class GridTemplateColumns(override val value: String) : CssValue(value) {
         val minContent = GridTemplateColumns("min-content")
         val none = GridTemplateColumns("none")
 
+        val subgrid = GridTemplateColumns("subgrid")
+        val masonry = GridTemplateColumns("masonry")
+
         fun fitContent(dim: LinearDimension) = GridTemplateColumns("min(max-content, max(auto, $dim))")
         fun minMax(min: LinearDimension, max: LinearDimension) = GridTemplateColumns("minmax($min, $max)")
         fun minMax(min: GridTemplateColumns, max: GridTemplateColumns) = GridTemplateColumns("minmax($min, $max)")
@@ -463,6 +466,9 @@ class GridTemplateRows(override val value: String) : CssValue(value) {
         val maxContent = GridTemplateRows("max-content")
         val minContent = GridTemplateRows("min-content")
         val none = GridTemplateRows("none")
+
+        val subgrid = GridTemplateColumns("subgrid")
+        val masonry = GridTemplateColumns("masonry")
 
         fun fitContent(dim: LinearDimension) = GridTemplateRows("min(max-content, max(auto, $dim))")
         fun minMax(min: LinearDimension, max: LinearDimension) = GridTemplateRows("minmax($min, $max)")
