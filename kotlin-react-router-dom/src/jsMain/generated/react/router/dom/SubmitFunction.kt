@@ -3,7 +3,6 @@
 
 package react.router.dom
 
-
 /**
  * Submits a HTML `<form>` to the server without reloading the page.
  */

@@ -9,15 +9,7 @@ package react.router.dom
  * NOTE: If you refactor this to split up the modules into separate files,
  * you'll need to update the rollup config for react-router-dom-v5-compat.
  */
-/* import * as React from "react"; */
 
-/* import type { FutureConfig, Location, NavigateOptions, RelativeRoutingType, RouteObject, RouterProviderProps, To } from "react-router"; */
-
-/* import type { Fetcher, FormEncType, FormMethod, FutureConfig as RouterFutureConfig, GetScrollRestorationKeyFunction, History, HTMLFormMethod, HydrationState, Router as RemixRouter, V7_FormMethod, BlockerFunction } from "@remix-run/router"; */
-
-/* import type { SubmitOptions, ParamKeyValuePair, URLSearchParamsInit, SubmitTarget } from "./dom"; */
-
-/* import { createSearchParams } from "./dom"; */
 
 /* export type { FormEncType, FormMethod, GetScrollRestorationKeyFunction, ParamKeyValuePair, SubmitOptions, URLSearchParamsInit, V7_FormMethod, }; */
 

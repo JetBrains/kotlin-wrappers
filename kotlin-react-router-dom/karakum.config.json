@@ -1,144 +1,96 @@
 {
-  "input": [
-    "<nodeModules>/react-router-dom/dist/dom.d.ts",
-    "<nodeModules>/react-router-dom/dist/index.d.ts"
-  ],
-  "output": "src/jsMain/generated",
-  "ignoreOutput": [
-    "**/JsonArray.kt",
-    "**/JsonObject.kt",
-    "**/JsonPrimitive.kt",
-    "**/BrowserRouter.kt",
-    "**/HashRouter.kt",
-    "**/HistoryRouter.kt",
-    "**/*RouterProps.kt"
-  ],
-  "libraryName": "react-router-dom",
-  "libraryNameOutputPrefix": true,
-  "granularity": "top-level",
-  "moduleNameMapper": {
-    ".*": "react-router-dom"
-  },
-  "importInjector": {
-    "BrowserRouterProps.kt": [
-      "react.router.FutureConfig",
-      "web.window.Window"
+    "input": [
+        "<nodeModules>/react-router-dom/dist/dom.d.ts",
+        "<nodeModules>/react-router-dom/dist/index.d.ts"
     ],
-    "createBrowserRouter.kt": [
-      "react.router.RouteObject",
-      "remix.run.router.Router as RemixRouter"
+    "output": "src/jsMain/generated",
+    "ignoreOutput": [
+        "**/JsonArray.kt",
+        "**/JsonObject.kt",
+        "**/JsonPrimitive.kt",
+        "**/BrowserRouter.kt",
+        "**/HashRouter.kt",
+        "**/HistoryRouter.kt",
+        "**/*RouterProps.kt"
     ],
-    "createHashRouter.kt": [
-      "react.router.RouteObject",
-      "remix.run.router.Router as RemixRouter"
-    ],
-    "createSearchParams.kt": [
-      "web.url.URLSearchParams"
-    ],
-    "dom.kt": [
-      "remix.run.router.HTMLFormMethod"
-    ],
-    "DOMRouterOpts.kt": [
-      "web.window.Window",
-      "remix.run.router.FutureConfig as RouterFutureConfig",
-      "remix.run.router.HydrationState"
-    ],
-    "FetcherWithComponents.kt": [
-      "remix.run.router.Fetcher"
-    ],
-    "FormProps.kt": [
-      "web.html.HTMLFormElement",
-      "remix.run.router.HTMLFormMethod",
-      "remix.run.router.RelativeRoutingType"
-    ],
-    "getFormSubmissionInfo.kt": [
-      "web.html.HTMLButtonElement",
-      "web.html.HTMLFormElement",
-      "web.html.HTMLInputElement",
-        "web.form.FormData",
-      "web.url.URLSearchParams"
-    ],
-    "GetFormSubmissionInfoResult.kt": [
-        "web.form.FormData",
-      "web.url.URL"
-    ],
-    "getSearchParamsForLocation.kt": [
-      "web.url.URLSearchParams"
-    ],
-    "HashRouterProps.kt": [
-      "react.router.FutureConfig",
-      "web.window.Window"
-    ],
-    "HistoryRouterProps.kt": [
-      "react.router.FutureConfig",
-      "remix.run.router.History"
-    ],
-    "LimitedMouseEvent.kt": [
-      "web.uievents.MouseEvent"
-    ],
-    "LinkProps.kt": [
-      "web.html.HTMLAnchorElement",
-      "remix.run.router.To",
-      "remix.run.router.RelativeRoutingType"
-    ],
-    "Router.kt": [
-      "web.window.Window"
-    ],
-    "RouterProvider.kt": [
-      "react.router.RouterProviderProps"
-    ],
-    "ScrollRestorationProps.kt": [
-      "remix.run.router.GetScrollRestorationKeyFunction"
-    ],
-    "SetURLSearchParams.kt": [
-      "web.url.URLSearchParams",
-      "react.router.NavigateOptions"
-    ],
-    "SubmitOptions.kt": [
-      "remix.run.router.RelativeRoutingType",
-      "remix.run.router.FormEncType",
-      "remix.run.router.HTMLFormMethod"
-    ],
-    "useBeforeUnload.kt": [
-      "web.window.BeforeUnloadEvent"
-    ],
-    "UseFetchersResultItem.kt": [
-      "remix.run.router.Fetcher"
-    ],
-    "UseFormActionOptions.kt": [
-      "remix.run.router.RelativeRoutingType"
-    ],
-    "useLinkClickHandler.kt": [
-      "web.dom.Element",
-      "web.uievents.MouseEvent",
-      "remix.run.router.To"
-    ],
-    "UseLinkClickHandlerOptions.kt": [
-      "remix.run.router.RelativeRoutingType"
-    ],
-    "UseScrollRestorationOptions.kt": [
-      "remix.run.router.GetScrollRestorationKeyFunction"
-    ],
-    "useSearchParams.kt": [
-      "web.url.URLSearchParams"
-    ],
-    "useViewTransitionState.kt": [
-      "remix.run.router.To"
-    ],
-    "UseViewTransitionStateOpts.kt": [
-      "remix.run.router.RelativeRoutingType"
-    ],
-    "ViewTransition": [
-      "js.promise.Promise"
-    ]
-  },
-  "conflictResolutionStrategy": {
-    "NavLinkOptions": "replace"
-  },
-  "compilerOptions": {
-    "lib": [
-      "lib.esnext.d.ts",
-      "lib.dom.d.ts"
-    ]
-  }
+    "libraryName": "react-router-dom",
+    "libraryNameOutputPrefix": true,
+    "granularity": "top-level",
+    "moduleNameMapper": {
+        ".*": "react-router-dom"
+    },
+    "importMapper": {
+        "@remix-run/router": "remix.run.router",
+        "react-router": {
+            "RelativeRoutingType": "remix.run.router.RelativeRoutingType",
+            "To": "remix.run.router.To",
+            ".+": "react.router."
+        },
+        "react": {
+            "\\*": ""
+        },
+        "\\..*": "react.router.dom"
+    },
+    "importInjector": {
+        "BrowserRouterProps.kt": [
+            "web.window.Window"
+        ],
+        "createSearchParams.kt": [
+            "web.url.URLSearchParams"
+        ],
+        "DOMRouterOpts.kt": [
+            "web.window.Window"
+        ],
+        "FormProps.kt": [
+            "web.html.HTMLFormElement"
+        ],
+        "getFormSubmissionInfo.kt": [
+            "web.html.HTMLButtonElement",
+            "web.html.HTMLFormElement",
+            "web.html.HTMLInputElement",
+            "web.form.FormData",
+            "web.url.URLSearchParams"
+        ],
+        "GetFormSubmissionInfoResult.kt": [
+            "web.form.FormData",
+            "web.url.URL"
+        ],
+        "getSearchParamsForLocation.kt": [
+            "web.url.URLSearchParams"
+        ],
+        "HashRouterProps.kt": [
+            "web.window.Window"
+        ],
+        "LimitedMouseEvent.kt": [
+            "web.uievents.MouseEvent"
+        ],
+        "LinkProps.kt": [
+            "web.html.HTMLAnchorElement"
+        ],
+        "Router.kt": [
+            "web.window.Window"
+        ],
+        "SetURLSearchParams.kt": [
+            "web.url.URLSearchParams"
+        ],
+        "useBeforeUnload.kt": [
+            "web.window.BeforeUnloadEvent"
+        ],
+        "useLinkClickHandler.kt": [
+            "web.dom.Element",
+            "web.uievents.MouseEvent"
+        ],
+        "useSearchParams.kt": [
+            "web.url.URLSearchParams"
+        ],
+        "ViewTransition": [
+            "js.promise.Promise"
+        ]
+    },
+    "compilerOptions": {
+        "lib": [
+            "lib.esnext.d.ts",
+            "lib.dom.d.ts"
+        ]
+    }
 }
