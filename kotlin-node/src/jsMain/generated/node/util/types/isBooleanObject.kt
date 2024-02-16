@@ -19,4 +19,6 @@ package node.util.types
  * ```
  * @since v10.0.0
  */
-external fun isBooleanObject(`object`: Any?): Boolean /* object is Boolean */
+
+@JsName("isBooleanObject")
+external fun isBooleanObjectRaw(`object`: Any?): Boolean /* object is Boolean */

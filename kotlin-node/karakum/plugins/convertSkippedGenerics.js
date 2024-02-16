@@ -86,11 +86,23 @@ export default function (node, context, render) {
         ts.isTypeReferenceNode(node)
         && ts.isIdentifier(node.typeName)
         && (
-            node.typeName.text === "AsyncGeneratorFunction"
+            node.typeName.text === "GeneratorFunction"
+            || node.typeName.text === "AsyncGeneratorFunction"
         )
         && !node.typeArguments
     ) {
         return `${render(node.typeName)}<*, *, *, *>`
+    }
+
+    if (
+        ts.isTypeReferenceNode(node)
+        && ts.isIdentifier(node.typeName)
+        && (
+            node.typeName.text === "Generator"
+        )
+        && !node.typeArguments
+    ) {
+        return `${render(node.typeName)}<*, *, *>`
     }
 
     if (

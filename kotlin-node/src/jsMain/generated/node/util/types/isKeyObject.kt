@@ -9,4 +9,6 @@ package node.util.types
  * Returns `true` if `value` is a `KeyObject`, `false` otherwise.
  * @since v16.2.0
  */
-external fun isKeyObject(`object`: Any?): Boolean /* object is KeyObject */
+
+@JsName("isKeyObject")
+external fun isKeyObjectRaw(`object`: Any?): Boolean /* object is KeyObject */

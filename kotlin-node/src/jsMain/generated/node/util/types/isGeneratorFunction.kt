@@ -17,4 +17,6 @@ package node.util.types
  * ```
  * @since v10.0.0
  */
-external fun isGeneratorFunction(`object`: Any?): Boolean /* object is GeneratorFunction */
+
+@JsName("isGeneratorFunction")
+external fun isGeneratorFunctionRaw(`object`: Any?): Boolean /* object is GeneratorFunction */

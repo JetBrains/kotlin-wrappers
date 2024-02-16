@@ -21,4 +21,6 @@ package node.util
  * @since v0.6.0
  * @deprecated Since v4.0.0 - Deprecated
  */
-external fun isRegExp(`object`: Any?): Boolean /* object is RegExp */
+
+@JsName("isRegExp")
+external fun isRegExpRaw(`object`: Any?): Boolean /* object is RegExp */

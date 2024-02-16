@@ -13,6 +13,10 @@ package node.util.types
  * ```
  * @since v10.0.0
  */
-external fun <T> isMap(`object`: T): Boolean /* object is T extends ReadonlyMap<any, any> ? (unknown extends T ? never : ReadonlyMap<any, any>) : Map<unknown, unknown> */
 
-external fun <T> isMap(`object`: Any): Boolean /* object is T extends ReadonlyMap<any, any> ? (unknown extends T ? never : ReadonlyMap<any, any>) : Map<unknown, unknown> */
+@JsName("isMap")
+external fun <T> isMapRaw(`object`: T): Boolean /* object is T extends ReadonlyMap<any, any> ? (unknown extends T ? never : ReadonlyMap<any, any>) : Map<unknown, unknown> */
+
+
+@JsName("isMap")
+external fun <T> isMapRaw(`object`: Any): Boolean /* object is T extends ReadonlyMap<any, any> ? (unknown extends T ? never : ReadonlyMap<any, any>) : Map<unknown, unknown> */

@@ -19,4 +19,6 @@ package node.util.types
  * ```
  * @since v10.0.0
  */
-external fun isGeneratorObject(`object`: Any?): Boolean /* object is Generator */
+
+@JsName("isGeneratorObject")
+external fun isGeneratorObjectRaw(`object`: Any?): Boolean /* object is Generator */

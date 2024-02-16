@@ -16,4 +16,6 @@ package node.util.types
  * ```
  * @since v10.0.0
  */
-external fun isSharedArrayBuffer(`object`: Any?): Boolean /* object is SharedArrayBuffer */
+
+@JsName("isSharedArrayBuffer")
+external fun isSharedArrayBufferRaw(`object`: Any?): Boolean /* object is SharedArrayBuffer */

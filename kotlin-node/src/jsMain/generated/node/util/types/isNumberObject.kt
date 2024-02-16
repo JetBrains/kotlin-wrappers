@@ -15,4 +15,6 @@ package node.util.types
  * ```
  * @since v10.0.0
  */
-external fun isNumberObject(`object`: Any?): Boolean /* object is Number */
+
+@JsName("isNumberObject")
+external fun isNumberObjectRaw(`object`: Any?): Boolean /* object is Number */

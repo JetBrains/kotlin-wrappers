@@ -13,4 +13,6 @@ package node.util.types
  * ```
  * @since v10.0.0
  */
-external fun isDate(`object`: Any?): Boolean /* object is Date */
+
+@JsName("isDate")
+external fun isDateRaw(`object`: Any?): Boolean /* object is Date */

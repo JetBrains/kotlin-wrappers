@@ -21,4 +21,6 @@ package node.util
  * @since v0.11.5
  * @deprecated Since v4.0.0 - Use `typeof value === 'boolean'` instead.
  */
-external fun isBoolean(`object`: Any?): Boolean /* object is boolean */
+
+@JsName("isBoolean")
+external fun isBooleanRaw(`object`: Any?): Boolean /* object is boolean */

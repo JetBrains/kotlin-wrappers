@@ -23,4 +23,6 @@ package node.util
  * @since v0.6.0
  * @deprecated Since v4.0.0 - Use `isArray` instead.
  */
-external fun isArray(`object`: Any?): Boolean /* object is unknown[] */
+
+@JsName("isArray")
+external fun isArrayRaw(`object`: Any?): Boolean /* object is unknown[] */

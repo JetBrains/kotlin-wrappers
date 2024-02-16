@@ -38,11 +38,17 @@
         "**/structuredClone.kt",
         "**/ArrayBufferView.kt",
         "**/TypedArray.kt",
+        "**/Uint8Array.kt",
         "**/Uint8ClampedArray.kt",
-        "**/*8Array.kt",
-        "**/*16Array.kt",
-        "**/*32Array.kt",
-        "**/*64Array.kt",
+        "**/Uint16Array.kt",
+        "**/Uint32Array.kt",
+        "**/Int8Array.kt",
+        "**/Int16Array.kt",
+        "**/Int32Array.kt",
+        "**/BigUint64Array.kt",
+        "**/BigInt64Array.kt",
+        "**/Float32Array.kt",
+        "**/Float64Array.kt",
         "**/__promisify__.kt",
         "**/__promisify__*.kt",
         "**/assert/equal.kt",
@@ -906,6 +912,75 @@
         ],
         "util/inspect/Styles.kt": [
             "node.util.Style"
+        ],
+        "util/isDateContract.kt": [
+            "kotlin.js.Date"
+        ],
+        "util/isRegExpContract.kt": [
+            "kotlin.js.RegExp"
+        ],
+        "util/types/isAnyArrayBufferContract.kt": [
+            "js.buffer.ArrayBufferLike"
+        ],
+        "util/types/isArrayBufferContract.kt": [
+            "js.buffer.ArrayBuffer"
+        ],
+        "util/types/isBigInt64ArrayContract.kt": [
+            "js.typedarrays.BigInt64Array"
+        ],
+        "util/types/isBigUint64ArrayContract.kt": [
+            "js.typedarrays.BigUint64Array"
+        ],
+        "util/types/isDataViewContract.kt": [
+            "js.buffer.DataView"
+        ],
+        "util/types/isDateContract.kt": [
+            "kotlin.js.Date"
+        ],
+        "util/types/isFloat32ArrayContract.kt": [
+            "js.typedarrays.Float32Array"
+        ],
+        "util/types/isFloat64ArrayContract.kt": [
+            "js.typedarrays.Float64Array"
+        ],
+        "util/types/isGeneratorFunctionContract.kt": [
+            "js.generator.GeneratorFunction"
+        ],
+        "util/types/isGeneratorObjectContract.kt": [
+            "js.generator.Generator"
+        ],
+        "util/types/isInt8ArrayContract.kt": [
+            "js.typedarrays.Int8Array"
+        ],
+        "util/types/isInt16ArrayContract.kt": [
+            "js.typedarrays.Int16Array"
+        ],
+        "util/types/isInt32ArrayContract.kt": [
+            "js.typedarrays.Int32Array"
+        ],
+        "util/types/isPromiseContract.kt": [
+            "js.promise.Promise"
+        ],
+        "util/types/isRegExpContract.kt": [
+            "kotlin.js.RegExp"
+        ],
+        "util/types/isSharedArrayBufferContract.kt": [
+            "js.buffer.SharedArrayBuffer"
+        ],
+        "util/types/isSymbolObjectContract.kt": [
+            "js.symbol.Symbol"
+        ],
+        "util/types/isUint8ArrayContract.kt": [
+            "js.typedarrays.Uint8Array"
+        ],
+        "util/types/isUint8ClampedArrayContract.kt": [
+            "js.typedarrays.Uint8ClampedArray"
+        ],
+        "util/types/isUint16ArrayContract.kt": [
+            "js.typedarrays.Uint16Array"
+        ],
+        "util/types/isUint32ArrayContract.kt": [
+            "js.typedarrays.Uint32Array"
         ],
         "v8/After.kt": [
             "js.promise.Promise"

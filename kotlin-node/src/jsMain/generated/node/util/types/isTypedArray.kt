@@ -17,4 +17,6 @@ package node.util.types
  * See also [`ArrayBuffer.isView()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/isView).
  * @since v10.0.0
  */
-external fun isTypedArray(`object`: Any?): Boolean /* object is NodeJS.TypedArray */
+
+@JsName("isTypedArray")
+external fun isTypedArrayRaw(`object`: Any?): Boolean /* object is NodeJS.TypedArray */

@@ -23,4 +23,6 @@ package node.util
  * @since v0.11.5
  * @deprecated Since v4.0.0 - Use `typeof value === 'string'` instead.
  */
-external fun isString(`object`: Any?): Boolean /* object is string */
+
+@JsName("isString")
+external fun isStringRaw(`object`: Any?): Boolean /* object is string */

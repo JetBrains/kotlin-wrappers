@@ -14,4 +14,6 @@ package node.util.types
  * ```
  * @since v10.0.0
  */
-external fun isRegExp(`object`: Any?): Boolean /* object is RegExp */
+
+@JsName("isRegExp")
+external fun isRegExpRaw(`object`: Any?): Boolean /* object is RegExp */

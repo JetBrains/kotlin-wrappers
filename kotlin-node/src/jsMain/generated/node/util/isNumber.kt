@@ -23,4 +23,6 @@ package node.util
  * @since v0.11.5
  * @deprecated Since v4.0.0 - Use `typeof value === 'number'` instead.
  */
-external fun isNumber(`object`: Any?): Boolean /* object is number */
+
+@JsName("isNumber")
+external fun isNumberRaw(`object`: Any?): Boolean /* object is number */
