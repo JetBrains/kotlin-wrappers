@@ -4,7 +4,6 @@
 
 package remix.run.router
 
-
 /**
  * @private
  */

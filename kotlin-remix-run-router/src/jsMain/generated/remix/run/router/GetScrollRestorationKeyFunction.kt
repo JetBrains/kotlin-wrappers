@@ -3,7 +3,6 @@
 
 package remix.run.router
 
-
 /**
  * Function signature for determining the key to be used in scroll restoration
  * for a given location

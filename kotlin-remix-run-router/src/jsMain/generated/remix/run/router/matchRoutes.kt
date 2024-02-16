@@ -4,7 +4,6 @@
 
 package remix.run.router
 
-
 /**
  * Matches the given routes to a location and returns the match data.
  *

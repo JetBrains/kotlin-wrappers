@@ -20,6 +20,9 @@
     "packageNameMapper": {
         "router.kt": "router.const.kt"
     },
+    "importMapper": {
+        "\\..*": "remix.run.router"
+    },
     "importInjector": {
         "createURL.kt": [
             "web.url.URL"
@@ -78,9 +81,6 @@
         "RouterInit.kt": [
             "web.window.Window"
         ],
-        "RouterState.kt": [
-            "remix.run.router.Action as HistoryAction"
-        ],
         "StaticHandler.kt": [
             "js.promise.Promise",
             "web.http.Request"
@@ -90,9 +90,6 @@
         ],
         "SubmissionNavigateOptions.kt": [
             "web.form.FormData"
-        ],
-        "BlockerFunctionArgs.kt": [
-            "remix.run.router.Action as HistoryAction"
         ],
         "DeferredResult.kt": [
             "web.http.Headers"

@@ -4,7 +4,6 @@
 
 package remix.run.router
 
-
 /**
  * Returns a resolved path object relative to the given pathname.
  *

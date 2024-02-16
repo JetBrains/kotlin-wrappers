@@ -4,8 +4,8 @@
 package remix.run.router
 
 import js.promise.Promise
-import web.url.URL
 import web.abort.AbortController
+import web.url.URL
 import web.window.Window
 
 /**

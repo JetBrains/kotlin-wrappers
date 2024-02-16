@@ -4,7 +4,6 @@
 
 package remix.run.router
 
-
 /**
  * Given an existing StaticHandlerContext and an error thrown at render time,
  * provide an updated StaticHandlerContext suitable for a second SSR render

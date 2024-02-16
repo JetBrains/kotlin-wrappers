@@ -3,7 +3,6 @@
 
 package remix.run.router
 
-
 /**
  * A PathPattern is used to match on some portion of a URL pathname.
  */
