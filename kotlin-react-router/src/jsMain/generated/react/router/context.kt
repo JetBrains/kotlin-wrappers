@@ -7,10 +7,6 @@ package react.router
 import remix.run.router.RouterState
 import remix.run.router.TrackedPromise
 
-/* import * as React from "react"; */
-
-/* import type { AgnosticIndexRouteObject, AgnosticNonIndexRouteObject, AgnosticRouteMatch, History, LazyRouteFunction, Location, Action as NavigationType, RelativeRoutingType, Router, StaticHandlerContext, To, TrackedPromise } from "@remix-run/router"; */
-
 
 @JsName("UNSAFE_DataRouterContext")
 external val DataRouterContext: react.Context<DataRouterContextObject?>

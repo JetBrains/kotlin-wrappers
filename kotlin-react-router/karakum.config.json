@@ -1,154 +1,57 @@
 {
-  "input": "<nodeModules>/react-router/dist/**/*.d.ts",
-  "ignoreInput": [
-    "**/react-router/dist/lib/polyfills/**"
-  ],
-  "output": "src/jsMain/generated",
-  "ignoreOutput": [
-    "**/IndexRouteObject.kt",
-    "**/NonIndexRouteObject.kt",
-    "**/createRoutesFromChildren.kt",
-    "**/MemoryRouter.kt",
-    "**/Router.kt",
-    "**/*RouterProps.kt",
-    "**/Routes.kt",
-    "**/*RoutesProps.kt",
-    "**/*Route.kt",
-    "**/*RouteProps.kt"
-  ],
-  "libraryName": "react-router",
-  "libraryNameOutputPrefix": true,
-  "granularity": "top-level",
-  "moduleNameMapper": {
-    ".*": "react-router"
-  },
-  "packageNameMapper": {
-    "/lib": ""
-  },
-  "importInjector": {
-    "_renderMatches.kt": [
-      "remix.run.router.RouterState"
+    "input": "<nodeModules>/react-router/dist/**/*.d.ts",
+    "ignoreInput": [
+        "**/react-router/dist/lib/polyfills/**"
     ],
-    "context.kt": [
-      "remix.run.router.RouterState",
-      "remix.run.router.TrackedPromise"
+    "output": "src/jsMain/generated",
+    "ignoreOutput": [
+        "**/IndexRouteObject.kt",
+        "**/NonIndexRouteObject.kt",
+        "**/createRoutesFromChildren.kt",
+        "**/MemoryRouter.kt",
+        "**/Router.kt",
+        "**/*RouterProps.kt",
+        "**/Routes.kt",
+        "**/*RoutesProps.kt",
+        "**/*Route.kt",
+        "**/*RouteProps.kt"
     ],
-    "createMemoryRouter.kt": [
-      "remix.run.router.Router as RemixRouter"
-    ],
-    "CreateMemoryRouterOpts.kt": [
-      "remix.run.router.FutureConfig as RouterFutureConfig",
-      "remix.run.router.HydrationState",
-      "remix.run.router.InitialEntry"
-    ],
-    "DataRouterContextObject.kt": [
-      "remix.run.router.Router",
-      "remix.run.router.StaticHandlerContext"
-    ],
-    "IndexRouteProps.kt": [
-      "remix.run.router.LoaderFunction",
-      "remix.run.router.ActionFunction",
-      "remix.run.router.ShouldRevalidateFunction",
-      "remix.run.router.LazyRouteFunction"
-    ],
-    "LocationContextObject.kt": [
-      "remix.run.router.Location",
-      "remix.run.router.Action as NavigationType"
-    ],
-    "MemoryRouterProps.kt": [
-      "remix.run.router.InitialEntry"
-    ],
-    "NavigateFunction.kt": [
-      "remix.run.router.To"
-    ],
-    "NavigateOptions.kt": [
-      "remix.run.router.RelativeRoutingType"
-    ],
-    "NavigateProps.kt": [
-      "remix.run.router.To",
-      "remix.run.router.RelativeRoutingType"
-    ],
-    "Navigator.kt": [
-      "remix.run.router.To",
-      "remix.run.router.Path"
-    ],
-    "PathRouteProps.kt": [
-      "remix.run.router.LoaderFunction",
-      "remix.run.router.ActionFunction",
-      "remix.run.router.ShouldRevalidateFunction",
-      "remix.run.router.LazyRouteFunction"
-    ],
-    "RenderErrorBoundaryProps.kt": [
-      "remix.run.router.Location",
-      "remix.run.router.RevalidationState"
-    ],
-    "RenderErrorBoundaryState.kt": [
-      "remix.run.router.Location",
-      "remix.run.router.RevalidationState"
-    ],
-    "RouteMatch.kt": [
-      "remix.run.router.AgnosticRouteMatch"
-    ],
-    "RouteObject.kt": [
-      "remix.run.router.LoaderFunction",
-      "remix.run.router.ActionFunction",
-      "remix.run.router.ShouldRevalidateFunction",
-      "remix.run.router.LazyRouteFunction"
-    ],
-    "RouterProps.kt": [
-      "remix.run.router.Action as NavigationType"
-    ],
-    "RouterProviderProps": [
-      "remix.run.router.Router as RemixRouter"
-    ],
-    "UseHrefOptions.kt": [
-      "remix.run.router.RelativeRoutingType"
-    ],
-    "UseMatchesResultItem.kt": [
-      "remix.run.router.Params"
-    ],
-    "UseResolvedPathOptions.kt": [
-      "remix.run.router.RelativeRoutingType"
-    ],
-    "UseRevalidatorResult.kt": [
-      "remix.run.router.RevalidationState"
-    ],
-    "useBlocker.kt": [
-      "remix.run.router.Blocker",
-      "remix.run.router.BlockerFunction"
-    ],
-    "useHref.kt": [
-      "remix.run.router.To"
-    ],
-    "useLocation.kt": [
-      "remix.run.router.Location"
-    ],
-    "useMatches.kt": [
-      "remix.run.router.UIMatch"
-    ],
-    "useNavigation.kt": [
-      "remix.run.router.Navigation"
-    ],
-    "useNavigationType.kt": [
-      "remix.run.router.Action as NavigationType"
-    ],
-    "useMatch.kt": [
-      "remix.run.router.PathMatch",
-      "remix.run.router.PathPattern"
-    ],
-    "useParams.kt": [
-      "remix.run.router.Params"
-    ],
-    "useResolvedPath.kt": [
-      "remix.run.router.To",
-      "remix.run.router.Path"
-    ],
-    "useRoutes.kt": [
-      "remix.run.router.Location"
-    ],
-    "useRoutesImpl.kt": [
-      "remix.run.router.Location",
-      "remix.run.router.RouterState"
-    ]
-  }
+    "libraryName": "react-router",
+    "libraryNameOutputPrefix": true,
+    "granularity": "top-level",
+    "moduleNameMapper": {
+        ".*": "react-router"
+    },
+    "packageNameMapper": {
+        "/lib": ""
+    },
+    "importMapper": {
+        "@remix-run/router": "remix.run.router",
+        "react": {
+            "\\*": ""
+        },
+        "\\..*": "react.router"
+    },
+    "importInjector": {
+        "_renderMatches.kt": [
+            "remix.run.router.RouterState"
+        ],
+        "context.kt": [
+            "remix.run.router.RouterState"
+        ],
+        "Navigator.kt": [
+            "remix.run.router.Path"
+        ],
+        "RouteObject.kt": [
+            "remix.run.router.LoaderFunction",
+            "remix.run.router.ActionFunction",
+            "remix.run.router.ShouldRevalidateFunction"
+        ],
+        "useNavigation.kt": [
+            "remix.run.router.Navigation"
+        ],
+        "useRoutesImpl.kt": [
+            "remix.run.router.RouterState"
+        ]
+    }
 }
