@@ -60,7 +60,7 @@ external class WebFrameMain : NodeEventEmitter {
      * The renderer process can handle the message by listening to `channel` with the
      * `ipcRenderer` module.
      */
-    fun send(channel: String, vararg args: Any? /* js.array.ReadonlyArray<Any?> */): Unit
+    fun send(channel: String, vararg args: Any?): Unit
 
     /**
      * A `WebFrameMain[]` collection containing the direct descendents of `frame`.

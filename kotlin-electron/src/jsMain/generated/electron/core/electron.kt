@@ -13,7 +13,7 @@ package electron.core
 
 /* export = Electron.Renderer; */
 
-/* import * as fs from 'fs'; */
+
 /* export = fs; */
 
 /* declare namespace NodeJS {

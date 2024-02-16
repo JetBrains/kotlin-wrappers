@@ -2193,7 +2193,7 @@ external class WebContents : NodeEventEmitter {
      *
      * For additional reading, refer to Electron's IPC guide.
      */
-    fun send(channel: String, vararg args: Any? /* js.array.ReadonlyArray<Any?> */): Unit
+    fun send(channel: String, vararg args: Any?): Unit
 
     /**
      * Sends an input `event` to the page. **Note:** The `BrowserWindow` containing the
@@ -2223,13 +2223,9 @@ external class WebContents : NodeEventEmitter {
      *
      * You can also read `frameId` from all incoming IPC messages in the main process.
      */
-    fun sendToFrame(frameId: Double, channel: String, vararg args: Any? /* js.array.ReadonlyArray<Any?> */): Unit
+    fun sendToFrame(frameId: Double, channel: String, vararg args: Any?): Unit
 
-    fun sendToFrame(
-        frameId: js.array.JsTuple2<Double, Double>,
-        channel: String,
-        vararg args: Any?, /* js.array.ReadonlyArray<Any?> */
-    ): Unit
+    fun sendToFrame(frameId: js.array.JsTuple2<Double, Double>, channel: String, vararg args: Any?): Unit
 
     /**
      * Mute the audio on the current web page.

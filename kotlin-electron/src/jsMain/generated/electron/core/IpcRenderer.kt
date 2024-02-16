@@ -41,7 +41,7 @@ external interface IpcRenderer : node.events.EventEmitter {
      * returned by `invoke` will reject. However, the `Error` object in the renderer
      * process will not be the same as the one thrown in the main process.
      */
-    fun invoke(channel: String, vararg args: Any? /* js.array.ReadonlyArray<Any?> */): Promise<Any?>
+    fun invoke(channel: String, vararg args: Any?): Promise<Any?>
 
     /**
      * Listens to `channel`, when a new message arrives `listener` would be called with
@@ -115,7 +115,7 @@ external interface IpcRenderer : node.events.EventEmitter {
      * If you want to receive a single response from the main process, like the result
      * of a method call, consider using `ipcRenderer.invoke`.
      */
-    fun send(channel: String, vararg args: Any? /* js.array.ReadonlyArray<Any?> */): Unit
+    fun send(channel: String, vararg args: Any?): Unit
 
     /**
      * The value sent back by the `ipcMain` handler.
@@ -141,16 +141,16 @@ external interface IpcRenderer : node.events.EventEmitter {
      * renderer process until the reply is received, so use this method only as a last
      * resort. It's much better to use the asynchronous version, `invoke()`.
      */
-    fun sendSync(channel: String, vararg args: Any? /* js.array.ReadonlyArray<Any?> */): Any?
+    fun sendSync(channel: String, vararg args: Any?): Any?
 
     /**
      * Sends a message to a window with `webContentsId` via `channel`.
      */
-    fun sendTo(webContentsId: Double, channel: String, vararg args: Any? /* js.array.ReadonlyArray<Any?> */): Unit
+    fun sendTo(webContentsId: Double, channel: String, vararg args: Any?): Unit
 
     /**
      * Like `ipcRenderer.send` but the event will be sent to the `<webview>` element in
      * the host page instead of the main process.
      */
-    fun sendToHost(channel: String, vararg args: Any? /* js.array.ReadonlyArray<Any?> */): Unit
+    fun sendToHost(channel: String, vararg args: Any?): Unit
 }
