@@ -1,11 +1,17 @@
+## pre.698
+
+**BREAKING CHANGE**
+
+* `Transferable` package fixed
+    * `js.core` -> `js.transferable`
+* `structuredClone` package fixed
+    * `js.core` -> `web.serialization`
+
 ## pre.691
 
 **BREAKING CHANGE**
 
 * `fetch` throws the original error instead of an artificial `FetchException` wrapper exception
-
-**BREAKING CHANGE**
-
 * `Blob` package changed
     * `web.buffer` -> `web.blob`
 
