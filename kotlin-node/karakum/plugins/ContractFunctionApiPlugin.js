@@ -1,6 +1,13 @@
 import ts from "typescript";
 import * as karakum from "karakum";
 
+function isConflictingOverload(node) {
+    return (
+        node.name.text === "isMap"
+        || node.name.text === "isSet"
+    )
+}
+
 export default {
     setup(context) {
         this.contractApiDeclarations = []
@@ -31,23 +38,11 @@ export default {
                 ?.map(typeParameter => next(typeParameter))
                 ?.join(", ")
 
-            const typeParameterNames = node.typeParameters
-                ?.map(typeParameter => typeParameter.name.text)
-                ?.join(", ")
-
             const returnType = next(node.type)
 
             const contractReturns = "returns(true)"
             const parameterName = karakum.escapeIdentifier(next(node.type.parameterName))
             let contractType = next(node.type.type)
-
-            if (name === "isMap") {
-                contractType = "js.collections.ReadonlyMap<*, *>"
-            }
-
-            if (name === "isSet") {
-                contractType = "js.collections.ReadonlySet<*>"
-            }
 
             if (name === "isWeakMap") {
                 contractType = "js.collections.WeakMap<*, *>"
@@ -61,6 +56,10 @@ export default {
                 strategy: "function",
                 defaultValue: "undefined.unsafeCast<Nothing>()",
                 template: (parameters, signature) => {
+                    if (isConflictingOverload(node, signature)) {
+                        return ""
+                    }
+
                     const parameterNames = signature
                         .map((it, index) => (
                             ts.isIdentifier(it.parameter.name)
@@ -76,7 +75,7 @@ inline fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${name}(${param
         ${contractReturns} implies (${parameterName} is ${contractType})
     }
 
-    return ${name}Raw${karakum.ifPresent(typeParameterNames, it => `<${it}>`)}(${parameterNames})
+    return ${name}Raw(${parameterNames})
 }
                     `
                 }
@@ -93,7 +92,11 @@ inline fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${name}(${param
 
             return karakum.convertParameterDeclarations(node, context, next, {
                 strategy: "function",
-                template: parameters => {
+                template: (parameters, signature) => {
+                    if (isConflictingOverload(node, signature)) {
+                        return ""
+                    }
+
                     return `
 @JsName("${node.name.text}")
 external fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${name}Raw(${parameters})${karakum.ifPresent(returnType, it => `: ${it}`)}

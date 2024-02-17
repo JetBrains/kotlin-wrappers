@@ -131,10 +131,18 @@ export default {
                         return ""
                     }
 
+                    const parameterNames = signature
+                        .map((it, index) => (
+                            ts.isIdentifier(it.parameter.name)
+                                ? karakum.escapeIdentifier(it.parameter.name.text)
+                                : `param${index}`
+                        ))
+                        .join(", ")
+
                     return `
 suspend fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${name}(${parameters})${karakum.ifPresent(returnTypePayload, it => `: ${it}`)} =
     ${name}Async(
-        ${signature.map((it, index) => ts.isIdentifier(it.parameter.name) ? it.parameter.name.text : `param${index}`).join(", ")}
+        ${parameterNames}
     ).await()
                     `
                 }
