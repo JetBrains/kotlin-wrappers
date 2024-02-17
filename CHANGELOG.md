@@ -2,9 +2,9 @@
 
 **BREAKING CHANGE**
 
-* `Transferable` package fixed
+* `Transferable` package changed
     * `js.core` -> `js.transferable`
-* `structuredClone` package fixed
+* `structuredClone` package changed
     * `js.core` -> `web.serialization`
 
 ## pre.691
