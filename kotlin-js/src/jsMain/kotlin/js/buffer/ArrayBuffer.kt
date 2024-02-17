@@ -4,7 +4,7 @@
 
 package js.buffer
 
-import js.core.Transferable
+import js.transferable.Transferable
 
 external class ArrayBuffer(
     override val byteLength: Int,

@@ -2,7 +2,7 @@
 
 package web.canvas
 
-import js.core.Transferable
+import js.transferable.Transferable
 import web.gl.TexImageSource
 
 /**

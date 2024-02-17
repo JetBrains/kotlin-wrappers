@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package js.core
+package js.transferable
 
 /**
  * Union of:

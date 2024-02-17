@@ -3,8 +3,8 @@
 package web.canvas
 
 import js.core.JsLong
-import js.core.Transferable
 import js.promise.Promise
+import js.transferable.Transferable
 import web.blob.Blob
 import web.events.Event
 import web.events.EventHandler

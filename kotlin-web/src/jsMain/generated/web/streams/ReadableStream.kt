@@ -3,10 +3,10 @@
 package web.streams
 
 import js.array.JsTuple2
-import js.core.Transferable
 import js.core.Void
 import js.errors.JsError
 import js.promise.Promise
+import js.transferable.Transferable
 
 /**
  * This Streams API interface represents a readable stream of byte data. The Fetch API offers a concrete instance of a ReadableStream through the body property of a Response object.

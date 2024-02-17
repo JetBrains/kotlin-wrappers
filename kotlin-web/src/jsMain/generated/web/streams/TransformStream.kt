@@ -2,7 +2,7 @@
 
 package web.streams
 
-import js.core.Transferable
+import js.transferable.Transferable
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStream)

@@ -1,8 +1,9 @@
 // Automatically generated - do not modify!
 
-package js.core
+package web.serialization
 
 import js.array.ReadonlyArray
+import js.transferable.Transferable
 
 external interface StructuredSerializeOptions {
     var transfer: ReadonlyArray<Transferable>?

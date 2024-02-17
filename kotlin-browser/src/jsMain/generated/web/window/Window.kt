@@ -4,7 +4,7 @@ package web.window
 
 import js.array.ArrayLike
 import js.array.ReadonlyArray
-import js.core.Transferable
+import js.transferable.Transferable
 import web.device.DeviceMotionEvent
 import web.device.DeviceOrientationEvent
 import web.dom.Element
