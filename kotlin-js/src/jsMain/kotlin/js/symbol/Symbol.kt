@@ -15,6 +15,7 @@ open external class Symbol {
     object iterator : Symbol
     object match : Symbol
     object matchAll : Symbol
+    object metadata : Symbol
     object replace : Symbol
     object search : Symbol
     object species : Symbol
