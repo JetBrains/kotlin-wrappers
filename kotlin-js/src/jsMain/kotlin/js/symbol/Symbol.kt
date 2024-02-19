@@ -7,7 +7,9 @@ import seskar.js.JsPrimitive
 open external class Symbol {
     val description: String?
 
+    object asyncDispose : Symbol
     object asyncIterator : Symbol
+    object dispose : Symbol
     object hasInstance : Symbol
     object isConcatSpreadable : Symbol
     object iterator : Symbol
@@ -20,8 +22,6 @@ open external class Symbol {
     object toPrimitive : Symbol
     object toStringTag : Symbol
     object unscopables : Symbol
-    object dispose : Symbol
-    object asyncDispose : Symbol
 
     companion object {
         fun `for`(key: String): Symbol
