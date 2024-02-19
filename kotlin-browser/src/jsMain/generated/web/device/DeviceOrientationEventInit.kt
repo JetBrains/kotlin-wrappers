@@ -2,8 +2,10 @@
 
 package web.device
 
+import js.objects.JsPlainObject
 import web.events.EventInit
 
+@JsPlainObject
 external interface DeviceOrientationEventInit :
     EventInit {
     val absolute: Boolean?

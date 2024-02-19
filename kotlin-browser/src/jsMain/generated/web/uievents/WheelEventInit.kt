@@ -2,6 +2,9 @@
 
 package web.uievents
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface WheelEventInit :
     MouseEventInit {
     val deltaMode: DeltaMode?

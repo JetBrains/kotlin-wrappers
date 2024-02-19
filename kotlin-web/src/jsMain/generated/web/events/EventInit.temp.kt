@@ -2,6 +2,7 @@
 
 package web.events
 
+import js.objects.JsPlainObject
 import js.objects.jso
 
 inline fun EventInit(
@@ -9,6 +10,7 @@ inline fun EventInit(
 ): EventInit =
     jso(block)
 
+@JsPlainObject
 external interface EventInitMutable :
     EventInit {
     override var bubbles: Boolean?

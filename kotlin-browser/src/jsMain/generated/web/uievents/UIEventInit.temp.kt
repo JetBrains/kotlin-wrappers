@@ -2,6 +2,7 @@
 
 package web.uievents
 
+import js.objects.JsPlainObject
 import js.objects.jso
 import web.events.EventInitMutable
 import web.window.Window
@@ -11,6 +12,7 @@ inline fun UIEventInit(
 ): UIEventInit =
     jso(block)
 
+@JsPlainObject
 external interface UIEventInitMutable :
     UIEventInit,
     EventInitMutable {

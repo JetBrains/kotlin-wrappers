@@ -2,8 +2,10 @@
 
 package web.uievents
 
+import js.objects.JsPlainObject
 import web.events.EventTarget
 
+@JsPlainObject
 external interface MouseEventInit :
     EventModifierInit {
     val button: MouseButton?

@@ -3,9 +3,11 @@
 package web.serviceworker
 
 import js.core.Void
+import js.objects.JsPlainObject
 import js.promise.Promise
 import web.http.Request
 
+@JsPlainObject
 external interface FetchEventInit :
     ExtendableEventInit {
     val clientId: String?

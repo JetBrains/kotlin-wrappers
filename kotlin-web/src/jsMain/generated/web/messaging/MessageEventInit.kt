@@ -3,8 +3,10 @@
 package web.messaging
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import web.events.EventInit
 
+@JsPlainObject
 external interface MessageEventInit<out T> :
     EventInit {
     val data: T?

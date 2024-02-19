@@ -3,6 +3,7 @@
 package web.uievents
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 inline fun TouchEventInit(
@@ -10,6 +11,7 @@ inline fun TouchEventInit(
 ): TouchEventInit =
     jso(block)
 
+@JsPlainObject
 external interface TouchEventInitMutable :
     TouchEventInit,
     EventModifierInitMutable {

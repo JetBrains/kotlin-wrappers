@@ -2,8 +2,10 @@
 
 package web.cssom
 
+import js.objects.JsPlainObject
 import web.events.EventInit
 
+@JsPlainObject
 external interface TransitionEventInit :
     EventInit {
     val elapsedTime: Double?

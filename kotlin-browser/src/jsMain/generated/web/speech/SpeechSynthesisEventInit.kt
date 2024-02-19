@@ -2,8 +2,10 @@
 
 package web.speech
 
+import js.objects.JsPlainObject
 import web.events.EventInit
 
+@JsPlainObject
 external interface SpeechSynthesisEventInit :
     EventInit {
     val charIndex: Int?

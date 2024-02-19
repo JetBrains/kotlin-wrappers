@@ -2,8 +2,10 @@
 
 package web.errors
 
+import js.objects.JsPlainObject
 import web.events.EventInit
 
+@JsPlainObject
 external interface ErrorEventInit :
     EventInit {
     val colno: Int?

@@ -2,8 +2,10 @@
 
 package web.csp
 
+import js.objects.JsPlainObject
 import web.events.EventInit
 
+@JsPlainObject
 external interface SecurityPolicyViolationEventInit :
     EventInit {
     val blockedURI: String?

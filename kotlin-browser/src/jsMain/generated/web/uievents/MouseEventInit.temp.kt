@@ -2,6 +2,7 @@
 
 package web.uievents
 
+import js.objects.JsPlainObject
 import js.objects.jso
 import web.events.EventTarget
 
@@ -10,6 +11,7 @@ inline fun MouseEventInit(
 ): MouseEventInit =
     jso(block)
 
+@JsPlainObject
 external interface MouseEventInitMutable :
     MouseEventInit,
     EventModifierInitMutable {

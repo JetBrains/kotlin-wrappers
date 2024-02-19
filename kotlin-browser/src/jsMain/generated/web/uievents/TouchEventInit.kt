@@ -3,7 +3,9 @@
 package web.uievents
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
+@JsPlainObject
 external interface TouchEventInit :
     EventModifierInit {
     val changedTouches: ReadonlyArray<Touch>?

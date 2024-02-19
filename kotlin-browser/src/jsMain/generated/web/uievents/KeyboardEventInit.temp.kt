@@ -2,6 +2,7 @@
 
 package web.uievents
 
+import js.objects.JsPlainObject
 import js.objects.jso
 import web.keyboard.KeyCode
 
@@ -10,6 +11,7 @@ inline fun KeyboardEventInit(
 ): KeyboardEventInit =
     jso(block)
 
+@JsPlainObject
 external interface KeyboardEventInitMutable :
     KeyboardEventInit,
     EventModifierInitMutable {

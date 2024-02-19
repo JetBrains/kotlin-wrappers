@@ -2,8 +2,10 @@
 
 package web.uievents
 
+import js.objects.JsPlainObject
 import web.keyboard.KeyCode
 
+@JsPlainObject
 external interface KeyboardEventInit :
     EventModifierInit {
     val code: KeyCode?

@@ -2,8 +2,10 @@
 
 package web.storage
 
+import js.objects.JsPlainObject
 import web.events.EventInit
 
+@JsPlainObject
 external interface StorageEventInit :
     EventInit {
     val key: String?

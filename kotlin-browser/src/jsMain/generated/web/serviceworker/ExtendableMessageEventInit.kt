@@ -3,8 +3,10 @@
 package web.serviceworker
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import web.messaging.MessagePort
 
+@JsPlainObject
 external interface ExtendableMessageEventInit :
     ExtendableEventInit {
     val data: Any?

@@ -3,9 +3,11 @@
 package web.uievents
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import web.data.DataTransfer
 import web.ranges.StaticRange
 
+@JsPlainObject
 external interface InputEventInit :
     UIEventInit {
     val data: String?
