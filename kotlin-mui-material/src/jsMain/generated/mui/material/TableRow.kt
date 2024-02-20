@@ -16,7 +16,7 @@ external interface TableRowOwnProps :
     react.PropsWithChildren,
     mui.system.PropsWithSx {
     /**
-     * Should be valid <tr> children such as `TableCell`.
+     * Should be valid `<tr>` children such as `TableCell`.
      */
     override var children: react.ReactNode?
 
