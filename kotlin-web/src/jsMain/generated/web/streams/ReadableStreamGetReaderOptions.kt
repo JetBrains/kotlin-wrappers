@@ -2,6 +2,9 @@
 
 package web.streams
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 sealed external interface ReadableStreamGetReaderOptions {
     /**
      * Creates a ReadableStreamBYOBReader and locks the stream to the new reader.

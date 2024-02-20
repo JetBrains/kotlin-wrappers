@@ -2,6 +2,9 @@
 
 package js.intl
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 sealed external interface ResolvedDateTimeFormatOptions {
     var locale: String
     var calendar: String

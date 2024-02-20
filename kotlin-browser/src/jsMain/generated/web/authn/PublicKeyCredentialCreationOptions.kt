@@ -4,7 +4,9 @@ package web.authn
 
 import js.array.ReadonlyArray
 import js.buffer.BufferSource
+import js.objects.JsPlainObject
 
+@JsPlainObject
 sealed external interface PublicKeyCredentialCreationOptions {
     var attestation: AttestationConveyancePreference?
     var authenticatorSelection: AuthenticatorSelectionCriteria?

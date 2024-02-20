@@ -2,8 +2,10 @@
 
 package web.performance
 
+import js.objects.JsPlainObject
 import web.time.DOMHighResTimeStamp
 
+@JsPlainObject
 sealed external interface PerformanceMeasureOptions {
     var detail: Any?
     var duration: DOMHighResTimeStamp?

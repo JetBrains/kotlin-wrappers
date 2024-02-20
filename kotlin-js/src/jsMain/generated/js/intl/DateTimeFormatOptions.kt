@@ -2,6 +2,9 @@
 
 package js.intl
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 sealed external interface DateTimeFormatOptions {
     var localeMatcher: LocaleMatcher?
     var weekday: WeekdayFormat?

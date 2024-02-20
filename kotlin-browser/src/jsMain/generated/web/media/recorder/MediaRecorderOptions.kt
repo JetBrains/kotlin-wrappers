@@ -2,6 +2,9 @@
 
 package web.media.recorder
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 sealed external interface MediaRecorderOptions {
     var audioBitsPerSecond: Int?
     var bitsPerSecond: Int?

@@ -2,9 +2,11 @@
 
 package web.locks
 
+import js.objects.JsPlainObject
 import web.abort.AbortSignal
 import web.abort.Abortable
 
+@JsPlainObject
 sealed external interface LockOptions :
     Abortable {
     var ifAvailable: Boolean?

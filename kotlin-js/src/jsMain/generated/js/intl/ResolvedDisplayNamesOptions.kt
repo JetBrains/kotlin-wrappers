@@ -2,6 +2,9 @@
 
 package js.intl
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 sealed external interface ResolvedDisplayNamesOptions {
     var locale: UnicodeBCP47LocaleIdentifier
     var style: RelativeTimeFormatStyle

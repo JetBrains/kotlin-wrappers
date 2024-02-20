@@ -2,6 +2,9 @@
 
 package web.geolocation
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 sealed external interface PositionOptions {
     var enableHighAccuracy: Boolean?
     var maximumAge: Int?

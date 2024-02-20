@@ -2,9 +2,11 @@
 
 package web.streams
 
+import js.objects.JsPlainObject
 import web.abort.AbortSignal
 import web.abort.Abortable
 
+@JsPlainObject
 sealed external interface StreamPipeOptions :
     Abortable {
     var preventAbort: Boolean?

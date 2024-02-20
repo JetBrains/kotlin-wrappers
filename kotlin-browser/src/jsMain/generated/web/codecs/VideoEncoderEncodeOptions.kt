@@ -2,6 +2,9 @@
 
 package web.codecs
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 sealed external interface VideoEncoderEncodeOptions {
     var keyFrame: Boolean?
 }

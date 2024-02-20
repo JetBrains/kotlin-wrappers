@@ -4,7 +4,9 @@ package web.authn
 
 import js.array.ReadonlyArray
 import js.buffer.BufferSource
+import js.objects.JsPlainObject
 
+@JsPlainObject
 sealed external interface PublicKeyCredentialRequestOptions {
     var allowCredentials: ReadonlyArray<PublicKeyCredentialDescriptor>?
     var challenge: BufferSource

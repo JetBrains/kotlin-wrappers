@@ -2,6 +2,9 @@
 
 package web.audio
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 sealed external interface DynamicsCompressorOptions :
     AudioNodeOptions {
     var attack: Float?

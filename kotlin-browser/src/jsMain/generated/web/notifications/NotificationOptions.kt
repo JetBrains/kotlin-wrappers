@@ -2,6 +2,9 @@
 
 package web.notifications
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 sealed external interface NotificationOptions {
     var badge: String?
     var body: String?

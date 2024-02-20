@@ -2,6 +2,9 @@
 
 package web.scroll
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 sealed external interface ScrollToOptions :
     ScrollOptions {
     var left: Double?

@@ -2,6 +2,9 @@
 
 package js.intl
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 sealed external interface PluralRulesOptions {
     var localeMatcher: LocaleMatcher?
     var type: PluralRuleType?
