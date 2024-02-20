@@ -2,6 +2,9 @@
 
 package web.animations
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 sealed external interface ComputedEffectTiming :
     EffectTiming {
     var activeDuration: CSSNumberish?

@@ -2,6 +2,9 @@
 
 package web.assembly
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 sealed external interface MemoryDescriptor {
     var initial: Int
     var maximum: Int?

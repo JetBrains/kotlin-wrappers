@@ -2,8 +2,10 @@
 
 package web.html
 
+import js.objects.JsPlainObject
 import web.time.DOMHighResTimeStamp
 
+@JsPlainObject
 sealed external interface VideoFrameCallbackMetadata {
     var captureTime: DOMHighResTimeStamp?
     var expectedDisplayTime: DOMHighResTimeStamp

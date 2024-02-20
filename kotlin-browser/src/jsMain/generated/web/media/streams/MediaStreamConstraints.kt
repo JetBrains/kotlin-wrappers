@@ -2,6 +2,9 @@
 
 package web.media.streams
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 sealed external interface MediaStreamConstraints {
     var audio: MediaTrackConstraints /* | Boolean */?
     var peerIdentity: String?

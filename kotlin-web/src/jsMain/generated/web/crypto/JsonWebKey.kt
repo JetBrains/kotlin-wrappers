@@ -3,7 +3,9 @@
 package web.crypto
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
+@JsPlainObject
 sealed external interface JsonWebKey {
     var alg: String?
     var crv: String?

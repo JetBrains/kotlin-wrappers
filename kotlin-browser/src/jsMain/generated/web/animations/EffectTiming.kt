@@ -2,6 +2,9 @@
 
 package web.animations
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 sealed external interface EffectTiming {
     var delay: Double?
     var direction: PlaybackDirection?

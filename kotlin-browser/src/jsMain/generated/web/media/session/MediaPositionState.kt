@@ -2,6 +2,9 @@
 
 package web.media.session
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 sealed external interface MediaPositionState {
     var duration: Double?
     var playbackRate: Double?

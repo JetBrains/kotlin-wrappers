@@ -2,6 +2,9 @@
 
 package web.validation
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 sealed external interface ValidityStateFlags {
     var badInput: Boolean?
     var customError: Boolean?

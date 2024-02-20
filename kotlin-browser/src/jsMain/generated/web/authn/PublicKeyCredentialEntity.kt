@@ -2,6 +2,9 @@
 
 package web.authn
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 sealed external interface PublicKeyCredentialEntity {
     var name: String
 }

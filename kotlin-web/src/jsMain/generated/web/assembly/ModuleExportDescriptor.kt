@@ -2,6 +2,9 @@
 
 package web.assembly
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 sealed external interface ModuleExportDescriptor {
     var kind: ImportExportKind
     var name: String

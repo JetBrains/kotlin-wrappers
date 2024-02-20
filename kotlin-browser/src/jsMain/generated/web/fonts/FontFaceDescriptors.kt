@@ -2,6 +2,9 @@
 
 package web.fonts
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 sealed external interface FontFaceDescriptors {
     var ascentOverride: String?
     var descentOverride: String?

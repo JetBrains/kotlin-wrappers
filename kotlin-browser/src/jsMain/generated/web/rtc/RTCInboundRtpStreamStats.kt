@@ -3,8 +3,10 @@
 package web.rtc
 
 import js.core.JsLong
+import js.objects.JsPlainObject
 import web.time.DOMHighResTimeStamp
 
+@JsPlainObject
 sealed external interface RTCInboundRtpStreamStats :
     RTCReceivedRtpStreamStats {
     var audioLevel: Double?

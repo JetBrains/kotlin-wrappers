@@ -2,6 +2,9 @@
 
 package web.authn
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 sealed external interface AuthenticatorSelectionCriteria {
     var authenticatorAttachment: AuthenticatorAttachment?
     var requireResidentKey: Boolean?

@@ -3,7 +3,9 @@
 package web.rtc
 
 import js.core.JsLong
+import js.objects.JsPlainObject
 
+@JsPlainObject
 sealed external interface RTCTransportStats :
     RTCStats {
     var bytesReceived: JsLong?
