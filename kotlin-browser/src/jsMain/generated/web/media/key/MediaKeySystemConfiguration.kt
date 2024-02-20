@@ -3,7 +3,9 @@
 package web.media.key
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
+@JsPlainObject
 sealed external interface MediaKeySystemConfiguration {
     var audioCapabilities: ReadonlyArray<MediaKeySystemMediaCapability>?
     var distinctiveIdentifier: MediaKeysRequirement?

@@ -3,7 +3,9 @@
 package web.codecs
 
 import js.core.JsLong
+import js.objects.JsPlainObject
 
+@JsPlainObject
 sealed external interface VideoEncoderConfig {
     var alpha: AlphaOption?
     var avc: AvcEncoderConfig?

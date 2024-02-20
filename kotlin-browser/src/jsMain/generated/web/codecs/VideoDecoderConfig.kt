@@ -3,7 +3,9 @@
 package web.codecs
 
 import js.buffer.AllowSharedBufferSource
+import js.objects.JsPlainObject
 
+@JsPlainObject
 sealed external interface VideoDecoderConfig {
     var codec: String
     var codedHeight: Int?

@@ -3,7 +3,9 @@
 package web.rtc
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
+@JsPlainObject
 sealed external interface RTCConfiguration {
     var bundlePolicy: RTCBundlePolicy?
     var certificates: ReadonlyArray<RTCCertificate>?

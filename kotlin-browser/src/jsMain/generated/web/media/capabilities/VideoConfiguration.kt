@@ -3,7 +3,9 @@
 package web.media.capabilities
 
 import js.core.JsLong
+import js.objects.JsPlainObject
 
+@JsPlainObject
 sealed external interface VideoConfiguration {
     var bitrate: JsLong
     var colorGamut: ColorGamut?
