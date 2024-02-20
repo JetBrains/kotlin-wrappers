@@ -2,9 +2,6 @@
 
 package js.intl
 
-import js.objects.JsPlainObject
-
-@JsPlainObject
 sealed external interface LocaleOptions {
     /**
      * A string containing the language, and the script and region if available.
