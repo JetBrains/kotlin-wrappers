@@ -12,6 +12,15 @@ external interface AvatarProps :
     react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
     mui.types.PropsWithComponent
 
+external interface AvatarSlots {
+    /**
+     * The component that renders the transition.
+     * [Follow this guide](/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
+     * @default Collapse
+     */
+    var img: react.ComponentType<*>?
+}
+
 external interface AvatarOwnProps :
     react.PropsWithChildren,
     mui.system.PropsWithSx {
@@ -35,6 +44,7 @@ external interface AvatarOwnProps :
     /**
      * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attributes) applied to the `img` element if the component is used to display an image.
      * It can be used to listen for the loading error event.
+     * @deprecated Use `slotProps.img` instead. This prop will be removed in v7. [How to migrate](/material-ui/migration/migrating-from-deprecated-apis/).
      */
     var imgProps: react.dom.html.ImgHTMLAttributes<web.html.HTMLImageElement>?
 
