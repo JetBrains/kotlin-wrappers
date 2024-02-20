@@ -2,6 +2,9 @@
 
 package web.crypto
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 sealed external interface HmacKeyAlgorithm :
     KeyAlgorithm {
     var hash: KeyAlgorithm
