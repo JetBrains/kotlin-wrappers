@@ -2,6 +2,9 @@
 
 package web.geometry
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 sealed external interface DOMMatrixInit :
     DOMMatrix2DInit {
     var is2D: Boolean?

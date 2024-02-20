@@ -2,6 +2,9 @@
 
 package web.rtc
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 sealed external interface RTCDataChannelInit {
     var id: Short?
     var maxPacketLifeTime: Short?

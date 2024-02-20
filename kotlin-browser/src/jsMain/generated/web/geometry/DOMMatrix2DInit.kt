@@ -2,6 +2,9 @@
 
 package web.geometry
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 sealed external interface DOMMatrix2DInit {
     var a: Double?
     var b: Double?

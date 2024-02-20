@@ -2,6 +2,9 @@
 
 package web.uievents
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 sealed external interface EventModifierInit :
     UIEventInit {
     val altKey: Boolean?

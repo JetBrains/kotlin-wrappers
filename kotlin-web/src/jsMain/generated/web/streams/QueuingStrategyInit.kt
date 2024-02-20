@@ -2,6 +2,9 @@
 
 package web.streams
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 sealed external interface QueuingStrategyInit {
     /**
      * Creates a new ByteLengthQueuingStrategy with the provided high water mark.

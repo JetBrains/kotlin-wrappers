@@ -2,10 +2,12 @@
 
 package web.dom.observers
 
+import js.objects.JsPlainObject
 import web.dom.Element
 import web.geometry.DOMRectInit
 import web.time.DOMHighResTimeStamp
 
+@JsPlainObject
 sealed external interface IntersectionObserverEntryInit {
     var boundingClientRect: DOMRectInit
     var intersectionRatio: Double

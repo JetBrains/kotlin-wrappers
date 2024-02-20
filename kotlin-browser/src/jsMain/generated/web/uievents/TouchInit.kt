@@ -2,8 +2,10 @@
 
 package web.uievents
 
+import js.objects.JsPlainObject
 import web.events.EventTarget
 
+@JsPlainObject
 sealed external interface TouchInit {
     var altitudeAngle: Double?
     var azimuthAngle: Double?

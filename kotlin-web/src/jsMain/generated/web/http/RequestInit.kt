@@ -3,9 +3,11 @@
 package web.http
 
 import js.core.Void
+import js.objects.JsPlainObject
 import web.abort.AbortSignal
 import web.abort.Abortable
 
+@JsPlainObject
 sealed external interface RequestInit :
     Abortable {
     /**

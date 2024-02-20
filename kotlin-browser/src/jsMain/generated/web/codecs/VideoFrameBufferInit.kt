@@ -4,8 +4,10 @@ package web.codecs
 
 import js.array.ReadonlyArray
 import js.core.JsLong
+import js.objects.JsPlainObject
 import web.geometry.DOMRectInit
 
+@JsPlainObject
 sealed external interface VideoFrameBufferInit {
     var codedHeight: Int
     var codedWidth: Int

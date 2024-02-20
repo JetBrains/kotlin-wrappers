@@ -2,6 +2,9 @@
 
 package web.rtc
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 sealed external interface RTCErrorInit {
     var errorDetail: RTCErrorDetailType
     var httpRequestStatusCode: Int?
