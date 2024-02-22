@@ -52,6 +52,8 @@ protected constructor() :
 
     /**
      * Sets or retrieves the initial contents of the object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/defaultValue)
      */
     var defaultValue: String
     var dirName: String
@@ -134,18 +136,28 @@ protected constructor() :
 
     /**
      * Defines the maximum acceptable value for an input element with type="number".When used with the min and step attributes, lets you control the range and increment (such as only even numbers) that the user can enter into an input field.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/max)
      */
     var max: String
 
     /**
      * Sets or retrieves the maximum number of characters that the user can enter in a text control.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/maxLength)
      */
     var maxLength: Int
 
     /**
      * Defines the minimum acceptable value for an input element with type="number". When used with the max and step attributes, lets you control the range and increment (such as even numbers only) that the user can enter into an input field.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/min)
      */
     var min: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/minLength)
+     */
     var minLength: Int
 
     /**
@@ -189,11 +201,15 @@ protected constructor() :
 
     /**
      * Gets or sets the end position or offset of a text selection.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/selectionEnd)
      */
     var selectionEnd: Int?
 
     /**
      * Gets or sets the starting position or offset of a text selection.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/selectionStart)
      */
     var selectionStart: Int?
     var size: Int
@@ -231,6 +247,8 @@ protected constructor() :
 
     /**
      * Returns the value of the data at the cursor's current position.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/value)
      */
     var value: String
 
