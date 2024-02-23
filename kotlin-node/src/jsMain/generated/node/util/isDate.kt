@@ -23,4 +23,4 @@ package node.util
  */
 
 @JsName("isDate")
-external fun isDateRaw(`object`: Any?): Boolean /* object is Date */
+external fun isDateRaw(value: Any?): Boolean /* object is Date */

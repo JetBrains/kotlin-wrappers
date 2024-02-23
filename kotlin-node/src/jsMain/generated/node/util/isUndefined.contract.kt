@@ -6,10 +6,10 @@ import kotlin.contracts.contract
 
 
 @Suppress("NOTHING_TO_INLINE", "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
-inline fun isUndefined(`object`: Any?): Boolean /* object is undefined */ {
+inline fun isUndefined(value: Any?): Boolean /* object is undefined */ {
     contract {
-        returns(true) implies (`object` is Nothing?)
+        returns(true) implies (value is Nothing?)
     }
 
-    return isUndefinedRaw(`object`)
+    return isUndefinedRaw(value)
 }

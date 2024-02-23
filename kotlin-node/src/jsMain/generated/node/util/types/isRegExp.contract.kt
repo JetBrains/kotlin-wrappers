@@ -7,10 +7,10 @@ import kotlin.js.RegExp
 
 
 @Suppress("NOTHING_TO_INLINE", "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
-inline fun isRegExp(`object`: Any?): Boolean /* object is RegExp */ {
+inline fun isRegExp(value: Any?): Boolean /* object is RegExp */ {
     contract {
-        returns(true) implies (`object` is RegExp)
+        returns(true) implies (value is RegExp)
     }
 
-    return isRegExpRaw(`object`)
+    return isRegExpRaw(value)
 }

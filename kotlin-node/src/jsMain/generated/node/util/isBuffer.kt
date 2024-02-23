@@ -23,4 +23,4 @@ package node.util
  */
 
 @JsName("isBuffer")
-external fun isBufferRaw(`object`: Any?): Boolean /* object is Buffer */
+external fun isBufferRaw(value: Any?): Boolean /* object is Buffer */

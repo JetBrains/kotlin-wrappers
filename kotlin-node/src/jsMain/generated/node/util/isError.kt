@@ -37,4 +37,4 @@ package node.util
  */
 
 @JsName("isError")
-external fun isErrorRaw(`object`: Any?): Boolean /* object is Error */
+external fun isErrorRaw(value: Any?): Boolean /* object is Error */

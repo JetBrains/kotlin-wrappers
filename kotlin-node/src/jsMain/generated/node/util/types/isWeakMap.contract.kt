@@ -6,10 +6,10 @@ import kotlin.contracts.contract
 
 
 @Suppress("NOTHING_TO_INLINE", "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
-inline fun isWeakMap(`object`: Any?): Boolean /* object is WeakMap<object, unknown> */ {
+inline fun isWeakMap(value: Any?): Boolean /* object is WeakMap<object, unknown> */ {
     contract {
-        returns(true) implies (`object` is js.collections.WeakMap<*, *>)
+        returns(true) implies (value is js.collections.WeakMap<*, *>)
     }
 
-    return isWeakMapRaw(`object`)
+    return isWeakMapRaw(value)
 }

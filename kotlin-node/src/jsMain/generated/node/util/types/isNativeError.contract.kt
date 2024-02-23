@@ -6,10 +6,10 @@ import kotlin.contracts.contract
 
 
 @Suppress("NOTHING_TO_INLINE", "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
-inline fun isNativeError(`object`: Any?): Boolean /* object is Error */ {
+inline fun isNativeError(value: Any?): Boolean /* object is Error */ {
     contract {
-        returns(true) implies (`object` is Throwable /* JsError */)
+        returns(true) implies (value is Throwable /* JsError */)
     }
 
-    return isNativeErrorRaw(`object`)
+    return isNativeErrorRaw(value)
 }

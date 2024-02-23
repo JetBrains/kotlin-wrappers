@@ -25,4 +25,4 @@ package node.util
  */
 
 @JsName("isNumber")
-external fun isNumberRaw(`object`: Any?): Boolean /* object is number */
+external fun isNumberRaw(value: Any?): Boolean /* object is number */

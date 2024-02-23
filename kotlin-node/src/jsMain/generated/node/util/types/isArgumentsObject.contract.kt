@@ -6,10 +6,10 @@ import kotlin.contracts.contract
 
 
 @Suppress("NOTHING_TO_INLINE", "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
-inline fun isArgumentsObject(`object`: Any?): Boolean /* object is IArguments */ {
+inline fun isArgumentsObject(value: Any?): Boolean /* object is IArguments */ {
     contract {
-        returns(true) implies (`object` is js.array.ArrayLike<Any?> /* IArguments */)
+        returns(true) implies (value is js.array.ArrayLike<Any?> /* IArguments */)
     }
 
-    return isArgumentsObjectRaw(`object`)
+    return isArgumentsObjectRaw(value)
 }

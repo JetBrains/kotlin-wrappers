@@ -15,4 +15,4 @@ package node.util.types
  */
 
 @JsName("isPromise")
-external fun isPromiseRaw(`object`: Any?): Boolean /* object is Promise<unknown> */
+external fun isPromiseRaw(value: Any?): Boolean /* object is Promise<unknown> */

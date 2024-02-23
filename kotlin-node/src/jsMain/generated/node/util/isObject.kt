@@ -24,4 +24,4 @@ package node.util
  * @since v0.11.5
  * @deprecated Since v4.0.0 - Use `value !== null && typeof value === 'object'` instead.
  */
-external fun isObject(`object`: Any?): Boolean
+external fun isObject(value: Any?): Boolean

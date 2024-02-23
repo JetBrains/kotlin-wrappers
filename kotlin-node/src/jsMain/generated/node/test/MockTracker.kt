@@ -97,17 +97,17 @@ external class MockTracker {
      * @return The mocked method. The mocked method contains a special `mock` property, which is an instance of {@link MockFunctionContext}, and can be used for inspecting and changing the
      * behavior of the mocked method.
      */
-    fun method(`object`: Any, methodName: String, options: MockFunctionOptions = definedExternally): Mock<Function<*>>
+    fun method(value: Any, methodName: String, options: MockFunctionOptions = definedExternally): Mock<Function<*>>
     fun method(
-        `object`: Any,
+        value: Any,
         methodName: String,
         implementation: Function<*>,
         options: MockFunctionOptions = definedExternally,
     ): Mock<Function<*>>
 
-    fun method(`object`: Any, methodName: String, options: MockMethodOptions): Mock<Function<*>>
+    fun method(value: Any, methodName: String, options: MockMethodOptions): Mock<Function<*>>
     fun method(
-        `object`: Any,
+        value: Any,
         methodName: String,
         implementation: Function<*>,
         options: MockMethodOptions,
@@ -117,9 +117,9 @@ external class MockTracker {
      * This function is syntax sugar for `MockTracker.method` with `options.getter`set to `true`.
      * @since v19.3.0, v18.13.0
      */
-    fun getter(`object`: Any, methodName: String, options: MockFunctionOptions = definedExternally): Mock<() -> Any?>
+    fun getter(value: Any, methodName: String, options: MockFunctionOptions = definedExternally): Mock<() -> Any?>
     fun getter(
-        `object`: Any,
+        value: Any,
         methodName: String,
         implementation: Function<*> = definedExternally,
         options: MockFunctionOptions = definedExternally,
@@ -130,13 +130,13 @@ external class MockTracker {
      * @since v19.3.0, v18.13.0
      */
     fun setter(
-        `object`: Any,
+        value: Any,
         methodName: String,
         options: MockFunctionOptions = definedExternally,
     ): Mock<(value: Any?) -> Unit>
 
     fun setter(
-        `object`: Any,
+        value: Any,
         methodName: String,
         implementation: Function<*> = definedExternally,
         options: MockFunctionOptions = definedExternally,

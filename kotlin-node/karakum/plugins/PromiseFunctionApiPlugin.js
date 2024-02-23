@@ -134,7 +134,7 @@ export default {
                     const parameterNames = signature
                         .map((it, index) => (
                             ts.isIdentifier(it.parameter.name)
-                                ? karakum.escapeIdentifier(it.parameter.name.text)
+                                ? karakum.escapeIdentifier(next(it.parameter.name))
                                 : `param${index}`
                         ))
                         .join(", ")

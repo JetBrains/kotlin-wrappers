@@ -20,4 +20,4 @@ package node.util.types
  */
 
 @JsName("isArrayBufferView")
-external fun isArrayBufferViewRaw(`object`: Any?): Boolean /* object is NodeJS.ArrayBufferView */
+external fun isArrayBufferViewRaw(value: Any?): Boolean /* object is NodeJS.ArrayBufferView */

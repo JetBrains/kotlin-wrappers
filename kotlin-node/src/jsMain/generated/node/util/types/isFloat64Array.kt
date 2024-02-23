@@ -17,4 +17,4 @@ package node.util.types
  */
 
 @JsName("isFloat64Array")
-external fun isFloat64ArrayRaw(`object`: Any?): Boolean /* object is Float64Array */
+external fun isFloat64ArrayRaw(value: Any?): Boolean /* object is Float64Array */

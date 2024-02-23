@@ -42,4 +42,4 @@ package node.util.types
  * For further information on `napi_create_external`, refer to `napi_create_external()`.
  * @since v10.0.0
  */
-external fun isExternal(`object`: Any?): Boolean
+external fun isExternal(value: Any?): Boolean

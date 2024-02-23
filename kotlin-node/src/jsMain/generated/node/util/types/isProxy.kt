@@ -16,4 +16,4 @@ package node.util.types
  * ```
  * @since v10.0.0
  */
-external fun isProxy(`object`: Any?): Boolean
+external fun isProxy(value: Any?): Boolean

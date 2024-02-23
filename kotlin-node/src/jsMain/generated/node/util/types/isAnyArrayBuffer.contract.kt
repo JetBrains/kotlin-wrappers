@@ -7,10 +7,10 @@ import kotlin.contracts.contract
 
 
 @Suppress("NOTHING_TO_INLINE", "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
-inline fun isAnyArrayBuffer(`object`: Any?): Boolean /* object is ArrayBufferLike */ {
+inline fun isAnyArrayBuffer(value: Any?): Boolean /* object is ArrayBufferLike */ {
     contract {
-        returns(true) implies (`object` is ArrayBufferLike)
+        returns(true) implies (value is ArrayBufferLike)
     }
 
-    return isAnyArrayBufferRaw(`object`)
+    return isAnyArrayBufferRaw(value)
 }

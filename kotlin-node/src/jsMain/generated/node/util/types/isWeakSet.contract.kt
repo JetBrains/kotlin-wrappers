@@ -6,10 +6,10 @@ import kotlin.contracts.contract
 
 
 @Suppress("NOTHING_TO_INLINE", "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
-inline fun isWeakSet(`object`: Any?): Boolean /* object is WeakSet<object> */ {
+inline fun isWeakSet(value: Any?): Boolean /* object is WeakSet<object> */ {
     contract {
-        returns(true) implies (`object` is js.collections.WeakSet<*>)
+        returns(true) implies (value is js.collections.WeakSet<*>)
     }
 
-    return isWeakSetRaw(`object`)
+    return isWeakSetRaw(value)
 }

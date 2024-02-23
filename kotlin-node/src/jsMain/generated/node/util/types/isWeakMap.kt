@@ -15,4 +15,4 @@ package node.util.types
  */
 
 @JsName("isWeakMap")
-external fun isWeakMapRaw(`object`: Any?): Boolean /* object is WeakMap<object, unknown> */
+external fun isWeakMapRaw(value: Any?): Boolean /* object is WeakMap<object, unknown> */

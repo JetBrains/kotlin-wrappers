@@ -17,4 +17,4 @@ package node.util.types
  */
 
 @JsName("isInt16Array")
-external fun isInt16ArrayRaw(`object`: Any?): Boolean /* object is Int16Array */
+external fun isInt16ArrayRaw(value: Any?): Boolean /* object is Int16Array */

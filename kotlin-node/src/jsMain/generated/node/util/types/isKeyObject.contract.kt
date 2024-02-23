@@ -7,10 +7,10 @@ import kotlin.contracts.contract
 
 
 @Suppress("NOTHING_TO_INLINE", "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
-inline fun isKeyObject(`object`: Any?): Boolean /* object is KeyObject */ {
+inline fun isKeyObject(value: Any?): Boolean /* object is KeyObject */ {
     contract {
-        returns(true) implies (`object` is KeyObject)
+        returns(true) implies (value is KeyObject)
     }
 
-    return isKeyObjectRaw(`object`)
+    return isKeyObjectRaw(value)
 }

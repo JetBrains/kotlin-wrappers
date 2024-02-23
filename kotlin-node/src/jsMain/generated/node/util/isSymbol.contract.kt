@@ -6,10 +6,10 @@ import kotlin.contracts.contract
 
 
 @Suppress("NOTHING_TO_INLINE", "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
-inline fun isSymbol(`object`: Any?): Boolean /* object is symbol */ {
+inline fun isSymbol(value: Any?): Boolean /* object is symbol */ {
     contract {
-        returns(true) implies (`object` is js.symbol.Symbol)
+        returns(true) implies (value is js.symbol.Symbol)
     }
 
-    return isSymbolRaw(`object`)
+    return isSymbolRaw(value)
 }

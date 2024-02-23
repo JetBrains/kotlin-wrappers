@@ -19,4 +19,4 @@ package node.util.types
  */
 
 @JsName("isDataView")
-external fun isDataViewRaw(`object`: Any?): Boolean /* object is DataView */
+external fun isDataViewRaw(value: Any?): Boolean /* object is DataView */

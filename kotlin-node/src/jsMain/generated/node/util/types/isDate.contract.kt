@@ -7,10 +7,10 @@ import kotlin.js.Date
 
 
 @Suppress("NOTHING_TO_INLINE", "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
-inline fun isDate(`object`: Any?): Boolean /* object is Date */ {
+inline fun isDate(value: Any?): Boolean /* object is Date */ {
     contract {
-        returns(true) implies (`object` is Date)
+        returns(true) implies (value is Date)
     }
 
-    return isDateRaw(`object`)
+    return isDateRaw(value)
 }

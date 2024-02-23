@@ -33,4 +33,4 @@ package node.util
  * @since v0.11.5
  * @deprecated Since v4.0.0 - Use `(typeof value !== 'object' && typeof value !== 'function') || value === null` instead.
  */
-external fun isPrimitive(`object`: Any?): Boolean
+external fun isPrimitive(value: Any?): Boolean

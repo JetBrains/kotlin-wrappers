@@ -7,10 +7,10 @@ import kotlin.contracts.contract
 
 
 @Suppress("NOTHING_TO_INLINE", "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
-inline fun isInt16Array(`object`: Any?): Boolean /* object is Int16Array */ {
+inline fun isInt16Array(value: Any?): Boolean /* object is Int16Array */ {
     contract {
-        returns(true) implies (`object` is Int16Array)
+        returns(true) implies (value is Int16Array)
     }
 
-    return isInt16ArrayRaw(`object`)
+    return isInt16ArrayRaw(value)
 }

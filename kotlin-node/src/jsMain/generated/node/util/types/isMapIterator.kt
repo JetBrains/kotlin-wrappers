@@ -17,4 +17,4 @@ package node.util.types
  * ```
  * @since v10.0.0
  */
-external fun isMapIterator(`object`: Any?): Boolean
+external fun isMapIterator(value: Any?): Boolean

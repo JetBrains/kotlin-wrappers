@@ -25,4 +25,4 @@ package node.util
  */
 
 @JsName("isString")
-external fun isStringRaw(`object`: Any?): Boolean /* object is string */
+external fun isStringRaw(value: Any?): Boolean /* object is string */

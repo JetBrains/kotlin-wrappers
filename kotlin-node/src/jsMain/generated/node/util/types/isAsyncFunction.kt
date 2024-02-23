@@ -17,4 +17,4 @@ package node.util.types
  * ```
  * @since v10.0.0
  */
-external fun isAsyncFunction(`object`: Any?): Boolean
+external fun isAsyncFunction(value: Any?): Boolean

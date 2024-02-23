@@ -23,4 +23,4 @@ package node.util
  */
 
 @JsName("isNull")
-external fun isNullRaw(`object`: Any?): Boolean /* object is null */
+external fun isNullRaw(value: Any?): Boolean /* object is null */

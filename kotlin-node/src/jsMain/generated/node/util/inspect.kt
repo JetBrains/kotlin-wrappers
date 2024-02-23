@@ -181,10 +181,10 @@ package node.util
  * @return The representation of `object`.
  */
 external fun inspect(
-    `object`: Any?,
+    value: Any?,
     showHidden: Boolean = definedExternally,
     depth: Double? = definedExternally,
     color: Boolean = definedExternally,
 ): String
 
-external fun inspect(`object`: Any?, options: InspectOptions = definedExternally): String
+external fun inspect(value: Any?, options: InspectOptions = definedExternally): String

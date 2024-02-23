@@ -6,10 +6,10 @@ import kotlin.contracts.contract
 
 
 @Suppress("NOTHING_TO_INLINE", "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
-inline fun isNumberObject(`object`: Any?): Boolean /* object is Number */ {
+inline fun isNumberObject(value: Any?): Boolean /* object is Number */ {
     contract {
-        returns(true) implies (`object` is Number)
+        returns(true) implies (value is Number)
     }
 
-    return isNumberObjectRaw(`object`)
+    return isNumberObjectRaw(value)
 }

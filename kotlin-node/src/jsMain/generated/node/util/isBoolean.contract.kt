@@ -6,10 +6,10 @@ import kotlin.contracts.contract
 
 
 @Suppress("NOTHING_TO_INLINE", "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
-inline fun isBoolean(`object`: Any?): Boolean /* object is boolean */ {
+inline fun isBoolean(value: Any?): Boolean /* object is boolean */ {
     contract {
-        returns(true) implies (`object` is Boolean)
+        returns(true) implies (value is Boolean)
     }
 
-    return isBooleanRaw(`object`)
+    return isBooleanRaw(value)
 }

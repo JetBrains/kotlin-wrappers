@@ -17,4 +17,4 @@ package node.util.types
  */
 
 @JsName("isUint32Array")
-external fun isUint32ArrayRaw(`object`: Any?): Boolean /* object is Uint32Array */
+external fun isUint32ArrayRaw(value: Any?): Boolean /* object is Uint32Array */

@@ -17,4 +17,4 @@ package node.util.types
  */
 
 @JsName("isArgumentsObject")
-external fun isArgumentsObjectRaw(`object`: Any?): Boolean /* object is IArguments */
+external fun isArgumentsObjectRaw(value: Any?): Boolean /* object is IArguments */

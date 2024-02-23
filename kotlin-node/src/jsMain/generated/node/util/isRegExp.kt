@@ -23,4 +23,4 @@ package node.util
  */
 
 @JsName("isRegExp")
-external fun isRegExpRaw(`object`: Any?): Boolean /* object is RegExp */
+external fun isRegExpRaw(value: Any?): Boolean /* object is RegExp */

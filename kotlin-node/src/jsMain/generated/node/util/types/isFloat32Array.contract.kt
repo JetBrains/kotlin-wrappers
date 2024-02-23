@@ -7,10 +7,10 @@ import kotlin.contracts.contract
 
 
 @Suppress("NOTHING_TO_INLINE", "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
-inline fun isFloat32Array(`object`: Any?): Boolean /* object is Float32Array */ {
+inline fun isFloat32Array(value: Any?): Boolean /* object is Float32Array */ {
     contract {
-        returns(true) implies (`object` is Float32Array)
+        returns(true) implies (value is Float32Array)
     }
 
-    return isFloat32ArrayRaw(`object`)
+    return isFloat32ArrayRaw(value)
 }

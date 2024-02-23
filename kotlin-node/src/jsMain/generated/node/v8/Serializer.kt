@@ -22,7 +22,7 @@ open external class Serializer {
      *
      * This throws an error if `value` cannot be serialized.
      */
-    fun writeValue(`val`: Any?): Boolean
+    fun writeValue(value: Any?): Boolean
 
     /**
      * Returns the stored internal buffer. This serializer should not be used once

@@ -7,10 +7,10 @@ import kotlin.contracts.contract
 
 
 @Suppress("NOTHING_TO_INLINE", "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
-inline fun isGeneratorObject(`object`: Any?): Boolean /* object is Generator */ {
+inline fun isGeneratorObject(value: Any?): Boolean /* object is Generator */ {
     contract {
-        returns(true) implies (`object` is Generator<*, *, *>)
+        returns(true) implies (value is Generator<*, *, *>)
     }
 
-    return isGeneratorObjectRaw(`object`)
+    return isGeneratorObjectRaw(value)
 }

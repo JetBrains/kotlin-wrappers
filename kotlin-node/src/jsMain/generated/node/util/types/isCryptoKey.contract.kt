@@ -6,10 +6,10 @@ import kotlin.contracts.contract
 
 
 @Suppress("NOTHING_TO_INLINE", "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
-inline fun isCryptoKey(`object`: Any?): Boolean /* object is webcrypto.CryptoKey */ {
+inline fun isCryptoKey(value: Any?): Boolean /* object is webcrypto.CryptoKey */ {
     contract {
-        returns(true) implies (`object` is web.crypto.CryptoKey)
+        returns(true) implies (value is web.crypto.CryptoKey)
     }
 
-    return isCryptoKeyRaw(`object`)
+    return isCryptoKeyRaw(value)
 }
