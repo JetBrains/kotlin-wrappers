@@ -151,7 +151,7 @@ suspend fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${name}(${para
             const nodeInfo = {
                 sourceFileName,
                 namespace,
-                fileName: `${name}Suspend.kt`,
+                fileName: `${name}.suspend.kt`,
                 body,
             }
 

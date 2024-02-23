@@ -71,7 +71,7 @@ export default {
                     return `
 @Suppress("NOTHING_TO_INLINE", "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
 inline fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${name}(${parameters})${karakum.ifPresent(returnType, it => `: ${it}`)} {
-    kotlin.contracts.contract {
+    contract {
         ${contractReturns} implies (${parameterName} is ${contractType})
     }
 
@@ -84,7 +84,7 @@ inline fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${name}(${param
             const nodeInfo = {
                 sourceFileName,
                 namespace,
-                fileName: `${name}Contract.kt`,
+                fileName: `${name}.contract.kt`,
                 body,
             }
 

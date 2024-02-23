@@ -128,7 +128,7 @@
     },
     "packageNameMapper": {
         "promises/(.+)\\.kt": "$1Async.kt",
-        "SuspendAsync.kt": "Suspend.kt",
+        ".suspendAsync.kt": ".suspend.kt",
         "AsyncOptionsAsync.kt": "OptionsAsync.kt",
 
         "^assert/assert.kt": "node/assert/assert.fun.kt",
@@ -355,8 +355,11 @@
         "Async.kt": [
             "js.promise.Promise"
         ],
-        "Suspend.kt": [
+        ".suspend.kt": [
             "js.promise.await"
+        ],
+        ".contract.kt": [
+            "kotlin.contracts.contract"
         ],
         "ReadableStream.kt": [
             "js.typedarrays.Uint8Array",
@@ -376,7 +379,7 @@
         "assert/doesNotReject.kt": [
             "js.promise.Promise"
         ],
-        "assert/doesNotRejectSuspend.kt": [
+        "assert/doesNotReject.suspend.kt": [
             "js.promise.Promise"
         ],
         "assert/match.kt": [
@@ -385,7 +388,7 @@
         "assert/rejects.kt": [
             "js.promise.Promise"
         ],
-        "assert/rejectsSuspend.kt": [
+        "assert/rejects.suspend.kt": [
             "js.promise.Promise"
         ],
         "buffer/Buffer.class.kt": [
@@ -532,20 +535,20 @@
         "fs/appendFileSync.kt": [
             "js.typedarrays.Uint8Array"
         ],
-        "fs/appendFileSuspend.kt": [
+        "fs/appendFile.suspend.kt": [
             "js.typedarrays.Uint8Array"
         ],
         "fs/cpAsync.kt": [
             "web.url.URL"
         ],
-        "fs/cpSuspend.kt": [
+        "fs/cp.suspend.kt": [
             "web.url.URL"
         ],
         "fs/openAsBlob.kt": [
             "js.promise.Promise",
             "web.blob.Blob"
         ],
-        "fs/openAsBlobSuspend.kt": [
+        "fs/openAsBlob.suspend.kt": [
             "web.blob.Blob"
         ],
         "fs/readv.kt": [
@@ -570,7 +573,7 @@
         "fs/writeFileAsync.kt": [
             "js.iterable.AsyncIterable"
         ],
-        "fs/writeFileSuspend.kt": [
+        "fs/writeFile.suspend.kt": [
             "js.iterable.AsyncIterable"
         ],
         "fs/writev.kt": [
@@ -703,7 +706,7 @@
         "stream/PipelineOptions.kt": [
             "web.abort.AbortSignal"
         ],
-        "stream/pipelineSuspend.kt": [
+        "stream/pipeline.suspend.kt": [
             "js.array.ReadonlyArray"
         ],
         "stream/Readable.kt": [
@@ -728,7 +731,7 @@
             "js.buffer.ArrayBuffer",
             "js.iterable.AsyncIterable"
         ],
-        "stream/consumers/arrayBufferSuspend.kt": [
+        "stream/consumers/arrayBuffer.suspend.kt": [
             "js.buffer.ArrayBuffer",
             "js.iterable.AsyncIterable"
         ],
@@ -736,28 +739,28 @@
             "js.promise.Promise",
             "js.iterable.AsyncIterable"
         ],
-        "stream/consumers/blobSuspend.kt": [
+        "stream/consumers/blob.suspend.kt": [
             "js.iterable.AsyncIterable"
         ],
         "stream/consumers/buffer.kt": [
             "js.promise.Promise",
             "js.iterable.AsyncIterable"
         ],
-        "stream/consumers/bufferSuspend.kt": [
+        "stream/consumers/buffer.suspend.kt": [
             "js.iterable.AsyncIterable"
         ],
         "stream/consumers/json.kt": [
             "js.promise.Promise",
             "js.iterable.AsyncIterable"
         ],
-        "stream/consumers/jsonSuspend.kt": [
+        "stream/consumers/json.suspend.kt": [
             "js.iterable.AsyncIterable"
         ],
         "stream/consumers/text.kt": [
             "js.promise.Promise",
             "js.iterable.AsyncIterable"
         ],
-        "stream/consumers/textSuspend.kt": [
+        "stream/consumers/text.suspend.kt": [
             "js.iterable.AsyncIterable"
         ],
         "test/HookOptions.kt": [
@@ -786,7 +789,7 @@
             "node.test.SuiteFn",
             "node.test.TestOptions"
         ],
-        "test/describe/onlySuspend.kt": [
+        "test/describe/only.suspend.kt": [
             "js.promise.Promise",
             "node.test.SuiteFn",
             "node.test.TestOptions"
@@ -796,7 +799,7 @@
             "node.test.SuiteFn",
             "node.test.TestOptions"
         ],
-        "test/describe/skipSuspend.kt": [
+        "test/describe/skip.suspend.kt": [
             "js.promise.Promise",
             "node.test.SuiteFn",
             "node.test.TestOptions"
@@ -806,7 +809,7 @@
             "node.test.SuiteFn",
             "node.test.TestOptions"
         ],
-        "test/describe/todoSuspend.kt": [
+        "test/describe/todo.suspend.kt": [
             "js.promise.Promise",
             "node.test.SuiteFn",
             "node.test.TestOptions"
@@ -821,7 +824,7 @@
             "node.test.TestFn",
             "node.test.TestOptions"
         ],
-        "test/it/onlySuspend.kt": [
+        "test/it/only.suspend.kt": [
             "js.promise.Promise",
             "node.test.TestFn",
             "node.test.TestOptions"
@@ -831,7 +834,7 @@
             "node.test.TestFn",
             "node.test.TestOptions"
         ],
-        "test/it/skipSuspend.kt": [
+        "test/it/skip.suspend.kt": [
             "js.promise.Promise",
             "node.test.TestFn",
             "node.test.TestOptions"
@@ -841,7 +844,7 @@
             "node.test.TestFn",
             "node.test.TestOptions"
         ],
-        "test/it/todoSuspend.kt": [
+        "test/it/todo.suspend.kt": [
             "js.promise.Promise",
             "node.test.TestFn",
             "node.test.TestOptions"
@@ -892,7 +895,7 @@
             "js.promise.Promise",
             "web.abort.AbortSignal"
         ],
-        "util/abortedSuspend.kt": [
+        "util/aborted.suspend.kt": [
             "web.abort.AbortSignal"
         ],
         "util/callbackify.kt": [
@@ -913,73 +916,73 @@
         "util/inspect/Styles.kt": [
             "node.util.Style"
         ],
-        "util/isDateContract.kt": [
+        "util/isDate.contract.kt": [
             "kotlin.js.Date"
         ],
-        "util/isRegExpContract.kt": [
+        "util/isRegExp.contract.kt": [
             "kotlin.js.RegExp"
         ],
-        "util/types/isAnyArrayBufferContract.kt": [
+        "util/types/isAnyArrayBuffer.contract.kt": [
             "js.buffer.ArrayBufferLike"
         ],
-        "util/types/isArrayBufferContract.kt": [
+        "util/types/isArrayBuffer.contract.kt": [
             "js.buffer.ArrayBuffer"
         ],
-        "util/types/isBigInt64ArrayContract.kt": [
+        "util/types/isBigInt64Array.contract.kt": [
             "js.typedarrays.BigInt64Array"
         ],
-        "util/types/isBigUint64ArrayContract.kt": [
+        "util/types/isBigUint64Array.contract.kt": [
             "js.typedarrays.BigUint64Array"
         ],
-        "util/types/isDataViewContract.kt": [
+        "util/types/isDataView.contract.kt": [
             "js.buffer.DataView"
         ],
-        "util/types/isDateContract.kt": [
+        "util/types/isDate.contract.kt": [
             "kotlin.js.Date"
         ],
-        "util/types/isFloat32ArrayContract.kt": [
+        "util/types/isFloat32Array.contract.kt": [
             "js.typedarrays.Float32Array"
         ],
-        "util/types/isFloat64ArrayContract.kt": [
+        "util/types/isFloat64Array.contract.kt": [
             "js.typedarrays.Float64Array"
         ],
-        "util/types/isGeneratorFunctionContract.kt": [
+        "util/types/isGeneratorFunction.contract.kt": [
             "js.generator.GeneratorFunction"
         ],
-        "util/types/isGeneratorObjectContract.kt": [
+        "util/types/isGeneratorObject.contract.kt": [
             "js.generator.Generator"
         ],
-        "util/types/isInt8ArrayContract.kt": [
+        "util/types/isInt8Array.contract.kt": [
             "js.typedarrays.Int8Array"
         ],
-        "util/types/isInt16ArrayContract.kt": [
+        "util/types/isInt16Array.contract.kt": [
             "js.typedarrays.Int16Array"
         ],
-        "util/types/isInt32ArrayContract.kt": [
+        "util/types/isInt32Array.contract.kt": [
             "js.typedarrays.Int32Array"
         ],
-        "util/types/isPromiseContract.kt": [
+        "util/types/isPromise.contract.kt": [
             "js.promise.Promise"
         ],
-        "util/types/isRegExpContract.kt": [
+        "util/types/isRegExp.contract.kt": [
             "kotlin.js.RegExp"
         ],
-        "util/types/isSharedArrayBufferContract.kt": [
+        "util/types/isSharedArrayBuffer.contract.kt": [
             "js.buffer.SharedArrayBuffer"
         ],
-        "util/types/isSymbolObjectContract.kt": [
+        "util/types/isSymbolObject.contract.kt": [
             "js.symbol.Symbol"
         ],
-        "util/types/isUint8ArrayContract.kt": [
+        "util/types/isUint8Array.contract.kt": [
             "js.typedarrays.Uint8Array"
         ],
-        "util/types/isUint8ClampedArrayContract.kt": [
+        "util/types/isUint8ClampedArray.contract.kt": [
             "js.typedarrays.Uint8ClampedArray"
         ],
-        "util/types/isUint16ArrayContract.kt": [
+        "util/types/isUint16Array.contract.kt": [
             "js.typedarrays.Uint16Array"
         ],
-        "util/types/isUint32ArrayContract.kt": [
+        "util/types/isUint32Array.contract.kt": [
             "js.typedarrays.Uint32Array"
         ],
         "v8/After.kt": [
