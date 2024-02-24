@@ -9,6 +9,11 @@ package web.events
 import js.array.ReadonlyArray
 import web.time.DOMHighResTimeStamp
 
+/**
+ * An event which takes place in the DOM.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Event)
+ */
 open external class Event(
     open val type: EventType<Event>,
     init: EventInit = definedExternally,
