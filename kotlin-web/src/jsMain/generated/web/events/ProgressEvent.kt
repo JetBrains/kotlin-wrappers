@@ -13,8 +13,8 @@ import js.core.JsLong
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ProgressEvent)
  */
-open external class ProgressEvent<out T : EventTarget>(
-    override val type: EventType<ProgressEvent<T>>,
+open external class ProgressEvent(
+    override val type: EventType<ProgressEvent>,
     init: ProgressEventInit = definedExternally,
 ) : Event,
     ProgressEventInit {
@@ -27,7 +27,6 @@ open external class ProgressEvent<out T : EventTarget>(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ProgressEvent/loaded)
      */
     override val loaded: JsLong
-    override val target: T?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ProgressEvent/total)

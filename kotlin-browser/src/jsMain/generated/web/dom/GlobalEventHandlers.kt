@@ -550,7 +550,7 @@ external interface GlobalEventHandlers {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/progress_event)
      */
-    var onprogress: EventHandler<ProgressEvent<*>>?
+    var onprogress: EventHandler<ProgressEvent>?
         get() = definedExternally
         set(value) = definedExternally
 
