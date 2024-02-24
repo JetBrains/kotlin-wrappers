@@ -5,7 +5,6 @@ package web.gl
 typealias GLbitfield = Number
 typealias GLboolean = Boolean
 typealias GLclampf = Number
-typealias GLenum = Short
 typealias GLfloat = Number
 typealias GLint = Int
 typealias GLint64 = Number
