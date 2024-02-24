@@ -20,7 +20,7 @@ external interface InputProps : PropsWithClassName {
     var multiline: Boolean
     var borderless: Boolean
     var compact: Boolean
-    var onChange: (InputEvent) -> Unit
+    var onChange: (InputEvent<*>) -> Unit
     var onClear: () -> Unit
     var inputRef: RefObject<HTMLInputElement>
     var enableShortcuts: Boolean

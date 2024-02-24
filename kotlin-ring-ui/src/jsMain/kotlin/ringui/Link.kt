@@ -15,8 +15,8 @@ external interface LinkProps : PropsWithChildren, PropsWithClassName {
     var pseudo: Boolean
     var hover: Boolean
     var href: String
-    var onPlainLeftClick: (MouseEvent) -> Unit
-    var onClick: (MouseEvent) -> Unit
+    var onPlainLeftClick: (MouseEvent<*>) -> Unit
+    var onClick: (MouseEvent<*>) -> Unit
 }
 
 @JsName("default")
