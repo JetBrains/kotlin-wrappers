@@ -11,6 +11,6 @@ import web.events.EventType
 
 sealed external interface MediaQueryListEventTypes {
     @JsValue("change")
-    val CHANGE: EventType<MediaQueryListEvent>
+    val CHANGE: EventType<MediaQueryListEvent<*>>
         get() = definedExternally
 }

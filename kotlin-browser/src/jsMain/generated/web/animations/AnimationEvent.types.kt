@@ -11,18 +11,18 @@ import web.events.EventType
 
 sealed external interface AnimationEventTypes {
     @JsValue("animationcancel")
-    val ANIMATION_CANCEL: EventType<AnimationEvent>
+    val ANIMATION_CANCEL: EventType<AnimationEvent<*>>
         get() = definedExternally
 
     @JsValue("animationend")
-    val ANIMATION_END: EventType<AnimationEvent>
+    val ANIMATION_END: EventType<AnimationEvent<*>>
         get() = definedExternally
 
     @JsValue("animationiteration")
-    val ANIMATION_ITERATION: EventType<AnimationEvent>
+    val ANIMATION_ITERATION: EventType<AnimationEvent<*>>
         get() = definedExternally
 
     @JsValue("animationstart")
-    val ANIMATION_START: EventType<AnimationEvent>
+    val ANIMATION_START: EventType<AnimationEvent<*>>
         get() = definedExternally
 }

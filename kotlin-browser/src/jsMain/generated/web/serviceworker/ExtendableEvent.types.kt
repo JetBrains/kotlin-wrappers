@@ -11,10 +11,10 @@ import web.events.EventType
 
 sealed external interface ExtendableEventTypes {
     @JsValue("activate")
-    val ACTIVATE: EventType<ExtendableEvent>
+    val ACTIVATE: EventType<ExtendableEvent<*>>
         get() = definedExternally
 
     @JsValue("install")
-    val INSTALL: EventType<ExtendableEvent>
+    val INSTALL: EventType<ExtendableEvent<*>>
         get() = definedExternally
 }

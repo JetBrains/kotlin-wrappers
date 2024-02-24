@@ -30,7 +30,7 @@ sealed external class ShadowRoot :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ShadowRoot/mode)
      */
     val mode: ShadowRootMode
-    var onslotchange: EventHandler<Event>?
+    var onslotchange: EventHandler<Event<ShadowRoot>>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ShadowRoot/slotAssignment)

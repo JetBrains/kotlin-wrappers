@@ -7,6 +7,7 @@
 package web.storage
 
 import web.events.Event
+import web.events.EventTarget
 import web.events.EventType
 
 /**
@@ -14,10 +15,10 @@ import web.events.EventType
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageEvent)
  */
-open external class StorageEvent(
-    override val type: EventType<StorageEvent>,
+open external class StorageEvent<out C : EventTarget?>(
+    override val type: EventType<StorageEvent<*>>,
     init: StorageEventInit = definedExternally,
-) : Event,
+) : Event<C>,
     StorageEventInit {
     /**
      * Returns the key of the storage item being changed.

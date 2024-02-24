@@ -7,6 +7,7 @@
 package web.history
 
 import web.events.Event
+import web.events.EventTarget
 import web.events.EventType
 
 /**
@@ -14,10 +15,10 @@ import web.events.EventType
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PopStateEvent)
  */
-open external class PopStateEvent(
-    override val type: EventType<PopStateEvent>,
+open external class PopStateEvent<out C : EventTarget?>(
+    override val type: EventType<PopStateEvent<*>>,
     init: PopStateEventInit = definedExternally,
-) : Event,
+) : Event<C>,
     PopStateEventInit {
     /**
      * Returns a copy of the information that was provided to pushState() or replaceState().

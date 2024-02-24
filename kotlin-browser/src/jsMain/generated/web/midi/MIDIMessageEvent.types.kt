@@ -11,6 +11,6 @@ import web.events.EventType
 
 sealed external interface MIDIMessageEventTypes {
     @JsValue("midimessage")
-    val MIDI_MESSAGE: EventType<MIDIMessageEvent>
+    val MIDI_MESSAGE: EventType<MIDIMessageEvent<*>>
         get() = definedExternally
 }

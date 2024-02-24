@@ -11,18 +11,18 @@ import web.events.EventType
 
 sealed external interface TouchEventTypes {
     @JsValue("touchcancel")
-    val TOUCH_CANCEL: EventType<TouchEvent>
+    val TOUCH_CANCEL: EventType<TouchEvent<*>>
         get() = definedExternally
 
     @JsValue("touchend")
-    val TOUCH_END: EventType<TouchEvent>
+    val TOUCH_END: EventType<TouchEvent<*>>
         get() = definedExternally
 
     @JsValue("touchmove")
-    val TOUCH_MOVE: EventType<TouchEvent>
+    val TOUCH_MOVE: EventType<TouchEvent<*>>
         get() = definedExternally
 
     @JsValue("touchstart")
-    val TOUCH_START: EventType<TouchEvent>
+    val TOUCH_START: EventType<TouchEvent<*>>
         get() = definedExternally
 }

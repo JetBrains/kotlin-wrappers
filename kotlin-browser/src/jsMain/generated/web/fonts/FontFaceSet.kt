@@ -21,17 +21,17 @@ sealed external interface FontFaceSet :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/loading_event)
      */
-    var onloading: EventHandler<FontFaceSetLoadEvent>?
+    var onloading: EventHandler<FontFaceSetLoadEvent<FontFaceSet>>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/loadingdone_event)
      */
-    var onloadingdone: EventHandler<FontFaceSetLoadEvent>?
+    var onloadingdone: EventHandler<FontFaceSetLoadEvent<FontFaceSet>>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/loadingerror_event)
      */
-    var onloadingerror: EventHandler<FontFaceSetLoadEvent>?
+    var onloadingerror: EventHandler<FontFaceSetLoadEvent<FontFaceSet>>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/ready)

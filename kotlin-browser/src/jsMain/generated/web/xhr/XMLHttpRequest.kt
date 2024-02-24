@@ -21,7 +21,7 @@ open external class XMLHttpRequest :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/readystatechange_event)
      */
-    var onreadystatechange: EventHandler<Event>?
+    var onreadystatechange: EventHandler<Event<XMLHttpRequest>>?
 
     /**
      * Returns client's state.

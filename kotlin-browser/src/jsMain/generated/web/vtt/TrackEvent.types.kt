@@ -11,10 +11,10 @@ import web.events.EventType
 
 sealed external interface TrackEventTypes {
     @JsValue("addtrack")
-    val ADD_TRACK: EventType<TrackEvent>
+    val ADD_TRACK: EventType<TrackEvent<*>>
         get() = definedExternally
 
     @JsValue("removetrack")
-    val REMOVE_TRACK: EventType<TrackEvent>
+    val REMOVE_TRACK: EventType<TrackEvent<*>>
         get() = definedExternally
 }

@@ -11,10 +11,10 @@ import web.events.EventType
 
 sealed external interface MediaStreamTrackEventTypes {
     @JsValue("addtrack")
-    val ADD_TRACK: EventType<MediaStreamTrackEvent>
+    val ADD_TRACK: EventType<MediaStreamTrackEvent<*>>
         get() = definedExternally
 
     @JsValue("removetrack")
-    val REMOVE_TRACK: EventType<MediaStreamTrackEvent>
+    val REMOVE_TRACK: EventType<MediaStreamTrackEvent<*>>
         get() = definedExternally
 }

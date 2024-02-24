@@ -11,6 +11,6 @@ import web.events.EventType
 
 sealed external interface InputEventTypes {
     @JsValue("beforeinput")
-    val BEFORE_INPUT: EventType<InputEvent>
+    val BEFORE_INPUT: EventType<InputEvent<*>>
         get() = definedExternally
 }

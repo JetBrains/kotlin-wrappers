@@ -7,6 +7,7 @@
 package web.csp
 
 import web.events.Event
+import web.events.EventTarget
 import web.events.EventType
 
 /**
@@ -14,10 +15,10 @@ import web.events.EventType
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent)
  */
-open external class SecurityPolicyViolationEvent(
-    override val type: EventType<SecurityPolicyViolationEvent>,
+open external class SecurityPolicyViolationEvent<out C : EventTarget?>(
+    override val type: EventType<SecurityPolicyViolationEvent<*>>,
     init: SecurityPolicyViolationEventInit = definedExternally,
-) : Event,
+) : Event<C>,
     SecurityPolicyViolationEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/blockedURI)

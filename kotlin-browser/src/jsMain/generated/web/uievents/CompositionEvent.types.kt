@@ -11,14 +11,14 @@ import web.events.EventType
 
 sealed external interface CompositionEventTypes {
     @JsValue("compositionend")
-    val COMPOSITION_END: EventType<CompositionEvent>
+    val COMPOSITION_END: EventType<CompositionEvent<*>>
         get() = definedExternally
 
     @JsValue("compositionstart")
-    val COMPOSITION_START: EventType<CompositionEvent>
+    val COMPOSITION_START: EventType<CompositionEvent<*>>
         get() = definedExternally
 
     @JsValue("compositionupdate")
-    val COMPOSITION_UPDATE: EventType<CompositionEvent>
+    val COMPOSITION_UPDATE: EventType<CompositionEvent<*>>
         get() = definedExternally
 }

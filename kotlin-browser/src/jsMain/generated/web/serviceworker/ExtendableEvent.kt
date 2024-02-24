@@ -8,6 +8,7 @@ package web.serviceworker
 
 import js.promise.Promise
 import web.events.Event
+import web.events.EventTarget
 import web.events.EventType
 
 /**
@@ -15,10 +16,10 @@ import web.events.EventType
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableEvent)
  */
-open external class ExtendableEvent(
-    override val type: EventType<ExtendableEvent>,
+open external class ExtendableEvent<out C : EventTarget?>(
+    override val type: EventType<ExtendableEvent<*>>,
     init: ExtendableEventInit = definedExternally,
-) : Event,
+) : Event<C>,
     ExtendableEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableEvent/waitUntil)

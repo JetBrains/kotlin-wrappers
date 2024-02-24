@@ -11,46 +11,46 @@ import web.events.EventType
 
 sealed external interface MouseEventTypes {
     @JsValue("auxclick")
-    val AUX_CLICK: EventType<MouseEvent>
+    val AUX_CLICK: EventType<MouseEvent<*>>
         get() = definedExternally
 
     @JsValue("click")
-    val CLICK: EventType<MouseEvent>
+    val CLICK: EventType<MouseEvent<*>>
         get() = definedExternally
 
     @JsValue("contextmenu")
-    val CONTEXT_MENU: EventType<MouseEvent>
+    val CONTEXT_MENU: EventType<MouseEvent<*>>
         get() = definedExternally
 
     @JsValue("dblclick")
-    val DBL_CLICK: EventType<MouseEvent>
+    val DBL_CLICK: EventType<MouseEvent<*>>
         get() = definedExternally
 
     @JsValue("mousedown")
-    val MOUSE_DOWN: EventType<MouseEvent>
+    val MOUSE_DOWN: EventType<MouseEvent<*>>
         get() = definedExternally
 
     @JsValue("mouseenter")
-    val MOUSE_ENTER: EventType<MouseEvent>
+    val MOUSE_ENTER: EventType<MouseEvent<*>>
         get() = definedExternally
 
     @JsValue("mouseleave")
-    val MOUSE_LEAVE: EventType<MouseEvent>
+    val MOUSE_LEAVE: EventType<MouseEvent<*>>
         get() = definedExternally
 
     @JsValue("mousemove")
-    val MOUSE_MOVE: EventType<MouseEvent>
+    val MOUSE_MOVE: EventType<MouseEvent<*>>
         get() = definedExternally
 
     @JsValue("mouseout")
-    val MOUSE_OUT: EventType<MouseEvent>
+    val MOUSE_OUT: EventType<MouseEvent<*>>
         get() = definedExternally
 
     @JsValue("mouseover")
-    val MOUSE_OVER: EventType<MouseEvent>
+    val MOUSE_OVER: EventType<MouseEvent<*>>
         get() = definedExternally
 
     @JsValue("mouseup")
-    val MOUSE_UP: EventType<MouseEvent>
+    val MOUSE_UP: EventType<MouseEvent<*>>
         get() = definedExternally
 }

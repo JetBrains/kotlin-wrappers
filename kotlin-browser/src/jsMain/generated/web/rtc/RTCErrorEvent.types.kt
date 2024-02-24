@@ -11,6 +11,6 @@ import web.events.EventType
 
 sealed external interface RTCErrorEventTypes {
     @JsValue("error")
-    val ERROR: EventType<RTCErrorEvent>
+    val ERROR: EventType<RTCErrorEvent<*>>
         get() = definedExternally
 }

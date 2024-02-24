@@ -8,12 +8,12 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface PointerEventInit :
     MouseEventInit {
-    val coalescedEvents: ReadonlyArray<PointerEvent>?
+    val coalescedEvents: ReadonlyArray<PointerEvent<*>>?
     val height: Double?
     val isPrimary: Boolean?
     val pointerId: Int?
     val pointerType: String?
-    val predictedEvents: ReadonlyArray<PointerEvent>?
+    val predictedEvents: ReadonlyArray<PointerEvent<*>>?
     val pressure: Float?
     val tangentialPressure: Float?
     val tiltX: Int?

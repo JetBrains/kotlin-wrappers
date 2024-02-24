@@ -11,6 +11,6 @@ import web.events.EventType
 
 sealed external interface FetchEventTypes {
     @JsValue("fetch")
-    val FETCH: EventType<FetchEvent>
+    val FETCH: EventType<FetchEvent<*>>
         get() = definedExternally
 }

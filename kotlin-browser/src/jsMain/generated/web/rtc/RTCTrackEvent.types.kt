@@ -11,6 +11,6 @@ import web.events.EventType
 
 sealed external interface RTCTrackEventTypes {
     @JsValue("track")
-    val TRACK: EventType<RTCTrackEvent>
+    val TRACK: EventType<RTCTrackEvent<*>>
         get() = definedExternally
 }

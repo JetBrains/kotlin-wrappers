@@ -11,14 +11,14 @@ import web.events.EventType
 
 sealed external interface ClipboardEventTypes {
     @JsValue("copy")
-    val COPY: EventType<ClipboardEvent>
+    val COPY: EventType<ClipboardEvent<*>>
         get() = definedExternally
 
     @JsValue("cut")
-    val CUT: EventType<ClipboardEvent>
+    val CUT: EventType<ClipboardEvent<*>>
         get() = definedExternally
 
     @JsValue("paste")
-    val PASTE: EventType<ClipboardEvent>
+    val PASTE: EventType<ClipboardEvent<*>>
         get() = definedExternally
 }

@@ -11,10 +11,10 @@ import web.events.EventType
 
 sealed external interface GamepadEventTypes {
     @JsValue("gamepadconnected")
-    val GAMEPAD_CONNECTED: EventType<GamepadEvent>
+    val GAMEPAD_CONNECTED: EventType<GamepadEvent<*>>
         get() = definedExternally
 
     @JsValue("gamepaddisconnected")
-    val GAMEPAD_DISCONNECTED: EventType<GamepadEvent>
+    val GAMEPAD_DISCONNECTED: EventType<GamepadEvent<*>>
         get() = definedExternally
 }

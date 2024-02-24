@@ -11,6 +11,6 @@ import web.events.EventType
 
 sealed external interface RTCPeerConnectionIceErrorEventTypes {
     @JsValue("icecandidateerror")
-    val ICE_CANDIDATE_ERROR: EventType<RTCPeerConnectionIceErrorEvent>
+    val ICE_CANDIDATE_ERROR: EventType<RTCPeerConnectionIceErrorEvent<*>>
         get() = definedExternally
 }

@@ -11,18 +11,18 @@ import web.events.EventType
 
 sealed external interface FocusEventTypes {
     @JsValue("blur")
-    val BLUR: EventType<FocusEvent>
+    val BLUR: EventType<FocusEvent<*>>
         get() = definedExternally
 
     @JsValue("focus")
-    val FOCUS: EventType<FocusEvent>
+    val FOCUS: EventType<FocusEvent<*>>
         get() = definedExternally
 
     @JsValue("focusin")
-    val FOCUS_IN: EventType<FocusEvent>
+    val FOCUS_IN: EventType<FocusEvent<*>>
         get() = definedExternally
 
     @JsValue("focusout")
-    val FOCUS_OUT: EventType<FocusEvent>
+    val FOCUS_OUT: EventType<FocusEvent<*>>
         get() = definedExternally
 }

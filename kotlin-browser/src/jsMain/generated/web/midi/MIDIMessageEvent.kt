@@ -8,6 +8,7 @@ package web.midi
 
 import js.typedarrays.Uint8Array
 import web.events.Event
+import web.events.EventTarget
 import web.events.EventType
 
 /**
@@ -15,10 +16,10 @@ import web.events.EventType
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIMessageEvent)
  */
-open external class MIDIMessageEvent(
-    override val type: EventType<MIDIMessageEvent>,
+open external class MIDIMessageEvent<out C : EventTarget?>(
+    override val type: EventType<MIDIMessageEvent<*>>,
     init: MIDIMessageEventInit = definedExternally,
-) : Event,
+) : Event<C>,
     MIDIMessageEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIMessageEvent/data)

@@ -11,6 +11,6 @@ import web.events.EventType
 
 sealed external interface FormDataEventTypes {
     @JsValue("formdata")
-    val FORM_DATA: EventType<FormDataEvent>
+    val FORM_DATA: EventType<FormDataEvent<*>>
         get() = definedExternally
 }

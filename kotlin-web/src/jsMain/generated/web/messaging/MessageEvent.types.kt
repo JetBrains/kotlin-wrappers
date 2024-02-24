@@ -11,14 +11,14 @@ import web.events.EventType
 
 sealed external interface MessageEventTypes {
     @JsValue("connect")
-    val CONNECT: EventType<MessageEvent<*>>
+    val CONNECT: EventType<MessageEvent<*, *>>
         get() = definedExternally
 
     @JsValue("message")
-    val MESSAGE: EventType<MessageEvent<*>>
+    val MESSAGE: EventType<MessageEvent<*, *>>
         get() = definedExternally
 
     @JsValue("messageerror")
-    val MESSAGE_ERROR: EventType<MessageEvent<*>>
+    val MESSAGE_ERROR: EventType<MessageEvent<*, *>>
         get() = definedExternally
 }

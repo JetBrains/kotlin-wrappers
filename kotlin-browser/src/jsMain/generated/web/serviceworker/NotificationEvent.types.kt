@@ -11,10 +11,10 @@ import web.events.EventType
 
 sealed external interface NotificationEventTypes {
     @JsValue("notificationclick")
-    val NOTIFICATION_CLICK: EventType<NotificationEvent>
+    val NOTIFICATION_CLICK: EventType<NotificationEvent<*>>
         get() = definedExternally
 
     @JsValue("notificationclose")
-    val NOTIFICATION_CLOSE: EventType<NotificationEvent>
+    val NOTIFICATION_CLOSE: EventType<NotificationEvent<*>>
         get() = definedExternally
 }

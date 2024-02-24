@@ -11,6 +11,6 @@ import web.events.EventType
 
 sealed external interface StorageEventTypes {
     @JsValue("storage")
-    val STORAGE: EventType<StorageEvent>
+    val STORAGE: EventType<StorageEvent<*>>
         get() = definedExternally
 }

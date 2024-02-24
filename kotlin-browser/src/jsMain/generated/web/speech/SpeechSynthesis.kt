@@ -17,7 +17,7 @@ sealed external class SpeechSynthesis :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesis/voiceschanged_event)
      */
-    var onvoiceschanged: EventHandler<Event>?
+    var onvoiceschanged: EventHandler<Event<SpeechSynthesis>>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesis/paused)

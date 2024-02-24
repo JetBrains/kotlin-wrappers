@@ -130,12 +130,12 @@ sealed external class HTMLMediaElement :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/encrypted_event)
      */
-    var onencrypted: EventHandler<MediaEncryptedEvent>?
+    var onencrypted: EventHandler<MediaEncryptedEvent<HTMLMediaElement>>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/waitingforkey_event)
      */
-    var onwaitingforkey: EventHandler<Event>?
+    var onwaitingforkey: EventHandler<Event<HTMLMediaElement>>?
 
     /**
      * Gets a flag that specifies whether playback is paused.

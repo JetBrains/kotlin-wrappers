@@ -11,6 +11,6 @@ import web.events.EventType
 
 sealed external interface PaymentMethodChangeEventTypes {
     @JsValue("paymentmethodchange")
-    val PAYMENT_METHOD_CHANGE: EventType<PaymentMethodChangeEvent>
+    val PAYMENT_METHOD_CHANGE: EventType<PaymentMethodChangeEvent<*>>
         get() = definedExternally
 }

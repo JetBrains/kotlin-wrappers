@@ -9,10 +9,10 @@ package web.events
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomEvent)
  */
-open external class CustomEvent<out D>(
-    override val type: EventType<CustomEvent<D>>,
+open external class CustomEvent<out D, out C : EventTarget?>(
+    override val type: EventType<CustomEvent<D, *>>,
     init: CustomEventInit<D> = definedExternally,
-) : Event,
+) : Event<C>,
     CustomEventInit<D> {
     /**
      * Returns any custom data event was created with. Typically used for synthetic events.

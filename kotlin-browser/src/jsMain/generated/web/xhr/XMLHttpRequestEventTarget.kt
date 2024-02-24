@@ -11,11 +11,11 @@ import web.events.ProgressEvent
  */
 sealed external class XMLHttpRequestEventTarget :
     EventTarget {
-    var onabort: EventHandler<ProgressEvent>?
-    var onerror: EventHandler<ProgressEvent>?
-    var onload: EventHandler<ProgressEvent>?
-    var onloadend: EventHandler<ProgressEvent>?
-    var onloadstart: EventHandler<ProgressEvent>?
-    var onprogress: EventHandler<ProgressEvent>?
-    var ontimeout: EventHandler<ProgressEvent>?
+    var onabort: EventHandler<ProgressEvent<XMLHttpRequest>>?
+    var onerror: EventHandler<ProgressEvent<XMLHttpRequest>>?
+    var onload: EventHandler<ProgressEvent<XMLHttpRequest>>?
+    var onloadend: EventHandler<ProgressEvent<XMLHttpRequest>>?
+    var onloadstart: EventHandler<ProgressEvent<XMLHttpRequest>>?
+    var onprogress: EventHandler<ProgressEvent<XMLHttpRequest>>?
+    var ontimeout: EventHandler<ProgressEvent<XMLHttpRequest>>?
 }

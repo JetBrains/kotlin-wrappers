@@ -11,6 +11,6 @@ import web.events.EventType
 
 sealed external interface SubmitEventTypes {
     @JsValue("submit")
-    val SUBMIT: EventType<SubmitEvent>
+    val SUBMIT: EventType<SubmitEvent<*>>
         get() = definedExternally
 }

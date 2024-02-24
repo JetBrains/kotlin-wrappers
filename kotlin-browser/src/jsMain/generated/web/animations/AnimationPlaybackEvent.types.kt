@@ -11,14 +11,14 @@ import web.events.EventType
 
 sealed external interface AnimationPlaybackEventTypes {
     @JsValue("cancel")
-    val CANCEL: EventType<AnimationPlaybackEvent>
+    val CANCEL: EventType<AnimationPlaybackEvent<*>>
         get() = definedExternally
 
     @JsValue("finish")
-    val FINISH: EventType<AnimationPlaybackEvent>
+    val FINISH: EventType<AnimationPlaybackEvent<*>>
         get() = definedExternally
 
     @JsValue("remove")
-    val REMOVE: EventType<AnimationPlaybackEvent>
+    val REMOVE: EventType<AnimationPlaybackEvent<*>>
         get() = definedExternally
 }

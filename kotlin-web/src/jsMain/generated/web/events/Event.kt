@@ -14,8 +14,8 @@ import web.time.DOMHighResTimeStamp
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Event)
  */
-open external class Event(
-    open val type: EventType<Event>,
+open external class Event<out C : EventTarget?>(
+    open val type: EventType<Event<*>>,
     init: EventInit = definedExternally,
 ) : EventInit {
     /**
@@ -44,7 +44,7 @@ open external class Event(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Event/currentTarget)
      */
-    val currentTarget: EventTarget?
+    val currentTarget: C
 
     /**
      * Returns true if preventDefault() was invoked successfully to indicate cancelation, and false otherwise.

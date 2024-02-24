@@ -195,22 +195,22 @@ open external class Document :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/fullscreenchange_event)
      */
-    var onfullscreenchange: EventHandler<Event>?
+    var onfullscreenchange: EventHandler<Event<Document>>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/fullscreenerror_event)
      */
-    var onfullscreenerror: EventHandler<Event>?
+    var onfullscreenerror: EventHandler<Event<Document>>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pointerlockchange_event)
      */
-    var onpointerlockchange: EventHandler<Event>?
+    var onpointerlockchange: EventHandler<Event<Document>>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pointerlockerror_event)
      */
-    var onpointerlockerror: EventHandler<Event>?
+    var onpointerlockerror: EventHandler<Event<Document>>?
 
     /**
      * Fires when the state of the object has changed.
@@ -218,12 +218,12 @@ open external class Document :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/readystatechange_event)
      */
-    var onreadystatechange: EventHandler<Event>?
+    var onreadystatechange: EventHandler<Event<Document>>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/visibilitychange_event)
      */
-    var onvisibilitychange: EventHandler<Event>?
+    var onvisibilitychange: EventHandler<Event<Document>>?
     override val ownerDocument: Void
 
     /**

@@ -11,6 +11,6 @@ import web.events.EventType
 
 sealed external interface RTCTransformEventTypes {
     @JsValue("rtctransform")
-    val RTC_TRANSFORM: EventType<RTCTransformEvent>
+    val RTC_TRANSFORM: EventType<RTCTransformEvent<*>>
         get() = definedExternally
 }

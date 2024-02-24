@@ -28,12 +28,12 @@ external class MediaStream() : EventTarget {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/addtrack_event)
      */
-    var onaddtrack: EventHandler<MediaStreamTrackEvent>?
+    var onaddtrack: EventHandler<MediaStreamTrackEvent<MediaStream>>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/removetrack_event)
      */
-    var onremovetrack: EventHandler<MediaStreamTrackEvent>?
+    var onremovetrack: EventHandler<MediaStreamTrackEvent<MediaStream>>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/addTrack)
