@@ -7,9 +7,9 @@ import js.objects.JsPlainObject
 import web.events.EventInit
 
 @JsPlainObject
-external interface MessageEventInit<out T> :
+external interface MessageEventInit<out D> :
     EventInit {
-    val data: T?
+    val data: D?
     val lastEventId: String?
     val origin: String?
     val ports: ReadonlyArray<MessagePort>?

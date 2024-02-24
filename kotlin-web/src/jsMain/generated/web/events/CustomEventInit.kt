@@ -5,7 +5,7 @@ package web.events
 import js.objects.JsPlainObject
 
 @JsPlainObject
-external interface CustomEventInit<out T> :
+external interface CustomEventInit<out D> :
     EventInit {
-    val detail: T?
+    val detail: D?
 }

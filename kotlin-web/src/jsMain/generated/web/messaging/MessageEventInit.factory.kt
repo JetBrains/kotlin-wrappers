@@ -4,9 +4,9 @@ package web.messaging
 
 import js.objects.jso
 
-fun <T> MessageEventInit(
-    data: T?,
-): MessageEventInit<T> =
+fun <D> MessageEventInit(
+    data: D?,
+): MessageEventInit<D> =
     jso {
         asDynamic().data = data
     }

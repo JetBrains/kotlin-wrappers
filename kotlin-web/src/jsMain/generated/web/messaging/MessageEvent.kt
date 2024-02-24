@@ -15,17 +15,17 @@ import web.events.EventType
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent)
  */
-open external class MessageEvent<out T>(
-    override val type: EventType<MessageEvent<T>>,
-    init: MessageEventInit<T> = definedExternally,
+open external class MessageEvent<out D>(
+    override val type: EventType<MessageEvent<D>>,
+    init: MessageEventInit<D> = definedExternally,
 ) : Event,
-    MessageEventInit<T> {
+    MessageEventInit<D> {
     /**
      * Returns the data of the message.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent/data)
      */
-    override val data: T
+    override val data: D
 
     /**
      * Returns the last event ID string, for server-sent events.

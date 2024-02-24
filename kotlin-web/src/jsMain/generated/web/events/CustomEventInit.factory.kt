@@ -4,9 +4,9 @@ package web.events
 
 import js.objects.jso
 
-fun <T> CustomEventInit(
-    detail: T?,
-): CustomEventInit<T> =
+fun <D> CustomEventInit(
+    detail: D?,
+): CustomEventInit<D> =
     jso {
         asDynamic().detail = detail
     }
