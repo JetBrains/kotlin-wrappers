@@ -16,7 +16,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent)
  */
 open external class SecurityPolicyViolationEvent<out C : EventTarget?>(
-    override val type: EventType<SecurityPolicyViolationEvent<*>>,
+    override val type: EventType<SecurityPolicyViolationEvent<C>>,
     init: SecurityPolicyViolationEventInit = definedExternally,
 ) : Event<C>,
     SecurityPolicyViolationEventInit {

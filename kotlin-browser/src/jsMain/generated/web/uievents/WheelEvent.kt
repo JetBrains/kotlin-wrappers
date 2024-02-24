@@ -15,7 +15,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent)
  */
 open external class WheelEvent<out C : EventTarget?>(
-    override val type: EventType<WheelEvent<*>>,
+    override val type: EventType<WheelEvent<C>>,
     init: WheelEventInit = definedExternally,
 ) : MouseEvent<C> {
     /**

@@ -16,7 +16,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIConnectionEvent)
  */
 open external class MIDIConnectionEvent<out C : EventTarget?>(
-    override val type: EventType<MIDIConnectionEvent<*>>,
+    override val type: EventType<MIDIConnectionEvent<C>>,
     init: MIDIConnectionEventInit = definedExternally,
 ) : Event<C>,
     MIDIConnectionEventInit {

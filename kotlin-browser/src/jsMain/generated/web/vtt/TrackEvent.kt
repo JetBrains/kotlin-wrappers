@@ -16,7 +16,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TrackEvent)
  */
 open external class TrackEvent<out C : EventTarget?>(
-    override val type: EventType<TrackEvent<*>>,
+    override val type: EventType<TrackEvent<C>>,
     init: TrackEventInit = definedExternally,
 ) : Event<C>,
     TrackEventInit {

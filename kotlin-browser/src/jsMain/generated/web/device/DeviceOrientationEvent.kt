@@ -17,7 +17,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceOrientationEvent)
  */
 open external class DeviceOrientationEvent<out C : EventTarget?>(
-    override val type: EventType<DeviceOrientationEvent<*>>,
+    override val type: EventType<DeviceOrientationEvent<C>>,
     init: DeviceOrientationEventInit = definedExternally,
 ) : Event<C>,
     DeviceOrientationEventInit {

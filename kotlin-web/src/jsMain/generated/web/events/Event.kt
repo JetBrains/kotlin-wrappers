@@ -15,7 +15,7 @@ import web.time.DOMHighResTimeStamp
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Event)
  */
 open external class Event<out C : EventTarget?>(
-    open val type: EventType<Event<*>>,
+    open val type: EventType<Event<C>>,
     init: EventInit = definedExternally,
 ) : EventInit {
     /**

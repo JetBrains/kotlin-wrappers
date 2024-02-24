@@ -16,7 +16,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DragEvent)
  */
 open external class DragEvent<out C : EventTarget?>(
-    override val type: EventType<DragEvent<*>>,
+    override val type: EventType<DragEvent<C>>,
     init: DragEventInit = definedExternally,
 ) : MouseEvent<C> {
     /**

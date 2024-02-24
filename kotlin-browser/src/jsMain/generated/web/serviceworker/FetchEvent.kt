@@ -20,7 +20,7 @@ import web.http.Response
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent)
  */
 open external class FetchEvent<out C : EventTarget?>(
-    override val type: EventType<FetchEvent<*>>,
+    override val type: EventType<FetchEvent<C>>,
     init: FetchEventInit,
 ) : ExtendableEvent<C>,
     FetchEventInit {

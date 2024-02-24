@@ -17,7 +17,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent)
  */
 open external class MessageEvent<out D, out C : EventTarget?>(
-    override val type: EventType<MessageEvent<D, *>>,
+    override val type: EventType<MessageEvent<D, C>>,
     init: MessageEventInit<D> = definedExternally,
 ) : Event<C>,
     MessageEventInit<D> {

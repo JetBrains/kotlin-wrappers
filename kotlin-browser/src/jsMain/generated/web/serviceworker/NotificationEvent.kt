@@ -16,7 +16,7 @@ import web.notifications.Notification
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotificationEvent)
  */
 open external class NotificationEvent<out C : EventTarget?>(
-    override val type: EventType<NotificationEvent<*>>,
+    override val type: EventType<NotificationEvent<C>>,
     init: NotificationEventInit,
 ) : ExtendableEvent<C>,
     NotificationEventInit {

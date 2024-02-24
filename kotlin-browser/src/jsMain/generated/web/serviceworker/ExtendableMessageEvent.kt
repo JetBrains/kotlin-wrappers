@@ -17,7 +17,7 @@ import web.messaging.MessagePort
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent)
  */
 open external class ExtendableMessageEvent<out C : EventTarget?>(
-    override val type: EventType<ExtendableMessageEvent<*>>,
+    override val type: EventType<ExtendableMessageEvent<C>>,
     init: ExtendableMessageEventInit = definedExternally,
 ) : ExtendableEvent<C>,
     ExtendableMessageEventInit {

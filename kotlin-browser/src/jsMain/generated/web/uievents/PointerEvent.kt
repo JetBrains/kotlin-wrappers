@@ -16,7 +16,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent)
  */
 open external class PointerEvent<out C : EventTarget?>(
-    override val type: EventType<PointerEvent<*>>,
+    override val type: EventType<PointerEvent<C>>,
     init: PointerEventInit = definedExternally,
 ) : MouseEvent<C> {
     /**
