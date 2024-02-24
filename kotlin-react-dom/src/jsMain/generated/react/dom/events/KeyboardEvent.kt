@@ -6,7 +6,7 @@ import web.dom.Element
 import web.keyboard.KeyCode
 import web.keyboard.ModifierKeyCode
 
-external interface KeyboardEvent<out T : Element> : UIEvent<T, NativeKeyboardEvent> {
+external interface KeyboardEvent<out T : Element> : UIEvent<T, NativeKeyboardEvent<T>> {
     val altKey: Boolean
     val ctrlKey: Boolean
     val code: KeyCode
