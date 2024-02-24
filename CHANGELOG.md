@@ -1,3 +1,9 @@
+## pre.702
+
+**BREAKING CHANGE**
+
+* Type parameter for `currentTarget` in `*Event` classes
+
 ## pre.698
 
 **BREAKING CHANGE**
