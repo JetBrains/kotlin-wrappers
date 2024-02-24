@@ -69,7 +69,7 @@ external interface UseSliderParameters {
      * @param {number | number[]} value The new value.
      * @param {number} activeThumb Index of the currently moved thumb.
      */
-    var onChange: ((event: Event, value: dynamic, activeThumb: Number) -> Unit)?
+    var onChange: ((event: Event<*>, value: dynamic, activeThumb: Number) -> Unit)?
 
     /**
      * Callback function that is fired when the `mouseup` is triggered.
