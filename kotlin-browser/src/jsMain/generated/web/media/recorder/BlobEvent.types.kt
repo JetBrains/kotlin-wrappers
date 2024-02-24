@@ -11,6 +11,6 @@ import web.events.EventType
 
 sealed external interface BlobEventTypes {
     @JsValue("dataavailable")
-    val DATA_AVAILABLE: EventType<BlobEvent>
+    val DATA_AVAILABLE: EventType<BlobEvent<*>>
         get() = definedExternally
 }

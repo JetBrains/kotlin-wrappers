@@ -19,7 +19,7 @@ external interface CheckboxProps : PropsWithChildren, PropsWithClassName {
     var checked: Boolean
     var indeterminate: Boolean
     var disabled: Boolean
-    var onChange: (InputEvent) -> Unit
+    var onChange: (InputEvent<*>) -> Unit
 }
 
 @JsName("default")

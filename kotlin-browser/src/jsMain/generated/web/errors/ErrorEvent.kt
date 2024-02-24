@@ -7,6 +7,7 @@
 package web.errors
 
 import web.events.Event
+import web.events.EventTarget
 import web.events.EventType
 
 /**
@@ -14,10 +15,10 @@ import web.events.EventType
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent)
  */
-open external class ErrorEvent(
-    override val type: EventType<ErrorEvent>,
+open external class ErrorEvent<out C : EventTarget?>(
+    override val type: EventType<ErrorEvent<C>>,
     init: ErrorEventInit = definedExternally,
-) : Event,
+) : Event<C>,
     ErrorEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent/colno)

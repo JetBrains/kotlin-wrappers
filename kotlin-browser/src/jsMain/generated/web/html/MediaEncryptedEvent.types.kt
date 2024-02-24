@@ -11,6 +11,6 @@ import web.events.EventType
 
 sealed external interface MediaEncryptedEventTypes {
     @JsValue("encrypted")
-    val ENCRYPTED: EventType<MediaEncryptedEvent>
+    val ENCRYPTED: EventType<MediaEncryptedEvent<*>>
         get() = definedExternally
 }

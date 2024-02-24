@@ -11,26 +11,26 @@ import web.events.EventType
 
 sealed external interface SpeechSynthesisEventTypes {
     @JsValue("boundary")
-    val BOUNDARY: EventType<SpeechSynthesisEvent>
+    val BOUNDARY: EventType<SpeechSynthesisEvent<*>>
         get() = definedExternally
 
     @JsValue("end")
-    val END: EventType<SpeechSynthesisEvent>
+    val END: EventType<SpeechSynthesisEvent<*>>
         get() = definedExternally
 
     @JsValue("mark")
-    val MARK: EventType<SpeechSynthesisEvent>
+    val MARK: EventType<SpeechSynthesisEvent<*>>
         get() = definedExternally
 
     @JsValue("pause")
-    val PAUSE: EventType<SpeechSynthesisEvent>
+    val PAUSE: EventType<SpeechSynthesisEvent<*>>
         get() = definedExternally
 
     @JsValue("resume")
-    val RESUME: EventType<SpeechSynthesisEvent>
+    val RESUME: EventType<SpeechSynthesisEvent<*>>
         get() = definedExternally
 
     @JsValue("start")
-    val START: EventType<SpeechSynthesisEvent>
+    val START: EventType<SpeechSynthesisEvent<*>>
         get() = definedExternally
 }

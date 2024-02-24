@@ -11,6 +11,6 @@ import web.events.EventType
 
 sealed external interface PopStateEventTypes {
     @JsValue("popstate")
-    val POP_STATE: EventType<PopStateEvent>
+    val POP_STATE: EventType<PopStateEvent<*>>
         get() = definedExternally
 }

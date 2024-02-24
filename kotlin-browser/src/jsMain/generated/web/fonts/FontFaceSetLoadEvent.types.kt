@@ -11,14 +11,14 @@ import web.events.EventType
 
 sealed external interface FontFaceSetLoadEventTypes {
     @JsValue("loading")
-    val LOADING: EventType<FontFaceSetLoadEvent>
+    val LOADING: EventType<FontFaceSetLoadEvent<*>>
         get() = definedExternally
 
     @JsValue("loadingdone")
-    val LOADING_DONE: EventType<FontFaceSetLoadEvent>
+    val LOADING_DONE: EventType<FontFaceSetLoadEvent<*>>
         get() = definedExternally
 
     @JsValue("loadingerror")
-    val LOADING_ERROR: EventType<FontFaceSetLoadEvent>
+    val LOADING_ERROR: EventType<FontFaceSetLoadEvent<*>>
         get() = definedExternally
 }

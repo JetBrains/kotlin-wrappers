@@ -7,6 +7,7 @@
 package web.rtc
 
 import web.events.Event
+import web.events.EventTarget
 import web.events.EventType
 
 /**
@@ -14,10 +15,10 @@ import web.events.EventType
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnectionIceEvent)
  */
-open external class RTCPeerConnectionIceEvent(
-    override val type: EventType<RTCPeerConnectionIceEvent>,
+open external class RTCPeerConnectionIceEvent<out C : EventTarget?>(
+    override val type: EventType<RTCPeerConnectionIceEvent<C>>,
     init: RTCPeerConnectionIceEventInit = definedExternally,
-) : Event,
+) : Event<C>,
     RTCPeerConnectionIceEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnectionIceEvent/candidate)

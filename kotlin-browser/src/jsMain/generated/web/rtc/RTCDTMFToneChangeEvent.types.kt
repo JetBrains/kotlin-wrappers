@@ -11,6 +11,6 @@ import web.events.EventType
 
 sealed external interface RTCDTMFToneChangeEventTypes {
     @JsValue("tonechange")
-    val TONE_CHANGE: EventType<RTCDTMFToneChangeEvent>
+    val TONE_CHANGE: EventType<RTCDTMFToneChangeEvent<*>>
         get() = definedExternally
 }

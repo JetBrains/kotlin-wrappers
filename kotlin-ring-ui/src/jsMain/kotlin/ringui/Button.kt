@@ -28,7 +28,7 @@ external interface ButtonProps : PropsWithChildren, PropsWithClassName {
     var iconSize: Double
     var iconClassName: String
 
-    var onMouseDown: (MouseEvent) -> Unit
+    var onMouseDown: (MouseEvent<*>) -> Unit
 }
 
 @JsName("default")

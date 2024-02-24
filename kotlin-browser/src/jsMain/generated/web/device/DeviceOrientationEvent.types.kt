@@ -11,10 +11,10 @@ import web.events.EventType
 
 sealed external interface DeviceOrientationEventTypes {
     @JsValue("deviceorientation")
-    val DEVICE_ORIENTATION: EventType<DeviceOrientationEvent>
+    val DEVICE_ORIENTATION: EventType<DeviceOrientationEvent<*>>
         get() = definedExternally
 
     @JsValue("deviceorientationabsolute")
-    val DEVICE_ORIENTATION_ABSOLUTE: EventType<DeviceOrientationEvent>
+    val DEVICE_ORIENTATION_ABSOLUTE: EventType<DeviceOrientationEvent<*>>
         get() = definedExternally
 }

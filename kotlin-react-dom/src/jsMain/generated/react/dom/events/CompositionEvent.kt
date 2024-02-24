@@ -4,6 +4,6 @@ package react.dom.events
 
 import web.dom.Element
 
-external interface CompositionEvent<out T : Element> : SyntheticEvent<T, NativeCompositionEvent> {
+external interface CompositionEvent<out T : Element> : SyntheticEvent<T, NativeCompositionEvent<T>> {
     val data: String
 }

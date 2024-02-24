@@ -8,6 +8,7 @@
 
 package web.uievents
 
+import web.events.EventTarget
 import web.events.EventType
 
 /**
@@ -15,10 +16,10 @@ import web.events.EventType
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent)
  */
-open external class TouchEvent(
-    override val type: EventType<TouchEvent>,
+open external class TouchEvent<out C : EventTarget?>(
+    override val type: EventType<TouchEvent<C>>,
     init: TouchEventInit = definedExternally,
-) : UIEvent {
+) : UIEvent<C> {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent/altKey)
      */

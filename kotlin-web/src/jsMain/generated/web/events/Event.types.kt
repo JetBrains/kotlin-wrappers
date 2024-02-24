@@ -10,38 +10,38 @@ import seskar.js.JsValue
 
 sealed external interface EventTypes {
     @JsValue("abort")
-    val ABORT: EventType<Event>
+    val ABORT: EventType<Event<*>>
         get() = definedExternally
 
     @JsValue("cancel")
-    val CANCEL: EventType<Event>
+    val CANCEL: EventType<Event<*>>
         get() = definedExternally
 
     @JsValue("change")
-    val CHANGE: EventType<Event>
+    val CHANGE: EventType<Event<*>>
         get() = definedExternally
 
     @JsValue("close")
-    val CLOSE: EventType<Event>
+    val CLOSE: EventType<Event<*>>
         get() = definedExternally
 
     @JsValue("closing")
-    val CLOSING: EventType<Event>
+    val CLOSING: EventType<Event<*>>
         get() = definedExternally
 
     @JsValue("complete")
-    val COMPLETE: EventType<Event>
+    val COMPLETE: EventType<Event<*>>
         get() = definedExternally
 
     @JsValue("error")
-    val ERROR: EventType<Event>
+    val ERROR: EventType<Event<*>>
         get() = definedExternally
 
     @JsValue("open")
-    val OPEN: EventType<Event>
+    val OPEN: EventType<Event<*>>
         get() = definedExternally
 
     @JsValue("success")
-    val SUCCESS: EventType<Event>
+    val SUCCESS: EventType<Event<*>>
         get() = definedExternally
 }

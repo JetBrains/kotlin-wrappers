@@ -11,10 +11,10 @@ import web.events.EventType
 
 sealed external interface PromiseRejectionEventTypes {
     @JsValue("rejectionhandled")
-    val REJECTION_HANDLED: EventType<PromiseRejectionEvent>
+    val REJECTION_HANDLED: EventType<PromiseRejectionEvent<*>>
         get() = definedExternally
 
     @JsValue("unhandledrejection")
-    val UNHANDLED_REJECTION: EventType<PromiseRejectionEvent>
+    val UNHANDLED_REJECTION: EventType<PromiseRejectionEvent<*>>
         get() = definedExternally
 }

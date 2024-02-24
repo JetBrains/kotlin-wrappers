@@ -11,30 +11,30 @@ import web.events.EventType
 
 sealed external interface DragEventTypes {
     @JsValue("drag")
-    val DRAG: EventType<DragEvent>
+    val DRAG: EventType<DragEvent<*>>
         get() = definedExternally
 
     @JsValue("dragend")
-    val DRAG_END: EventType<DragEvent>
+    val DRAG_END: EventType<DragEvent<*>>
         get() = definedExternally
 
     @JsValue("dragenter")
-    val DRAG_ENTER: EventType<DragEvent>
+    val DRAG_ENTER: EventType<DragEvent<*>>
         get() = definedExternally
 
     @JsValue("dragleave")
-    val DRAG_LEAVE: EventType<DragEvent>
+    val DRAG_LEAVE: EventType<DragEvent<*>>
         get() = definedExternally
 
     @JsValue("dragover")
-    val DRAG_OVER: EventType<DragEvent>
+    val DRAG_OVER: EventType<DragEvent<*>>
         get() = definedExternally
 
     @JsValue("dragstart")
-    val DRAG_START: EventType<DragEvent>
+    val DRAG_START: EventType<DragEvent<*>>
         get() = definedExternally
 
     @JsValue("drop")
-    val DROP: EventType<DragEvent>
+    val DROP: EventType<DragEvent<*>>
         get() = definedExternally
 }

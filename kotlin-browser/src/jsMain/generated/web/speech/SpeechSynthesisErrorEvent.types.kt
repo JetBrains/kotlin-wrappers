@@ -11,6 +11,6 @@ import web.events.EventType
 
 sealed external interface SpeechSynthesisErrorEventTypes {
     @JsValue("error")
-    val ERROR: EventType<SpeechSynthesisErrorEvent>
+    val ERROR: EventType<SpeechSynthesisErrorEvent<*>>
         get() = definedExternally
 }

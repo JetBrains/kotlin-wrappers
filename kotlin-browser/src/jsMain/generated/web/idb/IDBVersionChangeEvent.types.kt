@@ -11,14 +11,14 @@ import web.events.EventType
 
 sealed external interface IDBVersionChangeEventTypes {
     @JsValue("blocked")
-    val BLOCKED: EventType<IDBVersionChangeEvent>
+    val BLOCKED: EventType<IDBVersionChangeEvent<*>>
         get() = definedExternally
 
     @JsValue("upgradeneeded")
-    val UPGRADENEEDED: EventType<IDBVersionChangeEvent>
+    val UPGRADENEEDED: EventType<IDBVersionChangeEvent<*>>
         get() = definedExternally
 
     @JsValue("versionchange")
-    val VERSION_CHANGE: EventType<IDBVersionChangeEvent>
+    val VERSION_CHANGE: EventType<IDBVersionChangeEvent<*>>
         get() = definedExternally
 }

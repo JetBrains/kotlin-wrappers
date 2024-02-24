@@ -25,8 +25,8 @@ external interface DropdownProps : PropsWithClassName {
     var hoverHideTimeOut: Int
     var onShow: () -> Unit
     var onHide: () -> Unit
-    var onMouseEnter: (Event) -> Unit
-    var onMouseLeave: (Event) -> Unit
+    var onMouseEnter: (Event<*>) -> Unit
+    var onMouseLeave: (Event<*>) -> Unit
     //'data-test': PropTypes.string
 }
 

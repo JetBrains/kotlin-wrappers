@@ -7,6 +7,7 @@
 package web.cssom
 
 import web.events.Event
+import web.events.EventTarget
 import web.events.EventType
 
 /**
@@ -14,10 +15,10 @@ import web.events.EventType
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransitionEvent)
  */
-open external class TransitionEvent(
-    override val type: EventType<TransitionEvent>,
+open external class TransitionEvent<out C : EventTarget?>(
+    override val type: EventType<TransitionEvent<C>>,
     init: TransitionEventInit = definedExternally,
-) : Event,
+) : Event<C>,
     TransitionEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransitionEvent/elapsedTime)

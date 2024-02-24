@@ -11,14 +11,14 @@ import web.events.EventType
 
 sealed external interface KeyboardEventTypes {
     @JsValue("keydown")
-    val KEY_DOWN: EventType<KeyboardEvent>
+    val KEY_DOWN: EventType<KeyboardEvent<*>>
         get() = definedExternally
 
     @JsValue("keypress")
-    val KEY_PRESS: EventType<KeyboardEvent>
+    val KEY_PRESS: EventType<KeyboardEvent<*>>
         get() = definedExternally
 
     @JsValue("keyup")
-    val KEY_UP: EventType<KeyboardEvent>
+    val KEY_UP: EventType<KeyboardEvent<*>>
         get() = definedExternally
 }

@@ -34,22 +34,22 @@ abstract external class WorkerGlobalScope :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/error_event)
      */
-    var onerror: EventHandler<ErrorEvent>?
+    var onerror: EventHandler<ErrorEvent<WorkerGlobalScope>>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/languagechange_event)
      */
-    var onlanguagechange: EventHandler<Event>?
+    var onlanguagechange: EventHandler<Event<WorkerGlobalScope>>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/offline_event)
      */
-    var onoffline: EventHandler<Event>?
+    var onoffline: EventHandler<Event<WorkerGlobalScope>>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/online_event)
      */
-    var ononline: EventHandler<Event>?
-    var onrejectionhandled: EventHandler<PromiseRejectionEvent>?
-    var onunhandledrejection: EventHandler<PromiseRejectionEvent>?
+    var ononline: EventHandler<Event<WorkerGlobalScope>>?
+    var onrejectionhandled: EventHandler<PromiseRejectionEvent<WorkerGlobalScope>>?
+    var onunhandledrejection: EventHandler<PromiseRejectionEvent<WorkerGlobalScope>>?
 }

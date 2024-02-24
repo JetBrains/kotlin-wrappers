@@ -11,6 +11,6 @@ import web.events.EventType
 
 sealed external interface OfflineAudioCompletionEventTypes {
     @JsValue("complete")
-    val COMPLETE: EventType<OfflineAudioCompletionEvent>
+    val COMPLETE: EventType<OfflineAudioCompletionEvent<*>>
         get() = definedExternally
 }

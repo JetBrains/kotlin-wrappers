@@ -11,6 +11,6 @@ import web.events.EventType
 
 sealed external interface CloseEventTypes {
     @JsValue("close")
-    val CLOSE: EventType<CloseEvent>
+    val CLOSE: EventType<CloseEvent<*>>
         get() = definedExternally
 }

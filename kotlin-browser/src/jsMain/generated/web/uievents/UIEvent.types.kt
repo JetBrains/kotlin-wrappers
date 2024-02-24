@@ -11,10 +11,10 @@ import web.events.EventType
 
 sealed external interface UIEventTypes {
     @JsValue("abort")
-    val ABORT: EventType<UIEvent>
+    val ABORT: EventType<UIEvent<*>>
         get() = definedExternally
 
     @JsValue("resize")
-    val RESIZE: EventType<UIEvent>
+    val RESIZE: EventType<UIEvent<*>>
         get() = definedExternally
 }

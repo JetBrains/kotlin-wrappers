@@ -11,6 +11,6 @@ import web.events.EventType
 
 sealed external interface RTCDataChannelEventTypes {
     @JsValue("datachannel")
-    val DATA_CHANNEL: EventType<RTCDataChannelEvent>
+    val DATA_CHANNEL: EventType<RTCDataChannelEvent<*>>
         get() = definedExternally
 }

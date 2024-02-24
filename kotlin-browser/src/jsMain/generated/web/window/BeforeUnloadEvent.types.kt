@@ -11,6 +11,6 @@ import web.events.EventType
 
 sealed external interface BeforeUnloadEventTypes {
     @JsValue("beforeunload")
-    val BEFORE_UNLOAD: EventType<BeforeUnloadEvent>
+    val BEFORE_UNLOAD: EventType<BeforeUnloadEvent<*>>
         get() = definedExternally
 }

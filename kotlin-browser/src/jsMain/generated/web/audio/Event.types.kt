@@ -5,8 +5,8 @@ package web.audio
 import web.events.Event
 import web.events.EventType
 
-inline val Event.Companion.ENDED: EventType<Event>
+inline val Event.Companion.ENDED: EventType<Event<*>>
     get() = EventType("ended")
 
-inline val Event.Companion.STATE_CHANGE: EventType<Event>
+inline val Event.Companion.STATE_CHANGE: EventType<Event<*>>
     get() = EventType("statechange")

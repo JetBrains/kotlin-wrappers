@@ -11,6 +11,6 @@ import web.events.EventType
 
 sealed external interface PushEventTypes {
     @JsValue("push")
-    val PUSH: EventType<PushEvent>
+    val PUSH: EventType<PushEvent<*>>
         get() = definedExternally
 }

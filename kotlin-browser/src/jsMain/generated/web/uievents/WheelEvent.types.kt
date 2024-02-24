@@ -11,6 +11,6 @@ import web.events.EventType
 
 sealed external interface WheelEventTypes {
     @JsValue("wheel")
-    val WHEEL: EventType<WheelEvent>
+    val WHEEL: EventType<WheelEvent<*>>
         get() = definedExternally
 }

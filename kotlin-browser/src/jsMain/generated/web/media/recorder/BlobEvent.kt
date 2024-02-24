@@ -8,16 +8,17 @@ package web.media.recorder
 
 import web.blob.Blob
 import web.events.Event
+import web.events.EventTarget
 import web.events.EventType
 import web.time.DOMHighResTimeStamp
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BlobEvent)
  */
-open external class BlobEvent(
-    override val type: EventType<BlobEvent>,
+open external class BlobEvent<out C : EventTarget?>(
+    override val type: EventType<BlobEvent<C>>,
     init: BlobEventInit,
-) : Event,
+) : Event<C>,
     BlobEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BlobEvent/data)

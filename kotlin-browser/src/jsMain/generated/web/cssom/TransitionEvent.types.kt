@@ -11,18 +11,18 @@ import web.events.EventType
 
 sealed external interface TransitionEventTypes {
     @JsValue("transitioncancel")
-    val TRANSITION_CANCEL: EventType<TransitionEvent>
+    val TRANSITION_CANCEL: EventType<TransitionEvent<*>>
         get() = definedExternally
 
     @JsValue("transitionend")
-    val TRANSITION_END: EventType<TransitionEvent>
+    val TRANSITION_END: EventType<TransitionEvent<*>>
         get() = definedExternally
 
     @JsValue("transitionrun")
-    val TRANSITION_RUN: EventType<TransitionEvent>
+    val TRANSITION_RUN: EventType<TransitionEvent<*>>
         get() = definedExternally
 
     @JsValue("transitionstart")
-    val TRANSITION_START: EventType<TransitionEvent>
+    val TRANSITION_START: EventType<TransitionEvent<*>>
         get() = definedExternally
 }

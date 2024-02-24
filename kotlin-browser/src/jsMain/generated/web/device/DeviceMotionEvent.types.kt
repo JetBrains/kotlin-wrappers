@@ -11,6 +11,6 @@ import web.events.EventType
 
 sealed external interface DeviceMotionEventTypes {
     @JsValue("devicemotion")
-    val DEVICE_MOTION: EventType<DeviceMotionEvent>
+    val DEVICE_MOTION: EventType<DeviceMotionEvent<*>>
         get() = definedExternally
 }

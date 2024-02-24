@@ -7,6 +7,7 @@
 package web.uievents
 
 import js.array.ReadonlyArray
+import web.events.EventTarget
 import web.events.EventType
 
 /**
@@ -14,10 +15,10 @@ import web.events.EventType
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent)
  */
-open external class PointerEvent(
-    override val type: EventType<PointerEvent>,
+open external class PointerEvent<out C : EventTarget?>(
+    override val type: EventType<PointerEvent<C>>,
     init: PointerEventInit = definedExternally,
-) : MouseEvent {
+) : MouseEvent<C> {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/height)
      */
@@ -73,12 +74,12 @@ open external class PointerEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/getCoalescedEvents)
      */
-    fun getCoalescedEvents(): ReadonlyArray<PointerEvent>
+    fun getCoalescedEvents(): ReadonlyArray<PointerEvent<*>>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/getPredictedEvents)
      */
-    fun getPredictedEvents(): ReadonlyArray<PointerEvent>
+    fun getPredictedEvents(): ReadonlyArray<PointerEvent<*>>
 
     companion object : PointerEventTypes
 }

@@ -6,6 +6,7 @@
 
 package web.payment
 
+import web.events.EventTarget
 import web.events.EventType
 
 /**
@@ -13,10 +14,10 @@ import web.events.EventType
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentMethodChangeEvent)
  */
-open external class PaymentMethodChangeEvent(
-    override val type: EventType<PaymentMethodChangeEvent>,
+open external class PaymentMethodChangeEvent<out C : EventTarget?>(
+    override val type: EventType<PaymentMethodChangeEvent<C>>,
     init: PaymentMethodChangeEventInit = definedExternally,
-) : PaymentRequestUpdateEvent,
+) : PaymentRequestUpdateEvent<C>,
     PaymentMethodChangeEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentMethodChangeEvent/methodDetails)

@@ -11,6 +11,6 @@ import web.events.EventType
 
 sealed external interface ExtendableMessageEventTypes {
     @JsValue("message")
-    val MESSAGE: EventType<ExtendableMessageEvent>
+    val MESSAGE: EventType<ExtendableMessageEvent<*>>
         get() = definedExternally
 }

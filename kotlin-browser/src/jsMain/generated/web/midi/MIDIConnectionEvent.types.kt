@@ -11,6 +11,6 @@ import web.events.EventType
 
 sealed external interface MIDIConnectionEventTypes {
     @JsValue("statechange")
-    val STATE_CHANGE: EventType<MIDIConnectionEvent>
+    val STATE_CHANGE: EventType<MIDIConnectionEvent<*>>
         get() = definedExternally
 }

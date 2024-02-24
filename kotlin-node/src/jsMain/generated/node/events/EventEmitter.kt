@@ -691,7 +691,7 @@ open external class EventEmitter {
          * @experimental
          * @return Disposable that removes the `abort` listener.
          */
-        fun addAbortListener(signal: AbortSignal, resource: (event: Event) -> Unit): Disposable
+        fun addAbortListener(signal: AbortSignal, resource: (event: Event<AbortSignal>) -> Unit): Disposable
 
         /**
          * This symbol shall be used to install a listener for only monitoring `'error'`events. Listeners installed using this symbol are called before the regular`'error'` listeners are called.

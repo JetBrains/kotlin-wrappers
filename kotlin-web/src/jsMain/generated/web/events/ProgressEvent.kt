@@ -13,10 +13,10 @@ import js.core.JsLong
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ProgressEvent)
  */
-open external class ProgressEvent(
-    override val type: EventType<ProgressEvent>,
+open external class ProgressEvent<out C : EventTarget?>(
+    override val type: EventType<ProgressEvent<C>>,
     init: ProgressEventInit = definedExternally,
-) : Event,
+) : Event<C>,
     ProgressEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ProgressEvent/lengthComputable)

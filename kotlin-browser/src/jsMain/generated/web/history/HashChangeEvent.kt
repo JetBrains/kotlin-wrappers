@@ -7,6 +7,7 @@
 package web.history
 
 import web.events.Event
+import web.events.EventTarget
 import web.events.EventType
 
 /**
@@ -14,10 +15,10 @@ import web.events.EventType
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HashChangeEvent)
  */
-open external class HashChangeEvent(
-    override val type: EventType<HashChangeEvent>,
+open external class HashChangeEvent<out C : EventTarget?>(
+    override val type: EventType<HashChangeEvent<C>>,
     init: HashChangeEventInit = definedExternally,
-) : Event,
+) : Event<C>,
     HashChangeEventInit {
     /**
      * Returns the URL of the session history entry that is now current.

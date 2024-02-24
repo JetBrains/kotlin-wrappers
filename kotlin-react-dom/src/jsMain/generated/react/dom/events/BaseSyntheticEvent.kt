@@ -3,10 +3,11 @@
 package react.dom.events
 
 import web.events.Event
+import web.events.EventTarget
 import web.events.EventType
 import web.time.DOMHighResTimeStamp
 
-external interface BaseSyntheticEvent<out E : Event, out C : Any, out T : Any> {
+external interface BaseSyntheticEvent<out E : Event<T>, out C : EventTarget, out T : EventTarget> {
     val nativeEvent: E
     val currentTarget: C
     val target: T

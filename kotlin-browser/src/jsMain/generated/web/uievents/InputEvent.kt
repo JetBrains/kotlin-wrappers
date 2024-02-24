@@ -8,16 +8,17 @@ package web.uievents
 
 import js.array.ReadonlyArray
 import web.data.DataTransfer
+import web.events.EventTarget
 import web.events.EventType
 import web.ranges.StaticRange
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputEvent)
  */
-open external class InputEvent(
-    override val type: EventType<InputEvent>,
+open external class InputEvent<out C : EventTarget?>(
+    override val type: EventType<InputEvent<C>>,
     init: InputEventInit = definedExternally,
-) : UIEvent {
+) : UIEvent<C> {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputEvent/data)
      */

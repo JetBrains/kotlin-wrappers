@@ -505,7 +505,7 @@ sealed external interface PreDragActions {
 }
 
 sealed external interface TryGetLockOptions {
-    var sourceEvent: Event?
+    var sourceEvent: Event<*>?
 }
 
 typealias TryGetLock = (
@@ -519,7 +519,7 @@ sealed external interface SensorAPI {
     var canGetLock: (id: DraggableId) -> Boolean
     var isLockClaimed: () -> Boolean
     var tryReleaseLock: () -> Unit
-    var findClosestDraggableId: (event: Event) -> DraggableId?
+    var findClosestDraggableId: (event: Event<*>) -> DraggableId?
     var findOptionsForDraggable: (id: DraggableId) -> DraggableOptions?
 }
 

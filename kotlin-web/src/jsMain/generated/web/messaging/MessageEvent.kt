@@ -8,6 +8,7 @@ package web.messaging
 
 import js.array.ReadonlyArray
 import web.events.Event
+import web.events.EventTarget
 import web.events.EventType
 
 /**
@@ -15,10 +16,10 @@ import web.events.EventType
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent)
  */
-open external class MessageEvent<out D>(
-    override val type: EventType<MessageEvent<D>>,
+open external class MessageEvent<out D, out C : EventTarget?>(
+    override val type: EventType<MessageEvent<D, C>>,
     init: MessageEventInit<D> = definedExternally,
-) : Event,
+) : Event<C>,
     MessageEventInit<D> {
     /**
      * Returns the data of the message.

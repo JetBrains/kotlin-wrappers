@@ -11,6 +11,6 @@ import web.events.EventType
 
 sealed external interface HashChangeEventTypes {
     @JsValue("hashchange")
-    val HASH_CHANGE: EventType<HashChangeEvent>
+    val HASH_CHANGE: EventType<HashChangeEvent<*>>
         get() = definedExternally
 }

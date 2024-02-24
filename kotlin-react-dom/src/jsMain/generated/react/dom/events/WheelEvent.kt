@@ -4,7 +4,7 @@ package react.dom.events
 
 import web.dom.Element
 
-external interface WheelEvent<out T : Element> : MouseEvent<T, NativeWheelEvent> {
+external interface WheelEvent<out T : Element> : MouseEvent<T, NativeWheelEvent<T>> {
     val deltaMode: Int
     val deltaX: Double
     val deltaY: Double

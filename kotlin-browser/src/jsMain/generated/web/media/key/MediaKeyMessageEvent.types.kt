@@ -11,6 +11,6 @@ import web.events.EventType
 
 sealed external interface MediaKeyMessageEventTypes {
     @JsValue("message")
-    val MESSAGE: EventType<MediaKeyMessageEvent>
+    val MESSAGE: EventType<MediaKeyMessageEvent<*>>
         get() = definedExternally
 }
