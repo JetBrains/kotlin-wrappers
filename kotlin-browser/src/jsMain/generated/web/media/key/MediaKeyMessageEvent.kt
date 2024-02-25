@@ -18,7 +18,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyMessageEvent)
  */
 open external class MediaKeyMessageEvent<out C : EventTarget?>(
-    override val type: EventType<MediaKeyMessageEvent<C>>,
+    override val type: EventType<MediaKeyMessageEvent<*>>,
     init: MediaKeyMessageEventInit,
 ) : Event<C>,
     MediaKeyMessageEventInit {

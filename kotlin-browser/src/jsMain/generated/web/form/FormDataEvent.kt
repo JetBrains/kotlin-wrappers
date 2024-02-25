@@ -14,7 +14,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormDataEvent)
  */
 open external class FormDataEvent<out C : EventTarget?>(
-    override val type: EventType<FormDataEvent<C>>,
+    override val type: EventType<FormDataEvent<*>>,
     init: FormDataEventInit,
 ) : Event<C>,
     FormDataEventInit {

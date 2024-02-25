@@ -14,7 +14,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationPlaybackEvent)
  */
 open external class AnimationPlaybackEvent<out C : EventTarget?>(
-    override val type: EventType<AnimationPlaybackEvent<C>>,
+    override val type: EventType<AnimationPlaybackEvent<*>>,
     init: AnimationPlaybackEventInit = definedExternally,
 ) : Event<C>,
     AnimationPlaybackEventInit {

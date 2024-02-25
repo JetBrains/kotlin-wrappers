@@ -16,7 +16,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent)
  */
 open external class ErrorEvent<out C : EventTarget?>(
-    override val type: EventType<ErrorEvent<C>>,
+    override val type: EventType<ErrorEvent<*>>,
     init: ErrorEventInit = definedExternally,
 ) : Event<C>,
     ErrorEventInit {

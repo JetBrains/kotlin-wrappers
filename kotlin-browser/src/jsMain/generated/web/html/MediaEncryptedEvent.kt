@@ -15,7 +15,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaEncryptedEvent)
  */
 open external class MediaEncryptedEvent<out C : EventTarget?>(
-    override val type: EventType<MediaEncryptedEvent<C>>,
+    override val type: EventType<MediaEncryptedEvent<*>>,
     init: MediaEncryptedEventInit = definedExternally,
 ) : Event<C>,
     MediaEncryptedEventInit {

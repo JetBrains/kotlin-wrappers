@@ -15,7 +15,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSetLoadEvent)
  */
 open external class FontFaceSetLoadEvent<out C : EventTarget?>(
-    override val type: EventType<FontFaceSetLoadEvent<C>>,
+    override val type: EventType<FontFaceSetLoadEvent<*>>,
     init: FontFaceSetLoadEventInit = definedExternally,
 ) : Event<C>,
     FontFaceSetLoadEventInit {

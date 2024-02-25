@@ -14,7 +14,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PictureInPictureEvent)
  */
 open external class PictureInPictureEvent<out C : EventTarget?>(
-    override val type: EventType<PictureInPictureEvent<C>>,
+    override val type: EventType<PictureInPictureEvent<*>>,
     init: PictureInPictureEventInit,
 ) : Event<C>,
     PictureInPictureEventInit {

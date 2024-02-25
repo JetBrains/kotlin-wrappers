@@ -14,7 +14,7 @@ import js.core.JsLong
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ProgressEvent)
  */
 open external class ProgressEvent<out C : EventTarget?>(
-    override val type: EventType<ProgressEvent<C>>,
+    override val type: EventType<ProgressEvent<*>>,
     init: ProgressEventInit = definedExternally,
 ) : Event<C>,
     ProgressEventInit {

@@ -14,7 +14,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnectionIceErrorEvent)
  */
 open external class RTCPeerConnectionIceErrorEvent<out C : EventTarget?>(
-    override val type: EventType<RTCPeerConnectionIceErrorEvent<C>>,
+    override val type: EventType<RTCPeerConnectionIceErrorEvent<*>>,
     init: RTCPeerConnectionIceErrorEventInit,
 ) : Event<C>,
     RTCPeerConnectionIceErrorEventInit {

@@ -16,7 +16,7 @@ import web.time.DOMHighResTimeStamp
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BlobEvent)
  */
 open external class BlobEvent<out C : EventTarget?>(
-    override val type: EventType<BlobEvent<C>>,
+    override val type: EventType<BlobEvent<*>>,
     init: BlobEventInit,
 ) : Event<C>,
     BlobEventInit {

@@ -17,7 +17,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIMessageEvent)
  */
 open external class MIDIMessageEvent<out C : EventTarget?>(
-    override val type: EventType<MIDIMessageEvent<C>>,
+    override val type: EventType<MIDIMessageEvent<*>>,
     init: MIDIMessageEventInit = definedExternally,
 ) : Event<C>,
     MIDIMessageEventInit {

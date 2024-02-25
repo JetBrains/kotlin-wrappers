@@ -17,7 +17,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableEvent)
  */
 open external class ExtendableEvent<out C : EventTarget?>(
-    override val type: EventType<ExtendableEvent<C>>,
+    override val type: EventType<ExtendableEvent<*>>,
     init: ExtendableEventInit = definedExternally,
 ) : Event<C>,
     ExtendableEventInit {

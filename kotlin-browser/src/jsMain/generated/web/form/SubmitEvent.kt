@@ -15,7 +15,7 @@ import web.html.HTMLElement
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubmitEvent)
  */
 open external class SubmitEvent<out C : EventTarget?>(
-    override val type: EventType<SubmitEvent<C>>,
+    override val type: EventType<SubmitEvent<*>>,
     init: SubmitEventInit = definedExternally,
 ) : Event<C>,
     SubmitEventInit {

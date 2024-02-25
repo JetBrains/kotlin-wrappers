@@ -16,7 +16,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PopStateEvent)
  */
 open external class PopStateEvent<out C : EventTarget?>(
-    override val type: EventType<PopStateEvent<C>>,
+    override val type: EventType<PopStateEvent<*>>,
     init: PopStateEventInit = definedExternally,
 ) : Event<C>,
     PopStateEventInit {

@@ -17,7 +17,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceMotionEvent)
  */
 open external class DeviceMotionEvent<out C : EventTarget?>(
-    override val type: EventType<DeviceMotionEvent<C>>,
+    override val type: EventType<DeviceMotionEvent<*>>,
     init: DeviceMotionEventInit = definedExternally,
 ) : Event<C> {
     /**

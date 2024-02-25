@@ -17,7 +17,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBVersionChangeEvent)
  */
 open external class IDBVersionChangeEvent<out C : EventTarget?>(
-    override val type: EventType<IDBVersionChangeEvent<C>>,
+    override val type: EventType<IDBVersionChangeEvent<*>>,
     init: IDBVersionChangeEventInit = definedExternally,
 ) : Event<C>,
     IDBVersionChangeEventInit {

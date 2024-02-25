@@ -16,7 +16,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HashChangeEvent)
  */
 open external class HashChangeEvent<out C : EventTarget?>(
-    override val type: EventType<HashChangeEvent<C>>,
+    override val type: EventType<HashChangeEvent<*>>,
     init: HashChangeEventInit = definedExternally,
 ) : Event<C>,
     HashChangeEventInit {

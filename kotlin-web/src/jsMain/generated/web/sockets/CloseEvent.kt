@@ -16,7 +16,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CloseEvent)
  */
 open external class CloseEvent<out C : EventTarget?>(
-    override val type: EventType<CloseEvent<C>>,
+    override val type: EventType<CloseEvent<*>>,
     init: CloseEventInit = definedExternally,
 ) : Event<C>,
     CloseEventInit {

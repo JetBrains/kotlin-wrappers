@@ -16,7 +16,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransitionEvent)
  */
 open external class TransitionEvent<out C : EventTarget?>(
-    override val type: EventType<TransitionEvent<C>>,
+    override val type: EventType<TransitionEvent<*>>,
     init: TransitionEventInit = definedExternally,
 ) : Event<C>,
     TransitionEventInit {

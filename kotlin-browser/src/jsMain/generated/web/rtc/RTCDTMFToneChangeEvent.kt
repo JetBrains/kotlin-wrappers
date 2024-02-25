@@ -16,7 +16,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDTMFToneChangeEvent)
  */
 open external class RTCDTMFToneChangeEvent<out C : EventTarget?>(
-    override val type: EventType<RTCDTMFToneChangeEvent<C>>,
+    override val type: EventType<RTCDTMFToneChangeEvent<*>>,
     init: RTCDTMFToneChangeEventInit = definedExternally,
 ) : Event<C>,
     RTCDTMFToneChangeEventInit {

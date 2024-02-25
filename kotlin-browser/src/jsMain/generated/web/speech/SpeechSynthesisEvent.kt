@@ -16,7 +16,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisEvent)
  */
 open external class SpeechSynthesisEvent<out C : EventTarget?>(
-    override val type: EventType<SpeechSynthesisEvent<C>>,
+    override val type: EventType<SpeechSynthesisEvent<*>>,
     init: SpeechSynthesisEventInit,
 ) : Event<C>,
     SpeechSynthesisEventInit {

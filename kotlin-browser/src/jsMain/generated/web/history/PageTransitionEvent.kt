@@ -16,7 +16,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PageTransitionEvent)
  */
 open external class PageTransitionEvent<out C : EventTarget?>(
-    override val type: EventType<PageTransitionEvent<C>>,
+    override val type: EventType<PageTransitionEvent<*>>,
     init: PageTransitionEventInit = definedExternally,
 ) : Event<C>,
     PageTransitionEventInit {
