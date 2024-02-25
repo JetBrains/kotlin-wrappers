@@ -2,6 +2,6 @@
 
 package web.events
 
-typealias EventHandler<T /* : Event */> = (
-    event: T,
+typealias EventHandler<E /* : Event */> = (
+    event: E,
 ) -> Unit

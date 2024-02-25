@@ -11,15 +11,15 @@
 package web.events
 
 open external class EventTarget {
-    fun <T : Event<*>> addEventListener(
-        type: EventType<T>,
-        callback: EventHandler<T>,
+    fun <E : Event<*>> addEventListener(
+        type: EventType<E>,
+        callback: EventHandler<E>,
         options: AddEventListenerOptions? = definedExternally,
     )
 
-    inline fun <T : Event<*>> addEventHandler(
-        type: EventType<T>,
-        noinline handler: EventHandler<T>,
+    inline fun <E : Event<*>> addEventHandler(
+        type: EventType<E>,
+        noinline handler: EventHandler<E>,
     ): () -> Unit =
         addEventHandler(
             target = this,
@@ -27,10 +27,10 @@ open external class EventTarget {
             handler = handler,
         )
 
-    inline fun <T : Event<*>> addEventHandler(
-        type: EventType<T>,
+    inline fun <E : Event<*>> addEventHandler(
+        type: EventType<E>,
         options: AddEventListenerOptions?,
-        noinline handler: EventHandler<T>,
+        noinline handler: EventHandler<E>,
     ): () -> Unit =
         addEventHandler(
             target = this,
@@ -39,9 +39,9 @@ open external class EventTarget {
             options = options,
         )
 
-    fun <T : Event<*>> removeEventListener(
-        type: EventType<T>,
-        callback: EventHandler<T>,
+    fun <E : Event<*>> removeEventListener(
+        type: EventType<E>,
+        callback: EventHandler<E>,
         options: EventListenerOptions? = definedExternally,
     )
 
@@ -51,10 +51,10 @@ open external class EventTarget {
 }
 
 @PublishedApi
-internal fun <T : Event<*>> addEventHandler(
+internal fun <E : Event<*>> addEventHandler(
     target: EventTarget,
-    type: EventType<T>,
-    handler: EventHandler<T>,
+    type: EventType<E>,
+    handler: EventHandler<E>,
 ): () -> Unit =
     addEventHandler(
         target = target,
@@ -64,10 +64,10 @@ internal fun <T : Event<*>> addEventHandler(
     )
 
 @PublishedApi
-internal fun <T : Event<*>> addEventHandler(
+internal fun <E : Event<*>> addEventHandler(
     target: EventTarget,
-    type: EventType<T>,
-    handler: EventHandler<T>,
+    type: EventType<E>,
+    handler: EventHandler<E>,
     options: AddEventListenerOptions?,
 ): () -> Unit {
     target.addEventListener(
