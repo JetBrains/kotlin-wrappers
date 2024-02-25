@@ -2,6 +2,8 @@
 
 @file:Suppress(
     "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+    "INVISIBLE_MEMBER",
+    "INVISIBLE_REFERENCE",
 )
 
 package web.messaging
@@ -10,13 +12,16 @@ import js.array.ReadonlyArray
 import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
+import kotlin.internal.LowPriorityInOverloadResolution
 
 /**
  * A message received by a target object.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent)
  */
-open external class MessageEvent<out D, out C : EventTarget?>(
+open external class MessageEvent<out D, out C : EventTarget?>
+@LowPriorityInOverloadResolution
+constructor(
     override val type: EventType<MessageEvent<D, *>>,
     init: MessageEventInit<D> = definedExternally,
 ) : Event<C>,
