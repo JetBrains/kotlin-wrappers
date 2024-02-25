@@ -2,26 +2,26 @@
 
 package react.dom.events
 
-typealias NativeAnimationEvent<T> = web.animations.AnimationEvent<T>
+typealias NativeAnimationEvent<C> = web.animations.AnimationEvent<C>
 
-typealias NativeClipboardEvent<T> = web.clipboard.ClipboardEvent<T>
+typealias NativeClipboardEvent<C> = web.clipboard.ClipboardEvent<C>
 
-typealias NativeCompositionEvent<T> = web.uievents.CompositionEvent<T>
+typealias NativeCompositionEvent<C> = web.uievents.CompositionEvent<C>
 
-typealias NativeDragEvent<T> = web.uievents.DragEvent<T>
+typealias NativeDragEvent<C> = web.uievents.DragEvent<C>
 
-typealias NativeFocusEvent<T> = web.uievents.FocusEvent<T>
+typealias NativeFocusEvent<C> = web.uievents.FocusEvent<C>
 
-typealias NativeKeyboardEvent<T> = web.uievents.KeyboardEvent<T>
+typealias NativeKeyboardEvent<C> = web.uievents.KeyboardEvent<C>
 
-typealias NativeMouseEvent<T> = web.uievents.MouseEvent<T>
+typealias NativeMouseEvent<C> = web.uievents.MouseEvent<C>
 
-typealias NativeTouchEvent<T> = web.uievents.TouchEvent<T>
+typealias NativeTouchEvent<C> = web.uievents.TouchEvent<C>
 
-typealias NativePointerEvent<T> = web.uievents.PointerEvent<T>
+typealias NativePointerEvent<C> = web.uievents.PointerEvent<C>
 
-typealias NativeTransitionEvent<T> = web.cssom.TransitionEvent<T>
+typealias NativeTransitionEvent<C> = web.cssom.TransitionEvent<C>
 
-typealias NativeUIEvent<T> = web.uievents.UIEvent<T>
+typealias NativeUIEvent<C> = web.uievents.UIEvent<C>
 
-typealias NativeWheelEvent<T> = web.uievents.WheelEvent<T>
+typealias NativeWheelEvent<C> = web.uievents.WheelEvent<C>
