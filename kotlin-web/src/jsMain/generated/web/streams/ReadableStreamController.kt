@@ -7,4 +7,5 @@ package web.streams
  * - `ReadableStreamDefaultController`
  * - `ReadableByteStreamController`
  */
+@JsExternalInheritorsOnly
 sealed external interface ReadableStreamController<T>

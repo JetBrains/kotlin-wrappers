@@ -9,4 +9,5 @@ package web.rendering
  * - `WebGLRenderingContext`
  * - `WebGL2RenderingContext`
  */
+@JsExternalInheritorsOnly
 external interface RenderingContext

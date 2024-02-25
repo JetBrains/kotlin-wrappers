@@ -13,4 +13,5 @@ package js.transferable
  * - `VideoFrame`
  * - `ArrayBuffer`
  */
+@JsExternalInheritorsOnly
 external interface Transferable
