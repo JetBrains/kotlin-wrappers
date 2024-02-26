@@ -22,7 +22,7 @@ external interface AccordionSummaryClasses {
 
     /**
      * Styles applied to the children wrapper element unless `disableGutters={true}`.
-     * @deprecated Combine the [.MuiAccordionSummary-gutters](/material-ui/api/accordion-summary/#AccordionSummary-classes-gutters) and [.MuiAccordionSummary-content](/material-ui/api/accordion-summary/#AccordionSummary-classes-content) classes instead.
+     * @deprecated Combine the [.MuiAccordionSummary-gutters](/material-ui/api/accordion-summary/#AccordionSummary-classes-gutters) and [.MuiAccordionSummary-content](/material-ui/api/accordion-summary/#AccordionSummary-classes-content) classes instead. [How to migrate](/material-ui/migration/migrating-from-deprecated-apis/).
      */
     var contentGutters: ClassName
 

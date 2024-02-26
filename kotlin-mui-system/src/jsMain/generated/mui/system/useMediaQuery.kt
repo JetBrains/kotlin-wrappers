@@ -1,8 +1,8 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/material/useMediaQuery")
+@file:JsModule("@mui/system/useMediaQuery")
 
-package mui.material
+package mui.system
 
 external interface UseMediaQueryOptions {
     /**
