@@ -61,7 +61,7 @@ external interface StepLabelProps :
     /**
      * The component to render in place of the [`StepIcon`](/material-ui/api/step-icon/).
      */
-    var StepIconComponent: react.ElementType<*>?
+    var StepIconComponent: react.ElementType<StepIconProps>?
 
     /**
      * Props applied to the [`StepIcon`](/material-ui/api/step-icon/) element.

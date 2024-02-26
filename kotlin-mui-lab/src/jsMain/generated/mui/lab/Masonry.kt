@@ -53,6 +53,12 @@ external interface MasonryOwnProps :
     var spacing: mui.system.ResponsiveStyleValue<dynamic>?
 
     /**
+     * Allows using sequential order rather than adding to shortest column
+     * @default false
+     */
+    var sequential: Boolean?
+
+    /**
      * Allows defining system overrides as well as additional CSS styles.
      */
     override var sx: SxProps<Theme>?

@@ -240,7 +240,7 @@ external interface TooltipProps :
 
     /**
      * Props applied to the transition element.
-     * By default, the element is based on this [`Transition`](http://reactcommunity.org/react-transition-group/transition/) component.
+     * By default, the element is based on this [`Transition`](https://reactcommunity.org/react-transition-group/transition/) component.
      */
     var TransitionProps: mui.material.transitions.TransitionProps?
 }

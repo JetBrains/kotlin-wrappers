@@ -14,7 +14,8 @@ import mui.system.SxProps
 external interface AlertProps :
     mui.system.StandardProps,
     PaperProps,
-    mui.system.PropsWithSx {
+    mui.system.PropsWithSx,
+    AlertSlots {
     /**
      * The action to display. It renders after the message, at the end of the alert.
      */
@@ -43,8 +44,7 @@ external interface AlertProps :
     /**
      * The components used for each slot inside.
      *
-     * This prop is an alias for the `slots` prop.
-     * It's recommended to use the `slots` prop instead.
+     * @deprecated use the `slots` prop instead. This prop will be removed in v7. [How to migrate](/material-ui/migration/migrating-from-deprecated-apis/).
      *
      * @default {}
      */
@@ -59,8 +59,7 @@ external interface AlertProps :
      * The extra props for the slot components.
      * You can override the existing props or add new ones.
      *
-     * This prop is an alias for the `slotProps` prop.
-     * It's recommended to use the `slotProps` prop instead, as `componentsProps` will be deprecated in the future.
+     * @deprecated use the `slotProps` prop instead. This prop will be removed in v7. [How to migrate](/material-ui/migration/migrating-from-deprecated-apis/).
      *
      * @default {}
      */
@@ -112,38 +111,23 @@ external interface AlertProps :
     var variant: AlertVariant?
 
     /**
-     * The extra props for the slot components.
-     * You can override the existing props or add new ones.
-     *
-     * This prop is an alias for the `componentsProps` prop, which will be deprecated in the future.
-     *
-     * @default {}
-     */
-    var slotProps: SlotProps?
-
-    interface SlotProps {
-        var closeButton: react.Props? /* IconButtonProps */
-        var closeIcon: react.Props? /* SvgIconProps */
-    }
-
-    /**
-     * The components used for each slot inside.
-     *
-     * This prop is an alias for the `components` prop, which will be deprecated in the future.
-     *
-     * @default {}
-     */
-    var slots: Slots?
-
-    interface Slots {
-        var closeButton: react.ElementType<*>?
-        var closeIcon: react.ElementType<*>?
-    }
-
-    /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
     override var sx: SxProps<Theme>?
+}
+
+external interface AlertSlots {
+    /**
+     * The component that renders the close button.
+     * @default IconButton
+     */
+    var closeButton: react.ElementType<*>?
+
+    /**
+     * The component that renders the close icon.
+     * @default svg
+     */
+    var closeIcon: react.ElementType<*>?
 }
 
 /**
