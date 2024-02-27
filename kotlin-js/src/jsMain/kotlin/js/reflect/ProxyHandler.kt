@@ -4,7 +4,7 @@ import js.array.ReadonlyArray
 import js.objects.PropertyKey
 import js.objects.TypedPropertyDescriptor
 
-external interface ProxyHandler<T : Any> {
+sealed external interface ProxyHandler<T : Any> {
     var apply: ((target: T, thisArg: Any, argArray: ReadonlyArray<Any>) -> Any)?
     var construct: ((target: T, argArray: ReadonlyArray<Any>, newTarget: Function<*>) -> Any)?
     var defineProperty: ((target: T, p: PropertyKey, attributes: TypedPropertyDescriptor<*>) -> Boolean)?
