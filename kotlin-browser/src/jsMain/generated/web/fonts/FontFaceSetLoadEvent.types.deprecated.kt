@@ -9,7 +9,7 @@ package web.fonts
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external interface FontFaceSetLoadEventTypes {
+sealed external interface FontFaceSetLoadEventTypes_deprecated {
     @JsValue("loading")
     val LOADING: EventType<FontFaceSetLoadEvent<*>>
         get() = definedExternally

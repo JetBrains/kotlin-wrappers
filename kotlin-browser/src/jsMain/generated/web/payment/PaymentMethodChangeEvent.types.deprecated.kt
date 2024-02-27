@@ -9,7 +9,7 @@ package web.payment
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external interface PaymentMethodChangeEventTypes {
+sealed external interface PaymentMethodChangeEventTypes_deprecated {
     @JsValue("paymentmethodchange")
     val PAYMENT_METHOD_CHANGE: EventType<PaymentMethodChangeEvent<*>>
         get() = definedExternally

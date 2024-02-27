@@ -9,7 +9,7 @@ package web.vtt
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external interface TrackEventTypes {
+sealed external interface TrackEventTypes_deprecated {
     @JsValue("addtrack")
     val ADD_TRACK: EventType<TrackEvent<*>>
         get() = definedExternally

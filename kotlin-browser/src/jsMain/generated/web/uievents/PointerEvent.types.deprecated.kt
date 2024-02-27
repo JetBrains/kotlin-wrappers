@@ -9,7 +9,7 @@ package web.uievents
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external interface PointerEventTypes {
+sealed external interface PointerEventTypes_deprecated {
     @JsValue("gotpointercapture")
     val GOT_POINTER_CAPTURE: EventType<PointerEvent<*>>
         get() = definedExternally

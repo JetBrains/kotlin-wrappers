@@ -8,7 +8,7 @@ package web.events
 
 import seskar.js.JsValue
 
-sealed external interface EventTypes {
+sealed external interface EventTypes_deprecated {
     @JsValue("abort")
     val ABORT: EventType<Event<*>>
         get() = definedExternally

@@ -9,7 +9,7 @@ package web.rtc
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external interface RTCTransformEventTypes {
+sealed external interface RTCTransformEventTypes_deprecated {
     @JsValue("rtctransform")
     val RTC_TRANSFORM: EventType<RTCTransformEvent<*>>
         get() = definedExternally

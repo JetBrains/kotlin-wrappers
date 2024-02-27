@@ -9,7 +9,7 @@ package web.serviceworker
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external interface ExtendableEventTypes {
+sealed external interface ExtendableEventTypes_deprecated {
     @JsValue("activate")
     val ACTIVATE: EventType<ExtendableEvent<*>>
         get() = definedExternally

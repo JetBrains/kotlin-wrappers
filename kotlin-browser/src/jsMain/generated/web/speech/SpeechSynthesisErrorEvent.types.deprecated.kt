@@ -9,7 +9,7 @@ package web.speech
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external interface SpeechSynthesisErrorEventTypes {
+sealed external interface SpeechSynthesisErrorEventTypes_deprecated {
     @JsValue("error")
     val ERROR: EventType<SpeechSynthesisErrorEvent<*>>
         get() = definedExternally

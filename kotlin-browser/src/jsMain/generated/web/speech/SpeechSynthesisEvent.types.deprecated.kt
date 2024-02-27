@@ -9,7 +9,7 @@ package web.speech
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external interface SpeechSynthesisEventTypes {
+sealed external interface SpeechSynthesisEventTypes_deprecated {
     @JsValue("boundary")
     val BOUNDARY: EventType<SpeechSynthesisEvent<*>>
         get() = definedExternally

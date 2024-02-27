@@ -8,7 +8,7 @@ package web.events
 
 import seskar.js.JsValue
 
-sealed external interface ProgressEventTypes {
+sealed external interface ProgressEventTypes_deprecated {
     @JsValue("abort")
     val ABORT: EventType<ProgressEvent<*>>
         get() = definedExternally

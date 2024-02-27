@@ -9,7 +9,7 @@ package web.media.streams
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external interface MediaStreamTrackEventTypes {
+sealed external interface MediaStreamTrackEventTypes_deprecated {
     @JsValue("addtrack")
     val ADD_TRACK: EventType<MediaStreamTrackEvent<*>>
         get() = definedExternally

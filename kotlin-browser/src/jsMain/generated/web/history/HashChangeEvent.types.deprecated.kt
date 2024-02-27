@@ -9,7 +9,7 @@ package web.history
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external interface HashChangeEventTypes {
+sealed external interface HashChangeEventTypes_deprecated {
     @JsValue("hashchange")
     val HASH_CHANGE: EventType<HashChangeEvent<*>>
         get() = definedExternally

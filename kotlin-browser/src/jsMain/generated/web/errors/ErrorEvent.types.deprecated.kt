@@ -9,7 +9,7 @@ package web.errors
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external interface ErrorEventTypes {
+sealed external interface ErrorEventTypes_deprecated {
     @JsValue("error")
     val ERROR: EventType<ErrorEvent<*>>
         get() = definedExternally

@@ -9,7 +9,7 @@ package web.uievents
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external interface InputEventTypes {
+sealed external interface InputEventTypes_deprecated {
     @JsValue("beforeinput")
     val BEFORE_INPUT: EventType<InputEvent<*>>
         get() = definedExternally

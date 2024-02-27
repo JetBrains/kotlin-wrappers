@@ -9,7 +9,7 @@ package web.uievents
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external interface WheelEventTypes {
+sealed external interface WheelEventTypes_deprecated {
     @JsValue("wheel")
     val WHEEL: EventType<WheelEvent<*>>
         get() = definedExternally

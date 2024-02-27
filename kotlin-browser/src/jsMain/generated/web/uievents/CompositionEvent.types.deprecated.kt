@@ -9,7 +9,7 @@ package web.uievents
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external interface CompositionEventTypes {
+sealed external interface CompositionEventTypes_deprecated {
     @JsValue("compositionend")
     val COMPOSITION_END: EventType<CompositionEvent<*>>
         get() = definedExternally

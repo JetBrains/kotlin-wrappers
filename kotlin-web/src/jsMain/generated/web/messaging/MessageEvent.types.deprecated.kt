@@ -9,7 +9,7 @@ package web.messaging
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external interface MessageEventTypes {
+sealed external interface MessageEventTypes_deprecated {
     @JsValue("connect")
     val CONNECT: EventType<MessageEvent<*, *>>
         get() = definedExternally

@@ -9,7 +9,7 @@ package web.serviceworker
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external interface NotificationEventTypes {
+sealed external interface NotificationEventTypes_deprecated {
     @JsValue("notificationclick")
     val NOTIFICATION_CLICK: EventType<NotificationEvent<*>>
         get() = definedExternally

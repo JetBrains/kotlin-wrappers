@@ -9,7 +9,7 @@ package web.rtc
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external interface RTCDataChannelEventTypes {
+sealed external interface RTCDataChannelEventTypes_deprecated {
     @JsValue("datachannel")
     val DATA_CHANNEL: EventType<RTCDataChannelEvent<*>>
         get() = definedExternally

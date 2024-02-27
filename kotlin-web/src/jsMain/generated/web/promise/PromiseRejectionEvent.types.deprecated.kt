@@ -9,7 +9,7 @@ package web.promise
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external interface PromiseRejectionEventTypes {
+sealed external interface PromiseRejectionEventTypes_deprecated {
     @JsValue("rejectionhandled")
     val REJECTION_HANDLED: EventType<PromiseRejectionEvent<*>>
         get() = definedExternally

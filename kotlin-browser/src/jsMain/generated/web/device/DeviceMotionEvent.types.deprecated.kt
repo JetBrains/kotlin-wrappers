@@ -9,7 +9,7 @@ package web.device
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external interface DeviceMotionEventTypes {
+sealed external interface DeviceMotionEventTypes_deprecated {
     @JsValue("devicemotion")
     val DEVICE_MOTION: EventType<DeviceMotionEvent<*>>
         get() = definedExternally

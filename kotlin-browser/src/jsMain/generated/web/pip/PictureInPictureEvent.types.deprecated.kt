@@ -9,7 +9,7 @@ package web.pip
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external interface PictureInPictureEventTypes {
+sealed external interface PictureInPictureEventTypes_deprecated {
     @JsValue("enterpictureinpicture")
     val ENTER_PICTURE_IN_PICTURE: EventType<PictureInPictureEvent<*>>
         get() = definedExternally

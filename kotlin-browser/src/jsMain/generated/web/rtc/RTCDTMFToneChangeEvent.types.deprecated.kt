@@ -9,7 +9,7 @@ package web.rtc
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external interface RTCDTMFToneChangeEventTypes {
+sealed external interface RTCDTMFToneChangeEventTypes_deprecated {
     @JsValue("tonechange")
     val TONE_CHANGE: EventType<RTCDTMFToneChangeEvent<*>>
         get() = definedExternally

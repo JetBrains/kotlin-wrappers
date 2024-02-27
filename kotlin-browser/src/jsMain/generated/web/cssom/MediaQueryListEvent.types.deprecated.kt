@@ -9,7 +9,7 @@ package web.cssom
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external interface MediaQueryListEventTypes {
+sealed external interface MediaQueryListEventTypes_deprecated {
     @JsValue("change")
     val CHANGE: EventType<MediaQueryListEvent<*>>
         get() = definedExternally

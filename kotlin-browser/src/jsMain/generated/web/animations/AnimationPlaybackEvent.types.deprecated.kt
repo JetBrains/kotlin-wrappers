@@ -9,7 +9,7 @@ package web.animations
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external interface AnimationPlaybackEventTypes {
+sealed external interface AnimationPlaybackEventTypes_deprecated {
     @JsValue("cancel")
     val CANCEL: EventType<AnimationPlaybackEvent<*>>
         get() = definedExternally

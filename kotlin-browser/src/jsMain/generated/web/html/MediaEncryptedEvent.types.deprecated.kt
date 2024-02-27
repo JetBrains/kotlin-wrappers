@@ -9,7 +9,7 @@ package web.html
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external interface MediaEncryptedEventTypes {
+sealed external interface MediaEncryptedEventTypes_deprecated {
     @JsValue("encrypted")
     val ENCRYPTED: EventType<MediaEncryptedEvent<*>>
         get() = definedExternally

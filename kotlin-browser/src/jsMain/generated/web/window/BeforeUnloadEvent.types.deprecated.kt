@@ -9,7 +9,7 @@ package web.window
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external interface BeforeUnloadEventTypes {
+sealed external interface BeforeUnloadEventTypes_deprecated {
     @JsValue("beforeunload")
     val BEFORE_UNLOAD: EventType<BeforeUnloadEvent<*>>
         get() = definedExternally

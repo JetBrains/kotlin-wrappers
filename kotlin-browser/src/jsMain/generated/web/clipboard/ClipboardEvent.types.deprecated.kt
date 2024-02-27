@@ -9,7 +9,7 @@ package web.clipboard
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external interface ClipboardEventTypes {
+sealed external interface ClipboardEventTypes_deprecated {
     @JsValue("copy")
     val COPY: EventType<ClipboardEvent<*>>
         get() = definedExternally

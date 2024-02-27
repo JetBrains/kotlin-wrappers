@@ -9,7 +9,7 @@ package web.sockets
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external interface CloseEventTypes {
+sealed external interface CloseEventTypes_deprecated {
     @JsValue("close")
     val CLOSE: EventType<CloseEvent<*>>
         get() = definedExternally

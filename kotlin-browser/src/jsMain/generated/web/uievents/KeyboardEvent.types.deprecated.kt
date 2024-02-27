@@ -9,7 +9,7 @@ package web.uievents
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external interface KeyboardEventTypes {
+sealed external interface KeyboardEventTypes_deprecated {
     @JsValue("keydown")
     val KEY_DOWN: EventType<KeyboardEvent<*>>
         get() = definedExternally

@@ -9,7 +9,7 @@ package web.audio
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external interface OfflineAudioCompletionEventTypes {
+sealed external interface OfflineAudioCompletionEventTypes_deprecated {
     @JsValue("complete")
     val COMPLETE: EventType<OfflineAudioCompletionEvent<*>>
         get() = definedExternally

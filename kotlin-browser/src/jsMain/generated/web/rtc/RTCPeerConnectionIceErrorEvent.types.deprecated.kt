@@ -9,7 +9,7 @@ package web.rtc
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external interface RTCPeerConnectionIceErrorEventTypes {
+sealed external interface RTCPeerConnectionIceErrorEventTypes_deprecated {
     @JsValue("icecandidateerror")
     val ICE_CANDIDATE_ERROR: EventType<RTCPeerConnectionIceErrorEvent<*>>
         get() = definedExternally

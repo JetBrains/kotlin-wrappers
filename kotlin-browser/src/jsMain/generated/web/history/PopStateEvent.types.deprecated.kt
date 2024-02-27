@@ -9,7 +9,7 @@ package web.history
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external interface PopStateEventTypes {
+sealed external interface PopStateEventTypes_deprecated {
     @JsValue("popstate")
     val POP_STATE: EventType<PopStateEvent<*>>
         get() = definedExternally
