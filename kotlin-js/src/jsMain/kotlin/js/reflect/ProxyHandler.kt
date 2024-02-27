@@ -1,9 +1,11 @@
 package js.reflect
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.PropertyKey
 import js.objects.TypedPropertyDescriptor
 
+@JsPlainObject
 sealed external interface ProxyHandler<T : Any> {
     var apply: ((target: T, thisArg: Any, argArray: ReadonlyArray<Any>) -> Any)?
     var construct: ((target: T, argArray: ReadonlyArray<Any>, newTarget: Function<*>) -> Any)?
