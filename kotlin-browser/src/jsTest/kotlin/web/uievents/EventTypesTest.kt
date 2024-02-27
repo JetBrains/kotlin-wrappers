@@ -1,17 +1,18 @@
 package web.uievents
 
-import web.uievents.WheelEvent.Companion.WHEEL
+import web.events.EventTarget
+import web.uievents.WheelEvent.Companion.wheel
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
 class EventTypesTest {
     @Test
     fun import() {
-        assertEquals<Any>("click", MouseEvent.CLICK)
+        assertEquals<Any>("click", MouseEvent.click<EventTarget>())
     }
 
     @Test
     fun staticImport() {
-        assertEquals<Any>("wheel", WHEEL)
+        assertEquals<Any>("wheel", wheel<EventTarget>())
     }
 }
