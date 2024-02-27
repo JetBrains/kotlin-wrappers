@@ -4,7 +4,7 @@ external class Proxy<T : Any>(
     target: T,
     handler: ProxyHandler<T>,
 ) {
-    interface Revocable<T : Any> {
+    sealed interface Revocable<T : Any> {
         val proxy: T
         fun revoke()
     }
