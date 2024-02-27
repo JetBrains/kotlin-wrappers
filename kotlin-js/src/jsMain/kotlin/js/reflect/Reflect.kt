@@ -85,7 +85,7 @@ external object Reflect {
      * are those that are defined directly on that object, and are not inherited from the object's prototype.
      * @param target Object that contains the own properties.
      */
-    fun ownKeys(target: Any): ReadonlyArray<Any /* String | Symbol */>
+    fun ownKeys(target: Any): ReadonlyArray<PropertyKey>
 
     /**
      * Prevents the addition of new properties to an object.
