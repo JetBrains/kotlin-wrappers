@@ -2,5 +2,15 @@
 
 package web.rtc
 
-sealed external interface RTCDataChannelEventTypes :
-    RTCDataChannelEventTypes_deprecated
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+import web.events.EventTarget
+import web.events.EventType
+
+@JsVirtual
+sealed external class RTCDataChannelEventTypes :
+    RTCDataChannelEventTypes_deprecated {
+
+    @JsValue("datachannel")
+    fun <C : EventTarget> dataChannel(): EventType<RTCDataChannelEvent<C>>
+}

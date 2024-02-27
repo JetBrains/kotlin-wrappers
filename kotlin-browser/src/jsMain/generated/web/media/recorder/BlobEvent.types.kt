@@ -2,5 +2,15 @@
 
 package web.media.recorder
 
-sealed external interface BlobEventTypes :
-    BlobEventTypes_deprecated
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+import web.events.EventTarget
+import web.events.EventType
+
+@JsVirtual
+sealed external class BlobEventTypes :
+    BlobEventTypes_deprecated {
+
+    @JsValue("dataavailable")
+    fun <C : EventTarget> dataAvailable(): EventType<BlobEvent<C>>
+}

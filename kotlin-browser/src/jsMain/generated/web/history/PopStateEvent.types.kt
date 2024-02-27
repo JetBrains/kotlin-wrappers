@@ -2,5 +2,15 @@
 
 package web.history
 
-sealed external interface PopStateEventTypes :
-    PopStateEventTypes_deprecated
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+import web.events.EventTarget
+import web.events.EventType
+
+@JsVirtual
+sealed external class PopStateEventTypes :
+    PopStateEventTypes_deprecated {
+
+    @JsValue("popstate")
+    fun <C : EventTarget> popState(): EventType<PopStateEvent<C>>
+}

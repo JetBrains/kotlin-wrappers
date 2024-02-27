@@ -2,5 +2,15 @@
 
 package web.rtc
 
-sealed external interface RTCPeerConnectionIceErrorEventTypes :
-    RTCPeerConnectionIceErrorEventTypes_deprecated
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+import web.events.EventTarget
+import web.events.EventType
+
+@JsVirtual
+sealed external class RTCPeerConnectionIceErrorEventTypes :
+    RTCPeerConnectionIceErrorEventTypes_deprecated {
+
+    @JsValue("icecandidateerror")
+    fun <C : EventTarget> iceCandidateError(): EventType<RTCPeerConnectionIceErrorEvent<C>>
+}

@@ -2,5 +2,18 @@
 
 package web.media.streams
 
-sealed external interface MediaStreamTrackEventTypes :
-    MediaStreamTrackEventTypes_deprecated
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+import web.events.EventTarget
+import web.events.EventType
+
+@JsVirtual
+sealed external class MediaStreamTrackEventTypes :
+    MediaStreamTrackEventTypes_deprecated {
+
+    @JsValue("addtrack")
+    fun <C : EventTarget> addTrack(): EventType<MediaStreamTrackEvent<C>>
+
+    @JsValue("removetrack")
+    fun <C : EventTarget> removeTrack(): EventType<MediaStreamTrackEvent<C>>
+}

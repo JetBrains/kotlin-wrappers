@@ -2,5 +2,21 @@
 
 package web.animations
 
-sealed external interface AnimationPlaybackEventTypes :
-    AnimationPlaybackEventTypes_deprecated
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+import web.events.EventTarget
+import web.events.EventType
+
+@JsVirtual
+sealed external class AnimationPlaybackEventTypes :
+    AnimationPlaybackEventTypes_deprecated {
+
+    @JsValue("cancel")
+    fun <C : EventTarget> cancel(): EventType<AnimationPlaybackEvent<C>>
+
+    @JsValue("finish")
+    fun <C : EventTarget> finish(): EventType<AnimationPlaybackEvent<C>>
+
+    @JsValue("remove")
+    fun <C : EventTarget> remove(): EventType<AnimationPlaybackEvent<C>>
+}

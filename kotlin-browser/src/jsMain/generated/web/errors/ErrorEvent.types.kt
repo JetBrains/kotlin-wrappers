@@ -2,5 +2,18 @@
 
 package web.errors
 
-sealed external interface ErrorEventTypes :
-    ErrorEventTypes_deprecated
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+import web.events.EventTarget
+import web.events.EventType
+
+@JsVirtual
+sealed external class ErrorEventTypes :
+    ErrorEventTypes_deprecated {
+
+    @JsValue("error")
+    fun <C : EventTarget> error(): EventType<ErrorEvent<C>>
+
+    @JsValue("processorerror")
+    fun <C : EventTarget> processorError(): EventType<ErrorEvent<C>>
+}

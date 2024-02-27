@@ -2,5 +2,18 @@
 
 package web.history
 
-sealed external interface PageTransitionEventTypes :
-    PageTransitionEventTypes_deprecated
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+import web.events.EventTarget
+import web.events.EventType
+
+@JsVirtual
+sealed external class PageTransitionEventTypes :
+    PageTransitionEventTypes_deprecated {
+
+    @JsValue("pagehide")
+    fun <C : EventTarget> pageHide(): EventType<PageTransitionEvent<C>>
+
+    @JsValue("pageshow")
+    fun <C : EventTarget> pageShow(): EventType<PageTransitionEvent<C>>
+}

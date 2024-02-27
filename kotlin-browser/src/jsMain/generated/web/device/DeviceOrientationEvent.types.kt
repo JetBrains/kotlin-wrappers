@@ -2,5 +2,18 @@
 
 package web.device
 
-sealed external interface DeviceOrientationEventTypes :
-    DeviceOrientationEventTypes_deprecated
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+import web.events.EventTarget
+import web.events.EventType
+
+@JsVirtual
+sealed external class DeviceOrientationEventTypes :
+    DeviceOrientationEventTypes_deprecated {
+
+    @JsValue("deviceorientation")
+    fun <C : EventTarget> deviceOrientation(): EventType<DeviceOrientationEvent<C>>
+
+    @JsValue("deviceorientationabsolute")
+    fun <C : EventTarget> deviceOrientationAbsolute(): EventType<DeviceOrientationEvent<C>>
+}

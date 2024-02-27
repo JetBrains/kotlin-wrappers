@@ -2,5 +2,15 @@
 
 package web.csp
 
-sealed external interface SecurityPolicyViolationEventTypes :
-    SecurityPolicyViolationEventTypes_deprecated
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+import web.events.EventTarget
+import web.events.EventType
+
+@JsVirtual
+sealed external class SecurityPolicyViolationEventTypes :
+    SecurityPolicyViolationEventTypes_deprecated {
+
+    @JsValue("securitypolicyviolation")
+    fun <C : EventTarget> securityPolicyViolation(): EventType<SecurityPolicyViolationEvent<C>>
+}

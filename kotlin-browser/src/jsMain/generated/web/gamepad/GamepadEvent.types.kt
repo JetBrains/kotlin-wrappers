@@ -2,5 +2,18 @@
 
 package web.gamepad
 
-sealed external interface GamepadEventTypes :
-    GamepadEventTypes_deprecated
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+import web.events.EventTarget
+import web.events.EventType
+
+@JsVirtual
+sealed external class GamepadEventTypes :
+    GamepadEventTypes_deprecated {
+
+    @JsValue("gamepadconnected")
+    fun <C : EventTarget> gamepadConnected(): EventType<GamepadEvent<C>>
+
+    @JsValue("gamepaddisconnected")
+    fun <C : EventTarget> gamepadDisconnected(): EventType<GamepadEvent<C>>
+}

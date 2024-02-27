@@ -2,5 +2,15 @@
 
 package web.device
 
-sealed external interface DeviceMotionEventTypes :
-    DeviceMotionEventTypes_deprecated
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+import web.events.EventTarget
+import web.events.EventType
+
+@JsVirtual
+sealed external class DeviceMotionEventTypes :
+    DeviceMotionEventTypes_deprecated {
+
+    @JsValue("devicemotion")
+    fun <C : EventTarget> deviceMotion(): EventType<DeviceMotionEvent<C>>
+}

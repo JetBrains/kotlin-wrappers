@@ -2,5 +2,15 @@
 
 package web.serviceworker
 
-sealed external interface FetchEventTypes :
-    FetchEventTypes_deprecated
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+import web.events.EventTarget
+import web.events.EventType
+
+@JsVirtual
+sealed external class FetchEventTypes :
+    FetchEventTypes_deprecated {
+
+    @JsValue("fetch")
+    fun <C : EventTarget> fetch(): EventType<FetchEvent<C>>
+}

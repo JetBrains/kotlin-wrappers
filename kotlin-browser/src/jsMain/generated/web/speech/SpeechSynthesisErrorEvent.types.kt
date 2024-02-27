@@ -2,5 +2,15 @@
 
 package web.speech
 
-sealed external interface SpeechSynthesisErrorEventTypes :
-    SpeechSynthesisErrorEventTypes_deprecated
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+import web.events.EventTarget
+import web.events.EventType
+
+@JsVirtual
+sealed external class SpeechSynthesisErrorEventTypes :
+    SpeechSynthesisErrorEventTypes_deprecated {
+
+    @JsValue("error")
+    fun <C : EventTarget> error(): EventType<SpeechSynthesisErrorEvent<C>>
+}

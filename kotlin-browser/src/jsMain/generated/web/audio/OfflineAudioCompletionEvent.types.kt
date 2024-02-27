@@ -2,5 +2,15 @@
 
 package web.audio
 
-sealed external interface OfflineAudioCompletionEventTypes :
-    OfflineAudioCompletionEventTypes_deprecated
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+import web.events.EventTarget
+import web.events.EventType
+
+@JsVirtual
+sealed external class OfflineAudioCompletionEventTypes :
+    OfflineAudioCompletionEventTypes_deprecated {
+
+    @JsValue("complete")
+    fun <C : EventTarget> complete(): EventType<OfflineAudioCompletionEvent<C>>
+}
