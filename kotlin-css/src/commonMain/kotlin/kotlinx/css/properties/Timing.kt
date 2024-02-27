@@ -2,13 +2,17 @@ package kotlinx.css.properties
 
 import kotlinx.css.CssValue
 
-class Time(override val value: String) : CssValue(value)
+data class Time(override val value: String) : CssValue(value) {
+    override fun toString() = value
+}
 
 val Number.s get() = Time("${this}s")
 val Number.ms get() = Time("${this}ms")
 
 
-class Timing(override val value: String) : CssValue(value) {
+data class Timing(override val value: String) : CssValue(value) {
+    override fun toString() = value
+
     companion object {
         val ease = Timing("ease")
         val linear = Timing("linear")

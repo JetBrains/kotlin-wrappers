@@ -3,7 +3,9 @@ package kotlinx.css.properties
 import kotlinx.css.CssValue
 import kotlinx.css.LinearDimension
 
-class LineHeight(override val value: String) : CssValue(value) {
+data class LineHeight(override val value: String) : CssValue(value) {
+    override fun toString() = value
+
     companion object {
         val normal = LineHeight("normal")
         val initial = LineHeight("initial")

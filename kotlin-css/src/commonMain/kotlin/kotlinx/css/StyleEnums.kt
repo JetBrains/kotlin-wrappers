@@ -118,7 +118,9 @@ enum class Contain {
     override fun toString() = name.hyphenize()
 }
 
-class ContainerName(override val value: String) : CssValue(value) {
+data class ContainerName(override val value: String) : CssValue(value) {
+    override fun toString() = value
+
     constructor(vararg value: String) : this(value.joinToString(" "))
 
     companion object {
@@ -179,7 +181,9 @@ enum class Display {
     override fun toString() = name.hyphenize()
 }
 
-class FlexBasis(override val value: String) : CssValue(value) {
+data class FlexBasis(override val value: String) : CssValue(value) {
+    override fun toString() = value
+
     companion object {
         val inherit = FlexBasis("inherit")
         val initial = FlexBasis("initial")
@@ -231,7 +235,9 @@ enum class FontStyle {
     override fun toString() = name.hyphenize()
 }
 
-class FontWeight(override val value: String) : CssValue(value) {
+data class FontWeight(override val value: String) : CssValue(value) {
+    override fun toString() = value
+
     companion object {
         val inherit = FontWeight("inherit")
         val initial = FontWeight("initial")
@@ -255,7 +261,9 @@ class FontWeight(override val value: String) : CssValue(value) {
     }
 }
 
-class GridArea(override val value: String) : CssValue(value) {
+data class GridArea(override val value: String) : CssValue(value) {
+    override fun toString() = value
+
     companion object {
         val inherit = FlexBasis("inherit")
         val initial = FlexBasis("initial")
@@ -267,7 +275,9 @@ class GridArea(override val value: String) : CssValue(value) {
     }
 }
 
-class GridAutoColumns(override val value: String) : CssValue(value) {
+data class GridAutoColumns(override val value: String) : CssValue(value) {
+    override fun toString() = value
+
     constructor(vararg dims: LinearDimension) : this(dims.joinToString(" "))
 
     constructor(vararg values: GridAutoColumns) : this(values.joinToString(" "))
@@ -289,7 +299,9 @@ class GridAutoColumns(override val value: String) : CssValue(value) {
     }
 }
 
-class GridAutoFlow private constructor(override val value: String) : CssValue(value) {
+data class GridAutoFlow private constructor(override val value: String) : CssValue(value) {
+    override fun toString() = value
+
     companion object {
         val inherit = GridAutoFlow("inherit")
         val initial = GridAutoFlow("initial")
@@ -305,7 +317,9 @@ class GridAutoFlow private constructor(override val value: String) : CssValue(va
     }
 }
 
-class GridAutoRows(override val value: String) : CssValue(value) {
+data class GridAutoRows(override val value: String) : CssValue(value) {
+    override fun toString() = value
+
     constructor(vararg dims: LinearDimension) : this(dims.joinToString(" "))
 
     constructor(vararg values: GridAutoRows) : this(values.joinToString(" "))
@@ -327,7 +341,9 @@ class GridAutoRows(override val value: String) : CssValue(value) {
     }
 }
 
-class GridColumn(override val value: String) : CssValue(value) {
+data class GridColumn(override val value: String) : CssValue(value) {
+    override fun toString() = value
+
     companion object {
         val inherit = FlexBasis("inherit")
         val initial = FlexBasis("initial")
@@ -339,7 +355,9 @@ class GridColumn(override val value: String) : CssValue(value) {
     }
 }
 
-class GridColumnEnd(override val value: String) : CssValue(value) {
+data class GridColumnEnd(override val value: String) : CssValue(value) {
+    override fun toString() = value
+
     constructor(value: Int) : this(value.toString())
 
     companion object {
@@ -353,7 +371,9 @@ class GridColumnEnd(override val value: String) : CssValue(value) {
     }
 }
 
-class GridColumnStart(override val value: String) : CssValue(value) {
+data class GridColumnStart(override val value: String) : CssValue(value) {
+    override fun toString() = value
+
     constructor(value: Int) : this(value.toString())
 
     companion object {
@@ -367,7 +387,9 @@ class GridColumnStart(override val value: String) : CssValue(value) {
     }
 }
 
-class GridRow(override val value: String) : CssValue(value) {
+data class GridRow(override val value: String) : CssValue(value) {
+    override fun toString() = value
+
     companion object {
         val inherit = FlexBasis("inherit")
         val initial = FlexBasis("initial")
@@ -379,7 +401,9 @@ class GridRow(override val value: String) : CssValue(value) {
     }
 }
 
-class GridRowEnd(override val value: String) : CssValue(value) {
+data class GridRowEnd(override val value: String) : CssValue(value) {
+    override fun toString() = value
+
     constructor(value: Int) : this(value.toString())
 
     companion object {
@@ -393,7 +417,9 @@ class GridRowEnd(override val value: String) : CssValue(value) {
     }
 }
 
-class GridRowStart(override val value: String) : CssValue(value) {
+data class GridRowStart(override val value: String) : CssValue(value) {
+    override fun toString() = value
+
     constructor(value: Int) : this(value.toString())
 
     companion object {
@@ -407,7 +433,9 @@ class GridRowStart(override val value: String) : CssValue(value) {
     }
 }
 
-class GridTemplate(override val value: String) : CssValue(value) {
+data class GridTemplate(override val value: String) : CssValue(value) {
+    override fun toString() = value
+
     companion object {
         val inherit = FlexBasis("inherit")
         val initial = FlexBasis("initial")
@@ -419,7 +447,9 @@ class GridTemplate(override val value: String) : CssValue(value) {
     }
 }
 
-class GridTemplateAreas(override val value: String) : CssValue(value) {
+data class GridTemplateAreas(override val value: String) : CssValue(value) {
+    override fun toString() = value
+
     companion object {
         val inherit = FlexBasis("inherit")
         val initial = FlexBasis("initial")
@@ -431,7 +461,9 @@ class GridTemplateAreas(override val value: String) : CssValue(value) {
     }
 }
 
-class GridTemplateColumns(override val value: String) : CssValue(value) {
+data class GridTemplateColumns(override val value: String) : CssValue(value) {
+    override fun toString() = value
+
     constructor(vararg dims: LinearDimension) : this(dims.joinToString(" "))
 
     constructor(vararg values: GridAutoRows) : this(values.joinToString(" "))
@@ -458,7 +490,9 @@ class GridTemplateColumns(override val value: String) : CssValue(value) {
     }
 }
 
-class GridTemplateRows(override val value: String) : CssValue(value) {
+data class GridTemplateRows(override val value: String) : CssValue(value) {
+    override fun toString() = value
+
     constructor(vararg dims: LinearDimension) : this(dims.joinToString(" "))
 
     constructor(vararg values: GridAutoRows) : this(values.joinToString(" "))
@@ -493,7 +527,9 @@ enum class Hyphens {
     override fun toString() = name.hyphenize()
 }
 
-class Image(override val value: String) : CssValue(value) {
+data class Image(override val value: String) : CssValue(value) {
+    override fun toString() = value
+
     companion object {
         val inherit = FlexBasis("inherit")
         val initial = FlexBasis("initial")
@@ -600,7 +636,9 @@ enum class ObjectFit {
     override fun toString() = name.hyphenize()
 }
 
-class Order(override val value: String) : CssValue(value) {
+data class Order(override val value: String) : CssValue(value) {
+    override fun toString() = value
+
     constructor(value: Int) : this(value.toString())
 
     companion object {
@@ -752,7 +790,9 @@ enum class UserSelect {
     override fun toString() = name.hyphenize()
 }
 
-class VerticalAlign(override val value: String) : CssValue(value) {
+data class VerticalAlign(override val value: String) : CssValue(value) {
+    override fun toString() = value
+
     companion object {
         val inherit = VerticalAlign("inherit")
         val initial = VerticalAlign("initial")
@@ -807,13 +847,15 @@ enum class WordWrap {
 }
 
 // Enquotes the value
-class QuotedString(override val value: String) : CssValue(value) {
+data class QuotedString(override val value: String) : CssValue(value) {
     override fun toString(): String = "'$value'"
 }
 
 val String.quoted get() = QuotedString(this)
 
-class RelativePosition(override val value: String) : CssValue(value) {
+data class RelativePosition(override val value: String) : CssValue(value) {
+    override fun toString() = value
+
     companion object {
         val inherit = RelativePosition("inherit")
         val initial = RelativePosition("initial")

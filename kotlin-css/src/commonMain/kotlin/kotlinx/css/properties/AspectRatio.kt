@@ -2,7 +2,9 @@ package kotlinx.css.properties
 
 import kotlinx.css.CssValue
 
-class AspectRatio(value: String) : CssValue(value) {
+data class AspectRatio(override val value: String) : CssValue(value) {
+    override fun toString() = value
+
     constructor(ratio: Number) : this(ratio.toString())
 
     constructor(widthRatio: Number, heightRatio: Number) : this("$widthRatio / $heightRatio")

@@ -20,7 +20,9 @@ import kotlin.math.roundToInt
  * a series of modulus operations; see section *4.2.4. HSL color values* of the above specification.
  */
 @Suppress("SpellCheckingInspection")
-class Color(override val value: String) : CssValue(value) {
+data class Color(override val value: String) : CssValue(value) {
+    override fun toString() = value
+
     private var rgb: String? = null
 
     private constructor(value: String, rgb: String) : this(value) {

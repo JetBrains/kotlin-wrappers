@@ -8,6 +8,8 @@ data class Inset(
 ) : CssValue(
     getShorthandValue(top, right, bottom, left)
 ) {
+    override fun toString() = value
+
     constructor(all: LinearDimension) : this(all, all, all, all)
     constructor(vertical: LinearDimension, horizontal: LinearDimension) : this(
         vertical,

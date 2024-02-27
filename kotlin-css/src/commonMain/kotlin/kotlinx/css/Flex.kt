@@ -1,6 +1,8 @@
 package kotlinx.css
 
 data class Flex(override val value: String) : CssValue(value) {
+    override fun toString() = value
+
     constructor(flexGrow: Number) : this("$flexGrow")
     constructor(flexBasis: LinearDimension) : this("$flexBasis")
     constructor(flexGrow: Number, flexShrink: Number) : this("$flexGrow $flexShrink")

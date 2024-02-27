@@ -1,6 +1,8 @@
 package kotlinx.css
 
-class Border(width: LinearDimension, style: BorderStyle, color: Color = Color.currentColor) : CssValue("$width $style $color") {
+data class Border(val width: LinearDimension, val style: BorderStyle, val color: Color = Color.currentColor) : CssValue("$width $style $color") {
+    override fun toString() = value
+
     companion object {
         val none = Border(0.px, BorderStyle.none, Color.transparent)
     }

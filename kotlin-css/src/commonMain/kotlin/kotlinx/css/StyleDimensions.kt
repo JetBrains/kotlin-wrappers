@@ -49,8 +49,11 @@ open class LinearDimension(override val value: String) : CssValue(value) {
     }
 }
 
-class NumericLinearDimension(val number: Number, val unit: String) :
-    LinearDimension(if (number == 0) ZERO else number.toString() + unit)
+data class NumericLinearDimension(val number: Number, val unit: String) :
+    LinearDimension(if (number == 0) ZERO else number.toString() + unit) {
+
+    override fun toString() = value
+}
 
 val Number.ch: LinearDimension get() = NumericLinearDimension(this, "ch")           // Width of "0" glyph
 val Number.cm: LinearDimension get() = NumericLinearDimension(this, "cm")           // Centimeter

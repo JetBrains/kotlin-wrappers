@@ -6,7 +6,9 @@ import kotlinx.css.CssValue
 import kotlinx.css.StyleList
 import kotlinx.css.hyphenize
 
-class IterationCount(override val value: String) : CssValue(value) {
+data class IterationCount(override val value: String) : CssValue(value) {
+    override fun toString() = value
+
     companion object {
         val infinite = IterationCount("infinite")
     }
@@ -39,16 +41,18 @@ enum class PlayState {
 }
 
 
-class Animation(
-    name: String,
-    duration: Time = 0.s,
-    timing: Timing = Timing.ease,
-    delay: Time = 0.s,
-    iterationCount: IterationCount = 1.times,
-    direction: AnimationDirection = AnimationDirection.normal,
-    fillMode: FillMode = FillMode.none,
-    playState: PlayState = PlayState.running,
-) : CssValue("$duration $timing $delay $iterationCount $direction $fillMode $playState $name")
+data class Animation(
+    val name: String,
+    val duration: Time = 0.s,
+    val timing: Timing = Timing.ease,
+    val delay: Time = 0.s,
+    val iterationCount: IterationCount = 1.times,
+    val direction: AnimationDirection = AnimationDirection.normal,
+    val fillMode: FillMode = FillMode.none,
+    val playState: PlayState = PlayState.running,
+) : CssValue("$duration $timing $delay $iterationCount $direction $fillMode $playState $name") {
+    override fun toString() = value
+}
 
 class Animations : StyleList<Animation>(", ") {
     companion object {
