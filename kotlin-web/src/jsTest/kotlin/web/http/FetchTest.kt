@@ -49,7 +49,7 @@ class FetchTest {
         var isCanceled = false
 
         globalThis.fetch = { request: Request ->
-            request.signal.addEventHandler(Event.ABORT) {
+            request.signal.addEventHandler(Event.abort()) {
                 isCanceled = true
             }
 
@@ -70,7 +70,7 @@ class FetchTest {
 
         globalThis.fetch = { request: Request ->
             Promise<Nothing> { _, reject ->
-                request.signal.addEventHandler(Event.ABORT) {
+                request.signal.addEventHandler(Event.abort()) {
                     isCanceled = true
 
                     reject(request.signal.reason ?: TypeError("Failed to fetch"))
@@ -94,7 +94,7 @@ class FetchTest {
         var isCanceled = false
 
         globalThis.fetch = { request: Request ->
-            request.signal.addEventHandler(Event.ABORT) {
+            request.signal.addEventHandler(Event.abort()) {
                 isCanceled = true
             }
 
