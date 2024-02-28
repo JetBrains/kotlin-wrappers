@@ -7,6 +7,7 @@
 package web.storage
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface StorageEventTypes_deprecated {
@@ -15,6 +16,6 @@ sealed external interface StorageEventTypes_deprecated {
         replaceWith = ReplaceWith("StorageEvent.storage()"),
     )
     @JsValue("storage")
-    val STORAGE: EventType<StorageEvent<*>>
+    val STORAGE: EventType<StorageEvent<EventTarget>>
         get() = definedExternally
 }

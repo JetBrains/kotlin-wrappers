@@ -7,6 +7,7 @@
 package web.uievents
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface UIEventTypes_deprecated {
@@ -15,7 +16,7 @@ sealed external interface UIEventTypes_deprecated {
         replaceWith = ReplaceWith("UIEvent.abort()"),
     )
     @JsValue("abort")
-    val ABORT: EventType<UIEvent<*>>
+    val ABORT: EventType<UIEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -23,6 +24,6 @@ sealed external interface UIEventTypes_deprecated {
         replaceWith = ReplaceWith("UIEvent.resize()"),
     )
     @JsValue("resize")
-    val RESIZE: EventType<UIEvent<*>>
+    val RESIZE: EventType<UIEvent<EventTarget>>
         get() = definedExternally
 }

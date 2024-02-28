@@ -7,6 +7,7 @@
 package web.rtc
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface RTCErrorEventTypes_deprecated {
@@ -15,6 +16,6 @@ sealed external interface RTCErrorEventTypes_deprecated {
         replaceWith = ReplaceWith("RTCErrorEvent.error()"),
     )
     @JsValue("error")
-    val ERROR: EventType<RTCErrorEvent<*>>
+    val ERROR: EventType<RTCErrorEvent<EventTarget>>
         get() = definedExternally
 }

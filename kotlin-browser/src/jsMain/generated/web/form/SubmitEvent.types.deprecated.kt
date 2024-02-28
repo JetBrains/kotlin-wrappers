@@ -7,6 +7,7 @@
 package web.form
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface SubmitEventTypes_deprecated {
@@ -15,6 +16,6 @@ sealed external interface SubmitEventTypes_deprecated {
         replaceWith = ReplaceWith("SubmitEvent.submit()"),
     )
     @JsValue("submit")
-    val SUBMIT: EventType<SubmitEvent<*>>
+    val SUBMIT: EventType<SubmitEvent<EventTarget>>
         get() = definedExternally
 }

@@ -7,6 +7,7 @@
 package web.serviceworker
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface NotificationEventTypes_deprecated {
@@ -15,7 +16,7 @@ sealed external interface NotificationEventTypes_deprecated {
         replaceWith = ReplaceWith("NotificationEvent.notificationClick()"),
     )
     @JsValue("notificationclick")
-    val NOTIFICATION_CLICK: EventType<NotificationEvent<*>>
+    val NOTIFICATION_CLICK: EventType<NotificationEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -23,6 +24,6 @@ sealed external interface NotificationEventTypes_deprecated {
         replaceWith = ReplaceWith("NotificationEvent.notificationClose()"),
     )
     @JsValue("notificationclose")
-    val NOTIFICATION_CLOSE: EventType<NotificationEvent<*>>
+    val NOTIFICATION_CLOSE: EventType<NotificationEvent<EventTarget>>
         get() = definedExternally
 }

@@ -14,7 +14,7 @@ sealed external interface EventTypes_deprecated {
         replaceWith = ReplaceWith("Event.abort()"),
     )
     @JsValue("abort")
-    val ABORT: EventType<Event<*>>
+    val ABORT: EventType<Event<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -22,7 +22,7 @@ sealed external interface EventTypes_deprecated {
         replaceWith = ReplaceWith("Event.cancel()"),
     )
     @JsValue("cancel")
-    val CANCEL: EventType<Event<*>>
+    val CANCEL: EventType<Event<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -30,7 +30,7 @@ sealed external interface EventTypes_deprecated {
         replaceWith = ReplaceWith("Event.change()"),
     )
     @JsValue("change")
-    val CHANGE: EventType<Event<*>>
+    val CHANGE: EventType<Event<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -38,7 +38,7 @@ sealed external interface EventTypes_deprecated {
         replaceWith = ReplaceWith("Event.close()"),
     )
     @JsValue("close")
-    val CLOSE: EventType<Event<*>>
+    val CLOSE: EventType<Event<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -46,7 +46,7 @@ sealed external interface EventTypes_deprecated {
         replaceWith = ReplaceWith("Event.closing()"),
     )
     @JsValue("closing")
-    val CLOSING: EventType<Event<*>>
+    val CLOSING: EventType<Event<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -54,7 +54,7 @@ sealed external interface EventTypes_deprecated {
         replaceWith = ReplaceWith("Event.complete()"),
     )
     @JsValue("complete")
-    val COMPLETE: EventType<Event<*>>
+    val COMPLETE: EventType<Event<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -62,7 +62,7 @@ sealed external interface EventTypes_deprecated {
         replaceWith = ReplaceWith("Event.error()"),
     )
     @JsValue("error")
-    val ERROR: EventType<Event<*>>
+    val ERROR: EventType<Event<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -70,7 +70,7 @@ sealed external interface EventTypes_deprecated {
         replaceWith = ReplaceWith("Event.open()"),
     )
     @JsValue("open")
-    val OPEN: EventType<Event<*>>
+    val OPEN: EventType<Event<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -78,6 +78,6 @@ sealed external interface EventTypes_deprecated {
         replaceWith = ReplaceWith("Event.success()"),
     )
     @JsValue("success")
-    val SUCCESS: EventType<Event<*>>
+    val SUCCESS: EventType<Event<EventTarget>>
         get() = definedExternally
 }

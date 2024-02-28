@@ -7,6 +7,7 @@
 package web.messaging
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface MessageEventTypes_deprecated {
@@ -15,7 +16,7 @@ sealed external interface MessageEventTypes_deprecated {
         replaceWith = ReplaceWith("MessageEvent.connect()"),
     )
     @JsValue("connect")
-    val CONNECT: EventType<MessageEvent<*, *>>
+    val CONNECT: EventType<MessageEvent<*, EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -23,7 +24,7 @@ sealed external interface MessageEventTypes_deprecated {
         replaceWith = ReplaceWith("MessageEvent.message()"),
     )
     @JsValue("message")
-    val MESSAGE: EventType<MessageEvent<*, *>>
+    val MESSAGE: EventType<MessageEvent<*, EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -31,6 +32,6 @@ sealed external interface MessageEventTypes_deprecated {
         replaceWith = ReplaceWith("MessageEvent.messageError()"),
     )
     @JsValue("messageerror")
-    val MESSAGE_ERROR: EventType<MessageEvent<*, *>>
+    val MESSAGE_ERROR: EventType<MessageEvent<*, EventTarget>>
         get() = definedExternally
 }

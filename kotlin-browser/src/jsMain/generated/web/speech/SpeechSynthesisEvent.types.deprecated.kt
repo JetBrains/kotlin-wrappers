@@ -7,6 +7,7 @@
 package web.speech
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface SpeechSynthesisEventTypes_deprecated {
@@ -15,7 +16,7 @@ sealed external interface SpeechSynthesisEventTypes_deprecated {
         replaceWith = ReplaceWith("SpeechSynthesisEvent.boundary()"),
     )
     @JsValue("boundary")
-    val BOUNDARY: EventType<SpeechSynthesisEvent<*>>
+    val BOUNDARY: EventType<SpeechSynthesisEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -23,7 +24,7 @@ sealed external interface SpeechSynthesisEventTypes_deprecated {
         replaceWith = ReplaceWith("SpeechSynthesisEvent.end()"),
     )
     @JsValue("end")
-    val END: EventType<SpeechSynthesisEvent<*>>
+    val END: EventType<SpeechSynthesisEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -31,7 +32,7 @@ sealed external interface SpeechSynthesisEventTypes_deprecated {
         replaceWith = ReplaceWith("SpeechSynthesisEvent.mark()"),
     )
     @JsValue("mark")
-    val MARK: EventType<SpeechSynthesisEvent<*>>
+    val MARK: EventType<SpeechSynthesisEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -39,7 +40,7 @@ sealed external interface SpeechSynthesisEventTypes_deprecated {
         replaceWith = ReplaceWith("SpeechSynthesisEvent.pause()"),
     )
     @JsValue("pause")
-    val PAUSE: EventType<SpeechSynthesisEvent<*>>
+    val PAUSE: EventType<SpeechSynthesisEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -47,7 +48,7 @@ sealed external interface SpeechSynthesisEventTypes_deprecated {
         replaceWith = ReplaceWith("SpeechSynthesisEvent.resume()"),
     )
     @JsValue("resume")
-    val RESUME: EventType<SpeechSynthesisEvent<*>>
+    val RESUME: EventType<SpeechSynthesisEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -55,6 +56,6 @@ sealed external interface SpeechSynthesisEventTypes_deprecated {
         replaceWith = ReplaceWith("SpeechSynthesisEvent.start()"),
     )
     @JsValue("start")
-    val START: EventType<SpeechSynthesisEvent<*>>
+    val START: EventType<SpeechSynthesisEvent<EventTarget>>
         get() = definedExternally
 }

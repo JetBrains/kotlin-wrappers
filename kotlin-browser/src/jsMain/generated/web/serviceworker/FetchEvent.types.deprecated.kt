@@ -7,6 +7,7 @@
 package web.serviceworker
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface FetchEventTypes_deprecated {
@@ -15,6 +16,6 @@ sealed external interface FetchEventTypes_deprecated {
         replaceWith = ReplaceWith("FetchEvent.fetch()"),
     )
     @JsValue("fetch")
-    val FETCH: EventType<FetchEvent<*>>
+    val FETCH: EventType<FetchEvent<EventTarget>>
         get() = definedExternally
 }

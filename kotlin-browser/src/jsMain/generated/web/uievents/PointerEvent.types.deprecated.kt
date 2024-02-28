@@ -7,6 +7,7 @@
 package web.uievents
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface PointerEventTypes_deprecated {
@@ -15,7 +16,7 @@ sealed external interface PointerEventTypes_deprecated {
         replaceWith = ReplaceWith("PointerEvent.gotPointerCapture()"),
     )
     @JsValue("gotpointercapture")
-    val GOT_POINTER_CAPTURE: EventType<PointerEvent<*>>
+    val GOT_POINTER_CAPTURE: EventType<PointerEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -23,7 +24,7 @@ sealed external interface PointerEventTypes_deprecated {
         replaceWith = ReplaceWith("PointerEvent.lostPointerCapture()"),
     )
     @JsValue("lostpointercapture")
-    val LOST_POINTER_CAPTURE: EventType<PointerEvent<*>>
+    val LOST_POINTER_CAPTURE: EventType<PointerEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -31,7 +32,7 @@ sealed external interface PointerEventTypes_deprecated {
         replaceWith = ReplaceWith("PointerEvent.pointerCancel()"),
     )
     @JsValue("pointercancel")
-    val POINTER_CANCEL: EventType<PointerEvent<*>>
+    val POINTER_CANCEL: EventType<PointerEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -39,7 +40,7 @@ sealed external interface PointerEventTypes_deprecated {
         replaceWith = ReplaceWith("PointerEvent.pointerDown()"),
     )
     @JsValue("pointerdown")
-    val POINTER_DOWN: EventType<PointerEvent<*>>
+    val POINTER_DOWN: EventType<PointerEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -47,7 +48,7 @@ sealed external interface PointerEventTypes_deprecated {
         replaceWith = ReplaceWith("PointerEvent.pointerEnter()"),
     )
     @JsValue("pointerenter")
-    val POINTER_ENTER: EventType<PointerEvent<*>>
+    val POINTER_ENTER: EventType<PointerEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -55,7 +56,7 @@ sealed external interface PointerEventTypes_deprecated {
         replaceWith = ReplaceWith("PointerEvent.pointerLeave()"),
     )
     @JsValue("pointerleave")
-    val POINTER_LEAVE: EventType<PointerEvent<*>>
+    val POINTER_LEAVE: EventType<PointerEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -63,7 +64,7 @@ sealed external interface PointerEventTypes_deprecated {
         replaceWith = ReplaceWith("PointerEvent.pointerMove()"),
     )
     @JsValue("pointermove")
-    val POINTER_MOVE: EventType<PointerEvent<*>>
+    val POINTER_MOVE: EventType<PointerEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -71,7 +72,7 @@ sealed external interface PointerEventTypes_deprecated {
         replaceWith = ReplaceWith("PointerEvent.pointerOut()"),
     )
     @JsValue("pointerout")
-    val POINTER_OUT: EventType<PointerEvent<*>>
+    val POINTER_OUT: EventType<PointerEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -79,7 +80,7 @@ sealed external interface PointerEventTypes_deprecated {
         replaceWith = ReplaceWith("PointerEvent.pointerOver()"),
     )
     @JsValue("pointerover")
-    val POINTER_OVER: EventType<PointerEvent<*>>
+    val POINTER_OVER: EventType<PointerEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -87,6 +88,6 @@ sealed external interface PointerEventTypes_deprecated {
         replaceWith = ReplaceWith("PointerEvent.pointerUp()"),
     )
     @JsValue("pointerup")
-    val POINTER_UP: EventType<PointerEvent<*>>
+    val POINTER_UP: EventType<PointerEvent<EventTarget>>
         get() = definedExternally
 }

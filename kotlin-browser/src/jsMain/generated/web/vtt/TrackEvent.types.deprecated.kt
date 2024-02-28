@@ -7,6 +7,7 @@
 package web.vtt
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface TrackEventTypes_deprecated {
@@ -15,7 +16,7 @@ sealed external interface TrackEventTypes_deprecated {
         replaceWith = ReplaceWith("TrackEvent.addTrack()"),
     )
     @JsValue("addtrack")
-    val ADD_TRACK: EventType<TrackEvent<*>>
+    val ADD_TRACK: EventType<TrackEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -23,6 +24,6 @@ sealed external interface TrackEventTypes_deprecated {
         replaceWith = ReplaceWith("TrackEvent.removeTrack()"),
     )
     @JsValue("removetrack")
-    val REMOVE_TRACK: EventType<TrackEvent<*>>
+    val REMOVE_TRACK: EventType<TrackEvent<EventTarget>>
         get() = definedExternally
 }

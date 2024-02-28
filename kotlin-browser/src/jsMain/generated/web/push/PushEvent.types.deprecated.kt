@@ -7,6 +7,7 @@
 package web.push
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface PushEventTypes_deprecated {
@@ -15,6 +16,6 @@ sealed external interface PushEventTypes_deprecated {
         replaceWith = ReplaceWith("PushEvent.push()"),
     )
     @JsValue("push")
-    val PUSH: EventType<PushEvent<*>>
+    val PUSH: EventType<PushEvent<EventTarget>>
         get() = definedExternally
 }

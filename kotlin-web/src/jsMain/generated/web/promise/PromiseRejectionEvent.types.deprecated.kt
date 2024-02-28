@@ -7,6 +7,7 @@
 package web.promise
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface PromiseRejectionEventTypes_deprecated {
@@ -15,7 +16,7 @@ sealed external interface PromiseRejectionEventTypes_deprecated {
         replaceWith = ReplaceWith("PromiseRejectionEvent.rejectionHandled()"),
     )
     @JsValue("rejectionhandled")
-    val REJECTION_HANDLED: EventType<PromiseRejectionEvent<*>>
+    val REJECTION_HANDLED: EventType<PromiseRejectionEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -23,6 +24,6 @@ sealed external interface PromiseRejectionEventTypes_deprecated {
         replaceWith = ReplaceWith("PromiseRejectionEvent.unhandledRejection()"),
     )
     @JsValue("unhandledrejection")
-    val UNHANDLED_REJECTION: EventType<PromiseRejectionEvent<*>>
+    val UNHANDLED_REJECTION: EventType<PromiseRejectionEvent<EventTarget>>
         get() = definedExternally
 }

@@ -7,6 +7,7 @@
 package web.media.key
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface MediaKeyMessageEventTypes_deprecated {
@@ -15,6 +16,6 @@ sealed external interface MediaKeyMessageEventTypes_deprecated {
         replaceWith = ReplaceWith("MediaKeyMessageEvent.message()"),
     )
     @JsValue("message")
-    val MESSAGE: EventType<MediaKeyMessageEvent<*>>
+    val MESSAGE: EventType<MediaKeyMessageEvent<EventTarget>>
         get() = definedExternally
 }

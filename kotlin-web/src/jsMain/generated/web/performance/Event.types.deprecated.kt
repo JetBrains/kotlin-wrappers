@@ -3,11 +3,12 @@
 package web.performance
 
 import web.events.Event
+import web.events.EventTarget
 import web.events.EventType
 
 @Deprecated(
     message = "Legacy type declaration. Use type function instead!",
     replaceWith = ReplaceWith("Event.resourceTimingBufferFull()"),
 )
-inline val Event.Companion.RESOURCE_TIMING_BUFFER_FULL: EventType<Event<*>>
+inline val Event.Companion.RESOURCE_TIMING_BUFFER_FULL: EventType<Event<EventTarget>>
     get() = EventType("resourcetimingbufferfull")

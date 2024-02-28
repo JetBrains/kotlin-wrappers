@@ -7,6 +7,7 @@
 package web.midi
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface MIDIConnectionEventTypes_deprecated {
@@ -15,6 +16,6 @@ sealed external interface MIDIConnectionEventTypes_deprecated {
         replaceWith = ReplaceWith("MIDIConnectionEvent.stateChange()"),
     )
     @JsValue("statechange")
-    val STATE_CHANGE: EventType<MIDIConnectionEvent<*>>
+    val STATE_CHANGE: EventType<MIDIConnectionEvent<EventTarget>>
         get() = definedExternally
 }

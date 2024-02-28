@@ -7,6 +7,7 @@
 package web.device
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface DeviceOrientationEventTypes_deprecated {
@@ -15,7 +16,7 @@ sealed external interface DeviceOrientationEventTypes_deprecated {
         replaceWith = ReplaceWith("DeviceOrientationEvent.deviceOrientation()"),
     )
     @JsValue("deviceorientation")
-    val DEVICE_ORIENTATION: EventType<DeviceOrientationEvent<*>>
+    val DEVICE_ORIENTATION: EventType<DeviceOrientationEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -23,6 +24,6 @@ sealed external interface DeviceOrientationEventTypes_deprecated {
         replaceWith = ReplaceWith("DeviceOrientationEvent.deviceOrientationAbsolute()"),
     )
     @JsValue("deviceorientationabsolute")
-    val DEVICE_ORIENTATION_ABSOLUTE: EventType<DeviceOrientationEvent<*>>
+    val DEVICE_ORIENTATION_ABSOLUTE: EventType<DeviceOrientationEvent<EventTarget>>
         get() = definedExternally
 }

@@ -3,11 +3,12 @@
 package web.wakelock
 
 import web.events.Event
+import web.events.EventTarget
 import web.events.EventType
 
 @Deprecated(
     message = "Legacy type declaration. Use type function instead!",
     replaceWith = ReplaceWith("Event.release()"),
 )
-inline val Event.Companion.RELEASE: EventType<Event<*>>
+inline val Event.Companion.RELEASE: EventType<Event<EventTarget>>
     get() = EventType("release")

@@ -7,6 +7,7 @@
 package web.media.recorder
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface BlobEventTypes_deprecated {
@@ -15,6 +16,6 @@ sealed external interface BlobEventTypes_deprecated {
         replaceWith = ReplaceWith("BlobEvent.dataAvailable()"),
     )
     @JsValue("dataavailable")
-    val DATA_AVAILABLE: EventType<BlobEvent<*>>
+    val DATA_AVAILABLE: EventType<BlobEvent<EventTarget>>
         get() = definedExternally
 }

@@ -7,6 +7,7 @@
 package web.cssom
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface TransitionEventTypes_deprecated {
@@ -15,7 +16,7 @@ sealed external interface TransitionEventTypes_deprecated {
         replaceWith = ReplaceWith("TransitionEvent.transitionCancel()"),
     )
     @JsValue("transitioncancel")
-    val TRANSITION_CANCEL: EventType<TransitionEvent<*>>
+    val TRANSITION_CANCEL: EventType<TransitionEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -23,7 +24,7 @@ sealed external interface TransitionEventTypes_deprecated {
         replaceWith = ReplaceWith("TransitionEvent.transitionEnd()"),
     )
     @JsValue("transitionend")
-    val TRANSITION_END: EventType<TransitionEvent<*>>
+    val TRANSITION_END: EventType<TransitionEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -31,7 +32,7 @@ sealed external interface TransitionEventTypes_deprecated {
         replaceWith = ReplaceWith("TransitionEvent.transitionRun()"),
     )
     @JsValue("transitionrun")
-    val TRANSITION_RUN: EventType<TransitionEvent<*>>
+    val TRANSITION_RUN: EventType<TransitionEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -39,6 +40,6 @@ sealed external interface TransitionEventTypes_deprecated {
         replaceWith = ReplaceWith("TransitionEvent.transitionStart()"),
     )
     @JsValue("transitionstart")
-    val TRANSITION_START: EventType<TransitionEvent<*>>
+    val TRANSITION_START: EventType<TransitionEvent<EventTarget>>
         get() = definedExternally
 }

@@ -7,6 +7,7 @@
 package web.uievents
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface KeyboardEventTypes_deprecated {
@@ -15,7 +16,7 @@ sealed external interface KeyboardEventTypes_deprecated {
         replaceWith = ReplaceWith("KeyboardEvent.keyDown()"),
     )
     @JsValue("keydown")
-    val KEY_DOWN: EventType<KeyboardEvent<*>>
+    val KEY_DOWN: EventType<KeyboardEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -23,7 +24,7 @@ sealed external interface KeyboardEventTypes_deprecated {
         replaceWith = ReplaceWith("KeyboardEvent.keyPress()"),
     )
     @JsValue("keypress")
-    val KEY_PRESS: EventType<KeyboardEvent<*>>
+    val KEY_PRESS: EventType<KeyboardEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -31,6 +32,6 @@ sealed external interface KeyboardEventTypes_deprecated {
         replaceWith = ReplaceWith("KeyboardEvent.keyUp()"),
     )
     @JsValue("keyup")
-    val KEY_UP: EventType<KeyboardEvent<*>>
+    val KEY_UP: EventType<KeyboardEvent<EventTarget>>
         get() = definedExternally
 }

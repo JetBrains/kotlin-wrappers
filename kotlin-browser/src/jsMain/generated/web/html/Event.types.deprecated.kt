@@ -3,11 +3,12 @@
 package web.html
 
 import web.events.Event
+import web.events.EventTarget
 import web.events.EventType
 
 @Deprecated(
     message = "Legacy type declaration. Use type function instead!",
     replaceWith = ReplaceWith("Event.waitingForKey()"),
 )
-inline val Event.Companion.WAITING_FOR_KEY: EventType<Event<*>>
+inline val Event.Companion.WAITING_FOR_KEY: EventType<Event<EventTarget>>
     get() = EventType("waitingforkey")

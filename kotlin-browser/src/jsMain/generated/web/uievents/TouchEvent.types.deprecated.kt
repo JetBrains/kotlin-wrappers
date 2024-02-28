@@ -7,6 +7,7 @@
 package web.uievents
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface TouchEventTypes_deprecated {
@@ -15,7 +16,7 @@ sealed external interface TouchEventTypes_deprecated {
         replaceWith = ReplaceWith("TouchEvent.touchCancel()"),
     )
     @JsValue("touchcancel")
-    val TOUCH_CANCEL: EventType<TouchEvent<*>>
+    val TOUCH_CANCEL: EventType<TouchEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -23,7 +24,7 @@ sealed external interface TouchEventTypes_deprecated {
         replaceWith = ReplaceWith("TouchEvent.touchEnd()"),
     )
     @JsValue("touchend")
-    val TOUCH_END: EventType<TouchEvent<*>>
+    val TOUCH_END: EventType<TouchEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -31,7 +32,7 @@ sealed external interface TouchEventTypes_deprecated {
         replaceWith = ReplaceWith("TouchEvent.touchMove()"),
     )
     @JsValue("touchmove")
-    val TOUCH_MOVE: EventType<TouchEvent<*>>
+    val TOUCH_MOVE: EventType<TouchEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -39,6 +40,6 @@ sealed external interface TouchEventTypes_deprecated {
         replaceWith = ReplaceWith("TouchEvent.touchStart()"),
     )
     @JsValue("touchstart")
-    val TOUCH_START: EventType<TouchEvent<*>>
+    val TOUCH_START: EventType<TouchEvent<EventTarget>>
         get() = definedExternally
 }

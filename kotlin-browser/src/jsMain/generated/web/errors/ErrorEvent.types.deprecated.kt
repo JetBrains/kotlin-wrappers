@@ -7,6 +7,7 @@
 package web.errors
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface ErrorEventTypes_deprecated {
@@ -15,7 +16,7 @@ sealed external interface ErrorEventTypes_deprecated {
         replaceWith = ReplaceWith("ErrorEvent.error()"),
     )
     @JsValue("error")
-    val ERROR: EventType<ErrorEvent<*>>
+    val ERROR: EventType<ErrorEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -23,6 +24,6 @@ sealed external interface ErrorEventTypes_deprecated {
         replaceWith = ReplaceWith("ErrorEvent.processorError()"),
     )
     @JsValue("processorerror")
-    val PROCESSOR_ERROR: EventType<ErrorEvent<*>>
+    val PROCESSOR_ERROR: EventType<ErrorEvent<EventTarget>>
         get() = definedExternally
 }

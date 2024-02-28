@@ -7,6 +7,7 @@
 package web.serviceworker
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface ExtendableMessageEventTypes_deprecated {
@@ -15,6 +16,6 @@ sealed external interface ExtendableMessageEventTypes_deprecated {
         replaceWith = ReplaceWith("ExtendableMessageEvent.message()"),
     )
     @JsValue("message")
-    val MESSAGE: EventType<ExtendableMessageEvent<*>>
+    val MESSAGE: EventType<ExtendableMessageEvent<EventTarget>>
         get() = definedExternally
 }

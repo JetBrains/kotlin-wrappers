@@ -7,6 +7,7 @@
 package web.animations
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface AnimationPlaybackEventTypes_deprecated {
@@ -15,7 +16,7 @@ sealed external interface AnimationPlaybackEventTypes_deprecated {
         replaceWith = ReplaceWith("AnimationPlaybackEvent.cancel()"),
     )
     @JsValue("cancel")
-    val CANCEL: EventType<AnimationPlaybackEvent<*>>
+    val CANCEL: EventType<AnimationPlaybackEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -23,7 +24,7 @@ sealed external interface AnimationPlaybackEventTypes_deprecated {
         replaceWith = ReplaceWith("AnimationPlaybackEvent.finish()"),
     )
     @JsValue("finish")
-    val FINISH: EventType<AnimationPlaybackEvent<*>>
+    val FINISH: EventType<AnimationPlaybackEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -31,6 +32,6 @@ sealed external interface AnimationPlaybackEventTypes_deprecated {
         replaceWith = ReplaceWith("AnimationPlaybackEvent.remove()"),
     )
     @JsValue("remove")
-    val REMOVE: EventType<AnimationPlaybackEvent<*>>
+    val REMOVE: EventType<AnimationPlaybackEvent<EventTarget>>
         get() = definedExternally
 }

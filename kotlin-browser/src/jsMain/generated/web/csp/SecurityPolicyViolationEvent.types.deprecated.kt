@@ -7,6 +7,7 @@
 package web.csp
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface SecurityPolicyViolationEventTypes_deprecated {
@@ -15,6 +16,6 @@ sealed external interface SecurityPolicyViolationEventTypes_deprecated {
         replaceWith = ReplaceWith("SecurityPolicyViolationEvent.securityPolicyViolation()"),
     )
     @JsValue("securitypolicyviolation")
-    val SECURITY_POLICY_VIOLATION: EventType<SecurityPolicyViolationEvent<*>>
+    val SECURITY_POLICY_VIOLATION: EventType<SecurityPolicyViolationEvent<EventTarget>>
         get() = definedExternally
 }

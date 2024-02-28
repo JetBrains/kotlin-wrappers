@@ -7,6 +7,7 @@
 package web.form
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface FormDataEventTypes_deprecated {
@@ -15,6 +16,6 @@ sealed external interface FormDataEventTypes_deprecated {
         replaceWith = ReplaceWith("FormDataEvent.formData()"),
     )
     @JsValue("formdata")
-    val FORM_DATA: EventType<FormDataEvent<*>>
+    val FORM_DATA: EventType<FormDataEvent<EventTarget>>
         get() = definedExternally
 }

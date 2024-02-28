@@ -7,6 +7,7 @@
 package web.uievents
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface MouseEventTypes_deprecated {
@@ -15,7 +16,7 @@ sealed external interface MouseEventTypes_deprecated {
         replaceWith = ReplaceWith("MouseEvent.auxClick()"),
     )
     @JsValue("auxclick")
-    val AUX_CLICK: EventType<MouseEvent<*>>
+    val AUX_CLICK: EventType<MouseEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -23,7 +24,7 @@ sealed external interface MouseEventTypes_deprecated {
         replaceWith = ReplaceWith("MouseEvent.click()"),
     )
     @JsValue("click")
-    val CLICK: EventType<MouseEvent<*>>
+    val CLICK: EventType<MouseEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -31,7 +32,7 @@ sealed external interface MouseEventTypes_deprecated {
         replaceWith = ReplaceWith("MouseEvent.contextMenu()"),
     )
     @JsValue("contextmenu")
-    val CONTEXT_MENU: EventType<MouseEvent<*>>
+    val CONTEXT_MENU: EventType<MouseEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -39,7 +40,7 @@ sealed external interface MouseEventTypes_deprecated {
         replaceWith = ReplaceWith("MouseEvent.dblClick()"),
     )
     @JsValue("dblclick")
-    val DBL_CLICK: EventType<MouseEvent<*>>
+    val DBL_CLICK: EventType<MouseEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -47,7 +48,7 @@ sealed external interface MouseEventTypes_deprecated {
         replaceWith = ReplaceWith("MouseEvent.mouseDown()"),
     )
     @JsValue("mousedown")
-    val MOUSE_DOWN: EventType<MouseEvent<*>>
+    val MOUSE_DOWN: EventType<MouseEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -55,7 +56,7 @@ sealed external interface MouseEventTypes_deprecated {
         replaceWith = ReplaceWith("MouseEvent.mouseEnter()"),
     )
     @JsValue("mouseenter")
-    val MOUSE_ENTER: EventType<MouseEvent<*>>
+    val MOUSE_ENTER: EventType<MouseEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -63,7 +64,7 @@ sealed external interface MouseEventTypes_deprecated {
         replaceWith = ReplaceWith("MouseEvent.mouseLeave()"),
     )
     @JsValue("mouseleave")
-    val MOUSE_LEAVE: EventType<MouseEvent<*>>
+    val MOUSE_LEAVE: EventType<MouseEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -71,7 +72,7 @@ sealed external interface MouseEventTypes_deprecated {
         replaceWith = ReplaceWith("MouseEvent.mouseMove()"),
     )
     @JsValue("mousemove")
-    val MOUSE_MOVE: EventType<MouseEvent<*>>
+    val MOUSE_MOVE: EventType<MouseEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -79,7 +80,7 @@ sealed external interface MouseEventTypes_deprecated {
         replaceWith = ReplaceWith("MouseEvent.mouseOut()"),
     )
     @JsValue("mouseout")
-    val MOUSE_OUT: EventType<MouseEvent<*>>
+    val MOUSE_OUT: EventType<MouseEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -87,7 +88,7 @@ sealed external interface MouseEventTypes_deprecated {
         replaceWith = ReplaceWith("MouseEvent.mouseOver()"),
     )
     @JsValue("mouseover")
-    val MOUSE_OVER: EventType<MouseEvent<*>>
+    val MOUSE_OVER: EventType<MouseEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -95,6 +96,6 @@ sealed external interface MouseEventTypes_deprecated {
         replaceWith = ReplaceWith("MouseEvent.mouseUp()"),
     )
     @JsValue("mouseup")
-    val MOUSE_UP: EventType<MouseEvent<*>>
+    val MOUSE_UP: EventType<MouseEvent<EventTarget>>
         get() = definedExternally
 }

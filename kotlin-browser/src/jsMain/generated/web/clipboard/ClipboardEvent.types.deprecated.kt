@@ -7,6 +7,7 @@
 package web.clipboard
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface ClipboardEventTypes_deprecated {
@@ -15,7 +16,7 @@ sealed external interface ClipboardEventTypes_deprecated {
         replaceWith = ReplaceWith("ClipboardEvent.copy()"),
     )
     @JsValue("copy")
-    val COPY: EventType<ClipboardEvent<*>>
+    val COPY: EventType<ClipboardEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -23,7 +24,7 @@ sealed external interface ClipboardEventTypes_deprecated {
         replaceWith = ReplaceWith("ClipboardEvent.cut()"),
     )
     @JsValue("cut")
-    val CUT: EventType<ClipboardEvent<*>>
+    val CUT: EventType<ClipboardEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -31,6 +32,6 @@ sealed external interface ClipboardEventTypes_deprecated {
         replaceWith = ReplaceWith("ClipboardEvent.paste()"),
     )
     @JsValue("paste")
-    val PASTE: EventType<ClipboardEvent<*>>
+    val PASTE: EventType<ClipboardEvent<EventTarget>>
         get() = definedExternally
 }

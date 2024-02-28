@@ -3,11 +3,12 @@
 package web.pip
 
 import web.events.Event
+import web.events.EventTarget
 import web.events.EventType
 
 @Deprecated(
     message = "Legacy type declaration. Use type function instead!",
     replaceWith = ReplaceWith("Event.resize()"),
 )
-inline val Event.Companion.RESIZE: EventType<Event<*>>
+inline val Event.Companion.RESIZE: EventType<Event<EventTarget>>
     get() = EventType("resize")

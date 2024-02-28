@@ -14,7 +14,7 @@ sealed external interface ProgressEventTypes_deprecated {
         replaceWith = ReplaceWith("ProgressEvent.abort()"),
     )
     @JsValue("abort")
-    val ABORT: EventType<ProgressEvent<*>>
+    val ABORT: EventType<ProgressEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -22,7 +22,7 @@ sealed external interface ProgressEventTypes_deprecated {
         replaceWith = ReplaceWith("ProgressEvent.error()"),
     )
     @JsValue("error")
-    val ERROR: EventType<ProgressEvent<*>>
+    val ERROR: EventType<ProgressEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -30,7 +30,7 @@ sealed external interface ProgressEventTypes_deprecated {
         replaceWith = ReplaceWith("ProgressEvent.load()"),
     )
     @JsValue("load")
-    val LOAD: EventType<ProgressEvent<*>>
+    val LOAD: EventType<ProgressEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -38,7 +38,7 @@ sealed external interface ProgressEventTypes_deprecated {
         replaceWith = ReplaceWith("ProgressEvent.loadEnd()"),
     )
     @JsValue("loadend")
-    val LOAD_END: EventType<ProgressEvent<*>>
+    val LOAD_END: EventType<ProgressEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -46,7 +46,7 @@ sealed external interface ProgressEventTypes_deprecated {
         replaceWith = ReplaceWith("ProgressEvent.loadStart()"),
     )
     @JsValue("loadstart")
-    val LOAD_START: EventType<ProgressEvent<*>>
+    val LOAD_START: EventType<ProgressEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -54,7 +54,7 @@ sealed external interface ProgressEventTypes_deprecated {
         replaceWith = ReplaceWith("ProgressEvent.progress()"),
     )
     @JsValue("progress")
-    val PROGRESS: EventType<ProgressEvent<*>>
+    val PROGRESS: EventType<ProgressEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -62,6 +62,6 @@ sealed external interface ProgressEventTypes_deprecated {
         replaceWith = ReplaceWith("ProgressEvent.timeout()"),
     )
     @JsValue("timeout")
-    val TIMEOUT: EventType<ProgressEvent<*>>
+    val TIMEOUT: EventType<ProgressEvent<EventTarget>>
         get() = definedExternally
 }

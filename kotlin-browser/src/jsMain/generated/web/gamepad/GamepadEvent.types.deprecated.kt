@@ -7,6 +7,7 @@
 package web.gamepad
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface GamepadEventTypes_deprecated {
@@ -15,7 +16,7 @@ sealed external interface GamepadEventTypes_deprecated {
         replaceWith = ReplaceWith("GamepadEvent.gamepadConnected()"),
     )
     @JsValue("gamepadconnected")
-    val GAMEPAD_CONNECTED: EventType<GamepadEvent<*>>
+    val GAMEPAD_CONNECTED: EventType<GamepadEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -23,6 +24,6 @@ sealed external interface GamepadEventTypes_deprecated {
         replaceWith = ReplaceWith("GamepadEvent.gamepadDisconnected()"),
     )
     @JsValue("gamepaddisconnected")
-    val GAMEPAD_DISCONNECTED: EventType<GamepadEvent<*>>
+    val GAMEPAD_DISCONNECTED: EventType<GamepadEvent<EventTarget>>
         get() = definedExternally
 }

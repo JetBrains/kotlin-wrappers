@@ -7,6 +7,7 @@
 package web.uievents
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface FocusEventTypes_deprecated {
@@ -15,7 +16,7 @@ sealed external interface FocusEventTypes_deprecated {
         replaceWith = ReplaceWith("FocusEvent.blur()"),
     )
     @JsValue("blur")
-    val BLUR: EventType<FocusEvent<*>>
+    val BLUR: EventType<FocusEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -23,7 +24,7 @@ sealed external interface FocusEventTypes_deprecated {
         replaceWith = ReplaceWith("FocusEvent.focus()"),
     )
     @JsValue("focus")
-    val FOCUS: EventType<FocusEvent<*>>
+    val FOCUS: EventType<FocusEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -31,7 +32,7 @@ sealed external interface FocusEventTypes_deprecated {
         replaceWith = ReplaceWith("FocusEvent.focusIn()"),
     )
     @JsValue("focusin")
-    val FOCUS_IN: EventType<FocusEvent<*>>
+    val FOCUS_IN: EventType<FocusEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -39,6 +40,6 @@ sealed external interface FocusEventTypes_deprecated {
         replaceWith = ReplaceWith("FocusEvent.focusOut()"),
     )
     @JsValue("focusout")
-    val FOCUS_OUT: EventType<FocusEvent<*>>
+    val FOCUS_OUT: EventType<FocusEvent<EventTarget>>
         get() = definedExternally
 }

@@ -7,6 +7,7 @@
 package web.serviceworker
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface ExtendableEventTypes_deprecated {
@@ -15,7 +16,7 @@ sealed external interface ExtendableEventTypes_deprecated {
         replaceWith = ReplaceWith("ExtendableEvent.activate()"),
     )
     @JsValue("activate")
-    val ACTIVATE: EventType<ExtendableEvent<*>>
+    val ACTIVATE: EventType<ExtendableEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -23,6 +24,6 @@ sealed external interface ExtendableEventTypes_deprecated {
         replaceWith = ReplaceWith("ExtendableEvent.install()"),
     )
     @JsValue("install")
-    val INSTALL: EventType<ExtendableEvent<*>>
+    val INSTALL: EventType<ExtendableEvent<EventTarget>>
         get() = definedExternally
 }

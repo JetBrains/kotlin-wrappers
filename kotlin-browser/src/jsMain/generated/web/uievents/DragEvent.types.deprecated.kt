@@ -7,6 +7,7 @@
 package web.uievents
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface DragEventTypes_deprecated {
@@ -15,7 +16,7 @@ sealed external interface DragEventTypes_deprecated {
         replaceWith = ReplaceWith("DragEvent.drag()"),
     )
     @JsValue("drag")
-    val DRAG: EventType<DragEvent<*>>
+    val DRAG: EventType<DragEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -23,7 +24,7 @@ sealed external interface DragEventTypes_deprecated {
         replaceWith = ReplaceWith("DragEvent.dragEnd()"),
     )
     @JsValue("dragend")
-    val DRAG_END: EventType<DragEvent<*>>
+    val DRAG_END: EventType<DragEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -31,7 +32,7 @@ sealed external interface DragEventTypes_deprecated {
         replaceWith = ReplaceWith("DragEvent.dragEnter()"),
     )
     @JsValue("dragenter")
-    val DRAG_ENTER: EventType<DragEvent<*>>
+    val DRAG_ENTER: EventType<DragEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -39,7 +40,7 @@ sealed external interface DragEventTypes_deprecated {
         replaceWith = ReplaceWith("DragEvent.dragLeave()"),
     )
     @JsValue("dragleave")
-    val DRAG_LEAVE: EventType<DragEvent<*>>
+    val DRAG_LEAVE: EventType<DragEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -47,7 +48,7 @@ sealed external interface DragEventTypes_deprecated {
         replaceWith = ReplaceWith("DragEvent.dragOver()"),
     )
     @JsValue("dragover")
-    val DRAG_OVER: EventType<DragEvent<*>>
+    val DRAG_OVER: EventType<DragEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -55,7 +56,7 @@ sealed external interface DragEventTypes_deprecated {
         replaceWith = ReplaceWith("DragEvent.dragStart()"),
     )
     @JsValue("dragstart")
-    val DRAG_START: EventType<DragEvent<*>>
+    val DRAG_START: EventType<DragEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -63,6 +64,6 @@ sealed external interface DragEventTypes_deprecated {
         replaceWith = ReplaceWith("DragEvent.drop()"),
     )
     @JsValue("drop")
-    val DROP: EventType<DragEvent<*>>
+    val DROP: EventType<DragEvent<EventTarget>>
         get() = definedExternally
 }

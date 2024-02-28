@@ -7,6 +7,7 @@
 package web.fonts
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface FontFaceSetLoadEventTypes_deprecated {
@@ -15,7 +16,7 @@ sealed external interface FontFaceSetLoadEventTypes_deprecated {
         replaceWith = ReplaceWith("FontFaceSetLoadEvent.loading()"),
     )
     @JsValue("loading")
-    val LOADING: EventType<FontFaceSetLoadEvent<*>>
+    val LOADING: EventType<FontFaceSetLoadEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -23,7 +24,7 @@ sealed external interface FontFaceSetLoadEventTypes_deprecated {
         replaceWith = ReplaceWith("FontFaceSetLoadEvent.loadingDone()"),
     )
     @JsValue("loadingdone")
-    val LOADING_DONE: EventType<FontFaceSetLoadEvent<*>>
+    val LOADING_DONE: EventType<FontFaceSetLoadEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -31,6 +32,6 @@ sealed external interface FontFaceSetLoadEventTypes_deprecated {
         replaceWith = ReplaceWith("FontFaceSetLoadEvent.loadingError()"),
     )
     @JsValue("loadingerror")
-    val LOADING_ERROR: EventType<FontFaceSetLoadEvent<*>>
+    val LOADING_ERROR: EventType<FontFaceSetLoadEvent<EventTarget>>
         get() = definedExternally
 }

@@ -7,6 +7,7 @@
 package web.uievents
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface CompositionEventTypes_deprecated {
@@ -15,7 +16,7 @@ sealed external interface CompositionEventTypes_deprecated {
         replaceWith = ReplaceWith("CompositionEvent.compositionEnd()"),
     )
     @JsValue("compositionend")
-    val COMPOSITION_END: EventType<CompositionEvent<*>>
+    val COMPOSITION_END: EventType<CompositionEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -23,7 +24,7 @@ sealed external interface CompositionEventTypes_deprecated {
         replaceWith = ReplaceWith("CompositionEvent.compositionStart()"),
     )
     @JsValue("compositionstart")
-    val COMPOSITION_START: EventType<CompositionEvent<*>>
+    val COMPOSITION_START: EventType<CompositionEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -31,6 +32,6 @@ sealed external interface CompositionEventTypes_deprecated {
         replaceWith = ReplaceWith("CompositionEvent.compositionUpdate()"),
     )
     @JsValue("compositionupdate")
-    val COMPOSITION_UPDATE: EventType<CompositionEvent<*>>
+    val COMPOSITION_UPDATE: EventType<CompositionEvent<EventTarget>>
         get() = definedExternally
 }

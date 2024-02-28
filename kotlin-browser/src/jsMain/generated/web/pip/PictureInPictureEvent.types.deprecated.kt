@@ -7,6 +7,7 @@
 package web.pip
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface PictureInPictureEventTypes_deprecated {
@@ -15,7 +16,7 @@ sealed external interface PictureInPictureEventTypes_deprecated {
         replaceWith = ReplaceWith("PictureInPictureEvent.enterPictureInPicture()"),
     )
     @JsValue("enterpictureinpicture")
-    val ENTER_PICTURE_IN_PICTURE: EventType<PictureInPictureEvent<*>>
+    val ENTER_PICTURE_IN_PICTURE: EventType<PictureInPictureEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -23,6 +24,6 @@ sealed external interface PictureInPictureEventTypes_deprecated {
         replaceWith = ReplaceWith("PictureInPictureEvent.leavePictureInPicture()"),
     )
     @JsValue("leavepictureinpicture")
-    val LEAVE_PICTURE_IN_PICTURE: EventType<PictureInPictureEvent<*>>
+    val LEAVE_PICTURE_IN_PICTURE: EventType<PictureInPictureEvent<EventTarget>>
         get() = definedExternally
 }

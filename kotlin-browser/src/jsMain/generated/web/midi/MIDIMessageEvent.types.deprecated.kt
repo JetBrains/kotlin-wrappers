@@ -7,6 +7,7 @@
 package web.midi
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface MIDIMessageEventTypes_deprecated {
@@ -15,6 +16,6 @@ sealed external interface MIDIMessageEventTypes_deprecated {
         replaceWith = ReplaceWith("MIDIMessageEvent.midiMessage()"),
     )
     @JsValue("midimessage")
-    val MIDI_MESSAGE: EventType<MIDIMessageEvent<*>>
+    val MIDI_MESSAGE: EventType<MIDIMessageEvent<EventTarget>>
         get() = definedExternally
 }

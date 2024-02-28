@@ -7,6 +7,7 @@
 package web.idb
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface IDBVersionChangeEventTypes_deprecated {
@@ -15,7 +16,7 @@ sealed external interface IDBVersionChangeEventTypes_deprecated {
         replaceWith = ReplaceWith("IDBVersionChangeEvent.blocked()"),
     )
     @JsValue("blocked")
-    val BLOCKED: EventType<IDBVersionChangeEvent<*>>
+    val BLOCKED: EventType<IDBVersionChangeEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -23,7 +24,7 @@ sealed external interface IDBVersionChangeEventTypes_deprecated {
         replaceWith = ReplaceWith("IDBVersionChangeEvent.upgradeneeded()"),
     )
     @JsValue("upgradeneeded")
-    val UPGRADENEEDED: EventType<IDBVersionChangeEvent<*>>
+    val UPGRADENEEDED: EventType<IDBVersionChangeEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -31,6 +32,6 @@ sealed external interface IDBVersionChangeEventTypes_deprecated {
         replaceWith = ReplaceWith("IDBVersionChangeEvent.versionChange()"),
     )
     @JsValue("versionchange")
-    val VERSION_CHANGE: EventType<IDBVersionChangeEvent<*>>
+    val VERSION_CHANGE: EventType<IDBVersionChangeEvent<EventTarget>>
         get() = definedExternally
 }

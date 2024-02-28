@@ -7,6 +7,7 @@
 package web.media.streams
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface MediaStreamTrackEventTypes_deprecated {
@@ -15,7 +16,7 @@ sealed external interface MediaStreamTrackEventTypes_deprecated {
         replaceWith = ReplaceWith("MediaStreamTrackEvent.addTrack()"),
     )
     @JsValue("addtrack")
-    val ADD_TRACK: EventType<MediaStreamTrackEvent<*>>
+    val ADD_TRACK: EventType<MediaStreamTrackEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -23,6 +24,6 @@ sealed external interface MediaStreamTrackEventTypes_deprecated {
         replaceWith = ReplaceWith("MediaStreamTrackEvent.removeTrack()"),
     )
     @JsValue("removetrack")
-    val REMOVE_TRACK: EventType<MediaStreamTrackEvent<*>>
+    val REMOVE_TRACK: EventType<MediaStreamTrackEvent<EventTarget>>
         get() = definedExternally
 }

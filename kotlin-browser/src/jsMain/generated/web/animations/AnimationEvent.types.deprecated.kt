@@ -7,6 +7,7 @@
 package web.animations
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface AnimationEventTypes_deprecated {
@@ -15,7 +16,7 @@ sealed external interface AnimationEventTypes_deprecated {
         replaceWith = ReplaceWith("AnimationEvent.animationCancel()"),
     )
     @JsValue("animationcancel")
-    val ANIMATION_CANCEL: EventType<AnimationEvent<*>>
+    val ANIMATION_CANCEL: EventType<AnimationEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -23,7 +24,7 @@ sealed external interface AnimationEventTypes_deprecated {
         replaceWith = ReplaceWith("AnimationEvent.animationEnd()"),
     )
     @JsValue("animationend")
-    val ANIMATION_END: EventType<AnimationEvent<*>>
+    val ANIMATION_END: EventType<AnimationEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -31,7 +32,7 @@ sealed external interface AnimationEventTypes_deprecated {
         replaceWith = ReplaceWith("AnimationEvent.animationIteration()"),
     )
     @JsValue("animationiteration")
-    val ANIMATION_ITERATION: EventType<AnimationEvent<*>>
+    val ANIMATION_ITERATION: EventType<AnimationEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -39,6 +40,6 @@ sealed external interface AnimationEventTypes_deprecated {
         replaceWith = ReplaceWith("AnimationEvent.animationStart()"),
     )
     @JsValue("animationstart")
-    val ANIMATION_START: EventType<AnimationEvent<*>>
+    val ANIMATION_START: EventType<AnimationEvent<EventTarget>>
         get() = definedExternally
 }

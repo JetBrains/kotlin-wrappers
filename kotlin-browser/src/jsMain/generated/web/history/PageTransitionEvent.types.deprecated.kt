@@ -7,6 +7,7 @@
 package web.history
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface PageTransitionEventTypes_deprecated {
@@ -15,7 +16,7 @@ sealed external interface PageTransitionEventTypes_deprecated {
         replaceWith = ReplaceWith("PageTransitionEvent.pageHide()"),
     )
     @JsValue("pagehide")
-    val PAGE_HIDE: EventType<PageTransitionEvent<*>>
+    val PAGE_HIDE: EventType<PageTransitionEvent<EventTarget>>
         get() = definedExternally
 
     @Deprecated(
@@ -23,6 +24,6 @@ sealed external interface PageTransitionEventTypes_deprecated {
         replaceWith = ReplaceWith("PageTransitionEvent.pageShow()"),
     )
     @JsValue("pageshow")
-    val PAGE_SHOW: EventType<PageTransitionEvent<*>>
+    val PAGE_SHOW: EventType<PageTransitionEvent<EventTarget>>
         get() = definedExternally
 }

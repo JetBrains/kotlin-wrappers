@@ -7,6 +7,7 @@
 package web.rtc
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.events.EventType
 
 sealed external interface RTCTrackEventTypes_deprecated {
@@ -15,6 +16,6 @@ sealed external interface RTCTrackEventTypes_deprecated {
         replaceWith = ReplaceWith("RTCTrackEvent.track()"),
     )
     @JsValue("track")
-    val TRACK: EventType<RTCTrackEvent<*>>
+    val TRACK: EventType<RTCTrackEvent<EventTarget>>
         get() = definedExternally
 }
