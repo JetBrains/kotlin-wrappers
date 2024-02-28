@@ -49,7 +49,7 @@ internal object GlobalCssAccess {
         link.download = name
         document.body.appendChild(link)
         val clickEvent = MouseEvent(
-            MouseEvent.CLICK,
+            MouseEvent.click(),
             MouseEventInit {
                 bubbles = true
                 cancelable = true
