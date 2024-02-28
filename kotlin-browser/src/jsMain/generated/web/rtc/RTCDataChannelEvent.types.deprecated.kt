@@ -10,6 +10,10 @@ import seskar.js.JsValue
 import web.events.EventType
 
 sealed external interface RTCDataChannelEventTypes_deprecated {
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("RTCDataChannelEvent.dataChannel()"),
+    )
     @JsValue("datachannel")
     val DATA_CHANNEL: EventType<RTCDataChannelEvent<*>>
         get() = definedExternally

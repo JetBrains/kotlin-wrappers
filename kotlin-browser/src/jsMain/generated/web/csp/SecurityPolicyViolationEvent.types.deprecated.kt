@@ -10,6 +10,10 @@ import seskar.js.JsValue
 import web.events.EventType
 
 sealed external interface SecurityPolicyViolationEventTypes_deprecated {
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("SecurityPolicyViolationEvent.securityPolicyViolation()"),
+    )
     @JsValue("securitypolicyviolation")
     val SECURITY_POLICY_VIOLATION: EventType<SecurityPolicyViolationEvent<*>>
         get() = definedExternally

@@ -10,10 +10,18 @@ import seskar.js.JsValue
 import web.events.EventType
 
 sealed external interface MediaStreamTrackEventTypes_deprecated {
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("MediaStreamTrackEvent.addTrack()"),
+    )
     @JsValue("addtrack")
     val ADD_TRACK: EventType<MediaStreamTrackEvent<*>>
         get() = definedExternally
 
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("MediaStreamTrackEvent.removeTrack()"),
+    )
     @JsValue("removetrack")
     val REMOVE_TRACK: EventType<MediaStreamTrackEvent<*>>
         get() = definedExternally

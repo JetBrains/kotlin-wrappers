@@ -10,14 +10,26 @@ import seskar.js.JsValue
 import web.events.EventType
 
 sealed external interface KeyboardEventTypes_deprecated {
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("KeyboardEvent.keyDown()"),
+    )
     @JsValue("keydown")
     val KEY_DOWN: EventType<KeyboardEvent<*>>
         get() = definedExternally
 
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("KeyboardEvent.keyPress()"),
+    )
     @JsValue("keypress")
     val KEY_PRESS: EventType<KeyboardEvent<*>>
         get() = definedExternally
 
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("KeyboardEvent.keyUp()"),
+    )
     @JsValue("keyup")
     val KEY_UP: EventType<KeyboardEvent<*>>
         get() = definedExternally

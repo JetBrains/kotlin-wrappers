@@ -10,6 +10,10 @@ import seskar.js.JsValue
 import web.events.EventType
 
 sealed external interface RTCDTMFToneChangeEventTypes_deprecated {
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("RTCDTMFToneChangeEvent.toneChange()"),
+    )
     @JsValue("tonechange")
     val TONE_CHANGE: EventType<RTCDTMFToneChangeEvent<*>>
         get() = definedExternally

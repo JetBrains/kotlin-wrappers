@@ -10,6 +10,10 @@ import seskar.js.JsValue
 import web.events.EventType
 
 sealed external interface DeviceMotionEventTypes_deprecated {
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("DeviceMotionEvent.deviceMotion()"),
+    )
     @JsValue("devicemotion")
     val DEVICE_MOTION: EventType<DeviceMotionEvent<*>>
         get() = definedExternally

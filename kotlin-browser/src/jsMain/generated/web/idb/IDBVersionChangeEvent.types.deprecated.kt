@@ -10,14 +10,26 @@ import seskar.js.JsValue
 import web.events.EventType
 
 sealed external interface IDBVersionChangeEventTypes_deprecated {
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("IDBVersionChangeEvent.blocked()"),
+    )
     @JsValue("blocked")
     val BLOCKED: EventType<IDBVersionChangeEvent<*>>
         get() = definedExternally
 
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("IDBVersionChangeEvent.upgradeneeded()"),
+    )
     @JsValue("upgradeneeded")
     val UPGRADENEEDED: EventType<IDBVersionChangeEvent<*>>
         get() = definedExternally
 
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("IDBVersionChangeEvent.versionChange()"),
+    )
     @JsValue("versionchange")
     val VERSION_CHANGE: EventType<IDBVersionChangeEvent<*>>
         get() = definedExternally

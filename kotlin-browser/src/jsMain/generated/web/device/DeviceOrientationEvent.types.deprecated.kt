@@ -10,10 +10,18 @@ import seskar.js.JsValue
 import web.events.EventType
 
 sealed external interface DeviceOrientationEventTypes_deprecated {
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("DeviceOrientationEvent.deviceOrientation()"),
+    )
     @JsValue("deviceorientation")
     val DEVICE_ORIENTATION: EventType<DeviceOrientationEvent<*>>
         get() = definedExternally
 
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("DeviceOrientationEvent.deviceOrientationAbsolute()"),
+    )
     @JsValue("deviceorientationabsolute")
     val DEVICE_ORIENTATION_ABSOLUTE: EventType<DeviceOrientationEvent<*>>
         get() = definedExternally

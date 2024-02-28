@@ -10,6 +10,10 @@ import seskar.js.JsValue
 import web.events.EventType
 
 sealed external interface SpeechSynthesisErrorEventTypes_deprecated {
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("SpeechSynthesisErrorEvent.error()"),
+    )
     @JsValue("error")
     val ERROR: EventType<SpeechSynthesisErrorEvent<*>>
         get() = definedExternally

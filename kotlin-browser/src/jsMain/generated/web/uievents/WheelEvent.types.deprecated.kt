@@ -10,6 +10,10 @@ import seskar.js.JsValue
 import web.events.EventType
 
 sealed external interface WheelEventTypes_deprecated {
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("WheelEvent.wheel()"),
+    )
     @JsValue("wheel")
     val WHEEL: EventType<WheelEvent<*>>
         get() = definedExternally

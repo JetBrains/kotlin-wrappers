@@ -10,6 +10,10 @@ import seskar.js.JsValue
 import web.events.EventType
 
 sealed external interface RTCPeerConnectionIceEventTypes_deprecated {
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("RTCPeerConnectionIceEvent.iceCandidate()"),
+    )
     @JsValue("icecandidate")
     val ICE_CANDIDATE: EventType<RTCPeerConnectionIceEvent<*>>
         get() = definedExternally

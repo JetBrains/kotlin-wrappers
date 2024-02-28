@@ -10,6 +10,10 @@ import seskar.js.JsValue
 import web.events.EventType
 
 sealed external interface PaymentMethodChangeEventTypes_deprecated {
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("PaymentMethodChangeEvent.paymentMethodChange()"),
+    )
     @JsValue("paymentmethodchange")
     val PAYMENT_METHOD_CHANGE: EventType<PaymentMethodChangeEvent<*>>
         get() = definedExternally

@@ -10,6 +10,10 @@ import seskar.js.JsValue
 import web.events.EventType
 
 sealed external interface RTCTransformEventTypes_deprecated {
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("RTCTransformEvent.rtcTransform()"),
+    )
     @JsValue("rtctransform")
     val RTC_TRANSFORM: EventType<RTCTransformEvent<*>>
         get() = definedExternally

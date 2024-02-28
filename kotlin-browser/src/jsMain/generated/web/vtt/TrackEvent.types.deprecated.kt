@@ -10,10 +10,18 @@ import seskar.js.JsValue
 import web.events.EventType
 
 sealed external interface TrackEventTypes_deprecated {
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("TrackEvent.addTrack()"),
+    )
     @JsValue("addtrack")
     val ADD_TRACK: EventType<TrackEvent<*>>
         get() = definedExternally
 
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("TrackEvent.removeTrack()"),
+    )
     @JsValue("removetrack")
     val REMOVE_TRACK: EventType<TrackEvent<*>>
         get() = definedExternally

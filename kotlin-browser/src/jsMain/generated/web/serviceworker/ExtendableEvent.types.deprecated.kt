@@ -10,10 +10,18 @@ import seskar.js.JsValue
 import web.events.EventType
 
 sealed external interface ExtendableEventTypes_deprecated {
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("ExtendableEvent.activate()"),
+    )
     @JsValue("activate")
     val ACTIVATE: EventType<ExtendableEvent<*>>
         get() = definedExternally
 
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("ExtendableEvent.install()"),
+    )
     @JsValue("install")
     val INSTALL: EventType<ExtendableEvent<*>>
         get() = definedExternally

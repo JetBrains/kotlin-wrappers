@@ -10,6 +10,10 @@ import seskar.js.JsValue
 import web.events.EventType
 
 sealed external interface OfflineAudioCompletionEventTypes_deprecated {
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("OfflineAudioCompletionEvent.complete()"),
+    )
     @JsValue("complete")
     val COMPLETE: EventType<OfflineAudioCompletionEvent<*>>
         get() = definedExternally

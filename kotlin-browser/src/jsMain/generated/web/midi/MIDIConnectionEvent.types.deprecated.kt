@@ -10,6 +10,10 @@ import seskar.js.JsValue
 import web.events.EventType
 
 sealed external interface MIDIConnectionEventTypes_deprecated {
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("MIDIConnectionEvent.stateChange()"),
+    )
     @JsValue("statechange")
     val STATE_CHANGE: EventType<MIDIConnectionEvent<*>>
         get() = definedExternally

@@ -10,6 +10,10 @@ import seskar.js.JsValue
 import web.events.EventType
 
 sealed external interface InputEventTypes_deprecated {
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("InputEvent.beforeInput()"),
+    )
     @JsValue("beforeinput")
     val BEFORE_INPUT: EventType<InputEvent<*>>
         get() = definedExternally

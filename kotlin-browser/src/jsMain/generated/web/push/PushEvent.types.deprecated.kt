@@ -10,6 +10,10 @@ import seskar.js.JsValue
 import web.events.EventType
 
 sealed external interface PushEventTypes_deprecated {
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("PushEvent.push()"),
+    )
     @JsValue("push")
     val PUSH: EventType<PushEvent<*>>
         get() = definedExternally

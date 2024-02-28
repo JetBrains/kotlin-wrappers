@@ -10,6 +10,10 @@ import seskar.js.JsValue
 import web.events.EventType
 
 sealed external interface CloseEventTypes_deprecated {
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("CloseEvent.close()"),
+    )
     @JsValue("close")
     val CLOSE: EventType<CloseEvent<*>>
         get() = definedExternally

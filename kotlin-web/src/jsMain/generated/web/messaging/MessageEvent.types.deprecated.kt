@@ -10,14 +10,26 @@ import seskar.js.JsValue
 import web.events.EventType
 
 sealed external interface MessageEventTypes_deprecated {
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("MessageEvent.connect()"),
+    )
     @JsValue("connect")
     val CONNECT: EventType<MessageEvent<*, *>>
         get() = definedExternally
 
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("MessageEvent.message()"),
+    )
     @JsValue("message")
     val MESSAGE: EventType<MessageEvent<*, *>>
         get() = definedExternally
 
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("MessageEvent.messageError()"),
+    )
     @JsValue("messageerror")
     val MESSAGE_ERROR: EventType<MessageEvent<*, *>>
         get() = definedExternally

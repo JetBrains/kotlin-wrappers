@@ -10,14 +10,26 @@ import seskar.js.JsValue
 import web.events.EventType
 
 sealed external interface FontFaceSetLoadEventTypes_deprecated {
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("FontFaceSetLoadEvent.loading()"),
+    )
     @JsValue("loading")
     val LOADING: EventType<FontFaceSetLoadEvent<*>>
         get() = definedExternally
 
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("FontFaceSetLoadEvent.loadingDone()"),
+    )
     @JsValue("loadingdone")
     val LOADING_DONE: EventType<FontFaceSetLoadEvent<*>>
         get() = definedExternally
 
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("FontFaceSetLoadEvent.loadingError()"),
+    )
     @JsValue("loadingerror")
     val LOADING_ERROR: EventType<FontFaceSetLoadEvent<*>>
         get() = definedExternally

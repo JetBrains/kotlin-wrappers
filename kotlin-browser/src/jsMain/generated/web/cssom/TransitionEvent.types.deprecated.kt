@@ -10,18 +10,34 @@ import seskar.js.JsValue
 import web.events.EventType
 
 sealed external interface TransitionEventTypes_deprecated {
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("TransitionEvent.transitionCancel()"),
+    )
     @JsValue("transitioncancel")
     val TRANSITION_CANCEL: EventType<TransitionEvent<*>>
         get() = definedExternally
 
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("TransitionEvent.transitionEnd()"),
+    )
     @JsValue("transitionend")
     val TRANSITION_END: EventType<TransitionEvent<*>>
         get() = definedExternally
 
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("TransitionEvent.transitionRun()"),
+    )
     @JsValue("transitionrun")
     val TRANSITION_RUN: EventType<TransitionEvent<*>>
         get() = definedExternally
 
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("TransitionEvent.transitionStart()"),
+    )
     @JsValue("transitionstart")
     val TRANSITION_START: EventType<TransitionEvent<*>>
         get() = definedExternally

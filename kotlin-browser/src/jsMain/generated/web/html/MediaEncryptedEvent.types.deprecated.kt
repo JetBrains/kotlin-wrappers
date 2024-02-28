@@ -10,6 +10,10 @@ import seskar.js.JsValue
 import web.events.EventType
 
 sealed external interface MediaEncryptedEventTypes_deprecated {
+    @Deprecated(
+        message = "Legacy type declaration. Use type function instead!",
+        replaceWith = ReplaceWith("MediaEncryptedEvent.encrypted()"),
+    )
     @JsValue("encrypted")
     val ENCRYPTED: EventType<MediaEncryptedEvent<*>>
         get() = definedExternally
