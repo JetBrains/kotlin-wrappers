@@ -23,7 +23,7 @@ fun useMediaQuery(
         setMatches(queryList.matches)
 
         cleanup(
-            queryList.addEventHandler(MediaQueryListEvent.CHANGE) { event ->
+            queryList.addEventHandler(MediaQueryListEvent.change()) { event ->
                 setMatches(event.matches)
             }
         )
