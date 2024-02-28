@@ -6,7 +6,7 @@ import web.events.*
 /**
  * [Original](https://usehooks-ts.com/react-hook/use-event-listener)
  */
-fun <T : Event<*>> useEventListener(
+fun <T : Event<EventTarget>> useEventListener(
     target: EventTarget?,
     type: EventType<T>,
     options: AddEventListenerOptions? = undefined,
