@@ -10,14 +10,14 @@ import web.events.EventTarget
 import web.events.EventType
 
 inline fun WebGLContextEvent(
-    type: EventType<WebGLContextEvent<*>>,
+    type: EventType<WebGLContextEvent<EventTarget?>>,
 ): WebGLContextEvent<*> =
     WebGLContextEvent<EventTarget?>(
         type = type,
     )
 
 inline fun WebGLContextEvent(
-    type: EventType<WebGLContextEvent<*>>,
+    type: EventType<WebGLContextEvent<EventTarget?>>,
     init: WebGLContextEventInit,
 ): WebGLContextEvent<*> =
     WebGLContextEvent<EventTarget?>(

@@ -10,14 +10,14 @@ import web.events.EventTarget
 import web.events.EventType
 
 inline fun TrackEvent(
-    type: EventType<TrackEvent<*>>,
+    type: EventType<TrackEvent<EventTarget?>>,
 ): TrackEvent<*> =
     TrackEvent<EventTarget?>(
         type = type,
     )
 
 inline fun TrackEvent(
-    type: EventType<TrackEvent<*>>,
+    type: EventType<TrackEvent<EventTarget?>>,
     init: TrackEventInit,
 ): TrackEvent<*> =
     TrackEvent<EventTarget?>(

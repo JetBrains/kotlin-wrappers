@@ -10,7 +10,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 inline fun NotificationEvent(
-    type: EventType<NotificationEvent<*>>,
+    type: EventType<NotificationEvent<EventTarget?>>,
     init: NotificationEventInit,
 ): NotificationEvent<*> =
     NotificationEvent<EventTarget?>(

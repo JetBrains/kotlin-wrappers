@@ -10,7 +10,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 inline fun PromiseRejectionEvent(
-    type: EventType<PromiseRejectionEvent<*>>,
+    type: EventType<PromiseRejectionEvent<EventTarget?>>,
     init: PromiseRejectionEventInit,
 ): PromiseRejectionEvent<*> =
     PromiseRejectionEvent<EventTarget?>(

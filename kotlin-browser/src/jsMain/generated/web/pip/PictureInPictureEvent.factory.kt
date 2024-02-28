@@ -10,7 +10,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 inline fun PictureInPictureEvent(
-    type: EventType<PictureInPictureEvent<*>>,
+    type: EventType<PictureInPictureEvent<EventTarget?>>,
     init: PictureInPictureEventInit,
 ): PictureInPictureEvent<*> =
     PictureInPictureEvent<EventTarget?>(

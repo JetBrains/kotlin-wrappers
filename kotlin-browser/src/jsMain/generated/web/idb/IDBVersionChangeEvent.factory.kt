@@ -10,14 +10,14 @@ import web.events.EventTarget
 import web.events.EventType
 
 inline fun IDBVersionChangeEvent(
-    type: EventType<IDBVersionChangeEvent<*>>,
+    type: EventType<IDBVersionChangeEvent<EventTarget?>>,
 ): IDBVersionChangeEvent<*> =
     IDBVersionChangeEvent<EventTarget?>(
         type = type,
     )
 
 inline fun IDBVersionChangeEvent(
-    type: EventType<IDBVersionChangeEvent<*>>,
+    type: EventType<IDBVersionChangeEvent<EventTarget?>>,
     init: IDBVersionChangeEventInit,
 ): IDBVersionChangeEvent<*> =
     IDBVersionChangeEvent<EventTarget?>(

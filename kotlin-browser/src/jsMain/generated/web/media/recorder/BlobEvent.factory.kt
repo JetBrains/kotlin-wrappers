@@ -10,7 +10,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 inline fun BlobEvent(
-    type: EventType<BlobEvent<*>>,
+    type: EventType<BlobEvent<EventTarget?>>,
     init: BlobEventInit,
 ): BlobEvent<*> =
     BlobEvent<EventTarget?>(

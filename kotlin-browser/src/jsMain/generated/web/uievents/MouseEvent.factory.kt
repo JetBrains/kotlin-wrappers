@@ -10,14 +10,14 @@ import web.events.EventTarget
 import web.events.EventType
 
 inline fun MouseEvent(
-    type: EventType<MouseEvent<*>>,
+    type: EventType<MouseEvent<EventTarget?>>,
 ): MouseEvent<*> =
     MouseEvent<EventTarget?>(
         type = type,
     )
 
 inline fun MouseEvent(
-    type: EventType<MouseEvent<*>>,
+    type: EventType<MouseEvent<EventTarget?>>,
     init: MouseEventInit,
 ): MouseEvent<*> =
     MouseEvent<EventTarget?>(

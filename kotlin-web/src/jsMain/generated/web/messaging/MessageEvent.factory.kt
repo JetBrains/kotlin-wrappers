@@ -10,14 +10,14 @@ import web.events.EventTarget
 import web.events.EventType
 
 inline fun <D> MessageEvent(
-    type: EventType<MessageEvent<D, *>>,
+    type: EventType<MessageEvent<D, EventTarget?>>,
 ): MessageEvent<D, *> =
     MessageEvent<D, EventTarget?>(
         type = type,
     )
 
 inline fun <D> MessageEvent(
-    type: EventType<MessageEvent<D, *>>,
+    type: EventType<MessageEvent<D, EventTarget?>>,
     init: MessageEventInit<D>,
 ): MessageEvent<D, *> =
     MessageEvent<D, EventTarget?>(

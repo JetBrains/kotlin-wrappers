@@ -10,7 +10,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 inline fun MediaKeyMessageEvent(
-    type: EventType<MediaKeyMessageEvent<*>>,
+    type: EventType<MediaKeyMessageEvent<EventTarget?>>,
     init: MediaKeyMessageEventInit,
 ): MediaKeyMessageEvent<*> =
     MediaKeyMessageEvent<EventTarget?>(

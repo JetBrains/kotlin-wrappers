@@ -10,14 +10,14 @@ import web.events.EventTarget
 import web.events.EventType
 
 inline fun MediaEncryptedEvent(
-    type: EventType<MediaEncryptedEvent<*>>,
+    type: EventType<MediaEncryptedEvent<EventTarget?>>,
 ): MediaEncryptedEvent<*> =
     MediaEncryptedEvent<EventTarget?>(
         type = type,
     )
 
 inline fun MediaEncryptedEvent(
-    type: EventType<MediaEncryptedEvent<*>>,
+    type: EventType<MediaEncryptedEvent<EventTarget?>>,
     init: MediaEncryptedEventInit,
 ): MediaEncryptedEvent<*> =
     MediaEncryptedEvent<EventTarget?>(

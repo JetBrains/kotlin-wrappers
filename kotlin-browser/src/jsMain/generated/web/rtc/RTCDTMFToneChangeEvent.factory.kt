@@ -10,14 +10,14 @@ import web.events.EventTarget
 import web.events.EventType
 
 inline fun RTCDTMFToneChangeEvent(
-    type: EventType<RTCDTMFToneChangeEvent<*>>,
+    type: EventType<RTCDTMFToneChangeEvent<EventTarget?>>,
 ): RTCDTMFToneChangeEvent<*> =
     RTCDTMFToneChangeEvent<EventTarget?>(
         type = type,
     )
 
 inline fun RTCDTMFToneChangeEvent(
-    type: EventType<RTCDTMFToneChangeEvent<*>>,
+    type: EventType<RTCDTMFToneChangeEvent<EventTarget?>>,
     init: RTCDTMFToneChangeEventInit,
 ): RTCDTMFToneChangeEvent<*> =
     RTCDTMFToneChangeEvent<EventTarget?>(

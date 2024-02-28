@@ -10,7 +10,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 inline fun SpeechSynthesisEvent(
-    type: EventType<SpeechSynthesisEvent<*>>,
+    type: EventType<SpeechSynthesisEvent<EventTarget?>>,
     init: SpeechSynthesisEventInit,
 ): SpeechSynthesisEvent<*> =
     SpeechSynthesisEvent<EventTarget?>(

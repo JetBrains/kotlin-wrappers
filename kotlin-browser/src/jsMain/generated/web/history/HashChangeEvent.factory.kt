@@ -10,14 +10,14 @@ import web.events.EventTarget
 import web.events.EventType
 
 inline fun HashChangeEvent(
-    type: EventType<HashChangeEvent<*>>,
+    type: EventType<HashChangeEvent<EventTarget?>>,
 ): HashChangeEvent<*> =
     HashChangeEvent<EventTarget?>(
         type = type,
     )
 
 inline fun HashChangeEvent(
-    type: EventType<HashChangeEvent<*>>,
+    type: EventType<HashChangeEvent<EventTarget?>>,
     init: HashChangeEventInit,
 ): HashChangeEvent<*> =
     HashChangeEvent<EventTarget?>(

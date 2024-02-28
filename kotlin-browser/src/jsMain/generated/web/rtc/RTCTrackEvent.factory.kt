@@ -10,7 +10,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 inline fun RTCTrackEvent(
-    type: EventType<RTCTrackEvent<*>>,
+    type: EventType<RTCTrackEvent<EventTarget?>>,
     init: RTCTrackEventInit,
 ): RTCTrackEvent<*> =
     RTCTrackEvent<EventTarget?>(

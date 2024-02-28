@@ -10,7 +10,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 inline fun RTCDataChannelEvent(
-    type: EventType<RTCDataChannelEvent<*>>,
+    type: EventType<RTCDataChannelEvent<EventTarget?>>,
     init: RTCDataChannelEventInit,
 ): RTCDataChannelEvent<*> =
     RTCDataChannelEvent<EventTarget?>(
