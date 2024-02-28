@@ -11,13 +11,13 @@
 package web.events
 
 open external class EventTarget {
-    fun <E : Event<*>> addEventListener(
+    fun <E : Event<EventTarget>> addEventListener(
         type: EventType<E>,
         callback: EventHandler<E>,
         options: AddEventListenerOptions? = definedExternally,
     )
 
-    inline fun <E : Event<*>> addEventHandler(
+    inline fun <E : Event<EventTarget>> addEventHandler(
         type: EventType<E>,
         noinline handler: EventHandler<E>,
     ): () -> Unit =
@@ -27,7 +27,7 @@ open external class EventTarget {
             handler = handler,
         )
 
-    inline fun <E : Event<*>> addEventHandler(
+    inline fun <E : Event<EventTarget>> addEventHandler(
         type: EventType<E>,
         options: AddEventListenerOptions?,
         noinline handler: EventHandler<E>,
@@ -39,7 +39,7 @@ open external class EventTarget {
             options = options,
         )
 
-    fun <E : Event<*>> removeEventListener(
+    fun <E : Event<EventTarget>> removeEventListener(
         type: EventType<E>,
         callback: EventHandler<E>,
         options: EventListenerOptions? = definedExternally,
@@ -51,7 +51,7 @@ open external class EventTarget {
 }
 
 @PublishedApi
-internal fun <E : Event<*>> addEventHandler(
+internal fun <E : Event<EventTarget>> addEventHandler(
     target: EventTarget,
     type: EventType<E>,
     handler: EventHandler<E>,
@@ -64,7 +64,7 @@ internal fun <E : Event<*>> addEventHandler(
     )
 
 @PublishedApi
-internal fun <E : Event<*>> addEventHandler(
+internal fun <E : Event<EventTarget>> addEventHandler(
     target: EventTarget,
     type: EventType<E>,
     handler: EventHandler<E>,
