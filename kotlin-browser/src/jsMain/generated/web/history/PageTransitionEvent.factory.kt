@@ -10,14 +10,14 @@ import web.events.EventTarget
 import web.events.EventType
 
 inline fun PageTransitionEvent(
-    type: EventType<PageTransitionEvent<EventTarget?>>,
+    type: EventType<PageTransitionEvent<EventTarget>>,
 ): PageTransitionEvent<*> =
     PageTransitionEvent<EventTarget?>(
         type = type,
     )
 
 inline fun PageTransitionEvent(
-    type: EventType<PageTransitionEvent<EventTarget?>>,
+    type: EventType<PageTransitionEvent<EventTarget>>,
     init: PageTransitionEventInit,
 ): PageTransitionEvent<*> =
     PageTransitionEvent<EventTarget?>(

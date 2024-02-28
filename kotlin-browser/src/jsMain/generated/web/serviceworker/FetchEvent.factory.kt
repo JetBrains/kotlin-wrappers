@@ -10,7 +10,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 inline fun FetchEvent(
-    type: EventType<FetchEvent<EventTarget?>>,
+    type: EventType<FetchEvent<EventTarget>>,
     init: FetchEventInit,
 ): FetchEvent<*> =
     FetchEvent<EventTarget?>(

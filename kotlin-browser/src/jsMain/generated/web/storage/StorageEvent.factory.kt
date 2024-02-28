@@ -10,14 +10,14 @@ import web.events.EventTarget
 import web.events.EventType
 
 inline fun StorageEvent(
-    type: EventType<StorageEvent<EventTarget?>>,
+    type: EventType<StorageEvent<EventTarget>>,
 ): StorageEvent<*> =
     StorageEvent<EventTarget?>(
         type = type,
     )
 
 inline fun StorageEvent(
-    type: EventType<StorageEvent<EventTarget?>>,
+    type: EventType<StorageEvent<EventTarget>>,
     init: StorageEventInit,
 ): StorageEvent<*> =
     StorageEvent<EventTarget?>(

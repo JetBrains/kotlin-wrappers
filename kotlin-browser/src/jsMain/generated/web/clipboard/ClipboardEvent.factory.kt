@@ -10,14 +10,14 @@ import web.events.EventTarget
 import web.events.EventType
 
 inline fun ClipboardEvent(
-    type: EventType<ClipboardEvent<EventTarget?>>,
+    type: EventType<ClipboardEvent<EventTarget>>,
 ): ClipboardEvent<*> =
     ClipboardEvent<EventTarget?>(
         type = type,
     )
 
 inline fun ClipboardEvent(
-    type: EventType<ClipboardEvent<EventTarget?>>,
+    type: EventType<ClipboardEvent<EventTarget>>,
     init: ClipboardEventInit,
 ): ClipboardEvent<*> =
     ClipboardEvent<EventTarget?>(

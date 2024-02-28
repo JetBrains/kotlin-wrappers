@@ -17,7 +17,7 @@ import web.media.streams.MediaStreamTrack
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTrackEvent)
  */
 open external class RTCTrackEvent<out C : EventTarget?>(
-    override val type: EventType<RTCTrackEvent<*>>,
+    override val type: EventType<RTCTrackEvent<EventTarget>>,
     init: RTCTrackEventInit,
 ) : Event<C>,
     RTCTrackEventInit {

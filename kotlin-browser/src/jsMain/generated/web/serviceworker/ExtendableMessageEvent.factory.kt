@@ -10,14 +10,14 @@ import web.events.EventTarget
 import web.events.EventType
 
 inline fun ExtendableMessageEvent(
-    type: EventType<ExtendableMessageEvent<EventTarget?>>,
+    type: EventType<ExtendableMessageEvent<EventTarget>>,
 ): ExtendableMessageEvent<*> =
     ExtendableMessageEvent<EventTarget?>(
         type = type,
     )
 
 inline fun ExtendableMessageEvent(
-    type: EventType<ExtendableMessageEvent<EventTarget?>>,
+    type: EventType<ExtendableMessageEvent<EventTarget>>,
     init: ExtendableMessageEventInit,
 ): ExtendableMessageEvent<*> =
     ExtendableMessageEvent<EventTarget?>(

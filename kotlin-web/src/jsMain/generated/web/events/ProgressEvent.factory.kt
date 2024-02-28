@@ -7,14 +7,14 @@
 package web.events
 
 inline fun ProgressEvent(
-    type: EventType<ProgressEvent<EventTarget?>>,
+    type: EventType<ProgressEvent<EventTarget>>,
 ): ProgressEvent<*> =
     ProgressEvent<EventTarget?>(
         type = type,
     )
 
 inline fun ProgressEvent(
-    type: EventType<ProgressEvent<EventTarget?>>,
+    type: EventType<ProgressEvent<EventTarget>>,
     init: ProgressEventInit,
 ): ProgressEvent<*> =
     ProgressEvent<EventTarget?>(

@@ -16,7 +16,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageEvent)
  */
 open external class StorageEvent<out C : EventTarget?>(
-    override val type: EventType<StorageEvent<*>>,
+    override val type: EventType<StorageEvent<EventTarget>>,
     init: StorageEventInit = definedExternally,
 ) : Event<C>,
     StorageEventInit {

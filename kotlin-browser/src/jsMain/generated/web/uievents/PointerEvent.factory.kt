@@ -10,14 +10,14 @@ import web.events.EventTarget
 import web.events.EventType
 
 inline fun PointerEvent(
-    type: EventType<PointerEvent<EventTarget?>>,
+    type: EventType<PointerEvent<EventTarget>>,
 ): PointerEvent<*> =
     PointerEvent<EventTarget?>(
         type = type,
     )
 
 inline fun PointerEvent(
-    type: EventType<PointerEvent<EventTarget?>>,
+    type: EventType<PointerEvent<EventTarget>>,
     init: PointerEventInit,
 ): PointerEvent<*> =
     PointerEvent<EventTarget?>(

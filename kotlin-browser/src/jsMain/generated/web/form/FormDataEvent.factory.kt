@@ -10,7 +10,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 inline fun FormDataEvent(
-    type: EventType<FormDataEvent<EventTarget?>>,
+    type: EventType<FormDataEvent<EventTarget>>,
     init: FormDataEventInit,
 ): FormDataEvent<*> =
     FormDataEvent<EventTarget?>(

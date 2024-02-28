@@ -16,7 +16,7 @@ import web.keyboard.ModifierKeyCode
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent)
  */
 open external class MouseEvent<out C : EventTarget?>(
-    override val type: EventType<MouseEvent<*>>,
+    override val type: EventType<MouseEvent<EventTarget>>,
     init: MouseEventInit = definedExternally,
 ) : UIEvent<C> {
     /**

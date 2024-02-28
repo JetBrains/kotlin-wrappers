@@ -10,14 +10,14 @@ import web.events.EventTarget
 import web.events.EventType
 
 inline fun AnimationEvent(
-    type: EventType<AnimationEvent<EventTarget?>>,
+    type: EventType<AnimationEvent<EventTarget>>,
 ): AnimationEvent<*> =
     AnimationEvent<EventTarget?>(
         type = type,
     )
 
 inline fun AnimationEvent(
-    type: EventType<AnimationEvent<EventTarget?>>,
+    type: EventType<AnimationEvent<EventTarget>>,
     init: AnimationEventInit,
 ): AnimationEvent<*> =
     AnimationEvent<EventTarget?>(

@@ -10,7 +10,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 inline fun GamepadEvent(
-    type: EventType<GamepadEvent<EventTarget?>>,
+    type: EventType<GamepadEvent<EventTarget>>,
     init: GamepadEventInit,
 ): GamepadEvent<*> =
     GamepadEvent<EventTarget?>(

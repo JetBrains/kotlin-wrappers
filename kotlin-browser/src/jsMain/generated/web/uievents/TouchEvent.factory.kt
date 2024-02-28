@@ -10,14 +10,14 @@ import web.events.EventTarget
 import web.events.EventType
 
 inline fun TouchEvent(
-    type: EventType<TouchEvent<EventTarget?>>,
+    type: EventType<TouchEvent<EventTarget>>,
 ): TouchEvent<*> =
     TouchEvent<EventTarget?>(
         type = type,
     )
 
 inline fun TouchEvent(
-    type: EventType<TouchEvent<EventTarget?>>,
+    type: EventType<TouchEvent<EventTarget>>,
     init: TouchEventInit,
 ): TouchEvent<*> =
     TouchEvent<EventTarget?>(

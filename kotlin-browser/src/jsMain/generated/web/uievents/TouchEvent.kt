@@ -17,7 +17,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent)
  */
 open external class TouchEvent<out C : EventTarget?>(
-    override val type: EventType<TouchEvent<*>>,
+    override val type: EventType<TouchEvent<EventTarget>>,
     init: TouchEventInit = definedExternally,
 ) : UIEvent<C> {
     /**

@@ -10,14 +10,14 @@ import web.events.EventTarget
 import web.events.EventType
 
 inline fun SecurityPolicyViolationEvent(
-    type: EventType<SecurityPolicyViolationEvent<EventTarget?>>,
+    type: EventType<SecurityPolicyViolationEvent<EventTarget>>,
 ): SecurityPolicyViolationEvent<*> =
     SecurityPolicyViolationEvent<EventTarget?>(
         type = type,
     )
 
 inline fun SecurityPolicyViolationEvent(
-    type: EventType<SecurityPolicyViolationEvent<EventTarget?>>,
+    type: EventType<SecurityPolicyViolationEvent<EventTarget>>,
     init: SecurityPolicyViolationEventInit,
 ): SecurityPolicyViolationEvent<*> =
     SecurityPolicyViolationEvent<EventTarget?>(

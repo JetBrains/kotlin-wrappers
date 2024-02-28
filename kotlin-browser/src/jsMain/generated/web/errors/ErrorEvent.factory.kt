@@ -10,14 +10,14 @@ import web.events.EventTarget
 import web.events.EventType
 
 inline fun ErrorEvent(
-    type: EventType<ErrorEvent<EventTarget?>>,
+    type: EventType<ErrorEvent<EventTarget>>,
 ): ErrorEvent<*> =
     ErrorEvent<EventTarget?>(
         type = type,
     )
 
 inline fun ErrorEvent(
-    type: EventType<ErrorEvent<EventTarget?>>,
+    type: EventType<ErrorEvent<EventTarget>>,
     init: ErrorEventInit,
 ): ErrorEvent<*> =
     ErrorEvent<EventTarget?>(

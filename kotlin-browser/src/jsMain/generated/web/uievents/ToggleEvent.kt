@@ -14,7 +14,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ToggleEvent)
  */
 open external class ToggleEvent<out C : EventTarget?>(
-    override val type: EventType<ToggleEvent<*>>,
+    override val type: EventType<ToggleEvent<EventTarget>>,
     init: ToggleEventInit = definedExternally,
 ) : Event<C>,
     ToggleEventInit {

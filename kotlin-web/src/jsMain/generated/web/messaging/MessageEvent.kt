@@ -22,7 +22,7 @@ import kotlin.internal.LowPriorityInOverloadResolution
 open external class MessageEvent<out D, out C : EventTarget?>
 @LowPriorityInOverloadResolution
 constructor(
-    override val type: EventType<MessageEvent<D, *>>,
+    override val type: EventType<MessageEvent<D, EventTarget>>,
     init: MessageEventInit<D> = definedExternally,
 ) : Event<C>,
     MessageEventInit<D> {

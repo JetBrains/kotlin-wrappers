@@ -7,14 +7,14 @@
 package web.events
 
 inline fun <D> CustomEvent(
-    type: EventType<CustomEvent<D, EventTarget?>>,
+    type: EventType<CustomEvent<D, EventTarget>>,
 ): CustomEvent<D, *> =
     CustomEvent<D, EventTarget?>(
         type = type,
     )
 
 inline fun <D> CustomEvent(
-    type: EventType<CustomEvent<D, EventTarget?>>,
+    type: EventType<CustomEvent<D, EventTarget>>,
     init: CustomEventInit<D>,
 ): CustomEvent<D, *> =
     CustomEvent<D, EventTarget?>(

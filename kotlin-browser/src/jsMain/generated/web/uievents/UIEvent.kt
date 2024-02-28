@@ -17,7 +17,7 @@ import web.window.Window
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UIEvent)
  */
 open external class UIEvent<out C : EventTarget?>(
-    override val type: EventType<UIEvent<*>>,
+    override val type: EventType<UIEvent<EventTarget>>,
     init: UIEventInit = definedExternally,
 ) : Event<C>,
     UIEventInit {

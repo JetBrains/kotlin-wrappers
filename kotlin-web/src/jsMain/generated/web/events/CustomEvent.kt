@@ -16,7 +16,7 @@ import kotlin.internal.LowPriorityInOverloadResolution
 open external class CustomEvent<out D, out C : EventTarget?>
 @LowPriorityInOverloadResolution
 constructor(
-    override val type: EventType<CustomEvent<D, *>>,
+    override val type: EventType<CustomEvent<D, EventTarget>>,
     init: CustomEventInit<D> = definedExternally,
 ) : Event<C>,
     CustomEventInit<D> {

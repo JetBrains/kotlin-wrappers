@@ -10,14 +10,14 @@ import web.events.EventTarget
 import web.events.EventType
 
 inline fun RTCPeerConnectionIceEvent(
-    type: EventType<RTCPeerConnectionIceEvent<EventTarget?>>,
+    type: EventType<RTCPeerConnectionIceEvent<EventTarget>>,
 ): RTCPeerConnectionIceEvent<*> =
     RTCPeerConnectionIceEvent<EventTarget?>(
         type = type,
     )
 
 inline fun RTCPeerConnectionIceEvent(
-    type: EventType<RTCPeerConnectionIceEvent<EventTarget?>>,
+    type: EventType<RTCPeerConnectionIceEvent<EventTarget>>,
     init: RTCPeerConnectionIceEventInit,
 ): RTCPeerConnectionIceEvent<*> =
     RTCPeerConnectionIceEvent<EventTarget?>(

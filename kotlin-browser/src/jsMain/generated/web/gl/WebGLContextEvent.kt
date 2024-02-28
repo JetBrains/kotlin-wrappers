@@ -16,7 +16,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLContextEvent)
  */
 open external class WebGLContextEvent<out C : EventTarget?>(
-    override val type: EventType<WebGLContextEvent<*>>,
+    override val type: EventType<WebGLContextEvent<EventTarget>>,
     init: WebGLContextEventInit = definedExternally,
 ) : Event<C>,
     WebGLContextEventInit {

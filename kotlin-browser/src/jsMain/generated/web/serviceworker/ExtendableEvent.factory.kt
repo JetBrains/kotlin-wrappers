@@ -10,14 +10,14 @@ import web.events.EventTarget
 import web.events.EventType
 
 inline fun ExtendableEvent(
-    type: EventType<ExtendableEvent<EventTarget?>>,
+    type: EventType<ExtendableEvent<EventTarget>>,
 ): ExtendableEvent<*> =
     ExtendableEvent<EventTarget?>(
         type = type,
     )
 
 inline fun ExtendableEvent(
-    type: EventType<ExtendableEvent<EventTarget?>>,
+    type: EventType<ExtendableEvent<EventTarget>>,
     init: ExtendableEventInit,
 ): ExtendableEvent<*> =
     ExtendableEvent<EventTarget?>(

@@ -10,7 +10,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 inline fun MediaStreamTrackEvent(
-    type: EventType<MediaStreamTrackEvent<EventTarget?>>,
+    type: EventType<MediaStreamTrackEvent<EventTarget>>,
     init: MediaStreamTrackEventInit,
 ): MediaStreamTrackEvent<*> =
     MediaStreamTrackEvent<EventTarget?>(

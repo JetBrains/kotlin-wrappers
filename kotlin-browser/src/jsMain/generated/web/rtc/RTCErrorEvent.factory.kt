@@ -10,7 +10,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 inline fun RTCErrorEvent(
-    type: EventType<RTCErrorEvent<EventTarget?>>,
+    type: EventType<RTCErrorEvent<EventTarget>>,
     init: RTCErrorEventInit,
 ): RTCErrorEvent<*> =
     RTCErrorEvent<EventTarget?>(

@@ -10,7 +10,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 inline fun OfflineAudioCompletionEvent(
-    type: EventType<OfflineAudioCompletionEvent<EventTarget?>>,
+    type: EventType<OfflineAudioCompletionEvent<EventTarget>>,
     init: OfflineAudioCompletionEventInit,
 ): OfflineAudioCompletionEvent<*> =
     OfflineAudioCompletionEvent<EventTarget?>(

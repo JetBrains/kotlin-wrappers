@@ -10,14 +10,14 @@ import web.events.EventTarget
 import web.events.EventType
 
 inline fun DragEvent(
-    type: EventType<DragEvent<EventTarget?>>,
+    type: EventType<DragEvent<EventTarget>>,
 ): DragEvent<*> =
     DragEvent<EventTarget?>(
         type = type,
     )
 
 inline fun DragEvent(
-    type: EventType<DragEvent<EventTarget?>>,
+    type: EventType<DragEvent<EventTarget>>,
     init: DragEventInit,
 ): DragEvent<*> =
     DragEvent<EventTarget?>(

@@ -17,7 +17,7 @@ import web.serviceworker.ExtendableEvent
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushEvent)
  */
 open external class PushEvent<out C : EventTarget?>(
-    override val type: EventType<PushEvent<*>>,
+    override val type: EventType<PushEvent<EventTarget>>,
     init: PushEventInit = definedExternally,
 ) : ExtendableEvent<C>,
     PushEventInit {

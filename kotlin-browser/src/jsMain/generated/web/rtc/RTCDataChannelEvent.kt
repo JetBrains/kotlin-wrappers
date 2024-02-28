@@ -14,7 +14,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannelEvent)
  */
 open external class RTCDataChannelEvent<out C : EventTarget?>(
-    override val type: EventType<RTCDataChannelEvent<*>>,
+    override val type: EventType<RTCDataChannelEvent<EventTarget>>,
     init: RTCDataChannelEventInit,
 ) : Event<C>,
     RTCDataChannelEventInit {

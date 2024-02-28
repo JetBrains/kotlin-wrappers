@@ -10,14 +10,14 @@ import web.events.EventTarget
 import web.events.EventType
 
 inline fun DeviceMotionEvent(
-    type: EventType<DeviceMotionEvent<EventTarget?>>,
+    type: EventType<DeviceMotionEvent<EventTarget>>,
 ): DeviceMotionEvent<*> =
     DeviceMotionEvent<EventTarget?>(
         type = type,
     )
 
 inline fun DeviceMotionEvent(
-    type: EventType<DeviceMotionEvent<EventTarget?>>,
+    type: EventType<DeviceMotionEvent<EventTarget>>,
     init: DeviceMotionEventInit,
 ): DeviceMotionEvent<*> =
     DeviceMotionEvent<EventTarget?>(

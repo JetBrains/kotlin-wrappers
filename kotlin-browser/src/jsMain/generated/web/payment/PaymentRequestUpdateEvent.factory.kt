@@ -10,14 +10,14 @@ import web.events.EventTarget
 import web.events.EventType
 
 inline fun PaymentRequestUpdateEvent(
-    type: EventType<PaymentRequestUpdateEvent<EventTarget?>>,
+    type: EventType<PaymentRequestUpdateEvent<EventTarget>>,
 ): PaymentRequestUpdateEvent<*> =
     PaymentRequestUpdateEvent<EventTarget?>(
         type = type,
     )
 
 inline fun PaymentRequestUpdateEvent(
-    type: EventType<PaymentRequestUpdateEvent<EventTarget?>>,
+    type: EventType<PaymentRequestUpdateEvent<EventTarget>>,
     init: PaymentRequestUpdateEventInit,
 ): PaymentRequestUpdateEvent<*> =
     PaymentRequestUpdateEvent<EventTarget?>(
