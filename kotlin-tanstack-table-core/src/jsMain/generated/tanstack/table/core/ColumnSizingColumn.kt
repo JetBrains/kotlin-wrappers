@@ -25,11 +25,16 @@ external interface ColumnSizingColumn {
     var getSize: () -> Int
 
     /**
-     * Returns the offset measurement along the row-axis (usually the x-axis for standard tables) for the header. This is effectively a sum of the offset measurements of all preceding headers.
+     * Returns the offset measurement along the row-axis (usually the x-axis for standard tables) for the header. This is effectively a sum of the offset measurements of all preceding (left) headers in relation to the current column.
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/column-sizing#getstart)
      * [Guide](https://tanstack.com/table/v8/docs/guide/column-sizing)
      */
-    var getStart: (position: ColumnPinningPosition?) -> Int
+    var getStart: (position: ColumnOrderPosition?) -> Int
+
+    /**
+     * Returns the offset measurement along the row-axis (usually the x-axis for standard tables) for the header. This is effectively a sum of the offset measurements of all succeeding (right) headers in relation to the current column.
+     */
+    var getAfter: (position: ColumnOrderPosition?) -> Int
 
     /**
      * Resets the column to its initial size.

@@ -34,9 +34,16 @@ external interface PaginationOptions<TData : RowData> {
     var onPaginationChange: OnChangeFn<PaginationState>?
 
     /**
-     * When manually controlling pagination, you should supply a total `pageCount` value to the table if you know it. If you do not know how many pages there are, you can set this to `-1`.
+     * When manually controlling pagination, you can supply a total `pageCount` value to the table if you know it (Or supply a `rowCount` and `pageCount` will be calculated). If you do not know how many pages there are, you can set this to `-1`.
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/pagination#pagecount)
      * [Guide](https://tanstack.com/table/v8/docs/guide/pagination)
      */
     var pageCount: Int?
+
+    /**
+     * When manually controlling pagination, you can supply a total `rowCount` value to the table if you know it. The `pageCount` can be calculated from this value and the `pageSize`.
+     * [API Docs](https://tanstack.com/table/v8/docs/api/features/pagination#rowcount)
+     * [Guide](https://tanstack.com/table/v8/docs/guide/pagination)
+     */
+    var rowCount: Int?
 }

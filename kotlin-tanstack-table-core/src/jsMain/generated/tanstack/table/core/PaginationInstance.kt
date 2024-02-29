@@ -27,6 +27,13 @@ external interface PaginationInstance<TData : RowData> {
     var getPageCount: () -> Int
 
     /**
+     * Returns the row count. If manually paginating or controlling the pagination state, this will come directly from the `options.rowCount` table option, otherwise it will be calculated from the table data.
+     * [API Docs](https://tanstack.com/table/v8/docs/api/features/pagination#getrowcount)
+     * [Guide](https://tanstack.com/table/v8/docs/guide/pagination)
+     */
+    var getRowCount: () -> Int
+
+    /**
      * Returns an array of page options (zero-index-based) for the current page size.
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/pagination#getpageoptions)
      * [Guide](https://tanstack.com/table/v8/docs/guide/pagination)
@@ -62,6 +69,20 @@ external interface PaginationInstance<TData : RowData> {
     var previousPage: () -> Unit
 
     /**
+     * Sets the page index to `0`.
+     * [API Docs](https://tanstack.com/table/v8/docs/api/features/pagination#firstpage)
+     * [Guide](https://tanstack.com/table/v8/docs/guide/pagination)
+     */
+    var firstPage: () -> Unit
+
+    /**
+     * Sets the page index to the last page.
+     * [API Docs](https://tanstack.com/table/v8/docs/api/features/pagination#lastpage)
+     * [Guide](https://tanstack.com/table/v8/docs/guide/pagination)
+     */
+    var lastPage: () -> Unit
+
+    /**
      * Resets the page index to its initial state. If `defaultState` is `true`, the page index will be reset to `0` regardless of initial state.
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/pagination#resetpageindex)
      * [Guide](https://tanstack.com/table/v8/docs/guide/pagination)
@@ -83,9 +104,7 @@ external interface PaginationInstance<TData : RowData> {
     var resetPagination: (defaultState: Boolean?) -> Unit
 
     /**
-     * Updates the page count using the provided function or value.
-     * [API Docs](https://tanstack.com/table/v8/docs/api/features/pagination#setpagecount)
-     * [Guide](https://tanstack.com/table/v8/docs/guide/pagination)
+     * @deprecated The page count no longer exists in the pagination state. Just pass as a table option instead.
      */
     var setPageCount: (updater: Updater<Int>) -> Unit
 

@@ -34,6 +34,13 @@ external interface CoreOptions<TData : RowData> {
     var debugAll: Boolean?
 
     /**
+     * Set this option to `true` to output cell debugging information to the console.
+     * [API Docs](https://tanstack.com/table/v8/docs/api/core/table#debugcells]
+ * [Guide](https://tanstack.com/table/v8/docs/guide/tables)
+     */
+    var debugCells: Boolean?
+
+    /**
      * Set this option to `true` to output column debugging information to the console.
      * [API Docs](https://tanstack.com/table/v8/docs/api/core/table#debugcolumns)
      * [Guide](https://tanstack.com/table/v8/docs/guide/tables)

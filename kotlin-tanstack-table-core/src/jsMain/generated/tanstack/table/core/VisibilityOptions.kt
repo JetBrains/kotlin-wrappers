@@ -3,6 +3,11 @@
 package tanstack.table.core
 
 external interface VisibilityOptions {
+    /**
+     * Whether to enable column hiding. Defaults to `true`.
+     * [API Docs](https://tanstack.com/table/v8/docs/api/features/column-visibility#enablehiding)
+     * [Guide](https://tanstack.com/table/v8/docs/guide/column-visibility)
+     */
     var enableHiding: Boolean?
 
     /**
