@@ -2,8 +2,7 @@
 
 **BREAKING CHANGE**
 
-* `EventTarget.addEventHandler` - extention
-    * Previously it was member
+* `EventTarget.addEventHandler` is an extension function now rather than a member
 
 ## pre.702
 
