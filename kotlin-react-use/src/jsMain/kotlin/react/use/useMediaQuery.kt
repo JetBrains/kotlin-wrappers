@@ -6,6 +6,7 @@ import react.useState
 import web.cssom.MediaQuery
 import web.cssom.MediaQueryListEvent
 import web.cssom.matchMedia
+import web.events.addEventHandler
 
 /**
  * [Original](https://mui.com/material-ui/react-use-media-query/)

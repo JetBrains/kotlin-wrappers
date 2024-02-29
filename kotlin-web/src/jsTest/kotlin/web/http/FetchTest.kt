@@ -10,6 +10,7 @@ import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.runTest
 import web.events.Event
+import web.events.addEventHandler
 import kotlin.test.*
 
 class FetchTest {
