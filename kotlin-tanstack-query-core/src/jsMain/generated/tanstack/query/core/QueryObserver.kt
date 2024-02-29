@@ -18,7 +18,7 @@ open external class QueryObserver<TQueryFnData, TError, TData, TQueryData, TQuer
     open fun shouldFetchOnWindowFocus(): Boolean
     open fun destroy()
     open fun setOptions(
-        options: QueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey, *> = definedExternally,
+        options: QueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey, *>,
         notifyOptions: NotifyOptions = definedExternally,
     )
 

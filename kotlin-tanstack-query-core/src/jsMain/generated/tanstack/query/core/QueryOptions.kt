@@ -15,7 +15,7 @@ external interface QueryOptions<TQueryFnData, TError, TData, TQueryKey : QueryKe
     var initialData: InitialDataFunction<TData> /* | TData */
     var initialDataUpdatedAt: Any /* number | (() => number | undefined) */
     var behavior: QueryBehavior<TQueryFnData, TError, TData, TQueryKey>
-    var structuralSharing: Any /* boolean | (<T>(oldData: T | undefined, newData: T) => T) */
+    var structuralSharing: Any /* boolean | ((oldData: unknown | undefined, newData: unknown) => unknown) */
     var _defaulted: Boolean
     var meta: QueryMeta
     var maxPages: Int

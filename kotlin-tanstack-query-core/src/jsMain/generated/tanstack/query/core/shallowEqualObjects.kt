@@ -4,7 +4,7 @@
 
 package tanstack.query.core
 
-external fun <T> shallowEqualObjects(
+external fun <T : Any /* object */> shallowEqualObjects(
     a: T,
-    b: T,
+    b: T?,
 ): Boolean
