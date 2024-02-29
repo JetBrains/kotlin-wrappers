@@ -1,3 +1,10 @@
+## pre.706
+
+**BREAKING CHANGE**
+
+* `EventTarget.addEventHandler` - extention
+    * Previously it was member
+
 ## pre.702
 
 **BREAKING CHANGE**
