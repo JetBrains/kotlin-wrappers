@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package web.canvas
+package web.images
 
 import seskar.js.JsValue
 import web.rendering.OffscreenRenderingContext

@@ -1,8 +1,9 @@
 // Automatically generated - do not modify!
 
-package web.canvas
+package web.images
 
 import js.transferable.Transferable
+import web.canvas.CanvasImageSource
 import web.gl.TexImageSource
 
 /**

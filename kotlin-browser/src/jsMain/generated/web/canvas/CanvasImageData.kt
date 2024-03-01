@@ -2,6 +2,9 @@
 
 package web.canvas
 
+import web.images.ImageData
+import web.images.ImageDataSettings
+
 sealed external interface CanvasImageData {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/createImageData)

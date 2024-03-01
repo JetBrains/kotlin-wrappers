@@ -1,9 +1,10 @@
 // Automatically generated - do not modify!
 
-package web.canvas
+package web.images
 
 import js.promise.Promise
 import web.blob.Blob
+import web.canvas.CanvasImageSource
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/createImageBitmap)

@@ -3,7 +3,7 @@
 package web.gl
 
 import js.array.ReadonlyArray
-import web.canvas.PredefinedColorSpace
+import web.images.PredefinedColorSpace
 
 sealed external interface WebGLRenderingContextBase {
     /**

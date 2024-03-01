@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package web.canvas
+package web.images
 
 import js.typedarrays.Uint8ClampedArray
 import web.gl.TexImageSource

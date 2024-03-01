@@ -4,7 +4,7 @@
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
-package web.canvas
+package web.images
 
 import seskar.js.JsValue
 import seskar.js.JsVirtual

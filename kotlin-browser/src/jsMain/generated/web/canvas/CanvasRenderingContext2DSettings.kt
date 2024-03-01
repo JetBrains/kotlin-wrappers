@@ -3,6 +3,7 @@
 package web.canvas
 
 import js.objects.JsPlainObject
+import web.images.PredefinedColorSpace
 
 @JsPlainObject
 sealed external interface CanvasRenderingContext2DSettings {
