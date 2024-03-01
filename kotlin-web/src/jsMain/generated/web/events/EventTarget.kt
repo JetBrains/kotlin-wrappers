@@ -3,22 +3,10 @@
 package web.events
 
 open external class EventTarget {
-    fun addEventListener(
-        type: EventType<Event<EventTarget>>,
-        callback: EventHandler<Event<EventTarget>>,
-        options: AddEventListenerOptions? = definedExternally,
-    )
-
     internal fun addEventListener(
         type: EventType<*>,
         callback: Function<Unit>,
         options: AddEventListenerOptions? = definedExternally,
-    )
-
-    fun removeEventListener(
-        type: EventType<Event<EventTarget>>,
-        callback: EventHandler<Event<EventTarget>>,
-        options: EventListenerOptions? = definedExternally,
     )
 
     internal fun removeEventListener(
@@ -30,6 +18,30 @@ open external class EventTarget {
     fun dispatchEvent(
         event: Event<*>,
     ): Boolean
+}
+
+fun <T : EventTarget, E : Event<T>> T.addEventListener(
+    type: EventType<E>,
+    handler: EventHandler<E>,
+    options: AddEventListenerOptions? = undefined,
+) {
+    addEventListener(
+        type = type,
+        callback = handler,
+        options = options,
+    )
+}
+
+fun <T : EventTarget, E : Event<T>> T.removeEventListener(
+    type: EventType<E>,
+    handler: EventHandler<E>,
+    options: AddEventListenerOptions? = undefined,
+) {
+    removeEventListener(
+        type = type,
+        callback = handler,
+        options = options,
+    )
 }
 
 fun <T : EventTarget, E : Event<T>> T.addEventHandler(
