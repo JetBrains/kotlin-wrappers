@@ -1,3 +1,9 @@
+## pre.707
+
+**BREAKING CHANGE**
+
+* `EventTarget.addEventHandler` and `EventTarget.removeEventHandler` are extension functions now rather than members
+
 ## pre.706
 
 **BREAKING CHANGE**
