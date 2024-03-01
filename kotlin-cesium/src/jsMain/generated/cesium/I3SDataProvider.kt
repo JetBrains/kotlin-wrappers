@@ -9,6 +9,7 @@
 package cesium
 
 import js.array.ReadonlyArray
+import js.core.Void
 import js.objects.jso
 import js.promise.Promise
 
@@ -61,12 +62,6 @@ external class I3SDataProvider(options: ConstructorOptions) {
     var show: Boolean
 
     /**
-     * Gets or sets debugging and tracing of I3S fetches.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SDataProvider.html#traceFetches">Online Documentation</a>
-     */
-    var traceFetches: Boolean
-
-    /**
      * The terrain provider referencing the GEOID service to be used for orthometric to ellipsoidal conversion.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SDataProvider.html#geoidTiledTerrainProvider">Online Documentation</a>
      */
@@ -77,6 +72,12 @@ external class I3SDataProvider(options: ConstructorOptions) {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SDataProvider.html#layers">Online Documentation</a>
      */
     val layers: ReadonlyArray<I3SLayer>
+
+    /**
+     * Gets the collection of building sublayers.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SDataProvider.html#sublayers">Online Documentation</a>
+     */
+    val sublayers: ReadonlyArray<I3SSublayer>
 
     /**
      * Gets the I3S data for this object.
@@ -95,6 +96,30 @@ external class I3SDataProvider(options: ConstructorOptions) {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SDataProvider.html#resource">Online Documentation</a>
      */
     val resource: Resource
+
+    /**
+     * Determines if the features will be shown.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SDataProvider.html#showFeatures">Online Documentation</a>
+     */
+    val showFeatures: Boolean
+
+    /**
+     * Determines if the alpha mode of the material will be adjusted depending on the color vertex attribute.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SDataProvider.html#adjustMaterialAlphaMode">Online Documentation</a>
+     */
+    val adjustMaterialAlphaMode: Boolean
+
+    /**
+     * Determines if the I3S symbology will be parsed and applied for the layers.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SDataProvider.html#applySymbology">Online Documentation</a>
+     */
+    val applySymbology: Boolean
+
+    /**
+     * Determines if the flat normals will be generated for I3S geometry without normals.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SDataProvider.html#calculateNormals">Online Documentation</a>
+     */
+    val calculateNormals: Boolean
 
     /**
      * Destroys the WebGL resources held by this object. Destroying an object allows for deterministic
@@ -118,22 +143,74 @@ external class I3SDataProvider(options: ConstructorOptions) {
     fun isDestroyed(): Boolean
 
     /**
+     * Returns the collection of names for all available attributes
+     * @return The collection of attribute names
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SDataProvider.html#getAttributeNames">Online Documentation</a>
+     */
+    fun getAttributeNames(): ReadonlyArray<String>
+
+    /**
+     * Returns the collection of values for the attribute with the given name
+     * @param [name] The attribute name
+     * @return The collection of attribute values
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SDataProvider.html#getAttributeValues">Online Documentation</a>
+     */
+    fun getAttributeValues(name: String): ReadonlyArray<String>
+
+    /**
+     * Filters the drawn elements of a scene to specific attribute names and values
+     * @param [filters] The collection of attribute filters
+     *   Default value - `[]`
+     * @return A promise that is resolved when the filter is applied
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SDataProvider.html#filterByAttributes">Online Documentation</a>
+     */
+    fun filterByAttributes(filters: ReadonlyArray<I3SNode.AttributeFilter>? = definedExternally): Promise<Void>
+
+    /**
      * Initialization options for the I3SDataProvider constructor
+     * ```
+     * // Increase LOD by reducing SSE
+     * const cesium3dTilesetOptions = {
+     *   maximumScreenSpaceError: 1,
+     * };
+     * const i3sOptions = {
+     *   cesium3dTilesetOptions: cesium3dTilesetOptions,
+     * };
+     * ```
+     * ```
+     * // Set a custom outline color to replace the color defined in I3S symbology
+     * const cesium3dTilesetOptions = {
+     *   outlineColor: Color.BLUE,
+     * };
+     * const i3sOptions = {
+     *   cesium3dTilesetOptions: cesium3dTilesetOptions,
+     *   applySymbology: true,
+     * };
+     * ```
      * @property [name] The name of the I3S dataset.
      * @property [show] Determines if the dataset will be shown.
      *   Default value - `true`
      * @property [geoidTiledTerrainProvider] Tiled elevation provider describing an Earth Gravitational Model. If defined, geometry will be shifted based on the offsets given by this provider. Required to position I3S data sets with gravity-related height at the correct location.
-     * @property [traceFetches] Debug option. When true, log a message whenever an I3S tile is fetched.
-     *   Default value - `false`
      * @property [cesium3dTilesetOptions] Object containing options to pass to an internally created [Cesium3DTileset]. See [Cesium3DTileset] for list of valid properties. All options can be used with the exception of `url` and `show` which are overridden by values from I3SDataProvider.
+     * @property [showFeatures] Determines if the features will be shown.
+     *   Default value - `false`
+     * @property [adjustMaterialAlphaMode] The option to adjust the alpha mode of the material based on the transparency of the vertex color. When `true`, the alpha mode of the material (if not defined) will be set to BLEND for geometry with any transparency in the color vertex attribute.
+     *   Default value - `false`
+     * @property [applySymbology] Determines if the I3S symbology will be parsed and applied for the layers.
+     *   Default value - `false`
+     * @property [calculateNormals] Determines if the flat normals will be generated for I3S geometry without normals.
+     *   Default value - `false`
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SDataProvider.html#.ConstructorOptions">Online Documentation</a>
      */
     interface ConstructorOptions {
         var name: String?
         var show: Boolean?
         var geoidTiledTerrainProvider: dynamic
-        var traceFetches: Boolean?
         var cesium3dTilesetOptions: Cesium3DTileset.ConstructorOptions?
+        var showFeatures: Boolean?
+        var adjustMaterialAlphaMode: Boolean?
+        var applySymbology: Boolean?
+        var calculateNormals: Boolean?
     }
 
     companion object {

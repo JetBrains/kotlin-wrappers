@@ -25,11 +25,11 @@ import js.promise.Promise
  * }
  * ```
  * ```
- * // Allow camera to go inside and under 3D tileset
+ * // Turn on camera collisions with the tileset.
  * try {
  *   const tileset = await Cesium3DTileset.fromUrl(
  *      "http://localhost:8002/tilesets/Seattle/tileset.json",
- *      { disableCollision: true }
+ *      { enableCollision: true }
  *   );
  *   scene.primitives.add(tileset);
  * } catch (error) {
@@ -440,10 +440,10 @@ external class Cesium3DTileset(options: ConstructorOptions) {
     var splitDirection: SplitDirection
 
     /**
-     * Whether to turn off collisions for camera collisions or picking. While this is  `true` the camera will be allowed to go in or below the tileset surface if [ScreenSpaceCameraController.enableCollisionDetection] is true.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#disableCollision">Online Documentation</a>
+     * If `true`, allows collisions for camera collisions or picking. While this is  `true` the camera will be prevented from going in or below the tileset surface if [ScreenSpaceCameraController.enableCollisionDetection] is true. This can have performance implecations if the tileset contains tile with a larger number of vertices.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#enableCollision">Online Documentation</a>
      */
-    var disableCollision: Boolean
+    var enableCollision: Boolean
 
     /**
      * This property is for debugging only; it is not optimized for production use.
@@ -537,6 +537,12 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#examineVectorLinesFunction">Online Documentation</a>
      */
     var examineVectorLinesFunction: Function<*>
+
+    /**
+     * Whether to turn off collisions for camera collisions or picking. While this is `true` the camera will be allowed to go in or below the tileset surface if [ScreenSpaceCameraController.enableCollisionDetection] is true.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#disableCollision">Online Documentation</a>
+     */
+    var disableCollision: Boolean
 
     /**
      * Gets the tileset's asset object property, which contains metadata about the tileset.
@@ -1004,8 +1010,10 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      *   Default value - `false`
      * @property [splitDirection] The [SplitDirection] split to apply to this tileset.
      *   Default value - [SplitDirection.NONE]
-     * @property [disableCollision] Whether to turn off collisions for camera collisions or picking. While this is `true` the camera will be allowed to go in or below the tileset surface if [ScreenSpaceCameraController.enableCollisionDetection] is true.
+     * @property [enableCollision] When `true`, enables collisions for camera or CPU picking. While this is `true` the camera will be prevented from going below the tileset surface if [ScreenSpaceCameraController.enableCollisionDetection] is true.
      *   Default value - `false`
+     * @property [disableCollision] Whether to turn off collisions for camera collisions or picking. While this is `true` the camera will be allowed to go in or below the tileset surface if [ScreenSpaceCameraController.enableCollisionDetection] is true. Deprecated.
+     *   Default value - `true`
      * @property [projectTo2D] Whether to accurately project the tileset to 2D. If this is true, the tileset will be projected accurately to 2D, but it will use more memory to do so. If this is false, the tileset will use less memory and will still render in 2D / CV mode, but its projected positions may be inaccurate. This cannot be set after the tileset has been created.
      *   Default value - `false`
      * @property [enablePick] Whether to allow collision and CPU picking with `pick` when using WebGL 1. If using WebGL 2 or above, this option will be ignored. If using WebGL 1 and this is true, the `pick` operation will work correctly, but it will use more memory to do so. If running with WebGL 1 and this is false, the model will use less memory, but `pick` will always return `undefined`. This cannot be set after the tileset has loaded.
@@ -1082,6 +1090,7 @@ external class Cesium3DTileset(options: ConstructorOptions) {
         var instanceFeatureIdLabel: String?
         var showCreditsOnScreen: Boolean?
         var splitDirection: SplitDirection?
+        var enableCollision: Boolean?
         var disableCollision: Boolean?
         var projectTo2D: Boolean?
         var enablePick: Boolean?

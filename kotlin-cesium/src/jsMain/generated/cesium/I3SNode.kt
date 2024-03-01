@@ -77,6 +77,14 @@ sealed external class I3SNode {
     fun loadFields(): Promise<Void>
 
     /**
+     * Loads the node field.
+     * @param [name] The field name
+     * @return A promise that is resolved when the I3S Node field is loaded
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SNode.html#loadField">Online Documentation</a>
+     */
+    fun loadField(name: String): Promise<Void>
+
+    /**
      * Returns the fields for a given picked position
      * @param [pickedPosition] The picked position
      * @return Object containing field names and their values
@@ -91,4 +99,16 @@ sealed external class I3SNode {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SNode.html#getFieldsForFeature">Online Documentation</a>
      */
     fun getFieldsForFeature(featureIndex: Int): Any
+
+    /**
+     * A filter given by an attribute name and values.
+     * The 3D feature object should be hidden if its value for the attribute name is not specified in the collection of values.
+     * @property [name] The name of the attribute
+     * @property [values] The collection of values
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SNode.html#.AttributeFilter">Online Documentation</a>
+     */
+    interface AttributeFilter {
+        var name: String
+        var values: dynamic
+    }
 }

@@ -4,6 +4,10 @@
 
 package cesium
 
+import js.array.ReadonlyArray
+import js.core.Void
+import js.promise.Promise
+
 /**
  * This class implements an I3S layer. In CesiumJS each I3SLayer creates a Cesium3DTileset.
  *
@@ -58,4 +62,13 @@ sealed external class I3SLayer {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SLayer.html#legacyVersion16">Online Documentation</a>
      */
     val legacyVersion16: Boolean
+
+    /**
+     * Filters the drawn elements of a layer to specific attribute names and values
+     * @param [filters] The collection of attribute filters
+     *   Default value - `[]`
+     * @return A promise that is resolved when the filter is applied
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SLayer.html#filterByAttributes">Online Documentation</a>
+     */
+    fun filterByAttributes(filters: ReadonlyArray<I3SNode.AttributeFilter>? = definedExternally): Promise<Void>
 }

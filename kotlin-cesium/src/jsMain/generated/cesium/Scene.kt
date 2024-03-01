@@ -693,6 +693,32 @@ external class Scene(options: ConstructorOptions) {
     ): Any
 
     /**
+     * Returns a [VoxelCell] for the voxel sample rendered at a particular window coordinate,
+     * or undefined if no voxel is rendered at that position.
+     * ```
+     * On left click, report the value of the "color" property at that voxel sample.
+     * handler.setInputAction(function(movement) {
+     *   const voxelCell = scene.pickVoxel(movement.position);
+     *   if (defined(voxelCell)) {
+     *     console.log(voxelCell.getProperty("color"));
+     *   }
+     * }, ScreenSpaceEventType.LEFT_CLICK);
+     * ```
+     * @param [windowPosition] Window coordinates to perform picking on.
+     * @param [width] Width of the pick rectangle.
+     *   Default value - `3`
+     * @param [height] Height of the pick rectangle.
+     *   Default value - `3`
+     * @return Information about the voxel cell rendered at the picked position.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#pickVoxel">Online Documentation</a>
+     */
+    fun pickVoxel(
+        windowPosition: Cartesian2,
+        width: Double? = definedExternally,
+        height: Double? = definedExternally,
+    ): VoxelCell?
+
+    /**
      * Returns the cartesian position reconstructed from the depth buffer and window position.
      *
      * The position reconstructed from the depth buffer in 2D may be slightly different from those
@@ -943,6 +969,15 @@ external class Scene(options: ConstructorOptions) {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#destroy">Online Documentation</a>
      */
     fun destroy()
+
+    companion object {
+        /**
+         * Use this to set the default value for [Scene.logarithmicDepthBuffer] in newly constructed Scenes
+         * This property relies on fragmentDepth being supported.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#.defaultLogDepthBuffer">Online Documentation</a>
+         */
+        var defaultLogDepthBuffer: Any
+    }
 }
 
 inline fun Scene(
