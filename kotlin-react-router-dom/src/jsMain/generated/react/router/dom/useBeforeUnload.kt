@@ -17,4 +17,4 @@ import web.window.BeforeUnloadEvent
 external fun useBeforeUnload(
     callback: (event: BeforeUnloadEvent<*>) -> Any?,
     options: UseBeforeUnloadOptions = definedExternally,
-)
+): Unit

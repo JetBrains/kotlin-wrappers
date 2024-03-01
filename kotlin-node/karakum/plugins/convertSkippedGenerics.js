@@ -138,6 +138,31 @@ export default function (node, context, render) {
     }
 
     if (
+        ts.isTypeReferenceNode(node)
+        && ts.isIdentifier(node.typeName)
+        && node.typeName.text === "Event"
+        && !node.typeArguments
+    ) {
+        if (
+            node.parent
+            && ts.isParameter(node.parent)
+
+            && node.parent.parent
+            && ts.isFunctionTypeNode(node.parent.parent)
+
+            && node.parent.parent.parent
+            && ts.isParameter(node.parent.parent.parent)
+
+            && node.parent.parent.parent.parent
+            && ts.isMethodDeclaration(node.parent.parent.parent.parent)
+            && ts.isIdentifier(node.parent.parent.parent.parent.name)
+            && node.parent.parent.parent.parent.name.text === "addAbortListener"
+        ) {
+            return "Event<AbortSignal>"
+        }
+    }
+
+    if (
         ts.isExpressionWithTypeArguments(node)
         && ts.isIdentifier(node.expression)
         && node.expression.text === "OutgoingMessage"
