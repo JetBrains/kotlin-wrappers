@@ -3,13 +3,14 @@
 package web.gl
 
 import js.array.ReadonlyArray
+import web.events.EventTarget
 import web.images.PredefinedColorSpace
 
 sealed external interface WebGLRenderingContextBase {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/canvas)
      */
-    val canvas: Any /* HTMLCanvasElement | OffscreenCanvas */
+    val canvas: EventTarget /* HTMLCanvasElement | OffscreenCanvas */
     var drawingBufferColorSpace: PredefinedColorSpace
 
     /**

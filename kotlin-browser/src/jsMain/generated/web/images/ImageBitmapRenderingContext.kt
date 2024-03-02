@@ -3,6 +3,7 @@
 package web.images
 
 import seskar.js.JsValue
+import web.events.EventTarget
 import web.rendering.OffscreenRenderingContext
 import web.rendering.RenderingContext
 import web.rendering.RenderingContextId
@@ -16,7 +17,7 @@ sealed external class ImageBitmapRenderingContext :
     /**
      * Returns the canvas element that the context is bound to.
      */
-    val canvas: Any /* HTMLCanvasElement | OffscreenCanvas */
+    val canvas: EventTarget /* HTMLCanvasElement | OffscreenCanvas */
 
     /**
      * Transfers the underlying bitmap data from imageBitmap to context, and the bitmap becomes the contents of the canvas element to which context is bound.
