@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 sealed external interface GPUImageDataLayout {
-    var offset: Number?
-    var bytesPerRow: Number?
-    var rowsPerImage: Number?
+    var offset: GPUSize64?
+    var bytesPerRow: GPUSize32?
+    var rowsPerImage: GPUSize32?
 }

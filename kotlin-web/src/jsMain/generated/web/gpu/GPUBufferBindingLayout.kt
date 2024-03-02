@@ -8,5 +8,5 @@ import js.objects.JsPlainObject
 sealed external interface GPUBufferBindingLayout {
     var type: GPUBufferBindingType?
     var hasDynamicOffset: Boolean?
-    var minBindingSize: Number?
+    var minBindingSize: GPUSize64?
 }

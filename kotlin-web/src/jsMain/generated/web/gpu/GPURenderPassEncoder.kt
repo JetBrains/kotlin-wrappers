@@ -68,24 +68,24 @@ sealed external class GPURenderPassEncoder :
     )
 
     fun setViewport(
-        x: Float,
-        y: Float,
-        width: Float,
-        height: Float,
+        x: GPUIntegerCoordinate,
+        y: GPUIntegerCoordinate,
+        width: GPUIntegerCoordinate,
+        height: GPUIntegerCoordinate,
         minDepth: Float,
         maxDepth: Float,
     )
 
     fun setScissorRect(
-        x: Float,
-        y: Float,
-        width: Float,
-        height: Float,
+        x: GPUIntegerCoordinate,
+        y: GPUIntegerCoordinate,
+        width: GPUIntegerCoordinate,
+        height: GPUIntegerCoordinate,
     )
 
     fun setBlendConstant(color: GPUColor)
-    fun setStencilReference(reference: Number)
-    fun beginOcclusionQuery(queryIndex: Number)
+    fun setStencilReference(reference: GPUStencilValue)
+    fun beginOcclusionQuery(queryIndex: GPUSize32)
     fun endOcclusionQuery()
     fun executeBundles(bundles: ReadonlyArray<GPURenderBundle>)
     fun end()

@@ -7,5 +7,5 @@ sealed external class GPUQuerySet :
     override var label: String
     fun destroy()
     val type: GPUQueryType
-    val count: Number
+    val count: GPUSize32Out
 }

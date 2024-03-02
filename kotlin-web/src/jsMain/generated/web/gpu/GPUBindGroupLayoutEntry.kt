@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 sealed external interface GPUBindGroupLayoutEntry {
-    var binding: Number
+    var binding: GPUIndex32
     var visibility: GPUShaderStage
     var buffer: GPUBufferBindingLayout?
     var sampler: GPUSamplerBindingLayout?

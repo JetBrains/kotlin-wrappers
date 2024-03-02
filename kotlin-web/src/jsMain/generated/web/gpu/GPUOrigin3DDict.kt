@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 sealed external interface GPUOrigin3DDict {
-    var x: Number?
-    var y: Number?
-    var z: Number?
+    var x: GPUIntegerCoordinate?
+    var y: GPUIntegerCoordinate?
+    var z: GPUIntegerCoordinate?
 }

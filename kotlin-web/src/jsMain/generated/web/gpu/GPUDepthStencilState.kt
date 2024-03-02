@@ -11,9 +11,9 @@ sealed external interface GPUDepthStencilState {
     var depthCompare: GPUCompareFunction
     var stencilFront: GPUStencilFaceState?
     var stencilBack: GPUStencilFaceState?
-    var stencilReadMask: Number?
-    var stencilWriteMask: Number?
-    var depthBias: Number?
+    var stencilReadMask: GPUStencilValue?
+    var stencilWriteMask: GPUStencilValue?
+    var depthBias: GPUDepthBias?
     var depthBiasSlopeScale: Float?
     var depthBiasClamp: Float?
 }

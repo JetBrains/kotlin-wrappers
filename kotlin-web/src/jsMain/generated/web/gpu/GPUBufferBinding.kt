@@ -8,6 +8,6 @@ import js.objects.JsPlainObject
 sealed external interface GPUBufferBinding :
     GPUBindingResource {
     var buffer: GPUBuffer
-    var offset: Number?
-    var size: Number?
+    var offset: GPUSize64?
+    var size: GPUSize64?
 }

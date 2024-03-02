@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 sealed external interface GPUBindGroupEntry {
-    var binding: Number
+    var binding: GPUIndex32
     var resource: GPUBindingResource
 }

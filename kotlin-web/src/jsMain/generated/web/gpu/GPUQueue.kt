@@ -14,10 +14,10 @@ sealed external class GPUQueue :
     fun onSubmittedWorkDone(): Promise<Void>
     fun writeBuffer(
         buffer: GPUBuffer,
-        bufferOffset: Number,
+        bufferOffset: GPUSize64,
         data: BufferSource,
-        dataOffset: Number = definedExternally,
-        size: Number = definedExternally,
+        dataOffset: GPUSize64 = definedExternally,
+        size: GPUSize64 = definedExternally,
     )
 
     fun writeTexture(

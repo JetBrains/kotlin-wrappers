@@ -35,7 +35,7 @@ sealed external class GPUComputePassEncoder :
 
     fun dispatchWorkgroupsIndirect(
         indirectBuffer: GPUBuffer,
-        indirectOffset: Number,
+        indirectOffset: GPUSize64,
     )
 
     fun end()

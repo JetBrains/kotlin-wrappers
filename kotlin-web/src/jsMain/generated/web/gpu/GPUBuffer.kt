@@ -9,18 +9,18 @@ import js.promise.Promise
 sealed external class GPUBuffer :
     GPUObjectBase {
     override var label: String
-    val size: Number
+    val size: GPUSize64Out
     val usage: GPUUsage
     val mapState: GPUBufferMapState
     fun mapAsync(
         mode: GPUMapMode,
-        offset: Number = definedExternally,
-        size: Number = definedExternally,
+        offset: GPUSize64 = definedExternally,
+        size: GPUSize64 = definedExternally,
     ): Promise<Void>
 
     fun getMappedRange(
-        offset: Number = definedExternally,
-        size: Number = definedExternally,
+        offset: GPUSize64 = definedExternally,
+        size: GPUSize64 = definedExternally,
     ): ArrayBuffer
 
     fun unmap()

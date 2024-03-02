@@ -7,8 +7,8 @@ sealed external interface GPUTextureViewDescriptor :
     var format: GPUTextureFormat?
     var dimension: GPUTextureViewDimension?
     var aspect: GPUTextureAspect?
-    var baseMipLevel: Number?
-    var mipLevelCount: Number?
-    var baseArrayLayer: Number?
-    var arrayLayerCount: Number?
+    var baseMipLevel: GPUIntegerCoordinate?
+    var mipLevelCount: GPUIntegerCoordinate?
+    var baseArrayLayer: GPUIntegerCoordinate?
+    var arrayLayerCount: GPUIntegerCoordinate?
 }

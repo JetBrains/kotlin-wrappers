@@ -9,10 +9,10 @@ sealed external class GPUCommandEncoder :
     fun beginComputePass(descriptor: GPUComputePassDescriptor = definedExternally): GPUComputePassEncoder
     fun copyBufferToBuffer(
         source: GPUBuffer,
-        sourceOffset: Number,
+        sourceOffset: GPUSize64,
         destination: GPUBuffer,
-        destinationOffset: Number,
-        size: Number,
+        destinationOffset: GPUSize64,
+        size: GPUSize64,
     )
 
     fun copyBufferToTexture(
@@ -35,8 +35,8 @@ sealed external class GPUCommandEncoder :
 
     fun clearBuffer(
         destination: GPUBuffer,
-        destinationOffset: Number = definedExternally,
-        size: Number = definedExternally,
+        destinationOffset: GPUSize64 = definedExternally,
+        size: GPUSize64 = definedExternally,
     )
 
     fun pushDebugGroup(groupLabel: String)
@@ -49,10 +49,10 @@ sealed external class GPUCommandEncoder :
 
     fun resolveQuerySet(
         querySet: GPUQuerySet,
-        firstQuery: Number,
-        queryCount: Number,
+        firstQuery: GPUSize32,
+        queryCount: GPUSize32,
         destination: GPUBuffer,
-        destinationOffset: Number,
+        destinationOffset: GPUSize64,
     )
 
     fun finish(descriptor: GPUCommandBufferDescriptor = definedExternally): GPUCommandBuffer

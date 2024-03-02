@@ -11,7 +11,7 @@ sealed external interface GPURenderPassDepthStencilAttachment {
     var depthLoadOp: GPULoadOp?
     var depthStoreOp: GPUStoreOp?
     var depthReadOnly: Boolean?
-    var stencilClearValue: Number?
+    var stencilClearValue: GPUStencilValue?
     var stencilLoadOp: GPULoadOp?
     var stencilStoreOp: GPUStoreOp?
     var stencilReadOnly: Boolean?

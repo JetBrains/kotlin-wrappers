@@ -7,7 +7,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 sealed external interface GPUVertexBufferLayout {
-    var arrayStride: Number
+    var arrayStride: GPUSize64
     var stepMode: GPUVertexStepMode?
     var attributes: ReadonlyArray<GPUVertexAttribute>
 }
