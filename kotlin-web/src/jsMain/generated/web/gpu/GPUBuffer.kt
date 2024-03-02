@@ -10,7 +10,7 @@ sealed external class GPUBuffer :
     GPUObjectBase {
     override var label: String
     val size: Number
-    val usage: GPUConstant
+    val usage: GPUUsage
     val mapState: GPUBufferMapState
     fun mapAsync(
         mode: GPUMapMode,

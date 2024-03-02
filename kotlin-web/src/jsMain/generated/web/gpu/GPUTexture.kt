@@ -14,5 +14,5 @@ sealed external class GPUTexture :
     val sampleCount: Number
     val dimension: GPUTextureDimension
     val format: GPUTextureFormat
-    val usage: GPUConstant
+    val usage: GPUUsage
 }

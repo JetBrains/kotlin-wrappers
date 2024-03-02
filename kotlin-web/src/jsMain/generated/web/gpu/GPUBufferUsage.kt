@@ -6,8 +6,8 @@
 
 package web.gpu
 
-external interface GPUBufferUsage
-    : GPUConstant {
+external interface GPUBufferUsage :
+    GPUUsage {
     companion object {
         val MAP_READ: GPUBufferUsage            // 0x0001
         val MAP_WRITE: GPUBufferUsage           // 0x0002

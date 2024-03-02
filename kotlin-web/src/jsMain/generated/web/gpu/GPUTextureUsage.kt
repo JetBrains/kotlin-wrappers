@@ -6,8 +6,8 @@
 
 package web.gpu
 
-external interface GPUTextureUsage
-    : GPUConstant {
+external interface GPUTextureUsage :
+    GPUUsage {
     companion object {
         val COPY_SRC: GPUTextureUsage           // 0x01
         val COPY_DST: GPUTextureUsage           // 0x02

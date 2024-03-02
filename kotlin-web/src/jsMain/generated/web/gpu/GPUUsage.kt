@@ -2,4 +2,4 @@
 
 package web.gpu
 
-sealed external interface GPUConstant
+sealed external interface GPUUsage
