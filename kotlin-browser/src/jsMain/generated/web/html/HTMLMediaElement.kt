@@ -163,7 +163,7 @@ sealed external class HTMLMediaElement :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/preload)
      */
-    var preload: String /* "none" | "metadata" | "auto" | "" */
+    var preload: Preload
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/preservesPitch)
