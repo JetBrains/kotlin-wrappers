@@ -11,60 +11,60 @@ sealed external class GPURenderBundleEncoder :
     GPURenderEncoderBase {
     override var label: String
     override fun draw(
-        vertexCount: Number,
-        instanceCount: Number,
-        firstVertex: Number,
-        firstInstance: Number,
+        vertexCount: Int,
+        instanceCount: Int,
+        firstVertex: Int,
+        firstInstance: Int,
     )
 
     override fun drawIndexed(
-        indexCount: Number,
-        instanceCount: Number,
-        firstIndex: Number,
-        baseVertex: Number,
-        firstInstance: Number,
+        indexCount: Int,
+        instanceCount: Int,
+        firstIndex: Int,
+        baseVertex: Int,
+        firstInstance: Int,
     )
 
     override fun drawIndexedIndirect(
         indirectBuffer: GPUBuffer,
-        indirectOffset: Number,
+        indirectOffset: Int,
     )
 
     override fun drawIndirect(
         indirectBuffer: GPUBuffer,
-        indirectOffset: Number,
+        indirectOffset: Int,
     )
 
     override fun insertDebugMarker(markerLabel: String)
     override fun popDebugGroup()
     override fun pushDebugGroup(groupLabel: String)
     override fun setBindGroup(
-        index: Number,
+        index: Int,
         bindGroup: GPUBindGroup,
         dynamicOffsets: ReadonlyArray<Double>,
     )
 
     override fun setBindGroup(
-        index: Number,
+        index: Int,
         bindGroup: GPUBindGroup,
         dynamicOffsetsData: Uint32Array,
-        dynamicOffsetsDataStart: Number,
-        dynamicOffsetsDataLength: Number,
+        dynamicOffsetsDataStart: Int,
+        dynamicOffsetsDataLength: Int,
     )
 
     override fun setIndexBuffer(
         buffer: GPUBuffer,
         indexFormat: GPUIndexFormat,
-        offset: Number,
-        size: Number,
+        offset: Int,
+        size: Int,
     )
 
     override fun setPipeline(pipeline: GPURenderPipeline)
     override fun setVertexBuffer(
-        slot: Number,
+        slot: Int,
         buffer: GPUBuffer,
-        offset: Number,
-        size: Number,
+        offset: Int,
+        size: Int,
     )
 
     fun finish(descriptor: GPURenderBundleDescriptor = definedExternally): GPURenderBundle

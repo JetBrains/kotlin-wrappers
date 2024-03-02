@@ -7,39 +7,39 @@ sealed external interface GPURenderEncoderBase {
     fun setIndexBuffer(
         buffer: GPUBuffer,
         indexFormat: GPUIndexFormat,
-        offset: Number = definedExternally,
-        size: Number = definedExternally,
+        offset: Int = definedExternally,
+        size: Int = definedExternally,
     )
 
     fun setVertexBuffer(
-        slot: Number,
+        slot: Int,
         buffer: GPUBuffer,
-        offset: Number = definedExternally,
-        size: Number = definedExternally,
+        offset: Int = definedExternally,
+        size: Int = definedExternally,
     )
 
     fun draw(
-        vertexCount: Number,
-        instanceCount: Number = definedExternally,
-        firstVertex: Number = definedExternally,
-        firstInstance: Number = definedExternally,
+        vertexCount: Int,
+        instanceCount: Int = definedExternally,
+        firstVertex: Int = definedExternally,
+        firstInstance: Int = definedExternally,
     )
 
     fun drawIndexed(
-        indexCount: Number,
-        instanceCount: Number = definedExternally,
-        firstIndex: Number = definedExternally,
-        baseVertex: Number = definedExternally,
-        firstInstance: Number = definedExternally,
+        indexCount: Int,
+        instanceCount: Int = definedExternally,
+        firstIndex: Int = definedExternally,
+        baseVertex: Int = definedExternally,
+        firstInstance: Int = definedExternally,
     )
 
     fun drawIndirect(
         indirectBuffer: GPUBuffer,
-        indirectOffset: Number,
+        indirectOffset: Int,
     )
 
     fun drawIndexedIndirect(
         indirectBuffer: GPUBuffer,
-        indirectOffset: Number,
+        indirectOffset: Int,
     )
 }

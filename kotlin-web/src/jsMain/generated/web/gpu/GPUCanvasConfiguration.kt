@@ -3,6 +3,7 @@
 package web.gpu
 
 import js.array.ReadonlyArray
+import js.core.JsLong
 import js.objects.JsPlainObject
 
 @JsPlainObject
@@ -13,6 +14,6 @@ sealed external interface GPUCanvasConfiguration {
     var viewFormats: ReadonlyArray<GPUTextureFormat>?
     var colorSpace: String /* "srgb" | "display-p3" */?
     var alphaMode: GPUCanvasAlphaMode?
-    var width: Number
-    var height: Number
+    var width: JsLong
+    var height: JsLong
 }

@@ -7,17 +7,17 @@ import js.typedarrays.Uint32Array
 
 sealed external interface GPUProgrammablePassEncoder {
     fun setBindGroup(
-        index: Number,
+        index: Int,
         bindGroup: GPUBindGroup,
         dynamicOffsets: ReadonlyArray<Double> = definedExternally,
     )
 
     fun setBindGroup(
-        index: Number,
+        index: Int,
         bindGroup: GPUBindGroup,
         dynamicOffsetsData: Uint32Array,
-        dynamicOffsetsDataStart: Number,
-        dynamicOffsetsDataLength: Number,
+        dynamicOffsetsDataStart: Int,
+        dynamicOffsetsDataLength: Int,
     )
 
     fun pushDebugGroup(groupLabel: String)

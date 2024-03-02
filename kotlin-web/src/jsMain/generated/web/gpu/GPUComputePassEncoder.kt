@@ -10,17 +10,17 @@ sealed external class GPUComputePassEncoder :
     GPUProgrammablePassEncoder {
     override var label: String
     override fun setBindGroup(
-        index: Number,
+        index: Int,
         bindGroup: GPUBindGroup,
         dynamicOffsets: ReadonlyArray<Double>,
     )
 
     override fun setBindGroup(
-        index: Number,
+        index: Int,
         bindGroup: GPUBindGroup,
         dynamicOffsetsData: Uint32Array,
-        dynamicOffsetsDataStart: Number,
-        dynamicOffsetsDataLength: Number,
+        dynamicOffsetsDataStart: Int,
+        dynamicOffsetsDataLength: Int,
     )
 
     override fun pushDebugGroup(groupLabel: String)
@@ -28,9 +28,9 @@ sealed external class GPUComputePassEncoder :
     override fun insertDebugMarker(markerLabel: String)
     fun setPipeline(pipeline: GPUComputePipeline)
     fun dispatchWorkgroups(
-        x: Number,
-        y: Number = definedExternally,
-        z: Number = definedExternally,
+        x: Int,
+        y: Int = definedExternally,
+        z: Int = definedExternally,
     )
 
     fun dispatchWorkgroupsIndirect(

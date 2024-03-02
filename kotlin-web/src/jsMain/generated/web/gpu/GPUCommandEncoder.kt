@@ -44,7 +44,7 @@ sealed external class GPUCommandEncoder :
     fun insertDebugMarker(markerLabel: String)
     fun writeTimestamp(
         querySet: GPUQuerySet,
-        queryIndex: Number,
+        queryIndex: Int,
     )
 
     fun resolveQuerySet(
