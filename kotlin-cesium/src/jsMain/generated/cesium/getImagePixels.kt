@@ -4,7 +4,7 @@
 
 package cesium
 
-import web.canvas.ImageData
+import web.images.ImageData
 
 /**
  * Extract a pixel array from a loaded image.  Draws the image
