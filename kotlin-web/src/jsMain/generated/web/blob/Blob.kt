@@ -7,6 +7,7 @@ import js.buffer.ArrayBuffer
 import js.core.JsLong
 import js.promise.Promise
 import js.typedarrays.Uint8Array
+import web.images.ImageBitmapSource
 import web.streams.ReadableStream
 
 /**
@@ -17,7 +18,7 @@ import web.streams.ReadableStream
 open external class Blob(
     blobParts: ReadonlyArray<BlobPart> = definedExternally,
     options: BlobPropertyBag = definedExternally,
-) {
+) : ImageBitmapSource {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/size)
      */
