@@ -9,7 +9,7 @@ import js.objects.JsPlainObject
 sealed external interface GPUCanvasConfiguration {
     var device: GPUDevice
     var format: GPUTextureFormat
-    var usage: GPUTextureUsageFlags?
+    var usage: GPUTextureUsage?
     var viewFormats: ReadonlyArray<GPUTextureFormat>?
     var colorSpace: String /* "srgb" | "display-p3" */?
     var alphaMode: GPUCanvasAlphaMode?

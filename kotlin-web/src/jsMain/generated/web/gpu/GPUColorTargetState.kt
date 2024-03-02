@@ -8,5 +8,5 @@ import js.objects.JsPlainObject
 sealed external interface GPUColorTargetState {
     var format: GPUTextureFormat
     var blend: GPUBlendState?
-    var writeMask: GPUColorWriteFlags?
+    var writeMask: GPUColorWrite?
 }

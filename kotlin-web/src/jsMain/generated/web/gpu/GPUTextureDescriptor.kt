@@ -11,6 +11,6 @@ sealed external interface GPUTextureDescriptor :
     var sampleCount: Number?
     var dimension: GPUTextureDimension?
     var format: GPUTextureFormat
-    var usage: GPUTextureUsageFlags
+    var usage: GPUTextureUsage
     var viewFormats: ReadonlyArray<GPUTextureFormat>?
 }

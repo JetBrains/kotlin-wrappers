@@ -5,6 +5,6 @@ package web.gpu
 sealed external interface GPUBufferDescriptor :
     GPUObjectDescriptorBase {
     var size: Number
-    var usage: GPUBufferUsageFlags
+    var usage: GPUBufferUsage
     var mappedAtCreation: Boolean?
 }
