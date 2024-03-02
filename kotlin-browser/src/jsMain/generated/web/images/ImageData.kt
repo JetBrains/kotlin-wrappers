@@ -14,7 +14,8 @@ external class ImageData(
     sw: Int,
     sh: Int,
     settings: ImageDataSettings = definedExternally,
-) : TexImageSource {
+) : ImageBitmapSource,
+    TexImageSource {
     constructor(
         data: Uint8ClampedArray,
         sw: Int,

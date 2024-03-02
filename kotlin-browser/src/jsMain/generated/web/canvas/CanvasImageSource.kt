@@ -2,6 +2,8 @@
 
 package web.canvas
 
+import web.images.ImageBitmapSource
+
 /**
  * Union of:
  * - `HTMLOrSVGImageElement`
@@ -11,4 +13,5 @@ package web.canvas
  * - `OffscreenCanvas`
  * - `VideoFrame`
  */
-external interface CanvasImageSource
+external interface CanvasImageSource :
+    ImageBitmapSource
