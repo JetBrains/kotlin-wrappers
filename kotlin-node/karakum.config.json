@@ -123,7 +123,9 @@
         "(.+)": "node:$1",
         "node:node/": "node:",
         "node:node:": "node:",
-        "assert": "assert/strict",
+        "assert(#assert)?": "assert/strict",
+        "events#EventEmitter": "events",
+        "module#Module": "module",
         "stream#internal": "stream"
     },
     "packageNameMapper": {
