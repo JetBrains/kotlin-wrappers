@@ -2,7 +2,6 @@
 
 package web.html
 
-import web.components.CustomElementCallbacks
 import web.components.ElementInternals
 import web.cssom.ElementCSSInlineStyle
 import web.dom.Element
@@ -20,8 +19,7 @@ protected constructor() :
     ElementCSSInlineStyle,
     ElementContentEditable,
     GlobalEventHandlers,
-    HTMLOrSVGElement,
-    CustomElementCallbacks {
+    HTMLOrSVGElement {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/accessKey)
      */
