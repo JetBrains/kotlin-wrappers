@@ -2,13 +2,14 @@
 
 package web.form
 
+import web.html.HTMLFormElement
+
 external interface CustomFormControlCallbacks {
-    val formAssociatedCallback: FormAssociatedCallback?
-        get() = definedExternally
-    val formDisabledCallback: FormDisabledCallback?
-        get() = definedExternally
-    val formResetCallback: FormResetCallback?
-        get() = definedExternally
-    val formStateRestoreCallback: FormStateRestoreCallback?
-        get() = definedExternally
+    fun formAssociatedCallback(form: HTMLFormElement?)
+    fun formDisabledCallback(disabled: Boolean)
+    fun formResetCallback()
+    fun formStateRestoreCallback(
+        state: Any?, /* File | string | FormData */
+        mode: FormStateRestoreMode,
+    )
 }
