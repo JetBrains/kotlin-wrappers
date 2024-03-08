@@ -2,24 +2,26 @@
 
 package node.http
 
+import node.net.Socket
+
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface ClientRequestEvent : node.events.EventType {
-    sealed interface ABORT : ClientRequestEvent
-    sealed interface CONNECT : ClientRequestEvent
-    sealed interface CONTINUE : ClientRequestEvent
-    sealed interface INFORMATION : ClientRequestEvent
-    sealed interface RESPONSE : ClientRequestEvent
-    sealed interface SOCKET : ClientRequestEvent
-    sealed interface TIMEOUT : ClientRequestEvent
-    sealed interface UPGRADE : ClientRequestEvent
-    sealed interface CLOSE : ClientRequestEvent
-    sealed interface DRAIN : ClientRequestEvent
-    sealed interface ERROR : ClientRequestEvent
-    sealed interface FINISH : ClientRequestEvent
-    sealed interface PIPE : ClientRequestEvent
-    sealed interface UNPIPE : ClientRequestEvent
+sealed external interface ClientRequestEvent {
+    sealed interface ABORT : node.events.LegacyEventType
+    sealed interface CONNECT : node.events.LegacyEventType
+    sealed interface CONTINUE : node.events.LegacyEventType
+    sealed interface INFORMATION : node.events.LegacyEventType
+    sealed interface RESPONSE : node.events.LegacyEventType
+    sealed interface SOCKET : node.events.LegacyEventType
+    sealed interface TIMEOUT : node.events.LegacyEventType
+    sealed interface UPGRADE : node.events.LegacyEventType
+    sealed interface CLOSE : node.events.LegacyEventType
+    sealed interface DRAIN : node.events.LegacyEventType
+    sealed interface ERROR : node.events.LegacyEventType
+    sealed interface FINISH : node.events.LegacyEventType
+    sealed interface PIPE : node.events.LegacyEventType
+    sealed interface UNPIPE : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("abort")
@@ -63,5 +65,47 @@ sealed external interface ClientRequestEvent : node.events.EventType {
 
         @seskar.js.JsValue("unpipe")
         val UNPIPE: UNPIPE
+
+        @seskar.js.JsValue("abort")
+        fun abort(): node.events.EventType<ClientRequest, js.array.JsTuple>
+
+        @seskar.js.JsValue("connect")
+        fun connect(): node.events.EventType<ClientRequest, js.array.JsTuple3<IncomingMessage, Socket, node.buffer.Buffer>>
+
+        @seskar.js.JsValue("continue")
+        fun `continue`(): node.events.EventType<ClientRequest, js.array.JsTuple>
+
+        @seskar.js.JsValue("information")
+        fun information(): node.events.EventType<ClientRequest, js.array.JsTuple1<InformationEvent>>
+
+        @seskar.js.JsValue("response")
+        fun response(): node.events.EventType<ClientRequest, js.array.JsTuple1<IncomingMessage>>
+
+        @seskar.js.JsValue("socket")
+        fun socket(): node.events.EventType<ClientRequest, js.array.JsTuple1<Socket>>
+
+        @seskar.js.JsValue("timeout")
+        fun timeout(): node.events.EventType<ClientRequest, js.array.JsTuple>
+
+        @seskar.js.JsValue("upgrade")
+        fun upgrade(): node.events.EventType<ClientRequest, js.array.JsTuple3<IncomingMessage, Socket, node.buffer.Buffer>>
+
+        @seskar.js.JsValue("close")
+        fun close(): node.events.EventType<ClientRequest, js.array.JsTuple>
+
+        @seskar.js.JsValue("drain")
+        fun drain(): node.events.EventType<ClientRequest, js.array.JsTuple>
+
+        @seskar.js.JsValue("error")
+        fun error(): node.events.EventType<ClientRequest, js.array.JsTuple1<Throwable /* JsError */>>
+
+        @seskar.js.JsValue("finish")
+        fun finish(): node.events.EventType<ClientRequest, js.array.JsTuple>
+
+        @seskar.js.JsValue("pipe")
+        fun pipe(): node.events.EventType<ClientRequest, js.array.JsTuple1<node.stream.Readable>>
+
+        @seskar.js.JsValue("unpipe")
+        fun unpipe(): node.events.EventType<ClientRequest, js.array.JsTuple1<node.stream.Readable>>
     }
 }

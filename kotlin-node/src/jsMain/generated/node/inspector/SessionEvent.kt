@@ -5,34 +5,34 @@ package node.inspector
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface SessionEvent : node.events.EventType {
-    sealed interface INSPECTORNOTIFICATION : SessionEvent
-    sealed interface RUNTIME_EXECUTIONCONTEXTCREATED : SessionEvent
-    sealed interface RUNTIME_EXECUTIONCONTEXTDESTROYED : SessionEvent
-    sealed interface RUNTIME_EXECUTIONCONTEXTSCLEARED : SessionEvent
-    sealed interface RUNTIME_EXCEPTIONTHROWN : SessionEvent
-    sealed interface RUNTIME_EXCEPTIONREVOKED : SessionEvent
-    sealed interface RUNTIME_CONSOLEAPICALLED : SessionEvent
-    sealed interface RUNTIME_INSPECTREQUESTED : SessionEvent
-    sealed interface DEBUGGER_SCRIPTPARSED : SessionEvent
-    sealed interface DEBUGGER_SCRIPTFAILEDTOPARSE : SessionEvent
-    sealed interface DEBUGGER_BREAKPOINTRESOLVED : SessionEvent
-    sealed interface DEBUGGER_PAUSED : SessionEvent
-    sealed interface DEBUGGER_RESUMED : SessionEvent
-    sealed interface CONSOLE_MESSAGEADDED : SessionEvent
-    sealed interface PROFILER_CONSOLEPROFILESTARTED : SessionEvent
-    sealed interface PROFILER_CONSOLEPROFILEFINISHED : SessionEvent
-    sealed interface HEAPPROFILER_ADDHEAPSNAPSHOTCHUNK : SessionEvent
-    sealed interface HEAPPROFILER_RESETPROFILES : SessionEvent
-    sealed interface HEAPPROFILER_REPORTHEAPSNAPSHOTPROGRESS : SessionEvent
-    sealed interface HEAPPROFILER_LASTSEENOBJECTID : SessionEvent
-    sealed interface HEAPPROFILER_HEAPSTATSUPDATE : SessionEvent
-    sealed interface NODETRACING_DATACOLLECTED : SessionEvent
-    sealed interface NODETRACING_TRACINGCOMPLETE : SessionEvent
-    sealed interface NODEWORKER_ATTACHEDTOWORKER : SessionEvent
-    sealed interface NODEWORKER_DETACHEDFROMWORKER : SessionEvent
-    sealed interface NODEWORKER_RECEIVEDMESSAGEFROMWORKER : SessionEvent
-    sealed interface NODERUNTIME_WAITINGFORDISCONNECT : SessionEvent
+sealed external interface SessionEvent {
+    sealed interface INSPECTORNOTIFICATION : node.events.LegacyEventType
+    sealed interface RUNTIME_EXECUTIONCONTEXTCREATED : node.events.LegacyEventType
+    sealed interface RUNTIME_EXECUTIONCONTEXTDESTROYED : node.events.LegacyEventType
+    sealed interface RUNTIME_EXECUTIONCONTEXTSCLEARED : node.events.LegacyEventType
+    sealed interface RUNTIME_EXCEPTIONTHROWN : node.events.LegacyEventType
+    sealed interface RUNTIME_EXCEPTIONREVOKED : node.events.LegacyEventType
+    sealed interface RUNTIME_CONSOLEAPICALLED : node.events.LegacyEventType
+    sealed interface RUNTIME_INSPECTREQUESTED : node.events.LegacyEventType
+    sealed interface DEBUGGER_SCRIPTPARSED : node.events.LegacyEventType
+    sealed interface DEBUGGER_SCRIPTFAILEDTOPARSE : node.events.LegacyEventType
+    sealed interface DEBUGGER_BREAKPOINTRESOLVED : node.events.LegacyEventType
+    sealed interface DEBUGGER_PAUSED : node.events.LegacyEventType
+    sealed interface DEBUGGER_RESUMED : node.events.LegacyEventType
+    sealed interface CONSOLE_MESSAGEADDED : node.events.LegacyEventType
+    sealed interface PROFILER_CONSOLEPROFILESTARTED : node.events.LegacyEventType
+    sealed interface PROFILER_CONSOLEPROFILEFINISHED : node.events.LegacyEventType
+    sealed interface HEAPPROFILER_ADDHEAPSNAPSHOTCHUNK : node.events.LegacyEventType
+    sealed interface HEAPPROFILER_RESETPROFILES : node.events.LegacyEventType
+    sealed interface HEAPPROFILER_REPORTHEAPSNAPSHOTPROGRESS : node.events.LegacyEventType
+    sealed interface HEAPPROFILER_LASTSEENOBJECTID : node.events.LegacyEventType
+    sealed interface HEAPPROFILER_HEAPSTATSUPDATE : node.events.LegacyEventType
+    sealed interface NODETRACING_DATACOLLECTED : node.events.LegacyEventType
+    sealed interface NODETRACING_TRACINGCOMPLETE : node.events.LegacyEventType
+    sealed interface NODEWORKER_ATTACHEDTOWORKER : node.events.LegacyEventType
+    sealed interface NODEWORKER_DETACHEDFROMWORKER : node.events.LegacyEventType
+    sealed interface NODEWORKER_RECEIVEDMESSAGEFROMWORKER : node.events.LegacyEventType
+    sealed interface NODERUNTIME_WAITINGFORDISCONNECT : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("inspectorNotification")
@@ -115,5 +115,86 @@ sealed external interface SessionEvent : node.events.EventType {
 
         @seskar.js.JsValue("NodeRuntime.waitingForDisconnect")
         val NODERUNTIME_WAITINGFORDISCONNECT: NODERUNTIME_WAITINGFORDISCONNECT
+
+        @seskar.js.JsValue("inspectorNotification")
+        fun inspectorNotification(): node.events.EventType<Session, js.array.JsTuple1<InspectorNotification<Any>>>
+
+        @seskar.js.JsValue("Runtime.executionContextCreated")
+        fun RuntimeExecutionContextCreated(): node.events.EventType<Session, js.array.JsTuple1<InspectorNotification<node.inspector.runtime.ExecutionContextCreatedEventDataType>>>
+
+        @seskar.js.JsValue("Runtime.executionContextDestroyed")
+        fun RuntimeExecutionContextDestroyed(): node.events.EventType<Session, js.array.JsTuple1<InspectorNotification<node.inspector.runtime.ExecutionContextDestroyedEventDataType>>>
+
+        @seskar.js.JsValue("Runtime.executionContextsCleared")
+        fun RuntimeExecutionContextsCleared(): node.events.EventType<Session, js.array.JsTuple>
+
+        @seskar.js.JsValue("Runtime.exceptionThrown")
+        fun RuntimeExceptionThrown(): node.events.EventType<Session, js.array.JsTuple1<InspectorNotification<node.inspector.runtime.ExceptionThrownEventDataType>>>
+
+        @seskar.js.JsValue("Runtime.exceptionRevoked")
+        fun RuntimeExceptionRevoked(): node.events.EventType<Session, js.array.JsTuple1<InspectorNotification<node.inspector.runtime.ExceptionRevokedEventDataType>>>
+
+        @seskar.js.JsValue("Runtime.consoleAPICalled")
+        fun RuntimeConsoleAPICalled(): node.events.EventType<Session, js.array.JsTuple1<InspectorNotification<node.inspector.runtime.ConsoleAPICalledEventDataType>>>
+
+        @seskar.js.JsValue("Runtime.inspectRequested")
+        fun RuntimeInspectRequested(): node.events.EventType<Session, js.array.JsTuple1<InspectorNotification<node.inspector.runtime.InspectRequestedEventDataType>>>
+
+        @seskar.js.JsValue("Debugger.scriptParsed")
+        fun DebuggerScriptParsed(): node.events.EventType<Session, js.array.JsTuple1<InspectorNotification<node.inspector.debugger.ScriptParsedEventDataType>>>
+
+        @seskar.js.JsValue("Debugger.scriptFailedToParse")
+        fun DebuggerScriptFailedToParse(): node.events.EventType<Session, js.array.JsTuple1<InspectorNotification<node.inspector.debugger.ScriptFailedToParseEventDataType>>>
+
+        @seskar.js.JsValue("Debugger.breakpointResolved")
+        fun DebuggerBreakpointResolved(): node.events.EventType<Session, js.array.JsTuple1<InspectorNotification<node.inspector.debugger.BreakpointResolvedEventDataType>>>
+
+        @seskar.js.JsValue("Debugger.paused")
+        fun DebuggerPaused(): node.events.EventType<Session, js.array.JsTuple1<InspectorNotification<node.inspector.debugger.PausedEventDataType>>>
+
+        @seskar.js.JsValue("Debugger.resumed")
+        fun DebuggerResumed(): node.events.EventType<Session, js.array.JsTuple>
+
+        @seskar.js.JsValue("Console.messageAdded")
+        fun ConsoleMessageAdded(): node.events.EventType<Session, js.array.JsTuple1<InspectorNotification<node.inspector.console.MessageAddedEventDataType>>>
+
+        @seskar.js.JsValue("Profiler.consoleProfileStarted")
+        fun ProfilerConsoleProfileStarted(): node.events.EventType<Session, js.array.JsTuple1<InspectorNotification<node.inspector.profiler.ConsoleProfileStartedEventDataType>>>
+
+        @seskar.js.JsValue("Profiler.consoleProfileFinished")
+        fun ProfilerConsoleProfileFinished(): node.events.EventType<Session, js.array.JsTuple1<InspectorNotification<node.inspector.profiler.ConsoleProfileFinishedEventDataType>>>
+
+        @seskar.js.JsValue("HeapProfiler.addHeapSnapshotChunk")
+        fun HeapProfilerAddHeapSnapshotChunk(): node.events.EventType<Session, js.array.JsTuple1<InspectorNotification<node.inspector.heapprofiler.AddHeapSnapshotChunkEventDataType>>>
+
+        @seskar.js.JsValue("HeapProfiler.resetProfiles")
+        fun HeapProfilerResetProfiles(): node.events.EventType<Session, js.array.JsTuple>
+
+        @seskar.js.JsValue("HeapProfiler.reportHeapSnapshotProgress")
+        fun HeapProfilerReportHeapSnapshotProgress(): node.events.EventType<Session, js.array.JsTuple1<InspectorNotification<node.inspector.heapprofiler.ReportHeapSnapshotProgressEventDataType>>>
+
+        @seskar.js.JsValue("HeapProfiler.lastSeenObjectId")
+        fun HeapProfilerLastSeenObjectId(): node.events.EventType<Session, js.array.JsTuple1<InspectorNotification<node.inspector.heapprofiler.LastSeenObjectIdEventDataType>>>
+
+        @seskar.js.JsValue("HeapProfiler.heapStatsUpdate")
+        fun HeapProfilerHeapStatsUpdate(): node.events.EventType<Session, js.array.JsTuple1<InspectorNotification<node.inspector.heapprofiler.HeapStatsUpdateEventDataType>>>
+
+        @seskar.js.JsValue("NodeTracing.dataCollected")
+        fun NodeTracingDataCollected(): node.events.EventType<Session, js.array.JsTuple1<InspectorNotification<node.inspector.nodetracing.DataCollectedEventDataType>>>
+
+        @seskar.js.JsValue("NodeTracing.tracingComplete")
+        fun NodeTracingTracingComplete(): node.events.EventType<Session, js.array.JsTuple>
+
+        @seskar.js.JsValue("NodeWorker.attachedToWorker")
+        fun NodeWorkerAttachedToWorker(): node.events.EventType<Session, js.array.JsTuple1<InspectorNotification<node.inspector.nodeworker.AttachedToWorkerEventDataType>>>
+
+        @seskar.js.JsValue("NodeWorker.detachedFromWorker")
+        fun NodeWorkerDetachedFromWorker(): node.events.EventType<Session, js.array.JsTuple1<InspectorNotification<node.inspector.nodeworker.DetachedFromWorkerEventDataType>>>
+
+        @seskar.js.JsValue("NodeWorker.receivedMessageFromWorker")
+        fun NodeWorkerReceivedMessageFromWorker(): node.events.EventType<Session, js.array.JsTuple1<InspectorNotification<node.inspector.nodeworker.ReceivedMessageFromWorkerEventDataType>>>
+
+        @seskar.js.JsValue("NodeRuntime.waitingForDisconnect")
+        fun NodeRuntimeWaitingForDisconnect(): node.events.EventType<Session, js.array.JsTuple>
     }
 }

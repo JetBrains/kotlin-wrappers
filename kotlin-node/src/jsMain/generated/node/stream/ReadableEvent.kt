@@ -5,14 +5,14 @@ package node.stream
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface ReadableEvent : node.events.EventType {
-    sealed interface CLOSE : ReadableEvent
-    sealed interface DATA : ReadableEvent
-    sealed interface END : ReadableEvent
-    sealed interface ERROR : ReadableEvent
-    sealed interface PAUSE : ReadableEvent
-    sealed interface READABLE : ReadableEvent
-    sealed interface RESUME : ReadableEvent
+sealed external interface ReadableEvent {
+    sealed interface CLOSE : node.events.LegacyEventType
+    sealed interface DATA : node.events.LegacyEventType
+    sealed interface END : node.events.LegacyEventType
+    sealed interface ERROR : node.events.LegacyEventType
+    sealed interface PAUSE : node.events.LegacyEventType
+    sealed interface READABLE : node.events.LegacyEventType
+    sealed interface RESUME : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("close")
@@ -35,5 +35,26 @@ sealed external interface ReadableEvent : node.events.EventType {
 
         @seskar.js.JsValue("resume")
         val RESUME: RESUME
+
+        @seskar.js.JsValue("close")
+        fun close(): node.events.EventType<Readable, js.array.JsTuple>
+
+        @seskar.js.JsValue("data")
+        fun data(): node.events.EventType<Readable, js.array.JsTuple1<Any?>>
+
+        @seskar.js.JsValue("end")
+        fun end(): node.events.EventType<Readable, js.array.JsTuple>
+
+        @seskar.js.JsValue("error")
+        fun error(): node.events.EventType<Readable, js.array.JsTuple1<Throwable /* JsError */>>
+
+        @seskar.js.JsValue("pause")
+        fun pause(): node.events.EventType<Readable, js.array.JsTuple>
+
+        @seskar.js.JsValue("readable")
+        fun readable(): node.events.EventType<Readable, js.array.JsTuple>
+
+        @seskar.js.JsValue("resume")
+        fun resume(): node.events.EventType<Readable, js.array.JsTuple>
     }
 }

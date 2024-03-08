@@ -5,12 +5,12 @@ package node.net
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface ServerEvent : node.events.EventType {
-    sealed interface CLOSE : ServerEvent
-    sealed interface CONNECTION : ServerEvent
-    sealed interface ERROR : ServerEvent
-    sealed interface LISTENING : ServerEvent
-    sealed interface DROP : ServerEvent
+sealed external interface ServerEvent {
+    sealed interface CLOSE : node.events.LegacyEventType
+    sealed interface CONNECTION : node.events.LegacyEventType
+    sealed interface ERROR : node.events.LegacyEventType
+    sealed interface LISTENING : node.events.LegacyEventType
+    sealed interface DROP : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("close")
@@ -27,5 +27,20 @@ sealed external interface ServerEvent : node.events.EventType {
 
         @seskar.js.JsValue("drop")
         val DROP: DROP
+
+        @seskar.js.JsValue("close")
+        fun close(): node.events.EventType<Server, js.array.JsTuple>
+
+        @seskar.js.JsValue("connection")
+        fun connection(): node.events.EventType<Server, js.array.JsTuple1<Socket>>
+
+        @seskar.js.JsValue("error")
+        fun error(): node.events.EventType<Server, js.array.JsTuple1<Throwable /* JsError */>>
+
+        @seskar.js.JsValue("listening")
+        fun listening(): node.events.EventType<Server, js.array.JsTuple>
+
+        @seskar.js.JsValue("drop")
+        fun drop(): node.events.EventType<Server, js.array.JsTuple1<DropArgument>>
     }
 }

@@ -5,14 +5,14 @@ package node.cluster
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface ClusterEvent : node.events.EventType {
-    sealed interface DISCONNECT : ClusterEvent
-    sealed interface EXIT : ClusterEvent
-    sealed interface FORK : ClusterEvent
-    sealed interface LISTENING : ClusterEvent
-    sealed interface MESSAGE : ClusterEvent
-    sealed interface ONLINE : ClusterEvent
-    sealed interface SETUP : ClusterEvent
+sealed external interface ClusterEvent {
+    sealed interface DISCONNECT : node.events.LegacyEventType
+    sealed interface EXIT : node.events.LegacyEventType
+    sealed interface FORK : node.events.LegacyEventType
+    sealed interface LISTENING : node.events.LegacyEventType
+    sealed interface MESSAGE : node.events.LegacyEventType
+    sealed interface ONLINE : node.events.LegacyEventType
+    sealed interface SETUP : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("disconnect")
@@ -35,5 +35,26 @@ sealed external interface ClusterEvent : node.events.EventType {
 
         @seskar.js.JsValue("setup")
         val SETUP: SETUP
+
+        @seskar.js.JsValue("disconnect")
+        fun disconnect(): node.events.EventType<Cluster, js.array.JsTuple1<Worker>>
+
+        @seskar.js.JsValue("exit")
+        fun exit(): node.events.EventType<Cluster, js.array.JsTuple3<Worker, Double, String>>
+
+        @seskar.js.JsValue("fork")
+        fun fork(): node.events.EventType<Cluster, js.array.JsTuple1<Worker>>
+
+        @seskar.js.JsValue("listening")
+        fun listening(): node.events.EventType<Cluster, js.array.JsTuple2<Worker, Address>>
+
+        @seskar.js.JsValue("message")
+        fun message(): node.events.EventType<Cluster, js.array.JsTuple3<Worker, Any?, Any /* net.Socket | net.Server */>>
+
+        @seskar.js.JsValue("online")
+        fun online(): node.events.EventType<Cluster, js.array.JsTuple1<Worker>>
+
+        @seskar.js.JsValue("setup")
+        fun setup(): node.events.EventType<Cluster, js.array.JsTuple1<ClusterSettings>>
     }
 }

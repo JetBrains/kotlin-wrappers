@@ -5,18 +5,18 @@ package electron.core
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface PowerMonitorEvent : node.events.EventType {
-    sealed interface LOCK_SCREEN : PowerMonitorEvent
-    sealed interface ON_AC : PowerMonitorEvent
-    sealed interface ON_BATTERY : PowerMonitorEvent
-    sealed interface RESUME : PowerMonitorEvent
-    sealed interface SHUTDOWN : PowerMonitorEvent
-    sealed interface SPEED_LIMIT_CHANGE : PowerMonitorEvent
-    sealed interface SUSPEND : PowerMonitorEvent
-    sealed interface THERMAL_STATE_CHANGE : PowerMonitorEvent
-    sealed interface UNLOCK_SCREEN : PowerMonitorEvent
-    sealed interface USER_DID_BECOME_ACTIVE : PowerMonitorEvent
-    sealed interface USER_DID_RESIGN_ACTIVE : PowerMonitorEvent
+sealed external interface PowerMonitorEvent {
+    sealed interface LOCK_SCREEN : node.events.LegacyEventType
+    sealed interface ON_AC : node.events.LegacyEventType
+    sealed interface ON_BATTERY : node.events.LegacyEventType
+    sealed interface RESUME : node.events.LegacyEventType
+    sealed interface SHUTDOWN : node.events.LegacyEventType
+    sealed interface SPEED_LIMIT_CHANGE : node.events.LegacyEventType
+    sealed interface SUSPEND : node.events.LegacyEventType
+    sealed interface THERMAL_STATE_CHANGE : node.events.LegacyEventType
+    sealed interface UNLOCK_SCREEN : node.events.LegacyEventType
+    sealed interface USER_DID_BECOME_ACTIVE : node.events.LegacyEventType
+    sealed interface USER_DID_RESIGN_ACTIVE : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("lock-screen")

@@ -5,8 +5,8 @@ package electron.core
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface ProcessEvent : node.events.EventType {
-    sealed interface LOADED : ProcessEvent
+sealed external interface ProcessEvent {
+    sealed interface LOADED : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("loaded")

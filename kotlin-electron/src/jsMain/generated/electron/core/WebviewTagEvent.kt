@@ -5,41 +5,41 @@ package electron.core
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface WebviewTagEvent : node.events.EventType {
-    sealed interface LOAD_COMMIT : WebviewTagEvent
-    sealed interface DID_FINISH_LOAD : WebviewTagEvent
-    sealed interface DID_FAIL_LOAD : WebviewTagEvent
-    sealed interface DID_FRAME_FINISH_LOAD : WebviewTagEvent
-    sealed interface DID_START_LOADING : WebviewTagEvent
-    sealed interface DID_STOP_LOADING : WebviewTagEvent
-    sealed interface DID_ATTACH : WebviewTagEvent
-    sealed interface DOM_READY : WebviewTagEvent
-    sealed interface PAGE_TITLE_UPDATED : WebviewTagEvent
-    sealed interface PAGE_FAVICON_UPDATED : WebviewTagEvent
-    sealed interface ENTER_HTML_FULL_SCREEN : WebviewTagEvent
-    sealed interface LEAVE_HTML_FULL_SCREEN : WebviewTagEvent
-    sealed interface CONSOLE_MESSAGE : WebviewTagEvent
-    sealed interface FOUND_IN_PAGE : WebviewTagEvent
-    sealed interface WILL_NAVIGATE : WebviewTagEvent
-    sealed interface DID_START_NAVIGATION : WebviewTagEvent
-    sealed interface DID_REDIRECT_NAVIGATION : WebviewTagEvent
-    sealed interface DID_NAVIGATE : WebviewTagEvent
-    sealed interface DID_FRAME_NAVIGATE : WebviewTagEvent
-    sealed interface DID_NAVIGATE_IN_PAGE : WebviewTagEvent
-    sealed interface CLOSE : WebviewTagEvent
-    sealed interface IPC_MESSAGE : WebviewTagEvent
-    sealed interface CRASHED : WebviewTagEvent
-    sealed interface PLUGIN_CRASHED : WebviewTagEvent
-    sealed interface DESTROYED : WebviewTagEvent
-    sealed interface MEDIA_STARTED_PLAYING : WebviewTagEvent
-    sealed interface MEDIA_PAUSED : WebviewTagEvent
-    sealed interface DID_CHANGE_THEME_COLOR : WebviewTagEvent
-    sealed interface UPDATE_TARGET_URL : WebviewTagEvent
-    sealed interface DEVTOOLS_OPEN_URL : WebviewTagEvent
-    sealed interface DEVTOOLS_OPENED : WebviewTagEvent
-    sealed interface DEVTOOLS_CLOSED : WebviewTagEvent
-    sealed interface DEVTOOLS_FOCUSED : WebviewTagEvent
-    sealed interface CONTEXT_MENU : WebviewTagEvent
+sealed external interface WebviewTagEvent {
+    sealed interface LOAD_COMMIT : node.events.LegacyEventType
+    sealed interface DID_FINISH_LOAD : node.events.LegacyEventType
+    sealed interface DID_FAIL_LOAD : node.events.LegacyEventType
+    sealed interface DID_FRAME_FINISH_LOAD : node.events.LegacyEventType
+    sealed interface DID_START_LOADING : node.events.LegacyEventType
+    sealed interface DID_STOP_LOADING : node.events.LegacyEventType
+    sealed interface DID_ATTACH : node.events.LegacyEventType
+    sealed interface DOM_READY : node.events.LegacyEventType
+    sealed interface PAGE_TITLE_UPDATED : node.events.LegacyEventType
+    sealed interface PAGE_FAVICON_UPDATED : node.events.LegacyEventType
+    sealed interface ENTER_HTML_FULL_SCREEN : node.events.LegacyEventType
+    sealed interface LEAVE_HTML_FULL_SCREEN : node.events.LegacyEventType
+    sealed interface CONSOLE_MESSAGE : node.events.LegacyEventType
+    sealed interface FOUND_IN_PAGE : node.events.LegacyEventType
+    sealed interface WILL_NAVIGATE : node.events.LegacyEventType
+    sealed interface DID_START_NAVIGATION : node.events.LegacyEventType
+    sealed interface DID_REDIRECT_NAVIGATION : node.events.LegacyEventType
+    sealed interface DID_NAVIGATE : node.events.LegacyEventType
+    sealed interface DID_FRAME_NAVIGATE : node.events.LegacyEventType
+    sealed interface DID_NAVIGATE_IN_PAGE : node.events.LegacyEventType
+    sealed interface CLOSE : node.events.LegacyEventType
+    sealed interface IPC_MESSAGE : node.events.LegacyEventType
+    sealed interface CRASHED : node.events.LegacyEventType
+    sealed interface PLUGIN_CRASHED : node.events.LegacyEventType
+    sealed interface DESTROYED : node.events.LegacyEventType
+    sealed interface MEDIA_STARTED_PLAYING : node.events.LegacyEventType
+    sealed interface MEDIA_PAUSED : node.events.LegacyEventType
+    sealed interface DID_CHANGE_THEME_COLOR : node.events.LegacyEventType
+    sealed interface UPDATE_TARGET_URL : node.events.LegacyEventType
+    sealed interface DEVTOOLS_OPEN_URL : node.events.LegacyEventType
+    sealed interface DEVTOOLS_OPENED : node.events.LegacyEventType
+    sealed interface DEVTOOLS_CLOSED : node.events.LegacyEventType
+    sealed interface DEVTOOLS_FOCUSED : node.events.LegacyEventType
+    sealed interface CONTEXT_MENU : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("load-commit")

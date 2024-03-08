@@ -5,11 +5,11 @@ package node.tls
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface TLSSocketEvent : node.events.EventType {
-    sealed interface OCSPRESPONSE : TLSSocketEvent
-    sealed interface SECURECONNECT : TLSSocketEvent
-    sealed interface SESSION : TLSSocketEvent
-    sealed interface KEYLOG : TLSSocketEvent
+sealed external interface TLSSocketEvent {
+    sealed interface OCSPRESPONSE : node.events.LegacyEventType
+    sealed interface SECURECONNECT : node.events.LegacyEventType
+    sealed interface SESSION : node.events.LegacyEventType
+    sealed interface KEYLOG : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("OCSPResponse")
@@ -23,5 +23,17 @@ sealed external interface TLSSocketEvent : node.events.EventType {
 
         @seskar.js.JsValue("keylog")
         val KEYLOG: KEYLOG
+
+        @seskar.js.JsValue("OCSPResponse")
+        fun OCSPResponse(): node.events.EventType<TLSSocket, js.array.JsTuple1<node.buffer.Buffer>>
+
+        @seskar.js.JsValue("secureConnect")
+        fun secureConnect(): node.events.EventType<TLSSocket, js.array.JsTuple>
+
+        @seskar.js.JsValue("session")
+        fun session(): node.events.EventType<TLSSocket, js.array.JsTuple1<node.buffer.Buffer>>
+
+        @seskar.js.JsValue("keylog")
+        fun keylog(): node.events.EventType<TLSSocket, js.array.JsTuple1<node.buffer.Buffer>>
     }
 }

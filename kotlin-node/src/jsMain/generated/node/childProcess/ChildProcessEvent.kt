@@ -5,13 +5,13 @@ package node.childProcess
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface ChildProcessEvent : node.events.EventType {
-    sealed interface CLOSE : ChildProcessEvent
-    sealed interface DISCONNECT : ChildProcessEvent
-    sealed interface ERROR : ChildProcessEvent
-    sealed interface EXIT : ChildProcessEvent
-    sealed interface MESSAGE : ChildProcessEvent
-    sealed interface SPAWN : ChildProcessEvent
+sealed external interface ChildProcessEvent {
+    sealed interface CLOSE : node.events.LegacyEventType
+    sealed interface DISCONNECT : node.events.LegacyEventType
+    sealed interface ERROR : node.events.LegacyEventType
+    sealed interface EXIT : node.events.LegacyEventType
+    sealed interface MESSAGE : node.events.LegacyEventType
+    sealed interface SPAWN : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("close")
@@ -31,5 +31,23 @@ sealed external interface ChildProcessEvent : node.events.EventType {
 
         @seskar.js.JsValue("spawn")
         val SPAWN: SPAWN
+
+        @seskar.js.JsValue("close")
+        fun close(): node.events.EventType<ChildProcess, js.array.JsTuple2<Double?, node.process.Signals?>>
+
+        @seskar.js.JsValue("disconnect")
+        fun disconnect(): node.events.EventType<ChildProcess, js.array.JsTuple>
+
+        @seskar.js.JsValue("error")
+        fun error(): node.events.EventType<ChildProcess, js.array.JsTuple1<Throwable /* JsError */>>
+
+        @seskar.js.JsValue("exit")
+        fun exit(): node.events.EventType<ChildProcess, js.array.JsTuple2<Double?, node.process.Signals?>>
+
+        @seskar.js.JsValue("message")
+        fun message(): node.events.EventType<ChildProcess, js.array.JsTuple2<Serializable, SendHandle>>
+
+        @seskar.js.JsValue("spawn")
+        fun spawn(): node.events.EventType<ChildProcess, js.array.JsTuple>
     }
 }

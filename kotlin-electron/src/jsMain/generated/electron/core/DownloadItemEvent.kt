@@ -5,9 +5,9 @@ package electron.core
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface DownloadItemEvent : node.events.EventType {
-    sealed interface DONE : DownloadItemEvent
-    sealed interface UPDATED : DownloadItemEvent
+sealed external interface DownloadItemEvent {
+    sealed interface DONE : node.events.LegacyEventType
+    sealed interface UPDATED : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("done")

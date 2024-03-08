@@ -5,9 +5,9 @@ package node.http2
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface ServerHttp2SessionEvent : node.events.EventType {
-    sealed interface CONNECT : ServerHttp2SessionEvent
-    sealed interface STREAM : ServerHttp2SessionEvent
+sealed external interface ServerHttp2SessionEvent {
+    sealed interface CONNECT : node.events.LegacyEventType
+    sealed interface STREAM : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("connect")
@@ -15,5 +15,11 @@ sealed external interface ServerHttp2SessionEvent : node.events.EventType {
 
         @seskar.js.JsValue("stream")
         val STREAM: STREAM
+
+        @seskar.js.JsValue("connect")
+        fun connect(): node.events.EventType<ServerHttp2Session, js.array.JsTuple2<ServerHttp2Session, Any /* net.Socket | tls.TLSSocket */>>
+
+        @seskar.js.JsValue("stream")
+        fun stream(): node.events.EventType<ServerHttp2Session, js.array.JsTuple3<ServerHttp2Stream, IncomingHttpHeaders, Double>>
     }
 }

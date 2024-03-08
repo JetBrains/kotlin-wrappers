@@ -5,21 +5,21 @@ package node.http2
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface Http2StreamEvent : node.events.EventType {
-    sealed interface ABORTED : Http2StreamEvent
-    sealed interface CLOSE : Http2StreamEvent
-    sealed interface DATA : Http2StreamEvent
-    sealed interface DRAIN : Http2StreamEvent
-    sealed interface END : Http2StreamEvent
-    sealed interface ERROR : Http2StreamEvent
-    sealed interface FINISH : Http2StreamEvent
-    sealed interface FRAMEERROR : Http2StreamEvent
-    sealed interface PIPE : Http2StreamEvent
-    sealed interface UNPIPE : Http2StreamEvent
-    sealed interface STREAMCLOSED : Http2StreamEvent
-    sealed interface TIMEOUT : Http2StreamEvent
-    sealed interface TRAILERS : Http2StreamEvent
-    sealed interface WANTTRAILERS : Http2StreamEvent
+sealed external interface Http2StreamEvent {
+    sealed interface ABORTED : node.events.LegacyEventType
+    sealed interface CLOSE : node.events.LegacyEventType
+    sealed interface DATA : node.events.LegacyEventType
+    sealed interface DRAIN : node.events.LegacyEventType
+    sealed interface END : node.events.LegacyEventType
+    sealed interface ERROR : node.events.LegacyEventType
+    sealed interface FINISH : node.events.LegacyEventType
+    sealed interface FRAMEERROR : node.events.LegacyEventType
+    sealed interface PIPE : node.events.LegacyEventType
+    sealed interface UNPIPE : node.events.LegacyEventType
+    sealed interface STREAMCLOSED : node.events.LegacyEventType
+    sealed interface TIMEOUT : node.events.LegacyEventType
+    sealed interface TRAILERS : node.events.LegacyEventType
+    sealed interface WANTTRAILERS : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("aborted")
@@ -63,5 +63,47 @@ sealed external interface Http2StreamEvent : node.events.EventType {
 
         @seskar.js.JsValue("wantTrailers")
         val WANTTRAILERS: WANTTRAILERS
+
+        @seskar.js.JsValue("aborted")
+        fun aborted(): node.events.EventType<Http2Stream, js.array.JsTuple>
+
+        @seskar.js.JsValue("close")
+        fun close(): node.events.EventType<Http2Stream, js.array.JsTuple>
+
+        @seskar.js.JsValue("data")
+        fun data(): node.events.EventType<Http2Stream, js.array.JsTuple1<Any /* Buffer | string */>>
+
+        @seskar.js.JsValue("drain")
+        fun drain(): node.events.EventType<Http2Stream, js.array.JsTuple>
+
+        @seskar.js.JsValue("end")
+        fun end(): node.events.EventType<Http2Stream, js.array.JsTuple>
+
+        @seskar.js.JsValue("error")
+        fun error(): node.events.EventType<Http2Stream, js.array.JsTuple1<Throwable /* JsError */>>
+
+        @seskar.js.JsValue("finish")
+        fun finish(): node.events.EventType<Http2Stream, js.array.JsTuple>
+
+        @seskar.js.JsValue("frameError")
+        fun frameError(): node.events.EventType<Http2Stream, js.array.JsTuple2<Double, Double>>
+
+        @seskar.js.JsValue("pipe")
+        fun pipe(): node.events.EventType<Http2Stream, js.array.JsTuple1<node.stream.Readable>>
+
+        @seskar.js.JsValue("unpipe")
+        fun unpipe(): node.events.EventType<Http2Stream, js.array.JsTuple1<node.stream.Readable>>
+
+        @seskar.js.JsValue("streamClosed")
+        fun streamClosed(): node.events.EventType<Http2Stream, js.array.JsTuple1<Double>>
+
+        @seskar.js.JsValue("timeout")
+        fun timeout(): node.events.EventType<Http2Stream, js.array.JsTuple>
+
+        @seskar.js.JsValue("trailers")
+        fun trailers(): node.events.EventType<Http2Stream, js.array.JsTuple2<IncomingHttpHeaders, Double>>
+
+        @seskar.js.JsValue("wantTrailers")
+        fun wantTrailers(): node.events.EventType<Http2Stream, js.array.JsTuple>
     }
 }

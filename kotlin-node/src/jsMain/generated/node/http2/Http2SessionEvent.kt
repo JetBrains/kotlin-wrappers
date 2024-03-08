@@ -5,15 +5,15 @@ package node.http2
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface Http2SessionEvent : node.events.EventType {
-    sealed interface CLOSE : Http2SessionEvent
-    sealed interface ERROR : Http2SessionEvent
-    sealed interface FRAMEERROR : Http2SessionEvent
-    sealed interface GOAWAY : Http2SessionEvent
-    sealed interface LOCALSETTINGS : Http2SessionEvent
-    sealed interface PING : Http2SessionEvent
-    sealed interface REMOTESETTINGS : Http2SessionEvent
-    sealed interface TIMEOUT : Http2SessionEvent
+sealed external interface Http2SessionEvent {
+    sealed interface CLOSE : node.events.LegacyEventType
+    sealed interface ERROR : node.events.LegacyEventType
+    sealed interface FRAMEERROR : node.events.LegacyEventType
+    sealed interface GOAWAY : node.events.LegacyEventType
+    sealed interface LOCALSETTINGS : node.events.LegacyEventType
+    sealed interface PING : node.events.LegacyEventType
+    sealed interface REMOTESETTINGS : node.events.LegacyEventType
+    sealed interface TIMEOUT : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("close")
@@ -39,5 +39,29 @@ sealed external interface Http2SessionEvent : node.events.EventType {
 
         @seskar.js.JsValue("timeout")
         val TIMEOUT: TIMEOUT
+
+        @seskar.js.JsValue("close")
+        fun close(): node.events.EventType<Http2Session, js.array.JsTuple>
+
+        @seskar.js.JsValue("error")
+        fun error(): node.events.EventType<Http2Session, js.array.JsTuple1<Throwable /* JsError */>>
+
+        @seskar.js.JsValue("frameError")
+        fun frameError(): node.events.EventType<Http2Session, js.array.JsTuple3<Double, Double, Double>>
+
+        @seskar.js.JsValue("goaway")
+        fun goaway(): node.events.EventType<Http2Session, js.array.JsTuple3<Double, Double, node.buffer.Buffer>>
+
+        @seskar.js.JsValue("localSettings")
+        fun localSettings(): node.events.EventType<Http2Session, js.array.JsTuple1<Settings>>
+
+        @seskar.js.JsValue("ping")
+        fun ping(): node.events.EventType<Http2Session, js.array.JsTuple>
+
+        @seskar.js.JsValue("remoteSettings")
+        fun remoteSettings(): node.events.EventType<Http2Session, js.array.JsTuple1<Settings>>
+
+        @seskar.js.JsValue("timeout")
+        fun timeout(): node.events.EventType<Http2Session, js.array.JsTuple>
     }
 }

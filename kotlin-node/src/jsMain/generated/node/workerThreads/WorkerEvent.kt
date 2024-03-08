@@ -5,12 +5,12 @@ package node.workerThreads
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface WorkerEvent : node.events.EventType {
-    sealed interface ERROR : WorkerEvent
-    sealed interface EXIT : WorkerEvent
-    sealed interface MESSAGE : WorkerEvent
-    sealed interface MESSAGEERROR : WorkerEvent
-    sealed interface ONLINE : WorkerEvent
+sealed external interface WorkerEvent {
+    sealed interface ERROR : node.events.LegacyEventType
+    sealed interface EXIT : node.events.LegacyEventType
+    sealed interface MESSAGE : node.events.LegacyEventType
+    sealed interface MESSAGEERROR : node.events.LegacyEventType
+    sealed interface ONLINE : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("error")
@@ -27,5 +27,20 @@ sealed external interface WorkerEvent : node.events.EventType {
 
         @seskar.js.JsValue("online")
         val ONLINE: ONLINE
+
+        @seskar.js.JsValue("error")
+        fun error(): node.events.EventType<Worker, js.array.JsTuple1<Throwable /* JsError */>>
+
+        @seskar.js.JsValue("exit")
+        fun exit(): node.events.EventType<Worker, js.array.JsTuple1<Double>>
+
+        @seskar.js.JsValue("message")
+        fun message(): node.events.EventType<Worker, js.array.JsTuple1<Any?>>
+
+        @seskar.js.JsValue("messageerror")
+        fun messageerror(): node.events.EventType<Worker, js.array.JsTuple1<Throwable /* JsError */>>
+
+        @seskar.js.JsValue("online")
+        fun online(): node.events.EventType<Worker, js.array.JsTuple>
     }
 }

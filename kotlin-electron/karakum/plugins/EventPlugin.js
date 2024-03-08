@@ -118,7 +118,7 @@ export default {
             const keys = entries.map(([key]) => key)
 
             const body = keys
-                .map(key => `sealed interface ${key} : ${name}`)
+                .map(key => `sealed interface ${key} : node.events.LegacyEventType`)
                 .join("\n")
 
             const companionBody = entries
@@ -133,7 +133,7 @@ val ${key}: ${key}
             const declaration = `
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface ${name} : node.events.EventType {
+sealed external interface ${name} {
 ${body}
 
 companion object {

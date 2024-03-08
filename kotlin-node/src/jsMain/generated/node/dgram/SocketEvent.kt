@@ -5,12 +5,12 @@ package node.dgram
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface SocketEvent : node.events.EventType {
-    sealed interface CLOSE : SocketEvent
-    sealed interface CONNECT : SocketEvent
-    sealed interface ERROR : SocketEvent
-    sealed interface LISTENING : SocketEvent
-    sealed interface MESSAGE : SocketEvent
+sealed external interface SocketEvent {
+    sealed interface CLOSE : node.events.LegacyEventType
+    sealed interface CONNECT : node.events.LegacyEventType
+    sealed interface ERROR : node.events.LegacyEventType
+    sealed interface LISTENING : node.events.LegacyEventType
+    sealed interface MESSAGE : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("close")
@@ -27,5 +27,20 @@ sealed external interface SocketEvent : node.events.EventType {
 
         @seskar.js.JsValue("message")
         val MESSAGE: MESSAGE
+
+        @seskar.js.JsValue("close")
+        fun close(): node.events.EventType<Socket, js.array.JsTuple>
+
+        @seskar.js.JsValue("connect")
+        fun connect(): node.events.EventType<Socket, js.array.JsTuple>
+
+        @seskar.js.JsValue("error")
+        fun error(): node.events.EventType<Socket, js.array.JsTuple1<Throwable /* JsError */>>
+
+        @seskar.js.JsValue("listening")
+        fun listening(): node.events.EventType<Socket, js.array.JsTuple>
+
+        @seskar.js.JsValue("message")
+        fun message(): node.events.EventType<Socket, js.array.JsTuple2<node.buffer.Buffer, RemoteInfo>>
     }
 }

@@ -5,16 +5,16 @@ package node.fs
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface ReadStreamEvent : node.events.EventType {
-    sealed interface CLOSE : ReadStreamEvent
-    sealed interface DATA : ReadStreamEvent
-    sealed interface END : ReadStreamEvent
-    sealed interface ERROR : ReadStreamEvent
-    sealed interface OPEN : ReadStreamEvent
-    sealed interface PAUSE : ReadStreamEvent
-    sealed interface READABLE : ReadStreamEvent
-    sealed interface READY : ReadStreamEvent
-    sealed interface RESUME : ReadStreamEvent
+sealed external interface ReadStreamEvent {
+    sealed interface CLOSE : node.events.LegacyEventType
+    sealed interface DATA : node.events.LegacyEventType
+    sealed interface END : node.events.LegacyEventType
+    sealed interface ERROR : node.events.LegacyEventType
+    sealed interface OPEN : node.events.LegacyEventType
+    sealed interface PAUSE : node.events.LegacyEventType
+    sealed interface READABLE : node.events.LegacyEventType
+    sealed interface READY : node.events.LegacyEventType
+    sealed interface RESUME : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("close")
@@ -43,5 +43,32 @@ sealed external interface ReadStreamEvent : node.events.EventType {
 
         @seskar.js.JsValue("resume")
         val RESUME: RESUME
+
+        @seskar.js.JsValue("close")
+        fun close(): node.events.EventType<ReadStream, js.array.JsTuple>
+
+        @seskar.js.JsValue("data")
+        fun data(): node.events.EventType<ReadStream, js.array.JsTuple1<Any /* Buffer | string */>>
+
+        @seskar.js.JsValue("end")
+        fun end(): node.events.EventType<ReadStream, js.array.JsTuple>
+
+        @seskar.js.JsValue("error")
+        fun error(): node.events.EventType<ReadStream, js.array.JsTuple1<Throwable /* JsError */>>
+
+        @seskar.js.JsValue("open")
+        fun open(): node.events.EventType<ReadStream, js.array.JsTuple1<Double>>
+
+        @seskar.js.JsValue("pause")
+        fun pause(): node.events.EventType<ReadStream, js.array.JsTuple>
+
+        @seskar.js.JsValue("readable")
+        fun readable(): node.events.EventType<ReadStream, js.array.JsTuple>
+
+        @seskar.js.JsValue("ready")
+        fun ready(): node.events.EventType<ReadStream, js.array.JsTuple>
+
+        @seskar.js.JsValue("resume")
+        fun resume(): node.events.EventType<ReadStream, js.array.JsTuple>
     }
 }

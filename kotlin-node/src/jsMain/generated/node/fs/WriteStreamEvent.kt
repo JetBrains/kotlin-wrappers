@@ -5,15 +5,15 @@ package node.fs
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface WriteStreamEvent : node.events.EventType {
-    sealed interface CLOSE : WriteStreamEvent
-    sealed interface DRAIN : WriteStreamEvent
-    sealed interface ERROR : WriteStreamEvent
-    sealed interface FINISH : WriteStreamEvent
-    sealed interface OPEN : WriteStreamEvent
-    sealed interface PIPE : WriteStreamEvent
-    sealed interface READY : WriteStreamEvent
-    sealed interface UNPIPE : WriteStreamEvent
+sealed external interface WriteStreamEvent {
+    sealed interface CLOSE : node.events.LegacyEventType
+    sealed interface DRAIN : node.events.LegacyEventType
+    sealed interface ERROR : node.events.LegacyEventType
+    sealed interface FINISH : node.events.LegacyEventType
+    sealed interface OPEN : node.events.LegacyEventType
+    sealed interface PIPE : node.events.LegacyEventType
+    sealed interface READY : node.events.LegacyEventType
+    sealed interface UNPIPE : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("close")
@@ -39,5 +39,29 @@ sealed external interface WriteStreamEvent : node.events.EventType {
 
         @seskar.js.JsValue("unpipe")
         val UNPIPE: UNPIPE
+
+        @seskar.js.JsValue("close")
+        fun close(): node.events.EventType<WriteStream, js.array.JsTuple>
+
+        @seskar.js.JsValue("drain")
+        fun drain(): node.events.EventType<WriteStream, js.array.JsTuple>
+
+        @seskar.js.JsValue("error")
+        fun error(): node.events.EventType<WriteStream, js.array.JsTuple1<Throwable /* JsError */>>
+
+        @seskar.js.JsValue("finish")
+        fun finish(): node.events.EventType<WriteStream, js.array.JsTuple>
+
+        @seskar.js.JsValue("open")
+        fun open(): node.events.EventType<WriteStream, js.array.JsTuple1<Double>>
+
+        @seskar.js.JsValue("pipe")
+        fun pipe(): node.events.EventType<WriteStream, js.array.JsTuple1<node.stream.Readable>>
+
+        @seskar.js.JsValue("ready")
+        fun ready(): node.events.EventType<WriteStream, js.array.JsTuple>
+
+        @seskar.js.JsValue("unpipe")
+        fun unpipe(): node.events.EventType<WriteStream, js.array.JsTuple1<node.stream.Readable>>
     }
 }

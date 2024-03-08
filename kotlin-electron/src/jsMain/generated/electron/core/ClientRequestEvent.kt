@@ -5,14 +5,14 @@ package electron.core
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface ClientRequestEvent : node.events.EventType {
-    sealed interface ABORT : ClientRequestEvent
-    sealed interface CLOSE : ClientRequestEvent
-    sealed interface ERROR : ClientRequestEvent
-    sealed interface FINISH : ClientRequestEvent
-    sealed interface LOGIN : ClientRequestEvent
-    sealed interface REDIRECT : ClientRequestEvent
-    sealed interface RESPONSE : ClientRequestEvent
+sealed external interface ClientRequestEvent {
+    sealed interface ABORT : node.events.LegacyEventType
+    sealed interface CLOSE : node.events.LegacyEventType
+    sealed interface ERROR : node.events.LegacyEventType
+    sealed interface FINISH : node.events.LegacyEventType
+    sealed interface LOGIN : node.events.LegacyEventType
+    sealed interface REDIRECT : node.events.LegacyEventType
+    sealed interface RESPONSE : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("abort")

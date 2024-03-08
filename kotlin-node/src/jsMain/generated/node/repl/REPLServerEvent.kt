@@ -2,19 +2,21 @@
 
 package node.repl
 
+import node.vm.Context
+
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface REPLServerEvent : node.events.EventType {
-    sealed interface CLOSE : REPLServerEvent
-    sealed interface LINE : REPLServerEvent
-    sealed interface PAUSE : REPLServerEvent
-    sealed interface RESUME : REPLServerEvent
-    sealed interface SIGCONT : REPLServerEvent
-    sealed interface SIGINT : REPLServerEvent
-    sealed interface SIGTSTP : REPLServerEvent
-    sealed interface EXIT : REPLServerEvent
-    sealed interface RESET : REPLServerEvent
+sealed external interface REPLServerEvent {
+    sealed interface CLOSE : node.events.LegacyEventType
+    sealed interface LINE : node.events.LegacyEventType
+    sealed interface PAUSE : node.events.LegacyEventType
+    sealed interface RESUME : node.events.LegacyEventType
+    sealed interface SIGCONT : node.events.LegacyEventType
+    sealed interface SIGINT : node.events.LegacyEventType
+    sealed interface SIGTSTP : node.events.LegacyEventType
+    sealed interface EXIT : node.events.LegacyEventType
+    sealed interface RESET : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("close")
@@ -43,5 +45,32 @@ sealed external interface REPLServerEvent : node.events.EventType {
 
         @seskar.js.JsValue("reset")
         val RESET: RESET
+
+        @seskar.js.JsValue("close")
+        fun close(): node.events.EventType<REPLServer, js.array.JsTuple>
+
+        @seskar.js.JsValue("line")
+        fun line(): node.events.EventType<REPLServer, js.array.JsTuple1<String>>
+
+        @seskar.js.JsValue("pause")
+        fun pause(): node.events.EventType<REPLServer, js.array.JsTuple>
+
+        @seskar.js.JsValue("resume")
+        fun resume(): node.events.EventType<REPLServer, js.array.JsTuple>
+
+        @seskar.js.JsValue("SIGCONT")
+        fun SIGCONT(): node.events.EventType<REPLServer, js.array.JsTuple>
+
+        @seskar.js.JsValue("SIGINT")
+        fun SIGINT(): node.events.EventType<REPLServer, js.array.JsTuple>
+
+        @seskar.js.JsValue("SIGTSTP")
+        fun SIGTSTP(): node.events.EventType<REPLServer, js.array.JsTuple>
+
+        @seskar.js.JsValue("exit")
+        fun exit(): node.events.EventType<REPLServer, js.array.JsTuple>
+
+        @seskar.js.JsValue("reset")
+        fun reset(): node.events.EventType<REPLServer, js.array.JsTuple1<Context>>
     }
 }

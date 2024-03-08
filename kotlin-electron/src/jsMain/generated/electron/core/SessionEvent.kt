@@ -5,28 +5,28 @@ package electron.core
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface SessionEvent : node.events.EventType {
-    sealed interface EXTENSION_LOADED : SessionEvent
-    sealed interface EXTENSION_READY : SessionEvent
-    sealed interface EXTENSION_UNLOADED : SessionEvent
-    sealed interface HID_DEVICE_ADDED : SessionEvent
-    sealed interface HID_DEVICE_REMOVED : SessionEvent
-    sealed interface HID_DEVICE_REVOKED : SessionEvent
-    sealed interface PRECONNECT : SessionEvent
-    sealed interface SELECT_HID_DEVICE : SessionEvent
-    sealed interface SELECT_SERIAL_PORT : SessionEvent
-    sealed interface SELECT_USB_DEVICE : SessionEvent
-    sealed interface SERIAL_PORT_ADDED : SessionEvent
-    sealed interface SERIAL_PORT_REMOVED : SessionEvent
-    sealed interface SERIAL_PORT_REVOKED : SessionEvent
-    sealed interface SPELLCHECK_DICTIONARY_DOWNLOAD_BEGIN : SessionEvent
-    sealed interface SPELLCHECK_DICTIONARY_DOWNLOAD_FAILURE : SessionEvent
-    sealed interface SPELLCHECK_DICTIONARY_DOWNLOAD_SUCCESS : SessionEvent
-    sealed interface SPELLCHECK_DICTIONARY_INITIALIZED : SessionEvent
-    sealed interface USB_DEVICE_ADDED : SessionEvent
-    sealed interface USB_DEVICE_REMOVED : SessionEvent
-    sealed interface USB_DEVICE_REVOKED : SessionEvent
-    sealed interface WILL_DOWNLOAD : SessionEvent
+sealed external interface SessionEvent {
+    sealed interface EXTENSION_LOADED : node.events.LegacyEventType
+    sealed interface EXTENSION_READY : node.events.LegacyEventType
+    sealed interface EXTENSION_UNLOADED : node.events.LegacyEventType
+    sealed interface HID_DEVICE_ADDED : node.events.LegacyEventType
+    sealed interface HID_DEVICE_REMOVED : node.events.LegacyEventType
+    sealed interface HID_DEVICE_REVOKED : node.events.LegacyEventType
+    sealed interface PRECONNECT : node.events.LegacyEventType
+    sealed interface SELECT_HID_DEVICE : node.events.LegacyEventType
+    sealed interface SELECT_SERIAL_PORT : node.events.LegacyEventType
+    sealed interface SELECT_USB_DEVICE : node.events.LegacyEventType
+    sealed interface SERIAL_PORT_ADDED : node.events.LegacyEventType
+    sealed interface SERIAL_PORT_REMOVED : node.events.LegacyEventType
+    sealed interface SERIAL_PORT_REVOKED : node.events.LegacyEventType
+    sealed interface SPELLCHECK_DICTIONARY_DOWNLOAD_BEGIN : node.events.LegacyEventType
+    sealed interface SPELLCHECK_DICTIONARY_DOWNLOAD_FAILURE : node.events.LegacyEventType
+    sealed interface SPELLCHECK_DICTIONARY_DOWNLOAD_SUCCESS : node.events.LegacyEventType
+    sealed interface SPELLCHECK_DICTIONARY_INITIALIZED : node.events.LegacyEventType
+    sealed interface USB_DEVICE_ADDED : node.events.LegacyEventType
+    sealed interface USB_DEVICE_REMOVED : node.events.LegacyEventType
+    sealed interface USB_DEVICE_REVOKED : node.events.LegacyEventType
+    sealed interface WILL_DOWNLOAD : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("extension-loaded")

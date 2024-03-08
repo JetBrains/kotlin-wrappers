@@ -5,10 +5,10 @@ package electron.core
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface ScreenEvent : node.events.EventType {
-    sealed interface DISPLAY_ADDED : ScreenEvent
-    sealed interface DISPLAY_METRICS_CHANGED : ScreenEvent
-    sealed interface DISPLAY_REMOVED : ScreenEvent
+sealed external interface ScreenEvent {
+    sealed interface DISPLAY_ADDED : node.events.LegacyEventType
+    sealed interface DISPLAY_METRICS_CHANGED : node.events.LegacyEventType
+    sealed interface DISPLAY_REMOVED : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("display-added")

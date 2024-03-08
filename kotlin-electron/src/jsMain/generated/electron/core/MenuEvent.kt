@@ -5,9 +5,9 @@ package electron.core
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface MenuEvent : node.events.EventType {
-    sealed interface MENU_WILL_CLOSE : MenuEvent
-    sealed interface MENU_WILL_SHOW : MenuEvent
+sealed external interface MenuEvent {
+    sealed interface MENU_WILL_CLOSE : node.events.LegacyEventType
+    sealed interface MENU_WILL_SHOW : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("menu-will-close")

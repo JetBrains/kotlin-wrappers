@@ -5,11 +5,11 @@ package node.http2
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface ClientHttp2SessionEvent : node.events.EventType {
-    sealed interface ALTSVC : ClientHttp2SessionEvent
-    sealed interface ORIGIN : ClientHttp2SessionEvent
-    sealed interface CONNECT : ClientHttp2SessionEvent
-    sealed interface STREAM : ClientHttp2SessionEvent
+sealed external interface ClientHttp2SessionEvent {
+    sealed interface ALTSVC : node.events.LegacyEventType
+    sealed interface ORIGIN : node.events.LegacyEventType
+    sealed interface CONNECT : node.events.LegacyEventType
+    sealed interface STREAM : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("altsvc")
@@ -23,5 +23,17 @@ sealed external interface ClientHttp2SessionEvent : node.events.EventType {
 
         @seskar.js.JsValue("stream")
         val STREAM: STREAM
+
+        @seskar.js.JsValue("altsvc")
+        fun altsvc(): node.events.EventType<ClientHttp2Session, js.array.JsTuple3<String, String, Double>>
+
+        @seskar.js.JsValue("origin")
+        fun origin(): node.events.EventType<ClientHttp2Session, js.array.JsTuple1<js.array.ReadonlyArray<String>>>
+
+        @seskar.js.JsValue("connect")
+        fun connect(): node.events.EventType<ClientHttp2Session, js.array.JsTuple2<ClientHttp2Session, Any /* net.Socket | tls.TLSSocket */>>
+
+        @seskar.js.JsValue("stream")
+        fun stream(): node.events.EventType<ClientHttp2Session, js.array.JsTuple3<ClientHttp2Stream, ClientHttp2SessionAddListenerListenerHeaders, Double>>
     }
 }

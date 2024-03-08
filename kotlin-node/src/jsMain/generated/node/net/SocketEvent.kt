@@ -5,16 +5,16 @@ package node.net
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface SocketEvent : node.events.EventType {
-    sealed interface CLOSE : SocketEvent
-    sealed interface CONNECT : SocketEvent
-    sealed interface DATA : SocketEvent
-    sealed interface DRAIN : SocketEvent
-    sealed interface END : SocketEvent
-    sealed interface ERROR : SocketEvent
-    sealed interface LOOKUP : SocketEvent
-    sealed interface READY : SocketEvent
-    sealed interface TIMEOUT : SocketEvent
+sealed external interface SocketEvent {
+    sealed interface CLOSE : node.events.LegacyEventType
+    sealed interface CONNECT : node.events.LegacyEventType
+    sealed interface DATA : node.events.LegacyEventType
+    sealed interface DRAIN : node.events.LegacyEventType
+    sealed interface END : node.events.LegacyEventType
+    sealed interface ERROR : node.events.LegacyEventType
+    sealed interface LOOKUP : node.events.LegacyEventType
+    sealed interface READY : node.events.LegacyEventType
+    sealed interface TIMEOUT : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("close")
@@ -43,5 +43,32 @@ sealed external interface SocketEvent : node.events.EventType {
 
         @seskar.js.JsValue("timeout")
         val TIMEOUT: TIMEOUT
+
+        @seskar.js.JsValue("close")
+        fun close(): node.events.EventType<Socket, js.array.JsTuple1<Boolean>>
+
+        @seskar.js.JsValue("connect")
+        fun connect(): node.events.EventType<Socket, js.array.JsTuple>
+
+        @seskar.js.JsValue("data")
+        fun data(): node.events.EventType<Socket, js.array.JsTuple1<node.buffer.Buffer>>
+
+        @seskar.js.JsValue("drain")
+        fun drain(): node.events.EventType<Socket, js.array.JsTuple>
+
+        @seskar.js.JsValue("end")
+        fun end(): node.events.EventType<Socket, js.array.JsTuple>
+
+        @seskar.js.JsValue("error")
+        fun error(): node.events.EventType<Socket, js.array.JsTuple1<Throwable /* JsError */>>
+
+        @seskar.js.JsValue("lookup")
+        fun lookup(): node.events.EventType<Socket, js.array.JsTuple4<Throwable /* JsError */, String, Any /* string | number */, String>>
+
+        @seskar.js.JsValue("ready")
+        fun ready(): node.events.EventType<Socket, js.array.JsTuple>
+
+        @seskar.js.JsValue("timeout")
+        fun timeout(): node.events.EventType<Socket, js.array.JsTuple>
     }
 }

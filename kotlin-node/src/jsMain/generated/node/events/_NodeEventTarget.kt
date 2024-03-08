@@ -7,7 +7,7 @@ package node.events
 // Any EventTarget with a Node-style `once` function
 
 sealed external interface _NodeEventTarget {
-    fun once(eventName: EventType, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun once(eventName: LegacyEventType, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
 
 }

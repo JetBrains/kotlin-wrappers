@@ -5,11 +5,14 @@ package node.tty
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface WriteStreamEvent : node.events.EventType {
-    sealed interface RESIZE : WriteStreamEvent
+sealed external interface WriteStreamEvent {
+    sealed interface RESIZE : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("resize")
         val RESIZE: RESIZE
+
+        @seskar.js.JsValue("resize")
+        fun resize(): node.events.EventType<WriteStream, js.array.JsTuple>
     }
 }

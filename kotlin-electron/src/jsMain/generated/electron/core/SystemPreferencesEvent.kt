@@ -5,11 +5,11 @@ package electron.core
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface SystemPreferencesEvent : node.events.EventType {
-    sealed interface ACCENT_COLOR_CHANGED : SystemPreferencesEvent
-    sealed interface COLOR_CHANGED : SystemPreferencesEvent
-    sealed interface HIGH_CONTRAST_COLOR_SCHEME_CHANGED : SystemPreferencesEvent
-    sealed interface INVERTED_COLOR_SCHEME_CHANGED : SystemPreferencesEvent
+sealed external interface SystemPreferencesEvent {
+    sealed interface ACCENT_COLOR_CHANGED : node.events.LegacyEventType
+    sealed interface COLOR_CHANGED : node.events.LegacyEventType
+    sealed interface HIGH_CONTRAST_COLOR_SCHEME_CHANGED : node.events.LegacyEventType
+    sealed interface INVERTED_COLOR_SCHEME_CHANGED : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("accent-color-changed")

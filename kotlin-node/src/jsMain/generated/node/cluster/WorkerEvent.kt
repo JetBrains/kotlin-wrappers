@@ -5,13 +5,13 @@ package node.cluster
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface WorkerEvent : node.events.EventType {
-    sealed interface DISCONNECT : WorkerEvent
-    sealed interface ERROR : WorkerEvent
-    sealed interface EXIT : WorkerEvent
-    sealed interface LISTENING : WorkerEvent
-    sealed interface MESSAGE : WorkerEvent
-    sealed interface ONLINE : WorkerEvent
+sealed external interface WorkerEvent {
+    sealed interface DISCONNECT : node.events.LegacyEventType
+    sealed interface ERROR : node.events.LegacyEventType
+    sealed interface EXIT : node.events.LegacyEventType
+    sealed interface LISTENING : node.events.LegacyEventType
+    sealed interface MESSAGE : node.events.LegacyEventType
+    sealed interface ONLINE : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("disconnect")
@@ -31,5 +31,23 @@ sealed external interface WorkerEvent : node.events.EventType {
 
         @seskar.js.JsValue("online")
         val ONLINE: ONLINE
+
+        @seskar.js.JsValue("disconnect")
+        fun disconnect(): node.events.EventType<Worker, js.array.JsTuple>
+
+        @seskar.js.JsValue("error")
+        fun error(): node.events.EventType<Worker, js.array.JsTuple1<Throwable /* JsError */>>
+
+        @seskar.js.JsValue("exit")
+        fun exit(): node.events.EventType<Worker, js.array.JsTuple2<Double, String>>
+
+        @seskar.js.JsValue("listening")
+        fun listening(): node.events.EventType<Worker, js.array.JsTuple1<Address>>
+
+        @seskar.js.JsValue("message")
+        fun message(): node.events.EventType<Worker, js.array.JsTuple2<Any?, Any /* net.Socket | net.Server */>>
+
+        @seskar.js.JsValue("online")
+        fun online(): node.events.EventType<Worker, js.array.JsTuple>
     }
 }

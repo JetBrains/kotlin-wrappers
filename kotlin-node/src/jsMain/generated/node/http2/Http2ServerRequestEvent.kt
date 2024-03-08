@@ -5,13 +5,13 @@ package node.http2
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface Http2ServerRequestEvent : node.events.EventType {
-    sealed interface ABORTED : Http2ServerRequestEvent
-    sealed interface CLOSE : Http2ServerRequestEvent
-    sealed interface DATA : Http2ServerRequestEvent
-    sealed interface END : Http2ServerRequestEvent
-    sealed interface READABLE : Http2ServerRequestEvent
-    sealed interface ERROR : Http2ServerRequestEvent
+sealed external interface Http2ServerRequestEvent {
+    sealed interface ABORTED : node.events.LegacyEventType
+    sealed interface CLOSE : node.events.LegacyEventType
+    sealed interface DATA : node.events.LegacyEventType
+    sealed interface END : node.events.LegacyEventType
+    sealed interface READABLE : node.events.LegacyEventType
+    sealed interface ERROR : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("aborted")
@@ -31,5 +31,23 @@ sealed external interface Http2ServerRequestEvent : node.events.EventType {
 
         @seskar.js.JsValue("error")
         val ERROR: ERROR
+
+        @seskar.js.JsValue("aborted")
+        fun aborted(): node.events.EventType<Http2ServerRequest, js.array.JsTuple2<Boolean, Double>>
+
+        @seskar.js.JsValue("close")
+        fun close(): node.events.EventType<Http2ServerRequest, js.array.JsTuple>
+
+        @seskar.js.JsValue("data")
+        fun data(): node.events.EventType<Http2ServerRequest, js.array.JsTuple1<Any /* Buffer | string */>>
+
+        @seskar.js.JsValue("end")
+        fun end(): node.events.EventType<Http2ServerRequest, js.array.JsTuple>
+
+        @seskar.js.JsValue("readable")
+        fun readable(): node.events.EventType<Http2ServerRequest, js.array.JsTuple>
+
+        @seskar.js.JsValue("error")
+        fun error(): node.events.EventType<Http2ServerRequest, js.array.JsTuple1<Throwable /* JsError */>>
     }
 }

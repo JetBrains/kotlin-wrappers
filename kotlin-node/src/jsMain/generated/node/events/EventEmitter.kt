@@ -33,7 +33,10 @@ open external class EventEmitter {
      * Alias for `emitter.on(eventName, listener)`.
      * @since v0.1.26
      */
-    open fun addListener(eventName: EventType, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    open fun addListener(
+        eventName: LegacyEventType,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ): Unit /* this */
 
 
     /**
@@ -67,7 +70,7 @@ open external class EventEmitter {
      * @param eventName The name of the event.
      * @param listener The callback function
      */
-    open fun on(eventName: EventType, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    open fun on(eventName: LegacyEventType, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
 
     /**
@@ -99,7 +102,7 @@ open external class EventEmitter {
      * @param eventName The name of the event.
      * @param listener The callback function
      */
-    open fun once(eventName: EventType, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    open fun once(eventName: LegacyEventType, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
 
     /**
@@ -185,7 +188,7 @@ open external class EventEmitter {
      * @since v0.1.26
      */
     open fun removeListener(
-        eventName: EventType,
+        eventName: LegacyEventType,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
@@ -194,7 +197,7 @@ open external class EventEmitter {
      * Alias for `emitter.removeListener()`.
      * @since v10.0.0
      */
-    open fun off(eventName: EventType, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    open fun off(eventName: LegacyEventType, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
 
     /**
@@ -207,7 +210,7 @@ open external class EventEmitter {
      * Returns a reference to the `EventEmitter`, so that calls can be chained.
      * @since v0.1.26
      */
-    open fun removeAllListeners(event: EventType = definedExternally): Unit /* this */
+    open fun removeAllListeners(event: LegacyEventType = definedExternally): Unit /* this */
 
 
     /**
@@ -240,7 +243,7 @@ open external class EventEmitter {
      * ```
      * @since v0.1.26
      */
-    open fun listeners(eventName: EventType): js.array.ReadonlyArray<Function<*>>
+    open fun listeners(eventName: LegacyEventType): js.array.ReadonlyArray<Function<*>>
 
 
     /**
@@ -273,7 +276,7 @@ open external class EventEmitter {
      * ```
      * @since v9.4.0
      */
-    open fun rawListeners(eventName: EventType): js.array.ReadonlyArray<Function<*>>
+    open fun rawListeners(eventName: LegacyEventType): js.array.ReadonlyArray<Function<*>>
 
 
     /**
@@ -316,7 +319,7 @@ open external class EventEmitter {
      * ```
      * @since v0.1.26
      */
-    open fun emit(eventName: EventType, vararg args: Any?): Boolean
+    open fun emit(eventName: LegacyEventType, vararg args: Any?): Boolean
 
 
     /**
@@ -327,7 +330,7 @@ open external class EventEmitter {
      * @param eventName The name of the event being listened for
      * @param listener The event handler function
      */
-    open fun listenerCount(eventName: EventType, listener: Function<Unit> = definedExternally): Double
+    open fun listenerCount(eventName: LegacyEventType, listener: Function<Unit> = definedExternally): Double
 
 
     /**
@@ -348,7 +351,7 @@ open external class EventEmitter {
      * @param listener The callback function
      */
     open fun prependListener(
-        eventName: EventType,
+        eventName: LegacyEventType,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
@@ -369,7 +372,7 @@ open external class EventEmitter {
      * @param listener The callback function
      */
     open fun prependOnceListener(
-        eventName: EventType,
+        eventName: LegacyEventType,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
@@ -477,7 +480,7 @@ open external class EventEmitter {
          */
         fun once(
             emitter: _NodeEventTarget,
-            eventName: EventType,
+            eventName: LegacyEventType,
             options: StaticEventEmitterOptions = definedExternally,
         ): Promise<js.array.ReadonlyArray<Any?>>
 
@@ -570,7 +573,7 @@ open external class EventEmitter {
          * @param emitter The emitter to query
          * @param eventName The event name
          */
-        fun listenerCount(emitter: EventEmitter, eventName: EventType): Double
+        fun listenerCount(emitter: EventEmitter, eventName: LegacyEventType): Double
 
 
         /**
@@ -600,10 +603,10 @@ open external class EventEmitter {
          * ```
          * @since v15.2.0, v14.17.0
          */
-        fun getEventListeners(emitter: _DOMEventTarget, name: EventType): js.array.ReadonlyArray<Function<*>>
+        fun getEventListeners(emitter: _DOMEventTarget, name: LegacyEventType): js.array.ReadonlyArray<Function<*>>
 
 
-        fun getEventListeners(emitter: EventEmitter, name: EventType): js.array.ReadonlyArray<Function<*>>
+        fun getEventListeners(emitter: EventEmitter, name: LegacyEventType): js.array.ReadonlyArray<Function<*>>
 
 
         /**

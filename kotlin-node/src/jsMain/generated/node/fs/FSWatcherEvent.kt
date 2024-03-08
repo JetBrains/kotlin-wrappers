@@ -5,10 +5,10 @@ package node.fs
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface FSWatcherEvent : node.events.EventType {
-    sealed interface CHANGE : FSWatcherEvent
-    sealed interface ERROR : FSWatcherEvent
-    sealed interface CLOSE : FSWatcherEvent
+sealed external interface FSWatcherEvent {
+    sealed interface CHANGE : node.events.LegacyEventType
+    sealed interface ERROR : node.events.LegacyEventType
+    sealed interface CLOSE : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("change")
@@ -19,5 +19,14 @@ sealed external interface FSWatcherEvent : node.events.EventType {
 
         @seskar.js.JsValue("close")
         val CLOSE: CLOSE
+
+        @seskar.js.JsValue("change")
+        fun change(): node.events.EventType<FSWatcher, js.array.JsTuple2<String, Any /* string | Buffer */>>
+
+        @seskar.js.JsValue("error")
+        fun error(): node.events.EventType<FSWatcher, js.array.JsTuple1<Throwable /* JsError */>>
+
+        @seskar.js.JsValue("close")
+        fun close(): node.events.EventType<FSWatcher, js.array.JsTuple>
     }
 }

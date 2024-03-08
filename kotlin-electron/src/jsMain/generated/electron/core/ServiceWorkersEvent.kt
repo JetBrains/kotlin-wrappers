@@ -5,9 +5,9 @@ package electron.core
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface ServiceWorkersEvent : node.events.EventType {
-    sealed interface CONSOLE_MESSAGE : ServiceWorkersEvent
-    sealed interface REGISTRATION_COMPLETED : ServiceWorkersEvent
+sealed external interface ServiceWorkersEvent {
+    sealed interface CONSOLE_MESSAGE : node.events.LegacyEventType
+    sealed interface REGISTRATION_COMPLETED : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("console-message")

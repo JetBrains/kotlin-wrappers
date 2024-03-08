@@ -5,18 +5,18 @@ package node.stream
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface DuplexEvent : node.events.EventType {
-    sealed interface CLOSE : DuplexEvent
-    sealed interface DATA : DuplexEvent
-    sealed interface DRAIN : DuplexEvent
-    sealed interface END : DuplexEvent
-    sealed interface ERROR : DuplexEvent
-    sealed interface FINISH : DuplexEvent
-    sealed interface PAUSE : DuplexEvent
-    sealed interface PIPE : DuplexEvent
-    sealed interface READABLE : DuplexEvent
-    sealed interface RESUME : DuplexEvent
-    sealed interface UNPIPE : DuplexEvent
+sealed external interface DuplexEvent {
+    sealed interface CLOSE : node.events.LegacyEventType
+    sealed interface DATA : node.events.LegacyEventType
+    sealed interface DRAIN : node.events.LegacyEventType
+    sealed interface END : node.events.LegacyEventType
+    sealed interface ERROR : node.events.LegacyEventType
+    sealed interface FINISH : node.events.LegacyEventType
+    sealed interface PAUSE : node.events.LegacyEventType
+    sealed interface PIPE : node.events.LegacyEventType
+    sealed interface READABLE : node.events.LegacyEventType
+    sealed interface RESUME : node.events.LegacyEventType
+    sealed interface UNPIPE : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("close")
@@ -51,5 +51,38 @@ sealed external interface DuplexEvent : node.events.EventType {
 
         @seskar.js.JsValue("unpipe")
         val UNPIPE: UNPIPE
+
+        @seskar.js.JsValue("close")
+        fun close(): node.events.EventType<Duplex, js.array.JsTuple>
+
+        @seskar.js.JsValue("data")
+        fun data(): node.events.EventType<Duplex, js.array.JsTuple1<Any?>>
+
+        @seskar.js.JsValue("drain")
+        fun drain(): node.events.EventType<Duplex, js.array.JsTuple>
+
+        @seskar.js.JsValue("end")
+        fun end(): node.events.EventType<Duplex, js.array.JsTuple>
+
+        @seskar.js.JsValue("error")
+        fun error(): node.events.EventType<Duplex, js.array.JsTuple1<Throwable /* JsError */>>
+
+        @seskar.js.JsValue("finish")
+        fun finish(): node.events.EventType<Duplex, js.array.JsTuple>
+
+        @seskar.js.JsValue("pause")
+        fun pause(): node.events.EventType<Duplex, js.array.JsTuple>
+
+        @seskar.js.JsValue("pipe")
+        fun pipe(): node.events.EventType<Duplex, js.array.JsTuple1<Readable>>
+
+        @seskar.js.JsValue("readable")
+        fun readable(): node.events.EventType<Duplex, js.array.JsTuple>
+
+        @seskar.js.JsValue("resume")
+        fun resume(): node.events.EventType<Duplex, js.array.JsTuple>
+
+        @seskar.js.JsValue("unpipe")
+        fun unpipe(): node.events.EventType<Duplex, js.array.JsTuple1<Readable>>
     }
 }

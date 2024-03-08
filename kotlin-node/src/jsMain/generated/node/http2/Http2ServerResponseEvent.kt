@@ -5,13 +5,13 @@ package node.http2
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface Http2ServerResponseEvent : node.events.EventType {
-    sealed interface CLOSE : Http2ServerResponseEvent
-    sealed interface DRAIN : Http2ServerResponseEvent
-    sealed interface ERROR : Http2ServerResponseEvent
-    sealed interface FINISH : Http2ServerResponseEvent
-    sealed interface PIPE : Http2ServerResponseEvent
-    sealed interface UNPIPE : Http2ServerResponseEvent
+sealed external interface Http2ServerResponseEvent {
+    sealed interface CLOSE : node.events.LegacyEventType
+    sealed interface DRAIN : node.events.LegacyEventType
+    sealed interface ERROR : node.events.LegacyEventType
+    sealed interface FINISH : node.events.LegacyEventType
+    sealed interface PIPE : node.events.LegacyEventType
+    sealed interface UNPIPE : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("close")
@@ -31,5 +31,23 @@ sealed external interface Http2ServerResponseEvent : node.events.EventType {
 
         @seskar.js.JsValue("unpipe")
         val UNPIPE: UNPIPE
+
+        @seskar.js.JsValue("close")
+        fun close(): node.events.EventType<Http2ServerResponse, js.array.JsTuple>
+
+        @seskar.js.JsValue("drain")
+        fun drain(): node.events.EventType<Http2ServerResponse, js.array.JsTuple>
+
+        @seskar.js.JsValue("error")
+        fun error(): node.events.EventType<Http2ServerResponse, js.array.JsTuple1<Throwable /* JsError */>>
+
+        @seskar.js.JsValue("finish")
+        fun finish(): node.events.EventType<Http2ServerResponse, js.array.JsTuple>
+
+        @seskar.js.JsValue("pipe")
+        fun pipe(): node.events.EventType<Http2ServerResponse, js.array.JsTuple1<node.stream.Readable>>
+
+        @seskar.js.JsValue("unpipe")
+        fun unpipe(): node.events.EventType<Http2ServerResponse, js.array.JsTuple1<node.stream.Readable>>
     }
 }

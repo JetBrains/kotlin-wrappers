@@ -5,43 +5,43 @@ package electron.core
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface BrowserWindowEvent : node.events.EventType {
-    sealed interface ALWAYS_ON_TOP_CHANGED : BrowserWindowEvent
-    sealed interface APP_COMMAND : BrowserWindowEvent
-    sealed interface BLUR : BrowserWindowEvent
-    sealed interface CLOSE : BrowserWindowEvent
-    sealed interface CLOSED : BrowserWindowEvent
-    sealed interface ENTER_FULL_SCREEN : BrowserWindowEvent
-    sealed interface ENTER_HTML_FULL_SCREEN : BrowserWindowEvent
-    sealed interface FOCUS : BrowserWindowEvent
-    sealed interface HIDE : BrowserWindowEvent
-    sealed interface LEAVE_FULL_SCREEN : BrowserWindowEvent
-    sealed interface LEAVE_HTML_FULL_SCREEN : BrowserWindowEvent
-    sealed interface MAXIMIZE : BrowserWindowEvent
-    sealed interface MINIMIZE : BrowserWindowEvent
-    sealed interface MOVE : BrowserWindowEvent
-    sealed interface MOVED : BrowserWindowEvent
-    sealed interface NEW_WINDOW_FOR_TAB : BrowserWindowEvent
-    sealed interface PAGE_TITLE_UPDATED : BrowserWindowEvent
-    sealed interface READY_TO_SHOW : BrowserWindowEvent
-    sealed interface RESIZE : BrowserWindowEvent
-    sealed interface RESIZED : BrowserWindowEvent
-    sealed interface RESPONSIVE : BrowserWindowEvent
-    sealed interface RESTORE : BrowserWindowEvent
-    sealed interface ROTATE_GESTURE : BrowserWindowEvent
-    sealed interface SCROLL_TOUCH_BEGIN : BrowserWindowEvent
-    sealed interface SCROLL_TOUCH_EDGE : BrowserWindowEvent
-    sealed interface SCROLL_TOUCH_END : BrowserWindowEvent
-    sealed interface SESSION_END : BrowserWindowEvent
-    sealed interface SHEET_BEGIN : BrowserWindowEvent
-    sealed interface SHEET_END : BrowserWindowEvent
-    sealed interface SHOW : BrowserWindowEvent
-    sealed interface SWIPE : BrowserWindowEvent
-    sealed interface SYSTEM_CONTEXT_MENU : BrowserWindowEvent
-    sealed interface UNMAXIMIZE : BrowserWindowEvent
-    sealed interface UNRESPONSIVE : BrowserWindowEvent
-    sealed interface WILL_MOVE : BrowserWindowEvent
-    sealed interface WILL_RESIZE : BrowserWindowEvent
+sealed external interface BrowserWindowEvent {
+    sealed interface ALWAYS_ON_TOP_CHANGED : node.events.LegacyEventType
+    sealed interface APP_COMMAND : node.events.LegacyEventType
+    sealed interface BLUR : node.events.LegacyEventType
+    sealed interface CLOSE : node.events.LegacyEventType
+    sealed interface CLOSED : node.events.LegacyEventType
+    sealed interface ENTER_FULL_SCREEN : node.events.LegacyEventType
+    sealed interface ENTER_HTML_FULL_SCREEN : node.events.LegacyEventType
+    sealed interface FOCUS : node.events.LegacyEventType
+    sealed interface HIDE : node.events.LegacyEventType
+    sealed interface LEAVE_FULL_SCREEN : node.events.LegacyEventType
+    sealed interface LEAVE_HTML_FULL_SCREEN : node.events.LegacyEventType
+    sealed interface MAXIMIZE : node.events.LegacyEventType
+    sealed interface MINIMIZE : node.events.LegacyEventType
+    sealed interface MOVE : node.events.LegacyEventType
+    sealed interface MOVED : node.events.LegacyEventType
+    sealed interface NEW_WINDOW_FOR_TAB : node.events.LegacyEventType
+    sealed interface PAGE_TITLE_UPDATED : node.events.LegacyEventType
+    sealed interface READY_TO_SHOW : node.events.LegacyEventType
+    sealed interface RESIZE : node.events.LegacyEventType
+    sealed interface RESIZED : node.events.LegacyEventType
+    sealed interface RESPONSIVE : node.events.LegacyEventType
+    sealed interface RESTORE : node.events.LegacyEventType
+    sealed interface ROTATE_GESTURE : node.events.LegacyEventType
+    sealed interface SCROLL_TOUCH_BEGIN : node.events.LegacyEventType
+    sealed interface SCROLL_TOUCH_EDGE : node.events.LegacyEventType
+    sealed interface SCROLL_TOUCH_END : node.events.LegacyEventType
+    sealed interface SESSION_END : node.events.LegacyEventType
+    sealed interface SHEET_BEGIN : node.events.LegacyEventType
+    sealed interface SHEET_END : node.events.LegacyEventType
+    sealed interface SHOW : node.events.LegacyEventType
+    sealed interface SWIPE : node.events.LegacyEventType
+    sealed interface SYSTEM_CONTEXT_MENU : node.events.LegacyEventType
+    sealed interface UNMAXIMIZE : node.events.LegacyEventType
+    sealed interface UNRESPONSIVE : node.events.LegacyEventType
+    sealed interface WILL_MOVE : node.events.LegacyEventType
+    sealed interface WILL_RESIZE : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("always-on-top-changed")

@@ -5,14 +5,14 @@ package node.http2
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface Http2SecureServerEvent : node.events.EventType {
-    sealed interface CHECKCONTINUE : Http2SecureServerEvent
-    sealed interface REQUEST : Http2SecureServerEvent
-    sealed interface SESSION : Http2SecureServerEvent
-    sealed interface SESSIONERROR : Http2SecureServerEvent
-    sealed interface STREAM : Http2SecureServerEvent
-    sealed interface TIMEOUT : Http2SecureServerEvent
-    sealed interface UNKNOWNPROTOCOL : Http2SecureServerEvent
+sealed external interface Http2SecureServerEvent {
+    sealed interface CHECKCONTINUE : node.events.LegacyEventType
+    sealed interface REQUEST : node.events.LegacyEventType
+    sealed interface SESSION : node.events.LegacyEventType
+    sealed interface SESSIONERROR : node.events.LegacyEventType
+    sealed interface STREAM : node.events.LegacyEventType
+    sealed interface TIMEOUT : node.events.LegacyEventType
+    sealed interface UNKNOWNPROTOCOL : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("checkContinue")
@@ -35,5 +35,26 @@ sealed external interface Http2SecureServerEvent : node.events.EventType {
 
         @seskar.js.JsValue("unknownProtocol")
         val UNKNOWNPROTOCOL: UNKNOWNPROTOCOL
+
+        @seskar.js.JsValue("checkContinue")
+        fun checkContinue(): node.events.EventType<Http2SecureServer, js.array.JsTuple2<Http2ServerRequest, Http2ServerResponse>>
+
+        @seskar.js.JsValue("request")
+        fun request(): node.events.EventType<Http2SecureServer, js.array.JsTuple2<Http2ServerRequest, Http2ServerResponse>>
+
+        @seskar.js.JsValue("session")
+        fun session(): node.events.EventType<Http2SecureServer, js.array.JsTuple1<ServerHttp2Session>>
+
+        @seskar.js.JsValue("sessionError")
+        fun sessionError(): node.events.EventType<Http2SecureServer, js.array.JsTuple1<Throwable /* JsError */>>
+
+        @seskar.js.JsValue("stream")
+        fun stream(): node.events.EventType<Http2SecureServer, js.array.JsTuple3<ServerHttp2Stream, IncomingHttpHeaders, Double>>
+
+        @seskar.js.JsValue("timeout")
+        fun timeout(): node.events.EventType<Http2SecureServer, js.array.JsTuple>
+
+        @seskar.js.JsValue("unknownProtocol")
+        fun unknownProtocol(): node.events.EventType<Http2SecureServer, js.array.JsTuple1<node.tls.TLSSocket>>
     }
 }

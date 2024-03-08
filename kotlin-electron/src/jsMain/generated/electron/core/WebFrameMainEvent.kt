@@ -5,8 +5,8 @@ package electron.core
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface WebFrameMainEvent : node.events.EventType {
-    sealed interface DOM_READY : WebFrameMainEvent
+sealed external interface WebFrameMainEvent {
+    sealed interface DOM_READY : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("dom-ready")

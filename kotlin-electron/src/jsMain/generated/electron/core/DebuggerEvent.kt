@@ -5,9 +5,9 @@ package electron.core
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface DebuggerEvent : node.events.EventType {
-    sealed interface DETACH : DebuggerEvent
-    sealed interface MESSAGE : DebuggerEvent
+sealed external interface DebuggerEvent {
+    sealed interface DETACH : node.events.LegacyEventType
+    sealed interface MESSAGE : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("detach")

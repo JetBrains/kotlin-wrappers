@@ -5,15 +5,15 @@ package node.readline
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface InterfaceEvent : node.events.EventType {
-    sealed interface CLOSE : InterfaceEvent
-    sealed interface LINE : InterfaceEvent
-    sealed interface PAUSE : InterfaceEvent
-    sealed interface RESUME : InterfaceEvent
-    sealed interface SIGCONT : InterfaceEvent
-    sealed interface SIGINT : InterfaceEvent
-    sealed interface SIGTSTP : InterfaceEvent
-    sealed interface HISTORY : InterfaceEvent
+sealed external interface InterfaceEvent {
+    sealed interface CLOSE : node.events.LegacyEventType
+    sealed interface LINE : node.events.LegacyEventType
+    sealed interface PAUSE : node.events.LegacyEventType
+    sealed interface RESUME : node.events.LegacyEventType
+    sealed interface SIGCONT : node.events.LegacyEventType
+    sealed interface SIGINT : node.events.LegacyEventType
+    sealed interface SIGTSTP : node.events.LegacyEventType
+    sealed interface HISTORY : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("close")
@@ -39,5 +39,29 @@ sealed external interface InterfaceEvent : node.events.EventType {
 
         @seskar.js.JsValue("history")
         val HISTORY: HISTORY
+
+        @seskar.js.JsValue("close")
+        fun close(): node.events.EventType<Interface, js.array.JsTuple>
+
+        @seskar.js.JsValue("line")
+        fun line(): node.events.EventType<Interface, js.array.JsTuple1<String>>
+
+        @seskar.js.JsValue("pause")
+        fun pause(): node.events.EventType<Interface, js.array.JsTuple>
+
+        @seskar.js.JsValue("resume")
+        fun resume(): node.events.EventType<Interface, js.array.JsTuple>
+
+        @seskar.js.JsValue("SIGCONT")
+        fun SIGCONT(): node.events.EventType<Interface, js.array.JsTuple>
+
+        @seskar.js.JsValue("SIGINT")
+        fun SIGINT(): node.events.EventType<Interface, js.array.JsTuple>
+
+        @seskar.js.JsValue("SIGTSTP")
+        fun SIGTSTP(): node.events.EventType<Interface, js.array.JsTuple>
+
+        @seskar.js.JsValue("history")
+        fun history(): node.events.EventType<Interface, js.array.JsTuple1<js.array.ReadonlyArray<String>>>
     }
 }

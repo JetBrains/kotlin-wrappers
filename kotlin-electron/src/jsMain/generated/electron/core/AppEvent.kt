@@ -5,38 +5,38 @@ package electron.core
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface AppEvent : node.events.EventType {
-    sealed interface ACCESSIBILITY_SUPPORT_CHANGED : AppEvent
-    sealed interface ACTIVATE : AppEvent
-    sealed interface ACTIVITY_WAS_CONTINUED : AppEvent
-    sealed interface BEFORE_QUIT : AppEvent
-    sealed interface BROWSER_WINDOW_BLUR : AppEvent
-    sealed interface BROWSER_WINDOW_CREATED : AppEvent
-    sealed interface BROWSER_WINDOW_FOCUS : AppEvent
-    sealed interface CERTIFICATE_ERROR : AppEvent
-    sealed interface CHILD_PROCESS_GONE : AppEvent
-    sealed interface CONTINUE_ACTIVITY : AppEvent
-    sealed interface CONTINUE_ACTIVITY_ERROR : AppEvent
-    sealed interface DID_BECOME_ACTIVE : AppEvent
-    sealed interface GPU_INFO_UPDATE : AppEvent
-    sealed interface GPU_PROCESS_CRASHED : AppEvent
-    sealed interface LOGIN : AppEvent
-    sealed interface NEW_WINDOW_FOR_TAB : AppEvent
-    sealed interface OPEN_FILE : AppEvent
-    sealed interface OPEN_URL : AppEvent
-    sealed interface QUIT : AppEvent
-    sealed interface READY : AppEvent
-    sealed interface RENDER_PROCESS_GONE : AppEvent
-    sealed interface RENDERER_PROCESS_CRASHED : AppEvent
-    sealed interface SECOND_INSTANCE : AppEvent
-    sealed interface SELECT_CLIENT_CERTIFICATE : AppEvent
-    sealed interface SESSION_CREATED : AppEvent
-    sealed interface UPDATE_ACTIVITY_STATE : AppEvent
-    sealed interface WEB_CONTENTS_CREATED : AppEvent
-    sealed interface WILL_CONTINUE_ACTIVITY : AppEvent
-    sealed interface WILL_FINISH_LAUNCHING : AppEvent
-    sealed interface WILL_QUIT : AppEvent
-    sealed interface WINDOW_ALL_CLOSED : AppEvent
+sealed external interface AppEvent {
+    sealed interface ACCESSIBILITY_SUPPORT_CHANGED : node.events.LegacyEventType
+    sealed interface ACTIVATE : node.events.LegacyEventType
+    sealed interface ACTIVITY_WAS_CONTINUED : node.events.LegacyEventType
+    sealed interface BEFORE_QUIT : node.events.LegacyEventType
+    sealed interface BROWSER_WINDOW_BLUR : node.events.LegacyEventType
+    sealed interface BROWSER_WINDOW_CREATED : node.events.LegacyEventType
+    sealed interface BROWSER_WINDOW_FOCUS : node.events.LegacyEventType
+    sealed interface CERTIFICATE_ERROR : node.events.LegacyEventType
+    sealed interface CHILD_PROCESS_GONE : node.events.LegacyEventType
+    sealed interface CONTINUE_ACTIVITY : node.events.LegacyEventType
+    sealed interface CONTINUE_ACTIVITY_ERROR : node.events.LegacyEventType
+    sealed interface DID_BECOME_ACTIVE : node.events.LegacyEventType
+    sealed interface GPU_INFO_UPDATE : node.events.LegacyEventType
+    sealed interface GPU_PROCESS_CRASHED : node.events.LegacyEventType
+    sealed interface LOGIN : node.events.LegacyEventType
+    sealed interface NEW_WINDOW_FOR_TAB : node.events.LegacyEventType
+    sealed interface OPEN_FILE : node.events.LegacyEventType
+    sealed interface OPEN_URL : node.events.LegacyEventType
+    sealed interface QUIT : node.events.LegacyEventType
+    sealed interface READY : node.events.LegacyEventType
+    sealed interface RENDER_PROCESS_GONE : node.events.LegacyEventType
+    sealed interface RENDERER_PROCESS_CRASHED : node.events.LegacyEventType
+    sealed interface SECOND_INSTANCE : node.events.LegacyEventType
+    sealed interface SELECT_CLIENT_CERTIFICATE : node.events.LegacyEventType
+    sealed interface SESSION_CREATED : node.events.LegacyEventType
+    sealed interface UPDATE_ACTIVITY_STATE : node.events.LegacyEventType
+    sealed interface WEB_CONTENTS_CREATED : node.events.LegacyEventType
+    sealed interface WILL_CONTINUE_ACTIVITY : node.events.LegacyEventType
+    sealed interface WILL_FINISH_LAUNCHING : node.events.LegacyEventType
+    sealed interface WILL_QUIT : node.events.LegacyEventType
+    sealed interface WINDOW_ALL_CLOSED : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("accessibility-support-changed")

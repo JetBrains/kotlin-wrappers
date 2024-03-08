@@ -73,7 +73,7 @@ export default {
             && node.parent.parent.parent.parent
             && isEventEmitterClassNode(node.parent.parent.parent.parent)
         ) {
-            return "EventType"
+            return "LegacyEventType"
         }
 
         if (
@@ -94,7 +94,7 @@ export default {
                 || isNodeEventTargetInterfaceNode(node.parent.parent.parent.parent)
             )
         ) {
-            return "EventType"
+            return "LegacyEventType"
         }
 
         if (

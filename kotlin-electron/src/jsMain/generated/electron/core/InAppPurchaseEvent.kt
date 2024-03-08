@@ -5,8 +5,8 @@ package electron.core
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface InAppPurchaseEvent : node.events.EventType {
-    sealed interface TRANSACTIONS_UPDATED : InAppPurchaseEvent
+sealed external interface InAppPurchaseEvent {
+    sealed interface TRANSACTIONS_UPDATED : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("transactions-updated")

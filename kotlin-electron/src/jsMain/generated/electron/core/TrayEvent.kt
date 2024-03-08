@@ -5,24 +5,24 @@ package electron.core
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface TrayEvent : node.events.EventType {
-    sealed interface BALLOON_CLICK : TrayEvent
-    sealed interface BALLOON_CLOSED : TrayEvent
-    sealed interface BALLOON_SHOW : TrayEvent
-    sealed interface CLICK : TrayEvent
-    sealed interface DOUBLE_CLICK : TrayEvent
-    sealed interface DRAG_END : TrayEvent
-    sealed interface DRAG_ENTER : TrayEvent
-    sealed interface DRAG_LEAVE : TrayEvent
-    sealed interface DROP : TrayEvent
-    sealed interface DROP_FILES : TrayEvent
-    sealed interface DROP_TEXT : TrayEvent
-    sealed interface MOUSE_DOWN : TrayEvent
-    sealed interface MOUSE_ENTER : TrayEvent
-    sealed interface MOUSE_LEAVE : TrayEvent
-    sealed interface MOUSE_MOVE : TrayEvent
-    sealed interface MOUSE_UP : TrayEvent
-    sealed interface RIGHT_CLICK : TrayEvent
+sealed external interface TrayEvent {
+    sealed interface BALLOON_CLICK : node.events.LegacyEventType
+    sealed interface BALLOON_CLOSED : node.events.LegacyEventType
+    sealed interface BALLOON_SHOW : node.events.LegacyEventType
+    sealed interface CLICK : node.events.LegacyEventType
+    sealed interface DOUBLE_CLICK : node.events.LegacyEventType
+    sealed interface DRAG_END : node.events.LegacyEventType
+    sealed interface DRAG_ENTER : node.events.LegacyEventType
+    sealed interface DRAG_LEAVE : node.events.LegacyEventType
+    sealed interface DROP : node.events.LegacyEventType
+    sealed interface DROP_FILES : node.events.LegacyEventType
+    sealed interface DROP_TEXT : node.events.LegacyEventType
+    sealed interface MOUSE_DOWN : node.events.LegacyEventType
+    sealed interface MOUSE_ENTER : node.events.LegacyEventType
+    sealed interface MOUSE_LEAVE : node.events.LegacyEventType
+    sealed interface MOUSE_MOVE : node.events.LegacyEventType
+    sealed interface MOUSE_UP : node.events.LegacyEventType
+    sealed interface RIGHT_CLICK : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("balloon-click")

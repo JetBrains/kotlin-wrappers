@@ -2,21 +2,24 @@
 
 package node.process
 
+import js.promise.Promise
+import node.workerThreads.Worker
+
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface ProcessEvent : node.events.EventType {
-    sealed interface BEFOREEXIT : ProcessEvent
-    sealed interface DISCONNECT : ProcessEvent
-    sealed interface EXIT : ProcessEvent
-    sealed interface REJECTIONHANDLED : ProcessEvent
-    sealed interface UNCAUGHTEXCEPTION : ProcessEvent
-    sealed interface UNCAUGHTEXCEPTIONMONITOR : ProcessEvent
-    sealed interface UNHANDLEDREJECTION : ProcessEvent
-    sealed interface WARNING : ProcessEvent
-    sealed interface MESSAGE : ProcessEvent
-    sealed interface MULTIPLERESOLVES : ProcessEvent
-    sealed interface WORKER : ProcessEvent
+sealed external interface ProcessEvent {
+    sealed interface BEFOREEXIT : node.events.LegacyEventType
+    sealed interface DISCONNECT : node.events.LegacyEventType
+    sealed interface EXIT : node.events.LegacyEventType
+    sealed interface REJECTIONHANDLED : node.events.LegacyEventType
+    sealed interface UNCAUGHTEXCEPTION : node.events.LegacyEventType
+    sealed interface UNCAUGHTEXCEPTIONMONITOR : node.events.LegacyEventType
+    sealed interface UNHANDLEDREJECTION : node.events.LegacyEventType
+    sealed interface WARNING : node.events.LegacyEventType
+    sealed interface MESSAGE : node.events.LegacyEventType
+    sealed interface MULTIPLERESOLVES : node.events.LegacyEventType
+    sealed interface WORKER : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("beforeExit")
@@ -51,5 +54,38 @@ sealed external interface ProcessEvent : node.events.EventType {
 
         @seskar.js.JsValue("worker")
         val WORKER: WORKER
+
+        @seskar.js.JsValue("beforeExit")
+        fun beforeExit(): node.events.EventType<Process, js.array.JsTuple1<Number>>
+
+        @seskar.js.JsValue("disconnect")
+        fun disconnect(): node.events.EventType<Process, js.array.JsTuple>
+
+        @seskar.js.JsValue("exit")
+        fun exit(): node.events.EventType<Process, js.array.JsTuple1<Number>>
+
+        @seskar.js.JsValue("rejectionHandled")
+        fun rejectionHandled(): node.events.EventType<Process, js.array.JsTuple1<Promise<Any?>>>
+
+        @seskar.js.JsValue("uncaughtException")
+        fun uncaughtException(): node.events.EventType<Process, js.array.JsTuple2<Throwable /* JsError */, UncaughtExceptionOrigin>>
+
+        @seskar.js.JsValue("uncaughtExceptionMonitor")
+        fun uncaughtExceptionMonitor(): node.events.EventType<Process, js.array.JsTuple2<Throwable /* JsError */, UncaughtExceptionOrigin>>
+
+        @seskar.js.JsValue("unhandledRejection")
+        fun unhandledRejection(): node.events.EventType<Process, js.array.JsTuple2<Any?, Promise<Any?>>>
+
+        @seskar.js.JsValue("warning")
+        fun warning(): node.events.EventType<Process, js.array.JsTuple1<Throwable /* JsError */>>
+
+        @seskar.js.JsValue("message")
+        fun message(): node.events.EventType<Process, js.array.JsTuple2<Any?, Any?>>
+
+        @seskar.js.JsValue("multipleResolves")
+        fun multipleResolves(): node.events.EventType<Process, js.array.JsTuple3<MultipleResolveType, Promise<Any?>, Any?>>
+
+        @seskar.js.JsValue("worker")
+        fun worker(): node.events.EventType<Process, js.array.JsTuple1<Worker>>
     }
 }

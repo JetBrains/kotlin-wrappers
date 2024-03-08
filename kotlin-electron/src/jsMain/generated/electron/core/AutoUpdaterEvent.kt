@@ -5,13 +5,13 @@ package electron.core
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface AutoUpdaterEvent : node.events.EventType {
-    sealed interface BEFORE_QUIT_FOR_UPDATE : AutoUpdaterEvent
-    sealed interface CHECKING_FOR_UPDATE : AutoUpdaterEvent
-    sealed interface ERROR : AutoUpdaterEvent
-    sealed interface UPDATE_AVAILABLE : AutoUpdaterEvent
-    sealed interface UPDATE_DOWNLOADED : AutoUpdaterEvent
-    sealed interface UPDATE_NOT_AVAILABLE : AutoUpdaterEvent
+sealed external interface AutoUpdaterEvent {
+    sealed interface BEFORE_QUIT_FOR_UPDATE : node.events.LegacyEventType
+    sealed interface CHECKING_FOR_UPDATE : node.events.LegacyEventType
+    sealed interface ERROR : node.events.LegacyEventType
+    sealed interface UPDATE_AVAILABLE : node.events.LegacyEventType
+    sealed interface UPDATE_DOWNLOADED : node.events.LegacyEventType
+    sealed interface UPDATE_NOT_AVAILABLE : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("before-quit-for-update")

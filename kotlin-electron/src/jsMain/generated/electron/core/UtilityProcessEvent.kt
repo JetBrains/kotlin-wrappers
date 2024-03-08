@@ -5,10 +5,10 @@ package electron.core
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface UtilityProcessEvent : node.events.EventType {
-    sealed interface EXIT : UtilityProcessEvent
-    sealed interface MESSAGE : UtilityProcessEvent
-    sealed interface SPAWN : UtilityProcessEvent
+sealed external interface UtilityProcessEvent {
+    sealed interface EXIT : node.events.LegacyEventType
+    sealed interface MESSAGE : node.events.LegacyEventType
+    sealed interface SPAWN : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("exit")

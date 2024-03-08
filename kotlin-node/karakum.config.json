@@ -114,7 +114,8 @@
         "**/workerThreads/global/namespace.kt",
         "**/workerThreads/BroadcastChannel.kt",
         "**/workerThreads/MessageChannel.kt",
-        "**/workerThreads/MessagePort.kt"
+        "**/workerThreads/MessagePort.kt",
+        "**/workerThreads/MessagePortEvent.kt"
     ],
     "libraryName": "node",
     "libraryNameOutputPrefix": true,
@@ -609,6 +610,10 @@
             "node.http.IncomingMessage",
             "node.http.ServerResponse"
         ],
+        "https/ServerEvent.kt": [
+            "node.http.IncomingMessage",
+            "node.http.ServerResponse"
+        ],
         "https/ServerOptions.kt": [
             "node.http.IncomingMessage",
             "node.http.ServerResponse"
@@ -652,6 +657,9 @@
             "js.promise.Promise",
             "node.Module",
             "node.events.EventEmitter"
+        ],
+        "process/ProcessEvent.kt": [
+            "js.promise.Promise"
         ],
         "process/ProcessEnv.kt": [
             "node.Dict"

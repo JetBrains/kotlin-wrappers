@@ -2,21 +2,23 @@
 
 package node.http
 
+import node.net.Socket
+
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
-sealed external interface ServerEvent : node.events.EventType {
-    sealed interface CLOSE : ServerEvent
-    sealed interface CONNECTION : ServerEvent
-    sealed interface ERROR : ServerEvent
-    sealed interface LISTENING : ServerEvent
-    sealed interface CHECKCONTINUE : ServerEvent
-    sealed interface CHECKEXPECTATION : ServerEvent
-    sealed interface CLIENTERROR : ServerEvent
-    sealed interface CONNECT : ServerEvent
-    sealed interface DROPREQUEST : ServerEvent
-    sealed interface REQUEST : ServerEvent
-    sealed interface UPGRADE : ServerEvent
+sealed external interface ServerEvent {
+    sealed interface CLOSE : node.events.LegacyEventType
+    sealed interface CONNECTION : node.events.LegacyEventType
+    sealed interface ERROR : node.events.LegacyEventType
+    sealed interface LISTENING : node.events.LegacyEventType
+    sealed interface CHECKCONTINUE : node.events.LegacyEventType
+    sealed interface CHECKEXPECTATION : node.events.LegacyEventType
+    sealed interface CLIENTERROR : node.events.LegacyEventType
+    sealed interface CONNECT : node.events.LegacyEventType
+    sealed interface DROPREQUEST : node.events.LegacyEventType
+    sealed interface REQUEST : node.events.LegacyEventType
+    sealed interface UPGRADE : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("close")
@@ -51,5 +53,38 @@ sealed external interface ServerEvent : node.events.EventType {
 
         @seskar.js.JsValue("upgrade")
         val UPGRADE: UPGRADE
+
+        @seskar.js.JsValue("close")
+        fun close(): node.events.EventType<Server<*, *>, js.array.JsTuple>
+
+        @seskar.js.JsValue("connection")
+        fun connection(): node.events.EventType<Server<*, *>, js.array.JsTuple1<Socket>>
+
+        @seskar.js.JsValue("error")
+        fun error(): node.events.EventType<Server<*, *>, js.array.JsTuple1<Throwable /* JsError */>>
+
+        @seskar.js.JsValue("listening")
+        fun listening(): node.events.EventType<Server<*, *>, js.array.JsTuple>
+
+        @seskar.js.JsValue("checkContinue")
+        fun <Request : IncomingMessage, Response : ServerResponse<*>> checkContinue(): node.events.EventType<Server<Request, Response>, js.array.JsTuple2<Request, Response>>
+
+        @seskar.js.JsValue("checkExpectation")
+        fun <Request : IncomingMessage, Response : ServerResponse<*>> checkExpectation(): node.events.EventType<Server<Request, Response>, js.array.JsTuple2<Request, Response>>
+
+        @seskar.js.JsValue("clientError")
+        fun clientError(): node.events.EventType<Server<*, *>, js.array.JsTuple2<Throwable /* JsError */, node.stream.Duplex>>
+
+        @seskar.js.JsValue("connect")
+        fun <Request : IncomingMessage> connect(): node.events.EventType<Server<Request, *>, js.array.JsTuple3<Request, node.stream.Duplex, node.buffer.Buffer>>
+
+        @seskar.js.JsValue("dropRequest")
+        fun <Request : IncomingMessage> dropRequest(): node.events.EventType<Server<Request, *>, js.array.JsTuple2<Request, node.stream.Duplex>>
+
+        @seskar.js.JsValue("request")
+        fun <Request : IncomingMessage, Response : ServerResponse<*>> request(): node.events.EventType<Server<Request, Response>, js.array.JsTuple2<Request, Response>>
+
+        @seskar.js.JsValue("upgrade")
+        fun <Request : IncomingMessage> upgrade(): node.events.EventType<Server<Request, *>, js.array.JsTuple3<Request, node.stream.Duplex, node.buffer.Buffer>>
     }
 }
