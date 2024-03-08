@@ -1,5 +1,5 @@
 import org.jetbrains.kotlin.gradle.targets.js.npm.NpmDependency
-import org.jetbrains.kotlin.gradle.targets.js.yarn.YarnRootExtension
+import org.jetbrains.kotlin.gradle.targets.js.npm.NpmExtension
 
 val NON_STRICT_DEPENDENCIES = setOf(
     "typescript",
@@ -12,7 +12,7 @@ val NPM_CONFIGURATIONS = setOf(
 
 val npmResolutions by tasks.registering {
     doLast {
-        val yarnExtension = rootProject.the<YarnRootExtension>()
+        val npmExtension = rootProject.the<NpmExtension>()
 
         for (dependency in project.getNpmDependencies()) {
             if (dependency.name in NON_STRICT_DEPENDENCIES)
@@ -20,7 +20,7 @@ val npmResolutions by tasks.registering {
 
             val version = dependency.version
             if (version.startsWith("^")) {
-                yarnExtension.resolution(dependency.name, version.removePrefix("^"))
+                npmExtension.override(dependency.name, version.removePrefix("^"))
             }
         }
     }

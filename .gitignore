@@ -10,4 +10,4 @@ build/
 *.ipr
 *.iws
 
-yarn.lock
+package-lock.json
