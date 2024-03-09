@@ -9,31 +9,31 @@ external interface CustomElement {
         WithAdoptedCallback,
         WithAttributeChangedCallback
 
-    /**
-     * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Web_components#connectedcallback)
-     */
     interface WithConnectedCallback {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Web_components#connectedcallback)
+         */
         fun connectedCallback()
     }
 
-    /**
-     * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Web_components#disconnectedcallback)
-     */
     interface WithDisconnectedCallback {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Web_components#disconnectedcallback)
+         */
         fun disconnectedCallback()
     }
 
-    /**
-     * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Web_components#adoptedcallback)
-     */
     interface WithAdoptedCallback {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Web_components#adoptedcallback)
+         */
         fun adoptedCallback()
     }
 
-    /**
-     * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Web_components#attributechangedcallback)
-     */
     interface WithAttributeChangedCallback {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Web_components#attributechangedcallback)
+         */
         fun attributeChangedCallback(
             name: String,
             oldValue: Any?,
