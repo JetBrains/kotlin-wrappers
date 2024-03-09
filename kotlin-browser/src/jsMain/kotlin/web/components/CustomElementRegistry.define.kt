@@ -1,5 +1,3 @@
-// Automatically generated - do not modify!
-
 package web.components
 
 import web.html.HTMLElement
