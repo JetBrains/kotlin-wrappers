@@ -181,11 +181,6 @@ sealed external class Window :
     val top: WindowProxy?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/blur)
-     */
-    fun blur()
-
-    /**
      * Closes the window.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/close)

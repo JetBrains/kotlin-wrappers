@@ -41,6 +41,11 @@ sealed external class ElementInternals :
     val shadowRoot: ShadowRoot?
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/states)
+     */
+    val states: CustomStateSet
+
+    /**
      * Returns the error message that would be shown to the user if internals's target element was to be checked for validity.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/validationMessage)

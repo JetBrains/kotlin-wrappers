@@ -12,6 +12,7 @@ import web.workers.WorkerGlobalScope
 
 /**
  * This ServiceWorker API interface represents the global execution context of a service worker.
+ * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope)
  */

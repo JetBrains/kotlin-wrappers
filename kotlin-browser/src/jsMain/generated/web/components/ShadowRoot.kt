@@ -17,6 +17,11 @@ sealed external class ShadowRoot :
     DocumentOrShadowRoot,
     InnerHTML {
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ShadowRoot/clonable)
+     */
+    val clonable: Boolean
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ShadowRoot/delegatesFocus)
      */
     val delegatesFocus: Boolean

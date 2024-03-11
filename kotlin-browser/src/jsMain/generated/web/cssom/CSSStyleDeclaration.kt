@@ -653,6 +653,11 @@ sealed external class CSSStyleDeclaration :
     var content: String
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/content-visibility)
+     */
+    var contentVisibility: String
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/counter-increment)
      */
     var counterIncrement: String
@@ -1825,6 +1830,7 @@ sealed external class CSSStyleDeclaration :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-wrap)
      */
     var textWrap: String
+    var textWrapMode: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/top)
