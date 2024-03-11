@@ -35,9 +35,6 @@ include("kotlin-actions-toolkit")
 include("kotlin-browser")
 
 // Kotlin/JS: CesiumJS wrappers
-include("kotlin-cesium")
-
-// Kotlin/JS: CesiumJS wrappers
 include("kotlin-cesium-engine")
 
 // Kotlin/JS: CesiumJS wrappers
