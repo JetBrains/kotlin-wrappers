@@ -7,7 +7,8 @@ dependencies {
     constraints {
         api(projects.kotlinActionsToolkit)
         api(projects.kotlinBrowser)
-        api(projects.kotlinCesium)
+        api(projects.kotlinCesiumEngine)
+        api(projects.kotlinCesiumWidgets)
         api(projects.kotlinCss)
         api(projects.kotlinCssomCore)
         api(projects.kotlinCsstype)

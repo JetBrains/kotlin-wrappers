@@ -37,6 +37,12 @@ include("kotlin-browser")
 // Kotlin/JS: CesiumJS wrappers
 include("kotlin-cesium")
 
+// Kotlin/JS: CesiumJS wrappers
+include("kotlin-cesium-engine")
+
+// Kotlin/JS: CesiumJS wrappers
+include("kotlin-cesium-widgets")
+
 // Platform-agnostic CSS support
 include("kotlin-css")
 
