@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("cesium")
+@file:JsModule("@cesium/widgets")
 
 @file:Suppress(
     "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",

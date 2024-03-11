@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("cesium")
+@file:JsModule("@cesium/engine")
 
 @file:Suppress(
     "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
