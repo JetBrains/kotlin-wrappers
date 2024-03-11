@@ -8,8 +8,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 @JsVirtual
-sealed external class BeforeUnloadEventTypes :
-    BeforeUnloadEventTypes_deprecated {
+sealed external class BeforeUnloadEventTypes {
 
     @JsValue("beforeunload")
     fun <C : EventTarget> beforeUnload(): EventType<BeforeUnloadEvent<C>>

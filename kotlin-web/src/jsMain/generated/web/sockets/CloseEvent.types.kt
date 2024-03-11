@@ -8,8 +8,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 @JsVirtual
-sealed external class CloseEventTypes :
-    CloseEventTypes_deprecated {
+sealed external class CloseEventTypes {
 
     @JsValue("close")
     fun <C : EventTarget> close(): EventType<CloseEvent<C>>

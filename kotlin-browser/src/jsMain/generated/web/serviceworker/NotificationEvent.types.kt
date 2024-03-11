@@ -8,8 +8,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 @JsVirtual
-sealed external class NotificationEventTypes :
-    NotificationEventTypes_deprecated {
+sealed external class NotificationEventTypes {
 
     @JsValue("notificationclick")
     fun <C : EventTarget> notificationClick(): EventType<NotificationEvent<C>>

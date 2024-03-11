@@ -8,8 +8,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 @JsVirtual
-sealed external class ExtendableEventTypes :
-    ExtendableEventTypes_deprecated {
+sealed external class ExtendableEventTypes {
 
     @JsValue("activate")
     fun <C : EventTarget> activate(): EventType<ExtendableEvent<C>>

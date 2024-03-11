@@ -8,8 +8,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 @JsVirtual
-sealed external class BlobEventTypes :
-    BlobEventTypes_deprecated {
+sealed external class BlobEventTypes {
 
     @JsValue("dataavailable")
     fun <C : EventTarget> dataAvailable(): EventType<BlobEvent<C>>

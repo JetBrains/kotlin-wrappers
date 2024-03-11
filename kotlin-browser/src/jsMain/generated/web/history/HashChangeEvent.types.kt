@@ -8,8 +8,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 @JsVirtual
-sealed external class HashChangeEventTypes :
-    HashChangeEventTypes_deprecated {
+sealed external class HashChangeEventTypes {
 
     @JsValue("hashchange")
     fun <C : EventTarget> hashChange(): EventType<HashChangeEvent<C>>

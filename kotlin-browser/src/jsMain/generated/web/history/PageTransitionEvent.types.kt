@@ -8,8 +8,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 @JsVirtual
-sealed external class PageTransitionEventTypes :
-    PageTransitionEventTypes_deprecated {
+sealed external class PageTransitionEventTypes {
 
     @JsValue("pagehide")
     fun <C : EventTarget> pageHide(): EventType<PageTransitionEvent<C>>

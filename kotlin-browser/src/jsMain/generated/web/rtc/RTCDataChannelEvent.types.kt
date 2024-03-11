@@ -8,8 +8,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 @JsVirtual
-sealed external class RTCDataChannelEventTypes :
-    RTCDataChannelEventTypes_deprecated {
+sealed external class RTCDataChannelEventTypes {
 
     @JsValue("datachannel")
     fun <C : EventTarget> dataChannel(): EventType<RTCDataChannelEvent<C>>

@@ -8,8 +8,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 @JsVirtual
-sealed external class ErrorEventTypes :
-    ErrorEventTypes_deprecated {
+sealed external class ErrorEventTypes {
 
     @JsValue("error")
     fun <C : EventTarget> error(): EventType<ErrorEvent<C>>

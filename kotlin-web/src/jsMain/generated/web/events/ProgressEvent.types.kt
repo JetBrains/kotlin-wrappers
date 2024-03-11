@@ -6,8 +6,7 @@ import seskar.js.JsValue
 import seskar.js.JsVirtual
 
 @JsVirtual
-sealed external class ProgressEventTypes :
-    ProgressEventTypes_deprecated {
+sealed external class ProgressEventTypes {
 
     @JsValue("abort")
     fun <C : EventTarget> abort(): EventType<ProgressEvent<C>>

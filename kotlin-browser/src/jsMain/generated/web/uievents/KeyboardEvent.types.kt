@@ -8,8 +8,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 @JsVirtual
-sealed external class KeyboardEventTypes :
-    KeyboardEventTypes_deprecated {
+sealed external class KeyboardEventTypes {
 
     @JsValue("keydown")
     fun <C : EventTarget> keyDown(): EventType<KeyboardEvent<C>>

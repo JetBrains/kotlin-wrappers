@@ -8,8 +8,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 @JsVirtual
-sealed external class MessageEventTypes :
-    MessageEventTypes_deprecated {
+sealed external class MessageEventTypes {
 
     @JsValue("connect")
     fun <D, C : EventTarget> connect(): EventType<MessageEvent<D, C>>

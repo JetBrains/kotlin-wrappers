@@ -8,8 +8,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 @JsVirtual
-sealed external class StorageEventTypes :
-    StorageEventTypes_deprecated {
+sealed external class StorageEventTypes {
 
     @JsValue("storage")
     fun <C : EventTarget> storage(): EventType<StorageEvent<C>>

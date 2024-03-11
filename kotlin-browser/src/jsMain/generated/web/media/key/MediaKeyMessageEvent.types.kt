@@ -8,8 +8,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 @JsVirtual
-sealed external class MediaKeyMessageEventTypes :
-    MediaKeyMessageEventTypes_deprecated {
+sealed external class MediaKeyMessageEventTypes {
 
     @JsValue("message")
     fun <C : EventTarget> message(): EventType<MediaKeyMessageEvent<C>>

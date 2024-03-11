@@ -8,8 +8,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 @JsVirtual
-sealed external class RTCErrorEventTypes :
-    RTCErrorEventTypes_deprecated {
+sealed external class RTCErrorEventTypes {
 
     @JsValue("error")
     fun <C : EventTarget> error(): EventType<RTCErrorEvent<C>>

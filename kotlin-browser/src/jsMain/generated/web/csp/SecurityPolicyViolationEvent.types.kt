@@ -8,8 +8,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 @JsVirtual
-sealed external class SecurityPolicyViolationEventTypes :
-    SecurityPolicyViolationEventTypes_deprecated {
+sealed external class SecurityPolicyViolationEventTypes {
 
     @JsValue("securitypolicyviolation")
     fun <C : EventTarget> securityPolicyViolation(): EventType<SecurityPolicyViolationEvent<C>>

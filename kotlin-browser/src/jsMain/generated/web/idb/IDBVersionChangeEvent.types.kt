@@ -8,8 +8,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 @JsVirtual
-sealed external class IDBVersionChangeEventTypes :
-    IDBVersionChangeEventTypes_deprecated {
+sealed external class IDBVersionChangeEventTypes {
 
     @JsValue("blocked")
     fun <C : EventTarget> blocked(): EventType<IDBVersionChangeEvent<C>>

@@ -8,8 +8,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 @JsVirtual
-sealed external class PaymentMethodChangeEventTypes :
-    PaymentMethodChangeEventTypes_deprecated {
+sealed external class PaymentMethodChangeEventTypes {
 
     @JsValue("paymentmethodchange")
     fun <C : EventTarget> paymentMethodChange(): EventType<PaymentMethodChangeEvent<C>>

@@ -8,8 +8,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 @JsVirtual
-sealed external class WheelEventTypes :
-    WheelEventTypes_deprecated {
+sealed external class WheelEventTypes {
 
     @JsValue("wheel")
     fun <C : EventTarget> wheel(): EventType<WheelEvent<C>>

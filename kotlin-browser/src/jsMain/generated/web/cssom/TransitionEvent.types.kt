@@ -8,8 +8,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 @JsVirtual
-sealed external class TransitionEventTypes :
-    TransitionEventTypes_deprecated {
+sealed external class TransitionEventTypes {
 
     @JsValue("transitioncancel")
     fun <C : EventTarget> transitionCancel(): EventType<TransitionEvent<C>>

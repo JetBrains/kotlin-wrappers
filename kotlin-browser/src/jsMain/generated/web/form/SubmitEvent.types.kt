@@ -8,8 +8,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 @JsVirtual
-sealed external class SubmitEventTypes :
-    SubmitEventTypes_deprecated {
+sealed external class SubmitEventTypes {
 
     @JsValue("submit")
     fun <C : EventTarget> submit(): EventType<SubmitEvent<C>>

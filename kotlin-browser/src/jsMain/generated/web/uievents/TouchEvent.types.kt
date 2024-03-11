@@ -8,8 +8,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 @JsVirtual
-sealed external class TouchEventTypes :
-    TouchEventTypes_deprecated {
+sealed external class TouchEventTypes {
 
     @JsValue("touchcancel")
     fun <C : EventTarget> touchCancel(): EventType<TouchEvent<C>>

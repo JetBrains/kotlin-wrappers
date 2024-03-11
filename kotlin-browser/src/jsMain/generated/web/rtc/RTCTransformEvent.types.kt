@@ -8,8 +8,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 @JsVirtual
-sealed external class RTCTransformEventTypes :
-    RTCTransformEventTypes_deprecated {
+sealed external class RTCTransformEventTypes {
 
     @JsValue("rtctransform")
     fun <C : EventTarget> rtcTransform(): EventType<RTCTransformEvent<C>>

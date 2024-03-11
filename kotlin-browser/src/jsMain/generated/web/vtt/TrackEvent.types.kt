@@ -8,8 +8,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 @JsVirtual
-sealed external class TrackEventTypes :
-    TrackEventTypes_deprecated {
+sealed external class TrackEventTypes {
 
     @JsValue("addtrack")
     fun <C : EventTarget> addTrack(): EventType<TrackEvent<C>>

@@ -8,8 +8,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 @JsVirtual
-sealed external class OfflineAudioCompletionEventTypes :
-    OfflineAudioCompletionEventTypes_deprecated {
+sealed external class OfflineAudioCompletionEventTypes {
 
     @JsValue("complete")
     fun <C : EventTarget> complete(): EventType<OfflineAudioCompletionEvent<C>>

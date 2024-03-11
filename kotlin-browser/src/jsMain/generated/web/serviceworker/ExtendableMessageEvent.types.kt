@@ -8,8 +8,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 @JsVirtual
-sealed external class ExtendableMessageEventTypes :
-    ExtendableMessageEventTypes_deprecated {
+sealed external class ExtendableMessageEventTypes {
 
     @JsValue("message")
     fun <C : EventTarget> message(): EventType<ExtendableMessageEvent<C>>

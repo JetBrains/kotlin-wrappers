@@ -8,8 +8,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 @JsVirtual
-sealed external class MediaEncryptedEventTypes :
-    MediaEncryptedEventTypes_deprecated {
+sealed external class MediaEncryptedEventTypes {
 
     @JsValue("encrypted")
     fun <C : EventTarget> encrypted(): EventType<MediaEncryptedEvent<C>>

@@ -8,8 +8,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 @JsVirtual
-sealed external class PushEventTypes :
-    PushEventTypes_deprecated {
+sealed external class PushEventTypes {
 
     @JsValue("push")
     fun <C : EventTarget> push(): EventType<PushEvent<C>>

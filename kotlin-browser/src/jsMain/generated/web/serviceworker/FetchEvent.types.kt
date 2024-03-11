@@ -8,8 +8,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 @JsVirtual
-sealed external class FetchEventTypes :
-    FetchEventTypes_deprecated {
+sealed external class FetchEventTypes {
 
     @JsValue("fetch")
     fun <C : EventTarget> fetch(): EventType<FetchEvent<C>>

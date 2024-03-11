@@ -6,8 +6,7 @@ import seskar.js.JsValue
 import seskar.js.JsVirtual
 
 @JsVirtual
-sealed external class EventTypes :
-    EventTypes_deprecated {
+sealed external class EventTypes {
 
     @JsValue("abort")
     fun <C : EventTarget> abort(): EventType<Event<C>>

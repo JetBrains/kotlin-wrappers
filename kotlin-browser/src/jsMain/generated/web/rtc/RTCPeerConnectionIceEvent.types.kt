@@ -8,8 +8,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 @JsVirtual
-sealed external class RTCPeerConnectionIceEventTypes :
-    RTCPeerConnectionIceEventTypes_deprecated {
+sealed external class RTCPeerConnectionIceEventTypes {
 
     @JsValue("icecandidate")
     fun <C : EventTarget> iceCandidate(): EventType<RTCPeerConnectionIceEvent<C>>

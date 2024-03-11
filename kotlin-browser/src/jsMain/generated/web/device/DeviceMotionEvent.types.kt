@@ -8,8 +8,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 @JsVirtual
-sealed external class DeviceMotionEventTypes :
-    DeviceMotionEventTypes_deprecated {
+sealed external class DeviceMotionEventTypes {
 
     @JsValue("devicemotion")
     fun <C : EventTarget> deviceMotion(): EventType<DeviceMotionEvent<C>>

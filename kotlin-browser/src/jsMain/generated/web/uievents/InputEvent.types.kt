@@ -8,8 +8,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 @JsVirtual
-sealed external class InputEventTypes :
-    InputEventTypes_deprecated {
+sealed external class InputEventTypes {
 
     @JsValue("beforeinput")
     fun <C : EventTarget> beforeInput(): EventType<InputEvent<C>>

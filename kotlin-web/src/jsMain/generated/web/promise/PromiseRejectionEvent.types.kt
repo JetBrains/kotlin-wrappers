@@ -8,8 +8,7 @@ import web.events.EventTarget
 import web.events.EventType
 
 @JsVirtual
-sealed external class PromiseRejectionEventTypes :
-    PromiseRejectionEventTypes_deprecated {
+sealed external class PromiseRejectionEventTypes {
 
     @JsValue("rejectionhandled")
     fun <C : EventTarget> rejectionHandled(): EventType<PromiseRejectionEvent<C>>
