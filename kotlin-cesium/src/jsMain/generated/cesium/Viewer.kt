@@ -69,18 +69,6 @@ external class Viewer(
     options: ConstructorOptions? = definedExternally,
 ) {
     /**
-     * Returns true when the terrain provider has been successfully created. Otherwise, returns false.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Viewer.html#ready">Online Documentation</a>
-     */
-    val ready: Boolean
-
-    /**
-     * The terrain provider providing surface geometry to a globe. Do not use until [Terrain.readyEvent] is raised.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Viewer.html#provider">Online Documentation</a>
-     */
-    val provider: TerrainProvider
-
-    /**
      * Manages the list of credits to display on screen and in the lightbox.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Viewer.html#creditDisplay">Online Documentation</a>
      */
