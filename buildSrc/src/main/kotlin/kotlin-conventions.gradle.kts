@@ -1,5 +1,6 @@
-import org.jetbrains.kotlin.gradle.dsl.KotlinCompile
-import org.jetbrains.kotlin.gradle.dsl.KotlinJsCompile
+import org.jetbrains.kotlin.gradle.dsl.JsModuleKind
+import org.jetbrains.kotlin.gradle.tasks.Kotlin2JsCompile
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompilationTask
 
 plugins {
     kotlin("multiplatform")
@@ -32,11 +33,11 @@ kotlin {
     }
 }
 
-tasks.withType<KotlinCompile<*>>().configureEach {
-    kotlinOptions {
+tasks.withType<KotlinCompilationTask<*>>().configureEach {
+    compilerOptions {
         allWarningsAsErrors = true
 
-        freeCompilerArgs += listOf(
+        freeCompilerArgs.addAll(
             "-opt-in=kotlin.ExperimentalStdlibApi",
             "-opt-in=kotlin.ExperimentalUnsignedTypes",
             "-opt-in=kotlin.contracts.ExperimentalContracts",
@@ -44,9 +45,9 @@ tasks.withType<KotlinCompile<*>>().configureEach {
     }
 }
 
-tasks.withType<KotlinJsCompile>().configureEach {
-    kotlinOptions {
-        moduleKind = "es"
+tasks.withType<Kotlin2JsCompile>().configureEach {
+    compilerOptions {
+        moduleKind = JsModuleKind.MODULE_ES
         useEsClasses = true
     }
 }
