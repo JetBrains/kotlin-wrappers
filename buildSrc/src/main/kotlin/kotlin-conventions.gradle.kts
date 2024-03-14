@@ -49,5 +49,9 @@ tasks.withType<Kotlin2JsCompile>().configureEach {
     compilerOptions {
         moduleKind = JsModuleKind.MODULE_ES
         useEsClasses = true
+
+        freeCompilerArgs.addAll(
+            "-Xir-generate-inline-anonymous-functions",
+        )
     }
 }
