@@ -15,7 +15,7 @@ sealed external interface Size {
         val small: small
 
         @JsValue("medium")
-        val pkcs8: medium
+        val medium: medium
 
         @JsValue("normal")
         val normal: normal
