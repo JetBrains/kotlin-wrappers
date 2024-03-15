@@ -1856,7 +1856,7 @@ external interface App : node.events.EventEmitter {
      * An example of activating the window of primary instance when a second instance
      * starts:
      */
-    fun requestSingleInstanceLock(additionalData: js.objects.ReadonlyRecord<Any, Any> = definedExternally): Boolean
+    fun requestSingleInstanceLock(additionalData: js.objects.ReadonlyRecord<Any, Any?> = definedExternally): Boolean
 
     /**
      * Marks the current Handoff user activity as inactive without invalidating it.

@@ -24,7 +24,7 @@ external interface NotificationResponse {
     /**
      * A dictionary of custom information associated with the notification.
      */
-    var userInfo: js.objects.ReadonlyRecord<String, Any>
+    var userInfo: js.objects.ReadonlyRecord<String, Any?>
 
     /**
      * The text entered or chosen by the user.

@@ -18,7 +18,7 @@ external interface PushNotifications : node.events.EventEmitter {
      */
     fun on(
         event: PushNotificationsEvent.RECEIVED_APNS_NOTIFICATION,
-        listener: (event: Event<*>, userInfo: js.objects.ReadonlyRecord<String, Any>) -> Unit,
+        listener: (event: Event<*>, userInfo: js.objects.ReadonlyRecord<String, Any?>) -> Unit,
     ): Unit /* this */
 
     /**
@@ -26,7 +26,7 @@ external interface PushNotifications : node.events.EventEmitter {
      */
     fun off(
         event: PushNotificationsEvent.RECEIVED_APNS_NOTIFICATION,
-        listener: (event: Event<*>, userInfo: js.objects.ReadonlyRecord<String, Any>) -> Unit,
+        listener: (event: Event<*>, userInfo: js.objects.ReadonlyRecord<String, Any?>) -> Unit,
     ): Unit /* this */
 
     /**
@@ -34,7 +34,7 @@ external interface PushNotifications : node.events.EventEmitter {
      */
     fun once(
         event: PushNotificationsEvent.RECEIVED_APNS_NOTIFICATION,
-        listener: (event: Event<*>, userInfo: js.objects.ReadonlyRecord<String, Any>) -> Unit,
+        listener: (event: Event<*>, userInfo: js.objects.ReadonlyRecord<String, Any?>) -> Unit,
     ): Unit /* this */
 
     /**
@@ -42,7 +42,7 @@ external interface PushNotifications : node.events.EventEmitter {
      */
     fun addListener(
         event: PushNotificationsEvent.RECEIVED_APNS_NOTIFICATION,
-        listener: (event: Event<*>, userInfo: js.objects.ReadonlyRecord<String, Any>) -> Unit,
+        listener: (event: Event<*>, userInfo: js.objects.ReadonlyRecord<String, Any?>) -> Unit,
     ): Unit /* this */
 
     /**
@@ -50,7 +50,7 @@ external interface PushNotifications : node.events.EventEmitter {
      */
     fun removeListener(
         event: PushNotificationsEvent.RECEIVED_APNS_NOTIFICATION,
-        listener: (event: Event<*>, userInfo: js.objects.ReadonlyRecord<String, Any>) -> Unit,
+        listener: (event: Event<*>, userInfo: js.objects.ReadonlyRecord<String, Any?>) -> Unit,
     ): Unit /* this */
 
     /**
