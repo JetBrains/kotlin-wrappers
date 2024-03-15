@@ -26,7 +26,7 @@ external interface ClickAwayListenerProps : react.PropsWithChildren {
     /**
      * Callback fired when a "click away" event is detected.
      */
-    var onClickAway: (event: web.uievents.UIEvent<*>) -> Unit
+    var onClickAway: (event: web.uievents.UIEvent) -> Unit
 
     /**
      * The touch event to listen to. You can disable the listener by providing `false`.
