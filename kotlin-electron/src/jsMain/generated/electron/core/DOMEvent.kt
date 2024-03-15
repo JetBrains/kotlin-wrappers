@@ -4,11 +4,10 @@
 package electron.core
 
 import web.events.Event
-import web.events.EventTarget
 
 // Type definitions for Electron 29.1.4
 // Project: http://electronjs.org/
 // Definitions by: The Electron Team <https://github.com/electron/electron>
 // Definitions: https://github.com/electron/typescript-definitions
 /// <reference types="node" />
-typealias DOMEvent = Event<EventTarget?>
+typealias DOMEvent = Event
