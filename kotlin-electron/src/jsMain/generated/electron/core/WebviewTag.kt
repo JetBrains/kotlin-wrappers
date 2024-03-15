@@ -4,10 +4,13 @@
 package electron.core
 
 import js.typedarrays.Uint8Array
+import web.html.HTMLElement
 import kotlin.js.Promise
 
 
-external interface WebviewTag {
+@Suppress("INTERFACE_WITH_SUPERCLASS")
+
+external interface WebviewTag : HTMLElement {
 // Docs: https://electronjs.org/docs/api/webview-tag
     /**
      * Fired when a load has committed. This includes navigation within the current

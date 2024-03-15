@@ -2,9 +2,6 @@
     "input": [
         "<nodeModules>/electron/electron.d.ts"
     ],
-    "ignoreInput": [
-        "**/@types/node/**"
-    ],
     "output": "src/jsMain/generated",
     "libraryName": "electron",
     "libraryNameOutputPrefix": true,
@@ -185,7 +182,8 @@
         ],
         "WebviewTag.kt": [
             "kotlin.js.Promise",
-            "js.typedarrays.Uint8Array"
+            "js.typedarrays.Uint8Array",
+            "web.html.HTMLElement"
         ],
         "namespace.kt": [
             "node.events.EventEmitter"

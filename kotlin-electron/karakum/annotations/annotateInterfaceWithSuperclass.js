@@ -14,6 +14,7 @@ const interfacesWithSuperclass = [
     "Screen",
     "SystemPreferences",
     "WebFrame",
+    "WebviewTag",
 ]
 
 export default (node) => {
