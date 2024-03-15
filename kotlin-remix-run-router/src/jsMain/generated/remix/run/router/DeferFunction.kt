@@ -4,4 +4,4 @@
 package remix.run.router
 
 
-typealias DeferFunction = (data: js.objects.ReadonlyRecord<String, Any>, init: (Any /* number | ResponseInit */)? /* use undefined for default */) -> DeferredData
+typealias DeferFunction = (data: js.objects.ReadonlyRecord<String, Any?>, init: (Any /* number | ResponseInit */)? /* use undefined for default */) -> DeferredData
