@@ -4,7 +4,9 @@
 package electron.core
 
 
-external interface LoadCommitEvent : Event {
+@Suppress("INTERFACE_WITH_SUPERCLASS")
+
+external interface LoadCommitEvent : DOMEvent {
     var url: String
     var isMainFrame: Boolean
 }

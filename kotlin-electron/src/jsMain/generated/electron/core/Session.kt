@@ -21,14 +21,17 @@ external class Session : NodeEventEmitter {
      */
     fun on(
         event: SessionEvent.EXTENSION_LOADED,
-        listener: (event: Event, extension: Extension) -> Unit,
+        listener: (event: Event<*>, extension: Extension) -> Unit,
     ): Unit /* this */
 
     /**
      * Emitted after an extension is loaded and all necessary browser state is
      * initialized to support the start of the extension's background page.
      */
-    fun on(event: SessionEvent.EXTENSION_READY, listener: (event: Event, extension: Extension) -> Unit): Unit /* this */
+    fun on(
+        event: SessionEvent.EXTENSION_READY,
+        listener: (event: Event<*>, extension: Extension) -> Unit,
+    ): Unit /* this */
 
     /**
      * Emitted after an extension is unloaded. This occurs when
@@ -36,7 +39,7 @@ external class Session : NodeEventEmitter {
      */
     fun on(
         event: SessionEvent.EXTENSION_UNLOADED,
-        listener: (event: Event, extension: Extension) -> Unit,
+        listener: (event: Event<*>, extension: Extension) -> Unit,
     ): Unit /* this */
 
     /**
@@ -48,7 +51,7 @@ external class Session : NodeEventEmitter {
      */
     fun on(
         event: SessionEvent.HID_DEVICE_ADDED,
-        listener: (event: Event, details: HidDeviceAddedDetails) -> Unit,
+        listener: (event: Event<*>, details: HidDeviceAddedDetails) -> Unit,
     ): Unit /* this */
 
     /**
@@ -60,7 +63,7 @@ external class Session : NodeEventEmitter {
      */
     fun on(
         event: SessionEvent.HID_DEVICE_REMOVED,
-        listener: (event: Event, details: HidDeviceRemovedDetails) -> Unit,
+        listener: (event: Event<*>, details: HidDeviceRemovedDetails) -> Unit,
     ): Unit /* this */
 
     /**
@@ -70,7 +73,7 @@ external class Session : NodeEventEmitter {
      */
     fun on(
         event: SessionEvent.HID_DEVICE_REVOKED,
-        listener: (event: Event, details: HidDeviceRevokedDetails) -> Unit,
+        listener: (event: Event<*>, details: HidDeviceRevokedDetails) -> Unit,
     ): Unit /* this */
 
     /**
@@ -80,7 +83,7 @@ external class Session : NodeEventEmitter {
     fun on(
         event: SessionEvent.PRECONNECT,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The URL being requested for preconnection by the renderer.
              */
@@ -103,7 +106,7 @@ external class Session : NodeEventEmitter {
      */
     fun on(
         event: SessionEvent.SELECT_HID_DEVICE,
-        listener: (event: Event, details: SelectHidDeviceDetails, callback: (deviceId: String? /* use undefined for default */) -> Unit) -> Unit,
+        listener: (event: Event<*>, details: SelectHidDeviceDetails, callback: (deviceId: String? /* use undefined for default */) -> Unit) -> Unit,
     ): Unit /* this */
 
     /**
@@ -115,7 +118,7 @@ external class Session : NodeEventEmitter {
      */
     fun on(
         event: SessionEvent.SELECT_SERIAL_PORT,
-        listener: (event: Event, portList: js.array.ReadonlyArray<SerialPort>, webContents: WebContents, callback: (portId: String) -> Unit) -> Unit,
+        listener: (event: Event<*>, portList: js.array.ReadonlyArray<SerialPort>, webContents: WebContents, callback: (portId: String) -> Unit) -> Unit,
     ): Unit /* this */
 
     /**
@@ -128,7 +131,7 @@ external class Session : NodeEventEmitter {
      */
     fun on(
         event: SessionEvent.SELECT_USB_DEVICE,
-        listener: (event: Event, details: SelectUsbDeviceDetails, callback: (deviceId: String? /* use undefined for default */) -> Unit) -> Unit,
+        listener: (event: Event<*>, details: SelectUsbDeviceDetails, callback: (deviceId: String? /* use undefined for default */) -> Unit) -> Unit,
     ): Unit /* this */
 
     /**
@@ -140,7 +143,7 @@ external class Session : NodeEventEmitter {
      */
     fun on(
         event: SessionEvent.SERIAL_PORT_ADDED,
-        listener: (event: Event, port: SerialPort, webContents: WebContents) -> Unit,
+        listener: (event: Event<*>, port: SerialPort, webContents: WebContents) -> Unit,
     ): Unit /* this */
 
     /**
@@ -152,7 +155,7 @@ external class Session : NodeEventEmitter {
      */
     fun on(
         event: SessionEvent.SERIAL_PORT_REMOVED,
-        listener: (event: Event, port: SerialPort, webContents: WebContents) -> Unit,
+        listener: (event: Event<*>, port: SerialPort, webContents: WebContents) -> Unit,
     ): Unit /* this */
 
     /**
@@ -162,7 +165,7 @@ external class Session : NodeEventEmitter {
      */
     fun on(
         event: SessionEvent.SERIAL_PORT_REVOKED,
-        listener: (event: Event, details: SerialPortRevokedDetails) -> Unit,
+        listener: (event: Event<*>, details: SerialPortRevokedDetails) -> Unit,
     ): Unit /* this */
 
     /**
@@ -171,7 +174,7 @@ external class Session : NodeEventEmitter {
     fun on(
         event: SessionEvent.SPELLCHECK_DICTIONARY_DOWNLOAD_BEGIN,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The language code of the dictionary file
              */
@@ -186,7 +189,7 @@ external class Session : NodeEventEmitter {
     fun on(
         event: SessionEvent.SPELLCHECK_DICTIONARY_DOWNLOAD_FAILURE,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The language code of the dictionary file
              */
@@ -200,7 +203,7 @@ external class Session : NodeEventEmitter {
     fun on(
         event: SessionEvent.SPELLCHECK_DICTIONARY_DOWNLOAD_SUCCESS,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The language code of the dictionary file
              */
@@ -215,7 +218,7 @@ external class Session : NodeEventEmitter {
     fun on(
         event: SessionEvent.SPELLCHECK_DICTIONARY_INITIALIZED,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The language code of the dictionary file
              */
@@ -232,7 +235,7 @@ external class Session : NodeEventEmitter {
      */
     fun on(
         event: SessionEvent.USB_DEVICE_ADDED,
-        listener: (event: Event, details: UsbDeviceAddedDetails) -> Unit,
+        listener: (event: Event<*>, device: USBDevice, webContents: WebContents) -> Unit,
     ): Unit /* this */
 
     /**
@@ -244,7 +247,7 @@ external class Session : NodeEventEmitter {
      */
     fun on(
         event: SessionEvent.USB_DEVICE_REMOVED,
-        listener: (event: Event, details: UsbDeviceRemovedDetails) -> Unit,
+        listener: (event: Event<*>, device: USBDevice, webContents: WebContents) -> Unit,
     ): Unit /* this */
 
     /**
@@ -254,7 +257,7 @@ external class Session : NodeEventEmitter {
      */
     fun on(
         event: SessionEvent.USB_DEVICE_REVOKED,
-        listener: (event: Event, details: UsbDeviceRevokedDetails) -> Unit,
+        listener: (event: Event<*>, details: UsbDeviceRevokedDetails) -> Unit,
     ): Unit /* this */
 
     /**
@@ -265,43 +268,183 @@ external class Session : NodeEventEmitter {
      */
     fun on(
         event: SessionEvent.WILL_DOWNLOAD,
-        listener: (event: Event, item: DownloadItem, webContents: WebContents) -> Unit,
+        listener: (event: Event<*>, item: DownloadItem, webContents: WebContents) -> Unit,
+    ): Unit /* this */
+
+    fun off(
+        event: SessionEvent.EXTENSION_LOADED,
+        listener: (event: Event<*>, extension: Extension) -> Unit,
+    ): Unit /* this */
+
+    fun off(
+        event: SessionEvent.EXTENSION_READY,
+        listener: (event: Event<*>, extension: Extension) -> Unit,
+    ): Unit /* this */
+
+    fun off(
+        event: SessionEvent.EXTENSION_UNLOADED,
+        listener: (event: Event<*>, extension: Extension) -> Unit,
+    ): Unit /* this */
+
+    fun off(
+        event: SessionEvent.HID_DEVICE_ADDED,
+        listener: (event: Event<*>, details: HidDeviceAddedDetails) -> Unit,
+    ): Unit /* this */
+
+    fun off(
+        event: SessionEvent.HID_DEVICE_REMOVED,
+        listener: (event: Event<*>, details: HidDeviceRemovedDetails) -> Unit,
+    ): Unit /* this */
+
+    fun off(
+        event: SessionEvent.HID_DEVICE_REVOKED,
+        listener: (event: Event<*>, details: HidDeviceRevokedDetails) -> Unit,
+    ): Unit /* this */
+
+    fun off(
+        event: SessionEvent.PRECONNECT,
+        listener: (
+            event: Event<*>,
+            /**
+             * The URL being requested for preconnection by the renderer.
+             */
+            preconnectUrl: String,
+            /**
+             * True if the renderer is requesting that the connection include credentials (see
+             * the spec for more details.)
+             */
+            allowCredentials: Boolean,
+        ) -> Unit,
+    ): Unit /* this */
+
+    fun off(
+        event: SessionEvent.SELECT_HID_DEVICE,
+        listener: (event: Event<*>, details: SelectHidDeviceDetails, callback: (deviceId: String? /* use undefined for default */) -> Unit) -> Unit,
+    ): Unit /* this */
+
+    fun off(
+        event: SessionEvent.SELECT_SERIAL_PORT,
+        listener: (event: Event<*>, portList: js.array.ReadonlyArray<SerialPort>, webContents: WebContents, callback: (portId: String) -> Unit) -> Unit,
+    ): Unit /* this */
+
+    fun off(
+        event: SessionEvent.SELECT_USB_DEVICE,
+        listener: (event: Event<*>, details: SelectUsbDeviceDetails, callback: (deviceId: String? /* use undefined for default */) -> Unit) -> Unit,
+    ): Unit /* this */
+
+    fun off(
+        event: SessionEvent.SERIAL_PORT_ADDED,
+        listener: (event: Event<*>, port: SerialPort, webContents: WebContents) -> Unit,
+    ): Unit /* this */
+
+    fun off(
+        event: SessionEvent.SERIAL_PORT_REMOVED,
+        listener: (event: Event<*>, port: SerialPort, webContents: WebContents) -> Unit,
+    ): Unit /* this */
+
+    fun off(
+        event: SessionEvent.SERIAL_PORT_REVOKED,
+        listener: (event: Event<*>, details: SerialPortRevokedDetails) -> Unit,
+    ): Unit /* this */
+
+    fun off(
+        event: SessionEvent.SPELLCHECK_DICTIONARY_DOWNLOAD_BEGIN,
+        listener: (
+            event: Event<*>,
+            /**
+             * The language code of the dictionary file
+             */
+            languageCode: String,
+        ) -> Unit,
+    ): Unit /* this */
+
+    fun off(
+        event: SessionEvent.SPELLCHECK_DICTIONARY_DOWNLOAD_FAILURE,
+        listener: (
+            event: Event<*>,
+            /**
+             * The language code of the dictionary file
+             */
+            languageCode: String,
+        ) -> Unit,
+    ): Unit /* this */
+
+    fun off(
+        event: SessionEvent.SPELLCHECK_DICTIONARY_DOWNLOAD_SUCCESS,
+        listener: (
+            event: Event<*>,
+            /**
+             * The language code of the dictionary file
+             */
+            languageCode: String,
+        ) -> Unit,
+    ): Unit /* this */
+
+    fun off(
+        event: SessionEvent.SPELLCHECK_DICTIONARY_INITIALIZED,
+        listener: (
+            event: Event<*>,
+            /**
+             * The language code of the dictionary file
+             */
+            languageCode: String,
+        ) -> Unit,
+    ): Unit /* this */
+
+    fun off(
+        event: SessionEvent.USB_DEVICE_ADDED,
+        listener: (event: Event<*>, device: USBDevice, webContents: WebContents) -> Unit,
+    ): Unit /* this */
+
+    fun off(
+        event: SessionEvent.USB_DEVICE_REMOVED,
+        listener: (event: Event<*>, device: USBDevice, webContents: WebContents) -> Unit,
+    ): Unit /* this */
+
+    fun off(
+        event: SessionEvent.USB_DEVICE_REVOKED,
+        listener: (event: Event<*>, details: UsbDeviceRevokedDetails) -> Unit,
+    ): Unit /* this */
+
+    fun off(
+        event: SessionEvent.WILL_DOWNLOAD,
+        listener: (event: Event<*>, item: DownloadItem, webContents: WebContents) -> Unit,
     ): Unit /* this */
 
     fun once(
         event: SessionEvent.EXTENSION_LOADED,
-        listener: (event: Event, extension: Extension) -> Unit,
+        listener: (event: Event<*>, extension: Extension) -> Unit,
     ): Unit /* this */
 
     fun once(
         event: SessionEvent.EXTENSION_READY,
-        listener: (event: Event, extension: Extension) -> Unit,
+        listener: (event: Event<*>, extension: Extension) -> Unit,
     ): Unit /* this */
 
     fun once(
         event: SessionEvent.EXTENSION_UNLOADED,
-        listener: (event: Event, extension: Extension) -> Unit,
+        listener: (event: Event<*>, extension: Extension) -> Unit,
     ): Unit /* this */
 
     fun once(
         event: SessionEvent.HID_DEVICE_ADDED,
-        listener: (event: Event, details: HidDeviceAddedDetails) -> Unit,
+        listener: (event: Event<*>, details: HidDeviceAddedDetails) -> Unit,
     ): Unit /* this */
 
     fun once(
         event: SessionEvent.HID_DEVICE_REMOVED,
-        listener: (event: Event, details: HidDeviceRemovedDetails) -> Unit,
+        listener: (event: Event<*>, details: HidDeviceRemovedDetails) -> Unit,
     ): Unit /* this */
 
     fun once(
         event: SessionEvent.HID_DEVICE_REVOKED,
-        listener: (event: Event, details: HidDeviceRevokedDetails) -> Unit,
+        listener: (event: Event<*>, details: HidDeviceRevokedDetails) -> Unit,
     ): Unit /* this */
 
     fun once(
         event: SessionEvent.PRECONNECT,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The URL being requested for preconnection by the renderer.
              */
@@ -316,38 +459,38 @@ external class Session : NodeEventEmitter {
 
     fun once(
         event: SessionEvent.SELECT_HID_DEVICE,
-        listener: (event: Event, details: SelectHidDeviceDetails, callback: (deviceId: String? /* use undefined for default */) -> Unit) -> Unit,
+        listener: (event: Event<*>, details: SelectHidDeviceDetails, callback: (deviceId: String? /* use undefined for default */) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun once(
         event: SessionEvent.SELECT_SERIAL_PORT,
-        listener: (event: Event, portList: js.array.ReadonlyArray<SerialPort>, webContents: WebContents, callback: (portId: String) -> Unit) -> Unit,
+        listener: (event: Event<*>, portList: js.array.ReadonlyArray<SerialPort>, webContents: WebContents, callback: (portId: String) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun once(
         event: SessionEvent.SELECT_USB_DEVICE,
-        listener: (event: Event, details: SelectUsbDeviceDetails, callback: (deviceId: String? /* use undefined for default */) -> Unit) -> Unit,
+        listener: (event: Event<*>, details: SelectUsbDeviceDetails, callback: (deviceId: String? /* use undefined for default */) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun once(
         event: SessionEvent.SERIAL_PORT_ADDED,
-        listener: (event: Event, port: SerialPort, webContents: WebContents) -> Unit,
+        listener: (event: Event<*>, port: SerialPort, webContents: WebContents) -> Unit,
     ): Unit /* this */
 
     fun once(
         event: SessionEvent.SERIAL_PORT_REMOVED,
-        listener: (event: Event, port: SerialPort, webContents: WebContents) -> Unit,
+        listener: (event: Event<*>, port: SerialPort, webContents: WebContents) -> Unit,
     ): Unit /* this */
 
     fun once(
         event: SessionEvent.SERIAL_PORT_REVOKED,
-        listener: (event: Event, details: SerialPortRevokedDetails) -> Unit,
+        listener: (event: Event<*>, details: SerialPortRevokedDetails) -> Unit,
     ): Unit /* this */
 
     fun once(
         event: SessionEvent.SPELLCHECK_DICTIONARY_DOWNLOAD_BEGIN,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The language code of the dictionary file
              */
@@ -358,7 +501,7 @@ external class Session : NodeEventEmitter {
     fun once(
         event: SessionEvent.SPELLCHECK_DICTIONARY_DOWNLOAD_FAILURE,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The language code of the dictionary file
              */
@@ -369,7 +512,7 @@ external class Session : NodeEventEmitter {
     fun once(
         event: SessionEvent.SPELLCHECK_DICTIONARY_DOWNLOAD_SUCCESS,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The language code of the dictionary file
              */
@@ -380,7 +523,7 @@ external class Session : NodeEventEmitter {
     fun once(
         event: SessionEvent.SPELLCHECK_DICTIONARY_INITIALIZED,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The language code of the dictionary file
              */
@@ -390,58 +533,58 @@ external class Session : NodeEventEmitter {
 
     fun once(
         event: SessionEvent.USB_DEVICE_ADDED,
-        listener: (event: Event, details: UsbDeviceAddedDetails) -> Unit,
+        listener: (event: Event<*>, device: USBDevice, webContents: WebContents) -> Unit,
     ): Unit /* this */
 
     fun once(
         event: SessionEvent.USB_DEVICE_REMOVED,
-        listener: (event: Event, details: UsbDeviceRemovedDetails) -> Unit,
+        listener: (event: Event<*>, device: USBDevice, webContents: WebContents) -> Unit,
     ): Unit /* this */
 
     fun once(
         event: SessionEvent.USB_DEVICE_REVOKED,
-        listener: (event: Event, details: UsbDeviceRevokedDetails) -> Unit,
+        listener: (event: Event<*>, details: UsbDeviceRevokedDetails) -> Unit,
     ): Unit /* this */
 
     fun once(
         event: SessionEvent.WILL_DOWNLOAD,
-        listener: (event: Event, item: DownloadItem, webContents: WebContents) -> Unit,
+        listener: (event: Event<*>, item: DownloadItem, webContents: WebContents) -> Unit,
     ): Unit /* this */
 
     fun addListener(
         event: SessionEvent.EXTENSION_LOADED,
-        listener: (event: Event, extension: Extension) -> Unit,
+        listener: (event: Event<*>, extension: Extension) -> Unit,
     ): Unit /* this */
 
     fun addListener(
         event: SessionEvent.EXTENSION_READY,
-        listener: (event: Event, extension: Extension) -> Unit,
+        listener: (event: Event<*>, extension: Extension) -> Unit,
     ): Unit /* this */
 
     fun addListener(
         event: SessionEvent.EXTENSION_UNLOADED,
-        listener: (event: Event, extension: Extension) -> Unit,
+        listener: (event: Event<*>, extension: Extension) -> Unit,
     ): Unit /* this */
 
     fun addListener(
         event: SessionEvent.HID_DEVICE_ADDED,
-        listener: (event: Event, details: HidDeviceAddedDetails) -> Unit,
+        listener: (event: Event<*>, details: HidDeviceAddedDetails) -> Unit,
     ): Unit /* this */
 
     fun addListener(
         event: SessionEvent.HID_DEVICE_REMOVED,
-        listener: (event: Event, details: HidDeviceRemovedDetails) -> Unit,
+        listener: (event: Event<*>, details: HidDeviceRemovedDetails) -> Unit,
     ): Unit /* this */
 
     fun addListener(
         event: SessionEvent.HID_DEVICE_REVOKED,
-        listener: (event: Event, details: HidDeviceRevokedDetails) -> Unit,
+        listener: (event: Event<*>, details: HidDeviceRevokedDetails) -> Unit,
     ): Unit /* this */
 
     fun addListener(
         event: SessionEvent.PRECONNECT,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The URL being requested for preconnection by the renderer.
              */
@@ -456,38 +599,38 @@ external class Session : NodeEventEmitter {
 
     fun addListener(
         event: SessionEvent.SELECT_HID_DEVICE,
-        listener: (event: Event, details: SelectHidDeviceDetails, callback: (deviceId: String? /* use undefined for default */) -> Unit) -> Unit,
+        listener: (event: Event<*>, details: SelectHidDeviceDetails, callback: (deviceId: String? /* use undefined for default */) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun addListener(
         event: SessionEvent.SELECT_SERIAL_PORT,
-        listener: (event: Event, portList: js.array.ReadonlyArray<SerialPort>, webContents: WebContents, callback: (portId: String) -> Unit) -> Unit,
+        listener: (event: Event<*>, portList: js.array.ReadonlyArray<SerialPort>, webContents: WebContents, callback: (portId: String) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun addListener(
         event: SessionEvent.SELECT_USB_DEVICE,
-        listener: (event: Event, details: SelectUsbDeviceDetails, callback: (deviceId: String? /* use undefined for default */) -> Unit) -> Unit,
+        listener: (event: Event<*>, details: SelectUsbDeviceDetails, callback: (deviceId: String? /* use undefined for default */) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun addListener(
         event: SessionEvent.SERIAL_PORT_ADDED,
-        listener: (event: Event, port: SerialPort, webContents: WebContents) -> Unit,
+        listener: (event: Event<*>, port: SerialPort, webContents: WebContents) -> Unit,
     ): Unit /* this */
 
     fun addListener(
         event: SessionEvent.SERIAL_PORT_REMOVED,
-        listener: (event: Event, port: SerialPort, webContents: WebContents) -> Unit,
+        listener: (event: Event<*>, port: SerialPort, webContents: WebContents) -> Unit,
     ): Unit /* this */
 
     fun addListener(
         event: SessionEvent.SERIAL_PORT_REVOKED,
-        listener: (event: Event, details: SerialPortRevokedDetails) -> Unit,
+        listener: (event: Event<*>, details: SerialPortRevokedDetails) -> Unit,
     ): Unit /* this */
 
     fun addListener(
         event: SessionEvent.SPELLCHECK_DICTIONARY_DOWNLOAD_BEGIN,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The language code of the dictionary file
              */
@@ -498,7 +641,7 @@ external class Session : NodeEventEmitter {
     fun addListener(
         event: SessionEvent.SPELLCHECK_DICTIONARY_DOWNLOAD_FAILURE,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The language code of the dictionary file
              */
@@ -509,7 +652,7 @@ external class Session : NodeEventEmitter {
     fun addListener(
         event: SessionEvent.SPELLCHECK_DICTIONARY_DOWNLOAD_SUCCESS,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The language code of the dictionary file
              */
@@ -520,7 +663,7 @@ external class Session : NodeEventEmitter {
     fun addListener(
         event: SessionEvent.SPELLCHECK_DICTIONARY_INITIALIZED,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The language code of the dictionary file
              */
@@ -530,58 +673,58 @@ external class Session : NodeEventEmitter {
 
     fun addListener(
         event: SessionEvent.USB_DEVICE_ADDED,
-        listener: (event: Event, details: UsbDeviceAddedDetails) -> Unit,
+        listener: (event: Event<*>, device: USBDevice, webContents: WebContents) -> Unit,
     ): Unit /* this */
 
     fun addListener(
         event: SessionEvent.USB_DEVICE_REMOVED,
-        listener: (event: Event, details: UsbDeviceRemovedDetails) -> Unit,
+        listener: (event: Event<*>, device: USBDevice, webContents: WebContents) -> Unit,
     ): Unit /* this */
 
     fun addListener(
         event: SessionEvent.USB_DEVICE_REVOKED,
-        listener: (event: Event, details: UsbDeviceRevokedDetails) -> Unit,
+        listener: (event: Event<*>, details: UsbDeviceRevokedDetails) -> Unit,
     ): Unit /* this */
 
     fun addListener(
         event: SessionEvent.WILL_DOWNLOAD,
-        listener: (event: Event, item: DownloadItem, webContents: WebContents) -> Unit,
+        listener: (event: Event<*>, item: DownloadItem, webContents: WebContents) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
         event: SessionEvent.EXTENSION_LOADED,
-        listener: (event: Event, extension: Extension) -> Unit,
+        listener: (event: Event<*>, extension: Extension) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
         event: SessionEvent.EXTENSION_READY,
-        listener: (event: Event, extension: Extension) -> Unit,
+        listener: (event: Event<*>, extension: Extension) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
         event: SessionEvent.EXTENSION_UNLOADED,
-        listener: (event: Event, extension: Extension) -> Unit,
+        listener: (event: Event<*>, extension: Extension) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
         event: SessionEvent.HID_DEVICE_ADDED,
-        listener: (event: Event, details: HidDeviceAddedDetails) -> Unit,
+        listener: (event: Event<*>, details: HidDeviceAddedDetails) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
         event: SessionEvent.HID_DEVICE_REMOVED,
-        listener: (event: Event, details: HidDeviceRemovedDetails) -> Unit,
+        listener: (event: Event<*>, details: HidDeviceRemovedDetails) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
         event: SessionEvent.HID_DEVICE_REVOKED,
-        listener: (event: Event, details: HidDeviceRevokedDetails) -> Unit,
+        listener: (event: Event<*>, details: HidDeviceRevokedDetails) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
         event: SessionEvent.PRECONNECT,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The URL being requested for preconnection by the renderer.
              */
@@ -596,38 +739,38 @@ external class Session : NodeEventEmitter {
 
     fun removeListener(
         event: SessionEvent.SELECT_HID_DEVICE,
-        listener: (event: Event, details: SelectHidDeviceDetails, callback: (deviceId: String? /* use undefined for default */) -> Unit) -> Unit,
+        listener: (event: Event<*>, details: SelectHidDeviceDetails, callback: (deviceId: String? /* use undefined for default */) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
         event: SessionEvent.SELECT_SERIAL_PORT,
-        listener: (event: Event, portList: js.array.ReadonlyArray<SerialPort>, webContents: WebContents, callback: (portId: String) -> Unit) -> Unit,
+        listener: (event: Event<*>, portList: js.array.ReadonlyArray<SerialPort>, webContents: WebContents, callback: (portId: String) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
         event: SessionEvent.SELECT_USB_DEVICE,
-        listener: (event: Event, details: SelectUsbDeviceDetails, callback: (deviceId: String? /* use undefined for default */) -> Unit) -> Unit,
+        listener: (event: Event<*>, details: SelectUsbDeviceDetails, callback: (deviceId: String? /* use undefined for default */) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
         event: SessionEvent.SERIAL_PORT_ADDED,
-        listener: (event: Event, port: SerialPort, webContents: WebContents) -> Unit,
+        listener: (event: Event<*>, port: SerialPort, webContents: WebContents) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
         event: SessionEvent.SERIAL_PORT_REMOVED,
-        listener: (event: Event, port: SerialPort, webContents: WebContents) -> Unit,
+        listener: (event: Event<*>, port: SerialPort, webContents: WebContents) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
         event: SessionEvent.SERIAL_PORT_REVOKED,
-        listener: (event: Event, details: SerialPortRevokedDetails) -> Unit,
+        listener: (event: Event<*>, details: SerialPortRevokedDetails) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
         event: SessionEvent.SPELLCHECK_DICTIONARY_DOWNLOAD_BEGIN,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The language code of the dictionary file
              */
@@ -638,7 +781,7 @@ external class Session : NodeEventEmitter {
     fun removeListener(
         event: SessionEvent.SPELLCHECK_DICTIONARY_DOWNLOAD_FAILURE,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The language code of the dictionary file
              */
@@ -649,7 +792,7 @@ external class Session : NodeEventEmitter {
     fun removeListener(
         event: SessionEvent.SPELLCHECK_DICTIONARY_DOWNLOAD_SUCCESS,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The language code of the dictionary file
              */
@@ -660,7 +803,7 @@ external class Session : NodeEventEmitter {
     fun removeListener(
         event: SessionEvent.SPELLCHECK_DICTIONARY_INITIALIZED,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The language code of the dictionary file
              */
@@ -670,22 +813,22 @@ external class Session : NodeEventEmitter {
 
     fun removeListener(
         event: SessionEvent.USB_DEVICE_ADDED,
-        listener: (event: Event, details: UsbDeviceAddedDetails) -> Unit,
+        listener: (event: Event<*>, device: USBDevice, webContents: WebContents) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
         event: SessionEvent.USB_DEVICE_REMOVED,
-        listener: (event: Event, details: UsbDeviceRemovedDetails) -> Unit,
+        listener: (event: Event<*>, device: USBDevice, webContents: WebContents) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
         event: SessionEvent.USB_DEVICE_REVOKED,
-        listener: (event: Event, details: UsbDeviceRevokedDetails) -> Unit,
+        listener: (event: Event<*>, details: UsbDeviceRevokedDetails) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
         event: SessionEvent.WILL_DOWNLOAD,
-        listener: (event: Event, item: DownloadItem, webContents: WebContents) -> Unit,
+        listener: (event: Event<*>, item: DownloadItem, webContents: WebContents) -> Unit,
     ): Unit /* this */
 
     /**
@@ -761,12 +904,43 @@ external class Session : NodeEventEmitter {
      * **Note:** This does not perform any security checks that relate to a page's
      * origin, unlike `webContents.downloadURL`.
      */
-    fun downloadURL(url: String): Unit
+    fun downloadURL(url: String, options: DownloadURLOptions = definedExternally): Unit
 
     /**
      * Emulates network with the given configuration for the `session`.
      */
     fun enableNetworkEmulation(options: EnableNetworkEmulationOptions): Unit
+
+    /**
+     * see Response.
+     *
+     * Sends a request, similarly to how `fetch()` works in the renderer, using
+     * Chrome's network stack. This differs from Node's `fetch()`, which uses Node.js's
+     * HTTP stack.
+     *
+     * Example:
+     *
+     * See also `net.fetch()`, a convenience method which issues requests from the
+     * default session.
+     *
+     * See the MDN documentation for `fetch()` for more details.
+     *
+     * Limitations:
+     *
+     * * `net.fetch()` does not support the `data:` or `blob:` schemes.
+     * * The value of the `integrity` option is ignored.
+     * * The `.type` and `.url` values of the returned `Response` object are incorrect.
+     *
+     * By default, requests made with `net.fetch` can be made to custom protocols as
+     * well as `file:`, and will trigger webRequest handlers if present. When the
+     * non-standard `bypassCustomProtocolHandlers` option is set in RequestInit, custom
+     * protocol handlers will not be called for this request. This allows forwarding an
+     * intercepted request to the built-in handler. webRequest handlers will still be
+     * triggered when bypassing custom protocols.
+     */
+    fun fetch(input: String, init: SessionFetchInit = definedExternally): Promise<GlobalResponse>
+
+    fun fetch(input: GlobalRequest, init: SessionFetchInit = definedExternally): Promise<GlobalResponse>
 
     /**
      * Writes any unwritten DOMStorage data to disk.
@@ -799,12 +973,12 @@ external class Session : NodeEventEmitter {
     fun getCacheSize(): Promise<Double>
 
     /**
-     * | `null` - The loaded extension with the given ID.
+     * The loaded extension with the given ID.
      *
      * **Note:** This API cannot be called before the `ready` event of the `app` module
      * is emitted.
      */
-    fun getExtension(extensionId: String): Extension
+    fun getExtension(extensionId: String): Extension?
 
     /**
      * an array of paths to preload scripts that have been registered.
@@ -943,6 +1117,10 @@ external class Session : NodeEventEmitter {
      * all operations related to code cache will fail silently inside the runtime. By
      * default, the directory will be `Code Cache` under the respective user data
      * folder.
+     *
+     * Note that by default code cache is only enabled for http(s) URLs, to enable code
+     * cache for custom protocols, `codeCache: true` and `standard: true` must be
+     * specified when registering the protocol.
      */
     fun setCodeCachePath(path: String): Unit
 
@@ -955,7 +1133,7 @@ external class Session : NodeEventEmitter {
      * `navigator.hid.requestDevice`).  If this handler is not defined, the default
      * device permissions as granted through device selection (eg via
      * `navigator.hid.requestDevice`) will be used. Additionally, the default behavior
-     * of Electron is to store granted device permision in memory. If longer term
+     * of Electron is to store granted device permission in memory. If longer term
      * storage is needed, a developer can store granted device permissions (eg when
      * handling the `select-hid-device` event) and then read from that storage with
      * `setDevicePermissionHandler`.
@@ -988,7 +1166,7 @@ external class Session : NodeEventEmitter {
      * make a permission request if the check is denied. To clear the handler, call
      * `setPermissionCheckHandler(null)`.
      */
-    fun setPermissionCheckHandler(handler: ((webContents: WebContents?, permission: String, requestingOrigin: String, details: PermissionCheckHandlerHandlerDetails) -> Boolean)?): Unit
+    fun setPermissionCheckHandler(handler: ((webContents: WebContents?, permission: SessionSetPermissionCheckHandlerHandlerPermission, requestingOrigin: String, details: PermissionCheckHandlerHandlerDetails) -> Boolean)?): Unit
 
     /**
      * Sets the handler which can be used to respond to permission requests for the
@@ -998,7 +1176,7 @@ external class Session : NodeEventEmitter {
      * `setPermissionCheckHandler` to get complete permission handling. Most web APIs
      * do a permission check and then make a permission request if the check is denied.
      */
-    fun setPermissionRequestHandler(handler: ((webContents: WebContents, permission: Temp0, callback: (permissionGranted: Boolean) -> Unit, details: PermissionRequestHandlerHandlerDetails) -> Unit)?): Unit
+    fun setPermissionRequestHandler(handler: ((webContents: WebContents, permission: SessionSetPermissionRequestHandlerHandlerPermission, callback: (permissionGranted: Boolean) -> Unit, details: PermissionRequestHandlerHandlerDetails) -> Unit)?): Unit
 
     /**
      * Adds scripts that will be executed on ALL web contents that are associated with
@@ -1011,60 +1189,11 @@ external class Session : NodeEventEmitter {
      *
      * Sets the proxy settings.
      *
-     * When `mode` is unspecified, `pacScript` and `proxyRules` are provided together,
-     * the `proxyRules` option is ignored and `pacScript` configuration is applied.
-     *
      * You may need `ses.closeAllConnections` to close currently in flight connections
      * to prevent pooled sockets using previous proxy from being reused by future
      * requests.
-     *
-     * The `proxyRules` has to follow the rules below:
-     *
-     * For example:
-     *
-     * * `http=foopy:80;ftp=foopy2` - Use HTTP proxy `foopy:80` for `http://` URLs, and
-     * HTTP proxy `foopy2:80` for `ftp://` URLs.
-     * * `foopy:80` - Use HTTP proxy `foopy:80` for all URLs.
-     * * `foopy:80,bar,direct://` - Use HTTP proxy `foopy:80` for all URLs, failing
-     * over to `bar` if `foopy:80` is unavailable, and after that using no proxy.
-     * * `socks4://foopy` - Use SOCKS v4 proxy `foopy:1080` for all URLs.
-     * * `http=foopy,socks5://bar.com` - Use HTTP proxy `foopy` for http URLs, and fail
-     * over to the SOCKS5 proxy `bar.com` if `foopy` is unavailable.
-     * * `http=foopy,direct://` - Use HTTP proxy `foopy` for http URLs, and use no
-     * proxy if `foopy` is unavailable.
-     * * `http=foopy;socks=foopy2` - Use HTTP proxy `foopy` for http URLs, and use
-     * `socks4://foopy2` for all other URLs.
-     *
-     * The `proxyBypassRules` is a comma separated list of rules described below:
-     *
-     * * `[ URL_SCHEME "://" ] HOSTNAME_PATTERN [ ":" <port> ]`
-     *
-     * Match all hostnames that match the pattern HOSTNAME_PATTERN.
-     *
-     * Examples: "foobar.com", "*foobar.com", "*.foobar.com", "*foobar.com:99",
-     * "https://x.*.y.com:99"
-     * * `"." HOSTNAME_SUFFIX_PATTERN [ ":" PORT ]`
-     *
-     * Match a particular domain suffix.
-     *
-     * Examples: ".google.com", ".com", "http://.google.com"
-     * * `[ SCHEME "://" ] IP_LITERAL [ ":" PORT ]`
-     *
-     * Match URLs which are IP address literals.
-     *
-     * Examples: "127.0.1", "[0:0::1]", "[::1]", "http://[::1]:99"
-     * * `IP_LITERAL "/" PREFIX_LENGTH_IN_BITS`
-     *
-     * Match any URL that is to an IP literal that falls between the given range. IP
-     * range is specified using CIDR notation.
-     *
-     * Examples: "192.168.1.1/16", "fefe:13::abc/33".
-     * * `<local>`
-     *
-     * Match local addresses. The meaning of `<local>` is whether the host matches one
-     * of: "127.0.0.1", "::1", "localhost".
      */
-    fun setProxy(config: Config): Promise<Unit>
+    fun setProxy(config: ProxyConfig): Promise<Unit>
 
     /**
      * By default Electron will download hunspell dictionaries from the Chromium CDN.
@@ -1111,7 +1240,7 @@ external class Session : NodeEventEmitter {
      * connections) will not be terminated, but old sockets in the pool will not be
      * reused for new connections.
      */
-    fun setSSLConfig(config: SSLConfigConfig): Unit
+    fun setSSLConfig(config: Config): Unit
 
     /**
      * Sets the handler which can be used to override which USB classes are protected.
@@ -1212,6 +1341,19 @@ external class Session : NodeEventEmitter {
          * of an existing `Session` object.
          */
         fun fromPartition(partition: String, options: FromPartitionOptions = definedExternally): Session
+
+        /**
+         * A session instance from the absolute path as specified by the `path` string.
+         * When there is an existing `Session` with the same absolute path, it will be
+         * returned; otherwise a new `Session` instance will be created with `options`. The
+         * call will throw an error if the path is not an absolute path. Additionally, an
+         * error will be thrown if an empty string is provided.
+         *
+         * To create a `Session` with `options`, you have to ensure the `Session` with the
+         * `path` has never been used before. There is no way to change the `options` of an
+         * existing `Session` object.
+         */
+        fun fromPath(path: String, options: FromPathOptions = definedExternally): Session
 
         /**
          * A `Session` object, the default session object of the app.

@@ -111,10 +111,24 @@ external interface Params {
     var frameCharset: String
 
     /**
-     * If the context menu was invoked on an input field, the type of that field.
-     * Possible values are `none`, `plainText`, `password`, `other`.
+     * The source that the context menu was invoked on. Possible values include `none`,
+     * `button-button`, `field-set`, `input-button`, `input-checkbox`, `input-color`,
+     * `input-date`, `input-datetime-local`, `input-email`, `input-file`,
+     * `input-hidden`, `input-image`, `input-month`, `input-number`, `input-password`,
+     * `input-radio`, `input-range`, `input-reset`, `input-search`, `input-submit`,
+     * `input-telephone`, `input-text`, `input-time`, `input-url`, `input-week`,
+     * `output`, `reset-button`, `select-list`, `select-list`, `select-multiple`,
+     * `select-one`, `submit-button`, and `text-area`,
      */
-    var inputFieldType: String
+    var formControlType: (ParamsFormControlType)
+
+    /**
+     * If the context menu was invoked on an input field, the type of that field.
+     * Possible values include `none`, `plainText`, `password`, `other`.
+     *
+     * @deprecated
+     */
+    var inputFieldType: (ParamsInputFieldType)
 
     /**
      * If the context is editable, whether or not spellchecking is enabled.

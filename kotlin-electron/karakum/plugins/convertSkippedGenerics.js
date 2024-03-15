@@ -17,5 +17,28 @@ export default function (node, context, render) {
 
         return `${render(node.typeName)}<*>`
     }
+
+    if (
+        ts.isTypeReferenceNode(node)
+        && ts.isIdentifier(node.typeName)
+        && node.typeName.text === "Event"
+        && !node.typeArguments
+    ) {
+        if (ts.isTypeAliasDeclaration(node.parent)) {
+            return `${render(node.typeName)}<EventTarget?>`
+        }
+
+        return `${render(node.typeName)}<*>`
+    }
+
+    if (
+        ts.isExpressionWithTypeArguments(node)
+        && ts.isIdentifier(node.expression)
+        && node.expression.text === "Event"
+        && !node.typeArguments
+    ) {
+        return `${render(node.expression)}<Any>`
+    }
+
     return null
 }

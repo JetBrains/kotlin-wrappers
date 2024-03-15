@@ -15,6 +15,7 @@ external interface NativeTheme : node.events.EventEmitter {
      * will have to check them to determine which one has changed.
      */
     fun on(event: NativeThemeEvent.UPDATED, listener: Function<Unit>): Unit /* this */
+    fun off(event: NativeThemeEvent.UPDATED, listener: Function<Unit>): Unit /* this */
     fun once(event: NativeThemeEvent.UPDATED, listener: Function<Unit>): Unit /* this */
     fun addListener(event: NativeThemeEvent.UPDATED, listener: Function<Unit>): Unit /* this */
     fun removeListener(event: NativeThemeEvent.UPDATED, listener: Function<Unit>): Unit /* this */

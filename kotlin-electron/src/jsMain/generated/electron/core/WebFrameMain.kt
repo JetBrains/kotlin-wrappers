@@ -13,6 +13,7 @@ external class WebFrameMain : NodeEventEmitter {
      * Emitted when the document is loaded.
      */
     fun on(event: WebFrameMainEvent.DOM_READY, listener: Function<Unit>): Unit /* this */
+    fun off(event: WebFrameMainEvent.DOM_READY, listener: Function<Unit>): Unit /* this */
     fun once(event: WebFrameMainEvent.DOM_READY, listener: Function<Unit>): Unit /* this */
     fun addListener(event: WebFrameMainEvent.DOM_READY, listener: Function<Unit>): Unit /* this */
     fun removeListener(event: WebFrameMainEvent.DOM_READY, listener: Function<Unit>): Unit /* this */

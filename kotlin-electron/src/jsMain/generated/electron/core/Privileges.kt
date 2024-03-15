@@ -39,4 +39,10 @@ external interface Privileges {
      * Default false.
      */
     var stream: Boolean?
+
+    /**
+     * Enable V8 code cache for the scheme, only works when `standard` is also set to
+     * true. Default false.
+     */
+    var codeCache: Boolean?
 }

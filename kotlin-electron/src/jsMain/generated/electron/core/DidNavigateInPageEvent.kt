@@ -4,7 +4,9 @@
 package electron.core
 
 
-external interface DidNavigateInPageEvent : Event {
+@Suppress("INTERFACE_WITH_SUPERCLASS")
+
+external interface DidNavigateInPageEvent : DOMEvent {
     var isMainFrame: Boolean
     var url: String
 }

@@ -31,6 +31,17 @@ external interface PopupOptions {
     var positioningItem: Double?
 
     /**
+     * This should map to the `menuSourceType` provided by the `context-menu` event. It
+     * is not recommended to set this value manually, only provide values you receive
+     * from other APIs or leave it `undefined`. Can be `none`, `mouse`, `keyboard`,
+     * `touch`, `touchMenu`, `longPress`, `longTap`, `touchHandle`, `stylus`,
+     * `adjustSelection`, or `adjustSelectionReset`.
+     *
+     * @platform win32,linux
+     */
+    var sourceType: (PopupOptionsSourceType)?
+
+    /**
      * Called when menu is closed.
      */
     var callback: (() -> Unit)?

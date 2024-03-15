@@ -45,6 +45,19 @@ external class IncomingMessage : NodeEventEmitter {
      * event will subsequently follow on the request object.
      */
     fun on(event: IncomingMessageEvent.ERROR, listener: Function<Unit>): Unit /* this */
+    fun off(event: IncomingMessageEvent.ABORTED, listener: Function<Unit>): Unit /* this */
+    fun off(
+        event: IncomingMessageEvent.DATA,
+        listener: (
+            /**
+             * A chunk of response body's data.
+             */
+            chunk: Buffer,
+        ) -> Unit,
+    ): Unit /* this */
+
+    fun off(event: IncomingMessageEvent.END, listener: Function<Unit>): Unit /* this */
+    fun off(event: IncomingMessageEvent.ERROR, listener: Function<Unit>): Unit /* this */
     fun once(event: IncomingMessageEvent.ABORTED, listener: Function<Unit>): Unit /* this */
     fun once(
         event: IncomingMessageEvent.DATA,

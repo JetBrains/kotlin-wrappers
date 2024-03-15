@@ -8,7 +8,7 @@ import kotlin.js.Promise
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 
-external interface WebFrame : node.events.EventEmitter {
+external interface WebFrame {
 // Docs: https://electronjs.org/docs/api/web-frame
     /**
      * Attempts to free memory that is no longer being used (like images from a

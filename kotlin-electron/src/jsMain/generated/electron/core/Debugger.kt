@@ -17,7 +17,7 @@ external class Debugger : NodeEventEmitter {
     fun on(
         event: DebuggerEvent.DETACH,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * Reason for detaching debugger.
              */
@@ -31,7 +31,39 @@ external class Debugger : NodeEventEmitter {
     fun on(
         event: DebuggerEvent.MESSAGE,
         listener: (
-            event: Event,
+            event: Event<*>,
+            /**
+             * Method name.
+             */
+            method: String,
+            /**
+             * Event parameters defined by the 'parameters' attribute in the remote debugging
+             * protocol.
+             */
+            params: Any?,
+            /**
+             * Unique identifier of attached debugging session, will match the value sent from
+             * `debugger.sendCommand`.
+             */
+            sessionId: String,
+        ) -> Unit,
+    ): Unit /* this */
+
+    fun off(
+        event: DebuggerEvent.DETACH,
+        listener: (
+            event: Event<*>,
+            /**
+             * Reason for detaching debugger.
+             */
+            reason: String,
+        ) -> Unit,
+    ): Unit /* this */
+
+    fun off(
+        event: DebuggerEvent.MESSAGE,
+        listener: (
+            event: Event<*>,
             /**
              * Method name.
              */
@@ -52,7 +84,7 @@ external class Debugger : NodeEventEmitter {
     fun once(
         event: DebuggerEvent.DETACH,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * Reason for detaching debugger.
              */
@@ -63,7 +95,7 @@ external class Debugger : NodeEventEmitter {
     fun once(
         event: DebuggerEvent.MESSAGE,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * Method name.
              */
@@ -84,7 +116,7 @@ external class Debugger : NodeEventEmitter {
     fun addListener(
         event: DebuggerEvent.DETACH,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * Reason for detaching debugger.
              */
@@ -95,7 +127,7 @@ external class Debugger : NodeEventEmitter {
     fun addListener(
         event: DebuggerEvent.MESSAGE,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * Method name.
              */
@@ -116,7 +148,7 @@ external class Debugger : NodeEventEmitter {
     fun removeListener(
         event: DebuggerEvent.DETACH,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * Reason for detaching debugger.
              */
@@ -127,7 +159,7 @@ external class Debugger : NodeEventEmitter {
     fun removeListener(
         event: DebuggerEvent.MESSAGE,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * Method name.
              */

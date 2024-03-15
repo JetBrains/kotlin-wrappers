@@ -4,7 +4,9 @@
 package electron.core
 
 
-external interface IpcMessageEvent : Event {
+@Suppress("INTERFACE_WITH_SUPERCLASS")
+
+external interface IpcMessageEvent : DOMEvent {
     /**
      * pair of `[processId, frameId]`.
      */

@@ -17,7 +17,7 @@ external class Cookies : NodeEventEmitter {
     fun on(
         event: CookiesEvent.CHANGED,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The cookie that was changed.
              */
@@ -33,10 +33,29 @@ external class Cookies : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
+    fun off(
+        event: CookiesEvent.CHANGED,
+        listener: (
+            event: Event<*>,
+            /**
+             * The cookie that was changed.
+             */
+            cookie: Cookie,
+            /**
+             * The cause of the change with one of the following values:
+             */
+            cause: (CookiesOffListenerCause),
+            /**
+             * `true` if the cookie was removed, `false` otherwise.
+             */
+            removed: Boolean,
+        ) -> Unit,
+    ): Unit /* this */
+
     fun once(
         event: CookiesEvent.CHANGED,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The cookie that was changed.
              */
@@ -55,7 +74,7 @@ external class Cookies : NodeEventEmitter {
     fun addListener(
         event: CookiesEvent.CHANGED,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The cookie that was changed.
              */
@@ -74,7 +93,7 @@ external class Cookies : NodeEventEmitter {
     fun removeListener(
         event: CookiesEvent.CHANGED,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The cookie that was changed.
              */
@@ -93,7 +112,12 @@ external class Cookies : NodeEventEmitter {
     /**
      * A promise which resolves when the cookie store has been flushed
      *
-     * Writes any unwritten cookies data to disk.
+     * Writes any unwritten cookies data to disk
+     *
+     * Cookies written by any method will not be written to disk immediately, but will
+     * be written every 30 seconds or 512 operations
+     *
+     * Calling this method can cause the cookie to be written to disk immediately.
      */
     fun flushStore(): Promise<Unit>
 

@@ -12,52 +12,45 @@ external interface PushNotifications : node.events.EventEmitter {
 // Docs: https://electronjs.org/docs/api/push-notifications
     /**
      * Emitted when the app receives a remote notification while running. See:
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     * com/documentation/appkit/nsapplicationdelegate/1428430-application?language=objc
+     * https://developer.apple.com/documentation/appkit/nsapplicationdelegate/1428430-application?language=objc
      *
      * @platform darwin
      */
     fun on(
         event: PushNotificationsEvent.RECEIVED_APNS_NOTIFICATION,
-        listener: (event: Event, userInfo: js.objects.ReadonlyRecord<String, Any>) -> Unit,
+        listener: (event: Event<*>, userInfo: js.objects.ReadonlyRecord<String, Any>) -> Unit,
     ): Unit /* this */
 
+    /**
+     * @platform darwin
+     */
+    fun off(
+        event: PushNotificationsEvent.RECEIVED_APNS_NOTIFICATION,
+        listener: (event: Event<*>, userInfo: js.objects.ReadonlyRecord<String, Any>) -> Unit,
+    ): Unit /* this */
+
+    /**
+     * @platform darwin
+     */
     fun once(
         event: PushNotificationsEvent.RECEIVED_APNS_NOTIFICATION,
-        listener: (event: Event, userInfo: js.objects.ReadonlyRecord<String, Any>) -> Unit,
+        listener: (event: Event<*>, userInfo: js.objects.ReadonlyRecord<String, Any>) -> Unit,
     ): Unit /* this */
 
+    /**
+     * @platform darwin
+     */
     fun addListener(
         event: PushNotificationsEvent.RECEIVED_APNS_NOTIFICATION,
-        listener: (event: Event, userInfo: js.objects.ReadonlyRecord<String, Any>) -> Unit,
+        listener: (event: Event<*>, userInfo: js.objects.ReadonlyRecord<String, Any>) -> Unit,
     ): Unit /* this */
 
+    /**
+     * @platform darwin
+     */
     fun removeListener(
         event: PushNotificationsEvent.RECEIVED_APNS_NOTIFICATION,
-        listener: (event: Event, userInfo: js.objects.ReadonlyRecord<String, Any>) -> Unit,
+        listener: (event: Event<*>, userInfo: js.objects.ReadonlyRecord<String, Any>) -> Unit,
     ): Unit /* this */
 
     /**
@@ -65,44 +58,7 @@ external interface PushNotifications : node.events.EventEmitter {
      * Sound, and Alert notifications. If registration is successful, the promise will
      * be resolved with the APNS device token. Otherwise, the promise will be rejected
      * with an error message. See:
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     * tion/appkit/nsapplication/1428476-registerforremotenotificationtyp?language=objc
+     * https://developer.apple.com/documentation/appkit/nsapplication/1428476-registerforremotenotificationtyp?language=objc
      *
      * @platform darwin
      */
@@ -110,44 +66,7 @@ external interface PushNotifications : node.events.EventEmitter {
 
     /**
      * Unregisters the app from notifications received from APNS. See:
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     * tion/appkit/nsapplication/1428747-unregisterforremotenotifications?language=objc
+     * https://developer.apple.com/documentation/appkit/nsapplication/1428747-unregisterforremotenotifications?language=objc
      *
      * @platform darwin
      */

@@ -17,6 +17,7 @@ sealed external interface TrayEvent {
     sealed interface DROP : node.events.LegacyEventType
     sealed interface DROP_FILES : node.events.LegacyEventType
     sealed interface DROP_TEXT : node.events.LegacyEventType
+    sealed interface MIDDLE_CLICK : node.events.LegacyEventType
     sealed interface MOUSE_DOWN : node.events.LegacyEventType
     sealed interface MOUSE_ENTER : node.events.LegacyEventType
     sealed interface MOUSE_LEAVE : node.events.LegacyEventType
@@ -57,6 +58,9 @@ sealed external interface TrayEvent {
 
         @seskar.js.JsValue("drop-text")
         val DROP_TEXT: DROP_TEXT
+
+        @seskar.js.JsValue("middle-click")
+        val MIDDLE_CLICK: MIDDLE_CLICK
 
         @seskar.js.JsValue("mouse-down")
         val MOUSE_DOWN: MOUSE_DOWN

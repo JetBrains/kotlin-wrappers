@@ -12,12 +12,14 @@ open external class Notification : NodeEventEmitter {
      * Notification
      */
     constructor (options: NotificationConstructorOptions = definedExternally)
-
-    // Docs: https://electronjs.org/docs/api/notification
+// Docs: https://electronjs.org/docs/api/notification
+    /**
+     * @platform darwin
+     */
     fun on(
         event: NotificationEvent.ACTION,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The index of the action that was activated.
              */
@@ -28,15 +30,22 @@ open external class Notification : NodeEventEmitter {
     /**
      * Emitted when the notification is clicked by the user.
      */
-    fun on(event: NotificationEvent.CLICK, listener: (event: Event) -> Unit): Unit /* this */
+    fun on(event: NotificationEvent.CLICK, listener: (event: Event<*>) -> Unit): Unit /* this */
 
     /**
      * Emitted when the notification is closed by manual intervention from the user.
      *
      * This event is not guaranteed to be emitted in all cases where the notification
      * is closed.
+     *
+     * On Windows, the `close` event can be emitted in one of three ways: programmatic
+     * dismissal with `notification.close()`, by the user closing the notification, or
+     * via system timeout. If a notification is in the Action Center after the initial
+     * `close` event is emitted, a call to `notification.close()` will remove the
+     * notification from the action center but the `close` event will not be emitted
+     * again.
      */
-    fun on(event: NotificationEvent.CLOSE, listener: (event: Event) -> Unit): Unit /* this */
+    fun on(event: NotificationEvent.CLOSE, listener: (event: Event<*>) -> Unit): Unit /* this */
 
     /**
      * Emitted when an error is encountered while creating and showing the native
@@ -47,7 +56,7 @@ open external class Notification : NodeEventEmitter {
     fun on(
         event: NotificationEvent.FAILED,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The error encountered during execution of the `show()` method.
              */
@@ -64,7 +73,7 @@ open external class Notification : NodeEventEmitter {
     fun on(
         event: NotificationEvent.REPLY,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The string the user entered into the inline reply field.
              */
@@ -77,11 +86,15 @@ open external class Notification : NodeEventEmitter {
      * fired multiple times as a notification can be shown multiple times through the
      * `show()` method.
      */
-    fun on(event: NotificationEvent.SHOW, listener: (event: Event) -> Unit): Unit /* this */
-    fun once(
+    fun on(event: NotificationEvent.SHOW, listener: (event: Event<*>) -> Unit): Unit /* this */
+
+    /**
+     * @platform darwin
+     */
+    fun off(
         event: NotificationEvent.ACTION,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The index of the action that was activated.
              */
@@ -89,12 +102,16 @@ open external class Notification : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun once(event: NotificationEvent.CLICK, listener: (event: Event) -> Unit): Unit /* this */
-    fun once(event: NotificationEvent.CLOSE, listener: (event: Event) -> Unit): Unit /* this */
-    fun once(
+    fun off(event: NotificationEvent.CLICK, listener: (event: Event<*>) -> Unit): Unit /* this */
+    fun off(event: NotificationEvent.CLOSE, listener: (event: Event<*>) -> Unit): Unit /* this */
+
+    /**
+     * @platform win32
+     */
+    fun off(
         event: NotificationEvent.FAILED,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The error encountered during execution of the `show()` method.
              */
@@ -102,10 +119,13 @@ open external class Notification : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun once(
+    /**
+     * @platform darwin
+     */
+    fun off(
         event: NotificationEvent.REPLY,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The string the user entered into the inline reply field.
              */
@@ -113,11 +133,15 @@ open external class Notification : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun once(event: NotificationEvent.SHOW, listener: (event: Event) -> Unit): Unit /* this */
-    fun addListener(
+    fun off(event: NotificationEvent.SHOW, listener: (event: Event<*>) -> Unit): Unit /* this */
+
+    /**
+     * @platform darwin
+     */
+    fun once(
         event: NotificationEvent.ACTION,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The index of the action that was activated.
              */
@@ -125,12 +149,16 @@ open external class Notification : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun addListener(event: NotificationEvent.CLICK, listener: (event: Event) -> Unit): Unit /* this */
-    fun addListener(event: NotificationEvent.CLOSE, listener: (event: Event) -> Unit): Unit /* this */
-    fun addListener(
+    fun once(event: NotificationEvent.CLICK, listener: (event: Event<*>) -> Unit): Unit /* this */
+    fun once(event: NotificationEvent.CLOSE, listener: (event: Event<*>) -> Unit): Unit /* this */
+
+    /**
+     * @platform win32
+     */
+    fun once(
         event: NotificationEvent.FAILED,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The error encountered during execution of the `show()` method.
              */
@@ -138,10 +166,13 @@ open external class Notification : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun addListener(
+    /**
+     * @platform darwin
+     */
+    fun once(
         event: NotificationEvent.REPLY,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The string the user entered into the inline reply field.
              */
@@ -149,11 +180,15 @@ open external class Notification : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun addListener(event: NotificationEvent.SHOW, listener: (event: Event) -> Unit): Unit /* this */
-    fun removeListener(
+    fun once(event: NotificationEvent.SHOW, listener: (event: Event<*>) -> Unit): Unit /* this */
+
+    /**
+     * @platform darwin
+     */
+    fun addListener(
         event: NotificationEvent.ACTION,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The index of the action that was activated.
              */
@@ -161,12 +196,16 @@ open external class Notification : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun removeListener(event: NotificationEvent.CLICK, listener: (event: Event) -> Unit): Unit /* this */
-    fun removeListener(event: NotificationEvent.CLOSE, listener: (event: Event) -> Unit): Unit /* this */
-    fun removeListener(
+    fun addListener(event: NotificationEvent.CLICK, listener: (event: Event<*>) -> Unit): Unit /* this */
+    fun addListener(event: NotificationEvent.CLOSE, listener: (event: Event<*>) -> Unit): Unit /* this */
+
+    /**
+     * @platform win32
+     */
+    fun addListener(
         event: NotificationEvent.FAILED,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The error encountered during execution of the `show()` method.
              */
@@ -174,10 +213,13 @@ open external class Notification : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun removeListener(
+    /**
+     * @platform darwin
+     */
+    fun addListener(
         event: NotificationEvent.REPLY,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The string the user entered into the inline reply field.
              */
@@ -185,10 +227,63 @@ open external class Notification : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun removeListener(event: NotificationEvent.SHOW, listener: (event: Event) -> Unit): Unit /* this */
+    fun addListener(event: NotificationEvent.SHOW, listener: (event: Event<*>) -> Unit): Unit /* this */
+
+    /**
+     * @platform darwin
+     */
+    fun removeListener(
+        event: NotificationEvent.ACTION,
+        listener: (
+            event: Event<*>,
+            /**
+             * The index of the action that was activated.
+             */
+            index: Double,
+        ) -> Unit,
+    ): Unit /* this */
+
+    fun removeListener(event: NotificationEvent.CLICK, listener: (event: Event<*>) -> Unit): Unit /* this */
+    fun removeListener(event: NotificationEvent.CLOSE, listener: (event: Event<*>) -> Unit): Unit /* this */
+
+    /**
+     * @platform win32
+     */
+    fun removeListener(
+        event: NotificationEvent.FAILED,
+        listener: (
+            event: Event<*>,
+            /**
+             * The error encountered during execution of the `show()` method.
+             */
+            error: String,
+        ) -> Unit,
+    ): Unit /* this */
+
+    /**
+     * @platform darwin
+     */
+    fun removeListener(
+        event: NotificationEvent.REPLY,
+        listener: (
+            event: Event<*>,
+            /**
+             * The string the user entered into the inline reply field.
+             */
+            reply: String,
+        ) -> Unit,
+    ): Unit /* this */
+
+    fun removeListener(event: NotificationEvent.SHOW, listener: (event: Event<*>) -> Unit): Unit /* this */
 
     /**
      * Dismisses the notification.
+     *
+     * On Windows, calling `notification.close()` while the notification is visible on
+     * screen will dismiss the notification and remove it from the Action Center. If
+     * `notification.close()` is called after the notification is no longer visible on
+     * screen, calling `notification.close()` will try remove it from the Action
+     * Center.
      */
     fun close(): Unit
 

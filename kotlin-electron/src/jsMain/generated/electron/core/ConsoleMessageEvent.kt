@@ -4,7 +4,9 @@
 package electron.core
 
 
-external interface ConsoleMessageEvent : Event {
+@Suppress("INTERFACE_WITH_SUPERCLASS")
+
+external interface ConsoleMessageEvent : DOMEvent {
     /**
      * The log level, from 0 to 3. In order it matches `verbose`, `info`, `warning` and
      * `error`.

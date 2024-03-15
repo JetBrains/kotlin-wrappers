@@ -4,7 +4,9 @@
 package electron.core
 
 
-external interface PageTitleUpdatedEvent : Event {
+@Suppress("INTERFACE_WITH_SUPERCLASS")
+
+external interface PageTitleUpdatedEvent : DOMEvent {
     var title: String
     var explicitSet: Boolean
 }

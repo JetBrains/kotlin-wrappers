@@ -11,8 +11,8 @@ import kotlin.js.Promise
 external class NativeImage {
     /**
      * Add an image representation for a specific scale factor. This can be used to
-     * explicitly add different scale factor representations to an image. This can be
-     * called on empty images.
+     * programmatically add different scale factor representations to an image. This
+     * can be called on empty images.
      */
     fun addRepresentation(options: AddRepresentationOptions): Unit
 
@@ -22,7 +22,7 @@ external class NativeImage {
     fun crop(rect: Rectangle): NativeImage
 
     /**
-     * The image's aspect ratio.
+     * The image's aspect ratio (width divided by height).
      *
      * If `scaleFactor` is passed, this will return the aspect ratio corresponding to
      * the image representation most closely matching the passed value.
@@ -40,7 +40,7 @@ external class NativeImage {
 
     /**
      * A Buffer that stores C pointer to underlying native handle of the image. On
-     * macOS, a pointer to `NSImage` instance would be returned.
+     * macOS, a pointer to `NSImage` instance is returned.
      *
      * Notice that the returned pointer is a weak pointer to the underlying native
      * image instead of a copy, so you _must_ ensure that the associated `nativeImage`
@@ -52,7 +52,7 @@ external class NativeImage {
 
     /**
      * An array of all scale factors corresponding to representations for a given
-     * nativeImage.
+     * `NativeImage`.
      */
     fun getScaleFactors(): js.array.ReadonlyArray<Double>
 
@@ -68,7 +68,7 @@ external class NativeImage {
     fun isEmpty(): Boolean
 
     /**
-     * Whether the image is a template image.
+     * Whether the image is a macOS template image.
      */
     fun isTemplateImage(): Boolean
 
@@ -81,7 +81,7 @@ external class NativeImage {
     fun resize(options: ResizeOptions): NativeImage
 
     /**
-     * Marks the image as a template image.
+     * Marks the image as a macOS template image.
      */
     fun setTemplateImage(option: Boolean): Unit
 
@@ -91,7 +91,7 @@ external class NativeImage {
     fun toBitmap(options: ToBitmapOptions = definedExternally): Buffer
 
     /**
-     * The data URL of the image.
+     * The Data URL of the image.
      */
     fun toDataURL(options: ToDataURLOptions = definedExternally): String
 
@@ -135,13 +135,15 @@ external class NativeImage {
         fun createFromBuffer(buffer: Buffer, options: CreateFromBufferOptions = definedExternally): NativeImage
 
         /**
-         * Creates a new `NativeImage` instance from `dataURL`.
+         * Creates a new `NativeImage` instance from `dataUrl`, a base 64 encoded Data URL
+         * string.
          */
         fun createFromDataURL(dataURL: String): NativeImage
 
         /**
-         * Creates a new `NativeImage` instance from the NSImage that maps to the given
-         * image name. See `System Icons` for a list of possible values.
+         * Creates a new `NativeImage` instance from the `NSImage` that maps to the given
+         * image name. See Apple's `NSImageName` documentation for a list of possible
+         * values.
          *
          * The `hslShift` is applied to the image with the following rules:
          *
@@ -162,9 +164,6 @@ external class NativeImage {
          * actually be `NSFolder`. Therefore, you'll need to determine the correct string
          * representation for your image before passing it in. This can be done with the
          * following:
-         *
-         * `echo -e '#import <Cocoa/Cocoa.h>\nint main() { NSLog(@"%@", SYSTEM_IMAGE_NAME);
-         * }' | clang -otest -x objective-c -framework Cocoa - && ./test`
          *
          * where `SYSTEM_IMAGE_NAME` should be replaced with any value from this list.
          *

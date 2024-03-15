@@ -34,4 +34,9 @@ external interface DefaultFontFamily {
      * Defaults to `Impact`.
      */
     var fantasy: String?
+
+    /**
+     * Defaults to `Latin Modern Math`.
+     */
+    var math: String?
 }

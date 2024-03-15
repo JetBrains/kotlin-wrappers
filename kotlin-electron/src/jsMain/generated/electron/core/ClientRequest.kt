@@ -88,6 +88,40 @@ external class ClientRequest : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
+    fun off(event: ClientRequestEvent.ABORT, listener: Function<Unit>): Unit /* this */
+    fun off(event: ClientRequestEvent.CLOSE, listener: Function<Unit>): Unit /* this */
+    fun off(
+        event: ClientRequestEvent.ERROR,
+        listener: (
+            /**
+             * an error object providing some information about the failure.
+             */
+            error: Throwable,
+            /* JsError */
+        ) -> Unit,
+    ): Unit /* this */
+
+    fun off(event: ClientRequestEvent.FINISH, listener: Function<Unit>): Unit /* this */
+    fun off(
+        event: ClientRequestEvent.LOGIN,
+        listener: (authInfo: AuthInfo, callback: (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit) -> Unit,
+    ): Unit /* this */
+
+    fun off(
+        event: ClientRequestEvent.REDIRECT,
+        listener: (statusCode: Double, method: String, redirectUrl: String, responseHeaders: js.objects.ReadonlyRecord<String, js.array.ReadonlyArray<String>>) -> Unit,
+    ): Unit /* this */
+
+    fun off(
+        event: ClientRequestEvent.RESPONSE,
+        listener: (
+            /**
+             * An object representing the HTTP response message.
+             */
+            response: IncomingMessage,
+        ) -> Unit,
+    ): Unit /* this */
+
     fun once(event: ClientRequestEvent.ABORT, listener: Function<Unit>): Unit /* this */
     fun once(event: ClientRequestEvent.CLOSE, listener: Function<Unit>): Unit /* this */
     fun once(
@@ -206,13 +240,13 @@ external class ClientRequest : NodeEventEmitter {
         chunk: String = definedExternally,
         encoding: String = definedExternally,
         callback: () -> Unit = definedExternally,
-    ): Unit
+    ): Unit /* this */
 
     fun end(
         chunk: Buffer = definedExternally,
         encoding: String = definedExternally,
         callback: () -> Unit = definedExternally,
-    ): Unit
+    ): Unit /* this */
 
     /**
      * Continues any pending redirection. Can only be called during a `'redirect'`

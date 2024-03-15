@@ -5,7 +5,7 @@ package electron.core
 
 
 external interface HidDeviceRevokedDetails {
-    var device: js.array.ReadonlyArray<HIDDevice>
+    var device: HIDDevice
 
     /**
      * The origin that the device has been revoked from.

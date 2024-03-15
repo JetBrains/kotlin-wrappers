@@ -8,8 +8,6 @@ package electron.core
 sealed external interface SystemPreferencesEvent {
     sealed interface ACCENT_COLOR_CHANGED : node.events.LegacyEventType
     sealed interface COLOR_CHANGED : node.events.LegacyEventType
-    sealed interface HIGH_CONTRAST_COLOR_SCHEME_CHANGED : node.events.LegacyEventType
-    sealed interface INVERTED_COLOR_SCHEME_CHANGED : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("accent-color-changed")
@@ -17,11 +15,5 @@ sealed external interface SystemPreferencesEvent {
 
         @seskar.js.JsValue("color-changed")
         val COLOR_CHANGED: COLOR_CHANGED
-
-        @seskar.js.JsValue("high-contrast-color-scheme-changed")
-        val HIGH_CONTRAST_COLOR_SCHEME_CHANGED: HIGH_CONTRAST_COLOR_SCHEME_CHANGED
-
-        @seskar.js.JsValue("inverted-color-scheme-changed")
-        val INVERTED_COLOR_SCHEME_CHANGED: INVERTED_COLOR_SCHEME_CHANGED
     }
 }

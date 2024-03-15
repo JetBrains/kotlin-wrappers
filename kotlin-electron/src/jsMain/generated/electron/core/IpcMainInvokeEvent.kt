@@ -4,7 +4,7 @@
 package electron.core
 
 
-external interface IpcMainInvokeEvent : Event {
+external interface IpcMainInvokeEvent : Event<Any> {
 // Docs: https://electronjs.org/docs/api/structures/ipc-main-invoke-event
     /**
      * The ID of the renderer frame that sent this message

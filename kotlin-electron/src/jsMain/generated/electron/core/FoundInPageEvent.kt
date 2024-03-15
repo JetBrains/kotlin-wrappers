@@ -4,6 +4,8 @@
 package electron.core
 
 
-external interface FoundInPageEvent : Event {
+@Suppress("INTERFACE_WITH_SUPERCLASS")
+
+external interface FoundInPageEvent : DOMEvent {
     var result: FoundInPageResult
 }

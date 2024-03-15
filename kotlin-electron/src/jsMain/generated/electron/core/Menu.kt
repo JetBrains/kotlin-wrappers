@@ -4,8 +4,10 @@
 
 package electron.core
 
+import node.events.EventEmitter as NodeEventEmitter
 
-open external class Menu {
+
+open external class Menu : NodeEventEmitter {
     /**
      * Menu
      */
@@ -14,18 +16,20 @@ open external class Menu {
     /**
      * Emitted when a popup is closed either manually or with `menu.closePopup()`.
      */
-    fun on(event: MenuEvent.MENU_WILL_CLOSE, listener: (event: Event) -> Unit): Unit /* this */
+    fun on(event: MenuEvent.MENU_WILL_CLOSE, listener: (event: Event<*>) -> Unit): Unit /* this */
 
     /**
      * Emitted when `menu.popup()` is called.
      */
-    fun on(event: MenuEvent.MENU_WILL_SHOW, listener: (event: Event) -> Unit): Unit /* this */
-    fun once(event: MenuEvent.MENU_WILL_CLOSE, listener: (event: Event) -> Unit): Unit /* this */
-    fun once(event: MenuEvent.MENU_WILL_SHOW, listener: (event: Event) -> Unit): Unit /* this */
-    fun addListener(event: MenuEvent.MENU_WILL_CLOSE, listener: (event: Event) -> Unit): Unit /* this */
-    fun addListener(event: MenuEvent.MENU_WILL_SHOW, listener: (event: Event) -> Unit): Unit /* this */
-    fun removeListener(event: MenuEvent.MENU_WILL_CLOSE, listener: (event: Event) -> Unit): Unit /* this */
-    fun removeListener(event: MenuEvent.MENU_WILL_SHOW, listener: (event: Event) -> Unit): Unit /* this */
+    fun on(event: MenuEvent.MENU_WILL_SHOW, listener: (event: Event<*>) -> Unit): Unit /* this */
+    fun off(event: MenuEvent.MENU_WILL_CLOSE, listener: (event: Event<*>) -> Unit): Unit /* this */
+    fun off(event: MenuEvent.MENU_WILL_SHOW, listener: (event: Event<*>) -> Unit): Unit /* this */
+    fun once(event: MenuEvent.MENU_WILL_CLOSE, listener: (event: Event<*>) -> Unit): Unit /* this */
+    fun once(event: MenuEvent.MENU_WILL_SHOW, listener: (event: Event<*>) -> Unit): Unit /* this */
+    fun addListener(event: MenuEvent.MENU_WILL_CLOSE, listener: (event: Event<*>) -> Unit): Unit /* this */
+    fun addListener(event: MenuEvent.MENU_WILL_SHOW, listener: (event: Event<*>) -> Unit): Unit /* this */
+    fun removeListener(event: MenuEvent.MENU_WILL_CLOSE, listener: (event: Event<*>) -> Unit): Unit /* this */
+    fun removeListener(event: MenuEvent.MENU_WILL_SHOW, listener: (event: Event<*>) -> Unit): Unit /* this */
 
     /**
      * Appends the `menuItem` to the menu.

@@ -8,7 +8,7 @@ import web.abort.AbortSignal
 import web.abort.Abortable
 
 @JsPlainObject
-sealed external interface RequestInit :
+external interface RequestInit :
     Abortable {
     /**
      * A BodyInit object or null to set request's body.

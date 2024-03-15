@@ -10,12 +10,6 @@ sealed external interface BrowserWindowConstructorOptionsVibrancy {
         @seskar.js.JsValue("appearance-based")
         val appearanceBased: BrowserWindowConstructorOptionsVibrancy
 
-        @seskar.js.JsValue("light")
-        val light: BrowserWindowConstructorOptionsVibrancy
-
-        @seskar.js.JsValue("dark")
-        val dark: BrowserWindowConstructorOptionsVibrancy
-
         @seskar.js.JsValue("titlebar")
         val titlebar: BrowserWindowConstructorOptionsVibrancy
 
@@ -30,12 +24,6 @@ sealed external interface BrowserWindowConstructorOptionsVibrancy {
 
         @seskar.js.JsValue("sidebar")
         val sidebar: BrowserWindowConstructorOptionsVibrancy
-
-        @seskar.js.JsValue("medium-light")
-        val mediumLight: BrowserWindowConstructorOptionsVibrancy
-
-        @seskar.js.JsValue("ultra-dark")
-        val ultraDark: BrowserWindowConstructorOptionsVibrancy
 
         @seskar.js.JsValue("header")
         val header: BrowserWindowConstructorOptionsVibrancy

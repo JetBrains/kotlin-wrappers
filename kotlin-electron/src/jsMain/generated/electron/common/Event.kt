@@ -4,4 +4,4 @@
 package electron.common
 
 
-typealias Event = electron.core.Event
+typealias Event<Params /*  : Any default is Any */> = electron.core.Event<Params>

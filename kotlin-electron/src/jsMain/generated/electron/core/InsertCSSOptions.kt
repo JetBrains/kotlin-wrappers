@@ -6,8 +6,8 @@ package electron.core
 
 external interface InsertCSSOptions {
     /**
-     * Can be either 'user' or 'author'. Sets the cascade origin of the inserted
-     * stylesheet. Default is 'author'.
+     * Can be 'user' or 'author'. Sets the cascade origin of the inserted stylesheet.
+     * Default is 'author'.
      */
-    var cssOrigin: String?
+    var cssOrigin: (InsertCSSOptionsCssOrigin)?
 }

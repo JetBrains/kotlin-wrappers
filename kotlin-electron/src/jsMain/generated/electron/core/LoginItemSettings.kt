@@ -11,17 +11,19 @@ external interface LoginItemSettings {
     var openAtLogin: Boolean
 
     /**
-     * `true` if the app is set to open as hidden at login. This setting is not
-     * available on MAS builds.
+     * `true` if the app is set to open as hidden at login. This does not work on macOS
+     * 13 and up.
      *
+     * @deprecated
      * @platform darwin
      */
     var openAsHidden: Boolean
 
     /**
      * `true` if the app was opened at login automatically. This setting is not
-     * available on MAS builds.
+     * available on MAS builds or on macOS 13 and up.
      *
+     * @deprecated
      * @platform darwin
      */
     var wasOpenedAtLogin: Boolean
@@ -29,8 +31,9 @@ external interface LoginItemSettings {
     /**
      * `true` if the app was opened as a hidden login item. This indicates that the app
      * should not open any windows at startup. This setting is not available on MAS
-     * builds.
+     * builds or on macOS 13 and up.
      *
+     * @deprecated
      * @platform darwin
      */
     var wasOpenedAsHidden: Boolean
@@ -39,11 +42,19 @@ external interface LoginItemSettings {
      * `true` if the app was opened as a login item that should restore the state from
      * the previous session. This indicates that the app should restore the windows
      * that were open the last time the app was closed. This setting is not available
-     * on MAS builds.
+     * on MAS builds or on macOS 13 and up.
      *
+     * @deprecated
      * @platform darwin
      */
     var restoreState: Boolean
+
+    /**
+     * can be one of `not-registered`, `enabled`, `requires-approval`, or `not-found`.
+     *
+     * @platform darwin
+     */
+    var status: String
 
     /**
      * `true` if app is set to open at login and its run key is not deactivated. This

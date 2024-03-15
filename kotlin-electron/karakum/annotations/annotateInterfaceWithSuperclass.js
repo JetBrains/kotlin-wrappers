@@ -14,7 +14,31 @@ const interfacesWithSuperclass = [
     "Screen",
     "SystemPreferences",
     "WebFrame",
+    "WebUtils",
     "WebviewTag",
+
+    // events
+    "ConsoleMessageEvent",
+    "ContextMenuEvent",
+    "DevtoolsOpenUrlEvent",
+    "DidChangeThemeColorEvent",
+    "DidFailLoadEvent",
+    "DidFrameFinishLoadEvent",
+    "DidFrameNavigateEvent",
+    "DidNavigateEvent",
+    "DidNavigateInPageEvent",
+    "DidRedirectNavigationEvent",
+    "DidStartNavigationEvent",
+    "FoundInPageEvent",
+    "IpcMessageEvent",
+    "LoadCommitEvent",
+    "PageFaviconUpdatedEvent",
+    "PageTitleUpdatedEvent",
+    "PluginCrashedEvent",
+    "RenderProcessGoneEvent",
+    "UpdateTargetUrlEvent",
+    "WillFrameNavigateEvent",
+    "WillNavigateEvent",
 ]
 
 export default (node) => {

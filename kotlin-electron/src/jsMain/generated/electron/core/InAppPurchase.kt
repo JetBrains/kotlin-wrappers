@@ -11,6 +11,7 @@ import kotlin.js.Promise
 external interface InAppPurchase : node.events.EventEmitter {
     // Docs: https://electronjs.org/docs/api/in-app-purchase
     fun on(event: InAppPurchaseEvent.TRANSACTIONS_UPDATED, listener: Function<Unit>): Unit /* this */
+    fun off(event: InAppPurchaseEvent.TRANSACTIONS_UPDATED, listener: Function<Unit>): Unit /* this */
     fun once(event: InAppPurchaseEvent.TRANSACTIONS_UPDATED, listener: Function<Unit>): Unit /* this */
     fun addListener(event: InAppPurchaseEvent.TRANSACTIONS_UPDATED, listener: Function<Unit>): Unit /* this */
     fun removeListener(event: InAppPurchaseEvent.TRANSACTIONS_UPDATED, listener: Function<Unit>): Unit /* this */

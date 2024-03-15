@@ -25,15 +25,16 @@ external interface ForkOptions {
      * Default is `inherit`. String value can be one of `pipe`, `ignore`, `inherit`,
      * for more details on these values you can refer to stdio documentation from
      * Node.js. Currently this option only supports configuring `stdout` and `stderr`
-     * to either `pipe`, `inherit` or `ignore`. Configuring `stdin` is not supported;
-     * `stdin` will always be ignored. For example, the supported values will be
-     * processed as following:
+     * to either `pipe`, `inherit` or `ignore`. Configuring `stdin` to any property
+     * other than `ignore` is not supported and will result in an error. For example,
+     * the supported values will be processed as following:
      */
     var stdio: (Any /* (Array<'pipe' | 'ignore' | 'inherit'>) | (string) */)?
 
     /**
-     * Name of the process that will appear in `name` property of `child-process-gone`
-     * event of `app`. Default is `node.mojom.NodeService`.
+     * Name of the process that will appear in `name` property of `ProcessMetric`
+     * returned by `app.getAppMetrics` and `child-process-gone` event of `app`. Default
+     * is `Node Utility Process`.
      */
     var serviceName: String?
 

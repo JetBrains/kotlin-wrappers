@@ -30,12 +30,12 @@ external interface PrintToPDFOptions {
      * `A5`, `A6`, `Legal`, `Letter`, `Tabloid`, `Ledger`, or an Object containing
      * `height` and `width` in inches. Defaults to `Letter`.
      */
-    var pageSize: (Any /* (string) | (Size) */)?
+    var pageSize: (Any /* (('A0' | 'A1' | 'A2' | 'A3' | 'A4' | 'A5' | 'A6' | 'Legal' | 'Letter' | 'Tabloid' | 'Ledger')) | (Size) */)?
     var margins: Margins?
 
     /**
-     * Paper ranges to print, e.g., '1-5, 8, 11-13'. Defaults to the empty string,
-     * which means print all pages.
+     * Page ranges to print, e.g., '1-5, 8, 11-13'. Defaults to the empty string, which
+     * means print all pages.
      */
     var pageRanges: String?
 
@@ -59,4 +59,21 @@ external interface PrintToPDFOptions {
      * which case the content will be scaled to fit the paper size.
      */
     var preferCSSPageSize: Boolean?
+
+    /**
+     * Whether or not to generate a tagged (accessible) PDF. Defaults to false. As this
+     * property is experimental, the generated PDF may not adhere fully to PDF/UA and
+     * WCAG standards.
+     *
+     * @experimental
+     */
+    var generateTaggedPDF: Boolean?
+
+    /**
+     * Whether or not to generate a PDF document outline from content headers. Defaults
+     * to false.
+     *
+     * @experimental
+     */
+    var generateDocumentOutline: Boolean?
 }

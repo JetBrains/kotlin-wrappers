@@ -29,13 +29,14 @@ external interface ClientRequestConstructorOptions {
     var partition: String?
 
     /**
-     * Can be `include` or `omit`. Whether to send credentials with this request. If
-     * set to `include`, credentials from the session associated with the request will
-     * be used. If set to `omit`, credentials will not be sent with the request (and
-     * the `'login'` event will not be triggered in the event of a 401). This matches
-     * the behavior of the fetch option of the same name. If this option is not
-     * specified, authentication data from the session will be sent, and cookies will
-     * not be sent (unless `useSessionCookies` is set).
+     * Can be `include`, `omit` or `same-origin`. Whether to send credentials with this
+     * request. If set to `include`, credentials from the session associated with the
+     * request will be used. If set to `omit`, credentials will not be sent with the
+     * request (and the `'login'` event will not be triggered in the event of a 401).
+     * If set to `same-origin`, `origin` must also be specified. This matches the
+     * behavior of the fetch option of the same name. If this option is not specified,
+     * authentication data from the session will be sent, and cookies will not be sent
+     * (unless `useSessionCookies` is set).
      */
     var credentials: (ClientRequestConstructorOptionsCredentials)?
 
@@ -49,7 +50,7 @@ external interface ClientRequestConstructorOptions {
      * Can be `http:` or `https:`. The protocol scheme in the form 'scheme:'. Defaults
      * to 'http:'.
      */
-    var protocol: String?
+    var protocol: (ClientRequestConstructorOptionsProtocol)?
 
     /**
      * The server host provided as a concatenation of the hostname and the port number
@@ -84,4 +85,18 @@ external interface ClientRequestConstructorOptions {
      * The origin URL of the request.
      */
     var origin: String?
+
+    /**
+     * can be `""`, `no-referrer`, `no-referrer-when-downgrade`, `origin`,
+     * `origin-when-cross-origin`, `unsafe-url`, `same-origin`, `strict-origin`, or
+     * `strict-origin-when-cross-origin`. Defaults to
+     * `strict-origin-when-cross-origin`.
+     */
+    var referrerPolicy: String?
+
+    /**
+     * can be `default`, `no-store`, `reload`, `no-cache`, `force-cache` or
+     * `only-if-cached`.
+     */
+    var cache: (ClientRequestConstructorOptionsCache)?
 }

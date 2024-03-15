@@ -15,7 +15,7 @@ external class ServiceWorkers : NodeEventEmitter {
     fun on(
         event: ServiceWorkersEvent.CONSOLE_MESSAGE,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * Information about the console message
              */
@@ -31,7 +31,29 @@ external class ServiceWorkers : NodeEventEmitter {
     fun on(
         event: ServiceWorkersEvent.REGISTRATION_COMPLETED,
         listener: (
-            event: Event,
+            event: Event<*>,
+            /**
+             * Information about the registered service worker
+             */
+            details: RegistrationCompletedDetails,
+        ) -> Unit,
+    ): Unit /* this */
+
+    fun off(
+        event: ServiceWorkersEvent.CONSOLE_MESSAGE,
+        listener: (
+            event: Event<*>,
+            /**
+             * Information about the console message
+             */
+            messageDetails: MessageDetails,
+        ) -> Unit,
+    ): Unit /* this */
+
+    fun off(
+        event: ServiceWorkersEvent.REGISTRATION_COMPLETED,
+        listener: (
+            event: Event<*>,
             /**
              * Information about the registered service worker
              */
@@ -42,7 +64,7 @@ external class ServiceWorkers : NodeEventEmitter {
     fun once(
         event: ServiceWorkersEvent.CONSOLE_MESSAGE,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * Information about the console message
              */
@@ -53,7 +75,7 @@ external class ServiceWorkers : NodeEventEmitter {
     fun once(
         event: ServiceWorkersEvent.REGISTRATION_COMPLETED,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * Information about the registered service worker
              */
@@ -64,7 +86,7 @@ external class ServiceWorkers : NodeEventEmitter {
     fun addListener(
         event: ServiceWorkersEvent.CONSOLE_MESSAGE,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * Information about the console message
              */
@@ -75,7 +97,7 @@ external class ServiceWorkers : NodeEventEmitter {
     fun addListener(
         event: ServiceWorkersEvent.REGISTRATION_COMPLETED,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * Information about the registered service worker
              */
@@ -86,7 +108,7 @@ external class ServiceWorkers : NodeEventEmitter {
     fun removeListener(
         event: ServiceWorkersEvent.CONSOLE_MESSAGE,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * Information about the console message
              */
@@ -97,7 +119,7 @@ external class ServiceWorkers : NodeEventEmitter {
     fun removeListener(
         event: ServiceWorkersEvent.REGISTRATION_COMPLETED,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * Information about the registered service worker
              */

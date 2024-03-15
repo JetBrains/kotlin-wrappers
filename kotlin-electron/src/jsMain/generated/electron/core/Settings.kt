@@ -15,11 +15,29 @@ external interface Settings {
      * `true` to open the app as hidden. Defaults to `false`. The user can edit this
      * setting from the System Preferences so
      * `app.getLoginItemSettings().wasOpenedAsHidden` should be checked when the app is
-     * opened to know the current value. This setting is not available on MAS builds.
+     * opened to know the current value. This setting is not available on MAS build s
+     * or on macOS 13 and up.
      *
+     * @deprecated
      * @platform darwin
      */
     var openAsHidden: Boolean?
+
+    /**
+     * The type of service to add as a login item. Defaults to `mainAppService`. Only
+     * available on macOS 13 and up.
+     *
+     * @platform darwin
+     */
+    var type: (SettingsType)?
+
+    /**
+     * The name of the service. Required if `type` is non-default. Only available on
+     * macOS 13 and up.
+     *
+     * @platform darwin
+     */
+    var serviceName: String?
 
     /**
      * The executable to launch at login. Defaults to `process.execPath`.
@@ -45,8 +63,7 @@ external interface Settings {
     var enabled: Boolean?
 
     /**
-     * value name to write into registry. Defaults to the app's AppUserModelId(). Set
-     * the app's login item settings.
+     * value name to write into registry. Defaults to the app's AppUserModelId().
      *
      * @platform win32
      */

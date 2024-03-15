@@ -89,7 +89,7 @@ open external class MenuItem {
      * `about`, `services`, `hide`, `hideOthers`, `unhide`, `quit`, `startSpeaking`,
      * `stopSpeaking`, `zoom`, `front`, `appMenu`, `fileMenu`, `editMenu`, `viewMenu`,
      * `shareMenu`, `recentDocuments`, `toggleTabBar`, `selectNextTab`,
-     * `selectPreviousTab`, `mergeAllWindows`, `clearRecentDocuments`,
+     * `selectPreviousTab`, `showAllTabs`, `mergeAllWindows`, `clearRecentDocuments`,
      * `moveTabToNewWindow` or `windowMenu`
      */
     var role: (MenuItemRole)?

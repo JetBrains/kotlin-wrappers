@@ -5,7 +5,7 @@ package electron.core
 
 
 external interface UsbDeviceRevokedDetails {
-    var device: js.array.ReadonlyArray<USBDevice>
+    var device: USBDevice
 
     /**
      * The origin that the device has been revoked from.

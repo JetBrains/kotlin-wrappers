@@ -7,10 +7,27 @@ package electron.core
 external interface Protocol {
 // Docs: https://electronjs.org/docs/api/protocol
     /**
+     * Register a protocol handler for `scheme`. Requests made to URLs with this scheme
+     * will delegate to this handler to determine what response should be sent.
+     *
+     * Either a `Response` or a `Promise<Response>` can be returned.
+     *
+     * Example:
+     *
+     * See the MDN docs for `Request` and `Response` for more details.
+     */
+    fun handle(
+        scheme: String,
+        handler: (request: GlobalRequest) -> Any, /* (GlobalResponse) | (Promise<GlobalResponse>) */
+    ): Unit
+
+    /**
      * Whether the protocol was successfully intercepted
      *
      * Intercepts `scheme` protocol and uses `handler` as the protocol's new handler
      * which sends a `Buffer` as a response.
+     *
+     * @deprecated
      */
     fun interceptBufferProtocol(
         scheme: String,
@@ -22,6 +39,8 @@ external interface Protocol {
      *
      * Intercepts `scheme` protocol and uses `handler` as the protocol's new handler
      * which sends a file as a response.
+     *
+     * @deprecated
      */
     fun interceptFileProtocol(
         scheme: String,
@@ -33,6 +52,8 @@ external interface Protocol {
      *
      * Intercepts `scheme` protocol and uses `handler` as the protocol's new handler
      * which sends a new HTTP request as a response.
+     *
+     * @deprecated
      */
     fun interceptHttpProtocol(
         scheme: String,
@@ -44,6 +65,8 @@ external interface Protocol {
      *
      * Same as `protocol.registerStreamProtocol`, except that it replaces an existing
      * protocol handler.
+     *
+     * @deprecated
      */
     fun interceptStreamProtocol(
         scheme: String,
@@ -55,6 +78,8 @@ external interface Protocol {
      *
      * Intercepts `scheme` protocol and uses `handler` as the protocol's new handler
      * which sends a `string` as a response.
+     *
+     * @deprecated
      */
     fun interceptStringProtocol(
         scheme: String,
@@ -62,12 +87,21 @@ external interface Protocol {
     ): Boolean
 
     /**
+     * Whether `scheme` is already handled.
+     */
+    fun isProtocolHandled(scheme: String): Boolean
+
+    /**
      * Whether `scheme` is already intercepted.
+     *
+     * @deprecated
      */
     fun isProtocolIntercepted(scheme: String): Boolean
 
     /**
      * Whether `scheme` is already registered.
+     *
+     * @deprecated
      */
     fun isProtocolRegistered(scheme: String): Boolean
 
@@ -81,6 +115,8 @@ external interface Protocol {
      * property.
      *
      * Example:
+     *
+     * @deprecated
      */
     fun registerBufferProtocol(
         scheme: String,
@@ -100,6 +136,8 @@ external interface Protocol {
      *
      * By default the `scheme` is treated like `http:`, which is parsed differently
      * from protocols that follow the "generic URI syntax" like `file:`.
+     *
+     * @deprecated
      */
     fun registerFileProtocol(
         scheme: String,
@@ -113,6 +151,8 @@ external interface Protocol {
      *
      * The usage is the same with `registerFileProtocol`, except that the `callback`
      * should be called with an object that has the `url` property.
+     *
+     * @deprecated
      */
     fun registerHttpProtocol(
         scheme: String,
@@ -124,9 +164,9 @@ external interface Protocol {
      * module gets emitted and can be called only once.
      *
      * Registers the `scheme` as standard, secure, bypasses content security policy for
-     * resources, allows registering ServiceWorker, supports fetch API, and streaming
-     * video/audio. Specify a privilege with the value of `true` to enable the
-     * capability.
+     * resources, allows registering ServiceWorker, supports fetch API, streaming
+     * video/audio, and V8 code cache. Specify a privilege with the value of `true` to
+     * enable the capability.
      *
      * An example of registering a privileged scheme, that bypasses Content Security
      * Policy:
@@ -171,6 +211,8 @@ external interface Protocol {
      *
      * It is possible to pass any object that implements the readable stream API (emits
      * `data`/`end`/`error` events). For example, here's how a file could be returned:
+     *
+     * @deprecated
      */
     fun registerStreamProtocol(
         scheme: String,
@@ -185,6 +227,8 @@ external interface Protocol {
      * The usage is the same with `registerFileProtocol`, except that the `callback`
      * should be called with either a `string` or an object that has the `data`
      * property.
+     *
+     * @deprecated
      */
     fun registerStringProtocol(
         scheme: String,
@@ -192,9 +236,16 @@ external interface Protocol {
     ): Boolean
 
     /**
+     * Removes a protocol handler registered with `protocol.handle`.
+     */
+    fun unhandle(scheme: String): Unit
+
+    /**
      * Whether the protocol was successfully unintercepted
      *
      * Remove the interceptor installed for `scheme` and restore its original handler.
+     *
+     * @deprecated
      */
     fun uninterceptProtocol(scheme: String): Boolean
 
@@ -202,6 +253,8 @@ external interface Protocol {
      * Whether the protocol was successfully unregistered
      *
      * Unregisters the custom protocol of `scheme`.
+     *
+     * @deprecated
      */
     fun unregisterProtocol(scheme: String): Boolean
 }

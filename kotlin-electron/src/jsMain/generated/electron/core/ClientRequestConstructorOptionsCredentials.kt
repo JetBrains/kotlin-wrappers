@@ -12,5 +12,8 @@ sealed external interface ClientRequestConstructorOptionsCredentials {
 
         @seskar.js.JsValue("omit")
         val omit: ClientRequestConstructorOptionsCredentials
+
+        @seskar.js.JsValue("same-origin")
+        val sameOrigin: ClientRequestConstructorOptionsCredentials
     }
 }

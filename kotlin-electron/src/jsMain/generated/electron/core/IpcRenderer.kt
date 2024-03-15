@@ -12,6 +12,14 @@ import kotlin.js.Promise
 external interface IpcRenderer : node.events.EventEmitter {
 // Docs: https://electronjs.org/docs/api/ipc-renderer
     /**
+     * Alias for `ipcRenderer.on`.
+     */
+    fun addListener(
+        channel: String,
+        listener: Function<Unit>, /* (event: IpcRendererEvent, ...args: any[]) => void */
+    ): Unit /* this */
+
+    /**
      * Resolves with the response from the main process.
      *
      * Send a message to the main process via `channel` and expect a result
@@ -42,6 +50,14 @@ external interface IpcRenderer : node.events.EventEmitter {
      * process will not be the same as the one thrown in the main process.
      */
     fun invoke(channel: String, vararg args: Any?): Promise<Any?>
+
+    /**
+     * Alias for `ipcRenderer.removeListener`.
+     */
+    fun off(
+        channel: String,
+        listener: Function<Unit>, /* (event: IpcRendererEvent, ...args: any[]) => void */
+    ): Unit /* this */
 
     /**
      * Listens to `channel`, when a new message arrives `listener` would be called with
@@ -89,7 +105,10 @@ external interface IpcRenderer : node.events.EventEmitter {
      * Removes the specified `listener` from the listener array for the specified
      * `channel`.
      */
-    fun removeListener(channel: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun removeListener(
+        channel: String,
+        listener: Function<Unit>, /* (event: IpcRendererEvent, ...args: any[]) => void */
+    ): Unit /* this */
 
     /**
      * Send an asynchronous message to the main process via `channel`, along with
@@ -142,11 +161,6 @@ external interface IpcRenderer : node.events.EventEmitter {
      * resort. It's much better to use the asynchronous version, `invoke()`.
      */
     fun sendSync(channel: String, vararg args: Any?): Any?
-
-    /**
-     * Sends a message to a window with `webContentsId` via `channel`.
-     */
-    fun sendTo(webContentsId: Double, channel: String, vararg args: Any?): Unit
 
     /**
      * Like `ipcRenderer.send` but the event will be sent to the `<webview>` element in

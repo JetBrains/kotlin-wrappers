@@ -6,13 +6,13 @@ package electron.core
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
 sealed external interface WebContentsEvent {
+    sealed interface AUDIO_STATE_CHANGED : node.events.LegacyEventType
     sealed interface BEFORE_INPUT_EVENT : node.events.LegacyEventType
     sealed interface BLUR : node.events.LegacyEventType
     sealed interface CERTIFICATE_ERROR : node.events.LegacyEventType
     sealed interface CONSOLE_MESSAGE : node.events.LegacyEventType
     sealed interface CONTENT_BOUNDS_UPDATED : node.events.LegacyEventType
     sealed interface CONTEXT_MENU : node.events.LegacyEventType
-    sealed interface CRASHED : node.events.LegacyEventType
     sealed interface CURSOR_CHANGED : node.events.LegacyEventType
     sealed interface DESTROYED : node.events.LegacyEventType
     sealed interface DEVTOOLS_CLOSED : node.events.LegacyEventType
@@ -59,12 +59,16 @@ sealed external interface WebContentsEvent {
     sealed interface UNRESPONSIVE : node.events.LegacyEventType
     sealed interface UPDATE_TARGET_URL : node.events.LegacyEventType
     sealed interface WILL_ATTACH_WEBVIEW : node.events.LegacyEventType
+    sealed interface WILL_FRAME_NAVIGATE : node.events.LegacyEventType
     sealed interface WILL_NAVIGATE : node.events.LegacyEventType
     sealed interface WILL_PREVENT_UNLOAD : node.events.LegacyEventType
     sealed interface WILL_REDIRECT : node.events.LegacyEventType
     sealed interface ZOOM_CHANGED : node.events.LegacyEventType
 
     companion object {
+        @seskar.js.JsValue("audio-state-changed")
+        val AUDIO_STATE_CHANGED: AUDIO_STATE_CHANGED
+
         @seskar.js.JsValue("before-input-event")
         val BEFORE_INPUT_EVENT: BEFORE_INPUT_EVENT
 
@@ -82,9 +86,6 @@ sealed external interface WebContentsEvent {
 
         @seskar.js.JsValue("context-menu")
         val CONTEXT_MENU: CONTEXT_MENU
-
-        @seskar.js.JsValue("crashed")
-        val CRASHED: CRASHED
 
         @seskar.js.JsValue("cursor-changed")
         val CURSOR_CHANGED: CURSOR_CHANGED
@@ -223,6 +224,9 @@ sealed external interface WebContentsEvent {
 
         @seskar.js.JsValue("will-attach-webview")
         val WILL_ATTACH_WEBVIEW: WILL_ATTACH_WEBVIEW
+
+        @seskar.js.JsValue("will-frame-navigate")
+        val WILL_FRAME_NAVIGATE: WILL_FRAME_NAVIGATE
 
         @seskar.js.JsValue("will-navigate")
         val WILL_NAVIGATE: WILL_NAVIGATE

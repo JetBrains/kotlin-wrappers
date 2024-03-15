@@ -18,8 +18,8 @@ sealed external interface AppEvent {
     sealed interface CONTINUE_ACTIVITY : node.events.LegacyEventType
     sealed interface CONTINUE_ACTIVITY_ERROR : node.events.LegacyEventType
     sealed interface DID_BECOME_ACTIVE : node.events.LegacyEventType
+    sealed interface DID_RESIGN_ACTIVE : node.events.LegacyEventType
     sealed interface GPU_INFO_UPDATE : node.events.LegacyEventType
-    sealed interface GPU_PROCESS_CRASHED : node.events.LegacyEventType
     sealed interface LOGIN : node.events.LegacyEventType
     sealed interface NEW_WINDOW_FOR_TAB : node.events.LegacyEventType
     sealed interface OPEN_FILE : node.events.LegacyEventType
@@ -27,7 +27,6 @@ sealed external interface AppEvent {
     sealed interface QUIT : node.events.LegacyEventType
     sealed interface READY : node.events.LegacyEventType
     sealed interface RENDER_PROCESS_GONE : node.events.LegacyEventType
-    sealed interface RENDERER_PROCESS_CRASHED : node.events.LegacyEventType
     sealed interface SECOND_INSTANCE : node.events.LegacyEventType
     sealed interface SELECT_CLIENT_CERTIFICATE : node.events.LegacyEventType
     sealed interface SESSION_CREATED : node.events.LegacyEventType
@@ -75,11 +74,11 @@ sealed external interface AppEvent {
         @seskar.js.JsValue("did-become-active")
         val DID_BECOME_ACTIVE: DID_BECOME_ACTIVE
 
+        @seskar.js.JsValue("did-resign-active")
+        val DID_RESIGN_ACTIVE: DID_RESIGN_ACTIVE
+
         @seskar.js.JsValue("gpu-info-update")
         val GPU_INFO_UPDATE: GPU_INFO_UPDATE
-
-        @seskar.js.JsValue("gpu-process-crashed")
-        val GPU_PROCESS_CRASHED: GPU_PROCESS_CRASHED
 
         @seskar.js.JsValue("login")
         val LOGIN: LOGIN
@@ -101,9 +100,6 @@ sealed external interface AppEvent {
 
         @seskar.js.JsValue("render-process-gone")
         val RENDER_PROCESS_GONE: RENDER_PROCESS_GONE
-
-        @seskar.js.JsValue("renderer-process-crashed")
-        val RENDERER_PROCESS_CRASHED: RENDERER_PROCESS_CRASHED
 
         @seskar.js.JsValue("second-instance")
         val SECOND_INSTANCE: SECOND_INSTANCE

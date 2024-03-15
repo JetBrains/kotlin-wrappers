@@ -23,7 +23,7 @@ external class DownloadItem : NodeEventEmitter {
     fun on(
         event: DownloadItemEvent.DONE,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * Can be `completed`, `cancelled` or `interrupted`.
              */
@@ -42,7 +42,29 @@ external class DownloadItem : NodeEventEmitter {
     fun on(
         event: DownloadItemEvent.UPDATED,
         listener: (
-            event: Event,
+            event: Event<*>,
+            /**
+             * Can be `progressing` or `interrupted`.
+             */
+            state: (DownloadItemUpdatedListenerState),
+        ) -> Unit,
+    ): Unit /* this */
+
+    fun off(
+        event: DownloadItemEvent.DONE,
+        listener: (
+            event: Event<*>,
+            /**
+             * Can be `completed`, `cancelled` or `interrupted`.
+             */
+            state: (DownloadItemDoneListenerState),
+        ) -> Unit,
+    ): Unit /* this */
+
+    fun off(
+        event: DownloadItemEvent.UPDATED,
+        listener: (
+            event: Event<*>,
             /**
              * Can be `progressing` or `interrupted`.
              */
@@ -53,7 +75,7 @@ external class DownloadItem : NodeEventEmitter {
     fun once(
         event: DownloadItemEvent.DONE,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * Can be `completed`, `cancelled` or `interrupted`.
              */
@@ -64,7 +86,7 @@ external class DownloadItem : NodeEventEmitter {
     fun once(
         event: DownloadItemEvent.UPDATED,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * Can be `progressing` or `interrupted`.
              */
@@ -75,7 +97,7 @@ external class DownloadItem : NodeEventEmitter {
     fun addListener(
         event: DownloadItemEvent.DONE,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * Can be `completed`, `cancelled` or `interrupted`.
              */
@@ -86,7 +108,7 @@ external class DownloadItem : NodeEventEmitter {
     fun addListener(
         event: DownloadItemEvent.UPDATED,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * Can be `progressing` or `interrupted`.
              */
@@ -97,7 +119,7 @@ external class DownloadItem : NodeEventEmitter {
     fun removeListener(
         event: DownloadItemEvent.DONE,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * Can be `completed`, `cancelled` or `interrupted`.
              */
@@ -108,7 +130,7 @@ external class DownloadItem : NodeEventEmitter {
     fun removeListener(
         event: DownloadItemEvent.UPDATED,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * Can be `progressing` or `interrupted`.
              */

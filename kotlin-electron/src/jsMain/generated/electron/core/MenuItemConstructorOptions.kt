@@ -19,10 +19,10 @@ external interface MenuItemConstructorOptions {
      * `showSubstitutions`, `toggleSmartQuotes`, `toggleSmartDashes`,
      * `toggleTextReplacement`, `startSpeaking`, `stopSpeaking`, `zoom`, `front`,
      * `appMenu`, `fileMenu`, `editMenu`, `viewMenu`, `shareMenu`, `recentDocuments`,
-     * `toggleTabBar`, `selectNextTab`, `selectPreviousTab`, `mergeAllWindows`,
-     * `clearRecentDocuments`, `moveTabToNewWindow` or `windowMenu` - Define the action
-     * of the menu item, when specified the `click` property will be ignored. See
-     * roles.
+     * `toggleTabBar`, `selectNextTab`, `selectPreviousTab`, `showAllTabs`,
+     * `mergeAllWindows`, `clearRecentDocuments`, `moveTabToNewWindow` or `windowMenu`
+     * - Define the action of the menu item, when specified the `click` property will
+     * be ignored. See roles.
      */
     var role: (MenuItemConstructorOptionsRole)?
 

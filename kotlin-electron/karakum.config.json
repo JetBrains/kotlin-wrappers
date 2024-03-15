@@ -10,6 +10,7 @@
         "electron/electron#Electron.Main": "electron/main",
         "electron/electron#Electron.Common": "electron/common",
         "electron/electron#Electron.Renderer": "electron/renderer",
+        "electron/electron#Electron.Utility": "electron/utility",
         "electron/electron#Electron.CrossProcessExports": "electron",
         "electron/electron#Electron": "INTERNAL_ENTITY"
     },
@@ -62,6 +63,10 @@
         "Dock.kt": [
             "kotlin.js.Promise"
         ],
+        "DOMEvent.kt": [
+            "web.events.Event",
+            "web.events.EventTarget"
+        ],
         "DownloadItem.kt": [
             "node.buffer.Buffer",
             "node.events.EventEmitter as NodeEventEmitter"
@@ -79,6 +84,15 @@
         ],
         "IpcRendererEvent.kt": [
             "web.messaging.MessagePort"
+        ],
+        "GlobalRequest.kt": [
+            "web.http.Request"
+        ],
+        "GlobalResponse.kt": [
+            "web.http.Response"
+        ],
+        "Menu.kt": [
+            "node.events.EventEmitter as NodeEventEmitter"
         ],
         "MessageBoxOptions.kt": [
             "web.abort.AbortSignal"
@@ -98,6 +112,9 @@
         ],
         "Net.kt": [
             "kotlin.js.Promise"
+        ],
+        "NetFetchInit.kt": [
+            "web.http.RequestInit"
         ],
         "NetLog.kt": [
             "kotlin.js.Promise"
@@ -119,11 +136,11 @@
             "node.buffer.Buffer",
             "node.events.EventEmitter as NodeEventEmitter"
         ],
+        "SessionFetchInit.kt": [
+            "web.http.RequestInit"
+        ],
         "Shell.kt": [
             "kotlin.js.Promise"
-        ],
-        "ShareMenu.kt": [
-            "node.events.EventEmitter as NodeEventEmitter"
         ],
         "SystemPreferences.kt": [
             "kotlin.js.Promise"

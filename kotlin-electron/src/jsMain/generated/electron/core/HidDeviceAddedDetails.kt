@@ -5,6 +5,6 @@ package electron.core
 
 
 external interface HidDeviceAddedDetails {
-    var device: js.array.ReadonlyArray<HIDDevice>
+    var device: HIDDevice
     var frame: WebFrameMain
 }

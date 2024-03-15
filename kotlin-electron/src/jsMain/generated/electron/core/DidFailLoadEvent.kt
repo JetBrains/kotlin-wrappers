@@ -4,7 +4,9 @@
 package electron.core
 
 
-external interface DidFailLoadEvent : Event {
+@Suppress("INTERFACE_WITH_SUPERCLASS")
+
+external interface DidFailLoadEvent : DOMEvent {
     var errorCode: Double
     var errorDescription: String
     var validatedURL: String

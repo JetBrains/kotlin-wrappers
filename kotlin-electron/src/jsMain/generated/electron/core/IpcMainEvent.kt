@@ -4,7 +4,7 @@
 package electron.core
 
 
-external interface IpcMainEvent : Event {
+external interface IpcMainEvent : Event<Any> {
 // Docs: https://electronjs.org/docs/api/structures/ipc-main-event
     /**
      * The ID of the renderer frame that sent this message
@@ -27,7 +27,7 @@ external interface IpcMainEvent : Event {
      * "reply" to the sent message in order to guarantee the reply will go to the
      * correct process and frame.
      */
-    var reply: Function<*>
+    var reply: Function<Unit> /* (channel: string, ...args: any[]) => void */
 
     /**
      * Set this to the value to be returned in a synchronous message

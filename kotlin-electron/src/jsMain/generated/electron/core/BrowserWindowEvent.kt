@@ -29,9 +29,6 @@ sealed external interface BrowserWindowEvent {
     sealed interface RESPONSIVE : node.events.LegacyEventType
     sealed interface RESTORE : node.events.LegacyEventType
     sealed interface ROTATE_GESTURE : node.events.LegacyEventType
-    sealed interface SCROLL_TOUCH_BEGIN : node.events.LegacyEventType
-    sealed interface SCROLL_TOUCH_EDGE : node.events.LegacyEventType
-    sealed interface SCROLL_TOUCH_END : node.events.LegacyEventType
     sealed interface SESSION_END : node.events.LegacyEventType
     sealed interface SHEET_BEGIN : node.events.LegacyEventType
     sealed interface SHEET_END : node.events.LegacyEventType
@@ -112,15 +109,6 @@ sealed external interface BrowserWindowEvent {
 
         @seskar.js.JsValue("rotate-gesture")
         val ROTATE_GESTURE: ROTATE_GESTURE
-
-        @seskar.js.JsValue("scroll-touch-begin")
-        val SCROLL_TOUCH_BEGIN: SCROLL_TOUCH_BEGIN
-
-        @seskar.js.JsValue("scroll-touch-edge")
-        val SCROLL_TOUCH_EDGE: SCROLL_TOUCH_EDGE
-
-        @seskar.js.JsValue("scroll-touch-end")
-        val SCROLL_TOUCH_END: SCROLL_TOUCH_END
 
         @seskar.js.JsValue("session-end")
         val SESSION_END: SESSION_END

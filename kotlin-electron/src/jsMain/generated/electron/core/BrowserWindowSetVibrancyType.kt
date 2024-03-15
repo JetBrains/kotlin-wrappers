@@ -7,15 +7,6 @@ package electron.core
 @seskar.js.JsVirtual
 sealed external interface BrowserWindowSetVibrancyType {
     companion object {
-        @seskar.js.JsValue("appearance-based")
-        val appearanceBased: BrowserWindowSetVibrancyType
-
-        @seskar.js.JsValue("light")
-        val light: BrowserWindowSetVibrancyType
-
-        @seskar.js.JsValue("dark")
-        val dark: BrowserWindowSetVibrancyType
-
         @seskar.js.JsValue("titlebar")
         val titlebar: BrowserWindowSetVibrancyType
 
@@ -30,12 +21,6 @@ sealed external interface BrowserWindowSetVibrancyType {
 
         @seskar.js.JsValue("sidebar")
         val sidebar: BrowserWindowSetVibrancyType
-
-        @seskar.js.JsValue("medium-light")
-        val mediumLight: BrowserWindowSetVibrancyType
-
-        @seskar.js.JsValue("ultra-dark")
-        val ultraDark: BrowserWindowSetVibrancyType
 
         @seskar.js.JsValue("header")
         val header: BrowserWindowSetVibrancyType

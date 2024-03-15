@@ -23,7 +23,7 @@ external interface Display {
 
     /**
      *  represent a color space (three-dimensional object which contains all realizable
-     * color combinations) for the purpose of color conversions
+     * color combinations) for the purpose of color conversions.
      */
     var colorSpace: String
 
@@ -33,17 +33,24 @@ external interface Display {
     var depthPerComponent: Double
 
     /**
+     * `true`` if the display is detected by the system.
+     */
+    var detected: Boolean
+
+    /**
      * The display refresh rate.
      */
     var displayFrequency: Double
 
     /**
-     * Unique identifier associated with the display.
+     * Unique identifier associated with the display. A value of of -1 means the
+     * display is invalid or the correct `id` is not yet known, and a value of -10
+     * means the display is a virtual display assigned to a unified desktop.
      */
     var id: Double
 
     /**
-     * `true` for an internal display and `false` for an external display
+     * `true` for an internal display and `false` for an external display.
      */
     var internal: Boolean
 
@@ -53,9 +60,20 @@ external interface Display {
     var label: String
 
     /**
+     * Maximum cursor size in native pixels.
+     */
+    var maximumCursorSize: Size
+
+    /**
      * Whether or not the display is a monochrome display.
      */
     var monochrome: Boolean
+
+    /**
+     * Returns the display's origin in pixel coordinates. Only available on windowing
+     * systems like X11 that position displays in pixel coordinates.
+     */
+    var nativeOrigin: Point
 
     /**
      * Can be 0, 90, 180, 270, represents screen rotation in clock-wise degrees.
@@ -77,5 +95,9 @@ external interface Display {
      * the work area of the display in DIP points.
      */
     var workArea: Rectangle
+
+    /**
+     * The size of the work area.
+     */
     var workAreaSize: Size
 }

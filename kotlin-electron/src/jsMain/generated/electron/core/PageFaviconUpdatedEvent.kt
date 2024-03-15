@@ -4,7 +4,9 @@
 package electron.core
 
 
-external interface PageFaviconUpdatedEvent : Event {
+@Suppress("INTERFACE_WITH_SUPERCLASS")
+
+external interface PageFaviconUpdatedEvent : DOMEvent {
     /**
      * Array of URLs.
      */

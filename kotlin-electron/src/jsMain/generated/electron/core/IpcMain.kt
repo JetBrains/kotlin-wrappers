@@ -26,7 +26,7 @@ external interface IpcMain : node.events.EventEmitter {
      */
     fun handle(
         channel: String,
-        listener: Function<Any? /* (Promise<void>) | (any) */>, /* (event: IpcMainInvokeEvent, ...args: any[]) => (Promise<void>) | (any) */
+        listener: Function<Any? /* (Promise<any>) | (any) */>, /* (event: IpcMainInvokeEvent, ...args: any[]) => (Promise<any>) | (any) */
     ): Unit
 
     /**
@@ -35,7 +35,7 @@ external interface IpcMain : node.events.EventEmitter {
      */
     fun handleOnce(
         channel: String,
-        listener: Function<Any? /* (Promise<void>) | (any) */>, /* (event: IpcMainInvokeEvent, ...args: any[]) => (Promise<void>) | (any) */
+        listener: Function<Any? /* (Promise<any>) | (any) */>, /* (event: IpcMainInvokeEvent, ...args: any[]) => (Promise<any>) | (any) */
     ): Unit
 
     /**

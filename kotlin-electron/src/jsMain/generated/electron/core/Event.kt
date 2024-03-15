@@ -4,7 +4,16 @@
 package electron.core
 
 
-external interface Event : GlobalEvent {
-    // Docs: https://electronjs.org/docs/api/structures/event
-    var preventDefault: (() -> Unit)
+external interface Event<Params /*  : Any default is Any */> {
+    var preventDefault: () -> Unit
+    val defaultPrevented: Boolean
+
+    @Suppress(
+        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+        "INLINE_EXTERNAL_DECLARATION",
+        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+        "DECLARATION_CANT_BE_INLINED",
+    )
+    inline val params: Params
+        get() = unsafeCast<Params>()
 }

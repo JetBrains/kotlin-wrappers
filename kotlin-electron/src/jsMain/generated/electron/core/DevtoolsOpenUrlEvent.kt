@@ -4,7 +4,9 @@
 package electron.core
 
 
-external interface DevtoolsOpenUrlEvent : Event {
+@Suppress("INTERFACE_WITH_SUPERCLASS")
+
+external interface DevtoolsOpenUrlEvent : DOMEvent {
     /**
      * URL of the link that was clicked or selected.
      */

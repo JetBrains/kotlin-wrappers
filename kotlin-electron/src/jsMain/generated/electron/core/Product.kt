@@ -7,16 +7,6 @@ package electron.core
 external interface Product {
 // Docs: https://electronjs.org/docs/api/structures/product
     /**
-     * The total size of the content, in bytes.
-     */
-    var contentLengths: js.array.ReadonlyArray<Double>
-
-    /**
-     * A string that identifies the version of the content.
-     */
-    var contentVersion: String
-
-    /**
      * 3 character code presenting a product's currency based on the ISO 4217 standard.
      */
     var currencyCode: String

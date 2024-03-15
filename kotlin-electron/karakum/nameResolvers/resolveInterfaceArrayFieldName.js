@@ -7,6 +7,8 @@ const propertyNames = {
     mediaTypes: "mediaType",
     protectedClasses: "protectedClass",
     types: "type",
+    storages: "storage",
+    quotas: "quota",
 }
 
 export default (node) => {

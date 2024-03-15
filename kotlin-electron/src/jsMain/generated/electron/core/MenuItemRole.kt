@@ -124,6 +124,9 @@ sealed external interface MenuItemRole {
         @seskar.js.JsValue("selectPreviousTab")
         val selectPreviousTab: MenuItemRole
 
+        @seskar.js.JsValue("showAllTabs")
+        val showAllTabs: MenuItemRole
+
         @seskar.js.JsValue("mergeAllWindows")
         val mergeAllWindows: MenuItemRole
 

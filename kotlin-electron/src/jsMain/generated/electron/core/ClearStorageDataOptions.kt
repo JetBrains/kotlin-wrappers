@@ -11,15 +11,15 @@ external interface ClearStorageDataOptions {
     var origin: String?
 
     /**
-     * The types of storages to clear, can contain: `cookies`, `filesystem`, `indexdb`,
+     * The types of storages to clear, can be `cookies`, `filesystem`, `indexdb`,
      * `localstorage`, `shadercache`, `websql`, `serviceworkers`, `cachestorage`. If
      * not specified, clear all storage types.
      */
-    var storages: js.array.ReadonlyArray<String>?
+    var storages: Array<ClearStorageDataOptionsStorage>?
 
     /**
-     * The types of quotas to clear, can contain: `temporary`, `syncable`. If not
-     * specified, clear all quotas.
+     * The types of quotas to clear, can be `temporary`, `syncable`. If not specified,
+     * clear all quotas.
      */
-    var quotas: js.array.ReadonlyArray<String>?
+    var quotas: Array<ClearStorageDataOptionsQuota>?
 }

@@ -21,6 +21,7 @@ sealed external interface WebviewTagEvent {
     sealed interface CONSOLE_MESSAGE : node.events.LegacyEventType
     sealed interface FOUND_IN_PAGE : node.events.LegacyEventType
     sealed interface WILL_NAVIGATE : node.events.LegacyEventType
+    sealed interface WILL_FRAME_NAVIGATE : node.events.LegacyEventType
     sealed interface DID_START_NAVIGATION : node.events.LegacyEventType
     sealed interface DID_REDIRECT_NAVIGATION : node.events.LegacyEventType
     sealed interface DID_NAVIGATE : node.events.LegacyEventType
@@ -28,7 +29,7 @@ sealed external interface WebviewTagEvent {
     sealed interface DID_NAVIGATE_IN_PAGE : node.events.LegacyEventType
     sealed interface CLOSE : node.events.LegacyEventType
     sealed interface IPC_MESSAGE : node.events.LegacyEventType
-    sealed interface CRASHED : node.events.LegacyEventType
+    sealed interface RENDER_PROCESS_GONE : node.events.LegacyEventType
     sealed interface PLUGIN_CRASHED : node.events.LegacyEventType
     sealed interface DESTROYED : node.events.LegacyEventType
     sealed interface MEDIA_STARTED_PLAYING : node.events.LegacyEventType
@@ -87,6 +88,9 @@ sealed external interface WebviewTagEvent {
         @seskar.js.JsValue("will-navigate")
         val WILL_NAVIGATE: WILL_NAVIGATE
 
+        @seskar.js.JsValue("will-frame-navigate")
+        val WILL_FRAME_NAVIGATE: WILL_FRAME_NAVIGATE
+
         @seskar.js.JsValue("did-start-navigation")
         val DID_START_NAVIGATION: DID_START_NAVIGATION
 
@@ -108,8 +112,8 @@ sealed external interface WebviewTagEvent {
         @seskar.js.JsValue("ipc-message")
         val IPC_MESSAGE: IPC_MESSAGE
 
-        @seskar.js.JsValue("crashed")
-        val CRASHED: CRASHED
+        @seskar.js.JsValue("render-process-gone")
+        val RENDER_PROCESS_GONE: RENDER_PROCESS_GONE
 
         @seskar.js.JsValue("plugin-crashed")
         val PLUGIN_CRASHED: PLUGIN_CRASHED

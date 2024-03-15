@@ -97,9 +97,6 @@ sealed external interface SystemPreferencesGetColorColor {
         @seskar.js.JsValue("window-text")
         val windowText: SystemPreferencesGetColorColor
 
-        @seskar.js.JsValue("alternate-selected-control-text")
-        val alternateSelectedControlText: SystemPreferencesGetColorColor
-
         @seskar.js.JsValue("control-background")
         val controlBackground: SystemPreferencesGetColorColor
 

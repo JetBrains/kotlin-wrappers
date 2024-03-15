@@ -17,4 +17,9 @@ external interface OpenDevToolsOptions {
      * `true`.
      */
     var activate: Boolean?
+
+    /**
+     * A title for the DevTools window (only in `undocked` or `detach` mode).
+     */
+    var title: String?
 }

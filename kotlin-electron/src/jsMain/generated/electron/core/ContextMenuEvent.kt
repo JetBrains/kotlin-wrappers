@@ -4,6 +4,8 @@
 package electron.core
 
 
-external interface ContextMenuEvent : Event {
+@Suppress("INTERFACE_WITH_SUPERCLASS")
+
+external interface ContextMenuEvent : DOMEvent {
     var params: Params
 }

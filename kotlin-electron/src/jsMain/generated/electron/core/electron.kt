@@ -13,12 +13,18 @@ package electron.core
 
 /* export = Electron.Renderer; */
 
+/* export = Electron.Utility; */
+
+
+/* export = fs; */
+
 
 /* export = fs; */
 
 /* declare namespace NodeJS {
     interface Process extends NodeJS.EventEmitter {
         on(event: 'loaded', listener: Function): this;
+        off(event: 'loaded', listener: Function): this;
         once(event: 'loaded', listener: Function): this;
         addListener(event: 'loaded', listener: Function): this;
         removeListener(event: 'loaded', listener: Function): this;

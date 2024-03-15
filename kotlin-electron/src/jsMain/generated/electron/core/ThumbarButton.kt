@@ -6,7 +6,7 @@ package electron.core
 
 external interface ThumbarButton {
     // Docs: https://electronjs.org/docs/api/structures/thumbar-button
-    var click: Function<*>
+    var click: () -> Unit
 
     /**
      * Control specific states and behaviors of the button. By default, it is

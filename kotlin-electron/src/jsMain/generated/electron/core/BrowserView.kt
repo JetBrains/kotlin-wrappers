@@ -18,6 +18,10 @@ open external class BrowserView {
      * @experimental
      */
     fun getBounds(): Rectangle
+
+    /**
+     * @experimental
+     */
     fun setAutoResize(options: AutoResizeOptions): Unit
 
     /**

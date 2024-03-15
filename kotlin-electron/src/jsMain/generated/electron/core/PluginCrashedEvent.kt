@@ -4,7 +4,9 @@
 package electron.core
 
 
-external interface PluginCrashedEvent : Event {
+@Suppress("INTERFACE_WITH_SUPERCLASS")
+
+external interface PluginCrashedEvent : DOMEvent {
     var name: String
     var version: String
 }

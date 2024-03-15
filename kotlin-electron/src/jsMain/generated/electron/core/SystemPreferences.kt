@@ -9,59 +9,33 @@ import kotlin.js.Promise
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 
 external interface SystemPreferences : node.events.EventEmitter {
-    // Docs: https://electronjs.org/docs/api/system-preferences
+// Docs: https://electronjs.org/docs/api/system-preferences
+    /**
+     * @platform win32
+     */
     fun on(
         event: SystemPreferencesEvent.ACCENT_COLOR_CHANGED,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The new RGBA color the user assigned to be their system accent color.
              */
             newColor: String,
-        ) -> Unit,
-    ): Unit /* this */
-
-    fun on(event: SystemPreferencesEvent.COLOR_CHANGED, listener: (event: Event) -> Unit): Unit /* this */
-
-    /**
-     * **Deprecated:** Should use the new `updated` event on the `nativeTheme` module.
-     *
-     * @deprecated
-     * @platform win32
-     */
-    fun on(
-        event: SystemPreferencesEvent.HIGH_CONTRAST_COLOR_SCHEME_CHANGED,
-        listener: (
-            event: Event,
-            /**
-             * `true` if a high contrast theme is being used, `false` otherwise.
-             */
-            highContrastColorScheme: Boolean,
         ) -> Unit,
     ): Unit /* this */
 
     /**
-     * **Deprecated:** Should use the new `updated` event on the `nativeTheme` module.
-     *
-     * @deprecated
      * @platform win32
      */
-    fun on(
-        event: SystemPreferencesEvent.INVERTED_COLOR_SCHEME_CHANGED,
-        listener: (
-            event: Event,
-            /**
-             * `true` if an inverted color scheme (a high contrast color scheme with light text
-             * and dark backgrounds) is being used, `false` otherwise.
-             */
-            invertedColorScheme: Boolean,
-        ) -> Unit,
-    ): Unit /* this */
+    fun on(event: SystemPreferencesEvent.COLOR_CHANGED, listener: (event: Event<*>) -> Unit): Unit /* this */
 
-    fun once(
+    /**
+     * @platform win32
+     */
+    fun off(
         event: SystemPreferencesEvent.ACCENT_COLOR_CHANGED,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The new RGBA color the user assigned to be their system accent color.
              */
@@ -69,34 +43,18 @@ external interface SystemPreferences : node.events.EventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun once(event: SystemPreferencesEvent.COLOR_CHANGED, listener: (event: Event) -> Unit): Unit /* this */
-    fun once(
-        event: SystemPreferencesEvent.HIGH_CONTRAST_COLOR_SCHEME_CHANGED,
-        listener: (
-            event: Event,
-            /**
-             * `true` if a high contrast theme is being used, `false` otherwise.
-             */
-            highContrastColorScheme: Boolean,
-        ) -> Unit,
-    ): Unit /* this */
+    /**
+     * @platform win32
+     */
+    fun off(event: SystemPreferencesEvent.COLOR_CHANGED, listener: (event: Event<*>) -> Unit): Unit /* this */
 
+    /**
+     * @platform win32
+     */
     fun once(
-        event: SystemPreferencesEvent.INVERTED_COLOR_SCHEME_CHANGED,
-        listener: (
-            event: Event,
-            /**
-             * `true` if an inverted color scheme (a high contrast color scheme with light text
-             * and dark backgrounds) is being used, `false` otherwise.
-             */
-            invertedColorScheme: Boolean,
-        ) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
         event: SystemPreferencesEvent.ACCENT_COLOR_CHANGED,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The new RGBA color the user assigned to be their system accent color.
              */
@@ -104,34 +62,18 @@ external interface SystemPreferences : node.events.EventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun addListener(event: SystemPreferencesEvent.COLOR_CHANGED, listener: (event: Event) -> Unit): Unit /* this */
-    fun addListener(
-        event: SystemPreferencesEvent.HIGH_CONTRAST_COLOR_SCHEME_CHANGED,
-        listener: (
-            event: Event,
-            /**
-             * `true` if a high contrast theme is being used, `false` otherwise.
-             */
-            highContrastColorScheme: Boolean,
-        ) -> Unit,
-    ): Unit /* this */
+    /**
+     * @platform win32
+     */
+    fun once(event: SystemPreferencesEvent.COLOR_CHANGED, listener: (event: Event<*>) -> Unit): Unit /* this */
 
+    /**
+     * @platform win32
+     */
     fun addListener(
-        event: SystemPreferencesEvent.INVERTED_COLOR_SCHEME_CHANGED,
-        listener: (
-            event: Event,
-            /**
-             * `true` if an inverted color scheme (a high contrast color scheme with light text
-             * and dark backgrounds) is being used, `false` otherwise.
-             */
-            invertedColorScheme: Boolean,
-        ) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(
         event: SystemPreferencesEvent.ACCENT_COLOR_CHANGED,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The new RGBA color the user assigned to be their system accent color.
              */
@@ -139,28 +81,31 @@ external interface SystemPreferences : node.events.EventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun removeListener(event: SystemPreferencesEvent.COLOR_CHANGED, listener: (event: Event) -> Unit): Unit /* this */
+    /**
+     * @platform win32
+     */
+    fun addListener(event: SystemPreferencesEvent.COLOR_CHANGED, listener: (event: Event<*>) -> Unit): Unit /* this */
+
+    /**
+     * @platform win32
+     */
     fun removeListener(
-        event: SystemPreferencesEvent.HIGH_CONTRAST_COLOR_SCHEME_CHANGED,
+        event: SystemPreferencesEvent.ACCENT_COLOR_CHANGED,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
-             * `true` if a high contrast theme is being used, `false` otherwise.
+             * The new RGBA color the user assigned to be their system accent color.
              */
-            highContrastColorScheme: Boolean,
+            newColor: String,
         ) -> Unit,
     ): Unit /* this */
 
+    /**
+     * @platform win32
+     */
     fun removeListener(
-        event: SystemPreferencesEvent.INVERTED_COLOR_SCHEME_CHANGED,
-        listener: (
-            event: Event,
-            /**
-             * `true` if an inverted color scheme (a high contrast color scheme with light text
-             * and dark backgrounds) is being used, `false` otherwise.
-             */
-            invertedColorScheme: Boolean,
-        ) -> Unit,
+        event: SystemPreferencesEvent.COLOR_CHANGED,
+        listener: (event: Event<*>) -> Unit,
     ): Unit /* this */
 
     /**
@@ -216,19 +161,7 @@ external interface SystemPreferences : node.events.EventEmitter {
     fun getAnimationSettings(): AnimationSettings
 
     /**
-     * | `null` - Can be `dark`, `light` or `unknown`.
-     *
-     * Gets the macOS appearance setting that you have declared you want for your
-     * application, maps to NSApplication.appearance. You can use the
-     * `setAppLevelAppearance` API to set this value.
-     *
-     * @deprecated
-     * @platform darwin
-     */
-    fun getAppLevelAppearance(): (SystemPreferencesGetAppLevelAppearanceResult)
-
-    /**
-     * The system color setting in RGB hexadecimal form (`#ABCDEF`). See the Windows
+     * The system color setting in RGBA hexadecimal form (`#RRGGBBAA`). See the Windows
      * docs and the macOS docs for more details.
      *
      * The following colors are only available on macOS 10.14: `find-highlight`,
@@ -305,39 +238,6 @@ external interface SystemPreferences : node.events.EventEmitter {
     fun isAeroGlassEnabled(): Boolean
 
     /**
-     * Whether the system is in Dark Mode.
-     *
-     * **Deprecated:** Should use the new `nativeTheme.shouldUseDarkColors` API.
-     *
-     * @deprecated
-     * @platform darwin,win32
-     */
-    fun isDarkMode(): Boolean
-
-    /**
-     * `true` if a high contrast theme is active, `false` otherwise.
-     *
-     * **Deprecated:** Should use the new `nativeTheme.shouldUseHighContrastColors`
-     * API.
-     *
-     * @deprecated
-     * @platform darwin,win32
-     */
-    fun isHighContrastColorScheme(): Boolean
-
-    /**
-     * `true` if an inverted color scheme (a high contrast color scheme with light text
-     * and dark backgrounds) is active, `false` otherwise.
-     *
-     * **Deprecated:** Should use the new `nativeTheme.shouldUseInvertedColorScheme`
-     * API.
-     *
-     * @deprecated
-     * @platform win32
-     */
-    fun isInvertedColorScheme(): Boolean
-
-    /**
      * Whether the Swipe between pages setting is on.
      *
      * @platform darwin
@@ -408,15 +308,6 @@ external interface SystemPreferences : node.events.EventEmitter {
      * @platform darwin
      */
     fun removeUserDefault(key: String): Unit
-
-    /**
-     * Sets the appearance setting for your application, this should override the
-     * system default and override the value of `getEffectiveAppearance`.
-     *
-     * @deprecated
-     * @platform darwin
-     */
-    fun setAppLevelAppearance(appearance: SystemPreferencesSetAppLevelAppearanceAppearance?): Unit
 
     /**
      * Set the value of `key` in `NSUserDefaults`.
@@ -520,19 +411,13 @@ external interface SystemPreferences : node.events.EventEmitter {
     fun unsubscribeWorkspaceNotification(id: Double): Unit
 
     /**
-     * A `string` property that can be `dark`, `light` or `unknown`. It determines the
-     * macOS appearance setting for your application. This maps to values in:
-     * NSApplication.appearance. Setting this will override the system default as well
-     * as the value of `getEffectiveAppearance`.
-     *
-     * Possible values that can be set are `dark` and `light`, and possible return
-     * values are `dark`, `light`, and `unknown`.
-     *
-     * This property is only available on macOS 10.14 Mojave or newer.
+     * A `boolean` property which determines whether the app avoids using
+     * semitransparent backgrounds. This maps to
+     * NSWorkspace.accessibilityDisplayShouldReduceTransparency
      *
      * @platform darwin
      */
-    var appLevelAppearance: (SystemPreferencesAppLevelAppearance)
+    fun accessibilityDisplayShouldReduceTransparency(): Boolean
 
     /**
      * A `string` property that can be `dark`, `light` or `unknown`.

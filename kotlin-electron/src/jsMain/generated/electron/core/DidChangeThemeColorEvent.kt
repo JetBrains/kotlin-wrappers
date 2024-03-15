@@ -4,6 +4,8 @@
 package electron.core
 
 
-external interface DidChangeThemeColorEvent : Event {
+@Suppress("INTERFACE_WITH_SUPERCLASS")
+
+external interface DidChangeThemeColorEvent : DOMEvent {
     var themeColor: String
 }

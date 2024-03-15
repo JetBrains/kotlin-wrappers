@@ -11,7 +11,7 @@ external interface Screen : node.events.EventEmitter {
     /**
      * Emitted when `newDisplay` has been added.
      */
-    fun on(event: ScreenEvent.DISPLAY_ADDED, listener: (event: Event, newDisplay: Display) -> Unit): Unit /* this */
+    fun on(event: ScreenEvent.DISPLAY_ADDED, listener: (event: Event<*>, newDisplay: Display) -> Unit): Unit /* this */
 
     /**
      * Emitted when one or more metrics change in a `display`. The `changedMetrics` is
@@ -20,48 +20,71 @@ external interface Screen : node.events.EventEmitter {
      */
     fun on(
         event: ScreenEvent.DISPLAY_METRICS_CHANGED,
-        listener: (event: Event, display: Display, changedMetrics: js.array.ReadonlyArray<String>) -> Unit,
+        listener: (event: Event<*>, display: Display, changedMetrics: js.array.ReadonlyArray<String>) -> Unit,
     ): Unit /* this */
 
     /**
      * Emitted when `oldDisplay` has been removed.
      */
-    fun on(event: ScreenEvent.DISPLAY_REMOVED, listener: (event: Event, oldDisplay: Display) -> Unit): Unit /* this */
-    fun once(event: ScreenEvent.DISPLAY_ADDED, listener: (event: Event, newDisplay: Display) -> Unit): Unit /* this */
+    fun on(
+        event: ScreenEvent.DISPLAY_REMOVED,
+        listener: (event: Event<*>, oldDisplay: Display) -> Unit,
+    ): Unit /* this */
+
+    fun off(event: ScreenEvent.DISPLAY_ADDED, listener: (event: Event<*>, newDisplay: Display) -> Unit): Unit /* this */
+    fun off(
+        event: ScreenEvent.DISPLAY_METRICS_CHANGED,
+        listener: (event: Event<*>, display: Display, changedMetrics: js.array.ReadonlyArray<String>) -> Unit,
+    ): Unit /* this */
+
+    fun off(
+        event: ScreenEvent.DISPLAY_REMOVED,
+        listener: (event: Event<*>, oldDisplay: Display) -> Unit,
+    ): Unit /* this */
+
+    fun once(
+        event: ScreenEvent.DISPLAY_ADDED,
+        listener: (event: Event<*>, newDisplay: Display) -> Unit,
+    ): Unit /* this */
+
     fun once(
         event: ScreenEvent.DISPLAY_METRICS_CHANGED,
-        listener: (event: Event, display: Display, changedMetrics: js.array.ReadonlyArray<String>) -> Unit,
+        listener: (event: Event<*>, display: Display, changedMetrics: js.array.ReadonlyArray<String>) -> Unit,
     ): Unit /* this */
 
-    fun once(event: ScreenEvent.DISPLAY_REMOVED, listener: (event: Event, oldDisplay: Display) -> Unit): Unit /* this */
+    fun once(
+        event: ScreenEvent.DISPLAY_REMOVED,
+        listener: (event: Event<*>, oldDisplay: Display) -> Unit,
+    ): Unit /* this */
+
     fun addListener(
         event: ScreenEvent.DISPLAY_ADDED,
-        listener: (event: Event, newDisplay: Display) -> Unit,
+        listener: (event: Event<*>, newDisplay: Display) -> Unit,
     ): Unit /* this */
 
     fun addListener(
         event: ScreenEvent.DISPLAY_METRICS_CHANGED,
-        listener: (event: Event, display: Display, changedMetrics: js.array.ReadonlyArray<String>) -> Unit,
+        listener: (event: Event<*>, display: Display, changedMetrics: js.array.ReadonlyArray<String>) -> Unit,
     ): Unit /* this */
 
     fun addListener(
         event: ScreenEvent.DISPLAY_REMOVED,
-        listener: (event: Event, oldDisplay: Display) -> Unit,
+        listener: (event: Event<*>, oldDisplay: Display) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
         event: ScreenEvent.DISPLAY_ADDED,
-        listener: (event: Event, newDisplay: Display) -> Unit,
+        listener: (event: Event<*>, newDisplay: Display) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
         event: ScreenEvent.DISPLAY_METRICS_CHANGED,
-        listener: (event: Event, display: Display, changedMetrics: js.array.ReadonlyArray<String>) -> Unit,
+        listener: (event: Event<*>, display: Display, changedMetrics: js.array.ReadonlyArray<String>) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
         event: ScreenEvent.DISPLAY_REMOVED,
-        listener: (event: Event, oldDisplay: Display) -> Unit,
+        listener: (event: Event<*>, oldDisplay: Display) -> Unit,
     ): Unit /* this */
 
     /**

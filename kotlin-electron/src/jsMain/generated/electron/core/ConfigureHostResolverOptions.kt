@@ -14,13 +14,13 @@ external interface ConfigureHostResolverOptions {
     var enableBuiltInResolver: Boolean?
 
     /**
-     * Can be "off", "automatic" or "secure". Configures the DNS-over-HTTP mode. When
-     * "off", no DoH lookups will be performed. When "automatic", DoH lookups will be
+     * Can be 'off', 'automatic' or 'secure'. Configures the DNS-over-HTTP mode. When
+     * 'off', no DoH lookups will be performed. When 'automatic', DoH lookups will be
      * performed first if DoH is available, and insecure DNS lookups will be performed
-     * as a fallback. When "secure", only DoH lookups will be performed. Defaults to
-     * "automatic".
+     * as a fallback. When 'secure', only DoH lookups will be performed. Defaults to
+     * 'automatic'.
      */
-    var secureDnsMode: String?
+    var secureDnsMode: (ConfigureHostResolverOptionsSecureDnsMode)?
 
     /**
      * A list of DNS-over-HTTP server templates. See RFC8484 § 3 for details on the

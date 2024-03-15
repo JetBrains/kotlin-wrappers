@@ -14,17 +14,18 @@ external interface UploadFile {
     /**
      * Number of bytes to read from `offset`. Defaults to `0`.
      */
-    var length: Double
+    var length: Double?
 
     /**
-     * Last Modification time in number of seconds since the UNIX epoch.
+     * Last Modification time in number of seconds since the UNIX epoch. Defaults to
+     * `0`.
      */
-    var modificationTime: Double
+    var modificationTime: Double?
 
     /**
      * Defaults to `0`.
      */
-    var offset: Double
+    var offset: Double?
 
     /**
      * `file`.

@@ -6,7 +6,7 @@ package electron.core
 
 external interface BrowserViewConstructorOptions {
     /**
-     * See BrowserWindow.
+     * Settings of web page's features.
      */
     var webPreferences: WebPreferences?
 }

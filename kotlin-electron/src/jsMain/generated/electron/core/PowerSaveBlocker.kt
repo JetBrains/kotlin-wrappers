@@ -30,6 +30,8 @@ external interface PowerSaveBlocker {
 
     /**
      * Stops the specified power save blocker.
+     *
+     * Whether the specified `powerSaveBlocker` has been stopped.
      */
-    fun stop(id: Double): Unit
+    fun stop(id: Double): Boolean
 }

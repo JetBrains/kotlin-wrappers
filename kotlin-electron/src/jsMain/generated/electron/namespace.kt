@@ -61,3 +61,5 @@ external val webContents: Any?
 external val webFrame: WebFrame
 
 external val webFrameMain: Any?
+
+external val webUtils: WebUtils

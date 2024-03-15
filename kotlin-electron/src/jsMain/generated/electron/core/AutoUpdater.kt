@@ -46,20 +46,30 @@ external interface AutoUpdater : node.events.EventEmitter {
      */
     fun on(
         event: AutoUpdaterEvent.UPDATE_DOWNLOADED,
-        listener: (event: Event, releaseNotes: String, releaseName: String, releaseDate: Date, updateURL: String) -> Unit,
+        listener: (event: Event<*>, releaseNotes: String, releaseName: String, releaseDate: Date, updateURL: String) -> Unit,
     ): Unit /* this */
 
     /**
      * Emitted when there is no available update.
      */
     fun on(event: AutoUpdaterEvent.UPDATE_NOT_AVAILABLE, listener: Function<Unit>): Unit /* this */
+    fun off(event: AutoUpdaterEvent.BEFORE_QUIT_FOR_UPDATE, listener: Function<Unit>): Unit /* this */
+    fun off(event: AutoUpdaterEvent.CHECKING_FOR_UPDATE, listener: Function<Unit>): Unit /* this */
+    fun off(event: AutoUpdaterEvent.ERROR, listener: (error: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun off(event: AutoUpdaterEvent.UPDATE_AVAILABLE, listener: Function<Unit>): Unit /* this */
+    fun off(
+        event: AutoUpdaterEvent.UPDATE_DOWNLOADED,
+        listener: (event: Event<*>, releaseNotes: String, releaseName: String, releaseDate: Date, updateURL: String) -> Unit,
+    ): Unit /* this */
+
+    fun off(event: AutoUpdaterEvent.UPDATE_NOT_AVAILABLE, listener: Function<Unit>): Unit /* this */
     fun once(event: AutoUpdaterEvent.BEFORE_QUIT_FOR_UPDATE, listener: Function<Unit>): Unit /* this */
     fun once(event: AutoUpdaterEvent.CHECKING_FOR_UPDATE, listener: Function<Unit>): Unit /* this */
     fun once(event: AutoUpdaterEvent.ERROR, listener: (error: Throwable /* JsError */) -> Unit): Unit /* this */
     fun once(event: AutoUpdaterEvent.UPDATE_AVAILABLE, listener: Function<Unit>): Unit /* this */
     fun once(
         event: AutoUpdaterEvent.UPDATE_DOWNLOADED,
-        listener: (event: Event, releaseNotes: String, releaseName: String, releaseDate: Date, updateURL: String) -> Unit,
+        listener: (event: Event<*>, releaseNotes: String, releaseName: String, releaseDate: Date, updateURL: String) -> Unit,
     ): Unit /* this */
 
     fun once(event: AutoUpdaterEvent.UPDATE_NOT_AVAILABLE, listener: Function<Unit>): Unit /* this */
@@ -69,7 +79,7 @@ external interface AutoUpdater : node.events.EventEmitter {
     fun addListener(event: AutoUpdaterEvent.UPDATE_AVAILABLE, listener: Function<Unit>): Unit /* this */
     fun addListener(
         event: AutoUpdaterEvent.UPDATE_DOWNLOADED,
-        listener: (event: Event, releaseNotes: String, releaseName: String, releaseDate: Date, updateURL: String) -> Unit,
+        listener: (event: Event<*>, releaseNotes: String, releaseName: String, releaseDate: Date, updateURL: String) -> Unit,
     ): Unit /* this */
 
     fun addListener(event: AutoUpdaterEvent.UPDATE_NOT_AVAILABLE, listener: Function<Unit>): Unit /* this */
@@ -83,7 +93,7 @@ external interface AutoUpdater : node.events.EventEmitter {
     fun removeListener(event: AutoUpdaterEvent.UPDATE_AVAILABLE, listener: Function<Unit>): Unit /* this */
     fun removeListener(
         event: AutoUpdaterEvent.UPDATE_DOWNLOADED,
-        listener: (event: Event, releaseNotes: String, releaseName: String, releaseDate: Date, updateURL: String) -> Unit,
+        listener: (event: Event<*>, releaseNotes: String, releaseName: String, releaseDate: Date, updateURL: String) -> Unit,
     ): Unit /* this */
 
     fun removeListener(event: AutoUpdaterEvent.UPDATE_NOT_AVAILABLE, listener: Function<Unit>): Unit /* this */

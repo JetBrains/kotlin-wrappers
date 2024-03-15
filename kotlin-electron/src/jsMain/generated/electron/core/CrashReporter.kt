@@ -33,7 +33,7 @@ external interface CrashReporter {
      *
      * **Note:** This method is only available in the main process.
      */
-    fun getLastCrashReport(): CrashReport
+    fun getLastCrashReport(): CrashReport?
 
     /**
      * The current 'extra' parameters of the crash reporter.

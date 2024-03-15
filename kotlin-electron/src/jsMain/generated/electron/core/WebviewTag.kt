@@ -29,7 +29,7 @@ external interface WebviewTag : HTMLElement {
      */
     fun addEventListener(
         event: WebviewTagEvent.DID_FINISH_LOAD,
-        listener: (event: Event) -> Unit,
+        listener: (event: DOMEvent) -> Unit,
         useCapture: Boolean = definedExternally,
     ): Unit /* this */
 
@@ -57,7 +57,7 @@ external interface WebviewTag : HTMLElement {
      */
     fun addEventListener(
         event: WebviewTagEvent.DID_START_LOADING,
-        listener: (event: Event) -> Unit,
+        listener: (event: DOMEvent) -> Unit,
         useCapture: Boolean = definedExternally,
     ): Unit /* this */
 
@@ -66,7 +66,7 @@ external interface WebviewTag : HTMLElement {
      */
     fun addEventListener(
         event: WebviewTagEvent.DID_STOP_LOADING,
-        listener: (event: Event) -> Unit,
+        listener: (event: DOMEvent) -> Unit,
         useCapture: Boolean = definedExternally,
     ): Unit /* this */
 
@@ -75,7 +75,7 @@ external interface WebviewTag : HTMLElement {
      */
     fun addEventListener(
         event: WebviewTagEvent.DID_ATTACH,
-        listener: (event: Event) -> Unit,
+        listener: (event: DOMEvent) -> Unit,
         useCapture: Boolean = definedExternally,
     ): Unit /* this */
 
@@ -84,7 +84,7 @@ external interface WebviewTag : HTMLElement {
      */
     fun addEventListener(
         event: WebviewTagEvent.DOM_READY,
-        listener: (event: Event) -> Unit,
+        listener: (event: DOMEvent) -> Unit,
         useCapture: Boolean = definedExternally,
     ): Unit /* this */
 
@@ -112,7 +112,7 @@ external interface WebviewTag : HTMLElement {
      */
     fun addEventListener(
         event: WebviewTagEvent.ENTER_HTML_FULL_SCREEN,
-        listener: (event: Event) -> Unit,
+        listener: (event: DOMEvent) -> Unit,
         useCapture: Boolean = definedExternally,
     ): Unit /* this */
 
@@ -121,7 +121,7 @@ external interface WebviewTag : HTMLElement {
      */
     fun addEventListener(
         event: WebviewTagEvent.LEAVE_HTML_FULL_SCREEN,
-        listener: (event: Event) -> Unit,
+        listener: (event: DOMEvent) -> Unit,
         useCapture: Boolean = definedExternally,
     ): Unit /* this */
 
@@ -162,6 +162,26 @@ external interface WebviewTag : HTMLElement {
     fun addEventListener(
         event: WebviewTagEvent.WILL_NAVIGATE,
         listener: (event: WillNavigateEvent) -> Unit,
+        useCapture: Boolean = definedExternally,
+    ): Unit /* this */
+
+    /**
+     * Emitted when a user or the page wants to start navigation anywhere in the
+     * `<webview>` or any frames embedded within. It can happen when the
+     * `window.location` object is changed or a user clicks a link in the page.
+     *
+     * This event will not emit when the navigation is started programmatically with
+     * APIs like `<webview>.loadURL` and `<webview>.back`.
+     *
+     * It is also not emitted during in-page navigation, such as clicking anchor links
+     * or updating the `window.location.hash`. Use `did-navigate-in-page` event for
+     * this purpose.
+     *
+     * Calling `event.preventDefault()` does **NOT** have any effect.
+     */
+    fun addEventListener(
+        event: WebviewTagEvent.WILL_FRAME_NAVIGATE,
+        listener: (event: WillFrameNavigateEvent) -> Unit,
         useCapture: Boolean = definedExternally,
     ): Unit /* this */
 
@@ -232,7 +252,7 @@ external interface WebviewTag : HTMLElement {
      */
     fun addEventListener(
         event: WebviewTagEvent.CLOSE,
-        listener: (event: Event) -> Unit,
+        listener: (event: DOMEvent) -> Unit,
         useCapture: Boolean = definedExternally,
     ): Unit /* this */
 
@@ -249,11 +269,12 @@ external interface WebviewTag : HTMLElement {
     ): Unit /* this */
 
     /**
-     * Fired when the renderer process is crashed.
+     * Fired when the renderer process unexpectedly disappears. This is normally
+     * because it was crashed or killed.
      */
     fun addEventListener(
-        event: WebviewTagEvent.CRASHED,
-        listener: (event: Event) -> Unit,
+        event: WebviewTagEvent.RENDER_PROCESS_GONE,
+        listener: (event: RenderProcessGoneEvent) -> Unit,
         useCapture: Boolean = definedExternally,
     ): Unit /* this */
 
@@ -271,7 +292,7 @@ external interface WebviewTag : HTMLElement {
      */
     fun addEventListener(
         event: WebviewTagEvent.DESTROYED,
-        listener: (event: Event) -> Unit,
+        listener: (event: DOMEvent) -> Unit,
         useCapture: Boolean = definedExternally,
     ): Unit /* this */
 
@@ -280,7 +301,7 @@ external interface WebviewTag : HTMLElement {
      */
     fun addEventListener(
         event: WebviewTagEvent.MEDIA_STARTED_PLAYING,
-        listener: (event: Event) -> Unit,
+        listener: (event: DOMEvent) -> Unit,
         useCapture: Boolean = definedExternally,
     ): Unit /* this */
 
@@ -289,7 +310,7 @@ external interface WebviewTag : HTMLElement {
      */
     fun addEventListener(
         event: WebviewTagEvent.MEDIA_PAUSED,
-        listener: (event: Event) -> Unit,
+        listener: (event: DOMEvent) -> Unit,
         useCapture: Boolean = definedExternally,
     ): Unit /* this */
 
@@ -327,7 +348,7 @@ external interface WebviewTag : HTMLElement {
      */
     fun addEventListener(
         event: WebviewTagEvent.DEVTOOLS_OPENED,
-        listener: (event: Event) -> Unit,
+        listener: (event: DOMEvent) -> Unit,
         useCapture: Boolean = definedExternally,
     ): Unit /* this */
 
@@ -336,7 +357,7 @@ external interface WebviewTag : HTMLElement {
      */
     fun addEventListener(
         event: WebviewTagEvent.DEVTOOLS_CLOSED,
-        listener: (event: Event) -> Unit,
+        listener: (event: DOMEvent) -> Unit,
         useCapture: Boolean = definedExternally,
     ): Unit /* this */
 
@@ -345,7 +366,7 @@ external interface WebviewTag : HTMLElement {
      */
     fun addEventListener(
         event: WebviewTagEvent.DEVTOOLS_FOCUSED,
-        listener: (event: Event) -> Unit,
+        listener: (event: DOMEvent) -> Unit,
         useCapture: Boolean = definedExternally,
     ): Unit /* this */
 
@@ -364,7 +385,11 @@ external interface WebviewTag : HTMLElement {
         listener: (event: LoadCommitEvent) -> Unit,
     ): Unit /* this */
 
-    fun removeEventListener(event: WebviewTagEvent.DID_FINISH_LOAD, listener: (event: Event) -> Unit): Unit /* this */
+    fun removeEventListener(
+        event: WebviewTagEvent.DID_FINISH_LOAD,
+        listener: (event: DOMEvent) -> Unit,
+    ): Unit /* this */
+
     fun removeEventListener(
         event: WebviewTagEvent.DID_FAIL_LOAD,
         listener: (event: DidFailLoadEvent) -> Unit,
@@ -375,10 +400,18 @@ external interface WebviewTag : HTMLElement {
         listener: (event: DidFrameFinishLoadEvent) -> Unit,
     ): Unit /* this */
 
-    fun removeEventListener(event: WebviewTagEvent.DID_START_LOADING, listener: (event: Event) -> Unit): Unit /* this */
-    fun removeEventListener(event: WebviewTagEvent.DID_STOP_LOADING, listener: (event: Event) -> Unit): Unit /* this */
-    fun removeEventListener(event: WebviewTagEvent.DID_ATTACH, listener: (event: Event) -> Unit): Unit /* this */
-    fun removeEventListener(event: WebviewTagEvent.DOM_READY, listener: (event: Event) -> Unit): Unit /* this */
+    fun removeEventListener(
+        event: WebviewTagEvent.DID_START_LOADING,
+        listener: (event: DOMEvent) -> Unit,
+    ): Unit /* this */
+
+    fun removeEventListener(
+        event: WebviewTagEvent.DID_STOP_LOADING,
+        listener: (event: DOMEvent) -> Unit,
+    ): Unit /* this */
+
+    fun removeEventListener(event: WebviewTagEvent.DID_ATTACH, listener: (event: DOMEvent) -> Unit): Unit /* this */
+    fun removeEventListener(event: WebviewTagEvent.DOM_READY, listener: (event: DOMEvent) -> Unit): Unit /* this */
     fun removeEventListener(
         event: WebviewTagEvent.PAGE_TITLE_UPDATED,
         listener: (event: PageTitleUpdatedEvent) -> Unit,
@@ -391,12 +424,12 @@ external interface WebviewTag : HTMLElement {
 
     fun removeEventListener(
         event: WebviewTagEvent.ENTER_HTML_FULL_SCREEN,
-        listener: (event: Event) -> Unit,
+        listener: (event: DOMEvent) -> Unit,
     ): Unit /* this */
 
     fun removeEventListener(
         event: WebviewTagEvent.LEAVE_HTML_FULL_SCREEN,
-        listener: (event: Event) -> Unit,
+        listener: (event: DOMEvent) -> Unit,
     ): Unit /* this */
 
     fun removeEventListener(
@@ -412,6 +445,11 @@ external interface WebviewTag : HTMLElement {
     fun removeEventListener(
         event: WebviewTagEvent.WILL_NAVIGATE,
         listener: (event: WillNavigateEvent) -> Unit,
+    ): Unit /* this */
+
+    fun removeEventListener(
+        event: WebviewTagEvent.WILL_FRAME_NAVIGATE,
+        listener: (event: WillFrameNavigateEvent) -> Unit,
     ): Unit /* this */
 
     fun removeEventListener(
@@ -439,25 +477,29 @@ external interface WebviewTag : HTMLElement {
         listener: (event: DidNavigateInPageEvent) -> Unit,
     ): Unit /* this */
 
-    fun removeEventListener(event: WebviewTagEvent.CLOSE, listener: (event: Event) -> Unit): Unit /* this */
+    fun removeEventListener(event: WebviewTagEvent.CLOSE, listener: (event: DOMEvent) -> Unit): Unit /* this */
     fun removeEventListener(
         event: WebviewTagEvent.IPC_MESSAGE,
         listener: (event: IpcMessageEvent) -> Unit,
     ): Unit /* this */
 
-    fun removeEventListener(event: WebviewTagEvent.CRASHED, listener: (event: Event) -> Unit): Unit /* this */
+    fun removeEventListener(
+        event: WebviewTagEvent.RENDER_PROCESS_GONE,
+        listener: (event: RenderProcessGoneEvent) -> Unit,
+    ): Unit /* this */
+
     fun removeEventListener(
         event: WebviewTagEvent.PLUGIN_CRASHED,
         listener: (event: PluginCrashedEvent) -> Unit,
     ): Unit /* this */
 
-    fun removeEventListener(event: WebviewTagEvent.DESTROYED, listener: (event: Event) -> Unit): Unit /* this */
+    fun removeEventListener(event: WebviewTagEvent.DESTROYED, listener: (event: DOMEvent) -> Unit): Unit /* this */
     fun removeEventListener(
         event: WebviewTagEvent.MEDIA_STARTED_PLAYING,
-        listener: (event: Event) -> Unit,
+        listener: (event: DOMEvent) -> Unit,
     ): Unit /* this */
 
-    fun removeEventListener(event: WebviewTagEvent.MEDIA_PAUSED, listener: (event: Event) -> Unit): Unit /* this */
+    fun removeEventListener(event: WebviewTagEvent.MEDIA_PAUSED, listener: (event: DOMEvent) -> Unit): Unit /* this */
     fun removeEventListener(
         event: WebviewTagEvent.DID_CHANGE_THEME_COLOR,
         listener: (event: DidChangeThemeColorEvent) -> Unit,
@@ -473,14 +515,36 @@ external interface WebviewTag : HTMLElement {
         listener: (event: DevtoolsOpenUrlEvent) -> Unit,
     ): Unit /* this */
 
-    fun removeEventListener(event: WebviewTagEvent.DEVTOOLS_OPENED, listener: (event: Event) -> Unit): Unit /* this */
-    fun removeEventListener(event: WebviewTagEvent.DEVTOOLS_CLOSED, listener: (event: Event) -> Unit): Unit /* this */
-    fun removeEventListener(event: WebviewTagEvent.DEVTOOLS_FOCUSED, listener: (event: Event) -> Unit): Unit /* this */
+    fun removeEventListener(
+        event: WebviewTagEvent.DEVTOOLS_OPENED,
+        listener: (event: DOMEvent) -> Unit,
+    ): Unit /* this */
+
+    fun removeEventListener(
+        event: WebviewTagEvent.DEVTOOLS_CLOSED,
+        listener: (event: DOMEvent) -> Unit,
+    ): Unit /* this */
+
+    fun removeEventListener(
+        event: WebviewTagEvent.DEVTOOLS_FOCUSED,
+        listener: (event: DOMEvent) -> Unit,
+    ): Unit /* this */
+
     fun removeEventListener(
         event: WebviewTagEvent.CONTEXT_MENU,
         listener: (event: ContextMenuEvent) -> Unit,
     ): Unit /* this */
 
+
+    /**
+     * Adjusts the current text selection starting and ending points in the focused
+     * frame by the given amounts. A negative amount moves the selection towards the
+     * beginning of the document, and a positive amount moves the selection towards the
+     * end of the document.
+     *
+     * See `webContents.adjustSelection` for examples.
+     */
+    fun adjustSelection(options: AdjustSelectionOptions): Unit
 
     /**
      * Whether the guest page can go back.
@@ -504,6 +568,11 @@ external interface WebviewTag : HTMLElement {
      * whole visible page.
      */
     fun capturePage(rect: Rectangle = definedExternally): Promise<NativeImage>
+
+    /**
+     * Centers the current text selection in page.
+     */
+    fun centerSelection(): Unit
 
     /**
      * Clears the navigation history.
@@ -533,7 +602,7 @@ external interface WebviewTag : HTMLElement {
     /**
      * Initiates a download of the resource at `url` without navigating.
      */
-    fun downloadURL(url: String): Unit
+    fun downloadURL(url: String, options: DownloadURLOptions = definedExternally): Unit
 
     /**
      * A promise that resolves with the result of the executed code or is rejected if
@@ -742,6 +811,16 @@ external interface WebviewTag : HTMLElement {
      * Executes editing command `replaceMisspelling` in page.
      */
     fun replaceMisspelling(text: String): Unit
+
+    /**
+     * Scrolls to the bottom of the current `<webview>`.
+     */
+    fun scrollToBottom(): Unit
+
+    /**
+     * Scrolls to the top of the current `<webview>`.
+     */
+    fun scrollToTop(): Unit
 
     /**
      * Executes editing command `selectAll` in page.

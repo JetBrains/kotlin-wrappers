@@ -111,7 +111,7 @@ open external class Tray : NodeEventEmitter {
     fun on(
         event: TrayEvent.DROP_FILES,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The paths of the dropped files.
              */
@@ -127,11 +127,27 @@ open external class Tray : NodeEventEmitter {
     fun on(
         event: TrayEvent.DROP_TEXT,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * the dropped text string.
              */
             text: String,
+        ) -> Unit,
+    ): Unit /* this */
+
+    /**
+     * Emitted when the tray icon is middle clicked.
+     *
+     * @platform win32
+     */
+    fun on(
+        event: TrayEvent.MIDDLE_CLICK,
+        listener: (
+            event: KeyboardEvent,
+            /**
+             * The bounds of tray icon.
+             */
+            bounds: Rectangle,
         ) -> Unit,
     ): Unit /* this */
 
@@ -154,7 +170,7 @@ open external class Tray : NodeEventEmitter {
     /**
      * Emitted when the mouse enters the tray icon.
      *
-     * @platform darwin
+     * @platform darwin,win32
      */
     fun on(
         event: TrayEvent.MOUSE_ENTER,
@@ -170,7 +186,7 @@ open external class Tray : NodeEventEmitter {
     /**
      * Emitted when the mouse exits the tray icon.
      *
-     * @platform darwin
+     * @platform darwin,win32
      */
     fun on(
         event: TrayEvent.MOUSE_LEAVE,
@@ -234,8 +250,208 @@ open external class Tray : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
+    /**
+     * @platform win32
+     */
+    fun off(event: TrayEvent.BALLOON_CLICK, listener: Function<Unit>): Unit /* this */
+
+    /**
+     * @platform win32
+     */
+    fun off(event: TrayEvent.BALLOON_CLOSED, listener: Function<Unit>): Unit /* this */
+
+    /**
+     * @platform win32
+     */
+    fun off(event: TrayEvent.BALLOON_SHOW, listener: Function<Unit>): Unit /* this */
+    fun off(
+        event: TrayEvent.CLICK,
+        listener: (
+            event: KeyboardEvent,
+            /**
+             * The bounds of tray icon.
+             */
+            bounds: Rectangle,
+            /**
+             * The position of the event.
+             */
+            position: Point,
+        ) -> Unit,
+    ): Unit /* this */
+
+    /**
+     * @platform darwin,win32
+     */
+    fun off(
+        event: TrayEvent.DOUBLE_CLICK,
+        listener: (
+            event: KeyboardEvent,
+            /**
+             * The bounds of tray icon.
+             */
+            bounds: Rectangle,
+        ) -> Unit,
+    ): Unit /* this */
+
+    /**
+     * @platform darwin
+     */
+    fun off(event: TrayEvent.DRAG_END, listener: Function<Unit>): Unit /* this */
+
+    /**
+     * @platform darwin
+     */
+    fun off(event: TrayEvent.DRAG_ENTER, listener: Function<Unit>): Unit /* this */
+
+    /**
+     * @platform darwin
+     */
+    fun off(event: TrayEvent.DRAG_LEAVE, listener: Function<Unit>): Unit /* this */
+
+    /**
+     * @platform darwin
+     */
+    fun off(event: TrayEvent.DROP, listener: Function<Unit>): Unit /* this */
+
+    /**
+     * @platform darwin
+     */
+    fun off(
+        event: TrayEvent.DROP_FILES,
+        listener: (
+            event: Event<*>,
+            /**
+             * The paths of the dropped files.
+             */
+            files: js.array.ReadonlyArray<String>,
+        ) -> Unit,
+    ): Unit /* this */
+
+    /**
+     * @platform darwin
+     */
+    fun off(
+        event: TrayEvent.DROP_TEXT,
+        listener: (
+            event: Event<*>,
+            /**
+             * the dropped text string.
+             */
+            text: String,
+        ) -> Unit,
+    ): Unit /* this */
+
+    /**
+     * @platform win32
+     */
+    fun off(
+        event: TrayEvent.MIDDLE_CLICK,
+        listener: (
+            event: KeyboardEvent,
+            /**
+             * The bounds of tray icon.
+             */
+            bounds: Rectangle,
+        ) -> Unit,
+    ): Unit /* this */
+
+    /**
+     * @platform darwin
+     */
+    fun off(
+        event: TrayEvent.MOUSE_DOWN,
+        listener: (
+            event: KeyboardEvent,
+            /**
+             * The position of the event.
+             */
+            position: Point,
+        ) -> Unit,
+    ): Unit /* this */
+
+    /**
+     * @platform darwin,win32
+     */
+    fun off(
+        event: TrayEvent.MOUSE_ENTER,
+        listener: (
+            event: KeyboardEvent,
+            /**
+             * The position of the event.
+             */
+            position: Point,
+        ) -> Unit,
+    ): Unit /* this */
+
+    /**
+     * @platform darwin,win32
+     */
+    fun off(
+        event: TrayEvent.MOUSE_LEAVE,
+        listener: (
+            event: KeyboardEvent,
+            /**
+             * The position of the event.
+             */
+            position: Point,
+        ) -> Unit,
+    ): Unit /* this */
+
+    /**
+     * @platform darwin,win32
+     */
+    fun off(
+        event: TrayEvent.MOUSE_MOVE,
+        listener: (
+            event: KeyboardEvent,
+            /**
+             * The position of the event.
+             */
+            position: Point,
+        ) -> Unit,
+    ): Unit /* this */
+
+    /**
+     * @platform darwin
+     */
+    fun off(
+        event: TrayEvent.MOUSE_UP,
+        listener: (
+            event: KeyboardEvent,
+            /**
+             * The position of the event.
+             */
+            position: Point,
+        ) -> Unit,
+    ): Unit /* this */
+
+    /**
+     * @platform darwin,win32
+     */
+    fun off(
+        event: TrayEvent.RIGHT_CLICK,
+        listener: (
+            event: KeyboardEvent,
+            /**
+             * The bounds of tray icon.
+             */
+            bounds: Rectangle,
+        ) -> Unit,
+    ): Unit /* this */
+
+    /**
+     * @platform win32
+     */
     fun once(event: TrayEvent.BALLOON_CLICK, listener: Function<Unit>): Unit /* this */
+
+    /**
+     * @platform win32
+     */
     fun once(event: TrayEvent.BALLOON_CLOSED, listener: Function<Unit>): Unit /* this */
+
+    /**
+     * @platform win32
+     */
     fun once(event: TrayEvent.BALLOON_SHOW, listener: Function<Unit>): Unit /* this */
     fun once(
         event: TrayEvent.CLICK,
@@ -252,6 +468,9 @@ open external class Tray : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
+    /**
+     * @platform darwin,win32
+     */
     fun once(
         event: TrayEvent.DOUBLE_CLICK,
         listener: (
@@ -263,14 +482,33 @@ open external class Tray : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
+    /**
+     * @platform darwin
+     */
     fun once(event: TrayEvent.DRAG_END, listener: Function<Unit>): Unit /* this */
+
+    /**
+     * @platform darwin
+     */
     fun once(event: TrayEvent.DRAG_ENTER, listener: Function<Unit>): Unit /* this */
+
+    /**
+     * @platform darwin
+     */
     fun once(event: TrayEvent.DRAG_LEAVE, listener: Function<Unit>): Unit /* this */
+
+    /**
+     * @platform darwin
+     */
     fun once(event: TrayEvent.DROP, listener: Function<Unit>): Unit /* this */
+
+    /**
+     * @platform darwin
+     */
     fun once(
         event: TrayEvent.DROP_FILES,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The paths of the dropped files.
              */
@@ -278,10 +516,13 @@ open external class Tray : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
+    /**
+     * @platform darwin
+     */
     fun once(
         event: TrayEvent.DROP_TEXT,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * the dropped text string.
              */
@@ -289,6 +530,23 @@ open external class Tray : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
+    /**
+     * @platform win32
+     */
+    fun once(
+        event: TrayEvent.MIDDLE_CLICK,
+        listener: (
+            event: KeyboardEvent,
+            /**
+             * The bounds of tray icon.
+             */
+            bounds: Rectangle,
+        ) -> Unit,
+    ): Unit /* this */
+
+    /**
+     * @platform darwin
+     */
     fun once(
         event: TrayEvent.MOUSE_DOWN,
         listener: (
@@ -300,6 +558,9 @@ open external class Tray : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
+    /**
+     * @platform darwin,win32
+     */
     fun once(
         event: TrayEvent.MOUSE_ENTER,
         listener: (
@@ -311,6 +572,9 @@ open external class Tray : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
+    /**
+     * @platform darwin,win32
+     */
     fun once(
         event: TrayEvent.MOUSE_LEAVE,
         listener: (
@@ -322,6 +586,9 @@ open external class Tray : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
+    /**
+     * @platform darwin,win32
+     */
     fun once(
         event: TrayEvent.MOUSE_MOVE,
         listener: (
@@ -333,6 +600,9 @@ open external class Tray : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
+    /**
+     * @platform darwin
+     */
     fun once(
         event: TrayEvent.MOUSE_UP,
         listener: (
@@ -344,6 +614,9 @@ open external class Tray : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
+    /**
+     * @platform darwin,win32
+     */
     fun once(
         event: TrayEvent.RIGHT_CLICK,
         listener: (
@@ -355,8 +628,19 @@ open external class Tray : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
+    /**
+     * @platform win32
+     */
     fun addListener(event: TrayEvent.BALLOON_CLICK, listener: Function<Unit>): Unit /* this */
+
+    /**
+     * @platform win32
+     */
     fun addListener(event: TrayEvent.BALLOON_CLOSED, listener: Function<Unit>): Unit /* this */
+
+    /**
+     * @platform win32
+     */
     fun addListener(event: TrayEvent.BALLOON_SHOW, listener: Function<Unit>): Unit /* this */
     fun addListener(
         event: TrayEvent.CLICK,
@@ -373,6 +657,9 @@ open external class Tray : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
+    /**
+     * @platform darwin,win32
+     */
     fun addListener(
         event: TrayEvent.DOUBLE_CLICK,
         listener: (
@@ -384,14 +671,33 @@ open external class Tray : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
+    /**
+     * @platform darwin
+     */
     fun addListener(event: TrayEvent.DRAG_END, listener: Function<Unit>): Unit /* this */
+
+    /**
+     * @platform darwin
+     */
     fun addListener(event: TrayEvent.DRAG_ENTER, listener: Function<Unit>): Unit /* this */
+
+    /**
+     * @platform darwin
+     */
     fun addListener(event: TrayEvent.DRAG_LEAVE, listener: Function<Unit>): Unit /* this */
+
+    /**
+     * @platform darwin
+     */
     fun addListener(event: TrayEvent.DROP, listener: Function<Unit>): Unit /* this */
+
+    /**
+     * @platform darwin
+     */
     fun addListener(
         event: TrayEvent.DROP_FILES,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The paths of the dropped files.
              */
@@ -399,10 +705,13 @@ open external class Tray : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
+    /**
+     * @platform darwin
+     */
     fun addListener(
         event: TrayEvent.DROP_TEXT,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * the dropped text string.
              */
@@ -410,6 +719,23 @@ open external class Tray : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
+    /**
+     * @platform win32
+     */
+    fun addListener(
+        event: TrayEvent.MIDDLE_CLICK,
+        listener: (
+            event: KeyboardEvent,
+            /**
+             * The bounds of tray icon.
+             */
+            bounds: Rectangle,
+        ) -> Unit,
+    ): Unit /* this */
+
+    /**
+     * @platform darwin
+     */
     fun addListener(
         event: TrayEvent.MOUSE_DOWN,
         listener: (
@@ -421,6 +747,9 @@ open external class Tray : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
+    /**
+     * @platform darwin,win32
+     */
     fun addListener(
         event: TrayEvent.MOUSE_ENTER,
         listener: (
@@ -432,6 +761,9 @@ open external class Tray : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
+    /**
+     * @platform darwin,win32
+     */
     fun addListener(
         event: TrayEvent.MOUSE_LEAVE,
         listener: (
@@ -443,6 +775,9 @@ open external class Tray : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
+    /**
+     * @platform darwin,win32
+     */
     fun addListener(
         event: TrayEvent.MOUSE_MOVE,
         listener: (
@@ -454,6 +789,9 @@ open external class Tray : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
+    /**
+     * @platform darwin
+     */
     fun addListener(
         event: TrayEvent.MOUSE_UP,
         listener: (
@@ -465,6 +803,9 @@ open external class Tray : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
+    /**
+     * @platform darwin,win32
+     */
     fun addListener(
         event: TrayEvent.RIGHT_CLICK,
         listener: (
@@ -476,8 +817,19 @@ open external class Tray : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
+    /**
+     * @platform win32
+     */
     fun removeListener(event: TrayEvent.BALLOON_CLICK, listener: Function<Unit>): Unit /* this */
+
+    /**
+     * @platform win32
+     */
     fun removeListener(event: TrayEvent.BALLOON_CLOSED, listener: Function<Unit>): Unit /* this */
+
+    /**
+     * @platform win32
+     */
     fun removeListener(event: TrayEvent.BALLOON_SHOW, listener: Function<Unit>): Unit /* this */
     fun removeListener(
         event: TrayEvent.CLICK,
@@ -494,6 +846,9 @@ open external class Tray : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
+    /**
+     * @platform darwin,win32
+     */
     fun removeListener(
         event: TrayEvent.DOUBLE_CLICK,
         listener: (
@@ -505,14 +860,33 @@ open external class Tray : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
+    /**
+     * @platform darwin
+     */
     fun removeListener(event: TrayEvent.DRAG_END, listener: Function<Unit>): Unit /* this */
+
+    /**
+     * @platform darwin
+     */
     fun removeListener(event: TrayEvent.DRAG_ENTER, listener: Function<Unit>): Unit /* this */
+
+    /**
+     * @platform darwin
+     */
     fun removeListener(event: TrayEvent.DRAG_LEAVE, listener: Function<Unit>): Unit /* this */
+
+    /**
+     * @platform darwin
+     */
     fun removeListener(event: TrayEvent.DROP, listener: Function<Unit>): Unit /* this */
+
+    /**
+     * @platform darwin
+     */
     fun removeListener(
         event: TrayEvent.DROP_FILES,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * The paths of the dropped files.
              */
@@ -520,10 +894,13 @@ open external class Tray : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
+    /**
+     * @platform darwin
+     */
     fun removeListener(
         event: TrayEvent.DROP_TEXT,
         listener: (
-            event: Event,
+            event: Event<*>,
             /**
              * the dropped text string.
              */
@@ -531,6 +908,23 @@ open external class Tray : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
+    /**
+     * @platform win32
+     */
+    fun removeListener(
+        event: TrayEvent.MIDDLE_CLICK,
+        listener: (
+            event: KeyboardEvent,
+            /**
+             * The bounds of tray icon.
+             */
+            bounds: Rectangle,
+        ) -> Unit,
+    ): Unit /* this */
+
+    /**
+     * @platform darwin
+     */
     fun removeListener(
         event: TrayEvent.MOUSE_DOWN,
         listener: (
@@ -542,6 +936,9 @@ open external class Tray : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
+    /**
+     * @platform darwin,win32
+     */
     fun removeListener(
         event: TrayEvent.MOUSE_ENTER,
         listener: (
@@ -553,6 +950,9 @@ open external class Tray : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
+    /**
+     * @platform darwin,win32
+     */
     fun removeListener(
         event: TrayEvent.MOUSE_LEAVE,
         listener: (
@@ -564,6 +964,9 @@ open external class Tray : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
+    /**
+     * @platform darwin,win32
+     */
     fun removeListener(
         event: TrayEvent.MOUSE_MOVE,
         listener: (
@@ -575,6 +978,9 @@ open external class Tray : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
+    /**
+     * @platform darwin
+     */
     fun removeListener(
         event: TrayEvent.MOUSE_UP,
         listener: (
@@ -586,6 +992,9 @@ open external class Tray : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
+    /**
+     * @platform darwin,win32
+     */
     fun removeListener(
         event: TrayEvent.RIGHT_CLICK,
         listener: (

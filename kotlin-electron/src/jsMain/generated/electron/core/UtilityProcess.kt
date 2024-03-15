@@ -32,6 +32,19 @@ external class UtilityProcess : NodeEventEmitter {
      * Emitted once the child process has spawned successfully.
      */
     fun on(event: UtilityProcessEvent.SPAWN, listener: Function<Unit>): Unit /* this */
+    fun off(
+        event: UtilityProcessEvent.EXIT,
+        listener: (
+            /**
+             * Contains the exit code for the process obtained from waitpid on posix, or
+             * GetExitCodeProcess on windows.
+             */
+            code: Double,
+        ) -> Unit,
+    ): Unit /* this */
+
+    fun off(event: UtilityProcessEvent.MESSAGE, listener: (message: Any?) -> Unit): Unit /* this */
+    fun off(event: UtilityProcessEvent.SPAWN, listener: Function<Unit>): Unit /* this */
     fun once(
         event: UtilityProcessEvent.EXIT,
         listener: (
