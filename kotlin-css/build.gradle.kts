@@ -3,8 +3,13 @@ plugins {
 }
 
 kotlin {
+    jvmToolchain(11) // Do not change!
     jvm()
     js()
+
+    iosArm64()
+    iosSimulatorArm64()
+    iosX64()
 
     // Sets the device ID for iosSimulatorArm64Test
     targets.withType(org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTargetWithSimulatorTests::class.java) {
