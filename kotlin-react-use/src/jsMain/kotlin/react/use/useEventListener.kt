@@ -6,11 +6,11 @@ import web.events.*
 /**
  * [Original](https://usehooks-ts.com/react-hook/use-event-listener)
  */
-fun <T : Event<EventTarget>> useEventListener(
-    target: EventTarget?,
-    type: EventType<T>,
+fun <E : Event, C : EventTarget> useEventListener(
+    target: C?,
+    type: EventType<E, C>,
     options: AddEventListenerOptions? = undefined,
-    handler: EventHandler<T>,
+    handler: EventHandler<E, C>,
 ) {
     val latestHandler by useLatest(handler)
 
