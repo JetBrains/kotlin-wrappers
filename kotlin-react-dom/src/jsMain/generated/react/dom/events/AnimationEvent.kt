@@ -4,7 +4,7 @@ package react.dom.events
 
 import web.dom.Element
 
-external interface AnimationEvent<out T : Element> : SyntheticEvent<T, NativeAnimationEvent<T>> {
+external interface AnimationEvent<out T : Element> : SyntheticEvent<T, NativeAnimationEvent> {
     val animationName: String
     val elapsedTime: Double
     val pseudoElement: String

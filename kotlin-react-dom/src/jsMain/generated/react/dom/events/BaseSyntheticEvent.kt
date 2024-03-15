@@ -7,7 +7,7 @@ import web.events.EventTarget
 import web.events.EventType
 import web.time.DOMHighResTimeStamp
 
-external interface BaseSyntheticEvent<out E : Event<T>, out C : EventTarget, out T : EventTarget> {
+external interface BaseSyntheticEvent<out E : Event, out C : EventTarget, out T : EventTarget> {
     val nativeEvent: E
     val currentTarget: C
     val target: T
@@ -22,5 +22,5 @@ external interface BaseSyntheticEvent<out E : Event<T>, out C : EventTarget, out
     fun isPropagationStopped(): Boolean
     fun persist()
     val timeStamp: DOMHighResTimeStamp
-    val type: EventType<E>
+    val type: EventType<E, EventTarget>
 }

@@ -8,7 +8,7 @@ import web.keyboard.ModifierKeyCode
 import web.uievents.MouseButton
 import web.uievents.MouseButtons
 
-external interface MouseEvent<out T : Element, out E : NativeMouseEvent<T>> : UIEvent<T, E> {
+external interface MouseEvent<out T : Element, out E : NativeMouseEvent> : UIEvent<T, E> {
     val altKey: Boolean
     val button: MouseButton
     val buttons: MouseButtons

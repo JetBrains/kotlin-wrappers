@@ -6,4 +6,4 @@ import web.dom.Element
 import web.events.Event
 import web.events.EventTarget
 
-external interface SyntheticEvent<out T : Element, out E : Event<T>> : BaseSyntheticEvent<E, T, EventTarget>
+external interface SyntheticEvent<out T : Element, out E : Event> : BaseSyntheticEvent<E, T, EventTarget>

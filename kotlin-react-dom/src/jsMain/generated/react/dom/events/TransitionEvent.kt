@@ -4,7 +4,7 @@ package react.dom.events
 
 import web.dom.Element
 
-external interface TransitionEvent<out T : Element> : SyntheticEvent<T, NativeTransitionEvent<T>> {
+external interface TransitionEvent<out T : Element> : SyntheticEvent<T, NativeTransitionEvent> {
     val elapsedTime: Double
     val propertyName: String
     val pseudoElement: String

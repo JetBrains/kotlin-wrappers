@@ -5,7 +5,7 @@ package react.dom.events
 import web.dom.Element
 import web.keyboard.ModifierKeyCode
 
-external interface TouchEvent<out T : Element> : UIEvent<T, NativeTouchEvent<T>> {
+external interface TouchEvent<out T : Element> : UIEvent<T, NativeTouchEvent> {
     val altKey: Boolean
     val changedTouches: web.uievents.TouchList
     val ctrlKey: Boolean
