@@ -11,5 +11,5 @@ import web.events.EventType
 sealed external class RTCTransformEventTypes {
 
     @JsValue("rtctransform")
-    fun <C : EventTarget> rtcTransform(): EventType<RTCTransformEvent<C>>
+    fun <C : EventTarget> rtcTransform(): EventType<RTCTransformEvent, C>
 }

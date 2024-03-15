@@ -11,5 +11,5 @@ import web.events.EventType
 sealed external class HashChangeEventTypes {
 
     @JsValue("hashchange")
-    fun <C : EventTarget> hashChange(): EventType<HashChangeEvent<C>>
+    fun <C : EventTarget> hashChange(): EventType<HashChangeEvent, C>
 }

@@ -11,5 +11,5 @@ import web.events.EventType
 sealed external class SecurityPolicyViolationEventTypes {
 
     @JsValue("securitypolicyviolation")
-    fun <C : EventTarget> securityPolicyViolation(): EventType<SecurityPolicyViolationEvent<C>>
+    fun <C : EventTarget> securityPolicyViolation(): EventType<SecurityPolicyViolationEvent, C>
 }

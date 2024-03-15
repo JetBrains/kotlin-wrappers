@@ -11,5 +11,5 @@ import web.events.EventType
 sealed external class RTCDataChannelEventTypes {
 
     @JsValue("datachannel")
-    fun <C : EventTarget> dataChannel(): EventType<RTCDataChannelEvent<C>>
+    fun <C : EventTarget> dataChannel(): EventType<RTCDataChannelEvent, C>
 }

@@ -11,8 +11,8 @@ import web.events.EventType
 sealed external class ErrorEventTypes {
 
     @JsValue("error")
-    fun <C : EventTarget> error(): EventType<ErrorEvent<C>>
+    fun <C : EventTarget> error(): EventType<ErrorEvent, C>
 
     @JsValue("processorerror")
-    fun <C : EventTarget> processorError(): EventType<ErrorEvent<C>>
+    fun <C : EventTarget> processorError(): EventType<ErrorEvent, C>
 }

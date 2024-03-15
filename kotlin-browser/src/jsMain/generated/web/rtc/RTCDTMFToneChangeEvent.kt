@@ -15,10 +15,10 @@ import web.events.EventType
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDTMFToneChangeEvent)
  */
-open external class RTCDTMFToneChangeEvent<out C : EventTarget?>(
-    override val type: EventType<RTCDTMFToneChangeEvent<EventTarget>>,
+open external class RTCDTMFToneChangeEvent(
+    override val type: EventType<RTCDTMFToneChangeEvent, EventTarget>,
     init: RTCDTMFToneChangeEventInit = definedExternally,
-) : Event<C>,
+) : Event,
     RTCDTMFToneChangeEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDTMFToneChangeEvent/tone)

@@ -11,8 +11,8 @@ import web.events.EventType
 sealed external class UIEventTypes {
 
     @JsValue("abort")
-    fun <C : EventTarget> abort(): EventType<UIEvent<C>>
+    fun <C : EventTarget> abort(): EventType<UIEvent, C>
 
     @JsValue("resize")
-    fun <C : EventTarget> resize(): EventType<UIEvent<C>>
+    fun <C : EventTarget> resize(): EventType<UIEvent, C>
 }

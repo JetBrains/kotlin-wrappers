@@ -11,5 +11,5 @@ import web.events.EventType
 sealed external class RTCPeerConnectionIceEventTypes {
 
     @JsValue("icecandidate")
-    fun <C : EventTarget> iceCandidate(): EventType<RTCPeerConnectionIceEvent<C>>
+    fun <C : EventTarget> iceCandidate(): EventType<RTCPeerConnectionIceEvent, C>
 }

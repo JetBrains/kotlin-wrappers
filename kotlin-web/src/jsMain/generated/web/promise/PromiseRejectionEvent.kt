@@ -15,10 +15,10 @@ import web.events.EventType
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PromiseRejectionEvent)
  */
-open external class PromiseRejectionEvent<out C : EventTarget?>(
-    override val type: EventType<PromiseRejectionEvent<EventTarget>>,
+open external class PromiseRejectionEvent(
+    override val type: EventType<PromiseRejectionEvent, EventTarget>,
     init: PromiseRejectionEventInit,
-) : Event<C>,
+) : Event,
     PromiseRejectionEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PromiseRejectionEvent/promise)

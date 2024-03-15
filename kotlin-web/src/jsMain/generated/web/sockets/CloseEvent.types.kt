@@ -11,5 +11,5 @@ import web.events.EventType
 sealed external class CloseEventTypes {
 
     @JsValue("close")
-    fun <C : EventTarget> close(): EventType<CloseEvent<C>>
+    fun <C : EventTarget> close(): EventType<CloseEvent, C>
 }

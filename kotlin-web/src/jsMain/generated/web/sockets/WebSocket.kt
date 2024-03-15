@@ -65,22 +65,22 @@ external class WebSocket(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/close_event)
      */
-    var onclose: EventHandler<CloseEvent<WebSocket>>?
+    var onclose: EventHandler<CloseEvent, WebSocket>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/error_event)
      */
-    var onerror: EventHandler<Event<WebSocket>>?
+    var onerror: EventHandler<Event, WebSocket>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/message_event)
      */
-    var onmessage: EventHandler<MessageEvent<*, WebSocket>>?
+    var onmessage: EventHandler<MessageEvent<*>, WebSocket>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/open_event)
      */
-    var onopen: EventHandler<Event<WebSocket>>?
+    var onopen: EventHandler<Event, WebSocket>?
 
     /**
      * Returns the subprotocol selected by the server, if any. It can be used in conjunction with the array form of the constructor's second argument to perform subprotocol negotiation.

@@ -11,8 +11,8 @@ import web.events.EventType
 sealed external class PageTransitionEventTypes {
 
     @JsValue("pagehide")
-    fun <C : EventTarget> pageHide(): EventType<PageTransitionEvent<C>>
+    fun <C : EventTarget> pageHide(): EventType<PageTransitionEvent, C>
 
     @JsValue("pageshow")
-    fun <C : EventTarget> pageShow(): EventType<PageTransitionEvent<C>>
+    fun <C : EventTarget> pageShow(): EventType<PageTransitionEvent, C>
 }

@@ -11,11 +11,11 @@ import web.events.EventType
 sealed external class ClipboardEventTypes {
 
     @JsValue("copy")
-    fun <C : EventTarget> copy(): EventType<ClipboardEvent<C>>
+    fun <C : EventTarget> copy(): EventType<ClipboardEvent, C>
 
     @JsValue("cut")
-    fun <C : EventTarget> cut(): EventType<ClipboardEvent<C>>
+    fun <C : EventTarget> cut(): EventType<ClipboardEvent, C>
 
     @JsValue("paste")
-    fun <C : EventTarget> paste(): EventType<ClipboardEvent<C>>
+    fun <C : EventTarget> paste(): EventType<ClipboardEvent, C>
 }

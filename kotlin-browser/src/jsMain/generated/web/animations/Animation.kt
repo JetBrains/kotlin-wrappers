@@ -36,17 +36,17 @@ open external class Animation(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/cancel_event)
      */
-    var oncancel: EventHandler<AnimationPlaybackEvent<Animation>>?
+    var oncancel: EventHandler<AnimationPlaybackEvent, Animation>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/finish_event)
      */
-    var onfinish: EventHandler<AnimationPlaybackEvent<Animation>>?
+    var onfinish: EventHandler<AnimationPlaybackEvent, Animation>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/remove_event)
      */
-    var onremove: EventHandler<AnimationPlaybackEvent<Animation>>?
+    var onremove: EventHandler<AnimationPlaybackEvent, Animation>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/pending)

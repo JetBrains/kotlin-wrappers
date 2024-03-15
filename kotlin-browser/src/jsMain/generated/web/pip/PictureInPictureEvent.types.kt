@@ -11,8 +11,8 @@ import web.events.EventType
 sealed external class PictureInPictureEventTypes {
 
     @JsValue("enterpictureinpicture")
-    fun <C : EventTarget> enterPictureInPicture(): EventType<PictureInPictureEvent<C>>
+    fun <C : EventTarget> enterPictureInPicture(): EventType<PictureInPictureEvent, C>
 
     @JsValue("leavepictureinpicture")
-    fun <C : EventTarget> leavePictureInPicture(): EventType<PictureInPictureEvent<C>>
+    fun <C : EventTarget> leavePictureInPicture(): EventType<PictureInPictureEvent, C>
 }

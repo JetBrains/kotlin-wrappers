@@ -49,22 +49,22 @@ external class Notification(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/click_event)
      */
-    var onclick: EventHandler<Event<Notification>>?
+    var onclick: EventHandler<Event, Notification>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/close_event)
      */
-    var onclose: EventHandler<Event<Notification>>?
+    var onclose: EventHandler<Event, Notification>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/error_event)
      */
-    var onerror: EventHandler<Event<Notification>>?
+    var onerror: EventHandler<Event, Notification>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/show_event)
      */
-    var onshow: EventHandler<Event<Notification>>?
+    var onshow: EventHandler<Event, Notification>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/requireInteraction)

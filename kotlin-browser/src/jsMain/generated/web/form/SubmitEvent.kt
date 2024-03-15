@@ -14,10 +14,10 @@ import web.html.HTMLElement
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubmitEvent)
  */
-open external class SubmitEvent<out C : EventTarget?>(
-    override val type: EventType<SubmitEvent<EventTarget>>,
+open external class SubmitEvent(
+    override val type: EventType<SubmitEvent, EventTarget>,
     init: SubmitEventInit = definedExternally,
-) : Event<C>,
+) : Event,
     SubmitEventInit {
     /**
      * Returns the element representing the submit button that triggered the form submission, or null if the submission was not triggered by a button.

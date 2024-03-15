@@ -13,10 +13,10 @@ import web.events.EventType
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent)
  */
-open external class MediaQueryListEvent<out C : EventTarget?>(
-    override val type: EventType<MediaQueryListEvent<EventTarget>>,
+open external class MediaQueryListEvent(
+    override val type: EventType<MediaQueryListEvent, EventTarget>,
     init: MediaQueryListEventInit = definedExternally,
-) : Event<C>,
+) : Event,
     MediaQueryListEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent/matches)

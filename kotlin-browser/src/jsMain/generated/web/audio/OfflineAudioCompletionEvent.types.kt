@@ -11,5 +11,5 @@ import web.events.EventType
 sealed external class OfflineAudioCompletionEventTypes {
 
     @JsValue("complete")
-    fun <C : EventTarget> complete(): EventType<OfflineAudioCompletionEvent<C>>
+    fun <C : EventTarget> complete(): EventType<OfflineAudioCompletionEvent, C>
 }

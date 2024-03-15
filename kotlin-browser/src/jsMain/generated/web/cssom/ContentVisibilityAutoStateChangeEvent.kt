@@ -13,10 +13,10 @@ import web.events.EventType
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ContentVisibilityAutoStateChangeEvent)
  */
-open external class ContentVisibilityAutoStateChangeEvent<out C : EventTarget?>(
-    override val type: EventType<ContentVisibilityAutoStateChangeEvent<EventTarget>>,
+open external class ContentVisibilityAutoStateChangeEvent(
+    override val type: EventType<ContentVisibilityAutoStateChangeEvent, EventTarget>,
     init: ContentVisibilityAutoStateChangeEventInit = definedExternally,
-) : Event<C>,
+) : Event,
     ContentVisibilityAutoStateChangeEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ContentVisibilityAutoStateChangeEvent/skipped)

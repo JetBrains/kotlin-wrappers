@@ -11,5 +11,5 @@ import web.events.EventType
 sealed external class RTCErrorEventTypes {
 
     @JsValue("error")
-    fun <C : EventTarget> error(): EventType<RTCErrorEvent<C>>
+    fun <C : EventTarget> error(): EventType<RTCErrorEvent, C>
 }

@@ -11,8 +11,8 @@ import web.events.EventType
 sealed external class DeviceOrientationEventTypes {
 
     @JsValue("deviceorientation")
-    fun <C : EventTarget> deviceOrientation(): EventType<DeviceOrientationEvent<C>>
+    fun <C : EventTarget> deviceOrientation(): EventType<DeviceOrientationEvent, C>
 
     @JsValue("deviceorientationabsolute")
-    fun <C : EventTarget> deviceOrientationAbsolute(): EventType<DeviceOrientationEvent<C>>
+    fun <C : EventTarget> deviceOrientationAbsolute(): EventType<DeviceOrientationEvent, C>
 }

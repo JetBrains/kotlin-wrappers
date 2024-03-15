@@ -27,7 +27,7 @@ external class PaymentRequest(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/paymentmethodchange_event)
      */
-    var onpaymentmethodchange: EventHandler<PaymentMethodChangeEvent<PaymentRequest>>?
+    var onpaymentmethodchange: EventHandler<PaymentMethodChangeEvent, PaymentRequest>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/abort)

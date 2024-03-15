@@ -11,5 +11,5 @@ import web.events.EventType
 sealed external class MIDIConnectionEventTypes {
 
     @JsValue("statechange")
-    fun <C : EventTarget> stateChange(): EventType<MIDIConnectionEvent<C>>
+    fun <C : EventTarget> stateChange(): EventType<MIDIConnectionEvent, C>
 }

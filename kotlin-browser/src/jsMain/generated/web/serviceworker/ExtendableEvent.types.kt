@@ -11,8 +11,8 @@ import web.events.EventType
 sealed external class ExtendableEventTypes {
 
     @JsValue("activate")
-    fun <C : EventTarget> activate(): EventType<ExtendableEvent<C>>
+    fun <C : EventTarget> activate(): EventType<ExtendableEvent, C>
 
     @JsValue("install")
-    fun <C : EventTarget> install(): EventType<ExtendableEvent<C>>
+    fun <C : EventTarget> install(): EventType<ExtendableEvent, C>
 }

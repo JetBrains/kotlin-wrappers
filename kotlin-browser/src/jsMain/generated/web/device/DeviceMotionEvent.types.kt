@@ -11,5 +11,5 @@ import web.events.EventType
 sealed external class DeviceMotionEventTypes {
 
     @JsValue("devicemotion")
-    fun <C : EventTarget> deviceMotion(): EventType<DeviceMotionEvent<C>>
+    fun <C : EventTarget> deviceMotion(): EventType<DeviceMotionEvent, C>
 }

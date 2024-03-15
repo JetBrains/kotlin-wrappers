@@ -32,8 +32,8 @@ external class OffscreenCanvas(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/height)
      */
     var height: JsLong
-    var oncontextlost: EventHandler<Event<OffscreenCanvas>>?
-    var oncontextrestored: EventHandler<Event<OffscreenCanvas>>?
+    var oncontextlost: EventHandler<Event, OffscreenCanvas>?
+    var oncontextrestored: EventHandler<Event, OffscreenCanvas>?
 
     /**
      * These attributes return the dimensions of the OffscreenCanvas object's bitmap.

@@ -15,10 +15,10 @@ import web.events.EventType
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HashChangeEvent)
  */
-open external class HashChangeEvent<out C : EventTarget?>(
-    override val type: EventType<HashChangeEvent<EventTarget>>,
+open external class HashChangeEvent(
+    override val type: EventType<HashChangeEvent, EventTarget>,
     init: HashChangeEventInit = definedExternally,
-) : Event<C>,
+) : Event,
     HashChangeEventInit {
     /**
      * Returns the URL of the session history entry that is now current.

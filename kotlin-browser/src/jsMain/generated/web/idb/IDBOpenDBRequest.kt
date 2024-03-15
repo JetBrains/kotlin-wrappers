@@ -14,10 +14,10 @@ sealed external class IDBOpenDBRequest :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBOpenDBRequest/blocked_event)
      */
-    var onblocked: EventHandler<IDBVersionChangeEvent<IDBOpenDBRequest>>?
+    var onblocked: EventHandler<IDBVersionChangeEvent, IDBOpenDBRequest>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBOpenDBRequest/upgradeneeded_event)
      */
-    var onupgradeneeded: EventHandler<IDBVersionChangeEvent<IDBOpenDBRequest>>?
+    var onupgradeneeded: EventHandler<IDBVersionChangeEvent, IDBOpenDBRequest>?
 }

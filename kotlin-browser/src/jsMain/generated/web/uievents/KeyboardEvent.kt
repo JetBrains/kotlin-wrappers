@@ -16,10 +16,10 @@ import web.keyboard.ModifierKeyCode
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent)
  */
-open external class KeyboardEvent<out C : EventTarget?>(
-    override val type: EventType<KeyboardEvent<EventTarget>>,
+open external class KeyboardEvent(
+    override val type: EventType<KeyboardEvent, EventTarget>,
     init: KeyboardEventInit = definedExternally,
-) : UIEvent<C> {
+) : UIEvent {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/altKey)
      */

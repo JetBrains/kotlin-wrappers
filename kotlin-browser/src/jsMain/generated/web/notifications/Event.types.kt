@@ -10,8 +10,8 @@ import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
 
-inline fun <C : EventTarget> Event.Companion.click(): EventType<Event<C>> =
+inline fun <C : EventTarget> Event.Companion.click(): EventType<Event, C> =
     EventType("click")
 
-inline fun <C : EventTarget> Event.Companion.show(): EventType<Event<C>> =
+inline fun <C : EventTarget> Event.Companion.show(): EventType<Event, C> =
     EventType("show")

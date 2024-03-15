@@ -11,5 +11,5 @@ import web.events.EventType
 sealed external class SpeechSynthesisErrorEventTypes {
 
     @JsValue("error")
-    fun <C : EventTarget> error(): EventType<SpeechSynthesisErrorEvent<C>>
+    fun <C : EventTarget> error(): EventType<SpeechSynthesisErrorEvent, C>
 }

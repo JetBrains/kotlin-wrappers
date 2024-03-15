@@ -15,10 +15,10 @@ import web.events.EventType
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PopStateEvent)
  */
-open external class PopStateEvent<out C : EventTarget?>(
-    override val type: EventType<PopStateEvent<EventTarget>>,
+open external class PopStateEvent(
+    override val type: EventType<PopStateEvent, EventTarget>,
     init: PopStateEventInit = definedExternally,
-) : Event<C>,
+) : Event,
     PopStateEventInit {
     /**
      * Returns a copy of the information that was provided to pushState() or replaceState().

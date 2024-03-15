@@ -15,10 +15,10 @@ import web.events.EventType
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent)
  */
-open external class SecurityPolicyViolationEvent<out C : EventTarget?>(
-    override val type: EventType<SecurityPolicyViolationEvent<EventTarget>>,
+open external class SecurityPolicyViolationEvent(
+    override val type: EventType<SecurityPolicyViolationEvent, EventTarget>,
     init: SecurityPolicyViolationEventInit = definedExternally,
-) : Event<C>,
+) : Event,
     SecurityPolicyViolationEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/blockedURI)

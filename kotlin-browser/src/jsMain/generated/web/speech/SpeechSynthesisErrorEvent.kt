@@ -12,10 +12,10 @@ import web.events.EventType
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisErrorEvent)
  */
-open external class SpeechSynthesisErrorEvent<out C : EventTarget?>(
-    override val type: EventType<SpeechSynthesisErrorEvent<EventTarget>>,
+open external class SpeechSynthesisErrorEvent(
+    override val type: EventType<SpeechSynthesisErrorEvent, EventTarget>,
     init: SpeechSynthesisErrorEventInit,
-) : SpeechSynthesisEvent<C>,
+) : SpeechSynthesisEvent,
     SpeechSynthesisErrorEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisErrorEvent/error)

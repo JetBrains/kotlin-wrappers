@@ -11,5 +11,5 @@ import web.events.EventType
 sealed external class StorageEventTypes {
 
     @JsValue("storage")
-    fun <C : EventTarget> storage(): EventType<StorageEvent<C>>
+    fun <C : EventTarget> storage(): EventType<StorageEvent, C>
 }

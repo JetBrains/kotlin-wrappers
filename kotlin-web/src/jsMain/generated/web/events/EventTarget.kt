@@ -4,25 +4,25 @@ package web.events
 
 open external class EventTarget {
     internal fun addEventListener(
-        type: EventType<*>,
+        type: EventType<*, *>,
         callback: Function<Unit>,
         options: AddEventListenerOptions? = definedExternally,
     )
 
     internal fun removeEventListener(
-        type: EventType<*>,
+        type: EventType<*, *>,
         callback: Function<Unit>,
         options: EventListenerOptions? = definedExternally,
     )
 
     fun dispatchEvent(
-        event: Event<*>,
+        event: Event,
     ): Boolean
 }
 
-fun <T : EventTarget, E : Event<T>> T.addEventListener(
-    type: EventType<E>,
-    handler: EventHandler<E>,
+fun <T : EventTarget, E : Event> T.addEventListener(
+    type: EventType<E, T>,
+    handler: EventHandler<E, T>,
     options: AddEventListenerOptions? = undefined,
 ) {
     addEventListener(
@@ -32,9 +32,9 @@ fun <T : EventTarget, E : Event<T>> T.addEventListener(
     )
 }
 
-fun <T : EventTarget, E : Event<T>> T.removeEventListener(
-    type: EventType<E>,
-    handler: EventHandler<E>,
+fun <T : EventTarget, E : Event> T.removeEventListener(
+    type: EventType<E, T>,
+    handler: EventHandler<E, T>,
     options: AddEventListenerOptions? = undefined,
 ) {
     removeEventListener(
@@ -44,9 +44,9 @@ fun <T : EventTarget, E : Event<T>> T.removeEventListener(
     )
 }
 
-fun <T : EventTarget, E : Event<T>> T.addEventHandler(
-    type: EventType<E>,
-    handler: EventHandler<E>,
+fun <T : EventTarget, E : Event> T.addEventHandler(
+    type: EventType<E, T>,
+    handler: EventHandler<E, T>,
 ): () -> Unit =
     addEventHandler(
         type = type,
@@ -54,10 +54,10 @@ fun <T : EventTarget, E : Event<T>> T.addEventHandler(
         handler = handler,
     )
 
-fun <T : EventTarget, E : Event<T>> T.addEventHandler(
-    type: EventType<E>,
+fun <T : EventTarget, E : Event> T.addEventHandler(
+    type: EventType<E, T>,
     options: AddEventListenerOptions?,
-    handler: EventHandler<E>,
+    handler: EventHandler<E, T>,
 ): () -> Unit {
     addEventListener(
         type = type,

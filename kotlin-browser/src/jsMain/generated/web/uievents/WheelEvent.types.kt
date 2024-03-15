@@ -11,5 +11,5 @@ import web.events.EventType
 sealed external class WheelEventTypes {
 
     @JsValue("wheel")
-    fun <C : EventTarget> wheel(): EventType<WheelEvent<C>>
+    fun <C : EventTarget> wheel(): EventType<WheelEvent, C>
 }

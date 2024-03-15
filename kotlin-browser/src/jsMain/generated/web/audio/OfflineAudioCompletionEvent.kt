@@ -15,10 +15,10 @@ import web.events.EventType
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioCompletionEvent)
  */
-open external class OfflineAudioCompletionEvent<out C : EventTarget?>(
-    override val type: EventType<OfflineAudioCompletionEvent<EventTarget>>,
+open external class OfflineAudioCompletionEvent(
+    override val type: EventType<OfflineAudioCompletionEvent, EventTarget>,
     init: OfflineAudioCompletionEventInit,
-) : Event<C>,
+) : Event,
     OfflineAudioCompletionEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioCompletionEvent/renderedBuffer)

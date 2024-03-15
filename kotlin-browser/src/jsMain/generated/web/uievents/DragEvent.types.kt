@@ -11,23 +11,23 @@ import web.events.EventType
 sealed external class DragEventTypes {
 
     @JsValue("drag")
-    fun <C : EventTarget> drag(): EventType<DragEvent<C>>
+    fun <C : EventTarget> drag(): EventType<DragEvent, C>
 
     @JsValue("dragend")
-    fun <C : EventTarget> dragEnd(): EventType<DragEvent<C>>
+    fun <C : EventTarget> dragEnd(): EventType<DragEvent, C>
 
     @JsValue("dragenter")
-    fun <C : EventTarget> dragEnter(): EventType<DragEvent<C>>
+    fun <C : EventTarget> dragEnter(): EventType<DragEvent, C>
 
     @JsValue("dragleave")
-    fun <C : EventTarget> dragLeave(): EventType<DragEvent<C>>
+    fun <C : EventTarget> dragLeave(): EventType<DragEvent, C>
 
     @JsValue("dragover")
-    fun <C : EventTarget> dragOver(): EventType<DragEvent<C>>
+    fun <C : EventTarget> dragOver(): EventType<DragEvent, C>
 
     @JsValue("dragstart")
-    fun <C : EventTarget> dragStart(): EventType<DragEvent<C>>
+    fun <C : EventTarget> dragStart(): EventType<DragEvent, C>
 
     @JsValue("drop")
-    fun <C : EventTarget> drop(): EventType<DragEvent<C>>
+    fun <C : EventTarget> drop(): EventType<DragEvent, C>
 }

@@ -10,8 +10,8 @@ import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
 
-inline fun <C : EventTarget> Event.Companion.ended(): EventType<Event<C>> =
+inline fun <C : EventTarget> Event.Companion.ended(): EventType<Event, C> =
     EventType("ended")
 
-inline fun <C : EventTarget> Event.Companion.stateChange(): EventType<Event<C>> =
+inline fun <C : EventTarget> Event.Companion.stateChange(): EventType<Event, C> =
     EventType("statechange")

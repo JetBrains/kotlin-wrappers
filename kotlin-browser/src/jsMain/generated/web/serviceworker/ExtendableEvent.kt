@@ -16,10 +16,10 @@ import web.events.EventType
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableEvent)
  */
-open external class ExtendableEvent<out C : EventTarget?>(
-    override val type: EventType<ExtendableEvent<EventTarget>>,
+open external class ExtendableEvent(
+    override val type: EventType<ExtendableEvent, EventTarget>,
     init: ExtendableEventInit = definedExternally,
-) : Event<C>,
+) : Event,
     ExtendableEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableEvent/waitUntil)

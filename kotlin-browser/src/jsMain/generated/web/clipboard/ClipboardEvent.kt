@@ -16,10 +16,10 @@ import web.events.EventType
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardEvent)
  */
-open external class ClipboardEvent<out C : EventTarget?>(
-    override val type: EventType<ClipboardEvent<EventTarget>>,
+open external class ClipboardEvent(
+    override val type: EventType<ClipboardEvent, EventTarget>,
     init: ClipboardEventInit = definedExternally,
-) : Event<C>,
+) : Event,
     ClipboardEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardEvent/clipboardData)

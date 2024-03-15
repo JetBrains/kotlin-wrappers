@@ -11,5 +11,5 @@ import web.events.EventType
 sealed external class MediaQueryListEventTypes {
 
     @JsValue("change")
-    fun <C : EventTarget> change(): EventType<MediaQueryListEvent<C>>
+    fun <C : EventTarget> change(): EventType<MediaQueryListEvent, C>
 }

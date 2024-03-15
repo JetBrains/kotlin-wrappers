@@ -15,10 +15,10 @@ import web.ranges.StaticRange
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputEvent)
  */
-open external class InputEvent<out C : EventTarget?>(
-    override val type: EventType<InputEvent<EventTarget>>,
+open external class InputEvent(
+    override val type: EventType<InputEvent, EventTarget>,
     init: InputEventInit = definedExternally,
-) : UIEvent<C> {
+) : UIEvent {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputEvent/data)
      */

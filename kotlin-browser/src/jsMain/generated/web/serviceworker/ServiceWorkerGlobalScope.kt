@@ -26,47 +26,47 @@ sealed external class ServiceWorkerGlobalScope :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/activate_event)
      */
-    var onactivate: EventHandler<ExtendableEvent<ServiceWorkerGlobalScope>>?
+    var onactivate: EventHandler<ExtendableEvent, ServiceWorkerGlobalScope>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/fetch_event)
      */
-    var onfetch: EventHandler<FetchEvent<ServiceWorkerGlobalScope>>?
+    var onfetch: EventHandler<FetchEvent, ServiceWorkerGlobalScope>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/install_event)
      */
-    var oninstall: EventHandler<ExtendableEvent<ServiceWorkerGlobalScope>>?
+    var oninstall: EventHandler<ExtendableEvent, ServiceWorkerGlobalScope>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/message_event)
      */
-    var onmessage: EventHandler<ExtendableMessageEvent<ServiceWorkerGlobalScope>>?
+    var onmessage: EventHandler<ExtendableMessageEvent, ServiceWorkerGlobalScope>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/messageerror_event)
      */
-    var onmessageerror: EventHandler<MessageEvent<*, ServiceWorkerGlobalScope>>?
+    var onmessageerror: EventHandler<MessageEvent<*>, ServiceWorkerGlobalScope>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/notificationclick_event)
      */
-    var onnotificationclick: EventHandler<NotificationEvent<ServiceWorkerGlobalScope>>?
+    var onnotificationclick: EventHandler<NotificationEvent, ServiceWorkerGlobalScope>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/notificationclose_event)
      */
-    var onnotificationclose: EventHandler<NotificationEvent<ServiceWorkerGlobalScope>>?
+    var onnotificationclose: EventHandler<NotificationEvent, ServiceWorkerGlobalScope>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/push_event)
      */
-    var onpush: EventHandler<PushEvent<ServiceWorkerGlobalScope>>?
+    var onpush: EventHandler<PushEvent, ServiceWorkerGlobalScope>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/pushsubscriptionchange_event)
      */
-    var onpushsubscriptionchange: EventHandler<Event<ServiceWorkerGlobalScope>>?
+    var onpushsubscriptionchange: EventHandler<Event, ServiceWorkerGlobalScope>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/registration)

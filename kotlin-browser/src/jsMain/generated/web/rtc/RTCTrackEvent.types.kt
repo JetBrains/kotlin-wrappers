@@ -11,5 +11,5 @@ import web.events.EventType
 sealed external class RTCTrackEventTypes {
 
     @JsValue("track")
-    fun <C : EventTarget> track(): EventType<RTCTrackEvent<C>>
+    fun <C : EventTarget> track(): EventType<RTCTrackEvent, C>
 }

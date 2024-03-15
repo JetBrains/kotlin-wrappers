@@ -11,11 +11,11 @@ import web.events.EventType
 sealed external class KeyboardEventTypes {
 
     @JsValue("keydown")
-    fun <C : EventTarget> keyDown(): EventType<KeyboardEvent<C>>
+    fun <C : EventTarget> keyDown(): EventType<KeyboardEvent, C>
 
     @JsValue("keypress")
-    fun <C : EventTarget> keyPress(): EventType<KeyboardEvent<C>>
+    fun <C : EventTarget> keyPress(): EventType<KeyboardEvent, C>
 
     @JsValue("keyup")
-    fun <C : EventTarget> keyUp(): EventType<KeyboardEvent<C>>
+    fun <C : EventTarget> keyUp(): EventType<KeyboardEvent, C>
 }

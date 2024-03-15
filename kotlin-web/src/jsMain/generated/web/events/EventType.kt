@@ -6,9 +6,9 @@
 
 package web.events
 
-sealed external interface EventType<out E : Event<EventTarget>>
+sealed external interface EventType<out E : Event, out C : EventTarget>
 
-inline fun <E : Event<EventTarget>> EventType(
+inline fun <E : Event, C : EventTarget> EventType(
     value: String,
-): EventType<E> =
-    value.unsafeCast<EventType<E>>()
+): EventType<E, C> =
+    value.unsafeCast<EventType<E, C>>()

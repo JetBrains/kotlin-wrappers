@@ -17,10 +17,10 @@ import web.events.EventType
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequestUpdateEvent)
  */
-open external class PaymentRequestUpdateEvent<out C : EventTarget?>(
-    override val type: EventType<PaymentRequestUpdateEvent<EventTarget>>,
+open external class PaymentRequestUpdateEvent(
+    override val type: EventType<PaymentRequestUpdateEvent, EventTarget>,
     init: PaymentRequestUpdateEventInit = definedExternally,
-) : Event<C>,
+) : Event,
     PaymentRequestUpdateEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequestUpdateEvent/updateWith)

@@ -15,10 +15,10 @@ import web.events.EventType
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransitionEvent)
  */
-open external class TransitionEvent<out C : EventTarget?>(
-    override val type: EventType<TransitionEvent<EventTarget>>,
+open external class TransitionEvent(
+    override val type: EventType<TransitionEvent, EventTarget>,
     init: TransitionEventInit = definedExternally,
-) : Event<C>,
+) : Event,
     TransitionEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransitionEvent/elapsedTime)

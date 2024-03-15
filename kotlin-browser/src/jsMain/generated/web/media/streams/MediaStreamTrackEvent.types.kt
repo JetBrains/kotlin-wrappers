@@ -11,8 +11,8 @@ import web.events.EventType
 sealed external class MediaStreamTrackEventTypes {
 
     @JsValue("addtrack")
-    fun <C : EventTarget> addTrack(): EventType<MediaStreamTrackEvent<C>>
+    fun <C : EventTarget> addTrack(): EventType<MediaStreamTrackEvent, C>
 
     @JsValue("removetrack")
-    fun <C : EventTarget> removeTrack(): EventType<MediaStreamTrackEvent<C>>
+    fun <C : EventTarget> removeTrack(): EventType<MediaStreamTrackEvent, C>
 }

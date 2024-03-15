@@ -36,7 +36,7 @@ sealed external class MIDIPort :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIPort/statechange_event)
      */
-    var onstatechange: EventHandler<MIDIConnectionEvent<MIDIPort>>?
+    var onstatechange: EventHandler<MIDIConnectionEvent, MIDIPort>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIPort/state)

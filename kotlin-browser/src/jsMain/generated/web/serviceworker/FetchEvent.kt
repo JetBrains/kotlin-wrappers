@@ -19,10 +19,10 @@ import web.http.Response
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent)
  */
-open external class FetchEvent<out C : EventTarget?>(
-    override val type: EventType<FetchEvent<EventTarget>>,
+open external class FetchEvent(
+    override val type: EventType<FetchEvent, EventTarget>,
     init: FetchEventInit,
-) : ExtendableEvent<C>,
+) : ExtendableEvent,
     FetchEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/clientId)

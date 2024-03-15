@@ -19,7 +19,7 @@ sealed external class PictureInPictureWindow :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PictureInPictureWindow/resize_event)
      */
-    var onresize: EventHandler<Event<PictureInPictureWindow>>?
+    var onresize: EventHandler<Event, PictureInPictureWindow>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PictureInPictureWindow/width)

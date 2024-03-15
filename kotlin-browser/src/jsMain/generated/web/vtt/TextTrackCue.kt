@@ -34,12 +34,12 @@ sealed external class TextTrackCue :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCue/enter_event)
      */
-    var onenter: EventHandler<Event<TextTrackCue>>?
+    var onenter: EventHandler<Event, TextTrackCue>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCue/exit_event)
      */
-    var onexit: EventHandler<Event<TextTrackCue>>?
+    var onexit: EventHandler<Event, TextTrackCue>?
 
     /**
      * Returns true if the text track cue pause-on-exit flag is set, false otherwise.

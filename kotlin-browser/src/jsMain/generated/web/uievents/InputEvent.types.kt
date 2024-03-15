@@ -11,5 +11,5 @@ import web.events.EventType
 sealed external class InputEventTypes {
 
     @JsValue("beforeinput")
-    fun <C : EventTarget> beforeInput(): EventType<InputEvent<C>>
+    fun <C : EventTarget> beforeInput(): EventType<InputEvent, C>
 }

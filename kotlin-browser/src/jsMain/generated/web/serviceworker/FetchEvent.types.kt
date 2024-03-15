@@ -11,5 +11,5 @@ import web.events.EventType
 sealed external class FetchEventTypes {
 
     @JsValue("fetch")
-    fun <C : EventTarget> fetch(): EventType<FetchEvent<C>>
+    fun <C : EventTarget> fetch(): EventType<FetchEvent, C>
 }

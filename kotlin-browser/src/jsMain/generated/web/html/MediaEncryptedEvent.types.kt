@@ -11,5 +11,5 @@ import web.events.EventType
 sealed external class MediaEncryptedEventTypes {
 
     @JsValue("encrypted")
-    fun <C : EventTarget> encrypted(): EventType<MediaEncryptedEvent<C>>
+    fun <C : EventTarget> encrypted(): EventType<MediaEncryptedEvent, C>
 }

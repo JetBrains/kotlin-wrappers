@@ -21,37 +21,37 @@ external class SpeechSynthesisUtterance(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/boundary_event)
      */
-    var onboundary: EventHandler<SpeechSynthesisEvent<SpeechSynthesisUtterance>>?
+    var onboundary: EventHandler<SpeechSynthesisEvent, SpeechSynthesisUtterance>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/end_event)
      */
-    var onend: EventHandler<SpeechSynthesisEvent<SpeechSynthesisUtterance>>?
+    var onend: EventHandler<SpeechSynthesisEvent, SpeechSynthesisUtterance>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/error_event)
      */
-    var onerror: EventHandler<SpeechSynthesisErrorEvent<SpeechSynthesisUtterance>>?
+    var onerror: EventHandler<SpeechSynthesisErrorEvent, SpeechSynthesisUtterance>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/mark_event)
      */
-    var onmark: EventHandler<SpeechSynthesisEvent<SpeechSynthesisUtterance>>?
+    var onmark: EventHandler<SpeechSynthesisEvent, SpeechSynthesisUtterance>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/pause_event)
      */
-    var onpause: EventHandler<SpeechSynthesisEvent<SpeechSynthesisUtterance>>?
+    var onpause: EventHandler<SpeechSynthesisEvent, SpeechSynthesisUtterance>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/resume_event)
      */
-    var onresume: EventHandler<SpeechSynthesisEvent<SpeechSynthesisUtterance>>?
+    var onresume: EventHandler<SpeechSynthesisEvent, SpeechSynthesisUtterance>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/start_event)
      */
-    var onstart: EventHandler<SpeechSynthesisEvent<SpeechSynthesisUtterance>>?
+    var onstart: EventHandler<SpeechSynthesisEvent, SpeechSynthesisUtterance>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/pitch)

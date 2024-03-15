@@ -11,5 +11,5 @@ import web.events.EventType
 sealed external class PaymentMethodChangeEventTypes {
 
     @JsValue("paymentmethodchange")
-    fun <C : EventTarget> paymentMethodChange(): EventType<PaymentMethodChangeEvent<C>>
+    fun <C : EventTarget> paymentMethodChange(): EventType<PaymentMethodChangeEvent, C>
 }

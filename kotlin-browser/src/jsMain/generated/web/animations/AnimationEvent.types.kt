@@ -11,14 +11,14 @@ import web.events.EventType
 sealed external class AnimationEventTypes {
 
     @JsValue("animationcancel")
-    fun <C : EventTarget> animationCancel(): EventType<AnimationEvent<C>>
+    fun <C : EventTarget> animationCancel(): EventType<AnimationEvent, C>
 
     @JsValue("animationend")
-    fun <C : EventTarget> animationEnd(): EventType<AnimationEvent<C>>
+    fun <C : EventTarget> animationEnd(): EventType<AnimationEvent, C>
 
     @JsValue("animationiteration")
-    fun <C : EventTarget> animationIteration(): EventType<AnimationEvent<C>>
+    fun <C : EventTarget> animationIteration(): EventType<AnimationEvent, C>
 
     @JsValue("animationstart")
-    fun <C : EventTarget> animationStart(): EventType<AnimationEvent<C>>
+    fun <C : EventTarget> animationStart(): EventType<AnimationEvent, C>
 }

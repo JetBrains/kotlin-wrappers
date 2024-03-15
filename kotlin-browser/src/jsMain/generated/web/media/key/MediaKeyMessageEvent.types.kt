@@ -11,5 +11,5 @@ import web.events.EventType
 sealed external class MediaKeyMessageEventTypes {
 
     @JsValue("message")
-    fun <C : EventTarget> message(): EventType<MediaKeyMessageEvent<C>>
+    fun <C : EventTarget> message(): EventType<MediaKeyMessageEvent, C>
 }

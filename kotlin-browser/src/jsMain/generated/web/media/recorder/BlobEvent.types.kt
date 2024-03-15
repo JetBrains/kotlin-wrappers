@@ -11,5 +11,5 @@ import web.events.EventType
 sealed external class BlobEventTypes {
 
     @JsValue("dataavailable")
-    fun <C : EventTarget> dataAvailable(): EventType<BlobEvent<C>>
+    fun <C : EventTarget> dataAvailable(): EventType<BlobEvent, C>
 }

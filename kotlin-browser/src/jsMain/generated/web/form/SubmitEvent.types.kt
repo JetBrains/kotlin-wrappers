@@ -11,5 +11,5 @@ import web.events.EventType
 sealed external class SubmitEventTypes {
 
     @JsValue("submit")
-    fun <C : EventTarget> submit(): EventType<SubmitEvent<C>>
+    fun <C : EventTarget> submit(): EventType<SubmitEvent, C>
 }

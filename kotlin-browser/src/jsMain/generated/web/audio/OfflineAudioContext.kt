@@ -28,7 +28,7 @@ external class OfflineAudioContext(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/complete_event)
      */
-    var oncomplete: EventHandler<OfflineAudioCompletionEvent<OfflineAudioContext>>?
+    var oncomplete: EventHandler<OfflineAudioCompletionEvent, OfflineAudioContext>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/resume)

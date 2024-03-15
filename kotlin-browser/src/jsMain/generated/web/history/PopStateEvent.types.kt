@@ -11,5 +11,5 @@ import web.events.EventType
 sealed external class PopStateEventTypes {
 
     @JsValue("popstate")
-    fun <C : EventTarget> popState(): EventType<PopStateEvent<C>>
+    fun <C : EventTarget> popState(): EventType<PopStateEvent, C>
 }

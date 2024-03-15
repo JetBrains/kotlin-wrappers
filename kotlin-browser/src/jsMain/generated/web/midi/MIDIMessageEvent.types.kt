@@ -11,5 +11,5 @@ import web.events.EventType
 sealed external class MIDIMessageEventTypes {
 
     @JsValue("midimessage")
-    fun <C : EventTarget> midiMessage(): EventType<MIDIMessageEvent<C>>
+    fun <C : EventTarget> midiMessage(): EventType<MIDIMessageEvent, C>
 }

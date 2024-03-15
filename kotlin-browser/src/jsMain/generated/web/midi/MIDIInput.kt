@@ -14,5 +14,5 @@ sealed external class MIDIInput :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIInput/midimessage_event)
      */
-    var onmidimessage: EventHandler<MIDIMessageEvent<MIDIInput>>?
+    var onmidimessage: EventHandler<MIDIMessageEvent, MIDIInput>?
 }

@@ -16,10 +16,10 @@ import web.events.EventType
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent)
  */
-open external class MessageEvent<out D, out C : EventTarget?>(
-    override val type: EventType<MessageEvent<D, EventTarget>>,
+open external class MessageEvent<out D>(
+    override val type: EventType<MessageEvent<D>, EventTarget>,
     init: MessageEventInit<D> = definedExternally,
-) : Event<C>,
+) : Event,
     MessageEventInit<D> {
     /**
      * Returns the data of the message.

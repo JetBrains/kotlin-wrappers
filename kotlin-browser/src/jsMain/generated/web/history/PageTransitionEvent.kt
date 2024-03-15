@@ -15,10 +15,10 @@ import web.events.EventType
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PageTransitionEvent)
  */
-open external class PageTransitionEvent<out C : EventTarget?>(
-    override val type: EventType<PageTransitionEvent<EventTarget>>,
+open external class PageTransitionEvent(
+    override val type: EventType<PageTransitionEvent, EventTarget>,
     init: PageTransitionEventInit = definedExternally,
-) : Event<C>,
+) : Event,
     PageTransitionEventInit {
     /**
      * For the pageshow event, returns false if the page is newly being loaded (and the load event will fire). Otherwise, returns true.

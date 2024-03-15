@@ -10,11 +10,11 @@ import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
 
-inline fun <C : EventTarget> Event.Companion.languageChange(): EventType<Event<C>> =
+inline fun <C : EventTarget> Event.Companion.languageChange(): EventType<Event, C> =
     EventType("languagechange")
 
-inline fun <C : EventTarget> Event.Companion.offline(): EventType<Event<C>> =
+inline fun <C : EventTarget> Event.Companion.offline(): EventType<Event, C> =
     EventType("offline")
 
-inline fun <C : EventTarget> Event.Companion.online(): EventType<Event<C>> =
+inline fun <C : EventTarget> Event.Companion.online(): EventType<Event, C> =
     EventType("online")

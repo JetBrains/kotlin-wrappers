@@ -11,5 +11,5 @@ import web.events.EventType
 sealed external class ExtendableMessageEventTypes {
 
     @JsValue("message")
-    fun <C : EventTarget> message(): EventType<ExtendableMessageEvent<C>>
+    fun <C : EventTarget> message(): EventType<ExtendableMessageEvent, C>
 }

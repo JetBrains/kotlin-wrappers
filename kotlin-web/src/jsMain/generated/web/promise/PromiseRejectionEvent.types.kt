@@ -11,8 +11,8 @@ import web.events.EventType
 sealed external class PromiseRejectionEventTypes {
 
     @JsValue("rejectionhandled")
-    fun <C : EventTarget> rejectionHandled(): EventType<PromiseRejectionEvent<C>>
+    fun <C : EventTarget> rejectionHandled(): EventType<PromiseRejectionEvent, C>
 
     @JsValue("unhandledrejection")
-    fun <C : EventTarget> unhandledRejection(): EventType<PromiseRejectionEvent<C>>
+    fun <C : EventTarget> unhandledRejection(): EventType<PromiseRejectionEvent, C>
 }

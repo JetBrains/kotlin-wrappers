@@ -11,5 +11,5 @@ import web.events.EventType
 sealed external class FormDataEventTypes {
 
     @JsValue("formdata")
-    fun <C : EventTarget> formData(): EventType<FormDataEvent<C>>
+    fun <C : EventTarget> formData(): EventType<FormDataEvent, C>
 }

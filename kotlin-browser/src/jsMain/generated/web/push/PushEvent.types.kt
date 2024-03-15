@@ -11,5 +11,5 @@ import web.events.EventType
 sealed external class PushEventTypes {
 
     @JsValue("push")
-    fun <C : EventTarget> push(): EventType<PushEvent<C>>
+    fun <C : EventTarget> push(): EventType<PushEvent, C>
 }

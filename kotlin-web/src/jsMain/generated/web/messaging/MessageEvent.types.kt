@@ -11,11 +11,11 @@ import web.events.EventType
 sealed external class MessageEventTypes {
 
     @JsValue("connect")
-    fun <D, C : EventTarget> connect(): EventType<MessageEvent<D, C>>
+    fun <D, C : EventTarget> connect(): EventType<MessageEvent<D>, C>
 
     @JsValue("message")
-    fun <D, C : EventTarget> message(): EventType<MessageEvent<D, C>>
+    fun <D, C : EventTarget> message(): EventType<MessageEvent<D>, C>
 
     @JsValue("messageerror")
-    fun <D, C : EventTarget> messageError(): EventType<MessageEvent<D, C>>
+    fun <D, C : EventTarget> messageError(): EventType<MessageEvent<D>, C>
 }

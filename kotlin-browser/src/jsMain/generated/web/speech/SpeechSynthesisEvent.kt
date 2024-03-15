@@ -15,10 +15,10 @@ import web.events.EventType
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisEvent)
  */
-open external class SpeechSynthesisEvent<out C : EventTarget?>(
-    override val type: EventType<SpeechSynthesisEvent<EventTarget>>,
+open external class SpeechSynthesisEvent(
+    override val type: EventType<SpeechSynthesisEvent, EventTarget>,
     init: SpeechSynthesisEventInit,
-) : Event<C>,
+) : Event,
     SpeechSynthesisEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisEvent/charIndex)

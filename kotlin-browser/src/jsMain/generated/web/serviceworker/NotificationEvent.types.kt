@@ -11,8 +11,8 @@ import web.events.EventType
 sealed external class NotificationEventTypes {
 
     @JsValue("notificationclick")
-    fun <C : EventTarget> notificationClick(): EventType<NotificationEvent<C>>
+    fun <C : EventTarget> notificationClick(): EventType<NotificationEvent, C>
 
     @JsValue("notificationclose")
-    fun <C : EventTarget> notificationClose(): EventType<NotificationEvent<C>>
+    fun <C : EventTarget> notificationClose(): EventType<NotificationEvent, C>
 }

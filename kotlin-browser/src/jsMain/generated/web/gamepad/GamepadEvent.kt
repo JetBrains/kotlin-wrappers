@@ -15,10 +15,10 @@ import web.events.EventType
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadEvent)
  */
-open external class GamepadEvent<out C : EventTarget?>(
-    override val type: EventType<GamepadEvent<EventTarget>>,
+open external class GamepadEvent(
+    override val type: EventType<GamepadEvent, EventTarget>,
     init: GamepadEventInit,
-) : Event<C>,
+) : Event,
     GamepadEventInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadEvent/gamepad)

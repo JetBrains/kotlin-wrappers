@@ -38,7 +38,7 @@ sealed external class ServiceWorkerRegistration :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/updatefound_event)
      */
-    var onupdatefound: EventHandler<Event<ServiceWorkerRegistration>>?
+    var onupdatefound: EventHandler<Event, ServiceWorkerRegistration>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/pushManager)

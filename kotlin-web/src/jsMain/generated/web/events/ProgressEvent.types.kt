@@ -9,23 +9,23 @@ import seskar.js.JsVirtual
 sealed external class ProgressEventTypes {
 
     @JsValue("abort")
-    fun <C : EventTarget> abort(): EventType<ProgressEvent<C>>
+    fun <C : EventTarget> abort(): EventType<ProgressEvent, C>
 
     @JsValue("error")
-    fun <C : EventTarget> error(): EventType<ProgressEvent<C>>
+    fun <C : EventTarget> error(): EventType<ProgressEvent, C>
 
     @JsValue("load")
-    fun <C : EventTarget> load(): EventType<ProgressEvent<C>>
+    fun <C : EventTarget> load(): EventType<ProgressEvent, C>
 
     @JsValue("loadend")
-    fun <C : EventTarget> loadEnd(): EventType<ProgressEvent<C>>
+    fun <C : EventTarget> loadEnd(): EventType<ProgressEvent, C>
 
     @JsValue("loadstart")
-    fun <C : EventTarget> loadStart(): EventType<ProgressEvent<C>>
+    fun <C : EventTarget> loadStart(): EventType<ProgressEvent, C>
 
     @JsValue("progress")
-    fun <C : EventTarget> progress(): EventType<ProgressEvent<C>>
+    fun <C : EventTarget> progress(): EventType<ProgressEvent, C>
 
     @JsValue("timeout")
-    fun <C : EventTarget> timeout(): EventType<ProgressEvent<C>>
+    fun <C : EventTarget> timeout(): EventType<ProgressEvent, C>
 }

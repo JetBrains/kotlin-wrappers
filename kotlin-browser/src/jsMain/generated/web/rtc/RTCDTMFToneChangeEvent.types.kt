@@ -11,5 +11,5 @@ import web.events.EventType
 sealed external class RTCDTMFToneChangeEventTypes {
 
     @JsValue("tonechange")
-    fun <C : EventTarget> toneChange(): EventType<RTCDTMFToneChangeEvent<C>>
+    fun <C : EventTarget> toneChange(): EventType<RTCDTMFToneChangeEvent, C>
 }

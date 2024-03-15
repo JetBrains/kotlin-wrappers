@@ -11,11 +11,11 @@ import web.events.EventType
 sealed external class CompositionEventTypes {
 
     @JsValue("compositionend")
-    fun <C : EventTarget> compositionEnd(): EventType<CompositionEvent<C>>
+    fun <C : EventTarget> compositionEnd(): EventType<CompositionEvent, C>
 
     @JsValue("compositionstart")
-    fun <C : EventTarget> compositionStart(): EventType<CompositionEvent<C>>
+    fun <C : EventTarget> compositionStart(): EventType<CompositionEvent, C>
 
     @JsValue("compositionupdate")
-    fun <C : EventTarget> compositionUpdate(): EventType<CompositionEvent<C>>
+    fun <C : EventTarget> compositionUpdate(): EventType<CompositionEvent, C>
 }

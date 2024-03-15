@@ -22,7 +22,7 @@ sealed external class MediaDevices :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/devicechange_event)
      */
-    var ondevicechange: EventHandler<Event<MediaDevices>>?
+    var ondevicechange: EventHandler<Event, MediaDevices>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/enumerateDevices)
