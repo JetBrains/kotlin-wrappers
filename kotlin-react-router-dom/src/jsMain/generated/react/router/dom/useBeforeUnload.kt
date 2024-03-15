@@ -15,6 +15,6 @@ import web.window.BeforeUnloadEvent
  * `React.useCallback()`.
  */
 external fun useBeforeUnload(
-    callback: (event: BeforeUnloadEvent<*>) -> Any?,
+    callback: (event: BeforeUnloadEvent) -> Any?,
     options: UseBeforeUnloadOptions = definedExternally,
-): Unit
+)
