@@ -4,4 +4,5 @@ package web.events
 
 external interface HasTargets<C : EventTarget> {
     val currentTarget: C
+    val target: EventTarget
 }
