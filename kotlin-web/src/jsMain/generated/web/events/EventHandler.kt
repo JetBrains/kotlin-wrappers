@@ -1,11 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "UNUSED_TYPEALIAS_PARAMETER",
+    "NOTHING_TO_INLINE",
+    "BOUNDS_NOT_ALLOWED_IF_BOUNDED_BY_TYPE_PARAMETER",
 )
 
 package web.events
 
-typealias EventHandler<E /* : Event */, C /* : EventTarget */> = (
-    event: E,
-) -> Unit
+sealed external interface EventHandler<in E : Event, out C : EventTarget>
+
+inline fun EventHandler(
+    noinline handler: () -> Unit,
+): EventHandler<Event, EventTarget> {
+    return handler.unsafeCast<EventHandler<Event, EventTarget>>()
+}
+
+inline fun <E : Event, C : EventTarget, D> EventHandler(
+    noinline handler: (D) -> Unit,
+): EventHandler<E, C>
+        where D : E,
+              D : HasTargets<C> {
+    return handler.unsafeCast<EventHandler<E, C>>()
+}
