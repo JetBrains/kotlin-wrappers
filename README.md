@@ -131,7 +131,7 @@ Make sure that you have `mavenCentral()` in the list of repositories.
 
 10. An [example of using Material UI](https://github.com/karakum-team/kotlin-mui-showcase).
 
-11. [ByteLegend](https://bytelegend.com/): [an open-source, real-world HTML5 MMORPG game](https://github.com/ByteLegend/ByteLegend).
+11. [ByteLegend](https://github.com/ByteLegend/ByteLegend): an open-source, real-world HTML5 MMORPG game.
 
 Follow these examples to learn how to start developing your React apps with Kotlin. Good luck and have fun!
 You also can clone [my-kotlin-react-sample](https://github.com/ScottHuangZL/my-kotlin-app) to see the result directly.
