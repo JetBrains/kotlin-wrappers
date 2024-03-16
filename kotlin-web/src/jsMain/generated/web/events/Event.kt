@@ -72,7 +72,7 @@ open external class Event(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Event/target)
      */
-    open val target: EventTarget?
+    val target: EventTarget?
 
     /**
      * Returns the event's timestamp as the number of milliseconds measured relative to the time origin.
