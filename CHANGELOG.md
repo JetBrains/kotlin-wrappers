@@ -3,7 +3,7 @@
 **BREAKING CHANGE**
 
 * Type parameter for `currentTarget` is removed from `*Event` classes
-* `EventHandler` - interface, which allows to handle events with a strict `currentTarget`
+* `EventHandler` is an interface that allows to handle events with a strict `currentTarget`
 
 ## pre.707
 
