@@ -10,7 +10,7 @@ fun <E : Event, C : EventTarget> useEventListener(
     target: C?,
     type: EventType<E, C>,
     options: AddEventListenerOptions? = undefined,
-    handler: EventHandler<E, C>,
+    handler: (E) -> Unit,
 ) {
     val latestHandler by useLatest(handler)
 
