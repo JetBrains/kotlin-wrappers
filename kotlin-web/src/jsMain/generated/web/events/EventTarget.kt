@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "BOUNDS_NOT_ALLOWED_IF_BOUNDED_BY_TYPE_PARAMETER",
+)
+
 package web.events
 
 open external class EventTarget {
@@ -32,7 +36,7 @@ open external class EventTarget {
     ): Boolean
 }
 
-// event + targets
+// event handler
 fun <E : Event, C : EventTarget> C.addEventListener(
     type: EventType<E, C>,
     handler: EventHandler<E, C>,
@@ -112,21 +116,27 @@ fun <E : Event, C : EventTarget> C.removeEventListener(
     )
 }
 
-fun <E : Event, C : EventTarget> C.addEventHandler(
+// event + targets
+fun <E : Event, C : EventTarget, D> C.addEventHandler(
     type: EventType<E, C>,
-    handler: (E) -> Unit,
-): () -> Unit =
-    addEventHandler(
+    handler: (D) -> Unit,
+): () -> Unit
+        where D : E,
+              D : HasTargets<C> {
+    return addEventHandler(
         type = type,
         options = undefined,
         handler = handler,
     )
+}
 
-fun <E : Event, C : EventTarget> C.addEventHandler(
+fun <E : Event, C : EventTarget, D> C.addEventHandler(
     type: EventType<E, C>,
     options: AddEventListenerOptions?,
-    handler: (E) -> Unit,
-): () -> Unit {
+    handler: (D) -> Unit,
+): () -> Unit
+        where D : E,
+              D : HasTargets<C> {
     addEventListener(
         type = type,
         callback = handler,
