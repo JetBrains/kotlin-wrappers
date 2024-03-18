@@ -131,7 +131,6 @@ Make sure that you have `mavenCentral()` in the list of repositories.
 11. [ByteLegend](https://github.com/ByteLegend/ByteLegend): an open-source, real-world HTML5 MMORPG game.
 
 Follow these examples to learn how to start developing your React apps with Kotlin. Good luck and have fun!
-You also can clone [my-kotlin-react-sample](https://github.com/ScottHuangZL/my-kotlin-app) to see the result directly.
 
 ## Contributing
 
