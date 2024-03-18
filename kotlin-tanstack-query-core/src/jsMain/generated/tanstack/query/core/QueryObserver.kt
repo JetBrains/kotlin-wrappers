@@ -24,7 +24,12 @@ open external class QueryObserver<TQueryFnData, TError, TData, TQueryData, TQuer
 
     open fun getOptimisticResult(options: DefaultedQueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey>): QueryObserverResult<TData, TError>
     open fun getCurrentResult(): QueryObserverResult<TData, TError>
-    open fun trackResult(result: QueryObserverResult<TData, TError>): QueryObserverResult<TData, TError>
+    open fun trackResult(
+        result: QueryObserverResult<TData, TError>,
+        onPropTracked: (key: String /* keyof QueryObserverResult */) -> Unit = definedExternally,
+    ): QueryObserverResult<TData, TError>
+
+    open fun trackProp(key: String /* keyof QueryObserverResult */)
     open fun getCurrentQuery(): Query<TQueryFnData, TError, TQueryData, TQueryKey>
     open fun refetch(options: RefetchOptions = definedExternally): Promise<QueryObserverResult<TData, TError>>
     open fun fetchOptimistic(options: QueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey, *>): Promise<QueryObserverResult<TData, TError>>

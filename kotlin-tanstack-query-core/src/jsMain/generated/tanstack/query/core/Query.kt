@@ -14,6 +14,7 @@ open external class Query<TQueryFnData, TError, TData, TQueryKey : QueryKey>(con
     open var state: QueryState<TData, TError>
     open var isFetchingOptimistic: Boolean
     open var meta: QueryMeta?
+    open fun setOptions(options: QueryOptions<TQueryFnData, TError, TData, TQueryKey, *> = definedExternally)
     override fun optionalRemove()
     open fun setData(
         newData: TData,

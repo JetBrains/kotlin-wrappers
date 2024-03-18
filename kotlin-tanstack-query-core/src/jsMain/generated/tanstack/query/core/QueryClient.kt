@@ -14,7 +14,7 @@ open external class QueryClient(config: QueryClientConfig = definedExternally) {
     open fun isFetching(filters: QueryFilters = definedExternally): Int
     open fun isMutating(filters: MutationFilters = definedExternally): Int
     open fun <TQueryFnData> getQueryData(queryKey: QueryKey): TQueryFnData?
-    open fun <TQueryFnData, TError, TData, TQueryKey : QueryKey> ensureQueryData(options: FetchQueryOptions<TQueryFnData, TError, TData, TQueryKey, *>): Promise<TData>
+    open fun <TQueryFnData, TError, TData, TQueryKey : QueryKey> ensureQueryData(options: EnsureQueryDataOptions<TQueryFnData, TError, TData, TQueryKey, *>): Promise<TData>
     open fun <TQueryFnData> getQueriesData(filters: QueryFilters): ReadonlyArray<JsTuple2<QueryKey, TQueryFnData?>>
     open fun <TQueryFnData> setQueryData(
         queryKey: QueryKey,
