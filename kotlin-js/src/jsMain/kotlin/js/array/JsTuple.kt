@@ -33,6 +33,14 @@ sealed external interface JsTuple5<out A, out B, out C, out D, out E> : JsTuple4
     inline operator fun component5(): E = asDynamic()[4]
 }
 
+sealed external interface JsTuple6<out A, out B, out C, out D, out E, out F> : JsTuple5<A, B, C, D, E> {
+    inline operator fun component6(): F = asDynamic()[5]
+}
+
+sealed external interface JsTuple7<out A, out B, out C, out D, out E, out F, out G> : JsTuple6<A, B, C, D, E, F> {
+    inline operator fun component7(): G = asDynamic()[6]
+}
+
 inline fun emptyTuple(): JsTuple =
     emptyArray<Any?>()
         .unsafeCast<JsTuple>()
@@ -76,3 +84,26 @@ inline fun <A, B, C, D, E> tupleOf(
 ): JsTuple5<A, B, C, D, E> =
     arrayOf(first, second, third, fourth, fifth)
         .unsafeCast<JsTuple5<A, B, C, D, E>>()
+
+inline fun <A, B, C, D, E, F> tupleOf(
+    first: A,
+    second: B,
+    third: C,
+    fourth: D,
+    fifth: E,
+    sixth: F,
+): JsTuple6<A, B, C, D, E, F> =
+    arrayOf(first, second, third, fourth, fifth, sixth)
+        .unsafeCast<JsTuple6<A, B, C, D, E, F>>()
+
+inline fun <A, B, C, D, E, F, G> tupleOf(
+    first: A,
+    second: B,
+    third: C,
+    fourth: D,
+    fifth: E,
+    sixth: F,
+    seventh: G,
+): JsTuple7<A, B, C, D, E, F, G> =
+    arrayOf(first, second, third, fourth, fifth, sixth, seventh)
+        .unsafeCast<JsTuple7<A, B, C, D, E, F, G>>()
