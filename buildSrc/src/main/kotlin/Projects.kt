@@ -7,8 +7,6 @@ private val TARGET_ALIASES = mapOf(
     "react-dom-test-utils" to "react",
     "react-legacy" to "react",
 
-    "styled-components" to "styled",
-
     "emotion" to "emotion-react",
 
     "@mui/x-date-pickers" to "muix-date-pickers",
