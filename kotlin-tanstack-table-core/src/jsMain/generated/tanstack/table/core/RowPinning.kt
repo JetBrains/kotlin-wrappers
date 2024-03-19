@@ -4,4 +4,4 @@
 
 package tanstack.table.core
 
-external val Filters: TableFeature
+external val RowPinning: TableFeature<*>

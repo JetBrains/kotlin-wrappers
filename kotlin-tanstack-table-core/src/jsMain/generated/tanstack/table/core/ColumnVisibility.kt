@@ -4,4 +4,4 @@
 
 package tanstack.table.core
 
-external val Ordering: TableFeature
+external val ColumnVisibility: TableFeature<*>

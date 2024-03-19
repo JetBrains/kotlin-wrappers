@@ -3,4 +3,5 @@
 package tanstack.table.core
 
 external interface ColumnDefExtensions<TData : RowData, TValue> : VisibilityColumnDef, ColumnPinningColumnDef,
-    FiltersColumnDef<TData>, SortingColumnDef<TData>, GroupingColumnDef<TData, TValue>, ColumnSizingColumnDef
+    ColumnFiltersColumnDef<TData>, GlobalFilterColumnDef, SortingColumnDef<TData>, GroupingColumnDef<TData, TValue>,
+    ColumnSizingColumnDef

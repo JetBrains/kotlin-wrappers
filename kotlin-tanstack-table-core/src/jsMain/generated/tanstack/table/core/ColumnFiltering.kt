@@ -4,4 +4,4 @@
 
 package tanstack.table.core
 
-external val Headers: TableFeature<*>
+external val ColumnFiltering: TableFeature<*>

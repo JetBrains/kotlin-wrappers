@@ -2,6 +2,4 @@
 
 package tanstack.table.core
 
-external interface TableOptionsResolved<TData : RowData> :
-    CoreOptions<TData>,
-    FeatureOptions<TData>
+external interface TableOptionsResolved<TData : RowData> : CoreOptions<TData>, FeatureOptions<TData>

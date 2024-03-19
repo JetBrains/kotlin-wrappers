@@ -4,4 +4,4 @@
 
 package tanstack.table.core
 
-external val Pinning: TableFeature
+external val ColumnGrouping: TableFeature<*>

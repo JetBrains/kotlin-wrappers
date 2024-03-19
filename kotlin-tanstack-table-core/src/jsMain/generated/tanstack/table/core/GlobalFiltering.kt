@@ -4,4 +4,4 @@
 
 package tanstack.table.core
 
-external val Expanding: TableFeature
+external val GlobalFiltering: TableFeature<*>

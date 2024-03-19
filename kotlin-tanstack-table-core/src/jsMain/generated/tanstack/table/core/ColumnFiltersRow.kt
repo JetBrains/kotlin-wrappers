@@ -4,7 +4,7 @@ package tanstack.table.core
 
 import js.objects.ReadonlyRecord
 
-external interface FiltersRow<TData : RowData> {
+external interface ColumnFiltersRow<TData : RowData> {
     /**
      * The column filters map for the row. This object tracks whether a row is passing/failing specific filters by their column ID.
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/filters#columnfilters)

@@ -4,4 +4,4 @@
 
 package tanstack.table.core
 
-external val ColumnSizing: TableFeature
+external val ColumnSizing: TableFeature<*>

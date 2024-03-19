@@ -4,4 +4,4 @@
 
 package tanstack.table.core
 
-external val Sorting: TableFeature
+external val RowPagination: TableFeature<*>

@@ -6,6 +6,11 @@ import js.array.ReadonlyArray
 
 external interface CoreOptions<TData : RowData> {
     /**
+     * An array of extra features that you can add to the table instance.
+     * [API Docs](https://tanstack.com/table/v8/docs/api/core/table#_features)
+     * [Guide](https://tanstack.com/table/v8/docs/guide/tables)
+     */
+    /**
      * Set this option to override any of the `autoReset...` feature options.
      * [API Docs](https://tanstack.com/table/v8/docs/api/core/table#autoresetall)
      * [Guide](https://tanstack.com/table/v8/docs/guide/tables)
