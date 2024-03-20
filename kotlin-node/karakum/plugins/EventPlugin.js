@@ -98,6 +98,13 @@ function extractEventPayload(node, context) {
             if (ts.isFunctionTypeNode(listener.type)) {
                 return [listener.type.parameters, typeParameters]
             } else if (ts.isTypeReferenceNode(listener.type)) {
+                if (
+                    ts.isIdentifier(listener.type.typeName)
+                    && listener.type.typeName.text === "Function"
+                ) {
+                    return [[], typeParameters]
+                }
+
                 const typeScriptService = context.lookupService(karakum.typeScriptServiceKey)
                 const typeChecker = typeScriptService?.program.getTypeChecker()
 
