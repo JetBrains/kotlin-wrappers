@@ -139,5 +139,104 @@ sealed external interface BrowserWindowEvent {
 
         @seskar.js.JsValue("will-resize")
         val WILL_RESIZE: WILL_RESIZE
+
+        @seskar.js.JsValue("always-on-top-changed")
+        fun alwaysOnTopChanged(): node.events.EventType<BrowserWindow, js.array.JsTuple2<Event<*>, Boolean>>
+
+        @seskar.js.JsValue("app-command")
+        fun appCommand(): node.events.EventType<BrowserWindow, js.array.JsTuple2<Event<*>, String>>
+
+        @seskar.js.JsValue("blur")
+        fun blur(): node.events.EventType<BrowserWindow, js.array.JsTuple>
+
+        @seskar.js.JsValue("close")
+        fun close(): node.events.EventType<BrowserWindow, js.array.JsTuple1<Event<*>>>
+
+        @seskar.js.JsValue("closed")
+        fun closed(): node.events.EventType<BrowserWindow, js.array.JsTuple>
+
+        @seskar.js.JsValue("enter-full-screen")
+        fun enterFullScreen(): node.events.EventType<BrowserWindow, js.array.JsTuple>
+
+        @seskar.js.JsValue("enter-html-full-screen")
+        fun enterHtmlFullScreen(): node.events.EventType<BrowserWindow, js.array.JsTuple>
+
+        @seskar.js.JsValue("focus")
+        fun focus(): node.events.EventType<BrowserWindow, js.array.JsTuple>
+
+        @seskar.js.JsValue("hide")
+        fun hide(): node.events.EventType<BrowserWindow, js.array.JsTuple>
+
+        @seskar.js.JsValue("leave-full-screen")
+        fun leaveFullScreen(): node.events.EventType<BrowserWindow, js.array.JsTuple>
+
+        @seskar.js.JsValue("leave-html-full-screen")
+        fun leaveHtmlFullScreen(): node.events.EventType<BrowserWindow, js.array.JsTuple>
+
+        @seskar.js.JsValue("maximize")
+        fun maximize(): node.events.EventType<BrowserWindow, js.array.JsTuple>
+
+        @seskar.js.JsValue("minimize")
+        fun minimize(): node.events.EventType<BrowserWindow, js.array.JsTuple>
+
+        @seskar.js.JsValue("move")
+        fun move(): node.events.EventType<BrowserWindow, js.array.JsTuple>
+
+        @seskar.js.JsValue("moved")
+        fun moved(): node.events.EventType<BrowserWindow, js.array.JsTuple>
+
+        @seskar.js.JsValue("new-window-for-tab")
+        fun newWindowForTab(): node.events.EventType<BrowserWindow, js.array.JsTuple>
+
+        @seskar.js.JsValue("page-title-updated")
+        fun pageTitleUpdated(): node.events.EventType<BrowserWindow, js.array.JsTuple3<Event<*>, String, Boolean>>
+
+        @seskar.js.JsValue("ready-to-show")
+        fun readyToShow(): node.events.EventType<BrowserWindow, js.array.JsTuple>
+
+        @seskar.js.JsValue("resize")
+        fun resize(): node.events.EventType<BrowserWindow, js.array.JsTuple>
+
+        @seskar.js.JsValue("resized")
+        fun resized(): node.events.EventType<BrowserWindow, js.array.JsTuple>
+
+        @seskar.js.JsValue("responsive")
+        fun responsive(): node.events.EventType<BrowserWindow, js.array.JsTuple>
+
+        @seskar.js.JsValue("restore")
+        fun restore(): node.events.EventType<BrowserWindow, js.array.JsTuple>
+
+        @seskar.js.JsValue("rotate-gesture")
+        fun rotateGesture(): node.events.EventType<BrowserWindow, js.array.JsTuple2<Event<*>, Double>>
+
+        @seskar.js.JsValue("session-end")
+        fun sessionEnd(): node.events.EventType<BrowserWindow, js.array.JsTuple>
+
+        @seskar.js.JsValue("sheet-begin")
+        fun sheetBegin(): node.events.EventType<BrowserWindow, js.array.JsTuple>
+
+        @seskar.js.JsValue("sheet-end")
+        fun sheetEnd(): node.events.EventType<BrowserWindow, js.array.JsTuple>
+
+        @seskar.js.JsValue("show")
+        fun show(): node.events.EventType<BrowserWindow, js.array.JsTuple>
+
+        @seskar.js.JsValue("swipe")
+        fun swipe(): node.events.EventType<BrowserWindow, js.array.JsTuple2<Event<*>, String>>
+
+        @seskar.js.JsValue("system-context-menu")
+        fun systemContextMenu(): node.events.EventType<BrowserWindow, js.array.JsTuple2<Event<*>, Point>>
+
+        @seskar.js.JsValue("unmaximize")
+        fun unmaximize(): node.events.EventType<BrowserWindow, js.array.JsTuple>
+
+        @seskar.js.JsValue("unresponsive")
+        fun unresponsive(): node.events.EventType<BrowserWindow, js.array.JsTuple>
+
+        @seskar.js.JsValue("will-move")
+        fun willMove(): node.events.EventType<BrowserWindow, js.array.JsTuple2<Event<*>, Rectangle>>
+
+        @seskar.js.JsValue("will-resize")
+        fun willResize(): node.events.EventType<BrowserWindow, js.array.JsTuple3<Event<*>, Rectangle, WillResizeDetails>>
     }
 }

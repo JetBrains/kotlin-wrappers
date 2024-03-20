@@ -2,16 +2,11 @@ import ts from "typescript";
 import * as karakum from "karakum";
 
 const eventHandlerMethods = new Set([
-    // nodejs style events
     "on",
     "off",
     "once",
     "addListener",
     "removeListener",
-
-    // browser style events
-    "addEventListener",
-    "removeEventListener",
 ])
 
 function extractEventContainer(node) {
@@ -32,7 +27,8 @@ function extractEventContainer(node) {
                 && eventHandlerMethods.has(node.parent.parent.parent.name.text)
 
                 && node.parent.parent.parent.parent
-                && ts.isClassDeclaration(node.parent.parent.parent.parent))
+                && ts.isClassDeclaration(node.parent.parent.parent.parent)
+            )
             || (
                 ts.isMethodSignature(node.parent.parent.parent)
                 && ts.isIdentifier(node.parent.parent.parent.name)
@@ -44,6 +40,82 @@ function extractEventContainer(node) {
         )
     ) {
         return node.parent.parent.parent.parent
+    }
+
+    return null
+}
+
+function extractEventPayload(node, context) {
+    if (
+        node.parent
+        && ts.isLiteralTypeNode(node.parent)
+
+        && node.parent.parent
+        && ts.isParameter(node.parent.parent)
+        && ts.isIdentifier(node.parent.parent.name)
+        && node.parent.parent.name.text === "event"
+
+        && node.parent.parent.parent
+        && (
+            (
+                ts.isMethodDeclaration(node.parent.parent.parent)
+                && ts.isIdentifier(node.parent.parent.parent.name)
+                && node.parent.parent.parent.name.text === "addListener"
+
+                && node.parent.parent.parent.parent
+                && ts.isClassDeclaration(node.parent.parent.parent.parent)
+            )
+            || (
+                ts.isMethodSignature(node.parent.parent.parent)
+                && ts.isIdentifier(node.parent.parent.parent.name)
+                && node.parent.parent.parent.name.text === "addListener"
+
+                && node.parent.parent.parent.parent
+                && ts.isInterfaceDeclaration(node.parent.parent.parent.parent)
+            )
+        )
+    ) {
+        const method = node.parent.parent.parent
+        const listener = method.parameters[1]
+        const container = node.parent.parent.parent.parent
+
+        if (
+            listener
+            && listener.type
+        ) {
+            const containerTypeParameters = container.typeParameters ?? []
+            const extractedTypeParameters = karakum.extractTypeParameters(listener.type, context)
+
+            const typeParameters = containerTypeParameters.map(typeParameter => (
+                extractedTypeParameters
+                    .find(([, declaration]) => declaration === typeParameter)
+            ))
+
+            if (ts.isFunctionTypeNode(listener.type)) {
+                return [listener.type.parameters, typeParameters]
+            } else if (ts.isTypeReferenceNode(listener.type)) {
+                const typeScriptService = context.lookupService(karakum.typeScriptServiceKey)
+                const typeChecker = typeScriptService?.program.getTypeChecker()
+
+                const symbol = typeChecker?.getSymbolAtLocation(listener.type.typeName)
+
+                if (
+                    symbol
+                    && symbol.declarations
+                    && symbol.declarations[0]
+                    && ts.isTypeAliasDeclaration(symbol.declarations[0])
+                    && ts.isFunctionTypeNode(symbol.declarations[0].type)
+                ) {
+                    return [symbol.declarations[0].type.parameters, typeParameters]
+                }
+            }
+        }
+
+        const typeScriptService = context.lookupService(karakum.typeScriptServiceKey)
+
+        console.error(`Suspicious listener: ${typeScriptService?.printNode(listener)}`)
+
+        return null
     }
 
     return null
@@ -75,16 +147,22 @@ export default {
                 sourceFileName,
                 namespace,
                 containerName: name.text,
-                eventNames: new Set()
+                eventInfo: new Map()
             }
 
-            events.eventNames.add(node.text)
+            events.eventInfo.set(node.text, {
+                payload: "",
+                payloadLength: 0,
+
+                typeParameters: "",
+                fullTypeParameters: "",
+            })
 
             this.events.set(symbol, events)
         }
     },
 
-    render(node, context) {
+    render(node, context, next) {
         if (ts.isStringLiteral(node)) {
             const eventContainer = extractEventContainer(node)
             if (!eventContainer) return null
@@ -101,6 +179,35 @@ export default {
             const events = this.events.get(symbol)
             if (!events) return null
 
+            const eventPayload = extractEventPayload(node, context)
+            const eventInfo = events.eventInfo.get(node.text)
+            if (eventPayload && eventInfo) {
+                const [parameters, typeParameters] = eventPayload
+
+                eventInfo.payload = parameters
+                    .map(parameter => (
+                        parameter.type
+                            ? next(parameter.type)
+                            : "Any?"
+                    ))
+                    .join(", ")
+
+                eventInfo.payloadLength = parameters.length
+
+                eventInfo.typeParameters = typeParameters
+                    .filter(Boolean)
+                    .map(([, declaration]) => next(declaration))
+                    .join(", ")
+
+                eventInfo.fullTypeParameters = typeParameters
+                    .map(typeParameter => (
+                        typeParameter
+                            ? next(typeParameter[0])
+                            : "*"
+                    ))
+                    .join(", ")
+            }
+
             return `${events.containerName}Event.${karakum.constIdentifier(node.text)}`
         }
 
@@ -111,24 +218,46 @@ export default {
         const declarations = Array.from(this.events.values()).map(events => {
             const name = `${events.containerName}Event`
 
-            const entries = Array.from(events.eventNames).map(eventName => {
-                const key = karakum.constIdentifier(eventName)
-                return [key, eventName]
-            })
+            const body = Array.from(events.eventInfo.keys())
+                .map(eventName => {
+                    const key = karakum.constIdentifier(eventName)
 
-            const keys = entries.map(([key]) => key)
-
-            const body = keys
-                .map(key => `sealed interface ${key} : node.events.LegacyEventType`)
+                    return `sealed interface ${key} : node.events.LegacyEventType`;
+                })
                 .join("\n")
 
-            const companionBody = entries
-                .map(([key, value]) => (
-                    `
-@seskar.js.JsValue("${value}")
+            const legacyCompanionBody = Array.from(events.eventInfo.keys())
+                .map(eventName => {
+                    const key = karakum.constIdentifier(eventName)
+
+                    return (
+                        `
+@seskar.js.JsValue("${eventName}")
 val ${key}: ${key}
-                    `.trim()
-                ))
+                        `.trim()
+                    );
+                })
+                .join("\n")
+
+            const companionBody = Array.from(events.eventInfo.entries())
+                .map(([eventName, { payload, payloadLength, typeParameters, fullTypeParameters }]) => {
+                    const key = karakum.identifier(eventName)
+
+                    const tuple = payloadLength > 0
+                        ? `js.array.JsTuple${payloadLength}<${payload}>`
+                        : "js.array.JsTuple"
+
+                    const targetReference = fullTypeParameters !== ""
+                        ? `${events.containerName}<${fullTypeParameters}>`
+                        : events.containerName
+
+                    return (
+                        `
+@seskar.js.JsValue("${eventName}")
+fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${key}(): node.events.EventType<${targetReference}, ${tuple}>
+                        `.trim()
+                    );
+                })
                 .join("\n")
 
             const declaration = `
@@ -138,6 +267,7 @@ sealed external interface ${name} {
 ${body}
 
 companion object {
+${legacyCompanionBody}
 ${companionBody}
 }
 }

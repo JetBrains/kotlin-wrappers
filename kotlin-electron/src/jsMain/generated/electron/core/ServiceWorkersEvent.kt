@@ -15,5 +15,11 @@ sealed external interface ServiceWorkersEvent {
 
         @seskar.js.JsValue("registration-completed")
         val REGISTRATION_COMPLETED: REGISTRATION_COMPLETED
+
+        @seskar.js.JsValue("console-message")
+        fun consoleMessage(): node.events.EventType<ServiceWorkers, js.array.JsTuple2<Event<*>, MessageDetails>>
+
+        @seskar.js.JsValue("registration-completed")
+        fun registrationCompleted(): node.events.EventType<ServiceWorkers, js.array.JsTuple2<Event<*>, RegistrationCompletedDetails>>
     }
 }

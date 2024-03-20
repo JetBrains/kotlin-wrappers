@@ -91,5 +91,68 @@ sealed external interface SessionEvent {
 
         @seskar.js.JsValue("will-download")
         val WILL_DOWNLOAD: WILL_DOWNLOAD
+
+        @seskar.js.JsValue("extension-loaded")
+        fun extensionLoaded(): node.events.EventType<Session, js.array.JsTuple2<Event<*>, Extension>>
+
+        @seskar.js.JsValue("extension-ready")
+        fun extensionReady(): node.events.EventType<Session, js.array.JsTuple2<Event<*>, Extension>>
+
+        @seskar.js.JsValue("extension-unloaded")
+        fun extensionUnloaded(): node.events.EventType<Session, js.array.JsTuple2<Event<*>, Extension>>
+
+        @seskar.js.JsValue("hid-device-added")
+        fun hidDeviceAdded(): node.events.EventType<Session, js.array.JsTuple2<Event<*>, HidDeviceAddedDetails>>
+
+        @seskar.js.JsValue("hid-device-removed")
+        fun hidDeviceRemoved(): node.events.EventType<Session, js.array.JsTuple2<Event<*>, HidDeviceRemovedDetails>>
+
+        @seskar.js.JsValue("hid-device-revoked")
+        fun hidDeviceRevoked(): node.events.EventType<Session, js.array.JsTuple2<Event<*>, HidDeviceRevokedDetails>>
+
+        @seskar.js.JsValue("preconnect")
+        fun preconnect(): node.events.EventType<Session, js.array.JsTuple3<Event<*>, String, Boolean>>
+
+        @seskar.js.JsValue("select-hid-device")
+        fun selectHidDevice(): node.events.EventType<Session, js.array.JsTuple3<Event<*>, SelectHidDeviceDetails, (deviceId: String? /* use undefined for default */) -> Unit>>
+
+        @seskar.js.JsValue("select-serial-port")
+        fun selectSerialPort(): node.events.EventType<Session, js.array.JsTuple4<Event<*>, js.array.ReadonlyArray<SerialPort>, WebContents, (portId: String) -> Unit>>
+
+        @seskar.js.JsValue("select-usb-device")
+        fun selectUsbDevice(): node.events.EventType<Session, js.array.JsTuple3<Event<*>, SelectUsbDeviceDetails, (deviceId: String? /* use undefined for default */) -> Unit>>
+
+        @seskar.js.JsValue("serial-port-added")
+        fun serialPortAdded(): node.events.EventType<Session, js.array.JsTuple3<Event<*>, SerialPort, WebContents>>
+
+        @seskar.js.JsValue("serial-port-removed")
+        fun serialPortRemoved(): node.events.EventType<Session, js.array.JsTuple3<Event<*>, SerialPort, WebContents>>
+
+        @seskar.js.JsValue("serial-port-revoked")
+        fun serialPortRevoked(): node.events.EventType<Session, js.array.JsTuple2<Event<*>, SerialPortRevokedDetails>>
+
+        @seskar.js.JsValue("spellcheck-dictionary-download-begin")
+        fun spellcheckDictionaryDownloadBegin(): node.events.EventType<Session, js.array.JsTuple2<Event<*>, String>>
+
+        @seskar.js.JsValue("spellcheck-dictionary-download-failure")
+        fun spellcheckDictionaryDownloadFailure(): node.events.EventType<Session, js.array.JsTuple2<Event<*>, String>>
+
+        @seskar.js.JsValue("spellcheck-dictionary-download-success")
+        fun spellcheckDictionaryDownloadSuccess(): node.events.EventType<Session, js.array.JsTuple2<Event<*>, String>>
+
+        @seskar.js.JsValue("spellcheck-dictionary-initialized")
+        fun spellcheckDictionaryInitialized(): node.events.EventType<Session, js.array.JsTuple2<Event<*>, String>>
+
+        @seskar.js.JsValue("usb-device-added")
+        fun usbDeviceAdded(): node.events.EventType<Session, js.array.JsTuple3<Event<*>, USBDevice, WebContents>>
+
+        @seskar.js.JsValue("usb-device-removed")
+        fun usbDeviceRemoved(): node.events.EventType<Session, js.array.JsTuple3<Event<*>, USBDevice, WebContents>>
+
+        @seskar.js.JsValue("usb-device-revoked")
+        fun usbDeviceRevoked(): node.events.EventType<Session, js.array.JsTuple2<Event<*>, UsbDeviceRevokedDetails>>
+
+        @seskar.js.JsValue("will-download")
+        fun willDownload(): node.events.EventType<Session, js.array.JsTuple3<Event<*>, DownloadItem, WebContents>>
     }
 }

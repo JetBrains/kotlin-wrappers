@@ -35,5 +35,26 @@ sealed external interface ClientRequestEvent {
 
         @seskar.js.JsValue("response")
         val RESPONSE: RESPONSE
+
+        @seskar.js.JsValue("abort")
+        fun abort(): node.events.EventType<ClientRequest, js.array.JsTuple>
+
+        @seskar.js.JsValue("close")
+        fun close(): node.events.EventType<ClientRequest, js.array.JsTuple>
+
+        @seskar.js.JsValue("error")
+        fun error(): node.events.EventType<ClientRequest, js.array.JsTuple1<Throwable /* JsError */>>
+
+        @seskar.js.JsValue("finish")
+        fun finish(): node.events.EventType<ClientRequest, js.array.JsTuple>
+
+        @seskar.js.JsValue("login")
+        fun login(): node.events.EventType<ClientRequest, js.array.JsTuple2<AuthInfo, (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit>>
+
+        @seskar.js.JsValue("redirect")
+        fun redirect(): node.events.EventType<ClientRequest, js.array.JsTuple4<Double, String, String, js.objects.ReadonlyRecord<String, js.array.ReadonlyArray<String>>>>
+
+        @seskar.js.JsValue("response")
+        fun response(): node.events.EventType<ClientRequest, js.array.JsTuple1<IncomingMessage>>
     }
 }

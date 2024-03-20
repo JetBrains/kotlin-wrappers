@@ -17,113 +17,53 @@ external interface WebviewTag : HTMLElement {
      * document as well as subframe document-level loads, but does not include
      * asynchronous resource loads.
      */
-    fun addEventListener(
-        event: WebviewTagEvent.LOAD_COMMIT,
-        listener: (event: LoadCommitEvent) -> Unit,
-        useCapture: Boolean = definedExternally,
-    ): Unit /* this */
 
     /**
      * Fired when the navigation is done, i.e. the spinner of the tab will stop
      * spinning, and the `onload` event is dispatched.
      */
-    fun addEventListener(
-        event: WebviewTagEvent.DID_FINISH_LOAD,
-        listener: (event: DOMEvent) -> Unit,
-        useCapture: Boolean = definedExternally,
-    ): Unit /* this */
 
     /**
      * This event is like `did-finish-load`, but fired when the load failed or was
      * cancelled, e.g. `window.stop()` is invoked.
      */
-    fun addEventListener(
-        event: WebviewTagEvent.DID_FAIL_LOAD,
-        listener: (event: DidFailLoadEvent) -> Unit,
-        useCapture: Boolean = definedExternally,
-    ): Unit /* this */
 
     /**
      * Fired when a frame has done navigation.
      */
-    fun addEventListener(
-        event: WebviewTagEvent.DID_FRAME_FINISH_LOAD,
-        listener: (event: DidFrameFinishLoadEvent) -> Unit,
-        useCapture: Boolean = definedExternally,
-    ): Unit /* this */
 
     /**
      * Corresponds to the points in time when the spinner of the tab starts spinning.
      */
-    fun addEventListener(
-        event: WebviewTagEvent.DID_START_LOADING,
-        listener: (event: DOMEvent) -> Unit,
-        useCapture: Boolean = definedExternally,
-    ): Unit /* this */
 
     /**
      * Corresponds to the points in time when the spinner of the tab stops spinning.
      */
-    fun addEventListener(
-        event: WebviewTagEvent.DID_STOP_LOADING,
-        listener: (event: DOMEvent) -> Unit,
-        useCapture: Boolean = definedExternally,
-    ): Unit /* this */
 
     /**
      * Fired when attached to the embedder web contents.
      */
-    fun addEventListener(
-        event: WebviewTagEvent.DID_ATTACH,
-        listener: (event: DOMEvent) -> Unit,
-        useCapture: Boolean = definedExternally,
-    ): Unit /* this */
 
     /**
      * Fired when document in the given frame is loaded.
      */
-    fun addEventListener(
-        event: WebviewTagEvent.DOM_READY,
-        listener: (event: DOMEvent) -> Unit,
-        useCapture: Boolean = definedExternally,
-    ): Unit /* this */
 
     /**
      * Fired when page title is set during navigation. `explicitSet` is false when
      * title is synthesized from file url.
      */
-    fun addEventListener(
-        event: WebviewTagEvent.PAGE_TITLE_UPDATED,
-        listener: (event: PageTitleUpdatedEvent) -> Unit,
-        useCapture: Boolean = definedExternally,
-    ): Unit /* this */
 
     /**
      * Fired when page receives favicon urls.
      */
-    fun addEventListener(
-        event: WebviewTagEvent.PAGE_FAVICON_UPDATED,
-        listener: (event: PageFaviconUpdatedEvent) -> Unit,
-        useCapture: Boolean = definedExternally,
-    ): Unit /* this */
 
     /**
      * Fired when page enters fullscreen triggered by HTML API.
      */
-    fun addEventListener(
-        event: WebviewTagEvent.ENTER_HTML_FULL_SCREEN,
-        listener: (event: DOMEvent) -> Unit,
-        useCapture: Boolean = definedExternally,
-    ): Unit /* this */
 
     /**
      * Fired when page leaves fullscreen triggered by HTML API.
      */
-    fun addEventListener(
-        event: WebviewTagEvent.LEAVE_HTML_FULL_SCREEN,
-        listener: (event: DOMEvent) -> Unit,
-        useCapture: Boolean = definedExternally,
-    ): Unit /* this */
 
     /**
      * Fired when the guest window logs a console message.
@@ -131,20 +71,10 @@ external interface WebviewTag : HTMLElement {
      * The following example code forwards all log messages to the embedder's console
      * without regard for log level or other properties.
      */
-    fun addEventListener(
-        event: WebviewTagEvent.CONSOLE_MESSAGE,
-        listener: (event: ConsoleMessageEvent) -> Unit,
-        useCapture: Boolean = definedExternally,
-    ): Unit /* this */
 
     /**
      * Fired when a result is available for `webview.findInPage` request.
      */
-    fun addEventListener(
-        event: WebviewTagEvent.FOUND_IN_PAGE,
-        listener: (event: FoundInPageEvent) -> Unit,
-        useCapture: Boolean = definedExternally,
-    ): Unit /* this */
 
     /**
      * Emitted when a user or the page wants to start navigation. It can happen when
@@ -159,11 +89,6 @@ external interface WebviewTag : HTMLElement {
      *
      * Calling `event.preventDefault()` does **NOT** have any effect.
      */
-    fun addEventListener(
-        event: WebviewTagEvent.WILL_NAVIGATE,
-        listener: (event: WillNavigateEvent) -> Unit,
-        useCapture: Boolean = definedExternally,
-    ): Unit /* this */
 
     /**
      * Emitted when a user or the page wants to start navigation anywhere in the
@@ -179,31 +104,16 @@ external interface WebviewTag : HTMLElement {
      *
      * Calling `event.preventDefault()` does **NOT** have any effect.
      */
-    fun addEventListener(
-        event: WebviewTagEvent.WILL_FRAME_NAVIGATE,
-        listener: (event: WillFrameNavigateEvent) -> Unit,
-        useCapture: Boolean = definedExternally,
-    ): Unit /* this */
 
     /**
      * Emitted when any frame (including main) starts navigating. `isInPlace` will be
      * `true` for in-page navigations.
      */
-    fun addEventListener(
-        event: WebviewTagEvent.DID_START_NAVIGATION,
-        listener: (event: DidStartNavigationEvent) -> Unit,
-        useCapture: Boolean = definedExternally,
-    ): Unit /* this */
 
     /**
      * Emitted after a server side redirect occurs during navigation. For example a 302
      * redirect.
      */
-    fun addEventListener(
-        event: WebviewTagEvent.DID_REDIRECT_NAVIGATION,
-        listener: (event: DidRedirectNavigationEvent) -> Unit,
-        useCapture: Boolean = definedExternally,
-    ): Unit /* this */
 
     /**
      * Emitted when a navigation is done.
@@ -212,11 +122,6 @@ external interface WebviewTag : HTMLElement {
      * or updating the `window.location.hash`. Use `did-navigate-in-page` event for
      * this purpose.
      */
-    fun addEventListener(
-        event: WebviewTagEvent.DID_NAVIGATE,
-        listener: (event: DidNavigateEvent) -> Unit,
-        useCapture: Boolean = definedExternally,
-    ): Unit /* this */
 
     /**
      * Emitted when any frame navigation is done.
@@ -225,11 +130,6 @@ external interface WebviewTag : HTMLElement {
      * or updating the `window.location.hash`. Use `did-navigate-in-page` event for
      * this purpose.
      */
-    fun addEventListener(
-        event: WebviewTagEvent.DID_FRAME_NAVIGATE,
-        listener: (event: DidFrameNavigateEvent) -> Unit,
-        useCapture: Boolean = definedExternally,
-    ): Unit /* this */
 
     /**
      * Emitted when an in-page navigation happened.
@@ -238,11 +138,6 @@ external interface WebviewTag : HTMLElement {
      * navigation outside of the page. Examples of this occurring are when anchor links
      * are clicked or when the DOM `hashchange` event is triggered.
      */
-    fun addEventListener(
-        event: WebviewTagEvent.DID_NAVIGATE_IN_PAGE,
-        listener: (event: DidNavigateInPageEvent) -> Unit,
-        useCapture: Boolean = definedExternally,
-    ): Unit /* this */
 
     /**
      * Fired when the guest page attempts to close itself.
@@ -250,11 +145,6 @@ external interface WebviewTag : HTMLElement {
      * The following example code navigates the `webview` to `about:blank` when the
      * guest attempts to close itself.
      */
-    fun addEventListener(
-        event: WebviewTagEvent.CLOSE,
-        listener: (event: DOMEvent) -> Unit,
-        useCapture: Boolean = definedExternally,
-    ): Unit /* this */
 
     /**
      * Fired when the guest page has sent an asynchronous message to embedder page.
@@ -262,278 +152,57 @@ external interface WebviewTag : HTMLElement {
      * With `sendToHost` method and `ipc-message` event you can communicate between
      * guest page and embedder page:
      */
-    fun addEventListener(
-        event: WebviewTagEvent.IPC_MESSAGE,
-        listener: (event: IpcMessageEvent) -> Unit,
-        useCapture: Boolean = definedExternally,
-    ): Unit /* this */
 
     /**
      * Fired when the renderer process unexpectedly disappears. This is normally
      * because it was crashed or killed.
      */
-    fun addEventListener(
-        event: WebviewTagEvent.RENDER_PROCESS_GONE,
-        listener: (event: RenderProcessGoneEvent) -> Unit,
-        useCapture: Boolean = definedExternally,
-    ): Unit /* this */
 
     /**
      * Fired when a plugin process is crashed.
      */
-    fun addEventListener(
-        event: WebviewTagEvent.PLUGIN_CRASHED,
-        listener: (event: PluginCrashedEvent) -> Unit,
-        useCapture: Boolean = definedExternally,
-    ): Unit /* this */
 
     /**
      * Fired when the WebContents is destroyed.
      */
-    fun addEventListener(
-        event: WebviewTagEvent.DESTROYED,
-        listener: (event: DOMEvent) -> Unit,
-        useCapture: Boolean = definedExternally,
-    ): Unit /* this */
 
     /**
      * Emitted when media starts playing.
      */
-    fun addEventListener(
-        event: WebviewTagEvent.MEDIA_STARTED_PLAYING,
-        listener: (event: DOMEvent) -> Unit,
-        useCapture: Boolean = definedExternally,
-    ): Unit /* this */
 
     /**
      * Emitted when media is paused or done playing.
      */
-    fun addEventListener(
-        event: WebviewTagEvent.MEDIA_PAUSED,
-        listener: (event: DOMEvent) -> Unit,
-        useCapture: Boolean = definedExternally,
-    ): Unit /* this */
 
     /**
      * Emitted when a page's theme color changes. This is usually due to encountering a
      * meta tag:
      */
-    fun addEventListener(
-        event: WebviewTagEvent.DID_CHANGE_THEME_COLOR,
-        listener: (event: DidChangeThemeColorEvent) -> Unit,
-        useCapture: Boolean = definedExternally,
-    ): Unit /* this */
 
     /**
      * Emitted when mouse moves over a link or the keyboard moves the focus to a link.
      */
-    fun addEventListener(
-        event: WebviewTagEvent.UPDATE_TARGET_URL,
-        listener: (event: UpdateTargetUrlEvent) -> Unit,
-        useCapture: Boolean = definedExternally,
-    ): Unit /* this */
 
     /**
      * Emitted when a link is clicked in DevTools or 'Open in new tab' is selected for
      * a link in its context menu.
      */
-    fun addEventListener(
-        event: WebviewTagEvent.DEVTOOLS_OPEN_URL,
-        listener: (event: DevtoolsOpenUrlEvent) -> Unit,
-        useCapture: Boolean = definedExternally,
-    ): Unit /* this */
 
     /**
      * Emitted when DevTools is opened.
      */
-    fun addEventListener(
-        event: WebviewTagEvent.DEVTOOLS_OPENED,
-        listener: (event: DOMEvent) -> Unit,
-        useCapture: Boolean = definedExternally,
-    ): Unit /* this */
 
     /**
      * Emitted when DevTools is closed.
      */
-    fun addEventListener(
-        event: WebviewTagEvent.DEVTOOLS_CLOSED,
-        listener: (event: DOMEvent) -> Unit,
-        useCapture: Boolean = definedExternally,
-    ): Unit /* this */
 
     /**
      * Emitted when DevTools is focused / opened.
      */
-    fun addEventListener(
-        event: WebviewTagEvent.DEVTOOLS_FOCUSED,
-        listener: (event: DOMEvent) -> Unit,
-        useCapture: Boolean = definedExternally,
-    ): Unit /* this */
 
     /**
      * Emitted when there is a new context menu that needs to be handled.
      */
-    fun addEventListener(
-        event: WebviewTagEvent.CONTEXT_MENU,
-        listener: (event: ContextMenuEvent) -> Unit,
-        useCapture: Boolean = definedExternally,
-    ): Unit /* this */
-
-
-    fun removeEventListener(
-        event: WebviewTagEvent.LOAD_COMMIT,
-        listener: (event: LoadCommitEvent) -> Unit,
-    ): Unit /* this */
-
-    fun removeEventListener(
-        event: WebviewTagEvent.DID_FINISH_LOAD,
-        listener: (event: DOMEvent) -> Unit,
-    ): Unit /* this */
-
-    fun removeEventListener(
-        event: WebviewTagEvent.DID_FAIL_LOAD,
-        listener: (event: DidFailLoadEvent) -> Unit,
-    ): Unit /* this */
-
-    fun removeEventListener(
-        event: WebviewTagEvent.DID_FRAME_FINISH_LOAD,
-        listener: (event: DidFrameFinishLoadEvent) -> Unit,
-    ): Unit /* this */
-
-    fun removeEventListener(
-        event: WebviewTagEvent.DID_START_LOADING,
-        listener: (event: DOMEvent) -> Unit,
-    ): Unit /* this */
-
-    fun removeEventListener(
-        event: WebviewTagEvent.DID_STOP_LOADING,
-        listener: (event: DOMEvent) -> Unit,
-    ): Unit /* this */
-
-    fun removeEventListener(event: WebviewTagEvent.DID_ATTACH, listener: (event: DOMEvent) -> Unit): Unit /* this */
-    fun removeEventListener(event: WebviewTagEvent.DOM_READY, listener: (event: DOMEvent) -> Unit): Unit /* this */
-    fun removeEventListener(
-        event: WebviewTagEvent.PAGE_TITLE_UPDATED,
-        listener: (event: PageTitleUpdatedEvent) -> Unit,
-    ): Unit /* this */
-
-    fun removeEventListener(
-        event: WebviewTagEvent.PAGE_FAVICON_UPDATED,
-        listener: (event: PageFaviconUpdatedEvent) -> Unit,
-    ): Unit /* this */
-
-    fun removeEventListener(
-        event: WebviewTagEvent.ENTER_HTML_FULL_SCREEN,
-        listener: (event: DOMEvent) -> Unit,
-    ): Unit /* this */
-
-    fun removeEventListener(
-        event: WebviewTagEvent.LEAVE_HTML_FULL_SCREEN,
-        listener: (event: DOMEvent) -> Unit,
-    ): Unit /* this */
-
-    fun removeEventListener(
-        event: WebviewTagEvent.CONSOLE_MESSAGE,
-        listener: (event: ConsoleMessageEvent) -> Unit,
-    ): Unit /* this */
-
-    fun removeEventListener(
-        event: WebviewTagEvent.FOUND_IN_PAGE,
-        listener: (event: FoundInPageEvent) -> Unit,
-    ): Unit /* this */
-
-    fun removeEventListener(
-        event: WebviewTagEvent.WILL_NAVIGATE,
-        listener: (event: WillNavigateEvent) -> Unit,
-    ): Unit /* this */
-
-    fun removeEventListener(
-        event: WebviewTagEvent.WILL_FRAME_NAVIGATE,
-        listener: (event: WillFrameNavigateEvent) -> Unit,
-    ): Unit /* this */
-
-    fun removeEventListener(
-        event: WebviewTagEvent.DID_START_NAVIGATION,
-        listener: (event: DidStartNavigationEvent) -> Unit,
-    ): Unit /* this */
-
-    fun removeEventListener(
-        event: WebviewTagEvent.DID_REDIRECT_NAVIGATION,
-        listener: (event: DidRedirectNavigationEvent) -> Unit,
-    ): Unit /* this */
-
-    fun removeEventListener(
-        event: WebviewTagEvent.DID_NAVIGATE,
-        listener: (event: DidNavigateEvent) -> Unit,
-    ): Unit /* this */
-
-    fun removeEventListener(
-        event: WebviewTagEvent.DID_FRAME_NAVIGATE,
-        listener: (event: DidFrameNavigateEvent) -> Unit,
-    ): Unit /* this */
-
-    fun removeEventListener(
-        event: WebviewTagEvent.DID_NAVIGATE_IN_PAGE,
-        listener: (event: DidNavigateInPageEvent) -> Unit,
-    ): Unit /* this */
-
-    fun removeEventListener(event: WebviewTagEvent.CLOSE, listener: (event: DOMEvent) -> Unit): Unit /* this */
-    fun removeEventListener(
-        event: WebviewTagEvent.IPC_MESSAGE,
-        listener: (event: IpcMessageEvent) -> Unit,
-    ): Unit /* this */
-
-    fun removeEventListener(
-        event: WebviewTagEvent.RENDER_PROCESS_GONE,
-        listener: (event: RenderProcessGoneEvent) -> Unit,
-    ): Unit /* this */
-
-    fun removeEventListener(
-        event: WebviewTagEvent.PLUGIN_CRASHED,
-        listener: (event: PluginCrashedEvent) -> Unit,
-    ): Unit /* this */
-
-    fun removeEventListener(event: WebviewTagEvent.DESTROYED, listener: (event: DOMEvent) -> Unit): Unit /* this */
-    fun removeEventListener(
-        event: WebviewTagEvent.MEDIA_STARTED_PLAYING,
-        listener: (event: DOMEvent) -> Unit,
-    ): Unit /* this */
-
-    fun removeEventListener(event: WebviewTagEvent.MEDIA_PAUSED, listener: (event: DOMEvent) -> Unit): Unit /* this */
-    fun removeEventListener(
-        event: WebviewTagEvent.DID_CHANGE_THEME_COLOR,
-        listener: (event: DidChangeThemeColorEvent) -> Unit,
-    ): Unit /* this */
-
-    fun removeEventListener(
-        event: WebviewTagEvent.UPDATE_TARGET_URL,
-        listener: (event: UpdateTargetUrlEvent) -> Unit,
-    ): Unit /* this */
-
-    fun removeEventListener(
-        event: WebviewTagEvent.DEVTOOLS_OPEN_URL,
-        listener: (event: DevtoolsOpenUrlEvent) -> Unit,
-    ): Unit /* this */
-
-    fun removeEventListener(
-        event: WebviewTagEvent.DEVTOOLS_OPENED,
-        listener: (event: DOMEvent) -> Unit,
-    ): Unit /* this */
-
-    fun removeEventListener(
-        event: WebviewTagEvent.DEVTOOLS_CLOSED,
-        listener: (event: DOMEvent) -> Unit,
-    ): Unit /* this */
-
-    fun removeEventListener(
-        event: WebviewTagEvent.DEVTOOLS_FOCUSED,
-        listener: (event: DOMEvent) -> Unit,
-    ): Unit /* this */
-
-    fun removeEventListener(
-        event: WebviewTagEvent.CONTEXT_MENU,
-        listener: (event: ContextMenuEvent) -> Unit,
-    ): Unit /* this */
 
 
     /**

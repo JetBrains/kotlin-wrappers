@@ -11,5 +11,8 @@ sealed external interface CookiesEvent {
     companion object {
         @seskar.js.JsValue("changed")
         val CHANGED: CHANGED
+
+        @seskar.js.JsValue("changed")
+        fun changed(): node.events.EventType<Cookies, js.array.JsTuple4<Event<*>, Cookie, (CookiesAddListenerListenerCause), Boolean>>
     }
 }

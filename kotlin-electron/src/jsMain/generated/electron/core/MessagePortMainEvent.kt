@@ -15,5 +15,11 @@ sealed external interface MessagePortMainEvent {
 
         @seskar.js.JsValue("message")
         val MESSAGE: MESSAGE
+
+        @seskar.js.JsValue("close")
+        fun close(): node.events.EventType<MessagePortMain, js.array.JsTuple>
+
+        @seskar.js.JsValue("message")
+        fun message(): node.events.EventType<MessagePortMain, js.array.JsTuple1<MessageEvent>>
     }
 }

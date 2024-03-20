@@ -2,6 +2,8 @@
 
 package electron.core
 
+import node.buffer.Buffer
+
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
@@ -23,5 +25,17 @@ sealed external interface IncomingMessageEvent {
 
         @seskar.js.JsValue("error")
         val ERROR: ERROR
+
+        @seskar.js.JsValue("aborted")
+        fun aborted(): node.events.EventType<IncomingMessage, js.array.JsTuple>
+
+        @seskar.js.JsValue("data")
+        fun data(): node.events.EventType<IncomingMessage, js.array.JsTuple1<Buffer>>
+
+        @seskar.js.JsValue("end")
+        fun end(): node.events.EventType<IncomingMessage, js.array.JsTuple>
+
+        @seskar.js.JsValue("error")
+        fun error(): node.events.EventType<IncomingMessage, js.array.JsTuple>
     }
 }

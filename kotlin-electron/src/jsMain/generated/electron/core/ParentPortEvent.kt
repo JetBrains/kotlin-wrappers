@@ -11,5 +11,8 @@ sealed external interface ParentPortEvent {
     companion object {
         @seskar.js.JsValue("message")
         val MESSAGE: MESSAGE
+
+        @seskar.js.JsValue("message")
+        fun message(): node.events.EventType<ParentPort, js.array.JsTuple1<MessageEvent>>
     }
 }

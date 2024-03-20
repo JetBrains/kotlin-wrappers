@@ -28,6 +28,9 @@
         "AutoUpdater.kt": [
             "kotlin.js.Date"
         ],
+        "AutoUpdaterEvent.kt": [
+            "kotlin.js.Date"
+        ],
         "BrowserWindow.kt": [
             "kotlin.js.Promise",
             "node.buffer.Buffer",
@@ -75,6 +78,9 @@
             "node.buffer.Buffer",
             "node.events.EventEmitter as NodeEventEmitter"
         ],
+        "IncomingMessageEvent.kt": [
+            "node.buffer.Buffer"
+        ],
         "InAppPurchase.kt": [
             "kotlin.js.Promise"
         ],
@@ -121,6 +127,9 @@
         ],
         "Notification.kt": [
             "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "ProcessEvent.kt": [
+            "node.process.Process"
         ],
         "PushNotifications.kt": [
             "kotlin.js.Promise"

@@ -2,6 +2,8 @@
 
 package electron.core
 
+import node.process.Process
+
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
@@ -11,5 +13,8 @@ sealed external interface ProcessEvent {
     companion object {
         @seskar.js.JsValue("loaded")
         val LOADED: LOADED
+
+        @seskar.js.JsValue("loaded")
+        fun loaded(): node.events.EventType<Process, js.array.JsTuple>
     }
 }

@@ -11,5 +11,8 @@ sealed external interface WebFrameMainEvent {
     companion object {
         @seskar.js.JsValue("dom-ready")
         val DOM_READY: DOM_READY
+
+        @seskar.js.JsValue("dom-ready")
+        fun domReady(): node.events.EventType<WebFrameMain, js.array.JsTuple>
     }
 }

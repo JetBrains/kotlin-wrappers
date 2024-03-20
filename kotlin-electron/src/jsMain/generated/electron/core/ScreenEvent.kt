@@ -19,5 +19,14 @@ sealed external interface ScreenEvent {
 
         @seskar.js.JsValue("display-removed")
         val DISPLAY_REMOVED: DISPLAY_REMOVED
+
+        @seskar.js.JsValue("display-added")
+        fun displayAdded(): node.events.EventType<Screen, js.array.JsTuple2<Event<*>, Display>>
+
+        @seskar.js.JsValue("display-metrics-changed")
+        fun displayMetricsChanged(): node.events.EventType<Screen, js.array.JsTuple3<Event<*>, Display, js.array.ReadonlyArray<String>>>
+
+        @seskar.js.JsValue("display-removed")
+        fun displayRemoved(): node.events.EventType<Screen, js.array.JsTuple2<Event<*>, Display>>
     }
 }

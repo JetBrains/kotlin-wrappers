@@ -19,5 +19,14 @@ sealed external interface UtilityProcessEvent {
 
         @seskar.js.JsValue("spawn")
         val SPAWN: SPAWN
+
+        @seskar.js.JsValue("exit")
+        fun exit(): node.events.EventType<UtilityProcess, js.array.JsTuple1<Double>>
+
+        @seskar.js.JsValue("message")
+        fun message(): node.events.EventType<UtilityProcess, js.array.JsTuple1<Any?>>
+
+        @seskar.js.JsValue("spawn")
+        fun spawn(): node.events.EventType<UtilityProcess, js.array.JsTuple>
     }
 }

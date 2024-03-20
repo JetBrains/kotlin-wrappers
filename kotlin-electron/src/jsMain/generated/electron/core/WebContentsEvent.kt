@@ -239,5 +239,179 @@ sealed external interface WebContentsEvent {
 
         @seskar.js.JsValue("zoom-changed")
         val ZOOM_CHANGED: ZOOM_CHANGED
+
+        @seskar.js.JsValue("audio-state-changed")
+        fun audioStateChanged(): node.events.EventType<WebContents, js.array.JsTuple1<Event<WebContentsAudioStateChangedEventParams>>>
+
+        @seskar.js.JsValue("before-input-event")
+        fun beforeInputEvent(): node.events.EventType<WebContents, js.array.JsTuple2<Event<*>, Input>>
+
+        @seskar.js.JsValue("blur")
+        fun blur(): node.events.EventType<WebContents, js.array.JsTuple>
+
+        @seskar.js.JsValue("certificate-error")
+        fun certificateError(): node.events.EventType<WebContents, js.array.JsTuple6<Event<*>, String, String, Certificate, (isTrusted: Boolean) -> Unit, Boolean>>
+
+        @seskar.js.JsValue("console-message")
+        fun consoleMessage(): node.events.EventType<WebContents, js.array.JsTuple5<Event<*>, Double, String, Double, String>>
+
+        @seskar.js.JsValue("content-bounds-updated")
+        fun contentBoundsUpdated(): node.events.EventType<WebContents, js.array.JsTuple2<Event<*>, Rectangle>>
+
+        @seskar.js.JsValue("context-menu")
+        fun contextMenu(): node.events.EventType<WebContents, js.array.JsTuple2<Event<*>, ContextMenuParams>>
+
+        @seskar.js.JsValue("cursor-changed")
+        fun cursorChanged(): node.events.EventType<WebContents, js.array.JsTuple6<Event<*>, String, NativeImage, Double, Size, Point>>
+
+        @seskar.js.JsValue("destroyed")
+        fun destroyed(): node.events.EventType<WebContents, js.array.JsTuple>
+
+        @seskar.js.JsValue("devtools-closed")
+        fun devtoolsClosed(): node.events.EventType<WebContents, js.array.JsTuple>
+
+        @seskar.js.JsValue("devtools-focused")
+        fun devtoolsFocused(): node.events.EventType<WebContents, js.array.JsTuple>
+
+        @seskar.js.JsValue("devtools-open-url")
+        fun devtoolsOpenUrl(): node.events.EventType<WebContents, js.array.JsTuple2<Event<*>, String>>
+
+        @seskar.js.JsValue("devtools-opened")
+        fun devtoolsOpened(): node.events.EventType<WebContents, js.array.JsTuple>
+
+        @seskar.js.JsValue("devtools-reload-page")
+        fun devtoolsReloadPage(): node.events.EventType<WebContents, js.array.JsTuple>
+
+        @seskar.js.JsValue("did-attach-webview")
+        fun didAttachWebview(): node.events.EventType<WebContents, js.array.JsTuple2<Event<*>, WebContents>>
+
+        @seskar.js.JsValue("did-change-theme-color")
+        fun didChangeThemeColor(): node.events.EventType<WebContents, js.array.JsTuple2<Event<*>, String?>>
+
+        @seskar.js.JsValue("did-create-window")
+        fun didCreateWindow(): node.events.EventType<WebContents, js.array.JsTuple2<BrowserWindow, DidCreateWindowDetails>>
+
+        @seskar.js.JsValue("did-fail-load")
+        fun didFailLoad(): node.events.EventType<WebContents, js.array.JsTuple7<Event<*>, Double, String, String, Boolean, Double, Double>>
+
+        @seskar.js.JsValue("did-fail-provisional-load")
+        fun didFailProvisionalLoad(): node.events.EventType<WebContents, js.array.JsTuple7<Event<*>, Double, String, String, Boolean, Double, Double>>
+
+        @seskar.js.JsValue("did-finish-load")
+        fun didFinishLoad(): node.events.EventType<WebContents, js.array.JsTuple>
+
+        @seskar.js.JsValue("did-frame-finish-load")
+        fun didFrameFinishLoad(): node.events.EventType<WebContents, js.array.JsTuple4<Event<*>, Boolean, Double, Double>>
+
+        @seskar.js.JsValue("did-frame-navigate")
+        fun didFrameNavigate(): node.events.EventType<WebContents, js.array.JsTuple7<Event<*>, String, Double, String, Boolean, Double, Double>>
+
+        @seskar.js.JsValue("did-navigate")
+        fun didNavigate(): node.events.EventType<WebContents, js.array.JsTuple4<Event<*>, String, Double, String>>
+
+        @seskar.js.JsValue("did-navigate-in-page")
+        fun didNavigateInPage(): node.events.EventType<WebContents, js.array.JsTuple5<Event<*>, String, Boolean, Double, Double>>
+
+        @seskar.js.JsValue("did-redirect-navigation")
+        fun didRedirectNavigation(): node.events.EventType<WebContents, js.array.JsTuple6<Event<WebContentsDidRedirectNavigationEventParams>, String, Boolean, Boolean, Double, Double>>
+
+        @seskar.js.JsValue("did-start-loading")
+        fun didStartLoading(): node.events.EventType<WebContents, js.array.JsTuple>
+
+        @seskar.js.JsValue("did-start-navigation")
+        fun didStartNavigation(): node.events.EventType<WebContents, js.array.JsTuple6<Event<WebContentsDidStartNavigationEventParams>, String, Boolean, Boolean, Double, Double>>
+
+        @seskar.js.JsValue("did-stop-loading")
+        fun didStopLoading(): node.events.EventType<WebContents, js.array.JsTuple>
+
+        @seskar.js.JsValue("dom-ready")
+        fun domReady(): node.events.EventType<WebContents, js.array.JsTuple>
+
+        @seskar.js.JsValue("enter-html-full-screen")
+        fun enterHtmlFullScreen(): node.events.EventType<WebContents, js.array.JsTuple>
+
+        @seskar.js.JsValue("focus")
+        fun focus(): node.events.EventType<WebContents, js.array.JsTuple>
+
+        @seskar.js.JsValue("found-in-page")
+        fun foundInPage(): node.events.EventType<WebContents, js.array.JsTuple2<Event<*>, Result>>
+
+        @seskar.js.JsValue("frame-created")
+        fun frameCreated(): node.events.EventType<WebContents, js.array.JsTuple2<Event<*>, FrameCreatedDetails>>
+
+        @seskar.js.JsValue("input-event")
+        fun inputEvent(): node.events.EventType<WebContents, js.array.JsTuple2<Event<*>, InputEvent>>
+
+        @seskar.js.JsValue("ipc-message")
+        fun ipcMessage(): node.events.EventType<WebContents, js.array.JsTuple3<IpcMainEvent, String, js.array.ReadonlyArray<Any?>>>
+
+        @seskar.js.JsValue("ipc-message-sync")
+        fun ipcMessageSync(): node.events.EventType<WebContents, js.array.JsTuple3<IpcMainEvent, String, js.array.ReadonlyArray<Any?>>>
+
+        @seskar.js.JsValue("leave-html-full-screen")
+        fun leaveHtmlFullScreen(): node.events.EventType<WebContents, js.array.JsTuple>
+
+        @seskar.js.JsValue("login")
+        fun login(): node.events.EventType<WebContents, js.array.JsTuple4<Event<*>, AuthenticationResponseDetails, AuthInfo, (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit>>
+
+        @seskar.js.JsValue("media-paused")
+        fun mediaPaused(): node.events.EventType<WebContents, js.array.JsTuple>
+
+        @seskar.js.JsValue("media-started-playing")
+        fun mediaStartedPlaying(): node.events.EventType<WebContents, js.array.JsTuple>
+
+        @seskar.js.JsValue("page-favicon-updated")
+        fun pageFaviconUpdated(): node.events.EventType<WebContents, js.array.JsTuple2<Event<*>, js.array.ReadonlyArray<String>>>
+
+        @seskar.js.JsValue("page-title-updated")
+        fun pageTitleUpdated(): node.events.EventType<WebContents, js.array.JsTuple3<Event<*>, String, Boolean>>
+
+        @seskar.js.JsValue("paint")
+        fun paint(): node.events.EventType<WebContents, js.array.JsTuple3<Event<*>, Rectangle, NativeImage>>
+
+        @seskar.js.JsValue("plugin-crashed")
+        fun pluginCrashed(): node.events.EventType<WebContents, js.array.JsTuple3<Event<*>, String, String>>
+
+        @seskar.js.JsValue("preferred-size-changed")
+        fun preferredSizeChanged(): node.events.EventType<WebContents, js.array.JsTuple2<Event<*>, Size>>
+
+        @seskar.js.JsValue("preload-error")
+        fun preloadError(): node.events.EventType<WebContents, js.array.JsTuple3<Event<*>, String, Throwable /* JsError */>>
+
+        @seskar.js.JsValue("render-process-gone")
+        fun renderProcessGone(): node.events.EventType<WebContents, js.array.JsTuple2<Event<*>, RenderProcessGoneDetails>>
+
+        @seskar.js.JsValue("responsive")
+        fun responsive(): node.events.EventType<WebContents, js.array.JsTuple>
+
+        @seskar.js.JsValue("select-bluetooth-device")
+        fun selectBluetoothDevice(): node.events.EventType<WebContents, js.array.JsTuple3<Event<*>, js.array.ReadonlyArray<BluetoothDevice>, (deviceId: String) -> Unit>>
+
+        @seskar.js.JsValue("select-client-certificate")
+        fun selectClientCertificate(): node.events.EventType<WebContents, js.array.JsTuple4<Event<*>, String, js.array.ReadonlyArray<Certificate>, (certificate: Certificate) -> Unit>>
+
+        @seskar.js.JsValue("unresponsive")
+        fun unresponsive(): node.events.EventType<WebContents, js.array.JsTuple>
+
+        @seskar.js.JsValue("update-target-url")
+        fun updateTargetUrl(): node.events.EventType<WebContents, js.array.JsTuple2<Event<*>, String>>
+
+        @seskar.js.JsValue("will-attach-webview")
+        fun willAttachWebview(): node.events.EventType<WebContents, js.array.JsTuple3<Event<*>, WebPreferences, js.objects.ReadonlyRecord<String, String>>>
+
+        @seskar.js.JsValue("will-frame-navigate")
+        fun willFrameNavigate(): node.events.EventType<WebContents, js.array.JsTuple1<Event<WebContentsWillFrameNavigateEventParams>>>
+
+        @seskar.js.JsValue("will-navigate")
+        fun willNavigate(): node.events.EventType<WebContents, js.array.JsTuple6<Event<WebContentsWillNavigateEventParams>, String, Boolean, Boolean, Double, Double>>
+
+        @seskar.js.JsValue("will-prevent-unload")
+        fun willPreventUnload(): node.events.EventType<WebContents, js.array.JsTuple1<Event<*>>>
+
+        @seskar.js.JsValue("will-redirect")
+        fun willRedirect(): node.events.EventType<WebContents, js.array.JsTuple6<Event<WebContentsWillRedirectEventParams>, String, Boolean, Boolean, Double, Double>>
+
+        @seskar.js.JsValue("zoom-changed")
+        fun zoomChanged(): node.events.EventType<WebContents, js.array.JsTuple2<Event<*>, (WebContentsAddListenerListenerZoomDirection)>>
     }
 }

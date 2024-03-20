@@ -79,5 +79,59 @@ sealed external interface TrayEvent {
 
         @seskar.js.JsValue("right-click")
         val RIGHT_CLICK: RIGHT_CLICK
+
+        @seskar.js.JsValue("balloon-click")
+        fun balloonClick(): node.events.EventType<Tray, js.array.JsTuple>
+
+        @seskar.js.JsValue("balloon-closed")
+        fun balloonClosed(): node.events.EventType<Tray, js.array.JsTuple>
+
+        @seskar.js.JsValue("balloon-show")
+        fun balloonShow(): node.events.EventType<Tray, js.array.JsTuple>
+
+        @seskar.js.JsValue("click")
+        fun click(): node.events.EventType<Tray, js.array.JsTuple3<KeyboardEvent, Rectangle, Point>>
+
+        @seskar.js.JsValue("double-click")
+        fun doubleClick(): node.events.EventType<Tray, js.array.JsTuple2<KeyboardEvent, Rectangle>>
+
+        @seskar.js.JsValue("drag-end")
+        fun dragEnd(): node.events.EventType<Tray, js.array.JsTuple>
+
+        @seskar.js.JsValue("drag-enter")
+        fun dragEnter(): node.events.EventType<Tray, js.array.JsTuple>
+
+        @seskar.js.JsValue("drag-leave")
+        fun dragLeave(): node.events.EventType<Tray, js.array.JsTuple>
+
+        @seskar.js.JsValue("drop")
+        fun drop(): node.events.EventType<Tray, js.array.JsTuple>
+
+        @seskar.js.JsValue("drop-files")
+        fun dropFiles(): node.events.EventType<Tray, js.array.JsTuple2<Event<*>, js.array.ReadonlyArray<String>>>
+
+        @seskar.js.JsValue("drop-text")
+        fun dropText(): node.events.EventType<Tray, js.array.JsTuple2<Event<*>, String>>
+
+        @seskar.js.JsValue("middle-click")
+        fun middleClick(): node.events.EventType<Tray, js.array.JsTuple2<KeyboardEvent, Rectangle>>
+
+        @seskar.js.JsValue("mouse-down")
+        fun mouseDown(): node.events.EventType<Tray, js.array.JsTuple2<KeyboardEvent, Point>>
+
+        @seskar.js.JsValue("mouse-enter")
+        fun mouseEnter(): node.events.EventType<Tray, js.array.JsTuple2<KeyboardEvent, Point>>
+
+        @seskar.js.JsValue("mouse-leave")
+        fun mouseLeave(): node.events.EventType<Tray, js.array.JsTuple2<KeyboardEvent, Point>>
+
+        @seskar.js.JsValue("mouse-move")
+        fun mouseMove(): node.events.EventType<Tray, js.array.JsTuple2<KeyboardEvent, Point>>
+
+        @seskar.js.JsValue("mouse-up")
+        fun mouseUp(): node.events.EventType<Tray, js.array.JsTuple2<KeyboardEvent, Point>>
+
+        @seskar.js.JsValue("right-click")
+        fun rightClick(): node.events.EventType<Tray, js.array.JsTuple2<KeyboardEvent, Rectangle>>
     }
 }

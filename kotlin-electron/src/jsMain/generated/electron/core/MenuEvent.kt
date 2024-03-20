@@ -15,5 +15,11 @@ sealed external interface MenuEvent {
 
         @seskar.js.JsValue("menu-will-show")
         val MENU_WILL_SHOW: MENU_WILL_SHOW
+
+        @seskar.js.JsValue("menu-will-close")
+        fun menuWillClose(): node.events.EventType<Menu, js.array.JsTuple1<Event<*>>>
+
+        @seskar.js.JsValue("menu-will-show")
+        fun menuWillShow(): node.events.EventType<Menu, js.array.JsTuple1<Event<*>>>
     }
 }

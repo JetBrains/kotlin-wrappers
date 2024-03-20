@@ -11,5 +11,8 @@ sealed external interface NativeThemeEvent {
     companion object {
         @seskar.js.JsValue("updated")
         val UPDATED: UPDATED
+
+        @seskar.js.JsValue("updated")
+        fun updated(): node.events.EventType<NativeTheme, js.array.JsTuple>
     }
 }

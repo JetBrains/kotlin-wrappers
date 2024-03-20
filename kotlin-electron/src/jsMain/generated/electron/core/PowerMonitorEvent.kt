@@ -51,5 +51,38 @@ sealed external interface PowerMonitorEvent {
 
         @seskar.js.JsValue("user-did-resign-active")
         val USER_DID_RESIGN_ACTIVE: USER_DID_RESIGN_ACTIVE
+
+        @seskar.js.JsValue("lock-screen")
+        fun lockScreen(): node.events.EventType<PowerMonitor, js.array.JsTuple>
+
+        @seskar.js.JsValue("on-ac")
+        fun onAc(): node.events.EventType<PowerMonitor, js.array.JsTuple>
+
+        @seskar.js.JsValue("on-battery")
+        fun onBattery(): node.events.EventType<PowerMonitor, js.array.JsTuple>
+
+        @seskar.js.JsValue("resume")
+        fun resume(): node.events.EventType<PowerMonitor, js.array.JsTuple>
+
+        @seskar.js.JsValue("shutdown")
+        fun shutdown(): node.events.EventType<PowerMonitor, js.array.JsTuple>
+
+        @seskar.js.JsValue("speed-limit-change")
+        fun speedLimitChange(): node.events.EventType<PowerMonitor, js.array.JsTuple>
+
+        @seskar.js.JsValue("suspend")
+        fun suspend(): node.events.EventType<PowerMonitor, js.array.JsTuple>
+
+        @seskar.js.JsValue("thermal-state-change")
+        fun thermalStateChange(): node.events.EventType<PowerMonitor, js.array.JsTuple>
+
+        @seskar.js.JsValue("unlock-screen")
+        fun unlockScreen(): node.events.EventType<PowerMonitor, js.array.JsTuple>
+
+        @seskar.js.JsValue("user-did-become-active")
+        fun userDidBecomeActive(): node.events.EventType<PowerMonitor, js.array.JsTuple>
+
+        @seskar.js.JsValue("user-did-resign-active")
+        fun userDidResignActive(): node.events.EventType<PowerMonitor, js.array.JsTuple>
     }
 }

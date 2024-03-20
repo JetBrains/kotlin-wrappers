@@ -11,5 +11,8 @@ sealed external interface PushNotificationsEvent {
     companion object {
         @seskar.js.JsValue("received-apns-notification")
         val RECEIVED_APNS_NOTIFICATION: RECEIVED_APNS_NOTIFICATION
+
+        @seskar.js.JsValue("received-apns-notification")
+        fun receivedApnsNotification(): node.events.EventType<PushNotifications, js.array.JsTuple2<Event<*>, js.objects.ReadonlyRecord<String, Any?>>>
     }
 }

@@ -15,5 +15,11 @@ sealed external interface DownloadItemEvent {
 
         @seskar.js.JsValue("updated")
         val UPDATED: UPDATED
+
+        @seskar.js.JsValue("done")
+        fun done(): node.events.EventType<DownloadItem, js.array.JsTuple2<Event<*>, (DownloadItemDoneListenerState)>>
+
+        @seskar.js.JsValue("updated")
+        fun updated(): node.events.EventType<DownloadItem, js.array.JsTuple2<Event<*>, (DownloadItemUpdatedListenerState)>>
     }
 }

@@ -11,5 +11,8 @@ sealed external interface InAppPurchaseEvent {
     companion object {
         @seskar.js.JsValue("transactions-updated")
         val TRANSACTIONS_UPDATED: TRANSACTIONS_UPDATED
+
+        @seskar.js.JsValue("transactions-updated")
+        fun transactionsUpdated(): node.events.EventType<InAppPurchase, js.array.JsTuple>
     }
 }

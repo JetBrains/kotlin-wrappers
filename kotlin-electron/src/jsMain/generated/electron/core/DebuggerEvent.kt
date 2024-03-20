@@ -15,5 +15,11 @@ sealed external interface DebuggerEvent {
 
         @seskar.js.JsValue("message")
         val MESSAGE: MESSAGE
+
+        @seskar.js.JsValue("detach")
+        fun detach(): node.events.EventType<Debugger, js.array.JsTuple2<Event<*>, String>>
+
+        @seskar.js.JsValue("message")
+        fun message(): node.events.EventType<Debugger, js.array.JsTuple4<Event<*>, String, Any?, String>>
     }
 }

@@ -15,5 +15,11 @@ sealed external interface SystemPreferencesEvent {
 
         @seskar.js.JsValue("color-changed")
         val COLOR_CHANGED: COLOR_CHANGED
+
+        @seskar.js.JsValue("accent-color-changed")
+        fun accentColorChanged(): node.events.EventType<SystemPreferences, js.array.JsTuple2<Event<*>, String>>
+
+        @seskar.js.JsValue("color-changed")
+        fun colorChanged(): node.events.EventType<SystemPreferences, js.array.JsTuple1<Event<*>>>
     }
 }

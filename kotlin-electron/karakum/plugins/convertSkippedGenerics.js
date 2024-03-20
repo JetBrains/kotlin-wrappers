@@ -25,7 +25,7 @@ export default function (node, context, render) {
         && !node.typeArguments
     ) {
         if (ts.isTypeAliasDeclaration(node.parent)) {
-            return `${render(node.typeName)}<EventTarget?>`
+            return `${render(node.typeName)}`
         }
 
         return `${render(node.typeName)}<*>`

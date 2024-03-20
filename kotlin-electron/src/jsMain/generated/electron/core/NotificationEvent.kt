@@ -31,5 +31,23 @@ sealed external interface NotificationEvent {
 
         @seskar.js.JsValue("show")
         val SHOW: SHOW
+
+        @seskar.js.JsValue("action")
+        fun action(): node.events.EventType<Notification, js.array.JsTuple2<Event<*>, Double>>
+
+        @seskar.js.JsValue("click")
+        fun click(): node.events.EventType<Notification, js.array.JsTuple1<Event<*>>>
+
+        @seskar.js.JsValue("close")
+        fun close(): node.events.EventType<Notification, js.array.JsTuple1<Event<*>>>
+
+        @seskar.js.JsValue("failed")
+        fun failed(): node.events.EventType<Notification, js.array.JsTuple2<Event<*>, String>>
+
+        @seskar.js.JsValue("reply")
+        fun reply(): node.events.EventType<Notification, js.array.JsTuple2<Event<*>, String>>
+
+        @seskar.js.JsValue("show")
+        fun show(): node.events.EventType<Notification, js.array.JsTuple1<Event<*>>>
     }
 }

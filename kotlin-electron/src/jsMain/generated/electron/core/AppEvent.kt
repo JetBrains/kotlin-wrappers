@@ -127,5 +127,95 @@ sealed external interface AppEvent {
 
         @seskar.js.JsValue("window-all-closed")
         val WINDOW_ALL_CLOSED: WINDOW_ALL_CLOSED
+
+        @seskar.js.JsValue("accessibility-support-changed")
+        fun accessibilitySupportChanged(): node.events.EventType<App, js.array.JsTuple2<Event<*>, Boolean>>
+
+        @seskar.js.JsValue("activate")
+        fun activate(): node.events.EventType<App, js.array.JsTuple2<Event<*>, Boolean>>
+
+        @seskar.js.JsValue("activity-was-continued")
+        fun activityWasContinued(): node.events.EventType<App, js.array.JsTuple3<Event<*>, String, Any?>>
+
+        @seskar.js.JsValue("before-quit")
+        fun beforeQuit(): node.events.EventType<App, js.array.JsTuple1<Event<*>>>
+
+        @seskar.js.JsValue("browser-window-blur")
+        fun browserWindowBlur(): node.events.EventType<App, js.array.JsTuple2<Event<*>, BrowserWindow>>
+
+        @seskar.js.JsValue("browser-window-created")
+        fun browserWindowCreated(): node.events.EventType<App, js.array.JsTuple2<Event<*>, BrowserWindow>>
+
+        @seskar.js.JsValue("browser-window-focus")
+        fun browserWindowFocus(): node.events.EventType<App, js.array.JsTuple2<Event<*>, BrowserWindow>>
+
+        @seskar.js.JsValue("certificate-error")
+        fun certificateError(): node.events.EventType<App, js.array.JsTuple7<Event<*>, WebContents, String, String, Certificate, (isTrusted: Boolean) -> Unit, Boolean>>
+
+        @seskar.js.JsValue("child-process-gone")
+        fun childProcessGone(): node.events.EventType<App, js.array.JsTuple2<Event<*>, Details>>
+
+        @seskar.js.JsValue("continue-activity")
+        fun continueActivity(): node.events.EventType<App, js.array.JsTuple4<Event<*>, String, Any?, ContinueActivityDetails>>
+
+        @seskar.js.JsValue("continue-activity-error")
+        fun continueActivityError(): node.events.EventType<App, js.array.JsTuple3<Event<*>, String, String>>
+
+        @seskar.js.JsValue("did-become-active")
+        fun didBecomeActive(): node.events.EventType<App, js.array.JsTuple1<Event<*>>>
+
+        @seskar.js.JsValue("did-resign-active")
+        fun didResignActive(): node.events.EventType<App, js.array.JsTuple1<Event<*>>>
+
+        @seskar.js.JsValue("gpu-info-update")
+        fun gpuInfoUpdate(): node.events.EventType<App, js.array.JsTuple>
+
+        @seskar.js.JsValue("login")
+        fun login(): node.events.EventType<App, js.array.JsTuple5<Event<*>, WebContents, AuthenticationResponseDetails, AuthInfo, (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit>>
+
+        @seskar.js.JsValue("new-window-for-tab")
+        fun newWindowForTab(): node.events.EventType<App, js.array.JsTuple1<Event<*>>>
+
+        @seskar.js.JsValue("open-file")
+        fun openFile(): node.events.EventType<App, js.array.JsTuple2<Event<*>, String>>
+
+        @seskar.js.JsValue("open-url")
+        fun openUrl(): node.events.EventType<App, js.array.JsTuple2<Event<*>, String>>
+
+        @seskar.js.JsValue("quit")
+        fun quit(): node.events.EventType<App, js.array.JsTuple2<Event<*>, Double>>
+
+        @seskar.js.JsValue("ready")
+        fun ready(): node.events.EventType<App, js.array.JsTuple2<Event<*>, Any /* (Record<string, any>) | (NotificationResponse) */>>
+
+        @seskar.js.JsValue("render-process-gone")
+        fun renderProcessGone(): node.events.EventType<App, js.array.JsTuple3<Event<*>, WebContents, RenderProcessGoneDetails>>
+
+        @seskar.js.JsValue("second-instance")
+        fun secondInstance(): node.events.EventType<App, js.array.JsTuple4<Event<*>, js.array.ReadonlyArray<String>, String, Any?>>
+
+        @seskar.js.JsValue("select-client-certificate")
+        fun selectClientCertificate(): node.events.EventType<App, js.array.JsTuple5<Event<*>, WebContents, String, js.array.ReadonlyArray<Certificate>, (certificate: Certificate? /* use undefined for default */) -> Unit>>
+
+        @seskar.js.JsValue("session-created")
+        fun sessionCreated(): node.events.EventType<App, js.array.JsTuple1<Session>>
+
+        @seskar.js.JsValue("update-activity-state")
+        fun updateActivityState(): node.events.EventType<App, js.array.JsTuple3<Event<*>, String, Any?>>
+
+        @seskar.js.JsValue("web-contents-created")
+        fun webContentsCreated(): node.events.EventType<App, js.array.JsTuple2<Event<*>, WebContents>>
+
+        @seskar.js.JsValue("will-continue-activity")
+        fun willContinueActivity(): node.events.EventType<App, js.array.JsTuple2<Event<*>, String>>
+
+        @seskar.js.JsValue("will-finish-launching")
+        fun willFinishLaunching(): node.events.EventType<App, js.array.JsTuple>
+
+        @seskar.js.JsValue("will-quit")
+        fun willQuit(): node.events.EventType<App, js.array.JsTuple1<Event<*>>>
+
+        @seskar.js.JsValue("window-all-closed")
+        fun windowAllClosed(): node.events.EventType<App, js.array.JsTuple>
     }
 }

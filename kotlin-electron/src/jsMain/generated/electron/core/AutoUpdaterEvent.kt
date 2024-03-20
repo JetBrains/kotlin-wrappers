@@ -2,6 +2,8 @@
 
 package electron.core
 
+import kotlin.js.Date
+
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
@@ -31,5 +33,23 @@ sealed external interface AutoUpdaterEvent {
 
         @seskar.js.JsValue("update-not-available")
         val UPDATE_NOT_AVAILABLE: UPDATE_NOT_AVAILABLE
+
+        @seskar.js.JsValue("before-quit-for-update")
+        fun beforeQuitForUpdate(): node.events.EventType<AutoUpdater, js.array.JsTuple>
+
+        @seskar.js.JsValue("checking-for-update")
+        fun checkingForUpdate(): node.events.EventType<AutoUpdater, js.array.JsTuple>
+
+        @seskar.js.JsValue("error")
+        fun error(): node.events.EventType<AutoUpdater, js.array.JsTuple1<Throwable /* JsError */>>
+
+        @seskar.js.JsValue("update-available")
+        fun updateAvailable(): node.events.EventType<AutoUpdater, js.array.JsTuple>
+
+        @seskar.js.JsValue("update-downloaded")
+        fun updateDownloaded(): node.events.EventType<AutoUpdater, js.array.JsTuple5<Event<*>, String, String, Date, String>>
+
+        @seskar.js.JsValue("update-not-available")
+        fun updateNotAvailable(): node.events.EventType<AutoUpdater, js.array.JsTuple>
     }
 }
