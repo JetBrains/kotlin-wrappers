@@ -338,7 +338,7 @@ fun <T : EventEmitter> T.${name}(eventName: EventType<T, *>${isDefinedExternally
                         body: `
 ${comment}
 fun <T : EventEmitter, P : JsTuple> T.emit(eventName: EventType<T, P>, payload: P) =
-    emitInternal(eventName, args = payload.unsafeCast<Array<*>>())
+    emitInternal(eventName, args = payload.asArray())
 
 ${comment}
 fun <T : EventEmitter> T.emit(eventName: EventType<T, JsTuple>) =

@@ -289,7 +289,7 @@ fun <T : EventEmitter> T.rawListeners(eventName: EventType<T, *>) =
  */
 
 fun <T : EventEmitter, P : JsTuple> T.emit(eventName: EventType<T, P>, payload: P) =
-    emitInternal(eventName, args = payload.unsafeCast<Array<*>>())
+    emitInternal(eventName, args = payload.asArray())
 
 /**
  * Synchronously calls each of the listeners registered for the event named`eventName`, in the order they were registered, passing the supplied arguments
