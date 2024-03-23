@@ -60,6 +60,7 @@
         "**/buffer/__Blob.kt",
         "**/buffer/Blob.kt",
         "**/buffer/BlobOptions.kt",
+        "**/buffer/BlobOptionsEndings.kt",
         "**/buffer/File.kt",
         "**/buffer/FileOptions.kt",
         "**/buffer/FileOptionsEndings.kt",
