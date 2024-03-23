@@ -11,6 +11,8 @@ package js.array
 sealed external interface JsTuple {
     @JsName("length")
     val size: Int
+
+    inline fun asArray(): ReadonlyArray<Any?> = unsafeCast<ReadonlyArray<Any?>>()
 }
 
 sealed external interface JsTuple1<out A> : JsTuple {
