@@ -40,7 +40,7 @@ external class Dir : AsyncIterable<Dirent> {
      * Asynchronously close the directory's underlying resource handle.
      * Subsequent reads will result in errors.
      *
-     * A promise is returned that will be resolved after the resource has been
+     * A promise is returned that will be fulfilled after the resource has been
      * closed.
      * @since v12.12.0
      */
@@ -57,7 +57,7 @@ external class Dir : AsyncIterable<Dirent> {
     /**
      * Asynchronously read the next directory entry via [`readdir(3)`](http://man7.org/linux/man-pages/man3/readdir.3.html) as an `fs.Dirent`.
      *
-     * A promise is returned that will be resolved with an `fs.Dirent`, or `null`if there are no more directory entries to read.
+     * A promise is returned that will be fulfilled with an `fs.Dirent`, or `null`if there are no more directory entries to read.
      *
      * Directory entries returned by this function are in no particular order as
      * provided by the operating system's underlying directory mechanisms.

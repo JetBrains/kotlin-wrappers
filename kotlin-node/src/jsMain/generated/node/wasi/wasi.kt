@@ -36,7 +36,7 @@ package node.wasi
  * wasi.start(instance);
  * ```
  *
- * To run the above example, create a new WebAssembly text format file named`demo.wat`:
+ * To run the above example, create a new WebAssembly text format file named `demo.wat`:
  *
  * ```text
  * (module
@@ -74,7 +74,7 @@ package node.wasi
  * wat2wasm demo.wat
  * ```
  * @experimental
- * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/wasi.js)
+ * @see [source](https://github.com/nodejs/node/blob/v20.11.1/lib/wasi.js)
  */
 
 

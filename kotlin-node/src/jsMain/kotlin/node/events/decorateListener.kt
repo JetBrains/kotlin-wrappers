@@ -8,6 +8,8 @@ import js.symbol.Symbol
 private val decoratedListenerKey = Symbol("@@decorated-listener")
 
 fun <P : JsTuple> decorateListener(listener: (P) -> Unit): Function<Unit> {
+    if (listener.asDynamic() == null) return undefined.unsafeCast<Function<Unit>>()
+
     var decoratedListener = listener.asDynamic()[decoratedListenerKey]
 
     if (decoratedListener == null) {

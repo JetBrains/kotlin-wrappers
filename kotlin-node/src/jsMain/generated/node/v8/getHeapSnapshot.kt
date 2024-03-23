@@ -29,4 +29,4 @@ import node.stream.Readable
  * @since v11.13.0
  * @return A Readable containing the V8 heap snapshot.
  */
-external fun getHeapSnapshot(): Readable
+external fun getHeapSnapshot(options: HeapSnapshotOptions = definedExternally): Readable

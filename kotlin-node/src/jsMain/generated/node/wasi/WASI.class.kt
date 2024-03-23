@@ -16,10 +16,28 @@ external class WASI {
     constructor (options: WASIOptions = definedExternally)
 
     /**
-     * Attempt to begin execution of `instance` as a WASI command by invoking its`_start()` export. If `instance` does not contain a `_start()` export, or if`instance` contains an `_initialize()`
+     * Return an import object that can be passed to `WebAssembly.instantiate()` if no other WASM imports are needed beyond those provided by WASI.
+     *
+     * If version `unstable` was passed into the constructor it will return:
+     *
+     * ```js
+     * { wasi_unstable: wasi.wasiImport }
+     * ```
+     *
+     * If version `preview1` was passed into the constructor or no version was specified it will return:
+     *
+     * ```js
+     * { wasi_snapshot_preview1: wasi.wasiImport }
+     * ```
+     * @since v19.8.0
+     */
+    fun getImportObject(): Any
+
+    /**
+     * Attempt to begin execution of `instance` as a WASI command by invoking its `_start()` export. If `instance` does not contain a `_start()` export, or if `instance` contains an `_initialize()`
      * export, then an exception is thrown.
      *
-     * `start()` requires that `instance` exports a [`WebAssembly.Memory`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Memory) named`memory`. If
+     * `start()` requires that `instance` exports a [`WebAssembly.Memory`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Memory) named `memory`. If
      * `instance` does not have a `memory` export an exception is thrown.
      *
      * If `start()` is called more than once, an exception is thrown.
@@ -28,9 +46,9 @@ external class WASI {
     fun start(instance: Any): Double// TODO: avoid DOM dependency until WASM moved to own lib.
 
     /**
-     * Attempt to initialize `instance` as a WASI reactor by invoking its`_initialize()` export, if it is present. If `instance` contains a `_start()`export, then an exception is thrown.
+     * Attempt to initialize `instance` as a WASI reactor by invoking its `_initialize()` export, if it is present. If `instance` contains a `_start()` export, then an exception is thrown.
      *
-     * `initialize()` requires that `instance` exports a [`WebAssembly.Memory`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Memory) named`memory`.
+     * `initialize()` requires that `instance` exports a [`WebAssembly.Memory`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Memory) named `memory`.
      * If `instance` does not have a `memory` export an exception is thrown.
      *
      * If `initialize()` is called more than once, an exception is thrown.

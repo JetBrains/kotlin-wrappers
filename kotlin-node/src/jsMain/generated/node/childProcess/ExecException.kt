@@ -11,4 +11,6 @@ sealed external interface ExecException : Throwable /* JsError */ {
     var killed: Boolean?
     var code: Double?
     var signal: node.process.Signals?
+    var stdout: String?
+    var stderr: String?
 }

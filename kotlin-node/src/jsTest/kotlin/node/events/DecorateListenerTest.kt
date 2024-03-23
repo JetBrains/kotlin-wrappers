@@ -1,5 +1,6 @@
 package node.events
 
+import js.array.JsTuple
 import js.array.JsTuple3
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -37,5 +38,14 @@ class DecorateListenerTest {
         assertEquals(1, actualOne)
         assertEquals("two", actualTwo)
         assertEquals(true, actualThree)
+    }
+
+    @Test
+    fun should_pass_through_undefined_value_to_support_optional_parameters() {
+        val listener = undefined.unsafeCast<(JsTuple) -> Unit>()
+
+        val decoratedListener = decorateListener(listener).unsafeCast<(Int, String, Boolean) -> Unit>()
+
+        assertEquals<Any?>(undefined, decoratedListener)
     }
 }

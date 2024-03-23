@@ -11,9 +11,9 @@ import js.promise.Promise
  * the operating system's underlying `getnameinfo` implementation.
  *
  * If `address` is not a valid IP address, a `TypeError` will be thrown.
- * The `port` will be coerced to a number. If it is not a legal port, a `TypeError`will be thrown.
+ * The `port` will be coerced to a number. If it is not a legal port, a `TypeError` will be thrown.
  *
- * On error, the `Promise` is rejected with an `Error` object, where `err.code`is the error code.
+ * On error, the `Promise` is rejected with an [`Error`](https://nodejs.org/docs/latest-v20.x/api/errors.html#class-error) object, where `err.code` is the error code.
  *
  * ```js
  * const dnsPromises = require('node:dns').promises;

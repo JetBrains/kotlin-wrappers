@@ -56,4 +56,7 @@ package node.v8
  * worker thread.
  * @return The filename where the snapshot was saved.
  */
-external fun writeHeapSnapshot(filename: String = definedExternally): String
+external fun writeHeapSnapshot(
+    filename: String = definedExternally,
+    options: HeapSnapshotOptions = definedExternally,
+): String

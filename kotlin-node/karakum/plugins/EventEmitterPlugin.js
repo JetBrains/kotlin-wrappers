@@ -31,13 +31,6 @@ function isEventEmitterInterfaceNode(node) {
     )
 }
 
-function isNodeEventTargetInterfaceNode(node) {
-    return (
-        ts.isInterfaceDeclaration(node)
-        && node.name.text === "_NodeEventTarget"
-    )
-}
-
 function isEventEmitterClassNode(node) {
     return (
         ts.isClassDeclaration(node)
@@ -46,55 +39,87 @@ function isEventEmitterClassNode(node) {
     )
 }
 
+function isEventMethod(node) {
+    return (
+        ts.isMethodSignature(node)
+        && node.parameters.length === 1
+
+        && ts.isIdentifier(node.parameters[0].name)
+        && (
+            node.parameters[0].name.text === "event"
+            || node.parameters[0].name.text === "eventName"
+        )
+    )
+}
+
+function isEventListenerMethod(node) {
+    return (
+        ts.isMethodSignature(node)
+        && node.parameters.length === 2
+
+        && ts.isIdentifier(node.parameters[0].name)
+        && (
+            node.parameters[0].name.text === "event"
+            || node.parameters[0].name.text === "eventName"
+        )
+
+        && ts.isIdentifier(node.parameters[1].name)
+        && node.parameters[1].name.text === "listener"
+    )
+}
+
 export default {
     setup(context) {
         this.eventEmitterInterfaceNode = null
+        this.eventEmitterClassNode = null
     },
 
     traverse(node) {
         if (isEventEmitterInterfaceNode(node)) {
             this.eventEmitterInterfaceNode = node
         }
+        if (isEventEmitterClassNode(node)) {
+            this.eventEmitterClassNode = node
+        }
     },
 
     render(node, context, next) {
+        const sourceFileName = node.getSourceFile()?.fileName ?? "generated.d.ts"
+        if (!sourceFileName.endsWith("events.d.ts")) return null
+
         if (
-            node.kind === ts.SyntaxKind.StringKeyword
-
-            && node.parent
-            && ts.isUnionTypeNode(node.parent)
-
-            && node.parent.parent
-            && ts.isParameter(node.parent.parent)
-
-            && node.parent.parent.parent
-            && ts.isMethodDeclaration(node.parent.parent.parent)
-
-            && node.parent.parent.parent.parent
-            && isEventEmitterClassNode(node.parent.parent.parent.parent)
+            ts.isTypeReferenceNode(node)
+            && ts.isIdentifier(node.typeName)
+            && node.typeName.text === "Key"
         ) {
-            return "LegacyEventType"
+            return "EventType<*, *>"
         }
 
         if (
-            node.kind === ts.SyntaxKind.StringKeyword
-
-            && node.parent
-            && ts.isUnionTypeNode(node.parent)
-
-            && node.parent.parent
-            && ts.isParameter(node.parent.parent)
-
-            && node.parent.parent.parent
-            && ts.isMethodSignature(node.parent.parent.parent)
-
-            && node.parent.parent.parent.parent
+            ts.isTypeReferenceNode(node)
+            && ts.isIdentifier(node.typeName)
             && (
-                isEventEmitterInterfaceNode(node.parent.parent.parent.parent)
-                || isNodeEventTargetInterfaceNode(node.parent.parent.parent.parent)
+                node.typeName.text === "Listener1"
+                || node.typeName.text === "Listener2"
             )
         ) {
-            return "LegacyEventType"
+            return "Function<Unit>"
+        }
+
+        if (
+            ts.isTypeReferenceNode(node)
+            && ts.isIdentifier(node.typeName)
+            && node.typeName.text === "_NodeEventTarget"
+        ) {
+            return "EventEmitter"
+        }
+
+        if (
+            ts.isTypeReferenceNode(node)
+            && ts.isIdentifier(node.typeName)
+            && node.typeName.text === "_DOMEventTarget"
+        ) {
+            return "EventTarget"
         }
 
         if (
@@ -105,10 +130,6 @@ export default {
         ) {
             const name = next(node.name)
 
-            const typeParameters = node.typeParameters
-                ?.map(typeParameter => next(typeParameter))
-                ?.join(", ")
-
             const returnType = node.type && next(node.type)
 
             return karakum.convertParameterDeclarations(node, context, next, {
@@ -118,7 +139,72 @@ export default {
                         return ""
                     }
 
-                    return `fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${name}(${parameters})${karakum.ifPresent(returnType, it => `: ${it}`)}`
+                    if (
+                        signature.length === 3
+                        && ts.isTypeReferenceNode(signature[0].type)
+                        && (
+                            (
+                                ts.isIdentifier(signature[0].type.typeName)
+                                && signature[0].type.typeName.text === "_NodeEventTarget"
+                            )
+                            || (
+                                ts.isQualifiedName(signature[0].type.typeName)
+                                && signature[0].type.typeName.right.text === "EventEmitter"
+                            )
+                        )
+                    ) {
+                        const enhancedReturnType = name === "once"
+                            ? "Promise<P>"
+                            : "AsyncIterableIterator<P>"
+
+                        return `fun <T : EventEmitter, P : JsTuple> ${name}(emitter: T, eventName: EventType<T, P>, options: StaticEventEmitterOptions = definedExternally)${karakum.ifPresent(enhancedReturnType, it => `: ${it}`)}`
+                    }
+
+                    if (
+                        signature.length === 3
+                        && ts.isTypeReferenceNode(signature[0].type)
+                        && ts.isIdentifier(signature[0].type.typeName)
+                        && (
+                            signature[0].type.typeName.text === "_DOMEventTarget"
+                            || signature[0].type.typeName.text === "EventTarget"
+                        )
+                    ) {
+                        const enhancedReturnType = name === "once"
+                            ? "Promise<JsTuple1<E>>"
+                            : "AsyncIterableIterator<JsTuple1<E>>"
+
+                        return `fun <E : Event, T : EventTarget> ${name}(emitter: T, eventName: web.events.EventType<E, T>, options: StaticEventEmitterOptions = definedExternally)${karakum.ifPresent(enhancedReturnType, it => `: ${it}`)}`
+                    }
+
+                    if (
+                        signature.length === 2
+                        && ts.isTypeReferenceNode(signature[0].type)
+                        && (
+                            (
+                                ts.isIdentifier(signature[0].type.typeName)
+                                && signature[0].type.typeName.text === "_NodeEventTarget"
+                            )
+                            || (
+                                ts.isQualifiedName(signature[0].type.typeName)
+                                && signature[0].type.typeName.right.text === "EventEmitter"
+                            )
+                        )
+                    ) {
+                        return `fun <T : EventEmitter> ${name}(emitter: T, eventName: EventType<T, *>)${karakum.ifPresent(returnType, it => `: ${it}`)}`
+                    }
+
+                    if (
+                        signature.length === 2
+                        && ts.isTypeReferenceNode(signature[0].type)
+                        && (
+                            signature[0].type.typeName.text === "_DOMEventTarget"
+                            || signature[0].type.typeName.text === "EventTarget"
+                        )
+                    ) {
+                        return `fun <T : EventTarget> ${name}(emitter: T, eventName: web.events.EventType<*, T>)${karakum.ifPresent(returnType, it => `: ${it}`)}`
+                    }
+
+                    return `fun ${name}(${parameters})${karakum.ifPresent(returnType, it => `: ${it}`)}`
                 }
             })
         }
@@ -127,31 +213,24 @@ export default {
             ts.isMethodSignature(node)
 
             && node.parent
-            && (
-                isEventEmitterInterfaceNode(node.parent)
-                || isNodeEventTargetInterfaceNode(node.parent)
-            )
+            && isEventEmitterInterfaceNode(node.parent)
         ) {
-            const inheritanceModifier = isEventEmitterInterfaceNode(node.parent)
-                ? "open"
-                : ""
-
             const name = next(node.name)
 
-            const typeParameters = node.typeParameters
-                ?.map(typeParameter => next(typeParameter))
-                ?.join(", ")
+            const isInternal =
+                isEventMethod(node)
+                || isEventListenerMethod(node)
+                || name === "emit"
 
             const returnType = node.type && next(node.type)
 
             return karakum.convertParameterDeclarations(node, context, next, {
                 strategy: "function",
-                template: (parameters, signature) => {
-                    if (signature.some(it => it.type.kind === ts.SyntaxKind.SymbolKeyword)) {
-                        return ""
-                    }
-
-                    return `${inheritanceModifier} fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${name}(${parameters})${karakum.ifPresent(returnType, it => `: ${it}`)}`
+                template: parameters => {
+                    return `
+${isInternal ? `@JsName("${name}")` : ""}
+${isInternal ? 'internal ' : ""}fun ${isInternal ? `${name}Internal` : name}(${parameters})${karakum.ifPresent(returnType, it => `: ${it}`)}
+                    `
                 }
             })
         }
@@ -195,7 +274,77 @@ ${members}\n${companionObject}
         return null
     },
 
-    generate(context) {
-        return []
+    generate(context, render) {
+        const declarations = []
+
+        const sourceFileName = this.eventEmitterClassNode.getSourceFile()?.fileName ?? "generated.d.ts"
+
+        const typeScriptService = context.lookupService(karakum.typeScriptServiceKey)
+        const commentService = context.lookupService(karakum.commentServiceKey)
+
+        const namespace = typeScriptService?.findClosest(this.eventEmitterClassNode, ts.isModuleDeclaration)
+
+        for (const member of this.eventEmitterInterfaceNode.members) {
+            const comment = commentService?.renderLeadingComments(member) ?? ""
+
+            if (isEventListenerMethod(member)) {
+                const name = render(member.name)
+
+                const isDefinedExternally = Boolean(member.parameters[1].questionToken)
+
+                declarations.push(
+                    {
+                        sourceFileName,
+                        namespace,
+                        fileName: `EventEmitter.ext.kt`,
+                        body: `
+${comment}
+fun <T : EventEmitter, P : JsTuple> T.${name}(eventName: EventType<T, P>, listener: (P) -> Unit${isDefinedExternally ? ` = undefined.unsafeCast<Nothing>()` : ""}) =
+    ${name}Internal(eventName, decorateListener(listener))
+                        `,
+                    }
+                )
+            }
+
+            if (isEventMethod(member)) {
+                const name = render(member.name)
+
+                const isDefinedExternally = Boolean(member.parameters[0].questionToken)
+
+                declarations.push(
+                    {
+                        sourceFileName,
+                        namespace,
+                        fileName: `EventEmitter.ext.kt`,
+                        body: `
+${comment}
+fun <T : EventEmitter> T.${name}(eventName: EventType<T, *>${isDefinedExternally ? ` = undefined.unsafeCast<Nothing>()` : ""}) =
+    ${name}Internal(eventName)
+                        `,
+                    }
+                )
+            }
+
+            if (
+                ts.isMethodSignature(member)
+                && ts.isIdentifier(member.name)
+                && member.name.text === "emit"
+            ) {
+                declarations.push(
+                    {
+                        sourceFileName,
+                        namespace,
+                        fileName: `EventEmitter.ext.kt`,
+                        body: `
+${comment}
+fun <T : EventEmitter, P : JsTuple> T.emit(eventName: EventType<T, P>, payload: P) =
+    emitInternal(eventName, *payload.unsafeCast<Array<*>>())
+                        `,
+                    }
+                )
+            }
+        }
+
+        return karakum.generateDerivedDeclarations(declarations, context)
     }
 }

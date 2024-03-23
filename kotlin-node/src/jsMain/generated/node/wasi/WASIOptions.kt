@@ -9,12 +9,14 @@ sealed external interface WASIOptions {
      * An array of strings that the WebAssembly application will
      * see as command line arguments. The first argument is the virtual path to the
      * WASI command itself.
+     * @default []
      */
     var args: js.array.ReadonlyArray<String>?
 
     /**
      * An object similar to `process.env` that the WebAssembly
      * application will see as its environment.
+     * @default {}
      */
     var env: Any?
 
@@ -28,7 +30,7 @@ sealed external interface WASIOptions {
 
     /**
      * By default, when WASI applications call `__wasi_proc_exit()`
-     *  `wasi.start()` will return with the exit code specified rather than terminatng the process.
+     * `wasi.start()` will return with the exit code specified rather than terminatng the process.
      * Setting this option to `false` will cause the Node.js process to exit with
      * the specified exit code instead.
      * @default true
@@ -55,8 +57,8 @@ sealed external interface WASIOptions {
 
     /**
      * The version of WASI requested.
-     * Currently the only supported versions are `'unstable'` and `'preview1'`.
-     * @since v20.0.0
+     * Currently the only supported versions are `'unstable'` and `'preview1'`. This option is mandatory.
+     * @since v19.8.0
      */
-    var version: String
+    var version: WASIOptionsVersion
 }

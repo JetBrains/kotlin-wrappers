@@ -6,8 +6,16 @@ package node.dns
 
 
 // Supported getaddrinfo flags.
+/**
+ * Limits returned address types to the types of non-loopback addresses configured on the system. For example, IPv4 addresses are
+ * only returned if the current system has at least one IPv4 address configured.
+ */
 external val ADDRCONFIG: Double
 
+/**
+ * If the IPv6 family was specified, but no IPv6 addresses were found, then return IPv4 mapped IPv6 addresses. It is not supported
+ * on some operating systems (e.g. FreeBSD 10.1).
+ */
 external val V4MAPPED: Double
 
 /**
@@ -18,52 +26,52 @@ external val ALL: Double
 
 
 // Error codes
-external val NODATA: String
+external val NODATA: String /* "NODATA" */
 
-external val FORMERR: String
+external val FORMERR: String /* "FORMERR" */
 
-external val SERVFAIL: String
+external val SERVFAIL: String /* "SERVFAIL" */
 
-external val NOTFOUND: String
+external val NOTFOUND: String /* "NOTFOUND" */
 
-external val NOTIMP: String
+external val NOTIMP: String /* "NOTIMP" */
 
-external val REFUSED: String
+external val REFUSED: String /* "REFUSED" */
 
-external val BADQUERY: String
+external val BADQUERY: String /* "BADQUERY" */
 
-external val BADNAME: String
+external val BADNAME: String /* "BADNAME" */
 
-external val BADFAMILY: String
+external val BADFAMILY: String /* "BADFAMILY" */
 
-external val BADRESP: String
+external val BADRESP: String /* "BADRESP" */
 
-external val CONNREFUSED: String
+external val CONNREFUSED: String /* "TIMEOUT" */
 
-external val TIMEOUT: String
+external val TIMEOUT: String /* "TIMEOUT" */
 
-external val EOF: String
+external val EOF: String /* "EOF" */
 
-external val FILE: String
+external val FILE: String /* "FILE" */
 
-external val NOMEM: String
+external val NOMEM: String /* "NOMEM" */
 
-external val DESTRUCTION: String
+external val DESTRUCTION: String /* "DESTRUCTION" */
 
-external val BADSTR: String
+external val BADSTR: String /* "BADSTR" */
 
-external val BADFLAGS: String
+external val BADFLAGS: String /* "BADFLAGS" */
 
-external val NONAME: String
+external val NONAME: String /* "NONAME" */
 
-external val BADHINTS: String
+external val BADHINTS: String /* "BADHINTS" */
 
-external val NOTINITIALIZED: String
+external val NOTINITIALIZED: String /* "NOTINITIALIZED" */
 
-external val LOADIPHLPAPI: String
+external val LOADIPHLPAPI: String /* "LOADIPHLPAPI" */
 
-external val ADDRGETNETWORKPARAMS: String
+external val ADDRGETNETWORKPARAMS: String /* "ADDRGETNETWORKPARAMS" */
 
-external val CANCELLED: String
+external val CANCELLED: String /* "CANCELLED" */
 
 /* export { dnsPromises as promises }; */

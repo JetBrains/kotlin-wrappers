@@ -10,9 +10,10 @@ package node.dns
  * the operating system's underlying `getnameinfo` implementation.
  *
  * If `address` is not a valid IP address, a `TypeError` will be thrown.
- * The `port` will be coerced to a number. If it is not a legal port, a `TypeError`will be thrown.
+ * The `port` will be coerced to a number. If it is not a legal port, a `TypeError` will be thrown.
  *
- * On an error, `err` is an `Error` object, where `err.code` is the error code.
+ * On an error, `err` is an [`Error`](https://nodejs.org/docs/latest-v20.x/api/errors.html#class-error) object,
+ * where `err.code` is the error code.
  *
  * ```js
  * const dns = require('node:dns');
@@ -22,7 +23,8 @@ package node.dns
  * });
  * ```
  *
- * If this method is invoked as its `util.promisify()` ed version, it returns a`Promise` for an `Object` with `hostname` and `service` properties.
+ * If this method is invoked as its [util.promisify()](https://nodejs.org/docs/latest-v20.x/api/util.html#utilpromisifyoriginal) ed
+ * version, it returns a `Promise` for an `Object` with `hostname` and `service` properties.
  * @since v0.11.14
  */
 external fun lookupService(

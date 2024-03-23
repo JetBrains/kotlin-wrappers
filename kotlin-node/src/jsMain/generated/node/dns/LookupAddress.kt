@@ -5,6 +5,14 @@ package node.dns
 
 
 sealed external interface LookupAddress {
+    /**
+     * A string representation of an IPv4 or IPv6 address.
+     */
     var address: String
+
+    /**
+     * `4` or `6`, denoting the family of `address`, or `0` if the address is not an IPv4 or IPv6 address. `0` is a likely indicator of a
+     * bug in the name resolution service used by the operating system.
+     */
     var family: Double
 }

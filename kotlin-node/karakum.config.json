@@ -66,6 +66,7 @@
         "**/childProcess/exec/**",
         "**/childProcess/execfile/**",
         "**/crypto/generatekeypair/**",
+        "**/crypto/global/**",
         "**/crypto/webcrypto/**",
         "**/dns/lookupservice/**",
         "**/dns/resolve/**",
@@ -78,6 +79,17 @@
         "**/dns/setServersAsync.kt",
         "**/events/global/**",
         "**/events/eventemitter/Abortable.kt",
+        "**/events/_DOMEventTarget.kt",
+        "**/events/_NodeEventTarget.kt",
+        "**/events/AnyRest.kt",
+        "**/events/Args.kt",
+        "**/events/DefaultEventMap.kt",
+        "**/events/EventMap.kt",
+        "**/events/Key.kt",
+        "**/events/Key2.kt",
+        "**/events/Listener.kt",
+        "**/events/Listener1.kt",
+        "**/events/Listener2.kt",
         "**/module/global/**",
         "**/path/namespace.kt",
         "**/path/PlatformPathDelimiter.kt",
@@ -492,11 +504,17 @@
             "js.promise.await"
         ],
         "events/EventEmitter.kt": [
+            "js.array.JsTuple",
+            "js.array.JsTuple1",
             "js.disposable.Disposable",
             "js.iterable.AsyncIterableIterator",
             "js.promise.Promise",
             "web.abort.AbortSignal",
-            "web.events.Event"
+            "web.events.Event",
+            "web.events.EventTarget"
+        ],
+        "events/EventEmitter.ext.kt": [
+            "js.array.JsTuple"
         ],
         "events/StaticEventEmitterOptions.kt": [
             "web.abort.AbortSignal"
@@ -1045,6 +1063,7 @@
     "namespaceStrategy": {
         "NodeJS": "package",
         "buffer.global": "package",
+        "crypto.global": "package",
         "events.global": "package",
         "module.global": "package",
         "perf_hooks.global": "package",

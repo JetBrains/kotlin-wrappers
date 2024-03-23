@@ -16,9 +16,31 @@ sealed external interface FSWatcher : EventEmitter {
     fun close(): Unit
 
     /**
+     * When called, requests that the Node.js event loop _not_ exit so long as the `fs.FSWatcher` is active. Calling `watcher.ref()` multiple times will have
+     * no effect.
+     *
+     * By default, all `fs.FSWatcher` objects are "ref'ed", making it normally
+     * unnecessary to call `watcher.ref()` unless `watcher.unref()` had been
+     * called previously.
+     * @since v14.3.0, v12.20.0
+     */
+    fun ref(): Unit /* this */
+
+    /**
+     * When called, the active `fs.FSWatcher` object will not require the Node.js
+     * event loop to remain active. If there is no other activity keeping the
+     * event loop running, the process may exit before the `fs.FSWatcher` object's
+     * callback is invoked. Calling `watcher.unref()` multiple times will have
+     * no effect.
+     * @since v14.3.0, v12.20.0
+     */
+    fun unref(): Unit /* this */
+
+    /**
      * events.EventEmitter
      *   1. change
-     *   2. error
+     *   2. close
+     *   3. error
      */
     fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun addListener(
@@ -26,46 +48,45 @@ sealed external interface FSWatcher : EventEmitter {
         listener: (eventType: String, filename: Any /* string | Buffer */) -> Unit,
     ): Unit /* this */
 
-    fun addListener(event: FSWatcherEvent.ERROR, listener: (error: Throwable /* JsError */) -> Unit): Unit /* this */
     fun addListener(event: FSWatcherEvent.CLOSE, listener: () -> Unit): Unit /* this */
+    fun addListener(event: FSWatcherEvent.ERROR, listener: (error: Throwable /* JsError */) -> Unit): Unit /* this */
     fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun on(
         event: FSWatcherEvent.CHANGE,
         listener: (eventType: String, filename: Any /* string | Buffer */) -> Unit,
     ): Unit /* this */
 
-    fun on(event: FSWatcherEvent.ERROR, listener: (error: Throwable /* JsError */) -> Unit): Unit /* this */
     fun on(event: FSWatcherEvent.CLOSE, listener: () -> Unit): Unit /* this */
+    fun on(event: FSWatcherEvent.ERROR, listener: (error: Throwable /* JsError */) -> Unit): Unit /* this */
     fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun once(
         event: FSWatcherEvent.CHANGE,
         listener: (eventType: String, filename: Any /* string | Buffer */) -> Unit,
     ): Unit /* this */
 
-    fun once(event: FSWatcherEvent.ERROR, listener: (error: Throwable /* JsError */) -> Unit): Unit /* this */
     fun once(event: FSWatcherEvent.CLOSE, listener: () -> Unit): Unit /* this */
+    fun once(event: FSWatcherEvent.ERROR, listener: (error: Throwable /* JsError */) -> Unit): Unit /* this */
     fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun prependListener(
         event: FSWatcherEvent.CHANGE,
         listener: (eventType: String, filename: Any /* string | Buffer */) -> Unit,
     ): Unit /* this */
 
+    fun prependListener(event: FSWatcherEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun prependListener(
         event: FSWatcherEvent.ERROR,
         listener: (error: Throwable /* JsError */) -> Unit,
     ): Unit /* this */
 
-    fun prependListener(event: FSWatcherEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun prependOnceListener(
         event: FSWatcherEvent.CHANGE,
         listener: (eventType: String, filename: Any /* string | Buffer */) -> Unit,
     ): Unit /* this */
 
+    fun prependOnceListener(event: FSWatcherEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(
         event: FSWatcherEvent.ERROR,
         listener: (error: Throwable /* JsError */) -> Unit,
     ): Unit /* this */
-
-    fun prependOnceListener(event: FSWatcherEvent.CLOSE, listener: () -> Unit): Unit /* this */
 }

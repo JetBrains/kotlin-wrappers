@@ -65,4 +65,10 @@ external class BlockList {
      */
     fun check(address: SocketAddress): Boolean
     fun check(address: String, type: IPVersion = definedExternally): Boolean
+
+    /**
+     * The list of rules added to the blocklist.
+     * @since v15.0.0, v14.18.0
+     */
+    var rules: js.array.ReadonlyArray<String>
 }

@@ -12,18 +12,18 @@ import js.promise.Promise
  * integer, then it must be `4` or `6` – if `options` is not provided, then IPv4
  * and IPv6 addresses are both returned if found.
  *
- * With the `all` option set to `true`, the `Promise` is resolved with `addresses`being an array of objects with the properties `address` and `family`.
+ * With the `all` option set to `true`, the `Promise` is resolved with `addresses` being an array of objects with the properties `address` and `family`.
  *
- * On error, the `Promise` is rejected with an `Error` object, where `err.code`is the error code.
+ * On error, the `Promise` is rejected with an [`Error`](https://nodejs.org/docs/latest-v20.x/api/errors.html#class-error) object, where `err.code` is the error code.
  * Keep in mind that `err.code` will be set to `'ENOTFOUND'` not only when
  * the host name does not exist but also when the lookup fails in other ways
  * such as no available file descriptors.
  *
- * `dnsPromises.lookup()` does not necessarily have anything to do with the DNS
+ * [`dnsPromises.lookup()`](https://nodejs.org/docs/latest-v20.x/api/dns.html#dnspromiseslookuphostname-options) does not necessarily have anything to do with the DNS
  * protocol. The implementation uses an operating system facility that can
  * associate names with addresses and vice versa. This implementation can have
  * subtle but important consequences on the behavior of any Node.js program. Please
- * take some time to consult the `Implementation considerations section` before
+ * take some time to consult the [Implementation considerations section](https://nodejs.org/docs/latest-v20.x/api/dns.html#implementation-considerations) before
  * using `dnsPromises.lookup()`.
  *
  * Example usage:

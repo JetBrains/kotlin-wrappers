@@ -7,7 +7,7 @@ package node.dns
 import js.promise.Promise
 
 /**
- * Uses the DNS protocol to resolve service records (`SRV` records) for the`hostname`. On success, the `Promise` is resolved with an array of objects with
+ * Uses the DNS protocol to resolve service records (`SRV` records) for the `hostname`. On success, the `Promise` is resolved with an array of objects with
  * the following properties:
  *
  * * `priority`

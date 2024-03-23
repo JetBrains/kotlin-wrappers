@@ -7,7 +7,7 @@ package node.dns
 import js.promise.Promise
 
 /**
- * Uses the DNS protocol to resolve IPv6 addresses (`AAAA` records) for the`hostname`. On success, the `Promise` is resolved with an array of IPv6
+ * Uses the DNS protocol to resolve IPv6 addresses (`AAAA` records) for the `hostname`. On success, the `Promise` is resolved with an array of IPv6
  * addresses.
  * @since v10.6.0
  * @param hostname Host name to resolve.

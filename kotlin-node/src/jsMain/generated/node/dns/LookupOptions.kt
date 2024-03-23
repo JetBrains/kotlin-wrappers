@@ -5,12 +5,31 @@ package node.dns
 
 
 sealed external interface LookupOptions {
-    var family: Double?
+    /**
+     * The record family. Must be `4`, `6`, or `0`. For backward compatibility reasons,`'IPv4'` and `'IPv6'` are interpreted
+     * as `4` and `6` respectively. The value 0 indicates that either an IPv4 or IPv6 address is returned. If the value `0` is used
+     * with `{ all: true } (see below)`, both IPv4 and IPv6 addresses are returned.
+     * @default 0
+     */
+    var family: Any? /* number | "IPv4" | "IPv6" | undefined */
+
+    /**
+     * One or more [supported `getaddrinfo`](https://nodejs.org/docs/latest-v20.x/api/dns.html#supported-getaddrinfo-flags) flags. Multiple flags may be
+     * passed by bitwise `OR`ing their values.
+     */
     var hints: Double?
+
+    /**
+     * When `true`, the callback returns all resolved addresses in an array. Otherwise, returns a single address.
+     * @default false
+     */
     var all: Boolean?
 
     /**
-     * @default true
+     * When `true`, the callback receives IPv4 and IPv6 addresses in the order the DNS resolver returned them. When `false`, IPv4
+     * addresses are placed before IPv6 addresses. Default value is configurable using {@link setDefaultResultOrder()}
+     * or [`--dns-result-order`](https://nodejs.org/docs/latest-v20.x/api/cli.html#--dns-result-orderorder).
+     * @default true (addresses are not reordered)
      */
     var verbatim: Boolean?
 }

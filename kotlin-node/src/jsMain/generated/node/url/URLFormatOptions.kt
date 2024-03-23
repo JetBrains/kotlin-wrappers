@@ -5,8 +5,28 @@ package node.url
 
 
 sealed external interface URLFormatOptions {
+    /**
+     * `true` if the serialized URL string should include the username and password, `false` otherwise.
+     * @default true
+     */
     var auth: Boolean?
+
+    /**
+     * `true` if the serialized URL string should include the fragment, `false` otherwise.
+     * @default true
+     */
     var fragment: Boolean?
+
+    /**
+     * `true` if the serialized URL string should include the search query, `false` otherwise.
+     * @default true
+     */
     var search: Boolean?
+
+    /**
+     * `true` if Unicode characters appearing in the host component of the URL string should be encoded directly as opposed to
+     * being Punycode encoded.
+     * @default false
+     */
     var unicode: Boolean?
 }

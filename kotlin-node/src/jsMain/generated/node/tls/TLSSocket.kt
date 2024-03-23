@@ -23,6 +23,8 @@ external class TLSSocket : node.net.Socket {
      */
     constructor (socket: node.net.Socket, options: TLSSocketOptions = definedExternally)
 
+    constructor (socket: node.stream.Duplex, options: TLSSocketOptions = definedExternally)
+
     /**
      * This property is `true` if the peer certificate was signed by one of the CAs
      * specified when creating the `tls.TLSSocket` instance, otherwise `false`.

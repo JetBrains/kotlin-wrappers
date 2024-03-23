@@ -1891,6 +1891,8 @@ sealed external class Buffer : Uint8Array {
          */
         fun byteLength(string: String, encoding: BufferEncoding = definedExternally): Double
 
+        fun byteLength(string: Buffer, encoding: BufferEncoding = definedExternally): Double
+
         fun byteLength(string: js.buffer.ArrayBufferView, encoding: BufferEncoding = definedExternally): Double
 
         fun byteLength(string: ArrayBuffer, encoding: BufferEncoding = definedExternally): Double
@@ -1950,7 +1952,7 @@ sealed external class Buffer : Uint8Array {
          * ```
          * @since v19.8.0
          * @param view The {TypedArray} to copy.
-         * @param [offset=': 0'] The starting offset within `view`.
+         * @param [offset=0] The starting offset within `view`.
          * @param [length=view.length - offset] The number of elements from `view` to copy.
          */
         fun copyBytesFrom(
@@ -2058,8 +2060,8 @@ sealed external class Buffer : Uint8Array {
          * A `TypeError` will be thrown if `size` is not a number.
          *
          * The `Buffer` module pre-allocates an internal `Buffer` instance of
-         * size `Buffer.poolSize` that is used as a pool for the fast allocation of new`Buffer` instances created using `Buffer.allocUnsafe()`, `Buffer.from(array)`,
-         * and `Buffer.concat()` only when `size` is less than`Buffer.poolSize >>> 1` (floor of `Buffer.poolSize` divided by two).
+         * size `Buffer.poolSize` that is used as a pool for the fast allocation of new `Buffer` instances created using `Buffer.allocUnsafe()`, `Buffer.from(array)`,
+         * and `Buffer.concat()` only when `size` is less than `Buffer.poolSize >>> 1` (floor of `Buffer.poolSize` divided by two).
          *
          * Use of this pre-allocated internal memory pool is a key difference between
          * calling `Buffer.alloc(size, fill)` vs. `Buffer.allocUnsafe(size).fill(fill)`.

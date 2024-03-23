@@ -9,7 +9,7 @@ package node.v8
  * Returns statistics about the V8 heap spaces, i.e. the segments which make up
  * the V8 heap. Neither the ordering of heap spaces, nor the availability of a
  * heap space can be guaranteed as the statistics are provided via the
- * V8[`GetHeapSpaceStatistics`](https://v8docs.nodesource.com/node-13.2/d5/dda/classv8_1_1_isolate.html#ac673576f24fdc7a33378f8f57e1d13a4) function and may change from one V8 version to the
+ * V8 [`GetHeapSpaceStatistics`](https://v8docs.nodesource.com/node-13.2/d5/dda/classv8_1_1_isolate.html#ac673576f24fdc7a33378f8f57e1d13a4) function and may change from one V8 version to the
  * next.
  *
  * The value returned is an array of objects containing the following properties:

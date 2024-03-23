@@ -14,7 +14,8 @@ import js.promise.Promise
  *
  * <omitted>
  *
- * On error, the `Promise` is rejected with an `Error` object, where `err.code`is one of the `DNS error codes`.
+ * On error, the `Promise` is rejected with an [`Error`](https://nodejs.org/docs/latest-v20.x/api/errors.html#class-error) object, where `err.code`
+ * is one of the [DNS error codes](https://nodejs.org/docs/latest-v20.x/api/dns.html#error-codes).
  * @since v10.6.0
  * @param hostname Host name to resolve.
  * @param [rrtype='A'] Resource record type.

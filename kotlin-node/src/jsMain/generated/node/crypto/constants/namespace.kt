@@ -21,7 +21,7 @@ external val SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION: Double
 /** Attempts to use the server's preferences instead of the client's when selecting a cipher. See https://www.openssl.org/docs/man1.0.2/ssl/SSL_CTX_set_options.html. */
 external val SSL_OP_CIPHER_SERVER_PREFERENCE: Double
 
-/** Instructs OpenSSL to use Cisco's "speshul" version of DTLS_BAD_VER. */
+/** Instructs OpenSSL to use Cisco's version identifier of DTLS_BAD_VER. */
 external val SSL_OP_CISCO_ANYCONNECT: Double
 
 /** Instructs OpenSSL to turn on cookie exchange. */

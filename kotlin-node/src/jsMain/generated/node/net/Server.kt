@@ -173,7 +173,7 @@ open external class Server : EventEmitter {
      * Indicates whether or not the server is listening for connections.
      * @since v5.7.0
      */
-    var listening: Boolean
+    val listening: Boolean
 
     /**
      * events.EventEmitter
