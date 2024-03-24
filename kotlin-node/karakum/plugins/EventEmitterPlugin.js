@@ -47,7 +47,7 @@ function isEventMethod(node) {
         && ts.isIdentifier(node.parameters[0].name)
         && (
             node.parameters[0].name.text === "event"
-            || node.parameters[0].name.text === "eventName"
+            || node.parameters[0].name.text === "type"
         )
     )
 }
@@ -60,7 +60,7 @@ function isEventListenerMethod(node) {
         && ts.isIdentifier(node.parameters[0].name)
         && (
             node.parameters[0].name.text === "event"
-            || node.parameters[0].name.text === "eventName"
+            || node.parameters[0].name.text === "type"
         )
 
         && ts.isIdentifier(node.parameters[1].name)
@@ -157,7 +157,7 @@ export default {
                             ? "Promise<P>"
                             : "AsyncIterableIterator<P>"
 
-                        return `fun <T : EventEmitter, P : JsTuple> ${name}(emitter: T, eventName: EventType<T, P>, options: StaticEventEmitterOptions = definedExternally)${karakum.ifPresent(enhancedReturnType, it => `: ${it}`)}`
+                        return `fun <T : EventEmitter, P : JsTuple> ${name}(emitter: T, type: EventType<T, P>, options: StaticEventEmitterOptions = definedExternally)${karakum.ifPresent(enhancedReturnType, it => `: ${it}`)}`
                     }
 
                     if (
@@ -173,7 +173,7 @@ export default {
                             ? "Promise<JsTuple1<E>>"
                             : "AsyncIterableIterator<JsTuple1<E>>"
 
-                        return `fun <E : Event, T : EventTarget> ${name}(emitter: T, eventName: web.events.EventType<E, T>, options: StaticEventEmitterOptions = definedExternally)${karakum.ifPresent(enhancedReturnType, it => `: ${it}`)}`
+                        return `fun <E : Event, T : EventTarget> ${name}(emitter: T, type: web.events.EventType<E, T>, options: StaticEventEmitterOptions = definedExternally)${karakum.ifPresent(enhancedReturnType, it => `: ${it}`)}`
                     }
 
                     if (
@@ -190,7 +190,7 @@ export default {
                             )
                         )
                     ) {
-                        return `fun <T : EventEmitter> ${name}(emitter: T, eventName: EventType<T, *>)${karakum.ifPresent(returnType, it => `: ${it}`)}`
+                        return `fun <T : EventEmitter> ${name}(emitter: T, type: EventType<T, *>)${karakum.ifPresent(returnType, it => `: ${it}`)}`
                     }
 
                     if (
@@ -201,7 +201,7 @@ export default {
                             || signature[0].type.typeName.text === "EventTarget"
                         )
                     ) {
-                        return `fun <T : EventTarget> ${name}(emitter: T, eventName: web.events.EventType<*, T>)${karakum.ifPresent(returnType, it => `: ${it}`)}`
+                        return `fun <T : EventTarget> ${name}(emitter: T, type: web.events.EventType<*, T>)${karakum.ifPresent(returnType, it => `: ${it}`)}`
                     }
 
                     return `fun ${name}(${parameters})${karakum.ifPresent(returnType, it => `: ${it}`)}`
@@ -299,8 +299,8 @@ ${members}\n${companionObject}
                         fileName: `EventEmitter.ext.kt`,
                         body: `
 ${comment}
-fun <T : EventEmitter, P : JsTuple> T.${name}(eventName: EventType<T, P>, listener: (P) -> Unit${isDefinedExternally ? ` = undefined.unsafeCast<Nothing>()` : ""}) =
-    ${name}Internal(eventName, decorateListener(listener))
+fun <T : EventEmitter, P : JsTuple> T.${name}(type: EventType<T, P>, listener: (P) -> Unit${isDefinedExternally ? ` = undefined.unsafeCast<Nothing>()` : ""}) =
+    ${name}Internal(type, decorateListener(listener))
                         `,
                     }
                 )
@@ -318,8 +318,8 @@ fun <T : EventEmitter, P : JsTuple> T.${name}(eventName: EventType<T, P>, listen
                         fileName: `EventEmitter.ext.kt`,
                         body: `
 ${comment}
-fun <T : EventEmitter> T.${name}(eventName: EventType<T, *>${isDefinedExternally ? ` = undefined.unsafeCast<Nothing>()` : ""}) =
-    ${name}Internal(eventName)
+fun <T : EventEmitter> T.${name}(type: EventType<T, *>${isDefinedExternally ? ` = undefined.unsafeCast<Nothing>()` : ""}) =
+    ${name}Internal(type)
                         `,
                     }
                 )
@@ -337,12 +337,12 @@ fun <T : EventEmitter> T.${name}(eventName: EventType<T, *>${isDefinedExternally
                         fileName: `EventEmitter.ext.kt`,
                         body: `
 ${comment}
-fun <T : EventEmitter, P : JsTuple> T.emit(eventName: EventType<T, P>, payload: P) =
-    emitInternal(eventName, args = payload.asArray())
+fun <T : EventEmitter, P : JsTuple> T.emit(type: EventType<T, P>, payload: P) =
+    emitInternal(type, args = payload.asArray())
 
 ${comment}
-fun <T : EventEmitter> T.emit(eventName: EventType<T, JsTuple>) =
-    emitInternal(eventName)
+fun <T : EventEmitter> T.emit(type: EventType<T, JsTuple>) =
+    emitInternal(type)
                         `,
                     }
                 )
