@@ -5,14 +5,14 @@ import js.array.JsArray
 import js.array.JsTuple
 import js.symbol.Symbol
 
-private val decoratedListenerKey = Symbol("@@decorated-listener")
+private val DECORATED_LISTENER = Symbol("@@decorated-listener")
 
 fun <P : JsTuple> decorateListener(
     listener: (P) -> Unit,
 ): Function<Unit> {
     if (listener.asDynamic() == null) return undefined.unsafeCast<Function<Unit>>()
 
-    var decoratedListener = listener.asDynamic()[decoratedListenerKey]
+    var decoratedListener = listener.asDynamic()[DECORATED_LISTENER]
 
     if (decoratedListener == null) {
         decoratedListener = {
@@ -20,7 +20,7 @@ fun <P : JsTuple> decorateListener(
             listener(arguments.unsafeCast<P>())
         }
 
-        listener.asDynamic()[decoratedListenerKey] = decoratedListener
+        listener.asDynamic()[DECORATED_LISTENER] = decoratedListener
     }
 
     return decoratedListener.unsafeCast<Function<Unit>>()
