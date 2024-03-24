@@ -4,12 +4,12 @@ fun <T : Any> JsFunction(
     vararg argumentNames: String,
     body: String,
 ): T =
-    NativeFunction(
+    Function(
         argumentNames = argumentNames,
         body = body,
     ).unsafeCast<T>()
 
-private external class NativeFunction(
+private external class Function(
     vararg argumentNames: String,
     body: String,
 )
