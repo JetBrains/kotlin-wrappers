@@ -38,7 +38,7 @@ open external class EventEmitter {
      */
 
     @JsName("addListener")
-    internal fun addListenerInternal(eventName: EventType<*, *>, listener: Function<Unit>): Unit /* this */
+    internal fun addListenerInternal(type: EventType<*, *>, listener: Function<Unit>): Unit /* this */
 
     /**
      * Adds the `listener` function to the end of the listeners array for the
@@ -68,12 +68,12 @@ open external class EventEmitter {
      * //   a
      * ```
      * @since v0.1.101
-     * @param eventName The name of the event.
+     * @param type The name of the event.
      * @param listener The callback function
      */
 
     @JsName("on")
-    internal fun onInternal(eventName: EventType<*, *>, listener: Function<Unit>): Unit /* this */
+    internal fun onInternal(type: EventType<*, *>, listener: Function<Unit>): Unit /* this */
 
     /**
      * Adds a **one-time**`listener` function for the event named `eventName`. The
@@ -101,12 +101,12 @@ open external class EventEmitter {
      * //   a
      * ```
      * @since v0.3.0
-     * @param eventName The name of the event.
+     * @param type The name of the event.
      * @param listener The callback function
      */
 
     @JsName("once")
-    internal fun onceInternal(eventName: EventType<*, *>, listener: Function<Unit>): Unit /* this */
+    internal fun onceInternal(type: EventType<*, *>, listener: Function<Unit>): Unit /* this */
 
     /**
      * Removes the specified `listener` from the listener array for the event named`eventName`.
@@ -192,7 +192,7 @@ open external class EventEmitter {
      */
 
     @JsName("removeListener")
-    internal fun removeListenerInternal(eventName: EventType<*, *>, listener: Function<Unit>): Unit /* this */
+    internal fun removeListenerInternal(type: EventType<*, *>, listener: Function<Unit>): Unit /* this */
 
     /**
      * Alias for `emitter.removeListener()`.
@@ -200,7 +200,7 @@ open external class EventEmitter {
      */
 
     @JsName("off")
-    internal fun offInternal(eventName: EventType<*, *>, listener: Function<Unit>): Unit /* this */
+    internal fun offInternal(type: EventType<*, *>, listener: Function<Unit>): Unit /* this */
 
     /**
      * Removes all listeners, or those of the specified `eventName`.
@@ -252,7 +252,7 @@ open external class EventEmitter {
      */
 
     @JsName("listeners")
-    internal fun listenersInternal(eventName: EventType<*, *>): Array<Function<Unit>>
+    internal fun listenersInternal(type: EventType<*, *>): Array<Function<Unit>>
 
     /**
      * Returns a copy of the array of listeners for the event named `eventName`,
@@ -286,7 +286,7 @@ open external class EventEmitter {
      */
 
     @JsName("rawListeners")
-    internal fun rawListenersInternal(eventName: EventType<*, *>): Array<Function<Unit>>
+    internal fun rawListenersInternal(type: EventType<*, *>): Array<Function<Unit>>
 
     /**
      * Synchronously calls each of the listeners registered for the event named`eventName`, in the order they were registered, passing the supplied arguments
@@ -330,19 +330,19 @@ open external class EventEmitter {
      */
 
     @JsName("emit")
-    internal fun emitInternal(eventName: EventType<*, *>, vararg args: Any? /* Args<K, T> */): Boolean
+    internal fun emitInternal(type: EventType<*, *>, vararg args: Any? /* Args<K, T> */): Boolean
 
     /**
      * Returns the number of listeners listening for the event named `eventName`.
      * If `listener` is provided, it will return how many times the listener is found
      * in the list of the listeners of the event.
      * @since v3.2.0
-     * @param eventName The name of the event being listened for
+     * @param type The name of the event being listened for
      * @param listener The event handler function
      */
 
     @JsName("listenerCount")
-    internal fun listenerCountInternal(eventName: EventType<*, *>, listener: Function<Unit> = definedExternally): Double
+    internal fun listenerCountInternal(type: EventType<*, *>, listener: Function<Unit> = definedExternally): Double
 
     /**
      * Adds the `listener` function to the _beginning_ of the listeners array for the
@@ -358,12 +358,12 @@ open external class EventEmitter {
      *
      * Returns a reference to the `EventEmitter`, so that calls can be chained.
      * @since v6.0.0
-     * @param eventName The name of the event.
+     * @param type The name of the event.
      * @param listener The callback function
      */
 
     @JsName("prependListener")
-    internal fun prependListenerInternal(eventName: EventType<*, *>, listener: Function<Unit>): Unit /* this */
+    internal fun prependListenerInternal(type: EventType<*, *>, listener: Function<Unit>): Unit /* this */
 
     /**
      * Adds a **one-time**`listener` function for the event named `eventName` to the _beginning_ of the listeners array. The next time `eventName` is triggered, this
@@ -377,12 +377,12 @@ open external class EventEmitter {
      *
      * Returns a reference to the `EventEmitter`, so that calls can be chained.
      * @since v6.0.0
-     * @param eventName The name of the event.
+     * @param type The name of the event.
      * @param listener The callback function
      */
 
     @JsName("prependOnceListener")
-    internal fun prependOnceListenerInternal(eventName: EventType<*, *>, listener: Function<Unit>): Unit /* this */
+    internal fun prependOnceListenerInternal(type: EventType<*, *>, listener: Function<Unit>): Unit /* this */
 
     /**
      * Returns an array listing the events for which the emitter has registered
@@ -490,14 +490,14 @@ open external class EventEmitter {
          */
         fun <T : EventEmitter, P : JsTuple> once(
             emitter: T,
-            eventName: EventType<T, P>,
+            type: EventType<T, P>,
             options: StaticEventEmitterOptions = definedExternally,
         ): Promise<P>
 
 
         fun <E : Event, T : EventTarget> once(
             emitter: T,
-            eventName: web.events.EventType<E, T>,
+            type: web.events.EventType<E, T>,
             options: StaticEventEmitterOptions = definedExternally,
         ): Promise<JsTuple1<E>>
 
@@ -557,12 +557,12 @@ open external class EventEmitter {
          * process.nextTick(() => ac.abort());
          * ```
          * @since v13.6.0, v12.16.0
-         * @param eventName The name of the event being listened for
+         * @param type The name of the event being listened for
          * @return that iterates `eventName` events emitted by the `emitter`
          */
         fun <T : EventEmitter, P : JsTuple> on(
             emitter: T,
-            eventName: EventType<T, P>,
+            type: EventType<T, P>,
             options: StaticEventEmitterOptions = definedExternally,
         ): AsyncIterableIterator<P>
 
@@ -581,9 +581,9 @@ open external class EventEmitter {
          * @since v0.9.12
          * @deprecated Since v3.2.0 - Use `listenerCount` instead.
          * @param emitter The emitter to query
-         * @param eventName The event name
+         * @param type The event name
          */
-        fun <T : EventEmitter> listenerCount(emitter: T, eventName: EventType<T, *>): Double
+        fun <T : EventEmitter> listenerCount(emitter: T, type: EventType<T, *>): Double
 
 
         /**
@@ -615,14 +615,11 @@ open external class EventEmitter {
          */
         fun <T : EventTarget> getEventListeners(
             emitter: T,
-            eventName: web.events.EventType<*, T>,
+            type: web.events.EventType<*, T>,
         ): js.array.ReadonlyArray<Function<*>>
 
 
-        fun <T : EventEmitter> getEventListeners(
-            emitter: T,
-            eventName: EventType<T, *>,
-        ): js.array.ReadonlyArray<Function<*>>
+        fun <T : EventEmitter> getEventListeners(emitter: T, type: EventType<T, *>): js.array.ReadonlyArray<Function<*>>
 
 
         /**

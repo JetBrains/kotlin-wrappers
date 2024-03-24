@@ -10,8 +10,8 @@ import js.array.JsTuple
  * @since v0.1.26
  */
 
-fun <T : EventEmitter, P : JsTuple> T.addListener(eventName: EventType<T, P>, listener: (P) -> Unit) =
-    addListenerInternal(eventName, decorateListener(listener))
+fun <T : EventEmitter, P : JsTuple> T.addListener(type: EventType<T, P>, listener: (P) -> Unit) =
+    addListenerInternal(type, decorateListener(listener))
 
 
 /**
@@ -42,12 +42,12 @@ fun <T : EventEmitter, P : JsTuple> T.addListener(eventName: EventType<T, P>, li
  * //   a
  * ```
  * @since v0.1.101
- * @param eventName The name of the event.
+ * @param type The name of the event.
  * @param listener The callback function
  */
 
-fun <T : EventEmitter, P : JsTuple> T.on(eventName: EventType<T, P>, listener: (P) -> Unit) =
-    onInternal(eventName, decorateListener(listener))
+fun <T : EventEmitter, P : JsTuple> T.on(type: EventType<T, P>, listener: (P) -> Unit) =
+    onInternal(type, decorateListener(listener))
 
 
 /**
@@ -76,12 +76,12 @@ fun <T : EventEmitter, P : JsTuple> T.on(eventName: EventType<T, P>, listener: (
  * //   a
  * ```
  * @since v0.3.0
- * @param eventName The name of the event.
+ * @param type The name of the event.
  * @param listener The callback function
  */
 
-fun <T : EventEmitter, P : JsTuple> T.once(eventName: EventType<T, P>, listener: (P) -> Unit) =
-    onceInternal(eventName, decorateListener(listener))
+fun <T : EventEmitter, P : JsTuple> T.once(type: EventType<T, P>, listener: (P) -> Unit) =
+    onceInternal(type, decorateListener(listener))
 
 
 /**
@@ -167,8 +167,8 @@ fun <T : EventEmitter, P : JsTuple> T.once(eventName: EventType<T, P>, listener:
  * @since v0.1.26
  */
 
-fun <T : EventEmitter, P : JsTuple> T.removeListener(eventName: EventType<T, P>, listener: (P) -> Unit) =
-    removeListenerInternal(eventName, decorateListener(listener))
+fun <T : EventEmitter, P : JsTuple> T.removeListener(type: EventType<T, P>, listener: (P) -> Unit) =
+    removeListenerInternal(type, decorateListener(listener))
 
 
 /**
@@ -176,8 +176,8 @@ fun <T : EventEmitter, P : JsTuple> T.removeListener(eventName: EventType<T, P>,
  * @since v10.0.0
  */
 
-fun <T : EventEmitter, P : JsTuple> T.off(eventName: EventType<T, P>, listener: (P) -> Unit) =
-    offInternal(eventName, decorateListener(listener))
+fun <T : EventEmitter, P : JsTuple> T.off(type: EventType<T, P>, listener: (P) -> Unit) =
+    offInternal(type, decorateListener(listener))
 
 
 /**
@@ -191,8 +191,8 @@ fun <T : EventEmitter, P : JsTuple> T.off(eventName: EventType<T, P>, listener: 
  * @since v0.1.26
  */
 
-fun <T : EventEmitter> T.removeAllListeners(eventName: EventType<T, *> = undefined.unsafeCast<Nothing>()) =
-    removeAllListenersInternal(eventName)
+fun <T : EventEmitter> T.removeAllListeners(type: EventType<T, *> = undefined.unsafeCast<Nothing>()) =
+    removeAllListenersInternal(type)
 
 
 /**
@@ -208,8 +208,8 @@ fun <T : EventEmitter> T.removeAllListeners(eventName: EventType<T, *> = undefin
  * @since v0.1.26
  */
 
-fun <T : EventEmitter> T.listeners(eventName: EventType<T, *>) =
-    listenersInternal(eventName)
+fun <T : EventEmitter> T.listeners(type: EventType<T, *>) =
+    listenersInternal(type)
 
 
 /**
@@ -243,8 +243,8 @@ fun <T : EventEmitter> T.listeners(eventName: EventType<T, *>) =
  * @since v9.4.0
  */
 
-fun <T : EventEmitter> T.rawListeners(eventName: EventType<T, *>) =
-    rawListenersInternal(eventName)
+fun <T : EventEmitter> T.rawListeners(type: EventType<T, *>) =
+    rawListenersInternal(type)
 
 
 /**
@@ -288,8 +288,8 @@ fun <T : EventEmitter> T.rawListeners(eventName: EventType<T, *>) =
  * @since v0.1.26
  */
 
-fun <T : EventEmitter, P : JsTuple> T.emit(eventName: EventType<T, P>, payload: P) =
-    emitInternal(eventName, args = payload.asArray())
+fun <T : EventEmitter, P : JsTuple> T.emit(type: EventType<T, P>, payload: P) =
+    emitInternal(type, args = payload.asArray())
 
 /**
  * Synchronously calls each of the listeners registered for the event named`eventName`, in the order they were registered, passing the supplied arguments
@@ -332,8 +332,8 @@ fun <T : EventEmitter, P : JsTuple> T.emit(eventName: EventType<T, P>, payload: 
  * @since v0.1.26
  */
 
-fun <T : EventEmitter> T.emit(eventName: EventType<T, JsTuple>) =
-    emitInternal(eventName)
+fun <T : EventEmitter> T.emit(type: EventType<T, JsTuple>) =
+    emitInternal(type)
 
 
 /**
@@ -341,15 +341,15 @@ fun <T : EventEmitter> T.emit(eventName: EventType<T, JsTuple>) =
  * If `listener` is provided, it will return how many times the listener is found
  * in the list of the listeners of the event.
  * @since v3.2.0
- * @param eventName The name of the event being listened for
+ * @param type The name of the event being listened for
  * @param listener The event handler function
  */
 
 fun <T : EventEmitter, P : JsTuple> T.listenerCount(
-    eventName: EventType<T, P>,
+    type: EventType<T, P>,
     listener: (P) -> Unit = undefined.unsafeCast<Nothing>(),
 ) =
-    listenerCountInternal(eventName, decorateListener(listener))
+    listenerCountInternal(type, decorateListener(listener))
 
 
 /**
@@ -366,12 +366,12 @@ fun <T : EventEmitter, P : JsTuple> T.listenerCount(
  *
  * Returns a reference to the `EventEmitter`, so that calls can be chained.
  * @since v6.0.0
- * @param eventName The name of the event.
+ * @param type The name of the event.
  * @param listener The callback function
  */
 
-fun <T : EventEmitter, P : JsTuple> T.prependListener(eventName: EventType<T, P>, listener: (P) -> Unit) =
-    prependListenerInternal(eventName, decorateListener(listener))
+fun <T : EventEmitter, P : JsTuple> T.prependListener(type: EventType<T, P>, listener: (P) -> Unit) =
+    prependListenerInternal(type, decorateListener(listener))
 
 
 /**
@@ -386,9 +386,9 @@ fun <T : EventEmitter, P : JsTuple> T.prependListener(eventName: EventType<T, P>
  *
  * Returns a reference to the `EventEmitter`, so that calls can be chained.
  * @since v6.0.0
- * @param eventName The name of the event.
+ * @param type The name of the event.
  * @param listener The callback function
  */
 
-fun <T : EventEmitter, P : JsTuple> T.prependOnceListener(eventName: EventType<T, P>, listener: (P) -> Unit) =
-    prependOnceListenerInternal(eventName, decorateListener(listener))
+fun <T : EventEmitter, P : JsTuple> T.prependOnceListener(type: EventType<T, P>, listener: (P) -> Unit) =
+    prependOnceListenerInternal(type, decorateListener(listener))
