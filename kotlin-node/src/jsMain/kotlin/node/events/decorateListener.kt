@@ -12,7 +12,7 @@ private val toNodeListener: (Function<Unit>) -> Function<Unit> = JsFunction(
     body = "return (...args) => { f(args) }",
 )
 
-fun <P : JsTuple> decorateListener(
+internal fun <P : JsTuple> decorateListener(
     listener: (P) -> Unit,
 ): Function<Unit> {
     if (listener.asDynamic() == null) return undefined.unsafeCast<Function<Unit>>()
