@@ -12,7 +12,7 @@ fun <P : JsTuple> decorateListener(
 ): Function<Unit> {
     if (listener.asDynamic() == null) return undefined.unsafeCast<Function<Unit>>()
 
-    var decoratedListener = listener.asDynamic()[DECORATED_LISTENER]
+    var decoratedListener: Function<Unit>? = listener.asDynamic()[DECORATED_LISTENER]
 
     if (decoratedListener == null) {
         decoratedListener = {
@@ -23,5 +23,5 @@ fun <P : JsTuple> decorateListener(
         listener.asDynamic()[DECORATED_LISTENER] = decoratedListener
     }
 
-    return decoratedListener.unsafeCast<Function<Unit>>()
+    return decoratedListener
 }
