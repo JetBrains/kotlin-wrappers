@@ -7,6 +7,12 @@ import js.array.*
 @JsExternalInheritorsOnly
 external interface JsFunction<in A : JsTuple, out R>
 
+@JsName("Function")
+external fun <A : JsTuple, R> JsFunction(
+    vararg parameterNames: String,
+    body: String,
+): JsFunction<A, R>
+
 inline fun <R> JsFunction(
     noinline fn: () -> R,
 ): JsFunction<JsTuple, R> =
