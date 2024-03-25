@@ -1,12 +1,14 @@
 package node.events
 
 import js.array.JsTuple
+import js.array.JsTuple1
 import js.function.JsFunction
+import js.function.invoke
 import js.symbol.Symbol
 
 private val DECORATED_LISTENER = Symbol("@@decorated-listener")
 
-private val toNodeListener: (Function<Unit>) -> Function<Unit> = JsFunction(
+private val toNodeListener = JsFunction<JsTuple1<Function<Unit>>, Function<Unit>>(
     argumentNames = arrayOf("f"),
     // language=javascript
     body = "return (...args) => { f(args) }",

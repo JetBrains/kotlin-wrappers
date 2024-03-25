@@ -1,13 +1,15 @@
 package js.function
 
-fun <T : Any> JsFunction(
+import js.array.JsTuple
+
+fun <A : JsTuple, R> JsFunction(
     vararg argumentNames: String,
     body: String,
-): T =
+): JsFunction<A, R> =
     Function(
         argumentNames = argumentNames,
         body = body,
-    ).unsafeCast<T>()
+    ).unsafeCast<JsFunction<A, R>>()
 
 private external class Function(
     vararg argumentNames: String,
