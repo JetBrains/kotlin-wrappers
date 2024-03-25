@@ -8,11 +8,7 @@ private class PatchNodeTypes : Plugin<Project> {
     override fun apply(target: Project): Unit = with(target) {
         tasks.named("kotlinNpmInstall") {
             doLast {
-                patch("@types/node/events.d.ts") { content ->
-                    content
-                        .replace("@param eventName ", "@param type ")
-                        .replace("(eventName: ", "(type: ")
-                }
+                patch("@types/node/events.d.ts") { it }
             }
         }
     }

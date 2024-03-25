@@ -47,7 +47,7 @@ function isEventMethod(node) {
         && ts.isIdentifier(node.parameters[0].name)
         && (
             node.parameters[0].name.text === "event"
-            || node.parameters[0].name.text === "type"
+            || node.parameters[0].name.text === "eventName"
         )
     )
 }
@@ -60,7 +60,7 @@ function isEventListenerMethod(node) {
         && ts.isIdentifier(node.parameters[0].name)
         && (
             node.parameters[0].name.text === "event"
-            || node.parameters[0].name.text === "type"
+            || node.parameters[0].name.text === "eventName"
         )
 
         && ts.isIdentifier(node.parameters[1].name)
@@ -120,6 +120,26 @@ export default {
             && node.typeName.text === "_DOMEventTarget"
         ) {
             return "EventTarget"
+        }
+
+        if (
+            ts.isIdentifier(node)
+            && (
+                node.text === "event"
+                || node.text === "eventName"
+            )
+
+            && node.parent
+            && ts.isParameter(node.parent)
+            && node.parent.name === node
+
+            && node.parent.parent
+            && (
+                ts.isMethodDeclaration(node.parent.parent)
+                || ts.isMethodSignature(node.parent.parent)
+            )
+        ) {
+            return "type"
         }
 
         if (
@@ -285,7 +305,8 @@ ${members}\n${companionObject}
         const namespace = typeScriptService?.findClosest(this.eventEmitterClassNode, ts.isModuleDeclaration)
 
         for (const member of this.eventEmitterInterfaceNode.members) {
-            const comment = commentService?.renderLeadingComments(member) ?? ""
+            const comment = (commentService?.renderLeadingComments(member) ?? "")
+                .replaceAll("@param eventName ", "@param type ")
 
             if (isEventListenerMethod(member)) {
                 const name = render(member.name)

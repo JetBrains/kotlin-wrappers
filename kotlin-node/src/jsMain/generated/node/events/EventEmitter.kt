@@ -68,7 +68,7 @@ open external class EventEmitter {
      * //   a
      * ```
      * @since v0.1.101
-     * @param type The name of the event.
+     * @param eventName The name of the event.
      * @param listener The callback function
      */
 
@@ -101,7 +101,7 @@ open external class EventEmitter {
      * //   a
      * ```
      * @since v0.3.0
-     * @param type The name of the event.
+     * @param eventName The name of the event.
      * @param listener The callback function
      */
 
@@ -214,7 +214,7 @@ open external class EventEmitter {
      */
 
     @JsName("removeAllListeners")
-    internal fun removeAllListenersInternal(event: EventType<*, *> = definedExternally): Unit /* this */
+    internal fun removeAllListenersInternal(type: EventType<*, *> = definedExternally): Unit /* this */
 
     /**
      * By default `EventEmitter`s will print a warning if more than `10` listeners are
@@ -337,7 +337,7 @@ open external class EventEmitter {
      * If `listener` is provided, it will return how many times the listener is found
      * in the list of the listeners of the event.
      * @since v3.2.0
-     * @param type The name of the event being listened for
+     * @param eventName The name of the event being listened for
      * @param listener The event handler function
      */
 
@@ -358,7 +358,7 @@ open external class EventEmitter {
      *
      * Returns a reference to the `EventEmitter`, so that calls can be chained.
      * @since v6.0.0
-     * @param type The name of the event.
+     * @param eventName The name of the event.
      * @param listener The callback function
      */
 
@@ -377,7 +377,7 @@ open external class EventEmitter {
      *
      * Returns a reference to the `EventEmitter`, so that calls can be chained.
      * @since v6.0.0
-     * @param type The name of the event.
+     * @param eventName The name of the event.
      * @param listener The callback function
      */
 
@@ -557,7 +557,7 @@ open external class EventEmitter {
          * process.nextTick(() => ac.abort());
          * ```
          * @since v13.6.0, v12.16.0
-         * @param type The name of the event being listened for
+         * @param eventName The name of the event being listened for
          * @return that iterates `eventName` events emitted by the `emitter`
          */
         fun <T : EventEmitter, P : JsTuple> on(
@@ -581,7 +581,7 @@ open external class EventEmitter {
          * @since v0.9.12
          * @deprecated Since v3.2.0 - Use `listenerCount` instead.
          * @param emitter The emitter to query
-         * @param type The event name
+         * @param eventName The event name
          */
         fun <T : EventEmitter> listenerCount(emitter: T, type: EventType<T, *>): Double
 
