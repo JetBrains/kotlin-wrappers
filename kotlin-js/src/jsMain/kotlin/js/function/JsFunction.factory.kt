@@ -3,11 +3,11 @@ package js.function
 import js.array.JsTuple
 
 fun <A : JsTuple, R> JsFunction(
-    vararg argumentNames: String,
+    vararg parameterNames: String,
     body: String,
 ): JsFunction<A, R> =
     Function(
-        argumentNames = argumentNames,
+        argumentNames = parameterNames,
         body = body,
     ).unsafeCast<JsFunction<A, R>>()
 
