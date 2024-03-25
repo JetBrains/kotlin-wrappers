@@ -4,10 +4,12 @@ package js.function
 
 import js.array.*
 
+private const val FUNCTION: String = "Function"
+
 @JsExternalInheritorsOnly
 external interface JsFunction<in A : JsTuple, out R>
 
-@JsName("Function")
+@JsName(FUNCTION)
 external fun <A : JsTuple, R> JsFunction(
     vararg parameterNames: String,
     body: String,
