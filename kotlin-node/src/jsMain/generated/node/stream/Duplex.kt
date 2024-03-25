@@ -255,7 +255,7 @@ open external class Duplex : Readable,
 
         fun from(src: AsyncIterable<Any?>): Duplex
 
-        fun from(src: AsyncGeneratorFunction<*, *, *, *>): Duplex
+        fun from(src: AsyncGeneratorFunction<*, *>): Duplex
 
         fun from(src: Promise<Any?>): Duplex
 

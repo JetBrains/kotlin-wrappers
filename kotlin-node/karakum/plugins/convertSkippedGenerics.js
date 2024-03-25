@@ -91,7 +91,7 @@ export default function (node, context, render) {
         )
         && !node.typeArguments
     ) {
-        return `${render(node.typeName)}<*, *, *, *>`
+        return `${render(node.typeName)}<*, *>`
     }
 
     if (
