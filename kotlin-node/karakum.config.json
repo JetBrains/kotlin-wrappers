@@ -81,6 +81,7 @@
         "**/events/global/**",
         "**/events/eventemitter/Abortable.kt",
         "**/events/_DOMEventTarget.kt",
+        "**/events/_DOMEventTargetAddEventListenerOpts.kt",
         "**/events/_NodeEventTarget.kt",
         "**/events/AnyRest.kt",
         "**/events/Args.kt",
