@@ -5,6 +5,6 @@ package node.repl
 import node.util.InspectOptions
 
 
-sealed external interface Writer : js.function.JsFunction<js.array.JsTuple1<Any?>, String> /* REPLWriter */ {
+sealed external interface Writer : js.function.JsFunctionLegacy<js.array.JsTuple1<Any?>, String> /* REPLWriter */ {
     var options: InspectOptions
 }

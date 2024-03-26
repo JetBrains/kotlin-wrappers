@@ -68,7 +68,7 @@ export default function (node, context, render) {
         && !node.typeArguments
     ) {
         if (ts.isIntersectionTypeNode(node.parent)) {
-            return "js.function.JsFunction<Nothing, Any?>"
+            return "js.function.JsFunctionLegacy<Nothing, Any?>"
         }
 
         if (
@@ -152,7 +152,7 @@ export default function (node, context, render) {
         && node.expression.text === "Function"
         && !node.typeArguments
     ) {
-        return "js.function.JsFunction<Nothing, Any?>"
+        return "js.function.JsFunctionLegacy<Nothing, Any?>"
     }
 
     return null

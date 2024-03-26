@@ -9,7 +9,7 @@ export default function (node, context) {
         && ts.isIdentifier(node.expression)
         && node.expression.text === "DebugLoggerFunction"
     ) {
-        return `js.function.JsFunction<js.array.JsTuple1<String>, Unit> /* ${typeScriptService?.printNode(node)} */`
+        return `js.function.JsFunctionLegacy<js.array.JsTuple1<String>, Unit> /* ${typeScriptService?.printNode(node)} */`
     }
 
     if (
@@ -20,7 +20,7 @@ export default function (node, context) {
         && node.parent
         && ts.isIntersectionTypeNode(node.parent)
     ) {
-        return `js.function.JsFunction<js.array.JsTuple1<Any?>, String> /* ${typeScriptService?.printNode(node)} */`
+        return `js.function.JsFunctionLegacy<js.array.JsTuple1<Any?>, String> /* ${typeScriptService?.printNode(node)} */`
     }
 
     return null

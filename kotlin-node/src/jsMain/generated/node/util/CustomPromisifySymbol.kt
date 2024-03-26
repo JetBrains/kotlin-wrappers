@@ -4,4 +4,4 @@
 package node.util
 
 
-sealed external interface CustomPromisifySymbol<TCustom : Function<*>> : js.function.JsFunction<Nothing, Any?>
+sealed external interface CustomPromisifySymbol<TCustom : Function<*>> : js.function.JsFunctionLegacy<Nothing, Any?>
