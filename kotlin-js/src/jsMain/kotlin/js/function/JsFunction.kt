@@ -6,14 +6,12 @@ import js.array.*
 
 private const val FUNCTION: String = "Function"
 
-@JsExternalInheritorsOnly
-external interface JsFunction<in A : JsTuple, out R>
-
 @JsName(FUNCTION)
-external fun <A : JsTuple, R> JsFunction(
+@JsExternalInheritorsOnly
+open external class JsFunction<in A : JsTuple, out R>(
     vararg parameterNames: String,
     body: String,
-): JsFunction<A, R>
+)
 
 inline fun <R> JsFunction(
     noinline fn: () -> R,
