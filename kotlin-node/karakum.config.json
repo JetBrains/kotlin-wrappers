@@ -51,6 +51,7 @@
         "**/Float64Array.kt",
         "**/__promisify__.kt",
         "**/__promisify__*.kt",
+        "**/CustomPromisifyLegacy.kt",
         "**/assert/equal.kt",
         "**/assert/notEqual.kt",
         "**/assert/deepEqual.kt",
