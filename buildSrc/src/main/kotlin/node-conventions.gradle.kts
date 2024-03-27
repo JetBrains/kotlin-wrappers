@@ -5,7 +5,7 @@ import org.jetbrains.kotlin.gradle.targets.js.npm.NpmExtension
 
 plugins.withType<NodeJsRootPlugin> {
     the<NodeJsRootExtension>().apply {
-        nodeVersion = "20.11.1"
+        nodeVersion = "20.12.0"
     }
 
     the<NpmExtension>().apply {
