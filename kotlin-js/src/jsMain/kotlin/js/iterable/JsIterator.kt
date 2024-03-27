@@ -8,11 +8,10 @@
 
 package js.iterable
 
-/** ES6 Iterator type. */
-@JsExternalInheritorsOnly
-external interface JsIterator<out T> {
-    fun next(): IteratorResult<T, *>
+@JsName("Iterator")
+abstract external class JsIterator<out T> {
+    abstract fun next(): IteratorResult<T, *>
 
-    inline operator fun iterator(): Iterator<T> =
+    open inline operator fun iterator(): Iterator<T> =
         iteratorFor(this)
 }
