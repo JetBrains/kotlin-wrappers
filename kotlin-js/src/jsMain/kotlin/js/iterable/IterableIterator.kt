@@ -11,7 +11,8 @@ package js.iterable
 import js.symbol.Symbol
 import seskar.js.JsNative
 
-sealed external interface IterableIterator<out T> :
+@JsName("__HIDDEN_JS_CLASS__")
+sealed external class IterableIterator<out T> :
     JsIterable<T>,
     JsIterator<T> {
     @JsNative
