@@ -1,8 +1,3 @@
-// TEMP
-@file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-)
-
 package js.generator
 
 import js.array.JsTuple
@@ -17,7 +12,7 @@ open external class AsyncGeneratorFunction<in A : JsTuple, out R : AsyncGenerato
     body: String,
 ) : JsFunction<A, R>
 
-@JsName(ASYNC_GENERATOR_FUNCTION)
+@JsSpecialName(ASYNC_GENERATOR_FUNCTION)
 external fun <R : AsyncGenerator<*, *, *>> AsyncGeneratorFunction(
     body: String,
 ): AsyncGeneratorFunction<JsTuple, R>
