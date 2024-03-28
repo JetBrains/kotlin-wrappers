@@ -2,7 +2,7 @@ package js.iterable
 
 @PublishedApi
 internal fun <T> iteratorFor(
-    source: JsIterator<T>,
+    source: JsIteratorLike<T>,
 ): Iterator<T> =
     iterator {
         do {
