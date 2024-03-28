@@ -2,4 +2,8 @@ package js.iterable
 
 @JsName("Iterator")
 abstract external class JsIterator<out T> :
-    JsIteratorLike<T>
+    JsIteratorLike<T> {
+    companion object {
+        fun <T> from(source: JsIteratorLike<T>): JsIterator<T>
+    }
+}
