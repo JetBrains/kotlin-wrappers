@@ -9,9 +9,9 @@ import js.symbol.Symbol
 private val DECORATED_LISTENER = Symbol("@@decorated-listener")
 
 private val toNodeListener = JsFunction<JsTuple1<Function<Unit>>, Function<Unit>>(
-    parameterNames = arrayOf("f"),
+    parameterNames = arrayOf("handler"),
     // language=javascript
-    body = "return (...args) => { f(args) }",
+    body = "return (...args) => { handler(args) }",
 )
 
 internal fun <P : JsTuple> decorateListener(
