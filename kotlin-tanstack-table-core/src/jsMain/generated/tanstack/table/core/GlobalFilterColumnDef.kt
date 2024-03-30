@@ -5,8 +5,8 @@ package tanstack.table.core
 external interface GlobalFilterColumnDef {
     /**
      * Enables/disables the **global** filter for this column.
-     * [API Docs](https://tanstack.com/table/v8/docs/api/features/filters#enableglobalfilter)
-     * [Guide](https://tanstack.com/table/v8/docs/guide/filters)
+     * [API Docs](https://tanstack.com/table/v8/docs/api/features/global-filtering#enableglobalfilter)
+     * [Guide](https://tanstack.com/table/v8/docs/guide/global-filtering)
      */
     var enableGlobalFilter: Boolean?
 }
