@@ -9,6 +9,10 @@ package cesium.engine
  * Create labels by calling [LabelCollection.add]. Do not call the constructor directly.
  * </div>
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Label.html">Online Documentation</a>
+ *
+ * @constructor
+ * @param [labelCollection] Instance of LabelCollection
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Label.html">Online Documentation</a>
  */
 sealed external class Label {
     /**
@@ -267,6 +271,74 @@ sealed external class Label {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Label.html#isDestroyed">Online Documentation</a>
      */
     fun isDestroyed(): Boolean
+
+    /**
+     * Initialization options for the Label constructor
+     * @property [position] The cartesian position of the label.
+     * @property [id] A user-defined object to return when the label is picked with [Scene.pick].
+     * @property [show] Determines if this label will be shown.
+     *   Default value - `true`
+     * @property [text] A string specifying the text of the label.
+     * @property [font] A string specifying the font used to draw this label. Fonts are specified using the same syntax as the CSS 'font' property.
+     *   Default value - `'30px sans-serif'`
+     * @property [style] A [LabelStyle] specifying the style of the label.
+     *   Default value - [LabelStyle.FILL]
+     * @property [scale] A number specifying the uniform scale that is multiplied with the label size.
+     *   Default value - `1.0`
+     * @property [showBackground] Determines if a background behind this label will be shown.
+     *   Default value - `false`
+     * @property [backgroundColor] A [Color] specifying the background color of the label.
+     *   Default value - [Color(0.165, 0.165, 0.165, 0.8)][Color]
+     * @property [backgroundPadding] A [Cartesian2] Specifying the horizontal and vertical background padding in pixels.
+     *   Default value - [Cartesian2(7, 5)][Cartesian2]
+     * @property [pixelOffset] A [Cartesian2] specifying the pixel offset in screen space from the origin of this label.
+     *   Default value - [Cartesian2.ZERO]
+     * @property [eyeOffset] A [Cartesian3] specifying the 3D Cartesian offset applied to this label in eye coordinates.
+     *   Default value - [Cartesian3.ZERO]
+     * @property [horizontalOrigin] A [HorizontalOrigin] specifying the horizontal origin of this label.
+     *   Default value - [HorizontalOrigin.CENTER]
+     * @property [verticalOrigin] A [VerticalOrigin] specifying the vertical origin of this label.
+     *   Default value - [VerticalOrigin.CENTER]
+     * @property [heightReference] A [HeightReference] specifying the height reference of this label.
+     *   Default value - [HeightReference.NONE]
+     * @property [fillColor] A [Color] specifying the fill color of the label.
+     *   Default value - [Color.WHITE]
+     * @property [outlineColor] A [Color] specifying the outline color of the label.
+     *   Default value - [Color.BLACK]
+     * @property [outlineWidth] A number specifying the outline width of the label.
+     *   Default value - `1.0`
+     * @property [translucencyByDistance] A [NearFarScalar] specifying near and far translucency properties of the label based on the label's distance from the camera.
+     * @property [pixelOffsetScaleByDistance] A [NearFarScalar] specifying near and far pixel offset scaling properties of the label based on the label's distance from the camera.
+     * @property [scaleByDistance] A [NearFarScalar] specifying near and far scaling properties of the label based on the label's distance from the camera.
+     * @property [distanceDisplayCondition] A [DistanceDisplayCondition] specifying at what distance from the camera that this label will be displayed.
+     * @property [disableDepthTestDistance] A number specifying the distance from the camera at which to disable the depth test to, for example, prevent clipping against terrain.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Label.html#.ConstructorOptions">Online Documentation</a>
+     */
+    interface ConstructorOptions {
+        var position: Cartesian3
+        var id: String?
+        var show: Boolean?
+        var text: String?
+        var font: String?
+        var style: LabelStyle?
+        var scale: Double?
+        var showBackground: Boolean?
+        var backgroundColor: Color?
+        var backgroundPadding: Cartesian2?
+        var pixelOffset: Cartesian2?
+        var eyeOffset: Cartesian3?
+        var horizontalOrigin: HorizontalOrigin?
+        var verticalOrigin: VerticalOrigin?
+        var heightReference: HeightReference?
+        var fillColor: Color?
+        var outlineColor: Color?
+        var outlineWidth: Double?
+        var translucencyByDistance: NearFarScalar?
+        var pixelOffsetScaleByDistance: NearFarScalar?
+        var scaleByDistance: NearFarScalar?
+        var distanceDisplayCondition: DistanceDisplayCondition?
+        var disableDepthTestDistance: Double?
+    }
 
     companion object {
         /**

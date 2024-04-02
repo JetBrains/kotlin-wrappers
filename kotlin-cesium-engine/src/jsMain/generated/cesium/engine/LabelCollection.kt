@@ -153,7 +153,7 @@ external class LabelCollection(options: ConstructorOptions? = definedExternally)
      * @return The label that was added to the collection.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/LabelCollection.html#add">Online Documentation</a>
      */
-    fun add(options: Any? = definedExternally): Label
+    fun add(options: Label.ConstructorOptions? = definedExternally): Label
 
     /**
      * Removes a label from the collection.  Once removed, a label is no longer usable.

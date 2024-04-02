@@ -75,7 +75,7 @@ external class Geometry(options: ConstructorOptions) {
      * the geometry for rendering.
      * - `position3DHigh` - High 32 bits for encoded 64-bit position computed with [GeometryPipeline.encodeAttribute].  32-bit floating-point.  4 components per attribute.
      * - `position3DLow` - Low 32 bits for encoded 64-bit position computed with [GeometryPipeline.encodeAttribute].  32-bit floating-point.  4 components per attribute.
-     * - `position3DHigh` - High 32 bits for encoded 64-bit 2D (Columbus view) position computed with [GeometryPipeline.encodeAttribute].  32-bit floating-point.  4 components per attribute.
+     * - `position2DHigh` - High 32 bits for encoded 64-bit 2D (Columbus view) position computed with [GeometryPipeline.encodeAttribute].  32-bit floating-point.  4 components per attribute.
      * - `position2DLow` - Low 32 bits for encoded 64-bit 2D (Columbus view) position computed with [GeometryPipeline.encodeAttribute].  32-bit floating-point.  4 components per attribute.
      * - `color` - RGBA color (normalized) usually from [GeometryInstance.color].  32-bit floating-point.  4 components per attribute.
      * - `pickColor` - RGBA color used for picking.  32-bit floating-point.  4 components per attribute.

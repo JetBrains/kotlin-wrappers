@@ -308,24 +308,6 @@ external class Globe(var ellipsoid: Ellipsoid = definedExternally) {
     val terrainProviderChanged: DefaultEvent
 
     /**
-     * A scalar used to exaggerate the terrain. Defaults to `1.0` (no exaggeration).
-     * A value of `2.0` scales the terrain by 2x.
-     * A value of `0.0` makes the terrain completely flat.
-     * Note that terrain exaggeration will not modify any other primitive as they are positioned relative to the ellipsoid.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Globe.html#terrainExaggeration">Online Documentation</a>
-     */
-    var terrainExaggeration: Double
-
-    /**
-     * The height from which terrain is exaggerated. Defaults to `0.0` (scaled relative to ellipsoid surface).
-     * Terrain that is above this height will scale upwards and terrain that is below this height will scale downwards.
-     * Note that terrain exaggeration will not modify any other primitive as they are positioned relative to the ellipsoid.
-     * If [Globe.terrainExaggeration] is `1.0` this value will have no effect.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Globe.html#terrainExaggerationRelativeHeight">Online Documentation</a>
-     */
-    var terrainExaggerationRelativeHeight: Double
-
-    /**
      * Gets an event that's raised when the length of the tile load queue has changed since the last render frame.  When the load queue is empty,
      * all terrain and imagery for the current view have been loaded.  The event passes the new length of the tile load queue.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Globe.html#tileLoadProgressEvent">Online Documentation</a>

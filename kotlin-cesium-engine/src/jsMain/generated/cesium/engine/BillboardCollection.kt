@@ -160,7 +160,7 @@ external class BillboardCollection(options: ConstructorOptions? = definedExterna
      * @return The billboard that was added to the collection.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BillboardCollection.html#add">Online Documentation</a>
      */
-    fun add(options: Any? = definedExternally): Billboard
+    fun add(options: Billboard.ConstructorOptions? = definedExternally): Billboard
 
     /**
      * Removes a billboard from the collection.

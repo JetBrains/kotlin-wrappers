@@ -19,6 +19,10 @@ import web.html.HTMLImageElement
  * A viewport-aligned image positioned in the 3D scene, that is created
  * and rendered using a [BillboardCollection].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Billboard.html">Online Documentation</a>
+ *
+ * @constructor
+ * @param [billboardCollection] Instance of BillboardCollection
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Billboard.html">Online Documentation</a>
  */
 sealed external class Billboard {
     /**
@@ -364,6 +368,67 @@ sealed external class Billboard {
         scene: Scene,
         result: Cartesian2? = definedExternally,
     ): Cartesian2
+
+    /**
+     * Initialization options for the first param of Billboard constructor
+     * @property [position] The cartesian position of the billboard.
+     * @property [id] A user-defined object to return when the billboard is picked with [Scene.pick].
+     * @property [show] Determines if this billboard will be shown.
+     *   Default value - `true`
+     * @property [image] A loaded HTMLImageElement, ImageData, or a url to an image to use for the billboard.
+     * @property [scale] A number specifying the uniform scale that is multiplied with the billboard's image size in pixels.
+     *   Default value - `1.0`
+     * @property [pixelOffset] A [Cartesian2] Specifying the pixel offset in screen space from the origin of this billboard.
+     *   Default value - [Cartesian2.ZERO]
+     * @property [eyeOffset] A [Cartesian3] Specifying the 3D Cartesian offset applied to this billboard in eye coordinates.
+     *   Default value - [Cartesian3.ZERO]
+     * @property [horizontalOrigin] A [HorizontalOrigin] Specifying the horizontal origin of this billboard.
+     *   Default value - [HorizontalOrigin.CENTER]
+     * @property [verticalOrigin] A [VerticalOrigin] Specifying the vertical origin of this billboard.
+     *   Default value - [VerticalOrigin.CENTER]
+     * @property [heightReference] A [HeightReference] Specifying the height reference of this billboard.
+     *   Default value - [HeightReference.NONE]
+     * @property [color] A [Color] Specifying the color that is multiplied with the billboard's texture.
+     *   Default value - [Color.WHITE]
+     * @property [rotation] A number specifying the rotation angle in radians.
+     *   Default value - `0`
+     * @property [alignedAxis] A [Cartesian3] Specifying the aligned axis in world space.
+     *   Default value - [Cartesian3.ZERO]
+     * @property [sizeInMeters] A boolean specifying if the billboard size is in meters or pixels.
+     * @property [width] A number specifying the width of the billboard. If undefined, the image width will be used.
+     * @property [height] A number specifying the height of the billboard. If undefined, the image height will be used.
+     * @property [scaleByDistance] A [NearFarScalar] Specifying near and far scaling properties of a Billboard based on the billboard's distance from the camera.
+     * @property [translucencyByDistance] A [NearFarScalar] Specifying near and far translucency properties of a Billboard based on the billboard's distance from the camera.
+     * @property [pixelOffsetScaleByDistance] A [NearFarScalar] Specifying near and far pixel offset scaling properties of a Billboard based on the billboard's distance from the camera.
+     * @property [imageSubRegion] A [BoundingRectangle] Specifying the sub-region of the image to use for the billboard, rather than the entire image.
+     * @property [distanceDisplayCondition] A [DistanceDisplayCondition] Specifying the distance from the camera at which this billboard will be displayed.
+     * @property [disableDepthTestDistance] A number specifying the distance from the camera at which to disable the depth test to, for example, prevent clipping against terrain.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Billboard.html#.ConstructorOptions">Online Documentation</a>
+     */
+    interface ConstructorOptions {
+        var position: Cartesian3
+        var id: String?
+        var show: Boolean?
+        var image: dynamic
+        var scale: Double?
+        var pixelOffset: Cartesian2?
+        var eyeOffset: Cartesian3?
+        var horizontalOrigin: HorizontalOrigin?
+        var verticalOrigin: VerticalOrigin?
+        var heightReference: HeightReference?
+        var color: Color?
+        var rotation: Double?
+        var alignedAxis: Cartesian3?
+        var sizeInMeters: Boolean?
+        var width: Double?
+        var height: Double?
+        var scaleByDistance: NearFarScalar?
+        var translucencyByDistance: NearFarScalar?
+        var pixelOffsetScaleByDistance: NearFarScalar?
+        var imageSubRegion: BoundingRectangle?
+        var distanceDisplayCondition: DistanceDisplayCondition?
+        var disableDepthTestDistance: Double?
+    }
 }
 
 /**
