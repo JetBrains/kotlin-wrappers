@@ -81,3 +81,15 @@ suspend fun readFile(
     readFileAsync(
         path, options
     ).await()
+
+
+suspend fun readFile(path: PathLike): node.buffer.Buffer =
+    readFileAsync(
+        path
+    ).await()
+
+
+suspend fun readFile(path: FileHandle): node.buffer.Buffer =
+    readFileAsync(
+        path
+    ).await()

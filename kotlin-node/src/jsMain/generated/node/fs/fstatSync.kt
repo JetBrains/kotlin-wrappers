@@ -16,3 +16,4 @@ external fun fstatSync(fd: Number, options: FstatSyncOptions = definedExternally
 external fun fstatSync(fd: Number, options: FstatSyncBigIntOptions): BigIntStats
 
 external fun fstatSync(fd: Number, options: StatOptions = definedExternally): Any /* Stats | BigIntStats */
+external fun fstatSync(fd: Number): Stats

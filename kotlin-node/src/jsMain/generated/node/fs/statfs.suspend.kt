@@ -24,3 +24,9 @@ suspend fun statfs(
     statfsAsync(
         path, opts
     ).await()
+
+
+suspend fun statfs(path: PathLike): StatsFs =
+    statfsAsync(
+        path
+    ).await()

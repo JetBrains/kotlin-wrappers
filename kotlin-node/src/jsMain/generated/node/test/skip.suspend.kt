@@ -34,3 +34,9 @@ suspend fun skip(fn: TestFn = undefined.unsafeCast<Nothing>()): Unit =
     skipAsync(
         fn
     ).await()
+
+
+suspend fun skip(): Unit =
+    skipAsync(
+
+    ).await()

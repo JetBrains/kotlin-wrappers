@@ -20,3 +20,4 @@ package node.fs
 external fun unwatchFile(filename: PathLike, listener: StatsListener = definedExternally): Unit
 
 external fun unwatchFile(filename: PathLike, listener: BigIntStatsListener = definedExternally): Unit
+external fun unwatchFile(filename: PathLike): Unit

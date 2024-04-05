@@ -34,3 +34,9 @@ suspend fun todo(fn: TestFn = undefined.unsafeCast<Nothing>()): Unit =
     todoAsync(
         fn
     ).await()
+
+
+suspend fun todo(): Unit =
+    todoAsync(
+
+    ).await()

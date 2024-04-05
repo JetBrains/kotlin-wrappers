@@ -21,3 +21,6 @@ external fun statAsync(path: PathLike, opts: StatBigIntOpts): Promise<BigIntStat
 
 @JsName("stat")
 external fun statAsync(path: PathLike, opts: StatOptions = definedExternally): Promise<Any /* Stats | BigIntStats */>
+
+@JsName("stat")
+external fun statAsync(path: PathLike): Promise<Stats>

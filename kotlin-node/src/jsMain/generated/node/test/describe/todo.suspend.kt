@@ -36,3 +36,9 @@ suspend fun todo(fn: SuiteFn = undefined.unsafeCast<Nothing>()): Unit =
     todoAsync(
         fn
     ).await()
+
+
+suspend fun todo(): Unit =
+    todoAsync(
+
+    ).await()

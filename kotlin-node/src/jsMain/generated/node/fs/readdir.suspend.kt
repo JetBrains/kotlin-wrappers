@@ -39,3 +39,9 @@ suspend fun readdir(path: PathLike, options: ReaddirWithFileTypesAsyncOptions): 
     readdirAsync(
         path, options
     ).await()
+
+
+suspend fun readdir(path: PathLike): js.array.ReadonlyArray<String> =
+    readdirAsync(
+        path
+    ).await()

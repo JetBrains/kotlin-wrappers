@@ -31,3 +31,6 @@ external fun skipAsync(options: TestOptions = definedExternally, fn: SuiteFn = d
 
 @JsName("skip")
 external fun skipAsync(fn: SuiteFn = definedExternally): Promise<Unit>
+
+@JsName("skip")
+external fun skipAsync(): Promise<Unit>

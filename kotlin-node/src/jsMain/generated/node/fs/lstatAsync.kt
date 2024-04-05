@@ -24,3 +24,6 @@ external fun lstatAsync(path: PathLike, opts: LstatBigIntOpts): Promise<BigIntSt
 
 @JsName("lstat")
 external fun lstatAsync(path: PathLike, opts: StatOptions = definedExternally): Promise<Any /* Stats | BigIntStats */>
+
+@JsName("lstat")
+external fun lstatAsync(path: PathLike): Promise<Stats>

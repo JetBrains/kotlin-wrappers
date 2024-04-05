@@ -130,3 +130,5 @@ external fun exec(
     options: (ExecObjectEncodingOptions)?,
     callback: (error: ExecException?, stdout: Any /* string | Buffer */, stderr: Any /* string | Buffer */) -> Unit = definedExternally,
 ): ChildProcess
+
+external fun exec(command: String, options: ExecStringOptions): ChildProcess

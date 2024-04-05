@@ -45,3 +45,6 @@ external fun readlinkAsync(path: PathLike, options: BufferEncodingOption): Promi
 
 @JsName("readlink")
 external fun readlinkAsync(path: PathLike, options: String? = definedExternally): Promise<Any /* string | Buffer */>
+
+@JsName("readlink")
+external fun readlinkAsync(path: PathLike): Promise<String>

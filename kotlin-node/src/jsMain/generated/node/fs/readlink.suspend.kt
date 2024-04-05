@@ -27,3 +27,9 @@ suspend fun readlink(path: PathLike, options: String? = undefined.unsafeCast<Not
     readlinkAsync(
         path, options
     ).await()
+
+
+suspend fun readlink(path: PathLike): String =
+    readlinkAsync(
+        path
+    ).await()

@@ -65,3 +65,5 @@ external fun connect(
     options: ConnectionOptions = definedExternally,
     secureConnectListener: () -> Unit = definedExternally,
 ): TLSSocket
+
+external fun connect(port: Number): TLSSocket

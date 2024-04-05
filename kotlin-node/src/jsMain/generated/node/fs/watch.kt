@@ -82,3 +82,4 @@ external fun watch(
  * @param filename A path to a file or directory. If a URL is provided, it must use the `file:` protocol.
  */
 external fun watch(filename: PathLike, listener: WatchListener<String> = definedExternally): FSWatcher
+external fun watch(filename: PathLike): FSWatcher

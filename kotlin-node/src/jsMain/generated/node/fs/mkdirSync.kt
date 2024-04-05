@@ -33,3 +33,4 @@ external fun mkdirSync(path: PathLike, options: (MkdirSyncOptions)? = definedExt
 
 
 external fun mkdirSync(path: PathLike, options: MakeDirectoryOptions? = definedExternally): String?
+external fun mkdirSync(path: PathLike): Unit

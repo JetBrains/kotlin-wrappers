@@ -188,3 +188,4 @@ external fun inspect(
 ): String
 
 external fun inspect(value: Any?, options: InspectOptions = definedExternally): String
+external fun inspect(value: Any?): String

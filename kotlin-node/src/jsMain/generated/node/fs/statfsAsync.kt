@@ -24,3 +24,6 @@ external fun statfsAsync(
     path: PathLike,
     opts: StatFsOptions = definedExternally,
 ): Promise<Any /* StatsFs | BigIntStatsFs */>
+
+@JsName("statfs")
+external fun statfsAsync(path: PathLike): Promise<StatsFs>

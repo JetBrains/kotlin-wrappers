@@ -21,3 +21,9 @@ suspend fun mkdtemp(prefix: String, options: BufferEncodingOption): node.buffer.
     mkdtempAsync(
         prefix, options
     ).await()
+
+
+suspend fun mkdtemp(prefix: String): String =
+    mkdtempAsync(
+        prefix
+    ).await()

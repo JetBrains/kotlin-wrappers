@@ -61,3 +61,5 @@ external fun readFileSync(
     path: PathOrFileDescriptor,
     options: node.buffer.BufferEncoding? = definedExternally,
 ): Any /* string | Buffer */
+
+external fun readFileSync(path: PathOrFileDescriptor): node.buffer.Buffer

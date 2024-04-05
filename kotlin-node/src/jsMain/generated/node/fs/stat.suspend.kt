@@ -21,3 +21,9 @@ suspend fun stat(path: PathLike, opts: StatOptions = undefined.unsafeCast<Nothin
     statAsync(
         path, opts
     ).await()
+
+
+suspend fun stat(path: PathLike): Stats =
+    statAsync(
+        path
+    ).await()

@@ -54,3 +54,4 @@ external fun readdirSync(
  * @param options If called with `withFileTypes: true` the result data will be an array of Dirent.
  */
 external fun readdirSync(path: PathLike, options: ReaddirSyncWithFileTypesOptions): js.array.ReadonlyArray<Dirent>
+external fun readdirSync(path: PathLike): js.array.ReadonlyArray<String>

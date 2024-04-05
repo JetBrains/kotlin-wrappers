@@ -34,3 +34,9 @@ suspend fun test(fn: TestFn = undefined.unsafeCast<Nothing>()): Unit =
     testAsync(
         fn
     ).await()
+
+
+suspend fun test(): Unit =
+    testAsync(
+
+    ).await()

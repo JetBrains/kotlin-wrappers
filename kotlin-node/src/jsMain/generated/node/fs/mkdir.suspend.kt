@@ -27,3 +27,9 @@ suspend fun mkdir(path: PathLike, options: MakeDirectoryOptions? = undefined.uns
     mkdirAsync(
         path, options
     ).await()
+
+
+suspend fun mkdir(path: PathLike): Unit =
+    mkdirAsync(
+        path
+    ).await()

@@ -32,3 +32,6 @@ external fun onlyAsync(options: TestOptions = definedExternally, fn: SuiteFn = d
 
 @JsName("only")
 external fun onlyAsync(fn: SuiteFn = definedExternally): Promise<Unit>
+
+@JsName("only")
+external fun onlyAsync(): Promise<Unit>

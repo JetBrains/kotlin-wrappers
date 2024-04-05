@@ -59,3 +59,6 @@ external fun mkdirAsync(path: PathLike, options: (MkdirAsyncOptions)? = definedE
 
 @JsName("mkdir")
 external fun mkdirAsync(path: PathLike, options: MakeDirectoryOptions? = definedExternally): Promise<String?>
+
+@JsName("mkdir")
+external fun mkdirAsync(path: PathLike): Promise<Unit>

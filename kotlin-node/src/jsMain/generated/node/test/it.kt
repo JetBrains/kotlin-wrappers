@@ -31,3 +31,6 @@ external fun itAsync(options: TestOptions = definedExternally, fn: TestFn = defi
 
 @JsName("it")
 external fun itAsync(fn: TestFn = definedExternally): Promise<Unit>
+
+@JsName("it")
+external fun itAsync(): Promise<Unit>

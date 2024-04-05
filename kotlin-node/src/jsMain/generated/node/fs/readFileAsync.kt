@@ -135,3 +135,9 @@ external fun readFileAsync(
     path: FileHandle,
     options: node.buffer.BufferEncoding? = definedExternally,
 ): Promise<Any /* string | Buffer */>
+
+@JsName("readFile")
+external fun readFileAsync(path: PathLike): Promise<node.buffer.Buffer>
+
+@JsName("readFile")
+external fun readFileAsync(path: FileHandle): Promise<node.buffer.Buffer>

@@ -21,3 +21,9 @@ suspend fun lstat(path: PathLike, opts: StatOptions = undefined.unsafeCast<Nothi
     lstatAsync(
         path, opts
     ).await()
+
+
+suspend fun lstat(path: PathLike): Stats =
+    lstatAsync(
+        path
+    ).await()

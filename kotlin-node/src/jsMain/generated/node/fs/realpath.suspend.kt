@@ -21,3 +21,9 @@ suspend fun realpath(path: PathLike, options: BufferEncodingOption): node.buffer
     realpathAsync(
         path, options
     ).await()
+
+
+suspend fun realpath(path: PathLike): String =
+    realpathAsync(
+        path
+    ).await()

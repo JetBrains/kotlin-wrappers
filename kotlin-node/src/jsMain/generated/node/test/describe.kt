@@ -35,3 +35,6 @@ external fun describeAsync(options: TestOptions = definedExternally, fn: SuiteFn
 
 @JsName("describe")
 external fun describeAsync(fn: SuiteFn = definedExternally): Promise<Unit>
+
+@JsName("describe")
+external fun describeAsync(): Promise<Unit>

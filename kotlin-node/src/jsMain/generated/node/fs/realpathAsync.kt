@@ -46,3 +46,5 @@ external fun realpathAsync(path: PathLike, options: BufferEncodingOption): Promi
  * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
  * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
  */
+@JsName("realpath")
+external fun realpathAsync(path: PathLike): Promise<String>

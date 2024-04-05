@@ -230,3 +230,4 @@ external fun spawn(
 ): ChildProcessByStdio<Nothing?, Nothing?, Nothing?>
 
 external fun spawn(command: String, args: ReadonlyArray<String>, options: SpawnOptions): ChildProcess
+external fun spawn(command: String): ChildProcessWithoutNullStreams

@@ -72,3 +72,5 @@ external fun createServer(
     options: ServerOpts = definedExternally,
     connectionListener: (socket: Socket) -> Unit = definedExternally,
 ): Server
+
+external fun createServer(): Server

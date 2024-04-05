@@ -18,3 +18,4 @@ external fun statfsSync(path: PathLike, options: StatfsSyncOptions = definedExte
 external fun statfsSync(path: PathLike, options: StatfsSyncBigIntOptions): BigIntStatsFs
 
 external fun statfsSync(path: PathLike, options: StatFsOptions = definedExternally): Any /* StatsFs | BigIntStatsFs */
+external fun statfsSync(path: PathLike): StatsFs

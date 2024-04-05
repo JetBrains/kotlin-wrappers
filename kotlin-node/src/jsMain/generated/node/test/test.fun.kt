@@ -63,3 +63,6 @@ external fun testAsync(options: TestOptions = definedExternally, fn: TestFn = de
 
 @JsName("test")
 external fun testAsync(fn: TestFn = definedExternally): Promise<Unit>
+
+@JsName("test")
+external fun testAsync(): Promise<Unit>

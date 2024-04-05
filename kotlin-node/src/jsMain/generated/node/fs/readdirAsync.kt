@@ -83,3 +83,6 @@ external fun readdirAsync(
     path: PathLike,
     options: ReaddirWithFileTypesAsyncOptions,
 ): Promise<js.array.ReadonlyArray<Dirent>>
+
+@JsName("readdir")
+external fun readdirAsync(path: PathLike): Promise<js.array.ReadonlyArray<String>>

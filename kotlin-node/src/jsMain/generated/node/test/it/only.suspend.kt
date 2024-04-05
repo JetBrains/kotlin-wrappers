@@ -36,3 +36,9 @@ suspend fun only(fn: TestFn = undefined.unsafeCast<Nothing>()): Unit =
     onlyAsync(
         fn
     ).await()
+
+
+suspend fun only(): Unit =
+    onlyAsync(
+
+    ).await()

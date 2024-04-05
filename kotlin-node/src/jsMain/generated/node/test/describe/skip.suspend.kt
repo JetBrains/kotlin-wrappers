@@ -36,3 +36,9 @@ suspend fun skip(fn: SuiteFn = undefined.unsafeCast<Nothing>()): Unit =
     skipAsync(
         fn
     ).await()
+
+
+suspend fun skip(): Unit =
+    skipAsync(
+
+    ).await()

@@ -62,3 +62,5 @@ external fun fork(
     args: ReadonlyArray<String> = definedExternally,
     options: ForkOptions = definedExternally,
 ): ChildProcess
+
+external fun fork(modulePath: String): ChildProcess

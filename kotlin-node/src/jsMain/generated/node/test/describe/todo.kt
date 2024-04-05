@@ -31,3 +31,6 @@ external fun todoAsync(options: TestOptions = definedExternally, fn: SuiteFn = d
 
 @JsName("todo")
 external fun todoAsync(fn: SuiteFn = definedExternally): Promise<Unit>
+
+@JsName("todo")
+external fun todoAsync(): Promise<Unit>

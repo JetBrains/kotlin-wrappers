@@ -29,3 +29,6 @@ external fun onlyAsync(options: TestOptions = definedExternally, fn: TestFn = de
 
 @JsName("only")
 external fun onlyAsync(fn: TestFn = definedExternally): Promise<Unit>
+
+@JsName("only")
+external fun onlyAsync(): Promise<Unit>
