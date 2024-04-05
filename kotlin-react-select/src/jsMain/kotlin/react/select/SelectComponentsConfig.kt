@@ -15,6 +15,7 @@ external interface SelectComponentsConfig<Option : Any, Group : GroupBase<Option
     var NoOptionsMessage: ComponentType<NoOptionsMessageProps>?
     var Option: ComponentType<OptionProps<Option, Group>>?
     var SingleValue: ComponentType<SingleValueProps<Option, Group>>?
+    var ValueContainer: ComponentType<ValueContainerProps<Option, Group>>?
 }
 
 
