@@ -39,7 +39,7 @@ external interface StylesConfig<Option : Any, Group : GroupBase<Option>> {
     var option: StylesConfigFunction<OptionProps<Option, Group>>?
     var placeholder: StylesConfigFunction<PlaceholderProps>?
     var singleValue: StylesConfigFunction<SingleValueProps<Option, Group>>?
-    var valueContainer: StylesConfigFunction<ValueContainerProps>?
+    var valueContainer: StylesConfigFunction<ValueContainerProps<Option, Group>>?
 }
 
 inline fun <Option : Any, Group : GroupBase<Option>> StylesConfig(
