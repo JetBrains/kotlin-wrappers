@@ -6,8 +6,8 @@ import js.intl.DateTimeFormatOptions
  * Exposes the [Date API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) to Kotlin.
  */
 external class Date() {
-    constructor(milliseconds: Number)
-    constructor(dateString: String)
+    constructor(value: Number)
+    constructor(value: String)
     constructor(
         year: Int,
         month: Int,
@@ -62,7 +62,7 @@ external class Date() {
 
     companion object {
         fun now(): Double
-        fun parse(dateString: String): Double
+        fun parse(value: String): Double
         fun UTC(
             year: Int,
             month: Int,
