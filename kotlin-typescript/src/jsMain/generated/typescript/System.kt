@@ -55,10 +55,10 @@ sealed external interface System {
         depth: Int = definedExternally,
     ): ReadonlyArray<String>
 
-    val getModifiedTime: ((path: String) -> kotlin.js.Date?)?
+    val getModifiedTime: ((path: String) -> js.date.Date?)?
     val setModifiedTime: ((
         path: String,
-        time: kotlin.js.Date,
+        time: js.date.Date,
     ) -> Unit)?
     val deleteFile: ((path: String) -> Unit)?
 

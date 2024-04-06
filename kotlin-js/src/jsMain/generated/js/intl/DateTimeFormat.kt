@@ -7,7 +7,7 @@ package js.intl
 import js.array.ReadonlyArray
 import js.core.BigInt
 import js.core.JsLong
-import kotlin.js.Date
+import js.date.Date
 
 external class DateTimeFormat(
     locales: String = definedExternally,

@@ -539,10 +539,10 @@
             "node.stream.ReadableOptions"
         ],
         "fs/StatsBase.kt": [
-            "kotlin.js.Date"
+            "js.date.Date"
         ],
         "fs/Stats.kt": [
-            "kotlin.js.Date"
+            "js.date.Date"
         ],
         "fs/StreamOptions.kt": [
             "web.abort.AbortSignal"
@@ -948,7 +948,7 @@
             "node.util.Style"
         ],
         "util/isDate.contract.kt": [
-            "kotlin.js.Date"
+            "js.date.Date"
         ],
         "util/isRegExp.contract.kt": [
             "kotlin.js.RegExp"
@@ -969,7 +969,7 @@
             "js.buffer.DataView"
         ],
         "util/types/isDate.contract.kt": [
-            "kotlin.js.Date"
+            "js.date.Date"
         ],
         "util/types/isFloat32Array.contract.kt": [
             "js.typedarrays.Float32Array"

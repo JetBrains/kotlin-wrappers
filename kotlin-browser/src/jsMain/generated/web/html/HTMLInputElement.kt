@@ -3,6 +3,7 @@
 package web.html
 
 import js.array.ReadonlyArray
+import js.date.Date
 import web.autofill.AutoFill
 import web.dom.NodeListOf
 import web.file.FileList
@@ -10,7 +11,6 @@ import web.form.FormControl
 import web.fs.FileSystemEntry
 import web.validation.ValidityState
 import web.window.WindowName
-import kotlin.js.Date
 
 /**
  * Provides special properties and methods for manipulating the options, layout, and presentation of <input> elements.

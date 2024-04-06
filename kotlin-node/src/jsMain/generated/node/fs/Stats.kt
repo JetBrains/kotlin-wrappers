@@ -4,7 +4,7 @@
 
 package node.fs
 
-import kotlin.js.Date
+import js.date.Date
 
 
 /**

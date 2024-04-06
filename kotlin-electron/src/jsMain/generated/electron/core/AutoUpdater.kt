@@ -3,7 +3,7 @@
 
 package electron.core
 
-import kotlin.js.Date
+import js.date.Date
 
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")

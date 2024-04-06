@@ -5,5 +5,5 @@ package typescript
 typealias FileWatcherCallback = (
     fileName: String,
     eventKind: FileWatcherEventKind,
-    modifiedTime: kotlin.js.Date?,
+    modifiedTime: js.date.Date?,
 ) -> Unit

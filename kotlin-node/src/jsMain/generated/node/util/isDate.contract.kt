@@ -2,8 +2,8 @@
 
 package node.util
 
+import js.date.Date
 import kotlin.contracts.contract
-import kotlin.js.Date
 
 
 @Suppress("NOTHING_TO_INLINE", "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")

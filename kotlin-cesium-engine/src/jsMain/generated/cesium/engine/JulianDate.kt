@@ -83,7 +83,7 @@ external class JulianDate(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/JulianDate.html#.fromDate">Online Documentation</a>
          */
         fun fromDate(
-            date: kotlin.js.Date,
+            date: js.date.Date,
             result: JulianDate? = definedExternally,
         ): JulianDate
 
@@ -131,7 +131,7 @@ external class JulianDate(
          * @return A new instance representing the provided date.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/JulianDate.html#.toDate">Online Documentation</a>
          */
-        fun toDate(julianDate: JulianDate): kotlin.js.Date
+        fun toDate(julianDate: JulianDate): js.date.Date
 
         /**
          * Creates an ISO8601 representation of the provided date.

@@ -26,10 +26,10 @@
             "kotlin.js.Promise"
         ],
         "AutoUpdater.kt": [
-            "kotlin.js.Date"
+            "js.date.Date"
         ],
         "AutoUpdaterEvent.kt": [
-            "kotlin.js.Date"
+            "js.date.Date"
         ],
         "BrowserWindow.kt": [
             "kotlin.js.Promise",
@@ -51,7 +51,7 @@
             "node.events.EventEmitter as NodeEventEmitter"
         ],
         "CrashReport.kt": [
-            "kotlin.js.Date"
+            "js.date.Date"
         ],
         "Debugger.kt": [
             "kotlin.js.Promise",

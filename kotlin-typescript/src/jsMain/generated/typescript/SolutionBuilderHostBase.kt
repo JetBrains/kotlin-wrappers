@@ -15,10 +15,10 @@ sealed external interface SolutionBuilderHostBase<T : BuilderProgram> : ProgramH
         writeByteOrderMark: Boolean?,
     ) -> Unit)?
     var getCustomTransformers: ((project: String) -> CustomTransformers?)?
-    fun getModifiedTime(fileName: String): kotlin.js.Date?
+    fun getModifiedTime(fileName: String): js.date.Date?
     fun setModifiedTime(
         fileName: String,
-        date: kotlin.js.Date,
+        date: js.date.Date,
     )
 
     fun deleteFile(fileName: String)

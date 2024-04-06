@@ -100,7 +100,7 @@ external class CameraEventAggregator(canvas: HTMLCanvasElement? = definedExterna
     fun getButtonPressTime(
         type: CameraEventType,
         modifier: KeyboardEventModifier? = definedExternally,
-    ): kotlin.js.Date
+    ): js.date.Date
 
     /**
      * Gets the time the button was released or the touch was ended.
@@ -112,7 +112,7 @@ external class CameraEventAggregator(canvas: HTMLCanvasElement? = definedExterna
     fun getButtonReleaseTime(
         type: CameraEventType,
         modifier: KeyboardEventModifier? = definedExternally,
-    ): kotlin.js.Date
+    ): js.date.Date
 
     /**
      * Signals that all of the events have been handled and the aggregator should be reset to handle new events.

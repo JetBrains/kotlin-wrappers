@@ -100,7 +100,7 @@ external interface IUtils<TDate : Any> {
 // constructor (options?: { formats?: DateIOFormats, locale?: any, instance?: any })
 
     fun date(value: Any?): TDate?
-    fun toJsDate(value: TDate): kotlin.js.Date
+    fun toJsDate(value: TDate): js.date.Date
     fun parseISO(isString: String): TDate
     fun toISO(value: TDate): String
     fun parse(value: String, format: String): TDate?

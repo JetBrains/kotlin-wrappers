@@ -2,7 +2,7 @@
 
 package electron.core
 
-import kotlin.js.Date
+import js.date.Date
 
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
