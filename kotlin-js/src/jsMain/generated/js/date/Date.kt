@@ -1,5 +1,6 @@
 package js.date
 
+import js.array.ReadonlyArray
 import js.core.JsLong
 import js.intl.DateTimeFormatOptions
 
@@ -41,19 +42,19 @@ external class Date() {
     fun toISOString(): String
     fun toJSON(): Any
     fun toLocaleDateString(
-        locales: Array<String> = definedExternally,
+        locales: ReadonlyArray<String> = definedExternally,
         options: DateTimeFormatOptions = definedExternally,
     ): String
 
     fun toLocaleDateString(locales: String, options: DateTimeFormatOptions = definedExternally): String
     fun toLocaleString(
-        locales: Array<String> = definedExternally,
+        locales: ReadonlyArray<String> = definedExternally,
         options: DateTimeFormatOptions = definedExternally,
     ): String
 
     fun toLocaleString(locales: String, options: DateTimeFormatOptions = definedExternally): String
     fun toLocaleTimeString(
-        locales: Array<String> = definedExternally,
+        locales: ReadonlyArray<String> = definedExternally,
         options: DateTimeFormatOptions = definedExternally,
     ): String
 
