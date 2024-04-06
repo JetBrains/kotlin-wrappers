@@ -13,7 +13,7 @@ external class Date() {
     constructor(value: String)
     constructor(
         year: Int,
-        month: Int,
+        monthIndex: Int,
         day: Int = definedExternally,
         hour: Int = definedExternally,
         minute: Int = definedExternally,
@@ -80,7 +80,7 @@ external class Date() {
         fun parse(value: String): JsLong
         fun UTC(
             year: Int,
-            month: Int,
+            monthIndex: Int,
             day: Int = definedExternally,
             hour: Int = definedExternally,
             minute: Int = definedExternally,
