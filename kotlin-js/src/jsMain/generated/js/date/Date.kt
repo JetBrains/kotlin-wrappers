@@ -8,12 +8,15 @@ import js.intl.DateTimeFormatOptions
 external class Date() {
     constructor(milliseconds: Number)
     constructor(dateString: String)
-    constructor(year: Int, month: Int)
-    constructor(year: Int, month: Int, day: Int)
-    constructor(year: Int, month: Int, day: Int, hour: Int)
-    constructor(year: Int, month: Int, day: Int, hour: Int, minute: Int)
-    constructor(year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int)
-    constructor(year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int, millisecond: Number)
+    constructor(
+        year: Int,
+        month: Int,
+        day: Int = definedExternally,
+        hour: Int = definedExternally,
+        minute: Int = definedExternally,
+        second: Int = definedExternally,
+        millisecond: Int = definedExternally,
+    )
 
     fun getDate(): Int
     fun getDay(): Int
@@ -60,11 +63,14 @@ external class Date() {
     companion object {
         fun now(): Double
         fun parse(dateString: String): Double
-        fun UTC(year: Int, month: Int): Double
-        fun UTC(year: Int, month: Int, day: Int): Double
-        fun UTC(year: Int, month: Int, day: Int, hour: Int): Double
-        fun UTC(year: Int, month: Int, day: Int, hour: Int, minute: Int): Double
-        fun UTC(year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int): Double
-        fun UTC(year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int, millisecond: Number): Double
+        fun UTC(
+            year: Int,
+            month: Int,
+            day: Int = definedExternally,
+            hour: Int = definedExternally,
+            minute: Int = definedExternally,
+            second: Int = definedExternally,
+            millisecond: Int = definedExternally,
+        ): Double
     }
 }
