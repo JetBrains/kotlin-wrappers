@@ -46,19 +46,31 @@ external class Date() {
         options: DateTimeFormatOptions = definedExternally,
     ): String
 
-    fun toLocaleDateString(locales: String, options: DateTimeFormatOptions = definedExternally): String
+    fun toLocaleDateString(
+        locales: String,
+        options: DateTimeFormatOptions = definedExternally,
+    ): String
+
     fun toLocaleString(
         locales: ReadonlyArray<String> = definedExternally,
         options: DateTimeFormatOptions = definedExternally,
     ): String
 
-    fun toLocaleString(locales: String, options: DateTimeFormatOptions = definedExternally): String
+    fun toLocaleString(
+        locales: String,
+        options: DateTimeFormatOptions = definedExternally,
+    ): String
+
     fun toLocaleTimeString(
         locales: ReadonlyArray<String> = definedExternally,
         options: DateTimeFormatOptions = definedExternally,
     ): String
 
-    fun toLocaleTimeString(locales: String, options: DateTimeFormatOptions = definedExternally): String
+    fun toLocaleTimeString(
+        locales: String,
+        options: DateTimeFormatOptions = definedExternally,
+    ): String
+
     fun toTimeString(): String
     fun toUTCString(): String
 
