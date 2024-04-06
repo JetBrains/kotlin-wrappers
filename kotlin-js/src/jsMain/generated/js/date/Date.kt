@@ -11,6 +11,7 @@ import js.intl.UnicodeBCP47LocaleIdentifier
 external class Date() {
     constructor(value: JsLong)
     constructor(value: String)
+    constructor(value: Date)
     constructor(
         year: Int,
         monthIndex: Int,
