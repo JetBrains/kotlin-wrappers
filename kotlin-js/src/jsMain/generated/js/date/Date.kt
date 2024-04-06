@@ -8,6 +8,9 @@ import js.intl.DateTimeFormatOptions
 import js.intl.Locale
 import js.intl.UnicodeBCP47LocaleIdentifier
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date)
+ */
 external class Date() {
     constructor(value: JsLong)
     constructor(value: String)
@@ -22,6 +25,8 @@ external class Date() {
      * @param minutes Must be supplied if seconds is supplied. A number from 0 to 59 that specifies the minutes.
      * @param seconds Must be supplied if milliseconds is supplied. A number from 0 to 59 that specifies the seconds.
      * @param ms A number from 0 to 999 that specifies the milliseconds.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/Date)
      */
     constructor(
         year: Int,
@@ -33,93 +38,195 @@ external class Date() {
         ms: Int = definedExternally,
     )
 
-    /** Returns a date as a string value. */
+    /**
+     * Returns a date as a string value.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/toDateString)
+     */
     fun toDateString(): String
 
-    /** Returns a time as a string value. */
+    /**
+     * Returns a time as a string value.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/toTimeString)
+     */
     fun toTimeString(): String
 
-    /** Returns a value as a string value appropriate to the host environment's current locale. */
+    /**
+     * Returns a value as a string value appropriate to the host environment's current locale.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString)
+     */
     fun toLocaleString(): String
 
-    /** Returns a date as a string value appropriate to the host environment's current locale. */
+    /**
+     * Returns a date as a string value appropriate to the host environment's current locale.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString)
+     */
     fun toLocaleDateString(): String
 
-    /** Returns a time as a string value appropriate to the host environment's current locale. */
+    /**
+     * Returns a time as a string value appropriate to the host environment's current locale.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString)
+     */
     fun toLocaleTimeString(): String
 
-    /** Returns the stored time value in milliseconds since midnight, January 1, 1970 UTC. */
+    /**
+     * Returns the stored time value in milliseconds since midnight, January 1, 1970 UTC.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/valueOf)
+     */
     fun valueOf(): JsLong
 
-    /** Returns the stored time value in milliseconds since midnight, January 1, 1970 UTC. */
+    /**
+     * Returns the stored time value in milliseconds since midnight, January 1, 1970 UTC.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime)
+     */
     fun getTime(): JsLong
 
-    /** Gets the year, using local time. */
+    /**
+     * Gets the year, using local time.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/getFullYear)
+     */
     fun getFullYear(): Int
 
-    /** Gets the year using Universal Coordinated Time (UTC). */
+    /**
+     * Gets the year using Universal Coordinated Time (UTC).
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/getUTCFullYear)
+     */
     fun getUTCFullYear(): Int
 
-    /** Gets the month, using local time. */
+    /**
+     * Gets the month, using local time.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/getMonth)
+     */
     fun getMonth(): Int
 
-    /** Gets the month of a Date object using Universal Coordinated Time (UTC). */
+    /**
+     * Gets the month of a Date object using Universal Coordinated Time (UTC).
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/getUTCMonth)
+     */
     fun getUTCMonth(): Int
 
-    /** Gets the day-of-the-month, using local time. */
+    /**
+     * Gets the day-of-the-month, using local time.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/getDate)
+     */
     fun getDate(): Int
 
-    /** Gets the day-of-the-month, using Universal Coordinated Time (UTC). */
+    /**
+     * Gets the day-of-the-month, using Universal Coordinated Time (UTC).
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/getUTCDate)
+     */
     fun getUTCDate(): Int
 
-    /** Gets the day of the week, using local time. */
+    /**
+     * Gets the day of the week, using local time.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/getDay)
+     */
     fun getDay(): Int
 
-    /** Gets the day of the week using Universal Coordinated Time (UTC). */
+    /**
+     * Gets the day of the week using Universal Coordinated Time (UTC).
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/getUTCDay)
+     */
     fun getUTCDay(): Int
 
-    /** Gets the hours in a date, using local time. */
+    /**
+     * Gets the hours in a date, using local time.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/getHours)
+     */
     fun getHours(): Int
 
-    /** Gets the hours value in a Date object using Universal Coordinated Time (UTC). */
+    /**
+     * Gets the hours value in a Date object using Universal Coordinated Time (UTC).
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/getUTCHours)
+     */
     fun getUTCHours(): Int
 
-    /** Gets the minutes of a Date object, using local time. */
+    /**
+     * Gets the minutes of a Date object, using local time.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/getMinutes)
+     */
     fun getMinutes(): Int
 
-    /** Gets the minutes of a Date object using Universal Coordinated Time (UTC). */
+    /**
+     * Gets the minutes of a Date object using Universal Coordinated Time (UTC).
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/getUTCMinutes)
+     */
     fun getUTCMinutes(): Int
 
-    /** Gets the seconds of a Date object, using local time. */
+    /**
+     * Gets the seconds of a Date object, using local time.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/getSeconds)
+     */
     fun getSeconds(): Int
 
-    /** Gets the seconds of a Date object using Universal Coordinated Time (UTC). */
+    /**
+     * Gets the seconds of a Date object using Universal Coordinated Time (UTC).
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/getUTCSeconds)
+     */
     fun getUTCSeconds(): Int
 
-    /** Gets the milliseconds of a Date, using local time. */
+    /**
+     * Gets the milliseconds of a Date, using local time.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/getMilliseconds)
+     */
     fun getMilliseconds(): Int
 
-    /** Gets the milliseconds of a Date object using Universal Coordinated Time (UTC). */
+    /**
+     * Gets the milliseconds of a Date object using Universal Coordinated Time (UTC).
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/getUTCMilliseconds)
+     */
     fun getUTCMilliseconds(): Int
 
-    /** Gets the difference in minutes between the time on the local computer and Universal Coordinated Time (UTC). */
+    /**
+     * Gets the difference in minutes between the time on the local computer and Universal Coordinated Time (UTC).
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/getTimezoneOffset)
+     */
     fun getTimezoneOffset(): Int
 
     /**
      * Sets the date and time value in the Date object.
      * @param time A numeric value representing the number of elapsed milliseconds since midnight, January 1, 1970 GMT.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/setTime)
      */
     fun setTime(time: JsLong): JsLong
 
     /**
      * Sets the milliseconds value in the Date object using local time.
      * @param ms A numeric value equal to the millisecond value.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/setMilliseconds)
      */
     fun setMilliseconds(ms: Int): Int
 
     /**
      * Sets the milliseconds value in the Date object using Universal Coordinated Time (UTC).
      * @param ms A numeric value equal to the millisecond value.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/setUTCMilliseconds)
      */
     fun setUTCMilliseconds(ms: Int): Int
 
@@ -127,6 +234,8 @@ external class Date() {
      * Sets the seconds value in the Date object using local time.
      * @param sec A numeric value equal to the seconds value.
      * @param ms A numeric value equal to the milliseconds value.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/setSeconds)
      */
     fun setSeconds(
         sec: Int,
@@ -137,6 +246,8 @@ external class Date() {
      * Sets the seconds value in the Date object using Universal Coordinated Time (UTC).
      * @param sec A numeric value equal to the seconds value.
      * @param ms A numeric value equal to the milliseconds value.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/setUTCSeconds)
      */
     fun setUTCSeconds(
         sec: Int,
@@ -148,6 +259,8 @@ external class Date() {
      * @param min A numeric value equal to the minutes value.
      * @param sec A numeric value equal to the seconds value.
      * @param ms A numeric value equal to the milliseconds value.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/setMinutes)
      */
     fun setMinutes(
         min: Int,
@@ -160,6 +273,8 @@ external class Date() {
      * @param min A numeric value equal to the minutes value.
      * @param sec A numeric value equal to the seconds value.
      * @param ms A numeric value equal to the milliseconds value.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/setUTCMinutes)
      */
     fun setUTCMinutes(
         min: Int,
@@ -173,6 +288,8 @@ external class Date() {
      * @param min A numeric value equal to the minutes value.
      * @param sec A numeric value equal to the seconds value.
      * @param ms A numeric value equal to the milliseconds value.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/setHours)
      */
     fun setHours(
         hours: Int,
@@ -187,6 +304,8 @@ external class Date() {
      * @param min A numeric value equal to the minutes value.
      * @param sec A numeric value equal to the seconds value.
      * @param ms A numeric value equal to the milliseconds value.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/setUTCHours)
      */
     fun setUTCHours(
         hours: Int,
@@ -198,12 +317,16 @@ external class Date() {
     /**
      * Sets the numeric day-of-the-month value of the Date object using local time.
      * @param date A numeric value equal to the day of the month.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/setDate)
      */
     fun setDate(date: Int): Int
 
     /**
      * Sets the numeric day of the month in the Date object using Universal Coordinated Time (UTC).
      * @param date A numeric value equal to the day of the month.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/setUTCDate)
      */
     fun setUTCDate(date: Int): Int
 
@@ -211,6 +334,8 @@ external class Date() {
      * Sets the month value in the Date object using local time.
      * @param month A numeric value equal to the month. The value for January is 0, and other month values follow consecutively.
      * @param date A numeric value representing the day of the month. If this value is not supplied, the value from a call to the getDate method is used.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/setMonth)
      */
     fun setMonth(
         month: Int,
@@ -221,6 +346,8 @@ external class Date() {
      * Sets the month value in the Date object using Universal Coordinated Time (UTC).
      * @param month A numeric value equal to the month. The value for January is 0, and other month values follow consecutively.
      * @param date A numeric value representing the day of the month. If it is not supplied, the value from a call to the getUTCDate method is used.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/setUTCMonth)
      */
     fun setUTCMonth(
         month: Int,
@@ -232,6 +359,8 @@ external class Date() {
      * @param year A numeric value for the year.
      * @param month A zero-based numeric value for the month (0 for January, 11 for December). Must be specified if numDate is specified.
      * @param date A numeric value equal for the day of the month.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/setFullYear)
      */
     fun setFullYear(
         year: Int,
@@ -244,6 +373,8 @@ external class Date() {
      * @param year A numeric value equal to the year.
      * @param month A numeric value equal to the month. The value for January is 0, and other month values follow consecutively. Must be supplied if numDate is supplied.
      * @param date A numeric value equal to the day of the month.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/setUTCFullYear)
      */
     fun setUTCFullYear(
         year: Int,
@@ -251,19 +382,33 @@ external class Date() {
         date: Int = definedExternally,
     ): Int
 
-    /** Returns a date converted to a string using Universal Coordinated Time (UTC). */
+    /**
+     * Returns a date converted to a string using Universal Coordinated Time (UTC).
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/toUTCString)
+     */
     fun toUTCString(): String
 
-    /** Returns a date as a string value in ISO format. */
+    /**
+     * Returns a date as a string value in ISO format.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)
+     */
     fun toISOString(): String
 
-    /** Used by the JSON.stringify method to enable the transformation of an object's data for JavaScript Object Notation (JSON) serialization. */
+    /**
+     * Used by the JSON.stringify method to enable the transformation of an object's data for JavaScript Object Notation (JSON) serialization.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/toJSON)
+     */
     fun toJSON(key: Any? = definedExternally): String
 
     /**
      * Converts a date and time to a string by using the current or specified locale.
      * @param locales A locale string, array of locale strings, Intl.Locale object, or array of Intl.Locale objects that contain one or more language or locale tags. If you include more than one locale string, list them in descending order of priority so that the first entry is the preferred locale. If you omit this parameter, the default locale of the JavaScript runtime is used.
      * @param options An object that contains one or more properties that specify comparison options.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString)
      */
     fun toLocaleString(
         locales: UnicodeBCP47LocaleIdentifier = definedExternally,
@@ -289,6 +434,8 @@ external class Date() {
      * Converts a date to a string by using the current or specified locale.
      * @param locales A locale string, array of locale strings, Intl.Locale object, or array of Intl.Locale objects that contain one or more language or locale tags. If you include more than one locale string, list them in descending order of priority so that the first entry is the preferred locale. If you omit this parameter, the default locale of the JavaScript runtime is used.
      * @param options An object that contains one or more properties that specify comparison options.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString)
      */
     fun toLocaleDateString(
         locales: UnicodeBCP47LocaleIdentifier = definedExternally,
@@ -314,6 +461,8 @@ external class Date() {
      * Converts a time to a string by using the current or specified locale.
      * @param locales A locale string, array of locale strings, Intl.Locale object, or array of Intl.Locale objects that contain one or more language or locale tags. If you include more than one locale string, list them in descending order of priority so that the first entry is the preferred locale. If you omit this parameter, the default locale of the JavaScript runtime is used.
      * @param options An object that contains one or more properties that specify comparison options.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString)
      */
     fun toLocaleTimeString(
         locales: UnicodeBCP47LocaleIdentifier = definedExternally,
@@ -339,6 +488,8 @@ external class Date() {
         /**
          * Parses a string containing a date, and returns the number of milliseconds between that date and midnight, January 1, 1970.
          * @param s A date string
+         *
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/parse)
          */
         fun parse(s: String): JsLong
 
@@ -351,6 +502,8 @@ external class Date() {
          * @param minutes Must be supplied if seconds is supplied. A number from 0 to 59 that specifies the minutes.
          * @param seconds Must be supplied if milliseconds is supplied. A number from 0 to 59 that specifies the seconds.
          * @param ms A number from 0 to 999 that specifies the milliseconds.
+         *
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/UTC)
          */
         fun UTC(
             year: Int,
@@ -362,7 +515,11 @@ external class Date() {
             ms: Int = definedExternally,
         ): JsLong
 
-        /** Returns the number of milliseconds elapsed since midnight, January 1, 1970 Universal Coordinated Time (UTC). */
+        /**
+         * Returns the number of milliseconds elapsed since midnight, January 1, 1970 Universal Coordinated Time (UTC).
+         *
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/now)
+         */
         fun now(): JsLong
     }
 }
