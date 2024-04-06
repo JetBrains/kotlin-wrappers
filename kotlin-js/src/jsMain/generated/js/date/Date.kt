@@ -3,6 +3,7 @@ package js.date
 import js.array.ReadonlyArray
 import js.core.JsLong
 import js.intl.DateTimeFormatOptions
+import js.intl.UnicodeBCP47LocaleIdentifier
 
 /**
  * Exposes the [Date API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) to Kotlin.
@@ -42,32 +43,32 @@ external class Date() {
     fun toISOString(): String
     fun toJSON(): Any
     fun toLocaleDateString(
-        locales: ReadonlyArray<String> = definedExternally,
+        locales: ReadonlyArray<UnicodeBCP47LocaleIdentifier> = definedExternally,
         options: DateTimeFormatOptions = definedExternally,
     ): String
 
     fun toLocaleDateString(
-        locales: String,
+        locales: UnicodeBCP47LocaleIdentifier,
         options: DateTimeFormatOptions = definedExternally,
     ): String
 
     fun toLocaleString(
-        locales: ReadonlyArray<String> = definedExternally,
+        locales: ReadonlyArray<UnicodeBCP47LocaleIdentifier> = definedExternally,
         options: DateTimeFormatOptions = definedExternally,
     ): String
 
     fun toLocaleString(
-        locales: String,
+        locales: UnicodeBCP47LocaleIdentifier,
         options: DateTimeFormatOptions = definedExternally,
     ): String
 
     fun toLocaleTimeString(
-        locales: ReadonlyArray<String> = definedExternally,
+        locales: ReadonlyArray<UnicodeBCP47LocaleIdentifier> = definedExternally,
         options: DateTimeFormatOptions = definedExternally,
     ): String
 
     fun toLocaleTimeString(
-        locales: String,
+        locales: UnicodeBCP47LocaleIdentifier,
         options: DateTimeFormatOptions = definedExternally,
     ): String
 
