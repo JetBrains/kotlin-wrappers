@@ -1,12 +1,13 @@
 package js.date
 
+import js.core.JsLong
 import js.intl.DateTimeFormatOptions
 
 /**
  * Exposes the [Date API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) to Kotlin.
  */
 external class Date() {
-    constructor(value: Number)
+    constructor(value: JsLong)
     constructor(value: String)
     constructor(
         year: Int,
@@ -26,7 +27,7 @@ external class Date() {
     fun getMinutes(): Int
     fun getMonth(): Int
     fun getSeconds(): Int
-    fun getTime(): Double
+    fun getTime(): JsLong
     fun getTimezoneOffset(): Int
     fun getUTCDate(): Int
     fun getUTCDay(): Int
@@ -61,8 +62,8 @@ external class Date() {
     fun toUTCString(): String
 
     companion object {
-        fun now(): Double
-        fun parse(value: String): Double
+        fun now(): JsLong
+        fun parse(value: String): JsLong
         fun UTC(
             year: Int,
             month: Int,
@@ -71,6 +72,6 @@ external class Date() {
             minute: Int = definedExternally,
             second: Int = definedExternally,
             millisecond: Int = definedExternally,
-        ): Double
+        ): JsLong
     }
 }
