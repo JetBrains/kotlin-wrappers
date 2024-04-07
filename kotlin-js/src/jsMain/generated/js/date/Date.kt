@@ -24,7 +24,7 @@ external class Date() {
      * @param hours Must be supplied if minutes is supplied. A number from 0 to 23 (midnight to 11pm) that specifies the hour.
      * @param minutes Must be supplied if seconds is supplied. A number from 0 to 59 that specifies the minutes.
      * @param seconds Must be supplied if milliseconds is supplied. A number from 0 to 59 that specifies the seconds.
-     * @param ms A number from 0 to 999 that specifies the milliseconds.
+     * @param milliseconds A number from 0 to 999 that specifies the milliseconds.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/Date)
      */
@@ -35,7 +35,7 @@ external class Date() {
         hours: Int = definedExternally,
         minutes: Int = definedExternally,
         seconds: Int = definedExternally,
-        ms: Int = definedExternally,
+        milliseconds: Int = definedExternally,
     )
 
     /**
@@ -216,102 +216,102 @@ external class Date() {
 
     /**
      * Sets the milliseconds value in the Date object using local time.
-     * @param ms A numeric value equal to the millisecond value.
+     * @param milliseconds A numeric value equal to the millisecond value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/setMilliseconds)
      */
-    fun setMilliseconds(ms: Int): Int
+    fun setMilliseconds(milliseconds: Int): Int
 
     /**
      * Sets the milliseconds value in the Date object using Universal Coordinated Time (UTC).
-     * @param ms A numeric value equal to the millisecond value.
+     * @param milliseconds A numeric value equal to the millisecond value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/setUTCMilliseconds)
      */
-    fun setUTCMilliseconds(ms: Int): Int
+    fun setUTCMilliseconds(milliseconds: Int): Int
 
     /**
      * Sets the seconds value in the Date object using local time.
-     * @param sec A numeric value equal to the seconds value.
-     * @param ms A numeric value equal to the milliseconds value.
+     * @param seconds A numeric value equal to the seconds value.
+     * @param milliseconds A numeric value equal to the milliseconds value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/setSeconds)
      */
     fun setSeconds(
-        sec: Int,
-        ms: Int = definedExternally,
+        seconds: Int,
+        milliseconds: Int = definedExternally,
     ): Int
 
     /**
      * Sets the seconds value in the Date object using Universal Coordinated Time (UTC).
-     * @param sec A numeric value equal to the seconds value.
-     * @param ms A numeric value equal to the milliseconds value.
+     * @param seconds A numeric value equal to the seconds value.
+     * @param milliseconds A numeric value equal to the milliseconds value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/setUTCSeconds)
      */
     fun setUTCSeconds(
-        sec: Int,
-        ms: Int = definedExternally,
+        seconds: Int,
+        milliseconds: Int = definedExternally,
     ): Int
 
     /**
      * Sets the minutes value in the Date object using local time.
-     * @param min A numeric value equal to the minutes value.
-     * @param sec A numeric value equal to the seconds value.
-     * @param ms A numeric value equal to the milliseconds value.
+     * @param minutes A numeric value equal to the minutes value.
+     * @param seconds A numeric value equal to the seconds value.
+     * @param milliseconds A numeric value equal to the milliseconds value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/setMinutes)
      */
     fun setMinutes(
-        min: Int,
-        sec: Int = definedExternally,
-        ms: Int = definedExternally,
+        minutes: Int,
+        seconds: Int = definedExternally,
+        milliseconds: Int = definedExternally,
     ): Int
 
     /**
      * Sets the minutes value in the Date object using Universal Coordinated Time (UTC).
-     * @param min A numeric value equal to the minutes value.
-     * @param sec A numeric value equal to the seconds value.
-     * @param ms A numeric value equal to the milliseconds value.
+     * @param minutes A numeric value equal to the minutes value.
+     * @param seconds A numeric value equal to the seconds value.
+     * @param milliseconds A numeric value equal to the milliseconds value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/setUTCMinutes)
      */
     fun setUTCMinutes(
-        min: Int,
-        sec: Int = definedExternally,
-        ms: Int = definedExternally,
+        minutes: Int,
+        seconds: Int = definedExternally,
+        milliseconds: Int = definedExternally,
     ): Int
 
     /**
      * Sets the hour value in the Date object using local time.
      * @param hours A numeric value equal to the hours value.
-     * @param min A numeric value equal to the minutes value.
-     * @param sec A numeric value equal to the seconds value.
-     * @param ms A numeric value equal to the milliseconds value.
+     * @param minutes A numeric value equal to the minutes value.
+     * @param seconds A numeric value equal to the seconds value.
+     * @param milliseconds A numeric value equal to the milliseconds value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/setHours)
      */
     fun setHours(
         hours: Int,
-        min: Int = definedExternally,
-        sec: Int = definedExternally,
-        ms: Int = definedExternally,
+        minutes: Int = definedExternally,
+        seconds: Int = definedExternally,
+        milliseconds: Int = definedExternally,
     ): Int
 
     /**
      * Sets the hours value in the Date object using Universal Coordinated Time (UTC).
      * @param hours A numeric value equal to the hours value.
-     * @param min A numeric value equal to the minutes value.
-     * @param sec A numeric value equal to the seconds value.
-     * @param ms A numeric value equal to the milliseconds value.
+     * @param minutes A numeric value equal to the minutes value.
+     * @param seconds A numeric value equal to the seconds value.
+     * @param milliseconds A numeric value equal to the milliseconds value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/setUTCHours)
      */
     fun setUTCHours(
         hours: Int,
-        min: Int = definedExternally,
-        sec: Int = definedExternally,
-        ms: Int = definedExternally,
+        minutes: Int = definedExternally,
+        seconds: Int = definedExternally,
+        milliseconds: Int = definedExternally,
     ): Int
 
     /**
@@ -501,7 +501,7 @@ external class Date() {
          * @param hours Must be supplied if minutes is supplied. A number from 0 to 23 (midnight to 11pm) that specifies the hour.
          * @param minutes Must be supplied if seconds is supplied. A number from 0 to 59 that specifies the minutes.
          * @param seconds Must be supplied if milliseconds is supplied. A number from 0 to 59 that specifies the seconds.
-         * @param ms A number from 0 to 999 that specifies the milliseconds.
+         * @param milliseconds A number from 0 to 999 that specifies the milliseconds.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/UTC)
          */
@@ -512,7 +512,7 @@ external class Date() {
             hours: Int = definedExternally,
             minutes: Int = definedExternally,
             seconds: Int = definedExternally,
-            ms: Int = definedExternally,
+            milliseconds: Int = definedExternally,
         ): JsLong
 
         /**
