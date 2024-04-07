@@ -26,4 +26,23 @@ package node.diagnosticsChannel
  */
 external fun unsubscribe(name: String, onMessage: ChannelListener): Boolean
 
+/**
+ * Remove a message handler previously registered to this channel with {@link subscribe}.
+ *
+ * ```js
+ * import diagnostics_channel from 'node:diagnostics_channel';
+ *
+ * function onMessage(message, name) {
+ *   // Received data
+ * }
+ *
+ * diagnostics_channel.subscribe('my-channel', onMessage);
+ *
+ * diagnostics_channel.unsubscribe('my-channel', onMessage);
+ * ```
+ * @since v18.7.0, v16.17.0
+ * @param name The channel name
+ * @param onMessage The previous subscribed handler to remove
+ * @return `true` if the handler was found, `false` otherwise.
+ */
 external fun unsubscribe(name: js.symbol.Symbol, onMessage: ChannelListener): Boolean

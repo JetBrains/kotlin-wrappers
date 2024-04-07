@@ -58,10 +58,67 @@ external class Verify : node.stream.Writable {
      */
     fun verify(value: KeyLike, signature: js.buffer.ArrayBufferView): Boolean
 
+    /**
+     * Verifies the provided data using the given `object` and `signature`.
+     *
+     * If `object` is not a `KeyObject`, this function behaves as if`object` had been passed to {@link createPublicKey}. If it is an
+     * object, the following additional properties can be passed:
+     *
+     * The `signature` argument is the previously calculated signature for the data, in
+     * the `signatureEncoding`.
+     * If a `signatureEncoding` is specified, the `signature` is expected to be a
+     * string; otherwise `signature` is expected to be a `Buffer`,`TypedArray`, or `DataView`.
+     *
+     * The `verify` object can not be used again after `verify.verify()` has been
+     * called. Multiple calls to `verify.verify()` will result in an error being
+     * thrown.
+     *
+     * Because public keys can be derived from private keys, a private key may
+     * be passed instead of a public key.
+     * @since v0.1.92
+     */
     fun verify(value: VerifyKeyObjectInput, signature: js.buffer.ArrayBufferView): Boolean
 
+    /**
+     * Verifies the provided data using the given `object` and `signature`.
+     *
+     * If `object` is not a `KeyObject`, this function behaves as if`object` had been passed to {@link createPublicKey}. If it is an
+     * object, the following additional properties can be passed:
+     *
+     * The `signature` argument is the previously calculated signature for the data, in
+     * the `signatureEncoding`.
+     * If a `signatureEncoding` is specified, the `signature` is expected to be a
+     * string; otherwise `signature` is expected to be a `Buffer`,`TypedArray`, or `DataView`.
+     *
+     * The `verify` object can not be used again after `verify.verify()` has been
+     * called. Multiple calls to `verify.verify()` will result in an error being
+     * thrown.
+     *
+     * Because public keys can be derived from private keys, a private key may
+     * be passed instead of a public key.
+     * @since v0.1.92
+     */
     fun verify(value: VerifyPublicKeyInput, signature: js.buffer.ArrayBufferView): Boolean
 
+    /**
+     * Verifies the provided data using the given `object` and `signature`.
+     *
+     * If `object` is not a `KeyObject`, this function behaves as if`object` had been passed to {@link createPublicKey}. If it is an
+     * object, the following additional properties can be passed:
+     *
+     * The `signature` argument is the previously calculated signature for the data, in
+     * the `signatureEncoding`.
+     * If a `signatureEncoding` is specified, the `signature` is expected to be a
+     * string; otherwise `signature` is expected to be a `Buffer`,`TypedArray`, or `DataView`.
+     *
+     * The `verify` object can not be used again after `verify.verify()` has been
+     * called. Multiple calls to `verify.verify()` will result in an error being
+     * thrown.
+     *
+     * Because public keys can be derived from private keys, a private key may
+     * be passed instead of a public key.
+     * @since v0.1.92
+     */
     fun verify(value: VerifyJsonWebKeyInput, signature: js.buffer.ArrayBufferView): Boolean
     fun verify(value: KeyLike, signature: String, signature_format: BinaryToTextEncoding = definedExternally): Boolean
 

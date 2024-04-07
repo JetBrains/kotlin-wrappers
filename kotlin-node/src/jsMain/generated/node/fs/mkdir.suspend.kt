@@ -11,11 +11,31 @@ suspend fun mkdir(path: PathLike, options: MkdirRecursiveAsyncOptions): String? 
     ).await()
 
 
+suspend fun mkdir(path: PathLike): Unit =
+    mkdirAsync(
+        path
+    ).await()
+
+
+/**
+ * Asynchronous mkdir(2) - create a directory.
+ * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
+ * @param options Either the file mode, or an object optionally specifying the file mode and whether parent folders
+ * should be created. If a string is passed, it is parsed as an octal integer. If not specified, defaults to `0o777`.
+ */
+
 suspend fun mkdir(path: PathLike, options: Mode? = undefined.unsafeCast<Nothing>()): Unit =
     mkdirAsync(
         path, options
     ).await()
 
+
+/**
+ * Asynchronous mkdir(2) - create a directory.
+ * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
+ * @param options Either the file mode, or an object optionally specifying the file mode and whether parent folders
+ * should be created. If a string is passed, it is parsed as an octal integer. If not specified, defaults to `0o777`.
+ */
 
 suspend fun mkdir(path: PathLike, options: (MkdirAsyncOptions)? = undefined.unsafeCast<Nothing>()): Unit =
     mkdirAsync(
@@ -23,13 +43,22 @@ suspend fun mkdir(path: PathLike, options: (MkdirAsyncOptions)? = undefined.unsa
     ).await()
 
 
+/**
+ * Asynchronous mkdir(2) - create a directory.
+ * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
+ * @param options Either the file mode, or an object optionally specifying the file mode and whether parent folders
+ * should be created. If a string is passed, it is parsed as an octal integer. If not specified, defaults to `0o777`.
+ */
+
+
+/**
+ * Asynchronous mkdir(2) - create a directory.
+ * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
+ * @param options Either the file mode, or an object optionally specifying the file mode and whether parent folders
+ * should be created. If a string is passed, it is parsed as an octal integer. If not specified, defaults to `0o777`.
+ */
+
 suspend fun mkdir(path: PathLike, options: MakeDirectoryOptions? = undefined.unsafeCast<Nothing>()): String? =
     mkdirAsync(
         path, options
-    ).await()
-
-
-suspend fun mkdir(path: PathLike): Unit =
-    mkdirAsync(
-        path
     ).await()

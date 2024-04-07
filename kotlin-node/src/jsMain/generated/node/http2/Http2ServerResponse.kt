@@ -242,8 +242,74 @@ external class Http2ServerResponse : node.stream.Writable {
      */
     fun setHeader(name: String, value: Double): Unit
 
+    /**
+     * Sets a single header value for implicit headers. If this header already exists
+     * in the to-be-sent headers, its value will be replaced. Use an array of strings
+     * here to send multiple headers with the same name.
+     *
+     * ```js
+     * response.setHeader('Content-Type', 'text/html; charset=utf-8');
+     * ```
+     *
+     * or
+     *
+     * ```js
+     * response.setHeader('Set-Cookie', ['type=ninja', 'language=javascript']);
+     * ```
+     *
+     * Attempting to set a header field name or value that contains invalid characters
+     * will result in a `TypeError` being thrown.
+     *
+     * When headers have been set with `response.setHeader()`, they will be merged
+     * with any headers passed to `response.writeHead()`, with the headers passed
+     * to `response.writeHead()` given precedence.
+     *
+     * ```js
+     * // Returns content-type = text/plain
+     * const server = http2.createServer((req, res) => {
+     *   res.setHeader('Content-Type', 'text/html; charset=utf-8');
+     *   res.setHeader('X-Foo', 'bar');
+     *   res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8' });
+     *   res.end('ok');
+     * });
+     * ```
+     * @since v8.4.0
+     */
     fun setHeader(name: String, value: String): Unit
 
+    /**
+     * Sets a single header value for implicit headers. If this header already exists
+     * in the to-be-sent headers, its value will be replaced. Use an array of strings
+     * here to send multiple headers with the same name.
+     *
+     * ```js
+     * response.setHeader('Content-Type', 'text/html; charset=utf-8');
+     * ```
+     *
+     * or
+     *
+     * ```js
+     * response.setHeader('Set-Cookie', ['type=ninja', 'language=javascript']);
+     * ```
+     *
+     * Attempting to set a header field name or value that contains invalid characters
+     * will result in a `TypeError` being thrown.
+     *
+     * When headers have been set with `response.setHeader()`, they will be merged
+     * with any headers passed to `response.writeHead()`, with the headers passed
+     * to `response.writeHead()` given precedence.
+     *
+     * ```js
+     * // Returns content-type = text/plain
+     * const server = http2.createServer((req, res) => {
+     *   res.setHeader('Content-Type', 'text/html; charset=utf-8');
+     *   res.setHeader('X-Foo', 'bar');
+     *   res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8' });
+     *   res.end('ok');
+     * });
+     * ```
+     * @since v8.4.0
+     */
     fun setHeader(name: String, value: js.array.ReadonlyArray<String>): Unit
 
     /**
@@ -288,6 +354,34 @@ external class Http2ServerResponse : node.stream.Writable {
      */
     fun write(chunk: String, callback: (err: Throwable /* JsError */) -> Unit = definedExternally): Boolean
 
+    /**
+     * If this method is called and `response.writeHead()` has not been called,
+     * it will switch to implicit header mode and flush the implicit headers.
+     *
+     * This sends a chunk of the response body. This method may
+     * be called multiple times to provide successive parts of the body.
+     *
+     * In the `node:http` module, the response body is omitted when the
+     * request is a HEAD request. Similarly, the `204` and `304` responses _must not_ include a message body.
+     *
+     * `chunk` can be a string or a buffer. If `chunk` is a string,
+     * the second parameter specifies how to encode it into a byte stream.
+     * By default the `encoding` is `'utf8'`. `callback` will be called when this chunk
+     * of data is flushed.
+     *
+     * This is the raw HTTP body and has nothing to do with higher-level multi-part
+     * body encodings that may be used.
+     *
+     * The first time `response.write()` is called, it will send the buffered
+     * header information and the first chunk of the body to the client. The second
+     * time `response.write()` is called, Node.js assumes data will be streamed,
+     * and sends the new data separately. That is, the response is buffered up to the
+     * first chunk of the body.
+     *
+     * Returns `true` if the entire data was flushed successfully to the kernel
+     * buffer. Returns `false` if all or part of the data was queued in user memory.`'drain'` will be emitted when the buffer is free again.
+     * @since v8.4.0
+     */
     fun write(chunk: Uint8Array, callback: (err: Throwable /* JsError */) -> Unit = definedExternally): Boolean
     fun write(
         chunk: String,

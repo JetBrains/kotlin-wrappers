@@ -785,6 +785,9 @@ open external class Readable : Stream, node.ReadableStream {
          */
         fun from(iterable: js.iterable.JsIterable<Any?>, options: ReadableOptions = definedExternally): Readable
 
+        /**
+         * A utility method for creating Readable Streams out of iterators.
+         */
         fun from(iterable: AsyncIterable<Any?>, options: ReadableOptions = definedExternally): Readable
 
         /**
@@ -793,6 +796,10 @@ open external class Readable : Stream, node.ReadableStream {
          */
         fun isDisturbed(stream: Readable): Boolean
 
+        /**
+         * Returns whether the stream has been read from or cancelled.
+         * @since v16.8.0
+         */
         fun isDisturbed(stream: node.ReadableStream): Boolean
     }
 

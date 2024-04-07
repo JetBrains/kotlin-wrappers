@@ -24,6 +24,8 @@ import js.buffer.ArrayBuffer
  */
 external fun createDiffieHellman(primeLength: Number, generator: Number = definedExternally): DiffieHellman
 
+external fun createDiffieHellman(prime: ArrayBuffer): DiffieHellman
+
 external fun createDiffieHellman(prime: ArrayBuffer, generator: Double = definedExternally): DiffieHellman
 
 external fun createDiffieHellman(prime: ArrayBuffer, generator: ArrayBuffer = definedExternally): DiffieHellman
@@ -32,6 +34,8 @@ external fun createDiffieHellman(
     prime: ArrayBuffer,
     generator: js.buffer.ArrayBufferView = definedExternally,
 ): DiffieHellman
+
+external fun createDiffieHellman(prime: js.buffer.ArrayBufferView): DiffieHellman
 
 external fun createDiffieHellman(prime: js.buffer.ArrayBufferView, generator: Double = definedExternally): DiffieHellman
 
@@ -56,6 +60,8 @@ external fun createDiffieHellman(
     generator: String,
     generatorEncoding: BinaryToTextEncoding,
 ): DiffieHellman
+
+external fun createDiffieHellman(prime: String, primeEncoding: BinaryToTextEncoding): DiffieHellman
 
 external fun createDiffieHellman(
     prime: String,

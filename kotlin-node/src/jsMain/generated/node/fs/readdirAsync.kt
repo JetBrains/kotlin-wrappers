@@ -32,11 +32,65 @@ import js.promise.Promise
  */
 
 @JsName("readdir")
+external fun readdirAsync(path: PathLike): Promise<js.array.ReadonlyArray<String>>
+
+
+/**
+ * Reads the contents of a directory.
+ *
+ * The optional `options` argument can be a string specifying an encoding, or an
+ * object with an `encoding` property specifying the character encoding to use for
+ * the filenames. If the `encoding` is set to `'buffer'`, the filenames returned
+ * will be passed as `Buffer` objects.
+ *
+ * If `options.withFileTypes` is set to `true`, the returned array will contain `fs.Dirent` objects.
+ *
+ * ```js
+ * import { readdir } from 'node:fs/promises';
+ *
+ * try {
+ *   const files = await readdir(path);
+ *   for (const file of files)
+ *     console.log(file);
+ * } catch (err) {
+ *   console.error(err);
+ * }
+ * ```
+ * @since v10.0.0
+ * @return Fulfills with an array of the names of the files in the directory excluding `'.'` and `'..'`.
+ */
+
+@JsName("readdir")
 external fun readdirAsync(
     path: PathLike,
     options: (ReaddirAsyncOptions)? = definedExternally,
 ): Promise<js.array.ReadonlyArray<String>>
 
+
+/**
+ * Reads the contents of a directory.
+ *
+ * The optional `options` argument can be a string specifying an encoding, or an
+ * object with an `encoding` property specifying the character encoding to use for
+ * the filenames. If the `encoding` is set to `'buffer'`, the filenames returned
+ * will be passed as `Buffer` objects.
+ *
+ * If `options.withFileTypes` is set to `true`, the returned array will contain `fs.Dirent` objects.
+ *
+ * ```js
+ * import { readdir } from 'node:fs/promises';
+ *
+ * try {
+ *   const files = await readdir(path);
+ *   for (const file of files)
+ *     console.log(file);
+ * } catch (err) {
+ *   console.error(err);
+ * }
+ * ```
+ * @since v10.0.0
+ * @return Fulfills with an array of the names of the files in the directory excluding `'.'` and `'..'`.
+ */
 
 @JsName("readdir")
 external fun readdirAsync(
@@ -58,11 +112,31 @@ external fun readdirAsync(
 ): Promise<js.array.ReadonlyArray<node.buffer.Buffer>>
 
 
+/**
+ * Asynchronous readdir(3) - read a directory.
+ * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
+ * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
+ */
+
 @JsName("readdir")
 external fun readdirAsync(
     path: PathLike,
     options: String, /* "buffer" */
 ): Promise<js.array.ReadonlyArray<node.buffer.Buffer>>
+
+
+/**
+ * Asynchronous readdir(3) - read a directory.
+ * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
+ * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
+ */
+
+
+/**
+ * Asynchronous readdir(3) - read a directory.
+ * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
+ * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
+ */
 
 
 /**
@@ -83,6 +157,3 @@ external fun readdirAsync(
     path: PathLike,
     options: ReaddirWithFileTypesAsyncOptions,
 ): Promise<js.array.ReadonlyArray<Dirent>>
-
-@JsName("readdir")
-external fun readdirAsync(path: PathLike): Promise<js.array.ReadonlyArray<String>>

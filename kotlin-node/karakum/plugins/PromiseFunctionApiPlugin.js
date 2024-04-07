@@ -23,10 +23,15 @@ function isConflictingOverload(node, signature) {
         (
             node.name.text === "mkdir"
 
-            && signature[1]
-            && ts.isTypeReferenceNode(signature[1].type)
-            && ts.isIdentifier(signature[1].type.typeName)
-            && signature[1].type.typeName.text === "Mode"
+            && (
+                signature.length === 1
+                || (
+                    signature[1]
+                    && ts.isTypeReferenceNode(signature[1].type)
+                    && ts.isIdentifier(signature[1].type.typeName)
+                    && signature[1].type.typeName.text === "Mode"
+                )
+            )
 
             && node.type
             && isPromiseType(node.type)
@@ -38,12 +43,17 @@ function isConflictingOverload(node, signature) {
                 || node.name.text === "realpath"
             )
 
-            && signature[1]
-            && ts.isTypeReferenceNode(signature[1].type)
-            && ts.isIdentifier(signature[1].type.typeName)
             && (
-                signature[1].type.typeName.text === "ObjectEncodingOptions"
-                || signature[1].type.typeName.text === "BufferEncoding"
+                signature.length === 1
+                || (
+                    signature[1]
+                    && ts.isTypeReferenceNode(signature[1].type)
+                    && ts.isIdentifier(signature[1].type.typeName)
+                    && (
+                        signature[1].type.typeName.text === "ObjectEncodingOptions"
+                        || signature[1].type.typeName.text === "BufferEncoding"
+                    )
+                )
             )
 
             && node.type
@@ -53,10 +63,15 @@ function isConflictingOverload(node, signature) {
         || (
             node.name.text === "readlink"
 
-            && signature[1]
-            && ts.isTypeReferenceNode(signature[1].type)
-            && ts.isIdentifier(signature[1].type.typeName)
-            && signature[1].type.typeName.text === "ObjectEncodingOptions"
+            && (
+                signature.length === 1
+                || (
+                    signature[1]
+                    && ts.isTypeReferenceNode(signature[1].type)
+                    && ts.isIdentifier(signature[1].type.typeName)
+                    && signature[1].type.typeName.text === "ObjectEncodingOptions"
+                )
+            )
 
             && node.type
             && isPromiseType(node.type)
@@ -65,19 +80,24 @@ function isConflictingOverload(node, signature) {
         || (
             node.name.text === "readdir"
 
-            && signature[1]
             && (
-                (
-                    ts.isTypeReferenceNode(signature[1].type)
-                    && ts.isIdentifier(signature[1].type.typeName)
-                    && signature[1].type.typeName.text === "BufferEncoding"
-                )
+                signature.length === 1
                 || (
-                    ts.isIntersectionTypeNode(signature[1].type)
-                    && signature[1].type.types[0]
-                    && ts.isTypeReferenceNode(signature[1].type.types[0])
-                    && ts.isIdentifier(signature[1].type.types[0].typeName)
-                    && signature[1].type.types[0].typeName.text === "ObjectEncodingOptions"
+                    signature[1]
+                    && (
+                        (
+                            ts.isTypeReferenceNode(signature[1].type)
+                            && ts.isIdentifier(signature[1].type.typeName)
+                            && signature[1].type.typeName.text === "BufferEncoding"
+                        )
+                        || (
+                            ts.isIntersectionTypeNode(signature[1].type)
+                            && signature[1].type.types[0]
+                            && ts.isTypeReferenceNode(signature[1].type.types[0])
+                            && ts.isIdentifier(signature[1].type.types[0].typeName)
+                            && signature[1].type.types[0].typeName.text === "ObjectEncodingOptions"
+                        )
+                    )
                 )
             )
 

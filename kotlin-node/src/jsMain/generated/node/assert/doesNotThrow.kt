@@ -67,9 +67,137 @@ package node.assert
  * ```
  * @since v0.1.21
  */
+external fun doesNotThrow(block: () -> Any?): Unit
+
+/**
+ * Asserts that the function `fn` does not throw an error.
+ *
+ * Using `assert.doesNotThrow()` is actually not useful because there
+ * is no benefit in catching an error and then rethrowing it. Instead, consider
+ * adding a comment next to the specific code path that should not throw and keep
+ * error messages as expressive as possible.
+ *
+ * When `assert.doesNotThrow()` is called, it will immediately call the `fn`function.
+ *
+ * If an error is thrown and it is the same type as that specified by the `error`parameter, then an `AssertionError` is thrown. If the error is of a
+ * different type, or if the `error` parameter is undefined, the error is
+ * propagated back to the caller.
+ *
+ * If specified, `error` can be a [`Class`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes),
+ * [`RegExp`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions), or a validation
+ * function. See {@link throws} for more details.
+ *
+ * The following, for instance, will throw the `TypeError` because there is no
+ * matching error type in the assertion:
+ *
+ * ```js
+ * import assert from 'node:assert/strict';
+ *
+ * assert.doesNotThrow(
+ *   () => {
+ *     throw new TypeError('Wrong value');
+ *   },
+ *   SyntaxError,
+ * );
+ * ```
+ *
+ * However, the following will result in an `AssertionError` with the message
+ * 'Got unwanted exception...':
+ *
+ * ```js
+ * import assert from 'node:assert/strict';
+ *
+ * assert.doesNotThrow(
+ *   () => {
+ *     throw new TypeError('Wrong value');
+ *   },
+ *   TypeError,
+ * );
+ * ```
+ *
+ * If an `AssertionError` is thrown and a value is provided for the `message`parameter, the value of `message` will be appended to the `AssertionError` message:
+ *
+ * ```js
+ * import assert from 'node:assert/strict';
+ *
+ * assert.doesNotThrow(
+ *   () => {
+ *     throw new TypeError('Wrong value');
+ *   },
+ *   /Wrong value/,
+ *   'Whoops',
+ * );
+ * // Throws: AssertionError: Got unwanted exception: Whoops
+ * ```
+ * @since v0.1.21
+ */
 external fun doesNotThrow(block: () -> Any?, message: String = definedExternally): Unit
 
+/**
+ * Asserts that the function `fn` does not throw an error.
+ *
+ * Using `assert.doesNotThrow()` is actually not useful because there
+ * is no benefit in catching an error and then rethrowing it. Instead, consider
+ * adding a comment next to the specific code path that should not throw and keep
+ * error messages as expressive as possible.
+ *
+ * When `assert.doesNotThrow()` is called, it will immediately call the `fn`function.
+ *
+ * If an error is thrown and it is the same type as that specified by the `error`parameter, then an `AssertionError` is thrown. If the error is of a
+ * different type, or if the `error` parameter is undefined, the error is
+ * propagated back to the caller.
+ *
+ * If specified, `error` can be a [`Class`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes),
+ * [`RegExp`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions), or a validation
+ * function. See {@link throws} for more details.
+ *
+ * The following, for instance, will throw the `TypeError` because there is no
+ * matching error type in the assertion:
+ *
+ * ```js
+ * import assert from 'node:assert/strict';
+ *
+ * assert.doesNotThrow(
+ *   () => {
+ *     throw new TypeError('Wrong value');
+ *   },
+ *   SyntaxError,
+ * );
+ * ```
+ *
+ * However, the following will result in an `AssertionError` with the message
+ * 'Got unwanted exception...':
+ *
+ * ```js
+ * import assert from 'node:assert/strict';
+ *
+ * assert.doesNotThrow(
+ *   () => {
+ *     throw new TypeError('Wrong value');
+ *   },
+ *   TypeError,
+ * );
+ * ```
+ *
+ * If an `AssertionError` is thrown and a value is provided for the `message`parameter, the value of `message` will be appended to the `AssertionError` message:
+ *
+ * ```js
+ * import assert from 'node:assert/strict';
+ *
+ * assert.doesNotThrow(
+ *   () => {
+ *     throw new TypeError('Wrong value');
+ *   },
+ *   /Wrong value/,
+ *   'Whoops',
+ * );
+ * // Throws: AssertionError: Got unwanted exception: Whoops
+ * ```
+ * @since v0.1.21
+ */
 external fun doesNotThrow(block: () -> Any?, message: Throwable /* JsError */ = definedExternally): Unit
+
+external fun doesNotThrow(block: () -> Any?, error: AssertPredicate): Unit
 
 external fun doesNotThrow(block: () -> Any?, error: AssertPredicate, message: String = definedExternally): Unit
 

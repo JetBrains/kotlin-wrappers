@@ -12,6 +12,8 @@ package node.vm
  */
 
 external class Script {
+    constructor (code: String)
+
     constructor (code: String, options: ScriptOptions = definedExternally)
 
     constructor (code: String, options: String = definedExternally)

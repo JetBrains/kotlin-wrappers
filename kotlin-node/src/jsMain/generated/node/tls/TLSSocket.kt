@@ -23,6 +23,9 @@ external class TLSSocket : node.net.Socket {
      */
     constructor (socket: node.net.Socket, options: TLSSocketOptions = definedExternally)
 
+    /**
+     * Construct a new tls.TLSSocket object from an existing TCP socket.
+     */
     constructor (socket: node.stream.Duplex, options: TLSSocketOptions = definedExternally)
 
     /**

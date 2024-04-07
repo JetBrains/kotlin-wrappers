@@ -15,8 +15,32 @@ package node.crypto
  */
 external fun createPrivateKey(key: PrivateKeyInput): KeyObject
 
+/**
+ * Creates and returns a new key object containing a private key. If `key` is a
+ * string or `Buffer`, `format` is assumed to be `'pem'`; otherwise, `key`must be an object with the properties described above.
+ *
+ * If the private key is encrypted, a `passphrase` must be specified. The length
+ * of the passphrase is limited to 1024 bytes.
+ * @since v11.6.0
+ */
 external fun createPrivateKey(key: String): KeyObject
 
+/**
+ * Creates and returns a new key object containing a private key. If `key` is a
+ * string or `Buffer`, `format` is assumed to be `'pem'`; otherwise, `key`must be an object with the properties described above.
+ *
+ * If the private key is encrypted, a `passphrase` must be specified. The length
+ * of the passphrase is limited to 1024 bytes.
+ * @since v11.6.0
+ */
 external fun createPrivateKey(key: node.buffer.Buffer): KeyObject
 
+/**
+ * Creates and returns a new key object containing a private key. If `key` is a
+ * string or `Buffer`, `format` is assumed to be `'pem'`; otherwise, `key`must be an object with the properties described above.
+ *
+ * If the private key is encrypted, a `passphrase` must be specified. The length
+ * of the passphrase is limited to 1024 bytes.
+ * @since v11.6.0
+ */
 external fun createPrivateKey(key: JsonWebKeyInput): KeyObject

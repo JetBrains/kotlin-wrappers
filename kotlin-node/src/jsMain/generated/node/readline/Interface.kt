@@ -33,6 +33,14 @@ open external class _Interface : EventEmitter {
         terminal: Boolean = definedExternally,
     )
 
+    /**
+     * NOTE: According to the documentation:
+     *
+     * > Instances of the `readline.Interface` class are constructed using the
+     * > `readline.createInterface()` method.
+     *
+     * @see https://nodejs.org/dist/latest-v20.x/docs/api/readline.html#class-interfaceconstructor
+     */
     constructor (
         input: node.ReadableStream,
         output: node.WritableStream = definedExternally,
@@ -217,6 +225,28 @@ open external class _Interface : EventEmitter {
      */
     fun write(data: String, key: Key = definedExternally): Unit
 
+    /**
+     * The `rl.write()` method will write either `data` or a key sequence identified
+     * by `key` to the `output`. The `key` argument is supported only if `output` is
+     * a `TTY` text terminal. See `TTY keybindings` for a list of key
+     * combinations.
+     *
+     * If `key` is specified, `data` is ignored.
+     *
+     * When called, `rl.write()` will resume the `input` stream if it has been
+     * paused.
+     *
+     * If the `Interface` was created with `output` set to `null` or`undefined` the `data` and `key` are not written.
+     *
+     * ```js
+     * rl.write('Delete this!');
+     * // Simulate Ctrl+U to delete the line written previously
+     * rl.write(null, { ctrl: true, name: 'u' });
+     * ```
+     *
+     * The `rl.write()` method will write the data to the `readline` `Interface`'s`input`_as if it were provided by the user_.
+     * @since v0.1.98
+     */
     fun write(data: node.buffer.Buffer, key: Key = definedExternally): Unit
     fun write(data: String?, key: Key): Unit
 

@@ -15,6 +15,13 @@ sealed external class Buffer : Uint8Array {
     constructor (array: Uint8Array)
     constructor (arrayBuffer: ArrayBuffer)
 
+    /**
+     * Produces a Buffer backed by the same allocated memory as
+     * the given {ArrayBuffer}/{SharedArrayBuffer}.
+     *
+     * @param arrayBuffer The ArrayBuffer with which to share memory.
+     * @deprecated since v10.0.0 - Use `Buffer.from(arrayBuffer[, byteOffset[, length]])` instead.
+     */
     constructor (arrayBuffer: SharedArrayBuffer)
     constructor (array: ReadonlyArray<Any?>)
     constructor (buffer: Buffer)
@@ -1536,6 +1543,65 @@ sealed external class Buffer : Uint8Array {
         encoding: BufferEncoding = definedExternally,
     ): Unit /* this */
 
+    /**
+     * Fills `buf` with the specified `value`. If the `offset` and `end` are not given,
+     * the entire `buf` will be filled:
+     *
+     * ```js
+     * import { Buffer } from 'node:buffer';
+     *
+     * // Fill a `Buffer` with the ASCII character 'h'.
+     *
+     * const b = Buffer.allocUnsafe(50).fill('h');
+     *
+     * console.log(b.toString());
+     * // Prints: hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+     *
+     * // Fill a buffer with empty string
+     * const c = Buffer.allocUnsafe(5).fill('');
+     *
+     * console.log(c.fill(''));
+     * // Prints: <Buffer 00 00 00 00 00>
+     * ```
+     *
+     * `value` is coerced to a `uint32` value if it is not a string, `Buffer`, or
+     * integer. If the resulting integer is greater than `255` (decimal), `buf` will be
+     * filled with `value &#x26; 255`.
+     *
+     * If the final write of a `fill()` operation falls on a multi-byte character,
+     * then only the bytes of that character that fit into `buf` are written:
+     *
+     * ```js
+     * import { Buffer } from 'node:buffer';
+     *
+     * // Fill a `Buffer` with character that takes up two bytes in UTF-8.
+     *
+     * console.log(Buffer.allocUnsafe(5).fill('\u0222'));
+     * // Prints: <Buffer c8 a2 c8 a2 c8>
+     * ```
+     *
+     * If `value` contains invalid characters, it is truncated; if no valid
+     * fill data remains, an exception is thrown:
+     *
+     * ```js
+     * import { Buffer } from 'node:buffer';
+     *
+     * const buf = Buffer.allocUnsafe(5);
+     *
+     * console.log(buf.fill('a'));
+     * // Prints: <Buffer 61 61 61 61 61>
+     * console.log(buf.fill('aazz', 'hex'));
+     * // Prints: <Buffer aa aa aa aa aa>
+     * console.log(buf.fill('zz', 'hex'));
+     * // Throws an exception.
+     * ```
+     * @since v0.5.0
+     * @param value The value with which to fill `buf`. Empty value (string, Uint8Array, Buffer) is coerced to `0`.
+     * @param [offset=0] Number of bytes to skip before starting to fill `buf`.
+     * @param [end=buf.length] Where to stop filling `buf` (not inclusive).
+     * @param [encoding='utf8'] The encoding for `value` if `value` is a string.
+     * @return A reference to `buf`.
+     */
     fun fill(
         value: Uint8Array,
         offset: Number = definedExternally,
@@ -1543,6 +1609,65 @@ sealed external class Buffer : Uint8Array {
         encoding: BufferEncoding = definedExternally,
     ): Unit /* this */
 
+    /**
+     * Fills `buf` with the specified `value`. If the `offset` and `end` are not given,
+     * the entire `buf` will be filled:
+     *
+     * ```js
+     * import { Buffer } from 'node:buffer';
+     *
+     * // Fill a `Buffer` with the ASCII character 'h'.
+     *
+     * const b = Buffer.allocUnsafe(50).fill('h');
+     *
+     * console.log(b.toString());
+     * // Prints: hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+     *
+     * // Fill a buffer with empty string
+     * const c = Buffer.allocUnsafe(5).fill('');
+     *
+     * console.log(c.fill(''));
+     * // Prints: <Buffer 00 00 00 00 00>
+     * ```
+     *
+     * `value` is coerced to a `uint32` value if it is not a string, `Buffer`, or
+     * integer. If the resulting integer is greater than `255` (decimal), `buf` will be
+     * filled with `value &#x26; 255`.
+     *
+     * If the final write of a `fill()` operation falls on a multi-byte character,
+     * then only the bytes of that character that fit into `buf` are written:
+     *
+     * ```js
+     * import { Buffer } from 'node:buffer';
+     *
+     * // Fill a `Buffer` with character that takes up two bytes in UTF-8.
+     *
+     * console.log(Buffer.allocUnsafe(5).fill('\u0222'));
+     * // Prints: <Buffer c8 a2 c8 a2 c8>
+     * ```
+     *
+     * If `value` contains invalid characters, it is truncated; if no valid
+     * fill data remains, an exception is thrown:
+     *
+     * ```js
+     * import { Buffer } from 'node:buffer';
+     *
+     * const buf = Buffer.allocUnsafe(5);
+     *
+     * console.log(buf.fill('a'));
+     * // Prints: <Buffer 61 61 61 61 61>
+     * console.log(buf.fill('aazz', 'hex'));
+     * // Prints: <Buffer aa aa aa aa aa>
+     * console.log(buf.fill('zz', 'hex'));
+     * // Throws an exception.
+     * ```
+     * @since v0.5.0
+     * @param value The value with which to fill `buf`. Empty value (string, Uint8Array, Buffer) is coerced to `0`.
+     * @param [offset=0] Number of bytes to skip before starting to fill `buf`.
+     * @param [end=buf.length] Where to stop filling `buf` (not inclusive).
+     * @param [encoding='utf8'] The encoding for `value` if `value` is a string.
+     * @return A reference to `buf`.
+     */
     fun fill(
         value: Double,
         offset: Number = definedExternally,
@@ -1624,12 +1749,148 @@ sealed external class Buffer : Uint8Array {
         encoding: BufferEncoding = definedExternally,
     ): Double
 
+    /**
+     * If `value` is:
+     *
+     * * a string, `value` is interpreted according to the character encoding in`encoding`.
+     * * a `Buffer` or [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array), `value` will be used in its entirety.
+     * To compare a partial `Buffer`, use `buf.subarray`.
+     * * a number, `value` will be interpreted as an unsigned 8-bit integer
+     * value between `0` and `255`.
+     *
+     * ```js
+     * import { Buffer } from 'node:buffer';
+     *
+     * const buf = Buffer.from('this is a buffer');
+     *
+     * console.log(buf.indexOf('this'));
+     * // Prints: 0
+     * console.log(buf.indexOf('is'));
+     * // Prints: 2
+     * console.log(buf.indexOf(Buffer.from('a buffer')));
+     * // Prints: 8
+     * console.log(buf.indexOf(97));
+     * // Prints: 8 (97 is the decimal ASCII value for 'a')
+     * console.log(buf.indexOf(Buffer.from('a buffer example')));
+     * // Prints: -1
+     * console.log(buf.indexOf(Buffer.from('a buffer example').slice(0, 8)));
+     * // Prints: 8
+     *
+     * const utf16Buffer = Buffer.from('\u039a\u0391\u03a3\u03a3\u0395', 'utf16le');
+     *
+     * console.log(utf16Buffer.indexOf('\u03a3', 0, 'utf16le'));
+     * // Prints: 4
+     * console.log(utf16Buffer.indexOf('\u03a3', -4, 'utf16le'));
+     * // Prints: 6
+     * ```
+     *
+     * If `value` is not a string, number, or `Buffer`, this method will throw a`TypeError`. If `value` is a number, it will be coerced to a valid byte value,
+     * an integer between 0 and 255.
+     *
+     * If `byteOffset` is not a number, it will be coerced to a number. If the result
+     * of coercion is `NaN` or `0`, then the entire buffer will be searched. This
+     * behavior matches [`String.prototype.indexOf()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf).
+     *
+     * ```js
+     * import { Buffer } from 'node:buffer';
+     *
+     * const b = Buffer.from('abcdef');
+     *
+     * // Passing a value that's a number, but not a valid byte.
+     * // Prints: 2, equivalent to searching for 99 or 'c'.
+     * console.log(b.indexOf(99.9));
+     * console.log(b.indexOf(256 + 99));
+     *
+     * // Passing a byteOffset that coerces to NaN or 0.
+     * // Prints: 1, searching the whole buffer.
+     * console.log(b.indexOf('b', undefined));
+     * console.log(b.indexOf('b', {}));
+     * console.log(b.indexOf('b', null));
+     * console.log(b.indexOf('b', []));
+     * ```
+     *
+     * If `value` is an empty string or empty `Buffer` and `byteOffset` is less
+     * than `buf.length`, `byteOffset` will be returned. If `value` is empty and`byteOffset` is at least `buf.length`, `buf.length` will be returned.
+     * @since v1.5.0
+     * @param value What to search for.
+     * @param [byteOffset=0] Where to begin searching in `buf`. If negative, then offset is calculated from the end of `buf`.
+     * @param [encoding='utf8'] If `value` is a string, this is the encoding used to determine the binary representation of the string that will be searched for in `buf`.
+     * @return The index of the first occurrence of `value` in `buf`, or `-1` if `buf` does not contain `value`.
+     */
     fun indexOf(
         value: Double,
         byteOffset: Number = definedExternally,
         encoding: BufferEncoding = definedExternally,
     ): Double
 
+    /**
+     * If `value` is:
+     *
+     * * a string, `value` is interpreted according to the character encoding in`encoding`.
+     * * a `Buffer` or [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array), `value` will be used in its entirety.
+     * To compare a partial `Buffer`, use `buf.subarray`.
+     * * a number, `value` will be interpreted as an unsigned 8-bit integer
+     * value between `0` and `255`.
+     *
+     * ```js
+     * import { Buffer } from 'node:buffer';
+     *
+     * const buf = Buffer.from('this is a buffer');
+     *
+     * console.log(buf.indexOf('this'));
+     * // Prints: 0
+     * console.log(buf.indexOf('is'));
+     * // Prints: 2
+     * console.log(buf.indexOf(Buffer.from('a buffer')));
+     * // Prints: 8
+     * console.log(buf.indexOf(97));
+     * // Prints: 8 (97 is the decimal ASCII value for 'a')
+     * console.log(buf.indexOf(Buffer.from('a buffer example')));
+     * // Prints: -1
+     * console.log(buf.indexOf(Buffer.from('a buffer example').slice(0, 8)));
+     * // Prints: 8
+     *
+     * const utf16Buffer = Buffer.from('\u039a\u0391\u03a3\u03a3\u0395', 'utf16le');
+     *
+     * console.log(utf16Buffer.indexOf('\u03a3', 0, 'utf16le'));
+     * // Prints: 4
+     * console.log(utf16Buffer.indexOf('\u03a3', -4, 'utf16le'));
+     * // Prints: 6
+     * ```
+     *
+     * If `value` is not a string, number, or `Buffer`, this method will throw a`TypeError`. If `value` is a number, it will be coerced to a valid byte value,
+     * an integer between 0 and 255.
+     *
+     * If `byteOffset` is not a number, it will be coerced to a number. If the result
+     * of coercion is `NaN` or `0`, then the entire buffer will be searched. This
+     * behavior matches [`String.prototype.indexOf()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf).
+     *
+     * ```js
+     * import { Buffer } from 'node:buffer';
+     *
+     * const b = Buffer.from('abcdef');
+     *
+     * // Passing a value that's a number, but not a valid byte.
+     * // Prints: 2, equivalent to searching for 99 or 'c'.
+     * console.log(b.indexOf(99.9));
+     * console.log(b.indexOf(256 + 99));
+     *
+     * // Passing a byteOffset that coerces to NaN or 0.
+     * // Prints: 1, searching the whole buffer.
+     * console.log(b.indexOf('b', undefined));
+     * console.log(b.indexOf('b', {}));
+     * console.log(b.indexOf('b', null));
+     * console.log(b.indexOf('b', []));
+     * ```
+     *
+     * If `value` is an empty string or empty `Buffer` and `byteOffset` is less
+     * than `buf.length`, `byteOffset` will be returned. If `value` is empty and`byteOffset` is at least `buf.length`, `buf.length` will be returned.
+     * @since v1.5.0
+     * @param value What to search for.
+     * @param [byteOffset=0] Where to begin searching in `buf`. If negative, then offset is calculated from the end of `buf`.
+     * @param [encoding='utf8'] If `value` is a string, this is the encoding used to determine the binary representation of the string that will be searched for in `buf`.
+     * @return The index of the first occurrence of `value` in `buf`, or `-1` if `buf` does not contain `value`.
+     */
     fun indexOf(
         value: Uint8Array,
         byteOffset: Number = definedExternally,
@@ -1709,12 +1970,146 @@ sealed external class Buffer : Uint8Array {
         encoding: BufferEncoding = definedExternally,
     ): Double
 
+    /**
+     * Identical to `buf.indexOf()`, except the last occurrence of `value` is found
+     * rather than the first occurrence.
+     *
+     * ```js
+     * import { Buffer } from 'node:buffer';
+     *
+     * const buf = Buffer.from('this buffer is a buffer');
+     *
+     * console.log(buf.lastIndexOf('this'));
+     * // Prints: 0
+     * console.log(buf.lastIndexOf('buffer'));
+     * // Prints: 17
+     * console.log(buf.lastIndexOf(Buffer.from('buffer')));
+     * // Prints: 17
+     * console.log(buf.lastIndexOf(97));
+     * // Prints: 15 (97 is the decimal ASCII value for 'a')
+     * console.log(buf.lastIndexOf(Buffer.from('yolo')));
+     * // Prints: -1
+     * console.log(buf.lastIndexOf('buffer', 5));
+     * // Prints: 5
+     * console.log(buf.lastIndexOf('buffer', 4));
+     * // Prints: -1
+     *
+     * const utf16Buffer = Buffer.from('\u039a\u0391\u03a3\u03a3\u0395', 'utf16le');
+     *
+     * console.log(utf16Buffer.lastIndexOf('\u03a3', undefined, 'utf16le'));
+     * // Prints: 6
+     * console.log(utf16Buffer.lastIndexOf('\u03a3', -5, 'utf16le'));
+     * // Prints: 4
+     * ```
+     *
+     * If `value` is not a string, number, or `Buffer`, this method will throw a`TypeError`. If `value` is a number, it will be coerced to a valid byte value,
+     * an integer between 0 and 255.
+     *
+     * If `byteOffset` is not a number, it will be coerced to a number. Any arguments
+     * that coerce to `NaN`, like `{}` or `undefined`, will search the whole buffer.
+     * This behavior matches [`String.prototype.lastIndexOf()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf).
+     *
+     * ```js
+     * import { Buffer } from 'node:buffer';
+     *
+     * const b = Buffer.from('abcdef');
+     *
+     * // Passing a value that's a number, but not a valid byte.
+     * // Prints: 2, equivalent to searching for 99 or 'c'.
+     * console.log(b.lastIndexOf(99.9));
+     * console.log(b.lastIndexOf(256 + 99));
+     *
+     * // Passing a byteOffset that coerces to NaN.
+     * // Prints: 1, searching the whole buffer.
+     * console.log(b.lastIndexOf('b', undefined));
+     * console.log(b.lastIndexOf('b', {}));
+     *
+     * // Passing a byteOffset that coerces to 0.
+     * // Prints: -1, equivalent to passing 0.
+     * console.log(b.lastIndexOf('b', null));
+     * console.log(b.lastIndexOf('b', []));
+     * ```
+     *
+     * If `value` is an empty string or empty `Buffer`, `byteOffset` will be returned.
+     * @since v6.0.0
+     * @param value What to search for.
+     * @param [byteOffset=buf.length - 1] Where to begin searching in `buf`. If negative, then offset is calculated from the end of `buf`.
+     * @param [encoding='utf8'] If `value` is a string, this is the encoding used to determine the binary representation of the string that will be searched for in `buf`.
+     * @return The index of the last occurrence of `value` in `buf`, or `-1` if `buf` does not contain `value`.
+     */
     fun lastIndexOf(
         value: Double,
         byteOffset: Number = definedExternally,
         encoding: BufferEncoding = definedExternally,
     ): Double
 
+    /**
+     * Identical to `buf.indexOf()`, except the last occurrence of `value` is found
+     * rather than the first occurrence.
+     *
+     * ```js
+     * import { Buffer } from 'node:buffer';
+     *
+     * const buf = Buffer.from('this buffer is a buffer');
+     *
+     * console.log(buf.lastIndexOf('this'));
+     * // Prints: 0
+     * console.log(buf.lastIndexOf('buffer'));
+     * // Prints: 17
+     * console.log(buf.lastIndexOf(Buffer.from('buffer')));
+     * // Prints: 17
+     * console.log(buf.lastIndexOf(97));
+     * // Prints: 15 (97 is the decimal ASCII value for 'a')
+     * console.log(buf.lastIndexOf(Buffer.from('yolo')));
+     * // Prints: -1
+     * console.log(buf.lastIndexOf('buffer', 5));
+     * // Prints: 5
+     * console.log(buf.lastIndexOf('buffer', 4));
+     * // Prints: -1
+     *
+     * const utf16Buffer = Buffer.from('\u039a\u0391\u03a3\u03a3\u0395', 'utf16le');
+     *
+     * console.log(utf16Buffer.lastIndexOf('\u03a3', undefined, 'utf16le'));
+     * // Prints: 6
+     * console.log(utf16Buffer.lastIndexOf('\u03a3', -5, 'utf16le'));
+     * // Prints: 4
+     * ```
+     *
+     * If `value` is not a string, number, or `Buffer`, this method will throw a`TypeError`. If `value` is a number, it will be coerced to a valid byte value,
+     * an integer between 0 and 255.
+     *
+     * If `byteOffset` is not a number, it will be coerced to a number. Any arguments
+     * that coerce to `NaN`, like `{}` or `undefined`, will search the whole buffer.
+     * This behavior matches [`String.prototype.lastIndexOf()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf).
+     *
+     * ```js
+     * import { Buffer } from 'node:buffer';
+     *
+     * const b = Buffer.from('abcdef');
+     *
+     * // Passing a value that's a number, but not a valid byte.
+     * // Prints: 2, equivalent to searching for 99 or 'c'.
+     * console.log(b.lastIndexOf(99.9));
+     * console.log(b.lastIndexOf(256 + 99));
+     *
+     * // Passing a byteOffset that coerces to NaN.
+     * // Prints: 1, searching the whole buffer.
+     * console.log(b.lastIndexOf('b', undefined));
+     * console.log(b.lastIndexOf('b', {}));
+     *
+     * // Passing a byteOffset that coerces to 0.
+     * // Prints: -1, equivalent to passing 0.
+     * console.log(b.lastIndexOf('b', null));
+     * console.log(b.lastIndexOf('b', []));
+     * ```
+     *
+     * If `value` is an empty string or empty `Buffer`, `byteOffset` will be returned.
+     * @since v6.0.0
+     * @param value What to search for.
+     * @param [byteOffset=buf.length - 1] Where to begin searching in `buf`. If negative, then offset is calculated from the end of `buf`.
+     * @param [encoding='utf8'] If `value` is a string, this is the encoding used to determine the binary representation of the string that will be searched for in `buf`.
+     * @return The index of the last occurrence of `value` in `buf`, or `-1` if `buf` does not contain `value`.
+     */
     fun lastIndexOf(
         value: Uint8Array,
         byteOffset: Number = definedExternally,
@@ -1756,12 +2151,70 @@ sealed external class Buffer : Uint8Array {
         encoding: BufferEncoding = definedExternally,
     ): Boolean
 
+    /**
+     * Equivalent to `buf.indexOf() !== -1`.
+     *
+     * ```js
+     * import { Buffer } from 'node:buffer';
+     *
+     * const buf = Buffer.from('this is a buffer');
+     *
+     * console.log(buf.includes('this'));
+     * // Prints: true
+     * console.log(buf.includes('is'));
+     * // Prints: true
+     * console.log(buf.includes(Buffer.from('a buffer')));
+     * // Prints: true
+     * console.log(buf.includes(97));
+     * // Prints: true (97 is the decimal ASCII value for 'a')
+     * console.log(buf.includes(Buffer.from('a buffer example')));
+     * // Prints: false
+     * console.log(buf.includes(Buffer.from('a buffer example').slice(0, 8)));
+     * // Prints: true
+     * console.log(buf.includes('this', 4));
+     * // Prints: false
+     * ```
+     * @since v5.3.0
+     * @param value What to search for.
+     * @param [byteOffset=0] Where to begin searching in `buf`. If negative, then offset is calculated from the end of `buf`.
+     * @param [encoding='utf8'] If `value` is a string, this is its encoding.
+     * @return `true` if `value` was found in `buf`, `false` otherwise.
+     */
     fun includes(
         value: Double,
         byteOffset: Number = definedExternally,
         encoding: BufferEncoding = definedExternally,
     ): Boolean
 
+    /**
+     * Equivalent to `buf.indexOf() !== -1`.
+     *
+     * ```js
+     * import { Buffer } from 'node:buffer';
+     *
+     * const buf = Buffer.from('this is a buffer');
+     *
+     * console.log(buf.includes('this'));
+     * // Prints: true
+     * console.log(buf.includes('is'));
+     * // Prints: true
+     * console.log(buf.includes(Buffer.from('a buffer')));
+     * // Prints: true
+     * console.log(buf.includes(97));
+     * // Prints: true (97 is the decimal ASCII value for 'a')
+     * console.log(buf.includes(Buffer.from('a buffer example')));
+     * // Prints: false
+     * console.log(buf.includes(Buffer.from('a buffer example').slice(0, 8)));
+     * // Prints: true
+     * console.log(buf.includes('this', 4));
+     * // Prints: false
+     * ```
+     * @since v5.3.0
+     * @param value What to search for.
+     * @param [byteOffset=0] Where to begin searching in `buf`. If negative, then offset is calculated from the end of `buf`.
+     * @param [encoding='utf8'] If `value` is a string, this is its encoding.
+     * @return `true` if `value` was found in `buf`, `false` otherwise.
+     */
     fun includes(
         value: Buffer,
         byteOffset: Number = definedExternally,
@@ -1802,6 +2255,10 @@ sealed external class Buffer : Uint8Array {
          */
         fun from(data: Uint8Array): Buffer
 
+        /**
+         * Creates a new Buffer using the passed {data}
+         * @param data data to create a new Buffer
+         */
         fun from(data: ReadonlyArray<Double>): Buffer
         fun from(data: WithImplicitCoercion<Any /* Uint8Array | readonly number[] | string */>): Buffer
 
@@ -1812,6 +2269,11 @@ sealed external class Buffer : Uint8Array {
          */
         fun from(str: WithImplicitCoercion<String>, encoding: BufferEncoding = definedExternally): Buffer
 
+        /**
+         * Creates a new Buffer containing the given JavaScript string {str}.
+         * If provided, the {encoding} parameter identifies the character encoding.
+         * If not provided, {encoding} defaults to 'utf8'.
+         */
         fun from(str: js.symbol.ToPrimitiveSymbolHolder, encoding: BufferEncoding = definedExternally): Buffer
 
         /**
@@ -1891,12 +2353,128 @@ sealed external class Buffer : Uint8Array {
          */
         fun byteLength(string: String, encoding: BufferEncoding = definedExternally): Double
 
+        /**
+         * Returns the byte length of a string when encoded using `encoding`.
+         * This is not the same as [`String.prototype.length`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length), which does not account
+         * for the encoding that is used to convert the string into bytes.
+         *
+         * For `'base64'`, `'base64url'`, and `'hex'`, this function assumes valid input.
+         * For strings that contain non-base64/hex-encoded data (e.g. whitespace), the
+         * return value might be greater than the length of a `Buffer` created from the
+         * string.
+         *
+         * ```js
+         * import { Buffer } from 'node:buffer';
+         *
+         * const str = '\u00bd + \u00bc = \u00be';
+         *
+         * console.log(`${str}: ${str.length} characters, ` +
+         *             `${Buffer.byteLength(str, 'utf8')} bytes`);
+         * // Prints: ½ + ¼ = ¾: 9 characters, 12 bytes
+         * ```
+         *
+         * When `string` is a
+         * `Buffer`/[`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)/[`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/-
+             * Reference/Global_Objects/TypedArray)/[`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer)/[`SharedArrayBuffer`](https://develop-
+             * er.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer), the byte length as reported by `.byteLength`is returned.
+         * @since v0.1.90
+         * @param string A value to calculate the length of.
+         * @param [encoding='utf8'] If `string` is a string, this is its encoding.
+         * @return The number of bytes contained within `string`.
+         */
         fun byteLength(string: Buffer, encoding: BufferEncoding = definedExternally): Double
 
+        /**
+         * Returns the byte length of a string when encoded using `encoding`.
+         * This is not the same as [`String.prototype.length`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length), which does not account
+         * for the encoding that is used to convert the string into bytes.
+         *
+         * For `'base64'`, `'base64url'`, and `'hex'`, this function assumes valid input.
+         * For strings that contain non-base64/hex-encoded data (e.g. whitespace), the
+         * return value might be greater than the length of a `Buffer` created from the
+         * string.
+         *
+         * ```js
+         * import { Buffer } from 'node:buffer';
+         *
+         * const str = '\u00bd + \u00bc = \u00be';
+         *
+         * console.log(`${str}: ${str.length} characters, ` +
+         *             `${Buffer.byteLength(str, 'utf8')} bytes`);
+         * // Prints: ½ + ¼ = ¾: 9 characters, 12 bytes
+         * ```
+         *
+         * When `string` is a
+         * `Buffer`/[`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)/[`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/-
+             * Reference/Global_Objects/TypedArray)/[`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer)/[`SharedArrayBuffer`](https://develop-
+             * er.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer), the byte length as reported by `.byteLength`is returned.
+         * @since v0.1.90
+         * @param string A value to calculate the length of.
+         * @param [encoding='utf8'] If `string` is a string, this is its encoding.
+         * @return The number of bytes contained within `string`.
+         */
         fun byteLength(string: js.buffer.ArrayBufferView, encoding: BufferEncoding = definedExternally): Double
 
+        /**
+         * Returns the byte length of a string when encoded using `encoding`.
+         * This is not the same as [`String.prototype.length`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length), which does not account
+         * for the encoding that is used to convert the string into bytes.
+         *
+         * For `'base64'`, `'base64url'`, and `'hex'`, this function assumes valid input.
+         * For strings that contain non-base64/hex-encoded data (e.g. whitespace), the
+         * return value might be greater than the length of a `Buffer` created from the
+         * string.
+         *
+         * ```js
+         * import { Buffer } from 'node:buffer';
+         *
+         * const str = '\u00bd + \u00bc = \u00be';
+         *
+         * console.log(`${str}: ${str.length} characters, ` +
+         *             `${Buffer.byteLength(str, 'utf8')} bytes`);
+         * // Prints: ½ + ¼ = ¾: 9 characters, 12 bytes
+         * ```
+         *
+         * When `string` is a
+         * `Buffer`/[`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)/[`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/-
+             * Reference/Global_Objects/TypedArray)/[`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer)/[`SharedArrayBuffer`](https://develop-
+             * er.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer), the byte length as reported by `.byteLength`is returned.
+         * @since v0.1.90
+         * @param string A value to calculate the length of.
+         * @param [encoding='utf8'] If `string` is a string, this is its encoding.
+         * @return The number of bytes contained within `string`.
+         */
         fun byteLength(string: ArrayBuffer, encoding: BufferEncoding = definedExternally): Double
 
+        /**
+         * Returns the byte length of a string when encoded using `encoding`.
+         * This is not the same as [`String.prototype.length`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length), which does not account
+         * for the encoding that is used to convert the string into bytes.
+         *
+         * For `'base64'`, `'base64url'`, and `'hex'`, this function assumes valid input.
+         * For strings that contain non-base64/hex-encoded data (e.g. whitespace), the
+         * return value might be greater than the length of a `Buffer` created from the
+         * string.
+         *
+         * ```js
+         * import { Buffer } from 'node:buffer';
+         *
+         * const str = '\u00bd + \u00bc = \u00be';
+         *
+         * console.log(`${str}: ${str.length} characters, ` +
+         *             `${Buffer.byteLength(str, 'utf8')} bytes`);
+         * // Prints: ½ + ¼ = ¾: 9 characters, 12 bytes
+         * ```
+         *
+         * When `string` is a
+         * `Buffer`/[`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)/[`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/-
+             * Reference/Global_Objects/TypedArray)/[`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer)/[`SharedArrayBuffer`](https://develop-
+             * er.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer), the byte length as reported by `.byteLength`is returned.
+         * @since v0.1.90
+         * @param string A value to calculate the length of.
+         * @param [encoding='utf8'] If `string` is a string, this is its encoding.
+         * @return The number of bytes contained within `string`.
+         */
         fun byteLength(string: SharedArrayBuffer, encoding: BufferEncoding = definedExternally): Double
 
         /**
@@ -2027,14 +2605,157 @@ sealed external class Buffer : Uint8Array {
          * @param [fill=0] A value to pre-fill the new `Buffer` with.
          * @param [encoding='utf8'] If `fill` is a string, this is its encoding.
          */
+        fun alloc(size: Number): Buffer
+
+        /**
+         * Allocates a new `Buffer` of `size` bytes. If `fill` is `undefined`, the`Buffer` will be zero-filled.
+         *
+         * ```js
+         * import { Buffer } from 'node:buffer';
+         *
+         * const buf = Buffer.alloc(5);
+         *
+         * console.log(buf);
+         * // Prints: <Buffer 00 00 00 00 00>
+         * ```
+         *
+         * If `size` is larger than {@link constants.MAX_LENGTH} or smaller than 0, `ERR_OUT_OF_RANGE` is thrown.
+         *
+         * If `fill` is specified, the allocated `Buffer` will be initialized by calling `buf.fill(fill)`.
+         *
+         * ```js
+         * import { Buffer } from 'node:buffer';
+         *
+         * const buf = Buffer.alloc(5, 'a');
+         *
+         * console.log(buf);
+         * // Prints: <Buffer 61 61 61 61 61>
+         * ```
+         *
+         * If both `fill` and `encoding` are specified, the allocated `Buffer` will be
+         * initialized by calling `buf.fill(fill, encoding)`.
+         *
+         * ```js
+         * import { Buffer } from 'node:buffer';
+         *
+         * const buf = Buffer.alloc(11, 'aGVsbG8gd29ybGQ=', 'base64');
+         *
+         * console.log(buf);
+         * // Prints: <Buffer 68 65 6c 6c 6f 20 77 6f 72 6c 64>
+         * ```
+         *
+         * Calling `Buffer.alloc()` can be measurably slower than the alternative `Buffer.allocUnsafe()` but ensures that the newly created `Buffer` instance
+         * contents will never contain sensitive data from previous allocations, including
+         * data that might not have been allocated for `Buffer`s.
+         *
+         * A `TypeError` will be thrown if `size` is not a number.
+         * @since v5.10.0
+         * @param size The desired length of the new `Buffer`.
+         * @param [fill=0] A value to pre-fill the new `Buffer` with.
+         * @param [encoding='utf8'] If `fill` is a string, this is its encoding.
+         */
         fun alloc(size: Number, fill: String = definedExternally, encoding: BufferEncoding = definedExternally): Buffer
 
+        /**
+         * Allocates a new `Buffer` of `size` bytes. If `fill` is `undefined`, the`Buffer` will be zero-filled.
+         *
+         * ```js
+         * import { Buffer } from 'node:buffer';
+         *
+         * const buf = Buffer.alloc(5);
+         *
+         * console.log(buf);
+         * // Prints: <Buffer 00 00 00 00 00>
+         * ```
+         *
+         * If `size` is larger than {@link constants.MAX_LENGTH} or smaller than 0, `ERR_OUT_OF_RANGE` is thrown.
+         *
+         * If `fill` is specified, the allocated `Buffer` will be initialized by calling `buf.fill(fill)`.
+         *
+         * ```js
+         * import { Buffer } from 'node:buffer';
+         *
+         * const buf = Buffer.alloc(5, 'a');
+         *
+         * console.log(buf);
+         * // Prints: <Buffer 61 61 61 61 61>
+         * ```
+         *
+         * If both `fill` and `encoding` are specified, the allocated `Buffer` will be
+         * initialized by calling `buf.fill(fill, encoding)`.
+         *
+         * ```js
+         * import { Buffer } from 'node:buffer';
+         *
+         * const buf = Buffer.alloc(11, 'aGVsbG8gd29ybGQ=', 'base64');
+         *
+         * console.log(buf);
+         * // Prints: <Buffer 68 65 6c 6c 6f 20 77 6f 72 6c 64>
+         * ```
+         *
+         * Calling `Buffer.alloc()` can be measurably slower than the alternative `Buffer.allocUnsafe()` but ensures that the newly created `Buffer` instance
+         * contents will never contain sensitive data from previous allocations, including
+         * data that might not have been allocated for `Buffer`s.
+         *
+         * A `TypeError` will be thrown if `size` is not a number.
+         * @since v5.10.0
+         * @param size The desired length of the new `Buffer`.
+         * @param [fill=0] A value to pre-fill the new `Buffer` with.
+         * @param [encoding='utf8'] If `fill` is a string, this is its encoding.
+         */
         fun alloc(
             size: Number,
             fill: Uint8Array = definedExternally,
             encoding: BufferEncoding = definedExternally,
         ): Buffer
 
+        /**
+         * Allocates a new `Buffer` of `size` bytes. If `fill` is `undefined`, the`Buffer` will be zero-filled.
+         *
+         * ```js
+         * import { Buffer } from 'node:buffer';
+         *
+         * const buf = Buffer.alloc(5);
+         *
+         * console.log(buf);
+         * // Prints: <Buffer 00 00 00 00 00>
+         * ```
+         *
+         * If `size` is larger than {@link constants.MAX_LENGTH} or smaller than 0, `ERR_OUT_OF_RANGE` is thrown.
+         *
+         * If `fill` is specified, the allocated `Buffer` will be initialized by calling `buf.fill(fill)`.
+         *
+         * ```js
+         * import { Buffer } from 'node:buffer';
+         *
+         * const buf = Buffer.alloc(5, 'a');
+         *
+         * console.log(buf);
+         * // Prints: <Buffer 61 61 61 61 61>
+         * ```
+         *
+         * If both `fill` and `encoding` are specified, the allocated `Buffer` will be
+         * initialized by calling `buf.fill(fill, encoding)`.
+         *
+         * ```js
+         * import { Buffer } from 'node:buffer';
+         *
+         * const buf = Buffer.alloc(11, 'aGVsbG8gd29ybGQ=', 'base64');
+         *
+         * console.log(buf);
+         * // Prints: <Buffer 68 65 6c 6c 6f 20 77 6f 72 6c 64>
+         * ```
+         *
+         * Calling `Buffer.alloc()` can be measurably slower than the alternative `Buffer.allocUnsafe()` but ensures that the newly created `Buffer` instance
+         * contents will never contain sensitive data from previous allocations, including
+         * data that might not have been allocated for `Buffer`s.
+         *
+         * A `TypeError` will be thrown if `size` is not a number.
+         * @since v5.10.0
+         * @param size The desired length of the new `Buffer`.
+         * @param [fill=0] A value to pre-fill the new `Buffer` with.
+         * @param [encoding='utf8'] If `fill` is a string, this is its encoding.
+         */
         fun alloc(size: Number, fill: Double = definedExternally, encoding: BufferEncoding = definedExternally): Buffer
 
         /**

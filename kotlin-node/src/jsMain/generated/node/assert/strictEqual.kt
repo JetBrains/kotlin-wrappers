@@ -42,8 +42,84 @@ package node.assert
  * instead of the `AssertionError`.
  * @since v0.1.21
  */
+external fun <T> equal(actual: Any?, expected: T): Unit /* asserts actual is T */
+
+/**
+ * Tests strict equality between the `actual` and `expected` parameters as
+ * determined by [`Object.is()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is).
+ *
+ * ```js
+ * import assert from 'node:assert/strict';
+ *
+ * assert.strictEqual(1, 2);
+ * // AssertionError [ERR_ASSERTION]: Expected inputs to be strictly equal:
+ * //
+ * // 1 !== 2
+ *
+ * assert.strictEqual(1, 1);
+ * // OK
+ *
+ * assert.strictEqual('Hello foobar', 'Hello World!');
+ * // AssertionError [ERR_ASSERTION]: Expected inputs to be strictly equal:
+ * // + actual - expected
+ * //
+ * // + 'Hello foobar'
+ * // - 'Hello World!'
+ * //          ^
+ *
+ * const apples = 1;
+ * const oranges = 2;
+ * assert.strictEqual(apples, oranges, `apples ${apples} !== oranges ${oranges}`);
+ * // AssertionError [ERR_ASSERTION]: apples 1 !== oranges 2
+ *
+ * assert.strictEqual(1, '1', new TypeError('Inputs are not identical'));
+ * // TypeError: Inputs are not identical
+ * ```
+ *
+ * If the values are not strictly equal, an `AssertionError` is thrown with a`message` property set equal to the value of the `message` parameter. If the`message` parameter is undefined, a
+ * default error message is assigned. If the`message` parameter is an instance of an `Error` then it will be thrown
+ * instead of the `AssertionError`.
+ * @since v0.1.21
+ */
 external fun <T> equal(actual: Any?, expected: T, message: String = definedExternally): Unit /* asserts actual is T */
 
+/**
+ * Tests strict equality between the `actual` and `expected` parameters as
+ * determined by [`Object.is()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is).
+ *
+ * ```js
+ * import assert from 'node:assert/strict';
+ *
+ * assert.strictEqual(1, 2);
+ * // AssertionError [ERR_ASSERTION]: Expected inputs to be strictly equal:
+ * //
+ * // 1 !== 2
+ *
+ * assert.strictEqual(1, 1);
+ * // OK
+ *
+ * assert.strictEqual('Hello foobar', 'Hello World!');
+ * // AssertionError [ERR_ASSERTION]: Expected inputs to be strictly equal:
+ * // + actual - expected
+ * //
+ * // + 'Hello foobar'
+ * // - 'Hello World!'
+ * //          ^
+ *
+ * const apples = 1;
+ * const oranges = 2;
+ * assert.strictEqual(apples, oranges, `apples ${apples} !== oranges ${oranges}`);
+ * // AssertionError [ERR_ASSERTION]: apples 1 !== oranges 2
+ *
+ * assert.strictEqual(1, '1', new TypeError('Inputs are not identical'));
+ * // TypeError: Inputs are not identical
+ * ```
+ *
+ * If the values are not strictly equal, an `AssertionError` is thrown with a`message` property set equal to the value of the `message` parameter. If the`message` parameter is undefined, a
+ * default error message is assigned. If the`message` parameter is an instance of an `Error` then it will be thrown
+ * instead of the `AssertionError`.
+ * @since v0.1.21
+ */
 external fun <T> equal(
     actual: Any?,
     expected: T,

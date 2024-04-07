@@ -239,6 +239,41 @@ sealed external interface Process : EventEmitter {
      */
     fun emitWarning(warning: String, ctor: Function<*> = definedExternally): Unit
 
+    /**
+     * The `process.emitWarning()` method can be used to emit custom or application
+     * specific process warnings. These can be listened for by adding a handler to the `'warning'` event.
+     *
+     * ```js
+     * import { emitWarning } from 'node:process';
+     *
+     * // Emit a warning with a code and additional detail.
+     * emitWarning('Something happened!', {
+     *   code: 'MY_WARNING',
+     *   detail: 'This is some additional information',
+     * });
+     * // Emits:
+     * // (node:56338) [MY_WARNING] Warning: Something happened!
+     * // This is some additional information
+     * ```
+     *
+     * In this example, an `Error` object is generated internally by`process.emitWarning()` and passed through to the `'warning'` handler.
+     *
+     * ```js
+     * import process from 'node:process';
+     *
+     * process.on('warning', (warning) => {
+     *   console.warn(warning.name);    // 'Warning'
+     *   console.warn(warning.message); // 'Something happened!'
+     *   console.warn(warning.code);    // 'MY_WARNING'
+     *   console.warn(warning.stack);   // Stack trace
+     *   console.warn(warning.detail);  // 'This is some additional information'
+     * });
+     * ```
+     *
+     * If `warning` is passed as an `Error` object, the `options` argument is ignored.
+     * @since v8.0.0
+     * @param warning The warning to emit.
+     */
     fun emitWarning(warning: Throwable /* JsError */, ctor: Function<*> = definedExternally): Unit
     fun emitWarning(warning: String, type: String = definedExternally, ctor: Function<*> = definedExternally): Unit
 
@@ -837,8 +872,80 @@ sealed external interface Process : EventEmitter {
      * @param pid A process ID
      * @param [signal='SIGTERM'] The signal to send, either as a string or number.
      */
+    fun kill(pid: Number): Boolean
+
+    /**
+     * The `process.kill()` method sends the `signal` to the process identified by`pid`.
+     *
+     * Signal names are strings such as `'SIGINT'` or `'SIGHUP'`. See `Signal Events` and [`kill(2)`](http://man7.org/linux/man-pages/man2/kill.2.html) for more information.
+     *
+     * This method will throw an error if the target `pid` does not exist. As a special
+     * case, a signal of `0` can be used to test for the existence of a process.
+     * Windows platforms will throw an error if the `pid` is used to kill a process
+     * group.
+     *
+     * Even though the name of this function is `process.kill()`, it is really just a
+     * signal sender, like the `kill` system call. The signal sent may do something
+     * other than kill the target process.
+     *
+     * ```js
+     * import process, { kill } from 'node:process';
+     *
+     * process.on('SIGHUP', () => {
+     *   console.log('Got SIGHUP signal.');
+     * });
+     *
+     * setTimeout(() => {
+     *   console.log('Exiting.');
+     *   process.exit(0);
+     * }, 100);
+     *
+     * kill(process.pid, 'SIGHUP');
+     * ```
+     *
+     * When `SIGUSR1` is received by a Node.js process, Node.js will start the
+     * debugger. See `Signal Events`.
+     * @since v0.0.6
+     * @param pid A process ID
+     * @param [signal='SIGTERM'] The signal to send, either as a string or number.
+     */
     fun kill(pid: Number, signal: String = definedExternally): Boolean
 
+    /**
+     * The `process.kill()` method sends the `signal` to the process identified by`pid`.
+     *
+     * Signal names are strings such as `'SIGINT'` or `'SIGHUP'`. See `Signal Events` and [`kill(2)`](http://man7.org/linux/man-pages/man2/kill.2.html) for more information.
+     *
+     * This method will throw an error if the target `pid` does not exist. As a special
+     * case, a signal of `0` can be used to test for the existence of a process.
+     * Windows platforms will throw an error if the `pid` is used to kill a process
+     * group.
+     *
+     * Even though the name of this function is `process.kill()`, it is really just a
+     * signal sender, like the `kill` system call. The signal sent may do something
+     * other than kill the target process.
+     *
+     * ```js
+     * import process, { kill } from 'node:process';
+     *
+     * process.on('SIGHUP', () => {
+     *   console.log('Got SIGHUP signal.');
+     * });
+     *
+     * setTimeout(() => {
+     *   console.log('Exiting.');
+     *   process.exit(0);
+     * }, 100);
+     *
+     * kill(process.pid, 'SIGHUP');
+     * ```
+     *
+     * When `SIGUSR1` is received by a Node.js process, Node.js will start the
+     * debugger. See `Signal Events`.
+     * @since v0.0.6
+     * @param pid A process ID
+     * @param [signal='SIGTERM'] The signal to send, either as a string or number.
+     */
     fun kill(pid: Number, signal: Double = definedExternally): Boolean
 
     /**
@@ -1106,6 +1213,9 @@ sealed external interface Process : EventEmitter {
      */
     fun umask(mask: String): Double
 
+    /**
+     * Can only be set if not in worker thread.
+     */
     fun umask(mask: Double): Double
 
     /**

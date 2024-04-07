@@ -51,6 +51,21 @@ open external class Socket : node.stream.Duplex {
         cb: (err: Throwable /* JsError */? /* use undefined for default */) -> Unit,
     ): Boolean
 
+    /**
+     * Sends data on the socket. The second parameter specifies the encoding in the
+     * case of a string. It defaults to UTF8 encoding.
+     *
+     * Returns `true` if the entire data was flushed successfully to the kernel
+     * buffer. Returns `false` if all or part of the data was queued in user memory.`'drain'` will be emitted when the buffer is again free.
+     *
+     * The optional `callback` parameter will be executed when the data is finally
+     * written out, which may not be immediately.
+     *
+     * See `Writable` stream `write()` method for more
+     * information.
+     * @since v0.1.90
+     * @param [encoding='utf8'] Only used when data is `string`.
+     */
     override fun write(
         buffer: String,
         cb: (err: Throwable /* JsError */? /* use undefined for default */) -> Unit,

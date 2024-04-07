@@ -302,6 +302,99 @@ external class Socket : EventEmitter {
         callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
     ): Unit
 
+    /**
+     * Broadcasts a datagram on the socket.
+     * For connectionless sockets, the destination `port` and `address` must be
+     * specified. Connected sockets, on the other hand, will use their associated
+     * remote endpoint, so the `port` and `address` arguments must not be set.
+     *
+     * The `msg` argument contains the message to be sent.
+     * Depending on its type, different behavior can apply. If `msg` is a `Buffer`,
+     * any `TypedArray` or a `DataView`,
+     * the `offset` and `length` specify the offset within the `Buffer` where the
+     * message begins and the number of bytes in the message, respectively.
+     * If `msg` is a `String`, then it is automatically converted to a `Buffer`with `'utf8'` encoding. With messages that
+     * contain multi-byte characters, `offset` and `length` will be calculated with
+     * respect to `byte length` and not the character position.
+     * If `msg` is an array, `offset` and `length` must not be specified.
+     *
+     * The `address` argument is a string. If the value of `address` is a host name,
+     * DNS will be used to resolve the address of the host. If `address` is not
+     * provided or otherwise nullish, `'127.0.0.1'` (for `udp4` sockets) or `'::1'`(for `udp6` sockets) will be used by default.
+     *
+     * If the socket has not been previously bound with a call to `bind`, the socket
+     * is assigned a random port number and is bound to the "all interfaces" address
+     * (`'0.0.0.0'` for `udp4` sockets, `'::0'` for `udp6` sockets.)
+     *
+     * An optional `callback` function may be specified to as a way of reporting
+     * DNS errors or for determining when it is safe to reuse the `buf` object.
+     * DNS lookups delay the time to send for at least one tick of the
+     * Node.js event loop.
+     *
+     * The only way to know for sure that the datagram has been sent is by using a`callback`. If an error occurs and a `callback` is given, the error will be
+     * passed as the first argument to the `callback`. If a `callback` is not given,
+     * the error is emitted as an `'error'` event on the `socket` object.
+     *
+     * Offset and length are optional but both _must_ be set if either are used.
+     * They are supported only when the first argument is a `Buffer`, a `TypedArray`,
+     * or a `DataView`.
+     *
+     * This method throws `ERR_SOCKET_BAD_PORT` if called on an unbound socket.
+     *
+     * Example of sending a UDP packet to a port on `localhost`;
+     *
+     * ```js
+     * import dgram from 'node:dgram';
+     * import { Buffer } from 'node:buffer';
+     *
+     * const message = Buffer.from('Some bytes');
+     * const client = dgram.createSocket('udp4');
+     * client.send(message, 41234, 'localhost', (err) => {
+     *   client.close();
+     * });
+     * ```
+     *
+     * Example of sending a UDP packet composed of multiple buffers to a port on`127.0.0.1`;
+     *
+     * ```js
+     * import dgram from 'node:dgram';
+     * import { Buffer } from 'node:buffer';
+     *
+     * const buf1 = Buffer.from('Some ');
+     * const buf2 = Buffer.from('bytes');
+     * const client = dgram.createSocket('udp4');
+     * client.send([buf1, buf2], 41234, (err) => {
+     *   client.close();
+     * });
+     * ```
+     *
+     * Sending multiple buffers might be faster or slower depending on the
+     * application and operating system. Run benchmarks to
+     * determine the optimal strategy on a case-by-case basis. Generally speaking,
+     * however, sending multiple buffers is faster.
+     *
+     * Example of sending a UDP packet using a socket connected to a port on`localhost`:
+     *
+     * ```js
+     * import dgram from 'node:dgram';
+     * import { Buffer } from 'node:buffer';
+     *
+     * const message = Buffer.from('Some bytes');
+     * const client = dgram.createSocket('udp4');
+     * client.connect(41234, 'localhost', (err) => {
+     *   client.send(message, (err) => {
+     *     client.close();
+     *   });
+     * });
+     * ```
+     * @since v0.1.99
+     * @param msg Message to be sent.
+     * @param offset Offset in the buffer where the message starts.
+     * @param length Number of bytes in the message.
+     * @param port Destination port.
+     * @param address Destination host name or IP address.
+     * @param callback Called when the message has been sent.
+     */
     fun send(
         msg: Uint8Array,
         port: Number = definedExternally,
@@ -309,6 +402,99 @@ external class Socket : EventEmitter {
         callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
     ): Unit
 
+    /**
+     * Broadcasts a datagram on the socket.
+     * For connectionless sockets, the destination `port` and `address` must be
+     * specified. Connected sockets, on the other hand, will use their associated
+     * remote endpoint, so the `port` and `address` arguments must not be set.
+     *
+     * The `msg` argument contains the message to be sent.
+     * Depending on its type, different behavior can apply. If `msg` is a `Buffer`,
+     * any `TypedArray` or a `DataView`,
+     * the `offset` and `length` specify the offset within the `Buffer` where the
+     * message begins and the number of bytes in the message, respectively.
+     * If `msg` is a `String`, then it is automatically converted to a `Buffer`with `'utf8'` encoding. With messages that
+     * contain multi-byte characters, `offset` and `length` will be calculated with
+     * respect to `byte length` and not the character position.
+     * If `msg` is an array, `offset` and `length` must not be specified.
+     *
+     * The `address` argument is a string. If the value of `address` is a host name,
+     * DNS will be used to resolve the address of the host. If `address` is not
+     * provided or otherwise nullish, `'127.0.0.1'` (for `udp4` sockets) or `'::1'`(for `udp6` sockets) will be used by default.
+     *
+     * If the socket has not been previously bound with a call to `bind`, the socket
+     * is assigned a random port number and is bound to the "all interfaces" address
+     * (`'0.0.0.0'` for `udp4` sockets, `'::0'` for `udp6` sockets.)
+     *
+     * An optional `callback` function may be specified to as a way of reporting
+     * DNS errors or for determining when it is safe to reuse the `buf` object.
+     * DNS lookups delay the time to send for at least one tick of the
+     * Node.js event loop.
+     *
+     * The only way to know for sure that the datagram has been sent is by using a`callback`. If an error occurs and a `callback` is given, the error will be
+     * passed as the first argument to the `callback`. If a `callback` is not given,
+     * the error is emitted as an `'error'` event on the `socket` object.
+     *
+     * Offset and length are optional but both _must_ be set if either are used.
+     * They are supported only when the first argument is a `Buffer`, a `TypedArray`,
+     * or a `DataView`.
+     *
+     * This method throws `ERR_SOCKET_BAD_PORT` if called on an unbound socket.
+     *
+     * Example of sending a UDP packet to a port on `localhost`;
+     *
+     * ```js
+     * import dgram from 'node:dgram';
+     * import { Buffer } from 'node:buffer';
+     *
+     * const message = Buffer.from('Some bytes');
+     * const client = dgram.createSocket('udp4');
+     * client.send(message, 41234, 'localhost', (err) => {
+     *   client.close();
+     * });
+     * ```
+     *
+     * Example of sending a UDP packet composed of multiple buffers to a port on`127.0.0.1`;
+     *
+     * ```js
+     * import dgram from 'node:dgram';
+     * import { Buffer } from 'node:buffer';
+     *
+     * const buf1 = Buffer.from('Some ');
+     * const buf2 = Buffer.from('bytes');
+     * const client = dgram.createSocket('udp4');
+     * client.send([buf1, buf2], 41234, (err) => {
+     *   client.close();
+     * });
+     * ```
+     *
+     * Sending multiple buffers might be faster or slower depending on the
+     * application and operating system. Run benchmarks to
+     * determine the optimal strategy on a case-by-case basis. Generally speaking,
+     * however, sending multiple buffers is faster.
+     *
+     * Example of sending a UDP packet using a socket connected to a port on`localhost`:
+     *
+     * ```js
+     * import dgram from 'node:dgram';
+     * import { Buffer } from 'node:buffer';
+     *
+     * const message = Buffer.from('Some bytes');
+     * const client = dgram.createSocket('udp4');
+     * client.connect(41234, 'localhost', (err) => {
+     *   client.send(message, (err) => {
+     *     client.close();
+     *   });
+     * });
+     * ```
+     * @since v0.1.99
+     * @param msg Message to be sent.
+     * @param offset Offset in the buffer where the message starts.
+     * @param length Number of bytes in the message.
+     * @param port Destination port.
+     * @param address Destination host name or IP address.
+     * @param callback Called when the message has been sent.
+     */
     fun send(
         msg: ReadonlyArray<Any?>,
         port: Number = definedExternally,

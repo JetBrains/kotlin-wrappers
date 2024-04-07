@@ -12,17 +12,56 @@ suspend fun cp(source: String, destination: String, opts: CopyOptions = undefine
     ).await()
 
 
+/**
+ * Asynchronously copies the entire directory structure from `src` to `dest`,
+ * including subdirectories and files.
+ *
+ * When copying a directory to another directory, globs are not supported and
+ * behavior is similar to `cp dir1/ dir2/`.
+ * @since v16.7.0
+ * @experimental
+ * @param src source path to copy.
+ * @param dest destination path to copy to.
+ * @return Fulfills with `undefined` upon success.
+ */
+
 suspend fun cp(source: String, destination: URL, opts: CopyOptions = undefined.unsafeCast<Nothing>()): Unit =
     cpAsync(
         source, destination, opts
     ).await()
 
 
+/**
+ * Asynchronously copies the entire directory structure from `src` to `dest`,
+ * including subdirectories and files.
+ *
+ * When copying a directory to another directory, globs are not supported and
+ * behavior is similar to `cp dir1/ dir2/`.
+ * @since v16.7.0
+ * @experimental
+ * @param src source path to copy.
+ * @param dest destination path to copy to.
+ * @return Fulfills with `undefined` upon success.
+ */
+
 suspend fun cp(source: URL, destination: String, opts: CopyOptions = undefined.unsafeCast<Nothing>()): Unit =
     cpAsync(
         source, destination, opts
     ).await()
 
+
+/**
+ * Asynchronously copies the entire directory structure from `src` to `dest`,
+ * including subdirectories and files.
+ *
+ * When copying a directory to another directory, globs are not supported and
+ * behavior is similar to `cp dir1/ dir2/`.
+ * @since v16.7.0
+ * @experimental
+ * @param src source path to copy.
+ * @param dest destination path to copy to.
+ * @return Fulfills with `undefined` upon success.
+ */
 
 suspend fun cp(source: URL, destination: URL, opts: CopyOptions = undefined.unsafeCast<Nothing>()): Unit =
     cpAsync(

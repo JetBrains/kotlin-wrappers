@@ -44,6 +44,8 @@ external class Module : NodeModule {
         var builtinModules: js.array.ReadonlyArray<String>
         fun isBuiltin(moduleName: String): Boolean
         var Module: Any?
+        fun <Data /* default is Any? */> register(specifier: String): Unit
+
         fun <Data /* default is Any? */> register(
             specifier: String,
             parentURL: String = definedExternally,
@@ -55,6 +57,8 @@ external class Module : NodeModule {
             parentURL: URL = definedExternally,
             options: RegisterOptions<Data> = definedExternally,
         ): Unit
+
+        fun <Data /* default is Any? */> register(specifier: URL): Unit
 
         fun <Data /* default is Any? */> register(
             specifier: URL,

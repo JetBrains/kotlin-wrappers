@@ -30,12 +30,56 @@ sealed external interface FileHandle {
      */
 
     @JsName("appendFile")
+    fun appendFileAsync(data: String): Promise<Unit>
+
+
+    /**
+     * Alias of `filehandle.writeFile()`.
+     *
+     * When operating on file handles, the mode cannot be changed from what it was set
+     * to with `fsPromises.open()`. Therefore, this is equivalent to `filehandle.writeFile()`.
+     * @since v10.0.0
+     * @return Fulfills with `undefined` upon success.
+     */
+
+    @JsName("appendFile")
     fun appendFileAsync(data: String, options: (FileHandleAppendFileAsyncOptions)? = definedExternally): Promise<Unit>
 
+
+    /**
+     * Alias of `filehandle.writeFile()`.
+     *
+     * When operating on file handles, the mode cannot be changed from what it was set
+     * to with `fsPromises.open()`. Therefore, this is equivalent to `filehandle.writeFile()`.
+     * @since v10.0.0
+     * @return Fulfills with `undefined` upon success.
+     */
 
     @JsName("appendFile")
     fun appendFileAsync(data: String, options: node.buffer.BufferEncoding? = definedExternally): Promise<Unit>
 
+
+    /**
+     * Alias of `filehandle.writeFile()`.
+     *
+     * When operating on file handles, the mode cannot be changed from what it was set
+     * to with `fsPromises.open()`. Therefore, this is equivalent to `filehandle.writeFile()`.
+     * @since v10.0.0
+     * @return Fulfills with `undefined` upon success.
+     */
+
+    @JsName("appendFile")
+    fun appendFileAsync(data: Uint8Array): Promise<Unit>
+
+
+    /**
+     * Alias of `filehandle.writeFile()`.
+     *
+     * When operating on file handles, the mode cannot be changed from what it was set
+     * to with `fsPromises.open()`. Therefore, this is equivalent to `filehandle.writeFile()`.
+     * @since v10.0.0
+     * @return Fulfills with `undefined` upon success.
+     */
 
     @JsName("appendFile")
     fun appendFileAsync(
@@ -44,9 +88,39 @@ sealed external interface FileHandle {
     ): Promise<Unit>
 
 
+    /**
+     * Alias of `filehandle.writeFile()`.
+     *
+     * When operating on file handles, the mode cannot be changed from what it was set
+     * to with `fsPromises.open()`. Therefore, this is equivalent to `filehandle.writeFile()`.
+     * @since v10.0.0
+     * @return Fulfills with `undefined` upon success.
+     */
+
     @JsName("appendFile")
     fun appendFileAsync(data: Uint8Array, options: node.buffer.BufferEncoding? = definedExternally): Promise<Unit>
 
+
+    @Suppress(
+        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+        "INLINE_EXTERNAL_DECLARATION",
+        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+        "DECLARATION_CANT_BE_INLINED",
+    )
+    suspend inline fun appendFile(data: String): Unit =
+        appendFileAsync(
+            data
+        ).await()
+
+
+    /**
+     * Alias of `filehandle.writeFile()`.
+     *
+     * When operating on file handles, the mode cannot be changed from what it was set
+     * to with `fsPromises.open()`. Therefore, this is equivalent to `filehandle.writeFile()`.
+     * @since v10.0.0
+     * @return Fulfills with `undefined` upon success.
+     */
 
     @Suppress(
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",
@@ -63,6 +137,15 @@ sealed external interface FileHandle {
         ).await()
 
 
+    /**
+     * Alias of `filehandle.writeFile()`.
+     *
+     * When operating on file handles, the mode cannot be changed from what it was set
+     * to with `fsPromises.open()`. Therefore, this is equivalent to `filehandle.writeFile()`.
+     * @since v10.0.0
+     * @return Fulfills with `undefined` upon success.
+     */
+
     @Suppress(
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",
         "INLINE_EXTERNAL_DECLARATION",
@@ -74,6 +157,36 @@ sealed external interface FileHandle {
             data, options
         ).await()
 
+
+    /**
+     * Alias of `filehandle.writeFile()`.
+     *
+     * When operating on file handles, the mode cannot be changed from what it was set
+     * to with `fsPromises.open()`. Therefore, this is equivalent to `filehandle.writeFile()`.
+     * @since v10.0.0
+     * @return Fulfills with `undefined` upon success.
+     */
+
+    @Suppress(
+        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+        "INLINE_EXTERNAL_DECLARATION",
+        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+        "DECLARATION_CANT_BE_INLINED",
+    )
+    suspend inline fun appendFile(data: Uint8Array): Unit =
+        appendFileAsync(
+            data
+        ).await()
+
+
+    /**
+     * Alias of `filehandle.writeFile()`.
+     *
+     * When operating on file handles, the mode cannot be changed from what it was set
+     * to with `fsPromises.open()`. Therefore, this is equivalent to `filehandle.writeFile()`.
+     * @since v10.0.0
+     * @return Fulfills with `undefined` upon success.
+     */
 
     @Suppress(
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",
@@ -89,6 +202,15 @@ sealed external interface FileHandle {
             data, options
         ).await()
 
+
+    /**
+     * Alias of `filehandle.writeFile()`.
+     *
+     * When operating on file handles, the mode cannot be changed from what it was set
+     * to with `fsPromises.open()`. Therefore, this is equivalent to `filehandle.writeFile()`.
+     * @since v10.0.0
+     * @return Fulfills with `undefined` upon success.
+     */
 
     @Suppress(
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",
@@ -388,6 +510,13 @@ sealed external interface FileHandle {
     fun readFileAsync(options: FileHandleReadFileStringAsyncOptions): Promise<String>
 
 
+    /**
+     * Asynchronously reads the entire contents of a file. The underlying file will _not_ be closed automatically.
+     * The `FileHandle` must have been opened for reading.
+     * @param options An object that may contain an optional flag.
+     * If a flag is not provided, it defaults to `'r'`.
+     */
+
     @JsName("readFile")
     fun readFileAsync(options: node.buffer.BufferEncoding): Promise<String>
 
@@ -403,6 +532,13 @@ sealed external interface FileHandle {
             options
         ).await()
 
+
+    /**
+     * Asynchronously reads the entire contents of a file. The underlying file will _not_ be closed automatically.
+     * The `FileHandle` must have been opened for reading.
+     * @param options An object that may contain an optional flag.
+     * If a flag is not provided, it defaults to `'r'`.
+     */
 
     @Suppress(
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",
@@ -423,12 +559,49 @@ sealed external interface FileHandle {
      */
 
     @JsName("readFile")
+    fun readFileAsync(): Promise<Any /* string | Buffer */>
+
+
+    /**
+     * Asynchronously reads the entire contents of a file. The underlying file will _not_ be closed automatically.
+     * The `FileHandle` must have been opened for reading.
+     * @param options An object that may contain an optional flag.
+     * If a flag is not provided, it defaults to `'r'`.
+     */
+
+    @JsName("readFile")
     fun readFileAsync(options: (FileHandleReadFileAsyncOptions)? = definedExternally): Promise<Any /* string | Buffer */>
 
+
+    /**
+     * Asynchronously reads the entire contents of a file. The underlying file will _not_ be closed automatically.
+     * The `FileHandle` must have been opened for reading.
+     * @param options An object that may contain an optional flag.
+     * If a flag is not provided, it defaults to `'r'`.
+     */
 
     @JsName("readFile")
     fun readFileAsync(options: node.buffer.BufferEncoding? = definedExternally): Promise<Any /* string | Buffer */>
 
+
+    @Suppress(
+        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+        "INLINE_EXTERNAL_DECLARATION",
+        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+        "DECLARATION_CANT_BE_INLINED",
+    )
+    suspend inline fun readFile(): Any /* string | Buffer */ =
+        readFileAsync(
+
+        ).await()
+
+
+    /**
+     * Asynchronously reads the entire contents of a file. The underlying file will _not_ be closed automatically.
+     * The `FileHandle` must have been opened for reading.
+     * @param options An object that may contain an optional flag.
+     * If a flag is not provided, it defaults to `'r'`.
+     */
 
     @Suppress(
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",
@@ -441,6 +614,13 @@ sealed external interface FileHandle {
             options
         ).await()
 
+
+    /**
+     * Asynchronously reads the entire contents of a file. The underlying file will _not_ be closed automatically.
+     * The `FileHandle` must have been opened for reading.
+     * @param options An object that may contain an optional flag.
+     * If a flag is not provided, it defaults to `'r'`.
+     */
 
     @Suppress(
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",
@@ -606,20 +786,154 @@ sealed external interface FileHandle {
      */
 
     @JsName("writeFile")
+    fun writeFileAsync(data: String): Promise<Unit>
+
+
+    /**
+     * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+     * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
+     * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
+     * The promise is fulfilled with no arguments upon success.
+     *
+     * If `options` is a string, then it specifies the `encoding`.
+     *
+     * The `FileHandle` has to support writing.
+     *
+     * It is unsafe to use `filehandle.writeFile()` multiple times on the same file
+     * without waiting for the promise to be fulfilled (or rejected).
+     *
+     * If one or more `filehandle.write()` calls are made on a file handle and then a`filehandle.writeFile()` call is made, the data will be written from the
+     * current position till the end of the file. It doesn't always write from the
+     * beginning of the file.
+     * @since v10.0.0
+     */
+
+    @JsName("writeFile")
     fun writeFileAsync(data: String, options: (FileHandleWriteFileAsyncOptions)? = definedExternally): Promise<Unit>
 
+
+    /**
+     * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+     * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
+     * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
+     * The promise is fulfilled with no arguments upon success.
+     *
+     * If `options` is a string, then it specifies the `encoding`.
+     *
+     * The `FileHandle` has to support writing.
+     *
+     * It is unsafe to use `filehandle.writeFile()` multiple times on the same file
+     * without waiting for the promise to be fulfilled (or rejected).
+     *
+     * If one or more `filehandle.write()` calls are made on a file handle and then a`filehandle.writeFile()` call is made, the data will be written from the
+     * current position till the end of the file. It doesn't always write from the
+     * beginning of the file.
+     * @since v10.0.0
+     */
 
     @JsName("writeFile")
     fun writeFileAsync(data: String, options: node.buffer.BufferEncoding? = definedExternally): Promise<Unit>
 
 
+    /**
+     * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+     * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
+     * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
+     * The promise is fulfilled with no arguments upon success.
+     *
+     * If `options` is a string, then it specifies the `encoding`.
+     *
+     * The `FileHandle` has to support writing.
+     *
+     * It is unsafe to use `filehandle.writeFile()` multiple times on the same file
+     * without waiting for the promise to be fulfilled (or rejected).
+     *
+     * If one or more `filehandle.write()` calls are made on a file handle and then a`filehandle.writeFile()` call is made, the data will be written from the
+     * current position till the end of the file. It doesn't always write from the
+     * beginning of the file.
+     * @since v10.0.0
+     */
+
+    @JsName("writeFile")
+    fun writeFileAsync(data: Uint8Array): Promise<Unit>
+
+
+    /**
+     * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+     * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
+     * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
+     * The promise is fulfilled with no arguments upon success.
+     *
+     * If `options` is a string, then it specifies the `encoding`.
+     *
+     * The `FileHandle` has to support writing.
+     *
+     * It is unsafe to use `filehandle.writeFile()` multiple times on the same file
+     * without waiting for the promise to be fulfilled (or rejected).
+     *
+     * If one or more `filehandle.write()` calls are made on a file handle and then a`filehandle.writeFile()` call is made, the data will be written from the
+     * current position till the end of the file. It doesn't always write from the
+     * beginning of the file.
+     * @since v10.0.0
+     */
+
     @JsName("writeFile")
     fun writeFileAsync(data: Uint8Array, options: (FileHandleWriteFileAsyncOptions)? = definedExternally): Promise<Unit>
 
 
+    /**
+     * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+     * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
+     * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
+     * The promise is fulfilled with no arguments upon success.
+     *
+     * If `options` is a string, then it specifies the `encoding`.
+     *
+     * The `FileHandle` has to support writing.
+     *
+     * It is unsafe to use `filehandle.writeFile()` multiple times on the same file
+     * without waiting for the promise to be fulfilled (or rejected).
+     *
+     * If one or more `filehandle.write()` calls are made on a file handle and then a`filehandle.writeFile()` call is made, the data will be written from the
+     * current position till the end of the file. It doesn't always write from the
+     * beginning of the file.
+     * @since v10.0.0
+     */
+
     @JsName("writeFile")
     fun writeFileAsync(data: Uint8Array, options: node.buffer.BufferEncoding? = definedExternally): Promise<Unit>
 
+
+    @Suppress(
+        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+        "INLINE_EXTERNAL_DECLARATION",
+        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+        "DECLARATION_CANT_BE_INLINED",
+    )
+    suspend inline fun writeFile(data: String): Unit =
+        writeFileAsync(
+            data
+        ).await()
+
+
+    /**
+     * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+     * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
+     * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
+     * The promise is fulfilled with no arguments upon success.
+     *
+     * If `options` is a string, then it specifies the `encoding`.
+     *
+     * The `FileHandle` has to support writing.
+     *
+     * It is unsafe to use `filehandle.writeFile()` multiple times on the same file
+     * without waiting for the promise to be fulfilled (or rejected).
+     *
+     * If one or more `filehandle.write()` calls are made on a file handle and then a`filehandle.writeFile()` call is made, the data will be written from the
+     * current position till the end of the file. It doesn't always write from the
+     * beginning of the file.
+     * @since v10.0.0
+     */
 
     @Suppress(
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",
@@ -633,6 +947,25 @@ sealed external interface FileHandle {
         ).await()
 
 
+    /**
+     * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+     * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
+     * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
+     * The promise is fulfilled with no arguments upon success.
+     *
+     * If `options` is a string, then it specifies the `encoding`.
+     *
+     * The `FileHandle` has to support writing.
+     *
+     * It is unsafe to use `filehandle.writeFile()` multiple times on the same file
+     * without waiting for the promise to be fulfilled (or rejected).
+     *
+     * If one or more `filehandle.write()` calls are made on a file handle and then a`filehandle.writeFile()` call is made, the data will be written from the
+     * current position till the end of the file. It doesn't always write from the
+     * beginning of the file.
+     * @since v10.0.0
+     */
+
     @Suppress(
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",
         "INLINE_EXTERNAL_DECLARATION",
@@ -644,6 +977,56 @@ sealed external interface FileHandle {
             data, options
         ).await()
 
+
+    /**
+     * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+     * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
+     * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
+     * The promise is fulfilled with no arguments upon success.
+     *
+     * If `options` is a string, then it specifies the `encoding`.
+     *
+     * The `FileHandle` has to support writing.
+     *
+     * It is unsafe to use `filehandle.writeFile()` multiple times on the same file
+     * without waiting for the promise to be fulfilled (or rejected).
+     *
+     * If one or more `filehandle.write()` calls are made on a file handle and then a`filehandle.writeFile()` call is made, the data will be written from the
+     * current position till the end of the file. It doesn't always write from the
+     * beginning of the file.
+     * @since v10.0.0
+     */
+
+    @Suppress(
+        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+        "INLINE_EXTERNAL_DECLARATION",
+        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+        "DECLARATION_CANT_BE_INLINED",
+    )
+    suspend inline fun writeFile(data: Uint8Array): Unit =
+        writeFileAsync(
+            data
+        ).await()
+
+
+    /**
+     * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+     * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
+     * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
+     * The promise is fulfilled with no arguments upon success.
+     *
+     * If `options` is a string, then it specifies the `encoding`.
+     *
+     * The `FileHandle` has to support writing.
+     *
+     * It is unsafe to use `filehandle.writeFile()` multiple times on the same file
+     * without waiting for the promise to be fulfilled (or rejected).
+     *
+     * If one or more `filehandle.write()` calls are made on a file handle and then a`filehandle.writeFile()` call is made, the data will be written from the
+     * current position till the end of the file. It doesn't always write from the
+     * beginning of the file.
+     * @since v10.0.0
+     */
 
     @Suppress(
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",
@@ -659,6 +1042,25 @@ sealed external interface FileHandle {
             data, options
         ).await()
 
+
+    /**
+     * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+     * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
+     * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
+     * The promise is fulfilled with no arguments upon success.
+     *
+     * If `options` is a string, then it specifies the `encoding`.
+     *
+     * The `FileHandle` has to support writing.
+     *
+     * It is unsafe to use `filehandle.writeFile()` multiple times on the same file
+     * without waiting for the promise to be fulfilled (or rejected).
+     *
+     * If one or more `filehandle.write()` calls are made on a file handle and then a`filehandle.writeFile()` call is made, the data will be written from the
+     * current position till the end of the file. It doesn't always write from the
+     * beginning of the file.
+     * @since v10.0.0
+     */
 
     @Suppress(
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",

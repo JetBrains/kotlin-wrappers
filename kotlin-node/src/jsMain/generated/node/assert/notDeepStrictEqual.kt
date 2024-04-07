@@ -22,6 +22,42 @@ package node.assert
  * instead of the `AssertionError`.
  * @since v1.2.0
  */
+external fun notDeepEqual(actual: Any?, expected: Any?): Unit
+
+/**
+ * Tests for deep strict inequality. Opposite of {@link deepStrictEqual}.
+ *
+ * ```js
+ * import assert from 'node:assert/strict';
+ *
+ * assert.notDeepStrictEqual({ a: 1 }, { a: '1' });
+ * // OK
+ * ```
+ *
+ * If the values are deeply and strictly equal, an `AssertionError` is thrown
+ * with a `message` property set equal to the value of the `message` parameter. If
+ * the `message` parameter is undefined, a default error message is assigned. If
+ * the `message` parameter is an instance of an `Error` then it will be thrown
+ * instead of the `AssertionError`.
+ * @since v1.2.0
+ */
 external fun notDeepEqual(actual: Any?, expected: Any?, message: String = definedExternally): Unit
 
+/**
+ * Tests for deep strict inequality. Opposite of {@link deepStrictEqual}.
+ *
+ * ```js
+ * import assert from 'node:assert/strict';
+ *
+ * assert.notDeepStrictEqual({ a: 1 }, { a: '1' });
+ * // OK
+ * ```
+ *
+ * If the values are deeply and strictly equal, an `AssertionError` is thrown
+ * with a `message` property set equal to the value of the `message` parameter. If
+ * the `message` parameter is undefined, a default error message is assigned. If
+ * the `message` parameter is an instance of an `Error` then it will be thrown
+ * instead of the `AssertionError`.
+ * @since v1.2.0
+ */
 external fun notDeepEqual(actual: Any?, expected: Any?, message: Throwable /* JsError */ = definedExternally): Unit

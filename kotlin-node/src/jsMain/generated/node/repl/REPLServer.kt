@@ -178,6 +178,43 @@ external class REPLServer : Interface {
      */
     fun defineCommand(keyword: String, cmd: REPLCommandAction): Unit
 
+    /**
+     * The `replServer.defineCommand()` method is used to add new `.`\-prefixed commands
+     * to the REPL instance. Such commands are invoked by typing a `.` followed by the`keyword`. The `cmd` is either a `Function` or an `Object` with the following
+     * properties:
+     *
+     * The following example shows two new commands added to the REPL instance:
+     *
+     * ```js
+     * const repl = require('node:repl');
+     *
+     * const replServer = repl.start({ prompt: '> ' });
+     * replServer.defineCommand('sayhello', {
+     *   help: 'Say hello',
+     *   action(name) {
+     *     this.clearBufferedCommand();
+     *     console.log(`Hello, ${name}!`);
+     *     this.displayPrompt();
+     *   },
+     * });
+     * replServer.defineCommand('saybye', function saybye() {
+     *   console.log('Goodbye!');
+     *   this.close();
+     * });
+     * ```
+     *
+     * The new commands can then be used from within the REPL instance:
+     *
+     * ```console
+     * > .sayhello Node.js User
+     * Hello, Node.js User!
+     * > .saybye
+     * Goodbye!
+     * ```
+     * @since v0.3.0
+     * @param keyword The command keyword (_without_ a leading `.` character).
+     * @param cmd The function to invoke when the command is processed.
+     */
     fun defineCommand(keyword: String, cmd: REPLCommand): Unit
 
     /**

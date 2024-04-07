@@ -71,10 +71,15 @@ function isConflictingOverload(node, signature) {
         (
             node.name.text === "mkdirSync"
 
-            && signature[1]
-            && ts.isTypeReferenceNode(signature[1].type)
-            && ts.isIdentifier(signature[1].type.typeName)
-            && signature[1].type.typeName.text === "Mode"
+            && (
+                signature.length === 1
+                || (
+                    signature[1]
+                    && ts.isTypeReferenceNode(signature[1].type)
+                    && ts.isIdentifier(signature[1].type.typeName)
+                    && signature[1].type.typeName.text === "Mode"
+                )
+            )
 
             && node.type
             && ts.isUnionTypeNode(node.type)
@@ -98,10 +103,15 @@ function isConflictingOverload(node, signature) {
         || (
             node.name.text === "readdirSync"
 
-            && signature[1]
-            && ts.isTypeReferenceNode(signature[1].type)
-            && ts.isIdentifier(signature[1].type.typeName)
-            && signature[1].type.typeName.text === "BufferEncoding"
+            && (
+                signature.length === 1
+                || (
+                    signature[1]
+                    && ts.isTypeReferenceNode(signature[1].type)
+                    && ts.isIdentifier(signature[1].type.typeName)
+                    && signature[1].type.typeName.text === "BufferEncoding"
+                )
+            )
 
             && node.type
             && ts.isUnionTypeNode(node.type)
@@ -109,25 +119,37 @@ function isConflictingOverload(node, signature) {
         || (
             node.name.text === "watch"
 
-            && signature[1]
             && (
                 (
-                    ts.isTypeReferenceNode(signature[1].type)
-                    && ts.isIdentifier(signature[1].type.typeName)
-                    && signature[1].type.typeName.text === "WatchOptions"
-
-                    && node.type
-                    && ts.isUnionTypeNode(node.type)
-                )
-                || (
-                    ts.isLiteralTypeNode(signature[1].type)
-                    && ts.isStringLiteral(signature[1].type.literal)
-                    && signature[1].type.literal.text === "buffer"
+                    signature.length === 1
 
                     && node.type
                     && ts.isTypeReferenceNode(node.type)
                     && ts.isIdentifier(node.type.typeName)
-                    && node.type.typeName.text === "AsyncIterable"
+                    && node.type.typeName.text === "FSWatcher"
+                )
+                || (
+                    signature[1]
+                    && (
+                        (
+                            ts.isTypeReferenceNode(signature[1].type)
+                            && ts.isIdentifier(signature[1].type.typeName)
+                            && signature[1].type.typeName.text === "WatchOptions"
+
+                            && node.type
+                            && ts.isUnionTypeNode(node.type)
+                        )
+                        || (
+                            ts.isLiteralTypeNode(signature[1].type)
+                            && ts.isStringLiteral(signature[1].type.literal)
+                            && signature[1].type.literal.text === "buffer"
+
+                            && node.type
+                            && ts.isTypeReferenceNode(node.type)
+                            && ts.isIdentifier(node.type.typeName)
+                            && node.type.typeName.text === "AsyncIterable"
+                        )
+                    )
                 )
             )
         )

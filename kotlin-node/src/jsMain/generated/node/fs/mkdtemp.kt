@@ -81,6 +81,11 @@ external fun mkdtemp(
     callback: (err: node.ErrnoException?, folder: node.buffer.Buffer) -> Unit,
 ): Unit
 
+/**
+ * Asynchronously creates a unique temporary directory.
+ * Generates six random characters to be appended behind a required prefix to create a unique temporary directory.
+ * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
+ */
 external fun mkdtemp(
     prefix: String,
     options: MkdtempOptions,

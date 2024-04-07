@@ -245,20 +245,188 @@ open external class Duplex : Readable,
          */
         fun from(src: Stream): Duplex
 
+        /**
+         * A utility method for creating duplex streams.
+         *
+         * - `Stream` converts writable stream into writable `Duplex` and readable stream
+         *   to `Duplex`.
+         * - `Blob` converts into readable `Duplex`.
+         * - `string` converts into readable `Duplex`.
+         * - `ArrayBuffer` converts into readable `Duplex`.
+         * - `AsyncIterable` converts into a readable `Duplex`. Cannot yield `null`.
+         * - `AsyncGeneratorFunction` converts into a readable/writable transform
+         *   `Duplex`. Must take a source `AsyncIterable` as first parameter. Cannot yield
+         *   `null`.
+         * - `AsyncFunction` converts into a writable `Duplex`. Must return
+         *   either `null` or `undefined`
+         * - `Object ({ writable, readable })` converts `readable` and
+         *   `writable` into `Stream` and then combines them into `Duplex` where the
+         *   `Duplex` will write to the `writable` and read from the `readable`.
+         * - `Promise` converts into readable `Duplex`. Value `null` is ignored.
+         *
+         * @since v16.8.0
+         */
         fun from(src: NodeBlob): Duplex
 
+        /**
+         * A utility method for creating duplex streams.
+         *
+         * - `Stream` converts writable stream into writable `Duplex` and readable stream
+         *   to `Duplex`.
+         * - `Blob` converts into readable `Duplex`.
+         * - `string` converts into readable `Duplex`.
+         * - `ArrayBuffer` converts into readable `Duplex`.
+         * - `AsyncIterable` converts into a readable `Duplex`. Cannot yield `null`.
+         * - `AsyncGeneratorFunction` converts into a readable/writable transform
+         *   `Duplex`. Must take a source `AsyncIterable` as first parameter. Cannot yield
+         *   `null`.
+         * - `AsyncFunction` converts into a writable `Duplex`. Must return
+         *   either `null` or `undefined`
+         * - `Object ({ writable, readable })` converts `readable` and
+         *   `writable` into `Stream` and then combines them into `Duplex` where the
+         *   `Duplex` will write to the `writable` and read from the `readable`.
+         * - `Promise` converts into readable `Duplex`. Value `null` is ignored.
+         *
+         * @since v16.8.0
+         */
         fun from(src: ArrayBuffer): Duplex
 
+        /**
+         * A utility method for creating duplex streams.
+         *
+         * - `Stream` converts writable stream into writable `Duplex` and readable stream
+         *   to `Duplex`.
+         * - `Blob` converts into readable `Duplex`.
+         * - `string` converts into readable `Duplex`.
+         * - `ArrayBuffer` converts into readable `Duplex`.
+         * - `AsyncIterable` converts into a readable `Duplex`. Cannot yield `null`.
+         * - `AsyncGeneratorFunction` converts into a readable/writable transform
+         *   `Duplex`. Must take a source `AsyncIterable` as first parameter. Cannot yield
+         *   `null`.
+         * - `AsyncFunction` converts into a writable `Duplex`. Must return
+         *   either `null` or `undefined`
+         * - `Object ({ writable, readable })` converts `readable` and
+         *   `writable` into `Stream` and then combines them into `Duplex` where the
+         *   `Duplex` will write to the `writable` and read from the `readable`.
+         * - `Promise` converts into readable `Duplex`. Value `null` is ignored.
+         *
+         * @since v16.8.0
+         */
         fun from(src: String): Duplex
 
+        /**
+         * A utility method for creating duplex streams.
+         *
+         * - `Stream` converts writable stream into writable `Duplex` and readable stream
+         *   to `Duplex`.
+         * - `Blob` converts into readable `Duplex`.
+         * - `string` converts into readable `Duplex`.
+         * - `ArrayBuffer` converts into readable `Duplex`.
+         * - `AsyncIterable` converts into a readable `Duplex`. Cannot yield `null`.
+         * - `AsyncGeneratorFunction` converts into a readable/writable transform
+         *   `Duplex`. Must take a source `AsyncIterable` as first parameter. Cannot yield
+         *   `null`.
+         * - `AsyncFunction` converts into a writable `Duplex`. Must return
+         *   either `null` or `undefined`
+         * - `Object ({ writable, readable })` converts `readable` and
+         *   `writable` into `Stream` and then combines them into `Duplex` where the
+         *   `Duplex` will write to the `writable` and read from the `readable`.
+         * - `Promise` converts into readable `Duplex`. Value `null` is ignored.
+         *
+         * @since v16.8.0
+         */
         fun from(src: js.iterable.JsIterable<Any?>): Duplex
 
+        /**
+         * A utility method for creating duplex streams.
+         *
+         * - `Stream` converts writable stream into writable `Duplex` and readable stream
+         *   to `Duplex`.
+         * - `Blob` converts into readable `Duplex`.
+         * - `string` converts into readable `Duplex`.
+         * - `ArrayBuffer` converts into readable `Duplex`.
+         * - `AsyncIterable` converts into a readable `Duplex`. Cannot yield `null`.
+         * - `AsyncGeneratorFunction` converts into a readable/writable transform
+         *   `Duplex`. Must take a source `AsyncIterable` as first parameter. Cannot yield
+         *   `null`.
+         * - `AsyncFunction` converts into a writable `Duplex`. Must return
+         *   either `null` or `undefined`
+         * - `Object ({ writable, readable })` converts `readable` and
+         *   `writable` into `Stream` and then combines them into `Duplex` where the
+         *   `Duplex` will write to the `writable` and read from the `readable`.
+         * - `Promise` converts into readable `Duplex`. Value `null` is ignored.
+         *
+         * @since v16.8.0
+         */
         fun from(src: AsyncIterable<Any?>): Duplex
 
+        /**
+         * A utility method for creating duplex streams.
+         *
+         * - `Stream` converts writable stream into writable `Duplex` and readable stream
+         *   to `Duplex`.
+         * - `Blob` converts into readable `Duplex`.
+         * - `string` converts into readable `Duplex`.
+         * - `ArrayBuffer` converts into readable `Duplex`.
+         * - `AsyncIterable` converts into a readable `Duplex`. Cannot yield `null`.
+         * - `AsyncGeneratorFunction` converts into a readable/writable transform
+         *   `Duplex`. Must take a source `AsyncIterable` as first parameter. Cannot yield
+         *   `null`.
+         * - `AsyncFunction` converts into a writable `Duplex`. Must return
+         *   either `null` or `undefined`
+         * - `Object ({ writable, readable })` converts `readable` and
+         *   `writable` into `Stream` and then combines them into `Duplex` where the
+         *   `Duplex` will write to the `writable` and read from the `readable`.
+         * - `Promise` converts into readable `Duplex`. Value `null` is ignored.
+         *
+         * @since v16.8.0
+         */
         fun from(src: AsyncGeneratorFunction<*, *>): Duplex
 
+        /**
+         * A utility method for creating duplex streams.
+         *
+         * - `Stream` converts writable stream into writable `Duplex` and readable stream
+         *   to `Duplex`.
+         * - `Blob` converts into readable `Duplex`.
+         * - `string` converts into readable `Duplex`.
+         * - `ArrayBuffer` converts into readable `Duplex`.
+         * - `AsyncIterable` converts into a readable `Duplex`. Cannot yield `null`.
+         * - `AsyncGeneratorFunction` converts into a readable/writable transform
+         *   `Duplex`. Must take a source `AsyncIterable` as first parameter. Cannot yield
+         *   `null`.
+         * - `AsyncFunction` converts into a writable `Duplex`. Must return
+         *   either `null` or `undefined`
+         * - `Object ({ writable, readable })` converts `readable` and
+         *   `writable` into `Stream` and then combines them into `Duplex` where the
+         *   `Duplex` will write to the `writable` and read from the `readable`.
+         * - `Promise` converts into readable `Duplex`. Value `null` is ignored.
+         *
+         * @since v16.8.0
+         */
         fun from(src: Promise<Any?>): Duplex
 
+        /**
+         * A utility method for creating duplex streams.
+         *
+         * - `Stream` converts writable stream into writable `Duplex` and readable stream
+         *   to `Duplex`.
+         * - `Blob` converts into readable `Duplex`.
+         * - `string` converts into readable `Duplex`.
+         * - `ArrayBuffer` converts into readable `Duplex`.
+         * - `AsyncIterable` converts into a readable `Duplex`. Cannot yield `null`.
+         * - `AsyncGeneratorFunction` converts into a readable/writable transform
+         *   `Duplex`. Must take a source `AsyncIterable` as first parameter. Cannot yield
+         *   `null`.
+         * - `AsyncFunction` converts into a writable `Duplex`. Must return
+         *   either `null` or `undefined`
+         * - `Object ({ writable, readable })` converts `readable` and
+         *   `writable` into `Stream` and then combines them into `Duplex` where the
+         *   `Duplex` will write to the `writable` and read from the `readable`.
+         * - `Promise` converts into readable `Duplex`. Value `null` is ignored.
+         *
+         * @since v16.8.0
+         */
         fun from(src: Any): Duplex
 
         /**

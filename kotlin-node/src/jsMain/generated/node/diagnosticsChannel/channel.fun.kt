@@ -21,4 +21,18 @@ package node.diagnosticsChannel
  */
 external fun channel(name: String): Channel<*, *>
 
+/**
+ * This is the primary entry-point for anyone wanting to publish to a named
+ * channel. It produces a channel object which is optimized to reduce overhead at
+ * publish time as much as possible.
+ *
+ * ```js
+ * import diagnostics_channel from 'node:diagnostics_channel';
+ *
+ * const channel = diagnostics_channel.channel('my-channel');
+ * ```
+ * @since v15.1.0, v14.17.0
+ * @param name The channel name
+ * @return The named channel object
+ */
 external fun channel(name: js.symbol.Symbol): Channel<*, *>

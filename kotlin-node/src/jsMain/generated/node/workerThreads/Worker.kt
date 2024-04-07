@@ -84,6 +84,11 @@ external class Worker : EventEmitter {
      */
     constructor (filename: String, options: WorkerOptions = definedExternally)
 
+    /**
+     * @param filename  The path to the Worker’s main script or module.
+     *                  Must be either an absolute path or a relative path (i.e. relative to the current working directory) starting with ./ or ../,
+     *                  or a WHATWG URL object using file: protocol. If options.eval is true, this is a string containing JavaScript code rather than a path.
+     */
     constructor (filename: URL, options: WorkerOptions = definedExternally)
 
     /**

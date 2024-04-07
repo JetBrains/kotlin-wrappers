@@ -18,6 +18,34 @@ package node.repl
  * ```
  * @since v0.1.91
  */
+external fun start(): REPLServer
+
+/**
+ * The `repl.start()` method creates and starts a {@link REPLServer} instance.
+ *
+ * If `options` is a string, then it specifies the input prompt:
+ *
+ * ```js
+ * const repl = require('node:repl');
+ *
+ * // a Unix style prompt
+ * repl.start('$ ');
+ * ```
+ * @since v0.1.91
+ */
 external fun start(options: String = definedExternally): REPLServer
 
+/**
+ * The `repl.start()` method creates and starts a {@link REPLServer} instance.
+ *
+ * If `options` is a string, then it specifies the input prompt:
+ *
+ * ```js
+ * const repl = require('node:repl');
+ *
+ * // a Unix style prompt
+ * repl.start('$ ');
+ * ```
+ * @since v0.1.91
+ */
 external fun start(options: ReplOptions = definedExternally): REPLServer

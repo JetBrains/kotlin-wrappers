@@ -29,6 +29,13 @@ external class MIMEType {
      */
     constructor (input: String)
 
+    /**
+     * Creates a new MIMEType object by parsing the input.
+     *
+     * A `TypeError` will be thrown if the `input` is not a valid MIME.
+     * Note that an effort will be made to coerce the given values into strings.
+     * @param input The input MIME to parse.
+     */
     constructor (input: MIMETypeInput)
 
     /**

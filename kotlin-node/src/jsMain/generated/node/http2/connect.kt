@@ -26,10 +26,28 @@ external fun connect(
     listener: (session: ClientHttp2Session, socket: Any /* net.Socket | tls.TLSSocket */) -> Unit,
 ): ClientHttp2Session
 
+/**
+ * Returns a `ClientHttp2Session` instance.
+ *
+ * ```js
+ * const http2 = require('node:http2');
+ * const client = http2.connect('https://localhost:1234');
+ *
+ * // Use the client
+ *
+ * client.close();
+ * ```
+ * @since v8.4.0
+ * @param authority The remote HTTP/2 server to connect to. This must be in the form of a minimal, valid URL with the `http://` or `https://` prefix, host name, and IP port (if a non-default port
+ * is used). Userinfo (user ID and password), path, querystring, and fragment details in the URL will be ignored.
+ * @param listener Will be registered as a one-time listener of the {@link 'connect'} event.
+ */
 external fun connect(
     authority: web.url.URL,
     listener: (session: ClientHttp2Session, socket: Any /* net.Socket | tls.TLSSocket */) -> Unit,
 ): ClientHttp2Session
+
+external fun connect(authority: String): ClientHttp2Session
 
 external fun connect(
     authority: String,
@@ -42,6 +60,8 @@ external fun connect(
     options: SecureClientSessionOptions = definedExternally,
     listener: (session: ClientHttp2Session, socket: Any /* net.Socket | tls.TLSSocket */) -> Unit = definedExternally,
 ): ClientHttp2Session
+
+external fun connect(authority: web.url.URL): ClientHttp2Session
 
 external fun connect(
     authority: web.url.URL,

@@ -6,6 +6,27 @@ import js.promise.await
 import js.typedarrays.Uint8Array
 
 
+suspend fun appendFile(path: PathLike, data: String): Unit =
+    appendFileAsync(
+        path, data
+    ).await()
+
+
+/**
+ * Asynchronously append data to a file, creating the file if it does not yet
+ * exist. `data` can be a string or a `Buffer`.
+ *
+ * If `options` is a string, then it specifies the `encoding`.
+ *
+ * The `mode` option only affects the newly created file. See `fs.open()` for more details.
+ *
+ * The `path` may be specified as a `FileHandle` that has been opened
+ * for appending (using `fsPromises.open()`).
+ * @since v10.0.0
+ * @param path filename or {FileHandle}
+ * @return Fulfills with `undefined` upon success.
+ */
+
 suspend fun appendFile(
     path: PathLike,
     data: String,
@@ -15,6 +36,21 @@ suspend fun appendFile(
         path, data, options
     ).await()
 
+
+/**
+ * Asynchronously append data to a file, creating the file if it does not yet
+ * exist. `data` can be a string or a `Buffer`.
+ *
+ * If `options` is a string, then it specifies the `encoding`.
+ *
+ * The `mode` option only affects the newly created file. See `fs.open()` for more details.
+ *
+ * The `path` may be specified as a `FileHandle` that has been opened
+ * for appending (using `fsPromises.open()`).
+ * @since v10.0.0
+ * @param path filename or {FileHandle}
+ * @return Fulfills with `undefined` upon success.
+ */
 
 suspend fun appendFile(
     path: PathLike,
@@ -26,6 +62,42 @@ suspend fun appendFile(
     ).await()
 
 
+/**
+ * Asynchronously append data to a file, creating the file if it does not yet
+ * exist. `data` can be a string or a `Buffer`.
+ *
+ * If `options` is a string, then it specifies the `encoding`.
+ *
+ * The `mode` option only affects the newly created file. See `fs.open()` for more details.
+ *
+ * The `path` may be specified as a `FileHandle` that has been opened
+ * for appending (using `fsPromises.open()`).
+ * @since v10.0.0
+ * @param path filename or {FileHandle}
+ * @return Fulfills with `undefined` upon success.
+ */
+
+suspend fun appendFile(path: PathLike, data: Uint8Array): Unit =
+    appendFileAsync(
+        path, data
+    ).await()
+
+
+/**
+ * Asynchronously append data to a file, creating the file if it does not yet
+ * exist. `data` can be a string or a `Buffer`.
+ *
+ * If `options` is a string, then it specifies the `encoding`.
+ *
+ * The `mode` option only affects the newly created file. See `fs.open()` for more details.
+ *
+ * The `path` may be specified as a `FileHandle` that has been opened
+ * for appending (using `fsPromises.open()`).
+ * @since v10.0.0
+ * @param path filename or {FileHandle}
+ * @return Fulfills with `undefined` upon success.
+ */
+
 suspend fun appendFile(
     path: PathLike,
     data: Uint8Array,
@@ -35,6 +107,21 @@ suspend fun appendFile(
         path, data, options
     ).await()
 
+
+/**
+ * Asynchronously append data to a file, creating the file if it does not yet
+ * exist. `data` can be a string or a `Buffer`.
+ *
+ * If `options` is a string, then it specifies the `encoding`.
+ *
+ * The `mode` option only affects the newly created file. See `fs.open()` for more details.
+ *
+ * The `path` may be specified as a `FileHandle` that has been opened
+ * for appending (using `fsPromises.open()`).
+ * @since v10.0.0
+ * @param path filename or {FileHandle}
+ * @return Fulfills with `undefined` upon success.
+ */
 
 suspend fun appendFile(
     path: PathLike,
@@ -46,6 +133,42 @@ suspend fun appendFile(
     ).await()
 
 
+/**
+ * Asynchronously append data to a file, creating the file if it does not yet
+ * exist. `data` can be a string or a `Buffer`.
+ *
+ * If `options` is a string, then it specifies the `encoding`.
+ *
+ * The `mode` option only affects the newly created file. See `fs.open()` for more details.
+ *
+ * The `path` may be specified as a `FileHandle` that has been opened
+ * for appending (using `fsPromises.open()`).
+ * @since v10.0.0
+ * @param path filename or {FileHandle}
+ * @return Fulfills with `undefined` upon success.
+ */
+
+suspend fun appendFile(path: FileHandle, data: String): Unit =
+    appendFileAsync(
+        path, data
+    ).await()
+
+
+/**
+ * Asynchronously append data to a file, creating the file if it does not yet
+ * exist. `data` can be a string or a `Buffer`.
+ *
+ * If `options` is a string, then it specifies the `encoding`.
+ *
+ * The `mode` option only affects the newly created file. See `fs.open()` for more details.
+ *
+ * The `path` may be specified as a `FileHandle` that has been opened
+ * for appending (using `fsPromises.open()`).
+ * @since v10.0.0
+ * @param path filename or {FileHandle}
+ * @return Fulfills with `undefined` upon success.
+ */
+
 suspend fun appendFile(
     path: FileHandle,
     data: String,
@@ -55,6 +178,21 @@ suspend fun appendFile(
         path, data, options
     ).await()
 
+
+/**
+ * Asynchronously append data to a file, creating the file if it does not yet
+ * exist. `data` can be a string or a `Buffer`.
+ *
+ * If `options` is a string, then it specifies the `encoding`.
+ *
+ * The `mode` option only affects the newly created file. See `fs.open()` for more details.
+ *
+ * The `path` may be specified as a `FileHandle` that has been opened
+ * for appending (using `fsPromises.open()`).
+ * @since v10.0.0
+ * @param path filename or {FileHandle}
+ * @return Fulfills with `undefined` upon success.
+ */
 
 suspend fun appendFile(
     path: FileHandle,
@@ -66,6 +204,42 @@ suspend fun appendFile(
     ).await()
 
 
+/**
+ * Asynchronously append data to a file, creating the file if it does not yet
+ * exist. `data` can be a string or a `Buffer`.
+ *
+ * If `options` is a string, then it specifies the `encoding`.
+ *
+ * The `mode` option only affects the newly created file. See `fs.open()` for more details.
+ *
+ * The `path` may be specified as a `FileHandle` that has been opened
+ * for appending (using `fsPromises.open()`).
+ * @since v10.0.0
+ * @param path filename or {FileHandle}
+ * @return Fulfills with `undefined` upon success.
+ */
+
+suspend fun appendFile(path: FileHandle, data: Uint8Array): Unit =
+    appendFileAsync(
+        path, data
+    ).await()
+
+
+/**
+ * Asynchronously append data to a file, creating the file if it does not yet
+ * exist. `data` can be a string or a `Buffer`.
+ *
+ * If `options` is a string, then it specifies the `encoding`.
+ *
+ * The `mode` option only affects the newly created file. See `fs.open()` for more details.
+ *
+ * The `path` may be specified as a `FileHandle` that has been opened
+ * for appending (using `fsPromises.open()`).
+ * @since v10.0.0
+ * @param path filename or {FileHandle}
+ * @return Fulfills with `undefined` upon success.
+ */
+
 suspend fun appendFile(
     path: FileHandle,
     data: Uint8Array,
@@ -75,6 +249,21 @@ suspend fun appendFile(
         path, data, options
     ).await()
 
+
+/**
+ * Asynchronously append data to a file, creating the file if it does not yet
+ * exist. `data` can be a string or a `Buffer`.
+ *
+ * If `options` is a string, then it specifies the `encoding`.
+ *
+ * The `mode` option only affects the newly created file. See `fs.open()` for more details.
+ *
+ * The `path` may be specified as a `FileHandle` that has been opened
+ * for appending (using `fsPromises.open()`).
+ * @since v10.0.0
+ * @param path filename or {FileHandle}
+ * @return Fulfills with `undefined` upon success.
+ */
 
 suspend fun appendFile(
     path: FileHandle,

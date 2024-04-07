@@ -23,12 +23,46 @@ import js.typedarrays.Uint8Array
  */
 
 @JsName("appendFile")
+external fun appendFileAsync(path: PathLike, data: String): Promise<Unit>
+
+
+/**
+ * Asynchronously append data to a file, creating the file if it does not yet
+ * exist. `data` can be a string or a `Buffer`.
+ *
+ * If `options` is a string, then it specifies the `encoding`.
+ *
+ * The `mode` option only affects the newly created file. See `fs.open()` for more details.
+ *
+ * The `path` may be specified as a `FileHandle` that has been opened
+ * for appending (using `fsPromises.open()`).
+ * @since v10.0.0
+ * @param path filename or {FileHandle}
+ * @return Fulfills with `undefined` upon success.
+ */
+
+@JsName("appendFile")
 external fun appendFileAsync(
     path: PathLike,
     data: String,
     options: (AppendFileAsyncOptions)? = definedExternally,
 ): Promise<Unit>
 
+
+/**
+ * Asynchronously append data to a file, creating the file if it does not yet
+ * exist. `data` can be a string or a `Buffer`.
+ *
+ * If `options` is a string, then it specifies the `encoding`.
+ *
+ * The `mode` option only affects the newly created file. See `fs.open()` for more details.
+ *
+ * The `path` may be specified as a `FileHandle` that has been opened
+ * for appending (using `fsPromises.open()`).
+ * @since v10.0.0
+ * @param path filename or {FileHandle}
+ * @return Fulfills with `undefined` upon success.
+ */
 
 @JsName("appendFile")
 external fun appendFileAsync(
@@ -38,6 +72,40 @@ external fun appendFileAsync(
 ): Promise<Unit>
 
 
+/**
+ * Asynchronously append data to a file, creating the file if it does not yet
+ * exist. `data` can be a string or a `Buffer`.
+ *
+ * If `options` is a string, then it specifies the `encoding`.
+ *
+ * The `mode` option only affects the newly created file. See `fs.open()` for more details.
+ *
+ * The `path` may be specified as a `FileHandle` that has been opened
+ * for appending (using `fsPromises.open()`).
+ * @since v10.0.0
+ * @param path filename or {FileHandle}
+ * @return Fulfills with `undefined` upon success.
+ */
+
+@JsName("appendFile")
+external fun appendFileAsync(path: PathLike, data: Uint8Array): Promise<Unit>
+
+
+/**
+ * Asynchronously append data to a file, creating the file if it does not yet
+ * exist. `data` can be a string or a `Buffer`.
+ *
+ * If `options` is a string, then it specifies the `encoding`.
+ *
+ * The `mode` option only affects the newly created file. See `fs.open()` for more details.
+ *
+ * The `path` may be specified as a `FileHandle` that has been opened
+ * for appending (using `fsPromises.open()`).
+ * @since v10.0.0
+ * @param path filename or {FileHandle}
+ * @return Fulfills with `undefined` upon success.
+ */
+
 @JsName("appendFile")
 external fun appendFileAsync(
     path: PathLike,
@@ -45,6 +113,21 @@ external fun appendFileAsync(
     options: (AppendFileAsyncOptions)? = definedExternally,
 ): Promise<Unit>
 
+
+/**
+ * Asynchronously append data to a file, creating the file if it does not yet
+ * exist. `data` can be a string or a `Buffer`.
+ *
+ * If `options` is a string, then it specifies the `encoding`.
+ *
+ * The `mode` option only affects the newly created file. See `fs.open()` for more details.
+ *
+ * The `path` may be specified as a `FileHandle` that has been opened
+ * for appending (using `fsPromises.open()`).
+ * @since v10.0.0
+ * @param path filename or {FileHandle}
+ * @return Fulfills with `undefined` upon success.
+ */
 
 @JsName("appendFile")
 external fun appendFileAsync(
@@ -54,6 +137,40 @@ external fun appendFileAsync(
 ): Promise<Unit>
 
 
+/**
+ * Asynchronously append data to a file, creating the file if it does not yet
+ * exist. `data` can be a string or a `Buffer`.
+ *
+ * If `options` is a string, then it specifies the `encoding`.
+ *
+ * The `mode` option only affects the newly created file. See `fs.open()` for more details.
+ *
+ * The `path` may be specified as a `FileHandle` that has been opened
+ * for appending (using `fsPromises.open()`).
+ * @since v10.0.0
+ * @param path filename or {FileHandle}
+ * @return Fulfills with `undefined` upon success.
+ */
+
+@JsName("appendFile")
+external fun appendFileAsync(path: FileHandle, data: String): Promise<Unit>
+
+
+/**
+ * Asynchronously append data to a file, creating the file if it does not yet
+ * exist. `data` can be a string or a `Buffer`.
+ *
+ * If `options` is a string, then it specifies the `encoding`.
+ *
+ * The `mode` option only affects the newly created file. See `fs.open()` for more details.
+ *
+ * The `path` may be specified as a `FileHandle` that has been opened
+ * for appending (using `fsPromises.open()`).
+ * @since v10.0.0
+ * @param path filename or {FileHandle}
+ * @return Fulfills with `undefined` upon success.
+ */
+
 @JsName("appendFile")
 external fun appendFileAsync(
     path: FileHandle,
@@ -61,6 +178,21 @@ external fun appendFileAsync(
     options: (AppendFileAsyncOptions)? = definedExternally,
 ): Promise<Unit>
 
+
+/**
+ * Asynchronously append data to a file, creating the file if it does not yet
+ * exist. `data` can be a string or a `Buffer`.
+ *
+ * If `options` is a string, then it specifies the `encoding`.
+ *
+ * The `mode` option only affects the newly created file. See `fs.open()` for more details.
+ *
+ * The `path` may be specified as a `FileHandle` that has been opened
+ * for appending (using `fsPromises.open()`).
+ * @since v10.0.0
+ * @param path filename or {FileHandle}
+ * @return Fulfills with `undefined` upon success.
+ */
 
 @JsName("appendFile")
 external fun appendFileAsync(
@@ -70,6 +202,40 @@ external fun appendFileAsync(
 ): Promise<Unit>
 
 
+/**
+ * Asynchronously append data to a file, creating the file if it does not yet
+ * exist. `data` can be a string or a `Buffer`.
+ *
+ * If `options` is a string, then it specifies the `encoding`.
+ *
+ * The `mode` option only affects the newly created file. See `fs.open()` for more details.
+ *
+ * The `path` may be specified as a `FileHandle` that has been opened
+ * for appending (using `fsPromises.open()`).
+ * @since v10.0.0
+ * @param path filename or {FileHandle}
+ * @return Fulfills with `undefined` upon success.
+ */
+
+@JsName("appendFile")
+external fun appendFileAsync(path: FileHandle, data: Uint8Array): Promise<Unit>
+
+
+/**
+ * Asynchronously append data to a file, creating the file if it does not yet
+ * exist. `data` can be a string or a `Buffer`.
+ *
+ * If `options` is a string, then it specifies the `encoding`.
+ *
+ * The `mode` option only affects the newly created file. See `fs.open()` for more details.
+ *
+ * The `path` may be specified as a `FileHandle` that has been opened
+ * for appending (using `fsPromises.open()`).
+ * @since v10.0.0
+ * @param path filename or {FileHandle}
+ * @return Fulfills with `undefined` upon success.
+ */
+
 @JsName("appendFile")
 external fun appendFileAsync(
     path: FileHandle,
@@ -77,6 +243,21 @@ external fun appendFileAsync(
     options: (AppendFileAsyncOptions)? = definedExternally,
 ): Promise<Unit>
 
+
+/**
+ * Asynchronously append data to a file, creating the file if it does not yet
+ * exist. `data` can be a string or a `Buffer`.
+ *
+ * If `options` is a string, then it specifies the `encoding`.
+ *
+ * The `mode` option only affects the newly created file. See `fs.open()` for more details.
+ *
+ * The `path` may be specified as a `FileHandle` that has been opened
+ * for appending (using `fsPromises.open()`).
+ * @since v10.0.0
+ * @param path filename or {FileHandle}
+ * @return Fulfills with `undefined` upon success.
+ */
 
 @JsName("appendFile")
 external fun appendFileAsync(

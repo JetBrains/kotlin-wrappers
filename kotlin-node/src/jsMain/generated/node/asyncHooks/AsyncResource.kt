@@ -53,8 +53,28 @@ open external class AsyncResource {
      *   this async event (default: `executionAsyncId()`), or an
      *   AsyncResourceOptions object (since v9.3.0)
      */
+    constructor (type: String)
+
+    /**
+     * AsyncResource() is meant to be extended. Instantiating a
+     * new AsyncResource() also triggers init. If triggerAsyncId is omitted then
+     * async_hook.executionAsyncId() is used.
+     * @param type The type of async event.
+     * @param triggerAsyncId The ID of the execution context that created
+     *   this async event (default: `executionAsyncId()`), or an
+     *   AsyncResourceOptions object (since v9.3.0)
+     */
     constructor (type: String, triggerAsyncId: Double = definedExternally)
 
+    /**
+     * AsyncResource() is meant to be extended. Instantiating a
+     * new AsyncResource() also triggers init. If triggerAsyncId is omitted then
+     * async_hook.executionAsyncId() is used.
+     * @param type The type of async event.
+     * @param triggerAsyncId The ID of the execution context that created
+     *   this async event (default: `executionAsyncId()`), or an
+     *   AsyncResourceOptions object (since v9.3.0)
+     */
     constructor (type: String, triggerAsyncId: AsyncResourceOptions = definedExternally)
 
     /**

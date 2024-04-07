@@ -10,6 +10,18 @@ package node.assert
  * @since v0.5.9
  * @param value The input that is checked for being truthy.
  */
+external fun assert(value: Any?): Unit /* asserts value */
+
+/**
+ * An alias of {@link ok}.
+ * @since v0.5.9
+ * @param value The input that is checked for being truthy.
+ */
 external fun assert(value: Any?, message: String = definedExternally): Unit /* asserts value */
 
+/**
+ * An alias of {@link ok}.
+ * @since v0.5.9
+ * @param value The input that is checked for being truthy.
+ */
 external fun assert(value: Any?, message: Throwable /* JsError */ = definedExternally): Unit /* asserts value */

@@ -11,6 +11,10 @@ sealed external interface RecordableHistogram : Histogram {
      */
     fun record(value: Double): Unit
 
+    /**
+     * @since v15.9.0, v14.18.0
+     * @param val The amount to record in the histogram.
+     */
     fun record(value: js.core.BigInt): Unit
 
     /**

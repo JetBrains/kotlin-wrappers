@@ -66,8 +66,24 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
      */
     fun setHeader(name: String, value: Double): Unit /* this */
 
+    /**
+     * Sets a single header value. If the header already exists in the to-be-sent
+     * headers, its value will be replaced. Use an array of strings to send multiple
+     * headers with the same name.
+     * @since v0.4.0
+     * @param name Header name
+     * @param value Header value
+     */
     fun setHeader(name: String, value: String): Unit /* this */
 
+    /**
+     * Sets a single header value. If the header already exists in the to-be-sent
+     * headers, its value will be replaced. Use an array of strings to send multiple
+     * headers with the same name.
+     * @since v0.4.0
+     * @param name Header name
+     * @param value Header value
+     */
     fun setHeader(name: String, value: ReadonlyArray<String>): Unit /* this */
 
     /**
@@ -87,6 +103,21 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
      */
     fun appendHeader(name: String, value: String): Unit /* this */
 
+    /**
+     * Append a single header value for the header object.
+     *
+     * If the value is an array, this is equivalent of calling this method multiple
+     * times.
+     *
+     * If there were no previous value for the header, this is equivalent of calling `outgoingMessage.setHeader(name, value)`.
+     *
+     * Depending of the value of `options.uniqueHeaders` when the client request or the
+     * server were created, this will end up in the header being sent multiple times or
+     * a single time with values joined using `; `.
+     * @since v18.3.0, v16.17.0
+     * @param name Header name
+     * @param value Header value
+     */
     fun appendHeader(name: String, value: ReadonlyArray<String>): Unit /* this */
 
     /**
@@ -172,6 +203,27 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
      */
     fun addTrailers(headers: OutgoingHttpHeaders): Unit
 
+    /**
+     * Adds HTTP trailers (headers but at the end of the message) to the message.
+     *
+     * Trailers will **only** be emitted if the message is chunked encoded. If not,
+     * the trailers will be silently discarded.
+     *
+     * HTTP requires the `Trailer` header to be sent to emit trailers,
+     * with a list of header field names in its value, e.g.
+     *
+     * ```js
+     * message.writeHead(200, { 'Content-Type': 'text/plain',
+     *                          'Trailer': 'Content-MD5' });
+     * message.write(fileData);
+     * message.addTrailers({ 'Content-MD5': '7895bf4b8828b55ceaf47747b4bca667' });
+     * message.end();
+     * ```
+     *
+     * Attempting to set a header field name or value that contains invalid characters
+     * will result in a `TypeError` being thrown.
+     * @since v0.3.0
+     */
     fun addTrailers(headers: ReadonlyArray<js.array.JsTuple2<String, String>>): Unit
 
     /**

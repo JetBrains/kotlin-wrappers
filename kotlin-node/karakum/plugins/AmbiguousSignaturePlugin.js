@@ -1,6 +1,11 @@
 import ts from "typescript";
 import * as karakum from "karakum";
 
+const isNull = (type) => ts.isLiteralTypeNode(type) && type.literal.kind === ts.SyntaxKind.NullKeyword
+const isUndefined = (type) => type.kind === ts.SyntaxKind.UndefinedKeyword
+
+export const isNullableType = (type) => isNull(type) || isUndefined(type)
+
 function isPromiseType(node) {
     return (
         ts.isTypeReferenceNode(node)
@@ -78,8 +83,24 @@ export default {
 
                         const [declaration] = ambiguousDeclarations
 
-                        return declaration.parameters
-                            .some(parameter => Boolean(parameter.questionToken))
+                        const optionalIndex = declaration.parameters
+                            .findIndex(parameter => Boolean(parameter.questionToken))
+
+                        if (optionalIndex === -1) return false
+
+                        // exclude overloads with optional parameters that have union type,
+                        // because this case is handled by `convertParameterDeclarations`
+                        return ambiguousDeclarations
+                            .map(it => it.parameters[optionalIndex])
+                            .every(parameter => {
+                                if (!parameter.type) return true
+                                if (!ts.isUnionTypeNode(parameter.type)) return true
+
+                                const types = parameter.type.types
+                                    .filter(type => !isNullableType(type))
+
+                                return types.length < 2
+                            })
                     })
                     .flatMap(ambiguousDeclarations => {
                         const [declaration] = ambiguousDeclarations

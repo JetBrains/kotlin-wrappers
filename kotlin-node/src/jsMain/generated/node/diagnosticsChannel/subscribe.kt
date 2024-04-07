@@ -23,4 +23,20 @@ package node.diagnosticsChannel
  */
 external fun subscribe(name: String, onMessage: ChannelListener): Unit
 
+/**
+ * Register a message handler to subscribe to this channel. This message handler
+ * will be run synchronously whenever a message is published to the channel. Any
+ * errors thrown in the message handler will trigger an `'uncaughtException'`.
+ *
+ * ```js
+ * import diagnostics_channel from 'node:diagnostics_channel';
+ *
+ * diagnostics_channel.subscribe('my-channel', (message, name) => {
+ *   // Received data
+ * });
+ * ```
+ * @since v18.7.0, v16.17.0
+ * @param name The channel name
+ * @param onMessage The handler to receive channel messages
+ */
 external fun subscribe(name: js.symbol.Symbol, onMessage: ChannelListener): Unit

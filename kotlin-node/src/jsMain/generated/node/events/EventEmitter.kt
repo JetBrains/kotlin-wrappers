@@ -494,6 +494,85 @@ open external class EventEmitter {
             options: StaticEventEmitterOptions = definedExternally,
         ): Promise<P>
 
+        /**
+         * Creates a `Promise` that is fulfilled when the `EventEmitter` emits the given
+         * event or that is rejected if the `EventEmitter` emits `'error'` while waiting.
+         * The `Promise` will resolve with an array of all the arguments emitted to the
+         * given event.
+         *
+         * This method is intentionally generic and works with the web platform [EventTarget](https://dom.spec.whatwg.org/#interface-eventtarget) interface, which has no special`'error'` event
+         * semantics and does not listen to the `'error'` event.
+         *
+         * ```js
+         * import { once, EventEmitter } from 'node:events';
+         * import process from 'node:process';
+         *
+         * const ee = new EventEmitter();
+         *
+         * process.nextTick(() => {
+         *   ee.emit('myevent', 42);
+         * });
+         *
+         * const [value] = await once(ee, 'myevent');
+         * console.log(value);
+         *
+         * const err = new Error('kaboom');
+         * process.nextTick(() => {
+         *   ee.emit('error', err);
+         * });
+         *
+         * try {
+         *   await once(ee, 'myevent');
+         * } catch (err) {
+         *   console.error('error happened', err);
+         * }
+         * ```
+         *
+         * The special handling of the `'error'` event is only used when `events.once()`is used to wait for another event. If `events.once()` is used to wait for the
+         * '`error'` event itself, then it is treated as any other kind of event without
+         * special handling:
+         *
+         * ```js
+         * import { EventEmitter, once } from 'node:events';
+         *
+         * const ee = new EventEmitter();
+         *
+         * once(ee, 'error')
+         *   .then(([err]) => console.log('ok', err.message))
+         *   .catch((err) => console.error('error', err.message));
+         *
+         * ee.emit('error', new Error('boom'));
+         *
+         * // Prints: ok boom
+         * ```
+         *
+         * An `AbortSignal` can be used to cancel waiting for the event:
+         *
+         * ```js
+         * import { EventEmitter, once } from 'node:events';
+         *
+         * const ee = new EventEmitter();
+         * const ac = new AbortController();
+         *
+         * async function foo(emitter, event, signal) {
+         *   try {
+         *     await once(emitter, event, { signal });
+         *     console.log('event emitted!');
+         *   } catch (error) {
+         *     if (error.name === 'AbortError') {
+         *       console.error('Waiting for the event was canceled!');
+         *     } else {
+         *       console.error('There was an error', error.message);
+         *     }
+         *   }
+         * }
+         *
+         * foo(ee, 'foo', ac.signal);
+         * ac.abort(); // Abort waiting for the event
+         * ee.emit('foo'); // Prints: Waiting for the event was canceled!
+         * ```
+         * @since v11.13.0, v10.16.0
+         */
 
         fun <E : Event, T : EventTarget> once(
             emitter: T,
@@ -585,6 +664,23 @@ open external class EventEmitter {
          */
         fun <T : EventEmitter> listenerCount(emitter: T, type: EventType<T, *>): Double
 
+        /**
+         * A class method that returns the number of listeners for the given `eventName`registered on the given `emitter`.
+         *
+         * ```js
+         * import { EventEmitter, listenerCount } from 'node:events';
+         *
+         * const myEmitter = new EventEmitter();
+         * myEmitter.on('event', () => {});
+         * myEmitter.on('event', () => {});
+         * console.log(listenerCount(myEmitter, 'event'));
+         * // Prints: 2
+         * ```
+         * @since v0.9.12
+         * @deprecated Since v3.2.0 - Use `listenerCount` instead.
+         * @param emitter The emitter to query
+         * @param eventName The event name
+         */
 
         /**
          * Returns a copy of the array of listeners for the event named `eventName`.
@@ -618,9 +714,91 @@ open external class EventEmitter {
             type: web.events.EventType<*, T>,
         ): js.array.ReadonlyArray<Function<*>>
 
+        /**
+         * Returns a copy of the array of listeners for the event named `eventName`.
+         *
+         * For `EventEmitter`s this behaves exactly the same as calling `.listeners` on
+         * the emitter.
+         *
+         * For `EventTarget`s this is the only way to get the event listeners for the
+         * event target. This is useful for debugging and diagnostic purposes.
+         *
+         * ```js
+         * import { getEventListeners, EventEmitter } from 'node:events';
+         *
+         * {
+         *   const ee = new EventEmitter();
+         *   const listener = () => console.log('Events are fun');
+         *   ee.on('foo', listener);
+         *   console.log(getEventListeners(ee, 'foo')); // [ [Function: listener] ]
+         * }
+         * {
+         *   const et = new EventTarget();
+         *   const listener = () => console.log('Events are fun');
+         *   et.addEventListener('foo', listener);
+         *   console.log(getEventListeners(et, 'foo')); // [ [Function: listener] ]
+         * }
+         * ```
+         * @since v15.2.0, v14.17.0
+         */
 
+
+        /**
+         * Returns a copy of the array of listeners for the event named `eventName`.
+         *
+         * For `EventEmitter`s this behaves exactly the same as calling `.listeners` on
+         * the emitter.
+         *
+         * For `EventTarget`s this is the only way to get the event listeners for the
+         * event target. This is useful for debugging and diagnostic purposes.
+         *
+         * ```js
+         * import { getEventListeners, EventEmitter } from 'node:events';
+         *
+         * {
+         *   const ee = new EventEmitter();
+         *   const listener = () => console.log('Events are fun');
+         *   ee.on('foo', listener);
+         *   console.log(getEventListeners(ee, 'foo')); // [ [Function: listener] ]
+         * }
+         * {
+         *   const et = new EventTarget();
+         *   const listener = () => console.log('Events are fun');
+         *   et.addEventListener('foo', listener);
+         *   console.log(getEventListeners(et, 'foo')); // [ [Function: listener] ]
+         * }
+         * ```
+         * @since v15.2.0, v14.17.0
+         */
         fun <T : EventEmitter> getEventListeners(emitter: T, type: EventType<T, *>): js.array.ReadonlyArray<Function<*>>
 
+        /**
+         * Returns a copy of the array of listeners for the event named `eventName`.
+         *
+         * For `EventEmitter`s this behaves exactly the same as calling `.listeners` on
+         * the emitter.
+         *
+         * For `EventTarget`s this is the only way to get the event listeners for the
+         * event target. This is useful for debugging and diagnostic purposes.
+         *
+         * ```js
+         * import { getEventListeners, EventEmitter } from 'node:events';
+         *
+         * {
+         *   const ee = new EventEmitter();
+         *   const listener = () => console.log('Events are fun');
+         *   ee.on('foo', listener);
+         *   console.log(getEventListeners(ee, 'foo')); // [ [Function: listener] ]
+         * }
+         * {
+         *   const et = new EventTarget();
+         *   const listener = () => console.log('Events are fun');
+         *   et.addEventListener('foo', listener);
+         *   console.log(getEventListeners(et, 'foo')); // [ [Function: listener] ]
+         * }
+         * ```
+         * @since v15.2.0, v14.17.0
+         */
 
         /**
          * Returns the currently set max amount of listeners.
@@ -652,6 +830,34 @@ open external class EventEmitter {
          */
         fun getMaxListeners(emitter: EventTarget): Double
 
+        /**
+         * Returns the currently set max amount of listeners.
+         *
+         * For `EventEmitter`s this behaves exactly the same as calling `.getMaxListeners` on
+         * the emitter.
+         *
+         * For `EventTarget`s this is the only way to get the max event listeners for the
+         * event target. If the number of event handlers on a single EventTarget exceeds
+         * the max set, the EventTarget will print a warning.
+         *
+         * ```js
+         * import { getMaxListeners, setMaxListeners, EventEmitter } from 'node:events';
+         *
+         * {
+         *   const ee = new EventEmitter();
+         *   console.log(getMaxListeners(ee)); // 10
+         *   setMaxListeners(11, ee);
+         *   console.log(getMaxListeners(ee)); // 11
+         * }
+         * {
+         *   const et = new EventTarget();
+         *   console.log(getMaxListeners(et)); // 10
+         *   setMaxListeners(11, et);
+         *   console.log(getMaxListeners(et)); // 11
+         * }
+         * ```
+         * @since v19.9.0
+         */
         fun getMaxListeners(emitter: EventEmitter): Double
 
         /**

@@ -40,5 +40,24 @@ external class PerformanceObserver : AsyncResource {
      */
     fun observe(options: PerformanceObserverObserveTypesOptions): Unit
 
+    /**
+     * Subscribes the `PerformanceObserver` instance to notifications of new `PerformanceEntry` instances identified either by `options.entryTypes`or `options.type`:
+     *
+     * ```js
+     * const {
+     *   performance,
+     *   PerformanceObserver,
+     * } = require('node:perf_hooks');
+     *
+     * const obs = new PerformanceObserver((list, observer) => {
+     *   // Called once asynchronously. `list` contains three items.
+     * });
+     * obs.observe({ type: 'mark' });
+     *
+     * for (let n = 0; n < 3; n++)
+     *   performance.mark(`test${n}`);
+     * ```
+     * @since v8.5.0
+     */
     fun observe(options: PerformanceObserverObserveTypeOptions): Unit
 }
