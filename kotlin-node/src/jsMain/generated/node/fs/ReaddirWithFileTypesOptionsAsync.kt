@@ -4,6 +4,6 @@ package node.fs
 
 
 sealed external interface ReaddirWithFileTypesAsyncOptions : ObjectEncodingOptions {
-    var withFileTypes: Boolean
+    var withFileTypes: Boolean /* true */
     var recursive: Boolean?
 }

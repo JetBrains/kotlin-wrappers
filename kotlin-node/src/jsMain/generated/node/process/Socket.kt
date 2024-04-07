@@ -7,5 +7,5 @@ import node.ReadWriteStream
 
 
 sealed external interface Socket : ReadWriteStream {
-    var isTTY: Boolean?
+    var isTTY: Boolean /* true */?
 }

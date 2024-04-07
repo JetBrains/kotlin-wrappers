@@ -872,7 +872,7 @@ sealed external interface Process : EventEmitter {
      * @param pid A process ID
      * @param [signal='SIGTERM'] The signal to send, either as a string or number.
      */
-    fun kill(pid: Number): Boolean
+    fun kill(pid: Number): Boolean /* true */
 
     /**
      * The `process.kill()` method sends the `signal` to the process identified by`pid`.
@@ -909,7 +909,7 @@ sealed external interface Process : EventEmitter {
      * @param pid A process ID
      * @param [signal='SIGTERM'] The signal to send, either as a string or number.
      */
-    fun kill(pid: Number, signal: String = definedExternally): Boolean
+    fun kill(pid: Number, signal: String = definedExternally): Boolean /* true */
 
     /**
      * The `process.kill()` method sends the `signal` to the process identified by`pid`.
@@ -946,7 +946,7 @@ sealed external interface Process : EventEmitter {
      * @param pid A process ID
      * @param [signal='SIGTERM'] The signal to send, either as a string or number.
      */
-    fun kill(pid: Number, signal: Double = definedExternally): Boolean
+    fun kill(pid: Number, signal: Double = definedExternally): Boolean /* true */
 
     /**
      * The `process.pid` property returns the PID of the process.

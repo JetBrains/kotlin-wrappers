@@ -46,7 +46,7 @@ external class TLSSocket : node.net.Socket {
      * Always returns `true`. This may be used to distinguish TLS sockets from regular`net.Socket` instances.
      * @since v0.11.4
      */
-    var encrypted: Boolean
+    var encrypted: Boolean /* true */
 
     /**
      * String containing the selected ALPN protocol.

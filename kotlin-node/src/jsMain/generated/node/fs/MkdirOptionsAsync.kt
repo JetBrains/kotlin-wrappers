@@ -4,5 +4,5 @@ package node.fs
 
 
 sealed external interface MkdirAsyncOptions : MakeDirectoryOptions {
-    override var recursive: Boolean?
+    override var recursive: Boolean /* false */?
 }
