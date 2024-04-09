@@ -8,8 +8,8 @@ import seskar.js.JsValue
 import seskar.js.JsVirtual
 
 @JsVirtual
-sealed external interface DateUnit :
-    DateTimeUnit {
+sealed external interface DateUnit<T : DateUnit<T>> :
+    DateTimeUnit<T> {
     companion object {
         @JsValue("year")
         val year: year
@@ -24,8 +24,8 @@ sealed external interface DateUnit :
         val day: day
     }
 
-    sealed interface year : DateUnit
-    sealed interface month : DateUnit
-    sealed interface week : DateUnit
-    sealed interface day : DateUnit
+    sealed interface year : DateUnit<year>
+    sealed interface month : DateUnit<month>
+    sealed interface week : DateUnit<week>
+    sealed interface day : DateUnit<day>
 }

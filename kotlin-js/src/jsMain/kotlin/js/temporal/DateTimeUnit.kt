@@ -1,4 +1,6 @@
 package js.temporal
 
-@JsExternalInheritorsOnly
-sealed external interface DateTimeUnit
+sealed external interface DateTimeUnit<T : DateTimeUnit<T>> :
+    LargestUnit<T>,
+    SmallestUnit<T>,
+    TotalUnit<T>

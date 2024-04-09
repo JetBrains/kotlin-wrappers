@@ -8,8 +8,8 @@ import seskar.js.JsValue
 import seskar.js.JsVirtual
 
 @JsVirtual
-sealed external interface TimeUnit :
-    DateTimeUnit {
+sealed external interface TimeUnit<T : TimeUnit<T>> :
+    DateTimeUnit<T> {
     companion object {
         @JsValue("hour")
         val hour: hour
@@ -30,10 +30,10 @@ sealed external interface TimeUnit :
         val nanosecond: nanosecond
     }
 
-    sealed interface hour : TimeUnit
-    sealed interface minute : TimeUnit
-    sealed interface second : TimeUnit
-    sealed interface millisecond : TimeUnit
-    sealed interface microsecond : TimeUnit
-    sealed interface nanosecond : TimeUnit
+    sealed interface hour : TimeUnit<hour>
+    sealed interface minute : TimeUnit<minute>
+    sealed interface second : TimeUnit<second>
+    sealed interface millisecond : TimeUnit<millisecond>
+    sealed interface microsecond : TimeUnit<microsecond>
+    sealed interface nanosecond : TimeUnit<nanosecond>
 }
