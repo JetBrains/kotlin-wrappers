@@ -12,22 +12,22 @@ sealed external interface TimeUnit :
     DateTimeUnit {
     companion object {
         @JsValue("hour")
-        val hour: TimeUnit
+        val hour: hour
 
         @JsValue("minute")
-        val minute: TimeUnit
+        val minute: minute
 
         @JsValue("second")
-        val second: TimeUnit
+        val second: second
 
         @JsValue("millisecond")
-        val millisecond: TimeUnit
+        val millisecond: millisecond
 
         @JsValue("microsecond")
-        val microsecond: TimeUnit
+        val microsecond: microsecond
 
         @JsValue("nanosecond")
-        val nanosecond: TimeUnit
+        val nanosecond: nanosecond
     }
 
     sealed interface hour : TimeUnit
