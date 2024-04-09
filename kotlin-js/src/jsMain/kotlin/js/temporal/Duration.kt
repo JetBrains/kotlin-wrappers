@@ -61,7 +61,7 @@ external class Duration(
     ): String
 
     fun toJSON(): String
-    fun toString(options: Any /* ToStringPrecisionOptions */ = definedExternally): String
+    fun toString(options: ToStringPrecisionOptions = definedExternally): String
 
     companion object {
         fun from(
