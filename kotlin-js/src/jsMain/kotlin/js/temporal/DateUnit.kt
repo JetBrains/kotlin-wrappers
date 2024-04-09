@@ -12,15 +12,20 @@ sealed external interface DateUnit :
     DateTimeUnit {
     companion object {
         @JsValue("year")
-        val year: DateUnit
+        val year: year
 
         @JsValue("month")
-        val month: DateUnit
+        val month: month
 
         @JsValue("week")
-        val week: DateUnit
+        val week: week
 
         @JsValue("day")
-        val day: DateUnit
+        val day: day
     }
+
+    sealed interface year : DateUnit
+    sealed interface month : DateUnit
+    sealed interface week : DateUnit
+    sealed interface day : DateUnit
 }

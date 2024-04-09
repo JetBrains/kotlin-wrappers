@@ -29,4 +29,11 @@ sealed external interface TimeUnit :
         @JsValue("nanosecond")
         val nanosecond: TimeUnit
     }
+
+    sealed interface hour : TimeUnit
+    sealed interface minute : TimeUnit
+    sealed interface second : TimeUnit
+    sealed interface millisecond : TimeUnit
+    sealed interface microsecond : TimeUnit
+    sealed interface nanosecond : TimeUnit
 }
