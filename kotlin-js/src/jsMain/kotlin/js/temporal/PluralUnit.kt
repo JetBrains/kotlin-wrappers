@@ -13,7 +13,10 @@ import seskar.js.JsVirtual
  * or 'hours' are aso accepted too.
  */
 @JsVirtual
-sealed external interface PluralUnit<T : DateTimeUnit<T>> {
+sealed external interface PluralUnit<T : DateTimeUnit<T>> :
+    LargestUnit<T>,
+    SmallestUnit<T>,
+    TotalUnit<T> {
     companion object {
 
         @JsValue("years")
