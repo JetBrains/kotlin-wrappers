@@ -55,43 +55,16 @@ external class Instant(
 
     fun until(
         other: Instant, /* | string */
-        options: DifferenceOptions<*
-                /*
-                | "hour"
-                | "minute"
-                | "second"
-                | "millisecond"
-                | "microsecond"
-                | "nanosecond"
-                */
-                > = definedExternally,
+        options: DifferenceOptions<TimeUnit<*>> = definedExternally,
     ): Duration
 
     fun since(
         other: Instant, /* | string */
-        options: DifferenceOptions<*
-                /*
-                | "hour"
-                | "minute"
-                | "second"
-                | "millisecond"
-                | "microsecond"
-                | "nanosecond"
-                */
-                > = definedExternally,
+        options: DifferenceOptions<TimeUnit<*>> = definedExternally,
     ): Duration
 
     fun round(
-        roundTo: Any,
-        /* RoundTo<
-            | "hour"
-            | "minute"
-            | "second"
-            | "millisecond"
-            | "microsecond"
-            | "nanosecond"
-        >,
-        */
+        roundTo: RoundTo<TimeUnit<*>>,
     ): Instant
 
     fun toZonedDateTime(

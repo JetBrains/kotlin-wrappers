@@ -8,7 +8,7 @@ import js.objects.JsPlainObject
 @JsPlainObject
 sealed external interface ToStringPrecisionOptions {
     var fractionalSecondDigits: Any? /* "auto" | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 */
-    var smallestUnit: SmallestUnit<* /* "minute" | "second" | "millisecond" | "microsecond" | "nanosecond" */>?
+    var smallestUnit: SmallestUnit<TimeUnit<*> /* "minute" | "second" | "millisecond" | "microsecond" | "nanosecond" */>?
 
     /**
      * Controls how rounding is performed:

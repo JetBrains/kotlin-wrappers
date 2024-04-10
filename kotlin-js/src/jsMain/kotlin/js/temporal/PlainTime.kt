@@ -53,16 +53,16 @@ external class PlainTime(
 
     fun until(
         other: PlainTime, /* | PlainTimeLike | string */
-        options: DifferenceOptions<* /* TimeUnit */>,
+        options: DifferenceOptions<TimeUnit<*>>,
     ): Duration
 
     fun since(
         other: PlainTime, /* | PlainTimeLike | string */
-        options: DifferenceOptions<* /* TimeUnit */>,
+        options: DifferenceOptions<TimeUnit<*>>,
     ): Duration
 
     fun round(
-        roundTo: RoundTo<* /* TimeUnit */>,
+        roundTo: RoundTo<TimeUnit<*>>,
     ): PlainTime
 
     fun toPlainDateTime(
