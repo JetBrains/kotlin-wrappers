@@ -7,6 +7,7 @@ import js.core.JsLong
 import js.intl.DateTimeFormatOptions
 import js.intl.Locale
 import js.intl.UnicodeBCP47LocaleIdentifier
+import js.temporal.Instant
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date)
@@ -483,6 +484,11 @@ external class Date() {
         locales: ReadonlyArray<Locale>,
         options: DateTimeFormatOptions = definedExternally,
     ): String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/toTemporalInstant)
+     */
+    fun toTemporalInstant(): Instant
 
     companion object {
         /**
