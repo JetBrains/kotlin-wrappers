@@ -8,7 +8,7 @@ import seskar.js.JsValue
 import seskar.js.JsVirtual
 
 @JsVirtual
-sealed external interface TimeUnit<T : TimeUnit<T>> :
+sealed external interface TimeUnit<out T : TimeUnit<T>> :
     DateTimeUnit<T> {
     companion object {
         @JsValue("hour")

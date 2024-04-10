@@ -8,7 +8,7 @@ import seskar.js.JsValue
 import seskar.js.JsVirtual
 
 @JsVirtual
-sealed external interface DateUnit<T : DateUnit<T>> :
+sealed external interface DateUnit<out T : DateUnit<T>> :
     DateTimeUnit<T> {
     companion object {
         @JsValue("year")
