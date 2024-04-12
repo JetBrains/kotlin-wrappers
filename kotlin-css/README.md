@@ -47,5 +47,5 @@ styles.toString()
 ```
 
 When writing CSS for the browser you should probably use
-[kotlin-styled](https://github.com/JetBrains/kotlin-wrappers/tree/master/kotlin-styled) instead. It provides a
+[kotlin-styled-next](https://github.com/JetBrains/kotlin-wrappers/tree/master/kotlin-styled-next) instead. It provides a
 user-friendly facade to `kotlin-css`.
