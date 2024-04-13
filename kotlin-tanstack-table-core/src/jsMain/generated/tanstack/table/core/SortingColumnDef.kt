@@ -51,5 +51,5 @@ external interface SortingColumnDef<TData : RowData> {
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/sorting#sortundefined)
      * [Guide](https://tanstack.com/table/v8/docs/guide/sorting)
      */
-    var sortUndefined: Int /* false | -1 | 1 */?
+    var sortUndefined: Comparable<*> /* false | -1 | 1 | 'first' | 'last' */?
 }
