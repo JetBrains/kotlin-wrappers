@@ -24,7 +24,7 @@ external interface VirtualizerOptions<TScrollElement : EventTarget /* Element | 
     var paddingEnd: Int?
     var scrollPaddingStart: Int?
     var scrollPaddingEnd: Int?
-    var initialOffset: Int?
+    var initialOffset: Int /* | (() -> Int) */?
     var getItemKey: ((index: Int) -> Key)?
     var rangeExtractor: ((range: Range) -> ReadonlyArray<Int>)?
     var scrollMargin: Int?
