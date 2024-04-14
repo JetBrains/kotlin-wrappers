@@ -6,7 +6,7 @@ import js.array.ReadonlyArray
 import js.core.JsLong
 import js.intl.DateTimeFormatOptions
 import js.intl.Locale
-import js.intl.LocalizableDateTime
+import js.intl.Localizable
 import js.intl.UnicodeBCP47LocaleIdentifier
 import js.temporal.Instant
 
@@ -14,7 +14,7 @@ import js.temporal.Instant
  * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date)
  */
 external class Date() :
-    LocalizableDateTime {
+    Localizable<DateTimeFormatOptions> {
     constructor(value: JsLong)
     constructor(value: String)
     constructor(value: Date)

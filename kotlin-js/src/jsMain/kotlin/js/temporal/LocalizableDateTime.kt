@@ -1,5 +1,8 @@
 // Automatically generated - do not modify!
 
-package js.intl
+package js.temporal
+
+import js.intl.DateTimeFormatOptions
+import js.intl.Localizable
 
 typealias LocalizableDateTime = Localizable<DateTimeFormatOptions>
