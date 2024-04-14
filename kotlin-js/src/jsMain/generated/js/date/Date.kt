@@ -6,13 +6,15 @@ import js.array.ReadonlyArray
 import js.core.JsLong
 import js.intl.DateTimeFormatOptions
 import js.intl.Locale
+import js.intl.LocalizableDateTime
 import js.intl.UnicodeBCP47LocaleIdentifier
 import js.temporal.Instant
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date)
  */
-external class Date() {
+external class Date() :
+    LocalizableDateTime {
     constructor(value: JsLong)
     constructor(value: String)
     constructor(value: Date)
@@ -52,13 +54,6 @@ external class Date() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/toTimeString)
      */
     fun toTimeString(): String
-
-    /**
-     * Returns a value as a string value appropriate to the host environment's current locale.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString)
-     */
-    fun toLocaleString(): String
 
     /**
      * Returns a date as a string value appropriate to the host environment's current locale.
@@ -403,33 +398,6 @@ external class Date() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/toJSON)
      */
     fun toJSON(key: Any? = definedExternally): String
-
-    /**
-     * Converts a date and time to a string by using the current or specified locale.
-     * @param locales A locale string, array of locale strings, Intl.Locale object, or array of Intl.Locale objects that contain one or more language or locale tags. If you include more than one locale string, list them in descending order of priority so that the first entry is the preferred locale. If you omit this parameter, the default locale of the JavaScript runtime is used.
-     * @param options An object that contains one or more properties that specify comparison options.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString)
-     */
-    fun toLocaleString(
-        locales: UnicodeBCP47LocaleIdentifier = definedExternally,
-        options: DateTimeFormatOptions = definedExternally,
-    ): String
-
-    fun toLocaleString(
-        locales: Locale,
-        options: DateTimeFormatOptions = definedExternally,
-    ): String
-
-    fun toLocaleString(
-        locales: ReadonlyArray<UnicodeBCP47LocaleIdentifier>,
-        options: DateTimeFormatOptions = definedExternally,
-    ): String
-
-    fun toLocaleString(
-        locales: ReadonlyArray<Locale>,
-        options: DateTimeFormatOptions = definedExternally,
-    ): String
 
     /**
      * Converts a date to a string by using the current or specified locale.
