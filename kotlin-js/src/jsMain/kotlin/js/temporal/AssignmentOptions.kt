@@ -18,5 +18,5 @@ sealed external interface AssignmentOptions {
      *
      * The default is `'constrain'`.
      */
-    var overflow: String? /* "constrain" | "reject" */
+    var overflow: Overflow?
 }
