@@ -21,7 +21,8 @@ import js.core.JsLong
  */
 external class Instant(
     epochNanoseconds: BigInt,
-) : LocalizableDateTime {
+) : HasArithmeticOperations<Instant, Nothing, TimeUnit<*>>,
+    LocalizableDateTime {
     val epochSeconds: JsLong
     val epochMilliseconds: JsLong
     val epochMicroseconds: BigInt
@@ -29,37 +30,6 @@ external class Instant(
 
     // fun equals(other: Instant): Boolean
     // fun equals(other: string): Boolean
-    fun add(
-        durationLike: Any,
-        /*
-        | Omit<
-        Duration | DurationLike,
-        "years" | "months" | "weeks" | "days"
-        >
-        | string,
-         */
-    ): Instant
-
-    fun subtract(
-        durationLike: Any,
-        /*
-        | Omit<
-        Duration | DurationLike,
-        "years" | "months" | "weeks" | "days"
-        >
-        | string,
-         */
-    ): Instant
-
-    fun until(
-        other: Instant, /* | string */
-        options: DifferenceOptions<TimeUnit<*>> = definedExternally,
-    ): Duration
-
-    fun since(
-        other: Instant, /* | string */
-        options: DifferenceOptions<TimeUnit<*>> = definedExternally,
-    ): Duration
 
     fun round(
         roundTo: RoundTo<TimeUnit<*>>,
