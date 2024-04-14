@@ -2,9 +2,6 @@
 
 package js.temporal
 
-import js.array.ReadonlyArray
-import js.intl.DateTimeFormatOptions
-
 /**
  * A `Temporal.PlainTime` represents a wall-clock time, with a precision in
  * nanoseconds, and without any time zone. "Wall-clock time" refers to the
@@ -27,7 +24,7 @@ external class PlainTime(
     millisecond: Int = definedExternally,
     microsecond: Int = definedExternally,
     nanosecond: Int = definedExternally,
-) {
+) : LocalizableDateTime {
     val hour: Int
     val minute: Int
     val second: Int
@@ -80,15 +77,6 @@ external class PlainTime(
     ): ZonedDateTime
 
     fun getISOFields(): PlainTimeISOFields
-    fun toLocaleString(
-        locales: String = definedExternally,
-        options: DateTimeFormatOptions = definedExternally,
-    ): String
-
-    fun toLocaleString(
-        locales: ReadonlyArray<String>,
-        options: DateTimeFormatOptions = definedExternally,
-    ): String
 
     fun toJSON(): String
     fun toString(options: ToStringPrecisionOptions = definedExternally): String

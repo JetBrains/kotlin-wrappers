@@ -2,9 +2,6 @@
 
 package js.temporal
 
-import js.array.ReadonlyArray
-import js.intl.DateTimeFormatOptions
-
 /**
  * A `Temporal.PlainMonthDay` represents a particular day on the calendar, but
  * without a year. For example, it could be used to represent a yearly
@@ -17,7 +14,7 @@ external class PlainMonthDay(
     isoDay: Int,
     calendar: CalendarLike = definedExternally,
     referenceISOYear: Int = definedExternally,
-) {
+) : LocalizableDateTime {
     val monthCode: String
     val day: Int
     val calendarId: String
@@ -31,15 +28,6 @@ external class PlainMonthDay(
 
     fun toPlainDate(year: Any /* { year: Int } */): PlainDate
     fun getISOFields(): PlainDateISOFields
-    fun toLocaleString(
-        locales: String = definedExternally,
-        options: DateTimeFormatOptions = definedExternally,
-    ): String
-
-    fun toLocaleString(
-        locales: ReadonlyArray<String>,
-        options: DateTimeFormatOptions = definedExternally,
-    ): String
 
     fun toJSON(): String
     fun toString(options: ShowCalendarOption = definedExternally): String

@@ -2,9 +2,6 @@
 
 package js.temporal
 
-import js.array.ReadonlyArray
-import js.intl.DateTimeFormatOptions
-
 /**
  * A `Temporal.Duration` represents an immutable duration of time which can be
  * used in date/time arithmetic.
@@ -22,7 +19,7 @@ external class Duration(
     milliseconds: Int = definedExternally,
     microseconds: Int = definedExternally,
     nanoseconds: Int = definedExternally,
-) {
+) : LocalizableDateTime {
     val sign: Int /* -1 | 0 | 1 */
     val blank: Boolean
     val years: Int
@@ -50,15 +47,6 @@ external class Duration(
 
     fun round(roundTo: Any /* DurationRoundTo */): Duration
     fun total(totalOf: Any /* DurationTotalOf */): Int
-    fun toLocaleString(
-        locales: String = definedExternally,
-        options: DateTimeFormatOptions = definedExternally,
-    ): String
-
-    fun toLocaleString(
-        locales: ReadonlyArray<String>,
-        options: DateTimeFormatOptions = definedExternally,
-    ): String
 
     fun toJSON(): String
     fun toString(options: ToStringPrecisionOptions = definedExternally): String

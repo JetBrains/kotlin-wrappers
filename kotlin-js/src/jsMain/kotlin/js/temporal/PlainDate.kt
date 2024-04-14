@@ -2,9 +2,6 @@
 
 package js.temporal
 
-import js.array.ReadonlyArray
-import js.intl.DateTimeFormatOptions
-
 /**
  * A `Temporal.PlainDate` represents a calendar date. "Calendar date" refers to the
  * concept of a date as expressed in everyday usage, independent of any time
@@ -19,7 +16,7 @@ external class PlainDate(
     isoMonth: Int,
     isoDay: Int,
     calendar: CalendarLike = definedExternally,
-) {
+) : LocalizableDateTime {
     val era: String?
     val eraYear: Int?
     val year: Int
@@ -84,15 +81,6 @@ external class PlainDate(
     fun toPlainYearMonth(): PlainYearMonth
     fun toPlainMonthDay(): PlainMonthDay
     fun getISOFields(): PlainDateISOFields
-    fun toLocaleString(
-        locales: String = definedExternally,
-        options: DateTimeFormatOptions = definedExternally,
-    ): String
-
-    fun toLocaleString(
-        locales: ReadonlyArray<String>,
-        options: DateTimeFormatOptions = definedExternally,
-    ): String
 
     fun toJSON(): String
     fun toString(options: ShowCalendarOption = definedExternally): String

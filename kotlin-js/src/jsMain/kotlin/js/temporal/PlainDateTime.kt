@@ -2,9 +2,6 @@
 
 package js.temporal
 
-import js.array.ReadonlyArray
-import js.intl.DateTimeFormatOptions
-
 /**
  * A `Temporal.PlainDateTime` represents a calendar date and wall-clock time, with
  * a precision in nanoseconds, and without any time zone. Of the Temporal
@@ -26,7 +23,7 @@ external class PlainDateTime(
     microsecond: Int = definedExternally,
     nanosecond: Int = definedExternally,
     calendar: CalendarLike = definedExternally,
-) {
+) : LocalizableDateTime {
     val era: String?
     val eraYear: Int?
     val year: Int
@@ -100,15 +97,6 @@ external class PlainDateTime(
     fun toPlainMonthDay(): PlainMonthDay
     fun toPlainTime(): PlainTime
     fun getISOFields(): PlainDateTimeISOFields
-    fun toLocaleString(
-        locales: String = definedExternally,
-        options: DateTimeFormatOptions = definedExternally,
-    ): String
-
-    fun toLocaleString(
-        locales: ReadonlyArray<String>,
-        options: DateTimeFormatOptions = definedExternally,
-    ): String
 
     fun toJSON(): String
     fun toString(options: CalendarTypeToStringOptions = definedExternally): String
