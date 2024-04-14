@@ -40,10 +40,8 @@ external class Duration(
     fun toJSON(): String
     fun toString(options: ToStringPrecisionOptions = definedExternally): String
 
-    companion object {
-        fun from(
-            item: Duration, /* | DurationLike | string */
-        ): Duration
+    companion object :
+        Factory<Duration, DurationLike, Nothing> {
 
         fun compare(
             one: Duration, /* | DurationLike | string */
