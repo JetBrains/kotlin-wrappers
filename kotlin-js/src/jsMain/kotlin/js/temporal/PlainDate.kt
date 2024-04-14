@@ -16,7 +16,8 @@ external class PlainDate(
     isoMonth: Int,
     isoDay: Int,
     calendar: CalendarLike = definedExternally,
-) : LocalizableDateTime {
+) : HasArithmeticOperations<PlainDate, PlainDateLike, DateUnit<*>>,
+    LocalizableDateTime {
     val era: String?
     val eraYear: Int?
     val year: Int
@@ -42,25 +43,6 @@ external class PlainDate(
     ): PlainDate
 
     fun withCalendar(calendar: CalendarLike): PlainDate
-    fun add(
-        durationLike: Duration, /* | DurationLike | string */
-        options: ArithmeticOptions = definedExternally,
-    ): PlainDate
-
-    fun subtract(
-        durationLike: Duration, /* | DurationLike | string */
-        options: ArithmeticOptions = definedExternally,
-    ): PlainDate
-
-    fun until(
-        other: PlainDate, /* | PlainDateLike | string */
-        options: DifferenceOptions<DateUnit<*>> = definedExternally,
-    ): Duration
-
-    fun since(
-        other: PlainDate, /* | PlainDateLike | string */
-        options: DifferenceOptions<DateUnit<*>> = definedExternally,
-    ): Duration
 
     fun toPlainDateTime(
         temporalTime: PlainTime /* | PlainTimeLike | string */ = definedExternally,
