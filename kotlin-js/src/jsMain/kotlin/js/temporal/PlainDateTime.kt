@@ -23,7 +23,8 @@ external class PlainDateTime(
     microsecond: Int = definedExternally,
     nanosecond: Int = definedExternally,
     calendar: CalendarLike = definedExternally,
-) : LocalizableDateTime {
+) : HasArithmeticOperations<PlainDateTime, PlainDateTimeLike, DateTimeUnit<*>>,
+    LocalizableDateTime {
     val era: String?
     val eraYear: Int?
     val year: Int
@@ -63,25 +64,6 @@ external class PlainDateTime(
     ): PlainDateTime
 
     fun withCalendar(calendar: CalendarLike): PlainDateTime
-    fun add(
-        durationLike: Duration, /* | DurationLike | string */
-        options: ArithmeticOptions = definedExternally,
-    ): PlainDateTime
-
-    fun subtract(
-        durationLike: Duration, /* | DurationLike | string */
-        options: ArithmeticOptions = definedExternally,
-    ): PlainDateTime
-
-    fun until(
-        other: PlainDateTime, /* | PlainDateTimeLike | string */
-        options: DifferenceOptions<DateTimeUnit<*>> = definedExternally,
-    ): Duration
-
-    fun since(
-        other: PlainDateTime, /* | PlainDateTimeLike | string */
-        options: DifferenceOptions<DateTimeUnit<*>> = definedExternally,
-    ): Duration
 
     fun round(
         roundTo: RoundTo<* /* day..nanosecond */>,
