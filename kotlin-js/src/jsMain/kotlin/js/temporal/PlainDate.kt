@@ -17,7 +17,8 @@ external class PlainDate(
     isoDay: Int,
     calendar: CalendarLike = definedExternally,
 ) : HasArithmeticOperations<PlainDate, PlainDateLike, DateUnit<*>>,
-    LocalizableDateTime {
+    LocalizableDateTime,
+    CalendarLike {
     val era: String?
     val eraYear: Int?
     val year: Int

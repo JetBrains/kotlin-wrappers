@@ -16,7 +16,8 @@ external class PlainMonthDay(
     isoDay: Int,
     calendar: CalendarLike = definedExternally,
     referenceISOYear: Int = definedExternally,
-) : LocalizableDateTime {
+) : LocalizableDateTime,
+    CalendarLike {
     val monthCode: String
     val day: Int
     val calendarId: String

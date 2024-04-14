@@ -10,7 +10,8 @@ external class ZonedDateTime(
     calendar: CalendarLike = definedExternally,
 ) : HasArithmeticOperations<ZonedDateTime, ZonedDateTimeLike, DateTimeUnit<*>>,
     Roundable<ZonedDateTime, DateTimeUnit<* /* day..nanosecond */>>,
-    LocalizableDateTime {
+    LocalizableDateTime,
+    CalendarLike {
     val era: String?
     val eraYear: Int?
     val year: Int

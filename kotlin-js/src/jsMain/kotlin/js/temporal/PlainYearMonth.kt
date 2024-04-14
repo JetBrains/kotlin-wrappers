@@ -19,7 +19,8 @@ external class PlainYearMonth(
     calendar: CalendarLike = definedExternally,
     referenceISODay: Int = definedExternally,
 ) : HasArithmeticOperations<PlainYearMonth, PlainYearMonthLike, DateUnit<* /* year..month */>>,
-    LocalizableDateTime {
+    LocalizableDateTime,
+    CalendarLike {
     val era: String?
     val eraYear: Int?
     val year: Int

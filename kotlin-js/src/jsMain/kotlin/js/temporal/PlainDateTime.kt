@@ -25,7 +25,8 @@ external class PlainDateTime(
     calendar: CalendarLike = definedExternally,
 ) : HasArithmeticOperations<PlainDateTime, PlainDateTimeLike, DateTimeUnit<*>>,
     Roundable<PlainDateTime, DateTimeUnit<* /* day..nanosecond */>>,
-    LocalizableDateTime {
+    LocalizableDateTime,
+    CalendarLike {
     val era: String?
     val eraYear: Int?
     val year: Int
