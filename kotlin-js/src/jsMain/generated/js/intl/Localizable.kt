@@ -8,7 +8,7 @@ package js.intl
 
 import js.array.ReadonlyArray
 
-external interface Localizable<O : Any> {
+external interface Localizable<in O : Any> {
     /**
      * Returns a value as a string value appropriate to the host environment's current locale.
      *
