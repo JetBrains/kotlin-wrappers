@@ -32,10 +32,6 @@ external class PlainMonthDay(
     fun toJSON(): String
     fun toString(options: ShowCalendarOption = definedExternally): String
 
-    companion object {
-        fun from(
-            item: PlainMonthDay, /* | PlainMonthDayLike | string */
-            options: AssignmentOptions = definedExternally,
-        ): PlainMonthDay
-    }
+    companion object :
+        Factory<PlainMonthDay, PlainMonthDayLike, AssignmentOptions>
 }
