@@ -7,7 +7,7 @@
 package js.temporal
 
 sealed external interface HasArithmeticOperations<T : HasArithmeticOperations<T, L, U>, in L : Any, U : DateTimeUnit<U>> :
-    HasDurationOperations<T, L, ArithmeticOptions> {
+    HasDurationOperations<T, ArithmeticOptions> {
 
     fun until(
         other: T,

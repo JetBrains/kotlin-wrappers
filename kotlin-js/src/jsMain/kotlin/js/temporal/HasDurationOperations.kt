@@ -6,7 +6,7 @@
 
 package js.temporal
 
-sealed external interface HasDurationOperations<T : HasDurationOperations<T, L, O>, in L : Any, O : Any> {
+sealed external interface HasDurationOperations<T : HasDurationOperations<T, O>, in O : Any> {
     fun add(
         duration: Duration,
         options: O = definedExternally,
