@@ -10,7 +10,6 @@ import js.objects.JsPlainObject
  * `smallestUnit` property value is that string.
  */
 @JsPlainObject
-// | SmallestUnit<T>
 sealed external interface RoundTo<T : DateTimeUnit<T>> {
     /**
      * The unit to round to. For example, to round to the nearest minute,
