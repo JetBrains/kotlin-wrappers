@@ -1,5 +1,9 @@
 @file:JsQualifier("Temporal")
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package js.temporal
 
 import js.core.BigInt
@@ -20,13 +24,12 @@ import js.core.JsLong
  * See https://tc39.es/proposal-temporal/docs/instant.html for more details.
  */
 external class Instant(
-    epochNanoseconds: BigInt,
+    val epochNanoseconds: BigInt,
 ) : HasArithmeticOperations<Instant, Nothing, TimeUnit<*>>,
     LocalizableDateTime {
     val epochSeconds: JsLong
     val epochMilliseconds: JsLong
     val epochMicroseconds: BigInt
-    val epochNanoseconds: BigInt
 
     // fun equals(other: Instant): Boolean
     // fun equals(other: string): Boolean
