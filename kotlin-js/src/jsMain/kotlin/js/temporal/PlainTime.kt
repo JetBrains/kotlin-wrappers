@@ -82,11 +82,5 @@ external class PlainTime(
     fun toString(options: ToStringPrecisionOptions = definedExternally): String
 
     companion object :
-        Comparator<PlainTime, PlainTimeLike> {
-
-        fun from(
-            item: PlainTime, /* | PlainTimeLike | string */
-            options: AssignmentOptions = definedExternally,
-        ): PlainTime
-    }
+        PlainCompanion<PlainTime, PlainTimeLike>
 }

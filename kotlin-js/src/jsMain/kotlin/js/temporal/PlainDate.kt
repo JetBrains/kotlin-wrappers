@@ -86,11 +86,5 @@ external class PlainDate(
     fun toString(options: ShowCalendarOption = definedExternally): String
 
     companion object :
-        Comparator<PlainDate, PlainDateLike> {
-
-        fun from(
-            item: PlainDate, /* | PlainDateLike | string */
-            options: AssignmentOptions = definedExternally,
-        ): PlainDate
-    }
+        PlainCompanion<PlainDate, PlainDateLike>
 }
