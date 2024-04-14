@@ -485,9 +485,6 @@ external class Date() {
         options: DateTimeFormatOptions = definedExternally,
     ): String
 
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/toTemporalInstant)
-     */
     fun toTemporalInstant(): Instant
 
     companion object {
