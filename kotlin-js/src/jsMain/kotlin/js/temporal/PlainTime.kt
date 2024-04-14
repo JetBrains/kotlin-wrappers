@@ -24,7 +24,8 @@ external class PlainTime(
     millisecond: Int = definedExternally,
     microsecond: Int = definedExternally,
     nanosecond: Int = definedExternally,
-) : LocalizableDateTime {
+) : HasArithmeticOperations<PlainTime, PlainTimeLike, TimeUnit<*>>,
+    LocalizableDateTime {
     val hour: Int
     val minute: Int
     val second: Int
@@ -37,26 +38,6 @@ external class PlainTime(
         timeLike: PlainTime, /* | PlainTimeLike */
         options: AssignmentOptions = definedExternally,
     ): PlainTime
-
-    fun add(
-        durationLike: Duration, /* | DurationLike | string */
-        options: ArithmeticOptions = definedExternally,
-    ): PlainTime
-
-    fun subtract(
-        durationLike: Duration, /* | DurationLike | string */
-        options: ArithmeticOptions = definedExternally,
-    ): PlainTime
-
-    fun until(
-        other: PlainTime, /* | PlainTimeLike | string */
-        options: DifferenceOptions<TimeUnit<*>>,
-    ): Duration
-
-    fun since(
-        other: PlainTime, /* | PlainTimeLike | string */
-        options: DifferenceOptions<TimeUnit<*>>,
-    ): Duration
 
     fun round(
         roundTo: RoundTo<TimeUnit<*>>,
