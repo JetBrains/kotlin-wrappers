@@ -24,6 +24,7 @@ external class PlainDateTime(
     nanosecond: Int = definedExternally,
     calendar: CalendarLike = definedExternally,
 ) : HasArithmeticOperations<PlainDateTime, PlainDateTimeLike, DateTimeUnit<*>>,
+    Roundable<PlainDateTime, DateTimeUnit<* /* day..nanosecond */>>,
     LocalizableDateTime {
     val era: String?
     val eraYear: Int?
@@ -64,10 +65,6 @@ external class PlainDateTime(
     ): PlainDateTime
 
     fun withCalendar(calendar: CalendarLike): PlainDateTime
-
-    fun round(
-        roundTo: RoundTo<* /* day..nanosecond */>,
-    ): PlainDateTime
 
     fun toZonedDateTime(
         tzLike: TimeZoneLike,

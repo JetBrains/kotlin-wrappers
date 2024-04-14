@@ -29,16 +29,13 @@ external class PlainTime(
     val microsecond: Int = definedExternally,
     val nanosecond: Int = definedExternally,
 ) : HasArithmeticOperations<PlainTime, PlainTimeLike, TimeUnit<*>>,
+    Roundable<PlainTime, TimeUnit<*>>,
     LocalizableDateTime {
 
     // fun equals(other: PlainTime /* | PlainTimeLike | string */): Boolean;
     fun with(
         timeLike: PlainTime, /* | PlainTimeLike */
         options: AssignmentOptions = definedExternally,
-    ): PlainTime
-
-    fun round(
-        roundTo: RoundTo<TimeUnit<*>>,
     ): PlainTime
 
     fun toPlainDateTime(

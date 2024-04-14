@@ -26,6 +26,7 @@ import js.core.JsLong
 external class Instant(
     val epochNanoseconds: BigInt,
 ) : HasArithmeticOperations<Instant, Nothing, TimeUnit<*>>,
+    Roundable<Instant, TimeUnit<*>>,
     LocalizableDateTime {
     val epochSeconds: JsLong
     val epochMilliseconds: JsLong
@@ -33,10 +34,6 @@ external class Instant(
 
     // fun equals(other: Instant): Boolean
     // fun equals(other: string): Boolean
-
-    fun round(
-        roundTo: RoundTo<TimeUnit<*>>,
-    ): Instant
 
     fun toZonedDateTime(
         calendarAndTimeZone: Any, /* { timeZone: TimeZoneLike; calendar: CalendarLike } */
