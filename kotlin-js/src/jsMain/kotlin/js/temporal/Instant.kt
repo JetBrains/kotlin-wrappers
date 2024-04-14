@@ -74,16 +74,14 @@ external class Instant(
     fun toJSON(): String
     fun toString(options: InstantToStringOptions = definedExternally): String
 
-    companion object {
+    companion object :
+        Comparator<Instant, Nothing> {
+
         fun fromEpochSeconds(epochSeconds: JsLong): Instant
         fun fromEpochMilliseconds(epochMilliseconds: JsLong): Instant
         fun fromEpochMicroseconds(epochMicroseconds: BigInt): Instant
         fun fromEpochNanoseconds(epochNanoseconds: BigInt): Instant
         fun from(item: Instant): Instant
         fun from(item: String): Instant
-        fun compare(
-            one: Instant, /* | string */
-            two: Instant, /* | string */
-        ): ComparisonResult
     }
 }

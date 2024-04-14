@@ -101,15 +101,12 @@ external class PlainDateTime(
     fun toJSON(): String
     fun toString(options: CalendarTypeToStringOptions = definedExternally): String
 
-    companion object {
+    companion object :
+        Comparator<PlainDateTime, PlainDateTimeLike> {
+
         fun from(
             item: PlainDateTime, /* | PlainDateTimeLike | string */
             options: AssignmentOptions = definedExternally,
         ): PlainDateTime
-
-        fun compare(
-            one: PlainDateTime, /* | PlainDateTimeLike | string */
-            two: PlainDateTime, /* | PlainDateTimeLike | string */
-        ): ComparisonResult
     }
 }

@@ -85,15 +85,12 @@ external class PlainDate(
     fun toJSON(): String
     fun toString(options: ShowCalendarOption = definedExternally): String
 
-    companion object {
+    companion object :
+        Comparator<PlainDate, PlainDateLike> {
+
         fun from(
             item: PlainDate, /* | PlainDateLike | string */
             options: AssignmentOptions = definedExternally,
         ): PlainDate
-
-        fun compare(
-            one: PlainDate, /* | PlainDateLike | string */
-            two: PlainDate, /* | PlainDateLike | string */
-        ): ComparisonResult
     }
 }

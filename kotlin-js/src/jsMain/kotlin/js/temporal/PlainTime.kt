@@ -81,16 +81,12 @@ external class PlainTime(
     fun toJSON(): String
     fun toString(options: ToStringPrecisionOptions = definedExternally): String
 
-    companion object {
+    companion object :
+        Comparator<PlainTime, PlainTimeLike> {
+
         fun from(
             item: PlainTime, /* | PlainTimeLike | string */
             options: AssignmentOptions = definedExternally,
         ): PlainTime
-
-        fun compare(
-            one: PlainTime, /* | PlainTimeLike | string */
-            two: PlainTime, /* | PlainTimeLike | string */
-        ): ComparisonResult
-
     }
 }
