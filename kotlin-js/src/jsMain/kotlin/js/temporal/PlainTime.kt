@@ -1,5 +1,9 @@
 @file:JsQualifier("Temporal")
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package js.temporal
 
 /**
@@ -18,20 +22,14 @@ package js.temporal
  * See https://tc39.es/proposal-temporal/docs/time.html for more details.
  */
 external class PlainTime(
-    hour: Int = definedExternally,
-    minute: Int = definedExternally,
-    second: Int = definedExternally,
-    millisecond: Int = definedExternally,
-    microsecond: Int = definedExternally,
-    nanosecond: Int = definedExternally,
+    val hour: Int = definedExternally,
+    val minute: Int = definedExternally,
+    val second: Int = definedExternally,
+    val millisecond: Int = definedExternally,
+    val microsecond: Int = definedExternally,
+    val nanosecond: Int = definedExternally,
 ) : HasArithmeticOperations<PlainTime, PlainTimeLike, TimeUnit<*>>,
     LocalizableDateTime {
-    val hour: Int
-    val minute: Int
-    val second: Int
-    val millisecond: Int
-    val microsecond: Int
-    val nanosecond: Int
 
     // fun equals(other: PlainTime /* | PlainTimeLike | string */): Boolean;
     fun with(
