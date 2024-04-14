@@ -2,6 +2,8 @@
 
 package js.temporal
 
+import js.objects.JsPlainObject
+
 /**
  * A `Temporal.PlainMonthDay` represents a particular day on the calendar, but
  * without a year. For example, it could be used to represent a yearly
@@ -26,7 +28,13 @@ external class PlainMonthDay(
         options: AssignmentOptions = definedExternally,
     ): PlainMonthDay
 
-    fun toPlainDate(year: Any /* { year: Int } */): PlainDate
+    fun toPlainDate(options: ToPlainDateOptions): PlainDate
+
+    @JsPlainObject
+    sealed interface ToPlainDateOptions {
+        var year: Int
+    }
+
     fun getISOFields(): PlainDateISOFields
 
     fun toJSON(): String
