@@ -6,36 +6,8 @@
 
 package js.temporal
 
-sealed external interface HasArithmeticOperations<T : HasArithmeticOperations<T, L, U>, in L : Any, U : DateTimeUnit<U>> {
-    fun add(
-        duration: Duration,
-        options: ArithmeticOptions = definedExternally,
-    ): T = definedExternally
-
-    fun add(
-        duration: DurationLike,
-        options: ArithmeticOptions = definedExternally,
-    ): T = definedExternally
-
-    fun add(
-        duration: String,
-        options: ArithmeticOptions = definedExternally,
-    ): T = definedExternally
-
-    fun subtract(
-        duration: Duration,
-        options: ArithmeticOptions = definedExternally,
-    ): T = definedExternally
-
-    fun subtract(
-        duration: DurationLike,
-        options: ArithmeticOptions = definedExternally,
-    ): T = definedExternally
-
-    fun subtract(
-        duration: String,
-        options: ArithmeticOptions = definedExternally,
-    ): T = definedExternally
+sealed external interface HasArithmeticOperations<T : HasArithmeticOperations<T, L, U>, in L : Any, U : DateTimeUnit<U>> :
+    HasDurationOperations<T, L, ArithmeticOptions> {
 
     fun until(
         other: T,
