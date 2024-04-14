@@ -28,6 +28,9 @@ external class Duration(
     val sign: Int /* -1 | 0 | 1 */
     val blank: Boolean
     fun negated(): Duration
+
+    @JsName("negated")
+    operator fun unaryMinus(): Duration
     fun abs(): Duration
     fun with(durationLike: DurationLike): Duration
 
