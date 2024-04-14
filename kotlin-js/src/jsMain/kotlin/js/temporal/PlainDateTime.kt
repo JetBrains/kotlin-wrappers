@@ -14,8 +14,6 @@ import js.intl.DateTimeFormatOptions
  * complete information is not required.
  *
  * See https://tc39.es/proposal-temporal/docs/datetime.html for more details.
- *
- * @category Temporal
  */
 external class PlainDateTime(
     isoYear: Int,
