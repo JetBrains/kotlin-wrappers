@@ -1,5 +1,9 @@
 @file:JsQualifier("Temporal")
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package js.temporal
 
 /**
@@ -9,30 +13,20 @@ package js.temporal
  * See https://tc39.es/proposal-temporal/docs/duration.html for more details.
  */
 external class Duration(
-    years: Int = definedExternally,
-    months: Int = definedExternally,
-    weeks: Int = definedExternally,
-    days: Int = definedExternally,
-    hours: Int = definedExternally,
-    minutes: Int = definedExternally,
-    seconds: Int = definedExternally,
-    milliseconds: Int = definedExternally,
-    microseconds: Int = definedExternally,
-    nanoseconds: Int = definedExternally,
+    val years: Int = definedExternally,
+    val months: Int = definedExternally,
+    val weeks: Int = definedExternally,
+    val days: Int = definedExternally,
+    val hours: Int = definedExternally,
+    val minutes: Int = definedExternally,
+    val seconds: Int = definedExternally,
+    val milliseconds: Int = definedExternally,
+    val microseconds: Int = definedExternally,
+    val nanoseconds: Int = definedExternally,
 ) : HasDurationOperations<Duration, DurationArithmeticOptions>,
     LocalizableDateTime {
     val sign: Int /* -1 | 0 | 1 */
     val blank: Boolean
-    val years: Int
-    val months: Int
-    val weeks: Int
-    val days: Int
-    val hours: Int
-    val minutes: Int
-    val seconds: Int
-    val milliseconds: Int
-    val microseconds: Int
-    val nanoseconds: Int
     fun negated(): Duration
     fun abs(): Duration
     fun with(durationLike: DurationLike): Duration
