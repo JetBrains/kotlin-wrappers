@@ -19,7 +19,8 @@ external class Duration(
     milliseconds: Int = definedExternally,
     microseconds: Int = definedExternally,
     nanoseconds: Int = definedExternally,
-) : LocalizableDateTime {
+) : HasDurationOperations<Duration, DurationArithmeticOptions>,
+    LocalizableDateTime {
     val sign: Int /* -1 | 0 | 1 */
     val blank: Boolean
     val years: Int
@@ -35,15 +36,6 @@ external class Duration(
     fun negated(): Duration
     fun abs(): Duration
     fun with(durationLike: DurationLike): Duration
-    fun add(
-        other: Duration, /* | DurationLike | string */
-        options: DurationArithmeticOptions = definedExternally,
-    ): Duration
-
-    fun subtract(
-        other: Duration, /* | DurationLike | string */
-        options: DurationArithmeticOptions = definedExternally,
-    ): Duration
 
     fun round(roundTo: Any /* DurationRoundTo */): Duration
     fun total(totalOf: Any /* DurationTotalOf */): Int
