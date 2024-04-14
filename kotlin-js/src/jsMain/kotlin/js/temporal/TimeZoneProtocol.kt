@@ -4,7 +4,8 @@ import js.array.ReadonlyArray
 import js.objects.JsPlainObject
 
 @JsPlainObject
-sealed external interface TimeZoneProtocol {
+sealed external interface TimeZoneProtocol :
+    TimeZoneLike {
     var id: String
     var getOffsetNanosecondsFor: (instant: Instant /* | string */) -> Int
     var getOffsetStringFor: ((instant: Instant /* | string */) -> String)?
