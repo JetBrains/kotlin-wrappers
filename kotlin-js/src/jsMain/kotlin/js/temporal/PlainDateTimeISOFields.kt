@@ -13,5 +13,5 @@ sealed external interface PlainDateTimeISOFields {
     var isoMillisecond: Int
     var isoMicrosecond: Int
     var isoNanosecond: Int
-    var calendar: String /* | CalendarProtocol */
+    var calendar: Any /* String | CalendarProtocol */
 }
