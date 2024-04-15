@@ -1,13 +1,24 @@
+@file:JsQualifier("Temporal")
+
 package js.temporal
 
 import js.array.ReadonlyArray
 import js.iterable.JsIterable
 import js.objects.Record
 
-sealed external interface CalendarProtocol
-    : CalendarLike {
-    /* var */ val id: String
-    fun year(
+/**
+ * A `Temporal.Calendar` is a representation of a calendar system. It includes
+ * information about how many days are in each year, how many months are in
+ * each year, how many days are in each month, and how to do arithmetic in
+ * that calendar system.
+ *
+ * See https://tc39.es/proposal-temporal/docs/calendar.html for more details.
+ */
+external class Calendar(
+    calendarIdentifier: String,
+) : CalendarProtocol {
+    override val id: String
+    override fun year(
         date: Any,
         /*
         | PlainDate
@@ -18,7 +29,7 @@ sealed external interface CalendarProtocol
         */
     ): Int
 
-    fun month(
+    override fun month(
         date: Any,
         /*
         | PlainDate
@@ -30,7 +41,7 @@ sealed external interface CalendarProtocol
         */
     ): Int
 
-    fun monthCode(
+    override fun monthCode(
         date: Any,
         /*
         | PlainDate
@@ -42,7 +53,7 @@ sealed external interface CalendarProtocol
         */
     ): String
 
-    fun day(
+    override fun day(
         date: Any,
         /*
         | PlainDate
@@ -53,7 +64,7 @@ sealed external interface CalendarProtocol
         */
     ): Int
 
-    fun era(
+    override fun era(
         date: Any,
         /*
         | PlainDate
@@ -63,7 +74,7 @@ sealed external interface CalendarProtocol
         */
     ): String?
 
-    fun eraYear(
+    override fun eraYear(
         date: Any,
         /*
         | PlainDate
@@ -73,7 +84,7 @@ sealed external interface CalendarProtocol
         */
     ): Int?
 
-    fun dayOfWeek(
+    override fun dayOfWeek(
         date: Any,
         /*
         | PlainDate
@@ -83,7 +94,7 @@ sealed external interface CalendarProtocol
         */
     ): Int
 
-    fun dayOfYear(
+    override fun dayOfYear(
         date: Any,
         /*
         | PlainDate
@@ -93,7 +104,7 @@ sealed external interface CalendarProtocol
         */
     ): Int
 
-    fun weekOfYear(
+    override fun weekOfYear(
         date: Any,
         /*
         | PlainDate
@@ -103,7 +114,7 @@ sealed external interface CalendarProtocol
         */
     ): Int
 
-    fun yearOfWeek(
+    override fun yearOfWeek(
         date: Any,
         /*
         | PlainDate
@@ -113,7 +124,7 @@ sealed external interface CalendarProtocol
         */
     ): Int
 
-    fun daysInWeek(
+    override fun daysInWeek(
         date: Any,
         /*
         | PlainDate
@@ -123,18 +134,7 @@ sealed external interface CalendarProtocol
         */
     ): Int
 
-    fun daysInMonth(
-        date: Any,
-        /*
-        | PlainDate
-        | PlainDateTime
-        | PlainYearMonth
-        | PlainDateLike
-        | String
-        */
-    ): Int
-
-    fun daysInYear(
+    override fun daysInMonth(
         date: Any,
         /*
         | PlainDate
@@ -145,7 +145,7 @@ sealed external interface CalendarProtocol
         */
     ): Int
 
-    fun monthsInYear(
+    override fun daysInYear(
         date: Any,
         /*
         | PlainDate
@@ -156,7 +156,18 @@ sealed external interface CalendarProtocol
         */
     ): Int
 
-    fun inLeapYear(
+    override fun monthsInYear(
+        date: Any,
+        /*
+        | PlainDate
+        | PlainDateTime
+        | PlainYearMonth
+        | PlainDateLike
+        | String
+        */
+    ): Int
+
+    override fun inLeapYear(
         date: Any,
         /*
         | PlainDate
@@ -167,39 +178,45 @@ sealed external interface CalendarProtocol
         */
     ): Boolean
 
-    fun dateFromFields(
+    override fun dateFromFields(
         fields: Any, /* YearOrEraAndEraYear & MonthOrMonthCode & { day: number } */
-        options: AssignmentOptions = definedExternally,
+        options: AssignmentOptions, /* = definedExternally */
     ): PlainDate
 
-    fun yearMonthFromFields(
+    override fun yearMonthFromFields(
         fields: Any, /* YearOrEraAndEraYear & MonthOrMonthCode */
-        options: AssignmentOptions = definedExternally,
+        options: AssignmentOptions, /* = definedExternally */
     ): PlainYearMonth
 
-    fun monthDayFromFields(
+    override fun monthDayFromFields(
         fields: Any, /* MonthCodeOrMonthAndYear & { day: number } */
-        options: AssignmentOptions = definedExternally,
+        options: AssignmentOptions, /* = definedExternally */
     ): PlainMonthDay
 
-    fun dateAdd(
+    override fun dateAdd(
         date: PlainDate, /* | PlainDateLike | string */
         duration: Duration, /* | DurationLike | string */
-        options: ArithmeticOptions = definedExternally,
+        options: ArithmeticOptions, /* = definedExternally */
     ): PlainDate
 
-    fun dateUntil(
+    override fun dateUntil(
         one: PlainDate, /* | PlainDateLike | string */
         two: PlainDate, /* | PlainDateLike | string */
-        options: DifferenceOptions<DateUnit<*>> = definedExternally,
+        options: DifferenceOptions<DateUnit<*>>, /* = definedExternally */
     ): Duration
 
-    fun fields(fields: JsIterable<String>): JsIterable<String>
-    fun fields(fields: ReadonlyArray<String>): JsIterable<String>
-    fun mergeFields(
+    override fun fields(fields: JsIterable<String>): /* Array */ JsIterable<String>
+    override fun fields(fields: ReadonlyArray<String>): /* Array */ JsIterable<String>
+    override fun mergeFields(
         fields: Record<String, *>,
         additionalFields: Record<String, *>,
     ): Record<String, *>
-    // toString?(): string;
-    // toJSON?(): string;
+
+    fun toJSON(): String
+
+    companion object {
+        fun from(
+            item: CalendarLike,
+        ): /* Calendar | */ CalendarProtocol
+    }
 }
