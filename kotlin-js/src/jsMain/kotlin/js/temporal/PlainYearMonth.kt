@@ -10,8 +10,6 @@ import js.objects.JsPlainObject
  * recurring event, like "the June 2019 meeting".
  *
  * See https://tc39.es/proposal-temporal/docs/yearmonth.html for more details.
- *
- * @category Temporal
  */
 external class PlainYearMonth(
     isoYear: Int,
