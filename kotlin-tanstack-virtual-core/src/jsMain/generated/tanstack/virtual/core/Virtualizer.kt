@@ -18,6 +18,7 @@ external class Virtualizer<TScrollElement : EventTarget /* Element | Window */, 
     var scrollRect: Rect
     var scrollOffset: Int
     var scrollDirection: ScrollDirection?
+    var shouldAdjustScrollPositionOnItemSizeChange: ((item: VirtualItem, delta: Int, instance: Virtualizer<TScrollElement, TItemElement>) -> Boolean)?
     var measureElementCache: ReadonlyMap<Key, TItemElement>
     var range: ItemRange?
 
