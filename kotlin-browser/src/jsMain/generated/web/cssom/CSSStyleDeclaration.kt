@@ -1831,6 +1831,7 @@ sealed external class CSSStyleDeclaration :
      */
     var textWrap: String
     var textWrapMode: String
+    var textWrapStyle: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/top)

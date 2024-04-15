@@ -8,5 +8,6 @@ import js.objects.JsPlainObject
 sealed external interface ShadowRootInit {
     var delegatesFocus: Boolean?
     var mode: ShadowRootMode
+    var serializable: Boolean?
     var slotAssignment: SlotAssignmentMode?
 }

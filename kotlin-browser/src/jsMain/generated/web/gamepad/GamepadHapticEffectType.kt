@@ -14,5 +14,8 @@ sealed external interface GamepadHapticEffectType {
     companion object {
         @JsValue("dual-rumble")
         val dualRumble: GamepadHapticEffectType
+
+        @JsValue("trigger-rumble")
+        val triggerRumble: GamepadHapticEffectType
     }
 }

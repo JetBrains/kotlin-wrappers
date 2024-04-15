@@ -8,6 +8,8 @@ import js.objects.JsPlainObject
 @JsPlainObject
 sealed external interface GamepadEffectParameters {
     var duration: JsLong?
+    var leftTrigger: Double?
+    var rightTrigger: Double?
     var startDelay: JsLong?
     var strongMagnitude: Double?
     var weakMagnitude: Double?

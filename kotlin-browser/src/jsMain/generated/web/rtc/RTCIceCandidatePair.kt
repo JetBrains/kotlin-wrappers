@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 sealed external interface RTCIceCandidatePair {
-    var local: RTCIceCandidate?
-    var remote: RTCIceCandidate?
+    var local: RTCIceCandidate
+    var remote: RTCIceCandidate
 }
