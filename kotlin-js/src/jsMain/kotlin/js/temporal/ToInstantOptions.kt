@@ -29,5 +29,5 @@ sealed external interface ToInstantOptions {
      *
      * The default is `'compatible'`.
      */
-    var disambiguation: String? /* "compatible" | "earlier" | "later" | "reject" */
+    var disambiguation: Disambiguation?
 }
