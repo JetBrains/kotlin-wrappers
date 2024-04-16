@@ -8,6 +8,7 @@ package js.temporal
 
 import js.core.BigInt
 import js.core.JsLong
+import js.objects.JsPlainObject
 
 /**
  * A `Temporal.Instant` is an exact point in time, with a precision in
@@ -36,8 +37,14 @@ external class Instant(
     // fun equals(other: string): Boolean
 
     fun toZonedDateTime(
-        calendarAndTimeZone: Any, /* { timeZone: TimeZoneLike; calendar: CalendarLike } */
+        options: ToZonedDateTimeOptions,
     ): ZonedDateTime
+
+    @JsPlainObject
+    sealed interface ToZonedDateTimeOptions {
+        var timeZone: TimeZoneLike
+        var calendar: CalendarLike
+    }
 
     fun toZonedDateTimeISO(tzLike: TimeZoneLike): ZonedDateTime
 
