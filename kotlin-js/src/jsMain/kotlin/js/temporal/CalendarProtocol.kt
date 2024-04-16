@@ -2,6 +2,7 @@ package js.temporal
 
 import js.array.ReadonlyArray
 import js.iterable.JsIterable
+import js.objects.JsPlainObject
 import js.objects.Record
 
 sealed external interface CalendarProtocol
@@ -168,19 +169,37 @@ sealed external interface CalendarProtocol
     ): Boolean
 
     fun dateFromFields(
-        fields: Any, /* YearOrEraAndEraYear & MonthOrMonthCode & { day: number } */
+        fields: DateFromFields,
         options: AssignmentOptions = definedExternally,
     ): PlainDate
 
+    @JsPlainObject
+    sealed interface DateFromFields :
+        YearOrEraAndEraYear,
+        MonthOrMonthCode {
+        var day: Int
+    }
+
     fun yearMonthFromFields(
-        fields: Any, /* YearOrEraAndEraYear & MonthOrMonthCode */
+        fields: YearMonthFromFields,
         options: AssignmentOptions = definedExternally,
     ): PlainYearMonth
 
+    @JsPlainObject
+    sealed interface YearMonthFromFields :
+        YearOrEraAndEraYear,
+        MonthOrMonthCode
+
     fun monthDayFromFields(
-        fields: Any, /* MonthCodeOrMonthAndYear & { day: number } */
+        fields: MonthDayFromFields,
         options: AssignmentOptions = definedExternally,
     ): PlainMonthDay
+
+    @JsPlainObject
+    sealed interface MonthDayFromFields :
+        MonthCodeOrMonthAndYear {
+        var day: Int
+    }
 
     fun dateAdd(
         date: PlainDate, /* | PlainDateLike | string */

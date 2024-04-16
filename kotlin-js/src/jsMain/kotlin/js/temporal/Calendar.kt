@@ -5,6 +5,7 @@ package js.temporal
 import js.array.ReadonlyArray
 import js.iterable.JsIterable
 import js.objects.Record
+import js.temporal.CalendarProtocol.*
 
 /**
  * A `Temporal.Calendar` is a representation of a calendar system. It includes
@@ -179,17 +180,17 @@ external class Calendar(
     ): Boolean
 
     override fun dateFromFields(
-        fields: Any, /* YearOrEraAndEraYear & MonthOrMonthCode & { day: number } */
+        fields: DateFromFields,
         options: AssignmentOptions, /* = definedExternally */
     ): PlainDate
 
     override fun yearMonthFromFields(
-        fields: Any, /* YearOrEraAndEraYear & MonthOrMonthCode */
+        fields: YearMonthFromFields,
         options: AssignmentOptions, /* = definedExternally */
     ): PlainYearMonth
 
     override fun monthDayFromFields(
-        fields: Any, /* MonthCodeOrMonthAndYear & { day: number } */
+        fields: MonthDayFromFields,
         options: AssignmentOptions, /* = definedExternally */
     ): PlainMonthDay
 
