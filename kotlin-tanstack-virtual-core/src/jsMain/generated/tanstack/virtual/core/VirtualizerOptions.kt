@@ -13,7 +13,7 @@ external interface VirtualizerOptions<TScrollElement : EventTarget /* Element | 
     var estimateSize: (index: Int) -> Int
     var scrollToFn: (offset: Int, options: ScrollOptions, instance: Virtualizer<TScrollElement, TItemElement>) -> Unit
     var observeElementRect: (instance: Virtualizer<TScrollElement, TItemElement>, cb: (rect: Rect) -> Unit) -> (() -> Unit)?
-    var observeElementOffset: (instance: Virtualizer<TScrollElement, TItemElement>, cb: (offset: Int) -> Unit) -> (() -> Unit)?
+    var observeElementOffset: (instance: Virtualizer<TScrollElement, TItemElement>, cb: (offset: Int, isScrolling: Boolean) -> Unit) -> (() -> Unit)?
     var debug: Any?
     var initialRect: Rect?
     var onChange: ((instance: Virtualizer<TScrollElement, TItemElement>, sync: Boolean) -> Unit)?
@@ -29,7 +29,6 @@ external interface VirtualizerOptions<TScrollElement : EventTarget /* Element | 
     var rangeExtractor: ((range: Range) -> ReadonlyArray<Int>)?
     var scrollMargin: Int?
     var gap: Int?
-    var scrollingDelay: Int?
     var indexAttribute: String?
     var initialMeasurementsCache: ReadonlyArray<VirtualItem>?
     var lanes: Int?
