@@ -4,7 +4,8 @@ import seskar.js.JsPrimitive
 
 @JsPrimitive
 @JsExternalInheritorsOnly
-open external class Symbol {
+open external class Symbol
+protected /* private */ constructor() {
     val description: String?
 
     object asyncDispose : Symbol
