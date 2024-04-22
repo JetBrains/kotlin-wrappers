@@ -1,5 +1,7 @@
 package js.iterable
 
+import js.array.ReadonlyArray
+
 @JsName("Iterator")
 abstract external class JsIterator<out T> :
     JsIteratorLike<T> {
@@ -9,7 +11,8 @@ abstract external class JsIterator<out T> :
     fun filter(predicate: (T) -> Boolean): JsIterator<T>
     fun find(predicate: (T) -> Boolean): T?
 
-    // fun flatMap()
+    fun <R> flatMap(transform: (T) -> JsIterable<R>): JsIterator<R>
+    fun <R> flatMap(transform: (T) -> ReadonlyArray<R>): JsIterator<R>
     fun forEach(action: (item: T) -> Unit)
     fun <R> map(transform: (T) -> R): JsIterator<R>
 
