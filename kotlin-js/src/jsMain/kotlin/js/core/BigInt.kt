@@ -29,6 +29,12 @@ sealed external class BigInt :
     inline operator fun div(other: BigInt): BigInt =
         (unsafeCast<Double>() / other.unsafeCast<Double>()).unsafeCast<BigInt>()
 
+    operator fun inc(): BigInt =
+        this + 1.n
+
+    operator fun dec(): BigInt =
+        this - 1.n
+
     /**
      * Returns a string representation of an object.
      * @param radix Specifies a radix for converting numeric values to strings.
