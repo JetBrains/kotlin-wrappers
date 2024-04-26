@@ -26,7 +26,10 @@
         "/lib": ""
     },
     "importMapper": {
-        "@remix-run/router": "remix.run.router",
+        "@remix-run/router": {
+            "unstable_DataStrategyFunction": "remix.run.router.DataStrategyFunction as unstable_DataStrategyFunction",
+            ".+": "remix.run.router."
+        },
         "react": {
             "\\*": ""
         },

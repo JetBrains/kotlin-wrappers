@@ -7,6 +7,8 @@ package react.router
 import remix.run.router.Location
 import remix.run.router.RouterState
 
+external fun useRoutesImpl(routes: js.array.ReadonlyArray<RouteObject>): react.ReactElement<*>?
+
 external fun useRoutesImpl(
     routes: js.array.ReadonlyArray<RouteObject>,
     locationArg: Location<*> = definedExternally,

@@ -20,7 +20,10 @@
         ".*": "react-router-dom"
     },
     "importMapper": {
-        "@remix-run/router": "remix.run.router",
+        "@remix-run/router": {
+            "unstable_DataStrategyFunction": "remix.run.router.DataStrategyFunction as unstable_DataStrategyFunction",
+            ".+": "remix.run.router."
+        },
         "react-router": {
             "RelativeRoutingType": "remix.run.router.RelativeRoutingType",
             "To": "remix.run.router.To",

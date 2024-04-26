@@ -4,6 +4,7 @@ package react.router
 
 import remix.run.router.HydrationState
 import remix.run.router.InitialEntry
+import remix.run.router.DataStrategyFunction as unstable_DataStrategyFunction
 import remix.run.router.FutureConfig as RouterFutureConfig
 
 
@@ -13,4 +14,5 @@ sealed external interface CreateMemoryRouterOpts {
     var hydrationData: HydrationState?
     var initialEntries: js.array.ReadonlyArray<InitialEntry>?
     var initialIndex: Double?
+    var unstable_dataStrategy: unstable_DataStrategyFunction?
 }

@@ -16,4 +16,11 @@ import remix.run.router.PathPattern
  */
 external fun useMatch(pattern: PathPattern): PathMatch?
 
+/**
+ * Returns a PathMatch object if the given pattern matches the current URL.
+ * This is useful for components that need to know "active" state, e.g.
+ * `<NavLink>`.
+ *
+ * @see https://reactrouter.com/hooks/use-match
+ */
 external fun useMatch(pattern: String): PathMatch?

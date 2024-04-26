@@ -3,9 +3,7 @@
 
 package react.router
 
-import remix.run.router.ActionFunction
 import remix.run.router.LazyRouteFunction
-import remix.run.router.LoaderFunction
 import remix.run.router.ShouldRevalidateFunction
 
 
@@ -13,12 +11,12 @@ sealed external interface RouteObject {
     var caseSensitive: Boolean?
     var path: String?
     var id: String?
-    var loader: LoaderFunction<Any?>?
-    var action: ActionFunction<Any?>?
+    var loader: Any? /* boolean | LoaderFunction<any> | undefined */
+    var action: Any? /* boolean | ActionFunction<any> | undefined */
     var hasErrorBoundary: Boolean?
     var shouldRevalidate: ShouldRevalidateFunction?
     var handle: Any?
-    var index: Boolean?
+    var index: Boolean /* false */?
     var children: js.array.ReadonlyArray<RouteObject>?
     var element: react.ReactNode?
     var hydrateFallbackElement: react.ReactNode?
