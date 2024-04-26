@@ -4,7 +4,14 @@ import org.gradle.kotlin.dsl.registering
 
 val k2patch by tasks.registering {
     patchFile("gradle.properties") {
-        it.replace("kotlin.version=1.9.23", "kotlin.version=2.0.0-RC1")
+        it.replace(
+            "kotlin.version=1.9.23",
+            "kotlin.version=2.0.0-RC1",
+        )
+    }
+
+    patchFile("buildSrc/src/main/kotlin/Plugins.kt") {
+        it.replace("""id("io.github.sgrishchenko.karakum")""", "")
     }
 }
 
