@@ -44,7 +44,10 @@ val printBenchmarkResults by tasks.registering {
             "InjectCssNPlusOne"
         )
         fileNames.forEach { test ->
-            val report = buildDir.resolve("reports/tests/test/classes/benchmark.$test.html").readText()
+            val report = layout.buildDirectory
+                .file("reports/tests/test/classes/benchmark.$test.html")
+                .get().asFile.readText()
+
             "#.*;".toRegex().findAll(report).map { it.value }.forEach { stdout ->
                 val benchmarks = stdout.split(";").mapNotNull {
                     if (it.isEmpty()) {
