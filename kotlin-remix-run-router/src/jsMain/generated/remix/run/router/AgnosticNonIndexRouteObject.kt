@@ -10,5 +10,5 @@ package remix.run.router
 
 sealed external interface AgnosticNonIndexRouteObject : AgnosticBaseRouteObject {
     var children: js.array.ReadonlyArray<AgnosticRouteObject>?
-    var index: Boolean?
+    var index: Boolean /* false */?
 }

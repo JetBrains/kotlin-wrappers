@@ -7,4 +7,4 @@ package remix.run.router
 /**
  * Route action function signature
  */
-typealias ActionFunction<Context> = (args: ActionFunctionArgs<Context>) -> js.promise.PromiseResult<DataFunctionValue>
+typealias ActionFunction<Context> = (args: ActionFunctionArgs<Context>, handlerCtx: Any? /* use undefined for default */) -> DataFunctionReturnValue

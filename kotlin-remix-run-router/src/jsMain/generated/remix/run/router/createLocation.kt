@@ -15,6 +15,9 @@ external fun createLocation(
     key: String = definedExternally,
 ): Location<*>
 
+/**
+ * Creates a Location object with a unique key from the given Path
+ */
 external fun createLocation(
     current: Location<*>,
     to: To,

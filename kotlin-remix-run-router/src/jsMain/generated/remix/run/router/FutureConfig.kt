@@ -14,4 +14,5 @@ sealed external interface FutureConfig {
     var v7_partialHydration: Boolean
     var v7_prependBasename: Boolean
     var v7_relativeSplatPath: Boolean
+    var unstable_skipActionErrorRevalidation: Boolean
 }

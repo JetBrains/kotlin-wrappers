@@ -12,5 +12,6 @@ import web.http.Headers
 sealed external interface ErrorResult {
     var type: ResultType /* ResultType.error */
     var error: Any?
+    var statusCode: Double?
     var headers: Headers?
 }

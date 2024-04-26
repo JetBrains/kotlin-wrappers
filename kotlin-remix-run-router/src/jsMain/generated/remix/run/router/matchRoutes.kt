@@ -15,6 +15,11 @@ external fun <RouteObjectType : AgnosticRouteObject /* default is AgnosticRouteO
     basename: String = definedExternally,
 ): js.array.ReadonlyArray<AgnosticRouteMatch<RouteObjectType>>?
 
+/**
+ * Matches the given routes to a location and returns the match data.
+ *
+ * @see https://reactrouter.com/utils/match-routes
+ */
 external fun <RouteObjectType : AgnosticRouteObject /* default is AgnosticRouteObject */> matchRoutes(
     routes: js.array.ReadonlyArray<RouteObjectType>,
     locationArg: String,

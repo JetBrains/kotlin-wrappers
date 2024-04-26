@@ -3,6 +3,7 @@
 
 package remix.run.router
 
+import web.http.Response
 
 /**
  * Redirect result from a loader or action
@@ -10,8 +11,5 @@ package remix.run.router
 
 sealed external interface RedirectResult {
     var type: ResultType /* ResultType.redirect */
-    var status: Double
-    var location: String
-    var revalidate: Boolean
-    var reloadDocument: Boolean?
+    var response: Response
 }

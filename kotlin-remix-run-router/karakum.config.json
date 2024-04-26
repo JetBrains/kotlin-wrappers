@@ -37,7 +37,16 @@
         "DataFunctionArgs.kt": [
             "web.http.Request"
         ],
+        "DataStrategyFunction.kt": [
+            "js.promise.Promise"
+        ],
+        "DataStrategyMatch.kt": [
+            "js.promise.Promise"
+        ],
         "RedirectFunction.kt": [
+            "web.http.Response"
+        ],
+        "RedirectResult.kt": [
             "web.http.Response"
         ],
         "JsonFunction.kt": [

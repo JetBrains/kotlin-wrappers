@@ -21,6 +21,7 @@ sealed external interface ShouldRevalidateFunctionArgs {
     var text: String?
     var formData: FormData?
     var json: JsonValue
+    var unstable_actionStatus: Double?
     var actionResult: Any?
     var defaultShouldRevalidate: Boolean
 }

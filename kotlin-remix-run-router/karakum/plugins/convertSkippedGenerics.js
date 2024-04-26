@@ -10,6 +10,7 @@ export default function (node, context, render) {
             || node.typeName.text === "ActionFunction"
             || node.typeName.text === "Fetcher"
             || node.typeName.text === "Location"
+            || node.typeName.text === "DataStrategyFunctionArgs"
         )
         && !node.typeArguments
     ) {

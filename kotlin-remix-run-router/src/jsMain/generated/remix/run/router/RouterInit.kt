@@ -22,4 +22,5 @@ sealed external interface RouterInit {
     var future: FutureConfig?
     var hydrationData: HydrationState?
     var window: Window?
+    var unstable_dataStrategy: DataStrategyFunction?
 }
