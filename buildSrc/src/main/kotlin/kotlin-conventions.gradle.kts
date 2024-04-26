@@ -59,3 +59,7 @@ tasks.withType<Kotlin2JsCompile>().configureEach {
         */
     }
 }
+
+if (version("kotlin").startsWith("2.")) {
+    apply(plugin = "k2-conventions")
+}
