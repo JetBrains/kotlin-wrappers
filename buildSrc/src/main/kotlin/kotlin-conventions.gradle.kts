@@ -50,8 +50,12 @@ tasks.withType<Kotlin2JsCompile>().configureEach {
         moduleKind = JsModuleKind.MODULE_ES
         useEsClasses = true
 
+        // TODO: Enable after resolving
+        //  https://youtrack.jetbrains.com/issue/KT-67355
+        /*
         freeCompilerArgs.addAll(
             "-Xir-generate-inline-anonymous-functions",
         )
+        */
     }
 }
