@@ -60,6 +60,6 @@ tasks.withType<Kotlin2JsCompile>().configureEach {
     }
 }
 
-if (version("kotlin").startsWith("2.")) {
+if (k2mode) {
     apply(plugin = "k2-conventions")
 }
