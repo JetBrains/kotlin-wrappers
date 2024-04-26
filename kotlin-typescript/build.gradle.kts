@@ -1,5 +1,6 @@
 plugins {
     `kotlin-library-conventions`
+    karakum()
 }
 
 dependencies {

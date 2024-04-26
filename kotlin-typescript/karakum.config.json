@@ -1,0 +1,25 @@
+{
+    "input": [
+        "<nodeModules>/kotlin-typescript/node_modules/typescript/lib/typescript.d.ts"
+    ],
+    "output": "src/jsMain/generated/ts",
+    "ignoreOutput": [
+        "**/server/**"
+    ],
+    "libraryName": "ts",
+    "libraryNameOutputPrefix": true,
+    "granularity": "top-level",
+    "moduleNameMapper": {
+    },
+    "packageNameMapper": {
+        "createProgram.kt": "createProgram.fun.kt"
+    },
+    "importInjector": {
+
+    },
+    "namespaceStrategy": {
+        "ScriptSnapshot": "object",
+        "JsTyping": "object",
+        "ts": "package"
+    }
+}
