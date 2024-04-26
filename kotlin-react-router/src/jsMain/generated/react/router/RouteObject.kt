@@ -3,7 +3,9 @@
 
 package react.router
 
+import remix.run.router.ActionLike
 import remix.run.router.LazyRouteFunction
+import remix.run.router.LoaderLike
 import remix.run.router.ShouldRevalidateFunction
 
 
@@ -11,8 +13,8 @@ sealed external interface RouteObject {
     var caseSensitive: Boolean?
     var path: String?
     var id: String?
-    var loader: Any? /* boolean | LoaderFunction<any> | undefined */
-    var action: Any? /* boolean | ActionFunction<any> | undefined */
+    var loader: LoaderLike
+    var action: ActionLike
     var hasErrorBoundary: Boolean?
     var shouldRevalidate: ShouldRevalidateFunction?
     var handle: Any?

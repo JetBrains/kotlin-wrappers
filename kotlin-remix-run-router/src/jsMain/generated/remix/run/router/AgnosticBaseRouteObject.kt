@@ -12,8 +12,8 @@ sealed external interface AgnosticBaseRouteObject {
     var caseSensitive: Boolean?
     var path: String?
     var id: String?
-    var loader: (Any /* LoaderFunction | boolean */)?
-    var action: (Any /* ActionFunction | boolean */)?
+    var loader: (LoaderLike)?
+    var action: (ActionLike)?
     var hasErrorBoundary: Boolean?
     var shouldRevalidate: ShouldRevalidateFunction?
     var handle: Any?

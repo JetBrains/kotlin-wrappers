@@ -7,4 +7,13 @@ package remix.run.router
 /**
  * Route action function signature
  */
-typealias ActionFunction<Context> = (args: ActionFunctionArgs<Context>, handlerCtx: Any? /* use undefined for default */) -> DataFunctionReturnValue
+
+sealed external interface ActionFunction<Context /* default is Any? */> : ActionLike {
+
+    @seskar.js.JsNative
+    operator fun invoke(
+        args: ActionFunctionArgs<Context>,
+        handlerCtx: Any? = definedExternally,
+    ): DataFunctionReturnValue
+
+}

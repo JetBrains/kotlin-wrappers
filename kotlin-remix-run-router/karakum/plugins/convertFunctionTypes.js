@@ -6,8 +6,6 @@ export default function (node, context, render) {
         ts.isInterfaceDeclaration(node)
         && (
             node.name.text === "Listener"
-            || node.name.text === "ActionFunction"
-            || node.name.text === "LoaderFunction"
             || node.name.text === "ShouldRevalidateFunction"
             || node.name.text === "GetScrollPositionFunction"
             || node.name.text === "GetScrollRestorationKeyFunction"

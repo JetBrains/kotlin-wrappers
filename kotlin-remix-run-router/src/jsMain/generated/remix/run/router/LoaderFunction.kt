@@ -8,7 +8,7 @@ package remix.run.router
  * Route loader function signature
  */
 
-sealed external interface LoaderFunction<Context /* default is Any? */> {
+sealed external interface LoaderFunction<Context /* default is Any? */> : LoaderLike {
 
     @seskar.js.JsNative
     operator fun invoke(

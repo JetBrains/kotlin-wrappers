@@ -46,8 +46,8 @@
             "remix.run.router.Path"
         ],
         "RouteObject.kt": [
-            "remix.run.router.LoaderFunction",
-            "remix.run.router.ActionFunction",
+            "remix.run.router.LoaderLike",
+            "remix.run.router.ActionLike",
             "remix.run.router.ShouldRevalidateFunction"
         ],
         "useNavigation.kt": [
