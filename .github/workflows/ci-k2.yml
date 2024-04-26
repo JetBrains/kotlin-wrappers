@@ -21,4 +21,5 @@ jobs:
           java-version: '17'
       - name: Build
         run: |
-          ./gradlew build -Pkotlin.version=2.0.0-RC1 -Ptest=false
+          ./gradlew k2patch
+          ./gradlew build -Ptest=false
