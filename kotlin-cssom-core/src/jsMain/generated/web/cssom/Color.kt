@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "WRONG_EXTERNAL_DECLARATION",
-)
-
 package web.cssom
 
 import seskar.js.JsValue
