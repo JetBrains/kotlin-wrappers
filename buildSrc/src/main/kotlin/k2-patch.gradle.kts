@@ -1,7 +1,3 @@
-import org.gradle.kotlin.dsl.getValue
-import org.gradle.kotlin.dsl.provideDelegate
-import org.gradle.kotlin.dsl.registering
-
 val k2patch by tasks.registering {
     patchFile("gradle.properties") {
         it.replace(
@@ -12,6 +8,14 @@ val k2patch by tasks.registering {
 
     patchFile("buildSrc/src/main/kotlin/Plugins.kt") {
         it.replace("""id("io.github.sgrishchenko.karakum")""", "")
+    }
+
+    // WA for KT-67628
+    patchFile("kotlin-js/src/jsMain/kotlin/js/iterable/IteratorYieldResult.kt") {
+        it.replace(
+            "IteratorResult<TYield, Void>",
+            "IteratorResult<TYield, Nothing?>",
+        )
     }
 }
 
