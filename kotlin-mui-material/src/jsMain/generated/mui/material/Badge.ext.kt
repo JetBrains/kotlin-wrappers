@@ -5,9 +5,6 @@ package mui.material
 import seskar.js.JsValue
 import seskar.js.JsVirtual
 
-@Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
 @JsVirtual
 sealed external interface BadgeColor {
     companion object {
@@ -34,9 +31,6 @@ sealed external interface BadgeColor {
     }
 }
 
-@Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
 @JsVirtual
 sealed external interface BadgeVariant {
     companion object {
@@ -48,9 +42,6 @@ sealed external interface BadgeVariant {
     }
 }
 
-@Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
 @JsVirtual
 sealed external interface BadgeOverlap {
     companion object {
@@ -62,9 +53,6 @@ sealed external interface BadgeOverlap {
     }
 }
 
-@Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
 @JsVirtual
 sealed external interface BadgeOriginVertical {
     companion object {
@@ -76,9 +64,6 @@ sealed external interface BadgeOriginVertical {
     }
 }
 
-@Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
 @JsVirtual
 sealed external interface BadgeOriginHorizontal {
     companion object {

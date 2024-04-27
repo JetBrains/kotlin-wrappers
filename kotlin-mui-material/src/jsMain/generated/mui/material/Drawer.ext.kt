@@ -5,9 +5,6 @@ package mui.material
 import seskar.js.JsValue
 import seskar.js.JsVirtual
 
-@Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
 @JsVirtual
 sealed external interface DrawerVariant {
     companion object {
@@ -22,9 +19,6 @@ sealed external interface DrawerVariant {
     }
 }
 
-@Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
 @JsVirtual
 sealed external interface DrawerAnchor {
     companion object {

@@ -5,9 +5,6 @@ package mui.material
 import seskar.js.JsValue
 import seskar.js.JsVirtual
 
-@Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
 @JsVirtual
 sealed external interface SnackbarCloseReason {
     companion object {
@@ -22,9 +19,6 @@ sealed external interface SnackbarCloseReason {
     }
 }
 
-@Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
 @JsVirtual
 sealed external interface SnackbarOriginVertical {
     companion object {
@@ -36,9 +30,6 @@ sealed external interface SnackbarOriginVertical {
     }
 }
 
-@Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
 @JsVirtual
 sealed external interface SnackbarOriginHorizontal {
     companion object {

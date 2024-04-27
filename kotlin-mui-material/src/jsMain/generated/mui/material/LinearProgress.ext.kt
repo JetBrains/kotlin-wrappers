@@ -5,9 +5,6 @@ package mui.material
 import seskar.js.JsValue
 import seskar.js.JsVirtual
 
-@Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
 @JsVirtual
 sealed external interface LinearProgressColor {
     companion object {
@@ -34,9 +31,6 @@ sealed external interface LinearProgressColor {
     }
 }
 
-@Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
 @JsVirtual
 sealed external interface LinearProgressVariant {
     companion object {

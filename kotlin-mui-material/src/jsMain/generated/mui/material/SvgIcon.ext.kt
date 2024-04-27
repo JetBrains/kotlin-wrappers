@@ -5,9 +5,6 @@ package mui.material
 import seskar.js.JsValue
 import seskar.js.JsVirtual
 
-@Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
 @JsVirtual
 sealed external interface SvgIconColor {
     companion object {
@@ -40,9 +37,6 @@ sealed external interface SvgIconColor {
     }
 }
 
-@Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
 @JsVirtual
 sealed external interface SvgIconSize {
     companion object {

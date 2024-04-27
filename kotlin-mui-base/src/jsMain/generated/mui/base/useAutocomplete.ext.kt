@@ -5,9 +5,6 @@ package mui.base
 import seskar.js.JsValue
 import seskar.js.JsVirtual
 
-@Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
 @JsVirtual
 sealed external interface AutocompleteHighlightChangeReason {
     companion object {
@@ -25,9 +22,6 @@ sealed external interface AutocompleteHighlightChangeReason {
     }
 }
 
-@Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
 @JsVirtual
 sealed external interface AutocompleteChangeReason {
     companion object {
@@ -48,9 +42,6 @@ sealed external interface AutocompleteChangeReason {
     }
 }
 
-@Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
 @JsVirtual
 sealed external interface AutocompleteCloseReason {
     companion object {
@@ -74,9 +65,6 @@ sealed external interface AutocompleteCloseReason {
     }
 }
 
-@Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
 @JsVirtual
 sealed external interface AutocompleteInputChangeReason {
     companion object {
@@ -91,9 +79,6 @@ sealed external interface AutocompleteInputChangeReason {
     }
 }
 
-@Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
 @JsVirtual
 sealed external interface MatchFrom {
     companion object {
@@ -105,9 +90,6 @@ sealed external interface MatchFrom {
     }
 }
 
-@Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
 @JsVirtual
 sealed external interface BlurOnSelect {
     companion object {

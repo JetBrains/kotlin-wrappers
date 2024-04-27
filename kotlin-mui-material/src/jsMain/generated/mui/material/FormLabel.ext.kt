@@ -7,9 +7,6 @@ import seskar.js.JsVirtual
 
 typealias FormLabelBaseProps = react.dom.html.LabelHTMLAttributes<web.html.HTMLLabelElement>
 
-@Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
 @JsVirtual
 sealed external interface FormLabelColor {
     companion object {

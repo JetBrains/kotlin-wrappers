@@ -5,9 +5,6 @@ package mui.material
 import seskar.js.JsValue
 import seskar.js.JsVirtual
 
-@Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
 @JsVirtual
 sealed external interface TabsVariant {
     companion object {
@@ -22,9 +19,6 @@ sealed external interface TabsVariant {
     }
 }
 
-@Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
 @JsVirtual
 sealed external interface TabsIndicatorColor {
     companion object {
@@ -36,9 +30,6 @@ sealed external interface TabsIndicatorColor {
     }
 }
 
-@Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
 @JsVirtual
 sealed external interface TabsTextColor {
     companion object {
@@ -53,9 +44,6 @@ sealed external interface TabsTextColor {
     }
 }
 
-@Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
 @JsVirtual
 sealed external interface TabsScrollButtons {
     companion object {

@@ -5,9 +5,6 @@ package mui.base
 import seskar.js.JsValue
 import seskar.js.JsVirtual
 
-@Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
 @JsVirtual
 sealed external interface FocusManagementType {
     companion object {
@@ -19,9 +16,6 @@ sealed external interface FocusManagementType {
     }
 }
 
-@Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
 @JsVirtual
 sealed external interface SelectionMode {
     companion object {

@@ -5,9 +5,6 @@ package muix.pickers
 import seskar.js.JsValue
 import seskar.js.JsVirtual
 
-@Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
 @JsVirtual
 sealed external interface CalendarPickerView {
     companion object {

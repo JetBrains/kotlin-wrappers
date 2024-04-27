@@ -7,9 +7,6 @@ import seskar.js.JsVirtual
 
 typealias TableCellBaseProps = react.dom.html.TdHTMLAttributes<web.html.HTMLTableCellElement>
 
-@Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
 @JsVirtual
 sealed external interface SortDirection {
     companion object {
@@ -24,9 +21,6 @@ sealed external interface SortDirection {
     }
 }
 
-@Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
 @JsVirtual
 sealed external interface TableCellVariant {
     companion object {
@@ -43,9 +37,6 @@ sealed external interface TableCellVariant {
 
 typealias TableCellAlign = react.dom.html.TdAlign /* 'inherit' | 'left' | 'center' | 'right' | 'justify' */
 
-@Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
 @JsVirtual
 sealed external interface TableCellPadding {
     companion object {
