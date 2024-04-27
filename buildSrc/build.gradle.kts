@@ -12,8 +12,12 @@ val props = Properties().apply {
     file("../gradle.properties").inputStream().use { load(it) }
 }
 
-fun version(target: String): String =
-    props.getProperty("${target}.version")
+fun version(target: String): String {
+    val propertyName = "${target}.version"
+    val value = props.getProperty(propertyName)
+    println("BUILD. $propertyName : $value")
+    return value
+}
 
 dependencies {
     implementation(kotlin("gradle-plugin", version("kotlin")))
