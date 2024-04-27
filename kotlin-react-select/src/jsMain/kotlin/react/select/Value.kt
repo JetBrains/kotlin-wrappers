@@ -26,9 +26,11 @@ fun <T : Any> Value<T>?.asArray(): ReadonlyArray<T> {
 }
 
 fun <T : Any> Value<T>.single(): T {
-    require(this !is Array<*>) {
+    val value: Any = this
+
+    require(value !is Array<*>) {
         "Single value required, but array found instead"
     }
 
-    return unsafeCast<T>()
+    return value.unsafeCast<T>()
 }
