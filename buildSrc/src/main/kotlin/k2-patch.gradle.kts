@@ -17,6 +17,14 @@ val k2patch by tasks.registering {
             "IteratorResult<TYield, Nothing?>",
         )
     }
+
+    // WA for KT-67625
+    patchFile("kotlin-react/src/jsMain/kotlin/react/createElementOrNull.kt") {
+        it.replace(
+            "ReadonlyArray<ReactNode?>",
+            "Array<out ReactNode?>",
+        )
+    }
 }
 
 fun patchFile(
