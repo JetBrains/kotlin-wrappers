@@ -1,5 +1,6 @@
 @file:Suppress(
     "JS_FAKE_NAME_CLASH",
+    "NOTHING_TO_INLINE",
 )
 
 package csstype
