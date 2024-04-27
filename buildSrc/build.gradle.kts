@@ -15,7 +15,7 @@ val props = Properties().apply {
 fun version(target: String): String {
     val propertyName = "${target}.version"
     val value = props.getProperty(propertyName)
-    println("BUILD. $propertyName : $value")
+    println("Build using $propertyName: $value")
     return value
 }
 
