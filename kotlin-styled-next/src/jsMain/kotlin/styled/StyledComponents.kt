@@ -1,3 +1,7 @@
+@file:Suppress(
+    "NOTHING_TO_INLINE",
+)
+
 package styled
 
 import js.core.delete
