@@ -1,7 +1,3 @@
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package react.beautiful.dnd
 
 import seskar.js.JsValue

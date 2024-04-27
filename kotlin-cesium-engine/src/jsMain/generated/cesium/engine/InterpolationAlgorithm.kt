@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
