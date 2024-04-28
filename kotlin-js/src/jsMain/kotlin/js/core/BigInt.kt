@@ -5,12 +5,14 @@
 
     "EXTERNAL_TYPE_EXTENDS_NON_EXTERNAL_TYPE",
 )
+
 package js.core
 
 import seskar.js.JsPrimitive
 
 @JsPrimitive
-sealed external class BigInt :
+external class BigInt
+private constructor() :
     BigIntComparableAdapter,
     Comparable<BigInt> {
 
