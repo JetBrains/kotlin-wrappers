@@ -8,7 +8,8 @@ package cesium.engine
  * A [MaterialProperty] that maps to PolylineArrow [Material] uniforms.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineArrowMaterialProperty.html">Online Documentation</a>
  */
-external class PolylineArrowMaterialProperty() : MaterialProperty {
+external class PolylineArrowMaterialProperty() :
+    MaterialProperty {
     constructor(color: Property)
 
     constructor(color: Color)

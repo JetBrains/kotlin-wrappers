@@ -12,7 +12,8 @@ package cesium.engine
  * A [MaterialProperty] that maps to polyline dash [Material] uniforms.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineDashMaterialProperty.html">Online Documentation</a>
  */
-external class PolylineDashMaterialProperty : MaterialProperty {
+external class PolylineDashMaterialProperty :
+    MaterialProperty {
     /**
      * Gets a value indicating if this property is constant.  A property is considered
      * constant if getValue always returns the same result for the current definition.

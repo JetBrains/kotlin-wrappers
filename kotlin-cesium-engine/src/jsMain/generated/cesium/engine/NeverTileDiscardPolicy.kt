@@ -10,7 +10,8 @@ import web.html.HTMLImageElement
  * A [TileDiscardPolicy] specifying that tile images should never be discard.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/NeverTileDiscardPolicy.html">Online Documentation</a>
  */
-external class NeverTileDiscardPolicy : TileDiscardPolicy {
+external class NeverTileDiscardPolicy :
+    TileDiscardPolicy {
     /**
      * Determines if the discard policy is ready to process images.
      * @return True if the discard policy is ready to process images; otherwise, false.

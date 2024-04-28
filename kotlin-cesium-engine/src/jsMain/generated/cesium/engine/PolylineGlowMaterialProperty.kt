@@ -12,7 +12,8 @@ package cesium.engine
  * A [MaterialProperty] that maps to polyline glow [Material] uniforms.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineGlowMaterialProperty.html">Online Documentation</a>
  */
-external class PolylineGlowMaterialProperty : MaterialProperty {
+external class PolylineGlowMaterialProperty :
+    MaterialProperty {
     /**
      * Gets a value indicating if this property is constant.  A property is considered
      * constant if getValue always returns the same result for the current definition.

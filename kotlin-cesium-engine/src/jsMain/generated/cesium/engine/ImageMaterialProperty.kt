@@ -12,7 +12,8 @@ package cesium.engine
  * A [MaterialProperty] that maps to image [Material] uniforms.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageMaterialProperty.html">Online Documentation</a>
  */
-external class ImageMaterialProperty : MaterialProperty {
+external class ImageMaterialProperty :
+    MaterialProperty {
     /**
      * Gets a value indicating if this property is constant.  A property is considered
      * constant if getValue always returns the same result for the current definition.
