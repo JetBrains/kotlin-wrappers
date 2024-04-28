@@ -14,7 +14,8 @@ import js.promise.Promise
  * Do not construct this directly, instead access tiles through [I3SLayer].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SNode.html">Online Documentation</a>
  */
-sealed external class I3SNode {
+external class I3SNode
+private constructor() {
     /**
      * Gets the resource for the node.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SNode.html#resource">Online Documentation</a>

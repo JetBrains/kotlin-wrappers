@@ -11,7 +11,8 @@ package cesium.engine
  * Do not construct this directly, instead access tiles through [I3SNode].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SGeometry.html">Online Documentation</a>
  */
-sealed external class I3SGeometry {
+external class I3SGeometry
+private constructor() {
     /**
      * Gets the resource for the geometry
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SGeometry.html#resource">Online Documentation</a>

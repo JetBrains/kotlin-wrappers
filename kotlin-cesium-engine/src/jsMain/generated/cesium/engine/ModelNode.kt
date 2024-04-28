@@ -20,7 +20,8 @@ package cesium.engine
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelNode.html">Online Documentation</a>
  */
-sealed external class ModelNode {
+external class ModelNode
+private constructor() {
     /**
      * The value of the `name` property of this node.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelNode.html#name">Online Documentation</a>

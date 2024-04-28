@@ -35,7 +35,8 @@ import js.array.ReadonlyArray
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilePointFeature.html">Online Documentation</a>
  */
-sealed external class Cesium3DTilePointFeature {
+external class Cesium3DTilePointFeature
+private constructor() {
     /**
      * Gets or sets if the feature will be shown. This is set for all features
      * when a style's show is evaluated.

@@ -39,7 +39,9 @@ import js.promise.Promise
  * @param [options] An object describing initialization options
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumTerrainProvider.html">Online Documentation</a>
  */
-sealed external class CesiumTerrainProvider : TerrainProvider {
+external class CesiumTerrainProvider
+private constructor() :
+    TerrainProvider {
     /**
      * Requests the geometry for a given tile. The result must include terrain data and
      * may optionally include a water mask and an indication of which child tiles are available.

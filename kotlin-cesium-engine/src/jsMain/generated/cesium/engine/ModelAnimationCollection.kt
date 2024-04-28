@@ -14,7 +14,8 @@ import js.array.ReadonlyArray
  * A collection of active model animations.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimationCollection.html">Online Documentation</a>
  */
-sealed external class ModelAnimationCollection {
+external class ModelAnimationCollection
+private constructor() {
     /**
      * The event fired when an animation is added to the collection.  This can be used, for
      * example, to keep a UI in sync.

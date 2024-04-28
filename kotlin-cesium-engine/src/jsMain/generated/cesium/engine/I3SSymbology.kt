@@ -10,7 +10,8 @@ package cesium.engine
  * Do not construct this directly, instead access symbology through [I3SLayer].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SSymbology.html">Online Documentation</a>
  */
-sealed external class I3SSymbology {
+external class I3SSymbology
+private constructor() {
     /**
      * Gets the default symbology data.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SSymbology.html#defaultSymbology">Online Documentation</a>

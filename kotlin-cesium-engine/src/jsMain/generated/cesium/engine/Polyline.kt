@@ -14,7 +14,8 @@ import js.array.ReadonlyArray
  * A renderable polyline.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Polyline.html">Online Documentation</a>
  */
-sealed external class Polyline {
+external class Polyline
+private constructor() {
     /**
      * Determines if this polyline will be shown.  Use this to hide or show a polyline, instead
      * of removing it and re-adding it to the collection.

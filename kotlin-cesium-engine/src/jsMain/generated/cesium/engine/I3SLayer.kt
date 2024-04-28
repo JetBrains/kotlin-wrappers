@@ -14,7 +14,8 @@ import js.promise.Promise
  * Do not construct this directly, instead access layers through [I3SDataProvider].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SLayer.html">Online Documentation</a>
  */
-sealed external class I3SLayer {
+external class I3SLayer
+private constructor() {
     /**
      * Gets the resource for the layer.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SLayer.html#resource">Online Documentation</a>

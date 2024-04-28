@@ -16,7 +16,8 @@ import js.promise.Promise
  *  and GoogleEarthEnterpriseTerrainProvider to share metadata requests.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseMetadata.html">Online Documentation</a>
  */
-sealed external class GoogleEarthEnterpriseMetadata {
+external class GoogleEarthEnterpriseMetadata
+private constructor() {
     /**
      * True if imagery is available.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseMetadata.html#imageryPresent">Online Documentation</a>

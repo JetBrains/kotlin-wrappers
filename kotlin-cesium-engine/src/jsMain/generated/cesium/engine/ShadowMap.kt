@@ -13,7 +13,8 @@ package cesium.engine
  * for applications that require ultra precise shadows.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ShadowMap.html">Online Documentation</a>
  */
-sealed external class ShadowMap {
+external class ShadowMap
+private constructor() {
     /**
      * Determines the darkness of the shadows.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ShadowMap.html#darkness">Online Documentation</a>

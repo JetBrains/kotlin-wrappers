@@ -31,7 +31,8 @@ import js.promise.Promise
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseMapsProvider.html">Online Documentation</a>
  */
-sealed external class GoogleEarthEnterpriseMapsProvider {
+external class GoogleEarthEnterpriseMapsProvider
+private constructor() {
     /**
      * Gets the URL of the Google Earth MapServer.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseMapsProvider.html#url">Online Documentation</a>

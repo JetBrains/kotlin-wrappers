@@ -23,7 +23,8 @@ import js.promise.Promise
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html">Online Documentation</a>
  */
-sealed external class BingMapsImageryProvider {
+external class BingMapsImageryProvider
+private constructor() {
     /**
      * Gets the name of the BingMaps server url hosting the imagery.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#url">Online Documentation</a>

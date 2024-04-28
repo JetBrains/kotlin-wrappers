@@ -23,7 +23,8 @@ import js.promise.Promise
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseImageryProvider.html">Online Documentation</a>
  */
-sealed external class GoogleEarthEnterpriseImageryProvider {
+external class GoogleEarthEnterpriseImageryProvider
+private constructor() {
     /**
      * Gets the name of the Google Earth Enterprise server url hosting the imagery.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseImageryProvider.html#url">Online Documentation</a>

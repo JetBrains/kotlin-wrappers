@@ -31,7 +31,9 @@ import js.promise.Promise
  * @param [options] A url or an object describing initialization options
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGISTiledElevationTerrainProvider.html">Online Documentation</a>
  */
-sealed external class ArcGISTiledElevationTerrainProvider : TerrainProvider {
+external class ArcGISTiledElevationTerrainProvider
+private constructor() :
+    TerrainProvider {
     /**
      * Gets an event that is raised when the terrain provider encounters an asynchronous error.  By subscribing
      * to the event, you will be notified of the error and can potentially recover from it.  Event listeners

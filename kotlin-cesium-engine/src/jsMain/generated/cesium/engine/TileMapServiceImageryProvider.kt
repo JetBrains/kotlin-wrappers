@@ -27,7 +27,8 @@ import js.promise.Promise
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileMapServiceImageryProvider.html">Online Documentation</a>
  */
-sealed external class TileMapServiceImageryProvider {
+external class TileMapServiceImageryProvider
+private constructor() {
     /**
      * Initialization options for the TileMapServiceImageryProvider constructor
      * @property [fileExtension] The file extension for images on the server.

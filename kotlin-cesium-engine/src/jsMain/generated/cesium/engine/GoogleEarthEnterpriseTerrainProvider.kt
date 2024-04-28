@@ -28,7 +28,9 @@ import js.promise.Promise
  * @param [options] An object describing initialization options
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseTerrainProvider.html">Online Documentation</a>
  */
-sealed external class GoogleEarthEnterpriseTerrainProvider : TerrainProvider {
+external class GoogleEarthEnterpriseTerrainProvider
+private constructor() :
+    TerrainProvider {
     /**
      * Gets the name of the Google Earth Enterprise server url hosting the imagery.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseTerrainProvider.html#url">Online Documentation</a>

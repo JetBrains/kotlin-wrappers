@@ -10,7 +10,8 @@ package cesium.engine
  * Do not construct this directly, instead access tiles through [I3SNode].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SFeature.html">Online Documentation</a>
  */
-sealed external class I3SFeature {
+external class I3SFeature
+private constructor() {
     /**
      * Gets the resource for the feature
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SFeature.html#resource">Online Documentation</a>
