@@ -9,7 +9,7 @@ import seskar.js.JsTypeGuard
     value = "true",
 )
 external class ReadableStreamReadDoneResult<T>
-protected constructor() :
+private constructor() :
     ReadableStreamReadResult<T> {
     var value: T?
 }

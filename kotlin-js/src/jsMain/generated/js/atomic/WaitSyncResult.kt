@@ -7,7 +7,7 @@ import seskar.js.JsTypeGuard
     value = "false",
 )
 external class WaitSyncResult
-protected constructor() :
+private constructor() :
     WaitResult {
     val value: WaitSyncStatus
 }
