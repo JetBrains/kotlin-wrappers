@@ -5,6 +5,7 @@ package web.svg
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMPathElement)
  */
-sealed external class SVGMPathElement :
+open external class SVGMPathElement
+private constructor() :
     SVGElement,
     SVGURIReference

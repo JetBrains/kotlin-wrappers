@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRectElement)
  */
-sealed external class SVGRectElement :
+open external class SVGRectElement
+private constructor() :
     SVGGeometryElement {
     val height: SVGAnimatedLength
     val rx: SVGAnimatedLength

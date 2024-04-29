@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEOffsetElement)
  */
-sealed external class SVGFEOffsetElement :
+open external class SVGFEOffsetElement
+private constructor() :
     SVGElement,
     SVGFilterPrimitiveStandardAttributes {
     val dx: SVGAnimatedNumber

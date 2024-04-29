@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLineElement)
  */
-sealed external class SVGLineElement :
+open external class SVGLineElement
+private constructor() :
     SVGGeometryElement {
     val x1: SVGAnimatedLength
     val x2: SVGAnimatedLength

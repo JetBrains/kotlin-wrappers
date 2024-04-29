@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDistantLightElement)
  */
-sealed external class SVGFEDistantLightElement :
+open external class SVGFEDistantLightElement
+private constructor() :
     SVGElement {
     val azimuth: SVGAnimatedNumber
     val elevation: SVGAnimatedNumber

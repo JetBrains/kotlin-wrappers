@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGComponentTransferFunctionElement)
  */
-sealed external class SVGComponentTransferFunctionElement :
+open external class SVGComponentTransferFunctionElement
+private constructor() :
     SVGElement {
     val amplitude: SVGAnimatedNumber
     val exponent: SVGAnimatedNumber

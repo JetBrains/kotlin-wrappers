@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEMorphologyElement)
  */
-sealed external class SVGFEMorphologyElement :
+open external class SVGFEMorphologyElement
+private constructor() :
     SVGElement,
     SVGFilterPrimitiveStandardAttributes {
     val in1: SVGAnimatedString

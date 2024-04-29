@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPatternElement)
  */
-sealed external class SVGPatternElement :
+open external class SVGPatternElement
+private constructor() :
     SVGElement,
     SVGFitToViewBox,
     SVGURIReference {

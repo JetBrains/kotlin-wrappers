@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGClipPathElement)
  */
-sealed external class SVGClipPathElement :
+open external class SVGClipPathElement
+private constructor() :
     SVGElement {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGClipPathElement/clipPathUnits)

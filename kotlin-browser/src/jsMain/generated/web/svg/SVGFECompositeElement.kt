@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFECompositeElement)
  */
-sealed external class SVGFECompositeElement :
+open external class SVGFECompositeElement
+private constructor() :
     SVGElement,
     SVGFilterPrimitiveStandardAttributes {
     val in1: SVGAnimatedString

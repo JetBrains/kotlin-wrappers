@@ -7,5 +7,6 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSwitchElement)
  */
-sealed external class SVGSwitchElement :
+open external class SVGSwitchElement
+private constructor() :
     SVGGraphicsElement

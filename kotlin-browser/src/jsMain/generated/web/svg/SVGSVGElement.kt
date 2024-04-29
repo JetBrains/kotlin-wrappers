@@ -12,7 +12,8 @@ import web.window.WindowEventHandlers
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement)
  */
-sealed external class SVGSVGElement :
+open external class SVGSVGElement
+private constructor() :
     SVGGraphicsElement,
     SVGFitToViewBox,
     WindowEventHandlers {

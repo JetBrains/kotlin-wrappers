@@ -7,5 +7,6 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPathElement)
  */
-sealed external class SVGPathElement :
+open external class SVGPathElement
+private constructor() :
     SVGGeometryElement

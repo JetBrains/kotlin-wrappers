@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEImageElement)
  */
-sealed external class SVGFEImageElement :
+open external class SVGFEImageElement
+private constructor() :
     SVGElement,
     SVGFilterPrimitiveStandardAttributes,
     SVGURIReference {

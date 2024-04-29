@@ -7,6 +7,7 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPolygonElement)
  */
-sealed external class SVGPolygonElement :
+open external class SVGPolygonElement
+private constructor() :
     SVGGeometryElement,
     SVGAnimatedPoints

@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGCircleElement)
  */
-sealed external class SVGCircleElement :
+open external class SVGCircleElement
+private constructor() :
     SVGGeometryElement {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGCircleElement/cx)

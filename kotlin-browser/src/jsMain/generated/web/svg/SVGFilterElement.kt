@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFilterElement)
  */
-sealed external class SVGFilterElement :
+open external class SVGFilterElement
+private constructor() :
     SVGElement,
     SVGURIReference {
     val filterUnits: SVGAnimatedEnumeration<SVGUnitTypes.Type>

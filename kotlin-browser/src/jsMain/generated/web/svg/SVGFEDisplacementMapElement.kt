@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDisplacementMapElement)
  */
-sealed external class SVGFEDisplacementMapElement :
+open external class SVGFEDisplacementMapElement
+private constructor() :
     SVGElement,
     SVGFilterPrimitiveStandardAttributes {
     val in1: SVGAnimatedString

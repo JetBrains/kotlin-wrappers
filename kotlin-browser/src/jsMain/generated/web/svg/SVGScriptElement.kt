@@ -9,7 +9,8 @@ import web.dom.HTMLOrSVGScriptElement
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGScriptElement)
  */
-sealed external class SVGScriptElement :
+open external class SVGScriptElement
+private constructor() :
     SVGElement,
     SVGURIReference,
     HTMLOrSVGScriptElement {

@@ -10,7 +10,8 @@ import web.http.CrossOrigin
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement)
  */
-sealed external class SVGImageElement :
+open external class SVGImageElement
+private constructor() :
     SVGGraphicsElement,
     SVGURIReference,
     HTMLOrSVGImageElement {

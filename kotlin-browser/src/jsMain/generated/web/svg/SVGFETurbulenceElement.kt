@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFETurbulenceElement)
  */
-sealed external class SVGFETurbulenceElement :
+open external class SVGFETurbulenceElement
+private constructor() :
     SVGElement,
     SVGFilterPrimitiveStandardAttributes {
     val baseFrequencyX: SVGAnimatedNumber

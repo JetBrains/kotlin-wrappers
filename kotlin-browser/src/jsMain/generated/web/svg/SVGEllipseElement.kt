@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGEllipseElement)
  */
-sealed external class SVGEllipseElement :
+open external class SVGEllipseElement
+private constructor() :
     SVGGeometryElement {
     val cx: SVGAnimatedLength
     val cy: SVGAnimatedLength

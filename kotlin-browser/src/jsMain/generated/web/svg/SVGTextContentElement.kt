@@ -12,7 +12,8 @@ import web.geometry.DOMRect
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement)
  */
-sealed external class SVGTextContentElement :
+open external class SVGTextContentElement
+private constructor() :
     SVGGraphicsElement {
     val lengthAdjust: SVGAnimatedEnumeration<LengthAdjust>
     val textLength: SVGAnimatedLength

@@ -7,6 +7,7 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEFloodElement)
  */
-sealed external class SVGFEFloodElement :
+open external class SVGFEFloodElement
+private constructor() :
     SVGElement,
     SVGFilterPrimitiveStandardAttributes

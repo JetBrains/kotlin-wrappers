@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEMergeNodeElement)
  */
-sealed external class SVGFEMergeNodeElement :
+open external class SVGFEMergeNodeElement
+private constructor() :
     SVGElement {
     val in1: SVGAnimatedString
 }

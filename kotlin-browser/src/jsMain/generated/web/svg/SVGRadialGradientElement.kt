@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRadialGradientElement)
  */
-sealed external class SVGRadialGradientElement :
+open external class SVGRadialGradientElement
+private constructor() :
     SVGGradientElement {
     val cx: SVGAnimatedLength
     val cy: SVGAnimatedLength

@@ -7,5 +7,6 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGDescElement)
  */
-sealed external class SVGDescElement :
+open external class SVGDescElement
+private constructor() :
     SVGElement

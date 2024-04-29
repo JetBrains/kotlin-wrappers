@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDiffuseLightingElement)
  */
-sealed external class SVGFEDiffuseLightingElement :
+open external class SVGFEDiffuseLightingElement
+private constructor() :
     SVGElement,
     SVGFilterPrimitiveStandardAttributes {
     val diffuseConstant: SVGAnimatedNumber

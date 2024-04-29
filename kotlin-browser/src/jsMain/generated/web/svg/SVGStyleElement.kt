@@ -10,7 +10,8 @@ import web.cssom.MediaQuery
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStyleElement)
  */
-sealed external class SVGStyleElement :
+open external class SVGStyleElement
+private constructor() :
     SVGElement,
     LinkStyle {
     var disabled: Boolean

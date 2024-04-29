@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPositioningElement)
  */
-sealed external class SVGTextPositioningElement :
+open external class SVGTextPositioningElement
+private constructor() :
     SVGTextContentElement {
     val dx: SVGAnimatedLengthList
     val dy: SVGAnimatedLengthList

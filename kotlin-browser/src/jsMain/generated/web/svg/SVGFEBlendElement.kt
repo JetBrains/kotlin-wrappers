@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEBlendElement)
  */
-sealed external class SVGFEBlendElement :
+open external class SVGFEBlendElement
+private constructor() :
     SVGElement,
     SVGFilterPrimitiveStandardAttributes {
     val in1: SVGAnimatedString

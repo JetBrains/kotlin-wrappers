@@ -9,7 +9,8 @@ import web.geometry.DOMPointReadOnly
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement)
  */
-sealed external class SVGGeometryElement :
+open external class SVGGeometryElement
+private constructor() :
     SVGGraphicsElement {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/pathLength)

@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEConvolveMatrixElement)
  */
-sealed external class SVGFEConvolveMatrixElement :
+open external class SVGFEConvolveMatrixElement
+private constructor() :
     SVGElement,
     SVGFilterPrimitiveStandardAttributes {
     val bias: SVGAnimatedNumber

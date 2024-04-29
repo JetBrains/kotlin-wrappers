@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGradientElement)
  */
-sealed external class SVGGradientElement :
+open external class SVGGradientElement
+private constructor() :
     SVGElement,
     SVGURIReference {
     val gradientTransform: SVGAnimatedTransformList

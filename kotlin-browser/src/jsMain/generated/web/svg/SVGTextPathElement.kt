@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPathElement)
  */
-sealed external class SVGTextPathElement :
+open external class SVGTextPathElement
+private constructor() :
     SVGTextContentElement,
     SVGURIReference {
     val method: SVGAnimatedEnumeration<Method>

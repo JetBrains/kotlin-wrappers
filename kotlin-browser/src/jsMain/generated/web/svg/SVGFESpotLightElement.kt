@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFESpotLightElement)
  */
-sealed external class SVGFESpotLightElement :
+open external class SVGFESpotLightElement
+private constructor() :
     SVGElement {
     val limitingConeAngle: SVGAnimatedNumber
     val pointsAtX: SVGAnimatedNumber

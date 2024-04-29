@@ -9,7 +9,8 @@ import web.dom.DOMTokenList
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement)
  */
-sealed external class SVGAElement :
+open external class SVGAElement
+private constructor() :
     SVGGraphicsElement,
     SVGURIReference {
     var rel: String

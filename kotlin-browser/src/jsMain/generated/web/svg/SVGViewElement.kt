@@ -7,6 +7,7 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGViewElement)
  */
-sealed external class SVGViewElement :
+open external class SVGViewElement
+private constructor() :
     SVGElement,
     SVGFitToViewBox

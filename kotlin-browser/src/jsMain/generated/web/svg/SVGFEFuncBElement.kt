@@ -7,5 +7,6 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEFuncBElement)
  */
-sealed external class SVGFEFuncBElement :
+open external class SVGFEFuncBElement
+private constructor() :
     SVGComponentTransferFunctionElement

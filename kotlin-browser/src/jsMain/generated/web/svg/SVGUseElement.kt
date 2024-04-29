@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGUseElement)
  */
-sealed external class SVGUseElement :
+open external class SVGUseElement
+private constructor() :
     SVGGraphicsElement,
     SVGURIReference {
     val height: SVGAnimatedLength

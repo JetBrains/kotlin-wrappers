@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEPointLightElement)
  */
-sealed external class SVGFEPointLightElement :
+open external class SVGFEPointLightElement
+private constructor() :
     SVGElement {
     val x: SVGAnimatedNumber
     val y: SVGAnimatedNumber

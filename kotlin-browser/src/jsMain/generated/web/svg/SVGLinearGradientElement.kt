@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLinearGradientElement)
  */
-sealed external class SVGLinearGradientElement :
+open external class SVGLinearGradientElement
+private constructor() :
     SVGGradientElement {
     val x1: SVGAnimatedLength
     val x2: SVGAnimatedLength

@@ -7,5 +7,6 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTSpanElement)
  */
-sealed external class SVGTSpanElement :
+open external class SVGTSpanElement
+private constructor() :
     SVGTextPositioningElement

@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGForeignObjectElement)
  */
-sealed external class SVGForeignObjectElement :
+open external class SVGForeignObjectElement
+private constructor() :
     SVGGraphicsElement {
     val height: SVGAnimatedLength
     val width: SVGAnimatedLength

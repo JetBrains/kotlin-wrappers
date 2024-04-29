@@ -12,7 +12,8 @@ import web.dom.HTMLOrSVGElement
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement)
  */
-sealed external class SVGElement :
+open external class SVGElement
+private constructor() :
     Element,
     ElementCSSInlineStyle,
     GlobalEventHandlers,

@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStopElement)
  */
-sealed external class SVGStopElement :
+open external class SVGStopElement
+private constructor() :
     SVGElement {
     val offset: SVGAnimatedNumber
 }

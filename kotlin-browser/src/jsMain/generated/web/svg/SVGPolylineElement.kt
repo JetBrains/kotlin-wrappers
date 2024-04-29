@@ -7,6 +7,7 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPolylineElement)
  */
-sealed external class SVGPolylineElement :
+open external class SVGPolylineElement
+private constructor() :
     SVGGeometryElement,
     SVGAnimatedPoints

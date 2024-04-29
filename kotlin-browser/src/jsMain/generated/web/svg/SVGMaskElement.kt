@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMaskElement)
  */
-sealed external class SVGMaskElement :
+open external class SVGMaskElement
+private constructor() :
     SVGElement {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMaskElement/height)

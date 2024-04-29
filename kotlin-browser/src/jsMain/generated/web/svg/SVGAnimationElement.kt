@@ -5,7 +5,8 @@ package web.svg
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimationElement)
  */
-sealed external class SVGAnimationElement :
+open external class SVGAnimationElement
+private constructor() :
     SVGElement,
     SVGTests {
     /**

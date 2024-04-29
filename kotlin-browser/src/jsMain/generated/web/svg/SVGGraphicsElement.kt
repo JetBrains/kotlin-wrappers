@@ -10,7 +10,8 @@ import web.geometry.DOMRect
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGraphicsElement)
  */
-sealed external class SVGGraphicsElement :
+open external class SVGGraphicsElement
+private constructor() :
     SVGElement,
     SVGTests {
     val transform: SVGAnimatedTransformList
