@@ -91,6 +91,12 @@ include("kotlin-node")
 // Kotlin/JS: Popper wrappers
 include("kotlin-popper")
 
+// Kotlin/JS: Preact Signals Core wrappers
+include("kotlin-preact-signals-core")
+
+// Kotlin/JS: Preact Signals React wrappers
+include("kotlin-preact-signals-react")
+
 // Kotlin/JS: React wrappers
 include("kotlin-react")
 

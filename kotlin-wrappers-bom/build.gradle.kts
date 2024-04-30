@@ -25,6 +25,8 @@ dependencies {
         api(projects.kotlinMuixTreeView)
         api(projects.kotlinNode)
         api(projects.kotlinPopper)
+        api(projects.kotlinPreactSignalsCore)
+        api(projects.kotlinPreactSignalsReact)
         api(projects.kotlinReact)
         api(projects.kotlinReactBeautifulDnd)
         api(projects.kotlinReactCore)
