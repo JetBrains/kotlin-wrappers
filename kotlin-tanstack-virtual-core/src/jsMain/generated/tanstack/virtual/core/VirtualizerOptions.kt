@@ -32,4 +32,5 @@ external interface VirtualizerOptions<TScrollElement : EventTarget /* Element | 
     var indexAttribute: String?
     var initialMeasurementsCache: ReadonlyArray<VirtualItem>?
     var lanes: Int?
+    var isScrollingResetDelay: Int?
 }
