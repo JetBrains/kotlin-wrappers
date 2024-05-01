@@ -58,6 +58,18 @@ external class Terrain(terrainProviderPromise: Promise<TerrainProvider>) {
      */
     val readyEvent: Event<TerrainReadyEventCallback>
 
+    /**
+     * Returns true when the terrain provider has been successfully created. Otherwise, returns false.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Terrain.html#ready">Online Documentation</a>
+     */
+    val ready: Boolean
+
+    /**
+     * The terrain provider providing surface geometry to a globe. Do not use until [Terrain.readyEvent] is raised.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Terrain.html#provider">Online Documentation</a>
+     */
+    val provider: TerrainProvider
+
     companion object {
         /**
          * Creates a [Terrain] instance for [Cesium World Terrain](https://cesium.com/content/#cesium-world-terrain).

@@ -282,6 +282,12 @@ external class Globe(var ellipsoid: Ellipsoid = definedExternally) {
     var clippingPlanes: ClippingPlaneCollection
 
     /**
+     * A property specifying a [ClippingPolygonCollection] used to selectively disable rendering inside or outside a list of polygons.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Globe.html#clippingPolygons">Online Documentation</a>
+     */
+    var clippingPolygons: ClippingPolygonCollection
+
+    /**
      * A property specifying a [Rectangle] used to limit globe rendering to a cartographic area.
      * Defaults to the maximum extent of cartographic coordinates.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Globe.html#cartographicLimitRectangle">Online Documentation</a>

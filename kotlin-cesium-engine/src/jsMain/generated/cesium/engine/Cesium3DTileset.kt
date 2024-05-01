@@ -560,6 +560,12 @@ external class Cesium3DTileset(options: ConstructorOptions) {
     var clippingPlanes: ClippingPlaneCollection
 
     /**
+     * The [ClippingPolygonCollection] used to selectively disable rendering the tileset.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#clippingPolygons">Online Documentation</a>
+     */
+    var clippingPolygons: ClippingPolygonCollection
+
+    /**
      * Gets the tileset's properties dictionary object, which contains metadata about per-feature properties.
      *
      * See the [properties schema reference](https://github.com/CesiumGS/3d-tiles/tree/main/specification#reference-properties)
@@ -978,6 +984,7 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      * @property [loadSiblings] When `skipLevelOfDetail` is `true`, determines whether siblings of visible tiles are always downloaded during traversal.
      *   Default value - `false`
      * @property [clippingPlanes] The [ClippingPlaneCollection] used to selectively disable rendering the tileset.
+     * @property [clippingPolygons] The [ClippingPolygonCollection] used to selectively disable rendering the tileset.
      * @property [classificationType] Determines whether terrain, 3D Tiles or both will be classified by this tileset. See [Cesium3DTileset.classificationType] for details about restrictions and limitations.
      * @property [ellipsoid] The ellipsoid determining the size and shape of the globe.
      *   Default value - [Ellipsoid.WGS84]
@@ -1067,6 +1074,7 @@ external class Cesium3DTileset(options: ConstructorOptions) {
         var immediatelyLoadDesiredLevelOfDetail: Boolean?
         var loadSiblings: Boolean?
         var clippingPlanes: ClippingPlaneCollection?
+        var clippingPolygons: ClippingPolygonCollection?
         var classificationType: ClassificationType?
         var ellipsoid: Ellipsoid?
         var pointCloudShading: Any?

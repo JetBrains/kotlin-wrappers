@@ -252,6 +252,12 @@ private constructor() {
     var clippingPlanes: ClippingPlaneCollection
 
     /**
+     * The [ClippingPolygonCollection] used to selectively disable rendering the model.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Model.html#clippingPolygons">Online Documentation</a>
+     */
+    var clippingPolygons: ClippingPolygonCollection
+
+    /**
      * The light color when shading the model. When `undefined` the scene's light color is used instead.
      *
      * Disabling additional light sources by setting
@@ -557,6 +563,7 @@ private constructor() {
          * @property [outlineColor] The color to use when rendering outlines.
          *   Default value - [Color.BLACK]
          * @property [clippingPlanes] The [ClippingPlaneCollection] used to selectively disable rendering the model.
+         * @property [clippingPolygons] The [ClippingPolygonCollection] used to selectively disable rendering the model.
          * @property [lightColor] The light color when shading the model. When `undefined` the scene's light color is used instead.
          * @property [imageBasedLighting] The properties for managing image-based lighting on this model.
          * @property [backFaceCulling] Whether to cull back-facing geometry. When true, back face culling is determined by the material's doubleSided property; when false, back face culling is disabled. Back faces are not culled if the model's color is translucent.
@@ -614,6 +621,7 @@ private constructor() {
             var showOutline: Boolean?
             var outlineColor: Color?
             var clippingPlanes: ClippingPlaneCollection?
+            var clippingPolygons: ClippingPolygonCollection?
             var lightColor: Cartesian3?
             var imageBasedLighting: ImageBasedLighting?
             var backFaceCulling: Boolean?

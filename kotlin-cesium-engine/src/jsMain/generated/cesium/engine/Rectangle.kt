@@ -197,6 +197,21 @@ external class Rectangle(
         ): Rectangle
 
         /**
+         * Create a rectangle from a bounding sphere, ignoring height.
+         * @param [boundingSphere] The bounding sphere.
+         * @param [ellipsoid] The ellipsoid.
+         *   Default value - [Ellipsoid.WGS84]
+         * @param [result] The object onto which to store the result, or undefined if a new instance should be created.
+         * @return The modified result parameter or a new Rectangle instance if none was provided.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Rectangle.html#.fromBoundingSphere">Online Documentation</a>
+         */
+        fun fromBoundingSphere(
+            boundingSphere: BoundingSphere,
+            ellipsoid: Ellipsoid? = definedExternally,
+            result: Rectangle? = definedExternally,
+        ): Rectangle
+
+        /**
          * Duplicates a Rectangle.
          * @param [rectangle] The rectangle to clone.
          * @param [result] The object onto which to store the result, or undefined if a new instance should be created.
