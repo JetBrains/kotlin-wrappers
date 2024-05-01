@@ -1,3 +1,7 @@
+## pre.737
+
+* Preact Signals declarations
+
 ## pre.730
 
 * `Temporal`. Initial implementation
