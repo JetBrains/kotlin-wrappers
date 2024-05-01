@@ -1,15 +1,10 @@
 val k2patch by tasks.registering {
     doLast {
         patchFile("gradle.properties") {
-            it
-                .replace(
-                    "kotlin.version=1.9.23",
-                    "kotlin.version=2.0.0-RC2",
-                )
-                .replace(
-                    "karakum.version=1.0.0-alpha.40",
-                    "karakum.version=1.0.0-alpha.40-K2",
-                )
+            it.replace(
+                "kotlin.version=1.9.23",
+                "kotlin.version=2.0.0-RC2",
+            )
         }
     }
 }

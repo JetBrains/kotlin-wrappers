@@ -22,4 +22,4 @@ jobs:
       - name: Build
         run: |
           ./gradlew k2patch
-          ./gradlew build -Ptest=false
+          ./gradlew build -Pkarakum.version=1.0.0-alpha.40-K2 -Ptest=false
