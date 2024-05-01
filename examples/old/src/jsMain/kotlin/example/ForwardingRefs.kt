@@ -19,7 +19,7 @@ private class SimpleFocusable(
 
 external interface FancyInputProps : PropsWithRef<Focusable>
 
-val FancyInput = ForwardRef<_, FancyInputProps> { props ->
+val FancyInput = ForwardRef<FancyInputProps> { props ->
     val inputRef = useRef<HTMLInputElement>()
 
     useImperativeHandle(props.ref, inputRef) {
