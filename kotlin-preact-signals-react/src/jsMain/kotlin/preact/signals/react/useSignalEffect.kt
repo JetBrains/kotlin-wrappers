@@ -1,9 +1,11 @@
-@file:JsModule("@preact/signals-react")
-
 package preact.signals.react
 
-import react.Cleanup
+import react.EffectBuilder
+import react.internal.createEffectCallback
 
-external fun useSignalEffect(
-    cb: () -> Cleanup?,
-)
+fun useSignalEffect(
+    effect: EffectBuilder.() -> Unit,
+) {
+    val callback = createEffectCallback(effect)
+    rawUseSignalEffect(callback)
+}

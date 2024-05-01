@@ -4,7 +4,7 @@ import js.array.ReadonlyArray
 import react.Cleanup
 import react.EffectBuilder
 
-internal fun createEffectCallback(
+fun createEffectCallback(
     effect: EffectBuilder.() -> Unit,
 ): () -> Cleanup? = {
     val cleanups = arrayOf<Cleanup>()
