@@ -1,5 +1,7 @@
 package react
 
+import react.internal.createEffectCallback
+
 typealias Cleanup = () -> Unit
 
 /**
