@@ -20,13 +20,13 @@ external interface AutocompleteClasses {
     /** Styles applied to the option elements if they are keyboard focused. */
     var focusVisible: ClassName
 
-    /** Styles applied to the tag elements, e.g. the chips. */
+    /** Styles applied to the tag elements, for example the chips. */
     var tag: ClassName
 
-    /** Styles applied to the tag elements, e.g. the chips if `size="small"`. */
+    /** Styles applied to the tag elements, for example the chips if `size="small"`. */
     var tagSizeSmall: ClassName
 
-    /** Styles applied to the tag elements, e.g. the chips if `size="medium"`. */
+    /** Styles applied to the tag elements, for example the chips if `size="medium"`. */
     var tagSizeMedium: ClassName
 
     /** Styles applied when the popup icon is rendered. */

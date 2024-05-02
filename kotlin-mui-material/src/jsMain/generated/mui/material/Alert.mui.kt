@@ -21,6 +21,18 @@ sealed external interface MuiAlert {
         @JsValue("MuiAlert-standard")
         val standard: ClassName
 
+        @JsValue("MuiAlert-colorSuccess")
+        val colorSuccess: ClassName
+
+        @JsValue("MuiAlert-colorInfo")
+        val colorInfo: ClassName
+
+        @JsValue("MuiAlert-colorWarning")
+        val colorWarning: ClassName
+
+        @JsValue("MuiAlert-colorError")
+        val colorError: ClassName
+
         @JsValue("MuiAlert-standardSuccess")
         val standardSuccess: ClassName
 
