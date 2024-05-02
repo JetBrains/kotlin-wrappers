@@ -175,7 +175,7 @@ external interface SelectProps<Value> :
      * The variant to use.
      * @default 'outlined'
      */
-    var variant: SelectVariants?
+    var variant: SelectVariant?
 }
 
 external interface FilledSelectProps :
