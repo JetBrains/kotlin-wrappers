@@ -1,3 +1,10 @@
+## pre.738
+
+**BREAKING CHANGE**
+
+* React. Align `ForwardRef` and `FC` signatures
+    * Preparing for `ForwardRef` removing (redundant in React 19)
+
 ## pre.737
 
 * Preact Signals declarations
