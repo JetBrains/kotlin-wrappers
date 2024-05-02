@@ -8,27 +8,8 @@ data class Border(val width: LinearDimension, val style: BorderStyle, val color:
     }
 }
 
-var StyledElement.border: Border
-    @Deprecated("Write-only property", level = DeprecationLevel.HIDDEN)
-    get() = error("")
-    set(value) = put("border", value.value)
-
-var StyledElement.borderTop: Border
-    @Deprecated("Write-only property", level = DeprecationLevel.HIDDEN)
-    get() = error("")
-    set(value) = put("borderTop", value.value)
-
-var StyledElement.borderRight: Border
-    @Deprecated("Write-only property", level = DeprecationLevel.HIDDEN)
-    get() = error("")
-    set(value) = put("borderRight", value.value)
-
-var StyledElement.borderBottom: Border
-    @Deprecated("Write-only property", level = DeprecationLevel.HIDDEN)
-    get() = error("")
-    set(value) = put("borderBottom", value.value)
-
-var StyledElement.borderLeft: Border
-    @Deprecated("Write-only property", level = DeprecationLevel.HIDDEN)
-    get() = error("")
-    set(value) = put("borderLeft", value.value)
+@get:Deprecated("Write-only property", level = DeprecationLevel.HIDDEN) var StyledElement.border: Border by CssProperty()
+@get:Deprecated("Write-only property", level = DeprecationLevel.HIDDEN) var StyledElement.borderTop: Border by CssProperty()
+@get:Deprecated("Write-only property", level = DeprecationLevel.HIDDEN) var StyledElement.borderRight: Border by CssProperty()
+@get:Deprecated("Write-only property", level = DeprecationLevel.HIDDEN) var StyledElement.borderBottom: Border by CssProperty()
+@get:Deprecated("Write-only property", level = DeprecationLevel.HIDDEN) var StyledElement.borderLeft: Border by CssProperty()

@@ -26,7 +26,4 @@ data class Inset(
     )
 }
 
-var StyledElement.inset: Inset
-    @Deprecated("Write-only property", level = DeprecationLevel.HIDDEN)
-    get() = error("")
-    set(value) = put("inset", value.value)
+@get:Deprecated("Write-only property", level = DeprecationLevel.HIDDEN) var StyledElement.inset: Inset by CssProperty()
