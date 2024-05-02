@@ -106,7 +106,7 @@ external interface CheckboxProps :
      * `small` is equivalent to the dense checkbox styling.
      * @default 'medium'
      */
-    var size: BaseSize?
+    var size: Size?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

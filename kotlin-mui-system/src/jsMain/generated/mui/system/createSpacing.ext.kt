@@ -42,7 +42,7 @@ sealed interface Spacing {
     inline operator fun invoke(): web.cssom.Length =
         asDynamic()()
 
-    inline operator fun invoke(value: Int): web.cssom.Length =
+    inline operator fun invoke(value: SpacingArgument): web.cssom.Length =
         asDynamic()(value)
 
     inline operator fun invoke(topBottom: SpacingArgument, rightLeft: SpacingArgument): web.cssom.Length =

@@ -129,6 +129,9 @@ sealed external interface MuiButton {
         @JsValue("MuiButton-fullWidth")
         val fullWidth: ClassName
 
+        @JsValue("MuiButton-icon")
+        val icon: ClassName
+
         @JsValue("MuiButton-startIcon")
         val startIcon: ClassName
 
@@ -143,5 +146,23 @@ sealed external interface MuiButton {
 
         @JsValue("MuiButton-iconSizeLarge")
         val iconSizeLarge: ClassName
+
+        @JsValue("MuiButton-colorPrimary")
+        val colorPrimary: ClassName
+
+        @JsValue("MuiButton-colorSecondary")
+        val colorSecondary: ClassName
+
+        @JsValue("MuiButton-colorSuccess")
+        val colorSuccess: ClassName
+
+        @JsValue("MuiButton-colorError")
+        val colorError: ClassName
+
+        @JsValue("MuiButton-colorInfo")
+        val colorInfo: ClassName
+
+        @JsValue("MuiButton-colorWarning")
+        val colorWarning: ClassName
     }
 }

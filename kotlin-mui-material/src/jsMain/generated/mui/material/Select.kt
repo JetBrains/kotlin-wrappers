@@ -175,7 +175,7 @@ external interface SelectProps<Value> :
      * The variant to use.
      * @default 'outlined'
      */
-    var variant: SelectVariant?
+    var variant: SelectVariants?
 }
 
 external interface FilledSelectProps :
@@ -202,7 +202,7 @@ external interface OutlinedSelectProps :
      * The variant to use.
      * @default 'outlined'
      */
-    var variant: mui.system.Union /* 'outlined' */
+    var variant: mui.system.Union? /* 'outlined' */
 }
 
 /**
@@ -216,6 +216,5 @@ external interface OutlinedSelectProps :
  * - [Select API](https://mui.com/material-ui/api/select/)
  * - inherits [OutlinedInput API](https://mui.com/material-ui/api/outlined-input/)
  */
-
 @JsName("default")
 external val Select: react.FC<SelectProps<*>>

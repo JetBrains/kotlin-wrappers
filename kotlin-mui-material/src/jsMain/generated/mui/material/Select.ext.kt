@@ -18,17 +18,3 @@ sealed external interface SelectVariants {
         val filled: SelectVariants
     }
 }
-
-@JsVirtual
-sealed external interface SelectVariant {
-    companion object {
-        @JsValue("filled")
-        val filled: SelectVariant
-
-        @JsValue("standard")
-        val standard: SelectVariant
-
-        @JsValue("outlined")
-        val outlined: SelectVariant
-    }
-}
