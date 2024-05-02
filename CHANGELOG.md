@@ -3,7 +3,7 @@
 **BREAKING CHANGE**
 
 * React. Align `ForwardRef` and `FC` signatures
-    * Preparing for `ForwardRef` removing (redundant in React 19)
+    * Preparing to remove `ForwardRef` (redundant in React 19)
 
 ## pre.737
 
