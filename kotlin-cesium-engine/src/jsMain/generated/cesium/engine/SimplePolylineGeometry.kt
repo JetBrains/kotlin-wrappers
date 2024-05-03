@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -40,7 +41,8 @@ external class SimplePolylineGeometry(options: ConstructorOptions) {
      * @property [ellipsoid] The ellipsoid to be used as a reference.
      *   Default value - [Ellipsoid.WGS84]
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var positions: ReadonlyArray<Cartesian3>
         var colors: ReadonlyArray<Color>?
         var colorsPerVertex: Boolean?

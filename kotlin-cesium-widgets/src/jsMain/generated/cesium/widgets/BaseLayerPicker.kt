@@ -11,6 +11,7 @@ package cesium.widgets
 
 import cesium.engine.Globe
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 import web.dom.Element
 
@@ -94,7 +95,8 @@ external class BaseLayerPicker(
      *   Default value - `[]`
      * @property [selectedTerrainProviderViewModel] The view model for the current base terrain layer, if not supplied the first available terrain layer is used.
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var globe: Globe
         var imageryProviderViewModels: ReadonlyArray<ProviderViewModel>?
         var selectedImageryProviderViewModel: ProviderViewModel?

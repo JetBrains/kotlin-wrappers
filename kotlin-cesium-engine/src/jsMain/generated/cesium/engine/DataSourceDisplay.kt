@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -23,7 +24,8 @@ external class DataSourceDisplay(options: ConstructorOptions) {
      *   If undefined, all standard visualizers are used.
      *   Default value - [DataSourceDisplay.defaultVisualizersCallback]
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var scene: Scene
         var dataSourceCollection: DataSourceCollection
         var visualizersCallback: VisualizersCallback?

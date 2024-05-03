@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.promise.Promise
 
 /**
@@ -130,7 +131,8 @@ external class Cesium3DTilesVoxelProvider(options: Any) {
      * @property [tileZ] The tile's Z coordinate.
      *   Default value - `0`
      */
-    interface RequestDataOptions {
+    @JsPlainObject
+    sealed interface RequestDataOptions {
         var tileLevel: Int?
         var tileX: Double?
         var tileY: Double?

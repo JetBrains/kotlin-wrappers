@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
+
 /**
  * Creates a [Primitive] to visualize well-known vector vertex attributes:
  * `normal`, `tangent`, and `bitangent`.  Normal
@@ -28,7 +30,8 @@ external fun createTangentSpaceDebugPrimitive(options: CreateTangentSpaceDebugPr
  * @property [modelMatrix] The model matrix that transforms to transform the geometry from model to world coordinates.
  *   Default value - [Matrix4.IDENTITY]
  */
-external interface CreateTangentSpaceDebugPrimitiveOptions {
+@JsPlainObject
+sealed external interface CreateTangentSpaceDebugPrimitiveOptions {
     var geometry: Geometry
     var length: Int?
     var modelMatrix: Matrix4?

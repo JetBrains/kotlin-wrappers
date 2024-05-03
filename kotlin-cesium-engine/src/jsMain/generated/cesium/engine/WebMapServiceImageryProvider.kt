@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
 
@@ -242,7 +243,8 @@ external class WebMapServiceImageryProvider(options: ConstructorOptions) {
      * @property [getFeatureInfoUrl] The getFeatureInfo URL of the WMS service. If the property is not defined then we use the property value of url.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapServiceImageryProvider.html#.ConstructorOptions">Online Documentation</a>
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var url: Resource
         var layers: String
         var parameters: Any?

@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -23,7 +24,8 @@ external class VoxelPrimitive(options: ConstructorOptions? = definedExternally) 
      * @property [customShader] The custom shader used to style the primitive.
      * @property [clock] The clock used to control time dynamic behavior.
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var provider: VoxelProvider?
         var modelMatrix: Matrix4?
         var customShader: CustomShader?

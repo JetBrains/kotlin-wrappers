@@ -8,6 +8,7 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -41,7 +42,8 @@ external class OpenStreetMapImageryProvider(options: ConstructorOptions) {
      *   Default value - `'MapQuest, Open Street Map and contributors, CC-BY-SA'`
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/OpenStreetMapImageryProvider.html#.ConstructorOptions">Online Documentation</a>
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var url: String?
         var fileExtension: String?
         var retinaTiles: Boolean?

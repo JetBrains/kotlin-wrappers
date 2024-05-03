@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -57,7 +58,8 @@ external class ClippingPlaneCollection(options: ConstructorOptions? = definedExt
      * @property [edgeWidth] The width, in pixels, of the highlight applied to the edge along which an object is clipped.
      *   Default value - `0.0`
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var planes: ReadonlyArray<ClippingPlane>?
         var enabled: Boolean?
         var modelMatrix: Matrix4?

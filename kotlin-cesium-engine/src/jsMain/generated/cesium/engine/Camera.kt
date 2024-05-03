@@ -8,6 +8,8 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
+
 /**
  * The camera is defined by a position, orientation, and view frustum.
  *
@@ -258,7 +260,8 @@ external class Camera(scene: Scene) {
      * @property [endTransform] Transform matrix representing the reference frame of the camera.
      * @property [convert] Whether to convert the destination from world coordinates to scene coordinates (only relevant when not using 3D). Defaults to `true`.
      */
-    interface SetViewOptions {
+    @JsPlainObject
+    sealed interface SetViewOptions {
         var destination: dynamic
         var orientation: CameraOrientation?
         var endTransform: Matrix4?
@@ -735,7 +738,8 @@ external class Camera(scene: Scene) {
      * @property [convert] Whether to convert the destination from world coordinates to scene coordinates (only relevant when not using 3D). Defaults to `true`.
      * @property [easingFunction] Controls how the time is interpolated over the duration of the flight.
      */
-    interface FlyToOptions {
+    @JsPlainObject
+    sealed interface FlyToOptions {
         var destination: dynamic
         var orientation: CameraOrientation?
         var duration: Double?
@@ -802,7 +806,8 @@ external class Camera(scene: Scene) {
      * @property [flyOverLongitudeWeight] Fly over the lon specifyed via flyOverLongitude only if that way is not longer than short way times flyOverLongitudeWeight.
      * @property [easingFunction] Controls how the time is interpolated over the duration of the flight.
      */
-    interface FlyToBoundingSphereOptions {
+    @JsPlainObject
+    sealed interface FlyToBoundingSphereOptions {
         var duration: Double?
         var offset: HeadingPitchRange?
         var complete: FlightCompleteCallback?

@@ -8,6 +8,7 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
 import js.promise.Promise
 
 /**
@@ -117,7 +118,8 @@ external class Terrain(terrainProviderPromise: Promise<TerrainProvider>) {
          * @property [requestWaterMask] Flag that indicates if the client should request per tile water masks from the server if available.
          *   Default value - `false`
          */
-        interface FromWorldTerrainOptions {
+        @JsPlainObject
+        sealed interface FromWorldTerrainOptions {
             var requestVertexNormals: Boolean?
             var requestWaterMask: Boolean?
         }
@@ -165,7 +167,8 @@ external class Terrain(terrainProviderPromise: Promise<TerrainProvider>) {
          * @property [requestVertexNormals] Flag that indicates if the client should request additional lighting information from the server if available.
          *   Default value - `false`
          */
-        interface FromWorldBathymetryOptions {
+        @JsPlainObject
+        sealed interface FromWorldBathymetryOptions {
             var requestVertexNormals: Boolean?
         }
     }

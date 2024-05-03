@@ -10,6 +10,7 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.core.Void
+import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
 import web.html.HTMLCanvasElement
@@ -160,7 +161,8 @@ external class TileCoordinatesImageryProvider(options: ConstructorOptions? = def
      *   Default value - `256`
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#.ConstructorOptions">Online Documentation</a>
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var tilingScheme: TilingScheme?
         var ellipsoid: Ellipsoid?
         var color: Color?

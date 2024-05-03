@@ -8,6 +8,7 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
 import web.html.HTMLCanvasElement
 import web.html.HTMLImageElement
 
@@ -406,7 +407,8 @@ private constructor() {
      * @property [disableDepthTestDistance] A number specifying the distance from the camera at which to disable the depth test to, for example, prevent clipping against terrain.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Billboard.html#.ConstructorOptions">Online Documentation</a>
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var position: Cartesian3
         var id: String?
         var show: Boolean?

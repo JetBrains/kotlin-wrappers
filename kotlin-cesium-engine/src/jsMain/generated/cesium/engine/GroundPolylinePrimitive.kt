@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.core.Void
+import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
 
@@ -84,7 +85,8 @@ external class GroundPolylinePrimitive(options: ConstructorOptions? = definedExt
      * @property [debugShowShadowVolume] For debugging only. Determines if the shadow volume for each geometry in the primitive is drawn. Must be `true` on creation to have effect.
      *   Default value - `false`
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var geometryInstances: GeometryInstance?
         var appearance: Appearance?
         var show: Boolean?

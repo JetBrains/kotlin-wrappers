@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
 /**
  * <div class="notice">
@@ -124,7 +125,8 @@ private constructor() {
      *   Default value - [ModelAnimationLoop.NONE]
      * @property [animationTime] If defined, computes the local animation time for this animation.
      */
-    interface AddOptions {
+    @JsPlainObject
+    sealed interface AddOptions {
         var name: String?
         var index: Int?
         var startTime: JulianDate?
@@ -168,7 +170,8 @@ private constructor() {
      *   Default value - [ModelAnimationLoop.NONE]
      * @property [animationTime] If defined, computes the local animation time for all of the animations.
      */
-    interface AddAllOptions {
+    @JsPlainObject
+    sealed interface AddAllOptions {
         var startTime: JulianDate?
         var delay: Double?
         var stopTime: JulianDate?

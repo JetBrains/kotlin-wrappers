@@ -8,6 +8,7 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -22,7 +23,8 @@ external class DirectionalLight(options: ConstructorOptions) : Light {
      * @property [intensity] The intensity of the light.
      *   Default value - `1.0`
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var direction: Cartesian3
         var color: Color?
         var intensity: Double?

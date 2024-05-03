@@ -11,6 +11,7 @@
 package cesium.engine
 
 import js.core.Void
+import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
 
@@ -28,7 +29,8 @@ external class EllipsoidTerrainProvider(options: ConstructorOptions? = definedEx
      *   this parameter is ignored and the tiling scheme's ellipsoid is used instead. If neither
      *   parameter is specified, the WGS84 ellipsoid is used.
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var tilingScheme: TilingScheme?
         var ellipsoid: Ellipsoid?
     }

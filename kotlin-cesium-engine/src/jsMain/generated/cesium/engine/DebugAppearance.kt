@@ -8,6 +8,7 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -37,7 +38,8 @@ external class DebugAppearance(options: ConstructorOptions) {
      * @property [fragmentShaderSource] Optional GLSL fragment shader source to override the default fragment shader.
      * @property [renderState] Optional render state to override the default render state.
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var attributeName: String
         var perInstanceAttribute: Boolean?
         var glslDatatype: String?

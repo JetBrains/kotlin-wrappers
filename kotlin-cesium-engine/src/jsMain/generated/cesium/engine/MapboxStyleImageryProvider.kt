@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
 
@@ -184,7 +185,8 @@ external class MapboxStyleImageryProvider(options: ConstructorOptions) {
      * @property [credit] A credit for the data source, which is displayed on the canvas.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MapboxStyleImageryProvider.html#.ConstructorOptions">Online Documentation</a>
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var url: Resource?
         var username: String?
         var styleId: String

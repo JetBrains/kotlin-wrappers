@@ -8,6 +8,7 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -43,7 +44,8 @@ external class MetadataClassProperty(options: ConstructorOptions) {
      * @property [extras] Extra user-defined properties.
      * @property [extensions] An object containing extensions.
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var id: String
         var type: MetadataType
         var componentType: MetadataComponentType?

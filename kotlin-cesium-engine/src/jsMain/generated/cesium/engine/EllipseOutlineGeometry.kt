@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -41,7 +42,8 @@ external class EllipseOutlineGeometry(options: ConstructorOptions) {
      * @property [numberOfVerticalLines] Number of lines to draw between the top and bottom surface of an extruded ellipse.
      *   Default value - `16`
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var center: Cartesian3
         var semiMajorAxis: Double
         var semiMinorAxis: Double

@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -50,7 +51,8 @@ external class RectangleGeometry(options: ConstructorOptions) {
      *   Default value - `0.0`
      * @property [extrudedHeight] The distance in meters between the rectangle's extruded face and the ellipsoid surface.
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var rectangle: Rectangle
         var vertexFormat: VertexFormat?
         var ellipsoid: Ellipsoid?
@@ -118,7 +120,8 @@ external class RectangleGeometry(options: ConstructorOptions) {
          * @property [rotation] The rotation of the rectangle, in radians. A positive rotation is counter-clockwise.
          *   Default value - `0.0`
          */
-        interface ComputeRectangleOptions {
+        @JsPlainObject
+        sealed interface ComputeRectangleOptions {
             var rectangle: Rectangle
             var ellipsoid: Ellipsoid?
             var granularity: Double?

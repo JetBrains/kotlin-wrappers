@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.promise.Promise
 
 /**
@@ -36,7 +37,8 @@ external class GeocoderService {
      * @property [destination] The bounding box for a location
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeocoderService.html#.Result">Online Documentation</a>
      */
-    interface Result {
+    @JsPlainObject
+    sealed interface Result {
         var displayName: String
         var destination: dynamic
         var attributions: ReadonlyArray<Any>?

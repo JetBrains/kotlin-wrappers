@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -38,7 +39,8 @@ external class CorridorGeometry(options: ConstructorOptions) {
      * @property [cornerType] Determines the style of the corners.
      *   Default value - [CornerType.ROUNDED]
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var positions: ReadonlyArray<Cartesian3>
         var width: Double
         var ellipsoid: Ellipsoid?
@@ -105,7 +107,8 @@ external class CorridorGeometry(options: ConstructorOptions) {
          * @property [cornerType] Determines the style of the corners.
          *   Default value - [CornerType.ROUNDED]
          */
-        interface ComputeRectangleOptions {
+        @JsPlainObject
+        sealed interface ComputeRectangleOptions {
             var positions: ReadonlyArray<Cartesian3>
             var width: Double
             var ellipsoid: Ellipsoid?

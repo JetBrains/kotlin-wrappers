@@ -10,6 +10,7 @@
 package cesium.engine
 
 import js.core.Void
+import js.objects.JsPlainObject
 import js.promise.Promise
 
 /**
@@ -185,7 +186,8 @@ private constructor() :
      * @property [credit] A credit for the data source, which is displayed on the canvas.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumTerrainProvider.html#.ConstructorOptions">Online Documentation</a>
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var requestVertexNormals: Boolean?
         var requestWaterMask: Boolean?
         var requestMetadata: Boolean?

@@ -9,6 +9,7 @@
 package cesium.widgets
 
 import cesium.engine.Scene
+import js.objects.JsPlainObject
 import js.objects.jso
 import web.dom.Element
 
@@ -25,7 +26,8 @@ external class PerformanceWatchdog(options: ConstructorOptions? = definedExterna
      *   it comes from a trusted source so that your application is not vulnerable to cross-site scripting attacks.
      *   Default value - `'This application appears to be performing poorly on your system.  Please try using a different web browser or updating your video drivers.'`
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var container: Element
         var scene: Scene
         var lowFrameRateMessage: String?

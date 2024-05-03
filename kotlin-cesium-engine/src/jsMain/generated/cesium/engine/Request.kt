@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.core.Void
+import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
 
@@ -32,7 +33,8 @@ external class Request(options: ConstructorOptions? = definedExternally) {
      *   Default value - [RequestType.OTHER]
      * @property [serverKey] A key used to identify the server that a request is going to.
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var url: String?
         var requestFunction: RequestCallback?
         var cancelFunction: CancelCallback?

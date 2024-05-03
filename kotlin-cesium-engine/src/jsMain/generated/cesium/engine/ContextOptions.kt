@@ -2,6 +2,8 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
+
 /**
  * Options to control the setting up of a WebGL Context.
  *
@@ -16,7 +18,8 @@ package cesium.engine
  * @property [webgl] WebGL options to be passed on to canvas.getContext
  * @property [getWebGLStub] A function to create a WebGL stub for testing
  */
-external interface ContextOptions {
+@JsPlainObject
+sealed external interface ContextOptions {
     var requestWebgl1: Boolean?
     var allowTextureFilterAnisotropic: Boolean?
     var webgl: WebGLOptions?

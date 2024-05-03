@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
 import web.html.HTMLCanvasElement
 
 /**
@@ -40,7 +41,8 @@ external fun writeTextToCanvas(
  * @property [padding] The pixel size of the padding to add around the text.
  *   Default value - `0`
  */
-external interface WriteTextToCanvasOptions {
+@JsPlainObject
+sealed external interface WriteTextToCanvasOptions {
     var font: String?
     var textBaseline: String?
     var fill: Boolean?

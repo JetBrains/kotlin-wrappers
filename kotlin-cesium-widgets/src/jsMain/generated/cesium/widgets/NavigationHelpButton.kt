@@ -8,6 +8,7 @@
 
 package cesium.widgets
 
+import js.objects.JsPlainObject
 import js.objects.jso
 import web.dom.Element
 
@@ -30,7 +31,8 @@ external class NavigationHelpButton(options: ConstructorOptions) {
      * @property [instructionsInitiallyVisible] True if the navigation instructions should initially be visible; otherwise, false.
      *   Default value - `false`
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var container: Element
         var instructionsInitiallyVisible: Boolean?
     }

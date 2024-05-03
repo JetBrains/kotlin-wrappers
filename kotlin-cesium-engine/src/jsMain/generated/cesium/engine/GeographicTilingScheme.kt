@@ -8,6 +8,7 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -30,7 +31,8 @@ external class GeographicTilingScheme(options: ConstructorOptions? = definedExte
      *   the tile tree.
      *   Default value - `1`
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var ellipsoid: Ellipsoid?
         var rectangle: Rectangle?
         var numberOfLevelZeroTilesX: Int?

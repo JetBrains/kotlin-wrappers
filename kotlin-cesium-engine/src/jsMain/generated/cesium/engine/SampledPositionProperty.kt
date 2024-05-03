@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
 /**
  * A [SampledProperty] which is also a [PositionProperty].
@@ -116,7 +117,8 @@ external class SampledPositionProperty(
      * @property [interpolationAlgorithm] The new interpolation algorithm.  If undefined, the existing property will be unchanged.
      * @property [interpolationDegree] The new interpolation degree.  If undefined, the existing property will be unchanged.
      */
-    interface SetInterpolationOptionsOptions {
+    @JsPlainObject
+    sealed interface SetInterpolationOptionsOptions {
         var interpolationAlgorithm: InterpolationAlgorithm?
         var interpolationDegree: Double?
     }

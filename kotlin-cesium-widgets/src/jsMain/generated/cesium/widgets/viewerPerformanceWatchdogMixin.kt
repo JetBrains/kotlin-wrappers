@@ -4,6 +4,8 @@
 
 package cesium.widgets
 
+import js.objects.JsPlainObject
+
 /**
  * A mixin which adds the [PerformanceWatchdog] widget to the [Viewer] widget.
  * Rather than being called directly, this function is normally passed as
@@ -29,6 +31,7 @@ external fun viewerPerformanceWatchdogMixin(
  *   it comes from a trusted source so that your application is not vulnerable to cross-site scripting attacks.
  *   Default value - `'This application appears to be performing poorly on your system.  Please try using a different web browser or updating your video drivers.'`
  */
-external interface ViewerPerformanceWatchdogMixinOptions {
+@JsPlainObject
+sealed external interface ViewerPerformanceWatchdogMixinOptions {
     var lowFrameRateMessage: String?
 }

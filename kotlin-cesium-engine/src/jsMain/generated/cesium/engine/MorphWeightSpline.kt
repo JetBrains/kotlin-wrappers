@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -34,7 +35,8 @@ external class MorphWeightSpline(options: ConstructorOptions) {
      *   the glTF from which the morph targets come. This means for 2 targets, weights = [w(0,0), w(0,1), w(1,0), w(1,1) ...]
      *   where i and j in w(i,j) are the time indices and target indices, respectively.
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var times: ReadonlyArray<Double>
         var weights: ReadonlyArray<Double>
     }

@@ -10,6 +10,7 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.core.Void
+import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
 
@@ -256,7 +257,8 @@ external class WebMapTileServiceImageryProvider(options: ConstructorOptions) {
      *   Default value - `'abc'`
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#.ConstructorOptions">Online Documentation</a>
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var url: Resource
         var format: String?
         var layer: String

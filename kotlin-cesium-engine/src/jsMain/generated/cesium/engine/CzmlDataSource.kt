@@ -10,6 +10,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.promise.Promise
 
 /**
@@ -229,7 +230,8 @@ external class CzmlDataSource(var name: String = definedExternally) {
          * @property [credit] A credit for the data source, which is displayed on the canvas.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CzmlDataSource.html#.LoadOptions">Online Documentation</a>
          */
-        interface LoadOptions {
+        @JsPlainObject
+        sealed interface LoadOptions {
             var sourceUri: Resource?
             var credit: Credit?
         }

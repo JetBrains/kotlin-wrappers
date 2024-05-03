@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
 import js.promise.Promise
 
 /**
@@ -48,7 +49,8 @@ external fun exportKml(options: ExportKmlOptions): Promise<dynamic>
  * @property [kmz] If true KML and external files will be compressed into a kmz file.
  *   Default value - `false`
  */
-external interface ExportKmlOptions {
+@JsPlainObject
+sealed external interface ExportKmlOptions {
     var entities: EntityCollection
     var ellipsoid: Ellipsoid?
     var modelCallback: exportKmlModelCallback?

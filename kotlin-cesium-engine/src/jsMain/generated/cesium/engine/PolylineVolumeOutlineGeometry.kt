@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -44,7 +45,8 @@ external class PolylineVolumeOutlineGeometry(options: ConstructorOptions) {
      * @property [cornerType] Determines the style of the corners.
      *   Default value - [CornerType.ROUNDED]
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var polylinePositions: ReadonlyArray<Cartesian3>
         var shapePositions: ReadonlyArray<Cartesian2>
         var ellipsoid: Ellipsoid?

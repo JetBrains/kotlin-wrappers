@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
 
@@ -21,7 +22,8 @@ external class BingMapsGeocoderService(options: ConstructorOptions) {
      * @property [key] A key to use with the Bing Maps geocoding service
      * @property [culture] A Bing Maps [Culture Code](https://docs.microsoft.com/en-us/bingmaps/rest-services/common-parameters-and-types/supported-culture-codes) to return results in a specific culture and language.
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var key: String
         var culture: String?
     }

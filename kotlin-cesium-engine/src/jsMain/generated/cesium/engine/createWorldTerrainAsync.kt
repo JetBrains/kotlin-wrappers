@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
 import js.promise.Promise
 
 /**
@@ -42,7 +43,8 @@ external fun createWorldTerrainAsync(options: CreateWorldTerrainAsyncOptions? = 
  * @property [requestWaterMask] Flag that indicates if the client should request per tile water masks from the server if available.
  *   Default value - `false`
  */
-external interface CreateWorldTerrainAsyncOptions {
+@JsPlainObject
+sealed external interface CreateWorldTerrainAsyncOptions {
     var requestVertexNormals: Boolean?
     var requestWaterMask: Boolean?
 }

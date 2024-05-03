@@ -10,6 +10,7 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.core.Void
+import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
 
@@ -161,7 +162,8 @@ external class SingleTileImageryProvider(options: ConstructorOptions) {
      * @property [ellipsoid] The ellipsoid.  If not specified, the WGS84 ellipsoid is used.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SingleTileImageryProvider.html#.ConstructorOptions">Online Documentation</a>
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var url: Resource
         var tileWidth: Int?
         var tileHeight: Int?
@@ -199,7 +201,8 @@ external class SingleTileImageryProvider(options: ConstructorOptions) {
          * @property [ellipsoid] The ellipsoid.  If not specified, the WGS84 ellipsoid is used.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SingleTileImageryProvider.html#.fromUrlOptions">Online Documentation</a>
          */
-        interface fromUrlOptions {
+        @JsPlainObject
+        sealed interface fromUrlOptions {
             var rectangle: Rectangle?
             var credit: Credit?
             var ellipsoid: Ellipsoid?

@@ -2,6 +2,8 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
+
 /**
  * WebGL options to be passed on to HTMLCanvasElement.getContext().
  * See [WebGLContextAttributes](https://registry.khronos.org/webgl/specs/latest/1.0/#5.2)
@@ -12,7 +14,8 @@ package cesium.engine
  * to composite Cesium above other HTML elements using alpha-blending, set
  * `alpha` to true.
  */
-external interface WebGLOptions {
+@JsPlainObject
+sealed external interface WebGLOptions {
     var alpha: Boolean?
     var depth: Boolean?
     var stencil: Boolean?

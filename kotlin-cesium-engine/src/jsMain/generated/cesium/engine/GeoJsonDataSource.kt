@@ -9,6 +9,7 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
 import js.promise.Promise
 
 /**
@@ -259,7 +260,8 @@ external class GeoJsonDataSource(var name: String = definedExternally) {
          * @property [credit] A credit for the data source, which is displayed on the canvas.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeoJsonDataSource.html#.LoadOptions">Online Documentation</a>
          */
-        interface LoadOptions {
+        @JsPlainObject
+        sealed interface LoadOptions {
             var sourceUri: String?
             var describe: describe?
             var markerSize: Double?

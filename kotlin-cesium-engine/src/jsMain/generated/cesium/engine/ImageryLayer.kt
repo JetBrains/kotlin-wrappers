@@ -9,6 +9,7 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
 
@@ -318,7 +319,8 @@ external class ImageryLayer(
      *   Default value - `0.004`
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayer.html#.ConstructorOptions">Online Documentation</a>
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var rectangle: Rectangle?
         var alpha: dynamic
         var nightAlpha: dynamic

@@ -6,6 +6,7 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.core.Void
+import js.objects.JsPlainObject
 import js.promise.Promise
 
 /**
@@ -202,7 +203,8 @@ private constructor() {
      *   To ensure that no tiles are discarded, construct and pass a [NeverTileDiscardPolicy] for this parameter.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#.ConstructorOptions">Online Documentation</a>
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var key: String?
         var tileProtocol: String?
         var mapStyle: BingMapsStyle?

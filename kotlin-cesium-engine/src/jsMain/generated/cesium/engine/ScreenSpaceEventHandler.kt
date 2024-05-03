@@ -8,6 +8,7 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
 import web.html.HTMLCanvasElement
 
 /**
@@ -87,7 +88,8 @@ external class ScreenSpaceEventHandler(element: HTMLCanvasElement? = definedExte
      * An Event that occurs at a single position on screen.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#.PositionedEvent">Online Documentation</a>
      */
-    interface PositionedEvent {
+    @JsPlainObject
+    sealed interface PositionedEvent {
         var position: Cartesian2
     }
 
@@ -95,7 +97,8 @@ external class ScreenSpaceEventHandler(element: HTMLCanvasElement? = definedExte
      * An Event that starts at one position and ends at another.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#.MotionEvent">Online Documentation</a>
      */
-    interface MotionEvent {
+    @JsPlainObject
+    sealed interface MotionEvent {
         var startPosition: Cartesian2
         var endPosition: Cartesian2
     }
@@ -104,7 +107,8 @@ external class ScreenSpaceEventHandler(element: HTMLCanvasElement? = definedExte
      * An Event that occurs at a two positions on screen.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#.TwoPointEvent">Online Documentation</a>
      */
-    interface TwoPointEvent {
+    @JsPlainObject
+    sealed interface TwoPointEvent {
         var position1: Cartesian2
         var position2: Cartesian2
     }
@@ -113,7 +117,8 @@ external class ScreenSpaceEventHandler(element: HTMLCanvasElement? = definedExte
      * An Event that starts at a two positions on screen and moves to two other positions.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#.TwoPointMotionEvent">Online Documentation</a>
      */
-    interface TwoPointMotionEvent {
+    @JsPlainObject
+    sealed interface TwoPointMotionEvent {
         var position1: Cartesian2
         var position2: Cartesian2
         var previousPosition1: Cartesian2

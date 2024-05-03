@@ -8,6 +8,7 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -28,7 +29,8 @@ external class Moon(options: ConstructorOptions? = definedExternally) {
      * @property [onlySunLighting] Use the sun as the only light source.
      *   Default value - `true`
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var show: Boolean?
         var textureUrl: String?
         var ellipsoid: Ellipsoid?

@@ -11,6 +11,7 @@ package cesium.widgets
 
 import cesium.engine.*
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
 import web.dom.Element
@@ -510,7 +511,8 @@ external class Viewer(
      * @property [maximumHeight] The maximum height at the peak of the flight.
      * @property [offset] The offset from the target in the local east-north-up reference frame centered at the target.
      */
-    interface FlyToOptions {
+    @JsPlainObject
+    sealed interface FlyToOptions {
         var duration: Double?
         var maximumHeight: Double?
         var offset: HeadingPitchRange?
@@ -676,7 +678,8 @@ external class Viewer(
      *   Default value - `1`
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Viewer.html#.ConstructorOptions">Online Documentation</a>
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var animation: Boolean?
         var baseLayerPicker: Boolean?
         var fullscreenButton: Boolean?

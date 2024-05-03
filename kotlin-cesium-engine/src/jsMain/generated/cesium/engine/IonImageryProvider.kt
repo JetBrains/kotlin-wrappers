@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.promise.Promise
 
 /**
@@ -161,7 +162,8 @@ private constructor() {
      *   Default value - [Ion.defaultServer]
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/IonImageryProvider.html#.ConstructorOptions">Online Documentation</a>
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var accessToken: String?
         var server: Resource?
     }

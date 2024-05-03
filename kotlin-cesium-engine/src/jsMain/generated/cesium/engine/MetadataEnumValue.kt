@@ -8,6 +8,7 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -24,7 +25,8 @@ external class MetadataEnumValue(options: ConstructorOptions) {
      * @property [extras] Extra user-defined properties.
      * @property [extensions] An object containing extensions.
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var value: Double
         var name: String
         var description: String?

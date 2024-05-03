@@ -12,6 +12,7 @@ import cesium.engine.DefaultEvent
 import cesium.engine.GeocoderService
 import cesium.engine.Scene
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -28,7 +29,8 @@ external class GeocoderViewModel(options: ConstructorOptions) {
      * @property [destinationFound] A callback function that is called after a successful geocode.  If not supplied, the default behavior is to fly the camera to the result destination.
      *   Default value - [GeocoderViewModel.flyToDestination]
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var scene: Scene
         var geocoderServices: ReadonlyArray<GeocoderService>?
         var flightDuration: Double?

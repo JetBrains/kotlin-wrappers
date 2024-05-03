@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
 import js.typedarrays.Uint16Array
@@ -80,7 +81,8 @@ external class QuantizedMeshTerrainData(options: ConstructorOptions) : TerrainDa
      * @property [waterMask] The buffer containing the watermask.
      * @property [credits] Array of credits for this tile.
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var quantizedVertices: Uint16Array
         var indices: dynamic
         var minimumHeight: Double

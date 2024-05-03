@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -21,7 +22,8 @@ external class FrustumOutlineGeometry(options: ConstructorOptions) {
      * @property [origin] The origin of the frustum.
      * @property [orientation] The orientation of the frustum.
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var frustum: dynamic
         var origin: Cartesian3
         var orientation: Quaternion

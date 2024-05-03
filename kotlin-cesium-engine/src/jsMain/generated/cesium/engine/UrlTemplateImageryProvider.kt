@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
 
@@ -332,7 +333,8 @@ external class UrlTemplateImageryProvider(options: ConstructorOptions) {
      * @property [customTags] Allow to replace custom keywords in the URL template. The object must have strings as keys and functions as values.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#.ConstructorOptions">Online Documentation</a>
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var url: Resource
         var pickFeaturesUrl: Resource?
         var urlSchemeZeroPadding: Any?

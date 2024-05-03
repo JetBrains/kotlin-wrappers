@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -37,7 +38,8 @@ external class CoplanarPolygonGeometry(options: ConstructorOptions) {
      *   Default value - [Ellipsoid.WGS84]
      * @property [textureCoordinates] Texture coordinates as a [PolygonHierarchy] of [Cartesian2] points.
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var polygonHierarchy: PolygonHierarchy
         var stRotation: Double?
         var vertexFormat: VertexFormat?
@@ -81,7 +83,8 @@ external class CoplanarPolygonGeometry(options: ConstructorOptions) {
          *   Default value - [Ellipsoid.WGS84]
          * @property [textureCoordinates] Texture coordinates as a [PolygonHierarchy] of [Cartesian2] points.
          */
-        interface FromPositionsOptions {
+        @JsPlainObject
+        sealed interface FromPositionsOptions {
             var positions: ReadonlyArray<Cartesian3>
             var vertexFormat: VertexFormat?
             var stRotation: Double?

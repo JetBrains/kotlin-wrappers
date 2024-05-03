@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -43,7 +44,8 @@ external class WallGeometry(options: ConstructorOptions) {
      * @property [vertexFormat] The vertex attributes to be computed.
      *   Default value - [VertexFormat.DEFAULT]
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var positions: ReadonlyArray<Cartesian3>
         var granularity: Double?
         var maximumHeights: ReadonlyArray<Double>?
@@ -122,7 +124,8 @@ external class WallGeometry(options: ConstructorOptions) {
          * @property [vertexFormat] The vertex attributes to be computed.
          *   Default value - [VertexFormat.DEFAULT]
          */
-        interface FromConstantHeightsOptions {
+        @JsPlainObject
+        sealed interface FromConstantHeightsOptions {
             var positions: ReadonlyArray<Cartesian3>
             var maximumHeight: Double?
             var minimumHeight: Double?

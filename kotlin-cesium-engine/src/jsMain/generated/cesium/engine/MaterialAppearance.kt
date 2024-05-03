@@ -8,6 +8,7 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -48,7 +49,8 @@ external class MaterialAppearance(options: ConstructorOptions? = definedExternal
      * @property [fragmentShaderSource] Optional GLSL fragment shader source to override the default fragment shader.
      * @property [renderState] Optional render state to override the default render state.
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var flat: Boolean?
         var faceForward: Boolean?
         var translucent: Boolean?
@@ -162,7 +164,8 @@ external class MaterialAppearance(options: ConstructorOptions? = definedExternal
      */
     fun getRenderState(): Any
 
-    interface MaterialSupportType {
+    @JsPlainObject
+    sealed interface MaterialSupportType {
         var vertexFormat: VertexFormat
         var vertexShaderSource: String
         var fragmentShaderSource: String

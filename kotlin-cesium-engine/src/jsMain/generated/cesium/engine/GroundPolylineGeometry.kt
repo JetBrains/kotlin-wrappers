@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -42,7 +43,8 @@ external class GroundPolylineGeometry(options: ConstructorOptions) {
      * @property [arcType] The type of line the polyline segments must follow. Valid options are [ArcType.GEODESIC] and [ArcType.RHUMB].
      *   Default value - [ArcType.GEODESIC]
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var positions: ReadonlyArray<Cartesian3>
         var width: Double?
         var granularity: Double?

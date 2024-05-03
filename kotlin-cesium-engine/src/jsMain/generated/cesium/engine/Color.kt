@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
 /**
  * A color, specified using red, green, blue, and alpha values,
@@ -279,7 +280,8 @@ external class Color(
          * @property [maximumAlpha] The minimum alpha value to generate if none was specified.
          *   Default value - `1.0`
          */
-        interface FromRandomOptions {
+        @JsPlainObject
+        sealed interface FromRandomOptions {
             var red: Double?
             var minimumRed: Double?
             var maximumRed: Double?

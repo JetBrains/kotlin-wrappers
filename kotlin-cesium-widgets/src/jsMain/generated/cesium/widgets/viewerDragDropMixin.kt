@@ -5,6 +5,7 @@
 package cesium.widgets
 
 import cesium.engine.*
+import js.objects.JsPlainObject
 import web.dom.Element
 
 /**
@@ -38,7 +39,8 @@ external fun viewerDragDropMixin(
  *   Default value - `true`
  * @property [proxy] The proxy to be used for KML network links.
  */
-external interface ViewerDragDropMixinOptions {
+@JsPlainObject
+sealed external interface ViewerDragDropMixinOptions {
     var dropTarget: Element?
     var clearOnDrop: Boolean?
     var flyToOnDrop: Boolean?

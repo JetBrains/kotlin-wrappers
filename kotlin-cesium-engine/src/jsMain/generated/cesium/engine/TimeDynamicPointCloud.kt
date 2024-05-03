@@ -8,6 +8,7 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -34,7 +35,8 @@ external class TimeDynamicPointCloud(options: ConstructorOptions) {
      * @property [style] The style, defined using the [3D Tiles Styling language](https://github.com/CesiumGS/3d-tiles/tree/main/specification/Styling), applied to each point in the point cloud.
      * @property [clippingPlanes] The [ClippingPlaneCollection] used to selectively disable rendering the point cloud.
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var clock: Clock
         var intervals: TimeIntervalCollection
         var show: Boolean?

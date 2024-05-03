@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -49,7 +50,8 @@ external class Geometry(options: ConstructorOptions) {
      * @property [indices] Optional index data that determines the primitives in the geometry.
      * @property [boundingSphere] An optional bounding sphere that fully enclosed the geometry.
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var attributes: GeometryAttributes
         var primitiveType: PrimitiveType?
         var indices: dynamic

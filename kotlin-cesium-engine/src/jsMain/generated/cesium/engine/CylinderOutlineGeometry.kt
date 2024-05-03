@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -34,7 +35,8 @@ external class CylinderOutlineGeometry(options: ConstructorOptions) {
      * @property [numberOfVerticalLines] Number of lines to draw between the top and bottom surfaces of the cylinder.
      *   Default value - `16`
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var length: Int
         var topRadius: Double
         var bottomRadius: Double

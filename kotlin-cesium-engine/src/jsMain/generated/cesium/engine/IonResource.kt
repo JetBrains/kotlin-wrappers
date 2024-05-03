@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.promise.Promise
 
 /**
@@ -67,7 +68,8 @@ external class IonResource(
      * @property [skipColorSpaceConversion] If true, any custom gamma or color profiles in the image will be ignored. Only applies if the browser supports `createImageBitmap`.
      *   Default value - `false`
      */
-    interface FetchImageOptions {
+    @JsPlainObject
+    sealed interface FetchImageOptions {
         var preferBlob: Boolean?
         var preferImageBitmap: Boolean?
         var flipY: Boolean?
@@ -109,7 +111,8 @@ external class IonResource(
          * @property [server] The resource to the Cesium ion API server.
          *   Default value - [Ion.defaultServer]
          */
-        interface FromAssetIdOptions {
+        @JsPlainObject
+        sealed interface FromAssetIdOptions {
             var accessToken: String?
             var server: Resource?
         }

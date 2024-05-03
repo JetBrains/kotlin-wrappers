@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 import web.html.HTMLImageElement
 
@@ -27,7 +28,8 @@ external class DiscardMissingTileImagePolicy(options: ConstructorOptions) : Tile
      *   discard check will proceed no matter the values of the pixelsToCheck.
      *   Default value - `false`
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var missingImageUrl: Resource
         var pixelsToCheck: ReadonlyArray<Cartesian2>
         var disableCheckIfAllPixelsAreTransparent: Boolean?

@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
+
 /**
  * Contains KML Feature data loaded into the `Entity.kml` property by [KmlDataSource].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlFeatureData.html">Online Documentation</a>
@@ -53,7 +55,8 @@ external class KmlFeatureData {
      * @property [age] Gets the email.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlFeatureData.html#.Author">Online Documentation</a>
      */
-    interface Author {
+    @JsPlainObject
+    sealed interface Author {
         var name: String
         var uri: String
         var age: Double
@@ -68,7 +71,8 @@ external class KmlFeatureData {
      * @property [length] Gets the link length.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlFeatureData.html#.Link">Online Documentation</a>
      */
-    interface Link {
+    @JsPlainObject
+    sealed interface Link {
         var href: String
         var hreflang: String
         var rel: String

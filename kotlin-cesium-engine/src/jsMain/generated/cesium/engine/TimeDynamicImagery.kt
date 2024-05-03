@@ -8,6 +8,7 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
 import web.html.HTMLImageElement
@@ -23,7 +24,8 @@ external class TimeDynamicImagery(options: ConstructorOptions) {
      * @property [requestImageFunction] A function that will request imagery tiles.
      * @property [reloadFunction] A function that will be called when all imagery tiles need to be reloaded.
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var clock: Clock
         var times: TimeIntervalCollection
         var requestImageFunction: Function<*>

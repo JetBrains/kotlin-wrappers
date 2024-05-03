@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -82,7 +83,8 @@ external class PostProcessStage(options: ConstructorOptions) {
      * @property [name] The unique name of this post-process stage for reference by other stages in a composite. If a name is not supplied, a GUID will be generated.
      *   Default value - [createGuid()][createGuid]
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var fragmentShader: String
         var uniforms: Any?
         var textureScale: Double?

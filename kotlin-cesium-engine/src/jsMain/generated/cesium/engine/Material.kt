@@ -8,6 +8,7 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -52,7 +53,8 @@ external class Material(options: ConstructorOptions? = definedExternally) {
      * @property [fabric] The fabric JSON used to generate the material.
      *   ructor
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var strict: Boolean?
         var translucent: dynamic
         var minificationFilter: TextureMinificationFilter?

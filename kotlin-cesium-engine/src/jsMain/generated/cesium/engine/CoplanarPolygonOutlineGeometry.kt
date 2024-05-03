@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -30,7 +31,8 @@ external class CoplanarPolygonOutlineGeometry(options: ConstructorOptions) {
     /**
      * @property [polygonHierarchy] A polygon hierarchy that can include holes.
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var polygonHierarchy: PolygonHierarchy
     }
 
@@ -50,7 +52,8 @@ external class CoplanarPolygonOutlineGeometry(options: ConstructorOptions) {
         /**
          * @property [positions] An array of positions that defined the corner points of the polygon.
          */
-        interface FromPositionsOptions {
+        @JsPlainObject
+        sealed interface FromPositionsOptions {
             var positions: ReadonlyArray<Cartesian3>
         }
 

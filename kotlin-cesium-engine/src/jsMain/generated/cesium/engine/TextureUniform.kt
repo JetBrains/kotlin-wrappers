@@ -8,6 +8,7 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
 import js.objects.jso
 import js.typedarrays.Uint8Array
 
@@ -35,7 +36,8 @@ external class TextureUniform(options: ConstructorOptions) {
      * @property [maximumAnisotropy] The maximum anisotropy of the texture sampler
      *   Default value - `1.0`
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var typedArray: Uint8Array?
         var width: Double?
         var height: Double?

@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -49,7 +50,8 @@ external class ClippingPolygonCollection(options: ConstructorOptions? = definedE
      * @property [inverse] If true, a region will be clipped if it is outside of every polygon in the collection. Otherwise, a region will only be clipped if it is on the inside of any polygon.
      *   Default value - `false`
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var polygons: ReadonlyArray<ClippingPolygon>?
         var enabled: Boolean?
         var inverse: Boolean?

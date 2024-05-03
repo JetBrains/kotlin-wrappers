@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
 import js.promise.Promise
 
 /**
@@ -61,7 +62,8 @@ external fun createOsmBuildingsAsync(options: CreateOsmBuildingsAsyncOptions? = 
  *   outlines are displayed. When false, outlines are not displayed.
  *   Default value - `true`
  */
-external interface CreateOsmBuildingsAsyncOptions {
+@JsPlainObject
+sealed external interface CreateOsmBuildingsAsyncOptions {
     var defaultColor: Color?
     var style: Cesium3DTileStyle?
     var enableShowOutline: Boolean?

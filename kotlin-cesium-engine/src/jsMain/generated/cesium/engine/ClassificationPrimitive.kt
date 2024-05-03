@@ -8,6 +8,7 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -56,7 +57,8 @@ external class ClassificationPrimitive(options: ConstructorOptions? = definedExt
      *   creation for the volumes to be created before the geometry is released or options.releaseGeometryInstance must be `false`.
      *   Default value - `false`
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var geometryInstances: GeometryInstance?
         var appearance: Appearance?
         var show: Boolean?

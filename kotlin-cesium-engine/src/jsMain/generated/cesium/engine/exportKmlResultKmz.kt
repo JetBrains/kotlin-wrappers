@@ -2,11 +2,13 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
 import web.blob.Blob
 
 /**
  * @property [kmz] The generated kmz file.
  */
-external interface exportKmlResultKmz {
+@JsPlainObject
+sealed external interface exportKmlResultKmz {
     var kmz: Blob
 }

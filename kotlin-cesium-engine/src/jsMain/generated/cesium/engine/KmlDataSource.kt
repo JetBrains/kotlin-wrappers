@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
 import web.blob.Blob
@@ -191,7 +192,8 @@ external class KmlDataSource(options: ConstructorOptions? = definedExternally) {
      * @property [screenOverlayContainer] A container for ScreenOverlay images.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlDataSource.html#.ConstructorOptions">Online Documentation</a>
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var camera: Camera?
         var canvas: HTMLCanvasElement?
         var credit: Credit?
@@ -239,7 +241,8 @@ external class KmlDataSource(options: ConstructorOptions? = definedExternally) {
          * @property [screenOverlayContainer] A container for ScreenOverlay images.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlDataSource.html#.LoadOptions">Online Documentation</a>
          */
-        interface LoadOptions {
+        @JsPlainObject
+        sealed interface LoadOptions {
             var sourceUri: String?
             var clampToGround: Boolean?
             var ellipsoid: Ellipsoid?

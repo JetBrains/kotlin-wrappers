@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
 
@@ -250,7 +251,8 @@ external class ArcGisMapServerImageryProvider(options: ConstructorOptions? = def
      *   a tiled server.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGisMapServerImageryProvider.html#.ConstructorOptions">Online Documentation</a>
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var tileDiscardPolicy: TileDiscardPolicy?
         var usePreCachedTilesIfAvailable: Boolean?
         var layers: String?

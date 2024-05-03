@@ -11,6 +11,7 @@
 package cesium.engine
 
 import js.core.Void
+import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
 
@@ -48,7 +49,8 @@ external class CustomHeightmapTerrainProvider(options: ConstructorOptions) : Ter
      *   parameter is specified, the WGS84 ellipsoid is used.
      * @property [credit] A credit for the data source, which is displayed on the canvas.
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var callback: GeometryCallback
         var width: Double
         var height: Double

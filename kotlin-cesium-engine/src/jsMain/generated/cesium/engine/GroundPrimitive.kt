@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.core.Void
+import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
 
@@ -99,7 +100,8 @@ external class GroundPrimitive(options: ConstructorOptions? = definedExternally)
      *   creation for the volumes to be created before the geometry is released or options.releaseGeometryInstance must be `false`.
      *   Default value - `false`
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var geometryInstances: GeometryInstance?
         var appearance: Appearance?
         var show: Boolean?

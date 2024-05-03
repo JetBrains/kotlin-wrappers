@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -23,7 +24,8 @@ external class GroundGeometryUpdater(options: ConstructorOptions) {
      * @property [geometryPropertyName] The geometry property name
      * @property [observedPropertyNames] The entity properties this geometry cares about
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var entity: Entity
         var scene: Scene
         var geometryOptions: Any

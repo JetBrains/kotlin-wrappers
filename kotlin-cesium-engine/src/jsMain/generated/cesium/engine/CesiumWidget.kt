@@ -9,6 +9,7 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
 import js.objects.jso
 import web.dom.Element
 import web.html.HTMLCanvasElement
@@ -97,7 +98,8 @@ external class CesiumWidget(
      * @property [msaaSamples] If provided, this value controls the rate of multisample antialiasing. Typical multisampling rates are 2, 4, and sometimes 8 samples per pixel. Higher sampling rates of MSAA may impact performance in exchange for improved visual quality. This value only applies to WebGL2 contexts that support multisample render targets.
      *   Default value - `1`
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var clock: Clock?
         var baseLayer: dynamic
         var terrainProvider: TerrainProvider?

@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -41,7 +42,8 @@ external class GeometryInstanceAttribute(options: ConstructorOptions) {
      *   Default value - `false`
      * @property [value] The value for the attribute.
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var componentDatatype: ComponentDatatype
         var componentsPerAttribute: Int
         var normalize: Boolean?

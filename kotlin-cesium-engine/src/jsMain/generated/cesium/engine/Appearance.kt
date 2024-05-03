@@ -8,6 +8,7 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -28,7 +29,8 @@ external class Appearance(options: ConstructorOptions? = definedExternally) {
      * @property [fragmentShaderSource] Optional GLSL fragment shader source to override the default fragment shader.
      * @property [renderState] Optional render state to override the default render state.
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var translucent: Boolean?
         var closed: Boolean?
         var material: Material?

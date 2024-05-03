@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
 import js.typedarrays.Uint8Array
@@ -86,7 +87,8 @@ external class HeightmapTerrainData(options: ConstructorOptions) : TerrainData {
      *   otherwise, false.
      *   Default value - `false`
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var buffer: dynamic
         var width: Double
         var height: Double
@@ -97,7 +99,8 @@ external class HeightmapTerrainData(options: ConstructorOptions) : TerrainData {
         var createdByUpsampling: Boolean?
     }
 
-    interface ConstructorOptionsStructure {
+    @JsPlainObject
+    sealed interface ConstructorOptionsStructure {
         var heightScale: Double?
         var heightOffset: Double?
         var elementsPerHeight: Int?

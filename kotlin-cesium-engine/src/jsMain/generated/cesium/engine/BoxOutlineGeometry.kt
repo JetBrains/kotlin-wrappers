@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -27,7 +28,8 @@ external class BoxOutlineGeometry(options: ConstructorOptions) {
      * @property [minimum] The minimum x, y, and z coordinates of the box.
      * @property [maximum] The maximum x, y, and z coordinates of the box.
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var minimum: Cartesian3
         var maximum: Cartesian3
     }
@@ -48,7 +50,8 @@ external class BoxOutlineGeometry(options: ConstructorOptions) {
         /**
          * @property [dimensions] The width, depth, and height of the box stored in the x, y, and z coordinates of the `Cartesian3`, respectively.
          */
-        interface FromDimensionsOptions {
+        @JsPlainObject
+        sealed interface FromDimensionsOptions {
             var dimensions: Cartesian3
         }
 

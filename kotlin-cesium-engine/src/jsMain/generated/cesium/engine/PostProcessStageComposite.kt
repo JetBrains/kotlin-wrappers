@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -76,7 +77,8 @@ external class PostProcessStageComposite(options: ConstructorOptions) {
      *   Default value - [createGuid()][createGuid]
      * @property [uniforms] An alias to the uniforms of post-process stages.
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var stages: ReadonlyArray<Any>
         var inputPreviousStageTexture: Boolean?
         var name: String?

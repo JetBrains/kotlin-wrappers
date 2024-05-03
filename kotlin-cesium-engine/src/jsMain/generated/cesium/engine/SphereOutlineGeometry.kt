@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -34,7 +35,8 @@ external class SphereOutlineGeometry(options: ConstructorOptions? = definedExter
      * @property [subdivisions] The number of points per line, determining the granularity of the curvature .
      *   Default value - `200`
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var radius: Double?
         var stackPartitions: Int?
         var slicePartitions: Int?

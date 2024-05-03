@@ -8,6 +8,7 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -45,7 +46,8 @@ external class BillboardCollection(options: ConstructorOptions? = definedExterna
      * @property [show] Determines if the billboards in the collection will be shown.
      *   Default value - `true`
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var modelMatrix: Matrix4?
         var debugShowBoundingVolume: Boolean?
         var scene: Scene?

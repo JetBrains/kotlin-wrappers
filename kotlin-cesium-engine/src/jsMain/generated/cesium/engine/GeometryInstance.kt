@@ -8,6 +8,7 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -52,7 +53,8 @@ external class GeometryInstance(options: ConstructorOptions) {
      * @property [id] A user-defined object to return when the instance is picked with [Scene.pick] or get/set per-instance attributes with [Primitive.getGeometryInstanceAttributes].
      * @property [attributes] Per-instance attributes like a show or color attribute shown in the example below.
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var geometry: dynamic
         var modelMatrix: Matrix4?
         var id: Any?

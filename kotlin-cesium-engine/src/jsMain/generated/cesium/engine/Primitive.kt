@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -125,7 +126,8 @@ external class Primitive(options: ConstructorOptions? = definedExternally) {
      * @property [shadows] Determines whether this primitive casts or receives shadows from light sources.
      *   Default value - [ShadowMode.DISABLED]
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var geometryInstances: ReadonlyArray<GeometryInstance>?
         var appearance: Appearance?
         var depthFailAppearance: Appearance?

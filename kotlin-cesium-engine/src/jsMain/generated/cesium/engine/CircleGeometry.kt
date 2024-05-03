@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -40,7 +41,8 @@ external class CircleGeometry(options: ConstructorOptions) {
      * @property [stRotation] The rotation of the texture coordinates, in radians. A positive rotation is counter-clockwise.
      *   Default value - `0.0`
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var center: Cartesian3
         var radius: Double
         var ellipsoid: Ellipsoid?

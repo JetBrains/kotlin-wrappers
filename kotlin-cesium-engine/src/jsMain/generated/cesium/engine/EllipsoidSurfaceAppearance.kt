@@ -8,6 +8,7 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -47,7 +48,8 @@ external class EllipsoidSurfaceAppearance(options: ConstructorOptions? = defined
      * @property [fragmentShaderSource] Optional GLSL fragment shader source to override the default fragment shader.
      * @property [renderState] Optional render state to override the default render state.
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var flat: Boolean?
         var faceForward: Boolean?
         var translucent: Boolean?

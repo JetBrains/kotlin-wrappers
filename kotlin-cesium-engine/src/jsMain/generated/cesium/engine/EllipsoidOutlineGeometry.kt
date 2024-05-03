@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -44,7 +45,8 @@ external class EllipsoidOutlineGeometry(options: ConstructorOptions? = definedEx
      * @property [subdivisions] The number of points per line, determining the granularity of the curvature.
      *   Default value - `128`
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var radii: Cartesian3?
         var innerRadii: Cartesian3?
         var minimumClock: Double?

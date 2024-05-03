@@ -8,6 +8,7 @@
 
 package cesium.widgets
 
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -27,7 +28,8 @@ external class ProviderViewModel(options: ConstructorOptions) {
      * @property [creationFunction] A function or Command
      *   that creates one or more providers which will be added to the globe when this item is selected.
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var name: String
         var tooltip: String
         var iconUrl: String

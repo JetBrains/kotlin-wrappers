@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
 import js.promise.Promise
 
 /**
@@ -119,7 +120,8 @@ external class GpxDataSource {
      * @property [trackColor] Color to use for track lines.
      * @property [routeColor] Color to use for route lines.
      */
-    interface LoadOptions {
+    @JsPlainObject
+    sealed interface LoadOptions {
         var clampToGround: Boolean?
         var waypointImage: String?
         var trackImage: String?
@@ -146,7 +148,8 @@ external class GpxDataSource {
          * @property [trackColor] Color to use for track lines.
          * @property [routeColor] Color to use for route lines.
          */
-        interface LoadOptions {
+        @JsPlainObject
+        sealed interface LoadOptions {
             var clampToGround: Boolean?
             var waypointImage: String?
             var trackImage: String?

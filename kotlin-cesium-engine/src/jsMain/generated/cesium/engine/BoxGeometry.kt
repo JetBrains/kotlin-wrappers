@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -30,7 +31,8 @@ external class BoxGeometry(options: ConstructorOptions) {
      * @property [vertexFormat] The vertex attributes to be computed.
      *   Default value - [VertexFormat.DEFAULT]
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var minimum: Cartesian3
         var maximum: Cartesian3
         var vertexFormat: VertexFormat?
@@ -55,7 +57,8 @@ external class BoxGeometry(options: ConstructorOptions) {
          * @property [vertexFormat] The vertex attributes to be computed.
          *   Default value - [VertexFormat.DEFAULT]
          */
-        interface FromDimensionsOptions {
+        @JsPlainObject
+        sealed interface FromDimensionsOptions {
             var dimensions: Cartesian3
             var vertexFormat: VertexFormat?
         }

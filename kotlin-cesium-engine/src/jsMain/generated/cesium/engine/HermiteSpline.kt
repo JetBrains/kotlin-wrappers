@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -55,7 +56,8 @@ external class HermiteSpline(options: ConstructorOptions) {
      * @property [inTangents] The array of incoming tangents at each control point.
      * @property [outTangents] The array of outgoing tangents at each control point.
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var times: ReadonlyArray<Double>
         var points: ReadonlyArray<Cartesian3>
         var inTangents: ReadonlyArray<Cartesian3>
@@ -161,7 +163,8 @@ external class HermiteSpline(options: ConstructorOptions) {
          * @property [points] The array of control points.
          * @property [tangents] The array of tangents at the control points.
          */
-        interface CreateC1Options {
+        @JsPlainObject
+        sealed interface CreateC1Options {
             var times: ReadonlyArray<Double>
             var points: ReadonlyArray<Cartesian3>
             var tangents: ReadonlyArray<Cartesian3>
@@ -192,7 +195,8 @@ external class HermiteSpline(options: ConstructorOptions) {
          * @property [times] The array of control point times.
          * @property [points] The array of control points.
          */
-        interface CreateNaturalCubicOptions {
+        @JsPlainObject
+        sealed interface CreateNaturalCubicOptions {
             var times: ReadonlyArray<Double>
             var points: ReadonlyArray<Cartesian3>
         }
@@ -226,7 +230,8 @@ external class HermiteSpline(options: ConstructorOptions) {
          * @property [firstTangent] The outgoing tangent of the first control point.
          * @property [lastTangent] The incoming tangent of the last control point.
          */
-        interface CreateClampedCubicOptions {
+        @JsPlainObject
+        sealed interface CreateClampedCubicOptions {
             var times: ReadonlyArray<Double>
             var points: ReadonlyArray<Cartesian3 /* or number */>
             var firstTangent: Cartesian3

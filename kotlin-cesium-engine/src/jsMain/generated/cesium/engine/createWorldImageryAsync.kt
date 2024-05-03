@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
 import js.promise.Promise
 
 /**
@@ -34,6 +35,7 @@ external fun createWorldImageryAsync(options: CreateWorldImageryAsyncOptions? = 
  * @property [style] The style of base imagery, only AERIAL, AERIAL_WITH_LABELS, and ROAD are currently supported.
  *   Default value - [IonWorldImageryStyle]
  */
-external interface CreateWorldImageryAsyncOptions {
+@JsPlainObject
+sealed external interface CreateWorldImageryAsyncOptions {
     var style: IonWorldImageryStyle?
 }

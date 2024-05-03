@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -35,7 +36,8 @@ external class SteppedSpline(options: ConstructorOptions) {
      * @property [times] An array of strictly increasing, unit-less, floating-point times at each point. The values are in no way connected to the clock time. They are the parameterization for the curve.
      * @property [points] The array of control points.
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var times: ReadonlyArray<Double>
         var points: dynamic
     }

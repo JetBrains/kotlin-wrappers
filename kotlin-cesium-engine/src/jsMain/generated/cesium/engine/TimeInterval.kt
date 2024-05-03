@@ -8,6 +8,8 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
+
 /**
  * An interval defined by a start and a stop time; optionally including those times as part of the interval.
  * Arbitrary data can optionally be associated with each instance for used with [TimeIntervalCollection].
@@ -147,7 +149,8 @@ external class TimeInterval {
          *   Default value - `true`
          * @property [data] Arbitrary data associated with this interval.
          */
-        interface FromIso8601Options {
+        @JsPlainObject
+        sealed interface FromIso8601Options {
             var iso8601: String
             var isStartIncluded: Boolean?
             var isStopIncluded: Boolean?

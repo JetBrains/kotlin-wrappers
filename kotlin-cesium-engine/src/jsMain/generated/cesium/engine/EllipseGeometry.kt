@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -44,7 +45,8 @@ external class EllipseGeometry(options: ConstructorOptions) {
      * @property [vertexFormat] The vertex attributes to be computed.
      *   Default value - [VertexFormat.DEFAULT]
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var center: Cartesian3
         var semiMajorAxis: Double
         var semiMinorAxis: Double
@@ -116,7 +118,8 @@ external class EllipseGeometry(options: ConstructorOptions) {
          * @property [granularity] The angular distance between points on the ellipse in radians.
          *   Default value - [Math.RADIANS_PER_DEGREE]
          */
-        interface ComputeRectangleOptions {
+        @JsPlainObject
+        sealed interface ComputeRectangleOptions {
             var center: Cartesian3
             var semiMajorAxis: Double
             var semiMinorAxis: Double

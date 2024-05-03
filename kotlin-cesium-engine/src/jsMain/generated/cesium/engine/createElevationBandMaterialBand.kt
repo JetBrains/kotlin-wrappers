@@ -3,6 +3,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
 /**
  * @property [entries] A list of elevation entries. They will automatically be sorted from lowest to highest. If there is only one entry and `extendsDownards` and `extendUpwards` are both `false`, they will both be set to `true`.
@@ -11,7 +12,8 @@ import js.array.ReadonlyArray
  * @property [extendUpwards] If `true`, the band's maximum elevation color will extend infinitely upwards.
  *   Default value - `false`
  */
-external interface createElevationBandMaterialBand {
+@JsPlainObject
+sealed external interface createElevationBandMaterialBand {
     var entries: ReadonlyArray<createElevationBandMaterialEntry>
     var extendDownwards: Boolean?
     var extendUpwards: Boolean?

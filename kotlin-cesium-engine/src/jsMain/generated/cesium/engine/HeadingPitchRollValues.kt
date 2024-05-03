@@ -2,6 +2,8 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
+
 /**
  * An orientation given by numeric heading, pitch, and roll
  * @property [heading] The heading in radians
@@ -11,7 +13,8 @@ package cesium.engine
  * @property [roll] The roll in radians
  *   Default value - `0.0`
  */
-external interface HeadingPitchRollValues : CameraOrientation {
+@JsPlainObject
+sealed external interface HeadingPitchRollValues : CameraOrientation {
     var heading: Double?
     var pitch: Double?
     var roll: Double?

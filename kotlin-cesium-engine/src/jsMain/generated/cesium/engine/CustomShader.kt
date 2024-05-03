@@ -8,6 +8,7 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
 import js.objects.ReadonlyRecord
 import js.objects.jso
 
@@ -74,7 +75,8 @@ external class CustomShader(options: ConstructorOptions) {
      * @property [vertexShaderText] The custom vertex shader as a string of GLSL code. It must include a GLSL function called vertexMain. See the example for the expected signature. If not specified, the custom vertex shader step will be skipped in the computed vertex shader.
      * @property [fragmentShaderText] The custom fragment shader as a string of GLSL code. It must include a GLSL function called fragmentMain. See the example for the expected signature. If not specified, the custom fragment shader step will be skipped in the computed fragment shader.
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var mode: CustomShaderMode?
         var lightingModel: LightingModel?
         var translucencyMode: CustomShaderTranslucencyMode?

@@ -8,6 +8,7 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -35,7 +36,8 @@ external class WebMercatorTilingScheme(options: ConstructorOptions? = definedExt
      *   globe is covered in the longitude direction and an equal distance is covered in the latitude
      *   direction, resulting in a square projection.
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var ellipsoid: Ellipsoid?
         var numberOfLevelZeroTilesX: Int?
         var numberOfLevelZeroTilesY: Int?

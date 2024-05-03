@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.buffer.ArrayBuffer
+import js.objects.JsPlainObject
 import js.promise.Promise
 import web.blob.Blob
 import web.xml.XMLDocument
@@ -199,7 +200,8 @@ external class Resource(options: dynamic) {
      * @property [preserveQueryParameters] If true, this will keep all query parameters from the current resource and derived resource. If false, derived parameters will replace those of the current resource.
      *   Default value - `false`
      */
-    interface GetDerivedResourceOptions {
+    @JsPlainObject
+    sealed interface GetDerivedResourceOptions {
         var url: String?
         var queryParameters: Any?
         var templateValues: Any?
@@ -302,7 +304,8 @@ external class Resource(options: dynamic) {
      * @property [skipColorSpaceConversion] If true, any custom gamma or color profiles in the image will be ignored. Only applies if the browser supports `createImageBitmap`.
      *   Default value - `false`
      */
-    interface FetchImageOptions {
+    @JsPlainObject
+    sealed interface FetchImageOptions {
         var preferBlob: Boolean?
         var preferImageBitmap: Boolean?
         var flipY: Boolean?
@@ -413,7 +416,8 @@ external class Resource(options: dynamic) {
      * @property [headers] Additional HTTP headers to send with the request, if any.
      * @property [overrideMimeType] Overrides the MIME type returned by the server.
      */
-    interface FetchOptions {
+    @JsPlainObject
+    sealed interface FetchOptions {
         var responseType: String?
         var headers: Any?
         var overrideMimeType: String?
@@ -442,7 +446,8 @@ external class Resource(options: dynamic) {
      * @property [headers] Additional HTTP headers to send with the request, if any.
      * @property [overrideMimeType] Overrides the MIME type returned by the server.
      */
-    interface DeleteOptions {
+    @JsPlainObject
+    sealed interface DeleteOptions {
         var responseType: String?
         var headers: Any?
         var overrideMimeType: String?
@@ -471,7 +476,8 @@ external class Resource(options: dynamic) {
      * @property [headers] Additional HTTP headers to send with the request, if any.
      * @property [overrideMimeType] Overrides the MIME type returned by the server.
      */
-    interface HeadOptions {
+    @JsPlainObject
+    sealed interface HeadOptions {
         var responseType: String?
         var headers: Any?
         var overrideMimeType: String?
@@ -500,7 +506,8 @@ external class Resource(options: dynamic) {
      * @property [headers] Additional HTTP headers to send with the request, if any.
      * @property [overrideMimeType] Overrides the MIME type returned by the server.
      */
-    interface OptionsOptions {
+    @JsPlainObject
+    sealed interface OptionsOptions {
         var responseType: String?
         var headers: Any?
         var overrideMimeType: String?
@@ -534,7 +541,8 @@ external class Resource(options: dynamic) {
      * @property [headers] Additional HTTP headers to send with the request, if any.
      * @property [overrideMimeType] Overrides the MIME type returned by the server.
      */
-    interface PostOptions {
+    @JsPlainObject
+    sealed interface PostOptions {
         var data: Any?
         var responseType: String?
         var headers: Any?
@@ -568,7 +576,8 @@ external class Resource(options: dynamic) {
      * @property [headers] Additional HTTP headers to send with the request, if any.
      * @property [overrideMimeType] Overrides the MIME type returned by the server.
      */
-    interface PutOptions {
+    @JsPlainObject
+    sealed interface PutOptions {
         var responseType: String?
         var headers: Any?
         var overrideMimeType: String?
@@ -601,7 +610,8 @@ external class Resource(options: dynamic) {
      * @property [headers] Additional HTTP headers to send with the request, if any.
      * @property [overrideMimeType] Overrides the MIME type returned by the server.
      */
-    interface PatchOptions {
+    @JsPlainObject
+    sealed interface PatchOptions {
         var responseType: String?
         var headers: Any?
         var overrideMimeType: String?
@@ -623,7 +633,8 @@ external class Resource(options: dynamic) {
      *   Default value - `true`
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.ConstructorOptions">Online Documentation</a>
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var url: String
         var queryParameters: Any?
         var templateValues: Any?
@@ -662,7 +673,8 @@ external class Resource(options: dynamic) {
          *   Default value - `0`
          * @property [request] A Request object that will be used. Intended for internal use only.
          */
-        interface FetchArrayBufferOptions {
+        @JsPlainObject
+        sealed interface FetchArrayBufferOptions {
             var url: String
             var queryParameters: Any?
             var templateValues: Any?
@@ -693,7 +705,8 @@ external class Resource(options: dynamic) {
          *   Default value - `0`
          * @property [request] A Request object that will be used. Intended for internal use only.
          */
-        interface FetchBlobOptions {
+        @JsPlainObject
+        sealed interface FetchBlobOptions {
             var url: String
             var queryParameters: Any?
             var templateValues: Any?
@@ -732,7 +745,8 @@ external class Resource(options: dynamic) {
          * @property [skipColorSpaceConversion] If true, any custom gamma or color profiles in the image will be ignored. Only applies when requesting an image and the browser supports `createImageBitmap`.
          *   Default value - `false`
          */
-        interface FetchImageOptions {
+        @JsPlainObject
+        sealed interface FetchImageOptions {
             var url: String
             var queryParameters: Any?
             var templateValues: Any?
@@ -767,7 +781,8 @@ external class Resource(options: dynamic) {
          *   Default value - `0`
          * @property [request] A Request object that will be used. Intended for internal use only.
          */
-        interface FetchTextOptions {
+        @JsPlainObject
+        sealed interface FetchTextOptions {
             var url: String
             var queryParameters: Any?
             var templateValues: Any?
@@ -798,7 +813,8 @@ external class Resource(options: dynamic) {
          *   Default value - `0`
          * @property [request] A Request object that will be used. Intended for internal use only.
          */
-        interface FetchJsonOptions {
+        @JsPlainObject
+        sealed interface FetchJsonOptions {
             var url: String
             var queryParameters: Any?
             var templateValues: Any?
@@ -829,7 +845,8 @@ external class Resource(options: dynamic) {
          *   Default value - `0`
          * @property [request] A Request object that will be used. Intended for internal use only.
          */
-        interface FetchXMLOptions {
+        @JsPlainObject
+        sealed interface FetchXMLOptions {
             var url: String
             var queryParameters: Any?
             var templateValues: Any?
@@ -862,7 +879,8 @@ external class Resource(options: dynamic) {
          * @property [callbackParameterName] The callback parameter name that the server expects.
          *   Default value - `'callback'`
          */
-        interface FetchJsonpOptions {
+        @JsPlainObject
+        sealed interface FetchJsonpOptions {
             var url: String
             var queryParameters: Any?
             var templateValues: Any?
@@ -896,7 +914,8 @@ external class Resource(options: dynamic) {
          * @property [responseType] The type of response.  This controls the type of item returned.
          * @property [overrideMimeType] Overrides the MIME type returned by the server.
          */
-        interface FetchOptions {
+        @JsPlainObject
+        sealed interface FetchOptions {
             var url: String
             var queryParameters: Any?
             var templateValues: Any?
@@ -932,7 +951,8 @@ external class Resource(options: dynamic) {
          * @property [responseType] The type of response.  This controls the type of item returned.
          * @property [overrideMimeType] Overrides the MIME type returned by the server.
          */
-        interface DeleteOptions {
+        @JsPlainObject
+        sealed interface DeleteOptions {
             var url: String
             var data: Any?
             var queryParameters: Any?
@@ -968,7 +988,8 @@ external class Resource(options: dynamic) {
          * @property [responseType] The type of response.  This controls the type of item returned.
          * @property [overrideMimeType] Overrides the MIME type returned by the server.
          */
-        interface HeadOptions {
+        @JsPlainObject
+        sealed interface HeadOptions {
             var url: String
             var queryParameters: Any?
             var templateValues: Any?
@@ -1003,7 +1024,8 @@ external class Resource(options: dynamic) {
          * @property [responseType] The type of response.  This controls the type of item returned.
          * @property [overrideMimeType] Overrides the MIME type returned by the server.
          */
-        interface OptionsOptions {
+        @JsPlainObject
+        sealed interface OptionsOptions {
             var url: String
             var queryParameters: Any?
             var templateValues: Any?
@@ -1039,7 +1061,8 @@ external class Resource(options: dynamic) {
          * @property [responseType] The type of response.  This controls the type of item returned.
          * @property [overrideMimeType] Overrides the MIME type returned by the server.
          */
-        interface PostOptions {
+        @JsPlainObject
+        sealed interface PostOptions {
             var url: String
             var data: Any
             var queryParameters: Any?
@@ -1076,7 +1099,8 @@ external class Resource(options: dynamic) {
          * @property [responseType] The type of response.  This controls the type of item returned.
          * @property [overrideMimeType] Overrides the MIME type returned by the server.
          */
-        interface PutOptions {
+        @JsPlainObject
+        sealed interface PutOptions {
             var url: String
             var data: Any
             var queryParameters: Any?
@@ -1113,7 +1137,8 @@ external class Resource(options: dynamic) {
          * @property [responseType] The type of response.  This controls the type of item returned.
          * @property [overrideMimeType] Overrides the MIME type returned by the server.
          */
-        interface PatchOptions {
+        @JsPlainObject
+        sealed interface PatchOptions {
             var url: String
             var data: Any
             var queryParameters: Any?

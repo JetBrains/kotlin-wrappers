@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -43,7 +44,8 @@ external class CatmullRomSpline(options: ConstructorOptions) {
      * @property [lastTangent] The tangent of the curve at the last control point.
      *   If the tangent is not given, it will be estimated.
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var times: ReadonlyArray<Double>
         var points: ReadonlyArray<Cartesian3>
         var firstTangent: Cartesian3?

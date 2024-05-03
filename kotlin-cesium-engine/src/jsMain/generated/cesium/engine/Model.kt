@@ -8,6 +8,7 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
 import js.promise.Promise
 
 /**
@@ -585,7 +586,8 @@ private constructor() {
          * @property [classificationType] Determines whether terrain, 3D Tiles or both will be classified by this model. This cannot be set after the model has loaded.
          * @property [gltfCallback] A function that is called with the loaded gltf object once loaded.
          */
-        interface FromGltfAsyncOptions {
+        @JsPlainObject
+        sealed interface FromGltfAsyncOptions {
             var url: Resource
             var basePath: Resource?
             var show: Boolean?

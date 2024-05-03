@@ -10,6 +10,7 @@ package cesium.widgets
 
 import cesium.engine.*
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 import web.dom.Element
 
@@ -30,7 +31,8 @@ external class Geocoder(options: ConstructorOptions) {
      * @property [destinationFound] A callback function that is called after a successful geocode.  If not supplied, the default behavior is to fly the camera to the result destination.
      *   Default value - [GeocoderViewModel.flyToDestination]
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var container: Element
         var scene: Scene
         var geocoderServices: ReadonlyArray<GeocoderService>?

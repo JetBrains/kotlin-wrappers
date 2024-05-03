@@ -8,6 +8,7 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -36,7 +37,8 @@ external class Particle(options: ConstructorOptions) {
      * @property [imageSize] The dimensions, width by height, to scale the particle image in pixels.
      *   Default value - [Cartesian2(1.0, 1.0)][Cartesian2]
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var mass: Double?
         var position: Cartesian3?
         var velocity: Cartesian3?

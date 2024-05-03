@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -37,7 +38,8 @@ external class ClippingPolygon(options: ConstructorOptions) {
     /**
      * @property [positions] A list of three or more Cartesian coordinates defining the outer ring of the clipping polygon.
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var positions: ReadonlyArray<Cartesian3>
         var ellipsoid: Ellipsoid?
     }

@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
 /**
  * Creates a [Material] that combines multiple layers of color/gradient bands and maps them to terrain heights.
@@ -44,7 +45,8 @@ external fun createElevationBandMaterial(options: CreateElevationBandMaterialOpt
  * @property [scene] The scene where the visualization is taking place.
  * @property [layers] A list of bands ordered from lowest to highest precedence.
  */
-external interface CreateElevationBandMaterialOptions {
+@JsPlainObject
+sealed external interface CreateElevationBandMaterialOptions {
     var scene: Scene
     var layers: ReadonlyArray<createElevationBandMaterialBand>
 }

@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
 /**
  * A feature of a [Model].
@@ -31,7 +32,8 @@ private constructor() {
      * @property [model] The model the feature belongs to.
      * @property [featureId] The unique integral identifier for this feature.
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var model: Model
         var featureId: Int
     }

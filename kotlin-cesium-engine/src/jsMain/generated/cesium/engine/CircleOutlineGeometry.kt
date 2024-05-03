@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -38,7 +39,8 @@ external class CircleOutlineGeometry(options: ConstructorOptions) {
      * @property [numberOfVerticalLines] Number of lines to draw between the top and bottom of an extruded circle.
      *   Default value - `16`
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var center: Cartesian3
         var radius: Double
         var ellipsoid: Ellipsoid?

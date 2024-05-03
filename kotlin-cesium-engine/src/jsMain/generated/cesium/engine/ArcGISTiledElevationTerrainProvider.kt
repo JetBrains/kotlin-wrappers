@@ -10,6 +10,7 @@
 package cesium.engine
 
 import js.core.Void
+import js.objects.JsPlainObject
 import js.promise.Promise
 
 /**
@@ -140,7 +141,8 @@ private constructor() :
      *   If neither parameter is specified, the WGS84 ellipsoid is used.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGISTiledElevationTerrainProvider.html#.ConstructorOptions">Online Documentation</a>
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var token: String?
         var ellipsoid: Ellipsoid?
     }

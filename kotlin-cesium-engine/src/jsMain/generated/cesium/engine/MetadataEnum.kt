@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -28,7 +29,8 @@ external class MetadataEnum(options: ConstructorOptions) {
      * @property [extras] Extra user-defined properties.
      * @property [extensions] An object containing extensions.
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var id: String
         var values: ReadonlyArray<MetadataEnumValue>
         var valueType: MetadataComponentType?

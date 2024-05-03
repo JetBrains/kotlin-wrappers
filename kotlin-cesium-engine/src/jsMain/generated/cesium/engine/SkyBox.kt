@@ -8,6 +8,7 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -35,7 +36,8 @@ external class SkyBox(options: ConstructorOptions) {
      * @property [show] Determines if this primitive will be shown.
      *   Default value - `true`
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var sources: Any?
         var show: Boolean?
     }

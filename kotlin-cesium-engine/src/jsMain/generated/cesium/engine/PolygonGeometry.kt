@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -106,7 +107,8 @@ external class PolygonGeometry(options: ConstructorOptions) {
      *   Default value - [ArcType.GEODESIC]
      * @property [textureCoordinates] Texture coordinates as a [PolygonHierarchy] of [Cartesian2] points. Has no effect for ground primitives.
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var polygonHierarchy: PolygonHierarchy
         var height: Double?
         var extrudedHeight: Double?
@@ -170,7 +172,8 @@ external class PolygonGeometry(options: ConstructorOptions) {
          *   Default value - [ArcType.GEODESIC]
          * @property [textureCoordinates] Texture coordinates as a [PolygonHierarchy] of [Cartesian2] points. Has no effect for ground primitives.
          */
-        interface FromPositionsOptions {
+        @JsPlainObject
+        sealed interface FromPositionsOptions {
             var positions: ReadonlyArray<Cartesian3>
             var height: Double?
             var extrudedHeight: Double?

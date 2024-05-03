@@ -6,6 +6,7 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.core.Void
+import js.objects.JsPlainObject
 import js.promise.Promise
 
 /**
@@ -108,7 +109,8 @@ private constructor() {
      * @property [values] The collection of values
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SNode.html#.AttributeFilter">Online Documentation</a>
      */
-    interface AttributeFilter {
+    @JsPlainObject
+    sealed interface AttributeFilter {
         var name: String
         var values: dynamic
     }

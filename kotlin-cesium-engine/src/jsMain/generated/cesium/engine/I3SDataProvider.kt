@@ -10,6 +10,7 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.core.Void
+import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
 
@@ -202,7 +203,8 @@ external class I3SDataProvider(options: ConstructorOptions) {
      *   Default value - `false`
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SDataProvider.html#.ConstructorOptions">Online Documentation</a>
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var name: String?
         var show: Boolean?
         var geoidTiledTerrainProvider: dynamic

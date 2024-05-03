@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
 
@@ -24,7 +25,8 @@ external class IonGeocoderService(options: ConstructorOptions) {
      * @property [server] The resource to the Cesium ion API server.
      *   Default value - [Ion.defaultServer]
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var scene: Scene
         var accessToken: String?
         var server: Resource?

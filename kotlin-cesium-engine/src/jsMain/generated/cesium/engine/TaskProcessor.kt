@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.promise.Promise
 
 /**
@@ -71,7 +72,8 @@ external class TaskProcessor(
      * @property [wasmBinaryFile] The path of the web assembly binary file.
      * @property [fallbackModulePath] The path of the fallback JavaScript module to use if web assembly is not supported.
      */
-    interface InitWebAssemblyModuleOptions {
+    @JsPlainObject
+    sealed interface InitWebAssemblyModuleOptions {
         var modulePath: String?
         var wasmBinaryFile: String?
         var fallbackModulePath: String?

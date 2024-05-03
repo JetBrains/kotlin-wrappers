@@ -9,6 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.jso
 
 /**
@@ -99,7 +100,8 @@ external class PolygonOutlineGeometry(options: ConstructorOptions) {
      * @property [arcType] The type of path the outline must follow. Valid options are [ArcType.GEODESIC] and [ArcType.RHUMB].
      *   Default value - [ArcType.GEODESIC]
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var polygonHierarchy: PolygonHierarchy
         var height: Double?
         var extrudedHeight: Double?
@@ -180,7 +182,8 @@ external class PolygonOutlineGeometry(options: ConstructorOptions) {
          * @property [arcType] The type of path the outline must follow. Valid options are [LinkType.GEODESIC] and [ArcType.RHUMB].
          *   Default value - [ArcType.GEODESIC]
          */
-        interface FromPositionsOptions {
+        @JsPlainObject
+        sealed interface FromPositionsOptions {
             var positions: ReadonlyArray<Cartesian3>
             var height: Double?
             var extrudedHeight: Double?

@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.objects.JsPlainObject
 import js.promise.Promise
 
 /**
@@ -39,6 +40,7 @@ external fun createWorldBathymetryAsync(options: CreateWorldBathymetryAsyncOptio
  * @property [requestVertexNormals] Flag that indicates if the client should request additional lighting information from the server if available.
  *   Default value - `false`
  */
-external interface CreateWorldBathymetryAsyncOptions {
+@JsPlainObject
+sealed external interface CreateWorldBathymetryAsyncOptions {
     var requestVertexNormals: Boolean?
 }

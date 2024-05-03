@@ -6,6 +6,7 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.core.Void
+import js.objects.JsPlainObject
 import js.promise.Promise
 
 /**
@@ -218,7 +219,8 @@ private constructor() {
      * @property [ellipsoid] The ellipsoid.  If not specified, the WGS84 ellipsoid is used.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseMapsProvider.html#.ConstructorOptions">Online Documentation</a>
      */
-    interface ConstructorOptions {
+    @JsPlainObject
+    sealed interface ConstructorOptions {
         var channel: Int
         var path: String?
         var maximumLevel: Int?
