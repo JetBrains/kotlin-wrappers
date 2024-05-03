@@ -21,5 +21,5 @@ external interface UseVirtualizerOptions<TScrollElement : EventTarget, TItemElem
 }
 
 external fun <TScrollElement : EventTarget, TItemElement : Element> useVirtualizer(
-    options: UseVirtualizerOptions<TScrollElement, TItemElement>
+    options: UseVirtualizerOptions<TScrollElement, TItemElement>,
 ): Virtualizer<TScrollElement, TItemElement>
