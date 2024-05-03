@@ -93,7 +93,7 @@ val Topic = FC {
     }
 }
 
-val appRouter = createBrowserRouter(
+private val APP_ROUTER = createBrowserRouter(
     arrayOf(
         jso {
             path = "/"
@@ -127,5 +127,7 @@ val appRouter = createBrowserRouter(
 )
 
 val ReactRouterDomApp = FC {
-    RouterProvider { router = appRouter }
+    RouterProvider {
+        router = APP_ROUTER
+    }
 }
