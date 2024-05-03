@@ -2,18 +2,27 @@
 
 package mui.base
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-external interface MenuButtonClasses {
-    /** Class name applied to the root element. */
-    var root: ClassName
+@JsVirtual
+sealed external interface MenuButtonClasses {
+    companion object {
+        /** Class name applied to the root element. */
+        @JsValue("base-MenuButton-root")
+        val root: ClassName
 
-    /** State class applied to the root element if `active={true}`. */
-    var active: ClassName
+        /** State class applied to the root element if `active={true}`. */
+        @JsValue("base-active")
+        val active: ClassName
 
-    /** State class applied to the root element if `disabled={true}`. */
-    var disabled: ClassName
+        /** State class applied to the root element if `disabled={true}`. */
+        @JsValue("base-disabled")
+        val disabled: ClassName
 
-    /** State class applied to the root element if the associated menu is open. */
-    var expanded: ClassName
+        /** State class applied to the root element if the associated menu is open. */
+        @JsValue("base-expanded")
+        val expanded: ClassName
+    }
 }

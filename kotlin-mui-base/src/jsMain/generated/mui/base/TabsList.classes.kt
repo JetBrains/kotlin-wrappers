@@ -2,15 +2,23 @@
 
 package mui.base
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-external interface TabsListClasses {
-    /** Class name applied to the root element. */
-    var root: ClassName
+@JsVirtual
+sealed external interface TabsListClasses {
+    companion object {
+        /** Class name applied to the root element. */
+        @JsValue("base-TabsList-root")
+        val root: ClassName
 
-    /** Class name applied to the root element if `orientation='horizontal'`. */
-    var horizontal: ClassName
+        /** Class name applied to the root element if `orientation='horizontal'`. */
+        @JsValue("base-TabsList-horizontal")
+        val horizontal: ClassName
 
-    /** Class name applied to the root element if `orientation='vertical'`. */
-    var vertical: ClassName
+        /** Class name applied to the root element if `orientation='vertical'`. */
+        @JsValue("base-TabsList-vertical")
+        val vertical: ClassName
+    }
 }

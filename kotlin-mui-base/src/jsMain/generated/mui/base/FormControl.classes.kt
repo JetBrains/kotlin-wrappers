@@ -2,24 +2,35 @@
 
 package mui.base
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-external interface FormControlClasses {
-    /** Class applied to the root element. */
-    var root: ClassName
+@JsVirtual
+sealed external interface FormControlClasses {
+    companion object {
+        /** Class applied to the root element. */
+        @JsValue("base-FormControl-root")
+        val root: ClassName
 
-    /** State class applied to the root element if `disabled={true}`. */
-    var disabled: ClassName
+        /** State class applied to the root element if `disabled={true}`. */
+        @JsValue("base-disabled")
+        val disabled: ClassName
 
-    /** State class applied to the root element if `error={true}`. */
-    var error: ClassName
+        /** State class applied to the root element if `error={true}`. */
+        @JsValue("base-error")
+        val error: ClassName
 
-    /** State class applied to the root element if the inner input has value. */
-    var filled: ClassName
+        /** State class applied to the root element if the inner input has value. */
+        @JsValue("base-FormControl-filled")
+        val filled: ClassName
 
-    /** State class applied to the root element if the inner input is focused. */
-    var focused: ClassName
+        /** State class applied to the root element if the inner input is focused. */
+        @JsValue("base-focused")
+        val focused: ClassName
 
-    /** State class applied to the root element if `required={true}`. */
-    var required: ClassName
+        /** State class applied to the root element if `required={true}`. */
+        @JsValue("base-required")
+        val required: ClassName
+    }
 }

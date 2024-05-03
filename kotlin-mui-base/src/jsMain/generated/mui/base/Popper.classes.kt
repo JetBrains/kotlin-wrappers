@@ -2,9 +2,15 @@
 
 package mui.base
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-external interface PopperClasses {
-    /** Class name applied to the root element. */
-    var root: ClassName
+@JsVirtual
+sealed external interface PopperClasses {
+    companion object {
+        /** Class name applied to the root element. */
+        @JsValue("base-Popper-root")
+        val root: ClassName
+    }
 }
