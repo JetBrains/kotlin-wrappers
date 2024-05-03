@@ -6,7 +6,7 @@ build/
 **/.idea/*
 !.idea/codeInsightSettings.xml
 !.idea/externalDependencies.xml
-!.idea/icon.png
+!.idea/icon.svg
 !.idea/vcs.xml
 *.iml
 *.ipr
