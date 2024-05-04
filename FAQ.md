@@ -21,9 +21,10 @@ external interface EventInit {
     val composed: Boolean?
 }
 
-val eventInitDict: EventInit = jso { bubbles: true,
-                                     cancellable: true,
-                                     composed: false,
+val eventInitDict: EventInit = jso { 
+    bubbles: true,
+    cancellable: true,
+    composed: false,
 }
 
 val event = Event(EventType("my-event"), eventInitDict)
