@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/Avatar")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -25,4 +27,15 @@ external interface AvatarClasses {
 
     /** Styles applied to the fallback icon */
     var fallback: ClassName
+}
+
+@JsName("default")
+external object avatarClasses : AvatarClasses {
+    override var root: ClassName = definedExternally
+    override var colorDefault: ClassName = definedExternally
+    override var circular: ClassName = definedExternally
+    override var rounded: ClassName = definedExternally
+    override var square: ClassName = definedExternally
+    override var img: ClassName = definedExternally
+    override var fallback: ClassName = definedExternally
 }

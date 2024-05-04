@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/Drawer")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -40,4 +42,20 @@ external interface DrawerClasses {
 
     /** Styles applied to the Modal component. */
     var modal: ClassName
+}
+
+@JsName("default")
+external object drawerClasses : DrawerClasses {
+    override var root: ClassName = definedExternally
+    override var docked: ClassName = definedExternally
+    override var paper: ClassName = definedExternally
+    override var paperAnchorLeft: ClassName = definedExternally
+    override var paperAnchorRight: ClassName = definedExternally
+    override var paperAnchorTop: ClassName = definedExternally
+    override var paperAnchorBottom: ClassName = definedExternally
+    override var paperAnchorDockedLeft: ClassName = definedExternally
+    override var paperAnchorDockedTop: ClassName = definedExternally
+    override var paperAnchorDockedRight: ClassName = definedExternally
+    override var paperAnchorDockedBottom: ClassName = definedExternally
+    override var modal: ClassName = definedExternally
 }

@@ -1,24 +1,24 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/base/Badge")
+
 package mui.base
 
-import seskar.js.JsValue
-import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-@JsVirtual
-sealed external interface BadgeClasses {
-    companion object {
-        /** Class name applied to the root element. */
-        @JsValue("base-Badge-root")
-        val root: ClassName
+external interface BadgeClasses {
+    /** Class name applied to the root element. */
+    var root: ClassName
 
-        /** Class name applied to the badge `span` element. */
-        @JsValue("base-Badge-badge")
-        val badge: ClassName
+    /** Class name applied to the badge `span` element. */
+    var badge: ClassName
 
-        /** State class applied to the badge `span` element if `invisible={true}`. */
-        @JsValue("base-Badge-invisible")
-        val invisible: ClassName
-    }
+    /** State class applied to the badge `span` element if `invisible={true}`. */
+    var invisible: ClassName
+}
+
+external object badgeClasses : BadgeClasses {
+    override var root: ClassName = definedExternally
+    override var badge: ClassName = definedExternally
+    override var invisible: ClassName = definedExternally
 }

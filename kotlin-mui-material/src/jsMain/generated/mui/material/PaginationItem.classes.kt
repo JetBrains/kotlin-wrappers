@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/PaginationItem")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -72,4 +74,28 @@ external interface PaginationItemClasses {
 
     /** Styles applied to the root element if `color="secondary"`. */
     var colorSecondary: ClassName
+}
+
+@JsName("default")
+external object paginationItemClasses : PaginationItemClasses {
+    override var root: ClassName = definedExternally
+    override var page: ClassName = definedExternally
+    override var sizeSmall: ClassName = definedExternally
+    override var sizeLarge: ClassName = definedExternally
+    override var text: ClassName = definedExternally
+    override var textPrimary: ClassName = definedExternally
+    override var textSecondary: ClassName = definedExternally
+    override var outlined: ClassName = definedExternally
+    override var outlinedPrimary: ClassName = definedExternally
+    override var outlinedSecondary: ClassName = definedExternally
+    override var rounded: ClassName = definedExternally
+    override var ellipsis: ClassName = definedExternally
+    override var firstLast: ClassName = definedExternally
+    override var previousNext: ClassName = definedExternally
+    override var focusVisible: ClassName = definedExternally
+    override var disabled: ClassName = definedExternally
+    override var selected: ClassName = definedExternally
+    override var icon: ClassName = definedExternally
+    override var colorPrimary: ClassName = definedExternally
+    override var colorSecondary: ClassName = definedExternally
 }

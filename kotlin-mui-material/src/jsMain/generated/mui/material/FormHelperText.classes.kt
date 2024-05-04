@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/FormHelperText")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -28,4 +30,16 @@ external interface FormHelperTextClasses {
 
     /** State class applied to the root element if `required={true}`. */
     var required: ClassName
+}
+
+@JsName("default")
+external object formHelperTextClasses : FormHelperTextClasses {
+    override var root: ClassName = definedExternally
+    override var error: ClassName = definedExternally
+    override var disabled: ClassName = definedExternally
+    override var sizeSmall: ClassName = definedExternally
+    override var contained: ClassName = definedExternally
+    override var focused: ClassName = definedExternally
+    override var filled: ClassName = definedExternally
+    override var required: ClassName = definedExternally
 }

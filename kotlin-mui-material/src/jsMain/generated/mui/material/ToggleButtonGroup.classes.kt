@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/ToggleButtonGroup")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -34,4 +36,18 @@ external interface ToggleButtonGroupClasses {
 
     /** Styles applied to buttons in the middle of the toggle button group. */
     var middleButton: ClassName
+}
+
+@JsName("default")
+external object toggleButtonGroupClasses : ToggleButtonGroupClasses {
+    override var root: ClassName = definedExternally
+    override var vertical: ClassName = definedExternally
+    override var disabled: ClassName = definedExternally
+    override var grouped: ClassName = definedExternally
+    override var groupedHorizontal: ClassName = definedExternally
+    override var groupedVertical: ClassName = definedExternally
+    override var fullWidth: ClassName = definedExternally
+    override var firstButton: ClassName = definedExternally
+    override var lastButton: ClassName = definedExternally
+    override var middleButton: ClassName = definedExternally
 }

@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/Alert")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -121,4 +123,31 @@ external interface AlertClasses {
 
     /** Styles applied to the action wrapper element if `action` is provided. */
     var action: ClassName
+}
+
+@JsName("default")
+external object alertClasses : AlertClasses {
+    override var root: ClassName = definedExternally
+    override var filled: ClassName = definedExternally
+    override var outlined: ClassName = definedExternally
+    override var standard: ClassName = definedExternally
+    override var colorSuccess: ClassName = definedExternally
+    override var colorInfo: ClassName = definedExternally
+    override var colorWarning: ClassName = definedExternally
+    override var colorError: ClassName = definedExternally
+    override var standardSuccess: ClassName = definedExternally
+    override var standardInfo: ClassName = definedExternally
+    override var standardWarning: ClassName = definedExternally
+    override var standardError: ClassName = definedExternally
+    override var outlinedSuccess: ClassName = definedExternally
+    override var outlinedInfo: ClassName = definedExternally
+    override var outlinedWarning: ClassName = definedExternally
+    override var outlinedError: ClassName = definedExternally
+    override var filledSuccess: ClassName = definedExternally
+    override var filledInfo: ClassName = definedExternally
+    override var filledWarning: ClassName = definedExternally
+    override var filledError: ClassName = definedExternally
+    override var icon: ClassName = definedExternally
+    override var message: ClassName = definedExternally
+    override var action: ClassName = definedExternally
 }

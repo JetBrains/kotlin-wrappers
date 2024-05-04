@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/InputBase")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -64,4 +66,28 @@ external interface InputBaseClasses {
 
     /** Styles applied to the input element if `hiddenLabel={true}`. */
     var inputHiddenLabel: ClassName
+}
+
+@JsName("default")
+external object inputBaseClasses : InputBaseClasses {
+    override var root: ClassName = definedExternally
+    override var formControl: ClassName = definedExternally
+    override var focused: ClassName = definedExternally
+    override var disabled: ClassName = definedExternally
+    override var adornedStart: ClassName = definedExternally
+    override var adornedEnd: ClassName = definedExternally
+    override var error: ClassName = definedExternally
+    override var sizeSmall: ClassName = definedExternally
+    override var multiline: ClassName = definedExternally
+    override var colorSecondary: ClassName = definedExternally
+    override var fullWidth: ClassName = definedExternally
+    override var hiddenLabel: ClassName = definedExternally
+    override var readOnly: ClassName = definedExternally
+    override var input: ClassName = definedExternally
+    override var inputSizeSmall: ClassName = definedExternally
+    override var inputMultiline: ClassName = definedExternally
+    override var inputTypeSearch: ClassName = definedExternally
+    override var inputAdornedStart: ClassName = definedExternally
+    override var inputAdornedEnd: ClassName = definedExternally
+    override var inputHiddenLabel: ClassName = definedExternally
 }

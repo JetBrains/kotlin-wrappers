@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/MobileStepper")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -28,4 +30,16 @@ external interface MobileStepperClasses {
 
     /** Styles applied to the Linear Progress component if `variant="progress"`. */
     var progress: ClassName
+}
+
+@JsName("default")
+external object mobileStepperClasses : MobileStepperClasses {
+    override var root: ClassName = definedExternally
+    override var positionBottom: ClassName = definedExternally
+    override var positionTop: ClassName = definedExternally
+    override var positionStatic: ClassName = definedExternally
+    override var dots: ClassName = definedExternally
+    override var dot: ClassName = definedExternally
+    override var dotActive: ClassName = definedExternally
+    override var progress: ClassName = definedExternally
 }

@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/Breadcrumbs")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -16,4 +18,12 @@ external interface BreadcrumbsClasses {
 
     /** Styles applied to the separator element. */
     var separator: ClassName
+}
+
+@JsName("default")
+external object breadcrumbsClasses : BreadcrumbsClasses {
+    override var root: ClassName = definedExternally
+    override var ol: ClassName = definedExternally
+    override var li: ClassName = definedExternally
+    override var separator: ClassName = definedExternally
 }

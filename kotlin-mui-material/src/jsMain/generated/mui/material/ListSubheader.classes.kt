@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/ListSubheader")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -22,4 +24,14 @@ external interface ListSubheaderClasses {
 
     /** Styles applied to the root element unless `disableSticky={true}`. */
     var sticky: ClassName
+}
+
+@JsName("default")
+external object listSubheaderClasses : ListSubheaderClasses {
+    override var root: ClassName = definedExternally
+    override var colorPrimary: ClassName = definedExternally
+    override var colorInherit: ClassName = definedExternally
+    override var gutters: ClassName = definedExternally
+    override var inset: ClassName = definedExternally
+    override var sticky: ClassName = definedExternally
 }

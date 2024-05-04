@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/ToggleButton")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -34,4 +36,18 @@ external interface ToggleButtonClasses {
 
     /** Styles applied to the root element if `fullWidth={true}`. */
     var fullWidth: ClassName
+}
+
+@JsName("default")
+external object toggleButtonClasses : ToggleButtonClasses {
+    override var root: ClassName = definedExternally
+    override var disabled: ClassName = definedExternally
+    override var selected: ClassName = definedExternally
+    override var standard: ClassName = definedExternally
+    override var primary: ClassName = definedExternally
+    override var secondary: ClassName = definedExternally
+    override var sizeSmall: ClassName = definedExternally
+    override var sizeMedium: ClassName = definedExternally
+    override var sizeLarge: ClassName = definedExternally
+    override var fullWidth: ClassName = definedExternally
 }

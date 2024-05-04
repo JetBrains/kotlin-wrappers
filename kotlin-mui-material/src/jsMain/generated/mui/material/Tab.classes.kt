@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/Tab")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -34,4 +36,18 @@ external interface TabClasses {
 
     /** Styles applied to the wrapper element of `icon` if `icon` is provided. */
     var iconWrapper: ClassName
+}
+
+@JsName("default")
+external object tabClasses : TabClasses {
+    override var root: ClassName = definedExternally
+    override var labelIcon: ClassName = definedExternally
+    override var textColorInherit: ClassName = definedExternally
+    override var textColorPrimary: ClassName = definedExternally
+    override var textColorSecondary: ClassName = definedExternally
+    override var selected: ClassName = definedExternally
+    override var disabled: ClassName = definedExternally
+    override var fullWidth: ClassName = definedExternally
+    override var wrapped: ClassName = definedExternally
+    override var iconWrapper: ClassName = definedExternally
 }

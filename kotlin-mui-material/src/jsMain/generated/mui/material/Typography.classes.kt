@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/Typography")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -70,4 +72,30 @@ external interface TypographyClasses {
 
     /** Styles applied to the root element if `paragraph={true}`. */
     var paragraph: ClassName
+}
+
+@JsName("default")
+external object typographyClasses : TypographyClasses {
+    override var root: ClassName = definedExternally
+    override var body2: ClassName = definedExternally
+    override var body1: ClassName = definedExternally
+    override var caption: ClassName = definedExternally
+    override var button: ClassName = definedExternally
+    override var h1: ClassName = definedExternally
+    override var h2: ClassName = definedExternally
+    override var h3: ClassName = definedExternally
+    override var h4: ClassName = definedExternally
+    override var h5: ClassName = definedExternally
+    override var h6: ClassName = definedExternally
+    override var subtitle1: ClassName = definedExternally
+    override var subtitle2: ClassName = definedExternally
+    override var overline: ClassName = definedExternally
+    override var inherit: ClassName = definedExternally
+    override var alignLeft: ClassName = definedExternally
+    override var alignCenter: ClassName = definedExternally
+    override var alignRight: ClassName = definedExternally
+    override var alignJustify: ClassName = definedExternally
+    override var noWrap: ClassName = definedExternally
+    override var gutterBottom: ClassName = definedExternally
+    override var paragraph: ClassName = definedExternally
 }

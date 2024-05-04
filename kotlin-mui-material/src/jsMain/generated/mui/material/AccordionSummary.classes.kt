@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/AccordionSummary")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -31,4 +33,16 @@ external interface AccordionSummaryClasses {
 
     /** Styles applied to the `expandIcon`'s wrapper element. */
     var expandIconWrapper: ClassName
+}
+
+@JsName("default")
+external object accordionSummaryClasses : AccordionSummaryClasses {
+    override var root: ClassName = definedExternally
+    override var expanded: ClassName = definedExternally
+    override var focusVisible: ClassName = definedExternally
+    override var disabled: ClassName = definedExternally
+    override var gutters: ClassName = definedExternally
+    override var contentGutters: ClassName = definedExternally
+    override var content: ClassName = definedExternally
+    override var expandIconWrapper: ClassName = definedExternally
 }

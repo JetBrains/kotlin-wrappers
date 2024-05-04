@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/Collapse")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -22,4 +24,14 @@ external interface CollapseClasses {
 
     /** Styles applied to the inner wrapper element. */
     var wrapperInner: ClassName
+}
+
+@JsName("default")
+external object collapseClasses : CollapseClasses {
+    override var root: ClassName = definedExternally
+    override var horizontal: ClassName = definedExternally
+    override var entered: ClassName = definedExternally
+    override var hidden: ClassName = definedExternally
+    override var wrapper: ClassName = definedExternally
+    override var wrapperInner: ClassName = definedExternally
 }

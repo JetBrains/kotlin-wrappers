@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/CardHeader")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -22,4 +24,14 @@ external interface CardHeaderClasses {
 
     /** Styles applied to the subheader Typography element. */
     var subheader: ClassName
+}
+
+@JsName("default")
+external object cardHeaderClasses : CardHeaderClasses {
+    override var root: ClassName = definedExternally
+    override var avatar: ClassName = definedExternally
+    override var action: ClassName = definedExternally
+    override var content: ClassName = definedExternally
+    override var title: ClassName = definedExternally
+    override var subheader: ClassName = definedExternally
 }

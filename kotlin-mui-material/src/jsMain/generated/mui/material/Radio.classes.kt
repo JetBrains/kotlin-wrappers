@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/Radio")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -22,4 +24,14 @@ external interface RadioClasses {
 
     /** Styles applied to the root element if `size="small"`. */
     var sizeSmall: ClassName
+}
+
+@JsName("default")
+external object radioClasses : RadioClasses {
+    override var root: ClassName = definedExternally
+    override var checked: ClassName = definedExternally
+    override var disabled: ClassName = definedExternally
+    override var colorPrimary: ClassName = definedExternally
+    override var colorSecondary: ClassName = definedExternally
+    override var sizeSmall: ClassName = definedExternally
 }

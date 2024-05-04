@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/StepLabel")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -37,4 +39,19 @@ external interface StepLabelClasses {
 
     /** Styles applied to the container element which wraps label and `optional`. */
     var labelContainer: ClassName
+}
+
+@JsName("default")
+external object stepLabelClasses : StepLabelClasses {
+    override var root: ClassName = definedExternally
+    override var horizontal: ClassName = definedExternally
+    override var vertical: ClassName = definedExternally
+    override var label: ClassName = definedExternally
+    override var active: ClassName = definedExternally
+    override var completed: ClassName = definedExternally
+    override var error: ClassName = definedExternally
+    override var disabled: ClassName = definedExternally
+    override var iconContainer: ClassName = definedExternally
+    override var alternativeLabel: ClassName = definedExternally
+    override var labelContainer: ClassName = definedExternally
 }

@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/Tooltip")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -40,4 +42,20 @@ external interface TooltipClasses {
 
     /** Styles applied to the tooltip (label wrapper) element if `placement` contains "bottom". */
     var tooltipPlacementBottom: ClassName
+}
+
+@JsName("default")
+external object tooltipClasses : TooltipClasses {
+    override var popper: ClassName = definedExternally
+    override var popperInteractive: ClassName = definedExternally
+    override var popperArrow: ClassName = definedExternally
+    override var popperClose: ClassName = definedExternally
+    override var tooltip: ClassName = definedExternally
+    override var tooltipArrow: ClassName = definedExternally
+    override var arrow: ClassName = definedExternally
+    override var touch: ClassName = definedExternally
+    override var tooltipPlacementLeft: ClassName = definedExternally
+    override var tooltipPlacementRight: ClassName = definedExternally
+    override var tooltipPlacementTop: ClassName = definedExternally
+    override var tooltipPlacementBottom: ClassName = definedExternally
 }

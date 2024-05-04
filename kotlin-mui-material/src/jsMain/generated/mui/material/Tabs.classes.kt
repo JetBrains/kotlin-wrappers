@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/Tabs")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -43,4 +45,21 @@ external interface TabsClasses {
 
     /** Styles applied to the TabIndicator component. */
     var indicator: ClassName
+}
+
+@JsName("default")
+external object tabsClasses : TabsClasses {
+    override var root: ClassName = definedExternally
+    override var vertical: ClassName = definedExternally
+    override var flexContainer: ClassName = definedExternally
+    override var flexContainerVertical: ClassName = definedExternally
+    override var centered: ClassName = definedExternally
+    override var scroller: ClassName = definedExternally
+    override var fixed: ClassName = definedExternally
+    override var scrollableX: ClassName = definedExternally
+    override var scrollableY: ClassName = definedExternally
+    override var hideScrollbar: ClassName = definedExternally
+    override var scrollButtons: ClassName = definedExternally
+    override var scrollButtonsHideMobile: ClassName = definedExternally
+    override var indicator: ClassName = definedExternally
 }

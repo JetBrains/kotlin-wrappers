@@ -1,24 +1,24 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/base/Tab")
+
 package mui.base
 
-import seskar.js.JsValue
-import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-@JsVirtual
-sealed external interface TabClasses {
-    companion object {
-        /** Class name applied to the root element. */
-        @JsValue("base-Tab-root")
-        val root: ClassName
+external interface TabClasses {
+    /** Class name applied to the root element. */
+    var root: ClassName
 
-        /** State class applied to the root `button` element if `selected={true}`. */
-        @JsValue("base-selected")
-        val selected: ClassName
+    /** State class applied to the root `button` element if `selected={true}`. */
+    var selected: ClassName
 
-        /** State class applied to the root `button` element if `disabled={true}`. */
-        @JsValue("base-disabled")
-        val disabled: ClassName
-    }
+    /** State class applied to the root `button` element if `disabled={true}`. */
+    var disabled: ClassName
+}
+
+external object tabClasses : TabClasses {
+    override var root: ClassName = definedExternally
+    override var selected: ClassName = definedExternally
+    override var disabled: ClassName = definedExternally
 }

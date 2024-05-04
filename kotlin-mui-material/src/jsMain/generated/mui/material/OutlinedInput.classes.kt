@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/OutlinedInput")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -52,4 +54,24 @@ external interface OutlinedInputClasses {
 
     /** Styles applied to the input element if `type="search"`. */
     var inputTypeSearch: ClassName
+}
+
+@JsName("default")
+external object outlinedInputClasses : OutlinedInputClasses {
+    override var root: ClassName = definedExternally
+    override var colorSecondary: ClassName = definedExternally
+    override var focused: ClassName = definedExternally
+    override var disabled: ClassName = definedExternally
+    override var adornedStart: ClassName = definedExternally
+    override var adornedEnd: ClassName = definedExternally
+    override var error: ClassName = definedExternally
+    override var sizeSmall: ClassName = definedExternally
+    override var multiline: ClassName = definedExternally
+    override var notchedOutline: ClassName = definedExternally
+    override var input: ClassName = definedExternally
+    override var inputSizeSmall: ClassName = definedExternally
+    override var inputMultiline: ClassName = definedExternally
+    override var inputAdornedStart: ClassName = definedExternally
+    override var inputAdornedEnd: ClassName = definedExternally
+    override var inputTypeSearch: ClassName = definedExternally
 }

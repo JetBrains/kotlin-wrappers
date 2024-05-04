@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/ButtonGroup")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -91,4 +93,37 @@ external interface ButtonGroupClasses {
 
     /** Styles applied to buttons in the middle of the button group. */
     var middleButton: ClassName
+}
+
+@JsName("default")
+external object buttonGroupClasses : ButtonGroupClasses {
+    override var root: ClassName = definedExternally
+    override var contained: ClassName = definedExternally
+    override var outlined: ClassName = definedExternally
+    override var text: ClassName = definedExternally
+    override var disableElevation: ClassName = definedExternally
+    override var disabled: ClassName = definedExternally
+    override var firstButton: ClassName = definedExternally
+    override var fullWidth: ClassName = definedExternally
+    override var vertical: ClassName = definedExternally
+    override var grouped: ClassName = definedExternally
+    override var groupedHorizontal: ClassName = definedExternally
+    override var groupedVertical: ClassName = definedExternally
+    override var groupedText: ClassName = definedExternally
+    override var groupedTextHorizontal: ClassName = definedExternally
+    override var groupedTextVertical: ClassName = definedExternally
+    override var groupedTextPrimary: ClassName = definedExternally
+    override var groupedTextSecondary: ClassName = definedExternally
+    override var groupedOutlined: ClassName = definedExternally
+    override var groupedOutlinedHorizontal: ClassName = definedExternally
+    override var groupedOutlinedVertical: ClassName = definedExternally
+    override var groupedOutlinedPrimary: ClassName = definedExternally
+    override var groupedOutlinedSecondary: ClassName = definedExternally
+    override var groupedContained: ClassName = definedExternally
+    override var groupedContainedHorizontal: ClassName = definedExternally
+    override var groupedContainedVertical: ClassName = definedExternally
+    override var groupedContainedPrimary: ClassName = definedExternally
+    override var groupedContainedSecondary: ClassName = definedExternally
+    override var lastButton: ClassName = definedExternally
+    override var middleButton: ClassName = definedExternally
 }

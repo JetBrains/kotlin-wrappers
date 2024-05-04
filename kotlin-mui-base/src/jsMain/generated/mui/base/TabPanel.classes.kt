@@ -1,20 +1,20 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/base/TabPanel")
+
 package mui.base
 
-import seskar.js.JsValue
-import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-@JsVirtual
-sealed external interface TabPanelClasses {
-    companion object {
-        /** Class name applied to the root element. */
-        @JsValue("base-TabPanel-root")
-        val root: ClassName
+external interface TabPanelClasses {
+    /** Class name applied to the root element. */
+    var root: ClassName
 
-        /** State class applied to the root `div` element if `hidden={true}`. */
-        @JsValue("base-TabPanel-hidden")
-        val hidden: ClassName
-    }
+    /** State class applied to the root `div` element if `hidden={true}`. */
+    var hidden: ClassName
+}
+
+external object tabPanelClasses : TabPanelClasses {
+    override var root: ClassName = definedExternally
+    override var hidden: ClassName = definedExternally
 }

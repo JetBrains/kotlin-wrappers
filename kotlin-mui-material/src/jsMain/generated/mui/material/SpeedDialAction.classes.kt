@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/SpeedDialAction")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -25,4 +27,15 @@ external interface SpeedDialActionClasses {
 
     /** Styles applied to the root element if `tooltipOpen={true}` and `tooltipPlacement="right"`` */
     var tooltipPlacementRight: ClassName
+}
+
+@JsName("default")
+external object speedDialActionClasses : SpeedDialActionClasses {
+    override var fab: ClassName = definedExternally
+    override var fabClosed: ClassName = definedExternally
+    override var staticTooltip: ClassName = definedExternally
+    override var staticTooltipClosed: ClassName = definedExternally
+    override var staticTooltipLabel: ClassName = definedExternally
+    override var tooltipPlacementLeft: ClassName = definedExternally
+    override var tooltipPlacementRight: ClassName = definedExternally
 }

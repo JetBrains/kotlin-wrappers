@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/Skeleton")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -34,4 +36,18 @@ external interface SkeletonClasses {
 
     /** Styles applied when the component is passed children and no height. */
     var heightAuto: ClassName
+}
+
+@JsName("default")
+external object skeletonClasses : SkeletonClasses {
+    override var root: ClassName = definedExternally
+    override var text: ClassName = definedExternally
+    override var rectangular: ClassName = definedExternally
+    override var rounded: ClassName = definedExternally
+    override var circular: ClassName = definedExternally
+    override var pulse: ClassName = definedExternally
+    override var wave: ClassName = definedExternally
+    override var withChildren: ClassName = definedExternally
+    override var fitContent: ClassName = definedExternally
+    override var heightAuto: ClassName = definedExternally
 }

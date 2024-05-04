@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/Switch")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -43,4 +45,21 @@ external interface SwitchClasses {
 
     /** Styles applied to the track element. */
     var track: ClassName
+}
+
+@JsName("default")
+external object switchClasses : SwitchClasses {
+    override var root: ClassName = definedExternally
+    override var edgeStart: ClassName = definedExternally
+    override var edgeEnd: ClassName = definedExternally
+    override var switchBase: ClassName = definedExternally
+    override var colorPrimary: ClassName = definedExternally
+    override var colorSecondary: ClassName = definedExternally
+    override var sizeSmall: ClassName = definedExternally
+    override var sizeMedium: ClassName = definedExternally
+    override var checked: ClassName = definedExternally
+    override var disabled: ClassName = definedExternally
+    override var input: ClassName = definedExternally
+    override var thumb: ClassName = definedExternally
+    override var track: ClassName = definedExternally
 }

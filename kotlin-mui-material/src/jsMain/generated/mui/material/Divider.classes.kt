@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/Divider")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -50,4 +52,22 @@ external interface DividerClasses {
 
     /** Styles applied to the span children element if `orientation="vertical"`. */
     var wrapperVertical: ClassName
+}
+
+@JsName("default")
+external object dividerClasses : DividerClasses {
+    override var root: ClassName = definedExternally
+    override var absolute: ClassName = definedExternally
+    override var inset: ClassName = definedExternally
+    override var fullWidth: ClassName = definedExternally
+    override var light: ClassName = definedExternally
+    override var middle: ClassName = definedExternally
+    override var vertical: ClassName = definedExternally
+    override var flexItem: ClassName = definedExternally
+    override var withChildren: ClassName = definedExternally
+    override var withChildrenVertical: ClassName = definedExternally
+    override var textAlignRight: ClassName = definedExternally
+    override var textAlignLeft: ClassName = definedExternally
+    override var wrapper: ClassName = definedExternally
+    override var wrapperVertical: ClassName = definedExternally
 }

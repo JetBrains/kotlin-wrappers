@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/BottomNavigationAction")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -16,4 +18,12 @@ external interface BottomNavigationActionClasses {
 
     /** Styles applied to the label's span element. */
     var label: ClassName
+}
+
+@JsName("default")
+external object bottomNavigationActionClasses : BottomNavigationActionClasses {
+    override var root: ClassName = definedExternally
+    override var selected: ClassName = definedExternally
+    override var iconOnly: ClassName = definedExternally
+    override var label: ClassName = definedExternally
 }

@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/ListItemText")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -22,4 +24,14 @@ external interface ListItemTextClasses {
 
     /** Styles applied to the secondary `Typography` component. */
     var secondary: ClassName
+}
+
+@JsName("default")
+external object listItemTextClasses : ListItemTextClasses {
+    override var root: ClassName = definedExternally
+    override var multiline: ClassName = definedExternally
+    override var dense: ClassName = definedExternally
+    override var inset: ClassName = definedExternally
+    override var primary: ClassName = definedExternally
+    override var secondary: ClassName = definedExternally
 }

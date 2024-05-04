@@ -1,28 +1,28 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/base/Option")
+
 package mui.base
 
-import seskar.js.JsValue
-import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-@JsVirtual
-sealed external interface OptionClasses {
-    companion object {
-        /** Class name applied to the root element. */
-        @JsValue("base-Option-root")
-        val root: ClassName
+external interface OptionClasses {
+    /** Class name applied to the root element. */
+    var root: ClassName
 
-        /** State class applied to the root `li` element if `disabled={true}`. */
-        @JsValue("base-disabled")
-        val disabled: ClassName
+    /** State class applied to the root `li` element if `disabled={true}`. */
+    var disabled: ClassName
 
-        /** State class applied to the root `li` element if `selected={true}`. */
-        @JsValue("base-selected")
-        val selected: ClassName
+    /** State class applied to the root `li` element if `selected={true}`. */
+    var selected: ClassName
 
-        /** State class applied to the root `li` element if `highlighted={true}`. */
-        @JsValue("base-Option-highlighted")
-        val highlighted: ClassName
-    }
+    /** State class applied to the root `li` element if `highlighted={true}`. */
+    var highlighted: ClassName
+}
+
+external object optionClasses : OptionClasses {
+    override var root: ClassName = definedExternally
+    override var disabled: ClassName = definedExternally
+    override var selected: ClassName = definedExternally
+    override var highlighted: ClassName = definedExternally
 }

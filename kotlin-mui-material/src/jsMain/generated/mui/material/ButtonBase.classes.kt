@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/ButtonBase")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -13,4 +15,11 @@ external interface ButtonBaseClasses {
 
     /** State class applied to the root element if keyboard focused. */
     var focusVisible: ClassName
+}
+
+@JsName("default")
+external object buttonBaseClasses : ButtonBaseClasses {
+    override var root: ClassName = definedExternally
+    override var disabled: ClassName = definedExternally
+    override var focusVisible: ClassName = definedExternally
 }

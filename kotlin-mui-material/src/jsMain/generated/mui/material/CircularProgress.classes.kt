@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/CircularProgress")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -34,4 +36,18 @@ external interface CircularProgressClasses {
 
     /** Styles applied to the `circle` svg path if `disableShrink={true}`. */
     var circleDisableShrink: ClassName
+}
+
+@JsName("default")
+external object circularProgressClasses : CircularProgressClasses {
+    override var root: ClassName = definedExternally
+    override var determinate: ClassName = definedExternally
+    override var indeterminate: ClassName = definedExternally
+    override var colorPrimary: ClassName = definedExternally
+    override var colorSecondary: ClassName = definedExternally
+    override var svg: ClassName = definedExternally
+    override var circle: ClassName = definedExternally
+    override var circleDeterminate: ClassName = definedExternally
+    override var circleIndeterminate: ClassName = definedExternally
+    override var circleDisableShrink: ClassName = definedExternally
 }

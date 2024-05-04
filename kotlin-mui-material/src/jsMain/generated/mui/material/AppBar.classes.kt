@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/AppBar")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -49,4 +51,23 @@ external interface AppBarClasses {
 
     /** Styles applied to the root element if `color="warning"`. */
     var colorWarning: ClassName
+}
+
+@JsName("default")
+external object appBarClasses : AppBarClasses {
+    override var root: ClassName = definedExternally
+    override var positionFixed: ClassName = definedExternally
+    override var positionAbsolute: ClassName = definedExternally
+    override var positionSticky: ClassName = definedExternally
+    override var positionStatic: ClassName = definedExternally
+    override var positionRelative: ClassName = definedExternally
+    override var colorDefault: ClassName = definedExternally
+    override var colorPrimary: ClassName = definedExternally
+    override var colorSecondary: ClassName = definedExternally
+    override var colorInherit: ClassName = definedExternally
+    override var colorTransparent: ClassName = definedExternally
+    override var colorError: ClassName = definedExternally
+    override var colorInfo: ClassName = definedExternally
+    override var colorSuccess: ClassName = definedExternally
+    override var colorWarning: ClassName = definedExternally
 }

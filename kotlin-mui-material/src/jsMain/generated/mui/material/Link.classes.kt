@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/Link")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -22,4 +24,14 @@ external interface LinkClasses {
 
     /** State class applied to the root element if the link is keyboard focused. */
     var focusVisible: ClassName
+}
+
+@JsName("default")
+external object linkClasses : LinkClasses {
+    override var root: ClassName = definedExternally
+    override var underlineNone: ClassName = definedExternally
+    override var underlineHover: ClassName = definedExternally
+    override var underlineAlways: ClassName = definedExternally
+    override var button: ClassName = definedExternally
+    override var focusVisible: ClassName = definedExternally
 }

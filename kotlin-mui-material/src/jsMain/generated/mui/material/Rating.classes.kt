@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/Rating")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -55,4 +57,25 @@ external interface RatingClasses {
 
     /** Styles applied to the icon wrapping elements when decimals are necessary. */
     var decimal: ClassName
+}
+
+@JsName("default")
+external object ratingClasses : RatingClasses {
+    override var root: ClassName = definedExternally
+    override var sizeSmall: ClassName = definedExternally
+    override var sizeMedium: ClassName = definedExternally
+    override var sizeLarge: ClassName = definedExternally
+    override var readOnly: ClassName = definedExternally
+    override var disabled: ClassName = definedExternally
+    override var focusVisible: ClassName = definedExternally
+    override var visuallyHidden: ClassName = definedExternally
+    override var label: ClassName = definedExternally
+    override var labelEmptyValueActive: ClassName = definedExternally
+    override var icon: ClassName = definedExternally
+    override var iconEmpty: ClassName = definedExternally
+    override var iconFilled: ClassName = definedExternally
+    override var iconHover: ClassName = definedExternally
+    override var iconFocus: ClassName = definedExternally
+    override var iconActive: ClassName = definedExternally
+    override var decimal: ClassName = definedExternally
 }

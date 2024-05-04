@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/Paper")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -91,4 +93,37 @@ external interface PaperClasses {
 
     /** Styles applied to the root element if `elevation={24}`. */
     var elevation24: ClassName
+}
+
+@JsName("default")
+external object paperClasses : PaperClasses {
+    override var root: ClassName = definedExternally
+    override var rounded: ClassName = definedExternally
+    override var outlined: ClassName = definedExternally
+    override var elevation: ClassName = definedExternally
+    override var elevation0: ClassName = definedExternally
+    override var elevation1: ClassName = definedExternally
+    override var elevation2: ClassName = definedExternally
+    override var elevation3: ClassName = definedExternally
+    override var elevation4: ClassName = definedExternally
+    override var elevation5: ClassName = definedExternally
+    override var elevation6: ClassName = definedExternally
+    override var elevation7: ClassName = definedExternally
+    override var elevation8: ClassName = definedExternally
+    override var elevation9: ClassName = definedExternally
+    override var elevation10: ClassName = definedExternally
+    override var elevation11: ClassName = definedExternally
+    override var elevation12: ClassName = definedExternally
+    override var elevation13: ClassName = definedExternally
+    override var elevation14: ClassName = definedExternally
+    override var elevation15: ClassName = definedExternally
+    override var elevation16: ClassName = definedExternally
+    override var elevation17: ClassName = definedExternally
+    override var elevation18: ClassName = definedExternally
+    override var elevation19: ClassName = definedExternally
+    override var elevation20: ClassName = definedExternally
+    override var elevation21: ClassName = definedExternally
+    override var elevation22: ClassName = definedExternally
+    override var elevation23: ClassName = definedExternally
+    override var elevation24: ClassName = definedExternally
 }

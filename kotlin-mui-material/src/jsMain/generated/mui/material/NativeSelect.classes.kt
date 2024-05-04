@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/NativeSelect")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -46,4 +48,22 @@ external interface NativeSelectClasses {
 
     /** State class applied to the select component `error` class. */
     var error: ClassName
+}
+
+@JsName("default")
+external object nativeSelectClasses : NativeSelectClasses {
+    override var root: ClassName = definedExternally
+    override var select: ClassName = definedExternally
+    override var multiple: ClassName = definedExternally
+    override var filled: ClassName = definedExternally
+    override var outlined: ClassName = definedExternally
+    override var standard: ClassName = definedExternally
+    override var disabled: ClassName = definedExternally
+    override var icon: ClassName = definedExternally
+    override var iconOpen: ClassName = definedExternally
+    override var iconFilled: ClassName = definedExternally
+    override var iconOutlined: ClassName = definedExternally
+    override var iconStandard: ClassName = definedExternally
+    override var nativeInput: ClassName = definedExternally
+    override var error: ClassName = definedExternally
 }

@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/Step")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -19,4 +21,13 @@ external interface StepClasses {
 
     /** State class applied to the root element if `completed={true}`. */
     var completed: ClassName
+}
+
+@JsName("default")
+external object stepClasses : StepClasses {
+    override var root: ClassName = definedExternally
+    override var horizontal: ClassName = definedExternally
+    override var vertical: ClassName = definedExternally
+    override var alternativeLabel: ClassName = definedExternally
+    override var completed: ClassName = definedExternally
 }

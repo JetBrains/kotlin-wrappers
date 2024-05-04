@@ -1,28 +1,28 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/base/Button")
+
 package mui.base
 
-import seskar.js.JsValue
-import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-@JsVirtual
-sealed external interface ButtonClasses {
-    companion object {
-        /** Class name applied to the root element. */
-        @JsValue("base-Button-root")
-        val root: ClassName
+external interface ButtonClasses {
+    /** Class name applied to the root element. */
+    var root: ClassName
 
-        /** State class applied to the root `button` element if `active={true}`. */
-        @JsValue("base-active")
-        val active: ClassName
+    /** State class applied to the root `button` element if `active={true}`. */
+    var active: ClassName
 
-        /** State class applied to the root `button` element if `disabled={true}`. */
-        @JsValue("base-disabled")
-        val disabled: ClassName
+    /** State class applied to the root `button` element if `disabled={true}`. */
+    var disabled: ClassName
 
-        /** State class applied to the root `button` element if `focusVisible={true}`. */
-        @JsValue("base-focusVisible")
-        val focusVisible: ClassName
-    }
+    /** State class applied to the root `button` element if `focusVisible={true}`. */
+    var focusVisible: ClassName
+}
+
+external object buttonClasses : ButtonClasses {
+    override var root: ClassName = definedExternally
+    override var active: ClassName = definedExternally
+    override var disabled: ClassName = definedExternally
+    override var focusVisible: ClassName = definedExternally
 }

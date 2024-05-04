@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/Popover")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -10,4 +12,10 @@ external interface PopoverClasses {
 
     /** Styles applied to the Paper component. */
     var paper: ClassName
+}
+
+@JsName("default")
+external object popoverClasses : PopoverClasses {
+    override var root: ClassName = definedExternally
+    override var paper: ClassName = definedExternally
 }

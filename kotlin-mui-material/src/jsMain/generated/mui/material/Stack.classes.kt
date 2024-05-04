@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/Stack")
+
 package mui.material
 
-typealias StackClasses = mui.system.StackClasses
+external interface StackClasses : mui.system.StackClasses

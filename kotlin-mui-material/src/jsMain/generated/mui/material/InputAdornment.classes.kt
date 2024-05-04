@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/InputAdornment")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -31,4 +33,17 @@ external interface InputAdornmentClasses {
 
     /** Styles applied if the adornment is used inside <FormControl size="small" />. */
     var sizeSmall: ClassName
+}
+
+@JsName("default")
+external object inputAdornmentClasses : InputAdornmentClasses {
+    override var root: ClassName = definedExternally
+    override var filled: ClassName = definedExternally
+    override var outlined: ClassName = definedExternally
+    override var standard: ClassName = definedExternally
+    override var positionStart: ClassName = definedExternally
+    override var positionEnd: ClassName = definedExternally
+    override var disablePointerEvents: ClassName = definedExternally
+    override var hiddenLabel: ClassName = definedExternally
+    override var sizeSmall: ClassName = definedExternally
 }

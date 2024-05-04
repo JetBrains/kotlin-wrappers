@@ -1,16 +1,16 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/base/Snackbar")
+
 package mui.base
 
-import seskar.js.JsValue
-import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-@JsVirtual
-sealed external interface SnackbarClasses {
-    companion object {
-        /** Class name applied to the root element. */
-        @JsValue("base-Snackbar-root")
-        val root: ClassName
-    }
+external interface SnackbarClasses {
+    /** Class name applied to the root element. */
+    var root: ClassName
+}
+
+external object snackbarClasses : SnackbarClasses {
+    override var root: ClassName = definedExternally
 }

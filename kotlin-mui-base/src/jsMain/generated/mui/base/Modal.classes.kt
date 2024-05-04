@@ -1,24 +1,24 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/base/Modal")
+
 package mui.base
 
-import seskar.js.JsValue
-import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-@JsVirtual
-sealed external interface ModalClasses {
-    companion object {
-        /** Class name applied to the root element. */
-        @JsValue("base-Modal-root")
-        val root: ClassName
+external interface ModalClasses {
+    /** Class name applied to the root element. */
+    var root: ClassName
 
-        /** Class name applied to the root element if the `Modal` has exited. */
-        @JsValue("base-Modal-hidden")
-        val hidden: ClassName
+    /** Class name applied to the root element if the `Modal` has exited. */
+    var hidden: ClassName
 
-        /** Class name applied to the backdrop element. */
-        @JsValue("base-Modal-backdrop")
-        val backdrop: ClassName
-    }
+    /** Class name applied to the backdrop element. */
+    var backdrop: ClassName
+}
+
+external object modalClasses : ModalClasses {
+    override var root: ClassName = definedExternally
+    override var hidden: ClassName = definedExternally
+    override var backdrop: ClassName = definedExternally
 }

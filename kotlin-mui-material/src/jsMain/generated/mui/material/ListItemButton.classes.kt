@@ -1,5 +1,7 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/ListItemButton")
+
 package mui.material
 
 import web.cssom.ClassName
@@ -28,4 +30,16 @@ external interface ListItemButtonClasses {
 
     /** State class applied to the root element if `selected={true}`. */
     var selected: ClassName
+}
+
+@JsName("default")
+external object listItemButtonClasses : ListItemButtonClasses {
+    override var root: ClassName = definedExternally
+    override var focusVisible: ClassName = definedExternally
+    override var dense: ClassName = definedExternally
+    override var alignItemsFlexStart: ClassName = definedExternally
+    override var disabled: ClassName = definedExternally
+    override var divider: ClassName = definedExternally
+    override var gutters: ClassName = definedExternally
+    override var selected: ClassName = definedExternally
 }
