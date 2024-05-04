@@ -22,9 +22,9 @@ external interface EventInit {
 }
 
 val eventInitDict: EventInit = jso { 
-    bubbles: true,
-    cancellable: true,
-    composed: false,
+    bubbles = true
+    cancellable = true
+    composed = false
 }
 
 val event = Event(EventType("my-event"), eventInitDict)
@@ -47,7 +47,7 @@ _A_: Here is an example:
 
 ```kotlin
 val instance = jso {
-    foo: "bar",
+    foo = "bar"
 }
 ```
 
