@@ -12,6 +12,4 @@ external interface BottomNavigationClasses {
 }
 
 @JsName("default")
-external object bottomNavigationClasses : BottomNavigationClasses {
-    override var root: ClassName = definedExternally
-}
+external val bottomNavigationClasses: BottomNavigationClasses

@@ -39,15 +39,4 @@ external interface TabClasses {
 }
 
 @JsName("default")
-external object tabClasses : TabClasses {
-    override var root: ClassName = definedExternally
-    override var labelIcon: ClassName = definedExternally
-    override var textColorInherit: ClassName = definedExternally
-    override var textColorPrimary: ClassName = definedExternally
-    override var textColorSecondary: ClassName = definedExternally
-    override var selected: ClassName = definedExternally
-    override var disabled: ClassName = definedExternally
-    override var fullWidth: ClassName = definedExternally
-    override var wrapped: ClassName = definedExternally
-    override var iconWrapper: ClassName = definedExternally
-}
+external val tabClasses: TabClasses

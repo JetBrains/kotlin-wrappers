@@ -12,6 +12,4 @@ external interface TimelineConnectorClasses {
 }
 
 @JsName("default")
-external object timelineConnectorClasses : TimelineConnectorClasses {
-    override var root: ClassName = definedExternally
-}
+external val timelineConnectorClasses: TimelineConnectorClasses

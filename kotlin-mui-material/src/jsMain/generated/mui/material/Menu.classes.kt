@@ -18,8 +18,4 @@ external interface MenuClasses {
 }
 
 @JsName("default")
-external object menuClasses : MenuClasses {
-    override var root: ClassName = definedExternally
-    override var paper: ClassName = definedExternally
-    override var list: ClassName = definedExternally
-}
+external val menuClasses: MenuClasses

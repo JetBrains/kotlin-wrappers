@@ -18,8 +18,4 @@ external interface StepContentClasses {
 }
 
 @JsName("default")
-external object stepContentClasses : StepContentClasses {
-    override var root: ClassName = definedExternally
-    override var last: ClassName = definedExternally
-    override var transition: ClassName = definedExternally
-}
+external val stepContentClasses: StepContentClasses

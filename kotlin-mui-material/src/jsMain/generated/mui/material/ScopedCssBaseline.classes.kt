@@ -12,6 +12,4 @@ external interface ScopedCssBaselineClasses {
 }
 
 @JsName("default")
-external object scopedCssBaselineClasses : ScopedCssBaselineClasses {
-    override var root: ClassName = definedExternally
-}
+external val scopedCssBaselineClasses: ScopedCssBaselineClasses

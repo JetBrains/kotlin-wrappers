@@ -24,10 +24,4 @@ external interface TableRowClasses {
 }
 
 @JsName("default")
-external object tableRowClasses : TableRowClasses {
-    override var root: ClassName = definedExternally
-    override var selected: ClassName = definedExternally
-    override var hover: ClassName = definedExternally
-    override var head: ClassName = definedExternally
-    override var footer: ClassName = definedExternally
-}
+external val tableRowClasses: TableRowClasses

@@ -27,11 +27,4 @@ external interface TimelineItemClasses {
 }
 
 @JsName("default")
-external object timelineItemClasses : TimelineItemClasses {
-    override var root: ClassName = definedExternally
-    override var positionLeft: ClassName = definedExternally
-    override var positionRight: ClassName = definedExternally
-    override var positionAlternate: ClassName = definedExternally
-    override var positionAlternateReverse: ClassName = definedExternally
-    override var missingOppositeContent: ClassName = definedExternally
-}
+external val timelineItemClasses: TimelineItemClasses

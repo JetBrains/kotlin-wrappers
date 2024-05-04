@@ -27,11 +27,4 @@ external interface ListSubheaderClasses {
 }
 
 @JsName("default")
-external object listSubheaderClasses : ListSubheaderClasses {
-    override var root: ClassName = definedExternally
-    override var colorPrimary: ClassName = definedExternally
-    override var colorInherit: ClassName = definedExternally
-    override var gutters: ClassName = definedExternally
-    override var inset: ClassName = definedExternally
-    override var sticky: ClassName = definedExternally
-}
+external val listSubheaderClasses: ListSubheaderClasses

@@ -39,15 +39,4 @@ external interface FabClasses {
 }
 
 @JsName("default")
-external object fabClasses : FabClasses {
-    override var root: ClassName = definedExternally
-    override var primary: ClassName = definedExternally
-    override var secondary: ClassName = definedExternally
-    override var extended: ClassName = definedExternally
-    override var circular: ClassName = definedExternally
-    override var focusVisible: ClassName = definedExternally
-    override var disabled: ClassName = definedExternally
-    override var colorInherit: ClassName = definedExternally
-    override var sizeSmall: ClassName = definedExternally
-    override var sizeMedium: ClassName = definedExternally
-}
+external val fabClasses: FabClasses

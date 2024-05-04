@@ -39,15 +39,4 @@ external interface StepConnectorClasses {
 }
 
 @JsName("default")
-external object stepConnectorClasses : StepConnectorClasses {
-    override var root: ClassName = definedExternally
-    override var horizontal: ClassName = definedExternally
-    override var vertical: ClassName = definedExternally
-    override var alternativeLabel: ClassName = definedExternally
-    override var active: ClassName = definedExternally
-    override var completed: ClassName = definedExternally
-    override var disabled: ClassName = definedExternally
-    override var line: ClassName = definedExternally
-    override var lineHorizontal: ClassName = definedExternally
-    override var lineVertical: ClassName = definedExternally
-}
+external val stepConnectorClasses: StepConnectorClasses

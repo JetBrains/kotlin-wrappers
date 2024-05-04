@@ -12,6 +12,4 @@ external interface TableBodyClasses {
 }
 
 @JsName("default")
-external object tableBodyClasses : TableBodyClasses {
-    override var root: ClassName = definedExternally
-}
+external val tableBodyClasses: TableBodyClasses

@@ -24,10 +24,4 @@ external interface ImageListClasses {
 }
 
 @JsName("default")
-external object imageListClasses : ImageListClasses {
-    override var root: ClassName = definedExternally
-    override var masonry: ClassName = definedExternally
-    override var quilted: ClassName = definedExternally
-    override var standard: ClassName = definedExternally
-    override var woven: ClassName = definedExternally
-}
+external val imageListClasses: ImageListClasses

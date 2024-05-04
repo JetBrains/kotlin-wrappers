@@ -27,11 +27,4 @@ external interface CardHeaderClasses {
 }
 
 @JsName("default")
-external object cardHeaderClasses : CardHeaderClasses {
-    override var root: ClassName = definedExternally
-    override var avatar: ClassName = definedExternally
-    override var action: ClassName = definedExternally
-    override var content: ClassName = definedExternally
-    override var title: ClassName = definedExternally
-    override var subheader: ClassName = definedExternally
-}
+external val cardHeaderClasses: CardHeaderClasses

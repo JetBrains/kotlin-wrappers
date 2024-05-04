@@ -15,7 +15,4 @@ external interface DialogActionsClasses {
 }
 
 @JsName("default")
-external object dialogActionsClasses : DialogActionsClasses {
-    override var root: ClassName = definedExternally
-    override var spacing: ClassName = definedExternally
-}
+external val dialogActionsClasses: DialogActionsClasses

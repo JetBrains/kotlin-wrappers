@@ -39,15 +39,4 @@ external interface ToggleButtonClasses {
 }
 
 @JsName("default")
-external object toggleButtonClasses : ToggleButtonClasses {
-    override var root: ClassName = definedExternally
-    override var disabled: ClassName = definedExternally
-    override var selected: ClassName = definedExternally
-    override var standard: ClassName = definedExternally
-    override var primary: ClassName = definedExternally
-    override var secondary: ClassName = definedExternally
-    override var sizeSmall: ClassName = definedExternally
-    override var sizeMedium: ClassName = definedExternally
-    override var sizeLarge: ClassName = definedExternally
-    override var fullWidth: ClassName = definedExternally
-}
+external val toggleButtonClasses: ToggleButtonClasses

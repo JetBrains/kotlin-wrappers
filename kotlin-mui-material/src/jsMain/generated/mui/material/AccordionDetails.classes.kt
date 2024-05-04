@@ -12,6 +12,4 @@ external interface AccordionDetailsClasses {
 }
 
 @JsName("default")
-external object accordionDetailsClasses : AccordionDetailsClasses {
-    override var root: ClassName = definedExternally
-}
+external val accordionDetailsClasses: AccordionDetailsClasses

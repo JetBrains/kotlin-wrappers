@@ -45,17 +45,4 @@ external interface ListItemClasses {
 }
 
 @JsName("default")
-external object listItemClasses : ListItemClasses {
-    override var root: ClassName = definedExternally
-    override var container: ClassName = definedExternally
-    override var focusVisible: ClassName = definedExternally
-    override var dense: ClassName = definedExternally
-    override var alignItemsFlexStart: ClassName = definedExternally
-    override var disabled: ClassName = definedExternally
-    override var divider: ClassName = definedExternally
-    override var gutters: ClassName = definedExternally
-    override var padding: ClassName = definedExternally
-    override var button: ClassName = definedExternally
-    override var secondaryAction: ClassName = definedExternally
-    override var selected: ClassName = definedExternally
-}
+external val listItemClasses: ListItemClasses

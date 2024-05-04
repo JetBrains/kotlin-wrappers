@@ -11,6 +11,4 @@ external interface SnackbarClasses {
     var root: ClassName
 }
 
-external object snackbarClasses : SnackbarClasses {
-    override var root: ClassName = definedExternally
-}
+external val snackbarClasses: SnackbarClasses

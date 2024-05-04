@@ -17,8 +17,4 @@ external interface TabClasses {
     var disabled: ClassName
 }
 
-external object tabClasses : TabClasses {
-    override var root: ClassName = definedExternally
-    override var selected: ClassName = definedExternally
-    override var disabled: ClassName = definedExternally
-}
+external val tabClasses: TabClasses

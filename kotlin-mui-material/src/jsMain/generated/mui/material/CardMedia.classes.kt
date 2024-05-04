@@ -18,8 +18,4 @@ external interface CardMediaClasses {
 }
 
 @JsName("default")
-external object cardMediaClasses : CardMediaClasses {
-    override var root: ClassName = definedExternally
-    override var media: ClassName = definedExternally
-    override var img: ClassName = definedExternally
-}
+external val cardMediaClasses: CardMediaClasses

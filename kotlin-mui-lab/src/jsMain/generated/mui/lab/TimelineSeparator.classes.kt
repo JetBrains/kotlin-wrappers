@@ -12,6 +12,4 @@ external interface TimelineSeparatorClasses {
 }
 
 @JsName("default")
-external object timelineSeparatorClasses : TimelineSeparatorClasses {
-    override var root: ClassName = definedExternally
-}
+external val timelineSeparatorClasses: TimelineSeparatorClasses

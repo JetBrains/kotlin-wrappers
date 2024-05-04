@@ -12,6 +12,4 @@ external interface TextFieldClasses {
 }
 
 @JsName("default")
-external object textFieldClasses : TextFieldClasses {
-    override var root: ClassName = definedExternally
-}
+external val textFieldClasses: TextFieldClasses

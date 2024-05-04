@@ -16,11 +16,4 @@ external interface SwitchBaseClasses {
 }
 
 @JsName("default")
-external object switchBaseClasses : SwitchBaseClasses {
-    override var root: ClassName = definedExternally
-    override var checked: ClassName = definedExternally
-    override var disabled: ClassName = definedExternally
-    override var input: ClassName = definedExternally
-    override var edgeStart: ClassName = definedExternally
-    override var edgeEnd: ClassName = definedExternally
-}
+external val switchBaseClasses: SwitchBaseClasses

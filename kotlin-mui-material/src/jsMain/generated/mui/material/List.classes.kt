@@ -21,9 +21,4 @@ external interface ListClasses {
 }
 
 @JsName("default")
-external object listClasses : ListClasses {
-    override var root: ClassName = definedExternally
-    override var padding: ClassName = definedExternally
-    override var dense: ClassName = definedExternally
-    override var subheader: ClassName = definedExternally
-}
+external val listClasses: ListClasses

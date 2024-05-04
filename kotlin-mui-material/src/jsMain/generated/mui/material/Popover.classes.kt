@@ -15,7 +15,4 @@ external interface PopoverClasses {
 }
 
 @JsName("default")
-external object popoverClasses : PopoverClasses {
-    override var root: ClassName = definedExternally
-    override var paper: ClassName = definedExternally
-}
+external val popoverClasses: PopoverClasses

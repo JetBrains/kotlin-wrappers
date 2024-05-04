@@ -45,17 +45,4 @@ external interface ImageListItemBarClasses {
 }
 
 @JsName("default")
-external object imageListItemBarClasses : ImageListItemBarClasses {
-    override var root: ClassName = definedExternally
-    override var positionBottom: ClassName = definedExternally
-    override var positionTop: ClassName = definedExternally
-    override var positionBelow: ClassName = definedExternally
-    override var titleWrap: ClassName = definedExternally
-    override var titleWrapBelow: ClassName = definedExternally
-    override var titleWrapActionPosLeft: ClassName = definedExternally
-    override var titleWrapActionPosRight: ClassName = definedExternally
-    override var title: ClassName = definedExternally
-    override var subtitle: ClassName = definedExternally
-    override var actionIcon: ClassName = definedExternally
-    override var actionIconActionPosLeft: ClassName = definedExternally
-}
+external val imageListItemBarClasses: ImageListItemBarClasses

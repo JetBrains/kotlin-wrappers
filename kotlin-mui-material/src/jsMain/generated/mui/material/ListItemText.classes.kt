@@ -27,11 +27,4 @@ external interface ListItemTextClasses {
 }
 
 @JsName("default")
-external object listItemTextClasses : ListItemTextClasses {
-    override var root: ClassName = definedExternally
-    override var multiline: ClassName = definedExternally
-    override var dense: ClassName = definedExternally
-    override var inset: ClassName = definedExternally
-    override var primary: ClassName = definedExternally
-    override var secondary: ClassName = definedExternally
-}
+external val listItemTextClasses: ListItemTextClasses

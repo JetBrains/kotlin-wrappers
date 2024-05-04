@@ -15,7 +15,4 @@ external interface CardActionsClasses {
 }
 
 @JsName("default")
-external object cardActionsClasses : CardActionsClasses {
-    override var root: ClassName = definedExternally
-    override var spacing: ClassName = definedExternally
-}
+external val cardActionsClasses: CardActionsClasses

@@ -36,14 +36,4 @@ external interface TimelineDotClasses {
 }
 
 @JsName("default")
-external object timelineDotClasses : TimelineDotClasses {
-    override var root: ClassName = definedExternally
-    override var filled: ClassName = definedExternally
-    override var outlined: ClassName = definedExternally
-    override var filledGrey: ClassName = definedExternally
-    override var outlinedGrey: ClassName = definedExternally
-    override var filledPrimary: ClassName = definedExternally
-    override var outlinedPrimary: ClassName = definedExternally
-    override var filledSecondary: ClassName = definedExternally
-    override var outlinedSecondary: ClassName = definedExternally
-}
+external val timelineDotClasses: TimelineDotClasses

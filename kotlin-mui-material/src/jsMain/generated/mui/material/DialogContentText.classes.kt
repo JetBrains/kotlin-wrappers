@@ -12,6 +12,4 @@ external interface DialogContentTextClasses {
 }
 
 @JsName("default")
-external object dialogContentTextClasses : DialogContentTextClasses {
-    override var root: ClassName = definedExternally
-}
+external val dialogContentTextClasses: DialogContentTextClasses

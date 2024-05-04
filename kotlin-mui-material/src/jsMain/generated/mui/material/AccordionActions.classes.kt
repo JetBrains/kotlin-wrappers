@@ -15,7 +15,4 @@ external interface AccordionActionsClasses {
 }
 
 @JsName("default")
-external object accordionActionsClasses : AccordionActionsClasses {
-    override var root: ClassName = definedExternally
-    override var spacing: ClassName = definedExternally
-}
+external val accordionActionsClasses: AccordionActionsClasses

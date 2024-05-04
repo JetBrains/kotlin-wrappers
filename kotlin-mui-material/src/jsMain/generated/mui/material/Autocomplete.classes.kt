@@ -87,31 +87,4 @@ external interface AutocompleteClasses {
 }
 
 @JsName("default")
-external object autocompleteClasses : AutocompleteClasses {
-    override var root: ClassName = definedExternally
-    override var fullWidth: ClassName = definedExternally
-    override var expanded: ClassName = definedExternally
-    override var focused: ClassName = definedExternally
-    override var focusVisible: ClassName = definedExternally
-    override var tag: ClassName = definedExternally
-    override var tagSizeSmall: ClassName = definedExternally
-    override var tagSizeMedium: ClassName = definedExternally
-    override var hasPopupIcon: ClassName = definedExternally
-    override var hasClearIcon: ClassName = definedExternally
-    override var inputRoot: ClassName = definedExternally
-    override var input: ClassName = definedExternally
-    override var inputFocused: ClassName = definedExternally
-    override var endAdornment: ClassName = definedExternally
-    override var clearIndicator: ClassName = definedExternally
-    override var popupIndicator: ClassName = definedExternally
-    override var popupIndicatorOpen: ClassName = definedExternally
-    override var popper: ClassName = definedExternally
-    override var popperDisablePortal: ClassName = definedExternally
-    override var paper: ClassName = definedExternally
-    override var listbox: ClassName = definedExternally
-    override var loading: ClassName = definedExternally
-    override var noOptions: ClassName = definedExternally
-    override var option: ClassName = definedExternally
-    override var groupLabel: ClassName = definedExternally
-    override var groupUl: ClassName = definedExternally
-}
+external val autocompleteClasses: AutocompleteClasses

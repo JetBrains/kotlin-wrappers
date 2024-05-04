@@ -12,6 +12,4 @@ external interface BoxClasses {
 }
 
 @JsName("default")
-external object boxClasses : BoxClasses {
-    override var root: ClassName = definedExternally
-}
+external val boxClasses: BoxClasses

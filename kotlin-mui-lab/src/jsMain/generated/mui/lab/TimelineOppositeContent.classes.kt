@@ -24,10 +24,4 @@ external interface TimelineOppositeContentClasses {
 }
 
 @JsName("default")
-external object timelineOppositeContentClasses : TimelineOppositeContentClasses {
-    override var root: ClassName = definedExternally
-    override var positionRight: ClassName = definedExternally
-    override var positionLeft: ClassName = definedExternally
-    override var positionAlternate: ClassName = definedExternally
-    override var positionAlternateReverse: ClassName = definedExternally
-}
+external val timelineOppositeContentClasses: TimelineOppositeContentClasses

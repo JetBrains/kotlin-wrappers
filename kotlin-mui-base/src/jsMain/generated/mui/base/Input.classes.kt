@@ -41,16 +41,4 @@ external interface InputClasses {
     var inputTypeSearch: ClassName
 }
 
-external object inputClasses : InputClasses {
-    override var root: ClassName = definedExternally
-    override var formControl: ClassName = definedExternally
-    override var adornedStart: ClassName = definedExternally
-    override var adornedEnd: ClassName = definedExternally
-    override var focused: ClassName = definedExternally
-    override var disabled: ClassName = definedExternally
-    override var error: ClassName = definedExternally
-    override var multiline: ClassName = definedExternally
-    override var input: ClassName = definedExternally
-    override var inputMultiline: ClassName = definedExternally
-    override var inputTypeSearch: ClassName = definedExternally
-}
+external val inputClasses: InputClasses

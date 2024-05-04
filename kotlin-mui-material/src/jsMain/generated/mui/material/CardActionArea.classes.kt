@@ -18,8 +18,4 @@ external interface CardActionAreaClasses {
 }
 
 @JsName("default")
-external object cardActionAreaClasses : CardActionAreaClasses {
-    override var root: ClassName = definedExternally
-    override var focusVisible: ClassName = definedExternally
-    override var focusHighlight: ClassName = definedExternally
-}
+external val cardActionAreaClasses: CardActionAreaClasses

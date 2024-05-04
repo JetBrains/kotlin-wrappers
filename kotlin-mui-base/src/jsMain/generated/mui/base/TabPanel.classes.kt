@@ -14,7 +14,4 @@ external interface TabPanelClasses {
     var hidden: ClassName
 }
 
-external object tabPanelClasses : TabPanelClasses {
-    override var root: ClassName = definedExternally
-    override var hidden: ClassName = definedExternally
-}
+external val tabPanelClasses: TabPanelClasses

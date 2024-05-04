@@ -15,7 +15,4 @@ external interface ListItemSecondaryActionClasses {
 }
 
 @JsName("default")
-external object listItemSecondaryActionClasses : ListItemSecondaryActionClasses {
-    override var root: ClassName = definedExternally
-    override var disableGutters: ClassName = definedExternally
-}
+external val listItemSecondaryActionClasses: ListItemSecondaryActionClasses

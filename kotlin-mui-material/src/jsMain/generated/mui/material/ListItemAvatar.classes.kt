@@ -15,7 +15,4 @@ external interface ListItemAvatarClasses {
 }
 
 @JsName("default")
-external object listItemAvatarClasses : ListItemAvatarClasses {
-    override var root: ClassName = definedExternally
-    override var alignItemsFlexStart: ClassName = definedExternally
-}
+external val listItemAvatarClasses: ListItemAvatarClasses

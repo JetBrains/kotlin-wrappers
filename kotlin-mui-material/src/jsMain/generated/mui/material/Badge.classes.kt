@@ -84,30 +84,4 @@ external interface BadgeClasses {
 }
 
 @JsName("default")
-external object badgeClasses : BadgeClasses {
-    override var root: ClassName = definedExternally
-    override var badge: ClassName = definedExternally
-    override var dot: ClassName = definedExternally
-    override var standard: ClassName = definedExternally
-    override var anchorOriginTopRight: ClassName = definedExternally
-    override var anchorOriginBottomRight: ClassName = definedExternally
-    override var anchorOriginTopLeft: ClassName = definedExternally
-    override var anchorOriginBottomLeft: ClassName = definedExternally
-    override var invisible: ClassName = definedExternally
-    override var colorPrimary: ClassName = definedExternally
-    override var colorSecondary: ClassName = definedExternally
-    override var colorError: ClassName = definedExternally
-    override var colorInfo: ClassName = definedExternally
-    override var colorSuccess: ClassName = definedExternally
-    override var colorWarning: ClassName = definedExternally
-    override var anchorOriginTopRightRectangular: ClassName = definedExternally
-    override var anchorOriginBottomRightRectangular: ClassName = definedExternally
-    override var anchorOriginTopLeftRectangular: ClassName = definedExternally
-    override var anchorOriginBottomLeftRectangular: ClassName = definedExternally
-    override var anchorOriginTopRightCircular: ClassName = definedExternally
-    override var anchorOriginBottomRightCircular: ClassName = definedExternally
-    override var anchorOriginTopLeftCircular: ClassName = definedExternally
-    override var anchorOriginBottomLeftCircular: ClassName = definedExternally
-    override var overlapRectangular: ClassName = definedExternally
-    override var overlapCircular: ClassName = definedExternally
-}
+external val badgeClasses: BadgeClasses

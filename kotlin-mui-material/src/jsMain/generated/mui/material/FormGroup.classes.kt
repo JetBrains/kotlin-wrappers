@@ -18,8 +18,4 @@ external interface FormGroupClasses {
 }
 
 @JsName("default")
-external object formGroupClasses : FormGroupClasses {
-    override var root: ClassName = definedExternally
-    override var row: ClassName = definedExternally
-    override var error: ClassName = definedExternally
-}
+external val formGroupClasses: FormGroupClasses

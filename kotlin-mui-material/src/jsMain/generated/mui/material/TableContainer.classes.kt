@@ -12,6 +12,4 @@ external interface TableContainerClasses {
 }
 
 @JsName("default")
-external object tableContainerClasses : TableContainerClasses {
-    override var root: ClassName = definedExternally
-}
+external val tableContainerClasses: TableContainerClasses

@@ -11,6 +11,4 @@ external interface PopperClasses {
     var root: ClassName
 }
 
-external object popperClasses : PopperClasses {
-    override var root: ClassName = definedExternally
-}
+external val popperClasses: PopperClasses

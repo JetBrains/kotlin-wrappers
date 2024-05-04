@@ -18,8 +18,4 @@ external interface TabScrollButtonClasses {
 }
 
 @JsName("default")
-external object tabScrollButtonClasses : TabScrollButtonClasses {
-    override var root: ClassName = definedExternally
-    override var vertical: ClassName = definedExternally
-    override var disabled: ClassName = definedExternally
-}
+external val tabScrollButtonClasses: TabScrollButtonClasses

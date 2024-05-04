@@ -48,18 +48,4 @@ external interface InputLabelClasses {
 }
 
 @JsName("default")
-external object inputLabelClasses : InputLabelClasses {
-    override var root: ClassName = definedExternally
-    override var focused: ClassName = definedExternally
-    override var disabled: ClassName = definedExternally
-    override var error: ClassName = definedExternally
-    override var required: ClassName = definedExternally
-    override var asterisk: ClassName = definedExternally
-    override var formControl: ClassName = definedExternally
-    override var sizeSmall: ClassName = definedExternally
-    override var shrink: ClassName = definedExternally
-    override var animated: ClassName = definedExternally
-    override var filled: ClassName = definedExternally
-    override var outlined: ClassName = definedExternally
-    override var standard: ClassName = definedExternally
-}
+external val inputLabelClasses: InputLabelClasses

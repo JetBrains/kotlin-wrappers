@@ -12,6 +12,4 @@ external interface CardClasses {
 }
 
 @JsName("default")
-external object cardClasses : CardClasses {
-    override var root: ClassName = definedExternally
-}
+external val cardClasses: CardClasses

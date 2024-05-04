@@ -32,13 +32,4 @@ external interface SwitchClasses {
     var readOnly: ClassName
 }
 
-external object switchClasses : SwitchClasses {
-    override var root: ClassName = definedExternally
-    override var input: ClassName = definedExternally
-    override var track: ClassName = definedExternally
-    override var thumb: ClassName = definedExternally
-    override var checked: ClassName = definedExternally
-    override var disabled: ClassName = definedExternally
-    override var focusVisible: ClassName = definedExternally
-    override var readOnly: ClassName = definedExternally
-}
+external val switchClasses: SwitchClasses

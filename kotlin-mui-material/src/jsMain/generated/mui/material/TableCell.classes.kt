@@ -48,18 +48,4 @@ external interface TableCellClasses {
 }
 
 @JsName("default")
-external object tableCellClasses : TableCellClasses {
-    override var root: ClassName = definedExternally
-    override var head: ClassName = definedExternally
-    override var body: ClassName = definedExternally
-    override var footer: ClassName = definedExternally
-    override var sizeSmall: ClassName = definedExternally
-    override var sizeMedium: ClassName = definedExternally
-    override var paddingCheckbox: ClassName = definedExternally
-    override var paddingNone: ClassName = definedExternally
-    override var alignLeft: ClassName = definedExternally
-    override var alignCenter: ClassName = definedExternally
-    override var alignRight: ClassName = definedExternally
-    override var alignJustify: ClassName = definedExternally
-    override var stickyHeader: ClassName = definedExternally
-}
+external val tableCellClasses: TableCellClasses

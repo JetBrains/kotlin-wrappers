@@ -54,20 +54,4 @@ external interface DialogClasses {
 }
 
 @JsName("default")
-external object dialogClasses : DialogClasses {
-    override var root: ClassName = definedExternally
-    override var scrollPaper: ClassName = definedExternally
-    override var scrollBody: ClassName = definedExternally
-    override var container: ClassName = definedExternally
-    override var paper: ClassName = definedExternally
-    override var paperScrollPaper: ClassName = definedExternally
-    override var paperScrollBody: ClassName = definedExternally
-    override var paperWidthFalse: ClassName = definedExternally
-    override var paperWidthXs: ClassName = definedExternally
-    override var paperWidthSm: ClassName = definedExternally
-    override var paperWidthMd: ClassName = definedExternally
-    override var paperWidthLg: ClassName = definedExternally
-    override var paperWidthXl: ClassName = definedExternally
-    override var paperFullWidth: ClassName = definedExternally
-    override var paperFullScreen: ClassName = definedExternally
-}
+external val dialogClasses: DialogClasses

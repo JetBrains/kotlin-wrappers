@@ -36,14 +36,4 @@ external interface InputAdornmentClasses {
 }
 
 @JsName("default")
-external object inputAdornmentClasses : InputAdornmentClasses {
-    override var root: ClassName = definedExternally
-    override var filled: ClassName = definedExternally
-    override var outlined: ClassName = definedExternally
-    override var standard: ClassName = definedExternally
-    override var positionStart: ClassName = definedExternally
-    override var positionEnd: ClassName = definedExternally
-    override var disablePointerEvents: ClassName = definedExternally
-    override var hiddenLabel: ClassName = definedExternally
-    override var sizeSmall: ClassName = definedExternally
-}
+external val inputAdornmentClasses: InputAdornmentClasses

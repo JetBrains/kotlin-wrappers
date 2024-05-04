@@ -12,6 +12,4 @@ external interface StackClasses {
 }
 
 @JsName("default")
-external object stackClasses : StackClasses {
-    override var root: ClassName = definedExternally
-}
+external val stackClasses: StackClasses

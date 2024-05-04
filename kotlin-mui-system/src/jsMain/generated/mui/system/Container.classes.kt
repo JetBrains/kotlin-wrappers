@@ -33,13 +33,4 @@ external interface ContainerClasses {
 }
 
 @JsName("default")
-external object containerClasses : ContainerClasses {
-    override var root: ClassName = definedExternally
-    override var disableGutters: ClassName = definedExternally
-    override var fixed: ClassName = definedExternally
-    override var maxWidthXs: ClassName = definedExternally
-    override var maxWidthSm: ClassName = definedExternally
-    override var maxWidthMd: ClassName = definedExternally
-    override var maxWidthLg: ClassName = definedExternally
-    override var maxWidthXl: ClassName = definedExternally
-}
+external val containerClasses: ContainerClasses

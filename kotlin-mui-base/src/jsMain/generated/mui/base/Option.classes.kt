@@ -20,9 +20,4 @@ external interface OptionClasses {
     var highlighted: ClassName
 }
 
-external object optionClasses : OptionClasses {
-    override var root: ClassName = definedExternally
-    override var disabled: ClassName = definedExternally
-    override var selected: ClassName = definedExternally
-    override var highlighted: ClassName = definedExternally
-}
+external val optionClasses: OptionClasses

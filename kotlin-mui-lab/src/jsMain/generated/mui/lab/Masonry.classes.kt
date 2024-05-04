@@ -12,6 +12,4 @@ external interface MasonryClasses {
 }
 
 @JsName("default")
-external object masonryClasses : MasonryClasses {
-    override var root: ClassName = definedExternally
-}
+external val masonryClasses: MasonryClasses

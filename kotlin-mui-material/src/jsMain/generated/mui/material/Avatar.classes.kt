@@ -30,12 +30,4 @@ external interface AvatarClasses {
 }
 
 @JsName("default")
-external object avatarClasses : AvatarClasses {
-    override var root: ClassName = definedExternally
-    override var colorDefault: ClassName = definedExternally
-    override var circular: ClassName = definedExternally
-    override var rounded: ClassName = definedExternally
-    override var square: ClassName = definedExternally
-    override var img: ClassName = definedExternally
-    override var fallback: ClassName = definedExternally
-}
+external val avatarClasses: AvatarClasses

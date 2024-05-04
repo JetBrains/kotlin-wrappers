@@ -17,8 +17,4 @@ external interface ModalClasses {
     var backdrop: ClassName
 }
 
-external object modalClasses : ModalClasses {
-    override var root: ClassName = definedExternally
-    override var hidden: ClassName = definedExternally
-    override var backdrop: ClassName = definedExternally
-}
+external val modalClasses: ModalClasses

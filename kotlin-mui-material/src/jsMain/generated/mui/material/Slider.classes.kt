@@ -111,39 +111,4 @@ external interface SliderClasses {
 }
 
 @JsName("default")
-external object sliderClasses : SliderClasses {
-    override var root: ClassName = definedExternally
-    override var colorPrimary: ClassName = definedExternally
-    override var colorSecondary: ClassName = definedExternally
-    override var colorError: ClassName = definedExternally
-    override var colorInfo: ClassName = definedExternally
-    override var colorSuccess: ClassName = definedExternally
-    override var colorWarning: ClassName = definedExternally
-    override var marked: ClassName = definedExternally
-    override var vertical: ClassName = definedExternally
-    override var disabled: ClassName = definedExternally
-    override var dragging: ClassName = definedExternally
-    override var rail: ClassName = definedExternally
-    override var track: ClassName = definedExternally
-    override var trackFalse: ClassName = definedExternally
-    override var trackInverted: ClassName = definedExternally
-    override var thumb: ClassName = definedExternally
-    override var active: ClassName = definedExternally
-    override var focusVisible: ClassName = definedExternally
-    override var mark: ClassName = definedExternally
-    override var markActive: ClassName = definedExternally
-    override var markLabel: ClassName = definedExternally
-    override var markLabelActive: ClassName = definedExternally
-    override var sizeSmall: ClassName = definedExternally
-    override var thumbColorPrimary: ClassName = definedExternally
-    override var thumbColorSecondary: ClassName = definedExternally
-    override var thumbColorError: ClassName = definedExternally
-    override var thumbColorInfo: ClassName = definedExternally
-    override var thumbColorSuccess: ClassName = definedExternally
-    override var thumbColorWarning: ClassName = definedExternally
-    override var thumbSizeSmall: ClassName = definedExternally
-    override var valueLabel: ClassName = definedExternally
-    override var valueLabelOpen: ClassName = definedExternally
-    override var valueLabelCircle: ClassName = definedExternally
-    override var valueLabelLabel: ClassName = definedExternally
-}
+external val sliderClasses: SliderClasses

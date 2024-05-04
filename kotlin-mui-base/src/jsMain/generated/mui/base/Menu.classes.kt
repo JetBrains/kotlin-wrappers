@@ -17,8 +17,4 @@ external interface MenuClasses {
     var expanded: ClassName
 }
 
-external object menuClasses : MenuClasses {
-    override var root: ClassName = definedExternally
-    override var listbox: ClassName = definedExternally
-    override var expanded: ClassName = definedExternally
-}
+external val menuClasses: MenuClasses

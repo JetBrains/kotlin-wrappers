@@ -12,6 +12,4 @@ external interface AlertTitleClasses {
 }
 
 @JsName("default")
-external object alertTitleClasses : AlertTitleClasses {
-    override var root: ClassName = definedExternally
-}
+external val alertTitleClasses: AlertTitleClasses

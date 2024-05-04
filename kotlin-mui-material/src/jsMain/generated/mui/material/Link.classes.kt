@@ -27,11 +27,4 @@ external interface LinkClasses {
 }
 
 @JsName("default")
-external object linkClasses : LinkClasses {
-    override var root: ClassName = definedExternally
-    override var underlineNone: ClassName = definedExternally
-    override var underlineHover: ClassName = definedExternally
-    override var underlineAlways: ClassName = definedExternally
-    override var button: ClassName = definedExternally
-    override var focusVisible: ClassName = definedExternally
-}
+external val linkClasses: LinkClasses

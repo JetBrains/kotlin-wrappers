@@ -56,21 +56,4 @@ external interface SliderClasses {
     var markLabelActive: ClassName
 }
 
-external object sliderClasses : SliderClasses {
-    override var root: ClassName = definedExternally
-    override var marked: ClassName = definedExternally
-    override var vertical: ClassName = definedExternally
-    override var disabled: ClassName = definedExternally
-    override var dragging: ClassName = definedExternally
-    override var rail: ClassName = definedExternally
-    override var track: ClassName = definedExternally
-    override var trackFalse: ClassName = definedExternally
-    override var trackInverted: ClassName = definedExternally
-    override var thumb: ClassName = definedExternally
-    override var active: ClassName = definedExternally
-    override var focusVisible: ClassName = definedExternally
-    override var mark: ClassName = definedExternally
-    override var markActive: ClassName = definedExternally
-    override var markLabel: ClassName = definedExternally
-    override var markLabelActive: ClassName = definedExternally
-}
+external val sliderClasses: SliderClasses

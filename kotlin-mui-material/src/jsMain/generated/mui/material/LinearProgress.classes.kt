@@ -63,23 +63,4 @@ external interface LinearProgressClasses {
 }
 
 @JsName("default")
-external object linearProgressClasses : LinearProgressClasses {
-    override var root: ClassName = definedExternally
-    override var colorPrimary: ClassName = definedExternally
-    override var colorSecondary: ClassName = definedExternally
-    override var determinate: ClassName = definedExternally
-    override var indeterminate: ClassName = definedExternally
-    override var buffer: ClassName = definedExternally
-    override var query: ClassName = definedExternally
-    override var dashed: ClassName = definedExternally
-    override var dashedColorPrimary: ClassName = definedExternally
-    override var dashedColorSecondary: ClassName = definedExternally
-    override var bar: ClassName = definedExternally
-    override var barColorPrimary: ClassName = definedExternally
-    override var barColorSecondary: ClassName = definedExternally
-    override var bar1Indeterminate: ClassName = definedExternally
-    override var bar1Determinate: ClassName = definedExternally
-    override var bar1Buffer: ClassName = definedExternally
-    override var bar2Indeterminate: ClassName = definedExternally
-    override var bar2Buffer: ClassName = definedExternally
-}
+external val linearProgressClasses: LinearProgressClasses

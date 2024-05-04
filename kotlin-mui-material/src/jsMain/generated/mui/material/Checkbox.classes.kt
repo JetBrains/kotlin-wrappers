@@ -33,13 +33,4 @@ external interface CheckboxClasses {
 }
 
 @JsName("default")
-external object checkboxClasses : CheckboxClasses {
-    override var root: ClassName = definedExternally
-    override var checked: ClassName = definedExternally
-    override var disabled: ClassName = definedExternally
-    override var indeterminate: ClassName = definedExternally
-    override var colorPrimary: ClassName = definedExternally
-    override var colorSecondary: ClassName = definedExternally
-    override var sizeSmall: ClassName = definedExternally
-    override var sizeMedium: ClassName = definedExternally
-}
+external val checkboxClasses: CheckboxClasses

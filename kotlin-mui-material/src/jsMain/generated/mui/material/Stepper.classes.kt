@@ -21,9 +21,4 @@ external interface StepperClasses {
 }
 
 @JsName("default")
-external object stepperClasses : StepperClasses {
-    override var root: ClassName = definedExternally
-    override var horizontal: ClassName = definedExternally
-    override var vertical: ClassName = definedExternally
-    override var alternativeLabel: ClassName = definedExternally
-}
+external val stepperClasses: StepperClasses

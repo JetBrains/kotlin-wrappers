@@ -15,7 +15,4 @@ external interface BackdropClasses {
 }
 
 @JsName("default")
-external object backdropClasses : BackdropClasses {
-    override var root: ClassName = definedExternally
-    override var invisible: ClassName = definedExternally
-}
+external val backdropClasses: BackdropClasses

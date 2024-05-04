@@ -30,12 +30,4 @@ external interface TouchRippleClasses {
 }
 
 @JsName("default")
-external object touchRippleClasses : TouchRippleClasses {
-    override var root: ClassName = definedExternally
-    override var ripple: ClassName = definedExternally
-    override var rippleVisible: ClassName = definedExternally
-    override var ripplePulsate: ClassName = definedExternally
-    override var child: ClassName = definedExternally
-    override var childLeaving: ClassName = definedExternally
-    override var childPulsate: ClassName = definedExternally
-}
+external val touchRippleClasses: TouchRippleClasses

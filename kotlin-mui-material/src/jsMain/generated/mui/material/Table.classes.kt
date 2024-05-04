@@ -15,7 +15,4 @@ external interface TableClasses {
 }
 
 @JsName("default")
-external object tableClasses : TableClasses {
-    override var root: ClassName = definedExternally
-    override var stickyHeader: ClassName = definedExternally
-}
+external val tableClasses: TableClasses

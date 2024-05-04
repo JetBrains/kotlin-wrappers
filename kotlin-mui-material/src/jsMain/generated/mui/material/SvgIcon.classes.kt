@@ -39,15 +39,4 @@ external interface SvgIconClasses {
 }
 
 @JsName("default")
-external object svgIconClasses : SvgIconClasses {
-    override var root: ClassName = definedExternally
-    override var colorPrimary: ClassName = definedExternally
-    override var colorSecondary: ClassName = definedExternally
-    override var colorAction: ClassName = definedExternally
-    override var colorError: ClassName = definedExternally
-    override var colorDisabled: ClassName = definedExternally
-    override var fontSizeInherit: ClassName = definedExternally
-    override var fontSizeSmall: ClassName = definedExternally
-    override var fontSizeMedium: ClassName = definedExternally
-    override var fontSizeLarge: ClassName = definedExternally
-}
+external val svgIconClasses: SvgIconClasses

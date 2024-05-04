@@ -17,8 +17,4 @@ external interface BadgeClasses {
     var invisible: ClassName
 }
 
-external object badgeClasses : BadgeClasses {
-    override var root: ClassName = definedExternally
-    override var badge: ClassName = definedExternally
-    override var invisible: ClassName = definedExternally
-}
+external val badgeClasses: BadgeClasses

@@ -39,15 +39,4 @@ external interface CircularProgressClasses {
 }
 
 @JsName("default")
-external object circularProgressClasses : CircularProgressClasses {
-    override var root: ClassName = definedExternally
-    override var determinate: ClassName = definedExternally
-    override var indeterminate: ClassName = definedExternally
-    override var colorPrimary: ClassName = definedExternally
-    override var colorSecondary: ClassName = definedExternally
-    override var svg: ClassName = definedExternally
-    override var circle: ClassName = definedExternally
-    override var circleDeterminate: ClassName = definedExternally
-    override var circleIndeterminate: ClassName = definedExternally
-    override var circleDisableShrink: ClassName = definedExternally
-}
+external val circularProgressClasses: CircularProgressClasses

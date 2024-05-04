@@ -17,8 +17,4 @@ external interface MenuItemClasses {
     var focusVisible: ClassName
 }
 
-external object menuItemClasses : MenuItemClasses {
-    override var root: ClassName = definedExternally
-    override var disabled: ClassName = definedExternally
-    override var focusVisible: ClassName = definedExternally
-}
+external val menuItemClasses: MenuItemClasses

@@ -17,8 +17,4 @@ external interface TabsClasses {
     var vertical: ClassName
 }
 
-external object tabsClasses : TabsClasses {
-    override var root: ClassName = definedExternally
-    override var horizontal: ClassName = definedExternally
-    override var vertical: ClassName = definedExternally
-}
+external val tabsClasses: TabsClasses

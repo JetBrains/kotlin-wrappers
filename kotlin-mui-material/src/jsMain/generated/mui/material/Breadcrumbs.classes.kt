@@ -21,9 +21,4 @@ external interface BreadcrumbsClasses {
 }
 
 @JsName("default")
-external object breadcrumbsClasses : BreadcrumbsClasses {
-    override var root: ClassName = definedExternally
-    override var ol: ClassName = definedExternally
-    override var li: ClassName = definedExternally
-    override var separator: ClassName = definedExternally
-}
+external val breadcrumbsClasses: BreadcrumbsClasses

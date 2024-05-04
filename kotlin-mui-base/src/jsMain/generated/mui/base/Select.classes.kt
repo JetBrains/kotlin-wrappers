@@ -29,12 +29,4 @@ external interface SelectClasses {
     var focusVisible: ClassName
 }
 
-external object selectClasses : SelectClasses {
-    override var root: ClassName = definedExternally
-    override var listbox: ClassName = definedExternally
-    override var popup: ClassName = definedExternally
-    override var active: ClassName = definedExternally
-    override var expanded: ClassName = definedExternally
-    override var disabled: ClassName = definedExternally
-    override var focusVisible: ClassName = definedExternally
-}
+external val selectClasses: SelectClasses

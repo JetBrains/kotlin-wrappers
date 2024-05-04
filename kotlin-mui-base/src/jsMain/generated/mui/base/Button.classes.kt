@@ -20,9 +20,4 @@ external interface ButtonClasses {
     var focusVisible: ClassName
 }
 
-external object buttonClasses : ButtonClasses {
-    override var root: ClassName = definedExternally
-    override var active: ClassName = definedExternally
-    override var disabled: ClassName = definedExternally
-    override var focusVisible: ClassName = definedExternally
-}
+external val buttonClasses: ButtonClasses

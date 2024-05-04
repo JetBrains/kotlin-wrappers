@@ -24,10 +24,4 @@ external interface TableSortLabelClasses {
 }
 
 @JsName("default")
-external object tableSortLabelClasses : TableSortLabelClasses {
-    override var root: ClassName = definedExternally
-    override var active: ClassName = definedExternally
-    override var icon: ClassName = definedExternally
-    override var iconDirectionDesc: ClassName = definedExternally
-    override var iconDirectionAsc: ClassName = definedExternally
-}
+external val tableSortLabelClasses: TableSortLabelClasses

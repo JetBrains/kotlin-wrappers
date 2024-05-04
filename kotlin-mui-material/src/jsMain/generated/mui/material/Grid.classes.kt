@@ -55,38 +55,4 @@ external interface GridClasses {
 }
 
 @JsName("default")
-external object gridClasses : GridClasses {
-    override var root: ClassName = definedExternally
-    override var container: ClassName = definedExternally
-    override var item: ClassName = definedExternally
-    override var zeroMinWidth: ClassName = definedExternally
-    // override var 'direction-xs-column': ClassName = definedExternally
-    // override var 'direction-xs-column-reverse': ClassName = definedExternally
-    // override var 'direction-xs-row-reverse': ClassName = definedExternally
-    // override var 'wrap-xs-nowrap': ClassName = definedExternally
-    // override var 'wrap-xs-wrap-reverse': ClassName = definedExternally
-    // override var 'spacing-xs-1': ClassName = definedExternally
-    // override var 'spacing-xs-2': ClassName = definedExternally
-    // override var 'spacing-xs-3': ClassName = definedExternally
-    // override var 'spacing-xs-4': ClassName = definedExternally
-    // override var 'spacing-xs-5': ClassName = definedExternally
-    // override var 'spacing-xs-6': ClassName = definedExternally
-    // override var 'spacing-xs-7': ClassName = definedExternally
-    // override var 'spacing-xs-8': ClassName = definedExternally
-    // override var 'spacing-xs-9': ClassName = definedExternally
-    // override var 'spacing-xs-10': ClassName = definedExternally
-    // override var 'grid-xs-auto': ClassName = definedExternally
-    // override var 'grid-xs-true': ClassName = definedExternally
-    // override var 'grid-xs-1': ClassName = definedExternally
-    // override var 'grid-xs-2': ClassName = definedExternally
-    // override var 'grid-xs-3': ClassName = definedExternally
-    // override var 'grid-xs-4': ClassName = definedExternally
-    // override var 'grid-xs-5': ClassName = definedExternally
-    // override var 'grid-xs-6': ClassName = definedExternally
-    // override var 'grid-xs-7': ClassName = definedExternally
-    // override var 'grid-xs-8': ClassName = definedExternally
-    // override var 'grid-xs-9': ClassName = definedExternally
-    // override var 'grid-xs-10': ClassName = definedExternally
-    // override var 'grid-xs-11': ClassName = definedExternally
-    // override var 'grid-xs-12': ClassName = definedExternally
-}
+external val gridClasses: GridClasses

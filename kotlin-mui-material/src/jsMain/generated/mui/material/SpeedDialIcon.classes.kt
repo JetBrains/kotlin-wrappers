@@ -27,11 +27,4 @@ external interface SpeedDialIconClasses {
 }
 
 @JsName("default")
-external object speedDialIconClasses : SpeedDialIconClasses {
-    override var root: ClassName = definedExternally
-    override var icon: ClassName = definedExternally
-    override var iconOpen: ClassName = definedExternally
-    override var iconWithOpenIconOpen: ClassName = definedExternally
-    override var openIcon: ClassName = definedExternally
-    override var openIconOpen: ClassName = definedExternally
-}
+external val speedDialIconClasses: SpeedDialIconClasses

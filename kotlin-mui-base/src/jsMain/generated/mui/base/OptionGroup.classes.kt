@@ -20,9 +20,4 @@ external interface OptionGroupClasses {
     var list: ClassName
 }
 
-external object optionGroupClasses : OptionGroupClasses {
-    override var root: ClassName = definedExternally
-    override var disabled: ClassName = definedExternally
-    override var label: ClassName = definedExternally
-    override var list: ClassName = definedExternally
-}
+external val optionGroupClasses: OptionGroupClasses

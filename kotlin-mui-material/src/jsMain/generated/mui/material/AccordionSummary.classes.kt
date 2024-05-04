@@ -36,13 +36,4 @@ external interface AccordionSummaryClasses {
 }
 
 @JsName("default")
-external object accordionSummaryClasses : AccordionSummaryClasses {
-    override var root: ClassName = definedExternally
-    override var expanded: ClassName = definedExternally
-    override var focusVisible: ClassName = definedExternally
-    override var disabled: ClassName = definedExternally
-    override var gutters: ClassName = definedExternally
-    override var contentGutters: ClassName = definedExternally
-    override var content: ClassName = definedExternally
-    override var expandIconWrapper: ClassName = definedExternally
-}
+external val accordionSummaryClasses: AccordionSummaryClasses

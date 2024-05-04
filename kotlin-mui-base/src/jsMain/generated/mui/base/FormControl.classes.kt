@@ -26,11 +26,4 @@ external interface FormControlClasses {
     var required: ClassName
 }
 
-external object formControlClasses : FormControlClasses {
-    override var root: ClassName = definedExternally
-    override var disabled: ClassName = definedExternally
-    override var error: ClassName = definedExternally
-    override var filled: ClassName = definedExternally
-    override var focused: ClassName = definedExternally
-    override var required: ClassName = definedExternally
-}
+external val formControlClasses: FormControlClasses

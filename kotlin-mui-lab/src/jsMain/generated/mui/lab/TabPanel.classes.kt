@@ -12,6 +12,4 @@ external interface TabPanelClasses {
 }
 
 @JsName("default")
-external object tabPanelClasses : TabPanelClasses {
-    override var root: ClassName = definedExternally
-}
+external val tabPanelClasses: TabPanelClasses

@@ -33,13 +33,4 @@ external interface ListItemButtonClasses {
 }
 
 @JsName("default")
-external object listItemButtonClasses : ListItemButtonClasses {
-    override var root: ClassName = definedExternally
-    override var focusVisible: ClassName = definedExternally
-    override var dense: ClassName = definedExternally
-    override var alignItemsFlexStart: ClassName = definedExternally
-    override var disabled: ClassName = definedExternally
-    override var divider: ClassName = definedExternally
-    override var gutters: ClassName = definedExternally
-    override var selected: ClassName = definedExternally
-}
+external val listItemButtonClasses: ListItemButtonClasses

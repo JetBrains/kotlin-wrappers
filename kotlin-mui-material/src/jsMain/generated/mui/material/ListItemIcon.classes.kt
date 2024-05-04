@@ -15,7 +15,4 @@ external interface ListItemIconClasses {
 }
 
 @JsName("default")
-external object listItemIconClasses : ListItemIconClasses {
-    override var root: ClassName = definedExternally
-    override var alignItemsFlexStart: ClassName = definedExternally
-}
+external val listItemIconClasses: ListItemIconClasses

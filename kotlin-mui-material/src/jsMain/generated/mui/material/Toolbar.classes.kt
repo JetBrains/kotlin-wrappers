@@ -21,9 +21,4 @@ external interface ToolbarClasses {
 }
 
 @JsName("default")
-external object toolbarClasses : ToolbarClasses {
-    override var root: ClassName = definedExternally
-    override var gutters: ClassName = definedExternally
-    override var regular: ClassName = definedExternally
-    override var dense: ClassName = definedExternally
-}
+external val toolbarClasses: ToolbarClasses

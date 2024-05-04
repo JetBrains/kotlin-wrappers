@@ -36,14 +36,4 @@ external interface IconClasses {
 }
 
 @JsName("default")
-external object iconClasses : IconClasses {
-    override var root: ClassName = definedExternally
-    override var colorPrimary: ClassName = definedExternally
-    override var colorSecondary: ClassName = definedExternally
-    override var colorAction: ClassName = definedExternally
-    override var colorError: ClassName = definedExternally
-    override var colorDisabled: ClassName = definedExternally
-    override var fontSizeInherit: ClassName = definedExternally
-    override var fontSizeSmall: ClassName = definedExternally
-    override var fontSizeLarge: ClassName = definedExternally
-}
+external val iconClasses: IconClasses

@@ -33,13 +33,4 @@ external interface SpeedDialClasses {
 }
 
 @JsName("default")
-external object speedDialClasses : SpeedDialClasses {
-    override var root: ClassName = definedExternally
-    override var fab: ClassName = definedExternally
-    override var directionUp: ClassName = definedExternally
-    override var directionDown: ClassName = definedExternally
-    override var directionLeft: ClassName = definedExternally
-    override var directionRight: ClassName = definedExternally
-    override var actions: ClassName = definedExternally
-    override var actionsClosed: ClassName = definedExternally
-}
+external val speedDialClasses: SpeedDialClasses

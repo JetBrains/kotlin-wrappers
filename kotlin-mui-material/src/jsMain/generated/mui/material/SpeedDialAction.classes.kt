@@ -30,12 +30,4 @@ external interface SpeedDialActionClasses {
 }
 
 @JsName("default")
-external object speedDialActionClasses : SpeedDialActionClasses {
-    override var fab: ClassName = definedExternally
-    override var fabClosed: ClassName = definedExternally
-    override var staticTooltip: ClassName = definedExternally
-    override var staticTooltipClosed: ClassName = definedExternally
-    override var staticTooltipLabel: ClassName = definedExternally
-    override var tooltipPlacementLeft: ClassName = definedExternally
-    override var tooltipPlacementRight: ClassName = definedExternally
-}
+external val speedDialActionClasses: SpeedDialActionClasses

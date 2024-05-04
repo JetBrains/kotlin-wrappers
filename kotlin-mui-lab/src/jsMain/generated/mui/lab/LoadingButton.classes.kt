@@ -33,13 +33,4 @@ external interface LoadingButtonClasses {
 }
 
 @JsName("default")
-external object loadingButtonClasses : LoadingButtonClasses {
-    override var root: ClassName = definedExternally
-    override var loading: ClassName = definedExternally
-    override var loadingIndicator: ClassName = definedExternally
-    override var loadingIndicatorCenter: ClassName = definedExternally
-    override var loadingIndicatorStart: ClassName = definedExternally
-    override var loadingIndicatorEnd: ClassName = definedExternally
-    override var endIconLoadingEnd: ClassName = definedExternally
-    override var startIconLoadingStart: ClassName = definedExternally
-}
+external val loadingButtonClasses: LoadingButtonClasses

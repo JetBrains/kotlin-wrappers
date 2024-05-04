@@ -21,9 +21,4 @@ external interface PaginationClasses {
 }
 
 @JsName("default")
-external object paginationClasses : PaginationClasses {
-    override var root: ClassName = definedExternally
-    override var ul: ClassName = definedExternally
-    override var outlined: ClassName = definedExternally
-    override var text: ClassName = definedExternally
-}
+external val paginationClasses: PaginationClasses

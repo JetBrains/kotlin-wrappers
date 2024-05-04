@@ -36,14 +36,4 @@ external interface FormControlLabelClasses {
 }
 
 @JsName("default")
-external object formControlLabelClasses : FormControlLabelClasses {
-    override var root: ClassName = definedExternally
-    override var labelPlacementStart: ClassName = definedExternally
-    override var labelPlacementTop: ClassName = definedExternally
-    override var labelPlacementBottom: ClassName = definedExternally
-    override var disabled: ClassName = definedExternally
-    override var label: ClassName = definedExternally
-    override var error: ClassName = definedExternally
-    override var required: ClassName = definedExternally
-    override var asterisk: ClassName = definedExternally
-}
+external val formControlLabelClasses: FormControlLabelClasses

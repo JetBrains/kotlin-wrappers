@@ -30,12 +30,4 @@ external interface MenuItemClasses {
 }
 
 @JsName("default")
-external object menuItemClasses : MenuItemClasses {
-    override var root: ClassName = definedExternally
-    override var focusVisible: ClassName = definedExternally
-    override var dense: ClassName = definedExternally
-    override var disabled: ClassName = definedExternally
-    override var divider: ClassName = definedExternally
-    override var gutters: ClassName = definedExternally
-    override var selected: ClassName = definedExternally
-}
+external val menuItemClasses: MenuItemClasses

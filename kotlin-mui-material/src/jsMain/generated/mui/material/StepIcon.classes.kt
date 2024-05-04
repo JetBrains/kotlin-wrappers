@@ -24,10 +24,4 @@ external interface StepIconClasses {
 }
 
 @JsName("default")
-external object stepIconClasses : StepIconClasses {
-    override var root: ClassName = definedExternally
-    override var text: ClassName = definedExternally
-    override var active: ClassName = definedExternally
-    override var completed: ClassName = definedExternally
-    override var error: ClassName = definedExternally
-}
+external val stepIconClasses: StepIconClasses

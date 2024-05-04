@@ -42,16 +42,4 @@ external interface TablePaginationClasses {
 }
 
 @JsName("default")
-external object tablePaginationClasses : TablePaginationClasses {
-    override var root: ClassName = definedExternally
-    override var toolbar: ClassName = definedExternally
-    override var spacer: ClassName = definedExternally
-    override var selectLabel: ClassName = definedExternally
-    override var selectRoot: ClassName = definedExternally
-    override var select: ClassName = definedExternally
-    override var selectIcon: ClassName = definedExternally
-    override var input: ClassName = definedExternally
-    override var menuItem: ClassName = definedExternally
-    override var displayedRows: ClassName = definedExternally
-    override var actions: ClassName = definedExternally
-}
+external val tablePaginationClasses: TablePaginationClasses

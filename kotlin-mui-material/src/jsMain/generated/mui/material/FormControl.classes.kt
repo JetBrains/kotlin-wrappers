@@ -21,9 +21,4 @@ external interface FormControlClasses {
 }
 
 @JsName("default")
-external object formControlClasses : FormControlClasses {
-    override var root: ClassName = definedExternally
-    override var marginNormal: ClassName = definedExternally
-    override var marginDense: ClassName = definedExternally
-    override var fullWidth: ClassName = definedExternally
-}
+external val formControlClasses: FormControlClasses

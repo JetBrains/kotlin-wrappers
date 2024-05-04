@@ -21,9 +21,4 @@ external interface StepButtonClasses {
 }
 
 @JsName("default")
-external object stepButtonClasses : StepButtonClasses {
-    override var root: ClassName = definedExternally
-    override var horizontal: ClassName = definedExternally
-    override var vertical: ClassName = definedExternally
-    override var touchRipple: ClassName = definedExternally
-}
+external val stepButtonClasses: StepButtonClasses

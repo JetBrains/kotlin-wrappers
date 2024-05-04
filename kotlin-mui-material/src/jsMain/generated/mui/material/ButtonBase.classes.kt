@@ -18,8 +18,4 @@ external interface ButtonBaseClasses {
 }
 
 @JsName("default")
-external object buttonBaseClasses : ButtonBaseClasses {
-    override var root: ClassName = definedExternally
-    override var disabled: ClassName = definedExternally
-    override var focusVisible: ClassName = definedExternally
-}
+external val buttonBaseClasses: ButtonBaseClasses

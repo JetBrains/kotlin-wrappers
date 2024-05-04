@@ -18,8 +18,4 @@ external interface SnackbarContentClasses {
 }
 
 @JsName("default")
-external object snackbarContentClasses : SnackbarContentClasses {
-    override var root: ClassName = definedExternally
-    override var message: ClassName = definedExternally
-    override var action: ClassName = definedExternally
-}
+external val snackbarContentClasses: SnackbarContentClasses

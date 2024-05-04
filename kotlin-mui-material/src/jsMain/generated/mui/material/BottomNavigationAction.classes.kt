@@ -21,9 +21,4 @@ external interface BottomNavigationActionClasses {
 }
 
 @JsName("default")
-external object bottomNavigationActionClasses : BottomNavigationActionClasses {
-    override var root: ClassName = definedExternally
-    override var selected: ClassName = definedExternally
-    override var iconOnly: ClassName = definedExternally
-    override var label: ClassName = definedExternally
-}
+external val bottomNavigationActionClasses: BottomNavigationActionClasses

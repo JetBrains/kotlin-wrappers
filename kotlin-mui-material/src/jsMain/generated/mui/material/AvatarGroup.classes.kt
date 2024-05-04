@@ -15,7 +15,4 @@ external interface AvatarGroupClasses {
 }
 
 @JsName("default")
-external object avatarGroupClasses : AvatarGroupClasses {
-    override var root: ClassName = definedExternally
-    override var avatar: ClassName = definedExternally
-}
+external val avatarGroupClasses: AvatarGroupClasses

@@ -27,11 +27,4 @@ external interface RadioClasses {
 }
 
 @JsName("default")
-external object radioClasses : RadioClasses {
-    override var root: ClassName = definedExternally
-    override var checked: ClassName = definedExternally
-    override var disabled: ClassName = definedExternally
-    override var colorPrimary: ClassName = definedExternally
-    override var colorSecondary: ClassName = definedExternally
-    override var sizeSmall: ClassName = definedExternally
-}
+external val radioClasses: RadioClasses
