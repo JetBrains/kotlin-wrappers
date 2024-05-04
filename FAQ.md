@@ -1,6 +1,6 @@
 # Frequently Asked Questions
 
-## Common
+## Base
 
 _Q_: `sealed external interface`. What is it? \
 _A_: In most cases, it’s a JavaScript Object (JSO).
