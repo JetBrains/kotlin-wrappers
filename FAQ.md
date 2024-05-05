@@ -5,29 +5,43 @@
 _Q_: `sealed external interface`. What is it? \
 _A_: In most cases, it’s a JavaScript Object (JSO).
 
-```javascript
-new Event("my-event", {
-  bubbles: true,
-  cancellable: true,
-  composed: false,
+```typescript
+type PointLike = {
+  x: number
+  y: number
+}
+
+class Point {
+  constructor(
+    pointLike: PointLike
+  ) {
+    /* do nothing */
+  }
+}
+
+const point = new Point({
+  x: 4.2,
+  y: 2.7
 })
 ```
 
 ```kotlin
 @JsPlainObject
-external interface EventInit {
-    val bubbles: Boolean?
-    val cancelable: Boolean?
-    val composed: Boolean?
+sealed external interface PointLike {
+    var x: Float
+    var y: Float
 }
 
-val eventInitDict: EventInit = jso { 
-    bubbles = true
-    cancellable = true
-    composed = false
+class Point(pointLike: PointLike) {
+    val x: Float = pointLike.x
+    val y: Float = pointLike.y
 }
 
-val event = Event(EventType("my-event"), eventInitDict)
+val pointLike: PointLike = jso {
+    x = 4.2
+    y = 2.7
+}
+val point = Point(pointLike)
 ```
 
 Typical JSO example: \
