@@ -2,6 +2,9 @@
 
 package web.abort
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 @JsExternalInheritorsOnly
 external interface Abortable {
     /**
