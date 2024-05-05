@@ -6,24 +6,24 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface ImageListItemClasses {
+sealed external interface ImageListItemClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to an `img` element to ensure it covers the item. */
-    var img: ClassName
+    val img: ClassName
 
     /** Styles applied to the root element if `variant="standard"`. */
-    var standard: ClassName
+    val standard: ClassName
 
     /** Styles applied to the root element if `variant="woven"`. */
-    var woven: ClassName
+    val woven: ClassName
 
     /** Styles applied to the root element if `variant="masonry"`. */
-    var masonry: ClassName
+    val masonry: ClassName
 
     /** Styles applied to the root element if `variant="quilted"`. */
-    var quilted: ClassName
+    val quilted: ClassName
 }
 
 @JsName("default")

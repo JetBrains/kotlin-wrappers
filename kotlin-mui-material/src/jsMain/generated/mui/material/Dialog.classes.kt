@@ -6,51 +6,51 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface DialogClasses {
+sealed external interface DialogClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the container element if `scroll="paper"`. */
-    var scrollPaper: ClassName
+    val scrollPaper: ClassName
 
     /** Styles applied to the container element if `scroll="body"`. */
-    var scrollBody: ClassName
+    val scrollBody: ClassName
 
     /** Styles applied to the container element. */
-    var container: ClassName
+    val container: ClassName
 
     /** Styles applied to the Paper component. */
-    var paper: ClassName
+    val paper: ClassName
 
     /** Styles applied to the Paper component if `scroll="paper"`. */
-    var paperScrollPaper: ClassName
+    val paperScrollPaper: ClassName
 
     /** Styles applied to the Paper component if `scroll="body"`. */
-    var paperScrollBody: ClassName
+    val paperScrollBody: ClassName
 
     /** Styles applied to the Paper component if `maxWidth=false`. */
-    var paperWidthFalse: ClassName
+    val paperWidthFalse: ClassName
 
     /** Styles applied to the Paper component if `maxWidth="xs"`. */
-    var paperWidthXs: ClassName
+    val paperWidthXs: ClassName
 
     /** Styles applied to the Paper component if `maxWidth="sm"`. */
-    var paperWidthSm: ClassName
+    val paperWidthSm: ClassName
 
     /** Styles applied to the Paper component if `maxWidth="md"`. */
-    var paperWidthMd: ClassName
+    val paperWidthMd: ClassName
 
     /** Styles applied to the Paper component if `maxWidth="lg"`. */
-    var paperWidthLg: ClassName
+    val paperWidthLg: ClassName
 
     /** Styles applied to the Paper component if `maxWidth="xl"`. */
-    var paperWidthXl: ClassName
+    val paperWidthXl: ClassName
 
     /** Styles applied to the Paper component if `fullWidth={true}`. */
-    var paperFullWidth: ClassName
+    val paperFullWidth: ClassName
 
     /** Styles applied to the Paper component if `fullScreen={true}`. */
-    var paperFullScreen: ClassName
+    val paperFullScreen: ClassName
 }
 
 @JsName("default")

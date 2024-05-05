@@ -6,45 +6,45 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface InputLabelClasses {
+sealed external interface InputLabelClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** State class applied to the root element if `focused={true}`. */
-    var focused: ClassName
+    val focused: ClassName
 
     /** State class applied to the root element if `disabled={true}`. */
-    var disabled: ClassName
+    val disabled: ClassName
 
     /** State class applied to the root element if `error={true}`. */
-    var error: ClassName
+    val error: ClassName
 
     /** State class applied to the root element if `required={true}`. */
-    var required: ClassName
+    val required: ClassName
 
     /** State class applied to the asterisk element. */
-    var asterisk: ClassName
+    val asterisk: ClassName
 
     /** Styles applied to the root element if the component is a descendant of `FormControl`. */
-    var formControl: ClassName
+    val formControl: ClassName
 
     /** Styles applied to the root element if `size="small"`. */
-    var sizeSmall: ClassName
+    val sizeSmall: ClassName
 
     /** Styles applied to the input element if `shrink={true}`. */
-    var shrink: ClassName
+    val shrink: ClassName
 
     /** Styles applied to the input element unless `disableAnimation={true}`. */
-    var animated: ClassName
+    val animated: ClassName
 
     /** Styles applied to the root element if `variant="filled"`. */
-    var filled: ClassName
+    val filled: ClassName
 
     /** Styles applied to the root element if `variant="outlined"`. */
-    var outlined: ClassName
+    val outlined: ClassName
 
     /** Styles applied to the root element if `variant="standard"`. */
-    var standard: ClassName
+    val standard: ClassName
 }
 
 @JsName("default")

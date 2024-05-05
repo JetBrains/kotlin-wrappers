@@ -6,15 +6,15 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface MenuClasses {
+sealed external interface MenuClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the Paper component. */
-    var paper: ClassName
+    val paper: ClassName
 
     /** Styles applied to the List component via `MenuList`. */
-    var list: ClassName
+    val list: ClassName
 }
 
 @JsName("default")

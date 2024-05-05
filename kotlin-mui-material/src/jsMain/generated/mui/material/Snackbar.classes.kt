@@ -6,27 +6,27 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface SnackbarClasses {
+sealed external interface SnackbarClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element if `anchorOrigin={{ 'top', 'center' }}`. */
-    var anchorOriginTopCenter: ClassName
+    val anchorOriginTopCenter: ClassName
 
     /** Styles applied to the root element if `anchorOrigin={{ 'bottom', 'center' }}`. */
-    var anchorOriginBottomCenter: ClassName
+    val anchorOriginBottomCenter: ClassName
 
     /** Styles applied to the root element if `anchorOrigin={{ 'top', 'right' }}`. */
-    var anchorOriginTopRight: ClassName
+    val anchorOriginTopRight: ClassName
 
     /** Styles applied to the root element if `anchorOrigin={{ 'bottom', 'right' }}`. */
-    var anchorOriginBottomRight: ClassName
+    val anchorOriginBottomRight: ClassName
 
     /** Styles applied to the root element if `anchorOrigin={{ 'top', 'left' }}`. */
-    var anchorOriginTopLeft: ClassName
+    val anchorOriginTopLeft: ClassName
 
     /** Styles applied to the root element if `anchorOrigin={{ 'bottom', 'left' }}`. */
-    var anchorOriginBottomLeft: ClassName
+    val anchorOriginBottomLeft: ClassName
 }
 
 @JsName("default")

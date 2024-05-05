@@ -6,36 +6,36 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface ToggleButtonClasses {
+sealed external interface ToggleButtonClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** State class applied to the root element if `disabled={true}`. */
-    var disabled: ClassName
+    val disabled: ClassName
 
     /** State class applied to the root element if `selected={true}`. */
-    var selected: ClassName
+    val selected: ClassName
 
     /** State class applied to the root element if `color="standard"`. */
-    var standard: ClassName
+    val standard: ClassName
 
     /** State class applied to the root element if `color="primary"`. */
-    var primary: ClassName
+    val primary: ClassName
 
     /** State class applied to the root element if `color="secondary"`. */
-    var secondary: ClassName
+    val secondary: ClassName
 
     /** Styles applied to the root element if `size="small"`. */
-    var sizeSmall: ClassName
+    val sizeSmall: ClassName
 
     /** Styles applied to the root element if `size="medium"`. */
-    var sizeMedium: ClassName
+    val sizeMedium: ClassName
 
     /** Styles applied to the root element if `size="large"`. */
-    var sizeLarge: ClassName
+    val sizeLarge: ClassName
 
     /** Styles applied to the root element if `fullWidth={true}`. */
-    var fullWidth: ClassName
+    val fullWidth: ClassName
 }
 
 @JsName("default")

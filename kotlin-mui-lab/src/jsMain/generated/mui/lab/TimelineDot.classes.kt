@@ -6,33 +6,33 @@ package mui.lab
 
 import web.cssom.ClassName
 
-external interface TimelineDotClasses {
+sealed external interface TimelineDotClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element if `variant="filled"`. */
-    var filled: ClassName
+    val filled: ClassName
 
     /** Styles applied to the root element if `variant="outlined"`. */
-    var outlined: ClassName
+    val outlined: ClassName
 
     /** Styles applied to the root element if `color="grey"` and `variant="filled"`. */
-    var filledGrey: ClassName
+    val filledGrey: ClassName
 
     /** Styles applied to the root element if `color="grey"` and `variant="outlined"`. */
-    var outlinedGrey: ClassName
+    val outlinedGrey: ClassName
 
     /** Styles applied to the root element if `color="primary"` and `variant="filled"`. */
-    var filledPrimary: ClassName
+    val filledPrimary: ClassName
 
     /** Styles applied to the root element if `color="primary"` and `variant="outlined"`. */
-    var outlinedPrimary: ClassName
+    val outlinedPrimary: ClassName
 
     /** Styles applied to the root element if `color="secondary"` and `variant="filled"`. */
-    var filledSecondary: ClassName
+    val filledSecondary: ClassName
 
     /** Styles applied to the root element if `color="secondary"` and `variant="outlined"`. */
-    var outlinedSecondary: ClassName
+    val outlinedSecondary: ClassName
 }
 
 @JsName("default")

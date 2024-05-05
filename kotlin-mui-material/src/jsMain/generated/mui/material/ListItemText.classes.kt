@@ -6,24 +6,24 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface ListItemTextClasses {
+sealed external interface ListItemTextClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the Typography component if primary and secondary are set. */
-    var multiline: ClassName
+    val multiline: ClassName
 
     /** Styles applied to the Typography component if dense. */
-    var dense: ClassName
+    val dense: ClassName
 
     /** Styles applied to the root element if `inset={true}`. */
-    var inset: ClassName
+    val inset: ClassName
 
     /** Styles applied to the primary `Typography` component. */
-    var primary: ClassName
+    val primary: ClassName
 
     /** Styles applied to the secondary `Typography` component. */
-    var secondary: ClassName
+    val secondary: ClassName
 }
 
 @JsName("default")

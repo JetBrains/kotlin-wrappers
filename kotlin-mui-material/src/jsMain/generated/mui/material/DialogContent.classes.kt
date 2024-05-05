@@ -6,12 +6,12 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface DialogContentClasses {
+sealed external interface DialogContentClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element if `dividers={true}`. */
-    var dividers: ClassName
+    val dividers: ClassName
 }
 
 @JsName("default")

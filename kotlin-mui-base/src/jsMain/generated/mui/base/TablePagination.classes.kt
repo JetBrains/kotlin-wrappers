@@ -6,39 +6,39 @@ package mui.base
 
 import web.cssom.ClassName
 
-external interface TablePaginationClasses {
+sealed external interface TablePaginationClasses {
     /** Class name applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Class name applied to the Toolbar component. */
-    var toolbar: ClassName
+    val toolbar: ClassName
 
     /** Class name applied to the spacer element. */
-    var spacer: ClassName
+    val spacer: ClassName
 
     /** Class name applied to the select label Typography element. */
-    var selectLabel: ClassName
+    val selectLabel: ClassName
 
     /** Class name applied to the Select component `root` element. */
-    var selectRoot: ClassName
+    val selectRoot: ClassName
 
     /** Class name applied to the Select component `select` class. */
-    var select: ClassName
+    val select: ClassName
 
     /** Class name applied to the Select component `icon` class. */
-    var selectIcon: ClassName
+    val selectIcon: ClassName
 
     /** Class name applied to the Select component `root` element. */
-    var input: ClassName
+    val input: ClassName
 
     /** Class name applied to the MenuItem component. */
-    var menuItem: ClassName
+    val menuItem: ClassName
 
     /** Class name applied to the displayed rows Typography element. */
-    var displayedRows: ClassName
+    val displayedRows: ClassName
 
     /** Class name applied to the internal `TablePaginationActions` component. */
-    var actions: ClassName
+    val actions: ClassName
 }
 
 external val tablePaginationClasses: TablePaginationClasses

@@ -6,30 +6,30 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface ListItemButtonClasses {
+sealed external interface ListItemButtonClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** State class applied to the `component`'s `focusVisibleClassName` prop. */
-    var focusVisible: ClassName
+    val focusVisible: ClassName
 
     /** Styles applied to the component element if dense. */
-    var dense: ClassName
+    val dense: ClassName
 
     /** Styles applied to the component element if `alignItems="flex-start"`. */
-    var alignItemsFlexStart: ClassName
+    val alignItemsFlexStart: ClassName
 
     /** State class applied to the inner `component` element if `disabled={true}`. */
-    var disabled: ClassName
+    val disabled: ClassName
 
     /** Styles applied to the inner `component` element if `divider={true}`. */
-    var divider: ClassName
+    val divider: ClassName
 
     /** Styles applied to the inner `component` element unless `disableGutters={true}`. */
-    var gutters: ClassName
+    val gutters: ClassName
 
     /** State class applied to the root element if `selected={true}`. */
-    var selected: ClassName
+    val selected: ClassName
 }
 
 @JsName("default")

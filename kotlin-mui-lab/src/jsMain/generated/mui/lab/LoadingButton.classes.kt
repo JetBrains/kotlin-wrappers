@@ -6,30 +6,30 @@ package mui.lab
 
 import web.cssom.ClassName
 
-external interface LoadingButtonClasses {
+sealed external interface LoadingButtonClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element if `loading={true}`. */
-    var loading: ClassName
+    val loading: ClassName
 
     /** Styles applied to the loadingIndicator element. */
-    var loadingIndicator: ClassName
+    val loadingIndicator: ClassName
 
     /** Styles applied to the loadingIndicator element if `loadingPosition="center"`. */
-    var loadingIndicatorCenter: ClassName
+    val loadingIndicatorCenter: ClassName
 
     /** Styles applied to the loadingIndicator element if `loadingPosition="start"`. */
-    var loadingIndicatorStart: ClassName
+    val loadingIndicatorStart: ClassName
 
     /** Styles applied to the loadingIndicator element if `loadingPosition="end"`. */
-    var loadingIndicatorEnd: ClassName
+    val loadingIndicatorEnd: ClassName
 
     /** Styles applied to the endIcon element if `loading={true}` and `loadingPosition="end"`. */
-    var endIconLoadingEnd: ClassName
+    val endIconLoadingEnd: ClassName
 
     /** Styles applied to the startIcon element if `loading={true}` and `loadingPosition="start"`. */
-    var startIconLoadingStart: ClassName
+    val startIconLoadingStart: ClassName
 }
 
 @JsName("default")

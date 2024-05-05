@@ -6,57 +6,57 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface RatingClasses {
+sealed external interface RatingClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element if `size="small"`. */
-    var sizeSmall: ClassName
+    val sizeSmall: ClassName
 
     /** Styles applied to the root element if `size="medium"`. */
-    var sizeMedium: ClassName
+    val sizeMedium: ClassName
 
     /** Styles applied to the root element if `size="large"`. */
-    var sizeLarge: ClassName
+    val sizeLarge: ClassName
 
     /** Styles applied to the root element if `readOnly={true}`. */
-    var readOnly: ClassName
+    val readOnly: ClassName
 
     /** State class applied to the root element if `disabled={true}`. */
-    var disabled: ClassName
+    val disabled: ClassName
 
     /** State class applied to the root element if keyboard focused. */
-    var focusVisible: ClassName
+    val focusVisible: ClassName
 
     /** Visually hide an element. */
-    var visuallyHidden: ClassName
+    val visuallyHidden: ClassName
 
     /** Styles applied to the label elements. */
-    var label: ClassName
+    val label: ClassName
 
     /** Styles applied to the label of the "no value" input when it is active. */
-    var labelEmptyValueActive: ClassName
+    val labelEmptyValueActive: ClassName
 
     /** Styles applied to the icon wrapping elements. */
-    var icon: ClassName
+    val icon: ClassName
 
     /** Styles applied to the icon wrapping elements when empty. */
-    var iconEmpty: ClassName
+    val iconEmpty: ClassName
 
     /** Styles applied to the icon wrapping elements when filled. */
-    var iconFilled: ClassName
+    val iconFilled: ClassName
 
     /** Styles applied to the icon wrapping elements when hover. */
-    var iconHover: ClassName
+    val iconHover: ClassName
 
     /** Styles applied to the icon wrapping elements when focus. */
-    var iconFocus: ClassName
+    val iconFocus: ClassName
 
     /** Styles applied to the icon wrapping elements when active. */
-    var iconActive: ClassName
+    val iconActive: ClassName
 
     /** Styles applied to the icon wrapping elements when decimals are necessary. */
-    var decimal: ClassName
+    val decimal: ClassName
 }
 
 @JsName("default")

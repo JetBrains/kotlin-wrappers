@@ -6,27 +6,27 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface SpeedDialActionClasses {
+sealed external interface SpeedDialActionClasses {
     /** Styles applied to the Fab component. */
-    var fab: ClassName
+    val fab: ClassName
 
     /** Styles applied to the Fab component if `open={false}`. */
-    var fabClosed: ClassName
+    val fabClosed: ClassName
 
     /** Styles applied to the root element if `tooltipOpen={true}`. */
-    var staticTooltip: ClassName
+    val staticTooltip: ClassName
 
     /** Styles applied to the root element if `tooltipOpen={true}` and `open={false}`. */
-    var staticTooltipClosed: ClassName
+    val staticTooltipClosed: ClassName
 
     /** Styles applied to the static tooltip label if `tooltipOpen={true}`. */
-    var staticTooltipLabel: ClassName
+    val staticTooltipLabel: ClassName
 
     /** Styles applied to the root element if `tooltipOpen={true}` and `tooltipPlacement="left"`` */
-    var tooltipPlacementLeft: ClassName
+    val tooltipPlacementLeft: ClassName
 
     /** Styles applied to the root element if `tooltipOpen={true}` and `tooltipPlacement="right"`` */
-    var tooltipPlacementRight: ClassName
+    val tooltipPlacementRight: ClassName
 }
 
 @JsName("default")

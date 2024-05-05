@@ -6,12 +6,12 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface ListItemSecondaryActionClasses {
+sealed external interface ListItemSecondaryActionClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element when the parent `ListItem` has `disableGutters={true}`. */
-    var disableGutters: ClassName
+    val disableGutters: ClassName
 }
 
 @JsName("default")

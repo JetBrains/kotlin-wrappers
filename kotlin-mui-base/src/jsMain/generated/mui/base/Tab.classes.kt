@@ -6,15 +6,15 @@ package mui.base
 
 import web.cssom.ClassName
 
-external interface TabClasses {
+sealed external interface TabClasses {
     /** Class name applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** State class applied to the root `button` element if `selected={true}`. */
-    var selected: ClassName
+    val selected: ClassName
 
     /** State class applied to the root `button` element if `disabled={true}`. */
-    var disabled: ClassName
+    val disabled: ClassName
 }
 
 external val tabClasses: TabClasses

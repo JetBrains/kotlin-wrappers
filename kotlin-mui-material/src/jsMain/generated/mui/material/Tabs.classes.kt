@@ -6,45 +6,45 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface TabsClasses {
+sealed external interface TabsClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element if `orientation="vertical"`. */
-    var vertical: ClassName
+    val vertical: ClassName
 
     /** Styles applied to the flex container element. */
-    var flexContainer: ClassName
+    val flexContainer: ClassName
 
     /** Styles applied to the flex container element if `orientation="vertical"`. */
-    var flexContainerVertical: ClassName
+    val flexContainerVertical: ClassName
 
     /** Styles applied to the flex container element if `centered={true}` & `!variant="scrollable"`. */
-    var centered: ClassName
+    val centered: ClassName
 
     /** Styles applied to the tablist element. */
-    var scroller: ClassName
+    val scroller: ClassName
 
     /** Styles applied to the tablist element if `!variant="scrollable"`. */
-    var fixed: ClassName
+    val fixed: ClassName
 
     /** Styles applied to the tablist element if `variant="scrollable"` and `orientation="horizontal"`. */
-    var scrollableX: ClassName
+    val scrollableX: ClassName
 
     /** Styles applied to the tablist element if `variant="scrollable"` and `orientation="vertical"`. */
-    var scrollableY: ClassName
+    val scrollableY: ClassName
 
     /** Styles applied to the tablist element if `variant="scrollable"` and `visibleScrollbar={false}`. */
-    var hideScrollbar: ClassName
+    val hideScrollbar: ClassName
 
     /** Styles applied to the ScrollButtonComponent component. */
-    var scrollButtons: ClassName
+    val scrollButtons: ClassName
 
     /** Styles applied to the ScrollButtonComponent component if `allowScrollButtonsMobile={true}`. */
-    var scrollButtonsHideMobile: ClassName
+    val scrollButtonsHideMobile: ClassName
 
     /** Styles applied to the TabIndicator component. */
-    var indicator: ClassName
+    val indicator: ClassName
 }
 
 @JsName("default")

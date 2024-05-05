@@ -6,12 +6,12 @@ package mui.base
 
 import web.cssom.ClassName
 
-external interface TabPanelClasses {
+sealed external interface TabPanelClasses {
     /** Class name applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** State class applied to the root `div` element if `hidden={true}`. */
-    var hidden: ClassName
+    val hidden: ClassName
 }
 
 external val tabPanelClasses: TabPanelClasses

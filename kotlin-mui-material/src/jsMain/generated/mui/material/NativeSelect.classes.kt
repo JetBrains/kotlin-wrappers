@@ -6,48 +6,48 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface NativeSelectClasses {
+sealed external interface NativeSelectClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the select component `select` class. */
-    var select: ClassName
+    val select: ClassName
 
     /** Styles applied to the select component if `multiple={true}`. */
-    var multiple: ClassName
+    val multiple: ClassName
 
     /** Styles applied to the select component if `variant="filled"`. */
-    var filled: ClassName
+    val filled: ClassName
 
     /** Styles applied to the select component if `variant="outlined"`. */
-    var outlined: ClassName
+    val outlined: ClassName
 
     /** Styles applied to the select component if `variant="standard"`. */
-    var standard: ClassName
+    val standard: ClassName
 
     /** State class applied to the select component `disabled` class. */
-    var disabled: ClassName
+    val disabled: ClassName
 
     /** Styles applied to the icon component. */
-    var icon: ClassName
+    val icon: ClassName
 
     /** Styles applied to the icon component if the popup is open. */
-    var iconOpen: ClassName
+    val iconOpen: ClassName
 
     /** Styles applied to the icon component if `variant="filled"`. */
-    var iconFilled: ClassName
+    val iconFilled: ClassName
 
     /** Styles applied to the icon component if `variant="outlined"`. */
-    var iconOutlined: ClassName
+    val iconOutlined: ClassName
 
     /** Styles applied to the icon component if `variant="standard"`. */
-    var iconStandard: ClassName
+    val iconStandard: ClassName
 
     /** Styles applied to the underlying native input component. */
-    var nativeInput: ClassName
+    val nativeInput: ClassName
 
     /** State class applied to the select component `error` class. */
-    var error: ClassName
+    val error: ClassName
 }
 
 @JsName("default")

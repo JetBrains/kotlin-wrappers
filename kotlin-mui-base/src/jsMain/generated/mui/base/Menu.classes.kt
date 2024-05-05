@@ -6,15 +6,15 @@ package mui.base
 
 import web.cssom.ClassName
 
-external interface MenuClasses {
+sealed external interface MenuClasses {
     /** Class name applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Class name applied to the listbox element. */
-    var listbox: ClassName
+    val listbox: ClassName
 
     /** State class applied to the root element if `open={true}`. */
-    var expanded: ClassName
+    val expanded: ClassName
 }
 
 external val menuClasses: MenuClasses

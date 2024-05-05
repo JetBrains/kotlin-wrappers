@@ -6,9 +6,9 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface TableFooterClasses {
+sealed external interface TableFooterClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 }
 
 @JsName("default")

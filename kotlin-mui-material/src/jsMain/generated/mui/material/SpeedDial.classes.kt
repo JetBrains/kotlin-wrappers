@@ -6,30 +6,30 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface SpeedDialClasses {
+sealed external interface SpeedDialClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the Fab component. */
-    var fab: ClassName
+    val fab: ClassName
 
     /** Styles applied to the root element if direction="up" */
-    var directionUp: ClassName
+    val directionUp: ClassName
 
     /** Styles applied to the root element if direction="down" */
-    var directionDown: ClassName
+    val directionDown: ClassName
 
     /** Styles applied to the root element if direction="left" */
-    var directionLeft: ClassName
+    val directionLeft: ClassName
 
     /** Styles applied to the root element if direction="right" */
-    var directionRight: ClassName
+    val directionRight: ClassName
 
     /** Styles applied to the actions (`children` wrapper) element. */
-    var actions: ClassName
+    val actions: ClassName
 
     /** Styles applied to the actions (`children` wrapper) element if `open={false}`. */
-    var actionsClosed: ClassName
+    val actionsClosed: ClassName
 }
 
 @JsName("default")

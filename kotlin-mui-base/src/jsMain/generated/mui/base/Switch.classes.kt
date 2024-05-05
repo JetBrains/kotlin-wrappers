@@ -6,30 +6,30 @@ package mui.base
 
 import web.cssom.ClassName
 
-external interface SwitchClasses {
+sealed external interface SwitchClasses {
     /** Class applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Class applied to the internal input element */
-    var input: ClassName
+    val input: ClassName
 
     /** Class applied to the track element */
-    var track: ClassName
+    val track: ClassName
 
     /** Class applied to the thumb element */
-    var thumb: ClassName
+    val thumb: ClassName
 
     /** State class applied to the root element if the switch is checked */
-    var checked: ClassName
+    val checked: ClassName
 
     /** State class applied to the root element if the switch is disabled */
-    var disabled: ClassName
+    val disabled: ClassName
 
     /** State class applied to the root element if the switch has visible focus */
-    var focusVisible: ClassName
+    val focusVisible: ClassName
 
     /** Class applied to the root element if the switch is read-only */
-    var readOnly: ClassName
+    val readOnly: ClassName
 }
 
 external val switchClasses: SwitchClasses

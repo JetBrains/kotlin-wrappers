@@ -6,36 +6,36 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface FabClasses {
+sealed external interface FabClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element if `color="primary"`. */
-    var primary: ClassName
+    val primary: ClassName
 
     /** Styles applied to the root element if `color="secondary"`. */
-    var secondary: ClassName
+    val secondary: ClassName
 
     /** Styles applied to the root element if `variant="extended"`. */
-    var extended: ClassName
+    val extended: ClassName
 
     /** Styles applied to the root element if `variant="circular"`. */
-    var circular: ClassName
+    val circular: ClassName
 
     /** State class applied to the ButtonBase root element if the button is keyboard focused. */
-    var focusVisible: ClassName
+    val focusVisible: ClassName
 
     /** State class applied to the root element if `disabled={true}`. */
-    var disabled: ClassName
+    val disabled: ClassName
 
     /** Styles applied to the root element if `color="inherit"`. */
-    var colorInherit: ClassName
+    val colorInherit: ClassName
 
     /** Styles applied to the root element if `size="small"``. */
-    var sizeSmall: ClassName
+    val sizeSmall: ClassName
 
     /** Styles applied to the root element if `size="medium"``. */
-    var sizeMedium: ClassName
+    val sizeMedium: ClassName
 }
 
 @JsName("default")

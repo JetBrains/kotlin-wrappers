@@ -6,36 +6,36 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface SkeletonClasses {
+sealed external interface SkeletonClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element if `variant="text"`. */
-    var text: ClassName
+    val text: ClassName
 
     /** Styles applied to the root element if `variant="rectangular"`. */
-    var rectangular: ClassName
+    val rectangular: ClassName
 
     /** Styles applied to the root element if `variant="rounded"`. */
-    var rounded: ClassName
+    val rounded: ClassName
 
     /** Styles applied to the root element if `variant="circular"`. */
-    var circular: ClassName
+    val circular: ClassName
 
     /** Styles applied to the root element if `animation="pulse"`. */
-    var pulse: ClassName
+    val pulse: ClassName
 
     /** Styles applied to the root element if `animation="wave"`. */
-    var wave: ClassName
+    val wave: ClassName
 
     /** Styles applied when the component is passed children. */
-    var withChildren: ClassName
+    val withChildren: ClassName
 
     /** Styles applied when the component is passed children and no width. */
-    var fitContent: ClassName
+    val fitContent: ClassName
 
     /** Styles applied when the component is passed children and no height. */
-    var heightAuto: ClassName
+    val heightAuto: ClassName
 }
 
 @JsName("default")

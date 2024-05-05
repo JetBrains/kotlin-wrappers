@@ -6,15 +6,15 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface TabScrollButtonClasses {
+sealed external interface TabScrollButtonClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element if `orientation="vertical"`. */
-    var vertical: ClassName
+    val vertical: ClassName
 
     /** State class applied to the root element if `disabled={true}`. */
-    var disabled: ClassName
+    val disabled: ClassName
 }
 
 @JsName("default")

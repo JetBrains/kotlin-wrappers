@@ -6,30 +6,30 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface MobileStepperClasses {
+sealed external interface MobileStepperClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element if `position="bottom"`. */
-    var positionBottom: ClassName
+    val positionBottom: ClassName
 
     /** Styles applied to the root element if `position="top"`. */
-    var positionTop: ClassName
+    val positionTop: ClassName
 
     /** Styles applied to the root element if `position="static"`. */
-    var positionStatic: ClassName
+    val positionStatic: ClassName
 
     /** Styles applied to the dots container if `variant="dots"`. */
-    var dots: ClassName
+    val dots: ClassName
 
     /** Styles applied to each dot if `variant="dots"`. */
-    var dot: ClassName
+    val dot: ClassName
 
     /** Styles applied to a dot if `variant="dots"` and this is the active step. */
-    var dotActive: ClassName
+    val dotActive: ClassName
 
     /** Styles applied to the Linear Progress component if `variant="progress"`. */
-    var progress: ClassName
+    val progress: ClassName
 }
 
 @JsName("default")

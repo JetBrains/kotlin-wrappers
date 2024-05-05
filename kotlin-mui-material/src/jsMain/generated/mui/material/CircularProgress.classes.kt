@@ -6,36 +6,36 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface CircularProgressClasses {
+sealed external interface CircularProgressClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element if `variant="determinate"`. */
-    var determinate: ClassName
+    val determinate: ClassName
 
     /** Styles applied to the root element if `variant="indeterminate"`. */
-    var indeterminate: ClassName
+    val indeterminate: ClassName
 
     /** Styles applied to the root element if `color="primary"`. */
-    var colorPrimary: ClassName
+    val colorPrimary: ClassName
 
     /** Styles applied to the root element if `color="secondary"`. */
-    var colorSecondary: ClassName
+    val colorSecondary: ClassName
 
     /** Styles applied to the svg element. */
-    var svg: ClassName
+    val svg: ClassName
 
     /** Styles applied to the `circle` svg path. */
-    var circle: ClassName
+    val circle: ClassName
 
     /** Styles applied to the `circle` svg path if `variant="determinate"`. */
-    var circleDeterminate: ClassName
+    val circleDeterminate: ClassName
 
     /** Styles applied to the `circle` svg path if `variant="indeterminate"`. */
-    var circleIndeterminate: ClassName
+    val circleIndeterminate: ClassName
 
     /** Styles applied to the `circle` svg path if `disableShrink={true}`. */
-    var circleDisableShrink: ClassName
+    val circleDisableShrink: ClassName
 }
 
 @JsName("default")

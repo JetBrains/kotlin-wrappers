@@ -6,18 +6,18 @@ package mui.base
 
 import web.cssom.ClassName
 
-external interface OptionGroupClasses {
+sealed external interface OptionGroupClasses {
     /** Class name applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** State class applied to the root `li` element if `disabled={true}`. */
-    var disabled: ClassName
+    val disabled: ClassName
 
     /** Class name applied to the label element. */
-    var label: ClassName
+    val label: ClassName
 
     /** Class name applied to the list element. */
-    var list: ClassName
+    val list: ClassName
 }
 
 external val optionGroupClasses: OptionGroupClasses

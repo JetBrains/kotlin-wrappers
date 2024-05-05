@@ -6,9 +6,9 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface TableContainerClasses {
+sealed external interface TableContainerClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 }
 
 @JsName("default")

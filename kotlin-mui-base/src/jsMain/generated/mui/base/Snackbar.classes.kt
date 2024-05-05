@@ -6,9 +6,9 @@ package mui.base
 
 import web.cssom.ClassName
 
-external interface SnackbarClasses {
+sealed external interface SnackbarClasses {
     /** Class name applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 }
 
 external val snackbarClasses: SnackbarClasses

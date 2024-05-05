@@ -6,12 +6,12 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface ListItemIconClasses {
+sealed external interface ListItemIconClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element when the parent `ListItem` uses `alignItems="flex-start"`. */
-    var alignItemsFlexStart: ClassName
+    val alignItemsFlexStart: ClassName
 }
 
 @JsName("default")

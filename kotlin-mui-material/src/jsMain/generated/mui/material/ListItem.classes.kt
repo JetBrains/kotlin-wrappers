@@ -6,42 +6,42 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface ListItemClasses {
+sealed external interface ListItemClasses {
     /** Styles applied to the (normally root) `component` element. May be wrapped by a `container`. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the container element if `children` includes `ListItemSecondaryAction`. */
-    var container: ClassName
+    val container: ClassName
 
     /** State class applied to the `component`'s `focusVisibleClassName` prop if `button={true}`. */
-    var focusVisible: ClassName
+    val focusVisible: ClassName
 
     /** Styles applied to the component element if dense. */
-    var dense: ClassName
+    val dense: ClassName
 
     /** Styles applied to the component element if `alignItems="flex-start"`. */
-    var alignItemsFlexStart: ClassName
+    val alignItemsFlexStart: ClassName
 
     /** State class applied to the inner `component` element if `disabled={true}`. */
-    var disabled: ClassName
+    val disabled: ClassName
 
     /** Styles applied to the inner `component` element if `divider={true}`. */
-    var divider: ClassName
+    val divider: ClassName
 
     /** Styles applied to the inner `component` element unless `disableGutters={true}`. */
-    var gutters: ClassName
+    val gutters: ClassName
 
     /** Styles applied to the root element unless `disablePadding={true}`. */
-    var padding: ClassName
+    val padding: ClassName
 
     /** Styles applied to the inner `component` element if `button={true}`. */
-    var button: ClassName
+    val button: ClassName
 
     /** Styles applied to the component element if `children` includes `ListItemSecondaryAction`. */
-    var secondaryAction: ClassName
+    val secondaryAction: ClassName
 
     /** State class applied to the root element if `selected={true}`. */
-    var selected: ClassName
+    val selected: ClassName
 }
 
 @JsName("default")

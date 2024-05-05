@@ -6,21 +6,21 @@ package mui.lab
 
 import web.cssom.ClassName
 
-external interface TimelineOppositeContentClasses {
+sealed external interface TimelineOppositeContentClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element if `position="right"`. */
-    var positionRight: ClassName
+    val positionRight: ClassName
 
     /** Styles applied to the root element if `position="left"`. */
-    var positionLeft: ClassName
+    val positionLeft: ClassName
 
     /** Styles applied to the root element if `position="alternate"`. */
-    var positionAlternate: ClassName
+    val positionAlternate: ClassName
 
     /** Styles applied to the root element if `position="alternate-reverse"`. */
-    var positionAlternateReverse: ClassName
+    val positionAlternateReverse: ClassName
 }
 
 @JsName("default")

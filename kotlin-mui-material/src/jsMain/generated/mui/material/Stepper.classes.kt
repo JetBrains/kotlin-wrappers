@@ -6,18 +6,18 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface StepperClasses {
+sealed external interface StepperClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element if `orientation="horizontal"`. */
-    var horizontal: ClassName
+    val horizontal: ClassName
 
     /** Styles applied to the root element if `orientation="vertical"`. */
-    var vertical: ClassName
+    val vertical: ClassName
 
     /** Styles applied to the root element if `alternativeLabel={true}`. */
-    var alternativeLabel: ClassName
+    val alternativeLabel: ClassName
 }
 
 @JsName("default")

@@ -6,24 +6,24 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface LinkClasses {
+sealed external interface LinkClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element if `underline="none"`. */
-    var underlineNone: ClassName
+    val underlineNone: ClassName
 
     /** Styles applied to the root element if `underline="hover"`. */
-    var underlineHover: ClassName
+    val underlineHover: ClassName
 
     /** Styles applied to the root element if `underline="always"`. */
-    var underlineAlways: ClassName
+    val underlineAlways: ClassName
 
     /** Styles applied to the root element if `component="button"`. */
-    var button: ClassName
+    val button: ClassName
 
     /** State class applied to the root element if the link is keyboard focused. */
-    var focusVisible: ClassName
+    val focusVisible: ClassName
 }
 
 @JsName("default")

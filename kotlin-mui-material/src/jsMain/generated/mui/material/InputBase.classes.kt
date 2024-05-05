@@ -6,66 +6,66 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface InputBaseClasses {
+sealed external interface InputBaseClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element if the component is a descendant of `FormControl`. */
-    var formControl: ClassName
+    val formControl: ClassName
 
     /** Styles applied to the root element if the component is focused. */
-    var focused: ClassName
+    val focused: ClassName
 
     /** Styles applied to the root element if `disabled={true}`. */
-    var disabled: ClassName
+    val disabled: ClassName
 
     /** Styles applied to the root element if `startAdornment` is provided. */
-    var adornedStart: ClassName
+    val adornedStart: ClassName
 
     /** Styles applied to the root element if `endAdornment` is provided. */
-    var adornedEnd: ClassName
+    val adornedEnd: ClassName
 
     /** State class applied to the root element if `error={true}`. */
-    var error: ClassName
+    val error: ClassName
 
     /** Styles applied to the input element if `size="small"`. */
-    var sizeSmall: ClassName
+    val sizeSmall: ClassName
 
     /** Styles applied to the root element if `multiline={true}`. */
-    var multiline: ClassName
+    val multiline: ClassName
 
     /** Styles applied to the root element if the color is secondary. */
-    var colorSecondary: ClassName
+    val colorSecondary: ClassName
 
     /** Styles applied to the root element if `fullWidth={true}`. */
-    var fullWidth: ClassName
+    val fullWidth: ClassName
 
     /** Styles applied to the root element if `hiddenLabel={true}`. */
-    var hiddenLabel: ClassName
+    val hiddenLabel: ClassName
 
     /** State class applied to the root element if `readOnly={true}`. */
-    var readOnly: ClassName
+    val readOnly: ClassName
 
     /** Styles applied to the input element. */
-    var input: ClassName
+    val input: ClassName
 
     /** Styles applied to the input element if `size="small"`. */
-    var inputSizeSmall: ClassName
+    val inputSizeSmall: ClassName
 
     /** Styles applied to the input element if `multiline={true}`. */
-    var inputMultiline: ClassName
+    val inputMultiline: ClassName
 
     /** Styles applied to the input element if `type="search"`. */
-    var inputTypeSearch: ClassName
+    val inputTypeSearch: ClassName
 
     /** Styles applied to the input element if `startAdornment` is provided. */
-    var inputAdornedStart: ClassName
+    val inputAdornedStart: ClassName
 
     /** Styles applied to the input element if `endAdornment` is provided. */
-    var inputAdornedEnd: ClassName
+    val inputAdornedEnd: ClassName
 
     /** Styles applied to the input element if `hiddenLabel={true}`. */
-    var inputHiddenLabel: ClassName
+    val inputHiddenLabel: ClassName
 }
 
 @JsName("default")

@@ -6,48 +6,48 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface IconButtonClasses {
+sealed external interface IconButtonClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element if `edge="start"`. */
-    var edgeStart: ClassName
+    val edgeStart: ClassName
 
     /** Styles applied to the root element if `edge="end"`. */
-    var edgeEnd: ClassName
+    val edgeEnd: ClassName
 
     /** Styles applied to the root element if `color="inherit"`. */
-    var colorInherit: ClassName
+    val colorInherit: ClassName
 
     /** Styles applied to the root element if `color="primary"`. */
-    var colorPrimary: ClassName
+    val colorPrimary: ClassName
 
     /** Styles applied to the root element if `color="secondary"`. */
-    var colorSecondary: ClassName
+    val colorSecondary: ClassName
 
     /** Styles applied to the root element if `color="error"`. */
-    var colorError: ClassName
+    val colorError: ClassName
 
     /** Styles applied to the root element if `color="info"`. */
-    var colorInfo: ClassName
+    val colorInfo: ClassName
 
     /** Styles applied to the root element if `color="success"`. */
-    var colorSuccess: ClassName
+    val colorSuccess: ClassName
 
     /** Styles applied to the root element if `color="warning"`. */
-    var colorWarning: ClassName
+    val colorWarning: ClassName
 
     /** State class applied to the root element if `disabled={true}`. */
-    var disabled: ClassName
+    val disabled: ClassName
 
     /** Styles applied to the root element if `size="small"`. */
-    var sizeSmall: ClassName
+    val sizeSmall: ClassName
 
     /** Styles applied to the root element if `size="medium"`. */
-    var sizeMedium: ClassName
+    val sizeMedium: ClassName
 
     /** Styles applied to the root element if `size="large"`. */
-    var sizeLarge: ClassName
+    val sizeLarge: ClassName
 }
 
 @JsName("default")

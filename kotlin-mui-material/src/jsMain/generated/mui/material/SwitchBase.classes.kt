@@ -6,13 +6,13 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface SwitchBaseClasses {
-    var root: ClassName
-    var checked: ClassName
-    var disabled: ClassName
-    var input: ClassName
-    var edgeStart: ClassName
-    var edgeEnd: ClassName
+sealed external interface SwitchBaseClasses {
+    val root: ClassName
+    val checked: ClassName
+    val disabled: ClassName
+    val input: ClassName
+    val edgeStart: ClassName
+    val edgeEnd: ClassName
 }
 
 @JsName("default")

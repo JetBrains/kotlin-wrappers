@@ -6,24 +6,24 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface ListSubheaderClasses {
+sealed external interface ListSubheaderClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element if `color="primary"`. */
-    var colorPrimary: ClassName
+    val colorPrimary: ClassName
 
     /** Styles applied to the root element if `color="inherit"`. */
-    var colorInherit: ClassName
+    val colorInherit: ClassName
 
     /** Styles applied to the inner `component` element unless `disableGutters={true}`. */
-    var gutters: ClassName
+    val gutters: ClassName
 
     /** Styles applied to the root element if `inset={true}`. */
-    var inset: ClassName
+    val inset: ClassName
 
     /** Styles applied to the root element unless `disableSticky={true}`. */
-    var sticky: ClassName
+    val sticky: ClassName
 }
 
 @JsName("default")

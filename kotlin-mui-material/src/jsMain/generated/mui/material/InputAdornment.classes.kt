@@ -6,33 +6,33 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface InputAdornmentClasses {
+sealed external interface InputAdornmentClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element if `variant="filled"`. */
-    var filled: ClassName
+    val filled: ClassName
 
     /** Styles applied to the root element if `variant="outlined"`. */
-    var outlined: ClassName
+    val outlined: ClassName
 
     /** Styles applied to the root element if `variant="standard"`. */
-    var standard: ClassName
+    val standard: ClassName
 
     /** Styles applied to the root element if `position="start"`. */
-    var positionStart: ClassName
+    val positionStart: ClassName
 
     /** Styles applied to the root element if `position="end"`. */
-    var positionEnd: ClassName
+    val positionEnd: ClassName
 
     /** Styles applied to the root element if `disablePointerEvents={true}`. */
-    var disablePointerEvents: ClassName
+    val disablePointerEvents: ClassName
 
     /** Styles applied if the adornment is used inside <FormControl hiddenLabel />. */
-    var hiddenLabel: ClassName
+    val hiddenLabel: ClassName
 
     /** Styles applied if the adornment is used inside <FormControl size="small" />. */
-    var sizeSmall: ClassName
+    val sizeSmall: ClassName
 }
 
 @JsName("default")

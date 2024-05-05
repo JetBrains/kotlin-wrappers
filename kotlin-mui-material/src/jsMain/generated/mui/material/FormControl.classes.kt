@@ -6,18 +6,18 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface FormControlClasses {
+sealed external interface FormControlClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element if `margin="normal"`. */
-    var marginNormal: ClassName
+    val marginNormal: ClassName
 
     /** Styles applied to the root element if `margin="dense"`. */
-    var marginDense: ClassName
+    val marginDense: ClassName
 
     /** Styles applied to the root element if `fullWidth={true}`. */
-    var fullWidth: ClassName
+    val fullWidth: ClassName
 }
 
 @JsName("default")

@@ -6,18 +6,18 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface ListClasses {
+sealed external interface ListClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element unless `disablePadding={true}`. */
-    var padding: ClassName
+    val padding: ClassName
 
     /** Styles applied to the root element if dense. */
-    var dense: ClassName
+    val dense: ClassName
 
     /** Styles applied to the root element if a `subheader` is provided. */
-    var subheader: ClassName
+    val subheader: ClassName
 }
 
 @JsName("default")

@@ -6,39 +6,39 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface StepLabelClasses {
+sealed external interface StepLabelClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element if `orientation="horizontal"`. */
-    var horizontal: ClassName
+    val horizontal: ClassName
 
     /** Styles applied to the root element if `orientation="vertical"`. */
-    var vertical: ClassName
+    val vertical: ClassName
 
     /** Styles applied to the label element that wraps `children`. */
-    var label: ClassName
+    val label: ClassName
 
     /** State class applied to the label element if `active={true}`. */
-    var active: ClassName
+    val active: ClassName
 
     /** State class applied to the label element if `completed={true}`. */
-    var completed: ClassName
+    val completed: ClassName
 
     /** State class applied to the root and label elements if `error={true}`. */
-    var error: ClassName
+    val error: ClassName
 
     /** State class applied to the root and label elements if `disabled={true}`. */
-    var disabled: ClassName
+    val disabled: ClassName
 
     /** Styles applied to the `icon` container element. */
-    var iconContainer: ClassName
+    val iconContainer: ClassName
 
     /** State class applied to the root and icon container and label if `alternativeLabel={true}`. */
-    var alternativeLabel: ClassName
+    val alternativeLabel: ClassName
 
     /** Styles applied to the container element which wraps label and `optional`. */
-    var labelContainer: ClassName
+    val labelContainer: ClassName
 }
 
 @JsName("default")

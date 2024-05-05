@@ -6,36 +6,36 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface ToggleButtonGroupClasses {
+sealed external interface ToggleButtonGroupClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element if `orientation="vertical"`. */
-    var vertical: ClassName
+    val vertical: ClassName
 
     /** State class applied to the root element if `disabled={true}`. */
-    var disabled: ClassName
+    val disabled: ClassName
 
     /** Styles applied to the children. */
-    var grouped: ClassName
+    val grouped: ClassName
 
     /** Styles applied to the children if `orientation="horizontal"`. */
-    var groupedHorizontal: ClassName
+    val groupedHorizontal: ClassName
 
     /** Styles applied to the children if `orientation="vertical"`. */
-    var groupedVertical: ClassName
+    val groupedVertical: ClassName
 
     /** Styles applied to the root element if `fullWidth={true}`. */
-    var fullWidth: ClassName
+    val fullWidth: ClassName
 
     /** Styles applied to the first button in the toggle button group. */
-    var firstButton: ClassName
+    val firstButton: ClassName
 
     /** Styles applied to the last button in the toggle button group. */
-    var lastButton: ClassName
+    val lastButton: ClassName
 
     /** Styles applied to buttons in the middle of the toggle button group. */
-    var middleButton: ClassName
+    val middleButton: ClassName
 }
 
 @JsName("default")

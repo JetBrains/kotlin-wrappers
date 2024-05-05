@@ -6,93 +6,93 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface ButtonGroupClasses {
+sealed external interface ButtonGroupClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element if `variant="contained"`. */
-    var contained: ClassName
+    val contained: ClassName
 
     /** Styles applied to the root element if `variant="outlined"`. */
-    var outlined: ClassName
+    val outlined: ClassName
 
     /** Styles applied to the root element if `variant="text"`. */
-    var text: ClassName
+    val text: ClassName
 
     /** Styles applied to the root element if `disableElevation={true}`. */
-    var disableElevation: ClassName
+    val disableElevation: ClassName
 
     /** State class applied to the child elements if `disabled={true}`. */
-    var disabled: ClassName
+    val disabled: ClassName
 
     /** Styles applied to the first button in the button group. */
-    var firstButton: ClassName
+    val firstButton: ClassName
 
     /** Styles applied to the root element if `fullWidth={true}`. */
-    var fullWidth: ClassName
+    val fullWidth: ClassName
 
     /** Styles applied to the root element if `orientation="vertical"`. */
-    var vertical: ClassName
+    val vertical: ClassName
 
     /** Styles applied to the children. */
-    var grouped: ClassName
+    val grouped: ClassName
 
     /** Styles applied to the children if `orientation="horizontal"`. */
-    var groupedHorizontal: ClassName
+    val groupedHorizontal: ClassName
 
     /** Styles applied to the children if `orientation="vertical"`. */
-    var groupedVertical: ClassName
+    val groupedVertical: ClassName
 
     /** Styles applied to the children if `variant="text"`. */
-    var groupedText: ClassName
+    val groupedText: ClassName
 
     /** Styles applied to the children if `variant="text"` and `orientation="horizontal"`. */
-    var groupedTextHorizontal: ClassName
+    val groupedTextHorizontal: ClassName
 
     /** Styles applied to the children if `variant="text"` and `orientation="vertical"`. */
-    var groupedTextVertical: ClassName
+    val groupedTextVertical: ClassName
 
     /** Styles applied to the children if `variant="text"` and `color="primary"`. */
-    var groupedTextPrimary: ClassName
+    val groupedTextPrimary: ClassName
 
     /** Styles applied to the children if `variant="text"` and `color="secondary"`. */
-    var groupedTextSecondary: ClassName
+    val groupedTextSecondary: ClassName
 
     /** Styles applied to the children if `variant="outlined"`. */
-    var groupedOutlined: ClassName
+    val groupedOutlined: ClassName
 
     /** Styles applied to the children if `variant="outlined"` and `orientation="horizontal"`. */
-    var groupedOutlinedHorizontal: ClassName
+    val groupedOutlinedHorizontal: ClassName
 
     /** Styles applied to the children if `variant="outlined"` and `orientation="vertical"`. */
-    var groupedOutlinedVertical: ClassName
+    val groupedOutlinedVertical: ClassName
 
     /** Styles applied to the children if `variant="outlined"` and `color="primary"`. */
-    var groupedOutlinedPrimary: ClassName
+    val groupedOutlinedPrimary: ClassName
 
     /** Styles applied to the children if `variant="outlined"` and `color="secondary"`. */
-    var groupedOutlinedSecondary: ClassName
+    val groupedOutlinedSecondary: ClassName
 
     /** Styles applied to the children if `variant="contained"`. */
-    var groupedContained: ClassName
+    val groupedContained: ClassName
 
     /** Styles applied to the children if `variant="contained"` and `orientation="horizontal"`. */
-    var groupedContainedHorizontal: ClassName
+    val groupedContainedHorizontal: ClassName
 
     /** Styles applied to the children if `variant="contained"` and `orientation="vertical"`. */
-    var groupedContainedVertical: ClassName
+    val groupedContainedVertical: ClassName
 
     /** Styles applied to the children if `variant="contained"` and `color="primary"`. */
-    var groupedContainedPrimary: ClassName
+    val groupedContainedPrimary: ClassName
 
     /** Styles applied to the children if `variant="contained"` and `color="secondary"`. */
-    var groupedContainedSecondary: ClassName
+    val groupedContainedSecondary: ClassName
 
     /** Styles applied to the last button in the button group. */
-    var lastButton: ClassName
+    val lastButton: ClassName
 
     /** Styles applied to buttons in the middle of the button group. */
-    var middleButton: ClassName
+    val middleButton: ClassName
 }
 
 @JsName("default")

@@ -6,52 +6,52 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface DividerClasses {
+sealed external interface DividerClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element if `absolute={true}`. */
-    var absolute: ClassName
+    val absolute: ClassName
 
     /** Styles applied to the root element if `variant="inset"`. */
-    var inset: ClassName
+    val inset: ClassName
 
     /** Styles applied to the root element if `variant="fullWidth"`. */
-    var fullWidth: ClassName
+    val fullWidth: ClassName
 
     /** Styles applied to the root element if `light={true}`.
      * @deprecated
      */
-    var light: ClassName
+    val light: ClassName
 
     /** Styles applied to the root element if `variant="middle"`. */
-    var middle: ClassName
+    val middle: ClassName
 
     /** Styles applied to the root element if `orientation="vertical"`. */
-    var vertical: ClassName
+    val vertical: ClassName
 
     /** Styles applied to the root element if `flexItem={true}`. */
-    var flexItem: ClassName
+    val flexItem: ClassName
 
     /** Styles applied to the root element if divider have text. */
-    var withChildren: ClassName
+    val withChildren: ClassName
 
     /** Styles applied to the root element if divider have text and `orientation="vertical"`.
      * @deprecated Combine the [.MuiDivider-withChildren](/material-ui/api/divider/#divider-classes-withChildren) and [.MuiDivider-vertical](/material-ui/api/divider/#divider-classes-vertical) classes instead.
      */
-    var withChildrenVertical: ClassName
+    val withChildrenVertical: ClassName
 
     /** Styles applied to the root element if `textAlign="right" orientation="horizontal"`. */
-    var textAlignRight: ClassName
+    val textAlignRight: ClassName
 
     /** Styles applied to the root element if `textAlign="left" orientation="horizontal"`. */
-    var textAlignLeft: ClassName
+    val textAlignLeft: ClassName
 
     /** Styles applied to the span children element if `orientation="horizontal"`. */
-    var wrapper: ClassName
+    val wrapper: ClassName
 
     /** Styles applied to the span children element if `orientation="vertical"`. */
-    var wrapperVertical: ClassName
+    val wrapperVertical: ClassName
 }
 
 @JsName("default")

@@ -6,21 +6,21 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface StepClasses {
+sealed external interface StepClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element if `orientation="horizontal"`. */
-    var horizontal: ClassName
+    val horizontal: ClassName
 
     /** Styles applied to the root element if `orientation="vertical"`. */
-    var vertical: ClassName
+    val vertical: ClassName
 
     /** Styles applied to the root element if `alternativeLabel={true}`. */
-    var alternativeLabel: ClassName
+    val alternativeLabel: ClassName
 
     /** State class applied to the root element if `completed={true}`. */
-    var completed: ClassName
+    val completed: ClassName
 }
 
 @JsName("default")

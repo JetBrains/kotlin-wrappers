@@ -6,27 +6,27 @@ package mui.base
 
 import web.cssom.ClassName
 
-external interface SelectClasses {
+sealed external interface SelectClasses {
     /** Class name applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Class name applied to the listbox element. */
-    var listbox: ClassName
+    val listbox: ClassName
 
     /** Class name applied to the popper element. */
-    var popup: ClassName
+    val popup: ClassName
 
     /** State class applied to the root `button` element if `active={true}`. */
-    var active: ClassName
+    val active: ClassName
 
     /** State class applied to the root `button` element if `expanded={true}`. */
-    var expanded: ClassName
+    val expanded: ClassName
 
     /** State class applied to the root `button` element and the listbox 'ul' element if `disabled={true}`. */
-    var disabled: ClassName
+    val disabled: ClassName
 
     /** State class applied to the root `button` element if `focusVisible={true}`. */
-    var focusVisible: ClassName
+    val focusVisible: ClassName
 }
 
 external val selectClasses: SelectClasses

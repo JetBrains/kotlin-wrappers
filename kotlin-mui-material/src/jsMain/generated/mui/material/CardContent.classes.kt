@@ -6,9 +6,9 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface CardContentClasses {
+sealed external interface CardContentClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 }
 
 @JsName("default")

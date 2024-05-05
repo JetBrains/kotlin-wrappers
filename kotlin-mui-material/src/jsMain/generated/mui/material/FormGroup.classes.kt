@@ -6,15 +6,15 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface FormGroupClasses {
+sealed external interface FormGroupClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element if `row={true}`. */
-    var row: ClassName
+    val row: ClassName
 
     /** State class applied to the root element if `error={true}`. */
-    var error: ClassName
+    val error: ClassName
 }
 
 @JsName("default")

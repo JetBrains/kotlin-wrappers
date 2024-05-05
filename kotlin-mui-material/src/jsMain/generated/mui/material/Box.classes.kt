@@ -6,9 +6,9 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface BoxClasses {
+sealed external interface BoxClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 }
 
 @JsName("default")

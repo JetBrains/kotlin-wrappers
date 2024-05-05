@@ -6,18 +6,18 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface PaginationClasses {
+sealed external interface PaginationClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the ul element. */
-    var ul: ClassName
+    val ul: ClassName
 
     /** Styles applied to the root element if `variant="outlined"`. */
-    var outlined: ClassName
+    val outlined: ClassName
 
     /** Styles applied to the root element if `variant="text"`. */
-    var text: ClassName
+    val text: ClassName
 }
 
 @JsName("default")

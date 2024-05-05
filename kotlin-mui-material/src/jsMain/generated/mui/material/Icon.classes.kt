@@ -6,33 +6,33 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface IconClasses {
+sealed external interface IconClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element if `color="primary"`. */
-    var colorPrimary: ClassName
+    val colorPrimary: ClassName
 
     /** Styles applied to the root element if `color="secondary"`. */
-    var colorSecondary: ClassName
+    val colorSecondary: ClassName
 
     /** Styles applied to the root element if `color="action"`. */
-    var colorAction: ClassName
+    val colorAction: ClassName
 
     /** Styles applied to the root element if `color="error"`. */
-    var colorError: ClassName
+    val colorError: ClassName
 
     /** Styles applied to the root element if `color="disabled"`. */
-    var colorDisabled: ClassName
+    val colorDisabled: ClassName
 
     /** Styles applied to the root element if `fontSize="inherit"`. */
-    var fontSizeInherit: ClassName
+    val fontSizeInherit: ClassName
 
     /** Styles applied to the root element if `fontSize="small"`. */
-    var fontSizeSmall: ClassName
+    val fontSizeSmall: ClassName
 
     /** Styles applied to the root element if `fontSize="large"`. */
-    var fontSizeLarge: ClassName
+    val fontSizeLarge: ClassName
 }
 
 @JsName("default")

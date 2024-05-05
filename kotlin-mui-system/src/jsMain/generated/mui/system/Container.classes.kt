@@ -6,30 +6,30 @@ package mui.system
 
 import web.cssom.ClassName
 
-external interface ContainerClasses {
+sealed external interface ContainerClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element if `disableGutters={true}`. */
-    var disableGutters: ClassName
+    val disableGutters: ClassName
 
     /** Styles applied to the root element if `fixed={true}`. */
-    var fixed: ClassName
+    val fixed: ClassName
 
     /** Styles applied to the root element if `maxWidth="xs"`. */
-    var maxWidthXs: ClassName
+    val maxWidthXs: ClassName
 
     /** Styles applied to the root element if `maxWidth="sm"`. */
-    var maxWidthSm: ClassName
+    val maxWidthSm: ClassName
 
     /** Styles applied to the root element if `maxWidth="md"`. */
-    var maxWidthMd: ClassName
+    val maxWidthMd: ClassName
 
     /** Styles applied to the root element if `maxWidth="lg"`. */
-    var maxWidthLg: ClassName
+    val maxWidthLg: ClassName
 
     /** Styles applied to the root element if `maxWidth="xl"`. */
-    var maxWidthXl: ClassName
+    val maxWidthXl: ClassName
 }
 
 @JsName("default")

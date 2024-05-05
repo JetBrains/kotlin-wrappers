@@ -6,51 +6,51 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface AppBarClasses {
+sealed external interface AppBarClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element if `position="fixed"`. */
-    var positionFixed: ClassName
+    val positionFixed: ClassName
 
     /** Styles applied to the root element if `position="absolute"`. */
-    var positionAbsolute: ClassName
+    val positionAbsolute: ClassName
 
     /** Styles applied to the root element if `position="sticky"`. */
-    var positionSticky: ClassName
+    val positionSticky: ClassName
 
     /** Styles applied to the root element if `position="static"`. */
-    var positionStatic: ClassName
+    val positionStatic: ClassName
 
     /** Styles applied to the root element if `position="relative"`. */
-    var positionRelative: ClassName
+    val positionRelative: ClassName
 
     /** Styles applied to the root element if `color="default"`. */
-    var colorDefault: ClassName
+    val colorDefault: ClassName
 
     /** Styles applied to the root element if `color="primary"`. */
-    var colorPrimary: ClassName
+    val colorPrimary: ClassName
 
     /** Styles applied to the root element if `color="secondary"`. */
-    var colorSecondary: ClassName
+    val colorSecondary: ClassName
 
     /** Styles applied to the root element if `color="inherit"`. */
-    var colorInherit: ClassName
+    val colorInherit: ClassName
 
     /** Styles applied to the root element if `color="transparent"`. */
-    var colorTransparent: ClassName
+    val colorTransparent: ClassName
 
     /** Styles applied to the root element if `color="error"`. */
-    var colorError: ClassName
+    val colorError: ClassName
 
     /** Styles applied to the root element if `color="info"`. */
-    var colorInfo: ClassName
+    val colorInfo: ClassName
 
     /** Styles applied to the root element if `color="success"`. */
-    var colorSuccess: ClassName
+    val colorSuccess: ClassName
 
     /** Styles applied to the root element if `color="warning"`. */
-    var colorWarning: ClassName
+    val colorWarning: ClassName
 }
 
 @JsName("default")

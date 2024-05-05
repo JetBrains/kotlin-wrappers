@@ -6,27 +6,27 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface TouchRippleClasses {
+sealed external interface TouchRippleClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the internal `Ripple` components `ripple` class. */
-    var ripple: ClassName
+    val ripple: ClassName
 
     /** Styles applied to the internal `Ripple` components `rippleVisible` class. */
-    var rippleVisible: ClassName
+    val rippleVisible: ClassName
 
     /** Styles applied to the internal `Ripple` components `ripplePulsate` class. */
-    var ripplePulsate: ClassName
+    val ripplePulsate: ClassName
 
     /** Styles applied to the internal `Ripple` components `child` class. */
-    var child: ClassName
+    val child: ClassName
 
     /** Styles applied to the internal `Ripple` components `childLeaving` class. */
-    var childLeaving: ClassName
+    val childLeaving: ClassName
 
     /** Styles applied to the internal `Ripple` components `childPulsate` class. */
-    var childPulsate: ClassName
+    val childPulsate: ClassName
 }
 
 @JsName("default")

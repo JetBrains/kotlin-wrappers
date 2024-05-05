@@ -6,12 +6,12 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface AvatarGroupClasses {
+sealed external interface AvatarGroupClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the avatar elements. */
-    var avatar: ClassName
+    val avatar: ClassName
 }
 
 @JsName("default")

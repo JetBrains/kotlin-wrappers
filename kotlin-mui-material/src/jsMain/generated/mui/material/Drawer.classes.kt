@@ -6,42 +6,42 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface DrawerClasses {
+sealed external interface DrawerClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element if `variant="permanent or persistent"`. */
-    var docked: ClassName
+    val docked: ClassName
 
     /** Styles applied to the Paper component. */
-    var paper: ClassName
+    val paper: ClassName
 
     /** Styles applied to the Paper component if `anchor="left"`. */
-    var paperAnchorLeft: ClassName
+    val paperAnchorLeft: ClassName
 
     /** Styles applied to the Paper component if `anchor="right"`. */
-    var paperAnchorRight: ClassName
+    val paperAnchorRight: ClassName
 
     /** Styles applied to the Paper component if `anchor="top"`. */
-    var paperAnchorTop: ClassName
+    val paperAnchorTop: ClassName
 
     /** Styles applied to the Paper component if `anchor="bottom"`. */
-    var paperAnchorBottom: ClassName
+    val paperAnchorBottom: ClassName
 
     /** Styles applied to the Paper component if `anchor="left"` and `variant` is not "temporary". */
-    var paperAnchorDockedLeft: ClassName
+    val paperAnchorDockedLeft: ClassName
 
     /** Styles applied to the Paper component if `anchor="top"` and `variant` is not "temporary". */
-    var paperAnchorDockedTop: ClassName
+    val paperAnchorDockedTop: ClassName
 
     /** Styles applied to the Paper component if `anchor="right"` and `variant` is not "temporary". */
-    var paperAnchorDockedRight: ClassName
+    val paperAnchorDockedRight: ClassName
 
     /** Styles applied to the Paper component if `anchor="bottom"` and `variant` is not "temporary". */
-    var paperAnchorDockedBottom: ClassName
+    val paperAnchorDockedBottom: ClassName
 
     /** Styles applied to the Modal component. */
-    var modal: ClassName
+    val modal: ClassName
 }
 
 @JsName("default")

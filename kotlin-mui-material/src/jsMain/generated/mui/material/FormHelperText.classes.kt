@@ -6,30 +6,30 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface FormHelperTextClasses {
+sealed external interface FormHelperTextClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** State class applied to the root element if `error={true}`. */
-    var error: ClassName
+    val error: ClassName
 
     /** State class applied to the root element if `disabled={true}`. */
-    var disabled: ClassName
+    val disabled: ClassName
 
     /** Styles applied to the root element if `size="small"`. */
-    var sizeSmall: ClassName
+    val sizeSmall: ClassName
 
     /** Styles applied to the root element if `variant="filled"` or `variant="outlined"`. */
-    var contained: ClassName
+    val contained: ClassName
 
     /** State class applied to the root element if `focused={true}`. */
-    var focused: ClassName
+    val focused: ClassName
 
     /** State class applied to the root element if `filled={true}`. */
-    var filled: ClassName
+    val filled: ClassName
 
     /** State class applied to the root element if `required={true}`. */
-    var required: ClassName
+    val required: ClassName
 }
 
 @JsName("default")

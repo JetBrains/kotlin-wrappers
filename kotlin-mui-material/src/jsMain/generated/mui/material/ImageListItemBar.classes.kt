@@ -6,42 +6,42 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface ImageListItemBarClasses {
+sealed external interface ImageListItemBarClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element if `position="bottom"`. */
-    var positionBottom: ClassName
+    val positionBottom: ClassName
 
     /** Styles applied to the root element if `position="top"`. */
-    var positionTop: ClassName
+    val positionTop: ClassName
 
     /** Styles applied to the root element if `position="below"`. */
-    var positionBelow: ClassName
+    val positionBelow: ClassName
 
     /** Styles applied to the title and subtitle container element. */
-    var titleWrap: ClassName
+    val titleWrap: ClassName
 
     /** Styles applied to the title and subtitle container element if `position="below"`. */
-    var titleWrapBelow: ClassName
+    val titleWrapBelow: ClassName
 
     /** Styles applied to the container element if `actionPosition="left"`. */
-    var titleWrapActionPosLeft: ClassName
+    val titleWrapActionPosLeft: ClassName
 
     /** Styles applied to the container element if `actionPosition="right"`. */
-    var titleWrapActionPosRight: ClassName
+    val titleWrapActionPosRight: ClassName
 
     /** Styles applied to the title container element. */
-    var title: ClassName
+    val title: ClassName
 
     /** Styles applied to the subtitle container element. */
-    var subtitle: ClassName
+    val subtitle: ClassName
 
     /** Styles applied to the actionIcon if supplied. */
-    var actionIcon: ClassName
+    val actionIcon: ClassName
 
     /** Styles applied to the actionIcon if `actionPosition="left"`. */
-    var actionIconActionPosLeft: ClassName
+    val actionIconActionPosLeft: ClassName
 }
 
 @JsName("default")

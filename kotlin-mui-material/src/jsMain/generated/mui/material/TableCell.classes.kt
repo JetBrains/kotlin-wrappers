@@ -6,45 +6,45 @@ package mui.material
 
 import web.cssom.ClassName
 
-external interface TableCellClasses {
+sealed external interface TableCellClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element if `variant="head"` or `context.table.head`. */
-    var head: ClassName
+    val head: ClassName
 
     /** Styles applied to the root element if `variant="body"` or `context.table.body`. */
-    var body: ClassName
+    val body: ClassName
 
     /** Styles applied to the root element if `variant="footer"` or `context.table.footer`. */
-    var footer: ClassName
+    val footer: ClassName
 
     /** Styles applied to the root element if `size="small"`. */
-    var sizeSmall: ClassName
+    val sizeSmall: ClassName
 
     /** Styles applied to the root element if `size="medium"`. */
-    var sizeMedium: ClassName
+    val sizeMedium: ClassName
 
     /** Styles applied to the root element if `padding="checkbox"`. */
-    var paddingCheckbox: ClassName
+    val paddingCheckbox: ClassName
 
     /** Styles applied to the root element if `padding="none"`. */
-    var paddingNone: ClassName
+    val paddingNone: ClassName
 
     /** Styles applied to the root element if `align="left"`. */
-    var alignLeft: ClassName
+    val alignLeft: ClassName
 
     /** Styles applied to the root element if `align="center"`. */
-    var alignCenter: ClassName
+    val alignCenter: ClassName
 
     /** Styles applied to the root element if `align="right"`. */
-    var alignRight: ClassName
+    val alignRight: ClassName
 
     /** Styles applied to the root element if `align="justify"`. */
-    var alignJustify: ClassName
+    val alignJustify: ClassName
 
     /** Styles applied to the root element if `context.table.stickyHeader={true}`. */
-    var stickyHeader: ClassName
+    val stickyHeader: ClassName
 }
 
 @JsName("default")
