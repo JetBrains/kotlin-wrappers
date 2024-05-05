@@ -1,4 +1,5 @@
 @file:Suppress(
+    "INTERFACE_WITH_SUPERCLASS",
     "WRONG_BODY_OF_EXTERNAL_DECLARATION",
     "INLINE_EXTERNAL_DECLARATION",
     "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
@@ -11,8 +12,7 @@ package js.iterable
 import js.symbol.Symbol
 import seskar.js.JsNative
 
-@JsName("__HIDDEN_JS_CLASS__")
-sealed external class IterableIterator<out T> :
+sealed external interface IterableIterator<out T> :
     JsIterable<T>,
     JsIterator<T> {
     @JsNative
