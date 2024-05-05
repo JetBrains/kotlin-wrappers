@@ -17,5 +17,4 @@ sealed external interface CardActionAreaClasses {
     val focusHighlight: ClassName
 }
 
-@JsName("default")
 external val cardActionAreaClasses: CardActionAreaClasses

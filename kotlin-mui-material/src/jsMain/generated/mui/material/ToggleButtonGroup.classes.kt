@@ -38,5 +38,4 @@ sealed external interface ToggleButtonGroupClasses {
     val middleButton: ClassName
 }
 
-@JsName("default")
 external val toggleButtonGroupClasses: ToggleButtonGroupClasses

@@ -38,5 +38,4 @@ sealed external interface CircularProgressClasses {
     val circleDisableShrink: ClassName
 }
 
-@JsName("default")
 external val circularProgressClasses: CircularProgressClasses

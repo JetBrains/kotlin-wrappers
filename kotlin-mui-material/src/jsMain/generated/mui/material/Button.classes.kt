@@ -236,5 +236,4 @@ sealed external interface ButtonClasses {
     val colorWarning: ClassName
 }
 
-@JsName("default")
 external val buttonClasses: ButtonClasses

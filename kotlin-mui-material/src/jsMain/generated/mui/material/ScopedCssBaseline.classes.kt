@@ -11,5 +11,4 @@ sealed external interface ScopedCssBaselineClasses {
     val root: ClassName
 }
 
-@JsName("default")
 external val scopedCssBaselineClasses: ScopedCssBaselineClasses

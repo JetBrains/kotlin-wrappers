@@ -14,5 +14,4 @@ sealed external interface CardActionsClasses {
     val spacing: ClassName
 }
 
-@JsName("default")
 external val cardActionsClasses: CardActionsClasses

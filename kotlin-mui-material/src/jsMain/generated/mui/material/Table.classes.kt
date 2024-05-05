@@ -14,5 +14,4 @@ sealed external interface TableClasses {
     val stickyHeader: ClassName
 }
 
-@JsName("default")
 external val tableClasses: TableClasses

@@ -38,5 +38,4 @@ sealed external interface StepConnectorClasses {
     val lineVertical: ClassName
 }
 
-@JsName("default")
 external val stepConnectorClasses: StepConnectorClasses

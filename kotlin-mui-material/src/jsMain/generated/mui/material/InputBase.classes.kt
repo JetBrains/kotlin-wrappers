@@ -68,5 +68,4 @@ sealed external interface InputBaseClasses {
     val inputHiddenLabel: ClassName
 }
 
-@JsName("default")
 external val inputBaseClasses: InputBaseClasses

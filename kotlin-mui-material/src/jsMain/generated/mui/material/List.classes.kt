@@ -20,5 +20,4 @@ sealed external interface ListClasses {
     val subheader: ClassName
 }
 
-@JsName("default")
 external val listClasses: ListClasses

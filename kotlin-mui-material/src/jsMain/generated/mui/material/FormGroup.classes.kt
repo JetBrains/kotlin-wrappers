@@ -17,5 +17,4 @@ sealed external interface FormGroupClasses {
     val error: ClassName
 }
 
-@JsName("default")
 external val formGroupClasses: FormGroupClasses

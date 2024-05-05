@@ -35,5 +35,4 @@ sealed external interface FormControlLabelClasses {
     val asterisk: ClassName
 }
 
-@JsName("default")
 external val formControlLabelClasses: FormControlLabelClasses

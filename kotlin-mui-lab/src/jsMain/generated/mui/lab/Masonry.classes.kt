@@ -11,5 +11,4 @@ sealed external interface MasonryClasses {
     val root: ClassName
 }
 
-@JsName("default")
 external val masonryClasses: MasonryClasses

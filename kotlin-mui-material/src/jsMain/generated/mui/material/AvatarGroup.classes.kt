@@ -14,5 +14,4 @@ sealed external interface AvatarGroupClasses {
     val avatar: ClassName
 }
 
-@JsName("default")
 external val avatarGroupClasses: AvatarGroupClasses

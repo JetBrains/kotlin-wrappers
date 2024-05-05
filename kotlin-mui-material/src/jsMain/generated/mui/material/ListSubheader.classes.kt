@@ -26,5 +26,4 @@ sealed external interface ListSubheaderClasses {
     val sticky: ClassName
 }
 
-@JsName("default")
 external val listSubheaderClasses: ListSubheaderClasses

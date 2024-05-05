@@ -26,5 +26,4 @@ sealed external interface LinkClasses {
     val focusVisible: ClassName
 }
 
-@JsName("default")
 external val linkClasses: LinkClasses

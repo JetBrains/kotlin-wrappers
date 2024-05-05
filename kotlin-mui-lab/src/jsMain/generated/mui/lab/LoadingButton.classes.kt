@@ -32,5 +32,4 @@ sealed external interface LoadingButtonClasses {
     val startIconLoadingStart: ClassName
 }
 
-@JsName("default")
 external val loadingButtonClasses: LoadingButtonClasses

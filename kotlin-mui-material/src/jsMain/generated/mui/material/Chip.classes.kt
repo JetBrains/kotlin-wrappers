@@ -195,5 +195,4 @@ sealed external interface ChipClasses {
     val focusVisible: ClassName
 }
 
-@JsName("default")
 external val chipClasses: ChipClasses

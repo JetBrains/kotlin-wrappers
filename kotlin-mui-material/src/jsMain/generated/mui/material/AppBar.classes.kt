@@ -53,5 +53,4 @@ sealed external interface AppBarClasses {
     val colorWarning: ClassName
 }
 
-@JsName("default")
 external val appBarClasses: AppBarClasses

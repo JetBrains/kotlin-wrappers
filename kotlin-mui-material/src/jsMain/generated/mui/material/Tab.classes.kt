@@ -38,5 +38,4 @@ sealed external interface TabClasses {
     val iconWrapper: ClassName
 }
 
-@JsName("default")
 external val tabClasses: TabClasses

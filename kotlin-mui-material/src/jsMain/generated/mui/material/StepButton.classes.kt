@@ -20,5 +20,4 @@ sealed external interface StepButtonClasses {
     val touchRipple: ClassName
 }
 
-@JsName("default")
 external val stepButtonClasses: StepButtonClasses

@@ -38,5 +38,4 @@ sealed external interface FabClasses {
     val sizeMedium: ClassName
 }
 
-@JsName("default")
 external val fabClasses: FabClasses

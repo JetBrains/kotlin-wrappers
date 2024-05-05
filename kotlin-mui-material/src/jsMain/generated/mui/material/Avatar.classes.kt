@@ -29,5 +29,4 @@ sealed external interface AvatarClasses {
     val fallback: ClassName
 }
 
-@JsName("default")
 external val avatarClasses: AvatarClasses

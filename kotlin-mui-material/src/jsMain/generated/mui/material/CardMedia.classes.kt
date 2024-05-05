@@ -17,5 +17,4 @@ sealed external interface CardMediaClasses {
     val img: ClassName
 }
 
-@JsName("default")
 external val cardMediaClasses: CardMediaClasses

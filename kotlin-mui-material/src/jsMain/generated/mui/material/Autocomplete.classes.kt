@@ -86,5 +86,4 @@ sealed external interface AutocompleteClasses {
     val groupUl: ClassName
 }
 
-@JsName("default")
 external val autocompleteClasses: AutocompleteClasses

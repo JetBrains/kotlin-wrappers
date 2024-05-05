@@ -44,5 +44,4 @@ sealed external interface DrawerClasses {
     val modal: ClassName
 }
 
-@JsName("default")
 external val drawerClasses: DrawerClasses

@@ -20,5 +20,4 @@ sealed external interface StepperClasses {
     val alternativeLabel: ClassName
 }
 
-@JsName("default")
 external val stepperClasses: StepperClasses

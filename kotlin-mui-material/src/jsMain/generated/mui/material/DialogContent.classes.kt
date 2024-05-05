@@ -14,5 +14,4 @@ sealed external interface DialogContentClasses {
     val dividers: ClassName
 }
 
-@JsName("default")
 external val dialogContentClasses: DialogContentClasses

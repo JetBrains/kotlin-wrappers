@@ -32,5 +32,4 @@ sealed external interface SpeedDialClasses {
     val actionsClosed: ClassName
 }
 
-@JsName("default")
 external val speedDialClasses: SpeedDialClasses

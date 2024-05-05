@@ -23,5 +23,4 @@ sealed external interface ImageListClasses {
     val woven: ClassName
 }
 
-@JsName("default")
 external val imageListClasses: ImageListClasses

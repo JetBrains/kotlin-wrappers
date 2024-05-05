@@ -26,5 +26,4 @@ sealed external interface TimelineItemClasses {
     val missingOppositeContent: ClassName
 }
 
-@JsName("default")
 external val timelineItemClasses: TimelineItemClasses

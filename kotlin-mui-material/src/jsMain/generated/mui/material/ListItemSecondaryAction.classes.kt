@@ -14,5 +14,4 @@ sealed external interface ListItemSecondaryActionClasses {
     val disableGutters: ClassName
 }
 
-@JsName("default")
 external val listItemSecondaryActionClasses: ListItemSecondaryActionClasses

@@ -17,5 +17,4 @@ sealed external interface TabScrollButtonClasses {
     val disabled: ClassName
 }
 
-@JsName("default")
 external val tabScrollButtonClasses: TabScrollButtonClasses

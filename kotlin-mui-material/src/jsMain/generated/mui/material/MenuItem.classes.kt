@@ -29,5 +29,4 @@ sealed external interface MenuItemClasses {
     val selected: ClassName
 }
 
-@JsName("default")
 external val menuItemClasses: MenuItemClasses

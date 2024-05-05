@@ -20,5 +20,4 @@ sealed external interface PaginationClasses {
     val text: ClassName
 }
 
-@JsName("default")
 external val paginationClasses: PaginationClasses

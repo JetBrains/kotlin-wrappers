@@ -35,5 +35,4 @@ sealed external interface TimelineDotClasses {
     val outlinedSecondary: ClassName
 }
 
-@JsName("default")
 external val timelineDotClasses: TimelineDotClasses

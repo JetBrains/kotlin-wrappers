@@ -11,5 +11,4 @@ sealed external interface CardContentClasses {
     val root: ClassName
 }
 
-@JsName("default")
 external val cardContentClasses: CardContentClasses

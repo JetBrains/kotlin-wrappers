@@ -17,5 +17,4 @@ sealed external interface StepContentClasses {
     val transition: ClassName
 }
 
-@JsName("default")
 external val stepContentClasses: StepContentClasses

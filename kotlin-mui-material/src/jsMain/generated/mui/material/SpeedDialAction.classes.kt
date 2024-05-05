@@ -29,5 +29,4 @@ sealed external interface SpeedDialActionClasses {
     val tooltipPlacementRight: ClassName
 }
 
-@JsName("default")
 external val speedDialActionClasses: SpeedDialActionClasses

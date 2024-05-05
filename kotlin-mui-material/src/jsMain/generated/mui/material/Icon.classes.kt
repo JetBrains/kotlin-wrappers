@@ -35,5 +35,4 @@ sealed external interface IconClasses {
     val fontSizeLarge: ClassName
 }
 
-@JsName("default")
 external val iconClasses: IconClasses

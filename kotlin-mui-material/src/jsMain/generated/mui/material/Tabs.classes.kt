@@ -47,5 +47,4 @@ sealed external interface TabsClasses {
     val indicator: ClassName
 }
 
-@JsName("default")
 external val tabsClasses: TabsClasses

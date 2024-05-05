@@ -20,5 +20,4 @@ sealed external interface FormControlClasses {
     val fullWidth: ClassName
 }
 
-@JsName("default")
 external val formControlClasses: FormControlClasses

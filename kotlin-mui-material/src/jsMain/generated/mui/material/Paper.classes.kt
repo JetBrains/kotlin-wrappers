@@ -95,5 +95,4 @@ sealed external interface PaperClasses {
     val elevation24: ClassName
 }
 
-@JsName("default")
 external val paperClasses: PaperClasses

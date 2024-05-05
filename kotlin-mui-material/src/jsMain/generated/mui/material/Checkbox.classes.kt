@@ -32,5 +32,4 @@ sealed external interface CheckboxClasses {
     val sizeMedium: ClassName
 }
 
-@JsName("default")
 external val checkboxClasses: CheckboxClasses

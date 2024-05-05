@@ -56,5 +56,4 @@ sealed external interface OutlinedInputClasses {
     val inputTypeSearch: ClassName
 }
 
-@JsName("default")
 external val outlinedInputClasses: OutlinedInputClasses

@@ -35,5 +35,4 @@ sealed external interface AccordionSummaryClasses {
     val expandIconWrapper: ClassName
 }
 
-@JsName("default")
 external val accordionSummaryClasses: AccordionSummaryClasses

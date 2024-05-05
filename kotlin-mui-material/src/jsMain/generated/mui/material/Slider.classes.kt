@@ -110,5 +110,4 @@ sealed external interface SliderClasses {
     val valueLabelLabel: ClassName
 }
 
-@JsName("default")
 external val sliderClasses: SliderClasses

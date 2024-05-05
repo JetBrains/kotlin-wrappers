@@ -11,5 +11,4 @@ sealed external interface TableBodyClasses {
     val root: ClassName
 }
 
-@JsName("default")
 external val tableBodyClasses: TableBodyClasses

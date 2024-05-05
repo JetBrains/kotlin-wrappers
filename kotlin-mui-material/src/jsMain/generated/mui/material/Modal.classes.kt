@@ -17,5 +17,4 @@ sealed external interface ModalClasses {
     val backdrop: ClassName
 }
 
-@JsName("default")
 external val modalClasses: ModalClasses

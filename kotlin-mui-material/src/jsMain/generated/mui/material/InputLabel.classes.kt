@@ -47,5 +47,4 @@ sealed external interface InputLabelClasses {
     val standard: ClassName
 }
 
-@JsName("default")
 external val inputLabelClasses: InputLabelClasses

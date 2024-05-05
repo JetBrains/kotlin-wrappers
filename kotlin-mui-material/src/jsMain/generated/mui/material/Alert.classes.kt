@@ -125,5 +125,4 @@ sealed external interface AlertClasses {
     val action: ClassName
 }
 
-@JsName("default")
 external val alertClasses: AlertClasses

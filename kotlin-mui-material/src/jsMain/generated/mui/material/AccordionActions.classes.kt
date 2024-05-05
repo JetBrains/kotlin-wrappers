@@ -14,5 +14,4 @@ sealed external interface AccordionActionsClasses {
     val spacing: ClassName
 }
 
-@JsName("default")
 external val accordionActionsClasses: AccordionActionsClasses

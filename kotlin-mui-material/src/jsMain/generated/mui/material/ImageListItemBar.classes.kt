@@ -44,5 +44,4 @@ sealed external interface ImageListItemBarClasses {
     val actionIconActionPosLeft: ClassName
 }
 
-@JsName("default")
 external val imageListItemBarClasses: ImageListItemBarClasses

@@ -29,5 +29,4 @@ sealed external interface SnackbarClasses {
     val anchorOriginBottomLeft: ClassName
 }
 
-@JsName("default")
 external val snackbarClasses: SnackbarClasses

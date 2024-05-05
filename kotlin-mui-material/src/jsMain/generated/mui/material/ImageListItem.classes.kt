@@ -26,5 +26,4 @@ sealed external interface ImageListItemClasses {
     val quilted: ClassName
 }
 
-@JsName("default")
 external val imageListItemClasses: ImageListItemClasses

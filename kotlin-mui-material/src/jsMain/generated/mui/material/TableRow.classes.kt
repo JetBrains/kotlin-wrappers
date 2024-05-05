@@ -23,5 +23,4 @@ sealed external interface TableRowClasses {
     val footer: ClassName
 }
 
-@JsName("default")
 external val tableRowClasses: TableRowClasses

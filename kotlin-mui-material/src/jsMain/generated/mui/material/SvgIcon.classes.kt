@@ -38,5 +38,4 @@ sealed external interface SvgIconClasses {
     val fontSizeLarge: ClassName
 }
 
-@JsName("default")
 external val svgIconClasses: SvgIconClasses

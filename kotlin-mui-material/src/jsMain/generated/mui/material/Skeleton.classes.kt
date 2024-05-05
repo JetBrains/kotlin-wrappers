@@ -38,5 +38,4 @@ sealed external interface SkeletonClasses {
     val heightAuto: ClassName
 }
 
-@JsName("default")
 external val skeletonClasses: SkeletonClasses

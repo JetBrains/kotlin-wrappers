@@ -53,5 +53,4 @@ sealed external interface DialogClasses {
     val paperFullScreen: ClassName
 }
 
-@JsName("default")
 external val dialogClasses: DialogClasses

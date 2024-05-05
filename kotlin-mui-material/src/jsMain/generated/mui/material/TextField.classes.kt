@@ -11,5 +11,4 @@ sealed external interface TextFieldClasses {
     val root: ClassName
 }
 
-@JsName("default")
 external val textFieldClasses: TextFieldClasses

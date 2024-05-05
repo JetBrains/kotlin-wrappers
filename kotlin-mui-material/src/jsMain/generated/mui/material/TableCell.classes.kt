@@ -47,5 +47,4 @@ sealed external interface TableCellClasses {
     val stickyHeader: ClassName
 }
 
-@JsName("default")
 external val tableCellClasses: TableCellClasses

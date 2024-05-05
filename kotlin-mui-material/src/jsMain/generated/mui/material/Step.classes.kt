@@ -23,5 +23,4 @@ sealed external interface StepClasses {
     val completed: ClassName
 }
 
-@JsName("default")
 external val stepClasses: StepClasses

@@ -11,5 +11,4 @@ sealed external interface TimelineConnectorClasses {
     val root: ClassName
 }
 
-@JsName("default")
 external val timelineConnectorClasses: TimelineConnectorClasses

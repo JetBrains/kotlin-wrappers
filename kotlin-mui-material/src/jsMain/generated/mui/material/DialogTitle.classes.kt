@@ -11,5 +11,4 @@ sealed external interface DialogTitleClasses {
     val root: ClassName
 }
 
-@JsName("default")
 external val dialogTitleClasses: DialogTitleClasses

@@ -29,5 +29,4 @@ sealed external interface TouchRippleClasses {
     val childPulsate: ClassName
 }
 
-@JsName("default")
 external val touchRippleClasses: TouchRippleClasses

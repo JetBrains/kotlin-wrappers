@@ -44,5 +44,4 @@ sealed external interface TooltipClasses {
     val tooltipPlacementBottom: ClassName
 }
 
-@JsName("default")
 external val tooltipClasses: TooltipClasses

@@ -26,5 +26,4 @@ sealed external interface CollapseClasses {
     val wrapperInner: ClassName
 }
 
-@JsName("default")
 external val collapseClasses: CollapseClasses

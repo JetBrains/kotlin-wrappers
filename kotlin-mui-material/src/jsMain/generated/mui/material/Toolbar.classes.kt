@@ -20,5 +20,4 @@ sealed external interface ToolbarClasses {
     val dense: ClassName
 }
 
-@JsName("default")
 external val toolbarClasses: ToolbarClasses

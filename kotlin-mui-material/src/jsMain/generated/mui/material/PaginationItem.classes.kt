@@ -76,5 +76,4 @@ sealed external interface PaginationItemClasses {
     val colorSecondary: ClassName
 }
 
-@JsName("default")
 external val paginationItemClasses: PaginationItemClasses

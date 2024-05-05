@@ -15,5 +15,4 @@ sealed external interface SwitchBaseClasses {
     val edgeEnd: ClassName
 }
 
-@JsName("default")
 external val switchBaseClasses: SwitchBaseClasses

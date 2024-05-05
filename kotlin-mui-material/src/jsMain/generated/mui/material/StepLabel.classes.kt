@@ -41,5 +41,4 @@ sealed external interface StepLabelClasses {
     val labelContainer: ClassName
 }
 
-@JsName("default")
 external val stepLabelClasses: StepLabelClasses

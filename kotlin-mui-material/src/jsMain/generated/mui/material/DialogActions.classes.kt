@@ -14,5 +14,4 @@ sealed external interface DialogActionsClasses {
     val spacing: ClassName
 }
 
-@JsName("default")
 external val dialogActionsClasses: DialogActionsClasses

@@ -17,5 +17,4 @@ sealed external interface SnackbarContentClasses {
     val action: ClassName
 }
 
-@JsName("default")
 external val snackbarContentClasses: SnackbarContentClasses

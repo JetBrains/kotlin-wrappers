@@ -50,5 +50,4 @@ sealed external interface NativeSelectClasses {
     val error: ClassName
 }
 
-@JsName("default")
 external val nativeSelectClasses: NativeSelectClasses

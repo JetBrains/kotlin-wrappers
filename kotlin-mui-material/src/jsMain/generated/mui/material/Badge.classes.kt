@@ -83,5 +83,4 @@ sealed external interface BadgeClasses {
     val overlapCircular: ClassName
 }
 
-@JsName("default")
 external val badgeClasses: BadgeClasses

@@ -14,5 +14,4 @@ sealed external interface ListItemIconClasses {
     val alignItemsFlexStart: ClassName
 }
 
-@JsName("default")
 external val listItemIconClasses: ListItemIconClasses

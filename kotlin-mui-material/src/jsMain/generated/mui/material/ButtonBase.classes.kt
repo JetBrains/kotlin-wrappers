@@ -17,5 +17,4 @@ sealed external interface ButtonBaseClasses {
     val focusVisible: ClassName
 }
 
-@JsName("default")
 external val buttonBaseClasses: ButtonBaseClasses

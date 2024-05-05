@@ -11,5 +11,4 @@ sealed external interface AccordionDetailsClasses {
     val root: ClassName
 }
 
-@JsName("default")
 external val accordionDetailsClasses: AccordionDetailsClasses

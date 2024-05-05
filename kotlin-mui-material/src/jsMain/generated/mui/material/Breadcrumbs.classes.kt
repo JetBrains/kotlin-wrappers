@@ -20,5 +20,4 @@ sealed external interface BreadcrumbsClasses {
     val separator: ClassName
 }
 
-@JsName("default")
 external val breadcrumbsClasses: BreadcrumbsClasses

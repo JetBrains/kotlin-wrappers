@@ -54,5 +54,4 @@ sealed external interface DividerClasses {
     val wrapperVertical: ClassName
 }
 
-@JsName("default")
 external val dividerClasses: DividerClasses

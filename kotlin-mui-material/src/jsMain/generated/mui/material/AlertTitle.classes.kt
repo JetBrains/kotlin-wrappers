@@ -11,5 +11,4 @@ sealed external interface AlertTitleClasses {
     val root: ClassName
 }
 
-@JsName("default")
 external val alertTitleClasses: AlertTitleClasses

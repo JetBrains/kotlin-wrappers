@@ -50,5 +50,4 @@ sealed external interface IconButtonClasses {
     val sizeLarge: ClassName
 }
 
-@JsName("default")
 external val iconButtonClasses: IconButtonClasses

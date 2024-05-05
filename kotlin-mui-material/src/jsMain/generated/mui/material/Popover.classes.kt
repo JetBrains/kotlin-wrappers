@@ -14,5 +14,4 @@ sealed external interface PopoverClasses {
     val paper: ClassName
 }
 
-@JsName("default")
 external val popoverClasses: PopoverClasses

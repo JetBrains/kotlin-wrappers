@@ -11,5 +11,4 @@ sealed external interface BoxClasses {
     val root: ClassName
 }
 
-@JsName("default")
 external val boxClasses: BoxClasses

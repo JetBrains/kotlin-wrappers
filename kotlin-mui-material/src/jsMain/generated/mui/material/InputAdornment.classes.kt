@@ -35,5 +35,4 @@ sealed external interface InputAdornmentClasses {
     val sizeSmall: ClassName
 }
 
-@JsName("default")
 external val inputAdornmentClasses: InputAdornmentClasses

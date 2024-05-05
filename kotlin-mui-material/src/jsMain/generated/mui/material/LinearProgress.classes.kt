@@ -62,5 +62,4 @@ sealed external interface LinearProgressClasses {
     val bar2Buffer: ClassName
 }
 
-@JsName("default")
 external val linearProgressClasses: LinearProgressClasses

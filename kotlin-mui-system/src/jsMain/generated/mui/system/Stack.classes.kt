@@ -11,5 +11,4 @@ sealed external interface StackClasses {
     val root: ClassName
 }
 
-@JsName("default")
 external val stackClasses: StackClasses

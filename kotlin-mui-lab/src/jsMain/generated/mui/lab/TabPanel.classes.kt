@@ -11,5 +11,4 @@ sealed external interface TabPanelClasses {
     val root: ClassName
 }
 
-@JsName("default")
 external val tabPanelClasses: TabPanelClasses

@@ -32,5 +32,4 @@ sealed external interface ContainerClasses {
     val maxWidthXl: ClassName
 }
 
-@JsName("default")
 external val containerClasses: ContainerClasses

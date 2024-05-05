@@ -23,5 +23,4 @@ sealed external interface StepIconClasses {
     val error: ClassName
 }
 
-@JsName("default")
 external val stepIconClasses: StepIconClasses

@@ -11,5 +11,4 @@ sealed external interface TableFooterClasses {
     val root: ClassName
 }
 
-@JsName("default")
 external val tableFooterClasses: TableFooterClasses

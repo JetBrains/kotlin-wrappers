@@ -23,5 +23,4 @@ sealed external interface TimelineContentClasses {
     val positionAlternateReverse: ClassName
 }
 
-@JsName("default")
 external val timelineContentClasses: TimelineContentClasses

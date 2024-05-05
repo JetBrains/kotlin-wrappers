@@ -38,5 +38,4 @@ sealed external interface ToggleButtonClasses {
     val fullWidth: ClassName
 }
 
-@JsName("default")
 external val toggleButtonClasses: ToggleButtonClasses

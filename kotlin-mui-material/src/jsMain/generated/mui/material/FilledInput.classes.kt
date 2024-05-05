@@ -62,5 +62,4 @@ sealed external interface FilledInputClasses {
     val inputTypeSearch: ClassName
 }
 
-@JsName("default")
 external val filledInputClasses: FilledInputClasses

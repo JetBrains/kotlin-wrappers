@@ -32,5 +32,4 @@ sealed external interface MobileStepperClasses {
     val progress: ClassName
 }
 
-@JsName("default")
 external val mobileStepperClasses: MobileStepperClasses

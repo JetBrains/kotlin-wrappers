@@ -11,5 +11,4 @@ sealed external interface TimelineSeparatorClasses {
     val root: ClassName
 }
 
-@JsName("default")
 external val timelineSeparatorClasses: TimelineSeparatorClasses

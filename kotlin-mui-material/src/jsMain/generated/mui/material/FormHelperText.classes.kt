@@ -32,5 +32,4 @@ sealed external interface FormHelperTextClasses {
     val required: ClassName
 }
 
-@JsName("default")
 external val formHelperTextClasses: FormHelperTextClasses

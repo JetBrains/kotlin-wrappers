@@ -26,5 +26,4 @@ sealed external interface CardHeaderClasses {
     val subheader: ClassName
 }
 
-@JsName("default")
 external val cardHeaderClasses: CardHeaderClasses

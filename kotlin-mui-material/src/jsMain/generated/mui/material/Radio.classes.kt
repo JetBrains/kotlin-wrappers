@@ -26,5 +26,4 @@ sealed external interface RadioClasses {
     val sizeSmall: ClassName
 }
 
-@JsName("default")
 external val radioClasses: RadioClasses

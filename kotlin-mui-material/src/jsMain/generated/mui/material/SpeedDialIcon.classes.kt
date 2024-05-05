@@ -26,5 +26,4 @@ sealed external interface SpeedDialIconClasses {
     val openIconOpen: ClassName
 }
 
-@JsName("default")
 external val speedDialIconClasses: SpeedDialIconClasses

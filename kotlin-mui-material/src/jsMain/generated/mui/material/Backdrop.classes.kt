@@ -14,5 +14,4 @@ sealed external interface BackdropClasses {
     val invisible: ClassName
 }
 
-@JsName("default")
 external val backdropClasses: BackdropClasses

@@ -41,5 +41,4 @@ sealed external interface TablePaginationClasses {
     val actions: ClassName
 }
 
-@JsName("default")
 external val tablePaginationClasses: TablePaginationClasses

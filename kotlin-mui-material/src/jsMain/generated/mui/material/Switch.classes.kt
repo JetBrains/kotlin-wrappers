@@ -47,5 +47,4 @@ sealed external interface SwitchClasses {
     val track: ClassName
 }
 
-@JsName("default")
 external val switchClasses: SwitchClasses

@@ -11,5 +11,4 @@ sealed external interface BottomNavigationClasses {
     val root: ClassName
 }
 
-@JsName("default")
 external val bottomNavigationClasses: BottomNavigationClasses

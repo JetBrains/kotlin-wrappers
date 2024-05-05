@@ -26,5 +26,4 @@ sealed external interface AccordionClasses {
     val region: ClassName
 }
 
-@JsName("default")
 external val accordionClasses: AccordionClasses

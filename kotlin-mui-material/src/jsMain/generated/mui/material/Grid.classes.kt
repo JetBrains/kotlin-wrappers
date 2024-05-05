@@ -54,5 +54,4 @@ sealed external interface GridClasses {
     // val 'grid-xs-12': ClassName
 }
 
-@JsName("default")
 external val gridClasses: GridClasses

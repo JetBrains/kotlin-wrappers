@@ -32,5 +32,4 @@ sealed external interface ListItemButtonClasses {
     val selected: ClassName
 }
 
-@JsName("default")
 external val listItemButtonClasses: ListItemButtonClasses

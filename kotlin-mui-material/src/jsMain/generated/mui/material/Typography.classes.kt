@@ -74,5 +74,4 @@ sealed external interface TypographyClasses {
     val paragraph: ClassName
 }
 
-@JsName("default")
 external val typographyClasses: TypographyClasses

@@ -26,5 +26,4 @@ sealed external interface ListItemTextClasses {
     val secondary: ClassName
 }
 
-@JsName("default")
 external val listItemTextClasses: ListItemTextClasses

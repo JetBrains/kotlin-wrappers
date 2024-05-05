@@ -59,5 +59,4 @@ sealed external interface RatingClasses {
     val decimal: ClassName
 }
 
-@JsName("default")
 external val ratingClasses: RatingClasses

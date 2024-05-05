@@ -23,5 +23,4 @@ sealed external interface TableSortLabelClasses {
     val iconDirectionAsc: ClassName
 }
 
-@JsName("default")
 external val tableSortLabelClasses: TableSortLabelClasses
