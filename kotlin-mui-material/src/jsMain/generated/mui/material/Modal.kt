@@ -8,7 +8,6 @@
 
 package mui.material
 
-import mui.base.ModalClasses
 import mui.material.styles.Theme
 import mui.system.SxProps
 import web.cssom.ClassName
