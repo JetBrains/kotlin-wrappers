@@ -1,25 +1,29 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/SpeedDialIcon")
+
 package mui.material
 
 import web.cssom.ClassName
 
-external interface SpeedDialIconClasses {
+sealed external interface SpeedDialIconClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the icon component. */
-    var icon: ClassName
+    val icon: ClassName
 
     /** Styles applied to the icon component if `open={true}`. */
-    var iconOpen: ClassName
+    val iconOpen: ClassName
 
     /** Styles applied to the icon when an `openIcon` is provided and if `open={true}`. */
-    var iconWithOpenIconOpen: ClassName
+    val iconWithOpenIconOpen: ClassName
 
     /** Styles applied to the `openIcon` if provided. */
-    var openIcon: ClassName
+    val openIcon: ClassName
 
     /** Styles applied to the `openIcon` if provided and if `open={true}`. */
-    var openIconOpen: ClassName
+    val openIconOpen: ClassName
 }
+
+external val speedDialIconClasses: SpeedDialIconClasses

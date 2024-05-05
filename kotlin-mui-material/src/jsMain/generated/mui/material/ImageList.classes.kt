@@ -1,22 +1,26 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/ImageList")
+
 package mui.material
 
 import web.cssom.ClassName
 
-external interface ImageListClasses {
+sealed external interface ImageListClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element if `variant="masonry"`. */
-    var masonry: ClassName
+    val masonry: ClassName
 
     /** Styles applied to the root element if `variant="quilted"`. */
-    var quilted: ClassName
+    val quilted: ClassName
 
     /** Styles applied to the root element if `variant="standard"`. */
-    var standard: ClassName
+    val standard: ClassName
 
     /** Styles applied to the root element if `variant="woven"`. */
-    var woven: ClassName
+    val woven: ClassName
 }
+
+external val imageListClasses: ImageListClasses

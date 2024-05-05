@@ -1,10 +1,14 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/lab/TimelineSeparator")
+
 package mui.lab
 
 import web.cssom.ClassName
 
-external interface TimelineSeparatorClasses {
+sealed external interface TimelineSeparatorClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 }
+
+external val timelineSeparatorClasses: TimelineSeparatorClasses

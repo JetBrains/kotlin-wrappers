@@ -1,19 +1,23 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/Breadcrumbs")
+
 package mui.material
 
 import web.cssom.ClassName
 
-external interface BreadcrumbsClasses {
+sealed external interface BreadcrumbsClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the ol element. */
-    var ol: ClassName
+    val ol: ClassName
 
     /** Styles applied to the li element. */
-    var li: ClassName
+    val li: ClassName
 
     /** Styles applied to the separator element. */
-    var separator: ClassName
+    val separator: ClassName
 }
+
+external val breadcrumbsClasses: BreadcrumbsClasses

@@ -1,25 +1,29 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/Radio")
+
 package mui.material
 
 import web.cssom.ClassName
 
-external interface RadioClasses {
+sealed external interface RadioClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** State class applied to the root element if `checked={true}`. */
-    var checked: ClassName
+    val checked: ClassName
 
     /** State class applied to the root element if `disabled={true}`. */
-    var disabled: ClassName
+    val disabled: ClassName
 
     /** Styles applied to the root element if `color="primary"`. */
-    var colorPrimary: ClassName
+    val colorPrimary: ClassName
 
     /** Styles applied to the root element if `color="secondary"`. */
-    var colorSecondary: ClassName
+    val colorSecondary: ClassName
 
     /** Styles applied to the root element if `size="small"`. */
-    var sizeSmall: ClassName
+    val sizeSmall: ClassName
 }
+
+external val radioClasses: RadioClasses

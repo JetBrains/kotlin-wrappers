@@ -1,34 +1,38 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/FormControlLabel")
+
 package mui.material
 
 import web.cssom.ClassName
 
-external interface FormControlLabelClasses {
+sealed external interface FormControlLabelClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element if `labelPlacement="start"`. */
-    var labelPlacementStart: ClassName
+    val labelPlacementStart: ClassName
 
     /** Styles applied to the root element if `labelPlacement="top"`. */
-    var labelPlacementTop: ClassName
+    val labelPlacementTop: ClassName
 
     /** Styles applied to the root element if `labelPlacement="bottom"`. */
-    var labelPlacementBottom: ClassName
+    val labelPlacementBottom: ClassName
 
     /** State class applied to the root element if `disabled={true}`. */
-    var disabled: ClassName
+    val disabled: ClassName
 
     /** Styles applied to the label's Typography component. */
-    var label: ClassName
+    val label: ClassName
 
     /** State class applied to the root element if `error={true}`. */
-    var error: ClassName
+    val error: ClassName
 
     /** State class applied to the root element if `required={true}`. */
-    var required: ClassName
+    val required: ClassName
 
     /** Styles applied to the asterisk element. */
-    var asterisk: ClassName
+    val asterisk: ClassName
 }
+
+external val formControlLabelClasses: FormControlLabelClasses

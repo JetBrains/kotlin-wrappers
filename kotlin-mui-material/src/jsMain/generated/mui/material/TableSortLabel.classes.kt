@@ -1,22 +1,26 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/TableSortLabel")
+
 package mui.material
 
 import web.cssom.ClassName
 
-external interface TableSortLabelClasses {
+sealed external interface TableSortLabelClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** State class applied to the root element if `active={true}`. */
-    var active: ClassName
+    val active: ClassName
 
     /** Styles applied to the icon component. */
-    var icon: ClassName
+    val icon: ClassName
 
     /** Styles applied to the icon component if `direction="desc"`. */
-    var iconDirectionDesc: ClassName
+    val iconDirectionDesc: ClassName
 
     /** Styles applied to the icon component if `direction="asc"`. */
-    var iconDirectionAsc: ClassName
+    val iconDirectionAsc: ClassName
 }
+
+external val tableSortLabelClasses: TableSortLabelClasses

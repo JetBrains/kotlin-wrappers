@@ -1,10 +1,14 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/TableContainer")
+
 package mui.material
 
 import web.cssom.ClassName
 
-external interface TableContainerClasses {
+sealed external interface TableContainerClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 }
+
+external val tableContainerClasses: TableContainerClasses

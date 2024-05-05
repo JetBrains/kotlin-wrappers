@@ -1,10 +1,14 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/lab/TimelineConnector")
+
 package mui.lab
 
 import web.cssom.ClassName
 
-external interface TimelineConnectorClasses {
+sealed external interface TimelineConnectorClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 }
+
+external val timelineConnectorClasses: TimelineConnectorClasses

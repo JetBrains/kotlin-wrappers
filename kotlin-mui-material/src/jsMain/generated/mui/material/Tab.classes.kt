@@ -1,37 +1,41 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/Tab")
+
 package mui.material
 
 import web.cssom.ClassName
 
-external interface TabClasses {
+sealed external interface TabClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element if both `icon` and `label` are provided. */
-    var labelIcon: ClassName
+    val labelIcon: ClassName
 
     /** Styles applied to the root element if the parent [`Tabs`](/material-ui/api/tabs/) has `textColor="inherit"`. */
-    var textColorInherit: ClassName
+    val textColorInherit: ClassName
 
     /** Styles applied to the root element if the parent [`Tabs`](/material-ui/api/tabs/) has `textColor="primary"`. */
-    var textColorPrimary: ClassName
+    val textColorPrimary: ClassName
 
     /** Styles applied to the root element if the parent [`Tabs`](/material-ui/api/tabs/) has `textColor="secondary"`. */
-    var textColorSecondary: ClassName
+    val textColorSecondary: ClassName
 
     /** State class applied to the root element if `selected={true}` (controlled by the Tabs component). */
-    var selected: ClassName
+    val selected: ClassName
 
     /** State class applied to the root element if `disabled={true}` (controlled by the Tabs component). */
-    var disabled: ClassName
+    val disabled: ClassName
 
     /** Styles applied to the root element if `fullWidth={true}` (controlled by the Tabs component). */
-    var fullWidth: ClassName
+    val fullWidth: ClassName
 
     /** Styles applied to the root element if `wrapped={true}`. */
-    var wrapped: ClassName
+    val wrapped: ClassName
 
     /** Styles applied to the wrapper element of `icon` if `icon` is provided. */
-    var iconWrapper: ClassName
+    val iconWrapper: ClassName
 }
+
+external val tabClasses: TabClasses

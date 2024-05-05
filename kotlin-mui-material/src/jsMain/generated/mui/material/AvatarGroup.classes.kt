@@ -1,13 +1,17 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/AvatarGroup")
+
 package mui.material
 
 import web.cssom.ClassName
 
-external interface AvatarGroupClasses {
+sealed external interface AvatarGroupClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the avatar elements. */
-    var avatar: ClassName
+    val avatar: ClassName
 }
+
+external val avatarGroupClasses: AvatarGroupClasses

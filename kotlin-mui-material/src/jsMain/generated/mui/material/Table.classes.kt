@@ -1,13 +1,17 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/Table")
+
 package mui.material
 
 import web.cssom.ClassName
 
-external interface TableClasses {
+sealed external interface TableClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element if `stickyHeader={true}`. */
-    var stickyHeader: ClassName
+    val stickyHeader: ClassName
 }
+
+external val tableClasses: TableClasses

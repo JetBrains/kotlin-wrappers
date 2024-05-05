@@ -1,10 +1,14 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/AccordionDetails")
+
 package mui.material
 
 import web.cssom.ClassName
 
-external interface AccordionDetailsClasses {
+sealed external interface AccordionDetailsClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 }
+
+external val accordionDetailsClasses: AccordionDetailsClasses

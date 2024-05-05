@@ -1,13 +1,17 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/Backdrop")
+
 package mui.material
 
 import web.cssom.ClassName
 
-external interface BackdropClasses {
+sealed external interface BackdropClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element if `invisible={true}`. */
-    var invisible: ClassName
+    val invisible: ClassName
 }
+
+external val backdropClasses: BackdropClasses

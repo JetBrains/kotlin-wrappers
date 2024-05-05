@@ -1,13 +1,17 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/Popover")
+
 package mui.material
 
 import web.cssom.ClassName
 
-external interface PopoverClasses {
+sealed external interface PopoverClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the Paper component. */
-    var paper: ClassName
+    val paper: ClassName
 }
+
+external val popoverClasses: PopoverClasses

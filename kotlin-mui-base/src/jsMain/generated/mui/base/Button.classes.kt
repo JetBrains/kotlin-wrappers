@@ -1,19 +1,23 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/base/Button")
+
 package mui.base
 
 import web.cssom.ClassName
 
-external interface ButtonClasses {
+sealed external interface ButtonClasses {
     /** Class name applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** State class applied to the root `button` element if `active={true}`. */
-    var active: ClassName
+    val active: ClassName
 
     /** State class applied to the root `button` element if `disabled={true}`. */
-    var disabled: ClassName
+    val disabled: ClassName
 
     /** State class applied to the root `button` element if `focusVisible={true}`. */
-    var focusVisible: ClassName
+    val focusVisible: ClassName
 }
+
+external val buttonClasses: ButtonClasses

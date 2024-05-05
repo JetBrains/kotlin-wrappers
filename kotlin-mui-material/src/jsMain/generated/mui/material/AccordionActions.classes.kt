@@ -1,13 +1,17 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/AccordionActions")
+
 package mui.material
 
 import web.cssom.ClassName
 
-external interface AccordionActionsClasses {
+sealed external interface AccordionActionsClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element unless `disableSpacing={true}`. */
-    var spacing: ClassName
+    val spacing: ClassName
 }
+
+external val accordionActionsClasses: AccordionActionsClasses

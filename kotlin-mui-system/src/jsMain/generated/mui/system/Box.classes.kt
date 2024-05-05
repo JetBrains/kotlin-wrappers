@@ -1,10 +1,14 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/system/Box")
+
 package mui.system
 
 import web.cssom.ClassName
 
-external interface BoxClasses {
+sealed external interface BoxClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 }
+
+external val boxClasses: BoxClasses

@@ -1,25 +1,29 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/Accordion")
+
 package mui.material
 
 import web.cssom.ClassName
 
-external interface AccordionClasses {
+sealed external interface AccordionClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element unless `square={true}`. */
-    var rounded: ClassName
+    val rounded: ClassName
 
     /** State class applied to the root element if `expanded={true}`. */
-    var expanded: ClassName
+    val expanded: ClassName
 
     /** State class applied to the root element if `disabled={true}`. */
-    var disabled: ClassName
+    val disabled: ClassName
 
     /** Styles applied to the root element unless `disableGutters={true}`. */
-    var gutters: ClassName
+    val gutters: ClassName
 
     /** Styles applied to the region element, the container of the children. */
-    var region: ClassName
+    val region: ClassName
 }
+
+external val accordionClasses: AccordionClasses

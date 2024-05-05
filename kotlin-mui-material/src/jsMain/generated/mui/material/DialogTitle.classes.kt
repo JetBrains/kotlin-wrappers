@@ -1,10 +1,14 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/material/DialogTitle")
+
 package mui.material
 
 import web.cssom.ClassName
 
-external interface DialogTitleClasses {
+sealed external interface DialogTitleClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 }
+
+external val dialogTitleClasses: DialogTitleClasses
