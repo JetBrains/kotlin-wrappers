@@ -1,8 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/icons-material/EventNoteSharp")
+@file:JsModule("@mui/icons-material")
 
 package mui.icons.material
 
-@JsName("default")
+import web.events.Event
+
 external val EventNoteSharp: SvgIconComponent
