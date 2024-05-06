@@ -1,8 +1,7 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/icons-material/AddSharp")
+@file:JsModule("@mui/icons-material")
 
 package mui.icons.material
 
-@JsName("default")
 external val AddSharp: SvgIconComponent

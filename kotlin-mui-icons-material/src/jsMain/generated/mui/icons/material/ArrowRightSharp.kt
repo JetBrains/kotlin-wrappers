@@ -1,8 +1,7 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/icons-material/ArrowRightSharp")
+@file:JsModule("@mui/icons-material")
 
 package mui.icons.material
 
-@JsName("default")
 external val ArrowRightSharp: SvgIconComponent
