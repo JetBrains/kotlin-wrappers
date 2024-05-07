@@ -35,7 +35,7 @@ export default {
             sourceFileName.endsWith("module.d.ts")
             && ts.isClassDeclaration(node)
             && node?.name.text === "Module"
-            && !context.static
+            && context.type === karakum.InjectionType.MEMBER
         ) {
             return this.moduleNodes
                 .map(member => {
@@ -43,10 +43,9 @@ export default {
                 })
                 .concat("override var parent: node.Module?")
                 .concat("override var children: js.array.ReadonlyArray<node.Module>")
-                .join("\n")
         }
 
-        return null
+        return []
     },
 
     generate(context) {

@@ -48,7 +48,7 @@ export default {
             sourceFileName.endsWith("stream.d.ts")
             && ts.isClassDeclaration(node)
             && node?.name.text === "Duplex"
-            && !context.static
+            && context.type === karakum.InjectionType.MEMBER
         ) {
             return this.readableMemberNodes
                 .map(member => {
@@ -73,10 +73,9 @@ export default {
                     })
                 })
                 .concat("override fun destroy(): Unit /* this */")
-                .join("\n")
         }
 
-        return null
+        return []
     },
 
     generate(context) {

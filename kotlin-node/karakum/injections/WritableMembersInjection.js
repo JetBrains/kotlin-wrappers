@@ -109,7 +109,7 @@ export default {
             sourceFileName.endsWith("stream.d.ts")
             && ts.isClassDeclaration(node)
             && node?.name.text === "Writable"
-            && !context.static
+            && context.type === karakum.InjectionType.MEMBER
         ) {
             const writableStreamMembers = this.writableStreamMemberNodes
                 .map(member => {
@@ -143,22 +143,20 @@ export default {
                 ...writableBaseMembers,
                 ...writableStreamMembers,
             ]
-                .join("\n\n")
         }
 
         if (
             sourceFileName.endsWith("stream.d.ts")
             && ts.isClassDeclaration(node)
             && node?.name.text === "Writable"
-            && context.static
+            && context.type === karakum.InjectionType.STATIC_MEMBER
         ) {
             return this.writableBaseNode.members
                 .filter(member => extractModifiers(member).some(it => it.kind === ts.SyntaxKind.StaticKeyword))
                 .map(member => render(member))
-                .join("\n\n")
         }
 
-        return null
+        return []
     },
 
     generate(context) {

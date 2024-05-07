@@ -45,7 +45,7 @@ export default {
             sourceFileName.endsWith("fs.d.ts")
             && ts.isClassDeclaration(node)
             && node?.name.text === "StatsFs"
-            && !context.static
+            && context.type === karakum.InjectionType.MEMBER
         ) {
             return this.statsFsBaseNodes
                 .map(member => {
@@ -85,10 +85,9 @@ export default {
                         }
                     })
                 })
-                .join("\n")
         }
 
-        return null
+        return []
     },
 
     generate(context) {

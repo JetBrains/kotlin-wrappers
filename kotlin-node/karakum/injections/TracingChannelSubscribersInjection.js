@@ -1,4 +1,5 @@
 import ts from "typescript";
+import * as karakum from "karakum";
 
 export default {
     setup(context) {
@@ -41,8 +42,10 @@ export default {
             && ts.isParameter(node.parent)
             && ts.isIdentifier(node.parent.name)
             && node.parent.name.text === "message"
+
+            && context.type === karakum.InjectionType.MEMBER
         ) {
-            return `
+            return [`
 @Suppress(
     "WRONG_BODY_OF_EXTERNAL_DECLARATION",
     "INLINE_EXTERNAL_DECLARATION",
@@ -51,10 +54,10 @@ export default {
 )
 inline val contextType: ContextType
     get() = unsafeCast<ContextType>()
-            `
+            `]
         }
 
-        return null
+        return []
     },
 
     generate(context) {
