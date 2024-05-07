@@ -2,6 +2,8 @@
 
 package mui.base
 
+import web.dom.Element
+
 external interface SelectOptionDefinition<Value> {
     var value: Value
 
@@ -40,7 +42,7 @@ external interface UseSelectParameters<OptionValue, Multiple> {
     /**
      * The ref of the trigger button element.
      */
-    var buttonRef: react.Ref<web.dom.Element>?
+    var buttonRef: react.Ref<Element>?
 
     /**
      * The `id` attribute of the listbox element.
@@ -50,7 +52,7 @@ external interface UseSelectParameters<OptionValue, Multiple> {
     /**
      * The ref of the listbox element.
      */
-    var listboxRef: react.Ref<web.dom.Element>?
+    var listboxRef: react.Ref<Element>?
 
     /**
      * If `true`, the end user can select multiple values.
@@ -143,7 +145,7 @@ external interface UseSelectReturnValue<Value, Multiple> {
     /**
      * Ref to the button slot DOM node.
      */
-    var buttonRef: react.RefCallback<web.dom.Element>?
+    var buttonRef: react.RefCallback<Element>?
 
     /**
      * If `true`, the select is disabled.
@@ -198,7 +200,7 @@ external interface UseSelectReturnValue<Value, Multiple> {
     /**
      * Ref to the listbox slot DOM node.
      */
-    var listboxRef: react.RefCallback<web.dom.Element>?
+    var listboxRef: react.RefCallback<Element>?
 
     /**
      * If `true`, the listbox is open.

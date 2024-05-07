@@ -2,11 +2,13 @@
 
 package mui.base
 
+import web.dom.Element
+
 external interface UseTabsListParameters {
     /**
      * Ref to the root element.
      */
-    var rootRef: react.Ref<web.dom.Element>
+    var rootRef: react.Ref<Element>
 }
 
 external interface UseTabsListReturnValue {
@@ -43,7 +45,7 @@ external interface UseTabsListReturnValue {
      */
     var orientation: Orientation
 
-    var rootRef: react.RefCallback<web.dom.Element>?
+    var rootRef: react.RefCallback<Element>?
 
     /**
      * The value of the currently selected tab.

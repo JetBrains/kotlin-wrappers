@@ -5,6 +5,7 @@ package muix.tree.view
 import mui.material.styles.Theme
 import mui.system.SxProps
 import web.cssom.ClassName
+import web.html.HTMLElement
 
 external interface TreeItemProps :
     react.dom.html.HTMLAttributes<web.html.HTMLLIElement>,
@@ -40,7 +41,7 @@ external interface TreeItemProps :
     /**
      * Props applied to ContentComponent.
      */
-    var ContentProps: react.dom.html.HTMLAttributes<web.html.HTMLElement>?
+    var ContentProps: react.dom.html.HTMLAttributes<HTMLElement>?
 
     /**
      * If `true`, the node is disabled.

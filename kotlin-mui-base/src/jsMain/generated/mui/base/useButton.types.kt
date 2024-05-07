@@ -2,6 +2,8 @@
 
 package mui.base
 
+import web.dom.Element
+
 external interface UseButtonParameters {
     /**
      * If `true`, the component is disabled.
@@ -19,7 +21,7 @@ external interface UseButtonParameters {
 
     var onFocusVisible: react.dom.events.FocusEventHandler<*>?
 
-    var rootRef: react.Ref<web.dom.Element>?
+    var rootRef: react.Ref<Element>?
 
     var tabIndex: Int?
 
@@ -88,5 +90,5 @@ external interface UseButtonReturnValue {
     /**
      * A ref to the component's root DOM element.
      */
-    var rootRef: react.RefCallback<web.dom.Element>?
+    var rootRef: react.RefCallback<Element>?
 }
