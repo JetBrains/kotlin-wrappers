@@ -49,8 +49,22 @@ external interface InAppPurchase : node.events.EventEmitter {
      * You should listen for the `transactions-updated` event as soon as possible and
      * certainly before you call `purchaseProduct`.
      */
+    fun purchaseProduct(productID: String): Promise<Boolean>
+
+    /**
+     * Returns `true` if the product is valid and added to the payment queue.
+     *
+     * You should listen for the `transactions-updated` event as soon as possible and
+     * certainly before you call `purchaseProduct`.
+     */
     fun purchaseProduct(productID: String, opts: Double = definedExternally): Promise<Boolean>
 
+    /**
+     * Returns `true` if the product is valid and added to the payment queue.
+     *
+     * You should listen for the `transactions-updated` event as soon as possible and
+     * certainly before you call `purchaseProduct`.
+     */
     fun purchaseProduct(productID: String, opts: PurchaseProductOpts = definedExternally): Promise<Boolean>
 
     /**

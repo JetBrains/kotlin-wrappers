@@ -1549,6 +1549,11 @@ open external class BrowserWindow : NodeEventEmitter {
      */
     fun setIcon(icon: NativeImage): Unit
 
+    /**
+     * Changes window icon.
+     *
+     * @platform win32,linux
+     */
     fun setIcon(icon: String): Unit
 
     /**

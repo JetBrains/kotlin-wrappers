@@ -3083,8 +3083,16 @@ external class WebContents : NodeEventEmitter {
      */
     fun sendInputEvent(inputEvent: MouseInputEvent): Unit
 
+    /**
+     * Sends an input `event` to the page. **Note:** The `BrowserWindow` containing the
+     * contents needs to be focused for `sendInputEvent()` to work.
+     */
     fun sendInputEvent(inputEvent: MouseWheelInputEvent): Unit
 
+    /**
+     * Sends an input `event` to the page. **Note:** The `BrowserWindow` containing the
+     * contents needs to be focused for `sendInputEvent()` to work.
+     */
     fun sendInputEvent(inputEvent: KeyboardInputEvent): Unit
 
     /**
@@ -3107,6 +3115,24 @@ external class WebContents : NodeEventEmitter {
      */
     fun sendToFrame(frameId: Double, channel: String, vararg args: Any?): Unit
 
+    /**
+     * Send an asynchronous message to a specific frame in a renderer process via
+     * `channel`, along with arguments. Arguments will be serialized with the
+     * Structured Clone Algorithm, just like `postMessage`, so prototype chains will
+     * not be included. Sending Functions, Promises, Symbols, WeakMaps, or WeakSets
+     * will throw an exception.
+     *
+     * > **NOTE:** Sending non-standard JavaScript types such as DOM objects or special
+     * Electron objects will throw an exception.
+     *
+     * The renderer process can handle the message by listening to `channel` with the
+     * `ipcRenderer` module.
+     *
+     * If you want to get the `frameId` of a given renderer context you should use the
+     * `webFrame.routingId` value.  E.g.
+     *
+     * You can also read `frameId` from all incoming IPC messages in the main process.
+     */
     fun sendToFrame(frameId: js.array.JsTuple2<Double, Double>, channel: String, vararg args: Any?): Unit
 
     /**

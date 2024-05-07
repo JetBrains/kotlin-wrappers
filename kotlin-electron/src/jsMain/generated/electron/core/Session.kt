@@ -940,6 +940,33 @@ external class Session : NodeEventEmitter {
      */
     fun fetch(input: String, init: SessionFetchInit = definedExternally): Promise<GlobalResponse>
 
+    /**
+     * see Response.
+     *
+     * Sends a request, similarly to how `fetch()` works in the renderer, using
+     * Chrome's network stack. This differs from Node's `fetch()`, which uses Node.js's
+     * HTTP stack.
+     *
+     * Example:
+     *
+     * See also `net.fetch()`, a convenience method which issues requests from the
+     * default session.
+     *
+     * See the MDN documentation for `fetch()` for more details.
+     *
+     * Limitations:
+     *
+     * * `net.fetch()` does not support the `data:` or `blob:` schemes.
+     * * The value of the `integrity` option is ignored.
+     * * The `.type` and `.url` values of the returned `Response` object are incorrect.
+     *
+     * By default, requests made with `net.fetch` can be made to custom protocols as
+     * well as `file:`, and will trigger webRequest handlers if present. When the
+     * non-standard `bypassCustomProtocolHandlers` option is set in RequestInit, custom
+     * protocol handlers will not be called for this request. This allows forwarding an
+     * intercepted request to the built-in handler. webRequest handlers will still be
+     * triggered when bypassing custom protocols.
+     */
     fun fetch(input: GlobalRequest, init: SessionFetchInit = definedExternally): Promise<GlobalResponse>
 
     /**

@@ -46,6 +46,18 @@ external interface ContentTracing {
      */
     fun startRecording(options: TraceConfig): Promise<Unit>
 
+    /**
+     * resolved once all child processes have acknowledged the `startRecording`
+     * request.
+     *
+     * Start recording on all processes.
+     *
+     * Recording begins immediately locally and asynchronously on child processes as
+     * soon as they receive the EnableRecording request.
+     *
+     * If a recording is already running, the promise will be immediately resolved, as
+     * only one trace operation can be in progress at a time.
+     */
     fun startRecording(options: TraceCategoriesAndOptions): Promise<Unit>
 
     /**

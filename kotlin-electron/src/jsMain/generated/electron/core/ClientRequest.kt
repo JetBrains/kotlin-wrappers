@@ -14,6 +14,9 @@ external class ClientRequest : NodeEventEmitter {
      */
     constructor (options: ClientRequestConstructorOptions)
 
+    /**
+     * ClientRequest
+     */
     constructor (options: String)
 // Docs: https://electronjs.org/docs/api/client-request
     /**
@@ -236,12 +239,22 @@ external class ClientRequest : NodeEventEmitter {
      * Sends the last chunk of the request data. Subsequent write or end operations
      * will not be allowed. The `finish` event is emitted just after the end operation.
      */
+    fun end(): Unit /* this */
+
+    /**
+     * Sends the last chunk of the request data. Subsequent write or end operations
+     * will not be allowed. The `finish` event is emitted just after the end operation.
+     */
     fun end(
         chunk: String = definedExternally,
         encoding: String = definedExternally,
         callback: () -> Unit = definedExternally,
     ): Unit /* this */
 
+    /**
+     * Sends the last chunk of the request data. Subsequent write or end operations
+     * will not be allowed. The `finish` event is emitted just after the end operation.
+     */
     fun end(
         chunk: Buffer = definedExternally,
         encoding: String = definedExternally,
@@ -314,6 +327,17 @@ external class ClientRequest : NodeEventEmitter {
      */
     fun write(chunk: String, encoding: String = definedExternally, callback: () -> Unit = definedExternally): Unit
 
+    /**
+     * `callback` is essentially a dummy function introduced in the purpose of keeping
+     * similarity with the Node.js API. It is called asynchronously in the next tick
+     * after `chunk` content have been delivered to the Chromium networking layer.
+     * Contrary to the Node.js implementation, it is not guaranteed that `chunk`
+     * content have been flushed on the wire before `callback` is called.
+     *
+     * Adds a chunk of data to the request body. The first write operation may cause
+     * the request headers to be issued on the wire. After the first write operation,
+     * it is not allowed to add or remove a custom header.
+     */
     fun write(chunk: Buffer, encoding: String = definedExternally, callback: () -> Unit = definedExternally): Unit
 
     /**

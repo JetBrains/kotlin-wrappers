@@ -17,6 +17,11 @@ external interface ClientRequestConstructorOptions {
     var url: String?
 
     /**
+     * Headers to be sent with the request.
+     */
+    var headers: js.objects.ReadonlyRecord<String, Any /* (string) | (string[]) */>?
+
+    /**
      * The `Session` instance with which the request is associated.
      */
     var session: Session?

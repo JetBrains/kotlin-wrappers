@@ -512,8 +512,18 @@ external interface WebviewTag : HTMLElement {
      */
     fun sendInputEvent(event: MouseInputEvent): Promise<Unit>
 
+    /**
+     * Sends an input `event` to the page.
+     *
+     * See webContents.sendInputEvent for detailed description of `event` object.
+     */
     fun sendInputEvent(event: MouseWheelInputEvent): Promise<Unit>
 
+    /**
+     * Sends an input `event` to the page.
+     *
+     * See webContents.sendInputEvent for detailed description of `event` object.
+     */
     fun sendInputEvent(event: KeyboardInputEvent): Promise<Unit>
 
     /**

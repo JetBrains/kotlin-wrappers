@@ -82,6 +82,11 @@ external class Dock {
      */
     fun setIcon(image: NativeImage): Unit
 
+    /**
+     * Sets the `image` associated with this dock icon.
+     *
+     * @platform darwin
+     */
     fun setIcon(image: String): Unit
 
     /**

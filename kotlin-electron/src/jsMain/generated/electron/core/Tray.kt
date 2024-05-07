@@ -14,6 +14,9 @@ open external class Tray : NodeEventEmitter {
      */
     constructor (image: NativeImage, guid: String = definedExternally)
 
+    /**
+     * Tray
+     */
     constructor (image: String, guid: String = definedExternally)
 // Docs: https://electronjs.org/docs/api/tray
     /**
@@ -1098,6 +1101,9 @@ open external class Tray : NodeEventEmitter {
      */
     fun setImage(image: NativeImage): Unit
 
+    /**
+     * Sets the `image` associated with this tray icon.
+     */
     fun setImage(image: String): Unit
 
     /**
@@ -1107,6 +1113,11 @@ open external class Tray : NodeEventEmitter {
      */
     fun setPressedImage(image: NativeImage): Unit
 
+    /**
+     * Sets the `image` associated with this tray icon when pressed on macOS.
+     *
+     * @platform darwin
+     */
     fun setPressedImage(image: String): Unit
 
     /**

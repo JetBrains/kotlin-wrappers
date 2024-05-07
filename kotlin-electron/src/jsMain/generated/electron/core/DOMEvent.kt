@@ -5,7 +5,7 @@ package electron.core
 
 import web.events.Event
 
-// Type definitions for Electron 29.1.4
+// Type definitions for Electron 29.2.0
 // Project: http://electronjs.org/
 // Definitions by: The Electron Team <https://github.com/electron/electron>
 // Definitions: https://github.com/electron/typescript-definitions
