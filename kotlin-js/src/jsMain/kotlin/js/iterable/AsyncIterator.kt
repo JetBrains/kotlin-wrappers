@@ -12,7 +12,10 @@ import js.promise.Promise
 
 @JsExternalInheritorsOnly
 external interface AsyncIterator<out T> {
-    fun next(): Promise<IteratorResult<T, *>>
+    @JsName("next")
+    fun nextAsync(): Promise<IteratorResult<T, *>>
+
+    suspend fun next(): IteratorResult<T, *> = definedExternally
 
     inline operator fun iterator(): SuspendableIterator<T> =
         iteratorFor(this)

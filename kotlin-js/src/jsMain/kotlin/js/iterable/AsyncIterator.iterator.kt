@@ -1,7 +1,5 @@
 package js.iterable
 
-import js.promise.await
-
 @PublishedApi
 internal fun <T> iteratorFor(
     source: AsyncIterator<T>,
@@ -15,7 +13,7 @@ private class AsyncIteratorAdapter<T>(
 
     override suspend fun hasNext(): Boolean {
         val result = lastResult
-            ?: source.next().await()
+            ?: source.next()
 
         lastResult = result
 
