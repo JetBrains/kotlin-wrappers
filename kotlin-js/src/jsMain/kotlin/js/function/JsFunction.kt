@@ -2,7 +2,7 @@ package js.function
 
 import js.array.JsTuple
 
-private const val FUNCTION: String = "Function"
+internal const val FUNCTION: String = "Function"
 
 @JsName(FUNCTION)
 @JsExternalInheritorsOnly
