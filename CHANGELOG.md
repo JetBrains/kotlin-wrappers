@@ -3,6 +3,7 @@
 **BREAKING CHANGE**
 
 * Browser. Suspend adapters for async functions
+  * The original Promise-based functions are available with the `Async` suffix
 
 ## pre.738
 
