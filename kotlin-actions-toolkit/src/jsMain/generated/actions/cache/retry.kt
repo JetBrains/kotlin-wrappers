@@ -3,7 +3,6 @@
 package actions.cache
 
 import js.promise.Promise
-import js.promise.await
 
 suspend fun <T> retry(
     name: String,

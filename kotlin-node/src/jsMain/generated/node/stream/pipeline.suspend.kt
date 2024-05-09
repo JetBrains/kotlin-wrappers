@@ -3,7 +3,6 @@
 package node.stream
 
 import js.array.ReadonlyArray
-import js.promise.await
 
 
 suspend fun <A : PipelineSource<Any?>, B : PipelineDestination<A, Any?>> pipeline(

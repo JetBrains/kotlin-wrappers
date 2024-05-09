@@ -5,7 +5,6 @@
 package node.dns
 
 import js.promise.Promise
-import js.promise.await
 
 /**
  * An independent resolver for DNS requests.

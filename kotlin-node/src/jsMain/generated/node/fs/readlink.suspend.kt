@@ -2,9 +2,6 @@
 
 package node.fs
 
-import js.promise.await
-
-
 suspend fun readlink(path: PathLike): String =
     readlinkAsync(
         path

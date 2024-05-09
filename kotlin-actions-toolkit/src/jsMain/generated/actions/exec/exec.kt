@@ -3,7 +3,6 @@
 package actions.exec
 
 import js.array.ReadonlyArray
-import js.promise.await
 
 suspend fun exec(
     commandLine: String,

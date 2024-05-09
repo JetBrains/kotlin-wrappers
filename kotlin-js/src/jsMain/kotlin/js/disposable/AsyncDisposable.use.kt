@@ -4,7 +4,6 @@
 
 package js.disposable
 
-import js.promise.await
 import js.symbol.Symbol
 import kotlin.contracts.InvocationKind
 import kotlin.contracts.contract

@@ -2,7 +2,6 @@
 
 package node.test.describe
 
-import js.promise.await
 import node.test.SuiteFn
 import node.test.TestOptions
 

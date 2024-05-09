@@ -2,9 +2,6 @@
 
 package node.dns
 
-import js.promise.await
-
-
 suspend fun resolveSrv(hostname: String): js.array.ReadonlyArray<SrvRecord> =
     resolveSrvAsync(
         hostname

@@ -2,7 +2,6 @@
 
 package node.util
 
-import js.promise.await
 import web.abort.AbortSignal
 
 

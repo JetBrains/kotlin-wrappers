@@ -2,9 +2,6 @@
 
 package node.stream
 
-import js.promise.await
-
-
 suspend fun finished(stream: node.ReadableStream, options: FinishedOptions = undefined.unsafeCast<Nothing>()): Unit =
     finishedAsync(
         stream, options

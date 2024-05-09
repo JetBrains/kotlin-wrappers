@@ -1,9 +1,6 @@
 // Automatically generated - do not modify!
 
 package actions.tool.cache
-
-import js.promise.await
-
 suspend fun extractZip(
     file: String,
 ): String =

@@ -2,9 +2,6 @@
 
 package node.fs
 
-import js.promise.await
-
-
 suspend fun mkdtemp(prefix: String): String =
     mkdtempAsync(
         prefix

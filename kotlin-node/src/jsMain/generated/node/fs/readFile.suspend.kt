@@ -2,9 +2,6 @@
 
 package node.fs
 
-import js.promise.await
-
-
 suspend fun readFile(
     path: PathLike,
     options: (ReadFileBufferAsyncOptions)? = undefined.unsafeCast<Nothing>(),

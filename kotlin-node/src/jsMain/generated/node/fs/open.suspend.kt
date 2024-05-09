@@ -2,9 +2,6 @@
 
 package node.fs
 
-import js.promise.await
-
-
 suspend fun open(path: PathLike): FileHandle =
     openAsync(
         path

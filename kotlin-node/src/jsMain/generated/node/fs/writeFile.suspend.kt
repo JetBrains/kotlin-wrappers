@@ -3,7 +3,6 @@
 package node.fs
 
 import js.iterable.AsyncIterable
-import js.promise.await
 import node.stream.Stream
 
 

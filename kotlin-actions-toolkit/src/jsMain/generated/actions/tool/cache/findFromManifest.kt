@@ -3,7 +3,6 @@
 package actions.tool.cache
 
 import js.array.ReadonlyArray
-import js.promise.await
 
 suspend fun findFromManifest(
     versionSpec: String,

@@ -2,9 +2,6 @@
 
 package node.dns
 
-import js.promise.await
-
-
 suspend fun resolve4(hostname: String): js.array.ReadonlyArray<String> =
     resolve4Async(
         hostname

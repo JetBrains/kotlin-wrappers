@@ -2,7 +2,6 @@
 
 package node.fs
 
-import js.promise.await
 import web.url.URL
 
 

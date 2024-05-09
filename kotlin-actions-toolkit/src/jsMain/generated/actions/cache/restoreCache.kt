@@ -3,7 +3,6 @@
 package actions.cache
 
 import js.array.ReadonlyArray
-import js.promise.await
 
 suspend fun restoreCache(
     paths: ReadonlyArray<String>,

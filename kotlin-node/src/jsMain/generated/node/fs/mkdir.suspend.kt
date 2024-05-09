@@ -2,9 +2,6 @@
 
 package node.fs
 
-import js.promise.await
-
-
 suspend fun mkdir(path: PathLike, options: MkdirRecursiveAsyncOptions): String? =
     mkdirAsync(
         path, options

@@ -2,7 +2,6 @@
 
 package actions.artifact
 
-import js.promise.await
 import node.buffer.Buffer
 
 suspend fun createGZipFileInBuffer(

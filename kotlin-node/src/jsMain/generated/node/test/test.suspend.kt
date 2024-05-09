@@ -2,9 +2,6 @@
 
 package node.test
 
-import js.promise.await
-
-
 suspend fun test(name: String = undefined.unsafeCast<Nothing>(), fn: TestFn = undefined.unsafeCast<Nothing>()): Unit =
     testAsync(
         name, fn

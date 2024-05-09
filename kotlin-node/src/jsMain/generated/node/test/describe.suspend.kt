@@ -2,9 +2,6 @@
 
 package node.test
 
-import js.promise.await
-
-
 suspend fun describe(
     name: String = undefined.unsafeCast<Nothing>(),
     options: TestOptions = undefined.unsafeCast<Nothing>(),

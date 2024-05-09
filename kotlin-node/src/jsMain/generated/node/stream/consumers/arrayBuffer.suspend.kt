@@ -4,7 +4,6 @@ package node.stream.consumers
 
 import js.buffer.ArrayBuffer
 import js.iterable.AsyncIterable
-import js.promise.await
 import node.stream.Readable
 
 

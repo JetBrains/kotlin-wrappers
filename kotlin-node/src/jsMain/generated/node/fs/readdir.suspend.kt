@@ -2,9 +2,6 @@
 
 package node.fs
 
-import js.promise.await
-
-
 suspend fun readdir(path: PathLike): js.array.ReadonlyArray<String> =
     readdirAsync(
         path

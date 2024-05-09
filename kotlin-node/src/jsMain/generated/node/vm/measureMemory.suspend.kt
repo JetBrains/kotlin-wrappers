@@ -2,9 +2,6 @@
 
 package node.vm
 
-import js.promise.await
-
-
 suspend fun measureMemory(options: MeasureMemoryOptions = undefined.unsafeCast<Nothing>()): MemoryMeasurement =
     measureMemoryAsync(
         options

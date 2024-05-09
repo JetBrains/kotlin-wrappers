@@ -5,7 +5,6 @@
 package node.readline
 
 import js.promise.Promise
-import js.promise.await
 
 /**
  * @since v17.0.0

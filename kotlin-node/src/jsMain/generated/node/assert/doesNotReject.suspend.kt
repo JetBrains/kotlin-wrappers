@@ -3,7 +3,6 @@
 package node.assert
 
 import js.promise.Promise
-import js.promise.await
 
 
 suspend fun doesNotReject(block: () -> Promise<Any?>): Unit =

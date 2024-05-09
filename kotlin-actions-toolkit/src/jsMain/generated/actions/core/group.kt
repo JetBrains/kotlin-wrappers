@@ -3,7 +3,6 @@
 package actions.core
 
 import js.promise.Promise
-import js.promise.await
 
 suspend fun <T> group(
     name: String,

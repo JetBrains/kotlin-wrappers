@@ -2,7 +2,6 @@
 
 package node.test.it
 
-import js.promise.await
 import node.test.TestFn
 import node.test.TestOptions
 

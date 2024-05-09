@@ -2,9 +2,6 @@
 
 package node.fs
 
-import js.promise.await
-
-
 suspend fun statfs(path: PathLike, opts: StatfsOpts = undefined.unsafeCast<Nothing>()): StatsFs =
     statfsAsync(
         path, opts

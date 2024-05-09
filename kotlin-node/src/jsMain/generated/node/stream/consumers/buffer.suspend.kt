@@ -3,7 +3,6 @@
 package node.stream.consumers
 
 import js.iterable.AsyncIterable
-import js.promise.await
 import node.stream.Readable
 
 

@@ -6,7 +6,6 @@ package node.fs
 import js.array.ReadonlyArray
 import js.buffer.ArrayBufferView
 import js.promise.Promise
-import js.promise.await
 import js.typedarrays.Uint8Array
 import web.streams.ReadableStream
 import node.readline.Interface as ReadlineInterface

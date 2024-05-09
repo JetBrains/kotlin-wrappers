@@ -2,7 +2,6 @@
 
 package actions.tool.cache
 
-import js.promise.await
 import node.http.OutgoingHttpHeaders
 
 suspend fun downloadTool(
