@@ -11,12 +11,24 @@ import web.http.Response
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/instantiateStreaming_static)
  */
-external fun instantiateStreaming(
+external suspend fun instantiateStreaming(
+    source: Response,
+    importObject: Imports = definedExternally,
+): WebAssemblyInstantiatedSource
+
+@JsName("instantiateStreaming")
+external fun instantiateStreamingAsync(
     source: Response,
     importObject: Imports = definedExternally,
 ): Promise<WebAssemblyInstantiatedSource>
 
-external fun instantiateStreaming(
+external suspend fun instantiateStreaming(
+    source: PromiseLike<Response>,
+    importObject: Imports = definedExternally,
+): WebAssemblyInstantiatedSource
+
+@JsName("instantiateStreaming")
+external fun instantiateStreamingAsync(
     source: PromiseLike<Response>,
     importObject: Imports = definedExternally,
 ): Promise<WebAssemblyInstantiatedSource>
