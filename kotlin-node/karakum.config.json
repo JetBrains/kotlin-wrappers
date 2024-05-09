@@ -373,9 +373,6 @@
         "Async.kt": [
             "js.promise.Promise"
         ],
-        ".suspend.kt": [
-            "js.promise.await"
-        ],
         ".contract.kt": [
             "kotlin.contracts.contract"
         ],
@@ -503,9 +500,6 @@
         "dns/setServers.kt": [
             "js.array.ReadonlyArray"
         ],
-        "dns/ResolverAsync.kt": [
-            "js.promise.await"
-        ],
         "events/EventEmitter.kt": [
             "js.array.JsTuple",
             "js.array.JsTuple1",
@@ -528,7 +522,6 @@
         ],
         "fs/FileHandleAsync.kt": [
             "js.array.ReadonlyArray",
-            "js.promise.await",
             "js.typedarrays.Uint8Array",
             "node.readline.Interface as ReadlineInterface"
         ],
@@ -696,12 +689,6 @@
         ],
         "process/UnhandledRejectionListener.kt": [
             "js.promise.Promise"
-        ],
-        "readline/InterfaceAsync.kt": [
-            "js.promise.await"
-        ],
-        "readline/ReadlineAsync.kt": [
-            "js.promise.await"
         ],
         "repl/Recoverable.kt": [
             "js.errors.SyntaxError"
