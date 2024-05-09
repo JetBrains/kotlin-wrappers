@@ -1,3 +1,9 @@
+## pre.742
+
+**BREAKING CHANGE**
+
+* Browser. Suspend adapters for async functions
+
 ## pre.738
 
 **BREAKING CHANGE**
