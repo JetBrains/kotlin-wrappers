@@ -58,9 +58,6 @@ include("kotlin-emotion")
 // Kotlin/JS: various helpers
 include("kotlin-extensions")
 
-// Kotlin/JS: History wrappers
-include("kotlin-history")
-
 // Kotlin/JS: APIs missing from the standard library
 include("kotlin-js")
 
