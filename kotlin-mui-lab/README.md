@@ -1,6 +1,6 @@
 [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-muix-tree-view)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-muix-tree-view)
 
-# kotlin-mui-lab
+# Module kotlin-mui-lab
 
 Kotlin wrapper for [MUI Lab](https://mui.com/material-ui/about-the-lab/).
 

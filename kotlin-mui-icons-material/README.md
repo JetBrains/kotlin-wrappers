@@ -1,6 +1,6 @@
 [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-mui-icons-material)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-mui-icons-material)
 
-# kotlin-mui-icons-material
+# Module kotlin-mui-icons-material
 
 Kotlin wrapper for [Material UI Icons](https://mui.com/components/icons/).
 

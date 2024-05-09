@@ -1,6 +1,6 @@
 [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-typescript)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-typescript)
 
-# kotlin-typescript
+# Module kotlin-typescript
 
 Kotlin wrapper for [TypeScript](https://www.npmjs.com/package/typescript).
 

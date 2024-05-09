@@ -22,4 +22,5 @@ fun version(target: String): String {
 dependencies {
     implementation(kotlin("gradle-plugin", version("kotlin")))
     implementation("io.github.turansky.seskar:seskar-gradle-plugin:${version("seskar")}")
+    implementation("dev.adamko.dokkatoo:dokkatoo-plugin:2.3.1")
 }

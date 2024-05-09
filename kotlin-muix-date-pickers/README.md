@@ -1,6 +1,6 @@
 [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-muix-date-pickers)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-muix-date-pickers)
 
-# kotlin-muix-date-pickers
+# Module kotlin-muix-date-pickers
 
 Kotlin wrapper for [MUI X Date Pickers](https://mui.com/x/react-date-pickers/).
 

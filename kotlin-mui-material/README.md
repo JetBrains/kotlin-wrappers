@@ -1,6 +1,6 @@
 [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-mui-material)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-mui-material)
 
-# kotlin-mui-material
+# Module kotlin-mui-material
 
 Kotlin wrapper for [Material UI](https://mui.com/).
 
