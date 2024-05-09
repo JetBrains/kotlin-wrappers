@@ -12,6 +12,9 @@ provides the familiar `RBuilder` DSL.
 
 See [CHANGELOG.md](../CHANGELOG.md#pre282) for more details.
 
+> [!WARNING]
+> `kotlin-react-legacy` is deprecated
+
 ### Maven
 
 ```xml
