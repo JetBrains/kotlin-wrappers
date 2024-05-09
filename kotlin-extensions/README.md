@@ -6,7 +6,7 @@ Kotlin wrappers for standard JS objects as well as some helpers required for
 [kotlin-react](https://github.com/JetBrains/kotlin-wrappers/tree/master/kotlin-react).
 
 > [!WARNING]
-> kotlin-extensions is deprecated
+> `kotlin-extensions` is deprecated
 
 ### Maven
 
