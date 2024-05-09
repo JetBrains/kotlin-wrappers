@@ -5,7 +5,7 @@
 Kotlin wrapper for the React DOM library. The major version number of this wrapper matches that of React DOM itself.
 
 > [!WARNING]
-> kotlin-react-dom-legacy is deprecated
+> `kotlin-react-dom-legacy` is deprecated
 
 ## kotlin-react-dom vs kotlin-react-dom-legacy
 
