@@ -3,7 +3,6 @@ package web.http
 import js.errors.TypeError
 import js.globals.globalThis
 import js.promise.Promise
-import js.promise.await
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.async
 import kotlinx.coroutines.coroutineScope
@@ -29,7 +28,7 @@ class FetchTest {
 
         globalThis.fetch = { Promise.resolve(response) }
 
-        val actualResult = fetch(request).json().await() as Int
+        val actualResult = fetch(request).json() as Int
 
         assertEquals(expectedResult, actualResult)
     }
