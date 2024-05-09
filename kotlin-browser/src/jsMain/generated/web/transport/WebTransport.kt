@@ -55,10 +55,16 @@ external class WebTransport(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/createBidirectionalStream)
      */
-    fun createBidirectionalStream(options: WebTransportSendStreamOptions = definedExternally): Promise<WebTransportBidirectionalStream>
+    suspend fun createBidirectionalStream(options: WebTransportSendStreamOptions = definedExternally): WebTransportBidirectionalStream
+
+    @JsName("createBidirectionalStream")
+    fun createBidirectionalStreamAsync(options: WebTransportSendStreamOptions = definedExternally): Promise<WebTransportBidirectionalStream>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/createUnidirectionalStream)
      */
-    fun createUnidirectionalStream(options: WebTransportSendStreamOptions = definedExternally): Promise<WritableStream<*>>
+    suspend fun createUnidirectionalStream(options: WebTransportSendStreamOptions = definedExternally): WritableStream<*>
+
+    @JsName("createUnidirectionalStream")
+    fun createUnidirectionalStreamAsync(options: WebTransportSendStreamOptions = definedExternally): Promise<WritableStream<*>>
 }

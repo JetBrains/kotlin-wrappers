@@ -26,11 +26,20 @@ sealed external class WindowClient :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/focus)
      */
-    fun focus(): Promise<WindowClient>
+    suspend fun focus(): WindowClient
+
+    @JsName("focus")
+    fun focusAsync(): Promise<WindowClient>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/navigate)
      */
-    fun navigate(url: String): Promise<WindowClient?>
-    fun navigate(url: URL): Promise<WindowClient?>
+    suspend fun navigate(url: String): WindowClient?
+
+    @JsName("navigate")
+    fun navigateAsync(url: String): Promise<WindowClient?>
+    suspend fun navigate(url: URL): WindowClient?
+
+    @JsName("navigate")
+    fun navigateAsync(url: URL): Promise<WindowClient?>
 }

@@ -16,17 +16,26 @@ sealed external class PushManager {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/getSubscription)
      */
-    fun getSubscription(): Promise<PushSubscription?>
+    suspend fun getSubscription(): PushSubscription?
+
+    @JsName("getSubscription")
+    fun getSubscriptionAsync(): Promise<PushSubscription?>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/permissionState)
      */
-    fun permissionState(options: PushSubscriptionOptionsInit = definedExternally): Promise<PermissionState>
+    suspend fun permissionState(options: PushSubscriptionOptionsInit = definedExternally): PermissionState
+
+    @JsName("permissionState")
+    fun permissionStateAsync(options: PushSubscriptionOptionsInit = definedExternally): Promise<PermissionState>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/subscribe)
      */
-    fun subscribe(options: PushSubscriptionOptionsInit = definedExternally): Promise<PushSubscription>
+    suspend fun subscribe(options: PushSubscriptionOptionsInit = definedExternally): PushSubscription
+
+    @JsName("subscribe")
+    fun subscribeAsync(options: PushSubscriptionOptionsInit = definedExternally): Promise<PushSubscription>
 
     companion object {
         /**

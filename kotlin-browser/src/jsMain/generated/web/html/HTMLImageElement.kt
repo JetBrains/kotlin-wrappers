@@ -137,5 +137,8 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/decode)
      */
-    fun decode(): Promise<Void>
+    suspend fun decode()
+
+    @JsName("decode")
+    fun decodeAsync(): Promise<Void>
 }

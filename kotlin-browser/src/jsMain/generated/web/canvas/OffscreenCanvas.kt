@@ -51,7 +51,10 @@ external class OffscreenCanvas(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/convertToBlob)
      */
-    fun convertToBlob(options: ImageEncodeOptions = definedExternally): Promise<Blob>
+    suspend fun convertToBlob(options: ImageEncodeOptions = definedExternally): Blob
+
+    @JsName("convertToBlob")
+    fun convertToBlobAsync(options: ImageEncodeOptions = definedExternally): Promise<Blob>
 
     /**
      * Returns an object that exposes an API for drawing on the OffscreenCanvas object. contextId specifies the desired API: "2d", "bitmaprenderer", "webgl", or "webgl2". options is handled by that API.

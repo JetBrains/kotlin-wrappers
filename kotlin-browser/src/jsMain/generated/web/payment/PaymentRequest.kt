@@ -32,16 +32,28 @@ external class PaymentRequest(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/abort)
      */
-    fun abort(): Promise<Void>
+    suspend fun abort()
+
+    @JsName("abort")
+    fun abortAsync(): Promise<Void>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/canMakePayment)
      */
-    fun canMakePayment(): Promise<Boolean>
+    suspend fun canMakePayment(): Boolean
+
+    @JsName("canMakePayment")
+    fun canMakePaymentAsync(): Promise<Boolean>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/show)
      */
-    fun show(detailsPromise: PaymentDetailsUpdate = definedExternally): Promise<PaymentResponse>
-    fun show(detailsPromise: PromiseLike<PaymentDetailsUpdate>): Promise<PaymentResponse>
+    suspend fun show(detailsPromise: PaymentDetailsUpdate = definedExternally): PaymentResponse
+
+    @JsName("show")
+    fun showAsync(detailsPromise: PaymentDetailsUpdate = definedExternally): Promise<PaymentResponse>
+    suspend fun show(detailsPromise: PromiseLike<PaymentDetailsUpdate>): PaymentResponse
+
+    @JsName("show")
+    fun showAsync(detailsPromise: PromiseLike<PaymentDetailsUpdate>): Promise<PaymentResponse>
 }

@@ -32,12 +32,18 @@ external class WritableStreamDefaultWriter<W>(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/abort)
      */
-    fun abort(reason: JsError = definedExternally): Promise<Void>
+    suspend fun abort(reason: JsError = definedExternally)
+
+    @JsName("abort")
+    fun abortAsync(reason: JsError = definedExternally): Promise<Void>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/close)
      */
-    fun close(): Promise<Void>
+    suspend fun close()
+
+    @JsName("close")
+    fun closeAsync(): Promise<Void>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/releaseLock)
@@ -47,5 +53,8 @@ external class WritableStreamDefaultWriter<W>(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/write)
      */
-    fun write(chunk: W = definedExternally): Promise<Void>
+    suspend fun write(chunk: W = definedExternally)
+
+    @JsName("write")
+    fun writeAsync(chunk: W = definedExternally): Promise<Void>
 }

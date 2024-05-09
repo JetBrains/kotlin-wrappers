@@ -46,23 +46,44 @@ sealed external class ServiceWorkerContainer :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistration)
      */
-    fun getRegistration(clientURL: String = definedExternally): Promise<ServiceWorkerRegistration?>
-    fun getRegistration(clientURL: URL): Promise<ServiceWorkerRegistration?>
+    suspend fun getRegistration(clientURL: String = definedExternally): ServiceWorkerRegistration?
+
+    @JsName("getRegistration")
+    fun getRegistrationAsync(clientURL: String = definedExternally): Promise<ServiceWorkerRegistration?>
+    suspend fun getRegistration(clientURL: URL): ServiceWorkerRegistration?
+
+    @JsName("getRegistration")
+    fun getRegistrationAsync(clientURL: URL): Promise<ServiceWorkerRegistration?>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistrations)
      */
-    fun getRegistrations(): Promise<ReadonlyArray<ServiceWorkerRegistration>>
+    suspend fun getRegistrations(): ReadonlyArray<ServiceWorkerRegistration>
+
+    @JsName("getRegistrations")
+    fun getRegistrationsAsync(): Promise<ReadonlyArray<ServiceWorkerRegistration>>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register)
      */
-    fun register(
+    suspend fun register(
+        scriptURL: String,
+        options: RegistrationOptions = definedExternally,
+    ): ServiceWorkerRegistration
+
+    @JsName("register")
+    fun registerAsync(
         scriptURL: String,
         options: RegistrationOptions = definedExternally,
     ): Promise<ServiceWorkerRegistration>
 
-    fun register(
+    suspend fun register(
+        scriptURL: URL,
+        options: RegistrationOptions = definedExternally,
+    ): ServiceWorkerRegistration
+
+    @JsName("register")
+    fun registerAsync(
         scriptURL: URL,
         options: RegistrationOptions = definedExternally,
     ): Promise<ServiceWorkerRegistration>

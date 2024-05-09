@@ -11,7 +11,10 @@ sealed external class GPUQueue :
     GPUObjectBase {
     override var label: String
     fun submit(commandBuffers: ReadonlyArray<GPUCommandBuffer>)
-    fun onSubmittedWorkDone(): Promise<Void>
+    suspend fun onSubmittedWorkDone()
+
+    @JsName("onSubmittedWorkDone")
+    fun onSubmittedWorkDoneAsync(): Promise<Void>
     fun writeBuffer(
         buffer: GPUBuffer,
         bufferOffset: GPUSize64,

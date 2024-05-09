@@ -41,5 +41,8 @@ sealed external class PushSubscription {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushSubscription/unsubscribe)
      */
-    fun unsubscribe(): Promise<Boolean>
+    suspend fun unsubscribe(): Boolean
+
+    @JsName("unsubscribe")
+    fun unsubscribeAsync(): Promise<Boolean>
 }

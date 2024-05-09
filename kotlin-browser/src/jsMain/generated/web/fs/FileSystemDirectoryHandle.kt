@@ -20,7 +20,13 @@ sealed external class FileSystemDirectoryHandle :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/getDirectoryHandle)
      */
-    fun getDirectoryHandle(
+    suspend fun getDirectoryHandle(
+        name: String,
+        options: FileSystemGetDirectoryOptions = definedExternally,
+    ): FileSystemDirectoryHandle
+
+    @JsName("getDirectoryHandle")
+    fun getDirectoryHandleAsync(
         name: String,
         options: FileSystemGetDirectoryOptions = definedExternally,
     ): Promise<FileSystemDirectoryHandle>
@@ -28,7 +34,13 @@ sealed external class FileSystemDirectoryHandle :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/getFileHandle)
      */
-    fun getFileHandle(
+    suspend fun getFileHandle(
+        name: String,
+        options: FileSystemGetFileOptions = definedExternally,
+    ): FileSystemFileHandle
+
+    @JsName("getFileHandle")
+    fun getFileHandleAsync(
         name: String,
         options: FileSystemGetFileOptions = definedExternally,
     ): Promise<FileSystemFileHandle>
@@ -36,7 +48,13 @@ sealed external class FileSystemDirectoryHandle :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/removeEntry)
      */
-    fun removeEntry(
+    suspend fun removeEntry(
+        name: String,
+        options: FileSystemRemoveOptions = definedExternally,
+    )
+
+    @JsName("removeEntry")
+    fun removeEntryAsync(
         name: String,
         options: FileSystemRemoveOptions = definedExternally,
     ): Promise<Void>
@@ -44,5 +62,8 @@ sealed external class FileSystemDirectoryHandle :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/resolve)
      */
-    fun resolve(possibleDescendant: FileSystemHandle): Promise<ReadonlyArray<String>?>
+    suspend fun resolve(possibleDescendant: FileSystemHandle): ReadonlyArray<String>?
+
+    @JsName("resolve")
+    fun resolveAsync(possibleDescendant: FileSystemHandle): Promise<ReadonlyArray<String>?>
 }

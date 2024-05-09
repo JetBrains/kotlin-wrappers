@@ -265,21 +265,30 @@ sealed external class HTMLMediaElement :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/play)
      */
-    fun play(): Promise<Void>
+    suspend fun play()
+
+    @JsName("play")
+    fun playAsync(): Promise<Void>
 
     /**
      * Available only in secure contexts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/setMediaKeys)
      */
-    fun setMediaKeys(mediaKeys: MediaKeys?): Promise<Void>
+    suspend fun setMediaKeys(mediaKeys: MediaKeys?)
+
+    @JsName("setMediaKeys")
+    fun setMediaKeysAsync(mediaKeys: MediaKeys?): Promise<Void>
 
     /**
      * Available only in secure contexts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/setSinkId)
      */
-    fun setSinkId(sinkId: String): Promise<Void>
+    suspend fun setSinkId(sinkId: String)
+
+    @JsName("setSinkId")
+    fun setSinkIdAsync(sinkId: String): Promise<Void>
     val NETWORK_EMPTY: NetworkState
     val NETWORK_IDLE: NetworkState
     val NETWORK_LOADING: NetworkState

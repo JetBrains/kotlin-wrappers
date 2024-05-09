@@ -16,21 +16,36 @@ sealed external class Clients {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/claim)
      */
-    fun claim(): Promise<Void>
+    suspend fun claim()
+
+    @JsName("claim")
+    fun claimAsync(): Promise<Void>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/get)
      */
-    operator fun get(id: String): Promise<Client?>
+    suspend fun get(id: String): Client?
+
+    @JsName("get")
+    fun getAsync(id: String): Promise<Client?>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/matchAll)
      */
-    fun <T : ClientQueryOptions> matchAll(options: T = definedExternally): Promise<ReadonlyArray<Client /* | WindowClient */>>
+    suspend fun <T : ClientQueryOptions> matchAll(options: T = definedExternally): ReadonlyArray<Client /* | WindowClient */>
+
+    @JsName("matchAll")
+    fun <T : ClientQueryOptions> matchAllAsync(options: T = definedExternally): Promise<ReadonlyArray<Client /* | WindowClient */>>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/openWindow)
      */
-    fun openWindow(url: String): Promise<WindowClient?>
-    fun openWindow(url: URL): Promise<WindowClient?>
+    suspend fun openWindow(url: String): WindowClient?
+
+    @JsName("openWindow")
+    fun openWindowAsync(url: String): Promise<WindowClient?>
+    suspend fun openWindow(url: URL): WindowClient?
+
+    @JsName("openWindow")
+    fun openWindowAsync(url: URL): Promise<WindowClient?>
 }

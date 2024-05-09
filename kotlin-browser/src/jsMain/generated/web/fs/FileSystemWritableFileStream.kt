@@ -17,15 +17,24 @@ sealed external class FileSystemWritableFileStream :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemWritableFileStream/seek)
      */
-    fun seek(position: JsLong): Promise<Void>
+    suspend fun seek(position: JsLong)
+
+    @JsName("seek")
+    fun seekAsync(position: JsLong): Promise<Void>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemWritableFileStream/truncate)
      */
-    fun truncate(size: JsLong): Promise<Void>
+    suspend fun truncate(size: JsLong)
+
+    @JsName("truncate")
+    fun truncateAsync(size: JsLong): Promise<Void>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemWritableFileStream/write)
      */
-    fun write(data: FileSystemWriteChunkType): Promise<Void>
+    suspend fun write(data: FileSystemWriteChunkType)
+
+    @JsName("write")
+    fun writeAsync(data: FileSystemWriteChunkType): Promise<Void>
 }

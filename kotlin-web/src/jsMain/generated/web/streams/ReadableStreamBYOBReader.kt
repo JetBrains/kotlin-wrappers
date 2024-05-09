@@ -14,7 +14,10 @@ external class ReadableStreamBYOBReader(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/read)
      */
-    fun <T : ArrayBufferView> read(view: T): Promise<ReadableStreamReadResult<T>>
+    suspend fun <T : ArrayBufferView> read(view: T): ReadableStreamReadResult<T>
+
+    @JsName("read")
+    fun <T : ArrayBufferView> readAsync(view: T): Promise<ReadableStreamReadResult<T>>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/releaseLock)

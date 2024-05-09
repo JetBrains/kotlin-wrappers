@@ -33,15 +33,24 @@ external class OfflineAudioContext(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/resume)
      */
-    fun resume(): Promise<Void>
+    suspend fun resume()
+
+    @JsName("resume")
+    fun resumeAsync(): Promise<Void>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/startRendering)
      */
-    fun startRendering(): Promise<AudioBuffer>
+    suspend fun startRendering(): AudioBuffer
+
+    @JsName("startRendering")
+    fun startRenderingAsync(): Promise<AudioBuffer>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/suspend)
      */
-    fun suspend(suspendTime: Double): Promise<Void>
+    suspend fun suspend(suspendTime: Double)
+
+    @JsName("suspend")
+    fun suspendAsync(suspendTime: Double): Promise<Void>
 }

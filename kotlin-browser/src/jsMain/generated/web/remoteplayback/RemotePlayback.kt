@@ -36,15 +36,24 @@ sealed external class RemotePlayback :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/cancelWatchAvailability)
      */
-    fun cancelWatchAvailability(id: Int = definedExternally): Promise<Void>
+    suspend fun cancelWatchAvailability(id: Int = definedExternally)
+
+    @JsName("cancelWatchAvailability")
+    fun cancelWatchAvailabilityAsync(id: Int = definedExternally): Promise<Void>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/prompt)
      */
-    fun prompt(): Promise<Void>
+    suspend fun prompt()
+
+    @JsName("prompt")
+    fun promptAsync(): Promise<Void>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/watchAvailability)
      */
-    fun watchAvailability(callback: RemotePlaybackAvailabilityCallback): Promise<Number>
+    suspend fun watchAvailability(callback: RemotePlaybackAvailabilityCallback): Number
+
+    @JsName("watchAvailability")
+    fun watchAvailabilityAsync(callback: RemotePlaybackAvailabilityCallback): Promise<Number>
 }

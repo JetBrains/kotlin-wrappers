@@ -19,7 +19,10 @@ sealed external class MediaKeySystemAccess {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySystemAccess/createMediaKeys)
      */
-    fun createMediaKeys(): Promise<MediaKeys>
+    suspend fun createMediaKeys(): MediaKeys
+
+    @JsName("createMediaKeys")
+    fun createMediaKeysAsync(): Promise<MediaKeys>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySystemAccess/getConfiguration)

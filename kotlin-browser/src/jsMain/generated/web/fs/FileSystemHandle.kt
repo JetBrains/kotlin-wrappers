@@ -23,5 +23,8 @@ sealed external class FileSystemHandle {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemHandle/isSameEntry)
      */
-    fun isSameEntry(other: FileSystemHandle): Promise<Boolean>
+    suspend fun isSameEntry(other: FileSystemHandle): Boolean
+
+    @JsName("isSameEntry")
+    fun isSameEntryAsync(other: FileSystemHandle): Promise<Boolean>
 }

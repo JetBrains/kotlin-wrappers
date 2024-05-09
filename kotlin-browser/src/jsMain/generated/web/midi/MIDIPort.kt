@@ -56,10 +56,16 @@ sealed external class MIDIPort :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIPort/close)
      */
-    fun close(): Promise<MIDIPort>
+    suspend fun close(): MIDIPort
+
+    @JsName("close")
+    fun closeAsync(): Promise<MIDIPort>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIPort/open)
      */
-    fun open(): Promise<MIDIPort>
+    suspend fun open(): MIDIPort
+
+    @JsName("open")
+    fun openAsync(): Promise<MIDIPort>
 }

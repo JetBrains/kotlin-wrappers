@@ -45,7 +45,10 @@ external class VideoEncoder(
         options: VideoEncoderEncodeOptions = definedExternally,
     )
 
-    fun flush(): Promise<Void>
+    suspend fun flush()
+
+    @JsName("flush")
+    fun flushAsync(): Promise<Void>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/reset)
@@ -53,6 +56,9 @@ external class VideoEncoder(
     fun reset()
 
     companion object {
-        fun isConfigSupported(config: VideoEncoderConfig): Promise<VideoEncoderSupport>
+        suspend fun isConfigSupported(config: VideoEncoderConfig): VideoEncoderSupport
+
+        @JsName("isConfigSupported")
+        fun isConfigSupportedAsync(config: VideoEncoderConfig): Promise<VideoEncoderSupport>
     }
 }
