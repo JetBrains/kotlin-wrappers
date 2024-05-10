@@ -19,5 +19,19 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/content)
      */
     val content: DocumentFragment
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/shadowRootClonable)
+     */
+    var shadowRootClonable: Boolean
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/shadowRootDelegatesFocus)
+     */
+    var shadowRootDelegatesFocus: Boolean
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/shadowRootMode)
+     */
     var shadowRootMode: String
 }

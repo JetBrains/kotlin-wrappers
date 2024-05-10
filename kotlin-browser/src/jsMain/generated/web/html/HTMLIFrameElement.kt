@@ -59,6 +59,10 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/referrerPolicy)
      */
     var referrerPolicy: ReferrerPolicy
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/sandbox)
+     */
     val sandbox: DOMTokenList
 
     /**

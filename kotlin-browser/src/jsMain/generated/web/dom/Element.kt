@@ -37,7 +37,6 @@ abstract external class Element :
     ARIAMixin,
     Animatable,
     ChildNode,
-    InnerHTML,
     NonDocumentTypeChildNode,
     ParentNode,
     Slottable {
@@ -86,6 +85,11 @@ abstract external class Element :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/id)
      */
     var id: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/innerHTML)
+     */
+    var innerHTML: String
 
     /**
      * Returns the local name.
@@ -315,7 +319,7 @@ abstract external class Element :
      */
     fun insertAdjacentHTML(
         position: InsertPosition,
-        text: String,
+        string: String,
     )
 
     /**

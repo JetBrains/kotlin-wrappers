@@ -135,12 +135,26 @@ external interface GlobalEventHandlers {
         set(value) = definedExternally
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/webglcontextlost_event)
+     */
+    var oncontextlost: EventHandler<Event, *>?
+        get() = definedExternally
+        set(value) = definedExternally
+
+    /**
      * Fires when the user clicks the right mouse button in the client area, opening the context menu.
      * @param ev The mouse event.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/contextmenu_event)
      */
     var oncontextmenu: EventHandler<MouseEvent, *>?
+        get() = definedExternally
+        set(value) = definedExternally
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/contextrestored_event)
+     */
+    var oncontextrestored: EventHandler<Event, *>?
         get() = definedExternally
         set(value) = definedExternally
 

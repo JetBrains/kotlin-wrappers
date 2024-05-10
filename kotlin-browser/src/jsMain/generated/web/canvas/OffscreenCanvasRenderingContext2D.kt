@@ -28,11 +28,6 @@ sealed external class OffscreenCanvasRenderingContext2D :
     OffscreenRenderingContext {
     val canvas: OffscreenCanvas
 
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvasRenderingContext2D/commit)
-     */
-    fun commit()
-
     companion object {
         @JsValue("2d")
         val ID: RenderingContextId<OffscreenCanvasRenderingContext2D, CanvasRenderingContext2DSettings>
