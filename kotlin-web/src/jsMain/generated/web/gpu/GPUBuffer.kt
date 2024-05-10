@@ -12,14 +12,13 @@ sealed external class GPUBuffer :
     val size: GPUSize64Out
     val usage: GPUUsage
     val mapState: GPUBufferMapState
-    suspend fun mapAsync(
+    suspend fun map(
         mode: GPUMapMode,
         offset: GPUSize64 = definedExternally,
         size: GPUSize64 = definedExternally,
     )
 
-    @JsName("mapAsync")
-    fun mapAsyncAsync(
+    fun mapAsync(
         mode: GPUMapMode,
         offset: GPUSize64 = definedExternally,
         size: GPUSize64 = definedExternally,
