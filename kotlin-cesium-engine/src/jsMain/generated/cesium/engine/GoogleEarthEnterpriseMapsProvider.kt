@@ -238,12 +238,24 @@ private constructor() {
          * @return The created GoogleEarthEnterpriseMapsProvider.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseMapsProvider.html#.fromUrl">Online Documentation</a>
          */
-        fun fromUrl(
+        suspend fun fromUrl(
+            url: Resource,
+            options: ConstructorOptions? = definedExternally,
+        ): GoogleEarthEnterpriseMapsProvider
+
+        @JsName("fromUrl")
+        fun fromUrlAsync(
             url: Resource,
             options: ConstructorOptions? = definedExternally,
         ): Promise<GoogleEarthEnterpriseMapsProvider>
 
-        fun fromUrl(
+        suspend fun fromUrl(
+            url: String,
+            options: ConstructorOptions? = definedExternally,
+        ): GoogleEarthEnterpriseMapsProvider
+
+        @JsName("fromUrl")
+        fun fromUrlAsync(
             url: String,
             options: ConstructorOptions? = definedExternally,
         ): Promise<GoogleEarthEnterpriseMapsProvider>

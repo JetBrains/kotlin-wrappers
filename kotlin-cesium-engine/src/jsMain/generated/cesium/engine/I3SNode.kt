@@ -76,7 +76,10 @@ private constructor() {
      * @return A promise that is resolved when the I3S Node fields are loaded
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SNode.html#loadFields">Online Documentation</a>
      */
-    fun loadFields(): Promise<Void>
+    suspend fun loadFields()
+
+    @JsName("loadFields")
+    fun loadFieldsAsync(): Promise<Void>
 
     /**
      * Loads the node field.
@@ -84,7 +87,10 @@ private constructor() {
      * @return A promise that is resolved when the I3S Node field is loaded
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SNode.html#loadField">Online Documentation</a>
      */
-    fun loadField(name: String): Promise<Void>
+    suspend fun loadField(name: String)
+
+    @JsName("loadField")
+    fun loadFieldAsync(name: String): Promise<Void>
 
     /**
      * Returns the fields for a given picked position

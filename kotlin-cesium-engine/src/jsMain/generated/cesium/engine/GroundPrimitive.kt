@@ -270,7 +270,10 @@ external class GroundPrimitive(options: ConstructorOptions? = definedExternally)
          * @return A promise that will resolve once the terrain heights have been loaded.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GroundPrimitive.html#.initializeTerrainHeights">Online Documentation</a>
          */
-        fun initializeTerrainHeights(): Promise<Void>
+        suspend fun initializeTerrainHeights()
+
+        @JsName("initializeTerrainHeights")
+        fun initializeTerrainHeightsAsync(): Promise<Void>
 
         /**
          * Checks if the given Scene supports materials on GroundPrimitives.

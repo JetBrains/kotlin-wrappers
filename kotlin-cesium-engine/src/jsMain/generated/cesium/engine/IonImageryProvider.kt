@@ -180,7 +180,13 @@ private constructor() {
          * @return A promise which resolves to the created IonImageryProvider.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/IonImageryProvider.html#.fromAssetId">Online Documentation</a>
          */
-        fun fromAssetId(
+        suspend fun fromAssetId(
+            assetId: Int,
+            options: ConstructorOptions? = definedExternally,
+        ): IonImageryProvider
+
+        @JsName("fromAssetId")
+        fun fromAssetIdAsync(
             assetId: Int,
             options: ConstructorOptions? = definedExternally,
         ): Promise<IonImageryProvider>

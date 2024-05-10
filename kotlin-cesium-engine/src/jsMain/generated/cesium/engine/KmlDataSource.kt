@@ -145,22 +145,46 @@ external class KmlDataSource(options: ConstructorOptions? = definedExternally) {
      * @return A promise that will resolve to this instances once the KML is loaded.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlDataSource.html#load">Online Documentation</a>
      */
-    fun load(
+    suspend fun load(
+        data: Resource,
+        options: LoadOptions? = definedExternally,
+    ): KmlDataSource
+
+    @JsName("load")
+    fun loadAsync(
         data: Resource,
         options: LoadOptions? = definedExternally,
     ): Promise<KmlDataSource>
 
-    fun load(
+    suspend fun load(
+        data: String,
+        options: LoadOptions? = definedExternally,
+    ): KmlDataSource
+
+    @JsName("load")
+    fun loadAsync(
         data: String,
         options: LoadOptions? = definedExternally,
     ): Promise<KmlDataSource>
 
-    fun load(
+    suspend fun load(
+        data: Document,
+        options: LoadOptions? = definedExternally,
+    ): KmlDataSource
+
+    @JsName("load")
+    fun loadAsync(
         data: Document,
         options: LoadOptions? = definedExternally,
     ): Promise<KmlDataSource>
 
-    fun load(
+    suspend fun load(
+        data: Blob,
+        options: LoadOptions? = definedExternally,
+    ): KmlDataSource
+
+    @JsName("load")
+    fun loadAsync(
         data: Blob,
         options: LoadOptions? = definedExternally,
     ): Promise<KmlDataSource>
@@ -211,22 +235,46 @@ external class KmlDataSource(options: ConstructorOptions? = definedExternally) {
          * @return A promise that will resolve to a new KmlDataSource instance once the KML is loaded.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlDataSource.html#.load">Online Documentation</a>
          */
-        fun load(
+        suspend fun load(
+            data: Resource,
+            options: ConstructorOptions? = definedExternally,
+        ): KmlDataSource
+
+        @JsName("load")
+        fun loadAsync(
             data: Resource,
             options: ConstructorOptions? = definedExternally,
         ): Promise<KmlDataSource>
 
-        fun load(
+        suspend fun load(
+            data: String,
+            options: ConstructorOptions? = definedExternally,
+        ): KmlDataSource
+
+        @JsName("load")
+        fun loadAsync(
             data: String,
             options: ConstructorOptions? = definedExternally,
         ): Promise<KmlDataSource>
 
-        fun load(
+        suspend fun load(
+            data: Document,
+            options: ConstructorOptions? = definedExternally,
+        ): KmlDataSource
+
+        @JsName("load")
+        fun loadAsync(
             data: Document,
             options: ConstructorOptions? = definedExternally,
         ): Promise<KmlDataSource>
 
-        fun load(
+        suspend fun load(
+            data: Blob,
+            options: ConstructorOptions? = definedExternally,
+        ): KmlDataSource
+
+        @JsName("load")
+        fun loadAsync(
             data: Blob,
             options: ConstructorOptions? = definedExternally,
         ): Promise<KmlDataSource>

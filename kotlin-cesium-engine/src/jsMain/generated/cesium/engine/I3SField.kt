@@ -42,5 +42,8 @@ external class I3SField {
      * @return A promise that is resolved when the field data is loaded
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SField.html#load">Online Documentation</a>
      */
-    fun load(): Promise<Void>
+    suspend fun load()
+
+    @JsName("load")
+    fun loadAsync(): Promise<Void>
 }

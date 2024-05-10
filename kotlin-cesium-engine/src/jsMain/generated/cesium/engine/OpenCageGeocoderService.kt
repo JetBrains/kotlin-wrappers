@@ -56,5 +56,8 @@ external class OpenCageGeocoderService(
      * @param [query] The query to be sent to the geocoder service
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/OpenCageGeocoderService.html#geocode">Online Documentation</a>
      */
-    fun geocode(query: String): Promise<ReadonlyArray<GeocoderService.Result>>
+    suspend fun geocode(query: String): ReadonlyArray<GeocoderService.Result>
+
+    @JsName("geocode")
+    fun geocodeAsync(query: String): Promise<ReadonlyArray<GeocoderService.Result>>
 }

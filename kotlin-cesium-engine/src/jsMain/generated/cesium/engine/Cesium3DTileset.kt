@@ -1126,7 +1126,13 @@ external class Cesium3DTileset(options: ConstructorOptions) {
          * @param [options] An object describing initialization options
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#.fromIonAssetId">Online Documentation</a>
          */
-        fun fromIonAssetId(
+        suspend fun fromIonAssetId(
+            assetId: Int,
+            options: ConstructorOptions? = definedExternally,
+        ): Cesium3DTileset
+
+        @JsName("fromIonAssetId")
+        fun fromIonAssetIdAsync(
             assetId: Int,
             options: ConstructorOptions? = definedExternally,
         ): Promise<Cesium3DTileset>
@@ -1173,12 +1179,24 @@ external class Cesium3DTileset(options: ConstructorOptions) {
          * @param [options] An object describing initialization options
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#.fromUrl">Online Documentation</a>
          */
-        fun fromUrl(
+        suspend fun fromUrl(
+            url: Resource,
+            options: ConstructorOptions? = definedExternally,
+        ): Cesium3DTileset
+
+        @JsName("fromUrl")
+        fun fromUrlAsync(
             url: Resource,
             options: ConstructorOptions? = definedExternally,
         ): Promise<Cesium3DTileset>
 
-        fun fromUrl(
+        suspend fun fromUrl(
+            url: String,
+            options: ConstructorOptions? = definedExternally,
+        ): Cesium3DTileset
+
+        @JsName("fromUrl")
+        fun fromUrlAsync(
             url: String,
             options: ConstructorOptions? = definedExternally,
         ): Promise<Cesium3DTileset>
@@ -1190,9 +1208,15 @@ external class Cesium3DTileset(options: ConstructorOptions) {
          * @return A promise that resolves with the fetched json data
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#.loadJson">Online Documentation</a>
          */
-        fun loadJson(tilesetUrl: Resource): Promise<Any>
+        suspend fun loadJson(tilesetUrl: Resource): Any
 
-        fun loadJson(tilesetUrl: String): Promise<Any>
+        @JsName("loadJson")
+        fun loadJsonAsync(tilesetUrl: Resource): Promise<Any>
+
+        suspend fun loadJson(tilesetUrl: String): Any
+
+        @JsName("loadJson")
+        fun loadJsonAsync(tilesetUrl: String): Promise<Any>
     }
 }
 

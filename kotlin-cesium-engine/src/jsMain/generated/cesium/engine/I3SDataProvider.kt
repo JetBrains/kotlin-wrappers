@@ -165,7 +165,10 @@ external class I3SDataProvider(options: ConstructorOptions) {
      * @return A promise that is resolved when the filter is applied
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SDataProvider.html#filterByAttributes">Online Documentation</a>
      */
-    fun filterByAttributes(filters: ReadonlyArray<I3SNode.AttributeFilter>? = definedExternally): Promise<Void>
+    suspend fun filterByAttributes(filters: ReadonlyArray<I3SNode.AttributeFilter>? = definedExternally)
+
+    @JsName("filterByAttributes")
+    fun filterByAttributesAsync(filters: ReadonlyArray<I3SNode.AttributeFilter>? = definedExternally): Promise<Void>
 
     /**
      * Initialization options for the I3SDataProvider constructor
@@ -247,7 +250,13 @@ external class I3SDataProvider(options: ConstructorOptions) {
          * @param [options] An object describing initialization options
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SDataProvider.html#.fromUrl">Online Documentation</a>
          */
-        fun fromUrl(
+        suspend fun fromUrl(
+            url: Resource,
+            options: ConstructorOptions,
+        ): I3SDataProvider
+
+        @JsName("fromUrl")
+        fun fromUrlAsync(
             url: Resource,
             options: ConstructorOptions,
         ): Promise<I3SDataProvider>

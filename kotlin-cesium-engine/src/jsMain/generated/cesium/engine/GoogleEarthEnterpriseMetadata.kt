@@ -86,9 +86,15 @@ private constructor() {
          * @return A promise which resolves to the created GoogleEarthEnterpriseMetadata instance/
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseMetadata.html#.fromUrl">Online Documentation</a>
          */
-        fun fromUrl(resourceOrUrl: Resource): Promise<GoogleEarthEnterpriseMetadata>
+        suspend fun fromUrl(resourceOrUrl: Resource): GoogleEarthEnterpriseMetadata
 
-        fun fromUrl(resourceOrUrl: String): Promise<GoogleEarthEnterpriseMetadata>
+        @JsName("fromUrl")
+        fun fromUrlAsync(resourceOrUrl: Resource): Promise<GoogleEarthEnterpriseMetadata>
+
+        suspend fun fromUrl(resourceOrUrl: String): GoogleEarthEnterpriseMetadata
+
+        @JsName("fromUrl")
+        fun fromUrlAsync(resourceOrUrl: String): Promise<GoogleEarthEnterpriseMetadata>
 
         /**
          * Converts a tiles (x, y, level) position into a quadkey used to request an image

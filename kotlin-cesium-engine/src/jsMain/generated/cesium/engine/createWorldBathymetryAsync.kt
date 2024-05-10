@@ -34,6 +34,8 @@ import js.promise.Promise
  * @return A promise that resolves to the created CesiumTerrainProvider
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#createWorldBathymetryAsync">Online Documentation</a>
  */
+external suspend fun createWorldBathymetry(options: CreateWorldBathymetryAsyncOptions? = definedExternally): CesiumTerrainProvider
+
 external fun createWorldBathymetryAsync(options: CreateWorldBathymetryAsyncOptions? = definedExternally): Promise<CesiumTerrainProvider>
 
 /**

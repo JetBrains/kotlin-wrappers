@@ -47,9 +47,15 @@ external class DataSourceCollection {
      * @return A Promise that resolves once the data source has been added to the collection.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DataSourceCollection.html#add">Online Documentation</a>
      */
-    fun add(dataSource: DataSource): Promise<DataSource>
+    suspend fun add(dataSource: DataSource): DataSource
 
-    fun add(dataSource: Promise<DataSource>): Promise<DataSource>
+    @JsName("add")
+    fun addAsync(dataSource: DataSource): Promise<DataSource>
+
+    suspend fun add(dataSource: Promise<DataSource>): DataSource
+
+    @JsName("add")
+    fun addAsync(dataSource: Promise<DataSource>): Promise<DataSource>
 
     /**
      * Removes a data source from this collection, if present.

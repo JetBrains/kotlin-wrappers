@@ -71,5 +71,8 @@ private constructor() {
      * @return A promise that is resolved when the filter is applied
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SLayer.html#filterByAttributes">Online Documentation</a>
      */
-    fun filterByAttributes(filters: ReadonlyArray<I3SNode.AttributeFilter>? = definedExternally): Promise<Void>
+    suspend fun filterByAttributes(filters: ReadonlyArray<I3SNode.AttributeFilter>? = definedExternally)
+
+    @JsName("filterByAttributes")
+    fun filterByAttributesAsync(filters: ReadonlyArray<I3SNode.AttributeFilter>? = definedExternally): Promise<Void>
 }

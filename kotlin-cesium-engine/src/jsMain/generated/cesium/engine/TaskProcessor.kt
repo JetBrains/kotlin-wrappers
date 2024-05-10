@@ -65,7 +65,10 @@ external class TaskProcessor(
      * @return A promise that resolves to the result when the web worker has loaded and compiled the web assembly module and is ready to process tasks.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TaskProcessor.html#initWebAssemblyModule">Online Documentation</a>
      */
-    fun initWebAssemblyModule(options: InitWebAssemblyModuleOptions? = definedExternally): Promise<Any>
+    suspend fun initWebAssemblyModule(options: InitWebAssemblyModuleOptions? = definedExternally): Any
+
+    @JsName("initWebAssemblyModule")
+    fun initWebAssemblyModuleAsync(options: InitWebAssemblyModuleOptions? = definedExternally): Promise<Any>
 
     /**
      * @property [modulePath] The path of the web assembly JavaScript wrapper module.

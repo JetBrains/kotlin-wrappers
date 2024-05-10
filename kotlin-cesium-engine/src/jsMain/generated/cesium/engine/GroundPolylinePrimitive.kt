@@ -233,7 +233,10 @@ external class GroundPolylinePrimitive(options: ConstructorOptions? = definedExt
          * @return A promise that will resolve once the terrain heights have been loaded.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GroundPolylinePrimitive.html#.initializeTerrainHeights">Online Documentation</a>
          */
-        fun initializeTerrainHeights(): Promise<Void>
+        suspend fun initializeTerrainHeights()
+
+        @JsName("initializeTerrainHeights")
+        fun initializeTerrainHeightsAsync(): Promise<Void>
 
         /**
          * Checks if the given Scene supports GroundPolylinePrimitives.

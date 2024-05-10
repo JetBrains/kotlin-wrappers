@@ -294,7 +294,13 @@ external class ArcGisMapServerImageryProvider(options: ConstructorOptions? = def
          * @return A promise that resolves to the created ArcGisMapServerImageryProvider.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGisMapServerImageryProvider.html#.fromBasemapType">Online Documentation</a>
          */
-        fun fromBasemapType(
+        suspend fun fromBasemapType(
+            style: ArcGisBaseMapType,
+            options: ConstructorOptions? = definedExternally,
+        ): ArcGisMapServerImageryProvider
+
+        @JsName("fromBasemapType")
+        fun fromBasemapTypeAsync(
             style: ArcGisBaseMapType,
             options: ConstructorOptions? = definedExternally,
         ): Promise<ArcGisMapServerImageryProvider>
@@ -312,12 +318,24 @@ external class ArcGisMapServerImageryProvider(options: ConstructorOptions? = def
          * @return A promise that resolves to the created ArcGisMapServerImageryProvider.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGisMapServerImageryProvider.html#.fromUrl">Online Documentation</a>
          */
-        fun fromUrl(
+        suspend fun fromUrl(
+            url: Resource,
+            options: ConstructorOptions? = definedExternally,
+        ): ArcGisMapServerImageryProvider
+
+        @JsName("fromUrl")
+        fun fromUrlAsync(
             url: Resource,
             options: ConstructorOptions? = definedExternally,
         ): Promise<ArcGisMapServerImageryProvider>
 
-        fun fromUrl(
+        suspend fun fromUrl(
+            url: String,
+            options: ConstructorOptions? = definedExternally,
+        ): ArcGisMapServerImageryProvider
+
+        @JsName("fromUrl")
+        fun fromUrlAsync(
             url: String,
             options: ConstructorOptions? = definedExternally,
         ): Promise<ArcGisMapServerImageryProvider>

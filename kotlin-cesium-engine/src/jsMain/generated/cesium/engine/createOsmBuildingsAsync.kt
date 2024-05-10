@@ -46,6 +46,8 @@ import js.promise.Promise
  *   may be specified here. In addition to those, the following properties are supported:
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#createOsmBuildingsAsync">Online Documentation</a>
  */
+external suspend fun createOsmBuildings(options: CreateOsmBuildingsAsyncOptions? = definedExternally): Cesium3DTileset
+
 external fun createOsmBuildingsAsync(options: CreateOsmBuildingsAsyncOptions? = definedExternally): Promise<Cesium3DTileset>
 
 /**

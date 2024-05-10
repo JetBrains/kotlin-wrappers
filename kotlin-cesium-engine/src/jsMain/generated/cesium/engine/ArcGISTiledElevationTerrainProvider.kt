@@ -161,7 +161,13 @@ private constructor() :
          * @param [options] A url or an object describing initialization options.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGISTiledElevationTerrainProvider.html#.fromUrl">Online Documentation</a>
          */
-        fun fromUrl(
+        suspend fun fromUrl(
+            url: dynamic,
+            options: ConstructorOptions? = definedExternally,
+        ): ArcGISTiledElevationTerrainProvider
+
+        @JsName("fromUrl")
+        fun fromUrlAsync(
             url: dynamic,
             options: ConstructorOptions? = definedExternally,
         ): Promise<ArcGISTiledElevationTerrainProvider>

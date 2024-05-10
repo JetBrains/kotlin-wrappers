@@ -159,12 +159,24 @@ private constructor() :
          * @param [options] An object describing initialization options.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VRTheWorldTerrainProvider.html#.fromUrl">Online Documentation</a>
          */
-        fun fromUrl(
+        suspend fun fromUrl(
+            url: Resource,
+            options: ConstructorOptions? = definedExternally,
+        ): VRTheWorldTerrainProvider
+
+        @JsName("fromUrl")
+        fun fromUrlAsync(
             url: Resource,
             options: ConstructorOptions? = definedExternally,
         ): Promise<VRTheWorldTerrainProvider>
 
-        fun fromUrl(
+        suspend fun fromUrl(
+            url: String,
+            options: ConstructorOptions? = definedExternally,
+        ): VRTheWorldTerrainProvider
+
+        @JsName("fromUrl")
+        fun fromUrlAsync(
             url: String,
             options: ConstructorOptions? = definedExternally,
         ): Promise<VRTheWorldTerrainProvider>

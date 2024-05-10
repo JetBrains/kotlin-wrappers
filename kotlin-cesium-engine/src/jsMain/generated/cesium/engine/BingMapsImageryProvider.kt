@@ -228,12 +228,24 @@ private constructor() {
          * @return A promise that resolves to the created BingMapsImageryProvider
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#.fromUrl">Online Documentation</a>
          */
-        fun fromUrl(
+        suspend fun fromUrl(
+            url: Resource,
+            options: ConstructorOptions,
+        ): BingMapsImageryProvider
+
+        @JsName("fromUrl")
+        fun fromUrlAsync(
             url: Resource,
             options: ConstructorOptions,
         ): Promise<BingMapsImageryProvider>
 
-        fun fromUrl(
+        suspend fun fromUrl(
+            url: String,
+            options: ConstructorOptions,
+        ): BingMapsImageryProvider
+
+        @JsName("fromUrl")
+        fun fromUrlAsync(
             url: String,
             options: ConstructorOptions,
         ): Promise<BingMapsImageryProvider>

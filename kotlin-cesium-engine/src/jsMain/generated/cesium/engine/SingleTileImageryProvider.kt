@@ -183,12 +183,24 @@ external class SingleTileImageryProvider(options: ConstructorOptions) {
          * @return The resolved SingleTileImageryProvider.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SingleTileImageryProvider.html#.fromUrl">Online Documentation</a>
          */
-        fun fromUrl(
+        suspend fun fromUrl(
+            url: Resource,
+            options: dynamic = definedExternally,
+        ): SingleTileImageryProvider
+
+        @JsName("fromUrl")
+        fun fromUrlAsync(
             url: Resource,
             options: dynamic = definedExternally,
         ): Promise<SingleTileImageryProvider>
 
-        fun fromUrl(
+        suspend fun fromUrl(
+            url: String,
+            options: dynamic = definedExternally,
+        ): SingleTileImageryProvider
+
+        @JsName("fromUrl")
+        fun fromUrlAsync(
             url: String,
             options: dynamic = definedExternally,
         ): Promise<SingleTileImageryProvider>

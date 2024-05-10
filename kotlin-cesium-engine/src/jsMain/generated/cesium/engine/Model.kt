@@ -500,6 +500,8 @@ private constructor() {
          * @return A promise that resolves to the created model when it is ready to render.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Model.html#.fromGltfAsync">Online Documentation</a>
          */
+        suspend fun fromGltf(options: FromGltfAsyncOptions): Model
+
         fun fromGltfAsync(options: FromGltfAsyncOptions): Promise<Model>
 
         /**

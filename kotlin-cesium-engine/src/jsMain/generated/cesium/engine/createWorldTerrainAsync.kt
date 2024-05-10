@@ -35,6 +35,8 @@ import js.promise.Promise
  * @return A promise that resolves to the created CesiumTerrainProvider
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#createWorldTerrainAsync">Online Documentation</a>
  */
+external suspend fun createWorldTerrain(options: CreateWorldTerrainAsyncOptions? = definedExternally): CesiumTerrainProvider
+
 external fun createWorldTerrainAsync(options: CreateWorldTerrainAsyncOptions? = definedExternally): Promise<CesiumTerrainProvider>
 
 /**

@@ -29,6 +29,8 @@ import js.promise.Promise
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#createWorldImageryAsync">Online Documentation</a>
  */
+external suspend fun createWorldImagery(options: CreateWorldImageryAsyncOptions? = definedExternally): IonImageryProvider
+
 external fun createWorldImageryAsync(options: CreateWorldImageryAsyncOptions? = definedExternally): Promise<IonImageryProvider>
 
 /**

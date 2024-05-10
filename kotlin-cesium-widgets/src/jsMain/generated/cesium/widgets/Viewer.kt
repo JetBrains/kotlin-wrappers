@@ -407,77 +407,167 @@ external class Viewer(
      * @return A Promise that resolves to true if the zoom was successful or false if the target is not currently visualized in the scene or the zoom was cancelled.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Viewer.html#zoomTo">Online Documentation</a>
      */
-    fun zoomTo(
+    suspend fun zoomTo(
+        target: Entity,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Boolean
+
+    @JsName("zoomTo")
+    fun zoomToAsync(
         target: Entity,
         offset: HeadingPitchRange? = definedExternally,
     ): Promise<Boolean>
 
-    fun zoomTo(
+    suspend fun zoomTo(
+        target: ReadonlyArray<Entity>,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Boolean
+
+    @JsName("zoomTo")
+    fun zoomToAsync(
         target: ReadonlyArray<Entity>,
         offset: HeadingPitchRange? = definedExternally,
     ): Promise<Boolean>
 
-    fun zoomTo(
+    suspend fun zoomTo(
+        target: EntityCollection,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Boolean
+
+    @JsName("zoomTo")
+    fun zoomToAsync(
         target: EntityCollection,
         offset: HeadingPitchRange? = definedExternally,
     ): Promise<Boolean>
 
-    fun zoomTo(
+    suspend fun zoomTo(
+        target: DataSource,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Boolean
+
+    @JsName("zoomTo")
+    fun zoomToAsync(
         target: DataSource,
         offset: HeadingPitchRange? = definedExternally,
     ): Promise<Boolean>
 
-    fun zoomTo(
+    suspend fun zoomTo(
+        target: ImageryLayer,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Boolean
+
+    @JsName("zoomTo")
+    fun zoomToAsync(
         target: ImageryLayer,
         offset: HeadingPitchRange? = definedExternally,
     ): Promise<Boolean>
 
-    fun zoomTo(
+    suspend fun zoomTo(
+        target: Cesium3DTileset,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Boolean
+
+    @JsName("zoomTo")
+    fun zoomToAsync(
         target: Cesium3DTileset,
         offset: HeadingPitchRange? = definedExternally,
     ): Promise<Boolean>
 
-    fun zoomTo(
+    suspend fun zoomTo(
+        target: TimeDynamicPointCloud,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Boolean
+
+    @JsName("zoomTo")
+    fun zoomToAsync(
         target: TimeDynamicPointCloud,
         offset: HeadingPitchRange? = definedExternally,
     ): Promise<Boolean>
 
-    fun zoomTo(
+    suspend fun zoomTo(
+        target: Promise<Entity>,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Boolean
+
+    @JsName("zoomTo")
+    fun zoomToAsync(
         target: Promise<Entity>,
         offset: HeadingPitchRange? = definedExternally,
     ): Promise<Boolean>
 
-    fun zoomTo(
+    suspend fun zoomTo(
+        target: Promise<ReadonlyArray<Entity>>,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Boolean
+
+    @JsName("zoomTo")
+    fun zoomToAsync(
         target: Promise<ReadonlyArray<Entity>>,
         offset: HeadingPitchRange? = definedExternally,
     ): Promise<Boolean>
 
-    fun zoomTo(
+    suspend fun zoomTo(
+        target: Promise<EntityCollection>,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Boolean
+
+    @JsName("zoomTo")
+    fun zoomToAsync(
         target: Promise<EntityCollection>,
         offset: HeadingPitchRange? = definedExternally,
     ): Promise<Boolean>
 
-    fun zoomTo(
+    suspend fun zoomTo(
+        target: Promise<DataSource>,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Boolean
+
+    @JsName("zoomTo")
+    fun zoomToAsync(
         target: Promise<DataSource>,
         offset: HeadingPitchRange? = definedExternally,
     ): Promise<Boolean>
 
-    fun zoomTo(
+    suspend fun zoomTo(
+        target: Promise<ImageryLayer>,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Boolean
+
+    @JsName("zoomTo")
+    fun zoomToAsync(
         target: Promise<ImageryLayer>,
         offset: HeadingPitchRange? = definedExternally,
     ): Promise<Boolean>
 
-    fun zoomTo(
+    suspend fun zoomTo(
+        target: Promise<Cesium3DTileset>,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Boolean
+
+    @JsName("zoomTo")
+    fun zoomToAsync(
         target: Promise<Cesium3DTileset>,
         offset: HeadingPitchRange? = definedExternally,
     ): Promise<Boolean>
 
-    fun zoomTo(
+    suspend fun zoomTo(
+        target: Promise<TimeDynamicPointCloud>,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Boolean
+
+    @JsName("zoomTo")
+    fun zoomToAsync(
         target: Promise<TimeDynamicPointCloud>,
         offset: HeadingPitchRange? = definedExternally,
     ): Promise<Boolean>
 
-    fun zoomTo(
+    suspend fun zoomTo(
+        target: Promise<VoxelPrimitive>,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Boolean
+
+    @JsName("zoomTo")
+    fun zoomToAsync(
         target: Promise<VoxelPrimitive>,
         offset: HeadingPitchRange? = definedExternally,
     ): Promise<Boolean>
@@ -500,7 +590,13 @@ external class Viewer(
      * @return A Promise that resolves to true if the flight was successful or false if the target is not currently visualized in the scene or the flight was cancelled. //TODO: Cleanup entity mentions
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Viewer.html#flyTo">Online Documentation</a>
      */
-    fun flyTo(
+    suspend fun flyTo(
+        target: Entity,
+        options: FlyToOptions? = definedExternally,
+    ): Boolean
+
+    @JsName("flyTo")
+    fun flyToAsync(
         target: Entity,
         options: FlyToOptions? = definedExternally,
     ): Promise<Boolean>
@@ -518,72 +614,156 @@ external class Viewer(
         var offset: HeadingPitchRange?
     }
 
-    fun flyTo(
+    suspend fun flyTo(
+        target: ReadonlyArray<Entity>,
+        options: FlyToOptions? = definedExternally,
+    ): Boolean
+
+    @JsName("flyTo")
+    fun flyToAsync(
         target: ReadonlyArray<Entity>,
         options: FlyToOptions? = definedExternally,
     ): Promise<Boolean>
 
-    fun flyTo(
+    suspend fun flyTo(
+        target: EntityCollection,
+        options: FlyToOptions? = definedExternally,
+    ): Boolean
+
+    @JsName("flyTo")
+    fun flyToAsync(
         target: EntityCollection,
         options: FlyToOptions? = definedExternally,
     ): Promise<Boolean>
 
-    fun flyTo(
+    suspend fun flyTo(
+        target: DataSource,
+        options: FlyToOptions? = definedExternally,
+    ): Boolean
+
+    @JsName("flyTo")
+    fun flyToAsync(
         target: DataSource,
         options: FlyToOptions? = definedExternally,
     ): Promise<Boolean>
 
-    fun flyTo(
+    suspend fun flyTo(
+        target: ImageryLayer,
+        options: FlyToOptions? = definedExternally,
+    ): Boolean
+
+    @JsName("flyTo")
+    fun flyToAsync(
         target: ImageryLayer,
         options: FlyToOptions? = definedExternally,
     ): Promise<Boolean>
 
-    fun flyTo(
+    suspend fun flyTo(
+        target: Cesium3DTileset,
+        options: FlyToOptions? = definedExternally,
+    ): Boolean
+
+    @JsName("flyTo")
+    fun flyToAsync(
         target: Cesium3DTileset,
         options: FlyToOptions? = definedExternally,
     ): Promise<Boolean>
 
-    fun flyTo(
+    suspend fun flyTo(
+        target: TimeDynamicPointCloud,
+        options: FlyToOptions? = definedExternally,
+    ): Boolean
+
+    @JsName("flyTo")
+    fun flyToAsync(
         target: TimeDynamicPointCloud,
         options: FlyToOptions? = definedExternally,
     ): Promise<Boolean>
 
-    fun flyTo(
+    suspend fun flyTo(
+        target: Promise<Entity>,
+        options: FlyToOptions? = definedExternally,
+    ): Boolean
+
+    @JsName("flyTo")
+    fun flyToAsync(
         target: Promise<Entity>,
         options: FlyToOptions? = definedExternally,
     ): Promise<Boolean>
 
-    fun flyTo(
+    suspend fun flyTo(
+        target: Promise<ReadonlyArray<Entity>>,
+        options: FlyToOptions? = definedExternally,
+    ): Boolean
+
+    @JsName("flyTo")
+    fun flyToAsync(
         target: Promise<ReadonlyArray<Entity>>,
         options: FlyToOptions? = definedExternally,
     ): Promise<Boolean>
 
-    fun flyTo(
+    suspend fun flyTo(
+        target: Promise<EntityCollection>,
+        options: FlyToOptions? = definedExternally,
+    ): Boolean
+
+    @JsName("flyTo")
+    fun flyToAsync(
         target: Promise<EntityCollection>,
         options: FlyToOptions? = definedExternally,
     ): Promise<Boolean>
 
-    fun flyTo(
+    suspend fun flyTo(
+        target: Promise<DataSource>,
+        options: FlyToOptions? = definedExternally,
+    ): Boolean
+
+    @JsName("flyTo")
+    fun flyToAsync(
         target: Promise<DataSource>,
         options: FlyToOptions? = definedExternally,
     ): Promise<Boolean>
 
-    fun flyTo(
+    suspend fun flyTo(
+        target: Promise<ImageryLayer>,
+        options: FlyToOptions? = definedExternally,
+    ): Boolean
+
+    @JsName("flyTo")
+    fun flyToAsync(
         target: Promise<ImageryLayer>,
         options: FlyToOptions? = definedExternally,
     ): Promise<Boolean>
 
-    fun flyTo(
+    suspend fun flyTo(
+        target: Promise<Cesium3DTileset>,
+        options: FlyToOptions? = definedExternally,
+    ): Boolean
+
+    @JsName("flyTo")
+    fun flyToAsync(
         target: Promise<Cesium3DTileset>,
         options: FlyToOptions? = definedExternally,
     ): Promise<Boolean>
 
-    fun flyTo(
+    suspend fun flyTo(
+        target: Promise<TimeDynamicPointCloud>,
+        options: FlyToOptions? = definedExternally,
+    ): Boolean
+
+    @JsName("flyTo")
+    fun flyToAsync(
         target: Promise<TimeDynamicPointCloud>,
         options: FlyToOptions? = definedExternally,
     ): Promise<Boolean>
 
-    fun flyTo(
+    suspend fun flyTo(
+        target: Promise<VoxelPrimitive>,
+        options: FlyToOptions? = definedExternally,
+    ): Boolean
+
+    @JsName("flyTo")
+    fun flyToAsync(
         target: Promise<VoxelPrimitive>,
         options: FlyToOptions? = definedExternally,
     ): Promise<Boolean>

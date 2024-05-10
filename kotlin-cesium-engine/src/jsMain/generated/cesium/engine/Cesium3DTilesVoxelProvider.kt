@@ -146,8 +146,14 @@ external class Cesium3DTilesVoxelProvider(options: Any) {
          * @return The created provider
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#.fromUrl">Online Documentation</a>
          */
-        fun fromUrl(url: Resource): Promise<Cesium3DTilesVoxelProvider>
+        suspend fun fromUrl(url: Resource): Cesium3DTilesVoxelProvider
 
-        fun fromUrl(url: String): Promise<Cesium3DTilesVoxelProvider>
+        @JsName("fromUrl")
+        fun fromUrlAsync(url: Resource): Promise<Cesium3DTilesVoxelProvider>
+
+        suspend fun fromUrl(url: String): Cesium3DTilesVoxelProvider
+
+        @JsName("fromUrl")
+        fun fromUrlAsync(url: String): Promise<Cesium3DTilesVoxelProvider>
     }
 }

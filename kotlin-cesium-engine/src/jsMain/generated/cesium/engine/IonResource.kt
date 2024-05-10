@@ -100,7 +100,13 @@ external class IonResource(
          * @return A Promise to am instance representing the Cesium ion Asset.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/IonResource.html#.fromAssetId">Online Documentation</a>
          */
-        fun fromAssetId(
+        suspend fun fromAssetId(
+            assetId: Int,
+            options: FromAssetIdOptions? = definedExternally,
+        ): IonResource
+
+        @JsName("fromAssetId")
+        fun fromAssetIdAsync(
             assetId: Int,
             options: FromAssetIdOptions? = definedExternally,
         ): Promise<IonResource>

@@ -258,7 +258,10 @@ external object Transforms {
      *   no longer return undefined for a time inside the interval.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Transforms.html#.preloadIcrfFixed">Online Documentation</a>
      */
-    fun preloadIcrfFixed(timeInterval: TimeInterval): Promise<Void>
+    suspend fun preloadIcrfFixed(timeInterval: TimeInterval)
+
+    @JsName("preloadIcrfFixed")
+    fun preloadIcrfFixedAsync(timeInterval: TimeInterval): Promise<Void>
 
     /**
      * Computes a rotation matrix to transform a point or vector from the International Celestial

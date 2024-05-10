@@ -108,7 +108,13 @@ external class GpxDataSource {
      * @return A promise that will resolve to this instances once the GPX is loaded.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GpxDataSource.html#load">Online Documentation</a>
      */
-    fun load(
+    suspend fun load(
+        data: dynamic,
+        options: LoadOptions? = definedExternally,
+    ): GpxDataSource
+
+    @JsName("load")
+    fun loadAsync(
         data: dynamic,
         options: LoadOptions? = definedExternally,
     ): Promise<GpxDataSource>
@@ -136,7 +142,13 @@ external class GpxDataSource {
          * @return A promise that will resolve to a new GpxDataSource instance once the gpx is loaded.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GpxDataSource.html#.load">Online Documentation</a>
          */
-        fun load(
+        suspend fun load(
+            data: dynamic,
+            options: LoadOptions? = definedExternally,
+        ): GpxDataSource
+
+        @JsName("load")
+        fun loadAsync(
             data: dynamic,
             options: LoadOptions? = definedExternally,
         ): Promise<GpxDataSource>
