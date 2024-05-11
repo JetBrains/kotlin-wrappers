@@ -1,12 +1,13 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@actions/artifact")
+
 package actions.artifact
 
+import js.promise.Promise
 import node.buffer.Buffer
 
-suspend fun createGZipFileInBuffer(
-    originalFilePath: String,
-): Buffer =
-    createGZipFileInBufferAsync(
-        originalFilePath = originalFilePath,
-    ).await()
+external suspend fun createGZipFileInBuffer(originalFilePath: String): Buffer
+
+@JsName("createGZipFileInBuffer")
+external fun createGZipFileInBufferAsync(originalFilePath: String): Promise<Buffer>

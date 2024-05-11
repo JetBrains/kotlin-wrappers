@@ -1,61 +1,26 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@actions/cache")
+
 package actions.cache
 
 import js.promise.Promise
 
-suspend fun <T> retry(
+external suspend fun <T> retry(
     name: String,
     method: () -> Promise<T>,
     getStatusCode: (arg0: T) -> Number?,
-): T =
-    retryAsync(
-        name = name,
-        method = method,
-        getStatusCode = getStatusCode,
-    ).await()
+    maxAttempts: Number = definedExternally,
+    delay: Number = definedExternally,
+    onError: ((arg0: Error) -> T?)? = definedExternally,
+): T
 
-suspend fun <T> retry(
+@JsName("retry")
+external fun <T> retryAsync(
     name: String,
     method: () -> Promise<T>,
     getStatusCode: (arg0: T) -> Number?,
-    maxAttempts: Number,
-): T =
-    retryAsync(
-        name = name,
-        method = method,
-        getStatusCode = getStatusCode,
-        maxAttempts = maxAttempts,
-    ).await()
-
-suspend fun <T> retry(
-    name: String,
-    method: () -> Promise<T>,
-    getStatusCode: (arg0: T) -> Number?,
-    maxAttempts: Number,
-    delay: Number,
-): T =
-    retryAsync(
-        name = name,
-        method = method,
-        getStatusCode = getStatusCode,
-        maxAttempts = maxAttempts,
-        delay = delay,
-    ).await()
-
-suspend fun <T> retry(
-    name: String,
-    method: () -> Promise<T>,
-    getStatusCode: (arg0: T) -> Number?,
-    maxAttempts: Number,
-    delay: Number,
-    onError: ((arg0: Error) -> T?)?,
-): T =
-    retryAsync(
-        name = name,
-        method = method,
-        getStatusCode = getStatusCode,
-        maxAttempts = maxAttempts,
-        delay = delay,
-        onError = onError,
-    ).await()
+    maxAttempts: Number = definedExternally,
+    delay: Number = definedExternally,
+    onError: ((arg0: Error) -> T?)? = definedExternally,
+): Promise<T>

@@ -1,11 +1,18 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@actions/artifact")
+
 package actions.artifact
-suspend fun createGZipFileOnDisk(
+
+import js.promise.Promise
+
+external suspend fun createGZipFileOnDisk(
     originalFilePath: String,
     tempFilePath: String,
-): Number =
-    createGZipFileOnDiskAsync(
-        originalFilePath = originalFilePath,
-        tempFilePath = tempFilePath,
-    ).await()
+): Number
+
+@JsName("createGZipFileOnDisk")
+external fun createGZipFileOnDiskAsync(
+    originalFilePath: String,
+    tempFilePath: String,
+): Promise<Number>

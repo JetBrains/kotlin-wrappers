@@ -1,26 +1,22 @@
 // Automatically generated - do not modify!
 
-package actions.tool.cache
-suspend fun cacheDir(
-    sourceDir: String,
-    tool: String,
-    version: String,
-): String =
-    cacheDirAsync(
-        sourceDir = sourceDir,
-        tool = tool,
-        version = version,
-    ).await()
+@file:JsModule("@actions/tool-cache")
 
-suspend fun cacheDir(
+package actions.tool.cache
+
+import js.promise.Promise
+
+external suspend fun cacheDir(
     sourceDir: String,
     tool: String,
     version: String,
-    arch: String,
-): String =
-    cacheDirAsync(
-        sourceDir = sourceDir,
-        tool = tool,
-        version = version,
-        arch = arch,
-    ).await()
+    arch: String = definedExternally,
+): String
+
+@JsName("cacheDir")
+external fun cacheDirAsync(
+    sourceDir: String,
+    tool: String,
+    version: String,
+    arch: String = definedExternally,
+): Promise<String>

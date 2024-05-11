@@ -1,5 +1,12 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@actions/cache")
+
 package actions.cache
-suspend fun createTempDirectory(): String =
-    createTempDirectoryAsync().await()
+
+import js.promise.Promise
+
+external suspend fun createTempDirectory(): String
+
+@JsName("createTempDirectory")
+external fun createTempDirectoryAsync(): Promise<String>

@@ -1,29 +1,20 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@actions/tool-cache")
+
 package actions.tool.cache
-suspend fun extract7z(
-    file: String,
-): String =
-    extract7zAsync(
-        file = file,
-    ).await()
 
-suspend fun extract7z(
-    file: String,
-    dest: String,
-): String =
-    extract7zAsync(
-        file = file,
-        dest = dest,
-    ).await()
+import js.promise.Promise
 
-suspend fun extract7z(
+external suspend fun extract7z(
     file: String,
-    dest: String,
-    _7zPath: String,
-): String =
-    extract7zAsync(
-        file = file,
-        dest = dest,
-        _7zPath = _7zPath,
-    ).await()
+    dest: String = definedExternally,
+    _7zPath: String = definedExternally,
+): String
+
+@JsName("extract7z")
+external fun extract7zAsync(
+    file: String,
+    dest: String = definedExternally,
+    _7zPath: String = definedExternally,
+): Promise<String>

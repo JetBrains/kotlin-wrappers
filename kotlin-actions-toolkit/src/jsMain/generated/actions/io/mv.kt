@@ -1,24 +1,21 @@
 // Automatically generated - do not modify!
 
-package actions.io
-suspend fun mv(
-    source: String,
-    dest: String,
-) {
-    mvAsync(
-        source = source,
-        dest = dest,
-    ).await()
-}
+@file:JsModule("@actions/io")
 
-suspend fun mv(
+package actions.io
+
+import js.core.Void
+import js.promise.Promise
+
+external suspend fun mv(
     source: String,
     dest: String,
-    options: MoveOptions,
-) {
-    mvAsync(
-        source = source,
-        dest = dest,
-        options = options,
-    ).await()
-}
+    options: MoveOptions = definedExternally,
+)
+
+@JsName("mv")
+external fun mvAsync(
+    source: String,
+    dest: String,
+    options: MoveOptions = definedExternally,
+): Promise<Void>

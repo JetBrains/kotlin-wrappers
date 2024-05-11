@@ -1,18 +1,18 @@
 // Automatically generated - do not modify!
 
-package actions.glob
-suspend fun create(
-    patterns: String,
-): Globber =
-    createAsync(
-        patterns = patterns,
-    ).await()
+@file:JsModule("@actions/glob")
 
-suspend fun create(
+package actions.glob
+
+import js.promise.Promise
+
+external suspend fun create(
     patterns: String,
-    options: GlobOptions,
-): Globber =
-    createAsync(
-        patterns = patterns,
-        options = options,
-    ).await()
+    options: GlobOptions = definedExternally,
+): Globber
+
+@JsName("create")
+external fun createAsync(
+    patterns: String,
+    options: GlobOptions = definedExternally,
+): Promise<Globber>

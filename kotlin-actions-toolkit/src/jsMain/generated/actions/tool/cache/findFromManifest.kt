@@ -1,29 +1,23 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@actions/tool-cache")
+
 package actions.tool.cache
 
 import js.array.ReadonlyArray
+import js.promise.Promise
 
-suspend fun findFromManifest(
+external suspend fun findFromManifest(
     versionSpec: String,
     stable: Boolean,
     manifest: ReadonlyArray<IToolRelease>,
-): IToolRelease? =
-    findFromManifestAsync(
-        versionSpec = versionSpec,
-        stable = stable,
-        manifest = manifest,
-    ).await()
+    archFilter: String = definedExternally,
+): IToolRelease?
 
-suspend fun findFromManifest(
+@JsName("findFromManifest")
+external fun findFromManifestAsync(
     versionSpec: String,
     stable: Boolean,
     manifest: ReadonlyArray<IToolRelease>,
-    archFilter: String,
-): IToolRelease? =
-    findFromManifestAsync(
-        versionSpec = versionSpec,
-        stable = stable,
-        manifest = manifest,
-        archFilter = archFilter,
-    ).await()
+    archFilter: String = definedExternally,
+): Promise<IToolRelease?>

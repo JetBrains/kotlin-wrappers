@@ -1,18 +1,18 @@
 // Automatically generated - do not modify!
 
-package actions.tool.cache
-suspend fun extractZip(
-    file: String,
-): String =
-    extractZipAsync(
-        file = file,
-    ).await()
+@file:JsModule("@actions/tool-cache")
 
-suspend fun extractZip(
+package actions.tool.cache
+
+import js.promise.Promise
+
+external suspend fun extractZip(
     file: String,
-    dest: String,
-): String =
-    extractZipAsync(
-        file = file,
-        dest = dest,
-    ).await()
+    dest: String = definedExternally,
+): String
+
+@JsName("extractZip")
+external fun extractZipAsync(
+    file: String,
+    dest: String = definedExternally,
+): Promise<String>

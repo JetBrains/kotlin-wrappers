@@ -1,12 +1,19 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@actions/cache")
+
 package actions.cache
-suspend fun listTar(
+
+import js.core.Void
+import js.promise.Promise
+
+external suspend fun listTar(
     archivePath: String,
     compressionMethod: CompressionMethod,
-) {
-    listTarAsync(
-        archivePath = archivePath,
-        compressionMethod = compressionMethod,
-    ).await()
-}
+)
+
+@JsName("listTar")
+external fun listTarAsync(
+    archivePath: String,
+    compressionMethod: CompressionMethod,
+): Promise<Void>

@@ -1,32 +1,21 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@actions/exec")
+
 package actions.exec
 
 import js.array.ReadonlyArray
+import js.promise.Promise
 
-suspend fun getExecOutput(
+external suspend fun getExecOutput(
     commandLine: String,
-): ExecOutput =
-    getExecOutputAsync(
-        commandLine = commandLine,
-    ).await()
+    args: ReadonlyArray<String> = definedExternally,
+    options: ExecOptions = definedExternally,
+): ExecOutput
 
-suspend fun getExecOutput(
+@JsName("getExecOutput")
+external fun getExecOutputAsync(
     commandLine: String,
-    args: ReadonlyArray<String>,
-): ExecOutput =
-    getExecOutputAsync(
-        commandLine = commandLine,
-        args = args,
-    ).await()
-
-suspend fun getExecOutput(
-    commandLine: String,
-    args: ReadonlyArray<String>,
-    options: ExecOptions,
-): ExecOutput =
-    getExecOutputAsync(
-        commandLine = commandLine,
-        args = args,
-        options = options,
-    ).await()
+    args: ReadonlyArray<String> = definedExternally,
+    options: ExecOptions = definedExternally,
+): Promise<ExecOutput>

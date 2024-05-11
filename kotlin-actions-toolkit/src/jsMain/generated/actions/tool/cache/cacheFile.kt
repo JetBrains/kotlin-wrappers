@@ -1,30 +1,24 @@
 // Automatically generated - do not modify!
 
-package actions.tool.cache
-suspend fun cacheFile(
-    sourceFile: String,
-    targetFile: String,
-    tool: String,
-    version: String,
-): String =
-    cacheFileAsync(
-        sourceFile = sourceFile,
-        targetFile = targetFile,
-        tool = tool,
-        version = version,
-    ).await()
+@file:JsModule("@actions/tool-cache")
 
-suspend fun cacheFile(
+package actions.tool.cache
+
+import js.promise.Promise
+
+external suspend fun cacheFile(
     sourceFile: String,
     targetFile: String,
     tool: String,
     version: String,
-    arch: String,
-): String =
-    cacheFileAsync(
-        sourceFile = sourceFile,
-        targetFile = targetFile,
-        tool = tool,
-        version = version,
-        arch = arch,
-    ).await()
+    arch: String = definedExternally,
+): String
+
+@JsName("cacheFile")
+external fun cacheFileAsync(
+    sourceFile: String,
+    targetFile: String,
+    tool: String,
+    version: String,
+    arch: String = definedExternally,
+): Promise<String>
