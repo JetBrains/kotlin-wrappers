@@ -32,6 +32,6 @@ sealed external interface PromiseLike<out T> :
         onRejected: (JsError) -> PromiseResult<R>,
     ): PromiseLike<R>
 
-    suspend inline fun await(): T =
+    override suspend inline fun await(): T =
         awaitPromiseLike(this)
 }
