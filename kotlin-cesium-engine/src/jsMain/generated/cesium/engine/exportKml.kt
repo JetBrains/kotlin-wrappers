@@ -6,6 +6,7 @@ package cesium.engine
 
 import js.objects.JsPlainObject
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * Exports an EntityCollection as a KML document. Only Point, Billboard, Model, Path, Polygon, Polyline geometries
@@ -33,6 +34,7 @@ import js.promise.Promise
  * @return A promise that resolved to an object containing the KML string and a dictionary of external file blobs, or a kmz file as a blob if options.kmz is true.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#exportKml">Online Documentation</a>
  */
+@JsAsync
 external suspend fun exportKml(options: ExportKmlOptions): dynamic
 
 @JsName("exportKml")

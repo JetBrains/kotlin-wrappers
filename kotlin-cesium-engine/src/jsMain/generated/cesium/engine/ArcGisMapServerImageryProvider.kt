@@ -12,6 +12,7 @@ import js.array.ReadonlyArray
 import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * <div class="notice">
@@ -294,6 +295,7 @@ external class ArcGisMapServerImageryProvider(options: ConstructorOptions? = def
          * @return A promise that resolves to the created ArcGisMapServerImageryProvider.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGisMapServerImageryProvider.html#.fromBasemapType">Online Documentation</a>
          */
+        @JsAsync
         suspend fun fromBasemapType(
             style: ArcGisBaseMapType,
             options: ConstructorOptions? = definedExternally,
@@ -318,6 +320,7 @@ external class ArcGisMapServerImageryProvider(options: ConstructorOptions? = def
          * @return A promise that resolves to the created ArcGisMapServerImageryProvider.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGisMapServerImageryProvider.html#.fromUrl">Online Documentation</a>
          */
+        @JsAsync
         suspend fun fromUrl(
             url: Resource,
             options: ConstructorOptions? = definedExternally,
@@ -329,6 +332,7 @@ external class ArcGisMapServerImageryProvider(options: ConstructorOptions? = def
             options: ConstructorOptions? = definedExternally,
         ): Promise<ArcGisMapServerImageryProvider>
 
+        @JsAsync
         suspend fun fromUrl(
             url: String,
             options: ConstructorOptions? = definedExternally,

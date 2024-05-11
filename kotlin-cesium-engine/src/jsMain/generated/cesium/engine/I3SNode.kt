@@ -8,6 +8,7 @@ import js.array.ReadonlyArray
 import js.core.Void
 import js.objects.JsPlainObject
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * This class implements an I3S Node. In CesiumJS each I3SNode creates a Cesium3DTile.
@@ -76,6 +77,7 @@ private constructor() {
      * @return A promise that is resolved when the I3S Node fields are loaded
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SNode.html#loadFields">Online Documentation</a>
      */
+    @JsAsync
     suspend fun loadFields()
 
     @JsName("loadFields")
@@ -87,6 +89,7 @@ private constructor() {
      * @return A promise that is resolved when the I3S Node field is loaded
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SNode.html#loadField">Online Documentation</a>
      */
+    @JsAsync
     suspend fun loadField(name: String)
 
     @JsName("loadField")

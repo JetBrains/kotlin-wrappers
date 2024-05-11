@@ -7,6 +7,7 @@ package cesium.engine
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * A [VoxelProvider] that fetches voxel data from a 3D Tiles tileset.
@@ -146,11 +147,13 @@ external class Cesium3DTilesVoxelProvider(options: Any) {
          * @return The created provider
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#.fromUrl">Online Documentation</a>
          */
+        @JsAsync
         suspend fun fromUrl(url: Resource): Cesium3DTilesVoxelProvider
 
         @JsName("fromUrl")
         fun fromUrlAsync(url: Resource): Promise<Cesium3DTilesVoxelProvider>
 
+        @JsAsync
         suspend fun fromUrl(url: String): Cesium3DTilesVoxelProvider
 
         @JsName("fromUrl")

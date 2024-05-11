@@ -12,6 +12,7 @@ import js.core.Void
 import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * A GroundPolylinePrimitive represents a polyline draped over the terrain or 3D Tiles in the [Scene].
@@ -233,6 +234,7 @@ external class GroundPolylinePrimitive(options: ConstructorOptions? = definedExt
          * @return A promise that will resolve once the terrain heights have been loaded.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GroundPolylinePrimitive.html#.initializeTerrainHeights">Online Documentation</a>
          */
+        @JsAsync
         suspend fun initializeTerrainHeights()
 
         @JsName("initializeTerrainHeights")

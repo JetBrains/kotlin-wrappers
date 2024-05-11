@@ -12,6 +12,7 @@ package cesium.engine
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * A [DataSource] which processes [CZML](https://github.com/AnalyticalGraphicsInc/czml-writer/wiki/CZML-Guide).
@@ -85,6 +86,7 @@ external class CzmlDataSource(var name: String = definedExternally) {
      * @return A promise that resolves to this instances once the data is processed.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CzmlDataSource.html#process">Online Documentation</a>
      */
+    @JsAsync
     suspend fun process(
         czml: Resource,
         options: LoadOptions? = definedExternally,
@@ -96,6 +98,7 @@ external class CzmlDataSource(var name: String = definedExternally) {
         options: LoadOptions? = definedExternally,
     ): Promise<CzmlDataSource>
 
+    @JsAsync
     suspend fun process(
         czml: String,
         options: LoadOptions? = definedExternally,
@@ -107,6 +110,7 @@ external class CzmlDataSource(var name: String = definedExternally) {
         options: LoadOptions? = definedExternally,
     ): Promise<CzmlDataSource>
 
+    @JsAsync
     suspend fun process(
         czml: Any,
         options: LoadOptions? = definedExternally,
@@ -125,6 +129,7 @@ external class CzmlDataSource(var name: String = definedExternally) {
      * @return A promise that resolves to this instances once the data is processed.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CzmlDataSource.html#load">Online Documentation</a>
      */
+    @JsAsync
     suspend fun load(
         czml: Resource,
         options: LoadOptions? = definedExternally,
@@ -136,6 +141,7 @@ external class CzmlDataSource(var name: String = definedExternally) {
         options: LoadOptions? = definedExternally,
     ): Promise<CzmlDataSource>
 
+    @JsAsync
     suspend fun load(
         czml: String,
         options: LoadOptions? = definedExternally,
@@ -147,6 +153,7 @@ external class CzmlDataSource(var name: String = definedExternally) {
         options: LoadOptions? = definedExternally,
     ): Promise<CzmlDataSource>
 
+    @JsAsync
     suspend fun load(
         czml: Any,
         options: LoadOptions? = definedExternally,
@@ -177,6 +184,7 @@ external class CzmlDataSource(var name: String = definedExternally) {
          * @return A promise that resolves to the new instance once the data is processed.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CzmlDataSource.html#.load">Online Documentation</a>
          */
+        @JsAsync
         suspend fun load(
             czml: Resource,
             options: LoadOptions? = definedExternally,
@@ -188,6 +196,7 @@ external class CzmlDataSource(var name: String = definedExternally) {
             options: LoadOptions? = definedExternally,
         ): Promise<CzmlDataSource>
 
+        @JsAsync
         suspend fun load(
             czml: String,
             options: LoadOptions? = definedExternally,
@@ -199,6 +208,7 @@ external class CzmlDataSource(var name: String = definedExternally) {
             options: LoadOptions? = definedExternally,
         ): Promise<CzmlDataSource>
 
+        @JsAsync
         suspend fun load(
             czml: Any,
             options: LoadOptions? = definedExternally,

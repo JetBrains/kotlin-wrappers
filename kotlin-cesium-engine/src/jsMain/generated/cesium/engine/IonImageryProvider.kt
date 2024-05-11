@@ -7,6 +7,7 @@ package cesium.engine
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * <div class="notice">
@@ -180,6 +181,7 @@ private constructor() {
          * @return A promise which resolves to the created IonImageryProvider.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/IonImageryProvider.html#.fromAssetId">Online Documentation</a>
          */
+        @JsAsync
         suspend fun fromAssetId(
             assetId: Int,
             options: ConstructorOptions? = definedExternally,

@@ -7,6 +7,7 @@ package cesium.engine
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * A wrapper around a web worker that allows scheduling tasks for a given worker,
@@ -65,6 +66,7 @@ external class TaskProcessor(
      * @return A promise that resolves to the result when the web worker has loaded and compiled the web assembly module and is ready to process tasks.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TaskProcessor.html#initWebAssemblyModule">Online Documentation</a>
      */
+    @JsAsync
     suspend fun initWebAssemblyModule(options: InitWebAssemblyModuleOptions? = definedExternally): Any
 
     @JsName("initWebAssemblyModule")

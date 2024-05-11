@@ -12,6 +12,7 @@ package cesium.engine
 import js.core.Void
 import js.objects.JsPlainObject
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * <div class="notice">
@@ -217,6 +218,7 @@ private constructor() :
          * @param [options] An object describing initialization options.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumTerrainProvider.html#.fromIonAssetId">Online Documentation</a>
          */
+        @JsAsync
         suspend fun fromIonAssetId(
             assetId: Int,
             options: ConstructorOptions? = definedExternally,
@@ -250,6 +252,7 @@ private constructor() :
          * @param [options] An object describing initialization options.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumTerrainProvider.html#.fromUrl">Online Documentation</a>
          */
+        @JsAsync
         suspend fun fromUrl(
             url: dynamic,
             options: ConstructorOptions? = definedExternally,

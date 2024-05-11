@@ -13,6 +13,7 @@ import js.core.Void
 import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * Provides a single, top-level imagery tile.  The single image is assumed to be in
@@ -183,6 +184,7 @@ external class SingleTileImageryProvider(options: ConstructorOptions) {
          * @return The resolved SingleTileImageryProvider.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SingleTileImageryProvider.html#.fromUrl">Online Documentation</a>
          */
+        @JsAsync
         suspend fun fromUrl(
             url: Resource,
             options: dynamic = definedExternally,
@@ -194,6 +196,7 @@ external class SingleTileImageryProvider(options: ConstructorOptions) {
             options: dynamic = definedExternally,
         ): Promise<SingleTileImageryProvider>
 
+        @JsAsync
         suspend fun fromUrl(
             url: String,
             options: dynamic = definedExternally,

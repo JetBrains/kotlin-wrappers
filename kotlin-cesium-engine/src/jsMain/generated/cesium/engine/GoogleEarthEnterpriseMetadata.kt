@@ -6,6 +6,7 @@ package cesium.engine
 
 import js.buffer.ArrayBuffer
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * <div class="notice">
@@ -86,11 +87,13 @@ private constructor() {
          * @return A promise which resolves to the created GoogleEarthEnterpriseMetadata instance/
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseMetadata.html#.fromUrl">Online Documentation</a>
          */
+        @JsAsync
         suspend fun fromUrl(resourceOrUrl: Resource): GoogleEarthEnterpriseMetadata
 
         @JsName("fromUrl")
         fun fromUrlAsync(resourceOrUrl: Resource): Promise<GoogleEarthEnterpriseMetadata>
 
+        @JsAsync
         suspend fun fromUrl(resourceOrUrl: String): GoogleEarthEnterpriseMetadata
 
         @JsName("fromUrl")

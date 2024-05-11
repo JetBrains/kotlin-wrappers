@@ -6,6 +6,7 @@ package cesium.engine
 
 import js.objects.JsPlainObject
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * Creates an [IonImageryProvider] instance for ion's default global base imagery layer, currently Bing Maps.
@@ -29,6 +30,7 @@ import js.promise.Promise
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#createWorldImageryAsync">Online Documentation</a>
  */
+@JsAsync
 external suspend fun createWorldImagery(options: CreateWorldImageryAsyncOptions? = definedExternally): IonImageryProvider
 
 external fun createWorldImageryAsync(options: CreateWorldImageryAsyncOptions? = definedExternally): Promise<IonImageryProvider>

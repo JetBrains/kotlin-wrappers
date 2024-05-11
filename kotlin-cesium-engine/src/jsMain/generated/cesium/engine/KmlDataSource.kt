@@ -12,6 +12,7 @@ import js.array.ReadonlyArray
 import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.blob.Blob
 import web.dom.Document
 import web.dom.Element
@@ -145,6 +146,7 @@ external class KmlDataSource(options: ConstructorOptions? = definedExternally) {
      * @return A promise that will resolve to this instances once the KML is loaded.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlDataSource.html#load">Online Documentation</a>
      */
+    @JsAsync
     suspend fun load(
         data: Resource,
         options: LoadOptions? = definedExternally,
@@ -156,6 +158,7 @@ external class KmlDataSource(options: ConstructorOptions? = definedExternally) {
         options: LoadOptions? = definedExternally,
     ): Promise<KmlDataSource>
 
+    @JsAsync
     suspend fun load(
         data: String,
         options: LoadOptions? = definedExternally,
@@ -167,6 +170,7 @@ external class KmlDataSource(options: ConstructorOptions? = definedExternally) {
         options: LoadOptions? = definedExternally,
     ): Promise<KmlDataSource>
 
+    @JsAsync
     suspend fun load(
         data: Document,
         options: LoadOptions? = definedExternally,
@@ -178,6 +182,7 @@ external class KmlDataSource(options: ConstructorOptions? = definedExternally) {
         options: LoadOptions? = definedExternally,
     ): Promise<KmlDataSource>
 
+    @JsAsync
     suspend fun load(
         data: Blob,
         options: LoadOptions? = definedExternally,
@@ -235,6 +240,7 @@ external class KmlDataSource(options: ConstructorOptions? = definedExternally) {
          * @return A promise that will resolve to a new KmlDataSource instance once the KML is loaded.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlDataSource.html#.load">Online Documentation</a>
          */
+        @JsAsync
         suspend fun load(
             data: Resource,
             options: ConstructorOptions? = definedExternally,
@@ -246,6 +252,7 @@ external class KmlDataSource(options: ConstructorOptions? = definedExternally) {
             options: ConstructorOptions? = definedExternally,
         ): Promise<KmlDataSource>
 
+        @JsAsync
         suspend fun load(
             data: String,
             options: ConstructorOptions? = definedExternally,
@@ -257,6 +264,7 @@ external class KmlDataSource(options: ConstructorOptions? = definedExternally) {
             options: ConstructorOptions? = definedExternally,
         ): Promise<KmlDataSource>
 
+        @JsAsync
         suspend fun load(
             data: Document,
             options: ConstructorOptions? = definedExternally,
@@ -268,6 +276,7 @@ external class KmlDataSource(options: ConstructorOptions? = definedExternally) {
             options: ConstructorOptions? = definedExternally,
         ): Promise<KmlDataSource>
 
+        @JsAsync
         suspend fun load(
             data: Blob,
             options: ConstructorOptions? = definedExternally,

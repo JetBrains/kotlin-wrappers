@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * Creates a [Cesium3DTileset] instance for the Google Photorealistic 3D Tiles tileset.
@@ -36,6 +37,7 @@ import js.promise.Promise
  * @param [options] An object describing initialization options.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#createGooglePhotorealistic3DTileset">Online Documentation</a>
  */
+@JsAsync
 external suspend fun createGooglePhotorealistic3DTileset(
     key: String? = definedExternally,
     options: Cesium3DTileset.ConstructorOptions? = definedExternally,

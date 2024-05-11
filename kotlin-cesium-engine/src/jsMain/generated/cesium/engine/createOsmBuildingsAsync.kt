@@ -6,6 +6,7 @@ package cesium.engine
 
 import js.objects.JsPlainObject
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * Creates a [Cesium3DTileset] instance for the
@@ -46,6 +47,7 @@ import js.promise.Promise
  *   may be specified here. In addition to those, the following properties are supported:
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#createOsmBuildingsAsync">Online Documentation</a>
  */
+@JsAsync
 external suspend fun createOsmBuildings(options: CreateOsmBuildingsAsyncOptions? = definedExternally): Cesium3DTileset
 
 external fun createOsmBuildingsAsync(options: CreateOsmBuildingsAsyncOptions? = definedExternally): Promise<Cesium3DTileset>

@@ -12,6 +12,7 @@ package cesium.engine
 import js.core.Void
 import js.objects.JsPlainObject
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * <div class="notice">
@@ -159,6 +160,7 @@ private constructor() :
          * @param [options] An object describing initialization options.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VRTheWorldTerrainProvider.html#.fromUrl">Online Documentation</a>
          */
+        @JsAsync
         suspend fun fromUrl(
             url: Resource,
             options: ConstructorOptions? = definedExternally,
@@ -170,6 +172,7 @@ private constructor() :
             options: ConstructorOptions? = definedExternally,
         ): Promise<VRTheWorldTerrainProvider>
 
+        @JsAsync
         suspend fun fromUrl(
             url: String,
             options: ConstructorOptions? = definedExternally,

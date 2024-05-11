@@ -8,6 +8,7 @@ import js.array.ReadonlyArray
 import js.core.Void
 import js.objects.JsPlainObject
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * <div class="notice">
@@ -228,6 +229,7 @@ private constructor() {
          * @return A promise that resolves to the created BingMapsImageryProvider
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#.fromUrl">Online Documentation</a>
          */
+        @JsAsync
         suspend fun fromUrl(
             url: Resource,
             options: ConstructorOptions,
@@ -239,6 +241,7 @@ private constructor() {
             options: ConstructorOptions,
         ): Promise<BingMapsImageryProvider>
 
+        @JsAsync
         suspend fun fromUrl(
             url: String,
             options: ConstructorOptions,

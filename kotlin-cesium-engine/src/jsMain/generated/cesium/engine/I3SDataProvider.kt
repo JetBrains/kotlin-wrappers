@@ -13,6 +13,7 @@ import js.core.Void
 import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * An I3SDataProvider is the main public class for I3S support. The url option
@@ -165,6 +166,7 @@ external class I3SDataProvider(options: ConstructorOptions) {
      * @return A promise that is resolved when the filter is applied
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SDataProvider.html#filterByAttributes">Online Documentation</a>
      */
+    @JsAsync
     suspend fun filterByAttributes(filters: ReadonlyArray<I3SNode.AttributeFilter>? = definedExternally)
 
     @JsName("filterByAttributes")
@@ -250,6 +252,7 @@ external class I3SDataProvider(options: ConstructorOptions) {
          * @param [options] An object describing initialization options
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SDataProvider.html#.fromUrl">Online Documentation</a>
          */
+        @JsAsync
         suspend fun fromUrl(
             url: Resource,
             options: ConstructorOptions,

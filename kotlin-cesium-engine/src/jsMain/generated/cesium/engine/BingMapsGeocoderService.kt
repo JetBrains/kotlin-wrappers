@@ -12,6 +12,7 @@ import js.array.ReadonlyArray
 import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * Provides geocoding through Bing Maps.
@@ -51,6 +52,7 @@ external class BingMapsGeocoderService(options: ConstructorOptions) {
      * @param [query] The query to be sent to the geocoder service
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsGeocoderService.html#geocode">Online Documentation</a>
      */
+    @JsAsync
     suspend fun geocode(query: String): ReadonlyArray<GeocoderService.Result>
 
     @JsName("geocode")

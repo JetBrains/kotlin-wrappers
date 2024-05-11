@@ -6,6 +6,7 @@ package cesium.engine
 
 import js.objects.JsPlainObject
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * Creates a [CesiumTerrainProvider] instance for the [Cesium World Terrain](https://cesium.com/content/#cesium-world-terrain).
@@ -35,6 +36,7 @@ import js.promise.Promise
  * @return A promise that resolves to the created CesiumTerrainProvider
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#createWorldTerrainAsync">Online Documentation</a>
  */
+@JsAsync
 external suspend fun createWorldTerrain(options: CreateWorldTerrainAsyncOptions? = definedExternally): CesiumTerrainProvider
 
 external fun createWorldTerrainAsync(options: CreateWorldTerrainAsyncOptions? = definedExternally): Promise<CesiumTerrainProvider>

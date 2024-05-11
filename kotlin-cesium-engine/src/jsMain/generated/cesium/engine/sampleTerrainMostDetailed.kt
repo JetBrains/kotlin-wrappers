@@ -6,6 +6,7 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * Initiates a sampleTerrain() request at the maximum available tile level for a terrain dataset.
@@ -35,6 +36,7 @@ import js.promise.Promise
  *   promise will reject if the terrain provider's `availability` property is undefined.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#sampleTerrainMostDetailed">Online Documentation</a>
  */
+@JsAsync
 external suspend fun sampleTerrainMostDetailed(
     terrainProvider: TerrainProvider,
     positions: ReadonlyArray<Cartographic>,

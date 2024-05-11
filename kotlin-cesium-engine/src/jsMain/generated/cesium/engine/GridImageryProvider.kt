@@ -13,6 +13,7 @@ import js.core.Void
 import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.html.HTMLCanvasElement
 
 /**
@@ -131,6 +132,7 @@ external class GridImageryProvider(options: ConstructorOptions) {
      * @return The resolved image as a Canvas DOM object.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GridImageryProvider.html#requestImage">Online Documentation</a>
      */
+    @JsAsync
     suspend fun requestImage(
         x: Double,
         y: Double,

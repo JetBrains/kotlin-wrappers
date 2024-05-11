@@ -11,6 +11,7 @@ package cesium.engine
 import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * A [3D Tiles tileset](https://github.com/CesiumGS/3d-tiles/tree/main/specification),
@@ -1126,6 +1127,7 @@ external class Cesium3DTileset(options: ConstructorOptions) {
          * @param [options] An object describing initialization options
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#.fromIonAssetId">Online Documentation</a>
          */
+        @JsAsync
         suspend fun fromIonAssetId(
             assetId: Int,
             options: ConstructorOptions? = definedExternally,
@@ -1179,6 +1181,7 @@ external class Cesium3DTileset(options: ConstructorOptions) {
          * @param [options] An object describing initialization options
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#.fromUrl">Online Documentation</a>
          */
+        @JsAsync
         suspend fun fromUrl(
             url: Resource,
             options: ConstructorOptions? = definedExternally,
@@ -1190,6 +1193,7 @@ external class Cesium3DTileset(options: ConstructorOptions) {
             options: ConstructorOptions? = definedExternally,
         ): Promise<Cesium3DTileset>
 
+        @JsAsync
         suspend fun fromUrl(
             url: String,
             options: ConstructorOptions? = definedExternally,
@@ -1208,11 +1212,13 @@ external class Cesium3DTileset(options: ConstructorOptions) {
          * @return A promise that resolves with the fetched json data
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#.loadJson">Online Documentation</a>
          */
+        @JsAsync
         suspend fun loadJson(tilesetUrl: Resource): Any
 
         @JsName("loadJson")
         fun loadJsonAsync(tilesetUrl: Resource): Promise<Any>
 
+        @JsAsync
         suspend fun loadJson(tilesetUrl: String): Any
 
         @JsName("loadJson")

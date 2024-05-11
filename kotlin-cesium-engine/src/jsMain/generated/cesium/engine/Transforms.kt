@@ -10,6 +10,7 @@ package cesium.engine
 
 import js.core.Void
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * Contains functions for transforming positions to various reference frames.
@@ -258,6 +259,7 @@ external object Transforms {
      *   no longer return undefined for a time inside the interval.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Transforms.html#.preloadIcrfFixed">Online Documentation</a>
      */
+    @JsAsync
     suspend fun preloadIcrfFixed(timeInterval: TimeInterval)
 
     @JsName("preloadIcrfFixed")

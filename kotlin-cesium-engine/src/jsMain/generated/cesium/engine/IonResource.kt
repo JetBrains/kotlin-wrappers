@@ -7,6 +7,7 @@ package cesium.engine
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * A [Resource] instance that encapsulates Cesium ion asset access.
@@ -100,6 +101,7 @@ external class IonResource(
          * @return A Promise to am instance representing the Cesium ion Asset.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/IonResource.html#.fromAssetId">Online Documentation</a>
          */
+        @JsAsync
         suspend fun fromAssetId(
             assetId: Int,
             options: FromAssetIdOptions? = definedExternally,
