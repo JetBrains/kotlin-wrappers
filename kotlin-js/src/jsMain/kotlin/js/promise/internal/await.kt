@@ -1,8 +1,13 @@
 package js.promise.internal
 
-import js.promise.LegacyPromise
-import js.promise.PromiseLike
+import js.promise.*
 import kotlinx.coroutines.await
+
+@PublishedApi
+internal suspend fun <T> awaitPromiseResult(
+    p: PromiseResult<T>,
+): T =
+    awaitPromiseLike(p as? Promise<T> ?: p.toPromise())
 
 @PublishedApi
 internal suspend fun <T> awaitPromiseLike(
