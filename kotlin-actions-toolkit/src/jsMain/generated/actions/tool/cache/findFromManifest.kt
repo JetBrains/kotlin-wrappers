@@ -6,7 +6,9 @@ package actions.tool.cache
 
 import js.array.ReadonlyArray
 import js.promise.Promise
+import seskar.js.JsAsync
 
+@JsAsync
 external suspend fun findFromManifest(
     versionSpec: String,
     stable: Boolean,

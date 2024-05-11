@@ -5,7 +5,9 @@
 package actions.cache
 
 import js.promise.Promise
+import seskar.js.JsAsync
 
+@JsAsync
 external suspend fun createTempDirectory(): String
 
 @JsName("createTempDirectory")

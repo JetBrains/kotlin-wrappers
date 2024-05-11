@@ -6,7 +6,9 @@ package actions.exec
 
 import js.array.ReadonlyArray
 import js.promise.Promise
+import seskar.js.JsAsync
 
+@JsAsync
 external suspend fun exec(
     commandLine: String,
     args: ReadonlyArray<String> = definedExternally,

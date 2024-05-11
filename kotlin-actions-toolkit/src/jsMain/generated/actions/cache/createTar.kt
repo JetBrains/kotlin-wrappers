@@ -7,7 +7,9 @@ package actions.cache
 import js.array.ReadonlyArray
 import js.core.Void
 import js.promise.Promise
+import seskar.js.JsAsync
 
+@JsAsync
 external suspend fun createTar(
     archiveFolder: String,
     sourceDirectories: ReadonlyArray<String>,

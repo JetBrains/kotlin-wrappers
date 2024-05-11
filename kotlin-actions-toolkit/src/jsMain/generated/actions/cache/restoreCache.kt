@@ -6,7 +6,9 @@ package actions.cache
 
 import js.array.ReadonlyArray
 import js.promise.Promise
+import seskar.js.JsAsync
 
+@JsAsync
 external suspend fun restoreCache(
     paths: ReadonlyArray<String>,
     primaryKey: String,

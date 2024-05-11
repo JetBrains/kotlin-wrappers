@@ -5,7 +5,9 @@
 package actions.io
 
 import js.promise.Promise
+import seskar.js.JsAsync
 
+@JsAsync
 external suspend fun which(
     tool: String,
     check: Boolean = definedExternally,

@@ -6,7 +6,9 @@ package actions.cache
 
 import actions.http.client.HttpClientResponse
 import js.promise.Promise
+import seskar.js.JsAsync
 
+@JsAsync
 external suspend fun retryHttpClientResponse(
     name: String,
     method: () -> Promise<HttpClientResponse>,

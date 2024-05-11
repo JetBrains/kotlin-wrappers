@@ -7,7 +7,9 @@ package actions.cache
 import js.array.ReadonlyArray
 import js.core.Void
 import js.promise.Promise
+import seskar.js.JsAsync
 
+@JsAsync
 external suspend fun saveCache(
     paths: ReadonlyArray<String>,
     key: String,
@@ -23,6 +25,7 @@ external fun saveCacheAsync(
     enableCrossOsArchive: Boolean = definedExternally,
 ): Promise<Number>
 
+@JsAsync
 external suspend fun saveCache(
     cacheId: Number,
     archivePath: String,

@@ -6,7 +6,9 @@ package actions.io
 
 import js.core.Void
 import js.promise.Promise
+import seskar.js.JsAsync
 
+@JsAsync
 external suspend fun mkdirP(fsPath: String)
 
 @JsName("mkdirP")

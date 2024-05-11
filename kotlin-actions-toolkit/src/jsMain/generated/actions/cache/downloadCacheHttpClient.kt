@@ -6,7 +6,9 @@ package actions.cache
 
 import js.core.Void
 import js.promise.Promise
+import seskar.js.JsAsync
 
+@JsAsync
 external suspend fun downloadCacheHttpClient(
     archiveLocation: String,
     archivePath: String,

@@ -5,7 +5,9 @@
 package actions.glob
 
 import js.promise.Promise
+import seskar.js.JsAsync
 
+@JsAsync
 external suspend fun hashFiles(
     globber: Globber,
     currentWorkspace: String,
@@ -19,6 +21,7 @@ external fun hashFilesAsync(
     verbose: Boolean = definedExternally,
 ): Promise<String>
 
+@JsAsync
 external suspend fun hashFiles(
     patterns: String,
     currentWorkspace: String = definedExternally,
