@@ -3,6 +3,7 @@
 package web.streams
 
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader)
@@ -13,6 +14,7 @@ external class ReadableStreamDefaultReader<R>(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader/read)
      */
+    @JsAsync
     suspend fun read(): ReadableStreamReadResult<R>
 
     @JsName("read")

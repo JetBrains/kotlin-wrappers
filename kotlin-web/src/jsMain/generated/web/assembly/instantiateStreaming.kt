@@ -6,11 +6,13 @@ package web.assembly
 
 import js.promise.Promise
 import js.promise.PromiseLike
+import seskar.js.JsAsync
 import web.http.Response
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/instantiateStreaming_static)
  */
+@JsAsync
 external suspend fun instantiateStreaming(
     source: Response,
     importObject: Imports = definedExternally,
@@ -22,6 +24,7 @@ external fun instantiateStreamingAsync(
     importObject: Imports = definedExternally,
 ): Promise<WebAssemblyInstantiatedSource>
 
+@JsAsync
 external suspend fun instantiateStreaming(
     source: PromiseLike<Response>,
     importObject: Imports = definedExternally,

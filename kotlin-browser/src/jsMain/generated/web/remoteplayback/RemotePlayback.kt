@@ -4,6 +4,7 @@ package web.remoteplayback
 
 import js.core.Void
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
@@ -36,6 +37,7 @@ sealed external class RemotePlayback :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/cancelWatchAvailability)
      */
+    @JsAsync
     suspend fun cancelWatchAvailability(id: Int = definedExternally)
 
     @JsName("cancelWatchAvailability")
@@ -44,6 +46,7 @@ sealed external class RemotePlayback :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/prompt)
      */
+    @JsAsync
     suspend fun prompt()
 
     @JsName("prompt")
@@ -52,6 +55,7 @@ sealed external class RemotePlayback :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/watchAvailability)
      */
+    @JsAsync
     suspend fun watchAvailability(callback: RemotePlaybackAvailabilityCallback): Number
 
     @JsName("watchAvailability")

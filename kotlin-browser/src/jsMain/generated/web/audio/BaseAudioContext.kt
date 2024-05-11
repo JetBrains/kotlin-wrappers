@@ -6,6 +6,7 @@ import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
 import js.promise.Promise
 import js.typedarrays.Float32Array
+import seskar.js.JsAsync
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
@@ -157,6 +158,7 @@ sealed external class BaseAudioContext :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/decodeAudioData)
      */
+    @JsAsync
     suspend fun decodeAudioData(
         audioData: ArrayBuffer,
         successCallback: DecodeSuccessCallback? = definedExternally,

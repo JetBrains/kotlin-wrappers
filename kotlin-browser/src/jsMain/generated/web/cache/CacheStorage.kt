@@ -4,6 +4,7 @@ package web.cache
 
 import js.array.ReadonlyArray
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.http.Request
 import web.http.Response
 import web.url.URL
@@ -18,6 +19,7 @@ sealed external class CacheStorage {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/delete)
      */
+    @JsAsync
     suspend fun delete(cacheName: String): Boolean
 
     @JsName("delete")
@@ -26,6 +28,7 @@ sealed external class CacheStorage {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/has)
      */
+    @JsAsync
     suspend fun has(cacheName: String): Boolean
 
     @JsName("has")
@@ -34,6 +37,7 @@ sealed external class CacheStorage {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/keys)
      */
+    @JsAsync
     suspend fun keys(): ReadonlyArray<String>
 
     @JsName("keys")
@@ -42,6 +46,7 @@ sealed external class CacheStorage {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/match)
      */
+    @JsAsync
     suspend fun match(
         request: Request,
         options: MultiCacheQueryOptions = definedExternally,
@@ -53,6 +58,7 @@ sealed external class CacheStorage {
         options: MultiCacheQueryOptions = definedExternally,
     ): Promise<Response?>
 
+    @JsAsync
     suspend fun match(
         request: String,
         options: MultiCacheQueryOptions = definedExternally,
@@ -64,6 +70,7 @@ sealed external class CacheStorage {
         options: MultiCacheQueryOptions = definedExternally,
     ): Promise<Response?>
 
+    @JsAsync
     suspend fun match(
         request: URL,
         options: MultiCacheQueryOptions = definedExternally,
@@ -78,6 +85,7 @@ sealed external class CacheStorage {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/open)
      */
+    @JsAsync
     suspend fun open(cacheName: String): Cache
 
     @JsName("open")

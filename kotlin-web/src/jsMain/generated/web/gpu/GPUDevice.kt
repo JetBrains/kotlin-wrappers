@@ -3,6 +3,7 @@
 package web.gpu
 
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.events.EventTarget
 
 sealed external class GPUDevice :
@@ -11,6 +12,8 @@ sealed external class GPUDevice :
     override var label: String
     val lost: Promise<GPUDeviceLostInfo>
     fun pushErrorScope(filter: GPUErrorFilter)
+
+    @JsAsync
     suspend fun popErrorScope(): GPUError?
 
     @JsName("popErrorScope")
@@ -28,10 +31,14 @@ sealed external class GPUDevice :
     fun createShaderModule(descriptor: GPUShaderModuleDescriptor): GPUShaderModule
     fun createComputePipeline(descriptor: GPUComputePipelineDescriptor): GPUComputePipeline
     fun createRenderPipeline(descriptor: GPURenderPipelineDescriptor): GPURenderPipeline
+
+    @JsAsync
     suspend fun createComputePipelineAsync(descriptor: GPUComputePipelineDescriptor): GPUComputePipeline
 
     @JsName("createComputePipelineAsync")
     fun createComputePipelineAsyncAsync(descriptor: GPUComputePipelineDescriptor): Promise<GPUComputePipeline>
+
+    @JsAsync
     suspend fun createRenderPipelineAsync(descriptor: GPURenderPipelineDescriptor): GPURenderPipeline
 
     @JsName("createRenderPipelineAsync")

@@ -4,6 +4,7 @@ package web.audio
 
 import js.core.Void
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.events.EventHandler
 
 /**
@@ -33,6 +34,7 @@ external class OfflineAudioContext(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/resume)
      */
+    @JsAsync
     suspend fun resume()
 
     @JsName("resume")
@@ -41,6 +43,7 @@ external class OfflineAudioContext(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/startRendering)
      */
+    @JsAsync
     suspend fun startRendering(): AudioBuffer
 
     @JsName("startRendering")
@@ -49,6 +52,7 @@ external class OfflineAudioContext(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/suspend)
      */
+    @JsAsync
     suspend fun suspend(suspendTime: Double)
 
     @JsName("suspend")

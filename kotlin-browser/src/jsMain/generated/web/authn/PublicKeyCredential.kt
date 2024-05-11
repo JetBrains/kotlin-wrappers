@@ -4,6 +4,7 @@ package web.authn
 
 import js.buffer.ArrayBuffer
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.credentials.Credential
 
 /**
@@ -34,6 +35,7 @@ sealed external class PublicKeyCredential :
         /**
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/isConditionalMediationAvailable)
          */
+        @JsAsync
         suspend fun isConditionalMediationAvailable(): Boolean
 
         @JsName("isConditionalMediationAvailable")
@@ -42,6 +44,7 @@ sealed external class PublicKeyCredential :
         /**
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/isUserVerifyingPlatformAuthenticatorAvailable_static)
          */
+        @JsAsync
         suspend fun isUserVerifyingPlatformAuthenticatorAvailable(): Boolean
 
         @JsName("isUserVerifyingPlatformAuthenticatorAvailable")

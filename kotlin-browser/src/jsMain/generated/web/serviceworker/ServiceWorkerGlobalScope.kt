@@ -4,6 +4,7 @@ package web.serviceworker
 
 import js.core.Void
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.events.Event
 import web.events.EventHandler
 import web.messaging.MessageEvent
@@ -81,6 +82,7 @@ sealed external class ServiceWorkerGlobalScope :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/skipWaiting)
      */
+    @JsAsync
     suspend fun skipWaiting()
 
     @JsName("skipWaiting")

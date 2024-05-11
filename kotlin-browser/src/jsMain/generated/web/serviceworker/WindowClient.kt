@@ -3,6 +3,7 @@
 package web.serviceworker
 
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.dom.DocumentVisibilityState
 import web.url.URL
 
@@ -26,6 +27,7 @@ sealed external class WindowClient :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/focus)
      */
+    @JsAsync
     suspend fun focus(): WindowClient
 
     @JsName("focus")
@@ -34,10 +36,13 @@ sealed external class WindowClient :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/navigate)
      */
+    @JsAsync
     suspend fun navigate(url: String): WindowClient?
 
     @JsName("navigate")
     fun navigateAsync(url: String): Promise<WindowClient?>
+
+    @JsAsync
     suspend fun navigate(url: URL): WindowClient?
 
     @JsName("navigate")

@@ -4,6 +4,7 @@ package web.rtc
 
 import js.array.ReadonlyArray
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.media.streams.MediaStreamTrack
 import web.time.DOMHighResTimeStamp
 
@@ -43,6 +44,7 @@ sealed external class RTCRtpReceiver {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/getStats)
      */
+    @JsAsync
     suspend fun getStats(): RTCStatsReport
 
     @JsName("getStats")

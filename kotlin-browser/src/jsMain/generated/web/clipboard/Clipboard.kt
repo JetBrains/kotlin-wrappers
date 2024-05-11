@@ -4,6 +4,7 @@ package web.clipboard
 
 import js.core.Void
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.events.EventTarget
 
 /**
@@ -16,6 +17,7 @@ sealed external class Clipboard :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/read)
      */
+    @JsAsync
     suspend fun read(): ClipboardItems
 
     @JsName("read")
@@ -24,6 +26,7 @@ sealed external class Clipboard :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/readText)
      */
+    @JsAsync
     suspend fun readText(): String
 
     @JsName("readText")
@@ -32,6 +35,7 @@ sealed external class Clipboard :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/write)
      */
+    @JsAsync
     suspend fun write(data: ClipboardItems)
 
     @JsName("write")
@@ -40,6 +44,7 @@ sealed external class Clipboard :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/writeText)
      */
+    @JsAsync
     suspend fun writeText(data: String)
 
     @JsName("writeText")

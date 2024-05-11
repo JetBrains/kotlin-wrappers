@@ -3,6 +3,7 @@
 package web.html
 
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.canvas.CanvasImageSource
 import web.events.EventHandler
 import web.gl.TexImageSource
@@ -87,6 +88,7 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/requestPictureInPicture)
      */
+    @JsAsync
     suspend fun requestPictureInPicture(): PictureInPictureWindow
 
     @JsName("requestPictureInPicture")

@@ -3,6 +3,7 @@
 package web.cssom
 
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * A single CSS style sheet. It inherits properties and methods from its parent, StyleSheet.
@@ -38,6 +39,7 @@ external class CSSStyleSheet(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/replace)
      */
+    @JsAsync
     suspend fun replace(text: String): CSSStyleSheet
 
     @JsName("replace")

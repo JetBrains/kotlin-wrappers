@@ -4,6 +4,7 @@ package web.media.streams
 
 import js.core.Void
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
@@ -68,6 +69,7 @@ sealed external class MediaStreamTrack :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/applyConstraints)
      */
+    @JsAsync
     suspend fun applyConstraints(constraints: MediaTrackConstraints = definedExternally)
 
     @JsName("applyConstraints")

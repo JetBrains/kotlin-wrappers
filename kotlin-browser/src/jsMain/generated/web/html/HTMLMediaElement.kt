@@ -4,6 +4,7 @@ package web.html
 
 import js.core.Void
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.events.Event
 import web.events.EventHandler
 import web.http.CrossOrigin
@@ -265,6 +266,7 @@ sealed external class HTMLMediaElement :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/play)
      */
+    @JsAsync
     suspend fun play()
 
     @JsName("play")
@@ -275,6 +277,7 @@ sealed external class HTMLMediaElement :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/setMediaKeys)
      */
+    @JsAsync
     suspend fun setMediaKeys(mediaKeys: MediaKeys?)
 
     @JsName("setMediaKeys")
@@ -285,6 +288,7 @@ sealed external class HTMLMediaElement :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/setSinkId)
      */
+    @JsAsync
     suspend fun setSinkId(sinkId: String)
 
     @JsName("setSinkId")

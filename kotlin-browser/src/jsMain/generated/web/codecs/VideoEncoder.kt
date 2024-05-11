@@ -4,6 +4,7 @@ package web.codecs
 
 import js.core.Void
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
@@ -45,6 +46,7 @@ external class VideoEncoder(
         options: VideoEncoderEncodeOptions = definedExternally,
     )
 
+    @JsAsync
     suspend fun flush()
 
     @JsName("flush")
@@ -56,6 +58,7 @@ external class VideoEncoder(
     fun reset()
 
     companion object {
+        @JsAsync
         suspend fun isConfigSupported(config: VideoEncoderConfig): VideoEncoderSupport
 
         @JsName("isConfigSupported")

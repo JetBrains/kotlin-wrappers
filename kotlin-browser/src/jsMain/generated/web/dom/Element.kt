@@ -5,6 +5,7 @@ package web.dom
 import js.array.ReadonlyArray
 import js.core.Void
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.aria.ARIAMixin
 import web.components.ShadowRoot
 import web.components.ShadowRootInit
@@ -371,6 +372,7 @@ abstract external class Element :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/requestFullscreen)
      */
+    @JsAsync
     suspend fun requestFullscreen(options: FullscreenOptions = definedExternally)
 
     @JsName("requestFullscreen")

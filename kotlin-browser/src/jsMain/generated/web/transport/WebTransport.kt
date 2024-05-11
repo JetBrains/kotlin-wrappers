@@ -4,6 +4,7 @@ package web.transport
 
 import js.core.Void
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.streams.ReadableStream
 import web.streams.WritableStream
 import web.url.URL
@@ -55,6 +56,7 @@ external class WebTransport(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/createBidirectionalStream)
      */
+    @JsAsync
     suspend fun createBidirectionalStream(options: WebTransportSendStreamOptions = definedExternally): WebTransportBidirectionalStream
 
     @JsName("createBidirectionalStream")
@@ -63,6 +65,7 @@ external class WebTransport(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/createUnidirectionalStream)
      */
+    @JsAsync
     suspend fun createUnidirectionalStream(options: WebTransportSendStreamOptions = definedExternally): WritableStream<*>
 
     @JsName("createUnidirectionalStream")

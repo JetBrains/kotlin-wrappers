@@ -5,6 +5,7 @@ package web.media.key
 import js.buffer.BufferSource
 import js.core.Void
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
@@ -51,6 +52,7 @@ sealed external class MediaKeySession :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/close)
      */
+    @JsAsync
     suspend fun close()
 
     @JsName("close")
@@ -59,6 +61,7 @@ sealed external class MediaKeySession :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/generateRequest)
      */
+    @JsAsync
     suspend fun generateRequest(
         initDataType: String,
         initData: BufferSource,
@@ -73,6 +76,7 @@ sealed external class MediaKeySession :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/load)
      */
+    @JsAsync
     suspend fun load(sessionId: String): Boolean
 
     @JsName("load")
@@ -81,6 +85,7 @@ sealed external class MediaKeySession :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/remove)
      */
+    @JsAsync
     suspend fun remove()
 
     @JsName("remove")
@@ -89,6 +94,7 @@ sealed external class MediaKeySession :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/update)
      */
+    @JsAsync
     suspend fun update(response: BufferSource)
 
     @JsName("update")

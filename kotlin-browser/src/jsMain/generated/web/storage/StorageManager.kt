@@ -3,6 +3,7 @@
 package web.storage
 
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.fs.FileSystemDirectoryHandle
 
 /**
@@ -14,6 +15,7 @@ sealed external class StorageManager {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageManager/estimate)
      */
+    @JsAsync
     suspend fun estimate(): StorageEstimate
 
     @JsName("estimate")
@@ -22,6 +24,7 @@ sealed external class StorageManager {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageManager/getDirectory)
      */
+    @JsAsync
     suspend fun getDirectory(): FileSystemDirectoryHandle
 
     @JsName("getDirectory")
@@ -30,6 +33,7 @@ sealed external class StorageManager {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageManager/persist)
      */
+    @JsAsync
     suspend fun persist(): Boolean
 
     @JsName("persist")
@@ -38,6 +42,7 @@ sealed external class StorageManager {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageManager/persisted)
      */
+    @JsAsync
     suspend fun persisted(): Boolean
 
     @JsName("persisted")
