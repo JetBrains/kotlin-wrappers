@@ -11,6 +11,7 @@ package cesium.engine
 import js.buffer.ArrayBuffer
 import js.objects.JsPlainObject
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.blob.Blob
 import web.xml.XMLDocument
 
@@ -252,7 +253,11 @@ external class Resource(options: dynamic) {
      * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#fetchArrayBuffer">Online Documentation</a>
      */
-    fun fetchArrayBuffer(): Promise<ArrayBuffer>?
+    @JsAsync(optional = true)
+    suspend fun fetchArrayBuffer(): ArrayBuffer?
+
+    @JsName("fetchArrayBuffer")
+    fun fetchArrayBufferAsync(): Promise<ArrayBuffer>?
 
     /**
      * Asynchronously loads the given resource as a blob.  Returns a promise that will resolve to
@@ -270,7 +275,11 @@ external class Resource(options: dynamic) {
      * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#fetchBlob">Online Documentation</a>
      */
-    fun fetchBlob(): Promise<Blob>?
+    @JsAsync(optional = true)
+    suspend fun fetchBlob(): Blob?
+
+    @JsName("fetchBlob")
+    fun fetchBlobAsync(): Promise<Blob>?
 
     /**
      * Asynchronously loads the given image resource.  Returns a promise that will resolve to
@@ -334,7 +343,11 @@ external class Resource(options: dynamic) {
      * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#fetchText">Online Documentation</a>
      */
-    fun fetchText(): Promise<String>?
+    @JsAsync(optional = true)
+    suspend fun fetchText(): String?
+
+    @JsName("fetchText")
+    fun fetchTextAsync(): Promise<String>?
 
     /**
      * Asynchronously loads the given resource as JSON.  Returns a promise that will resolve to
@@ -353,7 +366,11 @@ external class Resource(options: dynamic) {
      * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#fetchJson">Online Documentation</a>
      */
-    fun fetchJson(): Promise<Any>?
+    @JsAsync(optional = true)
+    suspend fun fetchJson(): Any?
+
+    @JsName("fetchJson")
+    fun fetchJsonAsync(): Promise<Any>?
 
     /**
      * Asynchronously loads the given resource as XML.  Returns a promise that will resolve to
@@ -373,7 +390,11 @@ external class Resource(options: dynamic) {
      * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#fetchXML">Online Documentation</a>
      */
-    fun fetchXML(): Promise<XMLDocument>?
+    @JsAsync(optional = true)
+    suspend fun fetchXML(): XMLDocument?
+
+    @JsName("fetchXML")
+    fun fetchXMLAsync(): Promise<XMLDocument>?
 
     /**
      * Requests a resource using JSONP.
@@ -390,7 +411,11 @@ external class Resource(options: dynamic) {
      * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#fetchJsonp">Online Documentation</a>
      */
-    fun fetchJsonp(callbackParameterName: String? = definedExternally): Promise<Any>?
+    @JsAsync(optional = true)
+    suspend fun fetchJsonp(callbackParameterName: String? = definedExternally): Any?
+
+    @JsName("fetchJsonp")
+    fun fetchJsonpAsync(callbackParameterName: String? = definedExternally): Promise<Any>?
 
     /**
      * Asynchronously loads the given resource.  Returns a promise that will resolve to
@@ -409,7 +434,11 @@ external class Resource(options: dynamic) {
      * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#fetch">Online Documentation</a>
      */
-    fun fetch(options: FetchOptions? = definedExternally): Promise<Any>?
+    @JsAsync(optional = true)
+    suspend fun fetch(options: FetchOptions? = definedExternally): Any?
+
+    @JsName("fetch")
+    fun fetchAsync(options: FetchOptions? = definedExternally): Promise<Any>?
 
     /**
      * @property [responseType] The type of response.  This controls the type of item returned.
@@ -439,7 +468,11 @@ external class Resource(options: dynamic) {
      * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#delete">Online Documentation</a>
      */
-    fun delete(options: DeleteOptions? = definedExternally): Promise<Any>?
+    @JsAsync(optional = true)
+    suspend fun delete(options: DeleteOptions? = definedExternally): Any?
+
+    @JsName("delete")
+    fun deleteAsync(options: DeleteOptions? = definedExternally): Promise<Any>?
 
     /**
      * @property [responseType] The type of response.  This controls the type of item returned.
@@ -469,7 +502,11 @@ external class Resource(options: dynamic) {
      * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#head">Online Documentation</a>
      */
-    fun head(options: HeadOptions? = definedExternally): Promise<Any>?
+    @JsAsync(optional = true)
+    suspend fun head(options: HeadOptions? = definedExternally): Any?
+
+    @JsName("head")
+    fun headAsync(options: HeadOptions? = definedExternally): Promise<Any>?
 
     /**
      * @property [responseType] The type of response.  This controls the type of item returned.
@@ -499,7 +536,11 @@ external class Resource(options: dynamic) {
      * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#options">Online Documentation</a>
      */
-    fun options(options: OptionsOptions? = definedExternally): Promise<Any>?
+    @JsAsync(optional = true)
+    suspend fun options(options: OptionsOptions? = definedExternally): Any?
+
+    @JsName("options")
+    fun optionsAsync(options: OptionsOptions? = definedExternally): Promise<Any>?
 
     /**
      * @property [responseType] The type of response.  This controls the type of item returned.
@@ -530,7 +571,14 @@ external class Resource(options: dynamic) {
      * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#post">Online Documentation</a>
      */
-    fun post(
+    @JsAsync(optional = true)
+    suspend fun post(
+        data: Any,
+        options: PostOptions? = definedExternally,
+    ): Any?
+
+    @JsName("post")
+    fun postAsync(
         data: Any,
         options: PostOptions? = definedExternally,
     ): Promise<Any>?
@@ -566,7 +614,14 @@ external class Resource(options: dynamic) {
      * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#put">Online Documentation</a>
      */
-    fun put(
+    @JsAsync(optional = true)
+    suspend fun put(
+        data: Any,
+        options: PutOptions? = definedExternally,
+    ): Any?
+
+    @JsName("put")
+    fun putAsync(
         data: Any,
         options: PutOptions? = definedExternally,
     ): Promise<Any>?
@@ -600,7 +655,14 @@ external class Resource(options: dynamic) {
      * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#patch">Online Documentation</a>
      */
-    fun patch(
+    @JsAsync(optional = true)
+    suspend fun patch(
+        data: Any,
+        options: PatchOptions? = definedExternally,
+    ): Any?
+
+    @JsName("patch")
+    fun patchAsync(
         data: Any,
         options: PatchOptions? = definedExternally,
     ): Promise<Any>?
@@ -659,7 +721,11 @@ external class Resource(options: dynamic) {
          * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.fetchArrayBuffer">Online Documentation</a>
          */
-        fun fetchArrayBuffer(options: FetchArrayBufferOptions): Promise<ArrayBuffer>?
+        @JsAsync(optional = true)
+        suspend fun fetchArrayBuffer(options: FetchArrayBufferOptions): ArrayBuffer?
+
+        @JsName("fetchArrayBuffer")
+        fun fetchArrayBufferAsync(options: FetchArrayBufferOptions): Promise<ArrayBuffer>?
 
         /**
          * @property [url] The url of the resource.
@@ -691,7 +757,11 @@ external class Resource(options: dynamic) {
          * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.fetchBlob">Online Documentation</a>
          */
-        fun fetchBlob(options: FetchBlobOptions): Promise<Blob>?
+        @JsAsync(optional = true)
+        suspend fun fetchBlob(options: FetchBlobOptions): Blob?
+
+        @JsName("fetchBlob")
+        fun fetchBlobAsync(options: FetchBlobOptions): Promise<Blob>?
 
         /**
          * @property [url] The url of the resource.
@@ -767,7 +837,11 @@ external class Resource(options: dynamic) {
          * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.fetchText">Online Documentation</a>
          */
-        fun fetchText(options: FetchTextOptions): Promise<String>?
+        @JsAsync(optional = true)
+        suspend fun fetchText(options: FetchTextOptions): String?
+
+        @JsName("fetchText")
+        fun fetchTextAsync(options: FetchTextOptions): Promise<String>?
 
         /**
          * @property [url] The url of the resource.
@@ -799,7 +873,11 @@ external class Resource(options: dynamic) {
          * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.fetchJson">Online Documentation</a>
          */
-        fun fetchJson(options: FetchJsonOptions): Promise<Any>?
+        @JsAsync(optional = true)
+        suspend fun fetchJson(options: FetchJsonOptions): Any?
+
+        @JsName("fetchJson")
+        fun fetchJsonAsync(options: FetchJsonOptions): Promise<Any>?
 
         /**
          * @property [url] The url of the resource.
@@ -831,7 +909,11 @@ external class Resource(options: dynamic) {
          * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.fetchXML">Online Documentation</a>
          */
-        fun fetchXML(options: FetchXMLOptions): Promise<XMLDocument>?
+        @JsAsync(optional = true)
+        suspend fun fetchXML(options: FetchXMLOptions): XMLDocument?
+
+        @JsName("fetchXML")
+        fun fetchXMLAsync(options: FetchXMLOptions): Promise<XMLDocument>?
 
         /**
          * @property [url] The url of the resource.
@@ -863,7 +945,11 @@ external class Resource(options: dynamic) {
          * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.fetchJsonp">Online Documentation</a>
          */
-        fun fetchJsonp(options: FetchJsonpOptions): Promise<Any>?
+        @JsAsync(optional = true)
+        suspend fun fetchJsonp(options: FetchJsonpOptions): Any?
+
+        @JsName("fetchJsonp")
+        fun fetchJsonpAsync(options: FetchJsonpOptions): Promise<Any>?
 
         /**
          * @property [url] The url of the resource.
@@ -898,7 +984,11 @@ external class Resource(options: dynamic) {
          * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.fetch">Online Documentation</a>
          */
-        fun fetch(options: FetchOptions): Promise<Any>?
+        @JsAsync(optional = true)
+        suspend fun fetch(options: FetchOptions): Any?
+
+        @JsName("fetch")
+        fun fetchAsync(options: FetchOptions): Promise<Any>?
 
         /**
          * @property [url] The url of the resource.
@@ -934,7 +1024,11 @@ external class Resource(options: dynamic) {
          * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.delete">Online Documentation</a>
          */
-        fun delete(options: DeleteOptions): Promise<Any>?
+        @JsAsync(optional = true)
+        suspend fun delete(options: DeleteOptions): Any?
+
+        @JsName("delete")
+        fun deleteAsync(options: DeleteOptions): Promise<Any>?
 
         /**
          * @property [url] The url of the resource.
@@ -972,7 +1066,11 @@ external class Resource(options: dynamic) {
          * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.head">Online Documentation</a>
          */
-        fun head(options: HeadOptions): Promise<Any>?
+        @JsAsync(optional = true)
+        suspend fun head(options: HeadOptions): Any?
+
+        @JsName("head")
+        fun headAsync(options: HeadOptions): Promise<Any>?
 
         /**
          * @property [url] The url of the resource.
@@ -1008,7 +1106,11 @@ external class Resource(options: dynamic) {
          * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.options">Online Documentation</a>
          */
-        fun options(options: OptionsOptions): Promise<Any>?
+        @JsAsync(optional = true)
+        suspend fun options(options: OptionsOptions): Any?
+
+        @JsName("options")
+        fun optionsAsync(options: OptionsOptions): Promise<Any>?
 
         /**
          * @property [url] The url of the resource.
@@ -1044,7 +1146,11 @@ external class Resource(options: dynamic) {
          * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.post">Online Documentation</a>
          */
-        fun post(options: PostOptions): Promise<Any>?
+        @JsAsync(optional = true)
+        suspend fun post(options: PostOptions): Any?
+
+        @JsName("post")
+        fun postAsync(options: PostOptions): Promise<Any>?
 
         /**
          * @property [url] The url of the resource.
@@ -1082,7 +1188,11 @@ external class Resource(options: dynamic) {
          * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.put">Online Documentation</a>
          */
-        fun put(options: PutOptions): Promise<Any>?
+        @JsAsync(optional = true)
+        suspend fun put(options: PutOptions): Any?
+
+        @JsName("put")
+        fun putAsync(options: PutOptions): Promise<Any>?
 
         /**
          * @property [url] The url of the resource.
@@ -1120,7 +1230,11 @@ external class Resource(options: dynamic) {
          * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.patch">Online Documentation</a>
          */
-        fun patch(options: PatchOptions): Promise<Any>?
+        @JsAsync(optional = true)
+        suspend fun patch(options: PatchOptions): Any?
+
+        @JsName("patch")
+        fun patchAsync(options: PatchOptions): Promise<Any>?
 
         /**
          * @property [url] The url of the resource.

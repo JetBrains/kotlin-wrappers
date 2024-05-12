@@ -13,6 +13,7 @@ import js.core.Void
 import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * Provides tiled imagery served by [WMTS 1.0.0](http://www.opengeospatial.org/standards/wmts) compliant servers.
@@ -201,7 +202,16 @@ external class WebMapTileServiceImageryProvider(options: ConstructorOptions) {
      *   undefined if there are too many active requests to the server, and the request should be retried later.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#requestImage">Online Documentation</a>
      */
-    fun requestImage(
+    @JsAsync(optional = true)
+    suspend fun requestImage(
+        x: Double,
+        y: Double,
+        level: Int,
+        request: Request? = definedExternally,
+    ): ImageryTypes?
+
+    @JsName("requestImage")
+    fun requestImageAsync(
         x: Double,
         y: Double,
         level: Int,

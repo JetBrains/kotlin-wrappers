@@ -134,7 +134,7 @@ external class QuantizedMeshTerrainData(options: ConstructorOptions) : TerrainDa
      *   deferred.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/QuantizedMeshTerrainData.html#upsample">Online Documentation</a>
      */
-    override fun upsample(
+    override fun upsampleAsync(
         tilingScheme: TilingScheme,
         thisX: Double,
         thisY: Double,

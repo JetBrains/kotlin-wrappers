@@ -54,7 +54,14 @@ external class TaskProcessor(
      *   if there are too many active tasks,
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TaskProcessor.html#scheduleTask">Online Documentation</a>
      */
-    fun scheduleTask(
+    @JsAsync(optional = true)
+    suspend fun scheduleTask(
+        parameters: Any,
+        transferableObjects: ReadonlyArray<Any>? = definedExternally,
+    ): Any?
+
+    @JsName("scheduleTask")
+    fun scheduleTaskAsync(
         parameters: Any,
         transferableObjects: ReadonlyArray<Any>? = definedExternally,
     ): Promise<Any>?

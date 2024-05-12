@@ -120,7 +120,11 @@ external class Cesium3DTilesVoxelProvider(options: Any) {
      * @return A promise to an array of typed arrays containing the requested voxel data or undefined if there was a problem loading the data.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#requestData">Online Documentation</a>
      */
-    fun requestData(options: RequestDataOptions? = definedExternally): Promise<ReadonlyArray<ReadonlyArray<Any>>>?
+    @JsAsync(optional = true)
+    suspend fun requestData(options: RequestDataOptions? = definedExternally): ReadonlyArray<ReadonlyArray<Any>>?
+
+    @JsName("requestData")
+    fun requestDataAsync(options: RequestDataOptions? = definedExternally): Promise<ReadonlyArray<ReadonlyArray<Any>>>?
 
     /**
      * @property [tileLevel] The tile's level.

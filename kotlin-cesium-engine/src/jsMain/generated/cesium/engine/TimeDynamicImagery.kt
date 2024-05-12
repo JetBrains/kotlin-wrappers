@@ -11,6 +11,7 @@ package cesium.engine
 import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.html.HTMLImageElement
 
 /**
@@ -60,7 +61,16 @@ external class TimeDynamicImagery(options: ConstructorOptions) {
      *   undefined if the tile is not in the cache.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TimeDynamicImagery.html#getFromCache">Online Documentation</a>
      */
-    fun getFromCache(
+    @JsAsync(optional = true)
+    suspend fun getFromCache(
+        x: Double,
+        y: Double,
+        level: Int,
+        request: Request? = definedExternally,
+    ): HTMLImageElement?
+
+    @JsName("getFromCache")
+    fun getFromCacheAsync(
         x: Double,
         y: Double,
         level: Int,
