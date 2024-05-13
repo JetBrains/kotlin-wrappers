@@ -74,7 +74,7 @@ const instance = {
 ```
 
 _Q_: Why should I avoid `unsafeCast` & `asDynamic` when working with Wrappers?
-_A_: First of all, `unsafeCast` and `asDynamic` are not recommended for external declarations, unless you are an author of declarations. \
+_A_: First of all, `unsafeCast` and `asDynamic` are not recommended for external declarations, unless you are a declarations' owner. \
 Some types' instances cannot be created by constructor invocation or interface implementation. For such types, we
 provide a strict factory function. It is a responsibility of library authors.
 Example:
