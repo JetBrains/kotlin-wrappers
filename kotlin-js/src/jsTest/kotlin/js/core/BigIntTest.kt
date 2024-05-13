@@ -67,6 +67,26 @@ class BigIntTest {
         assertEquals(-3.n, -42.n / 13.n)
     }
 
+    @Test
+    fun inc() {
+        var a = 2.n
+
+        assertEquals(2.n, a++)
+        assertEquals(3.n, a)
+        assertEquals(4.n, ++a)
+        assertEquals(4.n, a)
+    }
+
+    @Test
+    fun dec() {
+        var a = 4.n
+
+        assertEquals(4.n, a--)
+        assertEquals(3.n, a)
+        assertEquals(2.n, --a)
+        assertEquals(2.n, a)
+    }
+
     @Ignore
     @Test
     fun comparable() {

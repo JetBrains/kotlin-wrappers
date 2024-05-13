@@ -31,10 +31,10 @@ private constructor() :
     inline operator fun div(other: BigInt): BigInt =
         (unsafeCast<Double>() / other.unsafeCast<Double>()).unsafeCast<BigInt>()
 
-    operator fun inc(): BigInt =
+    inline operator fun inc(): BigInt =
         this + 1.n
 
-    operator fun dec(): BigInt =
+    inline operator fun dec(): BigInt =
         this - 1.n
 
     /**
