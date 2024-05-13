@@ -45,16 +45,8 @@ external class Readline {
     fun commitAsync(): Promise<Unit>
 
 
-    @Suppress(
-        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-        "INLINE_EXTERNAL_DECLARATION",
-        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-        "DECLARATION_CANT_BE_INLINED",
-    )
-    suspend inline fun commit(): Unit =
-        commitAsync(
-
-        ).await()
+    @seskar.js.JsAsync
+    suspend fun commit(): Unit
 
     /**
      * The `rl.cursorTo()` method adds to the internal list of pending action an action

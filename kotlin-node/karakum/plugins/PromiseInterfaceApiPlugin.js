@@ -32,19 +32,11 @@ fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${name}Async(${paramet
 
     const suspendDeclaration = karakum.convertParameterDeclarations(node, context, render, {
         strategy: "function",
-        template: (parameters, signature) => {
+        template: (parameters) => {
             return `
-@Suppress(
-    "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-    "INLINE_EXTERNAL_DECLARATION",
-    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-    "DECLARATION_CANT_BE_INLINED",
-)
-suspend inline fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${name}(${parameters})${karakum.ifPresent(returnTypePayload, it => `: ${it}`)} =
-    ${name}Async(
-        ${signature.map((it, index) => ts.isIdentifier(it.parameter.name) ? it.parameter.name.text : `param${index}`).join(", ")}
-    ).await()
-                    `
+@seskar.js.JsAsync
+suspend fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${name}(${parameters})${karakum.ifPresent(returnTypePayload, it => `: ${it}`)}
+                   `
         }
     })
 
