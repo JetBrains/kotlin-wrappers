@@ -87,6 +87,13 @@ class BigIntTest {
         assertEquals(2.n, a)
     }
 
+    @Test
+    fun pow() {
+        assertEquals(8.n, 2.n.pow(3))
+        assertEquals(1024.n, 4.n.pow(5L))
+        assertEquals(125.n, 5.n.pow(3.n))
+    }
+
     @Ignore
     @Test
     fun comparable() {
