@@ -120,7 +120,15 @@ abstract external class TerrainProvider {
      * @return Undefined if nothing need to be loaded or a Promise that resolves when all required tiles are loaded
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TerrainProvider.html#loadTileDataAvailability">Online Documentation</a>
      */
-    abstract fun loadTileDataAvailability(
+    @JsAsync(optional = true)
+    suspend fun loadTileDataAvailability(
+        x: Double,
+        y: Double,
+        level: Int,
+    )
+
+    @JsName("loadTileDataAvailability")
+    abstract fun loadTileDataAvailabilityAsync(
         x: Double,
         y: Double,
         level: Int,
