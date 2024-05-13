@@ -77,7 +77,7 @@ _Q_: Why should I avoid `unsafeCast` & `asDynamic` when working with Wrappers?
 _A_: First of all, `unsafeCast` or `asDynamic` are not recommended for external declarations. \
 They must be used by libraries for interfaces they describe.
 Some types' instances cannot be created by constructor invocation or interface implementation. For such types, we
-provide a strict factory function.
+provide a strict factory function. It is a responsibility of library authors.
 Example:
 
 ```kotlin
