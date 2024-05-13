@@ -91,7 +91,7 @@ inline fun ClassName(
 val value = ClassName("my-class")
 ```
 
-If there is no strict factory function for a type of this kind, then, please, [create an issue](https://github.com/JetBrains/kotlin-wrappers/issues/new/choose).
+If there is no strict factory function for a type of this kind, then, please, [create an issue](https://github.com/JetBrains/kotlin-wrappers/issues).
 Otherwise, when you use `unsafeCast` or `asDynamic`, the type can be incorrect when a library updates.
 
 Typical use cases are: 
