@@ -92,7 +92,7 @@ val value = ClassName("my-class")
 ```
 
 If there is no strict factory function for a type of this kind, then, please, [create an issue](https://github.com/JetBrains/kotlin-wrappers/issues/new/choose).
-Otherwise, when you use `unsafeCast` & `asDynamic`, the type can be incorrect when a library updates.
+Otherwise, when you use `unsafeCast` or `asDynamic`, the type can be incorrect when a library updates.
 
 Typical use cases are: 
 - `JSO` (look at the previous item for JSO creation example)
