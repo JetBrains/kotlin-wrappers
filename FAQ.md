@@ -76,7 +76,7 @@ const instance = {
 _Q_: Why should I avoid `unsafeCast` & `asDynamic` when working with Wrappers?
 _A_: First of all, `unsafeCast` and `asDynamic` are not recommended for external declarations, unless you are a declarations' owner. \
 Some types' instances cannot be created by constructor invocation or interface implementation. For such types, we
-provide a strict factory function. It is a responsibility of library authors.
+provide a strict factory functions. It is a responsibility of library authors.
 Example:
 
 ```kotlin
@@ -90,7 +90,7 @@ inline fun ClassName(
 val value = ClassName("my-class")
 ```
 
-If there is no strict factory function for a type of this kind, then, please, [create an issue](https://github.com/JetBrains/kotlin-wrappers/issues).
+If there is no strict factory function for a type of this kind, please, [create an issue](https://github.com/JetBrains/kotlin-wrappers/issues).
 Otherwise, when you use `unsafeCast` or `asDynamic`, the type can be incorrect when a library updates.
 
 Typical use cases are: 
