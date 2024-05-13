@@ -3,6 +3,7 @@
 package actions.glob
 
 import js.array.ReadonlyArray
+import js.generator.AsyncGenerator
 import js.promise.Promise
 
 sealed external interface Globber {
@@ -28,5 +29,5 @@ sealed external interface Globber {
      *
      * Order of the results is not guaranteed.
      */
-    fun globGenerator(): Any /* AsyncGenerator<string, void> */
+    fun globGenerator(): AsyncGenerator<String, *, *>
 }

@@ -5,13 +5,14 @@
 package actions.glob
 
 import js.array.ReadonlyArray
+import js.generator.AsyncGenerator
 import js.promise.Promise
 
 sealed external class DefaultGlobber : Globber {
     // private constructor()
     override fun getSearchPaths(): ReadonlyArray<String>
     override fun glob(): Promise<ReadonlyArray<String>>
-    override fun globGenerator(): Any /* AsyncGenerator<string, void> */
+    override fun globGenerator(): AsyncGenerator<String, *, *>
 
     companion object {
         /**
