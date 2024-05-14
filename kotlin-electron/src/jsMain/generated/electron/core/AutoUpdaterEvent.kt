@@ -5,7 +5,6 @@ package electron.core
 import js.date.Date
 
 
-@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
 sealed external interface AutoUpdaterEvent {
     sealed interface BEFORE_QUIT_FOR_UPDATE : node.events.LegacyEventType

@@ -3,7 +3,6 @@
 package node.cluster
 
 
-@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
 sealed external interface ClusterEvent {
     sealed interface DISCONNECT : node.events.LegacyEventType

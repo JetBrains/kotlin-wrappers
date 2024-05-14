@@ -3,7 +3,6 @@
 package electron.core
 
 
-@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
 sealed external interface WebFrameMainEvent {
     sealed interface DOM_READY : node.events.LegacyEventType

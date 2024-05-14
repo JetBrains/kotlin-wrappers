@@ -5,7 +5,6 @@ package node.repl
 import node.vm.Context
 
 
-@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
 sealed external interface REPLServerEvent {
     sealed interface CLOSE : node.events.LegacyEventType

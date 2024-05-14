@@ -7,7 +7,6 @@ import node.http.ServerResponse
 import node.stream.Duplex
 
 
-@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
 sealed external interface ServerEvent {
     sealed interface KEYLOG : node.events.LegacyEventType

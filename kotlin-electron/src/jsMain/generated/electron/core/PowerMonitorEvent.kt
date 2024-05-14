@@ -3,7 +3,6 @@
 package electron.core
 
 
-@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
 sealed external interface PowerMonitorEvent {
     sealed interface LOCK_SCREEN : node.events.LegacyEventType

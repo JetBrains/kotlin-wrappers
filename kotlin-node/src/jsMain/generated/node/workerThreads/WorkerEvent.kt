@@ -3,7 +3,6 @@
 package node.workerThreads
 
 
-@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
 sealed external interface WorkerEvent {
     sealed interface ERROR : node.events.LegacyEventType

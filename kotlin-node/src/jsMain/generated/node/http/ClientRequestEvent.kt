@@ -5,7 +5,6 @@ package node.http
 import node.net.Socket
 
 
-@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
 sealed external interface ClientRequestEvent {
     sealed interface ABORT : node.events.LegacyEventType

@@ -6,7 +6,6 @@ import js.promise.Promise
 import node.workerThreads.Worker
 
 
-@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
 sealed external interface ProcessEvent {
     sealed interface BEFOREEXIT : node.events.LegacyEventType

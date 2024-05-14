@@ -9,7 +9,6 @@ package remix.run.router
  * RouterState
  */
 
-@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
 sealed external interface FormMethod {
     companion object {

@@ -3,7 +3,6 @@
 package react.router.dom
 
 
-@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
 sealed external interface FetcherFormPropsEncType {
     companion object {
