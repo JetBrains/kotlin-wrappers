@@ -73,10 +73,10 @@ const instance = {
 }
 ```
 
-_Q_: Why should I avoid `unsafeCast` & `asDynamic` when working with Wrappers?
+_Q_: Why should I avoid `unsafeCast` and `asDynamic` when working with Wrappers?
 _A_: First of all, `unsafeCast` and `asDynamic` are not recommended for external declarations, unless you are a declarations' owner. \
-Some types' instances cannot be created by constructor invocation or interface implementation. For such types, we
-provide a strict factory functions. It is a responsibility of library authors.
+Some types' instances cannot be created by constructor invocation or interface implementation. For such types we
+provide strict factory functions. It is a responsibility of library authors.
 Example:
 
 ```kotlin
@@ -90,11 +90,11 @@ inline fun ClassName(
 val value = ClassName("my-class")
 ```
 
-If there is no strict factory function for a type of this kind, please, [create an issue](https://github.com/JetBrains/kotlin-wrappers/issues).
-Otherwise, when you use `unsafeCast` or `asDynamic`, the type can be incorrect when a library updates.
+If there is no strict factory function for a type of this kind please [create an issue](https://github.com/JetBrains/kotlin-wrappers/issues).
+Otherwise, when you use `unsafeCast` or `asDynamic`, the type can be incorrect when the library updates.
 
-Typical use cases are: 
+Typical use cases are:
 - `JSO` (look at the previous item for JSO creation example)
 - Opaque alias
-> **Opaque alias** is the interface that mimicry another external interface but incapsulates some logic inside (e.g.,
+> **Opaque alias** is the interface that mimics another external interface but encapsulates some logic inside (e.g.,
 a `String` opaque interface without any string operations).
