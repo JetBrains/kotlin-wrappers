@@ -15,6 +15,9 @@ import web.window.WindowProxy
 open external class HTMLIFrameElement
 protected constructor() :
     HTMLElement {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/allow)
+     */
     var allow: String
 
     /**
