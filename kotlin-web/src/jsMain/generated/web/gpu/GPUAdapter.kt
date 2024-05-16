@@ -2,7 +2,6 @@
 
 package web.gpu
 
-import js.array.ReadonlyArray
 import js.promise.Promise
 import seskar.js.JsAsync
 
@@ -18,8 +17,8 @@ sealed external class GPUAdapter {
     fun requestDeviceAsync(descriptor: GPUDeviceDescriptor = definedExternally): Promise<GPUDevice>
 
     @JsAsync
-    suspend fun requestAdapterInfo(unmaskHints: ReadonlyArray<String> = definedExternally): GPUAdapterInfo
+    suspend fun requestAdapterInfo(): GPUAdapterInfo
 
     @JsName("requestAdapterInfo")
-    fun requestAdapterInfoAsync(unmaskHints: ReadonlyArray<String> = definedExternally): Promise<GPUAdapterInfo>
+    fun requestAdapterInfoAsync(): Promise<GPUAdapterInfo>
 }

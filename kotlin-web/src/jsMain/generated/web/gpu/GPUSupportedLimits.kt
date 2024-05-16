@@ -27,6 +27,8 @@ sealed external class GPUSupportedLimits {
     var maxVertexAttributes: Int?
     var maxVertexBufferArrayStride: Int?
     var maxInterStageShaderComponents: Int?
+    var maxColorAttachments: Int?
+    var maxColorAttachmentBytesPerSample: Int?
     var maxComputeWorkgroupStorageSize: Int?
     var maxComputeInvocationsPerWorkgroup: Int?
     var maxComputeWorkgroupSizeX: Int?

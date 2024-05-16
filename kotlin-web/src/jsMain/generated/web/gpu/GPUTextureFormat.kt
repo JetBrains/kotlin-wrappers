@@ -83,6 +83,9 @@ sealed external interface GPUTextureFormat {
         @JsValue("rgb9e5ufloat")
         val rgb9e5ufloat: GPUTextureFormat
 
+        @JsValue("rgb10a2uint")
+        val rgb10a2uint: GPUTextureFormat
+
         @JsValue("rgb10a2unorm")
         val rgb10a2unorm: GPUTextureFormat
 

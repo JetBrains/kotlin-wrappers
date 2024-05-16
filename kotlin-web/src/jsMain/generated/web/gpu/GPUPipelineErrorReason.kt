@@ -6,15 +6,12 @@ import seskar.js.JsValue
 import seskar.js.JsVirtual
 
 @JsVirtual
-sealed external interface GPUErrorFilter {
+sealed external interface GPUPipelineErrorReason {
     companion object {
-        @JsValue("out-of-memory")
-        val outOfMemory: GPUErrorFilter
-
         @JsValue("validation")
-        val validation: GPUErrorFilter
+        val validation: GPUPipelineErrorReason
 
         @JsValue("internal")
-        val internal: GPUErrorFilter
+        val internal: GPUPipelineErrorReason
     }
 }
