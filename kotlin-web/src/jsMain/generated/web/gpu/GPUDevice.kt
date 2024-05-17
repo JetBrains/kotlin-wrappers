@@ -29,20 +29,22 @@ sealed external class GPUDevice :
     fun createPipelineLayout(descriptor: GPUPipelineLayoutDescriptor): GPUPipelineLayout
     fun createBindGroup(descriptor: GPUBindGroupDescriptor): GPUBindGroup
     fun createShaderModule(descriptor: GPUShaderModuleDescriptor): GPUShaderModule
-    fun createComputePipeline(descriptor: GPUComputePipelineDescriptor): GPUComputePipeline
-    fun createRenderPipeline(descriptor: GPURenderPipelineDescriptor): GPURenderPipeline
+
+    @JsName("createComputePipeline")
+    fun createComputePipelineSync(descriptor: GPUComputePipelineDescriptor): GPUComputePipeline
+
+    @JsName("createRenderPipeline")
+    fun createRenderPipelineSync(descriptor: GPURenderPipelineDescriptor): GPURenderPipeline
 
     @JsAsync
-    suspend fun createComputePipelineAsync(descriptor: GPUComputePipelineDescriptor): GPUComputePipeline
+    suspend fun createComputePipeline(descriptor: GPUComputePipelineDescriptor): GPUComputePipeline
 
-    @JsName("createComputePipelineAsync")
-    fun createComputePipelineAsyncAsync(descriptor: GPUComputePipelineDescriptor): Promise<GPUComputePipeline>
+    fun createComputePipelineAsync(descriptor: GPUComputePipelineDescriptor): Promise<GPUComputePipeline>
 
     @JsAsync
-    suspend fun createRenderPipelineAsync(descriptor: GPURenderPipelineDescriptor): GPURenderPipeline
+    suspend fun createRenderPipeline(descriptor: GPURenderPipelineDescriptor): GPURenderPipeline
 
-    @JsName("createRenderPipelineAsync")
-    fun createRenderPipelineAsyncAsync(descriptor: GPURenderPipelineDescriptor): Promise<GPURenderPipeline>
+    fun createRenderPipelineAsync(descriptor: GPURenderPipelineDescriptor): Promise<GPURenderPipeline>
     fun createCommandEncoder(descriptor: GPUCommandEncoderDescriptor = definedExternally): GPUCommandEncoder
     fun createRenderBundleEncoder(descriptor: GPURenderBundleEncoderDescriptor): GPURenderBundleEncoder
     fun createQuerySet(descriptor: GPUQuerySetDescriptor): GPUQuerySet
