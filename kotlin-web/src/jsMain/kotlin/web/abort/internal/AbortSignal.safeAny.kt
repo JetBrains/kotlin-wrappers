@@ -7,9 +7,12 @@ import web.events.EventHandler
 import web.events.addEventHandler
 
 internal fun safeAny(
-    signal1: AbortSignal,
+    signal1: AbortSignal?,
     signal2: AbortSignal,
 ): AbortSignal {
+    if (signal1 == null)
+        return signal2
+
     if (signal1.aborted)
         return signal1
 
