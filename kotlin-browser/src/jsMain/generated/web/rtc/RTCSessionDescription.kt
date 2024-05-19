@@ -23,5 +23,5 @@ external class RTCSessionDescription(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSessionDescription/toJSON)
      */
-    fun toJSON(): Any
+    fun toJSON(): RTCSessionDescriptionInit
 }
