@@ -22,8 +22,8 @@ sealed external interface ReadableStreamGenericReader {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/cancel)
      */
     @JsAsync
-    suspend fun cancel(reason: JsError = definedExternally): Unit = definedExternally
+    suspend fun cancel(reason: JsError? = definedExternally): Unit = definedExternally
 
     @JsName("cancel")
-    fun cancelAsync(reason: JsError = definedExternally): Promise<Void> = definedExternally
+    fun cancelAsync(reason: JsError? = definedExternally): Promise<Void> = definedExternally
 }

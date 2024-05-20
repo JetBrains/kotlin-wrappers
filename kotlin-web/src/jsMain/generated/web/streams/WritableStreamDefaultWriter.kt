@@ -34,10 +34,10 @@ external class WritableStreamDefaultWriter<W>(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/abort)
      */
     @JsAsync
-    suspend fun abort(reason: JsError = definedExternally)
+    suspend fun abort(reason: JsError? = definedExternally)
 
     @JsName("abort")
-    fun abortAsync(reason: JsError = definedExternally): Promise<Void>
+    fun abortAsync(reason: JsError? = definedExternally): Promise<Void>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/close)

@@ -32,10 +32,10 @@ external class ReadableStream<R>(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/cancel)
      */
     @JsAsync
-    suspend fun cancel(reason: JsError = definedExternally)
+    suspend fun cancel(reason: JsError? = definedExternally)
 
     @JsName("cancel")
-    fun cancelAsync(reason: JsError = definedExternally): Promise<Void>
+    fun cancelAsync(reason: JsError? = definedExternally): Promise<Void>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/getReader)

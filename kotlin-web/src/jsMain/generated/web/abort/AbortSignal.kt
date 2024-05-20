@@ -42,7 +42,7 @@ sealed external class AbortSignal :
         /**
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/abort_static)
          */
-        fun abort(reason: JsError = definedExternally): AbortSignal
+        fun abort(reason: JsError? = definedExternally): AbortSignal
 
         /**
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/any_static)
