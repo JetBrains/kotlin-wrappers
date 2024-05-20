@@ -21,7 +21,7 @@ internal fun <T : Abortable> patchAbortOptions(
 }
 
 internal suspend fun <T> awaitPromiseLike(
-    p: PromiseLike<T>,
+    promise: PromiseLike<T>,
     controller: AbortController,
 ): T =
     suspendCancellableCoroutine { continuation ->
@@ -29,7 +29,7 @@ internal suspend fun <T> awaitPromiseLike(
             controller.abort()
         }
 
-        p.then(
+        promise.then(
             onFulfilled = continuation::resume,
             onRejected = continuation::resumeWithException,
         )

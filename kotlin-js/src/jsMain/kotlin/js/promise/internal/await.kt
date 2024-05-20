@@ -5,19 +5,19 @@ import kotlinx.coroutines.await
 
 @PublishedApi
 internal suspend fun <T> awaitPromiseResult(
-    p: PromiseResult<T>,
+    promise: PromiseResult<T>,
 ): T =
-    awaitPromiseLike(p as? Promise<T> ?: p.toPromise())
+    awaitPromiseLike(promise as? Promise<T> ?: promise.toPromise())
 
 @PublishedApi
 internal suspend fun <T> awaitPromiseLike(
-    p: PromiseLike<T>,
+    promise: PromiseLike<T>,
 ): T =
-    p.unsafeCast<LegacyPromise<T>>().await()
+    promise.unsafeCast<LegacyPromise<T>>().await()
 
 internal suspend fun <T> awaitOptionalPromiseLike(
-    p: PromiseLike<T>?,
+    promise: PromiseLike<T>?,
 ): T? =
-    if (p != null) {
-        awaitPromiseLike(p)
+    if (promise != null) {
+        awaitPromiseLike(promise)
     } else null
