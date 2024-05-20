@@ -24,9 +24,7 @@ internal fun safeAny(
     val abortHandler = EventHandler<Event, AbortSignal, _> { event ->
         handlers.forEach { it() }
 
-        val s = event.currentTarget
-        // TODO: remove `asDynamic` after nullability fix
-        controller.abort(s.reason.asDynamic())
+        controller.abort(event.currentTarget.reason)
     }
 
     sequenceOf(signal1, signal2)
