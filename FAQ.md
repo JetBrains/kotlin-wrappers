@@ -117,7 +117,7 @@ _A_: There are two cases:
 
 ```kotlin
 var HTMLAttributes<*>.dataTestId: String?
-    get() = it.asDynamic()["data-testid"]
+    get() = asDynamic()["data-testid"]
     set(value) {
         asDynamic()["data-testId"] = value
     }
@@ -129,7 +129,7 @@ var HTMLAttributes<*>.dataTestId: String?
 
 ```kotlin
 var InputHTMLAttributes<*>.dataTestId: String?
-    get() = it.asDynamic()["data-testid"]
+    get() = asDynamic()["data-testid"]
     set(value) {
         asDynamic()["data-testId"] = value
     }
