@@ -105,22 +105,23 @@ Typical use cases are:
 
 ## React
 
-_Q_: How to add data attribute to HTMLElement’s properties?
+_Q_: How to add data attribute to `HTMLElement`’s properties?
 _A_: There are two cases:
 
-1. If the attribute is not specific to the HTMLElement - common for every HTMLElement, need to create an extension
+1. If the attribute is not specific to the `HTMLElement` - common for every `HTMLElement`, need to create an extension
    function.
 
 ```kotlin
 var HTMLAttributes.dataAttribute
-   get() = it.asDynamic().dataAttribute
-   set(value) {
-      it.asDynamic().dataAttribute = value
-   }
+    get() = it.asDynamic().dataAttribute
+    set(value) {
+        it.asDynamic().dataAttribute = value
+    }
 ```
 
 2. Otherwise, use Element’s props interface as a receiver. \
-   For example, if an element is `Input`, its props interface is `InputHTMLAttributes`, therefore it becomes a receiver:
+   For example, if an element is `HTMLInputElement`, its props interface is `InputHTMLAttributes`, therefore it becomes
+   a receiver:
 
 ```kotlin
 var InputHTMLAttributes.dataAttribute
