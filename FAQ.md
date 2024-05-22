@@ -74,7 +74,8 @@ const instance = {
 ```
 
 _Q_: Why should I avoid `unsafeCast` and `asDynamic` when working with Wrappers?
-_A_: First of all, `unsafeCast` and `asDynamic` are not recommended for external declarations, unless you are a declarations' owner. \
+_A_: First of all, `unsafeCast` and `asDynamic` are not recommended for external declarations, unless you are a
+declarations' owner. \
 Some types' instances cannot be created by constructor invocation or interface implementation. For such types we
 provide strict factory functions. It is a responsibility of library authors.
 Example:
@@ -90,11 +91,37 @@ inline fun ClassName(
 val value = ClassName("my-class")
 ```
 
-If there is no strict factory function for a type of this kind please [create an issue](https://github.com/JetBrains/kotlin-wrappers/issues).
+If there is no strict factory function for a type of this kind
+please [create an issue](https://github.com/JetBrains/kotlin-wrappers/issues).
 Otherwise, when you use `unsafeCast` or `asDynamic`, the type can be incorrect when the library updates.
 
 Typical use cases are:
+
 - `JSO` (look at the previous item for JSO creation example)
 - Opaque alias
+
 > **Opaque alias** is the interface that mimics another external interface but encapsulates some logic inside (e.g.,
-a `String` opaque interface without any string operations).
+> a `String` opaque interface without any string operations).
+
+## React
+
+_Q_: How to add data attribute to HTMLElement’s properties?
+_A_: There are two cases:
+
+1. If the attribute is not specific to the HTMLElement - common for every HTMLElement, need to create an extension
+   function.
+
+```kotlin
+fun HTMLAttributes.dataAttribute(value: String) {
+    it.asDynamic().dataAttribute = value
+}
+```
+
+2. Otherwise, use Element’s props interface as a receiver. \
+   For example, if an element is `Input`, its props interface is `InputHTMLAttributes`, therefore it becomes a receiver:
+
+```kotlin
+fun InputHTMLAttributes.dataAttribute(value: String) {
+    it.asDynamic().dataAttribute = value
+}
+```
