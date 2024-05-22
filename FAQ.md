@@ -112,16 +112,21 @@ _A_: There are two cases:
    function.
 
 ```kotlin
-fun HTMLAttributes.dataAttribute(value: String) {
-    it.asDynamic().dataAttribute = value
-}
+var HTMLAttributes.dataAttribute: T
+   get() = it.asDynamic().dataAttribute
+   set(value) {
+      it.asDynamic().dataAttribute = value
+   }
 ```
 
 2. Otherwise, use Element’s props interface as a receiver. \
    For example, if an element is `Input`, its props interface is `InputHTMLAttributes`, therefore it becomes a receiver:
 
 ```kotlin
-fun InputHTMLAttributes.dataAttribute(value: String) {
-    it.asDynamic().dataAttribute = value
+var InputHTMLAttributes.dataAttribute: T
+   get() = it.asDynamic().dataAttribute
+   set(value) {
+      it.asDynamic().dataAttribute = value
+   }
 }
 ```
