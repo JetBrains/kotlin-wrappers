@@ -25,6 +25,10 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/crossOrigin)
      */
     var crossOrigin: CrossOrigin?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/disabled)
+     */
     var disabled: Boolean
 
     /**
