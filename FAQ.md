@@ -112,10 +112,10 @@ _A_: There are two cases:
    function.
 
 ```kotlin
-var HTMLAttributes<*>.dataAttribute: String?
-    get() = it.asDynamic().dataAttribute
+var HTMLAttributes<*>.dataTestId: String?
+    get() = it.asDynamic()["data-testId"]
     set(value) {
-        it.asDynamic().dataAttribute = value
+        asDynamic()["data-testId"] = value
     }
 ```
 
@@ -124,10 +124,10 @@ var HTMLAttributes<*>.dataAttribute: String?
    a receiver:
 
 ```kotlin
-var InputHTMLAttributes<*>.dataAttribute: String?
-   get() = it.asDynamic().dataAttribute
+var InputHTMLAttributes<*>.dataTestId: String?
+   get() = it.asDynamic()["data-testId"]
    set(value) {
-      it.asDynamic().dataAttribute = value
+      asDynamic()["data-testId"] = value
    }
 }
 ```
