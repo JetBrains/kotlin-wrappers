@@ -108,12 +108,16 @@ Typical use cases are:
 _Q_: How to add data attribute to `HTMLElement`’s properties?
 _A_: There are two cases:
 
-1. If the attribute is not specific to the `HTMLElement` - common for every `HTMLElement`, need to create an extension
+> For example, Playwright uses ["data-testid" attribute](https://playwright.dev/docs/locators#locate-by-test-id) by
+> default, so we can develop an exemplifying extension property upon that.
+
+1. If the attribute is not specific to the `HTMLElement` - common for every `HTMLElement`, you need to create an
+   extension
    function.
 
 ```kotlin
 var HTMLAttributes<*>.dataTestId: String?
-    get() = it.asDynamic()["data-testId"]
+    get() = it.asDynamic()["data-testid"]
     set(value) {
         asDynamic()["data-testId"] = value
     }
@@ -125,9 +129,9 @@ var HTMLAttributes<*>.dataTestId: String?
 
 ```kotlin
 var InputHTMLAttributes<*>.dataTestId: String?
-   get() = it.asDynamic()["data-testId"]
-   set(value) {
-      asDynamic()["data-testId"] = value
-   }
+    get() = it.asDynamic()["data-testid"]
+    set(value) {
+        asDynamic()["data-testId"] = value
+    }
 }
 ```
