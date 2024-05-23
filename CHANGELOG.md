@@ -1,8 +1,55 @@
+## pre.752
+
+* Auto cancellation support for suspend adapters (marked with `@JsAsync`)
+
+```kotlin
+import web.abort.Abortable
+
+// ORIGINAL
+external class Loader {
+    @JsAsync
+    suspend fun load(
+        options: Abortable /* or child interface */ = definedExternally,
+    ) T
+
+    fun loadAsync(
+        options: Abortable /* or child interface */ = definedExternally,
+    ): Promise<T>
+}
+
+// GENERATED
+external class Loader {
+    @JsAsync
+    suspend fun load(
+        options: Abortable /* or child interface */ = definedExternally,
+    ) T
+    {
+        /* GENERATED CODE START */
+        val controller = AbortController()
+        val abortOptions = jso {
+            signal = anyOf(options?.signal, controller.signal)
+        }
+        val newOptions = Object.assign(jso(), options, abortOptions)
+
+        invokeOnCancellation {
+            controller.abort()
+        }
+
+        return loadAsync(newOptions).await()
+        /* GENERATED CODE END */
+    }
+
+    fun loadAsync(
+        options: Abortable /* or child interface */ = definedExternally,
+    ): Promise<T>
+}
+```
+
 ## pre.742
 
 **BREAKING CHANGE**
 
-* Browser. Suspend adapters for async functions
+* Browser. Suspend adapters for async functions (marked with `@JsAsync`)
   * The original Promise-based functions are available with the `Async` suffix
 
 ## pre.738
