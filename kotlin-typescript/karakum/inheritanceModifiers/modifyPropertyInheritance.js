@@ -8,6 +8,17 @@ export default (node) => {
             node.name.text === "kind"
             || node.name.text === "parent"
         )
+
+        && (
+            !node.parent
+            || !ts.isInterfaceDeclaration(node.parent)
+            || node.parent.name.text !== "Node"
+        )
+        && (
+            !node.parent
+            || !ts.isInterfaceDeclaration(node.parent)
+            || node.parent.name.text !== "TypePredicateBase"
+        )
     ) {
         return "override"
     }
