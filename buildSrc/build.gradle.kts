@@ -19,7 +19,14 @@ fun version(target: String): String {
     return value
 }
 
+val kotlinVersion = version("kotlin")
+val k2Mode = kotlinVersion.startsWith("2.")
+val seskarVersion = version("seskar")
+
 dependencies {
-    implementation(kotlin("gradle-plugin", version("kotlin")))
-    implementation("io.github.turansky.seskar:seskar-gradle-plugin:${version("seskar")}")
+    implementation(kotlin("gradle-plugin", kotlinVersion))
+    if (k2Mode) {
+        implementation("org.jetbrains.kotlin:js-plain-objects:$kotlinVersion")
+    }
+    implementation("io.github.turansky.seskar:seskar-gradle-plugin:$seskarVersion")
 }
