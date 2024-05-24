@@ -2,6 +2,7 @@
 
 package node.fs
 
+
 suspend fun stat(path: PathLike, opts: StatSimpleOpts = undefined.unsafeCast<Nothing>()): Stats =
     statAsync(
         path, opts

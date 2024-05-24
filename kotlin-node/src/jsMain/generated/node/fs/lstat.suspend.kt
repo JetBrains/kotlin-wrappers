@@ -2,6 +2,7 @@
 
 package node.fs
 
+
 suspend fun lstat(path: PathLike, opts: LstatOpts = undefined.unsafeCast<Nothing>()): Stats =
     lstatAsync(
         path, opts

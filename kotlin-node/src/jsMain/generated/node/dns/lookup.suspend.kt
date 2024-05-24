@@ -2,6 +2,7 @@
 
 package node.dns
 
+
 suspend fun lookup(hostname: String, family: Number): LookupAddress =
     lookupAsync(
         hostname, family

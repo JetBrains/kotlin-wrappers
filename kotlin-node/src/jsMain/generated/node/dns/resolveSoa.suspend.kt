@@ -2,6 +2,7 @@
 
 package node.dns
 
+
 suspend fun resolveSoa(hostname: String): SoaRecord =
     resolveSoaAsync(
         hostname

@@ -2,6 +2,7 @@
 
 package node.vm
 
+
 suspend fun measureMemory(options: MeasureMemoryOptions = undefined.unsafeCast<Nothing>()): MemoryMeasurement =
     measureMemoryAsync(
         options

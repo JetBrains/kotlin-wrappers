@@ -2,6 +2,7 @@
 
 package node.dns
 
+
 suspend fun resolve(hostname: String): js.array.ReadonlyArray<String> =
     resolveAsync(
         hostname

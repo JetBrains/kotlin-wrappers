@@ -10,7 +10,6 @@ package remix.run.router
  * ignored.
  */
 
-
 @seskar.js.JsVirtual
 sealed external interface ImmutableRouteKey {
     companion object {

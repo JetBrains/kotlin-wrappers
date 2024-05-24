@@ -2,6 +2,7 @@
 
 package node.dns
 
+
 suspend fun lookupService(address: String, port: Number): LookupServiceResultPayload =
     lookupServiceAsync(
         address, port
