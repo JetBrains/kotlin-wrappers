@@ -1,9 +1,8 @@
 package js.temporal
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
 
-@JsPlainObject
+// @JsPlainObject
 sealed external interface TimeZoneProtocol :
     TimeZoneLike {
     var id: String
