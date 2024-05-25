@@ -10,9 +10,6 @@ import web.html.HTMLElement
 external interface TreeItemContentProps :
     react.dom.html.HTMLAttributes<HTMLElement>,
     react.PropsWithClassName {
-    /**
-     * className applied to the root element.
-     */
     override var className: ClassName?
 
     /**
@@ -21,27 +18,27 @@ external interface TreeItemContentProps :
     var classes: dynamic
 
     /**
-     * The tree node label.
+     * The tree item label.
      */
     var label: react.ReactNode?
 
     /**
-     * The id of the node.
+     * The id of the item.
      */
-    var nodeId: String
+    var itemId: String
 
     /**
-     * The icon to display next to the tree node's label.
+     * The icon to display next to the tree item's label.
      */
     var icon: react.ReactNode?
 
     /**
-     * The icon to display next to the tree node's label. Either an expansion or collapse icon.
+     * The icon to display next to the tree item's label. Either an expansion or collapse icon.
      */
     var expansionIcon: react.ReactNode?
 
     /**
-     * The icon to display next to the tree node's label. Either a parent or end icon.
+     * The icon to display next to the tree item's label. Either a parent or end icon.
      */
     var displayIcon: react.ReactNode?
 }
