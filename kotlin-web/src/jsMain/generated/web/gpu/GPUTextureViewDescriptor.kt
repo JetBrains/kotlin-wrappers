@@ -2,6 +2,9 @@
 
 package web.gpu
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 sealed external interface GPUTextureViewDescriptor :
     GPUObjectDescriptorBase {
     var format: GPUTextureFormat?

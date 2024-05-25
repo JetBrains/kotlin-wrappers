@@ -3,7 +3,9 @@
 package web.gpu
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
+@JsPlainObject
 sealed external interface GPURenderPassDescriptor :
     GPUObjectDescriptorBase {
     var colorAttachments: ReadonlyArray<GPURenderPassColorAttachment?>
