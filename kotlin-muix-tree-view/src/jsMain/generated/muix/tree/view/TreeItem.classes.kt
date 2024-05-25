@@ -11,7 +11,7 @@ sealed external interface TreeItemClasses {
     val root: ClassName
 
     /** Styles applied to the transition component. */
-    val group: ClassName
+    val groupTransition: ClassName
 
     /** Styles applied to the content element. */
     val content: ClassName
