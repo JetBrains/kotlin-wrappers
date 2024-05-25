@@ -13,9 +13,12 @@ val k2patch by tasks.registering {
             )
         }
 
+        // TODO: uncomment after compilation fix
+        /*
         patchFile("kotlin-js/src/jsMain/kotlin/js/objects/JsPlainObject.kt") {
             JS_PLAIN_OBJECT_BODY
         }
+        */
     }
 }
 
