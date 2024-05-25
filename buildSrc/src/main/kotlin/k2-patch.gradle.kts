@@ -1,3 +1,9 @@
+val JS_PLAIN_OBJECT_BODY = """
+package js.objects
+
+typealias JsPlainObject = kotlinx.js.JsPlainObject
+""".trimIndent()
+
 val k2patch by tasks.registering {
     doLast {
         patchFile("gradle.properties") {
@@ -5,6 +11,10 @@ val k2patch by tasks.registering {
                 "kotlin.version=1.9.24",
                 "kotlin.version=2.0.0",
             )
+        }
+
+        patchFile("kotlin-js/src/jsMain/kotlin/js/objects/JsPlainObject.kt") {
+            JS_PLAIN_OBJECT_BODY
         }
     }
 }
