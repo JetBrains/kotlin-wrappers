@@ -2,6 +2,9 @@
 
 package actions.glob
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 sealed external interface GlobOptions {
     /**
      * Indicates whether to follow symbolic links. Generally should set to false

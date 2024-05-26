@@ -2,6 +2,9 @@
 
 package actions.tool.cache
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 sealed external interface IToolReleaseFile {
     var filename: String
     var platform: String

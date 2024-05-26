@@ -3,7 +3,9 @@
 package actions.artifact
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
+@JsPlainObject
 sealed external interface UploadResults {
     /**
      * The size in bytes of data that was transferred during the upload process to the actions backend service. This takes into account possible

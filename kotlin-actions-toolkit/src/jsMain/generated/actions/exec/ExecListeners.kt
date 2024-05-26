@@ -2,8 +2,10 @@
 
 package actions.exec
 
+import js.objects.JsPlainObject
 import node.buffer.Buffer
 
+@JsPlainObject
 sealed external interface ExecListeners {
     /** A call back for each buffer of stdout */
     var stdout: ((data: Buffer) -> Unit)?

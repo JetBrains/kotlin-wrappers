@@ -2,6 +2,9 @@
 
 package actions.exec
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 sealed external interface ExecOutput {
     /**The exit code of the process */
     var exitCode: Number
