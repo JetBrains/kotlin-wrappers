@@ -20,10 +20,12 @@ val jsPlainObjectPatch by tasks.registering {
             "node/stream/StreamOptions.kt",
         ).forEach { path ->
             patchFile(path) { content ->
-                content.replaceFirst(
-                    "\nsealed external interface ",
-                    "\n@js.objects.JsPlainObject\nsealed external interface ",
-                )
+                if ("@js.objects.JsPlainObject" !in content) {
+                    content.replaceFirst(
+                        "\nsealed external interface ",
+                        "\n@js.objects.JsPlainObject\nsealed external interface ",
+                    )
+                } else content
             }
         }
     }
