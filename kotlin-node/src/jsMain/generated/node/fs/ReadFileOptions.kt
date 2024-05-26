@@ -5,6 +5,7 @@ package node.fs
 import web.abort.Abortable
 
 
+@js.objects.JsPlainObject
 sealed external interface ReadFileOptions : ObjectEncodingOptions, Abortable {
     var flag: String?
 }

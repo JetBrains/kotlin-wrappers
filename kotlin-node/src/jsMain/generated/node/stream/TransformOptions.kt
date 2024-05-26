@@ -4,6 +4,7 @@
 package node.stream
 
 
+@js.objects.JsPlainObject
 external interface TransformOptions : DuplexOptions {
     override fun construct(/* this: Transform, */ callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit): Unit
     override fun read(/* this: Transform, */ size: Number): Unit

@@ -4,6 +4,7 @@
 package node.childProcess
 
 
+@js.objects.JsPlainObject
 sealed external interface ExecFileOptionsWithBufferEncoding : ExecFileOptions {
     var encoding: String /* "buffer" */?
 }

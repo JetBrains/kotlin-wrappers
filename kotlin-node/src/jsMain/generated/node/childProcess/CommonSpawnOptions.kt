@@ -6,6 +6,7 @@ package node.childProcess
 import web.abort.Abortable
 
 
+@js.objects.JsPlainObject
 sealed external interface CommonSpawnOptions : CommonOptions, MessagingOptions, Abortable {
     var argv0: String?
 

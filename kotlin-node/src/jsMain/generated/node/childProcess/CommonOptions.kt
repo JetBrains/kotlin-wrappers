@@ -4,6 +4,7 @@
 package node.childProcess
 
 
+@js.objects.JsPlainObject
 sealed external interface CommonOptions : ProcessEnvOptions {
     /**
      * @default false
