@@ -8,16 +8,16 @@ package node.stream
 sealed external interface WritableOptions : StreamOptions<Stream /* Writable */> {
     var decodeStrings: Boolean?
     var defaultEncoding: node.buffer.BufferEncoding?
-    fun write(
+    var write: (
         /* this: Writable, */ chunk: Any?,
         encoding: node.buffer.BufferEncoding,
         callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit,
-    ): Unit
+    ) -> Unit
 
-    fun writev(
+    var writev: (
         /* this: Writable, */ chunks: Array<WritableOptionsWritevChunksItem>,
         callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit,
-    ): Unit
+    ) -> Unit
 
-    fun final(/* this: Writable, */ callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit): Unit
+    var final: (/* this: Writable, */ callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit) -> Unit
 }
