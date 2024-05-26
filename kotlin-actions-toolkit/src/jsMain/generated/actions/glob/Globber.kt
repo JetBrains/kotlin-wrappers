@@ -6,7 +6,7 @@ import js.array.ReadonlyArray
 import js.generator.AsyncGenerator
 import js.promise.Promise
 
-sealed external interface Globber {
+external interface Globber {
     /**
      * Returns the search path preceding the first glob segment, from each pattern.
      * Duplicates and descendants of other paths are filtered out.

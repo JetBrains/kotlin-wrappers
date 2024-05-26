@@ -5,7 +5,7 @@ package actions.artifact
 import js.array.ReadonlyArray
 import js.promise.Promise
 
-sealed external interface ArtifactClient {
+external interface ArtifactClient {
     /**
      * Uploads an artifact
      *
