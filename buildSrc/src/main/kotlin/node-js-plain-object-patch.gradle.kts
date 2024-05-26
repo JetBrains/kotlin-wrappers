@@ -1,3 +1,14 @@
+private val FUNCTION_PROPERTIES = setOf(
+    "construct",
+    "read",
+    "write",
+    "writev",
+    "final",
+    "destroy",
+    "transform",
+    "flush",
+)
+
 val jsPlainObjectPatch by tasks.registering {
     doLast {
         sequenceOf(
@@ -79,6 +90,23 @@ val jsPlainObjectPatch by tasks.registering {
                             "\n@js.objects.JsPlainObject\nsealed external interface ",
                         )
                 } else content
+            }
+        }
+
+        sequenceOf(
+            "node/stream/DuplexOptions.kt",
+            "node/stream/ReadableOptions.kt",
+            "node/stream/StreamOptions.kt",
+            "node/stream/TransformOptions.kt",
+            "node/stream/WritableOptions.kt",
+        ).forEach { path ->
+            patchFile(path) { content ->
+                FUNCTION_PROPERTIES.fold(content) { acc, propertyName ->
+                    acc.replace(
+                        Regex("""fun $propertyName\((.+?)\): Unit""", RegexOption.DOT_MATCHES_ALL),
+                        "var $propertyName: ($1) -> Unit",
+                    )
+                }
             }
         }
     }
