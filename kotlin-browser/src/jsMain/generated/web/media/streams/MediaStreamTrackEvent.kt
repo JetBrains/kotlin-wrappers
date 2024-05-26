@@ -6,6 +6,8 @@
 
 package web.media.streams
 
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
@@ -18,12 +20,14 @@ import web.events.EventType
 open external class MediaStreamTrackEvent(
     override val type: EventType<MediaStreamTrackEvent, EventTarget>,
     init: MediaStreamTrackEventInit,
-) : Event,
-    MediaStreamTrackEventInit {
+) : Event {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrackEvent/track)
      */
-    override val track: MediaStreamTrack
+    val track: MediaStreamTrack
+
+    @JsAlias(THIS)
+    override fun asInit(): MediaStreamTrackEventInit
 
     companion object : MediaStreamTrackEventTypes
 }

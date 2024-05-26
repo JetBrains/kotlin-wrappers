@@ -7,6 +7,8 @@
 package web.html
 
 import js.buffer.ArrayBuffer
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
@@ -17,17 +19,19 @@ import web.events.EventType
 open external class MediaEncryptedEvent(
     override val type: EventType<MediaEncryptedEvent, EventTarget>,
     init: MediaEncryptedEventInit = definedExternally,
-) : Event,
-    MediaEncryptedEventInit {
+) : Event {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaEncryptedEvent/initData)
      */
-    override val initData: ArrayBuffer?
+    val initData: ArrayBuffer?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaEncryptedEvent/initDataType)
      */
-    override val initDataType: String
+    val initDataType: String
+
+    @JsAlias(THIS)
+    override fun asInit(): MediaEncryptedEventInit
 
     companion object : MediaEncryptedEventTypes
 }

@@ -7,6 +7,8 @@
 package web.midi
 
 import js.typedarrays.Uint8Array
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
@@ -19,12 +21,14 @@ import web.events.EventType
 open external class MIDIMessageEvent(
     override val type: EventType<MIDIMessageEvent, EventTarget>,
     init: MIDIMessageEventInit = definedExternally,
-) : Event,
-    MIDIMessageEventInit {
+) : Event {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIMessageEvent/data)
      */
-    override val data: Uint8Array?
+    val data: Uint8Array?
+
+    @JsAlias(THIS)
+    override fun asInit(): MIDIMessageEventInit
 
     companion object : MIDIMessageEventTypes
 }

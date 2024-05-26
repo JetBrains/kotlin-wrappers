@@ -6,6 +6,8 @@
 
 package web.gamepad
 
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
@@ -18,12 +20,14 @@ import web.events.EventType
 open external class GamepadEvent(
     override val type: EventType<GamepadEvent, EventTarget>,
     init: GamepadEventInit,
-) : Event,
-    GamepadEventInit {
+) : Event {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadEvent/gamepad)
      */
-    override val gamepad: Gamepad
+    val gamepad: Gamepad
+
+    @JsAlias(THIS)
+    override fun asInit(): GamepadEventInit
 
     companion object : GamepadEventTypes
 }

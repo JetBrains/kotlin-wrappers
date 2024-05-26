@@ -6,6 +6,8 @@
 
 package web.errors
 
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
@@ -18,32 +20,34 @@ import web.events.EventType
 open external class ErrorEvent(
     override val type: EventType<ErrorEvent, EventTarget>,
     init: ErrorEventInit = definedExternally,
-) : Event,
-    ErrorEventInit {
+) : Event {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent/colno)
      */
-    override val colno: Int
+    val colno: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent/error)
      */
-    override val error: Any?
+    val error: Any?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent/filename)
      */
-    override val filename: String
+    val filename: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent/lineno)
      */
-    override val lineno: Int
+    val lineno: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent/message)
      */
-    override val message: String
+    val message: String
+
+    @JsAlias(THIS)
+    override fun asInit(): ErrorEventInit
 
     companion object : ErrorEventTypes
 }

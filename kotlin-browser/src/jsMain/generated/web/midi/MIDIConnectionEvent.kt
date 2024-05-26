@@ -6,6 +6,8 @@
 
 package web.midi
 
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
@@ -18,12 +20,14 @@ import web.events.EventType
 open external class MIDIConnectionEvent(
     override val type: EventType<MIDIConnectionEvent, EventTarget>,
     init: MIDIConnectionEventInit = definedExternally,
-) : Event,
-    MIDIConnectionEventInit {
+) : Event {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIConnectionEvent/port)
      */
-    override val port: MIDIPort?
+    val port: MIDIPort?
+
+    @JsAlias(THIS)
+    override fun asInit(): MIDIConnectionEventInit
 
     companion object : MIDIConnectionEventTypes
 }

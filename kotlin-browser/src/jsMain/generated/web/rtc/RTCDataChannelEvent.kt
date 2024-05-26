@@ -6,6 +6,8 @@
 
 package web.rtc
 
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
@@ -16,12 +18,14 @@ import web.events.EventType
 open external class RTCDataChannelEvent(
     override val type: EventType<RTCDataChannelEvent, EventTarget>,
     init: RTCDataChannelEventInit,
-) : Event,
-    RTCDataChannelEventInit {
+) : Event {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannelEvent/channel)
      */
-    override val channel: RTCDataChannel
+    val channel: RTCDataChannel
+
+    @JsAlias(THIS)
+    override fun asInit(): RTCDataChannelEventInit
 
     companion object : RTCDataChannelEventTypes
 }

@@ -7,6 +7,8 @@
 package web.serviceworker
 
 import js.array.ReadonlyArray
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.EventTarget
 import web.events.EventType
 import web.messaging.MessagePort
@@ -19,32 +21,34 @@ import web.messaging.MessagePort
 open external class ExtendableMessageEvent(
     override val type: EventType<ExtendableMessageEvent, EventTarget>,
     init: ExtendableMessageEventInit = definedExternally,
-) : ExtendableEvent,
-    ExtendableMessageEventInit {
+) : ExtendableEvent {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/data)
      */
-    override val data: Any?
+    val data: Any?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/lastEventId)
      */
-    override val lastEventId: String
+    val lastEventId: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/origin)
      */
-    override val origin: String
+    val origin: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/ports)
      */
-    override val ports: ReadonlyArray<MessagePort>
+    val ports: ReadonlyArray<MessagePort>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/source)
      */
-    override val source: Any /* Client | ServiceWorker | MessagePort */?
+    val source: Any /* Client | ServiceWorker | MessagePort */?
+
+    @JsAlias(THIS)
+    override fun asInit(): ExtendableMessageEventInit
 
     companion object : ExtendableMessageEventTypes
 }

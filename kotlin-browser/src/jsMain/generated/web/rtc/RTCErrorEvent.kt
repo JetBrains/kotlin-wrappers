@@ -6,6 +6,8 @@
 
 package web.rtc
 
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
@@ -16,12 +18,14 @@ import web.events.EventType
 open external class RTCErrorEvent(
     override val type: EventType<RTCErrorEvent, EventTarget>,
     init: RTCErrorEventInit,
-) : Event,
-    RTCErrorEventInit {
+) : Event {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCErrorEvent/error)
      */
-    override val error: RTCError
+    val error: RTCError
+
+    @JsAlias(THIS)
+    override fun asInit(): RTCErrorEventInit
 
     companion object : RTCErrorEventTypes
 }

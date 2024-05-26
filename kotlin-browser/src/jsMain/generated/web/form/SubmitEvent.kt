@@ -6,6 +6,8 @@
 
 package web.form
 
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
@@ -17,14 +19,16 @@ import web.html.HTMLElement
 open external class SubmitEvent(
     override val type: EventType<SubmitEvent, EventTarget>,
     init: SubmitEventInit = definedExternally,
-) : Event,
-    SubmitEventInit {
+) : Event {
     /**
      * Returns the element representing the submit button that triggered the form submission, or null if the submission was not triggered by a button.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubmitEvent/submitter)
      */
-    override val submitter: HTMLElement?
+    val submitter: HTMLElement?
+
+    @JsAlias(THIS)
+    override fun asInit(): SubmitEventInit
 
     companion object : SubmitEventTypes
 }

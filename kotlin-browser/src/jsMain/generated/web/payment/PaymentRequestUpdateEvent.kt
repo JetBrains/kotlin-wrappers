@@ -7,6 +7,8 @@
 package web.payment
 
 import js.promise.PromiseLike
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
@@ -20,13 +22,15 @@ import web.events.EventType
 open external class PaymentRequestUpdateEvent(
     override val type: EventType<PaymentRequestUpdateEvent, EventTarget>,
     init: PaymentRequestUpdateEventInit = definedExternally,
-) : Event,
-    PaymentRequestUpdateEventInit {
+) : Event {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequestUpdateEvent/updateWith)
      */
     fun updateWith(detailsPromise: PaymentDetailsUpdate)
     fun updateWith(detailsPromise: PromiseLike<PaymentDetailsUpdate>)
+
+    @JsAlias(THIS)
+    override fun asInit(): PaymentRequestUpdateEventInit
 
     companion object
 }

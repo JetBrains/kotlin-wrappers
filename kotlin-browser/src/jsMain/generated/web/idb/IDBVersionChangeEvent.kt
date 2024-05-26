@@ -7,6 +7,8 @@
 package web.idb
 
 import js.core.JsLong
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
@@ -19,17 +21,19 @@ import web.events.EventType
 open external class IDBVersionChangeEvent(
     override val type: EventType<IDBVersionChangeEvent, EventTarget>,
     init: IDBVersionChangeEventInit = definedExternally,
-) : Event,
-    IDBVersionChangeEventInit {
+) : Event {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBVersionChangeEvent/newVersion)
      */
-    override val newVersion: JsLong?
+    val newVersion: JsLong?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBVersionChangeEvent/oldVersion)
      */
-    override val oldVersion: JsLong
+    val oldVersion: JsLong
+
+    @JsAlias(THIS)
+    override fun asInit(): IDBVersionChangeEventInit
 
     companion object : IDBVersionChangeEventTypes
 }

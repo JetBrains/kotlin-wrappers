@@ -6,6 +6,8 @@
 
 package web.history
 
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
@@ -18,8 +20,7 @@ import web.events.EventType
 open external class PageTransitionEvent(
     override val type: EventType<PageTransitionEvent, EventTarget>,
     init: PageTransitionEventInit = definedExternally,
-) : Event,
-    PageTransitionEventInit {
+) : Event {
     /**
      * For the pageshow event, returns false if the page is newly being loaded (and the load event will fire). Otherwise, returns true.
      *
@@ -34,7 +35,10 @@ open external class PageTransitionEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PageTransitionEvent/persisted)
      */
-    override val persisted: Boolean
+    val persisted: Boolean
+
+    @JsAlias(THIS)
+    override fun asInit(): PageTransitionEventInit
 
     companion object : PageTransitionEventTypes
 }
