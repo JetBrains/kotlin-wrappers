@@ -3,7 +3,9 @@
 
 package node.fs
 
+import js.objects.JsPlainObject
 
+@JsPlainObject
 sealed external interface FlagAndOpenMode {
     var mode: Mode?
     var flag: OpenMode?
