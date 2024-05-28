@@ -96,7 +96,7 @@ external class GoogleEarthEnterpriseTerrainData(options: ConstructorOptions) : T
      *   deferred.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseTerrainData.html#upsample">Online Documentation</a>
      */
-    override fun upsample(
+    override fun upsampleAsync(
         tilingScheme: TilingScheme,
         thisX: Double,
         thisY: Double,

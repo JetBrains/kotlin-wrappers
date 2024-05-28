@@ -4,7 +4,6 @@
 package node.process
 
 
-@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
 sealed external interface UncaughtExceptionOrigin {
     companion object {

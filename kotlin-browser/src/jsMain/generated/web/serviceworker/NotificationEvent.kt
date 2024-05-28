@@ -6,6 +6,8 @@
 
 package web.serviceworker
 
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.EventTarget
 import web.events.EventType
 import web.notifications.Notification
@@ -18,17 +20,19 @@ import web.notifications.Notification
 open external class NotificationEvent(
     override val type: EventType<NotificationEvent, EventTarget>,
     init: NotificationEventInit,
-) : ExtendableEvent,
-    NotificationEventInit {
+) : ExtendableEvent {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotificationEvent/action)
      */
-    override val action: String
+    val action: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotificationEvent/notification)
      */
-    override val notification: Notification
+    val notification: Notification
+
+    @JsAlias(THIS)
+    override fun asInit(): NotificationEventInit
 
     companion object : NotificationEventTypes
 }

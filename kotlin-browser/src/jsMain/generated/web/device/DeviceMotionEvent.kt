@@ -6,6 +6,8 @@
 
 package web.device
 
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
@@ -39,6 +41,9 @@ open external class DeviceMotionEvent(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceMotionEvent/rotationRate)
      */
     val rotationRate: DeviceMotionEventRotationRate?
+
+    @JsAlias(THIS)
+    override fun asInit(): DeviceMotionEventInit
 
     companion object : DeviceMotionEventTypes
 }

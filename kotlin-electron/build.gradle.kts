@@ -1,6 +1,8 @@
 plugins {
     `kotlin-library-conventions`
     karakum()
+    // TEMP
+    `elecron-js-plain-object-patch`
 }
 
 dependencies {

@@ -25,6 +25,10 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/crossOrigin)
      */
     var crossOrigin: CrossOrigin?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/disabled)
+     */
     var disabled: Boolean
 
     /**
@@ -47,6 +51,10 @@ protected constructor() :
     var hreflang: String
     var imageSizes: String
     var imageSrcset: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/integrity)
+     */
     var integrity: String
 
     /**
@@ -78,6 +86,8 @@ protected constructor() :
 
     /**
      * Sets or retrieves the MIME type of the object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/type)
      */
     var type: String
 }

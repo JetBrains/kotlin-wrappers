@@ -1,12 +1,21 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@actions/cache")
+
 package actions.cache
-suspend fun extractTar(
+
+import js.core.Void
+import js.promise.Promise
+import seskar.js.JsAsync
+
+@JsAsync
+external suspend fun extractTar(
     archivePath: String,
     compressionMethod: CompressionMethod,
-) {
-    extractTarAsync(
-        archivePath = archivePath,
-        compressionMethod = compressionMethod,
-    ).await()
-}
+)
+
+@JsName("extractTar")
+external fun extractTarAsync(
+    archivePath: String,
+    compressionMethod: CompressionMethod,
+): Promise<Void>

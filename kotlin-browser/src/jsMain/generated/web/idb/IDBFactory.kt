@@ -5,6 +5,7 @@ package web.idb
 import js.array.ReadonlyArray
 import js.core.JsLong
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * In the following code snippet, we make a request to open a database, and include handlers for the success and error cases. For a full working example, see our To-do Notifications app (view example live.)
@@ -27,6 +28,7 @@ sealed external class IDBFactory {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBFactory/databases)
      */
+    @JsAsync
     suspend fun databases(): ReadonlyArray<IDBDatabaseInfo>
 
     @JsName("databases")

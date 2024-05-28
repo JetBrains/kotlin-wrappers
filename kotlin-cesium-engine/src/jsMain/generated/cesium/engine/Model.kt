@@ -10,6 +10,7 @@ package cesium.engine
 
 import js.objects.JsPlainObject
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * <div class="notice">
@@ -500,6 +501,9 @@ private constructor() {
          * @return A promise that resolves to the created model when it is ready to render.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Model.html#.fromGltfAsync">Online Documentation</a>
          */
+        @JsAsync
+        suspend fun fromGltf(options: FromGltfAsyncOptions): Model
+
         fun fromGltfAsync(options: FromGltfAsyncOptions): Promise<Model>
 
         /**

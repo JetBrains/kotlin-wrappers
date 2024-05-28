@@ -2,6 +2,9 @@
 
 package actions.artifact
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 sealed external interface ContainerEntry {
     var containerId: Number
     var scopeIdentifier: String

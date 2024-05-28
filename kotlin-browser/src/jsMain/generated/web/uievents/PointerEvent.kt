@@ -7,6 +7,8 @@
 package web.uievents
 
 import js.array.ReadonlyArray
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.EventTarget
 import web.events.EventType
 
@@ -80,6 +82,9 @@ open external class PointerEvent(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/getPredictedEvents)
      */
     fun getPredictedEvents(): ReadonlyArray<PointerEvent>
+
+    @JsAlias(THIS)
+    override fun asInit(): PointerEventInit
 
     companion object : PointerEventTypes
 }

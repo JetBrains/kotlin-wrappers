@@ -1,7 +1,8 @@
 plugins {
     `kotlin-library-conventions`
-    `patch-node-types`
     karakum()
+    // TEMP
+    `node-js-plain-object-patch`
 }
 
 dependencies {

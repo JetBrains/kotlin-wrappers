@@ -100,8 +100,12 @@ tasks.withType<KotlinCompilationTask<*>>().configureEach {
 
 tasks.withType<Kotlin2JsCompile>().configureEach {
     compilerOptions {
-        moduleKind = JsModuleKind.MODULE_ES
-        useEsClasses = true
+        if (k2mode) {
+            target = "es2015"
+        } else {
+            moduleKind = JsModuleKind.MODULE_ES
+            useEsClasses = true
+        }
 
         // TODO: Enable after resolving
         //  https://youtrack.jetbrains.com/issue/KT-67355

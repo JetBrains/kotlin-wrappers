@@ -4,7 +4,8 @@
 package node.stream
 
 
+@js.objects.JsPlainObject
 sealed external interface ReadableOptions : StreamOptions<Stream /* Readable */> {
     var encoding: node.buffer.BufferEncoding?
-    fun read(/* this: Readable, */ size: Number): Unit
+    var read: (/* this: Readable, */ size: Number) -> Unit
 }

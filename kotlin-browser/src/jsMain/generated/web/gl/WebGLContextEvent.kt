@@ -6,6 +6,8 @@
 
 package web.gl
 
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
@@ -18,12 +20,14 @@ import web.events.EventType
 open external class WebGLContextEvent(
     override val type: EventType<WebGLContextEvent, EventTarget>,
     init: WebGLContextEventInit = definedExternally,
-) : Event,
-    WebGLContextEventInit {
+) : Event {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLContextEvent/statusMessage)
      */
-    override val statusMessage: String
+    val statusMessage: String
+
+    @JsAlias(THIS)
+    override fun asInit(): WebGLContextEventInit
 
     companion object
 }

@@ -7,6 +7,8 @@
 package web.events
 
 import js.core.JsLong
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 
 /**
  * Events measuring progress of an underlying process, like an HTTP request (for an XMLHttpRequest, or the loading of the underlying resource of an <img>, <audio>, <video>, <style> or <link>).
@@ -16,22 +18,24 @@ import js.core.JsLong
 open external class ProgressEvent(
     override val type: EventType<ProgressEvent, EventTarget>,
     init: ProgressEventInit = definedExternally,
-) : Event,
-    ProgressEventInit {
+) : Event {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ProgressEvent/lengthComputable)
      */
-    override val lengthComputable: Boolean
+    val lengthComputable: Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ProgressEvent/loaded)
      */
-    override val loaded: JsLong
+    val loaded: JsLong
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ProgressEvent/total)
      */
-    override val total: JsLong
+    val total: JsLong
+
+    @JsAlias(THIS)
+    override fun asInit(): ProgressEventInit
 
     companion object : ProgressEventTypes
 }

@@ -155,7 +155,7 @@ external class HeightmapTerrainData(options: ConstructorOptions) : TerrainData {
      *   or undefined if the mesh is unavailable.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/HeightmapTerrainData.html#upsample">Online Documentation</a>
      */
-    override fun upsample(
+    override fun upsampleAsync(
         tilingScheme: TilingScheme,
         thisX: Double,
         thisY: Double,

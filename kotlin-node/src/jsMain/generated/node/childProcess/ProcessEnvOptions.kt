@@ -4,6 +4,7 @@
 package node.childProcess
 
 
+@js.objects.JsPlainObject
 sealed external interface ProcessEnvOptions {
     var uid: Double?
     var gid: Double?

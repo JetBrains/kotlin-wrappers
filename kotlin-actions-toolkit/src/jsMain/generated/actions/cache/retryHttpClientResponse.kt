@@ -1,39 +1,25 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@actions/cache")
+
 package actions.cache
 
 import actions.http.client.HttpClientResponse
 import js.promise.Promise
+import seskar.js.JsAsync
 
-suspend fun retryHttpClientResponse(
+@JsAsync
+external suspend fun retryHttpClientResponse(
     name: String,
     method: () -> Promise<HttpClientResponse>,
-): HttpClientResponse =
-    retryHttpClientResponseAsync(
-        name = name,
-        method = method,
-    ).await()
+    maxAttempts: Number = definedExternally,
+    delay: Number = definedExternally,
+): HttpClientResponse
 
-suspend fun retryHttpClientResponse(
+@JsName("retryHttpClientResponse")
+external fun retryHttpClientResponseAsync(
     name: String,
     method: () -> Promise<HttpClientResponse>,
-    maxAttempts: Number,
-): HttpClientResponse =
-    retryHttpClientResponseAsync(
-        name = name,
-        method = method,
-        maxAttempts = maxAttempts,
-    ).await()
-
-suspend fun retryHttpClientResponse(
-    name: String,
-    method: () -> Promise<HttpClientResponse>,
-    maxAttempts: Number,
-    delay: Number,
-): HttpClientResponse =
-    retryHttpClientResponseAsync(
-        name = name,
-        method = method,
-        maxAttempts = maxAttempts,
-        delay = delay,
-    ).await()
+    maxAttempts: Number = definedExternally,
+    delay: Number = definedExternally,
+): Promise<HttpClientResponse>

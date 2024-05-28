@@ -5,7 +5,6 @@ package muix.tree.view
 import mui.material.styles.Theme
 import mui.system.SxProps
 import web.cssom.ClassName
-import web.html.HTMLElement
 
 external interface TreeItemProps :
     react.dom.html.HTMLAttributes<web.html.HTMLLIElement>,
@@ -17,9 +16,6 @@ external interface TreeItemProps :
      */
     override var children: react.ReactNode?
 
-    /**
-     * className applied to the root element.
-     */
     override var className: ClassName?
 
     /**
@@ -28,12 +24,19 @@ external interface TreeItemProps :
     var classes: TreeItemClasses?
 
     /**
-     * The icon used to collapse the node.
+     * Overridable component slots.
+     * @default {}
      */
-    var collapseIcon: react.ReactNode?
+    var slots: TreeItemSlots?
 
     /**
-     * The component used for the content node.
+     * The props used for each component slot.
+     * @default {}
+     */
+    var slotProps: TreeItemSlotProps?
+
+    /**
+     * The component used to render the content of the item.
      * @default TreeItemContent
      */
     var ContentComponent: react.ComponentType<TreeItemContentProps>?
@@ -41,63 +44,75 @@ external interface TreeItemProps :
     /**
      * Props applied to ContentComponent.
      */
-    var ContentProps: react.dom.html.HTMLAttributes<HTMLElement>?
+    var ContentProps: react.Props? /* React.HTMLAttributes<HTMLElement> & { ref?: React.Ref<HTMLElement>; } */
 
     /**
-     * If `true`, the node is disabled.
+     * If `true`, the item is disabled.
      * @default false
      */
     var disabled: Boolean?
 
     /**
-     * The icon displayed next to an end node.
-     */
-    var endIcon: react.ReactNode?
-
-    /**
-     * The icon used to expand the node.
-     */
-    var expandIcon: react.ReactNode?
-
-    /**
-     * The icon to display next to the tree node's label.
-     */
-    var icon: react.ReactNode?
-
-    /**
      * This prop isn't supported.
-     * Use the `onNodeFocus` callback on the tree if you need to monitor a node's focus.
+     * Use the `onItemFocus` callback on the tree if you need to monitor a item's focus.
      */
     @Deprecated("See documentation")
     override var onFocus: react.dom.events.FocusEventHandler<web.html.HTMLLIElement>?
 
     /**
-     * The tree node label.
+     * The tree item label.
      */
     var label: react.ReactNode?
 
     /**
-     * The id of the node.
+     * The id of the item.
      */
-    var nodeId: String
-
-    /**
-     * The component used for the transition.
-     * [Follow this guide](/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
-     * @default Collapse
-     */
-    var TransitionComponent: react.ComponentType<mui.material.transitions.TransitionProps>?
-
-    /**
-     * Props applied to the transition element.
-     * By default, the element is based on this [`Transition`](http://reactcommunity.org/react-transition-group/transition/) component.
-     */
-    var TransitionProps: mui.material.transitions.TransitionProps?
+    var itemId: String
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
     override var sx: SxProps<Theme>?
+}
+
+external interface TreeItemSlots {
+    /**
+     * The icon used to collapse the item.
+     */
+    var collapseIcon: react.ElementType<*>?
+
+    /**
+     * The icon used to expand the item.
+     */
+    var expandIcon: react.ElementType<*>?
+
+    /**
+     * The icon displayed next to an end item.
+     */
+    var endIcon: react.ElementType<*>?
+
+    /**
+     * The icon to display next to the tree item's label.
+     */
+    var icon: react.ElementType<*>?
+
+    /**
+     * The component that animates to appearance / disappearance of the item's children.
+     * @default TreeItem2Group
+     */
+    var groupTransition: react.ElementType<*>?
+}
+
+external interface TreeItemSlotProps : react.Props {
+    var collapseIcon: react.Props?
+
+    var expandIcon: react.Props?
+
+    var endIcon: react.Props?
+
+    var icon: react.Props?
+
+    var groupTransition: react.Props?
 }
 
 external interface TreeItemOwnerState {

@@ -2,9 +2,8 @@
 
 package web.gpu
 
-import js.objects.JsPlainObject
-
-@JsPlainObject
+// @JsPlainObject
+//  Details - https://youtrack.jetbrains.com/issue/KT-68554
 sealed external interface GPUBufferBinding :
     GPUBindingResource {
     var buffer: GPUBuffer

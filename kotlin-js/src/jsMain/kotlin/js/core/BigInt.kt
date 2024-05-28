@@ -8,7 +8,16 @@
 
 package js.core
 
+import js.function.JsFunction
+import js.function.invoke
 import seskar.js.JsPrimitive
+
+@PublishedApi
+internal val POW = JsFunction<BigInt, BigInt, BigInt>(
+    "base",
+    "exponent",
+    "return base ** exponent"
+)
 
 @JsPrimitive
 external class BigInt
@@ -31,11 +40,20 @@ private constructor() :
     inline operator fun div(other: BigInt): BigInt =
         (unsafeCast<Double>() / other.unsafeCast<Double>()).unsafeCast<BigInt>()
 
-    operator fun inc(): BigInt =
+    inline operator fun inc(): BigInt =
         this + 1.n
 
-    operator fun dec(): BigInt =
+    inline operator fun dec(): BigInt =
         this - 1.n
+
+    inline fun pow(x: Int): BigInt =
+        pow(x.n)
+
+    inline fun pow(x: Long): BigInt =
+        pow(x.n)
+
+    inline fun pow(x: BigInt): BigInt =
+        POW(this, x)
 
     /**
      * Returns a string representation of an object.

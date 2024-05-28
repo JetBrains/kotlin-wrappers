@@ -5,6 +5,7 @@ package web.canvas
 import js.core.JsLong
 import js.promise.Promise
 import js.transferable.Transferable
+import seskar.js.JsAsync
 import web.blob.Blob
 import web.events.Event
 import web.events.EventHandler
@@ -51,6 +52,7 @@ external class OffscreenCanvas(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/convertToBlob)
      */
+    @JsAsync
     suspend fun convertToBlob(options: ImageEncodeOptions = definedExternally): Blob
 
     @JsName("convertToBlob")

@@ -9,6 +9,7 @@ package web.http
 import js.buffer.ArrayBuffer
 import js.promise.Promise
 import js.typedarrays.Uint8Array
+import seskar.js.JsAsync
 import web.blob.Blob
 import web.form.FormData
 import web.streams.ReadableStream
@@ -29,6 +30,7 @@ sealed external interface Body {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/arrayBuffer)
      */
+    @JsAsync
     suspend fun arrayBuffer(): ArrayBuffer = definedExternally
 
     @JsName("arrayBuffer")
@@ -37,6 +39,7 @@ sealed external interface Body {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/blob)
      */
+    @JsAsync
     suspend fun blob(): Blob = definedExternally
 
     @JsName("blob")
@@ -45,6 +48,7 @@ sealed external interface Body {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/formData)
      */
+    @JsAsync
     suspend fun formData(): FormData = definedExternally
 
     @JsName("formData")
@@ -53,6 +57,7 @@ sealed external interface Body {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/json)
      */
+    @JsAsync
     suspend fun json(): Any? = definedExternally
 
     @JsName("json")
@@ -61,6 +66,7 @@ sealed external interface Body {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/text)
      */
+    @JsAsync
     suspend fun text(): String = definedExternally
 
     @JsName("text")

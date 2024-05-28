@@ -7,6 +7,8 @@
 package web.media.key
 
 import js.buffer.ArrayBuffer
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
@@ -20,17 +22,19 @@ import web.events.EventType
 open external class MediaKeyMessageEvent(
     override val type: EventType<MediaKeyMessageEvent, EventTarget>,
     init: MediaKeyMessageEventInit,
-) : Event,
-    MediaKeyMessageEventInit {
+) : Event {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyMessageEvent/message)
      */
-    override val message: ArrayBuffer
+    val message: ArrayBuffer
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyMessageEvent/messageType)
      */
-    override val messageType: MediaKeyMessageType
+    val messageType: MediaKeyMessageType
+
+    @JsAlias(THIS)
+    override fun asInit(): MediaKeyMessageEventInit
 
     companion object : MediaKeyMessageEventTypes
 }

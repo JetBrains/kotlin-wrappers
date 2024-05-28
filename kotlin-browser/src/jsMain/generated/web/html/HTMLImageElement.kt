@@ -4,6 +4,7 @@ package web.html
 
 import js.core.Void
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.dom.HTMLOrSVGImageElement
 import web.gl.TexImageSource
 import web.http.CrossOrigin
@@ -137,6 +138,7 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/decode)
      */
+    @JsAsync
     suspend fun decode()
 
     @JsName("decode")

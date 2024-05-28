@@ -6,6 +6,7 @@ package cesium.engine
 
 import js.objects.JsPlainObject
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * <div class="notice">
@@ -93,12 +94,26 @@ private constructor() {
          * @return A promise that resolves to the created TileMapServiceImageryProvider.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileMapServiceImageryProvider.html#.fromUrl">Online Documentation</a>
          */
-        fun fromUrl(
+        @JsAsync
+        suspend fun fromUrl(
+            url: Resource,
+            options: ConstructorOptions? = definedExternally,
+        ): TileMapServiceImageryProvider
+
+        @JsName("fromUrl")
+        fun fromUrlAsync(
             url: Resource,
             options: ConstructorOptions? = definedExternally,
         ): Promise<TileMapServiceImageryProvider>
 
-        fun fromUrl(
+        @JsAsync
+        suspend fun fromUrl(
+            url: String,
+            options: ConstructorOptions? = definedExternally,
+        ): TileMapServiceImageryProvider
+
+        @JsName("fromUrl")
+        fun fromUrlAsync(
             url: String,
             options: ConstructorOptions? = definedExternally,
         ): Promise<TileMapServiceImageryProvider>

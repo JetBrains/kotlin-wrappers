@@ -18,17 +18,16 @@ import web.time.DOMHighResTimeStamp
 open external class BlobEvent(
     override val type: EventType<BlobEvent, EventTarget>,
     init: BlobEventInit,
-) : Event,
-    BlobEventInit {
+) : Event {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BlobEvent/data)
      */
-    override val data: Blob
+    val data: Blob
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BlobEvent/timecode)
      */
-    override val timecode: DOMHighResTimeStamp
+    val timecode: DOMHighResTimeStamp
 
     companion object : BlobEventTypes
 }

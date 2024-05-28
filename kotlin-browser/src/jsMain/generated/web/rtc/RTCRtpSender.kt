@@ -4,6 +4,7 @@ package web.rtc
 
 import js.core.Void
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.media.streams.MediaStream
 import web.media.streams.MediaStreamTrack
 
@@ -41,6 +42,7 @@ sealed external class RTCRtpSender {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/getStats)
      */
+    @JsAsync
     suspend fun getStats(): RTCStatsReport
 
     @JsName("getStats")
@@ -49,6 +51,7 @@ sealed external class RTCRtpSender {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/replaceTrack)
      */
+    @JsAsync
     suspend fun replaceTrack(withTrack: MediaStreamTrack?)
 
     @JsName("replaceTrack")
@@ -57,6 +60,7 @@ sealed external class RTCRtpSender {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/setParameters)
      */
+    @JsAsync
     suspend fun setParameters(
         parameters: RTCRtpSendParameters,
         setParameterOptions: RTCSetParameterOptions = definedExternally,

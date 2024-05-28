@@ -6,6 +6,8 @@
 
 package web.vtt
 
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
@@ -18,14 +20,16 @@ import web.events.EventType
 open external class TrackEvent(
     override val type: EventType<TrackEvent, EventTarget>,
     init: TrackEventInit = definedExternally,
-) : Event,
-    TrackEventInit {
+) : Event {
     /**
      * Returns the track object (TextTrack, AudioTrack, or VideoTrack) to which the event relates.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TrackEvent/track)
      */
-    override val track: TextTrack?
+    val track: TextTrack?
+
+    @JsAlias(THIS)
+    override fun asInit(): TrackEventInit
 
     companion object : TrackEventTypes
 }

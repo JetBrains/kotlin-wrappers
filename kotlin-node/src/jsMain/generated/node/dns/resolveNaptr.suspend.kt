@@ -2,6 +2,7 @@
 
 package node.dns
 
+
 suspend fun resolveNaptr(hostname: String): js.array.ReadonlyArray<NaptrRecord> =
     resolveNaptrAsync(
         hostname

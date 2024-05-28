@@ -4,6 +4,7 @@ package web.codecs
 
 import js.core.Void
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
@@ -45,6 +46,7 @@ external class VideoDecoder(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/flush)
      */
+    @JsAsync
     suspend fun flush()
 
     @JsName("flush")
@@ -56,6 +58,7 @@ external class VideoDecoder(
     fun reset()
 
     companion object {
+        @JsAsync
         suspend fun isConfigSupported(config: VideoDecoderConfig): VideoDecoderSupport
 
         @JsName("isConfigSupported")

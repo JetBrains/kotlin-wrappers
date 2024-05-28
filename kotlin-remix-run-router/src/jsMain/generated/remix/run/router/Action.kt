@@ -9,7 +9,6 @@ package remix.run.router
  * Actions represent the type of change to a location value.
  */
 
-@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 sealed external interface Action {
     companion object {
         /**

@@ -2,6 +2,7 @@
 
 package node.dns
 
+
 suspend fun resolveCaa(hostname: String): js.array.ReadonlyArray<CaaRecord> =
     resolveCaaAsync(
         hostname

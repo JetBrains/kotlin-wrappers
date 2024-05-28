@@ -6,6 +6,8 @@
 
 package web.speech
 
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
@@ -18,32 +20,34 @@ import web.events.EventType
 open external class SpeechSynthesisEvent(
     override val type: EventType<SpeechSynthesisEvent, EventTarget>,
     init: SpeechSynthesisEventInit,
-) : Event,
-    SpeechSynthesisEventInit {
+) : Event {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisEvent/charIndex)
      */
-    override val charIndex: Int
+    val charIndex: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisEvent/charLength)
      */
-    override val charLength: Int
+    val charLength: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisEvent/elapsedTime)
      */
-    override val elapsedTime: Float
+    val elapsedTime: Float
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisEvent/name)
      */
-    override val name: String
+    val name: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisEvent/utterance)
      */
-    override val utterance: SpeechSynthesisUtterance
+    val utterance: SpeechSynthesisUtterance
+
+    @JsAlias(THIS)
+    override fun asInit(): SpeechSynthesisEventInit
 
     companion object : SpeechSynthesisEventTypes
 }

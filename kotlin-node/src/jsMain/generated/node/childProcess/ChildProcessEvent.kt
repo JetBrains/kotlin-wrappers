@@ -3,7 +3,6 @@
 package node.childProcess
 
 
-@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
 sealed external interface ChildProcessEvent {
     sealed interface CLOSE : node.events.LegacyEventType

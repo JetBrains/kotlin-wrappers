@@ -4,6 +4,7 @@ package web.wakelock
 
 import js.core.Void
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
@@ -33,6 +34,7 @@ sealed external class WakeLockSentinel :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WakeLockSentinel/release)
      */
+    @JsAsync
     suspend fun release()
 
     @JsName("release")

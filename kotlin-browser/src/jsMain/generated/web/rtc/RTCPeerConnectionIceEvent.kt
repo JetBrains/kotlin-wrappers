@@ -6,6 +6,8 @@
 
 package web.rtc
 
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
@@ -18,12 +20,14 @@ import web.events.EventType
 open external class RTCPeerConnectionIceEvent(
     override val type: EventType<RTCPeerConnectionIceEvent, EventTarget>,
     init: RTCPeerConnectionIceEventInit = definedExternally,
-) : Event,
-    RTCPeerConnectionIceEventInit {
+) : Event {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnectionIceEvent/candidate)
      */
-    override val candidate: RTCIceCandidate?
+    val candidate: RTCIceCandidate?
+
+    @JsAlias(THIS)
+    override fun asInit(): RTCPeerConnectionIceEventInit
 
     companion object : RTCPeerConnectionIceEventTypes
 }

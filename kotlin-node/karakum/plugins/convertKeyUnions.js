@@ -41,7 +41,6 @@ val ${key}: ${key}
             .join("\n")
 
         return `
-@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
 sealed external interface ${name} {
 ${body}

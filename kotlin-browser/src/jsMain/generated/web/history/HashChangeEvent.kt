@@ -6,6 +6,8 @@
 
 package web.history
 
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
@@ -18,21 +20,23 @@ import web.events.EventType
 open external class HashChangeEvent(
     override val type: EventType<HashChangeEvent, EventTarget>,
     init: HashChangeEventInit = definedExternally,
-) : Event,
-    HashChangeEventInit {
+) : Event {
     /**
      * Returns the URL of the session history entry that is now current.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HashChangeEvent/newURL)
      */
-    override val newURL: String
+    val newURL: String
 
     /**
      * Returns the URL of the session history entry that was previously current.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HashChangeEvent/oldURL)
      */
-    override val oldURL: String
+    val oldURL: String
+
+    @JsAlias(THIS)
+    override fun asInit(): HashChangeEventInit
 
     companion object : HashChangeEventTypes
 }

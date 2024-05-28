@@ -6,6 +6,7 @@ import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
 import js.buffer.BufferSource
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * This Web Crypto API interface provides a number of low-level cryptographic functions. It is accessed via the Crypto.subtle properties available in a window context (via Window.crypto).
@@ -17,6 +18,7 @@ sealed external class SubtleCrypto {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/decrypt)
      */
+    @JsAsync
     suspend fun decrypt(
         algorithm: Algorithm,
         key: CryptoKey,
@@ -30,6 +32,7 @@ sealed external class SubtleCrypto {
         data: BufferSource,
     ): Promise<ArrayBuffer>
 
+    @JsAsync
     suspend fun decrypt(
         algorithm: String,
         key: CryptoKey,
@@ -43,6 +46,7 @@ sealed external class SubtleCrypto {
         data: BufferSource,
     ): Promise<ArrayBuffer>
 
+    @JsAsync
     suspend fun decrypt(
         algorithm: RsaOaepParams,
         key: CryptoKey,
@@ -56,6 +60,7 @@ sealed external class SubtleCrypto {
         data: BufferSource,
     ): Promise<ArrayBuffer>
 
+    @JsAsync
     suspend fun decrypt(
         algorithm: AesCtrParams,
         key: CryptoKey,
@@ -69,6 +74,7 @@ sealed external class SubtleCrypto {
         data: BufferSource,
     ): Promise<ArrayBuffer>
 
+    @JsAsync
     suspend fun decrypt(
         algorithm: AesCbcParams,
         key: CryptoKey,
@@ -82,6 +88,7 @@ sealed external class SubtleCrypto {
         data: BufferSource,
     ): Promise<ArrayBuffer>
 
+    @JsAsync
     suspend fun decrypt(
         algorithm: AesGcmParams,
         key: CryptoKey,
@@ -98,6 +105,7 @@ sealed external class SubtleCrypto {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
      */
+    @JsAsync
     suspend fun deriveBits(
         algorithm: Algorithm,
         baseKey: CryptoKey,
@@ -111,6 +119,7 @@ sealed external class SubtleCrypto {
         length: Int,
     ): Promise<ArrayBuffer>
 
+    @JsAsync
     suspend fun deriveBits(
         algorithm: String,
         baseKey: CryptoKey,
@@ -124,6 +133,7 @@ sealed external class SubtleCrypto {
         length: Int,
     ): Promise<ArrayBuffer>
 
+    @JsAsync
     suspend fun deriveBits(
         algorithm: EcdhKeyDeriveParams,
         baseKey: CryptoKey,
@@ -137,6 +147,7 @@ sealed external class SubtleCrypto {
         length: Int,
     ): Promise<ArrayBuffer>
 
+    @JsAsync
     suspend fun deriveBits(
         algorithm: HkdfParams,
         baseKey: CryptoKey,
@@ -150,6 +161,7 @@ sealed external class SubtleCrypto {
         length: Int,
     ): Promise<ArrayBuffer>
 
+    @JsAsync
     suspend fun deriveBits(
         algorithm: Pbkdf2Params,
         baseKey: CryptoKey,
@@ -166,6 +178,7 @@ sealed external class SubtleCrypto {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
      */
+    @JsAsync
     suspend fun deriveKey(
         algorithm: Algorithm,
         baseKey: CryptoKey,
@@ -183,6 +196,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun deriveKey(
         algorithm: String,
         baseKey: CryptoKey,
@@ -200,6 +214,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun deriveKey(
         algorithm: EcdhKeyDeriveParams,
         baseKey: CryptoKey,
@@ -217,6 +232,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun deriveKey(
         algorithm: EcdhKeyDeriveParams,
         baseKey: CryptoKey,
@@ -234,6 +250,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun deriveKey(
         algorithm: HkdfParams,
         baseKey: CryptoKey,
@@ -251,6 +268,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun deriveKey(
         algorithm: HkdfParams,
         baseKey: CryptoKey,
@@ -268,6 +286,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun deriveKey(
         algorithm: Pbkdf2Params,
         baseKey: CryptoKey,
@@ -285,6 +304,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun deriveKey(
         algorithm: Pbkdf2Params,
         baseKey: CryptoKey,
@@ -302,6 +322,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun deriveKey(
         algorithm: Algorithm,
         baseKey: CryptoKey,
@@ -319,6 +340,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun deriveKey(
         algorithm: String,
         baseKey: CryptoKey,
@@ -336,6 +358,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun deriveKey(
         algorithm: EcdhKeyDeriveParams,
         baseKey: CryptoKey,
@@ -353,6 +376,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun deriveKey(
         algorithm: HkdfParams,
         baseKey: CryptoKey,
@@ -370,6 +394,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun deriveKey(
         algorithm: Pbkdf2Params,
         baseKey: CryptoKey,
@@ -387,6 +412,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun deriveKey(
         algorithm: Algorithm,
         baseKey: CryptoKey,
@@ -404,6 +430,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun deriveKey(
         algorithm: String,
         baseKey: CryptoKey,
@@ -421,6 +448,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun deriveKey(
         algorithm: EcdhKeyDeriveParams,
         baseKey: CryptoKey,
@@ -438,6 +466,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun deriveKey(
         algorithm: HkdfParams,
         baseKey: CryptoKey,
@@ -455,6 +484,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun deriveKey(
         algorithm: Pbkdf2Params,
         baseKey: CryptoKey,
@@ -472,6 +502,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun deriveKey(
         algorithm: Algorithm,
         baseKey: CryptoKey,
@@ -489,6 +520,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun deriveKey(
         algorithm: String,
         baseKey: CryptoKey,
@@ -506,6 +538,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun deriveKey(
         algorithm: EcdhKeyDeriveParams,
         baseKey: CryptoKey,
@@ -523,6 +556,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun deriveKey(
         algorithm: HkdfParams,
         baseKey: CryptoKey,
@@ -540,6 +574,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun deriveKey(
         algorithm: Pbkdf2Params,
         baseKey: CryptoKey,
@@ -557,6 +592,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun deriveKey(
         algorithm: Algorithm,
         baseKey: CryptoKey,
@@ -574,6 +610,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun deriveKey(
         algorithm: String,
         baseKey: CryptoKey,
@@ -591,6 +628,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun deriveKey(
         algorithm: EcdhKeyDeriveParams,
         baseKey: CryptoKey,
@@ -608,6 +646,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun deriveKey(
         algorithm: HkdfParams,
         baseKey: CryptoKey,
@@ -625,6 +664,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun deriveKey(
         algorithm: Pbkdf2Params,
         baseKey: CryptoKey,
@@ -645,6 +685,7 @@ sealed external class SubtleCrypto {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/digest)
      */
+    @JsAsync
     suspend fun digest(
         algorithm: Algorithm,
         data: BufferSource,
@@ -656,6 +697,7 @@ sealed external class SubtleCrypto {
         data: BufferSource,
     ): Promise<ArrayBuffer>
 
+    @JsAsync
     suspend fun digest(
         algorithm: String,
         data: BufferSource,
@@ -670,6 +712,7 @@ sealed external class SubtleCrypto {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/encrypt)
      */
+    @JsAsync
     suspend fun encrypt(
         algorithm: Algorithm,
         key: CryptoKey,
@@ -683,6 +726,7 @@ sealed external class SubtleCrypto {
         data: BufferSource,
     ): Promise<ArrayBuffer>
 
+    @JsAsync
     suspend fun encrypt(
         algorithm: String,
         key: CryptoKey,
@@ -696,6 +740,7 @@ sealed external class SubtleCrypto {
         data: BufferSource,
     ): Promise<ArrayBuffer>
 
+    @JsAsync
     suspend fun encrypt(
         algorithm: RsaOaepParams,
         key: CryptoKey,
@@ -709,6 +754,7 @@ sealed external class SubtleCrypto {
         data: BufferSource,
     ): Promise<ArrayBuffer>
 
+    @JsAsync
     suspend fun encrypt(
         algorithm: AesCtrParams,
         key: CryptoKey,
@@ -722,6 +768,7 @@ sealed external class SubtleCrypto {
         data: BufferSource,
     ): Promise<ArrayBuffer>
 
+    @JsAsync
     suspend fun encrypt(
         algorithm: AesCbcParams,
         key: CryptoKey,
@@ -735,6 +782,7 @@ sealed external class SubtleCrypto {
         data: BufferSource,
     ): Promise<ArrayBuffer>
 
+    @JsAsync
     suspend fun encrypt(
         algorithm: AesGcmParams,
         key: CryptoKey,
@@ -751,6 +799,7 @@ sealed external class SubtleCrypto {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/exportKey)
      */
+    @JsAsync
     suspend fun exportKey(
         format: KeyFormat.jwk,
         key: CryptoKey,
@@ -762,6 +811,7 @@ sealed external class SubtleCrypto {
         key: CryptoKey,
     ): Promise<JsonWebKey>
 
+    @JsAsync
     suspend fun exportKey(
         format: KeyFormat,
         key: CryptoKey,
@@ -776,6 +826,7 @@ sealed external class SubtleCrypto {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/generateKey)
      */
+    @JsAsync
     suspend fun generateKey(
         algorithm: Ed25519,
         extractable: Boolean,
@@ -789,6 +840,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage /* "sign" | "verify" */>,
     ): Promise<CryptoKeyPair>
 
+    @JsAsync
     suspend fun generateKey(
         algorithm: RsaHashedKeyGenParams,
         extractable: Boolean,
@@ -802,6 +854,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKeyPair>
 
+    @JsAsync
     suspend fun generateKey(
         algorithm: EcKeyGenParams,
         extractable: Boolean,
@@ -815,6 +868,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKeyPair>
 
+    @JsAsync
     suspend fun generateKey(
         algorithm: AesKeyGenParams,
         extractable: Boolean,
@@ -828,6 +882,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun generateKey(
         algorithm: HmacKeyGenParams,
         extractable: Boolean,
@@ -841,6 +896,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun generateKey(
         algorithm: Pbkdf2Params,
         extractable: Boolean,
@@ -854,6 +910,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun generateKey(
         algorithm: Algorithm,
         extractable: Boolean,
@@ -867,6 +924,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<Any /* CryptoKeyPair | CryptoKey */>
 
+    @JsAsync
     suspend fun generateKey(
         algorithm: String,
         extractable: Boolean,
@@ -883,6 +941,7 @@ sealed external class SubtleCrypto {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/importKey)
      */
+    @JsAsync
     suspend fun importKey(
         format: KeyFormat.jwk,
         keyData: JsonWebKey,
@@ -900,6 +959,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun importKey(
         format: KeyFormat.jwk,
         keyData: JsonWebKey,
@@ -917,6 +977,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun importKey(
         format: KeyFormat.jwk,
         keyData: JsonWebKey,
@@ -934,6 +995,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun importKey(
         format: KeyFormat.jwk,
         keyData: JsonWebKey,
@@ -951,6 +1013,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun importKey(
         format: KeyFormat.jwk,
         keyData: JsonWebKey,
@@ -968,6 +1031,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun importKey(
         format: KeyFormat.jwk,
         keyData: JsonWebKey,
@@ -985,6 +1049,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun importKey(
         format: KeyFormat,
         keyData: BufferSource,
@@ -1002,6 +1067,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun importKey(
         format: KeyFormat,
         keyData: BufferSource,
@@ -1019,6 +1085,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun importKey(
         format: KeyFormat,
         keyData: BufferSource,
@@ -1036,6 +1103,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun importKey(
         format: KeyFormat,
         keyData: BufferSource,
@@ -1053,6 +1121,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun importKey(
         format: KeyFormat,
         keyData: BufferSource,
@@ -1070,6 +1139,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun importKey(
         format: KeyFormat,
         keyData: BufferSource,
@@ -1090,6 +1160,7 @@ sealed external class SubtleCrypto {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/sign)
      */
+    @JsAsync
     suspend fun sign(
         algorithm: Algorithm,
         key: CryptoKey,
@@ -1103,6 +1174,7 @@ sealed external class SubtleCrypto {
         data: BufferSource,
     ): Promise<ArrayBuffer>
 
+    @JsAsync
     suspend fun sign(
         algorithm: String,
         key: CryptoKey,
@@ -1116,6 +1188,7 @@ sealed external class SubtleCrypto {
         data: BufferSource,
     ): Promise<ArrayBuffer>
 
+    @JsAsync
     suspend fun sign(
         algorithm: RsaPssParams,
         key: CryptoKey,
@@ -1129,6 +1202,7 @@ sealed external class SubtleCrypto {
         data: BufferSource,
     ): Promise<ArrayBuffer>
 
+    @JsAsync
     suspend fun sign(
         algorithm: EcdsaParams,
         key: CryptoKey,
@@ -1145,6 +1219,7 @@ sealed external class SubtleCrypto {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
+    @JsAsync
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1166,6 +1241,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1187,6 +1263,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1208,6 +1285,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1229,6 +1307,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1250,6 +1329,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1271,6 +1351,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1292,6 +1373,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1313,6 +1395,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1334,6 +1417,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1355,6 +1439,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1376,6 +1461,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1397,6 +1483,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1418,6 +1505,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1439,6 +1527,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1460,6 +1549,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1481,6 +1571,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1502,6 +1593,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1523,6 +1615,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1544,6 +1637,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1565,6 +1659,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1586,6 +1681,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1607,6 +1703,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1628,6 +1725,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1649,6 +1747,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1670,6 +1769,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1691,6 +1791,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1712,6 +1813,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1733,6 +1835,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1754,6 +1857,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1775,6 +1879,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1796,6 +1901,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1817,6 +1923,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1838,6 +1945,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsAsync
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1862,6 +1970,7 @@ sealed external class SubtleCrypto {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/verify)
      */
+    @JsAsync
     suspend fun verify(
         algorithm: Algorithm,
         key: CryptoKey,
@@ -1877,6 +1986,7 @@ sealed external class SubtleCrypto {
         data: BufferSource,
     ): Promise<Boolean>
 
+    @JsAsync
     suspend fun verify(
         algorithm: String,
         key: CryptoKey,
@@ -1892,6 +2002,7 @@ sealed external class SubtleCrypto {
         data: BufferSource,
     ): Promise<Boolean>
 
+    @JsAsync
     suspend fun verify(
         algorithm: RsaPssParams,
         key: CryptoKey,
@@ -1907,6 +2018,7 @@ sealed external class SubtleCrypto {
         data: BufferSource,
     ): Promise<Boolean>
 
+    @JsAsync
     suspend fun verify(
         algorithm: EcdsaParams,
         key: CryptoKey,
@@ -1925,6 +2037,7 @@ sealed external class SubtleCrypto {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/wrapKey)
      */
+    @JsAsync
     suspend fun wrapKey(
         format: KeyFormat,
         key: CryptoKey,
@@ -1940,6 +2053,7 @@ sealed external class SubtleCrypto {
         wrapAlgorithm: Algorithm,
     ): Promise<ArrayBuffer>
 
+    @JsAsync
     suspend fun wrapKey(
         format: KeyFormat,
         key: CryptoKey,
@@ -1955,6 +2069,7 @@ sealed external class SubtleCrypto {
         wrapAlgorithm: String,
     ): Promise<ArrayBuffer>
 
+    @JsAsync
     suspend fun wrapKey(
         format: KeyFormat,
         key: CryptoKey,
@@ -1970,6 +2085,7 @@ sealed external class SubtleCrypto {
         wrapAlgorithm: RsaOaepParams,
     ): Promise<ArrayBuffer>
 
+    @JsAsync
     suspend fun wrapKey(
         format: KeyFormat,
         key: CryptoKey,
@@ -1985,6 +2101,7 @@ sealed external class SubtleCrypto {
         wrapAlgorithm: AesCtrParams,
     ): Promise<ArrayBuffer>
 
+    @JsAsync
     suspend fun wrapKey(
         format: KeyFormat,
         key: CryptoKey,
@@ -2000,6 +2117,7 @@ sealed external class SubtleCrypto {
         wrapAlgorithm: AesCbcParams,
     ): Promise<ArrayBuffer>
 
+    @JsAsync
     suspend fun wrapKey(
         format: KeyFormat,
         key: CryptoKey,

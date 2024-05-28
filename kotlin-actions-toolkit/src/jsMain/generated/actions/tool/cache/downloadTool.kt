@@ -1,45 +1,25 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@actions/tool-cache")
+
 package actions.tool.cache
 
+import js.promise.Promise
 import node.http.OutgoingHttpHeaders
+import seskar.js.JsAsync
 
-suspend fun downloadTool(
+@JsAsync
+external suspend fun downloadTool(
     url: String,
-): String =
-    downloadToolAsync(
-        url = url,
-    ).await()
+    dest: String = definedExternally,
+    auth: String = definedExternally,
+    headers: OutgoingHttpHeaders = definedExternally,
+): String
 
-suspend fun downloadTool(
+@JsName("downloadTool")
+external fun downloadToolAsync(
     url: String,
-    dest: String,
-): String =
-    downloadToolAsync(
-        url = url,
-        dest = dest,
-    ).await()
-
-suspend fun downloadTool(
-    url: String,
-    dest: String,
-    auth: String,
-): String =
-    downloadToolAsync(
-        url = url,
-        dest = dest,
-        auth = auth,
-    ).await()
-
-suspend fun downloadTool(
-    url: String,
-    dest: String,
-    auth: String,
-    headers: OutgoingHttpHeaders,
-): String =
-    downloadToolAsync(
-        url = url,
-        dest = dest,
-        auth = auth,
-        headers = headers,
-    ).await()
+    dest: String = definedExternally,
+    auth: String = definedExternally,
+    headers: OutgoingHttpHeaders = definedExternally,
+): Promise<String>

@@ -6,6 +6,8 @@
 
 package web.uievents
 
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.EventTarget
 import web.events.EventType
 import web.keyboard.KeyCode
@@ -73,6 +75,9 @@ open external class KeyboardEvent(
     val DOM_KEY_LOCATION_LEFT: KeyLocation
     val DOM_KEY_LOCATION_RIGHT: KeyLocation
     val DOM_KEY_LOCATION_NUMPAD: KeyLocation
+
+    @JsAlias(THIS)
+    override fun asInit(): KeyboardEventInit
 
     companion object : KeyboardEventTypes {
         val DOM_KEY_LOCATION_STANDARD: KeyLocation

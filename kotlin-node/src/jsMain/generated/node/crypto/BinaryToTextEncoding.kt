@@ -6,7 +6,6 @@ package node.crypto
 
 // https://nodejs.org/api/buffer.html#buffer_buffers_and_character_encodings
 
-@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
 sealed external interface BinaryToTextEncoding {
     companion object {

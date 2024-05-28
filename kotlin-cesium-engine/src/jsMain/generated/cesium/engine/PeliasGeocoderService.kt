@@ -10,6 +10,7 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * Provides geocoding via a [Pelias](https://pelias.io/) server.
@@ -46,7 +47,14 @@ external class PeliasGeocoderService(val url: Resource) {
      *   Default value - [GeocodeType.SEARCH]
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PeliasGeocoderService.html#geocode">Online Documentation</a>
      */
-    fun geocode(
+    @JsAsync
+    suspend fun geocode(
+        query: String,
+        type: GeocodeType? = definedExternally,
+    ): ReadonlyArray<GeocoderService.Result>
+
+    @JsName("geocode")
+    fun geocodeAsync(
         query: String,
         type: GeocodeType? = definedExternally,
     ): Promise<ReadonlyArray<GeocoderService.Result>>

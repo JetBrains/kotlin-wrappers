@@ -8,6 +8,7 @@
 package js.promise
 
 import js.errors.JsError
+import js.promise.internal.awaitPromiseLike
 
 sealed external interface PromiseLike<out T> :
     PromiseResult<T> {
@@ -31,6 +32,6 @@ sealed external interface PromiseLike<out T> :
         onRejected: (JsError) -> PromiseResult<R>,
     ): PromiseLike<R>
 
-    suspend inline fun await(): T =
-        awaitInternal(this)
+    override suspend inline fun await(): T =
+        awaitPromiseLike(this)
 }

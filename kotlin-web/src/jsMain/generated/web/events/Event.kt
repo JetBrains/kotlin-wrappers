@@ -7,6 +7,8 @@
 package web.events
 
 import js.array.ReadonlyArray
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.time.DOMHighResTimeStamp
 
 /**
@@ -17,27 +19,27 @@ import web.time.DOMHighResTimeStamp
 open external class Event(
     open val type: EventType<Event, EventTarget>,
     init: EventInit = definedExternally,
-) : EventInit {
+) {
     /**
      * Returns true or false depending on how event was initialized. True if event goes through its target's ancestors in reverse tree order, and false otherwise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Event/bubbles)
      */
-    override val bubbles: Boolean
+    val bubbles: Boolean
 
     /**
      * Returns true or false depending on how event was initialized. Its return value does not always carry meaning, but true can indicate that part of the operation during which event was dispatched, can be canceled by invoking the preventDefault() method.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Event/cancelable)
      */
-    override val cancelable: Boolean
+    val cancelable: Boolean
 
     /**
      * Returns true or false depending on how event was initialized. True if event invokes listeners past a ShadowRoot node that is the root of its target, and false otherwise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Event/composed)
      */
-    override val composed: Boolean
+    val composed: Boolean
 
     /**
      * Returns the object whose event listener's callback is currently being invoked.
@@ -117,6 +119,9 @@ open external class Event(
     val CAPTURING_PHASE: EventPhase
     val AT_TARGET: EventPhase
     val BUBBLING_PHASE: EventPhase
+
+    @JsAlias(THIS)
+    open fun asInit(): EventInit
 
     companion object : EventTypes {
         val NONE: EventPhase

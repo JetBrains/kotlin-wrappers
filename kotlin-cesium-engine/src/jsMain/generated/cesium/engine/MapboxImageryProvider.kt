@@ -12,6 +12,7 @@ import js.array.ReadonlyArray
 import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * Provides tiled imagery hosted by Mapbox.
@@ -134,7 +135,16 @@ external class MapboxImageryProvider(options: ConstructorOptions) {
      *   undefined if there are too many active requests to the server, and the request should be retried later.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MapboxImageryProvider.html#requestImage">Online Documentation</a>
      */
-    fun requestImage(
+    @JsAsync(optional = true)
+    suspend fun requestImage(
+        x: Double,
+        y: Double,
+        level: Int,
+        request: Request? = definedExternally,
+    ): ImageryTypes?
+
+    @JsName("requestImage")
+    fun requestImageAsync(
         x: Double,
         y: Double,
         level: Int,
@@ -155,7 +165,17 @@ external class MapboxImageryProvider(options: ConstructorOptions) {
      *   It may also be undefined if picking is not supported.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MapboxImageryProvider.html#pickFeatures">Online Documentation</a>
      */
-    fun pickFeatures(
+    @JsAsync(optional = true)
+    suspend fun pickFeatures(
+        x: Double,
+        y: Double,
+        level: Int,
+        longitude: Double,
+        latitude: Double,
+    ): ReadonlyArray<ImageryLayerFeatureInfo>?
+
+    @JsName("pickFeatures")
+    fun pickFeaturesAsync(
         x: Double,
         y: Double,
         level: Int,

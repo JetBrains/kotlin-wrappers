@@ -8,6 +8,8 @@ package web.promise
 
 import js.errors.JsError
 import js.promise.Promise
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
@@ -18,17 +20,19 @@ import web.events.EventType
 open external class PromiseRejectionEvent(
     override val type: EventType<PromiseRejectionEvent, EventTarget>,
     init: PromiseRejectionEventInit,
-) : Event,
-    PromiseRejectionEventInit {
+) : Event {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PromiseRejectionEvent/promise)
      */
-    override val promise: Promise<*>
+    val promise: Promise<*>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PromiseRejectionEvent/reason)
      */
-    override val reason: JsError?
+    val reason: JsError?
+
+    @JsAlias(THIS)
+    override fun asInit(): PromiseRejectionEventInit
 
     companion object : PromiseRejectionEventTypes
 }

@@ -6,6 +6,8 @@
 
 package web.history
 
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
@@ -18,14 +20,16 @@ import web.events.EventType
 open external class PopStateEvent(
     override val type: EventType<PopStateEvent, EventTarget>,
     init: PopStateEventInit = definedExternally,
-) : Event,
-    PopStateEventInit {
+) : Event {
     /**
      * Returns a copy of the information that was provided to pushState() or replaceState().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PopStateEvent/state)
      */
-    override val state: Any?
+    val state: Any?
+
+    @JsAlias(THIS)
+    override fun asInit(): PopStateEventInit
 
     companion object : PopStateEventTypes
 }

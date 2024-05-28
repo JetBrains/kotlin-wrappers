@@ -5,6 +5,7 @@ package web.cache
 import js.array.ReadonlyArray
 import js.core.Void
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.http.Request
 import web.http.Response
 import web.url.URL
@@ -19,14 +20,19 @@ sealed external class Cache {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/add)
      */
+    @JsAsync
     suspend fun add(request: Request)
 
     @JsName("add")
     fun addAsync(request: Request): Promise<Void>
+
+    @JsAsync
     suspend fun add(request: String)
 
     @JsName("add")
     fun addAsync(request: String): Promise<Void>
+
+    @JsAsync
     suspend fun add(request: URL)
 
     @JsName("add")
@@ -35,10 +41,13 @@ sealed external class Cache {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/addAll)
      */
+    @JsAsync
     suspend fun addAll(requests: ReadonlyArray<Request>)
 
     @JsName("addAll")
     fun addAllAsync(requests: ReadonlyArray<Request>): Promise<Void>
+
+    @JsAsync
     suspend fun addAll(requests: ReadonlyArray<String>)
 
     @JsName("addAll")
@@ -47,6 +56,7 @@ sealed external class Cache {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/delete)
      */
+    @JsAsync
     suspend fun delete(
         request: Request,
         options: CacheQueryOptions = definedExternally,
@@ -58,6 +68,7 @@ sealed external class Cache {
         options: CacheQueryOptions = definedExternally,
     ): Promise<Boolean>
 
+    @JsAsync
     suspend fun delete(
         request: String,
         options: CacheQueryOptions = definedExternally,
@@ -69,6 +80,7 @@ sealed external class Cache {
         options: CacheQueryOptions = definedExternally,
     ): Promise<Boolean>
 
+    @JsAsync
     suspend fun delete(
         request: URL,
         options: CacheQueryOptions = definedExternally,
@@ -83,6 +95,7 @@ sealed external class Cache {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/keys)
      */
+    @JsAsync
     suspend fun keys(
         request: Request = definedExternally,
         options: CacheQueryOptions = definedExternally,
@@ -94,6 +107,7 @@ sealed external class Cache {
         options: CacheQueryOptions = definedExternally,
     ): Promise<ReadonlyArray<Request>>
 
+    @JsAsync
     suspend fun keys(
         request: String,
         options: CacheQueryOptions = definedExternally,
@@ -105,6 +119,7 @@ sealed external class Cache {
         options: CacheQueryOptions = definedExternally,
     ): Promise<ReadonlyArray<Request>>
 
+    @JsAsync
     suspend fun keys(
         request: URL,
         options: CacheQueryOptions = definedExternally,
@@ -119,6 +134,7 @@ sealed external class Cache {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/match)
      */
+    @JsAsync
     suspend fun match(
         request: Request,
         options: CacheQueryOptions = definedExternally,
@@ -130,6 +146,7 @@ sealed external class Cache {
         options: CacheQueryOptions = definedExternally,
     ): Promise<Response?>
 
+    @JsAsync
     suspend fun match(
         request: String,
         options: CacheQueryOptions = definedExternally,
@@ -141,6 +158,7 @@ sealed external class Cache {
         options: CacheQueryOptions = definedExternally,
     ): Promise<Response?>
 
+    @JsAsync
     suspend fun match(
         request: URL,
         options: CacheQueryOptions = definedExternally,
@@ -155,6 +173,7 @@ sealed external class Cache {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/matchAll)
      */
+    @JsAsync
     suspend fun matchAll(
         request: Request = definedExternally,
         options: CacheQueryOptions = definedExternally,
@@ -166,6 +185,7 @@ sealed external class Cache {
         options: CacheQueryOptions = definedExternally,
     ): Promise<ReadonlyArray<Response>>
 
+    @JsAsync
     suspend fun matchAll(
         request: String,
         options: CacheQueryOptions = definedExternally,
@@ -177,6 +197,7 @@ sealed external class Cache {
         options: CacheQueryOptions = definedExternally,
     ): Promise<ReadonlyArray<Response>>
 
+    @JsAsync
     suspend fun matchAll(
         request: URL,
         options: CacheQueryOptions = definedExternally,
@@ -191,6 +212,7 @@ sealed external class Cache {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/put)
      */
+    @JsAsync
     suspend fun put(
         request: Request,
         response: Response,
@@ -202,6 +224,7 @@ sealed external class Cache {
         response: Response,
     ): Promise<Void>
 
+    @JsAsync
     suspend fun put(
         request: String,
         response: Response,
@@ -213,6 +236,7 @@ sealed external class Cache {
         response: Response,
     ): Promise<Void>
 
+    @JsAsync
     suspend fun put(
         request: URL,
         response: Response,

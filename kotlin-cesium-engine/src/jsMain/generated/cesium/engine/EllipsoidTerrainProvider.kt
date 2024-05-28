@@ -90,7 +90,7 @@ external class EllipsoidTerrainProvider(options: ConstructorOptions? = definedEx
      *   pending and the request will be retried later.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipsoidTerrainProvider.html#requestTileGeometry">Online Documentation</a>
      */
-    override fun requestTileGeometry(
+    override fun requestTileGeometryAsync(
         x: Double,
         y: Double,
         level: Int,
@@ -127,7 +127,7 @@ external class EllipsoidTerrainProvider(options: ConstructorOptions? = definedEx
      * @return This provider does not support loading availability.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipsoidTerrainProvider.html#loadTileDataAvailability">Online Documentation</a>
      */
-    override fun loadTileDataAvailability(
+    override fun loadTileDataAvailabilityAsync(
         x: Double,
         y: Double,
         level: Int,

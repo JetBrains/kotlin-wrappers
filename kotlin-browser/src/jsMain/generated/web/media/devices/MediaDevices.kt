@@ -4,6 +4,7 @@ package web.media.devices
 
 import js.array.ReadonlyArray
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
@@ -27,6 +28,7 @@ sealed external class MediaDevices :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/enumerateDevices)
      */
+    @JsAsync
     suspend fun enumerateDevices(): ReadonlyArray<MediaDeviceInfo>
 
     @JsName("enumerateDevices")
@@ -35,6 +37,7 @@ sealed external class MediaDevices :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getDisplayMedia)
      */
+    @JsAsync
     suspend fun getDisplayMedia(options: DisplayMediaStreamOptions = definedExternally): MediaStream
 
     @JsName("getDisplayMedia")
@@ -48,6 +51,7 @@ sealed external class MediaDevices :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia)
      */
+    @JsAsync
     suspend fun getUserMedia(constraints: MediaStreamConstraints = definedExternally): MediaStream
 
     @JsName("getUserMedia")

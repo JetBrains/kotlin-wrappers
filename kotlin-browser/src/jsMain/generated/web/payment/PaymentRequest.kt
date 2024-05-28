@@ -6,6 +6,7 @@ import js.array.ReadonlyArray
 import js.core.Void
 import js.promise.Promise
 import js.promise.PromiseLike
+import seskar.js.JsAsync
 import web.events.EventHandler
 import web.events.EventTarget
 
@@ -32,6 +33,7 @@ external class PaymentRequest(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/abort)
      */
+    @JsAsync
     suspend fun abort()
 
     @JsName("abort")
@@ -40,6 +42,7 @@ external class PaymentRequest(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/canMakePayment)
      */
+    @JsAsync
     suspend fun canMakePayment(): Boolean
 
     @JsName("canMakePayment")
@@ -48,10 +51,13 @@ external class PaymentRequest(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/show)
      */
+    @JsAsync
     suspend fun show(detailsPromise: PaymentDetailsUpdate = definedExternally): PaymentResponse
 
     @JsName("show")
     fun showAsync(detailsPromise: PaymentDetailsUpdate = definedExternally): Promise<PaymentResponse>
+
+    @JsAsync
     suspend fun show(detailsPromise: PromiseLike<PaymentDetailsUpdate>): PaymentResponse
 
     @JsName("show")

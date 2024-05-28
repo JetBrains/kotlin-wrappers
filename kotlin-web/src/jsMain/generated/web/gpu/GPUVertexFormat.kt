@@ -97,5 +97,8 @@ sealed external interface GPUVertexFormat {
 
         @JsValue("sint32x4")
         val sint32x4: GPUVertexFormat
+
+        @JsValue("unorm10-10-10-2")
+        val unorm1010102: GPUVertexFormat
     }
 }

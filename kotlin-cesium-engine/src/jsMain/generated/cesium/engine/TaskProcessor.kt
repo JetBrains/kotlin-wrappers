@@ -7,6 +7,7 @@ package cesium.engine
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * A wrapper around a web worker that allows scheduling tasks for a given worker,
@@ -53,7 +54,14 @@ external class TaskProcessor(
      *   if there are too many active tasks,
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TaskProcessor.html#scheduleTask">Online Documentation</a>
      */
-    fun scheduleTask(
+    @JsAsync(optional = true)
+    suspend fun scheduleTask(
+        parameters: Any,
+        transferableObjects: ReadonlyArray<Any>? = definedExternally,
+    ): Any?
+
+    @JsName("scheduleTask")
+    fun scheduleTaskAsync(
         parameters: Any,
         transferableObjects: ReadonlyArray<Any>? = definedExternally,
     ): Promise<Any>?
@@ -65,7 +73,11 @@ external class TaskProcessor(
      * @return A promise that resolves to the result when the web worker has loaded and compiled the web assembly module and is ready to process tasks.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TaskProcessor.html#initWebAssemblyModule">Online Documentation</a>
      */
-    fun initWebAssemblyModule(options: InitWebAssemblyModuleOptions? = definedExternally): Promise<Any>
+    @JsAsync
+    suspend fun initWebAssemblyModule(options: InitWebAssemblyModuleOptions? = definedExternally): Any
+
+    @JsName("initWebAssemblyModule")
+    fun initWebAssemblyModuleAsync(options: InitWebAssemblyModuleOptions? = definedExternally): Promise<Any>
 
     /**
      * @property [modulePath] The path of the web assembly JavaScript wrapper module.

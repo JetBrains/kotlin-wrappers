@@ -3,9 +3,10 @@
 package actions.glob
 
 import js.array.ReadonlyArray
+import js.generator.AsyncGenerator
 import js.promise.Promise
 
-sealed external interface Globber {
+external interface Globber {
     /**
      * Returns the search path preceding the first glob segment, from each pattern.
      * Duplicates and descendants of other paths are filtered out.
@@ -28,5 +29,5 @@ sealed external interface Globber {
      *
      * Order of the results is not guaranteed.
      */
-    fun globGenerator(): Any /* AsyncGenerator<string, void> */
+    fun globGenerator(): AsyncGenerator<String, *, *>
 }

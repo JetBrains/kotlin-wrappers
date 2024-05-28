@@ -13,5 +13,8 @@ sealed external interface GPUErrorFilter {
 
         @JsValue("validation")
         val validation: GPUErrorFilter
+
+        @JsValue("internal")
+        val internal: GPUErrorFilter
     }
 }

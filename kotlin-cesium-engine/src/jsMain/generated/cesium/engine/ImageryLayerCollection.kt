@@ -6,6 +6,7 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * An ordered collection of imagery layers.
@@ -206,7 +207,14 @@ external class ImageryLayerCollection {
      *   return undefined.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayerCollection.html#pickImageryLayerFeatures">Online Documentation</a>
      */
-    fun pickImageryLayerFeatures(
+    @JsAsync(optional = true)
+    suspend fun pickImageryLayerFeatures(
+        ray: Ray,
+        scene: Scene,
+    ): ReadonlyArray<ImageryLayerFeatureInfo>?
+
+    @JsName("pickImageryLayerFeatures")
+    fun pickImageryLayerFeaturesAsync(
         ray: Ray,
         scene: Scene,
     ): Promise<ReadonlyArray<ImageryLayerFeatureInfo>>?

@@ -5,4 +5,5 @@ package node.childProcess
 import node.fs.ObjectEncodingOptions
 
 
+@js.objects.JsPlainObject
 sealed external interface ExecObjectEncodingOptions : ObjectEncodingOptions, ExecOptions

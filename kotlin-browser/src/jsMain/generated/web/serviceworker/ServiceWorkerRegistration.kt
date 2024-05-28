@@ -5,6 +5,7 @@ package web.serviceworker
 import js.array.ReadonlyArray
 import js.core.Void
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
@@ -63,6 +64,7 @@ sealed external class ServiceWorkerRegistration :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/getNotifications)
      */
+    @JsAsync
     suspend fun getNotifications(filter: GetNotificationOptions = definedExternally): ReadonlyArray<Notification>
 
     @JsName("getNotifications")
@@ -71,6 +73,7 @@ sealed external class ServiceWorkerRegistration :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification)
      */
+    @JsAsync
     suspend fun showNotification(
         title: String,
         options: NotificationOptions = definedExternally,
@@ -85,6 +88,7 @@ sealed external class ServiceWorkerRegistration :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/unregister)
      */
+    @JsAsync
     suspend fun unregister(): Boolean
 
     @JsName("unregister")
@@ -93,6 +97,7 @@ sealed external class ServiceWorkerRegistration :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/update)
      */
+    @JsAsync
     suspend fun update()
 
     @JsName("update")

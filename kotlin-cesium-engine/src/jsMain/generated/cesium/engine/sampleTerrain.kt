@@ -6,6 +6,7 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * Initiates a terrain height query for an array of [Cartographic] positions by
@@ -46,7 +47,16 @@ import js.promise.Promise
  * @return A promise that resolves to the provided list of positions when terrain the query has completed.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#sampleTerrain">Online Documentation</a>
  */
-external fun sampleTerrain(
+@JsAsync
+external suspend fun sampleTerrain(
+    terrainProvider: TerrainProvider,
+    level: Int,
+    positions: ReadonlyArray<Cartographic>,
+    rejectOnTileFail: Boolean? = definedExternally,
+): ReadonlyArray<Cartographic>
+
+@JsName("sampleTerrain")
+external fun sampleTerrainAsync(
     terrainProvider: TerrainProvider,
     level: Int,
     positions: ReadonlyArray<Cartographic>,

@@ -6,6 +6,8 @@
 
 package web.device
 
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
@@ -19,27 +21,29 @@ import web.events.EventType
 open external class DeviceOrientationEvent(
     override val type: EventType<DeviceOrientationEvent, EventTarget>,
     init: DeviceOrientationEventInit = definedExternally,
-) : Event,
-    DeviceOrientationEventInit {
+) : Event {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceOrientationEvent/absolute)
      */
-    override val absolute: Boolean
+    val absolute: Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceOrientationEvent/alpha)
      */
-    override val alpha: Double?
+    val alpha: Double?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceOrientationEvent/beta)
      */
-    override val beta: Double?
+    val beta: Double?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceOrientationEvent/gamma)
      */
-    override val gamma: Double?
+    val gamma: Double?
+
+    @JsAlias(THIS)
+    override fun asInit(): DeviceOrientationEventInit
 
     companion object : DeviceOrientationEventTypes
 }

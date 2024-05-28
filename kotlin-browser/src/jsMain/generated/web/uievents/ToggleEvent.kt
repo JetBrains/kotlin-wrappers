@@ -6,6 +6,8 @@
 
 package web.uievents
 
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
@@ -16,17 +18,19 @@ import web.events.EventType
 open external class ToggleEvent(
     override val type: EventType<ToggleEvent, EventTarget>,
     init: ToggleEventInit = definedExternally,
-) : Event,
-    ToggleEventInit {
+) : Event {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ToggleEvent/newState)
      */
-    override val newState: String
+    val newState: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ToggleEvent/oldState)
      */
-    override val oldState: String
+    val oldState: String
+
+    @JsAlias(THIS)
+    override fun asInit(): ToggleEventInit
 
     companion object
 }

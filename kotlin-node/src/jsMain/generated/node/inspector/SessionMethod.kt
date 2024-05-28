@@ -3,7 +3,6 @@
 package node.inspector
 
 
-@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
 sealed external interface SessionMethod {
     sealed interface SCHEMA_GETDOMAINS : SessionMethod

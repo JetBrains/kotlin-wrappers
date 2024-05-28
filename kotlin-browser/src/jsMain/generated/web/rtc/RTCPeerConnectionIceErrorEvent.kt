@@ -6,6 +6,8 @@
 
 package web.rtc
 
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
@@ -16,28 +18,30 @@ import web.events.EventType
 open external class RTCPeerConnectionIceErrorEvent(
     override val type: EventType<RTCPeerConnectionIceErrorEvent, EventTarget>,
     init: RTCPeerConnectionIceErrorEventInit,
-) : Event,
-    RTCPeerConnectionIceErrorEventInit {
+) : Event {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnectionIceErrorEvent/address)
      */
-    override val address: String?
+    val address: String?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnectionIceErrorEvent/errorCode)
      */
-    override val errorCode: Short
+    val errorCode: Short
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnectionIceErrorEvent/errorText)
      */
-    override val errorText: String
-    override val port: Short?
+    val errorText: String
+    val port: Short?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnectionIceErrorEvent/url)
      */
-    override val url: String
+    val url: String
+
+    @JsAlias(THIS)
+    override fun asInit(): RTCPeerConnectionIceErrorEventInit
 
     companion object : RTCPeerConnectionIceErrorEventTypes
 }

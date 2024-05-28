@@ -9,6 +9,7 @@ package web.fonts
 import js.array.ReadonlyArray
 import js.collections.MutableSetLike
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.events.EventHandler
 import web.events.EventTarget
 
@@ -54,6 +55,7 @@ sealed external interface FontFaceSet :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/load)
      */
+    @JsAsync
     suspend fun load(
         font: String,
         text: String = definedExternally,

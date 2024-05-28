@@ -10,6 +10,7 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * Provides geocoding via a [OpenCage](https://opencagedata.com/) server.
@@ -56,5 +57,9 @@ external class OpenCageGeocoderService(
      * @param [query] The query to be sent to the geocoder service
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/OpenCageGeocoderService.html#geocode">Online Documentation</a>
      */
-    fun geocode(query: String): Promise<ReadonlyArray<GeocoderService.Result>>
+    @JsAsync
+    suspend fun geocode(query: String): ReadonlyArray<GeocoderService.Result>
+
+    @JsName("geocode")
+    fun geocodeAsync(query: String): Promise<ReadonlyArray<GeocoderService.Result>>
 }

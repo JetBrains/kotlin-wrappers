@@ -7,6 +7,7 @@ package cesium.engine
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * <div class="notice">
@@ -125,7 +126,16 @@ private constructor() {
      *   undefined if there are too many active requests to the server, and the request should be retried later.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/IonImageryProvider.html#requestImage">Online Documentation</a>
      */
-    fun requestImage(
+    @JsAsync(optional = true)
+    suspend fun requestImage(
+        x: Double,
+        y: Double,
+        level: Int,
+        request: Request? = definedExternally,
+    ): ImageryTypes?
+
+    @JsName("requestImage")
+    fun requestImageAsync(
         x: Double,
         y: Double,
         level: Int,
@@ -146,7 +156,17 @@ private constructor() {
      *   It may also be undefined if picking is not supported.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/IonImageryProvider.html#pickFeatures">Online Documentation</a>
      */
-    fun pickFeatures(
+    @JsAsync(optional = true)
+    suspend fun pickFeatures(
+        x: Double,
+        y: Double,
+        level: Int,
+        longitude: Double,
+        latitude: Double,
+    ): ReadonlyArray<ImageryLayerFeatureInfo>?
+
+    @JsName("pickFeatures")
+    fun pickFeaturesAsync(
         x: Double,
         y: Double,
         level: Int,
@@ -180,7 +200,14 @@ private constructor() {
          * @return A promise which resolves to the created IonImageryProvider.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/IonImageryProvider.html#.fromAssetId">Online Documentation</a>
          */
-        fun fromAssetId(
+        @JsAsync
+        suspend fun fromAssetId(
+            assetId: Int,
+            options: ConstructorOptions? = definedExternally,
+        ): IonImageryProvider
+
+        @JsName("fromAssetId")
+        fun fromAssetIdAsync(
             assetId: Int,
             options: ConstructorOptions? = definedExternally,
         ): Promise<IonImageryProvider>

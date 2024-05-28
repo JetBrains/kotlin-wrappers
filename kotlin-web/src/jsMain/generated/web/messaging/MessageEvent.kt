@@ -7,6 +7,8 @@
 package web.messaging
 
 import js.array.ReadonlyArray
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
@@ -19,42 +21,44 @@ import web.events.EventType
 open external class MessageEvent<out D>(
     override val type: EventType<MessageEvent<D>, EventTarget>,
     init: MessageEventInit<D> = definedExternally,
-) : Event,
-    MessageEventInit<D> {
+) : Event {
     /**
      * Returns the data of the message.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent/data)
      */
-    override val data: D
+    val data: D
 
     /**
      * Returns the last event ID string, for server-sent events.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent/lastEventId)
      */
-    override val lastEventId: String
+    val lastEventId: String
 
     /**
      * Returns the origin of the message, for server-sent events and cross-document messaging.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent/origin)
      */
-    override val origin: String
+    val origin: String
 
     /**
      * Returns the MessagePort array sent with the message, for cross-document messaging and channel messaging.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent/ports)
      */
-    override val ports: ReadonlyArray<MessagePort>
+    val ports: ReadonlyArray<MessagePort>
 
     /**
      * Returns the WindowProxy of the source window, for cross-document messaging, and the MessagePort being attached, in the connect event fired at SharedWorkerGlobalScope objects.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent/source)
      */
-    override val source: MessageEventSource?
+    val source: MessageEventSource?
+
+    @JsAlias(THIS)
+    override fun asInit(): MessageEventInit<D>
 
     companion object : MessageEventTypes
 }

@@ -4,6 +4,7 @@ package web.serviceworker
 
 import js.array.ReadonlyArray
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
@@ -46,10 +47,13 @@ sealed external class ServiceWorkerContainer :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistration)
      */
+    @JsAsync
     suspend fun getRegistration(clientURL: String = definedExternally): ServiceWorkerRegistration?
 
     @JsName("getRegistration")
     fun getRegistrationAsync(clientURL: String = definedExternally): Promise<ServiceWorkerRegistration?>
+
+    @JsAsync
     suspend fun getRegistration(clientURL: URL): ServiceWorkerRegistration?
 
     @JsName("getRegistration")
@@ -58,6 +62,7 @@ sealed external class ServiceWorkerContainer :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistrations)
      */
+    @JsAsync
     suspend fun getRegistrations(): ReadonlyArray<ServiceWorkerRegistration>
 
     @JsName("getRegistrations")
@@ -66,6 +71,7 @@ sealed external class ServiceWorkerContainer :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register)
      */
+    @JsAsync
     suspend fun register(
         scriptURL: String,
         options: RegistrationOptions = definedExternally,
@@ -77,6 +83,7 @@ sealed external class ServiceWorkerContainer :
         options: RegistrationOptions = definedExternally,
     ): Promise<ServiceWorkerRegistration>
 
+    @JsAsync
     suspend fun register(
         scriptURL: URL,
         options: RegistrationOptions = definedExternally,

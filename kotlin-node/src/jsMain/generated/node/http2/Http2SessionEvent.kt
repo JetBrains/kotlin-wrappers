@@ -3,7 +3,6 @@
 package node.http2
 
 
-@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
 sealed external interface Http2SessionEvent {
     sealed interface CLOSE : node.events.LegacyEventType

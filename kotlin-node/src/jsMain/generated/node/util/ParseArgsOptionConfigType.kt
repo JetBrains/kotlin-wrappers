@@ -3,7 +3,6 @@
 package node.util
 
 
-@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
 sealed external interface ParseArgsOptionConfigType {
     companion object {

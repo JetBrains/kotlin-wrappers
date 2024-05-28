@@ -3,6 +3,7 @@
 package node.fs
 
 
+@js.objects.JsPlainObject
 sealed external interface FileHandleAppendFileAsyncOptions : ObjectEncodingOptions, FlagAndOpenMode {
     var flush: Boolean?
 }

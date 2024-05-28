@@ -8,6 +8,7 @@
 
 package react
 
+import seskar.js.JsAlias
 import kotlin.reflect.KProperty
 
 /**
@@ -15,17 +16,17 @@ import kotlin.reflect.KProperty
  * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
  */
 sealed external interface StateInstance<T> {
-    inline operator fun component1(): T =
-        asDynamic()[0].unsafeCast<T>()
+    @JsAlias("[0]")
+    operator fun component1(): T
 
-    inline operator fun component2(): StateSetter<T> =
-        asDynamic()[1].unsafeCast<StateSetter<T>>()
+    @JsAlias("[1]")
+    operator fun component2(): StateSetter<T>
 
-    inline operator fun getValue(
+    @JsAlias("[0]")
+    operator fun getValue(
         thisRef: Nothing?,
         property: KProperty<*>,
-    ): T =
-        asDynamic()[0].unsafeCast<T>()
+    ): T
 
     inline operator fun setValue(
         thisRef: Nothing?,

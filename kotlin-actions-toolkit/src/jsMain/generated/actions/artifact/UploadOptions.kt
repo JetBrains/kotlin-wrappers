@@ -2,6 +2,9 @@
 
 package actions.artifact
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 sealed external interface UploadOptions {
     /**
      * Indicates if the artifact upload should continue if file or chunk fails to upload from any error.

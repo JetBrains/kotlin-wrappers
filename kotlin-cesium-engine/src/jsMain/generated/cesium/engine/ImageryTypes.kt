@@ -2,6 +2,8 @@
 
 package cesium.engine
 
+import web.canvas.CanvasImageSource
+
 /**
  * The format in which [ImageryProvider] methods return an image may
  * vary by provider, configuration, or server settings.  Most common are
@@ -10,4 +12,4 @@ package cesium.engine
  *
  * See the documentation for each ImageryProvider class for more information about how they return images.
  */
-typealias ImageryTypes = Any /* HTMLImageElement | HTMLCanvasElement | ImageBitmap */
+typealias ImageryTypes = CanvasImageSource /* HTMLImageElement | HTMLCanvasElement | ImageBitmap */

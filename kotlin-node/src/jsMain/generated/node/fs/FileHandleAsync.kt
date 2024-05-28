@@ -100,16 +100,8 @@ sealed external interface FileHandle {
     fun appendFileAsync(data: Uint8Array, options: node.buffer.BufferEncoding? = definedExternally): Promise<Unit>
 
 
-    @Suppress(
-        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-        "INLINE_EXTERNAL_DECLARATION",
-        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-        "DECLARATION_CANT_BE_INLINED",
-    )
-    suspend inline fun appendFile(data: String): Unit =
-        appendFileAsync(
-            data
-        ).await()
+    @seskar.js.JsAsync
+    suspend fun appendFile(data: String): Unit
 
 
     /**
@@ -121,19 +113,8 @@ sealed external interface FileHandle {
      * @return Fulfills with `undefined` upon success.
      */
 
-    @Suppress(
-        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-        "INLINE_EXTERNAL_DECLARATION",
-        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-        "DECLARATION_CANT_BE_INLINED",
-    )
-    suspend inline fun appendFile(
-        data: String,
-        options: (FileHandleAppendFileAsyncOptions)? = definedExternally,
-    ): Unit =
-        appendFileAsync(
-            data, options
-        ).await()
+    @seskar.js.JsAsync
+    suspend fun appendFile(data: String, options: (FileHandleAppendFileAsyncOptions)? = definedExternally): Unit
 
 
     /**
@@ -145,16 +126,8 @@ sealed external interface FileHandle {
      * @return Fulfills with `undefined` upon success.
      */
 
-    @Suppress(
-        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-        "INLINE_EXTERNAL_DECLARATION",
-        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-        "DECLARATION_CANT_BE_INLINED",
-    )
-    suspend inline fun appendFile(data: String, options: node.buffer.BufferEncoding? = definedExternally): Unit =
-        appendFileAsync(
-            data, options
-        ).await()
+    @seskar.js.JsAsync
+    suspend fun appendFile(data: String, options: node.buffer.BufferEncoding? = definedExternally): Unit
 
 
     /**
@@ -166,16 +139,8 @@ sealed external interface FileHandle {
      * @return Fulfills with `undefined` upon success.
      */
 
-    @Suppress(
-        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-        "INLINE_EXTERNAL_DECLARATION",
-        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-        "DECLARATION_CANT_BE_INLINED",
-    )
-    suspend inline fun appendFile(data: Uint8Array): Unit =
-        appendFileAsync(
-            data
-        ).await()
+    @seskar.js.JsAsync
+    suspend fun appendFile(data: Uint8Array): Unit
 
 
     /**
@@ -187,19 +152,8 @@ sealed external interface FileHandle {
      * @return Fulfills with `undefined` upon success.
      */
 
-    @Suppress(
-        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-        "INLINE_EXTERNAL_DECLARATION",
-        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-        "DECLARATION_CANT_BE_INLINED",
-    )
-    suspend inline fun appendFile(
-        data: Uint8Array,
-        options: (FileHandleAppendFileAsyncOptions)? = definedExternally,
-    ): Unit =
-        appendFileAsync(
-            data, options
-        ).await()
+    @seskar.js.JsAsync
+    suspend fun appendFile(data: Uint8Array, options: (FileHandleAppendFileAsyncOptions)? = definedExternally): Unit
 
 
     /**
@@ -211,16 +165,8 @@ sealed external interface FileHandle {
      * @return Fulfills with `undefined` upon success.
      */
 
-    @Suppress(
-        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-        "INLINE_EXTERNAL_DECLARATION",
-        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-        "DECLARATION_CANT_BE_INLINED",
-    )
-    suspend inline fun appendFile(data: Uint8Array, options: node.buffer.BufferEncoding? = definedExternally): Unit =
-        appendFileAsync(
-            data, options
-        ).await()
+    @seskar.js.JsAsync
+    suspend fun appendFile(data: Uint8Array, options: node.buffer.BufferEncoding? = definedExternally): Unit
 
     /**
      * Changes the ownership of the file. A wrapper for [`chown(2)`](http://man7.org/linux/man-pages/man2/chown.2.html).
@@ -234,16 +180,8 @@ sealed external interface FileHandle {
     fun chownAsync(uid: Number, gid: Number): Promise<Unit>
 
 
-    @Suppress(
-        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-        "INLINE_EXTERNAL_DECLARATION",
-        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-        "DECLARATION_CANT_BE_INLINED",
-    )
-    suspend inline fun chown(uid: Number, gid: Number): Unit =
-        chownAsync(
-            uid, gid
-        ).await()
+    @seskar.js.JsAsync
+    suspend fun chown(uid: Number, gid: Number): Unit
 
     /**
      * Modifies the permissions on the file. See [`chmod(2)`](http://man7.org/linux/man-pages/man2/chmod.2.html).
@@ -256,16 +194,8 @@ sealed external interface FileHandle {
     fun chmodAsync(mode: Mode): Promise<Unit>
 
 
-    @Suppress(
-        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-        "INLINE_EXTERNAL_DECLARATION",
-        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-        "DECLARATION_CANT_BE_INLINED",
-    )
-    suspend inline fun chmod(mode: Mode): Unit =
-        chmodAsync(
-            mode
-        ).await()
+    @seskar.js.JsAsync
+    suspend fun chmod(mode: Mode): Unit
 
     /**
      * Unlike the 16 KiB default `highWaterMark` for a `stream.Readable`, the stream
@@ -353,16 +283,8 @@ sealed external interface FileHandle {
     fun datasyncAsync(): Promise<Unit>
 
 
-    @Suppress(
-        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-        "INLINE_EXTERNAL_DECLARATION",
-        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-        "DECLARATION_CANT_BE_INLINED",
-    )
-    suspend inline fun datasync(): Unit =
-        datasyncAsync(
-
-        ).await()
+    @seskar.js.JsAsync
+    suspend fun datasync(): Unit
 
     /**
      * Request that all data for the open file descriptor is flushed to the storage
@@ -376,16 +298,8 @@ sealed external interface FileHandle {
     fun syncAsync(): Promise<Unit>
 
 
-    @Suppress(
-        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-        "INLINE_EXTERNAL_DECLARATION",
-        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-        "DECLARATION_CANT_BE_INLINED",
-    )
-    suspend inline fun sync(): Unit =
-        syncAsync(
-
-        ).await()
+    @seskar.js.JsAsync
+    suspend fun sync(): Unit
 
     /**
      * Reads data from the file and stores that in the given buffer.
@@ -410,37 +324,21 @@ sealed external interface FileHandle {
     ): Promise<FileReadResult<T>>
 
 
-    @Suppress(
-        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-        "INLINE_EXTERNAL_DECLARATION",
-        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-        "DECLARATION_CANT_BE_INLINED",
-    )
-    suspend inline fun <T : ArrayBufferView> read(
+    @seskar.js.JsAsync
+    suspend fun <T : ArrayBufferView> read(
         buffer: T,
         offset: Double? = definedExternally,
         length: Double? = definedExternally,
         position: Double? = definedExternally,
-    ): FileReadResult<T> =
-        readAsync(
-            buffer, offset, length, position
-        ).await()
+    ): FileReadResult<T>
 
 
     @JsName("read")
     fun <T : ArrayBufferView /* default is node.buffer.Buffer */> readAsync(options: FileReadOptions<T> = definedExternally): Promise<FileReadResult<T>>
 
 
-    @Suppress(
-        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-        "INLINE_EXTERNAL_DECLARATION",
-        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-        "DECLARATION_CANT_BE_INLINED",
-    )
-    suspend inline fun <T : ArrayBufferView /* default is node.buffer.Buffer */> read(options: FileReadOptions<T> = definedExternally): FileReadResult<T> =
-        readAsync(
-            options
-        ).await()
+    @seskar.js.JsAsync
+    suspend fun <T : ArrayBufferView /* default is node.buffer.Buffer */> read(options: FileReadOptions<T> = definedExternally): FileReadResult<T>
 
     /**
      * Returns a `ReadableStream` that may be used to read the files data.
@@ -487,16 +385,8 @@ sealed external interface FileHandle {
     fun readFileAsync(options: (FileHandleReadFileBufferAsyncOptions)? = definedExternally): Promise<node.buffer.Buffer>
 
 
-    @Suppress(
-        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-        "INLINE_EXTERNAL_DECLARATION",
-        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-        "DECLARATION_CANT_BE_INLINED",
-    )
-    suspend inline fun readFile(options: (FileHandleReadFileBufferAsyncOptions)? = definedExternally): node.buffer.Buffer =
-        readFileAsync(
-            options
-        ).await()
+    @seskar.js.JsAsync
+    suspend fun readFile(options: (FileHandleReadFileBufferAsyncOptions)? = definedExternally): node.buffer.Buffer
 
     /**
      * Asynchronously reads the entire contents of a file. The underlying file will _not_ be closed automatically.
@@ -520,16 +410,8 @@ sealed external interface FileHandle {
     fun readFileAsync(options: node.buffer.BufferEncoding): Promise<String>
 
 
-    @Suppress(
-        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-        "INLINE_EXTERNAL_DECLARATION",
-        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-        "DECLARATION_CANT_BE_INLINED",
-    )
-    suspend inline fun readFile(options: FileHandleReadFileStringAsyncOptions): String =
-        readFileAsync(
-            options
-        ).await()
+    @seskar.js.JsAsync
+    suspend fun readFile(options: FileHandleReadFileStringAsyncOptions): String
 
 
     /**
@@ -539,16 +421,8 @@ sealed external interface FileHandle {
      * If a flag is not provided, it defaults to `'r'`.
      */
 
-    @Suppress(
-        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-        "INLINE_EXTERNAL_DECLARATION",
-        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-        "DECLARATION_CANT_BE_INLINED",
-    )
-    suspend inline fun readFile(options: node.buffer.BufferEncoding): String =
-        readFileAsync(
-            options
-        ).await()
+    @seskar.js.JsAsync
+    suspend fun readFile(options: node.buffer.BufferEncoding): String
 
     /**
      * Asynchronously reads the entire contents of a file. The underlying file will _not_ be closed automatically.
@@ -583,16 +457,8 @@ sealed external interface FileHandle {
     fun readFileAsync(options: node.buffer.BufferEncoding? = definedExternally): Promise<Any /* string | Buffer */>
 
 
-    @Suppress(
-        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-        "INLINE_EXTERNAL_DECLARATION",
-        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-        "DECLARATION_CANT_BE_INLINED",
-    )
-    suspend inline fun readFile(): Any /* string | Buffer */ =
-        readFileAsync(
-
-        ).await()
+    @seskar.js.JsAsync
+    suspend fun readFile(): Any /* string | Buffer */
 
 
     /**
@@ -602,16 +468,8 @@ sealed external interface FileHandle {
      * If a flag is not provided, it defaults to `'r'`.
      */
 
-    @Suppress(
-        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-        "INLINE_EXTERNAL_DECLARATION",
-        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-        "DECLARATION_CANT_BE_INLINED",
-    )
-    suspend inline fun readFile(options: (FileHandleReadFileAsyncOptions)? = definedExternally): Any /* string | Buffer */ =
-        readFileAsync(
-            options
-        ).await()
+    @seskar.js.JsAsync
+    suspend fun readFile(options: (FileHandleReadFileAsyncOptions)? = definedExternally): Any /* string | Buffer */
 
 
     /**
@@ -621,16 +479,8 @@ sealed external interface FileHandle {
      * If a flag is not provided, it defaults to `'r'`.
      */
 
-    @Suppress(
-        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-        "INLINE_EXTERNAL_DECLARATION",
-        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-        "DECLARATION_CANT_BE_INLINED",
-    )
-    suspend inline fun readFile(options: node.buffer.BufferEncoding? = definedExternally): Any /* string | Buffer */ =
-        readFileAsync(
-            options
-        ).await()
+    @seskar.js.JsAsync
+    suspend fun readFile(options: node.buffer.BufferEncoding? = definedExternally): Any /* string | Buffer */
 
     /**
      * Convenience method to create a `readline` interface and stream over the file.
@@ -658,48 +508,24 @@ sealed external interface FileHandle {
     fun statAsync(opts: FileHandleStatOpts = definedExternally): Promise<Stats>
 
 
-    @Suppress(
-        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-        "INLINE_EXTERNAL_DECLARATION",
-        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-        "DECLARATION_CANT_BE_INLINED",
-    )
-    suspend inline fun stat(opts: FileHandleStatOpts = definedExternally): Stats =
-        statAsync(
-            opts
-        ).await()
+    @seskar.js.JsAsync
+    suspend fun stat(opts: FileHandleStatOpts = definedExternally): Stats
 
 
     @JsName("stat")
     fun statAsync(opts: FileHandleStatBigIntOpts): Promise<BigIntStats>
 
 
-    @Suppress(
-        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-        "INLINE_EXTERNAL_DECLARATION",
-        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-        "DECLARATION_CANT_BE_INLINED",
-    )
-    suspend inline fun stat(opts: FileHandleStatBigIntOpts): BigIntStats =
-        statAsync(
-            opts
-        ).await()
+    @seskar.js.JsAsync
+    suspend fun stat(opts: FileHandleStatBigIntOpts): BigIntStats
 
 
     @JsName("stat")
     fun statAsync(opts: StatOptions = definedExternally): Promise<Any /* Stats | BigIntStats */>
 
 
-    @Suppress(
-        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-        "INLINE_EXTERNAL_DECLARATION",
-        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-        "DECLARATION_CANT_BE_INLINED",
-    )
-    suspend inline fun stat(opts: StatOptions = definedExternally): Any /* Stats | BigIntStats */ =
-        statAsync(
-            opts
-        ).await()
+    @seskar.js.JsAsync
+    suspend fun stat(opts: StatOptions = definedExternally): Any /* Stats | BigIntStats */
 
     /**
      * Truncates the file.
@@ -734,16 +560,8 @@ sealed external interface FileHandle {
     fun truncateAsync(len: Number = definedExternally): Promise<Unit>
 
 
-    @Suppress(
-        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-        "INLINE_EXTERNAL_DECLARATION",
-        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-        "DECLARATION_CANT_BE_INLINED",
-    )
-    suspend inline fun truncate(len: Number = definedExternally): Unit =
-        truncateAsync(
-            len
-        ).await()
+    @seskar.js.JsAsync
+    suspend fun truncate(len: Number = definedExternally): Unit
 
     /**
      * Change the file system timestamps of the object referenced by the `FileHandle` then fulfills the promise with no arguments upon success.
@@ -754,16 +572,8 @@ sealed external interface FileHandle {
     fun utimesAsync(atime: TimeLike, mtime: TimeLike): Promise<Unit>
 
 
-    @Suppress(
-        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-        "INLINE_EXTERNAL_DECLARATION",
-        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-        "DECLARATION_CANT_BE_INLINED",
-    )
-    suspend inline fun utimes(atime: TimeLike, mtime: TimeLike): Unit =
-        utimesAsync(
-            atime, mtime
-        ).await()
+    @seskar.js.JsAsync
+    suspend fun utimes(atime: TimeLike, mtime: TimeLike): Unit
 
     /**
      * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
@@ -903,16 +713,8 @@ sealed external interface FileHandle {
     fun writeFileAsync(data: Uint8Array, options: node.buffer.BufferEncoding? = definedExternally): Promise<Unit>
 
 
-    @Suppress(
-        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-        "INLINE_EXTERNAL_DECLARATION",
-        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-        "DECLARATION_CANT_BE_INLINED",
-    )
-    suspend inline fun writeFile(data: String): Unit =
-        writeFileAsync(
-            data
-        ).await()
+    @seskar.js.JsAsync
+    suspend fun writeFile(data: String): Unit
 
 
     /**
@@ -934,16 +736,8 @@ sealed external interface FileHandle {
      * @since v10.0.0
      */
 
-    @Suppress(
-        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-        "INLINE_EXTERNAL_DECLARATION",
-        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-        "DECLARATION_CANT_BE_INLINED",
-    )
-    suspend inline fun writeFile(data: String, options: (FileHandleWriteFileAsyncOptions)? = definedExternally): Unit =
-        writeFileAsync(
-            data, options
-        ).await()
+    @seskar.js.JsAsync
+    suspend fun writeFile(data: String, options: (FileHandleWriteFileAsyncOptions)? = definedExternally): Unit
 
 
     /**
@@ -965,16 +759,8 @@ sealed external interface FileHandle {
      * @since v10.0.0
      */
 
-    @Suppress(
-        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-        "INLINE_EXTERNAL_DECLARATION",
-        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-        "DECLARATION_CANT_BE_INLINED",
-    )
-    suspend inline fun writeFile(data: String, options: node.buffer.BufferEncoding? = definedExternally): Unit =
-        writeFileAsync(
-            data, options
-        ).await()
+    @seskar.js.JsAsync
+    suspend fun writeFile(data: String, options: node.buffer.BufferEncoding? = definedExternally): Unit
 
 
     /**
@@ -996,16 +782,8 @@ sealed external interface FileHandle {
      * @since v10.0.0
      */
 
-    @Suppress(
-        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-        "INLINE_EXTERNAL_DECLARATION",
-        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-        "DECLARATION_CANT_BE_INLINED",
-    )
-    suspend inline fun writeFile(data: Uint8Array): Unit =
-        writeFileAsync(
-            data
-        ).await()
+    @seskar.js.JsAsync
+    suspend fun writeFile(data: Uint8Array): Unit
 
 
     /**
@@ -1027,19 +805,8 @@ sealed external interface FileHandle {
      * @since v10.0.0
      */
 
-    @Suppress(
-        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-        "INLINE_EXTERNAL_DECLARATION",
-        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-        "DECLARATION_CANT_BE_INLINED",
-    )
-    suspend inline fun writeFile(
-        data: Uint8Array,
-        options: (FileHandleWriteFileAsyncOptions)? = definedExternally,
-    ): Unit =
-        writeFileAsync(
-            data, options
-        ).await()
+    @seskar.js.JsAsync
+    suspend fun writeFile(data: Uint8Array, options: (FileHandleWriteFileAsyncOptions)? = definedExternally): Unit
 
 
     /**
@@ -1061,16 +828,8 @@ sealed external interface FileHandle {
      * @since v10.0.0
      */
 
-    @Suppress(
-        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-        "INLINE_EXTERNAL_DECLARATION",
-        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-        "DECLARATION_CANT_BE_INLINED",
-    )
-    suspend inline fun writeFile(data: Uint8Array, options: node.buffer.BufferEncoding? = definedExternally): Unit =
-        writeFileAsync(
-            data, options
-        ).await()
+    @seskar.js.JsAsync
+    suspend fun writeFile(data: Uint8Array, options: node.buffer.BufferEncoding? = definedExternally): Unit
 
     /**
      * Write `buffer` to the file.
@@ -1100,21 +859,13 @@ sealed external interface FileHandle {
     ): Promise<FileHandleWriteResultPayload<TBuffer>>
 
 
-    @Suppress(
-        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-        "INLINE_EXTERNAL_DECLARATION",
-        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-        "DECLARATION_CANT_BE_INLINED",
-    )
-    suspend inline fun <TBuffer : Uint8Array> write(
+    @seskar.js.JsAsync
+    suspend fun <TBuffer : Uint8Array> write(
         buffer: TBuffer,
         offset: Double? = definedExternally,
         length: Double? = definedExternally,
         position: Double? = definedExternally,
-    ): FileHandleWriteResultPayload<TBuffer> =
-        writeAsync(
-            buffer, offset, length, position
-        ).await()
+    ): FileHandleWriteResultPayload<TBuffer>
 
 
     @JsName("write")
@@ -1125,20 +876,12 @@ sealed external interface FileHandle {
     ): Promise<FileHandleWriteStringResultPayload>
 
 
-    @Suppress(
-        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-        "INLINE_EXTERNAL_DECLARATION",
-        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-        "DECLARATION_CANT_BE_INLINED",
-    )
-    suspend inline fun write(
+    @seskar.js.JsAsync
+    suspend fun write(
         data: String,
         position: Double? = definedExternally,
         encoding: node.buffer.BufferEncoding? = definedExternally,
-    ): FileHandleWriteStringResultPayload =
-        writeAsync(
-            data, position, encoding
-        ).await()
+    ): FileHandleWriteStringResultPayload
 
     /**
      * Write an array of [ArrayBufferView](https://developer.mozilla.org/en-US/docs/Web/API/ArrayBufferView) s to the file.
@@ -1163,19 +906,8 @@ sealed external interface FileHandle {
     ): Promise<WriteVResult>
 
 
-    @Suppress(
-        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-        "INLINE_EXTERNAL_DECLARATION",
-        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-        "DECLARATION_CANT_BE_INLINED",
-    )
-    suspend inline fun writev(
-        buffers: ReadonlyArray<ArrayBufferView>,
-        position: Number = definedExternally,
-    ): WriteVResult =
-        writevAsync(
-            buffers, position
-        ).await()
+    @seskar.js.JsAsync
+    suspend fun writev(buffers: ReadonlyArray<ArrayBufferView>, position: Number = definedExternally): WriteVResult
 
     /**
      * Read from a file and write to an array of [ArrayBufferView](https://developer.mozilla.org/en-US/docs/Web/API/ArrayBufferView) s
@@ -1188,19 +920,8 @@ sealed external interface FileHandle {
     fun readvAsync(buffers: ReadonlyArray<ArrayBufferView>, position: Number = definedExternally): Promise<ReadVResult>
 
 
-    @Suppress(
-        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-        "INLINE_EXTERNAL_DECLARATION",
-        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-        "DECLARATION_CANT_BE_INLINED",
-    )
-    suspend inline fun readv(
-        buffers: ReadonlyArray<ArrayBufferView>,
-        position: Number = definedExternally,
-    ): ReadVResult =
-        readvAsync(
-            buffers, position
-        ).await()
+    @seskar.js.JsAsync
+    suspend fun readv(buffers: ReadonlyArray<ArrayBufferView>, position: Number = definedExternally): ReadVResult
 
     /**
      * Closes the file handle after waiting for any pending operation on the handle to
@@ -1224,15 +945,7 @@ sealed external interface FileHandle {
     fun closeAsync(): Promise<Unit>
 
 
-    @Suppress(
-        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-        "INLINE_EXTERNAL_DECLARATION",
-        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-        "DECLARATION_CANT_BE_INLINED",
-    )
-    suspend inline fun close(): Unit =
-        closeAsync(
-
-        ).await()
+    @seskar.js.JsAsync
+    suspend fun close(): Unit
 
 }

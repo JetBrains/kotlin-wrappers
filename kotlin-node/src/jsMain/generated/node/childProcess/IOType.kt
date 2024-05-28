@@ -4,7 +4,6 @@
 package node.childProcess
 
 
-@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
 sealed external interface IOType {
     companion object {

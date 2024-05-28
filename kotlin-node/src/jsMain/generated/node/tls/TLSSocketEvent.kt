@@ -3,7 +3,6 @@
 package node.tls
 
 
-@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
 sealed external interface TLSSocketEvent {
     sealed interface OCSPRESPONSE : node.events.LegacyEventType

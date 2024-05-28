@@ -3,6 +3,7 @@
 package web.notifications
 
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
@@ -100,6 +101,7 @@ external class Notification(
         /**
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/requestPermission_static)
          */
+        @JsAsync
         suspend fun requestPermission(deprecatedCallback: NotificationPermissionCallback = definedExternally): NotificationPermission
 
         @JsName("requestPermission")

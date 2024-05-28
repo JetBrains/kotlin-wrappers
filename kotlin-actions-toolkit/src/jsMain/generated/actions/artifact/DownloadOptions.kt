@@ -2,6 +2,9 @@
 
 package actions.artifact
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 sealed external interface DownloadOptions {
     /**
      * Specifies if a folder is created for the artifact that is downloaded (contents downloaded into this folder),

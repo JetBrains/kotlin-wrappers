@@ -6,6 +6,8 @@
 
 package web.storage
 
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
@@ -18,42 +20,44 @@ import web.events.EventType
 open external class StorageEvent(
     override val type: EventType<StorageEvent, EventTarget>,
     init: StorageEventInit = definedExternally,
-) : Event,
-    StorageEventInit {
+) : Event {
     /**
      * Returns the key of the storage item being changed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageEvent/key)
      */
-    override val key: String?
+    val key: String?
 
     /**
      * Returns the new value of the key of the storage item whose value is being changed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageEvent/newValue)
      */
-    override val newValue: String?
+    val newValue: String?
 
     /**
      * Returns the old value of the key of the storage item whose value is being changed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageEvent/oldValue)
      */
-    override val oldValue: String?
+    val oldValue: String?
 
     /**
      * Returns the Storage object that was affected.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageEvent/storageArea)
      */
-    override val storageArea: Storage?
+    val storageArea: Storage?
 
     /**
      * Returns the URL of the document whose storage item changed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageEvent/url)
      */
-    override val url: String
+    val url: String
+
+    @JsAlias(THIS)
+    override fun asInit(): StorageEventInit
 
     companion object : StorageEventTypes
 }

@@ -488,7 +488,8 @@ external class ImageryLayer(
          *   Default value - [IonWorldImageryStyle]
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayer.html#.WorldImageryConstructorOptions">Online Documentation</a>
          */
-        interface /* typealias */ WorldImageryConstructorOptions : ConstructorOptions
+        @JsPlainObject
+        sealed interface /* typealias */ WorldImageryConstructorOptions : ConstructorOptions
     }
 }
 

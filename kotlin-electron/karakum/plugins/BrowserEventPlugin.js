@@ -259,7 +259,6 @@ fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${key}(): web.events.E
                 .join("\n")
 
             const declaration = `
-@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
 sealed external interface ${name} {
 companion object {

@@ -21,7 +21,7 @@ sealed external class TransformStreamDefaultController<O> {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStreamDefaultController/error)
      */
-    fun error(reason: JsError = definedExternally)
+    fun error(reason: JsError? = definedExternally)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStreamDefaultController/terminate)

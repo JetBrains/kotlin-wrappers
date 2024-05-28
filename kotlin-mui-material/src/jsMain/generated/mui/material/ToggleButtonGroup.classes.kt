@@ -10,6 +10,12 @@ sealed external interface ToggleButtonGroupClasses {
     /** Styles applied to the root element. */
     val root: ClassName
 
+    /** State class applied to the root element if `selected={true}`. */
+    val selected: ClassName
+
+    /** Styles applied to the root element if `orientation="horizontal"`. */
+    val horizontal: ClassName
+
     /** Styles applied to the root element if `orientation="vertical"`. */
     val vertical: ClassName
 

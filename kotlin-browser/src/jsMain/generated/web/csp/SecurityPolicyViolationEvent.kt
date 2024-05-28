@@ -6,6 +6,8 @@
 
 package web.csp
 
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
@@ -18,67 +20,69 @@ import web.events.EventType
 open external class SecurityPolicyViolationEvent(
     override val type: EventType<SecurityPolicyViolationEvent, EventTarget>,
     init: SecurityPolicyViolationEventInit = definedExternally,
-) : Event,
-    SecurityPolicyViolationEventInit {
+) : Event {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/blockedURI)
      */
-    override val blockedURI: String
+    val blockedURI: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/columnNumber)
      */
-    override val columnNumber: Int
+    val columnNumber: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/disposition)
      */
-    override val disposition: SecurityPolicyViolationEventDisposition
+    val disposition: SecurityPolicyViolationEventDisposition
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/documentURI)
      */
-    override val documentURI: String
+    val documentURI: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/effectiveDirective)
      */
-    override val effectiveDirective: String
+    val effectiveDirective: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/lineNumber)
      */
-    override val lineNumber: Int
+    val lineNumber: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/originalPolicy)
      */
-    override val originalPolicy: String
+    val originalPolicy: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/referrer)
      */
-    override val referrer: String
+    val referrer: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/sample)
      */
-    override val sample: String
+    val sample: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/sourceFile)
      */
-    override val sourceFile: String
+    val sourceFile: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/statusCode)
      */
-    override val statusCode: Short
+    val statusCode: Short
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/violatedDirective)
      */
-    override val violatedDirective: String
+    val violatedDirective: String
+
+    @JsAlias(THIS)
+    override fun asInit(): SecurityPolicyViolationEventInit
 
     companion object : SecurityPolicyViolationEventTypes
 }

@@ -2,6 +2,7 @@
 
 package node.stream
 
+
 suspend fun finished(stream: node.ReadableStream, options: FinishedOptions = undefined.unsafeCast<Nothing>()): Unit =
     finishedAsync(
         stream, options

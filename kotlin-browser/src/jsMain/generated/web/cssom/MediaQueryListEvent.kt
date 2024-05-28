@@ -6,6 +6,8 @@
 
 package web.cssom
 
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
@@ -16,17 +18,19 @@ import web.events.EventType
 open external class MediaQueryListEvent(
     override val type: EventType<MediaQueryListEvent, EventTarget>,
     init: MediaQueryListEventInit = definedExternally,
-) : Event,
-    MediaQueryListEventInit {
+) : Event {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent/matches)
      */
-    override val matches: Boolean
+    val matches: Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent/media)
      */
-    override val media: MediaQuery
+    val media: MediaQuery
+
+    @JsAlias(THIS)
+    override fun asInit(): MediaQueryListEventInit
 
     companion object : MediaQueryListEventTypes
 }

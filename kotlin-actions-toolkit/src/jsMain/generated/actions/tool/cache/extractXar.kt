@@ -1,32 +1,23 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@actions/tool-cache")
+
 package actions.tool.cache
 
 import js.array.ReadonlyArray
+import js.promise.Promise
+import seskar.js.JsAsync
 
-suspend fun extractXar(
+@JsAsync
+external suspend fun extractXar(
     file: String,
-): String =
-    extractXarAsync(
-        file = file,
-    ).await()
+    dest: String = definedExternally,
+    flags: ReadonlyArray<String> = definedExternally,
+): String
 
-suspend fun extractXar(
+@JsName("extractXar")
+external fun extractXarAsync(
     file: String,
-    dest: String,
-): String =
-    extractXarAsync(
-        file = file,
-        dest = dest,
-    ).await()
-
-suspend fun extractXar(
-    file: String,
-    dest: String,
-    flags: ReadonlyArray<String>,
-): String =
-    extractXarAsync(
-        file = file,
-        dest = dest,
-        flags = flags,
-    ).await()
+    dest: String = definedExternally,
+    flags: ReadonlyArray<String> = definedExternally,
+): Promise<String>

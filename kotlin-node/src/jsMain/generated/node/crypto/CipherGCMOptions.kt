@@ -4,6 +4,7 @@
 package node.crypto
 
 
+@js.objects.JsPlainObject
 sealed external interface CipherGCMOptions : node.stream.TransformOptions {
     var authTagLength: Double?
 }

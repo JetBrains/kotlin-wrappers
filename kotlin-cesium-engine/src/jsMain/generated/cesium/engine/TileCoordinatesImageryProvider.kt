@@ -13,6 +13,7 @@ import js.core.Void
 import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.html.HTMLCanvasElement
 
 /**
@@ -120,7 +121,16 @@ external class TileCoordinatesImageryProvider(options: ConstructorOptions? = def
      * @return The resolved image as a Canvas DOM object.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#requestImage">Online Documentation</a>
      */
-    fun requestImage(
+    @JsAsync
+    suspend fun requestImage(
+        x: Double,
+        y: Double,
+        level: Int,
+        request: Request? = definedExternally,
+    ): HTMLCanvasElement
+
+    @JsName("requestImage")
+    fun requestImageAsync(
         x: Double,
         y: Double,
         level: Int,

@@ -6,6 +6,8 @@
 
 package web.payment
 
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.EventTarget
 import web.events.EventType
 
@@ -17,17 +19,19 @@ import web.events.EventType
 open external class PaymentMethodChangeEvent(
     override val type: EventType<PaymentMethodChangeEvent, EventTarget>,
     init: PaymentMethodChangeEventInit = definedExternally,
-) : PaymentRequestUpdateEvent,
-    PaymentMethodChangeEventInit {
+) : PaymentRequestUpdateEvent {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentMethodChangeEvent/methodDetails)
      */
-    override val methodDetails: Any?
+    val methodDetails: Any?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentMethodChangeEvent/methodName)
      */
-    override val methodName: String
+    val methodName: String
+
+    @JsAlias(THIS)
+    override fun asInit(): PaymentMethodChangeEventInit
 
     companion object : PaymentMethodChangeEventTypes
 }

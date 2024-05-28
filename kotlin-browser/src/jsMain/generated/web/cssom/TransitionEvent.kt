@@ -6,6 +6,8 @@
 
 package web.cssom
 
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
@@ -18,22 +20,24 @@ import web.events.EventType
 open external class TransitionEvent(
     override val type: EventType<TransitionEvent, EventTarget>,
     init: TransitionEventInit = definedExternally,
-) : Event,
-    TransitionEventInit {
+) : Event {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransitionEvent/elapsedTime)
      */
-    override val elapsedTime: Double
+    val elapsedTime: Double
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransitionEvent/propertyName)
      */
-    override val propertyName: String
+    val propertyName: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransitionEvent/pseudoElement)
      */
-    override val pseudoElement: String
+    val pseudoElement: String
+
+    @JsAlias(THIS)
+    override fun asInit(): TransitionEventInit
 
     companion object : TransitionEventTypes
 }

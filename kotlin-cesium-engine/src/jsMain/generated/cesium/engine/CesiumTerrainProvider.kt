@@ -12,6 +12,7 @@ package cesium.engine
 import js.core.Void
 import js.objects.JsPlainObject
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * <div class="notice">
@@ -55,7 +56,7 @@ private constructor() :
      *   pending and the request will be retried later.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumTerrainProvider.html#requestTileGeometry">Online Documentation</a>
      */
-    override fun requestTileGeometry(
+    override fun requestTileGeometryAsync(
         x: Double,
         y: Double,
         level: Int,
@@ -168,7 +169,7 @@ private constructor() :
      * @return Undefined if nothing need to be loaded or a Promise that resolves when all required tiles are loaded
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumTerrainProvider.html#loadTileDataAvailability">Online Documentation</a>
      */
-    override fun loadTileDataAvailability(
+    override fun loadTileDataAvailabilityAsync(
         x: Double,
         y: Double,
         level: Int,
@@ -217,7 +218,14 @@ private constructor() :
          * @param [options] An object describing initialization options.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumTerrainProvider.html#.fromIonAssetId">Online Documentation</a>
          */
-        fun fromIonAssetId(
+        @JsAsync
+        suspend fun fromIonAssetId(
+            assetId: Int,
+            options: ConstructorOptions? = definedExternally,
+        ): CesiumTerrainProvider
+
+        @JsName("fromIonAssetId")
+        fun fromIonAssetIdAsync(
             assetId: Int,
             options: ConstructorOptions? = definedExternally,
         ): Promise<CesiumTerrainProvider>
@@ -244,7 +252,14 @@ private constructor() :
          * @param [options] An object describing initialization options.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumTerrainProvider.html#.fromUrl">Online Documentation</a>
          */
-        fun fromUrl(
+        @JsAsync
+        suspend fun fromUrl(
+            url: dynamic,
+            options: ConstructorOptions? = definedExternally,
+        ): CesiumTerrainProvider
+
+        @JsName("fromUrl")
+        fun fromUrlAsync(
             url: dynamic,
             options: ConstructorOptions? = definedExternally,
         ): Promise<CesiumTerrainProvider>

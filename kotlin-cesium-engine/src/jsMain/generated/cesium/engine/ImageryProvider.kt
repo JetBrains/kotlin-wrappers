@@ -6,6 +6,7 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * Provides imagery to be displayed on the surface of an ellipsoid.  This type describes an
@@ -116,7 +117,16 @@ abstract external class ImageryProvider {
      *   undefined if there are too many active requests to the server, and the request should be retried later.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryProvider.html#requestImage">Online Documentation</a>
      */
-    abstract fun requestImage(
+    @JsAsync(optional = true)
+    suspend fun requestImage(
+        x: Double,
+        y: Double,
+        level: Int,
+        request: Request? = definedExternally,
+    ): ImageryTypes?
+
+    @JsName("requestImage")
+    abstract fun requestImageAsync(
         x: Double,
         y: Double,
         level: Int,
@@ -138,7 +148,17 @@ abstract external class ImageryProvider {
      *   It may also be undefined if picking is not supported.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryProvider.html#pickFeatures">Online Documentation</a>
      */
-    abstract fun pickFeatures(
+    @JsAsync(optional = true)
+    suspend fun pickFeatures(
+        x: Double,
+        y: Double,
+        level: Int,
+        longitude: Double,
+        latitude: Double,
+    ): ReadonlyArray<ImageryLayerFeatureInfo>?
+
+    @JsName("pickFeatures")
+    abstract fun pickFeaturesAsync(
         x: Double,
         y: Double,
         level: Int,
@@ -157,12 +177,26 @@ abstract external class ImageryProvider {
          *   undefined if there are too many active requests to the server, and the request should be retried later.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryProvider.html#.loadImage">Online Documentation</a>
          */
-        fun loadImage(
+        @JsAsync(optional = true)
+        suspend fun loadImage(
+            imageryProvider: ImageryProvider,
+            url: Resource,
+        ): Any /* ImageryTypes | CompressedTextureBuffer */?
+
+        @JsName("loadImage")
+        fun loadImageAsync(
             imageryProvider: ImageryProvider,
             url: Resource,
         ): Promise<Any /* ImageryTypes | CompressedTextureBuffer */>?
 
-        fun loadImage(
+        @JsAsync(optional = true)
+        suspend fun loadImage(
+            imageryProvider: ImageryProvider,
+            url: String,
+        ): Any /* ImageryTypes | CompressedTextureBuffer */?
+
+        @JsName("loadImage")
+        fun loadImageAsync(
             imageryProvider: ImageryProvider,
             url: String,
         ): Promise<Any /* ImageryTypes | CompressedTextureBuffer */>?

@@ -4,6 +4,7 @@ package web.dom
 
 import js.core.Void
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.animations.DocumentTimeline
 import web.events.Event
 import web.events.EventHandler
@@ -431,6 +432,7 @@ open external class Document :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/exitFullscreen)
      */
+    @JsAsync
     suspend fun exitFullscreen()
 
     @JsName("exitFullscreen")
@@ -439,6 +441,7 @@ open external class Document :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/exitPictureInPicture)
      */
+    @JsAsync
     suspend fun exitPictureInPicture()
 
     @JsName("exitPictureInPicture")
@@ -512,6 +515,7 @@ open external class Document :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/hasStorageAccess)
      */
+    @JsAsync
     suspend fun hasStorageAccess(): Boolean
 
     @JsName("hasStorageAccess")
@@ -558,6 +562,7 @@ open external class Document :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/requestStorageAccess)
      */
+    @JsAsync
     suspend fun requestStorageAccess()
 
     @JsName("requestStorageAccess")

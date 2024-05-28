@@ -4,6 +4,7 @@ package web.push
 
 import js.array.ReadonlyArray
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.permissions.PermissionState
 
 /**
@@ -16,6 +17,7 @@ sealed external class PushManager {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/getSubscription)
      */
+    @JsAsync
     suspend fun getSubscription(): PushSubscription?
 
     @JsName("getSubscription")
@@ -24,6 +26,7 @@ sealed external class PushManager {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/permissionState)
      */
+    @JsAsync
     suspend fun permissionState(options: PushSubscriptionOptionsInit = definedExternally): PermissionState
 
     @JsName("permissionState")
@@ -32,6 +35,7 @@ sealed external class PushManager {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/subscribe)
      */
+    @JsAsync
     suspend fun subscribe(options: PushSubscriptionOptionsInit = definedExternally): PushSubscription
 
     @JsName("subscribe")

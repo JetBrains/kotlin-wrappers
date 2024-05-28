@@ -6,6 +6,8 @@
 
 package web.cssom
 
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
@@ -16,12 +18,14 @@ import web.events.EventType
 open external class ContentVisibilityAutoStateChangeEvent(
     override val type: EventType<ContentVisibilityAutoStateChangeEvent, EventTarget>,
     init: ContentVisibilityAutoStateChangeEventInit = definedExternally,
-) : Event,
-    ContentVisibilityAutoStateChangeEventInit {
+) : Event {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ContentVisibilityAutoStateChangeEvent/skipped)
      */
-    override val skipped: Boolean
+    val skipped: Boolean
+
+    @JsAlias(THIS)
+    override fun asInit(): ContentVisibilityAutoStateChangeEventInit
 
     companion object
 }

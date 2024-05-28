@@ -9,6 +9,8 @@ package web.serviceworker
 import js.core.Void
 import js.promise.Promise
 import js.promise.PromiseLike
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.EventTarget
 import web.events.EventType
 import web.http.Request
@@ -22,38 +24,40 @@ import web.http.Response
 open external class FetchEvent(
     override val type: EventType<FetchEvent, EventTarget>,
     init: FetchEventInit,
-) : ExtendableEvent,
-    FetchEventInit {
+) : ExtendableEvent {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/clientId)
      */
-    override val clientId: String
+    val clientId: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/handled)
      */
-    override val handled: Promise<Void>
+    val handled: Promise<Void>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/preloadResponse)
      */
-    override val preloadResponse: Promise<*>
+    val preloadResponse: Promise<*>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/request)
      */
-    override val request: Request
+    val request: Request
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/resultingClientId)
      */
-    override val resultingClientId: String
+    val resultingClientId: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/respondWith)
      */
     fun respondWith(r: Response)
     fun respondWith(r: PromiseLike<Response>)
+
+    @JsAlias(THIS)
+    override fun asInit(): FetchEventInit
 
     companion object : FetchEventTypes
 }

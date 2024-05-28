@@ -36,7 +36,7 @@ sealed external class RTCRtpTransceiver {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpTransceiver/setCodecPreferences)
      */
-    fun setCodecPreferences(codecs: ReadonlyArray<RTCRtpCodecCapability>)
+    fun setCodecPreferences(codecs: ReadonlyArray<RTCRtpCodec>)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpTransceiver/stop)

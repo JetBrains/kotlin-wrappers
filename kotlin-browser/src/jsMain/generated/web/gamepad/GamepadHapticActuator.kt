@@ -3,6 +3,7 @@
 package web.gamepad
 
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * This Gamepad API interface represents hardware in the controller designed to provide haptic feedback to the user (if available), most commonly vibration hardware.
@@ -10,6 +11,7 @@ import js.promise.Promise
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator)
  */
 sealed external class GamepadHapticActuator {
+    @JsAsync
     suspend fun playEffect(
         type: GamepadHapticEffectType,
         params: GamepadEffectParameters = definedExternally,
@@ -21,6 +23,7 @@ sealed external class GamepadHapticActuator {
         params: GamepadEffectParameters = definedExternally,
     ): Promise<GamepadHapticsResult>
 
+    @JsAsync
     suspend fun reset(): GamepadHapticsResult
 
     @JsName("reset")

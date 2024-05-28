@@ -57,7 +57,7 @@ external class Range :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/createContextualFragment)
      */
-    fun createContextualFragment(fragment: String): DocumentFragment
+    fun createContextualFragment(string: String): DocumentFragment
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/deleteContents)

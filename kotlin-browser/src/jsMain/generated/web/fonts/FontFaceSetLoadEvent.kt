@@ -7,6 +7,8 @@
 package web.fonts
 
 import js.array.ReadonlyArray
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
@@ -17,12 +19,14 @@ import web.events.EventType
 open external class FontFaceSetLoadEvent(
     override val type: EventType<FontFaceSetLoadEvent, EventTarget>,
     init: FontFaceSetLoadEventInit = definedExternally,
-) : Event,
-    FontFaceSetLoadEventInit {
+) : Event {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSetLoadEvent/fontfaces)
      */
-    override val fontfaces: ReadonlyArray<FontFace>
+    val fontfaces: ReadonlyArray<FontFace>
+
+    @JsAlias(THIS)
+    override fun asInit(): FontFaceSetLoadEventInit
 
     companion object : FontFaceSetLoadEventTypes
 }

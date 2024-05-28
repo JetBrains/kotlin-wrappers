@@ -1,14 +1,23 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@actions/cache")
+
 package actions.cache
-suspend fun downloadCacheHttpClientConcurrent(
+
+import js.core.Void
+import js.promise.Promise
+import seskar.js.JsAsync
+
+@JsAsync
+external suspend fun downloadCacheHttpClientConcurrent(
     archiveLocation: String,
     archivePath: node.fs.PathLike,
     options: DownloadOptions,
-) {
-    downloadCacheHttpClientConcurrentAsync(
-        archiveLocation = archiveLocation,
-        archivePath = archivePath,
-        options = options,
-    ).await()
-}
+)
+
+@JsName("downloadCacheHttpClientConcurrent")
+external fun downloadCacheHttpClientConcurrentAsync(
+    archiveLocation: String,
+    archivePath: node.fs.PathLike,
+    options: DownloadOptions,
+): Promise<Void>

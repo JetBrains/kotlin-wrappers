@@ -1,32 +1,23 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@actions/tool-cache")
+
 package actions.tool.cache
 
 import js.array.ReadonlyArray
+import js.promise.Promise
+import seskar.js.JsAsync
 
-suspend fun extractTar(
+@JsAsync
+external suspend fun extractTar(
     file: String,
-): String =
-    extractTarAsync(
-        file = file,
-    ).await()
+    dest: String = definedExternally,
+    flags: ReadonlyArray<String> = definedExternally,
+): String
 
-suspend fun extractTar(
+@JsName("extractTar")
+external fun extractTarAsync(
     file: String,
-    dest: String,
-): String =
-    extractTarAsync(
-        file = file,
-        dest = dest,
-    ).await()
-
-suspend fun extractTar(
-    file: String,
-    dest: String,
-    flags: ReadonlyArray<String>,
-): String =
-    extractTarAsync(
-        file = file,
-        dest = dest,
-        flags = flags,
-    ).await()
+    dest: String = definedExternally,
+    flags: ReadonlyArray<String> = definedExternally,
+): Promise<String>

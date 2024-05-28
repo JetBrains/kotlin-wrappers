@@ -2,9 +2,11 @@
 
 package actions.exec
 
+import js.objects.JsPlainObject
 import js.objects.Record
 import node.buffer.Buffer
 
+@JsPlainObject
 sealed external interface ExecOptions {
     /** optional working directory.  defaults to current */
     var cwd: String?

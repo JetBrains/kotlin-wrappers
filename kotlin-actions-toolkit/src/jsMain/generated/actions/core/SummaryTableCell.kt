@@ -2,6 +2,9 @@
 
 package actions.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 sealed external interface SummaryTableCell {
     /**
      * Cell content

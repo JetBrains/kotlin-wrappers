@@ -1,17 +1,24 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@actions/cache")
+
 package actions.cache
 
 import js.array.ReadonlyArray
+import js.core.Void
+import js.promise.Promise
+import seskar.js.JsAsync
 
-suspend fun createTar(
+@JsAsync
+external suspend fun createTar(
     archiveFolder: String,
     sourceDirectories: ReadonlyArray<String>,
     compressionMethod: CompressionMethod,
-) {
-    createTarAsync(
-        archiveFolder = archiveFolder,
-        sourceDirectories = sourceDirectories,
-        compressionMethod = compressionMethod,
-    ).await()
-}
+)
+
+@JsName("createTar")
+external fun createTarAsync(
+    archiveFolder: String,
+    sourceDirectories: ReadonlyArray<String>,
+    compressionMethod: CompressionMethod,
+): Promise<Void>

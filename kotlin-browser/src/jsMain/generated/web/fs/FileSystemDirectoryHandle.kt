@@ -6,6 +6,7 @@ import js.array.ReadonlyArray
 import js.collections.AsyncMapLike
 import js.core.Void
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * Available only in secure contexts.
@@ -20,6 +21,7 @@ sealed external class FileSystemDirectoryHandle :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/getDirectoryHandle)
      */
+    @JsAsync
     suspend fun getDirectoryHandle(
         name: String,
         options: FileSystemGetDirectoryOptions = definedExternally,
@@ -34,6 +36,7 @@ sealed external class FileSystemDirectoryHandle :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/getFileHandle)
      */
+    @JsAsync
     suspend fun getFileHandle(
         name: String,
         options: FileSystemGetFileOptions = definedExternally,
@@ -48,6 +51,7 @@ sealed external class FileSystemDirectoryHandle :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/removeEntry)
      */
+    @JsAsync
     suspend fun removeEntry(
         name: String,
         options: FileSystemRemoveOptions = definedExternally,
@@ -62,6 +66,7 @@ sealed external class FileSystemDirectoryHandle :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/resolve)
      */
+    @JsAsync
     suspend fun resolve(possibleDescendant: FileSystemHandle): ReadonlyArray<String>?
 
     @JsName("resolve")

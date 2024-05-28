@@ -6,6 +6,8 @@
 
 package web.animations
 
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
@@ -18,22 +20,24 @@ import web.events.EventType
 open external class AnimationEvent(
     override val type: EventType<AnimationEvent, EventTarget>,
     init: AnimationEventInit = definedExternally,
-) : Event,
-    AnimationEventInit {
+) : Event {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationEvent/animationName)
      */
-    override val animationName: String
+    val animationName: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationEvent/elapsedTime)
      */
-    override val elapsedTime: Double
+    val elapsedTime: Double
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationEvent/pseudoElement)
      */
-    override val pseudoElement: String
+    val pseudoElement: String
+
+    @JsAlias(THIS)
+    override fun asInit(): AnimationEventInit
 
     companion object : AnimationEventTypes
 }

@@ -1,62 +1,38 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@actions/glob")
+
 package actions.glob
-suspend fun hashFiles(
+
+import js.promise.Promise
+import seskar.js.JsAsync
+
+@JsAsync
+external suspend fun hashFiles(
     globber: Globber,
     currentWorkspace: String,
-): String =
-    hashFilesAsync(
-        globber = globber,
-        currentWorkspace = currentWorkspace,
-    ).await()
+    verbose: Boolean = definedExternally,
+): String
 
-suspend fun hashFiles(
+@JsName("hashFiles")
+external fun hashFilesAsync(
     globber: Globber,
     currentWorkspace: String,
-    verbose: Boolean,
-): String =
-    hashFilesAsync(
-        globber = globber,
-        currentWorkspace = currentWorkspace,
-        verbose = verbose,
-    ).await()
+    verbose: Boolean = definedExternally,
+): Promise<String>
 
-suspend fun hashFiles(
+@JsAsync
+external suspend fun hashFiles(
     patterns: String,
-): String =
-    hashFilesAsync(
-        patterns = patterns,
-    ).await()
+    currentWorkspace: String = definedExternally,
+    options: HashFileOptions = definedExternally,
+    verbose: Boolean = definedExternally,
+): String
 
-suspend fun hashFiles(
+@JsName("hashFiles")
+external fun hashFilesAsync(
     patterns: String,
-    currentWorkspace: String,
-): String =
-    hashFilesAsync(
-        patterns = patterns,
-        currentWorkspace = currentWorkspace,
-    ).await()
-
-suspend fun hashFiles(
-    patterns: String,
-    currentWorkspace: String,
-    options: HashFileOptions,
-): String =
-    hashFilesAsync(
-        patterns = patterns,
-        currentWorkspace = currentWorkspace,
-        options = options,
-    ).await()
-
-suspend fun hashFiles(
-    patterns: String,
-    currentWorkspace: String,
-    options: HashFileOptions,
-    verbose: Boolean,
-): String =
-    hashFilesAsync(
-        patterns = patterns,
-        currentWorkspace = currentWorkspace,
-        options = options,
-        verbose = verbose,
-    ).await()
+    currentWorkspace: String = definedExternally,
+    options: HashFileOptions = definedExternally,
+    verbose: Boolean = definedExternally,
+): Promise<String>

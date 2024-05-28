@@ -12,6 +12,7 @@ import js.array.ReadonlyArray
 import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * Provides geocoding through Cesium ion.
@@ -45,7 +46,14 @@ external class IonGeocoderService(options: ConstructorOptions) {
      *   Default value - [GeocodeType.SEARCH]
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/IonGeocoderService.html#geocode">Online Documentation</a>
      */
-    fun geocode(
+    @JsAsync
+    suspend fun geocode(
+        query: String,
+        type: GeocodeType? = definedExternally,
+    ): ReadonlyArray<GeocoderService.Result>
+
+    @JsName("geocode")
+    fun geocodeAsync(
         query: String,
         type: GeocodeType? = definedExternally,
     ): Promise<ReadonlyArray<GeocoderService.Result>>

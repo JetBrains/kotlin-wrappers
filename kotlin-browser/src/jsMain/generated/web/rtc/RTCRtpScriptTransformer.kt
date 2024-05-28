@@ -4,6 +4,7 @@ package web.rtc
 
 import js.core.Void
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.events.EventTarget
 import web.streams.ReadableStream
 import web.streams.WritableStream
@@ -31,6 +32,7 @@ sealed external class RTCRtpScriptTransformer :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpScriptTransformer/generateKeyFrame)
      */
+    @JsAsync
     suspend fun generateKeyFrame(rid: String = definedExternally): Number
 
     @JsName("generateKeyFrame")
@@ -39,6 +41,7 @@ sealed external class RTCRtpScriptTransformer :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpScriptTransformer/sendKeyFrameRequest)
      */
+    @JsAsync
     suspend fun sendKeyFrameRequest()
 
     @JsName("sendKeyFrameRequest")

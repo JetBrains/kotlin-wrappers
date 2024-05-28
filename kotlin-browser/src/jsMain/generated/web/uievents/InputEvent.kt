@@ -7,6 +7,8 @@
 package web.uievents
 
 import js.array.ReadonlyArray
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.data.DataTransfer
 import web.events.EventTarget
 import web.events.EventType
@@ -43,6 +45,9 @@ open external class InputEvent(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputEvent/getTargetRanges)
      */
     fun getTargetRanges(): ReadonlyArray<StaticRange>
+
+    @JsAlias(THIS)
+    override fun asInit(): InputEventInit
 
     companion object : InputEventTypes
 }

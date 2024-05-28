@@ -12,6 +12,7 @@ import js.array.ReadonlyArray
 import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.dom.Element
 import web.html.HTMLCanvasElement
 
@@ -839,7 +840,15 @@ external class Scene(options: ConstructorOptions) {
      * @return A promise that resolves to the provided list of positions when the query has completed.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#sampleHeightMostDetailed">Online Documentation</a>
      */
-    fun sampleHeightMostDetailed(
+    @JsAsync
+    suspend fun sampleHeightMostDetailed(
+        positions: ReadonlyArray<Cartographic>,
+        objectsToExclude: ReadonlyArray<Any>? = definedExternally,
+        width: Double? = definedExternally,
+    ): ReadonlyArray<Cartographic>
+
+    @JsName("sampleHeightMostDetailed")
+    fun sampleHeightMostDetailedAsync(
         positions: ReadonlyArray<Cartographic>,
         objectsToExclude: ReadonlyArray<Any>? = definedExternally,
         width: Double? = definedExternally,
@@ -868,7 +877,15 @@ external class Scene(options: ConstructorOptions) {
      * @return A promise that resolves to the provided list of positions when the query has completed.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#clampToHeightMostDetailed">Online Documentation</a>
      */
-    fun clampToHeightMostDetailed(
+    @JsAsync
+    suspend fun clampToHeightMostDetailed(
+        cartesians: ReadonlyArray<Cartesian3>,
+        objectsToExclude: ReadonlyArray<Any>? = definedExternally,
+        width: Double? = definedExternally,
+    ): ReadonlyArray<Cartesian3>
+
+    @JsName("clampToHeightMostDetailed")
+    fun clampToHeightMostDetailedAsync(
         cartesians: ReadonlyArray<Cartesian3>,
         objectsToExclude: ReadonlyArray<Any>? = definedExternally,
         width: Double? = definedExternally,

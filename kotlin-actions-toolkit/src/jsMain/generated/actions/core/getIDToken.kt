@@ -1,12 +1,14 @@
 // Automatically generated - do not modify!
 
-package actions.core
-suspend fun getIDToken(): String =
-    getIDTokenAsync().await()
+@file:JsModule("@actions/core")
 
-suspend fun getIDToken(
-    aud: String,
-): String =
-    getIDTokenAsync(
-        aud = aud,
-    ).await()
+package actions.core
+
+import js.promise.Promise
+import seskar.js.JsAsync
+
+@JsAsync
+external suspend fun getIDToken(aud: String = definedExternally): String
+
+@JsName("getIDToken")
+external fun getIDTokenAsync(aud: String = definedExternally): Promise<String>

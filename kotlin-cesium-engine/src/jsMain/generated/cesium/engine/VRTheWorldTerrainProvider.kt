@@ -12,6 +12,7 @@ package cesium.engine
 import js.core.Void
 import js.objects.JsPlainObject
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * <div class="notice">
@@ -90,7 +91,7 @@ private constructor() :
      *   pending and the request will be retried later.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VRTheWorldTerrainProvider.html#requestTileGeometry">Online Documentation</a>
      */
-    override fun requestTileGeometry(
+    override fun requestTileGeometryAsync(
         x: Double,
         y: Double,
         level: Int,
@@ -127,7 +128,7 @@ private constructor() :
      * @return Undefined if nothing need to be loaded or a Promise that resolves when all required tiles are loaded
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VRTheWorldTerrainProvider.html#loadTileDataAvailability">Online Documentation</a>
      */
-    override fun loadTileDataAvailability(
+    override fun loadTileDataAvailabilityAsync(
         x: Double,
         y: Double,
         level: Int,
@@ -159,12 +160,26 @@ private constructor() :
          * @param [options] An object describing initialization options.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VRTheWorldTerrainProvider.html#.fromUrl">Online Documentation</a>
          */
-        fun fromUrl(
+        @JsAsync
+        suspend fun fromUrl(
+            url: Resource,
+            options: ConstructorOptions? = definedExternally,
+        ): VRTheWorldTerrainProvider
+
+        @JsName("fromUrl")
+        fun fromUrlAsync(
             url: Resource,
             options: ConstructorOptions? = definedExternally,
         ): Promise<VRTheWorldTerrainProvider>
 
-        fun fromUrl(
+        @JsAsync
+        suspend fun fromUrl(
+            url: String,
+            options: ConstructorOptions? = definedExternally,
+        ): VRTheWorldTerrainProvider
+
+        @JsName("fromUrl")
+        fun fromUrlAsync(
             url: String,
             options: ConstructorOptions? = definedExternally,
         ): Promise<VRTheWorldTerrainProvider>

@@ -3,7 +3,6 @@
 package node.tty
 
 
-@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 @seskar.js.JsVirtual
 sealed external interface WriteStreamEvent {
     sealed interface RESIZE : node.events.LegacyEventType

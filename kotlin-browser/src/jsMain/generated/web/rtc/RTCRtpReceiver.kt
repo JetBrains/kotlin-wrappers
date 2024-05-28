@@ -4,7 +4,9 @@ package web.rtc
 
 import js.array.ReadonlyArray
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.media.streams.MediaStreamTrack
+import web.time.DOMHighResTimeStamp
 
 /**
  * This WebRTC API interface manages the reception and decoding of data for a MediaStreamTrack on an RTCPeerConnection.
@@ -12,6 +14,8 @@ import web.media.streams.MediaStreamTrack
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver)
  */
 sealed external class RTCRtpReceiver {
+    var jitterBufferTarget: DOMHighResTimeStamp?
+
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/track)
      */
@@ -40,6 +44,7 @@ sealed external class RTCRtpReceiver {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/getStats)
      */
+    @JsAsync
     suspend fun getStats(): RTCStatsReport
 
     @JsName("getStats")

@@ -6,6 +6,8 @@
 
 package web.sockets
 
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
@@ -18,28 +20,30 @@ import web.events.EventType
 open external class CloseEvent(
     override val type: EventType<CloseEvent, EventTarget>,
     init: CloseEventInit = definedExternally,
-) : Event,
-    CloseEventInit {
+) : Event {
     /**
      * Returns the WebSocket connection close code provided by the server.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CloseEvent/code)
      */
-    override val code: Short
+    val code: Short
 
     /**
      * Returns the WebSocket connection close reason provided by the server.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CloseEvent/reason)
      */
-    override val reason: String
+    val reason: String
 
     /**
      * Returns true if the connection closed cleanly; false otherwise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CloseEvent/wasClean)
      */
-    override val wasClean: Boolean
+    val wasClean: Boolean
+
+    @JsAlias(THIS)
+    override fun asInit(): CloseEventInit
 
     companion object : CloseEventTypes
 }

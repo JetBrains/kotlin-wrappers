@@ -7,6 +7,7 @@ package cesium.engine
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * Provides geocoding through an external service. This type describes an interface and
@@ -27,7 +28,14 @@ external class GeocoderService {
      *   Default value - [GeocodeType.SEARCH]
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeocoderService.html#geocode">Online Documentation</a>
      */
-    fun geocode(
+    @JsAsync
+    suspend fun geocode(
+        query: String,
+        type: GeocodeType? = definedExternally,
+    ): ReadonlyArray<Result>
+
+    @JsName("geocode")
+    fun geocodeAsync(
         query: String,
         type: GeocodeType? = definedExternally,
     ): Promise<ReadonlyArray<Result>>

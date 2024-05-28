@@ -6,6 +6,8 @@
 
 package web.uievents
 
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.EventTarget
 import web.events.EventType
 import web.keyboard.ModifierKeyCode
@@ -128,6 +130,9 @@ open external class MouseEvent(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/getModifierState)
      */
     fun getModifierState(keyArg: ModifierKeyCode): Boolean
+
+    @JsAlias(THIS)
+    override fun asInit(): MouseEventInit
 
     companion object : MouseEventTypes
 }

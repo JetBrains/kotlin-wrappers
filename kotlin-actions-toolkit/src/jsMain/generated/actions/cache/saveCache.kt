@@ -1,60 +1,40 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@actions/cache")
+
 package actions.cache
 
 import js.array.ReadonlyArray
+import js.core.Void
+import js.promise.Promise
+import seskar.js.JsAsync
 
-suspend fun saveCache(
+@JsAsync
+external suspend fun saveCache(
     paths: ReadonlyArray<String>,
     key: String,
-): Number =
-    saveCacheAsync(
-        paths = paths,
-        key = key,
-    ).await()
+    options: UploadOptions = definedExternally,
+    enableCrossOsArchive: Boolean = definedExternally,
+): Number
 
-suspend fun saveCache(
+@JsName("saveCache")
+external fun saveCacheAsync(
     paths: ReadonlyArray<String>,
     key: String,
-    options: UploadOptions,
-): Number =
-    saveCacheAsync(
-        paths = paths,
-        key = key,
-        options = options,
-    ).await()
+    options: UploadOptions = definedExternally,
+    enableCrossOsArchive: Boolean = definedExternally,
+): Promise<Number>
 
-suspend fun saveCache(
-    paths: ReadonlyArray<String>,
-    key: String,
-    options: UploadOptions,
-    enableCrossOsArchive: Boolean,
-): Number =
-    saveCacheAsync(
-        paths = paths,
-        key = key,
-        options = options,
-        enableCrossOsArchive = enableCrossOsArchive,
-    ).await()
-
-suspend fun saveCache(
+@JsAsync
+external suspend fun saveCache(
     cacheId: Number,
     archivePath: String,
-) {
-    saveCacheAsync(
-        cacheId = cacheId,
-        archivePath = archivePath,
-    ).await()
-}
+    options: UploadOptions = definedExternally,
+)
 
-suspend fun saveCache(
+@JsName("saveCache")
+external fun saveCacheAsync(
     cacheId: Number,
     archivePath: String,
-    options: UploadOptions,
-) {
-    saveCacheAsync(
-        cacheId = cacheId,
-        archivePath = archivePath,
-        options = options,
-    ).await()
-}
+    options: UploadOptions = definedExternally,
+): Promise<Void>

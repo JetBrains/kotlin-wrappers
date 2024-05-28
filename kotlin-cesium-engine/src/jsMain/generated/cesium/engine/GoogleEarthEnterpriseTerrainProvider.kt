@@ -99,7 +99,7 @@ private constructor() :
      *   pending and the request will be retried later.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseTerrainProvider.html#requestTileGeometry">Online Documentation</a>
      */
-    override fun requestTileGeometry(
+    override fun requestTileGeometryAsync(
         x: Double,
         y: Double,
         level: Int,
@@ -135,7 +135,7 @@ private constructor() :
      * @param [level] The level of the tile for which to request geometry.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseTerrainProvider.html#loadTileDataAvailability">Online Documentation</a>
      */
-    override fun loadTileDataAvailability(
+    override fun loadTileDataAvailabilityAsync(
         x: Double,
         y: Double,
         level: Int,

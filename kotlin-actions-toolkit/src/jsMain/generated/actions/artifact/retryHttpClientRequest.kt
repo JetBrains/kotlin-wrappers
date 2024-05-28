@@ -1,40 +1,26 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@actions/artifact")
+
 package actions.artifact
 
 import actions.http.client.HttpClientResponse
 import js.collections.ReadonlyMap
 import js.promise.Promise
+import seskar.js.JsAsync
 
-suspend fun retryHttpClientRequest(
+@JsAsync
+external suspend fun retryHttpClientRequest(
     name: String,
     method: () -> Promise<HttpClientResponse>,
-): HttpClientResponse =
-    retryHttpClientRequestAsync(
-        name = name,
-        method = method,
-    ).await()
+    customErrorMessages: ReadonlyMap<Int, String> = definedExternally,
+    maxAttempts: Number = definedExternally,
+): HttpClientResponse
 
-suspend fun retryHttpClientRequest(
+@JsName("retryHttpClientRequest")
+external fun retryHttpClientRequestAsync(
     name: String,
     method: () -> Promise<HttpClientResponse>,
-    customErrorMessages: ReadonlyMap<Int, String>,
-): HttpClientResponse =
-    retryHttpClientRequestAsync(
-        name = name,
-        method = method,
-        customErrorMessages = customErrorMessages,
-    ).await()
-
-suspend fun retryHttpClientRequest(
-    name: String,
-    method: () -> Promise<HttpClientResponse>,
-    customErrorMessages: ReadonlyMap<Int, String>,
-    maxAttempts: Number,
-): HttpClientResponse =
-    retryHttpClientRequestAsync(
-        name = name,
-        method = method,
-        customErrorMessages = customErrorMessages,
-        maxAttempts = maxAttempts,
-    ).await()
+    customErrorMessages: ReadonlyMap<Int, String> = definedExternally,
+    maxAttempts: Number = definedExternally,
+): Promise<HttpClientResponse>

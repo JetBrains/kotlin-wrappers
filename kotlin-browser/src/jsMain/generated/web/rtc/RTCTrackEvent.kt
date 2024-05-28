@@ -7,6 +7,8 @@
 package web.rtc
 
 import js.array.ReadonlyArray
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
@@ -19,27 +21,29 @@ import web.media.streams.MediaStreamTrack
 open external class RTCTrackEvent(
     override val type: EventType<RTCTrackEvent, EventTarget>,
     init: RTCTrackEventInit,
-) : Event,
-    RTCTrackEventInit {
+) : Event {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTrackEvent/receiver)
      */
-    override val receiver: RTCRtpReceiver
+    val receiver: RTCRtpReceiver
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTrackEvent/streams)
      */
-    override val streams: ReadonlyArray<MediaStream>
+    val streams: ReadonlyArray<MediaStream>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTrackEvent/track)
      */
-    override val track: MediaStreamTrack
+    val track: MediaStreamTrack
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTrackEvent/transceiver)
      */
-    override val transceiver: RTCRtpTransceiver
+    val transceiver: RTCRtpTransceiver
+
+    @JsAlias(THIS)
+    override fun asInit(): RTCTrackEventInit
 
     companion object : RTCTrackEventTypes
 }

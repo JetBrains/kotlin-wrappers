@@ -5,6 +5,7 @@ package web.dom
 import js.array.ReadonlyArray
 import js.core.Void
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.aria.ARIAMixin
 import web.components.ShadowRoot
 import web.components.ShadowRootInit
@@ -37,7 +38,6 @@ abstract external class Element :
     ARIAMixin,
     Animatable,
     ChildNode,
-    InnerHTML,
     NonDocumentTypeChildNode,
     ParentNode,
     Slottable {
@@ -86,6 +86,11 @@ abstract external class Element :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/id)
      */
     var id: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/innerHTML)
+     */
+    var innerHTML: String
 
     /**
      * Returns the local name.
@@ -315,7 +320,7 @@ abstract external class Element :
      */
     fun insertAdjacentHTML(
         position: InsertPosition,
-        text: String,
+        string: String,
     )
 
     /**
@@ -367,6 +372,7 @@ abstract external class Element :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/requestFullscreen)
      */
+    @JsAsync
     suspend fun requestFullscreen(options: FullscreenOptions = definedExternally)
 
     @JsName("requestFullscreen")

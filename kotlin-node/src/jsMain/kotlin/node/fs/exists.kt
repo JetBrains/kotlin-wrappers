@@ -1,4 +1,5 @@
 package node.fs
+
 /**
  * Returns `true` if the path exists, `false` otherwise.
  */

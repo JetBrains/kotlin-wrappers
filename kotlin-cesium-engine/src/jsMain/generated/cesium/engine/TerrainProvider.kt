@@ -10,6 +10,7 @@ package cesium.engine
 
 import js.core.Void
 import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * Provides terrain or other geometry for the surface of an ellipsoid.  The surface geometry is
@@ -73,7 +74,16 @@ abstract external class TerrainProvider {
      *   pending and the request will be retried later.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TerrainProvider.html#requestTileGeometry">Online Documentation</a>
      */
-    abstract fun requestTileGeometry(
+    @JsAsync(optional = true)
+    suspend fun requestTileGeometry(
+        x: Double,
+        y: Double,
+        level: Int,
+        request: Request? = definedExternally,
+    ): TerrainData?
+
+    @JsName("requestTileGeometry")
+    abstract fun requestTileGeometryAsync(
         x: Double,
         y: Double,
         level: Int,
@@ -110,7 +120,15 @@ abstract external class TerrainProvider {
      * @return Undefined if nothing need to be loaded or a Promise that resolves when all required tiles are loaded
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TerrainProvider.html#loadTileDataAvailability">Online Documentation</a>
      */
-    abstract fun loadTileDataAvailability(
+    @JsAsync(optional = true)
+    suspend fun loadTileDataAvailability(
+        x: Double,
+        y: Double,
+        level: Int,
+    )
+
+    @JsName("loadTileDataAvailability")
+    abstract fun loadTileDataAvailabilityAsync(
         x: Double,
         y: Double,
         level: Int,

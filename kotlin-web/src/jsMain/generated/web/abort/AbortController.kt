@@ -22,5 +22,5 @@ open external class AbortController {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortController/abort)
      */
-    fun abort(reason: JsError = definedExternally)
+    fun abort(reason: JsError? = definedExternally)
 }

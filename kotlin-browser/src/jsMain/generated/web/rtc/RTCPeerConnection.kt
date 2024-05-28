@@ -5,6 +5,7 @@ package web.rtc
 import js.array.ReadonlyArray
 import js.core.Void
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.crypto.Algorithm
 import web.events.Event
 import web.events.EventHandler
@@ -128,6 +129,7 @@ external class RTCPeerConnection(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/addIceCandidate)
      */
+    @JsAsync
     suspend fun addIceCandidate(candidate: RTCIceCandidateInit = definedExternally)
 
     @JsName("addIceCandidate")
@@ -162,6 +164,7 @@ external class RTCPeerConnection(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createAnswer)
      */
+    @JsAsync
     suspend fun createAnswer(options: RTCAnswerOptions = definedExternally): RTCSessionDescriptionInit
 
     @JsName("createAnswer")
@@ -178,6 +181,7 @@ external class RTCPeerConnection(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createOffer)
      */
+    @JsAsync
     suspend fun createOffer(options: RTCOfferOptions = definedExternally): RTCSessionDescriptionInit
 
     @JsName("createOffer")
@@ -201,6 +205,7 @@ external class RTCPeerConnection(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getStats)
      */
+    @JsAsync
     suspend fun getStats(selector: MediaStreamTrack? = definedExternally): RTCStatsReport
 
     @JsName("getStats")
@@ -229,6 +234,7 @@ external class RTCPeerConnection(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setLocalDescription)
      */
+    @JsAsync
     suspend fun setLocalDescription(description: RTCLocalSessionDescriptionInit = definedExternally)
 
     @JsName("setLocalDescription")
@@ -237,6 +243,7 @@ external class RTCPeerConnection(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setRemoteDescription)
      */
+    @JsAsync
     suspend fun setRemoteDescription(description: RTCSessionDescriptionInit)
 
     @JsName("setRemoteDescription")
@@ -246,10 +253,13 @@ external class RTCPeerConnection(
         /**
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/generateCertificate_static)
          */
+        @JsAsync
         suspend fun generateCertificate(keygenAlgorithm: Algorithm): RTCCertificate
 
         @JsName("generateCertificate")
         fun generateCertificateAsync(keygenAlgorithm: Algorithm): Promise<RTCCertificate>
+
+        @JsAsync
         suspend fun generateCertificate(keygenAlgorithm: String): RTCCertificate
 
         @JsName("generateCertificate")

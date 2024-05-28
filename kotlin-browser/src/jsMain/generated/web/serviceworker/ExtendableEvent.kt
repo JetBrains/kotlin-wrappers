@@ -7,6 +7,8 @@
 package web.serviceworker
 
 import js.promise.Promise
+import seskar.js.JsAlias
+import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
@@ -19,12 +21,14 @@ import web.events.EventType
 open external class ExtendableEvent(
     override val type: EventType<ExtendableEvent, EventTarget>,
     init: ExtendableEventInit = definedExternally,
-) : Event,
-    ExtendableEventInit {
+) : Event {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableEvent/waitUntil)
      */
     fun waitUntil(f: Promise<*>)
+
+    @JsAlias(THIS)
+    override fun asInit(): ExtendableEventInit
 
     companion object : ExtendableEventTypes
 }
