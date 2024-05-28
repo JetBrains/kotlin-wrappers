@@ -14,7 +14,7 @@ kotlin {
         moduleName = project.name
 
         when (project.jsPlatform) {
-            JsPlatform.WEB     -> {
+            JsPlatform.WEB -> {
                 browser()
                 nodejs()
             }
@@ -23,7 +23,7 @@ kotlin {
                 browser()
             }
 
-            JsPlatform.NODE    -> {
+            JsPlatform.NODE -> {
                 nodejs()
             }
         }
