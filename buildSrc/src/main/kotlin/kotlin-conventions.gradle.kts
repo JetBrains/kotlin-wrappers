@@ -49,7 +49,7 @@ val prepareReadmeForDokka by tasks.registering {
      * 2. Dokka can't handle `![](...)` embedded links, and prints loads of warnings
      *    https://github.com/Kotlin/dokka/issues/1961
      *
-     * So, as a quick fix, filter out the Markdown images.
+     * So, as a quick fix, filter out the Markdown images, and replace GitHub admonitions with emojis.
      */
 
     val output = temporaryDir.resolve("README.md")
@@ -64,7 +64,9 @@ val prepareReadmeForDokka by tasks.registering {
             if (input.exists()) {
                 input.readText()
                     .lines()
+                    // filter out images
                     .filterNot { it.startsWith("[![") }
+                    // replace GitHub admonitions with emojis
                     .joinToString("\n") {
                         it.replace("> [!WARNING]", "> ⚠️")
                     }
@@ -79,10 +81,32 @@ val prepareReadmeForDokka by tasks.registering {
 dokkatoo {
     dokkatooSourceSets.configureEach {
         includes.from(prepareReadmeForDokka)
+
+        val relativeProjectPath = projectDir.relativeToOrNull(rootDir)?.invariantSeparatorsPath ?: ""
+
+        /** Add a source link, if [path] exists. */
+        fun addSourceLink(path: String) {
+            val dir = layout.projectDirectory.dir(path)
+            if (dir.asFile.exists()) {
+                sourceLink {
+                    localDirectory = dir
+                    remoteUrl("https://github.com/JetBrains/kotlin-wrappers/tree/master/$relativeProjectPath/$path")
+                }
+            }
+        }
+
+        addSourceLink("src/commonMain/kotlin")
+        addSourceLink("src/commonMain/generated")
+        addSourceLink("src/jsMain/kotlin")
+        addSourceLink("src/jsMain/generated")
     }
 
     dokkaGeneratorIsolation = ProcessIsolation {
         maxHeapSize = "4g"
+    }
+
+    pluginsConfiguration.html {
+        homepageLink = "https://github.com/JetBrains/kotlin-wrappers/"
     }
 }
 
