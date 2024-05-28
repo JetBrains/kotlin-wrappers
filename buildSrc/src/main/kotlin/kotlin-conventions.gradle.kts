@@ -43,8 +43,8 @@ val prepareReadmeForDokka by tasks.registering {
      *
      * Dokka doesn't like this for two reasons:
      *
-     * 1. The format that Dokka requires for Module fileS is unreasonably strict.
-     *    The first line _must_ be `# Module ${module name}`. An image first breaks this.
+     * 1. The format that Dokka requires for Module files is unreasonably strict.
+     *    The first line _must_ be `# Module ${module name}`. If an image is first, Dokka breaks.
      *
      * 2. Dokka can't handle `![](...)` embedded links, and prints loads of warnings
      *    https://github.com/Kotlin/dokka/issues/1961
