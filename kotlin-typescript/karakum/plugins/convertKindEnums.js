@@ -50,8 +50,6 @@ export default function (node, context, render) {
             .join("\n")
 
         return `
-@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-@seskar.js.JsVirtual
 sealed external interface ${name}${karakum.ifPresent(injectedHeritageClauses, it => ` : ${it}`)} {
 ${body}
 

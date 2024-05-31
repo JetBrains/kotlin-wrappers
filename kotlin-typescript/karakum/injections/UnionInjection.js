@@ -26,138 +26,97 @@ function isNodeSuccessor(node, context) {
     if (!symbol || !symbol.declarations) return false
 
     return symbol.declarations
-        .flatMap(declaration => (
-            ts.isInterfaceDeclaration(declaration)
-                ? (declaration.heritageClauses ?? []).flatMap(it => it.types)
-                : ts.isTypeAliasDeclaration(declaration)
-                    ? [declaration.type]
-                    : []
-        ))
-        .some(type => isNodeSuccessor(type, context))
+        .some(declaration => {
+            if (ts.isInterfaceDeclaration(declaration)) {
+                return (declaration.heritageClauses ?? [])
+                    .flatMap(it => it.types)
+                    .some(type => isNodeSuccessor(type, context))
+            } else if (ts.isTypeAliasDeclaration(declaration)) {
+                if (ts.isIntersectionTypeNode(declaration.type)) {
+                    return declaration.type.types.some(type => isNodeSuccessor(type, context))
+                } else if (ts.isUnionTypeNode(declaration.type)) {
+                    return declaration.type.types.every(type => isNodeSuccessor(type, context))
+                } else {
+                    return isNodeSuccessor(declaration.type, context)
+                }
+            } else {
+                return false
+            }
+        })
 }
 
-function isEnumUnion(node, context, enumName) {
-    if (
-        ts.isTypeAliasDeclaration(node)
-        && ts.isUnionTypeNode(node.type)
-    ) {
-        for (const type of node.type.types) {
-            if (!ts.isTypeReferenceNode(type)) return false
+function isEnumMemberType(node, context, enumName) {
+    let name
 
-            if (
-                ts.isQualifiedName(type.typeName)
-                && ts.isIdentifier(type.typeName.left)
-                && type.typeName.left.text === enumName
-            ) continue
-
-            const typeScriptService = context.lookupService(karakum.typeScriptServiceKey)
-            const typeChecker = typeScriptService?.program.getTypeChecker()
-
-            const symbol = typeChecker?.getSymbolAtLocation(type.typeName)
-            if (!symbol || !symbol.declarations || symbol.declarations.length > 1) return false
-
-            const [declaration] = symbol.declarations
-            if (!isEnumUnion(declaration, context, enumName)) return false
-        }
-
-        return true
+    if (ts.isTypeReferenceNode(node)) {
+        name = node.typeName
     } else {
         return false
     }
+
+    if (
+        ts.isQualifiedName(name)
+        && ts.isIdentifier(name.left)
+        && name.left.text === enumName
+    ) {
+        return true
+    }
+
+    const typeScriptService = context.lookupService(karakum.typeScriptServiceKey)
+    const typeChecker = typeScriptService?.program.getTypeChecker()
+
+    const symbol = typeChecker?.getSymbolAtLocation(name)
+    if (!symbol || !symbol.declarations) return false
+
+    return symbol.declarations
+        .some(declaration => {
+            if (ts.isTypeAliasDeclaration(declaration)) {
+                if (ts.isUnionTypeNode(declaration.type)) {
+                    return declaration.type.types.every(type => isEnumMemberType(type, context, enumName))
+                } else {
+                    return isEnumMemberType(declaration.type, context, enumName)
+                }
+            } else {
+                return false
+            }
+        })
 }
 
-const anonymousUnionDeclarationPlugin = karakum.createAnonymousDeclarationPlugin(
-    (node, context, render) => {
+const injectCommonUnionParents = (node, context, render) => {
+    const result = []
+
+    for (const enumName of ["SyntaxKind", "ScriptKind", "CommandTypes"]) {
         if (
-            ts.isUnionTypeNode(node)
-            && node.types.every(type => isNodeSuccessor(type, context))
+            context.type === karakum.InjectionType.HERITAGE_CLAUSE
+            && ts.isUnionTypeNode(node)
+            && node.types.every(type => isEnumMemberType(type, context, enumName))
         ) {
-            const typeParameters = karakum.extractTypeParameters(node, context)
-
-            const renderedTypeParameters = karakum.renderDeclaration(typeParameters, render)
-
-            const name = context.resolveName(node)
-
-            const declaration = `sealed external interface ${name}${karakum.ifPresent(renderedTypeParameters, it => `<${it}>`)} : Node`
-
-            const reference = `${name}${karakum.ifPresent(karakum.renderReference(typeParameters, render), it => `<${it}>`)}`
-
-            return {name, declaration, reference};
+            result.push(enumName)
         }
-
-        return null
     }
-)
 
-const convertUnion = {
-    setup(context) {
-    },
+    if (
+        context.type === karakum.InjectionType.HERITAGE_CLAUSE
+        && ts.isUnionTypeNode(node)
+        && node.types.every(type => isNodeSuccessor(type, context))
+    ) {
+        result.push("Node")
+    }
 
-    traverse(node, context) {
-    },
+    if (
+        context.type === karakum.InjectionType.HERITAGE_CLAUSE
+        && ts.isUnionTypeNode(node)
+        && node.parent
+        && ts.isTypeAliasDeclaration(node.parent)
+        && node.parent.name.text === "BindingName"
+    ) {
+        result.push("DeclarationName")
+    }
 
-    render(node, context, next) {
-        const anonymousUnionDeclaration = anonymousUnionDeclarationPlugin.render(node, context, next)
-        if (anonymousUnionDeclaration != null) return anonymousUnionDeclaration
-
-        const unionService = context.lookupService(karakum.unionServiceKey)
-
-        for (const enumName of ["SyntaxKind", "ScriptKind", "CommandTypes"]) {
-            if (isEnumUnion(node, context, enumName)) {
-                const name = next(node.name)
-
-                const parentNames = unionService?.getParents(node) ?? []
-                unionService?.cover(node)
-
-                const heritageClauses = [
-                    enumName,
-                    ...parentNames,
-                ]
-                    .filter(Boolean)
-                    .join(", ")
-
-                return `sealed external interface ${name}${karakum.ifPresent(heritageClauses, it => ` : ${it}`)}`
-            }
-        }
-
-        if (
-            ts.isTypeAliasDeclaration(node)
-            && ts.isUnionTypeNode(node.type)
-            && node.type.types.every(type => isNodeSuccessor(type, context))
-        ) {
-            const name = next(node.name)
-
-            const typeParameters = node.typeParameters
-                ?.map(typeParameter => next(typeParameter))
-                ?.filter(Boolean)
-                ?.join(", ")
-
-            const parentNames = unionService?.getParents(node) ?? []
-            unionService?.cover(node)
-
-            const heritageClauses = [
-                "Node",
-                ...parentNames,
-            ]
-                .filter(Boolean)
-                .join(", ")
-
-            return `sealed external interface ${name}${karakum.ifPresent(typeParameters, it => `<${it}>`)}${karakum.ifPresent(heritageClauses, it => ` : ${it}`)}`
-        }
-
-        return null
-    },
-
-    inject(node, context, render) {
-        return null
-    },
-
-    generate(context, render) {
-        return anonymousUnionDeclarationPlugin.generate(context, render)
-    },
+    return result
 }
 
 export default [
-    convertUnion,
+    injectCommonUnionParents,
     new karakum.UnionInjection(),
 ]

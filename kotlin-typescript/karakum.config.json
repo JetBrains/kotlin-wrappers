@@ -1,10 +1,11 @@
 {
     "input": [
-        "<nodeModules>/kotlin-typescript/node_modules/typescript/lib/typescript.d.ts"
+        "<nodeModules>/typescript/lib/typescript.d.ts"
     ],
     "output": "src/jsMain/generated/ts",
     "ignoreOutput": [
-        "**/server/**"
+        "**/server/**",
+        "**/SignatureDeclarationBaseKind.kt"
     ],
     "libraryName": "ts",
     "libraryNameOutputPrefix": true,
