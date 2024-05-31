@@ -105,7 +105,8 @@ Then, each class/style is defined in the rendered `head` HTML block.
 
 ```html
 
-<style data-emotion="css" data-s="">.css-vawiuz {
+<style data-emotion="css" data-s="">
+.css-vawiuz {
     margin: auto;
     width: 50pc;
     padding: 10px;
