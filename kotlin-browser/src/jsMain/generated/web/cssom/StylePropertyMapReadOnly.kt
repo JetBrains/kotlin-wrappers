@@ -4,7 +4,7 @@ package web.cssom
 
 import js.array.ReadonlyArray
 import js.collections.MapLike
-import js.collections.SetLike
+import js.collections.ReadonlySetLike
 import js.iterable.JsIterable
 
 /**
@@ -12,7 +12,7 @@ import js.iterable.JsIterable
  */
 sealed external class StylePropertyMapReadOnly :
     MapLike<String, JsIterable<CSSStyleValue>>,
-    SetLike<String> {
+    ReadonlySetLike<String> {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMapReadOnly/size)
      */

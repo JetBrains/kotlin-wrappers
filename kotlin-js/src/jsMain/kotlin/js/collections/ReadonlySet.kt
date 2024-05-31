@@ -2,7 +2,7 @@ package js.collections
 
 external interface ReadonlySet<out T> :
     CollectionLike<@UnsafeVariance T, T>,
-    SetLike<T> {
+    ReadonlySetLike<T> {
 
     override val size: Int
 
