@@ -6,8 +6,6 @@ import js.promise.PromiseLike
 import kotlinx.coroutines.suspendCancellableCoroutine
 import web.abort.AbortController
 import web.abort.Abortable
-import kotlin.coroutines.resume
-import kotlin.coroutines.resumeWithException
 
 internal fun <T : Abortable> patchAbortOptions(
     options: T?,
@@ -29,8 +27,5 @@ internal suspend fun <T> awaitPromiseLike(
             controller.abort()
         }
 
-        promise.then(
-            onFulfilled = continuation::resume,
-            onRejected = continuation::resumeWithException,
-        )
+        promise.thenTo(continuation)
     }
