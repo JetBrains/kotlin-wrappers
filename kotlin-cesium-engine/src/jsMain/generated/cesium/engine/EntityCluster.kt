@@ -88,7 +88,15 @@ external class EntityCluster {
  *   primitives that represent this cluster of entities.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EntityCluster.html#.newClusterCallback">Online Documentation</a>
  */
-typealias newClusterCallback = (clusteredEntities: ReadonlyArray<Entity>, cluster: dynamic) -> Unit
+typealias newClusterCallback = (
+    clusteredEntities: ReadonlyArray<Entity>,
+    cluster: Any,
+    /* {
+        billboard: Billboard;
+        label: Label;
+        point: PointPrimitive;
+    } */
+) -> Unit
 
 inline fun EntityCluster(
     block: EntityCluster.() -> Unit,

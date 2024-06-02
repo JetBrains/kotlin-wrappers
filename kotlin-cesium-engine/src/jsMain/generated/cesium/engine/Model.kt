@@ -168,7 +168,7 @@ private constructor() {
      * Defines how the color blends with the model.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Model.html#colorBlendMode">Online Documentation</a>
      */
-    var colorBlendMode: dynamic
+    var colorBlendMode: Any /* Cesium3DTileColorBlendMode | ColorBlendMode */
 
     /**
      * Value used to determine the color strength when the `colorBlendMode` is `MIX`. A value of 0.0 results in the model's rendered color while a value of 1.0 results in a solid color, with any value in-between resulting in a mix of the two.

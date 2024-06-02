@@ -55,7 +55,7 @@ external class GeometryInstance(options: ConstructorOptions) {
      */
     @JsPlainObject
     sealed interface ConstructorOptions {
-        var geometry: dynamic
+        var geometry: Any /* Geometry | GeometryFactory */
         var modelMatrix: Matrix4?
         var id: Any?
         var attributes: Any?

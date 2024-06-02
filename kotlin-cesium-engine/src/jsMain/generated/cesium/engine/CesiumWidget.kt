@@ -101,16 +101,16 @@ external class CesiumWidget(
     @JsPlainObject
     sealed interface ConstructorOptions {
         var clock: Clock?
-        var baseLayer: dynamic
+        var baseLayer: Any /* ImageryLayer | false */?
         var terrainProvider: TerrainProvider?
         var terrain: Terrain?
-        var skyBox: dynamic
-        var skyAtmosphere: dynamic
+        var skyBox: Any /* SkyBox | false */?
+        var skyAtmosphere: Any /* SkyAtmosphere | false */?
         var sceneMode: SceneMode?
         var scene3DOnly: Boolean?
         var orderIndependentTranslucency: Boolean?
         var mapProjection: MapProjection?
-        var globe: dynamic
+        var globe: Any /* Globe | false */?
         var useDefaultRenderLoop: Boolean?
         var useBrowserRecommendedResolution: Boolean?
         var targetFrameRate: Int?

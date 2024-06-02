@@ -148,7 +148,7 @@ abstract external class TerrainProvider {
         fun getRegularGridIndices(
             width: Double,
             height: Double,
-        ): dynamic
+        ): Any /* Uint16Array | Uint32Array */
 
         /**
          * Specifies the quality of terrain created from heightmaps.  A value of 1.0 will

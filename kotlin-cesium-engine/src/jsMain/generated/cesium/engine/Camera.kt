@@ -65,7 +65,7 @@ external class Camera(scene: Scene) {
      * The region of space in view.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Camera.html#frustum">Online Documentation</a>
      */
-    var frustum: dynamic
+    var frustum: Any /* PerspectiveFrustum | PerspectiveOffCenterFrustum | OrthographicFrustum */
 
     /**
      * The default amount to move the camera when an argument is not
@@ -262,7 +262,7 @@ external class Camera(scene: Scene) {
      */
     @JsPlainObject
     sealed interface SetViewOptions {
-        var destination: dynamic
+        var destination: Any /* Cartesian3 | Rectangle */?
         var orientation: CameraOrientation?
         var endTransform: Matrix4?
         var convert: Boolean?
@@ -740,7 +740,7 @@ external class Camera(scene: Scene) {
      */
     @JsPlainObject
     sealed interface FlyToOptions {
-        var destination: dynamic
+        var destination: Any /* Cartesian3 | Rectangle */
         var orientation: CameraOrientation?
         var duration: Double?
         var complete: FlightCompleteCallback?

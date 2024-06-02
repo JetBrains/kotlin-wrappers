@@ -90,7 +90,7 @@ external class LinearSpline(options: ConstructorOptions) {
     fun evaluate(
         time: Double,
         result: Cartesian3? = definedExternally,
-    ): dynamic
+    ): Any /* number | Cartesian3 */
 }
 
 inline fun LinearSpline(

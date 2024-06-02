@@ -173,7 +173,7 @@ external class ClippingPolygonCollection(options: ConstructorOptions? = definedE
          * @return `true` if the context supports clipping polygons.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ClippingPolygonCollection.html#.isSupported">Online Documentation</a>
          */
-        fun isSupported(scene: dynamic): Boolean
+        fun isSupported(scene: Any /* Scene | any */): Boolean
     }
 }
 

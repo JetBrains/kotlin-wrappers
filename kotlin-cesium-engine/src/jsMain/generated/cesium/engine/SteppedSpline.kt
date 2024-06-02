@@ -39,7 +39,7 @@ external class SteppedSpline(options: ConstructorOptions) {
     @JsPlainObject
     sealed interface ConstructorOptions {
         var times: ReadonlyArray<Double>
-        var points: dynamic
+        var points: Any /* number[] | Cartesian3[] | Quaternion[] */
     }
 
     /**
@@ -52,7 +52,7 @@ external class SteppedSpline(options: ConstructorOptions) {
      * An array of control points.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SteppedSpline.html#points">Online Documentation</a>
      */
-    val points: dynamic
+    val points: Any /* number[] | Cartesian3[] | Quaternion[] */
 
     /**
      * Finds an index `i` in `times` such that the parameter
@@ -92,8 +92,8 @@ external class SteppedSpline(options: ConstructorOptions) {
      */
     fun evaluate(
         time: Double,
-        result: dynamic = definedExternally,
-    ): dynamic
+        result: Any /* Cartesian3 | Quaternion */? = definedExternally,
+    ): Any /* number | Cartesian3 | Quaternion */
 }
 
 inline fun SteppedSpline(

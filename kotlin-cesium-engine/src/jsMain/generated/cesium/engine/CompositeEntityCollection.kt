@@ -55,7 +55,7 @@ external class CompositeEntityCollection(collections: ReadonlyArray<EntityCollec
      * Gets the owner of this composite entity collection, ie. the data source or composite entity collection which created it.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CompositeEntityCollection.html#owner">Online Documentation</a>
      */
-    val owner: dynamic
+    val owner: Any /* DataSource | CompositeEntityCollection */
 
     /**
      * Adds a collection to the composite.

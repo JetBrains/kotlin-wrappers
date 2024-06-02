@@ -54,7 +54,7 @@ external class Geometry(options: ConstructorOptions) {
     sealed interface ConstructorOptions {
         var attributes: GeometryAttributes
         var primitiveType: PrimitiveType?
-        var indices: dynamic
+        var indices: Any /* Uint16Array | Uint32Array */?
         var boundingSphere: BoundingSphere?
     }
 

@@ -56,7 +56,7 @@ external class Material(options: ConstructorOptions? = definedExternally) {
     @JsPlainObject
     sealed interface ConstructorOptions {
         var strict: Boolean?
-        var translucent: dynamic
+        var translucent: Any /* boolean | Function */?
         var minificationFilter: TextureMinificationFilter?
         var magnificationFilter: TextureMagnificationFilter?
         var fabric: Any
@@ -91,7 +91,7 @@ external class Material(options: ConstructorOptions? = definedExternally) {
      * the geometry is expected to appear translucent.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Material.html#translucent">Online Documentation</a>
      */
-    var translucent: dynamic
+    var translucent: Any /* boolean | Function */
 
     /**
      * Gets whether or not this material is translucent.

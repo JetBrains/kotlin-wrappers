@@ -35,10 +35,10 @@ import seskar.js.JsAsync
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#exportKml">Online Documentation</a>
  */
 @JsAsync
-external suspend fun exportKml(options: ExportKmlOptions): dynamic
+external suspend fun exportKml(options: ExportKmlOptions): Any /* exportKmlResultKml | exportKmlResultKmz */
 
 @JsName("exportKml")
-external fun exportKmlAsync(options: ExportKmlOptions): Promise<dynamic>
+external fun exportKmlAsync(options: ExportKmlOptions): Promise<Any /* exportKmlResultKml | exportKmlResultKmz */>
 
 /**
  * @property [entities] The EntityCollection to export as KML.

@@ -189,7 +189,7 @@ external class HermiteSpline(options: ConstructorOptions) {
          * @return A hermite spline, or a linear spline if less than 3 control points were given.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/HermiteSpline.html#.createNaturalCubic">Online Documentation</a>
          */
-        fun createNaturalCubic(options: CreateNaturalCubicOptions): dynamic
+        fun createNaturalCubic(options: CreateNaturalCubicOptions): Any /* HermiteSpline | LinearSpline */
 
         /**
          * @property [times] The array of control point times.
@@ -222,7 +222,7 @@ external class HermiteSpline(options: ConstructorOptions) {
          * @return A hermite spline, or a linear spline if less than 3 control points were given.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/HermiteSpline.html#.createClampedCubic">Online Documentation</a>
          */
-        fun createClampedCubic(options: CreateClampedCubicOptions): dynamic
+        fun createClampedCubic(options: CreateClampedCubicOptions): Any /* HermiteSpline | LinearSpline */
 
         /**
          * @property [times] The array of control point times.

@@ -22,6 +22,6 @@ sealed external interface WebGLOptions {
     var antialias: Boolean?
     var premultipliedAlpha: Boolean?
     var preserveDrawingBuffer: Boolean?
-    var powerPreference: dynamic
+    var powerPreference: Any /* "default" | "low-power" | "high-performance" */?
     var failIfMajorPerformanceCaveat: Boolean?
 }

@@ -53,7 +53,7 @@ import web.xml.XMLDocument
  * @param [options] A url or an object describing initialization options
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html">Online Documentation</a>
  */
-external class Resource(options: dynamic) {
+external class Resource(options: Any /* string | Resource.ConstructorOptions */) {
     /**
      * Additional HTTP headers that will be sent with the request.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#headers">Online Documentation</a>
@@ -301,7 +301,7 @@ external class Resource(options: dynamic) {
      * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#fetchImage">Online Documentation</a>
      */
-    fun fetchImage(options: FetchImageOptions? = definedExternally): dynamic
+    fun fetchImage(options: FetchImageOptions? = definedExternally): Any /* Promise<ImageBitmap | HTMLImageElement> | undefined */
 
     /**
      * @property [preferBlob] If true, we will load the image via a blob.
@@ -793,7 +793,7 @@ external class Resource(options: dynamic) {
          * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.fetchImage">Online Documentation</a>
          */
-        fun fetchImage(options: FetchImageOptions): dynamic
+        fun fetchImage(options: FetchImageOptions): Any /* Promise<ImageBitmap | HTMLImageElement> | undefined */
 
         /**
          * @property [url] The url of the resource.
@@ -1280,4 +1280,4 @@ external class Resource(options: dynamic) {
  * @param [error] The error that occurred during the loading of the resource.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.RetryCallback">Online Documentation</a>
  */
-typealias RetryCallback = (resource: Resource?, error: RequestErrorEvent?) -> dynamic
+typealias RetryCallback = (resource: Resource?, error: RequestErrorEvent?) -> Any /* boolean | Promise<boolean> */

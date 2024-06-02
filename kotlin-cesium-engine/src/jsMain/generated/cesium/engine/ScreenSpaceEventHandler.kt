@@ -31,7 +31,7 @@ external class ScreenSpaceEventHandler(element: HTMLCanvasElement? = definedExte
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#setInputAction">Online Documentation</a>
      */
     fun setInputAction(
-        action: dynamic,
+        action: Any, /* ScreenSpaceEventHandler.PositionedEventCallback | ScreenSpaceEventHandler.MotionEventCallback | ScreenSpaceEventHandler.WheelEventCallback | ScreenSpaceEventHandler.TwoPointEventCallback | ScreenSpaceEventHandler.TwoPointMotionEventCallback */
         type: ScreenSpaceEventType,
         modifier: KeyboardEventModifier? = definedExternally,
     )
@@ -47,7 +47,7 @@ external class ScreenSpaceEventHandler(element: HTMLCanvasElement? = definedExte
     fun getInputAction(
         type: ScreenSpaceEventType,
         modifier: KeyboardEventModifier? = definedExternally,
-    ): dynamic
+    ): Any /* ScreenSpaceEventHandler.PositionedEventCallback | ScreenSpaceEventHandler.MotionEventCallback | ScreenSpaceEventHandler.WheelEventCallback | ScreenSpaceEventHandler.TwoPointEventCallback | ScreenSpaceEventHandler.TwoPointMotionEventCallback */
 
     /**
      * Removes the function to be executed on an input event.

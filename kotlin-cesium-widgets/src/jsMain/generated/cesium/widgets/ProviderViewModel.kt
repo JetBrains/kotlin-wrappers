@@ -34,7 +34,7 @@ external class ProviderViewModel(options: ConstructorOptions) {
         var tooltip: String
         var iconUrl: String
         var category: String?
-        var creationFunction: dynamic
+        var creationFunction: Any /* ProviderViewModel.CreationFunction | Command */
     }
 
     /**
@@ -73,7 +73,7 @@ external class ProviderViewModel(options: ConstructorOptions) {
  * A function which creates one or more providers.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ProviderViewModel.html#.CreationFunction">Online Documentation</a>
  */
-typealias CreationFunction = () -> dynamic
+typealias CreationFunction = () -> Any /* ImageryProvider | TerrainProvider | ImageryProvider[] | TerrainProvider[] | Promise<TerrainProvider> | Promise<ImageryProvider> | Promise<TerrainProvider[]> | Promise<ImageryProvider[]> */
 
 inline fun ProviderViewModel(
     block: ProviderViewModel.ConstructorOptions.() -> Unit,

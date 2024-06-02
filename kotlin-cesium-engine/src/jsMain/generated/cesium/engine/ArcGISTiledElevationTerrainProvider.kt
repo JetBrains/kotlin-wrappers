@@ -164,13 +164,13 @@ private constructor() :
          */
         @JsAsync
         suspend fun fromUrl(
-            url: dynamic,
+            url: Any, /* Resource | string | Promise<Resource> | Promise<string> */
             options: ConstructorOptions? = definedExternally,
         ): ArcGISTiledElevationTerrainProvider
 
         @JsName("fromUrl")
         fun fromUrlAsync(
-            url: dynamic,
+            url: Any, /* Resource | string | Promise<Resource> | Promise<string> */
             options: ConstructorOptions? = definedExternally,
         ): Promise<ArcGISTiledElevationTerrainProvider>
     }

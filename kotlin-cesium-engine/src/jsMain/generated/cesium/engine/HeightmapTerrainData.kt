@@ -89,7 +89,7 @@ external class HeightmapTerrainData(options: ConstructorOptions) : TerrainData {
      */
     @JsPlainObject
     sealed interface ConstructorOptions {
-        var buffer: dynamic
+        var buffer: Any /* Int8Array | Uint8Array | Int16Array | Uint16Array | Int32Array | Uint32Array | Float32Array | Float64Array */
         var width: Double
         var height: Double
         var childTileMask: Int?
@@ -123,7 +123,7 @@ external class HeightmapTerrainData(options: ConstructorOptions) : TerrainData {
      * Values in between 0 and 255 are allowed as well to smoothly blend between land and water.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/HeightmapTerrainData.html#waterMask">Online Documentation</a>
      */
-    override var waterMask: dynamic
+    override var waterMask: Any /* Uint8Array | HTMLImageElement | HTMLCanvasElement */
 
     /**
      * Computes the terrain height at a specified longitude and latitude.

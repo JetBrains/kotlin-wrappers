@@ -48,7 +48,7 @@ external class GeocoderService {
     @JsPlainObject
     sealed interface Result {
         var displayName: String
-        var destination: dynamic
+        var destination: Any /* Rectangle | Cartesian3 */
         var attributions: ReadonlyArray<Any>?
     }
 

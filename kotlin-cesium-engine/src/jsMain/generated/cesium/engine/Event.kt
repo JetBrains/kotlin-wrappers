@@ -65,7 +65,7 @@ external class Event<Listener : Function<Unit>> {
      * @param [arguments] This method takes any number of parameters and passes them through to the listener functions.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Event.html#raiseEvent">Online Documentation</a>
      */
-    fun raiseEvent(vararg arguments: dynamic)
+    fun raiseEvent(vararg arguments: Any /* Parameters<Listener> */)
 }
 
 /**

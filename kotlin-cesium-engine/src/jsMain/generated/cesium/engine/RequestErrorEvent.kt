@@ -22,7 +22,7 @@ package cesium.engine
 external class RequestErrorEvent(
     var statusCode: Int = definedExternally,
     var response: Any = definedExternally,
-    responseHeaders: dynamic = definedExternally,
+    responseHeaders: Any /* string | any */? = definedExternally,
 ) {
     /**
      * The headers included in the response, represented as an object literal of key/value pairs.

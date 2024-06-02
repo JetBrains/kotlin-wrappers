@@ -142,7 +142,7 @@ external class CustomShader(options: ConstructorOptions) {
      */
     fun setUniform(
         uniformName: String,
-        value: dynamic,
+        value: Any, /* boolean | number | Cartesian2 | Cartesian3 | Cartesian4 | Matrix2 | Matrix3 | Matrix4 | string | Resource | TextureUniform */
     )
 }
 

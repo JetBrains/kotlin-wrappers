@@ -895,7 +895,7 @@ external class Viewer(
         var baseLayerPicker: Boolean?
         var fullscreenButton: Boolean?
         var vrButton: Boolean?
-        var geocoder: dynamic
+        var geocoder: Any /* boolean | GeocoderService[] */?
         var homeButton: Boolean?
         var infoBox: Boolean?
         var sceneModePicker: Boolean?
@@ -910,11 +910,11 @@ external class Viewer(
         var imageryProviderViewModels: ReadonlyArray<ProviderViewModel>?
         var selectedTerrainProviderViewModel: ProviderViewModel?
         var terrainProviderViewModels: ReadonlyArray<ProviderViewModel>?
-        var baseLayer: dynamic
+        var baseLayer: Any /* ImageryLayer | false */?
         var terrainProvider: TerrainProvider?
         var terrain: Terrain?
-        var skyBox: dynamic
-        var skyAtmosphere: dynamic
+        var skyBox: Any /* SkyBox | false */?
+        var skyAtmosphere: Any /* SkyAtmosphere | false */?
         var fullscreenElement: Element?
         var useDefaultRenderLoop: Boolean?
         var targetFrameRate: Int?
@@ -924,7 +924,7 @@ external class Viewer(
         var contextOptions: ContextOptions?
         var sceneMode: SceneMode?
         var mapProjection: MapProjection?
-        var globe: dynamic
+        var globe: Any /* Globe | false */?
         var orderIndependentTranslucency: Boolean?
         var creditContainer: Element?
         var creditViewport: Element?

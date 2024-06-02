@@ -53,7 +53,7 @@ external class ConditionsExpression(
     override fun evaluate(
         feature: Cesium3DTileFeature,
         result: Any?,
-    ): dynamic
+    ): Any /* boolean | number | string | RegExp | Cartesian2 | Cartesian3 | Cartesian4 | Color */
 
     /**
      * Evaluates the result of a Color expression, using the values defined by a feature.

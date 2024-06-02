@@ -72,7 +72,7 @@ external class EntityCollection() {
      * Gets the owner of this entity collection, ie. the data source or composite entity collection which created it.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EntityCollection.html#owner">Online Documentation</a>
      */
-    val owner: dynamic
+    val owner: Any /* DataSource | CompositeEntityCollection */
 
     /**
      * Computes the maximum availability of the entities in the collection.

@@ -212,7 +212,7 @@ external class I3SDataProvider(options: ConstructorOptions) {
     sealed interface ConstructorOptions {
         var name: String?
         var show: Boolean?
-        var geoidTiledTerrainProvider: dynamic
+        var geoidTiledTerrainProvider: Any /* ArcGISTiledElevationTerrainProvider | Promise<ArcGISTiledElevationTerrainProvider> */?
         var cesium3dTilesetOptions: Cesium3DTileset.ConstructorOptions?
         var showFeatures: Boolean?
         var adjustMaterialAlphaMode: Boolean?

@@ -26,7 +26,7 @@ abstract external class TerrainData {
      * Values in between 0 and 255 are allowed as well to smoothly blend between land and water.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TerrainData.html#waterMask">Online Documentation</a>
      */
-    abstract var waterMask: dynamic
+    abstract var waterMask: Any /* Uint8Array | HTMLImageElement | HTMLCanvasElement */
 
     /**
      * Computes the terrain height at a specified longitude and latitude.

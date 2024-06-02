@@ -57,7 +57,7 @@ external class IonResource(
      * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/IonResource.html#fetchImage">Online Documentation</a>
      */
-    fun fetchImage(options: FetchImageOptions? = definedExternally): dynamic
+    fun fetchImage(options: FetchImageOptions? = definedExternally): Any /* Promise<ImageBitmap | HTMLImageElement> | undefined */
 
     /**
      * @property [preferBlob] If true, we will load the image via a blob.

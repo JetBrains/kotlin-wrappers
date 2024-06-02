@@ -26,7 +26,7 @@ external class FrustumGeometry(options: ConstructorOptions) {
      */
     @JsPlainObject
     sealed interface ConstructorOptions {
-        var frustum: dynamic
+        var frustum: Any /* PerspectiveFrustum | OrthographicFrustum */
         var origin: Cartesian3
         var orientation: Quaternion
         var vertexFormat: VertexFormat?
