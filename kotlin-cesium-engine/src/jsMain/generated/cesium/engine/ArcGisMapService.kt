@@ -36,6 +36,7 @@ external object ArcGisMapService {
      * Gets or sets the URL of the ArcGIS World Oceans tile service.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGisMapService.html#.defaultWorldOceanServer">Online Documentation</a>
      */
-    var defaultWorldOceanServer: Any /* string | Resource;
-    function getDefaultTokenCredit(providedKey: string): string | undefined */
+    var defaultWorldOceanServer: Resource
+
+    fun getDefaultTokenCredit(providedKey: String): String?
 }
