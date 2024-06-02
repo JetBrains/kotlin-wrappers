@@ -1,7 +1,6 @@
 package react
 
 import js.objects.jso
-import kotlinext.js.js
 import kotlin.reflect.KClass
 
 typealias Render = RBuilder.() -> Unit
@@ -96,12 +95,12 @@ open class RBuilderImpl : RBuilder {
 
 open class RBuilderMultiple : RBuilderImpl()
 
-fun <T : RBuilder> buildElements(builder: T, handler: T.() -> Unit): dynamic {
+fun <T : RBuilder> buildElements(builder: T, handler: T.() -> Unit): ReactNode? {
     val nodes = builder.apply(handler).childList
     return when (nodes.size) {
         0 -> null
         1 -> nodes.first()
-        else -> createElement(Fragment, js {}, *nodes.toTypedArray())
+        else -> createElement(Fragment, jso(), *nodes.toTypedArray())
     }
 }
 
