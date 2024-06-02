@@ -196,25 +196,25 @@ external class SingleTileImageryProvider(options: ConstructorOptions) {
         @JsAsync
         suspend fun fromUrl(
             url: Resource,
-            options: Any /* SingleTileImageryProvider.fromUrlOptions */? = definedExternally,
+            options: fromUrlOptions? = definedExternally,
         ): SingleTileImageryProvider
 
         @JsName("fromUrl")
         fun fromUrlAsync(
             url: Resource,
-            options: Any /* SingleTileImageryProvider.fromUrlOptions */? = definedExternally,
+            options: fromUrlOptions? = definedExternally,
         ): Promise<SingleTileImageryProvider>
 
         @JsAsync
         suspend fun fromUrl(
             url: String,
-            options: Any /* SingleTileImageryProvider.fromUrlOptions */? = definedExternally,
+            options: fromUrlOptions? = definedExternally,
         ): SingleTileImageryProvider
 
         @JsName("fromUrl")
         fun fromUrlAsync(
             url: String,
-            options: Any /* SingleTileImageryProvider.fromUrlOptions */? = definedExternally,
+            options: fromUrlOptions? = definedExternally,
         ): Promise<SingleTileImageryProvider>
 
         /**
