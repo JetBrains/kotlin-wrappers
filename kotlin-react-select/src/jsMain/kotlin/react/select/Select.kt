@@ -2,6 +2,7 @@
 
 package react.select
 
+import js.objects.JsPlainObject
 import react.ComponentClass
 import react.Key
 import react.PropsWithClassName
@@ -225,7 +226,12 @@ external interface SelectProps<Option : Any, Group : GroupBase<Option>> : PropsW
     var placeholder: ReactNode?
 
     /** Status to relay to screen readers */
-    var screenReaderStatus: (obj: dynamic /*{ count: Int}*/) -> String
+    var screenReaderStatus: (options: ScreenReaderStatusOptions) -> String
+
+    @JsPlainObject
+    sealed interface ScreenReaderStatusOptions {
+        var count: Int
+    }
 
     /**
      * Style modifier methods
