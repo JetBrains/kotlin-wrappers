@@ -910,11 +910,11 @@ external class Viewer(
         var imageryProviderViewModels: ReadonlyArray<ProviderViewModel>?
         var selectedTerrainProviderViewModel: ProviderViewModel?
         var terrainProviderViewModels: ReadonlyArray<ProviderViewModel>?
-        var baseLayer: Any /* ImageryLayer | false */?
+        var baseLayer: ImageryLayer /* | false */?
         var terrainProvider: TerrainProvider?
         var terrain: Terrain?
-        var skyBox: Any /* SkyBox | false */?
-        var skyAtmosphere: Any /* SkyAtmosphere | false */?
+        var skyBox: SkyBox /* | false */?
+        var skyAtmosphere: SkyAtmosphere /* | false */?
         var fullscreenElement: Element?
         var useDefaultRenderLoop: Boolean?
         var targetFrameRate: Int?
@@ -924,7 +924,7 @@ external class Viewer(
         var contextOptions: ContextOptions?
         var sceneMode: SceneMode?
         var mapProjection: MapProjection?
-        var globe: Any /* Globe | false */?
+        var globe: Globe /* | false */?
         var orderIndependentTranslucency: Boolean?
         var creditContainer: Element?
         var creditViewport: Element?
