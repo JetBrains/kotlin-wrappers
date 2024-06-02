@@ -3,6 +3,7 @@
 package cesium.engine
 
 import js.objects.JsPlainObject
+import web.gl.WebGLPowerPreference
 
 /**
  * WebGL options to be passed on to HTMLCanvasElement.getContext().
@@ -22,6 +23,6 @@ sealed external interface WebGLOptions {
     var antialias: Boolean?
     var premultipliedAlpha: Boolean?
     var preserveDrawingBuffer: Boolean?
-    var powerPreference: Any /* "default" | "low-power" | "high-performance" */?
+    var powerPreference: WebGLPowerPreference?
     var failIfMajorPerformanceCaveat: Boolean?
 }
