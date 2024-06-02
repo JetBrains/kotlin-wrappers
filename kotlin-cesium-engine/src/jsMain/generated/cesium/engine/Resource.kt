@@ -11,6 +11,7 @@ package cesium.engine
 import js.buffer.ArrayBuffer
 import js.objects.JsPlainObject
 import js.promise.Promise
+import js.promise.PromiseResult
 import seskar.js.JsAsync
 import web.blob.Blob
 import web.canvas.CanvasImageSource
@@ -1289,4 +1290,4 @@ external class Resource(options: Any /* string | Resource.ConstructorOptions */)
  * @param [error] The error that occurred during the loading of the resource.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.RetryCallback">Online Documentation</a>
  */
-typealias RetryCallback = (resource: Resource?, error: RequestErrorEvent?) -> Any /* boolean | Promise<boolean> */
+typealias RetryCallback = (resource: Resource?, error: RequestErrorEvent?) -> PromiseResult<Boolean>
