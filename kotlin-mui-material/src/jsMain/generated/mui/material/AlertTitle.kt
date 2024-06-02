@@ -2,14 +2,17 @@
 
 @file:JsModule("@mui/material/AlertTitle")
 
+@file:Suppress(
+    "VAR_TYPE_MISMATCH_ON_OVERRIDE",
+)
+
 package mui.material
 
 import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface AlertTitleProps :
-    mui.system.StandardProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
+    TypographyProps,
     react.PropsWithChildren,
     mui.system.PropsWithSx {
     /**
@@ -20,7 +23,7 @@ external interface AlertTitleProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: AlertTitleClasses?
+    override var classes: AlertTitleClasses?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
