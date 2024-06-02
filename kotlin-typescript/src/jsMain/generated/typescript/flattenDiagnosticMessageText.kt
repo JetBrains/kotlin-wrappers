@@ -5,7 +5,7 @@
 package typescript
 
 external fun flattenDiagnosticMessageText(
-    diag: Any?, /* string | DiagnosticMessageChain */
+    diag: Any /* string | DiagnosticMessageChain */?,
     newLine: String,
     indent: Int = definedExternally,
 ): String

@@ -37,22 +37,22 @@ sealed external interface DocumentRegistry {
      */
     fun acquireDocument(
         fileName: String,
-        compilationSettingsOrHost: Any?, /* CompilerOptions | MinimalResolutionCacheHost */
+        compilationSettingsOrHost: Any, /* CompilerOptions | MinimalResolutionCacheHost */
         scriptSnapshot: IScriptSnapshot,
         version: String,
         scriptKind: ScriptKind = definedExternally,
-        sourceFileOptions: Any? /* CreateSourceFileOptions | ScriptTarget */ = definedExternally,
+        sourceFileOptions: Any /* CreateSourceFileOptions | ScriptTarget */ = definedExternally,
     ): SourceFile
 
     fun acquireDocumentWithKey(
         fileName: String,
         path: Path,
-        compilationSettingsOrHost: Any?, /* CompilerOptions | MinimalResolutionCacheHost */
+        compilationSettingsOrHost: Any, /* CompilerOptions | MinimalResolutionCacheHost */
         key: DocumentRegistryBucketKey,
         scriptSnapshot: IScriptSnapshot,
         version: String,
         scriptKind: ScriptKind = definedExternally,
-        sourceFileOptions: Any? /* CreateSourceFileOptions | ScriptTarget */ = definedExternally,
+        sourceFileOptions: Any /* CreateSourceFileOptions | ScriptTarget */ = definedExternally,
     ): SourceFile
 
     /**
@@ -72,22 +72,22 @@ sealed external interface DocumentRegistry {
      */
     fun updateDocument(
         fileName: String,
-        compilationSettingsOrHost: Any?, /* CompilerOptions | MinimalResolutionCacheHost */
+        compilationSettingsOrHost: Any, /* CompilerOptions | MinimalResolutionCacheHost */
         scriptSnapshot: IScriptSnapshot,
         version: String,
         scriptKind: ScriptKind = definedExternally,
-        sourceFileOptions: Any? /* CreateSourceFileOptions | ScriptTarget */ = definedExternally,
+        sourceFileOptions: Any /* CreateSourceFileOptions | ScriptTarget */ = definedExternally,
     ): SourceFile
 
     fun updateDocumentWithKey(
         fileName: String,
         path: Path,
-        compilationSettingsOrHost: Any?, /* CompilerOptions | MinimalResolutionCacheHost */
+        compilationSettingsOrHost: Any, /* CompilerOptions | MinimalResolutionCacheHost */
         key: DocumentRegistryBucketKey,
         scriptSnapshot: IScriptSnapshot,
         version: String,
         scriptKind: ScriptKind = definedExternally,
-        sourceFileOptions: Any? /* CreateSourceFileOptions | ScriptTarget */ = definedExternally,
+        sourceFileOptions: Any /* CreateSourceFileOptions | ScriptTarget */ = definedExternally,
     ): SourceFile
 
     fun getKeyForCompilationSettings(settings: CompilerOptions): DocumentRegistryBucketKey

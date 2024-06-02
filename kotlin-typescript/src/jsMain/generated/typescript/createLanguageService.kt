@@ -7,5 +7,5 @@ package typescript
 external fun createLanguageService(
     host: LanguageServiceHost,
     documentRegistry: DocumentRegistry = definedExternally,
-    syntaxOnlyOrLanguageServiceMode: Any? /* boolean | LanguageServiceMode */ = definedExternally,
+    syntaxOnlyOrLanguageServiceMode: Any /* boolean | LanguageServiceMode */ = definedExternally,
 ): LanguageService

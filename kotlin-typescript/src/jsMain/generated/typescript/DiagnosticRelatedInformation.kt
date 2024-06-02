@@ -8,5 +8,5 @@ sealed external interface DiagnosticRelatedInformation {
     var file: SourceFile?
     var start: Int?
     var length: Int?
-    var messageText: Any? /* string | DiagnosticMessageChain */
+    var messageText: Any /* string | DiagnosticMessageChain */
 }

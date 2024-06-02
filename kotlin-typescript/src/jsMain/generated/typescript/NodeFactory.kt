@@ -11,18 +11,18 @@ sealed external interface NodeFactory {
     ): NodeArray<T>
 
     fun createNumericLiteral(
-        value: Any?, /* string | number */
+        value: Any, /* string | number */
         numericLiteralFlags: TokenFlags = definedExternally,
     ): NumericLiteral
 
-    fun createBigIntLiteral(value: Any? /* string | PseudoBigInt */): BigIntLiteral
+    fun createBigIntLiteral(value: Any /* string | PseudoBigInt */): BigIntLiteral
     fun createStringLiteral(
         text: String,
         isSingleQuote: Boolean = definedExternally,
     ): StringLiteral
 
     fun createStringLiteralFromNode(
-        sourceNode: Any?, /* PropertyNameLiteral | PrivateIdentifier */
+        sourceNode: Any, /* PropertyNameLiteral | PrivateIdentifier */
         isSingleQuote: Boolean = definedExternally,
     ): StringLiteral
 
@@ -86,7 +86,7 @@ sealed external interface NodeFactory {
     fun createModifiersFromModifierFlags(flags: ModifierFlags): ReadonlyArray<Modifier>?
     fun createQualifiedName(
         left: EntityName,
-        right: Any?, /* string | Identifier */
+        right: Any, /* string | Identifier */
     ): QualifiedName
 
     fun updateQualifiedName(
@@ -103,7 +103,7 @@ sealed external interface NodeFactory {
 
     fun createTypeParameterDeclaration(
         modifiers: ReadonlyArray<Modifier>?,
-        name: Any?, /* string | Identifier */
+        name: Any, /* string | Identifier */
         constraint: TypeNode = definedExternally,
         defaultType: TypeNode = definedExternally,
     ): TypeParameterDeclaration
@@ -119,7 +119,7 @@ sealed external interface NodeFactory {
     fun createParameterDeclaration(
         modifiers: ReadonlyArray<ModifierLike>?,
         dotDotDotToken: DotDotDotToken?,
-        name: Any?, /* string | BindingName */
+        name: Any, /* string | BindingName */
         questionToken: QuestionToken = definedExternally,
         type: TypeNode = definedExternally,
         initializer: Expression = definedExternally,
@@ -129,7 +129,7 @@ sealed external interface NodeFactory {
         node: ParameterDeclaration,
         modifiers: ReadonlyArray<ModifierLike>?,
         dotDotDotToken: DotDotDotToken?,
-        name: Any?, /* string | BindingName */
+        name: Any, /* string | BindingName */
         questionToken: QuestionToken?,
         type: TypeNode?,
         initializer: Expression?,
@@ -143,7 +143,7 @@ sealed external interface NodeFactory {
 
     fun createPropertySignature(
         modifiers: ReadonlyArray<Modifier>?,
-        name: Any?, /* PropertyName | string */
+        name: Any, /* PropertyName | string */
         questionToken: QuestionToken?,
         type: TypeNode?,
     ): PropertySignature
@@ -158,8 +158,8 @@ sealed external interface NodeFactory {
 
     fun createPropertyDeclaration(
         modifiers: ReadonlyArray<ModifierLike>?,
-        name: Any?, /* string | PropertyName */
-        questionOrExclamationToken: Any?, /* QuestionToken | ExclamationToken */
+        name: Any, /* string | PropertyName */
+        questionOrExclamationToken: Any /* QuestionToken | ExclamationToken */?,
         type: TypeNode?,
         initializer: Expression?,
     ): PropertyDeclaration
@@ -167,15 +167,15 @@ sealed external interface NodeFactory {
     fun updatePropertyDeclaration(
         node: PropertyDeclaration,
         modifiers: ReadonlyArray<ModifierLike>?,
-        name: Any?, /* string | PropertyName */
-        questionOrExclamationToken: Any?, /* QuestionToken | ExclamationToken */
+        name: Any, /* string | PropertyName */
+        questionOrExclamationToken: Any /* QuestionToken | ExclamationToken */?,
         type: TypeNode?,
         initializer: Expression?,
     ): PropertyDeclaration
 
     fun createMethodSignature(
         modifiers: ReadonlyArray<Modifier>?,
-        name: Any?, /* string | PropertyName */
+        name: Any, /* string | PropertyName */
         questionToken: QuestionToken?,
         typeParameters: ReadonlyArray<TypeParameterDeclaration>?,
         parameters: ReadonlyArray<ParameterDeclaration>,
@@ -195,7 +195,7 @@ sealed external interface NodeFactory {
     fun createMethodDeclaration(
         modifiers: ReadonlyArray<ModifierLike>?,
         asteriskToken: AsteriskToken?,
-        name: Any?, /* string | PropertyName */
+        name: Any, /* string | PropertyName */
         questionToken: QuestionToken?,
         typeParameters: ReadonlyArray<TypeParameterDeclaration>?,
         parameters: ReadonlyArray<ParameterDeclaration>,
@@ -230,7 +230,7 @@ sealed external interface NodeFactory {
 
     fun createGetAccessorDeclaration(
         modifiers: ReadonlyArray<ModifierLike>?,
-        name: Any?, /* string | PropertyName */
+        name: Any, /* string | PropertyName */
         parameters: ReadonlyArray<ParameterDeclaration>,
         type: TypeNode?,
         body: Block?,
@@ -247,7 +247,7 @@ sealed external interface NodeFactory {
 
     fun createSetAccessorDeclaration(
         modifiers: ReadonlyArray<ModifierLike>?,
-        name: Any?, /* string | PropertyName */
+        name: Any, /* string | PropertyName */
         parameters: ReadonlyArray<ParameterDeclaration>,
         body: Block?,
     ): SetAccessorDeclaration
@@ -301,13 +301,13 @@ sealed external interface NodeFactory {
 
     fun createTemplateLiteralTypeSpan(
         type: TypeNode,
-        literal: Any?, /* TemplateMiddle | TemplateTail */
+        literal: Any, /* TemplateMiddle | TemplateTail */
     ): TemplateLiteralTypeSpan
 
     fun updateTemplateLiteralTypeSpan(
         node: TemplateLiteralTypeSpan,
         type: TypeNode,
-        literal: Any?, /* TemplateMiddle | TemplateTail */
+        literal: Any, /* TemplateMiddle | TemplateTail */
     ): TemplateLiteralTypeSpan
 
     fun createClassStaticBlockDeclaration(body: Block): ClassStaticBlockDeclaration
@@ -319,19 +319,19 @@ sealed external interface NodeFactory {
     fun <TKind : KeywordTypeSyntaxKind> createKeywordTypeNode(kind: TKind): KeywordTypeNode<TKind>
     fun createTypePredicateNode(
         assertsModifier: AssertsKeyword?,
-        parameterName: Any?, /* Identifier | ThisTypeNode | string */
+        parameterName: Any, /* Identifier | ThisTypeNode | string */
         type: TypeNode?,
     ): TypePredicateNode
 
     fun updateTypePredicateNode(
         node: TypePredicateNode,
         assertsModifier: AssertsKeyword?,
-        parameterName: Any?, /* Identifier | ThisTypeNode */
+        parameterName: Any, /* Identifier | ThisTypeNode */
         type: TypeNode?,
     ): TypePredicateNode
 
     fun createTypeReferenceNode(
-        typeName: Any?, /* string | EntityName */
+        typeName: Any, /* string | EntityName */
         typeArguments: ReadonlyArray<TypeNode> = definedExternally,
     ): TypeReferenceNode
 
@@ -392,10 +392,10 @@ sealed external interface NodeFactory {
         elementType: TypeNode,
     ): ArrayTypeNode
 
-    fun createTupleTypeNode(elements: Any? /* (TypeNode | NamedTupleMember)[] */): TupleTypeNode
+    fun createTupleTypeNode(elements: Any /* (TypeNode | NamedTupleMember)[] */): TupleTypeNode
     fun updateTupleTypeNode(
         node: TupleTypeNode,
-        elements: Any?, /* (TypeNode | NamedTupleMember)[] */
+        elements: Any, /* (TypeNode | NamedTupleMember)[] */
     ): TupleTypeNode
 
     fun createNamedTupleMember(
@@ -483,7 +483,7 @@ sealed external interface NodeFactory {
 
     fun createThisTypeNode(): ThisTypeNode
     fun createTypeOperatorNode(
-        operator: Any?, /* SyntaxKind.KeyOfKeyword | SyntaxKind.UniqueKeyword | SyntaxKind.ReadonlyKeyword */
+        operator: Any, /* SyntaxKind.KeyOfKeyword | SyntaxKind.UniqueKeyword | SyntaxKind.ReadonlyKeyword */
         type: TypeNode,
     ): TypeOperatorNode
 
@@ -504,28 +504,28 @@ sealed external interface NodeFactory {
     ): IndexedAccessTypeNode
 
     fun createMappedTypeNode(
-        readonlyToken: Any?, /* ReadonlyKeyword | PlusToken | MinusToken */
+        readonlyToken: Any /* ReadonlyKeyword | PlusToken | MinusToken */?,
         typeParameter: TypeParameterDeclaration,
         nameType: TypeNode?,
-        questionToken: Any?, /* QuestionToken | PlusToken | MinusToken */
+        questionToken: Any /* QuestionToken | PlusToken | MinusToken */?,
         type: TypeNode?,
         members: NodeArray<TypeElement>?,
     ): MappedTypeNode
 
     fun updateMappedTypeNode(
         node: MappedTypeNode,
-        readonlyToken: Any?, /* ReadonlyKeyword | PlusToken | MinusToken */
+        readonlyToken: Any /* ReadonlyKeyword | PlusToken | MinusToken */?,
         typeParameter: TypeParameterDeclaration,
         nameType: TypeNode?,
-        questionToken: Any?, /* QuestionToken | PlusToken | MinusToken */
+        questionToken: Any /* QuestionToken | PlusToken | MinusToken */?,
         type: TypeNode?,
         members: NodeArray<TypeElement>?,
     ): MappedTypeNode
 
-    fun createLiteralTypeNode(literal: Any? /* LiteralTypeNode["literal"] */): LiteralTypeNode
+    fun createLiteralTypeNode(literal: Any /* LiteralTypeNode["literal"] */): LiteralTypeNode
     fun updateLiteralTypeNode(
         node: LiteralTypeNode,
-        literal: Any?, /* LiteralTypeNode["literal"] */
+        literal: Any, /* LiteralTypeNode["literal"] */
     ): LiteralTypeNode
 
     fun createTemplateLiteralType(
@@ -553,8 +553,8 @@ sealed external interface NodeFactory {
 
     fun createBindingElement(
         dotDotDotToken: DotDotDotToken?,
-        propertyName: Any?, /* string | PropertyName */
-        name: Any?, /* string | BindingName */
+        propertyName: Any /* string | PropertyName */?,
+        name: Any, /* string | BindingName */
         initializer: Expression = definedExternally,
     ): BindingElement
 
@@ -588,7 +588,7 @@ sealed external interface NodeFactory {
 
     fun createPropertyAccessExpression(
         expression: Expression,
-        name: Any?, /* string | MemberName */
+        name: Any, /* string | MemberName */
     ): PropertyAccessExpression
 
     fun updatePropertyAccessExpression(
@@ -600,7 +600,7 @@ sealed external interface NodeFactory {
     fun createPropertyAccessChain(
         expression: Expression,
         questionDotToken: QuestionDotToken?,
-        name: Any?, /* string | MemberName */
+        name: Any, /* string | MemberName */
     ): PropertyAccessChain
 
     fun updatePropertyAccessChain(
@@ -612,7 +612,7 @@ sealed external interface NodeFactory {
 
     fun createElementAccessExpression(
         expression: Expression,
-        index: Any?, /* number | Expression */
+        index: Any, /* number | Expression */
     ): ElementAccessExpression
 
     fun updateElementAccessExpression(
@@ -624,7 +624,7 @@ sealed external interface NodeFactory {
     fun createElementAccessChain(
         expression: Expression,
         questionDotToken: QuestionDotToken?,
-        index: Any?, /* number | Expression */
+        index: Any, /* number | Expression */
     ): ElementAccessChain
 
     fun updateElementAccessChain(
@@ -708,7 +708,7 @@ sealed external interface NodeFactory {
     fun createFunctionExpression(
         modifiers: ReadonlyArray<Modifier>?,
         asteriskToken: AsteriskToken?,
-        name: Any?, /* string | Identifier */
+        name: Any /* string | Identifier */?,
         typeParameters: ReadonlyArray<TypeParameterDeclaration>?,
         parameters: ReadonlyArray<ParameterDeclaration>?,
         type: TypeNode?,
@@ -791,14 +791,14 @@ sealed external interface NodeFactory {
 
     fun createBinaryExpression(
         left: Expression,
-        operator: Any?, /* BinaryOperator | BinaryOperatorToken */
+        operator: Any, /* BinaryOperator | BinaryOperatorToken */
         right: Expression,
     ): BinaryExpression
 
     fun updateBinaryExpression(
         node: BinaryExpression,
         left: Expression,
-        operator: Any?, /* BinaryOperator | BinaryOperatorToken */
+        operator: Any, /* BinaryOperator | BinaryOperatorToken */
         right: Expression,
     ): BinaryExpression
 
@@ -900,7 +900,7 @@ sealed external interface NodeFactory {
 
     fun createClassExpression(
         modifiers: ReadonlyArray<ModifierLike>?,
-        name: Any?, /* string | Identifier */
+        name: Any /* string | Identifier */?,
         typeParameters: ReadonlyArray<TypeParameterDeclaration>?,
         heritageClauses: ReadonlyArray<HeritageClause>?,
         members: ReadonlyArray<ClassElement>,
@@ -951,7 +951,7 @@ sealed external interface NodeFactory {
     ): NonNullChain
 
     fun createMetaProperty(
-        keywordToken: Any?, /* MetaProperty["keywordToken"] */
+        keywordToken: Any, /* MetaProperty["keywordToken"] */
         name: Identifier,
     ): MetaProperty
 
@@ -973,13 +973,13 @@ sealed external interface NodeFactory {
 
     fun createTemplateSpan(
         expression: Expression,
-        literal: Any?, /* TemplateMiddle | TemplateTail */
+        literal: Any, /* TemplateMiddle | TemplateTail */
     ): TemplateSpan
 
     fun updateTemplateSpan(
         node: TemplateSpan,
         expression: Expression,
-        literal: Any?, /* TemplateMiddle | TemplateTail */
+        literal: Any, /* TemplateMiddle | TemplateTail */
     ): TemplateSpan
 
     fun createSemicolonClassElement(): SemicolonClassElement
@@ -995,7 +995,7 @@ sealed external interface NodeFactory {
 
     fun createVariableStatement(
         modifiers: ReadonlyArray<ModifierLike>?,
-        declarationList: Any?, /* VariableDeclarationList | readonly VariableDeclaration[] */
+        declarationList: Any, /* VariableDeclarationList | readonly VariableDeclaration[] */
     ): VariableStatement
 
     fun updateVariableStatement(
@@ -1089,13 +1089,13 @@ sealed external interface NodeFactory {
         statement: Statement,
     ): ForOfStatement
 
-    fun createContinueStatement(label: Any? /* string | Identifier */ = definedExternally): ContinueStatement
+    fun createContinueStatement(label: Any /* string | Identifier */ = definedExternally): ContinueStatement
     fun updateContinueStatement(
         node: ContinueStatement,
         label: Identifier?,
     ): ContinueStatement
 
-    fun createBreakStatement(label: Any? /* string | Identifier */ = definedExternally): BreakStatement
+    fun createBreakStatement(label: Any /* string | Identifier */ = definedExternally): BreakStatement
     fun updateBreakStatement(
         node: BreakStatement,
         label: Identifier?,
@@ -1130,7 +1130,7 @@ sealed external interface NodeFactory {
     ): SwitchStatement
 
     fun createLabeledStatement(
-        label: Any?, /* string | Identifier */
+        label: Any, /* string | Identifier */
         statement: Statement,
     ): LabeledStatement
 
@@ -1161,7 +1161,7 @@ sealed external interface NodeFactory {
 
     fun createDebuggerStatement(): DebuggerStatement
     fun createVariableDeclaration(
-        name: Any?, /* string | BindingName */
+        name: Any, /* string | BindingName */
         exclamationToken: ExclamationToken = definedExternally,
         type: TypeNode = definedExternally,
         initializer: Expression = definedExternally,
@@ -1188,7 +1188,7 @@ sealed external interface NodeFactory {
     fun createFunctionDeclaration(
         modifiers: ReadonlyArray<ModifierLike>?,
         asteriskToken: AsteriskToken?,
-        name: Any?, /* string | Identifier */
+        name: Any /* string | Identifier */?,
         typeParameters: ReadonlyArray<TypeParameterDeclaration>?,
         parameters: ReadonlyArray<ParameterDeclaration>,
         type: TypeNode?,
@@ -1208,7 +1208,7 @@ sealed external interface NodeFactory {
 
     fun createClassDeclaration(
         modifiers: ReadonlyArray<ModifierLike>?,
-        name: Any?, /* string | Identifier */
+        name: Any /* string | Identifier */?,
         typeParameters: ReadonlyArray<TypeParameterDeclaration>?,
         heritageClauses: ReadonlyArray<HeritageClause>?,
         members: ReadonlyArray<ClassElement>,
@@ -1225,7 +1225,7 @@ sealed external interface NodeFactory {
 
     fun createInterfaceDeclaration(
         modifiers: ReadonlyArray<ModifierLike>?,
-        name: Any?, /* string | Identifier */
+        name: Any, /* string | Identifier */
         typeParameters: ReadonlyArray<TypeParameterDeclaration>?,
         heritageClauses: ReadonlyArray<HeritageClause>?,
         members: ReadonlyArray<TypeElement>,
@@ -1242,7 +1242,7 @@ sealed external interface NodeFactory {
 
     fun createTypeAliasDeclaration(
         modifiers: ReadonlyArray<ModifierLike>?,
-        name: Any?, /* string | Identifier */
+        name: Any, /* string | Identifier */
         typeParameters: ReadonlyArray<TypeParameterDeclaration>?,
         type: TypeNode,
     ): TypeAliasDeclaration
@@ -1257,7 +1257,7 @@ sealed external interface NodeFactory {
 
     fun createEnumDeclaration(
         modifiers: ReadonlyArray<ModifierLike>?,
-        name: Any?, /* string | Identifier */
+        name: Any, /* string | Identifier */
         members: ReadonlyArray<EnumMember>,
     ): EnumDeclaration
 
@@ -1294,7 +1294,7 @@ sealed external interface NodeFactory {
         clauses: ReadonlyArray<CaseOrDefaultClause>,
     ): CaseBlock
 
-    fun createNamespaceExportDeclaration(name: Any? /* string | Identifier */): NamespaceExportDeclaration
+    fun createNamespaceExportDeclaration(name: Any /* string | Identifier */): NamespaceExportDeclaration
     fun updateNamespaceExportDeclaration(
         node: NamespaceExportDeclaration,
         name: Identifier,
@@ -1303,7 +1303,7 @@ sealed external interface NodeFactory {
     fun createImportEqualsDeclaration(
         modifiers: ReadonlyArray<ModifierLike>?,
         isTypeOnly: Boolean,
-        name: Any?, /* string | Identifier */
+        name: Any, /* string | Identifier */
         moduleReference: ModuleReference,
     ): ImportEqualsDeclaration
 
@@ -1433,8 +1433,8 @@ sealed external interface NodeFactory {
 
     fun createExportSpecifier(
         isTypeOnly: Boolean,
-        propertyName: Any?, /* string | Identifier */
-        name: Any?, /* string | Identifier */
+        propertyName: Any /* string | Identifier */?,
+        name: Any, /* string | Identifier */
     ): ExportSpecifier
 
     fun updateExportSpecifier(
@@ -1507,53 +1507,53 @@ sealed external interface NodeFactory {
         type: TypeNode,
     ): JSDocTypeExpression
 
-    fun createJSDocNameReference(name: Any? /* EntityName | JSDocMemberName */): JSDocNameReference
+    fun createJSDocNameReference(name: Any /* EntityName | JSDocMemberName */): JSDocNameReference
     fun updateJSDocNameReference(
         node: JSDocNameReference,
-        name: Any?, /* EntityName | JSDocMemberName */
+        name: Any, /* EntityName | JSDocMemberName */
     ): JSDocNameReference
 
     fun createJSDocMemberName(
-        left: Any?, /* EntityName | JSDocMemberName */
+        left: Any, /* EntityName | JSDocMemberName */
         right: Identifier,
     ): JSDocMemberName
 
     fun updateJSDocMemberName(
         node: JSDocMemberName,
-        left: Any?, /* EntityName | JSDocMemberName */
+        left: Any, /* EntityName | JSDocMemberName */
         right: Identifier,
     ): JSDocMemberName
 
     fun createJSDocLink(
-        name: Any?, /* EntityName | JSDocMemberName */
+        name: Any /* EntityName | JSDocMemberName */?,
         text: String,
     ): JSDocLink
 
     fun updateJSDocLink(
         node: JSDocLink,
-        name: Any?, /* EntityName | JSDocMemberName */
+        name: Any /* EntityName | JSDocMemberName */?,
         text: String,
     ): JSDocLink
 
     fun createJSDocLinkCode(
-        name: Any?, /* EntityName | JSDocMemberName */
+        name: Any /* EntityName | JSDocMemberName */?,
         text: String,
     ): JSDocLinkCode
 
     fun updateJSDocLinkCode(
         node: JSDocLinkCode,
-        name: Any?, /* EntityName | JSDocMemberName */
+        name: Any /* EntityName | JSDocMemberName */?,
         text: String,
     ): JSDocLinkCode
 
     fun createJSDocLinkPlain(
-        name: Any?, /* EntityName | JSDocMemberName */
+        name: Any /* EntityName | JSDocMemberName */?,
         text: String,
     ): JSDocLinkPlain
 
     fun updateJSDocLinkPlain(
         node: JSDocLinkPlain,
-        name: Any?, /* EntityName | JSDocMemberName */
+        name: Any /* EntityName | JSDocMemberName */?,
         text: String,
     ): JSDocLinkPlain
 
@@ -1585,7 +1585,7 @@ sealed external interface NodeFactory {
         tagName: Identifier?,
         constraint: JSDocTypeExpression?,
         typeParameters: ReadonlyArray<TypeParameterDeclaration>,
-        comment: Any? /* string | NodeArray<JSDocComment> */ = definedExternally,
+        comment: Any /* string | NodeArray<JSDocComment> */ = definedExternally,
     ): JSDocTemplateTag
 
     fun updateJSDocTemplateTag(
@@ -1593,22 +1593,22 @@ sealed external interface NodeFactory {
         tagName: Identifier?,
         constraint: JSDocTypeExpression?,
         typeParameters: ReadonlyArray<TypeParameterDeclaration>,
-        comment: Any?, /* string | NodeArray<JSDocComment> */
+        comment: Any /* string | NodeArray<JSDocComment> */?,
     ): JSDocTemplateTag
 
     fun createJSDocTypedefTag(
         tagName: Identifier?,
-        typeExpression: Any? /* JSDocTypeExpression | JSDocTypeLiteral */ = definedExternally,
-        fullName: Any? /* Identifier | JSDocNamespaceDeclaration */ = definedExternally,
-        comment: Any? /* string | NodeArray<JSDocComment> */ = definedExternally,
+        typeExpression: Any /* JSDocTypeExpression | JSDocTypeLiteral */ = definedExternally,
+        fullName: Any /* Identifier | JSDocNamespaceDeclaration */ = definedExternally,
+        comment: Any /* string | NodeArray<JSDocComment> */ = definedExternally,
     ): JSDocTypedefTag
 
     fun updateJSDocTypedefTag(
         node: JSDocTypedefTag,
         tagName: Identifier?,
-        typeExpression: Any?, /* JSDocTypeExpression | JSDocTypeLiteral */
-        fullName: Any?, /* Identifier | JSDocNamespaceDeclaration */
-        comment: Any?, /* string | NodeArray<JSDocComment> */
+        typeExpression: Any /* JSDocTypeExpression | JSDocTypeLiteral */?,
+        fullName: Any /* Identifier | JSDocNamespaceDeclaration */?,
+        comment: Any /* string | NodeArray<JSDocComment> */?,
     ): JSDocTypedefTag
 
     fun createJSDocParameterTag(
@@ -1617,7 +1617,7 @@ sealed external interface NodeFactory {
         isBracketed: Boolean,
         typeExpression: JSDocTypeExpression = definedExternally,
         isNameFirst: Boolean = definedExternally,
-        comment: Any? /* string | NodeArray<JSDocComment> */ = definedExternally,
+        comment: Any /* string | NodeArray<JSDocComment> */ = definedExternally,
     ): JSDocParameterTag
 
     fun updateJSDocParameterTag(
@@ -1627,7 +1627,7 @@ sealed external interface NodeFactory {
         isBracketed: Boolean,
         typeExpression: JSDocTypeExpression?,
         isNameFirst: Boolean,
-        comment: Any?, /* string | NodeArray<JSDocComment> */
+        comment: Any /* string | NodeArray<JSDocComment> */?,
     ): JSDocParameterTag
 
     fun createJSDocPropertyTag(
@@ -1636,7 +1636,7 @@ sealed external interface NodeFactory {
         isBracketed: Boolean,
         typeExpression: JSDocTypeExpression = definedExternally,
         isNameFirst: Boolean = definedExternally,
-        comment: Any? /* string | NodeArray<JSDocComment> */ = definedExternally,
+        comment: Any /* string | NodeArray<JSDocComment> */ = definedExternally,
     ): JSDocPropertyTag
 
     fun updateJSDocPropertyTag(
@@ -1646,251 +1646,251 @@ sealed external interface NodeFactory {
         isBracketed: Boolean,
         typeExpression: JSDocTypeExpression?,
         isNameFirst: Boolean,
-        comment: Any?, /* string | NodeArray<JSDocComment> */
+        comment: Any /* string | NodeArray<JSDocComment> */?,
     ): JSDocPropertyTag
 
     fun createJSDocTypeTag(
         tagName: Identifier?,
         typeExpression: JSDocTypeExpression,
-        comment: Any? /* string | NodeArray<JSDocComment> */ = definedExternally,
+        comment: Any /* string | NodeArray<JSDocComment> */ = definedExternally,
     ): JSDocTypeTag
 
     fun updateJSDocTypeTag(
         node: JSDocTypeTag,
         tagName: Identifier?,
         typeExpression: JSDocTypeExpression,
-        comment: Any?, /* string | NodeArray<JSDocComment> */
+        comment: Any /* string | NodeArray<JSDocComment> */?,
     ): JSDocTypeTag
 
     fun createJSDocSeeTag(
         tagName: Identifier?,
         nameExpression: JSDocNameReference?,
-        comment: Any? /* string | NodeArray<JSDocComment> */ = definedExternally,
+        comment: Any /* string | NodeArray<JSDocComment> */ = definedExternally,
     ): JSDocSeeTag
 
     fun updateJSDocSeeTag(
         node: JSDocSeeTag,
         tagName: Identifier?,
         nameExpression: JSDocNameReference?,
-        comment: Any? /* string | NodeArray<JSDocComment> */ = definedExternally,
+        comment: Any /* string | NodeArray<JSDocComment> */ = definedExternally,
     ): JSDocSeeTag
 
     fun createJSDocReturnTag(
         tagName: Identifier?,
         typeExpression: JSDocTypeExpression = definedExternally,
-        comment: Any? /* string | NodeArray<JSDocComment> */ = definedExternally,
+        comment: Any /* string | NodeArray<JSDocComment> */ = definedExternally,
     ): JSDocReturnTag
 
     fun updateJSDocReturnTag(
         node: JSDocReturnTag,
         tagName: Identifier?,
         typeExpression: JSDocTypeExpression?,
-        comment: Any?, /* string | NodeArray<JSDocComment> */
+        comment: Any /* string | NodeArray<JSDocComment> */?,
     ): JSDocReturnTag
 
     fun createJSDocThisTag(
         tagName: Identifier?,
         typeExpression: JSDocTypeExpression,
-        comment: Any? /* string | NodeArray<JSDocComment> */ = definedExternally,
+        comment: Any /* string | NodeArray<JSDocComment> */ = definedExternally,
     ): JSDocThisTag
 
     fun updateJSDocThisTag(
         node: JSDocThisTag,
         tagName: Identifier?,
         typeExpression: JSDocTypeExpression?,
-        comment: Any?, /* string | NodeArray<JSDocComment> */
+        comment: Any /* string | NodeArray<JSDocComment> */?,
     ): JSDocThisTag
 
     fun createJSDocEnumTag(
         tagName: Identifier?,
         typeExpression: JSDocTypeExpression,
-        comment: Any? /* string | NodeArray<JSDocComment> */ = definedExternally,
+        comment: Any /* string | NodeArray<JSDocComment> */ = definedExternally,
     ): JSDocEnumTag
 
     fun updateJSDocEnumTag(
         node: JSDocEnumTag,
         tagName: Identifier?,
         typeExpression: JSDocTypeExpression,
-        comment: Any?, /* string | NodeArray<JSDocComment> */
+        comment: Any /* string | NodeArray<JSDocComment> */?,
     ): JSDocEnumTag
 
     fun createJSDocCallbackTag(
         tagName: Identifier?,
         typeExpression: JSDocSignature,
-        fullName: Any? /* Identifier | JSDocNamespaceDeclaration */ = definedExternally,
-        comment: Any? /* string | NodeArray<JSDocComment> */ = definedExternally,
+        fullName: Any /* Identifier | JSDocNamespaceDeclaration */ = definedExternally,
+        comment: Any /* string | NodeArray<JSDocComment> */ = definedExternally,
     ): JSDocCallbackTag
 
     fun updateJSDocCallbackTag(
         node: JSDocCallbackTag,
         tagName: Identifier?,
         typeExpression: JSDocSignature,
-        fullName: Any?, /* Identifier | JSDocNamespaceDeclaration */
-        comment: Any?, /* string | NodeArray<JSDocComment> */
+        fullName: Any /* Identifier | JSDocNamespaceDeclaration */?,
+        comment: Any /* string | NodeArray<JSDocComment> */?,
     ): JSDocCallbackTag
 
     fun createJSDocOverloadTag(
         tagName: Identifier?,
         typeExpression: JSDocSignature,
-        comment: Any? /* string | NodeArray<JSDocComment> */ = definedExternally,
+        comment: Any /* string | NodeArray<JSDocComment> */ = definedExternally,
     ): JSDocOverloadTag
 
     fun updateJSDocOverloadTag(
         node: JSDocOverloadTag,
         tagName: Identifier?,
         typeExpression: JSDocSignature,
-        comment: Any?, /* string | NodeArray<JSDocComment> */
+        comment: Any /* string | NodeArray<JSDocComment> */?,
     ): JSDocOverloadTag
 
     fun createJSDocAugmentsTag(
         tagName: Identifier?,
-        className: Any?, /* JSDocAugmentsTag["class"] */
-        comment: Any? /* string | NodeArray<JSDocComment> */ = definedExternally,
+        className: Any, /* JSDocAugmentsTag["class"] */
+        comment: Any /* string | NodeArray<JSDocComment> */ = definedExternally,
     ): JSDocAugmentsTag
 
     fun updateJSDocAugmentsTag(
         node: JSDocAugmentsTag,
         tagName: Identifier?,
-        className: Any?, /* JSDocAugmentsTag["class"] */
-        comment: Any?, /* string | NodeArray<JSDocComment> */
+        className: Any, /* JSDocAugmentsTag["class"] */
+        comment: Any /* string | NodeArray<JSDocComment> */?,
     ): JSDocAugmentsTag
 
     fun createJSDocImplementsTag(
         tagName: Identifier?,
-        className: Any?, /* JSDocImplementsTag["class"] */
-        comment: Any? /* string | NodeArray<JSDocComment> */ = definedExternally,
+        className: Any, /* JSDocImplementsTag["class"] */
+        comment: Any /* string | NodeArray<JSDocComment> */ = definedExternally,
     ): JSDocImplementsTag
 
     fun updateJSDocImplementsTag(
         node: JSDocImplementsTag,
         tagName: Identifier?,
-        className: Any?, /* JSDocImplementsTag["class"] */
-        comment: Any?, /* string | NodeArray<JSDocComment> */
+        className: Any, /* JSDocImplementsTag["class"] */
+        comment: Any /* string | NodeArray<JSDocComment> */?,
     ): JSDocImplementsTag
 
     fun createJSDocAuthorTag(
         tagName: Identifier?,
-        comment: Any? /* string | NodeArray<JSDocComment> */ = definedExternally,
+        comment: Any /* string | NodeArray<JSDocComment> */ = definedExternally,
     ): JSDocAuthorTag
 
     fun updateJSDocAuthorTag(
         node: JSDocAuthorTag,
         tagName: Identifier?,
-        comment: Any?, /* string | NodeArray<JSDocComment> */
+        comment: Any /* string | NodeArray<JSDocComment> */?,
     ): JSDocAuthorTag
 
     fun createJSDocClassTag(
         tagName: Identifier?,
-        comment: Any? /* string | NodeArray<JSDocComment> */ = definedExternally,
+        comment: Any /* string | NodeArray<JSDocComment> */ = definedExternally,
     ): JSDocClassTag
 
     fun updateJSDocClassTag(
         node: JSDocClassTag,
         tagName: Identifier?,
-        comment: Any?, /* string | NodeArray<JSDocComment> */
+        comment: Any /* string | NodeArray<JSDocComment> */?,
     ): JSDocClassTag
 
     fun createJSDocPublicTag(
         tagName: Identifier?,
-        comment: Any? /* string | NodeArray<JSDocComment> */ = definedExternally,
+        comment: Any /* string | NodeArray<JSDocComment> */ = definedExternally,
     ): JSDocPublicTag
 
     fun updateJSDocPublicTag(
         node: JSDocPublicTag,
         tagName: Identifier?,
-        comment: Any?, /* string | NodeArray<JSDocComment> */
+        comment: Any /* string | NodeArray<JSDocComment> */?,
     ): JSDocPublicTag
 
     fun createJSDocPrivateTag(
         tagName: Identifier?,
-        comment: Any? /* string | NodeArray<JSDocComment> */ = definedExternally,
+        comment: Any /* string | NodeArray<JSDocComment> */ = definedExternally,
     ): JSDocPrivateTag
 
     fun updateJSDocPrivateTag(
         node: JSDocPrivateTag,
         tagName: Identifier?,
-        comment: Any?, /* string | NodeArray<JSDocComment> */
+        comment: Any /* string | NodeArray<JSDocComment> */?,
     ): JSDocPrivateTag
 
     fun createJSDocProtectedTag(
         tagName: Identifier?,
-        comment: Any? /* string | NodeArray<JSDocComment> */ = definedExternally,
+        comment: Any /* string | NodeArray<JSDocComment> */ = definedExternally,
     ): JSDocProtectedTag
 
     fun updateJSDocProtectedTag(
         node: JSDocProtectedTag,
         tagName: Identifier?,
-        comment: Any?, /* string | NodeArray<JSDocComment> */
+        comment: Any /* string | NodeArray<JSDocComment> */?,
     ): JSDocProtectedTag
 
     fun createJSDocReadonlyTag(
         tagName: Identifier?,
-        comment: Any? /* string | NodeArray<JSDocComment> */ = definedExternally,
+        comment: Any /* string | NodeArray<JSDocComment> */ = definedExternally,
     ): JSDocReadonlyTag
 
     fun updateJSDocReadonlyTag(
         node: JSDocReadonlyTag,
         tagName: Identifier?,
-        comment: Any?, /* string | NodeArray<JSDocComment> */
+        comment: Any /* string | NodeArray<JSDocComment> */?,
     ): JSDocReadonlyTag
 
     fun createJSDocUnknownTag(
         tagName: Identifier,
-        comment: Any? /* string | NodeArray<JSDocComment> */ = definedExternally,
+        comment: Any /* string | NodeArray<JSDocComment> */ = definedExternally,
     ): JSDocUnknownTag
 
     fun updateJSDocUnknownTag(
         node: JSDocUnknownTag,
         tagName: Identifier,
-        comment: Any?, /* string | NodeArray<JSDocComment> */
+        comment: Any /* string | NodeArray<JSDocComment> */?,
     ): JSDocUnknownTag
 
     fun createJSDocDeprecatedTag(
         tagName: Identifier?,
-        comment: Any? /* string | NodeArray<JSDocComment> */ = definedExternally,
+        comment: Any /* string | NodeArray<JSDocComment> */ = definedExternally,
     ): JSDocDeprecatedTag
 
     fun updateJSDocDeprecatedTag(
         node: JSDocDeprecatedTag,
         tagName: Identifier?,
-        comment: Any? /* string | NodeArray<JSDocComment> */ = definedExternally,
+        comment: Any /* string | NodeArray<JSDocComment> */ = definedExternally,
     ): JSDocDeprecatedTag
 
     fun createJSDocOverrideTag(
         tagName: Identifier?,
-        comment: Any? /* string | NodeArray<JSDocComment> */ = definedExternally,
+        comment: Any /* string | NodeArray<JSDocComment> */ = definedExternally,
     ): JSDocOverrideTag
 
     fun updateJSDocOverrideTag(
         node: JSDocOverrideTag,
         tagName: Identifier?,
-        comment: Any? /* string | NodeArray<JSDocComment> */ = definedExternally,
+        comment: Any /* string | NodeArray<JSDocComment> */ = definedExternally,
     ): JSDocOverrideTag
 
     fun createJSDocThrowsTag(
         tagName: Identifier,
         typeExpression: JSDocTypeExpression?,
-        comment: Any? /* string | NodeArray<JSDocComment> */ = definedExternally,
+        comment: Any /* string | NodeArray<JSDocComment> */ = definedExternally,
     ): JSDocThrowsTag
 
     fun updateJSDocThrowsTag(
         node: JSDocThrowsTag,
         tagName: Identifier?,
         typeExpression: JSDocTypeExpression?,
-        comment: Any? /* string | NodeArray<JSDocComment> */ = definedExternally,
+        comment: Any /* string | NodeArray<JSDocComment> */? = definedExternally,
     ): JSDocThrowsTag
 
     fun createJSDocSatisfiesTag(
         tagName: Identifier?,
         typeExpression: JSDocTypeExpression,
-        comment: Any? /* string | NodeArray<JSDocComment> */ = definedExternally,
+        comment: Any /* string | NodeArray<JSDocComment> */ = definedExternally,
     ): JSDocSatisfiesTag
 
     fun updateJSDocSatisfiesTag(
         node: JSDocSatisfiesTag,
         tagName: Identifier?,
         typeExpression: JSDocTypeExpression,
-        comment: Any?, /* string | NodeArray<JSDocComment> */
+        comment: Any /* string | NodeArray<JSDocComment> */?,
     ): JSDocSatisfiesTag
 
     fun createJSDocText(text: String): JSDocText
@@ -1900,13 +1900,13 @@ sealed external interface NodeFactory {
     ): JSDocText
 
     fun createJSDocComment(
-        comment: Any? /* string | NodeArray<JSDocComment> */ = definedExternally,
+        comment: Any /* string | NodeArray<JSDocComment> */? = definedExternally,
         tags: ReadonlyArray<JSDocTag>? = definedExternally,
     ): JSDoc
 
     fun updateJSDocComment(
         node: JSDoc,
-        comment: Any?, /* string | NodeArray<JSDocComment> */
+        comment: Any /* string | NodeArray<JSDocComment> */?,
         tags: ReadonlyArray<JSDocTag>?,
     ): JSDoc
 
@@ -2043,7 +2043,7 @@ sealed external interface NodeFactory {
     ): DefaultClause
 
     fun createHeritageClause(
-        token: Any?, /* HeritageClause["token"] */
+        token: Any, /* HeritageClause["token"] */
         types: ReadonlyArray<ExpressionWithTypeArguments>,
     ): HeritageClause
 
@@ -2053,7 +2053,7 @@ sealed external interface NodeFactory {
     ): HeritageClause
 
     fun createCatchClause(
-        variableDeclaration: Any?, /* string | BindingName | VariableDeclaration */
+        variableDeclaration: Any /* string | BindingName | VariableDeclaration */?,
         block: Block,
     ): CatchClause
 
@@ -2064,7 +2064,7 @@ sealed external interface NodeFactory {
     ): CatchClause
 
     fun createPropertyAssignment(
-        name: Any?, /* string | PropertyName */
+        name: Any, /* string | PropertyName */
         initializer: Expression,
     ): PropertyAssignment
 
@@ -2075,7 +2075,7 @@ sealed external interface NodeFactory {
     ): PropertyAssignment
 
     fun createShorthandPropertyAssignment(
-        name: Any?, /* string | Identifier */
+        name: Any, /* string | Identifier */
         objectAssignmentInitializer: Expression = definedExternally,
     ): ShorthandPropertyAssignment
 
@@ -2092,7 +2092,7 @@ sealed external interface NodeFactory {
     ): SpreadAssignment
 
     fun createEnumMember(
-        name: Any?, /* string | PropertyName */
+        name: Any, /* string | PropertyName */
         initializer: Expression = definedExternally,
     ): EnumMember
 
@@ -2147,7 +2147,7 @@ sealed external interface NodeFactory {
     ): BinaryExpression
 
     fun createAssignment(
-        left: Any?, /* ObjectLiteralExpression | ArrayLiteralExpression */
+        left: Any, /* ObjectLiteralExpression | ArrayLiteralExpression */
         right: Expression,
     ): DestructuringAssignment
 
@@ -2302,7 +2302,7 @@ sealed external interface NodeFactory {
      */
     fun <T : HasModifiers> replaceModifiers(
         node: T,
-        modifiers: Any?, /* Modifier[] | ModifierFlags */
+        modifiers: Any /* Modifier[] | ModifierFlags */?,
     ): T
 
     /**
@@ -2319,6 +2319,6 @@ sealed external interface NodeFactory {
      */
     fun <T : Any /* AccessorDeclaration | MethodDeclaration | MethodSignature | PropertyDeclaration | PropertySignature | PropertyAssignment */> replacePropertyName(
         node: T,
-        name: Any?, /* T["name"] */
+        name: Any, /* T["name"] */
     ): T
 }

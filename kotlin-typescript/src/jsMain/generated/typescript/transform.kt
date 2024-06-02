@@ -13,7 +13,7 @@ import js.array.ReadonlyArray
  * @param compilerOptions Optional compiler options.
  */
 external fun <T : Node> transform(
-    source: Any?, /* T | T[] */
+    source: Any, /* T | T[] */
     transformers: ReadonlyArray<TransformerFactory<T>>,
     compilerOptions: CompilerOptions = definedExternally,
 ): TransformationResult<T>

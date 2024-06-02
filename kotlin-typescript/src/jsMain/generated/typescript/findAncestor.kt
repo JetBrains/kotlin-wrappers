@@ -17,5 +17,5 @@ external fun <T : Node> findAncestor(
 
 external fun findAncestor(
     node: Node?,
-    callback: Any?, /* (element: Node) => boolean | "quit" */
+    callback: Any, /* (element: Node) => boolean | "quit" */
 ): Node?

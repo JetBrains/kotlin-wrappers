@@ -8,7 +8,7 @@ package typescript
 
 import kotlin.contracts.contract
 
-fun isStringLiteralLike(node: Any? /* Node | FileReference */): Boolean {
+fun isStringLiteralLike(node: Any /* Node | FileReference */): Boolean {
     contract {
         returns(true) implies (node is StringLiteralLike)
     }

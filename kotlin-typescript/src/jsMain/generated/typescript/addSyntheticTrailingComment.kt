@@ -6,7 +6,7 @@ package typescript
 
 external fun <T : Node> addSyntheticTrailingComment(
     node: T,
-    kind: Any?, /* SyntaxKind.SingleLineCommentTrivia | SyntaxKind.MultiLineCommentTrivia */
+    kind: Any, /* SyntaxKind.SingleLineCommentTrivia | SyntaxKind.MultiLineCommentTrivia */
     text: String,
     hasTrailingNewLine: Boolean = definedExternally,
 ): T

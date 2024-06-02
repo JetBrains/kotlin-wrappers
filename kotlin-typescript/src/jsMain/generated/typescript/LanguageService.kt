@@ -62,13 +62,13 @@ sealed external interface LanguageService {
         fileName: String,
         span: TextSpan,
         format: SemanticClassificationFormat,
-    ): Any? /* ClassifiedSpan[] | ClassifiedSpan2020[] */
+    ): Any /* ClassifiedSpan[] | ClassifiedSpan2020[] */
 
     fun getSemanticClassifications(
         fileName: String,
         span: TextSpan,
         format: SemanticClassificationFormat,
-    ): Any? /* ClassifiedSpan[] | ClassifiedSpan2020[] */
+    ): Any /* ClassifiedSpan[] | ClassifiedSpan2020[] */
 
     /** Encoded as triples of [start, length, ClassificationType]. */
     fun getEncodedSyntacticClassifications(
@@ -122,7 +122,7 @@ sealed external interface LanguageService {
         fileName: String,
         position: Int,
         entryName: String,
-        formatOptions: Any?, /* FormatCodeOptions | FormatCodeSettings */
+        formatOptions: Any /* FormatCodeOptions | FormatCodeSettings */?,
         source: String?,
         preferences: UserPreferences?,
         data: CompletionEntryData?,
@@ -233,7 +233,7 @@ sealed external interface LanguageService {
     fun prepareCallHierarchy(
         fileName: String,
         position: Int,
-    ): Any? /* CallHierarchyItem | CallHierarchyItem[] */
+    ): Any /* CallHierarchyItem | CallHierarchyItem[] */?
 
     fun provideCallHierarchyIncomingCalls(
         fileName: String,
@@ -265,26 +265,26 @@ sealed external interface LanguageService {
     fun getIndentationAtPosition(
         fileName: String,
         position: Int,
-        options: Any?, /* EditorOptions | EditorSettings */
+        options: Any, /* EditorOptions | EditorSettings */
     ): Int
 
     fun getFormattingEditsForRange(
         fileName: String,
         start: Int,
         end: Int,
-        options: Any?, /* FormatCodeOptions | FormatCodeSettings */
+        options: Any, /* FormatCodeOptions | FormatCodeSettings */
     ): ReadonlyArray<TextChange>
 
     fun getFormattingEditsForDocument(
         fileName: String,
-        options: Any?, /* FormatCodeOptions | FormatCodeSettings */
+        options: Any, /* FormatCodeOptions | FormatCodeSettings */
     ): ReadonlyArray<TextChange>
 
     fun getFormattingEditsAfterKeystroke(
         fileName: String,
         position: Int,
         key: String,
-        options: Any?, /* FormatCodeOptions | FormatCodeSettings */
+        options: Any, /* FormatCodeOptions | FormatCodeSettings */
     ): ReadonlyArray<TextChange>
 
     fun getDocCommentTemplateAtPosition(
@@ -352,9 +352,9 @@ sealed external interface LanguageService {
     ): Promise<ReadonlyArray<ApplyCodeActionCommandResult>>
 
     fun applyCodeActionCommand(
-        action: Any?, /* CodeActionCommand | CodeActionCommand[] */
+        action: Any, /* CodeActionCommand | CodeActionCommand[] */
         formatSettings: FormatCodeSettings = definedExternally,
-    ): Any? /* Promise<ApplyCodeActionCommandResult | ApplyCodeActionCommandResult[]> */
+    ): Any /* Promise<ApplyCodeActionCommandResult | ApplyCodeActionCommandResult[]> */
 
     /**
      * @param includeInteractiveActions Include refactor actions that require additional arguments to be
@@ -364,7 +364,7 @@ sealed external interface LanguageService {
      */
     fun getApplicableRefactors(
         fileName: String,
-        positionOrRange: Any?, /* number | TextRange */
+        positionOrRange: Any, /* number | TextRange */
         preferences: UserPreferences?,
         triggerReason: RefactorTriggerReason = definedExternally,
         kind: String = definedExternally,
@@ -374,7 +374,7 @@ sealed external interface LanguageService {
     fun getEditsForRefactor(
         fileName: String,
         formatOptions: FormatCodeSettings,
-        positionOrRange: Any?, /* number | TextRange */
+        positionOrRange: Any, /* number | TextRange */
         refactorName: String,
         actionName: String,
         preferences: UserPreferences?,
@@ -383,11 +383,11 @@ sealed external interface LanguageService {
 
     fun getMoveToRefactoringFileSuggestions(
         fileName: String,
-        positionOrRange: Any?, /* number | TextRange */
+        positionOrRange: Any, /* number | TextRange */
         preferences: UserPreferences?,
         triggerReason: RefactorTriggerReason = definedExternally,
         kind: String = definedExternally,
-    ): Any? /* { newFileName: string; files: string[]; } */
+    ): Any /* { newFileName: string; files: string[]; } */
 
     fun organizeImports(
         args: OrganizeImportsArgs,

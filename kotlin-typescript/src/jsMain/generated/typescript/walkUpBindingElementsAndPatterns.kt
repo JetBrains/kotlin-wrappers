@@ -4,4 +4,4 @@
 
 package typescript
 
-external fun walkUpBindingElementsAndPatterns(binding: BindingElement): Any? /* VariableDeclaration | ParameterDeclaration */
+external fun walkUpBindingElementsAndPatterns(binding: BindingElement): Any /* VariableDeclaration | ParameterDeclaration */

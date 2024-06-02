@@ -7,7 +7,7 @@ import js.array.ReadonlyArray
 sealed external interface CompilerHost : ModuleResolutionHost {
     fun getSourceFile(
         fileName: String,
-        languageVersionOrOptions: Any?, /* ScriptTarget | CreateSourceFileOptions */
+        languageVersionOrOptions: Any, /* ScriptTarget | CreateSourceFileOptions */
         onError: (message: String) -> Unit = definedExternally,
         shouldCreateNewSourceFile: Boolean = definedExternally,
     ): SourceFile?
@@ -15,7 +15,7 @@ sealed external interface CompilerHost : ModuleResolutionHost {
     val getSourceFileByPath: ((
         fileName: String,
         path: Path,
-        languageVersionOrOptions: Any?, /* ScriptTarget | CreateSourceFileOptions */
+        languageVersionOrOptions: Any, /* ScriptTarget | CreateSourceFileOptions */
         onError: ((message: String) -> Unit)?,
         shouldCreateNewSourceFile: Boolean?,
     ) -> SourceFile?)?
