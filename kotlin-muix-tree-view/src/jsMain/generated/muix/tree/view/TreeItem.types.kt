@@ -123,4 +123,6 @@ external interface TreeItemOwnerState {
     var selected: Boolean
 
     var disabled: Boolean
+
+    var indentationAtItemLevel: Boolean
 }
