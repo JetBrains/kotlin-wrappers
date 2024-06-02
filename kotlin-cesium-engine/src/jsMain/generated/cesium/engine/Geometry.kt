@@ -11,6 +11,7 @@ package cesium.engine
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
 import js.objects.jso
+import js.typedarrays.TypedArray
 
 /**
  * A geometry representation with attributes forming vertices and optional index data
@@ -54,7 +55,7 @@ external class Geometry(options: ConstructorOptions) {
     sealed interface ConstructorOptions {
         var attributes: GeometryAttributes
         var primitiveType: PrimitiveType?
-        var indices: Any /* Uint16Array | Uint32Array */?
+        var indices: TypedArray<*, *> /* Uint16Array | Uint32Array */?
         var boundingSphere: BoundingSphere?
     }
 

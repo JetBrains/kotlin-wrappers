@@ -22,7 +22,7 @@ abstract external class Spline {
      * An array of control points.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Spline.html#points">Online Documentation</a>
      */
-    abstract var points: Any /* Cartesian3[] | Quaternion[] */
+    abstract var points: ReadonlyArray<Any> /* Cartesian3[] | Quaternion[] */
 
     /**
      * Evaluates the curve at a given time.

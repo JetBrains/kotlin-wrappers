@@ -13,6 +13,7 @@ import js.core.Void
 import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
+import js.promise.PromiseResult
 import seskar.js.JsAsync
 
 /**
@@ -212,7 +213,7 @@ external class I3SDataProvider(options: ConstructorOptions) {
     sealed interface ConstructorOptions {
         var name: String?
         var show: Boolean?
-        var geoidTiledTerrainProvider: Any /* ArcGISTiledElevationTerrainProvider | Promise<ArcGISTiledElevationTerrainProvider> */?
+        var geoidTiledTerrainProvider: PromiseResult<ArcGISTiledElevationTerrainProvider>?
         var cesium3dTilesetOptions: Cesium3DTileset.ConstructorOptions?
         var showFeatures: Boolean?
         var adjustMaterialAlphaMode: Boolean?

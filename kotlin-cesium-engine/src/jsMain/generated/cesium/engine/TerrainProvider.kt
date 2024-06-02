@@ -10,6 +10,7 @@ package cesium.engine
 
 import js.core.Void
 import js.promise.Promise
+import js.typedarrays.TypedArray
 import seskar.js.JsAsync
 
 /**
@@ -148,7 +149,7 @@ abstract external class TerrainProvider {
         fun getRegularGridIndices(
             width: Double,
             height: Double,
-        ): Any /* Uint16Array | Uint32Array */
+        ): TypedArray<*, *> /* Uint16Array | Uint32Array */
 
         /**
          * Specifies the quality of terrain created from heightmaps.  A value of 1.0 will

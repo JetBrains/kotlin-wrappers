@@ -12,6 +12,7 @@ import js.array.ReadonlyArray
 import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
+import js.typedarrays.TypedArray
 import js.typedarrays.Uint8Array
 
 /**
@@ -89,7 +90,7 @@ external class HeightmapTerrainData(options: ConstructorOptions) : TerrainData {
      */
     @JsPlainObject
     sealed interface ConstructorOptions {
-        var buffer: Any /* Int8Array | Uint8Array | Int16Array | Uint16Array | Int32Array | Uint32Array | Float32Array | Float64Array */
+        var buffer: TypedArray<*, *> /* Int8Array | Uint8Array | Int16Array | Uint16Array | Int32Array | Uint32Array | Float32Array | Float64Array */
         var width: Double
         var height: Double
         var childTileMask: Int?

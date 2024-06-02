@@ -12,6 +12,7 @@ import js.array.ReadonlyArray
 import js.objects.JsPlainObject
 import js.objects.jso
 import js.promise.Promise
+import js.typedarrays.TypedArray
 import js.typedarrays.Uint16Array
 import js.typedarrays.Uint8Array
 
@@ -84,7 +85,7 @@ external class QuantizedMeshTerrainData(options: ConstructorOptions) : TerrainDa
     @JsPlainObject
     sealed interface ConstructorOptions {
         var quantizedVertices: Uint16Array
-        var indices: Any /* Uint16Array | Uint32Array */
+        var indices: TypedArray<*, *> /* Uint16Array | Uint32Array */
         var minimumHeight: Double
         var maximumHeight: Double
         var boundingSphere: BoundingSphere

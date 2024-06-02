@@ -9,7 +9,9 @@
 package cesium.engine
 
 import js.objects.JsPlainObject
+import js.promise.PromiseResult
 import web.html.HTMLCanvasElement
+import web.html.HTMLElement
 import web.html.HTMLImageElement
 
 /**
@@ -412,7 +414,7 @@ private constructor() {
         var position: Cartesian3
         var id: String?
         var show: Boolean?
-        var image: Any /* string | HTMLCanvasElement */?
+        var image: HTMLCanvasElement?
         var scale: Double?
         var pixelOffset: Cartesian2?
         var eyeOffset: Cartesian3?
@@ -439,4 +441,4 @@ private constructor() {
  * @param [id] The identifier of the image to load.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Billboard.html#.CreateImageCallback">Online Documentation</a>
  */
-typealias CreateImageCallback = (id: String) -> Any /* HTMLImageElement | HTMLCanvasElement | Promise<HTMLImageElement | HTMLCanvasElement> */
+typealias CreateImageCallback = (id: String) -> PromiseResult<HTMLElement /* HTMLImageElement | HTMLCanvasElement */>

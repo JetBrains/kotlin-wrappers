@@ -121,6 +121,6 @@ private constructor() {
     @JsPlainObject
     sealed interface AttributeFilter {
         var name: String
-        var values: Any /* string[] | number[] */
+        var values: ReadonlyArray<Comparable<*>> /* string[] | number[] */
     }
 }
