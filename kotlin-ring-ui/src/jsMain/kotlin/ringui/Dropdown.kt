@@ -16,7 +16,7 @@ external interface DropdownProps : PropsWithClassName {
      * Can be string, React element, or a function accepting an object with {active, pinned} properties and returning a React element
      * React element should render some interactive HTML element like `button` or `a`
      */
-    var anchor: dynamic //: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
+    var anchor: Any //: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
     var initShown: Boolean
     var activeClassName: String
     var clickMode: Boolean

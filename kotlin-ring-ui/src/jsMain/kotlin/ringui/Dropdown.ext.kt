@@ -4,7 +4,7 @@ import react.RBuilder
 import react.RHandler
 
 fun RBuilder.Dropdown(
-    anchor: dynamic,
+    anchor: Any,
     handler: RHandler<DropdownProps>,
 ) {
     Dropdown {

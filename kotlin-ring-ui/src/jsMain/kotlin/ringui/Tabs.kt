@@ -19,7 +19,7 @@ external interface TabsProps : PropsWithChildren, PropsWithClassName {
 external val Tabs: ComponentClass<TabsProps>
 
 external interface TabProps : PropsWithChildren, PropsWithClassName {
-    var title: dynamic // PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
+    var title: Any // PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
     var id: String
 }
 
