@@ -128,7 +128,7 @@ sealed external interface TypeChecker {
      * This is necessary as an identifier in short-hand property assignment can contains two meaning: property name and property value.
      */
     fun getShorthandAssignmentValueSymbol(location: Node?): Symbol?
-    fun getExportSpecifierLocalTargetSymbol(location: dynamic /* ExportSpecifier | Identifier */): Symbol?
+    fun getExportSpecifierLocalTargetSymbol(location: Any? /* ExportSpecifier | Identifier */): Symbol?
 
     /**
      * If a symbol is a local symbol with an associated exported symbol, returns the exported symbol.
@@ -196,9 +196,9 @@ sealed external interface TypeChecker {
     fun isArgumentsSymbol(symbol: Symbol): Boolean
     fun isUnknownSymbol(symbol: Symbol): Boolean
     fun getMergedSymbol(symbol: Symbol): Symbol
-    fun getConstantValue(node: dynamic /* EnumMember | PropertyAccessExpression | ElementAccessExpression */): dynamic /* string | number */
+    fun getConstantValue(node: Any? /* EnumMember | PropertyAccessExpression | ElementAccessExpression */): Any? /* string | number */
     fun isValidPropertyAccess(
-        node: dynamic, /* PropertyAccessExpression | QualifiedName | ImportTypeNode */
+        node: Any?, /* PropertyAccessExpression | QualifiedName | ImportTypeNode */
         propertyName: String,
     ): Boolean
 

@@ -11,5 +11,5 @@ sealed external interface ParsedTsconfig {
     /**
      * Note that the case of the config path has not yet been normalized, as no files have been imported into the project yet
      */
-    var extendedConfigPath: dynamic /* string | string[] */
+    var extendedConfigPath: Any? /* string | string[] */
 }

@@ -37,12 +37,12 @@ sealed external interface UserPreferences {
     val allowRenameOfImportPath: Boolean?
     val autoImportFileExcludePatterns: ReadonlyArray<String>?
     val preferTypeOnlyAutoImports: Boolean?
-    val organizeImportsIgnoreCase: dynamic /* "auto" | boolean */
-    val organizeImportsCollation: dynamic /* "ordinal" | "unicode" */
+    val organizeImportsIgnoreCase: Any? /* "auto" | boolean */
+    val organizeImportsCollation: Any? /* "ordinal" | "unicode" */
     val organizeImportsLocale: String?
     val organizeImportsNumericCollation: Boolean?
     val organizeImportsAccentCollation: Boolean?
-    val organizeImportsCaseFirst: dynamic /* "upper" | "lower" | false */
-    val organizeImportsTypeOrder: dynamic /* "first" | "last" | "inline" */
+    val organizeImportsCaseFirst: Any? /* "upper" | "lower" | false */
+    val organizeImportsTypeOrder: Any? /* "first" | "last" | "inline" */
     val excludeLibrarySymbolsInNavTo: Boolean?
 }

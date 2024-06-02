@@ -9,5 +9,5 @@ package typescript
  */
 external fun setConstantValue(
     node: AccessExpression,
-    value: dynamic, /* string | number */
+    value: Any?, /* string | number */
 ): AccessExpression

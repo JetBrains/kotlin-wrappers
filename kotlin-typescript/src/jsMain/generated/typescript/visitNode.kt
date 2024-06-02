@@ -25,7 +25,7 @@ external fun <TIn : Node?, TVisited : Node?, TOut : Node> visitNode(
     visitor: Visitor<TIn & Any, TVisited>,
     test: (node: Node) -> Boolean, /* node is TOut */
     lift: (node: ReadonlyArray<Node>) -> Node = definedExternally,
-): dynamic /* TOut | (TIn & undefined) | (TVisited & undefined) */
+): Any? /* TOut | (TIn & undefined) | (TVisited & undefined) */
 
 /**
  * Visits a Node using the supplied visitor, possibly returning a new Node in its place.
@@ -46,4 +46,4 @@ external fun <TIn : Node?, TVisited : Node?> visitNode(
     visitor: Visitor<TIn & Any, TVisited>,
     test: (node: Node) -> Boolean = definedExternally,
     lift: (node: ReadonlyArray<Node>) -> Node = definedExternally,
-): dynamic /* Node | (TIn & undefined) | (TVisited & undefined) */
+): Any? /* Node | (TIn & undefined) | (TVisited & undefined) */

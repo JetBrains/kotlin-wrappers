@@ -12,7 +12,7 @@ import js.array.ReadonlyArray
  */
 external fun validateLocaleAndSetLanguage(
     locale: String,
-    sys: dynamic,
+    sys: Any?,
     /* {
     getExecutingFilePath(): string;
     resolvePath(path: string): string;

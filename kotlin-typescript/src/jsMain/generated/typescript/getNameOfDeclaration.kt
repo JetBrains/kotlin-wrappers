@@ -4,4 +4,4 @@
 
 package typescript
 
-external fun getNameOfDeclaration(declaration: dynamic /* Declaration | Expression */): DeclarationName?
+external fun getNameOfDeclaration(declaration: Any? /* Declaration | Expression */): DeclarationName?

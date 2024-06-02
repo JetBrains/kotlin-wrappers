@@ -23,4 +23,4 @@ package typescript
  * function b(/** JSDoc will be returned for `c` */ c) {}
  * ```
  */
-external fun getJSDocCommentsAndTags(hostNode: Node): dynamic /* (JSDoc | JSDocTag)[] */
+external fun getJSDocCommentsAndTags(hostNode: Node): Any? /* (JSDoc | JSDocTag)[] */

@@ -4,4 +4,4 @@
 
 package typescript
 
-external fun hasRestParameter(s: dynamic /* SignatureDeclaration | JSDocSignature */): Boolean
+external fun hasRestParameter(s: Any? /* SignatureDeclaration | JSDocSignature */): Boolean
