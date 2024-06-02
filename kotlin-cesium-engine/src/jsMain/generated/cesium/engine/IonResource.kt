@@ -8,6 +8,7 @@ import js.array.ReadonlyArray
 import js.objects.JsPlainObject
 import js.promise.Promise
 import seskar.js.JsAsync
+import web.canvas.CanvasImageSource
 
 /**
  * A [Resource] instance that encapsulates Cesium ion asset access.
@@ -57,7 +58,11 @@ external class IonResource(
      * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/IonResource.html#fetchImage">Online Documentation</a>
      */
-    fun fetchImage(options: FetchImageOptions? = definedExternally): Any /* Promise<ImageBitmap | HTMLImageElement> | undefined */
+    @JsAsync(optional = true)
+    suspend fun fetchImage(options: FetchImageOptions? = definedExternally): CanvasImageSource?
+
+    @JsName("fetchImage")
+    fun fetchImageAsync(options: FetchImageOptions? = definedExternally): Promise<CanvasImageSource>?
 
     /**
      * @property [preferBlob] If true, we will load the image via a blob.

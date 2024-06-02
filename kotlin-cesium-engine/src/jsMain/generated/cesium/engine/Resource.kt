@@ -13,6 +13,7 @@ import js.objects.JsPlainObject
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.blob.Blob
+import web.canvas.CanvasImageSource
 import web.xml.XMLDocument
 
 /**
@@ -301,7 +302,11 @@ external class Resource(options: Any /* string | Resource.ConstructorOptions */)
      * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#fetchImage">Online Documentation</a>
      */
-    fun fetchImage(options: FetchImageOptions? = definedExternally): Any /* Promise<ImageBitmap | HTMLImageElement> | undefined */
+    @JsAsync(optional = true)
+    suspend fun fetchImage(options: FetchImageOptions? = definedExternally): CanvasImageSource?
+
+    @JsName("fetchImage")
+    fun fetchImageAsync(options: FetchImageOptions? = definedExternally): Promise<CanvasImageSource>?
 
     /**
      * @property [preferBlob] If true, we will load the image via a blob.
@@ -793,7 +798,11 @@ external class Resource(options: Any /* string | Resource.ConstructorOptions */)
          * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.fetchImage">Online Documentation</a>
          */
-        fun fetchImage(options: FetchImageOptions): Any /* Promise<ImageBitmap | HTMLImageElement> | undefined */
+        @JsAsync(optional = true)
+        suspend fun fetchImage(options: FetchImageOptions): CanvasImageSource?
+
+        @JsName("fetchImage")
+        fun fetchImageAsync(options: FetchImageOptions): Promise<CanvasImageSource>?
 
         /**
          * @property [url] The url of the resource.
