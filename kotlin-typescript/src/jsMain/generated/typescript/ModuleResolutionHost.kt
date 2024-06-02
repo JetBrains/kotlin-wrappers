@@ -17,5 +17,5 @@ sealed external interface ModuleResolutionHost {
     val realpath: ((path: String) -> String)?
     val getCurrentDirectory: (() -> String)?
     val getDirectories: ((path: String) -> ReadonlyArray<String>)?
-    var useCaseSensitiveFileNames: dynamic? /* boolean | (() => boolean) */?
+    var useCaseSensitiveFileNames: dynamic /* boolean | (() => boolean) */
 }
