@@ -59,6 +59,8 @@ protected constructor() :
 
     /**
      * Sets or retrieves the media type.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/media)
      */
     var media: String
 
