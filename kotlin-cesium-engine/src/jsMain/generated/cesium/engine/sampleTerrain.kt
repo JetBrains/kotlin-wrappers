@@ -42,7 +42,7 @@ import seskar.js.JsAsync
  * @param [terrainProvider] The terrain provider from which to query heights.
  * @param [level] The terrain level-of-detail from which to query terrain heights.
  * @param [positions] The positions to update with terrain heights.
- * @param [rejectOnTileFail] If true, for a failed terrain tile request the promise will be rejected. If false, returned heights will be undefined.
+ * @param [rejectOnTileFail] If true, for any failed terrain tile requests, the promise will be rejected. If false, returned heights will be undefined.
  *   Default value - `false`
  * @return A promise that resolves to the provided list of positions when terrain the query has completed.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#sampleTerrain">Online Documentation</a>

@@ -412,7 +412,7 @@ private constructor() {
     @JsPlainObject
     sealed interface ConstructorOptions {
         var position: Cartesian3
-        var id: String?
+        var id: Any?
         var show: Boolean?
         var image: HTMLCanvasElement?
         var scale: Double?
