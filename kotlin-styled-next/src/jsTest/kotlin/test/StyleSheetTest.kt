@@ -38,8 +38,8 @@ class StyleSheetTest : TestBase() {
     }
 
     @BeforeTest
-    override fun before() {
-        super.before()
+    override fun before() = runTest {
+        super.before().await()
         simpleStyleSheet = SimpleStyleSheet()
         staticStyleSheet = StaticStyleSheet()
         importStyleSheet = ImportStyleSheet()
