@@ -11,6 +11,8 @@ external interface InfiniteQueryObserverRefetchErrorResult<TData, TError>
     override val isLoading: False
     override val isLoadingError: False
     override val isRefetchError: True
+    override val isFetchNextPageError: False
+    override val isFetchPreviousPageError: False
     override val isSuccess: False
     override val status: QueryStatus /* 'error' */
 }

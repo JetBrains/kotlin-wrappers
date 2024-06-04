@@ -13,6 +13,8 @@ external interface InfiniteQueryObserverLoadingResult<TData, TError>
     override val isLoading: True
     override val isLoadingError: False
     override val isRefetchError: False
+    override val isFetchNextPageError: False
+    override val isFetchPreviousPageError: False
     override val isSuccess: False
     override val status: QueryStatus /* 'pending' */
 }

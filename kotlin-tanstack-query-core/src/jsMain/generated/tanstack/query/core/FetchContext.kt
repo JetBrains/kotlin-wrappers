@@ -7,7 +7,7 @@ import web.abort.AbortSignal
 
 external interface FetchContext<TQueryFnData, TError, TData, TQueryKey : QueryKey> {
     var fetchFn: () -> Promise<*>?
-    var fetchOptions: FetchOptions
+    var fetchOptions: FetchOptions<*>
     var signal: AbortSignal
     var options: QueryOptions<TQueryFnData, TError, TData, *, *>
     var queryKey: TQueryKey
