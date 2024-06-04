@@ -6,4 +6,5 @@ external interface DehydratedMutation {
     var mutationKey: MutationKey
     var state: MutationState<*, *, *, *>
     var meta: MutationMeta
+    var scope: MutationScope
 }

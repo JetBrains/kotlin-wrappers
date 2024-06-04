@@ -10,4 +10,6 @@ external interface Retryer<TData> {
     var `continue`: () -> Promise<Any?>
     var cancelRetry: () -> Unit
     var continueRetry: () -> Unit
+    var canStart: () -> Boolean
+    var start: () -> Promise<TData>
 }

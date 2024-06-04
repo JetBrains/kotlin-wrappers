@@ -14,7 +14,7 @@ open external class MutationObserver<TData, TError, TVariables, TContext>(
     protected open fun bindMethods()
     open fun setOptions(options: MutationObserverOptions<TData, TError, TVariables, TContext>)
     override fun onUnsubscribe()
-    open fun onMutationUpdate(action: Action_1<TData, TError, TVariables, TContext>)
+    open fun onMutationUpdate(action: Action<TData, TError, TVariables, TContext>)
     open fun getCurrentResult(): MutationObserverResult<TData, TError, TVariables, TContext>
     open fun reset()
     open fun mutate(

@@ -2,4 +2,4 @@
 
 package tanstack.query.core
 
-typealias QueryCacheListener = (event: QueryCacheNotifyEvent) -> Unit
+typealias MutationScope = Any

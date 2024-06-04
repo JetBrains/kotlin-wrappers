@@ -12,7 +12,7 @@ open external class InfiniteQueryObserver<TQueryFnData, TError, TData, TQueryDat
 ) : QueryObserver<TQueryFnData, TError, TData, InfiniteData<TQueryData, TPageParam>, TQueryKey> {
     open var subscribe: (listener: InfiniteQueryObserverListener<TData, TError>?) -> () -> Unit
     open var getCurrentResult: () -> InfiniteQueryObserverResult<TData, TError>
-    protected open var fetch: (fetchOptions: ObserverFetchOptions) -> Promise<InfiniteQueryObserverResult<TData, TError>>
+    protected open var fetch: (fetchOptions: ObserverFetchOptions<TData>) -> Promise<InfiniteQueryObserverResult<TData, TError>>
     override fun bindMethods()
     open fun setOptions(
         options: InfiniteQueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey, TPageParam>,

@@ -5,5 +5,5 @@ package tanstack.query.core
 external interface NotifyEventQueryUpdated : NotifyEvent {
     override var type: NotifyEventType /* 'updated' */
     var query: Query<*, *, *, *>
-    var action: Action<*, *>
+    var action: Action_1<*, *>
 }

@@ -17,4 +17,5 @@ external interface MutationOptions<TData, TError, TVariables, TContext> {
     var gcTime: JsDuration
     var _defaulted: Boolean
     var meta: MutationMeta
+    var scope: MutationScope
 }

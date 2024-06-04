@@ -14,18 +14,18 @@ import js.array.ReadonlyArray
 open external class QueriesObserver<TCombinedResult>(
     client: QueryClient,
     queries: ReadonlyArray<QueryObserverOptions<*, *, *, *, *, *>>,
-    options: QueriesObserverOptions<TCombinedResult> = definedExternally,
+    _options: QueriesObserverOptions<TCombinedResult> = definedExternally,
 ) : Subscribable<QueriesObserverListener> {
     override fun onSubscribe()
     override fun onUnsubscribe()
     open fun destroy()
     open fun setQueries(
         queries: ReadonlyArray<QueryObserverOptions<*, *, *, *, *, *>>,
-        options: QueriesObserverOptions<TCombinedResult> = definedExternally,
+        _options: QueriesObserverOptions<TCombinedResult> = definedExternally,
         notifyOptions: NotifyOptions = definedExternally,
     )
 
-    open fun getCurrentResult(): TCombinedResult
+    open fun getCurrentResult(): ReadonlyArray<QueryObserverResult<*, *>>
     open fun getQueries(): ReadonlyArray<Query<*, Error, *, QueryKey>>
     open fun getObservers(): ReadonlyArray<QueryObserver<*, Error, *, *, QueryKey>>
     open fun getOptimisticResult(
