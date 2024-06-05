@@ -51,14 +51,13 @@ private external interface Merger_5 {
 class JsContextFunctionTest {
     @Test
     fun adapter_0() {
-        val customMerge = JsContextFunction<Merger_0, String> {
-            "a = $a, b = $b"
-        }
-
         val merger: Merger_0 = jso {
             a = 13
             b = 42
-            mergeNative = customMerge
+        }
+
+        merger.mergeNative = JsContextFunction<Merger_0, String> {
+            "a = $a, b = $b"
         }
 
         assertEquals(
@@ -69,14 +68,13 @@ class JsContextFunctionTest {
 
     @Test
     fun adapter_1() {
-        val customMerge = JsContextFunction<Merger_1, String, String> { p1 ->
-            "a = $a, b = $b, p1 = $p1"
-        }
-
         val merger: Merger_1 = jso {
             a = 13
             b = 42
-            mergeNative = customMerge
+        }
+
+        merger.mergeNative = JsContextFunction { p1 ->
+            "a = $a, b = $b, p1 = $p1"
         }
 
         assertEquals(
@@ -87,14 +85,13 @@ class JsContextFunctionTest {
 
     @Test
     fun adapter_2() {
-        val customMerge = JsContextFunction<Merger_2, String, String, String> { p1, p2 ->
-            "a = $a, b = $b, p1 = $p1, p2 = $p2"
-        }
-
         val merger: Merger_2 = jso {
             a = 13
             b = 42
-            mergeNative = customMerge
+        }
+
+        merger.mergeNative = JsContextFunction { p1, p2 ->
+            "a = $a, b = $b, p1 = $p1, p2 = $p2"
         }
 
         assertEquals(
@@ -105,15 +102,13 @@ class JsContextFunctionTest {
 
     @Test
     fun adapter_5() {
-        val customMerge =
-            JsContextFunction<Merger_5, String, String, String, String, String, String> { p1, p2, p3, p4, p5 ->
-                "a = $a, b = $b, p1 = $p1, p2 = $p2, p3 = $p3, p4 = $p4, p5 = $p5"
-            }
-
         val merger: Merger_5 = jso {
             a = 13
             b = 42
-            mergeNative = customMerge
+        }
+
+        merger.mergeNative = JsContextFunction { p1, p2, p3, p4, p5 ->
+            "a = $a, b = $b, p1 = $p1, p2 = $p2, p3 = $p3, p4 = $p4, p5 = $p5"
         }
 
         assertEquals(
