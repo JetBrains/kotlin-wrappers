@@ -1,3 +1,7 @@
+## pre.755
+
+* `JsContextFunction` - function with `this` access
+
 ## pre.752
 
 * Auto cancellation support for suspend adapters (marked with `@JsAsync`)
