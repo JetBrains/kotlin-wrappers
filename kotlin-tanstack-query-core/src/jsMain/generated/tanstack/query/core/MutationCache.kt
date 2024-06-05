@@ -19,11 +19,11 @@ open external class MutationCache(config: MutationCacheConfig = definedExternall
     open fun add(mutation: Mutation<*, *, *, *>)
     open fun remove(mutation: Mutation<*, *, *, *>)
     open fun canRun(mutation: Mutation<*, *, *, *>): Boolean
-    open fun runNext(mutation: Mutation<*, *, *, *>): Promise<Any?>
+    open fun runNext(mutation: Mutation<*, *, *, *>): Promise<*>
     open fun clear()
     open fun getAll(): ReadonlyArray<Mutation<*, *, *, *>>
     open fun <TData, TError, TVariables, TContext> find(filters: MutationFilters): Mutation<TData, TError, TVariables, TContext>?
     open fun findAll(filters: MutationFilters = definedExternally): ReadonlyArray<Mutation<*, *, *, *>>
     open fun notify(event: MutationCacheNotifyEvent)
-    open fun resumePausedMutations(): Promise<Any?>
+    open fun resumePausedMutations(): Promise<*>
 }

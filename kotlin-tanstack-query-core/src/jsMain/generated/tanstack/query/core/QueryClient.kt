@@ -54,7 +54,7 @@ open external class QueryClient(config: QueryClientConfig = definedExternally) {
     open fun <TQueryFnData, TError, TData, TQueryKey : QueryKey> prefetchQuery(options: FetchQueryOptions<TQueryFnData, TError, TData, TQueryKey, *>): Promise<Unit>
     open fun <TQueryFnData, TError, TData, TQueryKey : QueryKey, TPageParam> fetchInfiniteQuery(options: FetchInfiniteQueryOptions<TQueryFnData, TError, TData, TQueryKey, TPageParam>): Promise<InfiniteData<TData, TPageParam>>
     open fun <TQueryFnData, TError, TData, TQueryKey : QueryKey, TPageParam> prefetchInfiniteQuery(options: FetchInfiniteQueryOptions<TQueryFnData, TError, TData, TQueryKey, TPageParam>): Promise<Unit>
-    open fun resumePausedMutations(): Promise<Any?>
+    open fun resumePausedMutations(): Promise<*>
     open fun getQueryCache(): QueryCache
     open fun getMutationCache(): MutationCache
     open fun getDefaultOptions(): DefaultOptions<*>

@@ -8,6 +8,6 @@ external interface DehydratedQuery {
     var queryHash: String
     var queryKey: QueryKey
     var state: QueryState<*, *>
-    var promise: Promise<Any?>
+    var promise: Promise<*>
     var meta: QueryMeta
 }
