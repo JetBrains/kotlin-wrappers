@@ -1,3 +1,5 @@
+import org.gradle.api.tasks.PathSensitivity.RELATIVE
+
 plugins {
     `kotlin-legacy-library-conventions`
 }
@@ -33,22 +35,27 @@ dependencies {
 }
 
 val printBenchmarkResults by tasks.registering {
-    doLast {
-        // implicit dependency to benchmark classes names
-        val fileNames = listOf(
-            "AddStyledElements",
-            "ConvertToStyled",
-            "CssBuildersInject",
-            "AddDuplicateCss",
-            "DataTypeOperations",
-            "InjectCssNPlusOne"
-        )
-        fileNames.forEach { test ->
-            val report = layout.buildDirectory
-                .file("reports/tests/test/classes/benchmark.$test.html")
-                .get().asFile.readText()
+    // implicit dependency to benchmark classes names
+    val fileNames = listOf(
+        "AddStyledElements",
+        "ConvertToStyled",
+        "CssBuildersInject",
+        "AddDuplicateCss",
+        "DataTypeOperations",
+        "InjectCssNPlusOne",
+    )
+    val reports = objects.fileCollection().from(fileNames.map { test ->
+        layout.buildDirectory.file("reports/tests/test/classes/benchmark.$test.html")
+    })
 
-            "#.*;".toRegex().findAll(report).map { it.value }.forEach { stdout ->
+    inputs.files(reports)
+        .withPropertyName("reports")
+        .withPathSensitivity(RELATIVE)
+
+    doLast {
+        reports.forEach { report ->
+            val reportText = report.readText()
+            "#.*;".toRegex().findAll(reportText).map { it.value }.forEach { stdout ->
                 val benchmarks = stdout.split(";").mapNotNull {
                     if (it.isEmpty()) {
                         null

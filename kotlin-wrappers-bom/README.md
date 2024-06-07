@@ -1,4 +1,4 @@
-## kotlin-wrappers-bom
+# Module kotlin-wrappers-bom
 
 Kotlin Wrappers Bill of Materials is a special artifact that groups dependency versions that are known to be valid and
 tested to work together.

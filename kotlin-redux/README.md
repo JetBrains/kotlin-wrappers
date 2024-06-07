@@ -1,6 +1,6 @@
 [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-redux)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-redux)
 
-## kotlin-redux
+# Module kotlin-redux
 
 Kotlin wrapper for the Redux library. The major version number of this wrapper matches that of Redux itself.
 

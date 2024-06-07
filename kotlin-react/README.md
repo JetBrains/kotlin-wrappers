@@ -1,6 +1,6 @@
 [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react)
 
-# kotlin-react
+# Module kotlin-react
 
 Kotlin wrapper for the React library. The major version number of this wrapper matches that of React itself.
 

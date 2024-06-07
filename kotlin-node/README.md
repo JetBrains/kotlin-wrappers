@@ -1,6 +1,6 @@
 [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-node)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-node)
 
-# kotlin-node
+# Module kotlin-node
 
 [Node.js](https://nodejs.org/) declarations
 

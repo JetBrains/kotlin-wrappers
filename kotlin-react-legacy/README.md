@@ -1,6 +1,6 @@
 [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-legacy)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-legacy)
 
-## kotlin-react-legacy
+# Module kotlin-react-legacy
 
 Kotlin wrapper for the React library. The major version number of this wrapper matches that of React itself.
 

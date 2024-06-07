@@ -1,6 +1,7 @@
 plugins {
     `java-platform`
     `publish-conventions`
+    id("dev.adamko.dokkatoo-html")
 }
 
 dependencies {
@@ -16,10 +17,10 @@ dependencies {
         api(projects.kotlinEmotion)
         api(projects.kotlinExtensions)
         api(projects.kotlinJs)
-        api(projects.kotlinMuiMaterial)
         api(projects.kotlinMuiBase)
         api(projects.kotlinMuiIconsMaterial)
         api(projects.kotlinMuiLab)
+        api(projects.kotlinMuiMaterial)
         api(projects.kotlinMuiSystem)
         api(projects.kotlinMuixDatePickers)
         api(projects.kotlinMuixTreeView)

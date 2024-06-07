@@ -1,6 +1,6 @@
 [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-actions-toolkit)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-actions-toolkit)
 
-# kotlin-actions-toolkit
+# Module kotlin-actions-toolkit
 
 [GitHub Actions Toolkit](https://github.com/actions/toolkit) declarations
 

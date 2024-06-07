@@ -29,4 +29,5 @@ dependencies {
         implementation("org.jetbrains.kotlin:js-plain-objects:$kotlinVersion")
     }
     implementation("io.github.turansky.seskar:seskar-gradle-plugin:$seskarVersion")
+    implementation("dev.adamko.dokkatoo:dokkatoo-plugin:2.3.1")
 }

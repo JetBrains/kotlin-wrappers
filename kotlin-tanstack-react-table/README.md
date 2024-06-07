@@ -1,6 +1,6 @@
 [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-tanstack-react-table)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-tanstack-react-table)
 
-# kotlin-tanstack-react-table
+# Module kotlin-tanstack-react-table
 
 Kotlin wrapper for the [Tanstack React Table](https://github.com/TanStack/table) library.
 

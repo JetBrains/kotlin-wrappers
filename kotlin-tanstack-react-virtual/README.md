@@ -1,6 +1,6 @@
 [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-tanstack-react-virtual)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-tanstack-react-virtual)
 
-# kotlin-tanstack-react-virtual
+# Module kotlin-tanstack-react-virtual
 
 Kotlin wrapper for the [Tanstack React Virtual](https://github.com/TanStack/virtual) library.
 

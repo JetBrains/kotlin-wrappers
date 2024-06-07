@@ -1,6 +1,4 @@
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-tanstack-table-core)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-tanstack-table-core)
-
-# kotlin-tanstack-table-core
+# Module kotlin-tanstack-table-core
 
 Kotlin wrapper for the [Tanstack Table Core](https://github.com/TanStack/table/tree/main/packages/table-core) library.
 
