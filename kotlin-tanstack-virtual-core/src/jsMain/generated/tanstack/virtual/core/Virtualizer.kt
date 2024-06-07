@@ -9,10 +9,12 @@ import js.array.ReadonlyArray
 import js.collections.ReadonlyMap
 import web.dom.Element
 import web.events.EventTarget
+import web.window.Window
 
 external class Virtualizer<TScrollElement : EventTarget /* Element | Window */, TItemElement : Element> {
     var options: VirtualizerOptions<TScrollElement, TItemElement>
     var scrollElement: TScrollElement?
+    var targetWindow: Window?
     var isScrolling: Boolean
     var measurementsCache: ReadonlyArray<VirtualItem>
     var scrollRect: Rect
