@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
 import seskar.js.JsAsync
 
@@ -364,8 +359,3 @@ external class ArcGisMapServerImageryProvider(options: ConstructorOptions? = def
         ): Promise<ArcGisMapServerImageryProvider>
     }
 }
-
-inline fun ArcGisMapServerImageryProvider(
-    block: ArcGisMapServerImageryProvider.ConstructorOptions.() -> Unit,
-): ArcGisMapServerImageryProvider =
-    ArcGisMapServerImageryProvider(options = jso(block))

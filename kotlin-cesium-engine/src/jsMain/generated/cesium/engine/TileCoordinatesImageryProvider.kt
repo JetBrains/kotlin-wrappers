@@ -2,16 +2,11 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.core.Void
 import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.html.HTMLCanvasElement
@@ -180,8 +175,3 @@ external class TileCoordinatesImageryProvider(options: ConstructorOptions? = def
         var tileHeight: Int?
     }
 }
-
-inline fun TileCoordinatesImageryProvider(
-    block: TileCoordinatesImageryProvider.ConstructorOptions.() -> Unit,
-): TileCoordinatesImageryProvider =
-    TileCoordinatesImageryProvider(options = jso(block))

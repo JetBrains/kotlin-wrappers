@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * A description of the outline of a a cartographic rectangle on an ellipsoid centered at the origin.
@@ -93,8 +88,3 @@ external class RectangleOutlineGeometry(options: ConstructorOptions) {
         fun createGeometry(rectangleGeometry: RectangleOutlineGeometry): Geometry?
     }
 }
-
-inline fun RectangleOutlineGeometry(
-    block: RectangleOutlineGeometry.ConstructorOptions.() -> Unit,
-): RectangleOutlineGeometry =
-    RectangleOutlineGeometry(options = jso(block))

@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 /**
@@ -55,8 +51,3 @@ external class Cesium3DTilesetGraphics {
      */
     fun merge(source: Cesium3DTilesetGraphics)
 }
-
-inline fun Cesium3DTilesetGraphics(
-    block: Cesium3DTilesetGraphics.() -> Unit,
-): Cesium3DTilesetGraphics =
-    Cesium3DTilesetGraphics().apply(block)

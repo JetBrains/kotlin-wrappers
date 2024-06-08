@@ -2,16 +2,11 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.core.Void
 import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
 import seskar.js.JsAsync
 
@@ -289,8 +284,3 @@ external class WebMapTileServiceImageryProvider(options: ConstructorOptions) {
         var subdomains: ReadonlyArray<String>?
     }
 }
-
-inline fun WebMapTileServiceImageryProvider(
-    block: WebMapTileServiceImageryProvider.ConstructorOptions.() -> Unit,
-): WebMapTileServiceImageryProvider =
-    WebMapTileServiceImageryProvider(options = jso(block))

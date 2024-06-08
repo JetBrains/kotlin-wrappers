@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
 import seskar.js.JsAsync
 
@@ -309,8 +304,3 @@ external class WebMapServiceImageryProvider(options: ConstructorOptions) {
         val GetFeatureInfoDefaultParameters: Any
     }
 }
-
-inline fun WebMapServiceImageryProvider(
-    block: WebMapServiceImageryProvider.ConstructorOptions.() -> Unit,
-): WebMapServiceImageryProvider =
-    WebMapServiceImageryProvider(options = jso(block))

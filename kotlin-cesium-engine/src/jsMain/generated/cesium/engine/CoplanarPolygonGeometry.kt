@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * A description of a polygon composed of arbitrary coplanar positions.
@@ -131,8 +126,3 @@ external class CoplanarPolygonGeometry(options: ConstructorOptions) {
         fun createGeometry(polygonGeometry: CoplanarPolygonGeometry): Geometry?
     }
 }
-
-inline fun CoplanarPolygonGeometry(
-    block: CoplanarPolygonGeometry.ConstructorOptions.() -> Unit,
-): CoplanarPolygonGeometry =
-    CoplanarPolygonGeometry(options = jso(block))

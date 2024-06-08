@@ -2,16 +2,11 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.core.Void
 import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
 import seskar.js.JsAsync
 
@@ -233,8 +228,3 @@ external class SingleTileImageryProvider(options: ConstructorOptions) {
         }
     }
 }
-
-inline fun SingleTileImageryProvider(
-    block: SingleTileImageryProvider.ConstructorOptions.() -> Unit,
-): SingleTileImageryProvider =
-    SingleTileImageryProvider(options = jso(block))

@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 /**
@@ -136,8 +132,3 @@ external class OrthographicOffCenterFrustum {
         absoluteEpsilon: Double? = definedExternally,
     ): Boolean
 }
-
-inline fun OrthographicOffCenterFrustum(
-    block: OrthographicOffCenterFrustum.() -> Unit,
-): OrthographicOffCenterFrustum =
-    OrthographicOffCenterFrustum().apply(block)

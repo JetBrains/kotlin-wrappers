@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 /**
@@ -67,8 +63,3 @@ external class CheckerboardMaterialProperty :
         result: Any?,
     ): Any
 }
-
-inline fun CheckerboardMaterialProperty(
-    block: CheckerboardMaterialProperty.() -> Unit,
-): CheckerboardMaterialProperty =
-    CheckerboardMaterialProperty().apply(block)

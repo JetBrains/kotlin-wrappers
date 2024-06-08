@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
@@ -198,8 +194,3 @@ external class PerspectiveFrustum {
         ): PerspectiveFrustum
     }
 }
-
-inline fun PerspectiveFrustum(
-    block: PerspectiveFrustum.() -> Unit,
-): PerspectiveFrustum =
-    PerspectiveFrustum().apply(block)

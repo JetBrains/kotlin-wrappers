@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * A description of a corridor. Corridor geometry can be rendered with both [Primitive] and [GroundPrimitive].
@@ -124,8 +119,3 @@ external class CorridorGeometry(options: ConstructorOptions) {
         fun createGeometry(corridorGeometry: CorridorGeometry): Geometry?
     }
 }
-
-inline fun CorridorGeometry(
-    block: CorridorGeometry.ConstructorOptions.() -> Unit,
-): CorridorGeometry =
-    CorridorGeometry(options = jso(block))

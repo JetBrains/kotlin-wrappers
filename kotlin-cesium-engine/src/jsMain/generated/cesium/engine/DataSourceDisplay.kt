@@ -10,7 +10,6 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * Visualizes a collection of [DataSource] instances.
@@ -113,8 +112,3 @@ external class DataSourceDisplay(options: ConstructorOptions) {
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DataSourceDisplay.html#.VisualizersCallback">Online Documentation</a>
  */
 typealias VisualizersCallback = (scene: Scene, entityCluster: EntityCluster, dataSource: DataSource) -> ReadonlyArray<Visualizer>
-
-inline fun DataSourceDisplay(
-    block: DataSourceDisplay.ConstructorOptions.() -> Unit,
-): DataSourceDisplay =
-    DataSourceDisplay(options = jso(block))

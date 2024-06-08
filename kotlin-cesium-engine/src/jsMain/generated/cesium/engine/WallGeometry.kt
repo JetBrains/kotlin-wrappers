@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * A description of a wall, which is similar to a KML line string. A wall is defined by a series of points,
@@ -142,8 +137,3 @@ external class WallGeometry(options: ConstructorOptions) {
         fun createGeometry(wallGeometry: WallGeometry): Geometry?
     }
 }
-
-inline fun WallGeometry(
-    block: WallGeometry.ConstructorOptions.() -> Unit,
-): WallGeometry =
-    WallGeometry(options = jso(block))

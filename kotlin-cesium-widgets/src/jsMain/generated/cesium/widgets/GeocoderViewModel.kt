@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/widgets")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.widgets
 
 import cesium.engine.DefaultEvent
@@ -13,7 +9,6 @@ import cesium.engine.GeocoderService
 import cesium.engine.Scene
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * The view model for the [Geocoder] widget.
@@ -127,8 +122,3 @@ external class GeocoderViewModel(options: ConstructorOptions) {
         var flyToDestination: DestinationFoundFunction
     }
 }
-
-inline fun GeocoderViewModel(
-    block: GeocoderViewModel.ConstructorOptions.() -> Unit,
-): GeocoderViewModel =
-    GeocoderViewModel(options = jso(block))

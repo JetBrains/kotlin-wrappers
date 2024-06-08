@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
@@ -279,8 +275,3 @@ external class Entity {
         fun supportsPolylinesOnTerrain(scene: Scene): Boolean
     }
 }
-
-inline fun Entity(
-    block: Entity.() -> Unit,
-): Entity =
-    Entity().apply(block)

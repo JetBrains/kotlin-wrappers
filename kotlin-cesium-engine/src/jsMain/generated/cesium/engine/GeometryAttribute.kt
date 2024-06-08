@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 /**
@@ -93,8 +89,3 @@ external class GeometryAttribute {
      */
     var values: Any /* number[] | Int8Array | Uint8Array | Int16Array | Uint16Array | Int32Array | Uint32Array | Float32Array | Float64Array */
 }
-
-inline fun GeometryAttribute(
-    block: GeometryAttribute.() -> Unit,
-): GeometryAttribute =
-    GeometryAttribute().apply(block)

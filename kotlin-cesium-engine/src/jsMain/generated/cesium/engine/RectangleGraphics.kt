@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 /**
@@ -149,8 +145,3 @@ external class RectangleGraphics {
      */
     fun merge(source: RectangleGraphics)
 }
-
-inline fun RectangleGraphics(
-    block: RectangleGraphics.() -> Unit,
-): RectangleGraphics =
-    RectangleGraphics().apply(block)

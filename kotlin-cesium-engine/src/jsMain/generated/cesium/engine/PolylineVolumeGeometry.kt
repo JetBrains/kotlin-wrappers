@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * A description of a polyline with a volume (a 2D shape extruded along a polyline).
@@ -104,8 +99,3 @@ external class PolylineVolumeGeometry(options: ConstructorOptions) {
         fun createGeometry(polylineVolumeGeometry: PolylineVolumeGeometry): Geometry?
     }
 }
-
-inline fun PolylineVolumeGeometry(
-    block: PolylineVolumeGeometry.ConstructorOptions.() -> Unit,
-): PolylineVolumeGeometry =
-    PolylineVolumeGeometry(options = jso(block))

@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 /**
@@ -189,8 +185,3 @@ external class LabelGraphics {
      */
     fun merge(source: LabelGraphics)
 }
-
-inline fun LabelGraphics(
-    block: LabelGraphics.() -> Unit,
-): LabelGraphics =
-    LabelGraphics().apply(block)

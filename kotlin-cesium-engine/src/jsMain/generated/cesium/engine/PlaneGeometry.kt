@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * Describes geometry representing a plane centered at the origin, with a unit width and length.
@@ -77,8 +72,3 @@ external class PlaneGeometry(options: ConstructorOptions? = definedExternally) {
         fun createGeometry(planeGeometry: PlaneGeometry): Geometry?
     }
 }
-
-inline fun PlaneGeometry(
-    block: PlaneGeometry.ConstructorOptions.() -> Unit,
-): PlaneGeometry =
-    PlaneGeometry(options = jso(block))

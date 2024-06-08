@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.core.Void
 import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
 
 /**
@@ -131,8 +126,3 @@ external class EllipsoidTerrainProvider(options: ConstructorOptions? = definedEx
         level: Int,
     ): Void
 }
-
-inline fun EllipsoidTerrainProvider(
-    block: EllipsoidTerrainProvider.ConstructorOptions.() -> Unit,
-): EllipsoidTerrainProvider =
-    EllipsoidTerrainProvider(options = jso(block))

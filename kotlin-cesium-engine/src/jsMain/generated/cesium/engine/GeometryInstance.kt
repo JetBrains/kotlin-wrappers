@@ -2,14 +2,9 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * Geometry instancing allows one [Geometry] object to be positions in several
@@ -89,8 +84,3 @@ external class GeometryInstance(options: ConstructorOptions) {
      */
     var attributes: Any
 }
-
-inline fun GeometryInstance(
-    block: GeometryInstance.ConstructorOptions.() -> Unit,
-): GeometryInstance =
-    GeometryInstance(options = jso(block))

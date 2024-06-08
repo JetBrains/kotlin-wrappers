@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import web.html.HTMLVideoElement
@@ -56,8 +52,3 @@ external class VideoSynchronizer {
      */
     fun isDestroyed(): Boolean
 }
-
-inline fun VideoSynchronizer(
-    block: VideoSynchronizer.() -> Unit,
-): VideoSynchronizer =
-    VideoSynchronizer().apply(block)

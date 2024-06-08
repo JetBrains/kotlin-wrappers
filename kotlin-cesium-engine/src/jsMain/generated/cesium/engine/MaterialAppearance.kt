@@ -2,14 +2,9 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * An appearance for arbitrary geometry (as opposed to [EllipsoidSurfaceAppearance], for example)
@@ -201,8 +196,3 @@ external class MaterialAppearance(options: ConstructorOptions? = definedExternal
     }
 
 }
-
-inline fun MaterialAppearance(
-    block: MaterialAppearance.ConstructorOptions.() -> Unit,
-): MaterialAppearance =
-    MaterialAppearance(options = jso(block))

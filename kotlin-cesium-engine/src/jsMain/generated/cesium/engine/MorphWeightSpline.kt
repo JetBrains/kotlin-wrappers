@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * A spline that linearly interpolates over an array of weight values used by morph targets.
@@ -78,8 +73,3 @@ external class MorphWeightSpline(options: ConstructorOptions) {
         result: ReadonlyArray<Double>? = definedExternally,
     ): ReadonlyArray<Double>
 }
-
-inline fun MorphWeightSpline(
-    block: MorphWeightSpline.ConstructorOptions.() -> Unit,
-): MorphWeightSpline =
-    MorphWeightSpline(options = jso(block))

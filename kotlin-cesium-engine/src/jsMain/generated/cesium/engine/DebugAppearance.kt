@@ -2,14 +2,9 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * Visualizes a vertex attribute by displaying it as a color for debugging.
@@ -123,8 +118,3 @@ external class DebugAppearance(options: ConstructorOptions) {
      */
     fun getRenderState(): Any
 }
-
-inline fun DebugAppearance(
-    block: DebugAppearance.ConstructorOptions.() -> Unit,
-): DebugAppearance =
-    DebugAppearance(options = jso(block))

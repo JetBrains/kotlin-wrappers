@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * Specifies a set of clipping planes. Clipping planes selectively disable rendering in a region on the
@@ -198,8 +193,3 @@ external class ClippingPlaneCollection(options: ConstructorOptions? = definedExt
      */
     fun destroy()
 }
-
-inline fun ClippingPlaneCollection(
-    block: ClippingPlaneCollection.ConstructorOptions.() -> Unit,
-): ClippingPlaneCollection =
-    ClippingPlaneCollection(options = jso(block))

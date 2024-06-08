@@ -2,14 +2,9 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * A renderable collection of labels.  Labels are viewport-aligned text positioned in the 3D scene.
@@ -232,8 +227,3 @@ external class LabelCollection(options: ConstructorOptions? = definedExternally)
      */
     fun destroy()
 }
-
-inline fun LabelCollection(
-    block: LabelCollection.ConstructorOptions.() -> Unit,
-): LabelCollection =
-    LabelCollection(options = jso(block))

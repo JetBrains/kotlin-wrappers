@@ -2,14 +2,9 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * An imagery provider that provides tiled imagery hosted by OpenStreetMap
@@ -54,8 +49,3 @@ external class OpenStreetMapImageryProvider(options: ConstructorOptions) {
         var credit: Credit?
     }
 }
-
-inline fun OpenStreetMapImageryProvider(
-    block: OpenStreetMapImageryProvider.ConstructorOptions.() -> Unit,
-): OpenStreetMapImageryProvider =
-    OpenStreetMapImageryProvider(options = jso(block))

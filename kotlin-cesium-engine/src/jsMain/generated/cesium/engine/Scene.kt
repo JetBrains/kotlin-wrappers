@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.dom.Element
@@ -998,8 +993,3 @@ external class Scene(options: ConstructorOptions) {
         var defaultLogDepthBuffer: Any
     }
 }
-
-inline fun Scene(
-    block: Scene.ConstructorOptions.() -> Unit,
-): Scene =
-    Scene(options = jso(block))

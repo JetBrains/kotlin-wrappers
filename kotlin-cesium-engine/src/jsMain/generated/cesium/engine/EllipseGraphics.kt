@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 /**
@@ -162,8 +158,3 @@ external class EllipseGraphics {
      */
     fun merge(source: EllipseGraphics)
 }
-
-inline fun EllipseGraphics(
-    block: EllipseGraphics.() -> Unit,
-): EllipseGraphics =
-    EllipseGraphics().apply(block)

@@ -11,7 +11,6 @@ package cesium.widgets
 import cesium.engine.*
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 import web.dom.Element
 
 /**
@@ -80,8 +79,3 @@ external class Geocoder(options: ConstructorOptions) {
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Geocoder.html#.DestinationFoundFunction">Online Documentation</a>
  */
 typealias DestinationFoundFunction = (viewModel: GeocoderViewModel, destination: Any /* Cartesian3 | Rectangle */) -> Unit
-
-inline fun Geocoder(
-    block: Geocoder.ConstructorOptions.() -> Unit,
-): Geocoder =
-    Geocoder(options = jso(block))

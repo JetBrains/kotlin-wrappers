@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 /**
@@ -73,8 +69,3 @@ external class ImageMaterialProperty :
         result: Any?,
     ): Any
 }
-
-inline fun ImageMaterialProperty(
-    block: ImageMaterialProperty.() -> Unit,
-): ImageMaterialProperty =
-    ImageMaterialProperty().apply(block)

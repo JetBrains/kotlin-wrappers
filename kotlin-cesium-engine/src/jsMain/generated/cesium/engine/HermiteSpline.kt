@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * A Hermite spline is a cubic interpolating spline. Points, incoming tangents, outgoing tangents, and times
@@ -239,8 +234,3 @@ external class HermiteSpline(options: ConstructorOptions) {
         }
     }
 }
-
-inline fun HermiteSpline(
-    block: HermiteSpline.ConstructorOptions.() -> Unit,
-): HermiteSpline =
-    HermiteSpline(options = jso(block))

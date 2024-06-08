@@ -2,14 +2,9 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * An appearance for geometry on the surface of the ellipsoid like [PolygonGeometry]
@@ -173,8 +168,3 @@ external class EllipsoidSurfaceAppearance(options: ConstructorOptions? = defined
         val VERTEX_FORMAT: VertexFormat
     }
 }
-
-inline fun EllipsoidSurfaceAppearance(
-    block: EllipsoidSurfaceAppearance.ConstructorOptions.() -> Unit,
-): EllipsoidSurfaceAppearance =
-    EllipsoidSurfaceAppearance(options = jso(block))

@@ -2,14 +2,9 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * Provides playback of time-dynamic point cloud data.
@@ -190,8 +185,3 @@ external class TimeDynamicPointCloud(options: ConstructorOptions) {
      */
     fun destroy()
 }
-
-inline fun TimeDynamicPointCloud(
-    block: TimeDynamicPointCloud.ConstructorOptions.() -> Unit,
-): TimeDynamicPointCloud =
-    TimeDynamicPointCloud(options = jso(block))

@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 /**
@@ -37,8 +33,3 @@ external class ParticleBurst {
      */
     var complete: Boolean
 }
-
-inline fun ParticleBurst(
-    block: ParticleBurst.() -> Unit,
-): ParticleBurst =
-    ParticleBurst().apply(block)

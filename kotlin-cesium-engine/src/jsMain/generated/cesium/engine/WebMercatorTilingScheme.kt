@@ -2,14 +2,9 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * A tiling scheme for geometry referenced to a [WebMercatorProjection], EPSG:3857.  This is
@@ -148,8 +143,3 @@ external class WebMercatorTilingScheme(options: ConstructorOptions? = definedExt
         result: Cartesian2?,
     ): Cartesian2
 }
-
-inline fun WebMercatorTilingScheme(
-    block: WebMercatorTilingScheme.ConstructorOptions.() -> Unit,
-): WebMercatorTilingScheme =
-    WebMercatorTilingScheme(options = jso(block))

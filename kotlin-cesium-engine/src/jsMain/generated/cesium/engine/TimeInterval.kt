@@ -266,8 +266,3 @@ typealias MergeCallback = (leftData: Any, rightData: Any) -> Any
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TimeInterval.html#.DataComparer">Online Documentation</a>
  */
 typealias DataComparer = (leftData: Any, rightData: Any) -> Boolean
-
-inline fun TimeInterval(
-    block: TimeInterval.() -> Unit,
-): TimeInterval =
-    TimeInterval().apply(block)

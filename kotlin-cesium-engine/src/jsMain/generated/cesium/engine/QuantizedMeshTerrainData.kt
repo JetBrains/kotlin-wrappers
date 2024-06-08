@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
 import js.typedarrays.TypedArray
 import js.typedarrays.Uint16Array
@@ -189,8 +184,3 @@ external class QuantizedMeshTerrainData(options: ConstructorOptions) : TerrainDa
      */
     override fun wasCreatedByUpsampling(): Boolean
 }
-
-inline fun QuantizedMeshTerrainData(
-    block: QuantizedMeshTerrainData.ConstructorOptions.() -> Unit,
-): QuantizedMeshTerrainData =
-    QuantizedMeshTerrainData(options = jso(block))

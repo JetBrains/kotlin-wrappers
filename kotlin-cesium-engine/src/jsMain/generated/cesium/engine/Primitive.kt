@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * A primitive represents geometry in the [Scene].  The geometry can be from a single [GeometryInstance]
@@ -329,8 +324,3 @@ external class Primitive(options: ConstructorOptions? = definedExternally) {
      */
     fun destroy()
 }
-
-inline fun Primitive(
-    block: Primitive.ConstructorOptions.() -> Unit,
-): Primitive =
-    Primitive(options = jso(block))

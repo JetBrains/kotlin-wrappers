@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 /**
@@ -174,8 +170,3 @@ external class CloudCollection {
      */
     fun destroy()
 }
-
-inline fun CloudCollection(
-    block: CloudCollection.() -> Unit,
-): CloudCollection =
-    CloudCollection().apply(block)

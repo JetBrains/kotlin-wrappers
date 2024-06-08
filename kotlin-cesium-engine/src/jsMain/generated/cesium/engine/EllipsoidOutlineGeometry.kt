@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * A description of the outline of an ellipsoid centered at the origin.
@@ -104,8 +99,3 @@ external class EllipsoidOutlineGeometry(options: ConstructorOptions? = definedEx
         fun createGeometry(ellipsoidGeometry: EllipsoidOutlineGeometry): Geometry?
     }
 }
-
-inline fun EllipsoidOutlineGeometry(
-    block: EllipsoidOutlineGeometry.ConstructorOptions.() -> Unit,
-): EllipsoidOutlineGeometry =
-    EllipsoidOutlineGeometry(options = jso(block))

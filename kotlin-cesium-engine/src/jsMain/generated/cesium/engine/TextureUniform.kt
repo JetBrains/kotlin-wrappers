@@ -2,14 +2,9 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.objects.JsPlainObject
-import js.objects.jso
 import js.typedarrays.Uint8Array
 
 /**
@@ -50,8 +45,3 @@ external class TextureUniform(options: ConstructorOptions) {
         var maximumAnisotropy: Double?
     }
 }
-
-inline fun TextureUniform(
-    block: TextureUniform.ConstructorOptions.() -> Unit,
-): TextureUniform =
-    TextureUniform(options = jso(block))

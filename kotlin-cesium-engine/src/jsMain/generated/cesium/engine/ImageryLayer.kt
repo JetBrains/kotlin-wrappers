@@ -10,7 +10,6 @@
 package cesium.engine
 
 import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
 
 /**
@@ -506,9 +505,3 @@ typealias ImageryLayerErrorEventCallback = (err: Error) -> Unit
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayer.html#.ImageryLayerReadyEventCallback">Online Documentation</a>
  */
 typealias ImageryLayerReadyEventCallback = (provider: ImageryProvider) -> Unit
-
-inline fun ImageryLayer(
-    imageryProvider: ImageryProvider,
-    block: ImageryLayer.ConstructorOptions.() -> Unit,
-): ImageryLayer =
-    ImageryLayer(imageryProvider, options = jso(block))

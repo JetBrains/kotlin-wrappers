@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * Draws the outline of the camera's view frustum.
@@ -80,8 +75,3 @@ external class DebugCameraPrimitive(options: ConstructorOptions) {
      */
     fun destroy()
 }
-
-inline fun DebugCameraPrimitive(
-    block: DebugCameraPrimitive.ConstructorOptions.() -> Unit,
-): DebugCameraPrimitive =
-    DebugCameraPrimitive(options = jso(block))

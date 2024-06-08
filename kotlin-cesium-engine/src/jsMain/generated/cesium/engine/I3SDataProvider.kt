@@ -2,16 +2,11 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.core.Void
 import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
 import js.promise.PromiseResult
 import seskar.js.JsAsync
@@ -266,8 +261,3 @@ external class I3SDataProvider(options: ConstructorOptions) {
         ): Promise<I3SDataProvider>
     }
 }
-
-inline fun I3SDataProvider(
-    block: I3SDataProvider.ConstructorOptions.() -> Unit,
-): I3SDataProvider =
-    I3SDataProvider(options = jso(block))

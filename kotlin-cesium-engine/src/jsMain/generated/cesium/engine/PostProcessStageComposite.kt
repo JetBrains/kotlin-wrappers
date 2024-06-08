@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * A collection of [PostProcessStage]s or other post-process composite stages that execute together logically.
@@ -159,8 +154,3 @@ external class PostProcessStageComposite(options: ConstructorOptions) {
      */
     fun destroy()
 }
-
-inline fun PostProcessStageComposite(
-    block: PostProcessStageComposite.ConstructorOptions.() -> Unit,
-): PostProcessStageComposite =
-    PostProcessStageComposite(options = jso(block))

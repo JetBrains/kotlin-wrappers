@@ -2,14 +2,9 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * A sky box around the scene to draw stars.  The sky box is defined using the True Equator Mean Equinox (TEME) axes.
@@ -91,8 +86,3 @@ external class SkyBox(options: ConstructorOptions) {
      */
     fun destroy()
 }
-
-inline fun SkyBox(
-    block: SkyBox.ConstructorOptions.() -> Unit,
-): SkyBox =
-    SkyBox(options = jso(block))

@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.core.Void
 import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
 import seskar.js.JsAsync
 
@@ -250,8 +245,3 @@ external class GroundPolylinePrimitive(options: ConstructorOptions? = definedExt
         fun isSupported(scene: Scene): Boolean
     }
 }
-
-inline fun GroundPolylinePrimitive(
-    block: GroundPolylinePrimitive.ConstructorOptions.() -> Unit,
-): GroundPolylinePrimitive =
-    GroundPolylinePrimitive(options = jso(block))

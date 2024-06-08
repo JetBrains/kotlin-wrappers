@@ -12,7 +12,6 @@ package cesium.widgets
 import cesium.engine.*
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.dom.Element
@@ -948,9 +947,3 @@ external class Viewer(
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Viewer.html#.ViewerMixin">Online Documentation</a>
  */
 typealias ViewerMixin = (viewer: Viewer, options: Any) -> Unit
-
-inline fun Viewer(
-    container: Element,
-    block: Viewer.ConstructorOptions.() -> Unit,
-): Viewer =
-    Viewer(container, options = jso(block))

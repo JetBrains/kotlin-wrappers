@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * A spline that uses spherical linear (slerp) interpolation to create a quaternion curve.
@@ -78,8 +73,3 @@ external class QuaternionSpline(options: ConstructorOptions) {
         result: Quaternion? = definedExternally,
     ): Quaternion
 }
-
-inline fun QuaternionSpline(
-    block: QuaternionSpline.ConstructorOptions.() -> Unit,
-): QuaternionSpline =
-    QuaternionSpline(options = jso(block))

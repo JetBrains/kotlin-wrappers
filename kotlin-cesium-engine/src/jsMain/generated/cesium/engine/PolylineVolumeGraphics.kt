@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 /**
@@ -111,8 +107,3 @@ external class PolylineVolumeGraphics {
      */
     fun merge(source: PolylineVolumeGraphics)
 }
-
-inline fun PolylineVolumeGraphics(
-    block: PolylineVolumeGraphics.() -> Unit,
-): PolylineVolumeGraphics =
-    PolylineVolumeGraphics().apply(block)

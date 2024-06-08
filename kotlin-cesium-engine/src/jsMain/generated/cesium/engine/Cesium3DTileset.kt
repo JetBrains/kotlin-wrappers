@@ -9,7 +9,6 @@
 package cesium.engine
 
 import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
 import seskar.js.JsAsync
 
@@ -1235,8 +1234,3 @@ external class Cesium3DTileset(options: ConstructorOptions) {
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#.foveatedInterpolationCallback">Online Documentation</a>
  */
 typealias FoveatedInterpolationCallback = (p: Double, q: Double, time: Double) -> Double
-
-inline fun Cesium3DTileset(
-    block: Cesium3DTileset.ConstructorOptions.() -> Unit,
-): Cesium3DTileset =
-    Cesium3DTileset(options = jso(block))

@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.objects.JsPlainObject
 import js.objects.ReadonlyRecord
-import js.objects.jso
 
 /**
  * A metadata class.
@@ -73,8 +68,3 @@ external class MetadataClass(options: ConstructorOptions) {
      */
     val extensions: Any
 }
-
-inline fun MetadataClass(
-    block: MetadataClass.ConstructorOptions.() -> Unit,
-): MetadataClass =
-    MetadataClass(options = jso(block))

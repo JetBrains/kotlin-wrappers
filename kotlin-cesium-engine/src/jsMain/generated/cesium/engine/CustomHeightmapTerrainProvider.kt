@@ -10,7 +10,6 @@ package cesium.engine
 
 import js.core.Void
 import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
 
 /**
@@ -174,8 +173,3 @@ external class CustomHeightmapTerrainProvider(options: ConstructorOptions) : Ter
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CustomHeightmapTerrainProvider.html#.GeometryCallback">Online Documentation</a>
  */
 typealias GeometryCallback = (x: Double, y: Double, level: Double) -> Any /* Int8Array | Uint8Array | Int16Array | Uint16Array | Int32Array | Uint32Array | Float32Array | Float64Array | number[] | Promise<Int8Array | Uint8Array | Int16Array | Uint16Array | Int32Array | Uint32Array | Float32Array | Float64Array | number[]> | undefined */
-
-inline fun CustomHeightmapTerrainProvider(
-    block: CustomHeightmapTerrainProvider.ConstructorOptions.() -> Unit,
-): CustomHeightmapTerrainProvider =
-    CustomHeightmapTerrainProvider(options = jso(block))

@@ -2,14 +2,9 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * A particle emitted by a [ParticleSystem].
@@ -123,8 +118,3 @@ external class Particle(options: ConstructorOptions) {
      */
     var normalizedAge: Double
 }
-
-inline fun Particle(
-    block: Particle.ConstructorOptions.() -> Unit,
-): Particle =
-    Particle(options = jso(block))

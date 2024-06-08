@@ -2,14 +2,9 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * A classification primitive represents a volume enclosing geometry in the [Scene] to be highlighted.
@@ -217,8 +212,3 @@ external class ClassificationPrimitive(options: ConstructorOptions? = definedExt
         fun isSupported(scene: Scene): Boolean
     }
 }
-
-inline fun ClassificationPrimitive(
-    block: ClassificationPrimitive.ConstructorOptions.() -> Unit,
-): ClassificationPrimitive =
-    ClassificationPrimitive(options = jso(block))

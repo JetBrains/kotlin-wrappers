@@ -3,14 +3,12 @@
 @file:JsModule("@cesium/engine")
 
 @file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
     "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
 )
 
 package cesium.engine
 
 import js.objects.JsPlainObject
-import js.objects.jso
 import web.dom.Element
 import web.html.HTMLCanvasElement
 
@@ -276,9 +274,3 @@ external class CesiumWidget(
      */
     fun render()
 }
-
-inline fun CesiumWidget(
-    container: Element,
-    block: CesiumWidget.ConstructorOptions.() -> Unit,
-): CesiumWidget =
-    CesiumWidget(container, options = jso(block))

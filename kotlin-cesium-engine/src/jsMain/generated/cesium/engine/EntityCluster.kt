@@ -97,8 +97,3 @@ typealias newClusterCallback = (
         point: PointPrimitive;
     } */
 ) -> Unit
-
-inline fun EntityCluster(
-    block: EntityCluster.() -> Unit,
-): EntityCluster =
-    EntityCluster().apply(block)

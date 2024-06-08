@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 /**
@@ -83,8 +79,3 @@ external class PointCloudShading {
         fun isSupported(scene: Scene): Boolean
     }
 }
-
-inline fun PointCloudShading(
-    block: PointCloudShading.() -> Unit,
-): PointCloudShading =
-    PointCloudShading().apply(block)

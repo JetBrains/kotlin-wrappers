@@ -2,14 +2,9 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * An appearance for [GeometryInstance] instances with color attributes.
@@ -197,8 +192,3 @@ external class PerInstanceColorAppearance(options: ConstructorOptions? = defined
         val FLAT_VERTEX_FORMAT: VertexFormat
     }
 }
-
-inline fun PerInstanceColorAppearance(
-    block: PerInstanceColorAppearance.ConstructorOptions.() -> Unit,
-): PerInstanceColorAppearance =
-    PerInstanceColorAppearance(options = jso(block))

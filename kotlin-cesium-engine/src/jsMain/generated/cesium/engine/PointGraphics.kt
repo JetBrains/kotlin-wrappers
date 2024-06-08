@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 /**
@@ -101,8 +97,3 @@ external class PointGraphics {
      */
     fun merge(source: PointGraphics)
 }
-
-inline fun PointGraphics(
-    block: PointGraphics.() -> Unit,
-): PointGraphics =
-    PointGraphics().apply(block)

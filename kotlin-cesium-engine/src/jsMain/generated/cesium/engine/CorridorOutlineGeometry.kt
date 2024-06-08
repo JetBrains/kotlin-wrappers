@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * A description of a corridor outline.
@@ -93,8 +88,3 @@ external class CorridorOutlineGeometry(options: ConstructorOptions) {
         fun createGeometry(corridorOutlineGeometry: CorridorOutlineGeometry): Geometry?
     }
 }
-
-inline fun CorridorOutlineGeometry(
-    block: CorridorOutlineGeometry.ConstructorOptions.() -> Unit,
-): CorridorOutlineGeometry =
-    CorridorOutlineGeometry(options = jso(block))

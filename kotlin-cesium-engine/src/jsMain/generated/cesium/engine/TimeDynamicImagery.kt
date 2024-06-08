@@ -2,14 +2,9 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.html.HTMLImageElement
@@ -93,8 +88,3 @@ external class TimeDynamicImagery(options: ConstructorOptions) {
         request: Request? = definedExternally,
     )
 }
-
-inline fun TimeDynamicImagery(
-    block: TimeDynamicImagery.ConstructorOptions.() -> Unit,
-): TimeDynamicImagery =
-    TimeDynamicImagery(options = jso(block))

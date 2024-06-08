@@ -2,14 +2,9 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * A Material defines surface appearance through a combination of diffuse, specular,
@@ -301,8 +296,3 @@ external class Material(options: ConstructorOptions? = definedExternally) {
         val ElevationBandType: String
     }
 }
-
-inline fun Material(
-    block: Material.ConstructorOptions.() -> Unit,
-): Material =
-    Material(options = jso(block))

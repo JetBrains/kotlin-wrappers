@@ -2,14 +2,9 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * Draws the Moon in 3D.
@@ -85,8 +80,3 @@ external class Moon(options: ConstructorOptions? = definedExternally) {
      */
     fun destroy()
 }
-
-inline fun Moon(
-    block: Moon.ConstructorOptions.() -> Unit,
-): Moon =
-    Moon(options = jso(block))

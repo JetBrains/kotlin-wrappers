@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * A description of the outline of a polygon on the ellipsoid. The polygon is defined by a polygon hierarchy.
@@ -202,8 +197,3 @@ external class PolygonOutlineGeometry(options: ConstructorOptions) {
         fun createGeometry(polygonGeometry: PolygonOutlineGeometry): Geometry?
     }
 }
-
-inline fun PolygonOutlineGeometry(
-    block: PolygonOutlineGeometry.ConstructorOptions.() -> Unit,
-): PolygonOutlineGeometry =
-    PolygonOutlineGeometry(options = jso(block))

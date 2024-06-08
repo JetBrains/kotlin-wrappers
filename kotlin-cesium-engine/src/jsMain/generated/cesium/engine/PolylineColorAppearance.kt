@@ -2,14 +2,9 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * An appearance for [GeometryInstance] instances with color attributes and
@@ -138,8 +133,3 @@ external class PolylineColorAppearance(options: ConstructorOptions? = definedExt
         val VERTEX_FORMAT: VertexFormat
     }
 }
-
-inline fun PolylineColorAppearance(
-    block: PolylineColorAppearance.ConstructorOptions.() -> Unit,
-): PolylineColorAppearance =
-    PolylineColorAppearance(options = jso(block))

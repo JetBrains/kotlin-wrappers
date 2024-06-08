@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.core.Void
 import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
 import seskar.js.JsAsync
 
@@ -287,8 +282,3 @@ external class GroundPrimitive(options: ConstructorOptions? = definedExternally)
         fun supportsMaterials(scene: Scene): Boolean
     }
 }
-
-inline fun GroundPrimitive(
-    block: GroundPrimitive.ConstructorOptions.() -> Unit,
-): GroundPrimitive =
-    GroundPrimitive(options = jso(block))

@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * A description of a circle on the ellipsoid. Circle geometry can be rendered with both [Primitive] and [GroundPrimitive].
@@ -99,8 +94,3 @@ external class CircleGeometry(options: ConstructorOptions) {
         fun createGeometry(circleGeometry: CircleGeometry): Geometry?
     }
 }
-
-inline fun CircleGeometry(
-    block: CircleGeometry.ConstructorOptions.() -> Unit,
-): CircleGeometry =
-    CircleGeometry(options = jso(block))

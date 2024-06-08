@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * Describes a cube centered at the origin.
@@ -125,8 +120,3 @@ external class BoxGeometry(options: ConstructorOptions) {
         fun createGeometry(boxGeometry: BoxGeometry): Geometry?
     }
 }
-
-inline fun BoxGeometry(
-    block: BoxGeometry.ConstructorOptions.() -> Unit,
-): BoxGeometry =
-    BoxGeometry(options = jso(block))

@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
 import seskar.js.JsAsync
 
@@ -58,8 +53,3 @@ external class IonGeocoderService(options: ConstructorOptions) {
         type: GeocodeType? = definedExternally,
     ): Promise<ReadonlyArray<GeocoderService.Result>>
 }
-
-inline fun IonGeocoderService(
-    block: IonGeocoderService.ConstructorOptions.() -> Unit,
-): IonGeocoderService =
-    IonGeocoderService(options = jso(block))

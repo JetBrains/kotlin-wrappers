@@ -2,14 +2,9 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * A tiling scheme for geometry referenced to a simple [GeographicProjection] where
@@ -142,8 +137,3 @@ external class GeographicTilingScheme(options: ConstructorOptions? = definedExte
         result: Cartesian2?,
     ): Cartesian2
 }
-
-inline fun GeographicTilingScheme(
-    block: GeographicTilingScheme.ConstructorOptions.() -> Unit,
-): GeographicTilingScheme =
-    GeographicTilingScheme(options = jso(block))

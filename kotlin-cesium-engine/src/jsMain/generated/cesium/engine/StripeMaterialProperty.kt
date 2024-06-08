@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 /**
@@ -82,8 +78,3 @@ external class StripeMaterialProperty :
         result: Any?,
     ): Any
 }
-
-inline fun StripeMaterialProperty(
-    block: StripeMaterialProperty.() -> Unit,
-): StripeMaterialProperty =
-    StripeMaterialProperty().apply(block)

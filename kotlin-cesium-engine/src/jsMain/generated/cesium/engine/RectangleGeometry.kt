@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * A description of a cartographic rectangle on an ellipsoid centered at the origin. Rectangle geometry can be rendered with both [Primitive] and [GroundPrimitive].
@@ -137,8 +132,3 @@ external class RectangleGeometry(options: ConstructorOptions) {
         fun createGeometry(rectangleGeometry: RectangleGeometry): Geometry?
     }
 }
-
-inline fun RectangleGeometry(
-    block: RectangleGeometry.ConstructorOptions.() -> Unit,
-): RectangleGeometry =
-    RectangleGeometry(options = jso(block))

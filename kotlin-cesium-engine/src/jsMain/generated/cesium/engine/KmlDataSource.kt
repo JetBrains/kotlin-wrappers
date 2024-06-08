@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.blob.Blob
@@ -307,8 +302,3 @@ external class KmlDataSource(options: ConstructorOptions? = definedExternally) {
         }
     }
 }
-
-inline fun KmlDataSource(
-    block: KmlDataSource.ConstructorOptions.() -> Unit,
-): KmlDataSource =
-    KmlDataSource(options = jso(block))

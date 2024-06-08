@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 import js.typedarrays.TypedArray
 
 /**
@@ -128,8 +123,3 @@ external class Geometry(options: ConstructorOptions) {
         fun computeNumberOfVertices(geometry: Geometry): Int
     }
 }
-
-inline fun Geometry(
-    block: Geometry.ConstructorOptions.() -> Unit,
-): Geometry =
-    Geometry(options = jso(block))

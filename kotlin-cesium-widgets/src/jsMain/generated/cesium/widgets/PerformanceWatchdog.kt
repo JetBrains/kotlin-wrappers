@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/widgets")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.widgets
 
 import cesium.engine.Scene
 import js.objects.JsPlainObject
-import js.objects.jso
 import web.dom.Element
 
 /**
@@ -58,8 +53,3 @@ external class PerformanceWatchdog(options: ConstructorOptions? = definedExterna
      */
     fun destroy()
 }
-
-inline fun PerformanceWatchdog(
-    block: PerformanceWatchdog.ConstructorOptions.() -> Unit,
-): PerformanceWatchdog =
-    PerformanceWatchdog(options = jso(block))

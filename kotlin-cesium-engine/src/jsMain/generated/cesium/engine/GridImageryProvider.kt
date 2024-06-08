@@ -2,16 +2,11 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.core.Void
 import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.html.HTMLCanvasElement
@@ -206,8 +201,3 @@ external class GridImageryProvider(options: ConstructorOptions) {
         var canvasSize: Int?
     }
 }
-
-inline fun GridImageryProvider(
-    block: GridImageryProvider.ConstructorOptions.() -> Unit,
-): GridImageryProvider =
-    GridImageryProvider(options = jso(block))

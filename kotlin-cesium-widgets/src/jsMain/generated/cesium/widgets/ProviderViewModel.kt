@@ -9,7 +9,6 @@
 package cesium.widgets
 
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * A view model that represents each item in the [BaseLayerPicker].
@@ -74,8 +73,3 @@ external class ProviderViewModel(options: ConstructorOptions) {
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ProviderViewModel.html#.CreationFunction">Online Documentation</a>
  */
 typealias CreationFunction = () -> Any /* ImageryProvider | TerrainProvider | ImageryProvider[] | TerrainProvider[] | Promise<TerrainProvider> | Promise<ImageryProvider> | Promise<TerrainProvider[]> | Promise<ImageryProvider[]> */
-
-inline fun ProviderViewModel(
-    block: ProviderViewModel.ConstructorOptions.() -> Unit,
-): ProviderViewModel =
-    ProviderViewModel(options = jso(block))

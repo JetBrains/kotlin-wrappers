@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.objects.JsPlainObject
 import js.objects.ReadonlyRecord
-import js.objects.jso
 
 /**
  * A schema containing classes and enums.
@@ -89,8 +84,3 @@ external class MetadataSchema(options: ConstructorOptions) {
      */
     val extensions: Any
 }
-
-inline fun MetadataSchema(
-    block: MetadataSchema.ConstructorOptions.() -> Unit,
-): MetadataSchema =
-    MetadataSchema(options = jso(block))

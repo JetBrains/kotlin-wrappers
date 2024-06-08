@@ -2,14 +2,9 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * A renderable collection of billboards.  Billboards are viewport-aligned
@@ -249,8 +244,3 @@ external class BillboardCollection(options: ConstructorOptions? = definedExterna
      */
     fun destroy()
 }
-
-inline fun BillboardCollection(
-    block: BillboardCollection.ConstructorOptions.() -> Unit,
-): BillboardCollection =
-    BillboardCollection(options = jso(block))

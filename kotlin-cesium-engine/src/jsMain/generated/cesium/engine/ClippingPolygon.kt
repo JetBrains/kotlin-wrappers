@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * A geodesic polygon to be used with [ClippingPlaneCollection] for selectively hiding regions in a model, a 3D tileset, or the globe.
@@ -97,8 +92,3 @@ external class ClippingPolygon(options: ConstructorOptions) {
         ): Boolean
     }
 }
-
-inline fun ClippingPolygon(
-    block: ClippingPolygon.ConstructorOptions.() -> Unit,
-): ClippingPolygon =
-    ClippingPolygon(options = jso(block))

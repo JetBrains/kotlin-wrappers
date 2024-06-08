@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
 import seskar.js.JsAsync
 
@@ -220,8 +215,3 @@ external class MapboxStyleImageryProvider(options: ConstructorOptions) {
         var credit: Credit?
     }
 }
-
-inline fun MapboxStyleImageryProvider(
-    block: MapboxStyleImageryProvider.ConstructorOptions.() -> Unit,
-): MapboxStyleImageryProvider =
-    MapboxStyleImageryProvider(options = jso(block))

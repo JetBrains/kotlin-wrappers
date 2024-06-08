@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * Values and type information for per-instance geometry attributes.
@@ -110,8 +105,3 @@ external class GeometryInstanceAttribute(options: ConstructorOptions) {
      */
     var value: ReadonlyArray<Double>
 }
-
-inline fun GeometryInstanceAttribute(
-    block: GeometryInstanceAttribute.ConstructorOptions.() -> Unit,
-): GeometryInstanceAttribute =
-    GeometryInstanceAttribute(options = jso(block))

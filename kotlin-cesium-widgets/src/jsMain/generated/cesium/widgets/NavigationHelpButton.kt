@@ -2,14 +2,9 @@
 
 @file:JsModule("@cesium/widgets")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.widgets
 
 import js.objects.JsPlainObject
-import js.objects.jso
 import web.dom.Element
 
 /**
@@ -62,8 +57,3 @@ external class NavigationHelpButton(options: ConstructorOptions) {
      */
     fun destroy()
 }
-
-inline fun NavigationHelpButton(
-    block: NavigationHelpButton.ConstructorOptions.() -> Unit,
-): NavigationHelpButton =
-    NavigationHelpButton(options = jso(block))

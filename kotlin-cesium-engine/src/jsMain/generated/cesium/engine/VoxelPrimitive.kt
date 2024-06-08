@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * A primitive that renders voxel data from a [VoxelProvider].
@@ -210,8 +205,3 @@ external class VoxelPrimitive(options: ConstructorOptions? = definedExternally) 
      */
     fun destroy()
 }
-
-inline fun VoxelPrimitive(
-    block: VoxelPrimitive.ConstructorOptions.() -> Unit,
-): VoxelPrimitive =
-    VoxelPrimitive(options = jso(block))

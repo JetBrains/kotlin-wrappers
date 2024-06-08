@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 /**
@@ -123,8 +119,3 @@ external class CylinderGraphics {
      */
     fun merge(source: CylinderGraphics)
 }
-
-inline fun CylinderGraphics(
-    block: CylinderGraphics.() -> Unit,
-): CylinderGraphics =
-    CylinderGraphics().apply(block)

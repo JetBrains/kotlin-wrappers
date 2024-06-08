@@ -2,14 +2,9 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * An appearance defines the full GLSL vertex and fragment shaders and the
@@ -102,8 +97,3 @@ external class Appearance(options: ConstructorOptions? = definedExternally) {
      */
     fun getRenderState(): Any
 }
-
-inline fun Appearance(
-    block: Appearance.ConstructorOptions.() -> Unit,
-): Appearance =
-    Appearance(options = jso(block))

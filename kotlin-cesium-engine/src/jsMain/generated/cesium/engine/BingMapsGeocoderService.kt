@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
 import seskar.js.JsAsync
 
@@ -58,8 +53,3 @@ external class BingMapsGeocoderService(options: ConstructorOptions) {
     @JsName("geocode")
     fun geocodeAsync(query: String): Promise<ReadonlyArray<GeocoderService.Result>>
 }
-
-inline fun BingMapsGeocoderService(
-    block: BingMapsGeocoderService.ConstructorOptions.() -> Unit,
-): BingMapsGeocoderService =
-    BingMapsGeocoderService(options = jso(block))

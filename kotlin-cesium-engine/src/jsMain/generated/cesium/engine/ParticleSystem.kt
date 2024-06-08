@@ -10,7 +10,6 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * A ParticleSystem manages the updating and display of a collection of particles.
@@ -282,8 +281,3 @@ external class ParticleSystem(options: ConstructorOptions? = definedExternally) 
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ParticleSystem.html#.updateCallback">Online Documentation</a>
  */
 typealias UpdateCallback = (particle: Particle, dt: Double) -> Unit
-
-inline fun ParticleSystem(
-    block: ParticleSystem.ConstructorOptions.() -> Unit,
-): ParticleSystem =
-    ParticleSystem(options = jso(block))

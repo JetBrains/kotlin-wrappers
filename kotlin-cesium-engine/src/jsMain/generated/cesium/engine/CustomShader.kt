@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.objects.JsPlainObject
 import js.objects.ReadonlyRecord
-import js.objects.jso
 
 /**
  * A user defined GLSL shader used with [Model] as well
@@ -145,8 +140,3 @@ external class CustomShader(options: ConstructorOptions) {
         value: Any, /* boolean | number | Cartesian2 | Cartesian3 | Cartesian4 | Matrix2 | Matrix3 | Matrix4 | string | Resource | TextureUniform */
     )
 }
-
-inline fun CustomShader(
-    block: CustomShader.ConstructorOptions.() -> Unit,
-): CustomShader =
-    CustomShader(options = jso(block))

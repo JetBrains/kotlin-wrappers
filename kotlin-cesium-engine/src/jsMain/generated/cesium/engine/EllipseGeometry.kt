@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * A description of an ellipse on an ellipsoid. Ellipse geometry can be rendered with both [Primitive] and [GroundPrimitive].
@@ -137,8 +132,3 @@ external class EllipseGeometry(options: ConstructorOptions) {
         fun createGeometry(ellipseGeometry: EllipseGeometry): Geometry?
     }
 }
-
-inline fun EllipseGeometry(
-    block: EllipseGeometry.ConstructorOptions.() -> Unit,
-): EllipseGeometry =
-    EllipseGeometry(options = jso(block))

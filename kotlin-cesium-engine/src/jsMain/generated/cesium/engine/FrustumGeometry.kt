@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * Describes a frustum at the given the origin and orientation.
@@ -77,8 +72,3 @@ external class FrustumGeometry(options: ConstructorOptions) {
         fun createGeometry(frustumGeometry: FrustumGeometry): Geometry?
     }
 }
-
-inline fun FrustumGeometry(
-    block: FrustumGeometry.ConstructorOptions.() -> Unit,
-): FrustumGeometry =
-    FrustumGeometry(options = jso(block))

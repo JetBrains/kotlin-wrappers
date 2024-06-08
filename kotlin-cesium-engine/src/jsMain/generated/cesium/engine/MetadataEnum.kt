@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * A metadata enum.
@@ -82,8 +77,3 @@ external class MetadataEnum(options: ConstructorOptions) {
      */
     val extensions: Any
 }
-
-inline fun MetadataEnum(
-    block: MetadataEnum.ConstructorOptions.() -> Unit,
-): MetadataEnum =
-    MetadataEnum(options = jso(block))

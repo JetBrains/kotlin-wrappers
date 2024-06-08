@@ -2,14 +2,9 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * An appearance for [PolylineGeometry] that supports shading with materials.
@@ -136,8 +131,3 @@ external class PolylineMaterialAppearance(options: ConstructorOptions? = defined
         val VERTEX_FORMAT: VertexFormat
     }
 }
-
-inline fun PolylineMaterialAppearance(
-    block: PolylineMaterialAppearance.ConstructorOptions.() -> Unit,
-): PolylineMaterialAppearance =
-    PolylineMaterialAppearance(options = jso(block))

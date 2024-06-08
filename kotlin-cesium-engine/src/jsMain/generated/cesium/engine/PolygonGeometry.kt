@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * A description of a polygon on the ellipsoid. The polygon is defined by a polygon hierarchy. Polygon geometry can be rendered with both [Primitive] and [GroundPrimitive].
@@ -244,8 +239,3 @@ external class PolygonGeometry(options: ConstructorOptions) {
         fun createGeometry(polygonGeometry: PolygonGeometry): Geometry?
     }
 }
-
-inline fun PolygonGeometry(
-    block: PolygonGeometry.ConstructorOptions.() -> Unit,
-): PolygonGeometry =
-    PolygonGeometry(options = jso(block))

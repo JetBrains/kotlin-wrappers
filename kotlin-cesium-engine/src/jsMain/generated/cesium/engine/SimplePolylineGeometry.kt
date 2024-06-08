@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * A description of a polyline modeled as a line strip; the first two positions define a line segment,
@@ -97,8 +92,3 @@ external class SimplePolylineGeometry(options: ConstructorOptions) {
         fun createGeometry(simplePolylineGeometry: SimplePolylineGeometry): Geometry?
     }
 }
-
-inline fun SimplePolylineGeometry(
-    block: SimplePolylineGeometry.ConstructorOptions.() -> Unit,
-): SimplePolylineGeometry =
-    SimplePolylineGeometry(options = jso(block))

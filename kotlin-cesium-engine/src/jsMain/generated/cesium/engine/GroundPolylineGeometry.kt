@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * A description of a polyline on terrain or 3D Tiles. Only to be used with [GroundPolylinePrimitive].
@@ -109,8 +104,3 @@ external class GroundPolylineGeometry(options: ConstructorOptions) {
         )
     }
 }
-
-inline fun GroundPolylineGeometry(
-    block: GroundPolylineGeometry.ConstructorOptions.() -> Unit,
-): GroundPolylineGeometry =
-    GroundPolylineGeometry(options = jso(block))

@@ -10,7 +10,6 @@ package cesium.engine
 
 import js.core.Void
 import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
 
 /**
@@ -133,8 +132,3 @@ typealias CancelCallback = () -> Unit
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Request.html#.PriorityCallback">Online Documentation</a>
  */
 typealias PriorityCallback = () -> Double
-
-inline fun Request(
-    block: Request.ConstructorOptions.() -> Unit,
-): Request =
-    Request(options = jso(block))

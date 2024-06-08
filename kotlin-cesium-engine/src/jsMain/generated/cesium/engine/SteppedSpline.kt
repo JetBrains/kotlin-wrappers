@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.jso
 
 /**
  * A spline that is composed of piecewise constants representing a step function.
@@ -95,8 +90,3 @@ external class SteppedSpline(options: ConstructorOptions) {
         result: Any /* Cartesian3 | Quaternion */? = definedExternally,
     ): Any /* number | Cartesian3 | Quaternion */
 }
-
-inline fun SteppedSpline(
-    block: SteppedSpline.ConstructorOptions.() -> Unit,
-): SteppedSpline =
-    SteppedSpline(options = jso(block))
