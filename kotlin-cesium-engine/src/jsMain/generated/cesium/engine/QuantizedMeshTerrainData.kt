@@ -45,7 +45,9 @@ import js.typedarrays.Uint8Array
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/QuantizedMeshTerrainData.html">Online Documentation</a>
  */
-external class QuantizedMeshTerrainData(options: ConstructorOptions) : TerrainData {
+external class QuantizedMeshTerrainData(
+    options: ConstructorOptions,
+) : TerrainData {
     /**
      * @property [quantizedVertices] The buffer containing the quantized mesh.
      * @property [indices] The indices specifying how the quantized vertices are linked

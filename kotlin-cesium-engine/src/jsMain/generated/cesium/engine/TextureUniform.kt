@@ -12,7 +12,9 @@ import js.typedarrays.Uint8Array
  * uniform. This is used with [CustomShader] and [TextureManager]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TextureUniform.html">Online Documentation</a>
  */
-external class TextureUniform(options: ConstructorOptions) {
+external class TextureUniform(
+    options: ConstructorOptions,
+) {
     /**
      * @property [typedArray] A typed array storing the contents of a texture. Values are stored in row-major order. Since WebGL uses a y-up convention for textures, rows are listed from bottom to top.
      * @property [width] The width of the image. Required when options.typedArray is present

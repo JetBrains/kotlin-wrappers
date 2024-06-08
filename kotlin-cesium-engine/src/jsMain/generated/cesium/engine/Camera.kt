@@ -32,7 +32,9 @@ import js.objects.JsPlainObject
  * @param [scene] The scene.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Camera.html">Online Documentation</a>
  */
-external class Camera(scene: Scene) {
+external class Camera(
+    scene: Scene,
+) {
     /**
      * The position of the camera.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Camera.html#position">Online Documentation</a>

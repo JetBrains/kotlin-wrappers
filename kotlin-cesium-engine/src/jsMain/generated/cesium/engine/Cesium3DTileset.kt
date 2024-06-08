@@ -64,7 +64,9 @@ import seskar.js.JsAsync
  * @param [options] An object describing initialization options
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html">Online Documentation</a>
  */
-external class Cesium3DTileset(options: ConstructorOptions) {
+external class Cesium3DTileset(
+    options: ConstructorOptions,
+) {
     /**
      * Optimization option. Don't request tiles that will likely be unused when they come back because of the camera's movement. This optimization only applies to stationary tilesets.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#cullRequestsWhileMoving">Online Documentation</a>

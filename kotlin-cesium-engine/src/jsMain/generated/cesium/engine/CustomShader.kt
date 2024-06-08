@@ -58,7 +58,9 @@ import js.objects.ReadonlyRecord
  * @param [options] An object with the following options
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CustomShader.html">Online Documentation</a>
  */
-external class CustomShader(options: ConstructorOptions) {
+external class CustomShader(
+    options: ConstructorOptions,
+) {
     /**
      * @property [mode] The custom shader mode, which determines how the custom shader code is inserted into the fragment shader.
      *   Default value - [CustomShaderMode.MODIFY_MATERIAL]

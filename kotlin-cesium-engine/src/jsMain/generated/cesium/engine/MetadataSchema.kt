@@ -13,7 +13,9 @@ import js.objects.ReadonlyRecord
  * See the [3D Metadata Specification](https://github.com/CesiumGS/3d-tiles/tree/main/specification/Metadata) for 3D Tiles
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MetadataSchema.html">Online Documentation</a>
  */
-external class MetadataSchema(options: ConstructorOptions) {
+external class MetadataSchema(
+    options: ConstructorOptions,
+) {
     /**
      * @property [id] The ID of the schema
      * @property [name] The name of the schema.

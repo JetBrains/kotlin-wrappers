@@ -11,7 +11,9 @@ import js.objects.JsPlainObject
  * A description of the outline of a frustum with the given the origin and orientation.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/FrustumOutlineGeometry.html">Online Documentation</a>
  */
-external class FrustumOutlineGeometry(options: ConstructorOptions) {
+external class FrustumOutlineGeometry(
+    options: ConstructorOptions,
+) {
     /**
      * @property [frustum] The frustum.
      * @property [origin] The origin of the frustum.

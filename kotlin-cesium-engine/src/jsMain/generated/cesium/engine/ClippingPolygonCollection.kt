@@ -36,7 +36,9 @@ import js.objects.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ClippingPolygonCollection.html">Online Documentation</a>
  */
-external class ClippingPolygonCollection(options: ConstructorOptions? = definedExternally) {
+external class ClippingPolygonCollection(
+    options: ConstructorOptions? = definedExternally,
+) {
     /**
      * @property [polygons] An array of [ClippingPolygon] objects used to selectively disable rendering on the inside of each polygon.
      *   Default value - `[]`

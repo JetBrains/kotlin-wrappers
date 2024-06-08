@@ -28,7 +28,9 @@ import js.typedarrays.Uint8Array
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/HeightmapTerrainData.html">Online Documentation</a>
  */
-external class HeightmapTerrainData(options: ConstructorOptions) : TerrainData {
+external class HeightmapTerrainData(
+    options: ConstructorOptions,
+) : TerrainData {
     /**
      * @property [buffer] The buffer containing height data.
      * @property [width] The width (longitude direction) of the heightmap, in samples.

@@ -25,7 +25,9 @@ import js.objects.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineGeometry.html">Online Documentation</a>
  */
-external class PolylineGeometry(options: ConstructorOptions) {
+external class PolylineGeometry(
+    options: ConstructorOptions,
+) {
     /**
      * @property [positions] An array of [Cartesian3] defining the positions in the polyline as a line strip.
      * @property [width] The width in pixels.

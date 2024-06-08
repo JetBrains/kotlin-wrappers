@@ -19,7 +19,9 @@ package cesium.engine
  *   Default value - [Ellipsoid.WGS84]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Globe.html">Online Documentation</a>
  */
-external class Globe(var ellipsoid: Ellipsoid = definedExternally) {
+external class Globe(
+    var ellipsoid: Ellipsoid = definedExternally,
+) {
     /**
      * Determines if the globe will be shown.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Globe.html#show">Online Documentation</a>

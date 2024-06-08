@@ -11,7 +11,9 @@ import js.objects.JsPlainObject
  * A ParticleSystem manages the updating and display of a collection of particles.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ParticleSystem.html">Online Documentation</a>
  */
-external class ParticleSystem(options: ConstructorOptions? = definedExternally) {
+external class ParticleSystem(
+    options: ConstructorOptions? = definedExternally,
+) {
     /**
      * @property [show] Whether to display the particle system.
      *   Default value - `true`

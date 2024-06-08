@@ -45,7 +45,9 @@ import seskar.js.JsAsync
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html">Online Documentation</a>
  */
-external class UrlTemplateImageryProvider(options: ConstructorOptions) {
+external class UrlTemplateImageryProvider(
+    options: ConstructorOptions,
+) {
     /**
      * Gets or sets a value indicating whether feature picking is enabled.  If true, [UrlTemplateImageryProvider.pickFeatures] will
      * request the `options.pickFeaturesUrl` and attempt to interpret the features included in the response.  If false,

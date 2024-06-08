@@ -14,4 +14,6 @@ import cesium.engine.I3SDataProvider
  * @param [i3sProvider] I3S Data provider instance.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3sBslExplorerViewModel.html">Online Documentation</a>
  */
-external class I3sBslExplorerViewModel(i3sProvider: I3SDataProvider)
+external class I3sBslExplorerViewModel(
+    i3sProvider: I3SDataProvider,
+)

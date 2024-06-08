@@ -29,7 +29,9 @@ import js.objects.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ClippingPolygon.html">Online Documentation</a>
  */
-external class ClippingPolygon(options: ConstructorOptions) {
+external class ClippingPolygon(
+    options: ConstructorOptions,
+) {
     /**
      * @property [positions] A list of three or more Cartesian coordinates defining the outer ring of the clipping polygon.
      */

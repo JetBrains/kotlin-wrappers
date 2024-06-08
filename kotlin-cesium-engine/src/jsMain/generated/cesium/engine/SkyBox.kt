@@ -25,7 +25,9 @@ import js.objects.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SkyBox.html">Online Documentation</a>
  */
-external class SkyBox(options: ConstructorOptions) {
+external class SkyBox(
+    options: ConstructorOptions,
+) {
     /**
      * @property [sources] The source URL or `Image` object for each of the six cube map faces.  See the example below.
      * @property [show] Determines if this primitive will be shown.

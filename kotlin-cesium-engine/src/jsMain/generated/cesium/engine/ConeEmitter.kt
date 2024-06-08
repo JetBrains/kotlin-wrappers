@@ -14,4 +14,6 @@ package cesium.engine
  *   Default value - `Math.toRadians(30.0)`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ConeEmitter.html">Online Documentation</a>
  */
-external class ConeEmitter(angle: Double? = definedExternally)
+external class ConeEmitter(
+    angle: Double? = definedExternally,
+)

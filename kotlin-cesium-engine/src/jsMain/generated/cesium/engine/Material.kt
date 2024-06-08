@@ -34,7 +34,9 @@ import js.objects.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Material.html">Online Documentation</a>
  */
-external class Material(options: ConstructorOptions? = definedExternally) {
+external class Material(
+    options: ConstructorOptions? = definedExternally,
+) {
     /**
      * @property [strict] Throws errors for issues that would normally be ignored, including unused uniforms or materials.
      *   Default value - `false`

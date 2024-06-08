@@ -31,8 +31,12 @@ import seskar.js.JsAsync
  * @property [url] The endpoint to the Pelias server.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PeliasGeocoderService.html">Online Documentation</a>
  */
-external class PeliasGeocoderService(val url: Resource) {
-    constructor(url: String)
+external class PeliasGeocoderService(
+    val url: Resource,
+) {
+    constructor(
+        url: String,
+    )
 
     /**
      * Gets the credit to display after a geocode is performed. Typically this is used to credit

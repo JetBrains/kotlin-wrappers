@@ -38,7 +38,9 @@ import js.objects.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ClippingPlaneCollection.html">Online Documentation</a>
  */
-external class ClippingPlaneCollection(options: ConstructorOptions? = definedExternally) {
+external class ClippingPlaneCollection(
+    options: ConstructorOptions? = definedExternally,
+) {
     /**
      * @property [planes] An array of [ClippingPlane] objects used to selectively disable rendering on the outside of each plane.
      *   Default value - `[]`

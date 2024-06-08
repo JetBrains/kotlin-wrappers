@@ -12,7 +12,9 @@ import js.objects.JsPlainObject
  * known as geographic, equirectangular, equidistant cylindrical, or plate carrée.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeographicTilingScheme.html">Online Documentation</a>
  */
-external class GeographicTilingScheme(options: ConstructorOptions? = definedExternally) : TilingScheme {
+external class GeographicTilingScheme(
+    options: ConstructorOptions? = definedExternally,
+) : TilingScheme {
     /**
      * @property [ellipsoid] The ellipsoid whose surface is being tiled. Defaults to
      *   the WGS84 ellipsoid.

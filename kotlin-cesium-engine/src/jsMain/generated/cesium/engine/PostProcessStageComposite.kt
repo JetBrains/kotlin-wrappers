@@ -63,7 +63,9 @@ import js.objects.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PostProcessStageComposite.html">Online Documentation</a>
  */
-external class PostProcessStageComposite(options: ConstructorOptions) {
+external class PostProcessStageComposite(
+    options: ConstructorOptions,
+) {
     /**
      * @property [stages] An array of [PostProcessStage]s or composites to be executed in order.
      * @property [inputPreviousStageTexture] Whether to execute each post-process stage where the input to one stage is the output of the previous. Otherwise, the input to each contained stage is the output of the stage that executed before the composite.

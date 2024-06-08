@@ -14,7 +14,9 @@ import js.objects.JsPlainObject
  * @param [options] The object containing all parameters.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ProviderViewModel.html">Online Documentation</a>
  */
-external class ProviderViewModel(options: ConstructorOptions) {
+external class ProviderViewModel(
+    options: ConstructorOptions,
+) {
     /**
      * @property [name] The name of the layer.
      * @property [tooltip] The tooltip to show when the item is moused over.

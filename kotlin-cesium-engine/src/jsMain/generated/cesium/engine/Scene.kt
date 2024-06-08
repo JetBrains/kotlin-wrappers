@@ -25,7 +25,9 @@ import web.html.HTMLCanvasElement
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html">Online Documentation</a>
  */
-external class Scene(options: ConstructorOptions) {
+external class Scene(
+    options: ConstructorOptions,
+) {
     /**
      * @property [canvas] The HTML canvas element to create the scene for.
      * @property [contextOptions] Context and WebGL creation properties.

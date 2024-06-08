@@ -26,7 +26,9 @@ import js.objects.JsPlainObject
  * @param [options] Options with the following properties:
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GroundPolylineGeometry.html">Online Documentation</a>
  */
-external class GroundPolylineGeometry(options: ConstructorOptions) {
+external class GroundPolylineGeometry(
+    options: ConstructorOptions,
+) {
     /**
      * @property [positions] An array of [Cartesian3] defining the polyline's points. Heights above the ellipsoid will be ignored.
      * @property [width] The screen space width in pixels.

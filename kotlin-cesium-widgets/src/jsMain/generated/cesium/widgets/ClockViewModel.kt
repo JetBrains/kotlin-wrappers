@@ -21,7 +21,9 @@ import cesium.engine.JulianDate
  * @property [clock] The clock object wrapped by this view model, if undefined a new instance will be created.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ClockViewModel.html">Online Documentation</a>
  */
-external class ClockViewModel(var clock: Clock = definedExternally) {
+external class ClockViewModel(
+    var clock: Clock = definedExternally,
+) {
     /**
      * Gets the current system time.
      * This property is observable.

@@ -12,7 +12,9 @@ package cesium.engine
  * @param [duration] entry duration
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlTourWait.html">Online Documentation</a>
  */
-external class KmlTourWait(duration: Double) {
+external class KmlTourWait(
+    duration: Double,
+) {
     /**
      * Play this playlist entry
      * @param [done] function which will be called when playback ends

@@ -16,7 +16,9 @@ package cesium.widgets
  * @property [command] The command which will be executed when the button is toggled.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ToggleButtonViewModel.html">Online Documentation</a>
  */
-external class ToggleButtonViewModel(var command: Command) {
+external class ToggleButtonViewModel(
+    var command: Command,
+) {
     /**
      * Gets or sets whether the button is currently toggled.  This property is observable.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ToggleButtonViewModel.html#toggled">Online Documentation</a>

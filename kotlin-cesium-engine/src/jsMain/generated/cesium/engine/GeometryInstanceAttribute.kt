@@ -29,7 +29,9 @@ import js.objects.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeometryInstanceAttribute.html">Online Documentation</a>
  */
-external class GeometryInstanceAttribute(options: ConstructorOptions) {
+external class GeometryInstanceAttribute(
+    options: ConstructorOptions,
+) {
     /**
      * @property [componentDatatype] The datatype of each component in the attribute, e.g., individual elements in values.
      * @property [componentsPerAttribute] A number between 1 and 4 that defines the number of components in an attributes.

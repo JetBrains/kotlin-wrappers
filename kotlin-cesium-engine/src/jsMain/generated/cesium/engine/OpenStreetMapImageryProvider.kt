@@ -18,7 +18,9 @@ import js.objects.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/OpenStreetMapImageryProvider.html">Online Documentation</a>
  */
-external class OpenStreetMapImageryProvider(options: ConstructorOptions) {
+external class OpenStreetMapImageryProvider(
+    options: ConstructorOptions,
+) {
     /**
      * Initialization options for the OpenStreetMapImageryProvider constructor
      * @property [url] The OpenStreetMap server url.

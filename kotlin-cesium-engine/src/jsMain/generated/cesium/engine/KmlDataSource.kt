@@ -36,7 +36,9 @@ import web.html.HTMLCanvasElement
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlDataSource.html">Online Documentation</a>
  */
-external class KmlDataSource(options: ConstructorOptions? = definedExternally) {
+external class KmlDataSource(
+    options: ConstructorOptions? = definedExternally,
+) {
     /**
      * The current size of this Canvas will be used to populate the Link parameters
      * for client height and width.

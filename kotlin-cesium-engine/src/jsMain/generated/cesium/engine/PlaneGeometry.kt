@@ -16,7 +16,9 @@ import js.objects.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PlaneGeometry.html">Online Documentation</a>
  */
-external class PlaneGeometry(options: ConstructorOptions? = definedExternally) {
+external class PlaneGeometry(
+    options: ConstructorOptions? = definedExternally,
+) {
     /**
      * @property [vertexFormat] The vertex attributes to be computed.
      *   Default value - [VertexFormat.DEFAULT]

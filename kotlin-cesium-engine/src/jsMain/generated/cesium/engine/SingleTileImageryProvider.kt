@@ -16,7 +16,9 @@ import seskar.js.JsAsync
  * and will be rendered using a [GeographicTilingScheme].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SingleTileImageryProvider.html">Online Documentation</a>
  */
-external class SingleTileImageryProvider(options: ConstructorOptions) {
+external class SingleTileImageryProvider(
+    options: ConstructorOptions,
+) {
     /**
      * Gets the URL of the single, top-level imagery tile.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SingleTileImageryProvider.html#url">Online Documentation</a>

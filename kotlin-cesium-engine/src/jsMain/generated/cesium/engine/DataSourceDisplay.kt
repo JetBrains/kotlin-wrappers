@@ -10,7 +10,9 @@ import js.objects.JsPlainObject
  * Visualizes a collection of [DataSource] instances.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DataSourceDisplay.html">Online Documentation</a>
  */
-external class DataSourceDisplay(options: ConstructorOptions) {
+external class DataSourceDisplay(
+    options: ConstructorOptions,
+) {
     /**
      * @property [scene] The scene in which to display the data.
      * @property [dataSourceCollection] The data sources to display.

@@ -40,7 +40,9 @@ import js.objects.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeometryInstance.html">Online Documentation</a>
  */
-external class GeometryInstance(options: ConstructorOptions) {
+external class GeometryInstance(
+    options: ConstructorOptions,
+) {
     /**
      * @property [geometry] The geometry to instance.
      * @property [modelMatrix] The model matrix that transforms to transform the geometry from model to world coordinates.

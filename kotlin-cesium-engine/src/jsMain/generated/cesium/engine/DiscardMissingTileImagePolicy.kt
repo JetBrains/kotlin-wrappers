@@ -13,7 +13,9 @@ import web.html.HTMLImageElement
  * "missing" image.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DiscardMissingTileImagePolicy.html">Online Documentation</a>
  */
-external class DiscardMissingTileImagePolicy(options: ConstructorOptions) : TileDiscardPolicy {
+external class DiscardMissingTileImagePolicy(
+    options: ConstructorOptions,
+) : TileDiscardPolicy {
     /**
      * @property [missingImageUrl] The URL of the known missing image.
      * @property [pixelsToCheck] An array of [Cartesian2] pixel positions to

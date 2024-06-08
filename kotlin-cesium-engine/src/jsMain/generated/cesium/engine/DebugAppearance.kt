@@ -22,7 +22,9 @@ import js.objects.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DebugAppearance.html">Online Documentation</a>
  */
-external class DebugAppearance(options: ConstructorOptions) {
+external class DebugAppearance(
+    options: ConstructorOptions,
+) {
     /**
      * @property [attributeName] The name of the attribute to visualize.
      * @property [perInstanceAttribute] Boolean that determines whether this attribute is a per-instance geometry attribute.

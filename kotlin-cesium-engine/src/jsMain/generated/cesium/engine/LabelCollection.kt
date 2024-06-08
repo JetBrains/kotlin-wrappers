@@ -26,7 +26,9 @@ import js.objects.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/LabelCollection.html">Online Documentation</a>
  */
-external class LabelCollection(options: ConstructorOptions? = definedExternally) {
+external class LabelCollection(
+    options: ConstructorOptions? = definedExternally,
+) {
     /**
      * @property [modelMatrix] The 4x4 transformation matrix that transforms each label from model to world coordinates.
      *   Default value - [Matrix4.IDENTITY]

@@ -14,7 +14,9 @@ import js.objects.JsPlainObject
  * small or the clock is sufficiently slow then no frames will be skipped.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TimeDynamicPointCloud.html">Online Documentation</a>
  */
-external class TimeDynamicPointCloud(options: ConstructorOptions) {
+external class TimeDynamicPointCloud(
+    options: ConstructorOptions,
+) {
     /**
      * @property [clock] A [Clock] instance that is used when determining the value for the time dimension.
      * @property [intervals] A [TimeIntervalCollection] with its data property being an object containing a `uri` to a 3D Tiles Point Cloud tile and an optional `transform`.

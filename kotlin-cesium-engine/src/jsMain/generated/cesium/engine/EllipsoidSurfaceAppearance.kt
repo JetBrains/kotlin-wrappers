@@ -27,7 +27,9 @@ import js.objects.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipsoidSurfaceAppearance.html">Online Documentation</a>
  */
-external class EllipsoidSurfaceAppearance(options: ConstructorOptions? = definedExternally) {
+external class EllipsoidSurfaceAppearance(
+    options: ConstructorOptions? = definedExternally,
+) {
     /**
      * @property [flat] When `true`, flat shading is used in the fragment shader, which means lighting is not taking into account.
      *   Default value - `false`

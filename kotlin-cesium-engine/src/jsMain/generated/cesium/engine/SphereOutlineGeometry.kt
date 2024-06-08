@@ -19,7 +19,9 @@ import js.objects.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SphereOutlineGeometry.html">Online Documentation</a>
  */
-external class SphereOutlineGeometry(options: ConstructorOptions? = definedExternally) {
+external class SphereOutlineGeometry(
+    options: ConstructorOptions? = definedExternally,
+) {
     /**
      * @property [radius] The radius of the sphere.
      *   Default value - `1.0`

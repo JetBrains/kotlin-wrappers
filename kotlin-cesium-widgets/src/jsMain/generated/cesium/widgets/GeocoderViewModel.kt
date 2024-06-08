@@ -14,7 +14,9 @@ import js.objects.JsPlainObject
  * The view model for the [Geocoder] widget.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeocoderViewModel.html">Online Documentation</a>
  */
-external class GeocoderViewModel(options: ConstructorOptions) {
+external class GeocoderViewModel(
+    options: ConstructorOptions,
+) {
     /**
      * @property [scene] The Scene instance to use.
      * @property [geocoderServices] Geocoder services to use for geocoding queries.

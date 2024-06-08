@@ -70,7 +70,9 @@ import seskar.js.JsAsync
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GroundPrimitive.html">Online Documentation</a>
  */
-external class GroundPrimitive(options: ConstructorOptions? = definedExternally) {
+external class GroundPrimitive(
+    options: ConstructorOptions? = definedExternally,
+) {
     /**
      * @property [geometryInstances] The geometry instances to render.
      * @property [appearance] The appearance used to render the primitive. Defaults to a flat PerInstanceColorAppearance when GeometryInstances have a color attribute.

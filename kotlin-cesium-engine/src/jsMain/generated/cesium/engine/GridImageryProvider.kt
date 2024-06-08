@@ -16,7 +16,9 @@ import web.html.HTMLCanvasElement
  * May be useful for custom rendering effects or debugging terrain.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GridImageryProvider.html">Online Documentation</a>
  */
-external class GridImageryProvider(options: ConstructorOptions) {
+external class GridImageryProvider(
+    options: ConstructorOptions,
+) {
     /**
      * Gets the proxy used by this provider.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GridImageryProvider.html#proxy">Online Documentation</a>

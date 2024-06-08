@@ -56,7 +56,9 @@ import js.objects.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PerInstanceColorAppearance.html">Online Documentation</a>
  */
-external class PerInstanceColorAppearance(options: ConstructorOptions? = definedExternally) {
+external class PerInstanceColorAppearance(
+    options: ConstructorOptions? = definedExternally,
+) {
     /**
      * @property [flat] When `true`, flat shading is used in the fragment shader, which means lighting is not taking into account.
      *   Default value - `false`

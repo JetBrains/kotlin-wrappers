@@ -12,7 +12,9 @@ import web.dom.Element
  * Monitors performance of the application and displays a message if poor performance is detected.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PerformanceWatchdog.html">Online Documentation</a>
  */
-external class PerformanceWatchdog(options: ConstructorOptions? = definedExternally) {
+external class PerformanceWatchdog(
+    options: ConstructorOptions? = definedExternally,
+) {
     /**
      * @property [container] The DOM element that will contain the widget.
      * @property [scene] The [Scene] for which to monitor performance.

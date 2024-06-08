@@ -19,7 +19,9 @@ import js.objects.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/RectangleOutlineGeometry.html">Online Documentation</a>
  */
-external class RectangleOutlineGeometry(options: ConstructorOptions) {
+external class RectangleOutlineGeometry(
+    options: ConstructorOptions,
+) {
     /**
      * @property [rectangle] A cartographic rectangle with north, south, east and west properties in radians.
      * @property [ellipsoid] The ellipsoid on which the rectangle lies.

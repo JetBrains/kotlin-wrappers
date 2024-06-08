@@ -22,7 +22,9 @@ import js.objects.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CoplanarPolygonOutlineGeometry.html">Online Documentation</a>
  */
-external class CoplanarPolygonOutlineGeometry(options: ConstructorOptions) {
+external class CoplanarPolygonOutlineGeometry(
+    options: ConstructorOptions,
+) {
     /**
      * @property [polygonHierarchy] A polygon hierarchy that can include holes.
      */

@@ -17,7 +17,9 @@ import js.objects.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CorridorOutlineGeometry.html">Online Documentation</a>
  */
-external class CorridorOutlineGeometry(options: ConstructorOptions) {
+external class CorridorOutlineGeometry(
+    options: ConstructorOptions,
+) {
     /**
      * @property [positions] An array of positions that define the center of the corridor outline.
      * @property [width] The distance between the edges of the corridor outline.

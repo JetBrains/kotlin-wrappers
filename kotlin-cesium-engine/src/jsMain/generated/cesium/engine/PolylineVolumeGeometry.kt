@@ -30,7 +30,9 @@ import js.objects.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineVolumeGeometry.html">Online Documentation</a>
  */
-external class PolylineVolumeGeometry(options: ConstructorOptions) {
+external class PolylineVolumeGeometry(
+    options: ConstructorOptions,
+) {
     /**
      * @property [polylinePositions] An array of [Cartesian3] positions that define the center of the polyline volume.
      * @property [shapePositions] An array of [Cartesian2] positions that define the shape to be extruded along the polyline

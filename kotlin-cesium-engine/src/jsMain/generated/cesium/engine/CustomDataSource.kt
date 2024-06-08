@@ -28,7 +28,9 @@ package cesium.engine
  * @property [name] A human-readable name for this instance.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CustomDataSource.html">Online Documentation</a>
  */
-external class CustomDataSource(var name: String = definedExternally) {
+external class CustomDataSource(
+    var name: String = definedExternally,
+) {
     /**
      * Gets or sets the clock for this instance.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CustomDataSource.html#clock">Online Documentation</a>

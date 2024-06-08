@@ -30,7 +30,9 @@ import js.typedarrays.Uint8Array
  *   Default value - `true`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ShowGeometryInstanceAttribute.html">Online Documentation</a>
  */
-external class ShowGeometryInstanceAttribute(show: Boolean? = definedExternally) {
+external class ShowGeometryInstanceAttribute(
+    show: Boolean? = definedExternally,
+) {
     /**
      * The values for the attributes stored in a typed array.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ShowGeometryInstanceAttribute.html#value">Online Documentation</a>

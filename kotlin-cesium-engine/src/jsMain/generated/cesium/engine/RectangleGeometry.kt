@@ -29,7 +29,9 @@ import js.objects.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/RectangleGeometry.html">Online Documentation</a>
  */
-external class RectangleGeometry(options: ConstructorOptions) {
+external class RectangleGeometry(
+    options: ConstructorOptions,
+) {
     /**
      * @property [rectangle] A cartographic rectangle with north, south, east and west properties in radians.
      * @property [vertexFormat] The vertex attributes to be computed.

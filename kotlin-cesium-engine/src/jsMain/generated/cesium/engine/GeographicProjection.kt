@@ -20,7 +20,9 @@ package cesium.engine
  *   Default value - [Ellipsoid.WGS84]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeographicProjection.html">Online Documentation</a>
  */
-external class GeographicProjection(val ellipsoid: Ellipsoid = definedExternally) {
+external class GeographicProjection(
+    val ellipsoid: Ellipsoid = definedExternally,
+) {
     /**
      * Projects a set of [Cartographic] coordinates, in radians, to map coordinates, in meters.
      * X and Y are the longitude and latitude, respectively, multiplied by the maximum radius of the

@@ -12,7 +12,9 @@ import js.objects.JsPlainObject
  * The view model for [BaseLayerPicker].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BaseLayerPickerViewModel.html">Online Documentation</a>
  */
-external class BaseLayerPickerViewModel(options: ConstructorOptions) {
+external class BaseLayerPickerViewModel(
+    options: ConstructorOptions,
+) {
     /**
      * @property [globe] The Globe to use.
      * @property [imageryProviderViewModels] The array of ProviderViewModel instances to use for imagery.

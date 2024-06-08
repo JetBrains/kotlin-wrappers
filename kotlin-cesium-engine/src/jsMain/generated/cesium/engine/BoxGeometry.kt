@@ -19,7 +19,9 @@ import js.objects.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BoxGeometry.html">Online Documentation</a>
  */
-external class BoxGeometry(options: ConstructorOptions) {
+external class BoxGeometry(
+    options: ConstructorOptions,
+) {
     /**
      * @property [minimum] The minimum x, y, and z coordinates of the box.
      * @property [maximum] The maximum x, y, and z coordinates of the box.

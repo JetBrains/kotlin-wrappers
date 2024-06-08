@@ -11,9 +11,13 @@ import js.array.ReadonlyArray
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EntityCollection.html">Online Documentation</a>
  */
 external class EntityCollection() {
-    constructor(owner: DataSource)
+    constructor(
+        owner: DataSource,
+    )
 
-    constructor(owner: CompositeEntityCollection)
+    constructor(
+        owner: CompositeEntityCollection,
+    )
 
     /**
      * Prevents [EntityCollection.collectionChanged] events from being raised

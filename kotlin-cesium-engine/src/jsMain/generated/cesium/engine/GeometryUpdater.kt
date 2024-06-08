@@ -11,7 +11,9 @@ import js.objects.JsPlainObject
  * An abstract class for updating geometry entities.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeometryUpdater.html">Online Documentation</a>
  */
-external class GeometryUpdater(options: ConstructorOptions) {
+external class GeometryUpdater(
+    options: ConstructorOptions,
+) {
     /**
      * @property [entity] The entity containing the geometry to be visualized.
      * @property [scene] The scene where visualization is taking place.

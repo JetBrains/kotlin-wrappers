@@ -19,7 +19,9 @@ import js.objects.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CircleOutlineGeometry.html">Online Documentation</a>
  */
-external class CircleOutlineGeometry(options: ConstructorOptions) {
+external class CircleOutlineGeometry(
+    options: ConstructorOptions,
+) {
     /**
      * @property [center] The circle's center point in the fixed frame.
      * @property [radius] The radius in meters.

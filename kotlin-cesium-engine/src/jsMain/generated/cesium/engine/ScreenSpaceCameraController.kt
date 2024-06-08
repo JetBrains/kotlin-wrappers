@@ -12,7 +12,9 @@ package cesium.engine
  * @param [scene] The scene.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceCameraController.html">Online Documentation</a>
  */
-external class ScreenSpaceCameraController(scene: Scene) {
+external class ScreenSpaceCameraController(
+    scene: Scene,
+) {
     /**
      * If true, inputs are allowed conditionally with the flags enableTranslate, enableZoom,
      * enableRotate, enableTilt, and enableLook.  If false, all inputs are disabled.

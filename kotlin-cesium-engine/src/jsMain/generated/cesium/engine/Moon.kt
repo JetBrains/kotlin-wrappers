@@ -13,7 +13,9 @@ import js.objects.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Moon.html">Online Documentation</a>
  */
-external class Moon(options: ConstructorOptions? = definedExternally) {
+external class Moon(
+    options: ConstructorOptions? = definedExternally,
+) {
     /**
      * @property [show] Determines whether the moon will be rendered.
      *   Default value - `true`

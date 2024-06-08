@@ -25,7 +25,9 @@ import js.objects.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WallGeometry.html">Online Documentation</a>
  */
-external class WallGeometry(options: ConstructorOptions) {
+external class WallGeometry(
+    options: ConstructorOptions,
+) {
     /**
      * @property [positions] An array of Cartesian objects, which are the points of the wall.
      * @property [granularity] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.

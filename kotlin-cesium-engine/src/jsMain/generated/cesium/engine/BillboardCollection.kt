@@ -27,7 +27,9 @@ import js.objects.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BillboardCollection.html">Online Documentation</a>
  */
-external class BillboardCollection(options: ConstructorOptions? = definedExternally) {
+external class BillboardCollection(
+    options: ConstructorOptions? = definedExternally,
+) {
     /**
      * @property [modelMatrix] The 4x4 transformation matrix that transforms each billboard from model to world coordinates.
      *   Default value - [Matrix4.IDENTITY]

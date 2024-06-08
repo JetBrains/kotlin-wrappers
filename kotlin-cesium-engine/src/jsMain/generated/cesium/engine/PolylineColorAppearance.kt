@@ -34,7 +34,9 @@ import js.objects.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineColorAppearance.html">Online Documentation</a>
  */
-external class PolylineColorAppearance(options: ConstructorOptions? = definedExternally) {
+external class PolylineColorAppearance(
+    options: ConstructorOptions? = definedExternally,
+) {
     /**
      * @property [translucent] When `true`, the geometry is expected to appear translucent so [PolylineColorAppearance.renderState] has alpha blending enabled.
      *   Default value - `true`

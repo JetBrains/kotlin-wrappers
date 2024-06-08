@@ -25,7 +25,9 @@ import js.errors.JsError
  * @property [message] The error message for this exception.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DeveloperError.html">Online Documentation</a>
  */
-external class DeveloperError(override val message: String = definedExternally) : JsError {
+external class DeveloperError(
+    override val message: String = definedExternally,
+) : JsError {
     /**
      * 'DeveloperError' indicating that this exception was thrown due to a developer error.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DeveloperError.html#name">Online Documentation</a>

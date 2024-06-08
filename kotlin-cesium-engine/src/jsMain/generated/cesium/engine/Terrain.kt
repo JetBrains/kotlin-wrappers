@@ -39,7 +39,9 @@ import js.promise.Promise
  * @param [terrainProviderPromise] A promise which resolves to a terrain provider
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Terrain.html">Online Documentation</a>
  */
-external class Terrain(terrainProviderPromise: Promise<TerrainProvider>) {
+external class Terrain(
+    terrainProviderPromise: Promise<TerrainProvider>,
+) {
     /**
      * Gets an event that is raised when the terrain provider encounters an asynchronous error.  By subscribing
      * to the event, you will be notified of the error and can potentially recover from it.  Event listeners

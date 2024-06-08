@@ -19,7 +19,9 @@ import cesium.engine.VoxelPrimitive
  * @property [scene] The scene instance to use.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelInspectorViewModel.html">Online Documentation</a>
  */
-external class VoxelInspectorViewModel(val scene: Scene) {
+external class VoxelInspectorViewModel(
+    val scene: Scene,
+) {
     /**
      * Gets or sets the primitive of the view model.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelInspectorViewModel.html#voxelPrimitive">Online Documentation</a>

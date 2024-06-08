@@ -60,7 +60,9 @@ import seskar.js.JsAsync
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GroundPolylinePrimitive.html">Online Documentation</a>
  */
-external class GroundPolylinePrimitive(options: ConstructorOptions? = definedExternally) {
+external class GroundPolylinePrimitive(
+    options: ConstructorOptions? = definedExternally,
+) {
     /**
      * @property [geometryInstances] GeometryInstances containing GroundPolylineGeometry
      * @property [appearance] The Appearance used to render the polyline. Defaults to a white color [Material] on a [PolylineMaterialAppearance].

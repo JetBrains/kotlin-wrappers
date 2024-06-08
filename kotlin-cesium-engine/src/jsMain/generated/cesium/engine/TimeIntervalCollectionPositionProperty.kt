@@ -17,7 +17,9 @@ package cesium.engine
  *   Default value - [ReferenceFrame.FIXED]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TimeIntervalCollectionPositionProperty.html">Online Documentation</a>
  */
-external class TimeIntervalCollectionPositionProperty(val referenceFrame: ReferenceFrame = definedExternally) {
+external class TimeIntervalCollectionPositionProperty(
+    val referenceFrame: ReferenceFrame = definedExternally,
+) {
     /**
      * Gets a value indicating if this property is constant.  A property is considered
      * constant if getValue always returns the same result for the current definition.

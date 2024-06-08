@@ -26,7 +26,9 @@ import js.objects.JsPlainObject
  * are also valid if they are extruded volumes; otherwise, they will not be rendered.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ClassificationPrimitive.html">Online Documentation</a>
  */
-external class ClassificationPrimitive(options: ConstructorOptions? = definedExternally) {
+external class ClassificationPrimitive(
+    options: ConstructorOptions? = definedExternally,
+) {
     /**
      * @property [geometryInstances] The geometry instances to render. This can either be a single instance or an array of length one.
      * @property [appearance] The appearance used to render the primitive. Defaults to PerInstanceColorAppearance when GeometryInstances have a color attribute.

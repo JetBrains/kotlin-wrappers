@@ -20,7 +20,9 @@ import web.dom.Element
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/NavigationHelpButton.html">Online Documentation</a>
  */
-external class NavigationHelpButton(options: ConstructorOptions) {
+external class NavigationHelpButton(
+    options: ConstructorOptions,
+) {
     /**
      * @property [container] The DOM element that will contain the widget.
      * @property [instructionsInitiallyVisible] True if the navigation instructions should initially be visible; otherwise, false.

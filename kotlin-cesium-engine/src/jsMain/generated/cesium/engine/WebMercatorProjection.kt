@@ -19,7 +19,9 @@ package cesium.engine
  *   Default value - [Ellipsoid.WGS84]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMercatorProjection.html">Online Documentation</a>
  */
-external class WebMercatorProjection(val ellipsoid: Ellipsoid = definedExternally) {
+external class WebMercatorProjection(
+    val ellipsoid: Ellipsoid = definedExternally,
+) {
     /**
      * Converts geodetic ellipsoid coordinates, in radians, to the equivalent Web Mercator
      * X, Y, Z coordinates expressed in meters and returned in a [Cartesian3].  The height

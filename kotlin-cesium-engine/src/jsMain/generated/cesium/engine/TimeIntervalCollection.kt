@@ -15,7 +15,9 @@ import js.objects.JsPlainObject
  * @param [intervals] An array of intervals to add to the collection.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TimeIntervalCollection.html">Online Documentation</a>
  */
-external class TimeIntervalCollection(intervals: ReadonlyArray<TimeInterval>? = definedExternally) {
+external class TimeIntervalCollection(
+    intervals: ReadonlyArray<TimeInterval>? = definedExternally,
+) {
     /**
      * Gets an event that is raised whenever the collection of intervals change.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TimeIntervalCollection.html#changedEvent">Online Documentation</a>

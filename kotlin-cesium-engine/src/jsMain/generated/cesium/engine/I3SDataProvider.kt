@@ -46,7 +46,9 @@ import seskar.js.JsAsync
  * @param [options] An object describing initialization options
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SDataProvider.html">Online Documentation</a>
  */
-external class I3SDataProvider(options: ConstructorOptions) {
+external class I3SDataProvider(
+    options: ConstructorOptions,
+) {
     /**
      * Gets a human-readable name for this dataset.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SDataProvider.html#name">Online Documentation</a>

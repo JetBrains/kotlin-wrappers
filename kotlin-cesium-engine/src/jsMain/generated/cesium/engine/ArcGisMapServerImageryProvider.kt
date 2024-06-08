@@ -44,7 +44,9 @@ import seskar.js.JsAsync
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGisMapServerImageryProvider.html">Online Documentation</a>
  */
-external class ArcGisMapServerImageryProvider(options: ConstructorOptions? = definedExternally) {
+external class ArcGisMapServerImageryProvider(
+    options: ConstructorOptions? = definedExternally,
+) {
     /**
      * Gets or sets a value indicating whether feature picking is enabled.  If true, [ArcGisMapServerImageryProvider.pickFeatures] will
      * invoke the "identify" operation on the ArcGIS server and return the features included in the response.  If false,

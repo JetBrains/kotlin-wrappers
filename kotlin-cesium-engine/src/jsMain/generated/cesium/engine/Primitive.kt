@@ -93,7 +93,9 @@ import js.objects.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Primitive.html">Online Documentation</a>
  */
-external class Primitive(options: ConstructorOptions? = definedExternally) {
+external class Primitive(
+    options: ConstructorOptions? = definedExternally,
+) {
     /**
      * @property [geometryInstances] The geometry instances - or a single geometry instance - to render.
      * @property [appearance] The appearance used to render the primitive.

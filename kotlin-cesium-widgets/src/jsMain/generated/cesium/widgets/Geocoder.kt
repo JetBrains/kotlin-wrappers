@@ -15,7 +15,9 @@ import web.dom.Element
  * performed using [Cesium ion](https://cesium.com/cesium-ion/).
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Geocoder.html">Online Documentation</a>
  */
-external class Geocoder(options: ConstructorOptions) {
+external class Geocoder(
+    options: ConstructorOptions,
+) {
     /**
      * @property [container] The DOM element that will contain the widget.
      * @property [scene] The Scene instance to use.

@@ -15,7 +15,9 @@ import seskar.js.JsAsync
  * Implements the [VoxelProvider] interface.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html">Online Documentation</a>
  */
-external class Cesium3DTilesVoxelProvider(options: Any) {
+external class Cesium3DTilesVoxelProvider(
+    options: Any,
+) {
     /**
      * A transform from local space to global space. If undefined, the identity matrix will be used instead.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#globalTransform">Online Documentation</a>

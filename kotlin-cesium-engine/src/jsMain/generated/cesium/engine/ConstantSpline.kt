@@ -23,7 +23,9 @@ package cesium.engine
  * @property [value] The constant value that the spline evaluates to.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ConstantSpline.html">Online Documentation</a>
  */
-external class ConstantSpline(val value: Any /* number | Cartesian3 | Quaternion */) {
+external class ConstantSpline(
+    val value: Any, /* number | Cartesian3 | Quaternion */
+) {
     /**
      * Finds an index `i` in `times` such that the parameter
      * `time` is in the interval `[times[i], times[i + 1]]`.

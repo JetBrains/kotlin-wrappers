@@ -13,7 +13,9 @@ import web.html.HTMLImageElement
  * Provides functionality for ImageryProviders that have time dynamic imagery
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TimeDynamicImagery.html">Online Documentation</a>
  */
-external class TimeDynamicImagery(options: ConstructorOptions) {
+external class TimeDynamicImagery(
+    options: ConstructorOptions,
+) {
     /**
      * @property [clock] A Clock instance that is used when determining the value for the time dimension. Required when `options.times` is specified.
      * @property [times] TimeIntervalCollection with its `data` property being an object containing time dynamic dimension and their values.

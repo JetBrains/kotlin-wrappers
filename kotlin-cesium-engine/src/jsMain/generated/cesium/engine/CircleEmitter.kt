@@ -18,7 +18,9 @@ package cesium.engine
  *   Default value - `1.0`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CircleEmitter.html">Online Documentation</a>
  */
-external class CircleEmitter(var radius: Double = definedExternally) {
+external class CircleEmitter(
+    var radius: Double = definedExternally,
+) {
     /**
      * The angle of the cone in radians.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CircleEmitter.html#angle">Online Documentation</a>

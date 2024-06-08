@@ -78,7 +78,9 @@ import js.objects.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolygonOutlineGeometry.html">Online Documentation</a>
  */
-external class PolygonOutlineGeometry(options: ConstructorOptions) {
+external class PolygonOutlineGeometry(
+    options: ConstructorOptions,
+) {
     /**
      * @property [polygonHierarchy] A polygon hierarchy that can include holes.
      * @property [height] The distance in meters between the polygon and the ellipsoid surface.

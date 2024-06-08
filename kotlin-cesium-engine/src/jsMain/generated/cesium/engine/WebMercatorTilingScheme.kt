@@ -11,7 +11,9 @@ import js.objects.JsPlainObject
  * the tiling scheme used by Google Maps, Microsoft Bing Maps, and most of ESRI ArcGIS Online.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMercatorTilingScheme.html">Online Documentation</a>
  */
-external class WebMercatorTilingScheme(options: ConstructorOptions? = definedExternally) : TilingScheme {
+external class WebMercatorTilingScheme(
+    options: ConstructorOptions? = definedExternally,
+) : TilingScheme {
     /**
      * @property [ellipsoid] The ellipsoid whose surface is being tiled. Defaults to
      *   the WGS84 ellipsoid.

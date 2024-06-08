@@ -21,7 +21,9 @@ import js.objects.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipseGeometry.html">Online Documentation</a>
  */
-external class EllipseGeometry(options: ConstructorOptions) {
+external class EllipseGeometry(
+    options: ConstructorOptions,
+) {
     /**
      * @property [center] The ellipse's center point in the fixed frame.
      * @property [semiMajorAxis] The length of the ellipse's semi-major axis in meters.

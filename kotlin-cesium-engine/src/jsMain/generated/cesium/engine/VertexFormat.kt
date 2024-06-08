@@ -23,7 +23,9 @@ import js.array.ReadonlyArray
  * @param [options] An object with boolean properties corresponding to VertexFormat properties as shown in the code example.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VertexFormat.html">Online Documentation</a>
  */
-external class VertexFormat(options: Any? = definedExternally) {
+external class VertexFormat(
+    options: Any? = definedExternally,
+) {
     /**
      * When `true`, the vertex has a 3D position attribute.
      *

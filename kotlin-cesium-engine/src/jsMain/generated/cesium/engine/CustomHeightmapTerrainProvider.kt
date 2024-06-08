@@ -29,7 +29,9 @@ import js.promise.Promise
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CustomHeightmapTerrainProvider.html">Online Documentation</a>
  */
-external class CustomHeightmapTerrainProvider(options: ConstructorOptions) : TerrainProvider {
+external class CustomHeightmapTerrainProvider(
+    options: ConstructorOptions,
+) : TerrainProvider {
     /**
      * @property [callback] The callback function for requesting tile geometry.
      * @property [width] The number of columns per heightmap tile.

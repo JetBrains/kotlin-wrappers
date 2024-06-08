@@ -18,7 +18,9 @@ import js.objects.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BoxOutlineGeometry.html">Online Documentation</a>
  */
-external class BoxOutlineGeometry(options: ConstructorOptions) {
+external class BoxOutlineGeometry(
+    options: ConstructorOptions,
+) {
     /**
      * @property [minimum] The minimum x, y, and z coordinates of the box.
      * @property [maximum] The maximum x, y, and z coordinates of the box.

@@ -19,7 +19,9 @@ import js.objects.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CircleGeometry.html">Online Documentation</a>
  */
-external class CircleGeometry(options: ConstructorOptions) {
+external class CircleGeometry(
+    options: ConstructorOptions,
+) {
     /**
      * @property [center] The circle's center point in the fixed frame.
      * @property [radius] The radius in meters.

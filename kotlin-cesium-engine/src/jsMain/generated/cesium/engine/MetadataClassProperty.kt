@@ -12,7 +12,9 @@ import js.objects.JsPlainObject
  * See the [3D Metadata Specification](https://github.com/CesiumGS/3d-tiles/tree/main/specification/Metadata) for 3D Tiles
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MetadataClassProperty.html">Online Documentation</a>
  */
-external class MetadataClassProperty(options: ConstructorOptions) {
+external class MetadataClassProperty(
+    options: ConstructorOptions,
+) {
     /**
      * @property [id] The ID of the property.
      * @property [type] The type of the property such as SCALAR, VEC2, VEC3.

@@ -50,7 +50,9 @@ import web.xml.XMLDocument
  * @param [options] A url or an object describing initialization options
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html">Online Documentation</a>
  */
-external class Resource(options: Any /* string | Resource.ConstructorOptions */) {
+external class Resource(
+    options: Any, /* string | Resource.ConstructorOptions */
+) {
     /**
      * Additional HTTP headers that will be sent with the request.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#headers">Online Documentation</a>

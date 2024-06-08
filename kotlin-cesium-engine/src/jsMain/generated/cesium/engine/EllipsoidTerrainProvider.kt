@@ -13,7 +13,9 @@ import js.promise.Promise
  * surface.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipsoidTerrainProvider.html">Online Documentation</a>
  */
-external class EllipsoidTerrainProvider(options: ConstructorOptions? = definedExternally) : TerrainProvider {
+external class EllipsoidTerrainProvider(
+    options: ConstructorOptions? = definedExternally,
+) : TerrainProvider {
     /**
      * @property [tilingScheme] The tiling scheme specifying how the ellipsoidal
      *   surface is broken into tiles.  If this parameter is not provided, a [GeographicTilingScheme]

@@ -22,7 +22,9 @@ import seskar.js.JsAsync
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapServiceImageryProvider.html">Online Documentation</a>
  */
-external class WebMapServiceImageryProvider(options: ConstructorOptions) {
+external class WebMapServiceImageryProvider(
+    options: ConstructorOptions,
+) {
     /**
      * Gets the URL of the WMS server.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapServiceImageryProvider.html#url">Online Documentation</a>

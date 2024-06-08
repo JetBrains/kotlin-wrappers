@@ -38,7 +38,9 @@ import js.typedarrays.TypedArray
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Geometry.html">Online Documentation</a>
  */
-external class Geometry(options: ConstructorOptions) {
+external class Geometry(
+    options: ConstructorOptions,
+) {
     /**
      * @property [attributes] Attributes, which make up the geometry's vertices.
      * @property [primitiveType] The type of primitives in the geometry.

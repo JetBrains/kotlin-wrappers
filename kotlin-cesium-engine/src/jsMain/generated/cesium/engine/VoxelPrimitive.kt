@@ -11,7 +11,9 @@ import js.objects.JsPlainObject
  * A primitive that renders voxel data from a [VoxelProvider].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelPrimitive.html">Online Documentation</a>
  */
-external class VoxelPrimitive(options: ConstructorOptions? = definedExternally) {
+external class VoxelPrimitive(
+    options: ConstructorOptions? = definedExternally,
+) {
     /**
      * @property [provider] The voxel provider that supplies the primitive with tile data.
      * @property [modelMatrix] The model matrix used to transform the primitive.

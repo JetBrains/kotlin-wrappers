@@ -20,7 +20,9 @@ import seskar.js.JsAsync
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MapboxStyleImageryProvider.html">Online Documentation</a>
  */
-external class MapboxStyleImageryProvider(options: ConstructorOptions) {
+external class MapboxStyleImageryProvider(
+    options: ConstructorOptions,
+) {
     /**
      * Gets the URL of the Mapbox server.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MapboxStyleImageryProvider.html#url">Online Documentation</a>

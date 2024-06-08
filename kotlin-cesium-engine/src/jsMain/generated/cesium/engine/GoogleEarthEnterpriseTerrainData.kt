@@ -21,7 +21,9 @@ import js.promise.Promise
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseTerrainData.html">Online Documentation</a>
  */
-external class GoogleEarthEnterpriseTerrainData(options: ConstructorOptions) : TerrainData {
+external class GoogleEarthEnterpriseTerrainData(
+    options: ConstructorOptions,
+) : TerrainData {
     /**
      * @property [buffer] The buffer containing terrain data.
      * @property [negativeAltitudeExponentBias] Multiplier for negative terrain heights that are encoded as very small positive values.

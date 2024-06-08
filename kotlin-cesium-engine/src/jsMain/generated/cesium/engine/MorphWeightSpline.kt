@@ -21,7 +21,9 @@ import js.objects.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MorphWeightSpline.html">Online Documentation</a>
  */
-external class MorphWeightSpline(options: ConstructorOptions) {
+external class MorphWeightSpline(
+    options: ConstructorOptions,
+) {
     /**
      * @property [times] An array of strictly increasing, unit-less, floating-point times at each point.
      *   The values are in no way connected to the clock time. They are the parameterization for the curve.

@@ -22,7 +22,9 @@ import js.objects.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CoplanarPolygonGeometry.html">Online Documentation</a>
  */
-external class CoplanarPolygonGeometry(options: ConstructorOptions) {
+external class CoplanarPolygonGeometry(
+    options: ConstructorOptions,
+) {
     /**
      * @property [polygonHierarchy] A polygon hierarchy that can include holes.
      * @property [stRotation] The rotation of the texture coordinates, in radians. A positive rotation is counter-clockwise.

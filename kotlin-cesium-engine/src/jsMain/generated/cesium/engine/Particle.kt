@@ -10,7 +10,9 @@ import js.objects.JsPlainObject
  * A particle emitted by a [ParticleSystem].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Particle.html">Online Documentation</a>
  */
-external class Particle(options: ConstructorOptions) {
+external class Particle(
+    options: ConstructorOptions,
+) {
     /**
      * @property [mass] The mass of the particle in kilograms.
      *   Default value - `1.0`

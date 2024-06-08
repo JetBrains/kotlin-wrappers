@@ -18,7 +18,9 @@ import js.objects.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SphereGeometry.html">Online Documentation</a>
  */
-external class SphereGeometry(options: ConstructorOptions? = definedExternally) {
+external class SphereGeometry(
+    options: ConstructorOptions? = definedExternally,
+) {
     /**
      * @property [radius] The radius of the sphere.
      *   Default value - `1.0`

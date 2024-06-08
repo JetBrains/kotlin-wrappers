@@ -17,7 +17,9 @@ import web.html.HTMLCanvasElement
  *   Default value - `document`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html">Online Documentation</a>
  */
-external class ScreenSpaceEventHandler(element: HTMLCanvasElement? = definedExternally) {
+external class ScreenSpaceEventHandler(
+    element: HTMLCanvasElement? = definedExternally,
+) {
     /**
      * Set a function to be executed on an input event.
      * @param [action] Function to be executed when the input event occurs.

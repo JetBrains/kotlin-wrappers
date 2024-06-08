@@ -20,7 +20,9 @@ import js.objects.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CylinderOutlineGeometry.html">Online Documentation</a>
  */
-external class CylinderOutlineGeometry(options: ConstructorOptions) {
+external class CylinderOutlineGeometry(
+    options: ConstructorOptions,
+) {
     /**
      * @property [length] The length of the cylinder.
      * @property [topRadius] The radius of the top of the cylinder.
