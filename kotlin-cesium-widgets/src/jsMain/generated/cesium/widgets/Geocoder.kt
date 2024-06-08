@@ -2,13 +2,10 @@
 
 @file:JsModule("@cesium/widgets")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.widgets
 
-import cesium.engine.*
+import cesium.engine.GeocoderService
+import cesium.engine.Scene
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
 import web.dom.Element
@@ -71,11 +68,3 @@ external class Geocoder(options: ConstructorOptions) {
      */
     fun destroy()
 }
-
-/**
- * A function that handles the result of a successful geocode.
- * @param [viewModel] The view model.
- * @param [destination] The destination result of the geocode.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Geocoder.html#.DestinationFoundFunction">Online Documentation</a>
- */
-typealias DestinationFoundFunction = (viewModel: GeocoderViewModel, destination: Any /* Cartesian3 | Rectangle */) -> Unit

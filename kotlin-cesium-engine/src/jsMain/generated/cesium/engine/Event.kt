@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 /**
@@ -67,9 +63,3 @@ external class Event<Listener : Function<Unit>> {
      */
     fun raiseEvent(vararg arguments: Any /* Parameters<Listener> */)
 }
-
-/**
- * A function that removes a listener.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Event.html#.RemoveCallback">Online Documentation</a>
- */
-typealias RemoveCallback = () -> Unit

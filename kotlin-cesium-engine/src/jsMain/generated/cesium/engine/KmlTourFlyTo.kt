@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 /**
@@ -58,11 +54,3 @@ external class KmlTourFlyTo(
      */
     fun getCameraOptions(cameraOptions: Any): Any
 }
-
-/**
- * A function that will be executed when the flight completes.
- * @param [terminated] true if [KmlTourFlyTo.stop] was
- *   called before entry done playback.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlTourFlyTo.html#.DoneCallback">Online Documentation</a>
- */
-typealias DoneCallback = (terminated: Boolean) -> Unit

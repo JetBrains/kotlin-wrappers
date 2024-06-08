@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.objects.JsPlainObject
@@ -871,15 +867,3 @@ external class Camera(scene: Scene) {
         var DEFAULT_OFFSET: HeadingPitchRange
     }
 }
-
-/**
- * A function that will execute when a flight completes.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Camera.html#.FlightCompleteCallback">Online Documentation</a>
- */
-typealias FlightCompleteCallback = () -> Unit
-
-/**
- * A function that will execute when a flight is cancelled.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Camera.html#.FlightCancelledCallback">Online Documentation</a>
- */
-typealias FlightCancelledCallback = () -> Unit

@@ -3,7 +3,6 @@
 @file:JsModule("@cesium/engine")
 
 @file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
     "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
 )
 
@@ -491,17 +490,3 @@ external class ImageryLayer(
         sealed interface /* typealias */ WorldImageryConstructorOptions : ConstructorOptions
     }
 }
-
-/**
- * A function that is called when an error occurs.
- * @param [err] An object holding details about the error that occurred.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayer.html#.ImageryLayerErrorEventCallback">Online Documentation</a>
- */
-typealias ImageryLayerErrorEventCallback = (err: Error) -> Unit
-
-/**
- * A function that is called when the provider has been created
- * @param [provider] The created imagery provider.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayer.html#.ImageryLayerReadyEventCallback">Online Documentation</a>
- */
-typealias ImageryLayerReadyEventCallback = (provider: ImageryProvider) -> Unit

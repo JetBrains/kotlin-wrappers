@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.objects.JsPlainObject
@@ -141,33 +137,3 @@ external class ScreenSpaceEventHandler(element: HTMLCanvasElement? = definedExte
         var touchHoldDelayMilliseconds: Double
     }
 }
-
-/**
- * @param [event] The event which triggered the listener
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#.PositionedEventCallback">Online Documentation</a>
- */
-typealias PositionedEventCallback = (event: ScreenSpaceEventHandler.PositionedEvent) -> Unit
-
-/**
- * @param [event] The event which triggered the listener
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#.MotionEventCallback">Online Documentation</a>
- */
-typealias MotionEventCallback = (event: ScreenSpaceEventHandler.MotionEvent) -> Unit
-
-/**
- * @param [event] The event which triggered the listener
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#.TwoPointEventCallback">Online Documentation</a>
- */
-typealias TwoPointEventCallback = (event: ScreenSpaceEventHandler.TwoPointEvent) -> Unit
-
-/**
- * @param [event] The event which triggered the listener
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#.TwoPointMotionEventCallback">Online Documentation</a>
- */
-typealias TwoPointMotionEventCallback = (event: ScreenSpaceEventHandler.TwoPointMotionEvent) -> Unit
-
-/**
- * @param [delta] The amount that the mouse wheel moved
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#.WheelEventCallback">Online Documentation</a>
- */
-typealias WheelEventCallback = (delta: Double) -> Unit

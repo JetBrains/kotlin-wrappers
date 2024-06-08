@@ -3,7 +3,6 @@
 @file:JsModule("@cesium/engine")
 
 @file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
     "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
 )
 
@@ -301,9 +300,3 @@ external class CzmlDataSource(var name: String = definedExternally) {
         }
     }
 }
-
-/**
- * Function
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CzmlDataSource.html#.UpdaterFunction">Online Documentation</a>
- */
-typealias UpdaterFunction = (entity: Entity, packet: Any, entityCollection: EntityCollection, sourceUri: String) -> Unit

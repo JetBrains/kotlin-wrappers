@@ -3,7 +3,6 @@
 @file:JsModule("@cesium/widgets")
 
 @file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
     "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
 )
 
@@ -939,11 +938,3 @@ external class Viewer(
         var msaaSamples: Double?
     }
 }
-
-/**
- * A function that augments a Viewer instance with additional functionality.
- * @param [viewer] The viewer instance.
- * @param [options] Options object to be passed to the mixin function.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Viewer.html#.ViewerMixin">Online Documentation</a>
- */
-typealias ViewerMixin = (viewer: Viewer, options: Any) -> Unit

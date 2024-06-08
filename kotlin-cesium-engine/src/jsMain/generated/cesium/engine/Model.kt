@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.objects.JsPlainObject
@@ -644,10 +640,3 @@ private constructor() {
         }
     }
 }
-
-/**
- * Interface for the function that is called with the loaded gltf object once loaded.
- * @param [gltf] The gltf object
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Model.html#.GltfCallback">Online Documentation</a>
- */
-typealias GltfCallback = (gltf: Any) -> Unit

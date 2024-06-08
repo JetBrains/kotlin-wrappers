@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.objects.JsPlainObject
@@ -173,17 +169,3 @@ external class Terrain(terrainProviderPromise: Promise<TerrainProvider>) {
         }
     }
 }
-
-/**
- * A function that is called when an error occurs.
- * @param [err] An object holding details about the error that occurred.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Terrain.html#.TerrainErrorEventCallback">Online Documentation</a>
- */
-typealias TerrainErrorEventCallback = (err: Error) -> Unit
-
-/**
- * A function that is called when the provider has been created
- * @param [provider] The created terrain provider.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Terrain.html#.TerrainReadyEventCallback">Online Documentation</a>
- */
-typealias TerrainReadyEventCallback = (provider: TerrainProvider) -> Unit

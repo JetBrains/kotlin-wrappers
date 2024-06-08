@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.core.Void
@@ -176,10 +172,3 @@ abstract external class TerrainProvider {
         ): Double
     }
 }
-
-/**
- * A function that is called when an error occurs.
- * @param [err] An object holding details about the error that occurred.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TerrainProvider.html#.ErrorEvent">Online Documentation</a>
- */
-typealias ErrorEvent = (err: TileProviderError) -> Unit

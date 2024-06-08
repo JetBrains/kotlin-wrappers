@@ -3,7 +3,6 @@
 @file:JsModule("@cesium/engine")
 
 @file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
     "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
 )
 
@@ -125,9 +124,3 @@ external class TileProviderError(
         fun reportSuccess(previousError: TileProviderError)
     }
 }
-
-/**
- * A function that will be called to retry the operation.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileProviderError.html#.RetryFunction">Online Documentation</a>
- */
-typealias RetryFunction = () -> Unit
