@@ -2,11 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "VAR_OVERRIDDEN_BY_VAL",
-    "VAR_TYPE_MISMATCH_ON_OVERRIDE",
-)
-
 package cesium.engine
 
 import js.core.Void
