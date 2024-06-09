@@ -3,9 +3,9 @@
 package web.streams
 
 import js.core.Void
-import kotlinx.js.JsPlainObject
+import kotlinx.js.JsPlainObject_KT_68943
 
-@JsPlainObject
+@JsPlainObject_KT_68943
 sealed external interface Transformer<I, O> {
     var flush: TransformerFlushCallback<O>?
     var readableType: Void

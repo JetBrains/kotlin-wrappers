@@ -1,12 +1,12 @@
 package js.temporal
 
-import kotlinx.js.JsPlainObject
+import kotlinx.js.JsPlainObject_KT_68943
 
 /**
  * Options to control the result of `until()` and `since()` methods in
  * `Temporal` types.
  */
-@JsPlainObject
+@JsPlainObject_KT_68943
 sealed external interface DifferenceOptions<T : DateTimeUnit<T>> {
     /**
      * The unit to round to. For example, to round to the nearest minute, use

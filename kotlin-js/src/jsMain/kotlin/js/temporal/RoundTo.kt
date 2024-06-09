@@ -1,6 +1,6 @@
 package js.temporal
 
-import kotlinx.js.JsPlainObject
+import kotlinx.js.JsPlainObject_KT_68943
 
 /**
  * `round` methods take one required parameter. If a string is provided, the
@@ -9,7 +9,7 @@ import kotlinx.js.JsPlainObject
  * properties are optional. A string is treated the same as an object whose
  * `smallestUnit` property value is that string.
  */
-@JsPlainObject
+@JsPlainObject_KT_68943
 sealed external interface RoundTo<T : DateTimeUnit<T>> {
     /**
      * The unit to round to. For example, to round to the nearest minute,
