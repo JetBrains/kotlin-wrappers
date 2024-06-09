@@ -5,7 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * A description of a polyline on terrain or 3D Tiles. Only to be used with [GroundPolylinePrimitive].

@@ -8,8 +8,8 @@
 
 package cesium.engine
 
-import js.objects.JsPlainObject
 import js.promise.Promise
+import kotlinx.js.JsPlainObject
 
 /**
  * An imagery layer that displays tiled image data from a single imagery provider

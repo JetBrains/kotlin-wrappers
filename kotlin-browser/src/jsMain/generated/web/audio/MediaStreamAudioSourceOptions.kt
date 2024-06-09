@@ -2,7 +2,7 @@
 
 package web.audio
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.media.streams.MediaStream
 
 @JsPlainObject

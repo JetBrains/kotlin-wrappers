@@ -1,6 +1,6 @@
 package js.temporal
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * `round` methods take one required parameter. If a string is provided, the

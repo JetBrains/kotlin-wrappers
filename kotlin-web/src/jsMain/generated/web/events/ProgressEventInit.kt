@@ -3,7 +3,7 @@
 package web.events
 
 import js.core.JsLong
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface ProgressEventInit :

@@ -2,7 +2,7 @@
 
 package web.worklets
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.http.RequestCredentials
 
 @JsPlainObject

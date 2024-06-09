@@ -3,7 +3,7 @@
 package node.fs
 
 
-@js.objects.JsPlainObject
+@kotlinx.js.JsPlainObject
 sealed external interface FileHandleReadFileAsyncOptions : ObjectEncodingOptions {
     var flag: OpenMode?
 }

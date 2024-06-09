@@ -7,7 +7,7 @@ import web.abort.AbortSignal
 import web.abort.Abortable
 
 
-@js.objects.JsPlainObject
+@kotlinx.js.JsPlainObject
 sealed external interface ExecFileOptions : CommonOptions, Abortable {
     var maxBuffer: Double?
     var killSignal: Any? /* NodeJS.Signals | number | undefined */

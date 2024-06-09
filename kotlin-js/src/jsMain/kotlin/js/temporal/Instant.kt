@@ -8,7 +8,7 @@ package js.temporal
 
 import js.core.BigInt
 import js.core.JsLong
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * A `Temporal.Instant` is an exact point in time, with a precision in

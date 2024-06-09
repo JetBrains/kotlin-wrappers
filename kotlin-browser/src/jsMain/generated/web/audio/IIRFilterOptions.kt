@@ -3,7 +3,7 @@
 package web.audio
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 sealed external interface IIRFilterOptions :

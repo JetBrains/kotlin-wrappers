@@ -2,7 +2,7 @@
 
 package web.media.recorder
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 sealed external interface MediaRecorderOptions {

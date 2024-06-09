@@ -2,8 +2,8 @@
 
 package web.push
 
-import js.objects.JsPlainObject
 import js.objects.ReadonlyRecord
+import kotlinx.js.JsPlainObject
 import web.time.EpochTimeStamp
 
 @JsPlainObject

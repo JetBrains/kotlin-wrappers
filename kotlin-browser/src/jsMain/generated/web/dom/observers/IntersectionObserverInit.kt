@@ -3,7 +3,7 @@
 package web.dom.observers
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.dom.ParentNode
 
 @JsPlainObject

@@ -4,7 +4,7 @@
 
 package cesium.engine
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * Visualizes a collection of [DataSource] instances.

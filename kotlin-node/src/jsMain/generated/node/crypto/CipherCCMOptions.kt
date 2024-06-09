@@ -4,7 +4,7 @@
 package node.crypto
 
 
-@js.objects.JsPlainObject
+@kotlinx.js.JsPlainObject
 sealed external interface CipherCCMOptions : node.stream.TransformOptions {
     var authTagLength: Double
 }

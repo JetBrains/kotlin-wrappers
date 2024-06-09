@@ -3,8 +3,8 @@
 package web.serialization
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
 import js.transferable.Transferable
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface StructuredSerializeOptions {

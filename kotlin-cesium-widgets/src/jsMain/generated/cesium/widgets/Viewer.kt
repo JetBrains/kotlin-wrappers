@@ -10,8 +10,8 @@ package cesium.widgets
 
 import cesium.engine.*
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
 import js.promise.Promise
+import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync
 import web.dom.Element
 import web.html.HTMLCanvasElement

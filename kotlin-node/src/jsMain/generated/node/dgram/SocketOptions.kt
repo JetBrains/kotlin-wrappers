@@ -6,7 +6,7 @@ package node.dgram
 import web.abort.Abortable
 
 
-@js.objects.JsPlainObject
+@kotlinx.js.JsPlainObject
 sealed external interface SocketOptions : Abortable {
     var type: SocketType
     var reuseAddr: Boolean?

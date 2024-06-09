@@ -1,9 +1,9 @@
 package js.reflect
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
 import js.objects.PropertyKey
 import js.objects.TypedPropertyDescriptor
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 sealed external interface ProxyHandler<T : Any> {

@@ -5,7 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * A spline that is composed of piecewise constants representing a step function.

@@ -5,7 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * A description of a polyline modeled as a line strip; the first two positions define a line segment,

@@ -6,7 +6,7 @@ package node.net
 import web.abort.Abortable
 
 
-@js.objects.JsPlainObject
+@kotlinx.js.JsPlainObject
 sealed external interface ListenOptions : Abortable {
     var port: Double?
     var host: String?

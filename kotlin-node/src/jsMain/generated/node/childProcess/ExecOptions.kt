@@ -6,7 +6,7 @@ package node.childProcess
 import web.abort.AbortSignal
 
 
-@js.objects.JsPlainObject
+@kotlinx.js.JsPlainObject
 sealed external interface ExecOptions : CommonOptions {
     var shell: String?
     var signal: AbortSignal?

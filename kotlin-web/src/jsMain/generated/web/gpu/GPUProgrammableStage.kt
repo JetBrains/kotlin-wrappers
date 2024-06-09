@@ -2,8 +2,8 @@
 
 package web.gpu
 
-import js.objects.JsPlainObject
 import js.objects.ReadonlyRecord
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 sealed external interface GPUProgrammableStage {

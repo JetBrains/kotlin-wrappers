@@ -4,7 +4,7 @@
 package node.childProcess
 
 
-@js.objects.JsPlainObject
+@kotlinx.js.JsPlainObject
 sealed external interface ExecOptionsWithStringEncoding : ExecOptions {
     var encoding: node.buffer.BufferEncoding
 }

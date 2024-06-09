@@ -9,7 +9,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * A [SampledProperty] which is also a [PositionProperty].

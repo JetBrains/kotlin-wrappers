@@ -4,7 +4,7 @@
 
 package cesium.engine
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * A metadata property, as part of a [MetadataClass].

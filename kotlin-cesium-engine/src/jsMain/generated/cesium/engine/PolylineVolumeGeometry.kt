@@ -5,7 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * A description of a polyline with a volume (a 2D shape extruded along a polyline).

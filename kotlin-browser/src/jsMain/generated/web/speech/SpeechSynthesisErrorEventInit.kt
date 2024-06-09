@@ -2,7 +2,7 @@
 
 package web.speech
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface SpeechSynthesisErrorEventInit :

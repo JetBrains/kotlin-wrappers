@@ -3,8 +3,8 @@
 package web.serviceworker
 
 import js.core.Void
-import js.objects.JsPlainObject
 import js.promise.Promise
+import kotlinx.js.JsPlainObject
 import web.http.Request
 
 @JsPlainObject

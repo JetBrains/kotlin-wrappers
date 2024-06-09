@@ -3,7 +3,7 @@
 package web.streams
 
 import js.core.Void
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 sealed external interface UnderlyingSink<W> {

@@ -4,7 +4,7 @@
 package node.stream
 
 
-@js.objects.JsPlainObject
+@kotlinx.js.JsPlainObject
 external interface TransformOptions : DuplexOptions {
     override var construct: (/* this: Transform, */ callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit) -> Unit
     override var read: (/* this: Transform, */ size: Number) -> Unit

@@ -4,7 +4,7 @@
 
 package cesium.engine
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * An interval defined by a start and a stop time; optionally including those times as part of the interval.

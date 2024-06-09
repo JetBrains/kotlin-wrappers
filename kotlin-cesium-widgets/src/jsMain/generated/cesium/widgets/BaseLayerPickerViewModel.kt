@@ -6,7 +6,7 @@ package cesium.widgets
 
 import cesium.engine.Globe
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * The view model for [BaseLayerPicker].

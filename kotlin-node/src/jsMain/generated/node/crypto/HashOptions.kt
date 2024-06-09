@@ -4,7 +4,7 @@
 package node.crypto
 
 
-@js.objects.JsPlainObject
+@kotlinx.js.JsPlainObject
 sealed external interface HashOptions : node.stream.TransformOptions {
     /**
      * For XOF hash functions such as `shake256`, the

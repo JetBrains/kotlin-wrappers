@@ -5,7 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * A description of a circle on the ellipsoid. Circle geometry can be rendered with both [Primitive] and [GroundPrimitive].

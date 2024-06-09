@@ -2,7 +2,7 @@
 
 package web.dom.observers
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.dom.Element
 import web.geometry.DOMRectInit
 import web.time.DOMHighResTimeStamp

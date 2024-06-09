@@ -3,8 +3,8 @@
 package web.promise
 
 import js.errors.JsError
-import js.objects.JsPlainObject
 import js.promise.Promise
+import kotlinx.js.JsPlainObject
 import web.events.EventInit
 
 @JsPlainObject

@@ -5,15 +5,15 @@ val jsPlainObjectPatch by tasks.registering {
             "electron/core/SessionFetchInit.kt",
         ).forEach { path ->
             patchFile(path) { content ->
-                if ("@js.objects.JsPlainObject" !in content) {
+                if ("@kotlinx.js.JsPlainObject" !in content) {
                     content
                         .replaceFirst(
                             "\nexternal interface ",
-                            "\n@js.objects.JsPlainObject\nexternal interface ",
+                            "\n@kotlinx.js.JsPlainObject\nexternal interface ",
                         )
                         .replaceFirst(
                             "\nsealed external interface ",
-                            "\n@js.objects.JsPlainObject\nsealed external interface ",
+                            "\n@kotlinx.js.JsPlainObject\nsealed external interface ",
                         )
                 } else content
             }

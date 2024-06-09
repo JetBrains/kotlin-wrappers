@@ -5,7 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * A description of a cartographic rectangle on an ellipsoid centered at the origin. Rectangle geometry can be rendered with both [Primitive] and [GroundPrimitive].

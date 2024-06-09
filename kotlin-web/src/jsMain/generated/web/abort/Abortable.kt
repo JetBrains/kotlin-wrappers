@@ -2,7 +2,7 @@
 
 package web.abort
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 @JsExternalInheritorsOnly

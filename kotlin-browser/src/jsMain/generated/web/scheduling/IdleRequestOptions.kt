@@ -2,7 +2,7 @@
 
 package web.scheduling
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 sealed external interface IdleRequestOptions {

@@ -2,7 +2,7 @@
 
 package web.locks
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 sealed external interface LockInfo {

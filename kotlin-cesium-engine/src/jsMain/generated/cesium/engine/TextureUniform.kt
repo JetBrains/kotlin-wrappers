@@ -4,8 +4,8 @@
 
 package cesium.engine
 
-import js.objects.JsPlainObject
 import js.typedarrays.Uint8Array
+import kotlinx.js.JsPlainObject
 
 /**
  * A simple struct that serves as a value of a `sampler2D`-valued

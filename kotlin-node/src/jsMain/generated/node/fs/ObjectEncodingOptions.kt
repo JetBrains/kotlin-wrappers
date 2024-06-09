@@ -4,7 +4,7 @@
 package node.fs
 
 
-@js.objects.JsPlainObject
+@kotlinx.js.JsPlainObject
 external interface ObjectEncodingOptions {
     var encoding: node.buffer.BufferEncoding?
 }

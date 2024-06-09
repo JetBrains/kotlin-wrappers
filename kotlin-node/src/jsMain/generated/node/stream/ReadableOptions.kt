@@ -4,7 +4,7 @@
 package node.stream
 
 
-@js.objects.JsPlainObject
+@kotlinx.js.JsPlainObject
 sealed external interface ReadableOptions : StreamOptions<Stream /* Readable */> {
     var encoding: node.buffer.BufferEncoding?
     var read: (/* this: Readable, */ size: Number) -> Unit

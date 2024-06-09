@@ -2,7 +2,7 @@
 
 package web.dom.observers
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 sealed external interface ResizeObserverOptions {

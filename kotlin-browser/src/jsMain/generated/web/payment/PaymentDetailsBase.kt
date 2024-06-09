@@ -3,7 +3,7 @@
 package web.payment
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 sealed external interface PaymentDetailsBase {
