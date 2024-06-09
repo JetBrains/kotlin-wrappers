@@ -13,8 +13,8 @@ sealed external interface RouteObject {
     var caseSensitive: Boolean?
     var path: String?
     var id: String?
-    var loader: LoaderLike
-    var action: ActionLike
+    var loader: LoaderLike?
+    var action: ActionLike?
     var hasErrorBoundary: Boolean?
     var shouldRevalidate: ShouldRevalidateFunction?
     var handle: Any?
