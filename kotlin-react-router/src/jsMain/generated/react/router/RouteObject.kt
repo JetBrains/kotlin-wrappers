@@ -3,12 +3,13 @@
 
 package react.router
 
+import kotlinx.js.JsPlainObject
 import remix.run.router.ActionLike
 import remix.run.router.LazyRouteFunction
 import remix.run.router.LoaderLike
 import remix.run.router.ShouldRevalidateFunction
 
-
+@JsPlainObject
 sealed external interface RouteObject {
     var caseSensitive: Boolean?
     var path: String?
