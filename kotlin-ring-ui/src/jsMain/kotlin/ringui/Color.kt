@@ -1,24 +1,10 @@
-@file:Suppress(
-    "NOTHING_TO_INLINE",
-)
-
 package ringui
 
-import js.objects.jso
+import js.objects.JsPlainObject
 
+@JsPlainObject
 external interface Color {
-    var r: Short
-    var g: Short
-    var b: Short
+    val r: Short
+    val g: Short
+    val b: Short
 }
-
-inline fun Color(
-    r: Short,
-    g: Short,
-    b: Short,
-): Color =
-    jso {
-        this.r = r
-        this.g = g
-        this.b = b
-    }
