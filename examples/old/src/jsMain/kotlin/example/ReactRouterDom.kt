@@ -1,6 +1,5 @@
 package example
 
-import js.objects.jso
 import react.FC
 import react.create
 import react.dom.html.ReactHTML.div
@@ -10,6 +9,7 @@ import react.dom.html.ReactHTML.li
 import react.dom.html.ReactHTML.nav
 import react.dom.html.ReactHTML.ul
 import react.router.Outlet
+import react.router.RouteObject
 import react.router.RouterProvider
 import react.router.dom.Link
 import react.router.dom.createBrowserRouter
@@ -95,34 +95,34 @@ val Topic = FC {
 
 private val APP_ROUTER = createBrowserRouter(
     arrayOf(
-        jso {
-            path = "/"
-            element = Root.create()
+        RouteObject(
+            path = "/",
+            element = Root.create(),
             children = arrayOf(
-                jso {
-                    index = true
-                    element = Home.create()
-                },
-                jso {
-                    path = "about"
-                    element = About.create()
-                },
-                jso {
-                    path = "topics"
-                    element = Topics.create()
+                RouteObject(
+                    index = true,
+                    element = Home.create(),
+                ),
+                RouteObject(
+                    path = "about",
+                    element = About.create(),
+                ),
+                RouteObject(
+                    path = "topics",
+                    element = Topics.create(),
                     children = arrayOf(
-                        jso {
-                            index = true
-                            element = h3.create { +"Please select a topic." }
-                        },
-                        jso {
-                            path = ":topicId"
-                            element = Topic.create()
-                        },
-                    )
-                },
+                        RouteObject(
+                            index = true,
+                            element = h3.create { +"Please select a topic." },
+                        ),
+                        RouteObject(
+                            path = ":topicId",
+                            element = Topic.create(),
+                        ),
+                    ),
+                ),
             )
-        },
+        ),
     )
 )
 
