@@ -7,6 +7,10 @@
                     <option name="issueRegexp" value="#(\d+)"/>
                     <option name="linkRegexp" value="https://github.com/JetBrains/kotlin-wrappers/issues/$1"/>
                 </IssueNavigationLink>
+                <IssueNavigationLink>
+                    <option name="issueRegexp" value="KT-(\d+)"/>
+                    <option name="linkRegexp" value="https://youtrack.jetbrains.com/issue/KT-$1"/>
+                </IssueNavigationLink>
             </list>
         </option>
     </component>
