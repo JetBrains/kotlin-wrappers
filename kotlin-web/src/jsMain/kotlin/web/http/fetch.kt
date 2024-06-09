@@ -1,6 +1,5 @@
 package web.http
 
-import js.objects.jso
 import kotlinx.coroutines.suspendCancellableCoroutine
 import web.abort.toAbortSignal
 import web.url.URL
@@ -11,9 +10,7 @@ suspend fun fetch(
     suspendCancellableCoroutine { continuation ->
         val request = Request(
             input = input,
-            init = jso {
-                signal = continuation.toAbortSignal()
-            }
+            init = RequestInit(signal = continuation.toAbortSignal())
         )
 
         fetchAsync(request)
