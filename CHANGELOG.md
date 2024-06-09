@@ -1,12 +1,9 @@
-## pre.757
-
-* Real `@JsPlainObject`
-    * With factory methods
-    * With `copy` method
-
 ## pre.756
 
 * Kotlin `2.0.0`
+* Real `@JsPlainObject`
+    * With factory methods
+    * With `copy` method
 
 ## pre.755
 
