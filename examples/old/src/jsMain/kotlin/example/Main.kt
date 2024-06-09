@@ -1,7 +1,6 @@
 package example
 
 import emotion.react.css
-import js.objects.Object
 import js.objects.jso
 import react.*
 import react.dom.html.HTMLAttributes
@@ -58,7 +57,8 @@ val MainApp = FC<PropsWithChildren> { props ->
             asDynamic()["my-attribute"] = 100
 
             // Assigning additional attributes
-            Object.assign(this, jso<HTMLAttributes<HTMLDivElement>> { tabIndex = 0 })
+            val additionalAttributes = jso<HTMLAttributes<HTMLDivElement>> { tabIndex = 0 }
+            +additionalAttributes
 
             // Appending children from props
             +props.children
