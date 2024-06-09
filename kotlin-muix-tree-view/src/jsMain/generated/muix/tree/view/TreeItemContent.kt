@@ -15,7 +15,18 @@ external interface TreeItemContentProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: dynamic
+    var classes: Classes
+
+    interface Classes {
+        val root: ClassName
+        val expanded: ClassName
+        val selected: ClassName
+        val focused: ClassName
+        val disabled: ClassName
+        val iconContainer: ClassName
+        val label: ClassName
+        val checkbox: ClassName
+    }
 
     /**
      * The tree item label.
