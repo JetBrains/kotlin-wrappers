@@ -5,6 +5,6 @@
 package tanstack.query.core
 
 external fun <TQueryFnData, TError, TData, TQueryKey : QueryKey> resolveStaleTime(
-    staleTime: Any, /* undefined | StaleTime<TQueryFnData, TError, TData, TQueryKey> */
+    staleTime: StaleTime<TQueryFnData, TError, TData, TQueryKey>?,
     query: Query<TQueryFnData, TError, TData, TQueryKey>,
 ): JsDuration?
