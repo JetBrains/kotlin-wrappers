@@ -2,9 +2,7 @@
 
 package web.streams
 
-import kotlinx.js.JsPlainObject_KT_68943
-
-@JsPlainObject_KT_68943
+@kotlinx.js.JsPlainObject_KT_68943
 sealed external interface ReadableWritablePair<R, W> {
     var readable: ReadableStream<R>
 
