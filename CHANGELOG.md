@@ -1,3 +1,10 @@
+## pre.758
+
+**BREAKING CHANGE**
+
+* Tanstack Query `skipToken` support fixed
+    * To construct `QueryFunction` please use factory function `QueryFunction`
+
 ## pre.756
 
 * Kotlin `2.0.0`
