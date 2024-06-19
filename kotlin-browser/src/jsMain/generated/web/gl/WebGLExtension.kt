@@ -3,9 +3,7 @@
 package web.gl
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface WebGLExtension {
     companion object {
         @JsValue("ANGLE_instanced_arrays")

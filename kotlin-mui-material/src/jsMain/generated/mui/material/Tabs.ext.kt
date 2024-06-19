@@ -3,9 +3,7 @@
 package mui.material
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface TabsVariant {
     companion object {
         @JsValue("standard")
@@ -19,7 +17,6 @@ sealed external interface TabsVariant {
     }
 }
 
-@JsVirtual
 sealed external interface TabsIndicatorColor {
     companion object {
         @JsValue("secondary")
@@ -30,7 +27,6 @@ sealed external interface TabsIndicatorColor {
     }
 }
 
-@JsVirtual
 sealed external interface TabsTextColor {
     companion object {
         @JsValue("secondary")
@@ -44,7 +40,6 @@ sealed external interface TabsTextColor {
     }
 }
 
-@JsVirtual
 sealed external interface TabsScrollButtons {
     companion object {
         @JsValue("auto")

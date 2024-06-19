@@ -3,9 +3,7 @@
 package web.transport
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface WebTransportCongestionControl {
     companion object {
         @JsValue("default")

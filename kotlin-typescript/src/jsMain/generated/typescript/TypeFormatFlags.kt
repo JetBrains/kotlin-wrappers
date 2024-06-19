@@ -3,9 +3,7 @@
 package typescript
 
 import seskar.js.JsIntValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface TypeFormatFlags {
     companion object {
         @JsIntValue(0)

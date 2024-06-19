@@ -3,9 +3,7 @@
 package mui.material
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface ChipColor {
     companion object {
         @JsValue("default")
@@ -31,7 +29,6 @@ sealed external interface ChipColor {
     }
 }
 
-@JsVirtual
 sealed external interface ChipVariant {
     companion object {
         @JsValue("filled")

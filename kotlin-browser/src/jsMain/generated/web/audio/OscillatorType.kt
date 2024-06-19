@@ -3,9 +3,7 @@
 package web.audio
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface OscillatorType {
     companion object {
         @JsValue("custom")

@@ -3,9 +3,7 @@
 package typescript
 
 import seskar.js.JsIntValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface ProgramUpdateLevel {
     companion object {
         /** Program is updated with same root file names and options */

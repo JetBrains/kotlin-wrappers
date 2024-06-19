@@ -3,9 +3,7 @@
 package web.authn
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface AuthenticatorTransport {
     companion object {
         @JsValue("ble")

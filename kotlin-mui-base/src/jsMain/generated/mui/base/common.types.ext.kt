@@ -3,9 +3,7 @@
 package mui.base
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface ItemAriaLabelType {
     companion object {
         @JsValue("first")

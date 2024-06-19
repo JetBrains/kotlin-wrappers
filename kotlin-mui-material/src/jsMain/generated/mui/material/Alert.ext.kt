@@ -3,9 +3,7 @@
 package mui.material
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface AlertColor {
     companion object {
         @JsValue("success")
@@ -22,7 +20,6 @@ sealed external interface AlertColor {
     }
 }
 
-@JsVirtual
 sealed external interface AlertVariant {
     companion object {
         @JsValue("standard")

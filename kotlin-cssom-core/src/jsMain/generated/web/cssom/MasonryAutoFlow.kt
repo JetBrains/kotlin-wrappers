@@ -3,9 +3,7 @@
 package web.cssom
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface MasonryAutoFlow {
     companion object {
         @JsValue("definite-first")

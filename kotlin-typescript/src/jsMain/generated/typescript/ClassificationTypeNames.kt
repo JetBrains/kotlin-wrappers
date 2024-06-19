@@ -3,9 +3,7 @@
 package typescript
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface ClassificationTypeNames {
     companion object {
         @JsValue("comment")

@@ -3,9 +3,7 @@
 package mui.material.styles
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface TypographyVariant {
     companion object {
         @JsValue("h1")

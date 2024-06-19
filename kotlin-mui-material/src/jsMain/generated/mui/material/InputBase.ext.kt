@@ -3,9 +3,7 @@
 package mui.material
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface InputBaseColor {
     companion object {
         @JsValue("primary")
@@ -28,7 +26,6 @@ sealed external interface InputBaseColor {
     }
 }
 
-@JsVirtual
 sealed external interface InputBaseMargin {
     companion object {
         @JsValue("dense")

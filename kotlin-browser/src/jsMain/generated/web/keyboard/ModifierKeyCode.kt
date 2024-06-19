@@ -3,9 +3,7 @@
 package web.keyboard
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface ModifierKeyCode {
     companion object {
         @JsValue("Alt")

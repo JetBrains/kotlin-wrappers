@@ -3,9 +3,7 @@
 package mui.material
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface PaginationItemColor {
     companion object {
         @JsValue("standard")
@@ -19,7 +17,6 @@ sealed external interface PaginationItemColor {
     }
 }
 
-@JsVirtual
 sealed external interface PaginationItemVariant {
     companion object {
         @JsValue("text")
@@ -30,7 +27,6 @@ sealed external interface PaginationItemVariant {
     }
 }
 
-@JsVirtual
 sealed external interface PaginationItemShape {
     companion object {
         @JsValue("circular")

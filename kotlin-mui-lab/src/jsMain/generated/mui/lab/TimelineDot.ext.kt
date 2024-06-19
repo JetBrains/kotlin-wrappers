@@ -3,9 +3,7 @@
 package mui.lab
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface TimelineDotColor {
     companion object {
         @JsValue("inherit")
@@ -34,7 +32,6 @@ sealed external interface TimelineDotColor {
     }
 }
 
-@JsVirtual
 sealed external interface TimelineDotVariant {
     companion object {
         @JsValue("filled")

@@ -3,9 +3,7 @@
 package web.cssom
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface PropertyName<T : Any> : Ident {
     companion object {
         @JsValue("accent-color")

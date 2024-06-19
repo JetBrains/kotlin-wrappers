@@ -3,9 +3,7 @@
 package mui.material
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface ButtonGroupColor {
     companion object {
         @JsValue("inherit")
@@ -31,7 +29,6 @@ sealed external interface ButtonGroupColor {
     }
 }
 
-@JsVirtual
 sealed external interface ButtonGroupVariant {
     companion object {
         @JsValue("text")

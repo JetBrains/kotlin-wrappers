@@ -3,9 +3,7 @@
 package web.audio
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface DistanceModelType {
     companion object {
         @JsValue("exponential")

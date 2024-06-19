@@ -3,9 +3,7 @@
 package web.cssom.atrule
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface PrefersReducedMotion {
     companion object {
         @JsValue("no-preference")

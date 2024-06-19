@@ -3,9 +3,7 @@
 package typescript
 
 import seskar.js.JsIntValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface CompletionTriggerKind {
     companion object {
         /** Completion was triggered by typing an identifier, manual invocation (e.g Ctrl+Space) or via API. */

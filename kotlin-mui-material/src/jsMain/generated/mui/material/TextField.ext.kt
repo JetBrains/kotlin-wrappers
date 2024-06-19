@@ -3,9 +3,7 @@
 package mui.material
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface TextFieldVariants {
     companion object {
         @JsValue("outlined")
@@ -19,7 +17,6 @@ sealed external interface TextFieldVariants {
     }
 }
 
-@JsVirtual
 sealed external interface TextFieldColor {
     companion object {
         @JsValue("primary")

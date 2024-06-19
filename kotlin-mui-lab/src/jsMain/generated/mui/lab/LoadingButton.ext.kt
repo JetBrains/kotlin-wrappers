@@ -3,9 +3,7 @@
 package mui.lab
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface LoadingPosition {
     companion object {
         @JsValue("start")

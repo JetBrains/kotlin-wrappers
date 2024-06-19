@@ -3,9 +3,7 @@
 package web.dom.observers
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface MutationRecordType {
     companion object {
         @JsValue("attributes")

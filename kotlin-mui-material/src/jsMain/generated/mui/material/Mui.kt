@@ -3,10 +3,8 @@
 package mui.material
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-@JsVirtual
 sealed external interface Mui {
     companion object {
         @JsValue("Mui-active")

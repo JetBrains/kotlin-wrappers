@@ -3,9 +3,7 @@
 package web.fonts
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface FontFaceLoadStatus {
     companion object {
         @JsValue("error")

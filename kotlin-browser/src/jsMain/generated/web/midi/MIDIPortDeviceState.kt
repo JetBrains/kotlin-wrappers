@@ -3,9 +3,7 @@
 package web.midi
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface MIDIPortDeviceState {
     companion object {
         @JsValue("connected")

@@ -3,10 +3,8 @@
 package typescript
 
 import seskar.js.JsIntValue
-import seskar.js.JsVirtual
 
 /** Return code used by getEmitOutput function to indicate status of the function */
-@JsVirtual
 sealed external interface ExitStatus {
     companion object {
         @JsIntValue(0)

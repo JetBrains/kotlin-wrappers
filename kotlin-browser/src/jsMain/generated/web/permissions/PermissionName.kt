@@ -3,9 +3,7 @@
 package web.permissions
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface PermissionName {
     companion object {
         @JsValue("geolocation")

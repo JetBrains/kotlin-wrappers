@@ -3,9 +3,7 @@
 package web.vtt
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface TextTrackKind {
     companion object {
         @JsValue("captions")

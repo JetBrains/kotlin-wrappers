@@ -3,9 +3,7 @@
 package web.blob
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface EndingType {
     companion object {
         @JsValue("native")

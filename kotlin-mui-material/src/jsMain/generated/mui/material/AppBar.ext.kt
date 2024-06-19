@@ -3,9 +3,7 @@
 package mui.material
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface AppBarColor {
     companion object {
         @JsValue("inherit")
@@ -37,7 +35,6 @@ sealed external interface AppBarColor {
     }
 }
 
-@JsVirtual
 sealed external interface AppBarPosition {
     companion object {
         @JsValue("fixed")

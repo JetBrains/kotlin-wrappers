@@ -3,9 +3,7 @@
 package web.screen
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface OrientationType {
     companion object {
         @JsValue("landscape-primary")

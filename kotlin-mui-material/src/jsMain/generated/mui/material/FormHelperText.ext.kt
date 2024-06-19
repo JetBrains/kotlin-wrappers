@@ -3,9 +3,7 @@
 package mui.material
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface FormHelperTextVariant {
     companion object {
         @JsValue("standard")
@@ -19,7 +17,6 @@ sealed external interface FormHelperTextVariant {
     }
 }
 
-@JsVirtual
 sealed external interface FormHelperTextMargin {
     companion object {
         @JsValue("dense")

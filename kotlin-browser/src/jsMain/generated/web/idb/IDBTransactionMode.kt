@@ -3,9 +3,7 @@
 package web.idb
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface IDBTransactionMode {
     companion object {
         @JsValue("readonly")

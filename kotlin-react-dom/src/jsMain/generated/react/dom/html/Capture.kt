@@ -3,9 +3,7 @@
 package react.dom.html
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface Capture {
     companion object {
         @JsValue("false")

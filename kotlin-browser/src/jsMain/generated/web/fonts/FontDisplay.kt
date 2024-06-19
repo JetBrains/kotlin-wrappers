@@ -3,9 +3,7 @@
 package web.fonts
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface FontDisplay {
     companion object {
         @JsValue("auto")

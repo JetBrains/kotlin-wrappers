@@ -3,9 +3,7 @@
 package actions.http.client
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface Headers {
     companion object {
         @JsValue("accept")

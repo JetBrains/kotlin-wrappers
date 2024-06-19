@@ -3,9 +3,7 @@
 package web.window
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface WindowTarget {
     companion object {
         @JsValue("_self")

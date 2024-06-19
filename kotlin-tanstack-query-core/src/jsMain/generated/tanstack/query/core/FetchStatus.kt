@@ -3,9 +3,7 @@
 package tanstack.query.core
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface FetchStatus {
     companion object {
         @JsValue("fetching")

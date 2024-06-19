@@ -3,9 +3,7 @@
 package web.history
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface ScrollRestoration {
     companion object {
         @JsValue("auto")

@@ -3,9 +3,7 @@
 package web.assembly
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface ImportExportKind {
     companion object {
         @JsValue("function")

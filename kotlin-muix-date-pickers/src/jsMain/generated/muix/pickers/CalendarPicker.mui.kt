@@ -3,10 +3,8 @@
 package muix.pickers
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-@JsVirtual
 sealed external interface MuiCalendarPicker {
     companion object {
         @JsValue("MuiCalendarPicker-root")

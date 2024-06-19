@@ -3,9 +3,7 @@
 package web.compression
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface CompressionFormat {
     companion object {
         @JsValue("deflate")

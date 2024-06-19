@@ -3,9 +3,7 @@
 package js.temporal
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface Overflow {
     companion object {
         @JsValue("constrain")

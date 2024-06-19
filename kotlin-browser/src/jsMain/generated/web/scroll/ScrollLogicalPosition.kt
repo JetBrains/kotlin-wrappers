@@ -3,9 +3,7 @@
 package web.scroll
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface ScrollLogicalPosition {
     companion object {
         @JsValue("center")

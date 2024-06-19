@@ -3,9 +3,7 @@
 package typescript
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface BufferEncoding {
     companion object {
         @JsValue("ascii")

@@ -3,9 +3,7 @@
 package web.rtc
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface RTCIceComponent {
     companion object {
         @JsValue("rtcp")

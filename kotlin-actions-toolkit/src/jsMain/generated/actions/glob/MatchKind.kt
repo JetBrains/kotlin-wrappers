@@ -3,9 +3,7 @@
 package actions.glob
 
 import seskar.js.JsIntValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface MatchKind {
     companion object {
         /** Not matched */

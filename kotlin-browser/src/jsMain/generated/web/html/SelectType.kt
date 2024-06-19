@@ -3,9 +3,7 @@
 package web.html
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface SelectType {
     companion object {
         @JsValue("select-one")

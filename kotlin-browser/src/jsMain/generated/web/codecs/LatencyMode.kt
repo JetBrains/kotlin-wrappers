@@ -3,9 +3,7 @@
 package web.codecs
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface LatencyMode {
     companion object {
         @JsValue("quality")

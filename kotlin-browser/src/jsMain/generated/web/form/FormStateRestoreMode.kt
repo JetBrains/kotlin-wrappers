@@ -3,9 +3,7 @@
 package web.form
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface FormStateRestoreMode {
     companion object {
         @JsValue("restore")

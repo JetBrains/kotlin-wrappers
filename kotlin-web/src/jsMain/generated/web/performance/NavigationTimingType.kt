@@ -3,9 +3,7 @@
 package web.performance
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface NavigationTimingType {
     companion object {
         @JsValue("back_forward")

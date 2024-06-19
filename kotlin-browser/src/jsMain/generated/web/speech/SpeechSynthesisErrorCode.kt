@@ -3,9 +3,7 @@
 package web.speech
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface SpeechSynthesisErrorCode {
     companion object {
         @JsValue("audio-busy")

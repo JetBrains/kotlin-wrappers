@@ -3,9 +3,7 @@
 package web.http
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface RequestDestination {
     companion object {
         @JsValue("")

@@ -3,9 +3,7 @@
 package js.intl
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface TimeZoneNameFormat {
     companion object {
         @JsValue("short")
