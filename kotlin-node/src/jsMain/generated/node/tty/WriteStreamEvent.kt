@@ -3,7 +3,6 @@
 package node.tty
 
 
-@seskar.js.JsVirtual
 sealed external interface WriteStreamEvent {
     sealed interface RESIZE : node.events.LegacyEventType
 

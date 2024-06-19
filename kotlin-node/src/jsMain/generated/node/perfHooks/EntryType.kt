@@ -4,7 +4,6 @@
 package node.perfHooks
 
 
-@seskar.js.JsVirtual
 sealed external interface EntryType {
     companion object {
         @seskar.js.JsValue("node")

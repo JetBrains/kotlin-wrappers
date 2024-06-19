@@ -4,7 +4,6 @@
 package node.module
 
 
-@seskar.js.JsVirtual
 sealed external interface ModuleFormat {
     companion object {
         @seskar.js.JsValue("builtin")

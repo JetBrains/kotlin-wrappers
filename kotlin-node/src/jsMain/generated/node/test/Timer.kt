@@ -4,7 +4,6 @@
 package node.test
 
 
-@seskar.js.JsVirtual
 sealed external interface Timer {
     companion object {
         @seskar.js.JsValue("setInterval")

@@ -4,7 +4,6 @@
 package node.vm
 
 
-@seskar.js.JsVirtual
 sealed external interface ModuleStatus {
     companion object {
         @seskar.js.JsValue("unlinked")

@@ -4,7 +4,6 @@
 package node.net
 
 
-@seskar.js.JsVirtual
 sealed external interface IPVersion {
     companion object {
         @seskar.js.JsValue("ipv4")

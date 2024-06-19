@@ -4,7 +4,6 @@
 package node.tls
 
 
-@seskar.js.JsVirtual
 sealed external interface SecureVersion {
     companion object {
         @seskar.js.JsValue("TLSv1.3")

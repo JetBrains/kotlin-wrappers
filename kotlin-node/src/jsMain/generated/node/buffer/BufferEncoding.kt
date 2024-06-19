@@ -6,7 +6,6 @@ package node.buffer
 
 // Buffer class
 
-@seskar.js.JsVirtual
 sealed external interface BufferEncoding {
     companion object {
         @seskar.js.JsValue("ascii")

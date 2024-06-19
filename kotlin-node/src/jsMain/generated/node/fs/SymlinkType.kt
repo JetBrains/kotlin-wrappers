@@ -4,7 +4,6 @@
 package node.fs
 
 
-@seskar.js.JsVirtual
 sealed external interface SymlinkType {
     companion object {
         @seskar.js.JsValue("dir")

@@ -5,7 +5,6 @@ package node.http
 import node.net.Socket
 
 
-@seskar.js.JsVirtual
 sealed external interface ServerEvent {
     sealed interface CLOSE : node.events.LegacyEventType
     sealed interface CONNECTION : node.events.LegacyEventType

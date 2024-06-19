@@ -78,7 +78,6 @@ val ${key}: ${key}
             .join("\n")
 
         const fileBody = `
-@seskar.js.JsVirtual
 sealed external interface ${name} {
 ${body}
 

@@ -4,7 +4,6 @@
 package node.net
 
 
-@seskar.js.JsVirtual
 sealed external interface SocketReadyState {
     companion object {
         @seskar.js.JsValue("opening")

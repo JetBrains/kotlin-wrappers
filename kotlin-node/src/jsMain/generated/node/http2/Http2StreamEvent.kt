@@ -3,7 +3,6 @@
 package node.http2
 
 
-@seskar.js.JsVirtual
 sealed external interface Http2StreamEvent {
     sealed interface ABORTED : node.events.LegacyEventType
     sealed interface CLOSE : node.events.LegacyEventType

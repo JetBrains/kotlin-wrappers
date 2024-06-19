@@ -3,7 +3,6 @@
 package node.http2
 
 
-@seskar.js.JsVirtual
 sealed external interface ClientHttp2SessionEvent {
     sealed interface ALTSVC : node.events.LegacyEventType
     sealed interface ORIGIN : node.events.LegacyEventType

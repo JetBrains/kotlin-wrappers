@@ -3,7 +3,6 @@
 package node.test
 
 
-@seskar.js.JsVirtual
 sealed external interface TestsStreamEvent {
     sealed interface TEST_DIAGNOSTIC : node.events.LegacyEventType
     sealed interface TEST_FAIL : node.events.LegacyEventType

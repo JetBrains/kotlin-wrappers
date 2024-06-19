@@ -3,7 +3,6 @@
 package node.inspector
 
 
-@seskar.js.JsVirtual
 sealed external interface SessionEvent {
     sealed interface INSPECTORNOTIFICATION : node.events.LegacyEventType
     sealed interface RUNTIME_EXECUTIONCONTEXTCREATED : node.events.LegacyEventType

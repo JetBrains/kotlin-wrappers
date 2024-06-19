@@ -4,7 +4,6 @@
 package node.crypto
 
 
-@seskar.js.JsVirtual
 sealed external interface DSAEncoding {
     companion object {
         @seskar.js.JsValue("der")

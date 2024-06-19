@@ -3,7 +3,6 @@
 package node.readline
 
 
-@seskar.js.JsVirtual
 sealed external interface InterfaceEvent {
     sealed interface CLOSE : node.events.LegacyEventType
     sealed interface LINE : node.events.LegacyEventType

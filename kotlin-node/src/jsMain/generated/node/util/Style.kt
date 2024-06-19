@@ -4,7 +4,6 @@
 package node.util
 
 
-@seskar.js.JsVirtual
 sealed external interface Style {
     companion object {
         @seskar.js.JsValue("special")

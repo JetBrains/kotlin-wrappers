@@ -7,7 +7,6 @@ import node.http.ServerResponse
 import node.stream.Duplex
 
 
-@seskar.js.JsVirtual
 sealed external interface ServerEvent {
     sealed interface KEYLOG : node.events.LegacyEventType
     sealed interface NEWSESSION : node.events.LegacyEventType

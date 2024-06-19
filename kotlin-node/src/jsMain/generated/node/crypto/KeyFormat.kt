@@ -4,7 +4,6 @@
 package node.crypto
 
 
-@seskar.js.JsVirtual
 sealed external interface KeyFormat {
     sealed interface pem : KeyFormat
     sealed interface der : KeyFormat

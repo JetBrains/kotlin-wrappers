@@ -4,7 +4,6 @@
 package node.crypto
 
 
-@seskar.js.JsVirtual
 sealed external interface CipherCCMTypes {
     companion object {
         @seskar.js.JsValue("aes-128-ccm")

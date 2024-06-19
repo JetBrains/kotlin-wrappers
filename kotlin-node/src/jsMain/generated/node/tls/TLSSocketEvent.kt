@@ -3,7 +3,6 @@
 package node.tls
 
 
-@seskar.js.JsVirtual
 sealed external interface TLSSocketEvent {
     sealed interface OCSPRESPONSE : node.events.LegacyEventType
     sealed interface SECURECONNECT : node.events.LegacyEventType

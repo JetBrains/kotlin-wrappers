@@ -3,7 +3,6 @@
 package node.dns
 
 
-@seskar.js.JsVirtual
 sealed external interface ResourceRecordType {
     sealed interface A : ResourceRecordType
     sealed interface AAAA : ResourceRecordType

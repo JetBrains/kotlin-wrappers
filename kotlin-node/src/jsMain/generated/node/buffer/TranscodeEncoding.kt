@@ -4,7 +4,6 @@
 package node.buffer
 
 
-@seskar.js.JsVirtual
 sealed external interface TranscodeEncoding {
     companion object {
         @seskar.js.JsValue("ascii")

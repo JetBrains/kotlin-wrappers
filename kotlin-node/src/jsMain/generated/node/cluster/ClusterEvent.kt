@@ -3,7 +3,6 @@
 package node.cluster
 
 
-@seskar.js.JsVirtual
 sealed external interface ClusterEvent {
     sealed interface DISCONNECT : node.events.LegacyEventType
     sealed interface EXIT : node.events.LegacyEventType

@@ -3,7 +3,6 @@
 package node.net
 
 
-@seskar.js.JsVirtual
 sealed external interface ServerEvent {
     sealed interface CLOSE : node.events.LegacyEventType
     sealed interface CONNECTION : node.events.LegacyEventType

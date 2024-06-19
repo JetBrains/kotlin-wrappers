@@ -3,7 +3,6 @@
 package node.dns
 
 
-@seskar.js.JsVirtual
 sealed external interface GetDefaultResultOrderResult {
     companion object {
         @seskar.js.JsValue("ipv4first")

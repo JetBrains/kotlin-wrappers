@@ -3,7 +3,6 @@
 package node.crypto
 
 
-@seskar.js.JsVirtual
 sealed external interface ECKeyPairOptionsPrivateKeyEncodingType {
     companion object {
         @seskar.js.JsValue("sec1")

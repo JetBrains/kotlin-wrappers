@@ -6,7 +6,6 @@ import js.promise.Promise
 import node.workerThreads.Worker
 
 
-@seskar.js.JsVirtual
 sealed external interface ProcessEvent {
     sealed interface BEFOREEXIT : node.events.LegacyEventType
     sealed interface DISCONNECT : node.events.LegacyEventType

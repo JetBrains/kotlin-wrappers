@@ -4,7 +4,6 @@
 package node.crypto
 
 
-@seskar.js.JsVirtual
 sealed external interface LegacyCharacterEncoding {
     companion object {
         @seskar.js.JsValue("ascii")

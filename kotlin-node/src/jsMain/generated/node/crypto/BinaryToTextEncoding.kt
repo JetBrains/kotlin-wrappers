@@ -6,7 +6,6 @@ package node.crypto
 
 // https://nodejs.org/api/buffer.html#buffer_buffers_and_character_encodings
 
-@seskar.js.JsVirtual
 sealed external interface BinaryToTextEncoding {
     companion object {
         @seskar.js.JsValue("base64")

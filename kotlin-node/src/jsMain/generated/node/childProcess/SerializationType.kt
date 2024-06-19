@@ -4,7 +4,6 @@
 package node.childProcess
 
 
-@seskar.js.JsVirtual
 sealed external interface SerializationType {
     companion object {
         @seskar.js.JsValue("json")

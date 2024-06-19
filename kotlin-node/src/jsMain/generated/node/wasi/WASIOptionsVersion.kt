@@ -3,7 +3,6 @@
 package node.wasi
 
 
-@seskar.js.JsVirtual
 sealed external interface WASIOptionsVersion {
     companion object {
         @seskar.js.JsValue("unstable")

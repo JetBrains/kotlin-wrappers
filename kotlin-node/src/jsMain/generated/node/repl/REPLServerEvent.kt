@@ -5,7 +5,6 @@ package node.repl
 import node.vm.Context
 
 
-@seskar.js.JsVirtual
 sealed external interface REPLServerEvent {
     sealed interface CLOSE : node.events.LegacyEventType
     sealed interface LINE : node.events.LegacyEventType

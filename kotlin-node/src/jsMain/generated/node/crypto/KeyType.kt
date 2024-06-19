@@ -4,7 +4,6 @@
 package node.crypto
 
 
-@seskar.js.JsVirtual
 sealed external interface KeyType {
     sealed interface rsa : KeyType
     sealed interface rsaPss : KeyType

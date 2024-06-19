@@ -4,7 +4,6 @@
 package node.process
 
 
-@seskar.js.JsVirtual
 sealed external interface MultipleResolveType {
     companion object {
         @seskar.js.JsValue("resolve")

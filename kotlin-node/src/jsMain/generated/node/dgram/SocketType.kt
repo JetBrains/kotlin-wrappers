@@ -4,7 +4,6 @@
 package node.dgram
 
 
-@seskar.js.JsVirtual
 sealed external interface SocketType {
     companion object {
         @seskar.js.JsValue("udp4")

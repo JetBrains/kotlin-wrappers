@@ -4,7 +4,6 @@
 package node.process
 
 
-@seskar.js.JsVirtual
 sealed external interface Platform {
     companion object {
         @seskar.js.JsValue("aix")
