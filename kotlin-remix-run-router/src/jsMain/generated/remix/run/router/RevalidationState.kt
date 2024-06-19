@@ -4,7 +4,6 @@
 package remix.run.router
 
 
-@seskar.js.JsVirtual
 sealed external interface RevalidationState {
     companion object {
         @seskar.js.JsValue("idle")

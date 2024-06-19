@@ -3,7 +3,6 @@
 package remix.run.router
 
 
-@seskar.js.JsVirtual
 sealed external interface HandlerResultType {
     companion object {
         @seskar.js.JsValue("data")

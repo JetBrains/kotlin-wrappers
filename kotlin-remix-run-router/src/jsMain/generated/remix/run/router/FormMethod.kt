@@ -9,7 +9,6 @@ package remix.run.router
  * RouterState
  */
 
-@seskar.js.JsVirtual
 sealed external interface FormMethod {
     companion object {
         @seskar.js.JsValue("GET")

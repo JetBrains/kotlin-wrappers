@@ -52,7 +52,6 @@ val ${key}: ${name}
                 .join("\n")
 
             return `
-@seskar.js.JsVirtual
 sealed external interface ${name} {
 companion object {
 ${body}

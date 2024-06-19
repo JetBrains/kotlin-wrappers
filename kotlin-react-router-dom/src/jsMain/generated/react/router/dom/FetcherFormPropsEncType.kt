@@ -3,7 +3,6 @@
 package react.router.dom
 
 
-@seskar.js.JsVirtual
 sealed external interface FetcherFormPropsEncType {
     companion object {
         @seskar.js.JsValue("application/x-www-form-urlencoded")

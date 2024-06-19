@@ -4,7 +4,6 @@
 package remix.run.router
 
 
-@seskar.js.JsVirtual
 sealed external interface FormEncType {
     companion object {
         @seskar.js.JsValue("application/x-www-form-urlencoded")
