@@ -3,7 +3,6 @@
 package electron.core
 
 
-@seskar.js.JsVirtual
 sealed external interface MenuEvent {
     sealed interface MENU_WILL_CLOSE : node.events.LegacyEventType
     sealed interface MENU_WILL_SHOW : node.events.LegacyEventType

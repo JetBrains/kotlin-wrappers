@@ -3,7 +3,6 @@
 package electron.core
 
 
-@seskar.js.JsVirtual
 sealed external interface ClientRequestConstructorOptionsCredentials {
     companion object {
         @seskar.js.JsValue("include")

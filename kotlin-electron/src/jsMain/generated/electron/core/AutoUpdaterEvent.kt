@@ -5,7 +5,6 @@ package electron.core
 import js.date.Date
 
 
-@seskar.js.JsVirtual
 sealed external interface AutoUpdaterEvent {
     sealed interface BEFORE_QUIT_FOR_UPDATE : node.events.LegacyEventType
     sealed interface CHECKING_FOR_UPDATE : node.events.LegacyEventType

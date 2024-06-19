@@ -3,7 +3,6 @@
 package electron.core
 
 
-@seskar.js.JsVirtual
 sealed external interface WebContentsEvent {
     sealed interface AUDIO_STATE_CHANGED : node.events.LegacyEventType
     sealed interface BEFORE_INPUT_EVENT : node.events.LegacyEventType

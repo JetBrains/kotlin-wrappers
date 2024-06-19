@@ -3,7 +3,6 @@
 package electron.core
 
 
-@seskar.js.JsVirtual
 sealed external interface ContextMenuParamsFormControlType {
     companion object {
         @seskar.js.JsValue("none")

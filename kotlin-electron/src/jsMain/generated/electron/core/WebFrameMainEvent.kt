@@ -3,7 +3,6 @@
 package electron.core
 
 
-@seskar.js.JsVirtual
 sealed external interface WebFrameMainEvent {
     sealed interface DOM_READY : node.events.LegacyEventType
 

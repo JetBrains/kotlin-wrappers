@@ -3,7 +3,6 @@
 package electron.core
 
 
-@seskar.js.JsVirtual
 sealed external interface WebRequestFilterType {
     companion object {
         @seskar.js.JsValue("mainFrame")

@@ -3,7 +3,6 @@
 package electron.core
 
 
-@seskar.js.JsVirtual
 sealed external interface ClientRequestEvent {
     sealed interface ABORT : node.events.LegacyEventType
     sealed interface CLOSE : node.events.LegacyEventType

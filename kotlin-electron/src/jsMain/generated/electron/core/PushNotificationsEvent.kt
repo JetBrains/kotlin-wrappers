@@ -3,7 +3,6 @@
 package electron.core
 
 
-@seskar.js.JsVirtual
 sealed external interface PushNotificationsEvent {
     sealed interface RECEIVED_APNS_NOTIFICATION : node.events.LegacyEventType
 

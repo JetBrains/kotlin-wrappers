@@ -3,7 +3,6 @@
 package electron.core
 
 
-@seskar.js.JsVirtual
 sealed external interface BrowserWindowEvent {
     sealed interface ALWAYS_ON_TOP_CHANGED : node.events.LegacyEventType
     sealed interface APP_COMMAND : node.events.LegacyEventType

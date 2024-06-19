@@ -3,7 +3,6 @@
 package electron.core
 
 
-@seskar.js.JsVirtual
 sealed external interface OnSendHeadersListenerDetailsResourceType {
     companion object {
         @seskar.js.JsValue("mainFrame")

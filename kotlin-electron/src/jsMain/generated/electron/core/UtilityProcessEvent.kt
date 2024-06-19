@@ -3,7 +3,6 @@
 package electron.core
 
 
-@seskar.js.JsVirtual
 sealed external interface UtilityProcessEvent {
     sealed interface EXIT : node.events.LegacyEventType
     sealed interface MESSAGE : node.events.LegacyEventType

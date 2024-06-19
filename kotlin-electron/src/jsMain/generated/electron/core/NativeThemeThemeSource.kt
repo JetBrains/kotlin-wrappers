@@ -3,7 +3,6 @@
 package electron.core
 
 
-@seskar.js.JsVirtual
 sealed external interface NativeThemeThemeSource {
     companion object {
         @seskar.js.JsValue("system")

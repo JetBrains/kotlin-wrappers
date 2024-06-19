@@ -3,7 +3,6 @@
 package electron.core
 
 
-@seskar.js.JsVirtual
 sealed external interface ScreenEvent {
     sealed interface DISPLAY_ADDED : node.events.LegacyEventType
     sealed interface DISPLAY_METRICS_CHANGED : node.events.LegacyEventType

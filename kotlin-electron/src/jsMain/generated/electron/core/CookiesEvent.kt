@@ -3,7 +3,6 @@
 package electron.core
 
 
-@seskar.js.JsVirtual
 sealed external interface CookiesEvent {
     sealed interface CHANGED : node.events.LegacyEventType
 

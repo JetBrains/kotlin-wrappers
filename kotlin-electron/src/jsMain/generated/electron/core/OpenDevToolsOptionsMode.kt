@@ -3,7 +3,6 @@
 package electron.core
 
 
-@seskar.js.JsVirtual
 sealed external interface OpenDevToolsOptionsMode {
     companion object {
         @seskar.js.JsValue("left")

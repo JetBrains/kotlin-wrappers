@@ -3,7 +3,6 @@
 package electron.core
 
 
-@seskar.js.JsVirtual
 sealed external interface SystemPreferencesEvent {
     sealed interface ACCENT_COLOR_CHANGED : node.events.LegacyEventType
     sealed interface COLOR_CHANGED : node.events.LegacyEventType

@@ -5,7 +5,6 @@ package electron.core
 import node.buffer.Buffer
 
 
-@seskar.js.JsVirtual
 sealed external interface IncomingMessageEvent {
     sealed interface ABORTED : node.events.LegacyEventType
     sealed interface DATA : node.events.LegacyEventType
