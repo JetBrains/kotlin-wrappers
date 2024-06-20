@@ -5,7 +5,7 @@ package web.gpu
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GPUTextureViewDescriptor :
+external interface GPUTextureViewDescriptor :
     GPUObjectDescriptorBase {
     var format: GPUTextureFormat?
     var dimension: GPUTextureViewDimension?

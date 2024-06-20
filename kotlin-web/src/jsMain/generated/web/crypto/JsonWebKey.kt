@@ -6,7 +6,7 @@ import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface JsonWebKey {
+external interface JsonWebKey {
     var alg: String?
     var crv: String?
     var d: String?

@@ -7,7 +7,7 @@ import js.core.JsLong
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface EncodedVideoChunkInit {
+external interface EncodedVideoChunkInit {
     var data: AllowSharedBufferSource
     var duration: JsLong?
     var timestamp: JsLong

@@ -5,7 +5,7 @@ package web.fonts
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface FontFaceDescriptors {
+external interface FontFaceDescriptors {
     var ascentOverride: String?
     var descentOverride: String?
     var display: FontDisplay?

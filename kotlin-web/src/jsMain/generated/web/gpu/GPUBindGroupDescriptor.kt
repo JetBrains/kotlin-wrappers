@@ -6,7 +6,7 @@ import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GPUBindGroupDescriptor :
+external interface GPUBindGroupDescriptor :
     GPUObjectDescriptorBase {
     var layout: GPUBindGroupLayout
     var entries: ReadonlyArray<GPUBindGroupEntry>

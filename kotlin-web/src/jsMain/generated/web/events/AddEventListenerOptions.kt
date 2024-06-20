@@ -7,7 +7,7 @@ import web.abort.AbortSignal
 import web.abort.Abortable
 
 @JsPlainObject
-sealed external interface AddEventListenerOptions :
+external interface AddEventListenerOptions :
     EventListenerOptions,
     Abortable {
     var once: Boolean?

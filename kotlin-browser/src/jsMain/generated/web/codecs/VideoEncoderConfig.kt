@@ -6,7 +6,7 @@ import js.core.JsLong
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface VideoEncoderConfig {
+external interface VideoEncoderConfig {
     var alpha: AlphaOption?
     var avc: AvcEncoderConfig?
     var bitrate: JsLong?

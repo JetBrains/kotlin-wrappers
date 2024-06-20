@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
 import web.http.RequestCredentials
 
 @JsPlainObject
-sealed external interface WorkerOptions {
+external interface WorkerOptions {
     var credentials: RequestCredentials?
     var name: String?
     var type: WorkerType?

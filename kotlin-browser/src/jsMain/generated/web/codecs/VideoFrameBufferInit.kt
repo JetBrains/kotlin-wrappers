@@ -8,7 +8,7 @@ import kotlinx.js.JsPlainObject
 import web.geometry.DOMRectInit
 
 @JsPlainObject
-sealed external interface VideoFrameBufferInit {
+external interface VideoFrameBufferInit {
     var codedHeight: Int
     var codedWidth: Int
     var colorSpace: VideoColorSpaceInit?

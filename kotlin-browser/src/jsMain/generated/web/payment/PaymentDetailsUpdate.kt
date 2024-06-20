@@ -5,7 +5,7 @@ package web.payment
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface PaymentDetailsUpdate :
+external interface PaymentDetailsUpdate :
     PaymentDetailsBase {
     var paymentMethodErrors: Any?
     var total: PaymentItem?

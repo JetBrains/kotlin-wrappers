@@ -5,7 +5,7 @@ package web.gpu
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GPUComputePassDescriptor :
+external interface GPUComputePassDescriptor :
     GPUObjectDescriptorBase {
     var timestampWrites: GPUComputePassTimestampWrites?
 }

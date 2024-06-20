@@ -5,6 +5,6 @@ package web.audio
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface PeriodicWaveConstraints {
+external interface PeriodicWaveConstraints {
     var disableNormalization: Boolean?
 }

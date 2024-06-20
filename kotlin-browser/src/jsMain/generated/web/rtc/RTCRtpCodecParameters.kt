@@ -5,7 +5,7 @@ package web.rtc
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface RTCRtpCodecParameters :
+external interface RTCRtpCodecParameters :
     RTCRtpCodec {
     var payloadType: Short /* unsigned byte */
 }

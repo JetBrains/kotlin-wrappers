@@ -5,7 +5,7 @@ package web.transport
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface WebTransportCloseInfo {
+external interface WebTransportCloseInfo {
     var closeCode: Int?
     var reason: String?
 }

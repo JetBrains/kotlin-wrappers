@@ -5,7 +5,7 @@ package web.media.capabilities
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface MediaEncodingConfiguration :
+external interface MediaEncodingConfiguration :
     MediaConfiguration {
     var type: MediaEncodingType
 }

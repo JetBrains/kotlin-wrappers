@@ -6,6 +6,6 @@ import js.core.JsLong
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface RTCCertificateExpiration {
+external interface RTCCertificateExpiration {
     var expires: JsLong?
 }

@@ -5,7 +5,7 @@ package web.audio
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface ChannelSplitterOptions :
+external interface ChannelSplitterOptions :
     AudioNodeOptions {
     var numberOfOutputs: Int?
 }

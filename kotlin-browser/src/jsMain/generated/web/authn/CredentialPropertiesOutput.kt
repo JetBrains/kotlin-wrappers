@@ -5,6 +5,6 @@ package web.authn
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface CredentialPropertiesOutput {
+external interface CredentialPropertiesOutput {
     var rk: Boolean?
 }

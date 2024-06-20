@@ -6,7 +6,7 @@ import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GPURenderPassDescriptor :
+external interface GPURenderPassDescriptor :
     GPUObjectDescriptorBase {
     var colorAttachments: ReadonlyArray<GPURenderPassColorAttachment?>
     var depthStencilAttachment: GPURenderPassDepthStencilAttachment?

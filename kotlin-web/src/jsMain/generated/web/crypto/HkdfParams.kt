@@ -6,7 +6,7 @@ import js.buffer.BufferSource
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface HkdfParams :
+external interface HkdfParams :
     Algorithm {
     var hash: HashAlgorithmIdentifier
     var info: BufferSource

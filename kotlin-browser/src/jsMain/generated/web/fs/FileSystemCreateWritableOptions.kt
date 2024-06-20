@@ -5,6 +5,6 @@ package web.fs
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface FileSystemCreateWritableOptions {
+external interface FileSystemCreateWritableOptions {
     var keepExistingData: Boolean?
 }

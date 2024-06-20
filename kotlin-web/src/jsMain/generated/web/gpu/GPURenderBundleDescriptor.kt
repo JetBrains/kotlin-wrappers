@@ -5,5 +5,5 @@ package web.gpu
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GPURenderBundleDescriptor :
+external interface GPURenderBundleDescriptor :
     GPUObjectDescriptorBase

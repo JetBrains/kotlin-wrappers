@@ -3,7 +3,7 @@
 package web.streams
 
 @kotlinx.js.JsPlainObject_KT_68943
-sealed external interface ReadableWritablePair<R, W> {
+external interface ReadableWritablePair<R, W> {
     var readable: ReadableStream<R>
 
     /**

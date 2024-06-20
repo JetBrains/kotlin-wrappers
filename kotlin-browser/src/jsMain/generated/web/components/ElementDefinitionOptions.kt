@@ -6,6 +6,6 @@ import web.html.HTMLElement
 import web.html.HtmlTagName
 
 @kotlinx.js.JsPlainObject_KT_68943
-sealed external interface ElementDefinitionOptions<T : HTMLElement> {
+external interface ElementDefinitionOptions<T : HTMLElement> {
     var extends: HtmlTagName<T>?
 }

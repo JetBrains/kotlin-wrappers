@@ -7,7 +7,7 @@ import js.core.JsLong
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface RTCEncodedVideoFrameMetadata {
+external interface RTCEncodedVideoFrameMetadata {
     var contributingSources: ReadonlyArray<Number>?
     var dependencies: ReadonlyArray<Number>?
     var frameId: JsLong?

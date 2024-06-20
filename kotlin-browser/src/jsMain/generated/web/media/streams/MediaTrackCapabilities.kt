@@ -6,7 +6,7 @@ import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface MediaTrackCapabilities {
+external interface MediaTrackCapabilities {
     var aspectRatio: DoubleRange?
     var autoGainControl: ReadonlyArray<Boolean>?
     var channelCount: ULongRange?

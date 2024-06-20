@@ -5,7 +5,7 @@ package web.gpu
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GPUBlendState {
+external interface GPUBlendState {
     var color: GPUBlendComponent
     var alpha: GPUBlendComponent
 }

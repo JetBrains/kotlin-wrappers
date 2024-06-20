@@ -6,7 +6,7 @@ import js.buffer.BufferSource
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface RsaOaepParams :
+external interface RsaOaepParams :
     Algorithm {
     var label: BufferSource?
 }

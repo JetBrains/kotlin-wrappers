@@ -7,7 +7,7 @@ import web.abort.AbortSignal
 import web.abort.Abortable
 
 @JsPlainObject
-sealed external interface StreamPipeOptions :
+external interface StreamPipeOptions :
     Abortable {
     var preventAbort: Boolean?
     var preventCancel: Boolean?

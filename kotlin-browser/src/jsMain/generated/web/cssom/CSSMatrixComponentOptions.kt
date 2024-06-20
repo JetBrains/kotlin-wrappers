@@ -5,6 +5,6 @@ package web.cssom
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface CSSMatrixComponentOptions {
+external interface CSSMatrixComponentOptions {
     var is2D: Boolean?
 }

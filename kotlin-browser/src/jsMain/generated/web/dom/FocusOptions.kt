@@ -5,6 +5,6 @@ package web.dom
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface FocusOptions {
+external interface FocusOptions {
     var preventScroll: Boolean?
 }

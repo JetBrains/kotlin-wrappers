@@ -7,7 +7,7 @@ import js.buffer.BufferSource
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface PublicKeyCredentialDescriptor {
+external interface PublicKeyCredentialDescriptor {
     var id: BufferSource
     var transports: ReadonlyArray<AuthenticatorTransport>?
     var type: PublicKeyCredentialType

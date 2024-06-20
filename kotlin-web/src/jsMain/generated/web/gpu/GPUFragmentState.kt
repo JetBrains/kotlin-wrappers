@@ -6,7 +6,7 @@ import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GPUFragmentState :
+external interface GPUFragmentState :
     GPUProgrammableStage {
     var targets: ReadonlyArray<GPUColorTargetState?>
 }

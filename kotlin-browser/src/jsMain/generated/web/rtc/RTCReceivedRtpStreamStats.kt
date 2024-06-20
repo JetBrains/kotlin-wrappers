@@ -6,7 +6,7 @@ import js.core.JsLong
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface RTCReceivedRtpStreamStats :
+external interface RTCReceivedRtpStreamStats :
     RTCRtpStreamStats {
     var jitter: Double?
     var packetsLost: JsLong?

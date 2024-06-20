@@ -5,7 +5,7 @@ package web.cssom
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface CSSNumericType {
+external interface CSSNumericType {
     var angle: Int?
     var flex: Int?
     var frequency: Int?

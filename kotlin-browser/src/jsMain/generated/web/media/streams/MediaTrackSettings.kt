@@ -5,7 +5,7 @@ package web.media.streams
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface MediaTrackSettings {
+external interface MediaTrackSettings {
     var aspectRatio: Double?
     var autoGainControl: Boolean?
     var channelCount: Int?

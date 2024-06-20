@@ -5,7 +5,7 @@ package web.audio
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface ChannelMergerOptions :
+external interface ChannelMergerOptions :
     AudioNodeOptions {
     var numberOfInputs: Int?
 }

@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
 import web.dom.Node
 
 @JsPlainObject
-sealed external interface StaticRangeInit {
+external interface StaticRangeInit {
     var endContainer: Node
     var endOffset: Int
     var startContainer: Node

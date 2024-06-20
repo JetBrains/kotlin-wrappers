@@ -6,7 +6,7 @@ import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface MediaKeySystemConfiguration {
+external interface MediaKeySystemConfiguration {
     var audioCapabilities: ReadonlyArray<MediaKeySystemMediaCapability>?
     var distinctiveIdentifier: MediaKeysRequirement?
     var initDataTypes: ReadonlyArray<String>?

@@ -5,7 +5,7 @@ package web.streams
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface ReadableStreamIteratorOptions {
+external interface ReadableStreamIteratorOptions {
     /**
      * Asynchronously iterates over the chunks in the stream's internal queue.
      *

@@ -5,7 +5,7 @@ package web.streams
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface QueuingStrategyInit {
+external interface QueuingStrategyInit {
     /**
      * Creates a new ByteLengthQueuingStrategy with the provided high water mark.
      *

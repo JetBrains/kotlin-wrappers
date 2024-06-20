@@ -5,6 +5,6 @@ package web.scheduling
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface IdleRequestOptions {
+external interface IdleRequestOptions {
     var timeout: Int?
 }

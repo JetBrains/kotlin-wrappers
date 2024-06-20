@@ -7,7 +7,7 @@ import kotlinx.js.JsPlainObject
 import web.media.streams.MediaStream
 
 @JsPlainObject
-sealed external interface RTCRtpTransceiverInit {
+external interface RTCRtpTransceiverInit {
     var direction: RTCRtpTransceiverDirection?
     var sendEncodings: ReadonlyArray<RTCRtpEncodingParameters>?
     var streams: ReadonlyArray<MediaStream>?

@@ -5,7 +5,7 @@ package web.canvas
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface ImageEncodeOptions {
+external interface ImageEncodeOptions {
     var quality: Double?
     var type: String?
 }

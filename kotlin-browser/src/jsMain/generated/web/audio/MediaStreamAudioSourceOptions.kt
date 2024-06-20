@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 import web.media.streams.MediaStream
 
 @JsPlainObject
-sealed external interface MediaStreamAudioSourceOptions {
+external interface MediaStreamAudioSourceOptions {
     var mediaStream: MediaStream
 }

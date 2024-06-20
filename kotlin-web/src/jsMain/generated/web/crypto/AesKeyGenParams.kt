@@ -5,7 +5,7 @@ package web.crypto
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface AesKeyGenParams :
+external interface AesKeyGenParams :
     Algorithm {
     var length: Short
 }

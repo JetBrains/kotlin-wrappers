@@ -5,6 +5,6 @@ package web.clipboard
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface ClipboardItemOptions {
+external interface ClipboardItemOptions {
     var presentationStyle: PresentationStyle?
 }

@@ -5,7 +5,7 @@ package web.idb
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface IDBIndexParameters {
+external interface IDBIndexParameters {
     var multiEntry: Boolean?
     var unique: Boolean?
 }

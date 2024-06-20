@@ -5,7 +5,7 @@ package web.crypto
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface HmacKeyGenParams :
+external interface HmacKeyGenParams :
     Algorithm {
     var hash: HashAlgorithmIdentifier
     var length: Int?

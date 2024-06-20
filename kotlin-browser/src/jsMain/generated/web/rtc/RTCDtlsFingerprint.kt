@@ -5,7 +5,7 @@ package web.rtc
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface RTCDtlsFingerprint {
+external interface RTCDtlsFingerprint {
     var algorithm: String?
     var value: String?
 }

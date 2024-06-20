@@ -5,7 +5,7 @@ package web.animations
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface KeyframeEffectOptions :
+external interface KeyframeEffectOptions :
     EffectTiming {
     var composite: CompositeOperation?
     var iterationComposite: IterationCompositeOperation?

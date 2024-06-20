@@ -5,7 +5,7 @@ package web.gpu
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GPUBindGroupLayoutEntry {
+external interface GPUBindGroupLayoutEntry {
     var binding: GPUIndex32
     var visibility: GPUShaderStage
     var buffer: GPUBufferBindingLayout?

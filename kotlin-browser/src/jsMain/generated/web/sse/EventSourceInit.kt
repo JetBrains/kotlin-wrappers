@@ -5,6 +5,6 @@ package web.sse
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface EventSourceInit {
+external interface EventSourceInit {
     var withCredentials: Boolean?
 }

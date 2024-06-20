@@ -5,7 +5,7 @@ package web.rtc
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface RTCDataChannelInit {
+external interface RTCDataChannelInit {
     var id: Short?
     var maxPacketLifeTime: Short?
     var maxRetransmits: Short?

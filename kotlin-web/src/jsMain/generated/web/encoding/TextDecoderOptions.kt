@@ -5,7 +5,7 @@ package web.encoding
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface TextDecoderOptions {
+external interface TextDecoderOptions {
     var fatal: Boolean?
     var ignoreBOM: Boolean?
 }

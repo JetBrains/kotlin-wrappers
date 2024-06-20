@@ -5,7 +5,7 @@ package web.gpu
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GPUDepthStencilState {
+external interface GPUDepthStencilState {
     var format: GPUTextureFormat
     var depthWriteEnabled: Boolean
     var depthCompare: GPUCompareFunction

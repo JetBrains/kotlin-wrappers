@@ -6,7 +6,7 @@ import js.buffer.BufferSource
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface AesCbcParams :
+external interface AesCbcParams :
     Algorithm {
     var iv: BufferSource
 }

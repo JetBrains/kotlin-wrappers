@@ -5,4 +5,4 @@ package web.rtc
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface RTCOfferAnswerOptions
+external interface RTCOfferAnswerOptions

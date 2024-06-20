@@ -5,7 +5,7 @@ package web.validation
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface ValidityStateFlags {
+external interface ValidityStateFlags {
     var badInput: Boolean?
     var customError: Boolean?
     var patternMismatch: Boolean?

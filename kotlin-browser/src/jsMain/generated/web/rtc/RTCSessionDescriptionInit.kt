@@ -5,7 +5,7 @@ package web.rtc
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface RTCSessionDescriptionInit {
+external interface RTCSessionDescriptionInit {
     var sdp: String?
     var type: RTCSdpType
 }

@@ -6,7 +6,7 @@ import js.core.JsLong
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface AudioConfiguration {
+external interface AudioConfiguration {
     var bitrate: JsLong?
     var channels: String?
     var contentType: String

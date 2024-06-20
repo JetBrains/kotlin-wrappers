@@ -5,7 +5,7 @@ package js.intl
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface ResolvedCollatorOptions {
+external interface ResolvedCollatorOptions {
     var locale: String
     var usage: String
     var sensitivity: String

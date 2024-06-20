@@ -6,7 +6,7 @@ import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GPURenderPassLayout :
+external interface GPURenderPassLayout :
     GPUObjectDescriptorBase {
     var colorFormats: ReadonlyArray<GPUTextureFormat?>
     var depthStencilFormat: GPUTextureFormat?

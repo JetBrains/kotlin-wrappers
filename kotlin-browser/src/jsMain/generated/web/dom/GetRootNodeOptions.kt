@@ -5,6 +5,6 @@ package web.dom
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GetRootNodeOptions {
+external interface GetRootNodeOptions {
     var composed: Boolean?
 }

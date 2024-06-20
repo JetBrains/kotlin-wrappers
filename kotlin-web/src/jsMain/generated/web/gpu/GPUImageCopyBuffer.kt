@@ -5,7 +5,7 @@ package web.gpu
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GPUImageCopyBuffer :
+external interface GPUImageCopyBuffer :
     GPUImageDataLayout {
     var buffer: GPUBuffer
 }

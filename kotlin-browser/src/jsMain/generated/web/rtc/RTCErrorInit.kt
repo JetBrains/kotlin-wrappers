@@ -5,7 +5,7 @@ package web.rtc
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface RTCErrorInit {
+external interface RTCErrorInit {
     var errorDetail: RTCErrorDetailType
     var httpRequestStatusCode: Int?
     var receivedAlert: Int?

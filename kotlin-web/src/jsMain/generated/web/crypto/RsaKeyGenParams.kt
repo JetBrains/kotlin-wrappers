@@ -5,7 +5,7 @@ package web.crypto
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface RsaKeyGenParams :
+external interface RsaKeyGenParams :
     Algorithm {
     var modulusLength: Int
     var publicExponent: BigInteger

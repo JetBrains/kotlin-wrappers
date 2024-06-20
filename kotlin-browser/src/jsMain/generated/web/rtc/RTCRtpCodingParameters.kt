@@ -5,6 +5,6 @@ package web.rtc
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface RTCRtpCodingParameters {
+external interface RTCRtpCodingParameters {
     var rid: String?
 }

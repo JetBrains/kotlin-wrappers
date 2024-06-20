@@ -7,7 +7,7 @@ import web.abort.AbortSignal
 import web.abort.Abortable
 
 @JsPlainObject
-sealed external interface LockOptions :
+external interface LockOptions :
     Abortable {
     var ifAvailable: Boolean?
     var mode: LockMode?

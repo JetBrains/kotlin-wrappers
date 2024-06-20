@@ -6,7 +6,7 @@ import js.buffer.AllowSharedBufferSource
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface VideoDecoderConfig {
+external interface VideoDecoderConfig {
     var codec: String
     var codedHeight: Int?
     var codedWidth: Int?

@@ -5,7 +5,7 @@ package web.audio
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface StereoPannerOptions :
+external interface StereoPannerOptions :
     AudioNodeOptions {
     var pan: Float?
 }

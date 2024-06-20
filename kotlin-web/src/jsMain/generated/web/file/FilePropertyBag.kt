@@ -7,7 +7,7 @@ import web.blob.BlobPropertyBag
 import web.time.EpochTimeStamp
 
 @JsPlainObject
-sealed external interface FilePropertyBag :
+external interface FilePropertyBag :
     BlobPropertyBag {
     var lastModified: EpochTimeStamp?
 }

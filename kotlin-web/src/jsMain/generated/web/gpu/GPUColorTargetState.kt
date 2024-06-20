@@ -5,7 +5,7 @@ package web.gpu
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GPUColorTargetState {
+external interface GPUColorTargetState {
     var format: GPUTextureFormat
     var blend: GPUBlendState?
     var writeMask: GPUColorWrite?

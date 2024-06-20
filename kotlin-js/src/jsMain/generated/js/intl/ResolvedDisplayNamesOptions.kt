@@ -5,7 +5,7 @@ package js.intl
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface ResolvedDisplayNamesOptions {
+external interface ResolvedDisplayNamesOptions {
     var locale: UnicodeBCP47LocaleIdentifier
     var style: RelativeTimeFormatStyle
     var type: DisplayNamesType

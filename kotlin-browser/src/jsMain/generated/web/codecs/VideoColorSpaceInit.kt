@@ -5,7 +5,7 @@ package web.codecs
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface VideoColorSpaceInit {
+external interface VideoColorSpaceInit {
     var fullRange: Boolean?
     var matrix: VideoMatrixCoefficients?
     var primaries: VideoColorPrimaries?

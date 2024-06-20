@@ -6,7 +6,7 @@ import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface LockManagerSnapshot {
+external interface LockManagerSnapshot {
     var held: ReadonlyArray<LockInfo>?
     var pending: ReadonlyArray<LockInfo>?
 }

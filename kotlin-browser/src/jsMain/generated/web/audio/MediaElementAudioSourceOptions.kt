@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 import web.html.HTMLMediaElement
 
 @JsPlainObject
-sealed external interface MediaElementAudioSourceOptions {
+external interface MediaElementAudioSourceOptions {
     var mediaElement: HTMLMediaElement
 }

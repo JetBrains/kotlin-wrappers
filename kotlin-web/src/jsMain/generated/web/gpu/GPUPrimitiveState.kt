@@ -5,7 +5,7 @@ package web.gpu
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GPUPrimitiveState {
+external interface GPUPrimitiveState {
     var topology: GPUPrimitiveTopology?
     var stripIndexFormat: GPUIndexFormat?
     var frontFace: GPUFrontFace?

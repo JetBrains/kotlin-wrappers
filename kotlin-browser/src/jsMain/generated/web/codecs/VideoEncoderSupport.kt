@@ -5,7 +5,7 @@ package web.codecs
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface VideoEncoderSupport {
+external interface VideoEncoderSupport {
     var config: VideoEncoderConfig?
     var supported: Boolean?
 }

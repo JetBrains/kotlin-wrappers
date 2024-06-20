@@ -6,7 +6,7 @@ import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface PaymentDetailsBase {
+external interface PaymentDetailsBase {
     var displayItems: ReadonlyArray<PaymentItem>?
     var modifiers: ReadonlyArray<PaymentDetailsModifier>?
 }

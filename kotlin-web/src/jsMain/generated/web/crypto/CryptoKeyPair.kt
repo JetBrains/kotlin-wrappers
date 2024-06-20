@@ -5,7 +5,7 @@ package web.crypto
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface CryptoKeyPair {
+external interface CryptoKeyPair {
     var privateKey: CryptoKey
     var publicKey: CryptoKey
 }

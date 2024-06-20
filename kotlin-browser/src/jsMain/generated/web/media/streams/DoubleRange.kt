@@ -5,7 +5,7 @@ package web.media.streams
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface DoubleRange {
+external interface DoubleRange {
     var max: Double?
     var min: Double?
 }

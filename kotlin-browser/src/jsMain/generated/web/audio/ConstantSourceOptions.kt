@@ -5,6 +5,6 @@ package web.audio
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface ConstantSourceOptions {
+external interface ConstantSourceOptions {
     var offset: Float?
 }

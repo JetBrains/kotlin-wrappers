@@ -5,7 +5,7 @@ package web.media.streams
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface ConstrainBooleanParameters {
+external interface ConstrainBooleanParameters {
     var exact: Boolean?
     var ideal: Boolean?
 }

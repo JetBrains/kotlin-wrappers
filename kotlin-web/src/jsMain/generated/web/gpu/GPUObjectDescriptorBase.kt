@@ -5,6 +5,6 @@ package web.gpu
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GPUObjectDescriptorBase {
+external interface GPUObjectDescriptorBase {
     var label: String?
 }

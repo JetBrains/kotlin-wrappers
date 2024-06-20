@@ -6,6 +6,6 @@ import js.core.JsLong
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface FileSystemReadWriteOptions {
+external interface FileSystemReadWriteOptions {
     var at: JsLong?
 }

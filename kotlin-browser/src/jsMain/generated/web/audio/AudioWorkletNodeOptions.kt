@@ -7,7 +7,7 @@ import js.objects.ReadonlyRecord
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface AudioWorkletNodeOptions :
+external interface AudioWorkletNodeOptions :
     AudioNodeOptions {
     var numberOfInputs: Int?
     var numberOfOutputs: Int?

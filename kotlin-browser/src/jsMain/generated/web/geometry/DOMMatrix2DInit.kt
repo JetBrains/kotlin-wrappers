@@ -5,7 +5,7 @@ package web.geometry
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface DOMMatrix2DInit {
+external interface DOMMatrix2DInit {
     var a: Double?
     var b: Double?
     var c: Double?

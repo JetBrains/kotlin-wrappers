@@ -5,7 +5,7 @@ package web.animations
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface OptionalEffectTiming {
+external interface OptionalEffectTiming {
     var delay: Double?
     var direction: PlaybackDirection?
     var duration: Double?

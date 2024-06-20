@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
 import web.events.EventTarget
 
 @JsPlainObject
-sealed external interface TouchInit {
+external interface TouchInit {
     var altitudeAngle: Double?
     var azimuthAngle: Double?
     var clientX: Double?

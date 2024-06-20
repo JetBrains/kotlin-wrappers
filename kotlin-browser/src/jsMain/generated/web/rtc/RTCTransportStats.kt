@@ -6,7 +6,7 @@ import js.core.JsLong
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface RTCTransportStats :
+external interface RTCTransportStats :
     RTCStats {
     var bytesReceived: JsLong?
     var bytesSent: JsLong?

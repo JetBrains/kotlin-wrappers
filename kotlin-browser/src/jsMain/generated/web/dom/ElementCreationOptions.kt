@@ -5,6 +5,6 @@ package web.dom
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface ElementCreationOptions {
+external interface ElementCreationOptions {
     var `is`: String?
 }

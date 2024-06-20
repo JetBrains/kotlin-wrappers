@@ -5,6 +5,6 @@ package web.dom.observers
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface ResizeObserverOptions {
+external interface ResizeObserverOptions {
     var box: ResizeObserverBoxOptions?
 }

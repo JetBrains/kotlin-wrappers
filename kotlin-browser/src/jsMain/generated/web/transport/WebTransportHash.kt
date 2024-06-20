@@ -6,7 +6,7 @@ import js.buffer.BufferSource
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface WebTransportHash {
+external interface WebTransportHash {
     var algorithm: String?
     var value: BufferSource?
 }

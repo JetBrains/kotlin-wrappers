@@ -8,7 +8,7 @@ import kotlinx.js.JsPlainObject
 import web.images.PredefinedColorSpace
 
 @JsPlainObject
-sealed external interface GPUCanvasConfiguration {
+external interface GPUCanvasConfiguration {
     var device: GPUDevice
     var format: GPUTextureFormat
     var usage: GPUTextureUsage?

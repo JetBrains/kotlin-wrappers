@@ -5,7 +5,7 @@ package web.audio
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface BiquadFilterOptions :
+external interface BiquadFilterOptions :
     AudioNodeOptions {
     var Q: Float?
     var detune: Float?

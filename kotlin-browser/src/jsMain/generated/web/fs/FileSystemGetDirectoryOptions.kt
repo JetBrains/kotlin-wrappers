@@ -5,6 +5,6 @@ package web.fs
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface FileSystemGetDirectoryOptions {
+external interface FileSystemGetDirectoryOptions {
     var create: Boolean?
 }

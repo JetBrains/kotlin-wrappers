@@ -6,7 +6,7 @@ import js.buffer.BufferSource
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface AesGcmParams :
+external interface AesGcmParams :
     Algorithm {
     var additionalData: BufferSource?
     var iv: BufferSource

@@ -6,7 +6,7 @@ import js.core.JsLong
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface WriteParams {
+external interface WriteParams {
     var data: Any /* BufferSource | Blob | string */?
     var position: JsLong?
     var size: JsLong?

@@ -7,7 +7,7 @@ import kotlinx.js.JsPlainObject
 import web.time.EpochTimeStamp
 
 @JsPlainObject
-sealed external interface PushSubscriptionJSON {
+external interface PushSubscriptionJSON {
     var endpoint: String?
     var expirationTime: EpochTimeStamp?
     var keys: ReadonlyRecord<String, String>?

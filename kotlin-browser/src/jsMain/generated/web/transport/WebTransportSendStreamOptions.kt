@@ -6,6 +6,6 @@ import js.core.JsLong
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface WebTransportSendStreamOptions {
+external interface WebTransportSendStreamOptions {
     var sendOrder: JsLong?
 }

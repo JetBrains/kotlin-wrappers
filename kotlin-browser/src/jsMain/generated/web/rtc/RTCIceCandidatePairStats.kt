@@ -7,7 +7,7 @@ import kotlinx.js.JsPlainObject
 import web.time.DOMHighResTimeStamp
 
 @JsPlainObject
-sealed external interface RTCIceCandidatePairStats :
+external interface RTCIceCandidatePairStats :
     RTCStats {
     var availableIncomingBitrate: Double?
     var availableOutgoingBitrate: Double?

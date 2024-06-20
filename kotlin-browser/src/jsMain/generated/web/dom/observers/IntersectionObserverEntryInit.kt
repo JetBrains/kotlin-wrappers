@@ -8,7 +8,7 @@ import web.geometry.DOMRectInit
 import web.time.DOMHighResTimeStamp
 
 @JsPlainObject
-sealed external interface IntersectionObserverEntryInit {
+external interface IntersectionObserverEntryInit {
     var boundingClientRect: DOMRectInit
     var intersectionRatio: Double
     var intersectionRect: DOMRectInit

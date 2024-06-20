@@ -5,6 +5,6 @@ package web.gpu
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GPUPipelineErrorInit {
+external interface GPUPipelineErrorInit {
     var reason: GPUPipelineErrorReason
 }

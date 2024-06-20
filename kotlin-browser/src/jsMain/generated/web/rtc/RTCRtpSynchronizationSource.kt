@@ -5,5 +5,5 @@ package web.rtc
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface RTCRtpSynchronizationSource :
+external interface RTCRtpSynchronizationSource :
     RTCRtpContributingSource

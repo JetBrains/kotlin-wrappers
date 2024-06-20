@@ -5,7 +5,7 @@ package web.gpu
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GPURenderPassDepthStencilAttachment {
+external interface GPURenderPassDepthStencilAttachment {
     var view: GPUTextureView
     var depthClearValue: Float?
     var depthLoadOp: GPULoadOp?

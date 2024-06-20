@@ -5,7 +5,7 @@ package web.streams
 import js.core.JsLong
 
 @kotlinx.js.JsPlainObject_KT_68943
-sealed external interface UnderlyingSource<R> {
+external interface UnderlyingSource<R> {
     var autoAllocateChunkSize: JsLong?
     var cancel: UnderlyingSourceCancelCallback?
     var pull: UnderlyingSourcePullCallback<R>?

@@ -5,7 +5,7 @@ package web.serviceworker
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface ClientQueryOptions {
+external interface ClientQueryOptions {
     var includeUncontrolled: Boolean?
     var type: ClientTypes?
 }

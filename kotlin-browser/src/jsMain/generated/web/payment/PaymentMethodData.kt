@@ -5,7 +5,7 @@ package web.payment
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface PaymentMethodData {
+external interface PaymentMethodData {
     var data: Any?
     var supportedMethods: String
 }

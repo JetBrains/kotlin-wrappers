@@ -5,6 +5,6 @@ package web.dom
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GetAnimationsOptions {
+external interface GetAnimationsOptions {
     var subtree: Boolean?
 }

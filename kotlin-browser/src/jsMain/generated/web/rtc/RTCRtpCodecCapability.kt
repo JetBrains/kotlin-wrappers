@@ -5,5 +5,5 @@ package web.rtc
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface RTCRtpCodecCapability :
+external interface RTCRtpCodecCapability :
     RTCRtpCodec

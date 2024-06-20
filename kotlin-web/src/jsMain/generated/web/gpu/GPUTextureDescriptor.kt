@@ -6,7 +6,7 @@ import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GPUTextureDescriptor :
+external interface GPUTextureDescriptor :
     GPUObjectDescriptorBase {
     var size: GPUExtent3D
     var mipLevelCount: GPUIntegerCoordinate?

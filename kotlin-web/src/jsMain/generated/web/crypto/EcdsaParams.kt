@@ -5,7 +5,7 @@ package web.crypto
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface EcdsaParams :
+external interface EcdsaParams :
     Algorithm {
     var hash: HashAlgorithmIdentifier
 }

@@ -6,7 +6,7 @@ import js.core.JsLong
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface VideoConfiguration {
+external interface VideoConfiguration {
     var bitrate: JsLong
     var colorGamut: ColorGamut?
     var contentType: String

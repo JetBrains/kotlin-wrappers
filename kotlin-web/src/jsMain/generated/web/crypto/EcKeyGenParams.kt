@@ -5,7 +5,7 @@ package web.crypto
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface EcKeyGenParams :
+external interface EcKeyGenParams :
     Algorithm {
     var namedCurve: NamedCurve
 }

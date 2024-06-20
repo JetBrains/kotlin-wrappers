@@ -7,7 +7,7 @@ import js.buffer.BufferSource
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface PublicKeyCredentialCreationOptions {
+external interface PublicKeyCredentialCreationOptions {
     var attestation: AttestationConveyancePreference?
     var authenticatorSelection: AuthenticatorSelectionCriteria?
     var challenge: BufferSource
