@@ -1,7 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:JsQualifier("globalThis")
-
 @file:Suppress(
     "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
 )
