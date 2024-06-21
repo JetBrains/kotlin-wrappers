@@ -73,6 +73,11 @@ external interface TreeItemProps :
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
     override var sx: SxProps<Theme>?
+
+    /**
+     * Callback fired when a key of the keyboard is pressed on the item.
+     */
+    override var onKeyDown: react.dom.events.KeyboardEventHandler<web.html.HTMLLIElement>?
 }
 
 external interface TreeItemSlots {
@@ -97,7 +102,7 @@ external interface TreeItemSlots {
     var icon: react.ElementType<*>?
 
     /**
-     * The component that animates to appearance / disappearance of the item's children.
+     * The component that animates the appearance / disappearance of the item's children.
      * @default TreeItem2Group
      */
     var groupTransition: react.ElementType<*>?
