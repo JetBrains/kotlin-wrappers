@@ -47,7 +47,7 @@ external interface SimpleTreeViewProps :
      * For each feature, if the flag is not explicitly set to `true`,
      * the feature will be fully disabled and any property / method call will not have any effect.
      */
-    var experimentalFeatures: Any? /* TreeViewExperimentalFeatures<SimpleTreeViewPlugins> */
+    var experimentalFeatures: Any? /* TreeViewExperimentalFeatures<SimpleTreeViewPluginSignatures> */
 }
 
 external interface SimpleTreeViewSlots {
