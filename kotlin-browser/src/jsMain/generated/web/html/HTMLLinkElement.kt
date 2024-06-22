@@ -34,7 +34,7 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/fetchPriority)
      */
-    var fetchPriority: String
+    var fetchPriority: FetchPriority
 
     /**
      * Sets or retrieves a destination URL or an anchor point.
