@@ -2,7 +2,7 @@
 
 package react.dom.events
 
-typealias EventHandler<E /* : SyntheticEvent */> = (event: E) -> Unit
+typealias EventHandler<E> = (event: E) -> Unit
 
 typealias ReactEventHandler<T> = EventHandler<SyntheticEvent<T, *>>
 
