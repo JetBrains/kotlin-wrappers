@@ -285,7 +285,7 @@ external interface SliderOwnProps :
      * The value of the slider.
      * For ranged sliders, provide an array with two values.
      */
-    var value: ReadonlyArray<Number>?
+    var value: dynamic
 
     /**
      * Controls when the value label is displayed:
