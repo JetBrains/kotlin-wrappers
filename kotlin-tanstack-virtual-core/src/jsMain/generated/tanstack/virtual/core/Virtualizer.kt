@@ -16,12 +16,12 @@ external class Virtualizer<TScrollElement : EventTarget /* Element | Window */, 
     var scrollElement: TScrollElement?
     var targetWindow: Window?
     var isScrolling: Boolean
-    var measurementsCache: ReadonlyArray<VirtualItem>
-    var scrollRect: Rect
-    var scrollOffset: Int
+    var measurementsCache: ReadonlyArray<VirtualItem<TItemElement>>
+    var scrollRect: Rect?
+    var scrollOffset: Int?
     var scrollDirection: ScrollDirection?
-    var shouldAdjustScrollPositionOnItemSizeChange: ((item: VirtualItem, delta: Int, instance: Virtualizer<TScrollElement, TItemElement>) -> Boolean)?
-    var measureElementCache: ReadonlyMap<Key, TItemElement>
+    var shouldAdjustScrollPositionOnItemSizeChange: ((item: VirtualItem<TItemElement>, delta: Int, instance: Virtualizer<TScrollElement, TItemElement>) -> Boolean)?
+    var elementsCache: ReadonlyMap<Key, TItemElement>
     var range: ItemRange?
 
     constructor(opts: VirtualizerOptions<TScrollElement, TItemElement>)
@@ -29,10 +29,10 @@ external class Virtualizer<TScrollElement : EventTarget /* Element | Window */, 
     var setOptions: (opts: VirtualizerOptions<TScrollElement, TItemElement>) -> Unit
     var calculateRange: () -> ItemRange?
     var indexFromElement: (node: TItemElement) -> Int
-    var resizeItem: (item: VirtualItem, size: Int) -> Unit
+    var resizeItem: (index: Int, size: Int) -> Unit
     var measureElement: (node: TItemElement?) -> Unit
-    var getVirtualItems: () -> ReadonlyArray<VirtualItem>
-    var getVirtualItemForOffset: (offset: Int) -> VirtualItem
+    var getVirtualItems: () -> ReadonlyArray<VirtualItem<TItemElement>>
+    var getVirtualItemForOffset: (offset: Int) -> VirtualItem<TItemElement>
     var getOffsetForAlignment: (toOffset: Int, align: ScrollAlignment) -> Int
     var getOffsetForIndex: (index: Int, align: ScrollAlignment?) -> JsTuple2<Double, ScrollAlignment>
     var scrollToOffset: (toOffset: Int, options: ScrollToOffsetOptions?) -> Unit
