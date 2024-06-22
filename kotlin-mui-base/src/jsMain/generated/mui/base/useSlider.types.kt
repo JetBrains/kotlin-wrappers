@@ -2,6 +2,7 @@
 
 package mui.base
 
+import js.array.ReadonlyArray
 import web.dom.Element
 import web.events.Event
 
@@ -70,7 +71,7 @@ external interface UseSliderParameters {
      * @param {number | number[]} value The new value.
      * @param {number} activeThumb Index of the currently moved thumb.
      */
-    var onChange: ((event: Event, value: dynamic, activeThumb: Number) -> Unit)?
+    var onChange: ((event: Event, value: ReadonlyArray<Number>, activeThumb: Number) -> Unit)?
 
     /**
      * Callback function that is fired when the `mouseup` is triggered.
@@ -78,7 +79,7 @@ external interface UseSliderParameters {
      * @param {React.SyntheticEvent | Event} event The event source of the callback. **Warning**: This is a generic event not a change event.
      * @param {number | number[]} value The new value.
      */
-    var onChangeCommitted: ((event: react.dom.events.SyntheticEvent<*, *>, value: dynamic) -> Unit)?
+    var onChangeCommitted: ((event: react.dom.events.SyntheticEvent<*, *>, value: ReadonlyArray<Number>) -> Unit)?
 
     /**
      * The component orientation.
