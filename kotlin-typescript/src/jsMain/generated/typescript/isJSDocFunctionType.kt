@@ -1,17 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
-)
+@file:JsModule("typescript")
 
 package typescript
 
-import kotlin.contracts.contract
 
-fun isJSDocFunctionType(node: Node): Boolean {
-    contract {
-        returns(true) implies (node is JSDocFunctionType)
-    }
-
-    return typescript.raw.isJSDocFunctionType(node)
-}
+@JsName("isJSDocFunctionType")
+external fun isJSDocFunctionTypeRaw(node: Node): Boolean /* node is JSDocFunctionType */

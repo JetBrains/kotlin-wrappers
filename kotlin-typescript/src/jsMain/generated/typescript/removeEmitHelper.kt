@@ -7,7 +7,4 @@ package typescript
 /**
  * Removes an EmitHelper from a node.
  */
-external fun removeEmitHelper(
-    node: Node,
-    helper: EmitHelper,
-): Boolean
+external fun removeEmitHelper(node: Node, helper: EmitHelper): Boolean

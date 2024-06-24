@@ -2,32 +2,30 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 sealed external interface BuildInvalidedProject<T : BuilderProgram> : InvalidatedProjectBase {
     override val kind: InvalidatedProjectKind.Build
     fun getBuilderProgram(): T?
     fun getProgram(): Program?
     fun getSourceFile(fileName: String): SourceFile?
-    fun getSourceFiles(): ReadonlyArray<SourceFile>
-    fun getOptionsDiagnostics(cancellationToken: CancellationToken = definedExternally): ReadonlyArray<Diagnostic>
-    fun getGlobalDiagnostics(cancellationToken: CancellationToken = definedExternally): ReadonlyArray<Diagnostic>
-    fun getConfigFileParsingDiagnostics(): ReadonlyArray<Diagnostic>
+    fun getSourceFiles(): js.array.ReadonlyArray<SourceFile>
+    fun getOptionsDiagnostics(cancellationToken: CancellationToken = definedExternally): js.array.ReadonlyArray<Diagnostic>
+    fun getGlobalDiagnostics(cancellationToken: CancellationToken = definedExternally): js.array.ReadonlyArray<Diagnostic>
+    fun getConfigFileParsingDiagnostics(): js.array.ReadonlyArray<Diagnostic>
     fun getSyntacticDiagnostics(
         sourceFile: SourceFile = definedExternally,
         cancellationToken: CancellationToken = definedExternally,
-    ): ReadonlyArray<Diagnostic>
+    ): js.array.ReadonlyArray<Diagnostic>
 
-    fun getAllDependencies(sourceFile: SourceFile): ReadonlyArray<String>
+    fun getAllDependencies(sourceFile: SourceFile): js.array.ReadonlyArray<String>
     fun getSemanticDiagnostics(
         sourceFile: SourceFile = definedExternally,
         cancellationToken: CancellationToken = definedExternally,
-    ): ReadonlyArray<Diagnostic>
+    ): js.array.ReadonlyArray<Diagnostic>
 
     fun getSemanticDiagnosticsOfNextAffectedFile(
         cancellationToken: CancellationToken = definedExternally,
         ignoreSourceFile: (sourceFile: SourceFile) -> Boolean = definedExternally,
-    ): AffectedFileResult<ReadonlyArray<Diagnostic>>
+    ): AffectedFileResult<js.array.ReadonlyArray<Diagnostic>>
 
     fun emit(
         targetSourceFile: SourceFile = definedExternally,

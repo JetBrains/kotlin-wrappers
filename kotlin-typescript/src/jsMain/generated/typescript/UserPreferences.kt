@@ -2,11 +2,9 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 sealed external interface UserPreferences {
     val disableSuggestions: Boolean?
-    val quotePreference: QuotePreference?
+    val quotePreference: (UserPreferencesQuotePreference)?
     val includeCompletionsForModuleExports: Boolean?
     val includeCompletionsForImportStatements: Boolean?
     val includeCompletionsWithSnippetText: Boolean?
@@ -16,16 +14,16 @@ sealed external interface UserPreferences {
     val includeCompletionsWithObjectLiteralMethodSnippets: Boolean?
     val useLabelDetailsInCompletionEntries: Boolean?
     val allowIncompleteCompletions: Boolean?
-    val importModuleSpecifierPreference: ImportModuleSpecifierPreference?
+    val importModuleSpecifierPreference: (UserPreferencesImportModuleSpecifierPreference)?
 
     /** Determines whether we import `foo/index.ts` as "foo", "foo/index", or "foo/index.js" */
-    val importModuleSpecifierEnding: ImportModuleSpecifierEnding?
+    val importModuleSpecifierEnding: (UserPreferencesImportModuleSpecifierEnding)?
     val allowTextChangesInNewFiles: Boolean?
     val providePrefixAndSuffixTextForRename: Boolean?
-    val includePackageJsonAutoImports: IncludePackageJsonAutoImports?
+    val includePackageJsonAutoImports: (UserPreferencesIncludePackageJsonAutoImports)?
     val provideRefactorNotApplicableReason: Boolean?
-    val jsxAttributeCompletionStyle: JsxAttributeCompletionStyle?
-    val includeInlayParameterNameHints: IncludeInlayParameterNameHints?
+    val jsxAttributeCompletionStyle: (UserPreferencesJsxAttributeCompletionStyle)?
+    val includeInlayParameterNameHints: (UserPreferencesIncludeInlayParameterNameHints)?
     val includeInlayParameterNameHintsWhenArgumentMatchesName: Boolean?
     val includeInlayFunctionParameterTypeHints: Boolean?
     val includeInlayVariableTypeHints: Boolean?
@@ -35,14 +33,14 @@ sealed external interface UserPreferences {
     val includeInlayEnumMemberValueHints: Boolean?
     val interactiveInlayHints: Boolean?
     val allowRenameOfImportPath: Boolean?
-    val autoImportFileExcludePatterns: ReadonlyArray<String>?
+    val autoImportFileExcludePatterns: js.array.ReadonlyArray<String>?
     val preferTypeOnlyAutoImports: Boolean?
-    val organizeImportsIgnoreCase: Any? /* "auto" | boolean */
-    val organizeImportsCollation: Any? /* "ordinal" | "unicode" */
+    val organizeImportsIgnoreCase: (Any /* "auto" | boolean */)?
+    val organizeImportsCollation: (UserPreferencesOrganizeImportsCollation)?
     val organizeImportsLocale: String?
     val organizeImportsNumericCollation: Boolean?
     val organizeImportsAccentCollation: Boolean?
-    val organizeImportsCaseFirst: Any? /* "upper" | "lower" | false */
-    val organizeImportsTypeOrder: Any? /* "first" | "last" | "inline" */
+    val organizeImportsCaseFirst: (Any /* "upper" | "lower" | false */)?
+    val organizeImportsTypeOrder: (UserPreferencesOrganizeImportsTypeOrder)?
     val excludeLibrarySymbolsInNavTo: Boolean?
 }

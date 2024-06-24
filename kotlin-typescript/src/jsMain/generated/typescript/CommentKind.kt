@@ -2,5 +2,4 @@
 
 package typescript
 
-sealed external interface CommentKind :
-    SyntaxKind /* SyntaxKind.SingleLineCommentTrivia | SyntaxKind.MultiLineCommentTrivia */
+sealed external interface CommentKind : SyntaxKind

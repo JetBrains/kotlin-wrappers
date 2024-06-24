@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface FlowType /* Type | IncompleteType */
+sealed external interface FlowType

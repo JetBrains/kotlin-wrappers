@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface ImportAttributeName /* Identifier | StringLiteral */
+sealed external interface ImportAttributeName : Node

@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface AccessExpression /* PropertyAccessExpression | ElementAccessExpression */
+sealed external interface AccessExpression : Node

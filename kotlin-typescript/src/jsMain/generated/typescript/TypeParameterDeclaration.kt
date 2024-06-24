@@ -2,9 +2,9 @@
 
 package typescript
 
-sealed external interface TypeParameterDeclaration : NamedDeclaration, JSDocContainer, Union.TypeParameterDeclaration_ {
+sealed external interface TypeParameterDeclaration : NamedDeclaration, JSDocContainer, HasJSDoc, HasModifiers {
     override val kind: SyntaxKind.TypeParameter
-    override val parent: Union.TypeParameterDeclaration_parent
+    override val parent: TypeParameterDeclarationParent
     val modifiers: NodeArray<Modifier>?
     override val name: Identifier
 

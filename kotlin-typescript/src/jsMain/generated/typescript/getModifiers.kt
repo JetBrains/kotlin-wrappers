@@ -4,6 +4,4 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
-external fun getModifiers(node: HasModifiers): ReadonlyArray<Modifier>?
+external fun getModifiers(node: HasModifiers): (js.array.ReadonlyArray<Modifier>)?

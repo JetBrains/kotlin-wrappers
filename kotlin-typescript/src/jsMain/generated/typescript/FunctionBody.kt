@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias FunctionBody = Block
+sealed external interface FunctionBody : Block, ConciseBody

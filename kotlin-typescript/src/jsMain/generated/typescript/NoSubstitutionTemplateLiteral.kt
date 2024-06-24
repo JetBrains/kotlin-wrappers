@@ -3,6 +3,6 @@
 package typescript
 
 sealed external interface NoSubstitutionTemplateLiteral : LiteralExpression, TemplateLiteralLikeNode, Declaration,
-    Union.NoSubstitutionTemplateLiteral_ {
+    PropertyName, StringLiteralLike, LiteralToken, TemplateLiteralToken, TemplateLiteral {
     override val kind: SyntaxKind.NoSubstitutionTemplateLiteral
 }

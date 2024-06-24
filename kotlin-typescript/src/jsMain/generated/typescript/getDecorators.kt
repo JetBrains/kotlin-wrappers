@@ -4,6 +4,4 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
-external fun getDecorators(node: HasDecorators): ReadonlyArray<Decorator>?
+external fun getDecorators(node: HasDecorators): (js.array.ReadonlyArray<Decorator>)?

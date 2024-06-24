@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface NamedImportBindings /* NamespaceImport | NamedImports */
+sealed external interface NamedImportBindings : Node

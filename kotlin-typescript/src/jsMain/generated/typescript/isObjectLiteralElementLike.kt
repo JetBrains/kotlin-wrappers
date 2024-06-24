@@ -1,17 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
-)
+@file:JsModule("typescript")
 
 package typescript
 
-import kotlin.contracts.contract
 
-fun isObjectLiteralElementLike(node: Node): Boolean {
-    contract {
-        returns(true) implies (node is ObjectLiteralElementLike)
-    }
-
-    return typescript.raw.isObjectLiteralElementLike(node)
-}
+@JsName("isObjectLiteralElementLike")
+external fun isObjectLiteralElementLikeRaw(node: Node): Boolean /* node is ObjectLiteralElementLike */

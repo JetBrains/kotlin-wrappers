@@ -1,17 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
-)
+@file:JsModule("typescript")
 
 package typescript
 
-import kotlin.contracts.contract
 
-fun isParenthesizedExpression(node: Node): Boolean {
-    contract {
-        returns(true) implies (node is ParenthesizedExpression)
-    }
-
-    return typescript.raw.isParenthesizedExpression(node)
-}
+@JsName("isParenthesizedExpression")
+external fun isParenthesizedExpressionRaw(node: Node): Boolean /* node is ParenthesizedExpression */

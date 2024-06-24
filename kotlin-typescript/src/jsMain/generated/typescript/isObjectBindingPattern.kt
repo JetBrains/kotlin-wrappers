@@ -1,17 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
-)
+@file:JsModule("typescript")
 
 package typescript
 
-import kotlin.contracts.contract
 
-fun isObjectBindingPattern(node: Node): Boolean {
-    contract {
-        returns(true) implies (node is ObjectBindingPattern)
-    }
-
-    return typescript.raw.isObjectBindingPattern(node)
-}
+@JsName("isObjectBindingPattern")
+external fun isObjectBindingPatternRaw(node: Node): Boolean /* node is ObjectBindingPattern */

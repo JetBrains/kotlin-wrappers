@@ -3,5 +3,5 @@
 package typescript
 
 sealed external interface PackageJsonInfoCache {
-    fun clear()
+    fun clear(): Unit
 }

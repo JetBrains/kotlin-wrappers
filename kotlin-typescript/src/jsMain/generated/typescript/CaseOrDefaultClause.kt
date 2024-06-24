@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface CaseOrDefaultClause : Node, Union.CaseOrDefaultClause_ /* CaseClause | DefaultClause */
+sealed external interface CaseOrDefaultClause : Node, BlockLike

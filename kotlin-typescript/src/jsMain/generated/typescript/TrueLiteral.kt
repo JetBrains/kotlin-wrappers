@@ -2,6 +2,6 @@
 
 package typescript
 
-sealed external interface TrueLiteral : PrimaryExpression, Union.TrueLiteral_ {
+sealed external interface TrueLiteral : PrimaryExpression, BooleanLiteral {
     override val kind: SyntaxKind.TrueKeyword
 }

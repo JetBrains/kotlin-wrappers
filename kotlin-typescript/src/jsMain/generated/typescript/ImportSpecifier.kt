@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface ImportSpecifier : NamedDeclaration, Union.ImportSpecifier_ {
+sealed external interface ImportSpecifier : NamedDeclaration, ImportOrExportSpecifier,
+    IsImportOrExportSpecifierResultPredicate {
     override val kind: SyntaxKind.ImportSpecifier
     override val parent: NamedImports
     val propertyName: Identifier?

@@ -8,4 +8,4 @@ package typescript
  * Clears any `EmitNode` entries from parse-tree nodes.
  * @param sourceFile A source file.
  */
-external fun disposeEmitNodes(sourceFile: SourceFile?)
+external fun disposeEmitNodes(sourceFile: SourceFile?): Unit

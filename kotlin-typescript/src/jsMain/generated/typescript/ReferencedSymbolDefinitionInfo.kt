@@ -2,8 +2,6 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 sealed external interface ReferencedSymbolDefinitionInfo : DefinitionInfo {
-    var displayParts: ReadonlyArray<SymbolDisplayPart>
+    var displayParts: js.array.ReadonlyArray<SymbolDisplayPart>
 }

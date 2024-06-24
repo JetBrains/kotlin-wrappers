@@ -1,17 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
-)
+@file:JsModule("typescript")
 
 package typescript
 
-import kotlin.contracts.contract
 
-fun isSatisfiesExpression(node: Node): Boolean {
-    contract {
-        returns(true) implies (node is SatisfiesExpression)
-    }
-
-    return typescript.raw.isSatisfiesExpression(node)
-}
+@JsName("isSatisfiesExpression")
+external fun isSatisfiesExpressionRaw(node: Node): Boolean /* node is SatisfiesExpression */

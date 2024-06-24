@@ -2,15 +2,16 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 sealed external interface CompletionEntryDetails {
     var name: String
     var kind: ScriptElementKind
     var kindModifiers: String
-    var displayParts: ReadonlyArray<SymbolDisplayPart>
-    var documentation: ReadonlyArray<SymbolDisplayPart>?
-    var tags: ReadonlyArray<JSDocTagInfo>?
-    var codeActions: ReadonlyArray<CodeAction>?
-    var sourceDisplay: ReadonlyArray<SymbolDisplayPart>?
+    var displayParts: js.array.ReadonlyArray<SymbolDisplayPart>
+    var documentation: js.array.ReadonlyArray<SymbolDisplayPart>?
+    var tags: js.array.ReadonlyArray<JSDocTagInfo>?
+    var codeActions: js.array.ReadonlyArray<CodeAction>?
+
+    /** @deprecated Use `sourceDisplay` instead. */
+    var source: js.array.ReadonlyArray<SymbolDisplayPart>?
+    var sourceDisplay: js.array.ReadonlyArray<SymbolDisplayPart>?
 }

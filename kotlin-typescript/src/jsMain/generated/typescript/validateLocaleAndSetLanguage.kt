@@ -4,20 +4,12 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 /**
  * Checks to see if the locale is in the appropriate format,
  * and if it is, attempts to set the appropriate language.
  */
 external fun validateLocaleAndSetLanguage(
     locale: String,
-    sys: Any,
-    /* {
-    getExecutingFilePath(): string;
-    resolvePath(path: string): string;
-    fileExists(fileName: string): boolean;
-    readFile(fileName: string): string | undefined;
-} */
-    errors: ReadonlyArray<Diagnostic> = definedExternally,
-)
+    sys: ValidateLocaleAndSetLanguageSys,
+    errors: js.array.ReadonlyArray<Diagnostic> = definedExternally,
+): Unit

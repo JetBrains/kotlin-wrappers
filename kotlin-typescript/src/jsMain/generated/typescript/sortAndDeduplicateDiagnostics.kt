@@ -4,6 +4,4 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
-external fun <T : Diagnostic> sortAndDeduplicateDiagnostics(diagnostics: ReadonlyArray<T>): SortedReadonlyArray<T>
+external fun <T : Diagnostic> sortAndDeduplicateDiagnostics(diagnostics: js.array.ReadonlyArray<T>): SortedReadonlyArray<T>

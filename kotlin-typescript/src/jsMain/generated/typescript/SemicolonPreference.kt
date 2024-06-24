@@ -1,18 +1,13 @@
 // Automatically generated - do not modify!
 
-package typescript
+@file:JsModule("typescript")
 
-import seskar.js.JsValue
+package typescript
 
 sealed external interface SemicolonPreference {
     companion object {
-        @JsValue("ignore")
         val Ignore: SemicolonPreference
-
-        @JsValue("insert")
         val Insert: SemicolonPreference
-
-        @JsValue("remove")
         val Remove: SemicolonPreference
     }
 }

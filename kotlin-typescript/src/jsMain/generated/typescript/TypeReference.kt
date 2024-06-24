@@ -2,8 +2,6 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 /**
  * Type references (ObjectFlags.Reference). When a class or interface has type parameters or
  * a "this" type, references to the class or interface are made using type references. The
@@ -16,6 +14,6 @@ import js.array.ReadonlyArray
  */
 sealed external interface TypeReference : ObjectType {
     var target: GenericType
-    var node: Union.TypeReference_node?
-    var typeArguments: ReadonlyArray<Type>?
+    var node: (TypeReferenceNodeField)?
+    var typeArguments: (js.array.ReadonlyArray<Type>)?
 }

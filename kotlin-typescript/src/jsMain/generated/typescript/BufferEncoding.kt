@@ -2,32 +2,34 @@
 
 package typescript
 
-import seskar.js.JsValue
-
 sealed external interface BufferEncoding {
     companion object {
-        @JsValue("ascii")
+        @seskar.js.JsValue("ascii")
         val ascii: BufferEncoding
 
-        @JsValue("utf8")
+        @seskar.js.JsValue("utf8")
         val utf8: BufferEncoding
 
-        @JsValue("utf16le")
+        @seskar.js.JsValue("utf16le")
         val utf16le: BufferEncoding
 
-        @JsValue("ucs2")
+        @seskar.js.JsValue("ucs2")
         val ucs2: BufferEncoding
 
-        @JsValue("base64")
+        @seskar.js.JsValue("base64")
         val base64: BufferEncoding
 
-        @JsValue("latin1")
+        @seskar.js.JsValue("latin1")
         val latin1: BufferEncoding
 
-        @JsValue("binary")
+        @seskar.js.JsValue("binary")
         val binary: BufferEncoding
 
-        @JsValue("hex")
-        val hex: BufferEncoding
+        @seskar.js.JsValue("hex")
+        val hex: BufferEncoding/*
+Duplicated names were generated:
+utf8 for "utf-8"
+ucs2 for "ucs-2"
+*/
     }
 }

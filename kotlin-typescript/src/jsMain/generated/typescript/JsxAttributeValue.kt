@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface JsxAttributeValue /* StringLiteral | JsxExpression | JsxElement | JsxSelfClosingElement | JsxFragment */
+sealed external interface JsxAttributeValue : Node

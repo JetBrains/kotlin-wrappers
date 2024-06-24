@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface NewExpression : PrimaryExpression, Declaration, Union.NewExpression_ {
+sealed external interface NewExpression : PrimaryExpression, Declaration, HasTypeArguments, SpreadElementParent,
+    CallLikeExpression, IsCallOrNewExpressionResultPredicate {
     override val kind: SyntaxKind.NewExpression
     val expression: LeftHandSideExpression
     val typeArguments: NodeArray<TypeNode>?

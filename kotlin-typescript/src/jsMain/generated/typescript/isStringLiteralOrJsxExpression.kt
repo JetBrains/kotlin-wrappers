@@ -4,4 +4,6 @@
 
 package typescript
 
-external fun isStringLiteralOrJsxExpression(node: Node): Boolean /* node is StringLiteral | JsxExpression */
+
+@JsName("isStringLiteralOrJsxExpression")
+external fun isStringLiteralOrJsxExpressionRaw(node: Node): Boolean /* node is StringLiteral | JsxExpression */

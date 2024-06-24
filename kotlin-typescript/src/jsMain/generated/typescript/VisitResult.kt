@@ -2,4 +2,8 @@
 
 package typescript
 
-sealed external interface VisitResult<T /* : Node? */> /* T | readonly Node[] */
+typealias VisitResult<
+        @Suppress("UNUSED_TYPEALIAS_PARAMETER")
+        T,
+        /*  : Node? */
+        > = Any /* T | readonly Node[] */

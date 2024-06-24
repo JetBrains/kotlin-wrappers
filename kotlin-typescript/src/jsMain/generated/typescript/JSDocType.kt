@@ -3,5 +3,5 @@
 package typescript
 
 sealed external interface JSDocType : TypeNode {
-    var _jsDocTypeBrand: Any
+    var _jsDocTypeBrand: Any?
 }

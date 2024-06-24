@@ -4,9 +4,9 @@ package typescript
 
 sealed external interface DiagnosticRelatedInformation {
     var category: DiagnosticCategory
-    var code: Int
+    var code: Double
     var file: SourceFile?
-    var start: Int?
-    var length: Int?
+    var start: Double?
+    var length: Double?
     var messageText: Any /* string | DiagnosticMessageChain */
 }

@@ -2,9 +2,6 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-import seskar.js.JsNative
-
 /**
  * A function that walks a node using the given visitor, lifting node arrays into single nodes,
  * returning an node which satisfies the test.
@@ -18,19 +15,19 @@ import seskar.js.JsNative
  * For the canonical implementation of this type, @see {visitNode}.
  */
 sealed external interface NodeVisitor {
-    @JsNative
+    @seskar.js.JsNative
     operator fun <TIn : Node?, TVisited : Node?, TOut : Node> invoke(
         node: TIn,
         visitor: Visitor<TIn & Any, TVisited>,
         test: (node: Node) -> Boolean, /* node is TOut */
-        lift: (node: ReadonlyArray<Node>) -> Node = definedExternally,
+        lift: (node: js.array.ReadonlyArray<Node>) -> Node = definedExternally,
     ): Any /* TOut | (TIn & undefined) | (TVisited & undefined) */
 
-    @JsNative
+    @seskar.js.JsNative
     operator fun <TIn : Node?, TVisited : Node?> invoke(
         node: TIn,
         visitor: Visitor<TIn & Any, TVisited>,
         test: (node: Node) -> Boolean = definedExternally,
-        lift: (node: ReadonlyArray<Node>) -> Node = definedExternally,
+        lift: (node: js.array.ReadonlyArray<Node>) -> Node = definedExternally,
     ): Any /* Node | (TIn & undefined) | (TVisited & undefined) */
 }

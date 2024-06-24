@@ -2,8 +2,6 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 sealed external interface CompletionInfo {
     /** For performance telemetry. */
     var flags: CompletionInfoFlags?
@@ -27,6 +25,6 @@ sealed external interface CompletionInfo {
     /**
      * Indicates to client to continue requesting completions on subsequent keystrokes.
      */
-    var isIncomplete: Boolean? /* true */
-    var entries: ReadonlyArray<CompletionEntry>
+    var isIncomplete: Boolean /* true */?
+    var entries: js.array.ReadonlyArray<CompletionEntry>
 }

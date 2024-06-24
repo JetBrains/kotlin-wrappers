@@ -3,5 +3,6 @@
 package typescript
 
 sealed external interface NumberLiteralType : LiteralType {
-    override var value: Int
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var value: Double
 }

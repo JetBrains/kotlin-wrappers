@@ -2,20 +2,18 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 sealed external interface TupleType : GenericType {
-    var elementFlags: ReadonlyArray<ElementFlags>
+    var elementFlags: js.array.ReadonlyArray<ElementFlags>
 
     /** Number of required or variadic elements */
-    var minLength: Int
+    var minLength: Double
 
     /** Number of initial required or optional elements */
-    var fixedLength: Int
+    var fixedLength: Double
 
     /** True if tuple has any rest or variadic elements */
     var hasRestElement: Boolean
     var combinedFlags: ElementFlags
     var readonly: Boolean
-    var labeledElementDeclarations: ReadonlyArray<Any /* NamedTupleMember | ParameterDeclaration */?>?
+    var labeledElementDeclarations: (js.array.ReadonlyArray<(Any? /* NamedTupleMember | ParameterDeclaration | undefined */)>)?
 }

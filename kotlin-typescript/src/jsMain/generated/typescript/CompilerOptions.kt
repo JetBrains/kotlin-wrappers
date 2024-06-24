@@ -2,8 +2,6 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 sealed external interface CompilerOptions {
     var allowImportingTsExtensions: Boolean?
     var allowJs: Boolean?
@@ -16,7 +14,7 @@ sealed external interface CompilerOptions {
     var baseUrl: String?
     var charset: String?
     var checkJs: Boolean?
-    var customConditions: ReadonlyArray<String>?
+    var customConditions: js.array.ReadonlyArray<String>?
     var declaration: Boolean?
     var declarationMap: Boolean?
     var emitDeclarationOnly: Boolean?
@@ -39,13 +37,13 @@ sealed external interface CompilerOptions {
     var isolatedModules: Boolean?
     var jsx: JsxEmit?
     var keyofStringsOnly: Boolean?
-    var lib: ReadonlyArray<String>?
+    var lib: js.array.ReadonlyArray<String>?
     var locale: String?
     var mapRoot: String?
-    var maxNodeModuleJsDepth: Int?
+    var maxNodeModuleJsDepth: Double?
     var module: ModuleKind?
     var moduleResolution: ModuleResolutionKind?
-    var moduleSuffixes: ReadonlyArray<String>?
+    var moduleSuffixes: js.array.ReadonlyArray<String>?
     var moduleDetection: ModuleDetectionKind?
     var newLine: NewLineKind?
     var noEmit: Boolean?
@@ -68,7 +66,7 @@ sealed external interface CompilerOptions {
     var out: String?
     var outDir: String?
     var outFile: String?
-    var paths: MapLike<ReadonlyArray<String>>?
+    var paths: MapLike<js.array.ReadonlyArray<String>>?
     var preserveConstEnums: Boolean?
     var noImplicitOverride: Boolean?
     var preserveSymlinks: Boolean?
@@ -85,7 +83,7 @@ sealed external interface CompilerOptions {
     var resolvePackageJsonExports: Boolean?
     var resolvePackageJsonImports: Boolean?
     var rootDir: String?
-    var rootDirs: ReadonlyArray<String>?
+    var rootDirs: js.array.ReadonlyArray<String>?
     var skipLibCheck: Boolean?
     var skipDefaultLibCheck: Boolean?
     var sourceMap: Boolean?
@@ -102,12 +100,17 @@ sealed external interface CompilerOptions {
     var traceResolution: Boolean?
     var useUnknownInCatchVariables: Boolean?
     var resolveJsonModule: Boolean?
-    var types: ReadonlyArray<String>?
+    var types: js.array.ReadonlyArray<String>?
 
     /** Paths used to compute primary types search locations */
-    var typeRoots: ReadonlyArray<String>?
+    var typeRoots: js.array.ReadonlyArray<String>?
     var verbatimModuleSyntax: Boolean?
     var esModuleInterop: Boolean?
     var useDefineForClassFields: Boolean?
-    // [option: string]: CompilerOptionsValue | TsConfigSourceFile | undefined
+
+    @seskar.js.JsNative
+    operator fun get(key: String): Any? /* CompilerOptionsValue | TsConfigSourceFile | undefined */
+
+    @seskar.js.JsNative
+    operator fun set(key: String, value: Any? /* CompilerOptionsValue | TsConfigSourceFile | undefined */)
 }

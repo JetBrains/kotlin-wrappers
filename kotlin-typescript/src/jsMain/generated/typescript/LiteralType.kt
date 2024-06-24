@@ -3,5 +3,5 @@
 package typescript
 
 sealed external interface LiteralType : FreshableType {
-    var value: dynamic /* string | number | PseudoBigInt */
+    var value: Any /* string | number | PseudoBigInt */
 }

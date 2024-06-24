@@ -1,17 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
-)
+@file:JsModule("typescript")
 
 package typescript
 
-import kotlin.contracts.contract
 
-fun isContinueStatement(node: Node): Boolean {
-    contract {
-        returns(true) implies (node is ContinueStatement)
-    }
-
-    return typescript.raw.isContinueStatement(node)
-}
+@JsName("isContinueStatement")
+external fun isContinueStatementRaw(node: Node): Boolean /* node is ContinueStatement */

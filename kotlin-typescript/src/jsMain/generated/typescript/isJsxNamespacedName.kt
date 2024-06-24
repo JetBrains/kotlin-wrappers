@@ -1,17 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
-)
+@file:JsModule("typescript")
 
 package typescript
 
-import kotlin.contracts.contract
 
-fun isJsxNamespacedName(node: Node): Boolean {
-    contract {
-        returns(true) implies (node is JsxNamespacedName)
-    }
-
-    return typescript.raw.isJsxNamespacedName(node)
-}
+@JsName("isJsxNamespacedName")
+external fun isJsxNamespacedNameRaw(node: Node): Boolean /* node is JsxNamespacedName */

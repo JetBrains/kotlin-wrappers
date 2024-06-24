@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface TaggedTemplateExpression : MemberExpression, Union.TaggedTemplateExpression_ {
+sealed external interface TaggedTemplateExpression : MemberExpression, HasTypeArguments, CallLikeExpression {
     override val kind: SyntaxKind.TaggedTemplateExpression
     val tag: LeftHandSideExpression
     val typeArguments: NodeArray<TypeNode>?

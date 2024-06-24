@@ -2,8 +2,6 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
-sealed external interface UnionOrIntersectionType : Type, Union.UnionOrIntersectionType_ {
-    var types: ReadonlyArray<Type>
+sealed external interface UnionOrIntersectionType : Type, IndexTypeType {
+    var types: js.array.ReadonlyArray<Type>
 }

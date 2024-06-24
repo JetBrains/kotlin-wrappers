@@ -1,15 +1,12 @@
 // Automatically generated - do not modify!
 
-package typescript
+@file:JsModule("typescript")
 
-import seskar.js.JsIntValue
+package typescript
 
 sealed external interface LanguageVariant {
     companion object {
-        @JsIntValue(0)
         val Standard: LanguageVariant
-
-        @JsIntValue(1)
         val JSX: LanguageVariant
     }
 }

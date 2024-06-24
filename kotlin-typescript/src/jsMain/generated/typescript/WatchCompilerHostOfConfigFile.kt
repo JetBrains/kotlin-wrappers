@@ -2,8 +2,6 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 /**
  * Host to create watch with config file
  */
@@ -15,7 +13,7 @@ sealed external interface WatchCompilerHostOfConfigFile<T : BuilderProgram> : Wa
     /** Options to extend */
     var optionsToExtend: CompilerOptions?
     var watchOptionsToExtend: WatchOptions?
-    var extraFileExtensions: ReadonlyArray<FileExtensionInfo>?
+    var extraFileExtensions: (js.array.ReadonlyArray<FileExtensionInfo>)?
 
     /**
      * Used to generate source file names from the config file and its include, exclude, files rules
@@ -23,9 +21,9 @@ sealed external interface WatchCompilerHostOfConfigFile<T : BuilderProgram> : Wa
      */
     fun readDirectory(
         path: String,
-        extensions: ReadonlyArray<String> = definedExternally,
-        exclude: ReadonlyArray<String> = definedExternally,
-        include: ReadonlyArray<String> = definedExternally,
-        depth: Int = definedExternally,
-    ): ReadonlyArray<String>
+        extensions: js.array.ReadonlyArray<String> = definedExternally,
+        exclude: js.array.ReadonlyArray<String> = definedExternally,
+        include: js.array.ReadonlyArray<String> = definedExternally,
+        depth: Double = definedExternally,
+    ): js.array.ReadonlyArray<String>
 }

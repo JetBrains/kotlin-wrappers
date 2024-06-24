@@ -4,4 +4,6 @@
 
 package typescript
 
-external fun isPropertyAccessOrQualifiedName(node: Node): Boolean /* node is PropertyAccessExpression | QualifiedName */
+
+@JsName("isPropertyAccessOrQualifiedName")
+external fun isPropertyAccessOrQualifiedNameRaw(node: Node): Boolean /* node is PropertyAccessExpression | QualifiedName */

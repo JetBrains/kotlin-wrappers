@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface NamespaceBody : Union.NamespaceBody_ /* ModuleBlock | NamespaceDeclaration */
+sealed external interface NamespaceBody : Node, ModuleBody

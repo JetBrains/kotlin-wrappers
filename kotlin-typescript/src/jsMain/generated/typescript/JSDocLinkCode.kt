@@ -2,8 +2,8 @@
 
 package typescript
 
-sealed external interface JSDocLinkCode : Node, Union.JSDocLinkCode_ {
+sealed external interface JSDocLinkCode : Node, JSDocComment, IsJSDocLinkLikeResultPredicate {
     override val kind: SyntaxKind.JSDocLinkCode
-    val name: Union.JSDocLinkCode_name?
+    val name: (JSDocLinkCodeName)?
     var text: String
 }

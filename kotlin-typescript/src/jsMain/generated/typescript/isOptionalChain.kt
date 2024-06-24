@@ -4,4 +4,6 @@
 
 package typescript
 
-external fun isOptionalChain(node: Node): Boolean /* node is PropertyAccessChain | ElementAccessChain | CallChain | NonNullChain */
+
+@JsName("isOptionalChain")
+external fun isOptionalChainRaw(node: Node): Boolean /* node is PropertyAccessChain | ElementAccessChain | CallChain | NonNullChain */

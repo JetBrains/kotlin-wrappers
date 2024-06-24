@@ -8,5 +8,9 @@ package typescript
  * since `Object.prototype` may be modified by outside code.
  */
 sealed external interface MapLike<T> {
-    // [index: string]: T
+    @seskar.js.JsNative
+    operator fun get(key: String): T?
+
+    @seskar.js.JsNative
+    operator fun set(key: String, value: T?)
 }

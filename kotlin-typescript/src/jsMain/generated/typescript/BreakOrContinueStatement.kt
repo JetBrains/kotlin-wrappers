@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface BreakOrContinueStatement : Statement /* BreakStatement | ContinueStatement */
+sealed external interface BreakOrContinueStatement : Node

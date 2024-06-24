@@ -3,5 +3,5 @@
 package typescript
 
 sealed external interface LeftHandSideExpression : UpdateExpression {
-    var _leftHandSideExpressionBrand: Any
+    var _leftHandSideExpressionBrand: Any?
 }

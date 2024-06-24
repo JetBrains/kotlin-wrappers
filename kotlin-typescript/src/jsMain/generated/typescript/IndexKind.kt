@@ -1,15 +1,12 @@
 // Automatically generated - do not modify!
 
-package typescript
+@file:JsModule("typescript")
 
-import seskar.js.JsIntValue
+package typescript
 
 sealed external interface IndexKind {
     companion object {
-        @JsIntValue(0)
         val String: IndexKind
-
-        @JsIntValue(1)
         val Number: IndexKind
     }
 }

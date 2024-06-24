@@ -1,15 +1,12 @@
 // Automatically generated - do not modify!
 
-package typescript
+@file:JsModule("typescript")
 
-import seskar.js.JsValue
+package typescript
 
 sealed external interface SemanticClassificationFormat {
     companion object {
-        @JsValue("original")
         val Original: SemanticClassificationFormat
-
-        @JsValue("2020")
         val TwentyTwenty: SemanticClassificationFormat
     }
 }

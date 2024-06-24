@@ -4,9 +4,4 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
-external fun formatDiagnostics(
-    diagnostics: ReadonlyArray<Diagnostic>,
-    host: FormatDiagnosticsHost,
-): String
+external fun formatDiagnostics(diagnostics: js.array.ReadonlyArray<Diagnostic>, host: FormatDiagnosticsHost): String

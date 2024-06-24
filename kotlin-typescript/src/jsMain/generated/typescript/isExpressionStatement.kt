@@ -1,17 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
-)
+@file:JsModule("typescript")
 
 package typescript
 
-import kotlin.contracts.contract
 
-fun isExpressionStatement(node: Node): Boolean {
-    contract {
-        returns(true) implies (node is ExpressionStatement)
-    }
-
-    return typescript.raw.isExpressionStatement(node)
-}
+@JsName("isExpressionStatement")
+external fun isExpressionStatementRaw(node: Node): Boolean /* node is ExpressionStatement */

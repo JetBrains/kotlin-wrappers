@@ -1,17 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
-)
+@file:JsModule("typescript")
 
 package typescript
 
-import kotlin.contracts.contract
 
-fun isUnionTypeNode(node: Node): Boolean {
-    contract {
-        returns(true) implies (node is UnionTypeNode)
-    }
-
-    return typescript.raw.isUnionTypeNode(node)
-}
+@JsName("isUnionTypeNode")
+external fun isUnionTypeNodeRaw(node: Node): Boolean /* node is UnionTypeNode */

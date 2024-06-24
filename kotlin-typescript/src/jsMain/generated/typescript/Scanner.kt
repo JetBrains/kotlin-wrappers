@@ -3,10 +3,18 @@
 package typescript
 
 sealed external interface Scanner {
+    /** @deprecated use {@link getTokenFullStart} */
+    fun getStartPos(): Double
     fun getToken(): SyntaxKind
-    fun getTokenFullStart(): Int
-    fun getTokenStart(): Int
-    fun getTokenEnd(): Int
+    fun getTokenFullStart(): Double
+    fun getTokenStart(): Double
+    fun getTokenEnd(): Double
+
+    /** @deprecated use {@link getTokenEnd} */
+    fun getTextPos(): Double
+
+    /** @deprecated use {@link getTokenStart} */
+    fun getTokenPos(): Double
     fun getTokenText(): String
     fun getTokenValue(): String
     fun hasUnicodeEscape(): Boolean
@@ -19,6 +27,9 @@ sealed external interface Scanner {
     fun reScanSlashToken(): SyntaxKind
     fun reScanAsteriskEqualsToken(): SyntaxKind
     fun reScanTemplateToken(isTaggedTemplate: Boolean): SyntaxKind
+
+    /** @deprecated use {@link reScanTemplateToken}(false) */
+    fun reScanTemplateHeadOrNoSubstitutionTemplate(): SyntaxKind
     fun scanJsxIdentifier(): SyntaxKind
     fun scanJsxAttributeValue(): SyntaxKind
     fun reScanJsxAttributeValue(): SyntaxKind
@@ -31,24 +42,17 @@ sealed external interface Scanner {
     fun scanJsDocToken(): JSDocSyntaxKind
     fun scan(): SyntaxKind
     fun getText(): String
-    fun setText(
-        text: String?,
-        start: Int = definedExternally,
-        length: Int = definedExternally,
-    )
+    fun setText(text: String?, start: Double = definedExternally, length: Double = definedExternally): Unit
+    fun setOnError(onError: ErrorCallback?): Unit
+    fun setScriptTarget(scriptTarget: ScriptTarget): Unit
+    fun setLanguageVariant(variant: LanguageVariant): Unit
+    fun setScriptKind(scriptKind: ScriptKind): Unit
+    fun setJSDocParsingMode(kind: JSDocParsingMode): Unit
 
-    fun setOnError(onError: ErrorCallback?)
-    fun setScriptTarget(scriptTarget: ScriptTarget)
-    fun setLanguageVariant(variant: LanguageVariant)
-    fun setScriptKind(scriptKind: ScriptKind)
-    fun setJSDocParsingMode(kind: JSDocParsingMode)
-    fun resetTokenState(pos: Int)
+    /** @deprecated use {@link resetTokenState} */
+    fun setTextPos(textPos: Double): Unit
+    fun resetTokenState(pos: Double): Unit
     fun <T> lookAhead(callback: () -> T): T
-    fun <T> scanRange(
-        start: Int,
-        length: Int,
-        callback: () -> T,
-    ): T
-
+    fun <T> scanRange(start: Double, length: Double, callback: () -> T): T
     fun <T> tryScan(callback: () -> T): T
 }

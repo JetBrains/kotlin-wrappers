@@ -4,10 +4,8 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 external fun getPreEmitDiagnostics(
     program: Program,
     sourceFile: SourceFile = definedExternally,
     cancellationToken: CancellationToken = definedExternally,
-): ReadonlyArray<Diagnostic>
+): js.array.ReadonlyArray<Diagnostic>

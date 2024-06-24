@@ -4,8 +4,6 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 /**
  * Called to merge all the changes that occurred across several versions of a script snapshot
  * into a single change.  i.e. if a user keeps making successive edits to a script we will
@@ -14,4 +12,4 @@ import js.array.ReadonlyArray
  * This function will then merge those changes into a single change range valid between V1 and
  * Vn.
  */
-external fun collapseTextChangeRangesAcrossMultipleVersions(changes: ReadonlyArray<TextChangeRange>): TextChangeRange
+external fun collapseTextChangeRangesAcrossMultipleVersions(changes: js.array.ReadonlyArray<TextChangeRange>): TextChangeRange

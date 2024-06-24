@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface HasInitializer /* HasExpressionInitializer | ForStatement | ForInStatement | ForOfStatement | JsxAttribute */
+sealed external interface HasInitializer : Node

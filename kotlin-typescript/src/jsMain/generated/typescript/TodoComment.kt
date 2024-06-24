@@ -5,5 +5,5 @@ package typescript
 sealed external interface TodoComment {
     var descriptor: TodoCommentDescriptor
     var message: String
-    var position: Int
+    var position: Double
 }

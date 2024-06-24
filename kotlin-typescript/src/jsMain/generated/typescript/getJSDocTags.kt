@@ -4,7 +4,5 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 /** Get all JSDoc tags related to a node, including those on parent nodes. */
-external fun getJSDocTags(node: Node): ReadonlyArray<JSDocTag>
+external fun getJSDocTags(node: Node): js.array.ReadonlyArray<JSDocTag>

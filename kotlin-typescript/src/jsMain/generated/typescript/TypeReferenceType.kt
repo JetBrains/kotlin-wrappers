@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface TypeReferenceType /* TypeReferenceNode | ExpressionWithTypeArguments */
+sealed external interface TypeReferenceType : Node

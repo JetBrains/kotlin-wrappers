@@ -5,8 +5,8 @@ package typescript
 sealed external interface DiagnosticMessage {
     var key: String
     var category: DiagnosticCategory
-    var code: Int
+    var code: Double
     var message: String
-    var reportsUnnecessary: Any?
-    var reportsDeprecated: Any?
+    var reportsUnnecessary: (Any)?
+    var reportsDeprecated: (Any)?
 }

@@ -4,6 +4,4 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
-external fun getSupportedCodeFixes(): ReadonlyArray<String>
+external fun getSupportedCodeFixes(): js.array.ReadonlyArray<String>

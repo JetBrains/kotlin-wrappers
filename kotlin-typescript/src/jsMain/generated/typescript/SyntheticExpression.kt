@@ -6,5 +6,5 @@ sealed external interface SyntheticExpression : Expression {
     override val kind: SyntaxKind.SyntheticExpression
     val isSpread: Boolean
     val type: Type
-    val tupleNameSource: Union.SyntheticExpression_tupleNameSource?
+    val tupleNameSource: (SyntheticExpressionTupleNameSource)?
 }

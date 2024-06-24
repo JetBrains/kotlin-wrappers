@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface RenameInfo /* RenameInfoSuccess | RenameInfoFailure */
+sealed external interface RenameInfo

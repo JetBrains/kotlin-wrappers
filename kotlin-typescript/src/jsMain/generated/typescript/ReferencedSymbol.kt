@@ -2,9 +2,7 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 sealed external interface ReferencedSymbol {
     var definition: ReferencedSymbolDefinitionInfo
-    var references: ReadonlyArray<ReferencedSymbolEntry>
+    var references: js.array.ReadonlyArray<ReferencedSymbolEntry>
 }

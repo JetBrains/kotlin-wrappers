@@ -2,11 +2,9 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
-sealed external interface JSDocTypeLiteral : JSDocType, Declaration, Union.JSDocTypeLiteral_ {
+sealed external interface JSDocTypeLiteral : JSDocType, Declaration, JSDocTagParent, JSDocTypedefTagTypeExpression {
     override val kind: SyntaxKind.JSDocTypeLiteral
-    val jsDocPropertyTags: ReadonlyArray<JSDocPropertyLikeTag>?
+    val jsDocPropertyTags: (js.array.ReadonlyArray<JSDocPropertyLikeTag>)?
 
     /** If true, then this type literal represents an *array* of its type. */
     val isArrayType: Boolean

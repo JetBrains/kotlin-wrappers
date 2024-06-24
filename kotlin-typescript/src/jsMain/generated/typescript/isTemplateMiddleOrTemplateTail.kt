@@ -4,4 +4,6 @@
 
 package typescript
 
-external fun isTemplateMiddleOrTemplateTail(node: Node): Boolean /* node is TemplateMiddle | TemplateTail */
+
+@JsName("isTemplateMiddleOrTemplateTail")
+external fun isTemplateMiddleOrTemplateTailRaw(node: Node): Boolean /* node is TemplateMiddle | TemplateTail */

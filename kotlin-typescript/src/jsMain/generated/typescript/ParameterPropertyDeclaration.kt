@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ParameterPropertyDeclaration : ParameterDeclaration /* ParameterDeclaration & {
-    parent: ConstructorDeclaration;
-    name: Identifier;
-} */
+sealed external interface ParameterPropertyDeclaration : ParameterDeclaration {
+    override var parent: ConstructorDeclaration
+    override var name: Identifier
+}

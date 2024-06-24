@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface MemberName : PrimaryExpression, DeclarationName /* Identifier | PrivateIdentifier */
+sealed external interface MemberName : Node, DeclarationName

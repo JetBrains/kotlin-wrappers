@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface FunctionTypeNode : FunctionOrConstructorTypeNodeBase, LocalsContainer,
-    Union.FunctionTypeNode_ {
+sealed external interface FunctionTypeNode : FunctionOrConstructorTypeNodeBase, LocalsContainer, HasJSDoc,
+    SignatureDeclaration, FunctionOrConstructorTypeNode, IsFunctionOrConstructorTypeNodeResultPredicate {
     override val kind: SyntaxKind.FunctionType
 }

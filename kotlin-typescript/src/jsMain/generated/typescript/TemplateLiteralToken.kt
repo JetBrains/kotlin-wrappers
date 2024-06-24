@@ -2,5 +2,4 @@
 
 package typescript
 
-sealed external interface TemplateLiteralToken :
-    LiteralLikeNode /* NoSubstitutionTemplateLiteral | PseudoLiteralToken */
+sealed external interface TemplateLiteralToken : Node, IsStringTextContainingNodeResultPredicate

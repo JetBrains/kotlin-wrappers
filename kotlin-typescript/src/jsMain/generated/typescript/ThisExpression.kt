@@ -2,6 +2,7 @@
 
 package typescript
 
-sealed external interface ThisExpression : PrimaryExpression, FlowContainer, Union.ThisExpression_ {
+sealed external interface ThisExpression : PrimaryExpression, FlowContainer, JsxTagNameExpression,
+    JsxTagNamePropertyAccessExpression {
     override val kind: SyntaxKind.ThisKeyword
 }

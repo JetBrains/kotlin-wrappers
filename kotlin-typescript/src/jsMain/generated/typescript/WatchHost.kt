@@ -5,18 +5,13 @@ package typescript
 /** Host that has watch functionality used in --watch mode */
 sealed external interface WatchHost {
     /** If provided, called with Diagnostic message that informs about change in watch status */
-    val onWatchStatusChange: ((
-        diagnostic: Diagnostic,
-        newLine: String,
-        options: CompilerOptions,
-        errorCount: Int?,
-    ) -> Unit)?
+    val onWatchStatusChange: ((diagnostic: Diagnostic, newLine: String, options: CompilerOptions, errorCount: Double? /* use undefined for default */) -> Unit)?
 
     /** Used to watch changes in source files, missing files needed to update the program or config file */
     fun watchFile(
         path: String,
         callback: FileWatcherCallback,
-        pollingInterval: Int = definedExternally,
+        pollingInterval: Double = definedExternally,
         options: WatchOptions = definedExternally,
     ): FileWatcher
 
@@ -29,12 +24,8 @@ sealed external interface WatchHost {
     ): FileWatcher
 
     /** If provided, will be used to set delayed compilation, so that multiple changes in short span are compiled together */
-    val setTimeout: ((
-        callback: Function<Unit>,
-        ms: Int,
-        /* vararg */ args: Any?,
-    ) -> Any)?
+    val setTimeout: (Function<Any?> /* setTimeout?(callback: (...args: any[]) => void, ms: number, ...args: any[]): any; */)?
 
     /** If provided, will be used to reset existing delayed compilation */
-    val clearTimeout: ((timeoutId: Any) -> Unit)?
+    val clearTimeout: ((timeoutId: Any?) -> Unit)?
 }

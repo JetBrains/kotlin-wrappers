@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface CompletionEntryData /* CompletionEntryDataUnresolved | CompletionEntryDataResolved */
+sealed external interface CompletionEntryData

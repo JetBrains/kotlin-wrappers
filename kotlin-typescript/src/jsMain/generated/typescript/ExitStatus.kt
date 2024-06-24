@@ -1,25 +1,16 @@
 // Automatically generated - do not modify!
 
-package typescript
+@file:JsModule("typescript")
 
-import seskar.js.JsIntValue
+package typescript
 
 /** Return code used by getEmitOutput function to indicate status of the function */
 sealed external interface ExitStatus {
     companion object {
-        @JsIntValue(0)
         val Success: ExitStatus
-
-        @JsIntValue(1)
         val DiagnosticsPresent_OutputsSkipped: ExitStatus
-
-        @JsIntValue(2)
         val DiagnosticsPresent_OutputsGenerated: ExitStatus
-
-        @JsIntValue(3)
         val InvalidProject_OutputsSkipped: ExitStatus
-
-        @JsIntValue(4)
         val ProjectReferenceCycle_OutputsSkipped: ExitStatus
     }
 }
