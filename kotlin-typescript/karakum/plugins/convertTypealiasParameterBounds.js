@@ -8,7 +8,11 @@ export default function (node, context, render) {
         && ts.isTypeAliasDeclaration(node.parent)
         && (
             node.parent.name.text === "Visitor"
-            || node.parent.name.text === "VisitorResult"
+            || node.parent.name.text === "VisitResult"
+            || node.parent.name.text === "CreateProgram"
+            || node.parent.name.text === "Transformer"
+            || node.parent.name.text === "TransformerFactory"
+            || node.parent.name.text === "InvalidatedProject"
         )
     ) {
         const name = render(node.name)

@@ -10,5 +10,14 @@ export default (node) => {
         return "out"
     }
 
+    if (
+        node.name.text === "T"
+        && node.parent
+        && ts.isInterfaceDeclaration(node.parent)
+        && node.parent.name.text === "NodeArray"
+    ) {
+        return "out"
+    }
+
     return null
 }

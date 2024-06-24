@@ -23,6 +23,10 @@ export default (node, context) => {
             parentName === "TypeReference"
             && propertyName === "node"
         )
+        || (
+            parentName === "Signature"
+            && propertyName === "declaration"
+        )
     ) {
         return `${karakum.capitalize(parentName)}${karakum.capitalize(propertyName)}Field`
 

@@ -2,25 +2,55 @@
     "input": [
         "<nodeModules>/typescript/lib/typescript.d.ts"
     ],
-    "output": "src/jsMain/generated/ts",
+    "output": "src/jsMain/generated",
     "ignoreOutput": [
         "**/server/**",
-        "**/SignatureDeclarationBaseKind.kt"
+        "**/CompletionsTriggerCharacter.kt",
+        "**/SignatureHelpRetriggerCharacter.kt",
+        "**/SignatureHelpTriggerCharacter.kt",
+        "**/SignatureDeclarationBaseKind.kt",
+        "**/isTypeOnlyExportDeclaration.contract.kt",
+        "**/isTypeOnlyExportDeclaration.kt",
+        "**/isTypeOnlyImportDeclaration.contract.kt",
+        "**/isTypeOnlyImportDeclaration.kt"
     ],
-    "libraryName": "ts",
+    "libraryName": "typescript",
     "libraryNameOutputPrefix": true,
     "granularity": "top-level",
     "moduleNameMapper": {
+        ".*": "typescript"
     },
     "packageNameMapper": {
+        "ts/(.+)": "typescript/$1",
         "createProgram.kt": "createProgram.fun.kt"
     },
     "importInjector": {
-
+        ".contract.kt": [
+            "kotlin.contracts.contract"
+        ],
+        "FileWatcherCallback.kt": [
+            "js.date.Date"
+        ],
+        "LanguageService.kt": [
+            "js.promise.Promise"
+        ],
+        "LanguageServiceHost.kt": [
+            "js.promise.Promise"
+        ],
+        "ReadonlyUnderscoreEscapedMap.kt": [
+            "js.collections.ReadonlyMap"
+        ],
+        "SolutionBuilderHostBase.kt": [
+            "js.date.Date"
+        ],
+        "System.kt": [
+            "js.date.Date"
+        ]
     },
     "namespaceStrategy": {
         "ScriptSnapshot": "object",
         "JsTyping": "object",
         "ts": "package"
-    }
+    },
+    "disclaimer": "// Automatically generated - do not modify!"
 }

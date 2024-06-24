@@ -15,7 +15,6 @@ export default function (node, context, render) {
         const name = render(node.name)
 
         const injectionService = context.lookupService(karakum.injectionServiceKey)
-        const unionService = context.lookupService(karakum.unionServiceKey)
 
         const heritageInjections = injectionService?.resolveInjections(node, karakum.InjectionType.HERITAGE_CLAUSE, context, render)
 
@@ -35,13 +34,13 @@ export default function (node, context, render) {
 
         const body = node.members
             .map(member => {
-                const parentNames = unionService?.getParents(member) ?? []
-                unionService?.cover(member)
+                const memberHeritageInjections = injectionService?.resolveInjections(member, karakum.InjectionType.HERITAGE_CLAUSE, context, render)
 
-                const heritageClauses = [
-                    name,
-                    ...parentNames,
-                ]
+                const memberInjectedHeritageClauses = memberHeritageInjections
+                    ?.filter(Boolean)
+                    ?.join(", ")
+
+                const heritageClauses = [name, memberInjectedHeritageClauses]
                     .filter(Boolean)
                     .join(", ")
 

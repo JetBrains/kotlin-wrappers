@@ -72,5 +72,38 @@ export default (node) => {
         return `@Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")`
     }
 
+    if (
+        ts.isPropertySignature(node)
+        && ts.isIdentifier(node.name)
+        && node.name.text === "useCaseSensitiveFileNames"
+
+        && ts.isInterfaceDeclaration(node.parent)
+        && node.parent.name.text === "ParseConfigHost"
+    ) {
+        return `@Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")`
+    }
+
+    if (
+        ts.isPropertySignature(node)
+        && ts.isIdentifier(node.name)
+        && node.name.text === "target"
+
+        && ts.isInterfaceDeclaration(node.parent)
+        && node.parent.name.text === "TupleTypeReference"
+    ) {
+        return `@Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")`
+    }
+
+    if (
+        ts.isMethodSignature(node)
+        && ts.isIdentifier(node.name)
+        && node.name.text === "useCaseSensitiveFileNames"
+
+        && ts.isInterfaceDeclaration(node.parent)
+        && node.parent.name.text === "LanguageServiceHost"
+    ) {
+        return `@Suppress("PROPERTY_TYPE_MISMATCH_ON_OVERRIDE", "VAR_OVERRIDDEN_BY_VAL")`
+    }
+
     return null
 }

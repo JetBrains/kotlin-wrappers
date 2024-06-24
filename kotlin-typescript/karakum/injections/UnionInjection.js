@@ -113,10 +113,160 @@ const injectCommonUnionParents = (node, context, render) => {
         result.push("DeclarationName")
     }
 
+    if (
+        context.type === karakum.InjectionType.HERITAGE_CLAUSE
+        && ts.isUnionTypeNode(node)
+        && node.parent
+        && ts.isTypeAliasDeclaration(node.parent)
+        && node.parent.name.text === "ModuleName"
+    ) {
+        result.push("DeclarationStatementName")
+    }
+
+    if (
+        context.type === karakum.InjectionType.HERITAGE_CLAUSE
+        && ts.isUnionTypeNode(node)
+        && node.parent
+        && ts.isTypeAliasDeclaration(node.parent)
+        && node.parent.name.text === "MemberName"
+    ) {
+        result.push("DeclarationName")
+    }
+
+    if (
+        context.type === karakum.InjectionType.HERITAGE_CLAUSE
+        && ts.isUnionTypeNode(node)
+        && node.parent
+        && ts.isTypeAliasDeclaration(node.parent)
+        && (
+            node.parent.name.text === "KeywordTypeSyntaxKind"
+            || node.parent.name.text === "ModifierSyntaxKind"
+        )
+    ) {
+        result.push("KeywordSyntaxKind")
+    }
+
+    if (
+        context.type === karakum.InjectionType.HERITAGE_CLAUSE
+        && ts.isUnionTypeNode(node)
+        && node.parent
+        && ts.isTypeAliasDeclaration(node.parent)
+        && node.parent.name.text === "JsonObjectExpression"
+    ) {
+        result.push("Expression")
+    }
+
+    if (
+        context.type === karakum.InjectionType.HERITAGE_CLAUSE
+        && ts.isUnionTypeNode(node)
+        && node.parent
+        && ts.isTypeAliasDeclaration(node.parent)
+        && node.parent.name.text === "EntityNameExpression"
+    ) {
+        result.push("LeftHandSideExpression")
+    }
+
+    if (
+        context.type === karakum.InjectionType.HERITAGE_CLAUSE
+        && ts.isUnionTypeNode(node)
+        && node.parent
+        && ts.isTypeAliasDeclaration(node.parent)
+        && node.parent.name.text === "ObjectLiteralElementLike"
+    ) {
+        result.push("ObjectLiteralElement")
+    }
+
+    if (
+        context.type === karakum.InjectionType.HERITAGE_CLAUSE
+        && ts.isUnionTypeNode(node)
+
+        && node.parent
+        && ts.isPropertySignature(node.parent)
+        && ts.isIdentifier(node.parent.name)
+        && node.parent.name.text === "name"
+
+        && node.parent.parent
+        && ts.isInterfaceDeclaration(node.parent.parent)
+        && node.parent.parent.name.text === "DeclarationStatement"
+    ) {
+        result.push("DeclarationName")
+    }
+
+    if (
+        context.type === karakum.InjectionType.HERITAGE_CLAUSE
+        && ts.isUnionTypeNode(node)
+
+        && node.parent
+        && ts.isPropertySignature(node.parent)
+        && ts.isIdentifier(node.parent.name)
+        && node.parent.name.text === "expression"
+
+        && node.parent.parent
+        && ts.isInterfaceDeclaration(node.parent.parent)
+        && node.parent.parent.name.text === "JsxTagNamePropertyAccess"
+    ) {
+        result.push("LeftHandSideExpression")
+    }
+
+    if (
+        context.type === karakum.InjectionType.HERITAGE_CLAUSE
+        && ts.isUnionTypeNode(node)
+
+        && node.parent
+        && ts.isPropertySignature(node.parent)
+        && ts.isIdentifier(node.parent.name)
+        && node.parent.name.text === "expression"
+
+        && node.parent.parent
+        && ts.isTypeLiteralNode(node.parent.parent)
+
+        && node.parent.parent.parent
+        && ts.isIntersectionTypeNode(node.parent.parent.parent)
+
+        && node.parent.parent.parent.parent
+        && ts.isPropertySignature(node.parent.parent.parent.parent)
+        && ts.isIdentifier(node.parent.parent.parent.parent.name)
+        && node.parent.parent.parent.parent.name.text === "class"
+
+        && node.parent.parent.parent.parent.parent
+        && ts.isInterfaceDeclaration(node.parent.parent.parent.parent.parent)
+        && (
+            node.parent.parent.parent.parent.parent.name.text === "JSDocAugmentsTag"
+            || node.parent.parent.parent.parent.parent.name.text === "JSDocImplementsTag"
+        )
+    ) {
+        result.push("LeftHandSideExpression")
+    }
+
     return result
+}
+
+function decorateUnionInjection(unionInjection) {
+    return {
+        setup: (...args) => unionInjection.setup(...args),
+        traverse: (...args) => unionInjection.traverse(...args),
+        render: (...args) => unionInjection.render(...args),
+        generate: (...args) => unionInjection.generate(...args),
+
+        inject: (...args) => unionInjection.inject(...args)
+                ?.filter(it => (
+                    it !== "EditorSettingsIndentStyle"
+                    && it !== "ExternalFileScriptKind"
+                    && it !== "CompilerOptionsModule"
+                    && it !== "CompilerOptionsJsx"
+                    && it !== "CompilerOptionsModuleResolution"
+                    && it !== "CompilerOptionsNewLine"
+                    && it !== "CompilerOptionsTarget"
+                    && it !== "ConvertScriptKindNameResult"
+                    && it !== "WatchOptionsFallbackPolling"
+                    && it !== "WatchOptionsWatchDirectory"
+                    && it !== "WatchOptionsWatchFile"
+                    && it !== "CustomTransformersAfterDeclarationsItemTypeArgument"
+                )) ?? null,
+    }
 }
 
 export default [
     injectCommonUnionParents,
-    new karakum.UnionInjection(),
+    decorateUnionInjection(new karakum.UnionInjection()),
 ]

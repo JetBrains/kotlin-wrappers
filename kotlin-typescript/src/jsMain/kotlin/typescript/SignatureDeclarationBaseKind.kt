@@ -1,3 +1,3 @@
-package ts
+package typescript
 
 typealias SignatureDeclarationBaseKind = SyntaxKind
