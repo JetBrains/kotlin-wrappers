@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface BooleanLiteral : Union.BooleanLiteral_ /* TrueLiteral | FalseLiteral */
+sealed external interface BooleanLiteral : Node, LiteralTypeNodeLiteral, JsonObjectExpression,
+    IsLiteralTypeLiteralResultPredicate

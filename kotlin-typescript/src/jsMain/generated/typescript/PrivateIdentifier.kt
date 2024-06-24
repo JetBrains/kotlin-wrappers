@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface PrivateIdentifier : PrimaryExpression, Union.PrivateIdentifier_ {
+sealed external interface PrivateIdentifier : PrimaryExpression, PropertyName, MemberName {
     override val kind: SyntaxKind.PrivateIdentifier
     val escapedText: __String
     val text: String

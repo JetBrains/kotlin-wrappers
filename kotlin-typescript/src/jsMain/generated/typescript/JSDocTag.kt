@@ -2,8 +2,8 @@
 
 package typescript
 
-sealed external interface JSDocTag : Node {
-    override val parent: Union.JSDocTag_parent
+sealed external interface JSDocTag : Node, GetJSDocCommentsAndTagsResultItem {
+    override val parent: JSDocTagParent
     val tagName: Identifier
-    val comment: Any? /* string | NodeArray<JSDocComment> */
+    val comment: (Any /* string | NodeArray<JSDocComment> */)?
 }

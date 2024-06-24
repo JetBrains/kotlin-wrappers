@@ -3,6 +3,6 @@
 package typescript
 
 sealed external interface ClassificationInfo {
-    var length: Int
+    var length: Double
     var classification: TokenClass
 }

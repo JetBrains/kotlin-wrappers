@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface SwitchStatement : Statement, FlowContainer, Union.SwitchStatement_ {
+sealed external interface SwitchStatement : Statement, FlowContainer, HasJSDoc {
     override val kind: SyntaxKind.SwitchStatement
     val expression: Expression
     val caseBlock: CaseBlock

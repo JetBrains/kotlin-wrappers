@@ -2,12 +2,15 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 sealed external interface TypeAcquisition {
     var enable: Boolean?
-    var include: ReadonlyArray<String>?
-    var exclude: ReadonlyArray<String>?
+    var include: js.array.ReadonlyArray<String>?
+    var exclude: js.array.ReadonlyArray<String>?
     var disableFilenameBasedTypeAcquisition: Boolean?
-    // [option: string]: CompilerOptionsValue | undefined
+
+    @seskar.js.JsNative
+    operator fun get(key: String): CompilerOptionsValue
+
+    @seskar.js.JsNative
+    operator fun set(key: String, value: CompilerOptionsValue)
 }

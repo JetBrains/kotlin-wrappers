@@ -2,5 +2,4 @@
 
 package typescript
 
-sealed external interface JsxTagNameExpression :
-    LeftHandSideExpression /* Identifier | ThisExpression | JsxTagNamePropertyAccess | JsxNamespacedName */
+sealed external interface JsxTagNameExpression : Node

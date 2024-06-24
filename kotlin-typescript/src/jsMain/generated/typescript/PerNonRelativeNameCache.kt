@@ -3,9 +3,6 @@
 package typescript
 
 sealed external interface PerNonRelativeNameCache<T> {
-    operator fun get(directory: String): T?
-    operator fun set(
-        directory: String,
-        result: T,
-    )
+    fun get(directory: String): T?
+    fun set(directory: String, result: T): Unit
 }

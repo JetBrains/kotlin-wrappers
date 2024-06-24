@@ -4,4 +4,6 @@
 
 package typescript
 
-external fun isIdentifierOrThisTypeNode(node: Node): Boolean /* node is Identifier | ThisTypeNode */
+
+@JsName("isIdentifierOrThisTypeNode")
+external fun isIdentifierOrThisTypeNodeRaw(node: Node): Boolean /* node is Identifier | ThisTypeNode */

@@ -1,17 +1,15 @@
 // Automatically generated - do not modify!
 
-package typescript
+@file:JsModule("typescript")
 
-import seskar.js.JsIntValue
+package typescript
 
 sealed external interface ProgramUpdateLevel {
     companion object {
         /** Program is updated with same root file names and options */
-        @JsIntValue(0)
         val Update: ProgramUpdateLevel
 
         /** Loads program after updating root file names from the disk */
-        @JsIntValue(1)
         val RootNamesAndUpdate: ProgramUpdateLevel
 
         /**
@@ -20,7 +18,6 @@ sealed external interface ProgramUpdateLevel {
          *  - calculating root file names for the program
          *  - Updating the program
          */
-        @JsIntValue(2)
         val Full: ProgramUpdateLevel
     }
 }

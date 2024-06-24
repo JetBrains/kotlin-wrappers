@@ -2,8 +2,6 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 sealed external interface CoreTransformationContext {
     val factory: NodeFactory
 
@@ -11,20 +9,20 @@ sealed external interface CoreTransformationContext {
     fun getCompilerOptions(): CompilerOptions
 
     /** Starts a new lexical environment. */
-    fun startLexicalEnvironment()
+    fun startLexicalEnvironment(): Unit
 
     /** Suspends the current lexical environment, usually after visiting a parameter list. */
-    fun suspendLexicalEnvironment()
+    fun suspendLexicalEnvironment(): Unit
 
     /** Resumes a suspended lexical environment, usually before visiting a function body. */
-    fun resumeLexicalEnvironment()
+    fun resumeLexicalEnvironment(): Unit
 
     /** Ends a lexical environment, returning any declarations. */
-    fun endLexicalEnvironment(): ReadonlyArray<Statement>?
+    fun endLexicalEnvironment(): js.array.ReadonlyArray<Statement>?
 
     /** Hoists a function declaration to the containing scope. */
-    fun hoistFunctionDeclaration(node: FunctionDeclaration)
+    fun hoistFunctionDeclaration(node: FunctionDeclaration): Unit
 
     /** Hoists a variable declaration to the containing scope. */
-    fun hoistVariableDeclaration(node: Identifier)
+    fun hoistVariableDeclaration(node: Identifier): Unit
 }

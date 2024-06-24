@@ -2,9 +2,4 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
-typealias ReportEmitErrorSummary = (
-    errorCount: Int,
-    filesInError: ReadonlyArray<ReportFileInError?>,
-) -> Unit
+typealias ReportEmitErrorSummary = (errorCount: Double, filesInError: js.array.ReadonlyArray<(ReportFileInError?)>) -> Unit

@@ -2,5 +2,4 @@
 
 package typescript
 
-sealed external interface AssertionExpression : Expression,
-    Union.AssertionExpression_ /* TypeAssertion | AsExpression */
+sealed external interface AssertionExpression : Node, HasType

@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface ForInitializer /* VariableDeclarationList | Expression */
+sealed external interface ForInitializer : Node

@@ -2,5 +2,4 @@
 
 package typescript
 
-sealed external interface LogicalOrCoalescingAssignmentOperator :
-    SyntaxKind /* SyntaxKind.AmpersandAmpersandEqualsToken | SyntaxKind.BarBarEqualsToken | SyntaxKind.QuestionQuestionEqualsToken */
+sealed external interface LogicalOrCoalescingAssignmentOperator : SyntaxKind

@@ -2,12 +2,10 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 sealed external interface EmitHelperBase {
     val name: String
     val scoped: Boolean
     val text: Any /* string | ((node: EmitHelperUniqueNameCallback) => string) */
-    val priority: Int?
-    val dependencies: ReadonlyArray<EmitHelper>?
+    val priority: Double?
+    val dependencies: js.array.ReadonlyArray<EmitHelper>?
 }

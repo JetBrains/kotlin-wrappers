@@ -1,17 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
-)
+@file:JsModule("typescript")
 
 package typescript
 
-import kotlin.contracts.contract
 
-fun isNotEmittedStatement(node: Node): Boolean {
-    contract {
-        returns(true) implies (node is NotEmittedStatement)
-    }
-
-    return typescript.raw.isNotEmittedStatement(node)
-}
+@JsName("isNotEmittedStatement")
+external fun isNotEmittedStatementRaw(node: Node): Boolean /* node is NotEmittedStatement */

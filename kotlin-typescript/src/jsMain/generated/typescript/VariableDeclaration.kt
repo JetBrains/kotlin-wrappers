@@ -2,9 +2,11 @@
 
 package typescript
 
-sealed external interface VariableDeclaration : NamedDeclaration, JSDocContainer, Union.VariableDeclaration_ {
+sealed external interface VariableDeclaration : NamedDeclaration, JSDocContainer, HasJSDoc, HasType,
+    HasExpressionInitializer, VariableLikeDeclaration, ObjectBindingPatternParent, ArrayBindingPatternParent,
+    BindingOrAssignmentElement, FlowAssignmentNode, WalkUpBindingElementsAndPatternsResult {
     override val kind: SyntaxKind.VariableDeclaration
-    override val parent: Union.VariableDeclaration_parent
+    override val parent: VariableDeclarationParent
     override val name: BindingName
     val exclamationToken: ExclamationToken?
     val type: TypeNode?

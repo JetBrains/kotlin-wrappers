@@ -2,11 +2,11 @@
 
 package typescript
 
-sealed external interface ModuleDeclaration : DeclarationStatement, JSDocContainer, LocalsContainer,
-    Union.ModuleDeclaration_ {
+sealed external interface ModuleDeclaration : DeclarationStatement, JSDocContainer, LocalsContainer, HasJSDoc,
+    HasModifiers {
     override val kind: SyntaxKind.ModuleDeclaration
-    override val parent: Union.ModuleDeclaration_parent
+    override val parent: ModuleDeclarationParent
     val modifiers: NodeArray<ModifierLike>?
     override val name: ModuleName
-    val body: Union.ModuleDeclaration_body?
+    val body: (ModuleDeclarationBody)?
 }

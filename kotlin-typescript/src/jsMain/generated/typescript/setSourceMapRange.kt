@@ -7,7 +7,4 @@ package typescript
 /**
  * Sets a custom text range to use when emitting source maps.
  */
-external fun <T : Node> setSourceMapRange(
-    node: T,
-    range: SourceMapRange?,
-): T
+external fun <T : Node> setSourceMapRange(node: T, range: SourceMapRange?): T

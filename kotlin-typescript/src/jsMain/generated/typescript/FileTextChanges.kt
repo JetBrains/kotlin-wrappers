@@ -2,10 +2,8 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 sealed external interface FileTextChanges {
     var fileName: String
-    var textChanges: ReadonlyArray<TextChange>
+    var textChanges: js.array.ReadonlyArray<TextChange>
     var isNewFile: Boolean?
 }

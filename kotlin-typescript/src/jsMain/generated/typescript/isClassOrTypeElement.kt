@@ -4,4 +4,6 @@
 
 package typescript
 
-external fun isClassOrTypeElement(node: Node): Boolean /* node is ClassElement | TypeElement */
+
+@JsName("isClassOrTypeElement")
+external fun isClassOrTypeElementRaw(node: Node): Boolean /* node is ClassElement | TypeElement */

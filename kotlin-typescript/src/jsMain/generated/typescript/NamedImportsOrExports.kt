@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface NamedImportsOrExports /* NamedImports | NamedExports */
+sealed external interface NamedImportsOrExports : Node

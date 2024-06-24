@@ -7,5 +7,5 @@ package typescript
  */
 sealed external interface SourceFileLike {
     val text: String
-    fun getLineAndCharacterOfPosition(pos: Int): LineAndCharacter
+    fun getLineAndCharacterOfPosition(pos: Double): LineAndCharacter
 }

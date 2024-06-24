@@ -3,7 +3,7 @@
 package typescript
 
 sealed external interface ArrowFunction : Expression, FunctionLikeDeclarationBase, JSDocContainer, LocalsContainer,
-    FlowContainer, Union.ArrowFunction_ {
+    FlowContainer, HasJSDoc, HasModifiers, SignatureDeclaration, FunctionLikeDeclaration, FlowStartNode {
     override val kind: SyntaxKind.ArrowFunction
     val modifiers: NodeArray<Modifier>?
     val equalsGreaterThanToken: EqualsGreaterThanToken

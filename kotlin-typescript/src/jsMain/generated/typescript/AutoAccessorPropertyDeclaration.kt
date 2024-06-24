@@ -3,5 +3,5 @@
 package typescript
 
 sealed external interface AutoAccessorPropertyDeclaration : PropertyDeclaration {
-    var _autoAccessorBrand: Any
+    var _autoAccessorBrand: Any?
 }

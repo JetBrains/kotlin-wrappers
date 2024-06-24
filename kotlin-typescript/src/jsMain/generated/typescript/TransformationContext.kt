@@ -2,17 +2,15 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 sealed external interface TransformationContext : CoreTransformationContext {
     /** Records a request for a non-scoped emit helper in the current context. */
-    fun requestEmitHelper(helper: EmitHelper)
+    fun requestEmitHelper(helper: EmitHelper): Unit
 
     /** Gets and resets the requested non-scoped emit helpers. */
-    fun readEmitHelpers(): ReadonlyArray<EmitHelper>?
+    fun readEmitHelpers(): js.array.ReadonlyArray<EmitHelper>?
 
     /** Enables expression substitutions in the pretty printer for the provided SyntaxKind. */
-    fun enableSubstitution(kind: SyntaxKind)
+    fun enableSubstitution(kind: SyntaxKind): Unit
 
     /** Determines whether expression substitutions are enabled for the provided node. */
     fun isSubstitutionEnabled(node: Node): Boolean
@@ -30,7 +28,7 @@ sealed external interface TransformationContext : CoreTransformationContext {
      * Enables before/after emit notifications in the pretty printer for the provided
      * SyntaxKind.
      */
-    fun enableEmitNotification(kind: SyntaxKind)
+    fun enableEmitNotification(kind: SyntaxKind): Unit
 
     /**
      * Determines whether before/after emit notifications should be raised in the pretty

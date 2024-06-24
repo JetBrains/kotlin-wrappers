@@ -4,7 +4,4 @@
 
 package typescript
 
-external fun textSpanIntersectsWithTextSpan(
-    span: TextSpan,
-    other: TextSpan,
-): Boolean
+external fun textSpanIntersectsWithTextSpan(span: TextSpan, other: TextSpan): Boolean

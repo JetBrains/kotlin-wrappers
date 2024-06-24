@@ -3,9 +3,9 @@
 package typescript
 
 sealed external interface EditorSettings {
-    var baseIndentSize: Int?
-    var indentSize: Int?
-    var tabSize: Int?
+    var baseIndentSize: Double?
+    var indentSize: Double?
+    var tabSize: Double?
     var newLineCharacter: String?
     var convertTabsToSpaces: Boolean?
     var indentStyle: IndentStyle?

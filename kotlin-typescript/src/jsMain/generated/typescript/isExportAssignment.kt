@@ -1,17 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
-)
+@file:JsModule("typescript")
 
 package typescript
 
-import kotlin.contracts.contract
 
-fun isExportAssignment(node: Node): Boolean {
-    contract {
-        returns(true) implies (node is ExportAssignment)
-    }
-
-    return typescript.raw.isExportAssignment(node)
-}
+@JsName("isExportAssignment")
+external fun isExportAssignmentRaw(node: Node): Boolean /* node is ExportAssignment */

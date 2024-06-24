@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface FlowCondition : FlowNodeBase, Union.FlowCondition_ {
+sealed external interface FlowCondition : FlowNodeBase, FlowNode {
     var node: Expression
     var antecedent: FlowNode
 }

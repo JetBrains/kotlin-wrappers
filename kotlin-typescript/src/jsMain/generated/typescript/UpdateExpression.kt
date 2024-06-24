@@ -3,5 +3,5 @@
 package typescript
 
 sealed external interface UpdateExpression : UnaryExpression {
-    var _updateExpressionBrand: Any
+    var _updateExpressionBrand: Any?
 }

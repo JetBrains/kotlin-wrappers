@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface TemplateHead : TemplateLiteralLikeNode, Union.TemplateHead_ {
+sealed external interface TemplateHead : TemplateLiteralLikeNode, PseudoLiteralToken {
     override val kind: SyntaxKind.TemplateHead
-    override val parent: Union.TemplateHead_parent
+    override val parent: TemplateHeadParent
 }

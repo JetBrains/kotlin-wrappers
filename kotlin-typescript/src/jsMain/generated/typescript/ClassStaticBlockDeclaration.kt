@@ -2,9 +2,8 @@
 
 package typescript
 
-sealed external interface ClassStaticBlockDeclaration : ClassElement, JSDocContainer, LocalsContainer,
-    Union.ClassStaticBlockDeclaration_ {
+sealed external interface ClassStaticBlockDeclaration : ClassElement, JSDocContainer, LocalsContainer, HasJSDoc {
     override val kind: SyntaxKind.ClassStaticBlockDeclaration
-    override val parent: Union.ClassStaticBlockDeclaration_parent
+    override val parent: ClassStaticBlockDeclarationParent
     val body: Block
 }

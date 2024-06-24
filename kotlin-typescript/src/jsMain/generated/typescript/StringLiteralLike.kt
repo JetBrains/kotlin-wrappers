@@ -2,5 +2,4 @@
 
 package typescript
 
-sealed external interface StringLiteralLike : Declaration,
-    Union.StringLiteralLike_ /* StringLiteral | NoSubstitutionTemplateLiteral */
+sealed external interface StringLiteralLike : Node, DeclarationName, PropertyNameLiteral

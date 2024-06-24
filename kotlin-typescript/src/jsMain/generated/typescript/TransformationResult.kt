@@ -2,14 +2,12 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 sealed external interface TransformationResult<T : Node> {
     /** Gets the transformed source files. */
-    var transformed: ReadonlyArray<T>
+    var transformed: js.array.ReadonlyArray<T>
 
     /** Gets diagnostics for the transformation. */
-    var diagnostics: ReadonlyArray<DiagnosticWithLocation>?
+    var diagnostics: js.array.ReadonlyArray<DiagnosticWithLocation>?
 
     /**
      * Gets a substitute for a node, if one is available; otherwise, returns the original node.
@@ -17,10 +15,7 @@ sealed external interface TransformationResult<T : Node> {
      * @param hint A hint as to the intended usage of the node.
      * @param node The node to substitute.
      */
-    fun substituteNode(
-        hint: EmitHint,
-        node: Node,
-    ): Node
+    fun substituteNode(hint: EmitHint, node: Node): Node
 
     /**
      * Emits a node with possible notification.
@@ -29,14 +24,7 @@ sealed external interface TransformationResult<T : Node> {
      * @param node The node to emit.
      * @param emitCallback A callback used to emit the node.
      */
-    fun emitNodeWithNotification(
-        hint: EmitHint,
-        node: Node,
-        emitCallback: (
-            hint: EmitHint,
-            node: Node,
-        ) -> Unit,
-    )
+    fun emitNodeWithNotification(hint: EmitHint, node: Node, emitCallback: (hint: EmitHint, node: Node) -> Unit): Unit
 
     /**
      * Indicates if a given node needs an emit notification
@@ -48,5 +36,5 @@ sealed external interface TransformationResult<T : Node> {
     /**
      * Clean up EmitNode entries on any parse-tree nodes.
      */
-    fun dispose()
+    fun dispose(): Unit
 }

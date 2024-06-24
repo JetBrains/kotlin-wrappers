@@ -1,17 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
-)
+@file:JsModule("typescript")
 
 package typescript
 
-import kotlin.contracts.contract
 
-fun isTypeQueryNode(node: Node): Boolean {
-    contract {
-        returns(true) implies (node is TypeQueryNode)
-    }
-
-    return typescript.raw.isTypeQueryNode(node)
-}
+@JsName("isTypeQueryNode")
+external fun isTypeQueryNodeRaw(node: Node): Boolean /* node is TypeQueryNode */

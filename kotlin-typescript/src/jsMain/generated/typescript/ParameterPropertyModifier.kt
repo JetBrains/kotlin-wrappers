@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface ParameterPropertyModifier /* AccessibilityModifier | ReadonlyKeyword */
+sealed external interface ParameterPropertyModifier : Node

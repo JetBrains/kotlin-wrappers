@@ -17,4 +17,10 @@ sealed external interface GetCompletionsAtPositionOptions : UserPreferences {
      * @default false
      */
     var includeSymbol: Boolean?
+
+    /** @deprecated Use includeCompletionsForModuleExports */
+    var includeExternalModuleExports: Boolean?
+
+    /** @deprecated Use includeCompletionsWithInsertText */
+    var includeInsertTextCompletions: Boolean?
 }

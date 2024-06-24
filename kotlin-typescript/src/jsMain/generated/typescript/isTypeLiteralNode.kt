@@ -1,17 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
-)
+@file:JsModule("typescript")
 
 package typescript
 
-import kotlin.contracts.contract
 
-fun isTypeLiteralNode(node: Node): Boolean {
-    contract {
-        returns(true) implies (node is TypeLiteralNode)
-    }
-
-    return typescript.raw.isTypeLiteralNode(node)
-}
+@JsName("isTypeLiteralNode")
+external fun isTypeLiteralNodeRaw(node: Node): Boolean /* node is TypeLiteralNode */

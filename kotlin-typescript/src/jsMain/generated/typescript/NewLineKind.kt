@@ -1,15 +1,12 @@
 // Automatically generated - do not modify!
 
-package typescript
+@file:JsModule("typescript")
 
-import seskar.js.JsIntValue
+package typescript
 
 sealed external interface NewLineKind {
     companion object {
-        @JsIntValue(0)
         val CarriageReturnLineFeed: NewLineKind
-
-        @JsIntValue(1)
         val LineFeed: NewLineKind
     }
 }

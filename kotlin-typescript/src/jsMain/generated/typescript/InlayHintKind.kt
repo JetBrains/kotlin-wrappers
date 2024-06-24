@@ -1,18 +1,13 @@
 // Automatically generated - do not modify!
 
-package typescript
+@file:JsModule("typescript")
 
-import seskar.js.JsValue
+package typescript
 
 sealed external interface InlayHintKind {
     companion object {
-        @JsValue("Type")
         val Type: InlayHintKind
-
-        @JsValue("Parameter")
         val Parameter: InlayHintKind
-
-        @JsValue("Enum")
         val Enum: InlayHintKind
     }
 }

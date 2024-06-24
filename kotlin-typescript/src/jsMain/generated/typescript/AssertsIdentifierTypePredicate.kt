@@ -1,14 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "VAR_TYPE_MISMATCH_ON_OVERRIDE",
-)
-
 package typescript
 
-sealed external interface AssertsIdentifierTypePredicate : TypePredicateBase, Union.AssertsIdentifierTypePredicate_ {
+sealed external interface AssertsIdentifierTypePredicate : TypePredicateBase, TypePredicate {
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
     override var kind: TypePredicateKind.AssertsIdentifier
     var parameterName: String
-    var parameterIndex: Int
+    var parameterIndex: Double
+
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
     override var type: Type?
 }

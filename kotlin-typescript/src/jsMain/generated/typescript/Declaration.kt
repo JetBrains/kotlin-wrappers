@@ -3,5 +3,5 @@
 package typescript
 
 sealed external interface Declaration : Node {
-    var _declarationBrand: Any
+    var _declarationBrand: Any?
 }

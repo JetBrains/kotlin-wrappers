@@ -2,13 +2,11 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 sealed external interface IncrementalProgramOptions<T : BuilderProgram> {
-    var rootNames: ReadonlyArray<String>
+    var rootNames: js.array.ReadonlyArray<String>
     var options: CompilerOptions
-    var configFileParsingDiagnostics: ReadonlyArray<Diagnostic>?
-    var projectReferences: ReadonlyArray<ProjectReference>?
+    var configFileParsingDiagnostics: (js.array.ReadonlyArray<Diagnostic>)?
+    var projectReferences: (js.array.ReadonlyArray<ProjectReference>)?
     var host: CompilerHost?
     var createProgram: CreateProgram<T>?
 }

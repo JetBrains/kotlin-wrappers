@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface BinaryExpression : Expression, Declaration, JSDocContainer, Union.BinaryExpression_ {
+sealed external interface BinaryExpression : Expression, Declaration, JSDocContainer, HasJSDoc, FlowArrayMutationNode {
     override val kind: SyntaxKind.BinaryExpression
     val left: Expression
     val operatorToken: BinaryOperatorToken

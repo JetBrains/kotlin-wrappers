@@ -16,20 +16,12 @@ sealed external interface Printer {
      * the identifiers of the source file are used when generating unique names to avoid
      * collisions.
      */
-    fun printNode(
-        hint: EmitHint,
-        node: Node,
-        sourceFile: SourceFile,
-    ): String
+    fun printNode(hint: EmitHint, node: Node, sourceFile: SourceFile): String
 
     /**
      * Prints a list of nodes using the given format flags
      */
-    fun <T : Node> printList(
-        format: ListFormat,
-        list: NodeArray<T>,
-        sourceFile: SourceFile,
-    ): String
+    fun <T : Node> printList(format: ListFormat, list: NodeArray<T>, sourceFile: SourceFile): String
 
     /**
      * Prints a source file as-is, without any emit transformations.

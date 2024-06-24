@@ -3,6 +3,6 @@
 package typescript
 
 sealed external interface TextRange {
-    var pos: Int
-    var end: Int
+    var pos: Double
+    var end: Double
 }

@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface ModuleReference /* EntityName | ExternalModuleReference */
+sealed external interface ModuleReference : Node

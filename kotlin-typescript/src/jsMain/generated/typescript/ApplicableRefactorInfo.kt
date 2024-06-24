@@ -2,8 +2,6 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 /**
  * A set of one or more available refactoring actions, grouped under a parent refactoring.
  */
@@ -27,5 +25,5 @@ sealed external interface ApplicableRefactorInfo {
      * If not specified, this value is assumed to be 'true'
      */
     var inlineable: Boolean?
-    var actions: ReadonlyArray<RefactorActionInfo>
+    var actions: js.array.ReadonlyArray<RefactorActionInfo>
 }

@@ -1,17 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
-)
+@file:JsModule("typescript")
 
 package typescript
 
-import kotlin.contracts.contract
 
-fun isModifierLike(node: Node): Boolean {
-    contract {
-        returns(true) implies (node is ModifierLike)
-    }
-
-    return typescript.raw.isModifierLike(node)
-}
+@JsName("isModifierLike")
+external fun isModifierLikeRaw(node: Node): Boolean /* node is ModifierLike */

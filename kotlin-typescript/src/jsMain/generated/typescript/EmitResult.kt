@@ -2,12 +2,10 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 sealed external interface EmitResult {
     var emitSkipped: Boolean
 
     /** Contains declaration emit diagnostics */
-    var diagnostics: ReadonlyArray<Diagnostic>
-    var emittedFiles: ReadonlyArray<String>?
+    var diagnostics: js.array.ReadonlyArray<Diagnostic>
+    var emittedFiles: js.array.ReadonlyArray<String>?
 }

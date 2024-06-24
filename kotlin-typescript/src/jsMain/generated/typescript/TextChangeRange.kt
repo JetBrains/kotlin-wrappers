@@ -4,5 +4,5 @@ package typescript
 
 sealed external interface TextChangeRange {
     var span: TextSpan
-    var newLength: Int
+    var newLength: Double
 }

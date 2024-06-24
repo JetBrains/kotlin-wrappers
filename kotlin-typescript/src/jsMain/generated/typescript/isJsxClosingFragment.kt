@@ -1,17 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
-)
+@file:JsModule("typescript")
 
 package typescript
 
-import kotlin.contracts.contract
 
-fun isJsxClosingFragment(node: Node): Boolean {
-    contract {
-        returns(true) implies (node is JsxClosingFragment)
-    }
-
-    return typescript.raw.isJsxClosingFragment(node)
-}
+@JsName("isJsxClosingFragment")
+external fun isJsxClosingFragmentRaw(node: Node): Boolean /* node is JsxClosingFragment */

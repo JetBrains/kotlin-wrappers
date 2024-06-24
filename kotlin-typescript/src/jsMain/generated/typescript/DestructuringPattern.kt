@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface DestructuringPattern /* BindingPattern | ObjectLiteralExpression | ArrayLiteralExpression */
+sealed external interface DestructuringPattern : Node

@@ -6,7 +6,7 @@ sealed external interface NavigateToItem {
     var name: String
     var kind: ScriptElementKind
     var kindModifiers: String
-    var matchKind: MatchKind
+    var matchKind: NavigateToItemMatchKind
     var isCaseSensitive: Boolean
     var fileName: String
     var textSpan: TextSpan

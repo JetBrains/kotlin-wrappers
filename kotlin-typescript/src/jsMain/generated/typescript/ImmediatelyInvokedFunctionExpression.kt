@@ -2,6 +2,6 @@
 
 package typescript
 
-sealed external interface ImmediatelyInvokedFunctionExpression /* CallExpression & {
-    readonly expression: FunctionExpression;
-} */
+sealed external interface ImmediatelyInvokedFunctionExpression : CallExpression {
+    override val expression: FunctionExpression
+}

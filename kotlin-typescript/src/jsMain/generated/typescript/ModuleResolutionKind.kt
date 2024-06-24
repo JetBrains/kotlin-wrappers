@@ -1,24 +1,22 @@
 // Automatically generated - do not modify!
 
-package typescript
+@file:JsModule("typescript")
 
-import seskar.js.JsIntValue
+package typescript
 
 sealed external interface ModuleResolutionKind {
     companion object {
-        @JsIntValue(1)
         val Classic: ModuleResolutionKind
 
-        @JsIntValue(2)
+        /**
+         * @deprecated
+         * `NodeJs` was renamed to `Node10` to better reflect the version of Node that it targets.
+         * Use the new name or consider switching to a modern module resolution target.
+         */
+        val NodeJs: ModuleResolutionKind
         val Node10: ModuleResolutionKind
-
-        @JsIntValue(3)
         val Node16: ModuleResolutionKind
-
-        @JsIntValue(99)
         val NodeNext: ModuleResolutionKind
-
-        @JsIntValue(100)
         val Bundler: ModuleResolutionKind
     }
 }

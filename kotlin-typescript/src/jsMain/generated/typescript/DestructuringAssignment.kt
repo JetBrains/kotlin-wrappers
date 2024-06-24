@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface DestructuringAssignment /* ObjectDestructuringAssignment | ArrayDestructuringAssignment */
+sealed external interface DestructuringAssignment : Node

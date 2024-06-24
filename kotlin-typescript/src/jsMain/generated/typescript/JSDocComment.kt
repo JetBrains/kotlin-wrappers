@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface JSDocComment /* JSDocText | JSDocLink | JSDocLinkCode | JSDocLinkPlain */
+sealed external interface JSDocComment : Node

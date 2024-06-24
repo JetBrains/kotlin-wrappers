@@ -2,9 +2,10 @@
 
 package typescript
 
-sealed external interface ExportDeclaration : DeclarationStatement, JSDocContainer, Union.ExportDeclaration_ {
+sealed external interface ExportDeclaration : DeclarationStatement, JSDocContainer, HasJSDoc, HasModifiers,
+    ImportAttributesParent, TypeOnlyCompatibleAliasDeclaration {
     override val kind: SyntaxKind.ExportDeclaration
-    override val parent: Union.ExportDeclaration_parent
+    override val parent: ExportDeclarationParent
     val modifiers: NodeArray<ModifierLike>?
     val isTypeOnly: Boolean
 
@@ -13,5 +14,8 @@ sealed external interface ExportDeclaration : DeclarationStatement, JSDocContain
 
     /** If this is not a StringLiteral it will be a grammar error. */
     val moduleSpecifier: Expression?
+
+    /** @deprecated */
+    val assertClause: AssertClause?
     val attributes: ImportAttributes?
 }

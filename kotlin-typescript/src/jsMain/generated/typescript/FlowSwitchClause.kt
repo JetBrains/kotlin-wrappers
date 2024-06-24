@@ -2,9 +2,9 @@
 
 package typescript
 
-sealed external interface FlowSwitchClause : FlowNodeBase, Union.FlowSwitchClause_ {
+sealed external interface FlowSwitchClause : FlowNodeBase, FlowNode {
     var switchStatement: SwitchStatement
-    var clauseStart: Int
-    var clauseEnd: Int
+    var clauseStart: Double
+    var clauseEnd: Double
     var antecedent: FlowNode
 }

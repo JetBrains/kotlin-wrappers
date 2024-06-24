@@ -2,5 +2,4 @@
 
 package typescript
 
-sealed external interface ObjectTypeDeclaration :
-    Node /* ClassLikeDeclaration | InterfaceDeclaration | TypeLiteralNode */
+sealed external interface ObjectTypeDeclaration : Node

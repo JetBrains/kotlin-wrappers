@@ -1,17 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
-)
+@file:JsModule("typescript")
 
 package typescript
 
-import kotlin.contracts.contract
 
-fun isLiteralExpression(node: Node): Boolean {
-    contract {
-        returns(true) implies (node is LiteralExpression)
-    }
-
-    return typescript.raw.isLiteralExpression(node)
-}
+@JsName("isLiteralExpression")
+external fun isLiteralExpressionRaw(node: Node): Boolean /* node is LiteralExpression */

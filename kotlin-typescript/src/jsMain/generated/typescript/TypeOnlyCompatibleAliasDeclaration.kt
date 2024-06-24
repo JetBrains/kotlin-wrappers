@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface TypeOnlyCompatibleAliasDeclaration /* ImportClause | ImportEqualsDeclaration | NamespaceImport | ImportOrExportSpecifier | ExportDeclaration | NamespaceExport */
+sealed external interface TypeOnlyCompatibleAliasDeclaration : Node

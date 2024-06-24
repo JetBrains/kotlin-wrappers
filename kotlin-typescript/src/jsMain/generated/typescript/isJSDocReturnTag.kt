@@ -1,17 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
-)
+@file:JsModule("typescript")
 
 package typescript
 
-import kotlin.contracts.contract
 
-fun isJSDocReturnTag(node: Node): Boolean {
-    contract {
-        returns(true) implies (node is JSDocReturnTag)
-    }
-
-    return typescript.raw.isJSDocReturnTag(node)
-}
+@JsName("isJSDocReturnTag")
+external fun isJSDocReturnTagRaw(node: Node): Boolean /* node is JSDocReturnTag */

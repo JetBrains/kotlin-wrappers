@@ -1,17 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
-)
+@file:JsModule("typescript")
 
 package typescript
 
-import kotlin.contracts.contract
 
-fun isIndexedAccessTypeNode(node: Node): Boolean {
-    contract {
-        returns(true) implies (node is IndexedAccessTypeNode)
-    }
-
-    return typescript.raw.isIndexedAccessTypeNode(node)
-}
+@JsName("isIndexedAccessTypeNode")
+external fun isIndexedAccessTypeNodeRaw(node: Node): Boolean /* node is IndexedAccessTypeNode */

@@ -27,14 +27,7 @@ sealed external interface PrintHandlers {
      * });
      * ```
      */
-    val onEmitNode: ((
-        hint: EmitHint,
-        node: Node,
-        emitCallback: (
-            hint: EmitHint,
-            node: Node,
-        ) -> Unit,
-    ) -> Unit)?
+    val onEmitNode: ((hint: EmitHint, node: Node, emitCallback: (hint: EmitHint, node: Node) -> Unit) -> Unit)?
 
     /**
      * A hook used to check if an emit notification is required for a node.
@@ -58,8 +51,5 @@ sealed external interface PrintHandlers {
      * });
      * ```
      */
-    val substituteNode: ((
-        hint: EmitHint,
-        node: Node,
-    ) -> Node)?
+    val substituteNode: ((hint: EmitHint, node: Node) -> Node)?
 }

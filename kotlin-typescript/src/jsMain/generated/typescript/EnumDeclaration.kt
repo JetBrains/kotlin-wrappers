@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface EnumDeclaration : DeclarationStatement, JSDocContainer, Union.EnumDeclaration_ {
+sealed external interface EnumDeclaration : DeclarationStatement, JSDocContainer, HasJSDoc, HasModifiers {
     override val kind: SyntaxKind.EnumDeclaration
     val modifiers: NodeArray<ModifierLike>?
     override val name: Identifier

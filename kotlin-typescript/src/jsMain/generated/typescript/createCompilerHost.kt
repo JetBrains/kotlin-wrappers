@@ -4,7 +4,4 @@
 
 package typescript
 
-external fun createCompilerHost(
-    options: CompilerOptions,
-    setParentNodes: Boolean = definedExternally,
-): CompilerHost
+external fun createCompilerHost(options: CompilerOptions, setParentNodes: Boolean = definedExternally): CompilerHost

@@ -10,6 +10,6 @@ external fun createScanner(
     languageVariant: LanguageVariant = definedExternally,
     textInitial: String = definedExternally,
     onError: ErrorCallback = definedExternally,
-    start: Int = definedExternally,
-    length: Int = definedExternally,
+    start: Double = definedExternally,
+    length: Double = definedExternally,
 ): Scanner

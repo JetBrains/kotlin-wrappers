@@ -4,9 +4,4 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
-external fun <T : Node> setSyntheticTrailingComments(
-    node: T,
-    comments: ReadonlyArray<SynthesizedComment>?,
-): T
+external fun <T : Node> setSyntheticTrailingComments(node: T, comments: js.array.ReadonlyArray<SynthesizedComment>?): T

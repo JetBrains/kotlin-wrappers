@@ -2,5 +2,4 @@
 
 package typescript
 
-sealed external interface TokenSyntaxKind :
-    SyntaxKind /* SyntaxKind.Unknown | SyntaxKind.EndOfFileToken | TriviaSyntaxKind | LiteralSyntaxKind | PseudoLiteralSyntaxKind | PunctuationSyntaxKind | SyntaxKind.Identifier | KeywordSyntaxKind */
+sealed external interface TokenSyntaxKind : SyntaxKind

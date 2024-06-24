@@ -2,8 +2,8 @@
 
 package typescript
 
-sealed external interface ArrayBindingPattern : Node, Union.ArrayBindingPattern_ {
+sealed external interface ArrayBindingPattern : Node, BindingPattern, ArrayBindingOrAssignmentPattern {
     override val kind: SyntaxKind.ArrayBindingPattern
-    override val parent: Union.ArrayBindingPattern_parent
+    override val parent: ArrayBindingPatternParent
     val elements: NodeArray<ArrayBindingElement>
 }

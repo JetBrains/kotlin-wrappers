@@ -3,6 +3,6 @@
 package typescript
 
 sealed external interface ConstructSignatureDeclaration : SignatureDeclarationBase, TypeElement, LocalsContainer,
-    Union.ConstructSignatureDeclaration_ {
+    HasJSDoc, SignatureDeclaration {
     override val kind: SyntaxKind.ConstructSignature
 }

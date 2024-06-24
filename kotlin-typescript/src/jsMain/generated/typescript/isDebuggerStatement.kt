@@ -1,17 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
-)
+@file:JsModule("typescript")
 
 package typescript
 
-import kotlin.contracts.contract
 
-fun isDebuggerStatement(node: Node): Boolean {
-    contract {
-        returns(true) implies (node is DebuggerStatement)
-    }
-
-    return typescript.raw.isDebuggerStatement(node)
-}
+@JsName("isDebuggerStatement")
+external fun isDebuggerStatementRaw(node: Node): Boolean /* node is DebuggerStatement */

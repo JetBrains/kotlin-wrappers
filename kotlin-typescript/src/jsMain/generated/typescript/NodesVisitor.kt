@@ -2,8 +2,6 @@
 
 package typescript
 
-import seskar.js.JsNative
-
 /**
  * A function that walks a node array using the given visitor, returning an array whose contents satisfy the test.
  *
@@ -16,12 +14,13 @@ import seskar.js.JsNative
  * For the canonical implementation of this type, @see {visitNodes}.
  */
 sealed external interface NodesVisitor {
-    @JsNative
+
+    @seskar.js.JsNative
     operator fun <TIn : Node, TInArray : NodeArray<TIn>?> invoke(
         nodes: TInArray,
         visitor: Visitor<TIn, Node?>,
         test: (node: Node) -> Boolean = definedExternally,
-        start: Int = definedExternally,
-        count: Int = definedExternally,
+        start: Double = definedExternally,
+        count: Double = definedExternally,
     ): Any /* NodeArray<Node> | (TInArray & undefined) */
 }

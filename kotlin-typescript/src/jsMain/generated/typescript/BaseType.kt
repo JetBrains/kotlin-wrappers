@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface BaseType /* ObjectType | IntersectionType | TypeVariable */
+sealed external interface BaseType

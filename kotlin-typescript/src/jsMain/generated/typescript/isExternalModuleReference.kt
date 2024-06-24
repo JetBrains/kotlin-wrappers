@@ -1,17 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
-)
+@file:JsModule("typescript")
 
 package typescript
 
-import kotlin.contracts.contract
 
-fun isExternalModuleReference(node: Node): Boolean {
-    contract {
-        returns(true) implies (node is ExternalModuleReference)
-    }
-
-    return typescript.raw.isExternalModuleReference(node)
-}
+@JsName("isExternalModuleReference")
+external fun isExternalModuleReferenceRaw(node: Node): Boolean /* node is ExternalModuleReference */

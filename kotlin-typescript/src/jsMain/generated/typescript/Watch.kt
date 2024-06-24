@@ -7,5 +7,5 @@ sealed external interface Watch<T> {
     fun getProgram(): T
 
     /** Closes the watch */
-    fun close()
+    fun close(): Unit
 }

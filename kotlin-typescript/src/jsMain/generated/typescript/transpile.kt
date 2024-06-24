@@ -4,12 +4,10 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 external fun transpile(
     input: String,
     compilerOptions: CompilerOptions = definedExternally,
     fileName: String = definedExternally,
-    diagnostics: ReadonlyArray<Diagnostic> = definedExternally,
+    diagnostics: js.array.ReadonlyArray<Diagnostic> = definedExternally,
     moduleName: String = definedExternally,
 ): String

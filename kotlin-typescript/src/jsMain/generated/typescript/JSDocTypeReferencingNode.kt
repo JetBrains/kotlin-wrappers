@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface JSDocTypeReferencingNode /* JSDocVariadicType | JSDocOptionalType | JSDocNullableType | JSDocNonNullableType */
+sealed external interface JSDocTypeReferencingNode : Node

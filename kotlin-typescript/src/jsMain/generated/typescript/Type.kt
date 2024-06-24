@@ -2,24 +2,22 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
-sealed external interface Type : Union.Type_ {
+sealed external interface Type : FlowType {
     var flags: TypeFlags
     var symbol: Symbol
     var pattern: DestructuringPattern?
     var aliasSymbol: Symbol?
-    var aliasTypeArguments: ReadonlyArray<Type>?
+    var aliasTypeArguments: (js.array.ReadonlyArray<Type>)?
     fun getFlags(): TypeFlags
     fun getSymbol(): Symbol?
-    fun getProperties(): ReadonlyArray<Symbol>
+    fun getProperties(): js.array.ReadonlyArray<Symbol>
     fun getProperty(propertyName: String): Symbol?
-    fun getApparentProperties(): ReadonlyArray<Symbol>
-    fun getCallSignatures(): ReadonlyArray<Signature>
-    fun getConstructSignatures(): ReadonlyArray<Signature>
+    fun getApparentProperties(): js.array.ReadonlyArray<Symbol>
+    fun getCallSignatures(): js.array.ReadonlyArray<Signature>
+    fun getConstructSignatures(): js.array.ReadonlyArray<Signature>
     fun getStringIndexType(): Type?
     fun getNumberIndexType(): Type?
-    fun getBaseTypes(): ReadonlyArray<BaseType>?
+    fun getBaseTypes(): js.array.ReadonlyArray<BaseType>?
     fun getNonNullableType(): Type
     fun getConstraint(): Type?
     fun getDefault(): Type?

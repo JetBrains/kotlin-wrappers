@@ -4,8 +4,6 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 /**
  * Creates a builder thats just abstraction over program and can be used with watch
  */
@@ -13,14 +11,14 @@ external fun createAbstractBuilder(
     newProgram: Program,
     host: BuilderProgramHost,
     oldProgram: BuilderProgram = definedExternally,
-    configFileParsingDiagnostics: ReadonlyArray<Diagnostic> = definedExternally,
+    configFileParsingDiagnostics: js.array.ReadonlyArray<Diagnostic> = definedExternally,
 ): BuilderProgram
 
 external fun createAbstractBuilder(
-    rootNames: ReadonlyArray<String>?,
+    rootNames: (js.array.ReadonlyArray<String>)?,
     options: CompilerOptions?,
     host: CompilerHost = definedExternally,
     oldProgram: BuilderProgram = definedExternally,
-    configFileParsingDiagnostics: ReadonlyArray<Diagnostic> = definedExternally,
-    projectReferences: ReadonlyArray<ProjectReference> = definedExternally,
+    configFileParsingDiagnostics: js.array.ReadonlyArray<Diagnostic> = definedExternally,
+    projectReferences: js.array.ReadonlyArray<ProjectReference> = definedExternally,
 ): BuilderProgram

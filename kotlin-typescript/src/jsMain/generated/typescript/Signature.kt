@@ -2,18 +2,16 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 sealed external interface Signature {
-    var declaration: Union.Signature_declaration?
-    var typeParameters: ReadonlyArray<TypeParameter>?
-    var parameters: ReadonlyArray<Symbol>
+    var declaration: (SignatureDeclarationField)?
+    var typeParameters: (js.array.ReadonlyArray<TypeParameter>)?
+    var parameters: js.array.ReadonlyArray<Symbol>
     var thisParameter: Symbol?
     fun getDeclaration(): SignatureDeclaration
-    fun getTypeParameters(): ReadonlyArray<TypeParameter>?
-    fun getParameters(): ReadonlyArray<Symbol>
-    fun getTypeParameterAtPosition(pos: Int): Type
+    fun getTypeParameters(): js.array.ReadonlyArray<TypeParameter>?
+    fun getParameters(): js.array.ReadonlyArray<Symbol>
+    fun getTypeParameterAtPosition(pos: Double): Type
     fun getReturnType(): Type
-    fun getDocumentationComment(typeChecker: TypeChecker?): ReadonlyArray<SymbolDisplayPart>
-    fun getJsDocTags(): ReadonlyArray<JSDocTagInfo>
+    fun getDocumentationComment(typeChecker: TypeChecker?): js.array.ReadonlyArray<SymbolDisplayPart>
+    fun getJsDocTags(): js.array.ReadonlyArray<JSDocTagInfo>
 }

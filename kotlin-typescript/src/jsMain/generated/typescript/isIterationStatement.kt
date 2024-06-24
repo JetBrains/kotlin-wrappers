@@ -4,10 +4,9 @@
 
 package typescript
 
-/*
-external fun isIterationStatement(node: Node, lookInLabeledStatements: false): node is IterationStatement
-*/
 
-/*
-external fun isIterationStatement(node: Node, lookInLabeledStatements: boolean): node is IterationStatement | LabeledStatement
-*/
+@JsName("isIterationStatement")
+external fun isIterationStatementRaw(
+    node: Node,
+    lookInLabeledStatements: Boolean,
+): Boolean /* node is IterationStatement | LabeledStatement */

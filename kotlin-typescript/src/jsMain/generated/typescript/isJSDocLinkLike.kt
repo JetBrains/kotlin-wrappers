@@ -4,4 +4,6 @@
 
 package typescript
 
-external fun isJSDocLinkLike(node: Node): Boolean /* node is JSDocLink | JSDocLinkCode | JSDocLinkPlain */
+
+@JsName("isJSDocLinkLike")
+external fun isJSDocLinkLikeRaw(node: Node): Boolean /* node is JSDocLink | JSDocLinkCode | JSDocLinkPlain */

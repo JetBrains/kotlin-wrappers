@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface TupleTypeNode : TypeNode, Union.TupleTypeNode_ {
+sealed external interface TupleTypeNode : TypeNode, TypeReferenceNodeField {
     override val kind: SyntaxKind.TupleType
-    val elements: Any /* NodeArray<TypeNode | NamedTupleMember> */
+    val elements: NodeArray<TupleTypeNodeElementsItem>
 }

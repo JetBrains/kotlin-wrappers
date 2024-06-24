@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface BindingPattern : Node, Union.BindingPattern_ /* ObjectBindingPattern | ArrayBindingPattern */
+sealed external interface BindingPattern : Node, DeclarationName, BindingName, DestructuringPattern

@@ -4,8 +4,4 @@
 
 package typescript
 
-external fun textSpanIntersectsWith(
-    span: TextSpan,
-    start: Int,
-    length: Int,
-): Boolean
+external fun textSpanIntersectsWith(span: TextSpan, start: Double, length: Double): Boolean

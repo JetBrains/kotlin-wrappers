@@ -2,8 +2,6 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 /**
  * The builder that caches the semantic diagnostics for the program and handles the changed files and affected files
  */
@@ -15,5 +13,5 @@ sealed external interface SemanticDiagnosticsBuilderProgram : BuilderProgram {
     fun getSemanticDiagnosticsOfNextAffectedFile(
         cancellationToken: CancellationToken = definedExternally,
         ignoreSourceFile: (sourceFile: SourceFile) -> Boolean = definedExternally,
-    ): AffectedFileResult<ReadonlyArray<Diagnostic>>
+    ): AffectedFileResult<js.array.ReadonlyArray<Diagnostic>>
 }

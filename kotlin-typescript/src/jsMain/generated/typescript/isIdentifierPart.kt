@@ -5,7 +5,7 @@
 package typescript
 
 external fun isIdentifierPart(
-    ch: Int,
+    ch: Double,
     languageVersion: ScriptTarget?,
     identifierVariant: LanguageVariant = definedExternally,
 ): Boolean

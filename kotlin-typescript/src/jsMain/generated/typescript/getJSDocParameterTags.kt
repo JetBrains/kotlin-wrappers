@@ -4,8 +4,6 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 /**
  * Gets the JSDoc parameter tags for the node if present.
  *
@@ -18,4 +16,4 @@ import js.array.ReadonlyArray
  *
  * For binding patterns, parameter tags are matched by position.
  */
-external fun getJSDocParameterTags(param: ParameterDeclaration): ReadonlyArray<JSDocParameterTag>
+external fun getJSDocParameterTags(param: ParameterDeclaration): js.array.ReadonlyArray<JSDocParameterTag>

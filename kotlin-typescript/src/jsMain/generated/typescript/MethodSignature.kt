@@ -2,10 +2,10 @@
 
 package typescript
 
-sealed external interface MethodSignature : SignatureDeclarationBase, TypeElement, LocalsContainer,
-    Union.MethodSignature_ {
+sealed external interface MethodSignature : SignatureDeclarationBase, TypeElement, LocalsContainer, HasJSDoc,
+    HasModifiers, SignatureDeclaration, NodeFactoryReplacePropertyNameTConstraint {
     override val kind: SyntaxKind.MethodSignature
-    override val parent: Union.MethodSignature_parent
+    override val parent: MethodSignatureParent
     val modifiers: NodeArray<Modifier>?
     override val name: PropertyName
 }

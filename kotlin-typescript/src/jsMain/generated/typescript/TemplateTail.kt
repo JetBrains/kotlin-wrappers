@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface TemplateTail : TemplateLiteralLikeNode, Union.TemplateTail_ {
+sealed external interface TemplateTail : TemplateLiteralLikeNode, TemplateLiteralTypeSpanLiteral, PseudoLiteralToken,
+    TemplateSpanLiteral, IsTemplateMiddleOrTemplateTailResultPredicate {
     override val kind: SyntaxKind.TemplateTail
-    override val parent: Union.TemplateTail_parent
+    override val parent: TemplateTailParent
 }

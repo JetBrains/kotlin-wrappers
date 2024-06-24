@@ -1,20 +1,12 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
-)
+@file:JsModule("typescript")
 
 package typescript
 
-import kotlin.contracts.contract
 
-fun isParameterPropertyDeclaration(
+@JsName("isParameterPropertyDeclaration")
+external fun isParameterPropertyDeclarationRaw(
     node: Node,
     parent: Node,
-): Boolean {
-    contract {
-        returns(true) implies (node is ParameterPropertyDeclaration)
-    }
-
-    return typescript.raw.isParameterPropertyDeclaration(node, parent)
-}
+): Boolean /* node is ParameterPropertyDeclaration */

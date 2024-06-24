@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface SuperProperty /* SuperPropertyAccessExpression | SuperElementAccessExpression */
+sealed external interface SuperProperty : Node

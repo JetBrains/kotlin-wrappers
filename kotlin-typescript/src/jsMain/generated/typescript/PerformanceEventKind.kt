@@ -2,14 +2,12 @@
 
 package typescript
 
-import seskar.js.JsValue
-
 sealed external interface PerformanceEventKind {
     companion object {
-        @JsValue("UpdateGraph")
+        @seskar.js.JsValue("UpdateGraph")
         val UpdateGraph: PerformanceEventKind
 
-        @JsValue("CreatePackageJsonAutoImportProvider")
+        @seskar.js.JsValue("CreatePackageJsonAutoImportProvider")
         val CreatePackageJsonAutoImportProvider: PerformanceEventKind
     }
 }

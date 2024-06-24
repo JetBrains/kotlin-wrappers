@@ -2,12 +2,10 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 sealed external interface Symbol {
     var flags: SymbolFlags
     var escapedName: __String
-    var declarations: ReadonlyArray<Declaration>?
+    var declarations: js.array.ReadonlyArray<Declaration>?
     var valueDeclaration: Declaration?
     var members: SymbolTable?
     var exports: SymbolTable?
@@ -16,7 +14,7 @@ sealed external interface Symbol {
     fun getFlags(): SymbolFlags
     fun getEscapedName(): __String
     fun getName(): String
-    fun getDeclarations(): ReadonlyArray<Declaration>?
-    fun getDocumentationComment(typeChecker: TypeChecker?): ReadonlyArray<SymbolDisplayPart>
-    fun getJsDocTags(checker: TypeChecker = definedExternally): ReadonlyArray<JSDocTagInfo>
+    fun getDeclarations(): js.array.ReadonlyArray<Declaration>?
+    fun getDocumentationComment(typeChecker: TypeChecker?): js.array.ReadonlyArray<SymbolDisplayPart>
+    fun getJsDocTags(checker: TypeChecker = definedExternally): js.array.ReadonlyArray<JSDocTagInfo>
 }

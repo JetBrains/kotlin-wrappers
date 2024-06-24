@@ -4,9 +4,7 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 external fun formatDiagnosticsWithColorAndContext(
-    diagnostics: ReadonlyArray<Diagnostic>,
+    diagnostics: js.array.ReadonlyArray<Diagnostic>,
     host: FormatDiagnosticsHost,
 ): String

@@ -4,8 +4,6 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 /**
  * Given a set of options, returns the set of type directive names
  *   that should be included for this program automatically.
@@ -17,4 +15,4 @@ import js.array.ReadonlyArray
 external fun getAutomaticTypeDirectiveNames(
     options: CompilerOptions,
     host: ModuleResolutionHost,
-): ReadonlyArray<String>
+): js.array.ReadonlyArray<String>

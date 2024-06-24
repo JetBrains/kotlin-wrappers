@@ -4,5 +4,5 @@ package typescript
 
 sealed external interface FileReference : TextRange {
     var fileName: String
-    var resolutionMode: ResolutionMode?
+    var resolutionMode: ResolutionMode
 }

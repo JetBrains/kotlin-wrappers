@@ -1,17 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
-)
+@file:JsModule("typescript")
 
 package typescript
 
-import kotlin.contracts.contract
 
-fun isReturnStatement(node: Node): Boolean {
-    contract {
-        returns(true) implies (node is ReturnStatement)
-    }
-
-    return typescript.raw.isReturnStatement(node)
-}
+@JsName("isReturnStatement")
+external fun isReturnStatementRaw(node: Node): Boolean /* node is ReturnStatement */

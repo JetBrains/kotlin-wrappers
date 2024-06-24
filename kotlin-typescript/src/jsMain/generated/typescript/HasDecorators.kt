@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface HasDecorators /* ParameterDeclaration | PropertyDeclaration | MethodDeclaration | GetAccessorDeclaration | SetAccessorDeclaration | ClassExpression | ClassDeclaration */
+sealed external interface HasDecorators : Node
