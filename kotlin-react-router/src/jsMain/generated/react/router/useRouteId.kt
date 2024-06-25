@@ -4,7 +4,6 @@
 
 package react.router
 
-
 /**
  * Returns the ID for the nearest contextual route
  */

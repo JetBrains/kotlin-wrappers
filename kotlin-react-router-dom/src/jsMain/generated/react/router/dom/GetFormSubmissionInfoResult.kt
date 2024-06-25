@@ -4,7 +4,6 @@ package react.router.dom
 
 import web.form.FormData
 
-
 sealed external interface GetFormSubmissionInfoResult {
     var action: String?
     var method: String

@@ -4,7 +4,6 @@
 
 package remix.run.router
 
-
 external fun convertRoutesToDataRoutes(
     routes: js.array.ReadonlyArray<AgnosticRouteObject>,
     mapRouteProperties: MapRoutePropertiesFunction,

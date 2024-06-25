@@ -4,7 +4,6 @@
 
 package react.router
 
-
 /**
  * Returns the action data for the nearest ancestor Route action
  */

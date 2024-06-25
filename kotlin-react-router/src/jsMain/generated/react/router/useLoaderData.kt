@@ -4,7 +4,6 @@
 
 package react.router
 
-
 /**
  * Returns the loader data for the nearest ancestor Route loader
  */

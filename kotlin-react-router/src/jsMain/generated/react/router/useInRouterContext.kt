@@ -4,7 +4,6 @@
 
 package react.router
 
-
 /**
  * Returns true if this component is a descendant of a `<Router>`.
  *

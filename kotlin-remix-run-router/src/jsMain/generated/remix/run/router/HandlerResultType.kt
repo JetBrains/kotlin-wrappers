@@ -2,7 +2,6 @@
 
 package remix.run.router
 
-
 sealed external interface HandlerResultType {
     companion object {
         @seskar.js.JsValue("data")

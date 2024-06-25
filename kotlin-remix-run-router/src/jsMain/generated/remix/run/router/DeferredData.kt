@@ -8,7 +8,6 @@ import js.promise.Promise
 import web.abort.AbortSignal
 import web.http.ResponseInit
 
-
 external class DeferredData {
     constructor (data: js.objects.ReadonlyRecord<String, Any?>, responseInit: ResponseInit = definedExternally)
 
@@ -18,13 +17,7 @@ external class DeferredData {
     fun subscribe(fn: (aborted: Boolean, settledKey: String? /* use undefined for default */) -> Unit): () -> Boolean
     fun cancel(): Unit
     fun resolveData(signal: AbortSignal): Promise<Boolean>
-
     val done: Boolean
-
-
     val unwrappedData: Any
-
-
     val pendingKeys: js.array.ReadonlyArray<String>
-
 }

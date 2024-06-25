@@ -4,7 +4,6 @@
 
 package remix.run.router
 
-
 /**
  * Performs pattern matching on a URL pathname and returns information about
  * the match.

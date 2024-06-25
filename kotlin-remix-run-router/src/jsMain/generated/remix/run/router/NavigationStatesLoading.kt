@@ -4,7 +4,6 @@ package remix.run.router
 
 import web.form.FormData
 
-
 sealed external interface NavigationStatesLoading {
     var state: String /* "loading" */
     var location: Location<*>

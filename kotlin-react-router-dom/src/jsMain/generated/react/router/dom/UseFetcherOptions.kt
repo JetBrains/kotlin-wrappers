@@ -2,7 +2,6 @@
 
 package react.router.dom
 
-
 sealed external interface UseFetcherOptions {
     var key: String?
 }

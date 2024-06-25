@@ -4,5 +4,4 @@
 
 package react.router.dom
 
-
 external fun isHtmlElement(value: Any?): Boolean /* object is HTMLElement */
