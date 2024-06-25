@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "UNUSED_TYPEALIAS_PARAMETER",
-)
-
 package tanstack.query.core
 
-typealias Updater<TInput, TOutput> = Union /* TOutput | ((input: TInput) => TOutput) */
+typealias Updater<TInput, TOutput> = (input: TInput) -> TOutput /* | TOutput */
