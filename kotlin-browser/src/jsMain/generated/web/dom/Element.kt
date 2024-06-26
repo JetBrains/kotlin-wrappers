@@ -278,6 +278,8 @@ abstract external class Element :
         localName: String,
     ): HTMLCollectionOf<Element>
 
+    fun getHTML(options: GetHTMLOptions = definedExternally): String
+
     /**
      * Returns true if element has an attribute whose qualified name is qualifiedName, and false otherwise.
      *
@@ -381,7 +383,11 @@ abstract external class Element :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/requestPointerLock)
      */
-    fun requestPointerLock()
+    @JsAsync
+    suspend fun requestPointerLock(options: PointerLockOptions = definedExternally)
+
+    @JsName("requestPointerLock")
+    fun requestPointerLockAsync(options: PointerLockOptions = definedExternally): Promise<Void>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/scroll)

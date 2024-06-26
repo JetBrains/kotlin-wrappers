@@ -50,6 +50,14 @@ abstract external class WorkerGlobalScope :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/online_event)
      */
     var ononline: EventHandler<Event, WorkerGlobalScope>?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/rejectionhandled_event)
+     */
     var onrejectionhandled: EventHandler<PromiseRejectionEvent, WorkerGlobalScope>?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/unhandledrejection_event)
+     */
     var onunhandledrejection: EventHandler<PromiseRejectionEvent, WorkerGlobalScope>?
 }

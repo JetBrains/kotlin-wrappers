@@ -42,4 +42,5 @@ sealed external class GeolocationCoordinates {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationCoordinates/speed)
      */
     val speed: Double?
+    fun toJSON(): Any
 }

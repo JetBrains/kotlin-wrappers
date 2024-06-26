@@ -1915,6 +1915,11 @@ sealed external class CSSStyleDeclaration :
     var verticalAlign: String
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/view-transition-name)
+     */
+    var viewTransitionName: String
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/visibility)
      */
     var visibility: String

@@ -11,6 +11,10 @@ sealed external interface WebGLRenderingContextBase {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/canvas)
      */
     val canvas: EventTarget /* HTMLCanvasElement | OffscreenCanvas */
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/drawingBufferColorSpace)
+     */
     var drawingBufferColorSpace: PredefinedColorSpace
 
     /**

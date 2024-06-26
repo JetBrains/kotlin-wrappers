@@ -113,6 +113,19 @@ external class URL(
         fun createObjectURL(obj: Blob /* | MediaSource */): String
 
         /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/parse_static)
+         */
+        fun parse(
+            url: String,
+            base: String = definedExternally,
+        ): URL?
+
+        fun parse(
+            url: URL,
+            base: String = definedExternally,
+        ): URL?
+
+        /**
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/revokeObjectURL_static)
          */
         fun revokeObjectURL(url: String)

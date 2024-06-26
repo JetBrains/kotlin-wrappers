@@ -1,9 +1,10 @@
 // Automatically generated - do not modify!
 
-package web.rtc
+package web.media.key
 
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-external interface RTCRtpCodecCapability :
-    RTCRtpCodec
+external interface MediaKeysPolicy {
+    var minHdcpVersion: String?
+}

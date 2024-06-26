@@ -78,6 +78,11 @@ external class MediaSource :
 
     companion object {
         /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/canConstructInDedicatedWorker_static)
+         */
+        val canConstructInDedicatedWorker: Boolean
+
+        /**
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/isTypeSupported_static)
          */
         fun isTypeSupported(type: String): Boolean

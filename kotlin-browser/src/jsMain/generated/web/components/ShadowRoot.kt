@@ -5,6 +5,7 @@ package web.components
 import web.dom.DocumentFragment
 import web.dom.DocumentOrShadowRoot
 import web.dom.Element
+import web.dom.GetHTMLOptions
 import web.events.Event
 import web.events.EventHandler
 
@@ -39,10 +40,12 @@ sealed external class ShadowRoot :
      */
     val mode: ShadowRootMode
     var onslotchange: EventHandler<Event, ShadowRoot>?
+    val serializable: Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ShadowRoot/slotAssignment)
      */
     val slotAssignment: SlotAssignmentMode
+    fun getHTML(options: GetHTMLOptions = definedExternally): String
     fun setHTMLUnsafe(html: String)
 }

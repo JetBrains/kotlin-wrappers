@@ -7,6 +7,7 @@ package js.transferable
  * - `OffscreenCanvas`
  * - `ImageBitmap`
  * - `MessagePort`
+ * - `MediaSourceHandle`
  * - `ReadableStream`
  * - `WritableStream`
  * - `TransformStream`

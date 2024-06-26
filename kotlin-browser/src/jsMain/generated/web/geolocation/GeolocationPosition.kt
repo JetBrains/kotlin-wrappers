@@ -19,4 +19,5 @@ sealed external class GeolocationPosition {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationPosition/timestamp)
      */
     val timestamp: EpochTimeStamp
+    fun toJSON(): Any
 }
