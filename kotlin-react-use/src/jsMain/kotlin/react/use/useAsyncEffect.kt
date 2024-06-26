@@ -2,7 +2,7 @@ package react.use
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
-import react.useEffect
+import react.rawUseEffect
 import kotlin.coroutines.EmptyCoroutineContext
 
 /**
@@ -10,14 +10,15 @@ import kotlin.coroutines.EmptyCoroutineContext
  */
 fun useAsyncEffect(
     vararg dependencies: Any?,
-    block: suspend () -> Unit,
+    block: suspend CoroutineScope.() -> Unit,
 ) {
-    useEffect(dependencies = dependencies) {
-        val scope = CoroutineScope(EmptyCoroutineContext)
-        val job = scope.launch {
-            block()
-        }
+    rawUseEffect(
+        effect = {
+            val job = CoroutineScope(EmptyCoroutineContext)
+                .launch(block = block)
 
-        cleanup(job::cancel)
-    }
+            job::cancel
+        },
+        dependencies = dependencies,
+    )
 }
