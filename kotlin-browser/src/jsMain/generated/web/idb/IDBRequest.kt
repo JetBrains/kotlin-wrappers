@@ -24,12 +24,12 @@ sealed external class IDBRequest<T> :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBRequest/error_event)
      */
-    var onerror: EventHandler<Event, IDBRequest<T>, EventTarget>?
+    var onerror: EventHandler<Event, IDBRequest<T>, IDBTransaction>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBRequest/success_event)
      */
-    var onsuccess: EventHandler<Event, IDBRequest<T>, EventTarget>?
+    var onsuccess: EventHandler<Event, IDBRequest<T>, IDBRequest<T>>?
 
     /**
      * Returns "pending" until a request is complete, then returns "done".
