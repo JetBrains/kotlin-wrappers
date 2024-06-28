@@ -49,7 +49,7 @@ sealed external class IDBTransaction :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/abort_event)
      */
-    var onabort: EventHandler<Event, IDBTransaction, EventTarget>?
+    var onabort: EventHandler<Event, IDBTransaction, IDBDatabase>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/complete_event)
