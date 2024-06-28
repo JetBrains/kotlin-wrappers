@@ -5,6 +5,7 @@ package web.workers
 import js.array.ReadonlyArray
 import js.transferable.Transferable
 import web.events.EventHandler
+import web.events.EventTarget
 import web.messaging.MessageEvent
 import web.rtc.RTCTransformEvent
 import web.serialization.StructuredSerializeOptions
@@ -26,17 +27,17 @@ sealed external class DedicatedWorkerGlobalScope :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/message_event)
      */
-    var onmessage: EventHandler<MessageEvent<*>, DedicatedWorkerGlobalScope>?
+    var onmessage: EventHandler<MessageEvent<*>, DedicatedWorkerGlobalScope, EventTarget>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/messageerror_event)
      */
-    var onmessageerror: EventHandler<MessageEvent<*>, DedicatedWorkerGlobalScope>?
+    var onmessageerror: EventHandler<MessageEvent<*>, DedicatedWorkerGlobalScope, EventTarget>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/rtctransform_event)
      */
-    var onrtctransform: EventHandler<RTCTransformEvent, DedicatedWorkerGlobalScope>?
+    var onrtctransform: EventHandler<RTCTransformEvent, DedicatedWorkerGlobalScope, EventTarget>?
 
     /**
      * Aborts dedicatedWorkerGlobal.

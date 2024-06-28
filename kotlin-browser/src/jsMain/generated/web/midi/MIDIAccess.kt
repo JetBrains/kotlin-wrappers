@@ -20,7 +20,7 @@ sealed external class MIDIAccess :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIAccess/statechange_event)
      */
-    var onstatechange: EventHandler<MIDIConnectionEvent, MIDIAccess>?
+    var onstatechange: EventHandler<MIDIConnectionEvent, MIDIAccess, EventTarget>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIAccess/outputs)

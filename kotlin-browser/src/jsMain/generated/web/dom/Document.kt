@@ -9,6 +9,7 @@ import web.animations.DocumentTimeline
 import web.cssom.ViewTransition
 import web.events.Event
 import web.events.EventHandler
+import web.events.EventTarget
 import web.fonts.FontFaceSource
 import web.html.*
 import web.mathml.MATHML_NAMESPACE
@@ -197,22 +198,22 @@ open external class Document :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/fullscreenchange_event)
      */
-    var onfullscreenchange: EventHandler<Event, Document>?
+    var onfullscreenchange: EventHandler<Event, Document, EventTarget>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/fullscreenerror_event)
      */
-    var onfullscreenerror: EventHandler<Event, Document>?
+    var onfullscreenerror: EventHandler<Event, Document, EventTarget>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pointerlockchange_event)
      */
-    var onpointerlockchange: EventHandler<Event, Document>?
+    var onpointerlockchange: EventHandler<Event, Document, EventTarget>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pointerlockerror_event)
      */
-    var onpointerlockerror: EventHandler<Event, Document>?
+    var onpointerlockerror: EventHandler<Event, Document, EventTarget>?
 
     /**
      * Fires when the state of the object has changed.
@@ -220,12 +221,12 @@ open external class Document :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/readystatechange_event)
      */
-    var onreadystatechange: EventHandler<Event, Document>?
+    var onreadystatechange: EventHandler<Event, Document, EventTarget>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/visibilitychange_event)
      */
-    var onvisibilitychange: EventHandler<Event, Document>?
+    var onvisibilitychange: EventHandler<Event, Document, EventTarget>?
     override val ownerDocument: Void
 
     /**

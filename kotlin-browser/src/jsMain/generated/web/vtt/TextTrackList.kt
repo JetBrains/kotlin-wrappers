@@ -18,17 +18,17 @@ sealed external class TextTrackList :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackList/addtrack_event)
      */
-    var onaddtrack: EventHandler<TrackEvent, TextTrackList>?
+    var onaddtrack: EventHandler<TrackEvent, TextTrackList, EventTarget>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackList/change_event)
      */
-    var onchange: EventHandler<Event, TextTrackList>?
+    var onchange: EventHandler<Event, TextTrackList, EventTarget>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackList/removetrack_event)
      */
-    var onremovetrack: EventHandler<TrackEvent, TextTrackList>?
+    var onremovetrack: EventHandler<TrackEvent, TextTrackList, EventTarget>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackList/getTrackById)

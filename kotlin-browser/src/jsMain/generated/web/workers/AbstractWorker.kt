@@ -14,7 +14,7 @@ external interface AbstractWorker : EventTarget {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/error_event)
      */
-    var onerror: EventHandler<ErrorEvent, AbstractWorker>?
+    var onerror: EventHandler<ErrorEvent, AbstractWorker, EventTarget>?
         get() = definedExternally
         set(value) = definedExternally
 }

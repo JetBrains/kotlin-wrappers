@@ -6,6 +6,7 @@ import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.events.EventHandler
+import web.events.EventTarget
 
 /**
  * An AudioContext interface representing an audio-processing graph built from linked together AudioNodes. In contrast with a standard AudioContext, an OfflineAudioContext doesn't render the audio to the device hardware; instead, it generates it, as fast as it can, and outputs the result to an AudioBuffer.
@@ -29,7 +30,7 @@ external class OfflineAudioContext(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/complete_event)
      */
-    var oncomplete: EventHandler<OfflineAudioCompletionEvent, OfflineAudioContext>?
+    var oncomplete: EventHandler<OfflineAudioCompletionEvent, OfflineAudioContext, EventTarget>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/resume)

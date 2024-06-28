@@ -24,7 +24,7 @@ sealed external class ServiceWorker :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/statechange_event)
      */
-    var onstatechange: EventHandler<Event, ServiceWorker>?
+    var onstatechange: EventHandler<Event, ServiceWorker, EventTarget>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/scriptURL)

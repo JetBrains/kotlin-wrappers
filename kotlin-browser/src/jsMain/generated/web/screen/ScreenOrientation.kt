@@ -15,7 +15,7 @@ sealed external class ScreenOrientation :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScreenOrientation/angle)
      */
     val angle: Short
-    var onchange: EventHandler<Event, ScreenOrientation>?
+    var onchange: EventHandler<Event, ScreenOrientation, EventTarget>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScreenOrientation/type)

@@ -28,12 +28,12 @@ open external class Worker(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/message_event)
      */
-    var onmessage: EventHandler<MessageEvent<*>, Worker>?
+    var onmessage: EventHandler<MessageEvent<*>, Worker, EventTarget>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/messageerror_event)
      */
-    var onmessageerror: EventHandler<MessageEvent<*>, Worker>?
+    var onmessageerror: EventHandler<MessageEvent<*>, Worker, EventTarget>?
 
     /**
      * Clones message and transmits it to worker's global environment. transfer can be passed as a list of objects that are to be transferred rather than cloned.

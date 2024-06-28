@@ -19,7 +19,7 @@ sealed external class WakeLockSentinel :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WakeLockSentinel/release_event)
      */
-    var onrelease: EventHandler<Event, WakeLockSentinel>?
+    var onrelease: EventHandler<Event, WakeLockSentinel, EventTarget>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WakeLockSentinel/released)

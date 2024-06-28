@@ -13,6 +13,7 @@ import web.components.Slottable
 import web.cssom.StylePropertyMapReadOnly
 import web.events.Event
 import web.events.EventHandler
+import web.events.EventTarget
 import web.fullscreen.FullscreenOptions
 import web.geometry.DOMRect
 import web.geometry.DOMRectList
@@ -109,12 +110,12 @@ abstract external class Element :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/fullscreenchange_event)
      */
-    var onfullscreenchange: EventHandler<Event, Element>?
+    var onfullscreenchange: EventHandler<Event, Element, EventTarget>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/fullscreenerror_event)
      */
-    var onfullscreenerror: EventHandler<Event, Element>?
+    var onfullscreenerror: EventHandler<Event, Element, EventTarget>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/outerHTML)

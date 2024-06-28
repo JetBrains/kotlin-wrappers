@@ -26,7 +26,7 @@ sealed external class AbortSignal :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/abort_event)
      */
-    var onabort: EventHandler<Event, AbortSignal>?
+    var onabort: EventHandler<Event, AbortSignal, EventTarget>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/reason)

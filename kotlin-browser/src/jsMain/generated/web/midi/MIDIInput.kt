@@ -3,6 +3,7 @@
 package web.midi
 
 import web.events.EventHandler
+import web.events.EventTarget
 
 /**
  * Available only in secure contexts.
@@ -14,5 +15,5 @@ sealed external class MIDIInput :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIInput/midimessage_event)
      */
-    var onmidimessage: EventHandler<MIDIMessageEvent, MIDIInput>?
+    var onmidimessage: EventHandler<MIDIMessageEvent, MIDIInput, EventTarget>?
 }

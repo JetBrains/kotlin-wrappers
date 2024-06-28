@@ -26,17 +26,17 @@ external class MediaSource :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/sourceclose_event)
      */
-    var onsourceclose: EventHandler<Event, MediaSource>?
+    var onsourceclose: EventHandler<Event, MediaSource, EventTarget>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/sourceended_event)
      */
-    var onsourceended: EventHandler<Event, MediaSource>?
+    var onsourceended: EventHandler<Event, MediaSource, EventTarget>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/sourceopen_event)
      */
-    var onsourceopen: EventHandler<Event, MediaSource>?
+    var onsourceopen: EventHandler<Event, MediaSource, EventTarget>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/readyState)

@@ -41,7 +41,7 @@ sealed external class BaseAudioContext :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/statechange_event)
      */
-    var onstatechange: EventHandler<Event, BaseAudioContext>?
+    var onstatechange: EventHandler<Event, BaseAudioContext, EventTarget>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/sampleRate)

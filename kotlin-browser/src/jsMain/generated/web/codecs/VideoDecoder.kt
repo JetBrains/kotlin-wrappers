@@ -21,7 +21,7 @@ external class VideoDecoder(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/decodeQueueSize)
      */
     val decodeQueueSize: Int
-    var ondequeue: EventHandler<Event, VideoDecoder>?
+    var ondequeue: EventHandler<Event, VideoDecoder, EventTarget>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/state)

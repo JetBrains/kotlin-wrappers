@@ -6,6 +6,7 @@ import js.promise.Promise
 import seskar.js.JsAsync
 import web.canvas.CanvasImageSource
 import web.events.EventHandler
+import web.events.EventTarget
 import web.gl.TexImageSource
 import web.pip.PictureInPictureEvent
 import web.pip.PictureInPictureWindow
@@ -35,12 +36,12 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/enterpictureinpicture_event)
      */
-    var onenterpictureinpicture: EventHandler<PictureInPictureEvent, HTMLVideoElement>?
+    var onenterpictureinpicture: EventHandler<PictureInPictureEvent, HTMLVideoElement, EventTarget>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/leavepictureinpicture_event)
      */
-    var onleavepictureinpicture: EventHandler<PictureInPictureEvent, HTMLVideoElement>?
+    var onleavepictureinpicture: EventHandler<PictureInPictureEvent, HTMLVideoElement, EventTarget>?
 
     /**
      * Gets or sets the playsinline of the video element. for example, On iPhone, video elements will now be allowed to play inline, and will not automatically enter fullscreen mode when playback begins.

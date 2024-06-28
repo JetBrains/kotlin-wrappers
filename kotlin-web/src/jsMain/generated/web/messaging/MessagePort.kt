@@ -20,12 +20,12 @@ sealed external class MessagePort :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/message_event)
      */
-    var onmessage: EventHandler<MessageEvent<*>, MessagePort>?
+    var onmessage: EventHandler<MessageEvent<*>, MessagePort, EventTarget>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/messageerror_event)
      */
-    var onmessageerror: EventHandler<MessageEvent<*>, MessagePort>?
+    var onmessageerror: EventHandler<MessageEvent<*>, MessagePort, EventTarget>?
 
     /**
      * Disconnects the port, so that it is no longer active.

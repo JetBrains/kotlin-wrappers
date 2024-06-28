@@ -3,6 +3,7 @@
 package web.workers
 
 import web.events.EventHandler
+import web.events.EventTarget
 import web.messaging.MessageEvent
 
 /**
@@ -20,7 +21,7 @@ sealed external class SharedWorkerGlobalScope :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorkerGlobalScope/connect_event)
      */
-    var onconnect: EventHandler<MessageEvent<*>, SharedWorkerGlobalScope>?
+    var onconnect: EventHandler<MessageEvent<*>, SharedWorkerGlobalScope, EventTarget>?
 
     /**
      * Aborts sharedWorkerGlobal.
