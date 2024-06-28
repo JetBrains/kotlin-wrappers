@@ -22,119 +22,119 @@ external interface WindowEventHandlers :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/afterprint_event)
      */
-    var onafterprint: EventHandler<Event, WindowEventHandlers, EventTarget>?
+    var onafterprint: EventHandler<Event, WindowEventHandlers, WindowEventHandlers>?
         get() = definedExternally
         set(value) = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/beforeprint_event)
      */
-    var onbeforeprint: EventHandler<Event, WindowEventHandlers, EventTarget>?
+    var onbeforeprint: EventHandler<Event, WindowEventHandlers, WindowEventHandlers>?
         get() = definedExternally
         set(value) = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/beforeunload_event)
      */
-    var onbeforeunload: EventHandler<BeforeUnloadEvent, WindowEventHandlers, EventTarget>?
+    var onbeforeunload: EventHandler<BeforeUnloadEvent, WindowEventHandlers, WindowEventHandlers>?
         get() = definedExternally
         set(value) = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/gamepadconnected_event)
      */
-    var ongamepadconnected: EventHandler<GamepadEvent, WindowEventHandlers, EventTarget>?
+    var ongamepadconnected: EventHandler<GamepadEvent, WindowEventHandlers, WindowEventHandlers>?
         get() = definedExternally
         set(value) = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/gamepaddisconnected_event)
      */
-    var ongamepaddisconnected: EventHandler<GamepadEvent, WindowEventHandlers, EventTarget>?
+    var ongamepaddisconnected: EventHandler<GamepadEvent, WindowEventHandlers, WindowEventHandlers>?
         get() = definedExternally
         set(value) = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/hashchange_event)
      */
-    var onhashchange: EventHandler<HashChangeEvent, WindowEventHandlers, EventTarget>?
+    var onhashchange: EventHandler<HashChangeEvent, WindowEventHandlers, WindowEventHandlers>?
         get() = definedExternally
         set(value) = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/languagechange_event)
      */
-    var onlanguagechange: EventHandler<Event, WindowEventHandlers, EventTarget>?
+    var onlanguagechange: EventHandler<Event, WindowEventHandlers, WindowEventHandlers>?
         get() = definedExternally
         set(value) = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/message_event)
      */
-    var onmessage: EventHandler<MessageEvent<*>, WindowEventHandlers, EventTarget>?
+    var onmessage: EventHandler<MessageEvent<*>, WindowEventHandlers, WindowEventHandlers>?
         get() = definedExternally
         set(value) = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/messageerror_event)
      */
-    var onmessageerror: EventHandler<MessageEvent<*>, WindowEventHandlers, EventTarget>?
+    var onmessageerror: EventHandler<MessageEvent<*>, WindowEventHandlers, WindowEventHandlers>?
         get() = definedExternally
         set(value) = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/offline_event)
      */
-    var onoffline: EventHandler<Event, WindowEventHandlers, EventTarget>?
+    var onoffline: EventHandler<Event, WindowEventHandlers, WindowEventHandlers>?
         get() = definedExternally
         set(value) = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/online_event)
      */
-    var ononline: EventHandler<Event, WindowEventHandlers, EventTarget>?
+    var ononline: EventHandler<Event, WindowEventHandlers, WindowEventHandlers>?
         get() = definedExternally
         set(value) = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pagehide_event)
      */
-    var onpagehide: EventHandler<PageTransitionEvent, WindowEventHandlers, EventTarget>?
+    var onpagehide: EventHandler<PageTransitionEvent, WindowEventHandlers, WindowEventHandlers>?
         get() = definedExternally
         set(value) = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pageshow_event)
      */
-    var onpageshow: EventHandler<PageTransitionEvent, WindowEventHandlers, EventTarget>?
+    var onpageshow: EventHandler<PageTransitionEvent, WindowEventHandlers, WindowEventHandlers>?
         get() = definedExternally
         set(value) = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/popstate_event)
      */
-    var onpopstate: EventHandler<PopStateEvent, WindowEventHandlers, EventTarget>?
+    var onpopstate: EventHandler<PopStateEvent, WindowEventHandlers, WindowEventHandlers>?
         get() = definedExternally
         set(value) = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/rejectionhandled_event)
      */
-    var onrejectionhandled: EventHandler<PromiseRejectionEvent, WindowEventHandlers, EventTarget>?
+    var onrejectionhandled: EventHandler<PromiseRejectionEvent, WindowEventHandlers, WindowEventHandlers>?
         get() = definedExternally
         set(value) = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/storage_event)
      */
-    var onstorage: EventHandler<StorageEvent, WindowEventHandlers, EventTarget>?
+    var onstorage: EventHandler<StorageEvent, WindowEventHandlers, WindowEventHandlers>?
         get() = definedExternally
         set(value) = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/unhandledrejection_event)
      */
-    var onunhandledrejection: EventHandler<PromiseRejectionEvent, WindowEventHandlers, EventTarget>?
+    var onunhandledrejection: EventHandler<PromiseRejectionEvent, WindowEventHandlers, WindowEventHandlers>?
         get() = definedExternally
         set(value) = definedExternally
 }
