@@ -77,21 +77,21 @@ sealed external class Window :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/devicemotion_event)
      */
-    var ondevicemotion: EventHandler<DeviceMotionEvent, Window, EventTarget>?
+    var ondevicemotion: EventHandler<DeviceMotionEvent, Window, Window>?
 
     /**
      * Available only in secure contexts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/deviceorientation_event)
      */
-    var ondeviceorientation: EventHandler<DeviceOrientationEvent, Window, EventTarget>?
+    var ondeviceorientation: EventHandler<DeviceOrientationEvent, Window, Window>?
 
     /**
      * Available only in secure contexts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/deviceorientationabsolute_event)
      */
-    var ondeviceorientationabsolute: EventHandler<DeviceOrientationEvent, Window, EventTarget>?
+    var ondeviceorientationabsolute: EventHandler<DeviceOrientationEvent, Window, Window>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/opener)

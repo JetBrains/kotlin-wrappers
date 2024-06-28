@@ -23,17 +23,17 @@ external class EventSource(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/error_event)
      */
-    var onerror: EventHandler<Event, EventSource, EventTarget>?
+    var onerror: EventHandler<Event, EventSource, EventSource>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/message_event)
      */
-    var onmessage: EventHandler<MessageEvent<*>, EventSource, EventTarget>?
+    var onmessage: EventHandler<MessageEvent<*>, EventSource, EventSource>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/open_event)
      */
-    var onopen: EventHandler<Event, EventSource, EventTarget>?
+    var onopen: EventHandler<Event, EventSource, EventSource>?
 
     /**
      * Returns the state of this EventSource object's connection. It can have the values described below.

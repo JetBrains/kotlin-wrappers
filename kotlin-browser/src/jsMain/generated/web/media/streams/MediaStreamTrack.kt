@@ -49,17 +49,17 @@ sealed external class MediaStreamTrack :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/ended_event)
      */
-    var onended: EventHandler<Event, MediaStreamTrack, EventTarget>?
+    var onended: EventHandler<Event, MediaStreamTrack, MediaStreamTrack>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/mute_event)
      */
-    var onmute: EventHandler<Event, MediaStreamTrack, EventTarget>?
+    var onmute: EventHandler<Event, MediaStreamTrack, MediaStreamTrack>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/unmute_event)
      */
-    var onunmute: EventHandler<Event, MediaStreamTrack, EventTarget>?
+    var onunmute: EventHandler<Event, MediaStreamTrack, MediaStreamTrack>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/readyState)

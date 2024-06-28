@@ -17,17 +17,17 @@ sealed external class RemotePlayback :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/connect_event)
      */
-    var onconnect: EventHandler<Event, RemotePlayback, EventTarget>?
+    var onconnect: EventHandler<Event, RemotePlayback, RemotePlayback>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/connecting_event)
      */
-    var onconnecting: EventHandler<Event, RemotePlayback, EventTarget>?
+    var onconnecting: EventHandler<Event, RemotePlayback, RemotePlayback>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/disconnect_event)
      */
-    var ondisconnect: EventHandler<Event, RemotePlayback, EventTarget>?
+    var ondisconnect: EventHandler<Event, RemotePlayback, RemotePlayback>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/state)

@@ -28,32 +28,32 @@ external class MediaRecorder(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/dataavailable_event)
      */
-    var ondataavailable: EventHandler<BlobEvent, MediaRecorder, EventTarget>?
+    var ondataavailable: EventHandler<BlobEvent, MediaRecorder, MediaRecorder>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/error_event)
      */
-    var onerror: EventHandler<ErrorEvent, MediaRecorder, EventTarget>?
+    var onerror: EventHandler<ErrorEvent, MediaRecorder, MediaRecorder>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/pause_event)
      */
-    var onpause: EventHandler<Event, MediaRecorder, EventTarget>?
+    var onpause: EventHandler<Event, MediaRecorder, MediaRecorder>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/resume_event)
      */
-    var onresume: EventHandler<Event, MediaRecorder, EventTarget>?
+    var onresume: EventHandler<Event, MediaRecorder, MediaRecorder>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/start_event)
      */
-    var onstart: EventHandler<Event, MediaRecorder, EventTarget>?
+    var onstart: EventHandler<Event, MediaRecorder, MediaRecorder>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/stop_event)
      */
-    var onstop: EventHandler<Event, MediaRecorder, EventTarget>?
+    var onstop: EventHandler<Event, MediaRecorder, MediaRecorder>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/state)

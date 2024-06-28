@@ -208,12 +208,12 @@ open external class Document :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pointerlockchange_event)
      */
-    var onpointerlockchange: EventHandler<Event, Document, EventTarget>?
+    var onpointerlockchange: EventHandler<Event, Document, Document>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pointerlockerror_event)
      */
-    var onpointerlockerror: EventHandler<Event, Document, EventTarget>?
+    var onpointerlockerror: EventHandler<Event, Document, Document>?
 
     /**
      * Fires when the state of the object has changed.
@@ -221,12 +221,12 @@ open external class Document :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/readystatechange_event)
      */
-    var onreadystatechange: EventHandler<Event, Document, EventTarget>?
+    var onreadystatechange: EventHandler<Event, Document, Document>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/visibilitychange_event)
      */
-    var onvisibilitychange: EventHandler<Event, Document, EventTarget>?
+    var onvisibilitychange: EventHandler<Event, Document, Document>?
     override val ownerDocument: Void
 
     /**

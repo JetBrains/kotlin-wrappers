@@ -59,32 +59,32 @@ sealed external class RTCDataChannel :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/bufferedamountlow_event)
      */
-    var onbufferedamountlow: EventHandler<Event, RTCDataChannel, EventTarget>?
+    var onbufferedamountlow: EventHandler<Event, RTCDataChannel, RTCDataChannel>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/close_event)
      */
-    var onclose: EventHandler<Event, RTCDataChannel, EventTarget>?
+    var onclose: EventHandler<Event, RTCDataChannel, RTCDataChannel>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/closing_event)
      */
-    var onclosing: EventHandler<Event, RTCDataChannel, EventTarget>?
+    var onclosing: EventHandler<Event, RTCDataChannel, RTCDataChannel>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/error_event)
      */
-    var onerror: EventHandler<RTCErrorEvent, RTCDataChannel, EventTarget>?
+    var onerror: EventHandler<RTCErrorEvent, RTCDataChannel, RTCDataChannel>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/message_event)
      */
-    var onmessage: EventHandler<MessageEvent<*>, RTCDataChannel, EventTarget>?
+    var onmessage: EventHandler<MessageEvent<*>, RTCDataChannel, RTCDataChannel>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/open_event)
      */
-    var onopen: EventHandler<Event, RTCDataChannel, EventTarget>?
+    var onopen: EventHandler<Event, RTCDataChannel, RTCDataChannel>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/ordered)

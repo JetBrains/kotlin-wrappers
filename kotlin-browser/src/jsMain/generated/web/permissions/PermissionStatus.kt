@@ -19,7 +19,7 @@ sealed external class PermissionStatus :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PermissionStatus/change_event)
      */
-    var onchange: EventHandler<Event, PermissionStatus, EventTarget>?
+    var onchange: EventHandler<Event, PermissionStatus, PermissionStatus>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PermissionStatus/state)

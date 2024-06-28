@@ -34,13 +34,13 @@ sealed external class IDBDatabase :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/close_event)
      */
-    var onclose: EventHandler<Event, IDBDatabase, EventTarget>?
+    var onclose: EventHandler<Event, IDBDatabase, IDBDatabase>?
     var onerror: EventHandler<Event, IDBDatabase, EventTarget>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/versionchange_event)
      */
-    var onversionchange: EventHandler<IDBVersionChangeEvent, IDBDatabase, EventTarget>?
+    var onversionchange: EventHandler<IDBVersionChangeEvent, IDBDatabase, IDBDatabase>?
 
     /**
      * Returns the version of the database.

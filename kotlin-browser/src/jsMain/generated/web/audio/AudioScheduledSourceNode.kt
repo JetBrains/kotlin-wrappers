@@ -4,7 +4,6 @@ package web.audio
 
 import web.events.Event
 import web.events.EventHandler
-import web.events.EventTarget
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioScheduledSourceNode)
@@ -14,7 +13,7 @@ sealed external class AudioScheduledSourceNode :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioScheduledSourceNode/ended_event)
      */
-    var onended: EventHandler<Event, AudioScheduledSourceNode, EventTarget>?
+    var onended: EventHandler<Event, AudioScheduledSourceNode, AudioScheduledSourceNode>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioScheduledSourceNode/start)

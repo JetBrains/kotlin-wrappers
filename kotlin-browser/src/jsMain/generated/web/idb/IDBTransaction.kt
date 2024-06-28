@@ -54,7 +54,7 @@ sealed external class IDBTransaction :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/complete_event)
      */
-    var oncomplete: EventHandler<Event, IDBTransaction, EventTarget>?
+    var oncomplete: EventHandler<Event, IDBTransaction, IDBTransaction>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/error_event)

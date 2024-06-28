@@ -7,7 +7,6 @@ import web.blob.Blob
 import web.dom.Document
 import web.events.Event
 import web.events.EventHandler
-import web.events.EventTarget
 import web.form.FormData
 import web.url.URL
 import web.url.URLSearchParams
@@ -22,7 +21,7 @@ open external class XMLHttpRequest :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/readystatechange_event)
      */
-    var onreadystatechange: EventHandler<Event, XMLHttpRequest, EventTarget>?
+    var onreadystatechange: EventHandler<Event, XMLHttpRequest, XMLHttpRequest>?
 
     /**
      * Returns client's state.

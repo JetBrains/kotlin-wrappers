@@ -23,32 +23,32 @@ open external class FileReader :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/abort_event)
      */
-    var onabort: EventHandler<ProgressEvent, FileReader, EventTarget>?
+    var onabort: EventHandler<ProgressEvent, FileReader, FileReader>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/error_event)
      */
-    var onerror: EventHandler<ProgressEvent, FileReader, EventTarget>?
+    var onerror: EventHandler<ProgressEvent, FileReader, FileReader>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/load_event)
      */
-    var onload: EventHandler<ProgressEvent, FileReader, EventTarget>?
+    var onload: EventHandler<ProgressEvent, FileReader, FileReader>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/loadend_event)
      */
-    var onloadend: EventHandler<ProgressEvent, FileReader, EventTarget>?
+    var onloadend: EventHandler<ProgressEvent, FileReader, FileReader>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/loadstart_event)
      */
-    var onloadstart: EventHandler<ProgressEvent, FileReader, EventTarget>?
+    var onloadstart: EventHandler<ProgressEvent, FileReader, FileReader>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/progress_event)
      */
-    var onprogress: EventHandler<ProgressEvent, FileReader, EventTarget>?
+    var onprogress: EventHandler<ProgressEvent, FileReader, FileReader>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/readyState)

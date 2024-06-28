@@ -17,12 +17,12 @@ sealed external class RTCDtlsTransport :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/iceTransport)
      */
     val iceTransport: RTCIceTransport
-    var onerror: EventHandler<RTCErrorEvent, RTCDtlsTransport, EventTarget>?
+    var onerror: EventHandler<RTCErrorEvent, RTCDtlsTransport, RTCDtlsTransport>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/statechange_event)
      */
-    var onstatechange: EventHandler<Event, RTCDtlsTransport, EventTarget>?
+    var onstatechange: EventHandler<Event, RTCDtlsTransport, RTCDtlsTransport>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/state)

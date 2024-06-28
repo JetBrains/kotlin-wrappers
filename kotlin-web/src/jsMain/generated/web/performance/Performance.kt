@@ -22,7 +22,7 @@ sealed external class Performance :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/resourcetimingbufferfull_event)
      */
-    var onresourcetimingbufferfull: EventHandler<Event, Performance, EventTarget>?
+    var onresourcetimingbufferfull: EventHandler<Event, Performance, Performance>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/timeOrigin)

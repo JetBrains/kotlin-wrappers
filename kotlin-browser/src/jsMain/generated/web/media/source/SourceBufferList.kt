@@ -20,10 +20,10 @@ sealed external class SourceBufferList :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBufferList/addsourcebuffer_event)
      */
-    var onaddsourcebuffer: EventHandler<Event, SourceBufferList, EventTarget>?
+    var onaddsourcebuffer: EventHandler<Event, SourceBufferList, SourceBufferList>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBufferList/removesourcebuffer_event)
      */
-    var onremovesourcebuffer: EventHandler<Event, SourceBufferList, EventTarget>?
+    var onremovesourcebuffer: EventHandler<Event, SourceBufferList, SourceBufferList>?
 }

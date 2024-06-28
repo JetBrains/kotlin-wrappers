@@ -29,12 +29,12 @@ sealed external class VisualViewport :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/resize_event)
      */
-    var onresize: EventHandler<Event, VisualViewport, EventTarget>?
+    var onresize: EventHandler<Event, VisualViewport, VisualViewport>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/scroll_event)
      */
-    var onscroll: EventHandler<Event, VisualViewport, EventTarget>?
+    var onscroll: EventHandler<Event, VisualViewport, VisualViewport>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/pageLeft)

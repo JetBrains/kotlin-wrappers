@@ -22,12 +22,12 @@ external class BroadcastChannel(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/message_event)
      */
-    var onmessage: EventHandler<MessageEvent<*>, BroadcastChannel, EventTarget>?
+    var onmessage: EventHandler<MessageEvent<*>, BroadcastChannel, BroadcastChannel>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/messageerror_event)
      */
-    var onmessageerror: EventHandler<MessageEvent<*>, BroadcastChannel, EventTarget>?
+    var onmessageerror: EventHandler<MessageEvent<*>, BroadcastChannel, BroadcastChannel>?
 
     /**
      * Closes the BroadcastChannel object, opening it up to garbage collection.

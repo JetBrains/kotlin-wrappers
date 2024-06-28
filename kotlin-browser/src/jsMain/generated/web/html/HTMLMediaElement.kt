@@ -7,7 +7,6 @@ import js.promise.Promise
 import seskar.js.JsAsync
 import web.events.Event
 import web.events.EventHandler
-import web.events.EventTarget
 import web.http.CrossOrigin
 import web.media.key.MediaKeys
 import web.media.source.TimeRanges
@@ -132,12 +131,12 @@ sealed external class HTMLMediaElement :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/encrypted_event)
      */
-    var onencrypted: EventHandler<MediaEncryptedEvent, HTMLMediaElement, EventTarget>?
+    var onencrypted: EventHandler<MediaEncryptedEvent, HTMLMediaElement, HTMLMediaElement>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/waitingforkey_event)
      */
-    var onwaitingforkey: EventHandler<Event, HTMLMediaElement, EventTarget>?
+    var onwaitingforkey: EventHandler<Event, HTMLMediaElement, HTMLMediaElement>?
 
     /**
      * Gets a flag that specifies whether playback is paused.
