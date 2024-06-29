@@ -621,7 +621,7 @@ external interface GlobalEventHandlers :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/securitypolicyviolation_event)
      */
-    var onsecuritypolicyviolation: EventHandler<SecurityPolicyViolationEvent, GlobalEventHandlers, EventTarget>?
+    var onsecuritypolicyviolation: EventHandler<SecurityPolicyViolationEvent, GlobalEventHandlers, GlobalEventHandlers>?
         get() = definedExternally
         set(value) = definedExternally
 

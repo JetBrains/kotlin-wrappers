@@ -2,13 +2,9 @@
 
 package web.components
 
-import web.dom.DocumentFragment
-import web.dom.DocumentOrShadowRoot
-import web.dom.Element
-import web.dom.GetHTMLOptions
+import web.dom.*
 import web.events.Event
 import web.events.EventHandler
-import web.events.EventTarget
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ShadowRoot)
@@ -40,7 +36,7 @@ sealed external class ShadowRoot :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ShadowRoot/mode)
      */
     val mode: ShadowRootMode
-    var onslotchange: EventHandler<Event, ShadowRoot, EventTarget>?
+    var onslotchange: EventHandler<Event, ShadowRoot, Node>?
     val serializable: Boolean
 
     /**
