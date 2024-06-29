@@ -15,4 +15,6 @@ external class GPUUncapturedErrorEvent(
     init: GPUUncapturedErrorEventInit,
 ) : Event {
     val error: GPUError
+
+    companion object : GPUUncapturedErrorEventTypes
 }
