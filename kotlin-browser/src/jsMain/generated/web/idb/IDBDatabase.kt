@@ -29,13 +29,13 @@ sealed external class IDBDatabase :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/objectStoreNames)
      */
     val objectStoreNames: DOMStringList
-    var onabort: EventHandler<Event, IDBDatabase, EventTarget>?
+    var onabort: EventHandler<Event, IDBDatabase, IDBDatabase>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/close_event)
      */
     var onclose: EventHandler<Event, IDBDatabase, IDBDatabase>?
-    var onerror: EventHandler<Event, IDBDatabase, EventTarget>?
+    var onerror: EventHandler<Event, IDBDatabase, IDBTransaction>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/versionchange_event)

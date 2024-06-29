@@ -59,7 +59,7 @@ sealed external class IDBTransaction :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/error_event)
      */
-    var onerror: EventHandler<Event, IDBTransaction, EventTarget>?
+    var onerror: EventHandler<Event, IDBTransaction, IDBTransaction>?
 
     /**
      * Aborts the transaction. All pending requests will fail with a "AbortError" DOMException and all changes made to the database will be reverted.

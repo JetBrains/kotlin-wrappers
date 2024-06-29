@@ -9,7 +9,6 @@ import web.animations.DocumentTimeline
 import web.cssom.ViewTransition
 import web.events.Event
 import web.events.EventHandler
-import web.events.EventTarget
 import web.fonts.FontFaceSource
 import web.html.*
 import web.mathml.MATHML_NAMESPACE
@@ -198,12 +197,12 @@ open external class Document :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/fullscreenchange_event)
      */
-    var onfullscreenchange: EventHandler<Event, Document, EventTarget>?
+    var onfullscreenchange: EventHandler<Event, Document, Node>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/fullscreenerror_event)
      */
-    var onfullscreenerror: EventHandler<Event, Document, EventTarget>?
+    var onfullscreenerror: EventHandler<Event, Document, Node>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pointerlockchange_event)
