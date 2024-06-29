@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Synchronously copies `src` to `dest`. By default, `dest` is overwritten if it
  * already exists. Returns `undefined`. Node.js makes no guarantees about the

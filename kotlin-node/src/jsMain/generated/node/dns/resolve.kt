@@ -4,7 +4,6 @@
 
 package node.dns
 
-
 /**
  * Uses the DNS protocol to resolve a host name (e.g. `'nodejs.org'`) into an array
  * of the resource records. The `callback` function has arguments `(err, records)`. When successful, `records` will be an array of resource

@@ -4,7 +4,6 @@
 
 package node.vm
 
-
 /**
  * The `vm.runInContext()` method compiles `code`, runs it within the context of
  * the `contextifiedObject`, then returns the result. Running code does not have

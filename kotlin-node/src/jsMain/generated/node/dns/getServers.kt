@@ -4,7 +4,6 @@
 
 package node.dns
 
-
 /**
  * Returns an array of IP address strings, formatted according to [RFC 5952](https://tools.ietf.org/html/rfc5952#section-6),
  * that are currently configured for DNS resolution. A string will include a port

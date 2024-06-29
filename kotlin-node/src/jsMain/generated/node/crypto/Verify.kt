@@ -20,7 +20,6 @@ import node.stream.WritableOptions
  * See `Sign` for examples.
  * @since v0.1.92
  */
-
 external class Verify : node.stream.Writable {
     constructor (opts: WritableOptions = definedExternally)
 

@@ -4,7 +4,6 @@
 
 package node.tls
 
-
 /**
  * Creates a new {@link Server}. The `secureConnectionListener`, if provided, is
  * automatically set as a listener for the `'secureConnection'` event.

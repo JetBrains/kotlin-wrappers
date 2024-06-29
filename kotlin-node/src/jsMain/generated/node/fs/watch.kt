@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Watch for changes on `filename`, where `filename` is either a file or a
  * directory.

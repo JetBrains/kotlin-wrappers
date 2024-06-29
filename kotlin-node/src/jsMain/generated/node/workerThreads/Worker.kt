@@ -75,7 +75,6 @@ import web.url.URL
  * ```
  * @since v10.5.0
  */
-
 external class Worker : EventEmitter {
     /**
      * @param filename  The path to the Worker’s main script or module.

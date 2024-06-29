@@ -4,7 +4,6 @@
 
 package node.net
 
-
 /**
  * Returns `true` if `input` is an IPv4 address in [dot-decimal notation](https://en.wikipedia.org/wiki/Dot-decimal_notation) with no
  * leading zeroes. Otherwise, returns `false`.

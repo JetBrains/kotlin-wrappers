@@ -4,7 +4,6 @@
 
 package node.crypto
 
-
 /**
  * Creates and returns a `Sign` object that uses the given `algorithm`. Use {@link getHashes} to obtain the names of the available digest algorithms.
  * Optional `options` argument controls the `stream.Writable` behavior.

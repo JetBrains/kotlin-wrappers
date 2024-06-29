@@ -4,12 +4,10 @@
 
 package node.perfHooks
 
-
 /**
  * The constructor of this class is not exposed to users directly.
  * @since v8.5.0
  */
-
 open external class PerformanceEntry {
     constructor ()
 

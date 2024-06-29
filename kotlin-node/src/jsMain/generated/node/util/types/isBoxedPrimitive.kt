@@ -4,7 +4,6 @@
 
 package node.util.types
 
-
 /**
  * Returns `true` if the value is any boxed primitive object, e.g. created
  * by `new Boolean()`, `new String()` or `Object(Symbol())`.

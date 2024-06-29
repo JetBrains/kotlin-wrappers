@@ -4,7 +4,6 @@
 
 package node.os
 
-
 /**
  * Returns an array of objects containing information about each logical CPU core.
  * The array will be empty if no CPU information is available, such as if the`/proc` file system is unavailable.

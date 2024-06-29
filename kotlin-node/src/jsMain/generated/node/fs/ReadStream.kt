@@ -10,7 +10,6 @@ import node.stream.ReadableOptions
  * Instances of `fs.ReadStream` are created and returned using the {@link createReadStream} function.
  * @since v0.1.93
  */
-
 external class ReadStream : node.stream.Readable {
     constructor (opts: ReadableOptions = definedExternally)
 

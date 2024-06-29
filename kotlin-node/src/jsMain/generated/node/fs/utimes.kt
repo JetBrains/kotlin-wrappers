@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Change the file system timestamps of the object referenced by `path`.
  *

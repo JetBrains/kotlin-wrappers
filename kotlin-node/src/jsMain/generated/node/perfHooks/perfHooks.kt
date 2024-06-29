@@ -4,7 +4,6 @@
 
 package node.perfHooks
 
-
 /**
  * This module provides an implementation of a subset of the W3C [Web Performance APIs](https://w3c.github.io/perf-timing-primer/) as well as additional APIs for
  * Node.js-specific performance measurements.

@@ -12,7 +12,6 @@ import web.abort.AbortSignal
  * exposed as part of the API.
  * @since v18.7.0, v16.17.0
  */
-
 external class SuiteContext {
     /**
      * The name of the suite.

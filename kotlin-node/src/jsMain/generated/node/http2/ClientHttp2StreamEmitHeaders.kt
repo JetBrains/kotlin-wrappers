@@ -2,5 +2,4 @@
 
 package node.http2
 
-
 sealed external interface ClientHttp2StreamEmitHeaders : IncomingHttpHeaders, IncomingHttpStatusHeader

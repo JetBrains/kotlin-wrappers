@@ -4,7 +4,6 @@
 
 package node.crypto
 
-
 /**
  * Provides a synchronous Password-Based Key Derivation Function 2 (PBKDF2)
  * implementation. A selected HMAC digest algorithm specified by `digest` is

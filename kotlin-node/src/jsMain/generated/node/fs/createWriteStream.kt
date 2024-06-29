@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * `options` may also include a `start` option to allow writing data at some
  * position past the beginning of the file, allowed values are in the

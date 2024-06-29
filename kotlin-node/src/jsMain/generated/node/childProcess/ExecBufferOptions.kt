@@ -2,7 +2,6 @@
 
 package node.childProcess
 
-
 @kotlinx.js.JsPlainObject
 sealed external interface ExecBufferOptions : ExecOptions {
     var encoding: String /* "buffer" */?

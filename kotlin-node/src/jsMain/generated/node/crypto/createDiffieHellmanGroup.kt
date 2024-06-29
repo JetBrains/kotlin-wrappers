@@ -4,7 +4,6 @@
 
 package node.crypto
 
-
 /**
  * An alias for {@link getDiffieHellman}
  * @since v0.9.3

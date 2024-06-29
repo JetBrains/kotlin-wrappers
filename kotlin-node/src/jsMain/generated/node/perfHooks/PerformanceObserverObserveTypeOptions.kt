@@ -2,7 +2,6 @@
 
 package node.perfHooks
 
-
 sealed external interface PerformanceObserverObserveTypeOptions {
     var type: EntryType
     var buffered: Boolean?

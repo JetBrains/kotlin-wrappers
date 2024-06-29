@@ -4,7 +4,6 @@
 
 package node.dns
 
-
 /**
  * Uses the DNS protocol to resolve a start of authority record (`SOA` record) for
  * the `hostname`. The `address` argument passed to the `callback` function will

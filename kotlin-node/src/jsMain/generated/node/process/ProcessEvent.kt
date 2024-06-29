@@ -2,8 +2,8 @@
 
 package node.process
 
-import js.promise.Promise
 import node.workerThreads.Worker
+import js.promise.Promise
 
 
 sealed external interface ProcessEvent {

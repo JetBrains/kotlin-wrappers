@@ -4,7 +4,6 @@
 
 package node.assert
 
-
 /**
  * Throws `value` if `value` is not `undefined` or `null`. This is useful when
  * testing the `error` argument in callbacks. The stack trace contains all frames

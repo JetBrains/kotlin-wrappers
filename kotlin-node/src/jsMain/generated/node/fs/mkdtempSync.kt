@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Returns the created directory path.
  *

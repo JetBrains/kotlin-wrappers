@@ -4,7 +4,6 @@
 
 package node.querystring
 
-
 /**
  * The `querystring.stringify()` method produces a URL query string from a
  * given `obj` by iterating through the object's "own properties".

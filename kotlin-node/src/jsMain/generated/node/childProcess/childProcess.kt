@@ -4,7 +4,6 @@
 
 package node.childProcess
 
-
 /**
  * The `node:child_process` module provides the ability to spawn subprocesses in
  * a manner that is similar, but not identical, to [`popen(3)`](http://man7.org/linux/man-pages/man3/popen.3.html). This capability

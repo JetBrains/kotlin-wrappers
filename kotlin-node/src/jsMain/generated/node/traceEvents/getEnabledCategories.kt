@@ -4,7 +4,6 @@
 
 package node.traceEvents
 
-
 /**
  * Returns a comma-separated list of all currently-enabled trace event
  * categories. The current set of enabled trace event categories is determined

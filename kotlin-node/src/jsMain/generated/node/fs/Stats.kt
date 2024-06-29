@@ -67,7 +67,6 @@ import js.date.Date
  * ```
  * @since v0.1.21
  */
-
 external class Stats : StatsBase<Double> {
 
     override fun isFile(): Boolean

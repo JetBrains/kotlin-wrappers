@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Sets the permissions on the file. Returns `undefined`.
  *

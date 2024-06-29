@@ -4,7 +4,6 @@
 
 package node.readline
 
-
 /**
  * The `readline.emitKeypressEvents()` method causes the given `Readable` stream to begin emitting `'keypress'` events corresponding to received input.
  *

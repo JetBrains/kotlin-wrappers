@@ -11,7 +11,6 @@ import node.net.Socket
  * passed as the second parameter to the `'request'` event.
  * @since v0.1.17
  */
-
 external class ServerResponse<Request : IncomingMessage /* default is IncomingMessage */> : OutgoingMessage<Request> {
     constructor (req: Request)
 

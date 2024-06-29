@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Asynchronous [`stat(2)`](http://man7.org/linux/man-pages/man2/stat.2.html). The callback gets two arguments `(err, stats)` where`stats` is an `fs.Stats` object.
  *

@@ -4,7 +4,6 @@
 
 package node.querystring
 
-
 /**
  * The `querystring.escape()` method performs URL percent-encoding on the given`str` in a manner that is optimized for the specific requirements of URL
  * query strings.

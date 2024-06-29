@@ -4,7 +4,6 @@
 
 package node.test
 
-
 /**
  * This function is used to create a hook running
  * after each subtest of the current test.

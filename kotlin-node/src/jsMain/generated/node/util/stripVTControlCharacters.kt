@@ -4,7 +4,6 @@
 
 package node.util
 
-
 /**
  * Returns `str` with any ANSI escape codes removed.
  *

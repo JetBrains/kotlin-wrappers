@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Write `buffer` to the file specified by `fd`.
  *

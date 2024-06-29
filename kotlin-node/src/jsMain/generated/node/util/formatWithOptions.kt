@@ -4,7 +4,6 @@
 
 package node.util
 
-
 /**
  * This function is identical to {@link format}, except in that it takes
  * an `inspectOptions` argument which specifies options that are passed along to {@link inspect}.

@@ -14,9 +14,7 @@ import web.abort.Abortable
  * and is read from, the `input` stream.
  * @since v0.1.104
  */
-
 @JsName("Interface")
-
 open external class _Interface : EventEmitter {
     /**
      * NOTE: According to the documentation:

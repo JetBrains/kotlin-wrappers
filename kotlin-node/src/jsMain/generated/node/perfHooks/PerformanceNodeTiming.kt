@@ -4,7 +4,6 @@
 
 package node.perfHooks
 
-
 /**
  * _This property is an extension by Node.js. It is not available in Web browsers._
  *
@@ -12,7 +11,6 @@ package node.perfHooks
  * is not exposed to users.
  * @since v8.5.0
  */
-
 external class PerformanceNodeTiming : PerformanceEntry {
     constructor ()
 

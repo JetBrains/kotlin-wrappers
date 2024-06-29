@@ -4,7 +4,6 @@
 
 package node.crypto
 
-
 /**
  * Creates and returns a new key object containing a public key. If `key` is a
  * string or `Buffer`, `format` is assumed to be `'pem'`; if `key` is a `KeyObject`with type `'private'`, the public key is derived from the given private key;

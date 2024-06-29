@@ -4,13 +4,11 @@
 
 package node.vm
 
-
 /**
  * Instances of the `vm.Script` class contain precompiled scripts that can be
  * executed in specific contexts.
  * @since v0.3.1
  */
-
 external class Script {
     constructor (code: String)
 

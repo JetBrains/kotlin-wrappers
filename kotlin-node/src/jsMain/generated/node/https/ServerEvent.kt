@@ -2,9 +2,9 @@
 
 package node.https
 
+import node.stream.Duplex
 import node.http.IncomingMessage
 import node.http.ServerResponse
-import node.stream.Duplex
 
 
 sealed external interface ServerEvent {

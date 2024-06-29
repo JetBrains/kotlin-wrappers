@@ -4,7 +4,6 @@
 
 package node.vm
 
-
 /**
  * `vm.runInThisContext()` compiles `code`, runs it within the context of the
  * current `global` and returns the result. Running code does not have access to

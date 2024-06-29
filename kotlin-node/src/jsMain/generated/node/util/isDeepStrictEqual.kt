@@ -4,7 +4,6 @@
 
 package node.util
 
-
 /**
  * Returns `true` if there is deep strict equality between `val1` and `val2`.
  * Otherwise, returns `false`.

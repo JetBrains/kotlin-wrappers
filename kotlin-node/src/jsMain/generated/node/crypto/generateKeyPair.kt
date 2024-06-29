@@ -4,7 +4,6 @@
 
 package node.crypto
 
-
 /**
  * Generates a new asymmetric key pair of the given `type`. RSA, RSA-PSS, DSA, EC,
  * Ed25519, Ed448, X25519, X448, and DH are currently supported.

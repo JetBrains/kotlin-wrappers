@@ -4,7 +4,6 @@
 
 package node.util
 
-
 /**
  * Returns `true` if the given `object` is strictly an `Object`**and** not a`Function` (even though functions are objects in JavaScript).
  * Otherwise, returns `false`.

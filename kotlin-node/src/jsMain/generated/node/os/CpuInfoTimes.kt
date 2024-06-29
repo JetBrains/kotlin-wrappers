@@ -2,7 +2,6 @@
 
 package node.os
 
-
 sealed external interface CpuInfoTimes {
     var user: Double
     var nice: Double

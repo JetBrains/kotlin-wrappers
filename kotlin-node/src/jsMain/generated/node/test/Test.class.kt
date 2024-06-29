@@ -6,7 +6,6 @@ package node.test
 
 import node.asyncHooks.AsyncResource
 
-
 external class Test : AsyncResource {
     var concurrency: Double
     var nesting: Double

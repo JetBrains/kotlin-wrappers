@@ -4,7 +4,6 @@
 
 package node.crypto
 
-
 /**
  * Provides a synchronous [scrypt](https://en.wikipedia.org/wiki/Scrypt) implementation. Scrypt is a password-based
  * key derivation function that is designed to be expensive computationally and

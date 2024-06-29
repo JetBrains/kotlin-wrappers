@@ -16,7 +16,6 @@ import node.crypto.X509Certificate
  * connection is open.
  * @since v0.11.4
  */
-
 external class TLSSocket : node.net.Socket {
     /**
      * Construct a new tls.TLSSocket object from an existing TCP socket.

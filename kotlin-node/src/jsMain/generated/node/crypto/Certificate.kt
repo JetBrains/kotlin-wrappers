@@ -4,7 +4,6 @@
 
 package node.crypto
 
-
 /**
  * SPKAC is a Certificate Signing Request mechanism originally implemented by
  * Netscape and was specified formally as part of HTML5's `keygen` element.
@@ -17,7 +16,6 @@ package node.crypto
      * implementation](https://www.openssl.org/docs/man3.0/man1/openssl-spkac.html) internally.
  * @since v0.11.8
  */
-
 external class Certificate {
     /**
      * @deprecated
@@ -88,5 +86,4 @@ external class Certificate {
          */
         fun verifySpkac(spkac: js.buffer.ArrayBufferView): Boolean
     }
-
 }

@@ -4,7 +4,6 @@
 
 package node.events
 
-
 /**
  * Much of the Node.js core API is built around an idiomatic asynchronous
  * event-driven architecture in which certain kinds of objects (called "emitters")

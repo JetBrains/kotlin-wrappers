@@ -12,7 +12,6 @@ import node.stream.WritableOptions
  * Instances of `fs.WriteStream` are created and returned using the {@link createWriteStream} function.
  * @since v0.1.93
  */
-
 external class WriteStream : node.stream.Writable {
     constructor (opts: WritableOptions = definedExternally)
 

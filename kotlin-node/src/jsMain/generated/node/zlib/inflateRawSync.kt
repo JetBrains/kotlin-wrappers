@@ -4,7 +4,6 @@
 
 package node.zlib
 
-
 /**
  * Decompress a chunk of data with `InflateRaw`.
  * @since v0.11.12

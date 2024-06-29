@@ -2,7 +2,6 @@
 
 package node.fs
 
-
 @kotlinx.js.JsPlainObject
 sealed external interface WatchBufferOptions : WatchOptions {
     @JsName("encoding")

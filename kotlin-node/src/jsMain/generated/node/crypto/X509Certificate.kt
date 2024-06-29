@@ -19,7 +19,6 @@ import node.tls.PeerCertificate
  * ```
  * @since v15.6.0
  */
-
 external class X509Certificate {
     constructor (buffer: BinaryLike)
 

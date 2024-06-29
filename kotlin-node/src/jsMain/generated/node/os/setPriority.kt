@@ -4,7 +4,6 @@
 
 package node.os
 
-
 /**
  * Attempts to set the scheduling priority for the process specified by `pid`. If`pid` is not provided or is `0`, the process ID of the current process is used.
  *

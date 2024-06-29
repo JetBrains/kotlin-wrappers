@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Closes the file descriptor. Returns `undefined`.
  *

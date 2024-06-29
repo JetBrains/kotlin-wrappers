@@ -4,7 +4,6 @@
 
 package node.readline
 
-
 /**
  * The `readline.cursorTo()` method moves cursor to the specified position in a
  * given `TTY` `stream`.

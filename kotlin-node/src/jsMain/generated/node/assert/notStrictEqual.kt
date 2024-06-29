@@ -4,7 +4,6 @@
 
 package node.assert
 
-
 /**
  * Tests strict inequality between the `actual` and `expected` parameters as
  * determined by [`Object.is()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is).

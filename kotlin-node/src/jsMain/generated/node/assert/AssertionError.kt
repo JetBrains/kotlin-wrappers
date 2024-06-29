@@ -4,11 +4,9 @@
 
 package node.assert
 
-
 /**
  * Indicates the failure of an assertion. All errors thrown by the `node:assert`module will be instances of the `AssertionError` class.
  */
-
 external class AssertionError : Throwable /* JsError */ {
     constructor (options: AssertionErrorOptions = definedExternally)
 

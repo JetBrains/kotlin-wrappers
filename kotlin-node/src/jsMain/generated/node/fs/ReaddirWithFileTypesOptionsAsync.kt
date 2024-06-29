@@ -2,7 +2,6 @@
 
 package node.fs
 
-
 @kotlinx.js.JsPlainObject
 sealed external interface ReaddirWithFileTypesAsyncOptions : ObjectEncodingOptions {
     var withFileTypes: Boolean /* true */

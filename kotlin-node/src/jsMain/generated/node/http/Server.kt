@@ -10,7 +10,6 @@ import node.net.Server as NetServer
 /**
  * @since v0.1.17
  */
-
 open external class Server<Request : IncomingMessage, Response : ServerResponse<*>> : NetServer {
     constructor (requestListener: RequestListener<Request, Response> = definedExternally)
     constructor (

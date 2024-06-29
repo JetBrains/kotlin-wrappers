@@ -4,7 +4,6 @@
 
 package node.url
 
-
 /**
  * Returns the [Punycode](https://tools.ietf.org/html/rfc5891#section-4.4) ASCII serialization of the `domain`. If `domain` is an
  * invalid domain, the empty string is returned.

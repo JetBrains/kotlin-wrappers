@@ -4,7 +4,6 @@
 
 package node.crypto
 
-
 /**
  * Verifies the given signature for `data` using the given key and algorithm. If`algorithm` is `null` or `undefined`, then the algorithm is dependent upon the
  * key type (especially Ed25519 and Ed448).

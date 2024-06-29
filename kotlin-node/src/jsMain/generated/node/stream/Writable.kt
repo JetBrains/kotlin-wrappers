@@ -9,7 +9,6 @@ import js.typedarrays.Uint8Array
 /**
  * @since v0.9.4
  */
-
 open external class Writable : Stream, node.WritableStream {
     constructor (opts: WritableOptions = definedExternally)
 
@@ -90,12 +89,8 @@ open external class Writable : Stream, node.WritableStream {
         callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit,
     ): Unit
 
-    open fun _writev(
-        chunks: Array<WritableWritevChunksItem>,
-        callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit,
-    ): Unit
-
-    open fun _construct(callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit): Unit
+    open val _writev: ((chunks: Array<WritableWritevChunksItem>, callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit) -> Unit)?
+    open val _construct: ((callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit) -> Unit)?
     open fun _destroy(
         error: Throwable /* JsError */?,
         callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit,
@@ -406,5 +401,4 @@ open external class Writable : Stream, node.WritableStream {
          */
         fun toWeb(streamWritable: Writable): web.streams.WritableStream<*>
     }
-
 }

@@ -2,7 +2,6 @@
 
 package node.process
 
-
 sealed external interface ProcessSendOptions {
     var swallowErrors: Boolean?
 }

@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Creates a unique temporary directory.
  *

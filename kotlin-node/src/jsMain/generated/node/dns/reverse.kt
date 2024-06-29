@@ -4,7 +4,6 @@
 
 package node.dns
 
-
 /**
  * Performs a reverse DNS query that resolves an IPv4 or IPv6 address to an
  * array of host names.

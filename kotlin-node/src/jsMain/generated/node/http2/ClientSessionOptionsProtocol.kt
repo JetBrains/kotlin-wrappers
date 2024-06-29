@@ -2,7 +2,6 @@
 
 package node.http2
 
-
 sealed external interface ClientSessionOptionsProtocol {
     companion object {
         @seskar.js.JsValue("http:")

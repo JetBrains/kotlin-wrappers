@@ -4,7 +4,6 @@
 
 package node.os
 
-
 /**
  * Returns a string identifying the operating system platform for which
  * the Node.js binary was compiled. The value is set at compile time.

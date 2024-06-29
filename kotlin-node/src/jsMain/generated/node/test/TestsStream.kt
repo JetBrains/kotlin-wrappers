@@ -11,7 +11,6 @@ import node.stream.Readable
  * order of the tests definition
  * @since v18.9.0, v16.19.0
  */
-
 external class TestsStream : Readable, node.ReadableStream {
     fun addListener(event: TestsStreamEvent.TEST_DIAGNOSTIC, listener: (data: DiagnosticData) -> Unit): Unit /* this */
     fun addListener(event: TestsStreamEvent.TEST_FAIL, listener: (data: TestFail) -> Unit): Unit /* this */

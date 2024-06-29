@@ -4,7 +4,6 @@
 
 package node.crypto
 
-
 /**
  * This function is similar to {@link randomBytes} but requires the first
  * argument to be a `Buffer` that will be filled. It also

@@ -4,7 +4,6 @@
 
 package node.http2
 
-
 /**
  * Returns a `tls.Server` instance that creates and manages `Http2Session`instances.
  *

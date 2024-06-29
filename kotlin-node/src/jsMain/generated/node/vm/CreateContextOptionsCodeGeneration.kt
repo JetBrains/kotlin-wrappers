@@ -2,7 +2,6 @@
 
 package node.vm
 
-
 sealed external interface CreateContextOptionsCodeGeneration {
     /**
      * If set to false any calls to eval or function constructors (Function, GeneratorFunction, etc)

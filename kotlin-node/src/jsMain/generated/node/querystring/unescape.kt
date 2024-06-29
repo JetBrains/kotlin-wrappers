@@ -4,7 +4,6 @@
 
 package node.querystring
 
-
 /**
  * The `querystring.unescape()` method performs decoding of URL percent-encoded
  * characters on the given `str`.

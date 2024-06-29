@@ -4,7 +4,6 @@
 
 package node.inspector
 
-
 /**
  * Blocks until a client (existing or connected later) has sent`Runtime.runIfWaitingForDebugger` command.
  *

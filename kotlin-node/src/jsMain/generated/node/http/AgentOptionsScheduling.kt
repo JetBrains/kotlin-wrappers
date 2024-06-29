@@ -2,7 +2,6 @@
 
 package node.http
 
-
 sealed external interface AgentOptionsScheduling {
     companion object {
         @seskar.js.JsValue("fifo")

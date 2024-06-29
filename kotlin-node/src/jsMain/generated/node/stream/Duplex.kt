@@ -20,12 +20,9 @@ import web.blob.Blob as NodeBlob
  * * `crypto streams`
  * @since v0.9.4
  */
-
 @Suppress("MANY_CLASSES_IN_SUPERTYPE_LIST")
-
-open external class Duplex : Readable,
-    @seskar.js.JsMixin
-    Writable {
+open external class Duplex : Readable, @seskar.js.JsMixin
+Writable {
     constructor (opts: DuplexOptions = definedExternally)
 
     @JsName("writable")
@@ -56,11 +53,7 @@ open external class Duplex : Readable,
         callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit,
     ): Unit
 
-    override fun _writev(
-        chunks: Array<WritableWritevChunksItem>,
-        callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit,
-    ): Unit
-
+    override val _writev: ((chunks: Array<WritableWritevChunksItem>, callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit) -> Unit)?
     override fun _destroy(
         error: Throwable /* JsError */?,
         callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit,
@@ -217,7 +210,7 @@ open external class Duplex : Readable,
     ): Unit /* this */
 
     override var destroyed: Boolean
-    override fun _construct(callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit): Unit
+    override val _construct: ((callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit) -> Unit)?
     override fun destroy(error: Throwable /* JsError */): Unit /* this */
     override fun destroy(): Unit /* this */
 
@@ -443,5 +436,4 @@ open external class Duplex : Readable,
          */
         fun fromWeb(duplexStream: DuplexFromWebDuplexStream, options: DuplexOptions = definedExternally): Duplex
     }
-
 }

@@ -4,7 +4,6 @@
 
 package node.os
 
-
 /**
  * Returns a string identifying the kernel version.
  *

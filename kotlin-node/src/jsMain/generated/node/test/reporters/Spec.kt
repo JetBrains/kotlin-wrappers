@@ -9,7 +9,6 @@ import node.stream.Transform
 /**
  * The `spec` reporter outputs the test results in a human-readable format.
  */
-
 external class Spec : Transform {
     constructor ()
 }

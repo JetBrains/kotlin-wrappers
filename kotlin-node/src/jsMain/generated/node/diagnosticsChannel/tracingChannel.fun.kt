@@ -4,7 +4,6 @@
 
 package node.diagnosticsChannel
 
-
 /**
  * Creates a `TracingChannel` wrapper for the given `TracingChannel Channels`. If a name is given, the corresponding tracing
  * channels will be created in the form of `tracing:${name}:${eventType}` where`eventType` corresponds to the types of `TracingChannel Channels`.

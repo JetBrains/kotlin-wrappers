@@ -2,7 +2,6 @@
 
 package node.test
 
-
 sealed external interface TestFailDetails {
     /**
      * The duration of the test in milliseconds.

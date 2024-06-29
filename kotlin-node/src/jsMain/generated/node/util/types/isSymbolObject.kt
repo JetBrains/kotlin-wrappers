@@ -4,7 +4,6 @@
 
 package node.util.types
 
-
 /**
  * Returns `true` if the value is a symbol object, created
  * by calling `Object()` on a `Symbol` primitive.

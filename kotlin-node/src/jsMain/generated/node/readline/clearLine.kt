@@ -4,7 +4,6 @@
 
 package node.readline
 
-
 /**
  * The `readline.clearLine()` method clears current line of given `TTY` stream
  * in a specified direction identified by `dir`.

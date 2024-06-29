@@ -4,7 +4,6 @@
 
 package node.util
 
-
 /**
  * An implementation of [the MIMEType class](https://bmeck.github.io/node-proposal-mime-api/).
  *
@@ -18,7 +17,6 @@ package node.util
  * @since v19.1.0, v18.13.0
  * @experimental
  */
-
 external class MIMEType {
     /**
      * Creates a new MIMEType object by parsing the input.

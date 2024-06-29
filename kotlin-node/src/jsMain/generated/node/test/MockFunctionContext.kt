@@ -4,13 +4,11 @@
 
 package node.test
 
-
 /**
  * The `MockFunctionContext` class is used to inspect or manipulate the behavior of
  * mocks created via the `MockTracker` APIs.
  * @since v19.1.0, v18.13.0
  */
-
 external class MockFunctionContext<F : Function<*>> {
     /**
      * A getter that returns a copy of the internal array used to track calls to the

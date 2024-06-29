@@ -2,7 +2,6 @@
 
 package node.crypto
 
-
 sealed external interface X509CheckOptionsSubject {
     companion object {
         @seskar.js.JsValue("always")

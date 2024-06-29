@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Asynchronously copies `src` to `dest`. By default, `dest` is overwritten if it
  * already exists. No arguments other than a possible exception are given to the

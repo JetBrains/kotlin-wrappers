@@ -2,7 +2,6 @@
 
 package node.process
 
-
 sealed external interface ProcessConfigTarget_defaults {
     val cflags: js.array.ReadonlyArray<Any?>
     val default_configuration: String

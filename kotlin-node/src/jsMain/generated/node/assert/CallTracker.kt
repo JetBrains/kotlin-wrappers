@@ -4,14 +4,12 @@
 
 package node.assert
 
-
 /**
  * This feature is deprecated and will be removed in a future version.
  * Please consider using alternatives such as the `mock` helper function.
  * @since v14.2.0, v12.19.0
  * @deprecated Deprecated
  */
-
 external class CallTracker {
     /**
      * The wrapper function is expected to be called exactly `exact` times. If the

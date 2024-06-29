@@ -4,7 +4,6 @@ package node.fs
 
 import web.abort.Abortable
 
-
 @kotlinx.js.JsPlainObject
 sealed external interface FileHandleWriteFileAsyncOptions : ObjectEncodingOptions, FlagAndOpenMode, Abortable {
     var flush: Boolean?

@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Asynchronously removes a file or symbolic link. No arguments other than a
  * possible exception are given to the completion callback.

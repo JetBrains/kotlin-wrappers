@@ -4,7 +4,6 @@
 
 package node.tls
 
-
 /**
  * Returns an array with the names of the supported TLS ciphers. The names are
  * lower-case for historical reasons, but must be uppercased to be used in

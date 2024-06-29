@@ -2,7 +2,6 @@
 
 package node.crypto
 
-
 sealed external interface PublicKeyInputType {
     companion object {
         @seskar.js.JsValue("pkcs1")

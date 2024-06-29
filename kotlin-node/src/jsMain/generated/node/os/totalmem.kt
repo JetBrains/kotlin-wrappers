@@ -4,7 +4,6 @@
 
 package node.os
 
-
 /**
  * Returns the total amount of system memory in bytes as an integer.
  * @since v0.3.3

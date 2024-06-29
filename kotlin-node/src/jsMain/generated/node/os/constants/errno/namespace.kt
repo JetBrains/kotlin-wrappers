@@ -5,7 +5,6 @@
 
 package node.os.constants.errno
 
-
 external val E2BIG: Double
 
 external val EACCES: Double

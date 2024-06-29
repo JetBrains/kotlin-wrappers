@@ -4,6 +4,5 @@ package node.childProcess
 
 import node.fs.ObjectEncodingOptions
 
-
 @kotlinx.js.JsPlainObject
 sealed external interface ExecFileObjectEncodingOptions : ObjectEncodingOptions, ExecFileOptions

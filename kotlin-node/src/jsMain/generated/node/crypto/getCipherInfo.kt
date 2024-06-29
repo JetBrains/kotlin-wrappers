@@ -4,7 +4,6 @@
 
 package node.crypto
 
-
 /**
  * Returns information about a given cipher.
  *

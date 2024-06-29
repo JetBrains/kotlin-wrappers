@@ -4,7 +4,6 @@
 
 package node.stream
 
-
 /**
  * Sets the default highWaterMark used by streams.
  * @since v19.9.0

@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * The `node:fs` module enables interacting with the file system in a
  * way modeled on standard POSIX functions.

@@ -16,7 +16,6 @@ import node.net.Socket
  * may be reused multiple times in case of keep-alive.
  * @since v0.1.17
  */
-
 open external class IncomingMessage : node.stream.Readable {
     constructor (socket: Socket)
 

@@ -4,7 +4,6 @@
 
 package node.module
 
-
 /**
  * `path` is the resolved path for the file for which a corresponding source map
  * should be fetched.

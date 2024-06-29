@@ -4,7 +4,6 @@
 
 package node.traceEvents
 
-
 /**
  * Creates and returns a `Tracing` object for the given set of `categories`.
  *

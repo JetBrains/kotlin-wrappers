@@ -2,7 +2,6 @@
 
 package node.diagnosticsChannel
 
-
 sealed external interface TracingChannelSubscribersEndMessage<ContextType : Any> {
     var error: Any?
     var result: Any?

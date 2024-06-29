@@ -2,7 +2,6 @@
 
 package node.crypto
 
-
 sealed external interface ECKeyPairKeyObjectOptionsParamEncoding {
     companion object {
         @seskar.js.JsValue("explicit")

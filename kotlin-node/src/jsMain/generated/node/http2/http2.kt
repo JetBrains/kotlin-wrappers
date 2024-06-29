@@ -4,7 +4,6 @@
 
 package node.http2
 
-
 /**
  * The `node:http2` module provides an implementation of the [HTTP/2](https://tools.ietf.org/html/rfc7540) protocol.
  * It can be accessed using:

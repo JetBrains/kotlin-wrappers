@@ -4,7 +4,6 @@
 
 package node.tls
 
-
 /**
  * {@link createServer} sets the default value of the `honorCipherOrder` option
  * to `true`, other APIs that create secure contexts leave it unset.

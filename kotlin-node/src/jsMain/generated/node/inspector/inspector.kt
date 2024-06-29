@@ -4,7 +4,6 @@
 
 package node.inspector
 
-
 // Type definitions for inspector
 // These definitions are auto-generated.
 // Please see https://github.com/DefinitelyTyped/DefinitelyTyped/pull/19330

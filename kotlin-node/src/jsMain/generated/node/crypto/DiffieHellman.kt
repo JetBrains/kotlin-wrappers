@@ -4,7 +4,6 @@
 
 package node.crypto
 
-
 /**
  * The `DiffieHellman` class is a utility for creating Diffie-Hellman key
  * exchanges.
@@ -35,7 +34,6 @@ package node.crypto
  * ```
  * @since v0.5.0
  */
-
 external class DiffieHellman {
     /**
      * Generates private and public Diffie-Hellman key values unless they have been

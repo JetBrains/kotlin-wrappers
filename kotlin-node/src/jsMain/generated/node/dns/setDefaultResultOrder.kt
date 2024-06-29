@@ -4,7 +4,6 @@
 
 package node.dns
 
-
 /**
  * Set the default value of `verbatim` in {@link lookup} and [`dnsPromises.lookup()`](https://nodejs.org/docs/latest-v20.x/api/dns.html#dnspromiseslookuphostname-options).
  * The value could be:

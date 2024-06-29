@@ -4,7 +4,6 @@
 
 package node.util
 
-
 /**
  * Returns the string name for a numeric error code that comes from a Node.js API.
  * The mapping between error codes and error names is platform-dependent.

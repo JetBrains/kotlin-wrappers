@@ -4,7 +4,6 @@
 
 package node.util
 
-
 /**
  * Usage of `util.inherits()` is discouraged. Please use the ES6 `class` and`extends` keywords to get language level inheritance support. Also note
  * that the two styles are [semantically incompatible](https://github.com/nodejs/node/issues/4179).

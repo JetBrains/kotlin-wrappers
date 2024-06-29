@@ -4,7 +4,6 @@
 
 package node.wasi
 
-
 /**
  * **The `node:wasi` module does not currently provide the**
  * **comprehensive file system security properties provided by some WASI runtimes.**

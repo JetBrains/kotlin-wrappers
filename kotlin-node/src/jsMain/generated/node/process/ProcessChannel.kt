@@ -2,7 +2,6 @@
 
 package node.process
 
-
 sealed external interface ProcessChannel {
     /**
      * This method makes the IPC channel keep the event loop of the process running if .unref() has been called before.

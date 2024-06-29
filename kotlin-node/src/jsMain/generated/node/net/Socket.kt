@@ -20,7 +20,6 @@ import js.typedarrays.Uint8Array
  * it to interact with the client.
  * @since v0.3.4
  */
-
 open external class Socket : node.stream.Duplex {
     constructor (options: SocketConstructorOpts = definedExternally)
 

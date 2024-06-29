@@ -4,7 +4,6 @@
 
 package node.assert
 
-
 /**
  * Expects the function `fn` to throw an error.
  *

@@ -4,7 +4,6 @@
 
 package node.crypto
 
-
 /**
  * Synchronously generates a new random secret key of the given `length`. The`type` will determine which validations will be performed on the `length`.
  *

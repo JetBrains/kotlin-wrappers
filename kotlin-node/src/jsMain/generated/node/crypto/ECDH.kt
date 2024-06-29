@@ -4,7 +4,6 @@
 
 package node.crypto
 
-
 /**
  * The `ECDH` class is a utility for creating Elliptic Curve Diffie-Hellman (ECDH)
  * key exchanges.
@@ -35,7 +34,6 @@ package node.crypto
  * ```
  * @since v0.11.14
  */
-
 external class ECDH {
     /**
      * Generates private and public EC Diffie-Hellman key values, and returns
@@ -170,5 +168,4 @@ external class ECDH {
             format: ECDHConvertKeyFormat = definedExternally,
         ): Any /* Buffer | string */
     }
-
 }

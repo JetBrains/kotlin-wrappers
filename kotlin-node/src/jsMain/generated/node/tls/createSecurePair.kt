@@ -4,7 +4,6 @@
 
 package node.tls
 
-
 /**
  * Creates a new secure pair object with two streams, one of which reads and writes
  * the encrypted data and the other of which reads and writes the cleartext data.

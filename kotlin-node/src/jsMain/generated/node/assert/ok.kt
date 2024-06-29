@@ -4,7 +4,6 @@
 
 package node.assert
 
-
 /**
  * Tests if `value` is truthy. It is equivalent to`assert.equal(!!value, true, message)`.
  *

@@ -70,7 +70,6 @@ import node.stream.TransformOptions
  * ```
  * @since v0.1.92
  */
-
 external class Hash : node.stream.Transform {
     constructor (opts: TransformOptions = definedExternally)
 

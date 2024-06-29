@@ -14,7 +14,6 @@ import web.abort.Abortable
  * and is read from, the `input` stream.
  * @since v17.0.0
  */
-
 external class Interface : _Interface {
     /**
      * The `rl.question()` method displays the `query` by writing it to the `output`,

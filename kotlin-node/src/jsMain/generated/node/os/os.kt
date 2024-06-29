@@ -4,7 +4,6 @@
 
 package node.os
 
-
 /**
  * The `node:os` module provides operating system-related utility methods and
  * properties. It can be accessed using:

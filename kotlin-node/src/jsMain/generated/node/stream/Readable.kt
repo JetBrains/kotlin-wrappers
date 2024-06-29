@@ -14,7 +14,6 @@ import node.WritableStream
 /**
  * @since v0.9.4
  */
-
 open external class Readable : Stream, node.ReadableStream {
     constructor (opts: ReadableOptions = definedExternally)
 
@@ -95,7 +94,7 @@ open external class Readable : Stream, node.ReadableStream {
      * @since v18.0.0
      */
     open val errored: Throwable /* JsError */?
-    open fun _construct(callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit): Unit
+    open val _construct: ((callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit) -> Unit)?
     fun _read(size: Number): Unit
 
     /**
@@ -742,5 +741,4 @@ open external class Readable : Stream, node.ReadableStream {
          */
         fun isDisturbed(stream: node.ReadableStream): Boolean
     }
-
 }

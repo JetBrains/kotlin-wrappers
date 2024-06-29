@@ -4,7 +4,6 @@
 
 package node.querystring
 
-
 /**
  * The `querystring.parse()` method parses a URL query string (`str`) into a
  * collection of key and value pairs.

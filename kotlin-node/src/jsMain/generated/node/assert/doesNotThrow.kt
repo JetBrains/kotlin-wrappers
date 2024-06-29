@@ -4,7 +4,6 @@
 
 package node.assert
 
-
 /**
  * Asserts that the function `fn` does not throw an error.
  *

@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Stop watching for changes on `filename`. If `listener` is specified, only that
  * particular listener is removed. Otherwise, _all_ listeners are removed,

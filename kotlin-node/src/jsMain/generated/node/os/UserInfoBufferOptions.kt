@@ -2,7 +2,6 @@
 
 package node.os
 
-
 sealed external interface UserInfoBufferOptions {
     var encoding: String /* "buffer" */
 }

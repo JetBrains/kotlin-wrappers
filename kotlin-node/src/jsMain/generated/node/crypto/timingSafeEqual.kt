@@ -4,7 +4,6 @@
 
 package node.crypto
 
-
 /**
  * This function compares the underlying bytes that represent the given`ArrayBuffer`, `TypedArray`, or `DataView` instances using a constant-time
  * algorithm.

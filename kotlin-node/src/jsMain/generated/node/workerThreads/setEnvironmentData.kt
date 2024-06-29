@@ -4,7 +4,6 @@
 
 package node.workerThreads
 
-
 /**
  * The `worker.setEnvironmentData()` API sets the content of`worker.getEnvironmentData()` in the current thread and all new `Worker`instances spawned from the current context.
  * @since v15.12.0, v14.18.0

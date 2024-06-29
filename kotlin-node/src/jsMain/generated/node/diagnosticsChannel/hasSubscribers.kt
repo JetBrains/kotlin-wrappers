@@ -4,7 +4,6 @@
 
 package node.diagnosticsChannel
 
-
 /**
  * Check if there are active subscribers to the named channel. This is helpful if
  * the message you want to send might be expensive to prepare.

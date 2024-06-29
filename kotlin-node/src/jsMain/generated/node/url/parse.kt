@@ -4,7 +4,6 @@
 
 package node.url
 
-
 /**
  * The `url.parse()` method takes a URL string, parses it, and returns a URL
  * object.

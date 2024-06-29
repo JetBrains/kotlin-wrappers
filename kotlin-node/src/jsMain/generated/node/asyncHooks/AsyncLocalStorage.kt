@@ -4,7 +4,6 @@
 
 package node.asyncHooks
 
-
 /**
  * This class creates stores that stay coherent through asynchronous operations.
  *
@@ -53,7 +52,6 @@ package node.asyncHooks
  * with each other's data.
  * @since v13.10.0, v12.17.0
  */
-
 external class AsyncLocalStorage<T> {
     /**
      * Disables the instance of `AsyncLocalStorage`. All subsequent calls
@@ -235,5 +233,4 @@ external class AsyncLocalStorage<T> {
          */
         fun snapshot(): Function<Any?> /* <R, TArgs extends any[]>(fn: (...args: TArgs) => R, ...args: TArgs) => R */
     }
-
 }

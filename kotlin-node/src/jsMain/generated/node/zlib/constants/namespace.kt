@@ -5,7 +5,6 @@
 
 package node.zlib.constants
 
-
 external val BROTLI_DECODE: Double
 
 external val BROTLI_DECODER_ERROR_ALLOC_BLOCK_TYPE_TREES: Double

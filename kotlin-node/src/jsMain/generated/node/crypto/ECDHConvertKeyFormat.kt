@@ -2,7 +2,6 @@
 
 package node.crypto
 
-
 sealed external interface ECDHConvertKeyFormat {
     companion object {
         @seskar.js.JsValue("uncompressed")

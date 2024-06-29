@@ -4,7 +4,6 @@
 
 package node.perfHooks
 
-
 /**
  * _This property is an extension by Node.js. It is not available in Web browsers._
  *

@@ -5,7 +5,6 @@
 
 package node.os.constants.priority
 
-
 external val PRIORITY_LOW: Double
 
 external val PRIORITY_BELOW_NORMAL: Double

@@ -4,7 +4,6 @@
 
 package node.util
 
-
 /**
  * Returns a Map of all system error codes available from the Node.js API.
  * The mapping between error codes and error names is platform-dependent.

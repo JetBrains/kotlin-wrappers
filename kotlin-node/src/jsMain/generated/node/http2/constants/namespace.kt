@@ -5,7 +5,6 @@
 
 package node.http2.constants
 
-
 external val NGHTTP2_SESSION_SERVER: Double
 
 external val NGHTTP2_SESSION_CLIENT: Double

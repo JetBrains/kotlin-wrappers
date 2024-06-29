@@ -4,7 +4,6 @@
 
 package node.readline
 
-
 /**
  * The `readline.clearScreenDown()` method clears the given `TTY` stream from
  * the current position of the cursor down.

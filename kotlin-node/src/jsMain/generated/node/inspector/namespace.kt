@@ -4,5 +4,4 @@
 
 package node.inspector
 
-
 /* import EventEmitter = require('node:events'); */

@@ -72,7 +72,6 @@ import node.stream.TransformOptions
  * ```
  * @since v0.1.94
  */
-
 external class Hmac : node.stream.Transform {
     constructor (opts: TransformOptions = definedExternally)
 

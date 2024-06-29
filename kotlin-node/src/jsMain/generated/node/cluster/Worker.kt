@@ -12,7 +12,6 @@ import node.events.EventEmitter
  * it can be obtained using `cluster.worker`.
  * @since v0.7.0
  */
-
 external class Worker : EventEmitter {
     /**
      * Each new worker is given its own unique id, this id is stored in the`id`.

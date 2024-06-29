@@ -4,7 +4,6 @@
 
 package node.workerThreads
 
-
 /**
  * The `node:worker_threads` module enables the use of threads that execute
  * JavaScript in parallel. To access it:

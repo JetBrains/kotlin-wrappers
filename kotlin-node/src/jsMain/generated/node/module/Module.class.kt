@@ -4,9 +4,9 @@
 
 package node.module
 
-import node.Require
 import web.url.URL
 import node.Module as NodeModule
+import node.Require
 import node.Require as NodeRequire
 
 
@@ -82,5 +82,4 @@ external class Module : NodeModule {
             options: RegisterOptions<Data> = definedExternally,
         ): Unit
     }
-
 }

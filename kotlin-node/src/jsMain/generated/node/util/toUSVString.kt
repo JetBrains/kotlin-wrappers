@@ -4,7 +4,6 @@
 
 package node.util
 
-
 /**
  * Returns the `string` after replacing any surrogate code points
  * (or equivalently, any unpaired surrogate code units) with the

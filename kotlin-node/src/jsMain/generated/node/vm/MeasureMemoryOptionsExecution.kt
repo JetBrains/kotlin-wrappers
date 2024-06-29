@@ -2,7 +2,6 @@
 
 package node.vm
 
-
 sealed external interface MeasureMemoryOptionsExecution {
     companion object {
         @seskar.js.JsValue("default")

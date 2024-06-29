@@ -4,7 +4,6 @@
 
 package node.net
 
-
 /**
  * Gets the current default value of the `autoSelectFamilyAttemptTimeout` option of `socket.connect(options)`.
  * The initial default value is `250`.

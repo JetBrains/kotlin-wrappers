@@ -4,7 +4,6 @@
 
 package node.util
 
-
 /**
  * The `util.log()` method prints the given `string` to `stdout` with an included
  * timestamp.

@@ -4,7 +4,6 @@
 
 package node.crypto
 
-
 /**
  * Creates and returns a `Cipher` object that uses the given `algorithm` and`password`.
  *

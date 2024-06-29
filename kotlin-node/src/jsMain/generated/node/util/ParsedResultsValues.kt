@@ -2,14 +2,10 @@
 
 package node.util
 
-
 sealed external interface ParsedResultsValues {
-
     @seskar.js.JsNative
     operator fun get(key: String): Any? /* undefined | string | boolean | Array<string | boolean> */
 
-
     @seskar.js.JsNative
     operator fun set(key: String, value: Any? /* undefined | string | boolean | Array<string | boolean> */)
-
 }

@@ -10,7 +10,6 @@ import js.iterable.IterableIterator
  * The `MIMEParams` API provides read and write access to the parameters of a`MIMEType`.
  * @since v19.1.0, v18.13.0
  */
-
 external class MIMEParams {
     /**
      * Remove all name-value pairs whose name is `name`.

@@ -4,7 +4,6 @@
 
 package node.childProcess
 
-
 /**
  * Spawns a shell then executes the `command` within that shell, buffering any
  * generated output. The `command` string passed to the exec function is processed

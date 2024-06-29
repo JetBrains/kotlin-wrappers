@@ -4,7 +4,6 @@
 
 package node.crypto
 
-
 /**
  * Generates cryptographically strong pseudorandom data. The `size` argument
  * is a number indicating the number of bytes to generate.

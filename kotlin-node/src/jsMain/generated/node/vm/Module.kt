@@ -101,7 +101,6 @@ import js.promise.Promise
  * @since v13.0.0, v12.16.0
  * @experimental
  */
-
 open external class Module {
     /**
      * The specifiers of all dependencies of this module. The returned array is frozen

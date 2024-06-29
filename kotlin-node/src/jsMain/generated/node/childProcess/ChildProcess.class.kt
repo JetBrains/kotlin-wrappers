@@ -17,7 +17,6 @@ import node.stream.Writable
  * instances of `ChildProcess`.
  * @since v2.2.0
  */
-
 open external class ChildProcess : EventEmitter {
     /**
      * A `Writable Stream` that represents the child process's `stdin`.

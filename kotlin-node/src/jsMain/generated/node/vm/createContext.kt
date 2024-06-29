@@ -4,7 +4,6 @@
 
 package node.vm
 
-
 /**
  * If given a `contextObject`, the `vm.createContext()` method will `prepare
  * that object` so that it can be used in calls to {@link runInContext} or `script.runInContext()`. Inside such scripts,

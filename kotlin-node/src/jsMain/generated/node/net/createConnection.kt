@@ -4,7 +4,6 @@
 
 package node.net
 
-
 /**
  * A factory function, which creates a new {@link Socket},
  * immediately initiates connection with `socket.connect()`,

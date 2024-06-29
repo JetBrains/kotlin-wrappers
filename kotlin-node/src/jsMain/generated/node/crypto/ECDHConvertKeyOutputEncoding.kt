@@ -2,7 +2,6 @@
 
 package node.crypto
 
-
 sealed external interface ECDHConvertKeyOutputEncoding {
     companion object {
         @seskar.js.JsValue("latin1")

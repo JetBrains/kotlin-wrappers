@@ -4,7 +4,6 @@
 
 package node.zlib
 
-
 /**
  * Decompress a chunk of data with `BrotliDecompress`.
  * @since v11.7.0, v10.16.0

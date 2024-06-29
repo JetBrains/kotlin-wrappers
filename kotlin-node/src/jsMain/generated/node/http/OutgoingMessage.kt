@@ -4,15 +4,14 @@
 
 package node.http
 
-import js.array.ReadonlyArray
 import node.net.Socket
+import js.array.ReadonlyArray
 
 /**
  * This class serves as the parent class of {@link ClientRequest} and {@link ServerResponse}. It is an abstract outgoing message from
  * the perspective of the participants of an HTTP transaction.
  * @since v0.1.17
  */
-
 open external class OutgoingMessage<Request : IncomingMessage /* default is IncomingMessage */> : node.stream.Writable {
     constructor ()
 

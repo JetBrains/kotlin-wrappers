@@ -4,10 +4,10 @@
 
 package node.dgram
 
+import node.net.AddressInfo
+import node.events.EventEmitter
 import js.array.ReadonlyArray
 import js.typedarrays.Uint8Array
-import node.events.EventEmitter
-import node.net.AddressInfo
 
 /**
  * Encapsulates the datagram functionality.
@@ -16,7 +16,6 @@ import node.net.AddressInfo
  * The `new` keyword is not to be used to create `dgram.Socket` instances.
  * @since v0.1.99
  */
-
 external class Socket : EventEmitter {
     /**
      * Tells the kernel to join a multicast group at the given `multicastAddress` and`multicastInterface` using the `IP_ADD_MEMBERSHIP` socket option. If the`multicastInterface` argument is not

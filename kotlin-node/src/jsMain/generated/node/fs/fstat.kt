@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Invokes the callback with the `fs.Stats` for the file descriptor.
  *

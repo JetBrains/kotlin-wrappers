@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Synchronously removes files and directories (modeled on the standard POSIX `rm`utility). Returns `undefined`.
  * @since v14.14.0

@@ -4,7 +4,6 @@
 
 package node.url
 
-
 /**
  * The `url.resolve()` method resolves a target URL relative to a base URL in a
  * manner similar to that of a web browser resolving an anchor tag.

@@ -4,14 +4,12 @@
 
 package node.wasi
 
-
 /**
  * The `WASI` class provides the WASI system call API and additional convenience
  * methods for working with WASI-based applications. Each `WASI` instance
  * represents a distinct environment.
  * @since v13.3.0, v12.16.0
  */
-
 external class WASI {
     constructor (options: WASIOptions = definedExternally)
 

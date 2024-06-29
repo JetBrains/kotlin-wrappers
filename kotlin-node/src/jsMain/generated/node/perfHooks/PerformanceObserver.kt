@@ -9,7 +9,6 @@ import node.asyncHooks.AsyncResource
 /**
  * @since v8.5.0
  */
-
 external class PerformanceObserver : AsyncResource {
     constructor (callback: PerformanceObserverCallback)
 

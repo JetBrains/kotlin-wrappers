@@ -2,7 +2,6 @@
 
 package node.assert
 
-
 sealed external interface AssertionErrorOptions {
     /** If provided, the error message is set to this value. */
     var message: String?

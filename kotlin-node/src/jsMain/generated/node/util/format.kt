@@ -4,7 +4,6 @@
 
 package node.util
 
-
 /**
  * The `util.format()` method returns a formatted string using the first argument
  * as a `printf`\-like format string which can contain zero or more format

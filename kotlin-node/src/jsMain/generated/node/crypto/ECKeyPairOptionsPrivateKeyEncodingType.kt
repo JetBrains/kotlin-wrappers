@@ -2,7 +2,6 @@
 
 package node.crypto
 
-
 sealed external interface ECKeyPairOptionsPrivateKeyEncodingType {
     companion object {
         @seskar.js.JsValue("sec1")

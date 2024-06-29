@@ -9,7 +9,6 @@ import js.promise.Promise
 /**
  * @since v17.0.0
  */
-
 external class Readline {
     /**
      * @param stream A TTY stream.

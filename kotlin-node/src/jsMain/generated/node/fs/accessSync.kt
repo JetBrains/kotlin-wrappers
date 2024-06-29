@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Synchronously tests a user's permissions for the file or directory specified
  * by `path`. The `mode` argument is an optional integer that specifies the

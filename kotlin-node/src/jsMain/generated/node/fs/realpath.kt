@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Asynchronously computes the canonical pathname by resolving `.`, `..`, and
  * symbolic links.

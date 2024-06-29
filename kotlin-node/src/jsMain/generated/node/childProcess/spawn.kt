@@ -4,9 +4,9 @@
 
 package node.childProcess
 
-import js.array.ReadonlyArray
 import node.stream.Readable
 import node.stream.Writable
+import js.array.ReadonlyArray
 
 /**
  * The `child_process.spawn()` method spawns a new process using the given`command`, with command-line arguments in `args`. If omitted, `args` defaults

@@ -4,7 +4,6 @@
 
 package node.crypto
 
-
 /**
  * Synchronous version of {@link randomFill}.
  *

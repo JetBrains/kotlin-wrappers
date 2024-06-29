@@ -4,14 +4,12 @@
 
 package node.http2
 
-
 /**
  * A `Http2ServerRequest` object is created by {@link Server} or {@link SecureServer} and passed as the first argument to the `'request'` event. It may be used to access a request status,
  * headers, and
  * data.
  * @since v8.4.0
  */
-
 external class Http2ServerRequest : node.stream.Readable {
     constructor (
         stream: ServerHttp2Stream,

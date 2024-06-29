@@ -4,7 +4,6 @@
 
 package node.events
 
-
 /**
  * Integrates `EventEmitter` with `AsyncResource` for `EventEmitter`s that
  * require manual async tracking. Specifically, all events emitted by instances
@@ -43,7 +42,6 @@ package node.events
  * same options as `EventEmitter` and `AsyncResource` themselves.
  * @since v17.4.0, v16.14.0
  */
-
 external class EventEmitterAsyncResource : EventEmitter {
     /**
      * @param options Only optional in child class.

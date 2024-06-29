@@ -4,7 +4,6 @@
 
 package node.crypto
 
-
 /**
  * Decrypts `buffer` with `key`.`buffer` was previously encrypted using
  * the corresponding private key, for example using {@link privateEncrypt}.

@@ -4,7 +4,6 @@
 
 package node.util
 
-
 /**
  * Returns `true` if the given `object` is a `RegExp`. Otherwise, returns `false`.
  *

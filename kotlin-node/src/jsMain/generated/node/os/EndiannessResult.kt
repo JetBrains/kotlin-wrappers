@@ -2,7 +2,6 @@
 
 package node.os
 
-
 sealed external interface EndiannessResult {
     companion object {
         @seskar.js.JsValue("BE")

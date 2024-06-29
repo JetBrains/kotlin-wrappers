@@ -4,14 +4,12 @@
 
 package node.perfHooks
 
-
 /**
  * Exposes measures created via the `Performance.measure()` method.
  *
  * The constructor of this class is not exposed to users directly.
  * @since v18.2.0, v16.17.0
  */
-
 external class PerformanceMeasure : PerformanceEntry {
     constructor ()
 

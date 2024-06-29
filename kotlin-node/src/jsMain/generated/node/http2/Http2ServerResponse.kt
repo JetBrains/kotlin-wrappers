@@ -4,15 +4,14 @@
 
 package node.http2
 
-import js.typedarrays.Uint8Array
 import node.http.OutgoingHttpHeaders
+import js.typedarrays.Uint8Array
 
 /**
  * This object is created internally by an HTTP server, not by the user. It is
  * passed as the second parameter to the `'request'` event.
  * @since v8.4.0
  */
-
 external class Http2ServerResponse : node.stream.Writable {
     constructor (stream: ServerHttp2Stream)
 

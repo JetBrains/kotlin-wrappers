@@ -2,17 +2,13 @@
 
 package node.zlib
 
-
 sealed external interface BrotliOptionsParams {
     /**
      * Each key is a `constants.BROTLI_*` constant.
      */
-
     @seskar.js.JsNative
     operator fun get(key: Number): (Any /* boolean | number */)?
 
-
     @seskar.js.JsNative
     operator fun set(key: Number, value: (Any /* boolean | number */)?)
-
 }

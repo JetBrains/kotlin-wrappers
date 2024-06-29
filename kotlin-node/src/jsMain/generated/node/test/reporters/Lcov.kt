@@ -7,7 +7,6 @@ package node.test.reporters
 import node.stream.Transform
 import node.stream.TransformOptions
 
-
 external class Lcov : Transform {
     constructor (opts: TransformOptions = definedExternally)
 }

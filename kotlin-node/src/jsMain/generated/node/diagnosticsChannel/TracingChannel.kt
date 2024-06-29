@@ -15,7 +15,6 @@ import js.promise.Promise
  * @since v19.9.0
  * @experimental
  */
-
 external class TracingChannel<StoreType /* default is Any? */, ContextType : Any /* default is Any */> :
     TracingChannelCollection<StoreType, ContextType> {
     override var start: Channel<StoreType, ContextType>

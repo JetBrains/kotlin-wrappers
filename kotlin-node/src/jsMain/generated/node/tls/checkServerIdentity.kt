@@ -4,7 +4,6 @@
 
 package node.tls
 
-
 /**
  * Verifies the certificate `cert` is issued to `hostname`.
  *

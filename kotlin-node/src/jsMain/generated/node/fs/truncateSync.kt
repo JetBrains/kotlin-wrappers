@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Truncates the file. Returns `undefined`. A file descriptor can also be
  * passed as the first argument. In this case, `fs.ftruncateSync()` is called.

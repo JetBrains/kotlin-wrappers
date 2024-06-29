@@ -4,8 +4,8 @@
 
 package node.http
 
-import node.net.Socket
 import web.url.URL
+import node.net.Socket
 
 /**
  * This object is created internally and returned from {@link request}. It
@@ -38,7 +38,6 @@ import web.url.URL
  * `Content-Length` value should be in bytes, not characters. Use `Buffer.byteLength()` to determine the length of the body in bytes.
  * @since v0.1.17
  */
-
 external class ClientRequest : OutgoingMessage<IncomingMessage> {
     constructor (url: String, cb: (res: IncomingMessage) -> Unit = definedExternally)
 

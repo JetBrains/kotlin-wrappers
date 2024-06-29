@@ -10,7 +10,6 @@ import node.events.EventEmitter
  * This class is used to create a TCP or `IPC` server.
  * @since v0.1.90
  */
-
 open external class Server : EventEmitter {
     constructor (connectionListener: (socket: Socket) -> Unit = definedExternally)
     constructor (

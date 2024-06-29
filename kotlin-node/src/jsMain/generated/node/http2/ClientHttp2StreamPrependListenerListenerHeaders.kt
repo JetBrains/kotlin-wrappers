@@ -2,6 +2,5 @@
 
 package node.http2
 
-
 sealed external interface ClientHttp2StreamPrependListenerListenerHeaders : IncomingHttpHeaders,
     IncomingHttpStatusHeader

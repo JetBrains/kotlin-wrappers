@@ -4,7 +4,6 @@
 
 package node.stream
 
-
 /**
  * A readable and/or writable stream/webstream.
  *

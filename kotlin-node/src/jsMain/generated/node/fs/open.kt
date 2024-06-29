@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Asynchronous file open. See the POSIX [`open(2)`](http://man7.org/linux/man-pages/man2/open.2.html) documentation for more details.
  *

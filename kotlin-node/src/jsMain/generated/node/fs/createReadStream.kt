@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Unlike the 16 KiB default `highWaterMark` for a `stream.Readable`, the stream
  * returned by this method has a default `highWaterMark` of 64 KiB.

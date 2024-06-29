@@ -2,7 +2,6 @@
 
 package node.util
 
-
 sealed external interface MIMETypeInput {
     var toString: () -> String
 }

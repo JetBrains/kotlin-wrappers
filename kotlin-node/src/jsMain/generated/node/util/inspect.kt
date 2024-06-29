@@ -4,7 +4,6 @@
 
 package node.util
 
-
 /**
  * The `util.inspect()` method returns a string representation of `object` that is
  * intended for debugging. The output of `util.inspect` may change at any time

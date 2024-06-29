@@ -4,7 +4,6 @@
 
 package node.os
 
-
 /**
  * Returns information about the currently effective user. On POSIX platforms,
  * this is typically a subset of the password file. The returned object includes

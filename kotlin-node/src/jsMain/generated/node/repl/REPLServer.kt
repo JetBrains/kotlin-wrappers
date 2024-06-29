@@ -21,7 +21,6 @@ import node.readline._Interface as Interface
  * ```
  * @since v0.1.91
  */
-
 external class REPLServer : Interface {
     /**
      * The `vm.Context` provided to the `eval` function to be used for JavaScript

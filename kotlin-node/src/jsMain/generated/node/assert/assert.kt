@@ -4,7 +4,6 @@
 
 package node.assert
 
-
 /**
  * The `node:assert` module provides a set of assertion functions for verifying
  * invariants.

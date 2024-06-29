@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Asynchronously creates a directory.
  *

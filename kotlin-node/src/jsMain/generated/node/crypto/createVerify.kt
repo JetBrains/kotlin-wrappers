@@ -4,7 +4,6 @@
 
 package node.crypto
 
-
 /**
  * Creates and returns a `Verify` object that uses the given algorithm.
  * Use {@link getHashes} to obtain an array of names of the available
