@@ -4,13 +4,12 @@ package web.remoteplayback
 
 import web.events.Event
 import web.events.EventInstance
-import web.events.EventType
 
 inline val <C : RemotePlayback> C.connectEvent: EventInstance<Event, C, C>
-    get() = EventInstance(this, EventType("connect"))
+    get() = EventInstance(this, Event.connect())
 
 inline val <C : RemotePlayback> C.connectingEvent: EventInstance<Event, C, C>
-    get() = EventInstance(this, EventType("connecting"))
+    get() = EventInstance(this, Event.connecting())
 
 inline val <C : RemotePlayback> C.disconnectEvent: EventInstance<Event, C, C>
-    get() = EventInstance(this, EventType("disconnect"))
+    get() = EventInstance(this, Event.disconnect())

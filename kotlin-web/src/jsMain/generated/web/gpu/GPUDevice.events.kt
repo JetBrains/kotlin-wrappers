@@ -3,7 +3,6 @@
 package web.gpu
 
 import web.events.EventInstance
-import web.events.EventType
 
 inline val <C : GPUDevice> C.uncapturedErrorEvent: EventInstance<GPUUncapturedErrorEvent, C, C>
-    get() = EventInstance(this, EventType("uncapturederror"))
+    get() = EventInstance(this, GPUUncapturedErrorEvent.uncapturedError())

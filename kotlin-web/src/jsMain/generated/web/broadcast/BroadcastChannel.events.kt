@@ -3,11 +3,10 @@
 package web.broadcast
 
 import web.events.EventInstance
-import web.events.EventType
 import web.messaging.MessageEvent
 
 inline val <C : BroadcastChannel> C.messageEvent: EventInstance<MessageEvent<Any?>, C, C>
-    get() = EventInstance(this, EventType("message"))
+    get() = EventInstance(this, MessageEvent.message())
 
 inline val <C : BroadcastChannel> C.messageErrorEvent: EventInstance<MessageEvent<Any?>, C, C>
-    get() = EventInstance(this, EventType("messageerror"))
+    get() = EventInstance(this, MessageEvent.messageError())

@@ -3,13 +3,12 @@
 package web.idb
 
 import web.events.EventInstance
-import web.events.EventType
 
 inline val <C : IDBOpenDBRequest> C.blockedEvent: EventInstance<IDBVersionChangeEvent, C, C>
-    get() = EventInstance(this, EventType("blocked"))
+    get() = EventInstance(this, IDBVersionChangeEvent.blocked())
 
 inline val <C : IDBOpenDBRequest> C.successEvent: EventInstance<IDBVersionChangeEvent, C, C>
-    get() = EventInstance(this, EventType("success"))
+    get() = EventInstance(this, IDBVersionChangeEvent.success())
 
 inline val <C : IDBOpenDBRequest> C.upgradeneededEvent: EventInstance<IDBVersionChangeEvent, C, C>
-    get() = EventInstance(this, EventType("upgradeneeded"))
+    get() = EventInstance(this, IDBVersionChangeEvent.upgradeneeded())

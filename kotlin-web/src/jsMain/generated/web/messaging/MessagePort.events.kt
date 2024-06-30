@@ -4,13 +4,12 @@ package web.messaging
 
 import web.events.Event
 import web.events.EventInstance
-import web.events.EventType
 
 inline val <C : MessagePort> C.closeEvent: EventInstance<Event, C, C>
-    get() = EventInstance(this, EventType("close"))
+    get() = EventInstance(this, Event.close())
 
 inline val <C : MessagePort> C.messageEvent: EventInstance<MessageEvent<Any?>, C, C>
-    get() = EventInstance(this, EventType("message"))
+    get() = EventInstance(this, MessageEvent.message())
 
 inline val <C : MessagePort> C.messageErrorEvent: EventInstance<MessageEvent<Any?>, C, C>
-    get() = EventInstance(this, EventType("messageerror"))
+    get() = EventInstance(this, MessageEvent.messageError())

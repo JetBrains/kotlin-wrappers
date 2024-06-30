@@ -32,5 +32,5 @@ open external class ToggleEvent(
     @JsAlias(THIS)
     override fun asInit(): ToggleEventInit
 
-    companion object
+    companion object : ToggleEventTypes
 }

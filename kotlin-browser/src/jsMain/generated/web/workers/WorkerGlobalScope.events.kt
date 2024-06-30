@@ -5,26 +5,25 @@ package web.workers
 import web.csp.SecurityPolicyViolationEvent
 import web.events.Event
 import web.events.EventInstance
-import web.events.EventType
 import web.promise.PromiseRejectionEvent
 
 inline val <C : WorkerGlobalScope> C.errorEvent: EventInstance<Event, C, C>
-    get() = EventInstance(this, EventType("error"))
+    get() = EventInstance(this, Event.error())
 
 inline val <C : WorkerGlobalScope> C.languageChangeEvent: EventInstance<Event, C, C>
-    get() = EventInstance(this, EventType("languagechange"))
+    get() = EventInstance(this, Event.languageChange())
 
 inline val <C : WorkerGlobalScope> C.offlineEvent: EventInstance<Event, C, C>
-    get() = EventInstance(this, EventType("offline"))
+    get() = EventInstance(this, Event.offline())
 
 inline val <C : WorkerGlobalScope> C.onlineEvent: EventInstance<Event, C, C>
-    get() = EventInstance(this, EventType("online"))
+    get() = EventInstance(this, Event.online())
 
 inline val <C : WorkerGlobalScope> C.rejectionHandledEvent: EventInstance<PromiseRejectionEvent, C, C>
-    get() = EventInstance(this, EventType("rejectionhandled"))
+    get() = EventInstance(this, PromiseRejectionEvent.rejectionHandled())
 
 inline val <C : WorkerGlobalScope> C.securityPolicyViolationEvent: EventInstance<SecurityPolicyViolationEvent, C, C>
-    get() = EventInstance(this, EventType("securitypolicyviolation"))
+    get() = EventInstance(this, SecurityPolicyViolationEvent.securityPolicyViolation())
 
 inline val <C : WorkerGlobalScope> C.unhandledRejectionEvent: EventInstance<PromiseRejectionEvent, C, C>
-    get() = EventInstance(this, EventType("unhandledrejection"))
+    get() = EventInstance(this, PromiseRejectionEvent.unhandledRejection())

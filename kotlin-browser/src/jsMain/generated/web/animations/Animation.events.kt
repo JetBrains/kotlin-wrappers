@@ -3,13 +3,12 @@
 package web.animations
 
 import web.events.EventInstance
-import web.events.EventType
 
 inline val <C : Animation> C.cancelEvent: EventInstance<AnimationPlaybackEvent, C, C>
-    get() = EventInstance(this, EventType("cancel"))
+    get() = EventInstance(this, AnimationPlaybackEvent.cancel())
 
 inline val <C : Animation> C.finishEvent: EventInstance<AnimationPlaybackEvent, C, C>
-    get() = EventInstance(this, EventType("finish"))
+    get() = EventInstance(this, AnimationPlaybackEvent.finish())
 
 inline val <C : Animation> C.removeEvent: EventInstance<AnimationPlaybackEvent, C, C>
-    get() = EventInstance(this, EventType("remove"))
+    get() = EventInstance(this, AnimationPlaybackEvent.remove())

@@ -11,6 +11,9 @@ sealed external class IDBVersionChangeEventTypes {
     @JsValue("blocked")
     fun <C : EventTarget> blocked(): EventType<IDBVersionChangeEvent, C>
 
+    @JsValue("success")
+    fun <C : EventTarget> success(): EventType<IDBVersionChangeEvent, C>
+
     @JsValue("upgradeneeded")
     fun <C : EventTarget> upgradeneeded(): EventType<IDBVersionChangeEvent, C>
 

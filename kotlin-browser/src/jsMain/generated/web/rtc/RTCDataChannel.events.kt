@@ -4,23 +4,22 @@ package web.rtc
 
 import web.events.Event
 import web.events.EventInstance
-import web.events.EventType
 import web.messaging.MessageEvent
 
 inline val <C : RTCDataChannel> C.bufferedAmountLowEvent: EventInstance<Event, C, C>
-    get() = EventInstance(this, EventType("bufferedamountlow"))
+    get() = EventInstance(this, Event.bufferedAmountLow())
 
 inline val <C : RTCDataChannel> C.closeEvent: EventInstance<Event, C, C>
-    get() = EventInstance(this, EventType("close"))
+    get() = EventInstance(this, Event.close())
 
 inline val <C : RTCDataChannel> C.closingEvent: EventInstance<Event, C, C>
-    get() = EventInstance(this, EventType("closing"))
+    get() = EventInstance(this, Event.closing())
 
 inline val <C : RTCDataChannel> C.errorEvent: EventInstance<RTCErrorEvent, C, C>
-    get() = EventInstance(this, EventType("error"))
+    get() = EventInstance(this, RTCErrorEvent.error())
 
 inline val <C : RTCDataChannel> C.messageEvent: EventInstance<MessageEvent<Any?>, C, C>
-    get() = EventInstance(this, EventType("message"))
+    get() = EventInstance(this, MessageEvent.message())
 
 inline val <C : RTCDataChannel> C.openEvent: EventInstance<Event, C, C>
-    get() = EventInstance(this, EventType("open"))
+    get() = EventInstance(this, Event.open())
