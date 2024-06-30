@@ -18,7 +18,7 @@ import web.rendering.RenderingContextId
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas)
  */
-external class OffscreenCanvas(
+open external class OffscreenCanvas(
     width: JsLong,
     height: JsLong,
 ) : EventTarget,

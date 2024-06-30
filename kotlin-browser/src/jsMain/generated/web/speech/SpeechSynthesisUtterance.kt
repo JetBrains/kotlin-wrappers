@@ -10,7 +10,7 @@ import web.events.EventTarget
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance)
  */
-external class SpeechSynthesisUtterance(
+open external class SpeechSynthesisUtterance(
     text: String = definedExternally,
 ) : EventTarget {
     /**

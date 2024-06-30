@@ -13,7 +13,7 @@ import web.events.EventTarget
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification)
  */
-external class Notification(
+open external class Notification(
     title: String,
     options: NotificationOptions = definedExternally,
 ) : EventTarget {

@@ -14,7 +14,7 @@ import web.events.EventTarget
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder)
  */
-external class VideoDecoder(
+open external class VideoDecoder(
     init: VideoDecoderInit,
 ) : EventTarget {
     /**

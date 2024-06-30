@@ -9,7 +9,7 @@ import web.messaging.MessageEvent
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel)
  */
-external class BroadcastChannel(
+open external class BroadcastChannel(
     name: String,
 ) : EventTarget {
     /**

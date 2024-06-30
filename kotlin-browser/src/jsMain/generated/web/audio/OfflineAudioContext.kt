@@ -12,7 +12,7 @@ import web.events.EventHandler
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext)
  */
-external class OfflineAudioContext(
+open external class OfflineAudioContext(
     contextOptions: OfflineAudioContextOptions,
 ) : BaseAudioContext {
     constructor(

@@ -18,7 +18,7 @@ import web.url.URL
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket)
  */
-external class WebSocket(
+open external class WebSocket(
     url: String,
     protocols: String = definedExternally,
 ) : EventTarget {

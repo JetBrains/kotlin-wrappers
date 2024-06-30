@@ -18,7 +18,7 @@ import web.media.streams.MediaStreamTrack
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection)
  */
-external class RTCPeerConnection(
+open external class RTCPeerConnection(
     configuration: RTCConfiguration = definedExternally,
 ) : EventTarget {
     /**

@@ -11,7 +11,7 @@ import web.url.URL
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource)
  */
-external class EventSource(
+open external class EventSource(
     url: String,
     init: EventSourceInit = definedExternally,
 ) : EventTarget {

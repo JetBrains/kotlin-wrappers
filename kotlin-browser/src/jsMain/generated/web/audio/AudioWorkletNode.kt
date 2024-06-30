@@ -11,7 +11,7 @@ import web.messaging.MessagePort
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletNode)
  */
-external class AudioWorkletNode(
+open external class AudioWorkletNode(
     context: BaseAudioContext,
     name: String,
     options: AudioWorkletNodeOptions = definedExternally,

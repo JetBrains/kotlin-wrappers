@@ -14,7 +14,7 @@ import web.events.EventTarget
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder)
  */
-external class VideoEncoder(
+open external class VideoEncoder(
     init: VideoEncoderInit,
 ) : EventTarget {
     /**
