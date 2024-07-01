@@ -87,4 +87,16 @@ external class SkyBox(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SkyBox.html#destroy">Online Documentation</a>
      */
     fun destroy()
+
+    companion object {
+        /**
+         * Creates a skybox instance with the default starmap for the Earth.
+         * ```
+         * viewer.scene.skyBox = SkyBox.createEarthSkyBox();
+         * ```
+         * @return The default skybox for the Earth
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SkyBox.html#.createEarthSkyBox">Online Documentation</a>
+         */
+        fun createEarthSkyBox(): SkyBox
+    }
 }

@@ -37,7 +37,7 @@ external class WallGeometry(
      * @property [minimumHeights] An array parallel to `positions` that give the minimum height of the
      *   wall at `positions`. If undefined, the height at each position is 0.0.
      * @property [ellipsoid] The ellipsoid for coordinate manipulation
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @property [vertexFormat] The vertex attributes to be computed.
      *   Default value - [VertexFormat.DEFAULT]
      */
@@ -117,7 +117,7 @@ external class WallGeometry(
          * @property [minimumHeight] A constant that defines the minimum height of the
          *   wall at `positions`. If undefined, the height at each position is 0.0.
          * @property [ellipsoid] The ellipsoid for coordinate manipulation
-         *   Default value - [Ellipsoid.WGS84]
+         *   Default value - [Ellipsoid.default]
          * @property [vertexFormat] The vertex attributes to be computed.
          *   Default value - [VertexFormat.DEFAULT]
          */

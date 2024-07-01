@@ -558,7 +558,7 @@ external class Cartesian3(
          * @param [height] The height, in meters, above the ellipsoid.
          *   Default value - `0.0`
          * @param [ellipsoid] The ellipsoid on which the position lies.
-         *   Default value - [Ellipsoid.WGS84]
+         *   Default value - [Ellipsoid.default]
          * @param [result] The object onto which to store the result.
          * @return The position
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian3.html#.fromDegrees">Online Documentation</a>
@@ -581,7 +581,7 @@ external class Cartesian3(
          * @param [height] The height, in meters, above the ellipsoid.
          *   Default value - `0.0`
          * @param [ellipsoid] The ellipsoid on which the position lies.
-         *   Default value - [Ellipsoid.WGS84]
+         *   Default value - [Ellipsoid.default]
          * @param [result] The object onto which to store the result.
          * @return The position
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian3.html#.fromRadians">Online Documentation</a>
@@ -601,7 +601,7 @@ external class Cartesian3(
          * ```
          * @param [coordinates] A list of longitude and latitude values. Values alternate [longitude, latitude, longitude, latitude...].
          * @param [ellipsoid] The ellipsoid on which the coordinates lie.
-         *   Default value - [Ellipsoid.WGS84]
+         *   Default value - [Ellipsoid.default]
          * @param [result] An array of Cartesian3 objects to store the result.
          * @return The array of positions.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian3.html#.fromDegreesArray">Online Documentation</a>
@@ -619,7 +619,7 @@ external class Cartesian3(
          * ```
          * @param [coordinates] A list of longitude and latitude values. Values alternate [longitude, latitude, longitude, latitude...].
          * @param [ellipsoid] The ellipsoid on which the coordinates lie.
-         *   Default value - [Ellipsoid.WGS84]
+         *   Default value - [Ellipsoid.default]
          * @param [result] An array of Cartesian3 objects to store the result.
          * @return The array of positions.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian3.html#.fromRadiansArray">Online Documentation</a>
@@ -637,7 +637,7 @@ external class Cartesian3(
          * ```
          * @param [coordinates] A list of longitude, latitude and height values. Values alternate [longitude, latitude, height, longitude, latitude, height...].
          * @param [ellipsoid] The ellipsoid on which the position lies.
-         *   Default value - [Ellipsoid.WGS84]
+         *   Default value - [Ellipsoid.default]
          * @param [result] An array of Cartesian3 objects to store the result.
          * @return The array of positions.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian3.html#.fromDegreesArrayHeights">Online Documentation</a>
@@ -655,7 +655,7 @@ external class Cartesian3(
          * ```
          * @param [coordinates] A list of longitude, latitude and height values. Values alternate [longitude, latitude, height, longitude, latitude, height...].
          * @param [ellipsoid] The ellipsoid on which the position lies.
-         *   Default value - [Ellipsoid.WGS84]
+         *   Default value - [Ellipsoid.default]
          * @param [result] An array of Cartesian3 objects to store the result.
          * @return The array of positions.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian3.html#.fromRadiansArrayHeights">Online Documentation</a>

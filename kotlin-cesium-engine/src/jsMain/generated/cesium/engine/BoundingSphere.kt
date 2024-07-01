@@ -148,7 +148,7 @@ external class BoundingSphere(
          * on the ellipsoid and contained in the rectangle. It may not be accurate for all rectangles on all types of ellipsoids.
          * @param [rectangle] The valid rectangle used to create a bounding sphere.
          * @param [ellipsoid] The ellipsoid used to determine positions of the rectangle.
-         *   Default value - [Ellipsoid.WGS84]
+         *   Default value - [Ellipsoid.default]
          * @param [surfaceHeight] The height above the surface of the ellipsoid.
          *   Default value - `0.0`
          * @param [result] The object onto which to store the result.

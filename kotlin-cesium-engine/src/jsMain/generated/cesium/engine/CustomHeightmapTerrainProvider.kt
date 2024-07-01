@@ -41,7 +41,8 @@ external class CustomHeightmapTerrainProvider(
      *   is used.
      * @property [ellipsoid] The ellipsoid.  If the tilingScheme is specified,
      *   this parameter is ignored and the tiling scheme's ellipsoid is used instead. If neither
-     *   parameter is specified, the WGS84 ellipsoid is used.
+     *   parameter is specified, the default ellipsoid is used.
+     *   Default value - [Ellipsoid.default]
      * @property [credit] A credit for the data source, which is displayed on the canvas.
      */
     @JsPlainObject
@@ -93,7 +94,12 @@ external class CustomHeightmapTerrainProvider(
      */
     override val hasVertexNormals: Boolean
 
-
+    /**
+     * Gets an object that can be used to determine availability of terrain from this provider, such as
+     * at points and in rectangles. This property may be undefined if availability
+     * information is not available.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CustomHeightmapTerrainProvider.html#availability">Online Documentation</a>
+     */
     override val availability: TileAvailability
 
     /**

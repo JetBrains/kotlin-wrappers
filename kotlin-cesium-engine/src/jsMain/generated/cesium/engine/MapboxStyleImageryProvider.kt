@@ -191,7 +191,8 @@ external class MapboxStyleImageryProvider(
      * @property [tilesize] The size of the image tiles.
      *   Default value - `512`
      * @property [scaleFactor] Determines if tiles are rendered at a @2x scale factor.
-     * @property [ellipsoid] The ellipsoid.  If not specified, the WGS84 ellipsoid is used.
+     * @property [ellipsoid] The ellipsoid.  If not specified, the default ellipsoid is used.
+     *   Default value - [Ellipsoid.default]
      * @property [minimumLevel] The minimum level-of-detail supported by the imagery provider.  Take care when specifying
      *   this that the number of tiles at the minimum level is small, such as four or less.  A larger number is likely
      *   to result in rendering problems.

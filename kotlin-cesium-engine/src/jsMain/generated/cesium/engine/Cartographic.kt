@@ -92,7 +92,7 @@ external class Cartographic(
          * resulting object will be in radians.
          * @param [cartesian] The Cartesian position to convert to cartographic representation.
          * @param [ellipsoid] The ellipsoid on which the position lies.
-         *   Default value - [Ellipsoid.WGS84]
+         *   Default value - [Ellipsoid.default]
          * @param [result] The object onto which to store the result.
          * @return The modified result parameter, new Cartographic instance if none was provided, or undefined if the cartesian is at the center of the ellipsoid.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartographic.html#.fromCartesian">Online Documentation</a>
@@ -108,7 +108,7 @@ external class Cartographic(
          * object should be in radians.
          * @param [cartographic] Input to be converted into a Cartesian3 output.
          * @param [ellipsoid] The ellipsoid on which the position lies.
-         *   Default value - [Ellipsoid.WGS84]
+         *   Default value - [Ellipsoid.default]
          * @param [result] The object onto which to store the result.
          * @return The position
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartographic.html#.toCartesian">Online Documentation</a>

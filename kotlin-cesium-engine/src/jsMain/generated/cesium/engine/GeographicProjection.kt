@@ -11,13 +11,13 @@ package cesium.engine
 /**
  * A simple map projection where longitude and latitude are linearly mapped to X and Y by multiplying
  * them by the [Ellipsoid.maximumRadius].  This projection
- * is commonly known as geographic, equirectangular, equidistant cylindrical, or plate carrée.  It
+ * is commonly known as geographic, equirectangular, equidistant cylindrical, or plate carrée. When using the WGS84 ellipsoid, it
  * is also known as EPSG:4326.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeographicProjection.html">Online Documentation</a>
  *
  * @constructor
  * @property [ellipsoid] The ellipsoid.
- *   Default value - [Ellipsoid.WGS84]
+ *   Default value - [Ellipsoid.default]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeographicProjection.html">Online Documentation</a>
  */
 external class GeographicProjection(

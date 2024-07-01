@@ -25,7 +25,7 @@ external class RectangleOutlineGeometry(
     /**
      * @property [rectangle] A cartographic rectangle with north, south, east and west properties in radians.
      * @property [ellipsoid] The ellipsoid on which the rectangle lies.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @property [granularity] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
      *   Default value - [Math.RADIANS_PER_DEGREE]
      * @property [height] The distance in meters between the rectangle and the ellipsoid surface.

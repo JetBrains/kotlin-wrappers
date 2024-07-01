@@ -169,7 +169,8 @@ private constructor() {
 
     /**
      * Initialization options for the GoogleEarthEnterpriseImageryProvider constructor
-     * @property [ellipsoid] The ellipsoid.  If not specified, the WGS84 ellipsoid is used.
+     * @property [ellipsoid] The ellipsoid.  If not specified, the default ellipsoid is used.
+     *   Default value - [Ellipsoid.default]
      * @property [tileDiscardPolicy] The policy that determines if a tile
      *   is invalid and should be discarded. If this value is not specified, a default
      *   is to discard tiles that fail to download.

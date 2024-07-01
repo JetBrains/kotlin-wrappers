@@ -188,7 +188,8 @@ external class MapboxImageryProvider(
      * @property [accessToken] The public access token for the imagery.
      * @property [format] The format of the image request.
      *   Default value - `'png'`
-     * @property [ellipsoid] The ellipsoid.  If not specified, the WGS84 ellipsoid is used.
+     * @property [ellipsoid] The ellipsoid.  If not specified, the default ellipsoid is used.
+     *   Default value - [Ellipsoid.default]
      * @property [minimumLevel] The minimum level-of-detail supported by the imagery provider.  Take care when specifying
      *   this that the number of tiles at the minimum level is small, such as four or less.  A larger number is likely
      *   to result in rendering problems.

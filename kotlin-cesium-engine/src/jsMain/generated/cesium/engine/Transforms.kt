@@ -43,7 +43,7 @@ external object Transforms {
      * ```
      * @param [origin] The center point of the local reference frame.
      * @param [ellipsoid] The ellipsoid whose fixed frame is used in the transformation.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @param [result] The object onto which to store the result.
      * @return The modified result parameter or a new Matrix4 instance if none was provided.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Transforms.html#.eastNorthUpToFixedFrame">Online Documentation</a>
@@ -68,7 +68,7 @@ external object Transforms {
      * ```
      * @param [origin] The center point of the local reference frame.
      * @param [ellipsoid] The ellipsoid whose fixed frame is used in the transformation.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @param [result] The object onto which to store the result.
      * @return The modified result parameter or a new Matrix4 instance if none was provided.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Transforms.html#.northEastDownToFixedFrame">Online Documentation</a>
@@ -93,7 +93,7 @@ external object Transforms {
      * ```
      * @param [origin] The center point of the local reference frame.
      * @param [ellipsoid] The ellipsoid whose fixed frame is used in the transformation.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @param [result] The object onto which to store the result.
      * @return The modified result parameter or a new Matrix4 instance if none was provided.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Transforms.html#.northUpEastToFixedFrame">Online Documentation</a>
@@ -118,7 +118,7 @@ external object Transforms {
      * ```
      * @param [origin] The center point of the local reference frame.
      * @param [ellipsoid] The ellipsoid whose fixed frame is used in the transformation.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @param [result] The object onto which to store the result.
      * @return The modified result parameter or a new Matrix4 instance if none was provided.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Transforms.html#.northWestUpToFixedFrame">Online Documentation</a>
@@ -146,7 +146,7 @@ external object Transforms {
      * @param [origin] The center point of the local reference frame.
      * @param [headingPitchRoll] The heading, pitch, and roll.
      * @param [ellipsoid] The ellipsoid whose fixed frame is used in the transformation.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @param [fixedFrameTransform] A 4x4 transformation
      *   matrix from a reference frame to the provided ellipsoid's fixed reference frame
      *   Default value - [Transforms.eastNorthUpToFixedFrame]
@@ -179,7 +179,7 @@ external object Transforms {
      * @param [origin] The center point of the local reference frame.
      * @param [headingPitchRoll] The heading, pitch, and roll.
      * @param [ellipsoid] The ellipsoid whose fixed frame is used in the transformation.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @param [fixedFrameTransform] A 4x4 transformation
      *   matrix from a reference frame to the provided ellipsoid's fixed reference frame
      *   Default value - [Transforms.eastNorthUpToFixedFrame]
@@ -201,7 +201,7 @@ external object Transforms {
      * are above the plane. Negative pitch angles are below the plane. Roll is the first rotation applied about the local east axis.
      * @param [transform] The transform
      * @param [ellipsoid] The ellipsoid whose fixed frame is used in the transformation.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @param [fixedFrameTransform] A 4x4 transformation
      *   matrix from a reference frame to the provided ellipsoid's fixed reference frame
      *   Default value - [Transforms.eastNorthUpToFixedFrame]
@@ -337,7 +337,7 @@ external object Transforms {
      * @param [position] The position to transform.
      * @param [velocity] The velocity vector to transform.
      * @param [ellipsoid] The ellipsoid whose fixed frame is used in the transformation.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @param [result] The object onto which to store the result.
      * @return The modified result parameter or a new Matrix3 instance if none was provided.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Transforms.html#.rotationMatrixFromPositionVelocity">Online Documentation</a>

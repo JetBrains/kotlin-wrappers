@@ -12,7 +12,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * // 1. create a rectangle
  * const rectangle = new RectangleGeometry({
- *   ellipsoid : Ellipsoid.WGS84,
+ *   ellipsoid : Ellipsoid.default,
  *   rectangle : Rectangle.fromDegrees(-80.0, 39.0, -74.0, 42.0),
  *   height : 10000.0
  * });
@@ -20,7 +20,7 @@ import kotlinx.js.JsPlainObject
  *
  * // 2. create an extruded rectangle without a top
  * const rectangle = new RectangleGeometry({
- *   ellipsoid : Ellipsoid.WGS84,
+ *   ellipsoid : Ellipsoid.default,
  *   rectangle : Rectangle.fromDegrees(-80.0, 39.0, -74.0, 42.0),
  *   height : 10000.0,
  *   extrudedHeight: 300000
@@ -37,7 +37,7 @@ external class RectangleGeometry(
      * @property [vertexFormat] The vertex attributes to be computed.
      *   Default value - [VertexFormat.DEFAULT]
      * @property [ellipsoid] The ellipsoid on which the rectangle lies.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @property [granularity] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
      *   Default value - [Math.RADIANS_PER_DEGREE]
      * @property [height] The distance in meters between the rectangle and the ellipsoid surface.
@@ -111,7 +111,7 @@ external class RectangleGeometry(
         /**
          * @property [rectangle] A cartographic rectangle with north, south, east and west properties in radians.
          * @property [ellipsoid] The ellipsoid on which the rectangle lies.
-         *   Default value - [Ellipsoid.WGS84]
+         *   Default value - [Ellipsoid.default]
          * @property [granularity] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
          *   Default value - [Math.RADIANS_PER_DEGREE]
          * @property [rotation] The rotation of the rectangle, in radians. A positive rotation is counter-clockwise.

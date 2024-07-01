@@ -19,7 +19,7 @@ import js.array.ReadonlyArray
  * @constructor
  * @property [origin] The point on the surface of the ellipsoid where the tangent plane touches.
  * @property [ellipsoid] The ellipsoid to use.
- *   Default value - [Ellipsoid.WGS84]
+ *   Default value - [Ellipsoid.default]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipsoidTangentPlane.html">Online Documentation</a>
  */
 external class EllipsoidTangentPlane(
@@ -129,7 +129,7 @@ external class EllipsoidTangentPlane(
          * point of the provided Cartesians.
          * @param [cartesians] The list of positions surrounding the center point.
          * @param [ellipsoid] The ellipsoid to use.
-         *   Default value - [Ellipsoid.WGS84]
+         *   Default value - [Ellipsoid.default]
          * @return The new instance of EllipsoidTangentPlane.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipsoidTangentPlane.html#.fromPoints">Online Documentation</a>
          */

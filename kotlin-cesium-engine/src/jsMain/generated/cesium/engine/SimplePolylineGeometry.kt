@@ -36,7 +36,7 @@ external class SimplePolylineGeometry(
      * @property [granularity] The distance, in radians, between each latitude and longitude if options.arcType is not ArcType.NONE. Determines the number of positions in the buffer.
      *   Default value - [Math.RADIANS_PER_DEGREE]
      * @property [ellipsoid] The ellipsoid to be used as a reference.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      */
     @JsPlainObject
     sealed interface ConstructorOptions {

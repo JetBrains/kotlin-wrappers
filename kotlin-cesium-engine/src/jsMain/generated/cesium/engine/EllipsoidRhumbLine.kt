@@ -16,7 +16,7 @@ package cesium.engine
  * @property [start] The initial planetodetic point on the path.
  * @property [end] The final planetodetic point on the path.
  * @property [ellipsoid] The ellipsoid on which the rhumb line lies.
- *   Default value - [Ellipsoid.WGS84]
+ *   Default value - [Ellipsoid.default]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipsoidRhumbLine.html">Online Documentation</a>
  */
 external class EllipsoidRhumbLine(
@@ -104,7 +104,7 @@ external class EllipsoidRhumbLine(
          * @param [heading] The heading in radians.
          * @param [distance] The rhumb line distance between the start and end point.
          * @param [ellipsoid] The ellipsoid on which the rhumb line lies.
-         *   Default value - [Ellipsoid.WGS84]
+         *   Default value - [Ellipsoid.default]
          * @param [result] The object in which to store the result.
          * @return The EllipsoidRhumbLine object.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipsoidRhumbLine.html#.fromStartHeadingDistance">Online Documentation</a>

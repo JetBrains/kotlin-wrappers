@@ -24,7 +24,7 @@ external class CorridorOutlineGeometry(
      * @property [positions] An array of positions that define the center of the corridor outline.
      * @property [width] The distance between the edges of the corridor outline.
      * @property [ellipsoid] The ellipsoid to be used as a reference.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @property [granularity] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
      *   Default value - [Math.RADIANS_PER_DEGREE]
      * @property [height] The distance in meters between the positions and the ellipsoid surface.

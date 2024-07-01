@@ -42,7 +42,7 @@ external class PolylineGeometry(
      * @property [vertexFormat] The vertex attributes to be computed.
      *   Default value - [VertexFormat.DEFAULT]
      * @property [ellipsoid] The ellipsoid to be used as a reference.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      */
     @JsPlainObject
     sealed interface ConstructorOptions {

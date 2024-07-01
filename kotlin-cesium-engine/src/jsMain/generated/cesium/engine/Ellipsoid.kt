@@ -333,6 +333,21 @@ external class Ellipsoid(
         val MOON: Ellipsoid
 
         /**
+         * The default ellipsoid used when not otherwise specified.
+         * ```
+         * Ellipsoid.default = Ellipsoid.MOON;
+         *
+         * // Apollo 11 landing site
+         * const position = Cartesian3.fromRadians(
+         *   0.67416,
+         *   23.47315,
+         * );
+         * ```
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Ellipsoid.html#.default">Online Documentation</a>
+         */
+        var default: Ellipsoid
+
+        /**
          * The number of elements used to pack the object into an array.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Ellipsoid.html#.packedLength">Online Documentation</a>
          */

@@ -214,7 +214,7 @@ external class KmlDataSource(
      * @property [clampToGround] true if we want the geometry features (Polygons, LineStrings and LinearRings) clamped to the ground.
      *   Default value - `false`
      * @property [ellipsoid] The global ellipsoid used for geographical calculations.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @property [screenOverlayContainer] A container for ScreenOverlay images.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlDataSource.html#.ConstructorOptions">Online Documentation</a>
      */
@@ -291,7 +291,7 @@ external class KmlDataSource(
          * @property [clampToGround] true if we want the geometry features (Polygons, LineStrings and LinearRings) clamped to the ground.
          *   Default value - `false`
          * @property [ellipsoid] The global ellipsoid used for geographical calculations.
-         *   Default value - [Ellipsoid.WGS84]
+         *   Default value - [Ellipsoid.default]
          * @property [screenOverlayContainer] A container for ScreenOverlay images.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlDataSource.html#.LoadOptions">Online Documentation</a>
          */

@@ -26,7 +26,7 @@ external class CircleGeometry(
      * @property [center] The circle's center point in the fixed frame.
      * @property [radius] The radius in meters.
      * @property [ellipsoid] The ellipsoid the circle will be on.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @property [height] The distance in meters between the circle and the ellipsoid surface.
      *   Default value - `0.0`
      * @property [granularity] The angular distance between points on the circle in radians.

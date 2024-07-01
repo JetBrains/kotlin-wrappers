@@ -91,7 +91,7 @@ external class PolygonGeometry(
      * @property [stRotation] The rotation of the texture coordinates, in radians. A positive rotation is counter-clockwise.
      *   Default value - `0.0`
      * @property [ellipsoid] The ellipsoid to be used as a reference.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @property [granularity] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
      *   Default value - [Math.RADIANS_PER_DEGREE]
      * @property [perPositionHeight] Use the height of options.positions for each position instead of using options.height to determine the height.
@@ -156,7 +156,7 @@ external class PolygonGeometry(
          * @property [stRotation] The rotation of the texture coordinates, in radians. A positive rotation is counter-clockwise.
          *   Default value - `0.0`
          * @property [ellipsoid] The ellipsoid to be used as a reference.
-         *   Default value - [Ellipsoid.WGS84]
+         *   Default value - [Ellipsoid.default]
          * @property [granularity] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
          *   Default value - [Math.RADIANS_PER_DEGREE]
          * @property [perPositionHeight] Use the height of options.positions for each position instead of using options.height to determine the height.
@@ -218,7 +218,7 @@ external class PolygonGeometry(
          * Computes a rectangle which encloses the polygon defined by the list of positions, including cases over the international date line and the poles.
          * @param [positions] A linear ring defining the outer boundary of the polygon.
          * @param [ellipsoid] The ellipsoid to be used as a reference.
-         *   Default value - [Ellipsoid.WGS84]
+         *   Default value - [Ellipsoid.default]
          * @param [arcType] The type of line the polygon edges must follow. Valid options are [ArcType.GEODESIC] and [ArcType.RHUMB].
          *   Default value - [ArcType.GEODESIC]
          * @param [result] An object in which to store the result.

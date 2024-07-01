@@ -163,26 +163,26 @@ external class ScreenSpaceCameraController(
     var lookEventTypes: CameraEventType?
 
     /**
-     * The minimum height the camera must be before picking the terrain or scene content instead of the ellipsoid.
+     * The minimum height the camera must be before picking the terrain or scene content instead of the ellipsoid. Defaults to scene.ellipsoid.minimumRadius * 0.025 when another ellipsoid than WGS84 is used.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceCameraController.html#minimumPickingTerrainHeight">Online Documentation</a>
      */
     var minimumPickingTerrainHeight: Double
 
     /**
-     * The minimum distance the camera must be before testing for collision with terrain when zoom with inertia.
+     * The minimum distance the camera must be before testing for collision with terrain when zoom with inertia. Default to scene.ellipsoid.minimumRadius * 0.00063 when another ellipsoid than WGS84 is used.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceCameraController.html#minimumPickingTerrainDistanceWithInertia">Online Documentation</a>
      */
     var minimumPickingTerrainDistanceWithInertia: Double
 
     /**
-     * The minimum height the camera must be before testing for collision with terrain.
+     * The minimum height the camera must be before testing for collision with terrain. Default to scene.ellipsoid.minimumRadius * 0.0025 when another ellipsoid than WGS84 is used.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceCameraController.html#minimumCollisionTerrainHeight">Online Documentation</a>
      */
     var minimumCollisionTerrainHeight: Double
 
     /**
      * The minimum height the camera must be before switching from rotating a track ball to
-     * free look when clicks originate on the sky or in space.
+     * free look when clicks originate on the sky or in space. Defaults to ellipsoid.minimumRadius * 1.175 when another ellipsoid than WGS84 is used.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceCameraController.html#minimumTrackBallHeight">Online Documentation</a>
      */
     var minimumTrackBallHeight: Double

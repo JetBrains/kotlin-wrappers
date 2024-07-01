@@ -89,7 +89,7 @@ external class PolygonOutlineGeometry(
      * @property [vertexFormat] The vertex attributes to be computed.
      *   Default value - [VertexFormat.DEFAULT]
      * @property [ellipsoid] The ellipsoid to be used as a reference.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @property [granularity] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
      *   Default value - [Math.RADIANS_PER_DEGREE]
      * @property [perPositionHeight] Use the height of options.positions for each position instead of using options.height to determine the height.
@@ -171,7 +171,7 @@ external class PolygonOutlineGeometry(
          *   Default value - `0.0`
          * @property [extrudedHeight] The height of the polygon extrusion.
          * @property [ellipsoid] The ellipsoid to be used as a reference.
-         *   Default value - [Ellipsoid.WGS84]
+         *   Default value - [Ellipsoid.default]
          * @property [granularity] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
          *   Default value - [Math.RADIANS_PER_DEGREE]
          * @property [perPositionHeight] Use the height of options.positions for each position instead of using options.height to determine the height.

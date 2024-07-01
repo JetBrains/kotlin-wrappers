@@ -37,7 +37,7 @@ external class PolylineVolumeGeometry(
      * @property [polylinePositions] An array of [Cartesian3] positions that define the center of the polyline volume.
      * @property [shapePositions] An array of [Cartesian2] positions that define the shape to be extruded along the polyline
      * @property [ellipsoid] The ellipsoid to be used as a reference.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @property [granularity] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
      *   Default value - [Math.RADIANS_PER_DEGREE]
      * @property [vertexFormat] The vertex attributes to be computed.

@@ -228,6 +228,12 @@ external class Viewer(
     val camera: Camera
 
     /**
+     * Gets the default ellipsoid for the scene.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Viewer.html#ellipsoid">Online Documentation</a>
+     */
+    val ellipsoid: Ellipsoid
+
+    /**
      * Gets the post-process stages.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Viewer.html#postProcessStages">Online Documentation</a>
      */
@@ -837,11 +843,13 @@ external class Viewer(
      *   Default value - `createDefaultTerrainProviderViewModels()`
      * @property [baseLayer] The bottommost imagery layer applied to the globe. If set to `false`, no imagery provider will be added. This value is only valid if `baseLayerPicker` is set to false.
      *   Default value - `ImageryLayer.fromWorldImagery()`
+     * @property [ellipsoid] The default ellipsoid.
+     *   Default value - [Ellipsoid.default]
      * @property [terrainProvider] The terrain provider to use
      *   Default value - [EllipsoidTerrainProvider()][EllipsoidTerrainProvider]
      * @property [terrain] A terrain object which handles asynchronous terrain provider. Can only specify if options.terrainProvider is undefined.
-     * @property [skyBox] The skybox used to render the stars.  When `undefined`, the default stars are used. If set to `false`, no skyBox, Sun, or Moon will be added.
-     * @property [skyAtmosphere] Blue sky, and the glow around the Earth's limb.  Set to `false` to turn it off.
+     * @property [skyBox] The skybox used to render the stars. When `undefined` and the WGS84 ellipsoid used, the default stars are used. If set to `false`, no skyBox, Sun, or Moon will be added.
+     * @property [skyAtmosphere] Blue sky, and the glow around the Earth's limb. Enabled when the WGS84 ellipsoid used. Set to `false` to turn it off.
      * @property [fullscreenElement] The element or id to be placed into fullscreen mode when the full screen button is pressed.
      *   Default value - `document.body`
      * @property [useDefaultRenderLoop] True if this widget should control the render loop, false otherwise.
@@ -857,9 +865,9 @@ external class Viewer(
      * @property [sceneMode] The initial scene mode.
      *   Default value - [SceneMode.SCENE3D]
      * @property [mapProjection] The map projection to use in 2D and Columbus View modes.
-     *   Default value - [GeographicProjection()][GeographicProjection]
+     *   Default value - [GeographicProjection(options.ellipsoid)][GeographicProjection]
      * @property [globe] The globe to use in the scene.  If set to `false`, no globe will be added and the sky atmosphere will be hidden by default.
-     *   Default value - [Globe(mapProjection.ellipsoid)][Globe]
+     *   Default value - [Globe(options.ellipsoid)][Globe]
      * @property [orderIndependentTranslucency] If true and the configuration supports it, use order independent translucency.
      *   Default value - `true`
      * @property [creditContainer] The DOM element that will contain the [CreditDisplay].  If not specified, the credits are added to the bottom of the widget itself.
@@ -909,6 +917,7 @@ external class Viewer(
         var selectedTerrainProviderViewModel: ProviderViewModel?
         var terrainProviderViewModels: ReadonlyArray<ProviderViewModel>?
         var baseLayer: ImageryLayer /* | false */?
+        var ellipsoid: Ellipsoid?
         var terrainProvider: TerrainProvider?
         var terrain: Terrain?
         var skyBox: SkyBox /* | false */?

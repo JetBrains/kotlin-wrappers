@@ -134,7 +134,8 @@ private constructor() :
      * @property [token] The authorization token to use to connect to the service.
      * @property [ellipsoid] The ellipsoid.  If the tilingScheme is specified,
      *   this parameter is ignored and the tiling scheme's ellipsoid is used instead.
-     *   If neither parameter is specified, the WGS84 ellipsoid is used.
+     *   If neither parameter is specified, the default ellipsoid is used.
+     *   Default value - [Ellipsoid.default]
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGISTiledElevationTerrainProvider.html#.ConstructorOptions">Online Documentation</a>
      */
     @JsPlainObject

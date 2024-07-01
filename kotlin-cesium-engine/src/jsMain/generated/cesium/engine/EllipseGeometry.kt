@@ -29,7 +29,7 @@ external class EllipseGeometry(
      * @property [semiMajorAxis] The length of the ellipse's semi-major axis in meters.
      * @property [semiMinorAxis] The length of the ellipse's semi-minor axis in meters.
      * @property [ellipsoid] The ellipsoid the ellipse will be on.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @property [height] The distance in meters between the ellipse and the ellipsoid surface.
      *   Default value - `0.0`
      * @property [extrudedHeight] The distance in meters between the ellipse's extruded face and the ellipsoid surface.
@@ -109,7 +109,7 @@ external class EllipseGeometry(
          * @property [semiMajorAxis] The length of the ellipse's semi-major axis in meters.
          * @property [semiMinorAxis] The length of the ellipse's semi-minor axis in meters.
          * @property [ellipsoid] The ellipsoid the ellipse will be on.
-         *   Default value - [Ellipsoid.WGS84]
+         *   Default value - [Ellipsoid.default]
          * @property [rotation] The angle of rotation counter-clockwise from north.
          *   Default value - `0.0`
          * @property [granularity] The angular distance between points on the ellipse in radians.

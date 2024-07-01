@@ -178,7 +178,8 @@ private constructor() :
      *   Default value - `false`
      * @property [requestMetadata] Flag that indicates if the client should request per tile metadata from the server, if available.
      *   Default value - `true`
-     * @property [ellipsoid] The ellipsoid.  If not specified, the WGS84 ellipsoid is used.
+     * @property [ellipsoid] The ellipsoid.  If not specified, the default ellipsoid is used.
+     *   Default value - [Ellipsoid.default]
      * @property [credit] A credit for the data source, which is displayed on the canvas.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumTerrainProvider.html#.ConstructorOptions">Online Documentation</a>
      */

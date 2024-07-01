@@ -32,7 +32,7 @@ external class CoplanarPolygonGeometry(
      * @property [vertexFormat] The vertex attributes to be computed.
      *   Default value - [VertexFormat.DEFAULT]
      * @property [ellipsoid] The ellipsoid to be used as a reference.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @property [textureCoordinates] Texture coordinates as a [PolygonHierarchy] of [Cartesian2] points.
      */
     @JsPlainObject
@@ -77,7 +77,7 @@ external class CoplanarPolygonGeometry(
          * @property [stRotation] The rotation of the texture coordinates, in radians. A positive rotation is counter-clockwise.
          *   Default value - `0.0`
          * @property [ellipsoid] The ellipsoid to be used as a reference.
-         *   Default value - [Ellipsoid.WGS84]
+         *   Default value - [Ellipsoid.default]
          * @property [textureCoordinates] Texture coordinates as a [PolygonHierarchy] of [Cartesian2] points.
          */
         @JsPlainObject

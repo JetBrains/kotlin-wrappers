@@ -170,7 +170,8 @@ external class GridImageryProvider(
      *   Default value - [GeographicTilingScheme()][GeographicTilingScheme]
      * @property [ellipsoid] The ellipsoid.  If the tilingScheme is specified,
      *   this parameter is ignored and the tiling scheme's ellipsoid is used instead. If neither
-     *   parameter is specified, the WGS84 ellipsoid is used.
+     *   parameter is specified, the default ellipsoid is used.
+     *   Default value - [Ellipsoid.default]
      * @property [cells] The number of grids cells.
      *   Default value - `8`
      * @property [color] The color to draw grid lines.

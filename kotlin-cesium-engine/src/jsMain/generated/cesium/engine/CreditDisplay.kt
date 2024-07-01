@@ -27,7 +27,7 @@ import web.html.HTMLElement
  * @constructor
  * @property [container] The HTML element where credits will be displayed
  * @param [delimiter] The string to separate text credits
- *   Default value - `' • '`
+ *   Default value - `'•'`
  * @param [viewport] The HTML element that will contain the credits popup
  *   Default value - `document.body`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CreditDisplay.html">Online Documentation</a>

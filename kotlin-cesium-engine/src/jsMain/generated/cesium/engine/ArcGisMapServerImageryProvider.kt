@@ -258,7 +258,8 @@ external class ArcGisMapServerImageryProvider(
      *   Default value - [GeographicTilingScheme()][GeographicTilingScheme]
      * @property [ellipsoid] The ellipsoid.  If the tilingScheme is specified and used,
      *   this parameter is ignored and the tiling scheme's ellipsoid is used instead. If neither
-     *   parameter is specified, the WGS84 ellipsoid is used.
+     *   parameter is specified, the default ellipsoid is used.
+     *   Default value - [Ellipsoid.default]
      * @property [credit] A credit for the data source, which is displayed on the canvas.  This parameter is ignored when accessing a tiled server.
      * @property [tileWidth] The width of each tile in pixels.  This parameter is ignored when accessing a tiled server.
      *   Default value - `256`

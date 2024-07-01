@@ -43,7 +43,7 @@ external fun exportKmlAsync(options: ExportKmlOptions): Promise<Any /* exportKml
 /**
  * @property [entities] The EntityCollection to export as KML.
  * @property [ellipsoid] The ellipsoid for the output file.
- *   Default value - [Ellipsoid.WGS84]
+ *   Default value - [Ellipsoid.default]
  * @property [modelCallback] A callback that will be called with a [ModelGraphics] instance and should return the URI to use in the KML. Required if a model exists in the entity collection.
  * @property [time] The time value to use to get properties that are not time varying in KML.
  *   Default value - `entities.computeAvailability().start`

@@ -226,7 +226,8 @@ private constructor() {
      * @property [tileDiscardPolicy] The policy that determines if a tile
      *   is invalid and should be discarded. To ensure that no tiles are discarded, construct and pass
      *   a [NeverTileDiscardPolicy] for this parameter.
-     * @property [ellipsoid] The ellipsoid.  If not specified, the WGS84 ellipsoid is used.
+     * @property [ellipsoid] The ellipsoid.  If not specified, the default ellipsoid is used.
+     *   Default value - [Ellipsoid.default]
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseMapsProvider.html#.ConstructorOptions">Online Documentation</a>
      */
     @JsPlainObject

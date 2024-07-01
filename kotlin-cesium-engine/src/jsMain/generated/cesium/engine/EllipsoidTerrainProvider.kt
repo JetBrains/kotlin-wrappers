@@ -22,7 +22,8 @@ external class EllipsoidTerrainProvider(
      *   is used.
      * @property [ellipsoid] The ellipsoid.  If the tilingScheme is specified,
      *   this parameter is ignored and the tiling scheme's ellipsoid is used instead. If neither
-     *   parameter is specified, the WGS84 ellipsoid is used.
+     *   parameter is specified, the default ellipsoid is used.
+     *   Default value - [Ellipsoid.default]
      */
     @JsPlainObject
     sealed interface ConstructorOptions {

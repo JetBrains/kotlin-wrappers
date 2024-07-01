@@ -138,7 +138,8 @@ private constructor() :
 
     /**
      * Initialization options for GoogleEarthEnterpriseTerrainProvider constructor
-     * @property [ellipsoid] The ellipsoid.  If not specified, the WGS84 ellipsoid is used.
+     * @property [ellipsoid] The ellipsoid.  If not specified, the default ellipsoid is used.
+     *   Default value - [Ellipsoid.default]
      * @property [credit] A credit for the data source, which is displayed on the canvas.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseTerrainProvider.html#.ConstructorOptions">Online Documentation</a>
      */

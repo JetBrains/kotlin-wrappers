@@ -50,7 +50,7 @@ external class SelectionIndicatorViewModel(
      * Gets or sets the function for converting the world position of the object to the screen space position.
      * ```
      * selectionIndicatorViewModel.computeScreenSpacePosition = function(position, result) {
-     *     return SceneTransforms.wgs84ToWindowCoordinates(scene, position, result);
+     *     return SceneTransforms.worldToWindowCoordinates(scene, position, result);
      * };
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SelectionIndicatorViewModel.html#computeScreenSpacePosition">Online Documentation</a>

@@ -16,8 +16,8 @@ external class WebMercatorTilingScheme(
 ) : TilingScheme {
     /**
      * @property [ellipsoid] The ellipsoid whose surface is being tiled. Defaults to
-     *   the WGS84 ellipsoid.
-     *   Default value - [Ellipsoid.WGS84]
+     *   the default ellipsoid.
+     *   Default value - [Ellipsoid.default]
      * @property [numberOfLevelZeroTilesX] The number of tiles in the X direction at level zero of
      *   the tile tree.
      *   Default value - `1`
