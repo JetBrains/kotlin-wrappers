@@ -150,7 +150,7 @@ external interface ExportedClockPickerProps<TDate> : react.Props {
      *     time === null ? 'No time selected' : `Selected time is ${adapter.format(time, 'fullTime')}`
      *   }`
      */
-    var getClockLabelText: ((view: ClockPickerView, time: TDate?, adapter: dynamic /* MuiPickersAdapter<TDate> */) -> String)?
+    var getClockLabelText: ((view: ClockPickerView, time: TDate?, adapter: Any /* MuiPickersAdapter<TDate> */) -> String)?
 }
 
 external interface ClockPickerSlotsComponent
