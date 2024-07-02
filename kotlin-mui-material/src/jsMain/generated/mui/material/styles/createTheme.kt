@@ -45,7 +45,7 @@ external interface BaseTheme : mui.system.Theme {
 external interface Theme : BaseTheme {
     override var components: dynamic
 
-    override var unstable_sx: (props: SxProps<Theme>) -> dynamic /* CSSObject from `@mui/styled-engine` */
+    override var unstable_sx: (props: SxProps<Theme>) -> Any /* CSSObject from `@mui/styled-engine` */
 
     override var unstable_sxConfig: dynamic
 }

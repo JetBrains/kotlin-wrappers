@@ -64,7 +64,7 @@ external interface ToggleButtonOwnProps :
      * @param {React.MouseEvent<HTMLElement>} event The event source of the callback.
      * @param {any} value of the selected button.
      */
-    var onChange: ((event: react.dom.events.MouseEvent<HTMLElement, *>, value: dynamic) -> Unit)?
+    var onChange: ((event: react.dom.events.MouseEvent<HTMLElement, *>, value: Any) -> Unit)?
 
     /**
      * Callback fired when the button is clicked.
@@ -72,7 +72,7 @@ external interface ToggleButtonOwnProps :
      * @param {React.MouseEvent<HTMLElement>} event The event source of the callback.
      * @param {any} value of the selected button.
      */
-    var onClick: ((event: react.dom.events.MouseEvent<HTMLElement, *>, value: dynamic) -> Unit)?
+    var onClick: ((event: react.dom.events.MouseEvent<HTMLElement, *>, value: Any) -> Unit)?
 
     /**
      * If `true`, the button is rendered in an active state.
