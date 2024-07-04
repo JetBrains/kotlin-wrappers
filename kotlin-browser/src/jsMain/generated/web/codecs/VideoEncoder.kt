@@ -21,6 +21,10 @@ open external class VideoEncoder(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/encodeQueueSize)
      */
     val encodeQueueSize: Int
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/dequeue_event)
+     */
     var ondequeue: EventHandler<Event, VideoEncoder, VideoEncoder>?
 
     /**
@@ -46,6 +50,9 @@ open external class VideoEncoder(
         options: VideoEncoderEncodeOptions = definedExternally,
     )
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/flush)
+     */
     @JsAsync
     suspend fun flush()
 
@@ -58,6 +65,9 @@ open external class VideoEncoder(
     fun reset()
 
     companion object {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/isConfigSupported_static)
+         */
         @JsAsync
         suspend fun isConfigSupported(config: VideoEncoderConfig): VideoEncoderSupport
 

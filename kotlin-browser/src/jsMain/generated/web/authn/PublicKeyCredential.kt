@@ -14,6 +14,9 @@ import web.credentials.Credential
  */
 sealed external class PublicKeyCredential :
     Credential {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/authenticatorAttachment)
+     */
     val authenticatorAttachment: String?
 
     /**

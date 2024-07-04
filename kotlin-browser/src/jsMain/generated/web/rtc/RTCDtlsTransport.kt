@@ -17,20 +17,16 @@ sealed external class RTCDtlsTransport :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/iceTransport)
      */
     val iceTransport: RTCIceTransport
-    var onerror: EventHandler<RTCErrorEvent, RTCDtlsTransport, RTCDtlsTransport>?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/statechange_event)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/error_event)
      */
+    var onerror: EventHandler<RTCErrorEvent, RTCDtlsTransport, RTCDtlsTransport>?
     var onstatechange: EventHandler<Event, RTCDtlsTransport, RTCDtlsTransport>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/state)
      */
     val state: RTCDtlsTransportState
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/getRemoteCertificates)
-     */
     fun getRemoteCertificates(): ReadonlyArray<ArrayBuffer>
 }

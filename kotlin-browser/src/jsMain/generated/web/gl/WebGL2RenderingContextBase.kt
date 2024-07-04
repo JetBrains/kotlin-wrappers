@@ -126,7 +126,7 @@ sealed external interface WebGL2RenderingContextBase {
     ): GLenum
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/compressedTexImage3D)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/compressedTexImage2D)
      */
     fun compressedTexImage3D(
         target: GLenum,

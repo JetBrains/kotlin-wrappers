@@ -37,12 +37,24 @@ sealed external class ShadowRoot :
      */
     val mode: ShadowRootMode
     var onslotchange: EventHandler<Event, ShadowRoot, Node>?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ShadowRoot/serializable)
+     */
     val serializable: Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ShadowRoot/slotAssignment)
      */
     val slotAssignment: SlotAssignmentMode
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ShadowRoot/getHTML)
+     */
     fun getHTML(options: GetHTMLOptions = definedExternally): String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ShadowRoot/setHTMLUnsafe)
+     */
     fun setHTMLUnsafe(html: String)
 }

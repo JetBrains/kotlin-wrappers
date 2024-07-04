@@ -11,6 +11,9 @@ import seskar.js.JsAsync
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator)
  */
 sealed external class GamepadHapticActuator {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator/playEffect)
+     */
     @JsAsync
     suspend fun playEffect(
         type: GamepadHapticEffectType,

@@ -20,6 +20,10 @@ sealed external class Selection {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/anchorOffset)
      */
     val anchorOffset: Int
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/direction)
+     */
     val direction: String
 
     /**

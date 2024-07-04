@@ -3,6 +3,6 @@
 package web.performance
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/performance_property)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/performance)
  */
 external val performance: Performance

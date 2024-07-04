@@ -11,9 +11,6 @@ import js.typedarrays.Float32Array
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioParam)
  */
 sealed external class AudioParam {
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioParam/automationRate)
-     */
     var automationRate: AutomationRate
 
     /**

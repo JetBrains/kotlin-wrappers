@@ -90,7 +90,7 @@ external interface GlobalEventHandlers :
         set(value) = definedExternally
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/cancel_event)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/cancel_event)
      */
     var oncancel: EventHandler<Event, GlobalEventHandlers, GlobalEventHandlers>?
         get() = definedExternally
@@ -401,7 +401,7 @@ external interface GlobalEventHandlers :
         set(value) = definedExternally
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/lostpointercapture_event)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/lostpointercapture_event)
      */
     var onlostpointercapture: EventHandler<PointerEvent, GlobalEventHandlers, Node>?
         get() = definedExternally

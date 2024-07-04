@@ -23,7 +23,7 @@ sealed external class CSSImportRule :
     val media: MediaList
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/styleSheet)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/stylesheet)
      */
     val styleSheet: CSSStyleSheet?
 

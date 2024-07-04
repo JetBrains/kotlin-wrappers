@@ -3,7 +3,7 @@
 package web.encoding
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/btoa)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/btoa)
  */
 external fun btoa(
     data: String,

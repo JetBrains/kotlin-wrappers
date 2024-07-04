@@ -27,7 +27,7 @@ sealed external interface Console {
     fun count(label: String = definedExternally)
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/console/countReset_static)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/console/countreset_static)
      */
     fun countReset(label: String = definedExternally)
 
@@ -60,12 +60,12 @@ sealed external interface Console {
     fun group(vararg data: Any?)
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/console/groupCollapsed_static)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/console/groupcollapsed_static)
      */
     fun groupCollapsed(vararg data: Any?)
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/console/groupEnd_static)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/console/groupend_static)
      */
     fun groupEnd()
 
@@ -93,12 +93,12 @@ sealed external interface Console {
     fun time(label: String = definedExternally)
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/console/timeEnd_static)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/console/timeend_static)
      */
     fun timeEnd(label: String = definedExternally)
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/console/timeLog_static)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/console/timelog_static)
      */
     fun timeLog(
         label: String = definedExternally,

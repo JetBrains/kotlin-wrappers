@@ -23,21 +23,9 @@ open external class RTCPeerConnectionIceErrorEvent(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnectionIceErrorEvent/address)
      */
     val address: String?
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnectionIceErrorEvent/errorCode)
-     */
     val errorCode: Short
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnectionIceErrorEvent/errorText)
-     */
     val errorText: String
     val port: Short?
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnectionIceErrorEvent/url)
-     */
     val url: String
 
     @JsAlias(THIS)

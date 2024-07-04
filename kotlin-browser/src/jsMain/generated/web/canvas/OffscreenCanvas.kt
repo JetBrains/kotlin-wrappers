@@ -33,7 +33,15 @@ open external class OffscreenCanvas(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/height)
      */
     var height: JsLong
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/contextlost_event)
+     */
     var oncontextlost: EventHandler<Event, OffscreenCanvas, OffscreenCanvas>?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/contextrestored_event)
+     */
     var oncontextrestored: EventHandler<Event, OffscreenCanvas, OffscreenCanvas>?
 
     /**

@@ -13,7 +13,7 @@ sealed external class CSSPropertyRule :
     val inherits: Boolean
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPropertyRule/initialValue)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPropertyRule/initialvalue)
      */
     val initialValue: String?
 

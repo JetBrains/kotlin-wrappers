@@ -34,8 +34,6 @@ protected constructor() :
 
     /**
      * Specifies whether autocomplete is applied to an editable text field.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/autocomplete)
      */
     var autocomplete: AutoFill
     var capture: String
@@ -52,8 +50,6 @@ protected constructor() :
 
     /**
      * Sets or retrieves the initial contents of the object.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/defaultValue)
      */
     var defaultValue: String
     var dirName: String
@@ -77,43 +73,31 @@ protected constructor() :
 
     /**
      * Overrides the action attribute (where the data on a form is sent) on the parent form element.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/formAction)
      */
     var formAction: String
 
     /**
      * Used to override the encoding (formEnctype attribute) specified on the form element.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/formEnctype)
      */
     var formEnctype: String
 
     /**
      * Overrides the submit method attribute previously specified on a form element.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/formMethod)
      */
     var formMethod: String
 
     /**
      * Overrides any validation or required attributes on a form or form elements to allow it to be submitted without validation. This can be used to create a "save draft"-type submit option.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/formNoValidate)
      */
     var formNoValidate: Boolean
 
     /**
      * Overrides the target attribute on a form element.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/formTarget)
      */
     var formTarget: WindowName
 
     /**
      * Sets or retrieves the height of the object.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/height)
      */
     var height: Int
 
@@ -129,35 +113,23 @@ protected constructor() :
 
     /**
      * Specifies the ID of a pre-defined datalist of options for an input element.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/list)
      */
     val list: HTMLDataListElement?
 
     /**
      * Defines the maximum acceptable value for an input element with type="number".When used with the min and step attributes, lets you control the range and increment (such as only even numbers) that the user can enter into an input field.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/max)
      */
     var max: String
 
     /**
      * Sets or retrieves the maximum number of characters that the user can enter in a text control.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/maxLength)
      */
     var maxLength: Int
 
     /**
      * Defines the minimum acceptable value for an input element with type="number". When used with the max and step attributes, lets you control the range and increment (such as even numbers only) that the user can enter into an input field.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/min)
      */
     var min: String
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/minLength)
-     */
     var minLength: Int
 
     /**
@@ -174,23 +146,17 @@ protected constructor() :
 
     /**
      * Gets or sets a string containing a regular expression that the user's input must match.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/pattern)
      */
     var pattern: String
 
     /**
      * Gets or sets a text string that is displayed in an input field as a hint or prompt to users as the format or type of information they need to enter.The text appears in an input field until the user puts focus on the field.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/placeholder)
      */
     var placeholder: String
     var readOnly: Boolean
 
     /**
      * When present, marks an element that can't be submitted without a value.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/required)
      */
     var required: Boolean
 
@@ -233,22 +199,16 @@ protected constructor() :
 
     /**
      * Returns the error message that would be displayed if the user submits the form, or an empty string if no error message. It also triggers the standard error message, such as "this is a required field". The result is that the user sees validation messages without actually submitting.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/validationMessage)
      */
     override val validationMessage: String
 
     /**
      * Returns a  ValidityState object that represents the validity states of an element.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/validity)
      */
     override val validity: ValidityState
 
     /**
      * Returns the value of the data at the cursor's current position.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/value)
      */
     var value: String
 
@@ -274,15 +234,11 @@ protected constructor() :
 
     /**
      * Sets or retrieves the width of the object.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/width)
      */
     var width: Int
 
     /**
      * Returns whether an element will successfully validate based on forms validation rules and constraints.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/willValidate)
      */
     override val willValidate: Boolean
 

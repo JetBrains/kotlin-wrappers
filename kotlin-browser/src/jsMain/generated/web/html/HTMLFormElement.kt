@@ -35,8 +35,6 @@ protected constructor() :
 
     /**
      * Specifies whether autocomplete is applied to an editable text field.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/autocomplete)
      */
     var autocomplete: AutoFillBase
 
@@ -84,8 +82,6 @@ protected constructor() :
 
     /**
      * Designates a form that is not validated when submitted.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/noValidate)
      */
     var noValidate: Boolean
     var rel: String
@@ -100,8 +96,6 @@ protected constructor() :
 
     /**
      * Returns whether a form will validate when it is submitted, without having to submit it.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/checkValidity)
      */
     fun checkValidity(): Boolean
 

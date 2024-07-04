@@ -91,6 +91,9 @@ external class VideoFrame(
      */
     fun close()
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/copyTo)
+     */
     @JsAsync
     suspend fun copyTo(
         destination: AllowSharedBufferSource,

@@ -17,21 +17,13 @@ protected constructor() :
     HTMLHyperlinkElementUtils {
     /**
      * Sets or retrieves a text alternative to the graphic.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAreaElement/alt)
      */
     var alt: String
 
     /**
      * Sets or retrieves the coordinates of the object.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAreaElement/coords)
      */
     var coords: String
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAreaElement/download)
-     */
     var download: String
 
     /**
@@ -56,8 +48,6 @@ protected constructor() :
 
     /**
      * Sets or retrieves the shape of the object.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAreaElement/shape)
      */
     var shape: String
 

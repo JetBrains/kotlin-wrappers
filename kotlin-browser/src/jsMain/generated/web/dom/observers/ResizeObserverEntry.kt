@@ -24,6 +24,10 @@ sealed external class ResizeObserverEntry {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry/contentRect)
      */
     val contentRect: DOMRectReadOnly
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry/devicePixelContentBoxSize)
+     */
     val devicePixelContentBoxSize: ReadonlyArray<ResizeObserverSize>
 
     /**

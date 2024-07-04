@@ -14,8 +14,6 @@ protected constructor() :
     HTMLElement {
     /**
      * Gets or sets the baseline URL on which relative links are based.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLBaseElement/href)
      */
     var href: String
 

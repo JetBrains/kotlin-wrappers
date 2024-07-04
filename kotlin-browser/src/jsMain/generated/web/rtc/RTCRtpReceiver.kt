@@ -14,6 +14,9 @@ import web.time.DOMHighResTimeStamp
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver)
  */
 sealed external class RTCRtpReceiver {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/jitterBufferTarget)
+     */
     var jitterBufferTarget: DOMHighResTimeStamp?
 
     /**

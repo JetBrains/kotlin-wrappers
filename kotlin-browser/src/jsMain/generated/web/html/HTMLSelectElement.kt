@@ -18,9 +18,6 @@ protected constructor() :
     HTMLElement,
     JsIterable<HTMLOptionElement>,
     FormControl {
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/autocomplete)
-     */
     var autocomplete: AutoFill
 
     /**
@@ -42,22 +39,16 @@ protected constructor() :
 
     /**
      * Sets or retrieves the number of objects in a collection.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/length)
      */
     var length: Int
 
     /**
      * Sets or retrieves the Boolean value indicating whether multiple items can be selected from a list.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/multiple)
      */
     var multiple: Boolean
 
     /**
      * Sets or retrieves the name of the object.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/name)
      */
     override var name: String
 
@@ -70,8 +61,6 @@ protected constructor() :
 
     /**
      * When present, marks an element that can't be submitted without a value.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/required)
      */
     var required: Boolean
 
@@ -89,8 +78,6 @@ protected constructor() :
 
     /**
      * Sets or retrieves the number of rows in the list box.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/size)
      */
     var size: Int
 
@@ -103,15 +90,11 @@ protected constructor() :
 
     /**
      * Returns the error message that would be displayed if the user submits the form, or an empty string if no error message. It also triggers the standard error message, such as "this is a required field". The result is that the user sees validation messages without actually submitting.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/validationMessage)
      */
     override val validationMessage: String
 
     /**
      * Returns a  ValidityState object that represents the validity states of an element.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/validity)
      */
     override val validity: ValidityState
 
@@ -124,8 +107,6 @@ protected constructor() :
 
     /**
      * Returns whether an element will successfully validate based on forms validation rules and constraints.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/willValidate)
      */
     override val willValidate: Boolean
 
@@ -188,10 +169,6 @@ protected constructor() :
      */
     override fun remove()
     fun remove(index: Int)
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/reportValidity)
-     */
     override fun reportValidity(): Boolean
 
     /**

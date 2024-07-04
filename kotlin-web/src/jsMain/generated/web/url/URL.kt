@@ -107,6 +107,16 @@ external class URL(
             base: String = definedExternally,
         ): Boolean
 
+        fun canParse(
+            url: String,
+            base: URL,
+        ): Boolean
+
+        fun canParse(
+            url: URL,
+            base: URL,
+        ): Boolean
+
         /**
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/createObjectURL_static)
          */
@@ -123,6 +133,16 @@ external class URL(
         fun parse(
             url: URL,
             base: String = definedExternally,
+        ): URL?
+
+        fun parse(
+            url: String,
+            base: URL,
+        ): URL?
+
+        fun parse(
+            url: URL,
+            base: URL,
         ): URL?
 
         /**

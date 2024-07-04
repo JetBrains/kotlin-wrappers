@@ -8,6 +8,13 @@ package web.svg
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedLength)
  */
 sealed external class SVGAnimatedLength {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedLength/animVal)
+     */
     val animVal: SVGLength
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedLength/baseVal)
+     */
     val baseVal: SVGLength
 }

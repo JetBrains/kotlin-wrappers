@@ -278,6 +278,9 @@ abstract external class Element :
         localName: String,
     ): HTMLCollectionOf<Element>
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getHTML)
+     */
     fun getHTML(options: GetHTMLOptions = definedExternally): String
 
     /**
@@ -451,6 +454,10 @@ abstract external class Element :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/setAttributeNodeNS)
      */
     fun setAttributeNodeNS(attr: Attr): Attr?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/setHTMLUnsafe)
+     */
     fun setHTMLUnsafe(html: String)
 
     /**

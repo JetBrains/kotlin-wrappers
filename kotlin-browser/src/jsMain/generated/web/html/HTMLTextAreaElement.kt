@@ -16,9 +16,6 @@ open external class HTMLTextAreaElement
 protected constructor() :
     HTMLElement,
     FormControl {
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/autocomplete)
-     */
     var autocomplete: AutoFill
 
     /**
@@ -84,10 +81,6 @@ protected constructor() :
      * Gets or sets the starting position or offset of a text selection.
      */
     var selectionStart: Int
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/textLength)
-     */
     val textLength: Int
 
     /**
@@ -126,10 +119,6 @@ protected constructor() :
      * Returns whether a form will validate when it is submitted, without having to submit it.
      */
     override fun checkValidity(): Boolean
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/reportValidity)
-     */
     override fun reportValidity(): Boolean
 
     /**

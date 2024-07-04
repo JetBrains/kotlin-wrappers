@@ -169,10 +169,6 @@ sealed external class CSSStyleDeclaration :
      */
     var backgroundSize: String
     var baselineShift: String
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/baseline-source)
-     */
     var baselineSource: String
 
     /**
@@ -606,20 +602,12 @@ sealed external class CSSStyleDeclaration :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/contain)
      */
     var contain: String
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-contain-intrinsic-block-size)
-     */
     var containIntrinsicBlockSize: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-height)
      */
     var containIntrinsicHeight: String
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-contain-intrinsic-inline-size)
-     */
     var containIntrinsicInlineSize: String
 
     /**
@@ -1830,7 +1818,15 @@ sealed external class CSSStyleDeclaration :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-wrap)
      */
     var textWrap: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-wrap-mode)
+     */
     var textWrapMode: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-wrap-style)
+     */
     var textWrapStyle: String
 
     /**

@@ -21,6 +21,10 @@ open external class VideoDecoder(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/decodeQueueSize)
      */
     val decodeQueueSize: Int
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/dequeue_event)
+     */
     var ondequeue: EventHandler<Event, VideoDecoder, VideoDecoder>?
 
     /**
@@ -58,6 +62,9 @@ open external class VideoDecoder(
     fun reset()
 
     companion object {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/isConfigSupported_static)
+         */
         @JsAsync
         suspend fun isConfigSupported(config: VideoDecoderConfig): VideoDecoderSupport
 

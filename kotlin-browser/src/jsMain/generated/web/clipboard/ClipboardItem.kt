@@ -37,6 +37,9 @@ external class ClipboardItem(
     fun getTypeAsync(type: String): Promise<Blob>
 
     companion object {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem/supports_static)
+         */
         fun supports(type: String): Boolean
     }
 }

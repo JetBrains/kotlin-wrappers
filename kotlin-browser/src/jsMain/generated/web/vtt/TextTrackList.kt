@@ -26,7 +26,7 @@ sealed external class TextTrackList :
     var onchange: EventHandler<Event, TextTrackList, TextTrackList>?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackList/removetrack_event)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackList/removeTrack_event)
      */
     var onremovetrack: EventHandler<TrackEvent, TextTrackList, TextTrackList>?
 

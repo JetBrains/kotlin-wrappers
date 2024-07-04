@@ -16,9 +16,17 @@ external interface ARIAMixin {
     var ariaAutoComplete: String?
         get() = definedExternally
         set(value) = definedExternally
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaBrailleLabel)
+     */
     var ariaBrailleLabel: String?
         get() = definedExternally
         set(value) = definedExternally
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaBrailleRoleDescription)
+     */
     var ariaBrailleRoleDescription: String?
         get() = definedExternally
         set(value) = definedExternally

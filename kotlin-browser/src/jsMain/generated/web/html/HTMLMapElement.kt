@@ -12,8 +12,6 @@ protected constructor() :
     HTMLElement {
     /**
      * Retrieves a collection of the area objects defined for the given map object.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMapElement/areas)
      */
     val areas: HTMLCollection<*>
 

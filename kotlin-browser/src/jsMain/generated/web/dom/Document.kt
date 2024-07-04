@@ -591,6 +591,9 @@ open external class Document :
     fun writeln(vararg text: String)
 
     companion object {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/parseHTMLUnsafe_static)
+         */
         fun parseHTMLUnsafe(html: String): Document
     }
 }
