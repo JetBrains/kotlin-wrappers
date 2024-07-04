@@ -90,7 +90,7 @@ external interface PopoverProps :
      */
     var marginThreshold: Number?
 
-    override var onClose: ((event: dynamic, reason: String) -> Unit)?
+    override var onClose: ((event: Any?, reason: String) -> Unit)?
 
     /**
      * If `true`, the component is shown.
