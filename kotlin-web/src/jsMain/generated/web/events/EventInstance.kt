@@ -36,9 +36,8 @@ fun <E : Event, C : EventTarget, T : EventTarget, D> EventInstance<E, C, T>.addH
 ): () -> Unit
         where D : E,
               D : HasTargets<C, T> =
-    target.addEventHandler(
-        type = type,
-        handler = handler,
+    addHandler(
+        handler = EventHandler(handler),
     )
 
 fun <E : Event, C : EventTarget, T : EventTarget, D> EventInstance<E, C, T>.addHandler(
@@ -47,8 +46,7 @@ fun <E : Event, C : EventTarget, T : EventTarget, D> EventInstance<E, C, T>.addH
 ): () -> Unit
         where D : E,
               D : HasTargets<C, T> =
-    target.addEventHandler(
-        type = type,
+    addHandler(
+        handler = EventHandler(handler),
         options = options,
-        handler = handler,
     )
