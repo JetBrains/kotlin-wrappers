@@ -14,15 +14,7 @@ class EventInstance<out E : Event, out C : EventTarget, out T : EventTarget>(
 // event handler
 fun <E : Event, C : EventTarget, T : EventTarget> EventInstance<E, C, T>.addHandler(
     handler: EventHandler<E, C, T>,
-): () -> Unit =
-    target.addEventHandler(
-        type = type,
-        handler = handler,
-    )
-
-fun <E : Event, C : EventTarget, T : EventTarget> EventInstance<E, C, T>.addHandler(
-    options: AddEventListenerOptions?,
-    handler: EventHandler<E, C, T>,
+    options: AddEventListenerOptions? = undefined,
 ): () -> Unit =
     target.addEventHandler(
         type = type,
