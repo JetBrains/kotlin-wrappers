@@ -41,12 +41,12 @@ external interface SlideProps :
      *   exit: theme.transitions.easing.sharp,
      * }
      */
-    var easing: dynamic /* TransitionProps['easing'] */
+    var easing: Any? /* TransitionProps['easing'] */
 
     /**
      * If `true`, the component will transition in.
      */
-    var `in`: dynamic /* TransitionProps['in'] */
+    var `in`: Any? /* TransitionProps['in'] */
 
     /**
      * The duration for the transition, in milliseconds.
@@ -56,7 +56,7 @@ external interface SlideProps :
      *   exit: theme.transitions.duration.leavingScreen,
      * }
      */
-    var timeout: dynamic /* TransitionProps['timeout'] */
+    var timeout: Any? /* TransitionProps['timeout'] */
 }
 
 /**

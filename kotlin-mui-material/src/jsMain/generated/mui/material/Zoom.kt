@@ -23,7 +23,7 @@ external interface ZoomProps :
      * The transition timing function.
      * You may specify a single easing or a object containing enter and exit values.
      */
-    var easing: dynamic /* TransitionProps['easing'] */
+    var easing: Any? /* TransitionProps['easing'] */
 
     /**
      * If `true`, the component will transition in.
@@ -38,7 +38,7 @@ external interface ZoomProps :
      *   exit: theme.transitions.duration.leavingScreen,
      * }
      */
-    var timeout: dynamic /* TransitionProps['timeout'] */
+    var timeout: Any? /* TransitionProps['timeout'] */
 }
 
 /**

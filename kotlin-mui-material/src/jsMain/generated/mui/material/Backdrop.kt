@@ -102,7 +102,7 @@ external interface BackdropOwnProps :
      * The duration for the transition, in milliseconds.
      * You may specify a single timeout for all transitions, or individually with an object.
      */
-    var transitionDuration: dynamic /* TransitionProps['timeout'] */
+    var transitionDuration: Any? /* TransitionProps['timeout'] */
 
     /**
      * The component used for the transition.

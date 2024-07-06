@@ -105,7 +105,7 @@ external interface ModalOwnProps : react.PropsWithChildren {
      * @param {object} event The event source of the callback.
      * @param {string} reason Can be: `"escapeKeyDown"`, `"backdropClick"`.
      */
-    var onClose: dynamic /* {
+    var onClose: Any? /* {
     bivarianceHack(event: {}, reason: 'backdropClick' | 'escapeKeyDown'): void;
 }['bivarianceHack'] */
 
@@ -171,7 +171,7 @@ external interface ModalRootSlotProps :
 }
 
 external interface ModalBackdropSlotProps : react.PropsWithChildren {
-    // var `aria-hidden`: dynamic /* React.AriaAttributes['aria-hidden'] */
+    // var `aria-hidden`: Any /* React.AriaAttributes['aria-hidden'] */
 
     override var children: react.ReactNode?
 

@@ -252,7 +252,7 @@ external interface UseAutocompleteProps<Value> : react.Props {
      */
     var onChange: ((
         event: react.dom.events.SyntheticEvent<*, *>,
-        value: dynamic,
+        value: Any,
         reason: AutocompleteChangeReason,
         details: AutocompleteChangeDetails<Value>?,
     ) -> Unit)?

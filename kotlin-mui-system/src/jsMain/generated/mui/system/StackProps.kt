@@ -48,9 +48,9 @@ external interface StackBaseProps : react.PropsWithChildren {
 }
 
 external interface StackOwnerState {
-    var direction: dynamic /* StackProps['direction'] */
+    var direction: Any /* StackProps['direction'] */
 
-    var spacing: dynamic /* StackProps['spacing'] */
+    var spacing: Any /* StackProps['spacing'] */
 
     var useFlexGap: Boolean
 }

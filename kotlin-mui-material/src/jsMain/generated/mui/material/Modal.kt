@@ -197,7 +197,7 @@ external interface ModalOwnProps :
      * @param {object} event The event source of the callback.
      * @param {string} reason Can be: `"escapeKeyDown"`, `"backdropClick"`.
      */
-    var onClose: ((event: Any?, reason: String) -> Unit)?
+    var onClose: ((event: Any, reason: String) -> Unit)?
 
     /**
      * A function called when a transition enters.
