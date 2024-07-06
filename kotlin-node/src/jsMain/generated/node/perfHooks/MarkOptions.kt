@@ -10,7 +10,7 @@ sealed external interface MarkOptions {
 
     /**
      * An optional timestamp to be used as the mark time.
-     * @default `performance.now()`.
+     * @default `performance.now()`
      */
     var startTime: Double?
 }

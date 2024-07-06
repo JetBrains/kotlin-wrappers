@@ -5,7 +5,7 @@
 package node.readline
 
 /**
- * The `readlinePromises.createInterface()` method creates a new `readlinePromises.Interface`instance.
+ * The `readlinePromises.createInterface()` method creates a new `readlinePromises.Interface` instance.
  *
  * ```js
  * const readlinePromises = require('node:readline/promises');
@@ -38,7 +38,7 @@ external fun createInterface(
 ): Interface
 
 /**
- * The `readlinePromises.createInterface()` method creates a new `readlinePromises.Interface`instance.
+ * The `readlinePromises.createInterface()` method creates a new `readlinePromises.Interface` instance.
  *
  * ```js
  * const readlinePromises = require('node:readline/promises');

@@ -7,7 +7,7 @@ package node.util
 import js.iterable.IterableIterator
 
 /**
- * The `MIMEParams` API provides read and write access to the parameters of a`MIMEType`.
+ * The `MIMEParams` API provides read and write access to the parameters of a `MIMEType`.
  * @since v19.1.0, v18.13.0
  */
 external class MIMEParams {
@@ -53,7 +53,7 @@ external class MIMEParams {
     fun keys(): IterableIterator<String>
 
     /**
-     * Sets the value in the `MIMEParams` object associated with `name` to`value`. If there are any pre-existing name-value pairs whose names are `name`,
+     * Sets the value in the `MIMEParams` object associated with `name` to `value`. If there are any pre-existing name-value pairs whose names are `name`,
      * set the first such pair's value to `value`.
      *
      * ```js

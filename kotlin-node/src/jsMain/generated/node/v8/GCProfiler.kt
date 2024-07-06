@@ -16,7 +16,7 @@ external class GCProfiler {
     fun start(): Unit
 
     /**
-     * Stop collecting GC data and return an object.The content of object
+     * Stop collecting GC data and return an object. The content of object
      * is as follows.
      *
      * ```json

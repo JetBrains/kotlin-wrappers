@@ -2,9 +2,7 @@
 
 package node.vm
 
-import node.module.ImportAttributes
-
 sealed external interface RunningCodeInNewContextOptions : RunningScriptInNewContextOptions {
     var cachedData: Any? /* ArrayBufferView | Buffer | undefined */
-    var importModuleDynamically: ((specifier: String, script: Script, importAttributes: ImportAttributes) -> Module)?
+    var importModuleDynamically: Any? /* number | ((specifier: string, script: Script, importAttributes: ImportAttributes) => Module) | undefined */
 }

@@ -13,7 +13,7 @@ package node.fs
  * If the `encoding` option is specified then this function returns a
  * string. Otherwise it returns a buffer.
  *
- * Similar to {@link readFile}, when the path is a directory, the behavior of`fs.readFileSync()` is platform-specific.
+ * Similar to {@link readFile}, when the path is a directory, the behavior of `fs.readFileSync()` is platform-specific.
  *
  * ```js
  * import { readFileSync } from 'node:fs';

@@ -4,7 +4,7 @@ package node.test
 
 sealed external interface TestStdout : TestLocationInfo {
     /**
-     * The message written to `stdout`
+     * The message written to `stdout`.
      */
     var message: String
 }

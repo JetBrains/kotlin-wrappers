@@ -20,8 +20,8 @@ package node.util.types
  * console.log(util.types.isNativeError(new MyError()));  // true
  * ```
  *
- * A value being `instanceof` a native error class is not equivalent to `isNativeError()`returning `true` for that value. `isNativeError()` returns `true` for errors
- * which come from a different [realm](https://tc39.es/ecma262/#realm) while `instanceof Error` returns `false`for these errors:
+ * A value being `instanceof` a native error class is not equivalent to `isNativeError()` returning `true` for that value. `isNativeError()` returns `true` for errors
+ * which come from a different [realm](https://tc39.es/ecma262/#realm) while `instanceof Error` returns `false` for these errors:
  *
  * ```js
  * const vm = require('node:vm');

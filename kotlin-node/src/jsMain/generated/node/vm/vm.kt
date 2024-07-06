@@ -40,7 +40,7 @@ package node.vm
  *
  * console.log(x); // 1; y is not defined.
  * ```
- * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/vm.js)
+ * @see [source](https://github.com/nodejs/node/blob/v20.13.1/lib/vm.js)
  */
 
 

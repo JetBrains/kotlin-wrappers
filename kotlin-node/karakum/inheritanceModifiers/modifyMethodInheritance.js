@@ -137,6 +137,16 @@ export default (node, context) => {
                     && isGenericEventEmitterSignature(context)
                 )
             )
+            || (
+                sourceFileName.endsWith("perf_hooks.d.ts")
+                && (
+                    (
+                        node.name.text === "toJSON"
+                    )
+                    && node.parent
+                    && node.parent.name?.text === "PerformanceEntry"
+                )
+            )
         )
     ) {
         return "open"
@@ -408,6 +418,16 @@ export default (node, context) => {
                     && node.parent
                     && node.parent.name.text === "REPLServer"
                     && isGenericEventEmitterSignature(context)
+                )
+            )
+            || (
+                sourceFileName.endsWith("perf_hooks.d.ts")
+                && (
+                    (
+                        node.name.text === "toJSON"
+                    )
+                    && node.parent
+                    && node.parent.name?.text === "PerformanceResourceTiming"
                 )
             )
         )

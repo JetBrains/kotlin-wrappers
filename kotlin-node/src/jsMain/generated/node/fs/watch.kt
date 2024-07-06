@@ -17,7 +17,7 @@ package node.fs
  * On most platforms, `'rename'` is emitted whenever a filename appears or
  * disappears in the directory.
  *
- * The listener callback is attached to the `'change'` event fired by `fs.FSWatcher`, but it is not the same thing as the `'change'` value of`eventType`.
+ * The listener callback is attached to the `'change'` event fired by `fs.FSWatcher`, but it is not the same thing as the `'change'` value of `eventType`.
  *
  * If a `signal` is passed, aborting the corresponding AbortController will close
  * the returned `fs.FSWatcher`.
@@ -43,7 +43,7 @@ external fun watch(
  * On most platforms, `'rename'` is emitted whenever a filename appears or
  * disappears in the directory.
  *
- * The listener callback is attached to the `'change'` event fired by `fs.FSWatcher`, but it is not the same thing as the `'change'` value of`eventType`.
+ * The listener callback is attached to the `'change'` event fired by `fs.FSWatcher`, but it is not the same thing as the `'change'` value of `eventType`.
  *
  * If a `signal` is passed, aborting the corresponding AbortController will close
  * the returned `fs.FSWatcher`.

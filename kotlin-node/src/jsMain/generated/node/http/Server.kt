@@ -83,7 +83,7 @@ open external class Server<Request : IncomingMessage, Response : ServerResponse<
      * The number of milliseconds of inactivity a server needs to wait for additional
      * incoming data, after it has finished writing the last response, before a socket
      * will be destroyed. If the server receives new data before the keep-alive
-     * timeout has fired, it will reset the regular inactivity timeout, i.e.,`server.timeout`.
+     * timeout has fired, it will reset the regular inactivity timeout, i.e., `server.timeout`.
      *
      * A value of `0` will disable the keep-alive timeout behavior on incoming
      * connections.

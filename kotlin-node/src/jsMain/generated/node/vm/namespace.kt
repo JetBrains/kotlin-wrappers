@@ -3,3 +3,9 @@
 @file:JsModule("node:vm")
 
 package node.vm
+
+
+/**
+ * Returns an object containing commonly used constants for VM operations.
+ * @since v20.12.0
+ */

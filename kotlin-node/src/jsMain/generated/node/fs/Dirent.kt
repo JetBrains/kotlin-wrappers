@@ -67,7 +67,14 @@ external class Dirent {
 
     /**
      * The base path that this `fs.Dirent` object refers to.
+     * @since v20.12.0
+     */
+    var parentPath: String
+
+    /**
+     * Alias for `dirent.parentPath`.
      * @since v20.1.0
+     * @deprecated Since v20.12.0
      */
     var path: String
 }

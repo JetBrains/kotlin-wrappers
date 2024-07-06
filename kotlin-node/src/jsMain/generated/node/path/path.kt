@@ -12,7 +12,7 @@ package node.path
  * ```js
  * const path = require('node:path');
  * ```
- * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/path.js)
+ * @see [source](https://github.com/nodejs/node/blob/v20.13.1/lib/path.js)
  */
 
 

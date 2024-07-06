@@ -3,7 +3,6 @@
 package node.vm
 
 import js.import.ImportMeta
-import node.module.ImportAttributes
 
 sealed external interface SourceTextModuleOptions {
     /**
@@ -20,5 +19,5 @@ sealed external interface SourceTextModuleOptions {
      * Called during evaluation of this module to initialize the `import.meta`.
      */
     var initializeImportMeta: ((meta: ImportMeta, module: SourceTextModule) -> Unit)?
-    var importModuleDynamically: ((specifier: String, script: Script, importAttributes: ImportAttributes) -> Module)?
+    var importModuleDynamically: Any? /* ScriptOptions["importModuleDynamically"] | undefined */
 }

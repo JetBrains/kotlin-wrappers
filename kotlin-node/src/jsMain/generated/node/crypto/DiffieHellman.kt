@@ -57,7 +57,7 @@ external class DiffieHellman {
      * key is interpreted using the specified `inputEncoding`, and secret is
      * encoded using specified `outputEncoding`.
      * If the `inputEncoding` is not
-     * provided, `otherPublicKey` is expected to be a `Buffer`,`TypedArray`, or `DataView`.
+     * provided, `otherPublicKey` is expected to be a `Buffer`, `TypedArray`, or `DataView`.
      *
      * If `outputEncoding` is given a string is returned; otherwise, a `Buffer` is returned.
      * @since v0.5.0
@@ -129,7 +129,7 @@ external class DiffieHellman {
     fun getPrivateKey(encoding: BinaryToTextEncoding): String
 
     /**
-     * Sets the Diffie-Hellman public key. If the `encoding` argument is provided,`publicKey` is expected
+     * Sets the Diffie-Hellman public key. If the `encoding` argument is provided, `publicKey` is expected
      * to be a string. If no `encoding` is provided, `publicKey` is expected
      * to be a `Buffer`, `TypedArray`, or `DataView`.
      * @since v0.5.0

@@ -5,7 +5,7 @@
 package node.crypto
 
 /**
- * Creates and returns a `Cipher` object that uses the given `algorithm` and`password`.
+ * Creates and returns a `Cipher` object that uses the given `algorithm` and `password`.
  *
  * The `options` argument controls stream behavior and is optional except when a
  * cipher in CCM or OCB mode (e.g. `'aes-128-ccm'`) is used. In that case, the`authTagLength` option is required and specifies the length of the

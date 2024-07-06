@@ -12,7 +12,7 @@ package node.repl
  * ```js
  * const repl = require('node:repl');
  * ```
- * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/repl.js)
+ * @see [source](https://github.com/nodejs/node/blob/v20.13.1/lib/repl.js)
  */
 
 

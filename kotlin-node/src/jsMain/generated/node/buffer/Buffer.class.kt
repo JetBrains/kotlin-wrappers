@@ -2,9 +2,9 @@
 
 package node.buffer
 
+import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
 import js.buffer.SharedArrayBuffer
-import js.array.ReadonlyArray
 import js.typedarrays.Uint8Array
 
 
@@ -181,7 +181,7 @@ sealed external class Buffer : Uint8Array {
      * // (This result is equal to: [buf1, buf3, buf2].)
      * ```
      *
-     * The optional `targetStart`, `targetEnd`, `sourceStart`, and `sourceEnd`arguments can be used to limit the comparison to specific ranges within `target`and `buf` respectively.
+     * The optional `targetStart`, `targetEnd`, `sourceStart`, and `sourceEnd` arguments can be used to limit the comparison to specific ranges within `target` and `buf` respectively.
      *
      * ```js
      * import { Buffer } from 'node:buffer';
@@ -197,7 +197,7 @@ sealed external class Buffer : Uint8Array {
      * // Prints: 1
      * ```
      *
-     * `ERR_OUT_OF_RANGE` is thrown if `targetStart < 0`, `sourceStart < 0`,`targetEnd > target.byteLength`, or `sourceEnd > source.byteLength`.
+     * `ERR_OUT_OF_RANGE` is thrown if `targetStart < 0`, `sourceStart < 0`, `targetEnd > target.byteLength`, or `sourceEnd > source.byteLength`.
      * @since v0.11.13
      * @param target A `Buffer` or {@link Uint8Array} with which to compare `buf`.
      * @param [targetStart=0] The offset within `target` at which to begin comparison.
@@ -642,7 +642,7 @@ sealed external class Buffer : Uint8Array {
     fun readBigInt64LE(offset: Number = definedExternally): js.core.BigInt
 
     /**
-     * Reads `byteLength` number of bytes from `buf` at the specified `offset`and interprets the result as an unsigned, little-endian integer supporting
+     * Reads `byteLength` number of bytes from `buf` at the specified `offset` and interprets the result as an unsigned, little-endian integer supporting
      * up to 48 bits of accuracy.
      *
      * This function is also available under the `readUintLE` alias.
@@ -668,7 +668,7 @@ sealed external class Buffer : Uint8Array {
     fun readUintLE(offset: Number, byteLength: Number): Double
 
     /**
-     * Reads `byteLength` number of bytes from `buf` at the specified `offset`and interprets the result as an unsigned big-endian integer supporting
+     * Reads `byteLength` number of bytes from `buf` at the specified `offset` and interprets the result as an unsigned big-endian integer supporting
      * up to 48 bits of accuracy.
      *
      * This function is also available under the `readUintBE` alias.
@@ -696,7 +696,7 @@ sealed external class Buffer : Uint8Array {
     fun readUintBE(offset: Number, byteLength: Number): Double
 
     /**
-     * Reads `byteLength` number of bytes from `buf` at the specified `offset`and interprets the result as a little-endian, two's complement signed value
+     * Reads `byteLength` number of bytes from `buf` at the specified `offset` and interprets the result as a little-endian, two's complement signed value
      * supporting up to 48 bits of accuracy.
      *
      * ```js
@@ -714,7 +714,7 @@ sealed external class Buffer : Uint8Array {
     fun readIntLE(offset: Number, byteLength: Number): Double
 
     /**
-     * Reads `byteLength` number of bytes from `buf` at the specified `offset`and interprets the result as a big-endian, two's complement signed value
+     * Reads `byteLength` number of bytes from `buf` at the specified `offset` and interprets the result as a big-endian, two's complement signed value
      * supporting up to 48 bits of accuracy.
      *
      * ```js
@@ -764,7 +764,7 @@ sealed external class Buffer : Uint8Array {
     fun readUint8(offset: Number = definedExternally): Double
 
     /**
-     * Reads an unsigned, little-endian 16-bit integer from `buf` at the specified`offset`.
+     * Reads an unsigned, little-endian 16-bit integer from `buf` at the specified `offset`.
      *
      * This function is also available under the `readUint16LE` alias.
      *
@@ -1158,7 +1158,7 @@ sealed external class Buffer : Uint8Array {
     fun writeUint8(value: Number, offset: Number = definedExternally): Double
 
     /**
-     * Writes `value` to `buf` at the specified `offset` as little-endian. The `value`must be a valid unsigned 16-bit integer. Behavior is undefined when `value` is
+     * Writes `value` to `buf` at the specified `offset` as little-endian. The `value` must be a valid unsigned 16-bit integer. Behavior is undefined when `value` is
      * anything other than an unsigned 16-bit integer.
      *
      * This function is also available under the `writeUint16LE` alias.
@@ -1188,7 +1188,7 @@ sealed external class Buffer : Uint8Array {
     fun writeUint16LE(value: Number, offset: Number = definedExternally): Double
 
     /**
-     * Writes `value` to `buf` at the specified `offset` as big-endian. The `value`must be a valid unsigned 16-bit integer. Behavior is undefined when `value`is anything other than an
+     * Writes `value` to `buf` at the specified `offset` as big-endian. The `value` must be a valid unsigned 16-bit integer. Behavior is undefined when `value`is anything other than an
      * unsigned 16-bit integer.
      *
      * This function is also available under the `writeUint16BE` alias.
@@ -1218,7 +1218,7 @@ sealed external class Buffer : Uint8Array {
     fun writeUint16BE(value: Number, offset: Number = definedExternally): Double
 
     /**
-     * Writes `value` to `buf` at the specified `offset` as little-endian. The `value`must be a valid unsigned 32-bit integer. Behavior is undefined when `value` is
+     * Writes `value` to `buf` at the specified `offset` as little-endian. The `value` must be a valid unsigned 32-bit integer. Behavior is undefined when `value` is
      * anything other than an unsigned 32-bit integer.
      *
      * This function is also available under the `writeUint32LE` alias.
@@ -1247,7 +1247,7 @@ sealed external class Buffer : Uint8Array {
     fun writeUint32LE(value: Number, offset: Number = definedExternally): Double
 
     /**
-     * Writes `value` to `buf` at the specified `offset` as big-endian. The `value`must be a valid unsigned 32-bit integer. Behavior is undefined when `value`is anything other than an
+     * Writes `value` to `buf` at the specified `offset` as big-endian. The `value` must be a valid unsigned 32-bit integer. Behavior is undefined when `value`is anything other than an
      * unsigned 32-bit integer.
      *
      * This function is also available under the `writeUint32BE` alias.
@@ -1301,7 +1301,7 @@ sealed external class Buffer : Uint8Array {
     fun writeInt8(value: Number, offset: Number = definedExternally): Double
 
     /**
-     * Writes `value` to `buf` at the specified `offset` as little-endian.  The `value`must be a valid signed 16-bit integer. Behavior is undefined when `value` is
+     * Writes `value` to `buf` at the specified `offset` as little-endian.  The `value` must be a valid signed 16-bit integer. Behavior is undefined when `value` is
      * anything other than a signed 16-bit integer.
      *
      * The `value` is interpreted and written as a two's complement signed integer.
@@ -1324,7 +1324,7 @@ sealed external class Buffer : Uint8Array {
     fun writeInt16LE(value: Number, offset: Number = definedExternally): Double
 
     /**
-     * Writes `value` to `buf` at the specified `offset` as big-endian.  The `value`must be a valid signed 16-bit integer. Behavior is undefined when `value` is
+     * Writes `value` to `buf` at the specified `offset` as big-endian.  The `value` must be a valid signed 16-bit integer. Behavior is undefined when `value` is
      * anything other than a signed 16-bit integer.
      *
      * The `value` is interpreted and written as a two's complement signed integer.
@@ -1347,7 +1347,7 @@ sealed external class Buffer : Uint8Array {
     fun writeInt16BE(value: Number, offset: Number = definedExternally): Double
 
     /**
-     * Writes `value` to `buf` at the specified `offset` as little-endian. The `value`must be a valid signed 32-bit integer. Behavior is undefined when `value` is
+     * Writes `value` to `buf` at the specified `offset` as little-endian. The `value` must be a valid signed 32-bit integer. Behavior is undefined when `value` is
      * anything other than a signed 32-bit integer.
      *
      * The `value` is interpreted and written as a two's complement signed integer.
@@ -1370,7 +1370,7 @@ sealed external class Buffer : Uint8Array {
     fun writeInt32LE(value: Number, offset: Number = definedExternally): Double
 
     /**
-     * Writes `value` to `buf` at the specified `offset` as big-endian. The `value`must be a valid signed 32-bit integer. Behavior is undefined when `value` is
+     * Writes `value` to `buf` at the specified `offset` as big-endian. The `value` must be a valid signed 32-bit integer. Behavior is undefined when `value` is
      * anything other than a signed 32-bit integer.
      *
      * The `value` is interpreted and written as a two's complement signed integer.
@@ -1435,7 +1435,7 @@ sealed external class Buffer : Uint8Array {
     fun writeFloatBE(value: Number, offset: Number = definedExternally): Double
 
     /**
-     * Writes `value` to `buf` at the specified `offset` as little-endian. The `value`must be a JavaScript number. Behavior is undefined when `value` is anything
+     * Writes `value` to `buf` at the specified `offset` as little-endian. The `value` must be a JavaScript number. Behavior is undefined when `value` is anything
      * other than a JavaScript number.
      *
      * ```js
@@ -1456,7 +1456,7 @@ sealed external class Buffer : Uint8Array {
     fun writeDoubleLE(value: Number, offset: Number = definedExternally): Double
 
     /**
-     * Writes `value` to `buf` at the specified `offset` as big-endian. The `value`must be a JavaScript number. Behavior is undefined when `value` is anything
+     * Writes `value` to `buf` at the specified `offset` as big-endian. The `value` must be a JavaScript number. Behavior is undefined when `value` is anything
      * other than a JavaScript number.
      *
      * ```js
@@ -1677,7 +1677,7 @@ sealed external class Buffer : Uint8Array {
     /**
      * If `value` is:
      *
-     * * a string, `value` is interpreted according to the character encoding in`encoding`.
+     * * a string, `value` is interpreted according to the character encoding in `encoding`.
      * * a `Buffer` or [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array), `value` will be used in its entirety.
      * To compare a partial `Buffer`, use `buf.subarray`.
      * * a number, `value` will be interpreted as an unsigned 8-bit integer
@@ -1709,7 +1709,7 @@ sealed external class Buffer : Uint8Array {
      * // Prints: 6
      * ```
      *
-     * If `value` is not a string, number, or `Buffer`, this method will throw a`TypeError`. If `value` is a number, it will be coerced to a valid byte value,
+     * If `value` is not a string, number, or `Buffer`, this method will throw a `TypeError`. If `value` is a number, it will be coerced to a valid byte value,
      * an integer between 0 and 255.
      *
      * If `byteOffset` is not a number, it will be coerced to a number. If the result
@@ -1751,7 +1751,7 @@ sealed external class Buffer : Uint8Array {
     /**
      * If `value` is:
      *
-     * * a string, `value` is interpreted according to the character encoding in`encoding`.
+     * * a string, `value` is interpreted according to the character encoding in `encoding`.
      * * a `Buffer` or [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array), `value` will be used in its entirety.
      * To compare a partial `Buffer`, use `buf.subarray`.
      * * a number, `value` will be interpreted as an unsigned 8-bit integer
@@ -1783,7 +1783,7 @@ sealed external class Buffer : Uint8Array {
      * // Prints: 6
      * ```
      *
-     * If `value` is not a string, number, or `Buffer`, this method will throw a`TypeError`. If `value` is a number, it will be coerced to a valid byte value,
+     * If `value` is not a string, number, or `Buffer`, this method will throw a `TypeError`. If `value` is a number, it will be coerced to a valid byte value,
      * an integer between 0 and 255.
      *
      * If `byteOffset` is not a number, it will be coerced to a number. If the result
@@ -1825,7 +1825,7 @@ sealed external class Buffer : Uint8Array {
     /**
      * If `value` is:
      *
-     * * a string, `value` is interpreted according to the character encoding in`encoding`.
+     * * a string, `value` is interpreted according to the character encoding in `encoding`.
      * * a `Buffer` or [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array), `value` will be used in its entirety.
      * To compare a partial `Buffer`, use `buf.subarray`.
      * * a number, `value` will be interpreted as an unsigned 8-bit integer
@@ -1857,7 +1857,7 @@ sealed external class Buffer : Uint8Array {
      * // Prints: 6
      * ```
      *
-     * If `value` is not a string, number, or `Buffer`, this method will throw a`TypeError`. If `value` is a number, it will be coerced to a valid byte value,
+     * If `value` is not a string, number, or `Buffer`, this method will throw a `TypeError`. If `value` is a number, it will be coerced to a valid byte value,
      * an integer between 0 and 255.
      *
      * If `byteOffset` is not a number, it will be coerced to a number. If the result
@@ -1928,7 +1928,7 @@ sealed external class Buffer : Uint8Array {
      * // Prints: 4
      * ```
      *
-     * If `value` is not a string, number, or `Buffer`, this method will throw a`TypeError`. If `value` is a number, it will be coerced to a valid byte value,
+     * If `value` is not a string, number, or `Buffer`, this method will throw a `TypeError`. If `value` is a number, it will be coerced to a valid byte value,
      * an integer between 0 and 255.
      *
      * If `byteOffset` is not a number, it will be coerced to a number. Any arguments
@@ -2001,7 +2001,7 @@ sealed external class Buffer : Uint8Array {
      * // Prints: 4
      * ```
      *
-     * If `value` is not a string, number, or `Buffer`, this method will throw a`TypeError`. If `value` is a number, it will be coerced to a valid byte value,
+     * If `value` is not a string, number, or `Buffer`, this method will throw a `TypeError`. If `value` is a number, it will be coerced to a valid byte value,
      * an integer between 0 and 255.
      *
      * If `byteOffset` is not a number, it will be coerced to a number. Any arguments
@@ -2074,7 +2074,7 @@ sealed external class Buffer : Uint8Array {
      * // Prints: 4
      * ```
      *
-     * If `value` is not a string, number, or `Buffer`, this method will throw a`TypeError`. If `value` is a number, it will be coerced to a valid byte value,
+     * If `value` is not a string, number, or `Buffer`, this method will throw a `TypeError`. If `value` is a number, it will be coerced to a valid byte value,
      * an integer between 0 and 255.
      *
      * If `byteOffset` is not a number, it will be coerced to a number. Any arguments
@@ -2234,12 +2234,12 @@ sealed external class Buffer : Uint8Array {
          *
          * If `array` is an `Array`\-like object (that is, one with a `length` property of
          * type `number`), it is treated as if it is an array, unless it is a `Buffer` or
-         * a `Uint8Array`. This means all other `TypedArray` variants get treated as an`Array`. To create a `Buffer` from the bytes backing a `TypedArray`, use `Buffer.copyBytesFrom()`.
+         * a `Uint8Array`. This means all other `TypedArray` variants get treated as an `Array`. To create a `Buffer` from the bytes backing a `TypedArray`, use `Buffer.copyBytesFrom()`.
          *
          * A `TypeError` will be thrown if `array` is not an `Array` or another type
          * appropriate for `Buffer.from()` variants.
          *
-         * `Buffer.from(array)` and `Buffer.from(string)` may also use the internal`Buffer` pool like `Buffer.allocUnsafe()` does.
+         * `Buffer.from(array)` and `Buffer.from(string)` may also use the internal `Buffer` pool like `Buffer.allocUnsafe()` does.
          * @since v5.10.0
          */
         fun from(
@@ -2477,9 +2477,9 @@ sealed external class Buffer : Uint8Array {
         fun byteLength(string: SharedArrayBuffer, encoding: BufferEncoding = definedExternally): Double
 
         /**
-         * Returns a new `Buffer` which is the result of concatenating all the `Buffer`instances in the `list` together.
+         * Returns a new `Buffer` which is the result of concatenating all the `Buffer` instances in the `list` together.
          *
-         * If the list has no items, or if the `totalLength` is 0, then a new zero-length`Buffer` is returned.
+         * If the list has no items, or if the `totalLength` is 0, then a new zero-length `Buffer` is returned.
          *
          * If `totalLength` is not provided, it is calculated from the `Buffer` instances
          * in `list` by adding their lengths.
@@ -2539,7 +2539,7 @@ sealed external class Buffer : Uint8Array {
         ): Buffer
 
         /**
-         * Compares `buf1` to `buf2`, typically for the purpose of sorting arrays of`Buffer` instances. This is equivalent to calling `buf1.compare(buf2)`.
+         * Compares `buf1` to `buf2`, typically for the purpose of sorting arrays of `Buffer` instances. This is equivalent to calling `buf1.compare(buf2)`.
          *
          * ```js
          * import { Buffer } from 'node:buffer';

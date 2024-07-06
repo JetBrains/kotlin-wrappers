@@ -8,7 +8,7 @@ import node.vm.Context
 import web.messaging.MessagePort
 
 /**
- * Transfer a `MessagePort` to a different `vm` Context. The original `port`object is rendered unusable, and the returned `MessagePort` instance
+ * Transfer a `MessagePort` to a different `vm` Context. The original `port` object is rendered unusable, and the returned `MessagePort` instance
  * takes its place.
  *
  * The returned `MessagePort` is an object in the target context and

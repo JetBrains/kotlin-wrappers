@@ -3,8 +3,20 @@
 package node.test.reporters
 
 typealias TestEvent = Any /* {
+    type: "test:coverage";
+    data: TestCoverage;
+} | {
+    type: "test:complete";
+    data: TestComplete;
+} | {
+    type: "test:dequeue";
+    data: TestDequeue;
+} | {
     type: "test:diagnostic";
     data: DiagnosticData;
+} | {
+    type: "test:enqueue";
+    data: TestEnqueue;
 } | {
     type: "test:fail";
     data: TestFail;
@@ -23,12 +35,6 @@ typealias TestEvent = Any /* {
 } | {
     type: "test:stdout";
     data: TestStdout;
-} | {
-    type: "test:enqueue";
-    data: TestEnqueue;
-} | {
-    type: "test:dequeue";
-    data: TestDequeue;
 } | {
     type: "test:watch:drained";
 } */

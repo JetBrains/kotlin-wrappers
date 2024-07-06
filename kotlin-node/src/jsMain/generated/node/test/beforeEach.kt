@@ -5,8 +5,7 @@
 package node.test
 
 /**
- * This function is used to create a hook running
- * before each subtest of the current suite.
+ * This function creates a hook that runs before each test in the current suite.
  *
  * ```js
  * describe('tests', async () => {

@@ -4,19 +4,32 @@ package node.perfHooks
 
 sealed external interface Performance {
     /**
-     * If name is not provided, removes all PerformanceMark objects from the Performance Timeline.
-     * If name is provided, removes only the named mark.
-     * @param name
+     * If `name` is not provided, removes all `PerformanceMark` objects from the Performance Timeline.
+     * If `name` is provided, removes only the named mark.
+     * @since v8.5.0
      */
     fun clearMarks(name: String = definedExternally): Unit
 
     /**
-     * If name is not provided, removes all PerformanceMeasure objects from the Performance Timeline.
-     * If name is provided, removes only the named measure.
-     * @param name
+     * If `name` is not provided, removes all `PerformanceMeasure` objects from the Performance Timeline.
+     * If `name` is provided, removes only the named measure.
      * @since v16.7.0
      */
     fun clearMeasures(name: String = definedExternally): Unit
+
+    /**
+     * If `name` is not provided, removes all `PerformanceResourceTiming` objects from the Resource Timeline.
+     * If `name` is provided, removes only the named resource.
+     * @since v18.2.0, v16.17.0
+     */
+    fun clearResourceTimings(name: String = definedExternally): Unit
+
+    /**
+     * eventLoopUtilization is similar to CPU utilization except that it is calculated using high precision wall-clock time.
+     * It represents the percentage of time the event loop has spent outside the event loop's event provider (e.g. epoll_wait).
+     * No other CPU idle time is taken into consideration.
+     */
+    var eventLoopUtilization: EventLoopUtilityFunction
 
     /**
      * Returns a list of `PerformanceEntry` objects in chronological order with respect to `performanceEntry.startTime`.
@@ -44,14 +57,17 @@ sealed external interface Performance {
     fun getEntriesByType(type: EntryType): js.array.ReadonlyArray<PerformanceEntry>
 
     /**
-     * Creates a new PerformanceMark entry in the Performance Timeline.
-     * A PerformanceMark is a subclass of PerformanceEntry whose performanceEntry.entryType is always 'mark',
-     * and whose performanceEntry.duration is always 0.
+     * Creates a new `PerformanceMark` entry in the Performance Timeline.
+     * A `PerformanceMark` is a subclass of `PerformanceEntry` whose `performanceEntry.entryType` is always `'mark'`,
+     * and whose `performanceEntry.duration` is always `0`.
      * Performance marks are used to mark specific significant moments in the Performance Timeline.
+     *
+     * The created `PerformanceMark` entry is put in the global Performance Timeline and can be queried with
+     * `performance.getEntries`, `performance.getEntriesByName`, and `performance.getEntriesByType`. When the observation is
+     * performed, the entries should be cleared from the global Performance Timeline manually with `performance.clearMarks`.
      * @param name
-     * @return The PerformanceMark entry that was created
      */
-    fun mark(name: String = definedExternally, options: MarkOptions = definedExternally): PerformanceMark
+    fun mark(name: String, options: MarkOptions = definedExternally): PerformanceMark
 
     /**
      * Creates a new PerformanceMeasure entry in the Performance Timeline.
@@ -78,23 +94,67 @@ sealed external interface Performance {
     fun measure(name: String, options: MeasureOptions): PerformanceMeasure
 
     /**
-     * An instance of the PerformanceNodeTiming class that provides performance metrics for specific Node.js operational milestones.
+     * _This property is an extension by Node.js. It is not available in Web browsers._
+     *
+     * An instance of the `PerformanceNodeTiming` class that provides performance metrics for specific Node.js operational milestones.
+     * @since v8.5.0
      */
     val nodeTiming: PerformanceNodeTiming
 
     /**
-     * @return the current high resolution millisecond timestamp
+     * Returns the current high resolution millisecond timestamp, where 0 represents the start of the current `node` process.
+     * @since v8.5.0
      */
     fun now(): Double
 
     /**
-     * The timeOrigin specifies the high resolution millisecond timestamp from which all performance metric durations are measured.
+     * Sets the global performance resource timing buffer size to the specified number of "resource" type performance entry objects.
+     *
+     * By default the max buffer size is set to 250.
+     * @since v18.8.0
+     */
+    fun setResourceTimingBufferSize(maxSize: Number): Unit
+
+    /**
+     * The [`timeOrigin`](https://w3c.github.io/hr-time/#dom-performance-timeorigin) specifies the high resolution millisecond timestamp
+     * at which the current `node` process began, measured in Unix time.
+     * @since v8.5.0
      */
     val timeOrigin: Double
 
     /**
+     * _This property is an extension by Node.js. It is not available in Web browsers._
+     *
      * Wraps a function within a new function that measures the running time of the wrapped function.
-     * A PerformanceObserver must be subscribed to the 'function' event type in order for the timing details to be accessed.
+     * A `PerformanceObserver` must be subscribed to the `'function'` event type in order for the timing details to be accessed.
+     *
+     * ```js
+     * const {
+     *   performance,
+     *   PerformanceObserver,
+     * } = require('node:perf_hooks');
+     *
+     * function someFunction() {
+     *   console.log('hello world');
+     * }
+     *
+     * const wrapped = performance.timerify(someFunction);
+     *
+     * const obs = new PerformanceObserver((list) => {
+     *   console.log(list.getEntries()[0].duration);
+     *
+     *   performance.clearMarks();
+     *   performance.clearMeasures();
+     *   obs.disconnect();
+     * });
+     * obs.observe({ entryTypes: ['function'] });
+     *
+     * // A performance timeline entry will be created
+     * wrapped();
+     * ```
+     *
+     * If the wrapped function returns a promise, a finally handler will be attached to the promise and the duration will be reported
+     * once the finally handler is invoked.
      * @param fn
      */
     fun <T : Function<Any?> /* (...params: any[]) => any */> timerify(
@@ -103,9 +163,9 @@ sealed external interface Performance {
     ): T
 
     /**
-     * eventLoopUtilization is similar to CPU utilization except that it is calculated using high precision wall-clock time.
-     * It represents the percentage of time the event loop has spent outside the event loop's event provider (e.g. epoll_wait).
-     * No other CPU idle time is taken into consideration.
+     * An object which is JSON representation of the performance object. It is similar to
+     * [`window.performance.toJSON`](https://developer.mozilla.org/en-US/docs/Web/API/Performance/toJSON) in browsers.
+     * @since v16.1.0
      */
-    var eventLoopUtilization: EventLoopUtilityFunction
+    fun toJSON(): Any?
 }

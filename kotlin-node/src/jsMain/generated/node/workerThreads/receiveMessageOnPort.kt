@@ -8,7 +8,7 @@ import web.messaging.MessagePort
 
 /**
  * Receive a single message from a given `MessagePort`. If no message is available,`undefined` is returned, otherwise an object with a single `message` property
- * that contains the message payload, corresponding to the oldest message in the`MessagePort`'s queue.
+ * that contains the message payload, corresponding to the oldest message in the `MessagePort`'s queue.
  *
  * ```js
  * const { MessageChannel, receiveMessageOnPort } = require('node:worker_threads');
@@ -21,7 +21,7 @@ import web.messaging.MessagePort
  * // Prints: undefined
  * ```
  *
- * When this function is used, no `'message'` event is emitted and the`onmessage` listener is not invoked.
+ * When this function is used, no `'message'` event is emitted and the `onmessage` listener is not invoked.
  * @since v12.3.0
  */
 external fun receiveMessageOnPort(port: MessagePort): (ReceiveMessageOnPortResult)?

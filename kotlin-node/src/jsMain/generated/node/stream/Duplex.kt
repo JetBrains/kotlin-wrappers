@@ -42,8 +42,8 @@ Writable {
      * readable side ends. Set initially by the `allowHalfOpen` constructor option,
      * which defaults to `true`.
      *
-     * This can be changed manually to change the half-open behavior of an existing`Duplex` stream instance, but must be changed before the `'end'` event is
-     * emitted.
+     * This can be changed manually to change the half-open behavior of an existing
+     * `Duplex` stream instance, but must be changed before the `'end'` event is emitted.
      * @since v0.9.4
      */
     var allowHalfOpen: Boolean

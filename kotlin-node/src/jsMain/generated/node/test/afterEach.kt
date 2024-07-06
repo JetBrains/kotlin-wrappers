@@ -5,8 +5,8 @@
 package node.test
 
 /**
- * This function is used to create a hook running
- * after each subtest of the current test.
+ * This function creates a hook that runs after each test in the current suite.
+ * The `afterEach()` hook is run even if the test fails.
  *
  * ```js
  * describe('tests', async () => {

@@ -18,5 +18,10 @@ sealed external interface BrotliOptions {
      */
     var chunkSize: Double?
     var params: (BrotliOptionsParams)?
+
+    /**
+     * Limits output size when using [convenience methods](https://nodejs.org/docs/latest-v20.x/api/zlib.html#convenience-methods).
+     * @default buffer.kMaxLength
+     */
     var maxOutputLength: Double?
 }

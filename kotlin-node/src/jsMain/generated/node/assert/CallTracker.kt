@@ -31,7 +31,7 @@ external class CallTracker {
      * @since v14.2.0, v12.19.0
      * @param [fn='A no-op function']
      * @param [exact=1]
-     * @return that wraps `fn`.
+     * @return A function that wraps `fn`.
      */
     fun calls(exact: Number = definedExternally): () -> Unit
     fun <Func : Function<Any?> /* (...args: any[]) => any */> calls(
@@ -55,8 +55,7 @@ external class CallTracker {
      *                        [{ thisArg: undefined, arguments: [1, 2, 3] }]);
      * ```
      * @since v18.8.0, v16.18.0
-     * @param fn
-     * @return An Array with all the calls to a tracked function.
+     * @return An array with all the calls to a tracked function.
      */
     fun getCalls(fn: Function<*>): js.array.ReadonlyArray<CallTrackerCall>
 
@@ -90,13 +89,12 @@ external class CallTracker {
      * // ]
      * ```
      * @since v14.2.0, v12.19.0
-     * @return An Array of objects containing information about the wrapper functions returned by `calls`.
+     * @return An array of objects containing information about the wrapper functions returned by {@link tracker.calls()}.
      */
     fun report(): js.array.ReadonlyArray<CallTrackerReportInformation>
 
     /**
-     * Reset calls of the call tracker.
-     * If a tracked function is passed as an argument, the calls will be reset for it.
+     * Reset calls of the call tracker. If a tracked function is passed as an argument, the calls will be reset for it.
      * If no arguments are passed, all tracked functions will be reset.
      *
      * ```js
@@ -120,7 +118,7 @@ external class CallTracker {
     fun reset(fn: Function<*> = definedExternally): Unit
 
     /**
-     * Iterates through the list of functions passed to `tracker.calls()` and will throw an error for functions that
+     * Iterates through the list of functions passed to {@link tracker.calls()} and will throw an error for functions that
      * have not been called the expected number of times.
      *
      * ```js

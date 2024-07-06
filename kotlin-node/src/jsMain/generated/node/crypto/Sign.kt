@@ -88,7 +88,7 @@ external class Sign : node.stream.Writable {
     /**
      * Calculates the signature on all the data passed through using either `sign.update()` or `sign.write()`.
      *
-     * If `privateKey` is not a `KeyObject`, this function behaves as if`privateKey` had been passed to {@link createPrivateKey}. If it is an
+     * If `privateKey` is not a `KeyObject`, this function behaves as if `privateKey` had been passed to {@link createPrivateKey}. If it is an
      * object, the following additional properties can be passed:
      *
      * If `outputEncoding` is provided a string is returned; otherwise a `Buffer` is returned.
@@ -102,7 +102,7 @@ external class Sign : node.stream.Writable {
     /**
      * Calculates the signature on all the data passed through using either `sign.update()` or `sign.write()`.
      *
-     * If `privateKey` is not a `KeyObject`, this function behaves as if`privateKey` had been passed to {@link createPrivateKey}. If it is an
+     * If `privateKey` is not a `KeyObject`, this function behaves as if `privateKey` had been passed to {@link createPrivateKey}. If it is an
      * object, the following additional properties can be passed:
      *
      * If `outputEncoding` is provided a string is returned; otherwise a `Buffer` is returned.
@@ -116,7 +116,7 @@ external class Sign : node.stream.Writable {
     /**
      * Calculates the signature on all the data passed through using either `sign.update()` or `sign.write()`.
      *
-     * If `privateKey` is not a `KeyObject`, this function behaves as if`privateKey` had been passed to {@link createPrivateKey}. If it is an
+     * If `privateKey` is not a `KeyObject`, this function behaves as if `privateKey` had been passed to {@link createPrivateKey}. If it is an
      * object, the following additional properties can be passed:
      *
      * If `outputEncoding` is provided a string is returned; otherwise a `Buffer` is returned.

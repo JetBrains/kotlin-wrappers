@@ -5,10 +5,10 @@
 package node.tls
 
 /**
- * {@link createServer} sets the default value of the `honorCipherOrder` option
+ * `{@link createServer}` sets the default value of the `honorCipherOrder` option
  * to `true`, other APIs that create secure contexts leave it unset.
  *
- * {@link createServer} uses a 128 bit truncated SHA1 hash value generated
+ * `{@link createServer}` uses a 128 bit truncated SHA1 hash value generated
  * from `process.argv` as the default value of the `sessionIdContext` option, other
  * APIs that create secure contexts have no default value.
  *
@@ -16,12 +16,12 @@ package node.tls
  * usable as an argument to several `tls` APIs, such as `server.addContext()`,
  * but has no public methods. The {@link Server} constructor and the {@link createServer} method do not support the `secureContext` option.
  *
- * A key is _required_ for ciphers that use certificates. Either `key` or`pfx` can be used to provide it.
+ * A key is _required_ for ciphers that use certificates. Either `key` or `pfx` can be used to provide it.
  *
  * If the `ca` option is not given, then Node.js will default to using [Mozilla's publicly trusted list of
      * CAs](https://hg.mozilla.org/mozilla-central/raw-file/tip/security/nss/lib/ckfw/builtins/certdata.txt).
  *
- * Custom DHE parameters are discouraged in favor of the new `dhparam: 'auto'`option. When set to `'auto'`, well-known DHE parameters of sufficient strength
+ * Custom DHE parameters are discouraged in favor of the new `dhparam: 'auto' `option. When set to `'auto'`, well-known DHE parameters of sufficient strength
  * will be selected automatically. Otherwise, if necessary, `openssl dhparam` can
  * be used to create custom parameters. The key length must be greater than or
  * equal to 1024 bits or else an error will be thrown. Although 1024 bits is

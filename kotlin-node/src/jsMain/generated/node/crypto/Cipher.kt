@@ -130,8 +130,8 @@ open external class Cipher : node.stream.Transform {
 
     /**
      * Updates the cipher with `data`. If the `inputEncoding` argument is given,
-     * the `data`argument is a string using the specified encoding. If the `inputEncoding`argument is not given, `data` must be a `Buffer`, `TypedArray`, or`DataView`. If `data` is a `Buffer`,
-     * `TypedArray`, or `DataView`, then`inputEncoding` is ignored.
+     * the `data`argument is a string using the specified encoding. If the `inputEncoding`argument is not given, `data` must be a `Buffer`, `TypedArray`, or `DataView`. If `data` is a `Buffer`,
+     * `TypedArray`, or `DataView`, then `inputEncoding` is ignored.
      *
      * The `outputEncoding` specifies the output format of the enciphered
      * data. If the `outputEncoding`is specified, a string using the specified encoding is returned. If no`outputEncoding` is provided, a `Buffer` is returned.

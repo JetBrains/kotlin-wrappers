@@ -61,6 +61,16 @@ const jsoInterfaces = [
 ]
 
 export default (node, context) => {
+    const sourceFileName = node.getSourceFile()?.fileName ?? "generated.d.ts"
+
+    if (
+        sourceFileName.endsWith("stream.d.ts")
+        && ts.isInterfaceDeclaration(node)
+        && node.name.text === "StreamOptions"
+    ) {
+        return `@kotlinx.js.JsPlainObject_KT_68943`
+    }
+
     if (
         ts.isInterfaceDeclaration(node)
         && jsoInterfaces.some(name => node.name.text === name)

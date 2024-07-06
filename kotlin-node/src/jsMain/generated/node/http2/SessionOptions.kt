@@ -12,6 +12,7 @@ sealed external interface SessionOptions {
     var paddingStrategy: Double?
     var peerMaxConcurrentStreams: Double?
     var settings: Settings?
+    var remoteCustomSettings: js.array.ReadonlyArray<Double>?
 
     /**
      * Specifies a timeout in milliseconds that

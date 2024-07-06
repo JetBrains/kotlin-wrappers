@@ -2,8 +2,6 @@
 
 package node.vm
 
-import node.module.ImportAttributes
-
 sealed external interface ScriptOptions : BaseOptions {
     /**
      * V8's code cache data for the supplied source.
@@ -14,8 +12,9 @@ sealed external interface ScriptOptions : BaseOptions {
     var produceCachedData: Boolean?
 
     /**
-     * Called during evaluation of this module when `import()` is called.
-     * If this option is not specified, calls to `import()` will reject with `ERR_VM_DYNAMIC_IMPORT_CALLBACK_MISSING`.
+     * Used to specify how the modules should be loaded during the evaluation of this script when `import()` is called. This option is
+     * part of the experimental modules API. We do not recommend using it in a production environment. For detailed information, see
+     * [Support of dynamic `import()` in compilation APIs](https://nodejs.org/docs/latest-v20.x/api/vm.html#support-of-dynamic-import-in-compilation-apis).
      */
-    var importModuleDynamically: ((specifier: String, script: Script, importAttributes: ImportAttributes) -> Module)?
+    var importModuleDynamically: Any? /* ((specifier: string, script: Script, importAttributes: ImportAttributes) => Module) | typeof constants.USE_MAIN_CONTEXT_DEFAULT_LOADER | undefined */
 }

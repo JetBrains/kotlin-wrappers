@@ -7,6 +7,6 @@ package node.test.reporters
 import js.generator.AsyncGenerator
 
 /**
- * The `junit` reporter outputs test results in a jUnit XML format
+ * The `junit` reporter outputs test results in a jUnit XML format.
  */
 external fun junit(source: TestEventGenerator): AsyncGenerator<String, Unit, *>

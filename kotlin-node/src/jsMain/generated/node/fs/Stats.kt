@@ -14,7 +14,7 @@ import js.date.Date
  * their synchronous counterparts are of this type.
  * If `bigint` in the `options` passed to those methods is true, the numeric values
  * will be `bigint` instead of `number`, and the object will contain additional
- * nanosecond-precision properties suffixed with `Ns`.
+ * nanosecond-precision properties suffixed with `Ns`. `Stat` objects are not to be created directly using the `new` keyword.
  *
  * ```console
  * Stats {

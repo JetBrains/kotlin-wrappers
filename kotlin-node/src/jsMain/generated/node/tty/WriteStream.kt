@@ -5,7 +5,7 @@
 package node.tty
 
 /**
- * Represents the writable side of a TTY. In normal circumstances,`process.stdout` and `process.stderr` will be the only`tty.WriteStream` instances created for a Node.js process and there
+ * Represents the writable side of a TTY. In normal circumstances, `process.stdout` and `process.stderr` will be the only`tty.WriteStream` instances created for a Node.js process and there
  * should be no reason to create additional instances.
  * @since v0.5.8
  */
@@ -94,7 +94,7 @@ open external class WriteStream : node.net.Socket {
      * * 256 colors: `FORCE_COLOR = 2`
      * * 16,777,216 colors: `FORCE_COLOR = 3`
      *
-     * Disabling color support is also possible by using the `NO_COLOR` and`NODE_DISABLE_COLORS` environment variables.
+     * Disabling color support is also possible by using the `NO_COLOR` and `NODE_DISABLE_COLORS` environment variables.
      * @since v9.9.0
      * @param [env=process.env] An object containing the environment variables to check. This enables simulating the usage of a specific terminal.
      */
@@ -126,7 +126,7 @@ open external class WriteStream : node.net.Socket {
 
     /**
      * `writeStream.getWindowSize()` returns the size of the TTY
-     * corresponding to this `WriteStream`. The array is of the type`[numColumns, numRows]` where `numColumns` and `numRows` represent the number
+     * corresponding to this `WriteStream`. The array is of the type `[numColumns, numRows]` where `numColumns` and `numRows` represent the number
      * of columns and rows in the corresponding TTY.
      * @since v0.7.7
      */

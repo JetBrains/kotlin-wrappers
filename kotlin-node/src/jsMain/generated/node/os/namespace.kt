@@ -7,4 +7,9 @@ package node.os
 
 external val devNull: String
 
+/**
+ * The operating system-specific end-of-line marker.
+ * * `\n` on POSIX
+ * * `\r\n` on Windows
+ */
 external val EOL: String

@@ -11,7 +11,7 @@ import js.promise.Promise
  * flag enabled.
  *
  * The `vm.Module` class provides a low-level interface for using
- * ECMAScript modules in VM contexts. It is the counterpart of the `vm.Script`class that closely mirrors [Module Record](https://262.ecma-international.org/14.0/#sec-abstract-module-records) s as
+ * ECMAScript modules in VM contexts. It is the counterpart of the `vm.Script` class that closely mirrors [Module Record](https://262.ecma-international.org/14.0/#sec-abstract-module-records) s as
  * defined in the ECMAScript
  * specification.
  *
@@ -153,7 +153,7 @@ open external class Module {
      * * `'errored'`: The module has been evaluated, but an exception was thrown.
      *
      * Other than `'errored'`, this status string corresponds to the specification's [Cyclic Module Record](https://tc39.es/ecma262/#sec-cyclic-module-records)'s `[[Status]]` field. `'errored'`
-     * corresponds to`'evaluated'` in the specification, but with `[[EvaluationError]]` set to a
+     * corresponds to `'evaluated'` in the specification, but with `[[EvaluationError]]` set to a
      * value that is not `undefined`.
      */
     var status: ModuleStatus
@@ -188,7 +188,7 @@ open external class Module {
      * * Its `status` must not be `'errored'`.
      *
      * If the returned `Module`'s `status` is `'unlinked'`, this method will be
-     * recursively called on the returned `Module` with the same provided `linker`function.
+     * recursively called on the returned `Module` with the same provided `linker` function.
      *
      * `link()` returns a `Promise` that will either get resolved when all linking
      * instances resolve to a valid `Module`, or rejected if the linker function either

@@ -5,5 +5,8 @@ package node.events
 import web.abort.AbortSignal
 
 sealed external interface StaticEventEmitterOptions {
+    /**
+     * Can be used to cancel awaiting events.
+     */
     var signal: AbortSignal?
 }

@@ -5,13 +5,13 @@ package node.vm
 sealed external interface BaseOptions {
     /**
      * Specifies the filename used in stack traces produced by this script.
-     * Default: `''`.
+     * @default ''
      */
     var filename: String?
 
     /**
      * Specifies the line number offset that is displayed in stack traces produced by this script.
-     * Default: `0`.
+     * @default 0
      */
     var lineOffset: Double?
 

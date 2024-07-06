@@ -5,6 +5,14 @@ package node.cluster
 sealed external interface Address {
     var address: String
     var port: Double
-    var addressType: Any /* number | "udp4" | "udp6" */// 4, 6, -1, "udp4", "udp6"
 
+    /**
+     * The `addressType` is one of:
+     *
+     * * `4` (TCPv4)
+     * * `6` (TCPv6)
+     * * `-1` (Unix domain socket)
+     * * `'udp4'` or `'udp6'` (UDPv4 or UDPv6)
+     */
+    var addressType: Any /* 4 | 6 | -1 | "udp4" | "udp6" */
 }

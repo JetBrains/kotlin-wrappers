@@ -6,6 +6,8 @@ package node.net
 
 /**
  * Sets the default value of the `autoSelectFamilyAttemptTimeout` option of `socket.connect(options)`.
- * @since v19.8.0
+ * @param value The new default value, which must be a positive number. If the number is less than `10`, the value `10` is used instead. The initial default value is `250` or the value specified via the command line
+ * option `--network-family-autoselection-attempt-timeout`.
+ * @since v19.8.0, v18.8.0
  */
 external fun setDefaultAutoSelectFamilyAttemptTimeout(value: Number): Unit

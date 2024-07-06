@@ -10,7 +10,7 @@ import js.promise.Promise
  * Takes an `async` function (or a function that returns a `Promise`) and returns a
  * function following the error-first callback style, i.e. taking
  * an `(err, value) => ...` callback as the last argument. In the callback, the
- * first argument will be the rejection reason (or `null` if the `Promise`resolved), and the second argument will be the resolved value.
+ * first argument will be the rejection reason (or `null` if the `Promise` resolved), and the second argument will be the resolved value.
  *
  * ```js
  * const util = require('node:util');
@@ -37,7 +37,7 @@ import js.promise.Promise
  *
  * Since `null` has a special meaning as the first argument to a callback, if a
  * wrapped function rejects a `Promise` with a falsy value as a reason, the value
- * is wrapped in an `Error` with the original value stored in a field named`reason`.
+ * is wrapped in an `Error` with the original value stored in a field named `reason`.
  *
  * ```js
  * function fn() {

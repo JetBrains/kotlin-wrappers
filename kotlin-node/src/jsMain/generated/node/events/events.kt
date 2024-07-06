@@ -38,7 +38,7 @@ package node.events
  * });
  * myEmitter.emit('event');
  * ```
- * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/events.js)
+ * @see [source](https://github.com/nodejs/node/blob/v20.13.1/lib/events.js)
  */
 
 

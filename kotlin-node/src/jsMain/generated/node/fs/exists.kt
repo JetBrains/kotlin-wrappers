@@ -17,11 +17,11 @@ package node.fs
  * ```
  *
  * **The parameters for this callback are not consistent with other Node.js**
- * **callbacks.** Normally, the first parameter to a Node.js callback is an `err`parameter, optionally followed by other parameters. The `fs.exists()` callback
+ * **callbacks.** Normally, the first parameter to a Node.js callback is an `err` parameter, optionally followed by other parameters. The `fs.exists()` callback
  * has only one boolean parameter. This is one reason `fs.access()` is recommended
  * instead of `fs.exists()`.
  *
- * Using `fs.exists()` to check for the existence of a file before calling`fs.open()`, `fs.readFile()`, or `fs.writeFile()` is not recommended. Doing
+ * Using `fs.exists()` to check for the existence of a file before calling `fs.open()`, `fs.readFile()`, or `fs.writeFile()` is not recommended. Doing
  * so introduces a race condition, since other processes may change the file's
  * state between the two calls. Instead, user code should open/read/write the
  * file directly and handle the error raised if the file does not exist.

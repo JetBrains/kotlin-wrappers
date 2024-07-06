@@ -46,7 +46,7 @@ external class ServerResponse<Request : IncomingMessage /* default is IncomingMe
     var statusMessage: String
 
     /**
-     * If set to `true`, Node.js will check whether the `Content-Length`header value and the size of the body, in bytes, are equal.
+     * If set to `true`, Node.js will check whether the `Content-Length` header value and the size of the body, in bytes, are equal.
      * Mismatching the `Content-Length` header value will result
      * in an `Error` being thrown, identified by `code:``'ERR_HTTP_CONTENT_LENGTH_MISMATCH'`.
      * @since v18.10.0, v16.18.0
@@ -57,7 +57,7 @@ external class ServerResponse<Request : IncomingMessage /* default is IncomingMe
 
     /**
      * Sends an HTTP/1.1 100 Continue message to the client, indicating that
-     * the request body should be sent. See the `'checkContinue'` event on`Server`.
+     * the request body should be sent. See the `'checkContinue'` event on `Server`.
      * @since v0.3.0
      */
     fun writeContinue(callback: () -> Unit = definedExternally): Unit

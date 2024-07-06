@@ -8,7 +8,7 @@ import js.buffer.ArrayBuffer
 
 /**
  * Provides a synchronous HKDF key derivation function as defined in RFC 5869\. The
- * given `ikm`, `salt` and `info` are used with the `digest` to derive a key of`keylen` bytes.
+ * given `ikm`, `salt` and `info` are used with the `digest` to derive a key of `keylen` bytes.
  *
  * The successfully generated `derivedKey` will be returned as an [ArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer).
  *
@@ -36,7 +36,7 @@ external fun hkdfSync(digest: String, ikm: BinaryLike, salt: BinaryLike, info: B
 
 /**
  * Provides a synchronous HKDF key derivation function as defined in RFC 5869\. The
- * given `ikm`, `salt` and `info` are used with the `digest` to derive a key of`keylen` bytes.
+ * given `ikm`, `salt` and `info` are used with the `digest` to derive a key of `keylen` bytes.
  *
  * The successfully generated `derivedKey` will be returned as an [ArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer).
  *

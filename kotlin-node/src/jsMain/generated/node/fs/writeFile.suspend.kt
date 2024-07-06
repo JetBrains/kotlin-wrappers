@@ -13,7 +13,7 @@ suspend fun writeFile(file: PathLike, data: String): Unit =
 
 
 /**
- * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+ * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
  * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
  *
@@ -74,7 +74,7 @@ suspend fun writeFile(
 
 
 /**
- * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+ * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
  * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
  *
@@ -135,7 +135,7 @@ suspend fun writeFile(
 
 
 /**
- * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+ * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
  * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
  *
@@ -192,7 +192,7 @@ suspend fun writeFile(file: PathLike, data: js.buffer.ArrayBufferView): Unit =
 
 
 /**
- * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+ * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
  * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
  *
@@ -253,7 +253,7 @@ suspend fun writeFile(
 
 
 /**
- * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+ * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
  * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
  *
@@ -314,7 +314,7 @@ suspend fun writeFile(
 
 
 /**
- * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+ * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
  * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
  *
@@ -371,7 +371,7 @@ suspend fun writeFile(file: PathLike, data: js.iterable.JsIterable<Any /* string
 
 
 /**
- * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+ * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
  * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
  *
@@ -432,7 +432,7 @@ suspend fun writeFile(
 
 
 /**
- * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+ * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
  * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
  *
@@ -493,7 +493,7 @@ suspend fun writeFile(
 
 
 /**
- * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+ * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
  * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
  *
@@ -550,7 +550,7 @@ suspend fun writeFile(file: PathLike, data: AsyncIterable<Any /* string | NodeJS
 
 
 /**
- * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+ * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
  * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
  *
@@ -611,7 +611,7 @@ suspend fun writeFile(
 
 
 /**
- * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+ * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
  * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
  *
@@ -672,7 +672,7 @@ suspend fun writeFile(
 
 
 /**
- * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+ * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
  * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
  *
@@ -729,7 +729,7 @@ suspend fun writeFile(file: PathLike, data: Stream): Unit =
 
 
 /**
- * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+ * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
  * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
  *
@@ -790,7 +790,7 @@ suspend fun writeFile(
 
 
 /**
- * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+ * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
  * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
  *
@@ -851,7 +851,7 @@ suspend fun writeFile(
 
 
 /**
- * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+ * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
  * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
  *
@@ -908,7 +908,7 @@ suspend fun writeFile(file: FileHandle, data: String): Unit =
 
 
 /**
- * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+ * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
  * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
  *
@@ -969,7 +969,7 @@ suspend fun writeFile(
 
 
 /**
- * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+ * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
  * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
  *
@@ -1030,7 +1030,7 @@ suspend fun writeFile(
 
 
 /**
- * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+ * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
  * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
  *
@@ -1087,7 +1087,7 @@ suspend fun writeFile(file: FileHandle, data: js.buffer.ArrayBufferView): Unit =
 
 
 /**
- * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+ * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
  * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
  *
@@ -1148,7 +1148,7 @@ suspend fun writeFile(
 
 
 /**
- * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+ * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
  * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
  *
@@ -1209,7 +1209,7 @@ suspend fun writeFile(
 
 
 /**
- * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+ * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
  * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
  *
@@ -1266,7 +1266,7 @@ suspend fun writeFile(file: FileHandle, data: js.iterable.JsIterable<Any /* stri
 
 
 /**
- * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+ * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
  * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
  *
@@ -1327,7 +1327,7 @@ suspend fun writeFile(
 
 
 /**
- * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+ * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
  * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
  *
@@ -1388,7 +1388,7 @@ suspend fun writeFile(
 
 
 /**
- * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+ * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
  * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
  *
@@ -1445,7 +1445,7 @@ suspend fun writeFile(file: FileHandle, data: AsyncIterable<Any /* string | Node
 
 
 /**
- * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+ * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
  * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
  *
@@ -1506,7 +1506,7 @@ suspend fun writeFile(
 
 
 /**
- * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+ * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
  * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
  *
@@ -1567,7 +1567,7 @@ suspend fun writeFile(
 
 
 /**
- * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+ * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
  * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
  *
@@ -1624,7 +1624,7 @@ suspend fun writeFile(file: FileHandle, data: Stream): Unit =
 
 
 /**
- * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+ * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
  * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
  *
@@ -1685,7 +1685,7 @@ suspend fun writeFile(
 
 
 /**
- * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+ * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
  * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
  *

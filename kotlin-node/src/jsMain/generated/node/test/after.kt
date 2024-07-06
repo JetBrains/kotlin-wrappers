@@ -5,7 +5,7 @@
 package node.test
 
 /**
- * This function is used to create a hook running after  running a suite.
+ * This function creates a hook that runs after executing a suite.
  *
  * ```js
  * describe('tests', async () => {

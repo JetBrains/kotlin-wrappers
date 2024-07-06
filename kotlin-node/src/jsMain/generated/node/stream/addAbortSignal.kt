@@ -12,8 +12,8 @@ import web.abort.AbortSignal
  * Attaches an AbortSignal to a readable or writeable stream. This lets code
  * control stream destruction using an `AbortController`.
  *
- * Calling `abort` on the `AbortController` corresponding to the passed`AbortSignal` will behave the same way as calling `.destroy(new AbortError())`on the stream, and `controller.error(new
- * AbortError())` for webstreams.
+ * Calling `abort` on the `AbortController` corresponding to the passed `AbortSignal` will behave the same way as calling `.destroy(new AbortError())` on the
+ * stream, and `controller.error(new AbortError())` for webstreams.
  *
  * ```js
  * const fs = require('node:fs');
@@ -83,6 +83,6 @@ import web.abort.AbortSignal
  * ```
  * @since v15.4.0
  * @param signal A signal representing possible cancellation
- * @param stream a stream to attach a signal to
+ * @param stream A stream to attach a signal to.
  */
 external fun <T : Stream> addAbortSignal(signal: AbortSignal, stream: T): T

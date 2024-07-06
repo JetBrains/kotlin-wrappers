@@ -257,7 +257,7 @@ sealed external interface FileHandle {
      * replacing it may require the `flags` `open` option to be set to `r+` rather than
      * the default `r`. The `encoding` can be any one of those accepted by `Buffer`.
      *
-     * If `autoClose` is set to true (default behavior) on `'error'` or `'finish'`the file descriptor will be closed automatically. If `autoClose` is false,
+     * If `autoClose` is set to true (default behavior) on `'error'` or `'finish'` the file descriptor will be closed automatically. If `autoClose` is false,
      * then the file descriptor won't be closed, even if there's an error.
      * It is the application's responsibility to close it and make sure there's no
      * file descriptor leak.
@@ -371,7 +371,7 @@ sealed external interface FileHandle {
      *
      * The `FileHandle` has to support reading.
      *
-     * If one or more `filehandle.read()` calls are made on a file handle and then a`filehandle.readFile()` call is made, the data will be read from the current
+     * If one or more `filehandle.read()` calls are made on a file handle and then a `filehandle.readFile()` call is made, the data will be read from the current
      * position till the end of the file. It doesn't always read from the beginning
      * of the file.
      * @since v10.0.0
@@ -574,7 +574,7 @@ sealed external interface FileHandle {
     suspend fun utimes(atime: TimeLike, mtime: TimeLike): Unit
 
     /**
-     * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+     * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
      * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
      * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
      * The promise is fulfilled with no arguments upon success.
@@ -597,7 +597,7 @@ sealed external interface FileHandle {
 
 
     /**
-     * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+     * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
      * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
      * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
      * The promise is fulfilled with no arguments upon success.
@@ -620,7 +620,7 @@ sealed external interface FileHandle {
 
 
     /**
-     * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+     * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
      * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
      * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
      * The promise is fulfilled with no arguments upon success.
@@ -643,7 +643,7 @@ sealed external interface FileHandle {
 
 
     /**
-     * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+     * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
      * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
      * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
      * The promise is fulfilled with no arguments upon success.
@@ -666,7 +666,7 @@ sealed external interface FileHandle {
 
 
     /**
-     * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+     * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
      * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
      * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
      * The promise is fulfilled with no arguments upon success.
@@ -689,7 +689,7 @@ sealed external interface FileHandle {
 
 
     /**
-     * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+     * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
      * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
      * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
      * The promise is fulfilled with no arguments upon success.
@@ -716,7 +716,7 @@ sealed external interface FileHandle {
 
 
     /**
-     * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+     * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
      * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
      * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
      * The promise is fulfilled with no arguments upon success.
@@ -739,7 +739,7 @@ sealed external interface FileHandle {
 
 
     /**
-     * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+     * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
      * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
      * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
      * The promise is fulfilled with no arguments upon success.
@@ -762,7 +762,7 @@ sealed external interface FileHandle {
 
 
     /**
-     * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+     * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
      * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
      * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
      * The promise is fulfilled with no arguments upon success.
@@ -785,7 +785,7 @@ sealed external interface FileHandle {
 
 
     /**
-     * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+     * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
      * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
      * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
      * The promise is fulfilled with no arguments upon success.
@@ -808,7 +808,7 @@ sealed external interface FileHandle {
 
 
     /**
-     * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
+     * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
      * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
      * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
      * The promise is fulfilled with no arguments upon success.

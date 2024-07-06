@@ -27,7 +27,7 @@ external class Http2ServerRequest : node.stream.Readable {
 
     /**
      * The request authority pseudo header field. Because HTTP/2 allows requests
-     * to set either `:authority` or `host`, this value is derived from`req.headers[':authority']` if present. Otherwise, it is derived from`req.headers['host']`.
+     * to set either `:authority` or `host`, this value is derived from `req.headers[':authority']` if present. Otherwise, it is derived from `req.headers['host']`.
      * @since v8.4.0
      */
     val authority: String
@@ -78,9 +78,9 @@ external class Http2ServerRequest : node.stream.Readable {
 
     /**
      * In case of server request, the HTTP version sent by the client. In the case of
-     * client response, the HTTP version of the connected-to server. Returns`'2.0'`.
+     * client response, the HTTP version of the connected-to server. Returns `'2.0'`.
      *
-     * Also `message.httpVersionMajor` is the first integer and`message.httpVersionMinor` is the second.
+     * Also `message.httpVersionMajor` is the first integer and `message.httpVersionMinor` is the second.
      * @since v8.4.0
      */
     val httpVersion: String
@@ -140,11 +140,11 @@ external class Http2ServerRequest : node.stream.Readable {
      * `destroyed`, `readable`, and `writable` properties will be retrieved from and
      * set on `request.stream`.
      *
-     * `destroy`, `emit`, `end`, `on` and `once` methods will be called on`request.stream`.
+     * `destroy`, `emit`, `end`, `on` and `once` methods will be called on `request.stream`.
      *
      * `setTimeout` method will be called on `request.stream.session`.
      *
-     * `pause`, `read`, `resume`, and `write` will throw an error with code`ERR_HTTP2_NO_SOCKET_MANIPULATION`. See `Http2Session and Sockets` for
+     * `pause`, `read`, `resume`, and `write` will throw an error with code `ERR_HTTP2_NO_SOCKET_MANIPULATION`. See `Http2Session and Sockets` for
      * more information.
      *
      * All other interactions will be routed directly to the socket. With TLS support,
@@ -211,7 +211,7 @@ external class Http2ServerRequest : node.stream.Readable {
      * the response object.
      *
      * If no `'timeout'` listener is added to the request, the response, or
-     * the server, then `Http2Stream` s are destroyed when they time out. If a
+     * the server, then `Http2Stream`s are destroyed when they time out. If a
      * handler is assigned to the request, the response, or the server's `'timeout'`events, timed out sockets must be handled explicitly.
      * @since v8.4.0
      */

@@ -33,7 +33,7 @@ package node.crypto
  * });
  * ```
  *
- * Any `ArrayBuffer`, `TypedArray`, or `DataView` instance may be passed as`buffer`.
+ * Any `ArrayBuffer`, `TypedArray`, or `DataView` instance may be passed as `buffer`.
  *
  * While this includes instances of `Float32Array` and `Float64Array`, this
  * function should not be used to generate random floating-point numbers. The

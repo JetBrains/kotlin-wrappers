@@ -5,7 +5,7 @@
 package node.util
 
 /**
- * Returns `true` if the given `object` is a `Function`. Otherwise, returns`false`.
+ * Returns `true` if the given `object` is a `Function`. Otherwise, returns `false`.
  *
  * ```js
  * const util = require('node:util');

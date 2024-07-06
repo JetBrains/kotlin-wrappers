@@ -56,6 +56,12 @@ external class PerformanceNodeTiming : PerformanceEntry {
     val loopStart: Double
 
     /**
+     * The high resolution millisecond timestamp at which the Node.js process was initialized.
+     * @since v8.5.0
+     */
+    val nodeStart: Double
+
+    /**
      * The high resolution millisecond timestamp at which the V8 platform was
      * initialized.
      * @since v8.5.0

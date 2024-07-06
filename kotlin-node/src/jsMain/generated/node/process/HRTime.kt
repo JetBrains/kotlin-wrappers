@@ -5,5 +5,25 @@ package node.process
 sealed external interface HRTime {
     @seskar.js.JsNative
     operator fun invoke(time: js.array.JsTuple2<Double, Double> = definedExternally): js.array.JsTuple2<Double, Double>
+
+    /**
+     * The `bigint` version of the `{@link hrtime()}` method returning the current high-resolution real time in nanoseconds as a `bigint`.
+     *
+     * Unlike `{@link hrtime()}`, it does not support an additional time argument since the difference can just be computed directly by subtraction of the two `bigint`s.
+     * ```js
+     * import { hrtime } from 'node:process';
+     *
+     * const start = hrtime.bigint();
+     * // 191051479007711n
+     *
+     * setTimeout(() => {
+     *   const end = hrtime.bigint();
+     *   // 191052633396993n
+     *
+     *   console.log(`Benchmark took ${end - start} nanoseconds`);
+     *   // Benchmark took 1154389282 nanoseconds
+     * }, 1000);
+     * ```
+     */
     fun bigint(): js.core.BigInt
 }

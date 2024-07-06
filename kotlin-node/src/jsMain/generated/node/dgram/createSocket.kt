@@ -11,7 +11,7 @@ package node.dgram
  * (it does the right thing for both `udp4` and `udp6` sockets). The bound address
  * and port can be retrieved using `socket.address().address` and `socket.address().port`.
  *
- * If the `signal` option is enabled, calling `.abort()` on the corresponding`AbortController` is similar to calling `.close()` on the socket:
+ * If the `signal` option is enabled, calling `.abort()` on the corresponding `AbortController` is similar to calling `.close()` on the socket:
  *
  * ```js
  * const controller = new AbortController();

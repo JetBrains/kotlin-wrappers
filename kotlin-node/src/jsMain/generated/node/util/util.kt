@@ -12,7 +12,7 @@ package node.util
  * ```js
  * const util = require('node:util');
  * ```
- * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/util.js)
+ * @see [source](https://github.com/nodejs/node/blob/v20.13.1/lib/util.js)
  */
 
 

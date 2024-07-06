@@ -31,7 +31,7 @@ package node.childProcess
  * limited (and platform-specific) capacity. If the subprocess writes to
  * stdout in excess of that limit without the output being captured, the
  * subprocess blocks waiting for the pipe buffer to accept more data. This is
- * identical to the behavior of pipes in the shell. Use the `{ stdio: 'ignore' }`option if the output will not be consumed.
+ * identical to the behavior of pipes in the shell. Use the `{ stdio: 'ignore' }` option if the output will not be consumed.
  *
  * The command lookup is performed using the `options.env.PATH` environment
  * variable if `env` is in the `options` object. Otherwise, `process.env.PATH` is
@@ -44,7 +44,7 @@ package node.childProcess
  * lexicographically sorts the `env` keys and uses the first one that
  * case-insensitively matches. Only first (in lexicographic order) entry will be
  * passed to the subprocess. This might lead to issues on Windows when passing
- * objects to the `env` option that have multiple variants of the same key, such as`PATH` and `Path`.
+ * objects to the `env` option that have multiple variants of the same key, such as `PATH` and `Path`.
  *
  * The {@link spawn} method spawns the child process asynchronously,
  * without blocking the Node.js event loop. The {@link spawnSync} function provides equivalent functionality in a synchronous manner that blocks
@@ -69,7 +69,7 @@ package node.childProcess
  * For certain use cases, such as automating shell scripts, the `synchronous counterparts` may be more convenient. In many cases, however,
  * the synchronous methods can have significant impact on performance due to
  * stalling the event loop while spawned processes complete.
- * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/child_process.js)
+ * @see [source](https://github.com/nodejs/node/blob/v20.13.1/lib/child_process.js)
  */
 
 

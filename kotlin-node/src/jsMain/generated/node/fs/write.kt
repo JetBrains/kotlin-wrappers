@@ -14,7 +14,7 @@ package node.fs
  * should be written. If `typeof position !== 'number'`, the data will be written
  * at the current position. See [`pwrite(2)`](http://man7.org/linux/man-pages/man2/pwrite.2.html).
  *
- * The callback will be given three arguments `(err, bytesWritten, buffer)` where`bytesWritten` specifies how many _bytes_ were written from `buffer`.
+ * The callback will be given three arguments `(err, bytesWritten, buffer)` where `bytesWritten` specifies how many _bytes_ were written from `buffer`.
  *
  * If this method is invoked as its `util.promisify()` ed version, it returns
  * a promise for an `Object` with `bytesWritten` and `buffer` properties.

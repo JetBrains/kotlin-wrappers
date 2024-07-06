@@ -119,11 +119,11 @@ open external class Decipher : node.stream.Transform {
 
     /**
      * Updates the decipher with `data`. If the `inputEncoding` argument is given,
-     * the `data`argument is a string using the specified encoding. If the `inputEncoding`argument is not given, `data` must be a `Buffer`. If `data` is a `Buffer` then `inputEncoding` is
+     * the `data` argument is a string using the specified encoding. If the `inputEncoding` argument is not given, `data` must be a `Buffer`. If `data` is a `Buffer` then `inputEncoding` is
      * ignored.
      *
      * The `outputEncoding` specifies the output format of the enciphered
-     * data. If the `outputEncoding`is specified, a string using the specified encoding is returned. If no`outputEncoding` is provided, a `Buffer` is returned.
+     * data. If the `outputEncoding` is specified, a string using the specified encoding is returned. If no `outputEncoding` is provided, a `Buffer` is returned.
      *
      * The `decipher.update()` method can be called multiple times with new data until `decipher.final()` is called. Calling `decipher.update()` after `decipher.final()` will result in an error
      * being thrown.
@@ -148,7 +148,7 @@ open external class Decipher : node.stream.Transform {
     fun final(outputEncoding: node.buffer.BufferEncoding): String
 
     /**
-     * When data has been encrypted without standard block padding, calling`decipher.setAutoPadding(false)` will disable automatic padding to prevent `decipher.final()` from checking for and
+     * When data has been encrypted without standard block padding, calling `decipher.setAutoPadding(false)` will disable automatic padding to prevent `decipher.final()` from checking for and
      * removing padding.
      *
      * Turning auto padding off will only work if the input data's length is a

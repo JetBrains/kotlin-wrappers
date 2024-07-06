@@ -13,6 +13,9 @@ sealed external interface Architecture {
         @seskar.js.JsValue("ia32")
         val ia32: Architecture
 
+        @seskar.js.JsValue("loong64")
+        val loong64: Architecture
+
         @seskar.js.JsValue("mips")
         val mips: Architecture
 

@@ -9,7 +9,7 @@ package node.crypto
  *
  * `engine` could be either an id or a path to the engine's shared library.
  *
- * The optional `flags` argument uses `ENGINE_METHOD_ALL` by default. The `flags`is a bit field taking one of or a mix of the following flags (defined in`crypto.constants`):
+ * The optional `flags` argument uses `ENGINE_METHOD_ALL` by default. The `flags` is a bit field taking one of or a mix of the following flags (defined in `crypto.constants`):
  *
  * * `crypto.constants.ENGINE_METHOD_RSA`
  * * `crypto.constants.ENGINE_METHOD_DSA`

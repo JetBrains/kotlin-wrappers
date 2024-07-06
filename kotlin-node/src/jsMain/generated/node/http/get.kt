@@ -8,7 +8,7 @@ import web.url.URL
 
 /**
  * Since most requests are GET requests without bodies, Node.js provides this
- * convenience method. The only difference between this method and {@link request} is that it sets the method to GET by default and calls `req.end()`automatically. The callback must take care to
+ * convenience method. The only difference between this method and {@link request} is that it sets the method to GET by default and calls `req.end()` automatically. The callback must take care to
  * consume the response
  * data for reasons stated in {@link ClientRequest} section.
  *
@@ -70,7 +70,7 @@ external fun get(options: RequestOptions, callback: (res: IncomingMessage) -> Un
 
 /**
  * Since most requests are GET requests without bodies, Node.js provides this
- * convenience method. The only difference between this method and {@link request} is that it sets the method to GET by default and calls `req.end()`automatically. The callback must take care to
+ * convenience method. The only difference between this method and {@link request} is that it sets the method to GET by default and calls `req.end()` automatically. The callback must take care to
  * consume the response
  * data for reasons stated in {@link ClientRequest} section.
  *
@@ -132,7 +132,7 @@ external fun get(options: String, callback: (res: IncomingMessage) -> Unit = def
 
 /**
  * Since most requests are GET requests without bodies, Node.js provides this
- * convenience method. The only difference between this method and {@link request} is that it sets the method to GET by default and calls `req.end()`automatically. The callback must take care to
+ * convenience method. The only difference between this method and {@link request} is that it sets the method to GET by default and calls `req.end()` automatically. The callback must take care to
  * consume the response
  * data for reasons stated in {@link ClientRequest} section.
  *

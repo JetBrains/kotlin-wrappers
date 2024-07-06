@@ -18,8 +18,6 @@ sealed external interface RecordableHistogram : Histogram {
     /**
      * Calculates the amount of time (in nanoseconds) that has passed since the
      * previous call to `recordDelta()` and records that amount in the histogram.
-     *
-     * ## Examples
      * @since v15.9.0, v14.18.0
      */
     fun recordDelta(): Unit

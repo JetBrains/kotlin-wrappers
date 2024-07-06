@@ -5,7 +5,7 @@
 package node.readline
 
 /**
- * The `readline.clearLine()` method clears current line of given `TTY` stream
+ * The `readline.clearLine()` method clears current line of given [TTY](https://nodejs.org/docs/latest-v20.x/api/tty.html) stream
  * in a specified direction identified by `dir`.
  * @since v0.7.7
  * @param callback Invoked once the operation completes.

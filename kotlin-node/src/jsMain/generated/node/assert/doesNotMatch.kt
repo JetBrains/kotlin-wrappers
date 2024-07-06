@@ -22,10 +22,10 @@ import kotlin.js.RegExp
  * // OK
  * ```
  *
- * If the values do match, or if the `string` argument is of another type than`string`, an `AssertionError` is thrown with a `message` property set equal
+ * If the values do match, or if the `string` argument is of another type than `string`, an `{@link AssertionError}` is thrown with a `message` property set equal
  * to the value of the `message` parameter. If the `message` parameter is
  * undefined, a default error message is assigned. If the `message` parameter is an
- * instance of an `Error` then it will be thrown instead of the `AssertionError`.
+ * instance of an [Error](https://nodejs.org/docs/latest-v20.x/api/errors.html#class-error) then it will be thrown instead of the `{@link AssertionError}`.
  * @since v13.6.0, v12.16.0
  */
 external fun doesNotMatch(value: String, regExp: RegExp): Unit
@@ -46,10 +46,10 @@ external fun doesNotMatch(value: String, regExp: RegExp): Unit
  * // OK
  * ```
  *
- * If the values do match, or if the `string` argument is of another type than`string`, an `AssertionError` is thrown with a `message` property set equal
+ * If the values do match, or if the `string` argument is of another type than `string`, an `{@link AssertionError}` is thrown with a `message` property set equal
  * to the value of the `message` parameter. If the `message` parameter is
  * undefined, a default error message is assigned. If the `message` parameter is an
- * instance of an `Error` then it will be thrown instead of the `AssertionError`.
+ * instance of an [Error](https://nodejs.org/docs/latest-v20.x/api/errors.html#class-error) then it will be thrown instead of the `{@link AssertionError}`.
  * @since v13.6.0, v12.16.0
  */
 external fun doesNotMatch(value: String, regExp: RegExp, message: String = definedExternally): Unit
@@ -70,10 +70,10 @@ external fun doesNotMatch(value: String, regExp: RegExp, message: String = defin
  * // OK
  * ```
  *
- * If the values do match, or if the `string` argument is of another type than`string`, an `AssertionError` is thrown with a `message` property set equal
+ * If the values do match, or if the `string` argument is of another type than `string`, an `{@link AssertionError}` is thrown with a `message` property set equal
  * to the value of the `message` parameter. If the `message` parameter is
  * undefined, a default error message is assigned. If the `message` parameter is an
- * instance of an `Error` then it will be thrown instead of the `AssertionError`.
+ * instance of an [Error](https://nodejs.org/docs/latest-v20.x/api/errors.html#class-error) then it will be thrown instead of the `{@link AssertionError}`.
  * @since v13.6.0, v12.16.0
  */
 external fun doesNotMatch(value: String, regExp: RegExp, message: Throwable /* JsError */ = definedExternally): Unit

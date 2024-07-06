@@ -10,7 +10,7 @@ package node.fs
  * For detailed information, see the documentation of the asynchronous version of
  * this API: {@link exists}.
  *
- * `fs.exists()` is deprecated, but `fs.existsSync()` is not. The `callback`parameter to `fs.exists()` accepts parameters that are inconsistent with other
+ * `fs.exists()` is deprecated, but `fs.existsSync()` is not. The `callback` parameter to `fs.exists()` accepts parameters that are inconsistent with other
  * Node.js callbacks. `fs.existsSync()` does not use a callback.
  *
  * ```js

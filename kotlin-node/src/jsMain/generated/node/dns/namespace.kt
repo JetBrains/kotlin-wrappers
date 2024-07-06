@@ -26,52 +26,52 @@ external val ALL: Double
 
 
 // Error codes
-external val NODATA: String /* "NODATA" */
+external val NODATA: String /* "ENODATA" */
 
-external val FORMERR: String /* "FORMERR" */
+external val FORMERR: String /* "EFORMERR" */
 
-external val SERVFAIL: String /* "SERVFAIL" */
+external val SERVFAIL: String /* "ESERVFAIL" */
 
-external val NOTFOUND: String /* "NOTFOUND" */
+external val NOTFOUND: String /* "ENOTFOUND" */
 
-external val NOTIMP: String /* "NOTIMP" */
+external val NOTIMP: String /* "ENOTIMP" */
 
-external val REFUSED: String /* "REFUSED" */
+external val REFUSED: String /* "EREFUSED" */
 
-external val BADQUERY: String /* "BADQUERY" */
+external val BADQUERY: String /* "EBADQUERY" */
 
-external val BADNAME: String /* "BADNAME" */
+external val BADNAME: String /* "EBADNAME" */
 
-external val BADFAMILY: String /* "BADFAMILY" */
+external val BADFAMILY: String /* "EBADFAMILY" */
 
-external val BADRESP: String /* "BADRESP" */
+external val BADRESP: String /* "EBADRESP" */
 
-external val CONNREFUSED: String /* "TIMEOUT" */
+external val CONNREFUSED: String /* "ECONNREFUSED" */
 
-external val TIMEOUT: String /* "TIMEOUT" */
+external val TIMEOUT: String /* "ETIMEOUT" */
 
 external val EOF: String /* "EOF" */
 
-external val FILE: String /* "FILE" */
+external val FILE: String /* "EFILE" */
 
-external val NOMEM: String /* "NOMEM" */
+external val NOMEM: String /* "ENOMEM" */
 
-external val DESTRUCTION: String /* "DESTRUCTION" */
+external val DESTRUCTION: String /* "EDESTRUCTION" */
 
-external val BADSTR: String /* "BADSTR" */
+external val BADSTR: String /* "EBADSTR" */
 
-external val BADFLAGS: String /* "BADFLAGS" */
+external val BADFLAGS: String /* "EBADFLAGS" */
 
-external val NONAME: String /* "NONAME" */
+external val NONAME: String /* "ENONAME" */
 
-external val BADHINTS: String /* "BADHINTS" */
+external val BADHINTS: String /* "EBADHINTS" */
 
-external val NOTINITIALIZED: String /* "NOTINITIALIZED" */
+external val NOTINITIALIZED: String /* "ENOTINITIALIZED" */
 
-external val LOADIPHLPAPI: String /* "LOADIPHLPAPI" */
+external val LOADIPHLPAPI: String /* "ELOADIPHLPAPI" */
 
-external val ADDRGETNETWORKPARAMS: String /* "ADDRGETNETWORKPARAMS" */
+external val ADDRGETNETWORKPARAMS: String /* "EADDRGETNETWORKPARAMS" */
 
-external val CANCELLED: String /* "CANCELLED" */
+external val CANCELLED: String /* "ECANCELLED" */
 
 /* export { dnsPromises as promises }; */

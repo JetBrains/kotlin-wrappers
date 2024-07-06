@@ -7,4 +7,4 @@ package node.test
 
 external val mock: MockTracker
 
-/* export { after, afterEach, before, beforeEach, describe, it, Mock, mock, only, run, skip, test, test as default, todo, }; */
+/* export { after, afterEach, before, beforeEach, describe, it, Mock, mock, only, run, skip, SuiteContext, test, test as default, TestContext, todo, }; */

@@ -50,7 +50,7 @@ sealed external interface ReplOptions {
      * If `true`, specifies that the default `writer` function should include ANSI color
      * styling to REPL output. If a custom `writer` function is provided then this has no
      * effect.
-     * Default: the REPL instance's `terminal` value.
+     * @default the REPL instance's `terminal` value
      */
     var useColors: Boolean?
 
@@ -58,20 +58,20 @@ sealed external interface ReplOptions {
      * If `true`, specifies that the default evaluation function will use the JavaScript
      * `global` as the context as opposed to creating a new separate context for the REPL
      * instance. The node CLI REPL sets this value to `true`.
-     * Default: `false`.
+     * @default false
      */
     var useGlobal: Boolean?
 
     /**
      * If `true`, specifies that the default writer will not output the return value of a
      * command if it evaluates to `undefined`.
-     * Default: `false`.
+     * @default false
      */
     var ignoreUndefined: Boolean?
 
     /**
      * The function to invoke to format the output of each command before writing to `output`.
-     * Default: a wrapper for `util.inspect`.
+     * @default a wrapper for `util.inspect`
      *
      * @see https://nodejs.org/dist/latest-v20.x/docs/api/repl.html#repl_customizing_repl_output
      */
@@ -97,7 +97,7 @@ sealed external interface ReplOptions {
     /**
      * Stop evaluating the current piece of code when `SIGINT` is received, i.e. `Ctrl+C` is
      * pressed. This cannot be used together with a custom `eval` function.
-     * Default: `false`.
+     * @default false
      */
     var breakEvalOnSigint: Boolean?
 }

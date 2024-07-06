@@ -7,6 +7,9 @@ sealed external interface GetDefaultResultOrderResult {
         @seskar.js.JsValue("ipv4first")
         val ipv4first: GetDefaultResultOrderResult
 
+        @seskar.js.JsValue("ipv6first")
+        val ipv6first: GetDefaultResultOrderResult
+
         @seskar.js.JsValue("verbatim")
         val verbatim: GetDefaultResultOrderResult
     }

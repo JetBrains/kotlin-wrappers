@@ -9,7 +9,7 @@ import js.buffer.ArrayBuffer
 /**
  * Generates a pseudorandom prime of `size` bits.
  *
- * If `options.safe` is `true`, the prime will be a safe prime -- that is,`(prime - 1) / 2` will also be a prime.
+ * If `options.safe` is `true`, the prime will be a safe prime -- that is, `(prime - 1) / 2` will also be a prime.
  *
  * The `options.add` and `options.rem` parameters can be used to enforce additional
  * requirements, e.g., for Diffie-Hellman:
@@ -25,7 +25,7 @@ import js.buffer.ArrayBuffer
  * * `options.rem` is ignored if `options.add` is not given.
  *
  * Both `options.add` and `options.rem` must be encoded as big-endian sequences
- * if given as an `ArrayBuffer`, `SharedArrayBuffer`, `TypedArray`, `Buffer`, or`DataView`.
+ * if given as an `ArrayBuffer`, `SharedArrayBuffer`, `TypedArray`, `Buffer`, or `DataView`.
  *
  * By default, the prime is encoded as a big-endian sequence of octets
  * in an [ArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer). If the `bigint` option is `true`, then a

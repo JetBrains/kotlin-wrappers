@@ -41,10 +41,10 @@ open external class EventEmitter {
     internal fun addListenerInternal(type: EventType<*, *>, listener: Function<Unit>): Unit /* this */
 
     /**
-     * Adds the `listener` function to the end of the listeners array for the
-     * event named `eventName`. No checks are made to see if the `listener` has
-     * already been added. Multiple calls passing the same combination of `eventName`and `listener` will result in the `listener` being added, and called, multiple
-     * times.
+     * Adds the `listener` function to the end of the listeners array for the event
+     * named `eventName`. No checks are made to see if the `listener` has already
+     * been added. Multiple calls passing the same combination of `eventName` and
+     * `listener` will result in the `listener` being added, and called, multiple times.
      *
      * ```js
      * server.on('connection', (stream) => {
@@ -54,7 +54,7 @@ open external class EventEmitter {
      *
      * Returns a reference to the `EventEmitter`, so that calls can be chained.
      *
-     * By default, event listeners are invoked in the order they are added. The`emitter.prependListener()` method can be used as an alternative to add the
+     * By default, event listeners are invoked in the order they are added. The `emitter.prependListener()` method can be used as an alternative to add the
      * event listener to the beginning of the listeners array.
      *
      * ```js
@@ -76,7 +76,7 @@ open external class EventEmitter {
     internal fun onInternal(type: EventType<*, *>, listener: Function<Unit>): Unit /* this */
 
     /**
-     * Adds a **one-time**`listener` function for the event named `eventName`. The
+     * Adds a **one-time** `listener` function for the event named `eventName`. The
      * next time `eventName` is triggered, this listener is removed and then invoked.
      *
      * ```js
@@ -87,7 +87,7 @@ open external class EventEmitter {
      *
      * Returns a reference to the `EventEmitter`, so that calls can be chained.
      *
-     * By default, event listeners are invoked in the order they are added. The`emitter.prependOnceListener()` method can be used as an alternative to add the
+     * By default, event listeners are invoked in the order they are added. The `emitter.prependOnceListener()` method can be used as an alternative to add the
      * event listener to the beginning of the listeners array.
      *
      * ```js
@@ -109,7 +109,7 @@ open external class EventEmitter {
     internal fun onceInternal(type: EventType<*, *>, listener: Function<Unit>): Unit /* this */
 
     /**
-     * Removes the specified `listener` from the listener array for the event named`eventName`.
+     * Removes the specified `listener` from the listener array for the event named `eventName`.
      *
      * ```js
      * const callback = (stream) => {
@@ -126,7 +126,7 @@ open external class EventEmitter {
      * called multiple times to remove each instance.
      *
      * Once an event is emitted, all listeners attached to it at the
-     * time of emitting are called in order. This implies that any`removeListener()` or `removeAllListeners()` calls _after_ emitting and _before_ the last listener finishes execution
+     * time of emitting are called in order. This implies that any `removeListener()` or `removeAllListeners()` calls _after_ emitting and _before_ the last listener finishes execution
      * will not remove them from`emit()` in progress. Subsequent events behave as expected.
      *
      * ```js
@@ -169,7 +169,7 @@ open external class EventEmitter {
      *
      * When a single function has been added as a handler multiple times for a single
      * event (as in the example below), `removeListener()` will remove the most
-     * recently added instance. In the example the `once('ping')`listener is removed:
+     * recently added instance. In the example the `once('ping')` listener is removed:
      *
      * ```js
      * import { EventEmitter } from 'node:events';
@@ -220,7 +220,7 @@ open external class EventEmitter {
      * By default `EventEmitter`s will print a warning if more than `10` listeners are
      * added for a particular event. This is a useful default that helps finding
      * memory leaks. The `emitter.setMaxListeners()` method allows the limit to be
-     * modified for this specific `EventEmitter` instance. The value can be set to`Infinity` (or `0`) to indicate an unlimited number of listeners.
+     * modified for this specific `EventEmitter` instance. The value can be set to `Infinity` (or `0`) to indicate an unlimited number of listeners.
      *
      * Returns a reference to the `EventEmitter`, so that calls can be chained.
      * @since v0.3.5
@@ -289,7 +289,7 @@ open external class EventEmitter {
     internal fun rawListenersInternal(type: EventType<*, *>): Array<Function<Unit>>
 
     /**
-     * Synchronously calls each of the listeners registered for the event named`eventName`, in the order they were registered, passing the supplied arguments
+     * Synchronously calls each of the listeners registered for the event named `eventName`, in the order they were registered, passing the supplied arguments
      * to each.
      *
      * Returns `true` if the event had listeners, `false` otherwise.
@@ -347,8 +347,8 @@ open external class EventEmitter {
     /**
      * Adds the `listener` function to the _beginning_ of the listeners array for the
      * event named `eventName`. No checks are made to see if the `listener` has
-     * already been added. Multiple calls passing the same combination of `eventName`and `listener` will result in the `listener` being added, and called, multiple
-     * times.
+     * already been added. Multiple calls passing the same combination of `eventName`
+     * and `listener` will result in the `listener` being added, and called, multiple times.
      *
      * ```js
      * server.prependListener('connection', (stream) => {
@@ -443,7 +443,7 @@ open external class EventEmitter {
          * }
          * ```
          *
-         * The special handling of the `'error'` event is only used when `events.once()`is used to wait for another event. If `events.once()` is used to wait for the
+         * The special handling of the `'error'` event is only used when `events.once()` is used to wait for another event. If `events.once()` is used to wait for the
          * '`error'` event itself, then it is treated as any other kind of event without
          * special handling:
          *
@@ -528,7 +528,7 @@ open external class EventEmitter {
          * }
          * ```
          *
-         * The special handling of the `'error'` event is only used when `events.once()`is used to wait for another event. If `events.once()` is used to wait for the
+         * The special handling of the `'error'` event is only used when `events.once()` is used to wait for another event. If `events.once()` is used to wait for the
          * '`error'` event itself, then it is treated as any other kind of event without
          * special handling:
          *
@@ -635,9 +635,30 @@ open external class EventEmitter {
          *
          * process.nextTick(() => ac.abort());
          * ```
+         *
+         * Use the `close` option to specify an array of event names that will end the iteration:
+         *
+         * ```js
+         * import { on, EventEmitter } from 'node:events';
+         * import process from 'node:process';
+         *
+         * const ee = new EventEmitter();
+         *
+         * // Emit later on
+         * process.nextTick(() => {
+         *   ee.emit('foo', 'bar');
+         *   ee.emit('foo', 42);
+         *   ee.emit('close');
+         * });
+         *
+         * for await (const event of on(ee, 'foo', { close: ['close'] })) {
+         *   console.log(event); // prints ['bar'] [42]
+         * }
+         * // the loop will exit after 'close' is emitted
+         * console.log('done'); // prints 'done'
+         * ```
          * @since v13.6.0, v12.16.0
-         * @param eventName The name of the event being listened for
-         * @return that iterates `eventName` events emitted by the `emitter`
+         * @return An `AsyncIterator` that iterates `eventName` events emitted by the `emitter`
          */
         fun <T : EventEmitter, P : JsTuple> on(
             emitter: T,
@@ -646,7 +667,94 @@ open external class EventEmitter {
         ): AsyncIterableIterator<P>
 
         /**
-         * A class method that returns the number of listeners for the given `eventName`registered on the given `emitter`.
+         * ```js
+         * import { on, EventEmitter } from 'node:events';
+         * import process from 'node:process';
+         *
+         * const ee = new EventEmitter();
+         *
+         * // Emit later on
+         * process.nextTick(() => {
+         *   ee.emit('foo', 'bar');
+         *   ee.emit('foo', 42);
+         * });
+         *
+         * for await (const event of on(ee, 'foo')) {
+         *   // The execution of this inner block is synchronous and it
+         *   // processes one event at a time (even with await). Do not use
+         *   // if concurrent execution is required.
+         *   console.log(event); // prints ['bar'] [42]
+         * }
+         * // Unreachable here
+         * ```
+         *
+         * Returns an `AsyncIterator` that iterates `eventName` events. It will throw
+         * if the `EventEmitter` emits `'error'`. It removes all listeners when
+         * exiting the loop. The `value` returned by each iteration is an array
+         * composed of the emitted event arguments.
+         *
+         * An `AbortSignal` can be used to cancel waiting on events:
+         *
+         * ```js
+         * import { on, EventEmitter } from 'node:events';
+         * import process from 'node:process';
+         *
+         * const ac = new AbortController();
+         *
+         * (async () => {
+         *   const ee = new EventEmitter();
+         *
+         *   // Emit later on
+         *   process.nextTick(() => {
+         *     ee.emit('foo', 'bar');
+         *     ee.emit('foo', 42);
+         *   });
+         *
+         *   for await (const event of on(ee, 'foo', { signal: ac.signal })) {
+         *     // The execution of this inner block is synchronous and it
+         *     // processes one event at a time (even with await). Do not use
+         *     // if concurrent execution is required.
+         *     console.log(event); // prints ['bar'] [42]
+         *   }
+         *   // Unreachable here
+         * })();
+         *
+         * process.nextTick(() => ac.abort());
+         * ```
+         *
+         * Use the `close` option to specify an array of event names that will end the iteration:
+         *
+         * ```js
+         * import { on, EventEmitter } from 'node:events';
+         * import process from 'node:process';
+         *
+         * const ee = new EventEmitter();
+         *
+         * // Emit later on
+         * process.nextTick(() => {
+         *   ee.emit('foo', 'bar');
+         *   ee.emit('foo', 42);
+         *   ee.emit('close');
+         * });
+         *
+         * for await (const event of on(ee, 'foo', { close: ['close'] })) {
+         *   console.log(event); // prints ['bar'] [42]
+         * }
+         * // the loop will exit after 'close' is emitted
+         * console.log('done'); // prints 'done'
+         * ```
+         * @since v13.6.0, v12.16.0
+         * @return An `AsyncIterator` that iterates `eventName` events emitted by the `emitter`
+         */
+
+        fun <E : Event, T : EventTarget> on(
+            emitter: T,
+            type: web.events.EventType<E, T>,
+            options: StaticEventEmitterOptions = definedExternally,
+        ): AsyncIterableIterator<JsTuple1<E>>
+
+        /**
+         * A class method that returns the number of listeners for the given `eventName` registered on the given `emitter`.
          *
          * ```js
          * import { EventEmitter, listenerCount } from 'node:events';
@@ -665,7 +773,7 @@ open external class EventEmitter {
         fun <T : EventEmitter> listenerCount(emitter: T, type: EventType<T, *>): Double
 
         /**
-         * A class method that returns the number of listeners for the given `eventName`registered on the given `emitter`.
+         * A class method that returns the number of listeners for the given `eventName` registered on the given `emitter`.
          *
          * ```js
          * import { EventEmitter, listenerCount } from 'node:events';
@@ -876,7 +984,7 @@ open external class EventEmitter {
          */
         fun setMaxListeners(
             n: Number = definedExternally,
-            vararg eventTargets: Any, /* _DOMEventTarget | NodeJS.EventEmitter */
+            vararg eventTargets: Any, /* EventTarget | NodeJS.EventEmitter */
         ): Unit
 
         /**
@@ -916,9 +1024,9 @@ open external class EventEmitter {
         fun addAbortListener(signal: AbortSignal, resource: (event: Event) -> Unit): Disposable
 
         /**
-         * This symbol shall be used to install a listener for only monitoring `'error'`events. Listeners installed using this symbol are called before the regular`'error'` listeners are called.
+         * This symbol shall be used to install a listener for only monitoring `'error'` events. Listeners installed using this symbol are called before the regular `'error'` listeners are called.
          *
-         * Installing a listener using this symbol does not change the behavior once an`'error'` event is emitted. Therefore, the process will still crash if no
+         * Installing a listener using this symbol does not change the behavior once an `'error'` event is emitted. Therefore, the process will still crash if no
          * regular `'error'` listener is installed.
          * @since v13.6.0, v12.17.0
          */
@@ -944,16 +1052,18 @@ open external class EventEmitter {
          * By default, a maximum of `10` listeners can be registered for any single
          * event. This limit can be changed for individual `EventEmitter` instances
          * using the `emitter.setMaxListeners(n)` method. To change the default
-         * for _all_`EventEmitter` instances, the `events.defaultMaxListeners`property can be used. If this value is not a positive number, a `RangeError`is thrown.
+         * for _all_`EventEmitter` instances, the `events.defaultMaxListeners` property
+         * can be used. If this value is not a positive number, a `RangeError` is thrown.
          *
          * Take caution when setting the `events.defaultMaxListeners` because the
-         * change affects _all_`EventEmitter` instances, including those created before
+         * change affects _all_ `EventEmitter` instances, including those created before
          * the change is made. However, calling `emitter.setMaxListeners(n)` still has
          * precedence over `events.defaultMaxListeners`.
          *
          * This is not a hard limit. The `EventEmitter` instance will allow
          * more listeners to be added but will output a trace warning to stderr indicating
-         * that a "possible EventEmitter memory leak" has been detected. For any single`EventEmitter`, the `emitter.getMaxListeners()` and `emitter.setMaxListeners()`methods can be used to
+         * that a "possible EventEmitter memory leak" has been detected. For any single
+         * `EventEmitter`, the `emitter.getMaxListeners()` and `emitter.setMaxListeners()` methods can be used to
          * temporarily avoid this warning:
          *
          * ```js

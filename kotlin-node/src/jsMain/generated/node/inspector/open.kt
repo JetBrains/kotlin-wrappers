@@ -7,13 +7,13 @@ package node.inspector
 import js.disposable.Disposable
 
 /**
- * Activate inspector on host and port. Equivalent to`node --inspect=[[host:]port]`, but can be done programmatically after node has
+ * Activate inspector on host and port. Equivalent to `node --inspect=[[host:]port]`, but can be done programmatically after node has
  * started.
  *
  * If wait is `true`, will block until a client has connected to the inspect port
  * and flow control has been passed to the debugger client.
  *
- * See the `security warning` regarding the `host`parameter usage.
+ * See the `security warning` regarding the `host` parameter usage.
  * @param [port='what was specified on the CLI'] Port to listen on for inspector connections. Optional.
  * @param [host='what was specified on the CLI'] Host to listen on for inspector connections. Optional.
  * @param [wait=false] Block until a client has connected. Optional.

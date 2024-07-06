@@ -14,18 +14,18 @@ import node.events.EventEmitter
  */
 external class Worker : EventEmitter {
     /**
-     * Each new worker is given its own unique id, this id is stored in the`id`.
+     * Each new worker is given its own unique id, this id is stored in the `id`.
      *
-     * While a worker is alive, this is the key that indexes it in`cluster.workers`.
+     * While a worker is alive, this is the key that indexes it in `cluster.workers`.
      * @since v0.8.0
      */
     var id: Double
 
     /**
-     * All workers are created using `child_process.fork()`, the returned object
-     * from this function is stored as `.process`. In a worker, the global `process`is stored.
+     * All workers are created using [`child_process.fork()`](https://nodejs.org/docs/latest-v20.x/api/child_process.html#child_processforkmodulepath-args-options), the returned object
+     * from this function is stored as `.process`. In a worker, the global `process` is stored.
      *
-     * See: `Child Process module`.
+     * See: [Child Process module](https://nodejs.org/docs/latest-v20.x/api/child_process.html#child_processforkmodulepath-args-options).
      *
      * Workers will call `process.exit(0)` if the `'disconnect'` event occurs
      * on `process` and `.exitedAfterDisconnect` is not `true`. This protects against
@@ -37,9 +37,9 @@ external class Worker : EventEmitter {
     /**
      * Send a message to a worker or primary, optionally with a handle.
      *
-     * In the primary, this sends a message to a specific worker. It is identical to `ChildProcess.send()`.
+     * In the primary, this sends a message to a specific worker. It is identical to [`ChildProcess.send()`](https://nodejs.org/docs/latest-v20.x/api/child_process.html#subprocesssendmessage-sendhandle-options-callback).
      *
-     * In a worker, this sends a message to the primary. It is identical to`process.send()`.
+     * In a worker, this sends a message to the primary. It is identical to `process.send()`.
      *
      * This example will echo back all messages from the primary:
      *
@@ -55,7 +55,7 @@ external class Worker : EventEmitter {
      * }
      * ```
      * @since v0.7.0
-     * @param options The `options` argument, if present, is an object used to parameterize the sending of certain types of handles. `options` supports the following properties:
+     * @param options The `options` argument, if present, is an object used to parameterize the sending of certain types of handles.
      */
     fun send(
         message: node.childProcess.Serializable,
@@ -77,7 +77,7 @@ external class Worker : EventEmitter {
 
     /**
      * This function will kill the worker. In the primary worker, it does this by
-     * disconnecting the `worker.process`, and once disconnected, killing with`signal`. In the worker, it does it by killing the process with `signal`.
+     * disconnecting the `worker.process`, and once disconnected, killing with `signal`. In the worker, it does it by killing the process with `signal`.
      *
      * The `kill()` function kills the worker process without waiting for a graceful
      * disconnect, it has the same behavior as `worker.process.kill()`.
@@ -85,7 +85,7 @@ external class Worker : EventEmitter {
      * This method is aliased as `worker.destroy()` for backwards compatibility.
      *
      * In a worker, `process.kill()` exists, but it is not this function;
-     * it is `kill()`.
+     * it is [`kill()`](https://nodejs.org/docs/latest-v20.x/api/process.html#processkillpid-signal).
      * @since v0.9.12
      * @param [signal='SIGTERM'] Name of the kill signal to send to the worker process.
      */
@@ -96,7 +96,7 @@ external class Worker : EventEmitter {
      * In a worker, this function will close all servers, wait for the `'close'` event
      * on those servers, and then disconnect the IPC channel.
      *
-     * In the primary, an internal message is sent to the worker causing it to call`.disconnect()` on itself.
+     * In the primary, an internal message is sent to the worker causing it to call `.disconnect()` on itself.
      *
      * Causes `.exitedAfterDisconnect` to be set.
      *

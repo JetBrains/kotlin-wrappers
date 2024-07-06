@@ -36,7 +36,7 @@ external class MockTimers {
      *
      * The above example enables mocking for the `Date` constructor, `setInterval` timer and
      * implicitly mocks the `clearInterval` function. Only the `Date` constructor from `globalThis`,
-     * `setInterval` and `clearInterval` functions from `node:timers`,`node:timers/promises`, and `globalThis` will be mocked.
+     * `setInterval` and `clearInterval` functions from `node:timers`, `node:timers/promises`, and `globalThis` will be mocked.
      *
      * Example usage with initial time set
      *
@@ -61,7 +61,9 @@ external class MockTimers {
      * and `globalThis` will be mocked.
      * The `Date` constructor from `globalThis` will be mocked.
      *
-     * If there is no initial epoch set, the initial date will be based on 0 in the Unix epoch. This is `January 1st, 1970, 00:00:00 UTC`. You can set an initial date by passing a now property to the `.enable()` method. This value will be used as the initial date for the mocked Date object. It can either be a positive integer, or another Date object.
+     * If there is no initial epoch set, the initial date will be based on 0 in the Unix epoch. This is `January 1st, 1970, 00:00:00 UTC`. You can
+     * set an initial date by passing a now property to the `.enable()` method. This value will be used as the initial date for the mocked Date
+     * object. It can either be a positive integer, or another Date object.
      * @since v20.4.0
      */
     fun enable(options: MockTimersOptions = definedExternally): Unit

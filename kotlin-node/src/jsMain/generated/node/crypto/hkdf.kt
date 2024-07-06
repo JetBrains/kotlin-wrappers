@@ -7,9 +7,9 @@ package node.crypto
 import js.buffer.ArrayBuffer
 
 /**
- * HKDF is a simple key derivation function defined in RFC 5869\. The given `ikm`,`salt` and `info` are used with the `digest` to derive a key of `keylen` bytes.
+ * HKDF is a simple key derivation function defined in RFC 5869\. The given `ikm`, `salt` and `info` are used with the `digest` to derive a key of `keylen` bytes.
  *
- * The supplied `callback` function is called with two arguments: `err` and`derivedKey`. If an errors occurs while deriving the key, `err` will be set;
+ * The supplied `callback` function is called with two arguments: `err` and `derivedKey`. If an errors occurs while deriving the key, `err` will be set;
  * otherwise `err` will be `null`. The successfully generated `derivedKey` will
  * be passed to the callback as an [ArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer). An error will be thrown if any
  * of the input arguments specify invalid values or types.
@@ -43,9 +43,9 @@ external fun hkdf(
 ): Unit
 
 /**
- * HKDF is a simple key derivation function defined in RFC 5869\. The given `ikm`,`salt` and `info` are used with the `digest` to derive a key of `keylen` bytes.
+ * HKDF is a simple key derivation function defined in RFC 5869\. The given `ikm`, `salt` and `info` are used with the `digest` to derive a key of `keylen` bytes.
  *
- * The supplied `callback` function is called with two arguments: `err` and`derivedKey`. If an errors occurs while deriving the key, `err` will be set;
+ * The supplied `callback` function is called with two arguments: `err` and `derivedKey`. If an errors occurs while deriving the key, `err` will be set;
  * otherwise `err` will be `null`. The successfully generated `derivedKey` will
  * be passed to the callback as an [ArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer). An error will be thrown if any
  * of the input arguments specify invalid values or types.

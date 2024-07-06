@@ -4,10 +4,10 @@
 
 package node.dgram
 
-import node.net.AddressInfo
-import node.events.EventEmitter
 import js.array.ReadonlyArray
 import js.typedarrays.Uint8Array
+import node.events.EventEmitter
+import node.net.AddressInfo
 
 /**
  * Encapsulates the datagram functionality.
@@ -18,7 +18,7 @@ import js.typedarrays.Uint8Array
  */
 external class Socket : EventEmitter {
     /**
-     * Tells the kernel to join a multicast group at the given `multicastAddress` and`multicastInterface` using the `IP_ADD_MEMBERSHIP` socket option. If the`multicastInterface` argument is not
+     * Tells the kernel to join a multicast group at the given `multicastAddress` and `multicastInterface` using the `IP_ADD_MEMBERSHIP` socket option. If the `multicastInterface` argument is not
      * specified, the operating system will choose
      * one interface and will add membership to it. To add membership to every
      * available interface, call `addMembership` multiple times, once per interface.
@@ -48,7 +48,7 @@ external class Socket : EventEmitter {
 
     /**
      * Returns an object containing the address information for a socket.
-     * For UDP sockets, this object will contain `address`, `family`, and `port`properties.
+     * For UDP sockets, this object will contain `address`, `family`, and `port` properties.
      *
      * This method throws `EBADF` if called on an unbound socket.
      * @since v0.1.99
@@ -60,10 +60,10 @@ external class Socket : EventEmitter {
      * messages on a named `port` and optional `address`. If `port` is not
      * specified or is `0`, the operating system will attempt to bind to a
      * random port. If `address` is not specified, the operating system will
-     * attempt to listen on all addresses. Once binding is complete, a`'listening'` event is emitted and the optional `callback` function is
+     * attempt to listen on all addresses. Once binding is complete, a `'listening'` event is emitted and the optional `callback` function is
      * called.
      *
-     * Specifying both a `'listening'` event listener and passing a`callback` to the `socket.bind()` method is not harmful but not very
+     * Specifying both a `'listening'` event listener and passing a `callback` to the `socket.bind()` method is not harmful but not very
      * useful.
      *
      * A bound datagram socket keeps the Node.js process running to receive
@@ -142,7 +142,7 @@ external class Socket : EventEmitter {
     fun disconnect(): Unit
 
     /**
-     * Instructs the kernel to leave a multicast group at `multicastAddress` using the`IP_DROP_MEMBERSHIP` socket option. This method is automatically called by the
+     * Instructs the kernel to leave a multicast group at `multicastAddress` using the `IP_DROP_MEMBERSHIP` socket option. This method is automatically called by the
      * kernel when the socket is closed or the process terminates, so most apps will
      * never have reason to call this.
      *
@@ -212,14 +212,14 @@ external class Socket : EventEmitter {
      * any `TypedArray` or a `DataView`,
      * the `offset` and `length` specify the offset within the `Buffer` where the
      * message begins and the number of bytes in the message, respectively.
-     * If `msg` is a `String`, then it is automatically converted to a `Buffer`with `'utf8'` encoding. With messages that
+     * If `msg` is a `String`, then it is automatically converted to a `Buffer` with `'utf8'` encoding. With messages that
      * contain multi-byte characters, `offset` and `length` will be calculated with
      * respect to `byte length` and not the character position.
      * If `msg` is an array, `offset` and `length` must not be specified.
      *
      * The `address` argument is a string. If the value of `address` is a host name,
      * DNS will be used to resolve the address of the host. If `address` is not
-     * provided or otherwise nullish, `'127.0.0.1'` (for `udp4` sockets) or `'::1'`(for `udp6` sockets) will be used by default.
+     * provided or otherwise nullish, `'127.0.0.1'` (for `udp4` sockets) or `'::1'` (for `udp6` sockets) will be used by default.
      *
      * If the socket has not been previously bound with a call to `bind`, the socket
      * is assigned a random port number and is bound to the "all interfaces" address
@@ -230,7 +230,7 @@ external class Socket : EventEmitter {
      * DNS lookups delay the time to send for at least one tick of the
      * Node.js event loop.
      *
-     * The only way to know for sure that the datagram has been sent is by using a`callback`. If an error occurs and a `callback` is given, the error will be
+     * The only way to know for sure that the datagram has been sent is by using a `callback`. If an error occurs and a `callback` is given, the error will be
      * passed as the first argument to the `callback`. If a `callback` is not given,
      * the error is emitted as an `'error'` event on the `socket` object.
      *
@@ -272,7 +272,7 @@ external class Socket : EventEmitter {
      * determine the optimal strategy on a case-by-case basis. Generally speaking,
      * however, sending multiple buffers is faster.
      *
-     * Example of sending a UDP packet using a socket connected to a port on`localhost`:
+     * Example of sending a UDP packet using a socket connected to a port on `localhost`:
      *
      * ```js
      * import dgram from 'node:dgram';
@@ -312,14 +312,14 @@ external class Socket : EventEmitter {
      * any `TypedArray` or a `DataView`,
      * the `offset` and `length` specify the offset within the `Buffer` where the
      * message begins and the number of bytes in the message, respectively.
-     * If `msg` is a `String`, then it is automatically converted to a `Buffer`with `'utf8'` encoding. With messages that
+     * If `msg` is a `String`, then it is automatically converted to a `Buffer` with `'utf8'` encoding. With messages that
      * contain multi-byte characters, `offset` and `length` will be calculated with
      * respect to `byte length` and not the character position.
      * If `msg` is an array, `offset` and `length` must not be specified.
      *
      * The `address` argument is a string. If the value of `address` is a host name,
      * DNS will be used to resolve the address of the host. If `address` is not
-     * provided or otherwise nullish, `'127.0.0.1'` (for `udp4` sockets) or `'::1'`(for `udp6` sockets) will be used by default.
+     * provided or otherwise nullish, `'127.0.0.1'` (for `udp4` sockets) or `'::1'` (for `udp6` sockets) will be used by default.
      *
      * If the socket has not been previously bound with a call to `bind`, the socket
      * is assigned a random port number and is bound to the "all interfaces" address
@@ -330,7 +330,7 @@ external class Socket : EventEmitter {
      * DNS lookups delay the time to send for at least one tick of the
      * Node.js event loop.
      *
-     * The only way to know for sure that the datagram has been sent is by using a`callback`. If an error occurs and a `callback` is given, the error will be
+     * The only way to know for sure that the datagram has been sent is by using a `callback`. If an error occurs and a `callback` is given, the error will be
      * passed as the first argument to the `callback`. If a `callback` is not given,
      * the error is emitted as an `'error'` event on the `socket` object.
      *
@@ -372,7 +372,7 @@ external class Socket : EventEmitter {
      * determine the optimal strategy on a case-by-case basis. Generally speaking,
      * however, sending multiple buffers is faster.
      *
-     * Example of sending a UDP packet using a socket connected to a port on`localhost`:
+     * Example of sending a UDP packet using a socket connected to a port on `localhost`:
      *
      * ```js
      * import dgram from 'node:dgram';
@@ -412,14 +412,14 @@ external class Socket : EventEmitter {
      * any `TypedArray` or a `DataView`,
      * the `offset` and `length` specify the offset within the `Buffer` where the
      * message begins and the number of bytes in the message, respectively.
-     * If `msg` is a `String`, then it is automatically converted to a `Buffer`with `'utf8'` encoding. With messages that
+     * If `msg` is a `String`, then it is automatically converted to a `Buffer` with `'utf8'` encoding. With messages that
      * contain multi-byte characters, `offset` and `length` will be calculated with
      * respect to `byte length` and not the character position.
      * If `msg` is an array, `offset` and `length` must not be specified.
      *
      * The `address` argument is a string. If the value of `address` is a host name,
      * DNS will be used to resolve the address of the host. If `address` is not
-     * provided or otherwise nullish, `'127.0.0.1'` (for `udp4` sockets) or `'::1'`(for `udp6` sockets) will be used by default.
+     * provided or otherwise nullish, `'127.0.0.1'` (for `udp4` sockets) or `'::1'` (for `udp6` sockets) will be used by default.
      *
      * If the socket has not been previously bound with a call to `bind`, the socket
      * is assigned a random port number and is bound to the "all interfaces" address
@@ -430,7 +430,7 @@ external class Socket : EventEmitter {
      * DNS lookups delay the time to send for at least one tick of the
      * Node.js event loop.
      *
-     * The only way to know for sure that the datagram has been sent is by using a`callback`. If an error occurs and a `callback` is given, the error will be
+     * The only way to know for sure that the datagram has been sent is by using a `callback`. If an error occurs and a `callback` is given, the error will be
      * passed as the first argument to the `callback`. If a `callback` is not given,
      * the error is emitted as an `'error'` event on the `socket` object.
      *
@@ -472,7 +472,7 @@ external class Socket : EventEmitter {
      * determine the optimal strategy on a case-by-case basis. Generally speaking,
      * however, sending multiple buffers is faster.
      *
-     * Example of sending a UDP packet using a socket connected to a port on`localhost`:
+     * Example of sending a UDP packet using a socket connected to a port on `localhost`:
      *
      * ```js
      * import dgram from 'node:dgram';
@@ -719,10 +719,10 @@ external class Socket : EventEmitter {
     fun unref(): Unit /* this */
 
     /**
-     * Tells the kernel to join a source-specific multicast channel at the given`sourceAddress` and `groupAddress`, using the `multicastInterface` with the`IP_ADD_SOURCE_MEMBERSHIP` socket
+     * Tells the kernel to join a source-specific multicast channel at the given `sourceAddress` and `groupAddress`, using the `multicastInterface` with the `IP_ADD_SOURCE_MEMBERSHIP` socket
      * option. If the `multicastInterface` argument
      * is not specified, the operating system will choose one interface and will add
-     * membership to it. To add membership to every available interface, call`socket.addSourceSpecificMembership()` multiple times, once per interface.
+     * membership to it. To add membership to every available interface, call `socket.addSourceSpecificMembership()` multiple times, once per interface.
      *
      * When called on an unbound socket, this method will implicitly bind to a random
      * port, listening on all interfaces.
@@ -735,7 +735,7 @@ external class Socket : EventEmitter {
     ): Unit
 
     /**
-     * Instructs the kernel to leave a source-specific multicast channel at the given`sourceAddress` and `groupAddress` using the `IP_DROP_SOURCE_MEMBERSHIP`socket option. This method is
+     * Instructs the kernel to leave a source-specific multicast channel at the given `sourceAddress` and `groupAddress` using the `IP_DROP_SOURCE_MEMBERSHIP` socket option. This method is
      * automatically called by the kernel when the
      * socket is closed or the process terminates, so most apps will never have
      * reason to call this.

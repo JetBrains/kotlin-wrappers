@@ -17,7 +17,7 @@ open external class ReadStream : node.net.Socket {
      * raw device.
      *
      * This flag is always `false` when a process starts, even if the terminal is
-     * operating in raw mode. Its value will change with subsequent calls to`setRawMode`.
+     * operating in raw mode. Its value will change with subsequent calls to `setRawMode`.
      * @since v0.7.7
      */
     var isRaw: Boolean

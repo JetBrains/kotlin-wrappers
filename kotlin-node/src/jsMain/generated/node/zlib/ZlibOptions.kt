@@ -26,6 +26,14 @@ sealed external interface ZlibOptions {
 
     var dictionary: Any? /* NodeJS.ArrayBufferView | ArrayBuffer | undefined */// deflate/inflate only, empty dictionary by default
 
+    /**
+     * If `true`, returns an object with `buffer` and `engine`.
+     */
     var info: Boolean?
+
+    /**
+     * Limits output size when using convenience methods.
+     * @default buffer.kMaxLength
+     */
     var maxOutputLength: Double?
 }

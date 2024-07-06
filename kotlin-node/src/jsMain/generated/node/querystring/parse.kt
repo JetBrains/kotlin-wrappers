@@ -17,7 +17,7 @@ package node.querystring
  * }
  * ```
  *
- * The object returned by the `querystring.parse()` method _does not_prototypically inherit from the JavaScript `Object`. This means that typical`Object` methods such as `obj.toString()`,
+ * The object returned by the `querystring.parse()` method _does not_ prototypically inherit from the JavaScript `Object`. This means that typical `Object` methods such as `obj.toString()`,
  * `obj.hasOwnProperty()`, and others
  * are not defined and _will not work_.
  *
@@ -34,7 +34,7 @@ package node.querystring
  * @since v0.1.25
  * @param str The URL query string to parse
  * @param [sep='&'] The substring used to delimit key and value pairs in the query string.
- * @param [eq='='] . The substring used to delimit keys and values in the query string.
+ * @param [eq='='] The substring used to delimit keys and values in the query string.
  */
 external fun parse(
     str: String,

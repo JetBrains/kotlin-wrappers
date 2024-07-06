@@ -5,11 +5,12 @@
 package node.dns
 
 /**
- * Get the default value for `verbatim` in {@link lookup} and [`dnsPromises.lookup()`](https://nodejs.org/docs/latest-v20.x/api/dns.html#dnspromiseslookuphostname-options).
+ * Get the default value for `order` in {@link lookup} and [`dnsPromises.lookup()`](https://nodejs.org/docs/latest-v20.x/api/dns.html#dnspromiseslookuphostname-options).
  * The value could be:
  *
- * * `ipv4first`: for `verbatim` defaulting to `false`.
- * * `verbatim`: for `verbatim` defaulting to `true`.
+ * * `ipv4first`: for `order` defaulting to `ipv4first`.
+ * * `ipv6first`: for `order` defaulting to `ipv6first`.
+ * * `verbatim`: for `order` defaulting to `verbatim`.
  * @since v18.17.0
  */
 external fun getDefaultResultOrder(): GetDefaultResultOrderResult

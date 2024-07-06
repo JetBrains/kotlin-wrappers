@@ -14,7 +14,7 @@ package node.crypto
  *
  * When passing strings for `password` or `salt`, please consider `caveats when using strings as inputs to cryptographic APIs`.
  *
- * The `callback` function is called with two arguments: `err` and `derivedKey`.`err` is an exception object when key derivation fails, otherwise `err` is`null`. `derivedKey` is passed to the
+ * The `callback` function is called with two arguments: `err` and `derivedKey`. `err` is an exception object when key derivation fails, otherwise `err` is `null`. `derivedKey` is passed to the
  * callback as a `Buffer`.
  *
  * An exception is thrown when any of the input arguments specify invalid values

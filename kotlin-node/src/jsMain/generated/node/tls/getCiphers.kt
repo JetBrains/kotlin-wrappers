@@ -7,9 +7,10 @@ package node.tls
 /**
  * Returns an array with the names of the supported TLS ciphers. The names are
  * lower-case for historical reasons, but must be uppercased to be used in
- * the `ciphers` option of {@link createSecureContext}.
+ * the `ciphers` option of `{@link createSecureContext}`.
  *
- * Not all supported ciphers are enabled by default. See `Modifying the default TLS cipher suite`.
+ * Not all supported ciphers are enabled by default. See
+ * [Modifying the default TLS cipher suite](https://nodejs.org/docs/latest-v20.x/api/tls.html#modifying-the-default-tls-cipher-suite).
  *
  * Cipher names that start with `'tls_'` are for TLSv1.3, all the others are for
  * TLSv1.2 and below.

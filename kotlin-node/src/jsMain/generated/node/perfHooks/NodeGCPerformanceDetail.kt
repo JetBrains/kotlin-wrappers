@@ -4,7 +4,7 @@ package node.perfHooks
 
 sealed external interface NodeGCPerformanceDetail {
     /**
-     * When `performanceEntry.entryType` is equal to 'gc', `the performance.kind` property identifies
+     * When `performanceEntry.entryType` is equal to 'gc', the `performance.kind` property identifies
      * the type of garbage collection operation that occurred.
      * See perf_hooks.constants for valid values.
      */

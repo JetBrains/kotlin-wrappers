@@ -10,7 +10,7 @@ import js.promise.Promise
  * Asynchronously creates a directory.
  *
  * The optional `options` argument can be an integer specifying `mode` (permission
- * and sticky bits), or an object with a `mode` property and a `recursive`property indicating whether parent directories should be created. Calling`fsPromises.mkdir()` when `path` is a directory
+ * and sticky bits), or an object with a `mode` property and a `recursive` property indicating whether parent directories should be created. Calling `fsPromises.mkdir()` when `path` is a directory
  * that exists results in a
  * rejection only when `recursive` is false.
  *

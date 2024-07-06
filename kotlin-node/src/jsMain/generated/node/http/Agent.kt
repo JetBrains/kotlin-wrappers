@@ -13,7 +13,7 @@ import node.net.Socket
  * for a given host and port, reusing a single socket connection for each
  * until the queue is empty, at which time the socket is either destroyed
  * or put into a pool where it is kept to be used again for requests to the
- * same host and port. Whether it is destroyed or pooled depends on the`keepAlive` `option`.
+ * same host and port. Whether it is destroyed or pooled depends on the `keepAlive` `option`.
  *
  * Pooled connections have TCP Keep-Alive enabled for them, but servers may
  * still close idle connections, in which case they will be removed from the
@@ -44,7 +44,7 @@ import node.net.Socket
  * });
  * ```
  *
- * An agent may also be used for an individual request. By providing`{agent: false}` as an option to the `http.get()` or `http.request()`functions, a one-time use `Agent` with default options
+ * An agent may also be used for an individual request. By providing `{agent: false}` as an option to the `http.get()` or `http.request()` functions, a one-time use `Agent` with default options
  * will be used
  * for the client connection.
  *
@@ -59,6 +59,17 @@ import node.net.Socket
  * }, (res) => {
  *   // Do stuff with response
  * });
+ * ```
+ *
+ * `options` in [`socket.connect()`](https://nodejs.org/docs/latest-v20.x/api/net.html#socketconnectoptions-connectlistener) are also supported.
+ *
+ * To configure any of them, a custom {@link Agent} instance must be created.
+ *
+ * ```js
+ * const http = require('node:http');
+ * const keepAliveAgent = new http.Agent({ keepAlive: true });
+ * options.agent = keepAliveAgent;
+ * http.request(options, onResponseCallback)
  * ```
  * @since v0.3.4
  */

@@ -12,7 +12,7 @@ package node.crypto
  * behaves as if `keyObject.export()` had been called on its result. Otherwise,
  * the respective part of the key is returned as a `KeyObject`.
  *
- * It is recommended to encode public keys as `'spki'` and private keys as`'pkcs8'` with encryption for long-term storage:
+ * It is recommended to encode public keys as `'spki'` and private keys as `'pkcs8'` with encryption for long-term storage:
  *
  * ```js
  * const {
@@ -36,7 +36,7 @@ package node.crypto
  * });
  * ```
  *
- * On completion, `callback` will be called with `err` set to `undefined` and`publicKey` / `privateKey` representing the generated key pair.
+ * On completion, `callback` will be called with `err` set to `undefined` and `publicKey` / `privateKey` representing the generated key pair.
  *
  * If this method is invoked as its `util.promisify()` ed version, it returns
  * a `Promise` for an `Object` with `publicKey` and `privateKey` properties.

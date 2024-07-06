@@ -27,8 +27,8 @@ package node.fs
  * By default, the stream will emit a `'close'` event after it has been
  * destroyed.  Set the `emitClose` option to `false` to change this behavior.
  *
- * By providing the `fs` option, it is possible to override the corresponding `fs`implementations for `open`, `read`, and `close`. When providing the `fs` option,
- * an override for `read` is required. If no `fd` is provided, an override for`open` is also required. If `autoClose` is `true`, an override for `close` is
+ * By providing the `fs` option, it is possible to override the corresponding `fs` implementations for `open`, `read`, and `close`. When providing the `fs` option,
+ * an override for `read` is required. If no `fd` is provided, an override for `open` is also required. If `autoClose` is `true`, an override for `close` is
  * also required.
  *
  * ```js
@@ -93,8 +93,8 @@ external fun createReadStream(path: PathLike): ReadStream
  * By default, the stream will emit a `'close'` event after it has been
  * destroyed.  Set the `emitClose` option to `false` to change this behavior.
  *
- * By providing the `fs` option, it is possible to override the corresponding `fs`implementations for `open`, `read`, and `close`. When providing the `fs` option,
- * an override for `read` is required. If no `fd` is provided, an override for`open` is also required. If `autoClose` is `true`, an override for `close` is
+ * By providing the `fs` option, it is possible to override the corresponding `fs` implementations for `open`, `read`, and `close`. When providing the `fs` option,
+ * an override for `read` is required. If no `fd` is provided, an override for `open` is also required. If `autoClose` is `true`, an override for `close` is
  * also required.
  *
  * ```js
@@ -159,8 +159,8 @@ external fun createReadStream(path: PathLike, options: node.buffer.BufferEncodin
  * By default, the stream will emit a `'close'` event after it has been
  * destroyed.  Set the `emitClose` option to `false` to change this behavior.
  *
- * By providing the `fs` option, it is possible to override the corresponding `fs`implementations for `open`, `read`, and `close`. When providing the `fs` option,
- * an override for `read` is required. If no `fd` is provided, an override for`open` is also required. If `autoClose` is `true`, an override for `close` is
+ * By providing the `fs` option, it is possible to override the corresponding `fs` implementations for `open`, `read`, and `close`. When providing the `fs` option,
+ * an override for `read` is required. If no `fd` is provided, an override for `open` is also required. If `autoClose` is `true`, an override for `close` is
  * also required.
  *
  * ```js

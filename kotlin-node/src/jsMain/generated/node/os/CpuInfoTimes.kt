@@ -3,9 +3,18 @@
 package node.os
 
 sealed external interface CpuInfoTimes {
+    /** The number of milliseconds the CPU has spent in user mode. */
     var user: Double
+
+    /** The number of milliseconds the CPU has spent in nice mode. */
     var nice: Double
+
+    /** The number of milliseconds the CPU has spent in sys mode. */
     var sys: Double
+
+    /** The number of milliseconds the CPU has spent in idle mode. */
     var idle: Double
+
+    /** The number of milliseconds the CPU has spent in irq mode. */
     var irq: Double
 }

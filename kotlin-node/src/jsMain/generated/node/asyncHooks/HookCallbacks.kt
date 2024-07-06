@@ -5,10 +5,10 @@ package node.asyncHooks
 sealed external interface HookCallbacks {
     /**
      * Called when a class is constructed that has the possibility to emit an asynchronous event.
-     * @param asyncId a unique ID for the async resource
-     * @param type the type of the async resource
-     * @param triggerAsyncId the unique ID of the async resource in whose execution context this async resource was created
-     * @param resource reference to the resource representing the async operation, needs to be released during destroy
+     * @param asyncId A unique ID for the async resource
+     * @param type The type of the async resource
+     * @param triggerAsyncId The unique ID of the async resource in whose execution context this async resource was created
+     * @param resource Reference to the resource representing the async operation, needs to be released during destroy
      */
     val init: ((asyncId: Number, type: String, triggerAsyncId: Number, resource: Any) -> Unit)?
 
@@ -20,7 +20,9 @@ sealed external interface HookCallbacks {
     val before: ((asyncId: Number) -> Unit)?
 
     /**
-     * Called immediately after the callback specified in before is completed.
+     * Called immediately after the callback specified in `before` is completed.
+     *
+     * If an uncaught exception occurs during execution of the callback, then `after` will run after the `'uncaughtException'` event is emitted or a `domain`'s handler runs.
      * @param asyncId the unique identifier assigned to the resource which has executed the callback.
      */
     val after: ((asyncId: Number) -> Unit)?

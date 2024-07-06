@@ -4,7 +4,7 @@ package node.test
 
 sealed external interface TestDequeue : TestLocationInfo {
     /**
-     * The test name
+     * The test name.
      */
     var name: String
 

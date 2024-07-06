@@ -33,7 +33,7 @@ import js.array.ReadonlyArray
  * encoding, `Buffer` objects will be passed to the callback instead.
  *
  * If this method is invoked as its `util.promisify()` ed version, it returns
- * a `Promise` for an `Object` with `stdout` and `stderr` properties. The returned`ChildProcess` instance is attached to the `Promise` as a `child` property. In
+ * a `Promise` for an `Object` with `stdout` and `stderr` properties. The returned `ChildProcess` instance is attached to the `Promise` as a `child` property. In
  * case of an error (including any error resulting in an exit code other than 0), a
  * rejected promise is returned, with the same `error` object given in the
  * callback, but with two additional properties `stdout` and `stderr`.
@@ -52,7 +52,7 @@ import js.array.ReadonlyArray
  * **function. Any input containing shell metacharacters may be used to trigger**
  * **arbitrary command execution.**
  *
- * If the `signal` option is enabled, calling `.abort()` on the corresponding`AbortController` is similar to calling `.kill()` on the child process except
+ * If the `signal` option is enabled, calling `.abort()` on the corresponding `AbortController` is similar to calling `.kill()` on the child process except
  * the error passed to the callback will be an `AbortError`:
  *
  * ```js

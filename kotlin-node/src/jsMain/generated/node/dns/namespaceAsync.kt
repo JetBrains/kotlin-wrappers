@@ -3,3 +3,6 @@
 @file:JsModule("node:dns/promises")
 
 package node.dns
+
+
+// Error codes

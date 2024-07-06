@@ -105,7 +105,7 @@ sealed external interface PeerCertificate {
     var asn1Curve: String?
 
     /**
-     * The NIST name for the elliptic curve,if it has one
+     * The NIST name for the elliptic curve, if it has one
      * (not all well-known curves have been assigned names by NIST).
      */
     var nistCurve: String?

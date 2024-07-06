@@ -5,7 +5,7 @@
 package node.crypto
 
 /**
- * This function compares the underlying bytes that represent the given`ArrayBuffer`, `TypedArray`, or `DataView` instances using a constant-time
+ * This function compares the underlying bytes that represent the given `ArrayBuffer`, `TypedArray`, or `DataView` instances using a constant-time
  * algorithm.
  *
  * This function does not leak timing information that
@@ -20,8 +20,8 @@ package node.crypto
  * entry, such as `Uint16Array`, the result will be computed using the platform
  * byte order.
  *
- * **When both of the inputs are `Float32Array`s or`Float64Array`s, this function might return unexpected results due to IEEE 754**
- * **encoding of floating-point numbers. In particular, neither `x === y` nor`Object.is(x, y)` implies that the byte representations of two floating-point**
+ * **When both of the inputs are `Float32Array`s or `Float64Array`s, this function might return unexpected results due to IEEE 754**
+ * **encoding of floating-point numbers. In particular, neither `x === y` nor `Object.is(x, y)` implies that the byte representations of two floating-point**
  * **numbers `x` and `y` are equal.**
  *
  * Use of `crypto.timingSafeEqual` does not guarantee that the _surrounding_ code

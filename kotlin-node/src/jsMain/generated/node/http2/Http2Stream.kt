@@ -43,7 +43,7 @@ sealed external interface Http2Stream : node.stream.Duplex {
     val endAfterHeaders: Boolean
 
     /**
-     * The numeric stream identifier of this `Http2Stream` instance. Set to `undefined`if the stream identifier has not yet been assigned.
+     * The numeric stream identifier of this `Http2Stream` instance. Set to `undefined` if the stream identifier has not yet been assigned.
      * @since v8.4.0
      */
     val id: Double?
@@ -58,7 +58,7 @@ sealed external interface Http2Stream : node.stream.Duplex {
     /**
      * Set to the `RST_STREAM` `error code` reported when the `Http2Stream` is
      * destroyed after either receiving an `RST_STREAM` frame from the connected peer,
-     * calling `http2stream.close()`, or `http2stream.destroy()`. Will be`undefined` if the `Http2Stream` has not been closed.
+     * calling `http2stream.close()`, or `http2stream.destroy()`. Will be `undefined` if the `Http2Stream` has not been closed.
      * @since v8.4.0
      */
     val rstCode: Double
@@ -90,7 +90,7 @@ sealed external interface Http2Stream : node.stream.Duplex {
     val session: Http2Session?
 
     /**
-     * Provides miscellaneous information about the current state of the`Http2Stream`.
+     * Provides miscellaneous information about the current state of the `Http2Stream`.
      *
      * A current state of this `Http2Stream`.
      * @since v8.4.0

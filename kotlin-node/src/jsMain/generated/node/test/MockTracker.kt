@@ -7,7 +7,7 @@ package node.test
 /**
  * The `MockTracker` class is used to manage mocking functionality. The test runner
  * module provides a top level `mock` export which is a `MockTracker` instance.
- * Each test also provides its own `MockTracker` instance via the test context's`mock` property.
+ * Each test also provides its own `MockTracker` instance via the test context's `mock` property.
  * @since v19.1.0, v18.13.0
  */
 external class MockTracker {
@@ -112,7 +112,7 @@ external class MockTracker {
     ): Mock<Function<*>>
 
     /**
-     * This function is syntax sugar for `MockTracker.method` with `options.getter`set to `true`.
+     * This function is syntax sugar for `MockTracker.method` with `options.getter` set to `true`.
      * @since v19.3.0, v18.13.0
      */
     fun getter(target: Any, methodName: String, options: MockFunctionOptions = definedExternally): Mock<() -> Any?>
@@ -124,7 +124,7 @@ external class MockTracker {
     ): Mock<Function<*>>
 
     /**
-     * This function is syntax sugar for `MockTracker.method` with `options.setter`set to `true`.
+     * This function is syntax sugar for `MockTracker.method` with `options.setter` set to `true`.
      * @since v19.3.0, v18.13.0
      */
     fun setter(
@@ -142,11 +142,11 @@ external class MockTracker {
 
     /**
      * This function restores the default behavior of all mocks that were previously
-     * created by this `MockTracker` and disassociates the mocks from the`MockTracker` instance. Once disassociated, the mocks can still be used, but the`MockTracker` instance can no longer be
+     * created by this `MockTracker` and disassociates the mocks from the `MockTracker` instance. Once disassociated, the mocks can still be used, but the `MockTracker` instance can no longer be
      * used to reset their behavior or
      * otherwise interact with them.
      *
-     * After each test completes, this function is called on the test context's`MockTracker`. If the global `MockTracker` is used extensively, calling this
+     * After each test completes, this function is called on the test context's `MockTracker`. If the global `MockTracker` is used extensively, calling this
      * function manually is recommended.
      * @since v19.1.0, v18.13.0
      */
@@ -159,5 +159,13 @@ external class MockTracker {
      * @since v19.1.0, v18.13.0
      */
     fun restoreAll(): Unit
+
+    /**
+     * This function is used to mock the exports of ECMAScript modules,
+     * CommonJS modules, and Node.js builtin modules. Any references to
+     * the original module prior to mocking are not impacted
+     * @since v22.3.0
+     */
+    fun module(speficier: String, options: MockTrackerModuleOptions = definedExternally): MockTrackerModuleResult
     var timers: MockTimers
 }

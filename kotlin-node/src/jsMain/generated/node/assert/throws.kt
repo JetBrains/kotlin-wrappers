@@ -15,7 +15,7 @@ package node.assert
  * using an object, it is also possible to use a regular expression, when
  * validating against a string property. See below for examples.
  *
- * If specified, `message` will be appended to the message provided by the`AssertionError` if the `fn` call fails to throw or in case the error validation
+ * If specified, `message` will be appended to the message provided by the `AssertionError` if the `fn` call fails to throw or in case the error validation
  * fails.
  *
  * Custom validation object/error instance:
@@ -145,8 +145,8 @@ package node.assert
  * ```
  *
  * `error` cannot be a string. If a string is provided as the second
- * argument, then `error` is assumed to be omitted and the string will be used for`message` instead. This can lead to easy-to-miss mistakes. Using the same
- * message as the thrown error message is going to result in an`ERR_AMBIGUOUS_ARGUMENT` error. Please read the example below carefully if using
+ * argument, then `error` is assumed to be omitted and the string will be used for `message` instead. This can lead to easy-to-miss mistakes. Using the same
+ * message as the thrown error message is going to result in an `ERR_AMBIGUOUS_ARGUMENT` error. Please read the example below carefully if using
  * a string as the second argument gets considered:
  *
  * ```js
@@ -202,7 +202,7 @@ external fun throws(block: () -> Any?): Unit
  * using an object, it is also possible to use a regular expression, when
  * validating against a string property. See below for examples.
  *
- * If specified, `message` will be appended to the message provided by the`AssertionError` if the `fn` call fails to throw or in case the error validation
+ * If specified, `message` will be appended to the message provided by the `AssertionError` if the `fn` call fails to throw or in case the error validation
  * fails.
  *
  * Custom validation object/error instance:
@@ -332,8 +332,8 @@ external fun throws(block: () -> Any?): Unit
  * ```
  *
  * `error` cannot be a string. If a string is provided as the second
- * argument, then `error` is assumed to be omitted and the string will be used for`message` instead. This can lead to easy-to-miss mistakes. Using the same
- * message as the thrown error message is going to result in an`ERR_AMBIGUOUS_ARGUMENT` error. Please read the example below carefully if using
+ * argument, then `error` is assumed to be omitted and the string will be used for `message` instead. This can lead to easy-to-miss mistakes. Using the same
+ * message as the thrown error message is going to result in an `ERR_AMBIGUOUS_ARGUMENT` error. Please read the example below carefully if using
  * a string as the second argument gets considered:
  *
  * ```js
@@ -389,7 +389,7 @@ external fun throws(block: () -> Any?, message: String = definedExternally): Uni
  * using an object, it is also possible to use a regular expression, when
  * validating against a string property. See below for examples.
  *
- * If specified, `message` will be appended to the message provided by the`AssertionError` if the `fn` call fails to throw or in case the error validation
+ * If specified, `message` will be appended to the message provided by the `AssertionError` if the `fn` call fails to throw or in case the error validation
  * fails.
  *
  * Custom validation object/error instance:
@@ -519,8 +519,8 @@ external fun throws(block: () -> Any?, message: String = definedExternally): Uni
  * ```
  *
  * `error` cannot be a string. If a string is provided as the second
- * argument, then `error` is assumed to be omitted and the string will be used for`message` instead. This can lead to easy-to-miss mistakes. Using the same
- * message as the thrown error message is going to result in an`ERR_AMBIGUOUS_ARGUMENT` error. Please read the example below carefully if using
+ * argument, then `error` is assumed to be omitted and the string will be used for `message` instead. This can lead to easy-to-miss mistakes. Using the same
+ * message as the thrown error message is going to result in an `ERR_AMBIGUOUS_ARGUMENT` error. Please read the example below carefully if using
  * a string as the second argument gets considered:
  *
  * ```js

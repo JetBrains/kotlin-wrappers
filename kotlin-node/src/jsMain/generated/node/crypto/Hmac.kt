@@ -71,6 +71,7 @@ import node.stream.TransformOptions
  * //   7fd04df92f636fd450bc841c9418e5825c17f33ad9c87c518115a45971f7f77e
  * ```
  * @since v0.1.94
+ * @deprecated Since v20.13.0 Calling `Hmac` class directly with `Hmac()` or `new Hmac()` is deprecated due to being internals, not intended for public use. Please use the {@link createHmac} method to create Hmac instances.
  */
 external class Hmac : node.stream.Transform {
     constructor (opts: TransformOptions = definedExternally)

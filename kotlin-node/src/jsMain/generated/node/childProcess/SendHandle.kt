@@ -2,4 +2,4 @@
 
 package node.childProcess
 
-typealias SendHandle = Any /* net.Socket | net.Server */
+typealias SendHandle = Any? /* net.Socket | net.Server | dgram.Socket | undefined */

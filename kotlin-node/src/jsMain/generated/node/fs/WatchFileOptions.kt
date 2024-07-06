@@ -6,7 +6,7 @@ package node.fs
  * Watch for changes on `filename`. The callback `listener` will be called each
  * time the file is accessed.
  *
- * The `options` argument may be omitted. If provided, it should be an object. The`options` object may contain a boolean named `persistent` that indicates
+ * The `options` argument may be omitted. If provided, it should be an object. The `options` object may contain a boolean named `persistent` that indicates
  * whether the process should continue to run as long as files are being watched.
  * The `options` object may specify an `interval` property indicating how often the
  * target should be polled in milliseconds.
@@ -35,7 +35,7 @@ package node.fs
  * again, with the latest stat objects. This is a change in functionality since
  * v0.10.
  *
- * Using {@link watch} is more efficient than `fs.watchFile` and`fs.unwatchFile`. `fs.watch` should be used instead of `fs.watchFile` and`fs.unwatchFile` when possible.
+ * Using {@link watch} is more efficient than `fs.watchFile` and `fs.unwatchFile`. `fs.watch` should be used instead of `fs.watchFile` and `fs.unwatchFile` when possible.
  *
  * When a file being watched by `fs.watchFile()` disappears and reappears,
  * then the contents of `previous` in the second callback event (the file's

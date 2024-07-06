@@ -9,20 +9,20 @@ sealed external interface Http2Session : EventEmitter {
     /**
      * Value will be `undefined` if the `Http2Session` is not yet connected to a
      * socket, `h2c` if the `Http2Session` is not connected to a `TLSSocket`, or
-     * will return the value of the connected `TLSSocket`'s own `alpnProtocol`property.
+     * will return the value of the connected `TLSSocket`'s own `alpnProtocol` property.
      * @since v9.4.0
      */
     val alpnProtocol: String?
 
     /**
-     * Will be `true` if this `Http2Session` instance has been closed, otherwise`false`.
+     * Will be `true` if this `Http2Session` instance has been closed, otherwise `false`.
      * @since v9.4.0
      */
     val closed: Boolean
 
     /**
      * Will be `true` if this `Http2Session` instance is still connecting, will be set
-     * to `false` before emitting `connect` event and/or calling the `http2.connect`callback.
+     * to `false` before emitting `connect` event and/or calling the `http2.connect` callback.
      * @since v10.0.0
      */
     val connecting: Boolean
@@ -44,7 +44,7 @@ sealed external interface Http2Session : EventEmitter {
     val encrypted: Boolean?
 
     /**
-     * A prototype-less object describing the current local settings of this`Http2Session`. The local settings are local to _this_`Http2Session` instance.
+     * A prototype-less object describing the current local settings of this `Http2Session`. The local settings are local to _this_`Http2Session` instance.
      * @since v8.4.0
      */
     val localSettings: Settings
@@ -61,7 +61,7 @@ sealed external interface Http2Session : EventEmitter {
 
     /**
      * Indicates whether the `Http2Session` is currently waiting for acknowledgment of
-     * a sent `SETTINGS` frame. Will be `true` after calling the`http2session.settings()` method. Will be `false` once all sent `SETTINGS`frames have been acknowledged.
+     * a sent `SETTINGS` frame. Will be `true` after calling the `http2session.settings()` method. Will be `false` once all sent `SETTINGS` frames have been acknowledged.
      * @since v8.4.0
      */
     val pendingSettingsAck: Boolean
@@ -95,7 +95,7 @@ sealed external interface Http2Session : EventEmitter {
     val state: SessionState
 
     /**
-     * The `http2session.type` will be equal to`http2.constants.NGHTTP2_SESSION_SERVER` if this `Http2Session` instance is a
+     * The `http2session.type` will be equal to `http2.constants.NGHTTP2_SESSION_SERVER` if this `Http2Session` instance is a
      * server, and `http2.constants.NGHTTP2_SESSION_CLIENT` if the instance is a
      * client.
      * @since v8.4.0
@@ -114,11 +114,11 @@ sealed external interface Http2Session : EventEmitter {
     fun close(callback: () -> Unit = definedExternally): Unit
 
     /**
-     * Immediately terminates the `Http2Session` and the associated `net.Socket` or`tls.TLSSocket`.
+     * Immediately terminates the `Http2Session` and the associated `net.Socket` or `tls.TLSSocket`.
      *
-     * Once destroyed, the `Http2Session` will emit the `'close'` event. If `error`is not undefined, an `'error'` event will be emitted immediately before the`'close'` event.
+     * Once destroyed, the `Http2Session` will emit the `'close'` event. If `error` is not undefined, an `'error'` event will be emitted immediately before the `'close'` event.
      *
-     * If there are any remaining open `Http2Streams` associated with the`Http2Session`, those will also be destroyed.
+     * If there are any remaining open `Http2Streams` associated with the `Http2Session`, those will also be destroyed.
      * @since v8.4.0
      * @param error An `Error` object if the `Http2Session` is being destroyed due to an error.
      * @param code The HTTP/2 error code to send in the final `GOAWAY` frame. If unspecified, and `error` is not undefined, the default is `INTERNAL_ERROR`, otherwise defaults to `NO_ERROR`.
@@ -140,17 +140,17 @@ sealed external interface Http2Session : EventEmitter {
 
     /**
      * Sends a `PING` frame to the connected HTTP/2 peer. A `callback` function must
-     * be provided. The method will return `true` if the `PING` was sent, `false`otherwise.
+     * be provided. The method will return `true` if the `PING` was sent, `false` otherwise.
      *
-     * The maximum number of outstanding (unacknowledged) pings is determined by the`maxOutstandingPings` configuration option. The default maximum is 10.
+     * The maximum number of outstanding (unacknowledged) pings is determined by the `maxOutstandingPings` configuration option. The default maximum is 10.
      *
-     * If provided, the `payload` must be a `Buffer`, `TypedArray`, or `DataView`containing 8 bytes of data that will be transmitted with the `PING` and
+     * If provided, the `payload` must be a `Buffer`, `TypedArray`, or `DataView` containing 8 bytes of data that will be transmitted with the `PING` and
      * returned with the ping acknowledgment.
      *
      * The callback will be invoked with three arguments: an error argument that will
      * be `null` if the `PING` was successfully acknowledged, a `duration` argument
      * that reports the number of milliseconds elapsed since the ping was sent and the
-     * acknowledgment was received, and a `Buffer` containing the 8-byte `PING`payload.
+     * acknowledgment was received, and a `Buffer` containing the 8-byte `PING` payload.
      *
      * ```js
      * session.ping(Buffer.from('abcdefgh'), (err, duration, payload) => {
@@ -173,7 +173,7 @@ sealed external interface Http2Session : EventEmitter {
     ): Boolean
 
     /**
-     * Calls `ref()` on this `Http2Session`instance's underlying `net.Socket`.
+     * Calls `ref()` on this `Http2Session` instance's underlying `net.Socket`.
      * @since v9.4.0
      */
     fun ref(): Unit
@@ -207,9 +207,9 @@ sealed external interface Http2Session : EventEmitter {
     fun setTimeout(msecs: Number, callback: () -> Unit = definedExternally): Unit
 
     /**
-     * Updates the current local settings for this `Http2Session` and sends a new`SETTINGS` frame to the connected HTTP/2 peer.
+     * Updates the current local settings for this `Http2Session` and sends a new `SETTINGS` frame to the connected HTTP/2 peer.
      *
-     * Once called, the `http2session.pendingSettingsAck` property will be `true`while the session is waiting for the remote peer to acknowledge the new
+     * Once called, the `http2session.pendingSettingsAck` property will be `true` while the session is waiting for the remote peer to acknowledge the new
      * settings.
      *
      * The new settings will not become effective until the `SETTINGS` acknowledgment

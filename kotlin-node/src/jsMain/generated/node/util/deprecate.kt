@@ -16,7 +16,7 @@ package node.util
  * }, 'obsoleteFunction() is deprecated. Use newShinyFunction() instead.');
  * ```
  *
- * When called, `util.deprecate()` will return a function that will emit a`DeprecationWarning` using the `'warning'` event. The warning will
+ * When called, `util.deprecate()` will return a function that will emit a `DeprecationWarning` using the `'warning'` event. The warning will
  * be emitted and printed to `stderr` the first time the returned function is
  * called. After the warning is emitted, the wrapped function is called without
  * emitting a warning.
@@ -42,10 +42,10 @@ package node.util
  * stack trace are printed to `stderr` the first time the deprecated function is
  * called.
  *
- * If the `--throw-deprecation` command-line flag is set, or the`process.throwDeprecation` property is set to `true`, then an exception will be
+ * If the `--throw-deprecation` command-line flag is set, or the `process.throwDeprecation` property is set to `true`, then an exception will be
  * thrown when the deprecated function is called.
  *
- * The `--throw-deprecation` command-line flag and `process.throwDeprecation`property take precedence over `--trace-deprecation` and`process.traceDeprecation`.
+ * The `--throw-deprecation` command-line flag and `process.throwDeprecation` property take precedence over `--trace-deprecation` and `process.traceDeprecation`.
  * @since v0.8.0
  * @param fn The function that is being deprecated.
  * @param msg A warning message to display when the deprecated function is invoked.

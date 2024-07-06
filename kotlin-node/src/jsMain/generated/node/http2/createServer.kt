@@ -5,7 +5,7 @@
 package node.http2
 
 /**
- * Returns a `net.Server` instance that creates and manages `Http2Session`instances.
+ * Returns a `net.Server` instance that creates and manages `Http2Session` instances.
  *
  * Since there are no browsers known that support [unencrypted HTTP/2](https://http2.github.io/faq/#does-http2-require-encryption), the use of {@link createSecureServer} is necessary when
  * communicating

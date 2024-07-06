@@ -184,7 +184,7 @@ sealed external interface ServerHttp2Session : Http2Session {
      * ```
      *
      * When a string is passed as an `origin`, it will be parsed as a URL and the
-     * origin will be derived. For instance, the origin for the HTTP URL`'https://example.org/foo/bar'` is the ASCII string`'https://example.org'`. An error will be thrown if either the given
+     * origin will be derived. For instance, the origin for the HTTP URL `'https://example.org/foo/bar'` is the ASCII string` 'https://example.org'`. An error will be thrown if either the given
      * string
      * cannot be parsed as a URL or if a valid origin cannot be derived.
      *

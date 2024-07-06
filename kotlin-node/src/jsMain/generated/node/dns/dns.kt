@@ -48,7 +48,7 @@ package node.dns
  * ```
  *
  * See the [Implementation considerations section](https://nodejs.org/docs/latest-v20.x/api/dns.html#implementation-considerations) for more information.
- * @see [source](https://github.com/nodejs/node/blob/v20.11.1/lib/dns.js)
+ * @see [source](https://github.com/nodejs/node/blob/v20.13.1/lib/dns.js)
  */
 
 

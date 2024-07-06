@@ -10,7 +10,7 @@ sealed external interface CompileFunctionOptions : BaseOptions {
 
     /**
      * Specifies whether to produce new cache data.
-     * Default: `false`,
+     * @default false
      */
     var produceCachedData: Boolean?
 

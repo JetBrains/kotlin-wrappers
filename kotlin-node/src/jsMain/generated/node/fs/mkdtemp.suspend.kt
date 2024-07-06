@@ -32,7 +32,7 @@ suspend fun mkdtemp(prefix: String): String =
  * ```
  *
  * The `fsPromises.mkdtemp()` method will append the six randomly selected
- * characters directly to the `prefix` string. For instance, given a directory`/tmp`, if the intention is to create a temporary directory _within_`/tmp`, the`prefix` must end with a trailing
+ * characters directly to the `prefix` string. For instance, given a directory `/tmp`, if the intention is to create a temporary directory _within_ `/tmp`, the `prefix` must end with a trailing
  * platform-specific path separator
  * (`require('node:path').sep`).
  * @since v10.0.0
@@ -68,7 +68,7 @@ suspend fun mkdtemp(prefix: String, options: ObjectEncodingOptions? = undefined.
  * ```
  *
  * The `fsPromises.mkdtemp()` method will append the six randomly selected
- * characters directly to the `prefix` string. For instance, given a directory`/tmp`, if the intention is to create a temporary directory _within_`/tmp`, the`prefix` must end with a trailing
+ * characters directly to the `prefix` string. For instance, given a directory `/tmp`, if the intention is to create a temporary directory _within_ `/tmp`, the `prefix` must end with a trailing
  * platform-specific path separator
  * (`require('node:path').sep`).
  * @since v10.0.0

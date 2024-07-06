@@ -12,9 +12,9 @@ package node.assert
  * adding a comment next to the specific code path that should not throw and keep
  * error messages as expressive as possible.
  *
- * When `assert.doesNotThrow()` is called, it will immediately call the `fn`function.
+ * When `assert.doesNotThrow()` is called, it will immediately call the `fn` function.
  *
- * If an error is thrown and it is the same type as that specified by the `error`parameter, then an `AssertionError` is thrown. If the error is of a
+ * If an error is thrown and it is the same type as that specified by the `error` parameter, then an `AssertionError` is thrown. If the error is of a
  * different type, or if the `error` parameter is undefined, the error is
  * propagated back to the caller.
  *
@@ -50,7 +50,7 @@ package node.assert
  * );
  * ```
  *
- * If an `AssertionError` is thrown and a value is provided for the `message`parameter, the value of `message` will be appended to the `AssertionError` message:
+ * If an `AssertionError` is thrown and a value is provided for the `message` parameter, the value of `message` will be appended to the `AssertionError` message:
  *
  * ```js
  * import assert from 'node:assert/strict';
@@ -76,9 +76,9 @@ external fun doesNotThrow(block: () -> Any?): Unit
  * adding a comment next to the specific code path that should not throw and keep
  * error messages as expressive as possible.
  *
- * When `assert.doesNotThrow()` is called, it will immediately call the `fn`function.
+ * When `assert.doesNotThrow()` is called, it will immediately call the `fn` function.
  *
- * If an error is thrown and it is the same type as that specified by the `error`parameter, then an `AssertionError` is thrown. If the error is of a
+ * If an error is thrown and it is the same type as that specified by the `error` parameter, then an `AssertionError` is thrown. If the error is of a
  * different type, or if the `error` parameter is undefined, the error is
  * propagated back to the caller.
  *
@@ -114,7 +114,7 @@ external fun doesNotThrow(block: () -> Any?): Unit
  * );
  * ```
  *
- * If an `AssertionError` is thrown and a value is provided for the `message`parameter, the value of `message` will be appended to the `AssertionError` message:
+ * If an `AssertionError` is thrown and a value is provided for the `message` parameter, the value of `message` will be appended to the `AssertionError` message:
  *
  * ```js
  * import assert from 'node:assert/strict';
@@ -140,9 +140,9 @@ external fun doesNotThrow(block: () -> Any?, message: String = definedExternally
  * adding a comment next to the specific code path that should not throw and keep
  * error messages as expressive as possible.
  *
- * When `assert.doesNotThrow()` is called, it will immediately call the `fn`function.
+ * When `assert.doesNotThrow()` is called, it will immediately call the `fn` function.
  *
- * If an error is thrown and it is the same type as that specified by the `error`parameter, then an `AssertionError` is thrown. If the error is of a
+ * If an error is thrown and it is the same type as that specified by the `error` parameter, then an `AssertionError` is thrown. If the error is of a
  * different type, or if the `error` parameter is undefined, the error is
  * propagated back to the caller.
  *
@@ -178,7 +178,7 @@ external fun doesNotThrow(block: () -> Any?, message: String = definedExternally
  * );
  * ```
  *
- * If an `AssertionError` is thrown and a value is provided for the `message`parameter, the value of `message` will be appended to the `AssertionError` message:
+ * If an `AssertionError` is thrown and a value is provided for the `message` parameter, the value of `message` will be appended to the `AssertionError` message:
  *
  * ```js
  * import assert from 'node:assert/strict';

@@ -16,6 +16,5 @@ package node.traceEvents
  * tracing.disable();
  * ```
  * @since v10.0.0
- * @return .
  */
 external fun createTracing(options: CreateTracingOptions): Tracing
