@@ -63,7 +63,7 @@ external interface MenuProps :
      * @param {object} event The event source of the callback.
      * @param {string} reason Can be: `"escapeKeyDown"`, `"backdropClick"`, `"tabKeyDown"`.
      */
-    var onClose: dynamic /* PopoverProps['onClose'] */
+    var onClose: Any? /* PopoverProps['onClose'] */
 
     /**
      * If `true`, the component is shown.
@@ -84,7 +84,7 @@ external interface MenuProps :
      * The length of the transition in `ms`, or 'auto'
      * @default 'auto'
      */
-    var transitionDuration: dynamic /* TransitionProps['timeout'] | 'auto' */
+    var transitionDuration: Any? /* TransitionProps['timeout'] | 'auto' */
 
     /**
      * Props applied to the transition element.

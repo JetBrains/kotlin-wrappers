@@ -46,7 +46,7 @@ external interface UseInputRootSlotOwnProps : react.Props {
 }
 
 external interface UseInputInputSlotOwnProps : react.Props {
-    // var `aria-invalid`: dynamic /* React.AriaAttributes['aria-invalid'] */
+    // var `aria-invalid`: Any /* React.AriaAttributes['aria-invalid'] */
 
     var defaultValue: dynamic
 

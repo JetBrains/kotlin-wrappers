@@ -23,7 +23,7 @@ external interface GrowProps :
      * The transition timing function.
      * You may specify a single easing or a object containing enter and exit values.
      */
-    var easing: dynamic /* TransitionProps['easing'] */
+    var easing: Any? /* TransitionProps['easing'] */
 
     /**
      * If `true`, the component will transition in.
@@ -37,7 +37,7 @@ external interface GrowProps :
      * Set to 'auto' to automatically calculate transition time based on height.
      * @default 'auto'
      */
-    var timeout: dynamic /* TransitionProps['timeout'] | 'auto' */
+    var timeout: Any? /* TransitionProps['timeout'] | 'auto' */
 }
 
 /**
