@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface SystemPreferencesGetSystemColorColor {
     companion object {
         @seskar.js.JsValue("blue")

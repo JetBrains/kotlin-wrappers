@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface AppSetActivationPolicyPolicy {
     companion object {
         @seskar.js.JsValue("regular")

@@ -8,7 +8,6 @@ import node.buffer.Buffer
 import kotlin.js.Promise
 import node.events.EventEmitter as NodeEventEmitter
 
-
 open external class BrowserWindow : NodeEventEmitter {
     /**
      * BrowserWindow
@@ -2091,5 +2090,4 @@ open external class BrowserWindow : NodeEventEmitter {
          */
         fun getFocusedWindow(): BrowserWindow?
     }
-
 }

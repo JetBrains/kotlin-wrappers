@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface DisplayTouchSupport {
     companion object {
         @seskar.js.JsValue("available")

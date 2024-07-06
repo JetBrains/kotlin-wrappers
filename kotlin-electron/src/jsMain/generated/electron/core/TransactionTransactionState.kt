@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface TransactionTransactionState {
     companion object {
         @seskar.js.JsValue("purchasing")

@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface DevicePermissionHandlerHandlerDetailsDeviceType {
     companion object {
         @seskar.js.JsValue("hid")

@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface DownloadItemUpdatedListenerState {
     companion object {
         @seskar.js.JsValue("progressing")

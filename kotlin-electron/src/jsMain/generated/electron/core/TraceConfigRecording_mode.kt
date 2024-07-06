@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface TraceConfigRecording_mode {
     companion object {
         @seskar.js.JsValue("record-until-full")

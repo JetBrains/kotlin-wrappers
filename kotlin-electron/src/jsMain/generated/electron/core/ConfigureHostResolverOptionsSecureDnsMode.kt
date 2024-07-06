@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface ConfigureHostResolverOptionsSecureDnsMode {
     companion object {
         @seskar.js.JsValue("off")

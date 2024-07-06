@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface WebContentsStopFindInPageAction {
     companion object {
         @seskar.js.JsValue("clearSelection")

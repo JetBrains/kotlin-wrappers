@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface ResolvedEndpointFamily {
     companion object {
         @seskar.js.JsValue("ipv4")

@@ -8,7 +8,6 @@ import node.buffer.Buffer
 import kotlin.js.Promise
 import node.events.EventEmitter as NodeEventEmitter
 
-
 external class Session : NodeEventEmitter {
     /**
      * Emitted after an extension is loaded. This occurs whenever an extension is added
@@ -1387,5 +1386,4 @@ external class Session : NodeEventEmitter {
          */
         var defaultSession: Session
     }
-
 }

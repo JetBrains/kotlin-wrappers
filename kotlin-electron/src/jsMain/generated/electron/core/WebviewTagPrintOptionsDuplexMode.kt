@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface WebviewTagPrintOptionsDuplexMode {
     companion object {
         @seskar.js.JsValue("simplex")

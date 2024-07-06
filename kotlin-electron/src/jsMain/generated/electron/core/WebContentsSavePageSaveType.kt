@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface WebContentsSavePageSaveType {
     companion object {
         @seskar.js.JsValue("HTMLOnly")

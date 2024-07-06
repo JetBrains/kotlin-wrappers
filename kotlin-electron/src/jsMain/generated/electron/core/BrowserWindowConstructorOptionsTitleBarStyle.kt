@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface BrowserWindowConstructorOptionsTitleBarStyle {
     companion object {
         @seskar.js.JsValue("default")

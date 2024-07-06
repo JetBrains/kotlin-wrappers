@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface TouchBarSegmentedControlConstructorOptionsSegmentStyle {
     companion object {
         @seskar.js.JsValue("automatic")

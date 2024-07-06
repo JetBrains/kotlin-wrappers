@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface ShellWriteShortcutLinkOperation {
     companion object {
         @seskar.js.JsValue("create")

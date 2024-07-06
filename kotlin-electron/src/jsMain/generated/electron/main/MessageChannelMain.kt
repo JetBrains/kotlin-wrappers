@@ -4,5 +4,4 @@
 
 package electron.main
 
-
 open external class MessageChannelMain : electron.core.MessageChannelMain

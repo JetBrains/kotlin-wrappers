@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface PowerMonitorGetCurrentThermalStateResult {
     companion object {
         @seskar.js.JsValue("unknown")

@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface SystemPreferencesGetMediaAccessStatusMediaType {
     companion object {
         @seskar.js.JsValue("microphone")

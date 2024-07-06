@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface DidCreateWindowDetailsDisposition {
     companion object {
         @seskar.js.JsValue("default")

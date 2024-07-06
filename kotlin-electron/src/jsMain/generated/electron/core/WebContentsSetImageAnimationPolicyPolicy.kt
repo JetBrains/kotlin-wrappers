@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface WebContentsSetImageAnimationPolicyPolicy {
     companion object {
         @seskar.js.JsValue("animate")

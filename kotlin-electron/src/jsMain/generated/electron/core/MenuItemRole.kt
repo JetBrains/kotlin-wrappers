@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface MenuItemRole {
     companion object {
         @seskar.js.JsValue("undo")

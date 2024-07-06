@@ -7,7 +7,6 @@ package electron.core
 import kotlin.js.Promise
 import node.events.EventEmitter as NodeEventEmitter
 
-
 external class WebFrameMain : NodeEventEmitter {
     /**
      * Emitted when the document is loaded.
@@ -188,5 +187,4 @@ external class WebFrameMain : NodeEventEmitter {
          */
         fun fromId(processId: Double, routingId: Double): WebFrameMain?
     }
-
 }

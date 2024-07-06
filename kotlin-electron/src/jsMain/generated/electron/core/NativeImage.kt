@@ -7,7 +7,6 @@ package electron.core
 import node.buffer.Buffer
 import kotlin.js.Promise
 
-
 external class NativeImage {
     /**
      * Add an image representation for a specific scale factor. This can be used to
@@ -191,5 +190,4 @@ external class NativeImage {
          */
         fun createThumbnailFromPath(path: String, size: Size): Promise<NativeImage>
     }
-
 }

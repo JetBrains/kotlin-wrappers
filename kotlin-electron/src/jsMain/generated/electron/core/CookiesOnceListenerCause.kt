@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface CookiesOnceListenerCause {
     companion object {
         @seskar.js.JsValue("explicit")

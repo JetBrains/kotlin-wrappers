@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface ProductDiscountPaymentMode {
     companion object {
         @seskar.js.JsValue("payAsYouGo")

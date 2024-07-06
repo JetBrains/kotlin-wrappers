@@ -6,7 +6,6 @@ package electron.core
 
 import node.events.EventEmitter as NodeEventEmitter
 
-
 external class ServiceWorkers : NodeEventEmitter {
 // Docs: https://electronjs.org/docs/api/service-workers
     /**

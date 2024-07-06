@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface ClientRequestConstructorOptionsProtocol {
     companion object {
         @seskar.js.JsValue("http:")

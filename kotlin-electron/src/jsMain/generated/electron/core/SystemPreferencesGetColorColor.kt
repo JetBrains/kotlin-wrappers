@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface SystemPreferencesGetColorColor {
     companion object {
         @seskar.js.JsValue("3d-dark-shadow")
@@ -191,6 +190,5 @@ sealed external interface SystemPreferencesGetColorColor {
         Duplicated names were generated:
         highlight for "highlight"
         */
-
     }
 }

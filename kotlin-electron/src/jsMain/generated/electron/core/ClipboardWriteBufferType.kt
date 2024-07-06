@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface ClipboardWriteBufferType {
     companion object {
         @seskar.js.JsValue("selection")

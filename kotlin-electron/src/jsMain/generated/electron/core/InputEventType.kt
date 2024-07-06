@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface InputEventType {
     companion object {
         @seskar.js.JsValue("undefined")

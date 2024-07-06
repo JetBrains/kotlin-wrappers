@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface RenderProcessGoneDetailsReason {
     companion object {
         @seskar.js.JsValue("clean-exit")

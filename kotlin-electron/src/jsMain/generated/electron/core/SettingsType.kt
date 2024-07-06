@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface SettingsType {
     companion object {
         @seskar.js.JsValue("mainAppService")

@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface NotificationUrgency {
     companion object {
         @seskar.js.JsValue("normal")

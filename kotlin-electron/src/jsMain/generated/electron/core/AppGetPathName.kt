@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface AppGetPathName {
     companion object {
         @seskar.js.JsValue("home")

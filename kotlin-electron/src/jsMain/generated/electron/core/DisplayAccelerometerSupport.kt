@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface DisplayAccelerometerSupport {
     companion object {
         @seskar.js.JsValue("available")

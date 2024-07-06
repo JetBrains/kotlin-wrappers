@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface ParametersScreenPosition {
     companion object {
         @seskar.js.JsValue("desktop")

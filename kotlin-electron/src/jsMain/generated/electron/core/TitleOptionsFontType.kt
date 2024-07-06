@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface TitleOptionsFontType {
     companion object {
         @seskar.js.JsValue("monospaced")

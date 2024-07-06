@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface CookieSameSite {
     companion object {
         @seskar.js.JsValue("unspecified")

@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface PowerMonitorGetSystemIdleStateResult {
     companion object {
         @seskar.js.JsValue("active")

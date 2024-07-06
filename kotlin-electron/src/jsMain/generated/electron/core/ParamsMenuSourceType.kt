@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface ParamsMenuSourceType {
     companion object {
         @seskar.js.JsValue("none")

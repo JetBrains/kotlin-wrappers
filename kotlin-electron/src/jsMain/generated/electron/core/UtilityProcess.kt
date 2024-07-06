@@ -6,7 +6,6 @@ package electron.core
 
 import node.events.EventEmitter as NodeEventEmitter
 
-
 external class UtilityProcess : NodeEventEmitter {
     /**
      * Emitted after the child process ends.
@@ -132,5 +131,4 @@ external class UtilityProcess : NodeEventEmitter {
             options: ForkOptions = definedExternally,
         ): UtilityProcess
     }
-
 }

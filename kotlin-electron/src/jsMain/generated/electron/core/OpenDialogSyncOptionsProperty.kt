@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface OpenDialogSyncOptionsProperty {
     companion object {
         @seskar.js.JsValue("openFile")

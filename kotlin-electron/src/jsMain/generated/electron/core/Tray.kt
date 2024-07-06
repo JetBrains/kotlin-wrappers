@@ -7,7 +7,6 @@ package electron.core
 import electron.NativeImage
 import node.events.EventEmitter as NodeEventEmitter
 
-
 open external class Tray : NodeEventEmitter {
     /**
      * Tray

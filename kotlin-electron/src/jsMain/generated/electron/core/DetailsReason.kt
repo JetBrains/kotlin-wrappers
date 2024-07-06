@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface DetailsReason {
     companion object {
         @seskar.js.JsValue("clean-exit")

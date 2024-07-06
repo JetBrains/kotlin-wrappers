@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface MessageDetailsSource {
     companion object {
         @seskar.js.JsValue("javascript")

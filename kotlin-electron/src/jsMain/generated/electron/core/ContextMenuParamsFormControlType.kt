@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface ContextMenuParamsFormControlType {
     companion object {
         @seskar.js.JsValue("none")
@@ -104,6 +103,5 @@ sealed external interface ContextMenuParamsFormControlType {
         Duplicated names were generated:
         selectList for "select-list"
         */
-
     }
 }

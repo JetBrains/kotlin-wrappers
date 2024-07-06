@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface InsertCSSOptionsCssOrigin {
     companion object {
         @seskar.js.JsValue("user")

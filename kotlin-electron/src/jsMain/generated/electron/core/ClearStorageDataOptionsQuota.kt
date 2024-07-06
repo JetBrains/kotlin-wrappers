@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface ClearStorageDataOptionsQuota {
     companion object {
         @seskar.js.JsValue("temporary")

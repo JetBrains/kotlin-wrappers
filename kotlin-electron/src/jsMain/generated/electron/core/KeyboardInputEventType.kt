@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface KeyboardInputEventType {
     companion object {
         @seskar.js.JsValue("rawKeyDown")

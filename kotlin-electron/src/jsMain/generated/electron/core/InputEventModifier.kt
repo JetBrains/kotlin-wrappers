@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface InputEventModifier {
     companion object {
         @seskar.js.JsValue("shift")

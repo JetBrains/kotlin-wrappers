@@ -8,7 +8,6 @@ import node.buffer.Buffer
 import kotlin.js.Promise
 import node.events.EventEmitter as NodeEventEmitter
 
-
 external class WebContents : NodeEventEmitter {
     /**
      * Emitted when media becomes audible or inaudible.
@@ -3470,5 +3469,4 @@ external class WebContents : NodeEventEmitter {
          */
         fun getFocusedWebContents(): WebContents?
     }
-
 }

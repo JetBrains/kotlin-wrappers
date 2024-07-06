@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface HandlerDetailsDisposition {
     companion object {
         @seskar.js.JsValue("default")

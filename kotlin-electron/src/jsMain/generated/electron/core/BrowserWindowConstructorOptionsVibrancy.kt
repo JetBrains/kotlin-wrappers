@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface BrowserWindowConstructorOptionsVibrancy {
     companion object {
         @seskar.js.JsValue("appearance-based")

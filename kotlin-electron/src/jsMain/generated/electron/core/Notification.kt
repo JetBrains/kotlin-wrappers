@@ -6,7 +6,6 @@ package electron.core
 
 import node.events.EventEmitter as NodeEventEmitter
 
-
 open external class Notification : NodeEventEmitter {
     /**
      * Notification
@@ -376,5 +375,4 @@ open external class Notification : NodeEventEmitter {
          */
         fun isSupported(): Boolean
     }
-
 }

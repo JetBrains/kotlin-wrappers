@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface TouchBarSegmentedControlMode {
     companion object {
         @seskar.js.JsValue("single")

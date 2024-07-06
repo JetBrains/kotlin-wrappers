@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface WillResizeDetailsEdge {
     companion object {
         @seskar.js.JsValue("bottom")

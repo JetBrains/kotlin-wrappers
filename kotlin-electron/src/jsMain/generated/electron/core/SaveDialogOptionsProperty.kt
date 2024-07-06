@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface SaveDialogOptionsProperty {
     companion object {
         @seskar.js.JsValue("showHiddenFiles")

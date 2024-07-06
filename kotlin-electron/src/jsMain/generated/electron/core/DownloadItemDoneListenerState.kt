@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface DownloadItemDoneListenerState {
     companion object {
         @seskar.js.JsValue("completed")

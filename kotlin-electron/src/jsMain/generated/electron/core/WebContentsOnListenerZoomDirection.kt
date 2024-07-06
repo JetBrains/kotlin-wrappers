@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface WebContentsOnListenerZoomDirection {
     companion object {
         @seskar.js.JsValue("in")

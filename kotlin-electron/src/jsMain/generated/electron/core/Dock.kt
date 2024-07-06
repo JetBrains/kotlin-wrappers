@@ -6,7 +6,6 @@ package electron.core
 
 import kotlin.js.Promise
 
-
 external class Dock {
 // Docs: https://electronjs.org/docs/api/dock
     /**

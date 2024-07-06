@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface JumpListCategoryType {
     companion object {
         @seskar.js.JsValue("tasks")

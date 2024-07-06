@@ -7,7 +7,6 @@ package electron.core
 import node.buffer.Buffer
 import node.events.EventEmitter as NodeEventEmitter
 
-
 external class ClientRequest : NodeEventEmitter {
     /**
      * ClientRequest

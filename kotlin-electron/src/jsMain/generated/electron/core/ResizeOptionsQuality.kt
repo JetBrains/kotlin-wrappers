@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface ResizeOptionsQuality {
     companion object {
         @seskar.js.JsValue("good")

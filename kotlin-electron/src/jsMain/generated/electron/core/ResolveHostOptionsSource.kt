@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface ResolveHostOptionsSource {
     companion object {
         @seskar.js.JsValue("any")

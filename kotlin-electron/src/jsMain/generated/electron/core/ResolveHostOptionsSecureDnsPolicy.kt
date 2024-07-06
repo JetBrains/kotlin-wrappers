@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface ResolveHostOptionsSecureDnsPolicy {
     companion object {
         @seskar.js.JsValue("allow")

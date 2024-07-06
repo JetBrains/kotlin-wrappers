@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface MarginsMarginType {
     companion object {
         @seskar.js.JsValue("default")

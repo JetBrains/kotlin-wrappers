@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface SystemPreferencesGetMediaAccessStatusResult {
     companion object {
         @seskar.js.JsValue("not-determined")

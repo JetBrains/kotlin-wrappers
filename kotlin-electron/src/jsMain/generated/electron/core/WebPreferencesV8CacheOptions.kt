@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface WebPreferencesV8CacheOptions {
     companion object {
         @seskar.js.JsValue("none")

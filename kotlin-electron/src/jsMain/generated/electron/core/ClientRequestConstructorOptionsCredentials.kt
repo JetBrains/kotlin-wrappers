@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface ClientRequestConstructorOptionsCredentials {
     companion object {
         @seskar.js.JsValue("include")

@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface ClipboardHasType {
     companion object {
         @seskar.js.JsValue("selection")

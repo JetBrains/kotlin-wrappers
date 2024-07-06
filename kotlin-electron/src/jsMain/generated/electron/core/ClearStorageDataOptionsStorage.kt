@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface ClearStorageDataOptionsStorage {
     companion object {
         @seskar.js.JsValue("cookies")

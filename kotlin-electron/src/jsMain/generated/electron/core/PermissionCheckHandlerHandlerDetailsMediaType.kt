@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface PermissionCheckHandlerHandlerDetailsMediaType {
     companion object {
         @seskar.js.JsValue("video")

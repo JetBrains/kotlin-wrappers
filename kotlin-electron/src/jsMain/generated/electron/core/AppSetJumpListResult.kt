@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface AppSetJumpListResult {
     companion object {
         @seskar.js.JsValue("ok")

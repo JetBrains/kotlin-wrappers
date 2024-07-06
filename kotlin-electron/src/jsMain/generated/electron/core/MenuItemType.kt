@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface MenuItemType {
     companion object {
         @seskar.js.JsValue("normal")

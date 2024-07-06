@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface MouseInputEventType {
     companion object {
         @seskar.js.JsValue("mouseDown")

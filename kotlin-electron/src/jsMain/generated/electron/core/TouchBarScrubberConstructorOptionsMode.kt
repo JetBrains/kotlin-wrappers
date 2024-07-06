@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface TouchBarScrubberConstructorOptionsMode {
     companion object {
         @seskar.js.JsValue("fixed")

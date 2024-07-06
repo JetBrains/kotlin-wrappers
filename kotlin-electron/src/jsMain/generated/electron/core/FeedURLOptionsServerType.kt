@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface FeedURLOptionsServerType {
     companion object {
         @seskar.js.JsValue("json")

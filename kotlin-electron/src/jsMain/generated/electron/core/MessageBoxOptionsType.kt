@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface MessageBoxOptionsType {
     companion object {
         @seskar.js.JsValue("none")

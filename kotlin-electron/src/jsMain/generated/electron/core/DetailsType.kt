@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface DetailsType {
     companion object {
         @seskar.js.JsValue("Utility")

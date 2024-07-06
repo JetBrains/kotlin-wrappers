@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface TouchBarSpacerConstructorOptionsSize {
     companion object {
         @seskar.js.JsValue("small")

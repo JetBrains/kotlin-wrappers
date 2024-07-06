@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface OnBeforeRequestListenerDetailsResourceType {
     companion object {
         @seskar.js.JsValue("mainFrame")

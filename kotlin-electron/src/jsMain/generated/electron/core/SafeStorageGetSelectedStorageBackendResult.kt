@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface SafeStorageGetSelectedStorageBackendResult {
     companion object {
         @seskar.js.JsValue("basic_text")

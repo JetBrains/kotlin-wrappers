@@ -6,7 +6,6 @@ package electron.core
 
 import node.events.EventEmitter as NodeEventEmitter
 
-
 open external class Menu : NodeEventEmitter {
     /**
      * Menu
@@ -116,5 +115,4 @@ open external class Menu : NodeEventEmitter {
          */
         fun setApplicationMenu(menu: Menu?): Unit
     }
-
 }

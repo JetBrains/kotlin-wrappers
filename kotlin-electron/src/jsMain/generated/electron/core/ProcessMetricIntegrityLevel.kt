@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface ProcessMetricIntegrityLevel {
     companion object {
         @seskar.js.JsValue("untrusted")

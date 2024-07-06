@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface ConfigMaxVersion {
     companion object {
         @seskar.js.JsValue("tls1.2")

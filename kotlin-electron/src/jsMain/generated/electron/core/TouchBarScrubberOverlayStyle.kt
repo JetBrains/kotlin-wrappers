@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface TouchBarScrubberOverlayStyle {
     companion object {
         @seskar.js.JsValue("background")

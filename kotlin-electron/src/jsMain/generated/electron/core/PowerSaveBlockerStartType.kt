@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface PowerSaveBlockerStartType {
     companion object {
         @seskar.js.JsValue("prevent-app-suspension")

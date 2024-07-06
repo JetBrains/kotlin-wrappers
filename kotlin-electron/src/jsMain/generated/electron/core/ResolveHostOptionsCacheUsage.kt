@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface ResolveHostOptionsCacheUsage {
     companion object {
         @seskar.js.JsValue("allowed")

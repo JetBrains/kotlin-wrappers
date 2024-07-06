@@ -2,7 +2,6 @@
 
 package electron.core
 
-
 sealed external interface AppGetGPUInfoInfoType {
     companion object {
         @seskar.js.JsValue("basic")
