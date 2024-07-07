@@ -2,4 +2,5 @@
 
 package node.util
 
-sealed external interface CustomPromisifySymbol<TCustom : Function<*>> : js.function.JsFunctionLegacy<Nothing, Any?>
+@Suppress("INTERFACE_WITH_SUPERCLASS")
+sealed external interface CustomPromisifySymbol<TCustom : Function<*>> : js.function.JsFunction<Nothing, Any?>

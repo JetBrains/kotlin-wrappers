@@ -2,7 +2,8 @@
 
 package node.util
 
+@Suppress("INTERFACE_WITH_SUPERCLASS")
 sealed external interface DebugLogger :
-    js.function.JsFunctionLegacy<js.array.JsTuple1<String>, Unit> /* DebugLoggerFunction */ {
+    js.function.JsFunction<js.array.JsTuple1<String>, Unit> /* DebugLoggerFunction */ {
     var enabled: Boolean
 }

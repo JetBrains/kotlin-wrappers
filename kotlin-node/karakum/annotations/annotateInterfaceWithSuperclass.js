@@ -44,6 +44,10 @@ const interfacesWithSuperclass = [
     // stream
     "Stream",
 
+    // util
+    "CustomPromisifySymbol",
+    "DebugLogger",
+
     // zlib
     "BrotliCompress",
     "BrotliDecompress",
@@ -56,10 +60,37 @@ const interfacesWithSuperclass = [
     "Unzip",
 ]
 
-export default (node) => {
+export default (node, context) => {
     if (
         ts.isInterfaceDeclaration(node)
         && interfacesWithSuperclass.some(name => node.name.text === name)
+    ) {
+        return `@Suppress("INTERFACE_WITH_SUPERCLASS")`
+    }
+
+    if (
+        context.isAnonymousDeclaration
+
+        && ts.isIntersectionTypeNode(node)
+
+        && node.parent
+        && ts.isFunctionDeclaration(node.parent)
+        && node.parent.name.text === "compileFunction"
+        && node.parent.type === node
+    ) {
+        return `@Suppress("INTERFACE_WITH_SUPERCLASS")`
+    }
+
+    if (
+        context.isAnonymousDeclaration
+
+        && ts.isIntersectionTypeNode(node)
+
+        && node.parent
+        && ts.isVariableDeclaration(node.parent)
+        && ts.isIdentifier(node.parent.name)
+        && node.parent.name.text === "writer"
+        && node.parent.type === node
     ) {
         return `@Suppress("INTERFACE_WITH_SUPERCLASS")`
     }
