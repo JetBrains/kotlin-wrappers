@@ -6,7 +6,7 @@
 
 package web.events
 
-import kotlinx.coroutines.suspendCancellableCoroutine
+import kotlinx.coroutines.*
 import kotlin.coroutines.resume
 
 class EventInstance<out E : Event, out C : EventTarget, out T : EventTarget>(
@@ -49,35 +49,36 @@ fun <E : Event, C : EventTarget, T : EventTarget, D> EventInstance<E, C, T>.addH
 suspend fun <E : Event, C : EventTarget, T : EventTarget> EventInstance<E, C, T>.subscribe(
     handler: EventHandler<E, C, T>,
     options: AddEventListenerOptions? = undefined,
-) {
-    suspendCancellableCoroutine<Unit> { continuation ->
-        val unsubscribe = addHandler(handler, options)
+): Job =
+    CoroutineScope(currentCoroutineContext()).launch {
+        suspendCancellableCoroutine<Nothing> { continuation ->
+            val unsubscribe = addHandler(handler, options)
 
-        continuation.invokeOnCancellation {
-            unsubscribe()
+            continuation.invokeOnCancellation {
+                unsubscribe()
+            }
         }
     }
-}
 
 suspend fun <E : Event, C : EventTarget, T : EventTarget, D> EventInstance<E, C, T>.subscribe(
     handler: (D) -> Unit,
-) where D : E,
-        D : HasTargets<C, T> {
+): Job
+        where D : E,
+              D : HasTargets<C, T> =
     subscribe(
         handler = EventHandler(handler),
     )
-}
 
 suspend fun <E : Event, C : EventTarget, T : EventTarget, D> EventInstance<E, C, T>.subscribe(
     options: AddEventListenerOptions?,
     handler: (D) -> Unit,
-) where D : E,
-        D : HasTargets<C, T> {
+): Job
+        where D : E,
+              D : HasTargets<C, T> =
     subscribe(
         handler = EventHandler(handler),
         options = options,
     )
-}
 
 // once
 suspend fun <E : Event, C : EventTarget, T : EventTarget, D> EventInstance<E, C, T>.once(): D
