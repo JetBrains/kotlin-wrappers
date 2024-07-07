@@ -196,7 +196,7 @@ external class Date() :
     fun getUTCMilliseconds(): Int
 
     /**
-     * Gets the difference in minutes between the time on the local computer and Universal Coordinated Time (UTC).
+     * Gets the difference in minutes between Universal Coordinated Time (UTC) and the time on the local computer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/getTimezoneOffset)
      */
