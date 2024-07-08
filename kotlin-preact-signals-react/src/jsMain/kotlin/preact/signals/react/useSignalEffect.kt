@@ -1,11 +1,11 @@
 package preact.signals.react
 
-import react.EffectBuilder
-import react.internal.createEffectCallback
+import react.CleanupBuilder
+import react.internal.createCleanupCallback
 
 fun useSignalEffect(
-    effect: EffectBuilder.() -> Unit,
+    effect: CleanupBuilder.() -> Unit,
 ) {
-    val callback = createEffectCallback(effect)
+    val callback = createCleanupCallback(effect)
     rawUseSignalEffect(callback)
 }
