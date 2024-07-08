@@ -3,7 +3,7 @@ package react.internal
 import react.Cleanup
 import react.EffectBuilder
 
-fun createEffectCallback(
+internal fun createEffectCallback(
     effect: EffectBuilder.() -> Unit,
 ): () -> Cleanup? = {
     val cleanups = arrayOf<Cleanup>()
