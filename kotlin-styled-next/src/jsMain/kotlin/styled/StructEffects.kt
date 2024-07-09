@@ -11,12 +11,12 @@ internal fun <T> useStructMemo(
 
 internal fun useCustomInsertionEffect(
     vararg dependencies: Any?,
-    effect: EffectBuilder.() -> Unit,
+    effect: CleanupBuilder.() -> Unit,
 ) {
-    if (supportsInsertionEffect == undefined) {
-        useLayoutEffect(*dependencies, effect = effect)
+    if (supportsInsertionEffect === undefined) {
+        useLayoutEffectWithCleanup(dependencies = dependencies, effect = effect)
     } else {
-        useInsertionEffect(*dependencies, effect = effect)
+        useInsertionEffectWithCleanup(dependencies = dependencies, effect = effect)
     }
 }
 
