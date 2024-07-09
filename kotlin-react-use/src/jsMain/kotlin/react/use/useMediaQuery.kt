@@ -1,12 +1,11 @@
 package react.use
 
-import react.useEffect
 import react.useMemo
 import react.useState
 import web.cssom.MediaQuery
-import web.cssom.MediaQueryListEvent
+import web.cssom.changeEvent
 import web.cssom.matchMedia
-import web.events.addEventHandler
+import web.events.subscribe
 
 /**
  * [Original](https://mui.com/material-ui/react-use-media-query/)
@@ -20,14 +19,12 @@ fun useMediaQuery(
 
     val (matches, setMatches) = useState(queryList.matches)
 
-    useEffect(queryList) {
+    useAsyncEffect(queryList) {
         setMatches(queryList.matches)
 
-        cleanup(
-            queryList.addEventHandler(MediaQueryListEvent.change()) { event ->
-                setMatches(event.matches)
-            }
-        )
+        queryList.changeEvent.subscribe { event ->
+            setMatches(event.matches)
+        }
     }
 
     return matches
