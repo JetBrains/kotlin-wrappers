@@ -1,6 +1,6 @@
 package react.use
 
-import react.EffectBuilder
+import kotlinx.coroutines.CoroutineScope
 import react.useEffect
 
 /**
@@ -8,7 +8,7 @@ import react.useEffect
  */
 fun useUpdateEffect(
     vararg dependencies: Any?,
-    effect: suspend EffectBuilder.() -> Unit,
+    effect: suspend CoroutineScope.() -> Unit,
 ) {
     val isFirstRender = useIsFirstRender()
 
