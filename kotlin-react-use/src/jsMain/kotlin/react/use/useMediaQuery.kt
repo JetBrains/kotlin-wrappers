@@ -1,5 +1,6 @@
 package react.use
 
+import react.useEffect
 import react.useMemo
 import react.useState
 import web.cssom.MediaQuery
@@ -19,7 +20,7 @@ fun useMediaQuery(
 
     val (matches, setMatches) = useState(queryList.matches)
 
-    useAsyncEffect(queryList) {
+    useEffect(queryList) {
         setMatches(queryList.matches)
 
         queryList.changeEvent.subscribe { event ->
