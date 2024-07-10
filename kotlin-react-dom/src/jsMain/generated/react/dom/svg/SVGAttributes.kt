@@ -13,6 +13,8 @@ external interface SVGAttributes<T : Element> :
     AriaAttributes,
     DOMAttributes<T>,
     react.PropsWithStyle {
+    // React-specific Attributes
+    var suppressHydrationWarning: Boolean?
     var color: String?
     var height: Double?
     var id: String?

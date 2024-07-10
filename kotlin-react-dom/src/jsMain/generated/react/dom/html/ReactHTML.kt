@@ -266,6 +266,9 @@ object ReactHTML {
     inline val samp: IntrinsicType<HTMLAttributes<HTMLElement>>
         get() = IntrinsicType("samp")
 
+    inline val search: IntrinsicType<HTMLAttributes<HTMLElement>>
+        get() = IntrinsicType("search")
+
     inline val slot: IntrinsicType<SlotHTMLAttributes<HTMLSlotElement>>
         get() = IntrinsicType("slot")
 

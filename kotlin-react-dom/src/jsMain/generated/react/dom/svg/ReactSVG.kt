@@ -156,6 +156,9 @@ object ReactSVG {
     inline val rect: IntrinsicType<SVGAttributes<SVGRectElement>>
         get() = IntrinsicType("rect")
 
+    inline val set: IntrinsicType<SVGAttributes<SVGSetElement>>
+        get() = IntrinsicType("set")
+
     inline val stop: IntrinsicType<SVGAttributes<SVGStopElement>>
         get() = IntrinsicType("stop")
 

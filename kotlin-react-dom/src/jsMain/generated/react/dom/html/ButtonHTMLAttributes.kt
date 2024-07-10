@@ -16,5 +16,5 @@ external interface ButtonHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var formTarget: WindowName?
     var name: String?
     var type: ButtonType?
-    var value: Any? /* string | ReadonlyArray<string> | number */
+    var value: Any? // string | readonly string[] | number
 }
