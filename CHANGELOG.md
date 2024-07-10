@@ -1,3 +1,20 @@
+## pre.772
+
+**BREAKING CHANGE**
+
+* React. Suspend lambdas for effects
+    * Instead of `EffectBuider.cleanup` please use suspend functions with "auto-cleanup" like:
+        * `web.events.subscribe`
+        * `web.events.once`
+        * `web.animations.awaitAnimationFrame`
+        * "your custom suspend adapter"
+    * If you need old-style cleanup registration, please use the following hooks:
+        * `useEffectWithCleanup`
+        * `useEffectOnceWithCleanup`
+        * `useLayoutEffectWithCleanup`
+        * `useLayoutEffectOnceWithCleanup`
+        * ...
+
 ## pre.758
 
 **BREAKING CHANGE**
@@ -68,7 +85,7 @@ external class Loader {
 **BREAKING CHANGE**
 
 * Browser. Suspend adapters for async functions (marked with `@JsAsync`)
-  * The original Promise-based functions are available with the `Async` suffix
+    * The original Promise-based functions are available with the `Async` suffix
 
 ## pre.738
 
@@ -223,9 +240,9 @@ import web.uievents.MouseEvent
 element.addEventHandler(MouseEvent.CLICK) { }
 
 // After
-import web.uievents.MouseEvent
+import web . uievents . MouseEvent
 
-element.addEventHandler(MouseEvent.CLICK) { }
+        element.addEventHandler(MouseEvent.CLICK) { }
 ```
 
 ## pre.600
