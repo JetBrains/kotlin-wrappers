@@ -7,7 +7,7 @@ import react.internal.createEffectCallback
  * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
  */
 fun useLayoutEffect(
-    effect: EffectBuilder.() -> Unit,
+    effect: suspend EffectBuilder.() -> Unit,
 ) {
     val callback = createEffectCallback(effect)
     rawUseLayoutEffect(callback)
@@ -19,7 +19,7 @@ fun useLayoutEffect(
  */
 fun useLayoutEffect(
     vararg dependencies: Any?,
-    effect: EffectBuilder.() -> Unit,
+    effect: suspend EffectBuilder.() -> Unit,
 ) {
     val callback = createEffectCallback(effect)
     rawUseLayoutEffect(callback, dependencies)
@@ -30,7 +30,7 @@ fun useLayoutEffect(
  * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
  */
 fun useLayoutEffectOnce(
-    effect: EffectBuilder.() -> Unit,
+    effect: suspend EffectBuilder.() -> Unit,
 ) {
     val callback = createEffectCallback(effect)
     rawUseLayoutEffect(callback, emptyArray())

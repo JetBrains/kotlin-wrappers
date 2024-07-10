@@ -8,7 +8,7 @@ import react.useEffect
  */
 fun useUpdateEffect(
     vararg dependencies: Any?,
-    effect: EffectBuilder.() -> Unit,
+    effect: suspend EffectBuilder.() -> Unit,
 ) {
     val isFirstRender = useIsFirstRender()
 
