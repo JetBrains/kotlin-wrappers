@@ -1,9 +1,8 @@
 package react.use
 
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
+import react.internal.createCleanupCallback
 import react.rawUseEffect
-import kotlin.coroutines.EmptyCoroutineContext
 
 /**
  * [Original](https://developer.android.com/jetpack/compose/side-effects#launchedeffect)
@@ -13,12 +12,7 @@ fun useAsyncEffect(
     block: suspend CoroutineScope.() -> Unit,
 ) {
     rawUseEffect(
-        effect = {
-            val job = CoroutineScope(EmptyCoroutineContext)
-                .launch(block = block)
-
-            job::cancel
-        },
+        effect = createCleanupCallback(block),
         dependencies = dependencies,
     )
 }
