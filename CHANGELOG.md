@@ -1,3 +1,9 @@
+## pre.773
+
+**BREAKING CHANGE**
+
+* React. New context of effect lambdas - `CoroutineScope` (instead of `EffectBuilder`)
+
 ## pre.772
 
 **BREAKING CHANGE**
