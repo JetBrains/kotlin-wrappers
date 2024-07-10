@@ -14,11 +14,11 @@ external interface TextareaHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var maxLength: Int?
     var minLength: Int?
     var name: String?
-    override var placeholder: String?
+    var placeholder: String?
     var readOnly: Boolean?
     var required: Boolean?
     var rows: Int?
-    var value: Any? /* string | ReadonlyArray<string> | number */
+    var value: Any? // string | readonly string[] | number
     var wrap: String?
     var onChange: ChangeEventHandler<T>?
 }

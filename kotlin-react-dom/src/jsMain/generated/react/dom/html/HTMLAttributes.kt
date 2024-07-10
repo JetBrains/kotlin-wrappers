@@ -5,7 +5,6 @@ package react.dom.html
 import react.dom.DOMAttributes
 import react.dom.aria.AriaAttributes
 import react.dom.aria.AriaRole
-import react.dom.events.*
 import web.dom.Element
 import web.html.InputMode
 
@@ -15,14 +14,14 @@ external interface HTMLAttributes<T : Element> :
     react.PropsWithStyle {
     // React-specific Attributes
     var defaultChecked: Boolean?
-    var defaultValue: Any? /* string | number | ReadonlyArray<string> */
+    var defaultValue: Any? // string | number | readonly string[]
     var suppressContentEditableWarning: Boolean?
     var suppressHydrationWarning: Boolean?
 
     // Standard HTML Attributes
     var accessKey: String?
     var autoFocus: Boolean?
-    var contentEditable: Any? // Booleanish | "inherit"
+    var contentEditable: Any? // Booleanish | "inherit" | "plaintext-only"
     var contextMenu: String?
     var dir: String?
     var draggable: Boolean?
@@ -30,7 +29,6 @@ external interface HTMLAttributes<T : Element> :
     var id: String?
     var lang: String?
     var nonce: String?
-    var placeholder: String?
     var slot: String?
     var spellCheck: Boolean?
     override var style: react.CSSProperties?
@@ -72,13 +70,13 @@ external interface HTMLAttributes<T : Element> :
 // Living Standard
     /**
      * Hints at the type of data that might be entered by the user while editing the element or its contents
-     * @see https://html.spec.whatwg.org/multipage/interaction.html#input-modalities:-the-inputmode-attribute
+     * @see {@link https://html.spec.whatwg.org/multipage/interaction.html#input-modalities:-the-inputmode-attribute}
      */
     var inputMode: InputMode?
 
     /**
      * Specify that a standard HTML element should behave like a defined custom built-in element
-     * @see https://html.spec.whatwg.org/multipage/custom-elements.html#attr-is
+     * @see {@link https://html.spec.whatwg.org/multipage/custom-elements.html#attr-is}
      */
     var `is`: String?
 }

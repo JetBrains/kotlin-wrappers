@@ -29,6 +29,26 @@ inline var AriaAttributes.ariaAutoComplete: AriaAutoComplete
     }
 
 /** Indicates an element is being modified and that assistive technologies MAY want to wait until the modifications are complete before exposing them to the user. */
+/**
+ * Defines a string value that labels the current element, which is intended to be converted into Braille.
+ * @see aria-label.
+ */
+inline var AriaAttributes.ariaBrailleLabel: String
+    get() = asDynamic()["aria-braillelabel"]
+    set(value) {
+        asDynamic()["aria-braillelabel"] = value
+    }
+
+/**
+ * Defines a human-readable, author-localized abbreviated description for the role of an element, which is intended to be converted into Braille.
+ * @see aria-roledescription.
+ */
+inline var AriaAttributes.ariaBrailleRoleDescription: String
+    get() = asDynamic()["aria-brailleroledescription"]
+    set(value) {
+        asDynamic()["aria-brailleroledescription"] = value
+    }
+
 inline var AriaAttributes.ariaBusy: Boolean
     get() = asDynamic()["aria-busy"]
     set(value) {
@@ -66,6 +86,16 @@ inline var AriaAttributes.ariaColIndex: Int
     }
 
 /**
+ * Defines a human readable text alternative of aria-colindex.
+ * @see aria-rowindextext.
+ */
+inline var AriaAttributes.ariaColIndexText: String
+    get() = asDynamic()["aria-colindextext"]
+    set(value) {
+        asDynamic()["aria-colindextext"] = value
+    }
+
+/**
  * Defines the number of columns spanned by a cell or gridcell within a table, grid, or treegrid.
  * @see aria-colindex @see aria-rowspan.
  */
@@ -100,6 +130,16 @@ inline var AriaAttributes.ariaDescribedBy: String
     get() = asDynamic()["aria-describedby"]
     set(value) {
         asDynamic()["aria-describedby"] = value
+    }
+
+/**
+ * Defines a string value that describes or annotates the current element.
+ * @see related aria-describedby.
+ */
+inline var AriaAttributes.ariaDescription: String
+    get() = asDynamic()["aria-description"]
+    set(value) {
+        asDynamic()["aria-description"] = value
     }
 
 /**
@@ -358,6 +398,16 @@ inline var AriaAttributes.ariaRowIndex: Int
     get() = asDynamic()["aria-rowindex"]
     set(value) {
         asDynamic()["aria-rowindex"] = value
+    }
+
+/**
+ * Defines a human readable text alternative of aria-rowindex.
+ * @see aria-colindextext.
+ */
+inline var AriaAttributes.ariaRowIndexText: String
+    get() = asDynamic()["aria-rowindextext"]
+    set(value) {
+        asDynamic()["aria-rowindextext"] = value
     }
 
 /**
