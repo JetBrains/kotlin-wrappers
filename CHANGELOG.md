@@ -240,9 +240,9 @@ import web.uievents.MouseEvent
 element.addEventHandler(MouseEvent.CLICK) { }
 
 // After
-import web . uievents . MouseEvent
+import web.uievents.MouseEvent
 
-        element.addEventHandler(MouseEvent.CLICK) { }
+element.addEventHandler(MouseEvent.CLICK) { }
 ```
 
 ## pre.600
