@@ -6,7 +6,7 @@ dependencies {
     jsMainApi(projects.kotlinJs)
     jsMainApi(projects.kotlinCsstype)
 
-    jsMainImplementation(kotlinxCoroutines("core"))
+    jsMainApi(kotlinxCoroutines("core"))
 
     jsTestImplementation(kotlin("test-js"))
 
