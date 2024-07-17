@@ -7,10 +7,8 @@ import kotlin.coroutines.EmptyCoroutineContext
 
 internal fun launchIsolatedJob(
     block: suspend CoroutineScope.() -> Unit,
-): Job {
-    val scope = CoroutineScope(
-        context = EmptyCoroutineContext,
-    )
-
-    return scope.launch(block = block)
-}
+): Job =
+    CoroutineScope(EmptyCoroutineContext)
+        .launch(
+            block = block,
+        )
