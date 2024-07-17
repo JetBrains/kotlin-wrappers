@@ -9,6 +9,7 @@ dependencies {
     jsMainApi(kotlinxCoroutines("core"))
 
     jsTestImplementation(kotlin("test-js"))
+    jsTestImplementation(kotlinxCoroutines("test"))
 
     jsMainApi(npmv("react"))
 }
