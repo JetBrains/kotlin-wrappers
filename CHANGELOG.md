@@ -9,7 +9,7 @@
 **BREAKING CHANGE**
 
 * React. Suspend lambdas for effects
-    * Instead of `EffectBuider.cleanup` please use suspend functions with "auto-cleanup" like:
+    * Instead of `EffectBuilder.cleanup` please use suspend functions with "auto-cleanup" like:
         * `web.events.subscribe`
         * `web.events.once`
         * `web.animations.awaitAnimationFrame`
