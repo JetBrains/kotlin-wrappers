@@ -4,12 +4,14 @@
 
 package actions.core
 
+import js.errors.JsError
+
 external fun warning(
     message: String,
     properties: AnnotationProperties = definedExternally,
 )
 
 external fun warning(
-    message: Error,
+    message: JsError,
     properties: AnnotationProperties = definedExternally,
 )

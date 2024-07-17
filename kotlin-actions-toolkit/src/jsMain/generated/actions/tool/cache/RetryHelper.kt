@@ -4,6 +4,7 @@
 
 package actions.tool.cache
 
+import js.errors.JsError
 import js.promise.Promise
 
 external class RetryHelper {
@@ -15,6 +16,6 @@ external class RetryHelper {
 
     fun <T> execute(
         action: () -> Promise<T>,
-        isRetryable: (e: Error) -> Boolean = definedExternally,
+        isRetryable: (e: JsError) -> Boolean = definedExternally,
     ): Promise<T>
 }
