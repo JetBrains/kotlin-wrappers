@@ -10,9 +10,9 @@
 
 * React. Suspend lambdas for effects
     * Instead of `EffectBuilder.cleanup` please use suspend functions with "auto-cleanup" like:
-        * `web.events.subscribe`
-        * `web.events.once`
-        * `web.animations.awaitAnimationFrame`
+        * `web.events.subscribe` ([example](kotlin/example/react/useEffectExamples.kt#23))
+        * `web.events.once` ([example](kotlin/example/react/useEffectExamples.kt#47))
+        * `web.animations.awaitAnimationFrame` ([example](kotlin/example/react/useEffectExamples.kt#67))
         * "your custom suspend adapter"
     * If you need old-style cleanup registration, please use the following hooks:
         * `useEffectWithCleanup`
