@@ -1,3 +1,5 @@
 package react
 
-typealias TransitionStartFunction = (callback: TransitionFunction) -> Unit
+typealias TransitionStartFunction = (
+    callback: TransitionFunction,
+) -> Unit
