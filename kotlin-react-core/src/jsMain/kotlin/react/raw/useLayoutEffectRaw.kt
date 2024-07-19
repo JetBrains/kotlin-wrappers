@@ -7,7 +7,7 @@ import react.Cleanup
 
 // Layout Effect Hook (16.8+)
 @JsName("useLayoutEffect")
-external fun rawUseLayoutEffect(
+external fun useLayoutEffectRaw(
     effect: () -> Cleanup?,
     dependencies: ReadonlyArray<Any?> = definedExternally,
 )

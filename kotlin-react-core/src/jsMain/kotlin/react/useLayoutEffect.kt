@@ -2,7 +2,7 @@ package react
 
 import kotlinx.coroutines.CoroutineScope
 import react.internal.createCleanupCallback
-import react.raw.rawUseLayoutEffect
+import react.raw.useLayoutEffectRaw
 
 /**
  * Only works inside [fc]
@@ -12,7 +12,7 @@ fun useLayoutEffect(
     effect: suspend CoroutineScope.() -> Unit,
 ) {
     val callback = createCleanupCallback(effect)
-    rawUseLayoutEffect(callback)
+    useLayoutEffectRaw(callback)
 }
 
 /**
@@ -24,7 +24,7 @@ fun useLayoutEffect(
     effect: suspend CoroutineScope.() -> Unit,
 ) {
     val callback = createCleanupCallback(effect)
-    rawUseLayoutEffect(callback, dependencies)
+    useLayoutEffectRaw(callback, dependencies)
 }
 
 /**
@@ -35,5 +35,5 @@ fun useLayoutEffectOnce(
     effect: suspend CoroutineScope.() -> Unit,
 ) {
     val callback = createCleanupCallback(effect)
-    rawUseLayoutEffect(callback, emptyArray())
+    useLayoutEffectRaw(callback, emptyArray())
 }
