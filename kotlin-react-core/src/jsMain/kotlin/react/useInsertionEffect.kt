@@ -2,7 +2,7 @@ package react
 
 import kotlinx.coroutines.CoroutineScope
 import react.internal.createCleanupCallback
-import react.raw.rawUseInsertionEffect
+import react.raw.useInsertionEffectRaw
 
 /**
  * Only works inside [fc]
@@ -12,7 +12,7 @@ fun useInsertionEffect(
     effect: suspend CoroutineScope.() -> Unit,
 ) {
     val callback = createCleanupCallback(effect)
-    rawUseInsertionEffect(callback)
+    useInsertionEffectRaw(callback)
 }
 
 /**
@@ -24,5 +24,5 @@ fun useInsertionEffect(
     effect: suspend CoroutineScope.() -> Unit,
 ) {
     val callback = createCleanupCallback(effect)
-    rawUseInsertionEffect(callback, dependencies)
+    useInsertionEffectRaw(callback, dependencies)
 }
