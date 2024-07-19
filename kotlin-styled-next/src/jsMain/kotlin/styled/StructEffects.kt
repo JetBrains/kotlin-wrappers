@@ -1,6 +1,7 @@
 package styled
 
 import react.*
+import react.raw.rawUseMemo
 
 internal fun <T> useStructMemo(
     vararg dependencies: Any?,

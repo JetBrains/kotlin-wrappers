@@ -2,6 +2,7 @@ package react
 
 import js.objects.Object
 import js.objects.jso
+import react.raw.rawForwardRef
 
 fun <P : PropsWithRef<*>> ForwardRef(
     block: @ReactDsl ChildrenBuilder.(props: P) -> Unit,

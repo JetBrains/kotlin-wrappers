@@ -2,6 +2,7 @@ package react
 
 import kotlinx.coroutines.CoroutineScope
 import react.internal.createCleanupCallback
+import react.raw.rawUseInsertionEffect
 
 /**
  * Only works inside [fc]

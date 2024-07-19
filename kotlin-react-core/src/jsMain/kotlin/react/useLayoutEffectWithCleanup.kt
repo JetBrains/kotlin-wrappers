@@ -1,6 +1,7 @@
 package react
 
 import react.internal.createCleanupCallback
+import react.raw.rawUseLayoutEffect
 
 /**
  * Only works inside [fc]

@@ -4,6 +4,8 @@
 
 package react
 
+import react.raw.rawUseCallback
+
 sealed external interface RefCallback<in T : Any> : Ref<T>
 
 inline fun <T : Any> RefCallback(

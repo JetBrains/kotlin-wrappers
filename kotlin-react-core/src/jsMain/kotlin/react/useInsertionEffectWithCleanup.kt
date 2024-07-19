@@ -1,6 +1,7 @@
 package react
 
 import react.internal.createCleanupCallback
+import react.raw.rawUseInsertionEffect
 
 /**
  * Only works inside [fc]

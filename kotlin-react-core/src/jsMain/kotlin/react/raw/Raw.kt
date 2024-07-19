@@ -1,8 +1,9 @@
 @file:JsModule("react")
 
-package react
+package react.raw
 
 import js.array.ReadonlyArray
+import react.*
 
 @JsName("forwardRef")
 external fun <T : Any, P : PropsWithRef<T>> rawForwardRef(

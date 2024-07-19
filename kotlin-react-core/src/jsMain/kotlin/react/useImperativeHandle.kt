@@ -4,6 +4,8 @@
 
 package react
 
+import react.raw.rawUseImperativeHandle
+
 /**
  * Available since 16.8
  *
