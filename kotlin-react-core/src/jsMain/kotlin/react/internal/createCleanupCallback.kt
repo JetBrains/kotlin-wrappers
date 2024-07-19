@@ -15,7 +15,7 @@ fun createCleanupCallback(
 fun createCleanupCallback(
     block: suspend CoroutineScope.() -> Unit,
 ): () -> Cleanup? = callback@{
-    val job = launchIsolatedJob(block)
+    val job = isolatedJob(block)
 
     return@callback {
         job.cancel()

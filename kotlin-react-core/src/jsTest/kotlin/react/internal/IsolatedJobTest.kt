@@ -9,7 +9,7 @@ class IsolatedJobTest {
     fun launch() = runTest {
         var a = 13
 
-        launchIsolatedJob {
+        isolatedJob {
             a = 42
         }
 
