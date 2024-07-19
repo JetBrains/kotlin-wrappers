@@ -1,3 +1,7 @@
+## pre.775
+
+* React. Fix `useLayoutEffect` implementation
+
 ## pre.773
 
 **BREAKING CHANGE**
