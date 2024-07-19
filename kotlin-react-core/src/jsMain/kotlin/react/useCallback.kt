@@ -4,7 +4,7 @@
 
 package react
 
-import react.raw.rawUseCallback
+import react.raw.useCallbackRaw
 
 /**
  * Only works inside [fc]
@@ -14,4 +14,4 @@ inline fun <T : Function<*>> useCallback(
     vararg dependencies: Any?,
     callback: T,
 ): T =
-    rawUseCallback(callback, dependencies)
+    useCallbackRaw(callback, dependencies)

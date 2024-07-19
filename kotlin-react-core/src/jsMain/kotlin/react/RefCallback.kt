@@ -4,7 +4,7 @@
 
 package react
 
-import react.raw.rawUseCallback
+import react.raw.useCallbackRaw
 
 sealed external interface RefCallback<in T : Any> : Ref<T>
 
@@ -17,4 +17,4 @@ inline fun <T : Any> useRefCallback(
     vararg dependencies: Any?,
     noinline callback: (T?) -> Unit,
 ): RefCallback<T> =
-    RefCallback(rawUseCallback(callback, dependencies))
+    RefCallback(useCallbackRaw(callback, dependencies))
