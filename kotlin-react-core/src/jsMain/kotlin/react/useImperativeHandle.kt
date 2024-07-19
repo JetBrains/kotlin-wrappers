@@ -4,7 +4,7 @@
 
 package react
 
-import react.raw.rawUseImperativeHandle
+import react.raw.useImperativeHandleRaw
 
 /**
  * Available since 16.8
@@ -17,4 +17,4 @@ inline fun <T : Any> useImperativeHandle(
     vararg dependencies: Any?,
     noinline init: () -> T?,
 ) =
-    rawUseImperativeHandle(ref, init, dependencies)
+    useImperativeHandleRaw(ref, init, dependencies)

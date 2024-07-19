@@ -7,7 +7,7 @@ import react.Ref
 
 // Imperative Handle Hook (16.8+)
 @JsName("useImperativeHandle")
-external fun <T : Any> rawUseImperativeHandle(
+external fun <T : Any> useImperativeHandleRaw(
     ref: Ref<T>?,
     init: () -> T?,
     dependencies: ReadonlyArray<Any?>,
