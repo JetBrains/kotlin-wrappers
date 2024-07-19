@@ -1,17 +1,31 @@
-@file:JsModule("react")
-
 package react
 
-import js.promise.PromiseResult
+import kotlinx.coroutines.CoroutineScope
+import react.internal.isolatedPromise
+import react.raw.useActionStateRaw
 
-external fun <S> useActionState(
-    action: (state: S) -> PromiseResult<S>,
+fun <S> useActionState(
     initialState: S,
-    permalink: String? = definedExternally,
-): ActionStateInstance1<S>
+    permalink: String? = undefined,
+    action: suspend CoroutineScope.(state: S) -> S,
+): ActionStateInstance1<S> =
+    useActionStateRaw(
+        action = { state ->
+            isolatedPromise { action(state) }
+        },
+        initialState = initialState,
+        permalink = permalink,
+    )
 
-external fun <S, P> useActionState(
-    action: (state: S, payload: P) -> PromiseResult<S>,
+fun <S, P> useActionState(
     initialState: S,
-    permalink: String? = definedExternally,
-): ActionStateInstance2<S, P>
+    permalink: String? = undefined,
+    action: suspend CoroutineScope.(state: S, payload: P) -> S,
+): ActionStateInstance2<S, P> =
+    useActionStateRaw(
+        action = { state, payload ->
+            isolatedPromise { action(state, payload) }
+        },
+        initialState = initialState,
+        permalink = permalink,
+    )
