@@ -1,3 +1,10 @@
+## pre.777
+
+* React. Move raw declarations in a separate package
+    * `react.rawUseMemo` -> `react.raw.useMemoRaw`
+    * `react.rawUseCallback` -> `react.raw.useCallbackRaw`
+    * ...
+
 ## pre.775
 
 * React. Fix `useLayoutEffect` implementation
