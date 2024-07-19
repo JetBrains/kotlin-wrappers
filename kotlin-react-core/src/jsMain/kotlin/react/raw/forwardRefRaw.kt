@@ -8,6 +8,6 @@ import react.ReactElement
 import react.Ref
 
 @JsName("forwardRef")
-external fun <T : Any, P : PropsWithRef<T>> rawForwardRef(
+external fun <T : Any, P : PropsWithRef<T>> forwardRefRaw(
     render: (props: P, forwardedRef: Ref<T>?) -> ReactElement<*>?,
 ): ForwardRefExoticComponent<P>
