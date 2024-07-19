@@ -1,6 +1,9 @@
 package react.internal
 
 import kotlinx.coroutines.test.runTest
+import web.events.Event
+import web.events.EventInstance
+import web.events.EventTarget
 import web.events.subscribe
 import web.window.clickEvent
 import web.window.mouseUpEvent
@@ -32,5 +35,29 @@ class IsolatedJobTest {
         }
 
         assertEquals(42, a)
+    }
+
+    // TODO: use common
+    private val EventTarget.changeEvent: EventInstance<Event, EventTarget, EventTarget>
+        get() = EventInstance(this, Event.change())
+
+    @Test
+    fun launchWithSubscribeCheck() = runTest {
+        var a = 13
+        val target = EventTarget()
+
+        isolatedJob {
+            target.changeEvent.subscribe { a++ }
+
+            a = 42
+        }
+
+        assertEquals(42, a)
+
+        target.dispatchEvent(Event(Event.change()))
+        assertEquals(43, a)
+
+        target.dispatchEvent(Event(Event.change()))
+        assertEquals(44, a)
     }
 }
