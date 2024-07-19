@@ -1,13 +1,13 @@
 package styled
 
 import react.*
-import react.raw.rawUseMemo
+import react.raw.useMemoRaw
 
 internal fun <T> useStructMemo(
     vararg dependencies: Any?,
     callback: () -> T,
 ): T {
-    return rawUseMemo(getMemoizedCallback(dependencies, callback), dependencies)
+    return useMemoRaw(getMemoizedCallback(dependencies, callback), dependencies)
 }
 
 internal fun useCustomInsertionEffect(

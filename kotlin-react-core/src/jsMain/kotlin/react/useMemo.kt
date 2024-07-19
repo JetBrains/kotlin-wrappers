@@ -4,7 +4,7 @@
 
 package react
 
-import react.raw.rawUseMemo
+import react.raw.useMemoRaw
 
 /**
  * Only works inside [fc]
@@ -14,4 +14,4 @@ inline fun <T> useMemo(
     vararg dependencies: Any?,
     noinline callback: () -> T,
 ): T =
-    rawUseMemo(callback, dependencies)
+    useMemoRaw(callback, dependencies)
