@@ -7,7 +7,7 @@ import react.Cleanup
 
 // Effect Hook (16.8+)
 @JsName("useEffect")
-external fun rawUseEffect(
+external fun useEffectRaw(
     effect: () -> Cleanup?,
     dependencies: ReadonlyArray<Any?> = definedExternally,
 )

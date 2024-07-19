@@ -2,7 +2,7 @@ package react
 
 import kotlinx.coroutines.CoroutineScope
 import react.internal.createCleanupCallback
-import react.raw.rawUseEffect
+import react.raw.useEffectRaw
 
 /**
  * Only works inside [fc]
@@ -12,7 +12,7 @@ fun useEffect(
     effect: suspend CoroutineScope.() -> Unit,
 ) {
     val callback = createCleanupCallback(effect)
-    rawUseEffect(callback)
+    useEffectRaw(callback)
 }
 
 /**
@@ -24,7 +24,7 @@ fun useEffect(
     effect: suspend CoroutineScope.() -> Unit,
 ) {
     val callback = createCleanupCallback(effect)
-    rawUseEffect(callback, dependencies)
+    useEffectRaw(callback, dependencies)
 }
 
 /**
@@ -35,5 +35,5 @@ fun useEffectOnce(
     effect: suspend CoroutineScope.() -> Unit,
 ) {
     val callback = createCleanupCallback(effect)
-    rawUseEffect(callback, emptyArray())
+    useEffectRaw(callback, emptyArray())
 }
