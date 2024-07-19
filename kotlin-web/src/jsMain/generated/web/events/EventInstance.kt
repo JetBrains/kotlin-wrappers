@@ -50,15 +50,16 @@ suspend fun <E : Event, C : EventTarget, T : EventTarget> EventInstance<E, C, T>
     handler: EventHandler<E, C, T>,
     options: AddEventListenerOptions? = undefined,
 ): Job =
-    CoroutineScope(currentCoroutineContext()).launch(start = CoroutineStart.UNDISPATCHED) {
-        suspendCancellableCoroutine<Nothing> { continuation ->
-            val unsubscribe = addHandler(handler, options)
+    CoroutineScope(currentCoroutineContext())
+        .launch(start = CoroutineStart.UNDISPATCHED) {
+            suspendCancellableCoroutine<Nothing> { continuation ->
+                val unsubscribe = addHandler(handler, options)
 
-            continuation.invokeOnCancellation {
-                unsubscribe()
+                continuation.invokeOnCancellation {
+                    unsubscribe()
+                }
             }
         }
-    }
 
 suspend fun <E : Event, C : EventTarget, T : EventTarget, D> EventInstance<E, C, T>.subscribe(
     handler: (D) -> Unit,
