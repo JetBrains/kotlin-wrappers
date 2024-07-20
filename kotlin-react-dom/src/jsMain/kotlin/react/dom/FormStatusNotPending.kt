@@ -1,6 +1,11 @@
 package react.dom
 
-external interface FormStatusNotPending :
-    FormStatus {
-    val pending: Boolean
-}
+import seskar.js.JsTypeGuard
+
+@JsTypeGuard(
+    property = "pending",
+    value = "false",
+)
+external class FormStatusNotPending
+private constructor() :
+    FormStatus
