@@ -6,7 +6,7 @@ import js.iterable.IterableIterator
 import js.iterable.JsIterable
 
 @JsName("Set")
-external class JsSet<T>(
+open external class JsSet<T>(
     values: JsIterable<T> = definedExternally,
 ) : MutableSetLike<T> {
     constructor(values: ReadonlyArray<T>)

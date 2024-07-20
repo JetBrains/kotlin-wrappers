@@ -3,7 +3,7 @@ package js.collections
 import js.array.JsTuple2
 import js.array.ReadonlyArray
 
-external class WeakMap<in K : Any, V>(
+open external class WeakMap<in K : Any, V>(
     entries: ReadonlyArray<JsTuple2<K, V>>? = definedExternally,
 ) {
     fun delete(key: K): Boolean

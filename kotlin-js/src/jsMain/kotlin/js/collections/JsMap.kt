@@ -5,7 +5,7 @@ import js.array.ReadonlyArray
 import js.iterable.IterableIterator
 
 @JsName("Map")
-external class JsMap<K, V>(
+open external class JsMap<K, V>(
     values: ReadonlyArray<JsTuple2<K, V>> = definedExternally,
 ) : MutableMapLike<K, V> {
     override val size: Int
