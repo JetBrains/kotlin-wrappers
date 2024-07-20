@@ -8,6 +8,7 @@ import seskar.js.JsAsync
 import web.dom.HTMLOrSVGImageElement
 import web.gl.TexImageSource
 import web.http.CrossOrigin
+import web.http.FetchPriority
 import web.http.ReferrerPolicy
 
 /**

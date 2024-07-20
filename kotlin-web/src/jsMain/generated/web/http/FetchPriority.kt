@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package web.html
+package web.http
 
 import seskar.js.JsValue
 
