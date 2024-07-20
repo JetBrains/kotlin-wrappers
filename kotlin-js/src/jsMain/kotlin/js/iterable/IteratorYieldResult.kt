@@ -7,7 +7,8 @@ import seskar.js.JsTypeGuard
     property = "done",
     value = "false",
 )
-sealed external class IteratorYieldResult<out TYield> :
+external class IteratorYieldResult<out TYield>
+private constructor() :
     IteratorResult<TYield, Void> {
     val value: TYield
 }

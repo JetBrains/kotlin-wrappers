@@ -7,7 +7,8 @@ import seskar.js.JsTypeGuard
     property = "done",
     value = "true",
 )
-sealed external class IteratorReturnResult<out TReturn> :
+external class IteratorReturnResult<out TReturn>
+private constructor() :
     IteratorResult<Void, TReturn> {
     val value: TReturn
 }
