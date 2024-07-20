@@ -1,5 +1,7 @@
 package react.dom
 
+import js.core.Void
+import js.promise.Promise
 import seskar.js.JsTypeGuard
 import web.form.FormData
 
@@ -12,5 +14,5 @@ private constructor() :
     FormStatus {
     val data: FormData
     val method: String
-    val action: (formData: FormData) -> Unit
+    val action: (formData: FormData) -> Promise<Void>?
 }
