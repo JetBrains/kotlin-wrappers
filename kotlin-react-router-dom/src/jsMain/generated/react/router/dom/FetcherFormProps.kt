@@ -2,6 +2,7 @@
 
 package react.router.dom
 
+import react.dom.FormAction
 import remix.run.router.HTMLFormMethod
 import remix.run.router.RelativeRoutingType
 import web.html.HTMLFormElement
@@ -31,7 +32,7 @@ sealed external interface FetcherFormProps : react.Props, react.dom.html.FormHTM
     /**
      * Normal `<form action>` but supports React Router's relative paths.
      */
-    override var action: String?
+    override var action: FormAction?
 
     /**
      * Determines whether the form action is relative to the route hierarchy or
