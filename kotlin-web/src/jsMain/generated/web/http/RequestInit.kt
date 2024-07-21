@@ -42,7 +42,7 @@ external interface RequestInit :
     /**
      * A string to set request's method.
      */
-    var method: String?
+    var method: RequestMethod?
 
     /**
      * A string to indicate whether the request will use CORS, or will be restricted to same-origin URLs. Sets request's mode.

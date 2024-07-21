@@ -8,6 +8,7 @@ import web.dom.Document
 import web.events.Event
 import web.events.EventHandler
 import web.form.FormData
+import web.http.RequestMethod
 import web.url.URL
 import web.url.URLSearchParams
 
@@ -139,17 +140,17 @@ open external class XMLHttpRequest :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/open)
      */
     fun open(
-        method: String,
+        method: RequestMethod,
         url: String,
     )
 
     fun open(
-        method: String,
+        method: RequestMethod,
         url: URL,
     )
 
     fun open(
-        method: String,
+        method: RequestMethod,
         url: String,
         async: Boolean,
         username: String? = definedExternally,
@@ -157,7 +158,7 @@ open external class XMLHttpRequest :
     )
 
     fun open(
-        method: String,
+        method: RequestMethod,
         url: URL,
         async: Boolean,
         username: String? = definedExternally,
