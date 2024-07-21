@@ -5,6 +5,7 @@ package react.router.dom
 import react.dom.FormAction
 import remix.run.router.HTMLFormMethod
 import remix.run.router.RelativeRoutingType
+import web.form.FormMethod
 import web.html.HTMLFormElement
 
 
@@ -14,7 +15,7 @@ sealed external interface FetcherFormProps : react.Props, react.dom.html.FormHTM
      * "put", "delete", "patch".
      */
     @Deprecated(message = "use routerMethod", level = DeprecationLevel.HIDDEN)
-    override var method: String?
+    override var method: FormMethod?
 
     @JsName("method")
     var routerMethod: HTMLFormMethod?
