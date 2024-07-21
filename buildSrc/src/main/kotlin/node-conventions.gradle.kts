@@ -6,6 +6,13 @@ val compareLocks by tasks.registering {
     dependsOn("kotlinNpmInstall")
 
     doLast {
+        val props = rootProject.layout.projectDirectory.file("gradle.properties")
+        val propLines = props.asFile.readLines().take(5)
+
+        for (line in propLines) {
+            logger.warn("[gradle.properties]: $line")
+        }
+
         val rootLock = rootProject.layout.projectDirectory.file("package-lock.json")
         val buildLock = rootProject.layout.buildDirectory.file("js/package-lock.json").get()
 
