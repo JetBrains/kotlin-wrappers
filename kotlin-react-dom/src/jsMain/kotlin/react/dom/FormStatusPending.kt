@@ -4,6 +4,7 @@ import js.core.Void
 import js.promise.Promise
 import seskar.js.JsTypeGuard
 import web.form.FormData
+import web.form.FormMethod
 
 @JsTypeGuard(
     property = "pending",
@@ -13,6 +14,6 @@ external class FormStatusPending
 private constructor() :
     FormStatus {
     val data: FormData
-    val method: String
+    val method: FormMethod
     val action: (formData: FormData) -> Promise<Void>?
 }
