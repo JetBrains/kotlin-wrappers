@@ -5,6 +5,7 @@ package react.dom.html
 import react.dom.events.ChangeEventHandler
 import web.autofill.AutoFill
 import web.dom.Element
+import web.form.FormMethod
 import web.html.EnterKeyHint
 import web.html.InputType
 import web.window.WindowName

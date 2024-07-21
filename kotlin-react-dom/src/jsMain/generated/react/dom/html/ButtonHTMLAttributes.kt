@@ -3,6 +3,7 @@
 package react.dom.html
 
 import web.dom.Element
+import web.form.FormMethod
 import web.html.ButtonType
 import web.window.WindowName
 
