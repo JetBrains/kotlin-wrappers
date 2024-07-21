@@ -7,6 +7,7 @@
 package web.events
 
 import kotlinx.coroutines.*
+import kotlinx.coroutines.flow.*
 import kotlin.coroutines.resume
 
 class EventInstance<out E : Event, out C : EventTarget, out T : EventTarget>(
@@ -95,4 +96,26 @@ suspend fun <E : Event, C : EventTarget, T : EventTarget, D> EventInstance<E, C,
             unsubscribe()
         }
     }
+}
+
+// asFlow
+suspend fun <E : Event, T : EventTarget, D> EventInstance<E, *, T>.asFlow(): Flow<D>
+        where D : E,
+              D : HasTargets<*, T> {
+    val flow = MutableSharedFlow<D>()
+    var unsubscribe: (() -> Unit)? = null
+
+    flow.subscriptionCount
+        .map { count -> count > 0 }
+        .distinctUntilChanged()
+        .collect { active ->
+            if (active) {
+                unsubscribe = addHandler<_, _, _, D> { event -> flow.tryEmit(event) }
+            } else {
+                unsubscribe?.invoke()
+                unsubscribe = null
+            }
+        }
+
+    return flow.asSharedFlow()
 }
