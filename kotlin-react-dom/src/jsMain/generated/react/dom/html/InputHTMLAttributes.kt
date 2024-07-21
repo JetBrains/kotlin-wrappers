@@ -2,6 +2,7 @@
 
 package react.dom.html
 
+import react.dom.FormAction
 import react.dom.events.ChangeEventHandler
 import web.autofill.AutoFill
 import web.dom.Element
@@ -19,7 +20,7 @@ external interface InputHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var disabled: Boolean?
     var enterKeyHint: EnterKeyHint?
     var form: String?
-    var formAction: String? /* FormAction */
+    var formAction: FormAction?
     var formEncType: String?
     var formMethod: FormMethod?
     var formNoValidate: Boolean?

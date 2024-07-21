@@ -2,13 +2,14 @@
 
 package react.dom.html
 
+import react.dom.FormAction
 import web.dom.Element
 import web.form.FormMethod
 import web.window.WindowTarget
 
 external interface FormHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var acceptCharset: String?
-    var action: String? /* FormAction */
+    var action: FormAction?
     var autoComplete: AutoComplete?
     var encType: String?
     var method: FormMethod?
