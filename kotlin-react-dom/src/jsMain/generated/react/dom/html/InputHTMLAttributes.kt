@@ -20,7 +20,7 @@ external interface InputHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var form: String?
     var formAction: String? /* FormAction */
     var formEncType: String?
-    var formMethod: String?
+    var formMethod: FormMethod?
     var formNoValidate: Boolean?
     var formTarget: WindowName?
     var height: Double?
