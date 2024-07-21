@@ -8,6 +8,7 @@ import web.autofill.AutoFill
 import web.dom.NodeListOf
 import web.file.FileList
 import web.form.FormControl
+import web.form.FormMethod
 import web.fs.FileSystemEntry
 import web.validation.ValidityState
 import web.window.WindowName
@@ -84,7 +85,7 @@ protected constructor() :
     /**
      * Overrides the submit method attribute previously specified on a form element.
      */
-    var formMethod: String
+    var formMethod: FormMethod
 
     /**
      * Overrides any validation or required attributes on a form or form elements to allow it to be submitted without validation. This can be used to create a "save draft"-type submit option.
