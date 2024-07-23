@@ -11,9 +11,6 @@ import web.form.FormData
 @JsExternalInheritorsOnly
 sealed external interface FormAction
 
-sealed external interface FormActionCallback
-    : FormAction
-
 inline fun FormAction(
     value: String,
 ): FormAction =
