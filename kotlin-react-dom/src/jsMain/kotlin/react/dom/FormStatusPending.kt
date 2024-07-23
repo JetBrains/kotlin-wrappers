@@ -2,6 +2,7 @@ package react.dom
 
 import js.core.Void
 import js.promise.Promise
+import seskar.js.JsAsync
 import seskar.js.JsTypeGuard
 import web.form.FormData
 import web.form.FormMethod
@@ -15,5 +16,7 @@ private constructor() :
     FormStatus {
     val data: FormData
     val method: FormMethod
-    val action: (formData: FormData) -> Promise<Void>?
+
+    @JsAsync
+    suspend fun action(formData: FormData): Promise<Void>?
 }
