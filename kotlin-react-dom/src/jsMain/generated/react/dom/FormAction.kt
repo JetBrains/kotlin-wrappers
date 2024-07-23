@@ -20,9 +20,14 @@ inline fun FormAction(
     value.unsafeCast<FormAction>()
 
 inline fun FormAction(
+    noinline value: () -> Unit,
+): FormActionCallback =
+    value.unsafeCast<FormActionCallback>()
+
+inline fun FormAction(
     noinline value: (data: FormData) -> Unit,
-): FormAction =
-    value.unsafeCast<FormAction>()
+): FormActionCallback =
+    value.unsafeCast<FormActionCallback>()
 
 inline fun FormAction.asStringOrNull(): String? =
     asDynamic() as? String
