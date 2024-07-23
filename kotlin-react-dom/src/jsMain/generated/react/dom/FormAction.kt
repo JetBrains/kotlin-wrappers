@@ -8,7 +8,11 @@ package react.dom
 
 import web.form.FormData
 
+@JsExternalInheritorsOnly
 sealed external interface FormAction
+
+sealed external interface FormActionCallback
+    : FormAction
 
 inline fun FormAction(
     value: String,
@@ -22,3 +26,8 @@ inline fun FormAction(
 
 inline fun FormAction.asStringOrNull(): String? =
     asDynamic() as? String
+
+inline fun FormAction.asCallbackOrNull(): FormActionCallback? =
+    if (asDynamic() is Function<*>) {
+        unsafeCast<FormActionCallback>()
+    } else null
