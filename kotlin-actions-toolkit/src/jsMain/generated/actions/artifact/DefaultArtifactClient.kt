@@ -8,28 +8,26 @@ import js.array.ReadonlyArray
 import js.promise.Promise
 
 sealed external class DefaultArtifactClient : ArtifactClient {
-    /**
-     * Uploads an artifact
-     */
-    fun uploadArtifact(
+    override fun uploadArtifact(
         name: String,
         files: ReadonlyArray<String>,
         rootDirectory: String,
-        options: UploadOptions? = definedExternally,
-    ): Promise<UploadResponse>
+        options: UploadArtifactOptions,
+    ): Promise<UploadArtifactResponse>
 
-    fun downloadArtifact(
-        name: String,
-        path: String? = definedExternally,
-        options: DownloadOptions? = definedExternally,
-    ): Promise<DownloadResponse>
+    override fun downloadArtifact(
+        artifactId: Number,
+        options: DownloadArtifactOptions, /* & FindOptions */
+    ): Promise<DownloadArtifactResponse>
 
-    fun downloadAllArtifacts(path: String? = definedExternally): Promise<ReadonlyArray<DownloadResponse>>
+    override fun listArtifacts(options: ListArtifactsOptions /* & FindOptions */): Promise<ListArtifactsResponse>
+    override fun getArtifact(
+        artifactName: String,
+        options: FindOptions,
+    ): Promise<GetArtifactResponse>
 
-    companion object {
-        /**
-         * Constructs a DefaultArtifactClient
-         */
-        fun create(): DefaultArtifactClient
-    }
+    override fun deleteArtifact(
+        artifactName: String,
+        options: FindOptions,
+    ): Promise<DeleteArtifactResponse>
 }
