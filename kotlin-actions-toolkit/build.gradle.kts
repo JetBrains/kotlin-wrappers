@@ -14,5 +14,4 @@ dependencies {
     jsMainApi(npmv("@actions/tool-cache"))
 
     jsMainApi(projects.kotlinNode)
-    jsMainImplementation(kotlinxCoroutines("core"))
 }
