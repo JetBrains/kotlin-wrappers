@@ -1,28 +1,32 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/x-date-pickers/PickersDay")
+
 package muix.pickers
 
 import web.cssom.ClassName
 
-external interface PickersDayClasses {
+sealed external interface PickersDayClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the root element if `disableMargin=false`. */
-    var dayWithMargin: ClassName
+    val dayWithMargin: ClassName
 
     /** Styles applied to the root element if `outsideCurrentMonth=true` and `showDaysOutsideCurrentMonth=true`. */
-    var dayOutsideMonth: ClassName
+    val dayOutsideMonth: ClassName
 
     /** Styles applied to the root element if `outsideCurrentMonth=true` and `showDaysOutsideCurrentMonth=false`. */
-    var hiddenDaySpacingFiller: ClassName
+    val hiddenDaySpacingFiller: ClassName
 
     /** Styles applied to the root element if `disableHighlightToday=false` and `today=true`. */
-    var today: ClassName
+    val today: ClassName
 
     /** State class applied to the root element if `selected=true`. */
-    var selected: ClassName
+    val selected: ClassName
 
     /** State class applied to the root element if `disabled=true`. */
-    var disabled: ClassName
+    val disabled: ClassName
 }
+
+external val pickersDayClasses: PickersDayClasses
