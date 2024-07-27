@@ -20,8 +20,8 @@ external class Object internal constructor() {
         fun <T : Any> entries(o: ReadonlyRecord<String, T>): ReadonlyArray<JsTuple2<String, T>>
         fun entries(o: Any): ReadonlyArray<JsTuple2<String, Any?>>
         fun <R, T : R> freeze(o: T): R
-        fun <T> fromEntries(entries: ReadonlyArray<JsTuple2<String, T>>): ReadonlyRecord<String, T>
         fun <T> fromEntries(entries: JsIterable<JsTuple2<String, T>>): ReadonlyRecord<String, T>
+        fun <T> fromEntries(entries: ReadonlyArray<JsTuple2<String, T>>): ReadonlyRecord<String, T>
         fun <T> getOwnPropertyDescriptor(o: Any, p: PropertyKey): TypedPropertyDescriptor<T>?
         fun getOwnPropertyNames(o: Any): ReadonlyArray<String>
         fun getOwnPropertySymbols(o: Any): ReadonlyArray<Symbol>
