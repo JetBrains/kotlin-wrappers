@@ -8,8 +8,8 @@ dependencies {
     jsMainApi(projects.kotlinReact)
     jsMainApi(projects.kotlinReactDom)
 
-    jsMainImplementation(kotlinxCoroutines("core"))
-    jsMainImplementation(kotlinxCoroutines("test"))
+    jsMainImplementation(kotlinx.coroutines.core)
+    jsMainImplementation(kotlinx.coroutines.test)
 
     jsMainApi(npmv("react-dom"))
 }

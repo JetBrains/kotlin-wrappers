@@ -22,12 +22,12 @@ dependencies {
     jsMainApi(projects.kotlinReactLegacy)
     jsMainApi(projects.kotlinReactDomLegacy)
 
-    jsMainApi(kotlinxHtml("js"))
+    jsMainApi(kotlinx.html.js)
 
     jsMainApi(npmv("inline-style-prefixer"))
 
     jsTestImplementation(kotlin("test-js"))
-    jsTestImplementation(kotlinxCoroutines("core"))
+    jsTestImplementation(kotlinx.coroutines.core)
 
     jsTestImplementation(devNpmv("puppeteer"))
 }

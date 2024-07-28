@@ -6,10 +6,10 @@ dependencies {
     jsMainApi(projects.kotlinJs)
     jsMainApi(projects.kotlinCsstype)
 
-    jsMainApi(kotlinxCoroutines("core"))
+    jsMainApi(kotlinx.coroutines.core)
 
     jsTestImplementation(kotlin("test-js"))
-    jsTestImplementation(kotlinxCoroutines("test"))
+    jsTestImplementation(kotlinx.coroutines.test)
 
     jsMainApi(npmv("react"))
 }
