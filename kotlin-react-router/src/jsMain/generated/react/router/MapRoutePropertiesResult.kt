@@ -2,9 +2,7 @@
 
 package react.router
 
-import kotlinx.js.JsPlainObject
-
-@JsPlainObject
+@kotlinx.js.JsPlainObject
 sealed external interface MapRoutePropertiesResult : RouteObject {
 
     @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
