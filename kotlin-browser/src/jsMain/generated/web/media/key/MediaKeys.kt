@@ -18,6 +18,9 @@ sealed external class MediaKeys {
      */
     fun createSession(sessionType: MediaKeySessionType = definedExternally): MediaKeySession
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/getStatusForPolicy)
+     */
     @JsAsync
     suspend fun getStatusForPolicy(policy: MediaKeysPolicy = definedExternally): MediaKeyStatus
 

@@ -11,9 +11,7 @@ import web.time.DOMHighResTimeStamp
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IntersectionObserverEntry)
  */
-external class IntersectionObserverEntry(
-    init: IntersectionObserverEntryInit,
-) {
+sealed external class IntersectionObserverEntry {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IntersectionObserverEntry/boundingClientRect)
      */

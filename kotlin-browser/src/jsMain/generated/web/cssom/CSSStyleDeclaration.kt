@@ -602,12 +602,20 @@ sealed external class CSSStyleDeclaration :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/contain)
      */
     var contain: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-block-size)
+     */
     var containIntrinsicBlockSize: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-height)
      */
     var containIntrinsicHeight: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-inline-size)
+     */
     var containIntrinsicInlineSize: String
 
     /**
@@ -674,7 +682,15 @@ sealed external class CSSStyleDeclaration :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/cursor)
      */
     var cursor: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/cx)
+     */
     var cx: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/cy)
+     */
     var cy: String
     var d: String
 
@@ -1493,6 +1509,10 @@ sealed external class CSSStyleDeclaration :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/quotes)
      */
     var quotes: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/r)
+     */
     var r: String
 
     /**
@@ -1516,10 +1536,23 @@ sealed external class CSSStyleDeclaration :
     var rowGap: String
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/ruby-align)
+     */
+    var rubyAlign: String
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/ruby-position)
      */
     var rubyPosition: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/rx)
+     */
     var rx: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/ry)
+     */
     var ry: String
 
     /**

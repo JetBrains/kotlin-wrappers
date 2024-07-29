@@ -81,6 +81,11 @@ abstract external class Element :
     val clientWidth: Int
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/currentCSSZoom)
+     */
+    val currentCSSZoom: Double
+
+    /**
      * Returns the value of element's id content attribute. Can be set to change it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/id)

@@ -26,6 +26,9 @@ sealed external class GamepadHapticActuator {
         params: GamepadEffectParameters = definedExternally,
     ): Promise<GamepadHapticsResult>
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator/reset)
+     */
     @JsAsync
     suspend fun reset(): GamepadHapticsResult
 

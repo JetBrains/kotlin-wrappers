@@ -60,6 +60,13 @@ external interface ARIAMixin {
         set(value) = definedExternally
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaColIndexText)
+     */
+    var ariaColIndexText: String?
+        get() = definedExternally
+        set(value) = definedExternally
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaColSpan)
      */
     var ariaColSpan: String?
@@ -220,6 +227,13 @@ external interface ARIAMixin {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaRowIndex)
      */
     var ariaRowIndex: String?
+        get() = definedExternally
+        set(value) = definedExternally
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaRowIndexText)
+     */
+    var ariaRowIndexText: String?
         get() = definedExternally
         set(value) = definedExternally
 

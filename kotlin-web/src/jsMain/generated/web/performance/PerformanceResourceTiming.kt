@@ -84,6 +84,11 @@ sealed external class PerformanceResourceTiming :
     val responseStart: DOMHighResTimeStamp
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/responseStatus)
+     */
+    val responseStatus: Short
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/secureConnectionStart)
      */
     val secureConnectionStart: DOMHighResTimeStamp

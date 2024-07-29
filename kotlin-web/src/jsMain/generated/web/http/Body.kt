@@ -46,6 +46,15 @@ sealed external interface Body {
     fun blobAsync(): Promise<Blob> = definedExternally
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/bytes)
+     */
+    @JsAsync
+    suspend fun bytes(): Uint8Array = definedExternally
+
+    @JsName("bytes")
+    fun bytesAsync(): Promise<Uint8Array> = definedExternally
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/formData)
      */
     @JsAsync

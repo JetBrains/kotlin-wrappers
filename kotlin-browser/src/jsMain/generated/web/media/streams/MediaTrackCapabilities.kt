@@ -9,6 +9,7 @@ import kotlinx.js.JsPlainObject
 external interface MediaTrackCapabilities {
     var aspectRatio: DoubleRange?
     var autoGainControl: ReadonlyArray<Boolean>?
+    var backgroundBlur: ReadonlyArray<Boolean>?
     var channelCount: ULongRange?
     var deviceId: String?
     var displaySurface: String?

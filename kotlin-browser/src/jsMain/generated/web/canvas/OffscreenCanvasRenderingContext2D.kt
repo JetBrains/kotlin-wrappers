@@ -26,6 +26,9 @@ sealed external class OffscreenCanvasRenderingContext2D :
     CanvasTextDrawingStyles,
     CanvasTransform,
     OffscreenRenderingContext {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/canvas)
+     */
     val canvas: OffscreenCanvas
 
     companion object {
