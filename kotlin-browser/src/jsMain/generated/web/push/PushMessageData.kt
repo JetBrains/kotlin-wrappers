@@ -3,6 +3,7 @@
 package web.push
 
 import js.buffer.ArrayBuffer
+import js.typedarrays.Uint8Array
 import web.blob.Blob
 
 /**
@@ -21,6 +22,11 @@ sealed external class PushMessageData {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushMessageData/blob)
      */
     fun blob(): Blob
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushMessageData/bytes)
+     */
+    fun bytes(): Uint8Array
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushMessageData/json)

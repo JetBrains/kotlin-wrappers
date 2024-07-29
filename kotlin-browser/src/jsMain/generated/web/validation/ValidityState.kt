@@ -12,6 +12,10 @@ sealed external class ValidityState {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ValidityState/badInput)
      */
     val badInput: Boolean
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ValidityState/customError)
+     */
     val customError: Boolean
 
     /**
@@ -48,6 +52,10 @@ sealed external class ValidityState {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ValidityState/typeMismatch)
      */
     val typeMismatch: Boolean
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ValidityState/valid)
+     */
     val valid: Boolean
 
     /**

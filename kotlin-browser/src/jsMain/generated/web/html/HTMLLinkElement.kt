@@ -39,6 +39,8 @@ protected constructor() :
 
     /**
      * Sets or retrieves a destination URL or an anchor point.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/href)
      */
     var href: String
 
@@ -58,6 +60,8 @@ protected constructor() :
 
     /**
      * Sets or retrieves the media type.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/media)
      */
     var media: String
 

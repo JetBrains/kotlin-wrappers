@@ -109,70 +109,70 @@ sealed external class SubtleCrypto {
     suspend fun deriveBits(
         algorithm: Algorithm,
         baseKey: CryptoKey,
-        length: Int,
+        length: Int? = definedExternally,
     ): ArrayBuffer
 
     @JsName("deriveBits")
     fun deriveBitsAsync(
         algorithm: Algorithm,
         baseKey: CryptoKey,
-        length: Int,
+        length: Int? = definedExternally,
     ): Promise<ArrayBuffer>
 
     @JsAsync
     suspend fun deriveBits(
         algorithm: String,
         baseKey: CryptoKey,
-        length: Int,
+        length: Int? = definedExternally,
     ): ArrayBuffer
 
     @JsName("deriveBits")
     fun deriveBitsAsync(
         algorithm: String,
         baseKey: CryptoKey,
-        length: Int,
+        length: Int? = definedExternally,
     ): Promise<ArrayBuffer>
 
     @JsAsync
     suspend fun deriveBits(
         algorithm: EcdhKeyDeriveParams,
         baseKey: CryptoKey,
-        length: Int,
+        length: Int? = definedExternally,
     ): ArrayBuffer
 
     @JsName("deriveBits")
     fun deriveBitsAsync(
         algorithm: EcdhKeyDeriveParams,
         baseKey: CryptoKey,
-        length: Int,
+        length: Int? = definedExternally,
     ): Promise<ArrayBuffer>
 
     @JsAsync
     suspend fun deriveBits(
         algorithm: HkdfParams,
         baseKey: CryptoKey,
-        length: Int,
+        length: Int? = definedExternally,
     ): ArrayBuffer
 
     @JsName("deriveBits")
     fun deriveBitsAsync(
         algorithm: HkdfParams,
         baseKey: CryptoKey,
-        length: Int,
+        length: Int? = definedExternally,
     ): Promise<ArrayBuffer>
 
     @JsAsync
     suspend fun deriveBits(
         algorithm: Pbkdf2Params,
         baseKey: CryptoKey,
-        length: Int,
+        length: Int? = definedExternally,
     ): ArrayBuffer
 
     @JsName("deriveBits")
     fun deriveBitsAsync(
         algorithm: Pbkdf2Params,
         baseKey: CryptoKey,
-        length: Int,
+        length: Int? = definedExternally,
     ): Promise<ArrayBuffer>
 
     /**

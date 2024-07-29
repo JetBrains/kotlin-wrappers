@@ -8,6 +8,7 @@ import kotlinx.js.JsPlainObject
 external interface MediaTrackSupportedConstraints {
     var aspectRatio: Boolean?
     var autoGainControl: Boolean?
+    var backgroundBlur: Boolean?
     var channelCount: Boolean?
     var deviceId: Boolean?
     var displaySurface: Boolean?

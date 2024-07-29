@@ -9,4 +9,5 @@ external interface AuthenticationExtensionsClientOutputs {
     var appid: Boolean?
     var credProps: CredentialPropertiesOutput?
     var hmacCreateSecret: Boolean?
+    var prf: AuthenticationExtensionsPRFOutputs?
 }

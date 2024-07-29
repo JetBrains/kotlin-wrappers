@@ -10,4 +10,5 @@ external interface AuthenticationExtensionsClientInputs {
     var credProps: Boolean?
     var hmacCreateSecret: Boolean?
     var minPinLength: Boolean?
+    var prf: AuthenticationExtensionsPRFInputs?
 }

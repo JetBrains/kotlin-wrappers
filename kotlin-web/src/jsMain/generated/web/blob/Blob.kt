@@ -40,6 +40,15 @@ open external class Blob(
     fun arrayBufferAsync(): Promise<ArrayBuffer>
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/bytes)
+     */
+    @JsAsync
+    suspend fun bytes(): Uint8Array
+
+    @JsName("bytes")
+    fun bytesAsync(): Promise<Uint8Array>
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/slice)
      */
     fun slice(

@@ -293,6 +293,15 @@ open external class Document :
     fun <T : Node> adoptNode(node: T): T
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/caretPositionFromPoint)
+     */
+    fun caretPositionFromPoint(
+        x: Double,
+        y: Double,
+        options: CaretPositionFromPointOptions = definedExternally,
+    ): CaretPosition?
+
+    /**
      * Closes an output stream and forces the sent data to display.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/close)
