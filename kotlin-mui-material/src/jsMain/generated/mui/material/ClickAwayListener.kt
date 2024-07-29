@@ -1,8 +1,8 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/base/ClickAwayListener")
+@file:JsModule("@mui/material/ClickAwayListener")
 
-package mui.base
+package mui.material
 
 external interface ClickAwayListenerProps : react.PropsWithChildren {
     /**
@@ -41,10 +41,11 @@ external interface ClickAwayListenerProps : react.PropsWithChildren {
  *
  * Demos:
  *
- * - [Click-Away Listener](https://mui.com/base-ui/react-click-away-listener/)
+ * - [Click-Away Listener](https://mui.com/material-ui/react-click-away-listener/)
+ * - [Menu](https://mui.com/material-ui/react-menu/)
  *
  * API:
  *
- * - [ClickAwayListener API](https://mui.com/base-ui/react-click-away-listener/components-api/#click-away-listener)
+ * - [ClickAwayListener API](https://mui.com/material-ui/api/click-away-listener/)
  */
 external val ClickAwayListener: react.FC<ClickAwayListenerProps>
