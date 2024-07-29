@@ -2,15 +2,15 @@
 
 package react.router.dom
 
-sealed external interface FetcherFormPropsEncType {
+sealed external interface SharedFormPropsEncType {
     companion object {
         @seskar.js.JsValue("application/x-www-form-urlencoded")
-        val applicationXWwwFormUrlencoded: FetcherFormPropsEncType
+        val applicationXWwwFormUrlencoded: SharedFormPropsEncType
 
         @seskar.js.JsValue("multipart/form-data")
-        val multipartFormData: FetcherFormPropsEncType
+        val multipartFormData: SharedFormPropsEncType
 
         @seskar.js.JsValue("text/plain")
-        val textPlain: FetcherFormPropsEncType
+        val textPlain: SharedFormPropsEncType
     }
 }

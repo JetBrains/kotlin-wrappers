@@ -14,4 +14,5 @@ sealed external interface CreateMemoryRouterOpts {
     var initialEntries: js.array.ReadonlyArray<InitialEntry>?
     var initialIndex: Double?
     var unstable_dataStrategy: unstable_DataStrategyFunction?
+    var unstable_patchRoutesOnMiss: unstable_PatchRoutesOnMissFunction?
 }
