@@ -7,10 +7,10 @@ const overriddenProps = {
         "children": "childrenFn",
         "unstable_viewTransition": null,
     },
-    "FetcherFormProps": {
-        "method": ["routerMethod", "String"],
+    "SharedFormProps": {
+        "method": ["routerMethod", "web.form.FormMethod"],
         "encType": ["routerEncType", "String"],
-        "action": null,
+        "action": ["routerAction", "react.dom.FormAction"],
         "onSubmit": null,
     },
 }

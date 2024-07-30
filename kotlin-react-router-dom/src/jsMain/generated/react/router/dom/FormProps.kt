@@ -4,8 +4,11 @@ package react.router.dom
 
 import web.html.HTMLFormElement
 
+/**
+ * Form props available to navigations
+ */
 
-sealed external interface FormProps : react.Props, react.PropsWithRef<HTMLFormElement>, FetcherFormProps {
+sealed external interface FormProps : react.Props, react.PropsWithRef<HTMLFormElement>, SharedFormProps {
     /**
      * Indicate a specific fetcherKey to use when using navigate=false
      */

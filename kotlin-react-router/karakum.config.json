@@ -14,7 +14,8 @@
         "**/Routes.kt",
         "**/*RoutesProps.kt",
         "**/*Route.kt",
-        "**/*RouteProps.kt"
+        "**/*RouteProps.kt",
+        "**/*unstable_PatchRoutesOnMissFunction.kt"
     ],
     "libraryName": "react-router",
     "libraryNameOutputPrefix": true,
@@ -41,6 +42,9 @@
         ],
         "context.kt": [
             "remix.run.router.RouterState"
+        ],
+        "CreateMemoryRouterOpts.kt": [
+            "remix.run.router.AgnosticPatchRoutesOnMissFunction as unstable_PatchRoutesOnMissFunction"
         ],
         "Navigator.kt": [
             "remix.run.router.Path"

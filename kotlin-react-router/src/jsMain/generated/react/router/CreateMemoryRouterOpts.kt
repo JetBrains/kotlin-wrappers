@@ -4,6 +4,7 @@ package react.router
 
 import remix.run.router.HydrationState
 import remix.run.router.InitialEntry
+import remix.run.router.AgnosticPatchRoutesOnMissFunction as unstable_PatchRoutesOnMissFunction
 import remix.run.router.DataStrategyFunction as unstable_DataStrategyFunction
 import remix.run.router.FutureConfig as RouterFutureConfig
 
@@ -14,4 +15,5 @@ sealed external interface CreateMemoryRouterOpts {
     var initialEntries: js.array.ReadonlyArray<InitialEntry>?
     var initialIndex: Double?
     var unstable_dataStrategy: unstable_DataStrategyFunction?
+    var unstable_patchRoutesOnMiss: unstable_PatchRoutesOnMissFunction<*>?
 }

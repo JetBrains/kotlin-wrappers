@@ -200,6 +200,17 @@ sealed external interface Router {
 
     /**
      * @internal
+     * PRIVATE DO NOT USE
+     *
+     * Patch additional children routes into an existing parent route
+     * @param routeId The parent route id or a callback function accepting `patch`
+     *                to perform batch patching
+     * @param children The additional children routes
+     */
+    fun patchRoutes(routeId: String?, children: js.array.ReadonlyArray<AgnosticRouteObject>): Unit
+
+    /**
+     * @internal
      * PRIVATE - DO NOT USE
      *
      * HMR needs to pass in-flight route updates to React Router
