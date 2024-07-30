@@ -2,44 +2,14 @@
 
 package react.router.dom
 
-import remix.run.router.HTMLFormMethod
 import remix.run.router.RelativeRoutingType
 import web.html.HTMLFormElement
 
 /**
  * Form props shared by navigations and fetchers
  */
-
+// TODO: Manually fixed, need generation adjustment
 sealed external interface SharedFormProps : react.Props, react.dom.html.FormHTMLAttributes<HTMLFormElement> {
-    /**
-     * The HTTP verb to use when the form is submit. Supports "get", "post",
-     * "put", "delete", "patch".
-     */
-    @Deprecated(message = "use routerMethod", level = DeprecationLevel.HIDDEN)
-    override var method: web.form.FormMethod?
-
-    @JsName("method")
-    var routerMethod: HTMLFormMethod?
-
-    /**
-     * `<form encType>` - enhancing beyond the normal string type and limiting
-     * to the built-in browser supported values
-     */
-    @Deprecated(message = "use routerEncType", level = DeprecationLevel.HIDDEN)
-    override var encType: String?
-
-    @JsName("encType")
-    var routerEncType: SharedFormPropsEncType?
-
-    /**
-     * Normal `<form action>` but supports React Router's relative paths.
-     */
-    @Deprecated(message = "use routerAction", level = DeprecationLevel.HIDDEN)
-    override var action: react.dom.FormAction?
-
-    @JsName("action")
-    var routerAction: String?
-
     /**
      * Determines whether the form action is relative to the route hierarchy or
      * the pathname.  Use this if you want to opt out of navigating the route
