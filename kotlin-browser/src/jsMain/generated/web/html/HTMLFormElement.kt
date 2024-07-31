@@ -7,6 +7,7 @@ import js.iterable.JsIterable
 import web.autofill.AutoFillBase
 import web.dom.DOMTokenList
 import web.dom.Element
+import web.form.FormEncType
 import web.form.FormMethod
 import web.window.WindowTarget
 
@@ -58,7 +59,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/enctype)
      */
-    var enctype: String
+    var enctype: FormEncType
 
     /**
      * Sets or retrieves the number of objects in a collection.
