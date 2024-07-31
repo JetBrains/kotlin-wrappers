@@ -8,6 +8,7 @@ import web.autofill.AutoFill
 import web.dom.NodeListOf
 import web.file.FileList
 import web.form.FormControl
+import web.form.FormEncType
 import web.form.FormMethod
 import web.fs.FileSystemEntry
 import web.validation.ValidityState
@@ -80,7 +81,7 @@ protected constructor() :
     /**
      * Used to override the encoding (formEnctype attribute) specified on the form element.
      */
-    var formEnctype: String
+    var formEnctype: FormEncType
 
     /**
      * Overrides the submit method attribute previously specified on a form element.
