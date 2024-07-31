@@ -2,7 +2,7 @@
 
 Dependency locking is an important thing for build reproducibility.
 But Gradle integration with NPM has some pitfalls,
-so common troubleshooting scenarios are provided here.
+so general workflow and approaches for maintenance of `package-lock.json` are described here.
 
 ## How does it work?
 
@@ -15,7 +15,7 @@ If you run some `build` command, `kotlinStorePackageLock` command will be execut
 On this stage if you don't have `package-lock.json` it will be stored.
 If you have `package-lock.json`, `kotlinStorePackageLock` will check are there any differences
 between `package-lock.json` from `build` directory and `package-lock.json` stored in the Git repository.
-If there are any differences, you will receive an error.
+If there are any differences, by default, you will receive an error.
 It means you updated a version of some NPM dependency, but you forget to update `package-lock.json`
 and now dependency installation is not reproducible.
 Rough chain of Gradle tasks for any `build` command looks this way:
@@ -27,49 +27,30 @@ Task :kotlinStorePackageLock
 Task :<some-subproject>:build
 ```
 
-## How to install NPM dependency
+## How we treat `package-lock.json` in Kotlin Wrappers
 
-If you realize that you need some NPM dependency for some subproject, perform these steps:
+There are some specialties that makes maintenance of `package-lock.json` harder in the Kotlin Wrappers project:
 
-* Fix a version of NPM library in `gradle.properties` in the project root.
-* Declare NPM dependency in `build.gradle.kts` for subproject using `npmv` helper.
-* Run Gradle command to update `package-lock.json` file:
-  ```shell
-  ./gradlew :kotlinUpgradePackageLock
-  ```
+* Using of a wrapped dependency version as part of a published artifact version.
+* Using of a common version of Kotlin Wrappers as part of a published artifact version.
+* Often releases of Kotlin Wrappers.
 
-## How to update NPM dependency
+All this together provokes lots of conflicts in `package-lock.json`
+and it makes contribution to Kotlin Wrappers really difficult.
+That is why there is a custom approach to maintain `package-lock.json` in this repository.
+Here is a description of the approximate flow of `package-lock.json` updating:
 
-If you want to update a version for some NPM dependency, perform these steps:
+* Contributor changes or adds some versions of dependencies in `gradle.properties`.
+* These changes appear in `master` branch (through pull request or direct commit).
+* A special GitHub action triggers and performs these steps:
+  * It produces an updated `package-lock.json` file.
+  * It commits and pushes the new `package-lock.json` file to Git.
+  * It creates pull request (or updates existing one) with the updated `package-lock.json` file.
+  * One of the maintainers checks that there is nothing wrong with the updated `package-lock.json` file
+    and merges the pull request.
 
-* Change the version of NPM library in `gradle.properties` in the project root.
-* Run Gradle command to update `package-lock.json` file:
-  ```shell
-  ./gradlew :kotlinUpgradePackageLock
-  ```
+## Exotic scenarios
 
-## How to solve conflicts in `package-lock.json`
-
-If you work on a pull request, and you changed `package-lock.json`,
-there is a probability that you will face with conflicts in `package-lock.json`.
-Perform these steps to solve such conflicts:
-
-* If you have conflicts in `package-lock.json`, you can have conflicts in `gradle.properties`
-  because a version you modified was modified in target branch also.
-  You need to resolve these conflicts manually.
-* Run Gradle command to update `package-lock.json` file:
-  ```shell
-  ./gradlew :kotlinUpgradePackageLock
-  ```
-  During dependency installation [NPM can solve conflicts](https://docs.npmjs.com/cli/v6/configuring-npm/package-locks#resolving-lockfile-conflicts)
-  in `package-lock.json`, so this command will trigger dependency installation and `package-lock.json` updating.
-* Run Git command to mark `package-lock.json` as file without conflicts:
-  ```shell
-  git add package-lock.json
-  ```
-
-## Other scenarios
-
-If you face with a `package-lock.json` problem that was not described here,
-please, describe it an issue or attach the description to pull request.
+If you face with some `package-lock.json` problem, please,
+describe it in issue or attach the description to pull request.
 Your problem will be considered and repository maintainers will try to help you.
