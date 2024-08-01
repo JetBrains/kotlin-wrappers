@@ -11,5 +11,3 @@ build/
 *.iml
 *.ipr
 *.iws
-
-package-lock.json

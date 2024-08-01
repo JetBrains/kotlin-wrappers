@@ -1,0 +1,65 @@
+name: Package Lock
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  update-lock:
+
+    runs-on: ubuntu-latest
+
+    env:
+      PR_BRANCH: package-lock
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '21'
+
+      - name: Update lock
+        run: |
+          rm package-lock.json
+          ./gradlew :kotlinStorePackageLock
+
+      - id: modified-files
+        name: Check modified files
+        run: |
+          echo "list=$( git ls-files --modified )" >> "$GITHUB_OUTPUT"
+
+      - name: Commit changes
+        if: steps.modified-files.outputs.list == 'package-lock.json'
+        run: |
+          git add package-lock.json
+          git config --global user.name "GitHub bot"
+          git config --global user.email "<>"
+          git commit -m "Update \`package-lock.json\`"
+
+      - name: Push changes
+        if: steps.modified-files.outputs.list == 'package-lock.json'
+        run: |
+          git checkout -b $PR_BRANCH
+          git push -f https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git $PR_BRANCH
+
+      - id: pr-state
+        name: Check PR
+        if: steps.modified-files.outputs.list == 'package-lock.json'
+        run: |
+          echo "state=$( gh pr view $PR_BRANCH --json state --jq .state || echo "ABSENT" )" >> "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create PR
+        if: >
+          steps.modified-files.outputs.list == 'package-lock.json'
+          && steps.pr-state.outputs.state != 'OPEN'
+        run: |
+          gh pr create --fill --base ${{ github.ref_name }} --head $PR_BRANCH
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

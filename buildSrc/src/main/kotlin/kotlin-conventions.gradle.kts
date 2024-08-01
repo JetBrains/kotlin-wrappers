@@ -4,7 +4,6 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompilationTask
 plugins {
     kotlin("multiplatform")
     kotlin("plugin.js-plain-objects")
-    id("npm-conventions")
 }
 
 kotlin {
