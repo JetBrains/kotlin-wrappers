@@ -1,4 +1,4 @@
-name: Lock
+name: Package Lock
 
 on:
   push:
@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      PR_BRANCH: lock
+      PR_BRANCH: package-lock
 
     steps:
       - name: Checkout
