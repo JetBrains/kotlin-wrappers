@@ -155,9 +155,6 @@ include("kotlin-redux")
 // Kotlin/JS: React Router wrappers
 include("kotlin-remix-run-router")
 
-// Kotlin/JS: Ring UI wrappers
-include("kotlin-ring-ui")
-
 // Kotlin/JS: a reimplementation of kotlin-styled in pure Kotlin, without styled-components
 include("kotlin-styled-next")
 

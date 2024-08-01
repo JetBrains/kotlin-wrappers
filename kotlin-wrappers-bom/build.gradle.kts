@@ -42,7 +42,6 @@ dependencies {
         api(projects.kotlinReactUse)
         api(projects.kotlinRedux)
         api(projects.kotlinRemixRunRouter)
-        api(projects.kotlinRingUi)
         api(projects.kotlinStyledNext)
         api(projects.kotlinTanstackQueryCore)
         api(projects.kotlinTanstackReactQuery)
