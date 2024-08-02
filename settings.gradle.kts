@@ -30,11 +30,6 @@ dependencyResolutionManagement {
             library("coroutines-core", "org.jetbrains.kotlinx", "kotlinx-coroutines-core").version(coroutinesVersion)
             library("coroutines-test", "org.jetbrains.kotlinx", "kotlinx-coroutines-test").version(coroutinesVersion)
 
-            val serializationVersion = extra["kotlinx-serialization.version"] as String
-            library("serialization-json", "org.jetbrains.kotlinx", "kotlinx-serialization-json").version(
-                serializationVersion
-            )
-
             val htmlVersion = extra["kotlinx-html.version"] as String
             library("html-js", "org.jetbrains.kotlinx", "kotlinx-html-js").version(htmlVersion)
         }
@@ -134,9 +129,6 @@ include("kotlin-react-legacy")
 // Kotlin/JS: React Popper wrappers
 include("kotlin-react-popper")
 
-// Kotlin/JS: React Redux wrappers
-include("kotlin-react-redux")
-
 // Kotlin/JS: React Router wrappers
 include("kotlin-react-router")
 
@@ -148,9 +140,6 @@ include("kotlin-react-select")
 
 // Kotlin/JS: React Use wrappers
 include("kotlin-react-use")
-
-// Kotlin/JS: Redux wrappers
-include("kotlin-redux")
 
 // Kotlin/JS: React Router wrappers
 include("kotlin-remix-run-router")
