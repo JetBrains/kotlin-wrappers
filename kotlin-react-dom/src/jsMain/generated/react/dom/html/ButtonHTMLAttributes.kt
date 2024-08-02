@@ -12,7 +12,7 @@ external interface ButtonHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var disabled: Boolean?
     var form: String?
     var formAction: FormAction?
-    var formEncType: String?
+    var formEncType: web.form.FormEncType?
     var formMethod: FormMethod?
     var formNoValidate: Boolean?
     var formTarget: WindowName?

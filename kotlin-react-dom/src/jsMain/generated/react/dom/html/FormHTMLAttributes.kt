@@ -11,7 +11,7 @@ external interface FormHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var acceptCharset: String?
     var action: FormAction?
     var autoComplete: AutoComplete?
-    var encType: String?
+    var encType: web.form.FormEncType?
     var method: FormMethod?
     var name: String?
     var noValidate: Boolean?
