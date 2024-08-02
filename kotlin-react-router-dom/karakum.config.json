@@ -27,7 +27,6 @@
         "react-router": {
             "RelativeRoutingType": "remix.run.router.RelativeRoutingType",
             "To": "remix.run.router.To",
-            "unstable_PatchRoutesOnMissFunction": "remix.run.router.AgnosticPatchRoutesOnMissFunction as unstable_PatchRoutesOnMissFunction",
             ".+": "react.router."
         },
         "react": {

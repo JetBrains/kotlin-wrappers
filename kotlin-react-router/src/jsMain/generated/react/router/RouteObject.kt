@@ -8,6 +8,7 @@ import remix.run.router.LoaderLike
 import remix.run.router.ShouldRevalidateFunction
 
 @kotlinx.js.JsPlainObject
+
 sealed external interface RouteObject {
     var caseSensitive: Boolean?
     var path: String?

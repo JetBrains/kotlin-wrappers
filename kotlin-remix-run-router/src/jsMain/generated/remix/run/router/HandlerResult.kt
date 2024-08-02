@@ -8,5 +8,4 @@ package remix.run.router
 sealed external interface HandlerResult {
     var type: HandlerResultType
     var result: Any?
-    var status: Double?
 }
