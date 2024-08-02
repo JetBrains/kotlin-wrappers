@@ -24,7 +24,7 @@ external object Simon1994PlanetaryPositions {
 
     /**
      * Computes the position of the Moon in the Earth-centered inertial frame
-     * @param [julianDate] The time at which to compute the moon's position, if not provided the current system time is used.
+     * @param [julianDate] The time at which to compute the Moon's position, if not provided the current system time is used.
      * @param [result] The object onto which to store the result.
      * @return Calculated moon position
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Simon1994PlanetaryPositions.html#.computeMoonPositionInEarthInertialFrame">Online Documentation</a>

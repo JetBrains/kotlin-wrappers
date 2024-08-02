@@ -171,6 +171,12 @@ external class BillboardGraphics {
     var disableDepthTestDistance: Property?
 
     /**
+     * Gets or sets the Property specifying the [SplitDirection] of this billboard.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BillboardGraphics.html#splitDirection">Online Documentation</a>
+     */
+    var splitDirection: Property?
+
+    /**
      * Duplicates this instance.
      * @param [result] The object onto which to store the result.
      * @return The modified result parameter or a new instance if one was not provided.

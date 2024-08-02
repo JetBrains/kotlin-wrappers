@@ -217,6 +217,27 @@ external object Transforms {
     ): HeadingPitchRoll
 
     /**
+     * The default function to compute a rotation matrix to transform a point or vector from the International Celestial
+     * Reference Frame (GCRF/ICRF) inertial frame axes to the central body, typically Earth, fixed frame axis at a given
+     * time for use in lighting and transformation from inertial reference frames. This function may return undefined if
+     * the data necessary to do the transformation is not yet loaded.
+     * ```
+     * // Set the default ICRF to fixed transformation to that of the Moon.
+     * Transforms.computeIcrfToCentralBodyFixedMatrix = Transforms.computeIcrfToMoonFixedMatrix;
+     * ```
+     * @param [date] The time at which to compute the rotation matrix.
+     * @param [result] The object onto which to store the result.  If this parameter is
+     *   not specified, a new instance is created and returned.
+     * @return The rotation matrix, or undefined if the data necessary to do the
+     *   transformation is not yet loaded.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Transforms.html#.computeIcrfToCentralBodyFixedMatrix">Online Documentation</a>
+     */
+    fun computeIcrfToCentralBodyFixedMatrix(
+        date: JulianDate,
+        result: Matrix3? = definedExternally,
+    ): Matrix3?
+
+    /**
      * Computes a rotation matrix to transform a point or vector from True Equator Mean Equinox (TEME) axes to the
      * pseudo-fixed axes at a given time.  This method treats the UT1 time standard as equivalent to UTC.
      * ```
@@ -287,6 +308,50 @@ external object Transforms {
     fun computeIcrfToFixedMatrix(
         date: JulianDate,
         result: Matrix3? = definedExternally,
+    ): Matrix3?
+
+    /**
+     * Computes a rotation matrix to transform a point or vector from the Moon-Fixed frame axes
+     * to the International Celestial Reference Frame (GCRF/ICRF) inertial frame axes
+     * at a given time.
+     * ```
+     * // Transform a point from the Fixed axes to the ICRF axes.
+     * const now = JulianDate.now();
+     * const pointInFixed = Cartesian3.fromDegrees(0.0, 0.0);
+     * const fixedToIcrf = Transforms.computeMoonFixedToIcrfMatrix(now);
+     * let pointInInertial = new Cartesian3();
+     * if (defined(fixedToIcrf)) {
+     *     pointInInertial = Matrix3.multiplyByVector(fixedToIcrf, pointInFixed, pointInInertial);
+     * }
+     * ```
+     * @param [date] The time at which to compute the rotation matrix.
+     * @param [result] The object onto which to store the result.  If this parameter is
+     *   not specified, a new instance is created and returned.
+     * @return The rotation matrix.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Transforms.html#.computeMoonFixedToIcrfMatrix">Online Documentation</a>
+     */
+    fun computeMoonFixedToIcrfMatrix(
+        date: JulianDate,
+        result: Matrix3? = definedExternally,
+    ): Matrix3
+
+    /**
+     * Computes a rotation matrix to transform a point or vector from the International Celestial
+     * Reference Frame (GCRF/ICRF) inertial frame axes to the Moon-Fixed frame axes
+     * at a given time.
+     * ```
+     * // Set the default ICRF to fixed transformation to that of the Moon.
+     * Transforms.computeIcrfToCentralBodyFixedMatrix = Transforms.computeIcrfToMoonFixedMatrix;
+     * ```
+     * @param [date] The time at which to compute the rotation matrix.
+     * @param [result] The object onto which to store the result.  If this parameter is
+     *   not specified, a new instance is created and returned.
+     * @return The rotation matrix.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Transforms.html#.computeIcrfToMoonFixedMatrix">Online Documentation</a>
+     */
+    fun computeIcrfToMoonFixedMatrix(
+        date: JulianDate,
+        result: Matrix3? = definedExternally,
     ): Matrix3
 
     /**
@@ -314,7 +379,7 @@ external object Transforms {
     fun computeFixedToIcrfMatrix(
         date: JulianDate,
         result: Matrix3? = definedExternally,
-    ): Matrix3
+    ): Matrix3?
 
     /**
      * Transform a point from model coordinates to window coordinates.

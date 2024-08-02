@@ -283,6 +283,12 @@ private constructor() {
     val ready: Boolean
 
     /**
+     * Gets or sets the [SplitDirection] of this billboard.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Billboard.html#splitDirection">Online Documentation</a>
+     */
+    var splitDirection: SplitDirection
+
+    /**
      * Sets the image to be used for this billboard.  If a texture has already been created for the
      * given id, the existing texture is used.
      *
@@ -401,6 +407,7 @@ private constructor() {
      * @property [imageSubRegion] A [BoundingRectangle] Specifying the sub-region of the image to use for the billboard, rather than the entire image.
      * @property [distanceDisplayCondition] A [DistanceDisplayCondition] Specifying the distance from the camera at which this billboard will be displayed.
      * @property [disableDepthTestDistance] A number specifying the distance from the camera at which to disable the depth test to, for example, prevent clipping against terrain.
+     * @property [splitDirection] A [SplitDirection] Specifying the split property of the billboard.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Billboard.html#.ConstructorOptions">Online Documentation</a>
      */
     @JsPlainObject
@@ -427,5 +434,6 @@ private constructor() {
         var imageSubRegion: BoundingRectangle?
         var distanceDisplayCondition: DistanceDisplayCondition?
         var disableDepthTestDistance: Double?
+        var splitDirection: SplitDirection?
     }
 }

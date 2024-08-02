@@ -130,6 +130,12 @@ private constructor() {
     var id: Any
 
     /**
+     * The [SplitDirection] to apply to this point.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PointPrimitive.html#splitDirection">Online Documentation</a>
+     */
+    var splitDirection: SplitDirection
+
+    /**
      * Computes the screen-space position of the point's origin.
      * The screen space origin is the top, left corner of the canvas; `x` increases from
      * left to right, and `y` increases from top to bottom.
