@@ -7,7 +7,7 @@ import web.form.FormData
 sealed external interface GetFormSubmissionInfoResult {
     var action: String?
     var method: String
-    var encType: String
+    var encType: web.form.FormEncType
     var formData: FormData?
     var body: Any?
 }

@@ -21,7 +21,7 @@ external interface InputHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var enterKeyHint: EnterKeyHint?
     var form: String?
     var formAction: FormAction?
-    var formEncType: String?
+    var formEncType: web.form.FormEncType?
     var formMethod: FormMethod?
     var formNoValidate: Boolean?
     var formTarget: WindowName?

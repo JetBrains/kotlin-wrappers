@@ -14,13 +14,13 @@ sealed external interface SharedFormProps : react.Props, react.dom.html.FormHTML
      * The HTTP verb to use when the form is submit. Supports "get", "post",
      * "put", "delete", "patch".
      */
-    override var method: web.form.FormMethod?
+    override var method: web.form.FormMethod? /* HTMLFormMethod */
 
     /**
      * `<form encType>` - enhancing beyond the normal string type and limiting
      * to the built-in browser supported values
      */
-    override var encType: String?
+    override var encType: web.form.FormEncType?
 
     /**
      * Normal `<form action>` but supports React Router's relative paths.
