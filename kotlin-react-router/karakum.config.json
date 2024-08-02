@@ -14,8 +14,7 @@
         "**/Routes.kt",
         "**/*RoutesProps.kt",
         "**/*Route.kt",
-        "**/*RouteProps.kt",
-        "**/*unstable_PatchRoutesOnMissFunction.kt"
+        "**/*RouteProps.kt"
     ],
     "libraryName": "react-router",
     "libraryNameOutputPrefix": true,
@@ -29,6 +28,7 @@
     "importMapper": {
         "@remix-run/router": {
             "unstable_DataStrategyFunction": "remix.run.router.DataStrategyFunction as unstable_DataStrategyFunction",
+            "unstable_AgnosticPatchRoutesOnMissFunction": "remix.run.router.AgnosticPatchRoutesOnMissFunction as unstable_AgnosticPatchRoutesOnMissFunction",
             ".+": "remix.run.router."
         },
         "react": {
@@ -42,9 +42,6 @@
         ],
         "context.kt": [
             "remix.run.router.RouterState"
-        ],
-        "CreateMemoryRouterOpts.kt": [
-            "remix.run.router.AgnosticPatchRoutesOnMissFunction as unstable_PatchRoutesOnMissFunction"
         ],
         "Navigator.kt": [
             "remix.run.router.Path"

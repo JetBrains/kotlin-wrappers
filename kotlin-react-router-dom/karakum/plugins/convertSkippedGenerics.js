@@ -6,7 +6,6 @@ export default function (node, context, render) {
         && ts.isIdentifier(node.typeName)
         && (
             node.typeName.text === "Fetcher"
-            || node.typeName.text === "unstable_PatchRoutesOnMissFunction"
         )
         && !node.typeArguments
     ) {

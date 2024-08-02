@@ -3,7 +3,8 @@ import ts from "typescript"
 export default (node) => {
     if (
         ts.isInterfaceDeclaration(node)
-        && node.name.text === "AgnosticRouteMatch"
+        && (node.name.text === "AgnosticRouteMatch"
+            || node.name.text === "AgnosticPatchRoutesOnMissFunction")
     ) {
         return ""
     }

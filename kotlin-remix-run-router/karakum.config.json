@@ -57,6 +57,12 @@
             "web.abort.AbortSignal",
             "web.http.ResponseInit"
         ],
+        "data.kt": [
+            "web.http.ResponseInit"
+        ],
+        "DataWithResponseInit.kt": [
+            "web.http.ResponseInit"
+        ],
         "Submission.kt": [
             "web.form.FormData"
         ],
