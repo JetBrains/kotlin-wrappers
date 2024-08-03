@@ -4,6 +4,7 @@ package react.dom.html
 
 import react.dom.FormAction
 import web.dom.Element
+import web.form.FormEncType
 import web.form.FormMethod
 import web.html.ButtonType
 import web.window.WindowName
@@ -12,7 +13,7 @@ external interface ButtonHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var disabled: Boolean?
     var form: String?
     var formAction: FormAction?
-    var formEncType: web.form.FormEncType?
+    var formEncType: FormEncType?
     var formMethod: FormMethod?
     var formNoValidate: Boolean?
     var formTarget: WindowName?
