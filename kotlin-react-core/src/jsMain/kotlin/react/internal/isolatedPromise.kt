@@ -1,5 +1,6 @@
 package react.internal
 
+import js.coroutines.internal.IsolatedCoroutineScope
 import js.coroutines.promise
 import js.promise.Promise
 import kotlinx.coroutines.CoroutineScope

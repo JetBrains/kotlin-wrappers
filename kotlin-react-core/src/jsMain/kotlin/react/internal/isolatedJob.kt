@@ -1,5 +1,6 @@
 package react.internal
 
+import js.coroutines.internal.IsolatedCoroutineScope
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.Job

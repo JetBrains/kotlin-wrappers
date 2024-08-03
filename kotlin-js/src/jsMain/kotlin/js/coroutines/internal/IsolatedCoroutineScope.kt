@@ -1,7 +1,7 @@
-package react.internal
+package js.coroutines.internal
 
 import kotlinx.coroutines.CoroutineScope
 import kotlin.coroutines.EmptyCoroutineContext
 
-internal fun IsolatedCoroutineScope(): CoroutineScope =
+fun IsolatedCoroutineScope(): CoroutineScope =
     CoroutineScope(EmptyCoroutineContext)
