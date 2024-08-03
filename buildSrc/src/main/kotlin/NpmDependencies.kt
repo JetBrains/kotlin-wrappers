@@ -4,14 +4,6 @@ import org.jetbrains.kotlin.gradle.targets.js.npm.DevNpmDependencyExtension
 import org.jetbrains.kotlin.gradle.targets.js.npm.NpmDependency
 import org.jetbrains.kotlin.gradle.targets.js.npm.NpmDependencyExtension
 
-private val STRICT_VERSION_REQUIRED = setOf(
-    "@mui/material",
-    "@mui/icons-material",
-    "@mui/lab",
-    "@mui/x-date-pickers",
-    "@mui/x-tree-view",
-)
-
 private val NAME_ALIASES = mapOf(
     "@mui/x-date-pickers" to "muix-date-pickers",
     "@mui/x-tree-view" to "muix-tree-view",
@@ -27,12 +19,7 @@ private fun Project.npmVersion(name: String): String {
             .removePrefix("@")
             .replace("/", "-")
 
-    val version = version(finalName)
-    if (name in STRICT_VERSION_REQUIRED) {
-        return version
-    }
-
-    return "^$version"
+    return version(finalName)
 }
 
 fun Project.npmv(name: String): NpmDependency {
