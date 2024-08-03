@@ -1,6 +1,6 @@
 import js.array.asList
+import js.coroutines.promise
 import js.promise.Promise
-import js.promise.promise
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
 import kotlinx.css.CssBuilder
