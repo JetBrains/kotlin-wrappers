@@ -12,8 +12,22 @@ private val STRICT_VERSION_REQUIRED = setOf(
     "@mui/x-tree-view",
 )
 
+private val NAME_ALIASES = mapOf(
+    "@mui/x-date-pickers" to "muix-date-pickers",
+    "@mui/x-tree-view" to "muix-tree-view",
+
+    "@popperjs/core" to "popper",
+
+    "@types/node" to "node",
+)
+
 private fun Project.npmVersion(name: String): String {
-    val version = version(name)
+    val finalName = NAME_ALIASES[name]
+        ?: name
+            .removePrefix("@")
+            .replace("/", "-")
+
+    val version = version(finalName)
     if (name in STRICT_VERSION_REQUIRED) {
         return version
     }
