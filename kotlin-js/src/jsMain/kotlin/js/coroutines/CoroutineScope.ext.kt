@@ -11,5 +11,7 @@ fun <T> CoroutineScope.promise(
     context: CoroutineContext = EmptyCoroutineContext,
     start: CoroutineStart = CoroutineStart.DEFAULT,
     block: suspend CoroutineScope.() -> T,
-): Promise<T> =
-    async(context, start, block).asPromise()
+): Promise<T> {
+    val deferred = async(context, start, block)
+    return deferred.asPromise()
+}
