@@ -14,8 +14,6 @@ private val TARGET_ALIASES = mapOf(
 
     "@popperjs/core" to "popper",
 
-    "@jetbrains/ring-ui" to "ring-ui",
-
     "@types/node" to "node",
 )
 
