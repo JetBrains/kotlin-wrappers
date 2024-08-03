@@ -1,6 +1,5 @@
 package js.promise.internal
 
-import js.promise.Promise
 import js.promise.PromiseLike
 import js.promise.PromiseResult
 import js.promise.toPromise
@@ -10,7 +9,7 @@ import kotlinx.coroutines.suspendCancellableCoroutine
 internal suspend fun <T> awaitPromiseResult(
     promise: PromiseResult<T>,
 ): T =
-    awaitPromiseLike(promise as? Promise<T> ?: promise.toPromise())
+    awaitPromiseLike(promise.toPromise())
 
 @PublishedApi
 internal suspend fun <T> awaitPromiseLike(
