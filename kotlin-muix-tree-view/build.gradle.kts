@@ -1,3 +1,5 @@
+import NpmDependencyStrategy.EXACT
+
 plugins {
     `kotlin-library-conventions`
 }
@@ -5,5 +7,5 @@ plugins {
 dependencies {
     jsMainApi(projects.kotlinMuiMaterial)
 
-    jsMainApi(npmv("@mui/x-tree-view"))
+    jsMainApi(npmv("@mui/x-tree-view", EXACT))
 }

@@ -1,3 +1,5 @@
+import NpmDependencyStrategy.EXACT
+
 plugins {
     `kotlin-library-conventions`
 }
@@ -5,5 +7,5 @@ plugins {
 dependencies {
     jsMainApi(projects.kotlinMuiBase)
 
-    jsMainApi(npmv("@mui/material"))
+    jsMainApi(npmv("@mui/material", EXACT))
 }

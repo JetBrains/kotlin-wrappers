@@ -13,21 +13,8 @@ enum class NpmDependencyStrategy(val prefix: String) {
     ;
 }
 
-private val STRICT_VERSION_REQUIRED = setOf(
-    "@mui/material",
-    "@mui/icons-material",
-    "@mui/lab",
-    "@mui/x-date-pickers",
-    "@mui/x-tree-view",
-)
-
 private fun Project.npmVersion(name: String, strategy: NpmDependencyStrategy): String {
-    val version = version(name)
-    if (name in STRICT_VERSION_REQUIRED) {
-        return version
-    }
-
-    return "${strategy.prefix}$version"
+    return "${strategy.prefix}${version(name)}"
 }
 
 fun Project.npmv(name: String, strategy: NpmDependencyStrategy = MINOR): NpmDependency {
