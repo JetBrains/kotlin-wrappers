@@ -4,6 +4,7 @@
 
 package js.promise
 
+import js.promise.legacy.LegacyPromise
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.asDeferred
 
