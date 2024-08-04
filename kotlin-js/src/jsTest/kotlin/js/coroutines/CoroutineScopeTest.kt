@@ -2,7 +2,6 @@ package js.coroutines
 
 import js.core.Void
 import js.coroutines.internal.IsolatedCoroutineScope
-import js.errors.JsError
 import js.errors.name
 import js.promise.catch
 import js.symbol.Symbol
@@ -24,7 +23,7 @@ class CoroutineScopeTest {
 
         val result = promise.catch { it }.await()
 
-        assertIs<JsError>(result)
+        assertIs<JsCancellationError>(result)
         assertEquals(JS_CANCELLATION_ERROR, result.name)
     }
 }
