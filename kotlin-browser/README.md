@@ -1,6 +1,6 @@
 [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-browser)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-browser)
 
-# kotlin-browser
+# Module kotlin-browser
 
 Browser APIs missing from the standard library
 

@@ -1,6 +1,6 @@
 [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-tanstack-react-query)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-tanstack-react-query)
 
-# kotlin-tanstack-react-query
+# Module kotlin-tanstack-react-query
 
 Kotlin wrapper for the [Tanstack React Query](https://github.com/TanStack/query/) library.
 

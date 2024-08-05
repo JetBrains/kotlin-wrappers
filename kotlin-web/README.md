@@ -1,6 +1,6 @@
 [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-web)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-web)
 
-# kotlin-web
+# Module kotlin-web
 
 Common web wrappers
 

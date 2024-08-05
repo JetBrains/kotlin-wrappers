@@ -1,6 +1,6 @@
 [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-tanstack-react-query-devtools)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-tanstack-react-query-devtools)
 
-# kotlin-tanstack-react-query-devtools
+# Module kotlin-tanstack-react-query-devtools
 
 Kotlin wrapper for the [Tanstack React Query Devtools](https://tanstack.com/query/v4/docs/devtools) library.
 

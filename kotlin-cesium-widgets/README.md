@@ -1,6 +1,6 @@
 [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-cesium-widgets)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-cesium-widgets)
 
-# kotlin-cesium-widgets
+# Module kotlin-cesium-widgets
 
 [CesiumJS](http://cesium.com/cesiumjs/) declarations
 

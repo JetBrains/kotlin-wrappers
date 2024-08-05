@@ -1,6 +1,6 @@
 [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-dom)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-dom)
 
-## kotlin-react-dom
+# Module kotlin-react-dom
 
 Kotlin wrapper for the React DOM library. The major version number of this wrapper matches that of React DOM itself.
 

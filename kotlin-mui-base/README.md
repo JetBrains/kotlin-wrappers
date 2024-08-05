@@ -1,6 +1,6 @@
 [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-muix-tree-view)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-muix-tree-view)
 
-# kotlin-mui-base
+# Module kotlin-mui-base
 
 Kotlin wrapper for [MUI Base UI](https://mui.com/base-ui/).
 

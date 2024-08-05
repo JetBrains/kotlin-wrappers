@@ -1,6 +1,6 @@
 [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-tanstack-virtual-core)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-tanstack-virtual-core)
 
-# kotlin-tanstack-virtual-core
+# Module kotlin-tanstack-virtual-core
 
 Kotlin wrapper for the [Tanstack Virtual Core](https://github.com/TanStack/virtual/tree/beta/packages/virtual-core) library.
 

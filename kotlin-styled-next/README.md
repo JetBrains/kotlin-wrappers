@@ -1,6 +1,6 @@
 [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-styled-next)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-styled-next)
 
-## kotlin-styled-next
+# Module kotlin-styled-next
 
 This is a reimplementation of `kotlin-styled` in pure Kotlin that doesn't use styled-components. It is designed to be a
 drop-in replacement for `kotlin-styled`. It's currently feature-complete and its performance characteristics are very
