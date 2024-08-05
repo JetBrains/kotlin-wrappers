@@ -36,6 +36,9 @@ sealed external interface TreeItemClasses {
 
     /** Styles applied to the checkbox element. */
     val checkbox: ClassName
+
+    /** Styles applied to the drag and drop overlay. */
+    val dragAndDropOverlay: ClassName
 }
 
 external val treeItemClasses: TreeItemClasses

@@ -52,6 +52,8 @@ external interface TreeItemContentProps :
      * The icon to display next to the tree item's label. Either a parent or end icon.
      */
     var displayIcon: react.ReactNode?
+
+    var dragAndDropOverlayProps: TreeItem2DragAndDropOverlayProps?
 }
 
 /**
