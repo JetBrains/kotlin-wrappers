@@ -37,8 +37,8 @@ jobs:
         if: steps.modified-files.outputs.list == 'package-lock.json'
         run: |
           git add package-lock.json
-          git config --global user.name "GitHub bot"
-          git config --global user.email "<>"
+          git config --global user.name "Vitalik"
+          git config --global user.email "vit@lik"
           git commit -m "Update \`package-lock.json\`"
 
       - name: Push changes
