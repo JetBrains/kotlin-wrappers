@@ -12,5 +12,5 @@ sealed external interface Segments {
     /**
      * Returns an iterator to iterate over the segments.
      */
-    // [Symbol.iterator](): IterableIterator<SegmentData>
+    // [Symbol.iterator](): BuiltinIterator<SegmentData, BuiltinIteratorReturn>
 }
