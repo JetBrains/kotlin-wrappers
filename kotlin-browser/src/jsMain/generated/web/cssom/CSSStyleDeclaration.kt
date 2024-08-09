@@ -1719,6 +1719,10 @@ sealed external class CSSStyleDeclaration :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/shape-outside)
      */
     var shapeOutside: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/shape-rendering)
+     */
     var shapeRendering: String
     var stopColor: String
     var stopOpacity: String
@@ -1750,6 +1754,10 @@ sealed external class CSSStyleDeclaration :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-align-last)
      */
     var textAlignLast: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-anchor)
+     */
     var textAnchor: String
 
     /**
