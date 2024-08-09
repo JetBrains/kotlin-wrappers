@@ -13,7 +13,7 @@ private class AsyncIteratorAdapter<T>(
 
     override suspend fun hasNext(): Boolean {
         val result = lastResult
-            ?: source.next()
+            ?: source.next().await()
 
         lastResult = result
 
