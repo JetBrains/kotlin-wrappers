@@ -5,7 +5,7 @@ package web.cssom
 import js.array.JsTuple2
 import js.array.ReadonlyArray
 import js.collections.ListLike
-import js.iterable.IterableIterator
+import js.iterable.JsIterator
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSUnparsedValue)
@@ -19,8 +19,8 @@ external class CSSUnparsedValue(
      */
     override val length: Int
 
-    override fun entries(): IterableIterator<JsTuple2<Int, CSSUnparsedSegment>>
-    override fun keys(): IterableIterator<Int>
-    override fun values(): IterableIterator<CSSUnparsedSegment>
+    override fun entries(): JsIterator<JsTuple2<Int, CSSUnparsedSegment>>
+    override fun keys(): JsIterator<Int>
+    override fun values(): JsIterator<CSSUnparsedSegment>
     override fun forEach(action: (item: CSSUnparsedSegment) -> Unit)
 }

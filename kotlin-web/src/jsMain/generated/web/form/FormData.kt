@@ -5,7 +5,7 @@ package web.form
 import js.array.JsTuple2
 import js.array.ReadonlyArray
 import js.collections.MapLike
-import js.iterable.IterableIterator
+import js.iterable.JsIterator
 import web.blob.Blob
 import web.events.EventTarget
 
@@ -76,8 +76,8 @@ external class FormData(
         filename: String = definedExternally,
     )
 
-    override fun entries(): IterableIterator<JsTuple2<String, FormDataEntryValue>>
-    override fun keys(): IterableIterator<String>
-    override fun values(): IterableIterator<FormDataEntryValue>
+    override fun entries(): JsIterator<JsTuple2<String, FormDataEntryValue>>
+    override fun keys(): JsIterator<String>
+    override fun values(): JsIterator<FormDataEntryValue>
     override fun forEach(action: (value: FormDataEntryValue, key: String) -> Unit)
 }

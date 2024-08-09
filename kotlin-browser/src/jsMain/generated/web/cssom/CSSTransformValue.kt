@@ -5,7 +5,7 @@ package web.cssom
 import js.array.JsTuple2
 import js.array.ReadonlyArray
 import js.collections.ListLike
-import js.iterable.IterableIterator
+import js.iterable.JsIterator
 import web.geometry.DOMMatrix
 
 /**
@@ -30,8 +30,8 @@ external class CSSTransformValue(
      */
     fun toMatrix(): DOMMatrix
 
-    override fun entries(): IterableIterator<JsTuple2<Int, CSSTransformComponent>>
-    override fun keys(): IterableIterator<Int>
-    override fun values(): IterableIterator<CSSTransformComponent>
+    override fun entries(): JsIterator<JsTuple2<Int, CSSTransformComponent>>
+    override fun keys(): JsIterator<Int>
+    override fun values(): JsIterator<CSSTransformComponent>
     override fun forEach(action: (item: CSSTransformComponent) -> Unit)
 }

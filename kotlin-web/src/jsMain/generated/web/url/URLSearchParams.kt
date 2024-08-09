@@ -5,7 +5,7 @@ package web.url
 import js.array.JsTuple2
 import js.array.ReadonlyArray
 import js.collections.ReadonlyMap
-import js.iterable.IterableIterator
+import js.iterable.JsIterator
 import js.objects.ReadonlyRecord
 
 /**
@@ -83,8 +83,8 @@ external class URLSearchParams(
      */
     fun sort()
 
-    override fun entries(): IterableIterator<JsTuple2<String, String>>
-    override fun keys(): IterableIterator<String>
-    override fun values(): IterableIterator<String>
+    override fun entries(): JsIterator<JsTuple2<String, String>>
+    override fun keys(): JsIterator<String>
+    override fun values(): JsIterator<String>
     override fun forEach(action: (value: String, key: String) -> Unit)
 }
