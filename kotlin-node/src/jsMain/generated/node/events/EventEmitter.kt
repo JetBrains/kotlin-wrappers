@@ -7,7 +7,7 @@ package node.events
 import js.array.JsTuple
 import js.array.JsTuple1
 import js.disposable.Disposable
-import js.iterable.AsyncIterableIterator
+import js.iterable.AsyncIterator
 import js.promise.Promise
 import web.abort.AbortSignal
 import web.events.Event
@@ -664,7 +664,7 @@ open external class EventEmitter {
             emitter: T,
             type: EventType<T, P>,
             options: StaticEventEmitterOptions = definedExternally,
-        ): AsyncIterableIterator<P>
+        ): AsyncIterator<P>
 
         /**
          * ```js
@@ -751,7 +751,7 @@ open external class EventEmitter {
             emitter: T,
             type: web.events.EventType<E, T>,
             options: StaticEventEmitterOptions = definedExternally,
-        ): AsyncIterableIterator<JsTuple1<E>>
+        ): AsyncIterator<JsTuple1<E>>
 
         /**
          * A class method that returns the number of listeners for the given `eventName` registered on the given `emitter`.

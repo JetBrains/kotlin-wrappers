@@ -5,7 +5,7 @@
 package node.stream
 
 import js.iterable.AsyncIterable
-import js.iterable.AsyncIterableIterator
+import js.iterable.AsyncIterator
 import js.promise.Promise
 import js.typedarrays.Uint8Array
 import node.ReadableStreamPipeOptions
@@ -397,7 +397,7 @@ open external class Readable : Stream, node.ReadableStream {
      * or exiting a `for await...of` iteration using a `break`, `return`, or `throw` will not destroy the stream.
      * **Default: `true`**.
      */
-    fun iterator(options: ReadableBaseIteratorOptions = definedExternally): AsyncIterableIterator<Any?>
+    fun iterator(options: ReadableBaseIteratorOptions = definedExternally): AsyncIterator<Any?>
 
     /**
      * This method allows mapping over the stream. The *fn* function will be called for every chunk in the stream.
