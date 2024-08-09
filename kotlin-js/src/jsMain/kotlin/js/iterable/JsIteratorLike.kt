@@ -12,5 +12,5 @@ external interface JsIteratorLike<out T> {
     fun next(): IteratorResult<T, *>
 
     inline operator fun iterator(): Iterator<T> =
-        iteratorFor(this)
+        iteratorFromJsIteratorLike(this)
 }

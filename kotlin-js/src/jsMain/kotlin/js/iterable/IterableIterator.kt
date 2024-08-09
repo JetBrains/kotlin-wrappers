@@ -20,9 +20,6 @@ sealed external interface IterableIterator<out T> :
         key: Symbol.iterator,
     ): () -> IterableIterator<T> = definedExternally
 
-    override inline fun iterator(): Iterator<T> {
-        val iterator: JsIterator<T> = this
-
-        return iteratorFor(iterator)
-    }
+    override inline fun iterator(): Iterator<T> =
+        iteratorFromJsIteratorLike(this)
 }
