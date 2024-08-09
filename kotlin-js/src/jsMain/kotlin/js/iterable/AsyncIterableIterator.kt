@@ -20,5 +20,5 @@ sealed external interface AsyncIterableIterator<out T> :
     ): () -> AsyncIterableIterator<T> = definedExternally
 
     override inline fun iterator(): SuspendableIterator<T> =
-        iteratorFromAsyncIterator(this)
+        iteratorFromAsyncIteratorLike(this)
 }

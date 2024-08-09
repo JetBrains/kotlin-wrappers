@@ -1,13 +1,13 @@
 package js.iterable
 
 @PublishedApi
-internal fun <T> iteratorFromAsyncIterator(
-    source: AsyncIterator<T>,
+internal fun <T> iteratorFromAsyncIteratorLike(
+    source: AsyncIteratorLike<T>,
 ): SuspendableIterator<T> =
     AsyncIteratorAdapter(source)
 
 private class AsyncIteratorAdapter<T>(
-    private val source: AsyncIterator<T>,
+    private val source: AsyncIteratorLike<T>,
 ) : SuspendableIterator<T> {
     private var lastResult: IteratorResult<T, *>? = null
 

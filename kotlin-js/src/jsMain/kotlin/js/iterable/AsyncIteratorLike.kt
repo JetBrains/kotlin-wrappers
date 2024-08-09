@@ -8,9 +8,12 @@
 
 package js.iterable
 
+import js.promise.Promise
+
 @JsExternalInheritorsOnly
-external interface AsyncIterator<out T> :
-    AsyncIteratorLike<T> {
-    override inline operator fun iterator(): SuspendableIterator<T> =
+external interface AsyncIteratorLike<out T> {
+    fun next(): Promise<IteratorResult<T, *>>
+
+    inline operator fun iterator(): SuspendableIterator<T> =
         iteratorFromAsyncIteratorLike(this)
 }
