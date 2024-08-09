@@ -18,5 +18,5 @@ external interface JsIterable<out T> {
     ): () -> JsIterator<T> = definedExternally
 
     inline operator fun iterator(): Iterator<T> =
-        iteratorFor(this)
+        iteratorFromJsIterable(this)
 }
