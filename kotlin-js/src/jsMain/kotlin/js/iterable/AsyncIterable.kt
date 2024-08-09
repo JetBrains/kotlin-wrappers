@@ -18,5 +18,5 @@ external interface AsyncIterable<out T> {
     ): () -> AsyncIterator<T> = definedExternally
 
     inline operator fun iterator(): SuspendableIterator<T> =
-        iteratorFor(this)
+        iteratorFromAsyncIterable(this)
 }
