@@ -19,9 +19,6 @@ sealed external interface AsyncIterableIterator<out T> :
         key: Symbol.asyncIterator,
     ): () -> AsyncIterableIterator<T> = definedExternally
 
-    override inline fun iterator(): SuspendableIterator<T> {
-        val iterator: AsyncIterator<T> = this
-
-        return iteratorFor(iterator)
-    }
+    override inline fun iterator(): SuspendableIterator<T> =
+        iteratorFromAsyncIterator(this)
 }

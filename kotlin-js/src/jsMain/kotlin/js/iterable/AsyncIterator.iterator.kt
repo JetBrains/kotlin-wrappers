@@ -1,7 +1,7 @@
 package js.iterable
 
 @PublishedApi
-internal fun <T> iteratorFor(
+internal fun <T> iteratorFromAsyncIterator(
     source: AsyncIterator<T>,
 ): SuspendableIterator<T> =
     AsyncIteratorAdapter(source)

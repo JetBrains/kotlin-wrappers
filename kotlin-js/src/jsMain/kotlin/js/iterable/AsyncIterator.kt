@@ -15,5 +15,5 @@ external interface AsyncIterator<out T> {
     fun next(): Promise<IteratorResult<T, *>>
 
     inline operator fun iterator(): SuspendableIterator<T> =
-        iteratorFor(this)
+        iteratorFromAsyncIterator(this)
 }
