@@ -8,7 +8,6 @@
 
 package js.iterable
 
-@JsExternalInheritorsOnly
 external interface AsyncIterator<out T> :
     AsyncIteratorLike<T>,
     AsyncIterable<T> {

@@ -10,7 +10,6 @@ package js.iterable
 
 import js.promise.Promise
 
-@JsExternalInheritorsOnly
 external interface AsyncIteratorLike<out T> {
     fun next(): Promise<IteratorResult<T, *>>
 
