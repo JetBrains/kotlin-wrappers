@@ -3,9 +3,7 @@
 package web.media.capabilities
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface TransferFunction {
     companion object {
         @JsValue("hlg")

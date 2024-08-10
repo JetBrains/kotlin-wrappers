@@ -2,13 +2,13 @@
 
 package web.credentials
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.abort.AbortSignal
 import web.abort.Abortable
 import web.authn.PublicKeyCredentialRequestOptions
 
 @JsPlainObject
-sealed external interface CredentialRequestOptions :
+external interface CredentialRequestOptions :
     Abortable {
     var mediation: CredentialMediationRequirement?
     var publicKey: PublicKeyCredentialRequestOptions?

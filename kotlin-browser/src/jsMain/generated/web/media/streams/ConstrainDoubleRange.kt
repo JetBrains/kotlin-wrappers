@@ -2,10 +2,10 @@
 
 package web.media.streams
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface ConstrainDoubleRange :
+external interface ConstrainDoubleRange :
     DoubleRange {
     var exact: Double?
     var ideal: Double?

@@ -2,8 +2,6 @@
 
 package electron.core
 
-
-@seskar.js.JsVirtual
 sealed external interface ProcessMetricType {
     companion object {
         @seskar.js.JsValue("Browser")

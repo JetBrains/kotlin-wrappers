@@ -15,7 +15,7 @@ export default function (node) {
         && node.types[2]
         && node.types[2].kind === ts.SyntaxKind.UndefinedKeyword
     ) {
-        return "ActionLike"
+        return "ActionLike?"
     }
 
     if (
@@ -32,7 +32,7 @@ export default function (node) {
         && node.types[2]
         && node.types[2].kind === ts.SyntaxKind.UndefinedKeyword
     ) {
-        return "LoaderLike"
+        return "LoaderLike?"
     }
 
     return null

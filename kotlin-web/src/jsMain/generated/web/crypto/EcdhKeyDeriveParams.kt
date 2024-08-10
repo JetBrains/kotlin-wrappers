@@ -2,10 +2,10 @@
 
 package web.crypto
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface EcdhKeyDeriveParams :
+external interface EcdhKeyDeriveParams :
     Algorithm {
     var public: CryptoKey
 }

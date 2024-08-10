@@ -63,6 +63,17 @@ function hasConflictingOverloads(node) {
                 )
             )
         )
+        || (
+            sourceFileName.endsWith("crypto.d.ts")
+            && (
+                (
+                    node.name.text === "hash"
+
+                    && node.type
+                    && ts.isUnionTypeNode(node.type)
+                )
+            )
+        )
     )
 }
 
@@ -187,6 +198,26 @@ function isConflictingOverload(node, signature) {
                     && node.type.typeName.text === "UrlWithStringQuery"
                 )
             )
+        )
+        || (
+            node.name.text === "hash"
+
+            && signature[2]
+            && (
+                (
+                    ts.isTypeReferenceNode(signature[2].type)
+                    && ts.isIdentifier(signature[2].type.typeName)
+                    && signature[2].type.typeName.text === "BinaryToTextEncoding"
+                )
+                || (
+                    ts.isLiteralTypeNode(signature[2].type)
+                    && ts.isStringLiteral(signature[2].type.literal)
+                    && signature[2].type.literal.text === "buffer"
+                )
+            )
+
+            && node.type
+            && ts.isUnionTypeNode(node.type)
         )
     )
 }

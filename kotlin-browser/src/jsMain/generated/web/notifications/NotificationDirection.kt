@@ -3,9 +3,7 @@
 package web.notifications
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface NotificationDirection {
     companion object {
         @JsValue("auto")

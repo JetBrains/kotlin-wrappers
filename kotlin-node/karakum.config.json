@@ -56,6 +56,10 @@
         "**/assert/notEqual.kt",
         "**/assert/deepEqual.kt",
         "**/assert/notDeepEqual.kt",
+        "**/assert/strict/CallTrackerReportInformation.kt",
+        "**/assert/strict/CallTrackerCall.kt",
+        "**/assert/strict/AssertPredicate.kt",
+        "**/assert/strict/AssertionError.kt",
         "**/buffer/atob.kt",
         "**/buffer/btoa.kt",
         "**/buffer/__Blob.kt",
@@ -168,6 +172,7 @@
         "^cluster/Cluster.kt": "node/cluster/Cluster.interface.kt",
         "^cluster": "node/cluster",
 
+        "^crypto/hash.kt": "node/crypto/hash.fun.kt",
         "^crypto/sign.kt": "node/crypto/sign.fun.kt",
         "^crypto/verify.kt": "node/crypto/verify.fun.kt",
         "^crypto/diffieHellman.kt": "node/crypto/diffieHellman.fun.kt",
@@ -233,6 +238,14 @@
         "^node/test/Test.kt": "node/test/Test.class.kt",
         "^node/test/test.kt": "node/test/test.fun.kt",
         "^node/test/test/namespace.kt": "node/test/test.fun.namespace.kt",
+        "TestComplete.kt": "test/TestComplete.kt",
+        "TestCompleteDetails.kt": "test/TestCompleteDetails.kt",
+        "TestCoverage.kt": "test/TestCoverage.kt",
+        "TestCoverageSummary.kt": "test/TestCoverageSummary.kt",
+        "TestCoverageSummaryTotals.kt": "test/TestCoverageSummaryTotals.kt",
+        "TestCoverageSummaryFilesItem.kt": "test/TestCoverageSummaryFilesItem.kt",
+        "TestCoverageSummaryFilesItemFunctionsItem.kt": "test/TestCoverageSummaryFilesItemFunctionsItem.kt",
+        "TestCoverageSummaryFilesItemLinesItem.kt": "test/TestCoverageSummaryFilesItemLinesItem.kt",
         "TestLocationInfo.kt": "test/TestLocationInfo.kt",
         "DiagnosticData.kt": "test/DiagnosticData.kt",
         "TestFail.kt": "test/TestFail.kt",
@@ -292,6 +305,9 @@
             "\\*": ""
         },
         "node:crypto": "node.crypto",
+        "node:dgram": {
+            "\\*": ""
+        },
         "node:dns$": {
             "\\*": "",
             ".+": "node.dns."
@@ -669,6 +685,7 @@
             "js.array.ReadonlyArray",
             "js.collections.ReadonlySet",
             "js.promise.Promise",
+            "web.url.URL",
             "node.Module",
             "node.events.EventEmitter"
         ],
@@ -695,6 +712,12 @@
         ],
         "repl/REPLServer.kt": [
             "node.readline._Interface as Interface"
+        ],
+        "sea/getAsset.kt": [
+            "js.buffer.ArrayBuffer"
+        ],
+        "sea/getAssetAsBlob.kt": [
+            "web.blob.Blob"
         ],
         "stream/ArrayOptions.kt": [
             "web.abort.AbortSignal"
@@ -833,9 +856,7 @@
             "node.test.TestOptions"
         ],
         "test/it.kt": [
-            "js.promise.Promise",
-            "node.test.TestFn",
-            "node.test.TestOptions"
+            "js.promise.Promise"
         ],
         "test/it/only.kt": [
             "js.promise.Promise",
@@ -865,6 +886,39 @@
         "test/it/todo.suspend.kt": [
             "js.promise.Promise",
             "node.test.TestFn",
+            "node.test.TestOptions"
+        ],
+        "test/suite.kt": [
+            "js.promise.Promise"
+        ],
+        "test/suite/only.kt": [
+            "js.promise.Promise",
+            "node.test.SuiteFn",
+            "node.test.TestOptions"
+        ],
+        "test/suite/only.suspend.kt": [
+            "js.promise.Promise",
+            "node.test.SuiteFn",
+            "node.test.TestOptions"
+        ],
+        "test/suite/skip.kt": [
+            "js.promise.Promise",
+            "node.test.SuiteFn",
+            "node.test.TestOptions"
+        ],
+        "test/suite/skip.suspend.kt": [
+            "js.promise.Promise",
+            "node.test.SuiteFn",
+            "node.test.TestOptions"
+        ],
+        "test/suite/todo.kt": [
+            "js.promise.Promise",
+            "node.test.SuiteFn",
+            "node.test.TestOptions"
+        ],
+        "test/suite/todo.suspend.kt": [
+            "js.promise.Promise",
+            "node.test.SuiteFn",
             "node.test.TestOptions"
         ],
         "test/only.kt": [
@@ -1063,6 +1117,7 @@
         "worker_threads.global": "package",
         "global": "object",
         "node:test": "package",
+        "node:sea": "package",
         "node:.+": "ignore",
         ".+": "package"
     },

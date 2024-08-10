@@ -3,11 +3,11 @@
 package web.rtc
 
 import js.core.JsLong
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.time.DOMHighResTimeStamp
 
 @JsPlainObject
-sealed external interface RTCInboundRtpStreamStats :
+external interface RTCInboundRtpStreamStats :
     RTCReceivedRtpStreamStats {
     var audioLevel: Double?
     var bytesReceived: JsLong?

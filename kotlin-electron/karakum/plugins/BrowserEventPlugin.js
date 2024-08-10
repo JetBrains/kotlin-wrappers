@@ -259,7 +259,6 @@ fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${key}(): web.events.E
                 .join("\n")
 
             const declaration = `
-@seskar.js.JsVirtual
 sealed external interface ${name} {
 companion object {
 ${legacyCompanionBody}

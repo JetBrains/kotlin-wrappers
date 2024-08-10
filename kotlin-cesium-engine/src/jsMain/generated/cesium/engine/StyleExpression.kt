@@ -31,7 +31,7 @@ abstract external class StyleExpression {
     abstract fun evaluate(
         feature: Cesium3DTileFeature,
         result: Any? = definedExternally,
-    ): dynamic
+    ): Any /* boolean | number | string | RegExp | Cartesian2 | Cartesian3 | Cartesian4 | Color */
 
     /**
      * Evaluates the result of a Color expression, optionally using the provided feature's properties.

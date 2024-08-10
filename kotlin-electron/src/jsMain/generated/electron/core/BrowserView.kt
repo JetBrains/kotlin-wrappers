@@ -4,7 +4,6 @@
 
 package electron.core
 
-
 open external class BrowserView {
 // Docs: https://electronjs.org/docs/api/browser-view
     /**

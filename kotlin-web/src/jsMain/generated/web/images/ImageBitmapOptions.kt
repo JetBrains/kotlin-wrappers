@@ -2,10 +2,10 @@
 
 package web.images
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface ImageBitmapOptions {
+external interface ImageBitmapOptions {
     var colorSpaceConversion: ColorSpaceConversion?
     var imageOrientation: ImageOrientation?
     var premultiplyAlpha: PremultiplyAlpha?

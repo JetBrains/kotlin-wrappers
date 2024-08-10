@@ -2,10 +2,10 @@
 
 package web.audio
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface AnalyserOptions :
+external interface AnalyserOptions :
     AudioNodeOptions {
     var fftSize: Int?
     var maxDecibels: Double?

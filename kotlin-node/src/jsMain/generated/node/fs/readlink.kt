@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Reads the contents of the symbolic link referred to by `path`. The callback gets
  * two arguments `(err, linkString)`.

@@ -3,9 +3,7 @@
 package web.midi
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface MIDIPortConnectionState {
     companion object {
         @JsValue("closed")

@@ -4,7 +4,6 @@
 
 package node.wasi
 
-
 /**
  * **The `node:wasi` module does not currently provide the**
  * **comprehensive file system security properties provided by some WASI runtimes.**
@@ -74,7 +73,7 @@ package node.wasi
  * wat2wasm demo.wat
  * ```
  * @experimental
- * @see [source](https://github.com/nodejs/node/blob/v20.11.1/lib/wasi.js)
+ * @see [source](https://github.com/nodejs/node/blob/v20.13.1/lib/wasi.js)
  */
 
 

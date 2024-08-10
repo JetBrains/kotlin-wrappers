@@ -4,9 +4,6 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-import js.collections.JsMap
-
 /**
  * Parse the contents of a config file (tsconfig.json).
  * @param jsonNode The contents of the config file to parse
@@ -20,8 +17,8 @@ external fun parseJsonSourceFileConfigFileContent(
     basePath: String,
     existingOptions: CompilerOptions = definedExternally,
     configFileName: String = definedExternally,
-    resolutionStack: ReadonlyArray<Path> = definedExternally,
-    extraFileExtensions: ReadonlyArray<FileExtensionInfo> = definedExternally,
-    extendedConfigCache: JsMap<String, ExtendedConfigCacheEntry> = definedExternally,
+    resolutionStack: js.array.ReadonlyArray<Path> = definedExternally,
+    extraFileExtensions: js.array.ReadonlyArray<FileExtensionInfo> = definedExternally,
+    extendedConfigCache: js.collections.ReadonlyMap<String, ExtendedConfigCacheEntry> = definedExternally,
     existingWatchOptions: WatchOptions = definedExternally,
 ): ParsedCommandLine

@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 
 /**
  * A description of the outline of a polygon on the ellipsoid. The polygon is defined by a polygon hierarchy.
@@ -83,7 +78,9 @@ import js.objects.jso
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolygonOutlineGeometry.html">Online Documentation</a>
  */
-external class PolygonOutlineGeometry(options: ConstructorOptions) {
+external class PolygonOutlineGeometry(
+    options: ConstructorOptions,
+) {
     /**
      * @property [polygonHierarchy] A polygon hierarchy that can include holes.
      * @property [height] The distance in meters between the polygon and the ellipsoid surface.
@@ -92,7 +89,7 @@ external class PolygonOutlineGeometry(options: ConstructorOptions) {
      * @property [vertexFormat] The vertex attributes to be computed.
      *   Default value - [VertexFormat.DEFAULT]
      * @property [ellipsoid] The ellipsoid to be used as a reference.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @property [granularity] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
      *   Default value - [Math.RADIANS_PER_DEGREE]
      * @property [perPositionHeight] Use the height of options.positions for each position instead of using options.height to determine the height.
@@ -174,7 +171,7 @@ external class PolygonOutlineGeometry(options: ConstructorOptions) {
          *   Default value - `0.0`
          * @property [extrudedHeight] The height of the polygon extrusion.
          * @property [ellipsoid] The ellipsoid to be used as a reference.
-         *   Default value - [Ellipsoid.WGS84]
+         *   Default value - [Ellipsoid.default]
          * @property [granularity] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
          *   Default value - [Math.RADIANS_PER_DEGREE]
          * @property [perPositionHeight] Use the height of options.positions for each position instead of using options.height to determine the height.
@@ -202,8 +199,3 @@ external class PolygonOutlineGeometry(options: ConstructorOptions) {
         fun createGeometry(polygonGeometry: PolygonOutlineGeometry): Geometry?
     }
 }
-
-inline fun PolygonOutlineGeometry(
-    block: PolygonOutlineGeometry.ConstructorOptions.() -> Unit,
-): PolygonOutlineGeometry =
-    PolygonOutlineGeometry(options = jso(block))

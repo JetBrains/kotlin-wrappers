@@ -3,7 +3,6 @@
 package electron.core
 
 
-@seskar.js.JsVirtual
 sealed external interface InAppPurchaseEvent {
     sealed interface TRANSACTIONS_UPDATED : node.events.LegacyEventType
 

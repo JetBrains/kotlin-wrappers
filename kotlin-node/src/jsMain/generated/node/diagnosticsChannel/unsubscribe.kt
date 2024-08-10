@@ -4,7 +4,6 @@
 
 package node.diagnosticsChannel
 
-
 /**
  * Remove a message handler previously registered to this channel with {@link subscribe}.
  *

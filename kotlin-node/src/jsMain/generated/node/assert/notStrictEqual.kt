@@ -4,7 +4,6 @@
 
 package node.assert
 
-
 /**
  * Tests strict inequality between the `actual` and `expected` parameters as
  * determined by [`Object.is()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is).
@@ -24,8 +23,8 @@ package node.assert
  * // OK
  * ```
  *
- * If the values are strictly equal, an `AssertionError` is thrown with a`message` property set equal to the value of the `message` parameter. If the`message` parameter is undefined, a
- * default error message is assigned. If the`message` parameter is an instance of an `Error` then it will be thrown
+ * If the values are strictly equal, an `AssertionError` is thrown with a `message` property set equal to the value of the `message` parameter. If the `message` parameter is undefined, a
+ * default error message is assigned. If the `message` parameter is an instance of an `Error` then it will be thrown
  * instead of the `AssertionError`.
  * @since v0.1.21
  */
@@ -50,8 +49,8 @@ external fun notEqual(actual: Any?, expected: Any?): Unit
  * // OK
  * ```
  *
- * If the values are strictly equal, an `AssertionError` is thrown with a`message` property set equal to the value of the `message` parameter. If the`message` parameter is undefined, a
- * default error message is assigned. If the`message` parameter is an instance of an `Error` then it will be thrown
+ * If the values are strictly equal, an `AssertionError` is thrown with a `message` property set equal to the value of the `message` parameter. If the `message` parameter is undefined, a
+ * default error message is assigned. If the `message` parameter is an instance of an `Error` then it will be thrown
  * instead of the `AssertionError`.
  * @since v0.1.21
  */
@@ -76,8 +75,8 @@ external fun notEqual(actual: Any?, expected: Any?, message: String = definedExt
  * // OK
  * ```
  *
- * If the values are strictly equal, an `AssertionError` is thrown with a`message` property set equal to the value of the `message` parameter. If the`message` parameter is undefined, a
- * default error message is assigned. If the`message` parameter is an instance of an `Error` then it will be thrown
+ * If the values are strictly equal, an `AssertionError` is thrown with a `message` property set equal to the value of the `message` parameter. If the `message` parameter is undefined, a
+ * default error message is assigned. If the `message` parameter is an instance of an `Error` then it will be thrown
  * instead of the `AssertionError`.
  * @since v0.1.21
  */

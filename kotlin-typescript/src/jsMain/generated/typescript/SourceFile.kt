@@ -2,19 +2,19 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
-sealed external interface SourceFile : Declaration, LocalsContainer, Union.SourceFile_ {
+sealed external interface SourceFile : Declaration, LocalsContainer, BlockLike, ModuleDeclarationParent,
+    ImportEqualsDeclarationParent, ImportDeclarationParent, ExportDeclarationParent,
+    RequiredAffectedFileResultAffected {
     override val kind: SyntaxKind.SourceFile
     val statements: NodeArray<Statement>
     val endOfFileToken: Token<SyntaxKind.EndOfFileToken>
     var fileName: String
     var text: String
-    var amdDependencies: ReadonlyArray<AmdDependency>
+    var amdDependencies: js.array.ReadonlyArray<AmdDependency>
     var moduleName: String?
-    var referencedFiles: ReadonlyArray<FileReference>
-    var typeReferenceDirectives: ReadonlyArray<FileReference>
-    var libReferenceDirectives: ReadonlyArray<FileReference>
+    var referencedFiles: js.array.ReadonlyArray<FileReference>
+    var typeReferenceDirectives: js.array.ReadonlyArray<FileReference>
+    var libReferenceDirectives: js.array.ReadonlyArray<FileReference>
     var languageVariant: LanguageVariant
     var isDeclarationFile: Boolean
 
@@ -46,17 +46,10 @@ sealed external interface SourceFile : Declaration, LocalsContainer, Union.Sourc
      * of `node`). If so, this field will be unset and source files will be considered to be
      * CommonJS-output-format by the node module transformer and type checker, regardless of extension or context.
      */
-    var impliedNodeFormat: ResolutionMode?
-    fun getLineAndCharacterOfPosition(pos: Int): LineAndCharacter
-    fun getLineEndOfPosition(pos: Int): Int
-    fun getLineStarts(): ReadonlyArray<Int>
-    fun getPositionOfLineAndCharacter(
-        line: Int,
-        character: Int,
-    ): Int
-
-    fun update(
-        newText: String,
-        textChangeRange: TextChangeRange,
-    ): SourceFile
+    var impliedNodeFormat: ResolutionMode
+    fun getLineAndCharacterOfPosition(pos: Double): LineAndCharacter
+    fun getLineEndOfPosition(pos: Double): Double
+    fun getLineStarts(): js.array.ReadonlyArray<Double>
+    fun getPositionOfLineAndCharacter(line: Double, character: Double): Double
+    fun update(newText: String, textChangeRange: TextChangeRange): SourceFile
 }

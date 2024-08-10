@@ -18,8 +18,11 @@ external class NumberFormat(
 
     fun format(value: Number): String
     fun resolvedOptions(): ResolvedNumberFormatOptions
-    fun formatToParts(number: Number = definedExternally): ReadonlyArray<NumberFormatPart>
-    fun formatToParts(number: BigInt): ReadonlyArray<NumberFormatPart>
+    fun format(value: BigInt): String
+    fun format(value: StringNumericLiteral): String
+    fun formatToParts(value: Number): ReadonlyArray<NumberFormatPart>
+    fun formatToParts(value: BigInt): ReadonlyArray<NumberFormatPart>
+    fun formatToParts(value: StringNumericLiteral): ReadonlyArray<NumberFormatPart>
     fun formatRange(
         start: Number,
         end: Number,
@@ -28,6 +31,11 @@ external class NumberFormat(
     fun formatRange(
         start: BigInt,
         end: BigInt,
+    ): String
+
+    fun formatRange(
+        start: StringNumericLiteral,
+        end: StringNumericLiteral,
     ): String
 
     fun formatRangeToParts(
@@ -38,6 +46,11 @@ external class NumberFormat(
     fun formatRangeToParts(
         start: BigInt,
         end: BigInt,
+    ): ReadonlyArray<NumberRangeFormatPart>
+
+    fun formatRangeToParts(
+        start: StringNumericLiteral,
+        end: StringNumericLiteral,
     ): ReadonlyArray<NumberRangeFormatPart>
 
     companion object {

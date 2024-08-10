@@ -3,11 +3,9 @@
 package mui.material
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
 typealias FormLabelBaseProps = react.dom.html.LabelHTMLAttributes<web.html.HTMLLabelElement>
 
-@JsVirtual
 sealed external interface FormLabelColor {
     companion object {
         @JsValue("primary")

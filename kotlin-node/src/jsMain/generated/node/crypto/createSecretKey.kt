@@ -4,7 +4,6 @@
 
 package node.crypto
 
-
 /**
  * Creates and returns a new key object containing a secret key for symmetric
  * encryption or `Hmac`.

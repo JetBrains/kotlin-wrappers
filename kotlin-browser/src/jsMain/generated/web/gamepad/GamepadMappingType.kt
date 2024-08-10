@@ -3,9 +3,7 @@
 package web.gamepad
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface GamepadMappingType {
     companion object {
         @JsValue("")

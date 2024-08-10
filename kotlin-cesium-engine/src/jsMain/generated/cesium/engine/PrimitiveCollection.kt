@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 /**
@@ -195,8 +191,3 @@ external class PrimitiveCollection {
      */
     fun destroy()
 }
-
-inline fun PrimitiveCollection(
-    block: PrimitiveCollection.() -> Unit,
-): PrimitiveCollection =
-    PrimitiveCollection().apply(block)

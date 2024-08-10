@@ -3,7 +3,6 @@
 package electron.core
 
 
-@seskar.js.JsVirtual
 sealed external interface ServiceWorkersEvent {
     sealed interface CONSOLE_MESSAGE : node.events.LegacyEventType
     sealed interface REGISTRATION_COMPLETED : node.events.LegacyEventType

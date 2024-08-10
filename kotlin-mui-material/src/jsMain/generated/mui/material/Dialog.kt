@@ -76,7 +76,7 @@ external interface DialogProps :
      * @param {object} event The event source of the callback.
      * @param {string} reason Can be: `"escapeKeyDown"`, `"backdropClick"`.
      */
-    override var onClose: ((event: dynamic, reason: String) -> Unit)?
+    override var onClose: ((event: Any, reason: String) -> Unit)?
 
     /**
      * If `true`, the component is shown.
@@ -121,7 +121,7 @@ external interface DialogProps :
      *   exit: theme.transitions.duration.leavingScreen,
      * }
      */
-    var transitionDuration: dynamic /* TransitionProps['timeout'] */
+    var transitionDuration: Any? /* TransitionProps['timeout'] */
 
     /**
      * Props applied to the transition element.

@@ -2,12 +2,10 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 sealed external interface SignatureHelpParameter {
     var name: String
-    var documentation: ReadonlyArray<SymbolDisplayPart>
-    var displayParts: ReadonlyArray<SymbolDisplayPart>
+    var documentation: js.array.ReadonlyArray<SymbolDisplayPart>
+    var displayParts: js.array.ReadonlyArray<SymbolDisplayPart>
     var isOptional: Boolean
     var isRest: Boolean?
 }

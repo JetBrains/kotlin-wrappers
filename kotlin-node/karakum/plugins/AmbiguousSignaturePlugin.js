@@ -158,9 +158,10 @@ export default {
                                 defaultValue: "undefined.unsafeCast<Nothing>()",
                                 template: (_, signature) => {
                                     // TODO: it cam be removed after conversion
-                                    //  `describe` and `it` namespaces as object
+                                    //  `describe`, `suite` and `it` namespaces as object
                                     if (
                                         originalName === "describe"
+                                        || originalName === "suite"
                                         || originalName === "it"
                                     ) {
                                         return ""

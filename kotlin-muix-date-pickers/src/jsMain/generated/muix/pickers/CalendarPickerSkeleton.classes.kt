@@ -1,16 +1,20 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/x-date-pickers/CalendarPickerSkeleton")
+
 package muix.pickers
 
 import web.cssom.ClassName
 
-external interface CalendarPickerSkeletonClasses {
+sealed external interface CalendarPickerSkeletonClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the week element. */
-    var week: ClassName
+    val week: ClassName
 
     /** Styles applied to the day element. */
-    var daySkeleton: ClassName
+    val daySkeleton: ClassName
 }
+
+external val calendarPickerSkeletonClasses: CalendarPickerSkeletonClasses

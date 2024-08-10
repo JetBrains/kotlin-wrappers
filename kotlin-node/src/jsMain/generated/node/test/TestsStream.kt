@@ -7,13 +7,18 @@ package node.test
 import node.stream.Readable
 
 /**
- * A successful call to `run()` method will return a new `TestsStream` object, streaming a series of events representing the execution of the tests.`TestsStream` will emit events, in the
+ * A successful call to `run()` method will return a new `TestsStream` object, streaming a series of events representing the execution of the tests. `TestsStream` will emit events, in the
  * order of the tests definition
+ *
+ * Some of the events are guaranteed to be emitted in the same order as the tests are defined, while others are emitted in the order that the tests execute.
  * @since v18.9.0, v16.19.0
  */
-
 external class TestsStream : Readable, node.ReadableStream {
+    fun addListener(event: TestsStreamEvent.TEST_COVERAGE, listener: (data: TestCoverage) -> Unit): Unit /* this */
+    fun addListener(event: TestsStreamEvent.TEST_COMPLETE, listener: (data: TestComplete) -> Unit): Unit /* this */
+    fun addListener(event: TestsStreamEvent.TEST_DEQUEUE, listener: (data: TestDequeue) -> Unit): Unit /* this */
     fun addListener(event: TestsStreamEvent.TEST_DIAGNOSTIC, listener: (data: DiagnosticData) -> Unit): Unit /* this */
+    fun addListener(event: TestsStreamEvent.TEST_ENQUEUE, listener: (data: TestEnqueue) -> Unit): Unit /* this */
     fun addListener(event: TestsStreamEvent.TEST_FAIL, listener: (data: TestFail) -> Unit): Unit /* this */
     fun addListener(event: TestsStreamEvent.TEST_PASS, listener: (data: TestPass) -> Unit): Unit /* this */
     fun addListener(event: TestsStreamEvent.TEST_PLAN, listener: (data: TestPlan) -> Unit): Unit /* this */
@@ -21,7 +26,11 @@ external class TestsStream : Readable, node.ReadableStream {
     fun addListener(event: TestsStreamEvent.TEST_STDERR, listener: (data: TestStderr) -> Unit): Unit /* this */
     fun addListener(event: TestsStreamEvent.TEST_STDOUT, listener: (data: TestStdout) -> Unit): Unit /* this */
     override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun emit(event: TestsStreamEvent.TEST_COVERAGE, data: TestCoverage): Boolean
+    fun emit(event: TestsStreamEvent.TEST_COMPLETE, data: TestComplete): Boolean
+    fun emit(event: TestsStreamEvent.TEST_DEQUEUE, data: TestDequeue): Boolean
     fun emit(event: TestsStreamEvent.TEST_DIAGNOSTIC, data: DiagnosticData): Boolean
+    fun emit(event: TestsStreamEvent.TEST_ENQUEUE, data: TestEnqueue): Boolean
     fun emit(event: TestsStreamEvent.TEST_FAIL, data: TestFail): Boolean
     fun emit(event: TestsStreamEvent.TEST_PASS, data: TestPass): Boolean
     fun emit(event: TestsStreamEvent.TEST_PLAN, data: TestPlan): Boolean
@@ -31,7 +40,11 @@ external class TestsStream : Readable, node.ReadableStream {
     override fun emit(event: String, vararg args: Any?): Boolean
 
     override fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
+    fun on(event: TestsStreamEvent.TEST_COVERAGE, listener: (data: TestCoverage) -> Unit): Unit /* this */
+    fun on(event: TestsStreamEvent.TEST_COMPLETE, listener: (data: TestComplete) -> Unit): Unit /* this */
+    fun on(event: TestsStreamEvent.TEST_DEQUEUE, listener: (data: TestDequeue) -> Unit): Unit /* this */
     fun on(event: TestsStreamEvent.TEST_DIAGNOSTIC, listener: (data: DiagnosticData) -> Unit): Unit /* this */
+    fun on(event: TestsStreamEvent.TEST_ENQUEUE, listener: (data: TestEnqueue) -> Unit): Unit /* this */
     fun on(event: TestsStreamEvent.TEST_FAIL, listener: (data: TestFail) -> Unit): Unit /* this */
     fun on(event: TestsStreamEvent.TEST_PASS, listener: (data: TestPass) -> Unit): Unit /* this */
     fun on(event: TestsStreamEvent.TEST_PLAN, listener: (data: TestPlan) -> Unit): Unit /* this */
@@ -39,7 +52,11 @@ external class TestsStream : Readable, node.ReadableStream {
     fun on(event: TestsStreamEvent.TEST_STDERR, listener: (data: TestStderr) -> Unit): Unit /* this */
     fun on(event: TestsStreamEvent.TEST_STDOUT, listener: (data: TestStdout) -> Unit): Unit /* this */
     override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun once(event: TestsStreamEvent.TEST_COVERAGE, listener: (data: TestCoverage) -> Unit): Unit /* this */
+    fun once(event: TestsStreamEvent.TEST_COMPLETE, listener: (data: TestComplete) -> Unit): Unit /* this */
+    fun once(event: TestsStreamEvent.TEST_DEQUEUE, listener: (data: TestDequeue) -> Unit): Unit /* this */
     fun once(event: TestsStreamEvent.TEST_DIAGNOSTIC, listener: (data: DiagnosticData) -> Unit): Unit /* this */
+    fun once(event: TestsStreamEvent.TEST_ENQUEUE, listener: (data: TestEnqueue) -> Unit): Unit /* this */
     fun once(event: TestsStreamEvent.TEST_FAIL, listener: (data: TestFail) -> Unit): Unit /* this */
     fun once(event: TestsStreamEvent.TEST_PASS, listener: (data: TestPass) -> Unit): Unit /* this */
     fun once(event: TestsStreamEvent.TEST_PLAN, listener: (data: TestPlan) -> Unit): Unit /* this */
@@ -47,11 +64,15 @@ external class TestsStream : Readable, node.ReadableStream {
     fun once(event: TestsStreamEvent.TEST_STDERR, listener: (data: TestStderr) -> Unit): Unit /* this */
     fun once(event: TestsStreamEvent.TEST_STDOUT, listener: (data: TestStdout) -> Unit): Unit /* this */
     override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun prependListener(event: TestsStreamEvent.TEST_COVERAGE, listener: (data: TestCoverage) -> Unit): Unit /* this */
+    fun prependListener(event: TestsStreamEvent.TEST_COMPLETE, listener: (data: TestComplete) -> Unit): Unit /* this */
+    fun prependListener(event: TestsStreamEvent.TEST_DEQUEUE, listener: (data: TestDequeue) -> Unit): Unit /* this */
     fun prependListener(
         event: TestsStreamEvent.TEST_DIAGNOSTIC,
         listener: (data: DiagnosticData) -> Unit,
     ): Unit /* this */
 
+    fun prependListener(event: TestsStreamEvent.TEST_ENQUEUE, listener: (data: TestEnqueue) -> Unit): Unit /* this */
     fun prependListener(event: TestsStreamEvent.TEST_FAIL, listener: (data: TestFail) -> Unit): Unit /* this */
     fun prependListener(event: TestsStreamEvent.TEST_PASS, listener: (data: TestPass) -> Unit): Unit /* this */
     fun prependListener(event: TestsStreamEvent.TEST_PLAN, listener: (data: TestPlan) -> Unit): Unit /* this */
@@ -64,8 +85,28 @@ external class TestsStream : Readable, node.ReadableStream {
     ): Unit /* this */
 
     fun prependOnceListener(
+        event: TestsStreamEvent.TEST_COVERAGE,
+        listener: (data: TestCoverage) -> Unit,
+    ): Unit /* this */
+
+    fun prependOnceListener(
+        event: TestsStreamEvent.TEST_COMPLETE,
+        listener: (data: TestComplete) -> Unit,
+    ): Unit /* this */
+
+    fun prependOnceListener(
+        event: TestsStreamEvent.TEST_DEQUEUE,
+        listener: (data: TestDequeue) -> Unit,
+    ): Unit /* this */
+
+    fun prependOnceListener(
         event: TestsStreamEvent.TEST_DIAGNOSTIC,
         listener: (data: DiagnosticData) -> Unit,
+    ): Unit /* this */
+
+    fun prependOnceListener(
+        event: TestsStreamEvent.TEST_ENQUEUE,
+        listener: (data: TestEnqueue) -> Unit,
     ): Unit /* this */
 
     fun prependOnceListener(event: TestsStreamEvent.TEST_FAIL, listener: (data: TestFail) -> Unit): Unit /* this */

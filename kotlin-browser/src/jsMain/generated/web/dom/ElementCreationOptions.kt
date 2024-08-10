@@ -2,9 +2,9 @@
 
 package web.dom
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface ElementCreationOptions {
+external interface ElementCreationOptions {
     var `is`: String?
 }

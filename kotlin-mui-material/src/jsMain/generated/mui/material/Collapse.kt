@@ -42,7 +42,7 @@ external interface CollapseProps :
      * The transition timing function.
      * You may specify a single easing or a object containing enter and exit values.
      */
-    var easing: dynamic /* TransitionProps['easing'] */
+    var easing: Any? /* TransitionProps['easing'] */
 
     /**
      * If `true`, the component will transition in.
@@ -62,7 +62,7 @@ external interface CollapseProps :
      * Set to 'auto' to automatically calculate transition time based on height.
      * @default duration.standard
      */
-    var timeout: dynamic /* TransitionProps['timeout'] | 'auto' */
+    var timeout: Any? /* TransitionProps['timeout'] | 'auto' */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

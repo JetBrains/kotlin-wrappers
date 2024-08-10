@@ -6,11 +6,18 @@
 
 package web.compression
 
+import js.buffer.BufferSource
+import js.typedarrays.Uint8Array
 import web.streams.GenericTransformStream
+import web.streams.ReadableStream
+import web.streams.WritableStream
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CompressionStream)
  */
 external class CompressionStream(
     format: CompressionFormat,
-) : GenericTransformStream
+) : GenericTransformStream {
+    override val readable: ReadableStream<Uint8Array>
+    override val writable: WritableStream<BufferSource>
+}

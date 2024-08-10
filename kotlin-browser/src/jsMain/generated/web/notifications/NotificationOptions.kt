@@ -2,10 +2,10 @@
 
 package web.notifications
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface NotificationOptions {
+external interface NotificationOptions {
     var badge: String?
     var body: String?
     var data: Any?

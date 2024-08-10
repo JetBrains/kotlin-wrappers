@@ -4,7 +4,6 @@
 
 package node.dns
 
-
 /**
  * Resolves the given `address` and `port` into a host name and service using
  * the operating system's underlying `getnameinfo` implementation.

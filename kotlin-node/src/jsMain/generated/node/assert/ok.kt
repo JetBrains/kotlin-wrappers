@@ -4,12 +4,11 @@
 
 package node.assert
 
-
 /**
- * Tests if `value` is truthy. It is equivalent to`assert.equal(!!value, true, message)`.
+ * Tests if `value` is truthy. It is equivalent to `assert.equal(!!value, true, message)`.
  *
- * If `value` is not truthy, an `AssertionError` is thrown with a `message`property set equal to the value of the `message` parameter. If the `message`parameter is `undefined`, a default
- * error message is assigned. If the `message`parameter is an instance of an `Error` then it will be thrown instead of the`AssertionError`.
+ * If `value` is not truthy, an `AssertionError` is thrown with a `message` property set equal to the value of the `message` parameter. If the `message` parameter is `undefined`, a default
+ * error message is assigned. If the `message` parameter is an instance of an `Error` then it will be thrown instead of the `AssertionError`.
  * If no arguments are passed in at all `message` will be set to the string:`` 'No value argument passed to `assert.ok()`' ``.
  *
  * Be aware that in the `repl` the error message will be different to the one
@@ -64,10 +63,10 @@ package node.assert
 external fun ok(value: Any?): Unit /* asserts value */
 
 /**
- * Tests if `value` is truthy. It is equivalent to`assert.equal(!!value, true, message)`.
+ * Tests if `value` is truthy. It is equivalent to `assert.equal(!!value, true, message)`.
  *
- * If `value` is not truthy, an `AssertionError` is thrown with a `message`property set equal to the value of the `message` parameter. If the `message`parameter is `undefined`, a default
- * error message is assigned. If the `message`parameter is an instance of an `Error` then it will be thrown instead of the`AssertionError`.
+ * If `value` is not truthy, an `AssertionError` is thrown with a `message` property set equal to the value of the `message` parameter. If the `message` parameter is `undefined`, a default
+ * error message is assigned. If the `message` parameter is an instance of an `Error` then it will be thrown instead of the `AssertionError`.
  * If no arguments are passed in at all `message` will be set to the string:`` 'No value argument passed to `assert.ok()`' ``.
  *
  * Be aware that in the `repl` the error message will be different to the one
@@ -122,10 +121,10 @@ external fun ok(value: Any?): Unit /* asserts value */
 external fun ok(value: Any?, message: String = definedExternally): Unit /* asserts value */
 
 /**
- * Tests if `value` is truthy. It is equivalent to`assert.equal(!!value, true, message)`.
+ * Tests if `value` is truthy. It is equivalent to `assert.equal(!!value, true, message)`.
  *
- * If `value` is not truthy, an `AssertionError` is thrown with a `message`property set equal to the value of the `message` parameter. If the `message`parameter is `undefined`, a default
- * error message is assigned. If the `message`parameter is an instance of an `Error` then it will be thrown instead of the`AssertionError`.
+ * If `value` is not truthy, an `AssertionError` is thrown with a `message` property set equal to the value of the `message` parameter. If the `message` parameter is `undefined`, a default
+ * error message is assigned. If the `message` parameter is an instance of an `Error` then it will be thrown instead of the `AssertionError`.
  * If no arguments are passed in at all `message` will be set to the string:`` 'No value argument passed to `assert.ok()`' ``.
  *
  * Be aware that in the `repl` the error message will be different to the one

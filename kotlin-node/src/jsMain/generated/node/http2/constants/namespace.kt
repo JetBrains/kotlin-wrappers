@@ -5,7 +5,6 @@
 
 package node.http2.constants
 
-
 external val NGHTTP2_SESSION_SERVER: Double
 
 external val NGHTTP2_SESSION_CLIENT: Double
@@ -120,7 +119,19 @@ external val HTTP2_HEADER_ACCEPT_RANGES: String
 
 external val HTTP2_HEADER_ACCEPT: String
 
+external val HTTP2_HEADER_ACCESS_CONTROL_ALLOW_CREDENTIALS: String
+
+external val HTTP2_HEADER_ACCESS_CONTROL_ALLOW_HEADERS: String
+
+external val HTTP2_HEADER_ACCESS_CONTROL_ALLOW_METHODS: String
+
 external val HTTP2_HEADER_ACCESS_CONTROL_ALLOW_ORIGIN: String
+
+external val HTTP2_HEADER_ACCESS_CONTROL_EXPOSE_HEADERS: String
+
+external val HTTP2_HEADER_ACCESS_CONTROL_REQUEST_HEADERS: String
+
+external val HTTP2_HEADER_ACCESS_CONTROL_REQUEST_METHOD: String
 
 external val HTTP2_HEADER_AGE: String
 

@@ -3,14 +3,12 @@
 @file:JsModule("@cesium/engine")
 
 @file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
     "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
 )
 
 package cesium.engine
 
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 import web.dom.Element
 import web.html.HTMLCanvasElement
 
@@ -55,13 +53,15 @@ external class CesiumWidget(
     /**
      * @property [clock] The clock to use to control current time.
      *   Default value - [Clock()][Clock]
+     * @property [ellipsoid] The default ellipsoid.
+     *   Default value - [Ellipsoid.default]
      * @property [baseLayer] The bottommost imagery layer applied to the globe. If set to `false`, no imagery provider will be added.
      *   Default value - `ImageryLayer.fromWorldImagery()`
      * @property [terrainProvider] The terrain provider.
-     *   Default value - [EllipsoidTerrainProvider][EllipsoidTerrainProvider]
+     *   Default value - [EllipsoidTerrainProvider(options.ellipsoid)][EllipsoidTerrainProvider]
      * @property [terrain] A terrain object which handles asynchronous terrain provider. Can only specify if options.terrainProvider is undefined.
-     * @property [skyBox] The skybox used to render the stars.  When `undefined`, the default stars are used. If set to `false`, no skyBox, Sun, or Moon will be added.
-     * @property [skyAtmosphere] Blue sky, and the glow around the Earth's limb.  Set to `false` to turn it off.
+     * @property [skyBox] The skybox used to render the stars. When `undefined` and the WGS84 ellipsoid used, the default stars are used. If set to `false`, no skyBox, Sun, or Moon will be added.
+     * @property [skyAtmosphere] Blue sky, and the glow around the Earth's limb. Enabled when the default ellipsoid used. Set to `false` to turn it off.
      * @property [sceneMode] The initial scene mode.
      *   Default value - [SceneMode.SCENE3D]
      * @property [scene3DOnly] When `true`, each geometry instance will only be rendered in 3D to save GPU memory.
@@ -69,9 +69,9 @@ external class CesiumWidget(
      * @property [orderIndependentTranslucency] If true and the configuration supports it, use order independent translucency.
      *   Default value - `true`
      * @property [mapProjection] The map projection to use in 2D and Columbus View modes.
-     *   Default value - [GeographicProjection()][GeographicProjection]
+     *   Default value - [GeographicProjection(options.ellipsoid)][GeographicProjection]
      * @property [globe] The globe to use in the scene.  If set to `false`, no globe will be added and the sky atmosphere will be hidden by default.
-     *   Default value - [Globe(mapProjection.ellipsoid)][Globe]
+     *   Default value - [Globe(options.ellipsoid)][Globe]
      * @property [useDefaultRenderLoop] True if this widget should control the render loop, false otherwise.
      *   Default value - `true`
      * @property [useBrowserRecommendedResolution] If true, render at the browser's recommended resolution and ignore `window.devicePixelRatio`.
@@ -101,16 +101,17 @@ external class CesiumWidget(
     @JsPlainObject
     sealed interface ConstructorOptions {
         var clock: Clock?
-        var baseLayer: dynamic
+        var ellipsoid: Ellipsoid?
+        var baseLayer: ImageryLayer /* | false */?
         var terrainProvider: TerrainProvider?
         var terrain: Terrain?
-        var skyBox: dynamic
-        var skyAtmosphere: dynamic
+        var skyBox: SkyBox /* | false */?
+        var skyAtmosphere: SkyAtmosphere /* | false */?
         var sceneMode: SceneMode?
         var scene3DOnly: Boolean?
         var orderIndependentTranslucency: Boolean?
         var mapProjection: MapProjection?
-        var globe: dynamic
+        var globe: Globe /* | false */?
         var useDefaultRenderLoop: Boolean?
         var useBrowserRecommendedResolution: Boolean?
         var targetFrameRate: Int?
@@ -174,6 +175,12 @@ external class CesiumWidget(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumWidget.html#camera">Online Documentation</a>
      */
     val camera: Camera
+
+    /**
+     * Gets the default ellipsoid for the scene.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumWidget.html#ellipsoid">Online Documentation</a>
+     */
+    val ellipsoid: Ellipsoid
 
     /**
      * Gets the clock.
@@ -276,9 +283,3 @@ external class CesiumWidget(
      */
     fun render()
 }
-
-inline fun CesiumWidget(
-    container: Element,
-    block: CesiumWidget.ConstructorOptions.() -> Unit,
-): CesiumWidget =
-    CesiumWidget(container, options = jso(block))

@@ -2,17 +2,12 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
-import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
+import kotlinx.js.JsPlainObject
 
 /**
  * Terrain data for a single tile from a Google Earth Enterprise server.
@@ -26,7 +21,9 @@ import js.promise.Promise
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseTerrainData.html">Online Documentation</a>
  */
-external class GoogleEarthEnterpriseTerrainData(options: ConstructorOptions) : TerrainData {
+external class GoogleEarthEnterpriseTerrainData(
+    options: ConstructorOptions,
+) : TerrainData {
     /**
      * @property [buffer] The buffer containing terrain data.
      * @property [negativeAltitudeExponentBias] Multiplier for negative terrain heights that are encoded as very small positive values.
@@ -63,7 +60,7 @@ external class GoogleEarthEnterpriseTerrainData(options: ConstructorOptions) : T
      * Values in between 0 and 255 are allowed as well to smoothly blend between land and water.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseTerrainData.html#waterMask">Online Documentation</a>
      */
-    override var waterMask: dynamic
+    override var waterMask: Any /* Uint8Array | HTMLImageElement | HTMLCanvasElement */
 
     /**
      * Computes the terrain height at a specified longitude and latitude.
@@ -135,8 +132,3 @@ external class GoogleEarthEnterpriseTerrainData(options: ConstructorOptions) : T
      */
     override fun wasCreatedByUpsampling(): Boolean
 }
-
-inline fun GoogleEarthEnterpriseTerrainData(
-    block: GoogleEarthEnterpriseTerrainData.ConstructorOptions.() -> Unit,
-): GoogleEarthEnterpriseTerrainData =
-    GoogleEarthEnterpriseTerrainData(options = jso(block))

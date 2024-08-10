@@ -2,10 +2,10 @@
 
 package web.components
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface ShadowRootInit {
+external interface ShadowRootInit {
     var delegatesFocus: Boolean?
     var mode: ShadowRootMode
     var serializable: Boolean?

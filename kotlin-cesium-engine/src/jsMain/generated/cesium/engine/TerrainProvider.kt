@@ -2,14 +2,11 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.core.Void
 import js.promise.Promise
+import js.typedarrays.TypedArray
 import seskar.js.JsAsync
 
 /**
@@ -148,7 +145,7 @@ abstract external class TerrainProvider {
         fun getRegularGridIndices(
             width: Double,
             height: Double,
-        ): dynamic
+        ): TypedArray<*, *> /* Uint16Array | Uint32Array */
 
         /**
          * Specifies the quality of terrain created from heightmaps.  A value of 1.0 will
@@ -175,10 +172,3 @@ abstract external class TerrainProvider {
         ): Double
     }
 }
-
-/**
- * A function that is called when an error occurs.
- * @param [err] An object holding details about the error that occurred.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TerrainProvider.html#.ErrorEvent">Online Documentation</a>
- */
-typealias ErrorEvent = (err: TileProviderError) -> Unit

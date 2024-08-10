@@ -4,7 +4,6 @@
 
 package node.zlib
 
-
 /**
  * The `node:zlib` module provides compression functionality implemented using
  * Gzip, Deflate/Inflate, and Brotli.
@@ -15,7 +14,8 @@ package node.zlib
  * const zlib = require('node:zlib');
  * ```
  *
- * Compression and decompression are built around the Node.js `Streams API`.
+ * Compression and decompression are built around the Node.js
+ * [Streams API](https://nodejs.org/docs/latest-v20.x/api/stream.html).
  *
  * Compressing or decompressing a stream (such as a file) can be accomplished by
  * piping the source stream through a `zlib` `Transform` stream into a destination
@@ -95,7 +95,7 @@ package node.zlib
  *   });
  * ```
  * @since v0.5.8
- * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/zlib.js)
+ * @see [source](https://github.com/nodejs/node/blob/v20.13.1/lib/zlib.js)
  */
 
 

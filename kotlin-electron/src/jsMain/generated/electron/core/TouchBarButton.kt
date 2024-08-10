@@ -4,7 +4,6 @@
 
 package electron.core
 
-
 external class TouchBarButton {
 // Docs: https://electronjs.org/docs/api/touch-bar-button
     /**

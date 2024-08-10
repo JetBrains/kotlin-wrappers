@@ -2,7 +2,6 @@
 
 package node.process
 
-
 sealed external interface ProcessFeatures {
     var inspector: Boolean
     var debug: Boolean

@@ -4,7 +4,6 @@
 
 package node.workerThreads
 
-
 /**
  * The `node:worker_threads` module enables the use of threads that execute
  * JavaScript in parallel. To access it:
@@ -18,7 +17,7 @@ package node.workerThreads
  * asynchronous I/O operations are more efficient than Workers can be.
  *
  * Unlike `child_process` or `cluster`, `worker_threads` can share memory. They do
- * so by transferring `ArrayBuffer` instances or sharing `SharedArrayBuffer`instances.
+ * so by transferring `ArrayBuffer` instances or sharing `SharedArrayBuffer` instances.
  *
  * ```js
  * const {
@@ -56,7 +55,7 @@ package node.workerThreads
  *
  * Worker threads inherit non-process-specific options by default. Refer to `Worker constructor options` to know how to customize worker thread options,
  * specifically `argv` and `execArgv` options.
- * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/worker_threads.js)
+ * @see [source](https://github.com/nodejs/node/blob/v20.13.1/lib/worker_threads.js)
  */
 
 

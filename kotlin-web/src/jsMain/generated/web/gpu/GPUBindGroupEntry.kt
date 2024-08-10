@@ -2,10 +2,10 @@
 
 package web.gpu
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GPUBindGroupEntry {
+external interface GPUBindGroupEntry {
     var binding: GPUIndex32
     var resource: GPUBindingResource
 }

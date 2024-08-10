@@ -4,6 +4,8 @@ package web.html
 
 import web.dom.NodeListOf
 import web.form.FormControl
+import web.form.FormEncType
+import web.form.FormMethod
 import web.validation.ValidityState
 import web.window.WindowName
 
@@ -24,43 +26,31 @@ protected constructor() :
 
     /**
      * Retrieves a reference to the form that the object is embedded in.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/form)
      */
     override val form: HTMLFormElement?
 
     /**
      * Overrides the action attribute (where the data on a form is sent) on the parent form element.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/formAction)
      */
     var formAction: String
 
     /**
      * Used to override the encoding (formEnctype attribute) specified on the form element.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/formEnctype)
      */
-    var formEnctype: String
+    var formEnctype: FormEncType
 
     /**
      * Overrides the submit method attribute previously specified on a form element.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/formMethod)
      */
-    var formMethod: String
+    var formMethod: FormMethod
 
     /**
      * Overrides any validation or required attributes on a form or form elements to allow it to be submitted without validation. This can be used to create a "save draft"-type submit option.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/formNoValidate)
      */
     var formNoValidate: Boolean
 
     /**
      * Overrides the target attribute on a form element.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/formTarget)
      */
     var formTarget: WindowName
 
@@ -71,8 +61,6 @@ protected constructor() :
 
     /**
      * Sets or retrieves the name of the object.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/name)
      */
     override var name: String
 
@@ -85,29 +73,21 @@ protected constructor() :
 
     /**
      * Returns the error message that would be displayed if the user submits the form, or an empty string if no error message. It also triggers the standard error message, such as "this is a required field". The result is that the user sees validation messages without actually submitting.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/validationMessage)
      */
     override val validationMessage: String
 
     /**
      * Returns a  ValidityState object that represents the validity states of an element.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/validity)
      */
     override val validity: ValidityState
 
     /**
      * Sets or retrieves the default or selected value of the control.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/value)
      */
     var value: String
 
     /**
      * Returns whether an element will successfully validate based on forms validation rules and constraints.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/willValidate)
      */
     override val willValidate: Boolean
 
@@ -115,10 +95,6 @@ protected constructor() :
      * Returns whether a form will validate when it is submitted, without having to submit it.
      */
     override fun checkValidity(): Boolean
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/reportValidity)
-     */
     override fun reportValidity(): Boolean
 
     /**

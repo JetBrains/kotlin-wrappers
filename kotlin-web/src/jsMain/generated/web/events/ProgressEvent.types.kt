@@ -3,9 +3,7 @@
 package web.events
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external class ProgressEventTypes {
 
     @JsValue("abort")

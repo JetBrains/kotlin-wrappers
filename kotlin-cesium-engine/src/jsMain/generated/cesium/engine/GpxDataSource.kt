@@ -4,8 +4,8 @@
 
 package cesium.engine
 
-import js.objects.JsPlainObject
 import js.promise.Promise
+import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync
 
 /**
@@ -111,13 +111,13 @@ external class GpxDataSource {
      */
     @JsAsync
     suspend fun load(
-        data: dynamic,
+        data: Any, /* string | Document | Blob */
         options: LoadOptions? = definedExternally,
     ): GpxDataSource
 
     @JsName("load")
     fun loadAsync(
-        data: dynamic,
+        data: Any, /* string | Document | Blob */
         options: LoadOptions? = definedExternally,
     ): Promise<GpxDataSource>
 
@@ -146,13 +146,13 @@ external class GpxDataSource {
          */
         @JsAsync
         suspend fun load(
-            data: dynamic,
+            data: Any, /* string | Document | Blob */
             options: LoadOptions? = definedExternally,
         ): GpxDataSource
 
         @JsName("load")
         fun loadAsync(
-            data: dynamic,
+            data: Any, /* string | Document | Blob */
             options: LoadOptions? = definedExternally,
         ): Promise<GpxDataSource>
 

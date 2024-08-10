@@ -2,10 +2,10 @@
 
 package js.intl
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface ResolvedListFormatOptions {
+external interface ResolvedListFormatOptions {
     var locale: String
     var style: ListFormatStyle
     var type: ListFormatType

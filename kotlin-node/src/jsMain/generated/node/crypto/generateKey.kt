@@ -4,9 +4,8 @@
 
 package node.crypto
 
-
 /**
- * Asynchronously generates a new random secret key of the given `length`. The`type` will determine which validations will be performed on the `length`.
+ * Asynchronously generates a new random secret key of the given `length`. The `type` will determine which validations will be performed on the `length`.
  *
  * ```js
  * const {

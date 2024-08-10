@@ -4,7 +4,6 @@
 
 package node.util.types
 
-
 /**
  * Returns `true` if the value is a generator function.
  * This only reports back what the JavaScript engine is seeing;

@@ -15,7 +15,6 @@ import node.asyncHooks.AsyncLocalStorage
  * with `new Channel(name)` is not supported.
  * @since v15.1.0, v14.17.0
  */
-
 external class Channel<StoreType /* default is Any? */, ContextType /* default is StoreType */> {
     val name: Any /* string | symbol */
 

@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface SignatureHelpTriggerReason /* SignatureHelpInvokedReason | SignatureHelpCharacterTypedReason | SignatureHelpRetriggeredReason */
+sealed external interface SignatureHelpTriggerReason

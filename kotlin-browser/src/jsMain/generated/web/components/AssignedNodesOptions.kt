@@ -2,9 +2,9 @@
 
 package web.components
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface AssignedNodesOptions {
+external interface AssignedNodesOptions {
     var flatten: Boolean?
 }

@@ -21,7 +21,7 @@ package cesium.engine
  * @constructor
  * @param [position] The position property used to compute the orientation.
  * @param [ellipsoid] The ellipsoid used to determine which way is up.
- *   Default value - [Ellipsoid.WGS84]
+ *   Default value - [Ellipsoid.default]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VelocityOrientationProperty.html">Online Documentation</a>
  */
 external class VelocityOrientationProperty(

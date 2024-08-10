@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 /**
@@ -67,8 +63,3 @@ external class PolylineOutlineMaterialProperty :
         result: Any?,
     ): Any
 }
-
-inline fun PolylineOutlineMaterialProperty(
-    block: PolylineOutlineMaterialProperty.() -> Unit,
-): PolylineOutlineMaterialProperty =
-    PolylineOutlineMaterialProperty().apply(block)

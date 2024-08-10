@@ -1,6 +1,7 @@
 package example
 
 import emotion.react.css
+import js.array.ReadonlyArray
 import react.FC
 import react.Props
 import react.PropsWithChildren
@@ -62,7 +63,7 @@ val RawProduct = FC<RawProductProps> { props ->
 }
 
 external interface ProductTableProps : Props {
-    var products: Array<Product>
+    var products: ReadonlyArray<Product>
     var filterText: String
     var inStockOnly: Boolean
 }

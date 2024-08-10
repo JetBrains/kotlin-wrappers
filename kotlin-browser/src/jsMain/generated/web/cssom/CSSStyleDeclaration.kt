@@ -169,10 +169,6 @@ sealed external class CSSStyleDeclaration :
      */
     var backgroundSize: String
     var baselineShift: String
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/baseline-source)
-     */
     var baselineSource: String
 
     /**
@@ -608,7 +604,7 @@ sealed external class CSSStyleDeclaration :
     var contain: String
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-contain-intrinsic-block-size)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-block-size)
      */
     var containIntrinsicBlockSize: String
 
@@ -618,7 +614,7 @@ sealed external class CSSStyleDeclaration :
     var containIntrinsicHeight: String
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-contain-intrinsic-inline-size)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-inline-size)
      */
     var containIntrinsicInlineSize: String
 
@@ -686,7 +682,15 @@ sealed external class CSSStyleDeclaration :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/cursor)
      */
     var cursor: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/cx)
+     */
     var cx: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/cy)
+     */
     var cy: String
     var d: String
 
@@ -1505,6 +1509,10 @@ sealed external class CSSStyleDeclaration :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/quotes)
      */
     var quotes: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/r)
+     */
     var r: String
 
     /**
@@ -1528,10 +1536,23 @@ sealed external class CSSStyleDeclaration :
     var rowGap: String
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/ruby-align)
+     */
+    var rubyAlign: String
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/ruby-position)
      */
     var rubyPosition: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/rx)
+     */
     var rx: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/ry)
+     */
     var ry: String
 
     /**
@@ -1698,6 +1719,10 @@ sealed external class CSSStyleDeclaration :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/shape-outside)
      */
     var shapeOutside: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/shape-rendering)
+     */
     var shapeRendering: String
     var stopColor: String
     var stopOpacity: String
@@ -1729,6 +1754,10 @@ sealed external class CSSStyleDeclaration :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-align-last)
      */
     var textAlignLast: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-anchor)
+     */
     var textAnchor: String
 
     /**
@@ -1830,7 +1859,15 @@ sealed external class CSSStyleDeclaration :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-wrap)
      */
     var textWrap: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-wrap-mode)
+     */
     var textWrapMode: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-wrap-style)
+     */
     var textWrapStyle: String
 
     /**
@@ -1913,6 +1950,11 @@ sealed external class CSSStyleDeclaration :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/vertical-align)
      */
     var verticalAlign: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/view-transition-name)
+     */
+    var viewTransitionName: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/visibility)

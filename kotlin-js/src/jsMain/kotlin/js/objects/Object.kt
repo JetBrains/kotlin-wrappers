@@ -2,6 +2,7 @@ package js.objects
 
 import js.array.JsTuple2
 import js.array.ReadonlyArray
+import js.iterable.JsIterable
 import js.symbol.Symbol
 
 external class Object internal constructor() {
@@ -16,9 +17,11 @@ external class Object internal constructor() {
         fun <T : Any> create(o: T?, properties: PropertyDescriptorMap = definedExternally): T
         fun <T : Any> defineProperties(o: T, properties: PropertyDescriptorMap): T
         fun <T : Any, P> defineProperty(o: T, p: PropertyKey, attributes: TypedPropertyDescriptor<P>): T
-        fun <T : Any> entries(o: ReadonlyRecord<String, T>): ReadonlyArray<JsTuple2<String, T>>
+        fun <T> entries(o: ReadonlyRecord<String, T>): ReadonlyArray<JsTuple2<String, T>>
         fun entries(o: Any): ReadonlyArray<JsTuple2<String, Any?>>
         fun <R, T : R> freeze(o: T): R
+        fun <T> fromEntries(entries: JsIterable<JsTuple2<String, T>>): ReadonlyRecord<String, T>
+        fun <T> fromEntries(entries: ReadonlyArray<JsTuple2<String, T>>): ReadonlyRecord<String, T>
         fun <T> getOwnPropertyDescriptor(o: Any, p: PropertyKey): TypedPropertyDescriptor<T>?
         fun getOwnPropertyNames(o: Any): ReadonlyArray<String>
         fun getOwnPropertySymbols(o: Any): ReadonlyArray<Symbol>

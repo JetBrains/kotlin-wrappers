@@ -2,11 +2,11 @@
 
 package web.rtc
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.time.DOMHighResTimeStamp
 
 @JsPlainObject
-sealed external interface RTCStats {
+external interface RTCStats {
     var id: String
     var timestamp: DOMHighResTimeStamp
     var type: RTCStatsType

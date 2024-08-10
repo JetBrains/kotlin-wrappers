@@ -4,7 +4,6 @@
 
 package node.http
 
-
 /**
  * To use the HTTP server and client one must `require('node:http')`.
  *
@@ -33,8 +32,8 @@ package node.http
  *
  * See `message.headers` for details on how duplicate headers are handled.
  *
- * The raw headers as they were received are retained in the `rawHeaders`property, which is an array of `[key, value, key2, value2, ...]`. For
- * example, the previous message header object might have a `rawHeaders`list like the following:
+ * The raw headers as they were received are retained in the `rawHeaders` property, which is an array of `[key, value, key2, value2, ...]`. For
+ * example, the previous message header object might have a `rawHeaders` list like the following:
  *
  * ```js
  * [ 'ConTent-Length', '123456',
@@ -44,7 +43,7 @@ package node.http
  *   'Host', 'example.com',
  *   'accepT', '*' ]
  * ```
- * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/http.js)
+ * @see [source](https://github.com/nodejs/node/blob/v20.13.1/lib/http.js)
  */
 
 

@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
-import js.objects.JsPlainObject
 import js.objects.ReadonlyRecord
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 
 /**
  * A user defined GLSL shader used with [Model] as well
@@ -63,7 +58,9 @@ import js.objects.jso
  * @param [options] An object with the following options
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CustomShader.html">Online Documentation</a>
  */
-external class CustomShader(options: ConstructorOptions) {
+external class CustomShader(
+    options: ConstructorOptions,
+) {
     /**
      * @property [mode] The custom shader mode, which determines how the custom shader code is inserted into the fragment shader.
      *   Default value - [CustomShaderMode.MODIFY_MATERIAL]
@@ -142,11 +139,6 @@ external class CustomShader(options: ConstructorOptions) {
      */
     fun setUniform(
         uniformName: String,
-        value: dynamic,
+        value: Any, /* boolean | number | Cartesian2 | Cartesian3 | Cartesian4 | Matrix2 | Matrix3 | Matrix4 | string | Resource | TextureUniform */
     )
 }
-
-inline fun CustomShader(
-    block: CustomShader.ConstructorOptions.() -> Unit,
-): CustomShader =
-    CustomShader(options = jso(block))

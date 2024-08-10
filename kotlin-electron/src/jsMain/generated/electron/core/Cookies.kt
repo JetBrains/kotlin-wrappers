@@ -7,7 +7,6 @@ package electron.core
 import kotlin.js.Promise
 import node.events.EventEmitter as NodeEventEmitter
 
-
 external class Cookies : NodeEventEmitter {
 // Docs: https://electronjs.org/docs/api/cookies
     /**

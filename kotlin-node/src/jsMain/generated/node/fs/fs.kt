@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * The `node:fs` module enables interacting with the file system in a
  * way modeled on standard POSIX functions.
@@ -23,7 +22,7 @@ package node.fs
  *
  * All file system operations have synchronous, callback, and promise-based
  * forms, and are accessible using both CommonJS syntax and ES6 Modules (ESM).
- * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/fs.js)
+ * @see [source](https://github.com/nodejs/node/blob/v20.13.1/lib/fs.js)
  */
 
 

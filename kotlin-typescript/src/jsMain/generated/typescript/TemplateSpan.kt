@@ -2,9 +2,9 @@
 
 package typescript
 
-sealed external interface TemplateSpan : Node, Union.TemplateSpan_ {
+sealed external interface TemplateSpan : Node, TemplateMiddleParent, TemplateTailParent {
     override val kind: SyntaxKind.TemplateSpan
     override val parent: TemplateExpression
     val expression: Expression
-    val literal: Union.TemplateSpan_literal
+    val literal: TemplateSpanLiteral
 }

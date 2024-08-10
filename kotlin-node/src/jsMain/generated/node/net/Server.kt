@@ -10,7 +10,6 @@ import node.events.EventEmitter
  * This class is used to create a TCP or `IPC` server.
  * @since v0.1.90
  */
-
 open external class Server : EventEmitter {
     constructor (connectionListener: (socket: Socket) -> Unit = definedExternally)
     constructor (
@@ -34,7 +33,7 @@ open external class Server : EventEmitter {
      *
      * All `listen()` methods can take a `backlog` parameter to specify the maximum
      * length of the queue of pending connections. The actual length will be determined
-     * by the OS through sysctl settings such as `tcp_max_syn_backlog` and `somaxconn`on Linux. The default value of this parameter is 511 (not 512).
+     * by the OS through sysctl settings such as `tcp_max_syn_backlog` and `somaxconn` on Linux. The default value of this parameter is 511 (not 512).
      *
      * All {@link Socket} are set to `SO_REUSEADDR` (see [`socket(7)`](https://man7.org/linux/man-pages/man7/socket.7.html) for
      * details).

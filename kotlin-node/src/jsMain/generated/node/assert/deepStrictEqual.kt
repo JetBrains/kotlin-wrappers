@@ -4,7 +4,6 @@
 
 package node.assert
 
-
 /**
  * Tests for deep equality between the `actual` and `expected` parameters.
  * "Deep" equality means that the enumerable "own" properties of child objects

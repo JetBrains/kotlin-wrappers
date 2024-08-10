@@ -2,10 +2,10 @@
 
 package web.crypto
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface HmacKeyAlgorithm :
+external interface HmacKeyAlgorithm :
     KeyAlgorithm {
     var hash: KeyAlgorithm
     var length: Int

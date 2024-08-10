@@ -21,7 +21,7 @@ internal fun safeAny(
 
     val controller = AbortController()
     val handlers = mutableListOf<() -> Unit>()
-    val abortHandler = EventHandler<Event, AbortSignal, _> { event ->
+    val abortHandler = EventHandler<Event, AbortSignal, AbortSignal, _> { event ->
         handlers.forEach { it() }
 
         controller.abort(event.currentTarget.reason)

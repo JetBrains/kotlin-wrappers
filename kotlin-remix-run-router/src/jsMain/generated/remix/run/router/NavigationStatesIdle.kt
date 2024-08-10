@@ -2,7 +2,6 @@
 
 package remix.run.router
 
-
 sealed external interface NavigationStatesIdle {
     var state: String /* "idle" */
     var location: Nothing?

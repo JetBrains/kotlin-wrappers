@@ -4,9 +4,8 @@
 
 package node.fs
 
-
 /**
- * Asynchronously removes files and directories (modeled on the standard POSIX `rm`utility). No arguments other than a possible exception are given to the
+ * Asynchronously removes files and directories (modeled on the standard POSIX `rm` utility). No arguments other than a possible exception are given to the
  * completion callback.
  * @since v14.14.0
  */

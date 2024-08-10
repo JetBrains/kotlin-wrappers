@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.promise.PromiseResult
 import web.html.HTMLCanvasElement
 
 /**
@@ -35,13 +36,13 @@ external class PinBuilder {
         url: Resource,
         color: Color,
         size: Double,
-    ): dynamic
+    ): PromiseResult<HTMLCanvasElement>
 
     fun fromUrl(
         url: String,
         color: Color,
         size: Double,
-    ): dynamic
+    ): PromiseResult<HTMLCanvasElement>
 
     /**
      * Creates a pin with the specified [maki](https://www.mapbox.com/maki/) icon identifier, color, and size.
@@ -55,7 +56,7 @@ external class PinBuilder {
         id: String,
         color: Color,
         size: Double,
-    ): dynamic
+    ): PromiseResult<HTMLCanvasElement>
 
     /**
      * Creates a pin with the specified text, color, and size.  The text will be sized to be as large as possible

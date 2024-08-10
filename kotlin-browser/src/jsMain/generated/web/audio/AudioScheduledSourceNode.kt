@@ -13,7 +13,7 @@ sealed external class AudioScheduledSourceNode :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioScheduledSourceNode/ended_event)
      */
-    var onended: EventHandler<Event, AudioScheduledSourceNode>?
+    var onended: EventHandler<Event, AudioScheduledSourceNode, AudioScheduledSourceNode>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioScheduledSourceNode/start)

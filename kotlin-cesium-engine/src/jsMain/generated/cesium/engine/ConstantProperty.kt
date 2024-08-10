@@ -12,7 +12,9 @@ package cesium.engine
  * @param [value] The property value.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ConstantProperty.html">Online Documentation</a>
  */
-external class ConstantProperty(value: Any? = definedExternally) {
+external class ConstantProperty(
+    value: Any? = definedExternally,
+) {
     /**
      * Gets a value indicating if this property is constant.
      * This property always returns `true`.

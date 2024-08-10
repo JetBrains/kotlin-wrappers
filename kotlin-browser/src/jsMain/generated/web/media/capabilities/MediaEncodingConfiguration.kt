@@ -2,10 +2,10 @@
 
 package web.media.capabilities
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface MediaEncodingConfiguration :
+external interface MediaEncodingConfiguration :
     MediaConfiguration {
     var type: MediaEncodingType
 }

@@ -3,10 +3,10 @@
 package web.payment
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface PaymentDetailsModifier {
+external interface PaymentDetailsModifier {
     var additionalDisplayItems: ReadonlyArray<PaymentItem>?
     var data: Any?
     var supportedMethods: String

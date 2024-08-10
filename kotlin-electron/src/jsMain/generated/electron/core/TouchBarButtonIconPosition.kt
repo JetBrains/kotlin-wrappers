@@ -2,8 +2,6 @@
 
 package electron.core
 
-
-@seskar.js.JsVirtual
 sealed external interface TouchBarButtonIconPosition {
     companion object {
         @seskar.js.JsValue("left")

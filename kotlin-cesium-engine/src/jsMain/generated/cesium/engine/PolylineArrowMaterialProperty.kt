@@ -10,9 +10,13 @@ package cesium.engine
  */
 external class PolylineArrowMaterialProperty() :
     MaterialProperty {
-    constructor(color: Property)
+    constructor(
+        color: Property,
+    )
 
-    constructor(color: Color)
+    constructor(
+        color: Color,
+    )
 
     /**
      * Gets a value indicating if this property is constant.  A property is considered

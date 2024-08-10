@@ -4,12 +4,11 @@
 
 package node.crypto
 
-
 /**
- * Creates and returns a `Decipher` object that uses the given `algorithm` and`password` (key).
+ * Creates and returns a `Decipher` object that uses the given `algorithm` and `password` (key).
  *
  * The `options` argument controls stream behavior and is optional except when a
- * cipher in CCM or OCB mode (e.g. `'aes-128-ccm'`) is used. In that case, the`authTagLength` option is required and specifies the length of the
+ * cipher in CCM or OCB mode (e.g. `'aes-128-ccm'`) is used. In that case, the `authTagLength` option is required and specifies the length of the
  * authentication tag in bytes, see `CCM mode`.
  * For `chacha20-poly1305`, the `authTagLength` option defaults to 16 bytes.
  *

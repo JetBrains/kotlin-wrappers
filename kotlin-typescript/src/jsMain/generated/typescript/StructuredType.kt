@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface StructuredType /* ObjectType | UnionType | IntersectionType */
+sealed external interface StructuredType

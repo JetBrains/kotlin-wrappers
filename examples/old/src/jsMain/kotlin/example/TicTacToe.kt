@@ -1,5 +1,6 @@
 package example
 
+import js.array.ReadonlyArray
 import react.FC
 import react.Props
 import react.dom.html.ReactHTML.button
@@ -31,7 +32,7 @@ val Square = FC<SquareProps> { props ->
 }
 
 external interface BoardProps : Props {
-    var squares: Array<String?>
+    var squares: ReadonlyArray<String?>
     var onClick: (Int) -> Unit
 }
 
@@ -90,7 +91,7 @@ val Board = FC<BoardProps> { props ->
 
 external interface TicTacToeProps : Props
 
-private fun calculateWinner(squares: Array<String?>): String? {
+private fun calculateWinner(squares: ReadonlyArray<String?>): String? {
     val lines = arrayOf(
         intArrayOf(0, 1, 2),
         intArrayOf(3, 4, 5),

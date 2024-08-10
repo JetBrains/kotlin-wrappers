@@ -2,10 +2,10 @@
 
 package web.gpu
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GPUColorDict {
+external interface GPUColorDict {
     var r: Double
     var g: Double
     var b: Double

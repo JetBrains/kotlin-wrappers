@@ -2,10 +2,10 @@
 
 package web.assembly
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface ModuleExportDescriptor {
+external interface ModuleExportDescriptor {
     var kind: ImportExportKind
     var name: String
 }

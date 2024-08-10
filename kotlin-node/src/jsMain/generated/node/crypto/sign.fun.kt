@@ -4,7 +4,6 @@
 
 package node.crypto
 
-
 /**
  * Calculates and returns the signature for `data` using the given private key and
  * algorithm. If `algorithm` is `null` or `undefined`, then the algorithm is

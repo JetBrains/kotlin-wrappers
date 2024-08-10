@@ -7,7 +7,7 @@ package node.fs
 import js.promise.Promise
 
 /**
- * Determines the actual location of `path` using the same semantics as the`fs.realpath.native()` function.
+ * Determines the actual location of `path` using the same semantics as the `fs.realpath.native()` function.
  *
  * Only paths that can be converted to UTF8 strings are supported.
  *
@@ -28,7 +28,7 @@ external fun realpathAsync(path: PathLike): Promise<String>
 
 
 /**
- * Determines the actual location of `path` using the same semantics as the`fs.realpath.native()` function.
+ * Determines the actual location of `path` using the same semantics as the `fs.realpath.native()` function.
  *
  * Only paths that can be converted to UTF8 strings are supported.
  *
@@ -49,7 +49,7 @@ external fun realpathAsync(path: PathLike, options: ObjectEncodingOptions? = def
 
 
 /**
- * Determines the actual location of `path` using the same semantics as the`fs.realpath.native()` function.
+ * Determines the actual location of `path` using the same semantics as the `fs.realpath.native()` function.
  *
  * Only paths that can be converted to UTF8 strings are supported.
  *

@@ -4,7 +4,6 @@
 
 package node.crypto
 
-
 /**
  * Creates a predefined `DiffieHellmanGroup` key exchange object. The
  * supported groups are listed in the documentation for `DiffieHellmanGroup`.

@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 
 /**
  * A spline that is composed of piecewise constants representing a step function.
@@ -31,7 +26,9 @@ import js.objects.jso
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SteppedSpline.html">Online Documentation</a>
  */
-external class SteppedSpline(options: ConstructorOptions) {
+external class SteppedSpline(
+    options: ConstructorOptions,
+) {
     /**
      * @property [times] An array of strictly increasing, unit-less, floating-point times at each point. The values are in no way connected to the clock time. They are the parameterization for the curve.
      * @property [points] The array of control points.
@@ -39,7 +36,7 @@ external class SteppedSpline(options: ConstructorOptions) {
     @JsPlainObject
     sealed interface ConstructorOptions {
         var times: ReadonlyArray<Double>
-        var points: dynamic
+        var points: ReadonlyArray<Any> /* number[] | Cartesian3[] | Quaternion[] */
     }
 
     /**
@@ -52,7 +49,7 @@ external class SteppedSpline(options: ConstructorOptions) {
      * An array of control points.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SteppedSpline.html#points">Online Documentation</a>
      */
-    val points: dynamic
+    val points: ReadonlyArray<Any> /* number[] | Cartesian3[] | Quaternion[] */
 
     /**
      * Finds an index `i` in `times` such that the parameter
@@ -92,11 +89,6 @@ external class SteppedSpline(options: ConstructorOptions) {
      */
     fun evaluate(
         time: Double,
-        result: dynamic = definedExternally,
-    ): dynamic
+        result: Any /* Cartesian3 | Quaternion */? = definedExternally,
+    ): Any /* number | Cartesian3 | Quaternion */
 }
-
-inline fun SteppedSpline(
-    block: SteppedSpline.ConstructorOptions.() -> Unit,
-): SteppedSpline =
-    SteppedSpline(options = jso(block))

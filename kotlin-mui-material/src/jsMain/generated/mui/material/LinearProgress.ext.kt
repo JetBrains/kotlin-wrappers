@@ -3,9 +3,7 @@
 package mui.material
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface LinearProgressColor {
     companion object {
         @JsValue("primary")
@@ -31,7 +29,6 @@ sealed external interface LinearProgressColor {
     }
 }
 
-@JsVirtual
 sealed external interface LinearProgressVariant {
     companion object {
         @JsValue("determinate")

@@ -20,7 +20,6 @@ import js.typedarrays.Uint8Array
  * it to interact with the client.
  * @since v0.3.4
  */
-
 open external class Socket : node.stream.Duplex {
     constructor (options: SocketConstructorOpts = definedExternally)
 
@@ -262,7 +261,7 @@ open external class Socket : node.stream.Duplex {
     val bytesWritten: Double
 
     /**
-     * If `true`,`socket.connect(options[, connectListener])` was
+     * If `true`, `socket.connect(options[, connectListener])` was
      * called and has not yet finished. It will stay `true` until the socket becomes
      * connected, then it is set to `false` and the `'connect'` event is emitted. Note
      * that the `socket.connect(options[, connectListener])` callback is a listener for the `'connect'` event.
@@ -368,17 +367,35 @@ open external class Socket : node.stream.Duplex {
      * events.EventEmitter
      *   1. close
      *   2. connect
-     *   3. data
-     *   4. drain
-     *   5. end
-     *   6. error
-     *   7. lookup
-     *   8. ready
-     *   9. timeout
+     *   3. connectionAttempt
+     *   4. connectionAttemptFailed
+     *   5. connectionAttemptTimeout
+     *   6. data
+     *   7. drain
+     *   8. end
+     *   9. error
+     *   10. lookup
+     *   11. ready
+     *   12. timeout
      */
     override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun addListener(event: SocketEvent.CLOSE, listener: (hadError: Boolean) -> Unit): Unit /* this */
     fun addListener(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
+    fun addListener(
+        event: SocketEvent.CONNECTIONATTEMPT,
+        listener: (ip: String, port: Double, family: Double) -> Unit,
+    ): Unit /* this */
+
+    fun addListener(
+        event: SocketEvent.CONNECTIONATTEMPTFAILED,
+        listener: (ip: String, port: Double, family: Double) -> Unit,
+    ): Unit /* this */
+
+    fun addListener(
+        event: SocketEvent.CONNECTIONATTEMPTTIMEOUT,
+        listener: (ip: String, port: Double, family: Double) -> Unit,
+    ): Unit /* this */
+
     fun addListener(event: SocketEvent.DATA, listener: (data: node.buffer.Buffer) -> Unit): Unit /* this */
     fun addListener(event: SocketEvent.DRAIN, listener: () -> Unit): Unit /* this */
     fun addListener(event: SocketEvent.END, listener: () -> Unit): Unit /* this */
@@ -395,6 +412,9 @@ open external class Socket : node.stream.Duplex {
     override fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
     fun emit(event: SocketEvent.CLOSE, hadError: Boolean): Boolean
     fun emit(event: SocketEvent.CONNECT): Boolean
+    fun emit(event: SocketEvent.CONNECTIONATTEMPT, ip: String, port: Number, family: Number): Boolean
+    fun emit(event: SocketEvent.CONNECTIONATTEMPTFAILED, ip: String, port: Number, family: Number): Boolean
+    fun emit(event: SocketEvent.CONNECTIONATTEMPTTIMEOUT, ip: String, port: Number, family: Number): Boolean
     fun emit(event: SocketEvent.DATA, data: node.buffer.Buffer): Boolean
     fun emit(event: SocketEvent.DRAIN): Boolean
     fun emit(event: SocketEvent.END): Boolean
@@ -420,6 +440,21 @@ open external class Socket : node.stream.Duplex {
     override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun on(event: SocketEvent.CLOSE, listener: (hadError: Boolean) -> Unit): Unit /* this */
     fun on(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
+    fun on(
+        event: SocketEvent.CONNECTIONATTEMPT,
+        listener: (ip: String, port: Double, family: Double) -> Unit,
+    ): Unit /* this */
+
+    fun on(
+        event: SocketEvent.CONNECTIONATTEMPTFAILED,
+        listener: (ip: String, port: Double, family: Double) -> Unit,
+    ): Unit /* this */
+
+    fun on(
+        event: SocketEvent.CONNECTIONATTEMPTTIMEOUT,
+        listener: (ip: String, port: Double, family: Double) -> Unit,
+    ): Unit /* this */
+
     fun on(event: SocketEvent.DATA, listener: (data: node.buffer.Buffer) -> Unit): Unit /* this */
     fun on(event: SocketEvent.DRAIN, listener: () -> Unit): Unit /* this */
     fun on(event: SocketEvent.END, listener: () -> Unit): Unit /* this */
@@ -433,6 +468,21 @@ open external class Socket : node.stream.Duplex {
     fun on(event: SocketEvent.TIMEOUT, listener: () -> Unit): Unit /* this */
     override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun once(event: SocketEvent.CLOSE, listener: (hadError: Boolean) -> Unit): Unit /* this */
+    fun once(
+        event: SocketEvent.CONNECTIONATTEMPT,
+        listener: (ip: String, port: Double, family: Double) -> Unit,
+    ): Unit /* this */
+
+    fun once(
+        event: SocketEvent.CONNECTIONATTEMPTFAILED,
+        listener: (ip: String, port: Double, family: Double) -> Unit,
+    ): Unit /* this */
+
+    fun once(
+        event: SocketEvent.CONNECTIONATTEMPTTIMEOUT,
+        listener: (ip: String, port: Double, family: Double) -> Unit,
+    ): Unit /* this */
+
     fun once(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
     fun once(event: SocketEvent.DATA, listener: (data: node.buffer.Buffer) -> Unit): Unit /* this */
     fun once(event: SocketEvent.DRAIN, listener: () -> Unit): Unit /* this */
@@ -452,6 +502,21 @@ open external class Socket : node.stream.Duplex {
 
     fun prependListener(event: SocketEvent.CLOSE, listener: (hadError: Boolean) -> Unit): Unit /* this */
     fun prependListener(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
+    fun prependListener(
+        event: SocketEvent.CONNECTIONATTEMPT,
+        listener: (ip: String, port: Double, family: Double) -> Unit,
+    ): Unit /* this */
+
+    fun prependListener(
+        event: SocketEvent.CONNECTIONATTEMPTFAILED,
+        listener: (ip: String, port: Double, family: Double) -> Unit,
+    ): Unit /* this */
+
+    fun prependListener(
+        event: SocketEvent.CONNECTIONATTEMPTTIMEOUT,
+        listener: (ip: String, port: Double, family: Double) -> Unit,
+    ): Unit /* this */
+
     fun prependListener(event: SocketEvent.DATA, listener: (data: node.buffer.Buffer) -> Unit): Unit /* this */
     fun prependListener(event: SocketEvent.DRAIN, listener: () -> Unit): Unit /* this */
     fun prependListener(event: SocketEvent.END, listener: () -> Unit): Unit /* this */
@@ -470,6 +535,21 @@ open external class Socket : node.stream.Duplex {
 
     fun prependOnceListener(event: SocketEvent.CLOSE, listener: (hadError: Boolean) -> Unit): Unit /* this */
     fun prependOnceListener(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
+    fun prependOnceListener(
+        event: SocketEvent.CONNECTIONATTEMPT,
+        listener: (ip: String, port: Double, family: Double) -> Unit,
+    ): Unit /* this */
+
+    fun prependOnceListener(
+        event: SocketEvent.CONNECTIONATTEMPTFAILED,
+        listener: (ip: String, port: Double, family: Double) -> Unit,
+    ): Unit /* this */
+
+    fun prependOnceListener(
+        event: SocketEvent.CONNECTIONATTEMPTTIMEOUT,
+        listener: (ip: String, port: Double, family: Double) -> Unit,
+    ): Unit /* this */
+
     fun prependOnceListener(event: SocketEvent.DATA, listener: (data: node.buffer.Buffer) -> Unit): Unit /* this */
     fun prependOnceListener(event: SocketEvent.DRAIN, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(event: SocketEvent.END, listener: () -> Unit): Unit /* this */

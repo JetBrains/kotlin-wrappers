@@ -1,16 +1,18 @@
 package react
 
-import react.internal.createEffectCallback
+import kotlinx.coroutines.CoroutineScope
+import react.internal.createCleanupCallback
+import react.raw.useLayoutEffectRaw
 
 /**
  * Only works inside [fc]
  * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
  */
 fun useLayoutEffect(
-    effect: EffectBuilder.() -> Unit,
+    effect: suspend CoroutineScope.() -> Unit,
 ) {
-    val callback = createEffectCallback(effect)
-    rawUseLayoutEffect(callback)
+    val callback = createCleanupCallback(effect)
+    useLayoutEffectRaw(callback)
 }
 
 /**
@@ -19,10 +21,10 @@ fun useLayoutEffect(
  */
 fun useLayoutEffect(
     vararg dependencies: Any?,
-    effect: EffectBuilder.() -> Unit,
+    effect: suspend CoroutineScope.() -> Unit,
 ) {
-    val callback = createEffectCallback(effect)
-    rawUseLayoutEffect(callback, dependencies)
+    val callback = createCleanupCallback(effect)
+    useLayoutEffectRaw(callback, dependencies)
 }
 
 /**
@@ -30,8 +32,8 @@ fun useLayoutEffect(
  * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
  */
 fun useLayoutEffectOnce(
-    effect: EffectBuilder.() -> Unit,
+    effect: suspend CoroutineScope.() -> Unit,
 ) {
-    val callback = createEffectCallback(effect)
-    rawUseLayoutEffect(callback, emptyArray())
+    val callback = createCleanupCallback(effect)
+    useLayoutEffectRaw(callback, emptyArray())
 }

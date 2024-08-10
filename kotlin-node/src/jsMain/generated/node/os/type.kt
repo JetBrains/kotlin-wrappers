@@ -4,7 +4,6 @@
 
 package node.os
 
-
 /**
  * Returns the operating system name as returned by [`uname(3)`](https://linux.die.net/man/3/uname). For example, it
  * returns `'Linux'` on Linux, `'Darwin'` on macOS, and `'Windows_NT'` on Windows.

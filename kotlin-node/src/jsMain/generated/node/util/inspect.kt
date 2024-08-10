@@ -4,12 +4,11 @@
 
 package node.util
 
-
 /**
  * The `util.inspect()` method returns a string representation of `object` that is
  * intended for debugging. The output of `util.inspect` may change at any time
  * and should not be depended upon programmatically. Additional `options` may be
- * passed that alter the result.`util.inspect()` will use the constructor's name and/or `@@toStringTag` to make
+ * passed that alter the result. `util.inspect()` will use the constructor's name and/or `@@toStringTag` to make
  * an identifiable tag for an inspected value.
  *
  * ```js

@@ -14,27 +14,114 @@ external class DOMMatrix(
 ) : DOMMatrixReadOnly {
     constructor(init: ReadonlyArray<Double>)
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     */
     override var a: Double
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     */
     override var b: Double
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     */
     override var c: Double
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     */
     override var d: Double
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     */
     override var e: Double
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     */
     override var f: Double
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     */
     override var m11: Double
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     */
     override var m12: Double
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     */
     override var m13: Double
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     */
     override var m14: Double
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     */
     override var m21: Double
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     */
     override var m22: Double
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     */
     override var m23: Double
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     */
     override var m24: Double
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     */
     override var m31: Double
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     */
     override var m32: Double
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     */
     override var m33: Double
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     */
     override var m34: Double
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     */
     override var m41: Double
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     */
     override var m42: Double
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     */
     override var m43: Double
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     */
     override var m44: Double
     fun invertSelf(): DOMMatrix
     fun multiplySelf(other: DOMMatrixInit = definedExternally): DOMMatrix
@@ -59,9 +146,6 @@ external class DOMMatrix(
         rotZ: Double = definedExternally,
     ): DOMMatrix
 
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/scale3dSelf)
-     */
     fun scale3dSelf(
         scale: Double = definedExternally,
         originX: Double = definedExternally,
@@ -69,9 +153,6 @@ external class DOMMatrix(
         originZ: Double = definedExternally,
     ): DOMMatrix
 
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/scaleSelf)
-     */
     fun scaleSelf(
         scaleX: Double = definedExternally,
         scaleY: Double = definedExternally,

@@ -16,9 +16,17 @@ external interface ARIAMixin {
     var ariaAutoComplete: String?
         get() = definedExternally
         set(value) = definedExternally
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaBrailleLabel)
+     */
     var ariaBrailleLabel: String?
         get() = definedExternally
         set(value) = definedExternally
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaBrailleRoleDescription)
+     */
     var ariaBrailleRoleDescription: String?
         get() = definedExternally
         set(value) = definedExternally
@@ -48,6 +56,13 @@ external interface ARIAMixin {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaColIndex)
      */
     var ariaColIndex: String?
+        get() = definedExternally
+        set(value) = definedExternally
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaColIndexText)
+     */
+    var ariaColIndexText: String?
         get() = definedExternally
         set(value) = definedExternally
 
@@ -212,6 +227,13 @@ external interface ARIAMixin {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaRowIndex)
      */
     var ariaRowIndex: String?
+        get() = definedExternally
+        set(value) = definedExternally
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaRowIndexText)
+     */
+    var ariaRowIndexText: String?
         get() = definedExternally
         set(value) = definedExternally
 

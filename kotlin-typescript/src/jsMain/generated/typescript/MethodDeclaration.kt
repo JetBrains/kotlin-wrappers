@@ -3,9 +3,10 @@
 package typescript
 
 sealed external interface MethodDeclaration : FunctionLikeDeclarationBase, ClassElement, ObjectLiteralElement,
-    JSDocContainer, LocalsContainer, FlowContainer, Union.MethodDeclaration_ {
+    JSDocContainer, LocalsContainer, FlowContainer, HasJSDoc, HasDecorators, HasModifiers, SignatureDeclaration,
+    ObjectLiteralElementLike, FunctionLikeDeclaration, FlowStartNode, NodeFactoryReplacePropertyNameTConstraint {
     override val kind: SyntaxKind.MethodDeclaration
-    override val parent: Union.MethodDeclaration_parent
+    override val parent: MethodDeclarationParent
     val modifiers: NodeArray<ModifierLike>?
     override val name: PropertyName
     override val body: FunctionBody?

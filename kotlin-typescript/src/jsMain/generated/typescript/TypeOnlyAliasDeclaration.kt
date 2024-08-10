@@ -2,5 +2,4 @@
 
 package typescript
 
-sealed external interface TypeOnlyAliasDeclaration :
-    ImportClause /* TypeOnlyImportDeclaration | TypeOnlyExportDeclaration */
+sealed external interface TypeOnlyAliasDeclaration

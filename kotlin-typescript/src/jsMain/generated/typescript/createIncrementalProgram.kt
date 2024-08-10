@@ -4,4 +4,6 @@
 
 package typescript
 
-external fun <T : BuilderProgram /* = EmitAndSemanticDiagnosticsBuilderProgram */> createIncrementalProgram(options: IncrementalProgramOptions<T>): T
+external fun <T : BuilderProgram /* default is EmitAndSemanticDiagnosticsBuilderProgram */> createIncrementalProgram(
+    options: IncrementalProgramOptions<T>,
+): T

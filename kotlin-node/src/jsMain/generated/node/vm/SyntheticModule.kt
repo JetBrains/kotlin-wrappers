@@ -4,7 +4,6 @@
 
 package node.vm
 
-
 /**
  * This feature is only available with the `--experimental-vm-modules` command
  * flag enabled.
@@ -28,7 +27,6 @@ package node.vm
  * @since v13.0.0, v12.16.0
  * @experimental
  */
-
 external class SyntheticModule : Module {
     /**
      * Creates a new `SyntheticModule` instance.

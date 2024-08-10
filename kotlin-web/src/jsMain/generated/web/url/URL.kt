@@ -107,10 +107,43 @@ external class URL(
             base: String = definedExternally,
         ): Boolean
 
+        fun canParse(
+            url: String,
+            base: URL,
+        ): Boolean
+
+        fun canParse(
+            url: URL,
+            base: URL,
+        ): Boolean
+
         /**
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/createObjectURL_static)
          */
         fun createObjectURL(obj: Blob /* | MediaSource */): String
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/parse_static)
+         */
+        fun parse(
+            url: String,
+            base: String = definedExternally,
+        ): URL?
+
+        fun parse(
+            url: URL,
+            base: String = definedExternally,
+        ): URL?
+
+        fun parse(
+            url: String,
+            base: URL,
+        ): URL?
+
+        fun parse(
+            url: URL,
+            base: URL,
+        ): URL?
 
         /**
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/revokeObjectURL_static)

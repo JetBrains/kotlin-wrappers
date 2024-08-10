@@ -3,9 +3,7 @@
 package mui.material
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface RadioColor {
     companion object {
         @JsValue("primary")

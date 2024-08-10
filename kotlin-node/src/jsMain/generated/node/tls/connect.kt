@@ -4,7 +4,6 @@
 
 package node.tls
 
-
 /**
  * The `callback` function, if specified, will be added as a listener for the `'secureConnect'` event.
  *

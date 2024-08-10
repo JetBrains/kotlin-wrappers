@@ -29,15 +29,5 @@ external interface DateTimePickerSlotsComponent
 
 external interface DateTimePickerSlotsComponentsProps : react.Props
 
-/**
- *
- * Demos:
- *
- * - [Date Time Picker](https://mui.com/x/react-date-pickers/date-time-picker/)
- * - [Pickers](https://mui.com/x/react-date-pickers/)
- *
- * API:
- *
- * - [DateTimePicker API](https://mui.com/x/api/date-pickers/date-time-picker/)
- */
+
 external val DateTimePicker: react.FC<DateTimePickerProps>

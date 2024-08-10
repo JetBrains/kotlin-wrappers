@@ -16,7 +16,7 @@ package cesium.engine
  * @property [entity] The entity to track with the camera.
  * @property [scene] The scene to use.
  * @property [ellipsoid] The ellipsoid to use for orienting the camera.
- *   Default value - [Ellipsoid.WGS84]
+ *   Default value - [Ellipsoid.default]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EntityView.html">Online Documentation</a>
  */
 external class EntityView(

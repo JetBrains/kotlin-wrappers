@@ -4,10 +4,9 @@
 
 package node.util
 
-
 /**
  * The `util.format()` method returns a formatted string using the first argument
- * as a `printf`\-like format string which can contain zero or more format
+ * as a `printf`-like format string which can contain zero or more format
  * specifiers. Each specifier is replaced with the converted value from the
  * corresponding argument. Supported specifiers are:
  *
@@ -18,7 +17,7 @@ package node.util
  * // Returns: 'foo:%s'
  * ```
  *
- * Values that are not part of the format string are formatted using`util.inspect()` if their type is not `string`.
+ * Values that are not part of the format string are formatted using `util.inspect()` if their type is not `string`.
  *
  * If there are more arguments passed to the `util.format()` method than the
  * number of specifiers, the extra arguments are concatenated to the returned
@@ -29,7 +28,7 @@ package node.util
  * // Returns: 'foo:bar baz'
  * ```
  *
- * If the first argument does not contain a valid format specifier, `util.format()`returns a string that is the concatenation of all arguments separated by spaces:
+ * If the first argument does not contain a valid format specifier, `util.format()` returns a string that is the concatenation of all arguments separated by spaces:
  *
  * ```js
  * util.format(1, 2, 3);

@@ -2,8 +2,6 @@
 
 package electron.core
 
-
-@seskar.js.JsVirtual
 sealed external interface BluetoothPairingHandlerHandlerDetailsPairingKind {
     companion object {
         @seskar.js.JsValue("confirm")

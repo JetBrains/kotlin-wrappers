@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 
 /**
  * A description of a polyline with a volume (a 2D shape extruded along a polyline).
@@ -34,12 +29,14 @@ import js.objects.jso
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineVolumeOutlineGeometry.html">Online Documentation</a>
  */
-external class PolylineVolumeOutlineGeometry(options: ConstructorOptions) {
+external class PolylineVolumeOutlineGeometry(
+    options: ConstructorOptions,
+) {
     /**
      * @property [polylinePositions] An array of positions that define the center of the polyline volume.
      * @property [shapePositions] An array of positions that define the shape to be extruded along the polyline
      * @property [ellipsoid] The ellipsoid to be used as a reference.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @property [granularity] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
      *   Default value - [Math.RADIANS_PER_DEGREE]
      * @property [cornerType] Determines the style of the corners.
@@ -100,8 +97,3 @@ external class PolylineVolumeOutlineGeometry(options: ConstructorOptions) {
         fun createGeometry(polylineVolumeOutlineGeometry: PolylineVolumeOutlineGeometry): Geometry?
     }
 }
-
-inline fun PolylineVolumeOutlineGeometry(
-    block: PolylineVolumeOutlineGeometry.ConstructorOptions.() -> Unit,
-): PolylineVolumeOutlineGeometry =
-    PolylineVolumeOutlineGeometry(options = jso(block))

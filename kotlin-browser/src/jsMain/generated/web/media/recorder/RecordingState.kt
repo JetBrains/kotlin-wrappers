@@ -3,9 +3,7 @@
 package web.media.recorder
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface RecordingState {
     companion object {
         @JsValue("inactive")

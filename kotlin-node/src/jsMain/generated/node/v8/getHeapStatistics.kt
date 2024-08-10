@@ -4,11 +4,10 @@
 
 package node.v8
 
-
 /**
  * Returns an object with the following properties:
  *
- * `does_zap_garbage` is a 0/1 boolean, which signifies whether the`--zap_code_space` option is enabled or not. This makes V8 overwrite heap
+ * `does_zap_garbage` is a 0/1 boolean, which signifies whether the `--zap_code_space` option is enabled or not. This makes V8 overwrite heap
  * garbage with a bit pattern. The RSS footprint (resident set size) gets bigger
  * because it continuously touches all heap pages and that makes them less likely
  * to get swapped out by the operating system.

@@ -3,9 +3,7 @@
 package web.transport
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface WebTransportErrorSource {
     companion object {
         @JsValue("session")

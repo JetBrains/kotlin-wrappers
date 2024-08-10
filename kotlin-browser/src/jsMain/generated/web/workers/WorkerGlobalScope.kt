@@ -34,22 +34,30 @@ abstract external class WorkerGlobalScope :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/error_event)
      */
-    var onerror: EventHandler<ErrorEvent, WorkerGlobalScope>?
+    var onerror: EventHandler<ErrorEvent, WorkerGlobalScope, WorkerGlobalScope>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/languagechange_event)
      */
-    var onlanguagechange: EventHandler<Event, WorkerGlobalScope>?
+    var onlanguagechange: EventHandler<Event, WorkerGlobalScope, WorkerGlobalScope>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/offline_event)
      */
-    var onoffline: EventHandler<Event, WorkerGlobalScope>?
+    var onoffline: EventHandler<Event, WorkerGlobalScope, WorkerGlobalScope>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/online_event)
      */
-    var ononline: EventHandler<Event, WorkerGlobalScope>?
-    var onrejectionhandled: EventHandler<PromiseRejectionEvent, WorkerGlobalScope>?
-    var onunhandledrejection: EventHandler<PromiseRejectionEvent, WorkerGlobalScope>?
+    var ononline: EventHandler<Event, WorkerGlobalScope, WorkerGlobalScope>?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/rejectionhandled_event)
+     */
+    var onrejectionhandled: EventHandler<PromiseRejectionEvent, WorkerGlobalScope, WorkerGlobalScope>?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/unhandledrejection_event)
+     */
+    var onunhandledrejection: EventHandler<PromiseRejectionEvent, WorkerGlobalScope, WorkerGlobalScope>?
 }

@@ -2,17 +2,12 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.core.Void
-import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
+import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync
 
 /**
@@ -70,7 +65,9 @@ import seskar.js.JsAsync
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html">Online Documentation</a>
  */
-external class WebMapTileServiceImageryProvider(options: ConstructorOptions) {
+external class WebMapTileServiceImageryProvider(
+    options: ConstructorOptions,
+) {
     /**
      * Gets the URL of the service hosting the imagery.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#url">Online Documentation</a>
@@ -289,8 +286,3 @@ external class WebMapTileServiceImageryProvider(options: ConstructorOptions) {
         var subdomains: ReadonlyArray<String>?
     }
 }
-
-inline fun WebMapTileServiceImageryProvider(
-    block: WebMapTileServiceImageryProvider.ConstructorOptions.() -> Unit,
-): WebMapTileServiceImageryProvider =
-    WebMapTileServiceImageryProvider(options = jso(block))

@@ -2,9 +2,9 @@
 
 package web.rtc
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface RTCRtpCodingParameters {
+external interface RTCRtpCodingParameters {
     var rid: String?
 }

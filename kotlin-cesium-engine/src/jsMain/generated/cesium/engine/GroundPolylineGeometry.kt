@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 
 /**
  * A description of a polyline on terrain or 3D Tiles. Only to be used with [GroundPolylinePrimitive].
@@ -31,7 +26,9 @@ import js.objects.jso
  * @param [options] Options with the following properties:
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GroundPolylineGeometry.html">Online Documentation</a>
  */
-external class GroundPolylineGeometry(options: ConstructorOptions) {
+external class GroundPolylineGeometry(
+    options: ConstructorOptions,
+) {
     /**
      * @property [positions] An array of [Cartesian3] defining the polyline's points. Heights above the ellipsoid will be ignored.
      * @property [width] The screen space width in pixels.
@@ -109,8 +106,3 @@ external class GroundPolylineGeometry(options: ConstructorOptions) {
         )
     }
 }
-
-inline fun GroundPolylineGeometry(
-    block: GroundPolylineGeometry.ConstructorOptions.() -> Unit,
-): GroundPolylineGeometry =
-    GroundPolylineGeometry(options = jso(block))

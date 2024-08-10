@@ -11,7 +11,6 @@ import js.errors.SyntaxError
  *
  * @see https://nodejs.org/dist/latest-v20.x/docs/api/repl.html#repl_recoverable_errors
  */
-
 external class Recoverable : SyntaxError {
     constructor (err: Throwable /* JsError */)
 

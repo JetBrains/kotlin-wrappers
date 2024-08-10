@@ -2,10 +2,10 @@
 
 package js.intl
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface DisplayNamesOptions {
+external interface DisplayNamesOptions {
     var localeMatcher: LocaleMatcher?
     var style: RelativeTimeFormatStyle?
     var type: DisplayNamesType

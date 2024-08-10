@@ -2,22 +2,19 @@
 
 @file:JsModule("@cesium/widgets")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.widgets
 
 import cesium.engine.Globe
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 
 /**
  * The view model for [BaseLayerPicker].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BaseLayerPickerViewModel.html">Online Documentation</a>
  */
-external class BaseLayerPickerViewModel(options: ConstructorOptions) {
+external class BaseLayerPickerViewModel(
+    options: ConstructorOptions,
+) {
     /**
      * @property [globe] The Globe to use.
      * @property [imageryProviderViewModels] The array of ProviderViewModel instances to use for imagery.
@@ -92,8 +89,3 @@ external class BaseLayerPickerViewModel(options: ConstructorOptions) {
      */
     var globe: Globe
 }
-
-inline fun BaseLayerPickerViewModel(
-    block: BaseLayerPickerViewModel.ConstructorOptions.() -> Unit,
-): BaseLayerPickerViewModel =
-    BaseLayerPickerViewModel(options = jso(block))

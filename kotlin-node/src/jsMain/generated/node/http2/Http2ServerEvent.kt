@@ -3,7 +3,6 @@
 package node.http2
 
 
-@seskar.js.JsVirtual
 sealed external interface Http2ServerEvent {
     sealed interface CHECKCONTINUE : node.events.LegacyEventType
     sealed interface REQUEST : node.events.LegacyEventType

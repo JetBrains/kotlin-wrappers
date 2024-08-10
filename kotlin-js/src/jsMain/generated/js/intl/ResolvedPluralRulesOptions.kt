@@ -3,10 +3,10 @@
 package js.intl
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface ResolvedPluralRulesOptions {
+external interface ResolvedPluralRulesOptions {
     var locale: String
     var pluralCategories: ReadonlyArray<LDMLPluralRule>
     var type: PluralRuleType

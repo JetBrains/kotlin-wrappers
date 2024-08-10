@@ -2,10 +2,10 @@
 
 package web.scroll
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface ScrollIntoViewOptions :
+external interface ScrollIntoViewOptions :
     ScrollOptions {
     var block: ScrollLogicalPosition?
     var inline: ScrollLogicalPosition?

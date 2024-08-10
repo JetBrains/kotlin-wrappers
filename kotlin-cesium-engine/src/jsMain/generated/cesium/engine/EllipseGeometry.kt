@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 
 /**
  * A description of an ellipse on an ellipsoid. Ellipse geometry can be rendered with both [Primitive] and [GroundPrimitive].
@@ -26,13 +21,15 @@ import js.objects.jso
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipseGeometry.html">Online Documentation</a>
  */
-external class EllipseGeometry(options: ConstructorOptions) {
+external class EllipseGeometry(
+    options: ConstructorOptions,
+) {
     /**
      * @property [center] The ellipse's center point in the fixed frame.
      * @property [semiMajorAxis] The length of the ellipse's semi-major axis in meters.
      * @property [semiMinorAxis] The length of the ellipse's semi-minor axis in meters.
      * @property [ellipsoid] The ellipsoid the ellipse will be on.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @property [height] The distance in meters between the ellipse and the ellipsoid surface.
      *   Default value - `0.0`
      * @property [extrudedHeight] The distance in meters between the ellipse's extruded face and the ellipsoid surface.
@@ -112,7 +109,7 @@ external class EllipseGeometry(options: ConstructorOptions) {
          * @property [semiMajorAxis] The length of the ellipse's semi-major axis in meters.
          * @property [semiMinorAxis] The length of the ellipse's semi-minor axis in meters.
          * @property [ellipsoid] The ellipsoid the ellipse will be on.
-         *   Default value - [Ellipsoid.WGS84]
+         *   Default value - [Ellipsoid.default]
          * @property [rotation] The angle of rotation counter-clockwise from north.
          *   Default value - `0.0`
          * @property [granularity] The angular distance between points on the ellipse in radians.
@@ -137,8 +134,3 @@ external class EllipseGeometry(options: ConstructorOptions) {
         fun createGeometry(ellipseGeometry: EllipseGeometry): Geometry?
     }
 }
-
-inline fun EllipseGeometry(
-    block: EllipseGeometry.ConstructorOptions.() -> Unit,
-): EllipseGeometry =
-    EllipseGeometry(options = jso(block))

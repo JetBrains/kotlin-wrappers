@@ -15,122 +15,114 @@ open external class DOMMatrixReadOnly(
     constructor(init: ReadonlyArray<Double>)
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/a)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
     open val a: Double
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/b)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
     open val b: Double
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/c)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
     open val c: Double
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/d)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
     open val d: Double
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/e)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
     open val e: Double
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/f)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
     open val f: Double
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/is2D)
-     */
     open val is2D: Boolean
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/isIdentity)
-     */
     open val isIdentity: Boolean
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/m11)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
     open val m11: Double
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/m12)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
     open val m12: Double
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/m13)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
     open val m13: Double
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/m14)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
     open val m14: Double
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/m21)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
     open val m21: Double
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/m22)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
     open val m22: Double
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/m23)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
     open val m23: Double
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/m24)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
     open val m24: Double
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/m31)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
     open val m31: Double
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/m32)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
     open val m32: Double
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/m33)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
     open val m33: Double
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/m34)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
     open val m34: Double
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/m41)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
     open val m41: Double
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/m42)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
     open val m42: Double
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/m43)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
     open val m43: Double
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/m44)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
     open val m44: Double
 
@@ -138,35 +130,16 @@ open external class DOMMatrixReadOnly(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/flipX)
      */
     fun flipX(): DOMMatrix
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/flipY)
-     */
     fun flipY(): DOMMatrix
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/inverse)
-     */
     fun inverse(): DOMMatrix
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/multiply)
-     */
     fun multiply(other: DOMMatrixInit = definedExternally): DOMMatrix
     fun multiply(other: DOMMatrixReadOnly /* DOMMatrixInit */): DOMMatrix
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/rotate)
-     */
     fun rotate(
         rotX: Double = definedExternally,
         rotY: Double = definedExternally,
         rotZ: Double = definedExternally,
     ): DOMMatrix
 
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/rotateAxisAngle)
-     */
     fun rotateAxisAngle(
         x: Double = definedExternally,
         y: Double = definedExternally,
@@ -174,9 +147,6 @@ open external class DOMMatrixReadOnly(
         angle: Double = definedExternally,
     ): DOMMatrix
 
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/rotateFromVector)
-     */
     fun rotateFromVector(
         x: Double = definedExternally,
         y: Double = definedExternally,
@@ -194,9 +164,6 @@ open external class DOMMatrixReadOnly(
         originZ: Double = definedExternally,
     ): DOMMatrix
 
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/scale3d)
-     */
     fun scale3d(
         scale: Double = definedExternally,
         originX: Double = definedExternally,
@@ -204,30 +171,11 @@ open external class DOMMatrixReadOnly(
         originZ: Double = definedExternally,
     ): DOMMatrix
 
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/skewX)
-     */
     fun skewX(sx: Double = definedExternally): DOMMatrix
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/skewY)
-     */
     fun skewY(sy: Double = definedExternally): DOMMatrix
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/toFloat32Array)
-     */
     fun toFloat32Array(): Float32Array
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/toFloat64Array)
-     */
     fun toFloat64Array(): Float64Array
     fun toJSON(): Any
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/transformPoint)
-     */
     fun transformPoint(point: DOMPointInit = definedExternally): DOMPoint
     fun transformPoint(point: DOMPointReadOnly /* DOMPointInit */): DOMPoint
 

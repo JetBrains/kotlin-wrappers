@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Retrieves the `fs.Stats` for the file descriptor.
  *

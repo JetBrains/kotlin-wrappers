@@ -2,17 +2,13 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.core.Void
-import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
+import js.promise.PromiseResult
+import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync
 
 /**
@@ -50,7 +46,9 @@ import seskar.js.JsAsync
  * @param [options] An object describing initialization options
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SDataProvider.html">Online Documentation</a>
  */
-external class I3SDataProvider(options: ConstructorOptions) {
+external class I3SDataProvider(
+    options: ConstructorOptions,
+) {
     /**
      * Gets a human-readable name for this dataset.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SDataProvider.html#name">Online Documentation</a>
@@ -212,7 +210,7 @@ external class I3SDataProvider(options: ConstructorOptions) {
     sealed interface ConstructorOptions {
         var name: String?
         var show: Boolean?
-        var geoidTiledTerrainProvider: dynamic
+        var geoidTiledTerrainProvider: PromiseResult<ArcGISTiledElevationTerrainProvider>?
         var cesium3dTilesetOptions: Cesium3DTileset.ConstructorOptions?
         var showFeatures: Boolean?
         var adjustMaterialAlphaMode: Boolean?
@@ -265,8 +263,3 @@ external class I3SDataProvider(options: ConstructorOptions) {
         ): Promise<I3SDataProvider>
     }
 }
-
-inline fun I3SDataProvider(
-    block: I3SDataProvider.ConstructorOptions.() -> Unit,
-): I3SDataProvider =
-    I3SDataProvider(options = jso(block))

@@ -4,7 +4,6 @@
 
 package node.traceEvents
 
-
 /**
  * Creates and returns a `Tracing` object for the given set of `categories`.
  *
@@ -17,6 +16,5 @@ package node.traceEvents
  * tracing.disable();
  * ```
  * @since v10.0.0
- * @return .
  */
 external fun createTracing(options: CreateTracingOptions): Tracing

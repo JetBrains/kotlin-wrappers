@@ -3,10 +3,10 @@
 package web.gpu
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GPUTextureDescriptor :
+external interface GPUTextureDescriptor :
     GPUObjectDescriptorBase {
     var size: GPUExtent3D
     var mipLevelCount: GPUIntegerCoordinate?

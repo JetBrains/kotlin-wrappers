@@ -2,7 +2,7 @@
 
 package cesium.engine
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * An object describing a uniform, its type, and an initial value
@@ -12,5 +12,5 @@ import js.objects.JsPlainObject
 @JsPlainObject
 sealed external interface UniformSpecifier {
     var type: UniformType
-    var value: dynamic
+    var value: Any /* boolean | number | Cartesian2 | Cartesian3 | Cartesian4 | Matrix2 | Matrix3 | Matrix4 | TextureUniform */
 }

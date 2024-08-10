@@ -4,11 +4,9 @@
 
 package node.module
 
-
 /**
  * @since v13.7.0, v12.17.0
  */
-
 external class SourceMap {
     constructor (payload: SourceMapPayload)
 

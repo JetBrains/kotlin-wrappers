@@ -2,8 +2,8 @@
 
 package web.events
 
-import js.objects.JsPlainObject
 import js.objects.jso
+import kotlinx.js.JsPlainObject
 
 inline fun EventInit(
     block: EventInitMutable.() -> Unit,

@@ -4,7 +4,6 @@
 
 package node.crypto
 
-
 /**
  * Return a random integer `n` such that `min <= n < max`.  This
  * implementation avoids [modulo bias](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#Modulo_bias).

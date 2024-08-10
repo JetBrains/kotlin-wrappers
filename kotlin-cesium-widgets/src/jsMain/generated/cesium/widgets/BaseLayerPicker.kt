@@ -3,7 +3,6 @@
 @file:JsModule("@cesium/widgets")
 
 @file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
     "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
 )
 
@@ -11,8 +10,7 @@ package cesium.widgets
 
 import cesium.engine.Globe
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 import web.dom.Element
 
 /**
@@ -123,9 +121,3 @@ external class BaseLayerPicker(
      */
     fun destroy()
 }
-
-inline fun BaseLayerPicker(
-    container: Element,
-    block: BaseLayerPicker.ConstructorOptions.() -> Unit,
-): BaseLayerPicker =
-    BaseLayerPicker(container, options = jso(block))

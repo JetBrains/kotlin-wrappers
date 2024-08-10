@@ -9,7 +9,7 @@ import web.url.URL
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorker)
  */
-external class SharedWorker(
+open external class SharedWorker(
     scriptURL: String,
     options: String = definedExternally,
 ) : EventTarget,

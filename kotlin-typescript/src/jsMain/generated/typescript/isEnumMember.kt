@@ -1,17 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
-)
+@file:JsModule("typescript")
 
 package typescript
 
-import kotlin.contracts.contract
 
-fun isEnumMember(node: Node): Boolean {
-    contract {
-        returns(true) implies (node is EnumMember)
-    }
-
-    return typescript.raw.isEnumMember(node)
-}
+@JsName("isEnumMember")
+external fun isEnumMemberRaw(node: Node): Boolean /* node is EnumMember */

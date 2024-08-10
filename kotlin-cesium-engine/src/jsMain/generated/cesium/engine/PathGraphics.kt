@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 /**
@@ -77,8 +73,3 @@ external class PathGraphics {
      */
     fun merge(source: PathGraphics)
 }
-
-inline fun PathGraphics(
-    block: PathGraphics.() -> Unit,
-): PathGraphics =
-    PathGraphics().apply(block)

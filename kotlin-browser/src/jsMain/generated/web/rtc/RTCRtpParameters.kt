@@ -3,10 +3,10 @@
 package web.rtc
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface RTCRtpParameters {
+external interface RTCRtpParameters {
     var codecs: ReadonlyArray<RTCRtpCodecParameters>
     var headerExtensions: ReadonlyArray<RTCRtpHeaderExtensionParameters>
     var rtcp: RTCRtcpParameters

@@ -4,10 +4,9 @@
 
 package remix.run.router
 
-
 external fun convertRoutesToDataRoutes(
     routes: js.array.ReadonlyArray<AgnosticRouteObject>,
     mapRouteProperties: MapRoutePropertiesFunction,
-    parentPath: js.array.ReadonlyArray<Double> = definedExternally,
+    parentPath: js.array.ReadonlyArray<String> = definedExternally,
     manifest: RouteManifest = definedExternally,
 ): js.array.ReadonlyArray<AgnosticDataRouteObject>

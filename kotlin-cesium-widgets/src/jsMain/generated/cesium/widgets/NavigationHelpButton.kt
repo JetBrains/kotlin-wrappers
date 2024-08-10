@@ -2,14 +2,9 @@
 
 @file:JsModule("@cesium/widgets")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.widgets
 
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 import web.dom.Element
 
 /**
@@ -25,7 +20,9 @@ import web.dom.Element
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/NavigationHelpButton.html">Online Documentation</a>
  */
-external class NavigationHelpButton(options: ConstructorOptions) {
+external class NavigationHelpButton(
+    options: ConstructorOptions,
+) {
     /**
      * @property [container] The DOM element that will contain the widget.
      * @property [instructionsInitiallyVisible] True if the navigation instructions should initially be visible; otherwise, false.
@@ -62,8 +59,3 @@ external class NavigationHelpButton(options: ConstructorOptions) {
      */
     fun destroy()
 }
-
-inline fun NavigationHelpButton(
-    block: NavigationHelpButton.ConstructorOptions.() -> Unit,
-): NavigationHelpButton =
-    NavigationHelpButton(options = jso(block))

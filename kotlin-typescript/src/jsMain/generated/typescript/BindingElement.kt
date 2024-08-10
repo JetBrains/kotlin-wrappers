@@ -2,7 +2,9 @@
 
 package typescript
 
-sealed external interface BindingElement : NamedDeclaration, FlowContainer, Union.BindingElement_ {
+sealed external interface BindingElement : NamedDeclaration, FlowContainer, HasExpressionInitializer,
+    VariableLikeDeclaration, ObjectBindingPatternParent, ArrayBindingPatternParent, ArrayBindingElement,
+    ObjectBindingOrAssignmentElement, FlowAssignmentNode {
     override val kind: SyntaxKind.BindingElement
     override val parent: BindingPattern
     val propertyName: PropertyName?

@@ -11,7 +11,7 @@ import web.messaging.MessagePort
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletNode)
  */
-external class AudioWorkletNode(
+open external class AudioWorkletNode(
     context: BaseAudioContext,
     name: String,
     options: AudioWorkletNodeOptions = definedExternally,
@@ -19,7 +19,7 @@ external class AudioWorkletNode(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletNode/processorerror_event)
      */
-    var onprocessorerror: EventHandler<ErrorEvent, AudioWorkletNode>?
+    var onprocessorerror: EventHandler<ErrorEvent, AudioWorkletNode, AudioWorkletNode>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletNode/parameters)

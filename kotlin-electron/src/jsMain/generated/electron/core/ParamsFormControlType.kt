@@ -2,8 +2,6 @@
 
 package electron.core
 
-
-@seskar.js.JsVirtual
 sealed external interface ParamsFormControlType {
     companion object {
         @seskar.js.JsValue("none")
@@ -105,6 +103,5 @@ sealed external interface ParamsFormControlType {
         Duplicated names were generated:
         selectList for "select-list"
         */
-
     }
 }

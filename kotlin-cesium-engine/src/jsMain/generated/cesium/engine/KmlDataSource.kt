@@ -2,16 +2,11 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
+import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync
 import web.blob.Blob
 import web.dom.Document
@@ -41,7 +36,9 @@ import web.html.HTMLCanvasElement
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlDataSource.html">Online Documentation</a>
  */
-external class KmlDataSource(options: ConstructorOptions? = definedExternally) {
+external class KmlDataSource(
+    options: ConstructorOptions? = definedExternally,
+) {
     /**
      * The current size of this Canvas will be used to populate the Link parameters
      * for client height and width.
@@ -217,7 +214,7 @@ external class KmlDataSource(options: ConstructorOptions? = definedExternally) {
      * @property [clampToGround] true if we want the geometry features (Polygons, LineStrings and LinearRings) clamped to the ground.
      *   Default value - `false`
      * @property [ellipsoid] The global ellipsoid used for geographical calculations.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @property [screenOverlayContainer] A container for ScreenOverlay images.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlDataSource.html#.ConstructorOptions">Online Documentation</a>
      */
@@ -294,7 +291,7 @@ external class KmlDataSource(options: ConstructorOptions? = definedExternally) {
          * @property [clampToGround] true if we want the geometry features (Polygons, LineStrings and LinearRings) clamped to the ground.
          *   Default value - `false`
          * @property [ellipsoid] The global ellipsoid used for geographical calculations.
-         *   Default value - [Ellipsoid.WGS84]
+         *   Default value - [Ellipsoid.default]
          * @property [screenOverlayContainer] A container for ScreenOverlay images.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlDataSource.html#.LoadOptions">Online Documentation</a>
          */
@@ -307,8 +304,3 @@ external class KmlDataSource(options: ConstructorOptions? = definedExternally) {
         }
     }
 }
-
-inline fun KmlDataSource(
-    block: KmlDataSource.ConstructorOptions.() -> Unit,
-): KmlDataSource =
-    KmlDataSource(options = jso(block))

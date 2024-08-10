@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface BindingOrAssignmentElement /* VariableDeclaration | ParameterDeclaration | ObjectBindingOrAssignmentElement | ArrayBindingOrAssignmentElement */
+sealed external interface BindingOrAssignmentElement : Node

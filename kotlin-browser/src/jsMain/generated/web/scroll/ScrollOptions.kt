@@ -2,9 +2,9 @@
 
 package web.scroll
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface ScrollOptions {
+external interface ScrollOptions {
     var behavior: ScrollBehavior?
 }

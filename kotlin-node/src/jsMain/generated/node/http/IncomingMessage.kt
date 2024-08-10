@@ -11,12 +11,11 @@ import node.net.Socket
  * access response
  * status, headers, and data.
  *
- * Different from its `socket` value which is a subclass of `stream.Duplex`, the`IncomingMessage` itself extends `stream.Readable` and is created separately to
+ * Different from its `socket` value which is a subclass of `stream.Duplex`, the `IncomingMessage` itself extends `stream.Readable` and is created separately to
  * parse and emit the incoming HTTP headers and payload, as the underlying socket
  * may be reused multiple times in case of keep-alive.
  * @since v0.1.17
  */
-
 open external class IncomingMessage : node.stream.Readable {
     constructor (socket: Socket)
 
@@ -33,7 +32,7 @@ open external class IncomingMessage : node.stream.Readable {
      * client response, the HTTP version of the connected-to server.
      * Probably either `'1.1'` or `'1.0'`.
      *
-     * Also `message.httpVersionMajor` is the first integer and`message.httpVersionMinor` is the second.
+     * Also `message.httpVersionMajor` is the first integer and `message.httpVersionMinor` is the second.
      * @since v0.1.1
      */
     var httpVersion: String
@@ -102,8 +101,8 @@ open external class IncomingMessage : node.stream.Readable {
      * Duplicates in raw headers are handled in the following ways, depending on the
      * header name:
      *
-     * * Duplicates of `age`, `authorization`, `content-length`, `content-type`,`etag`, `expires`, `from`, `host`, `if-modified-since`, `if-unmodified-since`,`last-modified`, `location`,
-     * `max-forwards`, `proxy-authorization`, `referer`,`retry-after`, `server`, or `user-agent` are discarded.
+     * * Duplicates of `age`, `authorization`, `content-length`, `content-type`, `etag`, `expires`, `from`, `host`, `if-modified-since`, `if-unmodified-since`, `last-modified`, `location`,
+     * `max-forwards`, `proxy-authorization`, `referer`, `retry-after`, `server`, or `user-agent` are discarded.
      * To allow duplicate values of the headers listed above to be joined,
      * use the option `joinDuplicateHeaders` in {@link request} and {@link createServer}. See RFC 9110 Section 5.3 for more
      * information.
@@ -205,29 +204,32 @@ open external class IncomingMessage : node.stream.Readable {
      * To parse the URL into its parts:
      *
      * ```js
-     * new URL(request.url, `http://${request.headers.host}`);
+     * new URL(`http://${process.env.HOST ?? 'localhost'}${request.url}`);
      * ```
      *
-     * When `request.url` is `'/status?name=ryan'` and `request.headers.host` is`'localhost:3000'`:
+     * When `request.url` is `'/status?name=ryan'` and `process.env.HOST` is undefined:
      *
      * ```console
      * $ node
-     * > new URL(request.url, `http://${request.headers.host}`)
+     * > new URL(`http://${process.env.HOST ?? 'localhost'}${request.url}`);
      * URL {
-     *   href: 'http://localhost:3000/status?name=ryan',
-     *   origin: 'http://localhost:3000',
+     *   href: 'http://localhost/status?name=ryan',
+     *   origin: 'http://localhost',
      *   protocol: 'http:',
      *   username: '',
      *   password: '',
-     *   host: 'localhost:3000',
+     *   host: 'localhost',
      *   hostname: 'localhost',
-     *   port: '3000',
+     *   port: '',
      *   pathname: '/status',
      *   search: '?name=ryan',
      *   searchParams: URLSearchParams { 'name' => 'ryan' },
      *   hash: ''
      * }
      * ```
+     *
+     * Ensure that you set `process.env.HOST` to the server's host name, or consider replacing this part entirely. If using `req.headers.host`, ensure proper
+     * validation is used, as clients may specify a custom `Host` header.
      * @since v0.1.90
      */
     var url: String?
@@ -249,7 +251,7 @@ open external class IncomingMessage : node.stream.Readable {
     var statusMessage: String?
 
     /**
-     * Calls `destroy()` on the socket that received the `IncomingMessage`. If `error`is provided, an `'error'` event is emitted on the socket and `error` is passed
+     * Calls `destroy()` on the socket that received the `IncomingMessage`. If `error` is provided, an `'error'` event is emitted on the socket and `error` is passed
      * as an argument to any listeners on the event.
      * @since v0.3.0
      */

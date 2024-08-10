@@ -3,9 +3,7 @@
 package web.dom
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface InsertPosition {
     companion object {
         @JsValue("afterbegin")

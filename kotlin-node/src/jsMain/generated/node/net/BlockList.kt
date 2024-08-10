@@ -4,14 +4,12 @@
 
 package node.net
 
-
 /**
  * The `BlockList` object can be used with some network APIs to specify rules for
  * disabling inbound or outbound access to specific IP addresses, IP ranges, or
  * IP subnets.
  * @since v15.0.0, v14.18.0
  */
-
 external class BlockList {
     /**
      * Adds a rule to block the given IP address.

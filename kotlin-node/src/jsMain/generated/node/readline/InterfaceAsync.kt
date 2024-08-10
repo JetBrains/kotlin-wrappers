@@ -8,22 +8,21 @@ import js.promise.Promise
 import web.abort.Abortable
 
 /**
- * Instances of the `readlinePromises.Interface` class are constructed using the`readlinePromises.createInterface()` method. Every instance is associated with a
+ * Instances of the `readlinePromises.Interface` class are constructed using the `readlinePromises.createInterface()` method. Every instance is associated with a
  * single `input` `Readable` stream and a single `output` `Writable` stream.
  * The `output` stream is used to print prompts for user input that arrives on,
  * and is read from, the `input` stream.
  * @since v17.0.0
  */
-
 external class Interface : _Interface {
     /**
      * The `rl.question()` method displays the `query` by writing it to the `output`,
-     * waits for user input to be provided on `input`, then invokes the `callback`function passing the provided input as the first argument.
+     * waits for user input to be provided on `input`, then invokes the `callback` function passing the provided input as the first argument.
      *
      * When called, `rl.question()` will resume the `input` stream if it has been
      * paused.
      *
-     * If the `Interface` was created with `output` set to `null` or`undefined` the `query` is not written.
+     * If the `Interface` was created with `output` set to `null` or `undefined` the `query` is not written.
      *
      * If the question is called after `rl.close()`, it returns a rejected promise.
      *

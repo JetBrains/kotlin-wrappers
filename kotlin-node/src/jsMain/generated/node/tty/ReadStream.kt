@@ -4,13 +4,11 @@
 
 package node.tty
 
-
 /**
  * Represents the readable side of a TTY. In normal circumstances `process.stdin` will be the only `tty.ReadStream` instance in a Node.js
  * process and there should be no reason to create additional instances.
  * @since v0.5.8
  */
-
 open external class ReadStream : node.net.Socket {
     constructor (fd: Number, options: node.net.SocketConstructorOpts = definedExternally)
 
@@ -19,7 +17,7 @@ open external class ReadStream : node.net.Socket {
      * raw device.
      *
      * This flag is always `false` when a process starts, even if the terminal is
-     * operating in raw mode. Its value will change with subsequent calls to`setRawMode`.
+     * operating in raw mode. Its value will change with subsequent calls to `setRawMode`.
      * @since v0.7.7
      */
     var isRaw: Boolean

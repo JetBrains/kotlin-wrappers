@@ -4,7 +4,6 @@
 
 package electron.core
 
-
 open external class MenuItem {
 // Docs: https://electronjs.org/docs/api/menu-item
     /**

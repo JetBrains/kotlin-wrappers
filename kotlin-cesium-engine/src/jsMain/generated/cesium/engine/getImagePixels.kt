@@ -16,7 +16,7 @@ import web.images.ImageData
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#getImagePixels">Online Documentation</a>
  */
 external fun getImagePixels(
-    image: dynamic,
+    image: Any, /* HTMLImageElement | ImageBitmap */
     width: Double,
     height: Double,
 ): ImageData

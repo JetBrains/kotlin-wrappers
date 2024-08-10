@@ -2,10 +2,10 @@
 
 package web.gpu
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GPURenderPassTimestampWrites {
+external interface GPURenderPassTimestampWrites {
     var querySet: GPUQuerySet
     var beginningOfPassWriteIndex: GPUSize32?
     var endOfPassWriteIndex: GPUSize32?

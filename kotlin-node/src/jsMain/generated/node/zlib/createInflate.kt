@@ -4,7 +4,6 @@
 
 package node.zlib
 
-
 /**
  * Creates and returns a new `Inflate` object.
  * @since v0.5.8

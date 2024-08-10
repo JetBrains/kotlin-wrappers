@@ -10,7 +10,7 @@ import js.buffer.ArrayBuffer
  * Creates a `DiffieHellman` key exchange object using the supplied `prime` and an
  * optional specific `generator`.
  *
- * The `generator` argument can be a number, string, or `Buffer`. If`generator` is not specified, the value `2` is used.
+ * The `generator` argument can be a number, string, or `Buffer`. If `generator` is not specified, the value `2` is used.
  *
  * If `primeEncoding` is specified, `prime` is expected to be a string; otherwise
  * a `Buffer`, `TypedArray`, or `DataView` is expected.

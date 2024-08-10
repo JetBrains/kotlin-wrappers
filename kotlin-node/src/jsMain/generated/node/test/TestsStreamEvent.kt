@@ -3,9 +3,12 @@
 package node.test
 
 
-@seskar.js.JsVirtual
 sealed external interface TestsStreamEvent {
+    sealed interface TEST_COVERAGE : node.events.LegacyEventType
+    sealed interface TEST_COMPLETE : node.events.LegacyEventType
+    sealed interface TEST_DEQUEUE : node.events.LegacyEventType
     sealed interface TEST_DIAGNOSTIC : node.events.LegacyEventType
+    sealed interface TEST_ENQUEUE : node.events.LegacyEventType
     sealed interface TEST_FAIL : node.events.LegacyEventType
     sealed interface TEST_PASS : node.events.LegacyEventType
     sealed interface TEST_PLAN : node.events.LegacyEventType
@@ -14,8 +17,20 @@ sealed external interface TestsStreamEvent {
     sealed interface TEST_STDOUT : node.events.LegacyEventType
 
     companion object {
+        @seskar.js.JsValue("test:coverage")
+        val TEST_COVERAGE: TEST_COVERAGE
+
+        @seskar.js.JsValue("test:complete")
+        val TEST_COMPLETE: TEST_COMPLETE
+
+        @seskar.js.JsValue("test:dequeue")
+        val TEST_DEQUEUE: TEST_DEQUEUE
+
         @seskar.js.JsValue("test:diagnostic")
         val TEST_DIAGNOSTIC: TEST_DIAGNOSTIC
+
+        @seskar.js.JsValue("test:enqueue")
+        val TEST_ENQUEUE: TEST_ENQUEUE
 
         @seskar.js.JsValue("test:fail")
         val TEST_FAIL: TEST_FAIL
@@ -35,8 +50,20 @@ sealed external interface TestsStreamEvent {
         @seskar.js.JsValue("test:stdout")
         val TEST_STDOUT: TEST_STDOUT
 
+        @seskar.js.JsValue("test:coverage")
+        fun testCoverage(): node.events.EventType<TestsStream, js.array.JsTuple1<TestCoverage>>
+
+        @seskar.js.JsValue("test:complete")
+        fun testComplete(): node.events.EventType<TestsStream, js.array.JsTuple1<TestComplete>>
+
+        @seskar.js.JsValue("test:dequeue")
+        fun testDequeue(): node.events.EventType<TestsStream, js.array.JsTuple1<TestDequeue>>
+
         @seskar.js.JsValue("test:diagnostic")
         fun testDiagnostic(): node.events.EventType<TestsStream, js.array.JsTuple1<DiagnosticData>>
+
+        @seskar.js.JsValue("test:enqueue")
+        fun testEnqueue(): node.events.EventType<TestsStream, js.array.JsTuple1<TestEnqueue>>
 
         @seskar.js.JsValue("test:fail")
         fun testFail(): node.events.EventType<TestsStream, js.array.JsTuple1<TestFail>>

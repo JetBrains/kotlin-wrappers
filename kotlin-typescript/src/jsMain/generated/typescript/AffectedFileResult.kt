@@ -2,7 +2,4 @@
 
 package typescript
 
-sealed external interface AffectedFileResult<T> /* {
-    result: T;
-    affected: SourceFile | Program;
-} | undefined */
+typealias AffectedFileResult<T> = (RequiredAffectedFileResult<T>)?

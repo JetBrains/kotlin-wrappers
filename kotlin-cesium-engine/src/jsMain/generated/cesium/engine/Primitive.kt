@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 
 /**
  * A primitive represents geometry in the [Scene].  The geometry can be from a single [GeometryInstance]
@@ -98,7 +93,9 @@ import js.objects.jso
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Primitive.html">Online Documentation</a>
  */
-external class Primitive(options: ConstructorOptions? = definedExternally) {
+external class Primitive(
+    options: ConstructorOptions? = definedExternally,
+) {
     /**
      * @property [geometryInstances] The geometry instances - or a single geometry instance - to render.
      * @property [appearance] The appearance used to render the primitive.
@@ -329,8 +326,3 @@ external class Primitive(options: ConstructorOptions? = definedExternally) {
      */
     fun destroy()
 }
-
-inline fun Primitive(
-    block: Primitive.ConstructorOptions.() -> Unit,
-): Primitive =
-    Primitive(options = jso(block))

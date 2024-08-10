@@ -3,10 +3,10 @@
 package web.rtc
 
 import js.core.JsLong
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface RTCOutboundRtpStreamStats :
+external interface RTCOutboundRtpStreamStats :
     RTCSentRtpStreamStats {
     var firCount: Int?
     var frameHeight: Int?

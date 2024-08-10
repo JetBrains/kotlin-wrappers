@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Returns the symbolic link's string value.
  *

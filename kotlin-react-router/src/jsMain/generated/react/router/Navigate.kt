@@ -4,7 +4,6 @@
 
 package react.router
 
-
 /**
  * Changes the current location.
  *

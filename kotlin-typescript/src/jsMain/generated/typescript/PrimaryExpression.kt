@@ -3,5 +3,5 @@
 package typescript
 
 sealed external interface PrimaryExpression : MemberExpression {
-    var _primaryExpressionBrand: Any
+    var _primaryExpressionBrand: Any?
 }

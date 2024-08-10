@@ -173,7 +173,7 @@ external class OrientedBoundingBox(
          * @param [maximumHeight] The maximum height (elevation) within the tile.
          *   Default value - `0.0`
          * @param [ellipsoid] The ellipsoid on which the rectangle is defined.
-         *   Default value - [Ellipsoid.WGS84]
+         *   Default value - [Ellipsoid.default]
          * @param [result] The object onto which to store the result.
          * @return The modified result parameter or a new OrientedBoundingBox instance if none was provided.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/OrientedBoundingBox.html#.fromRectangle">Online Documentation</a>

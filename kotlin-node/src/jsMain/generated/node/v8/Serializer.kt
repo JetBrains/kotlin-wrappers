@@ -9,7 +9,6 @@ import js.buffer.ArrayBuffer
 /**
  * @since v8.0.0
  */
-
 open external class Serializer {
     /**
      * Writes out a header, which includes the serialization format version.

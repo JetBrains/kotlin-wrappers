@@ -3,8 +3,8 @@ plugins {
 }
 
 dependencies {
-    jsMainImplementation(kotlinxCoroutines("core"))
+    jsMainImplementation(kotlinx.coroutines.core)
 
-    jsTestImplementation(kotlinxCoroutines("test"))
+    jsTestImplementation(kotlinx.coroutines.test)
     jsTestImplementation(kotlin("test-js"))
 }

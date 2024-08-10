@@ -6,7 +6,7 @@ import js.promise.Promise
 import web.url.URL
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/fetch)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/fetch)
  */
 @JsName("fetch")
 external fun fetchAsync(

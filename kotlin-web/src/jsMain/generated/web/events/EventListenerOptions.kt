@@ -2,9 +2,9 @@
 
 package web.events
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface EventListenerOptions {
+external interface EventListenerOptions {
     var capture: Boolean?
 }

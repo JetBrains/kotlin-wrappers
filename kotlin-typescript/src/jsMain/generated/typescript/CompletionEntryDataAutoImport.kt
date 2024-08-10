@@ -18,5 +18,5 @@ sealed external interface CompletionEntryDataAutoImport {
     var ambientModuleName: String?
 
     /** True if the export was found in the package.json AutoImportProvider */
-    var isPackageJsonImport: Boolean? /* true */
+    var isPackageJsonImport: Boolean /* true */?
 }

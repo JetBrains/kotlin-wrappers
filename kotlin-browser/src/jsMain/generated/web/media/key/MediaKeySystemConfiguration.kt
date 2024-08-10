@@ -3,10 +3,10 @@
 package web.media.key
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface MediaKeySystemConfiguration {
+external interface MediaKeySystemConfiguration {
     var audioCapabilities: ReadonlyArray<MediaKeySystemMediaCapability>?
     var distinctiveIdentifier: MediaKeysRequirement?
     var initDataTypes: ReadonlyArray<String>?

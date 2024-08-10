@@ -3,9 +3,7 @@
 package web.gpu
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface GPUFeatureName {
     companion object {
         @JsValue("depth-clip-control")

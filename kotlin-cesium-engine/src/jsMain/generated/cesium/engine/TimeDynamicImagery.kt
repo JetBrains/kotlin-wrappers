@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
-import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
+import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync
 import web.html.HTMLImageElement
 
@@ -18,7 +13,9 @@ import web.html.HTMLImageElement
  * Provides functionality for ImageryProviders that have time dynamic imagery
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TimeDynamicImagery.html">Online Documentation</a>
  */
-external class TimeDynamicImagery(options: ConstructorOptions) {
+external class TimeDynamicImagery(
+    options: ConstructorOptions,
+) {
     /**
      * @property [clock] A Clock instance that is used when determining the value for the time dimension. Required when `options.times` is specified.
      * @property [times] TimeIntervalCollection with its `data` property being an object containing time dynamic dimension and their values.
@@ -93,8 +90,3 @@ external class TimeDynamicImagery(options: ConstructorOptions) {
         request: Request? = definedExternally,
     )
 }
-
-inline fun TimeDynamicImagery(
-    block: TimeDynamicImagery.ConstructorOptions.() -> Unit,
-): TimeDynamicImagery =
-    TimeDynamicImagery(options = jso(block))

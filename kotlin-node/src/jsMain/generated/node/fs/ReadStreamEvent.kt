@@ -3,7 +3,6 @@
 package node.fs
 
 
-@seskar.js.JsVirtual
 sealed external interface ReadStreamEvent {
     sealed interface CLOSE : node.events.LegacyEventType
     sealed interface DATA : node.events.LegacyEventType

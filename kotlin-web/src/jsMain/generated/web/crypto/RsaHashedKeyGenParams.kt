@@ -2,10 +2,10 @@
 
 package web.crypto
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface RsaHashedKeyGenParams :
+external interface RsaHashedKeyGenParams :
     RsaKeyGenParams {
     var hash: HashAlgorithmIdentifier
 }

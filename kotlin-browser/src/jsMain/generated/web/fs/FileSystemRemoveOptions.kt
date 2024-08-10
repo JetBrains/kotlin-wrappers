@@ -2,9 +2,9 @@
 
 package web.fs
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface FileSystemRemoveOptions {
+external interface FileSystemRemoveOptions {
     var recursive: Boolean?
 }

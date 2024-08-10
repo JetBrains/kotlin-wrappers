@@ -1,13 +1,17 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/x-date-pickers/CalendarPicker")
+
 package muix.pickers
 
 import web.cssom.ClassName
 
-external interface CalendarPickerClasses {
+sealed external interface CalendarPickerClasses {
     /** Styles applied to the root element. */
-    var root: ClassName
+    val root: ClassName
 
     /** Styles applied to the transition group element. */
-    var viewTransitionContainer: ClassName
+    val viewTransitionContainer: ClassName
 }
+
+external val calendarPickerClasses: CalendarPickerClasses

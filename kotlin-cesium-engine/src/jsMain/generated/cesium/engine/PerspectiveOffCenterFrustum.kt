@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 /**
@@ -152,8 +148,3 @@ external class PerspectiveOffCenterFrustum {
         absoluteEpsilon: Double? = definedExternally,
     ): Boolean
 }
-
-inline fun PerspectiveOffCenterFrustum(
-    block: PerspectiveOffCenterFrustum.() -> Unit,
-): PerspectiveOffCenterFrustum =
-    PerspectiveOffCenterFrustum().apply(block)

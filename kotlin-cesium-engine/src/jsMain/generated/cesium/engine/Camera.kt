@@ -2,13 +2,9 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * The camera is defined by a position, orientation, and view frustum.
@@ -36,7 +32,9 @@ import js.objects.JsPlainObject
  * @param [scene] The scene.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Camera.html">Online Documentation</a>
  */
-external class Camera(scene: Scene) {
+external class Camera(
+    scene: Scene,
+) {
     /**
      * The position of the camera.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Camera.html#position">Online Documentation</a>
@@ -65,7 +63,7 @@ external class Camera(scene: Scene) {
      * The region of space in view.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Camera.html#frustum">Online Documentation</a>
      */
-    var frustum: dynamic
+    var frustum: Any /* PerspectiveFrustum | PerspectiveOffCenterFrustum | OrthographicFrustum */
 
     /**
      * The default amount to move the camera when an argument is not
@@ -253,7 +251,7 @@ external class Camera(scene: Scene) {
     fun setView(options: SetViewOptions)
 
     /**
-     * @property [destination] The final position of the camera in WGS84 (world) coordinates or a rectangle that would be visible from a top-down view.
+     * @property [destination] The final position of the camera in world coordinates or a rectangle that would be visible from a top-down view.
      * @property [orientation] An object that contains either direction and up properties or heading, pitch and roll properties. By default, the direction will point
      *   towards the center of the frame in 3D and in the negative z direction in Columbus view. The up direction will point towards local north in 3D and in the positive
      *   y direction in Columbus view. Orientation is not used in 2D when in infinite scrolling mode.
@@ -262,7 +260,7 @@ external class Camera(scene: Scene) {
      */
     @JsPlainObject
     sealed interface SetViewOptions {
-        var destination: dynamic
+        var destination: Any /* Cartesian3 | Rectangle */?
         var orientation: CameraOrientation?
         var endTransform: Matrix4?
         var convert: Boolean?
@@ -619,12 +617,12 @@ external class Camera(scene: Scene) {
      * ```
      * const canvas = viewer.scene.canvas;
      * const center = new Cartesian2(canvas.clientWidth / 2.0, canvas.clientHeight / 2.0);
-     * const ellipsoid = viewer.scene.globe.ellipsoid;
+     * const ellipsoid = viewer.scene.ellipsoid;
      * const result = viewer.camera.pickEllipsoid(center, ellipsoid);
      * ```
      * @param [windowPosition] The x and y coordinates of a pixel.
      * @param [ellipsoid] The ellipsoid to pick.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @param [result] The object onto which to store the result.
      * @return If the ellipsoid or map was picked,
      *   returns the point on the surface of the ellipsoid or map in world
@@ -723,7 +721,7 @@ external class Camera(scene: Scene) {
     fun flyTo(options: FlyToOptions)
 
     /**
-     * @property [destination] The final position of the camera in WGS84 (world) coordinates or a rectangle that would be visible from a top-down view.
+     * @property [destination] The final position of the camera in world coordinates or a rectangle that would be visible from a top-down view.
      * @property [orientation] An object that contains either direction and up properties or heading, pitch and roll properties. By default, the direction will point
      *   towards the center of the frame in 3D and in the negative z direction in Columbus view. The up direction will point towards local north in 3D and in the positive
      *   y direction in Columbus view.  Orientation is not used in 2D when in infinite scrolling mode.
@@ -740,7 +738,7 @@ external class Camera(scene: Scene) {
      */
     @JsPlainObject
     sealed interface FlyToOptions {
-        var destination: dynamic
+        var destination: Any /* Cartesian3 | Rectangle */
         var orientation: CameraOrientation?
         var duration: Double?
         var complete: FlightCompleteCallback?
@@ -823,7 +821,7 @@ external class Camera(scene: Scene) {
     /**
      * Computes the approximate visible rectangle on the ellipsoid.
      * @param [ellipsoid] The ellipsoid that you want to know the visible region.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @param [result] The rectangle in which to store the result
      * @return The visible rectangle or undefined if the ellipsoid isn't visible at all.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Camera.html#computeViewRectangle">Online Documentation</a>
@@ -871,15 +869,3 @@ external class Camera(scene: Scene) {
         var DEFAULT_OFFSET: HeadingPitchRange
     }
 }
-
-/**
- * A function that will execute when a flight completes.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Camera.html#.FlightCompleteCallback">Online Documentation</a>
- */
-typealias FlightCompleteCallback = () -> Unit
-
-/**
- * A function that will execute when a flight is cancelled.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Camera.html#.FlightCancelledCallback">Online Documentation</a>
- */
-typealias FlightCancelledCallback = () -> Unit

@@ -4,7 +4,7 @@
 
 package cesium.engine
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * <div class="notice">
@@ -320,7 +320,7 @@ private constructor() {
     @JsPlainObject
     sealed interface ConstructorOptions {
         var position: Cartesian3
-        var id: String?
+        var id: Any?
         var show: Boolean?
         var text: String?
         var font: String?

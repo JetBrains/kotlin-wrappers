@@ -23,7 +23,9 @@ package cesium.engine
  *   Default value - [Ellipsoid.WGS84]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SkyAtmosphere.html">Online Documentation</a>
  */
-external class SkyAtmosphere(val ellipsoid: Ellipsoid = definedExternally) {
+external class SkyAtmosphere(
+    val ellipsoid: Ellipsoid = definedExternally,
+) {
     /**
      * Determines if the atmosphere is shown.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SkyAtmosphere.html#show">Online Documentation</a>

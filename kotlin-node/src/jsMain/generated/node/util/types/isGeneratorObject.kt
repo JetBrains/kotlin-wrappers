@@ -4,7 +4,6 @@
 
 package node.util.types
 
-
 /**
  * Returns `true` if the value is a generator object as returned from a
  * built-in generator function.

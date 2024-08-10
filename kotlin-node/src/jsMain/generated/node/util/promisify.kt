@@ -39,10 +39,10 @@ import js.promise.Promise
  * callStat();
  * ```
  *
- * If there is an `original[util.promisify.custom]` property present, `promisify`will return its value, see `Custom promisified functions`.
+ * If there is an `original[util.promisify.custom]` property present, `promisify` will return its value, see `Custom promisified functions`.
  *
  * `promisify()` assumes that `original` is a function taking a callback as its
- * final argument in all cases. If `original` is not a function, `promisify()`will throw an error. If `original` is a function but its last argument is not
+ * final argument in all cases. If `original` is not a function, `promisify()` will throw an error. If `original` is a function but its last argument is not
  * an error-first callback, it will still be passed an error-first
  * callback as its last argument.
  *

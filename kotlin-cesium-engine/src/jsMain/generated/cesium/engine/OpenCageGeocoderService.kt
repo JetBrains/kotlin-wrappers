@@ -32,12 +32,16 @@ import seskar.js.JsAsync
 external class OpenCageGeocoderService(
     val url: Resource,
     apiKey: String,
-    params: dynamic = definedExternally,
+    params: Any /* {
+        abbrv?: number;
+    } */? = definedExternally,
 ) {
     constructor(
         url: String,
         apiKey: String,
-        params: dynamic = definedExternally,
+        params: Any /* {
+        abbrv?: number;
+    } */? = definedExternally,
     )
 
     /**

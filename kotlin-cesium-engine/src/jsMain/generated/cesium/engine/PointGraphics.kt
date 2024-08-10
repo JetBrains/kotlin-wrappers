@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 /**
@@ -86,6 +82,12 @@ external class PointGraphics {
     var disableDepthTestDistance: Property?
 
     /**
+     * Gets or sets the Property specifying the [SplitDirection] of this point.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PointGraphics.html#splitDirection">Online Documentation</a>
+     */
+    var splitDirection: Property?
+
+    /**
      * Duplicates this instance.
      * @param [result] The object onto which to store the result.
      * @return The modified result parameter or a new instance if one was not provided.
@@ -101,8 +103,3 @@ external class PointGraphics {
      */
     fun merge(source: PointGraphics)
 }
-
-inline fun PointGraphics(
-    block: PointGraphics.() -> Unit,
-): PointGraphics =
-    PointGraphics().apply(block)

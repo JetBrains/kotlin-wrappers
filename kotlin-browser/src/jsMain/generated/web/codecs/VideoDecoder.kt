@@ -14,14 +14,18 @@ import web.events.EventTarget
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder)
  */
-external class VideoDecoder(
+open external class VideoDecoder(
     init: VideoDecoderInit,
 ) : EventTarget {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/decodeQueueSize)
      */
     val decodeQueueSize: Int
-    var ondequeue: EventHandler<Event, VideoDecoder>?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/dequeue_event)
+     */
+    var ondequeue: EventHandler<Event, VideoDecoder, VideoDecoder>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/state)
@@ -58,6 +62,9 @@ external class VideoDecoder(
     fun reset()
 
     companion object {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/isConfigSupported_static)
+         */
         @JsAsync
         suspend fun isConfigSupported(config: VideoDecoderConfig): VideoDecoderSupport
 

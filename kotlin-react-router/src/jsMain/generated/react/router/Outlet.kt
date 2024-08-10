@@ -4,7 +4,6 @@
 
 package react.router
 
-
 /**
  * Renders the child route's element, if there is one.
  *

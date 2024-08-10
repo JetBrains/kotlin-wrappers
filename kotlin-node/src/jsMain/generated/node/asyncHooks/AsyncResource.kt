@@ -4,7 +4,6 @@
 
 package node.asyncHooks
 
-
 /**
  * The class `AsyncResource` is designed to be extended by the embedder's async
  * resources. Using this, users can easily trigger the lifetime events of their
@@ -42,7 +41,6 @@ package node.asyncHooks
  * asyncResource.triggerAsyncId();
  * ```
  */
-
 open external class AsyncResource {
     /**
      * AsyncResource() is meant to be extended. Instantiating a
@@ -132,5 +130,4 @@ open external class AsyncResource {
             thisArg: ThisArg = definedExternally,
         ): Func
     }
-
 }

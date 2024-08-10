@@ -2,10 +2,10 @@
 
 package web.dom
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface CheckVisibilityOptions {
+external interface CheckVisibilityOptions {
     var checkOpacity: Boolean?
     var checkVisibilityCSS: Boolean?
     var contentVisibilityAuto: Boolean?

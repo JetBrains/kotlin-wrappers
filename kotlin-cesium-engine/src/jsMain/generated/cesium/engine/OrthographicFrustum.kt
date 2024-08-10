@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
@@ -160,8 +156,3 @@ external class OrthographicFrustum {
         ): OrthographicFrustum
     }
 }
-
-inline fun OrthographicFrustum(
-    block: OrthographicFrustum.() -> Unit,
-): OrthographicFrustum =
-    OrthographicFrustum().apply(block)

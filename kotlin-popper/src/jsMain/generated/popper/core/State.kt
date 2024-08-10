@@ -3,9 +3,10 @@
 package popper.core
 
 import js.array.ReadonlyArray
+import js.objects.ReadonlyRecord
 
 external interface State {
-    val elements: dynamic /* {
+    val elements: ReadonlyRecord<String, Any> /* {
         reference: Element | VirtualElement;
         popper: HTMLElement;
         arrow?: HTMLElement;
@@ -15,19 +16,19 @@ external interface State {
     val strategy: PositioningStrategy
     val orderedModifiers: ReadonlyArray<Modifier<*>>
     val rects: StateRects
-    val scrollParents: dynamic /* {
+    val scrollParents: ReadonlyRecord<String, Any> /* {
         reference: Array<Element | Window | VisualViewport>;
         popper: Array<Element | Window | VisualViewport>;
     }; */
-    val styles: dynamic /* {
+    val styles: ReadonlyRecord<String, Any> /* {
         [key: string]: Partial<CSSStyleDeclaration>;
     }; */
-    val attributes: dynamic /* {
+    val attributes: ReadonlyRecord<String, Any> /* {
         [key: string]: {
             [key: string]: string | boolean;
         };
     }; */
-    val modifiersData: dynamic /* {
+    val modifiersData: ReadonlyRecord<String, Any> /* {
         arrow?: {
             x?: number;
             y?: number;

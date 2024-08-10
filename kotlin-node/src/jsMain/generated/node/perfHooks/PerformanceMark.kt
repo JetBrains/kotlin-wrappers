@@ -4,12 +4,10 @@
 
 package node.perfHooks
 
-
 /**
  * Exposes marks created via the `Performance.mark()` method.
  * @since v18.2.0, v16.17.0
  */
-
 external class PerformanceMark : PerformanceEntry {
     constructor ()
 

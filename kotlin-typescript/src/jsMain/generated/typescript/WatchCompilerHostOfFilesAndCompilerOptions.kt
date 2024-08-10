@@ -2,19 +2,17 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 /**
  * Host to create watch with root files and options
  */
 sealed external interface WatchCompilerHostOfFilesAndCompilerOptions<T : BuilderProgram> : WatchCompilerHost<T> {
     /** root files to use to generate program */
-    var rootFiles: ReadonlyArray<String>
+    var rootFiles: js.array.ReadonlyArray<String>
 
     /** Compiler options */
     var options: CompilerOptions
     var watchOptions: WatchOptions?
 
     /** Project References */
-    var projectReferences: ReadonlyArray<ProjectReference>?
+    var projectReferences: (js.array.ReadonlyArray<ProjectReference>)?
 }

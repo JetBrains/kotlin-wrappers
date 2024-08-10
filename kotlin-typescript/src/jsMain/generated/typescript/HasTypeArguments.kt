@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface HasTypeArguments /* CallExpression | NewExpression | TaggedTemplateExpression | JsxOpeningElement | JsxSelfClosingElement */
+sealed external interface HasTypeArguments : Node

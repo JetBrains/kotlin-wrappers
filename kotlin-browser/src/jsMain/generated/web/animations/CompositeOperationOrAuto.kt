@@ -3,9 +3,7 @@
 package web.animations
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface CompositeOperationOrAuto {
     companion object {
         @JsValue("accumulate")

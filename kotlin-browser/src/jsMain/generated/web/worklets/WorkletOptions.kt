@@ -2,10 +2,10 @@
 
 package web.worklets
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.http.RequestCredentials
 
 @JsPlainObject
-sealed external interface WorkletOptions {
+external interface WorkletOptions {
     var credentials: RequestCredentials?
 }

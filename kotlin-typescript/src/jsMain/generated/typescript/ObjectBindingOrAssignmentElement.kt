@@ -2,5 +2,4 @@
 
 package typescript
 
-sealed external interface ObjectBindingOrAssignmentElement :
-    Union.ObjectBindingOrAssignmentElement_ /* BindingElement | PropertyAssignment | ShorthandPropertyAssignment | SpreadAssignment */
+sealed external interface ObjectBindingOrAssignmentElement : Node, BindingOrAssignmentElement

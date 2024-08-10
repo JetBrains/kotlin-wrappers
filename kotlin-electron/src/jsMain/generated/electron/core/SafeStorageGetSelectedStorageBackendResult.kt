@@ -2,8 +2,6 @@
 
 package electron.core
 
-
-@seskar.js.JsVirtual
 sealed external interface SafeStorageGetSelectedStorageBackendResult {
     companion object {
         @seskar.js.JsValue("basic_text")

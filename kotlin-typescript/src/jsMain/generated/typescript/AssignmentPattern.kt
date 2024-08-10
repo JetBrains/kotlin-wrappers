@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface AssignmentPattern /* ObjectLiteralExpression | ArrayLiteralExpression */
+sealed external interface AssignmentPattern : Node

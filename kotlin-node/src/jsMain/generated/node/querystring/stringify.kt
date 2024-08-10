@@ -4,12 +4,11 @@
 
 package node.querystring
 
-
 /**
  * The `querystring.stringify()` method produces a URL query string from a
  * given `obj` by iterating through the object's "own properties".
  *
- * It serializes the following types of values passed in `obj`:[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) |
+ * It serializes the following types of values passed in `obj`: [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) |
  * [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) |
  * [bigint](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt) |
  * [boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) |
@@ -28,7 +27,7 @@ package node.querystring
  * ```
  *
  * By default, characters requiring percent-encoding within the query string will
- * be encoded as UTF-8\. If an alternative encoding is required, then an alternative`encodeURIComponent` option will need to be specified:
+ * be encoded as UTF-8\. If an alternative encoding is required, then an alternative `encodeURIComponent` option will need to be specified:
  *
  * ```js
  * // Assuming gbkEncodeURIComponent function already exists,

@@ -3,7 +3,6 @@
 package node.inspector
 
 
-@seskar.js.JsVirtual
 sealed external interface SessionMethod {
     sealed interface SCHEMA_GETDOMAINS : SessionMethod
     sealed interface RUNTIME_EVALUATE : SessionMethod

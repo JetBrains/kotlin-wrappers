@@ -4,7 +4,6 @@
 
 package node.os
 
-
 /**
  * The `node:os` module provides operating system-related utility methods and
  * properties. It can be accessed using:
@@ -12,7 +11,7 @@ package node.os
  * ```js
  * const os = require('node:os');
  * ```
- * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/os.js)
+ * @see [source](https://github.com/nodejs/node/blob/v20.13.1/lib/os.js)
  */
 
 

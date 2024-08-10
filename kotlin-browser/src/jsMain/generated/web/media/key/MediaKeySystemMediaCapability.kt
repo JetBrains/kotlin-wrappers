@@ -2,10 +2,10 @@
 
 package web.media.key
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface MediaKeySystemMediaCapability {
+external interface MediaKeySystemMediaCapability {
     var contentType: String?
     var encryptionScheme: String?
     var robustness: String?

@@ -1,17 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
-)
+@file:JsModule("typescript")
 
 package typescript
 
-import kotlin.contracts.contract
 
-fun isModuleBlock(node: Node): Boolean {
-    contract {
-        returns(true) implies (node is ModuleBlock)
-    }
-
-    return typescript.raw.isModuleBlock(node)
-}
+@JsName("isModuleBlock")
+external fun isModuleBlockRaw(node: Node): Boolean /* node is ModuleBlock */

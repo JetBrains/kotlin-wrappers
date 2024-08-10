@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Changes the permissions on a symbolic link. Returns `undefined`.
  *

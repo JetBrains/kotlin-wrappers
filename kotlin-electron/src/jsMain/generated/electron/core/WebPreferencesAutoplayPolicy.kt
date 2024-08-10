@@ -2,8 +2,6 @@
 
 package electron.core
 
-
-@seskar.js.JsVirtual
 sealed external interface WebPreferencesAutoplayPolicy {
     companion object {
         @seskar.js.JsValue("no-user-gesture-required")

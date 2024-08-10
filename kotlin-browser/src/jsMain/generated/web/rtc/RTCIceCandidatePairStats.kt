@@ -3,11 +3,11 @@
 package web.rtc
 
 import js.core.JsLong
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.time.DOMHighResTimeStamp
 
 @JsPlainObject
-sealed external interface RTCIceCandidatePairStats :
+external interface RTCIceCandidatePairStats :
     RTCStats {
     var availableIncomingBitrate: Double?
     var availableOutgoingBitrate: Double?

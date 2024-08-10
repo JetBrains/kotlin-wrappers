@@ -2,10 +2,10 @@
 
 package web.gpu
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GPUColorTargetState {
+external interface GPUColorTargetState {
     var format: GPUTextureFormat
     var blend: GPUBlendState?
     var writeMask: GPUColorWrite?

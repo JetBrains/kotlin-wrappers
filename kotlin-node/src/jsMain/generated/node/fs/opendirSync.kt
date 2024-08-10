@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Synchronously open a directory. See [`opendir(3)`](http://man7.org/linux/man-pages/man3/opendir.3.html).
  *

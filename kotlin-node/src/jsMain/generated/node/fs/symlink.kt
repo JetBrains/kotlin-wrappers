@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Creates the link called `path` pointing to `target`. No arguments other than a
  * possible exception are given to the completion callback.

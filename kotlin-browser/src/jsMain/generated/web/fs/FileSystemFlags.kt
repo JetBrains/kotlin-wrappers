@@ -2,10 +2,10 @@
 
 package web.fs
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface FileSystemFlags {
+external interface FileSystemFlags {
     var create: Boolean?
     var exclusive: Boolean?
 }

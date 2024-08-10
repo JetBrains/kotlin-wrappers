@@ -3,10 +3,9 @@
 package web.streams
 
 import js.core.Void
-import js.objects.JsPlainObject
 
-@JsPlainObject
-sealed external interface UnderlyingSink<W> {
+@kotlinx.js.JsPlainObject_KT_68943
+external interface UnderlyingSink<W> {
     var abort: UnderlyingSinkAbortCallback?
     var close: UnderlyingSinkCloseCallback?
     var start: UnderlyingSinkStartCallback?

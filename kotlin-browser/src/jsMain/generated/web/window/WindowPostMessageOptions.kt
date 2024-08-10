@@ -2,11 +2,11 @@
 
 package web.window
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.serialization.StructuredSerializeOptions
 
 @JsPlainObject
-sealed external interface WindowPostMessageOptions :
+external interface WindowPostMessageOptions :
     StructuredSerializeOptions {
     var targetOrigin: String?
 }

@@ -2,10 +2,10 @@
 
 package web.device
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface DeviceMotionEventAccelerationInit {
+external interface DeviceMotionEventAccelerationInit {
     var x: Double?
     var y: Double?
     var z: Double?

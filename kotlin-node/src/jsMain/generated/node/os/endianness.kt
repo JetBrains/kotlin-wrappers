@@ -4,7 +4,6 @@
 
 package node.os
 
-
 /**
  * Returns a string identifying the endianness of the CPU for which the Node.js
  * binary was compiled.

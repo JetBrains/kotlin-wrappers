@@ -7,6 +7,8 @@ import js.iterable.JsIterable
 import web.autofill.AutoFillBase
 import web.dom.DOMTokenList
 import web.dom.Element
+import web.form.FormEncType
+import web.form.FormMethod
 import web.window.WindowTarget
 
 /**
@@ -35,8 +37,6 @@ protected constructor() :
 
     /**
      * Specifies whether autocomplete is applied to an editable text field.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/autocomplete)
      */
     var autocomplete: AutoFillBase
 
@@ -59,7 +59,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/enctype)
      */
-    var enctype: String
+    var enctype: FormEncType
 
     /**
      * Sets or retrieves the number of objects in a collection.
@@ -73,7 +73,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/method)
      */
-    var method: String
+    var method: FormMethod
 
     /**
      * Sets or retrieves the name of the object.
@@ -84,8 +84,6 @@ protected constructor() :
 
     /**
      * Designates a form that is not validated when submitted.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/noValidate)
      */
     var noValidate: Boolean
     var rel: String
@@ -100,8 +98,6 @@ protected constructor() :
 
     /**
      * Returns whether a form will validate when it is submitted, without having to submit it.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/checkValidity)
      */
     fun checkValidity(): Boolean
 

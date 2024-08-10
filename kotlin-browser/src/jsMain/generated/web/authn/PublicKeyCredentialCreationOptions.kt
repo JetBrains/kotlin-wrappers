@@ -4,10 +4,10 @@ package web.authn
 
 import js.array.ReadonlyArray
 import js.buffer.BufferSource
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface PublicKeyCredentialCreationOptions {
+external interface PublicKeyCredentialCreationOptions {
     var attestation: AttestationConveyancePreference?
     var authenticatorSelection: AuthenticatorSelectionCriteria?
     var challenge: BufferSource

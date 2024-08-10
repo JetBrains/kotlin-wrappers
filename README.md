@@ -1,8 +1,7 @@
 [![JetBrains team project](https://jb.gg/badges/team.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
 [![CI](https://github.com/JetBrains/kotlin-wrappers/workflows/CI/badge.svg)](https://github.com/JetBrains/kotlin-wrappers/actions)
-[![CI K2](https://github.com/JetBrains/kotlin-wrappers/workflows/CI-K2/badge.svg)](https://github.com/JetBrains/kotlin-wrappers/actions)
 [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-wrappers-bom)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-wrappers-bom)
-[![Kotlin](https://img.shields.io/badge/kotlin-1.9.24-blue.svg?logo=kotlin)](http://kotlinlang.org)
+[![Kotlin](https://img.shields.io/badge/kotlin-2.0.10-blue.svg?logo=kotlin)](http://kotlinlang.org)
 [![Slack channel](https://img.shields.io/badge/chat-slack-green.svg?logo=slack)](https://kotlinlang.slack.com/messages/react/)
 
 # Kotlin Wrappers
@@ -42,15 +41,12 @@ To learn more please refer to the `README`s of individual modules.
 | [kotlin-react-dom-legacy](kotlin-react-dom-legacy/README.md)                           |             archived             | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-dom-legacy)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-dom-legacy)                           |
 | [kotlin-react-dom-test-utils](kotlin-react-dom-test-utils/README.md)                   |                                  | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-dom-test-utils)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-dom-test-utils)                   |
 | [kotlin-react-legacy](kotlin-react-legacy/README.md)                                   |             archived             | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-legacy)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-legacy)                                   |
-| [kotlin-react-redux](kotlin-react-redux/README.md)                                     |                                  | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-redux)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-redux)                                     |
 | [kotlin-react-router](kotlin-react-router/README.md)                                   |                                  | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-router)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-router)                                   |
 | [kotlin-react-router-dom](kotlin-react-router-dom/README.md)                           |                                  | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-router-dom)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-router-dom)                           |
 | [kotlin-react-popper](kotlin-react-popper/README.md)                                   |                                  | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-popper)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-popper)                                   |
 | [kotlin-react-select](kotlin-react-select/README.md)                                   |                                  | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-select)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-select)                                   |
 | [kotlin-react-use](kotlin-react-use/README.md)                                         |                                  | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-use)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-use)                                         |
-| [kotlin-redux](kotlin-redux/README.md)                                                 |                                  | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-redux)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-redux)                                                 |
 | [kotlin-remix-run-router](kotlin-remix-run-router/README.md)                           |                                  | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-remix-run-router)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-remix-run-router)                           |
-| [kotlin-ring-ui](kotlin-ring-ui/README.md)                                             |                                  | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-ring-ui)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-ring-ui)                                             |
 | [kotlin-styled-next](kotlin-styled-next/README.md)                                     |                                  | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-styled-next)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-styled-next)                                     |
 | [kotlin-tanstack-query-core](kotlin-tanstack-query-core/README.md)                     |                                  | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-tanstack-query-core)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-tanstack-query-core)                     |
 | [kotlin-tanstack-react-query](kotlin-tanstack-react-query/README.md)                   |                                  | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-tanstack-react-query)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-tanstack-react-query)                   |
@@ -75,7 +71,7 @@ about version compatibility.
 Just declare `kotlin-wrappers-bom` and specify the modules you need:
 
 ```kotlin
-val kotlinWrappersVersion = "1.0.0-pre.754"
+val kotlinWrappersVersion = "1.0.0-pre.789"
 
 dependencies {
     implementation(platform("org.jetbrains.kotlin-wrappers:kotlin-wrappers-bom:$kotlinWrappersVersion"))
@@ -93,7 +89,7 @@ Or use a helper function:
 fun kotlinw(target: String): String =
     "org.jetbrains.kotlin-wrappers:kotlin-$target"
 
-val kotlinWrappersVersion = "1.0.0-pre.754"
+val kotlinWrappersVersion = "1.0.0-pre.789"
 
 dependencies {
     implementation(platform(kotlinw("wrappers-bom:$kotlinWrappersVersion")))

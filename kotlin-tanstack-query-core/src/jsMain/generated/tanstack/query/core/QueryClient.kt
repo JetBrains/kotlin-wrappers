@@ -6,6 +6,7 @@ package tanstack.query.core
 
 import js.array.JsTuple2
 import js.array.ReadonlyArray
+import js.core.Void
 import js.promise.Promise
 
 open external class QueryClient(config: QueryClientConfig = definedExternally) {
@@ -33,28 +34,28 @@ open external class QueryClient(config: QueryClientConfig = definedExternally) {
     open fun resetQueries(
         filters: QueryFilters = definedExternally,
         options: ResetOptions = definedExternally,
-    ): Promise<Unit>
+    ): Promise<Void>
 
     open fun cancelQueries(
         filters: QueryFilters = definedExternally,
         cancelOptions: CancelOptions = definedExternally,
-    ): Promise<Unit>
+    ): Promise<Void>
 
     open fun invalidateQueries(
         filters: InvalidateQueryFilters = definedExternally,
         options: InvalidateOptions = definedExternally,
-    ): Promise<Unit>
+    ): Promise<Void>
 
     open fun refetchQueries(
         filters: RefetchQueryFilters = definedExternally,
         options: RefetchOptions = definedExternally,
-    ): Promise<Unit>
+    ): Promise<Void>
 
     open fun <TQueryFnData, TError, TData, TQueryKey : QueryKey, TPageParam> fetchQuery(options: FetchQueryOptions<TQueryFnData, TError, TData, TQueryKey, TPageParam>): Promise<TData>
-    open fun <TQueryFnData, TError, TData, TQueryKey : QueryKey> prefetchQuery(options: FetchQueryOptions<TQueryFnData, TError, TData, TQueryKey, *>): Promise<Unit>
+    open fun <TQueryFnData, TError, TData, TQueryKey : QueryKey> prefetchQuery(options: FetchQueryOptions<TQueryFnData, TError, TData, TQueryKey, *>): Promise<Void>
     open fun <TQueryFnData, TError, TData, TQueryKey : QueryKey, TPageParam> fetchInfiniteQuery(options: FetchInfiniteQueryOptions<TQueryFnData, TError, TData, TQueryKey, TPageParam>): Promise<InfiniteData<TData, TPageParam>>
-    open fun <TQueryFnData, TError, TData, TQueryKey : QueryKey, TPageParam> prefetchInfiniteQuery(options: FetchInfiniteQueryOptions<TQueryFnData, TError, TData, TQueryKey, TPageParam>): Promise<Unit>
-    open fun resumePausedMutations(): Promise<Any?>
+    open fun <TQueryFnData, TError, TData, TQueryKey : QueryKey, TPageParam> prefetchInfiniteQuery(options: FetchInfiniteQueryOptions<TQueryFnData, TError, TData, TQueryKey, TPageParam>): Promise<Void>
+    open fun resumePausedMutations(): Promise<*>
     open fun getQueryCache(): QueryCache
     open fun getMutationCache(): MutationCache
     open fun getDefaultOptions(): DefaultOptions<*>

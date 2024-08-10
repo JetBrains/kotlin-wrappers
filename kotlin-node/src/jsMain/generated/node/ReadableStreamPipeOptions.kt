@@ -2,7 +2,6 @@
 
 package node
 
-
 sealed external interface ReadableStreamPipeOptions {
     var end: Boolean?
 }

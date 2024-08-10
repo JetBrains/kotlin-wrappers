@@ -4,7 +4,6 @@
 
 package node.os
 
-
 /**
  * Returns an object containing network interfaces that have been assigned a
  * network address.

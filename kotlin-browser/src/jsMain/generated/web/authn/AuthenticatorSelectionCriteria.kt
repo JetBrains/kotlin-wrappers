@@ -2,10 +2,10 @@
 
 package web.authn
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface AuthenticatorSelectionCriteria {
+external interface AuthenticatorSelectionCriteria {
     var authenticatorAttachment: AuthenticatorAttachment?
     var requireResidentKey: Boolean?
     var residentKey: ResidentKeyRequirement?

@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 
 /**
  * A description of the outline of an ellipse on an ellipsoid.
@@ -25,13 +20,15 @@ import js.objects.jso
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipseOutlineGeometry.html">Online Documentation</a>
  */
-external class EllipseOutlineGeometry(options: ConstructorOptions) {
+external class EllipseOutlineGeometry(
+    options: ConstructorOptions,
+) {
     /**
      * @property [center] The ellipse's center point in the fixed frame.
      * @property [semiMajorAxis] The length of the ellipse's semi-major axis in meters.
      * @property [semiMinorAxis] The length of the ellipse's semi-minor axis in meters.
      * @property [ellipsoid] The ellipsoid the ellipse will be on.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @property [height] The distance in meters between the ellipse and the ellipsoid surface.
      *   Default value - `0.0`
      * @property [extrudedHeight] The distance in meters between the ellipse's extruded face and the ellipsoid surface.
@@ -101,8 +98,3 @@ external class EllipseOutlineGeometry(options: ConstructorOptions) {
         fun createGeometry(ellipseGeometry: EllipseOutlineGeometry): Geometry?
     }
 }
-
-inline fun EllipseOutlineGeometry(
-    block: EllipseOutlineGeometry.ConstructorOptions.() -> Unit,
-): EllipseOutlineGeometry =
-    EllipseOutlineGeometry(options = jso(block))

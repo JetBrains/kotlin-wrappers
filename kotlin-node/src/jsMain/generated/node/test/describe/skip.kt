@@ -10,7 +10,8 @@ import node.test.SuiteFn
 import node.test.TestOptions
 
 /**
- * Shorthand for skipping a suite, same as `describe([name], { skip: true }[, fn])`.
+ * Shorthand for skipping a suite. This is the same as [`describe([name], { skip: true }[, fn])`](https://nodejs.org/docs/latest-v20.x/api/test.html#describename-options-fn).
+ * @since v18.15.0
  */
 
 @JsName("skip")

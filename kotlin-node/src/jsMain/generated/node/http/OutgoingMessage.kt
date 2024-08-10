@@ -12,7 +12,6 @@ import node.net.Socket
  * the perspective of the participants of an HTTP transaction.
  * @since v0.1.17
  */
-
 open external class OutgoingMessage<Request : IncomingMessage /* default is IncomingMessage */> : node.stream.Writable {
     constructor ()
 
@@ -50,7 +49,7 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
     val socket: Socket?
 
     /**
-     * Once a socket is associated with the message and is connected,`socket.setTimeout()` will be called with `msecs` as the first parameter.
+     * Once a socket is associated with the message and is connected, `socket.setTimeout()` will be called with `msecs` as the first parameter.
      * @since v0.9.12
      * @param callback Optional function to be called when a timeout occurs. Same as binding to the `timeout` event.
      */
@@ -87,12 +86,12 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
     fun setHeader(name: String, value: ReadonlyArray<String>): Unit /* this */
 
     /**
-     * Append a single header value for the header object.
+     * Append a single header value to the header object.
      *
-     * If the value is an array, this is equivalent of calling this method multiple
+     * If the value is an array, this is equivalent to calling this method multiple
      * times.
      *
-     * If there were no previous value for the header, this is equivalent of calling `outgoingMessage.setHeader(name, value)`.
+     * If there were no previous values for the header, this is equivalent to calling `outgoingMessage.setHeader(name, value)`.
      *
      * Depending of the value of `options.uniqueHeaders` when the client request or the
      * server were created, this will end up in the header being sent multiple times or
@@ -104,12 +103,12 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
     fun appendHeader(name: String, value: String): Unit /* this */
 
     /**
-     * Append a single header value for the header object.
+     * Append a single header value to the header object.
      *
-     * If the value is an array, this is equivalent of calling this method multiple
+     * If the value is an array, this is equivalent to calling this method multiple
      * times.
      *
-     * If there were no previous value for the header, this is equivalent of calling `outgoingMessage.setHeader(name, value)`.
+     * If there were no previous values for the header, this is equivalent to calling `outgoingMessage.setHeader(name, value)`.
      *
      * Depending of the value of `options.uniqueHeaders` when the client request or the
      * server were created, this will end up in the header being sent multiple times or
@@ -235,7 +234,7 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
      * packet.
      *
      * It is usually desired (it saves a TCP round-trip), but not when the first
-     * data is not sent until possibly much later. `outgoingMessage.flushHeaders()`bypasses the optimization and kickstarts the message.
+     * data is not sent until possibly much later. `outgoingMessage.flushHeaders()` bypasses the optimization and kickstarts the message.
      * @since v1.6.0
      */
     fun flushHeaders(): Unit

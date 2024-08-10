@@ -4,9 +4,8 @@
 
 package node.http
 
-
 /**
- * Performs the low-level validations on the provided `value` that are done when`res.setHeader(name, value)` is called.
+ * Performs the low-level validations on the provided `value` that are done when `res.setHeader(name, value)` is called.
  *
  * Passing illegal value as `value` will result in a `TypeError` being thrown.
  *

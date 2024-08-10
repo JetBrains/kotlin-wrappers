@@ -3,7 +3,6 @@
 package electron.core
 
 
-@seskar.js.JsVirtual
 sealed external interface TrayEvent {
     sealed interface BALLOON_CLICK : node.events.LegacyEventType
     sealed interface BALLOON_CLOSED : node.events.LegacyEventType

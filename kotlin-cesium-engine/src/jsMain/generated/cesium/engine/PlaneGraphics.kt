@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 /**
@@ -98,8 +94,3 @@ external class PlaneGraphics {
      */
     fun merge(source: PlaneGraphics)
 }
-
-inline fun PlaneGraphics(
-    block: PlaneGraphics.() -> Unit,
-): PlaneGraphics =
-    PlaneGraphics().apply(block)

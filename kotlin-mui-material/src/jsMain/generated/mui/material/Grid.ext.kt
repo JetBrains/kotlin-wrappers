@@ -3,9 +3,7 @@
 package mui.material
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface GridDirection {
     companion object {
         @JsValue("row")
@@ -22,7 +20,6 @@ sealed external interface GridDirection {
     }
 }
 
-@JsVirtual
 sealed external interface GridWrap {
     companion object {
         @JsValue("nowrap")

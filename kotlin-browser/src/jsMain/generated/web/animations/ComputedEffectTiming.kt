@@ -2,10 +2,10 @@
 
 package web.animations
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface ComputedEffectTiming :
+external interface ComputedEffectTiming :
     EffectTiming {
     var activeDuration: CSSNumberish?
     var currentIteration: Double?

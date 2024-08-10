@@ -3,10 +3,10 @@
 package web.gpu
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GPUFragmentState :
+external interface GPUFragmentState :
     GPUProgrammableStage {
     var targets: ReadonlyArray<GPUColorTargetState?>
 }

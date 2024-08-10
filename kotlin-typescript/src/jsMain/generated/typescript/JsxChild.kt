@@ -2,5 +2,4 @@
 
 package typescript
 
-sealed external interface JsxChild :
-    Node /* JsxText | JsxExpression | JsxElement | JsxSelfClosingElement | JsxFragment */
+sealed external interface JsxChild : Node

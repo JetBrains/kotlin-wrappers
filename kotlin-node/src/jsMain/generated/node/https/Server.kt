@@ -4,21 +4,18 @@
 
 package node.https
 
+import node.stream.Duplex
 import node.http.IncomingMessage
 import node.http.ServerResponse
-import node.stream.Duplex
 
 
 /**
  * See `http.Server` for more information.
  * @since v0.3.4
  */
-
 @Suppress("MANY_CLASSES_IN_SUPERTYPE_LIST")
-
-external class Server<Request : IncomingMessage, Response : ServerResponse<*>> : node.tls.Server,
-    @seskar.js.JsMixin
-    node.http.Server<Request, Response> {
+external class Server<Request : IncomingMessage, Response : ServerResponse<*>> : node.tls.Server, @seskar.js.JsMixin
+node.http.Server<Request, Response> {
     constructor (requestListener: node.http.RequestListener<Request, Response> = definedExternally)
     constructor (
         options: ServerOptions<Request, Response>,

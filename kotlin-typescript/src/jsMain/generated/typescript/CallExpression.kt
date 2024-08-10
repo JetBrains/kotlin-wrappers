@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface CallExpression : LeftHandSideExpression, Declaration, Union.CallExpression_ {
+sealed external interface CallExpression : LeftHandSideExpression, Declaration, HasTypeArguments, SpreadElementParent,
+    CallLikeExpression, FlowArrayMutationNode, IsCallOrNewExpressionResultPredicate {
     override val kind: SyntaxKind.CallExpression
     val expression: LeftHandSideExpression
     val questionDotToken: QuestionDotToken?

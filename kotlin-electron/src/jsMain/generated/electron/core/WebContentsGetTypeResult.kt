@@ -2,8 +2,6 @@
 
 package electron.core
 
-
-@seskar.js.JsVirtual
 sealed external interface WebContentsGetTypeResult {
     companion object {
         @seskar.js.JsValue("backgroundPage")

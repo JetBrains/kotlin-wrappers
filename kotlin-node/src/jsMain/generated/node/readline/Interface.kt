@@ -8,15 +8,13 @@ import node.events.EventEmitter
 import web.abort.Abortable
 
 /**
- * Instances of the `readline.Interface` class are constructed using the`readline.createInterface()` method. Every instance is associated with a
- * single `input` `Readable` stream and a single `output` `Writable` stream.
+ * Instances of the `readline.Interface` class are constructed using the `readline.createInterface()` method. Every instance is associated with a
+ * single `input` [Readable](https://nodejs.org/docs/latest-v20.x/api/stream.html#readable-streams) stream and a single `output` [Writable](https://nodejs.org/docs/latest-v20.x/api/stream.html#writable-streams) stream.
  * The `output` stream is used to print prompts for user input that arrives on,
  * and is read from, the `input` stream.
  * @since v0.1.104
  */
-
 @JsName("Interface")
-
 open external class _Interface : EventEmitter {
     /**
      * NOTE: According to the documentation:
@@ -111,7 +109,7 @@ open external class _Interface : EventEmitter {
     fun getPrompt(): String
 
     /**
-     * The `rl.setPrompt()` method sets the prompt that will be written to `output`whenever `rl.prompt()` is called.
+     * The `rl.setPrompt()` method sets the prompt that will be written to `output` whenever `rl.prompt()` is called.
      * @since v0.1.98
      */
     fun setPrompt(prompt: String): Unit
@@ -123,7 +121,7 @@ open external class _Interface : EventEmitter {
      * When called, `rl.prompt()` will resume the `input` stream if it has been
      * paused.
      *
-     * If the `Interface` was created with `output` set to `null` or`undefined` the prompt is not written.
+     * If the `Interface` was created with `output` set to `null` or `undefined` the prompt is not written.
      * @since v0.1.98
      * @param preserveCursor If `true`, prevents the cursor placement from being reset to `0`.
      */
@@ -131,12 +129,12 @@ open external class _Interface : EventEmitter {
 
     /**
      * The `rl.question()` method displays the `query` by writing it to the `output`,
-     * waits for user input to be provided on `input`, then invokes the `callback`function passing the provided input as the first argument.
+     * waits for user input to be provided on `input`, then invokes the `callback` function passing the provided input as the first argument.
      *
      * When called, `rl.question()` will resume the `input` stream if it has been
      * paused.
      *
-     * If the `Interface` was created with `output` set to `null` or`undefined` the `query` is not written.
+     * If the `Interface` was created with `output` set to `null` or `undefined` the `query` is not written.
      *
      * The `callback` function passed to `rl.question()` does not follow the typical
      * pattern of accepting an `Error` object or `null` as the first argument.
@@ -179,7 +177,7 @@ open external class _Interface : EventEmitter {
      * The `rl.pause()` method pauses the `input` stream, allowing it to be resumed
      * later if necessary.
      *
-     * Calling `rl.pause()` does not immediately pause other events (including`'line'`) from being emitted by the `Interface` instance.
+     * Calling `rl.pause()` does not immediately pause other events (including `'line'`) from being emitted by the `Interface` instance.
      * @since v0.3.4
      */
     fun pause(): Unit /* this */
@@ -212,7 +210,7 @@ open external class _Interface : EventEmitter {
      * When called, `rl.write()` will resume the `input` stream if it has been
      * paused.
      *
-     * If the `Interface` was created with `output` set to `null` or`undefined` the `data` and `key` are not written.
+     * If the `Interface` was created with `output` set to `null` or `undefined` the `data` and `key` are not written.
      *
      * ```js
      * rl.write('Delete this!');
@@ -220,7 +218,7 @@ open external class _Interface : EventEmitter {
      * rl.write(null, { ctrl: true, name: 'u' });
      * ```
      *
-     * The `rl.write()` method will write the data to the `readline` `Interface`'s`input`_as if it were provided by the user_.
+     * The `rl.write()` method will write the data to the `readline` `Interface`'s `input` _as if it were provided by the user_.
      * @since v0.1.98
      */
     fun write(data: String, key: Key = definedExternally): Unit
@@ -236,7 +234,7 @@ open external class _Interface : EventEmitter {
      * When called, `rl.write()` will resume the `input` stream if it has been
      * paused.
      *
-     * If the `Interface` was created with `output` set to `null` or`undefined` the `data` and `key` are not written.
+     * If the `Interface` was created with `output` set to `null` or `undefined` the `data` and `key` are not written.
      *
      * ```js
      * rl.write('Delete this!');
@@ -244,7 +242,7 @@ open external class _Interface : EventEmitter {
      * rl.write(null, { ctrl: true, name: 'u' });
      * ```
      *
-     * The `rl.write()` method will write the data to the `readline` `Interface`'s`input`_as if it were provided by the user_.
+     * The `rl.write()` method will write the data to the `readline` `Interface`'s `input` _as if it were provided by the user_.
      * @since v0.1.98
      */
     fun write(data: node.buffer.Buffer, key: Key = definedExternally): Unit

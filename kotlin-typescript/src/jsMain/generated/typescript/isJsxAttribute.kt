@@ -1,17 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
-)
+@file:JsModule("typescript")
 
 package typescript
 
-import kotlin.contracts.contract
 
-fun isJsxAttribute(node: Node): Boolean {
-    contract {
-        returns(true) implies (node is JsxAttribute)
-    }
-
-    return typescript.raw.isJsxAttribute(node)
-}
+@JsName("isJsxAttribute")
+external fun isJsxAttributeRaw(node: Node): Boolean /* node is JsxAttribute */

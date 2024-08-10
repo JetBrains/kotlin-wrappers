@@ -4,7 +4,6 @@
 
 package node.zlib
 
-
 /**
  * @since v0.6.0
  */

@@ -6,12 +6,14 @@ import web.dom.Element
 import web.html.ImageDecoding
 import web.html.Loading
 import web.http.CrossOrigin
+import web.http.FetchPriority
 import web.http.ReferrerPolicy
 
 external interface ImgHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var alt: String?
     var crossOrigin: CrossOrigin?
     var decoding: ImageDecoding?
+    var fetchPriority: FetchPriority?
     var height: Double?
     var loading: Loading?
     var referrerPolicy: ReferrerPolicy?

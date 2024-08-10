@@ -2,7 +2,7 @@ package js.collections
 
 import js.array.ReadonlyArray
 
-external class WeakSet<in T>(
+open external class WeakSet<in T>(
     values: ReadonlyArray<T>? = definedExternally,
 ) {
     fun add(value: T): WeakSet<T>

@@ -4,7 +4,6 @@
 
 package node.stream
 
-
 /**
  * Returns whether the stream has encountered an error.
  * @since v17.3.0, v16.14.0

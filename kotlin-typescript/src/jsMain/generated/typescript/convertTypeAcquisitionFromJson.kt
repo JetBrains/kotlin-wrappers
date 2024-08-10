@@ -5,7 +5,7 @@
 package typescript
 
 external fun convertTypeAcquisitionFromJson(
-    jsonOptions: Any,
+    jsonOptions: Any?,
     basePath: String,
     configFileName: String = definedExternally,
-): OptionsProvider<TypeAcquisition>
+): ConvertTypeAcquisitionFromJsonResult

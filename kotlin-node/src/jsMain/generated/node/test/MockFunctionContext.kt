@@ -4,13 +4,11 @@
 
 package node.test
 
-
 /**
  * The `MockFunctionContext` class is used to inspect or manipulate the behavior of
  * mocks created via the `MockTracker` APIs.
  * @since v19.1.0, v18.13.0
  */
-
 external class MockFunctionContext<F : Function<*>> {
     /**
      * A getter that returns a copy of the internal array used to track calls to the
@@ -21,7 +19,7 @@ external class MockFunctionContext<F : Function<*>> {
 
     /**
      * This function returns the number of times that this mock has been invoked. This
-     * function is more efficient than checking `ctx.calls.length` because `ctx.calls`is a getter that creates a copy of the internal call tracking array.
+     * function is more efficient than checking `ctx.calls.length` because `ctx.calls` is a getter that creates a copy of the internal call tracking array.
      * @since v19.1.0, v18.13.0
      * @return The number of times that this mock has been invoked.
      */
@@ -58,7 +56,7 @@ external class MockFunctionContext<F : Function<*>> {
      * @since v19.1.0, v18.13.0
      * @param implementation The function to be used as the mock's new implementation.
      */
-    fun mockImplementation(implementation: Function<*>): Unit
+    fun mockImplementation(implementation: F): Unit
 
     /**
      * This function is used to change the behavior of an existing mock for a single
@@ -96,7 +94,7 @@ external class MockFunctionContext<F : Function<*>> {
      * @param implementation The function to be used as the mock's implementation for the invocation number specified by `onCall`.
      * @param onCall The invocation number that will use `implementation`. If the specified invocation has already occurred then an exception is thrown.
      */
-    fun mockImplementationOnce(implementation: Function<*>, onCall: Number = definedExternally): Unit
+    fun mockImplementationOnce(implementation: F, onCall: Number = definedExternally): Unit
 
     /**
      * Resets the call history of the mock function.

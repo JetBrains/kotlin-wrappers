@@ -4,7 +4,6 @@
 
 package node.os
 
-
 /**
  * Returns an estimate of the default amount of parallelism a program should use.
  * Always returns a value greater than zero.

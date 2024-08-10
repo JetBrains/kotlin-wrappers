@@ -3,7 +3,6 @@
 package node.workerThreads
 
 
-@seskar.js.JsVirtual
 sealed external interface WorkerEvent {
     sealed interface ERROR : node.events.LegacyEventType
     sealed interface EXIT : node.events.LegacyEventType

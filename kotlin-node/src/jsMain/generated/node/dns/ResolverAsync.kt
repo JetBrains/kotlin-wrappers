@@ -49,7 +49,6 @@ import js.promise.Promise
  * * `resolver.setServers()`
  * @since v10.6.0
  */
-
 external class Resolver {
     constructor (options: ResolverOptions = definedExternally)
 

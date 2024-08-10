@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface BindingOrAssignmentElementRestIndicator /* DotDotDotToken | SpreadElement | SpreadAssignment */
+sealed external interface BindingOrAssignmentElementRestIndicator : Node

@@ -130,7 +130,7 @@ internal fun customStyled(type: dynamic): ElementType<StyledProps> {
             if (isFresh) {
                 GlobalStyles.injectScheduled()
             }
-            cleanup {
+            onCleanup {
                 GlobalStyles.removeStyles(css)
             }
         }

@@ -5,7 +5,7 @@
 package node.stream
 
 import js.iterable.AsyncIterable
-import js.iterable.AsyncIterableIterator
+import js.iterable.AsyncIterator
 import js.promise.Promise
 import js.typedarrays.Uint8Array
 import node.ReadableStreamPipeOptions
@@ -14,7 +14,6 @@ import node.WritableStream
 /**
  * @since v0.9.4
  */
-
 open external class Readable : Stream, node.ReadableStream {
     constructor (opts: ReadableOptions = definedExternally)
 
@@ -26,7 +25,7 @@ open external class Readable : Stream, node.ReadableStream {
     val readableAborted: Boolean
 
     /**
-     * Is `true` if it is safe to call `readable.read()`, which means
+     * Is `true` if it is safe to call {@link read}, which means
      * the stream has not been destroyed or emitted `'error'` or `'end'`.
      * @since v11.4.0
      */
@@ -40,20 +39,20 @@ open external class Readable : Stream, node.ReadableStream {
     val readableDidRead: Boolean
 
     /**
-     * Getter for the property `encoding` of a given `Readable` stream. The `encoding`property can be set using the `readable.setEncoding()` method.
+     * Getter for the property `encoding` of a given `Readable` stream. The `encoding` property can be set using the {@link setEncoding} method.
      * @since v12.7.0
      */
     val readableEncoding: node.buffer.BufferEncoding?
 
     /**
-     * Becomes `true` when `'end'` event is emitted.
+     * Becomes `true` when [`'end'`](https://nodejs.org/docs/latest-v20.x/api/stream.html#event-end) event is emitted.
      * @since v12.9.0
      */
     val readableEnded: Boolean
 
     /**
      * This property reflects the current state of a `Readable` stream as described
-     * in the `Three states` section.
+     * in the [Three states](https://nodejs.org/docs/latest-v20.x/api/stream.html#three-states) section.
      * @since v9.4.0
      */
     val readableFlowing: Boolean?
@@ -95,7 +94,7 @@ open external class Readable : Stream, node.ReadableStream {
      * @since v18.0.0
      */
     open val errored: Throwable /* JsError */?
-    open fun _construct(callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit): Unit
+    open val _construct: ((callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit) -> Unit)?
     fun _read(size: Number): Unit
 
     /**
@@ -105,9 +104,10 @@ open external class Readable : Stream, node.ReadableStream {
      * specified using the `readable.setEncoding()` method or the stream is operating
      * in object mode.
      *
-     * The optional `size` argument specifies a specific number of bytes to read. If`size` bytes are not available to be read, `null` will be returned _unless_the stream has ended, in which
-     * case all of the data remaining in the internal
-     * buffer will be returned.
+     * The optional `size` argument specifies a specific number of bytes to read. If
+     * `size` bytes are not available to be read, `null` will be returned _unless_ the
+     * stream has ended, in which case all of the data remaining in the internal buffer
+     * will be returned.
      *
      * If the `size` argument is not specified, all of the data contained in the
      * internal buffer will be returned.
@@ -164,7 +164,7 @@ open external class Readable : Stream, node.ReadableStream {
      * ```
      *
      * A `Readable` stream in object mode will always return a single item from
-     * a call to `readable.read(size)`, regardless of the value of the`size` argument.
+     * a call to `readable.read(size)`, regardless of the value of the `size` argument.
      *
      * If the `readable.read()` method returns a chunk of data, a `'data'` event will
      * also be emitted.
@@ -182,9 +182,9 @@ open external class Readable : Stream, node.ReadableStream {
      * The `readable.setEncoding()` method sets the character encoding for
      * data read from the `Readable` stream.
      *
-     * By default, no encoding is assigned and stream data will be returned as`Buffer` objects. Setting an encoding causes the stream data
-     * to be returned as strings of the specified encoding rather than as `Buffer`objects. For instance, calling `readable.setEncoding('utf8')` will cause the
-     * output data to be interpreted as UTF-8 data, and passed as strings. Calling`readable.setEncoding('hex')` will cause the data to be encoded in hexadecimal
+     * By default, no encoding is assigned and stream data will be returned as `Buffer` objects. Setting an encoding causes the stream data
+     * to be returned as strings of the specified encoding rather than as `Buffer` objects. For instance, calling `readable.setEncoding('utf8')` will cause the
+     * output data to be interpreted as UTF-8 data, and passed as strings. Calling `readable.setEncoding('hex')` will cause the data to be encoded in hexadecimal
      * string format.
      *
      * The `Readable` stream will properly handle multi-byte characters delivered
@@ -222,7 +222,7 @@ open external class Readable : Stream, node.ReadableStream {
      * });
      * ```
      *
-     * The `readable.pause()` method has no effect if there is a `'readable'`event listener.
+     * The `readable.pause()` method has no effect if there is a `'readable'` event listener.
      * @since v0.9.4
      */
     override fun pause(): Unit /* this */
@@ -242,15 +242,15 @@ open external class Readable : Stream, node.ReadableStream {
      *   });
      * ```
      *
-     * The `readable.resume()` method has no effect if there is a `'readable'`event listener.
+     * The `readable.resume()` method has no effect if there is a `'readable'` event listener.
      * @since v0.9.4
      */
     override fun resume(): Unit /* this */
 
     /**
-     * The `readable.isPaused()` method returns the current operating state of the`Readable`. This is used primarily by the mechanism that underlies the`readable.pipe()` method. In most
-     * typical cases, there will be no reason to
-     * use this method directly.
+     * The `readable.isPaused()` method returns the current operating state of the `Readable`.
+     * This is used primarily by the mechanism that underlies the `readable.pipe()` method.
+     * In most typical cases, there will be no reason to use this method directly.
      *
      * ```js
      * const readable = new stream.Readable();
@@ -354,17 +354,17 @@ open external class Readable : Stream, node.ReadableStream {
      * however it is best to simply avoid calling `readable.unshift()` while in the
      * process of performing a read.
      * @since v0.9.11
-     * @param chunk Chunk of data to unshift onto the read queue. For streams not operating in object mode, `chunk` must be a string, `Buffer`, `Uint8Array`, or `null`. For object mode
-     * streams, `chunk` may be any JavaScript value.
+     * @param chunk Chunk of data to unshift onto the read queue. For streams not operating in object mode, `chunk` must
+     * be a {string}, {Buffer}, {TypedArray}, {DataView} or `null`. For object mode streams, `chunk` may be any JavaScript value.
      * @param encoding Encoding of string chunks. Must be a valid `Buffer` encoding, such as `'utf8'` or `'ascii'`.
      */
     fun unshift(chunk: Any?, encoding: node.buffer.BufferEncoding = definedExternally): Unit
 
     /**
-     * Prior to Node.js 0.10, streams did not implement the entire `node:stream`module API as it is currently defined. (See `Compatibility` for more
+     * Prior to Node.js 0.10, streams did not implement the entire `node:stream` module API as it is currently defined. (See `Compatibility` for more
      * information.)
      *
-     * When using an older Node.js library that emits `'data'` events and has a {@link pause} method that is advisory only, the`readable.wrap()` method can be used to create a `Readable`
+     * When using an older Node.js library that emits `'data'` events and has a {@link pause} method that is advisory only, the `readable.wrap()` method can be used to create a `Readable`
      * stream that uses
      * the old stream as its data source.
      *
@@ -397,7 +397,7 @@ open external class Readable : Stream, node.ReadableStream {
      * or exiting a `for await...of` iteration using a `break`, `return`, or `throw` will not destroy the stream.
      * **Default: `true`**.
      */
-    fun iterator(options: ReadableBaseIteratorOptions = definedExternally): AsyncIterableIterator<Any?>
+    fun iterator(options: ReadableBaseIteratorOptions = definedExternally): AsyncIterator<Any?>
 
     /**
      * This method allows mapping over the stream. The *fn* function will be called for every chunk in the stream.
@@ -573,8 +573,8 @@ open external class Readable : Stream, node.ReadableStream {
     ): Unit
 
     /**
-     * Destroy the stream. Optionally emit an `'error'` event, and emit a `'close'`event (unless `emitClose` is set to `false`). After this call, the readable
-     * stream will release any internal resources and subsequent calls to `push()`will be ignored.
+     * Destroy the stream. Optionally emit an `'error'` event, and emit a `'close'` event (unless `emitClose` is set to `false`). After this call, the readable
+     * stream will release any internal resources and subsequent calls to `push()` will be ignored.
      *
      * Once `destroy()` has been called any further calls will be a no-op and no
      * further errors except from `_destroy()` may be emitted as `'error'`.
@@ -722,11 +722,17 @@ open external class Readable : Stream, node.ReadableStream {
 
         /**
          * A utility method for creating Readable Streams out of iterators.
+         * @since v12.3.0, v10.17.0
+         * @param iterable Object implementing the `Symbol.asyncIterator` or `Symbol.iterator` iterable protocol. Emits an 'error' event if a null value is passed.
+         * @param options Options provided to `new stream.Readable([options])`. By default, `Readable.from()` will set `options.objectMode` to `true`, unless this is explicitly opted out by setting `options.objectMode` to `false`.
          */
         fun from(iterable: js.iterable.JsIterable<Any?>, options: ReadableOptions = definedExternally): Readable
 
         /**
          * A utility method for creating Readable Streams out of iterators.
+         * @since v12.3.0, v10.17.0
+         * @param iterable Object implementing the `Symbol.asyncIterator` or `Symbol.iterator` iterable protocol. Emits an 'error' event if a null value is passed.
+         * @param options Options provided to `new stream.Readable([options])`. By default, `Readable.from()` will set `options.objectMode` to `true`, unless this is explicitly opted out by setting `options.objectMode` to `false`.
          */
         fun from(iterable: AsyncIterable<Any?>, options: ReadableOptions = definedExternally): Readable
 
@@ -742,5 +748,4 @@ open external class Readable : Stream, node.ReadableStream {
          */
         fun isDisturbed(stream: node.ReadableStream): Boolean
     }
-
 }

@@ -4,7 +4,6 @@
 
 package node.crypto
 
-
 /**
  * The `ECDH` class is a utility for creating Elliptic Curve Diffie-Hellman (ECDH)
  * key exchanges.
@@ -35,14 +34,13 @@ package node.crypto
  * ```
  * @since v0.11.14
  */
-
 external class ECDH {
     /**
      * Generates private and public EC Diffie-Hellman key values, and returns
      * the public key in the specified `format` and `encoding`. This key should be
      * transferred to the other party.
      *
-     * The `format` argument specifies point encoding and can be `'compressed'` or`'uncompressed'`. If `format` is not specified, the point will be returned in`'uncompressed'` format.
+     * The `format` argument specifies point encoding and can be `'compressed'` or `'uncompressed'`. If `format` is not specified, the point will be returned in`'uncompressed'` format.
      *
      * If `encoding` is provided a string is returned; otherwise a `Buffer` is returned.
      * @since v0.11.14
@@ -58,11 +56,11 @@ external class ECDH {
      * key is interpreted using specified `inputEncoding`, and the returned secret
      * is encoded using the specified `outputEncoding`.
      * If the `inputEncoding` is not
-     * provided, `otherPublicKey` is expected to be a `Buffer`, `TypedArray`, or`DataView`.
+     * provided, `otherPublicKey` is expected to be a `Buffer`, `TypedArray`, or `DataView`.
      *
      * If `outputEncoding` is given a string will be returned; otherwise a `Buffer` is returned.
      *
-     * `ecdh.computeSecret` will throw an`ERR_CRYPTO_ECDH_INVALID_PUBLIC_KEY` error when `otherPublicKey`lies outside of the elliptic curve. Since `otherPublicKey` is
+     * `ecdh.computeSecret` will throw an`ERR_CRYPTO_ECDH_INVALID_PUBLIC_KEY` error when `otherPublicKey` lies outside of the elliptic curve. Since `otherPublicKey` is
      * usually supplied from a remote user over an insecure network,
      * be sure to handle this exception accordingly.
      * @since v0.11.14
@@ -89,7 +87,7 @@ external class ECDH {
     fun getPrivateKey(encoding: BinaryToTextEncoding): String
 
     /**
-     * The `format` argument specifies point encoding and can be `'compressed'` or`'uncompressed'`. If `format` is not specified the point will be returned in`'uncompressed'` format.
+     * The `format` argument specifies point encoding and can be `'compressed'` or `'uncompressed'`. If `format` is not specified the point will be returned in`'uncompressed'` format.
      *
      * If `encoding` is specified, a string is returned; otherwise a `Buffer` is
      * returned.
@@ -108,7 +106,7 @@ external class ECDH {
     /**
      * Sets the EC Diffie-Hellman private key.
      * If `encoding` is provided, `privateKey` is expected
-     * to be a string; otherwise `privateKey` is expected to be a `Buffer`,`TypedArray`, or `DataView`.
+     * to be a string; otherwise `privateKey` is expected to be a `Buffer`, `TypedArray`, or `DataView`.
      *
      * If `privateKey` is not valid for the curve specified when the `ECDH` object was
      * created, an error is thrown. Upon setting the private key, the associated
@@ -131,9 +129,9 @@ external class ECDH {
          * On recent OpenSSL releases, `openssl ecparam -list_curves` will also display
          * the name and description of each available elliptic curve.
          *
-         * If `format` is not specified the point will be returned in `'uncompressed'`format.
+         * If `format` is not specified the point will be returned in `'uncompressed'` format.
          *
-         * If the `inputEncoding` is not provided, `key` is expected to be a `Buffer`,`TypedArray`, or `DataView`.
+         * If the `inputEncoding` is not provided, `key` is expected to be a `Buffer`, `TypedArray`, or `DataView`.
          *
          * Example (uncompressing a key):
          *
@@ -170,5 +168,4 @@ external class ECDH {
             format: ECDHConvertKeyFormat = definedExternally,
         ): Any /* Buffer | string */
     }
-
 }

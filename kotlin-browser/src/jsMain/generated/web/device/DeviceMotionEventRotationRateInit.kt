@@ -2,10 +2,10 @@
 
 package web.device
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface DeviceMotionEventRotationRateInit {
+external interface DeviceMotionEventRotationRateInit {
     var alpha: Double?
     var beta: Double?
     var gamma: Double?

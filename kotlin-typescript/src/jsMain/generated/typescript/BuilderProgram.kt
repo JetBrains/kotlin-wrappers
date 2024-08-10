@@ -2,8 +2,6 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 /**
  * Builder to manage the program state changes
  */
@@ -26,22 +24,22 @@ sealed external interface BuilderProgram {
     /**
      * Get a list of files in the program
      */
-    fun getSourceFiles(): ReadonlyArray<SourceFile>
+    fun getSourceFiles(): js.array.ReadonlyArray<SourceFile>
 
     /**
      * Get the diagnostics for compiler options
      */
-    fun getOptionsDiagnostics(cancellationToken: CancellationToken = definedExternally): ReadonlyArray<Diagnostic>
+    fun getOptionsDiagnostics(cancellationToken: CancellationToken = definedExternally): js.array.ReadonlyArray<Diagnostic>
 
     /**
      * Get the diagnostics that dont belong to any file
      */
-    fun getGlobalDiagnostics(cancellationToken: CancellationToken = definedExternally): ReadonlyArray<Diagnostic>
+    fun getGlobalDiagnostics(cancellationToken: CancellationToken = definedExternally): js.array.ReadonlyArray<Diagnostic>
 
     /**
      * Get the diagnostics from config file parsing
      */
-    fun getConfigFileParsingDiagnostics(): ReadonlyArray<Diagnostic>
+    fun getConfigFileParsingDiagnostics(): js.array.ReadonlyArray<Diagnostic>
 
     /**
      * Get the syntax diagnostics, for all source files if source file is not supplied
@@ -49,7 +47,7 @@ sealed external interface BuilderProgram {
     fun getSyntacticDiagnostics(
         sourceFile: SourceFile = definedExternally,
         cancellationToken: CancellationToken = definedExternally,
-    ): ReadonlyArray<Diagnostic>
+    ): js.array.ReadonlyArray<Diagnostic>
 
     /**
      * Get the declaration diagnostics, for all source files if source file is not supplied
@@ -57,12 +55,12 @@ sealed external interface BuilderProgram {
     fun getDeclarationDiagnostics(
         sourceFile: SourceFile = definedExternally,
         cancellationToken: CancellationToken = definedExternally,
-    ): ReadonlyArray<DiagnosticWithLocation>
+    ): js.array.ReadonlyArray<DiagnosticWithLocation>
 
     /**
      * Get all the dependencies of the file
      */
-    fun getAllDependencies(sourceFile: SourceFile): ReadonlyArray<String>
+    fun getAllDependencies(sourceFile: SourceFile): js.array.ReadonlyArray<String>
 
     /**
      * Gets the semantic diagnostics from the program corresponding to this state of file (if provided) or whole program
@@ -75,7 +73,7 @@ sealed external interface BuilderProgram {
     fun getSemanticDiagnostics(
         sourceFile: SourceFile = definedExternally,
         cancellationToken: CancellationToken = definedExternally,
-    ): ReadonlyArray<Diagnostic>
+    ): js.array.ReadonlyArray<Diagnostic>
 
     /**
      * Emits the JavaScript and declaration files.

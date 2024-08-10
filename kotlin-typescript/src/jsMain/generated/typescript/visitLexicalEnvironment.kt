@@ -12,7 +12,7 @@ external fun visitLexicalEnvironment(
     statements: NodeArray<Statement>,
     visitor: Visitor<*, *>,
     context: TransformationContext,
-    start: Int = definedExternally,
+    start: Double = definedExternally,
     ensureUseStrict: Boolean = definedExternally,
     nodesVisitor: NodesVisitor = definedExternally,
 ): NodeArray<Statement>

@@ -3,13 +3,11 @@
 @file:JsModule("@cesium/widgets")
 
 @file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
     "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
 )
 
 package cesium.widgets
 
-import cesium.engine.*
 import js.array.ReadonlyArray
 
 /**
@@ -20,7 +18,9 @@ import js.array.ReadonlyArray
  * @property [clockViewModel] The ClockViewModel instance to use.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/AnimationViewModel.html">Online Documentation</a>
  */
-external class AnimationViewModel(var clockViewModel: ClockViewModel) {
+external class AnimationViewModel(
+    var clockViewModel: ClockViewModel,
+) {
     /**
      * Gets or sets whether the shuttle ring is currently being dragged.  This property is observable.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/AnimationViewModel.html#shuttleRingDragging">Online Documentation</a>
@@ -145,19 +145,3 @@ external class AnimationViewModel(var clockViewModel: ClockViewModel) {
         var defaultTimeFormatter: TimeFormatter
     }
 }
-
-/**
- * A function that formats a date for display.
- * @param [date] The date to be formatted
- * @param [viewModel] The AnimationViewModel instance requesting formatting.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/AnimationViewModel.html#.DateFormatter">Online Documentation</a>
- */
-typealias DateFormatter = (date: JulianDate, viewModel: AnimationViewModel) -> String
-
-/**
- * A function that formats a time for display.
- * @param [date] The date to be formatted
- * @param [viewModel] The AnimationViewModel instance requesting formatting.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/AnimationViewModel.html#.TimeFormatter">Online Documentation</a>
- */
-typealias TimeFormatter = (date: JulianDate, viewModel: AnimationViewModel) -> String

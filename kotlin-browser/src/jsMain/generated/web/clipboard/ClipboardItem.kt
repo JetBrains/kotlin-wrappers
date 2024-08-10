@@ -18,6 +18,11 @@ external class ClipboardItem(
     options: ClipboardItemOptions = definedExternally,
 ) {
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem/presentationStyle)
+     */
+    val presentationStyle: PresentationStyle
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem/types)
      */
     val types: ReadonlyArray<String>
@@ -30,4 +35,11 @@ external class ClipboardItem(
 
     @JsName("getType")
     fun getTypeAsync(type: String): Promise<Blob>
+
+    companion object {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem/supports_static)
+         */
+        fun supports(type: String): Boolean
+    }
 }

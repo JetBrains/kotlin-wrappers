@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface FlowArrayMutation : FlowNodeBase, Union.FlowArrayMutation_ {
-    var node: Union.FlowArrayMutation_node
+sealed external interface FlowArrayMutation : FlowNodeBase, FlowNode {
+    var node: FlowArrayMutationNode
     var antecedent: FlowNode
 }

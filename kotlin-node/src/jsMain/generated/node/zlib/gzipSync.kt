@@ -4,7 +4,6 @@
 
 package node.zlib
 
-
 /**
  * Compress a chunk of data with `Gzip`.
  * @since v0.11.12

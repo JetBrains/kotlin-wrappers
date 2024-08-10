@@ -21,17 +21,17 @@ sealed external class RTCIceTransport :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceTransport/gatheringstatechange_event)
      */
-    var ongatheringstatechange: EventHandler<Event, RTCIceTransport>?
+    var ongatheringstatechange: EventHandler<Event, RTCIceTransport, RTCIceTransport>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceTransport/selectedcandidatepairchange_event)
      */
-    var onselectedcandidatepairchange: EventHandler<Event, RTCIceTransport>?
+    var onselectedcandidatepairchange: EventHandler<Event, RTCIceTransport, RTCIceTransport>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceTransport/statechange_event)
      */
-    var onstatechange: EventHandler<Event, RTCIceTransport>?
+    var onstatechange: EventHandler<Event, RTCIceTransport, RTCIceTransport>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceTransport/state)

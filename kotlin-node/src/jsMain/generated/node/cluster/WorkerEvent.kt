@@ -3,7 +3,6 @@
 package node.cluster
 
 
-@seskar.js.JsVirtual
 sealed external interface WorkerEvent {
     sealed interface DISCONNECT : node.events.LegacyEventType
     sealed interface ERROR : node.events.LegacyEventType

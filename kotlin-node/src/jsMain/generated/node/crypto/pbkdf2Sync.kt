@@ -4,11 +4,10 @@
 
 package node.crypto
 
-
 /**
  * Provides a synchronous Password-Based Key Derivation Function 2 (PBKDF2)
  * implementation. A selected HMAC digest algorithm specified by `digest` is
- * applied to derive a key of the requested byte length (`keylen`) from the`password`, `salt` and `iterations`.
+ * applied to derive a key of the requested byte length (`keylen`) from the `password`, `salt` and `iterations`.
  *
  * If an error occurs an `Error` will be thrown, otherwise the derived key will be
  * returned as a `Buffer`.

@@ -1,9 +1,7 @@
 package js.temporal
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface RoundingMode {
     companion object {
         @JsValue("ceil")

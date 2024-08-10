@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ParenthesizedTypeNode : TypeNode, Union.ParenthesizedTypeNode_ {
+sealed external interface ParenthesizedTypeNode : TypeNode, HasType {
     override val kind: SyntaxKind.ParenthesizedType
     val type: TypeNode
 }

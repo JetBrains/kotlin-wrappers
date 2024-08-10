@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Sets the owner of the file. No arguments other than a possible exception are
  * given to the completion callback.

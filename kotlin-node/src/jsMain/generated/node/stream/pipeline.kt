@@ -34,7 +34,7 @@ import js.array.ReadonlyArray
  * );
  * ```
  *
- * The `pipeline` API provides a `promise version`.
+ * The `pipeline` API provides a [`promise version`](https://nodejs.org/docs/latest-v20.x/api/stream.html#streampipelinesource-transforms-destination-options).
  *
  * `stream.pipeline()` will call `stream.destroy(err)` on all streams except:
  *
@@ -74,14 +74,14 @@ import js.array.ReadonlyArray
 external fun <A : PipelineSource<Any?>, B : PipelineDestination<A, Any?>> pipeline(
     source: A,
     destination: B,
-    callback: PipelineCallback<B> = definedExternally,
+    callback: PipelineCallback<B>,
 ): Any /* B extends NodeJS.WritableStream ? B : NodeJS.WritableStream */
 
 external fun <A : PipelineSource<Any?>, T1 : PipelineTransform<A, Any?>, B : PipelineDestination<T1, Any?>> pipeline(
     source: A,
     transform1: T1,
     destination: B,
-    callback: PipelineCallback<B> = definedExternally,
+    callback: PipelineCallback<B>,
 ): Any /* B extends NodeJS.WritableStream ? B : NodeJS.WritableStream */
 
 external fun <A : PipelineSource<Any?>, T1 : PipelineTransform<A, Any?>, T2 : PipelineTransform<T1, Any?>, B : PipelineDestination<T2, Any?>> pipeline(
@@ -89,7 +89,7 @@ external fun <A : PipelineSource<Any?>, T1 : PipelineTransform<A, Any?>, T2 : Pi
     transform1: T1,
     transform2: T2,
     destination: B,
-    callback: PipelineCallback<B> = definedExternally,
+    callback: PipelineCallback<B>,
 ): Any /* B extends NodeJS.WritableStream ? B : NodeJS.WritableStream */
 
 external fun <A : PipelineSource<Any?>, T1 : PipelineTransform<A, Any?>, T2 : PipelineTransform<T1, Any?>, T3 : PipelineTransform<T2, Any?>, B : PipelineDestination<T3, Any?>> pipeline(
@@ -98,7 +98,7 @@ external fun <A : PipelineSource<Any?>, T1 : PipelineTransform<A, Any?>, T2 : Pi
     transform2: T2,
     transform3: T3,
     destination: B,
-    callback: PipelineCallback<B> = definedExternally,
+    callback: PipelineCallback<B>,
 ): Any /* B extends NodeJS.WritableStream ? B : NodeJS.WritableStream */
 
 external fun <A : PipelineSource<Any?>, T1 : PipelineTransform<A, Any?>, T2 : PipelineTransform<T1, Any?>, T3 : PipelineTransform<T2, Any?>, T4 : PipelineTransform<T3, Any?>, B : PipelineDestination<T4, Any?>> pipeline(
@@ -108,10 +108,10 @@ external fun <A : PipelineSource<Any?>, T1 : PipelineTransform<A, Any?>, T2 : Pi
     transform3: T3,
     transform4: T4,
     destination: B,
-    callback: PipelineCallback<B> = definedExternally,
+    callback: PipelineCallback<B>,
 ): Any /* B extends NodeJS.WritableStream ? B : NodeJS.WritableStream */
 
 external fun pipeline(
     streams: ReadonlyArray<Any /* NodeJS.ReadableStream | NodeJS.WritableStream | NodeJS.ReadWriteStream */>,
-    callback: (err: node.ErrnoException?) -> Unit = definedExternally,
+    callback: (err: node.ErrnoException?) -> Unit,
 ): node.WritableStream

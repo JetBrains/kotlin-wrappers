@@ -2,10 +2,10 @@
 
 package typescript
 
-sealed external interface TypePredicateNode : TypeNode, Union.TypePredicateNode_ {
+sealed external interface TypePredicateNode : TypeNode, HasType {
     override val kind: SyntaxKind.TypePredicate
-    override val parent: Union.TypePredicateNode_parent
+    override val parent: TypePredicateNodeParent
     val assertsModifier: AssertsKeyword?
-    val parameterName: Union.TypePredicateNode_parameterName
+    val parameterName: TypePredicateNodeParameterName
     val type: TypeNode?
 }

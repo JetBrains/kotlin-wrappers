@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Asynchronously creates a directory.
  *
@@ -13,7 +12,7 @@ package node.fs
  * created (for instance, if it was previously created).
  *
  * The optional `options` argument can be an integer specifying `mode` (permission
- * and sticky bits), or an object with a `mode` property and a `recursive`property indicating whether parent directories should be created. Calling`fs.mkdir()` when `path` is a directory that
+ * and sticky bits), or an object with a `mode` property and a `recursive` property indicating whether parent directories should be created. Calling `fs.mkdir()` when `path` is a directory that
  * exists results in an error only
  * when `recursive` is false. If `recursive` is false and the directory exists,
  * an `EEXIST` error occurs.

@@ -2,10 +2,10 @@
 
 package web.gpu
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GPUMultisampleState {
+external interface GPUMultisampleState {
     var count: GPUSize32?
     var mask: GPUSampleMask?
     var alphaToCoverageEnabled: Boolean?

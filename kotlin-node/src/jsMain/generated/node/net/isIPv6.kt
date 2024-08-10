@@ -4,7 +4,6 @@
 
 package node.net
 
-
 /**
  * Returns `true` if `input` is an IPv6 address. Otherwise, returns `false`.
  *

@@ -2,10 +2,10 @@
 
 package web.audio
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GainOptions :
+external interface GainOptions :
     AudioNodeOptions {
     var gain: Float?
 }

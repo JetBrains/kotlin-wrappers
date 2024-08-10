@@ -2,7 +2,7 @@
 
 package web.uievents
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.keyboard.KeyCode
 
 @JsPlainObject

@@ -2,9 +2,9 @@
 
 package web.permissions
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface PermissionDescriptor {
+external interface PermissionDescriptor {
     var name: PermissionName
 }

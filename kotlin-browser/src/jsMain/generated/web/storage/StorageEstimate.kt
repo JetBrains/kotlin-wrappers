@@ -3,10 +3,10 @@
 package web.storage
 
 import js.core.JsLong
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface StorageEstimate {
+external interface StorageEstimate {
     var quota: JsLong?
     var usage: JsLong?
 }

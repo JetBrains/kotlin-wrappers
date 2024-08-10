@@ -12,12 +12,11 @@ import web.abort.AbortSignal
  * exposed as part of the API.
  * @since v18.0.0, v16.17.0
  */
-
 external class TestContext {
     /**
      * This function is used to create a hook running before subtest of the current test.
      * @param fn The hook function. If the hook uses callbacks, the callback function is passed as
-     *    the second argument. Default: A no-op function.
+     *    the second argument. **Default:** A no-op function.
      * @param options Configuration options for the hook.
      * @since v20.1.0
      */
@@ -26,7 +25,7 @@ external class TestContext {
     /**
      * This function is used to create a hook running before each subtest of the current test.
      * @param fn The hook function. If the hook uses callbacks, the callback function is passed as
-     *    the second argument. Default: A no-op function.
+     *    the second argument. **Default:** A no-op function.
      * @param options Configuration options for the hook.
      * @since v18.8.0
      */
@@ -34,7 +33,7 @@ external class TestContext {
 
     /**
      * This function is used to create a hook that runs after the current test finishes.
-     * @param fn The hook function. If the hook uses callbacks, the callback function is passed as
+     * @param [fn='A no-op function'] The hook function. If the hook uses callbacks, the callback function is passed as
      *    the second argument. Default: A no-op function.
      * @param options Configuration options for the hook.
      * @since v18.13.0
@@ -44,7 +43,7 @@ external class TestContext {
     /**
      * This function is used to create a hook running after each subtest of the current test.
      * @param fn The hook function. If the hook uses callbacks, the callback function is passed as
-     *    the second argument. Default: A no-op function.
+     *    the second argument. **Default:** A no-op function.
      * @param options Configuration options for the hook.
      * @since v18.8.0
      */
@@ -103,7 +102,7 @@ external class TestContext {
     val signal: AbortSignal
 
     /**
-     * This function causes the test's output to indicate the test as skipped. If`message` is provided, it is included in the output. Calling `skip()` does
+     * This function causes the test's output to indicate the test as skipped. If `message` is provided, it is included in the output. Calling `skip()` does
      * not terminate execution of the test function. This function does not return a
      * value.
      *
@@ -143,7 +142,7 @@ external class TestContext {
      * @param options Configuration options for the test
      * @param fn The function under test. This first argument to this function is a
      *    {@link TestContext} object. If the test uses callbacks, the callback function is
-     *    passed as the second argument. Default: A no-op function.
+     *    passed as the second argument. **Default:** A no-op function.
      * @returns A {@link Promise} resolved with `undefined` once the test completes.
      */
     var test: Any?

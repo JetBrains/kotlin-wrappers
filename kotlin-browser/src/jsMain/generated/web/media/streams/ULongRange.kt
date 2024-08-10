@@ -2,10 +2,10 @@
 
 package web.media.streams
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface ULongRange {
+external interface ULongRange {
     var max: Int?
     var min: Int?
 }

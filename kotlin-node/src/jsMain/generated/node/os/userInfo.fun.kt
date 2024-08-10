@@ -4,18 +4,17 @@
 
 package node.os
 
-
 /**
  * Returns information about the currently effective user. On POSIX platforms,
  * this is typically a subset of the password file. The returned object includes
- * the `username`, `uid`, `gid`, `shell`, and `homedir`. On Windows, the `uid` and`gid` fields are `-1`, and `shell` is `null`.
+ * the `username`, `uid`, `gid`, `shell`, and `homedir`. On Windows, the `uid` and `gid` fields are `-1`, and `shell` is `null`.
  *
  * The value of `homedir` returned by `os.userInfo()` is provided by the operating
  * system. This differs from the result of `os.homedir()`, which queries
  * environment variables for the home directory before falling back to the
  * operating system response.
  *
- * Throws a `SystemError` if a user has no `username` or `homedir`.
+ * Throws a [`SystemError`](https://nodejs.org/docs/latest-v20.x/api/errors.html#class-systemerror) if a user has no `username` or `homedir`.
  * @since v6.0.0
  */
 external fun userInfo(options: UserInfoBufferOptions): UserInfo<node.buffer.Buffer>

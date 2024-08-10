@@ -21,7 +21,7 @@ external interface ClickAwayListenerProps : react.PropsWithChildren {
      * The mouse event to listen to. You can disable the listener by providing `false`.
      * @default 'onClick'
      */
-    var mouseEvent: dynamic
+    var mouseEvent: ClickAwayListenerMouseEvent?
 
     /**
      * Callback fired when a "click away" event is detected.
@@ -32,7 +32,7 @@ external interface ClickAwayListenerProps : react.PropsWithChildren {
      * The touch event to listen to. You can disable the listener by providing `false`.
      * @default 'onTouchEnd'
      */
-    var touchEvent: dynamic
+    var touchEvent: ClickAwayListenerTouchEvent?
 }
 
 /**

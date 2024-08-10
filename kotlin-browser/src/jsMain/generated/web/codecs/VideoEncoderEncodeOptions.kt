@@ -2,9 +2,9 @@
 
 package web.codecs
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface VideoEncoderEncodeOptions {
+external interface VideoEncoderEncodeOptions {
     var keyFrame: Boolean?
 }

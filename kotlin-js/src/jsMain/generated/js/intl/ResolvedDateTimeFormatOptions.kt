@@ -2,10 +2,10 @@
 
 package js.intl
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface ResolvedDateTimeFormatOptions {
+external interface ResolvedDateTimeFormatOptions {
     var locale: String
     var calendar: String
     var numberingSystem: String

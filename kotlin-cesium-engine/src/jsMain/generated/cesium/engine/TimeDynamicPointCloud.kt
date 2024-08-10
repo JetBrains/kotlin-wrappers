@@ -2,14 +2,9 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 
 /**
  * Provides playback of time-dynamic point cloud data.
@@ -19,7 +14,9 @@ import js.objects.jso
  * small or the clock is sufficiently slow then no frames will be skipped.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TimeDynamicPointCloud.html">Online Documentation</a>
  */
-external class TimeDynamicPointCloud(options: ConstructorOptions) {
+external class TimeDynamicPointCloud(
+    options: ConstructorOptions,
+) {
     /**
      * @property [clock] A [Clock] instance that is used when determining the value for the time dimension.
      * @property [intervals] A [TimeIntervalCollection] with its data property being an object containing a `uri` to a 3D Tiles Point Cloud tile and an optional `transform`.
@@ -190,8 +187,3 @@ external class TimeDynamicPointCloud(options: ConstructorOptions) {
      */
     fun destroy()
 }
-
-inline fun TimeDynamicPointCloud(
-    block: TimeDynamicPointCloud.ConstructorOptions.() -> Unit,
-): TimeDynamicPointCloud =
-    TimeDynamicPointCloud(options = jso(block))

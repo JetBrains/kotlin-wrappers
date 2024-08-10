@@ -2,9 +2,7 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 sealed external interface LinkedEditingInfo {
-    val ranges: ReadonlyArray<TextSpan>
+    val ranges: js.array.ReadonlyArray<TextSpan>
     var wordPattern: String?
 }

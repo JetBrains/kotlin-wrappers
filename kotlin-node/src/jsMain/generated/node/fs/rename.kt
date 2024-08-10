@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Asynchronously rename file at `oldPath` to the pathname provided
  * as `newPath`. In the case that `newPath` already exists, it will

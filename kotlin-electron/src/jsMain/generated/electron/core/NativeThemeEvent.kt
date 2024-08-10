@@ -3,7 +3,6 @@
 package electron.core
 
 
-@seskar.js.JsVirtual
 sealed external interface NativeThemeEvent {
     sealed interface UPDATED : node.events.LegacyEventType
 

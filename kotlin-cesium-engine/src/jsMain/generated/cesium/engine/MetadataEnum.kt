@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 
 /**
  * A metadata enum.
@@ -18,7 +13,9 @@ import js.objects.jso
  * See the [3D Metadata Specification](https://github.com/CesiumGS/3d-tiles/tree/main/specification/Metadata) for 3D Tiles
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MetadataEnum.html">Online Documentation</a>
  */
-external class MetadataEnum(options: ConstructorOptions) {
+external class MetadataEnum(
+    options: ConstructorOptions,
+) {
     /**
      * @property [id] The ID of the enum.
      * @property [values] The enum values.
@@ -82,8 +79,3 @@ external class MetadataEnum(options: ConstructorOptions) {
      */
     val extensions: Any
 }
-
-inline fun MetadataEnum(
-    block: MetadataEnum.ConstructorOptions.() -> Unit,
-): MetadataEnum =
-    MetadataEnum(options = jso(block))

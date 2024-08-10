@@ -4,7 +4,6 @@
 
 package node.http2
 
-
 /**
  * Returns a `ClientHttp2Session` instance.
  *

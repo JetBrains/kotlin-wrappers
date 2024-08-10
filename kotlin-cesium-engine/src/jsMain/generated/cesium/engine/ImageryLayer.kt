@@ -3,15 +3,13 @@
 @file:JsModule("@cesium/engine")
 
 @file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
     "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
 )
 
 package cesium.engine
 
-import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
+import kotlinx.js.JsPlainObject
 
 /**
  * An imagery layer that displays tiled image data from a single imagery provider
@@ -322,15 +320,15 @@ external class ImageryLayer(
     @JsPlainObject
     sealed interface ConstructorOptions {
         var rectangle: Rectangle?
-        var alpha: dynamic
-        var nightAlpha: dynamic
-        var dayAlpha: dynamic
-        var brightness: dynamic
-        var contrast: dynamic
-        var hue: dynamic
-        var saturation: dynamic
-        var gamma: dynamic
-        var splitDirection: dynamic
+        var alpha: Double /* | Function */?
+        var nightAlpha: Double /* | Function */?
+        var dayAlpha: Double /* | Function */?
+        var brightness: Double /* | Function */?
+        var contrast: Double /* | Function */?
+        var hue: Double /* | Function */?
+        var saturation: Double /* | Function */?
+        var gamma: Double /* | Function */?
+        var splitDirection: SplitDirection /* | Function */?
         var minificationFilter: TextureMinificationFilter?
         var magnificationFilter: TextureMagnificationFilter?
         var show: Boolean?
@@ -492,23 +490,3 @@ external class ImageryLayer(
         sealed interface /* typealias */ WorldImageryConstructorOptions : ConstructorOptions
     }
 }
-
-/**
- * A function that is called when an error occurs.
- * @param [err] An object holding details about the error that occurred.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayer.html#.ImageryLayerErrorEventCallback">Online Documentation</a>
- */
-typealias ImageryLayerErrorEventCallback = (err: Error) -> Unit
-
-/**
- * A function that is called when the provider has been created
- * @param [provider] The created imagery provider.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayer.html#.ImageryLayerReadyEventCallback">Online Documentation</a>
- */
-typealias ImageryLayerReadyEventCallback = (provider: ImageryProvider) -> Unit
-
-inline fun ImageryLayer(
-    imageryProvider: ImageryProvider,
-    block: ImageryLayer.ConstructorOptions.() -> Unit,
-): ImageryLayer =
-    ImageryLayer(imageryProvider, options = jso(block))

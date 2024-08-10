@@ -3,9 +3,7 @@
 package web.clipboard
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface PresentationStyle {
     companion object {
         @JsValue("attachment")

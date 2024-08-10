@@ -3,9 +3,7 @@
 package web.images
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface PredefinedColorSpace {
     companion object {
         @JsValue("display-p3")

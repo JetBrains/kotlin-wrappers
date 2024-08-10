@@ -9,7 +9,4 @@ package typescript
  * @param fileName The path to the config file
  * @param jsonText The text of the config file
  */
-external fun parseConfigFileTextToJson(
-    fileName: String,
-    jsonText: String,
-): ConfigProvider
+external fun parseConfigFileTextToJson(fileName: String, jsonText: String): ParseConfigFileTextToJsonResult

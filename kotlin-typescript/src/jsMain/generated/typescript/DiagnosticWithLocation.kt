@@ -1,13 +1,14 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "VAR_TYPE_MISMATCH_ON_OVERRIDE",
-)
-
 package typescript
 
 sealed external interface DiagnosticWithLocation : Diagnostic {
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
     override var file: SourceFile
-    override var start: Int
-    override var length: Int
+
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var start: Double
+
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var length: Double
 }

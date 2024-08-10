@@ -2,9 +2,7 @@
 
 package actions.http.client
 
-import js.objects.JsPlainObject
-
-@JsPlainObject
+@kotlinx.js.JsPlainObject_KT_68943
 sealed external interface TypedResponse<T> {
     var statusCode: Number
     var result: T?

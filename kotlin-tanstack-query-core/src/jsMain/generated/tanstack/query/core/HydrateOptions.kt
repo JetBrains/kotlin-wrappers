@@ -3,10 +3,11 @@
 package tanstack.query.core
 
 external interface DefaultHydrateOptions {
-    var queries: QueryOptions<*, *, *, *, *>
-    var mutations: MutationOptions<*, *, *, *>
+    var deserializeData: TransformerFn?
+    var queries: QueryOptions<*, *, *, *, *>?
+    var mutations: MutationOptions<*, DefaultError, *, *>?
 }
 
 external interface HydrateOptions {
-    var defaultOptions: DefaultHydrateOptions
+    var defaultOptions: DefaultHydrateOptions?
 }

@@ -3,9 +3,7 @@
 package tanstack.table.core
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface GroupingColumnMode {
     companion object {
         @JsValue("false")

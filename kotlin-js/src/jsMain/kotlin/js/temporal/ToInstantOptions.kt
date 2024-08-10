@@ -1,6 +1,6 @@
 package js.temporal
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * Options for conversions of `Temporal.PlainDateTime` to `Temporal.Instant`

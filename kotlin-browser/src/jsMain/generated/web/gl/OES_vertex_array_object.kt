@@ -11,7 +11,7 @@ sealed external interface OES_vertex_array_object {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OES_vertex_array_object/createVertexArrayOES)
      */
-    fun createVertexArrayOES(): WebGLVertexArrayObjectOES?
+    fun createVertexArrayOES(): WebGLVertexArrayObjectOES
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OES_vertex_array_object/deleteVertexArrayOES)

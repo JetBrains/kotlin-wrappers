@@ -2,9 +2,9 @@
 
 package web.fs
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface FileSystemGetFileOptions {
+external interface FileSystemGetFileOptions {
     var create: Boolean?
 }

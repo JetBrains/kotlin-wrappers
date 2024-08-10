@@ -2,32 +2,28 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "VAR_OVERRIDDEN_BY_VAL",
-    "VAR_TYPE_MISMATCH_ON_OVERRIDE",
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.core.Void
-import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
+import kotlinx.js.JsPlainObject
 
 /**
  * A very simple [TerrainProvider] that produces geometry by tessellating an ellipsoidal
  * surface.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipsoidTerrainProvider.html">Online Documentation</a>
  */
-external class EllipsoidTerrainProvider(options: ConstructorOptions? = definedExternally) : TerrainProvider {
+external class EllipsoidTerrainProvider(
+    options: ConstructorOptions? = definedExternally,
+) : TerrainProvider {
     /**
      * @property [tilingScheme] The tiling scheme specifying how the ellipsoidal
      *   surface is broken into tiles.  If this parameter is not provided, a [GeographicTilingScheme]
      *   is used.
      * @property [ellipsoid] The ellipsoid.  If the tilingScheme is specified,
      *   this parameter is ignored and the tiling scheme's ellipsoid is used instead. If neither
-     *   parameter is specified, the WGS84 ellipsoid is used.
+     *   parameter is specified, the default ellipsoid is used.
+     *   Default value - [Ellipsoid.default]
      */
     @JsPlainObject
     sealed interface ConstructorOptions {
@@ -133,8 +129,3 @@ external class EllipsoidTerrainProvider(options: ConstructorOptions? = definedEx
         level: Int,
     ): Void
 }
-
-inline fun EllipsoidTerrainProvider(
-    block: EllipsoidTerrainProvider.ConstructorOptions.() -> Unit,
-): EllipsoidTerrainProvider =
-    EllipsoidTerrainProvider(options = jso(block))

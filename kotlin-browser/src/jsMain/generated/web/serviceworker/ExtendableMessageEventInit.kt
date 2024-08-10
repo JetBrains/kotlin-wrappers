@@ -3,7 +3,7 @@
 package web.serviceworker
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.messaging.MessagePort
 
 @JsPlainObject

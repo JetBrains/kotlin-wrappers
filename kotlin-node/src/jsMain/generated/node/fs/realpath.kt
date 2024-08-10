@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Asynchronously computes the canonical pathname by resolving `.`, `..`, and
  * symbolic links.
@@ -18,7 +17,7 @@ package node.fs
  * 2. The maximum number of symbolic links is platform-independent and generally
  * (much) higher than what the native [`realpath(3)`](http://man7.org/linux/man-pages/man3/realpath.3.html) implementation supports.
  *
- * The `callback` gets two arguments `(err, resolvedPath)`. May use `process.cwd`to resolve relative paths.
+ * The `callback` gets two arguments `(err, resolvedPath)`. May use `process.cwd` to resolve relative paths.
  *
  * Only paths that can be converted to UTF8 strings are supported.
  *

@@ -2,20 +2,18 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
-sealed external interface Program : ScriptReferenceHost {
+sealed external interface Program : ScriptReferenceHost, RequiredAffectedFileResultAffected {
     override fun getCurrentDirectory(): String
 
     /**
      * Get a list of root file names that were passed to a 'createProgram'
      */
-    fun getRootFileNames(): ReadonlyArray<String>
+    fun getRootFileNames(): js.array.ReadonlyArray<String>
 
     /**
      * Get a list of files in the program
      */
-    fun getSourceFiles(): ReadonlyArray<SourceFile>
+    fun getSourceFiles(): js.array.ReadonlyArray<SourceFile>
 
     /**
      * Emits the JavaScript and declaration files.  If targetSourceFile is not specified, then
@@ -35,36 +33,36 @@ sealed external interface Program : ScriptReferenceHost {
         customTransformers: CustomTransformers = definedExternally,
     ): EmitResult
 
-    fun getOptionsDiagnostics(cancellationToken: CancellationToken = definedExternally): ReadonlyArray<Diagnostic>
-    fun getGlobalDiagnostics(cancellationToken: CancellationToken = definedExternally): ReadonlyArray<Diagnostic>
+    fun getOptionsDiagnostics(cancellationToken: CancellationToken = definedExternally): js.array.ReadonlyArray<Diagnostic>
+    fun getGlobalDiagnostics(cancellationToken: CancellationToken = definedExternally): js.array.ReadonlyArray<Diagnostic>
     fun getSyntacticDiagnostics(
         sourceFile: SourceFile = definedExternally,
         cancellationToken: CancellationToken = definedExternally,
-    ): ReadonlyArray<DiagnosticWithLocation>
+    ): js.array.ReadonlyArray<DiagnosticWithLocation>
 
     /** The first time this is called, it will return global diagnostics (no location). */
     fun getSemanticDiagnostics(
         sourceFile: SourceFile = definedExternally,
         cancellationToken: CancellationToken = definedExternally,
-    ): ReadonlyArray<Diagnostic>
+    ): js.array.ReadonlyArray<Diagnostic>
 
     fun getDeclarationDiagnostics(
         sourceFile: SourceFile = definedExternally,
         cancellationToken: CancellationToken = definedExternally,
-    ): ReadonlyArray<DiagnosticWithLocation>
+    ): js.array.ReadonlyArray<DiagnosticWithLocation>
 
-    fun getConfigFileParsingDiagnostics(): ReadonlyArray<Diagnostic>
+    fun getConfigFileParsingDiagnostics(): js.array.ReadonlyArray<Diagnostic>
 
     /**
      * Gets a type checker that can be used to semantically analyze source files in the program.
      */
     fun getTypeChecker(): TypeChecker
-    fun getNodeCount(): Int
-    fun getIdentifierCount(): Int
-    fun getSymbolCount(): Int
-    fun getTypeCount(): Int
-    fun getInstantiationCount(): Int
-    fun getRelationCacheSizes(): RelationCacheSizes
+    fun getNodeCount(): Double
+    fun getIdentifierCount(): Double
+    fun getSymbolCount(): Double
+    fun getTypeCount(): Double
+    fun getInstantiationCount(): Double
+    fun getRelationCacheSizes(): ProgramGetRelationCacheSizesResult
     fun isSourceFileFromExternalLibrary(file: SourceFile): Boolean
     fun isSourceFileDefaultLibrary(file: SourceFile): Boolean
 
@@ -75,10 +73,7 @@ sealed external interface Program : ScriptReferenceHost {
      * `module` modes, when overriding import attributes are not provided, this function returns `undefined`, as the result would have no
      * impact on module resolution, emit, or type checking.
      */
-    fun getModeForUsageLocation(
-        file: SourceFile,
-        usage: StringLiteralLike,
-    ): ResolutionMode
+    fun getModeForUsageLocation(file: SourceFile, usage: StringLiteralLike): ResolutionMode
 
     /**
      * Calculates the final resolution mode for an import at some index within a file's `imports` list. This is the resolution mode
@@ -87,11 +82,7 @@ sealed external interface Program : ScriptReferenceHost {
      * input syntax of the reference. In other `module` modes, when overriding import attributes are not provided, this function returns
      * `undefined`, as the result would have no impact on module resolution, emit, or type checking.
      */
-    fun getModeForResolutionAtIndex(
-        file: SourceFile,
-        index: Int,
-    ): ResolutionMode
-
-    fun getProjectReferences(): ReadonlyArray<ProjectReference>?
-    fun getResolvedProjectReferences(): ReadonlyArray<ResolvedProjectReference?>?
+    fun getModeForResolutionAtIndex(file: SourceFile, index: Double): ResolutionMode
+    fun getProjectReferences(): (js.array.ReadonlyArray<ProjectReference>)?
+    fun getResolvedProjectReferences(): (js.array.ReadonlyArray<(ResolvedProjectReference?)>)?
 }

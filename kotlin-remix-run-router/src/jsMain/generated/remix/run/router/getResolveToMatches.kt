@@ -4,7 +4,6 @@
 
 package remix.run.router
 
-
 external fun <T : AgnosticRouteMatch<*> /* default is AgnosticRouteMatch<*> */> getResolveToMatches(
     matches: js.array.ReadonlyArray<T>,
     v7_relativeSplatPath: Boolean,

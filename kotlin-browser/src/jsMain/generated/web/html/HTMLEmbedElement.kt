@@ -21,6 +21,8 @@ protected constructor() :
 
     /**
      * Sets or retrieves a URL to be loaded by the object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLEmbedElement/src)
      */
     var src: String
     var type: String

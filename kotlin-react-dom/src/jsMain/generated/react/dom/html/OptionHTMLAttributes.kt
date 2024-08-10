@@ -8,5 +8,5 @@ external interface OptionHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var disabled: Boolean?
     var label: String?
     var selected: Boolean?
-    var value: Any? /* string | ReadonlyArray<string> | number */
+    var value: Any? // string | readonly string[] | number
 }

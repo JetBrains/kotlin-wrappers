@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 
 /**
  * A description of the outline of a polygon composed of arbitrary coplanar positions.
@@ -27,7 +22,9 @@ import js.objects.jso
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CoplanarPolygonOutlineGeometry.html">Online Documentation</a>
  */
-external class CoplanarPolygonOutlineGeometry(options: ConstructorOptions) {
+external class CoplanarPolygonOutlineGeometry(
+    options: ConstructorOptions,
+) {
     /**
      * @property [polygonHierarchy] A polygon hierarchy that can include holes.
      */
@@ -96,8 +93,3 @@ external class CoplanarPolygonOutlineGeometry(options: ConstructorOptions) {
         fun createGeometry(polygonGeometry: CoplanarPolygonOutlineGeometry): Geometry?
     }
 }
-
-inline fun CoplanarPolygonOutlineGeometry(
-    block: CoplanarPolygonOutlineGeometry.ConstructorOptions.() -> Unit,
-): CoplanarPolygonOutlineGeometry =
-    CoplanarPolygonOutlineGeometry(options = jso(block))

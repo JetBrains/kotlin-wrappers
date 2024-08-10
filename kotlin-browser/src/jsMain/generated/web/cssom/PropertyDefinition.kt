@@ -2,10 +2,10 @@
 
 package web.cssom
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface PropertyDefinition {
+external interface PropertyDefinition {
     var inherits: Boolean
     var initialValue: String?
     var name: String

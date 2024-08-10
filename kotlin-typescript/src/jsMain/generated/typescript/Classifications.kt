@@ -2,9 +2,7 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 sealed external interface Classifications {
-    var spans: ReadonlyArray<Int>
+    var spans: js.array.ReadonlyArray<Double>
     var endOfLineState: EndOfLineState
 }

@@ -1,35 +1,18 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("typescript")
+
 package typescript
 
-import seskar.js.JsIntValue
-import seskar.js.JsVirtual
-
-@JsVirtual
 sealed external interface EmitHint {
     companion object {
-        @JsIntValue(0)
         val SourceFile: EmitHint
-
-        @JsIntValue(1)
         val Expression: EmitHint
-
-        @JsIntValue(2)
         val IdentifierName: EmitHint
-
-        @JsIntValue(3)
         val MappedTypeParameter: EmitHint
-
-        @JsIntValue(4)
         val Unspecified: EmitHint
-
-        @JsIntValue(5)
         val EmbeddedStatement: EmitHint
-
-        @JsIntValue(6)
         val JsxAttributeValue: EmitHint
-
-        @JsIntValue(7)
         val ImportTypeNodeAttributes: EmitHint
     }
 }

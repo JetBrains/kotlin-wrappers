@@ -45,10 +45,7 @@ function isEventMethod(node) {
         && node.parameters.length === 1
 
         && ts.isIdentifier(node.parameters[0].name)
-        && (
-            node.parameters[0].name.text === "event"
-            || node.parameters[0].name.text === "eventName"
-        )
+        && node.parameters[0].name.text === "eventName"
     )
 }
 
@@ -58,10 +55,7 @@ function isEventListenerMethod(node) {
         && node.parameters.length === 2
 
         && ts.isIdentifier(node.parameters[0].name)
-        && (
-            node.parameters[0].name.text === "event"
-            || node.parameters[0].name.text === "eventName"
-        )
+        && node.parameters[0].name.text === "eventName"
 
         && ts.isIdentifier(node.parameters[1].name)
         && node.parameters[1].name.text === "listener"
@@ -107,27 +101,8 @@ export default {
         }
 
         if (
-            ts.isTypeReferenceNode(node)
-            && ts.isIdentifier(node.typeName)
-            && node.typeName.text === "_NodeEventTarget"
-        ) {
-            return "EventEmitter"
-        }
-
-        if (
-            ts.isTypeReferenceNode(node)
-            && ts.isIdentifier(node.typeName)
-            && node.typeName.text === "_DOMEventTarget"
-        ) {
-            return "EventTarget"
-        }
-
-        if (
             ts.isIdentifier(node)
-            && (
-                node.text === "event"
-                || node.text === "eventName"
-            )
+            && node.text === "eventName"
 
             && node.parent
             && ts.isParameter(node.parent)
@@ -162,16 +137,8 @@ export default {
                     if (
                         signature.length === 3
                         && ts.isTypeReferenceNode(signature[0].type)
-                        && (
-                            (
-                                ts.isIdentifier(signature[0].type.typeName)
-                                && signature[0].type.typeName.text === "_NodeEventTarget"
-                            )
-                            || (
-                                ts.isQualifiedName(signature[0].type.typeName)
-                                && signature[0].type.typeName.right.text === "EventEmitter"
-                            )
-                        )
+                        && ts.isQualifiedName(signature[0].type.typeName)
+                        && signature[0].type.typeName.right.text === "EventEmitter"
                     ) {
                         const enhancedReturnType = name === "once"
                             ? "Promise<P>"
@@ -184,10 +151,7 @@ export default {
                         signature.length === 3
                         && ts.isTypeReferenceNode(signature[0].type)
                         && ts.isIdentifier(signature[0].type.typeName)
-                        && (
-                            signature[0].type.typeName.text === "_DOMEventTarget"
-                            || signature[0].type.typeName.text === "EventTarget"
-                        )
+                        && signature[0].type.typeName.text === "EventTarget"
                     ) {
                         const enhancedReturnType = name === "once"
                             ? "Promise<JsTuple1<E>>"
@@ -199,16 +163,8 @@ export default {
                     if (
                         signature.length === 2
                         && ts.isTypeReferenceNode(signature[0].type)
-                        && (
-                            (
-                                ts.isIdentifier(signature[0].type.typeName)
-                                && signature[0].type.typeName.text === "_NodeEventTarget"
-                            )
-                            || (
-                                ts.isQualifiedName(signature[0].type.typeName)
-                                && signature[0].type.typeName.right.text === "EventEmitter"
-                            )
-                        )
+                        && ts.isQualifiedName(signature[0].type.typeName)
+                        && signature[0].type.typeName.right.text === "EventEmitter"
                     ) {
                         return `fun <T : EventEmitter> ${name}(emitter: T, type: EventType<T, *>)${karakum.ifPresent(returnType, it => `: ${it}`)}`
                     }
@@ -216,10 +172,7 @@ export default {
                     if (
                         signature.length === 2
                         && ts.isTypeReferenceNode(signature[0].type)
-                        && (
-                            signature[0].type.typeName.text === "_DOMEventTarget"
-                            || signature[0].type.typeName.text === "EventTarget"
-                        )
+                        && signature[0].type.typeName.text === "EventTarget"
                     ) {
                         return `fun <T : EventTarget> ${name}(emitter: T, type: web.events.EventType<*, T>)${karakum.ifPresent(returnType, it => `: ${it}`)}`
                     }

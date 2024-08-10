@@ -4,7 +4,6 @@
 
 package electron.core
 
-
 external class WebRequest {
 // Docs: https://electronjs.org/docs/api/web-request
     /**

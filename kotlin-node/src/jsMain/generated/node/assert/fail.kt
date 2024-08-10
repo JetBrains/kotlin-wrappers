@@ -4,7 +4,6 @@
 
 package node.assert
 
-
 /**
  * Throws an `AssertionError` with the provided error message or a default
  * error message. If the `message` parameter is an instance of an `Error` then

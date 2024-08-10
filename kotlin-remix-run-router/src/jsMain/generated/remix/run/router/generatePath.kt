@@ -4,7 +4,6 @@
 
 package remix.run.router
 
-
 /**
  * Returns a path with params interpolated.
  *

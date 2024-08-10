@@ -45,7 +45,7 @@ external interface BaseTheme : mui.system.Theme {
 external interface Theme : BaseTheme {
     override var components: dynamic
 
-    override var unstable_sx: (props: SxProps<Theme>) -> dynamic /* CSSObject from `@mui/styled-engine` */
+    override var unstable_sx: (props: SxProps<Theme>) -> Any /* CSSObject from `@mui/styled-engine` */
 
     override var unstable_sxConfig: dynamic
 }
@@ -53,5 +53,5 @@ external interface Theme : BaseTheme {
 @JsName("default")
 external fun createTheme(
     options: ThemeOptions? = definedExternally,
-    vararg args: dynamic,
+    vararg args: Any,
 ): Theme

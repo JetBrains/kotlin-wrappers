@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ExpressionStatement : Statement, FlowContainer, Union.ExpressionStatement_ {
+sealed external interface ExpressionStatement : Statement, FlowContainer, HasJSDoc {
     override val kind: SyntaxKind.ExpressionStatement
     val expression: Expression
 }

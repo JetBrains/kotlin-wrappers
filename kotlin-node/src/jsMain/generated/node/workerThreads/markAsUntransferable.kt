@@ -4,7 +4,6 @@
 
 package node.workerThreads
 
-
 /**
  * Mark an object as not transferable. If `object` occurs in the transfer list of
  * a `port.postMessage()` call, it is ignored.

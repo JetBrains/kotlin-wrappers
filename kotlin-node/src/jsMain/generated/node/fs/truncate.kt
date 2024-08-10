@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Truncates the file. No arguments other than a possible exception are
  * given to the completion callback. A file descriptor can also be passed as the

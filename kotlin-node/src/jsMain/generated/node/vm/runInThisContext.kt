@@ -4,7 +4,6 @@
 
 package node.vm
 
-
 /**
  * `vm.runInThisContext()` compiles `code`, runs it within the context of the
  * current `global` and returns the result. Running code does not have access to
@@ -28,9 +27,9 @@ package node.vm
  * // Prints: evalResult: 'eval', localVar: 'eval'
  * ```
  *
- * Because `vm.runInThisContext()` does not have access to the local scope,`localVar` is unchanged. In contrast,
+ * Because `vm.runInThisContext()` does not have access to the local scope, `localVar` is unchanged. In contrast,
  * [`eval()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval) _does_ have access to the
- * local scope, so the value `localVar` is changed. In this way`vm.runInThisContext()` is much like an [indirect `eval()` call](https://es5.github.io/#x10.4.2), e.g.`(0,eval)('code')`.
+ * local scope, so the value `localVar` is changed. In this way `vm.runInThisContext()` is much like an [indirect `eval()` call](https://es5.github.io/#x10.4.2), e.g.`(0,eval)('code')`.
  *
  * ## Example: Running an HTTP server within a VM
  *
@@ -92,9 +91,9 @@ external fun runInThisContext(code: String): Any?
  * // Prints: evalResult: 'eval', localVar: 'eval'
  * ```
  *
- * Because `vm.runInThisContext()` does not have access to the local scope,`localVar` is unchanged. In contrast,
+ * Because `vm.runInThisContext()` does not have access to the local scope, `localVar` is unchanged. In contrast,
  * [`eval()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval) _does_ have access to the
- * local scope, so the value `localVar` is changed. In this way`vm.runInThisContext()` is much like an [indirect `eval()` call](https://es5.github.io/#x10.4.2), e.g.`(0,eval)('code')`.
+ * local scope, so the value `localVar` is changed. In this way `vm.runInThisContext()` is much like an [indirect `eval()` call](https://es5.github.io/#x10.4.2), e.g.`(0,eval)('code')`.
  *
  * ## Example: Running an HTTP server within a VM
  *
@@ -156,9 +155,9 @@ external fun runInThisContext(code: String, options: RunningCodeOptions = define
  * // Prints: evalResult: 'eval', localVar: 'eval'
  * ```
  *
- * Because `vm.runInThisContext()` does not have access to the local scope,`localVar` is unchanged. In contrast,
+ * Because `vm.runInThisContext()` does not have access to the local scope, `localVar` is unchanged. In contrast,
  * [`eval()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval) _does_ have access to the
- * local scope, so the value `localVar` is changed. In this way`vm.runInThisContext()` is much like an [indirect `eval()` call](https://es5.github.io/#x10.4.2), e.g.`(0,eval)('code')`.
+ * local scope, so the value `localVar` is changed. In this way `vm.runInThisContext()` is much like an [indirect `eval()` call](https://es5.github.io/#x10.4.2), e.g.`(0,eval)('code')`.
  *
  * ## Example: Running an HTTP server within a VM
  *

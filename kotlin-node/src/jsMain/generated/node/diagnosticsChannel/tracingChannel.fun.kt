@@ -4,10 +4,9 @@
 
 package node.diagnosticsChannel
 
-
 /**
  * Creates a `TracingChannel` wrapper for the given `TracingChannel Channels`. If a name is given, the corresponding tracing
- * channels will be created in the form of `tracing:${name}:${eventType}` where`eventType` corresponds to the types of `TracingChannel Channels`.
+ * channels will be created in the form of `tracing:${name}:${eventType}` where `eventType` corresponds to the types of `TracingChannel Channels`.
  *
  * ```js
  * import diagnostics_channel from 'node:diagnostics_channel';
@@ -35,7 +34,7 @@ external fun <StoreType /* default is Any? */, ContextType : Any /* default is A
 
 /**
  * Creates a `TracingChannel` wrapper for the given `TracingChannel Channels`. If a name is given, the corresponding tracing
- * channels will be created in the form of `tracing:${name}:${eventType}` where`eventType` corresponds to the types of `TracingChannel Channels`.
+ * channels will be created in the form of `tracing:${name}:${eventType}` where `eventType` corresponds to the types of `TracingChannel Channels`.
  *
  * ```js
  * import diagnostics_channel from 'node:diagnostics_channel';

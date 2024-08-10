@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface LiteralToken /* NumericLiteral | BigIntLiteral | StringLiteral | JsxText | RegularExpressionLiteral | NoSubstitutionTemplateLiteral */
+sealed external interface LiteralToken : Node

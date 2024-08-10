@@ -2,8 +2,8 @@
 
 package web.errors
 
-import js.objects.JsPlainObject
 import js.objects.jso
+import kotlinx.js.JsPlainObject
 import web.events.EventInitMutable
 
 inline fun ErrorEventInit(

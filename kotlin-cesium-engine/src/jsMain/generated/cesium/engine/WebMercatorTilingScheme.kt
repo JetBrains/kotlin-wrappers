@@ -2,25 +2,22 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 
 /**
  * A tiling scheme for geometry referenced to a [WebMercatorProjection], EPSG:3857.  This is
  * the tiling scheme used by Google Maps, Microsoft Bing Maps, and most of ESRI ArcGIS Online.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMercatorTilingScheme.html">Online Documentation</a>
  */
-external class WebMercatorTilingScheme(options: ConstructorOptions? = definedExternally) : TilingScheme {
+external class WebMercatorTilingScheme(
+    options: ConstructorOptions? = definedExternally,
+) : TilingScheme {
     /**
      * @property [ellipsoid] The ellipsoid whose surface is being tiled. Defaults to
-     *   the WGS84 ellipsoid.
-     *   Default value - [Ellipsoid.WGS84]
+     *   the default ellipsoid.
+     *   Default value - [Ellipsoid.default]
      * @property [numberOfLevelZeroTilesX] The number of tiles in the X direction at level zero of
      *   the tile tree.
      *   Default value - `1`
@@ -148,8 +145,3 @@ external class WebMercatorTilingScheme(options: ConstructorOptions? = definedExt
         result: Cartesian2?,
     ): Cartesian2
 }
-
-inline fun WebMercatorTilingScheme(
-    block: WebMercatorTilingScheme.ConstructorOptions.() -> Unit,
-): WebMercatorTilingScheme =
-    WebMercatorTilingScheme(options = jso(block))

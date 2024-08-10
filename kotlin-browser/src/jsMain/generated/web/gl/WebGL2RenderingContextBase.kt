@@ -126,7 +126,7 @@ sealed external interface WebGL2RenderingContextBase {
     ): GLenum
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/compressedTexImage3D)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/compressedTexImage2D)
      */
     fun compressedTexImage3D(
         target: GLenum,
@@ -214,22 +214,22 @@ sealed external interface WebGL2RenderingContextBase {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/createQuery)
      */
-    fun createQuery(): WebGLQuery?
+    fun createQuery(): WebGLQuery
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/createSampler)
      */
-    fun createSampler(): WebGLSampler?
+    fun createSampler(): WebGLSampler
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/createTransformFeedback)
      */
-    fun createTransformFeedback(): WebGLTransformFeedback?
+    fun createTransformFeedback(): WebGLTransformFeedback
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/createVertexArray)
      */
-    fun createVertexArray(): WebGLVertexArrayObject?
+    fun createVertexArray(): WebGLVertexArrayObject
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/deleteQuery)

@@ -5,7 +5,6 @@
 
 package node.perfHooks.constants
 
-
 external val NODE_PERFORMANCE_GC_MAJOR: Double
 
 external val NODE_PERFORMANCE_GC_MINOR: Double

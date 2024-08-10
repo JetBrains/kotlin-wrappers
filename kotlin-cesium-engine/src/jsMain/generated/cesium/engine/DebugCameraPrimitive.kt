@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 
 /**
  * Draws the outline of the camera's view frustum.
@@ -22,7 +17,9 @@ import js.objects.jso
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DebugCameraPrimitive.html">Online Documentation</a>
  */
-external class DebugCameraPrimitive(options: ConstructorOptions) {
+external class DebugCameraPrimitive(
+    options: ConstructorOptions,
+) {
     /**
      * @property [camera] The camera.
      * @property [frustumSplits] Distances to the near and far planes of the camera frustums. This overrides the camera's frustum near and far values.
@@ -80,8 +77,3 @@ external class DebugCameraPrimitive(options: ConstructorOptions) {
      */
     fun destroy()
 }
-
-inline fun DebugCameraPrimitive(
-    block: DebugCameraPrimitive.ConstructorOptions.() -> Unit,
-): DebugCameraPrimitive =
-    DebugCameraPrimitive(options = jso(block))

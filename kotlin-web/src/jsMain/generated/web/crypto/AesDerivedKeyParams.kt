@@ -2,10 +2,10 @@
 
 package web.crypto
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface AesDerivedKeyParams :
+external interface AesDerivedKeyParams :
     Algorithm {
     var length: Short
 }

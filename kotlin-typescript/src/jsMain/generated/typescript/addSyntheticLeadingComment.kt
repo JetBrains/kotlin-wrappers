@@ -6,7 +6,14 @@ package typescript
 
 external fun <T : Node> addSyntheticLeadingComment(
     node: T,
-    kind: dynamic, /* SyntaxKind.SingleLineCommentTrivia | SyntaxKind.MultiLineCommentTrivia */
+    kind: SyntaxKind.SingleLineCommentTrivia,
+    text: String,
+    hasTrailingNewLine: Boolean = definedExternally,
+): T
+
+external fun <T : Node> addSyntheticLeadingComment(
+    node: T,
+    kind: SyntaxKind.MultiLineCommentTrivia,
     text: String,
     hasTrailingNewLine: Boolean = definedExternally,
 ): T

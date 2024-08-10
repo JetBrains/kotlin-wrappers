@@ -2,10 +2,10 @@
 
 package web.rtc
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface RTCRtpEncodingParameters :
+external interface RTCRtpEncodingParameters :
     RTCRtpCodingParameters {
     var active: Boolean?
     var maxBitrate: Int?

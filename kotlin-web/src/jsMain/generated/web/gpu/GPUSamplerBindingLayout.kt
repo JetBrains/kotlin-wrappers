@@ -2,9 +2,9 @@
 
 package web.gpu
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GPUSamplerBindingLayout {
+external interface GPUSamplerBindingLayout {
     var type: GPUSamplerBindingType?
 }

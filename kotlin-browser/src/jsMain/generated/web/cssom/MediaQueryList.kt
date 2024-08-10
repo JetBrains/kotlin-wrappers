@@ -25,5 +25,5 @@ sealed external class MediaQueryList :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryList/change_event)
      */
-    var onchange: EventHandler<MediaQueryListEvent, MediaQueryList>?
+    var onchange: EventHandler<MediaQueryListEvent, MediaQueryList, MediaQueryList>?
 }

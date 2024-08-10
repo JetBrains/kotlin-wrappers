@@ -4,12 +4,10 @@
 
 package node.tls
 
-
 /**
  * Accepts encrypted connections using TLS or SSL.
  * @since v0.3.2
  */
-
 open external class Server : node.net.Server {
     constructor (secureConnectionListener: (socket: TLSSocket) -> Unit = definedExternally)
     constructor (options: TlsOptions, secureConnectionListener: (socket: TLSSocket) -> Unit = definedExternally)

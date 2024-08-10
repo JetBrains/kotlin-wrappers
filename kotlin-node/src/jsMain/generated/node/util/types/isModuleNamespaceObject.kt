@@ -4,7 +4,6 @@
 
 package node.util.types
 
-
 /**
  * Returns `true` if the value is an instance of a [Module Namespace Object](https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects).
  *

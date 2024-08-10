@@ -4,7 +4,6 @@
 
 package node.zlib
 
-
 /**
  * Creates and returns a new `Deflate` object.
  * @since v0.5.8

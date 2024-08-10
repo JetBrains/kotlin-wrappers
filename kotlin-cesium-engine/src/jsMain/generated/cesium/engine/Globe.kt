@@ -16,10 +16,12 @@ package cesium.engine
  * @constructor
  * @property [ellipsoid] Determines the size and shape of the
  *   globe.
- *   Default value - [Ellipsoid.WGS84]
+ *   Default value - [Ellipsoid.default]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Globe.html">Online Documentation</a>
  */
-external class Globe(var ellipsoid: Ellipsoid = definedExternally) {
+external class Globe(
+    var ellipsoid: Ellipsoid = definedExternally,
+) {
     /**
      * Determines if the globe will be shown.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Globe.html#show">Online Documentation</a>

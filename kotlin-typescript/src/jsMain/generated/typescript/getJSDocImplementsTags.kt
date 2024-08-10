@@ -4,7 +4,5 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 /** Gets the JSDoc implements tags for the node if present */
-external fun getJSDocImplementsTags(node: Node): ReadonlyArray<JSDocImplementsTag>
+external fun getJSDocImplementsTags(node: Node): js.array.ReadonlyArray<JSDocImplementsTag>

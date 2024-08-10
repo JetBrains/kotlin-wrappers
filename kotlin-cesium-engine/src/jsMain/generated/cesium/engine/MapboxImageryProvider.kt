@@ -2,16 +2,11 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
+import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync
 
 /**
@@ -25,7 +20,9 @@ import seskar.js.JsAsync
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MapboxImageryProvider.html">Online Documentation</a>
  */
-external class MapboxImageryProvider(options: ConstructorOptions) {
+external class MapboxImageryProvider(
+    options: ConstructorOptions,
+) {
     /**
      * Gets the URL of the Mapbox server.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MapboxImageryProvider.html#url">Online Documentation</a>
@@ -191,7 +188,8 @@ external class MapboxImageryProvider(options: ConstructorOptions) {
      * @property [accessToken] The public access token for the imagery.
      * @property [format] The format of the image request.
      *   Default value - `'png'`
-     * @property [ellipsoid] The ellipsoid.  If not specified, the WGS84 ellipsoid is used.
+     * @property [ellipsoid] The ellipsoid.  If not specified, the default ellipsoid is used.
+     *   Default value - [Ellipsoid.default]
      * @property [minimumLevel] The minimum level-of-detail supported by the imagery provider.  Take care when specifying
      *   this that the number of tiles at the minimum level is small, such as four or less.  A larger number is likely
      *   to result in rendering problems.
@@ -215,8 +213,3 @@ external class MapboxImageryProvider(options: ConstructorOptions) {
         var credit: Credit?
     }
 }
-
-inline fun MapboxImageryProvider(
-    block: MapboxImageryProvider.ConstructorOptions.() -> Unit,
-): MapboxImageryProvider =
-    MapboxImageryProvider(options = jso(block))

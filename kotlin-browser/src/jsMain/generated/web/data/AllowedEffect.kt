@@ -3,9 +3,7 @@
 package web.data
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface AllowedEffect {
     companion object {
         @JsValue("none")

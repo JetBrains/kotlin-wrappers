@@ -2,11 +2,11 @@
 
 package web.media.devices
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.media.streams.MediaTrackConstraints
 
 @JsPlainObject
-sealed external interface DisplayMediaStreamOptions {
+external interface DisplayMediaStreamOptions {
     var audio: MediaTrackConstraints /* | Boolean */?
     var video: MediaTrackConstraints /* | Boolean */?
 }

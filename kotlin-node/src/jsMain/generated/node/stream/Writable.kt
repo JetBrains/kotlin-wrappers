@@ -9,7 +9,6 @@ import js.typedarrays.Uint8Array
 /**
  * @since v0.9.4
  */
-
 open external class Writable : Stream, node.WritableStream {
     constructor (opts: WritableOptions = definedExternally)
 
@@ -90,12 +89,8 @@ open external class Writable : Stream, node.WritableStream {
         callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit,
     ): Unit
 
-    open fun _writev(
-        chunks: Array<WritableWritevChunksItem>,
-        callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit,
-    ): Unit
-
-    open fun _construct(callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit): Unit
+    open val _writev: ((chunks: Array<WritableWritevChunksItem>, callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit) -> Unit)?
+    open val _construct: ((callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit) -> Unit)?
     open fun _destroy(
         error: Throwable /* JsError */?,
         callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit,
@@ -110,7 +105,7 @@ open external class Writable : Stream, node.WritableStream {
      * first argument. The `callback` is called asynchronously and before `'error'` is
      * emitted.
      *
-     * The return value is `true` if the internal buffer is less than the`highWaterMark` configured when the stream was created after admitting `chunk`.
+     * The return value is `true` if the internal buffer is less than the `highWaterMark` configured when the stream was created after admitting `chunk`.
      * If `false` is returned, further attempts to write data to the stream should
      * stop until the `'drain'` event is emitted.
      *
@@ -153,8 +148,8 @@ open external class Writable : Stream, node.WritableStream {
      *
      * A `Writable` stream in object mode will always ignore the `encoding` argument.
      * @since v0.9.4
-     * @param chunk Optional data to write. For streams not operating in object mode, `chunk` must be a string, `Buffer` or `Uint8Array`. For object mode streams, `chunk` may be any
-     * JavaScript value other than `null`.
+     * @param chunk Optional data to write. For streams not operating in object mode, `chunk` must be a {string}, {Buffer},
+     * {TypedArray} or {DataView}. For object mode streams, `chunk` may be any JavaScript value other than `null`.
      * @param [encoding='utf8'] The encoding, if `chunk` is a string.
      * @param callback Callback for when this chunk of data is flushed.
      * @return `false` if the stream wishes for the calling code to wait for the `'drain'` event to be emitted before continuing to write additional data; otherwise `true`.
@@ -190,8 +185,8 @@ open external class Writable : Stream, node.WritableStream {
      * // Writing more now is not allowed!
      * ```
      * @since v0.9.4
-     * @param chunk Optional data to write. For streams not operating in object mode, `chunk` must be a string, `Buffer` or `Uint8Array`. For object mode streams, `chunk` may be any
-     * JavaScript value other than `null`.
+     * @param chunk Optional data to write. For streams not operating in object mode, `chunk` must be a {string}, {Buffer},
+     * {TypedArray} or {DataView}. For object mode streams, `chunk` may be any JavaScript value other than `null`.
      * @param encoding The encoding if `chunk` is a string
      * @param callback Callback for when the stream is finished.
      */
@@ -205,10 +200,10 @@ open external class Writable : Stream, node.WritableStream {
      *
      * The primary intent of `writable.cork()` is to accommodate a situation in which
      * several small chunks are written to the stream in rapid succession. Instead of
-     * immediately forwarding them to the underlying destination, `writable.cork()`buffers all the chunks until `writable.uncork()` is called, which will pass them
+     * immediately forwarding them to the underlying destination, `writable.cork()` buffers all the chunks until `writable.uncork()` is called, which will pass them
      * all to `writable._writev()`, if present. This prevents a head-of-line blocking
      * situation where data is being buffered while waiting for the first small chunk
-     * to be processed. However, use of `writable.cork()` without implementing`writable._writev()` may have an adverse effect on throughput.
+     * to be processed. However, use of `writable.cork()` without implementing `writable._writev()` may have an adverse effect on throughput.
      *
      * See also: `writable.uncork()`, `writable._writev()`.
      * @since v0.11.2
@@ -219,7 +214,7 @@ open external class Writable : Stream, node.WritableStream {
      * The `writable.uncork()` method flushes all data buffered since {@link cork} was called.
      *
      * When using `writable.cork()` and `writable.uncork()` to manage the buffering
-     * of writes to a stream, defer calls to `writable.uncork()` using`process.nextTick()`. Doing so allows batching of all`writable.write()` calls that occur within a given Node.js event
+     * of writes to a stream, defer calls to `writable.uncork()` using `process.nextTick()`. Doing so allows batching of all `writable.write()` calls that occur within a given Node.js event
      * loop phase.
      *
      * ```js
@@ -251,10 +246,10 @@ open external class Writable : Stream, node.WritableStream {
     open fun uncork(): Unit
 
     /**
-     * Destroy the stream. Optionally emit an `'error'` event, and emit a `'close'`event (unless `emitClose` is set to `false`). After this call, the writable
+     * Destroy the stream. Optionally emit an `'error'` event, and emit a `'close'` event (unless `emitClose` is set to `false`). After this call, the writable
      * stream has ended and subsequent calls to `write()` or `end()` will result in
      * an `ERR_STREAM_DESTROYED` error.
-     * This is a destructive and immediate way to destroy a stream. Previous calls to`write()` may not have drained, and may trigger an `ERR_STREAM_DESTROYED` error.
+     * This is a destructive and immediate way to destroy a stream. Previous calls to `write()` may not have drained, and may trigger an `ERR_STREAM_DESTROYED` error.
      * Use `end()` instead of destroy if data should flush before close, or wait for
      * the `'drain'` event before destroying the stream.
      *
@@ -406,5 +401,4 @@ open external class Writable : Stream, node.WritableStream {
          */
         fun toWeb(streamWritable: Writable): web.streams.WritableStream<*>
     }
-
 }

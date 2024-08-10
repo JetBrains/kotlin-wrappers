@@ -1,8 +1,8 @@
 import js.array.asList
+import js.coroutines.promise
 import js.promise.Promise
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
-import kotlinx.coroutines.promise
 import kotlinx.css.CssBuilder
 import react.ComponentType
 import react.Props
@@ -155,7 +155,7 @@ internal fun createDOMElement(): HTMLElement {
     }
 }
 
-internal fun runTest(block: suspend TestScope.() -> Unit): dynamic {
+internal fun runTest(block: suspend TestScope.() -> Unit): Promise<Unit> {
     val scope = TestScope()
     scope.assertChildrenCount(0)
     return scope.promise { block(scope) }

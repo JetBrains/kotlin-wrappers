@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 
 /**
  * Specifies a set of clipping polygons. Clipping polygons selectively disable rendering in a region
@@ -41,7 +36,9 @@ import js.objects.jso
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ClippingPolygonCollection.html">Online Documentation</a>
  */
-external class ClippingPolygonCollection(options: ConstructorOptions? = definedExternally) {
+external class ClippingPolygonCollection(
+    options: ConstructorOptions? = definedExternally,
+) {
     /**
      * @property [polygons] An array of [ClippingPolygon] objects used to selectively disable rendering on the inside of each polygon.
      *   Default value - `[]`
@@ -173,11 +170,6 @@ external class ClippingPolygonCollection(options: ConstructorOptions? = definedE
          * @return `true` if the context supports clipping polygons.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ClippingPolygonCollection.html#.isSupported">Online Documentation</a>
          */
-        fun isSupported(scene: dynamic): Boolean
+        fun isSupported(scene: Any /* Scene | any */): Boolean
     }
 }
-
-inline fun ClippingPolygonCollection(
-    block: ClippingPolygonCollection.ConstructorOptions.() -> Unit,
-): ClippingPolygonCollection =
-    ClippingPolygonCollection(options = jso(block))

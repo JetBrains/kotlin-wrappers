@@ -185,7 +185,7 @@ external class Rectangle(
          * Creates the smallest possible Rectangle that encloses all positions in the provided array.
          * @param [cartesians] The list of Cartesian instances.
          * @param [ellipsoid] The ellipsoid the cartesians are on.
-         *   Default value - [Ellipsoid.WGS84]
+         *   Default value - [Ellipsoid.default]
          * @param [result] The object onto which to store the result, or undefined if a new instance should be created.
          * @return The modified result parameter or a new Rectangle instance if none was provided.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Rectangle.html#.fromCartesianArray">Online Documentation</a>
@@ -200,7 +200,7 @@ external class Rectangle(
          * Create a rectangle from a bounding sphere, ignoring height.
          * @param [boundingSphere] The bounding sphere.
          * @param [ellipsoid] The ellipsoid.
-         *   Default value - [Ellipsoid.WGS84]
+         *   Default value - [Ellipsoid.default]
          * @param [result] The object onto which to store the result, or undefined if a new instance should be created.
          * @return The modified result parameter or a new Rectangle instance if none was provided.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Rectangle.html#.fromBoundingSphere">Online Documentation</a>
@@ -401,7 +401,7 @@ external class Rectangle(
          * for rectangles that cover the poles or cross the equator.
          * @param [rectangle] The rectangle to subsample.
          * @param [ellipsoid] The ellipsoid to use.
-         *   Default value - [Ellipsoid.WGS84]
+         *   Default value - [Ellipsoid.default]
          * @param [surfaceHeight] The height of the rectangle above the ellipsoid.
          *   Default value - `0.0`
          * @param [result] The array of Cartesians onto which to store the result.

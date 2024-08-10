@@ -1,20 +1,20 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("typescript")
+
 package typescript
 
-import seskar.js.JsIntValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface InvalidatedProjectKind {
+    sealed interface Build : InvalidatedProjectKind
+    sealed interface UpdateBundle : InvalidatedProjectKind
+    sealed interface UpdateOutputFileStamps : InvalidatedProjectKind
+
     companion object {
-        @JsIntValue(0)
         val Build: Build
 
-        @JsIntValue(2)
+        /** @deprecated */
+        val UpdateBundle: UpdateBundle
         val UpdateOutputFileStamps: UpdateOutputFileStamps
     }
-
-    sealed interface Build : InvalidatedProjectKind
-    sealed interface UpdateOutputFileStamps : InvalidatedProjectKind
 }

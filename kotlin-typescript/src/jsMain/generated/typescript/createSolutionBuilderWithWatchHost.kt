@@ -4,7 +4,7 @@
 
 package typescript
 
-external fun <T : BuilderProgram /* = EmitAndSemanticDiagnosticsBuilderProgram */> createSolutionBuilderWithWatchHost(
+external fun <T : BuilderProgram /* default is EmitAndSemanticDiagnosticsBuilderProgram */> createSolutionBuilderWithWatchHost(
     system: System = definedExternally,
     createProgram: CreateProgram<T> = definedExternally,
     reportDiagnostic: DiagnosticReporter = definedExternally,

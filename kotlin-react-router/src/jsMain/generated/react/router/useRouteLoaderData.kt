@@ -4,7 +4,6 @@
 
 package react.router
 
-
 /**
  * Returns the loaderData for the given routeId
  */

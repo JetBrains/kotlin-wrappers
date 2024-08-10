@@ -2,10 +2,10 @@
 
 package web.media.streams
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface ConstrainBooleanParameters {
+external interface ConstrainBooleanParameters {
     var exact: Boolean?
     var ideal: Boolean?
 }

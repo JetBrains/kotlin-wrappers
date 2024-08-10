@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface TypeAssertion : UnaryExpression, Union.TypeAssertion_ {
+sealed external interface TypeAssertion : UnaryExpression, AssertionExpression {
     override val kind: SyntaxKind.TypeAssertionExpression
     val type: TypeNode
     val expression: UnaryExpression

@@ -2,7 +2,6 @@
 
 package node.process
 
-
 sealed external interface ProcessConfigVariables {
     val clang: Double
     val host_arch: String

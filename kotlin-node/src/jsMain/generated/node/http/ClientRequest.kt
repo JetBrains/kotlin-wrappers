@@ -10,10 +10,10 @@ import web.url.URL
 /**
  * This object is created internally and returned from {@link request}. It
  * represents an _in-progress_ request whose header has already been queued. The
- * header is still mutable using the `setHeader(name, value)`,`getHeader(name)`, `removeHeader(name)` API. The actual header will
+ * header is still mutable using the `setHeader(name, value)`, `getHeader(name)`, `removeHeader(name)` API. The actual header will
  * be sent along with the first data chunk or when calling `request.end()`.
  *
- * To get the response, add a listener for `'response'` to the request object.`'response'` will be emitted from the request object when the response
+ * To get the response, add a listener for `'response'` to the request object. `'response'` will be emitted from the request object when the response
  * headers have been received. The `'response'` event is executed with one
  * argument which is an instance of {@link IncomingMessage}.
  *
@@ -29,16 +29,15 @@ import web.url.URL
  * the data is read it will consume memory that can eventually lead to a
  * 'process out of memory' error.
  *
- * For backward compatibility, `res` will only emit `'error'` if there is an`'error'` listener registered.
+ * For backward compatibility, `res` will only emit `'error'` if there is an `'error'` listener registered.
  *
  * Set `Content-Length` header to limit the response body size.
- * If `response.strictContentLength` is set to `true`, mismatching the`Content-Length` header value will result in an `Error` being thrown,
+ * If `response.strictContentLength` is set to `true`, mismatching the `Content-Length` header value will result in an `Error` being thrown,
  * identified by `code:``'ERR_HTTP_CONTENT_LENGTH_MISMATCH'`.
  *
  * `Content-Length` value should be in bytes, not characters. Use `Buffer.byteLength()` to determine the length of the body in bytes.
  * @since v0.1.17
  */
-
 external class ClientRequest : OutgoingMessage<IncomingMessage> {
     constructor (url: String, cb: (res: IncomingMessage) -> Unit = definedExternally)
 
@@ -50,7 +49,7 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
      * The `request.aborted` property will be `true` if the request has
      * been aborted.
      * @since v0.11.14
-     * @deprecated Since v17.0.0,v16.12.0 - Check `destroyed` instead.
+     * @deprecated Since v17.0.0, v16.12.0 - Check `destroyed` instead.
      */
     var aborted: Boolean
 

@@ -13,7 +13,7 @@ import js.promise.Promise
  * The format of the object that the returned Promise may resolve with is
  * specific to the V8 engine and may change from one version of V8 to the next.
  *
- * The returned result is different from the statistics returned by`v8.getHeapSpaceStatistics()` in that `vm.measureMemory()` measure the
+ * The returned result is different from the statistics returned by `v8.getHeapSpaceStatistics()` in that `vm.measureMemory()` measure the
  * memory reachable by each V8 specific contexts in the current instance of
  * the V8 engine, while the result of `v8.getHeapSpaceStatistics()` measure
  * the memory occupied by each heap space in the current V8 instance.

@@ -2,8 +2,6 @@
 
 package node.dgram
 
-
-@seskar.js.JsVirtual
 sealed external interface RemoteInfoFamily {
     companion object {
         @seskar.js.JsValue("IPv4")

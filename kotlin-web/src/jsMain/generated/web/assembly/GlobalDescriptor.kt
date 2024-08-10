@@ -2,10 +2,8 @@
 
 package web.assembly
 
-import js.objects.JsPlainObject
-
-@JsPlainObject
-sealed external interface GlobalDescriptor<T> {
+@kotlinx.js.JsPlainObject_KT_68943
+external interface GlobalDescriptor<T> {
     var mutable: Boolean?
     var value: ValueType<T>
 }

@@ -4,7 +4,6 @@
 
 package node.perfHooks
 
-
 /**
  * _This property is an extension by Node.js. It is not available in Web browsers._
  *
@@ -12,7 +11,6 @@ package node.perfHooks
  * is not exposed to users.
  * @since v8.5.0
  */
-
 external class PerformanceNodeTiming : PerformanceEntry {
     constructor ()
 
@@ -56,6 +54,12 @@ external class PerformanceNodeTiming : PerformanceEntry {
      * @since v8.5.0
      */
     val loopStart: Double
+
+    /**
+     * The high resolution millisecond timestamp at which the Node.js process was initialized.
+     * @since v8.5.0
+     */
+    val nodeStart: Double
 
     /**
      * The high resolution millisecond timestamp at which the V8 platform was

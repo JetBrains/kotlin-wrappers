@@ -4,7 +4,7 @@ package web.highlight
 
 import js.array.JsTuple2
 import js.collections.MutableSetLike
-import js.iterable.IterableIterator
+import js.iterable.JsIterator
 import web.ranges.AbstractRange
 
 /**
@@ -28,9 +28,9 @@ external class Highlight(
     override fun add(value: AbstractRange)
     override fun clear()
     override fun delete(value: AbstractRange): Boolean
-    override fun entries(): IterableIterator<JsTuple2<AbstractRange, AbstractRange>>
+    override fun entries(): JsIterator<JsTuple2<AbstractRange, AbstractRange>>
     override fun forEach(action: (value: AbstractRange) -> Unit)
     override fun has(key: AbstractRange): Boolean
-    override fun keys(): IterableIterator<AbstractRange>
-    override fun values(): IterableIterator<AbstractRange>
+    override fun keys(): JsIterator<AbstractRange>
+    override fun values(): JsIterator<AbstractRange>
 }

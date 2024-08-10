@@ -3,9 +3,7 @@
 package react.dom.svg
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface AllowReorder {
     companion object {
         @JsValue("no")

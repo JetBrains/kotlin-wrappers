@@ -3,10 +3,12 @@
 package actions.artifact
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 sealed external interface ListArtifactsResponse {
-    var count: Number
-    var value: ReadonlyArray<ArtifactResponse>
+    /**
+     * A list of artifacts that were found
+     */
+    var artifacts: ReadonlyArray<Artifact>
 }

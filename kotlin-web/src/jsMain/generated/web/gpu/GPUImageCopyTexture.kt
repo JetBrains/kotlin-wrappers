@@ -2,10 +2,10 @@
 
 package web.gpu
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GPUImageCopyTexture {
+external interface GPUImageCopyTexture {
     var texture: GPUTexture
     var mipLevel: GPUIntegerCoordinate?
     var origin: GPUOrigin3D?

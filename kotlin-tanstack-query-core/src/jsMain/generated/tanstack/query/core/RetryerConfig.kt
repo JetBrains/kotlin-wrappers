@@ -2,10 +2,12 @@
 
 package tanstack.query.core
 
+import js.promise.Promise
 import js.promise.PromiseResult
 
 external interface RetryerConfig<TData, TError> {
     var fn: () -> PromiseResult<TData>
+    var initialPromise: Promise<TData>
     var abort: () -> Unit
     var onError: (error: TError) -> Unit
     var onSuccess: (data: TData) -> Unit
@@ -15,4 +17,5 @@ external interface RetryerConfig<TData, TError> {
     var retry: RetryValue<TError>
     var retryDelay: RetryDelayValue<TError>
     var networkMode: NetworkMode?
+    var canRun: () -> Boolean
 }

@@ -5,7 +5,7 @@ import js.array.MutableArrayLike
 import js.array.ReadonlyArray
 import js.buffer.ArrayBufferView
 import js.collections.ListLike
-import js.iterable.IterableIterator
+import js.iterable.JsIterator
 import seskar.js.JsSpecialName
 
 // language=javascript
@@ -236,9 +236,9 @@ sealed external class TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* Numb
         end: Int,
     ): S
 
-    override fun entries(): IterableIterator<JsTuple2<Int, T>>
+    override fun entries(): JsIterator<JsTuple2<Int, T>>
 
-    override fun keys(): IterableIterator<Int>
+    override fun keys(): JsIterator<Int>
 
-    override fun values(): IterableIterator<T>
+    override fun values(): JsIterator<T>
 }

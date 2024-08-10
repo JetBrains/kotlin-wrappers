@@ -2,11 +2,11 @@
 
 package web.performance
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.time.DOMHighResTimeStamp
 
 @JsPlainObject
-sealed external interface PerformanceMeasureOptions {
+external interface PerformanceMeasureOptions {
     var detail: Any?
     var duration: DOMHighResTimeStamp?
     var end: DOMHighResTimeStamp /* | String */?

@@ -7,18 +7,18 @@
 
 package web.events
 
-sealed external interface EventHandler<in E : Event, out C : EventTarget>
+sealed external interface EventHandler<in E : Event, out C : EventTarget, out T : EventTarget>
 
 inline fun EventHandler(
     noinline handler: () -> Unit,
-): EventHandler<Event, Nothing> {
-    return handler.unsafeCast<EventHandler<Event, Nothing>>()
+): EventHandler<Event, Nothing, Nothing> {
+    return handler.unsafeCast<EventHandler<Event, Nothing, Nothing>>()
 }
 
-inline fun <E : Event, C : EventTarget, D> EventHandler(
+inline fun <E : Event, C : EventTarget, T : EventTarget, D> EventHandler(
     noinline handler: (D) -> Unit,
-): EventHandler<E, C>
+): EventHandler<E, C, T>
         where D : E,
-              D : HasTargets<C> {
-    return handler.unsafeCast<EventHandler<E, C>>()
+              D : HasTargets<C, T> {
+    return handler.unsafeCast<EventHandler<E, C, T>>()
 }

@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface CompilerOptionsValue /* string | number | boolean | (string | number)[] | string[] | MapLike<string[]> | PluginImport[] | ProjectReference[] | null | undefined */
+typealias CompilerOptionsValue = Any? /* string | number | boolean | (string | number)[] | string[] | MapLike<string[]> | PluginImport[] | ProjectReference[] | null | undefined */

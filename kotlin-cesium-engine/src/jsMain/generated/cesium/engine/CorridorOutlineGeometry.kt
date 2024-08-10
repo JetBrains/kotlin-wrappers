@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 
 /**
  * A description of a corridor outline.
@@ -22,12 +17,14 @@ import js.objects.jso
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CorridorOutlineGeometry.html">Online Documentation</a>
  */
-external class CorridorOutlineGeometry(options: ConstructorOptions) {
+external class CorridorOutlineGeometry(
+    options: ConstructorOptions,
+) {
     /**
      * @property [positions] An array of positions that define the center of the corridor outline.
      * @property [width] The distance between the edges of the corridor outline.
      * @property [ellipsoid] The ellipsoid to be used as a reference.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @property [granularity] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
      *   Default value - [Math.RADIANS_PER_DEGREE]
      * @property [height] The distance in meters between the positions and the ellipsoid surface.
@@ -93,8 +90,3 @@ external class CorridorOutlineGeometry(options: ConstructorOptions) {
         fun createGeometry(corridorOutlineGeometry: CorridorOutlineGeometry): Geometry?
     }
 }
-
-inline fun CorridorOutlineGeometry(
-    block: CorridorOutlineGeometry.ConstructorOptions.() -> Unit,
-): CorridorOutlineGeometry =
-    CorridorOutlineGeometry(options = jso(block))

@@ -2,6 +2,6 @@
 
 package typescript
 
-sealed external interface ExportMapInfoKey /* string & {
+typealias ExportMapInfoKey = Any /* string & {
     __exportInfoKey: void;
 } */

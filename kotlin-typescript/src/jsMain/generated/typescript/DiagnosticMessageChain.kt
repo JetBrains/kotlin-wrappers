@@ -2,8 +2,6 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 /**
  * A linked list of formatted diagnostic messages to be used as part of a multiline message.
  * It is built from the bottom up, leaving the head to be the "main" diagnostic.
@@ -13,6 +11,6 @@ import js.array.ReadonlyArray
 sealed external interface DiagnosticMessageChain {
     var messageText: String
     var category: DiagnosticCategory
-    var code: Int
-    var next: ReadonlyArray<DiagnosticMessageChain>?
+    var code: Double
+    var next: js.array.ReadonlyArray<DiagnosticMessageChain>?
 }

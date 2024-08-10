@@ -2,6 +2,6 @@
 
 package typescript
 
-sealed external interface Path /* string & {
+typealias Path = Any /* string & {
     __pathBrand: any;
 } */

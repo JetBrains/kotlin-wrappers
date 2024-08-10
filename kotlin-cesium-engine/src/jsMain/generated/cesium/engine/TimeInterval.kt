@@ -2,13 +2,9 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * An interval defined by a start and a stop time; optionally including those times as part of the interval.
@@ -250,24 +246,3 @@ external class TimeInterval {
         val EMPTY: TimeInterval
     }
 }
-
-/**
- * Function interface for merging interval data.
- * @param [leftData] The first data instance.
- * @param [rightData] The second data instance.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TimeInterval.html#.MergeCallback">Online Documentation</a>
- */
-typealias MergeCallback = (leftData: Any, rightData: Any) -> Any
-
-/**
- * Function interface for comparing interval data.
- * @param [leftData] The first data instance.
- * @param [rightData] The second data instance.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TimeInterval.html#.DataComparer">Online Documentation</a>
- */
-typealias DataComparer = (leftData: Any, rightData: Any) -> Boolean
-
-inline fun TimeInterval(
-    block: TimeInterval.() -> Unit,
-): TimeInterval =
-    TimeInterval().apply(block)

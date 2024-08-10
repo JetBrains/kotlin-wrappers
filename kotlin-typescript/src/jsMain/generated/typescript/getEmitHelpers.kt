@@ -4,9 +4,7 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 /**
  * Gets the EmitHelpers of a node.
  */
-external fun getEmitHelpers(node: Node): ReadonlyArray<EmitHelper>?
+external fun getEmitHelpers(node: Node): js.array.ReadonlyArray<EmitHelper>?

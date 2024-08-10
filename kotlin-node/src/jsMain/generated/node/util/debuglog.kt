@@ -4,7 +4,6 @@
 
 package node.util
 
-
 /**
  * The `util.debuglog()` method is used to create a function that conditionally
  * writes debug messages to `stderr` based on the existence of the `NODE_DEBUG`environment variable. If the `section` name appears within the value of that

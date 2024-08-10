@@ -2,10 +2,10 @@
 
 package web.audio
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface DelayOptions :
+external interface DelayOptions :
     AudioNodeOptions {
     var delayTime: Double?
     var maxDelayTime: Double?

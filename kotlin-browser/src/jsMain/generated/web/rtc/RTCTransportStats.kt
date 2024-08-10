@@ -3,10 +3,10 @@
 package web.rtc
 
 import js.core.JsLong
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface RTCTransportStats :
+external interface RTCTransportStats :
     RTCStats {
     var bytesReceived: JsLong?
     var bytesSent: JsLong?

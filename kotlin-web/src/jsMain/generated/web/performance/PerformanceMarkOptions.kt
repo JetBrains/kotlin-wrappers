@@ -2,11 +2,11 @@
 
 package web.performance
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.time.DOMHighResTimeStamp
 
 @JsPlainObject
-sealed external interface PerformanceMarkOptions {
+external interface PerformanceMarkOptions {
     var detail: Any?
     var startTime: DOMHighResTimeStamp?
 }

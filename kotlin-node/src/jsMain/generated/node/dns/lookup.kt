@@ -4,7 +4,6 @@
 
 package node.dns
 
-
 /**
  * Resolves a host name (e.g. `'nodejs.org'`) into the first found A (IPv4) or
  * AAAA (IPv6) record. All `option` properties are optional. If `options` is an

@@ -3,14 +3,13 @@
 @file:JsModule("@cesium/engine")
 
 @file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
     "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
 )
 
 package cesium.engine
 
-import js.objects.JsPlainObject
 import js.promise.Promise
+import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync
 
 /**
@@ -34,7 +33,9 @@ import seskar.js.JsAsync
  *   the name of the GeoJSON file.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeoJsonDataSource.html">Online Documentation</a>
  */
-external class GeoJsonDataSource(var name: String = definedExternally) {
+external class GeoJsonDataSource(
+    var name: String = definedExternally,
+) {
     /**
      * This DataSource only defines static data, therefore this property is always undefined.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeoJsonDataSource.html#clock">Online Documentation</a>
@@ -339,11 +340,3 @@ external class GeoJsonDataSource(var name: String = definedExternally) {
         }
     }
 }
-
-/**
- * This callback is displayed as part of the GeoJsonDataSource class.
- * @param [properties] The properties of the feature.
- * @param [nameProperty] The property key that Cesium estimates to have the name of the feature.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeoJsonDataSource.html#.describe">Online Documentation</a>
- */
-typealias describe = (properties: Any, nameProperty: String) -> Unit

@@ -2,16 +2,11 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
+import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync
 
 /**
@@ -50,7 +45,9 @@ import seskar.js.JsAsync
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html">Online Documentation</a>
  */
-external class UrlTemplateImageryProvider(options: ConstructorOptions) {
+external class UrlTemplateImageryProvider(
+    options: ConstructorOptions,
+) {
     /**
      * Gets or sets a value indicating whether feature picking is enabled.  If true, [UrlTemplateImageryProvider.pickFeatures] will
      * request the `options.pickFeaturesUrl` and attempt to interpret the features included in the response.  If false,
@@ -374,8 +371,3 @@ external class UrlTemplateImageryProvider(options: ConstructorOptions) {
         var customTags: Any?
     }
 }
-
-inline fun UrlTemplateImageryProvider(
-    block: UrlTemplateImageryProvider.ConstructorOptions.() -> Unit,
-): UrlTemplateImageryProvider =
-    UrlTemplateImageryProvider(options = jso(block))

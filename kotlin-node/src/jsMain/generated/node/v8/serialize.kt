@@ -4,7 +4,6 @@
 
 package node.v8
 
-
 /**
  * Uses a `DefaultSerializer` to serialize `value` into a buffer.
  *

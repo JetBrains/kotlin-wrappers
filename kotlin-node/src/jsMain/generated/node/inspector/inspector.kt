@@ -4,7 +4,6 @@
 
 package node.inspector
 
-
 // Type definitions for inspector
 // These definitions are auto-generated.
 // Please see https://github.com/DefinitelyTyped/DefinitelyTyped/pull/19330
@@ -24,12 +23,11 @@ package node.inspector
  * ```js
  * import * as inspector from 'node:inspector';
  * ```
- * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/inspector.js)
+ * @see [source](https://github.com/nodejs/node/blob/v20.13.1/lib/inspector.js)
  */
 
 
 /**
  * The inspector module provides an API for interacting with the V8 inspector.
  */
-/* import inspector = require('inspector'); */
-/* export = inspector; */
+/* export * from 'inspector'; */

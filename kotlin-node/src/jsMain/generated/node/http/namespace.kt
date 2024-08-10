@@ -9,6 +9,12 @@ external val METHODS: js.array.ReadonlyArray<String>
 
 external val STATUS_CODES: HttpStatusCodes
 
+/**
+ * Global instance of `Agent` which is used as the default for all HTTP client
+ * requests. Diverges from a default `Agent` configuration by having `keepAlive`
+ * enabled and a `timeout` of 5 seconds.
+ * @since v0.5.9
+ */
 external var globalAgent: Agent
 
 /**

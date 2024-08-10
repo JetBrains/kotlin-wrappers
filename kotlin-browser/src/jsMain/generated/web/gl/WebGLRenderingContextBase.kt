@@ -11,6 +11,10 @@ sealed external interface WebGLRenderingContextBase {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/canvas)
      */
     val canvas: EventTarget /* HTMLCanvasElement | OffscreenCanvas */
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/drawingBufferColorSpace)
+     */
     var drawingBufferColorSpace: PredefinedColorSpace
 
     /**
@@ -194,22 +198,22 @@ sealed external interface WebGLRenderingContextBase {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/createBuffer)
      */
-    fun createBuffer(): WebGLBuffer?
+    fun createBuffer(): WebGLBuffer
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/createFramebuffer)
      */
-    fun createFramebuffer(): WebGLFramebuffer?
+    fun createFramebuffer(): WebGLFramebuffer
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/createProgram)
      */
-    fun createProgram(): WebGLProgram?
+    fun createProgram(): WebGLProgram
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/createRenderbuffer)
      */
-    fun createRenderbuffer(): WebGLRenderbuffer?
+    fun createRenderbuffer(): WebGLRenderbuffer
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/createShader)
@@ -219,7 +223,7 @@ sealed external interface WebGLRenderingContextBase {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/createTexture)
      */
-    fun createTexture(): WebGLTexture?
+    fun createTexture(): WebGLTexture
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/cullFace)

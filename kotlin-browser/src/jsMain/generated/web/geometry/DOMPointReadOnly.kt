@@ -30,10 +30,6 @@ open external class DOMPointReadOnly(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/z)
      */
     open val z: Double
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/matrixTransform)
-     */
     fun matrixTransform(matrix: DOMMatrixInit = definedExternally): DOMPoint
     fun matrixTransform(matrix: DOMMatrixReadOnly /* DOMMatrixInit */): DOMPoint
 

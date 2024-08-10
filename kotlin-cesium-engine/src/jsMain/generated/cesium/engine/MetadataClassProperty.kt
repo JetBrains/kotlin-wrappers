@@ -2,14 +2,9 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 
 /**
  * A metadata property, as part of a [MetadataClass].
@@ -17,7 +12,9 @@ import js.objects.jso
  * See the [3D Metadata Specification](https://github.com/CesiumGS/3d-tiles/tree/main/specification/Metadata) for 3D Tiles
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MetadataClassProperty.html">Online Documentation</a>
  */
-external class MetadataClassProperty(options: ConstructorOptions) {
+external class MetadataClassProperty(
+    options: ConstructorOptions,
+) {
     /**
      * @property [id] The ID of the property.
      * @property [type] The type of the property such as SCALAR, VEC2, VEC3.
@@ -54,12 +51,12 @@ external class MetadataClassProperty(options: ConstructorOptions) {
         var isVariableLengthArray: Boolean?
         var arrayLength: Int?
         var normalized: Boolean?
-        var min: dynamic
-        var max: dynamic
-        var offset: dynamic
-        var scale: dynamic
-        var noData: dynamic
-        var default: dynamic
+        var min: Any /* number | number[] | number[][] */?
+        var max: Any /* number | number[] | number[][] */?
+        var offset: Any /* number | number[] | number[][] */?
+        var scale: Any /* number | number[] | number[][] */?
+        var noData: Any /* boolean | number | string | any[] */?
+        var default: Any /* boolean | number | string | any[] */?
         var required: Boolean?
         var name: String?
         var description: String?
@@ -135,25 +132,25 @@ external class MetadataClassProperty(options: ConstructorOptions) {
      * A number or an array of numbers storing the maximum allowable value of this property. Only defined when type is a numeric type.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MetadataClassProperty.html#max">Online Documentation</a>
      */
-    val max: dynamic
+    val max: Any /* number | number[] | number[][] */
 
     /**
      * A number or an array of numbers storing the minimum allowable value of this property. Only defined when type is a numeric type.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MetadataClassProperty.html#min">Online Documentation</a>
      */
-    val min: dynamic
+    val min: Any /* number | number[] | number[][] */
 
     /**
      * The no-data sentinel value that represents null values
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MetadataClassProperty.html#noData">Online Documentation</a>
      */
-    val noData: dynamic
+    val noData: Any /* boolean | number | string | any[] */
 
     /**
      * A default value to use when an entity's property value is not defined.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MetadataClassProperty.html#default">Online Documentation</a>
      */
-    val default: dynamic
+    val default: Any /* boolean | number | string | any[] */
 
     /**
      * Whether the property is required.
@@ -171,13 +168,13 @@ external class MetadataClassProperty(options: ConstructorOptions) {
      * The offset to be added to property values as part of the value transform.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MetadataClassProperty.html#offset">Online Documentation</a>
      */
-    val offset: dynamic
+    val offset: Any /* number | number[] | number[][] */
 
     /**
      * The scale to be multiplied to property values as part of the value transform.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MetadataClassProperty.html#scale">Online Documentation</a>
      */
-    val scale: dynamic
+    val scale: Any /* number | number[] | number[][] */
 
     /**
      * Extra user-defined properties.
@@ -191,8 +188,3 @@ external class MetadataClassProperty(options: ConstructorOptions) {
      */
     val extensions: Any
 }
-
-inline fun MetadataClassProperty(
-    block: MetadataClassProperty.ConstructorOptions.() -> Unit,
-): MetadataClassProperty =
-    MetadataClassProperty(options = jso(block))

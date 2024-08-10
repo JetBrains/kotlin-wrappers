@@ -18,7 +18,7 @@ import web.media.streams.MediaStreamTrack
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection)
  */
-external class RTCPeerConnection(
+open external class RTCPeerConnection(
     configuration: RTCConfiguration = definedExternally,
 ) : EventTarget {
     /**
@@ -59,47 +59,47 @@ external class RTCPeerConnection(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/connectionstatechange_event)
      */
-    var onconnectionstatechange: EventHandler<Event, RTCPeerConnection>?
+    var onconnectionstatechange: EventHandler<Event, RTCPeerConnection, RTCPeerConnection>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/datachannel_event)
      */
-    var ondatachannel: EventHandler<RTCDataChannelEvent, RTCPeerConnection>?
+    var ondatachannel: EventHandler<RTCDataChannelEvent, RTCPeerConnection, RTCPeerConnection>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/icecandidate_event)
      */
-    var onicecandidate: EventHandler<RTCPeerConnectionIceEvent, RTCPeerConnection>?
+    var onicecandidate: EventHandler<RTCPeerConnectionIceEvent, RTCPeerConnection, RTCPeerConnection>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/icecandidateerror_event)
      */
-    var onicecandidateerror: EventHandler<RTCPeerConnectionIceErrorEvent, RTCPeerConnection>?
+    var onicecandidateerror: EventHandler<RTCPeerConnectionIceErrorEvent, RTCPeerConnection, RTCPeerConnection>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/iceconnectionstatechange_event)
      */
-    var oniceconnectionstatechange: EventHandler<Event, RTCPeerConnection>?
+    var oniceconnectionstatechange: EventHandler<Event, RTCPeerConnection, RTCPeerConnection>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/icegatheringstatechange_event)
      */
-    var onicegatheringstatechange: EventHandler<Event, RTCPeerConnection>?
+    var onicegatheringstatechange: EventHandler<Event, RTCPeerConnection, RTCPeerConnection>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/negotiationneeded_event)
      */
-    var onnegotiationneeded: EventHandler<Event, RTCPeerConnection>?
+    var onnegotiationneeded: EventHandler<Event, RTCPeerConnection, RTCPeerConnection>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/signalingstatechange_event)
      */
-    var onsignalingstatechange: EventHandler<Event, RTCPeerConnection>?
+    var onsignalingstatechange: EventHandler<Event, RTCPeerConnection, RTCPeerConnection>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/track_event)
      */
-    var ontrack: EventHandler<RTCTrackEvent, RTCPeerConnection>?
+    var ontrack: EventHandler<RTCTrackEvent, RTCPeerConnection, RTCPeerConnection>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/pendingLocalDescription)

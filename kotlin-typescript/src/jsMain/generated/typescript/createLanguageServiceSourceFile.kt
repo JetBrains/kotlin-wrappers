@@ -7,7 +7,16 @@ package typescript
 external fun createLanguageServiceSourceFile(
     fileName: String,
     scriptSnapshot: IScriptSnapshot,
-    scriptTargetOrOptions: dynamic, /* ScriptTarget | CreateSourceFileOptions */
+    scriptTargetOrOptions: ScriptTarget,
+    version: String,
+    setNodeParents: Boolean,
+    scriptKind: ScriptKind = definedExternally,
+): SourceFile
+
+external fun createLanguageServiceSourceFile(
+    fileName: String,
+    scriptSnapshot: IScriptSnapshot,
+    scriptTargetOrOptions: CreateSourceFileOptions,
     version: String,
     setNodeParents: Boolean,
     scriptKind: ScriptKind = definedExternally,

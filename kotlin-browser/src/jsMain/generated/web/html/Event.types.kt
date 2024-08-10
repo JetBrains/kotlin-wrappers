@@ -10,5 +10,8 @@ import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
 
+inline fun <C : EventTarget> Event.Companion.progress(): EventType<Event, C> =
+    EventType("progress")
+
 inline fun <C : EventTarget> Event.Companion.waitingForKey(): EventType<Event, C> =
     EventType("waitingforkey")

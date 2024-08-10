@@ -4,7 +4,6 @@
 
 package node.workerThreads
 
-
 /**
  * Within a worker thread, `worker.getEnvironmentData()` returns a clone
  * of data passed to the spawning thread's `worker.setEnvironmentData()`.

@@ -4,7 +4,6 @@
 
 package node.vm
 
-
 /**
  * This feature is only available with the `--experimental-vm-modules` command
  * flag enabled.
@@ -14,7 +13,6 @@ package node.vm
  * @since v9.6.0
  * @experimental
  */
-
 external class SourceTextModule : Module {
     /**
      * Creates a new `SourceTextModule` instance.

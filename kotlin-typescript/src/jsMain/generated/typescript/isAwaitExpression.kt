@@ -1,17 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
-)
+@file:JsModule("typescript")
 
 package typescript
 
-import kotlin.contracts.contract
 
-fun isAwaitExpression(node: Node): Boolean {
-    contract {
-        returns(true) implies (node is AwaitExpression)
-    }
-
-    return typescript.raw.isAwaitExpression(node)
-}
+@JsName("isAwaitExpression")
+external fun isAwaitExpressionRaw(node: Node): Boolean /* node is AwaitExpression */

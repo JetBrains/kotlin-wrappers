@@ -2,13 +2,7 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
-
-import js.array.ReadonlyArray
 
 /**
  * Defines how screen space objects (billboards, points, labels) are clustered.
@@ -73,24 +67,3 @@ external class EntityCluster {
      */
     fun destroy()
 }
-
-/**
- * A event listener function used to style clusters.
- * ```
- * // The default cluster values.
- * dataSource.clustering.clusterEvent.addEventListener(function(entities, cluster) {
- *     cluster.label.show = true;
- *     cluster.label.text = entities.length.toLocaleString();
- * });
- * ```
- * @param [clusteredEntities] An array of the entities contained in the cluster.
- * @param [cluster] An object containing the Billboard, Label, and Point
- *   primitives that represent this cluster of entities.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EntityCluster.html#.newClusterCallback">Online Documentation</a>
- */
-typealias newClusterCallback = (clusteredEntities: ReadonlyArray<Entity>, cluster: dynamic) -> Unit
-
-inline fun EntityCluster(
-    block: EntityCluster.() -> Unit,
-): EntityCluster =
-    EntityCluster().apply(block)

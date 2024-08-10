@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface ForInOrOfStatement /* ForInStatement | ForOfStatement */
+sealed external interface ForInOrOfStatement : Node

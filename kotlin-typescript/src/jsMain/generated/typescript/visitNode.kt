@@ -4,8 +4,6 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 /**
  * Visits a Node using the supplied visitor, possibly returning a new Node in its place.
  *
@@ -24,8 +22,8 @@ external fun <TIn : Node?, TVisited : Node?, TOut : Node> visitNode(
     node: TIn,
     visitor: Visitor<TIn & Any, TVisited>,
     test: (node: Node) -> Boolean, /* node is TOut */
-    lift: (node: ReadonlyArray<Node>) -> Node = definedExternally,
-): dynamic /* TOut | (TIn & undefined) | (TVisited & undefined) */
+    lift: (node: js.array.ReadonlyArray<Node>) -> Node = definedExternally,
+): Any /* TOut | (TIn & undefined) | (TVisited & undefined) */
 
 /**
  * Visits a Node using the supplied visitor, possibly returning a new Node in its place.
@@ -45,5 +43,5 @@ external fun <TIn : Node?, TVisited : Node?> visitNode(
     node: TIn,
     visitor: Visitor<TIn & Any, TVisited>,
     test: (node: Node) -> Boolean = definedExternally,
-    lift: (node: ReadonlyArray<Node>) -> Node = definedExternally,
-): dynamic /* Node | (TIn & undefined) | (TVisited & undefined) */
+    lift: (node: js.array.ReadonlyArray<Node>) -> Node = definedExternally,
+): Any /* Node | (TIn & undefined) | (TVisited & undefined) */

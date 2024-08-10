@@ -4,7 +4,6 @@
 
 package node.os
 
-
 /**
  * Returns the operating system's default directory for temporary files as a
  * string.

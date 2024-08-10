@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Request that all data for the open file descriptor is flushed to the storage
  * device. The specific implementation is operating system and device specific.

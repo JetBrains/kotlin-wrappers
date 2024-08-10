@@ -4,10 +4,10 @@ package web.rtc
 
 import js.array.ReadonlyArray
 import js.core.JsLong
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface RTCEncodedVideoFrameMetadata {
+external interface RTCEncodedVideoFrameMetadata {
     var contributingSources: ReadonlyArray<Number>?
     var dependencies: ReadonlyArray<Number>?
     var frameId: JsLong?

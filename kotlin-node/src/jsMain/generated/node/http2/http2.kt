@@ -4,7 +4,6 @@
 
 package node.http2
 
-
 /**
  * The `node:http2` module provides an implementation of the [HTTP/2](https://tools.ietf.org/html/rfc7540) protocol.
  * It can be accessed using:
@@ -13,7 +12,7 @@ package node.http2
  * const http2 = require('node:http2');
  * ```
  * @since v8.4.0
- * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/http2.js)
+ * @see [source](https://github.com/nodejs/node/blob/v20.13.1/lib/http2.js)
  */
 
 

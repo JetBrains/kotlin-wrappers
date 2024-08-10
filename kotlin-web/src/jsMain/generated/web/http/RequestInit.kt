@@ -2,8 +2,7 @@
 
 package web.http
 
-import js.core.Void
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.abort.AbortSignal
 import web.abort.Abortable
 
@@ -43,7 +42,7 @@ external interface RequestInit :
     /**
      * A string to set request's method.
      */
-    var method: String?
+    var method: RequestMethod?
 
     /**
      * A string to indicate whether the request will use CORS, or will be restricted to same-origin URLs. Sets request's mode.
@@ -70,9 +69,4 @@ external interface RequestInit :
      * An AbortSignal to set request's signal.
      */
     override var signal: AbortSignal?
-
-    /**
-     * Can only be null. Used to disassociate request from any Window.
-     */
-    var window: Void
 }

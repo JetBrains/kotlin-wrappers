@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Changes the permissions on a symbolic link. No arguments other than a possible
  * exception are given to the completion callback.

@@ -2,14 +2,9 @@
 
 @file:JsModule("@cesium/widgets")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.widgets
 
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 
 /**
  * A view model that represents each item in the [BaseLayerPicker].
@@ -19,7 +14,9 @@ import js.objects.jso
  * @param [options] The object containing all parameters.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ProviderViewModel.html">Online Documentation</a>
  */
-external class ProviderViewModel(options: ConstructorOptions) {
+external class ProviderViewModel(
+    options: ConstructorOptions,
+) {
     /**
      * @property [name] The name of the layer.
      * @property [tooltip] The tooltip to show when the item is moused over.
@@ -34,7 +31,7 @@ external class ProviderViewModel(options: ConstructorOptions) {
         var tooltip: String
         var iconUrl: String
         var category: String?
-        var creationFunction: dynamic
+        var creationFunction: Any /* ProviderViewModel.CreationFunction | Command */
     }
 
     /**
@@ -68,14 +65,3 @@ external class ProviderViewModel(options: ConstructorOptions) {
      */
     val category: String
 }
-
-/**
- * A function which creates one or more providers.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ProviderViewModel.html#.CreationFunction">Online Documentation</a>
- */
-typealias CreationFunction = () -> dynamic
-
-inline fun ProviderViewModel(
-    block: ProviderViewModel.ConstructorOptions.() -> Unit,
-): ProviderViewModel =
-    ProviderViewModel(options = jso(block))

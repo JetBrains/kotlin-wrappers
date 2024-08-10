@@ -4,7 +4,6 @@
 
 package node.v8
 
-
 /**
  * Generates a snapshot of the current V8 heap and writes it to a JSON
  * file. This file is intended to be used with tools such as Chrome

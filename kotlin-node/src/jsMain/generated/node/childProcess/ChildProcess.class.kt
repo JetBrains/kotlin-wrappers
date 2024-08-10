@@ -17,7 +17,6 @@ import node.stream.Writable
  * instances of `ChildProcess`.
  * @since v2.2.0
  */
-
 open external class ChildProcess : EventEmitter {
     /**
      * A `Writable Stream` that represents the child process's `stdin`.
@@ -31,7 +30,7 @@ open external class ChildProcess : EventEmitter {
      * `subprocess.stdin` is an alias for `subprocess.stdio[0]`. Both properties will
      * refer to the same value.
      *
-     * The `subprocess.stdin` property can be `null` or `undefined`if the child process could not be successfully spawned.
+     * The `subprocess.stdin` property can be `null` or `undefined` if the child process could not be successfully spawned.
      * @since v0.1.90
      */
     open var stdin: Writable?
@@ -55,7 +54,7 @@ open external class ChildProcess : EventEmitter {
      * });
      * ```
      *
-     * The `subprocess.stdout` property can be `null` or `undefined`if the child process could not be successfully spawned.
+     * The `subprocess.stdout` property can be `null` or `undefined` if the child process could not be successfully spawned.
      * @since v0.1.90
      */
     open var stdout: Readable?
@@ -69,7 +68,7 @@ open external class ChildProcess : EventEmitter {
      * `subprocess.stderr` is an alias for `subprocess.stdio[2]`. Both properties will
      * refer to the same value.
      *
-     * The `subprocess.stderr` property can be `null` or `undefined`if the child process could not be successfully spawned.
+     * The `subprocess.stderr` property can be `null` or `undefined` if the child process could not be successfully spawned.
      * @since v0.1.90
      */
     open var stderr: Readable?
@@ -84,7 +83,7 @@ open external class ChildProcess : EventEmitter {
     /**
      * A sparse array of pipes to the child process, corresponding with positions in
      * the `stdio` option passed to {@link spawn} that have been set
-     * to the value `'pipe'`. `subprocess.stdio[0]`, `subprocess.stdio[1]`, and`subprocess.stdio[2]` are also available as `subprocess.stdin`,`subprocess.stdout`, and `subprocess.stderr`,
+     * to the value `'pipe'`. `subprocess.stdio[0]`, `subprocess.stdio[1]`, and `subprocess.stdio[2]` are also available as `subprocess.stdin`, `subprocess.stdout`, and `subprocess.stderr`,
      * respectively.
      *
      * In the following example, only the child's fd `1` (stdout) is configured as a
@@ -150,7 +149,7 @@ open external class ChildProcess : EventEmitter {
 
     /**
      * The `subprocess.connected` property indicates whether it is still possible to
-     * send and receive messages from a child process. When `subprocess.connected` is`false`, it is no longer possible to send or receive messages.
+     * send and receive messages from a child process. When `subprocess.connected` is `false`, it is no longer possible to send or receive messages.
      * @since v0.7.2
      */
     val connected: Boolean
@@ -215,7 +214,7 @@ open external class ChildProcess : EventEmitter {
      * See [`kill(2)`](http://man7.org/linux/man-pages/man2/kill.2.html) for reference.
      *
      * On Windows, where POSIX signals do not exist, the `signal` argument will be
-     * ignored, and the process will be killed forcefully and abruptly (similar to`'SIGKILL'`).
+     * ignored, and the process will be killed forcefully and abruptly (similar to `'SIGKILL'`).
      * See `Signal Events` for more details.
      *
      * On Linux, child processes of child processes will not be terminated
@@ -276,7 +275,7 @@ open external class ChildProcess : EventEmitter {
      * See [`kill(2)`](http://man7.org/linux/man-pages/man2/kill.2.html) for reference.
      *
      * On Windows, where POSIX signals do not exist, the `signal` argument will be
-     * ignored, and the process will be killed forcefully and abruptly (similar to`'SIGKILL'`).
+     * ignored, and the process will be killed forcefully and abruptly (similar to `'SIGKILL'`).
      * See `Signal Events` for more details.
      *
      * On Linux, child processes of child processes will not be terminated
@@ -337,7 +336,7 @@ open external class ChildProcess : EventEmitter {
      * See [`kill(2)`](http://man7.org/linux/man-pages/man2/kill.2.html) for reference.
      *
      * On Windows, where POSIX signals do not exist, the `signal` argument will be
-     * ignored, and the process will be killed forcefully and abruptly (similar to`'SIGKILL'`).
+     * ignored, and the process will be killed forcefully and abruptly (similar to `'SIGKILL'`).
      * See `Signal Events` for more details.
      *
      * On Linux, child processes of child processes will not be terminated
@@ -407,20 +406,20 @@ open external class ChildProcess : EventEmitter {
      *
      * There is a special case when sending a `{cmd: 'NODE_foo'}` message. Messages
      * containing a `NODE_` prefix in the `cmd` property are reserved for use within
-     * Node.js core and will not be emitted in the child's `'message'` event. Rather, such messages are emitted using the`'internalMessage'` event and are consumed internally by Node.js.
-     * Applications should avoid using such messages or listening for`'internalMessage'` events as it is subject to change without notice.
+     * Node.js core and will not be emitted in the child's `'message'` event. Rather, such messages are emitted using the `'internalMessage'` event and are consumed internally by Node.js.
+     * Applications should avoid using such messages or listening for `'internalMessage'` events as it is subject to change without notice.
      *
      * The optional `sendHandle` argument that may be passed to `subprocess.send()` is
      * for passing a TCP server or socket object to the child process. The child will
      * receive the object as the second argument passed to the callback function
-     * registered on the `'message'` event. Any data that is received
-     * and buffered in the socket will not be sent to the child.
+     * registered on the `'message'` event. Any data that is received and buffered in
+     * the socket will not be sent to the child. Sending IPC sockets is not supported on Windows.
      *
      * The optional `callback` is a function that is invoked after the message is
      * sent but before the child may have received it. The function is called with a
      * single argument: `null` on success, or an `Error` object on failure.
      *
-     * If no `callback` function is provided and the message cannot be sent, an`'error'` event will be emitted by the `ChildProcess` object. This can
+     * If no `callback` function is provided and the message cannot be sent, an `'error'` event will be emitted by the `ChildProcess` object. This can
      * happen, for instance, when the child process has already exited.
      *
      * `subprocess.send()` will return `false` if the channel has closed or when the
@@ -461,8 +460,8 @@ open external class ChildProcess : EventEmitter {
      * Once the server is now shared between the parent and child, some connections
      * can be handled by the parent and some by the child.
      *
-     * While the example above uses a server created using the `node:net` module,`node:dgram` module servers use exactly the same workflow with the exceptions of
-     * listening on a `'message'` event instead of `'connection'` and using`server.bind()` instead of `server.listen()`. This is, however, only
+     * While the example above uses a server created using the `node:net` module, `node:dgram` module servers use exactly the same workflow with the exceptions of
+     * listening on a `'message'` event instead of `'connection'` and using `server.bind()` instead of `server.listen()`. This is, however, only
      * supported on Unix platforms.
      *
      * #### Example: sending a socket object
@@ -515,6 +514,7 @@ open external class ChildProcess : EventEmitter {
      * as the connection may have been closed during the time it takes to send the
      * connection to the child.
      * @since v0.5.9
+     * @param sendHandle `undefined`, or a [`net.Socket`](https://nodejs.org/docs/latest-v20.x/api/net.html#class-netsocket), [`net.Server`](https://nodejs.org/docs/latest-v20.x/api/net.html#class-netserver), or [`dgram.Socket`](https://nodejs.org/docs/latest-v20.x/api/dgram.html#class-dgramsocket) object.
      * @param options The `options` argument, if present, is an object used to parameterize the sending of certain types of handles. `options` supports the following properties:
      */
     fun send(message: Serializable, callback: (error: Throwable /* JsError */?) -> Unit = definedExternally): Boolean
@@ -550,7 +550,7 @@ open external class ChildProcess : EventEmitter {
 
     /**
      * By default, the parent will wait for the detached child to exit. To prevent the
-     * parent from waiting for a given `subprocess` to exit, use the`subprocess.unref()` method. Doing so will cause the parent's event loop to not
+     * parent from waiting for a given `subprocess` to exit, use the `subprocess.unref()` method. Doing so will cause the parent's event loop to not
      * include the child in its reference count, allowing the parent to exit
      * independently of the child, unless there is an established IPC channel between
      * the child and the parent.

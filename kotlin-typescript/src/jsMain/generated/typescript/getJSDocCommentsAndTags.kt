@@ -14,13 +14,13 @@ package typescript
  * `@param` tag on the parent function only adds the {@link JSDocTag} for the `@param`.
  *
  * ```ts
- * /** JSDoc will be returned for `a` */
+ * &#47;** JSDoc will be returned for `a` *\/
  * const a = 0
- * /**
+ * &#47;**
  *  * Entire JSDoc will be returned for `b`
  *  * @param c JSDocTag will be returned for `c`
- *  */
- * function b(/** JSDoc will be returned for `c` */ c) {}
+ *  *\/
+ * function b(&#47;** JSDoc will be returned for `c` *\/ c) {}
  * ```
  */
-external fun getJSDocCommentsAndTags(hostNode: Node): dynamic /* (JSDoc | JSDocTag)[] */
+external fun getJSDocCommentsAndTags(hostNode: Node): js.array.ReadonlyArray<(GetJSDocCommentsAndTagsResultItem)>

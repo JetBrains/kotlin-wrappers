@@ -4,7 +4,6 @@
 
 package node.diagnosticsChannel
 
-
 /**
  * Register a message handler to subscribe to this channel. This message handler
  * will be run synchronously whenever a message is published to the channel. Any

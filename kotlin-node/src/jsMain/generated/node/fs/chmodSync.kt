@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * For detailed information, see the documentation of the asynchronous version of
  * this API: {@link chmod}.

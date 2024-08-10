@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Reads the contents of the directory.
  *

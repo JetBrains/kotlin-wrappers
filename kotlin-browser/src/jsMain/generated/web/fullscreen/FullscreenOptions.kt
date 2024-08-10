@@ -2,9 +2,9 @@
 
 package web.fullscreen
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface FullscreenOptions {
+external interface FullscreenOptions {
     var navigationUI: FullscreenNavigationUI?
 }

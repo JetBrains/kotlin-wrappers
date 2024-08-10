@@ -3,11 +3,11 @@
 package web.codecs
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.geometry.DOMRectInit
 
 @JsPlainObject
-sealed external interface VideoFrameCopyToOptions {
+external interface VideoFrameCopyToOptions {
     var layout: ReadonlyArray<PlaneLayout>?
     var rect: DOMRectInit?
 }

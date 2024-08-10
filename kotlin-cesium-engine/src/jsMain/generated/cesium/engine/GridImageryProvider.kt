@@ -2,17 +2,12 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.core.Void
-import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
+import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync
 import web.html.HTMLCanvasElement
 
@@ -21,7 +16,9 @@ import web.html.HTMLCanvasElement
  * May be useful for custom rendering effects or debugging terrain.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GridImageryProvider.html">Online Documentation</a>
  */
-external class GridImageryProvider(options: ConstructorOptions) {
+external class GridImageryProvider(
+    options: ConstructorOptions,
+) {
     /**
      * Gets the proxy used by this provider.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GridImageryProvider.html#proxy">Online Documentation</a>
@@ -173,7 +170,8 @@ external class GridImageryProvider(options: ConstructorOptions) {
      *   Default value - [GeographicTilingScheme()][GeographicTilingScheme]
      * @property [ellipsoid] The ellipsoid.  If the tilingScheme is specified,
      *   this parameter is ignored and the tiling scheme's ellipsoid is used instead. If neither
-     *   parameter is specified, the WGS84 ellipsoid is used.
+     *   parameter is specified, the default ellipsoid is used.
+     *   Default value - [Ellipsoid.default]
      * @property [cells] The number of grids cells.
      *   Default value - `8`
      * @property [color] The color to draw grid lines.
@@ -206,8 +204,3 @@ external class GridImageryProvider(options: ConstructorOptions) {
         var canvasSize: Int?
     }
 }
-
-inline fun GridImageryProvider(
-    block: GridImageryProvider.ConstructorOptions.() -> Unit,
-): GridImageryProvider =
-    GridImageryProvider(options = jso(block))

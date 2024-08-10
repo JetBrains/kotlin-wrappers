@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.core.Void
@@ -47,7 +43,7 @@ external object Transforms {
      * ```
      * @param [origin] The center point of the local reference frame.
      * @param [ellipsoid] The ellipsoid whose fixed frame is used in the transformation.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @param [result] The object onto which to store the result.
      * @return The modified result parameter or a new Matrix4 instance if none was provided.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Transforms.html#.eastNorthUpToFixedFrame">Online Documentation</a>
@@ -72,7 +68,7 @@ external object Transforms {
      * ```
      * @param [origin] The center point of the local reference frame.
      * @param [ellipsoid] The ellipsoid whose fixed frame is used in the transformation.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @param [result] The object onto which to store the result.
      * @return The modified result parameter or a new Matrix4 instance if none was provided.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Transforms.html#.northEastDownToFixedFrame">Online Documentation</a>
@@ -97,7 +93,7 @@ external object Transforms {
      * ```
      * @param [origin] The center point of the local reference frame.
      * @param [ellipsoid] The ellipsoid whose fixed frame is used in the transformation.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @param [result] The object onto which to store the result.
      * @return The modified result parameter or a new Matrix4 instance if none was provided.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Transforms.html#.northUpEastToFixedFrame">Online Documentation</a>
@@ -122,7 +118,7 @@ external object Transforms {
      * ```
      * @param [origin] The center point of the local reference frame.
      * @param [ellipsoid] The ellipsoid whose fixed frame is used in the transformation.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @param [result] The object onto which to store the result.
      * @return The modified result parameter or a new Matrix4 instance if none was provided.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Transforms.html#.northWestUpToFixedFrame">Online Documentation</a>
@@ -150,7 +146,7 @@ external object Transforms {
      * @param [origin] The center point of the local reference frame.
      * @param [headingPitchRoll] The heading, pitch, and roll.
      * @param [ellipsoid] The ellipsoid whose fixed frame is used in the transformation.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @param [fixedFrameTransform] A 4x4 transformation
      *   matrix from a reference frame to the provided ellipsoid's fixed reference frame
      *   Default value - [Transforms.eastNorthUpToFixedFrame]
@@ -183,7 +179,7 @@ external object Transforms {
      * @param [origin] The center point of the local reference frame.
      * @param [headingPitchRoll] The heading, pitch, and roll.
      * @param [ellipsoid] The ellipsoid whose fixed frame is used in the transformation.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @param [fixedFrameTransform] A 4x4 transformation
      *   matrix from a reference frame to the provided ellipsoid's fixed reference frame
      *   Default value - [Transforms.eastNorthUpToFixedFrame]
@@ -205,7 +201,7 @@ external object Transforms {
      * are above the plane. Negative pitch angles are below the plane. Roll is the first rotation applied about the local east axis.
      * @param [transform] The transform
      * @param [ellipsoid] The ellipsoid whose fixed frame is used in the transformation.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @param [fixedFrameTransform] A 4x4 transformation
      *   matrix from a reference frame to the provided ellipsoid's fixed reference frame
      *   Default value - [Transforms.eastNorthUpToFixedFrame]
@@ -219,6 +215,27 @@ external object Transforms {
         fixedFrameTransform: LocalFrameToFixedFrame? = definedExternally,
         result: HeadingPitchRoll? = definedExternally,
     ): HeadingPitchRoll
+
+    /**
+     * The default function to compute a rotation matrix to transform a point or vector from the International Celestial
+     * Reference Frame (GCRF/ICRF) inertial frame axes to the central body, typically Earth, fixed frame axis at a given
+     * time for use in lighting and transformation from inertial reference frames. This function may return undefined if
+     * the data necessary to do the transformation is not yet loaded.
+     * ```
+     * // Set the default ICRF to fixed transformation to that of the Moon.
+     * Transforms.computeIcrfToCentralBodyFixedMatrix = Transforms.computeIcrfToMoonFixedMatrix;
+     * ```
+     * @param [date] The time at which to compute the rotation matrix.
+     * @param [result] The object onto which to store the result.  If this parameter is
+     *   not specified, a new instance is created and returned.
+     * @return The rotation matrix, or undefined if the data necessary to do the
+     *   transformation is not yet loaded.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Transforms.html#.computeIcrfToCentralBodyFixedMatrix">Online Documentation</a>
+     */
+    fun computeIcrfToCentralBodyFixedMatrix(
+        date: JulianDate,
+        result: Matrix3? = definedExternally,
+    ): Matrix3?
 
     /**
      * Computes a rotation matrix to transform a point or vector from True Equator Mean Equinox (TEME) axes to the
@@ -291,6 +308,50 @@ external object Transforms {
     fun computeIcrfToFixedMatrix(
         date: JulianDate,
         result: Matrix3? = definedExternally,
+    ): Matrix3?
+
+    /**
+     * Computes a rotation matrix to transform a point or vector from the Moon-Fixed frame axes
+     * to the International Celestial Reference Frame (GCRF/ICRF) inertial frame axes
+     * at a given time.
+     * ```
+     * // Transform a point from the Fixed axes to the ICRF axes.
+     * const now = JulianDate.now();
+     * const pointInFixed = Cartesian3.fromDegrees(0.0, 0.0);
+     * const fixedToIcrf = Transforms.computeMoonFixedToIcrfMatrix(now);
+     * let pointInInertial = new Cartesian3();
+     * if (defined(fixedToIcrf)) {
+     *     pointInInertial = Matrix3.multiplyByVector(fixedToIcrf, pointInFixed, pointInInertial);
+     * }
+     * ```
+     * @param [date] The time at which to compute the rotation matrix.
+     * @param [result] The object onto which to store the result.  If this parameter is
+     *   not specified, a new instance is created and returned.
+     * @return The rotation matrix.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Transforms.html#.computeMoonFixedToIcrfMatrix">Online Documentation</a>
+     */
+    fun computeMoonFixedToIcrfMatrix(
+        date: JulianDate,
+        result: Matrix3? = definedExternally,
+    ): Matrix3
+
+    /**
+     * Computes a rotation matrix to transform a point or vector from the International Celestial
+     * Reference Frame (GCRF/ICRF) inertial frame axes to the Moon-Fixed frame axes
+     * at a given time.
+     * ```
+     * // Set the default ICRF to fixed transformation to that of the Moon.
+     * Transforms.computeIcrfToCentralBodyFixedMatrix = Transforms.computeIcrfToMoonFixedMatrix;
+     * ```
+     * @param [date] The time at which to compute the rotation matrix.
+     * @param [result] The object onto which to store the result.  If this parameter is
+     *   not specified, a new instance is created and returned.
+     * @return The rotation matrix.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Transforms.html#.computeIcrfToMoonFixedMatrix">Online Documentation</a>
+     */
+    fun computeIcrfToMoonFixedMatrix(
+        date: JulianDate,
+        result: Matrix3? = definedExternally,
     ): Matrix3
 
     /**
@@ -318,7 +379,7 @@ external object Transforms {
     fun computeFixedToIcrfMatrix(
         date: JulianDate,
         result: Matrix3? = definedExternally,
-    ): Matrix3
+    ): Matrix3?
 
     /**
      * Transform a point from model coordinates to window coordinates.
@@ -341,7 +402,7 @@ external object Transforms {
      * @param [position] The position to transform.
      * @param [velocity] The velocity vector to transform.
      * @param [ellipsoid] The ellipsoid whose fixed frame is used in the transformation.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @param [result] The object onto which to store the result.
      * @return The modified result parameter or a new Matrix3 instance if none was provided.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Transforms.html#.rotationMatrixFromPositionVelocity">Online Documentation</a>
@@ -353,14 +414,3 @@ external object Transforms {
         result: Matrix3? = definedExternally,
     ): Matrix3
 }
-
-/**
- * Computes a 4x4 transformation matrix from a reference frame
- * centered at the provided origin to the provided ellipsoid's fixed reference frame.
- * @param [origin] The center point of the local reference frame.
- * @param [ellipsoid] The ellipsoid whose fixed frame is used in the transformation.
- *   Default value - [Ellipsoid.WGS84]
- * @param [result] The object onto which to store the result.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Transforms.html#.LocalFrameToFixedFrame">Online Documentation</a>
- */
-typealias LocalFrameToFixedFrame = (origin: Cartesian3, ellipsoid: Ellipsoid?, result: Matrix4?) -> Matrix4

@@ -2,7 +2,10 @@
 
 package tanstack.query.core
 
-external interface FetchOptions {
+import js.promise.Promise
+
+external interface FetchOptions<TData> {
     var cancelRefetch: Boolean
     var meta: FetchMeta
+    var initialPromise: Promise<TData>
 }

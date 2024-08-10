@@ -4,7 +4,6 @@
 
 package node.diagnosticsChannel
 
-
 /**
  * This is the primary entry-point for anyone wanting to publish to a named
  * channel. It produces a channel object which is optimized to reduce overhead at

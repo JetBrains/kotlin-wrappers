@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface AsExpression : Expression, Union.AsExpression_ {
+sealed external interface AsExpression : Expression, AssertionExpression {
     override val kind: SyntaxKind.AsExpression
     val expression: Expression
     val type: TypeNode

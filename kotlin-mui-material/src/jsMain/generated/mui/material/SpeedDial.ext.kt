@@ -3,9 +3,7 @@
 package mui.material
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface CloseReason {
     companion object {
         @JsValue("toggle")
@@ -22,7 +20,6 @@ sealed external interface CloseReason {
     }
 }
 
-@JsVirtual
 sealed external interface OpenReason {
     companion object {
         @JsValue("toggle")
@@ -36,7 +33,6 @@ sealed external interface OpenReason {
     }
 }
 
-@JsVirtual
 sealed external interface SpeedDialDirection {
     companion object {
         @JsValue("up")

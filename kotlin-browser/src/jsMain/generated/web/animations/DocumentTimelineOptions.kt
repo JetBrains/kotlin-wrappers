@@ -2,10 +2,10 @@
 
 package web.animations
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.time.DOMHighResTimeStamp
 
 @JsPlainObject
-sealed external interface DocumentTimelineOptions {
+external interface DocumentTimelineOptions {
     var originTime: DOMHighResTimeStamp?
 }

@@ -6,5 +6,5 @@ external interface GlobalStylesProps : react.Props {
     /**
      * The styles you want to apply globally.
      */
-    var styles: dynamic /* StyledGlobalStylesProps<Theme>['styles'] */
+    var styles: Any /* StyledGlobalStylesProps<Theme>['styles'] */
 }

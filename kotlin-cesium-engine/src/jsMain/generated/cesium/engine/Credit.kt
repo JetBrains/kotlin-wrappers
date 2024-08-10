@@ -14,13 +14,13 @@ import web.html.HTMLElement
  * A credit contains data pertaining to how to display attributions/credits for certain content on the screen.
  * ```
  * // Create a credit with a tooltip, image and link
- * const credit = new Credit('<a href="https://cesium.com/" target="_blank"><img src="/images/cesium_logo.png" title="Cesium"/></a>');
+ * const credit = new Credit('<a href="https://cesium.com/" target="_blank"><img src="/images/cesium_logo.png"  style="vertical-align: -7px" title="Cesium"/></a>');
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Credit.html">Online Documentation</a>
  *
  * @constructor
  * @property [html] An string representing an html code snippet
- * @property [showOnScreen] If true, the credit will be visible in the main credit container.  Otherwise, it will appear in a popover
+ * @property [showOnScreen] If true, the credit will be visible in the main credit container.  Otherwise, it will appear in a popover. All credits are displayed `inline`, if you have an image we recommend sizing it correctly to match the text or use css to `vertical-align` it.
  *   Default value - `false`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Credit.html">Online Documentation</a>
  */

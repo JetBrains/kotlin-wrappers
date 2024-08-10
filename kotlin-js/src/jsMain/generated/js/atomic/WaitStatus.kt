@@ -3,9 +3,7 @@
 package js.atomic
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface WaitStatus {
     companion object {
 

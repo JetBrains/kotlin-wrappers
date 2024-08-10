@@ -4,7 +4,17 @@
 
 package typescript
 
-import js.array.ReadonlyArray
+/**
+ * Transform one or more nodes using the supplied transformers.
+ * @param source A single `Node` or an array of `Node` objects.
+ * @param transformers An array of `TransformerFactory` callbacks used to process the transformation.
+ * @param compilerOptions Optional compiler options.
+ */
+external fun <T : Node> transform(
+    source: T,
+    transformers: js.array.ReadonlyArray<TransformerFactory<T>>,
+    compilerOptions: CompilerOptions = definedExternally,
+): TransformationResult<T>
 
 /**
  * Transform one or more nodes using the supplied transformers.
@@ -13,7 +23,7 @@ import js.array.ReadonlyArray
  * @param compilerOptions Optional compiler options.
  */
 external fun <T : Node> transform(
-    source: dynamic, /* T | T[] */
-    transformers: ReadonlyArray<TransformerFactory<T>>,
+    source: js.array.ReadonlyArray<T>,
+    transformers: js.array.ReadonlyArray<TransformerFactory<T>>,
     compilerOptions: CompilerOptions = definedExternally,
 ): TransformationResult<T>

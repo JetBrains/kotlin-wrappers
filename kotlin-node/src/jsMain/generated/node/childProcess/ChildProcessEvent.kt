@@ -3,7 +3,6 @@
 package node.childProcess
 
 
-@seskar.js.JsVirtual
 sealed external interface ChildProcessEvent {
     sealed interface CLOSE : node.events.LegacyEventType
     sealed interface DISCONNECT : node.events.LegacyEventType

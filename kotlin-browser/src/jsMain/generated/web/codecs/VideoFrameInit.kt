@@ -3,11 +3,11 @@
 package web.codecs
 
 import js.core.JsLong
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.geometry.DOMRectInit
 
 @JsPlainObject
-sealed external interface VideoFrameInit {
+external interface VideoFrameInit {
     var alpha: AlphaOption?
     var displayHeight: Int?
     var displayWidth: Int?

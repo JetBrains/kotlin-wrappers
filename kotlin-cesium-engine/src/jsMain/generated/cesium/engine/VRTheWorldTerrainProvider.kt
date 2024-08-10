@@ -2,16 +2,11 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "VAR_OVERRIDDEN_BY_VAL",
-    "VAR_TYPE_MISMATCH_ON_OVERRIDE",
-)
-
 package cesium.engine
 
 import js.core.Void
-import js.objects.JsPlainObject
 import js.promise.Promise
+import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync
 
 /**
@@ -136,7 +131,8 @@ private constructor() :
 
     /**
      * Initialization options for the VRTheWorldTerrainProvider constructor
-     * @property [ellipsoid] The ellipsoid.  If not specified, the WGS84 ellipsoid is used.
+     * @property [ellipsoid] The ellipsoid.  If not specified, the default ellipsoid is used.
+     *   Default value - [Ellipsoid.default]
      * @property [credit] A credit for the data source, which is displayed on the canvas.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VRTheWorldTerrainProvider.html#.ConstructorOptions">Online Documentation</a>
      */

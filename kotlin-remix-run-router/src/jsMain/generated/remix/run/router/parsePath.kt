@@ -4,7 +4,6 @@
 
 package remix.run.router
 
-
 /**
  * Parses a string URL path into its separate pathname, search, and hash components.
  */

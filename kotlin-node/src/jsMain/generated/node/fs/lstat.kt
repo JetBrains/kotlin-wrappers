@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Retrieves the `fs.Stats` for the symbolic link referred to by the path.
  * The callback gets two arguments `(err, stats)` where `stats` is a `fs.Stats` object. `lstat()` is identical to `stat()`, except that if `path` is a symbolic

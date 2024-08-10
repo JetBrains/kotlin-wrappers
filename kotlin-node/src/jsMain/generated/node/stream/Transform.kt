@@ -4,7 +4,6 @@
 
 package node.stream
 
-
 /**
  * Transform streams are `Duplex` streams where the output is in some way
  * related to the input. Like all `Duplex` streams, `Transform` streams
@@ -16,7 +15,6 @@ package node.stream
  * * `crypto streams`
  * @since v0.9.4
  */
-
 open external class Transform : Duplex {
     constructor (opts: TransformOptions = definedExternally)
 

@@ -4,7 +4,13 @@
 
 Kotlin wrapper for the [React Router](https://reactrouter.com/en/main) library.
 
+### Regenerate declarations
+
+```shell
+./gradlew :kotlin-react-router:generateKarakumExternals :kotlin-react-router-dom:generateKarakumExternals :kotlin-remix-run-router:generateKarakumExternals
+```
+
 ### TODO:
 
 1) Fix numeric types
-   * `MemoryRouterProps.initialIndex`
+    * `MemoryRouterProps.initialIndex`

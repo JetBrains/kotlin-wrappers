@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 
 /**
  * A description of a polygon on the ellipsoid. The polygon is defined by a polygon hierarchy. Polygon geometry can be rendered with both [Primitive] and [GroundPrimitive].
@@ -83,7 +78,9 @@ import js.objects.jso
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolygonGeometry.html">Online Documentation</a>
  */
-external class PolygonGeometry(options: ConstructorOptions) {
+external class PolygonGeometry(
+    options: ConstructorOptions,
+) {
     /**
      * @property [polygonHierarchy] A polygon hierarchy that can include holes.
      * @property [height] The distance in meters between the polygon and the ellipsoid surface.
@@ -94,7 +91,7 @@ external class PolygonGeometry(options: ConstructorOptions) {
      * @property [stRotation] The rotation of the texture coordinates, in radians. A positive rotation is counter-clockwise.
      *   Default value - `0.0`
      * @property [ellipsoid] The ellipsoid to be used as a reference.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @property [granularity] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
      *   Default value - [Math.RADIANS_PER_DEGREE]
      * @property [perPositionHeight] Use the height of options.positions for each position instead of using options.height to determine the height.
@@ -159,7 +156,7 @@ external class PolygonGeometry(options: ConstructorOptions) {
          * @property [stRotation] The rotation of the texture coordinates, in radians. A positive rotation is counter-clockwise.
          *   Default value - `0.0`
          * @property [ellipsoid] The ellipsoid to be used as a reference.
-         *   Default value - [Ellipsoid.WGS84]
+         *   Default value - [Ellipsoid.default]
          * @property [granularity] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
          *   Default value - [Math.RADIANS_PER_DEGREE]
          * @property [perPositionHeight] Use the height of options.positions for each position instead of using options.height to determine the height.
@@ -221,7 +218,7 @@ external class PolygonGeometry(options: ConstructorOptions) {
          * Computes a rectangle which encloses the polygon defined by the list of positions, including cases over the international date line and the poles.
          * @param [positions] A linear ring defining the outer boundary of the polygon.
          * @param [ellipsoid] The ellipsoid to be used as a reference.
-         *   Default value - [Ellipsoid.WGS84]
+         *   Default value - [Ellipsoid.default]
          * @param [arcType] The type of line the polygon edges must follow. Valid options are [ArcType.GEODESIC] and [ArcType.RHUMB].
          *   Default value - [ArcType.GEODESIC]
          * @param [result] An object in which to store the result.
@@ -244,8 +241,3 @@ external class PolygonGeometry(options: ConstructorOptions) {
         fun createGeometry(polygonGeometry: PolygonGeometry): Geometry?
     }
 }
-
-inline fun PolygonGeometry(
-    block: PolygonGeometry.ConstructorOptions.() -> Unit,
-): PolygonGeometry =
-    PolygonGeometry(options = jso(block))

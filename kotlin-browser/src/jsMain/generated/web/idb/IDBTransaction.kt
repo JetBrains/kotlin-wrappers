@@ -42,24 +42,24 @@ sealed external class IDBTransaction :
     /**
      * Returns a list of the names of object stores in the transaction's scope. For an upgrade transaction this is all object stores in the database.
      *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/objectStoreNames)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/ObjectStoreNames)
      */
     val objectStoreNames: DOMStringList
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/abort_event)
      */
-    var onabort: EventHandler<Event, IDBTransaction>?
+    var onabort: EventHandler<Event, IDBTransaction, IDBDatabase>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/complete_event)
      */
-    var oncomplete: EventHandler<Event, IDBTransaction>?
+    var oncomplete: EventHandler<Event, IDBTransaction, IDBTransaction>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/error_event)
      */
-    var onerror: EventHandler<Event, IDBTransaction>?
+    var onerror: EventHandler<Event, IDBTransaction, IDBTransaction>?
 
     /**
      * Aborts the transaction. All pending requests will fail with a "AbortError" DOMException and all changes made to the database will be reverted.

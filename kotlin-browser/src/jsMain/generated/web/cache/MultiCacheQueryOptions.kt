@@ -2,10 +2,10 @@
 
 package web.cache
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface MultiCacheQueryOptions :
+external interface MultiCacheQueryOptions :
     CacheQueryOptions {
     var cacheName: String?
 }

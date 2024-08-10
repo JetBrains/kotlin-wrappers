@@ -2,10 +2,10 @@
 
 package js.intl
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface PluralRulesOptions {
+external interface PluralRulesOptions {
     var localeMatcher: LocaleMatcher?
     var type: PluralRuleType?
     var minimumIntegerDigits: Int?

@@ -12,7 +12,6 @@ import node.http.OutgoingHttpHeaders
  * passed as the second parameter to the `'request'` event.
  * @since v8.4.0
  */
-
 external class Http2ServerResponse : node.stream.Writable {
     constructor (stream: ServerHttp2Stream)
 
@@ -22,6 +21,52 @@ external class Http2ServerResponse : node.stream.Writable {
      * @deprecated Since v13.0.0 - Use `socket`.
      */
     val connection: Any /* net.Socket | tls.TLSSocket */
+
+    /**
+     * Append a single header value to the header object.
+     *
+     * If the value is an array, this is equivalent to calling this method multiple times.
+     *
+     * If there were no previous values for the header, this is equivalent to calling {@link setHeader}.
+     *
+     * Attempting to set a header field name or value that contains invalid characters will result in a
+     * [TypeError](https://nodejs.org/docs/latest-v20.x/api/errors.html#class-typeerror) being thrown.
+     *
+     * ```js
+     * // Returns headers including "set-cookie: a" and "set-cookie: b"
+     * const server = http2.createServer((req, res) => {
+     *   res.setHeader('set-cookie', 'a');
+     *   res.appendHeader('set-cookie', 'b');
+     *   res.writeHead(200);
+     *   res.end('ok');
+     * });
+     * ```
+     * @since v20.12.0
+     */
+    fun appendHeader(name: String, value: String): Unit
+
+    /**
+     * Append a single header value to the header object.
+     *
+     * If the value is an array, this is equivalent to calling this method multiple times.
+     *
+     * If there were no previous values for the header, this is equivalent to calling {@link setHeader}.
+     *
+     * Attempting to set a header field name or value that contains invalid characters will result in a
+     * [TypeError](https://nodejs.org/docs/latest-v20.x/api/errors.html#class-typeerror) being thrown.
+     *
+     * ```js
+     * // Returns headers including "set-cookie: a" and "set-cookie: b"
+     * const server = http2.createServer((req, res) => {
+     *   res.setHeader('set-cookie', 'a');
+     *   res.appendHeader('set-cookie', 'b');
+     *   res.writeHead(200);
+     *   res.end('ok');
+     * });
+     * ```
+     * @since v20.12.0
+     */
+    fun appendHeader(name: String, value: js.array.ReadonlyArray<String>): Unit
 
     /**
      * Boolean value that indicates whether the response has completed. Starts
@@ -50,11 +95,11 @@ external class Http2ServerResponse : node.stream.Writable {
      * `destroyed`, `readable`, and `writable` properties will be retrieved from and
      * set on `response.stream`.
      *
-     * `destroy`, `emit`, `end`, `on` and `once` methods will be called on`response.stream`.
+     * `destroy`, `emit`, `end`, `on` and `once` methods will be called on `response.stream`.
      *
      * `setTimeout` method will be called on `response.stream.session`.
      *
-     * `pause`, `read`, `resume`, and `write` will throw an error with code`ERR_HTTP2_NO_SOCKET_MANIPULATION`. See `Http2Session and Sockets` for
+     * `pause`, `read`, `resume`, and `write` will throw an error with code `ERR_HTTP2_NO_SOCKET_MANIPULATION`. See `Http2Session and Sockets` for
      * more information.
      *
      * All other interactions will be routed directly to the socket.
@@ -171,7 +216,7 @@ external class Http2ServerResponse : node.stream.Writable {
      * header names and the values are the respective header values. All header names
      * are lowercase.
      *
-     * The object returned by the `response.getHeaders()` method _does not_prototypically inherit from the JavaScript `Object`. This means that typical`Object` methods such as `obj.toString()`,
+     * The object returned by the `response.getHeaders()` method _does not_ prototypically inherit from the JavaScript `Object`. This means that typical `Object` methods such as `obj.toString()`,
      * `obj.hasOwnProperty()`, and others
      * are not defined and _will not work_.
      *
@@ -319,7 +364,7 @@ external class Http2ServerResponse : node.stream.Writable {
      *
      * If no `'timeout'` listener is added to the request, the response, or
      * the server, then `Http2Stream` s are destroyed when they time out. If a
-     * handler is assigned to the request, the response, or the server's `'timeout'`events, timed out sockets must be handled explicitly.
+     * handler is assigned to the request, the response, or the server's `'timeout'` events, timed out sockets must be handled explicitly.
      * @since v8.4.0
      */
     fun setTimeout(msecs: Number, callback: () -> Unit = definedExternally): Unit
@@ -397,7 +442,7 @@ external class Http2ServerResponse : node.stream.Writable {
 
     /**
      * Sends a status `100 Continue` to the client, indicating that the request body
-     * should be sent. See the `'checkContinue'` event on `Http2Server` and`Http2SecureServer`.
+     * should be sent. See the `'checkContinue'` event on `Http2Server` and `Http2SecureServer`.
      * @since v8.4.0
      */
     fun writeContinue(): Unit
@@ -450,7 +495,7 @@ external class Http2ServerResponse : node.stream.Writable {
      * `Content-Length` is given in bytes not characters. The`Buffer.byteLength()` API may be used to determine the number of bytes in a
      * given encoding. On outbound messages, Node.js does not check if Content-Length
      * and the length of the body being transmitted are equal or not. However, when
-     * receiving messages, Node.js will automatically reject messages when the`Content-Length` does not match the actual payload size.
+     * receiving messages, Node.js will automatically reject messages when the `Content-Length` does not match the actual payload size.
      *
      * This method may be called at most one time on a message before `response.end()` is called.
      *

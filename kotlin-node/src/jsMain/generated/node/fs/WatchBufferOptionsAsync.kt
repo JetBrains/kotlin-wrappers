@@ -2,8 +2,7 @@
 
 package node.fs
 
-
-@js.objects.JsPlainObject
+@kotlinx.js.JsPlainObject
 sealed external interface WatchBufferAsyncOptions : WatchOptions {
     @JsName("encoding")
     var requiredEncoding: String /* "buffer" */

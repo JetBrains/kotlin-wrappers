@@ -18,4 +18,6 @@ package cesium.engine
  *   Default value - `1.0`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SphereEmitter.html">Online Documentation</a>
  */
-external class SphereEmitter(var radius: Double = definedExternally)
+external class SphereEmitter(
+    var radius: Double = definedExternally,
+)

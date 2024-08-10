@@ -9,13 +9,12 @@ import js.promise.Promise
 /**
  * The class `TracingChannel` is a collection of `TracingChannel Channels` which
  * together express a single traceable action. It is used to formalize and
- * simplify the process of producing events for tracing application flow.{@link tracingChannel} is used to construct a`TracingChannel`. As with `Channel` it is recommended to create and reuse a
+ * simplify the process of producing events for tracing application flow. {@link tracingChannel} is used to construct a `TracingChannel`. As with `Channel` it is recommended to create and reuse a
  * single `TracingChannel` at the top-level of the file rather than creating them
  * dynamically.
  * @since v19.9.0
  * @experimental
  */
-
 external class TracingChannel<StoreType /* default is Any? */, ContextType : Any /* default is Any */> :
     TracingChannelCollection<StoreType, ContextType> {
     override var start: Channel<StoreType, ContextType>
@@ -98,6 +97,9 @@ external class TracingChannel<StoreType /* default is Any? */, ContextType : Any
      * This will run the given function using `channel.runStores(context, ...)` on the `start` channel which ensures all
      * events should have any bound stores set to match this trace context.
      *
+     * To ensure only correct trace graphs are formed, events will only be published if subscribers are present prior to starting the trace. Subscriptions
+     * which are added after the trace begins will not receive future events from that trace, only future traces will be seen.
+     *
      * ```js
      * import diagnostics_channel from 'node:diagnostics_channel';
      *
@@ -130,6 +132,9 @@ external class TracingChannel<StoreType /* default is Any? */, ContextType : Any
      * produce an `error event` if the given function throws an error or the
      * returned promise rejects. This will run the given function using `channel.runStores(context, ...)` on the `start` channel which ensures all
      * events should have any bound stores set to match this trace context.
+     *
+     * To ensure only correct trace graphs are formed, events will only be published if subscribers are present prior to starting the trace. Subscriptions
+     * which are added after the trace begins will not receive future events from that trace, only future traces will be seen.
      *
      * ```js
      * import diagnostics_channel from 'node:diagnostics_channel';
@@ -182,6 +187,9 @@ external class TracingChannel<StoreType /* default is Any? */, ContextType : Any
      *
      * The callback will also be run with `channel.runStores(context, ...)` which
      * enables context loss recovery in some cases.
+     *
+     * To ensure only correct trace graphs are formed, events will only be published if subscribers are present prior to starting the trace. Subscriptions
+     * which are added after the trace begins will not receive future events from that trace, only future traces will be seen.
      *
      * ```js
      * import diagnostics_channel from 'node:diagnostics_channel';

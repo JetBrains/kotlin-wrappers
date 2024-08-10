@@ -2,10 +2,10 @@
 
 package web.rtc
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface RTCOfferOptions :
+external interface RTCOfferOptions :
     RTCOfferAnswerOptions {
     var iceRestart: Boolean?
     var offerToReceiveAudio: Boolean?

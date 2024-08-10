@@ -4,11 +4,11 @@ package web.gpu
 
 import js.array.ReadonlyArray
 import js.core.JsLong
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.images.PredefinedColorSpace
 
 @JsPlainObject
-sealed external interface GPUCanvasConfiguration {
+external interface GPUCanvasConfiguration {
     var device: GPUDevice
     var format: GPUTextureFormat
     var usage: GPUTextureUsage?

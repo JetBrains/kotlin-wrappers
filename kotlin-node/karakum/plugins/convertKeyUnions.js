@@ -41,7 +41,6 @@ val ${key}: ${key}
             .join("\n")
 
         return `
-@seskar.js.JsVirtual
 sealed external interface ${name} {
 ${body}
 

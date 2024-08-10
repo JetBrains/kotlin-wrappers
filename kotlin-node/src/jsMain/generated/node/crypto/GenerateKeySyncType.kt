@@ -2,8 +2,6 @@
 
 package node.crypto
 
-
-@seskar.js.JsVirtual
 sealed external interface GenerateKeySyncType {
     companion object {
         @seskar.js.JsValue("hmac")

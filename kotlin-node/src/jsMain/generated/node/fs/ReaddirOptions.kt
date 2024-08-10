@@ -2,8 +2,7 @@
 
 package node.fs
 
-
-@js.objects.JsPlainObject
+@kotlinx.js.JsPlainObject
 sealed external interface ReaddirOptions : ObjectEncodingOptions {
     var withFileTypes: Boolean /* false */?
     var recursive: Boolean?

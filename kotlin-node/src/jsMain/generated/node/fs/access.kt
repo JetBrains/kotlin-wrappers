@@ -4,17 +4,16 @@
 
 package node.fs
 
-
 /**
  * Tests a user's permissions for the file or directory specified by `path`.
  * The `mode` argument is an optional integer that specifies the accessibility
- * checks to be performed. `mode` should be either the value `fs.constants.F_OK`or a mask consisting of the bitwise OR of any of `fs.constants.R_OK`,`fs.constants.W_OK`, and `fs.constants.X_OK`
+ * checks to be performed. `mode` should be either the value `fs.constants.F_OK` or a mask consisting of the bitwise OR of any of `fs.constants.R_OK`, `fs.constants.W_OK`, and `fs.constants.X_OK`
  * (e.g.`fs.constants.W_OK | fs.constants.R_OK`). Check `File access constants` for
  * possible values of `mode`.
  *
  * The final argument, `callback`, is a callback function that is invoked with
  * a possible error argument. If any of the accessibility checks fail, the error
- * argument will be an `Error` object. The following examples check if`package.json` exists, and if it is readable or writable.
+ * argument will be an `Error` object. The following examples check if `package.json` exists, and if it is readable or writable.
  *
  * ```js
  * import { access, constants } from 'node:fs';
@@ -42,7 +41,7 @@ package node.fs
  * });
  * ```
  *
- * Do not use `fs.access()` to check for the accessibility of a file before calling`fs.open()`, `fs.readFile()`, or `fs.writeFile()`. Doing
+ * Do not use `fs.access()` to check for the accessibility of a file before calling `fs.open()`, `fs.readFile()`, or `fs.writeFile()`. Doing
  * so introduces a race condition, since other processes may change the file's
  * state between the two calls. Instead, user code should open/read/write the
  * file directly and handle the error raised if the file is not accessible.

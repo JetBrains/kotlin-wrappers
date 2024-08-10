@@ -2,20 +2,17 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 
 /**
  * A light that gets emitted in a single direction from infinitely far away.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DirectionalLight.html">Online Documentation</a>
  */
-external class DirectionalLight(options: ConstructorOptions) : Light {
+external class DirectionalLight(
+    options: ConstructorOptions,
+) : Light {
     /**
      * @property [direction] The direction in which light gets emitted.
      * @property [color] The color of the light.
@@ -48,8 +45,3 @@ external class DirectionalLight(options: ConstructorOptions) : Light {
      */
     override var intensity: Double
 }
-
-inline fun DirectionalLight(
-    block: DirectionalLight.ConstructorOptions.() -> Unit,
-): DirectionalLight =
-    DirectionalLight(options = jso(block))

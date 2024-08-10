@@ -2,10 +2,10 @@
 
 package web.gpu
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GPUShaderModuleDescriptor :
+external interface GPUShaderModuleDescriptor :
     GPUObjectDescriptorBase {
     var code: String
     var sourceMap: Any?

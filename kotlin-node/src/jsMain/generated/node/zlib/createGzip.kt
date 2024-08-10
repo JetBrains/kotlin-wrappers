@@ -4,7 +4,6 @@
 
 package node.zlib
 
-
 /**
  * Creates and returns a new `Gzip` object.
  * See `example`.

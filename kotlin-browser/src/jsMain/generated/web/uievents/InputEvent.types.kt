@@ -3,13 +3,14 @@
 package web.uievents
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 import web.events.EventTarget
 import web.events.EventType
 
-@JsVirtual
 sealed external class InputEventTypes {
 
     @JsValue("beforeinput")
     fun <C : EventTarget> beforeInput(): EventType<InputEvent, C>
+
+    @JsValue("input")
+    fun <C : EventTarget> input(): EventType<InputEvent, C>
 }

@@ -12,7 +12,7 @@ import web.events.EventHandler
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext)
  */
-external class OfflineAudioContext(
+open external class OfflineAudioContext(
     contextOptions: OfflineAudioContextOptions,
 ) : BaseAudioContext {
     constructor(
@@ -29,7 +29,7 @@ external class OfflineAudioContext(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/complete_event)
      */
-    var oncomplete: EventHandler<OfflineAudioCompletionEvent, OfflineAudioContext>?
+    var oncomplete: EventHandler<OfflineAudioCompletionEvent, OfflineAudioContext, OfflineAudioContext>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/resume)

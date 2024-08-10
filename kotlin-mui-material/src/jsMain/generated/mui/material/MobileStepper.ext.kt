@@ -3,9 +3,7 @@
 package mui.material
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface MobileStepperVariant {
     companion object {
         @JsValue("text")
@@ -19,7 +17,6 @@ sealed external interface MobileStepperVariant {
     }
 }
 
-@JsVirtual
 sealed external interface MobileStepperPosition {
     companion object {
         @JsValue("bottom")

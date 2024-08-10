@@ -2,13 +2,9 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.html.HTMLCanvasElement
 
 /**
@@ -21,7 +17,9 @@ import web.html.HTMLCanvasElement
  *   Default value - `document`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html">Online Documentation</a>
  */
-external class ScreenSpaceEventHandler(element: HTMLCanvasElement? = definedExternally) {
+external class ScreenSpaceEventHandler(
+    element: HTMLCanvasElement? = definedExternally,
+) {
     /**
      * Set a function to be executed on an input event.
      * @param [action] Function to be executed when the input event occurs.
@@ -31,7 +29,7 @@ external class ScreenSpaceEventHandler(element: HTMLCanvasElement? = definedExte
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#setInputAction">Online Documentation</a>
      */
     fun setInputAction(
-        action: dynamic,
+        action: Any, /* ScreenSpaceEventHandler.PositionedEventCallback | ScreenSpaceEventHandler.MotionEventCallback | ScreenSpaceEventHandler.WheelEventCallback | ScreenSpaceEventHandler.TwoPointEventCallback | ScreenSpaceEventHandler.TwoPointMotionEventCallback */
         type: ScreenSpaceEventType,
         modifier: KeyboardEventModifier? = definedExternally,
     )
@@ -47,7 +45,7 @@ external class ScreenSpaceEventHandler(element: HTMLCanvasElement? = definedExte
     fun getInputAction(
         type: ScreenSpaceEventType,
         modifier: KeyboardEventModifier? = definedExternally,
-    ): dynamic
+    ): Any /* ScreenSpaceEventHandler.PositionedEventCallback | ScreenSpaceEventHandler.MotionEventCallback | ScreenSpaceEventHandler.WheelEventCallback | ScreenSpaceEventHandler.TwoPointEventCallback | ScreenSpaceEventHandler.TwoPointMotionEventCallback */
 
     /**
      * Removes the function to be executed on an input event.
@@ -141,33 +139,3 @@ external class ScreenSpaceEventHandler(element: HTMLCanvasElement? = definedExte
         var touchHoldDelayMilliseconds: Double
     }
 }
-
-/**
- * @param [event] The event which triggered the listener
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#.PositionedEventCallback">Online Documentation</a>
- */
-typealias PositionedEventCallback = (event: ScreenSpaceEventHandler.PositionedEvent) -> Unit
-
-/**
- * @param [event] The event which triggered the listener
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#.MotionEventCallback">Online Documentation</a>
- */
-typealias MotionEventCallback = (event: ScreenSpaceEventHandler.MotionEvent) -> Unit
-
-/**
- * @param [event] The event which triggered the listener
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#.TwoPointEventCallback">Online Documentation</a>
- */
-typealias TwoPointEventCallback = (event: ScreenSpaceEventHandler.TwoPointEvent) -> Unit
-
-/**
- * @param [event] The event which triggered the listener
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#.TwoPointMotionEventCallback">Online Documentation</a>
- */
-typealias TwoPointMotionEventCallback = (event: ScreenSpaceEventHandler.TwoPointMotionEvent) -> Unit
-
-/**
- * @param [delta] The amount that the mouse wheel moved
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#.WheelEventCallback">Online Documentation</a>
- */
-typealias WheelEventCallback = (delta: Double) -> Unit

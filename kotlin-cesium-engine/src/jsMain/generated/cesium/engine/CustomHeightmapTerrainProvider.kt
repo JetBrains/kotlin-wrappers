@@ -2,18 +2,11 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "VAR_OVERRIDDEN_BY_VAL",
-    "VAR_TYPE_MISMATCH_ON_OVERRIDE",
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.core.Void
-import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
+import kotlinx.js.JsPlainObject
 
 /**
  * A simple [TerrainProvider] that gets height values from a callback function.
@@ -36,7 +29,9 @@ import js.promise.Promise
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CustomHeightmapTerrainProvider.html">Online Documentation</a>
  */
-external class CustomHeightmapTerrainProvider(options: ConstructorOptions) : TerrainProvider {
+external class CustomHeightmapTerrainProvider(
+    options: ConstructorOptions,
+) : TerrainProvider {
     /**
      * @property [callback] The callback function for requesting tile geometry.
      * @property [width] The number of columns per heightmap tile.
@@ -46,7 +41,8 @@ external class CustomHeightmapTerrainProvider(options: ConstructorOptions) : Ter
      *   is used.
      * @property [ellipsoid] The ellipsoid.  If the tilingScheme is specified,
      *   this parameter is ignored and the tiling scheme's ellipsoid is used instead. If neither
-     *   parameter is specified, the WGS84 ellipsoid is used.
+     *   parameter is specified, the default ellipsoid is used.
+     *   Default value - [Ellipsoid.default]
      * @property [credit] A credit for the data source, which is displayed on the canvas.
      */
     @JsPlainObject
@@ -98,7 +94,12 @@ external class CustomHeightmapTerrainProvider(options: ConstructorOptions) : Ter
      */
     override val hasVertexNormals: Boolean
 
-
+    /**
+     * Gets an object that can be used to determine availability of terrain from this provider, such as
+     * at points and in rectangles. This property may be undefined if availability
+     * information is not available.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CustomHeightmapTerrainProvider.html#availability">Online Documentation</a>
+     */
     override val availability: TileAvailability
 
     /**
@@ -168,16 +169,3 @@ external class CustomHeightmapTerrainProvider(options: ConstructorOptions) : Ter
         level: Int,
     ): Promise<Void>?
 }
-
-/**
- * @param [x] The X coordinate of the tile for which to request geometry.
- * @param [y] The Y coordinate of the tile for which to request geometry.
- * @param [level] The level of the tile for which to request geometry.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CustomHeightmapTerrainProvider.html#.GeometryCallback">Online Documentation</a>
- */
-typealias GeometryCallback = (x: Double, y: Double, level: Double) -> dynamic
-
-inline fun CustomHeightmapTerrainProvider(
-    block: CustomHeightmapTerrainProvider.ConstructorOptions.() -> Unit,
-): CustomHeightmapTerrainProvider =
-    CustomHeightmapTerrainProvider(options = jso(block))

@@ -139,7 +139,7 @@ external class Occluder(
          * Computes a point that can be used as the occludee position to the visibility functions from a rectangle.
          * @param [rectangle] The rectangle used to create a bounding sphere.
          * @param [ellipsoid] The ellipsoid used to determine positions of the rectangle.
-         *   Default value - [Ellipsoid.WGS84]
+         *   Default value - [Ellipsoid.default]
          * @return An object containing two attributes: `occludeePoint` and `valid`
          *   which is a boolean value.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Occluder.html#.computeOccludeePointFromRectangle">Online Documentation</a>

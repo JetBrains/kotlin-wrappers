@@ -2,10 +2,10 @@
 
 package web.geolocation
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface PositionOptions {
+external interface PositionOptions {
     var enableHighAccuracy: Boolean?
     var maximumAge: Int?
     var timeout: Int?

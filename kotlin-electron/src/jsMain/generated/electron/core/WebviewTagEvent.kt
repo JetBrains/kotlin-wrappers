@@ -3,7 +3,6 @@
 package electron.core
 
 
-@seskar.js.JsVirtual
 sealed external interface WebviewTagEvent {
     companion object {
 // Docs: https://electronjs.org/docs/api/webview-tag

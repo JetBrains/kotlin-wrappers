@@ -3,9 +3,7 @@
 package web.crypto
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface KeyType {
     companion object {
         @JsValue("private")

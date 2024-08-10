@@ -2,10 +2,10 @@
 
 package web.audio
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface PannerOptions :
+external interface PannerOptions :
     AudioNodeOptions {
     var coneInnerAngle: Double?
     var coneOuterAngle: Double?

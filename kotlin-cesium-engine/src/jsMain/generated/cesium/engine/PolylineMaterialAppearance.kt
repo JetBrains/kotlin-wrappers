@@ -2,14 +2,9 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 
 /**
  * An appearance for [PolylineGeometry] that supports shading with materials.
@@ -32,7 +27,9 @@ import js.objects.jso
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineMaterialAppearance.html">Online Documentation</a>
  */
-external class PolylineMaterialAppearance(options: ConstructorOptions? = definedExternally) {
+external class PolylineMaterialAppearance(
+    options: ConstructorOptions? = definedExternally,
+) {
     /**
      * @property [translucent] When `true`, the geometry is expected to appear translucent so [PolylineMaterialAppearance.renderState] has alpha blending enabled.
      *   Default value - `true`
@@ -136,8 +133,3 @@ external class PolylineMaterialAppearance(options: ConstructorOptions? = defined
         val VERTEX_FORMAT: VertexFormat
     }
 }
-
-inline fun PolylineMaterialAppearance(
-    block: PolylineMaterialAppearance.ConstructorOptions.() -> Unit,
-): PolylineMaterialAppearance =
-    PolylineMaterialAppearance(options = jso(block))

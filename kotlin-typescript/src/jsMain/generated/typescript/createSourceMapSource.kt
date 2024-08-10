@@ -10,5 +10,5 @@ package typescript
 external fun createSourceMapSource(
     fileName: String,
     text: String,
-    skipTrivia: (pos: Int) -> Int = definedExternally,
+    skipTrivia: (pos: Double) -> Double = definedExternally,
 ): SourceMapSource

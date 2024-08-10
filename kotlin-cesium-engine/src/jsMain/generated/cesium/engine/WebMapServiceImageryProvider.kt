@@ -2,16 +2,11 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
+import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync
 
 /**
@@ -27,7 +22,9 @@ import seskar.js.JsAsync
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapServiceImageryProvider.html">Online Documentation</a>
  */
-external class WebMapServiceImageryProvider(options: ConstructorOptions) {
+external class WebMapServiceImageryProvider(
+    options: ConstructorOptions,
+) {
     /**
      * Gets the URL of the WMS server.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapServiceImageryProvider.html#url">Online Documentation</a>
@@ -309,8 +306,3 @@ external class WebMapServiceImageryProvider(options: ConstructorOptions) {
         val GetFeatureInfoDefaultParameters: Any
     }
 }
-
-inline fun WebMapServiceImageryProvider(
-    block: WebMapServiceImageryProvider.ConstructorOptions.() -> Unit,
-): WebMapServiceImageryProvider =
-    WebMapServiceImageryProvider(options = jso(block))

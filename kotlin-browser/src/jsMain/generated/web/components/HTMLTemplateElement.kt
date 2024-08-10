@@ -34,4 +34,9 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/shadowRootMode)
      */
     var shadowRootMode: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/shadowRootSerializable)
+     */
+    var shadowRootSerializable: Boolean
 }

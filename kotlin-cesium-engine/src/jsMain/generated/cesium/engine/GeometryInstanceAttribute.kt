@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 
 /**
  * Values and type information for per-instance geometry attributes.
@@ -34,7 +29,9 @@ import js.objects.jso
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeometryInstanceAttribute.html">Online Documentation</a>
  */
-external class GeometryInstanceAttribute(options: ConstructorOptions) {
+external class GeometryInstanceAttribute(
+    options: ConstructorOptions,
+) {
     /**
      * @property [componentDatatype] The datatype of each component in the attribute, e.g., individual elements in values.
      * @property [componentsPerAttribute] A number between 1 and 4 that defines the number of components in an attributes.
@@ -110,8 +107,3 @@ external class GeometryInstanceAttribute(options: ConstructorOptions) {
      */
     var value: ReadonlyArray<Double>
 }
-
-inline fun GeometryInstanceAttribute(
-    block: GeometryInstanceAttribute.ConstructorOptions.() -> Unit,
-): GeometryInstanceAttribute =
-    GeometryInstanceAttribute(options = jso(block))

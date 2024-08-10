@@ -3,9 +3,7 @@
 package mui.material
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface SvgIconColor {
     companion object {
         @JsValue("inherit")
@@ -37,7 +35,6 @@ sealed external interface SvgIconColor {
     }
 }
 
-@JsVirtual
 sealed external interface SvgIconSize {
     companion object {
         @JsValue("inherit")

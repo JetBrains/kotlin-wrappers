@@ -4,7 +4,6 @@
 
 package node.os
 
-
 /**
  * Returns the host name of the operating system as a string.
  * @since v0.3.3

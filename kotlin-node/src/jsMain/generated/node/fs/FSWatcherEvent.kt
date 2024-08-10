@@ -3,7 +3,6 @@
 package node.fs
 
 
-@seskar.js.JsVirtual
 sealed external interface FSWatcherEvent {
     sealed interface CHANGE : node.events.LegacyEventType
     sealed interface CLOSE : node.events.LegacyEventType

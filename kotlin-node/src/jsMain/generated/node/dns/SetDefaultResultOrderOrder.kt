@@ -2,12 +2,13 @@
 
 package node.dns
 
-
-@seskar.js.JsVirtual
 sealed external interface SetDefaultResultOrderOrder {
     companion object {
         @seskar.js.JsValue("ipv4first")
         val ipv4first: SetDefaultResultOrderOrder
+
+        @seskar.js.JsValue("ipv6first")
+        val ipv6first: SetDefaultResultOrderOrder
 
         @seskar.js.JsValue("verbatim")
         val verbatim: SetDefaultResultOrderOrder

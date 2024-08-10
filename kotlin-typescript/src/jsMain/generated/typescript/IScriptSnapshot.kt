@@ -9,13 +9,10 @@ package typescript
  */
 sealed external interface IScriptSnapshot {
     /** Gets a portion of the script snapshot specified by [start, end). */
-    fun getText(
-        start: Int,
-        end: Int,
-    ): String
+    fun getText(start: Double, end: Double): String
 
     /** Gets the length of this script snapshot. */
-    fun getLength(): Int
+    fun getLength(): Double
 
     /**
      * Gets the TextChangeRange that describe how the text changed between this text and

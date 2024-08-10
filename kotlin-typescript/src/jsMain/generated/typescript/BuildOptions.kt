@@ -14,5 +14,10 @@ sealed external interface BuildOptions {
     var sourceMap: Boolean?
     var inlineSourceMap: Boolean?
     var traceResolution: Boolean?
-    // [option: string]: CompilerOptionsValue | undefined
+
+    @seskar.js.JsNative
+    operator fun get(key: String): CompilerOptionsValue
+
+    @seskar.js.JsNative
+    operator fun set(key: String, value: CompilerOptionsValue)
 }

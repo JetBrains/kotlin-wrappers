@@ -5,8 +5,8 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
 import js.promise.Promise
+import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync
 
 /**
@@ -48,7 +48,7 @@ external class GeocoderService {
     @JsPlainObject
     sealed interface Result {
         var displayName: String
-        var destination: dynamic
+        var destination: Any /* Rectangle | Cartesian3 */
         var attributions: ReadonlyArray<Any>?
     }
 

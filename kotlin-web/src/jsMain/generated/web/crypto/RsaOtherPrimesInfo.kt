@@ -2,10 +2,10 @@
 
 package web.crypto
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface RsaOtherPrimesInfo {
+external interface RsaOtherPrimesInfo {
     var d: String?
     var r: String?
     var t: String?

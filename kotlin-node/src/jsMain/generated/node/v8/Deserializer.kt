@@ -9,7 +9,6 @@ import js.buffer.ArrayBuffer
 /**
  * @since v8.0.0
  */
-
 open external class Deserializer {
     constructor (data: js.typedarrays.TypedArray<*, *>)
 
@@ -36,7 +35,7 @@ open external class Deserializer {
 
     /**
      * Reads the underlying wire format version. Likely mostly to be useful to
-     * legacy code reading old wire format versions. May not be called before`.readHeader()`.
+     * legacy code reading old wire format versions. May not be called before `.readHeader()`.
      */
     fun getWireFormatVersion(): Double
 
@@ -47,7 +46,7 @@ open external class Deserializer {
     fun readUint32(): Double
 
     /**
-     * Read a raw 64-bit unsigned integer and return it as an array `[hi, lo]`with two 32-bit unsigned integer entries.
+     * Read a raw 64-bit unsigned integer and return it as an array `[hi, lo]` with two 32-bit unsigned integer entries.
      * For use inside of a custom `deserializer._readHostObject()`.
      */
     fun readUint64(): js.array.JsTuple2<Double, Double>

@@ -3,9 +3,7 @@
 package react.dom.html
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface TableAlign {
     companion object {
         @JsValue("left")

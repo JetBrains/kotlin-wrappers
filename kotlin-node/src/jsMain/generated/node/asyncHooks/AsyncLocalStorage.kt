@@ -4,11 +4,10 @@
 
 package node.asyncHooks
 
-
 /**
  * This class creates stores that stay coherent through asynchronous operations.
  *
- * While you can create your own implementation on top of the `node:async_hooks`module, `AsyncLocalStorage` should be preferred as it is a performant and memory
+ * While you can create your own implementation on top of the `node:async_hooks` module, `AsyncLocalStorage` should be preferred as it is a performant and memory
  * safe implementation that involves significant optimizations that are non-obvious
  * to implement.
  *
@@ -53,16 +52,15 @@ package node.asyncHooks
  * with each other's data.
  * @since v13.10.0, v12.17.0
  */
-
 external class AsyncLocalStorage<T> {
     /**
      * Disables the instance of `AsyncLocalStorage`. All subsequent calls
-     * to `asyncLocalStorage.getStore()` will return `undefined` until`asyncLocalStorage.run()` or `asyncLocalStorage.enterWith()` is called again.
+     * to `asyncLocalStorage.getStore()` will return `undefined` until `asyncLocalStorage.run()` or `asyncLocalStorage.enterWith()` is called again.
      *
      * When calling `asyncLocalStorage.disable()`, all current contexts linked to the
      * instance will be exited.
      *
-     * Calling `asyncLocalStorage.disable()` is required before the`asyncLocalStorage` can be garbage collected. This does not apply to stores
+     * Calling `asyncLocalStorage.disable()` is required before the `asyncLocalStorage` can be garbage collected. This does not apply to stores
      * provided by the `asyncLocalStorage`, as those objects are garbage collected
      * along with the corresponding async resources.
      *
@@ -122,7 +120,7 @@ external class AsyncLocalStorage<T> {
     /**
      * Runs a function synchronously outside of a context and returns its
      * return value. The store is not accessible within the callback function or
-     * the asynchronous operations created within the callback. Any `getStore()`call done within the callback function will always return `undefined`.
+     * the asynchronous operations created within the callback. Any `getStore()` call done within the callback function will always return `undefined`.
      *
      * The optional `args` are passed to the callback function.
      *
@@ -172,7 +170,7 @@ external class AsyncLocalStorage<T> {
      * This transition will continue for the _entire_ synchronous execution.
      * This means that if, for example, the context is entered within an event
      * handler subsequent event handlers will also run within that context unless
-     * specifically bound to another context with an `AsyncResource`. That is why`run()` should be preferred over `enterWith()` unless there are strong reasons
+     * specifically bound to another context with an `AsyncResource`. That is why `run()` should be preferred over `enterWith()` unless there are strong reasons
      * to use the latter method.
      *
      * ```js
@@ -235,5 +233,4 @@ external class AsyncLocalStorage<T> {
          */
         fun snapshot(): Function<Any?> /* <R, TArgs extends any[]>(fn: (...args: TArgs) => R, ...args: TArgs) => R */
     }
-
 }

@@ -1,3 +1,55 @@
+## pre.777
+
+* React. Move raw declarations in a separate package
+    * `react.rawUseMemo` -> `react.raw.useMemoRaw`
+    * `react.rawUseCallback` -> `react.raw.useCallbackRaw`
+    * ...
+
+## pre.775
+
+* React. Fix `useLayoutEffect` implementation
+
+## pre.773
+
+**BREAKING CHANGE**
+
+* React. New context of effect lambdas - `CoroutineScope` (instead of `EffectBuilder`)
+
+## pre.772
+
+**BREAKING CHANGE**
+
+* React. Suspend lambdas for effects
+    * Instead of `EffectBuilder.cleanup` please use suspend functions with "auto-cleanup" like:
+        * `web.events.subscribe` ([example](examples/old/src/jsMain/kotlin/example/react/useEffectExamples.kt#L23))
+        * `web.events.once` ([example](examples/old/src/jsMain/kotlin/example/react/useEffectExamples.kt#L47))
+        * `web.animations.awaitAnimationFrame` ([example](examples/old/src/jsMain/kotlin/example/react/useEffectExamples.kt#L67))
+        * "your custom suspend adapter"
+    * If you need old-style cleanup registration, please use the following hooks:
+        * `useEffectWithCleanup`
+        * `useEffectOnceWithCleanup`
+        * `useLayoutEffectWithCleanup`
+        * `useLayoutEffectOnceWithCleanup`
+        * ...
+
+## pre.758
+
+**BREAKING CHANGE**
+
+* Tanstack Query `skipToken` support fixed
+    * To construct `QueryFunction` please use factory function `QueryFunction`
+
+## pre.756
+
+* Kotlin `2.0.0`
+* Real `@JsPlainObject`
+    * With factory methods
+    * With `copy` method
+
+## pre.755
+
+* `JsContextFunction` - function with `this` access
+
 ## pre.752
 
 * Auto cancellation support for suspend adapters (marked with `@JsAsync`)
@@ -50,7 +102,7 @@ external class Loader {
 **BREAKING CHANGE**
 
 * Browser. Suspend adapters for async functions (marked with `@JsAsync`)
-  * The original Promise-based functions are available with the `Async` suffix
+    * The original Promise-based functions are available with the `Async` suffix
 
 ## pre.738
 

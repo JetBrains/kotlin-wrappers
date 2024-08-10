@@ -20,7 +20,6 @@ fun <P : Props> Styles(
     }
 }
 
-
 external interface StylesConfig<Option : Any, Group : GroupBase<Option>> {
     var clearIndicator: StylesConfigFunction<ClearIndicatorProps>?
     var container: StylesConfigFunction<ContainerProps>?
@@ -35,6 +34,9 @@ external interface StylesConfig<Option : Any, Group : GroupBase<Option>> {
     var menu: StylesConfigFunction<MenuProps>?
     var menuList: StylesConfigFunction<MenuListProps<Option, Group>>?
     var menuPortal: StylesConfigFunction<MenuPortalProps>? /* PortalStyleArgs */
+    var multiValue: StylesConfigFunction<MultiValueProps<Option, Group>>?
+    var multiValueLabel: StylesConfigFunction<MultiValueProps<Option, Group>>?
+    var multiValueRemove: StylesConfigFunction<MultiValueProps<Option, Group>>?
     var noOptionsMessage: StylesConfigFunction<NoOptionsMessageProps>?
     var option: StylesConfigFunction<OptionProps<Option, Group>>?
     var placeholder: StylesConfigFunction<PlaceholderProps>?

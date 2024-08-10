@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Synchronously changes owner and group of a file. Returns `undefined`.
  * This is the synchronous version of {@link chown}.

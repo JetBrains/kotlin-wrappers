@@ -21,6 +21,8 @@ open external class PopStateEvent(
     override val type: EventType<PopStateEvent, EventTarget>,
     init: PopStateEventInit = definedExternally,
 ) : Event {
+    val hasUAVisualTransition: Boolean
+
     /**
      * Returns a copy of the information that was provided to pushState() or replaceState().
      *

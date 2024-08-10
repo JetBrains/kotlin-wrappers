@@ -4,14 +4,13 @@
 
 package node.traceEvents
 
-
 /**
  * Returns a comma-separated list of all currently-enabled trace event
  * categories. The current set of enabled trace event categories is determined
  * by the _union_ of all currently-enabled `Tracing` objects and any categories
  * enabled using the `--trace-event-categories` flag.
  *
- * Given the file `test.js` below, the command`node --trace-event-categories node.perf test.js` will print`'node.async_hooks,node.perf'` to the console.
+ * Given the file `test.js` below, the command `node --trace-event-categories node.perf test.js` will print `'node.async_hooks,node.perf'` to the console.
  *
  * ```js
  * const trace_events = require('node:trace_events');

@@ -4,7 +4,6 @@
 
 package node.crypto
 
-
 /**
  * Checks the primality of the `candidate`.
  * @since v15.8.0

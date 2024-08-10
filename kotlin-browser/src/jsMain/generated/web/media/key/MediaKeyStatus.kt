@@ -3,9 +3,7 @@
 package web.media.key
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface MediaKeyStatus {
     companion object {
         @JsValue("expired")

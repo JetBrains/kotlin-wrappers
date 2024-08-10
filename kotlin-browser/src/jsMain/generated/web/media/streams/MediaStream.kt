@@ -11,7 +11,7 @@ import web.events.EventTarget
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream)
  */
-external class MediaStream() : EventTarget {
+open external class MediaStream() : EventTarget {
     constructor(stream: MediaStream)
     constructor(tracks: ReadonlyArray<MediaStreamTrack>)
 
@@ -28,12 +28,12 @@ external class MediaStream() : EventTarget {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/addtrack_event)
      */
-    var onaddtrack: EventHandler<MediaStreamTrackEvent, MediaStream>?
+    var onaddtrack: EventHandler<MediaStreamTrackEvent, MediaStream, MediaStream>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/removetrack_event)
      */
-    var onremovetrack: EventHandler<MediaStreamTrackEvent, MediaStream>?
+    var onremovetrack: EventHandler<MediaStreamTrackEvent, MediaStream, MediaStream>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/addTrack)

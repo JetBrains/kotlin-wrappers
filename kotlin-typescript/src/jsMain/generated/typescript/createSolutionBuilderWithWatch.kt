@@ -4,11 +4,9 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 external fun <T : BuilderProgram> createSolutionBuilderWithWatch(
     host: SolutionBuilderWithWatchHost<T>,
-    rootNames: ReadonlyArray<String>,
+    rootNames: js.array.ReadonlyArray<String>,
     defaultOptions: BuildOptions,
     baseWatchOptions: WatchOptions = definedExternally,
 ): SolutionBuilder<T>

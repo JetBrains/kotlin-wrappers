@@ -16,7 +16,7 @@ import web.events.EventTarget
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest)
  */
-external class PaymentRequest(
+open external class PaymentRequest(
     methodData: ReadonlyArray<PaymentMethodData>,
     details: PaymentDetailsInit,
 ) : EventTarget {
@@ -28,7 +28,7 @@ external class PaymentRequest(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/paymentmethodchange_event)
      */
-    var onpaymentmethodchange: EventHandler<PaymentMethodChangeEvent, PaymentRequest>?
+    var onpaymentmethodchange: EventHandler<PaymentMethodChangeEvent, PaymentRequest, PaymentRequest>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/abort)

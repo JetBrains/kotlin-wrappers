@@ -2,6 +2,7 @@
 
 package typescript
 
-sealed external interface ThisTypeNode : TypeNode, Union.ThisTypeNode_ {
+sealed external interface ThisTypeNode : TypeNode, TypePredicateNodeParameterName,
+    IsIdentifierOrThisTypeNodeResultPredicate {
     override val kind: SyntaxKind.ThisType
 }

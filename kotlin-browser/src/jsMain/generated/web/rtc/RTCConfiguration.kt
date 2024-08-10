@@ -3,10 +3,10 @@
 package web.rtc
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface RTCConfiguration {
+external interface RTCConfiguration {
     var bundlePolicy: RTCBundlePolicy?
     var certificates: ReadonlyArray<RTCCertificate>?
     var iceCandidatePoolSize: Short /* unsigned byte */?

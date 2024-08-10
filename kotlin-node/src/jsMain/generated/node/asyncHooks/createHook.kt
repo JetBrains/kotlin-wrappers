@@ -4,7 +4,6 @@
 
 package node.asyncHooks
 
-
 /**
  * Registers functions to be called for different lifetime events of each async
  * operation.

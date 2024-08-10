@@ -4,7 +4,6 @@
 
 package node.util.types
 
-
 /**
  * Returns `true` if the value is a built-in [`Int32Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array) instance.
  *

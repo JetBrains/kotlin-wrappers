@@ -3,9 +3,7 @@
 package web.remoteplayback
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface RemotePlaybackState {
     companion object {
         @JsValue("connected")

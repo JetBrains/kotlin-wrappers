@@ -2,8 +2,6 @@
 
 package electron.core
 
-
-@seskar.js.JsVirtual
 sealed external interface SessionSetPermissionRequestHandlerHandlerPermission {
     companion object {
         @seskar.js.JsValue("clipboard-read")

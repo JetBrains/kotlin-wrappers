@@ -3,9 +3,9 @@
 package web.transport
 
 import js.core.JsLong
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface WebTransportSendStreamOptions {
+external interface WebTransportSendStreamOptions {
     var sendOrder: JsLong?
 }

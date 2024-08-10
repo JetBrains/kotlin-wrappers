@@ -1,17 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
-)
+@file:JsModule("typescript")
 
 package typescript
 
-import kotlin.contracts.contract
 
-fun isClassStaticBlockDeclaration(node: Node): Boolean {
-    contract {
-        returns(true) implies (node is ClassStaticBlockDeclaration)
-    }
-
-    return typescript.raw.isClassStaticBlockDeclaration(node)
-}
+@JsName("isClassStaticBlockDeclaration")
+external fun isClassStaticBlockDeclarationRaw(node: Node): Boolean /* node is ClassStaticBlockDeclaration */

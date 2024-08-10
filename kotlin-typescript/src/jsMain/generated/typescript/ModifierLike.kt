@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface ModifierLike : Node /* Modifier | Decorator */
+sealed external interface ModifierLike : Node

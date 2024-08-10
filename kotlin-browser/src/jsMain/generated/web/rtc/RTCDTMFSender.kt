@@ -18,7 +18,7 @@ sealed external class RTCDTMFSender :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDTMFSender/tonechange_event)
      */
-    var ontonechange: EventHandler<RTCDTMFToneChangeEvent, RTCDTMFSender>?
+    var ontonechange: EventHandler<RTCDTMFToneChangeEvent, RTCDTMFSender, RTCDTMFSender>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDTMFSender/toneBuffer)

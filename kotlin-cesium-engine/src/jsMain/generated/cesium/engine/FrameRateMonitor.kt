@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 /**
@@ -134,8 +130,3 @@ external class FrameRateMonitor {
         fun fromScene(scene: Scene): FrameRateMonitor
     }
 }
-
-inline fun FrameRateMonitor(
-    block: FrameRateMonitor.() -> Unit,
-): FrameRateMonitor =
-    FrameRateMonitor().apply(block)

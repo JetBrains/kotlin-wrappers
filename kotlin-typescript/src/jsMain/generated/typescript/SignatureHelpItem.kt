@@ -2,8 +2,6 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 /**
  * Represents a single signature to show in signature help.
  * The id is used for subsequent calls into the language service to ask questions about the
@@ -13,10 +11,10 @@ import js.array.ReadonlyArray
  */
 sealed external interface SignatureHelpItem {
     var isVariadic: Boolean
-    var prefixDisplayParts: ReadonlyArray<SymbolDisplayPart>
-    var suffixDisplayParts: ReadonlyArray<SymbolDisplayPart>
-    var separatorDisplayParts: ReadonlyArray<SymbolDisplayPart>
-    var parameters: ReadonlyArray<SignatureHelpParameter>
-    var documentation: ReadonlyArray<SymbolDisplayPart>
-    var tags: ReadonlyArray<JSDocTagInfo>
+    var prefixDisplayParts: js.array.ReadonlyArray<SymbolDisplayPart>
+    var suffixDisplayParts: js.array.ReadonlyArray<SymbolDisplayPart>
+    var separatorDisplayParts: js.array.ReadonlyArray<SymbolDisplayPart>
+    var parameters: js.array.ReadonlyArray<SignatureHelpParameter>
+    var documentation: js.array.ReadonlyArray<SymbolDisplayPart>
+    var tags: js.array.ReadonlyArray<JSDocTagInfo>
 }

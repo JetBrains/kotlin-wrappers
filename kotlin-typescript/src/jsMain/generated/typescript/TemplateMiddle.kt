@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface TemplateMiddle : TemplateLiteralLikeNode, Union.TemplateMiddle_ {
+sealed external interface TemplateMiddle : TemplateLiteralLikeNode, TemplateLiteralTypeSpanLiteral, PseudoLiteralToken,
+    TemplateSpanLiteral, IsTemplateMiddleOrTemplateTailResultPredicate {
     override val kind: SyntaxKind.TemplateMiddle
-    override val parent: Union.TemplateMiddle_parent
+    override val parent: TemplateMiddleParent
 }

@@ -4,5 +4,4 @@
 
 package react.router.dom
 
-
 external fun shouldProcessLinkClick(event: LimitedMouseEvent, target: String = definedExternally): Boolean

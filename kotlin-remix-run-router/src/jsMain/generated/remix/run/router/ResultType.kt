@@ -4,7 +4,6 @@
 
 package remix.run.router
 
-
 sealed external interface ResultType {
     companion object {
         val data: ResultType

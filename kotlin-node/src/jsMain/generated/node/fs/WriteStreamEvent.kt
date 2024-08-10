@@ -3,7 +3,6 @@
 package node.fs
 
 
-@seskar.js.JsVirtual
 sealed external interface WriteStreamEvent {
     sealed interface CLOSE : node.events.LegacyEventType
     sealed interface DRAIN : node.events.LegacyEventType

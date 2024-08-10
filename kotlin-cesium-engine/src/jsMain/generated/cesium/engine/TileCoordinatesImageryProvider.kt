@@ -2,17 +2,12 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.core.Void
-import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
+import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync
 import web.html.HTMLCanvasElement
 
@@ -22,7 +17,9 @@ import web.html.HTMLCanvasElement
  * debugging terrain and imagery rendering problems.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html">Online Documentation</a>
  */
-external class TileCoordinatesImageryProvider(options: ConstructorOptions? = definedExternally) {
+external class TileCoordinatesImageryProvider(
+    options: ConstructorOptions? = definedExternally,
+) {
     /**
      * Gets the proxy used by this provider.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#proxy">Online Documentation</a>
@@ -180,8 +177,3 @@ external class TileCoordinatesImageryProvider(options: ConstructorOptions? = def
         var tileHeight: Int?
     }
 }
-
-inline fun TileCoordinatesImageryProvider(
-    block: TileCoordinatesImageryProvider.ConstructorOptions.() -> Unit,
-): TileCoordinatesImageryProvider =
-    TileCoordinatesImageryProvider(options = jso(block))

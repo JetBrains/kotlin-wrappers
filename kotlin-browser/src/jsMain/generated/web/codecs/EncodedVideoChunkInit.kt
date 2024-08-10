@@ -4,10 +4,10 @@ package web.codecs
 
 import js.buffer.AllowSharedBufferSource
 import js.core.JsLong
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface EncodedVideoChunkInit {
+external interface EncodedVideoChunkInit {
     var data: AllowSharedBufferSource
     var duration: JsLong?
     var timestamp: JsLong

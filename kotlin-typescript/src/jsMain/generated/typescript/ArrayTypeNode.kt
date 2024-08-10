@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ArrayTypeNode : TypeNode, Union.ArrayTypeNode_ {
+sealed external interface ArrayTypeNode : TypeNode, TypeReferenceNodeField {
     override val kind: SyntaxKind.ArrayType
     val elementType: TypeNode
 }

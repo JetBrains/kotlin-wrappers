@@ -10,7 +10,6 @@ import node.events.EventEmitter
  * The `inspector.Session` is used for dispatching messages to the V8 inspector
  * back-end and receiving message responses and notifications.
  */
-
 external class Session : EventEmitter {
     /**
      * Create a new instance of the inspector.Session class.

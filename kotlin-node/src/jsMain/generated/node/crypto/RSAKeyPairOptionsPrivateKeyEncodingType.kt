@@ -2,8 +2,6 @@
 
 package node.crypto
 
-
-@seskar.js.JsVirtual
 sealed external interface RSAKeyPairOptionsPrivateKeyEncodingType {
     companion object {
         @seskar.js.JsValue("pkcs1")

@@ -4,7 +4,6 @@
 
 package node.perfHooks
 
-
 /**
  * This module provides an implementation of a subset of the W3C [Web Performance APIs](https://w3c.github.io/perf-timing-primer/) as well as additional APIs for
  * Node.js-specific performance measurements.
@@ -34,7 +33,7 @@ package node.perfHooks
  *   performance.measure('A to B', 'A', 'B');
  * });
  * ```
- * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/perf_hooks.js)
+ * @see [source](https://github.com/nodejs/node/blob/v20.13.1/lib/perf_hooks.js)
  */
 
 

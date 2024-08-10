@@ -3,5 +3,5 @@
 package typescript
 
 sealed external interface LocalsContainer : Node {
-    var _localsContainerBrand: Any
+    var _localsContainerBrand: Any?
 }

@@ -2,10 +2,10 @@
 
 package web.streams
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface ReadableStreamGetReaderOptions {
+external interface ReadableStreamGetReaderOptions {
     /**
      * Creates a ReadableStreamBYOBReader and locks the stream to the new reader.
      *

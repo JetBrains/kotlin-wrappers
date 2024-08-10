@@ -2,14 +2,9 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 
 /**
  * A tiling scheme for geometry referenced to a simple [GeographicProjection] where
@@ -17,11 +12,13 @@ import js.objects.jso
  * known as geographic, equirectangular, equidistant cylindrical, or plate carrée.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeographicTilingScheme.html">Online Documentation</a>
  */
-external class GeographicTilingScheme(options: ConstructorOptions? = definedExternally) : TilingScheme {
+external class GeographicTilingScheme(
+    options: ConstructorOptions? = definedExternally,
+) : TilingScheme {
     /**
      * @property [ellipsoid] The ellipsoid whose surface is being tiled. Defaults to
-     *   the WGS84 ellipsoid.
-     *   Default value - [Ellipsoid.WGS84]
+     *   the default ellipsoid.
+     *   Default value - [Ellipsoid.default]
      * @property [rectangle] The rectangle, in radians, covered by the tiling scheme.
      *   Default value - [Rectangle.MAX_VALUE]
      * @property [numberOfLevelZeroTilesX] The number of tiles in the X direction at level zero of
@@ -142,8 +139,3 @@ external class GeographicTilingScheme(options: ConstructorOptions? = definedExte
         result: Cartesian2?,
     ): Cartesian2
 }
-
-inline fun GeographicTilingScheme(
-    block: GeographicTilingScheme.ConstructorOptions.() -> Unit,
-): GeographicTilingScheme =
-    GeographicTilingScheme(options = jso(block))

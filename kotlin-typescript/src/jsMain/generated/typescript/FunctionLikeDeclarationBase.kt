@@ -11,9 +11,9 @@ package typescript
  * - AccessorDeclaration
  */
 sealed external interface FunctionLikeDeclarationBase : SignatureDeclarationBase {
-    var _functionLikeDeclarationBrand: Any
+    var _functionLikeDeclarationBrand: Any?
     val asteriskToken: AsteriskToken?
     val questionToken: QuestionToken?
     val exclamationToken: ExclamationToken?
-    val body: dynamic /* Block | Expression */
+    val body: Any? /* Block | Expression | undefined */
 }

@@ -2,10 +2,10 @@
 
 package web.gpu
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GPUBufferDescriptor :
+external interface GPUBufferDescriptor :
     GPUObjectDescriptorBase {
     var size: GPUSize64
     var usage: GPUBufferUsage

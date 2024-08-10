@@ -4,7 +4,6 @@
 
 package node.os
 
-
 /**
  * Returns the operating system as a string.
  *

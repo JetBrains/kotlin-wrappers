@@ -3,9 +3,7 @@
 package mui.material
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface ListItemButtonAlignItems {
     companion object {
         @JsValue("flex-start")

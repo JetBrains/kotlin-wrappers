@@ -2,10 +2,10 @@
 
 package web.cssom
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface CSSStyleSheetInit {
+external interface CSSStyleSheetInit {
     var baseURL: String?
     var disabled: Boolean?
     var media: Any /* MediaList | string */?

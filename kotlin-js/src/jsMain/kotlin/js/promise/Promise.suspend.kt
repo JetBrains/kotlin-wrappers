@@ -4,28 +4,9 @@
 
 package js.promise
 
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.CoroutineStart
+import js.promise.legacy.LegacyPromise
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.asDeferred
-import kotlin.coroutines.CoroutineContext
-import kotlin.coroutines.EmptyCoroutineContext
-import kotlinx.coroutines.asPromise as asLegacyPromise
-import kotlinx.coroutines.promise as legacyPromise
-
-fun <T> CoroutineScope.promise(
-    context: CoroutineContext = EmptyCoroutineContext,
-    start: CoroutineStart = CoroutineStart.DEFAULT,
-    block: suspend CoroutineScope.() -> T,
-): Promise<T> =
-    legacyPromise(
-        context = context,
-        start = start,
-        block = block,
-    ).unsafeCast<Promise<T>>()
-
-inline fun <T> Deferred<T>.asPromise(): Promise<T> =
-    asLegacyPromise().unsafeCast<Promise<T>>()
 
 inline fun <T> Promise<T>.asDeferred(): Deferred<T> =
     unsafeCast<LegacyPromise<T>>().asDeferred()

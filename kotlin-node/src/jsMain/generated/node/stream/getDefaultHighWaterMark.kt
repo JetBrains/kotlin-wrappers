@@ -4,11 +4,9 @@
 
 package node.stream
 
-
 /**
  * Returns the default highWaterMark used by streams.
  * Defaults to `16384` (16 KiB), or `16` for `objectMode`.
  * @since v19.9.0
- * @param objectMode
  */
 external fun getDefaultHighWaterMark(objectMode: Boolean): Double

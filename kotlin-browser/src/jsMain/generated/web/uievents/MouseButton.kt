@@ -3,9 +3,7 @@
 package web.uievents
 
 import seskar.js.JsIntValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface MouseButton {
     companion object {
         /**

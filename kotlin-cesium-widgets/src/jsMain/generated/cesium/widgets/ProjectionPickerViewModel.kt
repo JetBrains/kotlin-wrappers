@@ -19,7 +19,9 @@ import cesium.engine.SceneMode
  * @property [scene] The Scene to switch projections.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ProjectionPickerViewModel.html">Online Documentation</a>
  */
-external class ProjectionPickerViewModel(var scene: Scene) {
+external class ProjectionPickerViewModel(
+    var scene: Scene,
+) {
     /**
      * Gets or sets whether the button drop-down is currently visible.  This property is observable.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ProjectionPickerViewModel.html#dropDownVisible">Online Documentation</a>

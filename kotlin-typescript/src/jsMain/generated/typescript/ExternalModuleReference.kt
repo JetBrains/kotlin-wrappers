@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ExternalModuleReference : Node, Union.ExternalModuleReference_ {
+sealed external interface ExternalModuleReference : Node, ModuleReference {
     override val kind: SyntaxKind.ExternalModuleReference
     override val parent: ImportEqualsDeclaration
     val expression: Expression

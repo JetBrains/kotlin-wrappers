@@ -2,8 +2,8 @@
 
 package typescript
 
-sealed external interface SpreadElement : Expression, Union.SpreadElement_ {
+sealed external interface SpreadElement : Expression, BindingOrAssignmentElementRestIndicator {
     override val kind: SyntaxKind.SpreadElement
-    override val parent: Union.SpreadElement_parent
+    override val parent: SpreadElementParent
     val expression: Expression
 }

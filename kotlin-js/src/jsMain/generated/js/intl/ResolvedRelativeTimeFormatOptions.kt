@@ -2,10 +2,10 @@
 
 package js.intl
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface ResolvedRelativeTimeFormatOptions {
+external interface ResolvedRelativeTimeFormatOptions {
     var locale: UnicodeBCP47LocaleIdentifier
     var style: RelativeTimeFormatStyle
     var numeric: RelativeTimeFormatNumeric

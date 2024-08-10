@@ -4,7 +4,6 @@ package remix.run.router
 
 import web.form.FormData
 
-
 sealed external interface FetcherStatesSubmitting<TData /* default is Any? */> {
     var state: String /* "submitting" */
     var formMethod: FormMethod

@@ -4,7 +4,6 @@
 
 package node.crypto
 
-
 /**
  * Creates and returns a `Cipher` object, with the given `algorithm`, `key` and
  * initialization vector (`iv`).

@@ -2,5 +2,4 @@
 
 package typescript
 
-sealed external interface EqualityOperatorOrHigher :
-    Union.EqualityOperatorOrHigher_ /* RelationalOperatorOrHigher | EqualityOperator */
+sealed external interface EqualityOperatorOrHigher : SyntaxKind, BitwiseOperatorOrHigher

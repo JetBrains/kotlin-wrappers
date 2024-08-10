@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface BinaryOperator : SyntaxKind /* AssignmentOperatorOrHigher | SyntaxKind.CommaToken */
+sealed external interface BinaryOperator : SyntaxKind

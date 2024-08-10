@@ -13,7 +13,9 @@ package cesium.engine
  * @param [proxy] The proxy URL that will be used to requests all resources.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DefaultProxy.html">Online Documentation</a>
  */
-external class DefaultProxy(proxy: String) {
+external class DefaultProxy(
+    proxy: String,
+) {
     /**
      * Get the final URL to use to request a given resource.
      * @param [resource] The resource to request.

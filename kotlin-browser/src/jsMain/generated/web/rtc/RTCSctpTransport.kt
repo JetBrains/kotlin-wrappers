@@ -20,7 +20,11 @@ sealed external class RTCSctpTransport :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSctpTransport/maxMessageSize)
      */
     val maxMessageSize: Double
-    var onstatechange: EventHandler<Event, RTCSctpTransport>?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSctpTransport/statechange_event)
+     */
+    var onstatechange: EventHandler<Event, RTCSctpTransport, RTCSctpTransport>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSctpTransport/state)

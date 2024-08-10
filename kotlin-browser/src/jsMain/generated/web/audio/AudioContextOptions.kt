@@ -2,10 +2,10 @@
 
 package web.audio
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface AudioContextOptions {
+external interface AudioContextOptions {
     var latencyHint: Any /* AudioContextLatencyCategory | number */?
     var sampleRate: Float?
 }

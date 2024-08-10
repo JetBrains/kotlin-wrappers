@@ -2,12 +2,12 @@
 
 package web.locks
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.abort.AbortSignal
 import web.abort.Abortable
 
 @JsPlainObject
-sealed external interface LockOptions :
+external interface LockOptions :
     Abortable {
     var ifAvailable: Boolean?
     var mode: LockMode?

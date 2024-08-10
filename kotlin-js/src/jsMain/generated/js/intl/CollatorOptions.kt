@@ -2,10 +2,10 @@
 
 package js.intl
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface CollatorOptions {
+external interface CollatorOptions {
     var usage: CollatorUsage?
     var localeMatcher: LocaleMatcher?
     var numeric: Boolean?

@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 
 /**
  * A description of a polyline modeled as a line strip; the first two positions define a line segment,
@@ -30,7 +25,9 @@ import js.objects.jso
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineGeometry.html">Online Documentation</a>
  */
-external class PolylineGeometry(options: ConstructorOptions) {
+external class PolylineGeometry(
+    options: ConstructorOptions,
+) {
     /**
      * @property [positions] An array of [Cartesian3] defining the positions in the polyline as a line strip.
      * @property [width] The width in pixels.
@@ -45,7 +42,7 @@ external class PolylineGeometry(options: ConstructorOptions) {
      * @property [vertexFormat] The vertex attributes to be computed.
      *   Default value - [VertexFormat.DEFAULT]
      * @property [ellipsoid] The ellipsoid to be used as a reference.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      */
     @JsPlainObject
     sealed interface ConstructorOptions {
@@ -105,8 +102,3 @@ external class PolylineGeometry(options: ConstructorOptions) {
         fun createGeometry(polylineGeometry: PolylineGeometry): Geometry?
     }
 }
-
-inline fun PolylineGeometry(
-    block: PolylineGeometry.ConstructorOptions.() -> Unit,
-): PolylineGeometry =
-    PolylineGeometry(options = jso(block))

@@ -2,14 +2,9 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 
 /**
  * A classification primitive represents a volume enclosing geometry in the [Scene] to be highlighted.
@@ -31,7 +26,9 @@ import js.objects.jso
  * are also valid if they are extruded volumes; otherwise, they will not be rendered.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ClassificationPrimitive.html">Online Documentation</a>
  */
-external class ClassificationPrimitive(options: ConstructorOptions? = definedExternally) {
+external class ClassificationPrimitive(
+    options: ConstructorOptions? = definedExternally,
+) {
     /**
      * @property [geometryInstances] The geometry instances to render. This can either be a single instance or an array of length one.
      * @property [appearance] The appearance used to render the primitive. Defaults to PerInstanceColorAppearance when GeometryInstances have a color attribute.
@@ -217,8 +214,3 @@ external class ClassificationPrimitive(options: ConstructorOptions? = definedExt
         fun isSupported(scene: Scene): Boolean
     }
 }
-
-inline fun ClassificationPrimitive(
-    block: ClassificationPrimitive.ConstructorOptions.() -> Unit,
-): ClassificationPrimitive =
-    ClassificationPrimitive(options = jso(block))

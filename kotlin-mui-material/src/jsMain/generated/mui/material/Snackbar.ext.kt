@@ -3,9 +3,7 @@
 package mui.material
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface SnackbarCloseReason {
     companion object {
         @JsValue("timeout")
@@ -19,7 +17,6 @@ sealed external interface SnackbarCloseReason {
     }
 }
 
-@JsVirtual
 sealed external interface SnackbarOriginVertical {
     companion object {
         @JsValue("top")
@@ -30,7 +27,6 @@ sealed external interface SnackbarOriginVertical {
     }
 }
 
-@JsVirtual
 sealed external interface SnackbarOriginHorizontal {
     companion object {
         @JsValue("left")

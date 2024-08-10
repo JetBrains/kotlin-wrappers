@@ -4,7 +4,6 @@
 
 package react.router
 
-
 /**
  * Given a Remix Router instance, render the appropriate UI
  */

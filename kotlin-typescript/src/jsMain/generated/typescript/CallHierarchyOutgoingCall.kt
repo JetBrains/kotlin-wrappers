@@ -2,9 +2,7 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 sealed external interface CallHierarchyOutgoingCall {
     var to: CallHierarchyItem
-    var fromSpans: ReadonlyArray<TextSpan>
+    var fromSpans: js.array.ReadonlyArray<TextSpan>
 }

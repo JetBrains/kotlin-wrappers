@@ -4,7 +4,6 @@
 
 package node.childProcess
 
-
 /**
  * Spawns a shell then executes the `command` within that shell, buffering any
  * generated output. The `command` string passed to the exec function is processed
@@ -25,9 +24,9 @@ package node.childProcess
  * **Never pass unsanitized user input to this function. Any input containing shell**
  * **metacharacters may be used to trigger arbitrary command execution.**
  *
- * If a `callback` function is provided, it is called with the arguments`(error, stdout, stderr)`. On success, `error` will be `null`. On error,`error` will be an instance of `Error`. The
+ * If a `callback` function is provided, it is called with the arguments `(error, stdout, stderr)`. On success, `error` will be `null`. On error, `error` will be an instance of `Error`. The
  * `error.code` property will be
- * the exit code of the process. By convention, any exit code other than `0`indicates an error. `error.signal` will be the signal that terminated the
+ * the exit code of the process. By convention, any exit code other than `0` indicates an error. `error.signal` will be the signal that terminated the
  * process.
  *
  * The `stdout` and `stderr` arguments passed to the callback will contain the
@@ -57,7 +56,7 @@ package node.childProcess
  * the existing process and uses a shell to execute the command.
  *
  * If this method is invoked as its `util.promisify()` ed version, it returns
- * a `Promise` for an `Object` with `stdout` and `stderr` properties. The returned`ChildProcess` instance is attached to the `Promise` as a `child` property. In
+ * a `Promise` for an `Object` with `stdout` and `stderr` properties. The returned `ChildProcess` instance is attached to the `Promise` as a `child` property. In
  * case of an error (including any error resulting in an exit code other than 0), a
  * rejected promise is returned, with the same `error` object given in the
  * callback, but with two additional properties `stdout` and `stderr`.
@@ -74,7 +73,7 @@ package node.childProcess
  * lsExample();
  * ```
  *
- * If the `signal` option is enabled, calling `.abort()` on the corresponding`AbortController` is similar to calling `.kill()` on the child process except
+ * If the `signal` option is enabled, calling `.abort()` on the corresponding `AbortController` is similar to calling `.kill()` on the child process except
  * the error passed to the callback will be an `AbortError`:
  *
  * ```js

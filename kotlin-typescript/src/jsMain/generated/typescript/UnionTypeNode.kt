@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface UnionTypeNode : TypeNode, Union.UnionTypeNode_ {
+sealed external interface UnionTypeNode : TypeNode, UnionOrIntersectionTypeNode {
     override val kind: SyntaxKind.UnionType
     val types: NodeArray<TypeNode>
 }

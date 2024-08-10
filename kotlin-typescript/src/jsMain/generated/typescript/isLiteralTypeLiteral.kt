@@ -4,4 +4,6 @@
 
 package typescript
 
-external fun isLiteralTypeLiteral(node: Node): Boolean /* node is NullLiteral | BooleanLiteral | LiteralExpression | PrefixUnaryExpression */
+
+@JsName("isLiteralTypeLiteral")
+external fun isLiteralTypeLiteralRaw(node: Node): Boolean /* node is NullLiteral | BooleanLiteral | LiteralExpression | PrefixUnaryExpression */

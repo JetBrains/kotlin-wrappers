@@ -18,11 +18,6 @@ external interface XPathEvaluatorBase {
     ): XPathExpression = definedExternally
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createNSResolver)
-     */
-    fun createNSResolver(nodeResolver: Node): Node = definedExternally
-
-    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/evaluate)
      */
     fun evaluate(

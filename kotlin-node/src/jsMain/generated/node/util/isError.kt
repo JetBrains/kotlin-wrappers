@@ -4,9 +4,8 @@
 
 package node.util
 
-
 /**
- * Returns `true` if the given `object` is an `Error`. Otherwise, returns`false`.
+ * Returns `true` if the given `object` is an `Error`. Otherwise, returns `false`.
  *
  * ```js
  * const util = require('node:util');
@@ -20,7 +19,7 @@ package node.util
  * ```
  *
  * This method relies on `Object.prototype.toString()` behavior. It is
- * possible to obtain an incorrect result when the `object` argument manipulates`@@toStringTag`.
+ * possible to obtain an incorrect result when the `object` argument manipulates `@@toStringTag`.
  *
  * ```js
  * const util = require('node:util');

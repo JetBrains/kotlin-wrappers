@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 
 /**
  * A description of a cylinder.
@@ -25,7 +20,9 @@ import js.objects.jso
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CylinderGeometry.html">Online Documentation</a>
  */
-external class CylinderGeometry(options: ConstructorOptions) {
+external class CylinderGeometry(
+    options: ConstructorOptions,
+) {
     /**
      * @property [length] The length of the cylinder.
      * @property [topRadius] The radius of the top of the cylinder.
@@ -90,8 +87,3 @@ external class CylinderGeometry(options: ConstructorOptions) {
         fun createGeometry(cylinderGeometry: CylinderGeometry): Geometry?
     }
 }
-
-inline fun CylinderGeometry(
-    block: CylinderGeometry.ConstructorOptions.() -> Unit,
-): CylinderGeometry =
-    CylinderGeometry(options = jso(block))

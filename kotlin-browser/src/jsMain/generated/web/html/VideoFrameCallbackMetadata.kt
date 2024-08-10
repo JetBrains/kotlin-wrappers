@@ -2,11 +2,11 @@
 
 package web.html
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.time.DOMHighResTimeStamp
 
 @JsPlainObject
-sealed external interface VideoFrameCallbackMetadata {
+external interface VideoFrameCallbackMetadata {
     var captureTime: DOMHighResTimeStamp?
     var expectedDisplayTime: DOMHighResTimeStamp
     var height: Int

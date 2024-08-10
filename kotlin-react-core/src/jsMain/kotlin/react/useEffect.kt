@@ -1,16 +1,18 @@
 package react
 
-import react.internal.createEffectCallback
+import kotlinx.coroutines.CoroutineScope
+import react.internal.createCleanupCallback
+import react.raw.useEffectRaw
 
 /**
  * Only works inside [fc]
  * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
  */
 fun useEffect(
-    effect: EffectBuilder.() -> Unit,
+    effect: suspend CoroutineScope.() -> Unit,
 ) {
-    val callback = createEffectCallback(effect)
-    rawUseEffect(callback)
+    val callback = createCleanupCallback(effect)
+    useEffectRaw(callback)
 }
 
 /**
@@ -19,10 +21,10 @@ fun useEffect(
  */
 fun useEffect(
     vararg dependencies: Any?,
-    effect: EffectBuilder.() -> Unit,
+    effect: suspend CoroutineScope.() -> Unit,
 ) {
-    val callback = createEffectCallback(effect)
-    rawUseEffect(callback, dependencies)
+    val callback = createCleanupCallback(effect)
+    useEffectRaw(callback, dependencies)
 }
 
 /**
@@ -30,8 +32,8 @@ fun useEffect(
  * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
  */
 fun useEffectOnce(
-    effect: EffectBuilder.() -> Unit,
+    effect: suspend CoroutineScope.() -> Unit,
 ) {
-    val callback = createEffectCallback(effect)
-    rawUseEffect(callback, emptyArray())
+    val callback = createCleanupCallback(effect)
+    useEffectRaw(callback, emptyArray())
 }

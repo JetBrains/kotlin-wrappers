@@ -6,6 +6,7 @@ import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.animations.DocumentTimeline
+import web.cssom.ViewTransition
 import web.events.Event
 import web.events.EventHandler
 import web.fonts.FontFaceSource
@@ -196,22 +197,22 @@ open external class Document :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/fullscreenchange_event)
      */
-    var onfullscreenchange: EventHandler<Event, Document>?
+    var onfullscreenchange: EventHandler<Event, Document, Node>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/fullscreenerror_event)
      */
-    var onfullscreenerror: EventHandler<Event, Document>?
+    var onfullscreenerror: EventHandler<Event, Document, Node>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pointerlockchange_event)
      */
-    var onpointerlockchange: EventHandler<Event, Document>?
+    var onpointerlockchange: EventHandler<Event, Document, Document>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pointerlockerror_event)
      */
-    var onpointerlockerror: EventHandler<Event, Document>?
+    var onpointerlockerror: EventHandler<Event, Document, Document>?
 
     /**
      * Fires when the state of the object has changed.
@@ -219,12 +220,12 @@ open external class Document :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/readystatechange_event)
      */
-    var onreadystatechange: EventHandler<Event, Document>?
+    var onreadystatechange: EventHandler<Event, Document, Document>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/visibilitychange_event)
      */
-    var onvisibilitychange: EventHandler<Event, Document>?
+    var onvisibilitychange: EventHandler<Event, Document, Document>?
     override val ownerDocument: Void
 
     /**
@@ -290,6 +291,15 @@ open external class Document :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/adoptNode)
      */
     fun <T : Node> adoptNode(node: T): T
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/caretPositionFromPoint)
+     */
+    fun caretPositionFromPoint(
+        x: Double,
+        y: Double,
+        options: CaretPositionFromPointOptions = definedExternally,
+    ): CaretPosition?
 
     /**
      * Closes an output stream and forces the sent data to display.
@@ -569,6 +579,11 @@ open external class Document :
     fun requestStorageAccessAsync(): Promise<Void>
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/startViewTransition)
+     */
+    fun startViewTransition(callbackOptions: UpdateCallback = definedExternally): ViewTransition
+
+    /**
      * Writes one or more HTML expressions to a document in the specified window.
      * @param content Specifies the text and HTML tags to write.
      *
@@ -585,6 +600,9 @@ open external class Document :
     fun writeln(vararg text: String)
 
     companion object {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/parseHTMLUnsafe_static)
+         */
         fun parseHTMLUnsafe(html: String): Document
     }
 }

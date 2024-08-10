@@ -4,11 +4,10 @@
 
 package node.assert
 
-
 /**
  * Throws `value` if `value` is not `undefined` or `null`. This is useful when
  * testing the `error` argument in callbacks. The stack trace contains all frames
- * from the error passed to `ifError()` including the potential new frames for`ifError()` itself.
+ * from the error passed to `ifError()` including the potential new frames for `ifError()` itself.
  *
  * ```js
  * import assert from 'node:assert/strict';

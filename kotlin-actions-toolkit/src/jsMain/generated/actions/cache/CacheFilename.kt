@@ -3,9 +3,7 @@
 package actions.cache
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface CacheFilename {
     companion object {
         @JsValue("cache.tgz")

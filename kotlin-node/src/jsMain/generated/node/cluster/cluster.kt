@@ -4,12 +4,11 @@
 
 package node.cluster
 
-
 /**
  * Clusters of Node.js processes can be used to run multiple instances of Node.js
- * that can distribute workloads among their application threads. When process
- * isolation is not needed, use the `worker_threads` module instead, which
- * allows running multiple application threads within a single Node.js instance.
+ * that can distribute workloads among their application threads. When process isolation
+ * is not needed, use the [`worker_threads`](https://nodejs.org/docs/latest-v20.x/api/worker_threads.html)
+ * module instead, which allows running multiple application threads within a single Node.js instance.
  *
  * The cluster module allows easy creation of child processes that all share
  * server ports.
@@ -57,7 +56,7 @@ package node.cluster
  * ```
  *
  * On Windows, it is not yet possible to set up a named pipe server in a worker.
- * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/cluster.js)
+ * @see [source](https://github.com/nodejs/node/blob/v20.13.1/lib/cluster.js)
  */
 
 

@@ -3,10 +3,10 @@
 package web.media.capabilities
 
 import js.core.JsLong
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface AudioConfiguration {
+external interface AudioConfiguration {
     var bitrate: JsLong?
     var channels: String?
     var contentType: String

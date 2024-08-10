@@ -2,10 +2,10 @@
 
 package web.serviceworker
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface NavigationPreloadState {
+external interface NavigationPreloadState {
     var enabled: Boolean?
     var headerValue: String?
 }

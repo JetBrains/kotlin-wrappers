@@ -4,7 +4,6 @@
 
 package node.crypto
 
-
 external fun pseudoRandomBytes(size: Number): node.buffer.Buffer
 
 external fun pseudoRandomBytes(

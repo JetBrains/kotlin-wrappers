@@ -2,9 +2,9 @@
 
 package web.images
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface ImageBitmapRenderingContextSettings {
+external interface ImageBitmapRenderingContextSettings {
     var alpha: Boolean?
 }

@@ -81,6 +81,11 @@ abstract external class Element :
     val clientWidth: Int
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/currentCSSZoom)
+     */
+    val currentCSSZoom: Double
+
+    /**
      * Returns the value of element's id content attribute. Can be set to change it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/id)
@@ -109,12 +114,12 @@ abstract external class Element :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/fullscreenchange_event)
      */
-    var onfullscreenchange: EventHandler<Event, Element>?
+    var onfullscreenchange: EventHandler<Event, Element, Node>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/fullscreenerror_event)
      */
-    var onfullscreenerror: EventHandler<Event, Element>?
+    var onfullscreenerror: EventHandler<Event, Element, Node>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/outerHTML)
@@ -279,6 +284,11 @@ abstract external class Element :
     ): HTMLCollectionOf<Element>
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getHTML)
+     */
+    fun getHTML(options: GetHTMLOptions = definedExternally): String
+
+    /**
      * Returns true if element has an attribute whose qualified name is qualifiedName, and false otherwise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/hasAttribute)
@@ -381,7 +391,11 @@ abstract external class Element :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/requestPointerLock)
      */
-    fun requestPointerLock()
+    @JsAsync
+    suspend fun requestPointerLock(options: PointerLockOptions = definedExternally)
+
+    @JsName("requestPointerLock")
+    fun requestPointerLockAsync(options: PointerLockOptions = definedExternally): Promise<Void>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/scroll)
@@ -445,6 +459,10 @@ abstract external class Element :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/setAttributeNodeNS)
      */
     fun setAttributeNodeNS(attr: Attr): Attr?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/setHTMLUnsafe)
+     */
     fun setHTMLUnsafe(html: String)
 
     /**

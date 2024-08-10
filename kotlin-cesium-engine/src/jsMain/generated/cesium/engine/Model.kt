@@ -2,14 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
-import js.objects.JsPlainObject
 import js.promise.Promise
+import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync
 
 /**
@@ -168,7 +164,7 @@ private constructor() {
      * Defines how the color blends with the model.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Model.html#colorBlendMode">Online Documentation</a>
      */
-    var colorBlendMode: dynamic
+    var colorBlendMode: Any /* Cesium3DTileColorBlendMode | ColorBlendMode */
 
     /**
      * Value used to determine the color strength when the `colorBlendMode` is `MIX`. A value of 0.0 results in the model's rendered color while a value of 1.0 results in a solid color, with any value in-between resulting in a mix of the two.
@@ -644,10 +640,3 @@ private constructor() {
         }
     }
 }
-
-/**
- * Interface for the function that is called with the loaded gltf object once loaded.
- * @param [gltf] The gltf object
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Model.html#.GltfCallback">Online Documentation</a>
- */
-typealias GltfCallback = (gltf: Any) -> Unit

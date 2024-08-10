@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
-import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
+import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync
 
 /**
@@ -69,7 +64,9 @@ import seskar.js.JsAsync
  * @param [options] An object describing initialization options
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html">Online Documentation</a>
  */
-external class Cesium3DTileset(options: ConstructorOptions) {
+external class Cesium3DTileset(
+    options: ConstructorOptions,
+) {
     /**
      * Optimization option. Don't request tiles that will likely be unused when they come back because of the camera's movement. This optimization only applies to stationary tilesets.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#cullRequestsWhileMoving">Online Documentation</a>
@@ -1225,18 +1222,3 @@ external class Cesium3DTileset(options: ConstructorOptions) {
         fun loadJsonAsync(tilesetUrl: String): Promise<Any>
     }
 }
-
-/**
- * Optimization option. Used as a callback when [Cesium3DTileset.foveatedScreenSpaceError] is true to control how much to raise the screen space error for tiles outside the foveated cone,
- * interpolating between [Cesium3DTileset.foveatedMinimumScreenSpaceErrorRelaxation] and [Cesium3DTileset.maximumScreenSpaceError].
- * @param [p] The start value to interpolate.
- * @param [q] The end value to interpolate.
- * @param [time] The time of interpolation generally in the range `[0.0, 1.0]`.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#.foveatedInterpolationCallback">Online Documentation</a>
- */
-typealias FoveatedInterpolationCallback = (p: Double, q: Double, time: Double) -> Double
-
-inline fun Cesium3DTileset(
-    block: Cesium3DTileset.ConstructorOptions.() -> Unit,
-): Cesium3DTileset =
-    Cesium3DTileset(options = jso(block))

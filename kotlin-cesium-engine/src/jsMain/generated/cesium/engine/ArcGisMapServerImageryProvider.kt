@@ -2,16 +2,11 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
+import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync
 
 /**
@@ -49,7 +44,9 @@ import seskar.js.JsAsync
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGisMapServerImageryProvider.html">Online Documentation</a>
  */
-external class ArcGisMapServerImageryProvider(options: ConstructorOptions? = definedExternally) {
+external class ArcGisMapServerImageryProvider(
+    options: ConstructorOptions? = definedExternally,
+) {
     /**
      * Gets or sets a value indicating whether feature picking is enabled.  If true, [ArcGisMapServerImageryProvider.pickFeatures] will
      * invoke the "identify" operation on the ArcGIS server and return the features included in the response.  If false,
@@ -261,7 +258,8 @@ external class ArcGisMapServerImageryProvider(options: ConstructorOptions? = def
      *   Default value - [GeographicTilingScheme()][GeographicTilingScheme]
      * @property [ellipsoid] The ellipsoid.  If the tilingScheme is specified and used,
      *   this parameter is ignored and the tiling scheme's ellipsoid is used instead. If neither
-     *   parameter is specified, the WGS84 ellipsoid is used.
+     *   parameter is specified, the default ellipsoid is used.
+     *   Default value - [Ellipsoid.default]
      * @property [credit] A credit for the data source, which is displayed on the canvas.  This parameter is ignored when accessing a tiled server.
      * @property [tileWidth] The width of each tile in pixels.  This parameter is ignored when accessing a tiled server.
      *   Default value - `256`
@@ -364,8 +362,3 @@ external class ArcGisMapServerImageryProvider(options: ConstructorOptions? = def
         ): Promise<ArcGisMapServerImageryProvider>
     }
 }
-
-inline fun ArcGisMapServerImageryProvider(
-    block: ArcGisMapServerImageryProvider.ConstructorOptions.() -> Unit,
-): ArcGisMapServerImageryProvider =
-    ArcGisMapServerImageryProvider(options = jso(block))

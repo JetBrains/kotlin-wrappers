@@ -3,11 +3,11 @@
 package web.gpu
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
 import js.objects.ReadonlyRecord
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GPUDeviceDescriptor :
+external interface GPUDeviceDescriptor :
     GPUObjectDescriptorBase {
     var requiredFeatures: ReadonlyArray<GPUFeatureName>?
     var requiredLimits: ReadonlyRecord<String, Double>?

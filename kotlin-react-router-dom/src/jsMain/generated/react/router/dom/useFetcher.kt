@@ -4,7 +4,6 @@
 
 package react.router.dom
 
-
 /**
  * Interacts with route loaders and actions without causing a navigation. Great
  * for any interaction that stays on the same page.

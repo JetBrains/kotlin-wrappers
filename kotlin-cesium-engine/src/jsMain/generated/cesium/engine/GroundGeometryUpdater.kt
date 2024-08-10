@@ -2,21 +2,18 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 
 /**
  * An abstract class for updating ground geometry entities.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GroundGeometryUpdater.html">Online Documentation</a>
  */
-external class GroundGeometryUpdater(options: ConstructorOptions) {
+external class GroundGeometryUpdater(
+    options: ConstructorOptions,
+) {
     /**
      * @property [entity] The entity containing the geometry to be visualized.
      * @property [scene] The scene where visualization is taking place.
@@ -45,8 +42,3 @@ external class GroundGeometryUpdater(options: ConstructorOptions) {
      */
     fun destroy()
 }
-
-inline fun GroundGeometryUpdater(
-    block: GroundGeometryUpdater.ConstructorOptions.() -> Unit,
-): GroundGeometryUpdater =
-    GroundGeometryUpdater(options = jso(block))

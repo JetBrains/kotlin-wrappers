@@ -2,9 +2,9 @@
 
 package web.rtc
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface RTCRtpHeaderExtensionCapability {
+external interface RTCRtpHeaderExtensionCapability {
     var uri: String
 }

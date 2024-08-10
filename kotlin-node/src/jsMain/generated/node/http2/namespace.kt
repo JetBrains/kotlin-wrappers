@@ -4,7 +4,6 @@
 
 package node.http2
 
-
 /* import EventEmitter = require("node:events"); */
 
 

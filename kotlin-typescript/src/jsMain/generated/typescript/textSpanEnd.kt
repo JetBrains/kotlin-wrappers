@@ -4,4 +4,4 @@
 
 package typescript
 
-external fun textSpanEnd(span: TextSpan): Int
+external fun textSpanEnd(span: TextSpan): Double

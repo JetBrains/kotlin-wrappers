@@ -15,7 +15,7 @@ import web.url.URL
  * `url` can be a string or a `URL` object. If `url` is a
  * string, it is automatically parsed with `new URL()`. If it is a `URL` object, it will be automatically converted to an ordinary `options` object.
  *
- * If both `url` and `options` are specified, the objects are merged, with the`options` properties taking precedence.
+ * If both `url` and `options` are specified, the objects are merged, with the `options` properties taking precedence.
  *
  * The optional `callback` parameter will be added as a one-time listener for
  * the `'response'` event.
@@ -115,7 +115,7 @@ import web.url.URL
  * the following events will be emitted in the following order:
  *
  * * `'socket'`
- * * `'error'` with an error with message `'Error: socket hang up'` and code`'ECONNRESET'`
+ * * `'error'` with an error with message `'Error: socket hang up'` and code `'ECONNRESET'`
  * * `'close'`
  *
  * In the case of a premature connection close after the response is received,
@@ -126,15 +126,15 @@ import web.url.URL
  *    * `'data'` any number of times, on the `res` object
  * * (connection closed here)
  * * `'aborted'` on the `res` object
- * * `'error'` on the `res` object with an error with message`'Error: aborted'` and code `'ECONNRESET'`
  * * `'close'`
+ * * `'error'` on the `res` object with an error with message `'Error: aborted'` and code `'ECONNRESET'`
  * * `'close'` on the `res` object
  *
  * If `req.destroy()` is called before a socket is assigned, the following
  * events will be emitted in the following order:
  *
  * * (`req.destroy()` called here)
- * * `'error'` with an error with message `'Error: socket hang up'` and code`'ECONNRESET'`, or the error with which `req.destroy()` was called
+ * * `'error'` with an error with message `'Error: socket hang up'` and code `'ECONNRESET'`, or the error with which `req.destroy()` was called
  * * `'close'`
  *
  * If `req.destroy()` is called before the connection succeeds, the following
@@ -142,7 +142,7 @@ import web.url.URL
  *
  * * `'socket'`
  * * (`req.destroy()` called here)
- * * `'error'` with an error with message `'Error: socket hang up'` and code`'ECONNRESET'`, or the error with which `req.destroy()` was called
+ * * `'error'` with an error with message `'Error: socket hang up'` and code `'ECONNRESET'`, or the error with which `req.destroy()` was called
  * * `'close'`
  *
  * If `req.destroy()` is called after the response is received, the following
@@ -153,8 +153,8 @@ import web.url.URL
  *    * `'data'` any number of times, on the `res` object
  * * (`req.destroy()` called here)
  * * `'aborted'` on the `res` object
- * * `'error'` on the `res` object with an error with message `'Error: aborted'`and code `'ECONNRESET'`, or the error with which `req.destroy()` was called
  * * `'close'`
+ * * `'error'` on the `res` object with an error with message `'Error: aborted'` and code `'ECONNRESET'`, or the error with which `req.destroy()` was called
  * * `'close'` on the `res` object
  *
  * If `req.abort()` is called before a socket is assigned, the following
@@ -170,7 +170,7 @@ import web.url.URL
  * * `'socket'`
  * * (`req.abort()` called here)
  * * `'abort'`
- * * `'error'` with an error with message `'Error: socket hang up'` and code`'ECONNRESET'`
+ * * `'error'` with an error with message `'Error: socket hang up'` and code `'ECONNRESET'`
  * * `'close'`
  *
  * If `req.abort()` is called after the response is received, the following
@@ -182,16 +182,16 @@ import web.url.URL
  * * (`req.abort()` called here)
  * * `'abort'`
  * * `'aborted'` on the `res` object
- * * `'error'` on the `res` object with an error with message`'Error: aborted'` and code `'ECONNRESET'`.
+ * * `'error'` on the `res` object with an error with message `'Error: aborted'` and code `'ECONNRESET'`.
  * * `'close'`
  * * `'close'` on the `res` object
  *
  * Setting the `timeout` option or using the `setTimeout()` function will
  * not abort the request or do anything besides add a `'timeout'` event.
  *
- * Passing an `AbortSignal` and then calling `abort()` on the corresponding`AbortController` will behave the same way as calling `.destroy()` on the
+ * Passing an `AbortSignal` and then calling `abort()` on the corresponding `AbortController` will behave the same way as calling `.destroy()` on the
  * request. Specifically, the `'error'` event will be emitted with an error with
- * the message `'AbortError: The operation was aborted'`, the code `'ABORT_ERR'`and the `cause`, if one was provided.
+ * the message `'AbortError: The operation was aborted'`, the code `'ABORT_ERR'` and the `cause`, if one was provided.
  * @since v0.3.6
  */
 external fun request(
@@ -208,7 +208,7 @@ external fun request(
  * `url` can be a string or a `URL` object. If `url` is a
  * string, it is automatically parsed with `new URL()`. If it is a `URL` object, it will be automatically converted to an ordinary `options` object.
  *
- * If both `url` and `options` are specified, the objects are merged, with the`options` properties taking precedence.
+ * If both `url` and `options` are specified, the objects are merged, with the `options` properties taking precedence.
  *
  * The optional `callback` parameter will be added as a one-time listener for
  * the `'response'` event.
@@ -308,7 +308,7 @@ external fun request(
  * the following events will be emitted in the following order:
  *
  * * `'socket'`
- * * `'error'` with an error with message `'Error: socket hang up'` and code`'ECONNRESET'`
+ * * `'error'` with an error with message `'Error: socket hang up'` and code `'ECONNRESET'`
  * * `'close'`
  *
  * In the case of a premature connection close after the response is received,
@@ -319,15 +319,15 @@ external fun request(
  *    * `'data'` any number of times, on the `res` object
  * * (connection closed here)
  * * `'aborted'` on the `res` object
- * * `'error'` on the `res` object with an error with message`'Error: aborted'` and code `'ECONNRESET'`
  * * `'close'`
+ * * `'error'` on the `res` object with an error with message `'Error: aborted'` and code `'ECONNRESET'`
  * * `'close'` on the `res` object
  *
  * If `req.destroy()` is called before a socket is assigned, the following
  * events will be emitted in the following order:
  *
  * * (`req.destroy()` called here)
- * * `'error'` with an error with message `'Error: socket hang up'` and code`'ECONNRESET'`, or the error with which `req.destroy()` was called
+ * * `'error'` with an error with message `'Error: socket hang up'` and code `'ECONNRESET'`, or the error with which `req.destroy()` was called
  * * `'close'`
  *
  * If `req.destroy()` is called before the connection succeeds, the following
@@ -335,7 +335,7 @@ external fun request(
  *
  * * `'socket'`
  * * (`req.destroy()` called here)
- * * `'error'` with an error with message `'Error: socket hang up'` and code`'ECONNRESET'`, or the error with which `req.destroy()` was called
+ * * `'error'` with an error with message `'Error: socket hang up'` and code `'ECONNRESET'`, or the error with which `req.destroy()` was called
  * * `'close'`
  *
  * If `req.destroy()` is called after the response is received, the following
@@ -346,8 +346,8 @@ external fun request(
  *    * `'data'` any number of times, on the `res` object
  * * (`req.destroy()` called here)
  * * `'aborted'` on the `res` object
- * * `'error'` on the `res` object with an error with message `'Error: aborted'`and code `'ECONNRESET'`, or the error with which `req.destroy()` was called
  * * `'close'`
+ * * `'error'` on the `res` object with an error with message `'Error: aborted'` and code `'ECONNRESET'`, or the error with which `req.destroy()` was called
  * * `'close'` on the `res` object
  *
  * If `req.abort()` is called before a socket is assigned, the following
@@ -363,7 +363,7 @@ external fun request(
  * * `'socket'`
  * * (`req.abort()` called here)
  * * `'abort'`
- * * `'error'` with an error with message `'Error: socket hang up'` and code`'ECONNRESET'`
+ * * `'error'` with an error with message `'Error: socket hang up'` and code `'ECONNRESET'`
  * * `'close'`
  *
  * If `req.abort()` is called after the response is received, the following
@@ -375,16 +375,16 @@ external fun request(
  * * (`req.abort()` called here)
  * * `'abort'`
  * * `'aborted'` on the `res` object
- * * `'error'` on the `res` object with an error with message`'Error: aborted'` and code `'ECONNRESET'`.
+ * * `'error'` on the `res` object with an error with message `'Error: aborted'` and code `'ECONNRESET'`.
  * * `'close'`
  * * `'close'` on the `res` object
  *
  * Setting the `timeout` option or using the `setTimeout()` function will
  * not abort the request or do anything besides add a `'timeout'` event.
  *
- * Passing an `AbortSignal` and then calling `abort()` on the corresponding`AbortController` will behave the same way as calling `.destroy()` on the
+ * Passing an `AbortSignal` and then calling `abort()` on the corresponding `AbortController` will behave the same way as calling `.destroy()` on the
  * request. Specifically, the `'error'` event will be emitted with an error with
- * the message `'AbortError: The operation was aborted'`, the code `'ABORT_ERR'`and the `cause`, if one was provided.
+ * the message `'AbortError: The operation was aborted'`, the code `'ABORT_ERR'` and the `cause`, if one was provided.
  * @since v0.3.6
  */
 external fun request(options: String, callback: (res: IncomingMessage) -> Unit = definedExternally): ClientRequest
@@ -398,7 +398,7 @@ external fun request(options: String, callback: (res: IncomingMessage) -> Unit =
  * `url` can be a string or a `URL` object. If `url` is a
  * string, it is automatically parsed with `new URL()`. If it is a `URL` object, it will be automatically converted to an ordinary `options` object.
  *
- * If both `url` and `options` are specified, the objects are merged, with the`options` properties taking precedence.
+ * If both `url` and `options` are specified, the objects are merged, with the `options` properties taking precedence.
  *
  * The optional `callback` parameter will be added as a one-time listener for
  * the `'response'` event.
@@ -498,7 +498,7 @@ external fun request(options: String, callback: (res: IncomingMessage) -> Unit =
  * the following events will be emitted in the following order:
  *
  * * `'socket'`
- * * `'error'` with an error with message `'Error: socket hang up'` and code`'ECONNRESET'`
+ * * `'error'` with an error with message `'Error: socket hang up'` and code `'ECONNRESET'`
  * * `'close'`
  *
  * In the case of a premature connection close after the response is received,
@@ -509,15 +509,15 @@ external fun request(options: String, callback: (res: IncomingMessage) -> Unit =
  *    * `'data'` any number of times, on the `res` object
  * * (connection closed here)
  * * `'aborted'` on the `res` object
- * * `'error'` on the `res` object with an error with message`'Error: aborted'` and code `'ECONNRESET'`
  * * `'close'`
+ * * `'error'` on the `res` object with an error with message `'Error: aborted'` and code `'ECONNRESET'`
  * * `'close'` on the `res` object
  *
  * If `req.destroy()` is called before a socket is assigned, the following
  * events will be emitted in the following order:
  *
  * * (`req.destroy()` called here)
- * * `'error'` with an error with message `'Error: socket hang up'` and code`'ECONNRESET'`, or the error with which `req.destroy()` was called
+ * * `'error'` with an error with message `'Error: socket hang up'` and code `'ECONNRESET'`, or the error with which `req.destroy()` was called
  * * `'close'`
  *
  * If `req.destroy()` is called before the connection succeeds, the following
@@ -525,7 +525,7 @@ external fun request(options: String, callback: (res: IncomingMessage) -> Unit =
  *
  * * `'socket'`
  * * (`req.destroy()` called here)
- * * `'error'` with an error with message `'Error: socket hang up'` and code`'ECONNRESET'`, or the error with which `req.destroy()` was called
+ * * `'error'` with an error with message `'Error: socket hang up'` and code `'ECONNRESET'`, or the error with which `req.destroy()` was called
  * * `'close'`
  *
  * If `req.destroy()` is called after the response is received, the following
@@ -536,8 +536,8 @@ external fun request(options: String, callback: (res: IncomingMessage) -> Unit =
  *    * `'data'` any number of times, on the `res` object
  * * (`req.destroy()` called here)
  * * `'aborted'` on the `res` object
- * * `'error'` on the `res` object with an error with message `'Error: aborted'`and code `'ECONNRESET'`, or the error with which `req.destroy()` was called
  * * `'close'`
+ * * `'error'` on the `res` object with an error with message `'Error: aborted'` and code `'ECONNRESET'`, or the error with which `req.destroy()` was called
  * * `'close'` on the `res` object
  *
  * If `req.abort()` is called before a socket is assigned, the following
@@ -553,7 +553,7 @@ external fun request(options: String, callback: (res: IncomingMessage) -> Unit =
  * * `'socket'`
  * * (`req.abort()` called here)
  * * `'abort'`
- * * `'error'` with an error with message `'Error: socket hang up'` and code`'ECONNRESET'`
+ * * `'error'` with an error with message `'Error: socket hang up'` and code `'ECONNRESET'`
  * * `'close'`
  *
  * If `req.abort()` is called after the response is received, the following
@@ -565,16 +565,16 @@ external fun request(options: String, callback: (res: IncomingMessage) -> Unit =
  * * (`req.abort()` called here)
  * * `'abort'`
  * * `'aborted'` on the `res` object
- * * `'error'` on the `res` object with an error with message`'Error: aborted'` and code `'ECONNRESET'`.
+ * * `'error'` on the `res` object with an error with message `'Error: aborted'` and code `'ECONNRESET'`.
  * * `'close'`
  * * `'close'` on the `res` object
  *
  * Setting the `timeout` option or using the `setTimeout()` function will
  * not abort the request or do anything besides add a `'timeout'` event.
  *
- * Passing an `AbortSignal` and then calling `abort()` on the corresponding`AbortController` will behave the same way as calling `.destroy()` on the
+ * Passing an `AbortSignal` and then calling `abort()` on the corresponding `AbortController` will behave the same way as calling `.destroy()` on the
  * request. Specifically, the `'error'` event will be emitted with an error with
- * the message `'AbortError: The operation was aborted'`, the code `'ABORT_ERR'`and the `cause`, if one was provided.
+ * the message `'AbortError: The operation was aborted'`, the code `'ABORT_ERR'` and the `cause`, if one was provided.
  * @since v0.3.6
  */
 external fun request(options: URL, callback: (res: IncomingMessage) -> Unit = definedExternally): ClientRequest

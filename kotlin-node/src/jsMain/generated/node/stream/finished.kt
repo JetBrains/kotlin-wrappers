@@ -4,7 +4,6 @@
 
 package node.stream
 
-
 /**
  * A readable and/or writable stream/webstream.
  *
@@ -29,11 +28,11 @@ package node.stream
  * ```
  *
  * Especially useful in error handling scenarios where a stream is destroyed
- * prematurely (like an aborted HTTP request), and will not emit `'end'`or `'finish'`.
+ * prematurely (like an aborted HTTP request), and will not emit `'end'` or `'finish'`.
  *
- * The `finished` API provides `promise version`.
+ * The `finished` API provides [`promise version`](https://nodejs.org/docs/latest-v20.x/api/stream.html#streamfinishedstream-options).
  *
- * `stream.finished()` leaves dangling event listeners (in particular`'error'`, `'end'`, `'finish'` and `'close'`) after `callback` has been
+ * `stream.finished()` leaves dangling event listeners (in particular `'error'`, `'end'`, `'finish'` and `'close'`) after `callback` has been
  * invoked. The reason for this is so that unexpected `'error'` events (due to
  * incorrect stream implementations) do not cause unexpected crashes.
  * If this is unwanted behavior then the returned cleanup function needs to be
@@ -48,7 +47,7 @@ package node.stream
  * @since v10.0.0
  * @param stream A readable and/or writable stream.
  * @param callback A callback function that takes an optional error argument.
- * @return A cleanup function which removes all registered listeners.
+ * @returns A cleanup function which removes all registered listeners.
  */
 external fun finished(
     stream: node.ReadableStream,
@@ -80,11 +79,11 @@ external fun finished(
  * ```
  *
  * Especially useful in error handling scenarios where a stream is destroyed
- * prematurely (like an aborted HTTP request), and will not emit `'end'`or `'finish'`.
+ * prematurely (like an aborted HTTP request), and will not emit `'end'` or `'finish'`.
  *
- * The `finished` API provides `promise version`.
+ * The `finished` API provides [`promise version`](https://nodejs.org/docs/latest-v20.x/api/stream.html#streamfinishedstream-options).
  *
- * `stream.finished()` leaves dangling event listeners (in particular`'error'`, `'end'`, `'finish'` and `'close'`) after `callback` has been
+ * `stream.finished()` leaves dangling event listeners (in particular `'error'`, `'end'`, `'finish'` and `'close'`) after `callback` has been
  * invoked. The reason for this is so that unexpected `'error'` events (due to
  * incorrect stream implementations) do not cause unexpected crashes.
  * If this is unwanted behavior then the returned cleanup function needs to be
@@ -99,7 +98,7 @@ external fun finished(
  * @since v10.0.0
  * @param stream A readable and/or writable stream.
  * @param callback A callback function that takes an optional error argument.
- * @return A cleanup function which removes all registered listeners.
+ * @returns A cleanup function which removes all registered listeners.
  */
 external fun finished(
     stream: node.WritableStream,
@@ -131,11 +130,11 @@ external fun finished(
  * ```
  *
  * Especially useful in error handling scenarios where a stream is destroyed
- * prematurely (like an aborted HTTP request), and will not emit `'end'`or `'finish'`.
+ * prematurely (like an aborted HTTP request), and will not emit `'end'` or `'finish'`.
  *
- * The `finished` API provides `promise version`.
+ * The `finished` API provides [`promise version`](https://nodejs.org/docs/latest-v20.x/api/stream.html#streamfinishedstream-options).
  *
- * `stream.finished()` leaves dangling event listeners (in particular`'error'`, `'end'`, `'finish'` and `'close'`) after `callback` has been
+ * `stream.finished()` leaves dangling event listeners (in particular `'error'`, `'end'`, `'finish'` and `'close'`) after `callback` has been
  * invoked. The reason for this is so that unexpected `'error'` events (due to
  * incorrect stream implementations) do not cause unexpected crashes.
  * If this is unwanted behavior then the returned cleanup function needs to be
@@ -150,7 +149,7 @@ external fun finished(
  * @since v10.0.0
  * @param stream A readable and/or writable stream.
  * @param callback A callback function that takes an optional error argument.
- * @return A cleanup function which removes all registered listeners.
+ * @returns A cleanup function which removes all registered listeners.
  */
 external fun finished(
     stream: node.ReadWriteStream,

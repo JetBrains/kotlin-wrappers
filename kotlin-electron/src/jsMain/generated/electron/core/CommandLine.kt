@@ -4,7 +4,6 @@
 
 package electron.core
 
-
 external class CommandLine {
 // Docs: https://electronjs.org/docs/api/command-line
     /**

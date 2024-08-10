@@ -4,11 +4,10 @@
 
 package node.fs
 
-
 /**
  * Creates a unique temporary directory.
  *
- * Generates six random characters to be appended behind a required`prefix` to create a unique temporary directory. Due to platform
+ * Generates six random characters to be appended behind a required `prefix` to create a unique temporary directory. Due to platform
  * inconsistencies, avoid trailing `X` characters in `prefix`. Some platforms,
  * notably the BSDs, can return more than six random characters, and replace
  * trailing `X` characters in `prefix` with random characters.

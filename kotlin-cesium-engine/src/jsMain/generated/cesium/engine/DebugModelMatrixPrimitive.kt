@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 /**
@@ -80,8 +76,3 @@ external class DebugModelMatrixPrimitive {
      */
     fun destroy()
 }
-
-inline fun DebugModelMatrixPrimitive(
-    block: DebugModelMatrixPrimitive.() -> Unit,
-): DebugModelMatrixPrimitive =
-    DebugModelMatrixPrimitive().apply(block)

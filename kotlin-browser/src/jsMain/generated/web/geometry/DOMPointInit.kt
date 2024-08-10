@@ -2,10 +2,10 @@
 
 package web.geometry
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface DOMPointInit {
+external interface DOMPointInit {
     var w: Double?
     var x: Double?
     var y: Double?

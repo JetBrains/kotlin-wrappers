@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 /**
@@ -150,8 +146,3 @@ external class CorridorGraphics {
      */
     fun merge(source: CorridorGraphics)
 }
-
-inline fun CorridorGraphics(
-    block: CorridorGraphics.() -> Unit,
-): CorridorGraphics =
-    CorridorGraphics().apply(block)

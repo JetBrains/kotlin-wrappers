@@ -2,7 +2,7 @@ package js.collections
 
 external interface ReadonlyMap<K, out V> :
     MapLike<K, V>,
-    SetLike<K> {
+    ReadonlySetLike<K> {
 
     override val size: Int
 

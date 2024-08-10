@@ -2,17 +2,13 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
+import js.typedarrays.TypedArray
 import js.typedarrays.Uint8Array
+import kotlinx.js.JsPlainObject
 
 /**
  * Terrain data for a single tile where the terrain data is represented as a heightmap.  A heightmap
@@ -32,7 +28,9 @@ import js.typedarrays.Uint8Array
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/HeightmapTerrainData.html">Online Documentation</a>
  */
-external class HeightmapTerrainData(options: ConstructorOptions) : TerrainData {
+external class HeightmapTerrainData(
+    options: ConstructorOptions,
+) : TerrainData {
     /**
      * @property [buffer] The buffer containing height data.
      * @property [width] The width (longitude direction) of the heightmap, in samples.
@@ -89,7 +87,7 @@ external class HeightmapTerrainData(options: ConstructorOptions) : TerrainData {
      */
     @JsPlainObject
     sealed interface ConstructorOptions {
-        var buffer: dynamic
+        var buffer: TypedArray<*, *> /* Int8Array | Uint8Array | Int16Array | Uint16Array | Int32Array | Uint32Array | Float32Array | Float64Array */
         var width: Double
         var height: Double
         var childTileMask: Int?
@@ -123,7 +121,7 @@ external class HeightmapTerrainData(options: ConstructorOptions) : TerrainData {
      * Values in between 0 and 255 are allowed as well to smoothly blend between land and water.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/HeightmapTerrainData.html#waterMask">Online Documentation</a>
      */
-    override var waterMask: dynamic
+    override var waterMask: Any /* Uint8Array | HTMLImageElement | HTMLCanvasElement */
 
     /**
      * Computes the terrain height at a specified longitude and latitude.
@@ -194,8 +192,3 @@ external class HeightmapTerrainData(options: ConstructorOptions) : TerrainData {
      */
     override fun wasCreatedByUpsampling(): Boolean
 }
-
-inline fun HeightmapTerrainData(
-    block: HeightmapTerrainData.ConstructorOptions.() -> Unit,
-): HeightmapTerrainData =
-    HeightmapTerrainData(options = jso(block))

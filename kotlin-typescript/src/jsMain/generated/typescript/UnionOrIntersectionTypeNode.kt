@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface UnionOrIntersectionTypeNode /* UnionTypeNode | IntersectionTypeNode */
+sealed external interface UnionOrIntersectionTypeNode : Node

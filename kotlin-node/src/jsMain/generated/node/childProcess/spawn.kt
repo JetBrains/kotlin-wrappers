@@ -9,7 +9,7 @@ import node.stream.Readable
 import node.stream.Writable
 
 /**
- * The `child_process.spawn()` method spawns a new process using the given`command`, with command-line arguments in `args`. If omitted, `args` defaults
+ * The `child_process.spawn()` method spawns a new process using the given `command`, with command-line arguments in `args`. If omitted, `args` defaults
  * to an empty array.
  *
  * **If the `shell` option is enabled, do not pass unsanitized user input to this**
@@ -107,10 +107,10 @@ import node.stream.Writable
  * Certain platforms (macOS, Linux) will use the value of `argv[0]` for the process
  * title while others (Windows, SunOS) will use `command`.
  *
- * Node.js overwrites `argv[0]` with `process.execPath` on startup, so`process.argv[0]` in a Node.js child process will not match the `argv0`parameter passed to `spawn` from the parent. Retrieve
- * it with the`process.argv0` property instead.
+ * Node.js overwrites `argv[0]` with `process.execPath` on startup, so `process.argv[0]` in a Node.js child process will not match the `argv0` parameter passed to `spawn` from the parent. Retrieve
+ * it with the `process.argv0` property instead.
  *
- * If the `signal` option is enabled, calling `.abort()` on the corresponding`AbortController` is similar to calling `.kill()` on the child process except
+ * If the `signal` option is enabled, calling `.abort()` on the corresponding `AbortController` is similar to calling `.kill()` on the child process except
  * the error passed to the callback will be an `AbortError`:
  *
  * ```js

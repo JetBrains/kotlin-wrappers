@@ -3,5 +3,5 @@
 package typescript
 
 sealed external interface FileWatcher {
-    fun close()
+    fun close(): Unit
 }

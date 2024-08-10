@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * A representation of a directory entry, which can be a file or a subdirectory
  * within the directory, as returned by reading from an `fs.Dir`. The
@@ -14,7 +13,6 @@ package node.fs
  * the `withFileTypes` option set to `true`, the resulting array is filled with `fs.Dirent` objects, rather than strings or `Buffer` s.
  * @since v10.10.0
  */
-
 external class Dirent {
     /**
      * Returns `true` if the `fs.Dirent` object describes a regular file.
@@ -69,7 +67,14 @@ external class Dirent {
 
     /**
      * The base path that this `fs.Dirent` object refers to.
+     * @since v20.12.0
+     */
+    var parentPath: String
+
+    /**
+     * Alias for `dirent.parentPath`.
      * @since v20.1.0
+     * @deprecated Since v20.12.0
      */
     var path: String
 }

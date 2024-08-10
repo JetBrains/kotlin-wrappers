@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Renames the file from `oldPath` to `newPath`. Returns `undefined`.
  *

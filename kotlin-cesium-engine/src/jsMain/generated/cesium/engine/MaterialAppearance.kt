@@ -2,14 +2,9 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 
 /**
  * An appearance for arbitrary geometry (as opposed to [EllipsoidSurfaceAppearance], for example)
@@ -31,7 +26,9 @@ import js.objects.jso
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MaterialAppearance.html">Online Documentation</a>
  */
-external class MaterialAppearance(options: ConstructorOptions? = definedExternally) {
+external class MaterialAppearance(
+    options: ConstructorOptions? = definedExternally,
+) {
     /**
      * @property [flat] When `true`, flat shading is used in the fragment shader, which means lighting is not taking into account.
      *   Default value - `false`
@@ -201,8 +198,3 @@ external class MaterialAppearance(options: ConstructorOptions? = definedExternal
     }
 
 }
-
-inline fun MaterialAppearance(
-    block: MaterialAppearance.ConstructorOptions.() -> Unit,
-): MaterialAppearance =
-    MaterialAppearance(options = jso(block))

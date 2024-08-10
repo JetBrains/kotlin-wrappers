@@ -2,22 +2,19 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 
 /**
  * A spline that uses spherical linear (slerp) interpolation to create a quaternion curve.
  * The generated curve is in the class C<sup>1</sup>.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/QuaternionSpline.html">Online Documentation</a>
  */
-external class QuaternionSpline(options: ConstructorOptions) {
+external class QuaternionSpline(
+    options: ConstructorOptions,
+) {
     /**
      * @property [times] An array of strictly increasing, unit-less, floating-point times at each point.
      *   The values are in no way connected to the clock time. They are the parameterization for the curve.
@@ -78,8 +75,3 @@ external class QuaternionSpline(options: ConstructorOptions) {
         result: Quaternion? = definedExternally,
     ): Quaternion
 }
-
-inline fun QuaternionSpline(
-    block: QuaternionSpline.ConstructorOptions.() -> Unit,
-): QuaternionSpline =
-    QuaternionSpline(options = jso(block))

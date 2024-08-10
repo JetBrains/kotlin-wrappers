@@ -2,10 +2,10 @@
 
 package web.gpu
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GPURenderPassColorAttachment {
+external interface GPURenderPassColorAttachment {
     var view: GPUTextureView
     var resolveTarget: GPUTextureView?
     var clearValue: GPUColor?

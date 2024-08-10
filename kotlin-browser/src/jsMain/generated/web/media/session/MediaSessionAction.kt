@@ -3,9 +3,7 @@
 package web.media.session
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface MediaSessionAction {
     companion object {
         @JsValue("nexttrack")

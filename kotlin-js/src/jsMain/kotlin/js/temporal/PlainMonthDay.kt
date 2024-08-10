@@ -2,7 +2,7 @@
 
 package js.temporal
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * A `Temporal.PlainMonthDay` represents a particular day on the calendar, but

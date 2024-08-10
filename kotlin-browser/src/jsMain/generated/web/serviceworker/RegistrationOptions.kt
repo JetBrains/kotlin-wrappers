@@ -2,11 +2,11 @@
 
 package web.serviceworker
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.workers.WorkerType
 
 @JsPlainObject
-sealed external interface RegistrationOptions {
+external interface RegistrationOptions {
     var scope: String?
     var type: WorkerType?
     var updateViaCache: ServiceWorkerUpdateViaCache?

@@ -4,7 +4,6 @@
 
 package react.router
 
-
 /**
  * Returns the context (if provided) for the child route at this level of the route
  * hierarchy.

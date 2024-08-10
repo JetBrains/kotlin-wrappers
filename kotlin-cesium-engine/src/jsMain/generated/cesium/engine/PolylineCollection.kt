@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 /**
@@ -172,8 +168,3 @@ external class PolylineCollection {
      */
     fun destroy()
 }
-
-inline fun PolylineCollection(
-    block: PolylineCollection.() -> Unit,
-): PolylineCollection =
-    PolylineCollection().apply(block)

@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 
 /**
  * A description of a polyline modeled as a line strip; the first two positions define a line segment,
@@ -28,7 +23,9 @@ import js.objects.jso
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SimplePolylineGeometry.html">Online Documentation</a>
  */
-external class SimplePolylineGeometry(options: ConstructorOptions) {
+external class SimplePolylineGeometry(
+    options: ConstructorOptions,
+) {
     /**
      * @property [positions] An array of [Cartesian3] defining the positions in the polyline as a line strip.
      * @property [colors] An Array of [Color] defining the per vertex or per segment colors.
@@ -39,7 +36,7 @@ external class SimplePolylineGeometry(options: ConstructorOptions) {
      * @property [granularity] The distance, in radians, between each latitude and longitude if options.arcType is not ArcType.NONE. Determines the number of positions in the buffer.
      *   Default value - [Math.RADIANS_PER_DEGREE]
      * @property [ellipsoid] The ellipsoid to be used as a reference.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      */
     @JsPlainObject
     sealed interface ConstructorOptions {
@@ -97,8 +94,3 @@ external class SimplePolylineGeometry(options: ConstructorOptions) {
         fun createGeometry(simplePolylineGeometry: SimplePolylineGeometry): Geometry?
     }
 }
-
-inline fun SimplePolylineGeometry(
-    block: SimplePolylineGeometry.ConstructorOptions.() -> Unit,
-): SimplePolylineGeometry =
-    SimplePolylineGeometry(options = jso(block))

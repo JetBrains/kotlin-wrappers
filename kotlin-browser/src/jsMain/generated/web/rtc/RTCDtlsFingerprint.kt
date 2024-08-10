@@ -2,10 +2,10 @@
 
 package web.rtc
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface RTCDtlsFingerprint {
+external interface RTCDtlsFingerprint {
     var algorithm: String?
     var value: String?
 }

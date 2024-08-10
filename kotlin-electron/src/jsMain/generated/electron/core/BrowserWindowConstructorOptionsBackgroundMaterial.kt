@@ -2,8 +2,6 @@
 
 package electron.core
 
-
-@seskar.js.JsVirtual
 sealed external interface BrowserWindowConstructorOptionsBackgroundMaterial {
     companion object {
         @seskar.js.JsValue("auto")

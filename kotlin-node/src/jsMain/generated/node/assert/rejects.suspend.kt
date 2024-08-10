@@ -16,18 +16,18 @@ suspend fun rejects(block: () -> Promise<Any?>): Unit =
  * calls the function and awaits the returned promise to complete. It will then
  * check that the promise is rejected.
  *
- * If `asyncFn` is a function and it throws an error synchronously,`assert.rejects()` will return a rejected `Promise` with that error. If the
- * function does not return a promise, `assert.rejects()` will return a rejected`Promise` with an `ERR_INVALID_RETURN_VALUE` error. In both cases the error
- * handler is skipped.
+ * If `asyncFn` is a function and it throws an error synchronously, `assert.rejects()` will return a rejected `Promise` with that error. If the
+ * function does not return a promise, `assert.rejects()` will return a rejected `Promise` with an [ERR_INVALID_RETURN_VALUE](https://nodejs.org/docs/latest-v20.x/api/errors.html#err_invalid_return_value)
+ * error. In both cases the error handler is skipped.
  *
  * Besides the async nature to await the completion behaves identically to {@link throws}.
  *
  * If specified, `error` can be a [`Class`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes),
  * [`RegExp`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions), a validation function,
  * an object where each property will be tested for, or an instance of error where
- * each property will be tested for including the non-enumerable `message` and`name` properties.
+ * each property will be tested for including the non-enumerable `message` and `name` properties.
  *
- * If specified, `message` will be the message provided by the `AssertionError` if the `asyncFn` fails to reject.
+ * If specified, `message` will be the message provided by the `{@link AssertionError}` if the `asyncFn` fails to reject.
  *
  * ```js
  * import assert from 'node:assert/strict';
@@ -69,10 +69,9 @@ suspend fun rejects(block: () -> Promise<Any?>): Unit =
  * });
  * ```
  *
- * `error` cannot be a string. If a string is provided as the second
- * argument, then `error` is assumed to be omitted and the string will be used for`message` instead. This can lead to easy-to-miss mistakes. Please read the
- * example in {@link throws} carefully if using a string as the second
- * argument gets considered.
+ * `error` cannot be a string. If a string is provided as the second argument, then `error` is assumed to
+ * be omitted and the string will be used for `message` instead. This can lead to easy-to-miss mistakes. Please read the
+ * example in {@link throws} carefully if using a string as the second argument gets considered.
  * @since v10.0.0
  */
 
@@ -87,18 +86,18 @@ suspend fun rejects(block: () -> Promise<Any?>, message: String = undefined.unsa
  * calls the function and awaits the returned promise to complete. It will then
  * check that the promise is rejected.
  *
- * If `asyncFn` is a function and it throws an error synchronously,`assert.rejects()` will return a rejected `Promise` with that error. If the
- * function does not return a promise, `assert.rejects()` will return a rejected`Promise` with an `ERR_INVALID_RETURN_VALUE` error. In both cases the error
- * handler is skipped.
+ * If `asyncFn` is a function and it throws an error synchronously, `assert.rejects()` will return a rejected `Promise` with that error. If the
+ * function does not return a promise, `assert.rejects()` will return a rejected `Promise` with an [ERR_INVALID_RETURN_VALUE](https://nodejs.org/docs/latest-v20.x/api/errors.html#err_invalid_return_value)
+ * error. In both cases the error handler is skipped.
  *
  * Besides the async nature to await the completion behaves identically to {@link throws}.
  *
  * If specified, `error` can be a [`Class`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes),
  * [`RegExp`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions), a validation function,
  * an object where each property will be tested for, or an instance of error where
- * each property will be tested for including the non-enumerable `message` and`name` properties.
+ * each property will be tested for including the non-enumerable `message` and `name` properties.
  *
- * If specified, `message` will be the message provided by the `AssertionError` if the `asyncFn` fails to reject.
+ * If specified, `message` will be the message provided by the `{@link AssertionError}` if the `asyncFn` fails to reject.
  *
  * ```js
  * import assert from 'node:assert/strict';
@@ -140,10 +139,9 @@ suspend fun rejects(block: () -> Promise<Any?>, message: String = undefined.unsa
  * });
  * ```
  *
- * `error` cannot be a string. If a string is provided as the second
- * argument, then `error` is assumed to be omitted and the string will be used for`message` instead. This can lead to easy-to-miss mistakes. Please read the
- * example in {@link throws} carefully if using a string as the second
- * argument gets considered.
+ * `error` cannot be a string. If a string is provided as the second argument, then `error` is assumed to
+ * be omitted and the string will be used for `message` instead. This can lead to easy-to-miss mistakes. Please read the
+ * example in {@link throws} carefully if using a string as the second argument gets considered.
  * @since v10.0.0
  */
 
@@ -161,18 +159,18 @@ suspend fun rejects(
  * calls the function and awaits the returned promise to complete. It will then
  * check that the promise is rejected.
  *
- * If `asyncFn` is a function and it throws an error synchronously,`assert.rejects()` will return a rejected `Promise` with that error. If the
- * function does not return a promise, `assert.rejects()` will return a rejected`Promise` with an `ERR_INVALID_RETURN_VALUE` error. In both cases the error
- * handler is skipped.
+ * If `asyncFn` is a function and it throws an error synchronously, `assert.rejects()` will return a rejected `Promise` with that error. If the
+ * function does not return a promise, `assert.rejects()` will return a rejected `Promise` with an [ERR_INVALID_RETURN_VALUE](https://nodejs.org/docs/latest-v20.x/api/errors.html#err_invalid_return_value)
+ * error. In both cases the error handler is skipped.
  *
  * Besides the async nature to await the completion behaves identically to {@link throws}.
  *
  * If specified, `error` can be a [`Class`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes),
  * [`RegExp`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions), a validation function,
  * an object where each property will be tested for, or an instance of error where
- * each property will be tested for including the non-enumerable `message` and`name` properties.
+ * each property will be tested for including the non-enumerable `message` and `name` properties.
  *
- * If specified, `message` will be the message provided by the `AssertionError` if the `asyncFn` fails to reject.
+ * If specified, `message` will be the message provided by the `{@link AssertionError}` if the `asyncFn` fails to reject.
  *
  * ```js
  * import assert from 'node:assert/strict';
@@ -214,10 +212,9 @@ suspend fun rejects(
  * });
  * ```
  *
- * `error` cannot be a string. If a string is provided as the second
- * argument, then `error` is assumed to be omitted and the string will be used for`message` instead. This can lead to easy-to-miss mistakes. Please read the
- * example in {@link throws} carefully if using a string as the second
- * argument gets considered.
+ * `error` cannot be a string. If a string is provided as the second argument, then `error` is assumed to
+ * be omitted and the string will be used for `message` instead. This can lead to easy-to-miss mistakes. Please read the
+ * example in {@link throws} carefully if using a string as the second argument gets considered.
  * @since v10.0.0
  */
 
@@ -232,18 +229,18 @@ suspend fun rejects(block: Promise<Any?>): Unit =
  * calls the function and awaits the returned promise to complete. It will then
  * check that the promise is rejected.
  *
- * If `asyncFn` is a function and it throws an error synchronously,`assert.rejects()` will return a rejected `Promise` with that error. If the
- * function does not return a promise, `assert.rejects()` will return a rejected`Promise` with an `ERR_INVALID_RETURN_VALUE` error. In both cases the error
- * handler is skipped.
+ * If `asyncFn` is a function and it throws an error synchronously, `assert.rejects()` will return a rejected `Promise` with that error. If the
+ * function does not return a promise, `assert.rejects()` will return a rejected `Promise` with an [ERR_INVALID_RETURN_VALUE](https://nodejs.org/docs/latest-v20.x/api/errors.html#err_invalid_return_value)
+ * error. In both cases the error handler is skipped.
  *
  * Besides the async nature to await the completion behaves identically to {@link throws}.
  *
  * If specified, `error` can be a [`Class`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes),
  * [`RegExp`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions), a validation function,
  * an object where each property will be tested for, or an instance of error where
- * each property will be tested for including the non-enumerable `message` and`name` properties.
+ * each property will be tested for including the non-enumerable `message` and `name` properties.
  *
- * If specified, `message` will be the message provided by the `AssertionError` if the `asyncFn` fails to reject.
+ * If specified, `message` will be the message provided by the `{@link AssertionError}` if the `asyncFn` fails to reject.
  *
  * ```js
  * import assert from 'node:assert/strict';
@@ -285,10 +282,9 @@ suspend fun rejects(block: Promise<Any?>): Unit =
  * });
  * ```
  *
- * `error` cannot be a string. If a string is provided as the second
- * argument, then `error` is assumed to be omitted and the string will be used for`message` instead. This can lead to easy-to-miss mistakes. Please read the
- * example in {@link throws} carefully if using a string as the second
- * argument gets considered.
+ * `error` cannot be a string. If a string is provided as the second argument, then `error` is assumed to
+ * be omitted and the string will be used for `message` instead. This can lead to easy-to-miss mistakes. Please read the
+ * example in {@link throws} carefully if using a string as the second argument gets considered.
  * @since v10.0.0
  */
 
@@ -303,18 +299,18 @@ suspend fun rejects(block: Promise<Any?>, message: String = undefined.unsafeCast
  * calls the function and awaits the returned promise to complete. It will then
  * check that the promise is rejected.
  *
- * If `asyncFn` is a function and it throws an error synchronously,`assert.rejects()` will return a rejected `Promise` with that error. If the
- * function does not return a promise, `assert.rejects()` will return a rejected`Promise` with an `ERR_INVALID_RETURN_VALUE` error. In both cases the error
- * handler is skipped.
+ * If `asyncFn` is a function and it throws an error synchronously, `assert.rejects()` will return a rejected `Promise` with that error. If the
+ * function does not return a promise, `assert.rejects()` will return a rejected `Promise` with an [ERR_INVALID_RETURN_VALUE](https://nodejs.org/docs/latest-v20.x/api/errors.html#err_invalid_return_value)
+ * error. In both cases the error handler is skipped.
  *
  * Besides the async nature to await the completion behaves identically to {@link throws}.
  *
  * If specified, `error` can be a [`Class`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes),
  * [`RegExp`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions), a validation function,
  * an object where each property will be tested for, or an instance of error where
- * each property will be tested for including the non-enumerable `message` and`name` properties.
+ * each property will be tested for including the non-enumerable `message` and `name` properties.
  *
- * If specified, `message` will be the message provided by the `AssertionError` if the `asyncFn` fails to reject.
+ * If specified, `message` will be the message provided by the `{@link AssertionError}` if the `asyncFn` fails to reject.
  *
  * ```js
  * import assert from 'node:assert/strict';
@@ -356,10 +352,9 @@ suspend fun rejects(block: Promise<Any?>, message: String = undefined.unsafeCast
  * });
  * ```
  *
- * `error` cannot be a string. If a string is provided as the second
- * argument, then `error` is assumed to be omitted and the string will be used for`message` instead. This can lead to easy-to-miss mistakes. Please read the
- * example in {@link throws} carefully if using a string as the second
- * argument gets considered.
+ * `error` cannot be a string. If a string is provided as the second argument, then `error` is assumed to
+ * be omitted and the string will be used for `message` instead. This can lead to easy-to-miss mistakes. Please read the
+ * example in {@link throws} carefully if using a string as the second argument gets considered.
  * @since v10.0.0
  */
 

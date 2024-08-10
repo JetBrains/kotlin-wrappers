@@ -9,7 +9,6 @@ import node.asyncHooks.AsyncResource
 /**
  * @since v8.5.0
  */
-
 external class PerformanceObserver : AsyncResource {
     constructor (callback: PerformanceObserverCallback)
 
@@ -20,7 +19,7 @@ external class PerformanceObserver : AsyncResource {
     fun disconnect(): Unit
 
     /**
-     * Subscribes the `PerformanceObserver` instance to notifications of new `PerformanceEntry` instances identified either by `options.entryTypes`or `options.type`:
+     * Subscribes the `PerformanceObserver` instance to notifications of new `PerformanceEntry` instances identified either by `options.entryTypes` or `options.type`:
      *
      * ```js
      * const {
@@ -41,7 +40,7 @@ external class PerformanceObserver : AsyncResource {
     fun observe(options: PerformanceObserverObserveTypesOptions): Unit
 
     /**
-     * Subscribes the `PerformanceObserver` instance to notifications of new `PerformanceEntry` instances identified either by `options.entryTypes`or `options.type`:
+     * Subscribes the `PerformanceObserver` instance to notifications of new `PerformanceEntry` instances identified either by `options.entryTypes` or `options.type`:
      *
      * ```js
      * const {

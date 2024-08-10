@@ -3,9 +3,7 @@
 package actions.http.client
 
 import seskar.js.JsIntValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface HttpCodes {
     companion object {
         @JsIntValue(200)

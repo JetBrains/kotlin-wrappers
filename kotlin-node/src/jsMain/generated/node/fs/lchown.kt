@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Set the owner of the symbolic link. No arguments other than a possible
  * exception are given to the completion callback.

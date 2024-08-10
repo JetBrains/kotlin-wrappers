@@ -3,9 +3,7 @@
 package actions.core
 
 import seskar.js.JsIntValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface ExitCode {
     companion object {
         /**

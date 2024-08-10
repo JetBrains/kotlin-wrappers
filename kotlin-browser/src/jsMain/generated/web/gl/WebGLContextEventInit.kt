@@ -2,7 +2,7 @@
 
 package web.gl
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.events.EventInit
 
 @JsPlainObject

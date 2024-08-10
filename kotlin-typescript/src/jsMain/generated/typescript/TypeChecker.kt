@@ -2,63 +2,28 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 sealed external interface TypeChecker {
-    fun getTypeOfSymbolAtLocation(
-        symbol: Symbol,
-        node: Node,
-    ): Type
-
+    fun getTypeOfSymbolAtLocation(symbol: Symbol, node: Node): Type
     fun getTypeOfSymbol(symbol: Symbol): Type
     fun getDeclaredTypeOfSymbol(symbol: Symbol): Type
-    fun getPropertiesOfType(type: Type): ReadonlyArray<Symbol>
-    fun getPropertyOfType(
-        type: Type,
-        propertyName: String,
-    ): Symbol?
-
-    fun getPrivateIdentifierPropertyOfType(
-        leftType: Type,
-        name: String,
-        location: Node,
-    ): Symbol?
-
-    fun getIndexInfoOfType(
-        type: Type,
-        kind: IndexKind,
-    ): IndexInfo?
-
-    fun getIndexInfosOfType(type: Type): ReadonlyArray<IndexInfo>
-    var getIndexInfosOfIndexSymbol: (indexSymbol: Symbol) -> ReadonlyArray<IndexInfo>
-    fun getSignaturesOfType(
-        type: Type,
-        kind: SignatureKind,
-    ): ReadonlyArray<Signature>
-
-    fun getIndexTypeOfType(
-        type: Type,
-        kind: IndexKind,
-    ): Type?
-
-    fun getBaseTypes(type: InterfaceType): ReadonlyArray<BaseType>
+    fun getPropertiesOfType(type: Type): js.array.ReadonlyArray<Symbol>
+    fun getPropertyOfType(type: Type, propertyName: String): Symbol?
+    fun getPrivateIdentifierPropertyOfType(leftType: Type, name: String, location: Node): Symbol?
+    fun getIndexInfoOfType(type: Type, kind: IndexKind): IndexInfo?
+    fun getIndexInfosOfType(type: Type): js.array.ReadonlyArray<IndexInfo>
+    var getIndexInfosOfIndexSymbol: (indexSymbol: Symbol) -> js.array.ReadonlyArray<IndexInfo>
+    fun getSignaturesOfType(type: Type, kind: SignatureKind): js.array.ReadonlyArray<Signature>
+    fun getIndexTypeOfType(type: Type, kind: IndexKind): Type?
+    fun getBaseTypes(type: InterfaceType): js.array.ReadonlyArray<BaseType>
     fun getBaseTypeOfLiteralType(type: Type): Type
     fun getWidenedType(type: Type): Type
     fun getReturnTypeOfSignature(signature: Signature): Type
-    fun getNullableType(
-        type: Type,
-        flags: TypeFlags,
-    ): Type
-
+    fun getNullableType(type: Type, flags: TypeFlags): Type
     fun getNonNullableType(type: Type): Type
-    fun getTypeArguments(type: TypeReference): ReadonlyArray<Type>
+    fun getTypeArguments(type: TypeReference): js.array.ReadonlyArray<Type>
 
     /** Note that the resulting nodes cannot be checked. */
-    fun typeToTypeNode(
-        type: Type,
-        enclosingDeclaration: Node?,
-        flags: NodeBuilderFlags?,
-    ): TypeNode?
+    fun typeToTypeNode(type: Type, enclosingDeclaration: Node?, flags: NodeBuilderFlags?): TypeNode?
 
     /** Note that the resulting nodes cannot be checked. */
     fun signatureToSignatureDeclaration(
@@ -66,7 +31,7 @@ sealed external interface TypeChecker {
         kind: SyntaxKind,
         enclosingDeclaration: Node?,
         flags: NodeBuilderFlags?,
-    ): SignatureDeclaration /* SignatureDeclaration & { typeArguments?: NodeArray<TypeNode>; } */?
+    ): (TypeCheckerSignatureToSignatureDeclarationResult)?
 
     /** Note that the resulting nodes cannot be checked. */
     fun indexInfoToIndexSignatureDeclaration(
@@ -112,23 +77,21 @@ sealed external interface TypeChecker {
         flags: NodeBuilderFlags?,
     ): TypeParameterDeclaration?
 
-    fun getSymbolsInScope(
-        location: Node,
-        meaning: SymbolFlags,
-    ): ReadonlyArray<Symbol>
-
+    fun getSymbolsInScope(location: Node, meaning: SymbolFlags): js.array.ReadonlyArray<Symbol>
     fun getSymbolAtLocation(node: Node): Symbol?
     fun getSymbolsOfParameterPropertyDeclaration(
         parameter: ParameterDeclaration,
         parameterName: String,
-    ): ReadonlyArray<Symbol>
+    ): js.array.ReadonlyArray<Symbol>
 
     /**
      * The function returns the value (local variable) symbol of an identifier in the short-hand property assignment.
      * This is necessary as an identifier in short-hand property assignment can contains two meaning: property name and property value.
      */
     fun getShorthandAssignmentValueSymbol(location: Node?): Symbol?
-    fun getExportSpecifierLocalTargetSymbol(location: dynamic /* ExportSpecifier | Identifier */): Symbol?
+    fun getExportSpecifierLocalTargetSymbol(location: ExportSpecifier): Symbol?
+
+    fun getExportSpecifierLocalTargetSymbol(location: Identifier): Symbol?
 
     /**
      * If a symbol is a local symbol with an associated exported symbol, returns the exported symbol.
@@ -170,13 +133,9 @@ sealed external interface TypeChecker {
     ): String
 
     fun getFullyQualifiedName(symbol: Symbol): String
-    fun getAugmentedPropertiesOfType(type: Type): ReadonlyArray<Symbol>
-    fun getRootSymbols(symbol: Symbol): ReadonlyArray<Symbol>
-    fun getSymbolOfExpando(
-        node: Node,
-        allowDeclaration: Boolean,
-    ): Symbol?
-
+    fun getAugmentedPropertiesOfType(type: Type): js.array.ReadonlyArray<Symbol>
+    fun getRootSymbols(symbol: Symbol): js.array.ReadonlyArray<Symbol>
+    fun getSymbolOfExpando(node: Node, allowDeclaration: Boolean): Symbol?
     fun getContextualType(node: Expression): Type?
 
     /**
@@ -186,8 +145,8 @@ sealed external interface TypeChecker {
      */
     fun getResolvedSignature(
         node: CallLikeExpression,
-        candidatesOutArray: ReadonlyArray<Signature> = definedExternally,
-        argumentCount: Int = definedExternally,
+        candidatesOutArray: js.array.ReadonlyArray<Signature> = definedExternally,
+        argumentCount: Double = definedExternally,
     ): Signature?
 
     fun getSignatureFromDeclaration(declaration: SignatureDeclaration): Signature?
@@ -196,26 +155,27 @@ sealed external interface TypeChecker {
     fun isArgumentsSymbol(symbol: Symbol): Boolean
     fun isUnknownSymbol(symbol: Symbol): Boolean
     fun getMergedSymbol(symbol: Symbol): Symbol
-    fun getConstantValue(node: dynamic /* EnumMember | PropertyAccessExpression | ElementAccessExpression */): dynamic /* string | number */
-    fun isValidPropertyAccess(
-        node: dynamic, /* PropertyAccessExpression | QualifiedName | ImportTypeNode */
-        propertyName: String,
-    ): Boolean
+    fun getConstantValue(node: EnumMember): Any? /* string | number | undefined */
+
+    fun getConstantValue(node: PropertyAccessExpression): Any? /* string | number | undefined */
+
+    fun getConstantValue(node: ElementAccessExpression): Any? /* string | number | undefined */
+    fun isValidPropertyAccess(node: PropertyAccessExpression, propertyName: String): Boolean
+
+    fun isValidPropertyAccess(node: QualifiedName, propertyName: String): Boolean
+
+    fun isValidPropertyAccess(node: ImportTypeNode, propertyName: String): Boolean
 
     /** Follow all aliases to get the original symbol. */
     fun getAliasedSymbol(symbol: Symbol): Symbol
 
     /** Follow a *single* alias to get the immediately aliased symbol. */
     fun getImmediateAliasedSymbol(symbol: Symbol): Symbol?
-    fun getExportsOfModule(moduleSymbol: Symbol): ReadonlyArray<Symbol>
-    fun getJsxIntrinsicTagNamesAt(location: Node): ReadonlyArray<Symbol>
+    fun getExportsOfModule(moduleSymbol: Symbol): js.array.ReadonlyArray<Symbol>
+    fun getJsxIntrinsicTagNamesAt(location: Node): js.array.ReadonlyArray<Symbol>
     fun isOptionalParameter(node: ParameterDeclaration): Boolean
-    fun getAmbientModules(): ReadonlyArray<Symbol>
-    fun tryGetMemberInModuleExports(
-        memberName: String,
-        moduleSymbol: Symbol,
-    ): Symbol?
-
+    fun getAmbientModules(): js.array.ReadonlyArray<Symbol>
+    fun tryGetMemberInModuleExports(memberName: String, moduleSymbol: Symbol): Symbol?
     fun getApparentType(type: Type): Type
     fun getBaseConstraintOfType(type: Type): Type?
     fun getDefaultFromTypeParameter(type: Type): Type?
@@ -229,7 +189,7 @@ sealed external interface TypeChecker {
     fun getStringType(): Type
     fun getStringLiteralType(value: String): StringLiteralType
     fun getNumberType(): Type
-    fun getNumberLiteralType(value: Int): NumberLiteralType
+    fun getNumberLiteralType(value: Double): NumberLiteralType
     fun getBigIntType(): Type
     fun getBooleanType(): Type
     fun getFalseType(): Type
@@ -271,10 +231,7 @@ sealed external interface TypeChecker {
      * isTypeAssignableTo(stringType, stringType); // true; string is assignable to string
      * ```
      */
-    fun isTypeAssignableTo(
-        source: Type,
-        target: Type,
-    ): Boolean
+    fun isTypeAssignableTo(source: Type, target: Type): Boolean
 
     /**
      * True if this type is the `Array` or `ReadonlyArray` type from lib.d.ts.
@@ -293,13 +250,7 @@ sealed external interface TypeChecker {
      * True if this type is assignable to `ReadonlyArray<any>`.
      */
     fun isArrayLikeType(type: Type): Boolean
-    fun resolveName(
-        name: String,
-        location: Node?,
-        meaning: SymbolFlags,
-        excludeGlobals: Boolean,
-    ): Symbol?
-
+    fun resolveName(name: String, location: Node?, meaning: SymbolFlags, excludeGlobals: Boolean): Symbol?
     fun getTypePredicateOfSignature(signature: Signature): TypePredicate?
 
     /**
@@ -307,8 +258,5 @@ sealed external interface TypeChecker {
      * if the cancellation token is triggered. Typically, if it is used for error checking
      * and the operation is cancelled, then it should be discarded, otherwise it is safe to keep.
      */
-    fun <T> runWithCancellationToken(
-        token: CancellationToken,
-        cb: (checker: TypeChecker) -> T,
-    ): T
+    fun <T> runWithCancellationToken(token: CancellationToken, cb: (checker: TypeChecker) -> T): T
 }

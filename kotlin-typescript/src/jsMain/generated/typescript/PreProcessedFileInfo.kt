@@ -2,13 +2,11 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 sealed external interface PreProcessedFileInfo {
-    var referencedFiles: ReadonlyArray<FileReference>
-    var typeReferenceDirectives: ReadonlyArray<FileReference>
-    var libReferenceDirectives: ReadonlyArray<FileReference>
-    var importedFiles: ReadonlyArray<FileReference>
-    var ambientExternalModules: ReadonlyArray<String>?
+    var referencedFiles: js.array.ReadonlyArray<FileReference>
+    var typeReferenceDirectives: js.array.ReadonlyArray<FileReference>
+    var libReferenceDirectives: js.array.ReadonlyArray<FileReference>
+    var importedFiles: js.array.ReadonlyArray<FileReference>
+    var ambientExternalModules: js.array.ReadonlyArray<String>?
     var isLibFile: Boolean
 }

@@ -4,7 +4,6 @@
 
 package node.crypto
 
-
 /**
  * Node.js uses a `KeyObject` class to represent a symmetric or asymmetric key,
  * and each kind of key exposes different functions. The {@link createSecretKey}, {@link createPublicKey} and {@link createPrivateKey} methods are used to create `KeyObject`instances. `KeyObject`
@@ -18,7 +17,6 @@ package node.crypto
  * be listed in the `transferList` argument.
  * @since v11.6.0
  */
-
 external class KeyObject {
     /**
      * For asymmetric keys, this property represents the type of the key. Supported key
@@ -107,5 +105,4 @@ external class KeyObject {
          */
         fun from(key: web.crypto.CryptoKey): KeyObject
     }
-
 }

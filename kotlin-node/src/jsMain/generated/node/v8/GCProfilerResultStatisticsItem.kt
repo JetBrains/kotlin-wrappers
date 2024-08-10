@@ -2,7 +2,6 @@
 
 package node.v8
 
-
 sealed external interface GCProfilerResultStatisticsItem {
     var gcType: String
     var cost: Double

@@ -4,7 +4,6 @@
 
 package node.net
 
-
 /**
  * > Stability: 2 - Stable
  *
@@ -17,7 +16,7 @@ package node.net
  * ```js
  * const net = require('node:net');
  * ```
- * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/net.js)
+ * @see [source](https://github.com/nodejs/node/blob/v20.13.1/lib/net.js)
  */
 
 

@@ -4,6 +4,7 @@ package web.html
 
 import web.dom.HTMLOrSVGScriptElement
 import web.http.CrossOrigin
+import web.http.FetchPriority
 import web.http.ReferrerPolicy
 
 /**
@@ -35,7 +36,7 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/fetchPriority)
      */
-    var fetchPriority: String
+    var fetchPriority: FetchPriority
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/integrity)

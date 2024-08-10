@@ -6,8 +6,8 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.core.Void
-import js.objects.JsPlainObject
 import js.promise.Promise
+import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync
 
 /**
@@ -121,6 +121,6 @@ private constructor() {
     @JsPlainObject
     sealed interface AttributeFilter {
         var name: String
-        var values: dynamic
+        var values: ReadonlyArray<Comparable<*>> /* string[] | number[] */
     }
 }

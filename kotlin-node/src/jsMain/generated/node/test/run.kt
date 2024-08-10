@@ -4,9 +4,8 @@
 
 package node.test
 
-
 /**
- * **Note:**`shard` is used to horizontally parallelize test running across
+ * **Note:** `shard` is used to horizontally parallelize test running across
  * machines or processes, ideal for large-scale executions across varied
  * environments. It's incompatible with `watch` mode, tailored for rapid
  * code iteration by automatically rerunning tests on file changes.

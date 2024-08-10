@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Set the owner for the path. Returns `undefined`.
  *

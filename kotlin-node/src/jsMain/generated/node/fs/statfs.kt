@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Asynchronous [`statfs(2)`](http://man7.org/linux/man-pages/man2/statfs.2.html). Returns information about the mounted file system which
  * contains `path`. The callback gets two arguments `(err, stats)` where `stats`is an `fs.StatFs` object.

@@ -2,10 +2,10 @@
 
 package web.payment
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface PaymentDetailsInit :
+external interface PaymentDetailsInit :
     PaymentDetailsBase {
     var id: String?
     var total: PaymentItem

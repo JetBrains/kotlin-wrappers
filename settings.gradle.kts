@@ -23,6 +23,17 @@ dependencyResolutionManagement {
     repositories {
         mavenCentral()
     }
+
+    versionCatalogs {
+        create("kotlinx") {
+            val coroutinesVersion = extra["kotlinx-coroutines.version"] as String
+            library("coroutines-core", "org.jetbrains.kotlinx", "kotlinx-coroutines-core").version(coroutinesVersion)
+            library("coroutines-test", "org.jetbrains.kotlinx", "kotlinx-coroutines-test").version(coroutinesVersion)
+
+            val htmlVersion = extra["kotlinx-html.version"] as String
+            library("html-js", "org.jetbrains.kotlinx", "kotlinx-html-js").version(htmlVersion)
+        }
+    }
 }
 
 // Examples
@@ -120,9 +131,6 @@ include("kotlin-react-legacy")
 // Kotlin/JS: React Popper wrappers
 include("kotlin-react-popper")
 
-// Kotlin/JS: React Redux wrappers
-include("kotlin-react-redux")
-
 // Kotlin/JS: React Router wrappers
 include("kotlin-react-router")
 
@@ -135,14 +143,8 @@ include("kotlin-react-select")
 // Kotlin/JS: React Use wrappers
 include("kotlin-react-use")
 
-// Kotlin/JS: Redux wrappers
-include("kotlin-redux")
-
 // Kotlin/JS: React Router wrappers
 include("kotlin-remix-run-router")
-
-// Kotlin/JS: Ring UI wrappers
-include("kotlin-ring-ui")
 
 // Kotlin/JS: a reimplementation of kotlin-styled in pure Kotlin, without styled-components
 include("kotlin-styled-next")

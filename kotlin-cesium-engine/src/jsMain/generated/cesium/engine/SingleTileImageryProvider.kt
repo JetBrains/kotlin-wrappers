@@ -2,17 +2,12 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
 import js.core.Void
-import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
+import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync
 
 /**
@@ -21,7 +16,9 @@ import seskar.js.JsAsync
  * and will be rendered using a [GeographicTilingScheme].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SingleTileImageryProvider.html">Online Documentation</a>
  */
-external class SingleTileImageryProvider(options: ConstructorOptions) {
+external class SingleTileImageryProvider(
+    options: ConstructorOptions,
+) {
     /**
      * Gets the URL of the single, top-level imagery tile.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SingleTileImageryProvider.html#url">Online Documentation</a>
@@ -196,25 +193,25 @@ external class SingleTileImageryProvider(options: ConstructorOptions) {
         @JsAsync
         suspend fun fromUrl(
             url: Resource,
-            options: dynamic = definedExternally,
+            options: fromUrlOptions? = definedExternally,
         ): SingleTileImageryProvider
 
         @JsName("fromUrl")
         fun fromUrlAsync(
             url: Resource,
-            options: dynamic = definedExternally,
+            options: fromUrlOptions? = definedExternally,
         ): Promise<SingleTileImageryProvider>
 
         @JsAsync
         suspend fun fromUrl(
             url: String,
-            options: dynamic = definedExternally,
+            options: fromUrlOptions? = definedExternally,
         ): SingleTileImageryProvider
 
         @JsName("fromUrl")
         fun fromUrlAsync(
             url: String,
-            options: dynamic = definedExternally,
+            options: fromUrlOptions? = definedExternally,
         ): Promise<SingleTileImageryProvider>
 
         /**
@@ -233,8 +230,3 @@ external class SingleTileImageryProvider(options: ConstructorOptions) {
         }
     }
 }
-
-inline fun SingleTileImageryProvider(
-    block: SingleTileImageryProvider.ConstructorOptions.() -> Unit,
-): SingleTileImageryProvider =
-    SingleTileImageryProvider(options = jso(block))

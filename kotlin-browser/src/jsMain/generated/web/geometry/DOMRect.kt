@@ -17,6 +17,9 @@ external class DOMRect(
     override var y: Double
 
     companion object {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRect/fromRect_static)
+         */
         fun fromRect(other: DOMRectInit = definedExternally): DOMRect
         fun fromRect(other: DOMRectReadOnly /* DOMRectInit */): DOMRect
     }

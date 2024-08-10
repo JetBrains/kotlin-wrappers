@@ -4,9 +4,7 @@ package web.uievents
 
 import js.core.Bitmask
 import seskar.js.JsIntValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface MouseButtons :
     Bitmask<MouseButtons> {
     companion object {

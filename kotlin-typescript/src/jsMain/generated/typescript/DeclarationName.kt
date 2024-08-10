@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface DeclarationName /* PropertyName | JsxAttributeName | StringLiteralLike | ElementAccessExpression | BindingPattern | EntityNameExpression */
+sealed external interface DeclarationName : Node

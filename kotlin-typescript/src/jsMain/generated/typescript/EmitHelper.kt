@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface EmitHelper /* ScopedEmitHelper | UnscopedEmitHelper */
+sealed external interface EmitHelper

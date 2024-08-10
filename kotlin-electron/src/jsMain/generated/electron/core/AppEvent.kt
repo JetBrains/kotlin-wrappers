@@ -3,7 +3,6 @@
 package electron.core
 
 
-@seskar.js.JsVirtual
 sealed external interface AppEvent {
     sealed interface ACCESSIBILITY_SUPPORT_CHANGED : node.events.LegacyEventType
     sealed interface ACTIVATE : node.events.LegacyEventType

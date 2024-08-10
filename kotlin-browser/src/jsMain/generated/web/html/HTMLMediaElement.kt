@@ -131,12 +131,8 @@ sealed external class HTMLMediaElement :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/encrypted_event)
      */
-    var onencrypted: EventHandler<MediaEncryptedEvent, HTMLMediaElement>?
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/waitingforkey_event)
-     */
-    var onwaitingforkey: EventHandler<Event, HTMLMediaElement>?
+    var onencrypted: EventHandler<MediaEncryptedEvent, HTMLMediaElement, HTMLMediaElement>?
+    var onwaitingforkey: EventHandler<Event, HTMLMediaElement, HTMLMediaElement>?
 
     /**
      * Gets a flag that specifies whether playback is paused.
@@ -154,8 +150,6 @@ sealed external class HTMLMediaElement :
 
     /**
      * Gets TimeRanges for the current media resource that has been played.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/played)
      */
     val played: TimeRanges
 
@@ -190,8 +184,6 @@ sealed external class HTMLMediaElement :
 
     /**
      * Gets a flag that indicates whether the client is currently moving to a new playback position in the media resource.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/seeking)
      */
     val seeking: Boolean
 
@@ -225,10 +217,6 @@ sealed external class HTMLMediaElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/volume)
      */
     var volume: Double
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/addTextTrack)
-     */
     fun addTextTrack(
         kind: TextTrackKind,
         label: String = definedExternally,

@@ -3,7 +3,6 @@
 package electron.core
 
 
-@seskar.js.JsVirtual
 sealed external interface DownloadItemEvent {
     sealed interface DONE : node.events.LegacyEventType
     sealed interface UPDATED : node.events.LegacyEventType

@@ -4,6 +4,7 @@
 
 package actions.cache
 
+import js.errors.JsError
 import js.promise.Promise
 import seskar.js.JsAsync
 
@@ -14,7 +15,7 @@ external suspend fun <T> retry(
     getStatusCode: (arg0: T) -> Number?,
     maxAttempts: Number = definedExternally,
     delay: Number = definedExternally,
-    onError: ((arg0: Error) -> T?)? = definedExternally,
+    onError: ((arg0: JsError) -> T?)? = definedExternally,
 ): T
 
 @JsName("retry")
@@ -24,5 +25,5 @@ external fun <T> retryAsync(
     getStatusCode: (arg0: T) -> Number?,
     maxAttempts: Number = definedExternally,
     delay: Number = definedExternally,
-    onError: ((arg0: Error) -> T?)? = definedExternally,
+    onError: ((arg0: JsError) -> T?)? = definedExternally,
 ): Promise<T>

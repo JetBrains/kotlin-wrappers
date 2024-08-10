@@ -2,10 +2,10 @@
 
 package web.audio
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface DynamicsCompressorOptions :
+external interface DynamicsCompressorOptions :
     AudioNodeOptions {
     var attack: Float?
     var knee: Float?

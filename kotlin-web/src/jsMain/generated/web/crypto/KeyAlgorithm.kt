@@ -2,9 +2,9 @@
 
 package web.crypto
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface KeyAlgorithm {
+external interface KeyAlgorithm {
     var name: String
 }

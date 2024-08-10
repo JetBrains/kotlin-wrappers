@@ -2,8 +2,8 @@
 
 package web.uievents
 
-import js.objects.JsPlainObject
 import js.objects.jso
+import kotlinx.js.JsPlainObject
 import web.events.EventInitMutable
 import web.window.Window
 

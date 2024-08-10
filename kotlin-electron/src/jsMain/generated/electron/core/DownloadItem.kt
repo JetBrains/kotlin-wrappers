@@ -6,7 +6,6 @@ package electron.core
 
 import node.events.EventEmitter as NodeEventEmitter
 
-
 external class DownloadItem : NodeEventEmitter {
 // Docs: https://electronjs.org/docs/api/download-item
     /**

@@ -8,6 +8,13 @@ package web.svg
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedEnumeration)
  */
 sealed external class SVGAnimatedEnumeration<T> {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedEnumeration/animVal)
+     */
     val animVal: T
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedEnumeration/baseVal)
+     */
     var baseVal: T
 }

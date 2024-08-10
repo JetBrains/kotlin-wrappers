@@ -3,11 +3,9 @@
 package mui.material
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
 typealias TableCellBaseProps = react.dom.html.TdHTMLAttributes<web.html.HTMLTableCellElement>
 
-@JsVirtual
 sealed external interface SortDirection {
     companion object {
         @JsValue("asc")
@@ -21,7 +19,6 @@ sealed external interface SortDirection {
     }
 }
 
-@JsVirtual
 sealed external interface TableCellVariant {
     companion object {
         @JsValue("head")
@@ -37,7 +34,6 @@ sealed external interface TableCellVariant {
 
 typealias TableCellAlign = react.dom.html.TdAlign /* 'inherit' | 'left' | 'center' | 'right' | 'justify' */
 
-@JsVirtual
 sealed external interface TableCellPadding {
     companion object {
         @JsValue("normal")

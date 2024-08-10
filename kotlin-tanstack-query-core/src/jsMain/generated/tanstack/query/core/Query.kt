@@ -4,6 +4,8 @@
 
 package tanstack.query.core
 
+import js.array.ReadonlyArray
+import js.core.Void
 import js.promise.Promise
 
 open external class Query<TQueryFnData, TError, TData, TQueryKey : QueryKey>(config: QueryConfig<TQueryFnData, TError, TData, TQueryKey>) :
@@ -13,7 +15,9 @@ open external class Query<TQueryFnData, TError, TData, TQueryKey : QueryKey>(con
     open var options: QueryOptions<TQueryFnData, TError, TData, TQueryKey, *>
     open var state: QueryState<TData, TError>
     open var isFetchingOptimistic: Boolean
+    open var observers: ReadonlyArray<QueryObserver<*, *, *, *, *>>
     open var meta: QueryMeta?
+    open var promise: Promise<TData>?
     open fun setOptions(options: QueryOptions<TQueryFnData, TError, TData, TQueryKey, *> = definedExternally)
     override fun optionalRemove()
     open fun setData(
@@ -26,7 +30,7 @@ open external class Query<TQueryFnData, TError, TData, TQueryKey : QueryKey>(con
         setStateOptions: SetStateOptions = definedExternally,
     )
 
-    open fun cancel(options: CancelOptions = definedExternally): Promise<Unit>
+    open fun cancel(options: CancelOptions = definedExternally): Promise<Void>
     override fun destroy()
     open fun reset()
     open fun isActive(): Boolean
@@ -41,6 +45,6 @@ open external class Query<TQueryFnData, TError, TData, TQueryKey : QueryKey>(con
     open fun invalidate()
     open fun fetch(
         options: QueryOptions<TQueryFnData, TError, TData, TQueryKey, *> = definedExternally,
-        fetchOptions: FetchOptions = definedExternally,
+        fetchOptions: FetchOptions<TQueryFnData> = definedExternally,
     ): Promise<TData>
 }

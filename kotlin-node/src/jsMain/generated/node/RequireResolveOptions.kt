@@ -2,7 +2,6 @@
 
 package node
 
-
 sealed external interface RequireResolveOptions {
     var paths: js.array.ReadonlyArray<String>?
 }

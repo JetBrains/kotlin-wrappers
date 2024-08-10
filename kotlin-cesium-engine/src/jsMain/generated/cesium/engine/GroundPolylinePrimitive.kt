@@ -2,16 +2,11 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.core.Void
-import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
+import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync
 
 /**
@@ -65,7 +60,9 @@ import seskar.js.JsAsync
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GroundPolylinePrimitive.html">Online Documentation</a>
  */
-external class GroundPolylinePrimitive(options: ConstructorOptions? = definedExternally) {
+external class GroundPolylinePrimitive(
+    options: ConstructorOptions? = definedExternally,
+) {
     /**
      * @property [geometryInstances] GeometryInstances containing GroundPolylineGeometry
      * @property [appearance] The Appearance used to render the polyline. Defaults to a white color [Material] on a [PolylineMaterialAppearance].
@@ -250,8 +247,3 @@ external class GroundPolylinePrimitive(options: ConstructorOptions? = definedExt
         fun isSupported(scene: Scene): Boolean
     }
 }
-
-inline fun GroundPolylinePrimitive(
-    block: GroundPolylinePrimitive.ConstructorOptions.() -> Unit,
-): GroundPolylinePrimitive =
-    GroundPolylinePrimitive(options = jso(block))

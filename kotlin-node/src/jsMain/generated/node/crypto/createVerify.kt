@@ -4,11 +4,10 @@
 
 package node.crypto
 
-
 /**
  * Creates and returns a `Verify` object that uses the given algorithm.
  * Use {@link getHashes} to obtain an array of names of the available
- * signing algorithms. Optional `options` argument controls the`stream.Writable` behavior.
+ * signing algorithms. Optional `options` argument controls the `stream.Writable` behavior.
  *
  * In some cases, a `Verify` instance can be created using the name of a signature
  * algorithm, such as `'RSA-SHA256'`, instead of a digest algorithm. This will use

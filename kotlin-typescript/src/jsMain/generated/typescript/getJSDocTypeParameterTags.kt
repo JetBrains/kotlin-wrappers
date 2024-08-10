@@ -4,8 +4,6 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 /**
  * Gets the JSDoc type parameter tags for the node if present.
  *
@@ -16,4 +14,4 @@ import js.array.ReadonlyArray
  * node are returned first, so in the previous example, the template
  * tag on the containing function expression would be first.
  */
-external fun getJSDocTypeParameterTags(param: TypeParameterDeclaration): ReadonlyArray<JSDocTemplateTag>
+external fun getJSDocTypeParameterTags(param: TypeParameterDeclaration): js.array.ReadonlyArray<JSDocTemplateTag>

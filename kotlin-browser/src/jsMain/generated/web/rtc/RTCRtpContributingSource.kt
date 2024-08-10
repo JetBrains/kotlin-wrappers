@@ -2,11 +2,11 @@
 
 package web.rtc
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.time.DOMHighResTimeStamp
 
 @JsPlainObject
-sealed external interface RTCRtpContributingSource {
+external interface RTCRtpContributingSource {
     var audioLevel: Double?
     var rtpTimestamp: Int
     var source: Int

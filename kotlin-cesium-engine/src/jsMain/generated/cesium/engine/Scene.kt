@@ -2,16 +2,11 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
+import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync
 import web.dom.Element
 import web.html.HTMLCanvasElement
@@ -30,14 +25,18 @@ import web.html.HTMLCanvasElement
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html">Online Documentation</a>
  */
-external class Scene(options: ConstructorOptions) {
+external class Scene(
+    options: ConstructorOptions,
+) {
     /**
      * @property [canvas] The HTML canvas element to create the scene for.
      * @property [contextOptions] Context and WebGL creation properties.
      * @property [creditContainer] The HTML element in which the credits will be displayed.
      * @property [creditViewport] The HTML element in which to display the credit popup.  If not specified, the viewport will be a added as a sibling of the canvas.
+     * @property [ellipsoid] The default ellipsoid. If not specified, the default ellipsoid is used.
+     *   Default value - [Ellipsoid.default]
      * @property [mapProjection] The map projection to use in 2D and Columbus View modes.
-     *   Default value - [GeographicProjection()][GeographicProjection]
+     *   Default value - [GeographicProjection(options.ellipsoid)][GeographicProjection]
      * @property [orderIndependentTranslucency] If true and the configuration supports it, use order independent translucency.
      *   Default value - `true`
      * @property [scene3DOnly] If true, optimizes memory use and performance for 3D mode but disables the ability to use 2D or Columbus View.
@@ -61,6 +60,7 @@ external class Scene(options: ConstructorOptions) {
         var contextOptions: ContextOptions?
         var creditContainer: Element?
         var creditViewport: Element?
+        var ellipsoid: Ellipsoid?
         var mapProjection: MapProjection?
         var orderIndependentTranslucency: Boolean?
         var scene3DOnly: Boolean?
@@ -292,6 +292,8 @@ external class Scene(options: ConstructorOptions) {
     /**
      * Blends the atmosphere to geometry far from the camera for horizon views. Allows for additional
      * performance improvements by rendering less geometry and dispatching less terrain requests.
+     *
+     * Disbaled by default if an ellipsoid other than WGS84 is used.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#fog">Online Documentation</a>
      */
     var fog: Fog
@@ -432,6 +434,12 @@ external class Scene(options: ConstructorOptions) {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#specularEnvironmentMapsSupported">Online Documentation</a>
      */
     val specularEnvironmentMapsSupported: Boolean
+
+    /**
+     * The ellipsoid.  If not specified, the default ellipsoid is used.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#ellipsoid">Online Documentation</a>
+     */
+    val ellipsoid: Ellipsoid
 
     /**
      * Gets or sets the depth-test ellipsoid.
@@ -897,7 +905,6 @@ external class Scene(options: ConstructorOptions) {
      * ```
      * // Output the canvas position of longitude/latitude (0, 0) every time the mouse moves.
      * const scene = widget.scene;
-     * const ellipsoid = scene.globe.ellipsoid;
      * const position = Cartesian3.fromDegrees(0.0, 0.0);
      * const handler = new ScreenSpaceEventHandler(scene.canvas);
      * handler.setInputAction(function(movement) {
@@ -998,8 +1005,3 @@ external class Scene(options: ConstructorOptions) {
         var defaultLogDepthBuffer: Any
     }
 }
-
-inline fun Scene(
-    block: Scene.ConstructorOptions.() -> Unit,
-): Scene =
-    Scene(options = jso(block))

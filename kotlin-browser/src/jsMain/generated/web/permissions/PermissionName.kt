@@ -3,13 +3,14 @@
 package web.permissions
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface PermissionName {
     companion object {
         @JsValue("geolocation")
         val geolocation: PermissionName
+
+        @JsValue("midi")
+        val midi: PermissionName
 
         @JsValue("notifications")
         val notifications: PermissionName
@@ -23,7 +24,7 @@ sealed external interface PermissionName {
         @JsValue("screen-wake-lock")
         val screenWakeLock: PermissionName
 
-        @JsValue("xr-spatial-tracking")
-        val xrSpatialTracking: PermissionName
+        @JsValue("storage-access")
+        val storageAccess: PermissionName
     }
 }

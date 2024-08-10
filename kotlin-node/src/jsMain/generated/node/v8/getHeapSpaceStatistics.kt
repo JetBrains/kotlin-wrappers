@@ -4,7 +4,6 @@
 
 package node.v8
 
-
 /**
  * Returns statistics about the V8 heap spaces, i.e. the segments which make up
  * the V8 heap. Neither the ordering of heap spaces, nor the availability of a

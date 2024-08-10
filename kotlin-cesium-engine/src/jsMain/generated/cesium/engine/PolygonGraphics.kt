@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 /**
@@ -176,8 +172,3 @@ external class PolygonGraphics {
      */
     fun merge(source: PolygonGraphics)
 }
-
-inline fun PolygonGraphics(
-    block: PolygonGraphics.() -> Unit,
-): PolygonGraphics =
-    PolygonGraphics().apply(block)

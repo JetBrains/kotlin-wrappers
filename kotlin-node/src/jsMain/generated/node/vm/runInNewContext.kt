@@ -4,7 +4,6 @@
 
 package node.vm
 
-
 /**
  * The `vm.runInNewContext()` first contextifies the given `contextObject` (or
  * creates a new `contextObject` if passed as `undefined`), compiles the `code`,

@@ -2,10 +2,10 @@
 
 package web.animations
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface KeyframeAnimationOptions :
+external interface KeyframeAnimationOptions :
     KeyframeEffectOptions {
     var id: String?
     var timeline: AnimationTimeline?

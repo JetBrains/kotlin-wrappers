@@ -3,10 +3,10 @@
 package web.dom.observers
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface MutationObserverInit {
+external interface MutationObserverInit {
     /**
      * Set to a list of attribute local names (without namespace) if not all attribute mutations need to be observed and attributes is true or omitted.
      */

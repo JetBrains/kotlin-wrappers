@@ -3,15 +3,14 @@
 @file:JsModule("@cesium/engine")
 
 @file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
     "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
 )
 
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
 import js.promise.Promise
+import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync
 
 /**
@@ -22,7 +21,9 @@ import seskar.js.JsAsync
  * @property [name] An optional name for the data source.  This value will be overwritten if a loaded document contains a name.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CzmlDataSource.html">Online Documentation</a>
  */
-external class CzmlDataSource(var name: String = definedExternally) {
+external class CzmlDataSource(
+    var name: String = definedExternally,
+) {
     /**
      * Gets the clock settings defined by the loaded CZML.  If no clock is explicitly
      * defined in the CZML, the combined availability of all objects is returned.  If
@@ -301,9 +302,3 @@ external class CzmlDataSource(var name: String = definedExternally) {
         }
     }
 }
-
-/**
- * Function
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CzmlDataSource.html#.UpdaterFunction">Online Documentation</a>
- */
-typealias UpdaterFunction = (entity: Entity, packet: Any, entityCollection: EntityCollection, sourceUri: String) -> Unit

@@ -2,8 +2,6 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 /**
  * Node in a tree of nested declarations in a file.
  * The top node is always a script or module node.
@@ -20,9 +18,9 @@ sealed external interface NavigationTree {
      * Spans of the nodes that generated this declaration.
      * There will be more than one if this is the result of merging.
      */
-    var spans: ReadonlyArray<TextSpan>
+    var spans: js.array.ReadonlyArray<TextSpan>
     var nameSpan: TextSpan?
 
     /** Present if non-empty */
-    var childItems: ReadonlyArray<NavigationTree>?
+    var childItems: js.array.ReadonlyArray<NavigationTree>?
 }

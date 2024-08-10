@@ -4,7 +4,6 @@
 
 package node.test
 
-
 /**
  * The `node:test` module facilitates the creation of JavaScript tests.
  * To access it:
@@ -25,14 +24,14 @@ package node.test
  *
  * 1. A synchronous function that is considered failing if it throws an exception,
  * and is considered passing otherwise.
- * 2. A function that returns a `Promise` that is considered failing if the`Promise` rejects, and is considered passing if the `Promise` fulfills.
+ * 2. A function that returns a `Promise` that is considered failing if the `Promise` rejects, and is considered passing if the `Promise` fulfills.
  * 3. A function that receives a callback function. If the callback receives any
  * truthy value as its first argument, the test is considered failing. If a
  * falsy value is passed as the first argument to the callback, the test is
  * considered passing. If the test function receives a callback function and
  * also returns a `Promise`, the test will fail.
  *
- * The following example illustrates how tests are written using the`test` module.
+ * The following example illustrates how tests are written using the `test` module.
  *
  * ```js
  * test('synchronous passing test', (t) => {
@@ -83,7 +82,7 @@ package node.test
  *
  * If any tests fail, the process exit code is set to `1`.
  * @since v18.0.0, v16.17.0
- * @see [source](https://github.com/nodejs/node/blob/v20.4.0/lib/test.js)
+ * @see [source](https://github.com/nodejs/node/blob/v20.13.1/lib/test.js)
  */
 
 
@@ -102,5 +101,5 @@ package node.test
  * import test from 'test/reporters';
  * ```
  * @since v19.9.0
- * @see [source](https://github.com/nodejs/node/blob/v20.2.0/lib/test/reporters.js)
+ * @see [source](https://github.com/nodejs/node/blob/v20.13.1/lib/test/reporters.js)
  */

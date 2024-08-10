@@ -2,22 +2,17 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 
 /**
  * A description of a cartographic rectangle on an ellipsoid centered at the origin. Rectangle geometry can be rendered with both [Primitive] and [GroundPrimitive].
  * ```
  * // 1. create a rectangle
  * const rectangle = new RectangleGeometry({
- *   ellipsoid : Ellipsoid.WGS84,
+ *   ellipsoid : Ellipsoid.default,
  *   rectangle : Rectangle.fromDegrees(-80.0, 39.0, -74.0, 42.0),
  *   height : 10000.0
  * });
@@ -25,7 +20,7 @@ import js.objects.jso
  *
  * // 2. create an extruded rectangle without a top
  * const rectangle = new RectangleGeometry({
- *   ellipsoid : Ellipsoid.WGS84,
+ *   ellipsoid : Ellipsoid.default,
  *   rectangle : Rectangle.fromDegrees(-80.0, 39.0, -74.0, 42.0),
  *   height : 10000.0,
  *   extrudedHeight: 300000
@@ -34,13 +29,15 @@ import js.objects.jso
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/RectangleGeometry.html">Online Documentation</a>
  */
-external class RectangleGeometry(options: ConstructorOptions) {
+external class RectangleGeometry(
+    options: ConstructorOptions,
+) {
     /**
      * @property [rectangle] A cartographic rectangle with north, south, east and west properties in radians.
      * @property [vertexFormat] The vertex attributes to be computed.
      *   Default value - [VertexFormat.DEFAULT]
      * @property [ellipsoid] The ellipsoid on which the rectangle lies.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @property [granularity] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
      *   Default value - [Math.RADIANS_PER_DEGREE]
      * @property [height] The distance in meters between the rectangle and the ellipsoid surface.
@@ -114,7 +111,7 @@ external class RectangleGeometry(options: ConstructorOptions) {
         /**
          * @property [rectangle] A cartographic rectangle with north, south, east and west properties in radians.
          * @property [ellipsoid] The ellipsoid on which the rectangle lies.
-         *   Default value - [Ellipsoid.WGS84]
+         *   Default value - [Ellipsoid.default]
          * @property [granularity] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
          *   Default value - [Math.RADIANS_PER_DEGREE]
          * @property [rotation] The rotation of the rectangle, in radians. A positive rotation is counter-clockwise.
@@ -137,8 +134,3 @@ external class RectangleGeometry(options: ConstructorOptions) {
         fun createGeometry(rectangleGeometry: RectangleGeometry): Geometry?
     }
 }
-
-inline fun RectangleGeometry(
-    block: RectangleGeometry.ConstructorOptions.() -> Unit,
-): RectangleGeometry =
-    RectangleGeometry(options = jso(block))

@@ -2,10 +2,10 @@
 
 package web.audio
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface OscillatorOptions :
+external interface OscillatorOptions :
     AudioNodeOptions {
     var detune: Float?
     var frequency: Float?

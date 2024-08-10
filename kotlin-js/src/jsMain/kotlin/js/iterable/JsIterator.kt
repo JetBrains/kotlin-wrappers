@@ -1,10 +1,19 @@
+@file:Suppress(
+    "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+    "INLINE_EXTERNAL_DECLARATION",
+    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+    "DECLARATION_CANT_BE_INLINED",
+    "NOTHING_TO_INLINE",
+)
+
 package js.iterable
 
 import js.array.ReadonlyArray
 
 @JsName("Iterator")
 abstract external class JsIterator<out T> :
-    JsIteratorLike<T> {
+    JsIteratorLike<T>,
+    JsIterable<T> {
 
     fun drop(n: Int): JsIterator<T>
     fun every(predicate: (T) -> Boolean): Boolean
@@ -20,6 +29,9 @@ abstract external class JsIterator<out T> :
     fun some(predicate: (T) -> Boolean): Boolean
     fun take(n: Int): JsIterator<T>
     // fun toArray(): ReadonlyArray<T>
+
+    override inline fun iterator(): Iterator<T> =
+        iteratorFromJsIteratorLike(this)
 
     companion object {
         fun <T> from(source: JsIteratorLike<T>): JsIterator<T>

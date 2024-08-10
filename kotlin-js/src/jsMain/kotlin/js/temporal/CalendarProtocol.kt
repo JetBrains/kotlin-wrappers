@@ -2,8 +2,8 @@ package js.temporal
 
 import js.array.ReadonlyArray
 import js.iterable.JsIterable
-import js.objects.JsPlainObject
 import js.objects.Record
+import kotlinx.js.JsPlainObject
 
 sealed external interface CalendarProtocol
     : CalendarLike {

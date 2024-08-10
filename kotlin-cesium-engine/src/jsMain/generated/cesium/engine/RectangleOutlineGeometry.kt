@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 
 /**
  * A description of the outline of a a cartographic rectangle on an ellipsoid centered at the origin.
@@ -24,11 +19,13 @@ import js.objects.jso
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/RectangleOutlineGeometry.html">Online Documentation</a>
  */
-external class RectangleOutlineGeometry(options: ConstructorOptions) {
+external class RectangleOutlineGeometry(
+    options: ConstructorOptions,
+) {
     /**
      * @property [rectangle] A cartographic rectangle with north, south, east and west properties in radians.
      * @property [ellipsoid] The ellipsoid on which the rectangle lies.
-     *   Default value - [Ellipsoid.WGS84]
+     *   Default value - [Ellipsoid.default]
      * @property [granularity] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
      *   Default value - [Math.RADIANS_PER_DEGREE]
      * @property [height] The distance in meters between the rectangle and the ellipsoid surface.
@@ -93,8 +90,3 @@ external class RectangleOutlineGeometry(options: ConstructorOptions) {
         fun createGeometry(rectangleGeometry: RectangleOutlineGeometry): Geometry?
     }
 }
-
-inline fun RectangleOutlineGeometry(
-    block: RectangleOutlineGeometry.ConstructorOptions.() -> Unit,
-): RectangleOutlineGeometry =
-    RectangleOutlineGeometry(options = jso(block))

@@ -2,8 +2,6 @@
 
 package typescript
 
-sealed external interface ImmediatelyInvokedArrowFunction /* CallExpression & {
-    readonly expression: ParenthesizedExpression & {
-        readonly expression: ArrowFunction;
-    };
-} */
+sealed external interface ImmediatelyInvokedArrowFunction : CallExpression {
+    override val expression: ImmediatelyInvokedArrowFunctionExpression
+}

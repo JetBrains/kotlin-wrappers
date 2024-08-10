@@ -24,7 +24,9 @@ import js.errors.JsError
  * @property [message] The error message for this exception.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/RuntimeError.html">Online Documentation</a>
  */
-external class RuntimeError(override val message: String = definedExternally) : JsError {
+external class RuntimeError(
+    override val message: String = definedExternally,
+) : JsError {
     /**
      * 'RuntimeError' indicating that this exception was thrown due to a runtime error.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/RuntimeError.html#name">Online Documentation</a>

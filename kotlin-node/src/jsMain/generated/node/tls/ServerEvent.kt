@@ -3,7 +3,6 @@
 package node.tls
 
 
-@seskar.js.JsVirtual
 sealed external interface ServerEvent {
     sealed interface TLSCLIENTERROR : node.events.LegacyEventType
     sealed interface NEWSESSION : node.events.LegacyEventType

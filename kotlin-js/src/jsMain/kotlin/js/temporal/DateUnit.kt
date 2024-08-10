@@ -1,9 +1,7 @@
 package js.temporal
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface DateUnit<out T : DateUnit<T>> :
     DateTimeUnit<T> {
     companion object {

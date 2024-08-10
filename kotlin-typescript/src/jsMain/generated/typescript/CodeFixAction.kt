@@ -10,6 +10,6 @@ sealed external interface CodeFixAction : CodeAction {
      * If present, one may call 'getCombinedCodeFix' with this fixId.
      * This may be omitted to indicate that the code fix can't be applied in a group.
      */
-    var fixId: Any?
+    var fixId: (Any)?
     var fixAllDescription: String?
 }

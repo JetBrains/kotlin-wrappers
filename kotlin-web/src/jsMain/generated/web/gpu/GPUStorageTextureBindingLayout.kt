@@ -2,10 +2,10 @@
 
 package web.gpu
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GPUStorageTextureBindingLayout {
+external interface GPUStorageTextureBindingLayout {
     var access: GPUStorageTextureAccess
     var format: GPUTextureFormat
     var viewDimension: GPUTextureViewDimension?

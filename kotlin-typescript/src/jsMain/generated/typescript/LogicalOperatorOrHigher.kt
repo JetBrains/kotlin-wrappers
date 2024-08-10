@@ -2,5 +2,4 @@
 
 package typescript
 
-sealed external interface LogicalOperatorOrHigher :
-    Union.LogicalOperatorOrHigher_ /* BitwiseOperatorOrHigher | LogicalOperator */
+sealed external interface LogicalOperatorOrHigher : SyntaxKind, AssignmentOperatorOrHigher

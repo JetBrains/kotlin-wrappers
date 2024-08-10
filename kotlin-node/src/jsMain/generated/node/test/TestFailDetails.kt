@@ -2,7 +2,6 @@
 
 package node.test
 
-
 sealed external interface TestFailDetails {
     /**
      * The duration of the test in milliseconds.
@@ -10,13 +9,13 @@ sealed external interface TestFailDetails {
     var duration_ms: Double
 
     /**
-     * The error thrown by the test.
+     * An error wrapping the error thrown by the test if it did not pass.
      */
     var error: Throwable /* JsError */
 
     /**
      * The type of the test, used to denote whether this is a suite.
-     * @since 20.0.0, 19.9.0, 18.17.0
+     * @since v20.0.0, v19.9.0, v18.17.0
      */
     var type: String /* "suite" */?
 }

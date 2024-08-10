@@ -3,9 +3,7 @@
 package web.serviceworker
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface ServiceWorkerState {
     companion object {
         @JsValue("activated")

@@ -2,9 +2,9 @@
 
 package web.codecs
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface EncodedVideoChunkMetadata {
+external interface EncodedVideoChunkMetadata {
     var decoderConfig: VideoDecoderConfig?
 }

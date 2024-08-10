@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Change the file system timestamps of the symbolic link referenced by `path`.
  * Returns `undefined`, or throws an exception when parameters are incorrect or

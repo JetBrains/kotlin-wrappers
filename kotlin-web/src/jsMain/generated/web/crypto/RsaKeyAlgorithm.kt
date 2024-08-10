@@ -2,10 +2,10 @@
 
 package web.crypto
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface RsaKeyAlgorithm :
+external interface RsaKeyAlgorithm :
     KeyAlgorithm {
     var modulusLength: Int
     var publicExponent: BigInteger

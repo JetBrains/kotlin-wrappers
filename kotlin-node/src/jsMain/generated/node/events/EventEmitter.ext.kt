@@ -15,10 +15,10 @@ fun <T : EventEmitter, P : JsTuple> T.addListener(type: EventType<T, P>, listene
 
 
 /**
- * Adds the `listener` function to the end of the listeners array for the
- * event named `eventName`. No checks are made to see if the `listener` has
- * already been added. Multiple calls passing the same combination of `eventName`and `listener` will result in the `listener` being added, and called, multiple
- * times.
+ * Adds the `listener` function to the end of the listeners array for the event
+ * named `eventName`. No checks are made to see if the `listener` has already
+ * been added. Multiple calls passing the same combination of `eventName` and
+ * `listener` will result in the `listener` being added, and called, multiple times.
  *
  * ```js
  * server.on('connection', (stream) => {
@@ -28,7 +28,7 @@ fun <T : EventEmitter, P : JsTuple> T.addListener(type: EventType<T, P>, listene
  *
  * Returns a reference to the `EventEmitter`, so that calls can be chained.
  *
- * By default, event listeners are invoked in the order they are added. The`emitter.prependListener()` method can be used as an alternative to add the
+ * By default, event listeners are invoked in the order they are added. The `emitter.prependListener()` method can be used as an alternative to add the
  * event listener to the beginning of the listeners array.
  *
  * ```js
@@ -51,7 +51,7 @@ fun <T : EventEmitter, P : JsTuple> T.on(type: EventType<T, P>, listener: (P) ->
 
 
 /**
- * Adds a **one-time**`listener` function for the event named `eventName`. The
+ * Adds a **one-time** `listener` function for the event named `eventName`. The
  * next time `eventName` is triggered, this listener is removed and then invoked.
  *
  * ```js
@@ -62,7 +62,7 @@ fun <T : EventEmitter, P : JsTuple> T.on(type: EventType<T, P>, listener: (P) ->
  *
  * Returns a reference to the `EventEmitter`, so that calls can be chained.
  *
- * By default, event listeners are invoked in the order they are added. The`emitter.prependOnceListener()` method can be used as an alternative to add the
+ * By default, event listeners are invoked in the order they are added. The `emitter.prependOnceListener()` method can be used as an alternative to add the
  * event listener to the beginning of the listeners array.
  *
  * ```js
@@ -85,7 +85,7 @@ fun <T : EventEmitter, P : JsTuple> T.once(type: EventType<T, P>, listener: (P) 
 
 
 /**
- * Removes the specified `listener` from the listener array for the event named`eventName`.
+ * Removes the specified `listener` from the listener array for the event named `eventName`.
  *
  * ```js
  * const callback = (stream) => {
@@ -102,7 +102,7 @@ fun <T : EventEmitter, P : JsTuple> T.once(type: EventType<T, P>, listener: (P) 
  * called multiple times to remove each instance.
  *
  * Once an event is emitted, all listeners attached to it at the
- * time of emitting are called in order. This implies that any`removeListener()` or `removeAllListeners()` calls _after_ emitting and _before_ the last listener finishes execution
+ * time of emitting are called in order. This implies that any `removeListener()` or `removeAllListeners()` calls _after_ emitting and _before_ the last listener finishes execution
  * will not remove them from`emit()` in progress. Subsequent events behave as expected.
  *
  * ```js
@@ -145,7 +145,7 @@ fun <T : EventEmitter, P : JsTuple> T.once(type: EventType<T, P>, listener: (P) 
  *
  * When a single function has been added as a handler multiple times for a single
  * event (as in the example below), `removeListener()` will remove the most
- * recently added instance. In the example the `once('ping')`listener is removed:
+ * recently added instance. In the example the `once('ping')` listener is removed:
  *
  * ```js
  * import { EventEmitter } from 'node:events';
@@ -248,7 +248,7 @@ fun <T : EventEmitter> T.rawListeners(type: EventType<T, *>) =
 
 
 /**
- * Synchronously calls each of the listeners registered for the event named`eventName`, in the order they were registered, passing the supplied arguments
+ * Synchronously calls each of the listeners registered for the event named `eventName`, in the order they were registered, passing the supplied arguments
  * to each.
  *
  * Returns `true` if the event had listeners, `false` otherwise.
@@ -292,7 +292,7 @@ fun <T : EventEmitter, P : JsTuple> T.emit(type: EventType<T, P>, payload: P) =
     emitInternal(type, args = payload.asArray())
 
 /**
- * Synchronously calls each of the listeners registered for the event named`eventName`, in the order they were registered, passing the supplied arguments
+ * Synchronously calls each of the listeners registered for the event named `eventName`, in the order they were registered, passing the supplied arguments
  * to each.
  *
  * Returns `true` if the event had listeners, `false` otherwise.
@@ -355,8 +355,8 @@ fun <T : EventEmitter, P : JsTuple> T.listenerCount(
 /**
  * Adds the `listener` function to the _beginning_ of the listeners array for the
  * event named `eventName`. No checks are made to see if the `listener` has
- * already been added. Multiple calls passing the same combination of `eventName`and `listener` will result in the `listener` being added, and called, multiple
- * times.
+ * already been added. Multiple calls passing the same combination of `eventName`
+ * and `listener` will result in the `listener` being added, and called, multiple times.
  *
  * ```js
  * server.prependListener('connection', (stream) => {

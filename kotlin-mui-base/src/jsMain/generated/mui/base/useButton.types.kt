@@ -3,6 +3,7 @@
 package mui.base
 
 import web.dom.Element
+import web.html.ButtonType
 
 external interface UseButtonParameters {
     /**
@@ -31,7 +32,7 @@ external interface UseButtonParameters {
      * Type attribute applied when the `component` is `button`.
      * @default 'button'
      */
-    var type: dynamic /* React.ButtonHTMLAttributes<HTMLButtonElement>['type'] */
+    var type: ButtonType?
 
     /**
      * The HTML element, e.g.'button', 'a' etc
@@ -41,13 +42,13 @@ external interface UseButtonParameters {
 }
 
 external interface UseButtonRootSlotOwnProps : react.Props {
-    // var `aria-disabled`: dynamic /* React.AriaAttributes['aria-disabled'] */
+    // var `aria-disabled`: Any? /* React.AriaAttributes['aria-disabled'] */
 
     var disabled: Boolean?
 
     var tabIndex: Int?
 
-    var type: dynamic /* React.ButtonHTMLAttributes<HTMLButtonElement>['type'] */
+    var type: ButtonType?
 
     var role: react.dom.aria.AriaRole?
 

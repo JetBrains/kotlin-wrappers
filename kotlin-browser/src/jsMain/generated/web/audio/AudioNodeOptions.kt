@@ -2,10 +2,10 @@
 
 package web.audio
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface AudioNodeOptions {
+external interface AudioNodeOptions {
     var channelCount: Int?
     var channelCountMode: ChannelCountMode?
     var channelInterpretation: ChannelInterpretation?

@@ -4,7 +4,6 @@
 
 package node.assert
 
-
 /**
  * An alias of {@link ok}.
  * @since v0.5.9

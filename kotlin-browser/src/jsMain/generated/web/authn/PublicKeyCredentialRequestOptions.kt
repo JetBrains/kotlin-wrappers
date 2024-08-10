@@ -4,10 +4,10 @@ package web.authn
 
 import js.array.ReadonlyArray
 import js.buffer.BufferSource
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface PublicKeyCredentialRequestOptions {
+external interface PublicKeyCredentialRequestOptions {
     var allowCredentials: ReadonlyArray<PublicKeyCredentialDescriptor>?
     var challenge: BufferSource
     var extensions: AuthenticationExtensionsClientInputs?

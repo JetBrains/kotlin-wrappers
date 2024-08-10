@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 
 /**
  * Runs a post-process stage on either the texture rendered by the scene or the output of a previous post-process stage.
@@ -63,7 +58,9 @@ import js.objects.jso
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PostProcessStage.html">Online Documentation</a>
  */
-external class PostProcessStage(options: ConstructorOptions) {
+external class PostProcessStage(
+    options: ConstructorOptions,
+) {
     /**
      * @property [fragmentShader] The fragment shader to use. The default `sampler2D` uniforms are `colorTexture` and `depthTexture`. The color texture is the output of rendering the scene or the previous stage. The depth texture is the output from rendering the scene. The shader should contain one or both uniforms. There is also a `vec2` varying named `v_textureCoordinates` that can be used to sample the textures.
      * @property [uniforms] An object whose properties will be used to set the shaders uniforms. The properties can be constant values or a function. A constant value can also be a URI, data URI, or HTML element to use as a texture.
@@ -222,8 +219,3 @@ external class PostProcessStage(options: ConstructorOptions) {
      */
     fun destroy()
 }
-
-inline fun PostProcessStage(
-    block: PostProcessStage.ConstructorOptions.() -> Unit,
-): PostProcessStage =
-    PostProcessStage(options = jso(block))

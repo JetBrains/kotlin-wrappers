@@ -18,7 +18,7 @@ import web.rendering.RenderingContextId
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas)
  */
-external class OffscreenCanvas(
+open external class OffscreenCanvas(
     width: JsLong,
     height: JsLong,
 ) : EventTarget,
@@ -33,8 +33,16 @@ external class OffscreenCanvas(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/height)
      */
     var height: JsLong
-    var oncontextlost: EventHandler<Event, OffscreenCanvas>?
-    var oncontextrestored: EventHandler<Event, OffscreenCanvas>?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/contextlost_event)
+     */
+    var oncontextlost: EventHandler<Event, OffscreenCanvas, OffscreenCanvas>?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/contextrestored_event)
+     */
+    var oncontextrestored: EventHandler<Event, OffscreenCanvas, OffscreenCanvas>?
 
     /**
      * These attributes return the dimensions of the OffscreenCanvas object's bitmap.

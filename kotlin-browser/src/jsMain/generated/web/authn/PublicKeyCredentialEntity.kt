@@ -2,9 +2,9 @@
 
 package web.authn
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface PublicKeyCredentialEntity {
+external interface PublicKeyCredentialEntity {
     var name: String
 }

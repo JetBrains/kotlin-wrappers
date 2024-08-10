@@ -10,6 +10,8 @@ external interface InfiniteQueryObserverBaseResult<TData, TError>
     val fetchPreviousPage: (options: FetchPreviousPageOptions?) -> Promise<InfiniteQueryObserverResult<TData, TError>>
     val hasNextPage: Boolean
     val hasPreviousPage: Boolean
+    val isFetchNextPageError: Boolean
     val isFetchingNextPage: Boolean
+    val isFetchPreviousPageError: Boolean
     val isFetchingPreviousPage: Boolean
 }

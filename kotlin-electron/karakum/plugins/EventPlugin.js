@@ -268,7 +268,6 @@ fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${key}(): node.events.
                 .join("\n")
 
             const declaration = `
-@seskar.js.JsVirtual
 sealed external interface ${name} {
 ${body}
 

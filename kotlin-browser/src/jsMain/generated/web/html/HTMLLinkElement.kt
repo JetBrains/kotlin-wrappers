@@ -5,6 +5,7 @@ package web.html
 import web.cssom.LinkStyle
 import web.dom.DOMTokenList
 import web.http.CrossOrigin
+import web.http.FetchPriority
 import web.http.ReferrerPolicy
 
 /**
@@ -34,7 +35,7 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/fetchPriority)
      */
-    var fetchPriority: String
+    var fetchPriority: FetchPriority
 
     /**
      * Sets or retrieves a destination URL or an anchor point.
@@ -59,6 +60,8 @@ protected constructor() :
 
     /**
      * Sets or retrieves the media type.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/media)
      */
     var media: String
 
@@ -78,10 +81,6 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/relList)
      */
     val relList: DOMTokenList
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/sizes)
-     */
     val sizes: DOMTokenList
 
     /**

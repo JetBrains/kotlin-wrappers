@@ -2,10 +2,10 @@
 
 package web.gpu
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GPUSamplerDescriptor :
+external interface GPUSamplerDescriptor :
     GPUObjectDescriptorBase {
     var addressModeU: GPUAddressMode?
     var addressModeV: GPUAddressMode?

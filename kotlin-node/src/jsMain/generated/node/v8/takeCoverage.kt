@@ -4,7 +4,6 @@
 
 package node.v8
 
-
 /**
  * The `v8.takeCoverage()` method allows the user to write the coverage started by `NODE_V8_COVERAGE` to disk on demand. This method can be invoked multiple
  * times during the lifetime of the process. Each time the execution counter will

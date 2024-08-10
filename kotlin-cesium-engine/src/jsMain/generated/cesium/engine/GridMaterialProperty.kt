@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 /**
@@ -79,8 +75,3 @@ external class GridMaterialProperty :
         result: Any?,
     ): Any
 }
-
-inline fun GridMaterialProperty(
-    block: GridMaterialProperty.() -> Unit,
-): GridMaterialProperty =
-    GridMaterialProperty().apply(block)

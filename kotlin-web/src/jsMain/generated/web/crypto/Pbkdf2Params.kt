@@ -3,10 +3,10 @@
 package web.crypto
 
 import js.buffer.BufferSource
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface Pbkdf2Params :
+external interface Pbkdf2Params :
     Algorithm {
     var hash: HashAlgorithmIdentifier
     var iterations: Int

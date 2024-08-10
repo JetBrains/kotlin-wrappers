@@ -2,10 +2,10 @@
 
 package web.uievents
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface EventModifierInit :
+external interface EventModifierInit :
     UIEventInit {
     val altKey: Boolean?
     val ctrlKey: Boolean?

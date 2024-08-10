@@ -2,10 +2,10 @@
 
 package web.geometry
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface DOMMatrixInit :
+external interface DOMMatrixInit :
     DOMMatrix2DInit {
     var is2D: Boolean?
     var m13: Double?

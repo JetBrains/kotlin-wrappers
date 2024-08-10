@@ -3,9 +3,7 @@
 package mui.material
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface DividerVariant {
     companion object {
         @JsValue("fullWidth")
@@ -19,7 +17,6 @@ sealed external interface DividerVariant {
     }
 }
 
-@JsVirtual
 sealed external interface DividerTextAlign {
     companion object {
         @JsValue("center")

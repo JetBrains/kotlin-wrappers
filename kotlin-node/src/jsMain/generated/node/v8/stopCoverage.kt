@@ -4,7 +4,6 @@
 
 package node.v8
 
-
 /**
  * The `v8.stopCoverage()` method allows the user to stop the coverage collection
  * started by `NODE_V8_COVERAGE`, so that V8 can release the execution count

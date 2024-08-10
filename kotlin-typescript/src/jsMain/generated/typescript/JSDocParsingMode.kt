@@ -1,11 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("typescript")
+
 package typescript
 
-import seskar.js.JsIntValue
-import seskar.js.JsVirtual
-
-@JsVirtual
 sealed external interface JSDocParsingMode {
     companion object {
         /**
@@ -13,13 +11,11 @@ sealed external interface JSDocParsingMode {
          *
          * This is the default if no mode is provided.
          */
-        @JsIntValue(0)
         val ParseAll: JSDocParsingMode
 
         /**
          * Never parse JSDoc comments, mo matter the file type.
          */
-        @JsIntValue(1)
         val ParseNone: JSDocParsingMode
 
         /**
@@ -28,7 +24,6 @@ sealed external interface JSDocParsingMode {
          * This will always parse JSDoc in non-TS files, but only parse JSDoc comments
          * containing `@see` and `@link` in TS files.
          */
-        @JsIntValue(2)
         val ParseForTypeErrors: JSDocParsingMode
 
         /**
@@ -38,7 +33,6 @@ sealed external interface JSDocParsingMode {
          *
          * Note: Do not use this mode if you require accurate type errors; use {@link ParseForTypeErrors} instead.
          */
-        @JsIntValue(3)
         val ParseForTypeInfo: JSDocParsingMode
     }
 }

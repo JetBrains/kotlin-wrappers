@@ -7,7 +7,4 @@ package typescript
 /**
  * Gets the TextRange to use for source maps for a token of a node.
  */
-external fun getTokenSourceMapRange(
-    node: Node,
-    token: SyntaxKind,
-): SourceMapRange?
+external fun getTokenSourceMapRange(node: Node, token: SyntaxKind): SourceMapRange?

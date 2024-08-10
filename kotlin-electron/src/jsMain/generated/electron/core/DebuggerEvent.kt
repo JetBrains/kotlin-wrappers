@@ -3,7 +3,6 @@
 package electron.core
 
 
-@seskar.js.JsVirtual
 sealed external interface DebuggerEvent {
     sealed interface DETACH : node.events.LegacyEventType
     sealed interface MESSAGE : node.events.LegacyEventType

@@ -4,12 +4,11 @@
 
 package node.childProcess
 
-
 /**
  * The `child_process.execSync()` method is generally identical to {@link exec} with the exception that the method will not return
  * until the child process has fully closed. When a timeout has been encountered
  * and `killSignal` is sent, the method won't return until the process has
- * completely exited. If the child process intercepts and handles the `SIGTERM`signal and doesn't exit, the parent process will wait until the child process
+ * completely exited. If the child process intercepts and handles the `SIGTERM` signal and doesn't exit, the parent process will wait until the child process
  * has exited.
  *
  * If the process times out or has a non-zero exit code, this method will throw.

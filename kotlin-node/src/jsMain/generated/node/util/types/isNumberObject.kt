@@ -4,7 +4,6 @@
 
 package node.util.types
 
-
 /**
  * Returns `true` if the value is a number object, e.g. created
  * by `new Number()`.

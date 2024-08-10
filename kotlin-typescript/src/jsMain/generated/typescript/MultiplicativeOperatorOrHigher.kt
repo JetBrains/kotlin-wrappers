@@ -2,5 +2,4 @@
 
 package typescript
 
-sealed external interface MultiplicativeOperatorOrHigher :
-    Union.MultiplicativeOperatorOrHigher_ /* ExponentiationOperator | MultiplicativeOperator */
+sealed external interface MultiplicativeOperatorOrHigher : SyntaxKind, AdditiveOperatorOrHigher

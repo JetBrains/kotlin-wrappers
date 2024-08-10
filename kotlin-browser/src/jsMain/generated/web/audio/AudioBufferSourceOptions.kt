@@ -2,10 +2,10 @@
 
 package web.audio
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface AudioBufferSourceOptions {
+external interface AudioBufferSourceOptions {
     var buffer: AudioBuffer?
     var detune: Float?
     var loop: Boolean?

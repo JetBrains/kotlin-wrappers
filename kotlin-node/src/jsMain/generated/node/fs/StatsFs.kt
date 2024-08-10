@@ -39,7 +39,6 @@ package node.fs
  * ```
  * @since v19.6.0, v18.15.0
  */
-
 external class StatsFs : StatsFsBase<Double> {
 
     override var type: Double

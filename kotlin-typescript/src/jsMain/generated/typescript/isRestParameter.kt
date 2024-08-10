@@ -4,4 +4,6 @@
 
 package typescript
 
-external fun isRestParameter(node: dynamic /* ParameterDeclaration | JSDocParameterTag */): Boolean
+external fun isRestParameter(node: ParameterDeclaration): Boolean
+
+external fun isRestParameter(node: JSDocParameterTag): Boolean

@@ -2,7 +2,6 @@
 
 package remix.run.router
 
-
 sealed external interface MapRoutePropertiesFunctionResult : js.objects.ReadonlyRecord<String, Any?> {
     var hasErrorBoundary: Boolean
 }

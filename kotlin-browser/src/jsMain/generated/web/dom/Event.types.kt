@@ -88,6 +88,9 @@ inline fun <C : EventTarget> Event.Companion.readyStateChange(): EventType<Event
 inline fun <C : EventTarget> Event.Companion.reset(): EventType<Event, C> =
     EventType("reset")
 
+inline fun <C : EventTarget> Event.Companion.resume(): EventType<Event, C> =
+    EventType("resume")
+
 inline fun <C : EventTarget> Event.Companion.scroll(): EventType<Event, C> =
     EventType("scroll")
 

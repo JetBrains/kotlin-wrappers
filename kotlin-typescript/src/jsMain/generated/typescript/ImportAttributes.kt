@@ -3,9 +3,9 @@
 package typescript
 
 sealed external interface ImportAttributes : Node {
-    val token: Union.ImportAttributes_token
+    val token: ImportAttributesToken
     override val kind: SyntaxKind.ImportAttributes
-    override val parent: Union.ImportAttributes_parent
+    override val parent: ImportAttributesParent
     val elements: NodeArray<ImportAttribute>
     val multiLine: Boolean?
 }

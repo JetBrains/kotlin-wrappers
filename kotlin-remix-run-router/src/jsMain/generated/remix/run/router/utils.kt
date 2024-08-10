@@ -48,4 +48,12 @@ external val redirect: RedirectFunction
  */
 external val redirectDocument: RedirectFunction
 
+/**
+ * A redirect response that will perform a `history.replaceState` instead of a
+ * `history.pushState` for client-side navigation redirects.
+ * Sets the status code and the `Location` header.
+ * Defaults to "302 Found".
+ */
+external val replace: RedirectFunction
+
 /* export {}; */

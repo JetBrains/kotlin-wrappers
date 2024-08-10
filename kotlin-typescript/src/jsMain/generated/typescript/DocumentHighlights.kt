@@ -2,9 +2,7 @@
 
 package typescript
 
-import js.array.ReadonlyArray
-
 sealed external interface DocumentHighlights {
     var fileName: String
-    var highlightSpans: ReadonlyArray<HighlightSpan>
+    var highlightSpans: js.array.ReadonlyArray<HighlightSpan>
 }

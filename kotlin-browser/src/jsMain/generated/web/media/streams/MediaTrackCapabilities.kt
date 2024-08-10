@@ -3,12 +3,13 @@
 package web.media.streams
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface MediaTrackCapabilities {
+external interface MediaTrackCapabilities {
     var aspectRatio: DoubleRange?
     var autoGainControl: ReadonlyArray<Boolean>?
+    var backgroundBlur: ReadonlyArray<Boolean>?
     var channelCount: ULongRange?
     var deviceId: String?
     var displaySurface: String?

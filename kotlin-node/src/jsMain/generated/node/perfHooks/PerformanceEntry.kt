@@ -4,12 +4,10 @@
 
 package node.perfHooks
 
-
 /**
  * The constructor of this class is not exposed to users directly.
  * @since v8.5.0
  */
-
 open external class PerformanceEntry {
     constructor ()
 
@@ -53,5 +51,5 @@ open external class PerformanceEntry {
      */
     val detail: Any? /* NodeGCPerformanceDetail | unknown | undefined */// TODO: Narrow this based on entry type.
 
-    fun toJSON(): Any?
+    open fun toJSON(): Any?
 }

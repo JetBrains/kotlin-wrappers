@@ -4,7 +4,6 @@
 
 package node.crypto
 
-
 /**
  * Creates and returns an `Hmac` object that uses the given `algorithm` and `key`.
  * Optional `options` argument controls stream behavior.

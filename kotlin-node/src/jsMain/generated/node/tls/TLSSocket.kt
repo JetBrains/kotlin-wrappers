@@ -16,7 +16,6 @@ import node.crypto.X509Certificate
  * connection is open.
  * @since v0.11.4
  */
-
 external class TLSSocket : node.net.Socket {
     /**
      * Construct a new tls.TLSSocket object from an existing TCP socket.
@@ -91,7 +90,7 @@ external class TLSSocket : node.net.Socket {
      * an ephemeral key exchange in `perfect forward secrecy` on a client
      * connection. It returns an empty object when the key exchange is not
      * ephemeral. As this is only supported on a client socket; `null` is returned
-     * if called on a server socket. The supported types are `'DH'` and `'ECDH'`. The`name` property is available only when type is `'ECDH'`.
+     * if called on a server socket. The supported types are `'DH'` and `'ECDH'`. The `name` property is available only when type is `'ECDH'`.
      *
      * For example: `{ type: 'ECDH', name: 'prime256v1', size: 256 }`.
      * @since v5.0.0
@@ -204,7 +203,7 @@ external class TLSSocket : node.net.Socket {
      * This method can be used to request a peer's certificate after the secure
      * connection has been established.
      *
-     * When running as the server, the socket will be destroyed with an error after`handshakeTimeout` timeout.
+     * When running as the server, the socket will be destroyed with an error after `handshakeTimeout` timeout.
      *
      * For TLSv1.3, renegotiation cannot be initiated, it is not supported by the
      * protocol.

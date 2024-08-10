@@ -2,10 +2,10 @@
 
 package web.gpu
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GPUVertexAttribute {
+external interface GPUVertexAttribute {
     var format: GPUVertexFormat
     var offset: GPUSize64
     var shaderLocation: GPUIndex32

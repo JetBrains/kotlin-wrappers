@@ -3,10 +3,10 @@
 package web.rtc
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface RTCEncodedAudioFrameMetadata {
+external interface RTCEncodedAudioFrameMetadata {
     var contributingSources: ReadonlyArray<Number>?
     var payloadType: Short /* unsigned byte */?
     var sequenceNumber: Short?

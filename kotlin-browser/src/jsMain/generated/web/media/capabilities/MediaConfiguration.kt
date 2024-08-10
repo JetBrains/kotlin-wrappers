@@ -2,10 +2,10 @@
 
 package web.media.capabilities
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface MediaConfiguration {
+external interface MediaConfiguration {
     var audio: AudioConfiguration?
     var video: VideoConfiguration?
 }

@@ -13,7 +13,7 @@ import web.media.streams.MediaStream
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext)
  */
-external class AudioContext(
+open external class AudioContext(
     contextOptions: AudioContextOptions = definedExternally,
 ) : BaseAudioContext {
     /**

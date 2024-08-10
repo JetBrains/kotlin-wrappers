@@ -2,10 +2,10 @@
 
 package web.uievents
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface EventModifierInitMutable :
+external interface EventModifierInitMutable :
     EventModifierInit,
     UIEventInitMutable {
     override var altKey: Boolean?

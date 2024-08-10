@@ -2,10 +2,10 @@
 
 package web.rtc
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface RTCRtpStreamStats :
+external interface RTCRtpStreamStats :
     RTCStats {
     var codecId: String?
     var kind: String

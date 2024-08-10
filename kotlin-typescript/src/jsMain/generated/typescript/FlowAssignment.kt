@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface FlowAssignment : FlowNodeBase, Union.FlowAssignment_ {
-    var node: Union.FlowAssignment_node
+sealed external interface FlowAssignment : FlowNodeBase, FlowNode {
+    var node: FlowAssignmentNode
     var antecedent: FlowNode
 }

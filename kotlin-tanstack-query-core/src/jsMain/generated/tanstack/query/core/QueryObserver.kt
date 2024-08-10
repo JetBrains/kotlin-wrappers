@@ -33,7 +33,7 @@ open external class QueryObserver<TQueryFnData, TError, TData, TQueryData, TQuer
     open fun getCurrentQuery(): Query<TQueryFnData, TError, TQueryData, TQueryKey>
     open fun refetch(options: RefetchOptions = definedExternally): Promise<QueryObserverResult<TData, TError>>
     open fun fetchOptimistic(options: QueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey, *>): Promise<QueryObserverResult<TData, TError>>
-    protected open fun fetch(fetchOptions: ObserverFetchOptions): Promise<QueryObserverResult<TData, TError>>
+    protected open fun fetch(fetchOptions: ObserverFetchOptions<TData>): Promise<QueryObserverResult<TData, TError>>
     protected open fun createResult(
         query: Query<TQueryFnData, TError, TQueryData, TQueryKey>,
         options: QueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey, *>,

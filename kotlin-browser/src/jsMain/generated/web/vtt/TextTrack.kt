@@ -78,7 +78,7 @@ sealed external class TextTrack :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/cuechange_event)
      */
-    var oncuechange: EventHandler<Event, TextTrack>?
+    var oncuechange: EventHandler<Event, TextTrack, TextTrack>?
 
     /**
      * Adds the given cue to textTrack's text track list of cues.

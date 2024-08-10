@@ -2,10 +2,10 @@
 
 package web.scroll
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface ScrollToOptions :
+external interface ScrollToOptions :
     ScrollOptions {
     var left: Double?
     var top: Double?

@@ -3,9 +3,7 @@
 package mui.base
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface AutocompleteHighlightChangeReason {
     companion object {
         @JsValue("keyboard")
@@ -22,7 +20,6 @@ sealed external interface AutocompleteHighlightChangeReason {
     }
 }
 
-@JsVirtual
 sealed external interface AutocompleteChangeReason {
     companion object {
         @JsValue("createOption")
@@ -42,7 +39,6 @@ sealed external interface AutocompleteChangeReason {
     }
 }
 
-@JsVirtual
 sealed external interface AutocompleteCloseReason {
     companion object {
         @JsValue("createOption")
@@ -65,7 +61,6 @@ sealed external interface AutocompleteCloseReason {
     }
 }
 
-@JsVirtual
 sealed external interface AutocompleteInputChangeReason {
     companion object {
         @JsValue("input")
@@ -79,7 +74,6 @@ sealed external interface AutocompleteInputChangeReason {
     }
 }
 
-@JsVirtual
 sealed external interface MatchFrom {
     companion object {
         @JsValue("any")
@@ -90,7 +84,6 @@ sealed external interface MatchFrom {
     }
 }
 
-@JsVirtual
 sealed external interface BlurOnSelect {
     companion object {
         @JsValue("touch")

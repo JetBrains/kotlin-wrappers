@@ -4,9 +4,8 @@
 
 package node.http2
 
-
 /**
- * Returns a `tls.Server` instance that creates and manages `Http2Session`instances.
+ * Returns a `tls.Server` instance that creates and manages `Http2Session` instances.
  *
  * ```js
  * const http2 = require('node:http2');

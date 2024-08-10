@@ -2,10 +2,10 @@
 
 package web.midi
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface MIDIOptions {
+external interface MIDIOptions {
     var software: Boolean?
     var sysex: Boolean?
 }

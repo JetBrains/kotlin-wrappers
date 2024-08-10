@@ -2,16 +2,12 @@
 
 package typescript
 
-import seskar.js.JsValue
-import seskar.js.JsVirtual
-
-@JsVirtual
 sealed external interface RefactorTriggerReason {
     companion object {
-        @JsValue("implicit")
+        @seskar.js.JsValue("implicit")
         val implicit: RefactorTriggerReason
 
-        @JsValue("invoked")
+        @seskar.js.JsValue("invoked")
         val invoked: RefactorTriggerReason
     }
 }

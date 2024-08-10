@@ -21,7 +21,6 @@ import node.readline._Interface as Interface
  * ```
  * @since v0.1.91
  */
-
 external class REPLServer : Interface {
     /**
      * The `vm.Context` provided to the `eval` function to be used for JavaScript
@@ -141,7 +140,7 @@ external class REPLServer : Interface {
 
     /**
      * The `replServer.defineCommand()` method is used to add new `.`\-prefixed commands
-     * to the REPL instance. Such commands are invoked by typing a `.` followed by the`keyword`. The `cmd` is either a `Function` or an `Object` with the following
+     * to the REPL instance. Such commands are invoked by typing a `.` followed by the `keyword`. The `cmd` is either a `Function` or an `Object` with the following
      * properties:
      *
      * The following example shows two new commands added to the REPL instance:
@@ -180,7 +179,7 @@ external class REPLServer : Interface {
 
     /**
      * The `replServer.defineCommand()` method is used to add new `.`\-prefixed commands
-     * to the REPL instance. Such commands are invoked by typing a `.` followed by the`keyword`. The `cmd` is either a `Function` or an `Object` with the following
+     * to the REPL instance. Such commands are invoked by typing a `.` followed by the `keyword`. The `cmd` is either a `Function` or an `Object` with the following
      * properties:
      *
      * The following example shows two new commands added to the REPL instance:
@@ -219,7 +218,7 @@ external class REPLServer : Interface {
 
     /**
      * The `replServer.displayPrompt()` method readies the REPL instance for input
-     * from the user, printing the configured `prompt` to a new line in the `output`and resuming the `input` to accept new input.
+     * from the user, printing the configured `prompt` to a new line in the `output` and resuming the `input` to accept new input.
      *
      * When multi-line input is being entered, an ellipsis is printed rather than the
      * 'prompt'.
@@ -227,7 +226,7 @@ external class REPLServer : Interface {
      * When `preserveCursor` is `true`, the cursor placement will not be reset to `0`.
      *
      * The `replServer.displayPrompt` method is primarily intended to be called from
-     * within the action function for commands registered using the`replServer.defineCommand()` method.
+     * within the action function for commands registered using the `replServer.defineCommand()` method.
      * @since v0.1.91
      */
     fun displayPrompt(preserveCursor: Boolean = definedExternally): Unit
@@ -235,7 +234,7 @@ external class REPLServer : Interface {
     /**
      * The `replServer.clearBufferedCommand()` method clears any command that has been
      * buffered but not yet executed. This method is primarily intended to be
-     * called from within the action function for commands registered using the`replServer.defineCommand()` method.
+     * called from within the action function for commands registered using the `replServer.defineCommand()` method.
      * @since v9.0.0
      */
     fun clearBufferedCommand(): Unit

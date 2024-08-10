@@ -2,10 +2,10 @@
 
 package web.codecs
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface VideoEncoderInit {
+external interface VideoEncoderInit {
     var error: WebCodecsErrorCallback
     var output: EncodedVideoChunkOutputCallback
 }

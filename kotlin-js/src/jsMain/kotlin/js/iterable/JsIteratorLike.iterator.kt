@@ -1,7 +1,7 @@
 package js.iterable
 
 @PublishedApi
-internal fun <T> iteratorFor(
+internal fun <T> iteratorFromJsIteratorLike(
     source: JsIteratorLike<T>,
 ): Iterator<T> =
     iterator {

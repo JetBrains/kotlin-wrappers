@@ -4,7 +4,6 @@
 
 package node.readline
 
-
 /**
  * The `readline.emitKeypressEvents()` method causes the given `Readable` stream to begin emitting `'keypress'` events corresponding to received input.
  *
@@ -13,7 +12,7 @@ package node.readline
  *
  * If the `stream` is a `TTY`, then it must be in raw mode.
  *
- * This is automatically called by any readline instance on its `input` if the`input` is a terminal. Closing the `readline` instance does not stop
+ * This is automatically called by any readline instance on its `input` if the `input` is a terminal. Closing the `readline` instance does not stop
  * the `input` from emitting `'keypress'` events.
  *
  * ```js
@@ -98,7 +97,7 @@ package node.readline
  * });
  * ```
  *
- * Currently, `for await...of` loop can be a bit slower. If `async` / `await`flow and speed are both essential, a mixed approach can be applied:
+ * Currently, `for await...of` loop can be a bit slower. If `async` / `await` flow and speed are both essential, a mixed approach can be applied:
  *
  * ```js
  * const { once } = require('node:events');

@@ -15,7 +15,7 @@ import js.buffer.ArrayBufferView
  * should be read. If `typeof position !== 'number'`, the data will be read
  * from the current position.
  *
- * The callback will be given three arguments: `err`, `bytesRead`, and`buffers`. `bytesRead` is how many bytes were read from the file.
+ * The callback will be given three arguments: `err`, `bytesRead`, and `buffers`. `bytesRead` is how many bytes were read from the file.
  *
  * If this method is invoked as its `util.promisify()` ed version, it returns
  * a promise for an `Object` with `bytesRead` and `buffers` properties.

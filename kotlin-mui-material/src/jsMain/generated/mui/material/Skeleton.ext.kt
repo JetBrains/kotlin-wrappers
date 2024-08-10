@@ -3,9 +3,7 @@
 package mui.material
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface SkeletonAnimation {
     companion object {
         @JsValue("pulse")
@@ -19,7 +17,6 @@ sealed external interface SkeletonAnimation {
     }
 }
 
-@JsVirtual
 sealed external interface SkeletonVariant {
     companion object {
         @JsValue("text")

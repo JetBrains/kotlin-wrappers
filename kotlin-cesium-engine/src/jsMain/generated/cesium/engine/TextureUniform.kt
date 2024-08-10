@@ -2,22 +2,19 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
-import js.objects.JsPlainObject
-import js.objects.jso
 import js.typedarrays.Uint8Array
+import kotlinx.js.JsPlainObject
 
 /**
  * A simple struct that serves as a value of a `sampler2D`-valued
  * uniform. This is used with [CustomShader] and [TextureManager]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TextureUniform.html">Online Documentation</a>
  */
-external class TextureUniform(options: ConstructorOptions) {
+external class TextureUniform(
+    options: ConstructorOptions,
+) {
     /**
      * @property [typedArray] A typed array storing the contents of a texture. Values are stored in row-major order. Since WebGL uses a y-up convention for textures, rows are listed from bottom to top.
      * @property [width] The width of the image. Required when options.typedArray is present
@@ -50,8 +47,3 @@ external class TextureUniform(options: ConstructorOptions) {
         var maximumAnisotropy: Double?
     }
 }
-
-inline fun TextureUniform(
-    block: TextureUniform.ConstructorOptions.() -> Unit,
-): TextureUniform =
-    TextureUniform(options = jso(block))

@@ -4,13 +4,11 @@
 
 package node.vm
 
-
 /**
  * Instances of the `vm.Script` class contain precompiled scripts that can be
  * executed in specific contexts.
  * @since v0.3.1
  */
-
 external class Script {
     constructor (code: String)
 
@@ -19,7 +17,7 @@ external class Script {
     constructor (code: String, options: String = definedExternally)
 
     /**
-     * Runs the compiled code contained by the `vm.Script` object within the given`contextifiedObject` and returns the result. Running code does not have access
+     * Runs the compiled code contained by the `vm.Script` object within the given `contextifiedObject` and returns the result. Running code does not have access
      * to local scope.
      *
      * The following example compiles code that increments a global variable, sets
@@ -113,7 +111,7 @@ external class Script {
     fun runInThisContext(options: RunningScriptOptions = definedExternally): Any?
 
     /**
-     * Creates a code cache that can be used with the `Script` constructor's`cachedData` option. Returns a `Buffer`. This method may be called at any
+     * Creates a code cache that can be used with the `Script` constructor's `cachedData` option. Returns a `Buffer`. This method may be called at any
      * time and any number of times.
      *
      * The code cache of the `Script` doesn't contain any JavaScript observable
@@ -153,7 +151,7 @@ external class Script {
 
     /**
      * When `cachedData` is supplied to create the `vm.Script`, this value will be set
-     * to either `true` or `false` depending on acceptance of the data by V8\.
+     * to either `true` or `false` depending on acceptance of the data by V8.
      * Otherwise the value is `undefined`.
      * @since v5.7.0
      */

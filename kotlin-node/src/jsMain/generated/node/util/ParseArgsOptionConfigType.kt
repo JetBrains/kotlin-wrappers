@@ -2,8 +2,6 @@
 
 package node.util
 
-
-@seskar.js.JsVirtual
 sealed external interface ParseArgsOptionConfigType {
     companion object {
         @seskar.js.JsValue("string")

@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Synchronous version of {@link futimes}. Returns `undefined`.
  * @since v0.4.2

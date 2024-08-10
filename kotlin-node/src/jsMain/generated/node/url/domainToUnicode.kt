@@ -4,7 +4,6 @@
 
 package node.url
 
-
 /**
  * Returns the Unicode serialization of the `domain`. If `domain` is an invalid
  * domain, the empty string is returned.

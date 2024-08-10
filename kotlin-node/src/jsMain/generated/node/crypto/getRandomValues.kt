@@ -4,7 +4,6 @@
 
 package node.crypto
 
-
 /**
  * A convenient alias for {@link webcrypto.getRandomValues}. This
  * implementation is not compliant with the Web Crypto spec, to write

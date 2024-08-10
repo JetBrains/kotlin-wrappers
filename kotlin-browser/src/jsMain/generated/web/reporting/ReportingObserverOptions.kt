@@ -3,10 +3,10 @@
 package web.reporting
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface ReportingObserverOptions {
+external interface ReportingObserverOptions {
     var buffered: Boolean?
     var types: ReadonlyArray<String>?
 }

@@ -122,7 +122,7 @@ external interface SnackbarProps :
      *   exit: theme.transitions.duration.leavingScreen,
      * }
      */
-    var transitionDuration: dynamic /* TransitionProps['timeout'] */
+    var transitionDuration: Any? /* TransitionProps['timeout'] */
 
     /**
      * Props applied to the transition element.

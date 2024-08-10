@@ -4,7 +4,6 @@
 
 package react.router.dom
 
-
 /**
  * This component will emulate the browser's scroll restoration on location
  * changes.

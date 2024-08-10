@@ -1,6 +1,6 @@
 package react.use
 
-import react.useEffectOnce
+import react.useEffectOnceWithCleanup
 
 /**
  * [Original](https://github.com/streamich/react-use/blob/master/src/useUnmount.ts)
@@ -10,7 +10,7 @@ fun useUnmountEffect(
 ) {
     val latestCallback by useLatest(callback)
 
-    useEffectOnce {
-        cleanup(latestCallback)
+    useEffectOnceWithCleanup {
+        onCleanup(latestCallback)
     }
 }

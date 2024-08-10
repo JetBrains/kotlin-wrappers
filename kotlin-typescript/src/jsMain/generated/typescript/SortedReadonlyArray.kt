@@ -2,6 +2,6 @@
 
 package typescript
 
-sealed external interface SortedReadonlyArray<out T> : ReadonlyArrayAdapter<T> {
-    // " __sortedArrayBrand": any
+sealed external interface SortedReadonlyArray<T> : ReadonlyArrayAdapter<T> {
+    /* " __sortedArrayBrand": any; */
 }

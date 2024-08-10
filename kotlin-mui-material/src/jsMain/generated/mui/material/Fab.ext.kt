@@ -3,9 +3,7 @@
 package mui.material
 
 import seskar.js.JsValue
-import seskar.js.JsVirtual
 
-@JsVirtual
 sealed external interface FabColor {
     companion object {
         @JsValue("inherit")
@@ -34,7 +32,6 @@ sealed external interface FabColor {
     }
 }
 
-@JsVirtual
 sealed external interface FabVariant {
     companion object {
         @JsValue("circular")

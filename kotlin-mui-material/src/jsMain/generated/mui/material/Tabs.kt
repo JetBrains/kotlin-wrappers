@@ -118,7 +118,7 @@ external interface TabsOwnProps :
      * @param {React.SyntheticEvent} event The event source of the callback. **Warning**: This is a generic event not a change event.
      * @param {any} value We default to the index of the child (number)
      */
-    var onChange: ((event: react.dom.events.SyntheticEvent<*, *>, value: dynamic) -> Unit)?
+    var onChange: ((event: react.dom.events.SyntheticEvent<*, *>, value: Any) -> Unit)?
 
     /**
      * The component orientation (layout flow direction).

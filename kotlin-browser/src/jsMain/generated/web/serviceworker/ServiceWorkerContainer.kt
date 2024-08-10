@@ -27,17 +27,17 @@ sealed external class ServiceWorkerContainer :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/controllerchange_event)
      */
-    var oncontrollerchange: EventHandler<Event, ServiceWorkerContainer>?
+    var oncontrollerchange: EventHandler<Event, ServiceWorkerContainer, ServiceWorkerContainer>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/message_event)
      */
-    var onmessage: EventHandler<MessageEvent<*>, ServiceWorkerContainer>?
+    var onmessage: EventHandler<MessageEvent<*>, ServiceWorkerContainer, ServiceWorkerContainer>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/messageerror_event)
      */
-    var onmessageerror: EventHandler<MessageEvent<*>, ServiceWorkerContainer>?
+    var onmessageerror: EventHandler<MessageEvent<*>, ServiceWorkerContainer, ServiceWorkerContainer>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/ready)

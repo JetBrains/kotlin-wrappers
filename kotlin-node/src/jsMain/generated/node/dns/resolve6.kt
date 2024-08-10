@@ -4,7 +4,6 @@
 
 package node.dns
 
-
 /**
  * Uses the DNS protocol to resolve IPv6 addresses (`AAAA` records) for the `hostname`. The `addresses` argument passed to the `callback` function
  * will contain an array of IPv6 addresses.

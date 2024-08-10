@@ -4,9 +4,8 @@
 
 package node.fs
 
-
 /**
- * Synchronously creates a directory. Returns `undefined`, or if `recursive` is`true`, the first directory path created.
+ * Synchronously creates a directory. Returns `undefined`, or if `recursive` is `true`, the first directory path created.
  * This is the synchronous version of {@link mkdir}.
  *
  * See the POSIX [`mkdir(2)`](http://man7.org/linux/man-pages/man2/mkdir.2.html) documentation for more details.

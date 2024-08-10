@@ -4,7 +4,6 @@
 
 package electron.core
 
-
 open external class TouchBar {
 // Docs: https://electronjs.org/docs/api/touch-bar
     /**
@@ -72,5 +71,4 @@ open external class TouchBar {
          */
         var TouchBarSpacer: Any?
     }
-
 }

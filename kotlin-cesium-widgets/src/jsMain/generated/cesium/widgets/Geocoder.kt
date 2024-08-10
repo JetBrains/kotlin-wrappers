@@ -2,16 +2,12 @@
 
 @file:JsModule("@cesium/widgets")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.widgets
 
-import cesium.engine.*
+import cesium.engine.GeocoderService
+import cesium.engine.Scene
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 import web.dom.Element
 
 /**
@@ -19,7 +15,9 @@ import web.dom.Element
  * performed using [Cesium ion](https://cesium.com/cesium-ion/).
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Geocoder.html">Online Documentation</a>
  */
-external class Geocoder(options: ConstructorOptions) {
+external class Geocoder(
+    options: ConstructorOptions,
+) {
     /**
      * @property [container] The DOM element that will contain the widget.
      * @property [scene] The Scene instance to use.
@@ -72,16 +70,3 @@ external class Geocoder(options: ConstructorOptions) {
      */
     fun destroy()
 }
-
-/**
- * A function that handles the result of a successful geocode.
- * @param [viewModel] The view model.
- * @param [destination] The destination result of the geocode.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Geocoder.html#.DestinationFoundFunction">Online Documentation</a>
- */
-typealias DestinationFoundFunction = (viewModel: GeocoderViewModel, destination: dynamic) -> Unit
-
-inline fun Geocoder(
-    block: Geocoder.ConstructorOptions.() -> Unit,
-): Geocoder =
-    Geocoder(options = jso(block))

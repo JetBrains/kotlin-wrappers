@@ -90,7 +90,7 @@ external interface PopoverProps :
      */
     var marginThreshold: Number?
 
-    override var onClose: ((event: dynamic, reason: String) -> Unit)?
+    override var onClose: ((event: Any, reason: String) -> Unit)?
 
     /**
      * If `true`, the component is shown.
@@ -162,7 +162,7 @@ external interface PopoverProps :
      * Set to 'auto' to automatically calculate transition time based on height.
      * @default 'auto'
      */
-    var transitionDuration: dynamic /* TransitionProps['timeout'] | 'auto' */
+    var transitionDuration: Any? /* TransitionProps['timeout'] | 'auto' */
 
     /**
      * Props applied to the transition element.

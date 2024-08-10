@@ -2,7 +2,7 @@
 
 package cesium.engine
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * An orientation given by numeric heading, pitch, and roll

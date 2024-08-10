@@ -3,10 +3,10 @@
 package web.push
 
 import js.buffer.BufferSource
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface PushSubscriptionOptionsInit {
+external interface PushSubscriptionOptionsInit {
     var applicationServerKey: BufferSource /* | String */?
     var userVisibleOnly: Boolean?
 }

@@ -2,23 +2,20 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
-import js.objects.jso
 import js.promise.Promise
+import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync
 
 /**
  * Provides geocoding through Cesium ion.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/IonGeocoderService.html">Online Documentation</a>
  */
-external class IonGeocoderService(options: ConstructorOptions) {
+external class IonGeocoderService(
+    options: ConstructorOptions,
+) {
     /**
      * @property [scene] The scene
      * @property [accessToken] The access token to use.
@@ -58,8 +55,3 @@ external class IonGeocoderService(options: ConstructorOptions) {
         type: GeocodeType? = definedExternally,
     ): Promise<ReadonlyArray<GeocoderService.Result>>
 }
-
-inline fun IonGeocoderService(
-    block: IonGeocoderService.ConstructorOptions.() -> Unit,
-): IonGeocoderService =
-    IonGeocoderService(options = jso(block))

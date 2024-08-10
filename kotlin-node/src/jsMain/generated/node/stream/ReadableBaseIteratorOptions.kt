@@ -2,7 +2,6 @@
 
 package node.stream
 
-
 sealed external interface ReadableBaseIteratorOptions {
     var destroyOnReturn: Boolean?
 }

@@ -59,11 +59,11 @@ external interface Theme {
 
     var unstable_sxConfig: dynamic
 
-    var unstable_sx: (props: SxProps<Theme>) -> dynamic /* CSSObject from `@mui/styled-engine` */
+    var unstable_sx: (props: SxProps<Theme>) -> Any /* CSSObject from `@mui/styled-engine` */
 }
 
 @JsName("default")
 external fun createTheme(
     options: ThemeOptions? = definedExternally,
-    vararg args: dynamic,
+    vararg args: Any,
 ): Theme

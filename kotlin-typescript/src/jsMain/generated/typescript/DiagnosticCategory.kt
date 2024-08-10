@@ -1,23 +1,14 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("typescript")
+
 package typescript
 
-import seskar.js.JsIntValue
-import seskar.js.JsVirtual
-
-@JsVirtual
 sealed external interface DiagnosticCategory {
     companion object {
-        @JsIntValue(0)
         val Warning: DiagnosticCategory
-
-        @JsIntValue(1)
         val Error: DiagnosticCategory
-
-        @JsIntValue(2)
         val Suggestion: DiagnosticCategory
-
-        @JsIntValue(3)
         val Message: DiagnosticCategory
     }
 }

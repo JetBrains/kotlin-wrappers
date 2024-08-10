@@ -2,15 +2,10 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 
 /**
  * Describes a cube centered at the origin.
@@ -24,7 +19,9 @@ import js.objects.jso
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BoxGeometry.html">Online Documentation</a>
  */
-external class BoxGeometry(options: ConstructorOptions) {
+external class BoxGeometry(
+    options: ConstructorOptions,
+) {
     /**
      * @property [minimum] The minimum x, y, and z coordinates of the box.
      * @property [maximum] The maximum x, y, and z coordinates of the box.
@@ -125,8 +122,3 @@ external class BoxGeometry(options: ConstructorOptions) {
         fun createGeometry(boxGeometry: BoxGeometry): Geometry?
     }
 }
-
-inline fun BoxGeometry(
-    block: BoxGeometry.ConstructorOptions.() -> Unit,
-): BoxGeometry =
-    BoxGeometry(options = jso(block))

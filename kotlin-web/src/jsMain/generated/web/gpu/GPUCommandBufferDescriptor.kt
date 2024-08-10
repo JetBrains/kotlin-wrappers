@@ -2,8 +2,8 @@
 
 package web.gpu
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GPUCommandBufferDescriptor :
+external interface GPUCommandBufferDescriptor :
     GPUObjectDescriptorBase

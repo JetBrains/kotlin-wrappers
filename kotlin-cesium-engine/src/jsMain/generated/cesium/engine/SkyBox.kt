@@ -2,14 +2,9 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.engine
 
-import js.objects.JsPlainObject
-import js.objects.jso
+import kotlinx.js.JsPlainObject
 
 /**
  * A sky box around the scene to draw stars.  The sky box is defined using the True Equator Mean Equinox (TEME) axes.
@@ -30,7 +25,9 @@ import js.objects.jso
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SkyBox.html">Online Documentation</a>
  */
-external class SkyBox(options: ConstructorOptions) {
+external class SkyBox(
+    options: ConstructorOptions,
+) {
     /**
      * @property [sources] The source URL or `Image` object for each of the six cube map faces.  See the example below.
      * @property [show] Determines if this primitive will be shown.
@@ -90,9 +87,16 @@ external class SkyBox(options: ConstructorOptions) {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SkyBox.html#destroy">Online Documentation</a>
      */
     fun destroy()
-}
 
-inline fun SkyBox(
-    block: SkyBox.ConstructorOptions.() -> Unit,
-): SkyBox =
-    SkyBox(options = jso(block))
+    companion object {
+        /**
+         * Creates a skybox instance with the default starmap for the Earth.
+         * ```
+         * viewer.scene.skyBox = SkyBox.createEarthSkyBox();
+         * ```
+         * @return The default skybox for the Earth
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SkyBox.html#.createEarthSkyBox">Online Documentation</a>
+         */
+        fun createEarthSkyBox(): SkyBox
+    }
+}

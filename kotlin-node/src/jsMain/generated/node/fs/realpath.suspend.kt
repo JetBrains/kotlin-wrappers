@@ -10,7 +10,7 @@ suspend fun realpath(path: PathLike): String =
 
 
 /**
- * Determines the actual location of `path` using the same semantics as the`fs.realpath.native()` function.
+ * Determines the actual location of `path` using the same semantics as the `fs.realpath.native()` function.
  *
  * Only paths that can be converted to UTF8 strings are supported.
  *
@@ -33,7 +33,7 @@ suspend fun realpath(path: PathLike, options: ObjectEncodingOptions? = undefined
 
 
 /**
- * Determines the actual location of `path` using the same semantics as the`fs.realpath.native()` function.
+ * Determines the actual location of `path` using the same semantics as the `fs.realpath.native()` function.
  *
  * Only paths that can be converted to UTF8 strings are supported.
  *

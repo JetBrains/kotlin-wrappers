@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/widgets")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium.widgets
 
 import cesium.engine.Scene
@@ -47,8 +43,3 @@ external class PerformanceWatchdogViewModel {
      */
     var dismissMessage: Command
 }
-
-inline fun PerformanceWatchdogViewModel(
-    block: PerformanceWatchdogViewModel.() -> Unit,
-): PerformanceWatchdogViewModel =
-    PerformanceWatchdogViewModel().apply(block)

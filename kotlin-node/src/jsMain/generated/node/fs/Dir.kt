@@ -28,7 +28,6 @@ import js.promise.Promise
  * closed after the iterator exits.
  * @since v12.12.0
  */
-
 external class Dir : AsyncIterable<Dirent> {
     /**
      * The read-only path of this directory as was provided to {@link opendir},{@link opendirSync}, or `fsPromises.opendir()`.
@@ -57,7 +56,7 @@ external class Dir : AsyncIterable<Dirent> {
     /**
      * Asynchronously read the next directory entry via [`readdir(3)`](http://man7.org/linux/man-pages/man3/readdir.3.html) as an `fs.Dirent`.
      *
-     * A promise is returned that will be fulfilled with an `fs.Dirent`, or `null`if there are no more directory entries to read.
+     * A promise is returned that will be fulfilled with an `fs.Dirent`, or `null` if there are no more directory entries to read.
      *
      * Directory entries returned by this function are in no particular order as
      * provided by the operating system's underlying directory mechanisms.

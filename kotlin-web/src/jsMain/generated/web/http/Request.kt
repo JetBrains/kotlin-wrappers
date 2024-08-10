@@ -61,8 +61,6 @@ external class Request(
 
     /**
      * Returns a boolean indicating whether or not request can outlive the global in which it was created.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/keepalive)
      */
     val keepalive: Boolean
 
@@ -71,7 +69,7 @@ external class Request(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/method)
      */
-    val method: String
+    val method: RequestMethod
 
     /**
      * Returns the mode associated with request, which is a string indicating whether the request will use CORS, or will be restricted to same-origin URLs.
