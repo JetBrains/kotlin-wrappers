@@ -51,8 +51,14 @@ pluginManager.withPlugin("org.jetbrains.kotlin.multiplatform") {
 }
 
 pluginManager.withPlugin("java-platform") {
-    publishing.publications.create<MavenPublication>("bom") {
+    publishing.publications.register<MavenPublication>("maven") {
         from(components["javaPlatform"])
+    }
+}
+
+pluginManager.withPlugin("version-catalog") {
+    publishing.publications.register<MavenPublication>("maven") {
+        from(components["versionCatalog"])
     }
 }
 
