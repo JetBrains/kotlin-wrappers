@@ -1,6 +1,5 @@
 import org.jetbrains.kotlin.gradle.tasks.Kotlin2JsCompile
 import org.gradle.api.tasks.PathSensitivity.RELATIVE
-import org.jetbrains.kotlin.gradle.dsl.JsModuleKind
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompilationTask
 
 plugins {

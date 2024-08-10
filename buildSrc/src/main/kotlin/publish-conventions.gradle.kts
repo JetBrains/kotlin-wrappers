@@ -1,6 +1,12 @@
+import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
+import org.jetbrains.kotlin.gradle.plugin.KotlinPlatformType
+import org.jetbrains.kotlin.gradle.plugin.KotlinPlatformType.common
+import org.jetbrains.kotlin.gradle.plugin.KotlinPlatformType.jvm
+
 plugins {
     `maven-publish`
     signing
+    id("kotlin-wrappers-subprojects-service")
 }
 
 val publishVersion = publishVersion()
@@ -19,7 +25,7 @@ configure<PublishingExtension> {
                 withType<MavenPublication>().configureEach {
                     val artifactName = when (name) {
                         "kotlinMultiplatform" -> ""
-                        else -> "-$name"
+                        else                  -> "-$name"
                     }
 
                     groupId = project.group.toString()
@@ -33,7 +39,7 @@ configure<PublishingExtension> {
                     configurePom(project)
                 }
 
-            else ->
+            else                         ->
                 create<MavenPublication>("bom") {
                     from(components["javaPlatform"])
 
