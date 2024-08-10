@@ -43,7 +43,16 @@ configure<PublishingExtension> {
 
             else ->
                 create<MavenPublication>("maven") {
-                    from(components["javaPlatform"])
+                    when (publicationType) {
+                        PublicationType.LIBRARY,
+                        -> throw UnsupportedOperationException()
+
+                        PublicationType.BOM,
+                        -> from(components["javaPlatform"])
+
+                        PublicationType.VERSION_CATALOG,
+                        -> from(components["versionCatalog"])
+                    }
 
                     groupId = project.group.toString()
                     artifactId = project.name
