@@ -17,11 +17,11 @@ internal fun Project.publishVersion(): String {
     val target = name.removePrefix("kotlin-")
     val finalTarget = TARGET_ALIASES[target] ?: target
 
-    val build = prop("version.build")
-
     val version = version(finalTarget)
         .removePrefix("^")
         .removePrefix("~")
 
-    return version + build
+    val build = prop("version.build")
+
+    return "$version-$build"
 }
