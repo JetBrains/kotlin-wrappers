@@ -3,10 +3,18 @@ plugins {
     signing
 }
 
+val publicationType = when {
+    isKotlinMultiplatformProject -> PublicationType.LIBRARY
+    project.name == "kotlin-wrappers-bom" -> PublicationType.BOM
+    project.name == "kotlin-wrappers-catalog" -> PublicationType.VERSION_CATALOG
+
+    else -> throw IllegalStateException("Unable to calculate publication type for project ${project.path}")
+}
+
 val publishVersion = publishVersion()
 project.version = publishVersion
 
-val javadocJar = if (isKotlinMultiplatformProject) {
+val javadocJar = if (publicationType == PublicationType.LIBRARY) {
     tasks.register("emptyJavadocJar", Jar::class) {
         archiveClassifier.set("javadoc")
     }
@@ -14,8 +22,8 @@ val javadocJar = if (isKotlinMultiplatformProject) {
 
 configure<PublishingExtension> {
     publications {
-        when {
-            isKotlinMultiplatformProject ->
+        when (publicationType) {
+            PublicationType.LIBRARY ->
                 withType<MavenPublication>().configureEach {
                     val artifactName = when (name) {
                         "kotlinMultiplatform" -> ""
