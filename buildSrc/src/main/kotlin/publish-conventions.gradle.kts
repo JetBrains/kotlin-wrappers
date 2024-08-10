@@ -34,7 +34,7 @@ configure<PublishingExtension> {
                 }
 
             else ->
-                create<MavenPublication>("bom") {
+                create<MavenPublication>("maven") {
                     from(components["javaPlatform"])
 
                     groupId = project.group.toString()
