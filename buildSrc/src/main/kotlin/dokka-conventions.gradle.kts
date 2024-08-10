@@ -1,5 +1,3 @@
-import gradle.kotlin.dsl.accessors._74857f9dd946e843b9fa7c149d123d57.dokkatoo
-import gradle.kotlin.dsl.accessors._74857f9dd946e843b9fa7c149d123d57.html
 import org.gradle.api.tasks.PathSensitivity.RELATIVE
 
 plugins {
