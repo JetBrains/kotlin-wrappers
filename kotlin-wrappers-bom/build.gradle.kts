@@ -5,20 +5,8 @@ plugins {
 
 dependencies {
     constraints {
-        for (library in getLibraryProjects()) {
+        for (library in getLibraryProjects(rootProject)) {
             api(project(library.path))
         }
     }
 }
-
-fun isLibraryProject(
-    project: Project,
-): Boolean =
-    sequenceOf(
-        KotlinLibraryConventionsPlugin::class,
-        KotlinLegacyLibraryConventionsPlugin::class
-    ).any(project.plugins::hasPlugin)
-
-fun getLibraryProjects(): Sequence<Project> =
-    rootProject.subprojects.asSequence()
-        .filter(::isLibraryProject)
