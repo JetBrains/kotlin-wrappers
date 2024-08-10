@@ -23,5 +23,5 @@ dependencies {
 ```
 
 See also
-an [example of using kotlin-wrappers-bom](https://github.com/aerialist7/kotlin-react-table-sample/blob/main/build.gradle.kts)
+an [example of using kotlin-wrappers-bom](https://github.com/karakum-team/kotlin-react-table-sample/blob/main/build.gradle.kts)
 in a real project.
