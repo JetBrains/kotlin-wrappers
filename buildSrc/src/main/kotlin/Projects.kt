@@ -18,7 +18,6 @@ internal fun Project.publishVersion(): String {
     val finalTarget = TARGET_ALIASES[target] ?: target
 
     val build = prop("version.build")
-        .let { if (it.isNotEmpty()) "-$it" else "" }
 
     val version = version(finalTarget)
         .removePrefix("^")
