@@ -13,7 +13,7 @@ fun Project.version(target: String): String {
     return prop("$target.version")
 }
 
-internal fun Project.publishVersion(): String {
+fun Project.publishVersion(): String {
     val target = name.removePrefix("kotlin-")
     val finalTarget = TARGET_ALIASES[target] ?: target
 
