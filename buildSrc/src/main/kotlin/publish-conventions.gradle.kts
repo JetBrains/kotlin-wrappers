@@ -1,6 +1,7 @@
 plugins {
     `maven-publish`
     signing
+    id("kotlin-wrappers-subprojects-service")
 }
 
 val publicationType = when {
