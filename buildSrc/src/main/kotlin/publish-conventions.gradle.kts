@@ -4,10 +4,18 @@ plugins {
     id("kotlin-wrappers-subprojects-service")
 }
 
+val publicationType = when {
+    isKotlinMultiplatformProject -> PublicationType.LIBRARY
+    project.name == "kotlin-wrappers-bom" -> PublicationType.BOM
+    project.name == "kotlin-wrappers-catalog" -> PublicationType.VERSION_CATALOG
+
+    else -> throw IllegalStateException("Unable to calculate publication type for project ${project.path}")
+}
+
 val publishVersion = publishVersion()
 project.version = publishVersion
 
-val javadocJar = if (isKotlinMultiplatformProject) {
+val javadocJar = if (publicationType == PublicationType.LIBRARY) {
     tasks.register("emptyJavadocJar", Jar::class) {
         archiveClassifier.set("javadoc")
     }
@@ -15,8 +23,8 @@ val javadocJar = if (isKotlinMultiplatformProject) {
 
 configure<PublishingExtension> {
     publications {
-        when {
-            isKotlinMultiplatformProject ->
+        when (publicationType) {
+            PublicationType.LIBRARY ->
                 withType<MavenPublication>().configureEach {
                     val artifactName = when (name) {
                         "kotlinMultiplatform" -> ""
@@ -35,8 +43,17 @@ configure<PublishingExtension> {
                 }
 
             else ->
-                create<MavenPublication>("bom") {
-                    from(components["javaPlatform"])
+                create<MavenPublication>("maven") {
+                    when (publicationType) {
+                        PublicationType.LIBRARY,
+                        -> throw UnsupportedOperationException()
+
+                        PublicationType.BOM,
+                        -> from(components["javaPlatform"])
+
+                        PublicationType.VERSION_CATALOG,
+                        -> from(components["versionCatalog"])
+                    }
 
                     groupId = project.group.toString()
                     artifactId = project.name

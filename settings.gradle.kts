@@ -177,3 +177,5 @@ include("kotlin-typescript")
 include("kotlin-web")
 
 include("kotlin-wrappers-bom")
+
+include("kotlin-wrappers-catalog")
