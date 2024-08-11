@@ -25,7 +25,7 @@ dependencyResolutionManagement {
     }
 
     versionCatalogs {
-        create("kotlinx") {
+        create("libs") {
             val coroutinesVersion = extra["kotlinx-coroutines.version"] as String
             library("coroutines-core", "org.jetbrains.kotlinx", "kotlinx-coroutines-core").version(coroutinesVersion)
             library("coroutines-test", "org.jetbrains.kotlinx", "kotlinx-coroutines-test").version(coroutinesVersion)
