@@ -28,7 +28,7 @@ dependencies {
 
     jsMainApi(npmv("inline-style-prefixer"))
 
-    jsTestImplementation(kotlin("test-js"))
+    jsTestImplementation(libs.kotlin.test.js)
     jsTestImplementation(libs.coroutines.core)
 
     jsTestImplementation(devNpmv("puppeteer"))

@@ -26,6 +26,14 @@ dependencyResolutionManagement {
 
     versionCatalogs {
         create("libs") {
+            val kotlinVersion = extra["kotlin.version"] as String
+            library("kotlin-test-annotations-common", "org.jetbrains.kotlin", "kotlin-test-annotations-common").version(
+                kotlinVersion
+            )
+            library("kotlin-test-common", "org.jetbrains.kotlin", "kotlin-test-common").version(kotlinVersion)
+            library("kotlin-test-junit", "org.jetbrains.kotlin", "kotlin-test-junit").version(kotlinVersion)
+            library("kotlin-test-js", "org.jetbrains.kotlin", "kotlin-test-js").version(kotlinVersion)
+
             val coroutinesVersion = extra["kotlinx-coroutines.version"] as String
             library("coroutines-core", "org.jetbrains.kotlinx", "kotlinx-coroutines-core").version(coroutinesVersion)
             library("coroutines-test", "org.jetbrains.kotlinx", "kotlinx-coroutines-test").version(coroutinesVersion)
