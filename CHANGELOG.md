@@ -1,3 +1,8 @@
+## pre.790
+
+* Gradle [version catalog](https://docs.gradle.org/current/userguide/platforms.html)
+    * `org.jetbrains.kotlin-wrappers:kotlin-wrappers-catalog`
+
 ## pre.777
 
 * React. Move raw declarations in a separate package

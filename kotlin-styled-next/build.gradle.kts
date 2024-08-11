@@ -1,3 +1,5 @@
+import org.gradle.api.tasks.PathSensitivity.RELATIVE
+
 plugins {
     `kotlin-legacy-library-conventions`
 }
@@ -22,33 +24,40 @@ dependencies {
     jsMainApi(projects.kotlinReactLegacy)
     jsMainApi(projects.kotlinReactDomLegacy)
 
-    jsMainApi(kotlinx.html.js)
+    jsMainApi(libs.html.js)
 
     jsMainApi(npmv("inline-style-prefixer"))
 
-    jsTestImplementation(kotlin("test-js"))
-    jsTestImplementation(kotlinx.coroutines.core)
+    jsTestImplementation(libs.kotlin.test.js)
+    jsTestImplementation(libs.coroutines.core)
 
     jsTestImplementation(devNpmv("puppeteer"))
 }
 
 val printBenchmarkResults by tasks.registering {
-    doLast {
-        // implicit dependency to benchmark classes names
-        val fileNames = listOf(
-            "AddStyledElements",
-            "ConvertToStyled",
-            "CssBuildersInject",
-            "AddDuplicateCss",
-            "DataTypeOperations",
-            "InjectCssNPlusOne"
-        )
-        fileNames.forEach { test ->
-            val report = layout.buildDirectory
-                .file("reports/tests/test/classes/benchmark.$test.html")
-                .get().asFile.readText()
+    dependsOn(tasks.allTests)
 
-            "#.*;".toRegex().findAll(report).map { it.value }.forEach { stdout ->
+    // implicit dependency to benchmark classes names
+    val fileNames = listOf(
+        "AddDuplicateCss",
+        "AddStyledElements",
+        "ConvertToStyled",
+        "CssBuildersInject",
+        "DataTypeOperations",
+        "InjectCssNPlusOne",
+    )
+    val reports = objects.fileCollection().from(fileNames.map { test ->
+        layout.buildDirectory.file("reports/tests/test/classes/benchmark.$test.html")
+    })
+
+    inputs.files(reports)
+        .withPropertyName("reports")
+        .withPathSensitivity(RELATIVE)
+
+    doLast {
+        reports.forEach { report ->
+            val reportText = report.readText()
+            "#.*;".toRegex().findAll(reportText).map { it.value }.forEach { stdout ->
                 val benchmarks = stdout.split(";").mapNotNull {
                     if (it.isEmpty()) {
                         null

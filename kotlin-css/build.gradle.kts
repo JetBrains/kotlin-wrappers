@@ -19,20 +19,20 @@ kotlin {
     sourceSets {
         val commonTest by getting {
             dependencies {
-                implementation(kotlin("test-common"))
-                implementation(kotlin("test-annotations-common"))
+                implementation(libs.kotlin.test.common)
+                implementation(libs.kotlin.test.annotations.common)
             }
         }
 
         val jvmTest by getting {
             dependencies {
-                implementation(kotlin("test-junit"))
+                implementation(libs.kotlin.test.junit)
             }
         }
 
         val jsTest by getting {
             dependencies {
-                implementation(kotlin("test-js"))
+                implementation(libs.kotlin.test.js)
             }
         }
     }
