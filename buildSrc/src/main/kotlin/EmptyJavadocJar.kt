@@ -9,7 +9,7 @@ private val README_CONTENT = """
 |
 """.trimMargin()
 
-class EmptyJavadocJar : Jar() {
+open class EmptyJavadocJar : Jar() {
     init {
         group = JavaBasePlugin.DOCUMENTATION_GROUP
         description = "Empty javadoc artifact (required by Maven Central)"
