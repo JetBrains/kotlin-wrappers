@@ -3,8 +3,7 @@ plugins {
     signing
 }
 
-val publishVersion = publishVersion()
-project.version = publishVersion
+project.version = publishVersion()
 
 val emptyJavadocJar by tasks.registering(EmptyJavadocJar::class)
 
