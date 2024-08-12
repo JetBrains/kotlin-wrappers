@@ -29,7 +29,9 @@ publishing {
 
 pluginManager.withPlugin("org.jetbrains.kotlin.multiplatform") {
     publishing.publications.withType<MavenPublication>().configureEach {
-        artifact(emptyJavadocJar)
+        if (name == "jvm") {
+            artifact(emptyJavadocJar)
+        }
     }
 }
 
