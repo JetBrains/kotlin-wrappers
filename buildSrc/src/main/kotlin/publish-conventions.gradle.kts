@@ -17,7 +17,7 @@ publishing {
     repositories {
         maven("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers") {
             name = "kotlinSpace"
-            credentials(org.gradle.api.artifacts.repositories.PasswordCredentials::class)
+            credentials(PasswordCredentials::class)
         }
         // Create a local repo for testing publishing.
         // Run `./gradlew publishToLocalBuildRepo` and check `$rootDir/build/local-repo`
