@@ -6,23 +6,7 @@ plugins {
 val publishVersion = publishVersion()
 project.version = publishVersion
 
-val emptyJavadocJar by tasks.registering(Jar::class) {
-    group = JavaBasePlugin.DOCUMENTATION_GROUP
-    description = "Empty javadoc artifact (required by Maven Central)"
-    archiveClassifier = "javadoc"
-    from(
-        resources.text.fromString(
-            """
-            |This Javadoc JAR is intentionally empty.
-            |
-            |For documentation, see https://github.com/JetBrains/kotlin-wrappers/ or the sources JAR.
-            |
-            """.trimMargin()
-        )
-    ) {
-        rename { "readme.txt" }
-    }
-}
+val emptyJavadocJar by tasks.registering(EmptyJavadocJar::class)
 
 publishing {
     publications {
