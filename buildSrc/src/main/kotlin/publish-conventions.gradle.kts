@@ -20,7 +20,7 @@ publishing {
             credentials(PasswordCredentials::class)
         }
         // Create a local repo for testing publishing.
-        // Run `./gradlew publishToLocalBuildRepo` and check `$rootDir/build/local-repo`
+        // Run `./gradlew publishAllPublicationsToLocalBuildRepoRepository` and check `$rootDir/build/local-repo`
         maven(rootDir.resolve("build/local-repo")) {
             name = "LocalBuildRepo"
         }
