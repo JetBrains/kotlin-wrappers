@@ -65,38 +65,31 @@ Artifacts are published to Maven Central, see the corresponding README files for
 
 ## Using In Your Projects
 
-Use the "Kotlin Wrappers BOM" which helps to ensure consistency between the modules and allows you not to think
-about version compatibility.
+Use Kotlin Wrappers' version catalog.
 
-Just declare `kotlin-wrappers-bom` and specify the modules you need:
+Just declare `kotlin-wrappers-catalog` in root `settings.gradle.kts` and specify the modules you need:
 
 ```kotlin
-val kotlinWrappersVersion = "1.0.0-pre.791"
+// root `settings.gradle.kts`
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+    }
 
-dependencies {
-    implementation(platform("org.jetbrains.kotlin-wrappers:kotlin-wrappers-bom:$kotlinWrappersVersion"))
-    implementation("org.jetbrains.kotlin-wrappers:kotlin-emotion")
-    implementation("org.jetbrains.kotlin-wrappers:kotlin-react")
-    implementation("org.jetbrains.kotlin-wrappers:kotlin-react-dom")
-    implementation("org.jetbrains.kotlin-wrappers:kotlin-tanstack-react-table")
-    // other wrappers
+    versionCatalogs {
+        create("libs") {
+            val wrappersVersion = "0.0.1-pre.791"
+            from("org.jetbrains.kotlin-wrappers:kotlin-wrappers-catalog:$wrappersVersion")
+        }
+    }
 }
-```
 
-Or use a helper function:
-
-```kotlin
-fun kotlinw(target: String): String =
-    "org.jetbrains.kotlin-wrappers:kotlin-$target"
-
-val kotlinWrappersVersion = "1.0.0-pre.791"
-
+// build.gradle.kts
 dependencies {
-    implementation(platform(kotlinw("wrappers-bom:$kotlinWrappersVersion")))
-    implementation(kotlinw("emotion"))
-    implementation(kotlinw("react"))
-    implementation(kotlinw("react-dom"))
-    implementation(kotlinw("tanstack-react-table"))
+    jsMainImplementation(libs.wrappers.emotion)
+    jsMainImplementation(libs.wrappers.react)
+    jsMainImplementation(libs.wrappers.react.dom)
+    jsMainImplementation(libs.wrappers.tanstack.react.table)
     // other wrappers
 }
 ```
