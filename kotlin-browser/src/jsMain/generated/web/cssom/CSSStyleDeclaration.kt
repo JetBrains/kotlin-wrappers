@@ -530,6 +530,10 @@ sealed external class CSSStyleDeclaration :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/clip-path)
      */
     var clipPath: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/clip-rule)
+     */
     var clipRule: String
 
     /**
@@ -541,6 +545,10 @@ sealed external class CSSStyleDeclaration :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/color-interpolation)
      */
     var colorInterpolation: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/color-interpolation-filters)
+     */
     var colorInterpolationFilters: String
 
     /**
@@ -709,8 +717,20 @@ sealed external class CSSStyleDeclaration :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/empty-cells)
      */
     var emptyCells: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/fill)
+     */
     var fill: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/fill-opacity)
+     */
     var fillOpacity: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/fill-rule)
+     */
     var fillRule: String
 
     /**
@@ -1724,7 +1744,15 @@ sealed external class CSSStyleDeclaration :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/shape-rendering)
      */
     var shapeRendering: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/stop-color)
+     */
     var stopColor: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/stop-opacity)
+     */
     var stopOpacity: String
     var stroke: String
     var strokeDasharray: String
@@ -2020,7 +2048,15 @@ sealed external class CSSStyleDeclaration :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/writing-mode)
      */
     var writingMode: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/x)
+     */
     var x: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/y)
+     */
     var y: String
 
     /**
