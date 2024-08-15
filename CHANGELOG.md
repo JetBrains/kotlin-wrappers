@@ -3,11 +3,6 @@
 * Gradle [version catalog](https://docs.gradle.org/current/userguide/platforms.html)
     * `org.jetbrains.kotlin-wrappers:kotlin-wrappers-catalog`
 
-### pre.786
-
-* `kotlin-redux` and `kotlin-react-redux` removed as outdated
-    * [Alternatives and fallback](https://github.com/JetBrains/kotlin-wrappers/issues/2385)
-
 ## pre.777
 
 * React. Move raw declarations in a separate package
@@ -33,8 +28,7 @@
     * Instead of `EffectBuilder.cleanup` please use suspend functions with "auto-cleanup" like:
         * `web.events.subscribe` ([example](examples/old/src/jsMain/kotlin/example/react/useEffectExamples.kt#L23))
         * `web.events.once` ([example](examples/old/src/jsMain/kotlin/example/react/useEffectExamples.kt#L47))
-      *
-      `web.animations.awaitAnimationFrame` ([example](examples/old/src/jsMain/kotlin/example/react/useEffectExamples.kt#L67))
+        * `web.animations.awaitAnimationFrame` ([example](examples/old/src/jsMain/kotlin/example/react/useEffectExamples.kt#L67))
         * "your custom suspend adapter"
     * If you need old-style cleanup registration, please use the following hooks:
         * `useEffectWithCleanup`
@@ -268,9 +262,9 @@ import web.uievents.MouseEvent
 element.addEventHandler(MouseEvent.CLICK) { }
 
 // After
-import web . uievents . MouseEvent
+import web.uievents.MouseEvent
 
-        element.addEventHandler(MouseEvent.CLICK) { }
+element.addEventHandler(MouseEvent.CLICK) { }
 ```
 
 ## pre.600
@@ -514,9 +508,7 @@ If you are a new user of `kotlin-react`, just start using the new API and don't 
 Technically, there is a third component called `kotlin-react-core` which contains most of the React API, but you don't
 need to add it as a direct dependency.
 
-### `kotlin-react-dom` was also split into two parts – you guessed it right — `kotlin-react-dom` and
-
-`kotlin-react-dom-legacy`
+### `kotlin-react-dom` was also split into two parts – you guessed it right — `kotlin-react-dom` and `kotlin-react-dom-legacy`
 
 `kotlin-react-dom` does not depend on `kotlinx.html`, the HTML typings it provides are generated from TypeScript types
 directly. They are therefore more complete and up-to-date.
