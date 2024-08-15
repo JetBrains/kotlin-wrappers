@@ -34,4 +34,5 @@ external interface VirtualizerOptions<TScrollElement : EventTarget /* Element | 
     var lanes: Int?
     var isScrollingResetDelay: Int?
     var enabled: Boolean?
+    var isRtl: Boolean?
 }
