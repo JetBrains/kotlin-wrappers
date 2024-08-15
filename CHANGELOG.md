@@ -3,6 +3,11 @@
 * Gradle [version catalog](https://docs.gradle.org/current/userguide/platforms.html)
     * `org.jetbrains.kotlin-wrappers:kotlin-wrappers-catalog`
 
+### pre.786
+
+* `kotlin-redux` and `kotlin-react-redux` removed as outdated
+    * [Alternatives and fallback](https://github.com/JetBrains/kotlin-wrappers/issues/2385)
+
 ## pre.777
 
 * React. Move raw declarations in a separate package
