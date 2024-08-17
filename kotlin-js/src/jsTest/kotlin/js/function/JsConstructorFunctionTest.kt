@@ -3,6 +3,8 @@ package js.function
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
+@OptIn(ExperimentalJsExport::class)
+@JsExport
 class X {
     var value: String = "test"
 }
