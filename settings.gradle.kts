@@ -89,8 +89,8 @@ include("kotlin-muix-tree-view")
 // Kotlin/JS: Node.js wrappers
 include("kotlin-node")
 
-// Kotlin/JS: Popper wrappers
-include("kotlin-popper")
+// Kotlin/JS: Popper Core wrappers
+include("kotlin-popperjs-core")
 
 // Kotlin/JS: Preact Signals Core wrappers
 include("kotlin-preact-signals-core")

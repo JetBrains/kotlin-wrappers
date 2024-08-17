@@ -4,16 +4,7 @@ import org.jetbrains.kotlin.gradle.targets.js.npm.DevNpmDependencyExtension
 import org.jetbrains.kotlin.gradle.targets.js.npm.NpmDependency
 import org.jetbrains.kotlin.gradle.targets.js.npm.NpmDependencyExtension
 
-private val NAME_ALIASES = mapOf(
-    "@popperjs/core" to "popper",
-)
-
 internal fun Project.npmVersion(name: String): String {
-    val alias = NAME_ALIASES[name]
-    if (alias != null) {
-        return npmVersion(alias)
-    }
-
     val target = name
         .removePrefix("@types/")
         .removePrefix("@")

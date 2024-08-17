@@ -1,6 +1,6 @@
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-popper)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-popper)
+[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-popperjs-core)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-popperjs-core)
 
-# Module kotlin-popper
+# Module kotlin-popperjs-core
 
 Wrappers for [Popper](https://popper.js.org/), a tooltip & popover positioning engine.
 
