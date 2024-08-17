@@ -1,3 +1,10 @@
+## pre.793
+
+**BREAKING CHANGE**
+
+* Popper Core
+    * Fix subproject name
+
 ## pre.790
 
 * Gradle [version catalog](https://docs.gradle.org/current/userguide/platforms.html)
