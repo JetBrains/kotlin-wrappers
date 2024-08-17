@@ -19,13 +19,13 @@ class JsConstructorFunctionTest {
 
     @Test
     fun testKClassAdapter() {
-        val result = JsConstructorFunction<JsTuple, X>(X::class)()
+        val result = JsConstructorFunction<JsTuple, _>(X::class)()
         assertEquals("test", result.value)
     }
 
     @Test
     fun testJsClassAdapter() {
-        val result = JsConstructorFunction<JsTuple, X>(X::class.js)()
+        val result = JsConstructorFunction<JsTuple, _>(X::class.js)()
         assertEquals("test", result.value)
     }
 }
