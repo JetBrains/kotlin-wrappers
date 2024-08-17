@@ -13,13 +13,17 @@ private val NAME_ALIASES = mapOf(
     "@types/node" to "node",
 )
 
-private fun Project.npmVersion(name: String): String {
-    val finalName = NAME_ALIASES[name]
-        ?: name
-            .removePrefix("@")
-            .replace("/", "-")
+internal fun Project.npmVersion(name: String): String {
+    val alias = NAME_ALIASES[name]
+    if (alias != null) {
+        return npmVersion(alias)
+    }
 
-    return version(finalName)
+    val target = name
+        .removePrefix("@")
+        .replace("/", "-")
+
+    return prop("$target.npm.version")
 }
 
 fun Project.npmv(name: String): NpmDependency {
