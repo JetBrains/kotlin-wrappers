@@ -7,9 +7,6 @@ pluginManagement {
         plugins {
             val karakumVersion = extra["karakum.version"] as String
             id("io.github.sgrishchenko.karakum") version karakumVersion
-
-            val seskarVersion = extra["seskar.version"] as String
-            id("io.github.turansky.seskar") version seskarVersion
         }
     }
 }
