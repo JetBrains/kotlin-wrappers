@@ -1,6 +1,5 @@
 plugins {
     id("dev.adamko.dokkatoo-html")
-    id("kotlin-wrappers-subprojects-service")
 }
 
 dokkatoo {
@@ -19,14 +18,10 @@ dokkatoo {
     }
 }
 
-configurations.dokkatoo.configure {
-    // lazily add all documentable subprojects
-    dependencies.addAllLater(
-        kotlinWrapperSubprojects.dokkaDependencies.map { subproject ->
-            logger.info("[$path] adding ${subproject.size} subprojects to Dokkatoo: $subproject")
-            subproject.sorted().map { coord ->
-                project.dependencies.create(project(coord))
-            }
+dependencies {
+    constraints {
+        for (library in getLibraryProjects(rootProject)) {
+            dokkatoo(project(library.path))
         }
-    )
+    }
 }

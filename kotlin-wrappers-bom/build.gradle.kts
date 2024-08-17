@@ -4,14 +4,10 @@ plugins {
     id("dev.adamko.dokkatoo-html")
 }
 
-configurations.api.configure {
-    // lazily add enabled subprojects to the BOM
-    dependencyConstraints.addAllLater(
-        kotlinWrapperSubprojects.bomDependencies.map { subproject ->
-            logger.info("[$path] adding ${subproject.size} subprojects to BOM: $subproject")
-            subproject.sorted().map { coord ->
-                project.dependencies.constraints.create(project(coord))
-            }
+dependencies {
+    constraints {
+        for (library in getLibraryProjects(rootProject)) {
+            api(project(library.path))
         }
-    )
+    }
 }
