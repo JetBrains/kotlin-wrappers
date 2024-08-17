@@ -4,7 +4,6 @@ import js.array.JsTuple
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-@OptIn(ExperimentalJsExport::class)
 @JsExport
 class X {
     var value: String = "test"
