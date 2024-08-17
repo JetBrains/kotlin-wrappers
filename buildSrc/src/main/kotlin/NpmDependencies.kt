@@ -37,8 +37,3 @@ fun Project.devNpmv(
     val dependency = dependencyNotation.get()
     return devNpm(dependency.name, dependency.version!!)
 }
-
-fun Project.devNpmv(
-    dependencyNotation: ProviderConvertible<MinimalExternalModuleDependency>,
-): NpmDependency =
-    devNpmv(dependencyNotation.asProvider())
