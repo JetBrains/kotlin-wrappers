@@ -1,3 +1,5 @@
+rootProject.name = "kotlin-wrappers-examples"
+
 dependencyResolutionManagement {
     repositories {
         mavenCentral()
