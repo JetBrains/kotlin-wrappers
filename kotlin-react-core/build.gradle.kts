@@ -11,5 +11,5 @@ dependencies {
     jsTestImplementation(libs.kotlin.test.js)
     jsTestImplementation(libs.coroutines.test)
 
-    jsMainApi(npmv(libs.npm.react))
+    jsMainApi(npm(libs.npm.react))
 }

@@ -6,5 +6,5 @@ dependencies {
     jsMainApi(projects.kotlinJs)
     jsMainApi(projects.kotlinBrowser)
 
-    jsMainApi(npmv(libs.npm.popperjs.core))
+    jsMainApi(npm(libs.npm.popperjs.core))
 }

@@ -8,5 +8,5 @@ dependencies {
     jsMainApi(projects.kotlinRemixRunRouter)
     jsMainApi(projects.kotlinReactCore)
 
-    jsMainApi(npmv(libs.npm.react.router))
+    jsMainApi(npm(libs.npm.react.router))
 }

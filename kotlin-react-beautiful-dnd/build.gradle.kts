@@ -6,5 +6,5 @@ dependencies {
     jsMainApi(projects.kotlinReactCore)
     jsMainApi(projects.kotlinReactDom)
 
-    jsMainApi(npmv(libs.npm.react.beautiful.dnd))
+    jsMainApi(npm(libs.npm.react.beautiful.dnd))
 }

@@ -6,5 +6,5 @@ dependencies {
     jsMainApi(projects.kotlinJs)
     jsMainApi(projects.kotlinBrowser)
 
-    jsMainApi(npmv(libs.npm.cesium.engine))
+    jsMainApi(npm(libs.npm.cesium.engine))
 }

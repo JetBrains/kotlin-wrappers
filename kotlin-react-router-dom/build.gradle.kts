@@ -8,7 +8,7 @@ dependencies {
     jsMainApi(projects.kotlinReactRouter)
     jsMainApi(projects.kotlinReactDom)
 
-    jsMainApi(npmv(libs.npm.react.router.dom))
+    jsMainApi(npm(libs.npm.react.router.dom))
 
     jsTestImplementation(libs.kotlin.test.js)
 }

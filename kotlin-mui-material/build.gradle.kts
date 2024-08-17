@@ -5,5 +5,5 @@ plugins {
 dependencies {
     jsMainApi(projects.kotlinMuiBase)
 
-    jsMainApi(npmv(libs.npm.mui.material))
+    jsMainApi(npm(libs.npm.mui.material))
 }

@@ -7,8 +7,8 @@ dependencies {
     jsMainApi(projects.kotlinBrowser)
     jsMainApi(projects.kotlinReactCore)
 
-    jsMainApi(npmv(libs.npm.emotion.cache))
-    jsMainApi(npmv(libs.npm.emotion.css))
-    jsMainApi(npmv(libs.npm.emotion.react))
-    jsMainApi(npmv(libs.npm.emotion.styled))
+    jsMainApi(npm(libs.npm.emotion.cache))
+    jsMainApi(npm(libs.npm.emotion.css))
+    jsMainApi(npm(libs.npm.emotion.react))
+    jsMainApi(npm(libs.npm.emotion.styled))
 }

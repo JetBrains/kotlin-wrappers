@@ -5,5 +5,5 @@ plugins {
 dependencies {
     jsMainApi(projects.kotlinMuiMaterial)
 
-    jsMainApi(npmv(libs.npm.muix.tree.view))
+    jsMainApi(npm(libs.npm.muix.tree.view))
 }

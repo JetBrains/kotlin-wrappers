@@ -26,7 +26,7 @@ dependencies {
 
     jsMainApi(libs.html.js)
 
-    jsMainApi(npmv(libs.npm.inline.style.prefixer))
+    jsMainApi(npm(libs.npm.inline.style.prefixer))
 
     jsTestImplementation(libs.kotlin.test.js)
     jsTestImplementation(libs.coroutines.core)
