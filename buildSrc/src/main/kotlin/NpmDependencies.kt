@@ -5,12 +5,7 @@ import org.jetbrains.kotlin.gradle.targets.js.npm.NpmDependency
 import org.jetbrains.kotlin.gradle.targets.js.npm.NpmDependencyExtension
 
 private val NAME_ALIASES = mapOf(
-    "@mui/x-date-pickers" to "muix-date-pickers",
-    "@mui/x-tree-view" to "muix-tree-view",
-
     "@popperjs/core" to "popper",
-
-    "@types/node" to "node",
 )
 
 internal fun Project.npmVersion(name: String): String {
@@ -20,7 +15,9 @@ internal fun Project.npmVersion(name: String): String {
     }
 
     val target = name
+        .removePrefix("@types/")
         .removePrefix("@")
+        .replace("/x-", "x-")
         .replace("/", "-")
 
     return prop("$target.npm.version")
