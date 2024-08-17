@@ -1,6 +1,7 @@
 import org.gradle.api.Project
 import org.gradle.api.artifacts.MinimalExternalModuleDependency
 import org.gradle.api.provider.Provider
+import org.gradle.api.provider.ProviderConvertible
 import org.gradle.kotlin.dsl.the
 import org.jetbrains.kotlin.gradle.targets.js.npm.DevNpmDependencyExtension
 import org.jetbrains.kotlin.gradle.targets.js.npm.NpmDependency
@@ -24,6 +25,11 @@ fun Project.npmv(
     return npm(dependency.name, dependency.version!!)
 }
 
+fun Project.npmv(
+    dependencyNotation: ProviderConvertible<MinimalExternalModuleDependency>,
+): NpmDependency =
+    npmv(dependencyNotation.asProvider())
+
 fun Project.devNpmv(
     dependencyNotation: Provider<MinimalExternalModuleDependency>,
 ): NpmDependency {
@@ -31,6 +37,11 @@ fun Project.devNpmv(
     val dependency = dependencyNotation.get()
     return devNpm(dependency.name, dependency.version!!)
 }
+
+fun Project.devNpmv(
+    dependencyNotation: ProviderConvertible<MinimalExternalModuleDependency>,
+): NpmDependency =
+    devNpmv(dependencyNotation.asProvider())
 
 fun Project.npmv(name: String): NpmDependency {
     val npm = dependencies.the<NpmDependencyExtension>()
