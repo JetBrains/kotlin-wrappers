@@ -25,6 +25,20 @@ dependencyResolutionManagement {
 
             val htmlVersion = extra["kotlinx-html.version"] as String
             library("html-js", "org.jetbrains.kotlinx", "kotlinx-html-js").version(htmlVersion)
+
+            file("gradle.properties").readText()
+                .splitToSequence("# https://www.npmjs.com/package/")
+                .drop(1)
+                .filter { ".npm.version=" in it }
+                .forEach { data ->
+                    val packageName = data.substringBefore("\n")
+                    val (packageAlias, version) = data
+                        .substringAfter("\n")
+                        .substringBefore("\n")
+                        .split(".npm.version=")
+
+                    library("npm-$packageAlias", "npm", packageName).version(version)
+                }
         }
     }
 }
