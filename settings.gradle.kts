@@ -32,6 +32,8 @@ dependencyResolutionManagement {
 // Examples
 include("examples:old")
 
+include("docs")
+
 // Kotlin/JS: GitHub Actions Toolkit wrappers
 include("kotlin-actions-toolkit")
 
