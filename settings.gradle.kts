@@ -29,13 +29,17 @@ dependencyResolutionManagement {
             file("gradle.properties").readText()
                 .splitToSequence("# https://www.npmjs.com/package/")
                 .drop(1)
-                .filter { ".npm.version=" in it }
                 .forEach { data ->
                     val packageName = data.substringBefore("\n")
-                    val (packageAlias, version) = data
+                    val packageAlias = packageName
+                        .removePrefix("@")
+                        .replace("/x-", "x-")
+                        .replace("/", "-")
+
+                    val version = data
                         .substringAfter("\n")
                         .substringBefore("\n")
-                        .split(".npm.version=")
+                        .substringAfter("=", "")
 
                     library("npm-$packageAlias", "npm", packageName).version(version)
                 }
