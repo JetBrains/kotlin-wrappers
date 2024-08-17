@@ -42,13 +42,3 @@ fun Project.devNpmv(
     dependencyNotation: ProviderConvertible<MinimalExternalModuleDependency>,
 ): NpmDependency =
     devNpmv(dependencyNotation.asProvider())
-
-fun Project.npmv(name: String): NpmDependency {
-    val npm = dependencies.the<NpmDependencyExtension>()
-    return npm(name, npmVersion(name))
-}
-
-fun Project.devNpmv(name: String): NpmDependency {
-    val devNpm = dependencies.the<DevNpmDependencyExtension>()
-    return devNpm(name, npmVersion(name))
-}
