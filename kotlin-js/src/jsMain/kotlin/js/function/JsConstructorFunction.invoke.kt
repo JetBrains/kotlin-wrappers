@@ -10,7 +10,7 @@ import js.reflect.Reflect
 inline operator fun <R : Any> JsConstructorFunction<JsTuple, R>.invoke(): R =
     Reflect.construct(
         target = this,
-        argumentsList = emptyArray(),
+        argumentsList = emptyTuple(),
     )
 
 inline operator fun <P1, R : Any> JsConstructorFunction<JsTuple1<P1>, R>.invoke(
@@ -18,7 +18,7 @@ inline operator fun <P1, R : Any> JsConstructorFunction<JsTuple1<P1>, R>.invoke(
 ): R =
     Reflect.construct(
         target = this,
-        argumentsList = arrayOf(p1),
+        argumentsList = tupleOf(p1),
     )
 
 inline operator fun <P1, P2, R : Any> JsConstructorFunction<JsTuple2<P1, P2>, R>.invoke(
@@ -27,7 +27,7 @@ inline operator fun <P1, P2, R : Any> JsConstructorFunction<JsTuple2<P1, P2>, R>
 ): R =
     Reflect.construct(
         target = this,
-        argumentsList = arrayOf(p1, p2),
+        argumentsList = tupleOf(p1, p2),
     )
 
 
@@ -38,7 +38,7 @@ inline operator fun <P1, P2, P3, R : Any> JsConstructorFunction<JsTuple3<P1, P2,
 ): R =
     Reflect.construct(
         target = this,
-        argumentsList = arrayOf(p1, p2, p3),
+        argumentsList = tupleOf(p1, p2, p3),
     )
 
 
@@ -50,7 +50,7 @@ inline operator fun <P1, P2, P3, P4, R : Any> JsConstructorFunction<JsTuple4<P1,
 ): R =
     Reflect.construct(
         target = this,
-        argumentsList = arrayOf(p1, p2, p3, p4),
+        argumentsList = tupleOf(p1, p2, p3, p4),
     )
 
 
@@ -63,7 +63,7 @@ inline operator fun <P1, P2, P3, P4, P5, R : Any> JsConstructorFunction<JsTuple5
 ): R =
     Reflect.construct(
         target = this,
-        argumentsList = arrayOf(p1, p2, p3, p4, p5),
+        argumentsList = tupleOf(p1, p2, p3, p4, p5),
     )
 
 
@@ -77,7 +77,7 @@ inline operator fun <P1, P2, P3, P4, P5, P6, R : Any> JsConstructorFunction<JsTu
 ): R =
     Reflect.construct(
         target = this,
-        argumentsList = arrayOf(p1, p2, p3, p4, p5, p6),
+        argumentsList = tupleOf(p1, p2, p3, p4, p5, p6),
     )
 
 
@@ -92,5 +92,5 @@ inline operator fun <P1, P2, P3, P4, P5, P6, P7, R : Any> JsConstructorFunction<
 ): R =
     Reflect.construct(
         target = this,
-        argumentsList = arrayOf(p1, p2, p3, p4, p5, p6, p7),
+        argumentsList = tupleOf(p1, p2, p3, p4, p5, p6, p7),
     )
