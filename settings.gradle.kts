@@ -2,15 +2,6 @@ rootProject.name = "kotlin-wrappers"
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
-pluginManagement {
-    resolutionStrategy {
-        plugins {
-            val karakumVersion = extra["karakum.version"] as String
-            id("io.github.sgrishchenko.karakum") version karakumVersion
-        }
-    }
-}
-
 dependencyResolutionManagement {
     repositories {
         mavenCentral()
@@ -18,6 +9,9 @@ dependencyResolutionManagement {
 
     versionCatalogs {
         create("libs") {
+            val karakumVersion = extra["karakum.version"] as String
+            plugin("karakum","io.github.sgrishchenko.karakum").version(karakumVersion)
+
             val kotlinVersion = extra["kotlin.version"] as String
             library("kotlin-test-annotations-common", "org.jetbrains.kotlin", "kotlin-test-annotations-common")
                 .version(kotlinVersion)

@@ -1,6 +1,6 @@
 plugins {
     `kotlin-library-conventions`
-    karakum()
+    alias(libs.plugins.karakum)
 }
 
 dependencies {
