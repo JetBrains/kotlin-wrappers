@@ -7,5 +7,5 @@ dependencies {
     jsMainApi(projects.kotlinBrowser)
     jsMainApi(projects.kotlinTanstackVirtualCore)
 
-    jsMainApi(npmv("@tanstack/react-virtual"))
+    jsMainApi(npmv(libs.npm.tanstack.react.virtual))
 }

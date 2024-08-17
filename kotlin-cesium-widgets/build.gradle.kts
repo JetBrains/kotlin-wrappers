@@ -7,5 +7,5 @@ dependencies {
     jsMainApi(projects.kotlinBrowser)
     jsMainApi(projects.kotlinCesiumEngine)
 
-    jsMainApi(npmv("@cesium/widgets"))
+    jsMainApi(npmv(libs.npm.cesium.widgets))
 }

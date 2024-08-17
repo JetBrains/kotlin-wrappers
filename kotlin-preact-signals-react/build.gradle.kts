@@ -7,5 +7,5 @@ dependencies {
     jsMainApi(projects.kotlinReactCore)
     jsMainApi(projects.kotlinPreactSignalsCore)
 
-    jsMainApi(npmv("@preact/signals-react"))
+    jsMainApi(npmv(libs.npm.preact.signals.react))
 }

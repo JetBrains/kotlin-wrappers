@@ -6,5 +6,5 @@ dependencies {
     jsMainApi(projects.kotlinReactCore)
     jsMainApi(projects.kotlinTanstackQueryCore)
 
-    jsMainApi(npmv("@tanstack/react-query"))
+    jsMainApi(npmv(libs.npm.tanstack.react.query))
 }

@@ -7,5 +7,5 @@ dependencies {
     jsMainApi(projects.kotlinBrowser)
     jsMainApi(projects.kotlinReactCore)
 
-    jsMainApi(npmv("react-dom"))
+    jsMainApi(npmv(libs.npm.react.dom))
 }

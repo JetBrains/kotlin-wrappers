@@ -5,5 +5,5 @@ plugins {
 dependencies {
     jsMainApi(projects.kotlinMuiMaterial)
 
-    jsMainApi(npmv("@mui/x-date-pickers"))
+    jsMainApi(npmv(libs.npm.muix.date.pickers))
 }

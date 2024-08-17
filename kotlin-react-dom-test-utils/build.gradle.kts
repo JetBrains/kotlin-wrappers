@@ -11,5 +11,5 @@ dependencies {
     jsMainImplementation(libs.coroutines.core)
     jsMainImplementation(libs.coroutines.test)
 
-    jsMainApi(npmv("react-dom"))
+    jsMainApi(npmv(libs.npm.react.dom))
 }
