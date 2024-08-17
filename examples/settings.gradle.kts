@@ -17,3 +17,6 @@ dependencyResolutionManagement {
 
 // Old
 include("old")
+
+// Kotlin Wrappers
+includeBuild("../")
