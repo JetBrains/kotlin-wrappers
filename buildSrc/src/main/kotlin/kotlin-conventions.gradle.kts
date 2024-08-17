@@ -40,6 +40,7 @@ tasks.withType<KotlinCompilationTask<*>>().configureEach {
             "-opt-in=kotlin.ExperimentalStdlibApi",
             "-opt-in=kotlin.ExperimentalUnsignedTypes",
             "-opt-in=kotlin.contracts.ExperimentalContracts",
+            "-opt-in=kotlin.js.ExperimentalJsExport",
         )
     }
 }
