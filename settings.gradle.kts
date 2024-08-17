@@ -5,11 +5,6 @@ enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 pluginManagement {
     resolutionStrategy {
         plugins {
-            val kotlinVersion = extra["kotlin.version"] as String
-            kotlin("multiplatform") version kotlinVersion
-            kotlin("jvm") version kotlinVersion
-            kotlin("plugin.serialization") version kotlinVersion
-
             val karakumVersion = extra["karakum.version"] as String
             id("io.github.sgrishchenko.karakum") version karakumVersion
 
