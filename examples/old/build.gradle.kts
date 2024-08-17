@@ -1,12 +1,18 @@
 plugins {
-    `kotlin-conventions`
+    alias(libs.plugins.kotlin.multiplatform)
+}
+
+kotlin {
+    js {
+        browser()
+    }
 }
 
 dependencies {
-    jsMainImplementation(projects.kotlinEmotion)
-    jsMainImplementation(projects.kotlinJs)
-    jsMainImplementation(projects.kotlinReact)
-    jsMainImplementation(projects.kotlinReactUse)
-    jsMainImplementation(projects.kotlinReactDom)
-    jsMainImplementation(projects.kotlinReactRouterDom)
+    "jsMainImplementation"(libs.wrappers.emotion)
+    "jsMainImplementation"(libs.wrappers.js)
+    "jsMainImplementation"(libs.wrappers.react)
+    "jsMainImplementation"(libs.wrappers.react.use)
+    "jsMainImplementation"(libs.wrappers.react.dom)
+    "jsMainImplementation"(libs.wrappers.react.router.dom)
 }
