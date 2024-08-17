@@ -31,7 +31,7 @@ dependencies {
     jsTestImplementation(libs.kotlin.test.js)
     jsTestImplementation(libs.coroutines.core)
 
-    jsTestImplementation(devNpmv(libs.npm.puppeteer))
+    jsTestImplementation(devNpm(libs.npm.puppeteer))
 }
 
 val printBenchmarkResults by tasks.registering {

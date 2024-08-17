@@ -5,5 +5,5 @@ plugins {
 dependencies {
     jsMainApi(projects.kotlinJs)
 
-    jsMainApi(devNpmv(libs.npm.csstype))
+    jsMainApi(devNpm(libs.npm.csstype))
 }

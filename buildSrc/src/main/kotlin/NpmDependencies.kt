@@ -30,10 +30,9 @@ fun Project.npmv(
 ): NpmDependency =
     npmv(dependencyNotation.asProvider())
 
-fun Project.devNpmv(
+operator fun DevNpmDependencyExtension.invoke(
     dependencyNotation: Provider<MinimalExternalModuleDependency>,
 ): NpmDependency {
-    val devNpm = dependencies.the<DevNpmDependencyExtension>()
     val dependency = dependencyNotation.get()
-    return devNpm(dependency.name, dependency.version!!)
+    return invoke(dependency.name, dependency.version!!)
 }
