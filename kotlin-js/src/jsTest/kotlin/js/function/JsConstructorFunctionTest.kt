@@ -12,6 +12,12 @@ class X {
 class JsConstructorFunctionTest {
 
     @Test
+    fun testReifiedKClassAdapter() {
+        val result = JsConstructorFunction<JsTuple, X>()()
+        assertEquals("test", result.value)
+    }
+
+    @Test
     fun testKClassAdapter() {
         val result = JsConstructorFunction<JsTuple, X>(X::class)()
         assertEquals("test", result.value)
