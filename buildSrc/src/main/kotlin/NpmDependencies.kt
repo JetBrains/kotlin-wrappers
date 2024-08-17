@@ -20,7 +20,10 @@ operator fun NpmDependencyExtension.invoke(
     dependencyNotation: Provider<MinimalExternalModuleDependency>,
 ): NpmDependency {
     val dependency = dependencyNotation.get()
-    return this(dependency.name, dependency.version!!)
+    return this(
+        name = dependency.name,
+        version = dependency.version!!,
+    )
 }
 
 operator fun NpmDependencyExtension.invoke(
@@ -32,5 +35,8 @@ operator fun DevNpmDependencyExtension.invoke(
     dependencyNotation: Provider<MinimalExternalModuleDependency>,
 ): NpmDependency {
     val dependency = dependencyNotation.get()
-    return this(dependency.name, dependency.version!!)
+    return this(
+        name = dependency.name,
+        version = dependency.version!!,
+    )
 }
