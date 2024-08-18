@@ -1,4 +1,4 @@
-rootProject.name = "kotlin-wrappers-examples"
+rootProject.name = "examples"
 
 dependencyResolutionManagement {
     repositories {
