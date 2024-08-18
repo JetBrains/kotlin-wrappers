@@ -11,7 +11,7 @@ export default function (node, context, render) {
             || node.typeName.text === "Fetcher"
             || node.typeName.text === "Location"
             || node.typeName.text === "DataStrategyFunctionArgs"
-            || node.typeName.text === "AgnosticPatchRoutesOnMissFunction"
+            || node.typeName.text === "AgnosticPatchRoutesOnNavigationFunction"
         )
         && !node.typeArguments
     ) {
