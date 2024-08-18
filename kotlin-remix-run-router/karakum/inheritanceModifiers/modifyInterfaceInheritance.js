@@ -4,7 +4,7 @@ export default (node) => {
     if (
         ts.isInterfaceDeclaration(node)
         && (node.name.text === "AgnosticRouteMatch"
-            || node.name.text === "AgnosticPatchRoutesOnMissFunction")
+            || node.name.text === "AgnosticPatchRoutesOnNavigationFunction")
     ) {
         return ""
     }

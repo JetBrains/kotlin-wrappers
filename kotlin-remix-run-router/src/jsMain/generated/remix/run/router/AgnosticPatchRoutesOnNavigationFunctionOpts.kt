@@ -2,7 +2,7 @@
 
 package remix.run.router
 
-sealed external interface AgnosticPatchRoutesOnMissFunctionOpts<M : AgnosticRouteMatch<*> /* default is AgnosticRouteMatch<*> */> {
+sealed external interface AgnosticPatchRoutesOnNavigationFunctionOpts<M : AgnosticRouteMatch<*> /* default is AgnosticRouteMatch<*> */> {
     var path: String
     var matches: js.array.ReadonlyArray<M>
     var patch: (routeId: String?, children: js.array.ReadonlyArray<AgnosticRouteObject>) -> Unit
