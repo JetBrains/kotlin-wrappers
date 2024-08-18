@@ -14,7 +14,7 @@ fun Project.publishVersion(): String {
     val target = TARGET_ALIASES[originalTarget] ?: originalTarget
 
     val version = propOrNull("$target.version")
-        ?: npmVersion(target)
+        ?: prop("$target.npm.version")
             .removePrefix("^")
             .removePrefix("~")
 
