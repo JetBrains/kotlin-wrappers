@@ -3,6 +3,7 @@ rootProject.name = "examples"
 dependencyResolutionManagement {
     repositories {
         mavenCentral()
+        mavenLocal()
     }
 
     versionCatalogs {

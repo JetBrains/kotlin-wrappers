@@ -47,6 +47,7 @@ jobs:
           gradle-home-cache-cleanup: true
       - name: Build Examples
         run: |
+          ./gradlew publishToMavenLocal
           cd examples/
           ./gradlew build
 
