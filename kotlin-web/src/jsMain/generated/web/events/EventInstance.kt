@@ -9,7 +9,6 @@ package web.events
 import js.iterable.SuspendableIterator
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.channels.ReceiveChannel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlin.coroutines.resume
@@ -109,7 +108,7 @@ suspend operator fun <E : Event, T : EventTarget, D> EventInstance<E, *, T>.iter
     SuspendableIterator(asChannel<_, _, D>().iterator())
 
 // channel
-internal suspend fun <E : Event, T : EventTarget, D> EventInstance<E, *, T>.asChannel(): ReceiveChannel<D>
+internal suspend fun <E : Event, T : EventTarget, D> EventInstance<E, *, T>.asChannel(): Channel<D>
         where D : E,
               D : HasTargets<*, T> {
     val channel = Channel<D>()
