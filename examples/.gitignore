@@ -2,6 +2,7 @@
 .gradle/
 .kotlin/
 build/
-kotlin-js-store/
 
 .idea/
+
+package-lock.json
