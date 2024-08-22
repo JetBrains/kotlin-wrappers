@@ -2,9 +2,10 @@
 
 package web.gpu
 
-// @JsPlainObject
-//  Details - https://youtrack.jetbrains.com/issue/KT-68554
-sealed external interface GPUBufferBinding :
+import kotlinx.js.JsPlainObject
+
+@JsPlainObject
+external interface GPUBufferBinding :
     GPUBindingResource {
     var buffer: GPUBuffer
     var offset: GPUSize64?
