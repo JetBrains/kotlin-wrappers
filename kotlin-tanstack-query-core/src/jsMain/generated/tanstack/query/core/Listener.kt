@@ -2,4 +2,4 @@
 
 package tanstack.query.core
 
-typealias Listener = () -> Unit
+typealias Listener = (online: Boolean) -> Unit
