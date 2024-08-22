@@ -299,7 +299,7 @@ data class GridAutoColumns(override val value: String) : CssValue(value) {
     }
 }
 
-data class GridAutoFlow private constructor(override val value: String) : CssValue(value) {
+data class GridAutoFlow(override val value: String) : CssValue(value) {
     override fun toString() = value
 
     companion object {
