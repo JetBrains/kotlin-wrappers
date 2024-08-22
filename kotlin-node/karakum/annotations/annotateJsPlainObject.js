@@ -68,7 +68,7 @@ export default (node, context) => {
         && ts.isInterfaceDeclaration(node)
         && node.name.text === "StreamOptions"
     ) {
-        return `@kotlinx.js.JsPlainObject_KT_68943`
+        return `@kotlinx.js.JsPlainObject`
     }
 
     if (
@@ -82,7 +82,7 @@ export default (node, context) => {
         ts.isInterfaceDeclaration(node)
         && jsoInterfacesWithGenerics.some(name => node.name.text === name)
     ) {
-        return `@kotlinx.js.JsPlainObject_KT_68943`
+        return `@kotlinx.js.JsPlainObject`
     }
 
     if (

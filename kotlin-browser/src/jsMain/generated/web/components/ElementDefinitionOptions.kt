@@ -2,10 +2,11 @@
 
 package web.components
 
+import kotlinx.js.JsPlainObject
 import web.html.HTMLElement
 import web.html.HtmlTagName
 
-@kotlinx.js.JsPlainObject_KT_68943
+@JsPlainObject
 external interface ElementDefinitionOptions<T : HTMLElement> {
     var extends: HtmlTagName<T>?
 }

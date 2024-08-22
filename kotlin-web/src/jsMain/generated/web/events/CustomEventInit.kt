@@ -2,7 +2,9 @@
 
 package web.events
 
-@kotlinx.js.JsPlainObject_KT_68943
+import kotlinx.js.JsPlainObject
+
+@JsPlainObject
 external interface CustomEventInit<out D> :
     EventInit {
     val detail: D?

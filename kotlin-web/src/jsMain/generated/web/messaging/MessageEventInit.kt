@@ -3,9 +3,10 @@
 package web.messaging
 
 import js.array.ReadonlyArray
+import kotlinx.js.JsPlainObject
 import web.events.EventInit
 
-@kotlinx.js.JsPlainObject_KT_68943
+@JsPlainObject
 external interface MessageEventInit<out D> :
     EventInit {
     val data: D?

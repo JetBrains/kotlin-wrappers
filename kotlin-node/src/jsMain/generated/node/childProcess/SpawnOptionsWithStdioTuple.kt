@@ -2,7 +2,7 @@
 
 package node.childProcess
 
-@kotlinx.js.JsPlainObject_KT_68943
+@kotlinx.js.JsPlainObject
 sealed external interface SpawnOptionsWithStdioTuple<Stdin : Any? /* StdioNull | StdioPipe */, Stdout : Any? /* StdioNull | StdioPipe */, Stderr : Any? /* StdioNull | StdioPipe */> :
     SpawnOptions {
     @JsName("stdio")

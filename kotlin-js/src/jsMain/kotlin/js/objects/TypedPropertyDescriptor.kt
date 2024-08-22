@@ -1,8 +1,8 @@
 package js.objects
 
-import kotlinx.js.JsPlainObject_KT_68943
+import kotlinx.js.JsPlainObject
 
-@JsPlainObject_KT_68943
+@JsPlainObject
 external interface TypedPropertyDescriptor<T> {
     var configurable: Boolean?
     var enumerable: Boolean?
