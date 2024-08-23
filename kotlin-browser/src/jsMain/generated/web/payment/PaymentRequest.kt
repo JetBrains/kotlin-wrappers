@@ -19,6 +19,7 @@ import web.events.EventTarget
 open external class PaymentRequest(
     methodData: ReadonlyArray<PaymentMethodData>,
     details: PaymentDetailsInit,
+    options: PaymentOptions = definedExternally,
 ) : EventTarget {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/id)

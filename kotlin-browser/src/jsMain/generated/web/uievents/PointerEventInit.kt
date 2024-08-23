@@ -8,6 +8,8 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface PointerEventInit :
     MouseEventInit {
+    val altitudeAngle: Double?
+    val azimuthAngle: Double?
     val coalescedEvents: ReadonlyArray<PointerEvent>?
     val height: Double?
     val isPrimary: Boolean?

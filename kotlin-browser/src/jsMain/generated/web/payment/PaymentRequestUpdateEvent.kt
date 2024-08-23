@@ -32,5 +32,5 @@ open external class PaymentRequestUpdateEvent(
     @JsAlias(THIS)
     override fun asInit(): PaymentRequestUpdateEventInit
 
-    companion object
+    companion object : PaymentRequestUpdateEventTypes
 }

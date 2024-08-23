@@ -9,4 +9,5 @@ import kotlinx.js.JsPlainObject
 external interface PaymentDetailsBase {
     var displayItems: ReadonlyArray<PaymentItem>?
     var modifiers: ReadonlyArray<PaymentDetailsModifier>?
+    var shippingOptions: ReadonlyArray<PaymentShippingOption>?
 }

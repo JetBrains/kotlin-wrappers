@@ -2,8 +2,7 @@
 
 package web.fonts
 
-import js.buffer.ArrayBuffer
-import js.buffer.ArrayBufferView
+import js.buffer.BufferSource
 import js.promise.Promise
 import seskar.js.JsAsync
 
@@ -17,13 +16,7 @@ external class FontFace(
 ) {
     constructor(
         family: String,
-        source: ArrayBuffer,
-        descriptors: FontFaceDescriptors = definedExternally,
-    )
-
-    constructor(
-        family: String,
-        source: ArrayBufferView,
+        source: BufferSource,
         descriptors: FontFaceDescriptors = definedExternally,
     )
 
