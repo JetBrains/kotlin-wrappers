@@ -19,9 +19,7 @@ dokkatoo {
 }
 
 dependencies {
-    constraints {
-        for (library in getLibraryProjects(rootProject)) {
-            dokkatoo(project(library.path))
-        }
+    for (library in getLibraryProjects(rootProject)) {
+        dokkatoo(project(library.path))
     }
 }
