@@ -3,12 +3,22 @@ val subprojectService: SubprojectService =
 
 extensions.add("subprojectService", subprojectService)
 
-/** Controls whether the current subproject will be included in `kotlin-wrappers-bom`. */
-val includeInKotlinWrappersBom: Property<Boolean> =
-    objects.property<Boolean>().convention(project.path != ":kotlin-wrappers-bom")
-extensions.add<Property<Boolean>>("includeInKotlinWrappersBom", includeInKotlinWrappersBom)
+val subprojectType: Property<SubprojectType> =
+    objects.property<SubprojectType>()
+        .convention(provider { getSubprojectType() })
 
-subprojectService.bomDependencies
-    .addAll(provider { project.path }.zip(includeInKotlinWrappersBom) { path, enabled ->
-        if (enabled) listOf(path) else emptyList()
-    })
+subprojectService.data.addAll(
+    provider { project.path }
+        .zip(subprojectType) { path, type ->
+            listOf(SubprojectData(path, type))
+        }
+)
+
+fun getSubprojectType() = when {
+    pluginManager.hasPlugin("org.jetbrains.kotlin.multiplatform") -> SubprojectType.LIBRARY
+    pluginManager.hasPlugin("java-platform") -> SubprojectType.BOM
+    pluginManager.hasPlugin("version-catalog") -> SubprojectType.VERSION_CATALOG
+    project.path == ":docs" -> SubprojectType.DOCS
+
+    else -> throw IllegalStateException("Unknown subproject type")
+}

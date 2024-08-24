@@ -5,13 +5,14 @@ plugins {
 }
 
 configurations.api.configure {
-    // lazily add enabled subprojects to the BOM
     dependencyConstraints.addAllLater(
-        subprojectService.bomDependencies.map { subproject ->
-            logger.info("[$path] adding ${subproject.size} subprojects to BOM: $subproject")
-            subproject.sorted().map { coord ->
-                project.dependencies.constraints.create(project(coord))
-            }
+        subprojectService.data.map { subprojects ->
+            subprojects.asSequence()
+                .filter { it.type == SubprojectType.LIBRARY }
+                .map { it.path }
+                .sorted()
+                .map { path ->project.dependencies.constraints.create(project(path)) }
+                .toList()
         }
     )
 }
