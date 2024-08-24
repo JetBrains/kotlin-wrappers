@@ -7,11 +7,9 @@ val subprojectType: Property<SubprojectType> =
     objects.property<SubprojectType>()
         .convention(provider { getSubprojectType() })
 
-subprojectService.data.addAll(
+subprojectService.data.add(
     provider { project.path }
-        .zip(subprojectType) { path, type ->
-            listOf(SubprojectData(path, type))
-        }
+        .zip(subprojectType, ::SubprojectData)
 )
 
 fun getSubprojectType() = when {
