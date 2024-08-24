@@ -8,11 +8,11 @@ import kotlin.test.assertEquals
 class EventTypesTest {
     @Test
     fun import() {
-        assertEquals<Any>("click", MouseEvent.click<EventTarget>())
+        assertEquals<Any>("click", MouseEvent.click())
     }
 
     @Test
     fun staticImport() {
-        assertEquals<Any>("wheel", wheel<EventTarget>())
+        assertEquals<Any>("wheel", wheel())
     }
 }
