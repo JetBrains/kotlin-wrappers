@@ -1,8 +1,3 @@
-abstract class SubprojectService : BuildService<BuildServiceParameters.None> {
-    /** [Project.path]s of subprojects to include in `kotlin-wrappers-bom`. */
-    abstract val bomDependencies: SetProperty<String>
-}
-
 val subprojectService: SubprojectService =
     gradle.sharedServices.registerIfAbsent("SubprojectService", SubprojectService::class).get()
 
