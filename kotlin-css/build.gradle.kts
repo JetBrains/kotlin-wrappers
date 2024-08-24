@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTargetWithSimulatorTests
+
 plugins {
     `kotlin-legacy-library-conventions`
 }
@@ -12,7 +14,7 @@ kotlin {
     iosX64()
 
     // Sets the device ID for iosSimulatorArm64Test
-    targets.withType(org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTargetWithSimulatorTests::class.java) {
+    targets.withType<KotlinNativeTargetWithSimulatorTests> {
         testRuns["test"].deviceId = "iPhone 15"
     }
 
