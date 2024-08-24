@@ -1,9 +1,6 @@
 abstract class SubprojectService : BuildService<BuildServiceParameters.None> {
     /** [Project.path]s of subprojects to include in `kotlin-wrappers-bom`. */
     abstract val bomDependencies: SetProperty<String>
-
-    /** [Project.path]s of subprojects to include in the aggregated Dokka docs. */
-    abstract val dokkaDependencies: SetProperty<String>
 }
 
 val subprojectService: SubprojectService =
