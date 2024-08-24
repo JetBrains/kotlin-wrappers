@@ -5,22 +5,9 @@ import org.gradle.api.provider.SetProperty
 import org.gradle.api.services.BuildService
 import org.gradle.api.services.BuildServiceParameters
 import org.gradle.kotlin.dsl.get
-import org.gradle.kotlin.dsl.registerIfAbsent
-
-private const val SUBPROJECT_SERVICE = "SubprojectService"
 
 abstract class SubprojectService : BuildService<BuildServiceParameters.None> {
     abstract val data: SetProperty<SubprojectData>
-}
-
-internal fun Project.getOrCreateSubprojectService(): SubprojectService {
-    val service = gradle.sharedServices
-        .registerIfAbsent("SubprojectService", SubprojectService::class)
-        .get()
-
-    extensions.add(SUBPROJECT_SERVICE, service)
-
-    return service
 }
 
 fun Project.addSubprojectDependencies(
@@ -28,7 +15,7 @@ fun Project.addSubprojectDependencies(
     type: SubprojectType,
 ) {
     configuration.configure {
-        val subprojectService = extensions[SUBPROJECT_SERVICE] as SubprojectService
+        val subprojectService = extensions["subprojectService"] as SubprojectService
 
         dependencyConstraints.addAllLater(
             subprojectService.data.map { subprojects ->
