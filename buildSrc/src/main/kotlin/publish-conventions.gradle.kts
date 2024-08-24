@@ -1,7 +1,8 @@
 plugins {
     `maven-publish`
     signing
-    id("kotlin-wrappers-subprojects-service")
+
+    id("subproject-conventions")
 }
 
 project.version = publishVersion()
