@@ -16,7 +16,7 @@ import seskar.js.JsAlias.Companion.THIS
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ProgressEvent)
  */
 open external class ProgressEvent(
-    override val type: EventType<ProgressEvent, EventTarget>,
+    override val type: EventType<ProgressEvent>,
     init: ProgressEventInit = definedExternally,
 ) : Event {
     /**

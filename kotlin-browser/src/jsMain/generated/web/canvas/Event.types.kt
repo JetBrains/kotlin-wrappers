@@ -7,11 +7,10 @@
 package web.canvas
 
 import web.events.Event
-import web.events.EventTarget
 import web.events.EventType
 
-inline fun <C : EventTarget> Event.Companion.contextLost(): EventType<Event, C> =
+inline fun Event.Companion.contextLost(): EventType<Event> =
     EventType("contextlost")
 
-inline fun <C : EventTarget> Event.Companion.contextRestored(): EventType<Event, C> =
+inline fun Event.Companion.contextRestored(): EventType<Event> =
     EventType("contextrestored")

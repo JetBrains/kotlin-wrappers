@@ -10,7 +10,6 @@ import js.typedarrays.Uint8Array
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
-import web.events.EventTarget
 import web.events.EventType
 
 /**
@@ -19,7 +18,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIMessageEvent)
  */
 open external class MIDIMessageEvent(
-    override val type: EventType<MIDIMessageEvent, EventTarget>,
+    override val type: EventType<MIDIMessageEvent>,
     init: MIDIMessageEventInit = definedExternally,
 ) : Event {
     /**

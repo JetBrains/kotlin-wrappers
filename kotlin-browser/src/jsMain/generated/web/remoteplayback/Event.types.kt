@@ -7,14 +7,13 @@
 package web.remoteplayback
 
 import web.events.Event
-import web.events.EventTarget
 import web.events.EventType
 
-inline fun <C : EventTarget> Event.Companion.connect(): EventType<Event, C> =
+inline fun Event.Companion.connect(): EventType<Event> =
     EventType("connect")
 
-inline fun <C : EventTarget> Event.Companion.connecting(): EventType<Event, C> =
+inline fun Event.Companion.connecting(): EventType<Event> =
     EventType("connecting")
 
-inline fun <C : EventTarget> Event.Companion.disconnect(): EventType<Event, C> =
+inline fun Event.Companion.disconnect(): EventType<Event> =
     EventType("disconnect")

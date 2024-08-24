@@ -7,29 +7,29 @@ import seskar.js.JsValue
 sealed external class EventTypes {
 
     @JsValue("abort")
-    fun <C : EventTarget> abort(): EventType<Event, C>
+    fun abort(): EventType<Event>
 
     @JsValue("cancel")
-    fun <C : EventTarget> cancel(): EventType<Event, C>
+    fun cancel(): EventType<Event>
 
     @JsValue("change")
-    fun <C : EventTarget> change(): EventType<Event, C>
+    fun change(): EventType<Event>
 
     @JsValue("close")
-    fun <C : EventTarget> close(): EventType<Event, C>
+    fun close(): EventType<Event>
 
     @JsValue("closing")
-    fun <C : EventTarget> closing(): EventType<Event, C>
+    fun closing(): EventType<Event>
 
     @JsValue("complete")
-    fun <C : EventTarget> complete(): EventType<Event, C>
+    fun complete(): EventType<Event>
 
     @JsValue("error")
-    fun <C : EventTarget> error(): EventType<Event, C>
+    fun error(): EventType<Event>
 
     @JsValue("open")
-    fun <C : EventTarget> open(): EventType<Event, C>
+    fun open(): EventType<Event>
 
     @JsValue("success")
-    fun <C : EventTarget> success(): EventType<Event, C>
+    fun success(): EventType<Event>
 }

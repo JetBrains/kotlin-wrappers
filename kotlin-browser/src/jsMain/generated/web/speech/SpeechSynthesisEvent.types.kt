@@ -3,26 +3,25 @@
 package web.speech
 
 import seskar.js.JsValue
-import web.events.EventTarget
 import web.events.EventType
 
 sealed external class SpeechSynthesisEventTypes {
 
     @JsValue("boundary")
-    fun <C : EventTarget> boundary(): EventType<SpeechSynthesisEvent, C>
+    fun boundary(): EventType<SpeechSynthesisEvent>
 
     @JsValue("end")
-    fun <C : EventTarget> end(): EventType<SpeechSynthesisEvent, C>
+    fun end(): EventType<SpeechSynthesisEvent>
 
     @JsValue("mark")
-    fun <C : EventTarget> mark(): EventType<SpeechSynthesisEvent, C>
+    fun mark(): EventType<SpeechSynthesisEvent>
 
     @JsValue("pause")
-    fun <C : EventTarget> pause(): EventType<SpeechSynthesisEvent, C>
+    fun pause(): EventType<SpeechSynthesisEvent>
 
     @JsValue("resume")
-    fun <C : EventTarget> resume(): EventType<SpeechSynthesisEvent, C>
+    fun resume(): EventType<SpeechSynthesisEvent>
 
     @JsValue("start")
-    fun <C : EventTarget> start(): EventType<SpeechSynthesisEvent, C>
+    fun start(): EventType<SpeechSynthesisEvent>
 }

@@ -3,20 +3,19 @@
 package web.uievents
 
 import seskar.js.JsValue
-import web.events.EventTarget
 import web.events.EventType
 
 sealed external class FocusEventTypes {
 
     @JsValue("blur")
-    fun <C : EventTarget> blur(): EventType<FocusEvent, C>
+    fun blur(): EventType<FocusEvent>
 
     @JsValue("focus")
-    fun <C : EventTarget> focus(): EventType<FocusEvent, C>
+    fun focus(): EventType<FocusEvent>
 
     @JsValue("focusin")
-    fun <C : EventTarget> focusIn(): EventType<FocusEvent, C>
+    fun focusIn(): EventType<FocusEvent>
 
     @JsValue("focusout")
-    fun <C : EventTarget> focusOut(): EventType<FocusEvent, C>
+    fun focusOut(): EventType<FocusEvent>
 }

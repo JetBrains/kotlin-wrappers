@@ -10,7 +10,6 @@ import js.array.ReadonlyArray
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
-import web.events.EventTarget
 import web.events.EventType
 
 /**
@@ -19,7 +18,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent)
  */
 open external class MessageEvent<out D>(
-    override val type: EventType<MessageEvent<D>, EventTarget>,
+    override val type: EventType<MessageEvent<D>>,
     init: MessageEventInit<D> = definedExternally,
 ) : Event {
     /**

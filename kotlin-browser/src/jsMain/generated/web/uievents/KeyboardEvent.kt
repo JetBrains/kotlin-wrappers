@@ -8,7 +8,6 @@ package web.uievents
 
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
-import web.events.EventTarget
 import web.events.EventType
 import web.keyboard.KeyCode
 import web.keyboard.ModifierKeyCode
@@ -19,7 +18,7 @@ import web.keyboard.ModifierKeyCode
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent)
  */
 open external class KeyboardEvent(
-    override val type: EventType<KeyboardEvent, EventTarget>,
+    override val type: EventType<KeyboardEvent>,
     init: KeyboardEventInit = definedExternally,
 ) : UIEvent {
     /**

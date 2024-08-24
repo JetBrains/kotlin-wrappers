@@ -7,11 +7,10 @@
 package web.html
 
 import web.events.Event
-import web.events.EventTarget
 import web.events.EventType
 
-inline fun <C : EventTarget> Event.Companion.progress(): EventType<Event, C> =
+inline fun Event.Companion.progress(): EventType<Event> =
     EventType("progress")
 
-inline fun <C : EventTarget> Event.Companion.waitingForKey(): EventType<Event, C> =
+inline fun Event.Companion.waitingForKey(): EventType<Event> =
     EventType("waitingforkey")

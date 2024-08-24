@@ -9,7 +9,6 @@ package web.uievents
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
 import web.data.DataTransfer
-import web.events.EventTarget
 import web.events.EventType
 
 /**
@@ -18,7 +17,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DragEvent)
  */
 open external class DragEvent(
-    override val type: EventType<DragEvent, EventTarget>,
+    override val type: EventType<DragEvent>,
     init: DragEventInit = definedExternally,
 ) : MouseEvent {
     /**

@@ -9,14 +9,13 @@ package web.cssom
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
-import web.events.EventTarget
 import web.events.EventType
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent)
  */
 open external class MediaQueryListEvent(
-    override val type: EventType<MediaQueryListEvent, EventTarget>,
+    override val type: EventType<MediaQueryListEvent>,
     init: MediaQueryListEventInit = definedExternally,
 ) : Event {
     /**

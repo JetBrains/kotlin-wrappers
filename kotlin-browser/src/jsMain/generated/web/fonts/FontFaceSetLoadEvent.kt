@@ -10,14 +10,13 @@ import js.array.ReadonlyArray
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
-import web.events.EventTarget
 import web.events.EventType
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSetLoadEvent)
  */
 open external class FontFaceSetLoadEvent(
-    override val type: EventType<FontFaceSetLoadEvent, EventTarget>,
+    override val type: EventType<FontFaceSetLoadEvent>,
     init: FontFaceSetLoadEventInit = definedExternally,
 ) : Event {
     /**

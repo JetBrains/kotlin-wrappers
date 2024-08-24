@@ -9,7 +9,6 @@ package web.errors
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
-import web.events.EventTarget
 import web.events.EventType
 
 /**
@@ -18,7 +17,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent)
  */
 open external class ErrorEvent(
-    override val type: EventType<ErrorEvent, EventTarget>,
+    override val type: EventType<ErrorEvent>,
     init: ErrorEventInit = definedExternally,
 ) : Event {
     val colno: Int

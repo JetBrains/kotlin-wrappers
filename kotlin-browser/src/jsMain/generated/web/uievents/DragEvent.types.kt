@@ -3,29 +3,28 @@
 package web.uievents
 
 import seskar.js.JsValue
-import web.events.EventTarget
 import web.events.EventType
 
 sealed external class DragEventTypes {
 
     @JsValue("drag")
-    fun <C : EventTarget> drag(): EventType<DragEvent, C>
+    fun drag(): EventType<DragEvent>
 
     @JsValue("dragend")
-    fun <C : EventTarget> dragEnd(): EventType<DragEvent, C>
+    fun dragEnd(): EventType<DragEvent>
 
     @JsValue("dragenter")
-    fun <C : EventTarget> dragEnter(): EventType<DragEvent, C>
+    fun dragEnter(): EventType<DragEvent>
 
     @JsValue("dragleave")
-    fun <C : EventTarget> dragLeave(): EventType<DragEvent, C>
+    fun dragLeave(): EventType<DragEvent>
 
     @JsValue("dragover")
-    fun <C : EventTarget> dragOver(): EventType<DragEvent, C>
+    fun dragOver(): EventType<DragEvent>
 
     @JsValue("dragstart")
-    fun <C : EventTarget> dragStart(): EventType<DragEvent, C>
+    fun dragStart(): EventType<DragEvent>
 
     @JsValue("drop")
-    fun <C : EventTarget> drop(): EventType<DragEvent, C>
+    fun drop(): EventType<DragEvent>
 }

@@ -3,17 +3,16 @@
 package web.uievents
 
 import seskar.js.JsValue
-import web.events.EventTarget
 import web.events.EventType
 
 sealed external class CompositionEventTypes {
 
     @JsValue("compositionend")
-    fun <C : EventTarget> compositionEnd(): EventType<CompositionEvent, C>
+    fun compositionEnd(): EventType<CompositionEvent>
 
     @JsValue("compositionstart")
-    fun <C : EventTarget> compositionStart(): EventType<CompositionEvent, C>
+    fun compositionStart(): EventType<CompositionEvent>
 
     @JsValue("compositionupdate")
-    fun <C : EventTarget> compositionUpdate(): EventType<CompositionEvent, C>
+    fun compositionUpdate(): EventType<CompositionEvent>
 }

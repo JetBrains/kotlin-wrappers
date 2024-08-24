@@ -3,20 +3,19 @@
 package web.cssom
 
 import seskar.js.JsValue
-import web.events.EventTarget
 import web.events.EventType
 
 sealed external class TransitionEventTypes {
 
     @JsValue("transitioncancel")
-    fun <C : EventTarget> transitionCancel(): EventType<TransitionEvent, C>
+    fun transitionCancel(): EventType<TransitionEvent>
 
     @JsValue("transitionend")
-    fun <C : EventTarget> transitionEnd(): EventType<TransitionEvent, C>
+    fun transitionEnd(): EventType<TransitionEvent>
 
     @JsValue("transitionrun")
-    fun <C : EventTarget> transitionRun(): EventType<TransitionEvent, C>
+    fun transitionRun(): EventType<TransitionEvent>
 
     @JsValue("transitionstart")
-    fun <C : EventTarget> transitionStart(): EventType<TransitionEvent, C>
+    fun transitionStart(): EventType<TransitionEvent>
 }

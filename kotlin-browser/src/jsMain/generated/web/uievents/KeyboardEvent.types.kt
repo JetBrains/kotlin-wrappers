@@ -3,17 +3,16 @@
 package web.uievents
 
 import seskar.js.JsValue
-import web.events.EventTarget
 import web.events.EventType
 
 sealed external class KeyboardEventTypes {
 
     @JsValue("keydown")
-    fun <C : EventTarget> keyDown(): EventType<KeyboardEvent, C>
+    fun keyDown(): EventType<KeyboardEvent>
 
     @JsValue("keypress")
-    fun <C : EventTarget> keyPress(): EventType<KeyboardEvent, C>
+    fun keyPress(): EventType<KeyboardEvent>
 
     @JsValue("keyup")
-    fun <C : EventTarget> keyUp(): EventType<KeyboardEvent, C>
+    fun keyUp(): EventType<KeyboardEvent>
 }

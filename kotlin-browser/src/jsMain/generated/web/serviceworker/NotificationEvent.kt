@@ -8,7 +8,6 @@ package web.serviceworker
 
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
-import web.events.EventTarget
 import web.events.EventType
 import web.notifications.Notification
 
@@ -18,7 +17,7 @@ import web.notifications.Notification
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotificationEvent)
  */
 open external class NotificationEvent(
-    override val type: EventType<NotificationEvent, EventTarget>,
+    override val type: EventType<NotificationEvent>,
     init: NotificationEventInit,
 ) : ExtendableEvent {
     /**

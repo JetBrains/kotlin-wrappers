@@ -10,14 +10,13 @@ import js.buffer.ArrayBuffer
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
-import web.events.EventTarget
 import web.events.EventType
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaEncryptedEvent)
  */
 open external class MediaEncryptedEvent(
-    override val type: EventType<MediaEncryptedEvent, EventTarget>,
+    override val type: EventType<MediaEncryptedEvent>,
     init: MediaEncryptedEventInit = definedExternally,
 ) : Event {
     /**

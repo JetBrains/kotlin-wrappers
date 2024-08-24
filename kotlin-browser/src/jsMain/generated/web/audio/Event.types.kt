@@ -7,11 +7,10 @@
 package web.audio
 
 import web.events.Event
-import web.events.EventTarget
 import web.events.EventType
 
-inline fun <C : EventTarget> Event.Companion.ended(): EventType<Event, C> =
+inline fun Event.Companion.ended(): EventType<Event> =
     EventType("ended")
 
-inline fun <C : EventTarget> Event.Companion.stateChange(): EventType<Event, C> =
+inline fun Event.Companion.stateChange(): EventType<Event> =
     EventType("statechange")

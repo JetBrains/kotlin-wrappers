@@ -7,8 +7,7 @@
 package web.wakelock
 
 import web.events.Event
-import web.events.EventTarget
 import web.events.EventType
 
-inline fun <C : EventTarget> Event.Companion.release(): EventType<Event, C> =
+inline fun Event.Companion.release(): EventType<Event> =
     EventType("release")

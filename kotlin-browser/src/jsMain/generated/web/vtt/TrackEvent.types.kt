@@ -3,14 +3,13 @@
 package web.vtt
 
 import seskar.js.JsValue
-import web.events.EventTarget
 import web.events.EventType
 
 sealed external class TrackEventTypes {
 
     @JsValue("addtrack")
-    fun <C : EventTarget> addTrack(): EventType<TrackEvent, C>
+    fun addTrack(): EventType<TrackEvent>
 
     @JsValue("removetrack")
-    fun <C : EventTarget> removeTrack(): EventType<TrackEvent, C>
+    fun removeTrack(): EventType<TrackEvent>
 }

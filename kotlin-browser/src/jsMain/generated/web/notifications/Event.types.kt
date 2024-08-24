@@ -7,11 +7,10 @@
 package web.notifications
 
 import web.events.Event
-import web.events.EventTarget
 import web.events.EventType
 
-inline fun <C : EventTarget> Event.Companion.click(): EventType<Event, C> =
+inline fun Event.Companion.click(): EventType<Event> =
     EventType("click")
 
-inline fun <C : EventTarget> Event.Companion.show(): EventType<Event, C> =
+inline fun Event.Companion.show(): EventType<Event> =
     EventType("show")

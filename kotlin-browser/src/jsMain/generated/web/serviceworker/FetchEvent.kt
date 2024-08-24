@@ -11,7 +11,6 @@ import js.promise.Promise
 import js.promise.PromiseLike
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
-import web.events.EventTarget
 import web.events.EventType
 import web.http.Request
 import web.http.Response
@@ -22,7 +21,7 @@ import web.http.Response
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent)
  */
 open external class FetchEvent(
-    override val type: EventType<FetchEvent, EventTarget>,
+    override val type: EventType<FetchEvent>,
     init: FetchEventInit,
 ) : ExtendableEvent {
     /**

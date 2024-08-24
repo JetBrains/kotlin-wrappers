@@ -9,14 +9,13 @@ package web.uievents
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
-import web.events.EventTarget
 import web.events.EventType
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ToggleEvent)
  */
 open external class ToggleEvent(
-    override val type: EventType<ToggleEvent, EventTarget>,
+    override val type: EventType<ToggleEvent>,
     init: ToggleEventInit = definedExternally,
 ) : Event {
     /**

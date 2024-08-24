@@ -8,25 +8,25 @@ package web.events
 
 open external class EventTarget {
     internal fun <E : Event> addEventListener(
-        type: EventType<E, *>,
+        type: EventType<E>,
         callback: EventHandler<E, *, *>,
         options: AddEventListenerOptions? = definedExternally,
     )
 
     internal fun addEventListener(
-        type: EventType<*, *>,
+        type: EventType<*>,
         callback: Function<Unit>,
         options: AddEventListenerOptions? = definedExternally,
     )
 
     internal fun <E : Event> removeEventListener(
-        type: EventType<E, *>,
+        type: EventType<E>,
         callback: EventHandler<E, *, *>,
         options: EventListenerOptions? = definedExternally,
     )
 
     internal fun removeEventListener(
-        type: EventType<*, *>,
+        type: EventType<*>,
         callback: Function<Unit>,
         options: EventListenerOptions? = definedExternally,
     )
@@ -38,7 +38,7 @@ open external class EventTarget {
 
 // event handler
 fun <E : Event, C : EventTarget, T : EventTarget> C.addEventListener(
-    type: EventType<E, C>,
+    type: EventType<E>,
     handler: EventHandler<E, C, T>,
     options: AddEventListenerOptions? = undefined,
 ) {
@@ -50,7 +50,7 @@ fun <E : Event, C : EventTarget, T : EventTarget> C.addEventListener(
 }
 
 fun <E : Event, C : EventTarget, T : EventTarget> C.removeEventListener(
-    type: EventType<E, C>,
+    type: EventType<E>,
     handler: EventHandler<E, C, T>,
     options: AddEventListenerOptions? = undefined,
 ) {
@@ -62,7 +62,7 @@ fun <E : Event, C : EventTarget, T : EventTarget> C.removeEventListener(
 }
 
 fun <E : Event, C : EventTarget, T : EventTarget> C.addEventHandler(
-    type: EventType<E, C>,
+    type: EventType<E>,
     handler: EventHandler<E, C, T>,
 ): () -> Unit =
     addEventHandler(
@@ -72,7 +72,7 @@ fun <E : Event, C : EventTarget, T : EventTarget> C.addEventHandler(
     )
 
 fun <E : Event, C : EventTarget, T : EventTarget> C.addEventHandler(
-    type: EventType<E, C>,
+    type: EventType<E>,
     options: AddEventListenerOptions?,
     handler: EventHandler<E, C, T>,
 ): () -> Unit {
@@ -93,7 +93,7 @@ fun <E : Event, C : EventTarget, T : EventTarget> C.addEventHandler(
 
 // event
 fun <E : Event, C : EventTarget> C.addEventListener(
-    type: EventType<E, C>,
+    type: EventType<E>,
     handler: (E) -> Unit,
     options: AddEventListenerOptions? = undefined,
 ) {
@@ -105,7 +105,7 @@ fun <E : Event, C : EventTarget> C.addEventListener(
 }
 
 fun <E : Event, C : EventTarget> C.removeEventListener(
-    type: EventType<E, C>,
+    type: EventType<E>,
     handler: (E) -> Unit,
     options: AddEventListenerOptions? = undefined,
 ) {
@@ -118,7 +118,7 @@ fun <E : Event, C : EventTarget> C.removeEventListener(
 
 // event + targets
 fun <E : Event, C : EventTarget, D> C.addEventHandler(
-    type: EventType<E, C>,
+    type: EventType<E>,
     handler: (D) -> Unit,
 ): () -> Unit
         where D : E,
@@ -131,7 +131,7 @@ fun <E : Event, C : EventTarget, D> C.addEventHandler(
 }
 
 fun <E : Event, C : EventTarget, D> C.addEventHandler(
-    type: EventType<E, C>,
+    type: EventType<E>,
     options: AddEventListenerOptions?,
     handler: (D) -> Unit,
 ): () -> Unit

@@ -3,20 +3,19 @@
 package web.uievents
 
 import seskar.js.JsValue
-import web.events.EventTarget
 import web.events.EventType
 
 sealed external class TouchEventTypes {
 
     @JsValue("touchcancel")
-    fun <C : EventTarget> touchCancel(): EventType<TouchEvent, C>
+    fun touchCancel(): EventType<TouchEvent>
 
     @JsValue("touchend")
-    fun <C : EventTarget> touchEnd(): EventType<TouchEvent, C>
+    fun touchEnd(): EventType<TouchEvent>
 
     @JsValue("touchmove")
-    fun <C : EventTarget> touchMove(): EventType<TouchEvent, C>
+    fun touchMove(): EventType<TouchEvent>
 
     @JsValue("touchstart")
-    fun <C : EventTarget> touchStart(): EventType<TouchEvent, C>
+    fun touchStart(): EventType<TouchEvent>
 }

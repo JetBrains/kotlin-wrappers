@@ -9,7 +9,6 @@ package web.sockets
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
-import web.events.EventTarget
 import web.events.EventType
 
 /**
@@ -18,7 +17,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CloseEvent)
  */
 open external class CloseEvent(
-    override val type: EventType<CloseEvent, EventTarget>,
+    override val type: EventType<CloseEvent>,
     init: CloseEventInit = definedExternally,
 ) : Event {
     /**

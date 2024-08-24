@@ -7,146 +7,145 @@
 package web.dom
 
 import web.events.Event
-import web.events.EventTarget
 import web.events.EventType
 
-inline fun <C : EventTarget> Event.Companion.domContentLoaded(): EventType<Event, C> =
+inline fun Event.Companion.domContentLoaded(): EventType<Event> =
     EventType("DOMContentLoaded")
 
-inline fun <C : EventTarget> Event.Companion.beforeToggle(): EventType<Event, C> =
+inline fun Event.Companion.beforeToggle(): EventType<Event> =
     EventType("beforetoggle")
 
-inline fun <C : EventTarget> Event.Companion.canPlay(): EventType<Event, C> =
+inline fun Event.Companion.canPlay(): EventType<Event> =
     EventType("canplay")
 
-inline fun <C : EventTarget> Event.Companion.canPlayThrough(): EventType<Event, C> =
+inline fun Event.Companion.canPlayThrough(): EventType<Event> =
     EventType("canplaythrough")
 
-inline fun <C : EventTarget> Event.Companion.contextLost(): EventType<Event, C> =
+inline fun Event.Companion.contextLost(): EventType<Event> =
     EventType("contextlost")
 
-inline fun <C : EventTarget> Event.Companion.contextRestored(): EventType<Event, C> =
+inline fun Event.Companion.contextRestored(): EventType<Event> =
     EventType("contextrestored")
 
-inline fun <C : EventTarget> Event.Companion.cueChange(): EventType<Event, C> =
+inline fun Event.Companion.cueChange(): EventType<Event> =
     EventType("cuechange")
 
-inline fun <C : EventTarget> Event.Companion.durationChange(): EventType<Event, C> =
+inline fun Event.Companion.durationChange(): EventType<Event> =
     EventType("durationchange")
 
-inline fun <C : EventTarget> Event.Companion.emptied(): EventType<Event, C> =
+inline fun Event.Companion.emptied(): EventType<Event> =
     EventType("emptied")
 
-inline fun <C : EventTarget> Event.Companion.ended(): EventType<Event, C> =
+inline fun Event.Companion.ended(): EventType<Event> =
     EventType("ended")
 
-inline fun <C : EventTarget> Event.Companion.fullscreenChange(): EventType<Event, C> =
+inline fun Event.Companion.fullscreenChange(): EventType<Event> =
     EventType("fullscreenchange")
 
-inline fun <C : EventTarget> Event.Companion.fullscreenError(): EventType<Event, C> =
+inline fun Event.Companion.fullscreenError(): EventType<Event> =
     EventType("fullscreenerror")
 
-inline fun <C : EventTarget> Event.Companion.input(): EventType<Event, C> =
+inline fun Event.Companion.input(): EventType<Event> =
     EventType("input")
 
-inline fun <C : EventTarget> Event.Companion.invalid(): EventType<Event, C> =
+inline fun Event.Companion.invalid(): EventType<Event> =
     EventType("invalid")
 
-inline fun <C : EventTarget> Event.Companion.load(): EventType<Event, C> =
+inline fun Event.Companion.load(): EventType<Event> =
     EventType("load")
 
-inline fun <C : EventTarget> Event.Companion.loadedData(): EventType<Event, C> =
+inline fun Event.Companion.loadedData(): EventType<Event> =
     EventType("loadeddata")
 
-inline fun <C : EventTarget> Event.Companion.loadedMetadata(): EventType<Event, C> =
+inline fun Event.Companion.loadedMetadata(): EventType<Event> =
     EventType("loadedmetadata")
 
-inline fun <C : EventTarget> Event.Companion.loadStart(): EventType<Event, C> =
+inline fun Event.Companion.loadStart(): EventType<Event> =
     EventType("loadstart")
 
-inline fun <C : EventTarget> Event.Companion.pause(): EventType<Event, C> =
+inline fun Event.Companion.pause(): EventType<Event> =
     EventType("pause")
 
-inline fun <C : EventTarget> Event.Companion.play(): EventType<Event, C> =
+inline fun Event.Companion.play(): EventType<Event> =
     EventType("play")
 
-inline fun <C : EventTarget> Event.Companion.playing(): EventType<Event, C> =
+inline fun Event.Companion.playing(): EventType<Event> =
     EventType("playing")
 
-inline fun <C : EventTarget> Event.Companion.pointerLockChange(): EventType<Event, C> =
+inline fun Event.Companion.pointerLockChange(): EventType<Event> =
     EventType("pointerlockchange")
 
-inline fun <C : EventTarget> Event.Companion.pointerLockError(): EventType<Event, C> =
+inline fun Event.Companion.pointerLockError(): EventType<Event> =
     EventType("pointerlockerror")
 
-inline fun <C : EventTarget> Event.Companion.rateChange(): EventType<Event, C> =
+inline fun Event.Companion.rateChange(): EventType<Event> =
     EventType("ratechange")
 
-inline fun <C : EventTarget> Event.Companion.readyStateChange(): EventType<Event, C> =
+inline fun Event.Companion.readyStateChange(): EventType<Event> =
     EventType("readystatechange")
 
-inline fun <C : EventTarget> Event.Companion.reset(): EventType<Event, C> =
+inline fun Event.Companion.reset(): EventType<Event> =
     EventType("reset")
 
-inline fun <C : EventTarget> Event.Companion.resume(): EventType<Event, C> =
+inline fun Event.Companion.resume(): EventType<Event> =
     EventType("resume")
 
-inline fun <C : EventTarget> Event.Companion.scroll(): EventType<Event, C> =
+inline fun Event.Companion.scroll(): EventType<Event> =
     EventType("scroll")
 
-inline fun <C : EventTarget> Event.Companion.scrollEnd(): EventType<Event, C> =
+inline fun Event.Companion.scrollEnd(): EventType<Event> =
     EventType("scrollend")
 
-inline fun <C : EventTarget> Event.Companion.seeked(): EventType<Event, C> =
+inline fun Event.Companion.seeked(): EventType<Event> =
     EventType("seeked")
 
-inline fun <C : EventTarget> Event.Companion.seeking(): EventType<Event, C> =
+inline fun Event.Companion.seeking(): EventType<Event> =
     EventType("seeking")
 
-inline fun <C : EventTarget> Event.Companion.select(): EventType<Event, C> =
+inline fun Event.Companion.select(): EventType<Event> =
     EventType("select")
 
-inline fun <C : EventTarget> Event.Companion.selectionChange(): EventType<Event, C> =
+inline fun Event.Companion.selectionChange(): EventType<Event> =
     EventType("selectionchange")
 
-inline fun <C : EventTarget> Event.Companion.selectStart(): EventType<Event, C> =
+inline fun Event.Companion.selectStart(): EventType<Event> =
     EventType("selectstart")
 
-inline fun <C : EventTarget> Event.Companion.slotChange(): EventType<Event, C> =
+inline fun Event.Companion.slotChange(): EventType<Event> =
     EventType("slotchange")
 
-inline fun <C : EventTarget> Event.Companion.stalled(): EventType<Event, C> =
+inline fun Event.Companion.stalled(): EventType<Event> =
     EventType("stalled")
 
-inline fun <C : EventTarget> Event.Companion.suspend(): EventType<Event, C> =
+inline fun Event.Companion.suspend(): EventType<Event> =
     EventType("suspend")
 
-inline fun <C : EventTarget> Event.Companion.timeUpdate(): EventType<Event, C> =
+inline fun Event.Companion.timeUpdate(): EventType<Event> =
     EventType("timeupdate")
 
-inline fun <C : EventTarget> Event.Companion.toggle(): EventType<Event, C> =
+inline fun Event.Companion.toggle(): EventType<Event> =
     EventType("toggle")
 
-inline fun <C : EventTarget> Event.Companion.visibilityChange(): EventType<Event, C> =
+inline fun Event.Companion.visibilityChange(): EventType<Event> =
     EventType("visibilitychange")
 
-inline fun <C : EventTarget> Event.Companion.volumeChange(): EventType<Event, C> =
+inline fun Event.Companion.volumeChange(): EventType<Event> =
     EventType("volumechange")
 
-inline fun <C : EventTarget> Event.Companion.waiting(): EventType<Event, C> =
+inline fun Event.Companion.waiting(): EventType<Event> =
     EventType("waiting")
 
-inline fun <C : EventTarget> Event.Companion.webkitAnimationEnd(): EventType<Event, C> =
+inline fun Event.Companion.webkitAnimationEnd(): EventType<Event> =
     EventType("webkitanimationend")
 
-inline fun <C : EventTarget> Event.Companion.webkitAnimationIteration(): EventType<Event, C> =
+inline fun Event.Companion.webkitAnimationIteration(): EventType<Event> =
     EventType("webkitanimationiteration")
 
-inline fun <C : EventTarget> Event.Companion.webkitAnimationStart(): EventType<Event, C> =
+inline fun Event.Companion.webkitAnimationStart(): EventType<Event> =
     EventType("webkitanimationstart")
 
-inline fun <C : EventTarget> Event.Companion.webkitFullscreenChange(): EventType<Event, C> =
+inline fun Event.Companion.webkitFullscreenChange(): EventType<Event> =
     EventType("webkitfullscreenchange")
 
-inline fun <C : EventTarget> Event.Companion.webkitTransitionEnd(): EventType<Event, C> =
+inline fun Event.Companion.webkitTransitionEnd(): EventType<Event> =
     EventType("webkittransitionend")

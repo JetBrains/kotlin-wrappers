@@ -10,7 +10,6 @@ import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
 import web.data.DataTransfer
 import web.events.Event
-import web.events.EventTarget
 import web.events.EventType
 
 /**
@@ -19,7 +18,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardEvent)
  */
 open external class ClipboardEvent(
-    override val type: EventType<ClipboardEvent, EventTarget>,
+    override val type: EventType<ClipboardEvent>,
     init: ClipboardEventInit = definedExternally,
 ) : Event {
     /**

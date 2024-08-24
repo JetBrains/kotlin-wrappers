@@ -3,17 +3,16 @@
 package web.messaging
 
 import seskar.js.JsValue
-import web.events.EventTarget
 import web.events.EventType
 
 sealed external class MessageEventTypes {
 
     @JsValue("connect")
-    fun <D, C : EventTarget> connect(): EventType<MessageEvent<D>, C>
+    fun <D> connect(): EventType<MessageEvent<D>>
 
     @JsValue("message")
-    fun <D, C : EventTarget> message(): EventType<MessageEvent<D>, C>
+    fun <D> message(): EventType<MessageEvent<D>>
 
     @JsValue("messageerror")
-    fun <D, C : EventTarget> messageError(): EventType<MessageEvent<D>, C>
+    fun <D> messageError(): EventType<MessageEvent<D>>
 }

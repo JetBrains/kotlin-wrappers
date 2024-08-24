@@ -3,38 +3,37 @@
 package web.uievents
 
 import seskar.js.JsValue
-import web.events.EventTarget
 import web.events.EventType
 
 sealed external class PointerEventTypes {
 
     @JsValue("gotpointercapture")
-    fun <C : EventTarget> gotPointerCapture(): EventType<PointerEvent, C>
+    fun gotPointerCapture(): EventType<PointerEvent>
 
     @JsValue("lostpointercapture")
-    fun <C : EventTarget> lostPointerCapture(): EventType<PointerEvent, C>
+    fun lostPointerCapture(): EventType<PointerEvent>
 
     @JsValue("pointercancel")
-    fun <C : EventTarget> pointerCancel(): EventType<PointerEvent, C>
+    fun pointerCancel(): EventType<PointerEvent>
 
     @JsValue("pointerdown")
-    fun <C : EventTarget> pointerDown(): EventType<PointerEvent, C>
+    fun pointerDown(): EventType<PointerEvent>
 
     @JsValue("pointerenter")
-    fun <C : EventTarget> pointerEnter(): EventType<PointerEvent, C>
+    fun pointerEnter(): EventType<PointerEvent>
 
     @JsValue("pointerleave")
-    fun <C : EventTarget> pointerLeave(): EventType<PointerEvent, C>
+    fun pointerLeave(): EventType<PointerEvent>
 
     @JsValue("pointermove")
-    fun <C : EventTarget> pointerMove(): EventType<PointerEvent, C>
+    fun pointerMove(): EventType<PointerEvent>
 
     @JsValue("pointerout")
-    fun <C : EventTarget> pointerOut(): EventType<PointerEvent, C>
+    fun pointerOut(): EventType<PointerEvent>
 
     @JsValue("pointerover")
-    fun <C : EventTarget> pointerOver(): EventType<PointerEvent, C>
+    fun pointerOver(): EventType<PointerEvent>
 
     @JsValue("pointerup")
-    fun <C : EventTarget> pointerUp(): EventType<PointerEvent, C>
+    fun pointerUp(): EventType<PointerEvent>
 }

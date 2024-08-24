@@ -7,8 +7,7 @@
 package web.speech
 
 import web.events.Event
-import web.events.EventTarget
 import web.events.EventType
 
-inline fun <C : EventTarget> Event.Companion.voicesChanged(): EventType<Event, C> =
+inline fun Event.Companion.voicesChanged(): EventType<Event> =
     EventType("voiceschanged")

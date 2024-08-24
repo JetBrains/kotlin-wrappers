@@ -3,17 +3,16 @@
 package web.clipboard
 
 import seskar.js.JsValue
-import web.events.EventTarget
 import web.events.EventType
 
 sealed external class ClipboardEventTypes {
 
     @JsValue("copy")
-    fun <C : EventTarget> copy(): EventType<ClipboardEvent, C>
+    fun copy(): EventType<ClipboardEvent>
 
     @JsValue("cut")
-    fun <C : EventTarget> cut(): EventType<ClipboardEvent, C>
+    fun cut(): EventType<ClipboardEvent>
 
     @JsValue("paste")
-    fun <C : EventTarget> paste(): EventType<ClipboardEvent, C>
+    fun paste(): EventType<ClipboardEvent>
 }

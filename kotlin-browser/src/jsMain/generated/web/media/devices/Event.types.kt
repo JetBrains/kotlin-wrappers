@@ -7,8 +7,7 @@
 package web.media.devices
 
 import web.events.Event
-import web.events.EventTarget
 import web.events.EventType
 
-inline fun <C : EventTarget> Event.Companion.deviceChange(): EventType<Event, C> =
+inline fun Event.Companion.deviceChange(): EventType<Event> =
     EventType("devicechange")

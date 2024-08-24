@@ -3,20 +3,19 @@
 package web.animations
 
 import seskar.js.JsValue
-import web.events.EventTarget
 import web.events.EventType
 
 sealed external class AnimationEventTypes {
 
     @JsValue("animationcancel")
-    fun <C : EventTarget> animationCancel(): EventType<AnimationEvent, C>
+    fun animationCancel(): EventType<AnimationEvent>
 
     @JsValue("animationend")
-    fun <C : EventTarget> animationEnd(): EventType<AnimationEvent, C>
+    fun animationEnd(): EventType<AnimationEvent>
 
     @JsValue("animationiteration")
-    fun <C : EventTarget> animationIteration(): EventType<AnimationEvent, C>
+    fun animationIteration(): EventType<AnimationEvent>
 
     @JsValue("animationstart")
-    fun <C : EventTarget> animationStart(): EventType<AnimationEvent, C>
+    fun animationStart(): EventType<AnimationEvent>
 }

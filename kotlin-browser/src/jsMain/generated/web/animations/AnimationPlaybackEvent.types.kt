@@ -3,17 +3,16 @@
 package web.animations
 
 import seskar.js.JsValue
-import web.events.EventTarget
 import web.events.EventType
 
 sealed external class AnimationPlaybackEventTypes {
 
     @JsValue("cancel")
-    fun <C : EventTarget> cancel(): EventType<AnimationPlaybackEvent, C>
+    fun cancel(): EventType<AnimationPlaybackEvent>
 
     @JsValue("finish")
-    fun <C : EventTarget> finish(): EventType<AnimationPlaybackEvent, C>
+    fun finish(): EventType<AnimationPlaybackEvent>
 
     @JsValue("remove")
-    fun <C : EventTarget> remove(): EventType<AnimationPlaybackEvent, C>
+    fun remove(): EventType<AnimationPlaybackEvent>
 }

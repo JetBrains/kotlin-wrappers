@@ -7,14 +7,13 @@
 package web.payment
 
 import web.events.Event
-import web.events.EventTarget
 import web.events.EventType
 
-inline fun <C : EventTarget> Event.Companion.payerDetailChange(): EventType<Event, C> =
+inline fun Event.Companion.payerDetailChange(): EventType<Event> =
     EventType("payerdetailchange")
 
-inline fun <C : EventTarget> Event.Companion.shippingAddressChange(): EventType<Event, C> =
+inline fun Event.Companion.shippingAddressChange(): EventType<Event> =
     EventType("shippingaddresschange")
 
-inline fun <C : EventTarget> Event.Companion.shippingOptionChange(): EventType<Event, C> =
+inline fun Event.Companion.shippingOptionChange(): EventType<Event> =
     EventType("shippingoptionchange")

@@ -10,7 +10,6 @@ import js.promise.PromiseLike
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
-import web.events.EventTarget
 import web.events.EventType
 
 /**
@@ -20,7 +19,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequestUpdateEvent)
  */
 open external class PaymentRequestUpdateEvent(
-    override val type: EventType<PaymentRequestUpdateEvent, EventTarget>,
+    override val type: EventType<PaymentRequestUpdateEvent>,
     init: PaymentRequestUpdateEventInit = definedExternally,
 ) : Event {
     /**

@@ -9,7 +9,6 @@ package web.form
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
-import web.events.EventTarget
 import web.events.EventType
 import web.html.HTMLElement
 
@@ -17,7 +16,7 @@ import web.html.HTMLElement
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubmitEvent)
  */
 open external class SubmitEvent(
-    override val type: EventType<SubmitEvent, EventTarget>,
+    override val type: EventType<SubmitEvent>,
     init: SubmitEventInit = definedExternally,
 ) : Event {
     /**

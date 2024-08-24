@@ -3,14 +3,13 @@
 package web.serviceworker
 
 import seskar.js.JsValue
-import web.events.EventTarget
 import web.events.EventType
 
 sealed external class NotificationEventTypes {
 
     @JsValue("notificationclick")
-    fun <C : EventTarget> notificationClick(): EventType<NotificationEvent, C>
+    fun notificationClick(): EventType<NotificationEvent>
 
     @JsValue("notificationclose")
-    fun <C : EventTarget> notificationClose(): EventType<NotificationEvent, C>
+    fun notificationClose(): EventType<NotificationEvent>
 }

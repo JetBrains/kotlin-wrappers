@@ -3,14 +3,13 @@
 package web.serviceworker
 
 import seskar.js.JsValue
-import web.events.EventTarget
 import web.events.EventType
 
 sealed external class ExtendableEventTypes {
 
     @JsValue("activate")
-    fun <C : EventTarget> activate(): EventType<ExtendableEvent, C>
+    fun activate(): EventType<ExtendableEvent>
 
     @JsValue("install")
-    fun <C : EventTarget> install(): EventType<ExtendableEvent, C>
+    fun install(): EventType<ExtendableEvent>
 }

@@ -7,14 +7,13 @@
 package web.workers
 
 import web.events.Event
-import web.events.EventTarget
 import web.events.EventType
 
-inline fun <C : EventTarget> Event.Companion.languageChange(): EventType<Event, C> =
+inline fun Event.Companion.languageChange(): EventType<Event> =
     EventType("languagechange")
 
-inline fun <C : EventTarget> Event.Companion.offline(): EventType<Event, C> =
+inline fun Event.Companion.offline(): EventType<Event> =
     EventType("offline")
 
-inline fun <C : EventTarget> Event.Companion.online(): EventType<Event, C> =
+inline fun Event.Companion.online(): EventType<Event> =
     EventType("online")

@@ -7,17 +7,16 @@
 package web.media.recorder
 
 import web.events.Event
-import web.events.EventTarget
 import web.events.EventType
 
-inline fun <C : EventTarget> Event.Companion.pause(): EventType<Event, C> =
+inline fun Event.Companion.pause(): EventType<Event> =
     EventType("pause")
 
-inline fun <C : EventTarget> Event.Companion.resume(): EventType<Event, C> =
+inline fun Event.Companion.resume(): EventType<Event> =
     EventType("resume")
 
-inline fun <C : EventTarget> Event.Companion.start(): EventType<Event, C> =
+inline fun Event.Companion.start(): EventType<Event> =
     EventType("start")
 
-inline fun <C : EventTarget> Event.Companion.stop(): EventType<Event, C> =
+inline fun Event.Companion.stop(): EventType<Event> =
     EventType("stop")

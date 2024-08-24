@@ -3,41 +3,40 @@
 package web.uievents
 
 import seskar.js.JsValue
-import web.events.EventTarget
 import web.events.EventType
 
 sealed external class MouseEventTypes {
 
     @JsValue("auxclick")
-    fun <C : EventTarget> auxClick(): EventType<MouseEvent, C>
+    fun auxClick(): EventType<MouseEvent>
 
     @JsValue("click")
-    fun <C : EventTarget> click(): EventType<MouseEvent, C>
+    fun click(): EventType<MouseEvent>
 
     @JsValue("contextmenu")
-    fun <C : EventTarget> contextMenu(): EventType<MouseEvent, C>
+    fun contextMenu(): EventType<MouseEvent>
 
     @JsValue("dblclick")
-    fun <C : EventTarget> dblClick(): EventType<MouseEvent, C>
+    fun dblClick(): EventType<MouseEvent>
 
     @JsValue("mousedown")
-    fun <C : EventTarget> mouseDown(): EventType<MouseEvent, C>
+    fun mouseDown(): EventType<MouseEvent>
 
     @JsValue("mouseenter")
-    fun <C : EventTarget> mouseEnter(): EventType<MouseEvent, C>
+    fun mouseEnter(): EventType<MouseEvent>
 
     @JsValue("mouseleave")
-    fun <C : EventTarget> mouseLeave(): EventType<MouseEvent, C>
+    fun mouseLeave(): EventType<MouseEvent>
 
     @JsValue("mousemove")
-    fun <C : EventTarget> mouseMove(): EventType<MouseEvent, C>
+    fun mouseMove(): EventType<MouseEvent>
 
     @JsValue("mouseout")
-    fun <C : EventTarget> mouseOut(): EventType<MouseEvent, C>
+    fun mouseOut(): EventType<MouseEvent>
 
     @JsValue("mouseover")
-    fun <C : EventTarget> mouseOver(): EventType<MouseEvent, C>
+    fun mouseOver(): EventType<MouseEvent>
 
     @JsValue("mouseup")
-    fun <C : EventTarget> mouseUp(): EventType<MouseEvent, C>
+    fun mouseUp(): EventType<MouseEvent>
 }

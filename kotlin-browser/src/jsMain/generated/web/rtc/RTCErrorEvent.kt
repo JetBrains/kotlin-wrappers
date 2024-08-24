@@ -9,14 +9,13 @@ package web.rtc
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
-import web.events.EventTarget
 import web.events.EventType
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCErrorEvent)
  */
 open external class RTCErrorEvent(
-    override val type: EventType<RTCErrorEvent, EventTarget>,
+    override val type: EventType<RTCErrorEvent>,
     init: RTCErrorEventInit,
 ) : Event {
     /**

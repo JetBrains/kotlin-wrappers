@@ -7,14 +7,13 @@
 package web.vtt
 
 import web.events.Event
-import web.events.EventTarget
 import web.events.EventType
 
-inline fun <C : EventTarget> Event.Companion.cueChange(): EventType<Event, C> =
+inline fun Event.Companion.cueChange(): EventType<Event> =
     EventType("cuechange")
 
-inline fun <C : EventTarget> Event.Companion.enter(): EventType<Event, C> =
+inline fun Event.Companion.enter(): EventType<Event> =
     EventType("enter")
 
-inline fun <C : EventTarget> Event.Companion.exit(): EventType<Event, C> =
+inline fun Event.Companion.exit(): EventType<Event> =
     EventType("exit")

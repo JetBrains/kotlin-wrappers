@@ -8,7 +8,6 @@ package web.uievents
 
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
-import web.events.EventTarget
 import web.events.EventType
 
 /**
@@ -17,7 +16,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent)
  */
 open external class TouchEvent(
-    override val type: EventType<TouchEvent, EventTarget>,
+    override val type: EventType<TouchEvent>,
     init: TouchEventInit = definedExternally,
 ) : UIEvent {
     /**

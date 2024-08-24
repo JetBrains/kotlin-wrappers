@@ -7,32 +7,31 @@
 package web.window
 
 import web.events.Event
-import web.events.EventTarget
 import web.events.EventType
 
-inline fun <C : EventTarget> Event.Companion.domContentLoaded(): EventType<Event, C> =
+inline fun Event.Companion.domContentLoaded(): EventType<Event> =
     EventType("DOMContentLoaded")
 
-inline fun <C : EventTarget> Event.Companion.afterPrint(): EventType<Event, C> =
+inline fun Event.Companion.afterPrint(): EventType<Event> =
     EventType("afterprint")
 
-inline fun <C : EventTarget> Event.Companion.beforePrint(): EventType<Event, C> =
+inline fun Event.Companion.beforePrint(): EventType<Event> =
     EventType("beforeprint")
 
-inline fun <C : EventTarget> Event.Companion.languageChange(): EventType<Event, C> =
+inline fun Event.Companion.languageChange(): EventType<Event> =
     EventType("languagechange")
 
-inline fun <C : EventTarget> Event.Companion.offline(): EventType<Event, C> =
+inline fun Event.Companion.offline(): EventType<Event> =
     EventType("offline")
 
-inline fun <C : EventTarget> Event.Companion.online(): EventType<Event, C> =
+inline fun Event.Companion.online(): EventType<Event> =
     EventType("online")
 
-inline fun <C : EventTarget> Event.Companion.resize(): EventType<Event, C> =
+inline fun Event.Companion.resize(): EventType<Event> =
     EventType("resize")
 
-inline fun <C : EventTarget> Event.Companion.scroll(): EventType<Event, C> =
+inline fun Event.Companion.scroll(): EventType<Event> =
     EventType("scroll")
 
-inline fun <C : EventTarget> Event.Companion.unload(): EventType<Event, C> =
+inline fun Event.Companion.unload(): EventType<Event> =
     EventType("unload")

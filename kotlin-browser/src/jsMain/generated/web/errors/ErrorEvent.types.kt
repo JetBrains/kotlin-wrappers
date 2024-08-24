@@ -3,14 +3,13 @@
 package web.errors
 
 import seskar.js.JsValue
-import web.events.EventTarget
 import web.events.EventType
 
 sealed external class ErrorEventTypes {
 
     @JsValue("error")
-    fun <C : EventTarget> error(): EventType<ErrorEvent, C>
+    fun error(): EventType<ErrorEvent>
 
     @JsValue("processorerror")
-    fun <C : EventTarget> processorError(): EventType<ErrorEvent, C>
+    fun processorError(): EventType<ErrorEvent>
 }

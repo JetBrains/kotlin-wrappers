@@ -7,14 +7,13 @@
 package web.media.streams
 
 import web.events.Event
-import web.events.EventTarget
 import web.events.EventType
 
-inline fun <C : EventTarget> Event.Companion.ended(): EventType<Event, C> =
+inline fun Event.Companion.ended(): EventType<Event> =
     EventType("ended")
 
-inline fun <C : EventTarget> Event.Companion.mute(): EventType<Event, C> =
+inline fun Event.Companion.mute(): EventType<Event> =
     EventType("mute")
 
-inline fun <C : EventTarget> Event.Companion.unmute(): EventType<Event, C> =
+inline fun Event.Companion.unmute(): EventType<Event> =
     EventType("unmute")

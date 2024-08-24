@@ -16,7 +16,7 @@ import kotlin.coroutines.resume
 
 class EventInstance<out E : Event, out C : EventTarget, out T : EventTarget>(
     internal val target: C,
-    internal val type: EventType<E, C>,
+    internal val type: EventType<E>,
 )
 
 // addHandler

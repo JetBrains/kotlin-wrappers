@@ -7,8 +7,7 @@
 package web.components
 
 import web.events.Event
-import web.events.EventTarget
 import web.events.EventType
 
-inline fun <C : EventTarget> Event.Companion.slotChange(): EventType<Event, C> =
+inline fun Event.Companion.slotChange(): EventType<Event> =
     EventType("slotchange")

@@ -7,14 +7,13 @@
 package web.serviceworker
 
 import web.events.Event
-import web.events.EventTarget
 import web.events.EventType
 
-inline fun <C : EventTarget> Event.Companion.controllerChange(): EventType<Event, C> =
+inline fun Event.Companion.controllerChange(): EventType<Event> =
     EventType("controllerchange")
 
-inline fun <C : EventTarget> Event.Companion.stateChange(): EventType<Event, C> =
+inline fun Event.Companion.stateChange(): EventType<Event> =
     EventType("statechange")
 
-inline fun <C : EventTarget> Event.Companion.updateFound(): EventType<Event, C> =
+inline fun Event.Companion.updateFound(): EventType<Event> =
     EventType("updatefound")

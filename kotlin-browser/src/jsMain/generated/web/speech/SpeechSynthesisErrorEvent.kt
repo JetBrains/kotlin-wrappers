@@ -8,14 +8,13 @@ package web.speech
 
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
-import web.events.EventTarget
 import web.events.EventType
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisErrorEvent)
  */
 open external class SpeechSynthesisErrorEvent(
-    override val type: EventType<SpeechSynthesisErrorEvent, EventTarget>,
+    override val type: EventType<SpeechSynthesisErrorEvent>,
     init: SpeechSynthesisErrorEventInit,
 ) : SpeechSynthesisEvent {
     /**

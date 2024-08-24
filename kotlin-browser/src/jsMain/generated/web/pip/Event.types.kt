@@ -7,8 +7,7 @@
 package web.pip
 
 import web.events.Event
-import web.events.EventTarget
 import web.events.EventType
 
-inline fun <C : EventTarget> Event.Companion.resize(): EventType<Event, C> =
+inline fun Event.Companion.resize(): EventType<Event> =
     EventType("resize")

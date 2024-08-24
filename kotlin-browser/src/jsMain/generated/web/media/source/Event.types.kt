@@ -7,29 +7,28 @@
 package web.media.source
 
 import web.events.Event
-import web.events.EventTarget
 import web.events.EventType
 
-inline fun <C : EventTarget> Event.Companion.addSourceBuffer(): EventType<Event, C> =
+inline fun Event.Companion.addSourceBuffer(): EventType<Event> =
     EventType("addsourcebuffer")
 
-inline fun <C : EventTarget> Event.Companion.removeSourceBuffer(): EventType<Event, C> =
+inline fun Event.Companion.removeSourceBuffer(): EventType<Event> =
     EventType("removesourcebuffer")
 
-inline fun <C : EventTarget> Event.Companion.sourceClose(): EventType<Event, C> =
+inline fun Event.Companion.sourceClose(): EventType<Event> =
     EventType("sourceclose")
 
-inline fun <C : EventTarget> Event.Companion.sourceEnded(): EventType<Event, C> =
+inline fun Event.Companion.sourceEnded(): EventType<Event> =
     EventType("sourceended")
 
-inline fun <C : EventTarget> Event.Companion.sourceOpen(): EventType<Event, C> =
+inline fun Event.Companion.sourceOpen(): EventType<Event> =
     EventType("sourceopen")
 
-inline fun <C : EventTarget> Event.Companion.update(): EventType<Event, C> =
+inline fun Event.Companion.update(): EventType<Event> =
     EventType("update")
 
-inline fun <C : EventTarget> Event.Companion.updateEnd(): EventType<Event, C> =
+inline fun Event.Companion.updateEnd(): EventType<Event> =
     EventType("updateend")
 
-inline fun <C : EventTarget> Event.Companion.updateStart(): EventType<Event, C> =
+inline fun Event.Companion.updateStart(): EventType<Event> =
     EventType("updatestart")

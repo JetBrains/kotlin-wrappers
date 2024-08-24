@@ -10,7 +10,6 @@ import js.array.ReadonlyArray
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
-import web.events.EventTarget
 import web.events.EventType
 import web.media.streams.MediaStream
 import web.media.streams.MediaStreamTrack
@@ -19,7 +18,7 @@ import web.media.streams.MediaStreamTrack
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTrackEvent)
  */
 open external class RTCTrackEvent(
-    override val type: EventType<RTCTrackEvent, EventTarget>,
+    override val type: EventType<RTCTrackEvent>,
     init: RTCTrackEventInit,
 ) : Event {
     /**

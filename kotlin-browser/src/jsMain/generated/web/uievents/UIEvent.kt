@@ -9,7 +9,6 @@ package web.uievents
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
-import web.events.EventTarget
 import web.events.EventType
 import web.window.Window
 
@@ -19,7 +18,7 @@ import web.window.Window
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UIEvent)
  */
 open external class UIEvent(
-    override val type: EventType<UIEvent, EventTarget>,
+    override val type: EventType<UIEvent>,
     init: UIEventInit = definedExternally,
 ) : Event {
     /**

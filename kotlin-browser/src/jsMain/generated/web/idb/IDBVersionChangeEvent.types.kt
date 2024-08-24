@@ -3,20 +3,19 @@
 package web.idb
 
 import seskar.js.JsValue
-import web.events.EventTarget
 import web.events.EventType
 
 sealed external class IDBVersionChangeEventTypes {
 
     @JsValue("blocked")
-    fun <C : EventTarget> blocked(): EventType<IDBVersionChangeEvent, C>
+    fun blocked(): EventType<IDBVersionChangeEvent>
 
     @JsValue("success")
-    fun <C : EventTarget> success(): EventType<IDBVersionChangeEvent, C>
+    fun success(): EventType<IDBVersionChangeEvent>
 
     @JsValue("upgradeneeded")
-    fun <C : EventTarget> upgradeneeded(): EventType<IDBVersionChangeEvent, C>
+    fun upgradeneeded(): EventType<IDBVersionChangeEvent>
 
     @JsValue("versionchange")
-    fun <C : EventTarget> versionChange(): EventType<IDBVersionChangeEvent, C>
+    fun versionChange(): EventType<IDBVersionChangeEvent>
 }

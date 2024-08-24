@@ -17,7 +17,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FocusEvent)
  */
 open external class FocusEvent(
-    override val type: EventType<FocusEvent, EventTarget>,
+    override val type: EventType<FocusEvent>,
     init: FocusEventInit = definedExternally,
 ) : UIEvent {
     /**

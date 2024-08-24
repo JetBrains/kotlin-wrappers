@@ -10,7 +10,6 @@ import js.promise.Promise
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
-import web.events.EventTarget
 import web.events.EventType
 
 /**
@@ -19,7 +18,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableEvent)
  */
 open external class ExtendableEvent(
-    override val type: EventType<ExtendableEvent, EventTarget>,
+    override val type: EventType<ExtendableEvent>,
     init: ExtendableEventInit = definedExternally,
 ) : Event {
     /**

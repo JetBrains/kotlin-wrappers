@@ -9,14 +9,13 @@ package web.animations
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
-import web.events.EventTarget
 import web.events.EventType
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationPlaybackEvent)
  */
 open external class AnimationPlaybackEvent(
-    override val type: EventType<AnimationPlaybackEvent, EventTarget>,
+    override val type: EventType<AnimationPlaybackEvent>,
     init: AnimationPlaybackEventInit = definedExternally,
 ) : Event {
     /**

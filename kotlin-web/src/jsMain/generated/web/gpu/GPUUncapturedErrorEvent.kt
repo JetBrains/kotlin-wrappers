@@ -7,11 +7,10 @@
 package web.gpu
 
 import web.events.Event
-import web.events.EventTarget
 import web.events.EventType
 
 external class GPUUncapturedErrorEvent(
-    override val type: EventType<GPUUncapturedErrorEvent, EventTarget>,
+    override val type: EventType<GPUUncapturedErrorEvent>,
     init: GPUUncapturedErrorEventInit,
 ) : Event {
     val error: GPUError
