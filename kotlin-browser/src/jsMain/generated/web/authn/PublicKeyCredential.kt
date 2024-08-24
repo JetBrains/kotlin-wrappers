@@ -36,7 +36,7 @@ sealed external class PublicKeyCredential :
 
     companion object {
         /**
-         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/isConditionalMediationAvailable)
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/isConditionalMediationAvailable_static)
          */
         @JsAsync
         suspend fun isConditionalMediationAvailable(): Boolean

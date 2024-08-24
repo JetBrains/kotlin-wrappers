@@ -130,10 +130,10 @@ open external class RTCPeerConnection(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/addIceCandidate)
      */
     @JsAsync
-    suspend fun addIceCandidate(candidate: RTCIceCandidateInit = definedExternally)
+    suspend fun addIceCandidate(candidate: RTCIceCandidateInit? = definedExternally)
 
     @JsName("addIceCandidate")
-    fun addIceCandidateAsync(candidate: RTCIceCandidateInit = definedExternally): Promise<Void>
+    fun addIceCandidateAsync(candidate: RTCIceCandidateInit? = definedExternally): Promise<Void>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/addTrack)

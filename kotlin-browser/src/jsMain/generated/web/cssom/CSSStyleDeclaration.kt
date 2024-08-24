@@ -700,6 +700,10 @@ sealed external class CSSStyleDeclaration :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/cy)
      */
     var cy: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/d)
+     */
     var d: String
 
     /**
@@ -711,6 +715,10 @@ sealed external class CSSStyleDeclaration :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/display)
      */
     var display: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/dominant-baseline)
+     */
     var dominantBaseline: String
 
     /**
@@ -1155,9 +1163,25 @@ sealed external class CSSStyleDeclaration :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/margin-top)
      */
     var marginTop: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/marker)
+     */
     var marker: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/marker-end)
+     */
     var markerEnd: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/marker-mid)
+     */
     var markerMid: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/marker-start)
+     */
     var markerStart: String
 
     /**
@@ -1754,6 +1778,10 @@ sealed external class CSSStyleDeclaration :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/stop-opacity)
      */
     var stopOpacity: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/stroke)
+     */
     var stroke: String
     var strokeDasharray: String
     var strokeDashoffset: String
@@ -1972,6 +2000,10 @@ sealed external class CSSStyleDeclaration :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/user-select)
      */
     var userSelect: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/vector-effect)
+     */
     var vectorEffect: String
 
     /**
