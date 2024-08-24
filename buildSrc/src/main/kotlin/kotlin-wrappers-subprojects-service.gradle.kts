@@ -1,8 +1,4 @@
-/**
- * Create a service for collecting the coordinates of all kotlin-wrappers
- * artifacts that should be included in `kotlin-wrappers-bom`.
- */
-abstract class SubprojectsManagerService : BuildService<BuildServiceParameters.None> {
+abstract class SubprojectService : BuildService<BuildServiceParameters.None> {
     /** [Project.path]s of subprojects to include in `kotlin-wrappers-bom`. */
     abstract val bomDependencies: SetProperty<String>
 
@@ -10,17 +6,17 @@ abstract class SubprojectsManagerService : BuildService<BuildServiceParameters.N
     abstract val dokkaDependencies: SetProperty<String>
 }
 
-val kotlinWrapperSubprojects: SubprojectsManagerService =
-    gradle.sharedServices.registerIfAbsent("SubprojectsManagerService", SubprojectsManagerService::class).get()
+val subprojectService: SubprojectService =
+    gradle.sharedServices.registerIfAbsent("SubprojectService", SubprojectService::class).get()
 
-extensions.add("kotlinWrapperSubprojects", kotlinWrapperSubprojects)
+extensions.add("subprojectService", subprojectService)
 
 /** Controls whether the current subproject will be included in `kotlin-wrappers-bom`. */
 val includeInKotlinWrappersBom: Property<Boolean> =
     objects.property<Boolean>().convention(project.path != ":kotlin-wrappers-bom")
 extensions.add<Property<Boolean>>("includeInKotlinWrappersBom", includeInKotlinWrappersBom)
 
-kotlinWrapperSubprojects.bomDependencies
+subprojectService.bomDependencies
     .addAll(provider { project.path }.zip(includeInKotlinWrappersBom) { path, enabled ->
         if (enabled) listOf(path) else emptyList()
     })
