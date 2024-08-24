@@ -1,3 +1,9 @@
+## pre.797
+
+**BREAKING CHANGE**
+
+* Events. `EventType` current target type parameter removed as redundant
+
 ## pre.793
 
 **BREAKING CHANGE**
