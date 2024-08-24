@@ -574,9 +574,9 @@ open external class EventEmitter {
          * @since v11.13.0, v10.16.0
          */
 
-        fun <E : Event, T : EventTarget> once(
-            emitter: T,
-            type: web.events.EventType<E, T>,
+        fun <E : Event> once(
+            emitter: EventTarget,
+            type: web.events.EventType<E>,
             options: StaticEventEmitterOptions = definedExternally,
         ): Promise<JsTuple1<E>>
 
@@ -747,9 +747,9 @@ open external class EventEmitter {
          * @return An `AsyncIterator` that iterates `eventName` events emitted by the `emitter`
          */
 
-        fun <E : Event, T : EventTarget> on(
-            emitter: T,
-            type: web.events.EventType<E, T>,
+        fun <E : Event> on(
+            emitter: EventTarget,
+            type: web.events.EventType<E>,
             options: StaticEventEmitterOptions = definedExternally,
         ): AsyncIterator<JsTuple1<E>>
 
@@ -817,9 +817,9 @@ open external class EventEmitter {
          * ```
          * @since v15.2.0, v14.17.0
          */
-        fun <T : EventTarget> getEventListeners(
-            emitter: T,
-            type: web.events.EventType<*, T>,
+        fun getEventListeners(
+            emitter: EventTarget,
+            type: web.events.EventType<*>,
         ): js.array.ReadonlyArray<Function<*>>
 
         /**
