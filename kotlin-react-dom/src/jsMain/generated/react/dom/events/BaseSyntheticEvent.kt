@@ -22,5 +22,5 @@ external interface BaseSyntheticEvent<out E : Event, out C : EventTarget, out T 
     fun isPropagationStopped(): Boolean
     fun persist()
     val timeStamp: DOMHighResTimeStamp
-    val type: EventType<E, EventTarget>
+    val type: EventType<E>
 }
