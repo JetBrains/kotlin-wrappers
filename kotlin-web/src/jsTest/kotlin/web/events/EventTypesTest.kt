@@ -7,11 +7,11 @@ import kotlin.test.assertEquals
 class EventTypesTest {
     @Test
     fun import() {
-        assertEquals<Any>("abort", ProgressEvent.abort<EventTarget>())
+        assertEquals<Any>("abort", ProgressEvent.abort())
     }
 
     @Test
     fun staticImport() {
-        assertEquals<Any>("progress", progress<EventTarget>())
+        assertEquals<Any>("progress", progress())
     }
 }
