@@ -13,7 +13,7 @@ sealed external interface WebviewTagEvent {
          */
 
         @seskar.js.JsValue("load-commit")
-        val LOAD_COMMIT: web.events.EventType<LoadCommitEvent, WebviewTag>
+        val LOAD_COMMIT: web.events.EventType<LoadCommitEvent>
 
         /**
          * Fired when the navigation is done, i.e. the spinner of the tab will stop
@@ -21,7 +21,7 @@ sealed external interface WebviewTagEvent {
          */
 
         @seskar.js.JsValue("did-finish-load")
-        val DID_FINISH_LOAD: web.events.EventType<DOMEvent, WebviewTag>
+        val DID_FINISH_LOAD: web.events.EventType<DOMEvent>
 
         /**
          * This event is like `did-finish-load`, but fired when the load failed or was
@@ -29,42 +29,42 @@ sealed external interface WebviewTagEvent {
          */
 
         @seskar.js.JsValue("did-fail-load")
-        val DID_FAIL_LOAD: web.events.EventType<DidFailLoadEvent, WebviewTag>
+        val DID_FAIL_LOAD: web.events.EventType<DidFailLoadEvent>
 
         /**
          * Fired when a frame has done navigation.
          */
 
         @seskar.js.JsValue("did-frame-finish-load")
-        val DID_FRAME_FINISH_LOAD: web.events.EventType<DidFrameFinishLoadEvent, WebviewTag>
+        val DID_FRAME_FINISH_LOAD: web.events.EventType<DidFrameFinishLoadEvent>
 
         /**
          * Corresponds to the points in time when the spinner of the tab starts spinning.
          */
 
         @seskar.js.JsValue("did-start-loading")
-        val DID_START_LOADING: web.events.EventType<DOMEvent, WebviewTag>
+        val DID_START_LOADING: web.events.EventType<DOMEvent>
 
         /**
          * Corresponds to the points in time when the spinner of the tab stops spinning.
          */
 
         @seskar.js.JsValue("did-stop-loading")
-        val DID_STOP_LOADING: web.events.EventType<DOMEvent, WebviewTag>
+        val DID_STOP_LOADING: web.events.EventType<DOMEvent>
 
         /**
          * Fired when attached to the embedder web contents.
          */
 
         @seskar.js.JsValue("did-attach")
-        val DID_ATTACH: web.events.EventType<DOMEvent, WebviewTag>
+        val DID_ATTACH: web.events.EventType<DOMEvent>
 
         /**
          * Fired when document in the given frame is loaded.
          */
 
         @seskar.js.JsValue("dom-ready")
-        val DOM_READY: web.events.EventType<DOMEvent, WebviewTag>
+        val DOM_READY: web.events.EventType<DOMEvent>
 
         /**
          * Fired when page title is set during navigation. `explicitSet` is false when
@@ -72,28 +72,28 @@ sealed external interface WebviewTagEvent {
          */
 
         @seskar.js.JsValue("page-title-updated")
-        val PAGE_TITLE_UPDATED: web.events.EventType<PageTitleUpdatedEvent, WebviewTag>
+        val PAGE_TITLE_UPDATED: web.events.EventType<PageTitleUpdatedEvent>
 
         /**
          * Fired when page receives favicon urls.
          */
 
         @seskar.js.JsValue("page-favicon-updated")
-        val PAGE_FAVICON_UPDATED: web.events.EventType<PageFaviconUpdatedEvent, WebviewTag>
+        val PAGE_FAVICON_UPDATED: web.events.EventType<PageFaviconUpdatedEvent>
 
         /**
          * Fired when page enters fullscreen triggered by HTML API.
          */
 
         @seskar.js.JsValue("enter-html-full-screen")
-        val ENTER_HTML_FULL_SCREEN: web.events.EventType<DOMEvent, WebviewTag>
+        val ENTER_HTML_FULL_SCREEN: web.events.EventType<DOMEvent>
 
         /**
          * Fired when page leaves fullscreen triggered by HTML API.
          */
 
         @seskar.js.JsValue("leave-html-full-screen")
-        val LEAVE_HTML_FULL_SCREEN: web.events.EventType<DOMEvent, WebviewTag>
+        val LEAVE_HTML_FULL_SCREEN: web.events.EventType<DOMEvent>
 
         /**
          * Fired when the guest window logs a console message.
@@ -103,14 +103,14 @@ sealed external interface WebviewTagEvent {
          */
 
         @seskar.js.JsValue("console-message")
-        val CONSOLE_MESSAGE: web.events.EventType<ConsoleMessageEvent, WebviewTag>
+        val CONSOLE_MESSAGE: web.events.EventType<ConsoleMessageEvent>
 
         /**
          * Fired when a result is available for `webview.findInPage` request.
          */
 
         @seskar.js.JsValue("found-in-page")
-        val FOUND_IN_PAGE: web.events.EventType<FoundInPageEvent, WebviewTag>
+        val FOUND_IN_PAGE: web.events.EventType<FoundInPageEvent>
 
         /**
          * Emitted when a user or the page wants to start navigation. It can happen when
@@ -127,7 +127,7 @@ sealed external interface WebviewTagEvent {
          */
 
         @seskar.js.JsValue("will-navigate")
-        val WILL_NAVIGATE: web.events.EventType<WillNavigateEvent, WebviewTag>
+        val WILL_NAVIGATE: web.events.EventType<WillNavigateEvent>
 
         /**
          * Emitted when a user or the page wants to start navigation anywhere in the
@@ -145,7 +145,7 @@ sealed external interface WebviewTagEvent {
          */
 
         @seskar.js.JsValue("will-frame-navigate")
-        val WILL_FRAME_NAVIGATE: web.events.EventType<WillFrameNavigateEvent, WebviewTag>
+        val WILL_FRAME_NAVIGATE: web.events.EventType<WillFrameNavigateEvent>
 
         /**
          * Emitted when any frame (including main) starts navigating. `isInPlace` will be
@@ -153,7 +153,7 @@ sealed external interface WebviewTagEvent {
          */
 
         @seskar.js.JsValue("did-start-navigation")
-        val DID_START_NAVIGATION: web.events.EventType<DidStartNavigationEvent, WebviewTag>
+        val DID_START_NAVIGATION: web.events.EventType<DidStartNavigationEvent>
 
         /**
          * Emitted after a server side redirect occurs during navigation. For example a 302
@@ -161,7 +161,7 @@ sealed external interface WebviewTagEvent {
          */
 
         @seskar.js.JsValue("did-redirect-navigation")
-        val DID_REDIRECT_NAVIGATION: web.events.EventType<DidRedirectNavigationEvent, WebviewTag>
+        val DID_REDIRECT_NAVIGATION: web.events.EventType<DidRedirectNavigationEvent>
 
         /**
          * Emitted when a navigation is done.
@@ -172,7 +172,7 @@ sealed external interface WebviewTagEvent {
          */
 
         @seskar.js.JsValue("did-navigate")
-        val DID_NAVIGATE: web.events.EventType<DidNavigateEvent, WebviewTag>
+        val DID_NAVIGATE: web.events.EventType<DidNavigateEvent>
 
         /**
          * Emitted when any frame navigation is done.
@@ -183,7 +183,7 @@ sealed external interface WebviewTagEvent {
          */
 
         @seskar.js.JsValue("did-frame-navigate")
-        val DID_FRAME_NAVIGATE: web.events.EventType<DidFrameNavigateEvent, WebviewTag>
+        val DID_FRAME_NAVIGATE: web.events.EventType<DidFrameNavigateEvent>
 
         /**
          * Emitted when an in-page navigation happened.
@@ -194,7 +194,7 @@ sealed external interface WebviewTagEvent {
          */
 
         @seskar.js.JsValue("did-navigate-in-page")
-        val DID_NAVIGATE_IN_PAGE: web.events.EventType<DidNavigateInPageEvent, WebviewTag>
+        val DID_NAVIGATE_IN_PAGE: web.events.EventType<DidNavigateInPageEvent>
 
         /**
          * Fired when the guest page attempts to close itself.
@@ -204,7 +204,7 @@ sealed external interface WebviewTagEvent {
          */
 
         @seskar.js.JsValue("close")
-        val CLOSE: web.events.EventType<DOMEvent, WebviewTag>
+        val CLOSE: web.events.EventType<DOMEvent>
 
         /**
          * Fired when the guest page has sent an asynchronous message to embedder page.
@@ -214,7 +214,7 @@ sealed external interface WebviewTagEvent {
          */
 
         @seskar.js.JsValue("ipc-message")
-        val IPC_MESSAGE: web.events.EventType<IpcMessageEvent, WebviewTag>
+        val IPC_MESSAGE: web.events.EventType<IpcMessageEvent>
 
         /**
          * Fired when the renderer process unexpectedly disappears. This is normally
@@ -222,35 +222,35 @@ sealed external interface WebviewTagEvent {
          */
 
         @seskar.js.JsValue("render-process-gone")
-        val RENDER_PROCESS_GONE: web.events.EventType<RenderProcessGoneEvent, WebviewTag>
+        val RENDER_PROCESS_GONE: web.events.EventType<RenderProcessGoneEvent>
 
         /**
          * Fired when a plugin process is crashed.
          */
 
         @seskar.js.JsValue("plugin-crashed")
-        val PLUGIN_CRASHED: web.events.EventType<PluginCrashedEvent, WebviewTag>
+        val PLUGIN_CRASHED: web.events.EventType<PluginCrashedEvent>
 
         /**
          * Fired when the WebContents is destroyed.
          */
 
         @seskar.js.JsValue("destroyed")
-        val DESTROYED: web.events.EventType<DOMEvent, WebviewTag>
+        val DESTROYED: web.events.EventType<DOMEvent>
 
         /**
          * Emitted when media starts playing.
          */
 
         @seskar.js.JsValue("media-started-playing")
-        val MEDIA_STARTED_PLAYING: web.events.EventType<DOMEvent, WebviewTag>
+        val MEDIA_STARTED_PLAYING: web.events.EventType<DOMEvent>
 
         /**
          * Emitted when media is paused or done playing.
          */
 
         @seskar.js.JsValue("media-paused")
-        val MEDIA_PAUSED: web.events.EventType<DOMEvent, WebviewTag>
+        val MEDIA_PAUSED: web.events.EventType<DOMEvent>
 
         /**
          * Emitted when a page's theme color changes. This is usually due to encountering a
@@ -258,14 +258,14 @@ sealed external interface WebviewTagEvent {
          */
 
         @seskar.js.JsValue("did-change-theme-color")
-        val DID_CHANGE_THEME_COLOR: web.events.EventType<DidChangeThemeColorEvent, WebviewTag>
+        val DID_CHANGE_THEME_COLOR: web.events.EventType<DidChangeThemeColorEvent>
 
         /**
          * Emitted when mouse moves over a link or the keyboard moves the focus to a link.
          */
 
         @seskar.js.JsValue("update-target-url")
-        val UPDATE_TARGET_URL: web.events.EventType<UpdateTargetUrlEvent, WebviewTag>
+        val UPDATE_TARGET_URL: web.events.EventType<UpdateTargetUrlEvent>
 
         /**
          * Emitted when a link is clicked in DevTools or 'Open in new tab' is selected for
@@ -273,35 +273,35 @@ sealed external interface WebviewTagEvent {
          */
 
         @seskar.js.JsValue("devtools-open-url")
-        val DEVTOOLS_OPEN_URL: web.events.EventType<DevtoolsOpenUrlEvent, WebviewTag>
+        val DEVTOOLS_OPEN_URL: web.events.EventType<DevtoolsOpenUrlEvent>
 
         /**
          * Emitted when DevTools is opened.
          */
 
         @seskar.js.JsValue("devtools-opened")
-        val DEVTOOLS_OPENED: web.events.EventType<DOMEvent, WebviewTag>
+        val DEVTOOLS_OPENED: web.events.EventType<DOMEvent>
 
         /**
          * Emitted when DevTools is closed.
          */
 
         @seskar.js.JsValue("devtools-closed")
-        val DEVTOOLS_CLOSED: web.events.EventType<DOMEvent, WebviewTag>
+        val DEVTOOLS_CLOSED: web.events.EventType<DOMEvent>
 
         /**
          * Emitted when DevTools is focused / opened.
          */
 
         @seskar.js.JsValue("devtools-focused")
-        val DEVTOOLS_FOCUSED: web.events.EventType<DOMEvent, WebviewTag>
+        val DEVTOOLS_FOCUSED: web.events.EventType<DOMEvent>
 
         /**
          * Emitted when there is a new context menu that needs to be handled.
          */
 
         @seskar.js.JsValue("context-menu")
-        val CONTEXT_MENU: web.events.EventType<ContextMenuEvent, WebviewTag>
+        val CONTEXT_MENU: web.events.EventType<ContextMenuEvent>
 // Docs: https://electronjs.org/docs/api/webview-tag
         /**
          * Fired when a load has committed. This includes navigation within the current
@@ -310,7 +310,7 @@ sealed external interface WebviewTagEvent {
          */
 
         @seskar.js.JsValue("load-commit")
-        fun loadCommit(): web.events.EventType<LoadCommitEvent, WebviewTag>
+        fun loadCommit(): web.events.EventType<LoadCommitEvent>
 
         /**
          * Fired when the navigation is done, i.e. the spinner of the tab will stop
@@ -318,7 +318,7 @@ sealed external interface WebviewTagEvent {
          */
 
         @seskar.js.JsValue("did-finish-load")
-        fun didFinishLoad(): web.events.EventType<DOMEvent, WebviewTag>
+        fun didFinishLoad(): web.events.EventType<DOMEvent>
 
         /**
          * This event is like `did-finish-load`, but fired when the load failed or was
@@ -326,42 +326,42 @@ sealed external interface WebviewTagEvent {
          */
 
         @seskar.js.JsValue("did-fail-load")
-        fun didFailLoad(): web.events.EventType<DidFailLoadEvent, WebviewTag>
+        fun didFailLoad(): web.events.EventType<DidFailLoadEvent>
 
         /**
          * Fired when a frame has done navigation.
          */
 
         @seskar.js.JsValue("did-frame-finish-load")
-        fun didFrameFinishLoad(): web.events.EventType<DidFrameFinishLoadEvent, WebviewTag>
+        fun didFrameFinishLoad(): web.events.EventType<DidFrameFinishLoadEvent>
 
         /**
          * Corresponds to the points in time when the spinner of the tab starts spinning.
          */
 
         @seskar.js.JsValue("did-start-loading")
-        fun didStartLoading(): web.events.EventType<DOMEvent, WebviewTag>
+        fun didStartLoading(): web.events.EventType<DOMEvent>
 
         /**
          * Corresponds to the points in time when the spinner of the tab stops spinning.
          */
 
         @seskar.js.JsValue("did-stop-loading")
-        fun didStopLoading(): web.events.EventType<DOMEvent, WebviewTag>
+        fun didStopLoading(): web.events.EventType<DOMEvent>
 
         /**
          * Fired when attached to the embedder web contents.
          */
 
         @seskar.js.JsValue("did-attach")
-        fun didAttach(): web.events.EventType<DOMEvent, WebviewTag>
+        fun didAttach(): web.events.EventType<DOMEvent>
 
         /**
          * Fired when document in the given frame is loaded.
          */
 
         @seskar.js.JsValue("dom-ready")
-        fun domReady(): web.events.EventType<DOMEvent, WebviewTag>
+        fun domReady(): web.events.EventType<DOMEvent>
 
         /**
          * Fired when page title is set during navigation. `explicitSet` is false when
@@ -369,28 +369,28 @@ sealed external interface WebviewTagEvent {
          */
 
         @seskar.js.JsValue("page-title-updated")
-        fun pageTitleUpdated(): web.events.EventType<PageTitleUpdatedEvent, WebviewTag>
+        fun pageTitleUpdated(): web.events.EventType<PageTitleUpdatedEvent>
 
         /**
          * Fired when page receives favicon urls.
          */
 
         @seskar.js.JsValue("page-favicon-updated")
-        fun pageFaviconUpdated(): web.events.EventType<PageFaviconUpdatedEvent, WebviewTag>
+        fun pageFaviconUpdated(): web.events.EventType<PageFaviconUpdatedEvent>
 
         /**
          * Fired when page enters fullscreen triggered by HTML API.
          */
 
         @seskar.js.JsValue("enter-html-full-screen")
-        fun enterHtmlFullScreen(): web.events.EventType<DOMEvent, WebviewTag>
+        fun enterHtmlFullScreen(): web.events.EventType<DOMEvent>
 
         /**
          * Fired when page leaves fullscreen triggered by HTML API.
          */
 
         @seskar.js.JsValue("leave-html-full-screen")
-        fun leaveHtmlFullScreen(): web.events.EventType<DOMEvent, WebviewTag>
+        fun leaveHtmlFullScreen(): web.events.EventType<DOMEvent>
 
         /**
          * Fired when the guest window logs a console message.
@@ -400,14 +400,14 @@ sealed external interface WebviewTagEvent {
          */
 
         @seskar.js.JsValue("console-message")
-        fun consoleMessage(): web.events.EventType<ConsoleMessageEvent, WebviewTag>
+        fun consoleMessage(): web.events.EventType<ConsoleMessageEvent>
 
         /**
          * Fired when a result is available for `webview.findInPage` request.
          */
 
         @seskar.js.JsValue("found-in-page")
-        fun foundInPage(): web.events.EventType<FoundInPageEvent, WebviewTag>
+        fun foundInPage(): web.events.EventType<FoundInPageEvent>
 
         /**
          * Emitted when a user or the page wants to start navigation. It can happen when
@@ -424,7 +424,7 @@ sealed external interface WebviewTagEvent {
          */
 
         @seskar.js.JsValue("will-navigate")
-        fun willNavigate(): web.events.EventType<WillNavigateEvent, WebviewTag>
+        fun willNavigate(): web.events.EventType<WillNavigateEvent>
 
         /**
          * Emitted when a user or the page wants to start navigation anywhere in the
@@ -442,7 +442,7 @@ sealed external interface WebviewTagEvent {
          */
 
         @seskar.js.JsValue("will-frame-navigate")
-        fun willFrameNavigate(): web.events.EventType<WillFrameNavigateEvent, WebviewTag>
+        fun willFrameNavigate(): web.events.EventType<WillFrameNavigateEvent>
 
         /**
          * Emitted when any frame (including main) starts navigating. `isInPlace` will be
@@ -450,7 +450,7 @@ sealed external interface WebviewTagEvent {
          */
 
         @seskar.js.JsValue("did-start-navigation")
-        fun didStartNavigation(): web.events.EventType<DidStartNavigationEvent, WebviewTag>
+        fun didStartNavigation(): web.events.EventType<DidStartNavigationEvent>
 
         /**
          * Emitted after a server side redirect occurs during navigation. For example a 302
@@ -458,7 +458,7 @@ sealed external interface WebviewTagEvent {
          */
 
         @seskar.js.JsValue("did-redirect-navigation")
-        fun didRedirectNavigation(): web.events.EventType<DidRedirectNavigationEvent, WebviewTag>
+        fun didRedirectNavigation(): web.events.EventType<DidRedirectNavigationEvent>
 
         /**
          * Emitted when a navigation is done.
@@ -469,7 +469,7 @@ sealed external interface WebviewTagEvent {
          */
 
         @seskar.js.JsValue("did-navigate")
-        fun didNavigate(): web.events.EventType<DidNavigateEvent, WebviewTag>
+        fun didNavigate(): web.events.EventType<DidNavigateEvent>
 
         /**
          * Emitted when any frame navigation is done.
@@ -480,7 +480,7 @@ sealed external interface WebviewTagEvent {
          */
 
         @seskar.js.JsValue("did-frame-navigate")
-        fun didFrameNavigate(): web.events.EventType<DidFrameNavigateEvent, WebviewTag>
+        fun didFrameNavigate(): web.events.EventType<DidFrameNavigateEvent>
 
         /**
          * Emitted when an in-page navigation happened.
@@ -491,7 +491,7 @@ sealed external interface WebviewTagEvent {
          */
 
         @seskar.js.JsValue("did-navigate-in-page")
-        fun didNavigateInPage(): web.events.EventType<DidNavigateInPageEvent, WebviewTag>
+        fun didNavigateInPage(): web.events.EventType<DidNavigateInPageEvent>
 
         /**
          * Fired when the guest page attempts to close itself.
@@ -501,7 +501,7 @@ sealed external interface WebviewTagEvent {
          */
 
         @seskar.js.JsValue("close")
-        fun close(): web.events.EventType<DOMEvent, WebviewTag>
+        fun close(): web.events.EventType<DOMEvent>
 
         /**
          * Fired when the guest page has sent an asynchronous message to embedder page.
@@ -511,7 +511,7 @@ sealed external interface WebviewTagEvent {
          */
 
         @seskar.js.JsValue("ipc-message")
-        fun ipcMessage(): web.events.EventType<IpcMessageEvent, WebviewTag>
+        fun ipcMessage(): web.events.EventType<IpcMessageEvent>
 
         /**
          * Fired when the renderer process unexpectedly disappears. This is normally
@@ -519,35 +519,35 @@ sealed external interface WebviewTagEvent {
          */
 
         @seskar.js.JsValue("render-process-gone")
-        fun renderProcessGone(): web.events.EventType<RenderProcessGoneEvent, WebviewTag>
+        fun renderProcessGone(): web.events.EventType<RenderProcessGoneEvent>
 
         /**
          * Fired when a plugin process is crashed.
          */
 
         @seskar.js.JsValue("plugin-crashed")
-        fun pluginCrashed(): web.events.EventType<PluginCrashedEvent, WebviewTag>
+        fun pluginCrashed(): web.events.EventType<PluginCrashedEvent>
 
         /**
          * Fired when the WebContents is destroyed.
          */
 
         @seskar.js.JsValue("destroyed")
-        fun destroyed(): web.events.EventType<DOMEvent, WebviewTag>
+        fun destroyed(): web.events.EventType<DOMEvent>
 
         /**
          * Emitted when media starts playing.
          */
 
         @seskar.js.JsValue("media-started-playing")
-        fun mediaStartedPlaying(): web.events.EventType<DOMEvent, WebviewTag>
+        fun mediaStartedPlaying(): web.events.EventType<DOMEvent>
 
         /**
          * Emitted when media is paused or done playing.
          */
 
         @seskar.js.JsValue("media-paused")
-        fun mediaPaused(): web.events.EventType<DOMEvent, WebviewTag>
+        fun mediaPaused(): web.events.EventType<DOMEvent>
 
         /**
          * Emitted when a page's theme color changes. This is usually due to encountering a
@@ -555,14 +555,14 @@ sealed external interface WebviewTagEvent {
          */
 
         @seskar.js.JsValue("did-change-theme-color")
-        fun didChangeThemeColor(): web.events.EventType<DidChangeThemeColorEvent, WebviewTag>
+        fun didChangeThemeColor(): web.events.EventType<DidChangeThemeColorEvent>
 
         /**
          * Emitted when mouse moves over a link or the keyboard moves the focus to a link.
          */
 
         @seskar.js.JsValue("update-target-url")
-        fun updateTargetUrl(): web.events.EventType<UpdateTargetUrlEvent, WebviewTag>
+        fun updateTargetUrl(): web.events.EventType<UpdateTargetUrlEvent>
 
         /**
          * Emitted when a link is clicked in DevTools or 'Open in new tab' is selected for
@@ -570,34 +570,34 @@ sealed external interface WebviewTagEvent {
          */
 
         @seskar.js.JsValue("devtools-open-url")
-        fun devtoolsOpenUrl(): web.events.EventType<DevtoolsOpenUrlEvent, WebviewTag>
+        fun devtoolsOpenUrl(): web.events.EventType<DevtoolsOpenUrlEvent>
 
         /**
          * Emitted when DevTools is opened.
          */
 
         @seskar.js.JsValue("devtools-opened")
-        fun devtoolsOpened(): web.events.EventType<DOMEvent, WebviewTag>
+        fun devtoolsOpened(): web.events.EventType<DOMEvent>
 
         /**
          * Emitted when DevTools is closed.
          */
 
         @seskar.js.JsValue("devtools-closed")
-        fun devtoolsClosed(): web.events.EventType<DOMEvent, WebviewTag>
+        fun devtoolsClosed(): web.events.EventType<DOMEvent>
 
         /**
          * Emitted when DevTools is focused / opened.
          */
 
         @seskar.js.JsValue("devtools-focused")
-        fun devtoolsFocused(): web.events.EventType<DOMEvent, WebviewTag>
+        fun devtoolsFocused(): web.events.EventType<DOMEvent>
 
         /**
          * Emitted when there is a new context menu that needs to be handled.
          */
 
         @seskar.js.JsValue("context-menu")
-        fun contextMenu(): web.events.EventType<ContextMenuEvent, WebviewTag>
+        fun contextMenu(): web.events.EventType<ContextMenuEvent>
     }
 }
