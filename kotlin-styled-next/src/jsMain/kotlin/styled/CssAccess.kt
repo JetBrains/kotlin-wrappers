@@ -49,12 +49,12 @@ internal object GlobalCssAccess {
         link.download = name
         document.body.appendChild(link)
         val clickEvent = MouseEvent(
-            MouseEvent.click(),
-            MouseEventInit {
-                bubbles = true
-                cancelable = true
-                view = window
-            }
+            type = MouseEvent.click(),
+            init = MouseEventInit(
+                bubbles = true,
+                cancelable = true,
+                view = window,
+            )
         )
         link.dispatchEvent(clickEvent)
         document.body.removeChild(link)
