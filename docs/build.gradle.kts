@@ -1,4 +1,5 @@
 plugins {
+    `subproject-conventions`
     id("dev.adamko.dokkatoo-html")
 }
 
@@ -18,8 +19,10 @@ dokkatoo {
     }
 }
 
-dependencies {
-    for (library in getLibraryProjects(rootProject)) {
-        dokkatoo(project(library.path))
-    }
+configurations.dokkatoo.configure {
+    dependencies.addAllLater(
+        subprojectService.libraries { path ->
+            project.dependencies.create(project(path))
+        }
+    )
 }
