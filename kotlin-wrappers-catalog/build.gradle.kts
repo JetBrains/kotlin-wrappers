@@ -5,7 +5,11 @@ plugins {
 
 catalog {
     versionCatalog {
-        for (library in getLibraryProjects(rootProject)) {
+        val libraries = subprojectService
+            .libraries { path -> project(path) }
+            .get()
+
+        for (library in libraries) {
             library(
                 "wrappers-" + library.name.removePrefix("kotlin-"),
                 library.group.toString(),
