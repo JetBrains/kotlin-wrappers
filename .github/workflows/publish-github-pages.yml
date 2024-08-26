@@ -48,10 +48,10 @@ jobs:
         run: |
           ./gradlew :docs:dokkatooGeneratePublicationHtml
 
-      - name: Upload Dokkatoo to Pages
+      - name: Upload Dokka docs to Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./build/docs/dokka/html/
+          path: ./docs/build/dokka/html/
 
   deploy:
     needs:
