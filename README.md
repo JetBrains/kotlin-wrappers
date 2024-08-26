@@ -8,7 +8,7 @@
 
 This repository hosts a number of [Kotlin](https://kotlinlang.org) wrappers for popular JavaScript libraries.
 
-To learn more please refer to the `README`s of individual modules.
+To learn more please refer to the [API reference](https://jetbrains.github.io/kotlin-wrappers/).
 
 | README                                                                                 |               Note               | Version                                                                                                                                                                                                                              |
 |:---------------------------------------------------------------------------------------|:--------------------------------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
