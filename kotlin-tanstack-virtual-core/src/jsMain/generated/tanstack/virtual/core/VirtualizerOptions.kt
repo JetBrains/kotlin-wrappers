@@ -14,7 +14,7 @@ external interface VirtualizerOptions<TScrollElement : EventTarget /* Element | 
     var scrollToFn: (offset: Int, options: ScrollOptions, instance: Virtualizer<TScrollElement, TItemElement>) -> Unit
     var observeElementRect: (instance: Virtualizer<TScrollElement, TItemElement>, cb: (rect: Rect) -> Unit) -> (() -> Unit)?
     var observeElementOffset: (instance: Virtualizer<TScrollElement, TItemElement>, cb: (offset: Int, isScrolling: Boolean) -> Unit) -> (() -> Unit)?
-    var debug: Any?
+    var debug: Boolean?
     var initialRect: Rect?
     var onChange: ((instance: Virtualizer<TScrollElement, TItemElement>, sync: Boolean) -> Unit)?
     var measureElement: ((element: TItemElement, entry: ResizeObserverEntry?, instance: Virtualizer<TScrollElement, TItemElement>) -> Int)?
