@@ -6,6 +6,12 @@ import org.jetbrains.kotlin.gradle.targets.js.npm.NpmExtension
 plugins.withType<NodeJsRootPlugin> {
     the<NodeJsRootExtension>().apply {
         version = "22.7.0"
+
+        versions.apply {
+            webpack.version = "5.94.0"
+            webpackCli.version = "5.1.4"
+            karma.version = "6.4.4"
+        }
     }
 
     the<NpmExtension>().apply {
