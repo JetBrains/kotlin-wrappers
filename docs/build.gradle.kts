@@ -16,6 +16,7 @@ dokkatoo {
         customAssets.from(
             "assets/homepage.svg",
             "assets/logo-icon.svg",
+            "assets/social-preview.png",
         )
     }
 }
