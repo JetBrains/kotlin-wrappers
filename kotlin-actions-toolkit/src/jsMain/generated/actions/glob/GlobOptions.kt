@@ -40,4 +40,13 @@ sealed external interface GlobOptions {
      * @default true
      */
     var omitBrokenSymbolicLinks: Boolean?
+
+    /**
+     * Indicates whether to exclude hidden files (files and directories starting with a `.`).
+     * This does not apply to Windows files and directories with the hidden attribute unless
+     * they are also prefixed with a `.`.
+     *
+     * @default false
+     */
+    var excludeHiddenFiles: Boolean?
 }
