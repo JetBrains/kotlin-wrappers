@@ -4,6 +4,18 @@
 <!DOCTYPE html>
 <html class="no-js">
 <head>
+    <meta property="og:site_name" content="Kotlin Wrappers">
+    <meta property="og:title" content="API Reference">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/kotlin-wrappers/images/social-preview.png">
+    <meta property="og:image:alt" content="Kotlin Wrappers">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="600">
+    <meta property="og:url" content="https://jetbrains.github.io/kotlin-wrappers/">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Kotlin Wrappers">
+    <meta property="twitter:description" content="API Reference">
+    <meta property="twitter:image:src" content="/kotlin-wrappers/images/social-preview.png">
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <@page_metadata.display/>
     <@template_cmd name="pathToRoot"><script>var pathToRoot = "${pathToRoot}";</script></@template_cmd>
