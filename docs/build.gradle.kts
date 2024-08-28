@@ -12,6 +12,7 @@ dokkatoo {
 
     pluginsConfiguration.html {
         homepageLink = "https://github.com/JetBrains/kotlin-wrappers/"
+        templatesDir.convention(layout.projectDirectory.dir("templates"))
         customAssets.from(
             "assets/homepage.svg",
             "assets/logo-icon.svg",

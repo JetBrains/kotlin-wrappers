@@ -33,6 +33,7 @@ dokkatoo {
 
     pluginsConfiguration.html {
         homepageLink = "https://github.com/JetBrains/kotlin-wrappers/"
+        templatesDir.convention(rootProject.layout.projectDirectory.dir("docs/templates"))
     }
 }
 
