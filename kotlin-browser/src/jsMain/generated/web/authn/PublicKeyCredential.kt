@@ -34,6 +34,11 @@ sealed external class PublicKeyCredential :
      */
     fun getClientExtensionResults(): AuthenticationExtensionsClientOutputs
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/toJSON)
+     */
+    fun toJSON(): PublicKeyCredentialJSON
+
     companion object {
         /**
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/isConditionalMediationAvailable_static)
@@ -52,5 +57,15 @@ sealed external class PublicKeyCredential :
 
         @JsName("isUserVerifyingPlatformAuthenticatorAvailable")
         fun isUserVerifyingPlatformAuthenticatorAvailableAsync(): Promise<Boolean>
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/parseCreationOptionsFromJSON_static)
+         */
+        fun parseCreationOptionsFromJSON(options: PublicKeyCredentialCreationOptionsJSON): PublicKeyCredentialCreationOptions
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/parseRequestOptionsFromJSON_static)
+         */
+        fun parseRequestOptionsFromJSON(options: PublicKeyCredentialRequestOptionsJSON): PublicKeyCredentialRequestOptions
     }
 }

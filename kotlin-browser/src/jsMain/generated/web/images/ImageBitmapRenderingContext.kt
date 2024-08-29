@@ -16,6 +16,8 @@ sealed external class ImageBitmapRenderingContext :
     RenderingContext {
     /**
      * Returns the canvas element that the context is bound to.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmapRenderingContext/canvas)
      */
     val canvas: EventTarget /* HTMLCanvasElement | OffscreenCanvas */
 
