@@ -4,8 +4,8 @@
 
 package electron.core
 
-import node.buffer.Buffer
 import js.promise.Promise
+import node.buffer.Buffer
 
 external class NativeImage {
     /**

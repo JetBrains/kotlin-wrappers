@@ -2,8 +2,8 @@
 
 package electron.core
 
-import web.messaging.MessagePort
 import js.promise.Promise
+import web.messaging.MessagePort
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 external interface IpcRenderer : node.events.EventEmitter {
