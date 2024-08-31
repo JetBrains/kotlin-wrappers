@@ -1,5 +1,6 @@
 plugins {
     `tools-conventions`
+    `wasm-compat`
 }
 
 tasks.wrapper {
