@@ -4,8 +4,9 @@
 
 package electron.core
 
-import node.buffer.Buffer
+import js.core.Void
 import js.promise.Promise
+import node.buffer.Buffer
 import node.events.EventEmitter as NodeEventEmitter
 
 external class Session : NodeEventEmitter {
@@ -848,38 +849,38 @@ external class Session : NodeEventEmitter {
     /**
      * resolves when the session’s HTTP authentication cache has been cleared.
      */
-    fun clearAuthCache(): Promise<Unit>
+    fun clearAuthCache(): Promise<Void>
 
     /**
      * resolves when the cache clear operation is complete.
      *
      * Clears the session’s HTTP cache.
      */
-    fun clearCache(): Promise<Unit>
+    fun clearCache(): Promise<Void>
 
     /**
      * resolves when the code cache clear operation is complete.
      */
-    fun clearCodeCaches(options: ClearCodeCachesOptions): Promise<Unit>
+    fun clearCodeCaches(options: ClearCodeCachesOptions): Promise<Void>
 
     /**
      * Resolves when the operation is complete.
      *
      * Clears the host resolver cache.
      */
-    fun clearHostResolverCache(): Promise<Unit>
+    fun clearHostResolverCache(): Promise<Void>
 
     /**
      * resolves when the storage data has been cleared.
      */
-    fun clearStorageData(options: ClearStorageDataOptions = definedExternally): Promise<Unit>
+    fun clearStorageData(options: ClearStorageDataOptions = definedExternally): Promise<Void>
 
     /**
      * Resolves when all connections are closed.
      *
      * **Note:** It will terminate / fail all requests currently in flight.
      */
-    fun closeAllConnections(): Promise<Unit>
+    fun closeAllConnections(): Promise<Void>
 
     /**
      * Allows resuming `cancelled` or `interrupted` downloads from previous `Session`.
@@ -978,7 +979,7 @@ external class Session : NodeEventEmitter {
      * proxy configuration is reapplied if it's already available. The pac script will
      * be fetched from `pacScript` again if the proxy mode is `pac_script`.
      */
-    fun forceReloadProxyConfig(): Promise<Unit>
+    fun forceReloadProxyConfig(): Promise<Void>
 
     /**
      * A list of all loaded extensions.
@@ -1219,7 +1220,7 @@ external class Session : NodeEventEmitter {
      * to prevent pooled sockets using previous proxy from being reused by future
      * requests.
      */
-    fun setProxy(config: ProxyConfig): Promise<Unit>
+    fun setProxy(config: ProxyConfig): Promise<Void>
 
     /**
      * By default Electron will download hunspell dictionaries from the Chromium CDN.

@@ -4,6 +4,7 @@
 
 package node.fs
 
+import js.core.Void
 import js.promise.Promise
 
 /**
@@ -15,4 +16,4 @@ import js.promise.Promise
  */
 
 @JsName("lchmod")
-external fun lchmodAsync(path: PathLike, mode: Mode): Promise<Unit>
+external fun lchmodAsync(path: PathLike, mode: Mode): Promise<Void>

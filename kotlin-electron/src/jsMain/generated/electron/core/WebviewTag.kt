@@ -2,9 +2,10 @@
 
 package electron.core
 
+import js.core.Void
+import js.promise.Promise
 import js.typedarrays.Uint8Array
 import web.html.HTMLElement
-import js.promise.Promise
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 external interface WebviewTag : HTMLElement {
@@ -350,7 +351,7 @@ external interface WebviewTag : HTMLElement {
     /**
      * Inserts `text` to the focused element.
      */
-    fun insertText(text: String): Promise<Unit>
+    fun insertText(text: String): Promise<Void>
 
     /**
      * Starts inspecting element at position (`x`, `y`) of guest page.
@@ -416,7 +417,7 @@ external interface WebviewTag : HTMLElement {
      * Loads the `url` in the webview, the `url` must contain the protocol prefix, e.g.
      * the `http://` or `file://`.
      */
-    fun loadURL(url: String, options: LoadURLOptions = definedExternally): Promise<Unit>
+    fun loadURL(url: String, options: LoadURLOptions = definedExternally): Promise<Void>
 
     /**
      * Opens a DevTools window for guest page.
@@ -436,7 +437,7 @@ external interface WebviewTag : HTMLElement {
     /**
      * Prints `webview`'s web page. Same as `webContents.print([options])`.
      */
-    fun print(options: WebviewTagPrintOptions = definedExternally): Promise<Unit>
+    fun print(options: WebviewTagPrintOptions = definedExternally): Promise<Void>
 
     /**
      * Resolves with the generated PDF data.
@@ -466,7 +467,7 @@ external interface WebviewTag : HTMLElement {
      * Removes the inserted CSS from the current web page. The stylesheet is identified
      * by its key, which is returned from `<webview>.insertCSS(css)`.
      */
-    fun removeInsertedCSS(key: String): Promise<Unit>
+    fun removeInsertedCSS(key: String): Promise<Void>
 
     /**
      * Executes editing command `replace` in page.
@@ -500,28 +501,28 @@ external interface WebviewTag : HTMLElement {
      *
      * See webContents.send for examples.
      */
-    fun send(channel: String, vararg args: Any?): Promise<Unit>
+    fun send(channel: String, vararg args: Any?): Promise<Void>
 
     /**
      * Sends an input `event` to the page.
      *
      * See webContents.sendInputEvent for detailed description of `event` object.
      */
-    fun sendInputEvent(event: MouseInputEvent): Promise<Unit>
+    fun sendInputEvent(event: MouseInputEvent): Promise<Void>
 
     /**
      * Sends an input `event` to the page.
      *
      * See webContents.sendInputEvent for detailed description of `event` object.
      */
-    fun sendInputEvent(event: MouseWheelInputEvent): Promise<Unit>
+    fun sendInputEvent(event: MouseWheelInputEvent): Promise<Void>
 
     /**
      * Sends an input `event` to the page.
      *
      * See webContents.sendInputEvent for detailed description of `event` object.
      */
-    fun sendInputEvent(event: KeyboardInputEvent): Promise<Unit>
+    fun sendInputEvent(event: KeyboardInputEvent): Promise<Void>
 
     /**
      * Send an asynchronous message to renderer process via `channel`, you can also
@@ -530,7 +531,7 @@ external interface WebviewTag : HTMLElement {
      *
      * See webContents.sendToFrame for examples.
      */
-    fun sendToFrame(frameId: js.array.JsTuple2<Double, Double>, channel: String, vararg args: Any?): Promise<Unit>
+    fun sendToFrame(frameId: js.array.JsTuple2<Double, Double>, channel: String, vararg args: Any?): Promise<Void>
 
     /**
      * Set guest page muted.
@@ -545,7 +546,7 @@ external interface WebviewTag : HTMLElement {
     /**
      * Sets the maximum and minimum pinch-to-zoom level.
      */
-    fun setVisualZoomLevelLimits(minimumLevel: Double, maximumLevel: Double): Promise<Unit>
+    fun setVisualZoomLevelLimits(minimumLevel: Double, maximumLevel: Double): Promise<Void>
 
     /**
      * Changes the zoom factor to the specified factor. Zoom factor is zoom percent

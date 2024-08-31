@@ -3,7 +3,9 @@
 package node.fs
 
 
-suspend fun link(existingPath: PathLike, newPath: PathLike): Unit =
+import js.core.Void
+
+suspend fun link(existingPath: PathLike, newPath: PathLike): Void =
     linkAsync(
         existingPath, newPath
     ).await()

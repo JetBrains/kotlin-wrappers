@@ -3,7 +3,9 @@
 package node.fs
 
 
-suspend fun lchown(path: PathLike, uid: Number, gid: Number): Unit =
+import js.core.Void
+
+suspend fun lchown(path: PathLike, uid: Number, gid: Number): Void =
     lchownAsync(
         path, uid, gid
     ).await()

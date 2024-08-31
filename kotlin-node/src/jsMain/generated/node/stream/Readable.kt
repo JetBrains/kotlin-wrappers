@@ -4,6 +4,7 @@
 
 package node.stream
 
+import js.core.Void
 import js.iterable.AsyncIterable
 import js.iterable.AsyncIterator
 import js.promise.Promise
@@ -442,7 +443,7 @@ open external class Readable : Stream, node.ReadableStream {
     fun forEach(
         fn: (data: Any?, options: ArrayOptions? /* use undefined for default */) -> js.promise.PromiseResult<Unit>,
         options: ArrayOptions = definedExternally,
-    ): Promise<Unit>
+    ): Promise<Void>
 
     /**
      * This method allows easily obtaining the contents of a stream.

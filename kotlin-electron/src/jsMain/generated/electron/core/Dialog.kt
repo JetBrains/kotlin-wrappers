@@ -2,6 +2,7 @@
 
 package electron.core
 
+import js.core.Void
 import js.promise.Promise
 
 external interface Dialog {
@@ -23,7 +24,7 @@ external interface Dialog {
      *
      * @platform darwin,win32
      */
-    fun showCertificateTrustDialog(browserWindow: BrowserWindow, options: CertificateTrustDialogOptions): Promise<Unit>
+    fun showCertificateTrustDialog(browserWindow: BrowserWindow, options: CertificateTrustDialogOptions): Promise<Void>
 
     /**
      * resolves when the certificate trust dialog is shown.
@@ -42,7 +43,7 @@ external interface Dialog {
      *
      * @platform darwin,win32
      */
-    fun showCertificateTrustDialog(options: CertificateTrustDialogOptions): Promise<Unit>
+    fun showCertificateTrustDialog(options: CertificateTrustDialogOptions): Promise<Void>
 
     /**
      * Displays a modal dialog that shows an error message.

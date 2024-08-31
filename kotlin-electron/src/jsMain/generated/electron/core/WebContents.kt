@@ -4,8 +4,9 @@
 
 package electron.core
 
-import node.buffer.Buffer
+import js.core.Void
 import js.promise.Promise
+import node.buffer.Buffer
 import node.events.EventEmitter as NodeEventEmitter
 
 external class WebContents : NodeEventEmitter {
@@ -2810,7 +2811,7 @@ external class WebContents : NodeEventEmitter {
     /**
      * Inserts `text` to the focused element.
      */
-    fun insertText(text: String): Promise<Unit>
+    fun insertText(text: String): Promise<Void>
 
     /**
      * Starts inspecting element at position (`x`, `y`).
@@ -2918,7 +2919,7 @@ external class WebContents : NodeEventEmitter {
      *
      * Would require code like this
      */
-    fun loadFile(filePath: String, options: LoadFileOptions = definedExternally): Promise<Unit>
+    fun loadFile(filePath: String, options: LoadFileOptions = definedExternally): Promise<Void>
 
     /**
      * the promise will resolve when the page has finished loading (see
@@ -2930,7 +2931,7 @@ external class WebContents : NodeEventEmitter {
      * the `http://` or `file://`. If the load should bypass http cache then use the
      * `pragma` header to achieve it.
      */
-    fun loadURL(url: String, options: LoadURLOptions = definedExternally): Promise<Unit>
+    fun loadURL(url: String, options: LoadURLOptions = definedExternally): Promise<Void>
 
     /**
      * Opens the devtools.
@@ -3022,7 +3023,7 @@ external class WebContents : NodeEventEmitter {
      * Removes the inserted CSS from the current web page. The stylesheet is identified
      * by its key, which is returned from `contents.insertCSS(css)`.
      */
-    fun removeInsertedCSS(key: String): Promise<Unit>
+    fun removeInsertedCSS(key: String): Promise<Void>
 
     /**
      * Removes the specified path from DevTools workspace.
@@ -3042,7 +3043,7 @@ external class WebContents : NodeEventEmitter {
     /**
      * resolves if the page is saved.
      */
-    fun savePage(fullPath: String, saveType: WebContentsSavePageSaveType): Promise<Unit>
+    fun savePage(fullPath: String, saveType: WebContentsSavePageSaveType): Promise<Void>
 
     /**
      * Scrolls to the bottom of the current `webContents`.
@@ -3205,7 +3206,7 @@ external class WebContents : NodeEventEmitter {
      * > **NOTE**: Visual zoom is disabled by default in Electron. To re-enable it,
      * call:
      */
-    fun setVisualZoomLevelLimits(minimumLevel: Double, maximumLevel: Double): Promise<Unit>
+    fun setVisualZoomLevelLimits(minimumLevel: Double, maximumLevel: Double): Promise<Void>
 
     /**
      * Setting the WebRTC IP handling policy allows you to control which IPs are
@@ -3297,7 +3298,7 @@ external class WebContents : NodeEventEmitter {
      *
      * Takes a V8 heap snapshot and saves it to `filePath`.
      */
-    fun takeHeapSnapshot(filePath: String): Promise<Unit>
+    fun takeHeapSnapshot(filePath: String): Promise<Void>
 
     /**
      * Toggles the developer tools.

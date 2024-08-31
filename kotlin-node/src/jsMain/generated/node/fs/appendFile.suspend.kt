@@ -2,10 +2,11 @@
 
 package node.fs
 
+import js.core.Void
 import js.typedarrays.Uint8Array
 
 
-suspend fun appendFile(path: PathLike, data: String): Unit =
+suspend fun appendFile(path: PathLike, data: String): Void =
     appendFileAsync(
         path, data
     ).await()
@@ -30,7 +31,7 @@ suspend fun appendFile(
     path: PathLike,
     data: String,
     options: (AppendFileAsyncOptions)? = undefined.unsafeCast<Nothing>(),
-): Unit =
+): Void =
     appendFileAsync(
         path, data, options
     ).await()
@@ -55,7 +56,7 @@ suspend fun appendFile(
     path: PathLike,
     data: String,
     options: node.buffer.BufferEncoding? = undefined.unsafeCast<Nothing>(),
-): Unit =
+): Void =
     appendFileAsync(
         path, data, options
     ).await()
@@ -76,7 +77,7 @@ suspend fun appendFile(
  * @return Fulfills with `undefined` upon success.
  */
 
-suspend fun appendFile(path: PathLike, data: Uint8Array): Unit =
+suspend fun appendFile(path: PathLike, data: Uint8Array): Void =
     appendFileAsync(
         path, data
     ).await()
@@ -101,7 +102,7 @@ suspend fun appendFile(
     path: PathLike,
     data: Uint8Array,
     options: (AppendFileAsyncOptions)? = undefined.unsafeCast<Nothing>(),
-): Unit =
+): Void =
     appendFileAsync(
         path, data, options
     ).await()
@@ -126,7 +127,7 @@ suspend fun appendFile(
     path: PathLike,
     data: Uint8Array,
     options: node.buffer.BufferEncoding? = undefined.unsafeCast<Nothing>(),
-): Unit =
+): Void =
     appendFileAsync(
         path, data, options
     ).await()
@@ -147,7 +148,7 @@ suspend fun appendFile(
  * @return Fulfills with `undefined` upon success.
  */
 
-suspend fun appendFile(path: FileHandle, data: String): Unit =
+suspend fun appendFile(path: FileHandle, data: String): Void =
     appendFileAsync(
         path, data
     ).await()
@@ -172,7 +173,7 @@ suspend fun appendFile(
     path: FileHandle,
     data: String,
     options: (AppendFileAsyncOptions)? = undefined.unsafeCast<Nothing>(),
-): Unit =
+): Void =
     appendFileAsync(
         path, data, options
     ).await()
@@ -197,7 +198,7 @@ suspend fun appendFile(
     path: FileHandle,
     data: String,
     options: node.buffer.BufferEncoding? = undefined.unsafeCast<Nothing>(),
-): Unit =
+): Void =
     appendFileAsync(
         path, data, options
     ).await()
@@ -218,7 +219,7 @@ suspend fun appendFile(
  * @return Fulfills with `undefined` upon success.
  */
 
-suspend fun appendFile(path: FileHandle, data: Uint8Array): Unit =
+suspend fun appendFile(path: FileHandle, data: Uint8Array): Void =
     appendFileAsync(
         path, data
     ).await()
@@ -243,7 +244,7 @@ suspend fun appendFile(
     path: FileHandle,
     data: Uint8Array,
     options: (AppendFileAsyncOptions)? = undefined.unsafeCast<Nothing>(),
-): Unit =
+): Void =
     appendFileAsync(
         path, data, options
     ).await()
@@ -268,7 +269,7 @@ suspend fun appendFile(
     path: FileHandle,
     data: Uint8Array,
     options: node.buffer.BufferEncoding? = undefined.unsafeCast<Nothing>(),
-): Unit =
+): Void =
     appendFileAsync(
         path, data, options
     ).await()

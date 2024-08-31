@@ -4,6 +4,7 @@
 
 package node.fs
 
+import js.core.Void
 import js.promise.Promise
 
 /**
@@ -13,4 +14,4 @@ import js.promise.Promise
  */
 
 @JsName("rm")
-external fun rmAsync(path: PathLike, options: RmOptions = definedExternally): Promise<Unit>
+external fun rmAsync(path: PathLike, options: RmOptions = definedExternally): Promise<Void>

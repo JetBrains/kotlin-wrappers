@@ -3,7 +3,9 @@
 package node.fs
 
 
-suspend fun rmdir(path: PathLike, options: RmDirOptions = undefined.unsafeCast<Nothing>()): Unit =
+import js.core.Void
+
+suspend fun rmdir(path: PathLike, options: RmDirOptions = undefined.unsafeCast<Nothing>()): Void =
     rmdirAsync(
         path, options
     ).await()

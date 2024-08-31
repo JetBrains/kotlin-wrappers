@@ -2,10 +2,11 @@
 
 package node.fs
 
+import js.core.Void
 import web.url.URL
 
 
-suspend fun cp(source: String, destination: String, opts: CopyOptions = undefined.unsafeCast<Nothing>()): Unit =
+suspend fun cp(source: String, destination: String, opts: CopyOptions = undefined.unsafeCast<Nothing>()): Void =
     cpAsync(
         source, destination, opts
     ).await()
@@ -24,7 +25,7 @@ suspend fun cp(source: String, destination: String, opts: CopyOptions = undefine
  * @return Fulfills with `undefined` upon success.
  */
 
-suspend fun cp(source: String, destination: URL, opts: CopyOptions = undefined.unsafeCast<Nothing>()): Unit =
+suspend fun cp(source: String, destination: URL, opts: CopyOptions = undefined.unsafeCast<Nothing>()): Void =
     cpAsync(
         source, destination, opts
     ).await()
@@ -43,7 +44,7 @@ suspend fun cp(source: String, destination: URL, opts: CopyOptions = undefined.u
  * @return Fulfills with `undefined` upon success.
  */
 
-suspend fun cp(source: URL, destination: String, opts: CopyOptions = undefined.unsafeCast<Nothing>()): Unit =
+suspend fun cp(source: URL, destination: String, opts: CopyOptions = undefined.unsafeCast<Nothing>()): Void =
     cpAsync(
         source, destination, opts
     ).await()
@@ -62,7 +63,7 @@ suspend fun cp(source: URL, destination: String, opts: CopyOptions = undefined.u
  * @return Fulfills with `undefined` upon success.
  */
 
-suspend fun cp(source: URL, destination: URL, opts: CopyOptions = undefined.unsafeCast<Nothing>()): Unit =
+suspend fun cp(source: URL, destination: URL, opts: CopyOptions = undefined.unsafeCast<Nothing>()): Void =
     cpAsync(
         source, destination, opts
     ).await()

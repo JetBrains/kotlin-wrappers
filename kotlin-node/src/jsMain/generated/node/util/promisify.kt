@@ -4,6 +4,7 @@
 
 package node.util
 
+import js.core.Void
 import js.promise.Promise
 
 /**
@@ -79,26 +80,26 @@ external fun <TCustom : Function<*>> promisify(fn: CustomPromisify<TCustom>): TC
 
 external fun <TResult> promisify(fn: (callback: (err: Any?, result: TResult) -> Unit) -> Unit): () -> Promise<TResult>
 
-external fun promisify(fn: (callback: (err: Any? /* use undefined for default */) -> Unit) -> Unit): () -> Promise<Unit>
+external fun promisify(fn: (callback: (err: Any? /* use undefined for default */) -> Unit) -> Unit): () -> Promise<Void>
 
 external fun <T1, TResult> promisify(fn: (arg1: T1, callback: (err: Any?, result: TResult) -> Unit) -> Unit): (arg1: T1) -> Promise<TResult>
 
-external fun <T1> promisify(fn: (arg1: T1, callback: (err: Any? /* use undefined for default */) -> Unit) -> Unit): (arg1: T1) -> Promise<Unit>
+external fun <T1> promisify(fn: (arg1: T1, callback: (err: Any? /* use undefined for default */) -> Unit) -> Unit): (arg1: T1) -> Promise<Void>
 
 external fun <T1, T2, TResult> promisify(fn: (arg1: T1, arg2: T2, callback: (err: Any?, result: TResult) -> Unit) -> Unit): (arg1: T1, arg2: T2) -> Promise<TResult>
 
-external fun <T1, T2> promisify(fn: (arg1: T1, arg2: T2, callback: (err: Any? /* use undefined for default */) -> Unit) -> Unit): (arg1: T1, arg2: T2) -> Promise<Unit>
+external fun <T1, T2> promisify(fn: (arg1: T1, arg2: T2, callback: (err: Any? /* use undefined for default */) -> Unit) -> Unit): (arg1: T1, arg2: T2) -> Promise<Void>
 
 external fun <T1, T2, T3, TResult> promisify(fn: (arg1: T1, arg2: T2, arg3: T3, callback: (err: Any?, result: TResult) -> Unit) -> Unit): (arg1: T1, arg2: T2, arg3: T3) -> Promise<TResult>
 
-external fun <T1, T2, T3> promisify(fn: (arg1: T1, arg2: T2, arg3: T3, callback: (err: Any? /* use undefined for default */) -> Unit) -> Unit): (arg1: T1, arg2: T2, arg3: T3) -> Promise<Unit>
+external fun <T1, T2, T3> promisify(fn: (arg1: T1, arg2: T2, arg3: T3, callback: (err: Any? /* use undefined for default */) -> Unit) -> Unit): (arg1: T1, arg2: T2, arg3: T3) -> Promise<Void>
 
 external fun <T1, T2, T3, T4, TResult> promisify(fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, callback: (err: Any?, result: TResult) -> Unit) -> Unit): (arg1: T1, arg2: T2, arg3: T3, arg4: T4) -> Promise<TResult>
 
-external fun <T1, T2, T3, T4> promisify(fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, callback: (err: Any? /* use undefined for default */) -> Unit) -> Unit): (arg1: T1, arg2: T2, arg3: T3, arg4: T4) -> Promise<Unit>
+external fun <T1, T2, T3, T4> promisify(fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, callback: (err: Any? /* use undefined for default */) -> Unit) -> Unit): (arg1: T1, arg2: T2, arg3: T3, arg4: T4) -> Promise<Void>
 
 external fun <T1, T2, T3, T4, T5, TResult> promisify(fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, callback: (err: Any?, result: TResult) -> Unit) -> Unit): (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) -> Promise<TResult>
 
-external fun <T1, T2, T3, T4, T5> promisify(fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, callback: (err: Any? /* use undefined for default */) -> Unit) -> Unit): (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) -> Promise<Unit>
+external fun <T1, T2, T3, T4, T5> promisify(fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, callback: (err: Any? /* use undefined for default */) -> Unit) -> Unit): (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) -> Promise<Void>
 
 external fun promisify(fn: Function<*>): Function<*>

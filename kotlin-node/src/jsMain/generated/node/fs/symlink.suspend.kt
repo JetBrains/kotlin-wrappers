@@ -3,7 +3,9 @@
 package node.fs
 
 
-suspend fun symlink(target: PathLike, path: PathLike, type: String? = undefined.unsafeCast<Nothing>()): Unit =
+import js.core.Void
+
+suspend fun symlink(target: PathLike, path: PathLike, type: String? = undefined.unsafeCast<Nothing>()): Void =
     symlinkAsync(
         target, path, type
     ).await()

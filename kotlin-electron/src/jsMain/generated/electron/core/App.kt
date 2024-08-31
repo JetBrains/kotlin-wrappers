@@ -2,6 +2,7 @@
 
 package electron.core
 
+import js.core.Void
 import js.promise.Promise
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
@@ -2139,7 +2140,7 @@ external interface App : node.events.EventEmitter {
      * to checking `app.isReady()` and subscribing to the `ready` event if the app is
      * not ready yet.
      */
-    fun whenReady(): Promise<Unit>
+    fun whenReady(): Promise<Void>
 
     /**
      * A `boolean` property that's `true` if Chrome's accessibility support is enabled,

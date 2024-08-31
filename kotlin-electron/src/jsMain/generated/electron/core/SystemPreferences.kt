@@ -2,6 +2,7 @@
 
 package electron.core
 
+import js.core.Void
 import js.promise.Promise
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
@@ -289,7 +290,7 @@ external interface SystemPreferences : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun promptTouchID(reason: String): Promise<Unit>
+    fun promptTouchID(reason: String): Promise<Void>
 
     /**
      * Add the specified defaults to your application's `NSUserDefaults`.

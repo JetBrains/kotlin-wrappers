@@ -4,6 +4,7 @@
 
 package node.fs
 
+import js.core.Void
 import js.promise.Promise
 
 /**
@@ -41,4 +42,4 @@ import js.promise.Promise
  */
 
 @JsName("copyFile")
-external fun copyFileAsync(src: PathLike, dest: PathLike, mode: Number = definedExternally): Promise<Unit>
+external fun copyFileAsync(src: PathLike, dest: PathLike, mode: Number = definedExternally): Promise<Void>

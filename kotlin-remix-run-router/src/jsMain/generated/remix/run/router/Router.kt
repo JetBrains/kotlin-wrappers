@@ -2,6 +2,7 @@
 
 package remix.run.router
 
+import js.core.Void
 import js.promise.Promise
 import web.abort.AbortController
 import web.url.URL
@@ -95,14 +96,14 @@ sealed external interface Router {
      * Navigate forward/backward in the history stack
      * @param to Delta to move in the history stack
      */
-    fun navigate(to: Double): Promise<Unit>
+    fun navigate(to: Double): Promise<Void>
 
     /**
      * Navigate to the given path
      * @param to Path to navigate to
      * @param opts Navigation options (method, submission, etc.)
      */
-    fun navigate(to: To?, opts: RouterNavigateOptions = definedExternally): Promise<Unit>
+    fun navigate(to: To?, opts: RouterNavigateOptions = definedExternally): Promise<Void>
 
     /**
      * @internal

@@ -3,7 +3,9 @@
 package node.fs
 
 
-suspend fun rename(oldPath: PathLike, newPath: PathLike): Unit =
+import js.core.Void
+
+suspend fun rename(oldPath: PathLike, newPath: PathLike): Void =
     renameAsync(
         oldPath, newPath
     ).await()

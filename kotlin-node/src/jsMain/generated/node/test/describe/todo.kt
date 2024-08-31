@@ -5,6 +5,7 @@
 
 package node.test.describe
 
+import js.core.Void
 import js.promise.Promise
 import node.test.SuiteFn
 import node.test.TestOptions
@@ -19,19 +20,19 @@ external fun todoAsync(
     name: String = definedExternally,
     options: TestOptions = definedExternally,
     fn: SuiteFn = definedExternally,
-): Promise<Unit>
+): Promise<Void>
 
 
 @JsName("todo")
-external fun todoAsync(name: String = definedExternally, fn: SuiteFn = definedExternally): Promise<Unit>
+external fun todoAsync(name: String = definedExternally, fn: SuiteFn = definedExternally): Promise<Void>
 
 
 @JsName("todo")
-external fun todoAsync(options: TestOptions = definedExternally, fn: SuiteFn = definedExternally): Promise<Unit>
+external fun todoAsync(options: TestOptions = definedExternally, fn: SuiteFn = definedExternally): Promise<Void>
 
 
 @JsName("todo")
-external fun todoAsync(fn: SuiteFn = definedExternally): Promise<Unit>
+external fun todoAsync(fn: SuiteFn = definedExternally): Promise<Void>
 
 @JsName("todo")
-external fun todoAsync(): Promise<Unit>
+external fun todoAsync(): Promise<Void>

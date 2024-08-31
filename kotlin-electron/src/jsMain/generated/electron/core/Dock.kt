@@ -4,6 +4,7 @@
 
 package electron.core
 
+import js.core.Void
 import js.promise.Promise
 
 external class Dock {
@@ -100,5 +101,5 @@ external class Dock {
      *
      * @platform darwin
      */
-    fun show(): Promise<Unit>
+    fun show(): Promise<Void>
 }

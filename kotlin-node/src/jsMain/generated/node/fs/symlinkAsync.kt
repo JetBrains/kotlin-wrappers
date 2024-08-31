@@ -4,6 +4,7 @@
 
 package node.fs
 
+import js.core.Void
 import js.promise.Promise
 
 /**
@@ -21,4 +22,4 @@ import js.promise.Promise
  */
 
 @JsName("symlink")
-external fun symlinkAsync(target: PathLike, path: PathLike, type: String? = definedExternally): Promise<Unit>
+external fun symlinkAsync(target: PathLike, path: PathLike, type: String? = definedExternally): Promise<Void>

@@ -4,6 +4,7 @@ package node.fs
 
 import js.array.ReadonlyArray
 import js.buffer.ArrayBufferView
+import js.core.Void
 import js.promise.Promise
 import js.typedarrays.Uint8Array
 import web.streams.ReadableStream
@@ -27,7 +28,7 @@ sealed external interface FileHandle {
      */
 
     @JsName("appendFile")
-    fun appendFileAsync(data: String): Promise<Unit>
+    fun appendFileAsync(data: String): Promise<Void>
 
 
     /**
@@ -40,7 +41,7 @@ sealed external interface FileHandle {
      */
 
     @JsName("appendFile")
-    fun appendFileAsync(data: String, options: (FileHandleAppendFileAsyncOptions)? = definedExternally): Promise<Unit>
+    fun appendFileAsync(data: String, options: (FileHandleAppendFileAsyncOptions)? = definedExternally): Promise<Void>
 
 
     /**
@@ -53,7 +54,7 @@ sealed external interface FileHandle {
      */
 
     @JsName("appendFile")
-    fun appendFileAsync(data: String, options: node.buffer.BufferEncoding? = definedExternally): Promise<Unit>
+    fun appendFileAsync(data: String, options: node.buffer.BufferEncoding? = definedExternally): Promise<Void>
 
 
     /**
@@ -66,7 +67,7 @@ sealed external interface FileHandle {
      */
 
     @JsName("appendFile")
-    fun appendFileAsync(data: Uint8Array): Promise<Unit>
+    fun appendFileAsync(data: Uint8Array): Promise<Void>
 
 
     /**
@@ -82,7 +83,7 @@ sealed external interface FileHandle {
     fun appendFileAsync(
         data: Uint8Array,
         options: (FileHandleAppendFileAsyncOptions)? = definedExternally,
-    ): Promise<Unit>
+    ): Promise<Void>
 
 
     /**
@@ -95,7 +96,7 @@ sealed external interface FileHandle {
      */
 
     @JsName("appendFile")
-    fun appendFileAsync(data: Uint8Array, options: node.buffer.BufferEncoding? = definedExternally): Promise<Unit>
+    fun appendFileAsync(data: Uint8Array, options: node.buffer.BufferEncoding? = definedExternally): Promise<Void>
 
 
     @seskar.js.JsAsync
@@ -175,7 +176,7 @@ sealed external interface FileHandle {
      */
 
     @JsName("chown")
-    fun chownAsync(uid: Number, gid: Number): Promise<Unit>
+    fun chownAsync(uid: Number, gid: Number): Promise<Void>
 
 
     @seskar.js.JsAsync
@@ -189,7 +190,7 @@ sealed external interface FileHandle {
      */
 
     @JsName("chmod")
-    fun chmodAsync(mode: Mode): Promise<Unit>
+    fun chmodAsync(mode: Mode): Promise<Void>
 
 
     @seskar.js.JsAsync
@@ -278,7 +279,7 @@ sealed external interface FileHandle {
      */
 
     @JsName("datasync")
-    fun datasyncAsync(): Promise<Unit>
+    fun datasyncAsync(): Promise<Void>
 
 
     @seskar.js.JsAsync
@@ -293,7 +294,7 @@ sealed external interface FileHandle {
      */
 
     @JsName("sync")
-    fun syncAsync(): Promise<Unit>
+    fun syncAsync(): Promise<Void>
 
 
     @seskar.js.JsAsync
@@ -555,7 +556,7 @@ sealed external interface FileHandle {
      */
 
     @JsName("truncate")
-    fun truncateAsync(len: Number = definedExternally): Promise<Unit>
+    fun truncateAsync(len: Number = definedExternally): Promise<Void>
 
 
     @seskar.js.JsAsync
@@ -567,7 +568,7 @@ sealed external interface FileHandle {
      */
 
     @JsName("utimes")
-    fun utimesAsync(atime: TimeLike, mtime: TimeLike): Promise<Unit>
+    fun utimesAsync(atime: TimeLike, mtime: TimeLike): Promise<Void>
 
 
     @seskar.js.JsAsync
@@ -593,7 +594,7 @@ sealed external interface FileHandle {
      */
 
     @JsName("writeFile")
-    fun writeFileAsync(data: String): Promise<Unit>
+    fun writeFileAsync(data: String): Promise<Void>
 
 
     /**
@@ -616,7 +617,7 @@ sealed external interface FileHandle {
      */
 
     @JsName("writeFile")
-    fun writeFileAsync(data: String, options: (FileHandleWriteFileAsyncOptions)? = definedExternally): Promise<Unit>
+    fun writeFileAsync(data: String, options: (FileHandleWriteFileAsyncOptions)? = definedExternally): Promise<Void>
 
 
     /**
@@ -639,7 +640,7 @@ sealed external interface FileHandle {
      */
 
     @JsName("writeFile")
-    fun writeFileAsync(data: String, options: node.buffer.BufferEncoding? = definedExternally): Promise<Unit>
+    fun writeFileAsync(data: String, options: node.buffer.BufferEncoding? = definedExternally): Promise<Void>
 
 
     /**
@@ -662,7 +663,7 @@ sealed external interface FileHandle {
      */
 
     @JsName("writeFile")
-    fun writeFileAsync(data: Uint8Array): Promise<Unit>
+    fun writeFileAsync(data: Uint8Array): Promise<Void>
 
 
     /**
@@ -685,7 +686,7 @@ sealed external interface FileHandle {
      */
 
     @JsName("writeFile")
-    fun writeFileAsync(data: Uint8Array, options: (FileHandleWriteFileAsyncOptions)? = definedExternally): Promise<Unit>
+    fun writeFileAsync(data: Uint8Array, options: (FileHandleWriteFileAsyncOptions)? = definedExternally): Promise<Void>
 
 
     /**
@@ -708,7 +709,7 @@ sealed external interface FileHandle {
      */
 
     @JsName("writeFile")
-    fun writeFileAsync(data: Uint8Array, options: node.buffer.BufferEncoding? = definedExternally): Promise<Unit>
+    fun writeFileAsync(data: Uint8Array, options: node.buffer.BufferEncoding? = definedExternally): Promise<Void>
 
 
     @seskar.js.JsAsync
@@ -940,7 +941,7 @@ sealed external interface FileHandle {
      */
 
     @JsName("close")
-    fun closeAsync(): Promise<Unit>
+    fun closeAsync(): Promise<Void>
 
 
     @seskar.js.JsAsync

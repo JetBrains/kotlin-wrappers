@@ -3,19 +3,21 @@
 package node.stream
 
 
-suspend fun finished(stream: node.ReadableStream, options: FinishedOptions = undefined.unsafeCast<Nothing>()): Unit =
+import js.core.Void
+
+suspend fun finished(stream: node.ReadableStream, options: FinishedOptions = undefined.unsafeCast<Nothing>()): Void =
     finishedAsync(
         stream, options
     ).await()
 
 
-suspend fun finished(stream: node.WritableStream, options: FinishedOptions = undefined.unsafeCast<Nothing>()): Unit =
+suspend fun finished(stream: node.WritableStream, options: FinishedOptions = undefined.unsafeCast<Nothing>()): Void =
     finishedAsync(
         stream, options
     ).await()
 
 
-suspend fun finished(stream: node.ReadWriteStream, options: FinishedOptions = undefined.unsafeCast<Nothing>()): Unit =
+suspend fun finished(stream: node.ReadWriteStream, options: FinishedOptions = undefined.unsafeCast<Nothing>()): Void =
     finishedAsync(
         stream, options
     ).await()

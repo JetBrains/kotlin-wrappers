@@ -4,6 +4,7 @@
 
 package node.test
 
+import js.core.Void
 import js.promise.Promise
 
 /**
@@ -17,19 +18,19 @@ external fun describeAsync(
     name: String = definedExternally,
     options: TestOptions = definedExternally,
     fn: SuiteFn = definedExternally,
-): Promise<Unit>
+): Promise<Void>
 
 
 @JsName("describe")
-external fun describeAsync(name: String = definedExternally, fn: SuiteFn = definedExternally): Promise<Unit>
+external fun describeAsync(name: String = definedExternally, fn: SuiteFn = definedExternally): Promise<Void>
 
 
 @JsName("describe")
-external fun describeAsync(options: TestOptions = definedExternally, fn: SuiteFn = definedExternally): Promise<Unit>
+external fun describeAsync(options: TestOptions = definedExternally, fn: SuiteFn = definedExternally): Promise<Void>
 
 
 @JsName("describe")
-external fun describeAsync(fn: SuiteFn = definedExternally): Promise<Unit>
+external fun describeAsync(fn: SuiteFn = definedExternally): Promise<Void>
 
 @JsName("describe")
-external fun describeAsync(): Promise<Unit>
+external fun describeAsync(): Promise<Void>

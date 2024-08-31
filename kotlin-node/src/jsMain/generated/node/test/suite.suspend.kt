@@ -3,17 +3,19 @@
 package node.test
 
 
+import js.core.Void
+
 suspend fun suite(
     name: String = undefined.unsafeCast<Nothing>(),
     options: TestOptions = undefined.unsafeCast<Nothing>(),
     fn: SuiteFn = undefined.unsafeCast<Nothing>(),
-): Unit =
+): Void =
     suiteAsync(
         name, options, fn
     ).await()
 
 
-suspend fun suite(name: String = undefined.unsafeCast<Nothing>(), fn: SuiteFn = undefined.unsafeCast<Nothing>()): Unit =
+suspend fun suite(name: String = undefined.unsafeCast<Nothing>(), fn: SuiteFn = undefined.unsafeCast<Nothing>()): Void =
     suiteAsync(
         name, fn
     ).await()
@@ -22,13 +24,13 @@ suspend fun suite(name: String = undefined.unsafeCast<Nothing>(), fn: SuiteFn = 
 suspend fun suite(
     options: TestOptions = undefined.unsafeCast<Nothing>(),
     fn: SuiteFn = undefined.unsafeCast<Nothing>(),
-): Unit =
+): Void =
     suiteAsync(
         options, fn
     ).await()
 
 
-suspend fun suite(fn: SuiteFn = undefined.unsafeCast<Nothing>()): Unit =
+suspend fun suite(fn: SuiteFn = undefined.unsafeCast<Nothing>()): Void =
     suiteAsync(
         fn
     ).await()

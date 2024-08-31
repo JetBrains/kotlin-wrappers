@@ -3,7 +3,9 @@
 package node.fs
 
 
-suspend fun lchmod(path: PathLike, mode: Mode): Unit =
+import js.core.Void
+
+suspend fun lchmod(path: PathLike, mode: Mode): Void =
     lchmodAsync(
         path, mode
     ).await()

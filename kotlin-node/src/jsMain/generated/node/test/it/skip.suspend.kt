@@ -2,6 +2,7 @@
 
 package node.test.it
 
+import js.core.Void
 import node.test.TestFn
 import node.test.TestOptions
 
@@ -10,13 +11,13 @@ suspend fun skip(
     name: String = undefined.unsafeCast<Nothing>(),
     options: TestOptions = undefined.unsafeCast<Nothing>(),
     fn: TestFn = undefined.unsafeCast<Nothing>(),
-): Unit =
+): Void =
     skipAsync(
         name, options, fn
     ).await()
 
 
-suspend fun skip(name: String = undefined.unsafeCast<Nothing>(), fn: TestFn = undefined.unsafeCast<Nothing>()): Unit =
+suspend fun skip(name: String = undefined.unsafeCast<Nothing>(), fn: TestFn = undefined.unsafeCast<Nothing>()): Void =
     skipAsync(
         name, fn
     ).await()
@@ -25,19 +26,19 @@ suspend fun skip(name: String = undefined.unsafeCast<Nothing>(), fn: TestFn = un
 suspend fun skip(
     options: TestOptions = undefined.unsafeCast<Nothing>(),
     fn: TestFn = undefined.unsafeCast<Nothing>(),
-): Unit =
+): Void =
     skipAsync(
         options, fn
     ).await()
 
 
-suspend fun skip(fn: TestFn = undefined.unsafeCast<Nothing>()): Unit =
+suspend fun skip(fn: TestFn = undefined.unsafeCast<Nothing>()): Void =
     skipAsync(
         fn
     ).await()
 
 
-suspend fun skip(): Unit =
+suspend fun skip(): Void =
     skipAsync(
 
     ).await()

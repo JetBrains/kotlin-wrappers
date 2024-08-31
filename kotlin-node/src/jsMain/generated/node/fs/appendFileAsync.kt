@@ -4,6 +4,7 @@
 
 package node.fs
 
+import js.core.Void
 import js.promise.Promise
 import js.typedarrays.Uint8Array
 
@@ -23,7 +24,7 @@ import js.typedarrays.Uint8Array
  */
 
 @JsName("appendFile")
-external fun appendFileAsync(path: PathLike, data: String): Promise<Unit>
+external fun appendFileAsync(path: PathLike, data: String): Promise<Void>
 
 
 /**
@@ -46,7 +47,7 @@ external fun appendFileAsync(
     path: PathLike,
     data: String,
     options: (AppendFileAsyncOptions)? = definedExternally,
-): Promise<Unit>
+): Promise<Void>
 
 
 /**
@@ -69,7 +70,7 @@ external fun appendFileAsync(
     path: PathLike,
     data: String,
     options: node.buffer.BufferEncoding? = definedExternally,
-): Promise<Unit>
+): Promise<Void>
 
 
 /**
@@ -88,7 +89,7 @@ external fun appendFileAsync(
  */
 
 @JsName("appendFile")
-external fun appendFileAsync(path: PathLike, data: Uint8Array): Promise<Unit>
+external fun appendFileAsync(path: PathLike, data: Uint8Array): Promise<Void>
 
 
 /**
@@ -111,7 +112,7 @@ external fun appendFileAsync(
     path: PathLike,
     data: Uint8Array,
     options: (AppendFileAsyncOptions)? = definedExternally,
-): Promise<Unit>
+): Promise<Void>
 
 
 /**
@@ -134,7 +135,7 @@ external fun appendFileAsync(
     path: PathLike,
     data: Uint8Array,
     options: node.buffer.BufferEncoding? = definedExternally,
-): Promise<Unit>
+): Promise<Void>
 
 
 /**
@@ -153,7 +154,7 @@ external fun appendFileAsync(
  */
 
 @JsName("appendFile")
-external fun appendFileAsync(path: FileHandle, data: String): Promise<Unit>
+external fun appendFileAsync(path: FileHandle, data: String): Promise<Void>
 
 
 /**
@@ -176,7 +177,7 @@ external fun appendFileAsync(
     path: FileHandle,
     data: String,
     options: (AppendFileAsyncOptions)? = definedExternally,
-): Promise<Unit>
+): Promise<Void>
 
 
 /**
@@ -199,7 +200,7 @@ external fun appendFileAsync(
     path: FileHandle,
     data: String,
     options: node.buffer.BufferEncoding? = definedExternally,
-): Promise<Unit>
+): Promise<Void>
 
 
 /**
@@ -218,7 +219,7 @@ external fun appendFileAsync(
  */
 
 @JsName("appendFile")
-external fun appendFileAsync(path: FileHandle, data: Uint8Array): Promise<Unit>
+external fun appendFileAsync(path: FileHandle, data: Uint8Array): Promise<Void>
 
 
 /**
@@ -241,7 +242,7 @@ external fun appendFileAsync(
     path: FileHandle,
     data: Uint8Array,
     options: (AppendFileAsyncOptions)? = definedExternally,
-): Promise<Unit>
+): Promise<Void>
 
 
 /**
@@ -264,4 +265,4 @@ external fun appendFileAsync(
     path: FileHandle,
     data: Uint8Array,
     options: node.buffer.BufferEncoding? = definedExternally,
-): Promise<Unit>
+): Promise<Void>

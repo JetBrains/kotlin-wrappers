@@ -4,6 +4,7 @@
 
 package node.fs
 
+import js.core.Void
 import js.promise.Promise
 
 /**
@@ -13,4 +14,4 @@ import js.promise.Promise
  */
 
 @JsName("link")
-external fun linkAsync(existingPath: PathLike, newPath: PathLike): Promise<Unit>
+external fun linkAsync(existingPath: PathLike, newPath: PathLike): Promise<Void>

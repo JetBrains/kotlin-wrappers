@@ -2,10 +2,11 @@
 
 package node.assert
 
+import js.core.Void
 import js.promise.Promise
 
 
-suspend fun doesNotReject(block: () -> Promise<Any?>): Unit =
+suspend fun doesNotReject(block: () -> Promise<Any?>): Void =
     doesNotRejectAsync(
         block
     ).await()
@@ -54,7 +55,7 @@ suspend fun doesNotReject(block: () -> Promise<Any?>): Unit =
  * @since v10.0.0
  */
 
-suspend fun doesNotReject(block: () -> Promise<Any?>, message: String = undefined.unsafeCast<Nothing>()): Unit =
+suspend fun doesNotReject(block: () -> Promise<Any?>, message: String = undefined.unsafeCast<Nothing>()): Void =
     doesNotRejectAsync(
         block, message
     ).await()
@@ -106,7 +107,7 @@ suspend fun doesNotReject(block: () -> Promise<Any?>, message: String = undefine
 suspend fun doesNotReject(
     block: () -> Promise<Any?>,
     message: Throwable /* JsError */ = undefined.unsafeCast<Nothing>(),
-): Unit =
+): Void =
     doesNotRejectAsync(
         block, message
     ).await()
@@ -155,7 +156,7 @@ suspend fun doesNotReject(
  * @since v10.0.0
  */
 
-suspend fun doesNotReject(block: Promise<Any?>): Unit =
+suspend fun doesNotReject(block: Promise<Any?>): Void =
     doesNotRejectAsync(
         block
     ).await()
@@ -204,7 +205,7 @@ suspend fun doesNotReject(block: Promise<Any?>): Unit =
  * @since v10.0.0
  */
 
-suspend fun doesNotReject(block: Promise<Any?>, message: String = undefined.unsafeCast<Nothing>()): Unit =
+suspend fun doesNotReject(block: Promise<Any?>, message: String = undefined.unsafeCast<Nothing>()): Void =
     doesNotRejectAsync(
         block, message
     ).await()
@@ -256,13 +257,13 @@ suspend fun doesNotReject(block: Promise<Any?>, message: String = undefined.unsa
 suspend fun doesNotReject(
     block: Promise<Any?>,
     message: Throwable /* JsError */ = undefined.unsafeCast<Nothing>(),
-): Unit =
+): Void =
     doesNotRejectAsync(
         block, message
     ).await()
 
 
-suspend fun doesNotReject(block: () -> Promise<Any?>, error: AssertPredicate): Unit =
+suspend fun doesNotReject(block: () -> Promise<Any?>, error: AssertPredicate): Void =
     doesNotRejectAsync(
         block, error
     ).await()
@@ -272,7 +273,7 @@ suspend fun doesNotReject(
     block: () -> Promise<Any?>,
     error: AssertPredicate,
     message: String = undefined.unsafeCast<Nothing>(),
-): Unit =
+): Void =
     doesNotRejectAsync(
         block, error, message
     ).await()
@@ -282,13 +283,13 @@ suspend fun doesNotReject(
     block: () -> Promise<Any?>,
     error: AssertPredicate,
     message: Throwable /* JsError */ = undefined.unsafeCast<Nothing>(),
-): Unit =
+): Void =
     doesNotRejectAsync(
         block, error, message
     ).await()
 
 
-suspend fun doesNotReject(block: Promise<Any?>, error: AssertPredicate): Unit =
+suspend fun doesNotReject(block: Promise<Any?>, error: AssertPredicate): Void =
     doesNotRejectAsync(
         block, error
     ).await()
@@ -298,7 +299,7 @@ suspend fun doesNotReject(
     block: Promise<Any?>,
     error: AssertPredicate,
     message: String = undefined.unsafeCast<Nothing>(),
-): Unit =
+): Void =
     doesNotRejectAsync(
         block, error, message
     ).await()
@@ -308,7 +309,7 @@ suspend fun doesNotReject(
     block: Promise<Any?>,
     error: AssertPredicate,
     message: Throwable /* JsError */ = undefined.unsafeCast<Nothing>(),
-): Unit =
+): Void =
     doesNotRejectAsync(
         block, error, message
     ).await()

@@ -4,6 +4,7 @@
 
 package node.util
 
+import js.core.Void
 import js.promise.Promise
 
 /**
@@ -55,30 +56,30 @@ import js.promise.Promise
  * @param fn An `async` function
  * @return a callback style function
  */
-external fun callbackify(fn: () -> Promise<Unit>): (callback: (err: node.ErrnoException) -> Unit) -> Unit
+external fun callbackify(fn: () -> Promise<Void>): (callback: (err: node.ErrnoException) -> Unit) -> Unit
 
 external fun <TResult> callbackify(fn: () -> Promise<TResult>): (callback: (err: node.ErrnoException, result: TResult) -> Unit) -> Unit
 
-external fun <T1> callbackify(fn: (arg1: T1) -> Promise<Unit>): (arg1: T1, callback: (err: node.ErrnoException) -> Unit) -> Unit
+external fun <T1> callbackify(fn: (arg1: T1) -> Promise<Void>): (arg1: T1, callback: (err: node.ErrnoException) -> Unit) -> Unit
 
 external fun <T1, TResult> callbackify(fn: (arg1: T1) -> Promise<TResult>): (arg1: T1, callback: (err: node.ErrnoException, result: TResult) -> Unit) -> Unit
 
-external fun <T1, T2> callbackify(fn: (arg1: T1, arg2: T2) -> Promise<Unit>): (arg1: T1, arg2: T2, callback: (err: node.ErrnoException) -> Unit) -> Unit
+external fun <T1, T2> callbackify(fn: (arg1: T1, arg2: T2) -> Promise<Void>): (arg1: T1, arg2: T2, callback: (err: node.ErrnoException) -> Unit) -> Unit
 
 external fun <T1, T2, TResult> callbackify(fn: (arg1: T1, arg2: T2) -> Promise<TResult>): (arg1: T1, arg2: T2, callback: (err: node.ErrnoException?, result: TResult) -> Unit) -> Unit
 
-external fun <T1, T2, T3> callbackify(fn: (arg1: T1, arg2: T2, arg3: T3) -> Promise<Unit>): (arg1: T1, arg2: T2, arg3: T3, callback: (err: node.ErrnoException) -> Unit) -> Unit
+external fun <T1, T2, T3> callbackify(fn: (arg1: T1, arg2: T2, arg3: T3) -> Promise<Void>): (arg1: T1, arg2: T2, arg3: T3, callback: (err: node.ErrnoException) -> Unit) -> Unit
 
 external fun <T1, T2, T3, TResult> callbackify(fn: (arg1: T1, arg2: T2, arg3: T3) -> Promise<TResult>): (arg1: T1, arg2: T2, arg3: T3, callback: (err: node.ErrnoException?, result: TResult) -> Unit) -> Unit
 
-external fun <T1, T2, T3, T4> callbackify(fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4) -> Promise<Unit>): (arg1: T1, arg2: T2, arg3: T3, arg4: T4, callback: (err: node.ErrnoException) -> Unit) -> Unit
+external fun <T1, T2, T3, T4> callbackify(fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4) -> Promise<Void>): (arg1: T1, arg2: T2, arg3: T3, arg4: T4, callback: (err: node.ErrnoException) -> Unit) -> Unit
 
 external fun <T1, T2, T3, T4, TResult> callbackify(fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4) -> Promise<TResult>): (arg1: T1, arg2: T2, arg3: T3, arg4: T4, callback: (err: node.ErrnoException?, result: TResult) -> Unit) -> Unit
 
-external fun <T1, T2, T3, T4, T5> callbackify(fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) -> Promise<Unit>): (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, callback: (err: node.ErrnoException) -> Unit) -> Unit
+external fun <T1, T2, T3, T4, T5> callbackify(fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) -> Promise<Void>): (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, callback: (err: node.ErrnoException) -> Unit) -> Unit
 
 external fun <T1, T2, T3, T4, T5, TResult> callbackify(fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) -> Promise<TResult>): (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, callback: (err: node.ErrnoException?, result: TResult) -> Unit) -> Unit
 
-external fun <T1, T2, T3, T4, T5, T6> callbackify(fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, arg6: T6) -> Promise<Unit>): (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, arg6: T6, callback: (err: node.ErrnoException) -> Unit) -> Unit
+external fun <T1, T2, T3, T4, T5, T6> callbackify(fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, arg6: T6) -> Promise<Void>): (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, arg6: T6, callback: (err: node.ErrnoException) -> Unit) -> Unit
 
 external fun <T1, T2, T3, T4, T5, T6, TResult> callbackify(fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, arg6: T6) -> Promise<TResult>): (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, arg6: T6, callback: (err: node.ErrnoException?, result: TResult) -> Unit) -> Unit

@@ -4,6 +4,7 @@
 
 package node.fs
 
+import js.core.Void
 import js.iterable.AsyncIterable
 import js.promise.Promise
 
@@ -43,7 +44,7 @@ external class Dir : AsyncIterable<Dirent> {
      * closed.
      * @since v12.12.0
      */
-    fun close(): Promise<Unit>
+    fun close(): Promise<Void>
     fun close(cb: NoParamCallback): Unit
 
     /**

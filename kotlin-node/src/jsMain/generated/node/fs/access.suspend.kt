@@ -3,7 +3,9 @@
 package node.fs
 
 
-suspend fun access(path: PathLike, mode: Number = undefined.unsafeCast<Nothing>()): Unit =
+import js.core.Void
+
+suspend fun access(path: PathLike, mode: Number = undefined.unsafeCast<Nothing>()): Void =
     accessAsync(
         path, mode
     ).await()

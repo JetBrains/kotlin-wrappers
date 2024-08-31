@@ -4,6 +4,7 @@
 
 package electron.core
 
+import js.core.Void
 import js.promise.Promise
 import node.events.EventEmitter as NodeEventEmitter
 
@@ -118,7 +119,7 @@ external class Cookies : NodeEventEmitter {
      *
      * Calling this method can cause the cookie to be written to disk immediately.
      */
-    fun flushStore(): Promise<Unit>
+    fun flushStore(): Promise<Void>
 
     /**
      * A promise which resolves an array of cookie objects.
@@ -133,12 +134,12 @@ external class Cookies : NodeEventEmitter {
      *
      * Removes the cookies matching `url` and `name`
      */
-    fun remove(url: String, name: String): Promise<Unit>
+    fun remove(url: String, name: String): Promise<Void>
 
     /**
      * A promise which resolves when the cookie has been set
      *
      * Sets a cookie with `details`.
      */
-    fun set(details: CookiesSetDetails): Promise<Unit>
+    fun set(details: CookiesSetDetails): Promise<Void>
 }

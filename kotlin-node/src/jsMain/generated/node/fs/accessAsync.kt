@@ -4,6 +4,7 @@
 
 package node.fs
 
+import js.core.Void
 import js.promise.Promise
 
 /**
@@ -40,4 +41,4 @@ import js.promise.Promise
  */
 
 @JsName("access")
-external fun accessAsync(path: PathLike, mode: Number = definedExternally): Promise<Unit>
+external fun accessAsync(path: PathLike, mode: Number = definedExternally): Promise<Void>

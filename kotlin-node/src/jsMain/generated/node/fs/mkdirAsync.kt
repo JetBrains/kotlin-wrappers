@@ -4,6 +4,7 @@
 
 package node.fs
 
+import js.core.Void
 import js.promise.Promise
 
 /**
@@ -42,7 +43,7 @@ external fun mkdirAsync(path: PathLike, options: MkdirRecursiveAsyncOptions): Pr
  */
 
 @JsName("mkdir")
-external fun mkdirAsync(path: PathLike): Promise<Unit>
+external fun mkdirAsync(path: PathLike): Promise<Void>
 
 
 /**
@@ -53,7 +54,7 @@ external fun mkdirAsync(path: PathLike): Promise<Unit>
  */
 
 @JsName("mkdir")
-external fun mkdirAsync(path: PathLike, options: Mode? = definedExternally): Promise<Unit>
+external fun mkdirAsync(path: PathLike, options: Mode? = definedExternally): Promise<Void>
 
 
 /**
@@ -64,7 +65,7 @@ external fun mkdirAsync(path: PathLike, options: Mode? = definedExternally): Pro
  */
 
 @JsName("mkdir")
-external fun mkdirAsync(path: PathLike, options: (MkdirAsyncOptions)? = definedExternally): Promise<Unit>
+external fun mkdirAsync(path: PathLike, options: (MkdirAsyncOptions)? = definedExternally): Promise<Void>
 
 
 /**

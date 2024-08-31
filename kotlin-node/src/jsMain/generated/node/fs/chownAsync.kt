@@ -4,6 +4,7 @@
 
 package node.fs
 
+import js.core.Void
 import js.promise.Promise
 
 /**
@@ -13,4 +14,4 @@ import js.promise.Promise
  */
 
 @JsName("chown")
-external fun chownAsync(path: PathLike, uid: Number, gid: Number): Promise<Unit>
+external fun chownAsync(path: PathLike, uid: Number, gid: Number): Promise<Void>

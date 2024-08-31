@@ -4,6 +4,7 @@
 
 package node.assert
 
+import js.core.Void
 import js.promise.Promise
 
 /**
@@ -71,7 +72,7 @@ import js.promise.Promise
  */
 
 @JsName("rejects")
-external fun rejectsAsync(block: () -> Promise<Any?>): Promise<Unit>
+external fun rejectsAsync(block: () -> Promise<Any?>): Promise<Void>
 
 
 /**
@@ -139,7 +140,7 @@ external fun rejectsAsync(block: () -> Promise<Any?>): Promise<Unit>
  */
 
 @JsName("rejects")
-external fun rejectsAsync(block: () -> Promise<Any?>, message: String = definedExternally): Promise<Unit>
+external fun rejectsAsync(block: () -> Promise<Any?>, message: String = definedExternally): Promise<Void>
 
 
 /**
@@ -210,7 +211,7 @@ external fun rejectsAsync(block: () -> Promise<Any?>, message: String = definedE
 external fun rejectsAsync(
     block: () -> Promise<Any?>,
     message: Throwable /* JsError */ = definedExternally,
-): Promise<Unit>
+): Promise<Void>
 
 
 /**
@@ -278,7 +279,7 @@ external fun rejectsAsync(
  */
 
 @JsName("rejects")
-external fun rejectsAsync(block: Promise<Any?>): Promise<Unit>
+external fun rejectsAsync(block: Promise<Any?>): Promise<Void>
 
 
 /**
@@ -346,7 +347,7 @@ external fun rejectsAsync(block: Promise<Any?>): Promise<Unit>
  */
 
 @JsName("rejects")
-external fun rejectsAsync(block: Promise<Any?>, message: String = definedExternally): Promise<Unit>
+external fun rejectsAsync(block: Promise<Any?>, message: String = definedExternally): Promise<Void>
 
 
 /**
@@ -414,11 +415,11 @@ external fun rejectsAsync(block: Promise<Any?>, message: String = definedExterna
  */
 
 @JsName("rejects")
-external fun rejectsAsync(block: Promise<Any?>, message: Throwable /* JsError */ = definedExternally): Promise<Unit>
+external fun rejectsAsync(block: Promise<Any?>, message: Throwable /* JsError */ = definedExternally): Promise<Void>
 
 
 @JsName("rejects")
-external fun rejectsAsync(block: () -> Promise<Any?>, error: AssertPredicate): Promise<Unit>
+external fun rejectsAsync(block: () -> Promise<Any?>, error: AssertPredicate): Promise<Void>
 
 
 @JsName("rejects")
@@ -426,7 +427,7 @@ external fun rejectsAsync(
     block: () -> Promise<Any?>,
     error: AssertPredicate,
     message: String = definedExternally,
-): Promise<Unit>
+): Promise<Void>
 
 
 @JsName("rejects")
@@ -434,11 +435,11 @@ external fun rejectsAsync(
     block: () -> Promise<Any?>,
     error: AssertPredicate,
     message: Throwable /* JsError */ = definedExternally,
-): Promise<Unit>
+): Promise<Void>
 
 
 @JsName("rejects")
-external fun rejectsAsync(block: Promise<Any?>, error: AssertPredicate): Promise<Unit>
+external fun rejectsAsync(block: Promise<Any?>, error: AssertPredicate): Promise<Void>
 
 
 @JsName("rejects")
@@ -446,7 +447,7 @@ external fun rejectsAsync(
     block: Promise<Any?>,
     error: AssertPredicate,
     message: String = definedExternally,
-): Promise<Unit>
+): Promise<Void>
 
 
 @JsName("rejects")
@@ -454,4 +455,4 @@ external fun rejectsAsync(
     block: Promise<Any?>,
     error: AssertPredicate,
     message: Throwable /* JsError */ = definedExternally,
-): Promise<Unit>
+): Promise<Void>

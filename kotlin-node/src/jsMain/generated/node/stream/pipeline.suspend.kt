@@ -3,6 +3,7 @@
 package node.stream
 
 import js.array.ReadonlyArray
+import js.core.Void
 
 
 suspend fun <A : PipelineSource<Any?>, B : PipelineDestination<A, Any?>> pipeline(
@@ -68,7 +69,7 @@ suspend fun <A : PipelineSource<Any?>, T1 : PipelineTransform<A, Any?>, T2 : Pip
 suspend fun pipeline(
     streams: ReadonlyArray<Any /* NodeJS.ReadableStream | NodeJS.WritableStream | NodeJS.ReadWriteStream */>,
     options: PipelineOptions = undefined.unsafeCast<Nothing>(),
-): Unit =
+): Void =
     pipelineAsync(
         streams, options
     ).await()
@@ -78,7 +79,7 @@ suspend fun pipeline(
     stream1: node.ReadableStream,
     stream2: node.ReadWriteStream,
     vararg streams: Any, /* NodeJS.ReadWriteStream | NodeJS.WritableStream | PipelineOptions */
-): Unit =
+): Void =
     pipelineAsync(
         stream1, stream2, streams
     ).await()
@@ -88,7 +89,7 @@ suspend fun pipeline(
     stream1: node.ReadableStream,
     stream2: node.WritableStream,
     vararg streams: Any, /* NodeJS.ReadWriteStream | NodeJS.WritableStream | PipelineOptions */
-): Unit =
+): Void =
     pipelineAsync(
         stream1, stream2, streams
     ).await()

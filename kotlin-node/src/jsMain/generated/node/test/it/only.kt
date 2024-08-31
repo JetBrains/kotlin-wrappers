@@ -5,6 +5,7 @@
 
 package node.test.it
 
+import js.core.Void
 import js.promise.Promise
 import node.test.TestFn
 import node.test.TestOptions
@@ -19,19 +20,19 @@ external fun onlyAsync(
     name: String = definedExternally,
     options: TestOptions = definedExternally,
     fn: TestFn = definedExternally,
-): Promise<Unit>
+): Promise<Void>
 
 
 @JsName("only")
-external fun onlyAsync(name: String = definedExternally, fn: TestFn = definedExternally): Promise<Unit>
+external fun onlyAsync(name: String = definedExternally, fn: TestFn = definedExternally): Promise<Void>
 
 
 @JsName("only")
-external fun onlyAsync(options: TestOptions = definedExternally, fn: TestFn = definedExternally): Promise<Unit>
+external fun onlyAsync(options: TestOptions = definedExternally, fn: TestFn = definedExternally): Promise<Void>
 
 
 @JsName("only")
-external fun onlyAsync(fn: TestFn = definedExternally): Promise<Unit>
+external fun onlyAsync(fn: TestFn = definedExternally): Promise<Void>
 
 @JsName("only")
-external fun onlyAsync(): Promise<Unit>
+external fun onlyAsync(): Promise<Void>

@@ -5,6 +5,7 @@
 
 package node.test.it
 
+import js.core.Void
 import js.promise.Promise
 import node.test.TestFn
 import node.test.TestOptions
@@ -18,19 +19,19 @@ external fun skipAsync(
     name: String = definedExternally,
     options: TestOptions = definedExternally,
     fn: TestFn = definedExternally,
-): Promise<Unit>
+): Promise<Void>
 
 
 @JsName("skip")
-external fun skipAsync(name: String = definedExternally, fn: TestFn = definedExternally): Promise<Unit>
+external fun skipAsync(name: String = definedExternally, fn: TestFn = definedExternally): Promise<Void>
 
 
 @JsName("skip")
-external fun skipAsync(options: TestOptions = definedExternally, fn: TestFn = definedExternally): Promise<Unit>
+external fun skipAsync(options: TestOptions = definedExternally, fn: TestFn = definedExternally): Promise<Void>
 
 
 @JsName("skip")
-external fun skipAsync(fn: TestFn = definedExternally): Promise<Unit>
+external fun skipAsync(fn: TestFn = definedExternally): Promise<Void>
 
 @JsName("skip")
-external fun skipAsync(): Promise<Unit>
+external fun skipAsync(): Promise<Void>

@@ -2,6 +2,7 @@
 
 package node.test.it
 
+import js.core.Void
 import node.test.TestFn
 import node.test.TestOptions
 
@@ -10,13 +11,13 @@ suspend fun todo(
     name: String = undefined.unsafeCast<Nothing>(),
     options: TestOptions = undefined.unsafeCast<Nothing>(),
     fn: TestFn = undefined.unsafeCast<Nothing>(),
-): Unit =
+): Void =
     todoAsync(
         name, options, fn
     ).await()
 
 
-suspend fun todo(name: String = undefined.unsafeCast<Nothing>(), fn: TestFn = undefined.unsafeCast<Nothing>()): Unit =
+suspend fun todo(name: String = undefined.unsafeCast<Nothing>(), fn: TestFn = undefined.unsafeCast<Nothing>()): Void =
     todoAsync(
         name, fn
     ).await()
@@ -25,19 +26,19 @@ suspend fun todo(name: String = undefined.unsafeCast<Nothing>(), fn: TestFn = un
 suspend fun todo(
     options: TestOptions = undefined.unsafeCast<Nothing>(),
     fn: TestFn = undefined.unsafeCast<Nothing>(),
-): Unit =
+): Void =
     todoAsync(
         options, fn
     ).await()
 
 
-suspend fun todo(fn: TestFn = undefined.unsafeCast<Nothing>()): Unit =
+suspend fun todo(fn: TestFn = undefined.unsafeCast<Nothing>()): Void =
     todoAsync(
         fn
     ).await()
 
 
-suspend fun todo(): Unit =
+suspend fun todo(): Void =
     todoAsync(
 
     ).await()

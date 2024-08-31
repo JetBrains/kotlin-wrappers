@@ -2,6 +2,7 @@
 
 package node.test.it
 
+import js.core.Void
 import node.test.TestFn
 import node.test.TestOptions
 
@@ -10,13 +11,13 @@ suspend fun only(
     name: String = undefined.unsafeCast<Nothing>(),
     options: TestOptions = undefined.unsafeCast<Nothing>(),
     fn: TestFn = undefined.unsafeCast<Nothing>(),
-): Unit =
+): Void =
     onlyAsync(
         name, options, fn
     ).await()
 
 
-suspend fun only(name: String = undefined.unsafeCast<Nothing>(), fn: TestFn = undefined.unsafeCast<Nothing>()): Unit =
+suspend fun only(name: String = undefined.unsafeCast<Nothing>(), fn: TestFn = undefined.unsafeCast<Nothing>()): Void =
     onlyAsync(
         name, fn
     ).await()
@@ -25,19 +26,19 @@ suspend fun only(name: String = undefined.unsafeCast<Nothing>(), fn: TestFn = un
 suspend fun only(
     options: TestOptions = undefined.unsafeCast<Nothing>(),
     fn: TestFn = undefined.unsafeCast<Nothing>(),
-): Unit =
+): Void =
     onlyAsync(
         options, fn
     ).await()
 
 
-suspend fun only(fn: TestFn = undefined.unsafeCast<Nothing>()): Unit =
+suspend fun only(fn: TestFn = undefined.unsafeCast<Nothing>()): Void =
     onlyAsync(
         fn
     ).await()
 
 
-suspend fun only(): Unit =
+suspend fun only(): Void =
     onlyAsync(
 
     ).await()
