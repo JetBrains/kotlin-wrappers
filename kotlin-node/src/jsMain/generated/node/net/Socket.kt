@@ -5,7 +5,6 @@
 package node.net
 
 import js.errors.JsError
-
 import js.typedarrays.Uint8Array
 
 /**
@@ -423,7 +422,7 @@ open external class Socket : node.stream.Duplex {
     fun emit(event: SocketEvent.ERROR, err: JsError): Boolean
     fun emit(
         event: SocketEvent.LOOKUP,
-        err: Throwable, /* JsError */
+        err: JsError
         address: String,
         family: String,
         host: String,
@@ -431,7 +430,7 @@ open external class Socket : node.stream.Duplex {
 
     fun emit(
         event: SocketEvent.LOOKUP,
-        err: Throwable, /* JsError */
+        err: JsError
         address: String,
         family: Double,
         host: String,
