@@ -14,7 +14,9 @@ val wasmPatch by tasks.registering {
             .filter { it.isFile && it.extension == "kt" }
             .forEach { file ->
                 patchFile(file) { content ->
-                    content.let(::applyPromisePatch)
+                    content
+                        .let(::applyPromisePatch)
+                        .let(::applyJsErrorPatch)
                 }
             }
 
@@ -67,6 +69,24 @@ fun applyPromisePatch(
             "): Unit =",
             "): Void =",
         )
+    }
+
+    return content
+}
+
+fun applyJsErrorPatch(
+    content: String,
+): String {
+    if (": Throwable /* JsError */" in content) {
+        return content
+            .replaceFirst(
+                "\nimport ",
+                "\nimport js.error.JsError\nimport "
+            )
+            .replace(
+                ": Throwable /* JsError */",
+                ": JsError",
+            )
     }
 
     return content
