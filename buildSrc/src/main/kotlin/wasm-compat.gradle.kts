@@ -49,15 +49,24 @@ fun applyPromisePatch(
     }
 
     if ("suspend " in content && "): Unit =" in content) {
-        return content
+        var result = content
             .replaceFirst(
                 "\nimport ",
                 "\nimport js.core.Void\nimport "
             )
-            .replace(
-                "): Unit =",
-                "): Void =",
-            )
+
+        if (result == content) {
+            result = content
+                .replaceFirst(
+                    "\nsuspend ",
+                    "\nimport js.core.Void\n\nsuspend "
+                )
+        }
+
+        return result.replace(
+            "): Unit =",
+            "): Void =",
+        )
     }
 
     return content
