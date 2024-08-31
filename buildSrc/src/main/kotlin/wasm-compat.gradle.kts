@@ -78,10 +78,14 @@ fun applyJsErrorPatch(
     content: String,
 ): String {
     if (": Throwable /* JsError */" in content) {
+        val afterPackage = content
+            .substringAfter("\npackage ")
+            .substringAfter("\n")
+
         return content
             .replaceFirst(
-                "\nimport ",
-                "\nimport js.error.JsError\nimport "
+                afterPackage,
+                "import js.error.JsError\n$afterPackage"
             )
             .replace(
                 ": Throwable /* JsError */",
