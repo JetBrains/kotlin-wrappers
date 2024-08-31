@@ -74,10 +74,12 @@ fun applyPromisePatch(
     return content
 }
 
+private val JS_ERROR = Regex("""(: Throwable,?)\n?\s+/\* JsError \*/""")
+
 fun applyJsErrorPatch(
     content: String,
 ): String {
-    if (": Throwable /* JsError */" in content || ": Throwable, /* JsError */" in content) {
+    if (JS_ERROR.containsMatchIn(content)) {
         val afterPackage = content
             .substringAfter("\npackage ")
             .substringAfter("\n")
@@ -87,14 +89,9 @@ fun applyJsErrorPatch(
                 afterPackage,
                 "import js.errors.JsError\n$afterPackage"
             )
-            .replace(
-                ": Throwable /* JsError */",
-                ": JsError",
-            )
-            .replace(
-                ": Throwable, /* JsError */",
-                ": JsError",
-            )
+            .replace(JS_ERROR) {
+                it.groupValues[1].replace("Throwable", "JsError")
+            }
     }
 
     return content
