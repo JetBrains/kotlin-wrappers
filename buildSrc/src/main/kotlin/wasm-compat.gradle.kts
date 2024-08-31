@@ -85,7 +85,7 @@ fun applyJsErrorPatch(
         return content
             .replaceFirst(
                 afterPackage,
-                "import js.error.JsError\n$afterPackage"
+                "import js.errors.JsError\n$afterPackage"
             )
             .replace(
                 ": Throwable /* JsError */",
