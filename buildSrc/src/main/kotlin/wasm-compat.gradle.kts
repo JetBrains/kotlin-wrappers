@@ -14,10 +14,7 @@ val wasmPatch by tasks.registering {
             .filter { it.isFile && it.extension == "kt" }
             .forEach { file ->
                 patchFile(file) { content ->
-                    content.replaceFirst(
-                        "Promise<Unit>",
-                        "Promise<Void>",
-                    )
+                    content.let(::applyPromisePatch)
                 }
             }
 
@@ -34,4 +31,34 @@ fun patchFile(
     if (newContent != content) {
         file.writeText(newContent)
     }
+}
+
+fun applyPromisePatch(
+    content: String,
+): String {
+    if ("Promise<Unit>" in content) {
+        return content
+            .replaceFirst(
+                "\nimport ",
+                "\nimport js.core.Void\nimport "
+            )
+            .replace(
+                "Promise<Unit>",
+                "Promise<Void>",
+            )
+    }
+
+    if ("suspend " in content && "): Unit =" in content) {
+        return content
+            .replaceFirst(
+                "\nimport ",
+                "\nimport js.core.Void\nimport "
+            )
+            .replace(
+                "): Unit =",
+                "): Void =",
+            )
+    }
+
+    return content
 }
