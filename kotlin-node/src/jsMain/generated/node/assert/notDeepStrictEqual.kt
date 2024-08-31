@@ -4,6 +4,8 @@
 
 package node.assert
 
+import js.errors.JsError
+
 /**
  * Tests for deep strict inequality. Opposite of {@link deepStrictEqual}.
  *
@@ -59,4 +61,4 @@ external fun notDeepEqual(actual: Any?, expected: Any?, message: String = define
  * instead of the `AssertionError`.
  * @since v1.2.0
  */
-external fun notDeepEqual(actual: Any?, expected: Any?, message: Throwable /* JsError */ = definedExternally): Unit
+external fun notDeepEqual(actual: Any?, expected: Any?, message: JsError = definedExternally): Unit

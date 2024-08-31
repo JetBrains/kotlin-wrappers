@@ -4,6 +4,8 @@
 
 package node.assert
 
+import js.errors.JsError
+
 /**
  * Expects the function `fn` to throw an error.
  *
@@ -563,7 +565,7 @@ external fun throws(block: () -> Any?, message: String = definedExternally): Uni
  * argument.
  * @since v0.1.21
  */
-external fun throws(block: () -> Any?, message: Throwable /* JsError */ = definedExternally): Unit
+external fun throws(block: () -> Any?, message: JsError = definedExternally): Unit
 
 external fun throws(block: () -> Any?, error: AssertPredicate): Unit
 
@@ -572,5 +574,5 @@ external fun throws(block: () -> Any?, error: AssertPredicate, message: String =
 external fun throws(
     block: () -> Any?,
     error: AssertPredicate,
-    message: Throwable /* JsError */ = definedExternally,
+    message: JsError = definedExternally,
 ): Unit

@@ -2,4 +2,6 @@
 
 package node.zlib
 
-typealias CompressCallback = (error: Throwable /* JsError */?, result: node.buffer.Buffer) -> Unit
+import js.errors.JsError
+
+typealias CompressCallback = (error: JsError?, result: node.buffer.Buffer) -> Unit

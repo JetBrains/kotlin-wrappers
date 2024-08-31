@@ -5,6 +5,7 @@
 package node.assert
 
 import js.core.Void
+import js.errors.JsError
 import js.promise.Promise
 
 /**
@@ -147,7 +148,7 @@ external fun doesNotRejectAsync(block: () -> Promise<Any?>, message: String = de
 @JsName("doesNotReject")
 external fun doesNotRejectAsync(
     block: () -> Promise<Any?>,
-    message: Throwable /* JsError */ = definedExternally,
+    message: JsError = definedExternally,
 ): Promise<Void>
 
 
@@ -291,7 +292,7 @@ external fun doesNotRejectAsync(block: Promise<Any?>, message: String = definedE
 @JsName("doesNotReject")
 external fun doesNotRejectAsync(
     block: Promise<Any?>,
-    message: Throwable /* JsError */ = definedExternally,
+    message: JsError = definedExternally,
 ): Promise<Void>
 
 
@@ -311,7 +312,7 @@ external fun doesNotRejectAsync(
 external fun doesNotRejectAsync(
     block: () -> Promise<Any?>,
     error: AssertPredicate,
-    message: Throwable /* JsError */ = definedExternally,
+    message: JsError = definedExternally,
 ): Promise<Void>
 
 
@@ -331,5 +332,5 @@ external fun doesNotRejectAsync(
 external fun doesNotRejectAsync(
     block: Promise<Any?>,
     error: AssertPredicate,
-    message: Throwable /* JsError */ = definedExternally,
+    message: JsError = definedExternally,
 ): Promise<Void>

@@ -4,6 +4,8 @@
 
 package node.crypto
 
+import js.errors.JsError
+
 /**
  * Verifies the given signature for `data` using the given key and algorithm. If `algorithm` is `null` or `undefined`, then the algorithm is dependent upon the
  * key type (especially Ed25519 and Ed448).
@@ -101,7 +103,7 @@ external fun verify(
     data: js.buffer.ArrayBufferView,
     key: KeyLike,
     signature: js.buffer.ArrayBufferView,
-    callback: (error: Throwable /* JsError */?, result: Boolean) -> Unit,
+    callback: (error: JsError?, result: Boolean) -> Unit,
 ): Unit
 
 external fun verify(
@@ -109,7 +111,7 @@ external fun verify(
     data: js.buffer.ArrayBufferView,
     key: VerifyKeyObjectInput,
     signature: js.buffer.ArrayBufferView,
-    callback: (error: Throwable /* JsError */?, result: Boolean) -> Unit,
+    callback: (error: JsError?, result: Boolean) -> Unit,
 ): Unit
 
 external fun verify(
@@ -117,7 +119,7 @@ external fun verify(
     data: js.buffer.ArrayBufferView,
     key: VerifyPublicKeyInput,
     signature: js.buffer.ArrayBufferView,
-    callback: (error: Throwable /* JsError */?, result: Boolean) -> Unit,
+    callback: (error: JsError?, result: Boolean) -> Unit,
 ): Unit
 
 external fun verify(
@@ -125,5 +127,5 @@ external fun verify(
     data: js.buffer.ArrayBufferView,
     key: VerifyJsonWebKeyInput,
     signature: js.buffer.ArrayBufferView,
-    callback: (error: Throwable /* JsError */?, result: Boolean) -> Unit,
+    callback: (error: JsError?, result: Boolean) -> Unit,
 ): Unit

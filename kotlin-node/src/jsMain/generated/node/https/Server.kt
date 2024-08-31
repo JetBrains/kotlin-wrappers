@@ -4,9 +4,10 @@
 
 package node.https
 
-import node.stream.Duplex
+import js.errors.JsError
 import node.http.IncomingMessage
 import node.http.ServerResponse
+import node.stream.Duplex
 
 
 /**
@@ -41,17 +42,17 @@ node.http.Server<Request, Response> {
 
     fun addListener(
         event: ServerEvent.NEWSESSION,
-        listener: (sessionId: node.buffer.Buffer, sessionData: node.buffer.Buffer, callback: (err: Throwable /* JsError */, resp: node.buffer.Buffer) -> Unit) -> Unit,
+        listener: (sessionId: node.buffer.Buffer, sessionData: node.buffer.Buffer, callback: (err: JsError, resp: node.buffer.Buffer) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun addListener(
         event: ServerEvent.OCSPREQUEST,
-        listener: (certificate: node.buffer.Buffer, issuer: node.buffer.Buffer, callback: (err: Throwable /* JsError */?, resp: node.buffer.Buffer) -> Unit) -> Unit,
+        listener: (certificate: node.buffer.Buffer, issuer: node.buffer.Buffer, callback: (err: JsError?, resp: node.buffer.Buffer) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun addListener(
         event: ServerEvent.RESUMESESSION,
-        listener: (sessionId: node.buffer.Buffer, callback: (err: Throwable /* JsError */, sessionData: node.buffer.Buffer) -> Unit) -> Unit,
+        listener: (sessionId: node.buffer.Buffer, callback: (err: JsError, sessionData: node.buffer.Buffer) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun addListener(
@@ -61,12 +62,12 @@ node.http.Server<Request, Response> {
 
     fun addListener(
         event: ServerEvent.TLSCLIENTERROR,
-        listener: (err: Throwable /* JsError */, tlsSocket: node.tls.TLSSocket) -> Unit,
+        listener: (err: JsError, tlsSocket: node.tls.TLSSocket) -> Unit,
     ): Unit /* this */
 
     fun addListener(event: ServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun addListener(event: ServerEvent.CONNECTION, listener: (socket: Duplex) -> Unit): Unit /* this */
-    fun addListener(event: ServerEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun addListener(event: ServerEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
     fun addListener(event: ServerEvent.LISTENING, listener: () -> Unit): Unit /* this */
     fun addListener(
         event: ServerEvent.CHECKCONTINUE,
@@ -80,7 +81,7 @@ node.http.Server<Request, Response> {
 
     fun addListener(
         event: ServerEvent.CLIENTERROR,
-        listener: (err: Throwable /* JsError */, socket: Duplex) -> Unit,
+        listener: (err: JsError, socket: Duplex) -> Unit,
     ): Unit /* this */
 
     fun addListener(
@@ -100,31 +101,31 @@ node.http.Server<Request, Response> {
         event: ServerEvent.NEWSESSION,
         sessionId: node.buffer.Buffer,
         sessionData: node.buffer.Buffer,
-        callback: (err: Throwable /* JsError */, resp: node.buffer.Buffer) -> Unit,
+        callback: (err: JsError, resp: node.buffer.Buffer) -> Unit,
     ): Boolean
 
     fun emit(
         event: ServerEvent.OCSPREQUEST,
         certificate: node.buffer.Buffer,
         issuer: node.buffer.Buffer,
-        callback: (err: Throwable /* JsError */?, resp: node.buffer.Buffer) -> Unit,
+        callback: (err: JsError?, resp: node.buffer.Buffer) -> Unit,
     ): Boolean
 
     fun emit(
         event: ServerEvent.RESUMESESSION,
         sessionId: node.buffer.Buffer,
-        callback: (err: Throwable /* JsError */, sessionData: node.buffer.Buffer) -> Unit,
+        callback: (err: JsError, sessionData: node.buffer.Buffer) -> Unit,
     ): Boolean
 
     fun emit(event: ServerEvent.SECURECONNECTION, tlsSocket: node.tls.TLSSocket): Boolean
-    fun emit(event: ServerEvent.TLSCLIENTERROR, err: Throwable /* JsError */, tlsSocket: node.tls.TLSSocket): Boolean
+    fun emit(event: ServerEvent.TLSCLIENTERROR, err: JsError, tlsSocket: node.tls.TLSSocket): Boolean
     fun emit(event: ServerEvent.CLOSE): Boolean
     fun emit(event: ServerEvent.CONNECTION, socket: Duplex): Boolean
-    fun emit(event: ServerEvent.ERROR, err: Throwable /* JsError */): Boolean
+    fun emit(event: ServerEvent.ERROR, err: JsError): Boolean
     fun emit(event: ServerEvent.LISTENING): Boolean
     fun emit(event: ServerEvent.CHECKCONTINUE, req: Request, res: Response): Boolean
     fun emit(event: ServerEvent.CHECKEXPECTATION, req: Request, res: Response): Boolean
-    fun emit(event: ServerEvent.CLIENTERROR, err: Throwable /* JsError */, socket: Duplex): Boolean
+    fun emit(event: ServerEvent.CLIENTERROR, err: JsError, socket: Duplex): Boolean
     fun emit(event: ServerEvent.CONNECT, req: Request, socket: Duplex, head: node.buffer.Buffer): Boolean
     fun emit(event: ServerEvent.REQUEST, req: Request, res: Response): Boolean
     fun emit(event: ServerEvent.UPGRADE, req: Request, socket: Duplex, head: node.buffer.Buffer): Boolean
@@ -136,34 +137,34 @@ node.http.Server<Request, Response> {
 
     fun on(
         event: ServerEvent.NEWSESSION,
-        listener: (sessionId: node.buffer.Buffer, sessionData: node.buffer.Buffer, callback: (err: Throwable /* JsError */, resp: node.buffer.Buffer) -> Unit) -> Unit,
+        listener: (sessionId: node.buffer.Buffer, sessionData: node.buffer.Buffer, callback: (err: JsError, resp: node.buffer.Buffer) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun on(
         event: ServerEvent.OCSPREQUEST,
-        listener: (certificate: node.buffer.Buffer, issuer: node.buffer.Buffer, callback: (err: Throwable /* JsError */?, resp: node.buffer.Buffer) -> Unit) -> Unit,
+        listener: (certificate: node.buffer.Buffer, issuer: node.buffer.Buffer, callback: (err: JsError?, resp: node.buffer.Buffer) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun on(
         event: ServerEvent.RESUMESESSION,
-        listener: (sessionId: node.buffer.Buffer, callback: (err: Throwable /* JsError */, sessionData: node.buffer.Buffer) -> Unit) -> Unit,
+        listener: (sessionId: node.buffer.Buffer, callback: (err: JsError, sessionData: node.buffer.Buffer) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun on(event: ServerEvent.SECURECONNECTION, listener: (tlsSocket: node.tls.TLSSocket) -> Unit): Unit /* this */
     fun on(
         event: ServerEvent.TLSCLIENTERROR,
-        listener: (err: Throwable /* JsError */, tlsSocket: node.tls.TLSSocket) -> Unit,
+        listener: (err: JsError, tlsSocket: node.tls.TLSSocket) -> Unit,
     ): Unit /* this */
 
     fun on(event: ServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun on(event: ServerEvent.CONNECTION, listener: (socket: Duplex) -> Unit): Unit /* this */
-    fun on(event: ServerEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun on(event: ServerEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
     fun on(event: ServerEvent.LISTENING, listener: () -> Unit): Unit /* this */
     fun on(event: ServerEvent.CHECKCONTINUE, listener: node.http.RequestListener<Request, Response>): Unit /* this */
     fun on(event: ServerEvent.CHECKEXPECTATION, listener: node.http.RequestListener<Request, Response>): Unit /* this */
     fun on(
         event: ServerEvent.CLIENTERROR,
-        listener: (err: Throwable /* JsError */, socket: Duplex) -> Unit,
+        listener: (err: JsError, socket: Duplex) -> Unit,
     ): Unit /* this */
 
     fun on(
@@ -185,28 +186,28 @@ node.http.Server<Request, Response> {
 
     fun once(
         event: ServerEvent.NEWSESSION,
-        listener: (sessionId: node.buffer.Buffer, sessionData: node.buffer.Buffer, callback: (err: Throwable /* JsError */, resp: node.buffer.Buffer) -> Unit) -> Unit,
+        listener: (sessionId: node.buffer.Buffer, sessionData: node.buffer.Buffer, callback: (err: JsError, resp: node.buffer.Buffer) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun once(
         event: ServerEvent.OCSPREQUEST,
-        listener: (certificate: node.buffer.Buffer, issuer: node.buffer.Buffer, callback: (err: Throwable /* JsError */?, resp: node.buffer.Buffer) -> Unit) -> Unit,
+        listener: (certificate: node.buffer.Buffer, issuer: node.buffer.Buffer, callback: (err: JsError?, resp: node.buffer.Buffer) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun once(
         event: ServerEvent.RESUMESESSION,
-        listener: (sessionId: node.buffer.Buffer, callback: (err: Throwable /* JsError */, sessionData: node.buffer.Buffer) -> Unit) -> Unit,
+        listener: (sessionId: node.buffer.Buffer, callback: (err: JsError, sessionData: node.buffer.Buffer) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun once(event: ServerEvent.SECURECONNECTION, listener: (tlsSocket: node.tls.TLSSocket) -> Unit): Unit /* this */
     fun once(
         event: ServerEvent.TLSCLIENTERROR,
-        listener: (err: Throwable /* JsError */, tlsSocket: node.tls.TLSSocket) -> Unit,
+        listener: (err: JsError, tlsSocket: node.tls.TLSSocket) -> Unit,
     ): Unit /* this */
 
     fun once(event: ServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun once(event: ServerEvent.CONNECTION, listener: (socket: Duplex) -> Unit): Unit /* this */
-    fun once(event: ServerEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun once(event: ServerEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
     fun once(event: ServerEvent.LISTENING, listener: () -> Unit): Unit /* this */
     fun once(event: ServerEvent.CHECKCONTINUE, listener: node.http.RequestListener<Request, Response>): Unit /* this */
     fun once(
@@ -216,7 +217,7 @@ node.http.Server<Request, Response> {
 
     fun once(
         event: ServerEvent.CLIENTERROR,
-        listener: (err: Throwable /* JsError */, socket: Duplex) -> Unit,
+        listener: (err: JsError, socket: Duplex) -> Unit,
     ): Unit /* this */
 
     fun once(
@@ -242,17 +243,17 @@ node.http.Server<Request, Response> {
 
     fun prependListener(
         event: ServerEvent.NEWSESSION,
-        listener: (sessionId: node.buffer.Buffer, sessionData: node.buffer.Buffer, callback: (err: Throwable /* JsError */, resp: node.buffer.Buffer) -> Unit) -> Unit,
+        listener: (sessionId: node.buffer.Buffer, sessionData: node.buffer.Buffer, callback: (err: JsError, resp: node.buffer.Buffer) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun prependListener(
         event: ServerEvent.OCSPREQUEST,
-        listener: (certificate: node.buffer.Buffer, issuer: node.buffer.Buffer, callback: (err: Throwable /* JsError */?, resp: node.buffer.Buffer) -> Unit) -> Unit,
+        listener: (certificate: node.buffer.Buffer, issuer: node.buffer.Buffer, callback: (err: JsError?, resp: node.buffer.Buffer) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun prependListener(
         event: ServerEvent.RESUMESESSION,
-        listener: (sessionId: node.buffer.Buffer, callback: (err: Throwable /* JsError */, sessionData: node.buffer.Buffer) -> Unit) -> Unit,
+        listener: (sessionId: node.buffer.Buffer, callback: (err: JsError, sessionData: node.buffer.Buffer) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun prependListener(
@@ -262,12 +263,12 @@ node.http.Server<Request, Response> {
 
     fun prependListener(
         event: ServerEvent.TLSCLIENTERROR,
-        listener: (err: Throwable /* JsError */, tlsSocket: node.tls.TLSSocket) -> Unit,
+        listener: (err: JsError, tlsSocket: node.tls.TLSSocket) -> Unit,
     ): Unit /* this */
 
     fun prependListener(event: ServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun prependListener(event: ServerEvent.CONNECTION, listener: (socket: Duplex) -> Unit): Unit /* this */
-    fun prependListener(event: ServerEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun prependListener(event: ServerEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
     fun prependListener(event: ServerEvent.LISTENING, listener: () -> Unit): Unit /* this */
     fun prependListener(
         event: ServerEvent.CHECKCONTINUE,
@@ -281,7 +282,7 @@ node.http.Server<Request, Response> {
 
     fun prependListener(
         event: ServerEvent.CLIENTERROR,
-        listener: (err: Throwable /* JsError */, socket: Duplex) -> Unit,
+        listener: (err: JsError, socket: Duplex) -> Unit,
     ): Unit /* this */
 
     fun prependListener(
@@ -311,17 +312,17 @@ node.http.Server<Request, Response> {
 
     fun prependOnceListener(
         event: ServerEvent.NEWSESSION,
-        listener: (sessionId: node.buffer.Buffer, sessionData: node.buffer.Buffer, callback: (err: Throwable /* JsError */, resp: node.buffer.Buffer) -> Unit) -> Unit,
+        listener: (sessionId: node.buffer.Buffer, sessionData: node.buffer.Buffer, callback: (err: JsError, resp: node.buffer.Buffer) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun prependOnceListener(
         event: ServerEvent.OCSPREQUEST,
-        listener: (certificate: node.buffer.Buffer, issuer: node.buffer.Buffer, callback: (err: Throwable /* JsError */?, resp: node.buffer.Buffer) -> Unit) -> Unit,
+        listener: (certificate: node.buffer.Buffer, issuer: node.buffer.Buffer, callback: (err: JsError?, resp: node.buffer.Buffer) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun prependOnceListener(
         event: ServerEvent.RESUMESESSION,
-        listener: (sessionId: node.buffer.Buffer, callback: (err: Throwable /* JsError */, sessionData: node.buffer.Buffer) -> Unit) -> Unit,
+        listener: (sessionId: node.buffer.Buffer, callback: (err: JsError, sessionData: node.buffer.Buffer) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun prependOnceListener(
@@ -331,12 +332,12 @@ node.http.Server<Request, Response> {
 
     fun prependOnceListener(
         event: ServerEvent.TLSCLIENTERROR,
-        listener: (err: Throwable /* JsError */, tlsSocket: node.tls.TLSSocket) -> Unit,
+        listener: (err: JsError, tlsSocket: node.tls.TLSSocket) -> Unit,
     ): Unit /* this */
 
     fun prependOnceListener(event: ServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(event: ServerEvent.CONNECTION, listener: (socket: Duplex) -> Unit): Unit /* this */
-    fun prependOnceListener(event: ServerEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun prependOnceListener(event: ServerEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
     fun prependOnceListener(event: ServerEvent.LISTENING, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(
         event: ServerEvent.CHECKCONTINUE,
@@ -350,7 +351,7 @@ node.http.Server<Request, Response> {
 
     fun prependOnceListener(
         event: ServerEvent.CLIENTERROR,
-        listener: (err: Throwable /* JsError */, socket: Duplex) -> Unit,
+        listener: (err: JsError, socket: Duplex) -> Unit,
     ): Unit /* this */
 
     fun prependOnceListener(

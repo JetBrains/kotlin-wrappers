@@ -4,6 +4,8 @@
 
 package node.net
 
+import js.errors.JsError
+
 import js.typedarrays.Uint8Array
 
 /**
@@ -47,7 +49,7 @@ open external class Socket : node.stream.Duplex {
      */
     override fun write(
         buffer: Uint8Array,
-        cb: (err: Throwable /* JsError */? /* use undefined for default */) -> Unit,
+        cb: (err: JsError? /* use undefined for default */) -> Unit,
     ): Boolean
 
     /**
@@ -67,19 +69,19 @@ open external class Socket : node.stream.Duplex {
      */
     override fun write(
         buffer: String,
-        cb: (err: Throwable /* JsError */? /* use undefined for default */) -> Unit,
+        cb: (err: JsError? /* use undefined for default */) -> Unit,
     ): Boolean
 
     fun write(
         str: Uint8Array,
         encoding: node.buffer.BufferEncoding = definedExternally,
-        cb: (err: Throwable /* JsError */? /* use undefined for default */) -> Unit = definedExternally,
+        cb: (err: JsError? /* use undefined for default */) -> Unit = definedExternally,
     ): Boolean
 
     override fun write(
         str: String,
         encoding: node.buffer.BufferEncoding,
-        cb: (err: Throwable /* JsError */? /* use undefined for default */) -> Unit,
+        cb: (err: JsError? /* use undefined for default */) -> Unit,
     ): Boolean
 
     /**
@@ -399,10 +401,10 @@ open external class Socket : node.stream.Duplex {
     fun addListener(event: SocketEvent.DATA, listener: (data: node.buffer.Buffer) -> Unit): Unit /* this */
     fun addListener(event: SocketEvent.DRAIN, listener: () -> Unit): Unit /* this */
     fun addListener(event: SocketEvent.END, listener: () -> Unit): Unit /* this */
-    fun addListener(event: SocketEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun addListener(event: SocketEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
     fun addListener(
         event: SocketEvent.LOOKUP,
-        listener: (err: Throwable /* JsError */, address: String, family: Any /* string | number */, host: String) -> Unit,
+        listener: (err: JsError, address: String, family: Any /* string | number */, host: String) -> Unit,
     ): Unit /* this */
 
     fun addListener(event: SocketEvent.READY, listener: () -> Unit): Unit /* this */
@@ -418,7 +420,7 @@ open external class Socket : node.stream.Duplex {
     fun emit(event: SocketEvent.DATA, data: node.buffer.Buffer): Boolean
     fun emit(event: SocketEvent.DRAIN): Boolean
     fun emit(event: SocketEvent.END): Boolean
-    fun emit(event: SocketEvent.ERROR, err: Throwable /* JsError */): Boolean
+    fun emit(event: SocketEvent.ERROR, err: JsError): Boolean
     fun emit(
         event: SocketEvent.LOOKUP,
         err: Throwable, /* JsError */
@@ -458,10 +460,10 @@ open external class Socket : node.stream.Duplex {
     fun on(event: SocketEvent.DATA, listener: (data: node.buffer.Buffer) -> Unit): Unit /* this */
     fun on(event: SocketEvent.DRAIN, listener: () -> Unit): Unit /* this */
     fun on(event: SocketEvent.END, listener: () -> Unit): Unit /* this */
-    fun on(event: SocketEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun on(event: SocketEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
     fun on(
         event: SocketEvent.LOOKUP,
-        listener: (err: Throwable /* JsError */, address: String, family: Any /* string | number */, host: String) -> Unit,
+        listener: (err: JsError, address: String, family: Any /* string | number */, host: String) -> Unit,
     ): Unit /* this */
 
     fun on(event: SocketEvent.READY, listener: () -> Unit): Unit /* this */
@@ -487,10 +489,10 @@ open external class Socket : node.stream.Duplex {
     fun once(event: SocketEvent.DATA, listener: (data: node.buffer.Buffer) -> Unit): Unit /* this */
     fun once(event: SocketEvent.DRAIN, listener: () -> Unit): Unit /* this */
     fun once(event: SocketEvent.END, listener: () -> Unit): Unit /* this */
-    fun once(event: SocketEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun once(event: SocketEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
     fun once(
         event: SocketEvent.LOOKUP,
-        listener: (err: Throwable /* JsError */, address: String, family: Any /* string | number */, host: String) -> Unit,
+        listener: (err: JsError, address: String, family: Any /* string | number */, host: String) -> Unit,
     ): Unit /* this */
 
     fun once(event: SocketEvent.READY, listener: () -> Unit): Unit /* this */
@@ -520,10 +522,10 @@ open external class Socket : node.stream.Duplex {
     fun prependListener(event: SocketEvent.DATA, listener: (data: node.buffer.Buffer) -> Unit): Unit /* this */
     fun prependListener(event: SocketEvent.DRAIN, listener: () -> Unit): Unit /* this */
     fun prependListener(event: SocketEvent.END, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: SocketEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun prependListener(event: SocketEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
     fun prependListener(
         event: SocketEvent.LOOKUP,
-        listener: (err: Throwable /* JsError */, address: String, family: Any /* string | number */, host: String) -> Unit,
+        listener: (err: JsError, address: String, family: Any /* string | number */, host: String) -> Unit,
     ): Unit /* this */
 
     fun prependListener(event: SocketEvent.READY, listener: () -> Unit): Unit /* this */
@@ -553,10 +555,10 @@ open external class Socket : node.stream.Duplex {
     fun prependOnceListener(event: SocketEvent.DATA, listener: (data: node.buffer.Buffer) -> Unit): Unit /* this */
     fun prependOnceListener(event: SocketEvent.DRAIN, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(event: SocketEvent.END, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: SocketEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun prependOnceListener(event: SocketEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
     fun prependOnceListener(
         event: SocketEvent.LOOKUP,
-        listener: (err: Throwable /* JsError */, address: String, family: Any /* string | number */, host: String) -> Unit,
+        listener: (err: JsError, address: String, family: Any /* string | number */, host: String) -> Unit,
     ): Unit /* this */
 
     fun prependOnceListener(event: SocketEvent.READY, listener: () -> Unit): Unit /* this */

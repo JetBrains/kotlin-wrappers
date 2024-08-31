@@ -2,6 +2,8 @@
 
 package node.http2
 
+import js.errors.JsError
+
 import node.http.OutgoingHttpHeaders
 
 sealed external interface ServerHttp2Stream : Http2Stream {
@@ -52,13 +54,13 @@ sealed external interface ServerHttp2Stream : Http2Stream {
      */
     fun pushStream(
         headers: OutgoingHttpHeaders,
-        callback: (err: Throwable /* JsError */?, pushStream: ServerHttp2Stream, headers: OutgoingHttpHeaders) -> Unit = definedExternally,
+        callback: (err: JsError?, pushStream: ServerHttp2Stream, headers: OutgoingHttpHeaders) -> Unit = definedExternally,
     ): Unit
 
     fun pushStream(
         headers: OutgoingHttpHeaders,
         options: StreamPriorityOptions = definedExternally,
-        callback: (err: Throwable /* JsError */?, pushStream: ServerHttp2Stream, headers: OutgoingHttpHeaders) -> Unit = definedExternally,
+        callback: (err: JsError?, pushStream: ServerHttp2Stream, headers: OutgoingHttpHeaders) -> Unit = definedExternally,
     ): Unit
 
     /**

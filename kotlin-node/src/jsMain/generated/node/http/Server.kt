@@ -4,6 +4,8 @@
 
 package node.http
 
+import js.errors.JsError
+
 import node.net.Socket
 import node.net.Server as NetServer
 
@@ -125,13 +127,13 @@ open external class Server<Request : IncomingMessage, Response : ServerResponse<
     override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun addListener(event: ServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun addListener(event: ServerEvent.CONNECTION, listener: (socket: Socket) -> Unit): Unit /* this */
-    fun addListener(event: ServerEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun addListener(event: ServerEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
     fun addListener(event: ServerEvent.LISTENING, listener: () -> Unit): Unit /* this */
     fun addListener(event: ServerEvent.CHECKCONTINUE, listener: RequestListener<Request, Response>): Unit /* this */
     fun addListener(event: ServerEvent.CHECKEXPECTATION, listener: RequestListener<Request, Response>): Unit /* this */
     fun addListener(
         event: ServerEvent.CLIENTERROR,
-        listener: (err: Throwable /* JsError */, socket: node.stream.Duplex) -> Unit,
+        listener: (err: JsError, socket: node.stream.Duplex) -> Unit,
     ): Unit /* this */
 
     fun addListener(
@@ -153,11 +155,11 @@ open external class Server<Request : IncomingMessage, Response : ServerResponse<
     override fun emit(event: String, vararg args: Any?): Boolean
     fun emit(event: ServerEvent.CLOSE): Boolean
     fun emit(event: ServerEvent.CONNECTION, socket: Socket): Boolean
-    fun emit(event: ServerEvent.ERROR, err: Throwable /* JsError */): Boolean
+    fun emit(event: ServerEvent.ERROR, err: JsError): Boolean
     fun emit(event: ServerEvent.LISTENING): Boolean
     fun emit(event: ServerEvent.CHECKCONTINUE, req: Request, res: Response): Boolean
     fun emit(event: ServerEvent.CHECKEXPECTATION, req: Request, res: Response): Boolean
-    fun emit(event: ServerEvent.CLIENTERROR, err: Throwable /* JsError */, socket: node.stream.Duplex): Boolean
+    fun emit(event: ServerEvent.CLIENTERROR, err: JsError, socket: node.stream.Duplex): Boolean
     fun emit(event: ServerEvent.CONNECT, req: Request, socket: node.stream.Duplex, head: node.buffer.Buffer): Boolean
     fun emit(event: ServerEvent.DROPREQUEST, req: Request, socket: node.stream.Duplex): Boolean
     fun emit(event: ServerEvent.REQUEST, req: Request, res: Response): Boolean
@@ -165,13 +167,13 @@ open external class Server<Request : IncomingMessage, Response : ServerResponse<
     override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun on(event: ServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun on(event: ServerEvent.CONNECTION, listener: (socket: Socket) -> Unit): Unit /* this */
-    fun on(event: ServerEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun on(event: ServerEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
     fun on(event: ServerEvent.LISTENING, listener: () -> Unit): Unit /* this */
     fun on(event: ServerEvent.CHECKCONTINUE, listener: RequestListener<Request, Response>): Unit /* this */
     fun on(event: ServerEvent.CHECKEXPECTATION, listener: RequestListener<Request, Response>): Unit /* this */
     fun on(
         event: ServerEvent.CLIENTERROR,
-        listener: (err: Throwable /* JsError */, socket: node.stream.Duplex) -> Unit,
+        listener: (err: JsError, socket: node.stream.Duplex) -> Unit,
     ): Unit /* this */
 
     fun on(
@@ -193,13 +195,13 @@ open external class Server<Request : IncomingMessage, Response : ServerResponse<
     override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun once(event: ServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun once(event: ServerEvent.CONNECTION, listener: (socket: Socket) -> Unit): Unit /* this */
-    fun once(event: ServerEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun once(event: ServerEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
     fun once(event: ServerEvent.LISTENING, listener: () -> Unit): Unit /* this */
     fun once(event: ServerEvent.CHECKCONTINUE, listener: RequestListener<Request, Response>): Unit /* this */
     fun once(event: ServerEvent.CHECKEXPECTATION, listener: RequestListener<Request, Response>): Unit /* this */
     fun once(
         event: ServerEvent.CLIENTERROR,
-        listener: (err: Throwable /* JsError */, socket: node.stream.Duplex) -> Unit,
+        listener: (err: JsError, socket: node.stream.Duplex) -> Unit,
     ): Unit /* this */
 
     fun once(
@@ -225,7 +227,7 @@ open external class Server<Request : IncomingMessage, Response : ServerResponse<
 
     fun prependListener(event: ServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun prependListener(event: ServerEvent.CONNECTION, listener: (socket: Socket) -> Unit): Unit /* this */
-    fun prependListener(event: ServerEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun prependListener(event: ServerEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
     fun prependListener(event: ServerEvent.LISTENING, listener: () -> Unit): Unit /* this */
     fun prependListener(event: ServerEvent.CHECKCONTINUE, listener: RequestListener<Request, Response>): Unit /* this */
     fun prependListener(
@@ -235,7 +237,7 @@ open external class Server<Request : IncomingMessage, Response : ServerResponse<
 
     fun prependListener(
         event: ServerEvent.CLIENTERROR,
-        listener: (err: Throwable /* JsError */, socket: node.stream.Duplex) -> Unit,
+        listener: (err: JsError, socket: node.stream.Duplex) -> Unit,
     ): Unit /* this */
 
     fun prependListener(
@@ -261,7 +263,7 @@ open external class Server<Request : IncomingMessage, Response : ServerResponse<
 
     fun prependOnceListener(event: ServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(event: ServerEvent.CONNECTION, listener: (socket: Socket) -> Unit): Unit /* this */
-    fun prependOnceListener(event: ServerEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun prependOnceListener(event: ServerEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
     fun prependOnceListener(event: ServerEvent.LISTENING, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(
         event: ServerEvent.CHECKCONTINUE,
@@ -275,7 +277,7 @@ open external class Server<Request : IncomingMessage, Response : ServerResponse<
 
     fun prependOnceListener(
         event: ServerEvent.CLIENTERROR,
-        listener: (err: Throwable /* JsError */, socket: node.stream.Duplex) -> Unit,
+        listener: (err: JsError, socket: node.stream.Duplex) -> Unit,
     ): Unit /* this */
 
     fun prependOnceListener(

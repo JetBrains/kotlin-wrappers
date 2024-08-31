@@ -2,6 +2,8 @@
 
 package node.repl
 
+import js.errors.JsError
+
 import node.vm.Context
 
-typealias REPLEval = (/* this: REPLServer, */ evalCmd: String, context: Context, file: String, cb: (err: Throwable /* JsError */?, result: Any?) -> Unit) -> Unit
+typealias REPLEval = (/* this: REPLServer, */ evalCmd: String, context: Context, file: String, cb: (err: JsError?, result: Any?) -> Unit) -> Unit

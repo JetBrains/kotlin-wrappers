@@ -2,6 +2,8 @@
 
 package node.test
 
+import js.errors.JsError
+
 sealed external interface TestFailDetails {
     /**
      * The duration of the test in milliseconds.
@@ -11,7 +13,7 @@ sealed external interface TestFailDetails {
     /**
      * An error wrapping the error thrown by the test if it did not pass.
      */
-    var error: Throwable /* JsError */
+    var error: JsError
 
     /**
      * The type of the test, used to denote whether this is a suite.

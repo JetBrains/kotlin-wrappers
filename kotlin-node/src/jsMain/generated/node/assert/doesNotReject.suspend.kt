@@ -3,6 +3,7 @@
 package node.assert
 
 import js.core.Void
+import js.errors.JsError
 import js.promise.Promise
 
 
@@ -106,7 +107,7 @@ suspend fun doesNotReject(block: () -> Promise<Any?>, message: String = undefine
 
 suspend fun doesNotReject(
     block: () -> Promise<Any?>,
-    message: Throwable /* JsError */ = undefined.unsafeCast<Nothing>(),
+    message: JsError = undefined.unsafeCast<Nothing>(),
 ): Void =
     doesNotRejectAsync(
         block, message
@@ -256,7 +257,7 @@ suspend fun doesNotReject(block: Promise<Any?>, message: String = undefined.unsa
 
 suspend fun doesNotReject(
     block: Promise<Any?>,
-    message: Throwable /* JsError */ = undefined.unsafeCast<Nothing>(),
+    message: JsError = undefined.unsafeCast<Nothing>(),
 ): Void =
     doesNotRejectAsync(
         block, message
@@ -282,7 +283,7 @@ suspend fun doesNotReject(
 suspend fun doesNotReject(
     block: () -> Promise<Any?>,
     error: AssertPredicate,
-    message: Throwable /* JsError */ = undefined.unsafeCast<Nothing>(),
+    message: JsError = undefined.unsafeCast<Nothing>(),
 ): Void =
     doesNotRejectAsync(
         block, error, message
@@ -308,7 +309,7 @@ suspend fun doesNotReject(
 suspend fun doesNotReject(
     block: Promise<Any?>,
     error: AssertPredicate,
-    message: Throwable /* JsError */ = undefined.unsafeCast<Nothing>(),
+    message: JsError = undefined.unsafeCast<Nothing>(),
 ): Void =
     doesNotRejectAsync(
         block, error, message

@@ -5,6 +5,7 @@
 package node.dgram
 
 import js.array.ReadonlyArray
+import js.errors.JsError
 import js.typedarrays.Uint8Array
 import node.events.EventEmitter
 import node.net.AddressInfo
@@ -298,7 +299,7 @@ external class Socket : EventEmitter {
         msg: String,
         port: Number = definedExternally,
         address: String = definedExternally,
-        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
+        callback: (error: JsError?, bytes: Double) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -398,7 +399,7 @@ external class Socket : EventEmitter {
         msg: Uint8Array,
         port: Number = definedExternally,
         address: String = definedExternally,
-        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
+        callback: (error: JsError?, bytes: Double) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -498,37 +499,37 @@ external class Socket : EventEmitter {
         msg: ReadonlyArray<Any?>,
         port: Number = definedExternally,
         address: String = definedExternally,
-        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
+        callback: (error: JsError?, bytes: Double) -> Unit = definedExternally,
     ): Unit
 
     fun send(
         msg: String,
         port: Number = definedExternally,
-        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
+        callback: (error: JsError?, bytes: Double) -> Unit = definedExternally,
     ): Unit
 
     fun send(
         msg: Uint8Array,
         port: Number = definedExternally,
-        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
+        callback: (error: JsError?, bytes: Double) -> Unit = definedExternally,
     ): Unit
 
     fun send(
         msg: ReadonlyArray<Any?>,
         port: Number = definedExternally,
-        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
+        callback: (error: JsError?, bytes: Double) -> Unit = definedExternally,
     ): Unit
 
-    fun send(msg: String, callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally): Unit
+    fun send(msg: String, callback: (error: JsError?, bytes: Double) -> Unit = definedExternally): Unit
 
     fun send(
         msg: Uint8Array,
-        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
+        callback: (error: JsError?, bytes: Double) -> Unit = definedExternally,
     ): Unit
 
     fun send(
         msg: ReadonlyArray<Any?>,
-        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
+        callback: (error: JsError?, bytes: Double) -> Unit = definedExternally,
     ): Unit
 
     fun send(
@@ -537,7 +538,7 @@ external class Socket : EventEmitter {
         length: Number,
         port: Number = definedExternally,
         address: String = definedExternally,
-        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
+        callback: (error: JsError?, bytes: Double) -> Unit = definedExternally,
     ): Unit
 
     fun send(
@@ -546,7 +547,7 @@ external class Socket : EventEmitter {
         length: Number,
         port: Number = definedExternally,
         address: String = definedExternally,
-        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
+        callback: (error: JsError?, bytes: Double) -> Unit = definedExternally,
     ): Unit
 
     fun send(
@@ -554,7 +555,7 @@ external class Socket : EventEmitter {
         offset: Number,
         length: Number,
         port: Number = definedExternally,
-        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
+        callback: (error: JsError?, bytes: Double) -> Unit = definedExternally,
     ): Unit
 
     fun send(
@@ -562,21 +563,21 @@ external class Socket : EventEmitter {
         offset: Number,
         length: Number,
         port: Number = definedExternally,
-        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
+        callback: (error: JsError?, bytes: Double) -> Unit = definedExternally,
     ): Unit
 
     fun send(
         msg: String,
         offset: Number,
         length: Number,
-        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
+        callback: (error: JsError?, bytes: Double) -> Unit = definedExternally,
     ): Unit
 
     fun send(
         msg: Uint8Array,
         offset: Number,
         length: Number,
-        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
+        callback: (error: JsError?, bytes: Double) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -761,7 +762,7 @@ external class Socket : EventEmitter {
     fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun addListener(event: SocketEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun addListener(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
-    fun addListener(event: SocketEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun addListener(event: SocketEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
     fun addListener(event: SocketEvent.LISTENING, listener: () -> Unit): Unit /* this */
     fun addListener(
         event: SocketEvent.MESSAGE,
@@ -773,19 +774,19 @@ external class Socket : EventEmitter {
     fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
     fun emit(event: SocketEvent.CLOSE): Boolean
     fun emit(event: SocketEvent.CONNECT): Boolean
-    fun emit(event: SocketEvent.ERROR, err: Throwable /* JsError */): Boolean
+    fun emit(event: SocketEvent.ERROR, err: JsError): Boolean
     fun emit(event: SocketEvent.LISTENING): Boolean
     fun emit(event: SocketEvent.MESSAGE, msg: node.buffer.Buffer, rinfo: RemoteInfo): Boolean
     fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun on(event: SocketEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun on(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
-    fun on(event: SocketEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun on(event: SocketEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
     fun on(event: SocketEvent.LISTENING, listener: () -> Unit): Unit /* this */
     fun on(event: SocketEvent.MESSAGE, listener: (msg: node.buffer.Buffer, rinfo: RemoteInfo) -> Unit): Unit /* this */
     fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun once(event: SocketEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun once(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
-    fun once(event: SocketEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun once(event: SocketEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
     fun once(event: SocketEvent.LISTENING, listener: () -> Unit): Unit /* this */
     fun once(
         event: SocketEvent.MESSAGE,
@@ -795,7 +796,7 @@ external class Socket : EventEmitter {
     fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun prependListener(event: SocketEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun prependListener(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: SocketEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun prependListener(event: SocketEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
     fun prependListener(event: SocketEvent.LISTENING, listener: () -> Unit): Unit /* this */
     fun prependListener(
         event: SocketEvent.MESSAGE,
@@ -805,7 +806,7 @@ external class Socket : EventEmitter {
     fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun prependOnceListener(event: SocketEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: SocketEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun prependOnceListener(event: SocketEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
     fun prependOnceListener(event: SocketEvent.LISTENING, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(
         event: SocketEvent.MESSAGE,

@@ -4,6 +4,8 @@
 
 package node.crypto
 
+import js.errors.JsError
+
 /**
  * This function is similar to {@link randomBytes} but requires the first
  * argument to be a `Buffer` that will be filled. It also
@@ -81,18 +83,18 @@ package node.crypto
  */
 external fun <T : js.buffer.ArrayBufferView> randomFill(
     buffer: T,
-    callback: (err: Throwable /* JsError */?, buf: T) -> Unit,
+    callback: (err: JsError?, buf: T) -> Unit,
 ): Unit
 
 external fun <T : js.buffer.ArrayBufferView> randomFill(
     buffer: T,
     offset: Number,
-    callback: (err: Throwable /* JsError */?, buf: T) -> Unit,
+    callback: (err: JsError?, buf: T) -> Unit,
 ): Unit
 
 external fun <T : js.buffer.ArrayBufferView> randomFill(
     buffer: T,
     offset: Number,
     size: Number,
-    callback: (err: Throwable /* JsError */?, buf: T) -> Unit,
+    callback: (err: JsError?, buf: T) -> Unit,
 ): Unit

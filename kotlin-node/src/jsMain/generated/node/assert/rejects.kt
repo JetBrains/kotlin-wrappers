@@ -5,6 +5,7 @@
 package node.assert
 
 import js.core.Void
+import js.errors.JsError
 import js.promise.Promise
 
 /**
@@ -210,7 +211,7 @@ external fun rejectsAsync(block: () -> Promise<Any?>, message: String = definedE
 @JsName("rejects")
 external fun rejectsAsync(
     block: () -> Promise<Any?>,
-    message: Throwable /* JsError */ = definedExternally,
+    message: JsError = definedExternally,
 ): Promise<Void>
 
 
@@ -415,7 +416,7 @@ external fun rejectsAsync(block: Promise<Any?>, message: String = definedExterna
  */
 
 @JsName("rejects")
-external fun rejectsAsync(block: Promise<Any?>, message: Throwable /* JsError */ = definedExternally): Promise<Void>
+external fun rejectsAsync(block: Promise<Any?>, message: JsError = definedExternally): Promise<Void>
 
 
 @JsName("rejects")
@@ -434,7 +435,7 @@ external fun rejectsAsync(
 external fun rejectsAsync(
     block: () -> Promise<Any?>,
     error: AssertPredicate,
-    message: Throwable /* JsError */ = definedExternally,
+    message: JsError = definedExternally,
 ): Promise<Void>
 
 
@@ -454,5 +455,5 @@ external fun rejectsAsync(
 external fun rejectsAsync(
     block: Promise<Any?>,
     error: AssertPredicate,
-    message: Throwable /* JsError */ = definedExternally,
+    message: JsError = definedExternally,
 ): Promise<Void>

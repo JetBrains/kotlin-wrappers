@@ -4,6 +4,8 @@
 
 package node.http2
 
+import js.errors.JsError
+
 import js.typedarrays.Uint8Array
 import node.http.OutgoingHttpHeaders
 
@@ -397,7 +399,7 @@ external class Http2ServerResponse : node.stream.Writable {
      * buffer. Returns `false` if all or part of the data was queued in user memory.`'drain'` will be emitted when the buffer is free again.
      * @since v8.4.0
      */
-    fun write(chunk: String, callback: (err: Throwable /* JsError */) -> Unit = definedExternally): Boolean
+    fun write(chunk: String, callback: (err: JsError) -> Unit = definedExternally): Boolean
 
     /**
      * If this method is called and `response.writeHead()` has not been called,
@@ -427,17 +429,17 @@ external class Http2ServerResponse : node.stream.Writable {
      * buffer. Returns `false` if all or part of the data was queued in user memory.`'drain'` will be emitted when the buffer is free again.
      * @since v8.4.0
      */
-    fun write(chunk: Uint8Array, callback: (err: Throwable /* JsError */) -> Unit = definedExternally): Boolean
+    fun write(chunk: Uint8Array, callback: (err: JsError) -> Unit = definedExternally): Boolean
     fun write(
         chunk: String,
         encoding: node.buffer.BufferEncoding,
-        callback: (err: Throwable /* JsError */) -> Unit = definedExternally,
+        callback: (err: JsError) -> Unit = definedExternally,
     ): Boolean
 
     fun write(
         chunk: Uint8Array,
         encoding: node.buffer.BufferEncoding,
-        callback: (err: Throwable /* JsError */) -> Unit = definedExternally,
+        callback: (err: JsError) -> Unit = definedExternally,
     ): Boolean
 
     /**
@@ -539,14 +541,14 @@ external class Http2ServerResponse : node.stream.Writable {
      */
     fun createPushResponse(
         headers: OutgoingHttpHeaders,
-        callback: (err: Throwable /* JsError */?, res: Http2ServerResponse) -> Unit,
+        callback: (err: JsError?, res: Http2ServerResponse) -> Unit,
     ): Unit
 
     fun addListener(event: Http2ServerResponseEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun addListener(event: Http2ServerResponseEvent.DRAIN, listener: () -> Unit): Unit /* this */
     fun addListener(
         event: Http2ServerResponseEvent.ERROR,
-        listener: (error: Throwable /* JsError */) -> Unit,
+        listener: (error: JsError) -> Unit,
     ): Unit /* this */
 
     fun addListener(event: Http2ServerResponseEvent.FINISH, listener: () -> Unit): Unit /* this */
@@ -569,7 +571,7 @@ external class Http2ServerResponse : node.stream.Writable {
 
     fun emit(event: Http2ServerResponseEvent.CLOSE): Boolean
     fun emit(event: Http2ServerResponseEvent.DRAIN): Boolean
-    fun emit(event: Http2ServerResponseEvent.ERROR, error: Throwable /* JsError */): Boolean
+    fun emit(event: Http2ServerResponseEvent.ERROR, error: JsError): Boolean
     fun emit(event: Http2ServerResponseEvent.FINISH): Boolean
     fun emit(event: Http2ServerResponseEvent.PIPE, src: node.stream.Readable): Boolean
     fun emit(event: Http2ServerResponseEvent.UNPIPE, src: node.stream.Readable): Boolean
@@ -578,7 +580,7 @@ external class Http2ServerResponse : node.stream.Writable {
     override fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
     fun on(event: Http2ServerResponseEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun on(event: Http2ServerResponseEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun on(event: Http2ServerResponseEvent.ERROR, listener: (error: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun on(event: Http2ServerResponseEvent.ERROR, listener: (error: JsError) -> Unit): Unit /* this */
     fun on(event: Http2ServerResponseEvent.FINISH, listener: () -> Unit): Unit /* this */
     fun on(event: Http2ServerResponseEvent.PIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
     fun on(event: Http2ServerResponseEvent.UNPIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
@@ -587,7 +589,7 @@ external class Http2ServerResponse : node.stream.Writable {
     override fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun once(event: Http2ServerResponseEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun once(event: Http2ServerResponseEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun once(event: Http2ServerResponseEvent.ERROR, listener: (error: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun once(event: Http2ServerResponseEvent.ERROR, listener: (error: JsError) -> Unit): Unit /* this */
     fun once(event: Http2ServerResponseEvent.FINISH, listener: () -> Unit): Unit /* this */
     fun once(event: Http2ServerResponseEvent.PIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
     fun once(event: Http2ServerResponseEvent.UNPIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
@@ -598,7 +600,7 @@ external class Http2ServerResponse : node.stream.Writable {
     fun prependListener(event: Http2ServerResponseEvent.DRAIN, listener: () -> Unit): Unit /* this */
     fun prependListener(
         event: Http2ServerResponseEvent.ERROR,
-        listener: (error: Throwable /* JsError */) -> Unit,
+        listener: (error: JsError) -> Unit,
     ): Unit /* this */
 
     fun prependListener(event: Http2ServerResponseEvent.FINISH, listener: () -> Unit): Unit /* this */
@@ -626,7 +628,7 @@ external class Http2ServerResponse : node.stream.Writable {
     fun prependOnceListener(event: Http2ServerResponseEvent.DRAIN, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(
         event: Http2ServerResponseEvent.ERROR,
-        listener: (error: Throwable /* JsError */) -> Unit,
+        listener: (error: JsError) -> Unit,
     ): Unit /* this */
 
     fun prependOnceListener(event: Http2ServerResponseEvent.FINISH, listener: () -> Unit): Unit /* this */

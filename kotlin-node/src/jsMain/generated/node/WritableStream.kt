@@ -2,6 +2,8 @@
 
 package node
 
+import js.errors.JsError
+
 import js.typedarrays.Uint8Array
 import node.events.EventEmitter
 
@@ -10,18 +12,18 @@ external interface WritableStream : EventEmitter {
     var writable: Boolean
     fun write(
         buffer: Uint8Array,
-        cb: (err: Throwable /* JsError */? /* use undefined for default */) -> Unit = definedExternally,
+        cb: (err: JsError? /* use undefined for default */) -> Unit = definedExternally,
     ): Boolean
 
     fun write(
         buffer: String,
-        cb: (err: Throwable /* JsError */? /* use undefined for default */) -> Unit = definedExternally,
+        cb: (err: JsError? /* use undefined for default */) -> Unit = definedExternally,
     ): Boolean
 
     fun write(
         str: String,
         encoding: node.buffer.BufferEncoding = definedExternally,
-        cb: (err: Throwable /* JsError */? /* use undefined for default */) -> Unit = definedExternally,
+        cb: (err: JsError? /* use undefined for default */) -> Unit = definedExternally,
     ): Boolean
 
     fun end(cb: () -> Unit = definedExternally): Unit /* this */

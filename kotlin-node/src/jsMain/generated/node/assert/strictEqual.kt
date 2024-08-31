@@ -4,6 +4,8 @@
 
 package node.assert
 
+import js.errors.JsError
+
 /**
  * Tests strict equality between the `actual` and `expected` parameters as
  * determined by [`Object.is()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is).
@@ -122,5 +124,5 @@ external fun <T> equal(actual: Any?, expected: T, message: String = definedExter
 external fun <T> equal(
     actual: Any?,
     expected: T,
-    message: Throwable /* JsError */ = definedExternally,
+    message: JsError = definedExternally,
 ): Unit /* asserts actual is T */

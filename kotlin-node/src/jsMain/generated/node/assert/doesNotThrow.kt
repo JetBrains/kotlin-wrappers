@@ -4,6 +4,8 @@
 
 package node.assert
 
+import js.errors.JsError
+
 /**
  * Asserts that the function `fn` does not throw an error.
  *
@@ -194,7 +196,7 @@ external fun doesNotThrow(block: () -> Any?, message: String = definedExternally
  * ```
  * @since v0.1.21
  */
-external fun doesNotThrow(block: () -> Any?, message: Throwable /* JsError */ = definedExternally): Unit
+external fun doesNotThrow(block: () -> Any?, message: JsError = definedExternally): Unit
 
 external fun doesNotThrow(block: () -> Any?, error: AssertPredicate): Unit
 
@@ -203,5 +205,5 @@ external fun doesNotThrow(block: () -> Any?, error: AssertPredicate, message: St
 external fun doesNotThrow(
     block: () -> Any?,
     error: AssertPredicate,
-    message: Throwable /* JsError */ = definedExternally,
+    message: JsError = definedExternally,
 ): Unit

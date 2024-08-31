@@ -4,6 +4,8 @@
 
 package node.crypto
 
+import js.errors.JsError
+
 /**
  * Checks the primality of the `candidate`.
  * @since v15.8.0
@@ -11,11 +13,11 @@ package node.crypto
  */
 external fun checkPrime(
     value: LargeNumberLike,
-    callback: (err: Throwable /* JsError */?, result: Boolean) -> Unit,
+    callback: (err: JsError?, result: Boolean) -> Unit,
 ): Unit
 
 external fun checkPrime(
     value: LargeNumberLike,
     options: CheckPrimeOptions,
-    callback: (err: Throwable /* JsError */?, result: Boolean) -> Unit,
+    callback: (err: JsError?, result: Boolean) -> Unit,
 ): Unit

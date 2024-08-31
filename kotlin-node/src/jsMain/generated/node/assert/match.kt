@@ -4,6 +4,8 @@
 
 package node.assert
 
+import js.errors.JsError
+
 import kotlin.js.RegExp
 
 /**
@@ -76,4 +78,4 @@ external fun match(value: String, regExp: RegExp, message: String = definedExter
  * instance of an [Error](https://nodejs.org/docs/latest-v20.x/api/errors.html#class-error) then it will be thrown instead of the `{@link AssertionError}`.
  * @since v13.6.0, v12.16.0
  */
-external fun match(value: String, regExp: RegExp, message: Throwable /* JsError */ = definedExternally): Unit
+external fun match(value: String, regExp: RegExp, message: JsError = definedExternally): Unit

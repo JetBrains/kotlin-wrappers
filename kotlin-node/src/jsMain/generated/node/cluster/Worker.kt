@@ -4,6 +4,8 @@
 
 package node.cluster
 
+import js.errors.JsError
+
 import node.events.EventEmitter
 
 /**
@@ -59,20 +61,20 @@ external class Worker : EventEmitter {
      */
     fun send(
         message: node.childProcess.Serializable,
-        callback: (error: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (error: JsError?) -> Unit = definedExternally,
     ): Boolean
 
     fun send(
         message: node.childProcess.Serializable,
         sendHandle: node.childProcess.SendHandle,
-        callback: (error: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (error: JsError?) -> Unit = definedExternally,
     ): Boolean
 
     fun send(
         message: node.childProcess.Serializable,
         sendHandle: node.childProcess.SendHandle,
         options: node.childProcess.MessageOptions = definedExternally,
-        callback: (error: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (error: JsError?) -> Unit = definedExternally,
     ): Boolean
 
     /**
@@ -237,7 +239,7 @@ external class Worker : EventEmitter {
      */
     fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun addListener(event: WorkerEvent.DISCONNECT, listener: () -> Unit): Unit /* this */
-    fun addListener(event: WorkerEvent.ERROR, listener: (error: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun addListener(event: WorkerEvent.ERROR, listener: (error: JsError) -> Unit): Unit /* this */
     fun addListener(event: WorkerEvent.EXIT, listener: (code: Double, signal: String) -> Unit): Unit /* this */
     fun addListener(event: WorkerEvent.LISTENING, listener: (address: Address) -> Unit): Unit /* this */
     fun addListener(
@@ -250,7 +252,7 @@ external class Worker : EventEmitter {
 
     fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
     fun emit(event: WorkerEvent.DISCONNECT): Boolean
-    fun emit(event: WorkerEvent.ERROR, error: Throwable /* JsError */): Boolean
+    fun emit(event: WorkerEvent.ERROR, error: JsError): Boolean
     fun emit(event: WorkerEvent.EXIT, code: Number, signal: String): Boolean
     fun emit(event: WorkerEvent.LISTENING, address: Address): Boolean
     fun emit(event: WorkerEvent.MESSAGE, message: Any?, handle: node.net.Socket): Boolean
@@ -259,7 +261,7 @@ external class Worker : EventEmitter {
     fun emit(event: WorkerEvent.ONLINE): Boolean
     fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun on(event: WorkerEvent.DISCONNECT, listener: () -> Unit): Unit /* this */
-    fun on(event: WorkerEvent.ERROR, listener: (error: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun on(event: WorkerEvent.ERROR, listener: (error: JsError) -> Unit): Unit /* this */
     fun on(event: WorkerEvent.EXIT, listener: (code: Double, signal: String) -> Unit): Unit /* this */
     fun on(event: WorkerEvent.LISTENING, listener: (address: Address) -> Unit): Unit /* this */
     fun on(
@@ -270,7 +272,7 @@ external class Worker : EventEmitter {
     fun on(event: WorkerEvent.ONLINE, listener: () -> Unit): Unit /* this */
     fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun once(event: WorkerEvent.DISCONNECT, listener: () -> Unit): Unit /* this */
-    fun once(event: WorkerEvent.ERROR, listener: (error: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun once(event: WorkerEvent.ERROR, listener: (error: JsError) -> Unit): Unit /* this */
     fun once(event: WorkerEvent.EXIT, listener: (code: Double, signal: String) -> Unit): Unit /* this */
     fun once(event: WorkerEvent.LISTENING, listener: (address: Address) -> Unit): Unit /* this */
     fun once(
@@ -281,7 +283,7 @@ external class Worker : EventEmitter {
     fun once(event: WorkerEvent.ONLINE, listener: () -> Unit): Unit /* this */
     fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun prependListener(event: WorkerEvent.DISCONNECT, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: WorkerEvent.ERROR, listener: (error: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun prependListener(event: WorkerEvent.ERROR, listener: (error: JsError) -> Unit): Unit /* this */
     fun prependListener(event: WorkerEvent.EXIT, listener: (code: Double, signal: String) -> Unit): Unit /* this */
     fun prependListener(event: WorkerEvent.LISTENING, listener: (address: Address) -> Unit): Unit /* this */
     fun prependListener(
@@ -294,7 +296,7 @@ external class Worker : EventEmitter {
     fun prependOnceListener(event: WorkerEvent.DISCONNECT, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(
         event: WorkerEvent.ERROR,
-        listener: (error: Throwable /* JsError */) -> Unit,
+        listener: (error: JsError) -> Unit,
     ): Unit /* this */
 
     fun prependOnceListener(event: WorkerEvent.EXIT, listener: (code: Double, signal: String) -> Unit): Unit /* this */

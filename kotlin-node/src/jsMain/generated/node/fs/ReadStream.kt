@@ -4,6 +4,8 @@
 
 package node.fs
 
+import js.errors.JsError
+
 import node.stream.ReadableOptions
 
 /**
@@ -45,7 +47,7 @@ external class ReadStream : node.stream.Readable {
     fun addListener(event: ReadStreamEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun addListener(event: ReadStreamEvent.DATA, listener: (chunk: Any /* Buffer | string */) -> Unit): Unit /* this */
     fun addListener(event: ReadStreamEvent.END, listener: () -> Unit): Unit /* this */
-    fun addListener(event: ReadStreamEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun addListener(event: ReadStreamEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
     fun addListener(event: ReadStreamEvent.OPEN, listener: (fd: Double) -> Unit): Unit /* this */
     fun addListener(event: ReadStreamEvent.PAUSE, listener: () -> Unit): Unit /* this */
     fun addListener(event: ReadStreamEvent.READABLE, listener: () -> Unit): Unit /* this */
@@ -61,7 +63,7 @@ external class ReadStream : node.stream.Readable {
     fun on(event: ReadStreamEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun on(event: ReadStreamEvent.DATA, listener: (chunk: Any /* Buffer | string */) -> Unit): Unit /* this */
     fun on(event: ReadStreamEvent.END, listener: () -> Unit): Unit /* this */
-    fun on(event: ReadStreamEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun on(event: ReadStreamEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
     fun on(event: ReadStreamEvent.OPEN, listener: (fd: Double) -> Unit): Unit /* this */
     fun on(event: ReadStreamEvent.PAUSE, listener: () -> Unit): Unit /* this */
     fun on(event: ReadStreamEvent.READABLE, listener: () -> Unit): Unit /* this */
@@ -73,7 +75,7 @@ external class ReadStream : node.stream.Readable {
     fun once(event: ReadStreamEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun once(event: ReadStreamEvent.DATA, listener: (chunk: Any /* Buffer | string */) -> Unit): Unit /* this */
     fun once(event: ReadStreamEvent.END, listener: () -> Unit): Unit /* this */
-    fun once(event: ReadStreamEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun once(event: ReadStreamEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
     fun once(event: ReadStreamEvent.OPEN, listener: (fd: Double) -> Unit): Unit /* this */
     fun once(event: ReadStreamEvent.PAUSE, listener: () -> Unit): Unit /* this */
     fun once(event: ReadStreamEvent.READABLE, listener: () -> Unit): Unit /* this */
@@ -89,7 +91,7 @@ external class ReadStream : node.stream.Readable {
     ): Unit /* this */
 
     fun prependListener(event: ReadStreamEvent.END, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: ReadStreamEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun prependListener(event: ReadStreamEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
     fun prependListener(event: ReadStreamEvent.OPEN, listener: (fd: Double) -> Unit): Unit /* this */
     fun prependListener(event: ReadStreamEvent.PAUSE, listener: () -> Unit): Unit /* this */
     fun prependListener(event: ReadStreamEvent.READABLE, listener: () -> Unit): Unit /* this */
@@ -114,7 +116,7 @@ external class ReadStream : node.stream.Readable {
     fun prependOnceListener(event: ReadStreamEvent.END, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(
         event: ReadStreamEvent.ERROR,
-        listener: (err: Throwable /* JsError */) -> Unit,
+        listener: (err: JsError) -> Unit,
     ): Unit /* this */
 
     fun prependOnceListener(event: ReadStreamEvent.OPEN, listener: (fd: Double) -> Unit): Unit /* this */

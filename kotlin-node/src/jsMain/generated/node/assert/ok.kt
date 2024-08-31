@@ -4,6 +4,8 @@
 
 package node.assert
 
+import js.errors.JsError
+
 /**
  * Tests if `value` is truthy. It is equivalent to `assert.equal(!!value, true, message)`.
  *
@@ -176,4 +178,4 @@ external fun ok(value: Any?, message: String = definedExternally): Unit /* asser
  * ```
  * @since v0.1.21
  */
-external fun ok(value: Any?, message: Throwable /* JsError */ = definedExternally): Unit /* asserts value */
+external fun ok(value: Any?, message: JsError = definedExternally): Unit /* asserts value */

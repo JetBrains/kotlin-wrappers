@@ -4,4 +4,6 @@
 
 package remix.run.router
 
-external class AbortedDeferredError : Throwable /* JsError */
+import js.errors.JsError
+
+external class AbortedDeferredError : JsError

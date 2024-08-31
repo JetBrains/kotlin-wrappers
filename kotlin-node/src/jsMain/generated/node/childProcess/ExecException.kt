@@ -2,8 +2,10 @@
 
 package node.childProcess
 
+import js.errors.JsError
+
 @Suppress("INTERFACE_WITH_SUPERCLASS")
-sealed external interface ExecException : Throwable /* JsError */ {
+sealed external interface ExecException : JsError {
     var cmd: String?
     var killed: Boolean?
     var code: Double?

@@ -2,4 +2,6 @@
 
 package node.process
 
-typealias UncaughtExceptionListener = (error: Throwable /* JsError */, origin: UncaughtExceptionOrigin) -> Unit
+import js.errors.JsError
+
+typealias UncaughtExceptionListener = (error: JsError, origin: UncaughtExceptionOrigin) -> Unit

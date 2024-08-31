@@ -2,11 +2,13 @@
 
 package node.stream
 
+import js.errors.JsError
+
 @kotlinx.js.JsPlainObject
 sealed external interface WritableOptions : StreamOptions<Stream /* Writable */> {
     var decodeStrings: Boolean?
     var defaultEncoding: node.buffer.BufferEncoding?
-    val write: ((/* this: Writable, */ chunk: Any?, encoding: node.buffer.BufferEncoding, callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit) -> Unit)?
-    val writev: ((/* this: Writable, */ chunks: Array<WritableOptionsWritevChunksItem>, callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit) -> Unit)?
-    val final: ((/* this: Writable, */ callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit) -> Unit)?
+    val write: ((/* this: Writable, */ chunk: Any?, encoding: node.buffer.BufferEncoding, callback: (error: JsError? /* use undefined for default */) -> Unit) -> Unit)?
+    val writev: ((/* this: Writable, */ chunks: Array<WritableOptionsWritevChunksItem>, callback: (error: JsError? /* use undefined for default */) -> Unit) -> Unit)?
+    val final: ((/* this: Writable, */ callback: (error: JsError? /* use undefined for default */) -> Unit) -> Unit)?
 }

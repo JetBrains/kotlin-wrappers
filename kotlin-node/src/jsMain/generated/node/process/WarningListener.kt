@@ -2,4 +2,6 @@
 
 package node.process
 
-typealias WarningListener = (warning: Throwable /* JsError */) -> Unit
+import js.errors.JsError
+
+typealias WarningListener = (warning: JsError) -> Unit

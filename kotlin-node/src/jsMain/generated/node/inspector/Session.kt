@@ -4,6 +4,8 @@
 
 package node.inspector
 
+import js.errors.JsError
+
 import node.events.EventEmitter
 
 /**
@@ -59,12 +61,12 @@ external class Session : EventEmitter {
     fun post(
         method: String,
         params: Any = definedExternally,
-        callback: (err: Throwable /* JsError */?, params: (Any)? /* use undefined for default */) -> Unit = definedExternally,
+        callback: (err: JsError?, params: (Any)? /* use undefined for default */) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: String,
-        callback: (err: Throwable /* JsError */?, params: (Any)? /* use undefined for default */) -> Unit = definedExternally,
+        callback: (err: JsError?, params: (Any)? /* use undefined for default */) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -72,7 +74,7 @@ external class Session : EventEmitter {
      */
     fun post(
         method: SessionMethod.SCHEMA_GETDOMAINS,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.schema.GetDomainsReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.schema.GetDomainsReturnType) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -81,12 +83,12 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.RUNTIME_EVALUATE,
         params: node.inspector.runtime.EvaluateParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.runtime.EvaluateReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.runtime.EvaluateReturnType) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.RUNTIME_EVALUATE,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.runtime.EvaluateReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.runtime.EvaluateReturnType) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -95,12 +97,12 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.RUNTIME_AWAITPROMISE,
         params: node.inspector.runtime.AwaitPromiseParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.runtime.AwaitPromiseReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.runtime.AwaitPromiseReturnType) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.RUNTIME_AWAITPROMISE,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.runtime.AwaitPromiseReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.runtime.AwaitPromiseReturnType) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -109,12 +111,12 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.RUNTIME_CALLFUNCTIONON,
         params: node.inspector.runtime.CallFunctionOnParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.runtime.CallFunctionOnReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.runtime.CallFunctionOnReturnType) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.RUNTIME_CALLFUNCTIONON,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.runtime.CallFunctionOnReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.runtime.CallFunctionOnReturnType) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -123,12 +125,12 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.RUNTIME_GETPROPERTIES,
         params: node.inspector.runtime.GetPropertiesParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.runtime.GetPropertiesReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.runtime.GetPropertiesReturnType) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.RUNTIME_GETPROPERTIES,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.runtime.GetPropertiesReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.runtime.GetPropertiesReturnType) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -137,12 +139,12 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.RUNTIME_RELEASEOBJECT,
         params: node.inspector.runtime.ReleaseObjectParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.RUNTIME_RELEASEOBJECT,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -151,12 +153,12 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.RUNTIME_RELEASEOBJECTGROUP,
         params: node.inspector.runtime.ReleaseObjectGroupParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.RUNTIME_RELEASEOBJECTGROUP,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -164,7 +166,7 @@ external class Session : EventEmitter {
      */
     fun post(
         method: SessionMethod.RUNTIME_RUNIFWAITINGFORDEBUGGER,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -172,7 +174,7 @@ external class Session : EventEmitter {
      */
     fun post(
         method: SessionMethod.RUNTIME_ENABLE,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -180,7 +182,7 @@ external class Session : EventEmitter {
      */
     fun post(
         method: SessionMethod.RUNTIME_DISABLE,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -188,7 +190,7 @@ external class Session : EventEmitter {
      */
     fun post(
         method: SessionMethod.RUNTIME_DISCARDCONSOLEENTRIES,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -197,12 +199,12 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.RUNTIME_SETCUSTOMOBJECTFORMATTERENABLED,
         params: node.inspector.runtime.SetCustomObjectFormatterEnabledParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.RUNTIME_SETCUSTOMOBJECTFORMATTERENABLED,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -211,12 +213,12 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.RUNTIME_COMPILESCRIPT,
         params: node.inspector.runtime.CompileScriptParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.runtime.CompileScriptReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.runtime.CompileScriptReturnType) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.RUNTIME_COMPILESCRIPT,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.runtime.CompileScriptReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.runtime.CompileScriptReturnType) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -225,23 +227,23 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.RUNTIME_RUNSCRIPT,
         params: node.inspector.runtime.RunScriptParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.runtime.RunScriptReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.runtime.RunScriptReturnType) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.RUNTIME_RUNSCRIPT,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.runtime.RunScriptReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.runtime.RunScriptReturnType) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.RUNTIME_QUERYOBJECTS,
         params: node.inspector.runtime.QueryObjectsParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.runtime.QueryObjectsReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.runtime.QueryObjectsReturnType) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.RUNTIME_QUERYOBJECTS,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.runtime.QueryObjectsReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.runtime.QueryObjectsReturnType) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -250,12 +252,12 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.RUNTIME_GLOBALLEXICALSCOPENAMES,
         params: node.inspector.runtime.GlobalLexicalScopeNamesParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.runtime.GlobalLexicalScopeNamesReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.runtime.GlobalLexicalScopeNamesReturnType) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.RUNTIME_GLOBALLEXICALSCOPENAMES,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.runtime.GlobalLexicalScopeNamesReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.runtime.GlobalLexicalScopeNamesReturnType) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -263,7 +265,7 @@ external class Session : EventEmitter {
      */
     fun post(
         method: SessionMethod.DEBUGGER_ENABLE,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.debugger.EnableReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.debugger.EnableReturnType) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -271,7 +273,7 @@ external class Session : EventEmitter {
      */
     fun post(
         method: SessionMethod.DEBUGGER_DISABLE,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -280,12 +282,12 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.DEBUGGER_SETBREAKPOINTSACTIVE,
         params: node.inspector.debugger.SetBreakpointsActiveParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_SETBREAKPOINTSACTIVE,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -294,12 +296,12 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.DEBUGGER_SETSKIPALLPAUSES,
         params: node.inspector.debugger.SetSkipAllPausesParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_SETSKIPALLPAUSES,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -308,12 +310,12 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.DEBUGGER_SETBREAKPOINTBYURL,
         params: node.inspector.debugger.SetBreakpointByUrlParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.debugger.SetBreakpointByUrlReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.debugger.SetBreakpointByUrlReturnType) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_SETBREAKPOINTBYURL,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.debugger.SetBreakpointByUrlReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.debugger.SetBreakpointByUrlReturnType) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -322,12 +324,12 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.DEBUGGER_SETBREAKPOINT,
         params: node.inspector.debugger.SetBreakpointParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.debugger.SetBreakpointReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.debugger.SetBreakpointReturnType) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_SETBREAKPOINT,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.debugger.SetBreakpointReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.debugger.SetBreakpointReturnType) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -336,12 +338,12 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.DEBUGGER_REMOVEBREAKPOINT,
         params: node.inspector.debugger.RemoveBreakpointParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_REMOVEBREAKPOINT,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -350,12 +352,12 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.DEBUGGER_GETPOSSIBLEBREAKPOINTS,
         params: node.inspector.debugger.GetPossibleBreakpointsParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.debugger.GetPossibleBreakpointsReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.debugger.GetPossibleBreakpointsReturnType) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_GETPOSSIBLEBREAKPOINTS,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.debugger.GetPossibleBreakpointsReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.debugger.GetPossibleBreakpointsReturnType) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -364,12 +366,12 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.DEBUGGER_CONTINUETOLOCATION,
         params: node.inspector.debugger.ContinueToLocationParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_CONTINUETOLOCATION,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -378,12 +380,12 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.DEBUGGER_PAUSEONASYNCCALL,
         params: node.inspector.debugger.PauseOnAsyncCallParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_PAUSEONASYNCCALL,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -391,7 +393,7 @@ external class Session : EventEmitter {
      */
     fun post(
         method: SessionMethod.DEBUGGER_STEPOVER,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -400,12 +402,12 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.DEBUGGER_STEPINTO,
         params: node.inspector.debugger.StepIntoParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_STEPINTO,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -413,7 +415,7 @@ external class Session : EventEmitter {
      */
     fun post(
         method: SessionMethod.DEBUGGER_STEPOUT,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -421,7 +423,7 @@ external class Session : EventEmitter {
      */
     fun post(
         method: SessionMethod.DEBUGGER_PAUSE,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -430,7 +432,7 @@ external class Session : EventEmitter {
      */
     fun post(
         method: SessionMethod.DEBUGGER_SCHEDULESTEPINTOASYNC,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -438,7 +440,7 @@ external class Session : EventEmitter {
      */
     fun post(
         method: SessionMethod.DEBUGGER_RESUME,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -448,12 +450,12 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.DEBUGGER_GETSTACKTRACE,
         params: node.inspector.debugger.GetStackTraceParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.debugger.GetStackTraceReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.debugger.GetStackTraceReturnType) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_GETSTACKTRACE,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.debugger.GetStackTraceReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.debugger.GetStackTraceReturnType) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -462,12 +464,12 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.DEBUGGER_SEARCHINCONTENT,
         params: node.inspector.debugger.SearchInContentParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.debugger.SearchInContentReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.debugger.SearchInContentReturnType) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_SEARCHINCONTENT,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.debugger.SearchInContentReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.debugger.SearchInContentReturnType) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -476,12 +478,12 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.DEBUGGER_SETSCRIPTSOURCE,
         params: node.inspector.debugger.SetScriptSourceParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.debugger.SetScriptSourceReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.debugger.SetScriptSourceReturnType) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_SETSCRIPTSOURCE,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.debugger.SetScriptSourceReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.debugger.SetScriptSourceReturnType) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -490,12 +492,12 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.DEBUGGER_RESTARTFRAME,
         params: node.inspector.debugger.RestartFrameParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.debugger.RestartFrameReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.debugger.RestartFrameReturnType) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_RESTARTFRAME,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.debugger.RestartFrameReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.debugger.RestartFrameReturnType) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -504,12 +506,12 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.DEBUGGER_GETSCRIPTSOURCE,
         params: node.inspector.debugger.GetScriptSourceParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.debugger.GetScriptSourceReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.debugger.GetScriptSourceReturnType) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_GETSCRIPTSOURCE,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.debugger.GetScriptSourceReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.debugger.GetScriptSourceReturnType) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -518,12 +520,12 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.DEBUGGER_SETPAUSEONEXCEPTIONS,
         params: node.inspector.debugger.SetPauseOnExceptionsParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_SETPAUSEONEXCEPTIONS,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -532,12 +534,12 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.DEBUGGER_EVALUATEONCALLFRAME,
         params: node.inspector.debugger.EvaluateOnCallFrameParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.debugger.EvaluateOnCallFrameReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.debugger.EvaluateOnCallFrameReturnType) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_EVALUATEONCALLFRAME,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.debugger.EvaluateOnCallFrameReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.debugger.EvaluateOnCallFrameReturnType) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -546,12 +548,12 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.DEBUGGER_SETVARIABLEVALUE,
         params: node.inspector.debugger.SetVariableValueParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_SETVARIABLEVALUE,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -561,12 +563,12 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.DEBUGGER_SETRETURNVALUE,
         params: node.inspector.debugger.SetReturnValueParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_SETRETURNVALUE,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -575,12 +577,12 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.DEBUGGER_SETASYNCCALLSTACKDEPTH,
         params: node.inspector.debugger.SetAsyncCallStackDepthParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_SETASYNCCALLSTACKDEPTH,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -590,12 +592,12 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.DEBUGGER_SETBLACKBOXPATTERNS,
         params: node.inspector.debugger.SetBlackboxPatternsParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_SETBLACKBOXPATTERNS,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -605,12 +607,12 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.DEBUGGER_SETBLACKBOXEDRANGES,
         params: node.inspector.debugger.SetBlackboxedRangesParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_SETBLACKBOXEDRANGES,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -618,7 +620,7 @@ external class Session : EventEmitter {
      */
     fun post(
         method: SessionMethod.CONSOLE_ENABLE,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -626,7 +628,7 @@ external class Session : EventEmitter {
      */
     fun post(
         method: SessionMethod.CONSOLE_DISABLE,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -634,17 +636,17 @@ external class Session : EventEmitter {
      */
     fun post(
         method: SessionMethod.CONSOLE_CLEARMESSAGES,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.PROFILER_ENABLE,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.PROFILER_DISABLE,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -653,22 +655,22 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.PROFILER_SETSAMPLINGINTERVAL,
         params: node.inspector.profiler.SetSamplingIntervalParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.PROFILER_SETSAMPLINGINTERVAL,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.PROFILER_START,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.PROFILER_STOP,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.profiler.StopReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.profiler.StopReturnType) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -677,12 +679,12 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.PROFILER_STARTPRECISECOVERAGE,
         params: node.inspector.profiler.StartPreciseCoverageParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.PROFILER_STARTPRECISECOVERAGE,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -690,7 +692,7 @@ external class Session : EventEmitter {
      */
     fun post(
         method: SessionMethod.PROFILER_STOPPRECISECOVERAGE,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -698,7 +700,7 @@ external class Session : EventEmitter {
      */
     fun post(
         method: SessionMethod.PROFILER_TAKEPRECISECOVERAGE,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.profiler.TakePreciseCoverageReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.profiler.TakePreciseCoverageReturnType) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -706,7 +708,7 @@ external class Session : EventEmitter {
      */
     fun post(
         method: SessionMethod.PROFILER_GETBESTEFFORTCOVERAGE,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.profiler.GetBestEffortCoverageReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.profiler.GetBestEffortCoverageReturnType) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -715,7 +717,7 @@ external class Session : EventEmitter {
      */
     fun post(
         method: SessionMethod.PROFILER_STARTTYPEPROFILE,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -724,7 +726,7 @@ external class Session : EventEmitter {
      */
     fun post(
         method: SessionMethod.PROFILER_STOPTYPEPROFILE,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -733,66 +735,66 @@ external class Session : EventEmitter {
      */
     fun post(
         method: SessionMethod.PROFILER_TAKETYPEPROFILE,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.profiler.TakeTypeProfileReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.profiler.TakeTypeProfileReturnType) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.HEAPPROFILER_ENABLE,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.HEAPPROFILER_DISABLE,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.HEAPPROFILER_STARTTRACKINGHEAPOBJECTS,
         params: node.inspector.heapprofiler.StartTrackingHeapObjectsParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.HEAPPROFILER_STARTTRACKINGHEAPOBJECTS,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.HEAPPROFILER_STOPTRACKINGHEAPOBJECTS,
         params: node.inspector.heapprofiler.StopTrackingHeapObjectsParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.HEAPPROFILER_STOPTRACKINGHEAPOBJECTS,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.HEAPPROFILER_TAKEHEAPSNAPSHOT,
         params: node.inspector.heapprofiler.TakeHeapSnapshotParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.HEAPPROFILER_TAKEHEAPSNAPSHOT,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.HEAPPROFILER_COLLECTGARBAGE,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.HEAPPROFILER_GETOBJECTBYHEAPOBJECTID,
         params: node.inspector.heapprofiler.GetObjectByHeapObjectIdParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.heapprofiler.GetObjectByHeapObjectIdReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.heapprofiler.GetObjectByHeapObjectIdReturnType) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.HEAPPROFILER_GETOBJECTBYHEAPOBJECTID,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.heapprofiler.GetObjectByHeapObjectIdReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.heapprofiler.GetObjectByHeapObjectIdReturnType) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -801,44 +803,44 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.HEAPPROFILER_ADDINSPECTEDHEAPOBJECT,
         params: node.inspector.heapprofiler.AddInspectedHeapObjectParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.HEAPPROFILER_ADDINSPECTEDHEAPOBJECT,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.HEAPPROFILER_GETHEAPOBJECTID,
         params: node.inspector.heapprofiler.GetHeapObjectIdParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.heapprofiler.GetHeapObjectIdReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.heapprofiler.GetHeapObjectIdReturnType) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.HEAPPROFILER_GETHEAPOBJECTID,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.heapprofiler.GetHeapObjectIdReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.heapprofiler.GetHeapObjectIdReturnType) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.HEAPPROFILER_STARTSAMPLING,
         params: node.inspector.heapprofiler.StartSamplingParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.HEAPPROFILER_STARTSAMPLING,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.HEAPPROFILER_STOPSAMPLING,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.heapprofiler.StopSamplingReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.heapprofiler.StopSamplingReturnType) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.HEAPPROFILER_GETSAMPLINGPROFILE,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.heapprofiler.GetSamplingProfileReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.heapprofiler.GetSamplingProfileReturnType) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -846,7 +848,7 @@ external class Session : EventEmitter {
      */
     fun post(
         method: SessionMethod.NODETRACING_GETCATEGORIES,
-        callback: (err: Throwable /* JsError */?, params: node.inspector.nodetracing.GetCategoriesReturnType) -> Unit = definedExternally,
+        callback: (err: JsError?, params: node.inspector.nodetracing.GetCategoriesReturnType) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -855,12 +857,12 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.NODETRACING_START,
         params: node.inspector.nodetracing.StartParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.NODETRACING_START,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -869,7 +871,7 @@ external class Session : EventEmitter {
      */
     fun post(
         method: SessionMethod.NODETRACING_STOP,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -878,12 +880,12 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.NODEWORKER_SENDMESSAGETOWORKER,
         params: node.inspector.nodeworker.SendMessageToWorkerParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.NODEWORKER_SENDMESSAGETOWORKER,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -893,12 +895,12 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.NODEWORKER_ENABLE,
         params: node.inspector.nodeworker.EnableParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.NODEWORKER_ENABLE,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -906,7 +908,7 @@ external class Session : EventEmitter {
      */
     fun post(
         method: SessionMethod.NODEWORKER_DISABLE,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -915,12 +917,12 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.NODEWORKER_DETACH,
         params: node.inspector.nodeworker.DetachParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.NODEWORKER_DETACH,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -929,12 +931,12 @@ external class Session : EventEmitter {
     fun post(
         method: SessionMethod.NODERUNTIME_NOTIFYWHENWAITINGFORDISCONNECT,
         params: node.inspector.noderuntime.NotifyWhenWaitingForDisconnectParameterType = definedExternally,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     fun post(
         method: SessionMethod.NODERUNTIME_NOTIFYWHENWAITINGFORDISCONNECT,
-        callback: (err: Throwable /* JsError */?) -> Unit = definedExternally,
+        callback: (err: JsError?) -> Unit = definedExternally,
     ): Unit
 
     // Events

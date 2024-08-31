@@ -2,8 +2,10 @@
 
 package node
 
+import js.errors.JsError
+
 @Suppress("INTERFACE_WITH_SUPERCLASS")
-external interface ErrnoException : Throwable /* JsError */ {
+external interface ErrnoException : JsError {
     var errno: Double?
     var code: String?
     var path: String?

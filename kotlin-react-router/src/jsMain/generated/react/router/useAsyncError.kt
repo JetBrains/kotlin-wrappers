@@ -4,7 +4,9 @@
 
 package react.router
 
+import js.errors.JsError
+
 /**
  * Returns the error from the nearest ancestor `<Await />` value
  */
-external fun useAsyncError(): Throwable /* JsError */?
+external fun useAsyncError(): JsError?

@@ -5,6 +5,7 @@
 package electron.core
 
 import js.core.Void
+import js.errors.JsError
 import js.promise.Promise
 import node.buffer.Buffer
 import node.events.EventEmitter as NodeEventEmitter
@@ -554,7 +555,7 @@ external class WebContents : NodeEventEmitter {
      */
     fun on(
         event: WebContentsEvent.PRELOAD_ERROR,
-        listener: (event: Event<*>, preloadPath: String, error: Throwable /* JsError */) -> Unit,
+        listener: (event: Event<*>, preloadPath: String, error: JsError) -> Unit,
     ): Unit /* this */
 
     /**
@@ -1079,7 +1080,7 @@ external class WebContents : NodeEventEmitter {
 
     fun off(
         event: WebContentsEvent.PRELOAD_ERROR,
-        listener: (event: Event<*>, preloadPath: String, error: Throwable /* JsError */) -> Unit,
+        listener: (event: Event<*>, preloadPath: String, error: JsError) -> Unit,
     ): Unit /* this */
 
     fun off(
@@ -1510,7 +1511,7 @@ external class WebContents : NodeEventEmitter {
 
     fun once(
         event: WebContentsEvent.PRELOAD_ERROR,
-        listener: (event: Event<*>, preloadPath: String, error: Throwable /* JsError */) -> Unit,
+        listener: (event: Event<*>, preloadPath: String, error: JsError) -> Unit,
     ): Unit /* this */
 
     fun once(
@@ -1941,7 +1942,7 @@ external class WebContents : NodeEventEmitter {
 
     fun addListener(
         event: WebContentsEvent.PRELOAD_ERROR,
-        listener: (event: Event<*>, preloadPath: String, error: Throwable /* JsError */) -> Unit,
+        listener: (event: Event<*>, preloadPath: String, error: JsError) -> Unit,
     ): Unit /* this */
 
     fun addListener(
@@ -2372,7 +2373,7 @@ external class WebContents : NodeEventEmitter {
 
     fun removeListener(
         event: WebContentsEvent.PRELOAD_ERROR,
-        listener: (event: Event<*>, preloadPath: String, error: Throwable /* JsError */) -> Unit,
+        listener: (event: Event<*>, preloadPath: String, error: JsError) -> Unit,
     ): Unit /* this */
 
     fun removeListener(

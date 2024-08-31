@@ -4,6 +4,8 @@
 
 package node.assert
 
+import js.errors.JsError
+
 /**
  * Tests strict inequality between the `actual` and `expected` parameters as
  * determined by [`Object.is()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is).
@@ -80,4 +82,4 @@ external fun notEqual(actual: Any?, expected: Any?, message: String = definedExt
  * instead of the `AssertionError`.
  * @since v0.1.21
  */
-external fun notEqual(actual: Any?, expected: Any?, message: Throwable /* JsError */ = definedExternally): Unit
+external fun notEqual(actual: Any?, expected: Any?, message: JsError = definedExternally): Unit

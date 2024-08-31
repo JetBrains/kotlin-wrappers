@@ -4,6 +4,8 @@
 
 package node.crypto
 
+import js.errors.JsError
+
 /**
  * Return a random integer `n` such that `min <= n < max`.  This
  * implementation avoids [modulo bias](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#Modulo_bias).
@@ -54,6 +56,6 @@ external fun randomInt(max: Number): Double
 
 external fun randomInt(min: Number, max: Number): Double
 
-external fun randomInt(max: Number, callback: (err: Throwable /* JsError */?, value: Double) -> Unit): Unit
+external fun randomInt(max: Number, callback: (err: JsError?, value: Double) -> Unit): Unit
 
-external fun randomInt(min: Number, max: Number, callback: (err: Throwable /* JsError */?, value: Double) -> Unit): Unit
+external fun randomInt(min: Number, max: Number, callback: (err: JsError?, value: Double) -> Unit): Unit

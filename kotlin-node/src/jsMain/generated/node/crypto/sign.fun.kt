@@ -4,6 +4,8 @@
 
 package node.crypto
 
+import js.errors.JsError
+
 /**
  * Calculates and returns the signature for `data` using the given private key and
  * algorithm. If `algorithm` is `null` or `undefined`, then the algorithm is
@@ -50,19 +52,19 @@ external fun sign(
     algorithm: String?,
     data: js.buffer.ArrayBufferView,
     key: KeyLike,
-    callback: (error: Throwable /* JsError */?, data: node.buffer.Buffer) -> Unit,
+    callback: (error: JsError?, data: node.buffer.Buffer) -> Unit,
 ): Unit
 
 external fun sign(
     algorithm: String?,
     data: js.buffer.ArrayBufferView,
     key: SignKeyObjectInput,
-    callback: (error: Throwable /* JsError */?, data: node.buffer.Buffer) -> Unit,
+    callback: (error: JsError?, data: node.buffer.Buffer) -> Unit,
 ): Unit
 
 external fun sign(
     algorithm: String?,
     data: js.buffer.ArrayBufferView,
     key: SignPrivateKeyInput,
-    callback: (error: Throwable /* JsError */?, data: node.buffer.Buffer) -> Unit,
+    callback: (error: JsError?, data: node.buffer.Buffer) -> Unit,
 ): Unit

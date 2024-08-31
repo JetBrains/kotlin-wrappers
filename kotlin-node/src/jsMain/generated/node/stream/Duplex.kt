@@ -5,6 +5,7 @@
 package node.stream
 
 import js.buffer.ArrayBuffer
+import js.errors.JsError
 import js.generator.AsyncGeneratorFunction
 import js.iterable.AsyncIterable
 import js.promise.Promise
@@ -35,7 +36,7 @@ Writable {
     override val writableCorked: Double
     override val writableNeedDrain: Boolean
     override val closed: Boolean
-    override val errored: Throwable /* JsError */?
+    override val errored: JsError?
 
     /**
      * If `false` then the stream will automatically end the writable side when the
@@ -50,23 +51,23 @@ Writable {
     override fun _write(
         chunk: Any?,
         encoding: node.buffer.BufferEncoding,
-        callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit,
+        callback: (error: JsError? /* use undefined for default */) -> Unit,
     ): Unit
 
-    override val _writev: ((chunks: Array<WritableWritevChunksItem>, callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit) -> Unit)?
+    override val _writev: ((chunks: Array<WritableWritevChunksItem>, callback: (error: JsError? /* use undefined for default */) -> Unit) -> Unit)?
     override fun _destroy(
-        error: Throwable /* JsError */?,
-        callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit,
+        error: JsError?,
+        callback: (error: JsError? /* use undefined for default */) -> Unit,
     ): Unit
 
-    override fun _final(callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit): Unit
+    override fun _final(callback: (error: JsError? /* use undefined for default */) -> Unit): Unit
     override fun write(
         chunk: Any?,
         encoding: node.buffer.BufferEncoding,
-        callback: (error: Throwable /* JsError */?) -> Unit,
+        callback: (error: JsError?) -> Unit,
     ): Boolean
 
-    override fun write(chunk: Any?, callback: (error: Throwable /* JsError */?) -> Unit): Boolean
+    override fun write(chunk: Any?, callback: (error: JsError?) -> Unit): Boolean
     override fun setDefaultEncoding(encoding: node.buffer.BufferEncoding): Unit /* this */
     override fun end(cb: () -> Unit): Unit /* this */
     override fun end(chunk: Any?, cb: () -> Unit): Unit /* this */
@@ -93,7 +94,7 @@ Writable {
     fun addListener(event: DuplexEvent.DATA, listener: (chunk: Any?) -> Unit): Unit /* this */
     fun addListener(event: DuplexEvent.DRAIN, listener: () -> Unit): Unit /* this */
     fun addListener(event: DuplexEvent.END, listener: () -> Unit): Unit /* this */
-    fun addListener(event: DuplexEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun addListener(event: DuplexEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
     fun addListener(event: DuplexEvent.FINISH, listener: () -> Unit): Unit /* this */
     fun addListener(event: DuplexEvent.PAUSE, listener: () -> Unit): Unit /* this */
     fun addListener(event: DuplexEvent.PIPE, listener: (src: Readable) -> Unit): Unit /* this */
@@ -111,7 +112,7 @@ Writable {
     fun emit(event: DuplexEvent.DATA, chunk: Any?): Boolean
     fun emit(event: DuplexEvent.DRAIN): Boolean
     fun emit(event: DuplexEvent.END): Boolean
-    fun emit(event: DuplexEvent.ERROR, err: Throwable /* JsError */): Boolean
+    fun emit(event: DuplexEvent.ERROR, err: JsError): Boolean
     fun emit(event: DuplexEvent.FINISH): Boolean
     fun emit(event: DuplexEvent.PAUSE): Boolean
     fun emit(event: DuplexEvent.PIPE, src: Readable): Boolean
@@ -125,7 +126,7 @@ Writable {
     fun on(event: DuplexEvent.DATA, listener: (chunk: Any?) -> Unit): Unit /* this */
     fun on(event: DuplexEvent.DRAIN, listener: () -> Unit): Unit /* this */
     fun on(event: DuplexEvent.END, listener: () -> Unit): Unit /* this */
-    fun on(event: DuplexEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun on(event: DuplexEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
     fun on(event: DuplexEvent.FINISH, listener: () -> Unit): Unit /* this */
     fun on(event: DuplexEvent.PAUSE, listener: () -> Unit): Unit /* this */
     fun on(event: DuplexEvent.PIPE, listener: (src: Readable) -> Unit): Unit /* this */
@@ -139,7 +140,7 @@ Writable {
     fun once(event: DuplexEvent.DATA, listener: (chunk: Any?) -> Unit): Unit /* this */
     fun once(event: DuplexEvent.DRAIN, listener: () -> Unit): Unit /* this */
     fun once(event: DuplexEvent.END, listener: () -> Unit): Unit /* this */
-    fun once(event: DuplexEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun once(event: DuplexEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
     fun once(event: DuplexEvent.FINISH, listener: () -> Unit): Unit /* this */
     fun once(event: DuplexEvent.PAUSE, listener: () -> Unit): Unit /* this */
     fun once(event: DuplexEvent.PIPE, listener: (src: Readable) -> Unit): Unit /* this */
@@ -153,7 +154,7 @@ Writable {
     fun prependListener(event: DuplexEvent.DATA, listener: (chunk: Any?) -> Unit): Unit /* this */
     fun prependListener(event: DuplexEvent.DRAIN, listener: () -> Unit): Unit /* this */
     fun prependListener(event: DuplexEvent.END, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: DuplexEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun prependListener(event: DuplexEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
     fun prependListener(event: DuplexEvent.FINISH, listener: () -> Unit): Unit /* this */
     fun prependListener(event: DuplexEvent.PAUSE, listener: () -> Unit): Unit /* this */
     fun prependListener(event: DuplexEvent.PIPE, listener: (src: Readable) -> Unit): Unit /* this */
@@ -174,7 +175,7 @@ Writable {
     fun prependOnceListener(event: DuplexEvent.DATA, listener: (chunk: Any?) -> Unit): Unit /* this */
     fun prependOnceListener(event: DuplexEvent.DRAIN, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(event: DuplexEvent.END, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: DuplexEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun prependOnceListener(event: DuplexEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
     fun prependOnceListener(event: DuplexEvent.FINISH, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(event: DuplexEvent.PAUSE, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(event: DuplexEvent.PIPE, listener: (src: Readable) -> Unit): Unit /* this */
@@ -195,7 +196,7 @@ Writable {
     fun removeListener(event: DuplexEvent.DATA, listener: (chunk: Any?) -> Unit): Unit /* this */
     fun removeListener(event: DuplexEvent.DRAIN, listener: () -> Unit): Unit /* this */
     fun removeListener(event: DuplexEvent.END, listener: () -> Unit): Unit /* this */
-    fun removeListener(event: DuplexEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun removeListener(event: DuplexEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
     fun removeListener(event: DuplexEvent.FINISH, listener: () -> Unit): Unit /* this */
     fun removeListener(event: DuplexEvent.PAUSE, listener: () -> Unit): Unit /* this */
     fun removeListener(event: DuplexEvent.PIPE, listener: (src: Readable) -> Unit): Unit /* this */
@@ -210,8 +211,8 @@ Writable {
     ): Unit /* this */
 
     override var destroyed: Boolean
-    override val _construct: ((callback: (error: Throwable /* JsError */? /* use undefined for default */) -> Unit) -> Unit)?
-    override fun destroy(error: Throwable /* JsError */): Unit /* this */
+    override val _construct: ((callback: (error: JsError? /* use undefined for default */) -> Unit) -> Unit)?
+    override fun destroy(error: JsError): Unit /* this */
     override fun destroy(): Unit /* this */
 
     companion object {
