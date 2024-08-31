@@ -5,7 +5,7 @@
 package electron.core
 
 import node.buffer.Buffer
-import kotlin.js.Promise
+import js.promise.Promise
 
 external class NativeImage {
     /**

@@ -2,7 +2,7 @@
 
 package electron.core
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 external interface ContentTracing {
 // Docs: https://electronjs.org/docs/api/content-tracing

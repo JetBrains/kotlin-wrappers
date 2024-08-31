@@ -23,7 +23,7 @@
             "node.buffer.Buffer"
         ],
         "App.kt": [
-            "kotlin.js.Promise"
+            "js.promise.Promise"
         ],
         "AutoUpdater.kt": [
             "js.date.Date"
@@ -32,7 +32,7 @@
             "js.date.Date"
         ],
         "BrowserWindow.kt": [
-            "kotlin.js.Promise",
+            "js.promise.Promise",
             "node.buffer.Buffer",
             "node.events.EventEmitter as NodeEventEmitter"
         ],
@@ -44,27 +44,27 @@
             "node.buffer.Buffer"
         ],
         "ContentTracing.kt": [
-            "kotlin.js.Promise"
+            "js.promise.Promise"
         ],
         "Cookies.kt": [
-            "kotlin.js.Promise",
+            "js.promise.Promise",
             "node.events.EventEmitter as NodeEventEmitter"
         ],
         "CrashReport.kt": [
             "js.date.Date"
         ],
         "Debugger.kt": [
-            "kotlin.js.Promise",
+            "js.promise.Promise",
             "node.events.EventEmitter as NodeEventEmitter"
         ],
         "DesktopCapturer.kt": [
-            "kotlin.js.Promise"
+            "js.promise.Promise"
         ],
         "Dialog.kt": [
-            "kotlin.js.Promise"
+            "js.promise.Promise"
         ],
         "Dock.kt": [
-            "kotlin.js.Promise"
+            "js.promise.Promise"
         ],
         "DOMEvent.kt": [
             "web.events.Event",
@@ -82,10 +82,10 @@
             "node.buffer.Buffer"
         ],
         "InAppPurchase.kt": [
-            "kotlin.js.Promise"
+            "js.promise.Promise"
         ],
         "IpcRenderer.kt": [
-            "kotlin.js.Promise",
+            "js.promise.Promise",
             "web.messaging.MessagePort"
         ],
         "IpcRendererEvent.kt": [
@@ -113,17 +113,17 @@
             "node.buffer.Buffer"
         ],
         "NativeImage.kt": [
-            "kotlin.js.Promise",
+            "js.promise.Promise",
             "node.buffer.Buffer"
         ],
         "Net.kt": [
-            "kotlin.js.Promise"
+            "js.promise.Promise"
         ],
         "NetFetchInit.kt": [
             "web.http.RequestInit"
         ],
         "NetLog.kt": [
-            "kotlin.js.Promise"
+            "js.promise.Promise"
         ],
         "Notification.kt": [
             "node.events.EventEmitter as NodeEventEmitter"
@@ -132,7 +132,7 @@
             "node.process.Process"
         ],
         "PushNotifications.kt": [
-            "kotlin.js.Promise"
+            "js.promise.Promise"
         ],
         "SafeStorage.kt": [
             "node.buffer.Buffer"
@@ -141,7 +141,7 @@
             "node.events.EventEmitter as NodeEventEmitter"
         ],
         "Session.kt": [
-            "kotlin.js.Promise",
+            "js.promise.Promise",
             "node.buffer.Buffer",
             "node.events.EventEmitter as NodeEventEmitter"
         ],
@@ -149,10 +149,10 @@
             "web.http.RequestInit"
         ],
         "Shell.kt": [
-            "kotlin.js.Promise"
+            "js.promise.Promise"
         ],
         "SystemPreferences.kt": [
-            "kotlin.js.Promise"
+            "js.promise.Promise"
         ],
         "TouchBarColorPicker.kt": [
             "node.events.EventEmitter as NodeEventEmitter"
@@ -195,19 +195,19 @@
             "node.events.EventEmitter as NodeEventEmitter"
         ],
         "WebContents.kt": [
-            "kotlin.js.Promise",
+            "js.promise.Promise",
             "node.buffer.Buffer",
             "node.events.EventEmitter as NodeEventEmitter"
         ],
         "WebFrame.kt": [
-            "kotlin.js.Promise"
+            "js.promise.Promise"
         ],
         "WebFrameMain.kt": [
-            "kotlin.js.Promise",
+            "js.promise.Promise",
             "node.events.EventEmitter as NodeEventEmitter"
         ],
         "WebviewTag.kt": [
-            "kotlin.js.Promise",
+            "js.promise.Promise",
             "js.typedarrays.Uint8Array",
             "web.html.HTMLElement"
         ],

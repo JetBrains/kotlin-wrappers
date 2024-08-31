@@ -2,7 +2,7 @@
 
 package electron.core
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 external interface SystemPreferences : node.events.EventEmitter {

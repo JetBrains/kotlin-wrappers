@@ -4,7 +4,7 @@
 
 package electron.core
 
-import kotlin.js.Promise
+import js.promise.Promise
 import node.events.EventEmitter as NodeEventEmitter
 
 external class WebFrameMain : NodeEventEmitter {

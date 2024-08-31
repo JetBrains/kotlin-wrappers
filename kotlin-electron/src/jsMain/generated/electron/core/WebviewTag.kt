@@ -4,7 +4,7 @@ package electron.core
 
 import js.typedarrays.Uint8Array
 import web.html.HTMLElement
-import kotlin.js.Promise
+import js.promise.Promise
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 external interface WebviewTag : HTMLElement {

@@ -3,7 +3,7 @@
 package electron.core
 
 import web.messaging.MessagePort
-import kotlin.js.Promise
+import js.promise.Promise
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 external interface IpcRenderer : node.events.EventEmitter {
