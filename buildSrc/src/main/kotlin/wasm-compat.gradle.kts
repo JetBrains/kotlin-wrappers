@@ -77,7 +77,7 @@ fun applyPromisePatch(
 fun applyJsErrorPatch(
     content: String,
 ): String {
-    if (": Throwable /* JsError */" in content) {
+    if (": Throwable /* JsError */" in content || ": Throwable, /* JsError */" in content) {
         val afterPackage = content
             .substringAfter("\npackage ")
             .substringAfter("\n")
@@ -89,6 +89,10 @@ fun applyJsErrorPatch(
             )
             .replace(
                 ": Throwable /* JsError */",
+                ": JsError",
+            )
+            .replace(
+                ": Throwable, /* JsError */",
                 ": JsError",
             )
     }
