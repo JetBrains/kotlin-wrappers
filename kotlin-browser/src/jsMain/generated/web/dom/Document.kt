@@ -7,6 +7,7 @@ import js.promise.Promise
 import seskar.js.JsAsync
 import web.animations.DocumentTimeline
 import web.cssom.ViewTransition
+import web.cssom.ViewTransitionUpdateCallback
 import web.events.Event
 import web.events.EventHandler
 import web.fonts.FontFaceSource
@@ -581,7 +582,7 @@ open external class Document :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/startViewTransition)
      */
-    fun startViewTransition(callbackOptions: UpdateCallback = definedExternally): ViewTransition
+    fun startViewTransition(callbackOptions: ViewTransitionUpdateCallback = definedExternally): ViewTransition
 
     /**
      * Writes one or more HTML expressions to a document in the specified window.
