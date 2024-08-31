@@ -1,5 +1,5 @@
 plugins {
-    `node-conventions`
+    `tools-conventions`
 }
 
 tasks.wrapper {
