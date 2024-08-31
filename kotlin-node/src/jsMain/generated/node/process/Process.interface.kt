@@ -369,7 +369,7 @@ sealed external interface Process : EventEmitter {
     fun emitWarning(warning: String, type: String = definedExternally, ctor: Function<*> = definedExternally): Unit
 
     fun emitWarning(
-        warning: JsError
+        warning: JsError,
         type: String = definedExternally,
         ctor: Function<*> = definedExternally,
     ): Unit
@@ -379,10 +379,10 @@ sealed external interface Process : EventEmitter {
         type: String = definedExternally,
         code: String = definedExternally,
         ctor: Function<*> = definedExternally,
-    ): Unit
+    )
 
     fun emitWarning(
-        warning: JsError
+        warning: JsError,
         type: String = definedExternally,
         code: String = definedExternally,
         ctor: Function<*> = definedExternally,
