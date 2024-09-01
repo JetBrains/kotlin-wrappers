@@ -4,9 +4,7 @@
 
 package electron.core
 
-import node.events.EventEmitter as NodeEventEmitter
-
-external class TouchBarLabel : NodeEventEmitter {
+external class TouchBarLabel {
 // Docs: https://electronjs.org/docs/api/touch-bar-label
     /**
      * TouchBarLabel

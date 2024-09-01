@@ -2,7 +2,6 @@
 
 package electron.core
 
-import js.core.Void
 import js.promise.Promise
 
 external interface ContentTracing {
@@ -43,7 +42,7 @@ external interface ContentTracing {
      * If a recording is already running, the promise will be immediately resolved, as
      * only one trace operation can be in progress at a time.
      */
-    fun startRecording(options: TraceConfig): Promise<Void>
+    fun startRecording(options: TraceConfig): Promise<js.core.Void>
 
     /**
      * resolved once all child processes have acknowledged the `startRecording`
@@ -57,7 +56,7 @@ external interface ContentTracing {
      * If a recording is already running, the promise will be immediately resolved, as
      * only one trace operation can be in progress at a time.
      */
-    fun startRecording(options: TraceCategoriesAndOptions): Promise<Void>
+    fun startRecording(options: TraceCategoriesAndOptions): Promise<js.core.Void>
 
     /**
      * resolves with a path to a file that contains the traced data once all child

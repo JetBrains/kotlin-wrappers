@@ -4,9 +4,7 @@
 
 package electron.core
 
-import node.events.EventEmitter as NodeEventEmitter
-
-open external class MessageChannelMain : NodeEventEmitter {
+open external class MessageChannelMain {
 // Docs: https://electronjs.org/docs/api/message-channel-main
     /**
      * A `MessagePortMain` property.

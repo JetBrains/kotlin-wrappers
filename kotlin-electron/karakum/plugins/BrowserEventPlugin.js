@@ -190,7 +190,7 @@ export default {
             const name = `${events.containerName}Event`
 
             const legacyCompanionBody = Array.from(events.eventInfo.entries())
-                .map(([eventName, { comment, parameters, typeParameters }]) => {
+                .map(([eventName, { comment, parameters }]) => {
                     const key = karakum.constIdentifier(eventName)
 
                     const payload = parameters
@@ -201,19 +201,11 @@ export default {
                         ))
                         .join(", ")
 
-                    const fullTypeParameters = typeParameters
-                        .map(() => "*")
-                        .join(", ")
-
-                    const targetReference = fullTypeParameters !== ""
-                        ? `${events.containerName}<${fullTypeParameters}>`
-                        : events.containerName
-
                     return (
                         `
 ${comment}
 @seskar.js.JsValue("${eventName}")
-val ${key}: web.events.EventType<${payload}, ${targetReference}>
+val ${key}: web.events.EventType<${payload}>
                         `.trim()
                     );
                 })
@@ -236,23 +228,11 @@ val ${key}: web.events.EventType<${payload}, ${targetReference}>
                         .map(([, declaration]) => render(declaration))
                         .join(", ")
 
-                    const fullTypeParameters = typeParameterNodes
-                        .map(typeParameter => (
-                            typeParameter
-                                ? render(typeParameter[0])
-                                : "*"
-                        ))
-                        .join(", ")
-
-                    const targetReference = fullTypeParameters !== ""
-                        ? `${events.containerName}<${fullTypeParameters}>`
-                        : events.containerName
-
                     return (
                         `
 ${comment}
 @seskar.js.JsValue("${eventName}")
-fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${key}(): web.events.EventType<${payload}, ${targetReference}>
+fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${key}(): web.events.EventType<${payload}>
                         `.trim()
                     );
                 })

@@ -3,7 +3,6 @@
 package electron.core
 
 import js.date.Date
-import js.errors.JsError
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 external interface AutoUpdater : node.events.EventEmitter {
@@ -26,7 +25,7 @@ external interface AutoUpdater : node.events.EventEmitter {
     /**
      * Emitted when there is an error while updating.
      */
-    fun on(event: AutoUpdaterEvent.ERROR, listener: (error: JsError) -> Unit) /* this */
+    fun on(event: AutoUpdaterEvent.ERROR, listener: (error: js.errors.JsError) -> Unit): Unit /* this */
 
     /**
      * Emitted when there is an available update. The update is downloaded
@@ -53,7 +52,7 @@ external interface AutoUpdater : node.events.EventEmitter {
     fun on(event: AutoUpdaterEvent.UPDATE_NOT_AVAILABLE, listener: Function<Unit>): Unit /* this */
     fun off(event: AutoUpdaterEvent.BEFORE_QUIT_FOR_UPDATE, listener: Function<Unit>): Unit /* this */
     fun off(event: AutoUpdaterEvent.CHECKING_FOR_UPDATE, listener: Function<Unit>): Unit /* this */
-    fun off(event: AutoUpdaterEvent.ERROR, listener: (error: JsError) -> Unit): Unit /* this */
+    fun off(event: AutoUpdaterEvent.ERROR, listener: (error: js.errors.JsError) -> Unit): Unit /* this */
     fun off(event: AutoUpdaterEvent.UPDATE_AVAILABLE, listener: Function<Unit>): Unit /* this */
     fun off(
         event: AutoUpdaterEvent.UPDATE_DOWNLOADED,
@@ -63,7 +62,7 @@ external interface AutoUpdater : node.events.EventEmitter {
     fun off(event: AutoUpdaterEvent.UPDATE_NOT_AVAILABLE, listener: Function<Unit>): Unit /* this */
     fun once(event: AutoUpdaterEvent.BEFORE_QUIT_FOR_UPDATE, listener: Function<Unit>): Unit /* this */
     fun once(event: AutoUpdaterEvent.CHECKING_FOR_UPDATE, listener: Function<Unit>): Unit /* this */
-    fun once(event: AutoUpdaterEvent.ERROR, listener: (error: JsError) -> Unit): Unit /* this */
+    fun once(event: AutoUpdaterEvent.ERROR, listener: (error: js.errors.JsError) -> Unit): Unit /* this */
     fun once(event: AutoUpdaterEvent.UPDATE_AVAILABLE, listener: Function<Unit>): Unit /* this */
     fun once(
         event: AutoUpdaterEvent.UPDATE_DOWNLOADED,
@@ -73,7 +72,7 @@ external interface AutoUpdater : node.events.EventEmitter {
     fun once(event: AutoUpdaterEvent.UPDATE_NOT_AVAILABLE, listener: Function<Unit>): Unit /* this */
     fun addListener(event: AutoUpdaterEvent.BEFORE_QUIT_FOR_UPDATE, listener: Function<Unit>): Unit /* this */
     fun addListener(event: AutoUpdaterEvent.CHECKING_FOR_UPDATE, listener: Function<Unit>): Unit /* this */
-    fun addListener(event: AutoUpdaterEvent.ERROR, listener: (error: JsError) -> Unit): Unit /* this */
+    fun addListener(event: AutoUpdaterEvent.ERROR, listener: (error: js.errors.JsError) -> Unit): Unit /* this */
     fun addListener(event: AutoUpdaterEvent.UPDATE_AVAILABLE, listener: Function<Unit>): Unit /* this */
     fun addListener(
         event: AutoUpdaterEvent.UPDATE_DOWNLOADED,
@@ -83,11 +82,7 @@ external interface AutoUpdater : node.events.EventEmitter {
     fun addListener(event: AutoUpdaterEvent.UPDATE_NOT_AVAILABLE, listener: Function<Unit>): Unit /* this */
     fun removeListener(event: AutoUpdaterEvent.BEFORE_QUIT_FOR_UPDATE, listener: Function<Unit>): Unit /* this */
     fun removeListener(event: AutoUpdaterEvent.CHECKING_FOR_UPDATE, listener: Function<Unit>): Unit /* this */
-    fun removeListener(
-        event: AutoUpdaterEvent.ERROR,
-        listener: (error: JsError) -> Unit,
-    ): Unit /* this */
-
+    fun removeListener(event: AutoUpdaterEvent.ERROR, listener: (error: js.errors.JsError) -> Unit): Unit /* this */
     fun removeListener(event: AutoUpdaterEvent.UPDATE_AVAILABLE, listener: Function<Unit>): Unit /* this */
     fun removeListener(
         event: AutoUpdaterEvent.UPDATE_DOWNLOADED,

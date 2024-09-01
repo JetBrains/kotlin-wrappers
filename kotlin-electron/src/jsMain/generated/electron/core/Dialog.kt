@@ -2,7 +2,6 @@
 
 package electron.core
 
-import js.core.Void
 import js.promise.Promise
 
 external interface Dialog {
@@ -24,7 +23,10 @@ external interface Dialog {
      *
      * @platform darwin,win32
      */
-    fun showCertificateTrustDialog(browserWindow: BrowserWindow, options: CertificateTrustDialogOptions): Promise<Void>
+    fun showCertificateTrustDialog(
+        browserWindow: BrowserWindow,
+        options: CertificateTrustDialogOptions,
+    ): Promise<js.core.Void>
 
     /**
      * resolves when the certificate trust dialog is shown.
@@ -43,7 +45,7 @@ external interface Dialog {
      *
      * @platform darwin,win32
      */
-    fun showCertificateTrustDialog(options: CertificateTrustDialogOptions): Promise<Void>
+    fun showCertificateTrustDialog(options: CertificateTrustDialogOptions): Promise<js.core.Void>
 
     /**
      * Displays a modal dialog that shows an error message.
@@ -208,8 +210,7 @@ external interface Dialog {
      * Resolve with an object containing the following:
      *
      * * `canceled` boolean - whether or not the dialog was canceled.
-     * * `filePath` string (optional) - If the dialog is canceled, this will be
-     * `undefined`.
+     * * `filePath` string - If the dialog is canceled, this will be an empty string.
      * * `bookmark` string (optional) _macOS_ _mas_ - Base64 encoded string which
      * contains the security scoped bookmark data for the saved file.
      * `securityScopedBookmarks` must be enabled for this to be present. (For return
@@ -230,8 +231,7 @@ external interface Dialog {
      * Resolve with an object containing the following:
      *
      * * `canceled` boolean - whether or not the dialog was canceled.
-     * * `filePath` string (optional) - If the dialog is canceled, this will be
-     * `undefined`.
+     * * `filePath` string - If the dialog is canceled, this will be an empty string.
      * * `bookmark` string (optional) _macOS_ _mas_ - Base64 encoded string which
      * contains the security scoped bookmark data for the saved file.
      * `securityScopedBookmarks` must be enabled for this to be present. (For return
@@ -250,7 +250,7 @@ external interface Dialog {
 
     /**
      * the path of the file chosen by the user; if the dialog is cancelled it returns
-     * `undefined`.
+     * an empty string.
      *
      * The `browserWindow` argument allows the dialog to attach itself to a parent
      * window, making it modal.
@@ -258,11 +258,11 @@ external interface Dialog {
      * The `filters` specifies an array of file types that can be displayed, see
      * `dialog.showOpenDialog` for an example.
      */
-    fun showSaveDialogSync(browserWindow: BrowserWindow, options: SaveDialogSyncOptions): String?
+    fun showSaveDialogSync(browserWindow: BrowserWindow, options: SaveDialogSyncOptions): String
 
     /**
      * the path of the file chosen by the user; if the dialog is cancelled it returns
-     * `undefined`.
+     * an empty string.
      *
      * The `browserWindow` argument allows the dialog to attach itself to a parent
      * window, making it modal.
@@ -270,5 +270,5 @@ external interface Dialog {
      * The `filters` specifies an array of file types that can be displayed, see
      * `dialog.showOpenDialog` for an example.
      */
-    fun showSaveDialogSync(options: SaveDialogSyncOptions): String?
+    fun showSaveDialogSync(options: SaveDialogSyncOptions): String
 }

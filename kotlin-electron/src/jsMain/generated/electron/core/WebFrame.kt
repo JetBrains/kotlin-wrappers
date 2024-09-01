@@ -2,8 +2,6 @@
 
 package electron.core
 
-import js.errors.JsError
-
 import js.promise.Promise
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
@@ -34,7 +32,7 @@ external interface WebFrame {
     fun executeJavaScript(
         code: String,
         userGesture: Boolean = definedExternally,
-        callback: (result: Any?, error: JsError) -> Unit = definedExternally,
+        callback: (result: Any?, error: js.errors.JsError) -> Unit = definedExternally,
     ): Promise<Any?>
 
     /**
@@ -51,7 +49,7 @@ external interface WebFrame {
         worldId: Double,
         scripts: js.array.ReadonlyArray<WebSource>,
         userGesture: Boolean = definedExternally,
-        callback: (result: Any?, error: JsError) -> Unit = definedExternally,
+        callback: (result: Any?, error: js.errors.JsError) -> Unit = definedExternally,
     ): Promise<Any?>
 
     /**

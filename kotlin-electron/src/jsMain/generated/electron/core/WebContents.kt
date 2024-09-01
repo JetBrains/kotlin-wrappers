@@ -4,8 +4,6 @@
 
 package electron.core
 
-import js.core.Void
-import js.errors.JsError
 import js.promise.Promise
 import node.buffer.Buffer
 import node.events.EventEmitter as NodeEventEmitter
@@ -555,7 +553,7 @@ external class WebContents : NodeEventEmitter {
      */
     fun on(
         event: WebContentsEvent.PRELOAD_ERROR,
-        listener: (event: Event<*>, preloadPath: String, error: JsError) -> Unit,
+        listener: (event: Event<*>, preloadPath: String, error: js.errors.JsError) -> Unit,
     ): Unit /* this */
 
     /**
@@ -1080,7 +1078,7 @@ external class WebContents : NodeEventEmitter {
 
     fun off(
         event: WebContentsEvent.PRELOAD_ERROR,
-        listener: (event: Event<*>, preloadPath: String, error: JsError) -> Unit,
+        listener: (event: Event<*>, preloadPath: String, error: js.errors.JsError) -> Unit,
     ): Unit /* this */
 
     fun off(
@@ -1511,7 +1509,7 @@ external class WebContents : NodeEventEmitter {
 
     fun once(
         event: WebContentsEvent.PRELOAD_ERROR,
-        listener: (event: Event<*>, preloadPath: String, error: JsError) -> Unit,
+        listener: (event: Event<*>, preloadPath: String, error: js.errors.JsError) -> Unit,
     ): Unit /* this */
 
     fun once(
@@ -1942,7 +1940,7 @@ external class WebContents : NodeEventEmitter {
 
     fun addListener(
         event: WebContentsEvent.PRELOAD_ERROR,
-        listener: (event: Event<*>, preloadPath: String, error: JsError) -> Unit,
+        listener: (event: Event<*>, preloadPath: String, error: js.errors.JsError) -> Unit,
     ): Unit /* this */
 
     fun addListener(
@@ -2373,7 +2371,7 @@ external class WebContents : NodeEventEmitter {
 
     fun removeListener(
         event: WebContentsEvent.PRELOAD_ERROR,
-        listener: (event: Event<*>, preloadPath: String, error: JsError) -> Unit,
+        listener: (event: Event<*>, preloadPath: String, error: js.errors.JsError) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
@@ -2812,7 +2810,7 @@ external class WebContents : NodeEventEmitter {
     /**
      * Inserts `text` to the focused element.
      */
-    fun insertText(text: String): Promise<Void>
+    fun insertText(text: String): Promise<js.core.Void>
 
     /**
      * Starts inspecting element at position (`x`, `y`).
@@ -2920,7 +2918,7 @@ external class WebContents : NodeEventEmitter {
      *
      * Would require code like this
      */
-    fun loadFile(filePath: String, options: LoadFileOptions = definedExternally): Promise<Void>
+    fun loadFile(filePath: String, options: LoadFileOptions = definedExternally): Promise<js.core.Void>
 
     /**
      * the promise will resolve when the page has finished loading (see
@@ -2932,7 +2930,7 @@ external class WebContents : NodeEventEmitter {
      * the `http://` or `file://`. If the load should bypass http cache then use the
      * `pragma` header to achieve it.
      */
-    fun loadURL(url: String, options: LoadURLOptions = definedExternally): Promise<Void>
+    fun loadURL(url: String, options: LoadURLOptions = definedExternally): Promise<js.core.Void>
 
     /**
      * Opens the devtools.
@@ -3024,7 +3022,7 @@ external class WebContents : NodeEventEmitter {
      * Removes the inserted CSS from the current web page. The stylesheet is identified
      * by its key, which is returned from `contents.insertCSS(css)`.
      */
-    fun removeInsertedCSS(key: String): Promise<Void>
+    fun removeInsertedCSS(key: String): Promise<js.core.Void>
 
     /**
      * Removes the specified path from DevTools workspace.
@@ -3044,7 +3042,7 @@ external class WebContents : NodeEventEmitter {
     /**
      * resolves if the page is saved.
      */
-    fun savePage(fullPath: String, saveType: WebContentsSavePageSaveType): Promise<Void>
+    fun savePage(fullPath: String, saveType: WebContentsSavePageSaveType): Promise<js.core.Void>
 
     /**
      * Scrolls to the bottom of the current `webContents`.
@@ -3207,7 +3205,7 @@ external class WebContents : NodeEventEmitter {
      * > **NOTE**: Visual zoom is disabled by default in Electron. To re-enable it,
      * call:
      */
-    fun setVisualZoomLevelLimits(minimumLevel: Double, maximumLevel: Double): Promise<Void>
+    fun setVisualZoomLevelLimits(minimumLevel: Double, maximumLevel: Double): Promise<js.core.Void>
 
     /**
      * Setting the WebRTC IP handling policy allows you to control which IPs are
@@ -3299,7 +3297,7 @@ external class WebContents : NodeEventEmitter {
      *
      * Takes a V8 heap snapshot and saves it to `filePath`.
      */
-    fun takeHeapSnapshot(filePath: String): Promise<Void>
+    fun takeHeapSnapshot(filePath: String): Promise<js.core.Void>
 
     /**
      * Toggles the developer tools.
@@ -3401,6 +3399,12 @@ external class WebContents : NodeEventEmitter {
      *
      */
     val mainFrame: WebFrameMain
+
+    /**
+     * A `NavigationHistory` used by this webContents.
+     *
+     */
+    val navigationHistory: NavigationHistory
 
     /**
      * A `WebFrameMain` property that represents the frame that opened this

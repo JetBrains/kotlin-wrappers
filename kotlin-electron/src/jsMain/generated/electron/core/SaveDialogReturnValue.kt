@@ -9,9 +9,9 @@ external interface SaveDialogReturnValue {
     var canceled: Boolean
 
     /**
-     * If the dialog is canceled, this will be `undefined`.
+     * If the dialog is canceled, this will be an empty string.
      */
-    var filePath: String?
+    var filePath: String
 
     /**
      * Base64 encoded string which contains the security scoped bookmark data for the

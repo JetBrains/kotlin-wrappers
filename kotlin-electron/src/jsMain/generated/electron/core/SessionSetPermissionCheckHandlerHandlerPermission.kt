@@ -46,6 +46,12 @@ sealed external interface SessionSetPermissionCheckHandlerHandlerPermission {
         @seskar.js.JsValue("serial")
         val serial: SessionSetPermissionCheckHandlerHandlerPermission
 
+        @seskar.js.JsValue("storage-access")
+        val storageAccess: SessionSetPermissionCheckHandlerHandlerPermission
+
+        @seskar.js.JsValue("top-level-storage-access")
+        val topLevelStorageAccess: SessionSetPermissionCheckHandlerHandlerPermission
+
         @seskar.js.JsValue("usb")
         val usb: SessionSetPermissionCheckHandlerHandlerPermission
     }

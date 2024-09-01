@@ -48,7 +48,8 @@ external interface AboutPanelOptionsOptions {
 
     /**
      * Path to the app's icon in a JPEG or PNG file format. On Linux, will be shown as
-     * 64x64 pixels while retaining aspect ratio.
+     * 64x64 pixels while retaining aspect ratio. On Windows, a 48x48 PNG will result
+     * in the best visual quality.
      *
      * @platform linux,win32
      */

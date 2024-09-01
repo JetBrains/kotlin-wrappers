@@ -7,7 +7,7 @@ export default function (node) {
         && node.typeName.text === "Error"
     ) {
 
-        return "Throwable /* JsError */"
+        return "js.errors.JsError"
     }
     if (
         ts.isExpressionWithTypeArguments(node)
@@ -15,7 +15,7 @@ export default function (node) {
         && node.expression.text === "Error"
     ) {
 
-        return "Throwable /* JsError */"
+        return "js.errors.JsError"
     }
     return null
 }

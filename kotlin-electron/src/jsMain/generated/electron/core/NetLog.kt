@@ -2,7 +2,6 @@
 
 package electron.core
 
-import js.core.Void
 import js.promise.Promise
 
 external interface NetLog {
@@ -12,7 +11,7 @@ external interface NetLog {
      *
      * Starts recording network events to `path`.
      */
-    fun startLogging(path: String, options: StartLoggingOptions = definedExternally): Promise<Void>
+    fun startLogging(path: String, options: StartLoggingOptions = definedExternally): Promise<js.core.Void>
 
     /**
      * resolves when the net log has been flushed to disk.
@@ -20,7 +19,7 @@ external interface NetLog {
      * Stops recording network events. If not called, net logging will automatically
      * end when app quits.
      */
-    fun stopLogging(): Promise<Void>
+    fun stopLogging(): Promise<js.core.Void>
 
     /**
      * A `boolean` property that indicates whether network logs are currently being

@@ -2,7 +2,6 @@
 
 package electron.core
 
-import js.core.Void
 import js.promise.Promise
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
@@ -1525,9 +1524,8 @@ external interface App : node.events.EventEmitter {
      * * `openAtLogin` boolean - `true` if the app is set to open at login.
      * * `openAsHidden` boolean _macOS_ _Deprecated_ - `true` if the app is set to open
      * as hidden at login. This does not work on macOS 13 and up.
-     * * `wasOpenedAtLogin` boolean _macOS_ _Deprecated_ - `true` if the app was opened
-     * at login automatically. This setting is not available on MAS builds or on macOS
-     * 13 and up.
+     * * `wasOpenedAtLogin` boolean _macOS_ - `true` if the app was opened at login
+     * automatically.
      * * `wasOpenedAsHidden` boolean _macOS_ _Deprecated_ - `true` if the app was
      * opened as a hidden login item. This indicates that the app should not open any
      * windows at startup. This setting is not available on MAS builds or on macOS 13
@@ -2140,7 +2138,7 @@ external interface App : node.events.EventEmitter {
      * to checking `app.isReady()` and subscribing to the `ready` event if the app is
      * not ready yet.
      */
-    fun whenReady(): Promise<Void>
+    fun whenReady(): Promise<js.core.Void>
 
     /**
      * A `boolean` property that's `true` if Chrome's accessibility support is enabled,

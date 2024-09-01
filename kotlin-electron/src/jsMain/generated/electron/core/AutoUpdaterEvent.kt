@@ -39,7 +39,7 @@ sealed external interface AutoUpdaterEvent {
         fun checkingForUpdate(): node.events.EventType<AutoUpdater, js.array.JsTuple>
 
         @seskar.js.JsValue("error")
-        fun error(): node.events.EventType<AutoUpdater, js.array.JsTuple1<Throwable /* JsError */>>
+        fun error(): node.events.EventType<AutoUpdater, js.array.JsTuple1<js.errors.JsError>>
 
         @seskar.js.JsValue("update-available")
         fun updateAvailable(): node.events.EventType<AutoUpdater, js.array.JsTuple>

@@ -4,9 +4,7 @@
 
 package electron.core
 
-import node.events.EventEmitter as NodeEventEmitter
-
-external class TouchBarSegmentedControl : NodeEventEmitter {
+external class TouchBarSegmentedControl {
 // Docs: https://electronjs.org/docs/api/touch-bar-segmented-control
     /**
      * TouchBarSegmentedControl

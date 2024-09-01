@@ -4,9 +4,7 @@
 
 package electron.core
 
-import node.events.EventEmitter as NodeEventEmitter
-
-external class TouchBarSlider : NodeEventEmitter {
+external class TouchBarSlider {
 // Docs: https://electronjs.org/docs/api/touch-bar-slider
     /**
      * TouchBarSlider

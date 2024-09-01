@@ -4,8 +4,7 @@ package electron.core
 
 import node.buffer.Buffer
 
-@Suppress("INTERFACE_WITH_SUPERCLASS")
-external interface SafeStorage : node.events.EventEmitter {
+external interface SafeStorage {
 // Docs: https://electronjs.org/docs/api/safe-storage
     /**
      * the decrypted string. Decrypts the encrypted buffer obtained  with

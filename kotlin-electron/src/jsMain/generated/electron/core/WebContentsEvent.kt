@@ -374,7 +374,7 @@ sealed external interface WebContentsEvent {
         fun preferredSizeChanged(): node.events.EventType<WebContents, js.array.JsTuple2<Event<*>, Size>>
 
         @seskar.js.JsValue("preload-error")
-        fun preloadError(): node.events.EventType<WebContents, js.array.JsTuple3<Event<*>, String, Throwable /* JsError */>>
+        fun preloadError(): node.events.EventType<WebContents, js.array.JsTuple3<Event<*>, String, js.errors.JsError>>
 
         @seskar.js.JsValue("render-process-gone")
         fun renderProcessGone(): node.events.EventType<WebContents, js.array.JsTuple2<Event<*>, RenderProcessGoneDetails>>

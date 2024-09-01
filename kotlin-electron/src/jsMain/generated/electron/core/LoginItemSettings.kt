@@ -18,10 +18,8 @@ external interface LoginItemSettings {
     var openAsHidden: Boolean
 
     /**
-     * `true` if the app was opened at login automatically. This setting is not
-     * available on MAS builds or on macOS 13 and up.
+     * `true` if the app was opened at login automatically.
      *
-     * @deprecated
      * @platform darwin
      */
     var wasOpenedAtLogin: Boolean

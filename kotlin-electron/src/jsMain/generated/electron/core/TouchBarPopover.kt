@@ -4,9 +4,7 @@
 
 package electron.core
 
-import node.events.EventEmitter as NodeEventEmitter
-
-external class TouchBarPopover : NodeEventEmitter {
+external class TouchBarPopover {
 // Docs: https://electronjs.org/docs/api/touch-bar-popover
     /**
      * TouchBarPopover

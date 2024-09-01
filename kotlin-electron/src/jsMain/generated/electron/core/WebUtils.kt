@@ -2,8 +2,7 @@
 
 package electron.core
 
-@Suppress("INTERFACE_WITH_SUPERCLASS")
-external interface WebUtils : node.events.EventEmitter {
+external interface WebUtils {
 // Docs: https://electronjs.org/docs/api/web-utils
     /**
      * The file system path that this `File` object points to. In the case where the

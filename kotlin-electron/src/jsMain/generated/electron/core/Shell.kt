@@ -2,7 +2,6 @@
 
 package electron.core
 
-import js.core.Void
 import js.promise.Promise
 
 external interface Shell {
@@ -16,7 +15,7 @@ external interface Shell {
      * Open the given external protocol URL in the desktop's default manner. (For
      * example, mailto: URLs in the user's default mail agent).
      */
-    fun openExternal(url: String, options: OpenExternalOptions = definedExternally): Promise<Void>
+    fun openExternal(url: String, options: OpenExternalOptions = definedExternally): Promise<js.core.Void>
 
     /**
      * Resolves with a string containing the error message corresponding to the failure
@@ -47,7 +46,7 @@ external interface Shell {
      * This moves a path to the OS-specific trash location (Trash on macOS, Recycle Bin
      * on Windows, and a desktop-environment-specific location on Linux).
      */
-    fun trashItem(path: String): Promise<Void>
+    fun trashItem(path: String): Promise<js.core.Void>
 
     /**
      * Whether the shortcut was created successfully.

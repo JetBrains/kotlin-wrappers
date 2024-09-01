@@ -4,9 +4,7 @@
 
 package electron.core
 
-import node.events.EventEmitter as NodeEventEmitter
-
-external class TouchBarSpacer : NodeEventEmitter {
+external class TouchBarSpacer {
 // Docs: https://electronjs.org/docs/api/touch-bar-spacer
     /**
      * TouchBarSpacer

@@ -46,6 +46,12 @@ sealed external interface SessionSetPermissionRequestHandlerHandlerPermission {
         @seskar.js.JsValue("openExternal")
         val openExternal: SessionSetPermissionRequestHandlerHandlerPermission
 
+        @seskar.js.JsValue("storage-access")
+        val storageAccess: SessionSetPermissionRequestHandlerHandlerPermission
+
+        @seskar.js.JsValue("top-level-storage-access")
+        val topLevelStorageAccess: SessionSetPermissionRequestHandlerHandlerPermission
+
         @seskar.js.JsValue("window-management")
         val windowManagement: SessionSetPermissionRequestHandlerHandlerPermission
 

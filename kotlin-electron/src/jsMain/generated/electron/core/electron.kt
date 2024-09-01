@@ -28,6 +28,11 @@ package electron.core
         once(event: 'loaded', listener: Function): this;
         addListener(event: 'loaded', listener: Function): this;
         removeListener(event: 'loaded', listener: Function): this;
+        on(eventName: string | symbol, listener: (...args: any[]) => void): this;
+        off(eventName: string | symbol, listener: (...args: any[]) => void): this;
+        once(eventName: string | symbol, listener: (...args: any[]) => void): this;
+        addListener(eventName: string | symbol, listener: (...args: any[]) => void): this;
+        removeListener(eventName: string | symbol, listener: (...args: any[]) => void): this;
         crash(): void;
         getBlinkMemoryInfo(): Electron.BlinkMemoryInfo;
         getCPUUsage(): Electron.CPUUsage;

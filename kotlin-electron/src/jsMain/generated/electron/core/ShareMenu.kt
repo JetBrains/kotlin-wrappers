@@ -4,9 +4,7 @@
 
 package electron.core
 
-import node.events.EventEmitter as NodeEventEmitter
-
-open external class ShareMenu : NodeEventEmitter {
+open external class ShareMenu {
 // Docs: https://electronjs.org/docs/api/share-menu
     /**
      * ShareMenu

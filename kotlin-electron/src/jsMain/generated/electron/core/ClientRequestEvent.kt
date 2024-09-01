@@ -41,7 +41,7 @@ sealed external interface ClientRequestEvent {
         fun close(): node.events.EventType<ClientRequest, js.array.JsTuple>
 
         @seskar.js.JsValue("error")
-        fun error(): node.events.EventType<ClientRequest, js.array.JsTuple1<Throwable /* JsError */>>
+        fun error(): node.events.EventType<ClientRequest, js.array.JsTuple1<js.errors.JsError>>
 
         @seskar.js.JsValue("finish")
         fun finish(): node.events.EventType<ClientRequest, js.array.JsTuple>

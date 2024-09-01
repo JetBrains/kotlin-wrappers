@@ -4,9 +4,7 @@
 
 package electron.core
 
-import node.events.EventEmitter as NodeEventEmitter
-
-external class TouchBarGroup : NodeEventEmitter {
+external class TouchBarGroup {
 // Docs: https://electronjs.org/docs/api/touch-bar-group
     /**
      * TouchBarGroup

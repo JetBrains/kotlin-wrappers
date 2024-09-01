@@ -4,7 +4,6 @@
 
 package electron.core
 
-import js.errors.JsError
 import node.buffer.Buffer
 import node.events.EventEmitter as NodeEventEmitter
 
@@ -43,7 +42,7 @@ external class ClientRequest : NodeEventEmitter {
             /**
              * an error object providing some information about the failure.
              */
-            error: JsError,
+            error: js.errors.JsError,
         ) -> Unit,
     ): Unit /* this */
 
@@ -98,7 +97,7 @@ external class ClientRequest : NodeEventEmitter {
             /**
              * an error object providing some information about the failure.
              */
-            error: JsError,
+            error: js.errors.JsError,
         ) -> Unit,
     ): Unit /* this */
 
@@ -131,7 +130,7 @@ external class ClientRequest : NodeEventEmitter {
             /**
              * an error object providing some information about the failure.
              */
-            error: JsError,
+            error: js.errors.JsError,
         ) -> Unit,
     ): Unit /* this */
 
@@ -164,7 +163,7 @@ external class ClientRequest : NodeEventEmitter {
             /**
              * an error object providing some information about the failure.
              */
-            error: JsError,
+            error: js.errors.JsError,
         ) -> Unit,
     ): Unit /* this */
 
@@ -197,7 +196,7 @@ external class ClientRequest : NodeEventEmitter {
             /**
              * an error object providing some information about the failure.
              */
-            error: JsError,
+            error: js.errors.JsError,
         ) -> Unit,
     ): Unit /* this */
 

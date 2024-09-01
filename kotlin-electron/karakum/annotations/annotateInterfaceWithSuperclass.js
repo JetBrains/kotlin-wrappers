@@ -10,11 +10,9 @@ const interfacesWithSuperclass = [
     "ParentPort",
     "PowerMonitor",
     "PushNotifications",
-    "SafeStorage",
     "Screen",
     "SystemPreferences",
     "WebFrame",
-    "WebUtils",
     "WebviewTag",
 
     // events

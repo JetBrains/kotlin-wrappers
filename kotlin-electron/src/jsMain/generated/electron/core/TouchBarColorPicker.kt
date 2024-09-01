@@ -4,9 +4,7 @@
 
 package electron.core
 
-import node.events.EventEmitter as NodeEventEmitter
-
-external class TouchBarColorPicker : NodeEventEmitter {
+external class TouchBarColorPicker {
 // Docs: https://electronjs.org/docs/api/touch-bar-color-picker
     /**
      * TouchBarColorPicker

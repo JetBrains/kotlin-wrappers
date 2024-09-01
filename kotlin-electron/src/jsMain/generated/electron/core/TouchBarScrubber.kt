@@ -4,9 +4,7 @@
 
 package electron.core
 
-import node.events.EventEmitter as NodeEventEmitter
-
-external class TouchBarScrubber : NodeEventEmitter {
+external class TouchBarScrubber {
 // Docs: https://electronjs.org/docs/api/touch-bar-scrubber
     /**
      * TouchBarScrubber

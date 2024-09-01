@@ -4,7 +4,6 @@
 
 package electron.core
 
-import js.core.Void
 import js.promise.Promise
 import node.buffer.Buffer
 import node.events.EventEmitter as NodeEventEmitter
@@ -1239,7 +1238,7 @@ open external class BrowserWindow : NodeEventEmitter {
      * relative to the root of your application.  See the `webContents` docs for more
      * information.
      */
-    fun loadFile(filePath: String, options: LoadFileOptions = definedExternally): Promise<Void>
+    fun loadFile(filePath: String, options: LoadFileOptions = definedExternally): Promise<js.core.Void>
 
     /**
      * the promise will resolve when the page has finished loading (see
@@ -1256,7 +1255,7 @@ open external class BrowserWindow : NodeEventEmitter {
      * You can load a URL using a `POST` request with URL-encoded data by doing the
      * following:
      */
-    fun loadURL(url: String, options: LoadURLOptions = definedExternally): Promise<Void>
+    fun loadURL(url: String, options: LoadURLOptions = definedExternally): Promise<js.core.Void>
 
     /**
      * Maximizes the window. This will also show (but not focus) the window if it isn't
