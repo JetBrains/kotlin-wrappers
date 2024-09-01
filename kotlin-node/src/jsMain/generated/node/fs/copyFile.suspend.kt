@@ -3,9 +3,7 @@
 package node.fs
 
 
-import js.core.Void
-
-suspend fun copyFile(src: PathLike, dest: PathLike, mode: Number = undefined.unsafeCast<Nothing>()): Void =
+suspend fun copyFile(src: PathLike, dest: PathLike, mode: Number = undefined.unsafeCast<Nothing>()): js.core.Void =
     copyFileAsync(
         src, dest, mode
     ).await()

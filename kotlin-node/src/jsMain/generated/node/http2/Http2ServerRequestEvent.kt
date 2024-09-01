@@ -46,6 +46,6 @@ sealed external interface Http2ServerRequestEvent {
         fun readable(): node.events.EventType<Http2ServerRequest, js.array.JsTuple>
 
         @seskar.js.JsValue("error")
-        fun error(): node.events.EventType<Http2ServerRequest, js.array.JsTuple1<Throwable /* JsError */>>
+        fun error(): node.events.EventType<Http2ServerRequest, js.array.JsTuple1<js.errors.JsError>>
     }
 }

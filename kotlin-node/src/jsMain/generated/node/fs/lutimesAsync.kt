@@ -4,7 +4,6 @@
 
 package node.fs
 
-import js.core.Void
 import js.promise.Promise
 
 /**
@@ -16,4 +15,4 @@ import js.promise.Promise
  */
 
 @JsName("lutimes")
-external fun lutimesAsync(path: PathLike, atime: TimeLike, mtime: TimeLike): Promise<Void>
+external fun lutimesAsync(path: PathLike, atime: TimeLike, mtime: TimeLike): Promise<js.core.Void>

@@ -142,7 +142,7 @@ export default {
                     ) {
                         const enhancedReturnType = name === "once"
                             ? "Promise<P>"
-                            : "AsyncIterableIterator<P>"
+                            : "AsyncIterator<P>"
 
                         return `fun <T : EventEmitter, P : JsTuple> ${name}(emitter: T, type: EventType<T, P>, options: StaticEventEmitterOptions = definedExternally)${karakum.ifPresent(enhancedReturnType, it => `: ${it}`)}`
                     }
@@ -155,9 +155,9 @@ export default {
                     ) {
                         const enhancedReturnType = name === "once"
                             ? "Promise<JsTuple1<E>>"
-                            : "AsyncIterableIterator<JsTuple1<E>>"
+                            : "AsyncIterator<JsTuple1<E>>"
 
-                        return `fun <E : Event, T : EventTarget> ${name}(emitter: T, type: web.events.EventType<E, T>, options: StaticEventEmitterOptions = definedExternally)${karakum.ifPresent(enhancedReturnType, it => `: ${it}`)}`
+                        return `fun <E : Event> ${name}(emitter: EventTarget, type: web.events.EventType<E>, options: StaticEventEmitterOptions = definedExternally)${karakum.ifPresent(enhancedReturnType, it => `: ${it}`)}`
                     }
 
                     if (
@@ -174,7 +174,7 @@ export default {
                         && ts.isTypeReferenceNode(signature[0].type)
                         && signature[0].type.typeName.text === "EventTarget"
                     ) {
-                        return `fun <T : EventTarget> ${name}(emitter: T, type: web.events.EventType<*, T>)${karakum.ifPresent(returnType, it => `: ${it}`)}`
+                        return `fun ${name}(emitter: EventTarget, type: web.events.EventType<*>)${karakum.ifPresent(returnType, it => `: ${it}`)}`
                     }
 
                     return `fun ${name}(${parameters})${karakum.ifPresent(returnType, it => `: ${it}`)}`

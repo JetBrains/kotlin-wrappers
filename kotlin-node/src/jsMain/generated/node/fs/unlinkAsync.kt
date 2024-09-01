@@ -4,7 +4,6 @@
 
 package node.fs
 
-import js.core.Void
 import js.promise.Promise
 
 /**
@@ -16,4 +15,4 @@ import js.promise.Promise
  */
 
 @JsName("unlink")
-external fun unlinkAsync(path: PathLike): Promise<Void>
+external fun unlinkAsync(path: PathLike): Promise<js.core.Void>

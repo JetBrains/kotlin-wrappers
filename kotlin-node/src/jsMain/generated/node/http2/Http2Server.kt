@@ -2,8 +2,6 @@
 
 package node.http2
 
-import js.errors.JsError
-
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 sealed external interface Http2Server : node.net.Server, HTTP2ServerCommon {
     fun addListener(
@@ -17,11 +15,7 @@ sealed external interface Http2Server : node.net.Server, HTTP2ServerCommon {
     ): Unit /* this */
 
     fun addListener(event: Http2ServerEvent.SESSION, listener: (session: ServerHttp2Session) -> Unit): Unit /* this */
-    fun addListener(
-        event: Http2ServerEvent.SESSIONERROR,
-        listener: (err: JsError) -> Unit,
-    ): Unit /* this */
-
+    fun addListener(event: Http2ServerEvent.SESSIONERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun addListener(
         event: Http2ServerEvent.STREAM,
         listener: (stream: ServerHttp2Stream, headers: IncomingHttpHeaders, flags: Double) -> Unit,
@@ -34,7 +28,7 @@ sealed external interface Http2Server : node.net.Server, HTTP2ServerCommon {
     fun emit(event: Http2ServerEvent.CHECKCONTINUE, request: Http2ServerRequest, response: Http2ServerResponse): Boolean
     fun emit(event: Http2ServerEvent.REQUEST, request: Http2ServerRequest, response: Http2ServerResponse): Boolean
     fun emit(event: Http2ServerEvent.SESSION, session: ServerHttp2Session): Boolean
-    fun emit(event: Http2ServerEvent.SESSIONERROR, err: JsError): Boolean
+    fun emit(event: Http2ServerEvent.SESSIONERROR, err: js.errors.JsError): Boolean
     fun emit(
         event: Http2ServerEvent.STREAM,
         stream: ServerHttp2Stream,
@@ -57,7 +51,7 @@ sealed external interface Http2Server : node.net.Server, HTTP2ServerCommon {
     ): Unit /* this */
 
     fun on(event: Http2ServerEvent.SESSION, listener: (session: ServerHttp2Session) -> Unit): Unit /* this */
-    fun on(event: Http2ServerEvent.SESSIONERROR, listener: (err: JsError) -> Unit): Unit /* this */
+    fun on(event: Http2ServerEvent.SESSIONERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun on(
         event: Http2ServerEvent.STREAM,
         listener: (stream: ServerHttp2Stream, headers: IncomingHttpHeaders, flags: Double) -> Unit,
@@ -78,7 +72,7 @@ sealed external interface Http2Server : node.net.Server, HTTP2ServerCommon {
     ): Unit /* this */
 
     fun once(event: Http2ServerEvent.SESSION, listener: (session: ServerHttp2Session) -> Unit): Unit /* this */
-    fun once(event: Http2ServerEvent.SESSIONERROR, listener: (err: JsError) -> Unit): Unit /* this */
+    fun once(event: Http2ServerEvent.SESSIONERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun once(
         event: Http2ServerEvent.STREAM,
         listener: (stream: ServerHttp2Stream, headers: IncomingHttpHeaders, flags: Double) -> Unit,
@@ -105,7 +99,7 @@ sealed external interface Http2Server : node.net.Server, HTTP2ServerCommon {
 
     fun prependListener(
         event: Http2ServerEvent.SESSIONERROR,
-        listener: (err: JsError) -> Unit,
+        listener: (err: js.errors.JsError) -> Unit,
     ): Unit /* this */
 
     fun prependListener(
@@ -141,7 +135,7 @@ sealed external interface Http2Server : node.net.Server, HTTP2ServerCommon {
 
     fun prependOnceListener(
         event: Http2ServerEvent.SESSIONERROR,
-        listener: (err: JsError) -> Unit,
+        listener: (err: js.errors.JsError) -> Unit,
     ): Unit /* this */
 
     fun prependOnceListener(

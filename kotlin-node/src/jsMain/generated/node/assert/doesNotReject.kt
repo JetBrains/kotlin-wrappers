@@ -4,8 +4,6 @@
 
 package node.assert
 
-import js.core.Void
-import js.errors.JsError
 import js.promise.Promise
 
 /**
@@ -52,7 +50,7 @@ import js.promise.Promise
  */
 
 @JsName("doesNotReject")
-external fun doesNotRejectAsync(block: () -> Promise<Any?>): Promise<Void>
+external fun doesNotRejectAsync(block: () -> Promise<Any?>): Promise<js.core.Void>
 
 
 /**
@@ -99,7 +97,7 @@ external fun doesNotRejectAsync(block: () -> Promise<Any?>): Promise<Void>
  */
 
 @JsName("doesNotReject")
-external fun doesNotRejectAsync(block: () -> Promise<Any?>, message: String = definedExternally): Promise<Void>
+external fun doesNotRejectAsync(block: () -> Promise<Any?>, message: String = definedExternally): Promise<js.core.Void>
 
 
 /**
@@ -148,8 +146,8 @@ external fun doesNotRejectAsync(block: () -> Promise<Any?>, message: String = de
 @JsName("doesNotReject")
 external fun doesNotRejectAsync(
     block: () -> Promise<Any?>,
-    message: JsError = definedExternally,
-): Promise<Void>
+    message: js.errors.JsError = definedExternally,
+): Promise<js.core.Void>
 
 
 /**
@@ -196,7 +194,7 @@ external fun doesNotRejectAsync(
  */
 
 @JsName("doesNotReject")
-external fun doesNotRejectAsync(block: Promise<Any?>): Promise<Void>
+external fun doesNotRejectAsync(block: Promise<Any?>): Promise<js.core.Void>
 
 
 /**
@@ -243,7 +241,7 @@ external fun doesNotRejectAsync(block: Promise<Any?>): Promise<Void>
  */
 
 @JsName("doesNotReject")
-external fun doesNotRejectAsync(block: Promise<Any?>, message: String = definedExternally): Promise<Void>
+external fun doesNotRejectAsync(block: Promise<Any?>, message: String = definedExternally): Promise<js.core.Void>
 
 
 /**
@@ -292,12 +290,12 @@ external fun doesNotRejectAsync(block: Promise<Any?>, message: String = definedE
 @JsName("doesNotReject")
 external fun doesNotRejectAsync(
     block: Promise<Any?>,
-    message: JsError = definedExternally,
-): Promise<Void>
+    message: js.errors.JsError = definedExternally,
+): Promise<js.core.Void>
 
 
 @JsName("doesNotReject")
-external fun doesNotRejectAsync(block: () -> Promise<Any?>, error: AssertPredicate): Promise<Void>
+external fun doesNotRejectAsync(block: () -> Promise<Any?>, error: AssertPredicate): Promise<js.core.Void>
 
 
 @JsName("doesNotReject")
@@ -305,19 +303,19 @@ external fun doesNotRejectAsync(
     block: () -> Promise<Any?>,
     error: AssertPredicate,
     message: String = definedExternally,
-): Promise<Void>
+): Promise<js.core.Void>
 
 
 @JsName("doesNotReject")
 external fun doesNotRejectAsync(
     block: () -> Promise<Any?>,
     error: AssertPredicate,
-    message: JsError = definedExternally,
-): Promise<Void>
+    message: js.errors.JsError = definedExternally,
+): Promise<js.core.Void>
 
 
 @JsName("doesNotReject")
-external fun doesNotRejectAsync(block: Promise<Any?>, error: AssertPredicate): Promise<Void>
+external fun doesNotRejectAsync(block: Promise<Any?>, error: AssertPredicate): Promise<js.core.Void>
 
 
 @JsName("doesNotReject")
@@ -325,12 +323,12 @@ external fun doesNotRejectAsync(
     block: Promise<Any?>,
     error: AssertPredicate,
     message: String = definedExternally,
-): Promise<Void>
+): Promise<js.core.Void>
 
 
 @JsName("doesNotReject")
 external fun doesNotRejectAsync(
     block: Promise<Any?>,
     error: AssertPredicate,
-    message: JsError = definedExternally,
-): Promise<Void>
+    message: js.errors.JsError = definedExternally,
+): Promise<js.core.Void>

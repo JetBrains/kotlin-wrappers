@@ -43,7 +43,7 @@ sealed external interface RunOptions {
      * A function that accepts the `TestsStream` instance and can be used to setup listeners before any tests are run.
      * @default undefined
      */
-    var setup: ((root: Test) -> js.promise.PromiseResult<Unit>)?
+    var setup: ((root: Test) -> js.promise.PromiseResult<js.core.Void>)?
 
     /**
      * Allows aborting an in-progress test execution.

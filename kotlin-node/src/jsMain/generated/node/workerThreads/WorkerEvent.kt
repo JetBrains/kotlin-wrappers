@@ -27,7 +27,7 @@ sealed external interface WorkerEvent {
         val ONLINE: ONLINE
 
         @seskar.js.JsValue("error")
-        fun error(): node.events.EventType<Worker, js.array.JsTuple1<Throwable /* JsError */>>
+        fun error(): node.events.EventType<Worker, js.array.JsTuple1<js.errors.JsError>>
 
         @seskar.js.JsValue("exit")
         fun exit(): node.events.EventType<Worker, js.array.JsTuple1<Double>>
@@ -36,7 +36,7 @@ sealed external interface WorkerEvent {
         fun message(): node.events.EventType<Worker, js.array.JsTuple1<Any?>>
 
         @seskar.js.JsValue("messageerror")
-        fun messageerror(): node.events.EventType<Worker, js.array.JsTuple1<Throwable /* JsError */>>
+        fun messageerror(): node.events.EventType<Worker, js.array.JsTuple1<js.errors.JsError>>
 
         @seskar.js.JsValue("online")
         fun online(): node.events.EventType<Worker, js.array.JsTuple>

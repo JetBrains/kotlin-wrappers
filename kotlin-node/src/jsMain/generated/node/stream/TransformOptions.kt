@@ -2,16 +2,14 @@
 
 package node.stream
 
-import js.errors.JsError
-
 @kotlinx.js.JsPlainObject
 external interface TransformOptions : DuplexOptions {
-    override val construct: ((/* this: Transform, */ callback: (error: JsError? /* use undefined for default */) -> Unit) -> Unit)?
+    override val construct: ((/* this: Transform, */ callback: (error: js.errors.JsError? /* use undefined for default */) -> Unit) -> Unit)?
     override val read: ((/* this: Transform, */ size: Number) -> Unit)?
-    override val write: ((/* this: Transform, */ chunk: Any?, encoding: node.buffer.BufferEncoding, callback: (error: JsError? /* use undefined for default */) -> Unit) -> Unit)?
-    override val writev: ((/* this: Transform, */ chunks: Array<WritableOptionsWritevChunksItem>, callback: (error: JsError? /* use undefined for default */) -> Unit) -> Unit)?
-    override val final: ((/* this: Transform, */ callback: (error: JsError? /* use undefined for default */) -> Unit) -> Unit)?
-    override val destroy: ((/* this: Transform, */ error: JsError?, callback: (error: JsError? /* use undefined for default */) -> Unit) -> Unit)?
+    override val write: ((/* this: Transform, */ chunk: Any?, encoding: node.buffer.BufferEncoding, callback: (error: js.errors.JsError? /* use undefined for default */) -> Unit) -> Unit)?
+    override val writev: ((/* this: Transform, */ chunks: Array<WritableOptionsWritevChunksItem>, callback: (error: js.errors.JsError? /* use undefined for default */) -> Unit) -> Unit)?
+    override val final: ((/* this: Transform, */ callback: (error: js.errors.JsError? /* use undefined for default */) -> Unit) -> Unit)?
+    override val destroy: ((/* this: Transform, */ error: js.errors.JsError?, callback: (error: js.errors.JsError? /* use undefined for default */) -> Unit) -> Unit)?
     val transform: ((/* this: Transform, */ chunk: Any?, encoding: node.buffer.BufferEncoding, callback: TransformCallback) -> Unit)?
     val flush: ((/* this: Transform, */ callback: TransformCallback) -> Unit)?
 }

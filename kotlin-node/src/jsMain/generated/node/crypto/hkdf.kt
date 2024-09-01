@@ -5,7 +5,6 @@
 package node.crypto
 
 import js.buffer.ArrayBuffer
-import js.errors.JsError
 
 /**
  * HKDF is a simple key derivation function defined in RFC 5869\. The given `ikm`, `salt` and `info` are used with the `digest` to derive a key of `keylen` bytes.
@@ -40,7 +39,7 @@ external fun hkdf(
     salt: BinaryLike,
     info: BinaryLike,
     keylen: Number,
-    callback: (err: JsError?, derivedKey: ArrayBuffer) -> Unit,
+    callback: (err: js.errors.JsError?, derivedKey: ArrayBuffer) -> Unit,
 ): Unit
 
 /**
@@ -76,5 +75,5 @@ external fun hkdf(
     salt: BinaryLike,
     info: BinaryLike,
     keylen: Number,
-    callback: (err: JsError?, derivedKey: ArrayBuffer) -> Unit,
+    callback: (err: js.errors.JsError?, derivedKey: ArrayBuffer) -> Unit,
 ): Unit

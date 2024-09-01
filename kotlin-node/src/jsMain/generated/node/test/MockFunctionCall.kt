@@ -2,8 +2,6 @@
 
 package node.test
 
-import js.errors.JsError
-
 sealed external interface MockFunctionCall<F : Function<*>, ReturnType /* default is Any /* F extends (...args: any) => infer T ? T : F extends abstract new (...args: any) => infer T ? T : unknown */ */, Args /* default is Any /* F extends (...args: infer Y) => any ? Y : F extends abstract new (...args: infer Y) => any ? Y : unknown[] */ */> {
     /**
      * An array of the arguments passed to the mock function.
@@ -25,7 +23,7 @@ sealed external interface MockFunctionCall<F : Function<*>, ReturnType /* defaul
     /**
      * An `Error` object whose stack can be used to determine the callsite of the mocked function invocation.
      */
-    var stack: JsError
+    var stack: js.errors.JsError
 
     /**
      * If the mocked function is a constructor, this field contains the class being constructed.

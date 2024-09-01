@@ -2,8 +2,6 @@
 
 package node.http
 
-import js.errors.JsError
-
 import node.net.LookupFunction
 import web.abort.AbortSignal
 
@@ -11,7 +9,7 @@ sealed external interface ClientRequestArgs {
     var _defaultAgent: Agent?
     var agent: Any? /* Agent | boolean | undefined */
     var auth: String?
-    var createConnection: ((options: ClientRequestArgs, oncreate: (err: JsError?, socket: node.stream.Duplex) -> Unit) -> node.stream.Duplex?)?
+    var createConnection: ((options: ClientRequestArgs, oncreate: (err: js.errors.JsError?, socket: node.stream.Duplex) -> Unit) -> node.stream.Duplex?)?
     var defaultPort: Any? /* number | string | undefined */
     var family: Double?
     var headers: OutgoingHttpHeaders?

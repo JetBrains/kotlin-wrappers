@@ -3,9 +3,7 @@
 package node.fs
 
 
-import js.core.Void
-
-suspend fun chown(path: PathLike, uid: Number, gid: Number): Void =
+suspend fun chown(path: PathLike, uid: Number, gid: Number): js.core.Void =
     chownAsync(
         path, uid, gid
     ).await()

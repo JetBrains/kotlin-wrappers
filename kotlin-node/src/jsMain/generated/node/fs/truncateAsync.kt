@@ -4,7 +4,6 @@
 
 package node.fs
 
-import js.core.Void
 import js.promise.Promise
 
 /**
@@ -15,4 +14,4 @@ import js.promise.Promise
  */
 
 @JsName("truncate")
-external fun truncateAsync(path: PathLike, len: Number = definedExternally): Promise<Void>
+external fun truncateAsync(path: PathLike, len: Number = definedExternally): Promise<js.core.Void>

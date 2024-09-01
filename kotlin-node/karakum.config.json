@@ -520,7 +520,7 @@
             "js.array.JsTuple",
             "js.array.JsTuple1",
             "js.disposable.Disposable",
-            "js.iterable.AsyncIterableIterator",
+            "js.iterable.AsyncIterator",
             "js.promise.Promise",
             "web.abort.AbortSignal",
             "web.events.Event",
@@ -753,7 +753,6 @@
         "stream/Readable.kt": [
             "js.typedarrays.Uint8Array",
             "js.iterable.AsyncIterable",
-            "js.iterable.AsyncIterableIterator",
             "js.promise.Promise",
             "node.ReadableStreamPipeOptions",
             "node.WritableStream"
@@ -959,9 +958,6 @@
         ],
         "url/urlToHttpOptions.kt": [
             "web.url.URL"
-        ],
-        "util/MIMEParams.kt": [
-            "js.iterable.IterableIterator"
         ],
         "util/aborted.kt": [
             "js.promise.Promise",

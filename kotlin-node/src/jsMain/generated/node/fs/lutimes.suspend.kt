@@ -3,9 +3,7 @@
 package node.fs
 
 
-import js.core.Void
-
-suspend fun lutimes(path: PathLike, atime: TimeLike, mtime: TimeLike): Void =
+suspend fun lutimes(path: PathLike, atime: TimeLike, mtime: TimeLike): js.core.Void =
     lutimesAsync(
         path, atime, mtime
     ).await()

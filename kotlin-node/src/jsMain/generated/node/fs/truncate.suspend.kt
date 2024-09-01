@@ -3,9 +3,7 @@
 package node.fs
 
 
-import js.core.Void
-
-suspend fun truncate(path: PathLike, len: Number = undefined.unsafeCast<Nothing>()): Void =
+suspend fun truncate(path: PathLike, len: Number = undefined.unsafeCast<Nothing>()): js.core.Void =
     truncateAsync(
         path, len
     ).await()

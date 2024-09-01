@@ -4,8 +4,6 @@
 
 package node.assert
 
-import js.errors.JsError
-
 /**
  * Throws an `AssertionError` with the provided error message or a default
  * error message. If the `message` parameter is an instance of an `Error` then
@@ -79,7 +77,7 @@ external fun fail(message: String = definedExternally): Nothing
  * @since v0.1.21
  * @param [message='Failed']
  */
-external fun fail(message: JsError = definedExternally): Nothing
+external fun fail(message: js.errors.JsError = definedExternally): Nothing
 
 /** @deprecated since v10.0.0 - use fail([message]) or other assert functions instead. */
 external fun fail(actual: Any?, expected: Any?): Nothing
@@ -97,7 +95,7 @@ external fun fail(
 external fun fail(
     actual: Any?,
     expected: Any?,
-    message: JsError = definedExternally,
+    message: js.errors.JsError = definedExternally,
     operator: String = definedExternally,
     stackStartFn: Function<*> = definedExternally,
 ): Nothing

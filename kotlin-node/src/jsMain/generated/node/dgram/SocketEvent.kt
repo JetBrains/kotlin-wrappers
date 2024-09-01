@@ -33,7 +33,7 @@ sealed external interface SocketEvent {
         fun connect(): node.events.EventType<Socket, js.array.JsTuple>
 
         @seskar.js.JsValue("error")
-        fun error(): node.events.EventType<Socket, js.array.JsTuple1<Throwable /* JsError */>>
+        fun error(): node.events.EventType<Socket, js.array.JsTuple1<js.errors.JsError>>
 
         @seskar.js.JsValue("listening")
         fun listening(): node.events.EventType<Socket, js.array.JsTuple>

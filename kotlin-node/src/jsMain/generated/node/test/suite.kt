@@ -4,7 +4,6 @@
 
 package node.test
 
-import js.core.Void
 import js.promise.Promise
 
 /**
@@ -21,19 +20,22 @@ external fun suiteAsync(
     name: String = definedExternally,
     options: TestOptions = definedExternally,
     fn: SuiteFn = definedExternally,
-): Promise<Void>
+): Promise<js.core.Void>
 
 
 @JsName("suite")
-external fun suiteAsync(name: String = definedExternally, fn: SuiteFn = definedExternally): Promise<Void>
+external fun suiteAsync(name: String = definedExternally, fn: SuiteFn = definedExternally): Promise<js.core.Void>
 
 
 @JsName("suite")
-external fun suiteAsync(options: TestOptions = definedExternally, fn: SuiteFn = definedExternally): Promise<Void>
+external fun suiteAsync(
+    options: TestOptions = definedExternally,
+    fn: SuiteFn = definedExternally,
+): Promise<js.core.Void>
 
 
 @JsName("suite")
-external fun suiteAsync(fn: SuiteFn = definedExternally): Promise<Void>
+external fun suiteAsync(fn: SuiteFn = definedExternally): Promise<js.core.Void>
 
 @JsName("suite")
-external fun suiteAsync(): Promise<Void>
+external fun suiteAsync(): Promise<js.core.Void>

@@ -126,9 +126,25 @@ external class Sign : node.stream.Writable {
      * @since v0.1.92
      */
     fun sign(privateKey: SignPrivateKeyInput): node.buffer.Buffer
+
+    /**
+     * Calculates the signature on all the data passed through using either `sign.update()` or `sign.write()`.
+     *
+     * If `privateKey` is not a `KeyObject`, this function behaves as if `privateKey` had been passed to {@link createPrivateKey}. If it is an
+     * object, the following additional properties can be passed:
+     *
+     * If `outputEncoding` is provided a string is returned; otherwise a `Buffer` is returned.
+     *
+     * The `Sign` object can not be again used after `sign.sign()` method has been
+     * called. Multiple calls to `sign.sign()` will result in an error being thrown.
+     * @since v0.1.92
+     */
+    fun sign(privateKey: SignJsonWebKeyInput): node.buffer.Buffer
     fun sign(privateKey: KeyLike, outputFormat: BinaryToTextEncoding): String
 
     fun sign(privateKey: SignKeyObjectInput, outputFormat: BinaryToTextEncoding): String
 
     fun sign(privateKey: SignPrivateKeyInput, outputFormat: BinaryToTextEncoding): String
+
+    fun sign(privateKey: SignJsonWebKeyInput, outputFormat: BinaryToTextEncoding): String
 }

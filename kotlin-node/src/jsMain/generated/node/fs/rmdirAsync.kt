@@ -4,7 +4,6 @@
 
 package node.fs
 
-import js.core.Void
 import js.promise.Promise
 
 /**
@@ -19,4 +18,4 @@ import js.promise.Promise
  */
 
 @JsName("rmdir")
-external fun rmdirAsync(path: PathLike, options: RmDirOptions = definedExternally): Promise<Void>
+external fun rmdirAsync(path: PathLike, options: RmDirOptions = definedExternally): Promise<js.core.Void>

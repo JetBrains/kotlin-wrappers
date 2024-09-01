@@ -3,9 +3,7 @@
 package node.fs
 
 
-import js.core.Void
-
-suspend fun utimes(path: PathLike, atime: TimeLike, mtime: TimeLike): Void =
+suspend fun utimes(path: PathLike, atime: TimeLike, mtime: TimeLike): js.core.Void =
     utimesAsync(
         path, atime, mtime
     ).await()

@@ -2,6 +2,4 @@
 
 package node.stream
 
-import js.errors.JsError
-
-typealias TransformCallback = (error: JsError? /* use undefined for default */, data: Any? /* use undefined for default */) -> Unit
+typealias TransformCallback = (error: js.errors.JsError? /* use undefined for default */, data: Any? /* use undefined for default */) -> Unit

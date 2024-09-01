@@ -3,9 +3,7 @@
 package node.fs
 
 
-import js.core.Void
-
-suspend fun unlink(path: PathLike): Void =
+suspend fun unlink(path: PathLike): js.core.Void =
     unlinkAsync(
         path
     ).await()

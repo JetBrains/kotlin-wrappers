@@ -25,6 +25,6 @@ sealed external interface FSWatcherEvent {
         fun close(): node.events.EventType<FSWatcher, js.array.JsTuple>
 
         @seskar.js.JsValue("error")
-        fun error(): node.events.EventType<FSWatcher, js.array.JsTuple1<Throwable /* JsError */>>
+        fun error(): node.events.EventType<FSWatcher, js.array.JsTuple1<js.errors.JsError>>
     }
 }

@@ -2,8 +2,8 @@
 
 package node.process
 
-import node.workerThreads.Worker
 import js.promise.Promise
+import node.workerThreads.Worker
 
 
 sealed external interface ProcessEvent {
@@ -66,16 +66,16 @@ sealed external interface ProcessEvent {
         fun rejectionHandled(): node.events.EventType<Process, js.array.JsTuple1<Promise<Any?>>>
 
         @seskar.js.JsValue("uncaughtException")
-        fun uncaughtException(): node.events.EventType<Process, js.array.JsTuple2<Throwable /* JsError */, UncaughtExceptionOrigin>>
+        fun uncaughtException(): node.events.EventType<Process, js.array.JsTuple2<js.errors.JsError, UncaughtExceptionOrigin>>
 
         @seskar.js.JsValue("uncaughtExceptionMonitor")
-        fun uncaughtExceptionMonitor(): node.events.EventType<Process, js.array.JsTuple2<Throwable /* JsError */, UncaughtExceptionOrigin>>
+        fun uncaughtExceptionMonitor(): node.events.EventType<Process, js.array.JsTuple2<js.errors.JsError, UncaughtExceptionOrigin>>
 
         @seskar.js.JsValue("unhandledRejection")
         fun unhandledRejection(): node.events.EventType<Process, js.array.JsTuple2<Any?, Promise<Any?>>>
 
         @seskar.js.JsValue("warning")
-        fun warning(): node.events.EventType<Process, js.array.JsTuple1<Throwable /* JsError */>>
+        fun warning(): node.events.EventType<Process, js.array.JsTuple1<js.errors.JsError>>
 
         @seskar.js.JsValue("message")
         fun message(): node.events.EventType<Process, js.array.JsTuple2<Any?, Any?>>

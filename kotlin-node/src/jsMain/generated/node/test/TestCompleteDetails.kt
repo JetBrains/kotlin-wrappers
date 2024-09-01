@@ -2,8 +2,6 @@
 
 package node.test
 
-import js.errors.JsError
-
 sealed external interface TestCompleteDetails {
     /**
      * Whether the test passed or not.
@@ -18,7 +16,7 @@ sealed external interface TestCompleteDetails {
     /**
      * An error wrapping the error thrown by the test if it did not pass.
      */
-    var error: JsError
+    var error: js.errors.JsError
 
     /**
      * The type of the test, used to denote whether this is a suite.

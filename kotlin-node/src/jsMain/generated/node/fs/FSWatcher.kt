@@ -2,8 +2,6 @@
 
 package node.fs
 
-import js.errors.JsError
-
 import node.events.EventEmitter
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
@@ -48,7 +46,7 @@ sealed external interface FSWatcher : EventEmitter {
     ): Unit /* this */
 
     fun addListener(event: FSWatcherEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun addListener(event: FSWatcherEvent.ERROR, listener: (error: JsError) -> Unit): Unit /* this */
+    fun addListener(event: FSWatcherEvent.ERROR, listener: (error: js.errors.JsError) -> Unit): Unit /* this */
     fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun on(
         event: FSWatcherEvent.CHANGE,
@@ -56,7 +54,7 @@ sealed external interface FSWatcher : EventEmitter {
     ): Unit /* this */
 
     fun on(event: FSWatcherEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun on(event: FSWatcherEvent.ERROR, listener: (error: JsError) -> Unit): Unit /* this */
+    fun on(event: FSWatcherEvent.ERROR, listener: (error: js.errors.JsError) -> Unit): Unit /* this */
     fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun once(
         event: FSWatcherEvent.CHANGE,
@@ -64,7 +62,7 @@ sealed external interface FSWatcher : EventEmitter {
     ): Unit /* this */
 
     fun once(event: FSWatcherEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun once(event: FSWatcherEvent.ERROR, listener: (error: JsError) -> Unit): Unit /* this */
+    fun once(event: FSWatcherEvent.ERROR, listener: (error: js.errors.JsError) -> Unit): Unit /* this */
     fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun prependListener(
         event: FSWatcherEvent.CHANGE,
@@ -72,11 +70,7 @@ sealed external interface FSWatcher : EventEmitter {
     ): Unit /* this */
 
     fun prependListener(event: FSWatcherEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun prependListener(
-        event: FSWatcherEvent.ERROR,
-        listener: (error: JsError) -> Unit,
-    ): Unit /* this */
-
+    fun prependListener(event: FSWatcherEvent.ERROR, listener: (error: js.errors.JsError) -> Unit): Unit /* this */
     fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun prependOnceListener(
         event: FSWatcherEvent.CHANGE,
@@ -84,8 +78,5 @@ sealed external interface FSWatcher : EventEmitter {
     ): Unit /* this */
 
     fun prependOnceListener(event: FSWatcherEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(
-        event: FSWatcherEvent.ERROR,
-        listener: (error: JsError) -> Unit,
-    ): Unit /* this */
+    fun prependOnceListener(event: FSWatcherEvent.ERROR, listener: (error: js.errors.JsError) -> Unit): Unit /* this */
 }

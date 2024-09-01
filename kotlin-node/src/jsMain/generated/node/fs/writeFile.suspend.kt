@@ -2,12 +2,11 @@
 
 package node.fs
 
-import js.core.Void
 import js.iterable.AsyncIterable
 import node.stream.Stream
 
 
-suspend fun writeFile(file: PathLike, data: String): Void =
+suspend fun writeFile(file: PathLike, data: String): js.core.Void =
     writeFileAsync(
         file, data
     ).await()
@@ -68,7 +67,7 @@ suspend fun writeFile(
     file: PathLike,
     data: String,
     options: (WriteFileAsyncOptions)? = undefined.unsafeCast<Nothing>(),
-): Void =
+): js.core.Void =
     writeFileAsync(
         file, data, options
     ).await()
@@ -129,7 +128,7 @@ suspend fun writeFile(
     file: PathLike,
     data: String,
     options: node.buffer.BufferEncoding? = undefined.unsafeCast<Nothing>(),
-): Void =
+): js.core.Void =
     writeFileAsync(
         file, data, options
     ).await()
@@ -186,7 +185,7 @@ suspend fun writeFile(
  * @return Fulfills with `undefined` upon success.
  */
 
-suspend fun writeFile(file: PathLike, data: js.buffer.ArrayBufferView): Void =
+suspend fun writeFile(file: PathLike, data: js.buffer.ArrayBufferView): js.core.Void =
     writeFileAsync(
         file, data
     ).await()
@@ -247,7 +246,7 @@ suspend fun writeFile(
     file: PathLike,
     data: js.buffer.ArrayBufferView,
     options: (WriteFileAsyncOptions)? = undefined.unsafeCast<Nothing>(),
-): Void =
+): js.core.Void =
     writeFileAsync(
         file, data, options
     ).await()
@@ -308,7 +307,7 @@ suspend fun writeFile(
     file: PathLike,
     data: js.buffer.ArrayBufferView,
     options: node.buffer.BufferEncoding? = undefined.unsafeCast<Nothing>(),
-): Void =
+): js.core.Void =
     writeFileAsync(
         file, data, options
     ).await()
@@ -365,7 +364,10 @@ suspend fun writeFile(
  * @return Fulfills with `undefined` upon success.
  */
 
-suspend fun writeFile(file: PathLike, data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>): Void =
+suspend fun writeFile(
+    file: PathLike,
+    data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
+): js.core.Void =
     writeFileAsync(
         file, data
     ).await()
@@ -426,7 +428,7 @@ suspend fun writeFile(
     file: PathLike,
     data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: (WriteFileAsyncOptions)? = undefined.unsafeCast<Nothing>(),
-): Void =
+): js.core.Void =
     writeFileAsync(
         file, data, options
     ).await()
@@ -487,7 +489,7 @@ suspend fun writeFile(
     file: PathLike,
     data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: node.buffer.BufferEncoding? = undefined.unsafeCast<Nothing>(),
-): Void =
+): js.core.Void =
     writeFileAsync(
         file, data, options
     ).await()
@@ -544,7 +546,7 @@ suspend fun writeFile(
  * @return Fulfills with `undefined` upon success.
  */
 
-suspend fun writeFile(file: PathLike, data: AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>): Void =
+suspend fun writeFile(file: PathLike, data: AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>): js.core.Void =
     writeFileAsync(
         file, data
     ).await()
@@ -605,7 +607,7 @@ suspend fun writeFile(
     file: PathLike,
     data: AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: (WriteFileAsyncOptions)? = undefined.unsafeCast<Nothing>(),
-): Void =
+): js.core.Void =
     writeFileAsync(
         file, data, options
     ).await()
@@ -666,7 +668,7 @@ suspend fun writeFile(
     file: PathLike,
     data: AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: node.buffer.BufferEncoding? = undefined.unsafeCast<Nothing>(),
-): Void =
+): js.core.Void =
     writeFileAsync(
         file, data, options
     ).await()
@@ -723,7 +725,7 @@ suspend fun writeFile(
  * @return Fulfills with `undefined` upon success.
  */
 
-suspend fun writeFile(file: PathLike, data: Stream): Void =
+suspend fun writeFile(file: PathLike, data: Stream): js.core.Void =
     writeFileAsync(
         file, data
     ).await()
@@ -784,7 +786,7 @@ suspend fun writeFile(
     file: PathLike,
     data: Stream,
     options: (WriteFileAsyncOptions)? = undefined.unsafeCast<Nothing>(),
-): Void =
+): js.core.Void =
     writeFileAsync(
         file, data, options
     ).await()
@@ -845,7 +847,7 @@ suspend fun writeFile(
     file: PathLike,
     data: Stream,
     options: node.buffer.BufferEncoding? = undefined.unsafeCast<Nothing>(),
-): Void =
+): js.core.Void =
     writeFileAsync(
         file, data, options
     ).await()
@@ -902,7 +904,7 @@ suspend fun writeFile(
  * @return Fulfills with `undefined` upon success.
  */
 
-suspend fun writeFile(file: FileHandle, data: String): Void =
+suspend fun writeFile(file: FileHandle, data: String): js.core.Void =
     writeFileAsync(
         file, data
     ).await()
@@ -963,7 +965,7 @@ suspend fun writeFile(
     file: FileHandle,
     data: String,
     options: (WriteFileAsyncOptions)? = undefined.unsafeCast<Nothing>(),
-): Void =
+): js.core.Void =
     writeFileAsync(
         file, data, options
     ).await()
@@ -1024,7 +1026,7 @@ suspend fun writeFile(
     file: FileHandle,
     data: String,
     options: node.buffer.BufferEncoding? = undefined.unsafeCast<Nothing>(),
-): Void =
+): js.core.Void =
     writeFileAsync(
         file, data, options
     ).await()
@@ -1081,7 +1083,7 @@ suspend fun writeFile(
  * @return Fulfills with `undefined` upon success.
  */
 
-suspend fun writeFile(file: FileHandle, data: js.buffer.ArrayBufferView): Void =
+suspend fun writeFile(file: FileHandle, data: js.buffer.ArrayBufferView): js.core.Void =
     writeFileAsync(
         file, data
     ).await()
@@ -1142,7 +1144,7 @@ suspend fun writeFile(
     file: FileHandle,
     data: js.buffer.ArrayBufferView,
     options: (WriteFileAsyncOptions)? = undefined.unsafeCast<Nothing>(),
-): Void =
+): js.core.Void =
     writeFileAsync(
         file, data, options
     ).await()
@@ -1203,7 +1205,7 @@ suspend fun writeFile(
     file: FileHandle,
     data: js.buffer.ArrayBufferView,
     options: node.buffer.BufferEncoding? = undefined.unsafeCast<Nothing>(),
-): Void =
+): js.core.Void =
     writeFileAsync(
         file, data, options
     ).await()
@@ -1260,7 +1262,10 @@ suspend fun writeFile(
  * @return Fulfills with `undefined` upon success.
  */
 
-suspend fun writeFile(file: FileHandle, data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>): Void =
+suspend fun writeFile(
+    file: FileHandle,
+    data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
+): js.core.Void =
     writeFileAsync(
         file, data
     ).await()
@@ -1321,7 +1326,7 @@ suspend fun writeFile(
     file: FileHandle,
     data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: (WriteFileAsyncOptions)? = undefined.unsafeCast<Nothing>(),
-): Void =
+): js.core.Void =
     writeFileAsync(
         file, data, options
     ).await()
@@ -1382,7 +1387,7 @@ suspend fun writeFile(
     file: FileHandle,
     data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: node.buffer.BufferEncoding? = undefined.unsafeCast<Nothing>(),
-): Void =
+): js.core.Void =
     writeFileAsync(
         file, data, options
     ).await()
@@ -1439,7 +1444,7 @@ suspend fun writeFile(
  * @return Fulfills with `undefined` upon success.
  */
 
-suspend fun writeFile(file: FileHandle, data: AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>): Void =
+suspend fun writeFile(file: FileHandle, data: AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>): js.core.Void =
     writeFileAsync(
         file, data
     ).await()
@@ -1500,7 +1505,7 @@ suspend fun writeFile(
     file: FileHandle,
     data: AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: (WriteFileAsyncOptions)? = undefined.unsafeCast<Nothing>(),
-): Void =
+): js.core.Void =
     writeFileAsync(
         file, data, options
     ).await()
@@ -1561,7 +1566,7 @@ suspend fun writeFile(
     file: FileHandle,
     data: AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: node.buffer.BufferEncoding? = undefined.unsafeCast<Nothing>(),
-): Void =
+): js.core.Void =
     writeFileAsync(
         file, data, options
     ).await()
@@ -1618,7 +1623,7 @@ suspend fun writeFile(
  * @return Fulfills with `undefined` upon success.
  */
 
-suspend fun writeFile(file: FileHandle, data: Stream): Void =
+suspend fun writeFile(file: FileHandle, data: Stream): js.core.Void =
     writeFileAsync(
         file, data
     ).await()
@@ -1679,7 +1684,7 @@ suspend fun writeFile(
     file: FileHandle,
     data: Stream,
     options: (WriteFileAsyncOptions)? = undefined.unsafeCast<Nothing>(),
-): Void =
+): js.core.Void =
     writeFileAsync(
         file, data, options
     ).await()
@@ -1740,7 +1745,7 @@ suspend fun writeFile(
     file: FileHandle,
     data: Stream,
     options: node.buffer.BufferEncoding? = undefined.unsafeCast<Nothing>(),
-): Void =
+): js.core.Void =
     writeFileAsync(
         file, data, options
     ).await()

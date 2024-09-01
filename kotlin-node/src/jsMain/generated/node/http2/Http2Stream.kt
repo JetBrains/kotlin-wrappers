@@ -2,8 +2,6 @@
 
 package node.http2
 
-import js.errors.JsError
-
 import node.http.OutgoingHttpHeaders
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
@@ -158,7 +156,7 @@ sealed external interface Http2Stream : node.stream.Duplex {
     fun addListener(event: Http2StreamEvent.DATA, listener: (chunk: Any /* Buffer | string */) -> Unit): Unit /* this */
     fun addListener(event: Http2StreamEvent.DRAIN, listener: () -> Unit): Unit /* this */
     fun addListener(event: Http2StreamEvent.END, listener: () -> Unit): Unit /* this */
-    fun addListener(event: Http2StreamEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
+    fun addListener(event: Http2StreamEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun addListener(event: Http2StreamEvent.FINISH, listener: () -> Unit): Unit /* this */
     fun addListener(
         event: Http2StreamEvent.FRAMEERROR,
@@ -189,7 +187,7 @@ sealed external interface Http2Stream : node.stream.Duplex {
     fun emit(event: Http2StreamEvent.DATA, chunk: String): Boolean
     fun emit(event: Http2StreamEvent.DRAIN): Boolean
     fun emit(event: Http2StreamEvent.END): Boolean
-    fun emit(event: Http2StreamEvent.ERROR, err: JsError): Boolean
+    fun emit(event: Http2StreamEvent.ERROR, err: js.errors.JsError): Boolean
     fun emit(event: Http2StreamEvent.FINISH): Boolean
     fun emit(event: Http2StreamEvent.FRAMEERROR, frameType: Number, errorCode: Number): Boolean
     fun emit(event: Http2StreamEvent.PIPE, src: node.stream.Readable): Boolean
@@ -206,7 +204,7 @@ sealed external interface Http2Stream : node.stream.Duplex {
     fun on(event: Http2StreamEvent.DATA, listener: (chunk: Any /* Buffer | string */) -> Unit): Unit /* this */
     fun on(event: Http2StreamEvent.DRAIN, listener: () -> Unit): Unit /* this */
     fun on(event: Http2StreamEvent.END, listener: () -> Unit): Unit /* this */
-    fun on(event: Http2StreamEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
+    fun on(event: Http2StreamEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun on(event: Http2StreamEvent.FINISH, listener: () -> Unit): Unit /* this */
     fun on(
         event: Http2StreamEvent.FRAMEERROR,
@@ -231,7 +229,7 @@ sealed external interface Http2Stream : node.stream.Duplex {
     fun once(event: Http2StreamEvent.DATA, listener: (chunk: Any /* Buffer | string */) -> Unit): Unit /* this */
     fun once(event: Http2StreamEvent.DRAIN, listener: () -> Unit): Unit /* this */
     fun once(event: Http2StreamEvent.END, listener: () -> Unit): Unit /* this */
-    fun once(event: Http2StreamEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
+    fun once(event: Http2StreamEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun once(event: Http2StreamEvent.FINISH, listener: () -> Unit): Unit /* this */
     fun once(
         event: Http2StreamEvent.FRAMEERROR,
@@ -260,11 +258,7 @@ sealed external interface Http2Stream : node.stream.Duplex {
 
     fun prependListener(event: Http2StreamEvent.DRAIN, listener: () -> Unit): Unit /* this */
     fun prependListener(event: Http2StreamEvent.END, listener: () -> Unit): Unit /* this */
-    fun prependListener(
-        event: Http2StreamEvent.ERROR,
-        listener: (err: JsError) -> Unit,
-    ): Unit /* this */
-
+    fun prependListener(event: Http2StreamEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun prependListener(event: Http2StreamEvent.FINISH, listener: () -> Unit): Unit /* this */
     fun prependListener(
         event: Http2StreamEvent.FRAMEERROR,
@@ -300,11 +294,7 @@ sealed external interface Http2Stream : node.stream.Duplex {
 
     fun prependOnceListener(event: Http2StreamEvent.DRAIN, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(event: Http2StreamEvent.END, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(
-        event: Http2StreamEvent.ERROR,
-        listener: (err: JsError) -> Unit,
-    ): Unit /* this */
-
+    fun prependOnceListener(event: Http2StreamEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun prependOnceListener(event: Http2StreamEvent.FINISH, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(
         event: Http2StreamEvent.FRAMEERROR,

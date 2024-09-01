@@ -4,8 +4,6 @@
 
 package node.childProcess
 
-import js.errors.JsError
-
 import node.events.EventEmitter
 import node.stream.Pipe
 import node.stream.Readable
@@ -519,18 +517,18 @@ open external class ChildProcess : EventEmitter {
      * @param sendHandle `undefined`, or a [`net.Socket`](https://nodejs.org/docs/latest-v20.x/api/net.html#class-netsocket), [`net.Server`](https://nodejs.org/docs/latest-v20.x/api/net.html#class-netserver), or [`dgram.Socket`](https://nodejs.org/docs/latest-v20.x/api/dgram.html#class-dgramsocket) object.
      * @param options The `options` argument, if present, is an object used to parameterize the sending of certain types of handles. `options` supports the following properties:
      */
-    fun send(message: Serializable, callback: (error: JsError?) -> Unit = definedExternally): Boolean
+    fun send(message: Serializable, callback: (error: js.errors.JsError?) -> Unit = definedExternally): Boolean
     fun send(
         message: Serializable,
         sendHandle: SendHandle = definedExternally,
-        callback: (error: JsError?) -> Unit = definedExternally,
+        callback: (error: js.errors.JsError?) -> Unit = definedExternally,
     ): Boolean
 
     fun send(
         message: Serializable,
         sendHandle: SendHandle = definedExternally,
         options: MessageOptions = definedExternally,
-        callback: (error: JsError?) -> Unit = definedExternally,
+        callback: (error: js.errors.JsError?) -> Unit = definedExternally,
     ): Boolean
 
     /**
@@ -607,7 +605,7 @@ open external class ChildProcess : EventEmitter {
     ): Unit /* this */
 
     fun addListener(event: ChildProcessEvent.DISCONNECT, listener: () -> Unit): Unit /* this */
-    fun addListener(event: ChildProcessEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
+    fun addListener(event: ChildProcessEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun addListener(
         event: ChildProcessEvent.EXIT,
         listener: (code: Double?, signal: node.process.Signals?) -> Unit,
@@ -624,7 +622,7 @@ open external class ChildProcess : EventEmitter {
     fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
     fun emit(event: ChildProcessEvent.CLOSE, code: Double?, signal: node.process.Signals?): Boolean
     fun emit(event: ChildProcessEvent.DISCONNECT): Boolean
-    fun emit(event: ChildProcessEvent.ERROR, err: JsError): Boolean
+    fun emit(event: ChildProcessEvent.ERROR, err: js.errors.JsError): Boolean
     fun emit(event: ChildProcessEvent.EXIT, code: Double?, signal: node.process.Signals?): Boolean
     fun emit(event: ChildProcessEvent.MESSAGE, message: Serializable, sendHandle: SendHandle): Boolean
     fun emit(event: ChildProcessEvent.SPAWN, listener: () -> Unit): Boolean
@@ -635,7 +633,7 @@ open external class ChildProcess : EventEmitter {
     ): Unit /* this */
 
     fun on(event: ChildProcessEvent.DISCONNECT, listener: () -> Unit): Unit /* this */
-    fun on(event: ChildProcessEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
+    fun on(event: ChildProcessEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun on(
         event: ChildProcessEvent.EXIT,
         listener: (code: Double?, signal: node.process.Signals?) -> Unit,
@@ -654,7 +652,7 @@ open external class ChildProcess : EventEmitter {
     ): Unit /* this */
 
     fun once(event: ChildProcessEvent.DISCONNECT, listener: () -> Unit): Unit /* this */
-    fun once(event: ChildProcessEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
+    fun once(event: ChildProcessEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun once(
         event: ChildProcessEvent.EXIT,
         listener: (code: Double?, signal: node.process.Signals?) -> Unit,
@@ -673,11 +671,7 @@ open external class ChildProcess : EventEmitter {
     ): Unit /* this */
 
     fun prependListener(event: ChildProcessEvent.DISCONNECT, listener: () -> Unit): Unit /* this */
-    fun prependListener(
-        event: ChildProcessEvent.ERROR,
-        listener: (err: JsError) -> Unit,
-    ): Unit /* this */
-
+    fun prependListener(event: ChildProcessEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun prependListener(
         event: ChildProcessEvent.EXIT,
         listener: (code: Double?, signal: node.process.Signals?) -> Unit,
@@ -696,11 +690,7 @@ open external class ChildProcess : EventEmitter {
     ): Unit /* this */
 
     fun prependOnceListener(event: ChildProcessEvent.DISCONNECT, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(
-        event: ChildProcessEvent.ERROR,
-        listener: (err: JsError) -> Unit,
-    ): Unit /* this */
-
+    fun prependOnceListener(event: ChildProcessEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun prependOnceListener(
         event: ChildProcessEvent.EXIT,
         listener: (code: Double?, signal: node.process.Signals?) -> Unit,

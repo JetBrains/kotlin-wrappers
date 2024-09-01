@@ -52,7 +52,7 @@ sealed external interface ReadStreamEvent {
         fun end(): node.events.EventType<ReadStream, js.array.JsTuple>
 
         @seskar.js.JsValue("error")
-        fun error(): node.events.EventType<ReadStream, js.array.JsTuple1<Throwable /* JsError */>>
+        fun error(): node.events.EventType<ReadStream, js.array.JsTuple1<js.errors.JsError>>
 
         @seskar.js.JsValue("open")
         fun open(): node.events.EventType<ReadStream, js.array.JsTuple1<Double>>

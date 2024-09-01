@@ -4,7 +4,6 @@ package node.process
 
 import js.array.ReadonlyArray
 import js.collections.ReadonlySet
-import js.errors.JsError
 import js.promise.Promise
 import node.Module
 import node.events.EventEmitter
@@ -365,11 +364,11 @@ sealed external interface Process : EventEmitter {
      * @since v8.0.0
      * @param warning The warning to emit.
      */
-    fun emitWarning(warning: JsError, ctor: Function<*> = definedExternally): Unit
+    fun emitWarning(warning: js.errors.JsError, ctor: Function<*> = definedExternally): Unit
     fun emitWarning(warning: String, type: String = definedExternally, ctor: Function<*> = definedExternally): Unit
 
     fun emitWarning(
-        warning: JsError,
+        warning: js.errors.JsError,
         type: String = definedExternally,
         ctor: Function<*> = definedExternally,
     ): Unit
@@ -379,10 +378,10 @@ sealed external interface Process : EventEmitter {
         type: String = definedExternally,
         code: String = definedExternally,
         ctor: Function<*> = definedExternally,
-    )
+    ): Unit
 
     fun emitWarning(
-        warning: JsError,
+        warning: js.errors.JsError,
         type: String = definedExternally,
         code: String = definedExternally,
         ctor: Function<*> = definedExternally,
@@ -390,7 +389,7 @@ sealed external interface Process : EventEmitter {
 
     fun emitWarning(warning: String, options: EmitWarningOptions = definedExternally): Unit
 
-    fun emitWarning(warning: JsError, options: EmitWarningOptions = definedExternally): Unit
+    fun emitWarning(warning: js.errors.JsError, options: EmitWarningOptions = definedExternally): Unit
 
     /**
      * The `process.env` property returns an object containing the user environment.
@@ -957,7 +956,7 @@ sealed external interface Process : EventEmitter {
      * Using this function is mutually exclusive with using the deprecated `domain` built-in module.
      * @since v9.3.0
      */
-    fun setUncaughtExceptionCaptureCallback(cb: ((err: JsError) -> Unit)?): Unit
+    fun setUncaughtExceptionCaptureCallback(cb: ((err: js.errors.JsError) -> Unit)?): Unit
 
     /**
      * Indicates whether a callback has been set using {@link setUncaughtExceptionCaptureCallback}.
@@ -1573,7 +1572,7 @@ sealed external interface Process : EventEmitter {
      * @since v0.5.9
      * @param options used to parameterize the sending of certain types of handles. `options` supports the following properties:
      */
-    val send: ((message: Any?, sendHandle: Any? /* use undefined for default */, options: (ProcessSendOptions)? /* use undefined for default */, callback: ((error: JsError?) -> Unit)? /* use undefined for default */) -> Boolean)?
+    val send: ((message: Any?, sendHandle: Any? /* use undefined for default */, options: (ProcessSendOptions)? /* use undefined for default */, callback: ((error: js.errors.JsError?) -> Unit)? /* use undefined for default */) -> Boolean)?
 
     /**
      * If the Node.js process is spawned with an IPC channel (see the `Child Process` and `Cluster` documentation), the `process.disconnect()` method will close the
@@ -1728,10 +1727,10 @@ sealed external interface Process : EventEmitter {
     fun emit(event: ProcessEvent.DISCONNECT): Boolean
     fun emit(event: ProcessEvent.EXIT, code: Number): Boolean
     fun emit(event: ProcessEvent.REJECTIONHANDLED, promise: Promise<Any?>): Boolean
-    fun emit(event: ProcessEvent.UNCAUGHTEXCEPTION, error: JsError): Boolean
-    fun emit(event: ProcessEvent.UNCAUGHTEXCEPTIONMONITOR, error: JsError): Boolean
+    fun emit(event: ProcessEvent.UNCAUGHTEXCEPTION, error: js.errors.JsError): Boolean
+    fun emit(event: ProcessEvent.UNCAUGHTEXCEPTIONMONITOR, error: js.errors.JsError): Boolean
     fun emit(event: ProcessEvent.UNHANDLEDREJECTION, reason: Any?, promise: Promise<Any?>): Boolean
-    fun emit(event: ProcessEvent.WARNING, warning: JsError): Boolean
+    fun emit(event: ProcessEvent.WARNING, warning: js.errors.JsError): Boolean
     fun emit(event: ProcessEvent.MESSAGE, message: Any?, sendHandle: Any?): Unit /* this */
     fun emit(event: Signals, signal: Signals = definedExternally): Boolean
     fun emit(

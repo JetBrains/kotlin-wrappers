@@ -5,4 +5,4 @@ package node.test
 /**
  * The type of a function under Suite.
  */
-typealias SuiteFn = (s: SuiteContext) -> js.promise.PromiseResult<Unit>
+typealias SuiteFn = (s: SuiteContext) -> js.promise.PromiseResult<js.core.Void>

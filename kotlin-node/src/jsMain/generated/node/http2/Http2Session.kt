@@ -2,8 +2,6 @@
 
 package node.http2
 
-import js.errors.JsError
-
 import node.events.EventEmitter
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
@@ -125,7 +123,7 @@ sealed external interface Http2Session : EventEmitter {
      * @param error An `Error` object if the `Http2Session` is being destroyed due to an error.
      * @param code The HTTP/2 error code to send in the final `GOAWAY` frame. If unspecified, and `error` is not undefined, the default is `INTERNAL_ERROR`, otherwise defaults to `NO_ERROR`.
      */
-    fun destroy(error: JsError = definedExternally, code: Number = definedExternally): Unit
+    fun destroy(error: js.errors.JsError = definedExternally, code: Number = definedExternally): Unit
 
     /**
      * Transmits a `GOAWAY` frame to the connected peer _without_ shutting down the`Http2Session`.
@@ -168,10 +166,10 @@ sealed external interface Http2Session : EventEmitter {
      * @since v8.9.3
      * @param payload Optional ping payload.
      */
-    fun ping(callback: (err: JsError?, duration: Double, payload: node.buffer.Buffer) -> Unit): Boolean
+    fun ping(callback: (err: js.errors.JsError?, duration: Double, payload: node.buffer.Buffer) -> Unit): Boolean
     fun ping(
         payload: js.buffer.ArrayBufferView,
-        callback: (err: JsError?, duration: Double, payload: node.buffer.Buffer) -> Unit,
+        callback: (err: js.errors.JsError?, duration: Double, payload: node.buffer.Buffer) -> Unit,
     ): Boolean
 
     /**
@@ -222,7 +220,7 @@ sealed external interface Http2Session : EventEmitter {
      */
     fun settings(
         settings: Settings,
-        callback: (err: JsError?, settings: Settings, duration: Double) -> Unit = definedExternally,
+        callback: (err: js.errors.JsError?, settings: Settings, duration: Double) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -231,7 +229,7 @@ sealed external interface Http2Session : EventEmitter {
      */
     fun unref(): Unit
     fun addListener(event: Http2SessionEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun addListener(event: Http2SessionEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
+    fun addListener(event: Http2SessionEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun addListener(
         event: Http2SessionEvent.FRAMEERROR,
         listener: (frameType: Double, errorCode: Double, streamID: Double) -> Unit,
@@ -250,7 +248,7 @@ sealed external interface Http2Session : EventEmitter {
 
     fun addListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun emit(event: Http2SessionEvent.CLOSE): Boolean
-    fun emit(event: Http2SessionEvent.ERROR, err: JsError): Boolean
+    fun emit(event: Http2SessionEvent.ERROR, err: js.errors.JsError): Boolean
     fun emit(event: Http2SessionEvent.FRAMEERROR, frameType: Number, errorCode: Number, streamID: Number): Boolean
     fun emit(
         event: Http2SessionEvent.GOAWAY,
@@ -267,7 +265,7 @@ sealed external interface Http2Session : EventEmitter {
 
     fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
     fun on(event: Http2SessionEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun on(event: Http2SessionEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
+    fun on(event: Http2SessionEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun on(
         event: Http2SessionEvent.FRAMEERROR,
         listener: (frameType: Double, errorCode: Double, streamID: Double) -> Unit,
@@ -286,7 +284,7 @@ sealed external interface Http2Session : EventEmitter {
 
     fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun once(event: Http2SessionEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun once(event: Http2SessionEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
+    fun once(event: Http2SessionEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun once(
         event: Http2SessionEvent.FRAMEERROR,
         listener: (frameType: Double, errorCode: Double, streamID: Double) -> Unit,
@@ -305,11 +303,7 @@ sealed external interface Http2Session : EventEmitter {
 
     fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun prependListener(event: Http2SessionEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun prependListener(
-        event: Http2SessionEvent.ERROR,
-        listener: (err: JsError) -> Unit,
-    ): Unit /* this */
-
+    fun prependListener(event: Http2SessionEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun prependListener(
         event: Http2SessionEvent.FRAMEERROR,
         listener: (frameType: Double, errorCode: Double, streamID: Double) -> Unit,
@@ -336,11 +330,7 @@ sealed external interface Http2Session : EventEmitter {
     ): Unit /* this */
 
     fun prependOnceListener(event: Http2SessionEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(
-        event: Http2SessionEvent.ERROR,
-        listener: (err: JsError) -> Unit,
-    ): Unit /* this */
-
+    fun prependOnceListener(event: Http2SessionEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun prependOnceListener(
         event: Http2SessionEvent.FRAMEERROR,
         listener: (frameType: Double, errorCode: Double, streamID: Double) -> Unit,

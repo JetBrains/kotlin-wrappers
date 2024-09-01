@@ -3,19 +3,20 @@
 package node.test
 
 
-import js.core.Void
-
 suspend fun it(
     name: String = undefined.unsafeCast<Nothing>(),
     options: TestOptions = undefined.unsafeCast<Nothing>(),
     fn: TestFn = undefined.unsafeCast<Nothing>(),
-): Void =
+): js.core.Void =
     itAsync(
         name, options, fn
     ).await()
 
 
-suspend fun it(name: String = undefined.unsafeCast<Nothing>(), fn: TestFn = undefined.unsafeCast<Nothing>()): Void =
+suspend fun it(
+    name: String = undefined.unsafeCast<Nothing>(),
+    fn: TestFn = undefined.unsafeCast<Nothing>(),
+): js.core.Void =
     itAsync(
         name, fn
     ).await()
@@ -24,13 +25,13 @@ suspend fun it(name: String = undefined.unsafeCast<Nothing>(), fn: TestFn = unde
 suspend fun it(
     options: TestOptions = undefined.unsafeCast<Nothing>(),
     fn: TestFn = undefined.unsafeCast<Nothing>(),
-): Void =
+): js.core.Void =
     itAsync(
         options, fn
     ).await()
 
 
-suspend fun it(fn: TestFn = undefined.unsafeCast<Nothing>()): Void =
+suspend fun it(fn: TestFn = undefined.unsafeCast<Nothing>()): js.core.Void =
     itAsync(
         fn
     ).await()

@@ -817,10 +817,7 @@ open external class EventEmitter {
          * ```
          * @since v15.2.0, v14.17.0
          */
-        fun getEventListeners(
-            emitter: EventTarget,
-            type: web.events.EventType<*>,
-        ): js.array.ReadonlyArray<Function<*>>
+        fun getEventListeners(emitter: EventTarget, type: web.events.EventType<*>): js.array.ReadonlyArray<Function<*>>
 
         /**
          * Returns a copy of the array of listeners for the event named `eventName`.

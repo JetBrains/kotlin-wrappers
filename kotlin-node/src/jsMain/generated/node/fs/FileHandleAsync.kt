@@ -4,7 +4,6 @@ package node.fs
 
 import js.array.ReadonlyArray
 import js.buffer.ArrayBufferView
-import js.core.Void
 import js.promise.Promise
 import js.typedarrays.Uint8Array
 import web.streams.ReadableStream
@@ -28,7 +27,7 @@ sealed external interface FileHandle {
      */
 
     @JsName("appendFile")
-    fun appendFileAsync(data: String): Promise<Void>
+    fun appendFileAsync(data: String): Promise<js.core.Void>
 
 
     /**
@@ -41,7 +40,10 @@ sealed external interface FileHandle {
      */
 
     @JsName("appendFile")
-    fun appendFileAsync(data: String, options: (FileHandleAppendFileAsyncOptions)? = definedExternally): Promise<Void>
+    fun appendFileAsync(
+        data: String,
+        options: (FileHandleAppendFileAsyncOptions)? = definedExternally,
+    ): Promise<js.core.Void>
 
 
     /**
@@ -54,7 +56,7 @@ sealed external interface FileHandle {
      */
 
     @JsName("appendFile")
-    fun appendFileAsync(data: String, options: node.buffer.BufferEncoding? = definedExternally): Promise<Void>
+    fun appendFileAsync(data: String, options: node.buffer.BufferEncoding? = definedExternally): Promise<js.core.Void>
 
 
     /**
@@ -67,7 +69,7 @@ sealed external interface FileHandle {
      */
 
     @JsName("appendFile")
-    fun appendFileAsync(data: Uint8Array): Promise<Void>
+    fun appendFileAsync(data: Uint8Array): Promise<js.core.Void>
 
 
     /**
@@ -83,7 +85,7 @@ sealed external interface FileHandle {
     fun appendFileAsync(
         data: Uint8Array,
         options: (FileHandleAppendFileAsyncOptions)? = definedExternally,
-    ): Promise<Void>
+    ): Promise<js.core.Void>
 
 
     /**
@@ -96,11 +98,14 @@ sealed external interface FileHandle {
      */
 
     @JsName("appendFile")
-    fun appendFileAsync(data: Uint8Array, options: node.buffer.BufferEncoding? = definedExternally): Promise<Void>
+    fun appendFileAsync(
+        data: Uint8Array,
+        options: node.buffer.BufferEncoding? = definedExternally,
+    ): Promise<js.core.Void>
 
 
     @seskar.js.JsAsync
-    suspend fun appendFile(data: String): Unit
+    suspend fun appendFile(data: String): js.core.Void
 
 
     /**
@@ -113,7 +118,7 @@ sealed external interface FileHandle {
      */
 
     @seskar.js.JsAsync
-    suspend fun appendFile(data: String, options: (FileHandleAppendFileAsyncOptions)? = definedExternally): Unit
+    suspend fun appendFile(data: String, options: (FileHandleAppendFileAsyncOptions)? = definedExternally): js.core.Void
 
 
     /**
@@ -126,7 +131,7 @@ sealed external interface FileHandle {
      */
 
     @seskar.js.JsAsync
-    suspend fun appendFile(data: String, options: node.buffer.BufferEncoding? = definedExternally): Unit
+    suspend fun appendFile(data: String, options: node.buffer.BufferEncoding? = definedExternally): js.core.Void
 
 
     /**
@@ -139,7 +144,7 @@ sealed external interface FileHandle {
      */
 
     @seskar.js.JsAsync
-    suspend fun appendFile(data: Uint8Array): Unit
+    suspend fun appendFile(data: Uint8Array): js.core.Void
 
 
     /**
@@ -152,7 +157,10 @@ sealed external interface FileHandle {
      */
 
     @seskar.js.JsAsync
-    suspend fun appendFile(data: Uint8Array, options: (FileHandleAppendFileAsyncOptions)? = definedExternally): Unit
+    suspend fun appendFile(
+        data: Uint8Array,
+        options: (FileHandleAppendFileAsyncOptions)? = definedExternally,
+    ): js.core.Void
 
 
     /**
@@ -165,7 +173,7 @@ sealed external interface FileHandle {
      */
 
     @seskar.js.JsAsync
-    suspend fun appendFile(data: Uint8Array, options: node.buffer.BufferEncoding? = definedExternally): Unit
+    suspend fun appendFile(data: Uint8Array, options: node.buffer.BufferEncoding? = definedExternally): js.core.Void
 
     /**
      * Changes the ownership of the file. A wrapper for [`chown(2)`](http://man7.org/linux/man-pages/man2/chown.2.html).
@@ -176,11 +184,11 @@ sealed external interface FileHandle {
      */
 
     @JsName("chown")
-    fun chownAsync(uid: Number, gid: Number): Promise<Void>
+    fun chownAsync(uid: Number, gid: Number): Promise<js.core.Void>
 
 
     @seskar.js.JsAsync
-    suspend fun chown(uid: Number, gid: Number): Unit
+    suspend fun chown(uid: Number, gid: Number): js.core.Void
 
     /**
      * Modifies the permissions on the file. See [`chmod(2)`](http://man7.org/linux/man-pages/man2/chmod.2.html).
@@ -190,11 +198,11 @@ sealed external interface FileHandle {
      */
 
     @JsName("chmod")
-    fun chmodAsync(mode: Mode): Promise<Void>
+    fun chmodAsync(mode: Mode): Promise<js.core.Void>
 
 
     @seskar.js.JsAsync
-    suspend fun chmod(mode: Mode): Unit
+    suspend fun chmod(mode: Mode): js.core.Void
 
     /**
      * Unlike the 16 KiB default `highWaterMark` for a `stream.Readable`, the stream
@@ -279,11 +287,11 @@ sealed external interface FileHandle {
      */
 
     @JsName("datasync")
-    fun datasyncAsync(): Promise<Void>
+    fun datasyncAsync(): Promise<js.core.Void>
 
 
     @seskar.js.JsAsync
-    suspend fun datasync(): Unit
+    suspend fun datasync(): js.core.Void
 
     /**
      * Request that all data for the open file descriptor is flushed to the storage
@@ -294,11 +302,11 @@ sealed external interface FileHandle {
      */
 
     @JsName("sync")
-    fun syncAsync(): Promise<Void>
+    fun syncAsync(): Promise<js.core.Void>
 
 
     @seskar.js.JsAsync
-    suspend fun sync(): Unit
+    suspend fun sync(): js.core.Void
 
     /**
      * Reads data from the file and stores that in the given buffer.
@@ -556,11 +564,11 @@ sealed external interface FileHandle {
      */
 
     @JsName("truncate")
-    fun truncateAsync(len: Number = definedExternally): Promise<Void>
+    fun truncateAsync(len: Number = definedExternally): Promise<js.core.Void>
 
 
     @seskar.js.JsAsync
-    suspend fun truncate(len: Number = definedExternally): Unit
+    suspend fun truncate(len: Number = definedExternally): js.core.Void
 
     /**
      * Change the file system timestamps of the object referenced by the `FileHandle` then fulfills the promise with no arguments upon success.
@@ -568,11 +576,11 @@ sealed external interface FileHandle {
      */
 
     @JsName("utimes")
-    fun utimesAsync(atime: TimeLike, mtime: TimeLike): Promise<Void>
+    fun utimesAsync(atime: TimeLike, mtime: TimeLike): Promise<js.core.Void>
 
 
     @seskar.js.JsAsync
-    suspend fun utimes(atime: TimeLike, mtime: TimeLike): Unit
+    suspend fun utimes(atime: TimeLike, mtime: TimeLike): js.core.Void
 
     /**
      * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -594,30 +602,7 @@ sealed external interface FileHandle {
      */
 
     @JsName("writeFile")
-    fun writeFileAsync(data: String): Promise<Void>
-
-
-    /**
-     * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
-     * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
-     * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
-     * The promise is fulfilled with no arguments upon success.
-     *
-     * If `options` is a string, then it specifies the `encoding`.
-     *
-     * The `FileHandle` has to support writing.
-     *
-     * It is unsafe to use `filehandle.writeFile()` multiple times on the same file
-     * without waiting for the promise to be fulfilled (or rejected).
-     *
-     * If one or more `filehandle.write()` calls are made on a file handle and then a`filehandle.writeFile()` call is made, the data will be written from the
-     * current position till the end of the file. It doesn't always write from the
-     * beginning of the file.
-     * @since v10.0.0
-     */
-
-    @JsName("writeFile")
-    fun writeFileAsync(data: String, options: (FileHandleWriteFileAsyncOptions)? = definedExternally): Promise<Void>
+    fun writeFileAsync(data: String): Promise<js.core.Void>
 
 
     /**
@@ -640,7 +625,10 @@ sealed external interface FileHandle {
      */
 
     @JsName("writeFile")
-    fun writeFileAsync(data: String, options: node.buffer.BufferEncoding? = definedExternally): Promise<Void>
+    fun writeFileAsync(
+        data: String,
+        options: (FileHandleWriteFileAsyncOptions)? = definedExternally,
+    ): Promise<js.core.Void>
 
 
     /**
@@ -663,7 +651,7 @@ sealed external interface FileHandle {
      */
 
     @JsName("writeFile")
-    fun writeFileAsync(data: Uint8Array): Promise<Void>
+    fun writeFileAsync(data: String, options: node.buffer.BufferEncoding? = definedExternally): Promise<js.core.Void>
 
 
     /**
@@ -686,7 +674,7 @@ sealed external interface FileHandle {
      */
 
     @JsName("writeFile")
-    fun writeFileAsync(data: Uint8Array, options: (FileHandleWriteFileAsyncOptions)? = definedExternally): Promise<Void>
+    fun writeFileAsync(data: Uint8Array): Promise<js.core.Void>
 
 
     /**
@@ -709,11 +697,40 @@ sealed external interface FileHandle {
      */
 
     @JsName("writeFile")
-    fun writeFileAsync(data: Uint8Array, options: node.buffer.BufferEncoding? = definedExternally): Promise<Void>
+    fun writeFileAsync(
+        data: Uint8Array,
+        options: (FileHandleWriteFileAsyncOptions)? = definedExternally,
+    ): Promise<js.core.Void>
+
+
+    /**
+     * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
+     * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
+     * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
+     * The promise is fulfilled with no arguments upon success.
+     *
+     * If `options` is a string, then it specifies the `encoding`.
+     *
+     * The `FileHandle` has to support writing.
+     *
+     * It is unsafe to use `filehandle.writeFile()` multiple times on the same file
+     * without waiting for the promise to be fulfilled (or rejected).
+     *
+     * If one or more `filehandle.write()` calls are made on a file handle and then a`filehandle.writeFile()` call is made, the data will be written from the
+     * current position till the end of the file. It doesn't always write from the
+     * beginning of the file.
+     * @since v10.0.0
+     */
+
+    @JsName("writeFile")
+    fun writeFileAsync(
+        data: Uint8Array,
+        options: node.buffer.BufferEncoding? = definedExternally,
+    ): Promise<js.core.Void>
 
 
     @seskar.js.JsAsync
-    suspend fun writeFile(data: String): Unit
+    suspend fun writeFile(data: String): js.core.Void
 
 
     /**
@@ -736,7 +753,7 @@ sealed external interface FileHandle {
      */
 
     @seskar.js.JsAsync
-    suspend fun writeFile(data: String, options: (FileHandleWriteFileAsyncOptions)? = definedExternally): Unit
+    suspend fun writeFile(data: String, options: (FileHandleWriteFileAsyncOptions)? = definedExternally): js.core.Void
 
 
     /**
@@ -759,7 +776,7 @@ sealed external interface FileHandle {
      */
 
     @seskar.js.JsAsync
-    suspend fun writeFile(data: String, options: node.buffer.BufferEncoding? = definedExternally): Unit
+    suspend fun writeFile(data: String, options: node.buffer.BufferEncoding? = definedExternally): js.core.Void
 
 
     /**
@@ -782,7 +799,7 @@ sealed external interface FileHandle {
      */
 
     @seskar.js.JsAsync
-    suspend fun writeFile(data: Uint8Array): Unit
+    suspend fun writeFile(data: Uint8Array): js.core.Void
 
 
     /**
@@ -805,7 +822,10 @@ sealed external interface FileHandle {
      */
 
     @seskar.js.JsAsync
-    suspend fun writeFile(data: Uint8Array, options: (FileHandleWriteFileAsyncOptions)? = definedExternally): Unit
+    suspend fun writeFile(
+        data: Uint8Array,
+        options: (FileHandleWriteFileAsyncOptions)? = definedExternally,
+    ): js.core.Void
 
 
     /**
@@ -828,7 +848,7 @@ sealed external interface FileHandle {
      */
 
     @seskar.js.JsAsync
-    suspend fun writeFile(data: Uint8Array, options: node.buffer.BufferEncoding? = definedExternally): Unit
+    suspend fun writeFile(data: Uint8Array, options: node.buffer.BufferEncoding? = definedExternally): js.core.Void
 
     /**
      * Write `buffer` to the file.
@@ -941,10 +961,10 @@ sealed external interface FileHandle {
      */
 
     @JsName("close")
-    fun closeAsync(): Promise<Void>
+    fun closeAsync(): Promise<js.core.Void>
 
 
     @seskar.js.JsAsync
-    suspend fun close(): Unit
+    suspend fun close(): js.core.Void
 
 }

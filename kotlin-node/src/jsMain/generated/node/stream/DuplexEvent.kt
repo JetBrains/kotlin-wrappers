@@ -63,7 +63,7 @@ sealed external interface DuplexEvent {
         fun end(): node.events.EventType<Duplex, js.array.JsTuple>
 
         @seskar.js.JsValue("error")
-        fun error(): node.events.EventType<Duplex, js.array.JsTuple1<Throwable /* JsError */>>
+        fun error(): node.events.EventType<Duplex, js.array.JsTuple1<js.errors.JsError>>
 
         @seskar.js.JsValue("finish")
         fun finish(): node.events.EventType<Duplex, js.array.JsTuple>

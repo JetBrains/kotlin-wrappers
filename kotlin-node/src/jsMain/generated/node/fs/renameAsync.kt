@@ -4,7 +4,6 @@
 
 package node.fs
 
-import js.core.Void
 import js.promise.Promise
 
 /**
@@ -14,4 +13,4 @@ import js.promise.Promise
  */
 
 @JsName("rename")
-external fun renameAsync(oldPath: PathLike, newPath: PathLike): Promise<Void>
+external fun renameAsync(oldPath: PathLike, newPath: PathLike): Promise<js.core.Void>

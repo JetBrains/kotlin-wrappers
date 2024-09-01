@@ -79,10 +79,10 @@ sealed external interface SocketEvent {
         fun end(): node.events.EventType<Socket, js.array.JsTuple>
 
         @seskar.js.JsValue("error")
-        fun error(): node.events.EventType<Socket, js.array.JsTuple1<Throwable /* JsError */>>
+        fun error(): node.events.EventType<Socket, js.array.JsTuple1<js.errors.JsError>>
 
         @seskar.js.JsValue("lookup")
-        fun lookup(): node.events.EventType<Socket, js.array.JsTuple4<Throwable /* JsError */, String, Any /* string | number */, String>>
+        fun lookup(): node.events.EventType<Socket, js.array.JsTuple4<js.errors.JsError, String, Any /* string | number */, String>>
 
         @seskar.js.JsValue("ready")
         fun ready(): node.events.EventType<Socket, js.array.JsTuple>

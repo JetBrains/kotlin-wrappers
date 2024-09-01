@@ -40,7 +40,7 @@ sealed external interface Http2ServerEvent {
         fun session(): node.events.EventType<Http2Server, js.array.JsTuple1<ServerHttp2Session>>
 
         @seskar.js.JsValue("sessionError")
-        fun sessionError(): node.events.EventType<Http2Server, js.array.JsTuple1<Throwable /* JsError */>>
+        fun sessionError(): node.events.EventType<Http2Server, js.array.JsTuple1<js.errors.JsError>>
 
         @seskar.js.JsValue("stream")
         fun stream(): node.events.EventType<Http2Server, js.array.JsTuple3<ServerHttp2Stream, IncomingHttpHeaders, Double>>

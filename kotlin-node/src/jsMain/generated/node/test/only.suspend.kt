@@ -3,19 +3,20 @@
 package node.test
 
 
-import js.core.Void
-
 suspend fun only(
     name: String = undefined.unsafeCast<Nothing>(),
     options: TestOptions = undefined.unsafeCast<Nothing>(),
     fn: TestFn = undefined.unsafeCast<Nothing>(),
-): Void =
+): js.core.Void =
     onlyAsync(
         name, options, fn
     ).await()
 
 
-suspend fun only(name: String = undefined.unsafeCast<Nothing>(), fn: TestFn = undefined.unsafeCast<Nothing>()): Void =
+suspend fun only(
+    name: String = undefined.unsafeCast<Nothing>(),
+    fn: TestFn = undefined.unsafeCast<Nothing>(),
+): js.core.Void =
     onlyAsync(
         name, fn
     ).await()
@@ -24,19 +25,19 @@ suspend fun only(name: String = undefined.unsafeCast<Nothing>(), fn: TestFn = un
 suspend fun only(
     options: TestOptions = undefined.unsafeCast<Nothing>(),
     fn: TestFn = undefined.unsafeCast<Nothing>(),
-): Void =
+): js.core.Void =
     onlyAsync(
         options, fn
     ).await()
 
 
-suspend fun only(fn: TestFn = undefined.unsafeCast<Nothing>()): Void =
+suspend fun only(fn: TestFn = undefined.unsafeCast<Nothing>()): js.core.Void =
     onlyAsync(
         fn
     ).await()
 
 
-suspend fun only(): Void =
+suspend fun only(): js.core.Void =
     onlyAsync(
 
     ).await()

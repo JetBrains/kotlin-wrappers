@@ -4,8 +4,6 @@
 
 package node.tls
 
-import js.errors.JsError
-
 /**
  * Verifies the certificate `cert` is issued to `hostname`.
  *
@@ -29,4 +27,4 @@ import js.errors.JsError
  * @param hostname The host name or IP address to verify the certificate against.
  * @param cert A `certificate object` representing the peer's certificate.
  */
-external fun checkServerIdentity(hostname: String, cert: PeerCertificate): JsError?
+external fun checkServerIdentity(hostname: String, cert: PeerCertificate): js.errors.JsError?

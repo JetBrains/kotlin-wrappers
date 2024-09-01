@@ -4,7 +4,6 @@
 
 package node.fs
 
-import js.core.Void
 import js.promise.Promise
 
 /**
@@ -14,4 +13,4 @@ import js.promise.Promise
  */
 
 @JsName("chmod")
-external fun chmodAsync(path: PathLike, mode: Mode): Promise<Void>
+external fun chmodAsync(path: PathLike, mode: Mode): Promise<js.core.Void>

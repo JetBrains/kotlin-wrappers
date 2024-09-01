@@ -4,8 +4,6 @@
 
 package node.http
 
-import js.errors.JsError
-
 import node.net.Socket
 
 /**
@@ -257,5 +255,5 @@ open external class IncomingMessage : node.stream.Readable {
      * as an argument to any listeners on the event.
      * @since v0.3.0
      */
-    override fun destroy(error: JsError): Unit /* this */
+    override fun destroy(error: js.errors.JsError): Unit /* this */
 }

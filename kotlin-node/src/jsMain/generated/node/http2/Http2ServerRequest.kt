@@ -4,8 +4,6 @@
 
 package node.http2
 
-import js.errors.JsError
-
 /**
  * A `Http2ServerRequest` object is created by {@link Server} or {@link SecureServer} and passed as the first argument to the `'request'` event. It may be used to access a request status,
  * headers, and
@@ -235,11 +233,7 @@ external class Http2ServerRequest : node.stream.Readable {
 
     fun addListener(event: Http2ServerRequestEvent.END, listener: () -> Unit): Unit /* this */
     fun addListener(event: Http2ServerRequestEvent.READABLE, listener: () -> Unit): Unit /* this */
-    fun addListener(
-        event: Http2ServerRequestEvent.ERROR,
-        listener: (err: JsError) -> Unit,
-    ): Unit /* this */
-
+    fun addListener(event: Http2ServerRequestEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     override fun addListener(
@@ -254,7 +248,7 @@ external class Http2ServerRequest : node.stream.Readable {
     fun emit(event: Http2ServerRequestEvent.DATA, chunk: String): Boolean
     fun emit(event: Http2ServerRequestEvent.END): Boolean
     fun emit(event: Http2ServerRequestEvent.READABLE): Boolean
-    fun emit(event: Http2ServerRequestEvent.ERROR, err: JsError): Boolean
+    fun emit(event: Http2ServerRequestEvent.ERROR, err: js.errors.JsError): Boolean
     override fun emit(event: String, vararg args: Any?): Boolean
 
     override fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
@@ -263,7 +257,7 @@ external class Http2ServerRequest : node.stream.Readable {
     fun on(event: Http2ServerRequestEvent.DATA, listener: (chunk: Any /* Buffer | string */) -> Unit): Unit /* this */
     fun on(event: Http2ServerRequestEvent.END, listener: () -> Unit): Unit /* this */
     fun on(event: Http2ServerRequestEvent.READABLE, listener: () -> Unit): Unit /* this */
-    fun on(event: Http2ServerRequestEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
+    fun on(event: Http2ServerRequestEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     override fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
@@ -276,7 +270,7 @@ external class Http2ServerRequest : node.stream.Readable {
     fun once(event: Http2ServerRequestEvent.DATA, listener: (chunk: Any /* Buffer | string */) -> Unit): Unit /* this */
     fun once(event: Http2ServerRequestEvent.END, listener: () -> Unit): Unit /* this */
     fun once(event: Http2ServerRequestEvent.READABLE, listener: () -> Unit): Unit /* this */
-    fun once(event: Http2ServerRequestEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
+    fun once(event: Http2ServerRequestEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     override fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
@@ -295,7 +289,7 @@ external class Http2ServerRequest : node.stream.Readable {
     fun prependListener(event: Http2ServerRequestEvent.READABLE, listener: () -> Unit): Unit /* this */
     fun prependListener(
         event: Http2ServerRequestEvent.ERROR,
-        listener: (err: JsError) -> Unit,
+        listener: (err: js.errors.JsError) -> Unit,
     ): Unit /* this */
 
     override fun prependListener(
@@ -323,7 +317,7 @@ external class Http2ServerRequest : node.stream.Readable {
     fun prependOnceListener(event: Http2ServerRequestEvent.READABLE, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(
         event: Http2ServerRequestEvent.ERROR,
-        listener: (err: JsError) -> Unit,
+        listener: (err: js.errors.JsError) -> Unit,
     ): Unit /* this */
 
     override fun prependOnceListener(

@@ -2,8 +2,6 @@
 
 package node.process
 
-import js.errors.JsError
-
 sealed external interface ProcessReport {
     /**
      * Directory where the report is written.
@@ -24,7 +22,7 @@ sealed external interface ProcessReport {
      * Returns a JSON-formatted diagnostic report for the running process.
      * The report's JavaScript stack trace is taken from err, if present.
      */
-    fun getReport(err: JsError = definedExternally): String
+    fun getReport(err: js.errors.JsError = definedExternally): String
 
     /**
      * If true, a diagnostic report is generated on fatal errors,
@@ -65,6 +63,6 @@ sealed external interface ProcessReport {
      * @return Filename of the generated report.
      */
     fun writeReport(fileName: String = definedExternally): String
-    fun writeReport(fileName: String = definedExternally, err: JsError = definedExternally): String
-    fun writeReport(error: JsError = definedExternally): String
+    fun writeReport(fileName: String = definedExternally, err: js.errors.JsError = definedExternally): String
+    fun writeReport(error: js.errors.JsError = definedExternally): String
 }

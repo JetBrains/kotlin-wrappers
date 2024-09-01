@@ -2,11 +2,10 @@
 
 package node.util
 
-import js.core.Void
 import web.abort.AbortSignal
 
 
-suspend fun aborted(signal: AbortSignal, resource: Any?): Void =
+suspend fun aborted(signal: AbortSignal, resource: Any?): js.core.Void =
     abortedAsync(
         signal, resource
     ).await()

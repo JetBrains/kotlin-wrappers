@@ -3,9 +3,7 @@
 package node.fs
 
 
-import js.core.Void
-
-suspend fun chmod(path: PathLike, mode: Mode): Void =
+suspend fun chmod(path: PathLike, mode: Mode): js.core.Void =
     chmodAsync(
         path, mode
     ).await()

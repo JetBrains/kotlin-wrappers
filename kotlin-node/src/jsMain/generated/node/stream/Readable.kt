@@ -4,10 +4,7 @@
 
 package node.stream
 
-import js.core.Void
-import js.errors.JsError
 import js.iterable.AsyncIterable
-import js.iterable.AsyncIterator
 import js.promise.Promise
 import js.typedarrays.Uint8Array
 import node.ReadableStreamPipeOptions
@@ -95,8 +92,8 @@ open external class Readable : Stream, node.ReadableStream {
      * Returns error if the stream has been destroyed with an error.
      * @since v18.0.0
      */
-    open val errored: JsError?
-    open val _construct: ((callback: (error: JsError? /* use undefined for default */) -> Unit) -> Unit)?
+    open val errored: js.errors.JsError?
+    open val _construct: ((callback: (error: js.errors.JsError? /* use undefined for default */) -> Unit) -> Unit)?
     fun _read(size: Number): Unit
 
     /**
@@ -399,7 +396,7 @@ open external class Readable : Stream, node.ReadableStream {
      * or exiting a `for await...of` iteration using a `break`, `return`, or `throw` will not destroy the stream.
      * **Default: `true`**.
      */
-    fun iterator(options: ReadableBaseIteratorOptions = definedExternally): AsyncIterator<Any?>
+    fun iterator(options: ReadableBaseIteratorOptions = definedExternally): js.iterable.AsyncIterator<Any?>
 
     /**
      * This method allows mapping over the stream. The *fn* function will be called for every chunk in the stream.
@@ -442,9 +439,9 @@ open external class Readable : Stream, node.ReadableStream {
      * @returns a promise for when the stream has finished.
      */
     fun forEach(
-        fn: (data: Any?, options: ArrayOptions? /* use undefined for default */) -> js.promise.PromiseResult<Unit>,
+        fn: (data: Any?, options: ArrayOptions? /* use undefined for default */) -> js.promise.PromiseResult<js.core.Void>,
         options: ArrayOptions = definedExternally,
-    ): Promise<Void>
+    ): Promise<js.core.Void>
 
     /**
      * This method allows easily obtaining the contents of a stream.
@@ -570,8 +567,8 @@ open external class Readable : Stream, node.ReadableStream {
     ): Promise<T>
 
     open fun _destroy(
-        error: JsError?,
-        callback: (error: JsError? /* use undefined for default */) -> Unit,
+        error: js.errors.JsError?,
+        callback: (error: js.errors.JsError? /* use undefined for default */) -> Unit,
     ): Unit
 
     /**
@@ -587,7 +584,7 @@ open external class Readable : Stream, node.ReadableStream {
      */
     open fun destroy(): Unit /* this */
 
-    open fun destroy(error: JsError): Unit /* this */
+    open fun destroy(error: js.errors.JsError): Unit /* this */
 
     /**
      * Event emitter
@@ -603,7 +600,7 @@ open external class Readable : Stream, node.ReadableStream {
     fun addListener(event: ReadableEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun addListener(event: ReadableEvent.DATA, listener: (chunk: Any?) -> Unit): Unit /* this */
     fun addListener(event: ReadableEvent.END, listener: () -> Unit): Unit /* this */
-    fun addListener(event: ReadableEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
+    fun addListener(event: ReadableEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun addListener(event: ReadableEvent.PAUSE, listener: () -> Unit): Unit /* this */
     fun addListener(event: ReadableEvent.READABLE, listener: () -> Unit): Unit /* this */
     fun addListener(event: ReadableEvent.RESUME, listener: () -> Unit): Unit /* this */
@@ -617,7 +614,7 @@ open external class Readable : Stream, node.ReadableStream {
     fun emit(event: ReadableEvent.CLOSE): Boolean
     fun emit(event: ReadableEvent.DATA, chunk: Any?): Boolean
     fun emit(event: ReadableEvent.END): Boolean
-    fun emit(event: ReadableEvent.ERROR, err: JsError): Boolean
+    fun emit(event: ReadableEvent.ERROR, err: js.errors.JsError): Boolean
     fun emit(event: ReadableEvent.PAUSE): Boolean
     fun emit(event: ReadableEvent.READABLE): Boolean
     fun emit(event: ReadableEvent.RESUME): Boolean
@@ -627,7 +624,7 @@ open external class Readable : Stream, node.ReadableStream {
     fun on(event: ReadableEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun on(event: ReadableEvent.DATA, listener: (chunk: Any?) -> Unit): Unit /* this */
     fun on(event: ReadableEvent.END, listener: () -> Unit): Unit /* this */
-    fun on(event: ReadableEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
+    fun on(event: ReadableEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun on(event: ReadableEvent.PAUSE, listener: () -> Unit): Unit /* this */
     fun on(event: ReadableEvent.READABLE, listener: () -> Unit): Unit /* this */
     fun on(event: ReadableEvent.RESUME, listener: () -> Unit): Unit /* this */
@@ -637,7 +634,7 @@ open external class Readable : Stream, node.ReadableStream {
     fun once(event: ReadableEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun once(event: ReadableEvent.DATA, listener: (chunk: Any?) -> Unit): Unit /* this */
     fun once(event: ReadableEvent.END, listener: () -> Unit): Unit /* this */
-    fun once(event: ReadableEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
+    fun once(event: ReadableEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun once(event: ReadableEvent.PAUSE, listener: () -> Unit): Unit /* this */
     fun once(event: ReadableEvent.READABLE, listener: () -> Unit): Unit /* this */
     fun once(event: ReadableEvent.RESUME, listener: () -> Unit): Unit /* this */
@@ -647,7 +644,7 @@ open external class Readable : Stream, node.ReadableStream {
     fun prependListener(event: ReadableEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun prependListener(event: ReadableEvent.DATA, listener: (chunk: Any?) -> Unit): Unit /* this */
     fun prependListener(event: ReadableEvent.END, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: ReadableEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
+    fun prependListener(event: ReadableEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun prependListener(event: ReadableEvent.PAUSE, listener: () -> Unit): Unit /* this */
     fun prependListener(event: ReadableEvent.READABLE, listener: () -> Unit): Unit /* this */
     fun prependListener(event: ReadableEvent.RESUME, listener: () -> Unit): Unit /* this */
@@ -661,11 +658,7 @@ open external class Readable : Stream, node.ReadableStream {
     fun prependOnceListener(event: ReadableEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(event: ReadableEvent.DATA, listener: (chunk: Any?) -> Unit): Unit /* this */
     fun prependOnceListener(event: ReadableEvent.END, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(
-        event: ReadableEvent.ERROR,
-        listener: (err: JsError) -> Unit,
-    ): Unit /* this */
-
+    fun prependOnceListener(event: ReadableEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun prependOnceListener(event: ReadableEvent.PAUSE, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(event: ReadableEvent.READABLE, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(event: ReadableEvent.RESUME, listener: () -> Unit): Unit /* this */
@@ -682,7 +675,7 @@ open external class Readable : Stream, node.ReadableStream {
     fun removeListener(event: ReadableEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun removeListener(event: ReadableEvent.DATA, listener: (chunk: Any?) -> Unit): Unit /* this */
     fun removeListener(event: ReadableEvent.END, listener: () -> Unit): Unit /* this */
-    fun removeListener(event: ReadableEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
+    fun removeListener(event: ReadableEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun removeListener(event: ReadableEvent.PAUSE, listener: () -> Unit): Unit /* this */
     fun removeListener(event: ReadableEvent.READABLE, listener: () -> Unit): Unit /* this */
     fun removeListener(event: ReadableEvent.RESUME, listener: () -> Unit): Unit /* this */

@@ -3,15 +3,13 @@
 package node.fs
 
 
-import js.core.Void
-
 suspend fun mkdir(path: PathLike, options: MkdirRecursiveAsyncOptions): String? =
     mkdirAsync(
         path, options
     ).await()
 
 
-suspend fun mkdir(path: PathLike): Void =
+suspend fun mkdir(path: PathLike): js.core.Void =
     mkdirAsync(
         path
     ).await()
@@ -24,7 +22,7 @@ suspend fun mkdir(path: PathLike): Void =
  * should be created. If a string is passed, it is parsed as an octal integer. If not specified, defaults to `0o777`.
  */
 
-suspend fun mkdir(path: PathLike, options: Mode? = undefined.unsafeCast<Nothing>()): Void =
+suspend fun mkdir(path: PathLike, options: Mode? = undefined.unsafeCast<Nothing>()): js.core.Void =
     mkdirAsync(
         path, options
     ).await()
@@ -37,7 +35,7 @@ suspend fun mkdir(path: PathLike, options: Mode? = undefined.unsafeCast<Nothing>
  * should be created. If a string is passed, it is parsed as an octal integer. If not specified, defaults to `0o777`.
  */
 
-suspend fun mkdir(path: PathLike, options: (MkdirAsyncOptions)? = undefined.unsafeCast<Nothing>()): Void =
+suspend fun mkdir(path: PathLike, options: (MkdirAsyncOptions)? = undefined.unsafeCast<Nothing>()): js.core.Void =
     mkdirAsync(
         path, options
     ).await()

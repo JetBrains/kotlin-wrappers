@@ -4,7 +4,6 @@
 
 package node.util
 
-import js.core.Void
 import js.promise.Promise
 import web.abort.AbortSignal
 
@@ -33,4 +32,4 @@ import web.abort.AbortSignal
  */
 
 @JsName("aborted")
-external fun abortedAsync(signal: AbortSignal, resource: Any?): Promise<Void>
+external fun abortedAsync(signal: AbortSignal, resource: Any?): Promise<js.core.Void>

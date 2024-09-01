@@ -4,8 +4,6 @@
 
 package node.crypto
 
-import js.errors.JsError
-
 /**
  * Asynchronously generates a new random secret key of the given `length`. The `type` will determine which validations will be performed on the `length`.
  *
@@ -28,5 +26,5 @@ import js.errors.JsError
 external fun generateKey(
     type: GenerateKeyType,
     options: GenerateKeyOptions,
-    callback: (err: JsError?, key: KeyObject) -> Unit,
+    callback: (err: js.errors.JsError?, key: KeyObject) -> Unit,
 ): Unit

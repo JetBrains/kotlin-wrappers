@@ -4,8 +4,6 @@
 
 package node.assert
 
-import js.errors.JsError
-
 /**
  * Tests for deep equality between the `actual` and `expected` parameters.
  * "Deep" equality means that the enumerable "own" properties of child objects
@@ -35,5 +33,5 @@ external fun <T> deepEqual(
 external fun <T> deepEqual(
     actual: Any?,
     expected: T,
-    message: JsError = definedExternally,
+    message: js.errors.JsError = definedExternally,
 ): Unit /* asserts actual is T */

@@ -44,7 +44,7 @@ sealed external interface ReadableEvent {
         fun end(): node.events.EventType<Readable, js.array.JsTuple>
 
         @seskar.js.JsValue("error")
-        fun error(): node.events.EventType<Readable, js.array.JsTuple1<Throwable /* JsError */>>
+        fun error(): node.events.EventType<Readable, js.array.JsTuple1<js.errors.JsError>>
 
         @seskar.js.JsValue("pause")
         fun pause(): node.events.EventType<Readable, js.array.JsTuple>

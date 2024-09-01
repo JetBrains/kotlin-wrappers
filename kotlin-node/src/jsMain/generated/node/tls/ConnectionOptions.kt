@@ -9,7 +9,7 @@ external interface ConnectionOptions : SecureContextOptions, CommonConnectionOpt
 
     var socket: node.stream.Duplex?// Establish secure connection on a given socket rather than creating a new socket
 
-    var checkServerIdentity: ((hostname: String, cert: PeerCertificate) -> Throwable /* JsError */?)?
+    var checkServerIdentity: ((hostname: String, cert: PeerCertificate) -> js.errors.JsError?)?
     var servername: String?// SNI TLS Extension
 
     var session: node.buffer.Buffer?

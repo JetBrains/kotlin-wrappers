@@ -4,8 +4,6 @@
 
 package node.http
 
-import js.errors.JsError
-
 import node.net.Socket
 import web.url.URL
 
@@ -201,7 +199,7 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
 
     fun addListener(event: ClientRequestEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun addListener(event: ClientRequestEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun addListener(event: ClientRequestEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
+    fun addListener(event: ClientRequestEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun addListener(event: ClientRequestEvent.FINISH, listener: () -> Unit): Unit /* this */
     fun addListener(event: ClientRequestEvent.PIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
     fun addListener(event: ClientRequestEvent.UNPIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
@@ -233,7 +231,7 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
 
     fun on(event: ClientRequestEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun on(event: ClientRequestEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun on(event: ClientRequestEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
+    fun on(event: ClientRequestEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun on(event: ClientRequestEvent.FINISH, listener: () -> Unit): Unit /* this */
     fun on(event: ClientRequestEvent.PIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
     fun on(event: ClientRequestEvent.UNPIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
@@ -262,7 +260,7 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
 
     fun once(event: ClientRequestEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun once(event: ClientRequestEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun once(event: ClientRequestEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
+    fun once(event: ClientRequestEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun once(event: ClientRequestEvent.FINISH, listener: () -> Unit): Unit /* this */
     fun once(event: ClientRequestEvent.PIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
     fun once(event: ClientRequestEvent.UNPIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
@@ -299,11 +297,7 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
 
     fun prependListener(event: ClientRequestEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun prependListener(event: ClientRequestEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun prependListener(
-        event: ClientRequestEvent.ERROR,
-        listener: (err: JsError) -> Unit,
-    ): Unit /* this */
-
+    fun prependListener(event: ClientRequestEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun prependListener(event: ClientRequestEvent.FINISH, listener: () -> Unit): Unit /* this */
     fun prependListener(event: ClientRequestEvent.PIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
     fun prependListener(
@@ -352,7 +346,7 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
     fun prependOnceListener(event: ClientRequestEvent.DRAIN, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(
         event: ClientRequestEvent.ERROR,
-        listener: (err: JsError) -> Unit,
+        listener: (err: js.errors.JsError) -> Unit,
     ): Unit /* this */
 
     fun prependOnceListener(event: ClientRequestEvent.FINISH, listener: () -> Unit): Unit /* this */

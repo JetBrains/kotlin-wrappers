@@ -3,19 +3,20 @@
 package node.test
 
 
-import js.core.Void
-
 suspend fun todo(
     name: String = undefined.unsafeCast<Nothing>(),
     options: TestOptions = undefined.unsafeCast<Nothing>(),
     fn: TestFn = undefined.unsafeCast<Nothing>(),
-): Void =
+): js.core.Void =
     todoAsync(
         name, options, fn
     ).await()
 
 
-suspend fun todo(name: String = undefined.unsafeCast<Nothing>(), fn: TestFn = undefined.unsafeCast<Nothing>()): Void =
+suspend fun todo(
+    name: String = undefined.unsafeCast<Nothing>(),
+    fn: TestFn = undefined.unsafeCast<Nothing>(),
+): js.core.Void =
     todoAsync(
         name, fn
     ).await()
@@ -24,19 +25,19 @@ suspend fun todo(name: String = undefined.unsafeCast<Nothing>(), fn: TestFn = un
 suspend fun todo(
     options: TestOptions = undefined.unsafeCast<Nothing>(),
     fn: TestFn = undefined.unsafeCast<Nothing>(),
-): Void =
+): js.core.Void =
     todoAsync(
         options, fn
     ).await()
 
 
-suspend fun todo(fn: TestFn = undefined.unsafeCast<Nothing>()): Void =
+suspend fun todo(fn: TestFn = undefined.unsafeCast<Nothing>()): js.core.Void =
     todoAsync(
         fn
     ).await()
 
 
-suspend fun todo(): Void =
+suspend fun todo(): js.core.Void =
     todoAsync(
 
     ).await()

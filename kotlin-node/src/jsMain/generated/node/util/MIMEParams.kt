@@ -4,9 +4,6 @@
 
 package node.util
 
-import js.array.JsTuple2
-import js.iterable.JsIterator
-
 /**
  * The `MIMEParams` API provides read and write access to the parameters of a `MIMEType`.
  * @since v19.1.0, v18.13.0
@@ -22,7 +19,7 @@ external class MIMEParams {
      * Each item of the iterator is a JavaScript `Array`. The first item of the array
      * is the `name`, the second item of the array is the `value`.
      */
-    fun entries(): JsIterator<JsTuple2<String, String>>
+    fun entries(): js.iterable.JsIterator<js.array.JsTuple2</* name: */ String, /* value: */ String>>
 
     /**
      * Returns the value of the first name-value pair whose name is `name`. If there
@@ -51,7 +48,7 @@ external class MIMEParams {
      * //   bar
      * ```
      */
-    fun keys(): JsIterator<String>
+    fun keys(): js.iterable.JsIterator<String>
 
     /**
      * Sets the value in the `MIMEParams` object associated with `name` to `value`. If there are any pre-existing name-value pairs whose names are `name`,
@@ -72,5 +69,5 @@ external class MIMEParams {
     /**
      * Returns an iterator over the values of each name-value pair.
      */
-    fun values(): JsIterator<String>
+    fun values(): js.iterable.JsIterator<String>
 }

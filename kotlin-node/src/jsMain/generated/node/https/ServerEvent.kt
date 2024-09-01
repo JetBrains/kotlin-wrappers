@@ -2,7 +2,6 @@
 
 package node.https
 
-import js.errors.JsError
 import node.http.IncomingMessage
 import node.http.ServerResponse
 import node.stream.Duplex
@@ -79,19 +78,19 @@ sealed external interface ServerEvent {
         fun keylog(): node.events.EventType<Server<*, *>, js.array.JsTuple2<node.buffer.Buffer, node.tls.TLSSocket>>
 
         @seskar.js.JsValue("newSession")
-        fun newSession(): node.events.EventType<Server<*, *>, js.array.JsTuple3<node.buffer.Buffer, node.buffer.Buffer, (err: JsError, resp: node.buffer.Buffer) -> Unit>>
+        fun newSession(): node.events.EventType<Server<*, *>, js.array.JsTuple3<node.buffer.Buffer, node.buffer.Buffer, (err: js.errors.JsError, resp: node.buffer.Buffer) -> Unit>>
 
         @seskar.js.JsValue("OCSPRequest")
-        fun OCSPRequest(): node.events.EventType<Server<*, *>, js.array.JsTuple3<node.buffer.Buffer, node.buffer.Buffer, (err: JsError?, resp: node.buffer.Buffer) -> Unit>>
+        fun OCSPRequest(): node.events.EventType<Server<*, *>, js.array.JsTuple3<node.buffer.Buffer, node.buffer.Buffer, (err: js.errors.JsError?, resp: node.buffer.Buffer) -> Unit>>
 
         @seskar.js.JsValue("resumeSession")
-        fun resumeSession(): node.events.EventType<Server<*, *>, js.array.JsTuple2<node.buffer.Buffer, (err: JsError, sessionData: node.buffer.Buffer) -> Unit>>
+        fun resumeSession(): node.events.EventType<Server<*, *>, js.array.JsTuple2<node.buffer.Buffer, (err: js.errors.JsError, sessionData: node.buffer.Buffer) -> Unit>>
 
         @seskar.js.JsValue("secureConnection")
         fun secureConnection(): node.events.EventType<Server<*, *>, js.array.JsTuple1<node.tls.TLSSocket>>
 
         @seskar.js.JsValue("tlsClientError")
-        fun tlsClientError(): node.events.EventType<Server<*, *>, js.array.JsTuple2<Throwable /* JsError */, node.tls.TLSSocket>>
+        fun tlsClientError(): node.events.EventType<Server<*, *>, js.array.JsTuple2<js.errors.JsError, node.tls.TLSSocket>>
 
         @seskar.js.JsValue("close")
         fun close(): node.events.EventType<Server<*, *>, js.array.JsTuple>
@@ -100,7 +99,7 @@ sealed external interface ServerEvent {
         fun connection(): node.events.EventType<Server<*, *>, js.array.JsTuple1<Duplex>>
 
         @seskar.js.JsValue("error")
-        fun error(): node.events.EventType<Server<*, *>, js.array.JsTuple1<Throwable /* JsError */>>
+        fun error(): node.events.EventType<Server<*, *>, js.array.JsTuple1<js.errors.JsError>>
 
         @seskar.js.JsValue("listening")
         fun listening(): node.events.EventType<Server<*, *>, js.array.JsTuple>
@@ -112,7 +111,7 @@ sealed external interface ServerEvent {
         fun <Request : IncomingMessage, Response : ServerResponse<*>> checkExpectation(): node.events.EventType<Server<Request, Response>, js.array.JsTuple2<Request, Response>>
 
         @seskar.js.JsValue("clientError")
-        fun clientError(): node.events.EventType<Server<*, *>, js.array.JsTuple2<Throwable /* JsError */, Duplex>>
+        fun clientError(): node.events.EventType<Server<*, *>, js.array.JsTuple2<js.errors.JsError, Duplex>>
 
         @seskar.js.JsValue("connect")
         fun <Request : IncomingMessage> connect(): node.events.EventType<Server<Request, *>, js.array.JsTuple3<Request, Duplex, node.buffer.Buffer>>

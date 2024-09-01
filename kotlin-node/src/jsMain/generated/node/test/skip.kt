@@ -4,7 +4,6 @@
 
 package node.test
 
-import js.core.Void
 import js.promise.Promise
 
 /**
@@ -17,19 +16,19 @@ external fun skipAsync(
     name: String = definedExternally,
     options: TestOptions = definedExternally,
     fn: TestFn = definedExternally,
-): Promise<Void>
+): Promise<js.core.Void>
 
 
 @JsName("skip")
-external fun skipAsync(name: String = definedExternally, fn: TestFn = definedExternally): Promise<Void>
+external fun skipAsync(name: String = definedExternally, fn: TestFn = definedExternally): Promise<js.core.Void>
 
 
 @JsName("skip")
-external fun skipAsync(options: TestOptions = definedExternally, fn: TestFn = definedExternally): Promise<Void>
+external fun skipAsync(options: TestOptions = definedExternally, fn: TestFn = definedExternally): Promise<js.core.Void>
 
 
 @JsName("skip")
-external fun skipAsync(fn: TestFn = definedExternally): Promise<Void>
+external fun skipAsync(fn: TestFn = definedExternally): Promise<js.core.Void>
 
 @JsName("skip")
-external fun skipAsync(): Promise<Void>
+external fun skipAsync(): Promise<js.core.Void>

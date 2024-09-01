@@ -4,7 +4,6 @@
 
 package node.vm
 
-import js.core.Void
 import js.promise.Promise
 
 /**
@@ -175,7 +174,7 @@ open external class Module {
      * ECMAScript specification.
      * @return Fulfills with `undefined` upon success.
      */
-    fun evaluate(options: ModuleEvaluateOptions = definedExternally): Promise<Void>
+    fun evaluate(options: ModuleEvaluateOptions = definedExternally): Promise<js.core.Void>
 
     /**
      * Link module dependencies. This method must be called before evaluation, and
@@ -209,5 +208,5 @@ open external class Module {
      * Corresponds to the [Link() concrete method](https://tc39.es/ecma262/#sec-moduledeclarationlinking) field of [Cyclic Module Record](https://tc39.es/ecma262/#sec-cyclic-module-records) s in
      * the ECMAScript specification.
      */
-    fun link(linker: ModuleLinker): Promise<Void>
+    fun link(linker: ModuleLinker): Promise<js.core.Void>
 }

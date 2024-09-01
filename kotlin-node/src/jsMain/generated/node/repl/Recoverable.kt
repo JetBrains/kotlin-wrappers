@@ -4,8 +4,6 @@
 
 package node.repl
 
-import js.errors.JsError
-
 import js.errors.SyntaxError
 
 /**
@@ -14,7 +12,7 @@ import js.errors.SyntaxError
  * @see https://nodejs.org/dist/latest-v20.x/docs/api/repl.html#repl_recoverable_errors
  */
 external class Recoverable : SyntaxError {
-    constructor (err: JsError)
+    constructor (err: js.errors.JsError)
 
-    var err: JsError
+    var err: js.errors.JsError
 }

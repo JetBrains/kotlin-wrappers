@@ -5,7 +5,6 @@
 package node.crypto
 
 import js.buffer.ArrayBuffer
-import js.errors.JsError
 
 /**
  * Generates a pseudorandom prime of `size` bits.
@@ -34,22 +33,22 @@ import js.errors.JsError
  * @since v15.8.0
  * @param size The size (in bits) of the prime to generate.
  */
-external fun generatePrime(size: Number, callback: (err: JsError?, prime: ArrayBuffer) -> Unit): Unit
+external fun generatePrime(size: Number, callback: (err: js.errors.JsError?, prime: ArrayBuffer) -> Unit): Unit
 
 external fun generatePrime(
     size: Number,
     options: GeneratePrimeOptionsBigInt,
-    callback: (err: JsError?, prime: js.core.BigInt) -> Unit,
+    callback: (err: js.errors.JsError?, prime: js.core.BigInt) -> Unit,
 ): Unit
 
 external fun generatePrime(
     size: Number,
     options: GeneratePrimeOptionsArrayBuffer,
-    callback: (err: JsError?, prime: ArrayBuffer) -> Unit,
+    callback: (err: js.errors.JsError?, prime: ArrayBuffer) -> Unit,
 ): Unit
 
 external fun generatePrime(
     size: Number,
     options: GeneratePrimeOptions,
-    callback: (err: JsError?, prime: Any /* ArrayBuffer | bigint */) -> Unit,
+    callback: (err: js.errors.JsError?, prime: Any /* ArrayBuffer | bigint */) -> Unit,
 ): Unit

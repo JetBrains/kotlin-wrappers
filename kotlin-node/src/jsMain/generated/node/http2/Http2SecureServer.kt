@@ -2,8 +2,6 @@
 
 package node.http2
 
-import js.errors.JsError
-
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 sealed external interface Http2SecureServer : node.tls.Server, HTTP2ServerCommon {
     fun addListener(
@@ -23,7 +21,7 @@ sealed external interface Http2SecureServer : node.tls.Server, HTTP2ServerCommon
 
     fun addListener(
         event: Http2SecureServerEvent.SESSIONERROR,
-        listener: (err: JsError) -> Unit,
+        listener: (err: js.errors.JsError) -> Unit,
     ): Unit /* this */
 
     fun addListener(
@@ -48,7 +46,7 @@ sealed external interface Http2SecureServer : node.tls.Server, HTTP2ServerCommon
 
     fun emit(event: Http2SecureServerEvent.REQUEST, request: Http2ServerRequest, response: Http2ServerResponse): Boolean
     fun emit(event: Http2SecureServerEvent.SESSION, session: ServerHttp2Session): Boolean
-    fun emit(event: Http2SecureServerEvent.SESSIONERROR, err: JsError): Boolean
+    fun emit(event: Http2SecureServerEvent.SESSIONERROR, err: js.errors.JsError): Boolean
     fun emit(
         event: Http2SecureServerEvent.STREAM,
         stream: ServerHttp2Stream,
@@ -72,11 +70,7 @@ sealed external interface Http2SecureServer : node.tls.Server, HTTP2ServerCommon
     ): Unit /* this */
 
     fun on(event: Http2SecureServerEvent.SESSION, listener: (session: ServerHttp2Session) -> Unit): Unit /* this */
-    fun on(
-        event: Http2SecureServerEvent.SESSIONERROR,
-        listener: (err: JsError) -> Unit,
-    ): Unit /* this */
-
+    fun on(event: Http2SecureServerEvent.SESSIONERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun on(
         event: Http2SecureServerEvent.STREAM,
         listener: (stream: ServerHttp2Stream, headers: IncomingHttpHeaders, flags: Double) -> Unit,
@@ -102,11 +96,7 @@ sealed external interface Http2SecureServer : node.tls.Server, HTTP2ServerCommon
     ): Unit /* this */
 
     fun once(event: Http2SecureServerEvent.SESSION, listener: (session: ServerHttp2Session) -> Unit): Unit /* this */
-    fun once(
-        event: Http2SecureServerEvent.SESSIONERROR,
-        listener: (err: JsError) -> Unit,
-    ): Unit /* this */
-
+    fun once(event: Http2SecureServerEvent.SESSIONERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun once(
         event: Http2SecureServerEvent.STREAM,
         listener: (stream: ServerHttp2Stream, headers: IncomingHttpHeaders, flags: Double) -> Unit,
@@ -138,7 +128,7 @@ sealed external interface Http2SecureServer : node.tls.Server, HTTP2ServerCommon
 
     fun prependListener(
         event: Http2SecureServerEvent.SESSIONERROR,
-        listener: (err: JsError) -> Unit,
+        listener: (err: js.errors.JsError) -> Unit,
     ): Unit /* this */
 
     fun prependListener(
@@ -179,7 +169,7 @@ sealed external interface Http2SecureServer : node.tls.Server, HTTP2ServerCommon
 
     fun prependOnceListener(
         event: Http2SecureServerEvent.SESSIONERROR,
-        listener: (err: JsError) -> Unit,
+        listener: (err: js.errors.JsError) -> Unit,
     ): Unit /* this */
 
     fun prependOnceListener(

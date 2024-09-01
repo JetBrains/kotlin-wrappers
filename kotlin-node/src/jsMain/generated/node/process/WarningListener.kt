@@ -2,6 +2,4 @@
 
 package node.process
 
-import js.errors.JsError
-
-typealias WarningListener = (warning: JsError) -> Unit
+typealias WarningListener = (warning: js.errors.JsError) -> Unit

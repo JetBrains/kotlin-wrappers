@@ -2,8 +2,6 @@
 
 package node.tls
 
-import js.errors.JsError
-
 sealed external interface CommonConnectionOptions {
     /**
      * An optional TLS context object from tls.createSecureContext()
@@ -39,7 +37,7 @@ sealed external interface CommonConnectionOptions {
      * SecureContext.) If SNICallback wasn't provided the default callback
      * with high-level API will be used (see below).
      */
-    var SNICallback: ((servername: String, cb: (err: JsError?, ctx: SecureContext? /* use undefined for default */) -> Unit) -> Unit)?
+    var SNICallback: ((servername: String, cb: (err: js.errors.JsError?, ctx: SecureContext? /* use undefined for default */) -> Unit) -> Unit)?
 
     /**
      * If true the server will reject any connection which is not

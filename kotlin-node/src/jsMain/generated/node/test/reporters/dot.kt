@@ -11,4 +11,4 @@ import js.generator.AsyncGenerator
  * where each passing test is represented by a `.`,
  * and each failing test is represented by a `X`.
  */
-external fun dot(source: TestEventGenerator): AsyncGenerator<String /* "\n" | "." | "X" */, Unit, *>
+external fun dot(source: TestEventGenerator): AsyncGenerator<String /* "\n" | "." | "X" */, js.core.Void, *>

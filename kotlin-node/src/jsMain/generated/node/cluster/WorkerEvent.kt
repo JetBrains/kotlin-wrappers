@@ -34,7 +34,7 @@ sealed external interface WorkerEvent {
         fun disconnect(): node.events.EventType<Worker, js.array.JsTuple>
 
         @seskar.js.JsValue("error")
-        fun error(): node.events.EventType<Worker, js.array.JsTuple1<Throwable /* JsError */>>
+        fun error(): node.events.EventType<Worker, js.array.JsTuple1<js.errors.JsError>>
 
         @seskar.js.JsValue("exit")
         fun exit(): node.events.EventType<Worker, js.array.JsTuple2<Double, String>>

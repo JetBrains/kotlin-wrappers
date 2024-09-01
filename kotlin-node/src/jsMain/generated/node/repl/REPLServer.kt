@@ -4,8 +4,6 @@
 
 package node.repl
 
-import js.errors.JsError
-
 import node.vm.Context
 import node.readline._Interface as Interface
 
@@ -251,7 +249,7 @@ external class REPLServer : Interface {
      * @param historyPath the path to the history file
      * @param callback called when history writes are ready or upon error
      */
-    fun setupHistory(path: String, callback: (err: JsError?, repl: Unit /* this */) -> Unit): Unit
+    fun setupHistory(path: String, callback: (err: js.errors.JsError?, repl: Unit /* this */) -> Unit): Unit
 
     /**
      * events.EventEmitter

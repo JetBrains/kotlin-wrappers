@@ -42,7 +42,7 @@ sealed external interface Http2SessionEvent {
         fun close(): node.events.EventType<Http2Session, js.array.JsTuple>
 
         @seskar.js.JsValue("error")
-        fun error(): node.events.EventType<Http2Session, js.array.JsTuple1<Throwable /* JsError */>>
+        fun error(): node.events.EventType<Http2Session, js.array.JsTuple1<js.errors.JsError>>
 
         @seskar.js.JsValue("frameError")
         fun frameError(): node.events.EventType<Http2Session, js.array.JsTuple3<Double, Double, Double>>

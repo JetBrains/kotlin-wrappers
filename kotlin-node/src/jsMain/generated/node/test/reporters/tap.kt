@@ -9,4 +9,4 @@ import js.generator.AsyncGenerator
 /**
  * The `tap` reporter outputs the test results in the [TAP](https://testanything.org/) format.
  */
-external fun tap(source: TestEventGenerator): AsyncGenerator<String, Unit, *>
+external fun tap(source: TestEventGenerator): AsyncGenerator<String, js.core.Void, *>

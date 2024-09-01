@@ -4,8 +4,6 @@
 
 package node.crypto
 
-import js.errors.JsError
-
 /**
  * Generates cryptographically strong pseudorandom data. The `size` argument
  * is a number indicating the number of bytes to generate.
@@ -60,4 +58,4 @@ import js.errors.JsError
  */
 external fun randomBytes(size: Number): node.buffer.Buffer
 
-external fun randomBytes(size: Number, callback: (err: JsError?, buf: node.buffer.Buffer) -> Unit): Unit
+external fun randomBytes(size: Number, callback: (err: js.errors.JsError?, buf: node.buffer.Buffer) -> Unit): Unit

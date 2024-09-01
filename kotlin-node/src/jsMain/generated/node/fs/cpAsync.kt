@@ -4,7 +4,6 @@
 
 package node.fs
 
-import js.core.Void
 import js.promise.Promise
 import web.url.URL
 
@@ -22,7 +21,7 @@ import web.url.URL
  */
 
 @JsName("cp")
-external fun cpAsync(source: String, destination: String, opts: CopyOptions = definedExternally): Promise<Void>
+external fun cpAsync(source: String, destination: String, opts: CopyOptions = definedExternally): Promise<js.core.Void>
 
 
 /**
@@ -39,7 +38,7 @@ external fun cpAsync(source: String, destination: String, opts: CopyOptions = de
  */
 
 @JsName("cp")
-external fun cpAsync(source: String, destination: URL, opts: CopyOptions = definedExternally): Promise<Void>
+external fun cpAsync(source: String, destination: URL, opts: CopyOptions = definedExternally): Promise<js.core.Void>
 
 
 /**
@@ -56,7 +55,7 @@ external fun cpAsync(source: String, destination: URL, opts: CopyOptions = defin
  */
 
 @JsName("cp")
-external fun cpAsync(source: URL, destination: String, opts: CopyOptions = definedExternally): Promise<Void>
+external fun cpAsync(source: URL, destination: String, opts: CopyOptions = definedExternally): Promise<js.core.Void>
 
 
 /**
@@ -73,4 +72,4 @@ external fun cpAsync(source: URL, destination: String, opts: CopyOptions = defin
  */
 
 @JsName("cp")
-external fun cpAsync(source: URL, destination: URL, opts: CopyOptions = definedExternally): Promise<Void>
+external fun cpAsync(source: URL, destination: URL, opts: CopyOptions = definedExternally): Promise<js.core.Void>

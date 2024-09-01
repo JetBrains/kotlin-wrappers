@@ -59,7 +59,7 @@ sealed external interface ServerEvent {
         fun connection(): node.events.EventType<Server<*, *>, js.array.JsTuple1<Socket>>
 
         @seskar.js.JsValue("error")
-        fun error(): node.events.EventType<Server<*, *>, js.array.JsTuple1<Throwable /* JsError */>>
+        fun error(): node.events.EventType<Server<*, *>, js.array.JsTuple1<js.errors.JsError>>
 
         @seskar.js.JsValue("listening")
         fun listening(): node.events.EventType<Server<*, *>, js.array.JsTuple>
@@ -71,7 +71,7 @@ sealed external interface ServerEvent {
         fun <Request : IncomingMessage, Response : ServerResponse<*>> checkExpectation(): node.events.EventType<Server<Request, Response>, js.array.JsTuple2<Request, Response>>
 
         @seskar.js.JsValue("clientError")
-        fun clientError(): node.events.EventType<Server<*, *>, js.array.JsTuple2<Throwable /* JsError */, node.stream.Duplex>>
+        fun clientError(): node.events.EventType<Server<*, *>, js.array.JsTuple2<js.errors.JsError, node.stream.Duplex>>
 
         @seskar.js.JsValue("connect")
         fun <Request : IncomingMessage> connect(): node.events.EventType<Server<Request, *>, js.array.JsTuple3<Request, node.stream.Duplex, node.buffer.Buffer>>

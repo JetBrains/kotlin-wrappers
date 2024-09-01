@@ -78,7 +78,7 @@ sealed external interface Http2StreamEvent {
         fun end(): node.events.EventType<Http2Stream, js.array.JsTuple>
 
         @seskar.js.JsValue("error")
-        fun error(): node.events.EventType<Http2Stream, js.array.JsTuple1<Throwable /* JsError */>>
+        fun error(): node.events.EventType<Http2Stream, js.array.JsTuple1<js.errors.JsError>>
 
         @seskar.js.JsValue("finish")
         fun finish(): node.events.EventType<Http2Stream, js.array.JsTuple>

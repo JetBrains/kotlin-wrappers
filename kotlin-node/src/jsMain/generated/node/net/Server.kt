@@ -4,8 +4,6 @@
 
 package node.net
 
-import js.errors.JsError
-
 import node.events.EventEmitter
 
 /**
@@ -106,7 +104,7 @@ open external class Server : EventEmitter {
      * @since v0.1.90
      * @param callback Called when the server is closed.
      */
-    fun close(callback: (err: JsError? /* use undefined for default */) -> Unit = definedExternally): Unit /* this */
+    fun close(callback: (err: js.errors.JsError? /* use undefined for default */) -> Unit = definedExternally): Unit /* this */
 
     /**
      * Returns the bound `address`, the address `family` name, and `port` of the server
@@ -143,7 +141,7 @@ open external class Server : EventEmitter {
      * Callback should take two arguments `err` and `count`.
      * @since v0.9.7
      */
-    fun getConnections(cb: (error: JsError?, count: Double) -> Unit): Unit
+    fun getConnections(cb: (error: js.errors.JsError?, count: Double) -> Unit): Unit
 
     /**
      * Opposite of `unref()`, calling `ref()` on a previously `unref`ed server will _not_ let the program exit if it's the only server left (the default behavior).
@@ -187,7 +185,7 @@ open external class Server : EventEmitter {
     open fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun addListener(event: ServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun addListener(event: ServerEvent.CONNECTION, listener: (socket: Socket) -> Unit): Unit /* this */
-    fun addListener(event: ServerEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
+    fun addListener(event: ServerEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun addListener(event: ServerEvent.LISTENING, listener: () -> Unit): Unit /* this */
     fun addListener(
         event: ServerEvent.DROP,
@@ -199,13 +197,13 @@ open external class Server : EventEmitter {
     open fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
     fun emit(event: ServerEvent.CLOSE): Boolean
     fun emit(event: ServerEvent.CONNECTION, socket: Socket): Boolean
-    fun emit(event: ServerEvent.ERROR, err: JsError): Boolean
+    fun emit(event: ServerEvent.ERROR, err: js.errors.JsError): Boolean
     fun emit(event: ServerEvent.LISTENING): Boolean
     fun emit(event: ServerEvent.DROP, data: DropArgument = definedExternally): Boolean
     open fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun on(event: ServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun on(event: ServerEvent.CONNECTION, listener: (socket: Socket) -> Unit): Unit /* this */
-    fun on(event: ServerEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
+    fun on(event: ServerEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun on(event: ServerEvent.LISTENING, listener: () -> Unit): Unit /* this */
     fun on(
         event: ServerEvent.DROP,
@@ -215,7 +213,7 @@ open external class Server : EventEmitter {
     open fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun once(event: ServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun once(event: ServerEvent.CONNECTION, listener: (socket: Socket) -> Unit): Unit /* this */
-    fun once(event: ServerEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
+    fun once(event: ServerEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun once(event: ServerEvent.LISTENING, listener: () -> Unit): Unit /* this */
     fun once(
         event: ServerEvent.DROP,
@@ -225,7 +223,7 @@ open external class Server : EventEmitter {
     open fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun prependListener(event: ServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun prependListener(event: ServerEvent.CONNECTION, listener: (socket: Socket) -> Unit): Unit /* this */
-    fun prependListener(event: ServerEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
+    fun prependListener(event: ServerEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun prependListener(event: ServerEvent.LISTENING, listener: () -> Unit): Unit /* this */
     fun prependListener(
         event: ServerEvent.DROP,
@@ -239,7 +237,7 @@ open external class Server : EventEmitter {
 
     fun prependOnceListener(event: ServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(event: ServerEvent.CONNECTION, listener: (socket: Socket) -> Unit): Unit /* this */
-    fun prependOnceListener(event: ServerEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
+    fun prependOnceListener(event: ServerEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun prependOnceListener(event: ServerEvent.LISTENING, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(
         event: ServerEvent.DROP,

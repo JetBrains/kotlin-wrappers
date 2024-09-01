@@ -3,13 +3,11 @@
 package node.test
 
 
-import js.core.Void
-
 suspend fun describe(
     name: String = undefined.unsafeCast<Nothing>(),
     options: TestOptions = undefined.unsafeCast<Nothing>(),
     fn: SuiteFn = undefined.unsafeCast<Nothing>(),
-): Void =
+): js.core.Void =
     describeAsync(
         name, options, fn
     ).await()
@@ -18,7 +16,7 @@ suspend fun describe(
 suspend fun describe(
     name: String = undefined.unsafeCast<Nothing>(),
     fn: SuiteFn = undefined.unsafeCast<Nothing>(),
-): Void =
+): js.core.Void =
     describeAsync(
         name, fn
     ).await()
@@ -27,13 +25,13 @@ suspend fun describe(
 suspend fun describe(
     options: TestOptions = undefined.unsafeCast<Nothing>(),
     fn: SuiteFn = undefined.unsafeCast<Nothing>(),
-): Void =
+): js.core.Void =
     describeAsync(
         options, fn
     ).await()
 
 
-suspend fun describe(fn: SuiteFn = undefined.unsafeCast<Nothing>()): Void =
+suspend fun describe(fn: SuiteFn = undefined.unsafeCast<Nothing>()): js.core.Void =
     describeAsync(
         fn
     ).await()

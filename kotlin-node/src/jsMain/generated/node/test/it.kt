@@ -4,7 +4,6 @@
 
 package node.test
 
-import js.core.Void
 import js.promise.Promise
 
 /**
@@ -19,19 +18,19 @@ external fun itAsync(
     name: String = definedExternally,
     options: TestOptions = definedExternally,
     fn: TestFn = definedExternally,
-): Promise<Void>
+): Promise<js.core.Void>
 
 
 @JsName("it")
-external fun itAsync(name: String = definedExternally, fn: TestFn = definedExternally): Promise<Void>
+external fun itAsync(name: String = definedExternally, fn: TestFn = definedExternally): Promise<js.core.Void>
 
 
 @JsName("it")
-external fun itAsync(options: TestOptions = definedExternally, fn: TestFn = definedExternally): Promise<Void>
+external fun itAsync(options: TestOptions = definedExternally, fn: TestFn = definedExternally): Promise<js.core.Void>
 
 
 @JsName("it")
-external fun itAsync(fn: TestFn = definedExternally): Promise<Void>
+external fun itAsync(fn: TestFn = definedExternally): Promise<js.core.Void>
 
 @JsName("it")
-external fun itAsync(): Promise<Void>
+external fun itAsync(): Promise<js.core.Void>

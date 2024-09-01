@@ -4,8 +4,6 @@
 
 package node.stream
 
-import js.errors.JsError
-
 import js.typedarrays.Uint8Array
 
 /**
@@ -78,7 +76,7 @@ open external class Writable : Stream, node.WritableStream {
      * Returns error if the stream has been destroyed with an error.
      * @since v18.0.0
      */
-    open val errored: JsError?
+    open val errored: js.errors.JsError?
 
     /**
      * Is `true` if the stream's buffer has been full and stream will emit `'drain'`.
@@ -88,17 +86,17 @@ open external class Writable : Stream, node.WritableStream {
     open fun _write(
         chunk: Any?,
         encoding: node.buffer.BufferEncoding,
-        callback: (error: JsError? /* use undefined for default */) -> Unit,
+        callback: (error: js.errors.JsError? /* use undefined for default */) -> Unit,
     ): Unit
 
-    open val _writev: ((chunks: Array<WritableWritevChunksItem>, callback: (error: JsError? /* use undefined for default */) -> Unit) -> Unit)?
-    open val _construct: ((callback: (error: JsError? /* use undefined for default */) -> Unit) -> Unit)?
+    open val _writev: ((chunks: Array<WritableWritevChunksItem>, callback: (error: js.errors.JsError? /* use undefined for default */) -> Unit) -> Unit)?
+    open val _construct: ((callback: (error: js.errors.JsError? /* use undefined for default */) -> Unit) -> Unit)?
     open fun _destroy(
-        error: JsError?,
-        callback: (error: JsError? /* use undefined for default */) -> Unit,
+        error: js.errors.JsError?,
+        callback: (error: js.errors.JsError? /* use undefined for default */) -> Unit,
     ): Unit
 
-    open fun _final(callback: (error: JsError? /* use undefined for default */) -> Unit): Unit
+    open fun _final(callback: (error: js.errors.JsError? /* use undefined for default */) -> Unit): Unit
 
     /**
      * The `writable.write()` method writes some data to the stream, and calls the
@@ -156,11 +154,11 @@ open external class Writable : Stream, node.WritableStream {
      * @param callback Callback for when this chunk of data is flushed.
      * @return `false` if the stream wishes for the calling code to wait for the `'drain'` event to be emitted before continuing to write additional data; otherwise `true`.
      */
-    open fun write(chunk: Any?, callback: (error: JsError?) -> Unit = definedExternally): Boolean
+    open fun write(chunk: Any?, callback: (error: js.errors.JsError?) -> Unit = definedExternally): Boolean
     open fun write(
         chunk: Any?,
         encoding: node.buffer.BufferEncoding,
-        callback: (error: JsError?) -> Unit = definedExternally,
+        callback: (error: js.errors.JsError?) -> Unit = definedExternally,
     ): Boolean
 
     /**
@@ -265,7 +263,7 @@ open external class Writable : Stream, node.WritableStream {
      */
     open fun destroy(): Unit /* this */
 
-    open fun destroy(error: JsError): Unit /* this */
+    open fun destroy(error: js.errors.JsError): Unit /* this */
 
     /**
      * Event emitter
@@ -279,7 +277,7 @@ open external class Writable : Stream, node.WritableStream {
      */
     fun addListener(event: WritableEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun addListener(event: WritableEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun addListener(event: WritableEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
+    fun addListener(event: WritableEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun addListener(event: WritableEvent.FINISH, listener: () -> Unit): Unit /* this */
     fun addListener(event: WritableEvent.PIPE, listener: (src: Readable) -> Unit): Unit /* this */
     fun addListener(event: WritableEvent.UNPIPE, listener: (src: Readable) -> Unit): Unit /* this */
@@ -292,7 +290,7 @@ open external class Writable : Stream, node.WritableStream {
 
     fun emit(event: WritableEvent.CLOSE): Boolean
     fun emit(event: WritableEvent.DRAIN): Boolean
-    fun emit(event: WritableEvent.ERROR, err: JsError): Boolean
+    fun emit(event: WritableEvent.ERROR, err: js.errors.JsError): Boolean
     fun emit(event: WritableEvent.FINISH): Boolean
     fun emit(event: WritableEvent.PIPE, src: Readable): Boolean
     fun emit(event: WritableEvent.UNPIPE, src: Readable): Boolean
@@ -301,7 +299,7 @@ open external class Writable : Stream, node.WritableStream {
     open fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
     fun on(event: WritableEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun on(event: WritableEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun on(event: WritableEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
+    fun on(event: WritableEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun on(event: WritableEvent.FINISH, listener: () -> Unit): Unit /* this */
     fun on(event: WritableEvent.PIPE, listener: (src: Readable) -> Unit): Unit /* this */
     fun on(event: WritableEvent.UNPIPE, listener: (src: Readable) -> Unit): Unit /* this */
@@ -310,7 +308,7 @@ open external class Writable : Stream, node.WritableStream {
     open fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun once(event: WritableEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun once(event: WritableEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun once(event: WritableEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
+    fun once(event: WritableEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun once(event: WritableEvent.FINISH, listener: () -> Unit): Unit /* this */
     fun once(event: WritableEvent.PIPE, listener: (src: Readable) -> Unit): Unit /* this */
     fun once(event: WritableEvent.UNPIPE, listener: (src: Readable) -> Unit): Unit /* this */
@@ -319,7 +317,7 @@ open external class Writable : Stream, node.WritableStream {
     open fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun prependListener(event: WritableEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun prependListener(event: WritableEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: WritableEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
+    fun prependListener(event: WritableEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun prependListener(event: WritableEvent.FINISH, listener: () -> Unit): Unit /* this */
     fun prependListener(event: WritableEvent.PIPE, listener: (src: Readable) -> Unit): Unit /* this */
     fun prependListener(event: WritableEvent.UNPIPE, listener: (src: Readable) -> Unit): Unit /* this */
@@ -332,11 +330,7 @@ open external class Writable : Stream, node.WritableStream {
 
     fun prependOnceListener(event: WritableEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(event: WritableEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(
-        event: WritableEvent.ERROR,
-        listener: (err: JsError) -> Unit,
-    ): Unit /* this */
-
+    fun prependOnceListener(event: WritableEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun prependOnceListener(event: WritableEvent.FINISH, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(event: WritableEvent.PIPE, listener: (src: Readable) -> Unit): Unit /* this */
     fun prependOnceListener(event: WritableEvent.UNPIPE, listener: (src: Readable) -> Unit): Unit /* this */
@@ -352,7 +346,7 @@ open external class Writable : Stream, node.WritableStream {
 
     fun removeListener(event: WritableEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun removeListener(event: WritableEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun removeListener(event: WritableEvent.ERROR, listener: (err: JsError) -> Unit): Unit /* this */
+    fun removeListener(event: WritableEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
     fun removeListener(event: WritableEvent.FINISH, listener: () -> Unit): Unit /* this */
     fun removeListener(event: WritableEvent.PIPE, listener: (src: Readable) -> Unit): Unit /* this */
     fun removeListener(event: WritableEvent.UNPIPE, listener: (src: Readable) -> Unit): Unit /* this */
@@ -366,18 +360,14 @@ open external class Writable : Stream, node.WritableStream {
     override var writable: Boolean
     override fun write(
         buffer: Uint8Array,
-        cb: (err: JsError? /* use undefined for default */) -> Unit,
+        cb: (err: js.errors.JsError? /* use undefined for default */) -> Unit,
     ): Boolean
 
-    override fun write(
-        buffer: String,
-        cb: (err: JsError? /* use undefined for default */) -> Unit,
-    ): Boolean
-
+    override fun write(buffer: String, cb: (err: js.errors.JsError? /* use undefined for default */) -> Unit): Boolean
     override fun write(
         str: String,
         encoding: node.buffer.BufferEncoding,
-        cb: (err: JsError? /* use undefined for default */) -> Unit,
+        cb: (err: js.errors.JsError? /* use undefined for default */) -> Unit,
     ): Boolean
 
     override fun end(data: String, cb: () -> Unit): Unit /* this */

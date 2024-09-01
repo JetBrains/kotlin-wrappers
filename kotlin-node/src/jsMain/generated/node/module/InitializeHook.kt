@@ -9,4 +9,4 @@ package node.module
  * This hook can receive data from a `register` invocation, including ports and other transferrable objects.
  * The return value of `initialize` can be a `Promise`, in which case it will be awaited before the main application thread execution resumes.
  */
-typealias InitializeHook<Data /* default is Any? */> = (data: Data) -> js.promise.PromiseResult<Unit>
+typealias InitializeHook<Data /* default is Any? */> = (data: Data) -> js.promise.PromiseResult<js.core.Void>

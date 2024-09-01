@@ -2,8 +2,6 @@
 
 package node.tls
 
-import js.errors.JsError
-
 
 sealed external interface ServerEvent {
     sealed interface TLSCLIENTERROR : node.events.LegacyEventType
@@ -33,16 +31,16 @@ sealed external interface ServerEvent {
         val KEYLOG: KEYLOG
 
         @seskar.js.JsValue("tlsClientError")
-        fun tlsClientError(): node.events.EventType<Server, js.array.JsTuple2<Throwable /* JsError */, TLSSocket>>
+        fun tlsClientError(): node.events.EventType<Server, js.array.JsTuple2<js.errors.JsError, TLSSocket>>
 
         @seskar.js.JsValue("newSession")
         fun newSession(): node.events.EventType<Server, js.array.JsTuple3<node.buffer.Buffer, node.buffer.Buffer, () -> Unit>>
 
         @seskar.js.JsValue("OCSPRequest")
-        fun OCSPRequest(): node.events.EventType<Server, js.array.JsTuple3<node.buffer.Buffer, node.buffer.Buffer, (err: JsError?, resp: node.buffer.Buffer) -> Unit>>
+        fun OCSPRequest(): node.events.EventType<Server, js.array.JsTuple3<node.buffer.Buffer, node.buffer.Buffer, (err: js.errors.JsError?, resp: node.buffer.Buffer) -> Unit>>
 
         @seskar.js.JsValue("resumeSession")
-        fun resumeSession(): node.events.EventType<Server, js.array.JsTuple2<node.buffer.Buffer, (err: JsError?, sessionData: node.buffer.Buffer?) -> Unit>>
+        fun resumeSession(): node.events.EventType<Server, js.array.JsTuple2<node.buffer.Buffer, (err: js.errors.JsError?, sessionData: node.buffer.Buffer?) -> Unit>>
 
         @seskar.js.JsValue("secureConnection")
         fun secureConnection(): node.events.EventType<Server, js.array.JsTuple1<TLSSocket>>
