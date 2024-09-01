@@ -2,7 +2,6 @@
 
 package react.router.dom
 
-import remix.run.router.FormEncType
 import remix.run.router.HTMLFormMethod
 import remix.run.router.RelativeRoutingType
 
@@ -26,7 +25,7 @@ sealed external interface SharedSubmitOptions {
      * The encoding used to submit the form. Overrides `<form encType>`.
      * Defaults to "application/x-www-form-urlencoded".
      */
-    var encType: FormEncType?
+    var encType: web.form.FormEncType?
 
     /**
      * Determines whether the form action is relative to the route hierarchy or

@@ -2,19 +2,21 @@
 
 package react.router.dom
 
+import remix.run.router.HTMLFormMethod
 import remix.run.router.RelativeRoutingType
 import web.html.HTMLFormElement
 
 /**
  * Form props shared by navigations and fetchers
  */
-// TODO: Manually fixed, need generation adjustment
+
 sealed external interface SharedFormProps : react.Props, react.dom.html.FormHTMLAttributes<HTMLFormElement> {
     /**
      * The HTTP verb to use when the form is submit. Supports "get", "post",
      * "put", "delete", "patch".
      */
-    override var method: web.form.FormMethod? /* HTMLFormMethod */
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var method: HTMLFormMethod?
 
     /**
      * `<form encType>` - enhancing beyond the normal string type and limiting
@@ -25,7 +27,8 @@ sealed external interface SharedFormProps : react.Props, react.dom.html.FormHTML
     /**
      * Normal `<form action>` but supports React Router's relative paths.
      */
-    override var action: react.dom.FormAction?
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var action: String?
 
     /**
      * Determines whether the form action is relative to the route hierarchy or

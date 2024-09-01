@@ -11,7 +11,7 @@ export default function (node, context, render) {
 
         && node.parent.type === node
     ) {
-        return "Throwable /* JsError */?"
+        return "js.errors.JsError?"
     }
 
     return null

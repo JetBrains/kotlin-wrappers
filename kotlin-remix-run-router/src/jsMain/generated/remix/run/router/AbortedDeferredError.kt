@@ -4,6 +4,4 @@
 
 package remix.run.router
 
-import js.errors.JsError
-
-external class AbortedDeferredError : JsError
+external class AbortedDeferredError : js.errors.JsError

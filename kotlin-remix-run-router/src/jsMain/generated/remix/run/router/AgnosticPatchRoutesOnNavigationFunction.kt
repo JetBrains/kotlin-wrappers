@@ -4,5 +4,5 @@ package remix.run.router
 
 external interface AgnosticPatchRoutesOnNavigationFunction<M : AgnosticRouteMatch<*> /* default is AgnosticRouteMatch<*> */> {
     @seskar.js.JsNative
-    operator fun invoke(opts: AgnosticPatchRoutesOnNavigationFunctionOpts<M>): js.promise.PromiseResult<Unit>
+    operator fun invoke(opts: AgnosticPatchRoutesOnNavigationFunctionOpts<M>): js.promise.PromiseResult<js.core.Void>
 }

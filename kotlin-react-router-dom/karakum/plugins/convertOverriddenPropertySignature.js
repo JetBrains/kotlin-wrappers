@@ -8,9 +8,9 @@ const overriddenProps = {
         "unstable_viewTransition": null,
     },
     "SharedFormProps": {
-        "method": ["routerMethod", "web.form.FormMethod"],
-        "encType": ["routerEncType", "String"],
-        "action": ["routerAction", "react.dom.FormAction"],
+        "method": null,
+        "encType": null,
+        "action": null,
         "onSubmit": null,
     },
 }

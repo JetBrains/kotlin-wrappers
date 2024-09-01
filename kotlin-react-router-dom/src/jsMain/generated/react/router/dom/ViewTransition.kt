@@ -2,12 +2,11 @@
 
 package react.router.dom
 
-import js.core.Void
 import js.promise.Promise
 
 sealed external interface ViewTransition {
-    var finished: Promise<Void>
-    var ready: Promise<Void>
-    var updateCallbackDone: Promise<Void>
+    var finished: Promise<js.core.Void>
+    var ready: Promise<js.core.Void>
+    var updateCallbackDone: Promise<js.core.Void>
     fun skipTransition(): Unit
 }

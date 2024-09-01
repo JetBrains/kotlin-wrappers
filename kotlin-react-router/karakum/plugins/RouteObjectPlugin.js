@@ -43,7 +43,7 @@ export default {
 ${karakum.ifPresent(inheritanceModifier, it => `${it} `)}external interface RouteObject {
 ${members}
 }
-            `
+            `.trim()
         }
 
         if (
