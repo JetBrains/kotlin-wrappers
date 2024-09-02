@@ -23,7 +23,7 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-home-cache-cleanup: true
+          cache-cleanup: true
       - name: Build
         run: |
           ./gradlew build
@@ -44,7 +44,7 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-home-cache-cleanup: true
+          cache-cleanup: true
       - name: Build Examples
         run: |
           ./gradlew publishToMavenLocal
@@ -67,7 +67,7 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-home-cache-cleanup: true
+          cache-cleanup: true
       - name: Tests and benchmarks
         run: |
           ./gradlew allTests -Ptest=true
