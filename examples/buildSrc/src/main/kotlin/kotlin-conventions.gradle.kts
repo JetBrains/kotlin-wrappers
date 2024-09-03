@@ -5,10 +5,11 @@ plugins {
     kotlin("plugin.js-plain-objects")
 }
 
-kotlin {
-    js {
-        browser()
-    }
+kotlin.js {
+    moduleName = project.name
+
+    browser()
+    binaries.executable()
 }
 
 tasks.withType<Kotlin2JsCompile>().configureEach {
