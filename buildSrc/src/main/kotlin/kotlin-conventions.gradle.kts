@@ -24,6 +24,10 @@ kotlin {
             JsPlatform.NODE -> {
                 nodejs()
             }
+
+            JsPlatform.MISSED -> {
+                // do nothing
+            }
         }
     }
 
