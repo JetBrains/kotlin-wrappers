@@ -16,8 +16,8 @@ dependencyResolutionManagement {
 
 include("react-lazy-modules-webpack")
 
-// Old
-include("old")
+// Old examples
+include("please-split-me")
 
 // Kotlin Wrappers
 includeBuild("../")
