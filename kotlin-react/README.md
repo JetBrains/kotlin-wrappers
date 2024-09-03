@@ -13,18 +13,6 @@ See [CHANGELOG.md](../CHANGELOG.md#pre282) for more details.
 
 ## Setup
 
-### Maven
-
-```xml
-<project>
-    <dependency>
-        <groupId>org.jetbrains.kotlin-wrappers</groupId>
-        <artifactId>kotlin-react</artifactId>
-        <version>VERSION</version>
-    </dependency>
-</project>
-```
-
 ### Gradle
 
 ```kotlin

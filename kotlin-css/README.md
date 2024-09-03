@@ -4,18 +4,6 @@
 
 Platform-agnostic CSS primitives.
 
-### Maven
-
-```xml
-<project>
-    <dependency>
-        <groupId>org.jetbrains.kotlin-wrappers</groupId>
-        <artifactId>kotlin-css</artifactId>
-        <version>VERSION</version>
-    </dependency>
-</project>
-```
-
 ### Gradle
 
 ```kotlin

@@ -16,18 +16,6 @@ directly. They are therefore more complete and up-to-date.
 
 See [CHANGELOG.md](../CHANGELOG.md#pre282) for more details.
 
-### Maven
-
-```xml
-<project>
-    <dependency>
-        <groupId>org.jetbrains.kotlin-wrappers</groupId>
-        <artifactId>kotlin-react-dom-legacy</artifactId>
-        <version>VERSION</version>
-    </dependency>
-</project>
-```
-
 ### Gradle
 
 ```kotlin

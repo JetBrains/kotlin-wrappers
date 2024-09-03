@@ -8,18 +8,6 @@ Kotlin wrappers for standard JS objects as well as some helpers required for
 > [!WARNING]
 > `kotlin-extensions` is deprecated
 
-### Maven
-
-```xml
-<project>
-    <dependency>
-        <groupId>org.jetbrains.kotlin-wrappers</groupId>
-        <artifactId>kotlin-extensions</artifactId>
-        <version>VERSION</version>
-    </dependency>
-</project>
-```
-
 ### Gradle
 
 ```kotlin

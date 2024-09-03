@@ -15,18 +15,6 @@ See [CHANGELOG.md](../CHANGELOG.md#pre282) for more details.
 > [!WARNING]
 > `kotlin-react-legacy` is deprecated
 
-### Maven
-
-```xml
-<project>
-    <dependency>
-        <groupId>org.jetbrains.kotlin-wrappers</groupId>
-        <artifactId>kotlin-react-legacy</artifactId>
-        <version>VERSION</version>
-    </dependency>
-</project>
-```
-
 ### Gradle
 
 ```kotlin
