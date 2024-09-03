@@ -3,5 +3,5 @@
 ### Lazy modules
 
 ```shell
-./gradlew react-lazy-modules-webpack run
+./gradlew react-lazy-modules-webpack:jsBrowserRun
 ```
