@@ -1,5 +1,4 @@
 import org.jetbrains.kotlin.gradle.tasks.Kotlin2JsCompile
-import org.gradle.api.tasks.PathSensitivity.RELATIVE
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompilationTask
 
 plugins {
@@ -30,7 +29,9 @@ kotlin {
 
     val generatedDir = projectDir.resolve("src/jsMain/generated")
     if (generatedDir.exists()) {
-        sourceSets["jsMain"].kotlin.srcDir(generatedDir)
+        sourceSets.jsMain {
+            kotlin.srcDir(generatedDir)
+        }
     }
 }
 
