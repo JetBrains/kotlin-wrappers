@@ -4,6 +4,7 @@ package wrappers.example.content
 
 import react.FC
 
+@JsExport
 val Content = FC {
     +"Content"
 }

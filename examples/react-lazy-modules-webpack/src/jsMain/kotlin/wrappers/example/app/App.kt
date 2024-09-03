@@ -2,16 +2,26 @@ package wrappers.example.app
 
 import emotion.react.css
 import js.import.importAsync
-import react.ComponentModule
-import react.FC
-import react.Props
-import react.Suspense
+import js.objects.ReadonlyRecord
+import react.*
 import react.dom.html.ReactHTML.div
 import web.cssom.Display
 
-val LazyHeader = react.lazy { importAsync<ComponentModule<Props>>("header.js") }
-val LazyContent = react.lazy { importAsync<ComponentModule<Props>>("content.js") }
-val LazyFooter = react.lazy { importAsync<ComponentModule<Props>>("footer.js") }
+typealias ComponentRecord = ReadonlyRecord<String, ComponentType<Props>>
+
+val LazyHeader = lazy {
+    importAsync<ComponentRecord>("../header/header.mjs")
+        .then { ComponentModule(it["Header"]!!) }
+}
+
+val LazyContent = lazy {
+    importAsync<ComponentRecord>("../content/content.mjs")
+        .then { ComponentModule(it["Content"]!!) }
+}
+val LazyFooter = lazy {
+    importAsync<ComponentRecord>("../footer/footer.mjs")
+        .then { ComponentModule(it["Footer"]!!) }
+}
 
 val App = FC {
     div {
