@@ -3,24 +3,35 @@ package wrappers.example.app
 import emotion.react.css
 import js.import.importAsync
 import js.objects.ReadonlyRecord
+import js.promise.Promise
 import react.*
 import react.dom.html.ReactHTML.div
 import web.cssom.Display
+import react.lazy as reactLazy
 
 typealias ComponentRecord = ReadonlyRecord<String, ComponentType<Props>>
 
-val LazyHeader = lazy {
-    importAsync<ComponentRecord>("../header/header.mjs")
-        .then { ComponentModule(it["Header"]!!) }
+private fun lazyComponent(
+    name: String,
+    moduleFactory: () -> Promise<ComponentRecord>,
+): ComponentType<Props> =
+    reactLazy {
+        moduleFactory()
+            .then { it[name] }
+            .then { requireNotNull(it) }
+            .then { ComponentModule(it) }
+    }
+
+private val LazyHeader = lazyComponent("Header") {
+    importAsync("../header/header.mjs")
 }
 
-val LazyContent = lazy {
-    importAsync<ComponentRecord>("../content/content.mjs")
-        .then { ComponentModule(it["Content"]!!) }
+private val LazyContent = lazyComponent("Content") {
+    importAsync("../content/content.mjs")
 }
-val LazyFooter = lazy {
-    importAsync<ComponentRecord>("../footer/footer.mjs")
-        .then { ComponentModule(it["Footer"]!!) }
+
+private val LazyFooter = lazyComponent("Footer") {
+    importAsync("../footer/footer.mjs")
 }
 
 val App = FC {
