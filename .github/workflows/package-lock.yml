@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Update
-        uses: karakum-team/vitalik@v0.5
+        uses: karakum-team/vitalik@v0.7
