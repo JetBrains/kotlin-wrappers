@@ -14,6 +14,8 @@ dependencyResolutionManagement {
     }
 }
 
+include("react-lazy-modules-webpack")
+
 // Old
 include("old")
 
