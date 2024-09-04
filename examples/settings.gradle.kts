@@ -18,6 +18,7 @@ include("react-lazy-modules-webpack")
 
 // Old examples
 include("please-split-me")
+include("void-compilation-issue")
 
 // Kotlin Wrappers
 includeBuild("../")
