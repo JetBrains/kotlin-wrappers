@@ -8,7 +8,7 @@ dependencies {
 
     jsMainApi(libs.coroutines.core)
 
-    jsTestImplementation(libs.kotlin.test.js)
+    jsTestImplementation(libs.kotlin.testJs)
     jsTestImplementation(libs.coroutines.test)
 
     jsMainApi(npm(libs.npm.react))

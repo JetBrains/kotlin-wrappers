@@ -9,5 +9,5 @@ dependencies {
 
     jsMainApi(devNpm(libs.npm.types.node))
 
-    jsTestImplementation(libs.kotlin.test.js)
+    jsTestImplementation(libs.kotlin.testJs)
 }
