@@ -7,5 +7,5 @@ dependencies {
     jsMainApi(projects.kotlinReact)
     jsMainApi(projects.kotlinReactDom)
 
-    jsMainApi(npm(libs.npm.react.select))
+    jsMainApi(npm(libs.npm.reactSelect))
 }

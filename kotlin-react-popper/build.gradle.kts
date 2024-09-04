@@ -6,5 +6,5 @@ dependencies {
     jsMainApi(projects.kotlinPopperjsCore)
     jsMainApi(projects.kotlinReactCore)
 
-    jsMainApi(npm(libs.npm.react.popper))
+    jsMainApi(npm(libs.npm.reactPopper))
 }

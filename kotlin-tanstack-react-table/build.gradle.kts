@@ -6,5 +6,5 @@ dependencies {
     jsMainApi(projects.kotlinReactCore)
     jsMainApi(projects.kotlinTanstackTableCore)
 
-    jsMainApi(npm(libs.npm.tanstack.react.table))
+    jsMainApi(npm(libs.npm.tanstack.reactTable))
 }

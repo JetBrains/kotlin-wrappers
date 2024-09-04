@@ -5,5 +5,5 @@ plugins {
 dependencies {
     jsMainApi(projects.kotlinBrowser)
 
-    jsMainApi(npm(libs.npm.tanstack.query.core))
+    jsMainApi(npm(libs.npm.tanstack.queryCore))
 }

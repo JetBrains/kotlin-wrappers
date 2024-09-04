@@ -10,7 +10,7 @@ dependencyResolutionManagement {
     versionCatalogs {
         create("libs") {
             val karakumVersion = extra["karakum.version"] as String
-            plugin("karakum","io.github.sgrishchenko.karakum").version(karakumVersion)
+            plugin("karakum", "io.github.sgrishchenko.karakum").version(karakumVersion)
 
             val kotlinVersion = extra["kotlin.version"] as String
             library("kotlin-test-annotations-common", "org.jetbrains.kotlin", "kotlin-test-annotations-common")
@@ -34,7 +34,10 @@ dependencyResolutionManagement {
                     val packageName = data.substringBefore("\n")
                     val packageAlias = packageName
                         .removePrefix("@")
-                        .replace("/x-", "x-")
+                        .replace(
+                            regex = Regex("""-(\w)"""),
+                            transform = { it.groupValues[1].uppercase() }
+                        )
                         .replace("/", "-")
 
                     val version = data

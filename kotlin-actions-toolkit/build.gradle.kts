@@ -9,9 +9,9 @@ dependencies {
     jsMainApi(npm(libs.npm.actions.exec))
     jsMainApi(npm(libs.npm.actions.github))
     jsMainApi(npm(libs.npm.actions.glob))
-    jsMainApi(npm(libs.npm.actions.http.client))
+    jsMainApi(npm(libs.npm.actions.httpClient))
     jsMainApi(npm(libs.npm.actions.io))
-    jsMainApi(npm(libs.npm.actions.tool.cache))
+    jsMainApi(npm(libs.npm.actions.toolCache))
 
     jsMainApi(projects.kotlinNode)
 }
