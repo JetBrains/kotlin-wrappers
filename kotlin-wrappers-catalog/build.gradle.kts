@@ -3,6 +3,8 @@ plugins {
     `publish-conventions`
 }
 
+val aliasHelper = AliasHelper(rootDir)
+
 catalog {
     versionCatalog {
         val libraries = subprojectService
@@ -11,7 +13,7 @@ catalog {
 
         for (library in libraries) {
             library(
-                "wrappers-" + library.name.removePrefix("kotlin-"),
+                aliasHelper.getAlias(library.name),
                 library.group.toString(),
                 library.name,
             ).version(library.publishVersion())
