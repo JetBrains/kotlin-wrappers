@@ -4,7 +4,10 @@
 package wrappers.example.content
 
 import react.FC
+import react.dom.html.ReactHTML.div
 
 val Content = FC {
-    +"Content"
+    div {
+        +"Content"
+    }
 }

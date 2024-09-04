@@ -4,7 +4,10 @@
 package wrappers.example.header
 
 import react.FC
+import react.dom.html.ReactHTML.div
 
 val Header = FC {
-    +"Header"
+    div {
+        +"Header"
+    }
 }
