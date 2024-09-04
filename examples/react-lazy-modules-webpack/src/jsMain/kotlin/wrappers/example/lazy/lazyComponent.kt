@@ -7,7 +7,11 @@ import react.ComponentType
 import react.Props
 import react.lazy as reactLazy
 
-private typealias ComponentRecord = ReadonlyRecord<String, ComponentType<Props>>
+internal external interface ComponentProvider {
+    fun get(): ComponentType<Props>
+}
+
+internal typealias ComponentRecord = ReadonlyRecord<String, ComponentProvider>
 
 // TODO: plugin internals
 internal fun lazyComponent(
@@ -18,5 +22,6 @@ internal fun lazyComponent(
         moduleFactory()
             .then { it[name] }
             .then { requireNotNull(it) }
+            .then { it.get() }
             .then { ComponentModule(it) }
     }
