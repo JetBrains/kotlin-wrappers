@@ -1,3 +1,30 @@
+## pre.802
+
+**BREAKING CHANGE**
+
+Version catalog updated
+according [best practices](https://blog.gradle.org/best-practices-naming-version-catalog-entries)
+
+```kotlin
+// Before
+dependencies {
+    jsMainImplementation(libs.wrappers.react)
+    jsMainImplementation(libs.wrappers.react.dom)
+    jsMainImplementation(libs.wrappers.react.router.dom)
+    jsMainImplementation(libs.wrappers.tanstack.react.query)
+    jsMainImplementation(libs.wrappers.tanstack.react.table)
+}
+
+// After
+dependencies {
+    jsMainImplementation(libs.wrappers.react)
+    jsMainImplementation(libs.wrappers.reactDom)
+    jsMainImplementation(libs.wrappers.reactRouterDom)
+    jsMainImplementation(libs.wrappers.tanstack.reactQuery)
+    jsMainImplementation(libs.wrappers.tanstack.reactTable)
+}
+```
+
 ## pre.797
 
 **BREAKING CHANGE**
