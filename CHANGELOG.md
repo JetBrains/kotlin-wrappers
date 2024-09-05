@@ -3,7 +3,7 @@
 **BREAKING CHANGE**
 
 Version catalog updated
-according [best practices](https://blog.gradle.org/best-practices-naming-version-catalog-entries)
+according to [best practices](https://blog.gradle.org/best-practices-naming-version-catalog-entries)
 
 ```kotlin
 // Before

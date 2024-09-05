@@ -78,7 +78,7 @@ dependencyResolutionManagement {
 
     versionCatalogs {
         create("libs") {
-            val wrappersVersion = "0.0.1-pre.801"
+            val wrappersVersion = "0.0.1-pre.802"
             from("org.jetbrains.kotlin-wrappers:kotlin-wrappers-catalog:$wrappersVersion")
         }
     }
