@@ -52,6 +52,8 @@ protected constructor() :
 
     /**
      * Sets or retrieves the initial contents of the object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/defaultValue)
      */
     var defaultValue: String
     var dirName: String
@@ -115,23 +117,35 @@ protected constructor() :
 
     /**
      * Specifies the ID of a pre-defined datalist of options for an input element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/list)
      */
     val list: HTMLDataListElement?
 
     /**
      * Defines the maximum acceptable value for an input element with type="number".When used with the min and step attributes, lets you control the range and increment (such as only even numbers) that the user can enter into an input field.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/max)
      */
     var max: String
 
     /**
      * Sets or retrieves the maximum number of characters that the user can enter in a text control.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/maxLength)
      */
     var maxLength: Int
 
     /**
      * Defines the minimum acceptable value for an input element with type="number". When used with the max and step attributes, lets you control the range and increment (such as even numbers only) that the user can enter into an input field.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/min)
      */
     var min: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/minLength)
+     */
     var minLength: Int
 
     /**
@@ -143,6 +157,8 @@ protected constructor() :
 
     /**
      * Sets or retrieves the name of the object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/name)
      */
     override var name: String
 
@@ -189,6 +205,8 @@ protected constructor() :
 
     /**
      * Defines an increment or jump between values that you want to allow the user to enter. When used with the max and min attributes, lets you control the range and increment (for example, allow only even numbers) that the user can enter into an input field.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/step)
      */
     var step: String
 

@@ -24,6 +24,10 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/labels)
      */
     override val labels: NodeListOf<HTMLLabelElement>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/name)
+     */
     override var name: String
 
     /**
@@ -37,10 +41,20 @@ protected constructor() :
      * Returns the element's current value.
      *
      * Can be set, to change the value.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/value)
      */
     var value: String
     override val willValidate: Boolean
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/checkValidity)
+     */
     override fun checkValidity(): Boolean
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/reportValidity)
+     */
     override fun reportValidity(): Boolean
     fun setCustomValidity(error: String)
 }

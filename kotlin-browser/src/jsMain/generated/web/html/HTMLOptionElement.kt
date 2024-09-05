@@ -43,6 +43,8 @@ protected constructor() :
 
     /**
      * Sets or retrieves the value which is returned to the server when the form control is submitted.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionElement/value)
      */
     var value: String
 }

@@ -1783,12 +1783,40 @@ sealed external class CSSStyleDeclaration :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/stroke)
      */
     var stroke: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/stroke-dasharray)
+     */
     var strokeDasharray: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/stroke-dashoffset)
+     */
     var strokeDashoffset: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/stroke-linecap)
+     */
     var strokeLinecap: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/stroke-linejoin)
+     */
     var strokeLinejoin: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/stroke-miterlimit)
+     */
     var strokeMiterlimit: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/stroke-opacity)
+     */
     var strokeOpacity: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/stroke-width)
+     */
     var strokeWidth: String
 
     /**

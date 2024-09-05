@@ -98,6 +98,10 @@ protected constructor() :
      */
     override fun checkValidity(): Boolean
     fun getSVGDocument(): Document?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/reportValidity)
+     */
     override fun reportValidity(): Boolean
 
     /**

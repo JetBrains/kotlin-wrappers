@@ -49,6 +49,8 @@ protected constructor() :
 
     /**
      * Sets or retrieves the name of the object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/name)
      */
     override var name: String
 
@@ -169,6 +171,10 @@ protected constructor() :
      */
     override fun remove()
     fun remove(index: Int)
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/reportValidity)
+     */
     override fun reportValidity(): Boolean
 
     /**

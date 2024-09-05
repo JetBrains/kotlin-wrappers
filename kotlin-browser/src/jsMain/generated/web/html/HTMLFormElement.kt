@@ -98,6 +98,8 @@ protected constructor() :
 
     /**
      * Returns whether a form will validate when it is submitted, without having to submit it.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/checkValidity)
      */
     fun checkValidity(): Boolean
 

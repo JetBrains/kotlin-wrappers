@@ -5,6 +5,8 @@ package web.payment
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
+import web.events.Event
+import web.events.EventHandler
 import web.events.EventTarget
 
 /**
@@ -26,9 +28,39 @@ sealed external class PaymentResponse :
     val methodName: String
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/payerdetailchange_event)
+     */
+    var onpayerdetailchange: EventHandler<Event, PaymentResponse, PaymentResponse>?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/payerEmail)
+     */
+    val payerEmail: String?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/payerName)
+     */
+    val payerName: String?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/payerPhone)
+     */
+    val payerPhone: String?
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/requestId)
      */
     val requestId: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/shippingAddress)
+     */
+    val shippingAddress: PaymentAddress?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/shippingOption)
+     */
+    val shippingOption: String?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/complete)

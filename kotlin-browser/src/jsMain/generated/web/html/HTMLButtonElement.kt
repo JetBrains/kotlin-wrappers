@@ -61,6 +61,8 @@ protected constructor() :
 
     /**
      * Sets or retrieves the name of the object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/name)
      */
     override var name: String
 
@@ -83,6 +85,8 @@ protected constructor() :
 
     /**
      * Sets or retrieves the default or selected value of the control.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/value)
      */
     var value: String
 
@@ -93,8 +97,14 @@ protected constructor() :
 
     /**
      * Returns whether a form will validate when it is submitted, without having to submit it.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/checkValidity)
      */
     override fun checkValidity(): Boolean
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/reportValidity)
+     */
     override fun reportValidity(): Boolean
 
     /**

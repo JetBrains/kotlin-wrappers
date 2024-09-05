@@ -25,6 +25,10 @@ protected constructor() :
      * Retrieves a reference to the form that the object is embedded in.
      */
     override val form: HTMLFormElement?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/name)
+     */
     override var name: String
 
     /**
@@ -49,8 +53,14 @@ protected constructor() :
 
     /**
      * Returns whether a form will validate when it is submitted, without having to submit it.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/checkValidity)
      */
     override fun checkValidity(): Boolean
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/reportValidity)
+     */
     override fun reportValidity(): Boolean
 
     /**

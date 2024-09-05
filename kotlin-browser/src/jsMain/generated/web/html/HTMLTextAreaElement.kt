@@ -48,6 +48,8 @@ protected constructor() :
 
     /**
      * Sets or retrieves the name of the object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/name)
      */
     override var name: String
 
@@ -102,6 +104,8 @@ protected constructor() :
 
     /**
      * Retrieves or sets the text in the entry field of the textArea element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/value)
      */
     var value: String
 
@@ -117,8 +121,14 @@ protected constructor() :
 
     /**
      * Returns whether a form will validate when it is submitted, without having to submit it.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/checkValidity)
      */
     override fun checkValidity(): Boolean
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/reportValidity)
+     */
     override fun reportValidity(): Boolean
 
     /**
