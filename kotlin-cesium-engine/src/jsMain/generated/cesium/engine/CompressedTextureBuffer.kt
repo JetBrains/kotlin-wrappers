@@ -36,6 +36,12 @@ external class CompressedTextureBuffer(
     val bufferView: Uint8Array
 
     /**
+     * The compressed texture buffer. Alias for bufferView.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CompressedTextureBuffer.html#arrayBufferView">Online Documentation</a>
+     */
+    val arrayBufferView: Uint8Array
+
+    /**
      * Creates a shallow clone of this compressed texture buffer.
      * @return A shallow clone of the compressed texture buffer.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CompressedTextureBuffer.html#clone">Online Documentation</a>

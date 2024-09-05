@@ -299,9 +299,9 @@ private constructor() {
      * @property [eyeOffset] A [Cartesian3] specifying the 3D Cartesian offset applied to this label in eye coordinates.
      *   Default value - [Cartesian3.ZERO]
      * @property [horizontalOrigin] A [HorizontalOrigin] specifying the horizontal origin of this label.
-     *   Default value - [HorizontalOrigin.CENTER]
+     *   Default value - [HorizontalOrigin.LEFT]
      * @property [verticalOrigin] A [VerticalOrigin] specifying the vertical origin of this label.
-     *   Default value - [VerticalOrigin.CENTER]
+     *   Default value - [VerticalOrigin.BASELINE]
      * @property [heightReference] A [HeightReference] specifying the height reference of this label.
      *   Default value - [HeightReference.NONE]
      * @property [fillColor] A [Color] specifying the fill color of the label.

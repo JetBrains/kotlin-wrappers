@@ -113,6 +113,12 @@ external class ScreenSpaceCameraController(
     var maximumZoomDistance: Double
 
     /**
+     * A multiplier for the speed at which the camera will zoom.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceCameraController.html#zoomFactor">Online Documentation</a>
+     */
+    var zoomFactor: Double
+
+    /**
      * The input that allows the user to pan around the map. This only applies in 2D and Columbus view modes.
      *
      * The type can be a [CameraEventType], `undefined`, an object with `eventType`

@@ -35,13 +35,14 @@ external class PropertyArray(
 
     /**
      * Gets the value of the property.
-     * @param [time] The time for which to retrieve the value.
+     * @param [time] The time for which to retrieve the value. If omitted, the current system time is used.
+     *   Default value - `JulianDate.now()`
      * @param [result] The object to store the value into, if omitted, a new instance is created and returned.
      * @return The modified result parameter, which is an array of values produced by evaluating each of the contained properties at the given time or a new instance if the result parameter was not supplied.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PropertyArray.html#getValue">Online Documentation</a>
      */
     fun getValue(
-        time: JulianDate,
+        time: JulianDate? = definedExternally,
         result: ReadonlyArray<Any>? = definedExternally,
     ): ReadonlyArray<Any>
 

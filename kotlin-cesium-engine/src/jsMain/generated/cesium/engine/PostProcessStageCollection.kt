@@ -88,6 +88,25 @@ external class PostProcessStageCollection {
     val length: Int
 
     /**
+     * Specifies the tonemapping algorithm used when rendering with high dynamic range.
+     * [Sandcastle Demo](https://sandcastle.cesium.com/?src=High%20Dynamic%20Range.html)
+     * ```
+     * viewer.scene.postProcessStages.tonemapper = Tonemapper.ACES;
+     * ```
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PostProcessStageCollection.html#tonemapper">Online Documentation</a>
+     */
+    var tonemapper: Tonemapper
+
+    /**
+     * Control the exposure when HDR is on. Less than 1.0 makes the tonemapping darker while greater than 1.0 makes it brighter.
+     * ```
+     * viewer.scene.postProcessStages.exposure = 1.0;
+     * ```
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PostProcessStageCollection.html#exposure">Online Documentation</a>
+     */
+    var exposure: Double
+
+    /**
      * Adds the post-process stage to the collection.
      * @param [stage] The post-process stage to add to the collection.
      * @return The post-process stage that was added to the collection.

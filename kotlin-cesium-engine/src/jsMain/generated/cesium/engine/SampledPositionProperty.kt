@@ -83,13 +83,14 @@ external class SampledPositionProperty(
 
     /**
      * Gets the position at the provided time.
-     * @param [time] The time for which to retrieve the value.
+     * @param [time] The time for which to retrieve the value. If omitted, the current system time is used.
+     *   Default value - `JulianDate.now()`
      * @param [result] The object to store the value into, if omitted, a new instance is created and returned.
      * @return The modified result parameter or a new instance if the result parameter was not supplied.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SampledPositionProperty.html#getValue">Online Documentation</a>
      */
     fun getValue(
-        time: JulianDate,
+        time: JulianDate? = definedExternally,
         result: Cartesian3? = definedExternally,
     ): Cartesian3?
 

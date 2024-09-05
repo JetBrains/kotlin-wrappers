@@ -108,13 +108,6 @@ external class VoxelPrimitive(
     var depthTest: Boolean
 
     /**
-     * Gets or sets whether or not to jitter the view ray during the raymarch.
-     * This reduces stair-step artifacts but introduces noise.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelPrimitive.html#jitter">Online Documentation</a>
-     */
-    var jitter: Boolean
-
-    /**
      * Gets or sets the nearest sampling.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelPrimitive.html#nearestSampling">Online Documentation</a>
      */

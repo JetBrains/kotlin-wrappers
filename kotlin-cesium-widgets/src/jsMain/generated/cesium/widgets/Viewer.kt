@@ -891,8 +891,8 @@ external class Viewer(
      *   Default value - `0.0`
      * @property [depthPlaneEllipsoidOffset] Adjust the DepthPlane to address rendering artefacts below ellipsoid zero elevation.
      *   Default value - `0.0`
-     * @property [msaaSamples] If provided, this value controls the rate of multisample antialiasing. Typical multisampling rates are 2, 4, and sometimes 8 samples per pixel. Higher sampling rates of MSAA may impact performance in exchange for improved visual quality. This value only applies to WebGL2 contexts that support multisample render targets.
-     *   Default value - `1`
+     * @property [msaaSamples] If provided, this value controls the rate of multisample antialiasing. Typical multisampling rates are 2, 4, and sometimes 8 samples per pixel. Higher sampling rates of MSAA may impact performance in exchange for improved visual quality. This value only applies to WebGL2 contexts that support multisample render targets. Set to 1 to disable MSAA.
+     *   Default value - `4`
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Viewer.html#.ConstructorOptions">Online Documentation</a>
      */
     @JsPlainObject

@@ -48,7 +48,6 @@ external class Material(
      * @property [magnificationFilter] The [TextureMagnificationFilter] to apply to this material's textures.
      *   Default value - [TextureMagnificationFilter.LINEAR]
      * @property [fabric] The fabric JSON used to generate the material.
-     *   ructor
      */
     @JsPlainObject
     sealed interface ConstructorOptions {
@@ -296,5 +295,11 @@ external class Material(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Material.html#.ElevationBandType">Online Documentation</a>
          */
         val ElevationBandType: String
+
+        /**
+         * Gets the name of the water mask material.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Material.html#.WaterMaskType">Online Documentation</a>
+         */
+        val WaterMaskType: String
     }
 }

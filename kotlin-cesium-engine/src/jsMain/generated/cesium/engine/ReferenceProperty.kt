@@ -85,13 +85,14 @@ external class ReferenceProperty(
 
     /**
      * Gets the value of the property at the provided time.
-     * @param [time] The time for which to retrieve the value.
+     * @param [time] The time for which to retrieve the value. If omitted, the current system time is used.
+     *   Default value - `JulianDate.now()`
      * @param [result] The object to store the value into, if omitted, a new instance is created and returned.
      * @return The modified result parameter or a new instance if the result parameter was not supplied.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ReferenceProperty.html#getValue">Online Documentation</a>
      */
     fun getValue(
-        time: JulianDate,
+        time: JulianDate? = definedExternally,
         result: Any? = definedExternally,
     ): Any
 
