@@ -88,8 +88,8 @@ dependencyResolutionManagement {
 dependencies {
     jsMainImplementation(libs.wrappers.emotion)
     jsMainImplementation(libs.wrappers.react)
-    jsMainImplementation(libs.wrappers.react.dom)
-    jsMainImplementation(libs.wrappers.tanstack.react.table)
+    jsMainImplementation(libs.wrappers.reactDom)
+    jsMainImplementation(libs.wrappers.tanstack.reactTable)
     // other wrappers
 }
 ```
