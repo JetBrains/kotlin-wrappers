@@ -1,3 +1,17 @@
+## pre.804
+
+**BREAKING CHANGE**
+
+* Event type constants instead of type functions
+
+```kotlin
+// legacy
+val event = MouseEvent(MouseEvent.click())
+
+// modern
+val event = MouseEvent(MouseEvent.CLICK)
+```
+
 ## pre.802
 
 **BREAKING CHANGE**
