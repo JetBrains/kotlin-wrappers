@@ -39,7 +39,7 @@ class IsolatedJobTest {
 
     // TODO: use common
     private val EventTarget.changeEvent: EventInstance<Event, EventTarget, EventTarget>
-        get() = EventInstance(this, Event.change())
+        get() = EventInstance(this, Event.CHANGE)
 
     @Test
     fun launchWithSubscribeCheck() = runTest {
@@ -54,10 +54,10 @@ class IsolatedJobTest {
 
         assertEquals(42, a)
 
-        target.dispatchEvent(Event(Event.change()))
+        target.dispatchEvent(Event(Event.CHANGE))
         assertEquals(43, a)
 
-        target.dispatchEvent(Event(Event.change()))
+        target.dispatchEvent(Event(Event.CHANGE))
         assertEquals(44, a)
     }
 }

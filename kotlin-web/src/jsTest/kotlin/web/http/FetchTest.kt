@@ -8,8 +8,10 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.runTest
+import web.abort.abortEvent
 import web.events.Event
 import web.events.addEventHandler
+import web.events.addHandler
 import kotlin.test.*
 
 class FetchTest {
@@ -49,7 +51,7 @@ class FetchTest {
         var isCanceled = false
 
         globalThis.fetch = { request: Request ->
-            request.signal.addEventHandler(Event.abort()) {
+            request.signal.abortEvent.addHandler {
                 isCanceled = true
             }
 
@@ -70,7 +72,7 @@ class FetchTest {
 
         globalThis.fetch = { request: Request ->
             Promise<Nothing> { _, reject ->
-                request.signal.addEventHandler(Event.abort()) {
+                request.signal.abortEvent.addHandler {
                     isCanceled = true
 
                     reject(request.signal.reason ?: TypeError("Failed to fetch"))
@@ -94,7 +96,7 @@ class FetchTest {
         var isCanceled = false
 
         globalThis.fetch = { request: Request ->
-            request.signal.addEventHandler(Event.abort()) {
+            request.signal.addEventHandler(Event.ABORT) {
                 isCanceled = true
             }
 

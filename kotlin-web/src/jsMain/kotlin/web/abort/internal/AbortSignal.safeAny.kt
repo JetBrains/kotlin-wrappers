@@ -28,7 +28,7 @@ internal fun safeAny(
     }
 
     sequenceOf(signal1, signal2)
-        .mapTo(handlers) { it.addEventHandler(Event.abort(), abortHandler) }
+        .mapTo(handlers) { it.addEventHandler(Event.ABORT, abortHandler) }
 
     return controller.signal
 }
