@@ -98,32 +98,17 @@ Make sure that you have `mavenCentral()` in the list of repositories.
 
 ## Examples
 
-1. [To-do list example](examples/src/jsMain/kotlin/example/Todo.kt)
+1. [Internal examples](examples/README.md)
 
-2. [Tic-Tac-Toe example](examples/src/jsMain/kotlin/example/TicTacToe.kt)
-
-3. A port of "Thinking in React" [example](examples/src/jsMain/kotlin/example/Product.kt)
-
-4. An [example of using axios](examples/src/jsMain/kotlin/example/AxiosSearch.kt) to fetch remote data. It also
-   demonstrates how to add typings for an external library.
-
-5. An [example of using Quill](examples/src/jsMain/kotlin/example/Quill.kt) that shows how to use an external React
-   component.
-
-6. An [example of using react-router-dom](examples/src/jsMain/kotlin/example/ReactRouterDom.kt) that shows how to use
-   react-route-dom with hooks API.
-
-7. [Building Web Applications with React and Kotlin/JS](https://play.kotlinlang.org/hands-on/Building%20Web%20Applications%20with%20React%20and%20Kotlin%20JS/01_Introduction),
+2. [Building Web Applications with React and Kotlin/JS](https://play.kotlinlang.org/hands-on/Building%20Web%20Applications%20with%20React%20and%20Kotlin%20JS/01_Introduction),
    a tutorial by JetBrains.
 
-8. [A full-stack demo application](https://github.com/mkraynov/kfsad) written in Kotlin for JetBrains Night Moscow 2019.
-
-9. An [example of using react-table](https://github.com/karakum-team/kotlin-react-table-sample) that shows how to use
+3. An [example of using react-table](https://github.com/karakum-team/kotlin-react-table-sample) that shows how to use
    react-table with hooks API.
 
-10. An [example of using Material UI](https://github.com/karakum-team/kotlin-mui-showcase).
+4. An [example of using Material UI](https://github.com/karakum-team/kotlin-mui-showcase).
 
-11. [ByteLegend](https://github.com/ByteLegend/ByteLegend): an open-source, real-world HTML5 MMORPG game.
+5. [ByteLegend](https://github.com/ByteLegend/ByteLegend): an open-source, real-world HTML5 MMORPG game.
 
 Follow these examples to learn how to start developing your React apps with Kotlin. Good luck and have fun!
 
