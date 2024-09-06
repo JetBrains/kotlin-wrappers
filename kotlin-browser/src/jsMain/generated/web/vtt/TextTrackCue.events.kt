@@ -9,10 +9,10 @@ import web.events.EventInstance
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCue/enter_event)
  */
 inline val <C : TextTrackCue> C.enterEvent: EventInstance<Event, C, C>
-    get() = EventInstance(this, Event.enter())
+    get() = EventInstance(this, Event.ENTER)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCue/exit_event)
  */
 inline val <C : TextTrackCue> C.exitEvent: EventInstance<Event, C, C>
-    get() = EventInstance(this, Event.exit())
+    get() = EventInstance(this, Event.EXIT)

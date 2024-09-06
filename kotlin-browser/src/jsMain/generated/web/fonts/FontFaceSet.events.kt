@@ -8,16 +8,16 @@ import web.events.EventInstance
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/loading_event)
  */
 inline val <C : FontFaceSet> C.loadingEvent: EventInstance<FontFaceSetLoadEvent, C, C>
-    get() = EventInstance(this, FontFaceSetLoadEvent.loading())
+    get() = EventInstance(this, FontFaceSetLoadEvent.LOADING)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/loadingdone_event)
  */
 inline val <C : FontFaceSet> C.loadingDoneEvent: EventInstance<FontFaceSetLoadEvent, C, C>
-    get() = EventInstance(this, FontFaceSetLoadEvent.loadingDone())
+    get() = EventInstance(this, FontFaceSetLoadEvent.LOADING_DONE)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/loadingerror_event)
  */
 inline val <C : FontFaceSet> C.loadingErrorEvent: EventInstance<FontFaceSetLoadEvent, C, C>
-    get() = EventInstance(this, FontFaceSetLoadEvent.loadingError())
+    get() = EventInstance(this, FontFaceSetLoadEvent.LOADING_ERROR)

@@ -9,16 +9,16 @@ import web.events.EventInstance
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/connect_event)
  */
 inline val <C : RemotePlayback> C.connectEvent: EventInstance<Event, C, C>
-    get() = EventInstance(this, Event.connect())
+    get() = EventInstance(this, Event.CONNECT)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/connecting_event)
  */
 inline val <C : RemotePlayback> C.connectingEvent: EventInstance<Event, C, C>
-    get() = EventInstance(this, Event.connecting())
+    get() = EventInstance(this, Event.CONNECTING)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/disconnect_event)
  */
 inline val <C : RemotePlayback> C.disconnectEvent: EventInstance<Event, C, C>
-    get() = EventInstance(this, Event.disconnect())
+    get() = EventInstance(this, Event.DISCONNECT)

@@ -9,16 +9,16 @@ import web.events.EventInstance
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/sourceclose_event)
  */
 inline val <C : MediaSource> C.sourceCloseEvent: EventInstance<Event, C, C>
-    get() = EventInstance(this, Event.sourceClose())
+    get() = EventInstance(this, Event.SOURCE_CLOSE)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/sourceended_event)
  */
 inline val <C : MediaSource> C.sourceEndedEvent: EventInstance<Event, C, C>
-    get() = EventInstance(this, Event.sourceEnded())
+    get() = EventInstance(this, Event.SOURCE_ENDED)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/sourceopen_event)
  */
 inline val <C : MediaSource> C.sourceOpenEvent: EventInstance<Event, C, C>
-    get() = EventInstance(this, Event.sourceOpen())
+    get() = EventInstance(this, Event.SOURCE_OPEN)

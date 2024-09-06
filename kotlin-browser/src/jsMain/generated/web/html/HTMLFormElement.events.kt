@@ -12,16 +12,16 @@ import web.form.SubmitEvent
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/formdata_event)
  */
 inline val <C : HTMLFormElement> C.formDataEvent: EventInstance<FormDataEvent, C, Node>
-    get() = EventInstance(this, FormDataEvent.formData())
+    get() = EventInstance(this, FormDataEvent.FORM_DATA)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/reset_event)
  */
 inline val <C : HTMLFormElement> C.resetEvent: EventInstance<Event, C, Node>
-    get() = EventInstance(this, Event.reset())
+    get() = EventInstance(this, Event.RESET)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/submit_event)
  */
 inline val <C : HTMLFormElement> C.submitEvent: EventInstance<SubmitEvent, C, Node>
-    get() = EventInstance(this, SubmitEvent.submit())
+    get() = EventInstance(this, SubmitEvent.SUBMIT)

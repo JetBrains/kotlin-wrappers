@@ -10,16 +10,16 @@ import web.messaging.MessageEvent
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/controllerchange_event)
  */
 inline val <C : ServiceWorkerContainer> C.controllerChangeEvent: EventInstance<Event, C, C>
-    get() = EventInstance(this, Event.controllerChange())
+    get() = EventInstance(this, Event.CONTROLLER_CHANGE)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/message_event)
  */
 inline val <C : ServiceWorkerContainer> C.messageEvent: EventInstance<MessageEvent<Any?>, C, C>
-    get() = EventInstance(this, MessageEvent.message())
+    get() = EventInstance(this, MessageEvent.MESSAGE)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/messageerror_event)
  */
 inline val <C : ServiceWorkerContainer> C.messageErrorEvent: EventInstance<MessageEvent<Any?>, C, C>
-    get() = EventInstance(this, MessageEvent.messageError())
+    get() = EventInstance(this, MessageEvent.MESSAGE_ERROR)
