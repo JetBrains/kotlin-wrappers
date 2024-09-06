@@ -8,7 +8,7 @@ import web.events.addHandler
 import web.uievents.DragEvent
 
 private fun preventDefaultExample_handler() {
-    document.addEventHandler(DragEvent.dragOver()) { event ->
+    document.addEventHandler(DragEvent.DRAG_OVER) { event ->
         val doc: Document = event.currentTarget
 
         event.preventDefault()
