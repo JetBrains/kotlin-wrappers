@@ -3,7 +3,6 @@
 package web.html
 
 import web.dom.Node
-import web.dom.reset
 import web.events.Event
 import web.events.EventInstance
 import web.form.FormDataEvent

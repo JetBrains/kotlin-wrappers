@@ -2,8 +2,6 @@
 
 package web.html
 
-import web.dom.contextLost
-import web.dom.contextRestored
 import web.events.Event
 import web.events.EventInstance
 

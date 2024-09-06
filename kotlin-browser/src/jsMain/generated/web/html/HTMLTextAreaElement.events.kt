@@ -3,8 +3,6 @@
 package web.html
 
 import web.dom.Node
-import web.dom.invalid
-import web.dom.select
 import web.events.Event
 import web.events.EventInstance
 

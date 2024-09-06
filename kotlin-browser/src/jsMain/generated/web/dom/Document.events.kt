@@ -12,7 +12,6 @@ import web.form.SubmitEvent
 import web.pip.PictureInPictureEvent
 import web.uievents.*
 import web.window.Window
-import web.window.unload
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/animationcancel_event)

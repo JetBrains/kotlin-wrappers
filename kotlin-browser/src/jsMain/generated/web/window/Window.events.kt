@@ -8,7 +8,7 @@ import web.csp.SecurityPolicyViolationEvent
 import web.cssom.TransitionEvent
 import web.device.DeviceMotionEvent
 import web.device.DeviceOrientationEvent
-import web.dom.*
+import web.dom.Node
 import web.events.Event
 import web.events.EventInstance
 import web.form.FormDataEvent

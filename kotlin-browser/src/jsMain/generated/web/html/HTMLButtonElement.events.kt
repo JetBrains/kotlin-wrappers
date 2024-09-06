@@ -2,7 +2,6 @@
 
 package web.html
 
-import web.dom.invalid
 import web.events.Event
 import web.events.EventInstance
 

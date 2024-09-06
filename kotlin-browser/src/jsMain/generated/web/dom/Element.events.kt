@@ -5,7 +5,6 @@ package web.dom
 import web.events.Event
 import web.events.EventInstance
 import web.uievents.*
-import web.window.unload
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/abort_event)

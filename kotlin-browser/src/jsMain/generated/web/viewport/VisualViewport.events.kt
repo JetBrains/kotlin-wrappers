@@ -2,11 +2,8 @@
 
 package web.viewport
 
-import web.dom.scroll
-import web.dom.scrollEnd
 import web.events.Event
 import web.events.EventInstance
-import web.window.resize
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/resize_event)

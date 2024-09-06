@@ -2,10 +2,8 @@
 
 package web.html
 
-import web.dom.*
 import web.events.Event
 import web.events.EventInstance
-import web.window.resize
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/abort_event)
