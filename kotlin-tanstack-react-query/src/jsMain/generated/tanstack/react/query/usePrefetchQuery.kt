@@ -5,6 +5,10 @@
 package tanstack.react.query
 
 import tanstack.query.core.FetchQueryOptions
+import tanstack.query.core.QueryClient
 import tanstack.query.core.QueryKey
 
-external fun <TQueryFnData, TError, TData, TQueryKey : QueryKey> usePrefetchQuery(options: FetchQueryOptions<TQueryFnData, TError, TData, TQueryKey, *>)
+external fun <TQueryFnData, TError, TData, TQueryKey : QueryKey> usePrefetchQuery(
+    options: FetchQueryOptions<TQueryFnData, TError, TData, TQueryKey, *>,
+    queryClient: QueryClient = definedExternally,
+)

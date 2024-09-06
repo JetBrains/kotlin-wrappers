@@ -60,15 +60,15 @@ open external class QueryClient(config: QueryClientConfig = definedExternally) {
     open fun getMutationCache(): MutationCache
     open fun getDefaultOptions(): DefaultOptions<*>
     open fun setDefaultOptions(options: DefaultOptions<*>)
-    open fun setQueryDefaults(
+    open fun <TQueryFnData, TError, TData, TQueryData> setQueryDefaults(
         queryKey: QueryKey,
-        options: QueryObserverOptions<*, *, *, *, *, *>, /* Partial */
+        options: QueryObserverOptions<TQueryFnData, TError, TData, TQueryData, *, *>, /* Partial */
     )
 
     open fun getQueryDefaults(queryKey: QueryKey): QueryObserverOptions<*, *, *, *, *, *>
-    open fun setMutationDefaults(
+    open fun <TData, TError, TVariables, TContext> setMutationDefaults(
         mutationKey: MutationKey,
-        options: MutationObserverOptions<*, *, *, *>,
+        options: MutationObserverOptions<TData, TError, TVariables, TContext>,
     )
 
     open fun getMutationDefaults(mutationKey: MutationKey): MutationObserverOptions<*, *, *, *>
