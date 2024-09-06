@@ -7,6 +7,10 @@ import web.events.EventType
 
 sealed external class BeforeUnloadEventTypes_deprecated {
 
+    @Deprecated(
+        message = "Legacy event type declaration. Use type constant instead!",
+        replaceWith = ReplaceWith("BeforeUnloadEvent.BEFORE_UNLOAD"),
+    )
     @JsValue("beforeunload")
     fun beforeUnload(): EventType<BeforeUnloadEvent>
 }

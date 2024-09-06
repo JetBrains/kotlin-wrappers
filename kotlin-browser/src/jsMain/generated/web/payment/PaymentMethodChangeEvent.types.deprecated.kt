@@ -7,6 +7,10 @@ import web.events.EventType
 
 sealed external class PaymentMethodChangeEventTypes_deprecated {
 
+    @Deprecated(
+        message = "Legacy event type declaration. Use type constant instead!",
+        replaceWith = ReplaceWith("PaymentMethodChangeEvent.PAYMENT_METHOD_CHANGE"),
+    )
     @JsValue("paymentmethodchange")
     fun paymentMethodChange(): EventType<PaymentMethodChangeEvent>
 }
