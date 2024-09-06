@@ -5,7 +5,7 @@ package web.form
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external class SubmitEventTypes {
+sealed external class SubmitEventTypes_deprecated {
 
     @JsValue("submit")
     fun submit(): EventType<SubmitEvent>

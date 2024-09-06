@@ -5,7 +5,7 @@ package web.animations
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external class AnimationPlaybackEventTypes {
+sealed external class AnimationPlaybackEventTypes_deprecated {
 
     @JsValue("cancel")
     fun cancel(): EventType<AnimationPlaybackEvent>

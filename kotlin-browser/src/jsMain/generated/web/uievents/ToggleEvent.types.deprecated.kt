@@ -5,7 +5,7 @@ package web.uievents
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external class ToggleEventTypes {
+sealed external class ToggleEventTypes_deprecated {
 
     @JsValue("beforetoggle")
     fun beforeToggle(): EventType<ToggleEvent>

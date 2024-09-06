@@ -5,7 +5,7 @@ package web.device
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external class DeviceOrientationEventTypes {
+sealed external class DeviceOrientationEventTypes_deprecated {
 
     @JsValue("deviceorientation")
     fun deviceOrientation(): EventType<DeviceOrientationEvent>

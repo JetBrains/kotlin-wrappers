@@ -5,7 +5,7 @@ package web.serviceworker
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external class FetchEventTypes {
+sealed external class FetchEventTypes_deprecated {
 
     @JsValue("fetch")
     fun fetch(): EventType<FetchEvent>

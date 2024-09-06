@@ -5,7 +5,7 @@ package web.serviceworker
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external class ExtendableEventTypes {
+sealed external class ExtendableEventTypes_deprecated {
 
     @JsValue("activate")
     fun activate(): EventType<ExtendableEvent>

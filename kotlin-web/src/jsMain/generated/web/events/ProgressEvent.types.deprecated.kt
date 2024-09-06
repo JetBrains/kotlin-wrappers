@@ -4,7 +4,7 @@ package web.events
 
 import seskar.js.JsValue
 
-sealed external class ProgressEventTypes {
+sealed external class ProgressEventTypes_deprecated {
 
     @JsValue("abort")
     fun abort(): EventType<ProgressEvent>

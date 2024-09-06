@@ -5,7 +5,7 @@ package web.uievents
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external class CompositionEventTypes {
+sealed external class CompositionEventTypes_deprecated {
 
     @JsValue("compositionend")
     fun compositionEnd(): EventType<CompositionEvent>

@@ -5,7 +5,7 @@ package web.pip
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external class PictureInPictureEventTypes {
+sealed external class PictureInPictureEventTypes_deprecated {
 
     @JsValue("enterpictureinpicture")
     fun enterPictureInPicture(): EventType<PictureInPictureEvent>

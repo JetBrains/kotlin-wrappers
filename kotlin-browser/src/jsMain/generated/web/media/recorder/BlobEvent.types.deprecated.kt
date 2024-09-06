@@ -5,7 +5,7 @@ package web.media.recorder
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external class BlobEventTypes {
+sealed external class BlobEventTypes_deprecated {
 
     @JsValue("dataavailable")
     fun dataAvailable(): EventType<BlobEvent>

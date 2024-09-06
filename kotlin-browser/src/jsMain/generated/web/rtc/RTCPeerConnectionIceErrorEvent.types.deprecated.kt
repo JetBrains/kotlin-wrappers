@@ -5,7 +5,7 @@ package web.rtc
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external class RTCPeerConnectionIceErrorEventTypes {
+sealed external class RTCPeerConnectionIceErrorEventTypes_deprecated {
 
     @JsValue("icecandidateerror")
     fun iceCandidateError(): EventType<RTCPeerConnectionIceErrorEvent>

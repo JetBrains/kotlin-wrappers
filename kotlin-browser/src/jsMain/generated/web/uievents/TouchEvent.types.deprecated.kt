@@ -5,7 +5,7 @@ package web.uievents
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external class TouchEventTypes {
+sealed external class TouchEventTypes_deprecated {
 
     @JsValue("touchcancel")
     fun touchCancel(): EventType<TouchEvent>
