@@ -61,7 +61,7 @@ To learn more please refer to the [API Reference](https://jetbrains.github.io/ko
 
 Artifacts are published to Maven Central, see the corresponding README files for package coordinates.
 
-**All packages require JDK 8 to be installed.**
+**All packages require JDK 11 to be installed.**
 
 ## Using In Your Projects
 
