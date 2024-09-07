@@ -1,6 +1,5 @@
 package styled
 
-import js.array.JsArray
 import js.objects.Object
 import kotlinext.js.js
 import kotlinx.css.CssDeclarations
@@ -30,20 +29,20 @@ fun StyledElement.toStyle(prefix: Boolean = true): Any {
         return res
     }
 
-    val prefixed = prefix(res) as Object
+    val prefixed = prefix(res)
 
     // https://inline-style-prefixer.js.org/docs/guides/ResolvingArrays.html
     Object.keys(prefixed).forEach {
-        if (prefixed.hasOwnProperty(it)) {
-            val value = prefixed.asDynamic()[it]
+        val value = prefixed[it]
 
-            if (value is JsArray) {
+        if (value is Array<*>) {
                 // Find the unprefixed value in the array and use it: multiple values don't work for some reason
-                val displayValue = value.find(js("function(element) { return !element.startsWith('-') }"))
-
-                prefixed.asDynamic()[it] = displayValue
+            val displayValue = value.find {
+                (it as String).startsWith('-')
             }
-        }
+
+            prefixed[it] = displayValue
+            }
     }
 
     return prefixed
@@ -63,13 +62,13 @@ private fun CssDeclarations.mapToObj(): dynamic {
 internal fun CssDeclarations.buildPrefixedString(indent: String = ""): String {
     val res = mapToObj()
 
-    val prefixed = prefix(res) as Object
+    val prefixed = prefix(res)
     return buildString {
         Object.keys(prefixed).forEach {
-            val value = prefixed.asDynamic()[it]
+            val value = prefixed[it]
 
-            if (value is JsArray) {
-                for (i in 0 until value.length as Int) {
+            if (value is Array<*>) {
+                for (i in 0 until value.size) {
                     appendLine("$indent${it.hyphenize()}: ${value[i]};")
                 }
             } else {
