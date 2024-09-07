@@ -10,7 +10,7 @@ import node.test.SuiteFn
 import node.test.TestOptions
 
 /**
- * Shorthand for marking a suite as `only`. This is the same as [`suite([name], { only: true }[, fn])`](https://nodejs.org/docs/latest-v20.x/api/test.html#suitename-options-fn).
+ * Shorthand for marking a suite as `only`. This is the same as calling {@link suite} with `options.only` set to `true`.
  * @since v20.13.0
  */
 

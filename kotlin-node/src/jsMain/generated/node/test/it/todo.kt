@@ -10,7 +10,7 @@ import node.test.TestFn
 import node.test.TestOptions
 
 /**
- * Shorthand for marking a test as `TODO`, same as `it([name], { todo: true }[, fn])`.
+ * Shorthand for marking a test as `TODO`. This is the same as calling {@link it} with `options.todo` set to `true`.
  */
 
 @JsName("todo")

@@ -9,9 +9,9 @@ sealed external interface TestFailDetails {
     var duration_ms: Double
 
     /**
-     * An error wrapping the error thrown by the test if it did not pass.
+     * An error wrapping the error thrown by the test.
      */
-    var error: js.errors.JsError
+    var error: TestError
 
     /**
      * The type of the test, used to denote whether this is a suite.

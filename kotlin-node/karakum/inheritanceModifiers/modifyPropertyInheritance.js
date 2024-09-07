@@ -115,6 +115,17 @@ export default (node) => {
                     && node.parent.name.text === "AgentOptions"
                 )
             )
+            || (
+                sourceFileName.endsWith("test.d.ts")
+                && (
+                    (
+                        node.name.text === "cause"
+                    )
+                    && node.parent
+                    && ts.isInterfaceDeclaration(node.parent)
+                    && node.parent.name.text === "TestError"
+                )
+            )
         )
     ) {
         return "override"

@@ -10,5 +10,6 @@ import js.generator.AsyncGenerator
  * The `dot` reporter outputs the test results in a compact format,
  * where each passing test is represented by a `.`,
  * and each failing test is represented by a `X`.
+ * @since v20.0.0
  */
 external fun dot(source: TestEventGenerator): AsyncGenerator<String /* "\n" | "." | "X" */, js.core.Void, *>

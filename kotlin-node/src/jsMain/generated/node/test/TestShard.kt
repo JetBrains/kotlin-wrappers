@@ -4,7 +4,7 @@ package node.test
 
 sealed external interface TestShard {
     /**
-     * A positive integer between 1 and `<total>` that specifies the index of the shard to run.
+     * A positive integer between 1 and `total` that specifies the index of the shard to run.
      */
     var index: Double
 

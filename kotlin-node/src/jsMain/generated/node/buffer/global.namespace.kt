@@ -11,3 +11,14 @@ package node.buffer
  * https://nodejs.org/api/buffer.html#class-blob
  * @since v18.0.0
  */
+
+
+/**
+ * `File` class is a global reference for `require('node:buffer').File`
+ * https://nodejs.org/api/buffer.html#class-file
+ * @since v20.0.0
+ */
+external var File: Any /* typeof globalThis extends {
+    onmessage: any;
+    File: infer T;
+} ? T : typeof import("buffer").File */

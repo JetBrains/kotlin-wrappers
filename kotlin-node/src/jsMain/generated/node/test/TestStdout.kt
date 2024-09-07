@@ -2,7 +2,12 @@
 
 package node.test
 
-sealed external interface TestStdout : TestLocationInfo {
+sealed external interface TestStdout {
+    /**
+     * The path of the test file.
+     */
+    var file: String
+
     /**
      * The message written to `stdout`.
      */

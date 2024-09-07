@@ -10,7 +10,7 @@ import node.test.SuiteFn
 import node.test.TestOptions
 
 /**
- * Shorthand for skipping a suite. This is the same as [`suite([name], { skip: true }[, fn])`](https://nodejs.org/docs/latest-v20.x/api/test.html#suitename-options-fn).
+ * Shorthand for skipping a suite. This is the same as calling {@link suite} with `options.skip` set to `true`.
  * @since v20.13.0
  */
 

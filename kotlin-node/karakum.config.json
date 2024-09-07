@@ -18,13 +18,18 @@
     ],
     "output": "src/jsMain/generated",
     "ignoreOutput": [
+        "**/_Blob.kt",
+        "**/_DOMException.kt",
         "**/_File.kt",
         "**/_FormData.kt",
         "**/_Headers.kt",
+        "**/_MessageEvent.kt",
         "**/_Request.kt",
         "**/_RequestInit.kt",
         "**/_Response.kt",
         "**/_ResponseInit.kt",
+        "**/NodeDOMException.kt",
+        "**/NodeDOMExceptionConstructor.kt",
         "**/NodeRequire.kt",
         "**/NodeRequireResolve.kt",
         "**/NodeModule.kt",
@@ -97,6 +102,7 @@
         "**/events/Listener.kt",
         "**/events/Listener1.kt",
         "**/events/Listener2.kt",
+        "**/inspector/SessionEvent.kt",
         "**/module/global/**",
         "**/path/namespace.kt",
         "**/path/PlatformPathDelimiter.kt",
@@ -244,10 +250,12 @@
         "TestCoverageSummary.kt": "test/TestCoverageSummary.kt",
         "TestCoverageSummaryTotals.kt": "test/TestCoverageSummaryTotals.kt",
         "TestCoverageSummaryFilesItem.kt": "test/TestCoverageSummaryFilesItem.kt",
+        "TestCoverageSummaryFilesItemBranchesItem.kt": "test/TestCoverageSummaryFilesItemBranchesItem.kt",
         "TestCoverageSummaryFilesItemFunctionsItem.kt": "test/TestCoverageSummaryFilesItemFunctionsItem.kt",
         "TestCoverageSummaryFilesItemLinesItem.kt": "test/TestCoverageSummaryFilesItemLinesItem.kt",
         "TestLocationInfo.kt": "test/TestLocationInfo.kt",
         "DiagnosticData.kt": "test/DiagnosticData.kt",
+        "TestError.kt": "test/TestError.kt",
         "TestFail.kt": "test/TestFail.kt",
         "TestFailDetails.kt": "test/TestFailDetails.kt",
         "TestPass.kt": "test/TestPass.kt",
@@ -327,6 +335,7 @@
             "\\*": "",
             ".+": "node.http."
         },
+        "(node:)?inspector": "node.inspector",
         "node:module": "node.module",
         "node:net": {
             "\\*": "",
@@ -653,6 +662,9 @@
             "node.http.ServerResponse"
         ],
         "inspector/Session.kt": [
+            "node.events.EventEmitter"
+        ],
+        "inspector/SessionAsync.kt": [
             "node.events.EventEmitter"
         ],
         "inspector/open.kt": [

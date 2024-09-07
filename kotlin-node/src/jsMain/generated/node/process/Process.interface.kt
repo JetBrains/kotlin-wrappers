@@ -710,6 +710,14 @@ sealed external interface Process : EventEmitter {
     fun getActiveResourcesInfo(): ReadonlyArray<String>
 
     /**
+     * Provides a way to load built-in modules in a globally available function.
+     * @param id ID of the built-in module being requested.
+     * @since v20.16.0
+     */
+
+    fun getBuiltinModule(id: String): Any?
+
+    /**
      * The `process.getgid()` method returns the numerical group identity of the
      * process. (See [`getgid(2)`](http://man7.org/linux/man-pages/man2/getgid.2.html).)
      *
@@ -1640,11 +1648,11 @@ sealed external interface Process : EventEmitter {
     var allowedNodeEnvironmentFlags: ReadonlySet<String>
 
     /**
-     * `process.report` is an object whose methods are used to generate diagnostic
-     * reports for the current process. Additional documentation is available in the `report documentation`.
+     * `process.report` is an object whose methods are used to generate diagnostic reports for the current process.
+     * Additional documentation is available in the [report documentation](https://nodejs.org/docs/latest-v20.x/api/report.html).
      * @since v11.8.0
      */
-    var report: ProcessReport?
+    var report: ProcessReport
 
     /**
      * ```js

@@ -59,6 +59,11 @@ sealed external interface TestCoverageSummaryFilesItem {
     var functions: Array<TestCoverageSummaryFilesItemFunctionsItem>
 
     /**
+     * An array of branches representing branch coverage.
+     */
+    var branches: Array<TestCoverageSummaryFilesItemBranchesItem>
+
+    /**
      * An array of lines representing line numbers and the number of times they were covered.
      */
     var lines: Array<TestCoverageSummaryFilesItemLinesItem>

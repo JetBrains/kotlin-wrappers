@@ -17,7 +17,7 @@ package node.test
  * });
  * ```
  * @since v18.8.0, v16.18.0
- * @param [fn='A no-op function'] The hook function. If the hook uses callbacks, the callback function is passed as the second argument.
- * @param options Configuration options for the hook. The following properties are supported:
+ * @param fn The hook function. If the hook uses callbacks, the callback function is passed as the second argument.
+ * @param options Configuration options for the hook.
  */
 external fun afterEach(fn: HookFn = definedExternally, options: HookOptions = definedExternally): Unit

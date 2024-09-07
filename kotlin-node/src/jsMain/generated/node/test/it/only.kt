@@ -10,7 +10,7 @@ import node.test.TestFn
 import node.test.TestOptions
 
 /**
- * Shorthand for marking a test as `only`, same as `it([name], { only: true }[, fn])`.
+ * Shorthand for marking a test as `only`. This is the same as calling {@link it} with `options.only` set to `true`.
  * @since v18.15.0
  */
 

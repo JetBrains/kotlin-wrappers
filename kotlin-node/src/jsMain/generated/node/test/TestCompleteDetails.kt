@@ -16,7 +16,7 @@ sealed external interface TestCompleteDetails {
     /**
      * An error wrapping the error thrown by the test if it did not pass.
      */
-    var error: js.errors.JsError
+    var error: TestError?
 
     /**
      * The type of the test, used to denote whether this is a suite.

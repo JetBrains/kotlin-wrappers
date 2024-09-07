@@ -7,7 +7,7 @@ package node.test
 import js.promise.Promise
 
 /**
- * Shorthand for marking a test as `TODO`, same as `test([name], { todo: true }[, fn])`.
+ * Shorthand for marking a test as `TODO`. This is the same as calling {@link test} with `options.todo` set to `true`.
  * @since v20.2.0
  */
 

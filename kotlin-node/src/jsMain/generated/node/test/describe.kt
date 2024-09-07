@@ -7,7 +7,7 @@ package node.test
 import js.promise.Promise
 
 /**
- * Alias for `{@link suite}`.
+ * Alias for {@link suite}.
  *
  * The `describe()` function is imported from the `node:test` module.
  */

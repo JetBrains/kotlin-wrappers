@@ -3,7 +3,7 @@
 package node.test
 
 /**
- * The hook function. If the hook uses callbacks, the callback function is passed as the
- * second argument.
+ * The hook function. The first argument is the context in which the hook is called.
+ * If the hook uses callbacks, the callback function is passed as the second argument.
  */
-typealias HookFn = (s: SuiteContext, done: (result: Any? /* use undefined for default */) -> Unit) -> Any?
+typealias HookFn = (c: Any /* TestContext | SuiteContext */, done: (result: Any? /* use undefined for default */) -> Unit) -> Any?

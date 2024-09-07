@@ -4,20 +4,14 @@ package node.perfHooks
 
 sealed external interface EntryType {
     companion object {
-        @seskar.js.JsValue("node")
-        val node: EntryType
-
-        @seskar.js.JsValue("mark")
-        val mark: EntryType
-
-        @seskar.js.JsValue("measure")
-        val measure: EntryType
-
-        @seskar.js.JsValue("gc")
-        val gc: EntryType
+        @seskar.js.JsValue("dns")
+        val dns: EntryType
 
         @seskar.js.JsValue("function")
         val function: EntryType
+
+        @seskar.js.JsValue("gc")
+        val gc: EntryType
 
         @seskar.js.JsValue("http2")
         val http2: EntryType
@@ -25,10 +19,19 @@ sealed external interface EntryType {
         @seskar.js.JsValue("http")
         val http: EntryType
 
-        @seskar.js.JsValue("dns")
-        val dns: EntryType
+        @seskar.js.JsValue("mark")
+        val mark: EntryType
+
+        @seskar.js.JsValue("measure")
+        val measure: EntryType
 
         @seskar.js.JsValue("net")
         val net: EntryType
+
+        @seskar.js.JsValue("node")
+        val node: EntryType
+
+        @seskar.js.JsValue("resource")
+        val resource: EntryType
     }
-}
+}// available on the Web

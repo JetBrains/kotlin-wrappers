@@ -13,6 +13,12 @@ package node.perfHooks
 external class PerformanceResourceTiming : PerformanceEntry {
     constructor ()
 
+    @Deprecated(message = "use resourceTimingEntryType", level = DeprecationLevel.HIDDEN)
+    override val entryType: EntryType
+
+    @JsName("entryType")
+    val resourceTimingEntryType: String /* "resource" */
+
     /**
      * The high resolution millisecond timestamp at immediately before dispatching the `fetch`
      * request. If the resource is not intercepted by a worker the property will always return 0.

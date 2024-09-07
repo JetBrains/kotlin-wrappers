@@ -38,10 +38,11 @@ import js.promise.Promise
  * canceling tests because a running test might block the application thread and
  * thus prevent the scheduled cancellation.
  * @since v18.0.0, v16.17.0
- * @param [name='The name'] The name of the test, which is displayed when reporting test results.
- * @param options Configuration options for the test. The following properties are supported:
- * @param [fn='A no-op function'] The function under test. The first argument to this function is a {@link TestContext} object. If the test uses callbacks, the
- * callback function is passed as the second argument.
+ * @param name The name of the test, which is displayed when reporting test results.
+ * Defaults to the `name` property of `fn`, or `'<anonymous>'` if `fn` does not have a name.
+ * @param options Configuration options for the test.
+ * @param fn The function under test. The first argument to this function is a {@link TestContext} object.
+ * If the test uses callbacks, the callback function is passed as the second argument.
  * @return Fulfilled with `undefined` once the test completes, or immediately if the test runs within a suite.
  */
 

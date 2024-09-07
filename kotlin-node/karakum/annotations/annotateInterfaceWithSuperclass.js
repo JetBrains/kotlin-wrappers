@@ -44,6 +44,9 @@ const interfacesWithSuperclass = [
     // stream
     "Stream",
 
+    // test
+    "TestError",
+
     // util
     "CustomPromisifySymbol",
     "DebugLogger",

@@ -13,7 +13,7 @@ sealed external interface RunOptions {
     var concurrency: Any? /* number | boolean | undefined */
 
     /**
-     * An array containing the list of files to run. **Default** matching files from
+     * An array containing the list of files to run. If omitted, files are run according to the
      * [test runner execution model](https://nodejs.org/docs/latest-v20.x/api/test.html#test-runner-execution-model).
      */
     var files: (js.array.ReadonlyArray<String>)?
@@ -43,7 +43,7 @@ sealed external interface RunOptions {
      * A function that accepts the `TestsStream` instance and can be used to setup listeners before any tests are run.
      * @default undefined
      */
-    var setup: ((root: Test) -> js.promise.PromiseResult<js.core.Void>)?
+    var setup: ((reporter: TestsStream) -> js.promise.PromiseResult<js.core.Void>)?
 
     /**
      * Allows aborting an in-progress test execution.
@@ -51,16 +51,14 @@ sealed external interface RunOptions {
     var signal: AbortSignal?
 
     /**
-     * A String, RegExp or a RegExp Array, that can be used to only run tests whose
-     * name matches the provided pattern. Test name patterns are interpreted as JavaScript
-     * regular expressions. For each test that is executed, any corresponding test hooks,
-     * such as `beforeEach()`, are also run.
+     * If provided, only run tests whose name matches the provided pattern.
+     * Strings are interpreted as JavaScript regular expressions.
      * @default undefined
      */
-    var testNamePatterns: (Any /* string | RegExp | string[] | RegExp[] */)?
+    var testNamePatterns: Any? /* string | RegExp | ReadonlyArray<string | RegExp> | undefined */
 
     /**
-     * A number of milliseconds the test execution will fail after.
+     * The number of milliseconds after which the test execution will fail.
      * If unspecified, subtests inherit this value from their parent.
      * @default Infinity
      */

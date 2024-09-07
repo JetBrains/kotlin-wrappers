@@ -41,10 +41,10 @@ external class MockTracker {
      * });
      * ```
      * @since v19.1.0, v18.13.0
-     * @param [original='A no-op function'] An optional function to create a mock on.
+     * @param original An optional function to create a mock on.
      * @param implementation An optional function used as the mock implementation for `original`. This is useful for creating mocks that exhibit one behavior for a specified number of calls and
      * then restore the behavior of `original`.
-     * @param options Optional configuration options for the mock function. The following properties are supported:
+     * @param options Optional configuration options for the mock function.
      * @return The mocked function. The mocked function contains a special `mock` property, which is an instance of {@link MockFunctionContext}, and can be used for inspecting and changing the
      * behavior of the mocked function.
      */
@@ -91,7 +91,7 @@ external class MockTracker {
      * @param object The object whose method is being mocked.
      * @param methodName The identifier of the method on `object` to mock. If `object[methodName]` is not a function, an error is thrown.
      * @param implementation An optional function used as the mock implementation for `object[methodName]`.
-     * @param options Optional configuration options for the mock method. The following properties are supported:
+     * @param options Optional configuration options for the mock method.
      * @return The mocked method. The mocked method contains a special `mock` property, which is an instance of {@link MockFunctionContext}, and can be used for inspecting and changing the
      * behavior of the mocked method.
      */
@@ -159,13 +159,5 @@ external class MockTracker {
      * @since v19.1.0, v18.13.0
      */
     fun restoreAll(): Unit
-
-    /**
-     * This function is used to mock the exports of ECMAScript modules,
-     * CommonJS modules, and Node.js builtin modules. Any references to
-     * the original module prior to mocking are not impacted
-     * @since v22.3.0
-     */
-    fun module(speficier: String, options: MockTrackerModuleOptions = definedExternally): MockTrackerModuleResult
     var timers: MockTimers
 }

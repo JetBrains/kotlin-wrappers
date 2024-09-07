@@ -49,4 +49,13 @@ sealed external interface TestOptions {
      * @default false
      */
     var todo: Any? /* boolean | string | undefined */
+
+    /**
+     * The number of assertions and subtests expected to be run in the test.
+     * If the number of assertions run in the test does not match the number
+     * specified in the plan, the test will fail.
+     * @default undefined
+     * @since v20.15.0
+     */
+    var plan: Double?
 }

@@ -10,7 +10,7 @@ import node.test.SuiteFn
 import node.test.TestOptions
 
 /**
- * Shorthand for marking a suite as `only`. This is the same as [`describe([name], { only: true }[, fn])`](https://nodejs.org/docs/latest-v20.x/api/test.html#describename-options-fn).
+ * Shorthand for marking a suite as `only`. This is the same as calling {@link describe} with `options.only` set to `true`.
  * @since v18.15.0
  */
 

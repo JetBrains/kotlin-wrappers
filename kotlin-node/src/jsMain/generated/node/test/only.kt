@@ -7,7 +7,7 @@ package node.test
 import js.promise.Promise
 
 /**
- * Shorthand for marking a test as `only`, same as `test([name], { only: true }[, fn])`.
+ * Shorthand for marking a test as `only`. This is the same as calling {@link test} with `options.only` set to `true`.
  * @since v20.2.0
  */
 

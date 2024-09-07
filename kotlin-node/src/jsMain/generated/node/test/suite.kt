@@ -8,9 +8,10 @@ import js.promise.Promise
 
 /**
  * The `suite()` function is imported from the `node:test` module.
- * @param name The name of the suite, which is displayed when reporting test results. **Default:** The `name` property of `fn`, or `'<anonymous>'` if `fn` does not have a name.
- * @param options Optional configuration options for the suite. This supports the same options as `test([name][, options][, fn])`.
- * @param [fn='A no-op function'] The suite function declaring nested tests and suites. The first argument to this function is a `{@link SuiteContext}` object.
+ * @param name The name of the suite, which is displayed when reporting test results.
+ * Defaults to the `name` property of `fn`, or `'<anonymous>'` if `fn` does not have a name.
+ * @param options Configuration options for the suite. This supports the same options as {@link test}.
+ * @param fn The suite function declaring nested tests and suites. The first argument to this function is a {@link SuiteContext} object.
  * @return Immediately fulfilled with `undefined`.
  * @since v20.13.0
  */

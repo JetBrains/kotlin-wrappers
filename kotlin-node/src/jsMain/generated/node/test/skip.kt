@@ -7,7 +7,7 @@ package node.test
 import js.promise.Promise
 
 /**
- * Shorthand for skipping a test, same as `test([name], { skip: true }[, fn])`.
+ * Shorthand for skipping a test. This is the same as calling {@link test} with `options.skip` set to `true`.
  * @since v20.2.0
  */
 

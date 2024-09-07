@@ -60,9 +60,6 @@ sealed external interface SessionMethod {
     sealed interface PROFILER_STOPPRECISECOVERAGE : SessionMethod
     sealed interface PROFILER_TAKEPRECISECOVERAGE : SessionMethod
     sealed interface PROFILER_GETBESTEFFORTCOVERAGE : SessionMethod
-    sealed interface PROFILER_STARTTYPEPROFILE : SessionMethod
-    sealed interface PROFILER_STOPTYPEPROFILE : SessionMethod
-    sealed interface PROFILER_TAKETYPEPROFILE : SessionMethod
     sealed interface HEAPPROFILER_ENABLE : SessionMethod
     sealed interface HEAPPROFILER_DISABLE : SessionMethod
     sealed interface HEAPPROFILER_STARTTRACKINGHEAPOBJECTS : SessionMethod
@@ -82,6 +79,8 @@ sealed external interface SessionMethod {
     sealed interface NODEWORKER_ENABLE : SessionMethod
     sealed interface NODEWORKER_DISABLE : SessionMethod
     sealed interface NODEWORKER_DETACH : SessionMethod
+    sealed interface NODERUNTIME_ENABLE : SessionMethod
+    sealed interface NODERUNTIME_DISABLE : SessionMethod
     sealed interface NODERUNTIME_NOTIFYWHENWAITINGFORDISCONNECT : SessionMethod
 
     companion object {
@@ -253,15 +252,6 @@ sealed external interface SessionMethod {
         @seskar.js.JsValue("Profiler.getBestEffortCoverage")
         val PROFILER_GETBESTEFFORTCOVERAGE: PROFILER_GETBESTEFFORTCOVERAGE
 
-        @seskar.js.JsValue("Profiler.startTypeProfile")
-        val PROFILER_STARTTYPEPROFILE: PROFILER_STARTTYPEPROFILE
-
-        @seskar.js.JsValue("Profiler.stopTypeProfile")
-        val PROFILER_STOPTYPEPROFILE: PROFILER_STOPTYPEPROFILE
-
-        @seskar.js.JsValue("Profiler.takeTypeProfile")
-        val PROFILER_TAKETYPEPROFILE: PROFILER_TAKETYPEPROFILE
-
         @seskar.js.JsValue("HeapProfiler.enable")
         val HEAPPROFILER_ENABLE: HEAPPROFILER_ENABLE
 
@@ -318,6 +308,12 @@ sealed external interface SessionMethod {
 
         @seskar.js.JsValue("NodeWorker.detach")
         val NODEWORKER_DETACH: NODEWORKER_DETACH
+
+        @seskar.js.JsValue("NodeRuntime.enable")
+        val NODERUNTIME_ENABLE: NODERUNTIME_ENABLE
+
+        @seskar.js.JsValue("NodeRuntime.disable")
+        val NODERUNTIME_DISABLE: NODERUNTIME_DISABLE
 
         @seskar.js.JsValue("NodeRuntime.notifyWhenWaitingForDisconnect")
         val NODERUNTIME_NOTIFYWHENWAITINGFORDISCONNECT: NODERUNTIME_NOTIFYWHENWAITINGFORDISCONNECT

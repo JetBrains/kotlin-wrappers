@@ -7,7 +7,7 @@ package node.test
 import js.promise.Promise
 
 /**
- * Alias for `test()`.
+ * Alias for {@link test}.
  *
  * The `it()` function is imported from the `node:test` module.
  * @since v18.6.0, v16.17.0

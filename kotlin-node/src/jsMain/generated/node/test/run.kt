@@ -21,6 +21,6 @@ package node.test
  *   .pipe(process.stdout);
  * ```
  * @since v18.9.0, v16.19.0
- * @param options Configuration options for running tests. The following properties are supported:
+ * @param options Configuration options for running tests.
  */
 external fun run(options: RunOptions = definedExternally): TestsStream

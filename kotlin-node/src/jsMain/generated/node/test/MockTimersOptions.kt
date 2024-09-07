@@ -4,5 +4,5 @@ package node.test
 
 sealed external interface MockTimersOptions {
     var apis: js.array.ReadonlyArray<Timer>
-    var now: (Any /* number | Date */)?
+    var now: Any? /* number | Date | undefined */
 }

@@ -8,7 +8,8 @@ import node.stream.Transform
 
 /**
  * The `spec` reporter outputs the test results in a human-readable format.
+ * @since v20.0.0
  */
-external class Spec : Transform {
+external class SpecReporter : Transform {
     constructor ()
 }

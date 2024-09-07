@@ -14,40 +14,47 @@ import web.abort.AbortSignal
  */
 external class TestContext {
     /**
-     * This function is used to create a hook running before subtest of the current test.
-     * @param fn The hook function. If the hook uses callbacks, the callback function is passed as
-     *    the second argument. **Default:** A no-op function.
-     * @param options Configuration options for the hook.
-     * @since v20.1.0
+     * An object containing assertion methods bound to the test context.
+     * The top-level functions from the `node:assert` module are exposed here for the purpose of creating test plans.
+     * @since v20.15.0
      */
-    var before: (fn: HookFn? /* use undefined for default */, options: HookOptions? /* use undefined for default */) -> Unit
+    val assert: TestContextAssert
+
+    /**
+     * This function is used to create a hook running before subtest of the current test.
+     * @param fn The hook function. The first argument to this function is a `TestContext` object.
+     * If the hook uses callbacks, the callback function is passed as the second argument.
+     * @param options Configuration options for the hook.
+     * @since v20.1.0, v18.17.0
+     */
+    fun before(fn: TestContextHookFn = definedExternally, options: HookOptions = definedExternally): Unit
 
     /**
      * This function is used to create a hook running before each subtest of the current test.
-     * @param fn The hook function. If the hook uses callbacks, the callback function is passed as
-     *    the second argument. **Default:** A no-op function.
+     * @param fn The hook function. The first argument to this function is a `TestContext` object.
+     * If the hook uses callbacks, the callback function is passed as the second argument.
      * @param options Configuration options for the hook.
      * @since v18.8.0
      */
-    var beforeEach: (fn: HookFn? /* use undefined for default */, options: HookOptions? /* use undefined for default */) -> Unit
+    fun beforeEach(fn: TestContextHookFn = definedExternally, options: HookOptions = definedExternally): Unit
 
     /**
      * This function is used to create a hook that runs after the current test finishes.
-     * @param [fn='A no-op function'] The hook function. If the hook uses callbacks, the callback function is passed as
-     *    the second argument. Default: A no-op function.
+     * @param fn The hook function. The first argument to this function is a `TestContext` object.
+     * If the hook uses callbacks, the callback function is passed as the second argument.
      * @param options Configuration options for the hook.
      * @since v18.13.0
      */
-    var after: (fn: HookFn? /* use undefined for default */, options: HookOptions? /* use undefined for default */) -> Unit
+    fun after(fn: TestContextHookFn = definedExternally, options: HookOptions = definedExternally): Unit
 
     /**
      * This function is used to create a hook running after each subtest of the current test.
-     * @param fn The hook function. If the hook uses callbacks, the callback function is passed as
-     *    the second argument. **Default:** A no-op function.
+     * @param fn The hook function. The first argument to this function is a `TestContext` object.
+     * If the hook uses callbacks, the callback function is passed as the second argument.
      * @param options Configuration options for the hook.
      * @since v18.8.0
      */
-    var afterEach: (fn: HookFn? /* use undefined for default */, options: HookOptions? /* use undefined for default */) -> Unit
+    fun afterEach(fn: TestContextHookFn = definedExternally, options: HookOptions = definedExternally): Unit
 
     /**
      * This function is used to write diagnostics to the output. Any diagnostic
@@ -65,10 +72,53 @@ external class TestContext {
     fun diagnostic(message: String): Unit
 
     /**
+     * The name of the test and each of its ancestors, separated by `>`.
+     * @since v20.16.0
+     */
+    val fullName: String
+
+    /**
      * The name of the test.
      * @since v18.8.0, v16.18.0
      */
     val name: String
+
+    /**
+     * Used to set the number of assertions and subtests that are expected to run within the test.
+     * If the number of assertions and subtests that run does not match the expected count, the test will fail.
+     *
+     * To make sure assertions are tracked, the assert functions on `context.assert` must be used,
+     * instead of importing from the `node:assert` module.
+     * ```js
+     * test('top level test', (t) => {
+     *   t.plan(2);
+     *   t.assert.ok('some relevant assertion here');
+     *   t.test('subtest', () => {});
+     * });
+     * ```
+     *
+     * When working with asynchronous code, the `plan` function can be used to ensure that the correct number of assertions are run:
+     * ```js
+     * test('planning with streams', (t, done) => {
+     *   function* generate() {
+     *     yield 'a';
+     *     yield 'b';
+     *     yield 'c';
+     *   }
+     *   const expected = ['a', 'b', 'c'];
+     *   t.plan(expected.length);
+     *   const stream = Readable.from(generate());
+     *   stream.on('data', (chunk) => {
+     *     t.assert.strictEqual(chunk, expected.shift());
+     *   });
+     *   stream.on('end', () => {
+     *     done();
+     *   });
+     * });
+     * ```
+     * @since v20.15.0
+     */
+    fun plan(count: Number): Unit
 
     /**
      * If `shouldRunOnlyTests` is truthy, the test context will only run tests that
@@ -138,11 +188,10 @@ external class TestContext {
      * the same fashion as the top level {@link test} function.
      * @since v18.0.0
      * @param name The name of the test, which is displayed when reporting test results.
-     *    Default: The `name` property of fn, or `'<anonymous>'` if `fn` does not have a name.
-     * @param options Configuration options for the test
-     * @param fn The function under test. This first argument to this function is a
-     *    {@link TestContext} object. If the test uses callbacks, the callback function is
-     *    passed as the second argument. **Default:** A no-op function.
+     * Defaults to the `name` property of `fn`, or `'<anonymous>'` if `fn` does not have a name.
+     * @param options Configuration options for the test.
+     * @param fn The function under test. This first argument to this function is a {@link TestContext} object.
+     * If the test uses callbacks, the callback function is passed as the second argument.
      * @returns A {@link Promise} resolved with `undefined` once the test completes.
      */
     var test: Any?

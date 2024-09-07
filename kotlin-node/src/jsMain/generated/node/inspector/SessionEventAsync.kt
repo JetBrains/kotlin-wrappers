@@ -31,6 +31,7 @@ sealed external interface SessionEvent {
     sealed interface NODEWORKER_DETACHEDFROMWORKER : node.events.LegacyEventType
     sealed interface NODEWORKER_RECEIVEDMESSAGEFROMWORKER : node.events.LegacyEventType
     sealed interface NODERUNTIME_WAITINGFORDISCONNECT : node.events.LegacyEventType
+    sealed interface NODERUNTIME_WAITINGFORDEBUGGER : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("inspectorNotification")
@@ -114,6 +115,9 @@ sealed external interface SessionEvent {
         @seskar.js.JsValue("NodeRuntime.waitingForDisconnect")
         val NODERUNTIME_WAITINGFORDISCONNECT: NODERUNTIME_WAITINGFORDISCONNECT
 
+        @seskar.js.JsValue("NodeRuntime.waitingForDebugger")
+        val NODERUNTIME_WAITINGFORDEBUGGER: NODERUNTIME_WAITINGFORDEBUGGER
+
         @seskar.js.JsValue("inspectorNotification")
         fun inspectorNotification(): node.events.EventType<Session, js.array.JsTuple1<InspectorNotification<Any>>>
 
@@ -194,5 +198,8 @@ sealed external interface SessionEvent {
 
         @seskar.js.JsValue("NodeRuntime.waitingForDisconnect")
         fun NodeRuntimeWaitingForDisconnect(): node.events.EventType<Session, js.array.JsTuple>
+
+        @seskar.js.JsValue("NodeRuntime.waitingForDebugger")
+        fun NodeRuntimeWaitingForDebugger(): node.events.EventType<Session, js.array.JsTuple>
     }
 }

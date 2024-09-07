@@ -5,4 +5,4 @@
 
 package node.test
 
-/* export { after, afterEach, before, beforeEach, describe, it, mock, only, run, skip, test, todo }; */
+/* export { after, afterEach, before, beforeEach, describe, it, mock, only, run, skip, suite, test, todo }; */

@@ -15,6 +15,7 @@ sealed external interface TestsStreamEvent {
     sealed interface TEST_START : node.events.LegacyEventType
     sealed interface TEST_STDERR : node.events.LegacyEventType
     sealed interface TEST_STDOUT : node.events.LegacyEventType
+    sealed interface TEST_WATCH_DRAINED : node.events.LegacyEventType
 
     companion object {
         @seskar.js.JsValue("test:coverage")
@@ -50,6 +51,9 @@ sealed external interface TestsStreamEvent {
         @seskar.js.JsValue("test:stdout")
         val TEST_STDOUT: TEST_STDOUT
 
+        @seskar.js.JsValue("test:watch:drained")
+        val TEST_WATCH_DRAINED: TEST_WATCH_DRAINED
+
         @seskar.js.JsValue("test:coverage")
         fun testCoverage(): node.events.EventType<TestsStream, js.array.JsTuple1<TestCoverage>>
 
@@ -82,5 +86,8 @@ sealed external interface TestsStreamEvent {
 
         @seskar.js.JsValue("test:stdout")
         fun testStdout(): node.events.EventType<TestsStream, js.array.JsTuple1<TestStdout>>
+
+        @seskar.js.JsValue("test:watch:drained")
+        fun testWatchDrained(): node.events.EventType<TestsStream, js.array.JsTuple>
     }
 }

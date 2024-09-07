@@ -7,4 +7,4 @@ package node
 // Make this a module
 
 
-// #endregion Fetch and friends
+// #endregion DOMException

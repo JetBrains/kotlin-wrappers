@@ -15,6 +15,9 @@ const overriddenProps = {
     "PerformanceMeasure": {
         "entryType": ["measureEntryType", "EntryType"]
     },
+    "PerformanceResourceTiming": {
+        "entryType": ["resourceTimingEntryType", "EntryType"]
+    },
 
     // stream
     "ReadableBase": {

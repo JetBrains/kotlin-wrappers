@@ -4,7 +4,7 @@ package node.test
 
 sealed external interface TestCoverageSummary {
     /**
-     * An array of coverage reports for individual files. Each report is an object with the following schema:
+     * An array of coverage reports for individual files.
      */
     var files: Array<TestCoverageSummaryFilesItem>
 

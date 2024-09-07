@@ -26,6 +26,13 @@ sealed external interface ParseArgsConfig {
     var allowPositionals: Boolean?
 
     /**
+     * If `true`, allows explicitly setting boolean options to `false` by prefixing the option name with `--no-`.
+     * @default false
+     * @since v20.16.0
+     */
+    var allowNegative: Boolean?
+
+    /**
      * Return the parsed tokens. This is useful for extending the built-in behavior,
      * from adding additional checks through to reprocessing the tokens in different ways.
      * @default false

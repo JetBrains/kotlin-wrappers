@@ -5,4 +5,11 @@
 package node.test.reporters
 
 
-/* export { dot, junit, Lcov as lcov, Spec as spec, tap, TestEvent }; */
+/**
+ * The `lcov` reporter outputs test coverage when used with the
+ * [`--experimental-test-coverage`](https://nodejs.org/docs/latest-v20.x/api/cli.html#--experimental-test-coverage) flag.
+ * @since v22.0.0
+ */
+external val lcov: LcovReporter
+
+/* export { dot, junit, lcov, SpecReporter as spec, tap, TestEvent }; */
