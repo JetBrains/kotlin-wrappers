@@ -5,7 +5,6 @@ package web.payment
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
-import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
 
@@ -30,7 +29,7 @@ sealed external class PaymentResponse :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/payerdetailchange_event)
      */
-    var onpayerdetailchange: EventHandler<Event, PaymentResponse, PaymentResponse>?
+    var onpayerdetailchange: EventHandler<PaymentRequestUpdateEvent, PaymentResponse, PaymentResponse>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/payerEmail)

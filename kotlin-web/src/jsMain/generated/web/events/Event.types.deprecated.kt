@@ -358,13 +358,6 @@ sealed external class EventTypes_deprecated {
 
     @Deprecated(
         message = "Legacy event type declaration. Use type constant instead!",
-        replaceWith = ReplaceWith("Event.PAYER_DETAIL_CHANGE"),
-    )
-    @JsValue("payerdetailchange")
-    fun payerDetailChange(): EventType<Event>
-
-    @Deprecated(
-        message = "Legacy event type declaration. Use type constant instead!",
         replaceWith = ReplaceWith("Event.PLAY"),
     )
     @JsValue("play")
@@ -509,20 +502,6 @@ sealed external class EventTypes_deprecated {
     )
     @JsValue("selectstart")
     fun selectStart(): EventType<Event>
-
-    @Deprecated(
-        message = "Legacy event type declaration. Use type constant instead!",
-        replaceWith = ReplaceWith("Event.SHIPPING_ADDRESS_CHANGE"),
-    )
-    @JsValue("shippingaddresschange")
-    fun shippingAddressChange(): EventType<Event>
-
-    @Deprecated(
-        message = "Legacy event type declaration. Use type constant instead!",
-        replaceWith = ReplaceWith("Event.SHIPPING_OPTION_CHANGE"),
-    )
-    @JsValue("shippingoptionchange")
-    fun shippingOptionChange(): EventType<Event>
 
     @Deprecated(
         message = "Legacy event type declaration. Use type constant instead!",

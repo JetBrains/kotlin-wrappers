@@ -157,9 +157,6 @@ sealed external class EventTypes :
     @JsValue("pause")
     val PAUSE: EventType<Event>
 
-    @JsValue("payerdetailchange")
-    val PAYER_DETAIL_CHANGE: EventType<Event>
-
     @JsValue("play")
     val PLAY: EventType<Event>
 
@@ -222,12 +219,6 @@ sealed external class EventTypes :
 
     @JsValue("selectstart")
     val SELECT_START: EventType<Event>
-
-    @JsValue("shippingaddresschange")
-    val SHIPPING_ADDRESS_CHANGE: EventType<Event>
-
-    @JsValue("shippingoptionchange")
-    val SHIPPING_OPTION_CHANGE: EventType<Event>
 
     @JsValue("show")
     val SHOW: EventType<Event>
