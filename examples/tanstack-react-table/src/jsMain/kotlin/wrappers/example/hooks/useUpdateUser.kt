@@ -2,32 +2,17 @@ package wrappers.example.hooks
 
 import js.objects.jso
 import js.promise.Promise
-import tanstack.query.core.QueryKey
-import tanstack.react.query.useMutation
-import tanstack.react.query.useQueryClient
 import web.http.BodyInit
 import web.http.RequestMethod
 import web.http.fetchAsync
-import wrappers.example.USERS_QUERY_KEY
 import wrappers.example.entities.User
 
 typealias UpdateUser = (User) -> Unit
 
-fun useUpdateUser(): UpdateUser {
-    val client = useQueryClient()
-    return useMutation<User, Error, User, QueryKey>(
-        options = jso {
-            mutationFn = { user -> updateUser(user) }
-            onSuccess = { _, _, _ ->
-                client.invalidateQueries(
-                    filters = jso {
-                        queryKey = USERS_QUERY_KEY
-                    }
-                )
-            }
-        }
-    ).mutate.unsafeCast<UpdateUser>()
-}
+fun useUpdateUser(): UpdateUser =
+    useMutateUser { user ->
+        updateUser(user)
+    }
 
 private fun updateUser(user: User): Promise<User> =
     fetchAsync(
