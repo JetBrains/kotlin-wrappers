@@ -6,7 +6,6 @@ import react.dom.html.ReactHTML.div
 import web.cssom.Display
 import web.cssom.GridAutoFlow
 import web.cssom.px
-import wrappers.example.selection.SelectionModule
 
 val UserInfo = FC {
     div {
@@ -16,9 +15,7 @@ val UserInfo = FC {
             gridAutoFlow = GridAutoFlow.column
         }
 
-        SelectionModule {
-            UserTable()
-            UserPanel()
-        }
+        UserTable()
+        UserPanel()
     }
 }
