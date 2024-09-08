@@ -1,4 +1,4 @@
-package wrappers.example
+package wrappers.example.app
 
 import react.FC
 import react.Props
