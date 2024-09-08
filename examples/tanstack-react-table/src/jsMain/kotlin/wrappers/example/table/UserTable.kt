@@ -13,44 +13,20 @@ import react.dom.html.ReactHTML.thead
 import react.dom.html.ReactHTML.tr
 import tanstack.react.table.renderCell
 import tanstack.react.table.renderHeader
-import tanstack.react.table.useReactTable
-import tanstack.table.core.ColumnDef
-import tanstack.table.core.StringOrTemplateHeader
-import tanstack.table.core.getCoreRowModel
 import web.cssom.*
 import web.cssom.Auto.Companion.auto
 import web.cssom.LineStyle.Companion.solid
 import web.cssom.None.Companion.none
-import wrappers.example.entities.User
 import wrappers.example.hooks.useCreateUser
-import wrappers.example.hooks.useUsers
 import wrappers.example.selection.useSetSelectedUser
 import wrappers.example.theme.Theme
 import kotlin.random.Random.Default.nextInt
 
 val UserTable = FC {
-    val users = useUsers()
     val createUser = useCreateUser()
     val setSelectedUser = useSetSelectedUser()
 
-    val table = useReactTable<User>(
-        options = jso {
-            data = users
-            columns = arrayOf<ColumnDef<User, String>>(
-                jso {
-                    id = "name"
-                    header = StringOrTemplateHeader("Name")
-                    accessorFn = { row, _ -> row.name }
-                },
-                jso {
-                    id = "email"
-                    header = StringOrTemplateHeader("E-mail")
-                    accessorFn = { row, _ -> row.email }
-                },
-            )
-            getCoreRowModel = getCoreRowModel()
-        }
-    )
+    val table = useUsersTable()
 
     div {
         button {
