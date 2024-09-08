@@ -8,13 +8,13 @@ import web.cssom.FontWeight
 import web.cssom.Overflow
 import web.cssom.Padding
 import web.cssom.px
-import wrappers.example.Colors
+import wrappers.example.theme.Theme
 
 val Header = FC {
     div {
         css {
             overflow = Overflow.hidden
-            backgroundColor = Colors.Background.Gray
+            backgroundColor = Theme.Background.Gray
             padding = Padding(20.px, 10.px)
         }
 

@@ -8,9 +8,9 @@ import web.cssom.BorderCollapse
 import web.cssom.LineStyle
 import web.cssom.WhiteSpace
 import web.cssom.px
-import wrappers.example.Colors
 import wrappers.example.hooks.useDeleteUser
 import wrappers.example.hooks.useUpdateUser
+import wrappers.example.theme.Theme
 
 val UserPanel = FC {
     val selectedUser = useSelectedUser()
@@ -50,7 +50,7 @@ val UserPanel = FC {
                 whiteSpace = WhiteSpace.nowrap
                 borderWidth = 2.px
                 borderStyle = LineStyle.solid
-                borderColor = Colors.Stroke.Gray
+                borderColor = Theme.Stroke.Gray
                 marginTop = 20.px
             }
 

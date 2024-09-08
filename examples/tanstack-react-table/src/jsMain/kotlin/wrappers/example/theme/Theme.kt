@@ -1,8 +1,8 @@
-package wrappers.example
+package wrappers.example.theme
 
 import web.cssom.Color
 
-object Colors {
+object Theme {
     object Text {
         val Black: Color = Color("#2E2E2E")
         val Gray: Color = Color("#75829E")

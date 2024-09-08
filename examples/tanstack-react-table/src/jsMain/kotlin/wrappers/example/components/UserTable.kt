@@ -21,10 +21,10 @@ import web.cssom.*
 import web.cssom.Auto.Companion.auto
 import web.cssom.LineStyle.Companion.solid
 import web.cssom.None.Companion.none
-import wrappers.example.Colors
 import wrappers.example.entities.User
 import wrappers.example.hooks.useCreateUser
 import wrappers.example.hooks.useUsers
+import wrappers.example.theme.Theme
 import kotlin.random.Random.Default.nextInt
 
 val UserTable = FC {
@@ -64,15 +64,15 @@ val UserTable = FC {
                 borderSpacing = 0.px
                 borderCollapse = BorderCollapse.collapse
                 whiteSpace = WhiteSpace.nowrap
-                border = Border(2.px, solid, Colors.Stroke.Gray)
+                border = Border(2.px, solid, Theme.Stroke.Gray)
                 margin = auto
             }
 
             thead {
                 css {
-                    color = Colors.Text.Gray
+                    color = Theme.Text.Gray
                     fontSize = 18.px
-                    backgroundColor = Colors.Background.Gray
+                    backgroundColor = Theme.Background.Gray
                 }
 
                 for (headerGroup in table.getHeaderGroups()) {
@@ -82,8 +82,8 @@ val UserTable = FC {
                                 css {
                                     fontWeight = FontWeight.normal
                                     padding = Padding(4.px, 12.px)
-                                    borderRight = Border(1.px, solid, Colors.Stroke.Gray)
-                                    borderBottom = Border(1.px, solid, Colors.Stroke.Gray)
+                                    borderRight = Border(1.px, solid, Theme.Stroke.Gray)
+                                    borderBottom = Border(1.px, solid, Theme.Stroke.Gray)
 
                                     lastChild {
                                         borderRight = none
@@ -99,8 +99,8 @@ val UserTable = FC {
 
             tbody {
                 css {
-                    color = Colors.Text.Black
-                    backgroundColor = Colors.Background.White
+                    color = Theme.Text.Black
+                    backgroundColor = Theme.Background.White
                     textAlign = TextAlign.start
                 }
 
@@ -109,9 +109,9 @@ val UserTable = FC {
                         css {
                             fontSize = 16.px
                             cursor = Cursor.pointer
-                            borderBottom = Border(1.px, solid, Colors.Stroke.LightGray)
+                            borderBottom = Border(1.px, solid, Theme.Stroke.LightGray)
                             hover {
-                                backgroundColor = Colors.Background.Gray
+                                backgroundColor = Theme.Background.Gray
                             }
                         }
 
