@@ -1,4 +1,4 @@
-package wrappers.example.components
+package wrappers.example.card
 
 import emotion.react.css
 import react.FC
@@ -13,7 +13,7 @@ import wrappers.example.hooks.useUpdateUser
 import wrappers.example.selection.useSelectedUser
 import wrappers.example.theme.Theme
 
-val UserPanel = FC {
+val UserCard = FC {
     val selectedUser = useSelectedUser()
     val updateUser = useUpdateUser()
     val deleteUser = useDeleteUser()

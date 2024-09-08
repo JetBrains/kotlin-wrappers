@@ -6,6 +6,7 @@ import react.dom.html.ReactHTML.div
 import web.cssom.Display
 import web.cssom.GridAutoFlow
 import web.cssom.px
+import wrappers.example.card.UserCard
 import wrappers.example.list.UserList
 
 val UserInfo = FC {
@@ -17,6 +18,6 @@ val UserInfo = FC {
         }
 
         UserList()
-        UserPanel()
+        UserCard()
     }
 }
