@@ -13,10 +13,10 @@ import wrappers.example.components.LoadingIndicator
 import wrappers.example.components.UserInfo
 
 fun main() {
-    val root = document.createElement(div)
-    document.body.appendChild(root)
+    val container = document.createElement(div)
+    document.body.appendChild(container)
 
-    createRoot(root)
+    createRoot(container)
         .render(App.create())
 }
 
