@@ -14,7 +14,7 @@ fun useUpdateUser(): UpdateUser =
     }
 
 private fun updateUser(user: User): Promise<User> =
-    fetchData(
+    fetchUserData(
         id = user.id,
         init = RequestInit(
             method = RequestMethod.PUT,

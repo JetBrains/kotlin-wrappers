@@ -13,7 +13,7 @@ fun useDeleteUser(): DeleteUser =
     }
 
 private fun deleteUser(user: User): Promise<Unit> =
-    fetchData(
+    fetchUserData(
         id = user.id,
         init = RequestInit(method = RequestMethod.DELETE)
     )

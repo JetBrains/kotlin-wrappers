@@ -14,7 +14,7 @@ fun useCreateUser(): CreateUser =
     }
 
 private fun createUser(user: User): Promise<User> =
-    fetchData(
+    fetchUserData(
         init = RequestInit(
             method = RequestMethod.POST,
             body = BodyInit(JSON.stringify(user)),
