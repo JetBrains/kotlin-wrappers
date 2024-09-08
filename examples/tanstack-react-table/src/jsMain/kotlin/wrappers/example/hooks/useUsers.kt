@@ -5,7 +5,6 @@ import js.promise.Promise
 import tanstack.query.core.QueryFunction
 import tanstack.query.core.QueryKey
 import tanstack.react.query.useQuery
-import web.http.fetchAsync
 import wrappers.example.USERS_QUERY_KEY
 import wrappers.example.entities.Users
 
@@ -16,10 +15,9 @@ fun useUsers(): Users {
             queryFn = QueryFunction { getUsers() }
         },
     )
+
     return result.data ?: emptyArray()
 }
 
 private fun getUsers(): Promise<Users> =
-    fetchAsync("https://jsonplaceholder.typicode.com/users")
-        .then { it.jsonAsync() }
-        .then { it.unsafeCast<Users>() }
+    fetchData()
