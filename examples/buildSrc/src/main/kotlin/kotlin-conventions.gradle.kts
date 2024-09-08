@@ -9,7 +9,12 @@ plugins {
 kotlin.js {
     moduleName = project.name
 
-    browser()
+    browser {
+        commonWebpackConfig {
+            outputFileName = "index.js"
+        }
+    }
+
     binaries.executable()
 }
 
