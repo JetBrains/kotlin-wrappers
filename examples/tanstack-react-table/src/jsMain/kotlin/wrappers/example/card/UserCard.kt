@@ -5,10 +5,8 @@ import react.FC
 import react.dom.html.ReactHTML.button
 import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.span
-import web.cssom.BorderCollapse
-import web.cssom.LineStyle
-import web.cssom.WhiteSpace
-import web.cssom.px
+import web.cssom.*
+import web.cssom.Length.Companion.maxContent
 import wrappers.example.hooks.useDeleteUser
 import wrappers.example.hooks.useUpdateUser
 import wrappers.example.selection.useSelectedUser
@@ -20,6 +18,12 @@ val UserCard = FC {
     val deleteUser = useDeleteUser()
 
     div {
+        css {
+            display = Display.grid
+            gridAutoRows = maxContent
+            gap = 20.px
+        }
+
         div {
             +"User Information"
 
@@ -46,6 +50,7 @@ val UserCard = FC {
 
         div {
             css {
+                display = Display.grid
                 width = 400.px
                 borderSpacing = 0.px
                 borderCollapse = BorderCollapse.collapse
@@ -53,7 +58,7 @@ val UserCard = FC {
                 borderWidth = 2.px
                 borderStyle = LineStyle.solid
                 borderColor = Theme.Stroke.Gray
-                marginTop = 20.px
+                gap = 10.px
             }
 
             span {
