@@ -16,9 +16,3 @@
 6. An [example of using react-router-dom](please-split-me/src/jsMain/kotlin/example/ReactRouterDom.kt) that shows how to
    use
    react-route-dom with hooks API.
-
-### Lazy modules
-
-```shell
-./gradlew react-lazy-modules-webpack:jsBrowserProductionRun
-```

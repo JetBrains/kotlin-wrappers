@@ -1,0 +1,5 @@
+### Run
+
+```shell
+./../gradlew jsBrowserProductionRun
+```
