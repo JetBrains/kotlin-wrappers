@@ -1,6 +1,7 @@
 package styled
 
 import js.array.asList
+import js.globals.globalThis
 import js.objects.jso
 import web.blob.Blob
 import web.blob.BlobPart
@@ -70,7 +71,7 @@ internal object GlobalCssAccess {
     }
 
     internal fun setupCssHelperFunctions() {
-        window.asDynamic().StyledNext = object : StyledNext {
+        globalThis.StyledNext = object : StyledNext {
             override fun useDevSheet(isDev: Boolean) {
                 this@GlobalCssAccess.useDevSheet(isDev)
             }
