@@ -1,10 +1,7 @@
 package wrappers.example.table
 
 import emotion.react.css
-import js.objects.jso
 import react.FC
-import react.dom.html.ReactHTML.button
-import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.table
 import react.dom.html.ReactHTML.tbody
 import react.dom.html.ReactHTML.td
@@ -17,91 +14,80 @@ import web.cssom.*
 import web.cssom.Auto.Companion.auto
 import web.cssom.LineStyle.Companion.solid
 import web.cssom.None.Companion.none
-import wrappers.example.hooks.useCreateUser
 import wrappers.example.selection.useSetSelectedUser
 import wrappers.example.theme.Theme
-import kotlin.random.Random.Default.nextInt
 
 val UserTable = FC {
-    val createUser = useCreateUser()
     val setSelectedUser = useSetSelectedUser()
 
     val table = useUsersTable()
 
-    div {
-        button {
-            onClick = { createUser(jso { id = "${nextInt()}" }) }
-
-            +"Create New"
+    table {
+        css {
+            width = 400.px
+            borderSpacing = 0.px
+            borderCollapse = BorderCollapse.collapse
+            whiteSpace = WhiteSpace.nowrap
+            border = Border(2.px, solid, Theme.Stroke.Gray)
+            margin = auto
         }
 
-        table {
+        thead {
             css {
-                width = 400.px
-                borderSpacing = 0.px
-                borderCollapse = BorderCollapse.collapse
-                whiteSpace = WhiteSpace.nowrap
-                border = Border(2.px, solid, Theme.Stroke.Gray)
-                margin = auto
+                color = Theme.Text.Gray
+                fontSize = 18.px
+                backgroundColor = Theme.Background.Gray
             }
 
-            thead {
-                css {
-                    color = Theme.Text.Gray
-                    fontSize = 18.px
-                    backgroundColor = Theme.Background.Gray
-                }
+            for (headerGroup in table.getHeaderGroups()) {
+                tr {
+                    for (header in headerGroup.headers) {
+                        th {
+                            css {
+                                fontWeight = FontWeight.normal
+                                padding = Padding(4.px, 12.px)
+                                borderRight = Border(1.px, solid, Theme.Stroke.Gray)
+                                borderBottom = Border(1.px, solid, Theme.Stroke.Gray)
 
-                for (headerGroup in table.getHeaderGroups()) {
-                    tr {
-                        for (header in headerGroup.headers) {
-                            th {
-                                css {
-                                    fontWeight = FontWeight.normal
-                                    padding = Padding(4.px, 12.px)
-                                    borderRight = Border(1.px, solid, Theme.Stroke.Gray)
-                                    borderBottom = Border(1.px, solid, Theme.Stroke.Gray)
-
-                                    lastChild {
-                                        borderRight = none
-                                    }
+                                lastChild {
+                                    borderRight = none
                                 }
-
-                                +renderHeader(header)
                             }
+
+                            +renderHeader(header)
                         }
                     }
                 }
             }
+        }
 
-            tbody {
-                css {
-                    color = Theme.Text.Black
-                    backgroundColor = Theme.Background.White
-                    textAlign = TextAlign.start
-                }
+        tbody {
+            css {
+                color = Theme.Text.Black
+                backgroundColor = Theme.Background.White
+                textAlign = TextAlign.start
+            }
 
-                for (row in table.getRowModel().rows) {
-                    tr {
-                        css {
-                            fontSize = 16.px
-                            cursor = Cursor.pointer
-                            borderBottom = Border(1.px, solid, Theme.Stroke.LightGray)
-                            hover {
-                                backgroundColor = Theme.Background.Gray
-                            }
+            for (row in table.getRowModel().rows) {
+                tr {
+                    css {
+                        fontSize = 16.px
+                        cursor = Cursor.pointer
+                        borderBottom = Border(1.px, solid, Theme.Stroke.LightGray)
+                        hover {
+                            backgroundColor = Theme.Background.Gray
                         }
+                    }
 
-                        onClick = { setSelectedUser(row.original) }
+                    onClick = { setSelectedUser(row.original) }
 
-                        for (cell in row.getVisibleCells()) {
-                            td {
-                                css {
-                                    padding = Padding(10.px, 12.px)
-                                }
-
-                                +renderCell(cell)
+                    for (cell in row.getVisibleCells()) {
+                        td {
+                            css {
+                                padding = Padding(10.px, 12.px)
                             }
+
+                            +renderCell(cell)
                         }
                     }
                 }
