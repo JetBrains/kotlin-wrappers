@@ -24,6 +24,7 @@ import web.cssom.None.Companion.none
 import wrappers.example.entities.User
 import wrappers.example.hooks.useCreateUser
 import wrappers.example.hooks.useUsers
+import wrappers.example.selection.useSetSelectedUser
 import wrappers.example.theme.Theme
 import kotlin.random.Random.Default.nextInt
 

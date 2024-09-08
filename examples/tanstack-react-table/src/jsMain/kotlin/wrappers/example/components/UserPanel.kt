@@ -10,6 +10,7 @@ import web.cssom.WhiteSpace
 import web.cssom.px
 import wrappers.example.hooks.useDeleteUser
 import wrappers.example.hooks.useUpdateUser
+import wrappers.example.selection.useSelectedUser
 import wrappers.example.theme.Theme
 
 val UserPanel = FC {

@@ -1,4 +1,4 @@
-package wrappers.example.components
+package wrappers.example.selection
 
 import react.*
 import wrappers.example.entities.User
@@ -15,7 +15,7 @@ fun useSelectedUser(): User? =
 fun useSetSelectedUser(): StateSetter<User?> =
     useRequiredContext(SetSelectedUserContext)
 
-val SelectedUserModule = FC<PropsWithChildren> { props ->
+val SelectionModule = FC<PropsWithChildren> { props ->
     val (user, setUser) = useState<User>()
 
     SelectedUserContext(user) {
