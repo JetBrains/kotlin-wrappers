@@ -4,6 +4,7 @@ import emotion.react.css
 import react.FC
 import react.dom.html.ReactHTML.button
 import react.dom.html.ReactHTML.div
+import react.dom.html.ReactHTML.span
 import web.cssom.BorderCollapse
 import web.cssom.LineStyle
 import web.cssom.WhiteSpace
@@ -55,19 +56,19 @@ val UserCard = FC {
                 marginTop = 20.px
             }
 
-            div {
+            span {
                 +"Name: ${selectedUser?.name ?: "—"}"
             }
 
-            div {
+            span {
                 +"E-mail: ${selectedUser?.email ?: "—"}"
             }
 
-            div {
+            span {
                 +"Phone: ${selectedUser?.phone ?: "—"}"
             }
 
-            div {
+            span {
                 +"Website: ${selectedUser?.website ?: "—"}"
             }
         }
