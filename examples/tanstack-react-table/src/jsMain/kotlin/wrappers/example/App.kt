@@ -1,4 +1,4 @@
-package team.karakum
+package wrappers.example
 
 import react.FC
 import react.Props
@@ -6,11 +6,11 @@ import react.create
 import react.dom.client.createRoot
 import tanstack.query.core.QueryClient
 import tanstack.react.query.QueryClientProvider
-import team.karakum.components.Header
-import team.karakum.components.LoadingIndicator
-import team.karakum.components.UserInfo
 import web.dom.document
 import web.html.HTML.div
+import wrappers.example.components.Header
+import wrappers.example.components.LoadingIndicator
+import wrappers.example.components.UserInfo
 
 fun main() {
     val root = document.createElement(div)

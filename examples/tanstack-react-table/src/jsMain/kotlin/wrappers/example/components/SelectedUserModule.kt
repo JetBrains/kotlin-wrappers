@@ -1,7 +1,7 @@
-package team.karakum.components
+package wrappers.example.components
 
 import react.*
-import team.karakum.entities.User
+import wrappers.example.entities.User
 
 private val SelectedUserContext: Context<User?> =
     createContext()

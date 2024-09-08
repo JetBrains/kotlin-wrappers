@@ -1,23 +1,22 @@
-package team.karakum.hooks
+package wrappers.example.hooks
 
 import js.objects.jso
 import js.promise.Promise
 import tanstack.query.core.QueryKey
 import tanstack.react.query.useMutation
 import tanstack.react.query.useQueryClient
-import team.karakum.USERS_QUERY_KEY
-import team.karakum.entities.User
-import web.http.BodyInit
 import web.http.RequestMethod
 import web.http.fetchAsync
+import wrappers.example.USERS_QUERY_KEY
+import wrappers.example.entities.User
 
-typealias UpdateUser = (User) -> Unit
+typealias DeleteUser = (User) -> Unit
 
-fun useUpdateUser(): UpdateUser {
+fun useDeleteUser(): DeleteUser {
     val client = useQueryClient()
-    return useMutation<User, Error, User, QueryKey>(
+    return useMutation<Unit, Error, User, QueryKey>(
         options = jso {
-            mutationFn = { user -> updateUser(user) }
+            mutationFn = { user -> deleteUser(user) }
             onSuccess = { _, _, _ ->
                 client.invalidateQueries(
                     filters = jso {
@@ -26,14 +25,11 @@ fun useUpdateUser(): UpdateUser {
                 )
             }
         }
-    ).mutate.unsafeCast<UpdateUser>()
+    ).mutate.unsafeCast<DeleteUser>()
 }
 
-private fun updateUser(user: User): Promise<User> =
+private fun deleteUser(user: User): Promise<Unit> =
     fetchAsync(
         input = "https://jsonplaceholder.typicode.com/users/${user.id}",
-        init = jso {
-            method = RequestMethod.PUT
-            body = BodyInit(JSON.stringify(user))
-        }
-    ).then { it.jsonAsync() }.then { it.unsafeCast<User>() }
+        init = jso { method = RequestMethod.DELETE }
+    ).then {}

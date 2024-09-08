@@ -1,4 +1,4 @@
-package team.karakum.components
+package wrappers.example.components
 
 import emotion.react.css
 import react.FC

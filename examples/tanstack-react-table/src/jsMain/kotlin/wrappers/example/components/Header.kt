@@ -1,14 +1,14 @@
-package team.karakum.components
+package wrappers.example.components
 
 import emotion.react.css
 import react.FC
 import react.dom.html.ReactHTML.a
 import react.dom.html.ReactHTML.div
-import team.karakum.Colors
 import web.cssom.FontWeight
 import web.cssom.Overflow
 import web.cssom.Padding
 import web.cssom.px
+import wrappers.example.Colors
 
 val Header = FC {
     div {

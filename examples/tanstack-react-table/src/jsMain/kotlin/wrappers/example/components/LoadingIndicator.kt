@@ -1,7 +1,7 @@
-package team.karakum.components
+package wrappers.example.components
 
 import react.FC
-import team.karakum.hooks.useUsers
+import wrappers.example.hooks.useUsers
 
 val LoadingIndicator = FC {
     val users = useUsers()

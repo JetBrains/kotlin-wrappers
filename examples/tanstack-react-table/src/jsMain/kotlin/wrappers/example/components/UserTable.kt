@@ -1,4 +1,4 @@
-package team.karakum.components
+package wrappers.example.components
 
 import emotion.react.css
 import js.objects.jso
@@ -17,14 +17,14 @@ import tanstack.react.table.useReactTable
 import tanstack.table.core.ColumnDef
 import tanstack.table.core.StringOrTemplateHeader
 import tanstack.table.core.getCoreRowModel
-import team.karakum.Colors
-import team.karakum.entities.User
-import team.karakum.hooks.useCreateUser
-import team.karakum.hooks.useUsers
 import web.cssom.*
 import web.cssom.Auto.Companion.auto
 import web.cssom.LineStyle.Companion.solid
 import web.cssom.None.Companion.none
+import wrappers.example.Colors
+import wrappers.example.entities.User
+import wrappers.example.hooks.useCreateUser
+import wrappers.example.hooks.useUsers
 import kotlin.random.Random.Default.nextInt
 
 val UserTable = FC {

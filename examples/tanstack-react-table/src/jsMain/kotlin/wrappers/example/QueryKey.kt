@@ -1,4 +1,4 @@
-package team.karakum
+package wrappers.example
 
 import tanstack.query.core.QueryKey
 

@@ -1,4 +1,4 @@
-package team.karakum
+package wrappers.example
 
 import web.cssom.Color
 

@@ -1,4 +1,4 @@
-package team.karakum.hooks
+package wrappers.example.hooks
 
 import js.objects.jso
 import js.promise.Promise
@@ -6,9 +6,9 @@ import tanstack.query.core.QueryFunction
 import tanstack.query.core.QueryKey
 import tanstack.query.core.skipToken
 import tanstack.react.query.useQuery
-import team.karakum.USERS_QUERY_KEY
-import team.karakum.entities.Users
 import web.http.fetchAsync
+import wrappers.example.USERS_QUERY_KEY
+import wrappers.example.entities.Users
 
 fun useUsers(): Users {
     val result = useQuery<Users, Error, Users, QueryKey>(
