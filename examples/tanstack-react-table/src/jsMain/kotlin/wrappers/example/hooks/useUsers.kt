@@ -7,7 +7,7 @@ import tanstack.react.query.useQuery
 import wrappers.example.USERS_QUERY_KEY
 import wrappers.example.entities.Users
 
-fun useUsers(): Users {
+fun useUsersOrNull(): Users? {
     val result = useQuery<Users, Error, Users, QueryKey>(
         options = jso {
             queryKey = USERS_QUERY_KEY
@@ -15,5 +15,8 @@ fun useUsers(): Users {
         },
     )
 
-    return result.data ?: emptyArray()
+    return result.data
 }
+
+fun useUsers(): Users =
+    requireNotNull(useUsersOrNull())

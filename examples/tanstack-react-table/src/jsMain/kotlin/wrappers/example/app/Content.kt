@@ -1,4 +1,4 @@
-package wrappers.example.components
+package wrappers.example.app
 
 import emotion.react.css
 import react.FC
@@ -7,9 +7,12 @@ import web.cssom.Display
 import web.cssom.GridAutoFlow
 import web.cssom.px
 import wrappers.example.card.UserCard
+import wrappers.example.components.LoadingIndicator
 import wrappers.example.list.UserList
 
-val UserInfo = FC {
+val Content = FC {
+    val loading = useIsLoading()
+
     div {
         css {
             padding = 20.px
@@ -17,7 +20,11 @@ val UserInfo = FC {
             gridAutoFlow = GridAutoFlow.column
         }
 
-        UserList()
-        UserCard()
+        if (!loading) {
+            UserList()
+            UserCard()
+        } else {
+            LoadingIndicator()
+        }
     }
 }
