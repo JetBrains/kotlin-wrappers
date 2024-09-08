@@ -80,7 +80,9 @@ val UserTable = FC {
                         }
                     }
 
-                    onClick = { setSelectedUser(row.original) }
+                    onClick = {
+                        setSelectedUser(row.original)
+                    }
 
                     for (cell in row.getVisibleCells()) {
                         td {
