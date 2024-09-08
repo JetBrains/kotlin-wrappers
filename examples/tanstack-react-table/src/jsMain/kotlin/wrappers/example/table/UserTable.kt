@@ -34,8 +34,8 @@ val UserTable = FC {
 
         thead {
             css {
-                color = Theme.Text.Gray
                 fontSize = 18.px
+                color = Theme.Text.Gray
                 backgroundColor = Theme.Background.Gray
             }
 
@@ -74,6 +74,7 @@ val UserTable = FC {
                         fontSize = 16.px
                         cursor = Cursor.pointer
                         borderBottom = Border(1.px, solid, Theme.Stroke.LightGray)
+
                         hover {
                             backgroundColor = Theme.Background.Gray
                         }
