@@ -1,4 +1,4 @@
-package wrappers.example.components
+package wrappers.example.table
 
 import emotion.react.css
 import js.objects.jso
