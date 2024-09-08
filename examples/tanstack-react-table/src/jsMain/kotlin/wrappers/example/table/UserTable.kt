@@ -18,9 +18,8 @@ import wrappers.example.selection.useSetSelectedUser
 import wrappers.example.theme.Theme
 
 val UserTable = FC {
-    val setSelectedUser = useSetSelectedUser()
-
     val table = useUsersTable()
+    val setSelectedUser = useSetSelectedUser()
 
     table {
         css {
