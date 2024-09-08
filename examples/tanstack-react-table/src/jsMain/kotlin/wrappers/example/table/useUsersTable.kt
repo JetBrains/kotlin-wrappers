@@ -18,7 +18,7 @@ private val COLUMNS: ReadonlyArray<ColumnDef<User, String>> = arrayOf(
     },
     jso {
         id = "email"
-        header = StringOrTemplateHeader("E-mail")
+        header = StringOrTemplateHeader("Email")
         accessorFn = { user, _ -> user.email }
     },
 )
