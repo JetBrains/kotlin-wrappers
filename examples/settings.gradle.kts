@@ -15,6 +15,7 @@ dependencyResolutionManagement {
 }
 
 include("react-lazy-modules-webpack")
+include("tanstack-react-table")
 
 // Old examples
 include("please-split-me")
