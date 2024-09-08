@@ -514,7 +514,7 @@ open external class ChildProcess : EventEmitter {
      * as the connection may have been closed during the time it takes to send the
      * connection to the child.
      * @since v0.5.9
-     * @param sendHandle `undefined`, or a [`net.Socket`](https://nodejs.org/docs/latest-v20.x/api/net.html#class-netsocket), [`net.Server`](https://nodejs.org/docs/latest-v20.x/api/net.html#class-netserver), or [`dgram.Socket`](https://nodejs.org/docs/latest-v20.x/api/dgram.html#class-dgramsocket) object.
+     * @param sendHandle `undefined`, or a [`net.Socket`](https://nodejs.org/docs/latest-v22.x/api/net.html#class-netsocket), [`net.Server`](https://nodejs.org/docs/latest-v22.x/api/net.html#class-netserver), or [`dgram.Socket`](https://nodejs.org/docs/latest-v22.x/api/dgram.html#class-dgramsocket) object.
      * @param options The `options` argument, if present, is an object used to parameterize the sending of certain types of handles. `options` supports the following properties:
      */
     fun send(message: Serializable, callback: (error: js.errors.JsError?) -> Unit = definedExternally): Boolean

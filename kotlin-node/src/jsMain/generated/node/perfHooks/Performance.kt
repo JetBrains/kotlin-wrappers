@@ -78,6 +78,9 @@ sealed external interface Performance {
      * @param initiatorType The initiator name, e.g: 'fetch'
      * @param global
      * @param cacheMode The cache mode must be an empty string ('') or 'local'
+     * @param bodyInfo [Fetch Response Body Info](https://fetch.spec.whatwg.org/#response-body-info)
+     * @param responseStatus The response's status code
+     * @param deliveryType The delivery type. Default: ''.
      * @since v18.2.0, v16.17.0
      */
     fun markResourceTiming(
@@ -86,6 +89,9 @@ sealed external interface Performance {
         initiatorType: String,
         global: Any,
         cacheMode: PerformanceMarkResourceTimingCacheMode,
+        bodyInfo: Any,
+        responseStatus: Number,
+        deliveryType: String = definedExternally,
     ): PerformanceResourceTiming
 
     /**

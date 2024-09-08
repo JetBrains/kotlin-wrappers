@@ -10,7 +10,7 @@ package node.v8
  * ```js
  * const v8 = require('node:v8');
  * ```
- * @see [source](https://github.com/nodejs/node/blob/v20.13.1/lib/v8.js)
+ * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/v8.js)
  */
 
 

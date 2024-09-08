@@ -5,7 +5,7 @@
 
 package node.crypto.constants
 
-// https://nodejs.org/dist/latest-v20.x/docs/api/crypto.html#crypto-constants
+// https://nodejs.org/dist/latest-v22.x/docs/api/crypto.html#crypto-constants
 external val OPENSSL_VERSION_NUMBER: Double
 
 /** Applies multiple bug workarounds within OpenSSL. See https://www.openssl.org/docs/man1.0.2/ssl/SSL_CTX_set_options.html for detail. */

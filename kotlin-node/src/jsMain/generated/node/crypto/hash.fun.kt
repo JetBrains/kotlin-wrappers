@@ -30,7 +30,7 @@ package node.crypto
  * @since v21.7.0, v20.12.0
  * @param data When `data` is a string, it will be encoded as UTF-8 before being hashed. If a different input encoding is desired for a string input, user
  *             could encode the string into a `TypedArray` using either `TextEncoder` or `Buffer.from()` and passing the encoded `TypedArray` into this API instead.
- * @param [outputEncoding='hex'] [Encoding](https://nodejs.org/docs/latest-v20.x/api/buffer.html#buffers-and-character-encodings) used to encode the returned digest.
+ * @param [outputEncoding='hex'] [Encoding](https://nodejs.org/docs/latest-v22.x/api/buffer.html#buffers-and-character-encodings) used to encode the returned digest.
  */
 external fun hash(algorithm: String, data: BinaryLike, outputEncoding: BinaryToTextEncoding = definedExternally): String
 

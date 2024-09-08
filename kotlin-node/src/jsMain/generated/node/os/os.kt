@@ -11,7 +11,7 @@ package node.os
  * ```js
  * const os = require('node:os');
  * ```
- * @see [source](https://github.com/nodejs/node/blob/v20.13.1/lib/os.js)
+ * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/os.js)
  */
 
 

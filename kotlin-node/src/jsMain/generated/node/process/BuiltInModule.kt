@@ -102,6 +102,7 @@ sealed external interface BuiltInModule {
 
     /* "node:repl": typeof import("node:repl"); */
     /* "node:sea": typeof import("node:sea"); */
+    /* "node:sqlite": typeof import("node:sqlite"); */
     var stream: /* import("stream") */ Any
 
     /* "node:stream": typeof import("node:stream"); */

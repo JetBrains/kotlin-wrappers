@@ -9,7 +9,7 @@ package node.os
  * compiled. Possible values are `'arm'`, `'arm64'`, `'ia32'`, `'loong64'`, `'mips'`, `'mipsel'`, `'ppc'`, `'ppc64'`, `'riscv64'`, `'s390'`, `'s390x'`,
  * and `'x64'`.
  *
- * The return value is equivalent to [process.arch](https://nodejs.org/docs/latest-v20.x/api/process.html#processarch).
+ * The return value is equivalent to [process.arch](https://nodejs.org/docs/latest-v22.x/api/process.html#processarch).
  * @since v0.5.0
  */
 external fun arch(): String

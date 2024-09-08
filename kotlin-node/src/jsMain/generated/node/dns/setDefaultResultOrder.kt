@@ -5,7 +5,7 @@
 package node.dns
 
 /**
- * Set the default value of `order` in {@link lookup} and [`dnsPromises.lookup()`](https://nodejs.org/docs/latest-v20.x/api/dns.html#dnspromiseslookuphostname-options).
+ * Set the default value of `order` in {@link lookup} and [`dnsPromises.lookup()`](https://nodejs.org/docs/latest-v22.x/api/dns.html#dnspromiseslookuphostname-options).
  * The value could be:
  *
  * * `ipv4first`: sets default `order` to `ipv4first`.
@@ -13,8 +13,8 @@ package node.dns
  * * `verbatim`: sets default `order` to `verbatim`.
  *
  * The default is `verbatim` and {@link setDefaultResultOrder} have higher
- * priority than [`--dns-result-order`](https://nodejs.org/docs/latest-v20.x/api/cli.html#--dns-result-orderorder). When using
- * [worker threads](https://nodejs.org/docs/latest-v20.x/api/worker_threads.html), {@link setDefaultResultOrder} from the main
+ * priority than [`--dns-result-order`](https://nodejs.org/docs/latest-v22.x/api/cli.html#--dns-result-orderorder). When using
+ * [worker threads](https://nodejs.org/docs/latest-v22.x/api/worker_threads.html), {@link setDefaultResultOrder} from the main
  * thread won't affect the default dns orders in workers.
  * @since v16.4.0, v14.18.0
  * @param order must be `'ipv4first'`, `'ipv6first'` or `'verbatim'`.

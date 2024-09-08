@@ -12,7 +12,7 @@ package node.http2
  * const http2 = require('node:http2');
  * ```
  * @since v8.4.0
- * @see [source](https://github.com/nodejs/node/blob/v20.13.1/lib/http2.js)
+ * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/http2.js)
  */
 
 

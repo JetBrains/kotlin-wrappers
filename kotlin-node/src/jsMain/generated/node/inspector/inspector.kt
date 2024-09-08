@@ -11,7 +11,7 @@ package node.inspector
 /**
  * The `node:inspector` module provides an API for interacting with the V8
  * inspector.
- * @see [source](https://github.com/nodejs/node/blob/v20.x/lib/inspector.js)
+ * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/inspector.js)
  */
 
 
@@ -24,7 +24,7 @@ package node.inspector
 /**
  * The `node:inspector/promises` module provides an API for interacting with the V8
  * inspector.
- * @see [source](https://github.com/nodejs/node/blob/v20.x/lib/inspector/promises.js)
+ * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/inspector/promises.js)
  * @since v19.0.0
  */
 

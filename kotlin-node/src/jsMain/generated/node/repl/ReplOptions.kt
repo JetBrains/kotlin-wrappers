@@ -35,8 +35,8 @@ sealed external interface ReplOptions {
      * error with `repl.Recoverable` to indicate the input was incomplete and prompt for
      * additional lines.
      *
-     * @see https://nodejs.org/dist/latest-v20.x/docs/api/repl.html#repl_default_evaluation
-     * @see https://nodejs.org/dist/latest-v20.x/docs/api/repl.html#repl_custom_evaluation_functions
+     * @see https://nodejs.org/dist/latest-v22.x/docs/api/repl.html#repl_default_evaluation
+     * @see https://nodejs.org/dist/latest-v22.x/docs/api/repl.html#repl_custom_evaluation_functions
      */
     var eval: REPLEval?
 
@@ -73,14 +73,14 @@ sealed external interface ReplOptions {
      * The function to invoke to format the output of each command before writing to `output`.
      * @default a wrapper for `util.inspect`
      *
-     * @see https://nodejs.org/dist/latest-v20.x/docs/api/repl.html#repl_customizing_repl_output
+     * @see https://nodejs.org/dist/latest-v22.x/docs/api/repl.html#repl_customizing_repl_output
      */
     var writer: REPLWriter?
 
     /**
      * An optional function used for custom Tab auto completion.
      *
-     * @see https://nodejs.org/dist/latest-v20.x/docs/api/readline.html#readline_use_of_the_completer_function
+     * @see https://nodejs.org/dist/latest-v22.x/docs/api/readline.html#readline_use_of_the_completer_function
      */
     var completer: Any? /* Completer | AsyncCompleter | undefined */
 

@@ -44,14 +44,14 @@ open external class Readable : Stream, node.ReadableStream {
     val readableEncoding: node.buffer.BufferEncoding?
 
     /**
-     * Becomes `true` when [`'end'`](https://nodejs.org/docs/latest-v20.x/api/stream.html#event-end) event is emitted.
+     * Becomes `true` when [`'end'`](https://nodejs.org/docs/latest-v22.x/api/stream.html#event-end) event is emitted.
      * @since v12.9.0
      */
     val readableEnded: Boolean
 
     /**
      * This property reflects the current state of a `Readable` stream as described
-     * in the [Three states](https://nodejs.org/docs/latest-v20.x/api/stream.html#three-states) section.
+     * in the [Three states](https://nodejs.org/docs/latest-v22.x/api/stream.html#three-states) section.
      * @since v9.4.0
      */
     val readableFlowing: Boolean?

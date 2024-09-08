@@ -12,7 +12,7 @@ sealed external interface LookupOptions {
     var family: Any? /* number | "IPv4" | "IPv6" | undefined */
 
     /**
-     * One or more [supported `getaddrinfo`](https://nodejs.org/docs/latest-v20.x/api/dns.html#supported-getaddrinfo-flags) flags. Multiple flags may be
+     * One or more [supported `getaddrinfo`](https://nodejs.org/docs/latest-v22.x/api/dns.html#supported-getaddrinfo-flags) flags. Multiple flags may be
      * passed by bitwise `OR`ing their values.
      */
     var hints: Double?
@@ -27,8 +27,9 @@ sealed external interface LookupOptions {
      * When `verbatim`, the resolved addresses are return unsorted. When `ipv4first`, the resolved addresses are sorted
      * by placing IPv4 addresses before IPv6 addresses. When `ipv6first`, the resolved addresses are sorted by placing IPv6
      * addresses before IPv4 addresses. Default value is configurable using
-     * {@link setDefaultResultOrder} or [`--dns-result-order`](https://nodejs.org/docs/latest-v20.x/api/cli.html#--dns-result-orderorder).
+     * {@link setDefaultResultOrder} or [`--dns-result-order`](https://nodejs.org/docs/latest-v22.x/api/cli.html#--dns-result-orderorder).
      * @default `verbatim` (addresses are not reordered)
+     * @since v22.1.0
      */
     var order: LookupOptionsOrder?
 
@@ -36,8 +37,8 @@ sealed external interface LookupOptions {
      * When `true`, the callback receives IPv4 and IPv6 addresses in the order the DNS resolver returned them. When `false`, IPv4
      * addresses are placed before IPv6 addresses. This option will be deprecated in favor of `order`. When both are specified,
      * `order` has higher precedence. New code should only use `order`. Default value is configurable using {@link setDefaultResultOrder}
-     * or [`--dns-result-order`](https://nodejs.org/docs/latest-v20.x/api/cli.html#--dns-result-orderorder).
      * @default true (addresses are not reordered)
+     * @deprecated Please use `order` option
      */
     var verbatim: Boolean?
 }

@@ -5,7 +5,7 @@
 package node.dns
 
 /**
- * Get the default value for `order` in {@link lookup} and [`dnsPromises.lookup()`](https://nodejs.org/docs/latest-v20.x/api/dns.html#dnspromiseslookuphostname-options).
+ * Get the default value for `order` in {@link lookup} and [`dnsPromises.lookup()`](https://nodejs.org/docs/latest-v22.x/api/dns.html#dnspromiseslookuphostname-options).
  * The value could be:
  *
  * * `ipv4first`: for `order` defaulting to `ipv4first`.

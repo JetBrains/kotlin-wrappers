@@ -29,8 +29,8 @@ sealed external interface ClusterSettings {
 
     /**
      * Configures the stdio of forked processes. Because the cluster module relies on IPC to function, this configuration must
-     * contain an `'ipc'` entry. When this option is provided, it overrides `silent`. See [`child_prcess.spawn()`](https://nodejs.org/docs/latest-v20.x/api/child_process.html#child_processspawncommand-args-options)'s
-     * [`stdio`](https://nodejs.org/docs/latest-v20.x/api/child_process.html#optionsstdio).
+     * contain an `'ipc'` entry. When this option is provided, it overrides `silent`. See [`child_prcess.spawn()`](https://nodejs.org/docs/latest-v22.x/api/child_process.html#child_processspawncommand-args-options)'s
+     * [`stdio`](https://nodejs.org/docs/latest-v22.x/api/child_process.html#optionsstdio).
      */
     var stdio: js.array.ReadonlyArray<Any?>?
 
@@ -52,7 +52,7 @@ sealed external interface ClusterSettings {
 
     /**
      * Specify the kind of serialization used for sending messages between processes. Possible values are `'json'` and `'advanced'`.
-     * See [Advanced serialization for `child_process`](https://nodejs.org/docs/latest-v20.x/api/child_process.html#advanced-serialization) for more details.
+     * See [Advanced serialization for `child_process`](https://nodejs.org/docs/latest-v22.x/api/child_process.html#advanced-serialization) for more details.
      * @default false
      */
     var serialization: SerializationType?

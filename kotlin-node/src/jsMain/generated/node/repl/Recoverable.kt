@@ -9,7 +9,7 @@ import js.errors.SyntaxError
 /**
  * Indicates a recoverable error that a `REPLServer` can use to support multi-line input.
  *
- * @see https://nodejs.org/dist/latest-v20.x/docs/api/repl.html#repl_recoverable_errors
+ * @see https://nodejs.org/dist/latest-v22.x/docs/api/repl.html#repl_recoverable_errors
  */
 external class Recoverable : SyntaxError {
     constructor (err: js.errors.JsError)

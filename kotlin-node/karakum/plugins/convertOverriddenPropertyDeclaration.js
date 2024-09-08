@@ -15,6 +15,9 @@ const overriddenProps = {
     "PerformanceMeasure": {
         "entryType": ["measureEntryType", "EntryType"]
     },
+    "PerformanceNodeTiming": {
+        "entryType": ["nodeTimingEntryType", "EntryType"]
+    },
     "PerformanceResourceTiming": {
         "entryType": ["resourceTimingEntryType", "EntryType"]
     },

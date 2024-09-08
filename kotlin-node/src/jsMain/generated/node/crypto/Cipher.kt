@@ -15,7 +15,7 @@ import node.stream.TransformOptions
  * * Using the `cipher.update()` and `cipher.final()` methods to produce
  * the encrypted data.
  *
- * The {@link createCipher} or {@link createCipheriv} methods are
+ * The {@link createCipheriv} method is
  * used to create `Cipher` instances. `Cipher` objects are not to be created
  * directly using the `new` keyword.
  *

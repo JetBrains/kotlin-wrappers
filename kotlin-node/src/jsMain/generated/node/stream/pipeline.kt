@@ -34,7 +34,7 @@ import js.array.ReadonlyArray
  * );
  * ```
  *
- * The `pipeline` API provides a [`promise version`](https://nodejs.org/docs/latest-v20.x/api/stream.html#streampipelinesource-transforms-destination-options).
+ * The `pipeline` API provides a [`promise version`](https://nodejs.org/docs/latest-v22.x/api/stream.html#streampipelinesource-transforms-destination-options).
  *
  * `stream.pipeline()` will call `stream.destroy(err)` on all streams except:
  *

@@ -22,7 +22,7 @@ package node.dns
  * The implementation uses an operating system facility that can associate names
  * with addresses and vice versa. This implementation can have subtle but
  * important consequences on the behavior of any Node.js program. Please take some
- * time to consult the [Implementation considerations section](https://nodejs.org/docs/latest-v20.x/api/dns.html#implementation-considerations)
+ * time to consult the [Implementation considerations section](https://nodejs.org/docs/latest-v22.x/api/dns.html#implementation-considerations)
  * before using `dns.lookup()`.
  *
  * Example usage:
@@ -44,7 +44,7 @@ package node.dns
  * // addresses: [{"address":"2606:2800:220:1:248:1893:25c8:1946","family":6}]
  * ```
  *
- * If this method is invoked as its [util.promisify()](https://nodejs.org/docs/latest-v20.x/api/util.html#utilpromisifyoriginal) ed
+ * If this method is invoked as its [util.promisify()](https://nodejs.org/docs/latest-v22.x/api/util.html#utilpromisifyoriginal) ed
  * version, and `all` is not set to `true`, it returns a `Promise` for an `Object` with `address` and `family` properties.
  * @since v0.1.90
  */

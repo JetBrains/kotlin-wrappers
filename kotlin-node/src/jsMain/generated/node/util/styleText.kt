@@ -32,7 +32,7 @@ package node.util
  * );
  * ```
  *
- * The full list of formats can be found in [modifiers](https://nodejs.org/docs/latest-v20.x/api/util.html#modifiers).
+ * The full list of formats can be found in [modifiers](https://nodejs.org/docs/latest-v22.x/api/util.html#modifiers).
  * @param format A text format or an Array of text formats defined in `util.inspect.colors`.
  * @param text The text to to be formatted.
  * @since v20.12.0
@@ -67,7 +67,7 @@ external fun styleText(format: ForegroundColors, text: String): String
  * );
  * ```
  *
- * The full list of formats can be found in [modifiers](https://nodejs.org/docs/latest-v20.x/api/util.html#modifiers).
+ * The full list of formats can be found in [modifiers](https://nodejs.org/docs/latest-v22.x/api/util.html#modifiers).
  * @param format A text format or an Array of text formats defined in `util.inspect.colors`.
  * @param text The text to to be formatted.
  * @since v20.12.0
@@ -102,7 +102,7 @@ external fun styleText(format: BackgroundColors, text: String): String
  * );
  * ```
  *
- * The full list of formats can be found in [modifiers](https://nodejs.org/docs/latest-v20.x/api/util.html#modifiers).
+ * The full list of formats can be found in [modifiers](https://nodejs.org/docs/latest-v22.x/api/util.html#modifiers).
  * @param format A text format or an Array of text formats defined in `util.inspect.colors`.
  * @param text The text to to be formatted.
  * @since v20.12.0
@@ -137,7 +137,7 @@ external fun styleText(format: Modifiers, text: String): String
  * );
  * ```
  *
- * The full list of formats can be found in [modifiers](https://nodejs.org/docs/latest-v20.x/api/util.html#modifiers).
+ * The full list of formats can be found in [modifiers](https://nodejs.org/docs/latest-v22.x/api/util.html#modifiers).
  * @param format A text format or an Array of text formats defined in `util.inspect.colors`.
  * @param text The text to to be formatted.
  * @since v20.12.0

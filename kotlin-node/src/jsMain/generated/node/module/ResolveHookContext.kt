@@ -9,11 +9,6 @@ sealed external interface ResolveHookContext {
     var conditions: js.array.ReadonlyArray<String>
 
     /**
-     * @deprecated Use `importAttributes` instead
-     */
-    var importAssertions: ImportAttributes
-
-    /**
      *  An object whose key-value pairs represent the assertions for the module to import
      */
     var importAttributes: ImportAttributes

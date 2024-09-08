@@ -28,7 +28,7 @@ sealed external interface ParseArgsConfig {
     /**
      * If `true`, allows explicitly setting boolean options to `false` by prefixing the option name with `--no-`.
      * @default false
-     * @since v20.16.0
+     * @since v22.4.0
      */
     var allowNegative: Boolean?
 

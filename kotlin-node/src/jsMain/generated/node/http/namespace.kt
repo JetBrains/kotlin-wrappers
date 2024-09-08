@@ -22,3 +22,18 @@ external var globalAgent: Agent
  * Defaults to 16KB. Configurable using the `--max-http-header-size` CLI option.
  */
 external val maxHeaderSize: Double
+
+/**
+ * A browser-compatible implementation of [WebSocket](https://nodejs.org/docs/latest/api/http.html#websocket).
+ * @since v22.5.0
+ */
+
+
+/**
+ * @since v22.5.0
+ */
+
+
+/**
+ * @since v22.5.0
+ */

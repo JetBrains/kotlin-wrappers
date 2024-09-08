@@ -14,7 +14,7 @@ sealed external interface ScriptOptions : BaseOptions {
     /**
      * Used to specify how the modules should be loaded during the evaluation of this script when `import()` is called. This option is
      * part of the experimental modules API. We do not recommend using it in a production environment. For detailed information, see
-     * [Support of dynamic `import()` in compilation APIs](https://nodejs.org/docs/latest-v20.x/api/vm.html#support-of-dynamic-import-in-compilation-apis).
+     * [Support of dynamic `import()` in compilation APIs](https://nodejs.org/docs/latest-v22.x/api/vm.html#support-of-dynamic-import-in-compilation-apis).
      */
     var importModuleDynamically: Any? /* ((specifier: string, script: Script, importAttributes: ImportAttributes) => Module) | typeof constants.USE_MAIN_CONTEXT_DEFAULT_LOADER | undefined */
 }

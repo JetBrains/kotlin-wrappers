@@ -10,7 +10,7 @@ package node.tls
  * the `ciphers` option of `{@link createSecureContext}`.
  *
  * Not all supported ciphers are enabled by default. See
- * [Modifying the default TLS cipher suite](https://nodejs.org/docs/latest-v20.x/api/tls.html#modifying-the-default-tls-cipher-suite).
+ * [Modifying the default TLS cipher suite](https://nodejs.org/docs/latest-v22.x/api/tls.html#modifying-the-default-tls-cipher-suite).
  *
  * Cipher names that start with `'tls_'` are for TLSv1.3, all the others are for
  * TLSv1.2 and below.

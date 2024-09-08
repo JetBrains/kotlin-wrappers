@@ -5,7 +5,7 @@
 package node.readline
 
 /**
- * The `readline.clearScreenDown()` method clears the given [TTY](https://nodejs.org/docs/latest-v20.x/api/tty.html) stream from
+ * The `readline.clearScreenDown()` method clears the given [TTY](https://nodejs.org/docs/latest-v22.x/api/tty.html) stream from
  * the current position of the cursor down.
  * @since v0.7.7
  * @param callback Invoked once the operation completes.

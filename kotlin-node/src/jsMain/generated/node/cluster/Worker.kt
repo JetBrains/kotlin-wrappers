@@ -22,10 +22,10 @@ external class Worker : EventEmitter {
     var id: Double
 
     /**
-     * All workers are created using [`child_process.fork()`](https://nodejs.org/docs/latest-v20.x/api/child_process.html#child_processforkmodulepath-args-options), the returned object
+     * All workers are created using [`child_process.fork()`](https://nodejs.org/docs/latest-v22.x/api/child_process.html#child_processforkmodulepath-args-options), the returned object
      * from this function is stored as `.process`. In a worker, the global `process` is stored.
      *
-     * See: [Child Process module](https://nodejs.org/docs/latest-v20.x/api/child_process.html#child_processforkmodulepath-args-options).
+     * See: [Child Process module](https://nodejs.org/docs/latest-v22.x/api/child_process.html#child_processforkmodulepath-args-options).
      *
      * Workers will call `process.exit(0)` if the `'disconnect'` event occurs
      * on `process` and `.exitedAfterDisconnect` is not `true`. This protects against
@@ -37,7 +37,7 @@ external class Worker : EventEmitter {
     /**
      * Send a message to a worker or primary, optionally with a handle.
      *
-     * In the primary, this sends a message to a specific worker. It is identical to [`ChildProcess.send()`](https://nodejs.org/docs/latest-v20.x/api/child_process.html#subprocesssendmessage-sendhandle-options-callback).
+     * In the primary, this sends a message to a specific worker. It is identical to [`ChildProcess.send()`](https://nodejs.org/docs/latest-v22.x/api/child_process.html#subprocesssendmessage-sendhandle-options-callback).
      *
      * In a worker, this sends a message to the primary. It is identical to `process.send()`.
      *
@@ -85,7 +85,7 @@ external class Worker : EventEmitter {
      * This method is aliased as `worker.destroy()` for backwards compatibility.
      *
      * In a worker, `process.kill()` exists, but it is not this function;
-     * it is [`kill()`](https://nodejs.org/docs/latest-v20.x/api/process.html#processkillpid-signal).
+     * it is [`kill()`](https://nodejs.org/docs/latest-v22.x/api/process.html#processkillpid-signal).
      * @since v0.9.12
      * @param [signal='SIGTERM'] Name of the kill signal to send to the worker process.
      */

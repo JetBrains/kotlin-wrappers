@@ -62,6 +62,14 @@ const overriddenProps = {
         "ttl": null,
     },
 
+    // fs
+    "GlobOptionsWithFileTypes": {
+        "withFileTypes": "requiredWithFileTypes"
+    },
+    "GlobOptionsWithoutFileTypes": {
+        "withFileTypes": null
+    },
+
     // http
     "AgentOptions": {
         "keepAlive": null

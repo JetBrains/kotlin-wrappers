@@ -10,7 +10,7 @@ package node.zlib
  * @param data When `data` is a string, it will be encoded as UTF-8 before being used for computation.
  * @param value An optional starting value. It must be a 32-bit unsigned integer. @default 0
  * @returns A 32-bit unsigned integer containing the checksum.
- * @since v20.15.0
+ * @since v22.2.0
  */
 external fun crc32(data: String, value: Number = definedExternally): Double
 
@@ -20,7 +20,7 @@ external fun crc32(data: String, value: Number = definedExternally): Double
  * @param data When `data` is a string, it will be encoded as UTF-8 before being used for computation.
  * @param value An optional starting value. It must be a 32-bit unsigned integer. @default 0
  * @returns A 32-bit unsigned integer containing the checksum.
- * @since v20.15.0
+ * @since v22.2.0
  */
 external fun crc32(data: node.buffer.Buffer, value: Number = definedExternally): Double
 
@@ -30,6 +30,6 @@ external fun crc32(data: node.buffer.Buffer, value: Number = definedExternally):
  * @param data When `data` is a string, it will be encoded as UTF-8 before being used for computation.
  * @param value An optional starting value. It must be a 32-bit unsigned integer. @default 0
  * @returns A 32-bit unsigned integer containing the checksum.
- * @since v20.15.0
+ * @since v22.2.0
  */
 external fun crc32(data: js.buffer.ArrayBufferView, value: Number = definedExternally): Double

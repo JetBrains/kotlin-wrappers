@@ -21,7 +21,7 @@ external class _Session : EventEmitter {
     /**
      * Connects a session to the inspector back-end.
      */
-    fun connect()
+    fun connect(): Unit
 
     /**
      * Connects a session to the inspector back-end.

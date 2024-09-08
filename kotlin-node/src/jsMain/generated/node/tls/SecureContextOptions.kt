@@ -53,6 +53,7 @@ external interface SecureContextOptions {
 
     /**
      * Name of an OpenSSL engine which can provide the client certificate.
+     * @deprecated
      */
     var clientCertEngine: String?
 
@@ -101,6 +102,7 @@ external interface SecureContextOptions {
     /**
      * Name of an OpenSSL engine to get private key from. Should be used
      * together with privateKeyIdentifier.
+     * @deprecated
      */
     var privateKeyEngine: String?
 
@@ -108,6 +110,7 @@ external interface SecureContextOptions {
      * Identifier of a private key managed by an OpenSSL engine. Should be
      * used together with privateKeyEngine. Should not be set together with
      * key, because both options define a private key in different ways.
+     * @deprecated
      */
     var privateKeyIdentifier: String?
 

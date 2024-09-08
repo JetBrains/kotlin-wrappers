@@ -6,10 +6,18 @@ package node.test.reporters
 
 
 /**
+ * The `spec` reporter outputs the test results in a human-readable format.
+ * @since v20.0.0
+ */
+external val spec: ReporterConstructorWrapper<SpecReporter>
+
+/**
  * The `lcov` reporter outputs test coverage when used with the
- * [`--experimental-test-coverage`](https://nodejs.org/docs/latest-v20.x/api/cli.html#--experimental-test-coverage) flag.
+ * [`--experimental-test-coverage`](https://nodejs.org/docs/latest-v22.x/api/cli.html#--experimental-test-coverage) flag.
  * @since v22.0.0
  */
+// TODO: change the export to a wrapper function once node@0db38f0 is merged (breaking change)
+// const lcov: ReporterConstructorWrapper<typeof LcovReporter>;
 external val lcov: LcovReporter
 
-/* export { dot, junit, lcov, SpecReporter as spec, tap, TestEvent }; */
+/* export { dot, junit, lcov, spec, tap, TestEvent }; */

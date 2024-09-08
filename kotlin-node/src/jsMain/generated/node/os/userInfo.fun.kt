@@ -14,7 +14,7 @@ package node.os
  * environment variables for the home directory before falling back to the
  * operating system response.
  *
- * Throws a [`SystemError`](https://nodejs.org/docs/latest-v20.x/api/errors.html#class-systemerror) if a user has no `username` or `homedir`.
+ * Throws a [`SystemError`](https://nodejs.org/docs/latest-v22.x/api/errors.html#class-systemerror) if a user has no `username` or `homedir`.
  * @since v6.0.0
  */
 external fun userInfo(options: UserInfoBufferOptions): UserInfo<node.buffer.Buffer>

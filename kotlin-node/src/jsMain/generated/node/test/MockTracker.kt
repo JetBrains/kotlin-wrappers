@@ -141,6 +141,18 @@ external class MockTracker {
     ): Mock<Function<*>>
 
     /**
+     * This function is used to mock the exports of ECMAScript modules, CommonJS modules, and Node.js builtin modules.
+     * Any references to the original module prior to mocking are not impacted.
+     *
+     * Only available through the [--experimental-test-module-mocks](https://nodejs.org/api/cli.html#--experimental-test-module-mocks) flag.
+     * @since v22.3.0
+     * @experimental
+     * @param specifier A string identifying the module to mock.
+     * @param options Optional configuration options for the mock module.
+     */
+    fun module(specifier: String, options: MockModuleOptions = definedExternally): MockModuleContext
+
+    /**
      * This function restores the default behavior of all mocks that were previously
      * created by this `MockTracker` and disassociates the mocks from the `MockTracker` instance. Once disassociated, the mocks can still be used, but the `MockTracker` instance can no longer be
      * used to reset their behavior or

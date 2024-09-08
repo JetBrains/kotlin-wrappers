@@ -16,7 +16,7 @@ external class TestContext {
     /**
      * An object containing assertion methods bound to the test context.
      * The top-level functions from the `node:assert` module are exposed here for the purpose of creating test plans.
-     * @since v20.15.0
+     * @since v22.2.0
      */
     val assert: TestContextAssert
 
@@ -73,7 +73,7 @@ external class TestContext {
 
     /**
      * The name of the test and each of its ancestors, separated by `>`.
-     * @since v20.16.0
+     * @since v22.3.0
      */
     val fullName: String
 
@@ -116,7 +116,7 @@ external class TestContext {
      *   });
      * });
      * ```
-     * @since v20.15.0
+     * @since v22.2.0
      */
     fun plan(count: Number): Unit
 

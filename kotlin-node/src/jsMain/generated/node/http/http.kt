@@ -43,7 +43,7 @@ package node.http
  *   'Host', 'example.com',
  *   'accepT', '*' ]
  * ```
- * @see [source](https://github.com/nodejs/node/blob/v20.13.1/lib/http.js)
+ * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/http.js)
  */
 
 

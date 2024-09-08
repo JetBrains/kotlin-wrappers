@@ -20,6 +20,7 @@
     "ignoreOutput": [
         "**/_Blob.kt",
         "**/_DOMException.kt",
+        "**/_EventSource.kt",
         "**/_File.kt",
         "**/_FormData.kt",
         "**/_Headers.kt",
@@ -28,6 +29,8 @@
         "**/_RequestInit.kt",
         "**/_Response.kt",
         "**/_ResponseInit.kt",
+        "**/_Storage.kt",
+        "**/_WebSocket.kt",
         "**/NodeDOMException.kt",
         "**/NodeDOMExceptionConstructor.kt",
         "**/NodeRequire.kt",
@@ -815,6 +818,9 @@
         "stream/consumers/text.suspend.kt": [
             "js.iterable.AsyncIterable"
         ],
+        "test/AssertSnapshotOptions.kt": [
+            "js.array.ReadonlyArray"
+        ],
         "test/HookOptions.kt": [
             "web.abort.AbortSignal"
         ],
@@ -955,6 +961,9 @@
         ],
         "test/reporters/tap.kt": [
             "js.generator.AsyncGenerator"
+        ],
+        "test/snapshot/setDefaultSnapshotSerializers.kt": [
+            "js.array.ReadonlyArray"
         ],
         "tls/namespace.kt": [
             "js.array.ReadonlyArray"
@@ -1124,6 +1133,7 @@
         "util.global": "package",
         "worker_threads.global": "package",
         "global": "object",
+        "node:sqlite": "package",
         "node:test": "package",
         "node:sea": "package",
         "node:.+": "ignore",

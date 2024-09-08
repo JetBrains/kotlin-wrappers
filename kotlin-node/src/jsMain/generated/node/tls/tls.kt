@@ -12,7 +12,7 @@ package node.tls
  * ```js
  * const tls = require('node:tls');
  * ```
- * @see [source](https://github.com/nodejs/node/blob/v20.13.1/lib/tls.js)
+ * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/tls.js)
  */
 
 

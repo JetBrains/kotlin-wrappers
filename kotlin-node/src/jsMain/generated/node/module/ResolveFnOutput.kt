@@ -9,11 +9,6 @@ sealed external interface ResolveFnOutput {
     var format: ModuleFormat?
 
     /**
-     * @deprecated Use `importAttributes` instead
-     */
-    var importAssertions: ImportAttributes?
-
-    /**
      * The import attributes to use when caching the module (optional; if excluded the input will be used)
      */
     var importAttributes: ImportAttributes?

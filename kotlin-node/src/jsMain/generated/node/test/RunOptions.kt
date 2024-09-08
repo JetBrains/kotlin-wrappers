@@ -14,7 +14,7 @@ sealed external interface RunOptions {
 
     /**
      * An array containing the list of files to run. If omitted, files are run according to the
-     * [test runner execution model](https://nodejs.org/docs/latest-v20.x/api/test.html#test-runner-execution-model).
+     * [test runner execution model](https://nodejs.org/docs/latest-v22.x/api/test.html#test-runner-execution-model).
      */
     var files: (js.array.ReadonlyArray<String>)?
 
@@ -56,6 +56,16 @@ sealed external interface RunOptions {
      * @default undefined
      */
     var testNamePatterns: Any? /* string | RegExp | ReadonlyArray<string | RegExp> | undefined */
+
+    /**
+     * A String, RegExp or a RegExp Array, that can be used to exclude running tests whose
+     * name matches the provided pattern. Test name patterns are interpreted as JavaScript
+     * regular expressions. For each test that is executed, any corresponding test hooks,
+     * such as `beforeEach()`, are also run.
+     * @default undefined
+     * @since v22.1.0
+     */
+    var testSkipPatterns: Any? /* string | RegExp | ReadonlyArray<string | RegExp> | undefined */
 
     /**
      * The number of milliseconds after which the test execution will fail.

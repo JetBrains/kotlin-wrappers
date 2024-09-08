@@ -55,7 +55,7 @@ sealed external interface TestOptions {
      * If the number of assertions run in the test does not match the number
      * specified in the plan, the test will fail.
      * @default undefined
-     * @since v20.15.0
+     * @since v22.2.0
      */
     var plan: Double?
 }

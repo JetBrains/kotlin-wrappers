@@ -21,7 +21,7 @@ package node.asyncHooks
  * ```
  *
  * Promise contexts may not get valid `triggerAsyncId`s by default. See
- * the section on [promise execution tracking](https://nodejs.org/docs/latest-v20.x/api/async_hooks.html#promise-execution-tracking).
+ * the section on [promise execution tracking](https://nodejs.org/docs/latest-v22.x/api/async_hooks.html#promise-execution-tracking).
  * @return The ID of the resource responsible for calling the callback that is currently being executed.
  */
 external fun triggerAsyncId(): Double

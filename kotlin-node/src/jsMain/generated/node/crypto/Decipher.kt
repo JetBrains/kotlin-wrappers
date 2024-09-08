@@ -15,7 +15,7 @@ import node.stream.TransformOptions
  * * Using the `decipher.update()` and `decipher.final()` methods to
  * produce the unencrypted data.
  *
- * The {@link createDecipher} or {@link createDecipheriv} methods are
+ * The {@link createDecipheriv} method is
  * used to create `Decipher` instances. `Decipher` objects are not to be created
  * directly using the `new` keyword.
  *

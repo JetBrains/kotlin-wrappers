@@ -26,7 +26,7 @@ package node.diagnosticsChannel
  * should generally include the module name to avoid collisions with data from
  * other modules.
  * @since v15.1.0, v14.17.0
- * @see [source](https://github.com/nodejs/node/blob/v20.13.1/lib/diagnostics_channel.js)
+ * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/diagnostics_channel.js)
  */
 
 

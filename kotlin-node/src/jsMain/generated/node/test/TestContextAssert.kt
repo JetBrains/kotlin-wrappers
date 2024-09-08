@@ -87,4 +87,24 @@ sealed external interface TestContextAssert {
      * Identical to the `throws` function from the `node:assert` module, but bound to the test context.
      */
     var throws: js.function.JsFunction<*, *> /* typeof import("node:assert").throws */
+
+    /**
+     * This function implements assertions for snapshot testing.
+     * ```js
+     * test('snapshot test with default serialization', (t) => {
+     *   t.assert.snapshot({ value1: 1, value2: 2 });
+     * });
+     *
+     * test('snapshot test with custom serialization', (t) => {
+     *   t.assert.snapshot({ value3: 3, value4: 4 }, {
+     *     serializers: [(value) => JSON.stringify(value)]
+     *   });
+     * });
+     * ```
+     *
+     * Only available through the [--experimental-test-snapshots](https://nodejs.org/api/cli.html#--experimental-test-snapshots) flag.
+     * @since v22.3.0
+     * @experimental
+     */
+    fun snapshot(value: Any?, options: AssertSnapshotOptions = definedExternally): Unit
 }

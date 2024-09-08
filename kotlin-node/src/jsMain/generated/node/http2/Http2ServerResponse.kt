@@ -30,7 +30,7 @@ external class Http2ServerResponse : node.stream.Writable {
      * If there were no previous values for the header, this is equivalent to calling {@link setHeader}.
      *
      * Attempting to set a header field name or value that contains invalid characters will result in a
-     * [TypeError](https://nodejs.org/docs/latest-v20.x/api/errors.html#class-typeerror) being thrown.
+     * [TypeError](https://nodejs.org/docs/latest-v22.x/api/errors.html#class-typeerror) being thrown.
      *
      * ```js
      * // Returns headers including "set-cookie: a" and "set-cookie: b"
@@ -53,7 +53,7 @@ external class Http2ServerResponse : node.stream.Writable {
      * If there were no previous values for the header, this is equivalent to calling {@link setHeader}.
      *
      * Attempting to set a header field name or value that contains invalid characters will result in a
-     * [TypeError](https://nodejs.org/docs/latest-v20.x/api/errors.html#class-typeerror) being thrown.
+     * [TypeError](https://nodejs.org/docs/latest-v22.x/api/errors.html#class-typeerror) being thrown.
      *
      * ```js
      * // Returns headers including "set-cookie: a" and "set-cookie: b"

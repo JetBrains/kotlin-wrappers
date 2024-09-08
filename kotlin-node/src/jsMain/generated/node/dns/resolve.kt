@@ -11,7 +11,7 @@ package node.dns
  *
  * <omitted>
  *
- * On error, `err` is an [`Error`](https://nodejs.org/docs/latest-v20.x/api/errors.html#class-error) object,
+ * On error, `err` is an [`Error`](https://nodejs.org/docs/latest-v22.x/api/errors.html#class-error) object,
  * where `err.code` is one of the `DNS error codes`.
  * @since v0.1.27
  * @param hostname Host name to resolve.

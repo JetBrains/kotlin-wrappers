@@ -35,7 +35,7 @@ sealed external interface Cluster : EventEmitter {
 
     /**
      * The scheduling policy, either `cluster.SCHED_RR` for round-robin or `cluster.SCHED_NONE` to leave it to the operating system. This is a
-     * global setting and effectively frozen once either the first worker is spawned, or [`.setupPrimary()`](https://nodejs.org/docs/latest-v20.x/api/cluster.html#clustersetupprimarysettings)
+     * global setting and effectively frozen once either the first worker is spawned, or [`.setupPrimary()`](https://nodejs.org/docs/latest-v22.x/api/cluster.html#clustersetupprimarysettings)
      * is called, whichever comes first.
      *
      * `SCHED_RR` is the default on all operating systems except Windows. Windows will change to `SCHED_RR` once libuv is able to effectively distribute
@@ -47,8 +47,8 @@ sealed external interface Cluster : EventEmitter {
     var schedulingPolicy: Double
 
     /**
-     * After calling [`.setupPrimary()`](https://nodejs.org/docs/latest-v20.x/api/cluster.html#clustersetupprimarysettings)
-     * (or [`.fork()`](https://nodejs.org/docs/latest-v20.x/api/cluster.html#clusterforkenv)) this settings object will contain
+     * After calling [`.setupPrimary()`](https://nodejs.org/docs/latest-v22.x/api/cluster.html#clustersetupprimarysettings)
+     * (or [`.fork()`](https://nodejs.org/docs/latest-v22.x/api/cluster.html#clusterforkenv)) this settings object will contain
      * the settings, including the default values.
      *
      * This object is not intended to be changed or set manually.
@@ -56,17 +56,17 @@ sealed external interface Cluster : EventEmitter {
      */
     val settings: ClusterSettings
 
-    /** @deprecated since v16.0.0 - use [`.setupPrimary()`](https://nodejs.org/docs/latest-v20.x/api/cluster.html#clustersetupprimarysettings) instead. */
+    /** @deprecated since v16.0.0 - use [`.setupPrimary()`](https://nodejs.org/docs/latest-v22.x/api/cluster.html#clustersetupprimarysettings) instead. */
     fun setupMaster(settings: ClusterSettings = definedExternally): Unit
 
     /**
      * `setupPrimary` is used to change the default 'fork' behavior. Once called, the settings will be present in `cluster.settings`.
      *
-     * Any settings changes only affect future calls to [`.fork()`](https://nodejs.org/docs/latest-v20.x/api/cluster.html#clusterforkenv)
+     * Any settings changes only affect future calls to [`.fork()`](https://nodejs.org/docs/latest-v22.x/api/cluster.html#clusterforkenv)
      * and have no effect on workers that are already running.
      *
      * The only attribute of a worker that cannot be set via `.setupPrimary()` is the `env` passed to
-     * [`.fork()`](https://nodejs.org/docs/latest-v20.x/api/cluster.html#clusterforkenv).
+     * [`.fork()`](https://nodejs.org/docs/latest-v22.x/api/cluster.html#clusterforkenv).
      *
      * The defaults above apply to the first call only; the defaults for later calls are the current values at the time of
      * `cluster.setupPrimary()` is called.

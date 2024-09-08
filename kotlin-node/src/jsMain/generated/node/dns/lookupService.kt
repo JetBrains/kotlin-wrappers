@@ -11,7 +11,7 @@ package node.dns
  * If `address` is not a valid IP address, a `TypeError` will be thrown.
  * The `port` will be coerced to a number. If it is not a legal port, a `TypeError` will be thrown.
  *
- * On an error, `err` is an [`Error`](https://nodejs.org/docs/latest-v20.x/api/errors.html#class-error) object,
+ * On an error, `err` is an [`Error`](https://nodejs.org/docs/latest-v22.x/api/errors.html#class-error) object,
  * where `err.code` is the error code.
  *
  * ```js
@@ -22,7 +22,7 @@ package node.dns
  * });
  * ```
  *
- * If this method is invoked as its [util.promisify()](https://nodejs.org/docs/latest-v20.x/api/util.html#utilpromisifyoriginal) ed
+ * If this method is invoked as its [util.promisify()](https://nodejs.org/docs/latest-v22.x/api/util.html#utilpromisifyoriginal) ed
  * version, it returns a `Promise` for an `Object` with `hostname` and `service` properties.
  * @since v0.11.14
  */

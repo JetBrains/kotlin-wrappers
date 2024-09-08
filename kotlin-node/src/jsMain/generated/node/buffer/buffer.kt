@@ -47,7 +47,7 @@ package node.buffer
  * // Creates a Buffer containing the Latin-1 bytes [0x74, 0xe9, 0x73, 0x74].
  * const buf7 = Buffer.from('tést', 'latin1');
  * ```
- * @see [source](https://github.com/nodejs/node/blob/v20.13.1/lib/buffer.js)
+ * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/buffer.js)
  */
 
 

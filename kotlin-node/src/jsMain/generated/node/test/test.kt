@@ -82,7 +82,7 @@ package node.test
  *
  * If any tests fail, the process exit code is set to `1`.
  * @since v18.0.0, v16.17.0
- * @see [source](https://github.com/nodejs/node/blob/v20.13.1/lib/test.js)
+ * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/test.js)
  */
 
 
@@ -101,5 +101,5 @@ package node.test
  * import test from 'test/reporters';
  * ```
  * @since v19.9.0
- * @see [source](https://github.com/nodejs/node/blob/v20.13.1/lib/test/reporters.js)
+ * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/test/reporters.js)
  */

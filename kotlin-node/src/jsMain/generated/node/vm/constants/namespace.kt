@@ -12,6 +12,6 @@ package node.vm.constants
  * and `vm.compileFunction()` so that Node.js uses the default ESM loader from the main
  * context to load the requested module.
  *
- * For detailed information, see [Support of dynamic `import()` in compilation APIs](https://nodejs.org/docs/latest-v20.x/api/vm.html#support-of-dynamic-import-in-compilation-apis).
+ * For detailed information, see [Support of dynamic `import()` in compilation APIs](https://nodejs.org/docs/latest-v22.x/api/vm.html#support-of-dynamic-import-in-compilation-apis).
  */
 external val USE_MAIN_CONTEXT_DEFAULT_LOADER: Double
