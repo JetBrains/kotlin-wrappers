@@ -1,6 +1,5 @@
 package wrappers.example.hooks
 
-import js.promise.Promise
 import web.http.RequestInit
 import web.http.RequestMethod
 import wrappers.example.entities.User
@@ -12,7 +11,7 @@ fun useDeleteUser(): DeleteUser =
         deleteUser(user)
     }
 
-private fun deleteUser(user: User): Promise<Unit> =
+private suspend fun deleteUser(user: User): Unit =
     fetchUserData(
         id = user.id,
         init = RequestInit(method = RequestMethod.DELETE)

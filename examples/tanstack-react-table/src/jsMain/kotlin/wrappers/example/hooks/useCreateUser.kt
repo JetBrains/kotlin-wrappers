@@ -1,6 +1,5 @@
 package wrappers.example.hooks
 
-import js.promise.Promise
 import web.http.BodyInit
 import web.http.RequestInit
 import web.http.RequestMethod
@@ -13,7 +12,7 @@ fun useCreateUser(): CreateUser =
         createUser(user)
     }
 
-private fun createUser(user: User): Promise<User> =
+private suspend fun createUser(user: User): User =
     fetchUserData(
         init = RequestInit(
             method = RequestMethod.POST,

@@ -1,32 +1,32 @@
 package wrappers.example.hooks
 
-import js.promise.Promise
 import web.http.Request
 import web.http.RequestInit
-import web.http.fetchAsync
+import web.http.fetch
 import wrappers.example.entities.Key
 import wrappers.example.entities.Users
 
 private val USERS_URL = "https://jsonplaceholder.typicode.com/users"
 
-fun fetchUsersData(): Promise<Users> =
+suspend fun fetchUsersData(): Users =
     fetchData(Request(USERS_URL))
 
-fun <T> fetchUserData(
+suspend fun <T> fetchUserData(
     id: Key,
     init: RequestInit = RequestInit(),
-): Promise<T> =
+): T =
     fetchData(Request("$USERS_URL/$id", init))
 
-fun <T> fetchUserData(
+suspend fun <T> fetchUserData(
     init: RequestInit,
-): Promise<T> =
+): T =
     fetchData(Request(USERS_URL, init))
 
-private fun <T> fetchData(
+private suspend fun <T> fetchData(
     request: Request,
-): Promise<T> {
-    return fetchAsync(request)
-        .then { it.jsonAsync() }
-        .then { it.unsafeCast<T>() }
+): T {
+    val data = fetch(request).json()
+
+    // TODO use serialization instead
+    return data.unsafeCast<T>()
 }

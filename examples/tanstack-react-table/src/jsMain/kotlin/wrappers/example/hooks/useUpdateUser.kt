@@ -1,6 +1,5 @@
 package wrappers.example.hooks
 
-import js.promise.Promise
 import web.http.BodyInit
 import web.http.RequestInit
 import web.http.RequestMethod
@@ -13,7 +12,7 @@ fun useUpdateUser(): UpdateUser =
         updateUser(user)
     }
 
-private fun updateUser(user: User): Promise<User> =
+private suspend fun updateUser(user: User): User =
     fetchUserData(
         id = user.id,
         init = RequestInit(
