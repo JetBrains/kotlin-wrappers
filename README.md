@@ -94,8 +94,6 @@ dependencies {
 }
 ```
 
-Make sure that you have `mavenCentral()` in the list of repositories.
-
 ## Examples
 
 1. [Internal examples](examples/README.md)
