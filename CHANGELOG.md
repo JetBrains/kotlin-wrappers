@@ -1,3 +1,24 @@
+## pre.806
+
+**BREAKING CHANGE**
+
+`wrappers` group removed from version catalog aliases.
+Details - #2497.
+
+```kotlin
+// Before
+dependencies {
+    jsMainImplementation(kotlinWrappers.wrappers.react)
+    jsMainImplementation(kotlinWrappers.wrappers.reactDom)
+}
+
+// After
+dependencies {
+    jsMainImplementation(kotlinWrappers.react)
+    jsMainImplementation(kotlinWrappers.reactDom)
+}
+```
+
 ## pre.804
 
 **BREAKING CHANGE**
