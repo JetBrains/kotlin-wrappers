@@ -3,7 +3,7 @@
 **BREAKING CHANGE**
 
 `wrappers` group removed from version catalog aliases.
-Details - #2497.
+Details: [#2497](https://github.com/JetBrains/kotlin-wrappers/issues/2497).
 
 ```kotlin
 // Before
