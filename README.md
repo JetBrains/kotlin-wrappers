@@ -77,7 +77,7 @@ dependencyResolutionManagement {
     }
 
     versionCatalogs {
-        create("libs") {
+        create("kotlinWrappers") {
             val wrappersVersion = "0.0.1-pre.805"
             from("org.jetbrains.kotlin-wrappers:kotlin-wrappers-catalog:$wrappersVersion")
         }
@@ -86,10 +86,10 @@ dependencyResolutionManagement {
 
 // build.gradle.kts
 dependencies {
-    jsMainImplementation(libs.wrappers.emotion)
-    jsMainImplementation(libs.wrappers.react)
-    jsMainImplementation(libs.wrappers.reactDom)
-    jsMainImplementation(libs.wrappers.tanstack.reactTable)
+    jsMainImplementation(kotlinWrappers.emotion)
+    jsMainImplementation(kotlinWrappers.react)
+    jsMainImplementation(kotlinWrappers.reactDom)
+    jsMainImplementation(kotlinWrappers.tanstack.reactTable)
     // other wrappers
 }
 ```

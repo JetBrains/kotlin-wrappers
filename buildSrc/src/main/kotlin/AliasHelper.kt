@@ -30,7 +30,10 @@ class AliasHelper(
             transform = { it.groupValues[1].uppercase() }
         )
 
-        return listOfNotNull("wrappers", group, name)
+        if (name == "extensions")
+            name = "jsExtensions"
+
+        return listOfNotNull(group, name)
             .joinToString("-")
     }
 }

@@ -3,10 +3,10 @@ plugins {
 }
 
 dependencies {
-    jsMainImplementation(libs.wrappers.react)
-    jsMainImplementation(libs.wrappers.reactDom)
-    jsMainImplementation(libs.wrappers.reactUse)
-    jsMainImplementation(libs.wrappers.emotion)
-    jsMainImplementation(libs.wrappers.tanstack.reactQuery)
-    jsMainImplementation(libs.wrappers.tanstack.reactTable)
+    jsMainImplementation(kotlinWrappers.react)
+    jsMainImplementation(kotlinWrappers.reactDom)
+    jsMainImplementation(kotlinWrappers.reactUse)
+    jsMainImplementation(kotlinWrappers.emotion)
+    jsMainImplementation(kotlinWrappers.tanstack.reactQuery)
+    jsMainImplementation(kotlinWrappers.tanstack.reactTable)
 }

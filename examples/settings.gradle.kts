@@ -2,12 +2,12 @@ rootProject.name = "examples"
 
 dependencyResolutionManagement {
     repositories {
-        mavenCentral()
         mavenLocal()
+        mavenCentral()
     }
 
     versionCatalogs {
-        create("libs") {
+        create("kotlinWrappers") {
             val wrappersVersion = extra["kotlin-wrappers.version"] as String
             from("org.jetbrains.kotlin-wrappers:kotlin-wrappers-catalog:$wrappersVersion")
         }
