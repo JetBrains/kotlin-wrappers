@@ -55,9 +55,6 @@ tasks.withType<Kotlin2JsCompile>().configureEach {
 
         freeCompilerArgs.addAll(
             "-Xdont-warn-on-error-suppression",
-        )
-
-        freeCompilerArgs.addAll(
             "-Xir-generate-inline-anonymous-functions",
         )
     }
