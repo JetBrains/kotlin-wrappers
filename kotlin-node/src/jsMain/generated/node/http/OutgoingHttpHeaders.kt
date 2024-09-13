@@ -5,34 +5,75 @@ package node.http
 sealed external interface OutgoingHttpHeaders : node.Dict<OutgoingHttpHeader> {
     var accept: Any? /* string | string[] | undefined */
 
-    /* "accept-charset"?: string | string[] | undefined; */
-    /* "accept-encoding"?: string | string[] | undefined; */
-    /* "accept-language"?: string | string[] | undefined; */
-    /* "accept-ranges"?: string | undefined; */
-    /* "access-control-allow-credentials"?: string | undefined; */
-    /* "access-control-allow-headers"?: string | undefined; */
-    /* "access-control-allow-methods"?: string | undefined; */
-    /* "access-control-allow-origin"?: string | undefined; */
-    /* "access-control-expose-headers"?: string | undefined; */
-    /* "access-control-max-age"?: string | undefined; */
-    /* "access-control-request-headers"?: string | undefined; */
-    /* "access-control-request-method"?: string | undefined; */
+    @JsName("accept-charset")
+    var acceptCharset: Any? /* string | string[] | undefined; */
+
+    @JsName("accept-encoding")
+    var acceptEncoding: Any? /* string | string[] | undefined; */
+
+    @JsName("accept-language")
+    var acceptLanguage: Any? /* string | string[] | undefined; */
+
+    @JsName("accept-ranges")
+    var acceptRanges: String?
+
+    @JsName("access-control-allow-credentials")
+    var accessControlAllowCredentials: String?
+
+    @JsName("access-control-allow-headers")
+    var accessControlAllowHeaders: String?
+
+    @JsName("access-control-allow-methods")
+    var accessControlAllowMethods: String?
+
+    @JsName("access-control-allow-origin")
+    var accessControlAllowOrigin: String?
+
+    @JsName("access-control-expose-headers")
+    var accessControlExposeHeaders: String?
+
+    @JsName("access-control-max-age")
+    var accessControlMaxAge: String?
+
+    @JsName("access-control-request-headers")
+    var accessControlRequestHeaders: String?
+
+    @JsName("access-control-request-method")
+    var accessControlRequestMethod: String?
     var age: String?
     var allow: String?
     var authorization: String?
 
-    /* "cache-control"?: string | undefined; */
-    /* "cdn-cache-control"?: string | undefined; */
+    @JsName("cache-control")
+    var cacheControl: String?
+
+    @JsName("cdn-cache-control")
+    var cdnCacheControl: String?
     var connection: Any? /* string | string[] | undefined */
 
-    /* "content-disposition"?: string | undefined; */
-    /* "content-encoding"?: string | undefined; */
-    /* "content-language"?: string | undefined; */
-    /* "content-length"?: string | number | undefined; */
-    /* "content-location"?: string | undefined; */
-    /* "content-range"?: string | undefined; */
-    /* "content-security-policy"?: string | undefined; */
-    /* "content-security-policy-report-only"?: string | undefined; */
+    @JsName("content-disposition")
+    var contentDisposition: String?
+
+    @JsName("content-encoding")
+    var contentEncoding: String?
+
+    @JsName("content-language")
+    var contentLanguage: String?
+
+    @JsName("content-length")
+    var contentLength: Int?
+
+    @JsName("content-location")
+    var contentLocation: String?
+
+    @JsName("content-range")
+    var contentRange: String?
+
+    @JsName("content-security-policy")
+    var contentSecurityPolicy: String?
+
+    @JsName("content-security-policy-report-only")
+    var contentSecurityPolicyReportOnly: String?
     var cookie: Any? /* string | string[] | undefined */
     var dav: Any? /* string | string[] | undefined */
     var dnt: String?
@@ -44,53 +85,101 @@ sealed external interface OutgoingHttpHeaders : node.Dict<OutgoingHttpHeader> {
     var from: String?
     var host: String?
 
-    /* "if-match"?: string | undefined; */
-    /* "if-modified-since"?: string | undefined; */
-    /* "if-none-match"?: string | undefined; */
-    /* "if-range"?: string | undefined; */
-    /* "if-unmodified-since"?: string | undefined; */
-    /* "last-modified"?: string | undefined; */
+    @JsName("if-match")
+    var ifMatch: String?
+
+    @JsName("if-modified-since")
+    var ifModifiedSince: String?
+
+    @JsName("if-none-match")
+    var ifNoneMatch: String?
+
+    @JsName("if-range")
+    var ifRange: String?
+
+    @JsName("if-unmodified-since")
+    var ifUnmodifiedSince: String?
+
+    @JsName("last-modified")
+    var lastModified: String?
     var link: Any? /* string | string[] | undefined */
     var location: String?
 
-    /* "max-forwards"?: string | undefined; */
+    @JsName("max-forwards")
+    var maxForwards: String?
     var origin: String?
     var prgama: Any? /* string | string[] | undefined */
 
-    /* "proxy-authenticate"?: string | string[] | undefined; */
-    /* "proxy-authorization"?: string | undefined; */
-    /* "public-key-pins"?: string | undefined; */
-    /* "public-key-pins-report-only"?: string | undefined; */
+    @JsName("proxy-authenticate")
+    var proxyAuthenticate: Any? /* string | string[] | undefined; */
+
+    @JsName("proxy-authorization")
+    var proxyAuthorization: String?
+
+    @JsName("public-key-pins")
+    var publicKeyPins: String?
+
+    @JsName("public-key-pins-report-only")
+    var publicKeyPinsReportOnly: String?
     var range: String?
     var referer: String?
 
-    /* "referrer-policy"?: string | undefined; */
+    @JsName("referrer-policy")
+    var referrerPolicy: String?
     var refresh: String?
 
-    /* "retry-after"?: string | undefined; */
-    /* "sec-websocket-accept"?: string | undefined; */
-    /* "sec-websocket-extensions"?: string | string[] | undefined; */
-    /* "sec-websocket-key"?: string | undefined; */
-    /* "sec-websocket-protocol"?: string | string[] | undefined; */
-    /* "sec-websocket-version"?: string | undefined; */
+    @JsName("retry-after")
+    var retryAfter: String?
+
+    @JsName("sec-websocket-accept")
+    var secWebsocketAccept: String?
+
+    @JsName("sec-websocket-extensions")
+    var secWebsocketExtensions: Any? /* string | string[] | undefined; */
+
+    @JsName("sec-websocket-key")
+    var secWebsocketKey: String?
+
+    @JsName("sec-websocket-protocol")
+    var secWebsocketProtocol: Any? /* string | string[] | undefined; */
+
+    @JsName("sec-websocket-version")
+    var secWebsocketVersion: String?
     var server: String?
 
-    /* "set-cookie"?: string | string[] | undefined; */
-    /* "strict-transport-security"?: string | undefined; */
+    @JsName("set-cookie")
+    var setCookie: Any? /* string | string[] | undefined; */
+
+    @JsName("strict-transport-security")
+    var strictTransportSecurity: String?
     var te: String?
     var trailer: String?
 
-    /* "transfer-encoding"?: string | undefined; */
-    /* "user-agent"?: string | undefined; */
+    @JsName("transfer-encoding")
+    var transferEncoding: String?
+
+    @JsName("user-agent")
+    var userAgent: String?
     var upgrade: String?
 
-    /* "upgrade-insecure-requests"?: string | undefined; */
+    @JsName("upgrade-insecure-requests")
+    var upgradeInsecureRequests: String?
     var vary: String?
     var via: Any? /* string | string[] | undefined */
     var warning: String?
-    /* "www-authenticate"?: string | string[] | undefined; */
-    /* "x-content-type-options"?: string | undefined; */
-    /* "x-dns-prefetch-control"?: string | undefined; */
-    /* "x-frame-options"?: string | undefined; */
-    /* "x-xss-protection"?: string | undefined; */
+
+    @JsName("www-authenticate")
+    var wwwAuthenticate: Any? /* string | string[] | undefined; */
+
+    @JsName("x-content-type-options")
+    var xContentTypeOptions: String?
+
+    @JsName("x-dns-prefetch-control")
+    var xDnsPrefetchControl: String?
+
+    @JsName("x-frame-options")
+    var xFrameOptions: String?
+
+    @JsName("x-xss-protection")
+    var xXssProtection: String?
 }
