@@ -5,7 +5,7 @@ import js.reflect.upcast
 import node.buffer.Buffer
 
 suspend fun writeFileTest() {
-    val buffer = Buffer.from("no ambigous")
+    val buffer = Buffer.from("no ambiguous")
 
     writeFile(
         "my-path",
