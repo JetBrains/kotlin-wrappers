@@ -55,14 +55,7 @@ tasks.withType<Kotlin2JsCompile>().configureEach {
 
         freeCompilerArgs.addAll(
             "-Xdont-warn-on-error-suppression",
-        )
-
-        // TODO: Enable after resolving
-        //  https://youtrack.jetbrains.com/issue/KT-67355
-        /*
-        freeCompilerArgs.addAll(
             "-Xir-generate-inline-anonymous-functions",
         )
-        */
     }
 }
