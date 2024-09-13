@@ -69,6 +69,9 @@ sealed external interface OutgoingHttpHeaders : node.Dict<OutgoingHttpHeader> {
     @JsName("content-range")
     var contentRange: String?
 
+    @JsName("content-type")
+    var contentType: String?
+
     @JsName("content-security-policy")
     var contentSecurityPolicy: String?
 
