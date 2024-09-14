@@ -4,6 +4,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompilationTask
 plugins {
     kotlin("multiplatform")
     kotlin("plugin.js-plain-objects")
+    id("io.github.turansky.seskar")
     id("kotlin-test-conventions")
 }
 
