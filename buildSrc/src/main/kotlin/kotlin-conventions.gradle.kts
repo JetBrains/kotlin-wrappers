@@ -56,6 +56,7 @@ tasks.withType<Kotlin2JsCompile>().configureEach {
         freeCompilerArgs.addAll(
             "-Xdont-warn-on-error-suppression",
             "-Xir-generate-inline-anonymous-functions",
+            // TODO: remove after migration on Kotlin `2.1.0`
             "-XXLanguage:+JsAllowInvalidCharsIdentifiersEscaping",
         )
     }
