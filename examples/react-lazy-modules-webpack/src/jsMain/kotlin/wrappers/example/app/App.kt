@@ -5,9 +5,9 @@ import react.FC
 import react.Suspense
 import react.dom.html.ReactHTML.div
 import web.cssom.Display
-import wrappers.example.content.LazyContent
-import wrappers.example.footer.LazyFooter
-import wrappers.example.header.LazyHeader
+import wrappers.example.content.Content
+import wrappers.example.footer.Footer
+import wrappers.example.header.Header
 
 val App = FC {
     div {
@@ -16,15 +16,15 @@ val App = FC {
         }
 
         Suspense {
-            LazyHeader()
+            Header()
         }
 
         Suspense {
-            LazyContent()
+            Content()
         }
 
         Suspense {
-            LazyFooter()
+            Footer()
         }
     }
 }
