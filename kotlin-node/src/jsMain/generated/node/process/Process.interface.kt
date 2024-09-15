@@ -609,7 +609,7 @@ sealed external interface Process : EventEmitter {
      * @since v0.1.13
      * @param [code=0] The exit code. For string type, only integer strings (e.g.,'1') are allowed.
      */
-    fun exit(code: Double? = definedExternally): Nothing
+    fun exit(code: Int? = definedExternally): Nothing
 
     /**
      * The `process.exit()` method instructs Node.js to terminate the process
