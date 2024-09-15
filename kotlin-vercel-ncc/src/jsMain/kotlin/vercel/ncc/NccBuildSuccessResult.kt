@@ -1,6 +1,6 @@
 package vercel.ncc
 
-import js.objects.Record
+import js.objects.ReadonlyRecord
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
@@ -8,5 +8,5 @@ external interface NccBuildSuccessResult :
     NccBuildResult {
     val code: String
     val map: String?
-    val assets: Record<String, Asset>?
+    val assets: ReadonlyRecord<String, Asset>?
 }
