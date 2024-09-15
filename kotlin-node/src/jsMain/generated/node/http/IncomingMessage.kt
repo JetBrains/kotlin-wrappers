@@ -240,7 +240,7 @@ open external class IncomingMessage : node.stream.Readable {
      * The 3-digit HTTP response status code. E.G. `404`.
      * @since v0.1.1
      */
-    var statusCode: Double?
+    var statusCode: Int?
 
     /**
      * **Only valid for response obtained from {@link ClientRequest}.**
