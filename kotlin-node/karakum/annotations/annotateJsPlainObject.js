@@ -43,6 +43,13 @@ const jsoInterfaces = [
     // fs
     "ObjectEncodingOptions",
     "FlagAndOpenMode",
+    "MakeDirectoryOptions",
+    "MkdirOptions",
+    "MkdirAsyncOptions",
+    "MkdirRecursiveOptions",
+    "MkdirRecursiveAsyncOptions",
+    "MkdirSyncOptions",
+    "MkdirSyncRecursiveOptions",
     "ReadStreamOptions",
     "WriteStreamOptions",
     "WatchOptions",
