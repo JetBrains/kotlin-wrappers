@@ -1,7 +1,7 @@
 package vercel.ncc
 
+import js.promise.Promise
 import seskar.js.JsAsync
-import kotlin.js.Promise
 
 @JsModule("@vercel/ncc")
 external fun nccAsync(
