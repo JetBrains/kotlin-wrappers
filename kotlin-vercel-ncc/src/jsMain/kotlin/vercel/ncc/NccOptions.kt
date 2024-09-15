@@ -75,5 +75,5 @@ external interface NccOptions {
     /**
      * default: "es2015"
      */
-    val target: String?
+    val target: Target?
 }
