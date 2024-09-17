@@ -13,7 +13,7 @@ import js.promise.internal.awaitPromiseLike
 import js.promise.internal.thenToContinuation
 import kotlin.coroutines.Continuation
 
-sealed external interface PromiseLike<out T> :
+external interface PromiseLike<out T> :
     PromiseResult<T> {
     fun <R> then(
         onFulfilled: (T) -> R,
