@@ -15,7 +15,7 @@ kotlin {
 
     // Sets the device ID for iosSimulatorArm64Test
     targets.withType<KotlinNativeTargetWithSimulatorTests> {
-        testRuns["test"].deviceId = "iPhone 15"
+        testRuns["test"].deviceId = "iPhone 16"
     }
 
     sourceSets {
