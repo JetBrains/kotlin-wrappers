@@ -24,16 +24,28 @@ external class Range {
     var loose: Boolean
     var options: semver.Options
     var includePrerelease: Boolean
+
     fun format(): String
+
     fun inspect(): String
+
     var set: ReadonlyArray<js.array.ReadonlyArray<Comparator>>
+
     fun parseRange(range: String): js.array.ReadonlyArray<Comparator>
+
     fun test(version: String): Boolean
 
     fun test(version: SemVer): Boolean
+
     fun intersects(range: Range): Boolean
 
-    fun intersects(range: Range, optionsOrLoose: Boolean = definedExternally): Boolean
+    fun intersects(
+        range: Range,
+        optionsOrLoose: Boolean = definedExternally,
+    ): Boolean
 
-    fun intersects(range: Range, optionsOrLoose: semver.Options = definedExternally): Boolean
+    fun intersects(
+        range: Range,
+        optionsOrLoose: semver.Options = definedExternally,
+    ): Boolean
 }

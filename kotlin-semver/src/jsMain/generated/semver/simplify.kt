@@ -4,9 +4,9 @@
 
 package semver
 
-/* import Range = require("../classes/range"); */
+// import Range = require("../classes/range");
 
-/* import semver = require("../index"); */
+// import semver = require("../index");
 
 /**
  * Return a "simplified" range that matches the same items in `versions` list as the range specified.
@@ -19,8 +19,8 @@ package semver
 external fun simplify(
     ranges: js.array.ReadonlyArray<String>,
     range: String,
-    options: semver.Options = definedExternally
-): Any /* string | Range */
+    options: semver.Options = definedExternally,
+): Any // string | Range
 
 /**
  * Return a "simplified" range that matches the same items in `versions` list as the range specified.
@@ -33,7 +33,7 @@ external fun simplify(
 external fun simplify(
     ranges: js.array.ReadonlyArray<String>,
     range: Range,
-    options: semver.Options = definedExternally
-): Any /* string | Range */
+    options: semver.Options = definedExternally,
+): Any // string | Range
 
-/* export = simplify; */
+// export = simplify;

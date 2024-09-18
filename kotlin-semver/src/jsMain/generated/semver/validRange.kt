@@ -12,12 +12,18 @@ external fun validRange(range: String?): String?
 /**
  * Return the valid range or null if it's not valid
  */
-external fun validRange(range: String?, optionsOrLoose: Boolean = definedExternally): String?
+external fun validRange(
+    range: String?,
+    optionsOrLoose: Boolean = definedExternally,
+): String?
 
 /**
  * Return the valid range or null if it's not valid
  */
-external fun validRange(range: String?, optionsOrLoose: semver.RangeOptions = definedExternally): String?
+external fun validRange(
+    range: String?,
+    optionsOrLoose: semver.RangeOptions = definedExternally,
+): String?
 
 /**
  * Return the valid range or null if it's not valid
@@ -27,9 +33,15 @@ external fun validRange(range: Range?): String?
 /**
  * Return the valid range or null if it's not valid
  */
-external fun validRange(range: Range?, optionsOrLoose: Boolean = definedExternally): String?
+external fun validRange(
+    range: Range?,
+    optionsOrLoose: Boolean = definedExternally,
+): String?
 
 /**
  * Return the valid range or null if it's not valid
  */
-external fun validRange(range: Range?, optionsOrLoose: semver.RangeOptions = definedExternally): String?
+external fun validRange(
+    range: Range?,
+    optionsOrLoose: semver.RangeOptions = definedExternally,
+): String?

@@ -4,21 +4,9 @@
 
 package semver
 
-/* import semver = require("../index"); */
+// import semver = require("../index");
 
-/* import SemVer = require("../classes/semver"); */
-
-/**
- * Compares two versions excluding build identifiers (the bit after `+` in the semantic version string).
- *
- * Sorts in ascending order when passed to `Array.sort()`.
- *
- * @return
- * - `0` if `v1` == `v2`
- * - `1` if `v1` is greater
- * - `-1` if `v2` is greater.
- */
-external fun compare(v1: String, v2: String): Int
+// import SemVer = require("../classes/semver");
 
 /**
  * Compares two versions excluding build identifiers (the bit after `+` in the semantic version string).
@@ -30,7 +18,10 @@ external fun compare(v1: String, v2: String): Int
  * - `1` if `v1` is greater
  * - `-1` if `v2` is greater.
  */
-external fun compare(v1: String, v2: String, optionsOrLoose: Boolean = definedExternally): Int
+external fun compare(
+    v1: String,
+    v2: String,
+): Int
 
 /**
  * Compares two versions excluding build identifiers (the bit after `+` in the semantic version string).
@@ -42,7 +33,11 @@ external fun compare(v1: String, v2: String, optionsOrLoose: Boolean = definedEx
  * - `1` if `v1` is greater
  * - `-1` if `v2` is greater.
  */
-external fun compare(v1: String, v2: String, optionsOrLoose: semver.Options = definedExternally): Int
+external fun compare(
+    v1: String,
+    v2: String,
+    optionsOrLoose: Boolean = definedExternally,
+): Int
 
 /**
  * Compares two versions excluding build identifiers (the bit after `+` in the semantic version string).
@@ -54,7 +49,11 @@ external fun compare(v1: String, v2: String, optionsOrLoose: semver.Options = de
  * - `1` if `v1` is greater
  * - `-1` if `v2` is greater.
  */
-external fun compare(v1: String, v2: SemVer): Int
+external fun compare(
+    v1: String,
+    v2: String,
+    optionsOrLoose: semver.Options = definedExternally,
+): Int
 
 /**
  * Compares two versions excluding build identifiers (the bit after `+` in the semantic version string).
@@ -66,7 +65,10 @@ external fun compare(v1: String, v2: SemVer): Int
  * - `1` if `v1` is greater
  * - `-1` if `v2` is greater.
  */
-external fun compare(v1: String, v2: SemVer, optionsOrLoose: Boolean = definedExternally): Int
+external fun compare(
+    v1: String,
+    v2: SemVer,
+): Int
 
 /**
  * Compares two versions excluding build identifiers (the bit after `+` in the semantic version string).
@@ -78,7 +80,11 @@ external fun compare(v1: String, v2: SemVer, optionsOrLoose: Boolean = definedEx
  * - `1` if `v1` is greater
  * - `-1` if `v2` is greater.
  */
-external fun compare(v1: String, v2: SemVer, optionsOrLoose: semver.Options = definedExternally): Int
+external fun compare(
+    v1: String,
+    v2: SemVer,
+    optionsOrLoose: Boolean = definedExternally,
+): Int
 
 /**
  * Compares two versions excluding build identifiers (the bit after `+` in the semantic version string).
@@ -90,7 +96,11 @@ external fun compare(v1: String, v2: SemVer, optionsOrLoose: semver.Options = de
  * - `1` if `v1` is greater
  * - `-1` if `v2` is greater.
  */
-external fun compare(v1: SemVer, v2: String): Int
+external fun compare(
+    v1: String,
+    v2: SemVer,
+    optionsOrLoose: semver.Options = definedExternally,
+): Int
 
 /**
  * Compares two versions excluding build identifiers (the bit after `+` in the semantic version string).
@@ -102,7 +112,10 @@ external fun compare(v1: SemVer, v2: String): Int
  * - `1` if `v1` is greater
  * - `-1` if `v2` is greater.
  */
-external fun compare(v1: SemVer, v2: String, optionsOrLoose: Boolean = definedExternally): Int
+external fun compare(
+    v1: SemVer,
+    v2: String,
+): Int
 
 /**
  * Compares two versions excluding build identifiers (the bit after `+` in the semantic version string).
@@ -114,7 +127,11 @@ external fun compare(v1: SemVer, v2: String, optionsOrLoose: Boolean = definedEx
  * - `1` if `v1` is greater
  * - `-1` if `v2` is greater.
  */
-external fun compare(v1: SemVer, v2: String, optionsOrLoose: semver.Options = definedExternally): Int
+external fun compare(
+    v1: SemVer,
+    v2: String,
+    optionsOrLoose: Boolean = definedExternally,
+): Int
 
 /**
  * Compares two versions excluding build identifiers (the bit after `+` in the semantic version string).
@@ -126,7 +143,11 @@ external fun compare(v1: SemVer, v2: String, optionsOrLoose: semver.Options = de
  * - `1` if `v1` is greater
  * - `-1` if `v2` is greater.
  */
-external fun compare(v1: SemVer, v2: SemVer): Int
+external fun compare(
+    v1: SemVer,
+    v2: String,
+    optionsOrLoose: semver.Options = definedExternally,
+): Int
 
 /**
  * Compares two versions excluding build identifiers (the bit after `+` in the semantic version string).
@@ -138,7 +159,10 @@ external fun compare(v1: SemVer, v2: SemVer): Int
  * - `1` if `v1` is greater
  * - `-1` if `v2` is greater.
  */
-external fun compare(v1: SemVer, v2: SemVer, optionsOrLoose: Boolean = definedExternally): Int
+external fun compare(
+    v1: SemVer,
+    v2: SemVer,
+): Int
 
 /**
  * Compares two versions excluding build identifiers (the bit after `+` in the semantic version string).
@@ -150,6 +174,26 @@ external fun compare(v1: SemVer, v2: SemVer, optionsOrLoose: Boolean = definedEx
  * - `1` if `v1` is greater
  * - `-1` if `v2` is greater.
  */
-external fun compare(v1: SemVer, v2: SemVer, optionsOrLoose: semver.Options = definedExternally): Int
+external fun compare(
+    v1: SemVer,
+    v2: SemVer,
+    optionsOrLoose: Boolean = definedExternally,
+): Int
 
-/* export = compare; */
+/**
+ * Compares two versions excluding build identifiers (the bit after `+` in the semantic version string).
+ *
+ * Sorts in ascending order when passed to `Array.sort()`.
+ *
+ * @return
+ * - `0` if `v1` == `v2`
+ * - `1` if `v1` is greater
+ * - `-1` if `v2` is greater.
+ */
+external fun compare(
+    v1: SemVer,
+    v2: SemVer,
+    optionsOrLoose: semver.Options = definedExternally,
+): Int
+
+// export = compare;

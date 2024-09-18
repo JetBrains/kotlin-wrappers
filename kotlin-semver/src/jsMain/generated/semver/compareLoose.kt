@@ -4,14 +4,26 @@
 
 package semver
 
-/* import SemVer = require("../classes/semver"); */
+// import SemVer = require("../classes/semver");
 
-external fun compareLoose(v1: String, v2: String): Int
+external fun compareLoose(
+    v1: String,
+    v2: String,
+): Int
 
-external fun compareLoose(v1: String, v2: SemVer): Int
+external fun compareLoose(
+    v1: String,
+    v2: SemVer,
+): Int
 
-external fun compareLoose(v1: SemVer, v2: String): Int
+external fun compareLoose(
+    v1: SemVer,
+    v2: String,
+): Int
 
-external fun compareLoose(v1: SemVer, v2: SemVer): Int
+external fun compareLoose(
+    v1: SemVer,
+    v2: SemVer,
+): Int
 
-/* export = compareLoose; */
+// export = compareLoose;

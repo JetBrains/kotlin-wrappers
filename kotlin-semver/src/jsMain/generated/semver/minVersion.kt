@@ -4,11 +4,11 @@
 
 package semver
 
-/* import Range = require("../classes/range"); */
+// import Range = require("../classes/range");
 
-/* import SemVer = require("../classes/semver"); */
+// import SemVer = require("../classes/semver");
 
-/* import semver = require("../index"); */
+// import semver = require("../index");
 
 /**
  * Return the lowest version that can possibly match the given range.
@@ -18,12 +18,18 @@ external fun minVersion(range: String): SemVer?
 /**
  * Return the lowest version that can possibly match the given range.
  */
-external fun minVersion(range: String, optionsOrLoose: Boolean = definedExternally): SemVer?
+external fun minVersion(
+    range: String,
+    optionsOrLoose: Boolean = definedExternally,
+): SemVer?
 
 /**
  * Return the lowest version that can possibly match the given range.
  */
-external fun minVersion(range: String, optionsOrLoose: semver.Options = definedExternally): SemVer?
+external fun minVersion(
+    range: String,
+    optionsOrLoose: semver.Options = definedExternally,
+): SemVer?
 
 /**
  * Return the lowest version that can possibly match the given range.
@@ -33,11 +39,17 @@ external fun minVersion(range: Range): SemVer?
 /**
  * Return the lowest version that can possibly match the given range.
  */
-external fun minVersion(range: Range, optionsOrLoose: Boolean = definedExternally): SemVer?
+external fun minVersion(
+    range: Range,
+    optionsOrLoose: Boolean = definedExternally,
+): SemVer?
 
 /**
  * Return the lowest version that can possibly match the given range.
  */
-external fun minVersion(range: Range, optionsOrLoose: semver.Options = definedExternally): SemVer?
+external fun minVersion(
+    range: Range,
+    optionsOrLoose: semver.Options = definedExternally,
+): SemVer?
 
-/* export = minVersion; */
+// export = minVersion;

@@ -4,9 +4,9 @@
 
 package semver
 
-/* import semver = require("../index"); */
+// import semver = require("../index");
 
-/* import SemVer = require("../classes/semver"); */
+// import SemVer = require("../classes/semver");
 
 /**
  * Return the parsed version as a string, or null if it's not valid.
@@ -16,12 +16,18 @@ external fun valid(version: String?): String?
 /**
  * Return the parsed version as a string, or null if it's not valid.
  */
-external fun valid(version: String?, optionsOrLoose: Boolean = definedExternally): String?
+external fun valid(
+    version: String?,
+    optionsOrLoose: Boolean = definedExternally,
+): String?
 
 /**
  * Return the parsed version as a string, or null if it's not valid.
  */
-external fun valid(version: String?, optionsOrLoose: semver.Options = definedExternally): String?
+external fun valid(
+    version: String?,
+    optionsOrLoose: semver.Options = definedExternally,
+): String?
 
 /**
  * Return the parsed version as a string, or null if it's not valid.
@@ -31,11 +37,17 @@ external fun valid(version: SemVer?): String?
 /**
  * Return the parsed version as a string, or null if it's not valid.
  */
-external fun valid(version: SemVer?, optionsOrLoose: Boolean = definedExternally): String?
+external fun valid(
+    version: SemVer?,
+    optionsOrLoose: Boolean = definedExternally,
+): String?
 
 /**
  * Return the parsed version as a string, or null if it's not valid.
  */
-external fun valid(version: SemVer?, optionsOrLoose: semver.Options = definedExternally): String?
+external fun valid(
+    version: SemVer?,
+    optionsOrLoose: semver.Options = definedExternally,
+): String?
 
-/* export = valid; */
+// export = valid;

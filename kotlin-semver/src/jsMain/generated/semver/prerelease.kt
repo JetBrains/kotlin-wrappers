@@ -6,9 +6,9 @@ package semver
 
 import js.array.ReadonlyArray
 
-/* import SemVer = require("../classes/semver"); */
+// import SemVer = require("../classes/semver");
 
-/* import semver = require("../index"); */
+// import semver = require("../index");
 
 /**
  * Returns an array of prerelease components, or null if none exist.
@@ -20,7 +20,7 @@ external fun prerelease(version: String): ReadonlyArray<Any /* string | number *
  */
 external fun prerelease(
     version: String,
-    optionsOrLoose: Boolean = definedExternally
+    optionsOrLoose: Boolean = definedExternally,
 ): ReadonlyArray<Any /* string | number */>?
 
 /**
@@ -28,7 +28,7 @@ external fun prerelease(
  */
 external fun prerelease(
     version: String,
-    optionsOrLoose: semver.Options = definedExternally
+    optionsOrLoose: semver.Options = definedExternally,
 ): ReadonlyArray<Any /* string | number */>?
 
 /**
@@ -41,7 +41,7 @@ external fun prerelease(version: SemVer): ReadonlyArray<Any /* string | number *
  */
 external fun prerelease(
     version: SemVer,
-    optionsOrLoose: Boolean = definedExternally
+    optionsOrLoose: Boolean = definedExternally,
 ): ReadonlyArray<Any /* string | number */>?
 
 /**
@@ -49,7 +49,7 @@ external fun prerelease(
  */
 external fun prerelease(
     version: SemVer,
-    optionsOrLoose: semver.Options = definedExternally
+    optionsOrLoose: semver.Options = definedExternally,
 ): ReadonlyArray<Any /* string | number */>?
 
-/* export = prerelease; */
+// export = prerelease;

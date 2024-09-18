@@ -4,9 +4,9 @@
 
 package semver
 
-/* import SemVer = require("../classes/semver"); */
+// import SemVer = require("../classes/semver");
 
-/* import semver = require("../index"); */
+// import semver = require("../index");
 
 /**
  * Sorts an array of semver entries in descending order using `compareBuild()`.
@@ -18,7 +18,7 @@ external fun <T : Any /* string | SemVer */> rsort(list: js.array.ReadonlyArray<
  */
 external fun <T : Any /* string | SemVer */> rsort(
     list: js.array.ReadonlyArray<T>,
-    optionsOrLoose: Boolean = definedExternally
+    optionsOrLoose: Boolean = definedExternally,
 ): js.array.ReadonlyArray<T>
 
 /**
@@ -26,7 +26,7 @@ external fun <T : Any /* string | SemVer */> rsort(
  */
 external fun <T : Any /* string | SemVer */> rsort(
     list: js.array.ReadonlyArray<T>,
-    optionsOrLoose: semver.Options = definedExternally
+    optionsOrLoose: semver.Options = definedExternally,
 ): js.array.ReadonlyArray<T>
 
-/* export = rsort; */
+// export = rsort;

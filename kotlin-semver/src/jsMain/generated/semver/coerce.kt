@@ -4,23 +4,32 @@
 
 package semver
 
-/* import semver = require("../index"); */
+// import semver = require("../index");
 
-/* import SemVer = require("../classes/semver"); */
-
-/**
- * Coerces a string to SemVer if possible
- */
-external fun coerce(version: String?, options: semver.CoerceOptions = definedExternally): SemVer?
+// import SemVer = require("../classes/semver");
 
 /**
  * Coerces a string to SemVer if possible
  */
-external fun coerce(version: Number?, options: semver.CoerceOptions = definedExternally): SemVer?
+external fun coerce(
+    version: String?,
+    options: semver.CoerceOptions = definedExternally,
+): SemVer?
 
 /**
  * Coerces a string to SemVer if possible
  */
-external fun coerce(version: SemVer?, options: semver.CoerceOptions = definedExternally): SemVer?
+external fun coerce(
+    version: Number?,
+    options: semver.CoerceOptions = definedExternally,
+): SemVer?
 
-/* export = coerce; */
+/**
+ * Coerces a string to SemVer if possible
+ */
+external fun coerce(
+    version: SemVer?,
+    options: semver.CoerceOptions = definedExternally,
+): SemVer?
+
+// export = coerce;
