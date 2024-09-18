@@ -1,0 +1,23 @@
+{
+    "input": "<nodeModules>/null-writable/**/*.d.ts",
+    "output": "src/jsMain/generated",
+    "ignoreOutput": [
+        "**/nullwritable/nullWritable.kt",
+        "**/nullwritable/node.stream.WritableWritevChunksItem.kt"
+    ],
+    "libraryName": "null-writable",
+    "libraryNameOutputPrefix": true,
+    "moduleNameMapper": {
+        "^.*$": "null-writable"
+    },
+    "packageNameMapper": {
+        "^null/writable/": "nullwritable/"
+    },
+    "granularity": "top-level",
+    "importInjector": {
+        "^nullwritable/NullWritable\\.kt$": [
+            "node.buffer.BufferEncoding",
+            "node.stream.Writable"
+        ]
+    }
+}
