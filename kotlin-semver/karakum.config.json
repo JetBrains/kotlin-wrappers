@@ -18,7 +18,10 @@
     "libraryNameOutputPrefix": true,
     "granularity": "top-level",
     "namespaceStrategy": {
-        "inc": "ignore"
+        "^inc$": "ignore"
+    },
+    "moduleNameMapper": {
+        "^.*$": "semver"
     },
     "packageNameMapper": {
         "^.*/([^/]+\\.kt)$": "semver/$1"
