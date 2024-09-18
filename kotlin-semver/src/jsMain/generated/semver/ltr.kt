@@ -4,70 +4,114 @@
 
 package semver
 
-/* import Range = require("../classes/range"); */
+// import Range = require("../classes/range");
 
-/* import SemVer = require("../classes/semver"); */
+// import SemVer = require("../classes/semver");
 
-/* import semver = require("../index"); */
-
-/**
- * Return true if version is less than all the versions possible in the range.
- */
-external fun ltr(version: String, range: String): Boolean
+// import semver = require("../index");
 
 /**
  * Return true if version is less than all the versions possible in the range.
  */
-external fun ltr(version: String, range: String, optionsOrLoose: Boolean = definedExternally): Boolean
+external fun ltr(
+    version: String,
+    range: String,
+): Boolean
 
 /**
  * Return true if version is less than all the versions possible in the range.
  */
-external fun ltr(version: String, range: String, optionsOrLoose: semver.RangeOptions = definedExternally): Boolean
+external fun ltr(
+    version: String,
+    range: String,
+    optionsOrLoose: Boolean = definedExternally,
+): Boolean
 
 /**
  * Return true if version is less than all the versions possible in the range.
  */
-external fun ltr(version: String, range: Range): Boolean
+external fun ltr(
+    version: String,
+    range: String,
+    optionsOrLoose: semver.RangeOptions = definedExternally,
+): Boolean
 
 /**
  * Return true if version is less than all the versions possible in the range.
  */
-external fun ltr(version: String, range: Range, optionsOrLoose: Boolean = definedExternally): Boolean
+external fun ltr(
+    version: String,
+    range: Range,
+): Boolean
 
 /**
  * Return true if version is less than all the versions possible in the range.
  */
-external fun ltr(version: String, range: Range, optionsOrLoose: semver.RangeOptions = definedExternally): Boolean
+external fun ltr(
+    version: String,
+    range: Range,
+    optionsOrLoose: Boolean = definedExternally,
+): Boolean
 
 /**
  * Return true if version is less than all the versions possible in the range.
  */
-external fun ltr(version: SemVer, range: String): Boolean
+external fun ltr(
+    version: String,
+    range: Range,
+    optionsOrLoose: semver.RangeOptions = definedExternally,
+): Boolean
 
 /**
  * Return true if version is less than all the versions possible in the range.
  */
-external fun ltr(version: SemVer, range: String, optionsOrLoose: Boolean = definedExternally): Boolean
+external fun ltr(
+    version: SemVer,
+    range: String,
+): Boolean
 
 /**
  * Return true if version is less than all the versions possible in the range.
  */
-external fun ltr(version: SemVer, range: String, optionsOrLoose: semver.RangeOptions = definedExternally): Boolean
+external fun ltr(
+    version: SemVer,
+    range: String,
+    optionsOrLoose: Boolean = definedExternally,
+): Boolean
 
 /**
  * Return true if version is less than all the versions possible in the range.
  */
-external fun ltr(version: SemVer, range: Range): Boolean
+external fun ltr(
+    version: SemVer,
+    range: String,
+    optionsOrLoose: semver.RangeOptions = definedExternally,
+): Boolean
 
 /**
  * Return true if version is less than all the versions possible in the range.
  */
-external fun ltr(version: SemVer, range: Range, optionsOrLoose: Boolean = definedExternally): Boolean
+external fun ltr(
+    version: SemVer,
+    range: Range,
+): Boolean
 
 /**
  * Return true if version is less than all the versions possible in the range.
  */
-external fun ltr(version: SemVer, range: Range, optionsOrLoose: semver.RangeOptions = definedExternally): Boolean
+external fun ltr(
+    version: SemVer,
+    range: Range,
+    optionsOrLoose: Boolean = definedExternally,
+): Boolean
 
-/* export = ltr; */
+/**
+ * Return true if version is less than all the versions possible in the range.
+ */
+external fun ltr(
+    version: SemVer,
+    range: Range,
+    optionsOrLoose: semver.RangeOptions = definedExternally,
+): Boolean
+
+// export = ltr;

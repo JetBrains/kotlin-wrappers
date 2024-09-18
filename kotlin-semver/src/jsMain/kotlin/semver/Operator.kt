@@ -5,33 +5,33 @@ import seskar.js.JsValue
 sealed external interface Operator {
     companion object {
         @JsValue("===")
-        val EQUALS_STRICT: Operator
+        val strictEqual: Operator
 
         @JsValue("!==")
-        val NOT_EQUALS_STRICT: Operator
+        val strictNotEqual: Operator
 
         @JsValue("")
-        val EMPTY: Operator
+        val empty: Operator
 
         @JsValue("=")
-        val ASSIGN: Operator
+        val assign: Operator
 
         @JsValue("==")
-        val EQUALS: Operator
+        val equal: Operator
 
         @JsValue("!=")
-        val NOT_EQUALS: Operator
+        val notEqual: Operator
 
         @JsValue(">")
-        val GT: Operator
+        val greater: Operator
 
         @JsValue(">=")
-        val GTE: Operator
+        val greaterEqual: Operator
 
         @JsValue("<")
-        val LT: Operator
+        val less: Operator
 
         @JsValue("<=")
-        val LTE: Operator
+        val lessEqual: Operator
     }
 }

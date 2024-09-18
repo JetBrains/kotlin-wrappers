@@ -4,9 +4,9 @@
 
 package semver
 
-/* import SemVer = require("../classes/semver"); */
+// import SemVer = require("../classes/semver");
 
-/* import semver = require("../index"); */
+// import semver = require("../index");
 
 /**
  * Return the major version number.
@@ -16,12 +16,18 @@ external fun major(version: String): Int
 /**
  * Return the major version number.
  */
-external fun major(version: String, optionsOrLoose: Boolean = definedExternally): Int
+external fun major(
+    version: String,
+    optionsOrLoose: Boolean = definedExternally,
+): Int
 
 /**
  * Return the major version number.
  */
-external fun major(version: String, optionsOrLoose: semver.Options = definedExternally): Int
+external fun major(
+    version: String,
+    optionsOrLoose: semver.Options = definedExternally,
+): Int
 
 /**
  * Return the major version number.
@@ -31,11 +37,17 @@ external fun major(version: SemVer): Int
 /**
  * Return the major version number.
  */
-external fun major(version: SemVer, optionsOrLoose: Boolean = definedExternally): Int
+external fun major(
+    version: SemVer,
+    optionsOrLoose: Boolean = definedExternally,
+): Int
 
 /**
  * Return the major version number.
  */
-external fun major(version: SemVer, optionsOrLoose: semver.Options = definedExternally): Int
+external fun major(
+    version: SemVer,
+    optionsOrLoose: semver.Options = definedExternally,
+): Int
 
-/* export = major; */
+// export = major;

@@ -22,8 +22,11 @@ external class SemVer {
     var raw: String
     var loose: Boolean
     var options: semver.Options
+
     fun format(): String
+
     fun inspect(): String
+
     var major: Int
     var minor: Int
     var patch: Int
@@ -110,6 +113,11 @@ external class SemVer {
      * - `-1` if `other` is greater.
      */
     fun compareBuild(other: SemVer): Int
-    fun inc(release: semver.ReleaseType, identifier: String = definedExternally): SemVer
+
+    fun inc(
+        release: semver.ReleaseType,
+        identifier: String = definedExternally,
+    ): SemVer
+
     override fun toString(): String
 }

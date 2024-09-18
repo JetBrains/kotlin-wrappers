@@ -22,13 +22,22 @@ external class Comparator {
     var value: String
     var loose: Boolean
     var options: semver.Options
+
     fun parse(comp: String): Unit
+
     fun test(version: String): Boolean
 
     fun test(version: SemVer): Boolean
+
     fun intersects(comp: Comparator): Boolean
 
-    fun intersects(comp: Comparator, optionsOrLoose: Boolean = definedExternally): Boolean
+    fun intersects(
+        comp: Comparator,
+        optionsOrLoose: Boolean = definedExternally,
+    ): Boolean
 
-    fun intersects(comp: Comparator, optionsOrLoose: semver.Options = definedExternally): Boolean
+    fun intersects(
+        comp: Comparator,
+        optionsOrLoose: semver.Options = definedExternally,
+    ): Boolean
 }

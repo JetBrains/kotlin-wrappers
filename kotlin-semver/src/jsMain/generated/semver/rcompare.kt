@@ -4,92 +4,136 @@
 
 package semver
 
-/* import SemVer = require("../classes/semver"); */
+// import SemVer = require("../classes/semver");
 
-/* import semver = require("../index"); */
-
-/**
- * The reverse of compare.
- *
- * Sorts in descending order when passed to `Array.sort()`.
- */
-external fun rcompare(v1: String, v2: String): Int
+// import semver = require("../index");
 
 /**
  * The reverse of compare.
  *
  * Sorts in descending order when passed to `Array.sort()`.
  */
-external fun rcompare(v1: String, v2: String, optionsOrLoose: Boolean = definedExternally): Int
+external fun rcompare(
+    v1: String,
+    v2: String,
+): Int
 
 /**
  * The reverse of compare.
  *
  * Sorts in descending order when passed to `Array.sort()`.
  */
-external fun rcompare(v1: String, v2: String, optionsOrLoose: semver.Options = definedExternally): Int
+external fun rcompare(
+    v1: String,
+    v2: String,
+    optionsOrLoose: Boolean = definedExternally,
+): Int
 
 /**
  * The reverse of compare.
  *
  * Sorts in descending order when passed to `Array.sort()`.
  */
-external fun rcompare(v1: String, v2: SemVer): Int
+external fun rcompare(
+    v1: String,
+    v2: String,
+    optionsOrLoose: semver.Options = definedExternally,
+): Int
 
 /**
  * The reverse of compare.
  *
  * Sorts in descending order when passed to `Array.sort()`.
  */
-external fun rcompare(v1: String, v2: SemVer, optionsOrLoose: Boolean = definedExternally): Int
+external fun rcompare(
+    v1: String,
+    v2: SemVer,
+): Int
 
 /**
  * The reverse of compare.
  *
  * Sorts in descending order when passed to `Array.sort()`.
  */
-external fun rcompare(v1: String, v2: SemVer, optionsOrLoose: semver.Options = definedExternally): Int
+external fun rcompare(
+    v1: String,
+    v2: SemVer,
+    optionsOrLoose: Boolean = definedExternally,
+): Int
 
 /**
  * The reverse of compare.
  *
  * Sorts in descending order when passed to `Array.sort()`.
  */
-external fun rcompare(v1: SemVer, v2: String): Int
+external fun rcompare(
+    v1: String,
+    v2: SemVer,
+    optionsOrLoose: semver.Options = definedExternally,
+): Int
 
 /**
  * The reverse of compare.
  *
  * Sorts in descending order when passed to `Array.sort()`.
  */
-external fun rcompare(v1: SemVer, v2: String, optionsOrLoose: Boolean = definedExternally): Int
+external fun rcompare(
+    v1: SemVer,
+    v2: String,
+): Int
 
 /**
  * The reverse of compare.
  *
  * Sorts in descending order when passed to `Array.sort()`.
  */
-external fun rcompare(v1: SemVer, v2: String, optionsOrLoose: semver.Options = definedExternally): Int
+external fun rcompare(
+    v1: SemVer,
+    v2: String,
+    optionsOrLoose: Boolean = definedExternally,
+): Int
 
 /**
  * The reverse of compare.
  *
  * Sorts in descending order when passed to `Array.sort()`.
  */
-external fun rcompare(v1: SemVer, v2: SemVer): Int
+external fun rcompare(
+    v1: SemVer,
+    v2: String,
+    optionsOrLoose: semver.Options = definedExternally,
+): Int
 
 /**
  * The reverse of compare.
  *
  * Sorts in descending order when passed to `Array.sort()`.
  */
-external fun rcompare(v1: SemVer, v2: SemVer, optionsOrLoose: Boolean = definedExternally): Int
+external fun rcompare(
+    v1: SemVer,
+    v2: SemVer,
+): Int
 
 /**
  * The reverse of compare.
  *
  * Sorts in descending order when passed to `Array.sort()`.
  */
-external fun rcompare(v1: SemVer, v2: SemVer, optionsOrLoose: semver.Options = definedExternally): Int
+external fun rcompare(
+    v1: SemVer,
+    v2: SemVer,
+    optionsOrLoose: Boolean = definedExternally,
+): Int
 
-/* export = rcompare; */
+/**
+ * The reverse of compare.
+ *
+ * Sorts in descending order when passed to `Array.sort()`.
+ */
+external fun rcompare(
+    v1: SemVer,
+    v2: SemVer,
+    optionsOrLoose: semver.Options = definedExternally,
+): Int
+
+// export = rcompare;

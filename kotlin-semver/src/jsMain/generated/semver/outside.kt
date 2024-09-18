@@ -4,17 +4,11 @@
 
 package semver
 
-/* import Range = require("../classes/range"); */
+// import Range = require("../classes/range");
 
-/* import SemVer = require("../classes/semver"); */
+// import SemVer = require("../classes/semver");
 
-/* import semver = require("../index"); */
-
-/**
- * Return true if the version is outside the bounds of the range in either the high or low direction.
- * The hilo argument must be either the string '>' or '<'. (This is the function called by gtr and ltr.)
- */
-external fun outside(version: String, range: String, hilo: OutsideHilo): Boolean
+// import semver = require("../index");
 
 /**
  * Return true if the version is outside the bounds of the range in either the high or low direction.
@@ -24,7 +18,6 @@ external fun outside(
     version: String,
     range: String,
     hilo: OutsideHilo,
-    optionsOrLoose: Boolean = definedExternally
 ): Boolean
 
 /**
@@ -35,14 +28,8 @@ external fun outside(
     version: String,
     range: String,
     hilo: OutsideHilo,
-    optionsOrLoose: semver.RangeOptions = definedExternally
+    optionsOrLoose: Boolean = definedExternally,
 ): Boolean
-
-/**
- * Return true if the version is outside the bounds of the range in either the high or low direction.
- * The hilo argument must be either the string '>' or '<'. (This is the function called by gtr and ltr.)
- */
-external fun outside(version: String, range: Range, hilo: OutsideHilo): Boolean
 
 /**
  * Return true if the version is outside the bounds of the range in either the high or low direction.
@@ -50,9 +37,9 @@ external fun outside(version: String, range: Range, hilo: OutsideHilo): Boolean
  */
 external fun outside(
     version: String,
-    range: Range,
+    range: String,
     hilo: OutsideHilo,
-    optionsOrLoose: Boolean = definedExternally
+    optionsOrLoose: semver.RangeOptions = definedExternally,
 ): Boolean
 
 /**
@@ -63,14 +50,29 @@ external fun outside(
     version: String,
     range: Range,
     hilo: OutsideHilo,
-    optionsOrLoose: semver.RangeOptions = definedExternally
 ): Boolean
 
 /**
  * Return true if the version is outside the bounds of the range in either the high or low direction.
  * The hilo argument must be either the string '>' or '<'. (This is the function called by gtr and ltr.)
  */
-external fun outside(version: SemVer, range: String, hilo: OutsideHilo): Boolean
+external fun outside(
+    version: String,
+    range: Range,
+    hilo: OutsideHilo,
+    optionsOrLoose: Boolean = definedExternally,
+): Boolean
+
+/**
+ * Return true if the version is outside the bounds of the range in either the high or low direction.
+ * The hilo argument must be either the string '>' or '<'. (This is the function called by gtr and ltr.)
+ */
+external fun outside(
+    version: String,
+    range: Range,
+    hilo: OutsideHilo,
+    optionsOrLoose: semver.RangeOptions = definedExternally,
+): Boolean
 
 /**
  * Return true if the version is outside the bounds of the range in either the high or low direction.
@@ -80,7 +82,6 @@ external fun outside(
     version: SemVer,
     range: String,
     hilo: OutsideHilo,
-    optionsOrLoose: Boolean = definedExternally
 ): Boolean
 
 /**
@@ -91,14 +92,8 @@ external fun outside(
     version: SemVer,
     range: String,
     hilo: OutsideHilo,
-    optionsOrLoose: semver.RangeOptions = definedExternally
+    optionsOrLoose: Boolean = definedExternally,
 ): Boolean
-
-/**
- * Return true if the version is outside the bounds of the range in either the high or low direction.
- * The hilo argument must be either the string '>' or '<'. (This is the function called by gtr and ltr.)
- */
-external fun outside(version: SemVer, range: Range, hilo: OutsideHilo): Boolean
 
 /**
  * Return true if the version is outside the bounds of the range in either the high or low direction.
@@ -106,9 +101,9 @@ external fun outside(version: SemVer, range: Range, hilo: OutsideHilo): Boolean
  */
 external fun outside(
     version: SemVer,
-    range: Range,
+    range: String,
     hilo: OutsideHilo,
-    optionsOrLoose: Boolean = definedExternally
+    optionsOrLoose: semver.RangeOptions = definedExternally,
 ): Boolean
 
 /**
@@ -119,7 +114,28 @@ external fun outside(
     version: SemVer,
     range: Range,
     hilo: OutsideHilo,
-    optionsOrLoose: semver.RangeOptions = definedExternally
 ): Boolean
 
-/* export = outside; */
+/**
+ * Return true if the version is outside the bounds of the range in either the high or low direction.
+ * The hilo argument must be either the string '>' or '<'. (This is the function called by gtr and ltr.)
+ */
+external fun outside(
+    version: SemVer,
+    range: Range,
+    hilo: OutsideHilo,
+    optionsOrLoose: Boolean = definedExternally,
+): Boolean
+
+/**
+ * Return true if the version is outside the bounds of the range in either the high or low direction.
+ * The hilo argument must be either the string '>' or '<'. (This is the function called by gtr and ltr.)
+ */
+external fun outside(
+    version: SemVer,
+    range: Range,
+    hilo: OutsideHilo,
+    optionsOrLoose: semver.RangeOptions = definedExternally,
+): Boolean
+
+// export = outside;

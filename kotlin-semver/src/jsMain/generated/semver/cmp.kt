@@ -4,16 +4,9 @@
 
 package semver
 
-/* import semver = require("../index"); */
+// import semver = require("../index");
 
-/* import SemVer = require("../classes/semver"); */
-
-/**
- * Pass in a comparison string, and it'll call the corresponding semver comparison function.
- * "===" and "!==" do simple string comparison, but are included for completeness.
- * Throws if an invalid comparison string is provided.
- */
-external fun cmp(v1: String, operator: semver.Operator, v2: String): Boolean
+// import SemVer = require("../classes/semver");
 
 /**
  * Pass in a comparison string, and it'll call the corresponding semver comparison function.
@@ -24,7 +17,6 @@ external fun cmp(
     v1: String,
     operator: semver.Operator,
     v2: String,
-    optionsOrLoose: Boolean = definedExternally
 ): Boolean
 
 /**
@@ -36,15 +28,8 @@ external fun cmp(
     v1: String,
     operator: semver.Operator,
     v2: String,
-    optionsOrLoose: semver.Options = definedExternally
+    optionsOrLoose: Boolean = definedExternally,
 ): Boolean
-
-/**
- * Pass in a comparison string, and it'll call the corresponding semver comparison function.
- * "===" and "!==" do simple string comparison, but are included for completeness.
- * Throws if an invalid comparison string is provided.
- */
-external fun cmp(v1: String, operator: semver.Operator, v2: SemVer): Boolean
 
 /**
  * Pass in a comparison string, and it'll call the corresponding semver comparison function.
@@ -54,8 +39,8 @@ external fun cmp(v1: String, operator: semver.Operator, v2: SemVer): Boolean
 external fun cmp(
     v1: String,
     operator: semver.Operator,
-    v2: SemVer,
-    optionsOrLoose: Boolean = definedExternally
+    v2: String,
+    optionsOrLoose: semver.Options = definedExternally,
 ): Boolean
 
 /**
@@ -67,7 +52,6 @@ external fun cmp(
     v1: String,
     operator: semver.Operator,
     v2: SemVer,
-    optionsOrLoose: semver.Options = definedExternally
 ): Boolean
 
 /**
@@ -75,7 +59,24 @@ external fun cmp(
  * "===" and "!==" do simple string comparison, but are included for completeness.
  * Throws if an invalid comparison string is provided.
  */
-external fun cmp(v1: SemVer, operator: semver.Operator, v2: String): Boolean
+external fun cmp(
+    v1: String,
+    operator: semver.Operator,
+    v2: SemVer,
+    optionsOrLoose: Boolean = definedExternally,
+): Boolean
+
+/**
+ * Pass in a comparison string, and it'll call the corresponding semver comparison function.
+ * "===" and "!==" do simple string comparison, but are included for completeness.
+ * Throws if an invalid comparison string is provided.
+ */
+external fun cmp(
+    v1: String,
+    operator: semver.Operator,
+    v2: SemVer,
+    optionsOrLoose: semver.Options = definedExternally,
+): Boolean
 
 /**
  * Pass in a comparison string, and it'll call the corresponding semver comparison function.
@@ -86,7 +87,6 @@ external fun cmp(
     v1: SemVer,
     operator: semver.Operator,
     v2: String,
-    optionsOrLoose: Boolean = definedExternally
 ): Boolean
 
 /**
@@ -98,15 +98,8 @@ external fun cmp(
     v1: SemVer,
     operator: semver.Operator,
     v2: String,
-    optionsOrLoose: semver.Options = definedExternally
+    optionsOrLoose: Boolean = definedExternally,
 ): Boolean
-
-/**
- * Pass in a comparison string, and it'll call the corresponding semver comparison function.
- * "===" and "!==" do simple string comparison, but are included for completeness.
- * Throws if an invalid comparison string is provided.
- */
-external fun cmp(v1: SemVer, operator: semver.Operator, v2: SemVer): Boolean
 
 /**
  * Pass in a comparison string, and it'll call the corresponding semver comparison function.
@@ -116,8 +109,8 @@ external fun cmp(v1: SemVer, operator: semver.Operator, v2: SemVer): Boolean
 external fun cmp(
     v1: SemVer,
     operator: semver.Operator,
-    v2: SemVer,
-    optionsOrLoose: Boolean = definedExternally
+    v2: String,
+    optionsOrLoose: semver.Options = definedExternally,
 ): Boolean
 
 /**
@@ -129,7 +122,30 @@ external fun cmp(
     v1: SemVer,
     operator: semver.Operator,
     v2: SemVer,
-    optionsOrLoose: semver.Options = definedExternally
 ): Boolean
 
-/* export = cmp; */
+/**
+ * Pass in a comparison string, and it'll call the corresponding semver comparison function.
+ * "===" and "!==" do simple string comparison, but are included for completeness.
+ * Throws if an invalid comparison string is provided.
+ */
+external fun cmp(
+    v1: SemVer,
+    operator: semver.Operator,
+    v2: SemVer,
+    optionsOrLoose: Boolean = definedExternally,
+): Boolean
+
+/**
+ * Pass in a comparison string, and it'll call the corresponding semver comparison function.
+ * "===" and "!==" do simple string comparison, but are included for completeness.
+ * Throws if an invalid comparison string is provided.
+ */
+external fun cmp(
+    v1: SemVer,
+    operator: semver.Operator,
+    v2: SemVer,
+    optionsOrLoose: semver.Options = definedExternally,
+): Boolean
+
+// export = cmp;

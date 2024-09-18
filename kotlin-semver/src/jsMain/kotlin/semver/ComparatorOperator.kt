@@ -5,21 +5,21 @@ import seskar.js.JsValue
 sealed external interface ComparatorOperator {
     companion object {
         @JsValue("")
-        val EMPTY: ComparatorOperator
+        val empty: ComparatorOperator
 
         @JsValue("=")
-        val EQUAL: ComparatorOperator
+        val equal: ComparatorOperator
 
         @JsValue("<")
-        val LT: ComparatorOperator
+        val less: ComparatorOperator
 
         @JsValue(">")
-        val GT: ComparatorOperator
+        val greater: ComparatorOperator
 
         @JsValue("<=")
-        val LTE: ComparatorOperator
+        val lessEqual: ComparatorOperator
 
         @JsValue(">=")
-        val GTE: ComparatorOperator
+        val greaterEqual: ComparatorOperator
     }
 }

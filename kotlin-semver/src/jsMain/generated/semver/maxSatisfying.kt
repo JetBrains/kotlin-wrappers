@@ -4,11 +4,11 @@
 
 package semver
 
-/* import Range = require("../classes/range"); */
+// import Range = require("../classes/range");
 
-/* import SemVer = require("../classes/semver"); */
+// import SemVer = require("../classes/semver");
 
-/* import semver = require("../index"); */
+// import semver = require("../index");
 
 /**
  * Return the highest version in the list that satisfies the range, or null if none of them do.
@@ -21,7 +21,7 @@ external fun <T : Any /* string | SemVer */> maxSatisfying(versions: js.array.Re
 external fun <T : Any /* string | SemVer */> maxSatisfying(
     versions: js.array.ReadonlyArray<T>,
     range: String,
-    optionsOrLoose: Boolean = definedExternally
+    optionsOrLoose: Boolean = definedExternally,
 ): T?
 
 /**
@@ -30,7 +30,7 @@ external fun <T : Any /* string | SemVer */> maxSatisfying(
 external fun <T : Any /* string | SemVer */> maxSatisfying(
     versions: js.array.ReadonlyArray<T>,
     range: String,
-    optionsOrLoose: semver.RangeOptions = definedExternally
+    optionsOrLoose: semver.RangeOptions = definedExternally,
 ): T?
 
 /**
@@ -44,7 +44,7 @@ external fun <T : Any /* string | SemVer */> maxSatisfying(versions: js.array.Re
 external fun <T : Any /* string | SemVer */> maxSatisfying(
     versions: js.array.ReadonlyArray<T>,
     range: Range,
-    optionsOrLoose: Boolean = definedExternally
+    optionsOrLoose: Boolean = definedExternally,
 ): T?
 
 /**
@@ -53,7 +53,7 @@ external fun <T : Any /* string | SemVer */> maxSatisfying(
 external fun <T : Any /* string | SemVer */> maxSatisfying(
     versions: js.array.ReadonlyArray<T>,
     range: Range,
-    optionsOrLoose: semver.RangeOptions = definedExternally
+    optionsOrLoose: semver.RangeOptions = definedExternally,
 ): T?
 
-/* export = maxSatisfying; */
+// export = maxSatisfying;

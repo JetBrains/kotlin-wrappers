@@ -4,19 +4,9 @@
 
 package semver
 
-/* import Range = require("../classes/range"); */
+// import Range = require("../classes/range");
 
-/* import semver = require("../index"); */
-
-/**
- * Return true if any of the ranges comparators intersect
- */
-external fun intersects(range1: String, range2: String): Boolean
-
-/**
- * Return true if any of the ranges comparators intersect
- */
-external fun intersects(range1: String, range2: String, optionsOrLoose: Boolean = definedExternally): Boolean
+// import semver = require("../index");
 
 /**
  * Return true if any of the ranges comparators intersect
@@ -24,52 +14,102 @@ external fun intersects(range1: String, range2: String, optionsOrLoose: Boolean 
 external fun intersects(
     range1: String,
     range2: String,
-    optionsOrLoose: semver.RangeOptions = definedExternally
 ): Boolean
 
 /**
  * Return true if any of the ranges comparators intersect
  */
-external fun intersects(range1: String, range2: Range): Boolean
+external fun intersects(
+    range1: String,
+    range2: String,
+    optionsOrLoose: Boolean = definedExternally,
+): Boolean
 
 /**
  * Return true if any of the ranges comparators intersect
  */
-external fun intersects(range1: String, range2: Range, optionsOrLoose: Boolean = definedExternally): Boolean
+external fun intersects(
+    range1: String,
+    range2: String,
+    optionsOrLoose: semver.RangeOptions = definedExternally,
+): Boolean
 
 /**
  * Return true if any of the ranges comparators intersect
  */
-external fun intersects(range1: String, range2: Range, optionsOrLoose: semver.RangeOptions = definedExternally): Boolean
+external fun intersects(
+    range1: String,
+    range2: Range,
+): Boolean
 
 /**
  * Return true if any of the ranges comparators intersect
  */
-external fun intersects(range1: Range, range2: String): Boolean
+external fun intersects(
+    range1: String,
+    range2: Range,
+    optionsOrLoose: Boolean = definedExternally,
+): Boolean
 
 /**
  * Return true if any of the ranges comparators intersect
  */
-external fun intersects(range1: Range, range2: String, optionsOrLoose: Boolean = definedExternally): Boolean
+external fun intersects(
+    range1: String,
+    range2: Range,
+    optionsOrLoose: semver.RangeOptions = definedExternally,
+): Boolean
 
 /**
  * Return true if any of the ranges comparators intersect
  */
-external fun intersects(range1: Range, range2: String, optionsOrLoose: semver.RangeOptions = definedExternally): Boolean
+external fun intersects(
+    range1: Range,
+    range2: String,
+): Boolean
 
 /**
  * Return true if any of the ranges comparators intersect
  */
-external fun intersects(range1: Range, range2: Range): Boolean
+external fun intersects(
+    range1: Range,
+    range2: String,
+    optionsOrLoose: Boolean = definedExternally,
+): Boolean
 
 /**
  * Return true if any of the ranges comparators intersect
  */
-external fun intersects(range1: Range, range2: Range, optionsOrLoose: Boolean = definedExternally): Boolean
+external fun intersects(
+    range1: Range,
+    range2: String,
+    optionsOrLoose: semver.RangeOptions = definedExternally,
+): Boolean
 
 /**
  * Return true if any of the ranges comparators intersect
  */
-external fun intersects(range1: Range, range2: Range, optionsOrLoose: semver.RangeOptions = definedExternally): Boolean
+external fun intersects(
+    range1: Range,
+    range2: Range,
+): Boolean
 
-/* export = intersects; */
+/**
+ * Return true if any of the ranges comparators intersect
+ */
+external fun intersects(
+    range1: Range,
+    range2: Range,
+    optionsOrLoose: Boolean = definedExternally,
+): Boolean
+
+/**
+ * Return true if any of the ranges comparators intersect
+ */
+external fun intersects(
+    range1: Range,
+    range2: Range,
+    optionsOrLoose: semver.RangeOptions = definedExternally,
+): Boolean
+
+// export = intersects;

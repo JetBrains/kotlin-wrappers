@@ -4,9 +4,9 @@
 
 package semver
 
-/* import Range = require("../classes/range"); */
+// import Range = require("../classes/range");
 
-/* import semver = require("../index"); */
+// import semver = require("../index");
 
 /**
  * Mostly just for testing and legacy API reasons
@@ -18,7 +18,7 @@ external fun toComparators(range: String): js.array.ReadonlyArray<js.array.Reado
  */
 external fun toComparators(
     range: String,
-    optionsOrLoose: Boolean = definedExternally
+    optionsOrLoose: Boolean = definedExternally,
 ): js.array.ReadonlyArray<js.array.ReadonlyArray<String>>
 
 /**
@@ -26,7 +26,7 @@ external fun toComparators(
  */
 external fun toComparators(
     range: String,
-    optionsOrLoose: semver.Options = definedExternally
+    optionsOrLoose: semver.Options = definedExternally,
 ): js.array.ReadonlyArray<js.array.ReadonlyArray<String>>
 
 /**
@@ -39,7 +39,7 @@ external fun toComparators(range: Range): js.array.ReadonlyArray<js.array.Readon
  */
 external fun toComparators(
     range: Range,
-    optionsOrLoose: Boolean = definedExternally
+    optionsOrLoose: Boolean = definedExternally,
 ): js.array.ReadonlyArray<js.array.ReadonlyArray<String>>
 
 /**
@@ -47,7 +47,7 @@ external fun toComparators(
  */
 external fun toComparators(
     range: Range,
-    optionsOrLoose: semver.Options = definedExternally
+    optionsOrLoose: semver.Options = definedExternally,
 ): js.array.ReadonlyArray<js.array.ReadonlyArray<String>>
 
-/* export = toComparators; */
+// export = toComparators;
