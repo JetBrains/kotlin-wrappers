@@ -1,0 +1,31 @@
+{
+    "input": "<nodeModules>/@types/semver/**/*.d.ts",
+    "ignoreInput": [
+        "<nodeModules>/@types/semver/internals/*"
+    ],
+    "output": "src/jsMain/generated",
+    "ignoreOutput": [
+        "**/semver/range.kt",
+        "**/semver/comparator.kt",
+        "**/semver/semver.kt",
+        "**/semver/ComparatorOperator.kt",
+        "**/semver/OutsideHilo.kt",
+        "**/semver/Operator.kt",
+        "**/semver/preload.kt",
+        "**/semver/valid.kt"
+    ],
+    "libraryName": "semver",
+    "libraryNameOutputPrefix": true,
+    "granularity": "top-level",
+    "namespaceStrategy": {
+        "inc": "ignore"
+    },
+    "packageNameMapper": {
+        "^.*/([^/]+\\.kt)$": "semver/$1"
+    },
+    "importInjector": {
+        "^semver/(Range|SemVer|prerelease)\\.kt$": [
+            "js.array.ReadonlyArray"
+        ]
+    }
+}
