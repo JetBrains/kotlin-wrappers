@@ -5,9 +5,9 @@ import seskar.js.JsValue
 sealed external interface OutsideHilo {
     companion object {
         @JsValue(">")
-        val GT: OutsideHilo
+        val greater: OutsideHilo
 
         @JsValue("<")
-        val LT: OutsideHilo
+        val less: OutsideHilo
     }
 }
