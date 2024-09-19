@@ -110,6 +110,9 @@ include("kotlin-muix-tree-view")
 // Kotlin/JS: Node.js wrappers
 include("kotlin-node")
 
+// Kotlin/JS: null-writable wrappers
+include("kotlin-null-writable")
+
 // Kotlin/JS: Popper Core wrappers
 include("kotlin-popperjs-core")
 
