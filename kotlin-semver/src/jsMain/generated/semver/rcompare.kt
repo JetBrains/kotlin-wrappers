@@ -37,7 +37,7 @@ external fun rcompare(
 external fun rcompare(
     v1: String,
     v2: String,
-    optionsOrLoose: semver.Options = definedExternally,
+    optionsOrLoose: Options = definedExternally,
 ): Int
 
 /**
@@ -69,7 +69,7 @@ external fun rcompare(
 external fun rcompare(
     v1: String,
     v2: SemVer,
-    optionsOrLoose: semver.Options = definedExternally,
+    optionsOrLoose: Options = definedExternally,
 ): Int
 
 /**
@@ -101,7 +101,7 @@ external fun rcompare(
 external fun rcompare(
     v1: SemVer,
     v2: String,
-    optionsOrLoose: semver.Options = definedExternally,
+    optionsOrLoose: Options = definedExternally,
 ): Int
 
 /**
@@ -133,7 +133,7 @@ external fun rcompare(
 external fun rcompare(
     v1: SemVer,
     v2: SemVer,
-    optionsOrLoose: semver.Options = definedExternally,
+    optionsOrLoose: Options = definedExternally,
 ): Int
 
 // export = rcompare;

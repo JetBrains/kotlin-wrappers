@@ -26,7 +26,7 @@ external fun toComparators(
  */
 external fun toComparators(
     range: String,
-    optionsOrLoose: semver.Options = definedExternally,
+    optionsOrLoose: Options = definedExternally,
 ): js.array.ReadonlyArray<js.array.ReadonlyArray<String>>
 
 /**
@@ -47,7 +47,7 @@ external fun toComparators(
  */
 external fun toComparators(
     range: Range,
-    optionsOrLoose: semver.Options = definedExternally,
+    optionsOrLoose: Options = definedExternally,
 ): js.array.ReadonlyArray<js.array.ReadonlyArray<String>>
 
 // export = toComparators;

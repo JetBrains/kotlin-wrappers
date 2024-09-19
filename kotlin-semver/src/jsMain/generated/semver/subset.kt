@@ -14,7 +14,7 @@ package semver
 external fun subset(
     sub: String,
     dom: String,
-    options: semver.RangeOptions = definedExternally,
+    options: RangeOptions = definedExternally,
 ): Boolean
 
 /**
@@ -23,7 +23,7 @@ external fun subset(
 external fun subset(
     sub: String,
     dom: Range,
-    options: semver.RangeOptions = definedExternally,
+    options: RangeOptions = definedExternally,
 ): Boolean
 
 /**
@@ -32,7 +32,7 @@ external fun subset(
 external fun subset(
     sub: Range,
     dom: String,
-    options: semver.RangeOptions = definedExternally,
+    options: RangeOptions = definedExternally,
 ): Boolean
 
 /**
@@ -41,7 +41,7 @@ external fun subset(
 external fun subset(
     sub: Range,
     dom: Range,
-    options: semver.RangeOptions = definedExternally,
+    options: RangeOptions = definedExternally,
 ): Boolean
 
 // export = subset;

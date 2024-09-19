@@ -15,7 +15,7 @@ package semver
  */
 external fun cmp(
     v1: String,
-    operator: semver.Operator,
+    operator: Operator,
     v2: String,
 ): Boolean
 
@@ -26,7 +26,7 @@ external fun cmp(
  */
 external fun cmp(
     v1: String,
-    operator: semver.Operator,
+    operator: Operator,
     v2: String,
     optionsOrLoose: Boolean = definedExternally,
 ): Boolean
@@ -38,9 +38,9 @@ external fun cmp(
  */
 external fun cmp(
     v1: String,
-    operator: semver.Operator,
+    operator: Operator,
     v2: String,
-    optionsOrLoose: semver.Options = definedExternally,
+    optionsOrLoose: Options = definedExternally,
 ): Boolean
 
 /**
@@ -50,7 +50,7 @@ external fun cmp(
  */
 external fun cmp(
     v1: String,
-    operator: semver.Operator,
+    operator: Operator,
     v2: SemVer,
 ): Boolean
 
@@ -61,7 +61,7 @@ external fun cmp(
  */
 external fun cmp(
     v1: String,
-    operator: semver.Operator,
+    operator: Operator,
     v2: SemVer,
     optionsOrLoose: Boolean = definedExternally,
 ): Boolean
@@ -73,9 +73,9 @@ external fun cmp(
  */
 external fun cmp(
     v1: String,
-    operator: semver.Operator,
+    operator: Operator,
     v2: SemVer,
-    optionsOrLoose: semver.Options = definedExternally,
+    optionsOrLoose: Options = definedExternally,
 ): Boolean
 
 /**
@@ -85,7 +85,7 @@ external fun cmp(
  */
 external fun cmp(
     v1: SemVer,
-    operator: semver.Operator,
+    operator: Operator,
     v2: String,
 ): Boolean
 
@@ -96,7 +96,7 @@ external fun cmp(
  */
 external fun cmp(
     v1: SemVer,
-    operator: semver.Operator,
+    operator: Operator,
     v2: String,
     optionsOrLoose: Boolean = definedExternally,
 ): Boolean
@@ -108,9 +108,9 @@ external fun cmp(
  */
 external fun cmp(
     v1: SemVer,
-    operator: semver.Operator,
+    operator: Operator,
     v2: String,
-    optionsOrLoose: semver.Options = definedExternally,
+    optionsOrLoose: Options = definedExternally,
 ): Boolean
 
 /**
@@ -120,7 +120,7 @@ external fun cmp(
  */
 external fun cmp(
     v1: SemVer,
-    operator: semver.Operator,
+    operator: Operator,
     v2: SemVer,
 ): Boolean
 
@@ -131,7 +131,7 @@ external fun cmp(
  */
 external fun cmp(
     v1: SemVer,
-    operator: semver.Operator,
+    operator: Operator,
     v2: SemVer,
     optionsOrLoose: Boolean = definedExternally,
 ): Boolean
@@ -143,9 +143,9 @@ external fun cmp(
  */
 external fun cmp(
     v1: SemVer,
-    operator: semver.Operator,
+    operator: Operator,
     v2: SemVer,
-    optionsOrLoose: semver.Options = definedExternally,
+    optionsOrLoose: Options = definedExternally,
 ): Boolean
 
 // export = cmp;

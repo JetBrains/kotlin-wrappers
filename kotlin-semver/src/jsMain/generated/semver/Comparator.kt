@@ -9,19 +9,19 @@ external class Comparator {
 
     constructor (comp: String, optionsOrLoose: Boolean = definedExternally)
 
-    constructor (comp: String, optionsOrLoose: semver.Options = definedExternally)
+    constructor (comp: String, optionsOrLoose: Options = definedExternally)
 
     constructor (comp: Comparator)
 
     constructor (comp: Comparator, optionsOrLoose: Boolean = definedExternally)
 
-    constructor (comp: Comparator, optionsOrLoose: semver.Options = definedExternally)
+    constructor (comp: Comparator, optionsOrLoose: Options = definedExternally)
 
     var semver: SemVer
     var operator: ComparatorOperator
     var value: String
     var loose: Boolean
-    var options: semver.Options
+    var options: Options
 
     fun parse(comp: String): Unit
 
@@ -38,6 +38,6 @@ external class Comparator {
 
     fun intersects(
         comp: Comparator,
-        optionsOrLoose: semver.Options = definedExternally,
+        optionsOrLoose: Options = definedExternally,
     ): Boolean
 }

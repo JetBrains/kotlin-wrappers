@@ -26,7 +26,7 @@ external fun <T : Any /* string | SemVer */> sort(
  */
 external fun <T : Any /* string | SemVer */> sort(
     list: js.array.ReadonlyArray<T>,
-    optionsOrLoose: semver.Options = definedExternally,
+    optionsOrLoose: Options = definedExternally,
 ): js.array.ReadonlyArray<T>
 
 // export = sort;

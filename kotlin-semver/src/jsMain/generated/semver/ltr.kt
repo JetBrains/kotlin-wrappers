@@ -33,7 +33,7 @@ external fun ltr(
 external fun ltr(
     version: String,
     range: String,
-    optionsOrLoose: semver.RangeOptions = definedExternally,
+    optionsOrLoose: RangeOptions = definedExternally,
 ): Boolean
 
 /**
@@ -59,7 +59,7 @@ external fun ltr(
 external fun ltr(
     version: String,
     range: Range,
-    optionsOrLoose: semver.RangeOptions = definedExternally,
+    optionsOrLoose: RangeOptions = definedExternally,
 ): Boolean
 
 /**
@@ -85,7 +85,7 @@ external fun ltr(
 external fun ltr(
     version: SemVer,
     range: String,
-    optionsOrLoose: semver.RangeOptions = definedExternally,
+    optionsOrLoose: RangeOptions = definedExternally,
 ): Boolean
 
 /**
@@ -111,7 +111,7 @@ external fun ltr(
 external fun ltr(
     version: SemVer,
     range: Range,
-    optionsOrLoose: semver.RangeOptions = definedExternally,
+    optionsOrLoose: RangeOptions = definedExternally,
 ): Boolean
 
 // export = ltr;
