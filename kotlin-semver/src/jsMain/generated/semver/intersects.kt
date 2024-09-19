@@ -31,7 +31,7 @@ external fun intersects(
 external fun intersects(
     range1: String,
     range2: String,
-    optionsOrLoose: semver.RangeOptions = definedExternally,
+    optionsOrLoose: RangeOptions = definedExternally,
 ): Boolean
 
 /**
@@ -57,7 +57,7 @@ external fun intersects(
 external fun intersects(
     range1: String,
     range2: Range,
-    optionsOrLoose: semver.RangeOptions = definedExternally,
+    optionsOrLoose: RangeOptions = definedExternally,
 ): Boolean
 
 /**
@@ -83,7 +83,7 @@ external fun intersects(
 external fun intersects(
     range1: Range,
     range2: String,
-    optionsOrLoose: semver.RangeOptions = definedExternally,
+    optionsOrLoose: RangeOptions = definedExternally,
 ): Boolean
 
 /**
@@ -109,7 +109,7 @@ external fun intersects(
 external fun intersects(
     range1: Range,
     range2: Range,
-    optionsOrLoose: semver.RangeOptions = definedExternally,
+    optionsOrLoose: RangeOptions = definedExternally,
 ): Boolean
 
 // export = intersects;

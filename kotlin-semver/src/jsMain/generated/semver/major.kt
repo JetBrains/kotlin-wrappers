@@ -26,7 +26,7 @@ external fun major(
  */
 external fun major(
     version: String,
-    optionsOrLoose: semver.Options = definedExternally,
+    optionsOrLoose: Options = definedExternally,
 ): Int
 
 /**
@@ -47,7 +47,7 @@ external fun major(
  */
 external fun major(
     version: SemVer,
-    optionsOrLoose: semver.Options = definedExternally,
+    optionsOrLoose: Options = definedExternally,
 ): Int
 
 // export = major;

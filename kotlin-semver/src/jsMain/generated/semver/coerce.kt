@@ -13,7 +13,7 @@ package semver
  */
 external fun coerce(
     version: String?,
-    options: semver.CoerceOptions = definedExternally,
+    options: CoerceOptions = definedExternally,
 ): SemVer?
 
 /**
@@ -21,7 +21,7 @@ external fun coerce(
  */
 external fun coerce(
     version: Number?,
-    options: semver.CoerceOptions = definedExternally,
+    options: CoerceOptions = definedExternally,
 ): SemVer?
 
 /**
@@ -29,7 +29,7 @@ external fun coerce(
  */
 external fun coerce(
     version: SemVer?,
-    options: semver.CoerceOptions = definedExternally,
+    options: CoerceOptions = definedExternally,
 ): SemVer?
 
 // export = coerce;

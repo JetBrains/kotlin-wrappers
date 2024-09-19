@@ -11,17 +11,17 @@ external class SemVer {
 
     constructor (version: String, optionsOrLoose: Boolean = definedExternally)
 
-    constructor (version: String, optionsOrLoose: semver.RangeOptions = definedExternally)
+    constructor (version: String, optionsOrLoose: RangeOptions = definedExternally)
 
     constructor (version: SemVer)
 
     constructor (version: SemVer, optionsOrLoose: Boolean = definedExternally)
 
-    constructor (version: SemVer, optionsOrLoose: semver.RangeOptions = definedExternally)
+    constructor (version: SemVer, optionsOrLoose: RangeOptions = definedExternally)
 
     var raw: String
     var loose: Boolean
-    var options: semver.Options
+    var options: Options
 
     fun format(): String
 
@@ -31,7 +31,7 @@ external class SemVer {
     var minor: Int
     var patch: Int
     var version: String
-    var build: js.array.ReadonlyArray<String>
+    var build: ReadonlyArray<String>
     var prerelease: ReadonlyArray<Any /* string | number */>
 
     /**
@@ -115,7 +115,7 @@ external class SemVer {
     fun compareBuild(other: SemVer): Int
 
     fun inc(
-        release: semver.ReleaseType,
+        release: ReleaseType,
         identifier: String = definedExternally,
     ): SemVer
 

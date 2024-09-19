@@ -28,7 +28,7 @@ external fun prerelease(
  */
 external fun prerelease(
     version: String,
-    optionsOrLoose: semver.Options = definedExternally,
+    optionsOrLoose: Options = definedExternally,
 ): ReadonlyArray<Any /* string | number */>?
 
 /**
@@ -49,7 +49,7 @@ external fun prerelease(
  */
 external fun prerelease(
     version: SemVer,
-    optionsOrLoose: semver.Options = definedExternally,
+    optionsOrLoose: Options = definedExternally,
 ): ReadonlyArray<Any /* string | number */>?
 
 // export = prerelease;

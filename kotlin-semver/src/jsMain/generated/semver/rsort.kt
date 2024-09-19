@@ -26,7 +26,7 @@ external fun <T : Any /* string | SemVer */> rsort(
  */
 external fun <T : Any /* string | SemVer */> rsort(
     list: js.array.ReadonlyArray<T>,
-    optionsOrLoose: semver.Options = definedExternally,
+    optionsOrLoose: Options = definedExternally,
 ): js.array.ReadonlyArray<T>
 
 // export = rsort;

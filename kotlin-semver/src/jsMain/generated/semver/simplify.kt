@@ -19,7 +19,7 @@ package semver
 external fun simplify(
     ranges: js.array.ReadonlyArray<String>,
     range: String,
-    options: semver.Options = definedExternally,
+    options: Options = definedExternally,
 ): Any // string | Range
 
 /**
@@ -33,7 +33,7 @@ external fun simplify(
 external fun simplify(
     ranges: js.array.ReadonlyArray<String>,
     range: Range,
-    options: semver.Options = definedExternally,
+    options: Options = definedExternally,
 ): Any // string | Range
 
 // export = simplify;

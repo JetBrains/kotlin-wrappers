@@ -24,7 +24,7 @@ sealed external interface IdentifierBase {
  */
 external fun inc(
     version: String,
-    release: semver.ReleaseType,
+    release: ReleaseType,
 ): String?
 
 /**
@@ -32,7 +32,7 @@ external fun inc(
  */
 external fun inc(
     version: String,
-    release: semver.ReleaseType,
+    release: ReleaseType,
     optionsOrLoose: Boolean = definedExternally,
     identifier: String = definedExternally,
 ): String?
@@ -42,8 +42,8 @@ external fun inc(
  */
 external fun inc(
     version: String,
-    release: semver.ReleaseType,
-    optionsOrLoose: semver.Options = definedExternally,
+    release: ReleaseType,
+    optionsOrLoose: Options = definedExternally,
     identifier: String = definedExternally,
 ): String?
 
@@ -52,7 +52,7 @@ external fun inc(
  */
 external fun inc(
     version: SemVer,
-    release: semver.ReleaseType,
+    release: ReleaseType,
 ): String?
 
 /**
@@ -60,7 +60,7 @@ external fun inc(
  */
 external fun inc(
     version: SemVer,
-    release: semver.ReleaseType,
+    release: ReleaseType,
     optionsOrLoose: Boolean = definedExternally,
     identifier: String = definedExternally,
 ): String?
@@ -70,35 +70,35 @@ external fun inc(
  */
 external fun inc(
     version: SemVer,
-    release: semver.ReleaseType,
-    optionsOrLoose: semver.Options = definedExternally,
+    release: ReleaseType,
+    optionsOrLoose: Options = definedExternally,
     identifier: String = definedExternally,
 ): String?
 
 external fun inc(
     version: String,
-    release: semver.ReleaseType,
+    release: ReleaseType,
     identifier: String = definedExternally,
     identifierBase: IdentifierBase = definedExternally,
 ): String?
 
 external fun inc(
     version: String,
-    release: semver.ReleaseType,
+    release: ReleaseType,
     identifier: String = definedExternally,
     identifierBase: Boolean /* false */ = definedExternally,
 ): String?
 
 external fun inc(
     version: SemVer,
-    release: semver.ReleaseType,
+    release: ReleaseType,
     identifier: String = definedExternally,
     identifierBase: IdentifierBase = definedExternally,
 ): String?
 
 external fun inc(
     version: SemVer,
-    release: semver.ReleaseType,
+    release: ReleaseType,
     identifier: String = definedExternally,
     identifierBase: Boolean /* false */ = definedExternally,
 ): String?

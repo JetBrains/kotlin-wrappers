@@ -31,7 +31,7 @@ external fun neq(
 external fun neq(
     v1: String,
     v2: String,
-    optionsOrLoose: semver.Options = definedExternally,
+    optionsOrLoose: Options = definedExternally,
 ): Boolean
 
 /**
@@ -57,7 +57,7 @@ external fun neq(
 external fun neq(
     v1: String,
     v2: SemVer,
-    optionsOrLoose: semver.Options = definedExternally,
+    optionsOrLoose: Options = definedExternally,
 ): Boolean
 
 /**
@@ -83,7 +83,7 @@ external fun neq(
 external fun neq(
     v1: SemVer,
     v2: String,
-    optionsOrLoose: semver.Options = definedExternally,
+    optionsOrLoose: Options = definedExternally,
 ): Boolean
 
 /**
@@ -109,7 +109,7 @@ external fun neq(
 external fun neq(
     v1: SemVer,
     v2: SemVer,
-    optionsOrLoose: semver.Options = definedExternally,
+    optionsOrLoose: Options = definedExternally,
 ): Boolean
 
 // export = neq;

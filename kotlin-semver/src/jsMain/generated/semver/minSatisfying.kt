@@ -30,7 +30,7 @@ external fun <T : Any /* string | SemVer */> minSatisfying(
 external fun <T : Any /* string | SemVer */> minSatisfying(
     versions: js.array.ReadonlyArray<T>,
     range: String,
-    optionsOrLoose: semver.RangeOptions = definedExternally,
+    optionsOrLoose: RangeOptions = definedExternally,
 ): T?
 
 /**
@@ -53,7 +53,7 @@ external fun <T : Any /* string | SemVer */> minSatisfying(
 external fun <T : Any /* string | SemVer */> minSatisfying(
     versions: js.array.ReadonlyArray<T>,
     range: Range,
-    optionsOrLoose: semver.RangeOptions = definedExternally,
+    optionsOrLoose: RangeOptions = definedExternally,
 ): T?
 
 // export = minSatisfying;

@@ -22,7 +22,7 @@ external fun validRange(
  */
 external fun validRange(
     range: String?,
-    optionsOrLoose: semver.RangeOptions = definedExternally,
+    optionsOrLoose: RangeOptions = definedExternally,
 ): String?
 
 /**
@@ -43,5 +43,5 @@ external fun validRange(
  */
 external fun validRange(
     range: Range?,
-    optionsOrLoose: semver.RangeOptions = definedExternally,
+    optionsOrLoose: RangeOptions = definedExternally,
 ): String?

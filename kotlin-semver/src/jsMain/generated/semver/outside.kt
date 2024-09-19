@@ -39,7 +39,7 @@ external fun outside(
     version: String,
     range: String,
     hilo: OutsideHilo,
-    optionsOrLoose: semver.RangeOptions = definedExternally,
+    optionsOrLoose: RangeOptions = definedExternally,
 ): Boolean
 
 /**
@@ -71,7 +71,7 @@ external fun outside(
     version: String,
     range: Range,
     hilo: OutsideHilo,
-    optionsOrLoose: semver.RangeOptions = definedExternally,
+    optionsOrLoose: RangeOptions = definedExternally,
 ): Boolean
 
 /**
@@ -103,7 +103,7 @@ external fun outside(
     version: SemVer,
     range: String,
     hilo: OutsideHilo,
-    optionsOrLoose: semver.RangeOptions = definedExternally,
+    optionsOrLoose: RangeOptions = definedExternally,
 ): Boolean
 
 /**
@@ -135,7 +135,7 @@ external fun outside(
     version: SemVer,
     range: Range,
     hilo: OutsideHilo,
-    optionsOrLoose: semver.RangeOptions = definedExternally,
+    optionsOrLoose: RangeOptions = definedExternally,
 ): Boolean
 
 // export = outside;

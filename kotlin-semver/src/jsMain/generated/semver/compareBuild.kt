@@ -58,7 +58,7 @@ external fun compareBuild(
 external fun compareBuild(
     a: String,
     b: String,
-    optionsOrLoose: semver.Options = definedExternally,
+    optionsOrLoose: Options = definedExternally,
 ): Int
 
 /**
@@ -111,7 +111,7 @@ external fun compareBuild(
 external fun compareBuild(
     a: String,
     b: SemVer,
-    optionsOrLoose: semver.Options = definedExternally,
+    optionsOrLoose: Options = definedExternally,
 ): Int
 
 /**
@@ -164,7 +164,7 @@ external fun compareBuild(
 external fun compareBuild(
     a: SemVer,
     b: String,
-    optionsOrLoose: semver.Options = definedExternally,
+    optionsOrLoose: Options = definedExternally,
 ): Int
 
 /**
@@ -217,7 +217,7 @@ external fun compareBuild(
 external fun compareBuild(
     a: SemVer,
     b: SemVer,
-    optionsOrLoose: semver.Options = definedExternally,
+    optionsOrLoose: Options = definedExternally,
 ): Int
 
 // export = compareBuild;

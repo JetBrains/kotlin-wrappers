@@ -24,7 +24,7 @@ external fun clean(
  */
 external fun clean(
     version: String,
-    optionsOrLoose: semver.Options = definedExternally,
+    optionsOrLoose: Options = definedExternally,
 ): String?
 
 // export = clean;

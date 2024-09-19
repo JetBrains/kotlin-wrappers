@@ -26,7 +26,7 @@ external fun patch(
  */
 external fun patch(
     version: String,
-    optionsOrLoose: semver.Options = definedExternally,
+    optionsOrLoose: Options = definedExternally,
 ): Int
 
 /**
@@ -47,7 +47,7 @@ external fun patch(
  */
 external fun patch(
     version: SemVer,
-    optionsOrLoose: semver.Options = definedExternally,
+    optionsOrLoose: Options = definedExternally,
 ): Int
 
 // export = patch;

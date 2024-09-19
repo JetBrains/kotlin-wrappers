@@ -28,7 +28,7 @@ external fun minVersion(
  */
 external fun minVersion(
     range: String,
-    optionsOrLoose: semver.Options = definedExternally,
+    optionsOrLoose: Options = definedExternally,
 ): SemVer?
 
 /**
@@ -49,7 +49,7 @@ external fun minVersion(
  */
 external fun minVersion(
     range: Range,
-    optionsOrLoose: semver.Options = definedExternally,
+    optionsOrLoose: Options = definedExternally,
 ): SemVer?
 
 // export = minVersion;
