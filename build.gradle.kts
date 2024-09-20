@@ -1,6 +1,5 @@
 plugins {
     `tools-conventions`
-    `npm-conventions`
 }
 
 tasks.wrapper {
