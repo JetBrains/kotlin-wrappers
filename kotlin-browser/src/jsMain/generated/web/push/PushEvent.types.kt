@@ -5,8 +5,7 @@ package web.push
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external class PushEventTypes :
-    PushEventTypes_deprecated {
+sealed external class PushEventTypes {
 
     @JsValue("push")
     val PUSH: EventType<PushEvent>

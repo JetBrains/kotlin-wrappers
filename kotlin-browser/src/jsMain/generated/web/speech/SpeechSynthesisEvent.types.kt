@@ -5,8 +5,7 @@ package web.speech
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external class SpeechSynthesisEventTypes :
-    SpeechSynthesisEventTypes_deprecated {
+sealed external class SpeechSynthesisEventTypes {
 
     @JsValue("boundary")
     val BOUNDARY: EventType<SpeechSynthesisEvent>

@@ -5,8 +5,7 @@ package web.cssom
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external class TransitionEventTypes :
-    TransitionEventTypes_deprecated {
+sealed external class TransitionEventTypes {
 
     @JsValue("transitioncancel")
     val TRANSITION_CANCEL: EventType<TransitionEvent>

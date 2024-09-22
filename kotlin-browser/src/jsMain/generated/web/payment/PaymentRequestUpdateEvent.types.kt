@@ -5,8 +5,7 @@ package web.payment
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external class PaymentRequestUpdateEventTypes :
-    PaymentRequestUpdateEventTypes_deprecated {
+sealed external class PaymentRequestUpdateEventTypes {
 
     @JsValue("payerdetailchange")
     val PAYER_DETAIL_CHANGE: EventType<PaymentRequestUpdateEvent>

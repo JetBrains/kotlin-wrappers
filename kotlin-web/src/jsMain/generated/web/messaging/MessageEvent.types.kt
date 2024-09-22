@@ -5,8 +5,7 @@ package web.messaging
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external class MessageEventTypes :
-    MessageEventTypes_deprecated {
+sealed external class MessageEventTypes {
 
     @JsValue("connect")
     val CONNECT: EventType<MessageEvent<*>>

@@ -5,8 +5,7 @@ package web.idb
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external class IDBVersionChangeEventTypes :
-    IDBVersionChangeEventTypes_deprecated {
+sealed external class IDBVersionChangeEventTypes {
 
     @JsValue("blocked")
     val BLOCKED: EventType<IDBVersionChangeEvent>

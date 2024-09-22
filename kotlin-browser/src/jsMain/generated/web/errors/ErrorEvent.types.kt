@@ -5,8 +5,7 @@ package web.errors
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external class ErrorEventTypes :
-    ErrorEventTypes_deprecated {
+sealed external class ErrorEventTypes {
 
     @JsValue("error")
     val ERROR: EventType<ErrorEvent>

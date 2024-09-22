@@ -4,8 +4,7 @@ package web.events
 
 import seskar.js.JsValue
 
-sealed external class EventTypes :
-    EventTypes_deprecated {
+sealed external class EventTypes {
 
     @JsValue("DOMContentLoaded")
     val DOM_CONTENT_LOADED: EventType<Event>

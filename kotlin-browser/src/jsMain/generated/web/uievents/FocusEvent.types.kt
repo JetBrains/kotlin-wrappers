@@ -5,8 +5,7 @@ package web.uievents
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external class FocusEventTypes :
-    FocusEventTypes_deprecated {
+sealed external class FocusEventTypes {
 
     @JsValue("blur")
     val BLUR: EventType<FocusEvent>

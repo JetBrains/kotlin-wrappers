@@ -5,8 +5,7 @@ package web.fonts
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external class FontFaceSetLoadEventTypes :
-    FontFaceSetLoadEventTypes_deprecated {
+sealed external class FontFaceSetLoadEventTypes {
 
     @JsValue("loading")
     val LOADING: EventType<FontFaceSetLoadEvent>

@@ -5,8 +5,7 @@ package web.uievents
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external class MouseEventTypes :
-    MouseEventTypes_deprecated {
+sealed external class MouseEventTypes {
 
     @JsValue("auxclick")
     val AUX_CLICK: EventType<MouseEvent>

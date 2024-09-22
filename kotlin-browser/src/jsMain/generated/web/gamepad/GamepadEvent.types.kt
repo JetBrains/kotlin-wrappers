@@ -5,8 +5,7 @@ package web.gamepad
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external class GamepadEventTypes :
-    GamepadEventTypes_deprecated {
+sealed external class GamepadEventTypes {
 
     @JsValue("gamepadconnected")
     val GAMEPAD_CONNECTED: EventType<GamepadEvent>

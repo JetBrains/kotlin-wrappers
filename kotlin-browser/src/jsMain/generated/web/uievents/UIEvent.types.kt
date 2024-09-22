@@ -5,8 +5,7 @@ package web.uievents
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external class UIEventTypes :
-    UIEventTypes_deprecated {
+sealed external class UIEventTypes {
 
     @JsValue("abort")
     val ABORT: EventType<UIEvent>

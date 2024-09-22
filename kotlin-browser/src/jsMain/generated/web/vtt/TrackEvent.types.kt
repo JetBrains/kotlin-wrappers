@@ -5,8 +5,7 @@ package web.vtt
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external class TrackEventTypes :
-    TrackEventTypes_deprecated {
+sealed external class TrackEventTypes {
 
     @JsValue("addtrack")
     val ADD_TRACK: EventType<TrackEvent>

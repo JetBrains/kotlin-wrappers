@@ -5,8 +5,7 @@ package web.uievents
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external class KeyboardEventTypes :
-    KeyboardEventTypes_deprecated {
+sealed external class KeyboardEventTypes {
 
     @JsValue("keydown")
     val KEY_DOWN: EventType<KeyboardEvent>

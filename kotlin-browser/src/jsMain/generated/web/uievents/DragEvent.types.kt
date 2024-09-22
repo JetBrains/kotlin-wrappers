@@ -5,8 +5,7 @@ package web.uievents
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external class DragEventTypes :
-    DragEventTypes_deprecated {
+sealed external class DragEventTypes {
 
     @JsValue("drag")
     val DRAG: EventType<DragEvent>

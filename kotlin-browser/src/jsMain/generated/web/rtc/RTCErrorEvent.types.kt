@@ -5,8 +5,7 @@ package web.rtc
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external class RTCErrorEventTypes :
-    RTCErrorEventTypes_deprecated {
+sealed external class RTCErrorEventTypes {
 
     @JsValue("error")
     val ERROR: EventType<RTCErrorEvent>

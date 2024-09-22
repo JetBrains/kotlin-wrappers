@@ -5,8 +5,7 @@ package web.rtc
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external class RTCDTMFToneChangeEventTypes :
-    RTCDTMFToneChangeEventTypes_deprecated {
+sealed external class RTCDTMFToneChangeEventTypes {
 
     @JsValue("tonechange")
     val TONE_CHANGE: EventType<RTCDTMFToneChangeEvent>

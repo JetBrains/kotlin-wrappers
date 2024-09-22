@@ -5,8 +5,7 @@ package web.history
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external class PageTransitionEventTypes :
-    PageTransitionEventTypes_deprecated {
+sealed external class PageTransitionEventTypes {
 
     @JsValue("pagehide")
     val PAGE_HIDE: EventType<PageTransitionEvent>

@@ -5,8 +5,7 @@ package web.promise
 import seskar.js.JsValue
 import web.events.EventType
 
-sealed external class PromiseRejectionEventTypes :
-    PromiseRejectionEventTypes_deprecated {
+sealed external class PromiseRejectionEventTypes {
 
     @JsValue("rejectionhandled")
     val REJECTION_HANDLED: EventType<PromiseRejectionEvent>
