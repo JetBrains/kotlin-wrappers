@@ -20,6 +20,7 @@ import web.selection.Selection
 import web.svg.SVGElement
 import web.svg.SVG_NAMESPACE
 import web.svg.SvgTagName
+import web.url.FragmentDirective
 import web.url.URL
 import web.window.WindowProxy
 import web.xpath.XPathEvaluatorBase
@@ -147,6 +148,11 @@ open external class Document :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/forms)
      */
     val forms: HTMLCollectionOf<HTMLFormElement>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/fragmentDirective)
+     */
+    val fragmentDirective: FragmentDirective
 
     /**
      * Returns true if document has the ability to display elements fullscreen and fullscreen is supported, or false otherwise.
