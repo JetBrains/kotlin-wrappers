@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedBoolean)
  */
-sealed external class SVGAnimatedBoolean {
+external class SVGAnimatedBoolean
+private constructor() {
     val animVal: Boolean
     var baseVal: Boolean
 }

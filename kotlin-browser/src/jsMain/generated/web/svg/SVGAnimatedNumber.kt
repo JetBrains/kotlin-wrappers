@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedNumber)
  */
-sealed external class SVGAnimatedNumber {
+external class SVGAnimatedNumber
+private constructor() {
     val animVal: Float
     var baseVal: Float
 }

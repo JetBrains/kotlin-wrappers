@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedInteger)
  */
-sealed external class SVGAnimatedInteger {
+external class SVGAnimatedInteger
+private constructor() {
     val animVal: Int
     var baseVal: Int
 }

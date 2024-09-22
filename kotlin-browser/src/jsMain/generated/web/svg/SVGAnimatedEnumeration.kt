@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedEnumeration)
  */
-sealed external class SVGAnimatedEnumeration<T> {
+external class SVGAnimatedEnumeration<T>
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedEnumeration/animVal)
      */

@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLength)
  */
-sealed external class SVGLength {
+external class SVGLength
+private constructor() {
     val unitType: UnitType
     var value: Float
     var valueAsString: String

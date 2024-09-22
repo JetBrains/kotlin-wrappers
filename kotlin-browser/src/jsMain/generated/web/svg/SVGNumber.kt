@@ -7,6 +7,7 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumber)
  */
-sealed external class SVGNumber {
+external class SVGNumber
+private constructor() {
     var value: Float
 }

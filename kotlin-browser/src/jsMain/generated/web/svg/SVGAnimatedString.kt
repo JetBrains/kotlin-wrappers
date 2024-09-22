@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedString)
  */
-sealed external class SVGAnimatedString {
+external class SVGAnimatedString
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedString/animVal)
      */

@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle)
  */
-sealed external class SVGAngle {
+external class SVGAngle
+private constructor() {
     val unitType: UnitType
     var value: Float
     var valueAsString: String

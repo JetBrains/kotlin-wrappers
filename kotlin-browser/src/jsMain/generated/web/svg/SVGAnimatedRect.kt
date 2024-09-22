@@ -10,7 +10,8 @@ import web.geometry.DOMRectReadOnly
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedRect)
  */
-sealed external class SVGAnimatedRect {
+external class SVGAnimatedRect
+private constructor() {
     val animVal: DOMRectReadOnly
     val baseVal: DOMRect
 }
