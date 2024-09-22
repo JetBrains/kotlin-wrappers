@@ -1,6 +1,10 @@
 package web.workers
 
+import js.coroutines.internal.IsolatedCoroutineScope
 import js.globals.globalThis
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.CoroutineStart
+import kotlinx.coroutines.launch
 import seskar.js.JsNative
 
 sealed external interface SharedWorkerFactory {
@@ -9,7 +13,7 @@ sealed external interface SharedWorkerFactory {
 }
 
 fun SharedWorkerFactory(
-    block: (self: SharedWorkerGlobalScope) -> Unit,
+    block: suspend CoroutineScope.(self: SharedWorkerGlobalScope) -> Unit,
 ): SharedWorkerFactory {
     val self = if (globalThis.SharedWorkerGlobalScope) {
         globalThis as? SharedWorkerGlobalScope
@@ -19,7 +23,11 @@ fun SharedWorkerFactory(
         "Invalid shared worker context! `SharedWorkerGlobalScope` as `self` is required!"
     }
 
-    block(self)
+    IsolatedCoroutineScope()
+        .launch(
+            start = CoroutineStart.UNDISPATCHED,
+            block = { block(self) },
+        )
 
     return {
         error("Missed plugin integration! SharedWorker factory shouldn't be called directly!")
