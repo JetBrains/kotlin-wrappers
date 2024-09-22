@@ -1,3 +1,9 @@
+## pre.811
+
+**BREAKING CHANGE**
+
+* Deprecated event types removed
+
 ## pre.806
 
 **BREAKING CHANGE**
