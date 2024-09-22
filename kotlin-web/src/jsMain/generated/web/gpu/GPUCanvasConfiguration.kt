@@ -3,7 +3,6 @@
 package web.gpu
 
 import js.array.ReadonlyArray
-import js.core.JsLong
 import kotlinx.js.JsPlainObject
 import web.images.PredefinedColorSpace
 
@@ -15,6 +14,4 @@ external interface GPUCanvasConfiguration {
     var viewFormats: ReadonlyArray<GPUTextureFormat>?
     var colorSpace: PredefinedColorSpace?
     var alphaMode: GPUCanvasAlphaMode?
-    var width: JsLong
-    var height: JsLong
 }
