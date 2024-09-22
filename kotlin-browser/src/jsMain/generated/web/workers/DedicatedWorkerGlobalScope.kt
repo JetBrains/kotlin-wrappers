@@ -43,7 +43,7 @@ sealed external class DedicatedWorkerGlobalScope :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/close)
      */
-    fun close()
+    fun close(): Nothing
 
     /**
      * Clones message and transmits it to the Worker object associated with dedicatedWorkerGlobal. transfer can be passed as a list of objects that are to be transferred rather than cloned.

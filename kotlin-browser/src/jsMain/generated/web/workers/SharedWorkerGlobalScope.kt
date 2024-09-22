@@ -27,5 +27,5 @@ sealed external class SharedWorkerGlobalScope :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorkerGlobalScope/close)
      */
-    fun close()
+    fun close(): Nothing
 }
