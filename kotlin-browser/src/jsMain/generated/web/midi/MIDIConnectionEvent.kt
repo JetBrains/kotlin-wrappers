@@ -8,6 +8,7 @@ package web.midi
 
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 
@@ -28,5 +29,8 @@ open external class MIDIConnectionEvent(
     @JsAlias(THIS)
     override fun asInit(): MIDIConnectionEventInit
 
-    companion object : MIDIConnectionEventTypes
+    companion object {
+        @JsValue("statechange")
+        val STATE_CHANGE: EventType<MIDIConnectionEvent>
+    }
 }

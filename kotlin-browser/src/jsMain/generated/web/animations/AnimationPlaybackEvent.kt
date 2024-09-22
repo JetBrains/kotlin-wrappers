@@ -8,6 +8,7 @@ package web.animations
 
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 
@@ -31,5 +32,14 @@ open external class AnimationPlaybackEvent(
     @JsAlias(THIS)
     override fun asInit(): AnimationPlaybackEventInit
 
-    companion object : AnimationPlaybackEventTypes
+    companion object {
+        @JsValue("cancel")
+        val CANCEL: EventType<AnimationPlaybackEvent>
+
+        @JsValue("finish")
+        val FINISH: EventType<AnimationPlaybackEvent>
+
+        @JsValue("remove")
+        val REMOVE: EventType<AnimationPlaybackEvent>
+    }
 }

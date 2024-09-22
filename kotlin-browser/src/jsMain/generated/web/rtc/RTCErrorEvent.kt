@@ -8,6 +8,7 @@ package web.rtc
 
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 
@@ -26,5 +27,8 @@ open external class RTCErrorEvent(
     @JsAlias(THIS)
     override fun asInit(): RTCErrorEventInit
 
-    companion object : RTCErrorEventTypes
+    companion object {
+        @JsValue("error")
+        val ERROR: EventType<RTCErrorEvent>
+    }
 }

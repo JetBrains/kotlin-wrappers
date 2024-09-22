@@ -9,6 +9,7 @@ package web.messaging
 import js.array.ReadonlyArray
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 
@@ -59,5 +60,14 @@ open external class MessageEvent<out D>(
     @JsAlias(THIS)
     override fun asInit(): MessageEventInit<D>
 
-    companion object : MessageEventTypes
+    companion object {
+        @JsValue("connect")
+        val CONNECT: EventType<MessageEvent<*>>
+
+        @JsValue("message")
+        val MESSAGE: EventType<MessageEvent<*>>
+
+        @JsValue("messageerror")
+        val MESSAGE_ERROR: EventType<MessageEvent<*>>
+    }
 }

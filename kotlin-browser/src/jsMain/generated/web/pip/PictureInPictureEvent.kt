@@ -8,6 +8,7 @@ package web.pip
 
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 
@@ -26,5 +27,11 @@ open external class PictureInPictureEvent(
     @JsAlias(THIS)
     override fun asInit(): PictureInPictureEventInit
 
-    companion object : PictureInPictureEventTypes
+    companion object {
+        @JsValue("enterpictureinpicture")
+        val ENTER_PICTURE_IN_PICTURE: EventType<PictureInPictureEvent>
+
+        @JsValue("leavepictureinpicture")
+        val LEAVE_PICTURE_IN_PICTURE: EventType<PictureInPictureEvent>
+    }
 }

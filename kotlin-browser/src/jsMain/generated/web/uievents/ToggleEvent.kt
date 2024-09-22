@@ -8,6 +8,7 @@ package web.uievents
 
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 
@@ -31,5 +32,11 @@ open external class ToggleEvent(
     @JsAlias(THIS)
     override fun asInit(): ToggleEventInit
 
-    companion object : ToggleEventTypes
+    companion object {
+        @JsValue("beforetoggle")
+        val BEFORE_TOGGLE: EventType<ToggleEvent>
+
+        @JsValue("toggle")
+        val TOGGLE: EventType<ToggleEvent>
+    }
 }

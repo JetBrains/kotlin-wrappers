@@ -9,6 +9,7 @@ package web.serviceworker
 import js.promise.Promise
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 
@@ -29,5 +30,11 @@ open external class ExtendableEvent(
     @JsAlias(THIS)
     override fun asInit(): ExtendableEventInit
 
-    companion object : ExtendableEventTypes
+    companion object {
+        @JsValue("activate")
+        val ACTIVATE: EventType<ExtendableEvent>
+
+        @JsValue("install")
+        val INSTALL: EventType<ExtendableEvent>
+    }
 }

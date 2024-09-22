@@ -8,6 +8,7 @@ package web.gamepad
 
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 
@@ -28,5 +29,11 @@ open external class GamepadEvent(
     @JsAlias(THIS)
     override fun asInit(): GamepadEventInit
 
-    companion object : GamepadEventTypes
+    companion object {
+        @JsValue("gamepadconnected")
+        val GAMEPAD_CONNECTED: EventType<GamepadEvent>
+
+        @JsValue("gamepaddisconnected")
+        val GAMEPAD_DISCONNECTED: EventType<GamepadEvent>
+    }
 }

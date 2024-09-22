@@ -8,6 +8,7 @@ package web.device
 
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 
@@ -44,5 +45,11 @@ open external class DeviceOrientationEvent(
     @JsAlias(THIS)
     override fun asInit(): DeviceOrientationEventInit
 
-    companion object : DeviceOrientationEventTypes
+    companion object {
+        @JsValue("deviceorientation")
+        val DEVICE_ORIENTATION: EventType<DeviceOrientationEvent>
+
+        @JsValue("deviceorientationabsolute")
+        val DEVICE_ORIENTATION_ABSOLUTE: EventType<DeviceOrientationEvent>
+    }
 }

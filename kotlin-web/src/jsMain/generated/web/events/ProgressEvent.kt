@@ -9,6 +9,7 @@ package web.events
 import js.core.JsLong
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 
 /**
  * Events measuring progress of an underlying process, like an HTTP request (for an XMLHttpRequest, or the loading of the underlying resource of an <img>, <audio>, <video>, <style> or <link>).
@@ -37,5 +38,26 @@ open external class ProgressEvent(
     @JsAlias(THIS)
     override fun asInit(): ProgressEventInit
 
-    companion object : ProgressEventTypes
+    companion object {
+        @JsValue("abort")
+        val ABORT: EventType<ProgressEvent>
+
+        @JsValue("error")
+        val ERROR: EventType<ProgressEvent>
+
+        @JsValue("load")
+        val LOAD: EventType<ProgressEvent>
+
+        @JsValue("loadend")
+        val LOAD_END: EventType<ProgressEvent>
+
+        @JsValue("loadstart")
+        val LOAD_START: EventType<ProgressEvent>
+
+        @JsValue("progress")
+        val PROGRESS: EventType<ProgressEvent>
+
+        @JsValue("timeout")
+        val TIMEOUT: EventType<ProgressEvent>
+    }
 }

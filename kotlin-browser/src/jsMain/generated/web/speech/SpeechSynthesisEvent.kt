@@ -8,6 +8,7 @@ package web.speech
 
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 
@@ -48,5 +49,23 @@ open external class SpeechSynthesisEvent(
     @JsAlias(THIS)
     override fun asInit(): SpeechSynthesisEventInit
 
-    companion object : SpeechSynthesisEventTypes
+    companion object {
+        @JsValue("boundary")
+        val BOUNDARY: EventType<SpeechSynthesisEvent>
+
+        @JsValue("end")
+        val END: EventType<SpeechSynthesisEvent>
+
+        @JsValue("mark")
+        val MARK: EventType<SpeechSynthesisEvent>
+
+        @JsValue("pause")
+        val PAUSE: EventType<SpeechSynthesisEvent>
+
+        @JsValue("resume")
+        val RESUME: EventType<SpeechSynthesisEvent>
+
+        @JsValue("start")
+        val START: EventType<SpeechSynthesisEvent>
+    }
 }

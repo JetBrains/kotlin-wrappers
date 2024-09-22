@@ -8,6 +8,7 @@ package web.history
 
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 
@@ -37,5 +38,8 @@ open external class HashChangeEvent(
     @JsAlias(THIS)
     override fun asInit(): HashChangeEventInit
 
-    companion object : HashChangeEventTypes
+    companion object {
+        @JsValue("hashchange")
+        val HASH_CHANGE: EventType<HashChangeEvent>
+    }
 }

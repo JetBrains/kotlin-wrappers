@@ -6,6 +6,7 @@
 
 package web.media.recorder
 
+import seskar.js.JsValue
 import web.blob.Blob
 import web.events.Event
 import web.events.EventType
@@ -28,5 +29,8 @@ open external class BlobEvent(
      */
     val timecode: DOMHighResTimeStamp
 
-    companion object : BlobEventTypes
+    companion object {
+        @JsValue("dataavailable")
+        val DATA_AVAILABLE: EventType<BlobEvent>
+    }
 }

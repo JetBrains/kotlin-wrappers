@@ -25,6 +25,4 @@ open external class CustomEvent<out D>(
 
     @JsAlias(THIS)
     override fun asInit(): CustomEventInit<D>
-
-    companion object
 }

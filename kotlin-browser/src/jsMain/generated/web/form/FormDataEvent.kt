@@ -8,6 +8,7 @@ package web.form
 
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 
@@ -28,5 +29,8 @@ open external class FormDataEvent(
     @JsAlias(THIS)
     override fun asInit(): FormDataEventInit
 
-    companion object : FormDataEventTypes
+    companion object {
+        @JsValue("formdata")
+        val FORM_DATA: EventType<FormDataEvent>
+    }
 }

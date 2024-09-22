@@ -8,6 +8,7 @@ package web.errors
 
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 
@@ -29,5 +30,11 @@ open external class ErrorEvent(
     @JsAlias(THIS)
     override fun asInit(): ErrorEventInit
 
-    companion object : ErrorEventTypes
+    companion object {
+        @JsValue("error")
+        val ERROR: EventType<ErrorEvent>
+
+        @JsValue("processorerror")
+        val PROCESSOR_ERROR: EventType<ErrorEvent>
+    }
 }

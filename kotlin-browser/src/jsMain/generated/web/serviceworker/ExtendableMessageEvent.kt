@@ -9,6 +9,7 @@ package web.serviceworker
 import js.array.ReadonlyArray
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.events.EventType
 import web.messaging.MessagePort
 
@@ -49,5 +50,8 @@ open external class ExtendableMessageEvent(
     @JsAlias(THIS)
     override fun asInit(): ExtendableMessageEventInit
 
-    companion object : ExtendableMessageEventTypes
+    companion object {
+        @JsValue("message")
+        val MESSAGE: EventType<ExtendableMessageEvent>
+    }
 }

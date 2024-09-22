@@ -8,6 +8,7 @@ package web.uievents
 
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.events.EventType
 
 /**
@@ -27,5 +28,14 @@ open external class CompositionEvent(
     @JsAlias(THIS)
     override fun asInit(): CompositionEventInit
 
-    companion object : CompositionEventTypes
+    companion object {
+        @JsValue("compositionend")
+        val COMPOSITION_END: EventType<CompositionEvent>
+
+        @JsValue("compositionstart")
+        val COMPOSITION_START: EventType<CompositionEvent>
+
+        @JsValue("compositionupdate")
+        val COMPOSITION_UPDATE: EventType<CompositionEvent>
+    }
 }

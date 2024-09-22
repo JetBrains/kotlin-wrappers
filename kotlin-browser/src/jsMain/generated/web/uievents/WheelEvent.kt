@@ -8,6 +8,7 @@ package web.uievents
 
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.events.EventType
 
 /**
@@ -45,9 +46,12 @@ open external class WheelEvent(
     @JsAlias(THIS)
     override fun asInit(): WheelEventInit
 
-    companion object : WheelEventTypes {
+    companion object {
         val DOM_DELTA_PIXEL: DeltaMode
         val DOM_DELTA_LINE: DeltaMode
         val DOM_DELTA_PAGE: DeltaMode
+
+        @JsValue("wheel")
+        val WHEEL: EventType<WheelEvent>
     }
 }

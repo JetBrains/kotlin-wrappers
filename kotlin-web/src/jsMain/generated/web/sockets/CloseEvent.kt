@@ -8,6 +8,7 @@ package web.sockets
 
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 
@@ -44,5 +45,8 @@ open external class CloseEvent(
     @JsAlias(THIS)
     override fun asInit(): CloseEventInit
 
-    companion object : CloseEventTypes
+    companion object {
+        @JsValue("close")
+        val CLOSE: EventType<CloseEvent>
+    }
 }

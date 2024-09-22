@@ -25,6 +25,4 @@ open external class ContentVisibilityAutoStateChangeEvent(
 
     @JsAlias(THIS)
     override fun asInit(): ContentVisibilityAutoStateChangeEventInit
-
-    companion object
 }

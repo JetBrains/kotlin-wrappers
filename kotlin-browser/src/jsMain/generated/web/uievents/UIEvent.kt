@@ -8,6 +8,7 @@ package web.uievents
 
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 import web.window.Window
@@ -34,5 +35,11 @@ open external class UIEvent(
     @JsAlias(THIS)
     override fun asInit(): UIEventInit
 
-    companion object : UIEventTypes
+    companion object {
+        @JsValue("abort")
+        val ABORT: EventType<UIEvent>
+
+        @JsValue("resize")
+        val RESIZE: EventType<UIEvent>
+    }
 }

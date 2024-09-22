@@ -8,6 +8,7 @@ package web.form
 
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 import web.html.HTMLElement
@@ -29,5 +30,8 @@ open external class SubmitEvent(
     @JsAlias(THIS)
     override fun asInit(): SubmitEventInit
 
-    companion object : SubmitEventTypes
+    companion object {
+        @JsValue("submit")
+        val SUBMIT: EventType<SubmitEvent>
+    }
 }

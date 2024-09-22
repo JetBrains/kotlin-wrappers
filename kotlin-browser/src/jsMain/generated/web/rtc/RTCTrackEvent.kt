@@ -9,6 +9,7 @@ package web.rtc
 import js.array.ReadonlyArray
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 import web.media.streams.MediaStream
@@ -44,5 +45,8 @@ open external class RTCTrackEvent(
     @JsAlias(THIS)
     override fun asInit(): RTCTrackEventInit
 
-    companion object : RTCTrackEventTypes
+    companion object {
+        @JsValue("track")
+        val TRACK: EventType<RTCTrackEvent>
+    }
 }

@@ -9,6 +9,7 @@ package web.idb
 import js.core.JsLong
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 
@@ -34,5 +35,17 @@ open external class IDBVersionChangeEvent(
     @JsAlias(THIS)
     override fun asInit(): IDBVersionChangeEventInit
 
-    companion object : IDBVersionChangeEventTypes
+    companion object {
+        @JsValue("blocked")
+        val BLOCKED: EventType<IDBVersionChangeEvent>
+
+        @JsValue("success")
+        val SUCCESS: EventType<IDBVersionChangeEvent>
+
+        @JsValue("upgradeneeded")
+        val UPGRADENEEDED: EventType<IDBVersionChangeEvent>
+
+        @JsValue("versionchange")
+        val VERSION_CHANGE: EventType<IDBVersionChangeEvent>
+    }
 }

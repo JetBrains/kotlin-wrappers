@@ -8,6 +8,7 @@ package web.csp
 
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 
@@ -83,5 +84,8 @@ open external class SecurityPolicyViolationEvent(
     @JsAlias(THIS)
     override fun asInit(): SecurityPolicyViolationEventInit
 
-    companion object : SecurityPolicyViolationEventTypes
+    companion object {
+        @JsValue("securitypolicyviolation")
+        val SECURITY_POLICY_VIOLATION: EventType<SecurityPolicyViolationEvent>
+    }
 }

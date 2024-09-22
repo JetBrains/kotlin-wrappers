@@ -8,6 +8,7 @@ package web.storage
 
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 
@@ -58,5 +59,8 @@ open external class StorageEvent(
     @JsAlias(THIS)
     override fun asInit(): StorageEventInit
 
-    companion object : StorageEventTypes
+    companion object {
+        @JsValue("storage")
+        val STORAGE: EventType<StorageEvent>
+    }
 }

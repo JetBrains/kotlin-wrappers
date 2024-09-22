@@ -11,6 +11,7 @@ import js.promise.Promise
 import js.promise.PromiseLike
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.events.EventType
 import web.http.Request
 import web.http.Response
@@ -58,5 +59,8 @@ open external class FetchEvent(
     @JsAlias(THIS)
     override fun asInit(): FetchEventInit
 
-    companion object : FetchEventTypes
+    companion object {
+        @JsValue("fetch")
+        val FETCH: EventType<FetchEvent>
+    }
 }

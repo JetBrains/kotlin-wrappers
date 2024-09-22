@@ -9,6 +9,7 @@ package web.media.key
 import js.buffer.ArrayBuffer
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 
@@ -35,5 +36,8 @@ open external class MediaKeyMessageEvent(
     @JsAlias(THIS)
     override fun asInit(): MediaKeyMessageEventInit
 
-    companion object : MediaKeyMessageEventTypes
+    companion object {
+        @JsValue("message")
+        val MESSAGE: EventType<MediaKeyMessageEvent>
+    }
 }

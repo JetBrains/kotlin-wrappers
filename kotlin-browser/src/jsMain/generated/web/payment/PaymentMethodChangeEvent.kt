@@ -8,6 +8,7 @@ package web.payment
 
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.events.EventType
 
 /**
@@ -32,5 +33,8 @@ open external class PaymentMethodChangeEvent(
     @JsAlias(THIS)
     override fun asInit(): PaymentMethodChangeEventInit
 
-    companion object : PaymentMethodChangeEventTypes
+    companion object {
+        @JsValue("paymentmethodchange")
+        val PAYMENT_METHOD_CHANGE: EventType<PaymentMethodChangeEvent>
+    }
 }

@@ -8,6 +8,7 @@ package web.serviceworker
 
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.events.EventType
 import web.notifications.Notification
 
@@ -33,5 +34,11 @@ open external class NotificationEvent(
     @JsAlias(THIS)
     override fun asInit(): NotificationEventInit
 
-    companion object : NotificationEventTypes
+    companion object {
+        @JsValue("notificationclick")
+        val NOTIFICATION_CLICK: EventType<NotificationEvent>
+
+        @JsValue("notificationclose")
+        val NOTIFICATION_CLOSE: EventType<NotificationEvent>
+    }
 }

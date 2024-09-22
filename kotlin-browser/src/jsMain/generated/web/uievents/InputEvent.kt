@@ -9,6 +9,7 @@ package web.uievents
 import js.array.ReadonlyArray
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.data.DataTransfer
 import web.events.EventType
 import web.ranges.StaticRange
@@ -48,5 +49,11 @@ open external class InputEvent(
     @JsAlias(THIS)
     override fun asInit(): InputEventInit
 
-    companion object : InputEventTypes
+    companion object {
+        @JsValue("beforeinput")
+        val BEFORE_INPUT: EventType<InputEvent>
+
+        @JsValue("input")
+        val INPUT: EventType<InputEvent>
+    }
 }

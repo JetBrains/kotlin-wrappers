@@ -9,6 +9,7 @@ package web.midi
 import js.typedarrays.Uint8Array
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 
@@ -29,5 +30,8 @@ open external class MIDIMessageEvent(
     @JsAlias(THIS)
     override fun asInit(): MIDIMessageEventInit
 
-    companion object : MIDIMessageEventTypes
+    companion object {
+        @JsValue("midimessage")
+        val MIDI_MESSAGE: EventType<MIDIMessageEvent>
+    }
 }

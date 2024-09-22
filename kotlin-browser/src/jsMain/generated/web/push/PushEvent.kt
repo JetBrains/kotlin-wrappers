@@ -8,6 +8,7 @@ package web.push
 
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.events.EventType
 import web.serviceworker.ExtendableEvent
 
@@ -29,5 +30,8 @@ open external class PushEvent(
     @JsAlias(THIS)
     override fun asInit(): PushEventInit
 
-    companion object : PushEventTypes
+    companion object {
+        @JsValue("push")
+        val PUSH: EventType<PushEvent>
+    }
 }

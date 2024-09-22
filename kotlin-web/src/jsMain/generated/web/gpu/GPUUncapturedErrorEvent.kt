@@ -6,6 +6,7 @@
 
 package web.gpu
 
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 
@@ -15,5 +16,8 @@ external class GPUUncapturedErrorEvent(
 ) : Event {
     val error: GPUError
 
-    companion object : GPUUncapturedErrorEventTypes
+    companion object {
+        @JsValue("uncapturederror")
+        val UNCAPTURED_ERROR: EventType<GPUUncapturedErrorEvent>
+    }
 }

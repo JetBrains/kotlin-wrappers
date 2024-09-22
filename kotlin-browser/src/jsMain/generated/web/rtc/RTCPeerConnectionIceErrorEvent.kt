@@ -8,6 +8,7 @@ package web.rtc
 
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 
@@ -30,5 +31,8 @@ open external class RTCPeerConnectionIceErrorEvent(
     @JsAlias(THIS)
     override fun asInit(): RTCPeerConnectionIceErrorEventInit
 
-    companion object : RTCPeerConnectionIceErrorEventTypes
+    companion object {
+        @JsValue("icecandidateerror")
+        val ICE_CANDIDATE_ERROR: EventType<RTCPeerConnectionIceErrorEvent>
+    }
 }

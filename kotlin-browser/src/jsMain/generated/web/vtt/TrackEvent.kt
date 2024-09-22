@@ -8,6 +8,7 @@ package web.vtt
 
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 
@@ -30,5 +31,11 @@ open external class TrackEvent(
     @JsAlias(THIS)
     override fun asInit(): TrackEventInit
 
-    companion object : TrackEventTypes
+    companion object {
+        @JsValue("addtrack")
+        val ADD_TRACK: EventType<TrackEvent>
+
+        @JsValue("removetrack")
+        val REMOVE_TRACK: EventType<TrackEvent>
+    }
 }

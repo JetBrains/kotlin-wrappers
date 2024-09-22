@@ -8,6 +8,7 @@ package web.uievents
 
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.events.EventType
 
 /**
@@ -57,5 +58,17 @@ open external class TouchEvent(
     @JsAlias(THIS)
     override fun asInit(): TouchEventInit
 
-    companion object : TouchEventTypes
+    companion object {
+        @JsValue("touchcancel")
+        val TOUCH_CANCEL: EventType<TouchEvent>
+
+        @JsValue("touchend")
+        val TOUCH_END: EventType<TouchEvent>
+
+        @JsValue("touchmove")
+        val TOUCH_MOVE: EventType<TouchEvent>
+
+        @JsValue("touchstart")
+        val TOUCH_START: EventType<TouchEvent>
+    }
 }

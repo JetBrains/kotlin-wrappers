@@ -8,6 +8,7 @@ package web.device
 
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 
@@ -44,5 +45,8 @@ open external class DeviceMotionEvent(
     @JsAlias(THIS)
     override fun asInit(): DeviceMotionEventInit
 
-    companion object : DeviceMotionEventTypes
+    companion object {
+        @JsValue("devicemotion")
+        val DEVICE_MOTION: EventType<DeviceMotionEvent>
+    }
 }

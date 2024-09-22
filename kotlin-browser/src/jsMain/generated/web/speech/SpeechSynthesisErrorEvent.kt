@@ -8,6 +8,7 @@ package web.speech
 
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.events.EventType
 
 /**
@@ -25,5 +26,8 @@ open external class SpeechSynthesisErrorEvent(
     @JsAlias(THIS)
     override fun asInit(): SpeechSynthesisErrorEventInit
 
-    companion object : SpeechSynthesisErrorEventTypes
+    companion object {
+        @JsValue("error")
+        val ERROR: EventType<SpeechSynthesisErrorEvent>
+    }
 }

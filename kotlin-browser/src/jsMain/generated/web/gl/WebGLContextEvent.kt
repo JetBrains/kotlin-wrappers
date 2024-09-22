@@ -27,6 +27,4 @@ open external class WebGLContextEvent(
 
     @JsAlias(THIS)
     override fun asInit(): WebGLContextEventInit
-
-    companion object
 }

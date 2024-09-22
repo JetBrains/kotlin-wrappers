@@ -9,6 +9,7 @@ package web.fonts
 import js.array.ReadonlyArray
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 
@@ -27,5 +28,14 @@ open external class FontFaceSetLoadEvent(
     @JsAlias(THIS)
     override fun asInit(): FontFaceSetLoadEventInit
 
-    companion object : FontFaceSetLoadEventTypes
+    companion object {
+        @JsValue("loading")
+        val LOADING: EventType<FontFaceSetLoadEvent>
+
+        @JsValue("loadingdone")
+        val LOADING_DONE: EventType<FontFaceSetLoadEvent>
+
+        @JsValue("loadingerror")
+        val LOADING_ERROR: EventType<FontFaceSetLoadEvent>
+    }
 }

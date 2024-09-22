@@ -2,7 +2,9 @@
 
 package web.rtc
 
+import seskar.js.JsValue
 import web.events.Event
+import web.events.EventType
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTransformEvent)
@@ -13,5 +15,8 @@ sealed external class RTCTransformEvent : Event {
      */
     val transformer: RTCRtpScriptTransformer
 
-    companion object : RTCTransformEventTypes
+    companion object {
+        @JsValue("rtctransform")
+        val RTC_TRANSFORM: EventType<RTCTransformEvent>
+    }
 }
