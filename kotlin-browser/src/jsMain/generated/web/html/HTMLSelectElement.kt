@@ -39,11 +39,15 @@ protected constructor() :
 
     /**
      * Sets or retrieves the number of objects in a collection.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/length)
      */
     var length: Int
 
     /**
      * Sets or retrieves the Boolean value indicating whether multiple items can be selected from a list.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/multiple)
      */
     var multiple: Boolean
 
@@ -63,6 +67,8 @@ protected constructor() :
 
     /**
      * When present, marks an element that can't be submitted without a value.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/required)
      */
     var required: Boolean
 
@@ -80,6 +86,8 @@ protected constructor() :
 
     /**
      * Sets or retrieves the number of rows in the list box.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/size)
      */
     var size: Int
 
@@ -97,6 +105,8 @@ protected constructor() :
 
     /**
      * Returns a  ValidityState object that represents the validity states of an element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/validity)
      */
     override val validity: ValidityState
 
@@ -109,6 +119,8 @@ protected constructor() :
 
     /**
      * Returns whether an element will successfully validate based on forms validation rules and constraints.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/willValidate)
      */
     override val willValidate: Boolean
 

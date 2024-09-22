@@ -17,6 +17,10 @@ protected constructor() :
     HTMLElement,
     FormControl {
     var defaultValue: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/form)
+     */
     override val form: HTMLFormElement?
     val htmlFor: DOMTokenList
 
@@ -32,9 +36,15 @@ protected constructor() :
 
     /**
      * Returns the string "output".
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/type)
      */
     val type: String
     override val validationMessage: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/validity)
+     */
     override val validity: ValidityState
 
     /**
@@ -45,6 +55,10 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/value)
      */
     var value: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/willValidate)
+     */
     override val willValidate: Boolean
 
     /**

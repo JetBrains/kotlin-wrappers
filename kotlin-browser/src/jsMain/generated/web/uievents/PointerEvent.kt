@@ -21,6 +21,16 @@ open external class PointerEvent(
     init: PointerEventInit = definedExternally,
 ) : MouseEvent {
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/altitudeAngle)
+     */
+    val altitudeAngle: Double
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/azimuthAngle)
+     */
+    val azimuthAngle: Double
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/height)
      */
     val height: Double

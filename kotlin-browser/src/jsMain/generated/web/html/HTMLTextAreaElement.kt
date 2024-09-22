@@ -16,22 +16,35 @@ open external class HTMLTextAreaElement
 protected constructor() :
     HTMLElement,
     FormControl {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/autocomplete)
+     */
     var autocomplete: AutoFill
 
     /**
      * Sets or retrieves the width of the object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/cols)
      */
     var cols: Int
 
     /**
      * Sets or retrieves the initial contents of the object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/defaultValue)
      */
     var defaultValue: String
     var dirName: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/disabled)
+     */
     var disabled: Boolean
 
     /**
      * Retrieves a reference to the form that the object is embedded in.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/form)
      */
     override val form: HTMLFormElement?
 
@@ -42,8 +55,14 @@ protected constructor() :
 
     /**
      * Sets or retrieves the maximum number of characters that the user can enter in a text control.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/maxLength)
      */
     var maxLength: Int
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/minLength)
+     */
     var minLength: Int
 
     /**
@@ -55,21 +74,29 @@ protected constructor() :
 
     /**
      * Gets or sets a text string that is displayed in an input field as a hint or prompt to users as the format or type of information they need to enter.The text appears in an input field until the user puts focus on the field.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/placeholder)
      */
     var placeholder: String
 
     /**
      * Sets or retrieves the value indicated whether the content of the object is read-only.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/readOnly)
      */
     var readOnly: Boolean
 
     /**
      * When present, marks an element that can't be submitted without a value.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/required)
      */
     var required: Boolean
 
     /**
      * Sets or retrieves the number of horizontal rows contained in the object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/rows)
      */
     var rows: Int
     var selectionDirection: SelectionDirection
@@ -83,6 +110,10 @@ protected constructor() :
      * Gets or sets the starting position or offset of a text selection.
      */
     var selectionStart: Int
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/textLength)
+     */
     val textLength: Int
 
     /**
@@ -99,6 +130,8 @@ protected constructor() :
 
     /**
      * Returns a  ValidityState object that represents the validity states of an element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/validity)
      */
     override val validity: ValidityState
 
@@ -111,11 +144,15 @@ protected constructor() :
 
     /**
      * Returns whether an element will successfully validate based on forms validation rules and constraints.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/willValidate)
      */
     override val willValidate: Boolean
 
     /**
      * Sets or retrieves how to handle wordwrapping in the object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/wrap)
      */
     var wrap: String
 

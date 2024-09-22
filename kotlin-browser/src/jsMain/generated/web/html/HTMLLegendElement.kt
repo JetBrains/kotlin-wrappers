@@ -12,6 +12,8 @@ protected constructor() :
     HTMLElement {
     /**
      * Retrieves a reference to the form that the object is embedded in.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLegendElement/form)
      */
     val form: HTMLFormElement?
 }

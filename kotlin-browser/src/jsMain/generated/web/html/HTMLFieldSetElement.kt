@@ -23,6 +23,8 @@ protected constructor() :
 
     /**
      * Retrieves a reference to the form that the object is embedded in.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/form)
      */
     override val form: HTMLFormElement?
 
@@ -33,6 +35,8 @@ protected constructor() :
 
     /**
      * Returns the string "fieldset".
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/type)
      */
     val type: String
 
@@ -43,11 +47,15 @@ protected constructor() :
 
     /**
      * Returns a  ValidityState object that represents the validity states of an element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/validity)
      */
     override val validity: ValidityState
 
     /**
      * Returns whether an element will successfully validate based on forms validation rules and constraints.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/willValidate)
      */
     override val willValidate: Boolean
 

@@ -11,6 +11,7 @@ package js.transferable
  * - `ReadableStream`
  * - `WritableStream`
  * - `TransformStream`
+ * - `AudioData`
  * - `VideoFrame`
  * - `ArrayBuffer`
  */

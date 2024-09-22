@@ -6,5 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface VideoEncoderEncodeOptions {
+    var avc: VideoEncoderEncodeOptionsForAvc?
     var keyFrame: Boolean?
 }

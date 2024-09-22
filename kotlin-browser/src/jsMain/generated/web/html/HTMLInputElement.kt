@@ -26,18 +26,28 @@ protected constructor() :
     FormControl {
     /**
      * Sets or retrieves a comma-separated list of content types.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/accept)
      */
     var accept: String
 
     /**
      * Sets or retrieves a text alternative to the graphic.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/alt)
      */
     var alt: String
 
     /**
      * Specifies whether autocomplete is applied to an editable text field.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/autocomplete)
      */
     var autocomplete: AutoFill
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/capture)
+     */
     var capture: String
 
     /**
@@ -72,6 +82,8 @@ protected constructor() :
 
     /**
      * Retrieves a reference to the form that the object is embedded in.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/form)
      */
     override val form: HTMLFormElement?
 
@@ -102,6 +114,8 @@ protected constructor() :
 
     /**
      * Sets or retrieves the height of the object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/height)
      */
     var height: Int
 
@@ -164,17 +178,27 @@ protected constructor() :
 
     /**
      * Gets or sets a string containing a regular expression that the user's input must match.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/pattern)
      */
     var pattern: String
 
     /**
      * Gets or sets a text string that is displayed in an input field as a hint or prompt to users as the format or type of information they need to enter.The text appears in an input field until the user puts focus on the field.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/placeholder)
      */
     var placeholder: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/readOnly)
+     */
     var readOnly: Boolean
 
     /**
      * When present, marks an element that can't be submitted without a value.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/required)
      */
     var required: Boolean
 
@@ -196,10 +220,16 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/selectionStart)
      */
     var selectionStart: Int?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/size)
+     */
     var size: Int
 
     /**
      * The address or URL of the a media resource that is to be considered.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/src)
      */
     var src: String
 
@@ -224,6 +254,8 @@ protected constructor() :
 
     /**
      * Returns a  ValidityState object that represents the validity states of an element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/validity)
      */
     override val validity: ValidityState
 
@@ -260,11 +292,15 @@ protected constructor() :
 
     /**
      * Sets or retrieves the width of the object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/width)
      */
     var width: Int
 
     /**
      * Returns whether an element will successfully validate based on forms validation rules and constraints.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/willValidate)
      */
     override val willValidate: Boolean
 

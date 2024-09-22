@@ -12,7 +12,7 @@ sealed external class UserActivation {
     val hasBeenActive: Boolean
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UserActivation/hasBeenActive)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UserActivation/isActive)
      */
     val isActive: Boolean
 }

@@ -11,6 +11,7 @@ external interface VideoConfiguration {
     var colorGamut: ColorGamut?
     var contentType: String
     var framerate: Double
+    var hasAlphaChannel: Boolean?
     var hdrMetadataType: HdrMetadataType?
     var height: Int
     var scalabilityMode: String?

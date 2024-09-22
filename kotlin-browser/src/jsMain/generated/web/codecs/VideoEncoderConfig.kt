@@ -12,6 +12,7 @@ external interface VideoEncoderConfig {
     var bitrate: JsLong?
     var bitrateMode: VideoEncoderBitrateMode?
     var codec: String
+    var contentHint: String?
     var displayHeight: Int?
     var displayWidth: Int?
     var framerate: Double?
