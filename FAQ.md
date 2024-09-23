@@ -2,7 +2,7 @@
 
 ## Base
 
-_Q_: `sealed external interface`. What is it? \
+#### _Q_: `sealed external interface`. What is it?
 _A_: In most cases, it’s a JavaScript Object (JSO).
 
 ```typescript
@@ -56,7 +56,7 @@ If the interface is marked, it’s definitely a JSO.
 There also is an annotation `@JsExternalInheritorsOnly` (e.g. React Props) that requires all its children interfaces,
 classes, and objects to be external as well.
 
-_Q_: How to create JSO instances? \
+#### _Q_: How to create JSO instances?
 _A_: Here is an example:
 
 ```kotlin
@@ -73,7 +73,7 @@ const instance = {
 }
 ```
 
-_Q_: Why should I avoid `unsafeCast` and `asDynamic` when working with Wrappers?
+#### _Q_: Why should I avoid `unsafeCast` and `asDynamic` when working with Wrappers?
 _A_: First of all, `unsafeCast` and `asDynamic` are not recommended for external declarations, unless you are a
 declarations' owner. \
 Some types' instances cannot be created by constructor invocation or interface implementation. For such types we
@@ -105,7 +105,7 @@ Typical use cases are:
 
 ## React
 
-_Q_: How to add data attribute to `HTMLElement`’s properties?
+#### _Q_: How to add data attribute to `HTMLElement`’s properties?
 _A_: There are two cases:
 
 > For example, Playwright uses ["data-testid" attribute](https://playwright.dev/docs/locators#locate-by-test-id) by
