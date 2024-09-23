@@ -8,7 +8,6 @@ import web.autofill.AutoFill
 import web.dom.Element
 import web.form.FormEncType
 import web.form.FormMethod
-import web.html.EnterKeyHint
 import web.html.InputType
 import web.window.WindowName
 
@@ -19,7 +18,6 @@ external interface InputHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var capture: Capture?
     var checked: Boolean?
     var disabled: Boolean?
-    var enterKeyHint: EnterKeyHint?
     var form: String?
     var formAction: FormAction?
     var formEncType: FormEncType?

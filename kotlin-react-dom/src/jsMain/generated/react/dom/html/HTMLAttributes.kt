@@ -6,6 +6,7 @@ import react.dom.DOMAttributes
 import react.dom.aria.AriaAttributes
 import react.dom.aria.AriaRole
 import web.dom.Element
+import web.html.EnterKeyHint
 import web.html.InputMode
 
 external interface HTMLAttributes<T : Element> :
@@ -25,6 +26,7 @@ external interface HTMLAttributes<T : Element> :
     var contextMenu: String?
     var dir: String?
     var draggable: Boolean?
+    var enterKeyHint: EnterKeyHint?
     var hidden: Boolean?
     var id: String?
     var lang: String?
