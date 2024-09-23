@@ -5,7 +5,7 @@ package remix.run.router
 /**
  * Result from a loader or action called via dataStrategy
  */
-sealed external interface HandlerResult {
-    var type: HandlerResultType
+sealed external interface DataStrategyResult {
+    var type: DataStrategyResultType
     var result: Any?
 }

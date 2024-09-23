@@ -6,5 +6,5 @@ import js.promise.Promise
 
 sealed external interface DataStrategyMatch : AgnosticRouteMatch<AgnosticDataRouteObject> {
     var shouldLoad: Boolean
-    var resolve: (handlerOverride: ((handler: (ctx: Any? /* use undefined for default */) -> DataFunctionReturnValue) -> Promise<HandlerResult>)? /* use undefined for default */) -> Promise<HandlerResult>
+    var resolve: (handlerOverride: ((handler: (ctx: Any? /* use undefined for default */) -> DataFunctionReturnValue) -> DataFunctionReturnValue)? /* use undefined for default */) -> Promise<DataStrategyResult>
 }

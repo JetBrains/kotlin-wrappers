@@ -27,6 +27,7 @@
         "react-router": {
             "RelativeRoutingType": "remix.run.router.RelativeRoutingType",
             "To": "remix.run.router.To",
+            "unstable_DataStrategyFunction": "remix.run.router.DataStrategyFunction as unstable_DataStrategyFunction",
             ".+": "react.router."
         },
         "react": {

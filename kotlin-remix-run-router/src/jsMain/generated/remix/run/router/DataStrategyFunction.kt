@@ -6,5 +6,5 @@ import js.promise.Promise
 
 sealed external interface DataStrategyFunction {
     @seskar.js.JsNative
-    operator fun invoke(args: DataStrategyFunctionArgs<*>): Promise<js.array.ReadonlyArray<HandlerResult>>
+    operator fun invoke(args: DataStrategyFunctionArgs<*>): Promise<js.objects.ReadonlyRecord<String, DataStrategyResult>>
 }

@@ -2,12 +2,12 @@
 
 package remix.run.router
 
-sealed external interface HandlerResultType {
+sealed external interface DataStrategyResultType {
     companion object {
         @seskar.js.JsValue("data")
-        val data: HandlerResultType
+        val data: DataStrategyResultType
 
         @seskar.js.JsValue("error")
-        val error: HandlerResultType
+        val error: DataStrategyResultType
     }
 }
