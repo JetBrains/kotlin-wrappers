@@ -17,7 +17,7 @@ dependencyResolutionManagement {
                 .version(kotlinVersion)
             library("kotlin-testCommon", "org.jetbrains.kotlin", "kotlin-test-common").version(kotlinVersion)
             library("kotlin-testJunit", "org.jetbrains.kotlin", "kotlin-test-junit").version(kotlinVersion)
-            library("kotlin-testJs", "org.jetbrains.kotlin", "kotlin-test-js").version(kotlinVersion)
+            library("kotlin-test", "org.jetbrains.kotlin", "kotlin-test").version(kotlinVersion)
 
             val coroutinesVersion = extra["kotlinx-coroutines.version"] as String
             library("coroutines-core", "org.jetbrains.kotlinx", "kotlinx-coroutines-core").version(coroutinesVersion)

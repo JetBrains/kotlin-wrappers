@@ -34,7 +34,7 @@ kotlin {
 
         jsTest {
             dependencies {
-                implementation(libs.kotlin.testJs)
+                implementation(libs.kotlin.test)
             }
         }
     }

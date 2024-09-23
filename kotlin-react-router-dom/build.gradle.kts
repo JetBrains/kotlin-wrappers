@@ -10,5 +10,5 @@ dependencies {
 
     jsMainApi(npm(libs.npm.reactRouterDom))
 
-    jsTestImplementation(libs.kotlin.testJs)
+    jsTestImplementation(libs.kotlin.test)
 }
