@@ -8,5 +8,5 @@ dependencies {
     jsMainApi(projects.kotlinReactLegacy)
     jsMainApi(projects.kotlinReactDom)
 
-    jsMainApi(libs.html.js)
+    jsMainApi(libs.kotlinx.html)
 }

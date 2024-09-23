@@ -24,7 +24,7 @@ dependencyResolutionManagement {
             library("coroutines-test", "org.jetbrains.kotlinx", "kotlinx-coroutines-test").version(coroutinesVersion)
 
             val htmlVersion = extra["kotlinx-html.version"] as String
-            library("html-js", "org.jetbrains.kotlinx", "kotlinx-html-js").version(htmlVersion)
+            library("kotlinx-html", "org.jetbrains.kotlinx", "kotlinx-html").version(htmlVersion)
 
             file("gradle.properties").readText()
                 .splitToSequence("# https://www.npmjs.com/package/")

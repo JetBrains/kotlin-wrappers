@@ -24,7 +24,7 @@ dependencies {
     jsMainApi(projects.kotlinReactLegacy)
     jsMainApi(projects.kotlinReactDomLegacy)
 
-    jsMainApi(libs.html.js)
+    jsMainApi(libs.kotlinx.html)
 
     jsMainApi(npm(libs.npm.inlineStylePrefixer))
 
