@@ -13,17 +13,47 @@ import js.iterable.JsIterable
 sealed external class SVGLengthList :
     ArrayLike<SVGLength>,
     JsIterable<SVGLength> {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/numberOfItems)
+     */
     val numberOfItems: Int
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/appendItem)
+     */
     fun appendItem(newItem: SVGLength): SVGLength
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/clear)
+     */
     fun clear()
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/getItem)
+     */
     fun getItem(index: Int): SVGLength
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/initialize)
+     */
     fun initialize(newItem: SVGLength): SVGLength
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/insertItemBefore)
+     */
     fun insertItemBefore(
         newItem: SVGLength,
         index: Int,
     ): SVGLength
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/removeItem)
+     */
     fun removeItem(index: Int): SVGLength
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/replaceItem)
+     */
     fun replaceItem(
         newItem: SVGLength,
         index: Int,

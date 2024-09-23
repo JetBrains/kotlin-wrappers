@@ -52,11 +52,15 @@ protected constructor() :
 
     /**
      * Sets or retrieves the state of the check box or radio button.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/checked)
      */
     var checked: Boolean
 
     /**
      * Sets or retrieves the state of the check box or radio button.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/defaultChecked)
      */
     var defaultChecked: Boolean
 

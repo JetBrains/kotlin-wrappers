@@ -99,15 +99,23 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/rows)
      */
     var rows: Int
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/selectionDirection)
+     */
     var selectionDirection: SelectionDirection
 
     /**
      * Gets or sets the end position or offset of a text selection.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/selectionEnd)
      */
     var selectionEnd: Int
 
     /**
      * Gets or sets the starting position or offset of a text selection.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/selectionStart)
      */
     var selectionStart: Int
 
@@ -170,6 +178,8 @@ protected constructor() :
 
     /**
      * Highlights the input area of a form element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/select)
      */
     fun select()
 
@@ -178,6 +188,10 @@ protected constructor() :
      * @param error Sets a custom error message that is displayed when a form is submitted.
      */
     fun setCustomValidity(error: String)
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/setRangeText)
+     */
     fun setRangeText(replacement: String)
     fun setRangeText(
         replacement: String,
@@ -191,6 +205,8 @@ protected constructor() :
      * @param start The offset into the text field for the start of the selection.
      * @param end The offset into the text field for the end of the selection.
      * @param direction The direction in which the selection is performed.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/setSelectionRange)
      */
     fun setSelectionRange(
         start: Int?,
