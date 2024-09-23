@@ -2,26 +2,27 @@
 
 ## Base
 
-#### _Q_: `sealed external interface`. What is it?
-_A_: In most cases, it’s a JavaScript Object (JSO).
+#### `sealed external interface`. What is it?
+
+In most cases, it’s a JavaScript Object (JSO).
 
 ```typescript
 type PointLike = {
-  x: number
-  y: number
+    x: number
+    y: number
 }
 
 class Point {
-  constructor(
-    pointLike: PointLike
-  ) {
-    /* do nothing */
-  }
+    constructor(
+            pointLike: PointLike
+    ) {
+        /* do nothing */
+    }
 }
 
 const point = new Point({
-  x: 4.2,
-  y: 2.7
+    x: 4.2,
+    y: 2.7
 })
 ```
 
@@ -56,8 +57,9 @@ If the interface is marked, it’s definitely a JSO.
 There also is an annotation `@JsExternalInheritorsOnly` (e.g. React Props) that requires all its children interfaces,
 classes, and objects to be external as well.
 
-#### _Q_: How to create JSO instances?
-_A_: Here is an example:
+#### How to create JSO instances?
+
+Here is an example:
 
 ```kotlin
 val instance = jso {
@@ -69,12 +71,13 @@ JS equivalent:
 
 ```javascript
 const instance = {
-  foo: "bar",
+    foo: "bar",
 }
 ```
 
-#### _Q_: Why should I avoid `unsafeCast` and `asDynamic` when working with Wrappers?
-_A_: First of all, `unsafeCast` and `asDynamic` are not recommended for external declarations, unless you are a
+#### Why should I avoid `unsafeCast` and `asDynamic` when working with Wrappers?
+
+First of all, `unsafeCast` and `asDynamic` are not recommended for external declarations, unless you are a
 declarations' owner. \
 Some types' instances cannot be created by constructor invocation or interface implementation. For such types we
 provide strict factory functions. It is a responsibility of library authors.
@@ -105,8 +108,9 @@ Typical use cases are:
 
 ## React
 
-#### _Q_: How to add data attribute to `HTMLElement`’s properties?
-_A_: There are two cases:
+#### How to add data attribute to `HTMLElement`’s properties?
+
+There are two cases:
 
 > For example, Playwright uses ["data-testid" attribute](https://playwright.dev/docs/locators#locate-by-test-id) by
 > default, so we can develop an exemplifying extension property upon that.
