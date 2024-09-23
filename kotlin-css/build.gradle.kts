@@ -21,20 +21,14 @@ kotlin {
     sourceSets {
         commonTest {
             dependencies {
-                implementation(libs.kotlin.testCommon)
-                implementation(libs.kotlin.testAnnotationsCommon)
+                implementation(libs.kotlin.test)
+                implementation(libs.kotlin.testAnnotations)
             }
         }
 
         jvmTest {
             dependencies {
                 implementation(libs.kotlin.testJunit)
-            }
-        }
-
-        jsTest {
-            dependencies {
-                implementation(libs.kotlin.test)
             }
         }
     }

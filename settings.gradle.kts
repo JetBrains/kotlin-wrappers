@@ -13,11 +13,10 @@ dependencyResolutionManagement {
             plugin("karakum", "io.github.sgrishchenko.karakum").version(karakumVersion)
 
             val kotlinVersion = extra["kotlin.version"] as String
-            library("kotlin-testAnnotationsCommon", "org.jetbrains.kotlin", "kotlin-test-annotations-common")
-                .version(kotlinVersion)
-            library("kotlin-testCommon", "org.jetbrains.kotlin", "kotlin-test-common").version(kotlinVersion)
-            library("kotlin-testJunit", "org.jetbrains.kotlin", "kotlin-test-junit").version(kotlinVersion)
             library("kotlin-test", "org.jetbrains.kotlin", "kotlin-test").version(kotlinVersion)
+            library("kotlin-testAnnotations", "org.jetbrains.kotlin", "kotlin-test-annotations-common")
+                .version(kotlinVersion)
+            library("kotlin-testJunit", "org.jetbrains.kotlin", "kotlin-test-junit").version(kotlinVersion)
 
             val coroutinesVersion = extra["kotlinx-coroutines.version"] as String
             library("coroutines-core", "org.jetbrains.kotlinx", "kotlinx-coroutines-core").version(coroutinesVersion)
