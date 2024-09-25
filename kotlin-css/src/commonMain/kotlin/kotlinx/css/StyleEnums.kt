@@ -140,6 +140,14 @@ enum class ContainerType {
     override fun toString() = name.hyphenize()
 }
 
+enum class ContentVisibility {
+    inherit, initial, revert, revertLayer, unset,
+
+    visible, hidden, auto;
+
+    override fun toString() = name.hyphenize()
+}
+
 enum class Cursor {
     inherit, initial, revert, revertLayer, unset,
 
