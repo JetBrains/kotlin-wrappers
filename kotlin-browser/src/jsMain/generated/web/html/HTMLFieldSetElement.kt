@@ -14,10 +14,15 @@ open external class HTMLFieldSetElement
 protected constructor() :
     HTMLElement,
     FormControl {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/disabled)
+     */
     var disabled: Boolean
 
     /**
      * Returns an HTMLCollection of the form controls in the element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/elements)
      */
     val elements: HTMLCollection<*>
 
@@ -42,6 +47,8 @@ protected constructor() :
 
     /**
      * Returns the error message that would be displayed if the user submits the form, or an empty string if no error message. It also triggers the standard error message, such as "this is a required field". The result is that the user sees validation messages without actually submitting.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/validationMessage)
      */
     override val validationMessage: String
 
@@ -74,6 +81,8 @@ protected constructor() :
     /**
      * Sets a custom error message that is displayed when a form is submitted.
      * @param error Sets a custom error message that is displayed when a form is submitted.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/setCustomValidity)
      */
     fun setCustomValidity(error: String)
 }
