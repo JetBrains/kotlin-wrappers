@@ -1,5 +1,7 @@
 package example
 
+import js.core.Void
+import js.import.importAsync
 import react.create
 import react.dom.client.createRoot
 import web.dom.document
@@ -7,6 +9,8 @@ import web.html.HTML.div
 import web.html.HTMLElement
 
 fun main() {
+    importAsync<Void>("/kotlin/TicTacToe.css")
+
     val container = createContainer()
     createRoot(container)
         .render(TicTacToeApp.create())
