@@ -1,7 +1,10 @@
 name: CI-K2.1
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - master
+  pull_request:
 
 jobs:
   build:
