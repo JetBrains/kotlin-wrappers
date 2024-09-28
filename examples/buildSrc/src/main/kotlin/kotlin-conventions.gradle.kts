@@ -8,16 +8,32 @@ plugins {
     id("kotlin-test-conventions")
 }
 
-kotlin.js {
-    moduleName = project.name
+kotlin {
+    js {
+        moduleName = project.name
 
-    browser {
-        commonWebpackConfig {
-            outputFileName = "index.js"
+        browser {
+            commonWebpackConfig {
+                outputFileName = "index.js"
+
+                cssSupport {
+                    enabled = true
+                    mode = "inline"
+                }
+            }
         }
+
+        binaries.executable()
     }
 
-    binaries.executable()
+    sourceSets {
+        jsMain {
+            dependencies {
+                implementation(devNpm("css-loader", "7.1.2"))
+                implementation(devNpm("style-loader", "4.0.0"))
+            }
+        }
+    }
 }
 
 tasks.withType<KotlinCompilationTask<*>>().configureEach {
