@@ -15,6 +15,10 @@ kotlin {
         browser {
             commonWebpackConfig {
                 outputFileName = "index.js"
+
+                cssSupport {
+                    enabled = true
+                }
             }
         }
 
