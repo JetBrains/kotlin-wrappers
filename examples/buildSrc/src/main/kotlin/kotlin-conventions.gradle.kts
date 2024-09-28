@@ -18,7 +18,6 @@ kotlin {
 
                 cssSupport {
                     enabled = true
-                    mode = "inline"
                 }
             }
         }
