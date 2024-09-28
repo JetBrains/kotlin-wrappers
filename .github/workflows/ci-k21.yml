@@ -21,7 +21,7 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
       - name: Build
         run: |
-          ./gradlew build -Pkotlin.version=2.1.0-Beta1
+          ./gradlew build -Pkotlin.version=2.1.0-Beta1 -Pseskar.version=3.41.1
 
   build-examples:
 
@@ -40,6 +40,6 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
       - name: Build Examples
         run: |
-          ./gradlew publishToMavenLocal -Pkotlin.version=2.1.0-Beta1
+          ./gradlew publishToMavenLocal -Pkotlin.version=2.1.0-Beta1 -Pseskar.version=3.41.1
           cd examples/
-          ./gradlew build -Pkotlin.version=2.1.0-Beta1
+          ./gradlew build -Pkotlin.version=2.1.0-Beta1  -Pseskar.version=3.41.1
