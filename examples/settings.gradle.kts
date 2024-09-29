@@ -14,6 +14,7 @@ dependencyResolutionManagement {
     }
 }
 
+include("browser")
 include("react-lazy-modules-webpack")
 include("react-router")
 include("tanstack-react-table")
