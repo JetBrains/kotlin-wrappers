@@ -15,13 +15,11 @@ dependencyResolutionManagement {
 }
 
 include("browser")
+include("react")
 include("react-lazy-modules-webpack")
 include("react-router")
 include("tanstack-react-table")
 include("tic-tac-toe")
-
-// Old examples
-include("please-split-me")
 
 // Kotlin Wrappers
 includeBuild("../")
