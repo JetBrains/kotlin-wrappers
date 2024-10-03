@@ -77,7 +77,7 @@ external class GeometryInstance(
      * User-defined object returned when the instance is picked or used to get/set per-instance attributes.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeometryInstance.html#id">Online Documentation</a>
      */
-    var id: Any
+    var id: Any?
 
     /**
      * Per-instance attributes like [ColorGeometryInstanceAttribute] or [ShowGeometryInstanceAttribute].

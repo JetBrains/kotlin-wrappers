@@ -27,25 +27,25 @@ external class OrthographicOffCenterFrustum {
      * The left clipping plane.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/OrthographicOffCenterFrustum.html#left">Online Documentation</a>
      */
-    var left: Double
+    var left: Double?
 
     /**
      * The right clipping plane.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/OrthographicOffCenterFrustum.html#right">Online Documentation</a>
      */
-    var right: Double
+    var right: Double?
 
     /**
      * The top clipping plane.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/OrthographicOffCenterFrustum.html#top">Online Documentation</a>
      */
-    var top: Double
+    var top: Double?
 
     /**
      * The bottom clipping plane.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/OrthographicOffCenterFrustum.html#bottom">Online Documentation</a>
      */
-    var bottom: Double
+    var bottom: Double?
 
     /**
      * The distance of the near plane.

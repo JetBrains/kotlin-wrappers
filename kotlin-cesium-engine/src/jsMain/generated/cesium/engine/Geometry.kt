@@ -95,21 +95,21 @@ external class Geometry(
      * determines the primitives in the geometry.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Geometry.html#indices">Online Documentation</a>
      */
-    var indices: ReadonlyArray<Any>
+    var indices: ReadonlyArray<Any>?
 
     /**
      * The type of primitives in the geometry.  This is most often [PrimitiveType.TRIANGLES],
      * but can varying based on the specific geometry.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Geometry.html#primitiveType">Online Documentation</a>
      */
-    var primitiveType: PrimitiveType
+    var primitiveType: PrimitiveType?
 
     /**
      * An optional bounding sphere that fully encloses the geometry.  This is
      * commonly used for culling.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Geometry.html#boundingSphere">Online Documentation</a>
      */
-    var boundingSphere: BoundingSphere
+    var boundingSphere: BoundingSphere?
 
     companion object {
         /**

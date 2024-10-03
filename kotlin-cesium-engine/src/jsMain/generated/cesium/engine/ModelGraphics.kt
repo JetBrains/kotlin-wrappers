@@ -40,6 +40,12 @@ external class ModelGraphics {
     var scale: Property?
 
     /**
+     * Gets or sets the boolean Property specifying if the model is exaggerated along the ellipsoid normal when [Scene.verticalExaggeration] is set to a value other than `1.0`.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelGraphics.html#enableVerticalExaggeration">Online Documentation</a>
+     */
+    var enableVerticalExaggeration: Property?
+
+    /**
      * Gets or sets the numeric Property specifying the approximate minimum
      * pixel size of the model regardless of zoom. This can be used to ensure that
      * a model is visible even when the viewer zooms out.  When `0.0`,

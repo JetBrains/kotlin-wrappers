@@ -29,7 +29,7 @@ private constructor() {
      * True if imagery is sent as a protocol buffer, false if sent as plain images. If undefined we will try both.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseMetadata.html#protoImagery">Online Documentation</a>
      */
-    var protoImagery: Boolean
+    var protoImagery: Boolean?
 
     /**
      * True if terrain is available.

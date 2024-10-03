@@ -393,8 +393,8 @@ external class Matrix4(
          * Computes a Matrix4 instance representing an off center perspective transformation.
          * @param [left] The number of meters to the left of the camera that will be in view.
          * @param [right] The number of meters to the right of the camera that will be in view.
-         * @param [bottom] The number of meters below of the camera that will be in view.
-         * @param [top] The number of meters above of the camera that will be in view.
+         * @param [bottom] The number of meters below the camera that will be in view.
+         * @param [top] The number of meters above the camera that will be in view.
          * @param [near] The distance to the near plane in meters.
          * @param [far] The distance to the far plane in meters.
          * @param [result] The object in which the result will be stored.

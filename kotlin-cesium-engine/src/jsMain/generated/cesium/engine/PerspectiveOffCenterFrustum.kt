@@ -26,25 +26,25 @@ external class PerspectiveOffCenterFrustum {
      * Defines the left clipping plane.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PerspectiveOffCenterFrustum.html#left">Online Documentation</a>
      */
-    var left: Double
+    var left: Double?
 
     /**
      * Defines the right clipping plane.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PerspectiveOffCenterFrustum.html#right">Online Documentation</a>
      */
-    var right: Double
+    var right: Double?
 
     /**
      * Defines the top clipping plane.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PerspectiveOffCenterFrustum.html#top">Online Documentation</a>
      */
-    var top: Double
+    var top: Double?
 
     /**
      * Defines the bottom clipping plane.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PerspectiveOffCenterFrustum.html#bottom">Online Documentation</a>
      */
-    var bottom: Double
+    var bottom: Double?
 
     /**
      * The distance of the near plane.
@@ -60,6 +60,7 @@ external class PerspectiveOffCenterFrustum {
 
     /**
      * Gets the perspective projection matrix computed from the view frustum.
+     * The projection matrix will be recomputed if any frustum parameters have changed.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PerspectiveOffCenterFrustum.html#projectionMatrix">Online Documentation</a>
      */
     val projectionMatrix: Matrix4

@@ -730,6 +730,35 @@ external class Scene(
     ): VoxelCell?
 
     /**
+     * Pick a metadata value at the given window position.
+     * @param [windowPosition] Window coordinates to perform picking on.
+     * @param [schemaId] The ID of the metadata schema to pick values
+     *   from. If this is `undefined`, then it will pick the values from the object
+     *   that match the given class- and property name, regardless of the schema ID.
+     * @param [className] The name of the metadata class to pick
+     *   values from
+     * @param [propertyName] The name of the metadata property to pick
+     *   values from
+     * @return The metadata value
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#pickMetadata">Online Documentation</a>
+     */
+    fun pickMetadata(
+        windowPosition: Cartesian2,
+        schemaId: String?,
+        className: String,
+        propertyName: String,
+    ): Any
+
+    /**
+     * Pick the schema of the metadata of the object at the given position
+     * @param [windowPosition] Window coordinates to perform picking on.
+     * @return The metadata schema, or `undefined` if there is no object with
+     *   associated metadata at the given position.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#pickMetadataSchema">Online Documentation</a>
+     */
+    fun pickMetadataSchema(windowPosition: Cartesian2): MetadataSchema
+
+    /**
      * Returns the cartesian position reconstructed from the depth buffer and window position.
      *
      * The position reconstructed from the depth buffer in 2D may be slightly different from those

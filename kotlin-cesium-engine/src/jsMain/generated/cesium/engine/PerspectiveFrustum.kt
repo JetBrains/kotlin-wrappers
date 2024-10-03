@@ -28,13 +28,13 @@ external class PerspectiveFrustum {
      * it will be the vertical FOV.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PerspectiveFrustum.html#fov">Online Documentation</a>
      */
-    var fov: Double
+    var fov: Double?
 
     /**
      * The aspect ratio of the frustum's width to it's height.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PerspectiveFrustum.html#aspectRatio">Online Documentation</a>
      */
-    var aspectRatio: Double
+    var aspectRatio: Double?
 
     /**
      * The distance of the near plane.
@@ -62,6 +62,7 @@ external class PerspectiveFrustum {
 
     /**
      * Gets the perspective projection matrix computed from the view frustum.
+     * If necessary, the projection matrix will be recomputed.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PerspectiveFrustum.html#projectionMatrix">Online Documentation</a>
      */
     val projectionMatrix: Matrix4
@@ -76,7 +77,7 @@ external class PerspectiveFrustum {
      * Gets the angle of the vertical field of view, in radians.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PerspectiveFrustum.html#fovy">Online Documentation</a>
      */
-    val fovy: Double
+    val fovy: Double?
 
     /**
      * Creates a culling volume for this frustum.

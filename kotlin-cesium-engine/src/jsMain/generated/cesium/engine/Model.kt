@@ -33,6 +33,7 @@ import seskar.js.JsAsync
  * - [KHR_texture_basisu](https://github.com/KhronosGroup/glTF/blob/master/extensions/2.0/Khronos/KHR_texture_basisu)
  * - [KHR_texture_transform](https://github.com/KhronosGroup/glTF/blob/master/extensions/2.0/Khronos/KHR_texture_transform/README.md)
  * - [WEB3D_quantized_attributes](https://github.com/KhronosGroup/glTF/blob/main/extensions/1.0/Vendor/WEB3D_quantized_attributes/README.md)
+ * - [NGA_gpm_local (experimental)](https://nsgreg.nga.mil/csmwg.jsp)
  *
  * Note: for models with compressed textures using the KHR_texture_basisu extension, we recommend power of 2 textures in both dimensions
  * for maximum compatibility. This is because some samplers require power of 2 textures ([Using textures in WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Tutorial/Using_textures_in_WebGL))
@@ -256,6 +257,17 @@ private constructor() {
     var clippingPolygons: ClippingPolygonCollection
 
     /**
+     * If `true`, the model is exaggerated along the ellipsoid normal when [Scene.verticalExaggeration] is set to a value other than `1.0`.
+     * ```
+     * // Exaggerate terrain by a factor of 2, but prevent model exaggeration
+     * scene.verticalExaggeration = 2.0;
+     * model.enableVerticalExaggeration = false;
+     * ```
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Model.html#enableVerticalExaggeration">Online Documentation</a>
+     */
+    var enableVerticalExaggeration: Boolean
+
+    /**
      * The light color when shading the model. When `undefined` the scene's light color is used instead.
      *
      * Disabling additional light sources by setting
@@ -387,6 +399,19 @@ private constructor() {
     fun applyArticulations()
 
     /**
+     * Returns the object that was created for the given extension.
+     *
+     * The given name may be the name of a glTF extension, like `"EXT_example_extension"`.
+     * If the specified extension was present in the root of the underlying glTF asset,
+     * and a loder for the specified extension has processed the extension data, then
+     * this will return the model representation of the extension.
+     * @param [extensionName] The name of the extension
+     * @return The object, or `undefined`
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Model.html#getExtension">Online Documentation</a>
+     */
+    fun getExtension(extensionName: String): Any?
+
+    /**
      * Marks the model's [Model.style] as dirty, which forces all features
      * to re-evaluate the style in the next frame the model is visible.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Model.html#makeStyleDirty">Online Documentation</a>
@@ -512,6 +537,8 @@ private constructor() {
          *   Default value - [Matrix4.IDENTITY]
          * @property [scale] A uniform scale applied to this model.
          *   Default value - `1.0`
+         * @property [enableVerticalExaggeration] If `true`, the model is exaggerated along the ellipsoid normal when [Scene.verticalExaggeration] is set to a value other than `1.0`.
+         *   Default value - `true`
          * @property [minimumPixelSize] The approximate minimum pixel size of the model regardless of zoom.
          *   Default value - `0.0`
          * @property [maximumScale] The maximum scale size of a model. An upper limit for minimumPixelSize.
@@ -593,6 +620,7 @@ private constructor() {
             var show: Boolean?
             var modelMatrix: Matrix4?
             var scale: Double?
+            var enableVerticalExaggeration: Boolean?
             var minimumPixelSize: Double?
             var maximumScale: Double?
             var id: Any?

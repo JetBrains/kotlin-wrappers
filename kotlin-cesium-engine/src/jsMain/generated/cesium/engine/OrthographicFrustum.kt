@@ -25,13 +25,13 @@ external class OrthographicFrustum {
      * The horizontal width of the frustum in meters.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/OrthographicFrustum.html#width">Online Documentation</a>
      */
-    var width: Double
+    var width: Double?
 
     /**
      * The aspect ratio of the frustum's width to it's height.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/OrthographicFrustum.html#aspectRatio">Online Documentation</a>
      */
-    var aspectRatio: Double
+    var aspectRatio: Double?
 
     /**
      * The distance of the near plane.
