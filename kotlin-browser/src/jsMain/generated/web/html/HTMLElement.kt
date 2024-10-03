@@ -33,7 +33,7 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/autocapitalize)
      */
-    var autocapitalize: String
+    var autocapitalize: AutoCapitalize
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dir)
