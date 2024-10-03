@@ -3,7 +3,7 @@
 package web.serialization
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/structuredClone)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/structuredClone)
  */
 external fun <T> structuredClone(
     value: T,
