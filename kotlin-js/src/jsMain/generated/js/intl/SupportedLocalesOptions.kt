@@ -2,6 +2,9 @@
 
 package js.intl
 
-sealed external interface SupportedLocalesOptions {
+import kotlinx.js.JsPlainObject
+
+@JsPlainObject
+external interface SupportedLocalesOptions {
     var localeMatcher: LocaleMatcher?
 }
