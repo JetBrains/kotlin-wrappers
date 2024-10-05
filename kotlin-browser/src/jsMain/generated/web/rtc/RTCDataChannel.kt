@@ -4,6 +4,7 @@ package web.rtc
 
 import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferView
+import js.transferable.Transferable
 import web.blob.Blob
 import web.events.Event
 import web.events.EventHandler
@@ -15,7 +16,8 @@ import web.sockets.BinaryType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel)
  */
 sealed external class RTCDataChannel :
-    EventTarget {
+    EventTarget,
+    Transferable {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/binaryType)
      */

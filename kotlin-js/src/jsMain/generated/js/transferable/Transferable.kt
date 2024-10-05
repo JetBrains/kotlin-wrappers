@@ -13,6 +13,7 @@ package js.transferable
  * - `TransformStream`
  * - `AudioData`
  * - `VideoFrame`
+ * - `RTCDataChannel`
  * - `ArrayBuffer`
  */
 @JsExternalInheritorsOnly
