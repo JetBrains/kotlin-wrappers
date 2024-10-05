@@ -6,6 +6,16 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface NumberFormatOptions {
+    var localeMatcher: LocaleMatcher?
+    var style: NumberFormatOptionsStyle?
+    var currency: String?
+    var currencyDisplay: NumberFormatOptionsCurrencyDisplay?
+    var useGrouping: NumberFormatOptionsUseGrouping?
+    var minimumIntegerDigits: Int?
+    var minimumFractionDigits: Int?
+    var maximumFractionDigits: Int?
+    var minimumSignificantDigits: Int?
+    var maximumSignificantDigits: Int?
     var numberingSystem: String?
     var compactDisplay: CompactDisplay?
     var notation: Notation?
