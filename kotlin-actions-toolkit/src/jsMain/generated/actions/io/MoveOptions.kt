@@ -5,7 +5,7 @@ package actions.io
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface MoveOptions {
+external interface MoveOptions {
     /** Optional. Whether to overwrite existing files in the destination. Defaults to true */
-    var force: Boolean?
+    val force: Boolean?
 }

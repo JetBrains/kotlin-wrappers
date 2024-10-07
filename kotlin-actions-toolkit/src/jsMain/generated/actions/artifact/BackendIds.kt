@@ -5,7 +5,7 @@ package actions.artifact
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface BackendIds {
-    var workflowRunBackendId: String
-    var workflowJobRunBackendId: String
+external interface BackendIds {
+    val workflowRunBackendId: String
+    val workflowJobRunBackendId: String
 }

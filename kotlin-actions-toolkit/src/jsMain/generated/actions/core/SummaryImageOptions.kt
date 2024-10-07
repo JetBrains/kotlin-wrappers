@@ -5,16 +5,16 @@ package actions.core
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface SummaryImageOptions {
+external interface SummaryImageOptions {
     /**
      * The width of the image in pixels. Must be an integer without a unit.
      * (optional)
      */
-    var width: String?
+    val width: String?
 
     /**
      * The height of the image in pixels. Must be an integer without a unit.
      * (optional)
      */
-    var height: String?
+    val height: String?
 }

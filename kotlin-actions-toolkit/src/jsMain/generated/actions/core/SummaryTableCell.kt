@@ -5,27 +5,27 @@ package actions.core
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface SummaryTableCell {
+external interface SummaryTableCell {
     /**
      * Cell content
      */
-    var data: String
+    val data: String
 
     /**
      * Render cell as header
      * (optional) default: false
      */
-    var header: Boolean?
+    val header: Boolean?
 
     /**
      * Number of columns the cell extends
      * (optional) default: '1'
      */
-    var colspan: String?
+    val colspan: String?
 
     /**
      * Number of rows the cell extends
      * (optional) default: '1'
      */
-    var rowspan: String?
+    val rowspan: String?
 }

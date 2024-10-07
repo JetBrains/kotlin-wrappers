@@ -5,13 +5,13 @@ package actions.exec
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface ExecOutput {
+external interface ExecOutput {
     /**The exit code of the process */
-    var exitCode: Number
+    val exitCode: Number
 
     /**The entire stdout of the process as a string */
-    var stdout: String
+    val stdout: String
 
     /**The entire stderr of the process as a string */
-    var stderr: String
+    val stderr: String
 }

@@ -6,19 +6,19 @@ import kotlinx.js.JsPlainObject
 import node.buffer.Buffer
 
 @JsPlainObject
-sealed external interface ExecListeners {
+external interface ExecListeners {
     /** A call back for each buffer of stdout */
-    var stdout: ((data: Buffer) -> Unit)?
+    val stdout: ((data: Buffer) -> Unit)?
 
     /** A call back for each buffer of stderr */
-    var stderr: ((data: Buffer) -> Unit)?
+    val stderr: ((data: Buffer) -> Unit)?
 
     /** A call back for each line of stdout */
-    var stdline: ((data: String) -> Unit)?
+    val stdline: ((data: String) -> Unit)?
 
     /** A call back for each line of stderr */
-    var errline: ((data: String) -> Unit)?
+    val errline: ((data: String) -> Unit)?
 
     /** A call back for each debug log */
-    var debug: ((data: String) -> Unit)?
+    val debug: ((data: String) -> Unit)?
 }

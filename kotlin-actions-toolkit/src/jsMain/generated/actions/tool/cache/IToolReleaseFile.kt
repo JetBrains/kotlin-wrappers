@@ -5,10 +5,10 @@ package actions.tool.cache
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface IToolReleaseFile {
-    var filename: String
-    var platform: String
-    var platform_version: String?
-    var arch: String
-    var download_url: String
+external interface IToolReleaseFile {
+    val filename: String
+    val platform: String
+    val platform_version: String?
+    val arch: String
+    val download_url: String
 }

@@ -5,7 +5,7 @@ package actions.artifact
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface UploadArtifactOptions {
+external interface UploadArtifactOptions {
     /**
      * Duration after which artifact will expire in days.
      *
@@ -21,7 +21,7 @@ sealed external interface UploadArtifactOptions {
      * will be reduced to match the max value allowed on server, and the upload process will continue. An
      * input of 0 assumes default retention setting.
      */
-    var retentionDays: Number?
+    val retentionDays: Number?
 
     /**
      * The level of compression for Zlib to be applied to the artifact archive.
@@ -33,5 +33,5 @@ sealed external interface UploadArtifactOptions {
      * Higher levels will result in better compression, but will take longer to complete.
      * For large files that are not easily compressed, a value of 0 is recommended for significantly faster uploads.
      */
-    var compressionLevel: Number?
+    val compressionLevel: Number?
 }

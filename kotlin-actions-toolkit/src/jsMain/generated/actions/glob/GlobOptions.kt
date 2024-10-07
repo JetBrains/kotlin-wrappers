@@ -5,14 +5,14 @@ package actions.glob
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface GlobOptions {
+external interface GlobOptions {
     /**
      * Indicates whether to follow symbolic links. Generally should set to false
      * when deleting files.
      *
      * @default true
      */
-    var followSymbolicLinks: Boolean?
+    val followSymbolicLinks: Boolean?
 
     /**
      * Indicates whether directories that match a glob pattern, should implicitly
@@ -23,7 +23,7 @@ sealed external interface GlobOptions {
      *
      * @default true
      */
-    var implicitDescendants: Boolean?
+    val implicitDescendants: Boolean?
 
     /**
      * Indicates whether matching directories should be included in the
@@ -31,7 +31,7 @@ sealed external interface GlobOptions {
      *
      * @default true
      */
-    var matchDirectories: Boolean?
+    val matchDirectories: Boolean?
 
     /**
      * Indicates whether broken symbolic should be ignored and omitted from the
@@ -39,7 +39,7 @@ sealed external interface GlobOptions {
      *
      * @default true
      */
-    var omitBrokenSymbolicLinks: Boolean?
+    val omitBrokenSymbolicLinks: Boolean?
 
     /**
      * Indicates whether to exclude hidden files (files and directories starting with a `.`).
@@ -48,5 +48,5 @@ sealed external interface GlobOptions {
      *
      * @default false
      */
-    var excludeHiddenFiles: Boolean?
+    val excludeHiddenFiles: Boolean?
 }

@@ -5,32 +5,32 @@ package actions.artifact
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface FindOptions {
+external interface FindOptions {
     /**
      * The criteria for finding Artifact(s) out of the scope of the current run.
      */
-    var findBy: FindBy?
+    val findBy: FindBy?
 
     @JsPlainObject
     interface FindBy {
         /**
          * Token with actions:read permissions
          */
-        var token: String
+        val token: String
 
         /**
          * WorkflowRun of the artifact(s) to lookup
          */
-        var workflowRunId: Number
+        val workflowRunId: Number
 
         /**
          * Repository owner (eg. 'actions')
          */
-        var repositoryOwner: String
+        val repositoryOwner: String
 
         /**
          * Repository owner (eg. 'toolkit')
          */
-        var repositoryName: String
+        val repositoryName: String
     }
 }

@@ -5,7 +5,7 @@ package actions.cache
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface DownloadOptions {
+external interface DownloadOptions {
     /**
      * Indicates whether to use the Azure Blob SDK to download caches
      * that are stored on Azure Blob Storage to improve reliability and
@@ -13,7 +13,7 @@ sealed external interface DownloadOptions {
      *
      * @default true
      */
-    var useAzureSdk: Boolean?
+    val useAzureSdk: Boolean?
 
     /**
      * Number of parallel downloads (this option only applies when using
@@ -21,13 +21,13 @@ sealed external interface DownloadOptions {
      *
      * @default 8
      */
-    var downloadConcurrency: Number?
+    val downloadConcurrency: Number?
 
     /**
      * Indicates whether to use Actions HttpClient with concurrency
      * for Azure Blob Storage
      */
-    var concurrentBlobDownloads: Boolean?
+    val concurrentBlobDownloads: Boolean?
 
     /**
      * Maximum time for each download request, in milliseconds (this
@@ -35,14 +35,14 @@ sealed external interface DownloadOptions {
      *
      * @default 30000
      */
-    var timeoutInMs: Number?
+    val timeoutInMs: Number?
 
     /**
      * Time after which a segment download should be aborted if stuck
      *
      * @default 3600000
      */
-    var segmentTimeoutInMs: Number?
+    val segmentTimeoutInMs: Number?
 
     /**
      * Weather to skip downloading the cache entry.
@@ -51,5 +51,5 @@ sealed external interface DownloadOptions {
      *
      * @default false
      */
-    var lookupOnly: Boolean?
+    val lookupOnly: Boolean?
 }

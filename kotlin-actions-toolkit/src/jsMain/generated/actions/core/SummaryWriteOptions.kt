@@ -5,10 +5,10 @@ package actions.core
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface SummaryWriteOptions {
+external interface SummaryWriteOptions {
     /**
      * Replace all existing content in summary file with buffer contents
      * (optional) default: false
      */
-    var overwrite: Boolean?
+    val overwrite: Boolean?
 }

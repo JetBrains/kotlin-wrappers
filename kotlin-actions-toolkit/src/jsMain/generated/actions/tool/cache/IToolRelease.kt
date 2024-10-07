@@ -6,9 +6,9 @@ import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface IToolRelease {
-    var version: String
-    var stable: Boolean
-    var release_url: String
-    var files: ReadonlyArray<IToolReleaseFile>
+external interface IToolRelease {
+    val version: String
+    val stable: Boolean
+    val release_url: String
+    val files: ReadonlyArray<IToolReleaseFile>
 }

@@ -5,18 +5,18 @@ package actions.github
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface PayloadRepository {
+external interface PayloadRepository {
     // [key: string]: any
-    var full_name: String?
-    var name: String
-    var owner: Owner
+    val full_name: String?
+    val name: String
+    val owner: Owner
 
     @JsPlainObject
     interface Owner {
         //     [key: string]: any
-        var login: String
-        var name: String?
+        val login: String
+        val name: String?
     }
 
-    var html_url: String?
+    val html_url: String?
 }

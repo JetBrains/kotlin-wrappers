@@ -6,9 +6,9 @@ import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface ListArtifactsResponse {
+external interface ListArtifactsResponse {
     /**
      * A list of artifacts that were found
      */
-    var artifacts: ReadonlyArray<Artifact>
+    val artifacts: ReadonlyArray<Artifact>
 }
