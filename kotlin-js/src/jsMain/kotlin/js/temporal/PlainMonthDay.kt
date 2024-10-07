@@ -32,8 +32,8 @@ external class PlainMonthDay(
     fun toPlainDate(options: ToPlainDateOptions): PlainDate
 
     @JsPlainObject
-    sealed interface ToPlainDateOptions {
-        var year: Int
+    interface ToPlainDateOptions {
+        val year: Int
     }
 
     fun getISOFields(): PlainDateISOFields

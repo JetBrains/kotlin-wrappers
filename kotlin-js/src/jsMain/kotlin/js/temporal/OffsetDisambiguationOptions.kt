@@ -3,7 +3,7 @@ package js.temporal
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface OffsetDisambiguationOptions {
+external interface OffsetDisambiguationOptions {
     /**
      * Time zone definitions can change. If an application stores data about
      * events in the future, then stored data about future events may become

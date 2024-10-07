@@ -7,7 +7,7 @@ import kotlinx.js.JsPlainObject
  * `Duration.subtract()`
  */
 @JsPlainObject
-sealed external interface DurationArithmeticOptions {
+external interface DurationArithmeticOptions {
     /**
      * The starting point to use when variable-length units (years, months,
      * weeks depending on the calendar) are involved. This option is required if
@@ -28,7 +28,7 @@ sealed external interface DurationArithmeticOptions {
      * this option is omitted), then the operation will ignore time zone
      * transitions and all days will be assumed to be 24 hours long.
      */
-    var relativeTo: Any? /*
+    val relativeTo: Any? /*
         | Temporal.ZonedDateTime
         | Temporal.PlainDateTime
         | ZonedDateTimeLike

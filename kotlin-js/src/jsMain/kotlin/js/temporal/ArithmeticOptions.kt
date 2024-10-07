@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
  * Options for arithmetic operations like `add()` and `subtract()`
  */
 @JsPlainObject
-sealed external interface ArithmeticOptions {
+external interface ArithmeticOptions {
     /**
      * Controls handling of out-of-range arithmetic results.
      *
@@ -15,5 +15,5 @@ sealed external interface ArithmeticOptions {
      *
      * The default is `'constrain'`.
      */
-    var overflow: Overflow?
+    val overflow: Overflow?
 }

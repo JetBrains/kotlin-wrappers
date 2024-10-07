@@ -7,14 +7,14 @@ import kotlinx.js.JsPlainObject
  * `Temporal` types.
  */
 @JsPlainObject
-sealed external interface DifferenceOptions<T : DateTimeUnit<T>> {
+external interface DifferenceOptions<T : DateTimeUnit<T>> {
     /**
      * The unit to round to. For example, to round to the nearest minute, use
      * `smallestUnit: 'minute'`. This property is optional for `until()` and
      * `since()`, because those methods default behavior is not to round.
      * However, the same property is required for `round()`.
      */
-    var smallestUnit: SmallestUnit<T>?
+    val smallestUnit: SmallestUnit<T>?
 
     /**
      * The largest unit to allow in the resulting `Temporal.Duration` object.
@@ -32,14 +32,14 @@ sealed external interface DifferenceOptions<T : DateTimeUnit<T>> {
      * The default is always `'auto'`, though the meaning of this depends on the
      * type being used.
      */
-    var largestUnit: LargestUnit<T>?
+    val largestUnit: LargestUnit<T>?
 
     /**
      * Allows rounding to an integer number of units. For example, to round to
      * increments of a half hour, use `{ smallestUnit: 'minute',
      * roundingIncrement: 30 }`.
      */
-    var roundingIncrement: Int?
+    val roundingIncrement: Int?
 
     /**
      * Controls how rounding is performed:
@@ -57,5 +57,5 @@ sealed external interface DifferenceOptions<T : DateTimeUnit<T>> {
      *   negative infinity which is usually unexpected. For this reason, `trunc`
      *   is recommended for most use cases.
      */
-    var roundingMode: RoundingMode?
+    val roundingMode: RoundingMode?
 }

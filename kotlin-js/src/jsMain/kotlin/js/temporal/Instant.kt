@@ -41,9 +41,9 @@ external class Instant(
     ): ZonedDateTime
 
     @JsPlainObject
-    sealed interface ToZonedDateTimeOptions {
-        var timeZone: TimeZoneLike
-        var calendar: CalendarLike
+    interface ToZonedDateTimeOptions {
+        val timeZone: TimeZoneLike
+        val calendar: CalendarLike
     }
 
     fun toZonedDateTimeISO(tzLike: TimeZoneLike): ZonedDateTime

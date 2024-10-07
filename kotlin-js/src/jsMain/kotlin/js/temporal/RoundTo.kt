@@ -10,21 +10,21 @@ import kotlinx.js.JsPlainObject
  * `smallestUnit` property value is that string.
  */
 @JsPlainObject
-sealed external interface RoundTo<T : DateTimeUnit<T>> {
+external interface RoundTo<T : DateTimeUnit<T>> {
     /**
      * The unit to round to. For example, to round to the nearest minute,
      * use `smallestUnit: 'minute'`. This option is required. Note that the
      * same-named property is optional when passed to `until` or `since`
      * methods, because those methods do no rounding by default.
      */
-    var smallestUnit: SmallestUnit<T>
+    val smallestUnit: SmallestUnit<T>
 
     /**
      * Allows rounding to an integer number of units. For example, to round to
      * increments of a half hour, use `{ smallestUnit: 'minute',
      * roundingIncrement: 30 }`.
      */
-    var roundingIncrement: Int?
+    val roundingIncrement: Int?
 
     /**
      * Controls how rounding is performed:
@@ -40,5 +40,5 @@ sealed external interface RoundTo<T : DateTimeUnit<T>> {
      *   negative infinity which is usually unexpected. For this reason, `trunc`
      *   is recommended for most use cases.
      */
-    var roundingMode: RoundingMode?
+    val roundingMode: RoundingMode?
 }

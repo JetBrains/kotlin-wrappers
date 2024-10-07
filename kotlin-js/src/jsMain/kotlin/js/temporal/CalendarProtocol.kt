@@ -174,10 +174,10 @@ sealed external interface CalendarProtocol
     ): PlainDate
 
     @JsPlainObject
-    sealed interface DateFromFields :
+    interface DateFromFields :
         YearOrEraAndEraYear,
         MonthOrMonthCode {
-        var day: Int
+        val day: Int
     }
 
     fun yearMonthFromFields(
@@ -186,7 +186,7 @@ sealed external interface CalendarProtocol
     ): PlainYearMonth
 
     @JsPlainObject
-    sealed interface YearMonthFromFields :
+    interface YearMonthFromFields :
         YearOrEraAndEraYear,
         MonthOrMonthCode
 
@@ -196,9 +196,9 @@ sealed external interface CalendarProtocol
     ): PlainMonthDay
 
     @JsPlainObject
-    sealed interface MonthDayFromFields :
+    interface MonthDayFromFields :
         MonthCodeOrMonthAndYear {
-        var day: Int
+        val day: Int
     }
 
     fun dateAdd(

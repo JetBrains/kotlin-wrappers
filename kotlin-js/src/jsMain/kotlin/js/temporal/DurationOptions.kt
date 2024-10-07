@@ -8,7 +8,7 @@ import kotlinx.js.JsPlainObject
  * `Duration.prototype.add()` and `Duration.prototype.subtract()`.
  */
 @JsPlainObject
-sealed external interface DurationOptions {
+external interface DurationOptions {
     /**
      * How to deal with out-of-range values
      *
@@ -19,5 +19,5 @@ sealed external interface DurationOptions {
      *
      * The default is `'constrain'`.
      */
-    var overflow: String? /* "constrain" | "balance" */
+    val overflow: String? /* "constrain" | "balance" */
 }

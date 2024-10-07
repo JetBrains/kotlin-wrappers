@@ -3,8 +3,8 @@ package js.temporal
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface ZonedDateTimeToStringOptions :
+external interface ZonedDateTimeToStringOptions :
     CalendarTypeToStringOptions {
-    var timeZoneName: String? /* "auto" | "never" | "critical" */
-    var offset: String? /* "auto" | "never" */
+    val timeZoneName: String? /* "auto" | "never" | "critical" */
+    val offset: String? /* "auto" | "never" */
 }

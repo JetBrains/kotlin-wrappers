@@ -3,15 +3,15 @@ package js.temporal
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface PlainDateTimeISOFields {
-    var isoYear: Int
-    var isoMonth: Int
-    var isoDay: Int
-    var isoHour: Int
-    var isoMinute: Int
-    var isoSecond: Int
-    var isoMillisecond: Int
-    var isoMicrosecond: Int
-    var isoNanosecond: Int
-    var calendar: Any /* String | CalendarProtocol */
+external interface PlainDateTimeISOFields {
+    val isoYear: Int
+    val isoMonth: Int
+    val isoDay: Int
+    val isoHour: Int
+    val isoMinute: Int
+    val isoSecond: Int
+    val isoMillisecond: Int
+    val isoMicrosecond: Int
+    val isoNanosecond: Int
+    val calendar: Any /* String | CalendarProtocol */
 }

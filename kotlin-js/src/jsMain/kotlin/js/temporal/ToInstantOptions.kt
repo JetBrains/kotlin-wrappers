@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
  * Options for conversions of `Temporal.PlainDateTime` to `Temporal.Instant`
  */
 @JsPlainObject
-sealed external interface ToInstantOptions {
+external interface ToInstantOptions {
     /**
      * Controls handling of invalid or ambiguous times caused by time zone
      * offset changes like Daylight Saving time (DST) transitions.
@@ -29,5 +29,5 @@ sealed external interface ToInstantOptions {
      *
      * The default is `'compatible'`.
      */
-    var disambiguation: Disambiguation?
+    val disambiguation: Disambiguation?
 }

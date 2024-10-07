@@ -3,9 +3,9 @@ package js.temporal
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface MonthOrMonthCode {
-    var month: Int?
+external interface MonthOrMonthCode {
+    val month: Int?
 
     // or
-    var monthCode: String?
+    val monthCode: String?
 }

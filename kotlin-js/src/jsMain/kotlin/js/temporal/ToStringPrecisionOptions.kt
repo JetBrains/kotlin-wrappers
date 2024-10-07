@@ -6,9 +6,9 @@ import kotlinx.js.JsPlainObject
  * Options for outputting precision in toString() on types with seconds
  */
 @JsPlainObject
-sealed external interface ToStringPrecisionOptions {
-    var fractionalSecondDigits: Any? /* "auto" | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 */
-    var smallestUnit: SmallestUnit<TimeUnit<*> /* "minute" | "second" | "millisecond" | "microsecond" | "nanosecond" */>?
+external interface ToStringPrecisionOptions {
+    val fractionalSecondDigits: Any? /* "auto" | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 */
+    val smallestUnit: SmallestUnit<TimeUnit<*> /* "minute" | "second" | "millisecond" | "microsecond" | "nanosecond" */>?
 
     /**
      * Controls how rounding is performed:
@@ -24,5 +24,5 @@ sealed external interface ToStringPrecisionOptions {
      *   negative infinity which is usually unexpected. For this reason, `trunc`
      *   is recommended for most use cases.
      */
-    var roundingMode: RoundingMode?
+    val roundingMode: RoundingMode?
 }

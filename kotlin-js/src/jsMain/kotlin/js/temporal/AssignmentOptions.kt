@@ -7,7 +7,7 @@ import kotlinx.js.JsPlainObject
  * `from()`.
  */
 @JsPlainObject
-sealed external interface AssignmentOptions {
+external interface AssignmentOptions {
     /**
      * How to deal with out-of-range values
      *
@@ -18,5 +18,5 @@ sealed external interface AssignmentOptions {
      *
      * The default is `'constrain'`.
      */
-    var overflow: Overflow?
+    val overflow: Overflow?
 }

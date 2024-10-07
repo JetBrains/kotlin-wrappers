@@ -3,10 +3,10 @@ package js.temporal
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface YearOrEraAndEraYear {
-    var era: String?
-    var eraYear: Int?
+external interface YearOrEraAndEraYear {
+    val era: String?
+    val eraYear: Int?
 
     // or
-    var year: Int?
+    val year: Int?
 }

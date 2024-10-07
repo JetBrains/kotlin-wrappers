@@ -4,28 +4,28 @@ import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface TimeZoneProtocol :
+external interface TimeZoneProtocol :
     TimeZoneLike {
-    var id: String
-    var getOffsetNanosecondsFor: (instant: Instant /* | string */) -> Int
-    var getOffsetStringFor: ((instant: Instant /* | string */) -> String)?
-    var getPlainDateTimeFor: ((
+    val id: String
+    val getOffsetNanosecondsFor: (instant: Instant /* | string */) -> Int
+    val getOffsetStringFor: ((instant: Instant /* | string */) -> String)?
+    val getPlainDateTimeFor: ((
         instant: Instant, /* | string */
         calendar: CalendarLike?,
     ) -> PlainDateTime)?
-    var getInstantFor: ((
+    val getInstantFor: ((
         dateTime: PlainDateTime, /* | PlainDateTimeLike | string */
         options: ToInstantOptions?,
     ) -> Instant)?
-    var getNextTransition: ((
+    val getNextTransition: ((
         startingPoint: Instant, /* | string */
     ) -> Instant?)?
-    var getPreviousTransition: ((
+    val getPreviousTransition: ((
         startingPoint: Instant, /* | string */
     ) -> Instant?)?
-    var getPossibleInstantsFor: (
+    val getPossibleInstantsFor: (
         dateTime: PlainDateTime, /* | PlainDateTimeLike | string */
     ) -> ReadonlyArray<Instant>
-    var toString: (() -> String)?
-    var toJSON: (() -> String)?
+    val toString: (() -> String)?
+    val toJSON: (() -> String)?
 }

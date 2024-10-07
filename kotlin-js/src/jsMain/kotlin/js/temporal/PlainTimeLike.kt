@@ -3,7 +3,7 @@ package js.temporal
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface PlainTimeLike {
+external interface PlainTimeLike {
     var hour: Int?
     var minute: Int?
     var second: Int?
