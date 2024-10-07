@@ -6,18 +6,18 @@ import js.objects.TypedPropertyDescriptor
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-sealed external interface ProxyHandler<T : Any> {
-    var apply: ((target: T, thisArg: Any, argArray: ReadonlyArray<Any>) -> Any)?
-    var construct: ((target: T, argArray: ReadonlyArray<Any>, newTarget: Function<*>) -> Any)?
-    var defineProperty: ((target: T, p: PropertyKey, attributes: TypedPropertyDescriptor<*>) -> Boolean)?
-    var deleteProperty: ((target: T, p: PropertyKey) -> Boolean)?
-    var get: ((target: T, p: PropertyKey, receiver: Any) -> Any)?
-    var getOwnPropertyDescriptor: ((target: T, p: PropertyKey) -> TypedPropertyDescriptor<*>)?
-    var getPrototypeOf: ((target: T) -> Any?)?
-    var has: ((target: T, p: PropertyKey) -> Boolean)?
-    var isExtensible: ((target: T) -> Boolean)?
-    var ownKeys: ((target: T) -> ReadonlyArray<PropertyKey>)?
-    var preventExtensions: ((target: T) -> Boolean)?
-    var set: ((target: T, p: PropertyKey, value: Any, receiver: Any) -> Boolean)?
-    var setPrototypeOf: ((target: T, v: Any?) -> Boolean)?
+external interface ProxyHandler<in T : Any> {
+    val apply: ((target: T, thisArg: Any, argArray: ReadonlyArray<Any>) -> Any)?
+    val construct: ((target: T, argArray: ReadonlyArray<Any>, newTarget: Function<*>) -> Any)?
+    val defineProperty: ((target: T, p: PropertyKey, attributes: TypedPropertyDescriptor<*>) -> Boolean)?
+    val deleteProperty: ((target: T, p: PropertyKey) -> Boolean)?
+    val get: ((target: T, p: PropertyKey, receiver: Any) -> Any)?
+    val getOwnPropertyDescriptor: ((target: T, p: PropertyKey) -> TypedPropertyDescriptor<*>)?
+    val getPrototypeOf: ((target: T) -> Any?)?
+    val has: ((target: T, p: PropertyKey) -> Boolean)?
+    val isExtensible: ((target: T) -> Boolean)?
+    val ownKeys: ((target: T) -> ReadonlyArray<PropertyKey>)?
+    val preventExtensions: ((target: T) -> Boolean)?
+    val set: ((target: T, p: PropertyKey, value: Any, receiver: Any) -> Boolean)?
+    val setPrototypeOf: ((target: T, v: Any?) -> Boolean)?
 }
