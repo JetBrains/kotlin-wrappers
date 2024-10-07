@@ -35,7 +35,7 @@ external class LinearSpline(
      * @property [points] The array of control points.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var times: ReadonlyArray<Double>
         var points: ReadonlyArray<Cartesian3 /* or number */>
     }

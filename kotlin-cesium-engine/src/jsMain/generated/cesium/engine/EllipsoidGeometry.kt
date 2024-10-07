@@ -42,7 +42,7 @@ external class EllipsoidGeometry(
      *   Default value - [VertexFormat.DEFAULT]
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var radii: Cartesian3?
         var innerRadii: Cartesian3?
         var minimumClock: Double?

@@ -46,7 +46,7 @@ external class GeocoderService {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeocoderService.html#.Result">Online Documentation</a>
      */
     @JsPlainObject
-    sealed interface Result {
+    interface Result {
         var displayName: String
         var destination: Any /* Rectangle | Cartesian3 */
         var attributions: ReadonlyArray<Any>?

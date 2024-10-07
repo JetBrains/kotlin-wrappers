@@ -27,7 +27,7 @@ external class Moon(
      *   Default value - `true`
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var show: Boolean?
         var textureUrl: String?
         var ellipsoid: Ellipsoid?

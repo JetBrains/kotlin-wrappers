@@ -126,7 +126,7 @@ private constructor() {
      * @property [animationTime] If defined, computes the local animation time for this animation.
      */
     @JsPlainObject
-    sealed interface AddOptions {
+    interface AddOptions {
         var name: String?
         var index: Int?
         var startTime: JulianDate?
@@ -171,7 +171,7 @@ private constructor() {
      * @property [animationTime] If defined, computes the local animation time for all of the animations.
      */
     @JsPlainObject
-    sealed interface AddAllOptions {
+    interface AddAllOptions {
         var startTime: JulianDate?
         var delay: Double?
         var stopTime: JulianDate?

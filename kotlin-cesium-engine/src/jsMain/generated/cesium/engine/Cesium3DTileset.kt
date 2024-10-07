@@ -1042,7 +1042,7 @@ external class Cesium3DTileset(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#.ConstructorOptions">Online Documentation</a>
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var show: Boolean?
         var modelMatrix: Matrix4?
         var modelUpAxis: Axis?

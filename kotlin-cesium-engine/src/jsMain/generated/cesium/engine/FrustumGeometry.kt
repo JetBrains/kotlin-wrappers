@@ -22,7 +22,7 @@ external class FrustumGeometry(
      *   Default value - [VertexFormat.DEFAULT]
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var frustum: Any /* PerspectiveFrustum | OrthographicFrustum */
         var origin: Cartesian3
         var orientation: Quaternion

@@ -270,7 +270,7 @@ external class ArcGisMapServerImageryProvider(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGisMapServerImageryProvider.html#.ConstructorOptions">Online Documentation</a>
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var tileDiscardPolicy: TileDiscardPolicy?
         var usePreCachedTilesIfAvailable: Boolean?
         var layers: String?

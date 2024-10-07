@@ -259,7 +259,7 @@ external class Camera(
      * @property [convert] Whether to convert the destination from world coordinates to scene coordinates (only relevant when not using 3D). Defaults to `true`.
      */
     @JsPlainObject
-    sealed interface SetViewOptions {
+    interface SetViewOptions {
         var destination: Any /* Cartesian3 | Rectangle */?
         var orientation: CameraOrientation?
         var endTransform: Matrix4?
@@ -737,7 +737,7 @@ external class Camera(
      * @property [easingFunction] Controls how the time is interpolated over the duration of the flight.
      */
     @JsPlainObject
-    sealed interface FlyToOptions {
+    interface FlyToOptions {
         var destination: Any /* Cartesian3 | Rectangle */
         var orientation: CameraOrientation?
         var duration: Double?
@@ -805,7 +805,7 @@ external class Camera(
      * @property [easingFunction] Controls how the time is interpolated over the duration of the flight.
      */
     @JsPlainObject
-    sealed interface FlyToBoundingSphereOptions {
+    interface FlyToBoundingSphereOptions {
         var duration: Double?
         var offset: HeadingPitchRange?
         var complete: FlightCompleteCallback?

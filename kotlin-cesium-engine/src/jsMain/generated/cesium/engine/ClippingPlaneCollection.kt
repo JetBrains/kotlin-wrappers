@@ -56,7 +56,7 @@ external class ClippingPlaneCollection(
      *   Default value - `0.0`
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var planes: ReadonlyArray<ClippingPlane>?
         var enabled: Boolean?
         var modelMatrix: Matrix4?

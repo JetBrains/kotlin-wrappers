@@ -42,7 +42,7 @@ external fun writeTextToCanvas(
  *   Default value - `0`
  */
 @JsPlainObject
-sealed external interface WriteTextToCanvasOptions {
+external interface WriteTextToCanvasOptions {
     var font: String?
     var textBaseline: String?
     var fill: Boolean?

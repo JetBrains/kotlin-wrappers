@@ -24,7 +24,7 @@ external class PerformanceWatchdog(
      *   Default value - `'This application appears to be performing poorly on your system.  Please try using a different web browser or updating your video drivers.'`
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var container: Element
         var scene: Scene
         var lowFrameRateMessage: String?

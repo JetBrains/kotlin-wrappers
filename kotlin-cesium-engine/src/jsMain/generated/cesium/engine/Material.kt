@@ -50,7 +50,7 @@ external class Material(
      * @property [fabric] The fabric JSON used to generate the material.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var strict: Boolean?
         var translucent: Boolean /* | Function */?
         var minificationFilter: TextureMinificationFilter?

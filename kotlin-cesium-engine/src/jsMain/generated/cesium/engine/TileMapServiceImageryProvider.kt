@@ -60,7 +60,7 @@ private constructor() {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileMapServiceImageryProvider.html#.ConstructorOptions">Online Documentation</a>
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var fileExtension: String?
         var credit: Credit?
         var minimumLevel: Int?

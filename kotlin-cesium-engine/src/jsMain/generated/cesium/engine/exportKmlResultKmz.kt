@@ -9,6 +9,6 @@ import web.blob.Blob
  * @property [kmz] The generated kmz file.
  */
 @JsPlainObject
-sealed external interface exportKmlResultKmz {
+external interface exportKmlResultKmz {
     var kmz: Blob
 }

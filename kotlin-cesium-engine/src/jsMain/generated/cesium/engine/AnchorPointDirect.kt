@@ -40,7 +40,7 @@ external class AnchorPointDirect(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/AnchorPointDirect.html#.ConstructorOptions">Online Documentation</a>
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var position: Cartesian3
         var adjustmentParams: Cartesian3
     }

@@ -87,7 +87,7 @@ external class ScreenSpaceEventHandler(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#.PositionedEvent">Online Documentation</a>
      */
     @JsPlainObject
-    sealed interface PositionedEvent {
+    interface PositionedEvent {
         var position: Cartesian2
     }
 
@@ -96,7 +96,7 @@ external class ScreenSpaceEventHandler(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#.MotionEvent">Online Documentation</a>
      */
     @JsPlainObject
-    sealed interface MotionEvent {
+    interface MotionEvent {
         var startPosition: Cartesian2
         var endPosition: Cartesian2
     }
@@ -106,7 +106,7 @@ external class ScreenSpaceEventHandler(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#.TwoPointEvent">Online Documentation</a>
      */
     @JsPlainObject
-    sealed interface TwoPointEvent {
+    interface TwoPointEvent {
         var position1: Cartesian2
         var position2: Cartesian2
     }
@@ -116,7 +116,7 @@ external class ScreenSpaceEventHandler(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#.TwoPointMotionEvent">Online Documentation</a>
      */
     @JsPlainObject
-    sealed interface TwoPointMotionEvent {
+    interface TwoPointMotionEvent {
         var position1: Cartesian2
         var position2: Cartesian2
         var previousPosition1: Cartesian2

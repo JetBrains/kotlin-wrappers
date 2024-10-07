@@ -281,7 +281,7 @@ external class Color(
          *   Default value - `1.0`
          */
         @JsPlainObject
-        sealed interface FromRandomOptions {
+        interface FromRandomOptions {
             var red: Double?
             var minimumRed: Double?
             var maximumRed: Double?

@@ -73,7 +73,7 @@ external class PerInstanceColorAppearance(
      * @property [renderState] Optional render state to override the default render state.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var flat: Boolean?
         var faceForward: Boolean?
         var translucent: Boolean?

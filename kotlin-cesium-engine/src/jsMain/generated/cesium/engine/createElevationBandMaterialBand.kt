@@ -13,7 +13,7 @@ import kotlinx.js.JsPlainObject
  *   Default value - `false`
  */
 @JsPlainObject
-sealed external interface createElevationBandMaterialBand {
+external interface createElevationBandMaterialBand {
     var entries: ReadonlyArray<createElevationBandMaterialEntry>
     var extendDownwards: Boolean?
     var extendUpwards: Boolean?

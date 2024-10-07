@@ -99,7 +99,7 @@ external class CesiumWidget(
      *   Default value - `4`
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var clock: Clock?
         var ellipsoid: Ellipsoid?
         var baseLayer: ImageryLayer /* | false */?

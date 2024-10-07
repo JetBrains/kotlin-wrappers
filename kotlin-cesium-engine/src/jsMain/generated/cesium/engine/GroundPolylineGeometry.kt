@@ -41,7 +41,7 @@ external class GroundPolylineGeometry(
      *   Default value - [ArcType.GEODESIC]
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var positions: ReadonlyArray<Cartesian3>
         var width: Double?
         var granularity: Double?

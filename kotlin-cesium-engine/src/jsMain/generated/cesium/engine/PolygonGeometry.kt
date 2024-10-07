@@ -105,7 +105,7 @@ external class PolygonGeometry(
      * @property [textureCoordinates] Texture coordinates as a [PolygonHierarchy] of [Cartesian2] points. Has no effect for ground primitives.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var polygonHierarchy: PolygonHierarchy
         var height: Double?
         var extrudedHeight: Double?
@@ -170,7 +170,7 @@ external class PolygonGeometry(
          * @property [textureCoordinates] Texture coordinates as a [PolygonHierarchy] of [Cartesian2] points. Has no effect for ground primitives.
          */
         @JsPlainObject
-        sealed interface FromPositionsOptions {
+        interface FromPositionsOptions {
             var positions: ReadonlyArray<Cartesian3>
             var height: Double?
             var extrudedHeight: Double?

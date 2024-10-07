@@ -318,7 +318,7 @@ external class ImageryLayer(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayer.html#.ConstructorOptions">Online Documentation</a>
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var rectangle: Rectangle?
         var alpha: Double /* | Function */?
         var nightAlpha: Double /* | Function */?
@@ -487,6 +487,6 @@ external class ImageryLayer(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayer.html#.WorldImageryConstructorOptions">Online Documentation</a>
          */
         @JsPlainObject
-        sealed interface /* typealias */ WorldImageryConstructorOptions : ConstructorOptions
+        interface /* typealias */ WorldImageryConstructorOptions : ConstructorOptions
     }
 }

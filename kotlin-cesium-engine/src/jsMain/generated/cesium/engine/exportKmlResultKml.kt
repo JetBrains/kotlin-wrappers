@@ -11,7 +11,7 @@ import web.blob.Blob
  * @property [externalFiles] An object dictionary of external files
  */
 @JsPlainObject
-sealed external interface exportKmlResultKml {
+external interface exportKmlResultKml {
     var kml: String
     var externalFiles: ReadonlyRecord<String, Blob>
 }

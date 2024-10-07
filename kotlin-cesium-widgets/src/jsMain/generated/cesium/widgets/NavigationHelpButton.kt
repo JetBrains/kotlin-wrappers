@@ -29,7 +29,7 @@ external class NavigationHelpButton(
      *   Default value - `false`
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var container: Element
         var instructionsInitiallyVisible: Boolean?
     }

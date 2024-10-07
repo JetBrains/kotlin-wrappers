@@ -26,7 +26,7 @@ external class ProviderViewModel(
      *   that creates one or more providers which will be added to the globe when this item is selected.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var name: String
         var tooltip: String
         var iconUrl: String

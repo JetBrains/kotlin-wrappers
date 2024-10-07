@@ -39,7 +39,7 @@ external class GoogleEarthEnterpriseTerrainData(
      * @property [credits] Array of credits for this tile.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var buffer: ArrayBuffer
         var negativeAltitudeExponentBias: Int
         var negativeElevationThreshold: Double

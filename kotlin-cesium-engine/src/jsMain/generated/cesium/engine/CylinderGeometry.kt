@@ -33,7 +33,7 @@ external class CylinderGeometry(
      *   Default value - [VertexFormat.DEFAULT]
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var length: Int
         var topRadius: Double
         var bottomRadius: Double

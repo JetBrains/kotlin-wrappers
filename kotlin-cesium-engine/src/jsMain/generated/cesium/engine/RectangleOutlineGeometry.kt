@@ -35,7 +35,7 @@ external class RectangleOutlineGeometry(
      * @property [extrudedHeight] The distance in meters between the rectangle's extruded face and the ellipsoid surface.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var rectangle: Rectangle
         var ellipsoid: Ellipsoid?
         var granularity: Double?

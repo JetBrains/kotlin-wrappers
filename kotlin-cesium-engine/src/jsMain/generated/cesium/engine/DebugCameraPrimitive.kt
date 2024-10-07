@@ -32,7 +32,7 @@ external class DebugCameraPrimitive(
      * @property [id] A user-defined object to return when the instance is picked with [Scene.pick].
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var camera: Camera
         var frustumSplits: ReadonlyArray<Double>?
         var color: Color?

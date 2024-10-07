@@ -80,7 +80,7 @@ external class QuantizedMeshTerrainData(
      * @property [credits] Array of credits for this tile.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var quantizedVertices: Uint16Array
         var indices: TypedArray<*, *> /* Uint16Array | Uint32Array */
         var minimumHeight: Double

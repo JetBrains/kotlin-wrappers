@@ -26,7 +26,7 @@ external class BoxOutlineGeometry(
      * @property [maximum] The maximum x, y, and z coordinates of the box.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var minimum: Cartesian3
         var maximum: Cartesian3
     }
@@ -48,7 +48,7 @@ external class BoxOutlineGeometry(
          * @property [dimensions] The width, depth, and height of the box stored in the x, y, and z coordinates of the `Cartesian3`, respectively.
          */
         @JsPlainObject
-        sealed interface FromDimensionsOptions {
+        interface FromDimensionsOptions {
             var dimensions: Cartesian3
         }
 

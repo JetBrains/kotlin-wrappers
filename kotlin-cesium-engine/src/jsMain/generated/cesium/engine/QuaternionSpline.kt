@@ -21,7 +21,7 @@ external class QuaternionSpline(
      * @property [points] The array of [Quaternion] control points.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var times: ReadonlyArray<Double>
         var points: ReadonlyArray<Quaternion>
     }

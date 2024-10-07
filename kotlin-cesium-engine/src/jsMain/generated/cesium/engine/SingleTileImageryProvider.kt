@@ -170,7 +170,7 @@ external class SingleTileImageryProvider(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SingleTileImageryProvider.html#.ConstructorOptions">Online Documentation</a>
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var url: Resource
         var tileWidth: Int?
         var tileHeight: Int?
@@ -223,7 +223,7 @@ external class SingleTileImageryProvider(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SingleTileImageryProvider.html#.fromUrlOptions">Online Documentation</a>
          */
         @JsPlainObject
-        sealed interface fromUrlOptions {
+        interface fromUrlOptions {
             var rectangle: Rectangle?
             var credit: Credit?
             var ellipsoid: Ellipsoid?

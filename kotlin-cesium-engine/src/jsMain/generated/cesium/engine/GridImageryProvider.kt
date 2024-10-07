@@ -191,7 +191,7 @@ external class GridImageryProvider(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GridImageryProvider.html#.ConstructorOptions">Online Documentation</a>
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var tilingScheme: TilingScheme?
         var ellipsoid: Ellipsoid?
         var cells: Int?

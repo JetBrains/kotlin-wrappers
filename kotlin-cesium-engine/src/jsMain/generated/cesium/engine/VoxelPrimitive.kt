@@ -22,7 +22,7 @@ external class VoxelPrimitive(
      * @property [clock] The clock used to control time dynamic behavior.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var provider: VoxelProvider?
         var modelMatrix: Matrix4?
         var customShader: CustomShader?

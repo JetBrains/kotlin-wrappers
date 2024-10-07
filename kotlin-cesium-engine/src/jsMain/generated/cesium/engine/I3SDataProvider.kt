@@ -207,7 +207,7 @@ external class I3SDataProvider(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SDataProvider.html#.ConstructorOptions">Online Documentation</a>
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var name: String?
         var show: Boolean?
         var geoidTiledTerrainProvider: PromiseResult<ArcGISTiledElevationTerrainProvider>?

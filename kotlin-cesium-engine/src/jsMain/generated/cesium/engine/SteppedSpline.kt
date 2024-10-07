@@ -34,7 +34,7 @@ external class SteppedSpline(
      * @property [points] The array of control points.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var times: ReadonlyArray<Double>
         var points: ReadonlyArray<Any> /* number[] | Cartesian3[] | Quaternion[] */
     }

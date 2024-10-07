@@ -37,7 +37,7 @@ external class CorridorGeometry(
      *   Default value - [CornerType.ROUNDED]
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var positions: ReadonlyArray<Cartesian3>
         var width: Double
         var ellipsoid: Ellipsoid?
@@ -105,7 +105,7 @@ external class CorridorGeometry(
          *   Default value - [CornerType.ROUNDED]
          */
         @JsPlainObject
-        sealed interface ComputeRectangleOptions {
+        interface ComputeRectangleOptions {
             var positions: ReadonlyArray<Cartesian3>
             var width: Double
             var ellipsoid: Ellipsoid?

@@ -117,7 +117,7 @@ external class Terrain(
          *   Default value - `false`
          */
         @JsPlainObject
-        sealed interface FromWorldTerrainOptions {
+        interface FromWorldTerrainOptions {
             var requestVertexNormals: Boolean?
             var requestWaterMask: Boolean?
         }
@@ -166,7 +166,7 @@ external class Terrain(
          *   Default value - `false`
          */
         @JsPlainObject
-        sealed interface FromWorldBathymetryOptions {
+        interface FromWorldBathymetryOptions {
             var requestVertexNormals: Boolean?
         }
     }

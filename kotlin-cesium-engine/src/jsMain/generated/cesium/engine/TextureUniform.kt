@@ -34,7 +34,7 @@ external class TextureUniform(
      *   Default value - `1.0`
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var typedArray: Uint8Array?
         var width: Double?
         var height: Double?

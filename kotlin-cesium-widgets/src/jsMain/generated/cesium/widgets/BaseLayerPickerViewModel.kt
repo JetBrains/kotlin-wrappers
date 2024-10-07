@@ -25,7 +25,7 @@ external class BaseLayerPickerViewModel(
      * @property [selectedTerrainProviderViewModel] The view model for the current base terrain layer, if not supplied the first available terrain layer is used.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var globe: Globe
         var imageryProviderViewModels: ReadonlyArray<ProviderViewModel>?
         var selectedImageryProviderViewModel: ProviderViewModel?

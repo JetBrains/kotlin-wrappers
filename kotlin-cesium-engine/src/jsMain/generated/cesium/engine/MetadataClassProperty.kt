@@ -42,7 +42,7 @@ external class MetadataClassProperty(
      * @property [extensions] An object containing extensions.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var id: String
         var type: MetadataType
         var componentType: MetadataComponentType?

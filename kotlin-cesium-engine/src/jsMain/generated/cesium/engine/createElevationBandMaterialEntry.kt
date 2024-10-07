@@ -9,7 +9,7 @@ import kotlinx.js.JsPlainObject
  * @property [color] The color at this height.
  */
 @JsPlainObject
-sealed external interface createElevationBandMaterialEntry {
+external interface createElevationBandMaterialEntry {
     var height: Double
     var color: Color
 }

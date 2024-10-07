@@ -36,7 +36,7 @@ external class ClippingPolygon(
      * @property [positions] A list of three or more Cartesian coordinates defining the outer ring of the clipping polygon.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var positions: ReadonlyArray<Cartesian3>
         var ellipsoid: Ellipsoid?
     }

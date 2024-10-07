@@ -12,7 +12,7 @@ import kotlinx.js.JsPlainObject
  * @property [classProperty] The metadata class property
  */
 @JsPlainObject
-sealed external interface PickedMetadataInfo {
+external interface PickedMetadataInfo {
     var schemaId: String?
     var className: String
     var propertyName: String

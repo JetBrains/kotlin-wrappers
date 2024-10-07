@@ -20,7 +20,7 @@ external class FrustumOutlineGeometry(
      * @property [orientation] The orientation of the frustum.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var frustum: Any /* PerspectiveFrustum | OrthographicFrustum */
         var origin: Cartesian3
         var orientation: Quaternion

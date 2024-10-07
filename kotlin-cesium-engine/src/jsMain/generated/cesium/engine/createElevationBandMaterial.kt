@@ -46,7 +46,7 @@ external fun createElevationBandMaterial(options: CreateElevationBandMaterialOpt
  * @property [layers] A list of bands ordered from lowest to highest precedence.
  */
 @JsPlainObject
-sealed external interface CreateElevationBandMaterialOptions {
+external interface CreateElevationBandMaterialOptions {
     var scene: Scene
     var layers: ReadonlyArray<createElevationBandMaterialBand>
 }

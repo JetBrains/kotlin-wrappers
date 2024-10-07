@@ -73,7 +73,7 @@ external class CustomShader(
      * @property [fragmentShaderText] The custom fragment shader as a string of GLSL code. It must include a GLSL function called fragmentMain. See the example for the expected signature. If not specified, the custom fragment shader step will be skipped in the computed fragment shader.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var mode: CustomShaderMode?
         var lightingModel: LightingModel?
         var translucencyMode: CustomShaderTranslucencyMode?

@@ -27,7 +27,7 @@ external class Appearance(
      * @property [renderState] Optional render state to override the default render state.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var translucent: Boolean?
         var closed: Boolean?
         var material: Material?

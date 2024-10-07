@@ -629,7 +629,7 @@ external class Viewer(
      * @property [offset] The offset from the target in the local east-north-up reference frame centered at the target.
      */
     @JsPlainObject
-    sealed interface FlyToOptions {
+    interface FlyToOptions {
         var duration: Double?
         var maximumHeight: Double?
         var offset: HeadingPitchRange?
@@ -896,7 +896,7 @@ external class Viewer(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Viewer.html#.ConstructorOptions">Online Documentation</a>
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var animation: Boolean?
         var baseLayerPicker: Boolean?
         var fullscreenButton: Boolean?

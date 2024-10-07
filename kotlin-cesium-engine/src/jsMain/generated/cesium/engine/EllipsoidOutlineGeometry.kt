@@ -43,7 +43,7 @@ external class EllipsoidOutlineGeometry(
      *   Default value - `128`
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var radii: Cartesian3?
         var innerRadii: Cartesian3?
         var minimumClock: Double?

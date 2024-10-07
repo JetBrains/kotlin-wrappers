@@ -119,7 +119,7 @@ private constructor() {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SNode.html#.AttributeFilter">Online Documentation</a>
      */
     @JsPlainObject
-    sealed interface AttributeFilter {
+    interface AttributeFilter {
         var name: String
         var values: ReadonlyArray<Comparable<*>> /* string[] | number[] */
     }

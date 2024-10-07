@@ -178,7 +178,7 @@ private constructor() {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseImageryProvider.html#.ConstructorOptions">Online Documentation</a>
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var ellipsoid: Ellipsoid?
         var tileDiscardPolicy: TileDiscardPolicy?
         var credit: Credit?

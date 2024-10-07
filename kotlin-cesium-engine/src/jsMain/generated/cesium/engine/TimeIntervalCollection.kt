@@ -137,7 +137,7 @@ external class TimeIntervalCollection(
      * @property [isStopIncluded] `true` if `options.stop` is included in the interval, `false` otherwise.
      */
     @JsPlainObject
-    sealed interface FindIntervalOptions {
+    interface FindIntervalOptions {
         var start: JulianDate?
         var stop: JulianDate?
         var isStartIncluded: Boolean?
@@ -205,7 +205,7 @@ external class TimeIntervalCollection(
          * @property [dataCallback] A function that will be return the data that is called with each interval before it is added to the collection. If unspecified, the data will be the index in the collection.
          */
         @JsPlainObject
-        sealed interface FromJulianDateArrayOptions {
+        interface FromJulianDateArrayOptions {
             var julianDates: ReadonlyArray<JulianDate>
             var isStartIncluded: Boolean?
             var isStopIncluded: Boolean?
@@ -238,7 +238,7 @@ external class TimeIntervalCollection(
          * @property [dataCallback] A function that will be return the data that is called with each interval before it is added to the collection. If unspecified, the data will be the index in the collection.
          */
         @JsPlainObject
-        sealed interface FromIso8601Options {
+        interface FromIso8601Options {
             var iso8601: String
             var isStartIncluded: Boolean?
             var isStopIncluded: Boolean?
@@ -271,7 +271,7 @@ external class TimeIntervalCollection(
          * @property [dataCallback] A function that will be return the data that is called with each interval before it is added to the collection. If unspecified, the data will be the index in the collection.
          */
         @JsPlainObject
-        sealed interface FromIso8601DateArrayOptions {
+        interface FromIso8601DateArrayOptions {
             var iso8601Dates: ReadonlyArray<String>
             var isStartIncluded: Boolean?
             var isStopIncluded: Boolean?
@@ -307,7 +307,7 @@ external class TimeIntervalCollection(
          * @property [dataCallback] A function that will be return the data that is called with each interval before it is added to the collection. If unspecified, the data will be the index in the collection.
          */
         @JsPlainObject
-        sealed interface FromIso8601DurationArrayOptions {
+        interface FromIso8601DurationArrayOptions {
             var epoch: JulianDate
             var iso8601Durations: String
             var relativeToPrevious: Boolean?

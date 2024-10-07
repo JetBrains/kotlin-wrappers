@@ -34,7 +34,7 @@ external class SkyBox(
      *   Default value - `true`
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var sources: Any?
         var show: Boolean?
     }

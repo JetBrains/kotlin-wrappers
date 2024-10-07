@@ -40,7 +40,7 @@ external class EllipseOutlineGeometry(
      *   Default value - `16`
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var center: Cartesian3
         var semiMajorAxis: Double
         var semiMinorAxis: Double

@@ -33,7 +33,7 @@ external class TimeDynamicPointCloud(
      * @property [clippingPlanes] The [ClippingPlaneCollection] used to selectively disable rendering the point cloud.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var clock: Clock
         var intervals: TimeIntervalCollection
         var show: Boolean?

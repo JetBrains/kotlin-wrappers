@@ -265,7 +265,7 @@ external class WebMapTileServiceImageryProvider(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#.ConstructorOptions">Online Documentation</a>
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var url: Resource
         var format: String?
         var layer: String

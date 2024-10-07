@@ -47,7 +47,7 @@ external class MaterialAppearance(
      * @property [renderState] Optional render state to override the default render state.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var flat: Boolean?
         var faceForward: Boolean?
         var translucent: Boolean?
@@ -162,7 +162,7 @@ external class MaterialAppearance(
     fun getRenderState(): Any
 
     @JsPlainObject
-    sealed interface MaterialSupportType {
+    interface MaterialSupportType {
         var vertexFormat: VertexFormat
         var vertexShaderSource: String
         var fragmentShaderSource: String

@@ -16,7 +16,7 @@ import web.gl.WebGLPowerPreference
  * `alpha` to true.
  */
 @JsPlainObject
-sealed external interface WebGLOptions {
+external interface WebGLOptions {
     var alpha: Boolean?
     var depth: Boolean?
     var stencil: Boolean?

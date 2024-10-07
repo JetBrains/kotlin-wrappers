@@ -146,7 +146,7 @@ external class TimeInterval {
          * @property [data] Arbitrary data associated with this interval.
          */
         @JsPlainObject
-        sealed interface FromIso8601Options {
+        interface FromIso8601Options {
             var iso8601: String
             var isStartIncluded: Boolean?
             var isStopIncluded: Boolean?

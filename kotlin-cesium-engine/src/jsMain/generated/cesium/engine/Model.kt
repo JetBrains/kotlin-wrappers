@@ -614,7 +614,7 @@ private constructor() {
          * @property [gltfCallback] A function that is called with the loaded gltf object once loaded.
          */
         @JsPlainObject
-        sealed interface FromGltfAsyncOptions {
+        interface FromGltfAsyncOptions {
             var url: Resource
             var basePath: Resource?
             var show: Boolean?

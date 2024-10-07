@@ -46,7 +46,7 @@ external class CustomHeightmapTerrainProvider(
      * @property [credit] A credit for the data source, which is displayed on the canvas.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var callback: GeometryCallback
         var width: Double
         var height: Double

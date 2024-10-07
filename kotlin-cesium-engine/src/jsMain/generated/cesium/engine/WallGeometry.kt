@@ -42,7 +42,7 @@ external class WallGeometry(
      *   Default value - [VertexFormat.DEFAULT]
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var positions: ReadonlyArray<Cartesian3>
         var granularity: Double?
         var maximumHeights: ReadonlyArray<Double>?
@@ -122,7 +122,7 @@ external class WallGeometry(
          *   Default value - [VertexFormat.DEFAULT]
          */
         @JsPlainObject
-        sealed interface FromConstantHeightsOptions {
+        interface FromConstantHeightsOptions {
             var positions: ReadonlyArray<Cartesian3>
             var maximumHeight: Double?
             var minimumHeight: Double?

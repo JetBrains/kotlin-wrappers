@@ -98,7 +98,7 @@ external class PolygonOutlineGeometry(
      *   Default value - [ArcType.GEODESIC]
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var polygonHierarchy: PolygonHierarchy
         var height: Double?
         var extrudedHeight: Double?
@@ -180,7 +180,7 @@ external class PolygonOutlineGeometry(
          *   Default value - [ArcType.GEODESIC]
          */
         @JsPlainObject
-        sealed interface FromPositionsOptions {
+        interface FromPositionsOptions {
             var positions: ReadonlyArray<Cartesian3>
             var height: Double?
             var extrudedHeight: Double?

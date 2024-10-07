@@ -59,7 +59,7 @@ external class ParticleSystem(
      * @property [maximumMass] Sets the maximum mass of particles in kilograms. A particle's actual mass will be chosen as a random amount below this value.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var show: Boolean?
         var updateCallback: UpdateCallback?
         var emitter: ParticleEmitter?

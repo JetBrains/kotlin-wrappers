@@ -52,7 +52,7 @@ external class CorrelationGroup(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CorrelationGroup.html#.ConstructorOptions">Online Documentation</a>
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var groupFlags: ReadonlyArray<Boolean>
         var rotationThetas: Cartesian3
         var params: ReadonlyArray<Spdcf>

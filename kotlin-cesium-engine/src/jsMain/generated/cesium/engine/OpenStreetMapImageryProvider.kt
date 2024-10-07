@@ -40,7 +40,7 @@ external class OpenStreetMapImageryProvider(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/OpenStreetMapImageryProvider.html#.ConstructorOptions">Online Documentation</a>
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var url: String?
         var fileExtension: String?
         var retinaTiles: Boolean?

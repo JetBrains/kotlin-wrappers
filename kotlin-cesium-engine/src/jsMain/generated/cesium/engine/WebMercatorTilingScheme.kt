@@ -34,7 +34,7 @@ external class WebMercatorTilingScheme(
      *   direction, resulting in a square projection.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var ellipsoid: Ellipsoid?
         var numberOfLevelZeroTilesX: Int?
         var numberOfLevelZeroTilesY: Int?

@@ -33,7 +33,7 @@ external class CylinderOutlineGeometry(
      *   Default value - `16`
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var length: Int
         var topRadius: Double
         var bottomRadius: Double

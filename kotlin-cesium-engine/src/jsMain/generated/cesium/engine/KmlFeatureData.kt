@@ -56,7 +56,7 @@ external class KmlFeatureData {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlFeatureData.html#.Author">Online Documentation</a>
      */
     @JsPlainObject
-    sealed interface Author {
+    interface Author {
         var name: String
         var uri: String
         var age: Double
@@ -72,7 +72,7 @@ external class KmlFeatureData {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlFeatureData.html#.Link">Online Documentation</a>
      */
     @JsPlainObject
-    sealed interface Link {
+    interface Link {
         var href: String
         var hreflang: String
         var rel: String

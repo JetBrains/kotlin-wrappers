@@ -26,7 +26,7 @@ external class EllipsoidTerrainProvider(
      *   Default value - [Ellipsoid.default]
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var tilingScheme: TilingScheme?
         var ellipsoid: Ellipsoid?
     }

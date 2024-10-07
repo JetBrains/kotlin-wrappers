@@ -10,7 +10,7 @@ import kotlinx.js.JsPlainObject
  * @property [up] The unit "up" vector
  */
 @JsPlainObject
-sealed external interface DirectionUp : CameraOrientation {
+external interface DirectionUp : CameraOrientation {
     var direction: Cartesian3
     var up: Cartesian3
 }

@@ -139,7 +139,7 @@ external class Cesium3DTilesVoxelProvider(
      *   Default value - `0`
      */
     @JsPlainObject
-    sealed interface RequestDataOptions {
+    interface RequestDataOptions {
         var tileLevel: Int?
         var tileX: Double?
         var tileY: Double?

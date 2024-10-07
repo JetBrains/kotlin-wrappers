@@ -49,7 +49,7 @@ external class Geometry(
      * @property [boundingSphere] An optional bounding sphere that fully enclosed the geometry.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var attributes: GeometryAttributes
         var primitiveType: PrimitiveType?
         var indices: TypedArray<*, *> /* Uint16Array | Uint32Array */?

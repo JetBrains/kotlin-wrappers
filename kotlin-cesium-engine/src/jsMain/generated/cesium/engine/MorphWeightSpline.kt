@@ -33,7 +33,7 @@ external class MorphWeightSpline(
      *   where i and j in w(i,j) are the time indices and target indices, respectively.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var times: ReadonlyArray<Double>
         var weights: ReadonlyArray<Double>
     }

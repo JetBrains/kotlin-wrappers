@@ -81,7 +81,7 @@ external class PostProcessStage(
      *   Default value - [createGuid()][createGuid]
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var fragmentShader: String
         var uniforms: Any?
         var textureScale: Double?

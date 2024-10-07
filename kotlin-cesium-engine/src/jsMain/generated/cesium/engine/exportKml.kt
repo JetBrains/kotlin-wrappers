@@ -55,7 +55,7 @@ external fun exportKmlAsync(options: ExportKmlOptions): Promise<Any /* exportKml
  *   Default value - `false`
  */
 @JsPlainObject
-sealed external interface ExportKmlOptions {
+external interface ExportKmlOptions {
     var entities: EntityCollection
     var ellipsoid: Ellipsoid?
     var modelCallback: exportKmlModelCallback?

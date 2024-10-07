@@ -29,7 +29,7 @@ external class Request(
      * @property [serverKey] A key used to identify the server that a request is going to.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var url: String?
         var requestFunction: RequestCallback?
         var cancelFunction: CancelCallback?

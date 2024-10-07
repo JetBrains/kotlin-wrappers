@@ -79,7 +79,7 @@ external class GltfGpmLocal(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GltfGpmLocal.html#.ConstructorOptions">Online Documentation</a>
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var storageType: String
         var anchorPointsIndirect: ReadonlyArray<AnchorPointIndirect>??
         var intraTileCorrelationGroups: ReadonlyArray<CorrelationGroup>??

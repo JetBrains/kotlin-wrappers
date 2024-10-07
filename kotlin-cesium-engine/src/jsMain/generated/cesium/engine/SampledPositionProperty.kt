@@ -119,7 +119,7 @@ external class SampledPositionProperty(
      * @property [interpolationDegree] The new interpolation degree.  If undefined, the existing property will be unchanged.
      */
     @JsPlainObject
-    sealed interface SetInterpolationOptionsOptions {
+    interface SetInterpolationOptionsOptions {
         var interpolationAlgorithm: InterpolationAlgorithm?
         var interpolationDegree: Double?
     }

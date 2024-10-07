@@ -36,7 +36,7 @@ external class DebugAppearance(
      * @property [renderState] Optional render state to override the default render state.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var attributeName: String
         var perInstanceAttribute: Boolean?
         var glslDatatype: String?

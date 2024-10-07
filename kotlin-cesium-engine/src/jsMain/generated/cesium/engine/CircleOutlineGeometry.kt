@@ -37,7 +37,7 @@ external class CircleOutlineGeometry(
      *   Default value - `16`
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var center: Cartesian3
         var radius: Double
         var ellipsoid: Ellipsoid?

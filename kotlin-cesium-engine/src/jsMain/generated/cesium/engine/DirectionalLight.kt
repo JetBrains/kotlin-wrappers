@@ -21,7 +21,7 @@ external class DirectionalLight(
      *   Default value - `1.0`
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var direction: Cartesian3
         var color: Color?
         var intensity: Double?

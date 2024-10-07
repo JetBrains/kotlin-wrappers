@@ -75,7 +75,7 @@ external class IonResource(
      *   Default value - `false`
      */
     @JsPlainObject
-    sealed interface FetchImageOptions {
+    interface FetchImageOptions {
         var preferBlob: Boolean?
         var preferImageBitmap: Boolean?
         var flipY: Boolean?
@@ -125,7 +125,7 @@ external class IonResource(
          *   Default value - [Ion.defaultServer]
          */
         @JsPlainObject
-        sealed interface FromAssetIdOptions {
+        interface FromAssetIdOptions {
             var accessToken: String?
             var server: Resource?
         }

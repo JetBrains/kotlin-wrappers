@@ -29,7 +29,7 @@ external class CoplanarPolygonOutlineGeometry(
      * @property [polygonHierarchy] A polygon hierarchy that can include holes.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var polygonHierarchy: PolygonHierarchy
     }
 
@@ -50,7 +50,7 @@ external class CoplanarPolygonOutlineGeometry(
          * @property [positions] An array of positions that defined the corner points of the polygon.
          */
         @JsPlainObject
-        sealed interface FromPositionsOptions {
+        interface FromPositionsOptions {
             var positions: ReadonlyArray<Cartesian3>
         }
 

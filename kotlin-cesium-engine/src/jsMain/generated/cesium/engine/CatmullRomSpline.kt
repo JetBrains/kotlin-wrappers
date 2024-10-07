@@ -42,7 +42,7 @@ external class CatmullRomSpline(
      *   If the tangent is not given, it will be estimated.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var times: ReadonlyArray<Double>
         var points: ReadonlyArray<Cartesian3>
         var firstTangent: Cartesian3?

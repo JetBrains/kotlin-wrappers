@@ -326,7 +326,7 @@ external class GeoJsonDataSource(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeoJsonDataSource.html#.LoadOptions">Online Documentation</a>
          */
         @JsPlainObject
-        sealed interface LoadOptions {
+        interface LoadOptions {
             var sourceUri: String?
             var describe: describe?
             var markerSize: Double?

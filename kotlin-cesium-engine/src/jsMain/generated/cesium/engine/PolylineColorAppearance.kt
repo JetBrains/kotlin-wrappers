@@ -45,7 +45,7 @@ external class PolylineColorAppearance(
      * @property [renderState] Optional render state to override the default render state.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var translucent: Boolean?
         var vertexShaderSource: String?
         var fragmentShaderSource: String?

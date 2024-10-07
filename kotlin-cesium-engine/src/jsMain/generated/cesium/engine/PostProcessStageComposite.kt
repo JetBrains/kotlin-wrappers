@@ -75,7 +75,7 @@ external class PostProcessStageComposite(
      * @property [uniforms] An alias to the uniforms of post-process stages.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var stages: ReadonlyArray<Any>
         var inputPreviousStageTexture: Boolean?
         var name: String?

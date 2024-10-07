@@ -27,7 +27,7 @@ external class MetadataEnum(
      * @property [extensions] An object containing extensions.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var id: String
         var values: ReadonlyArray<MetadataEnumValue>
         var valueType: MetadataComponentType?

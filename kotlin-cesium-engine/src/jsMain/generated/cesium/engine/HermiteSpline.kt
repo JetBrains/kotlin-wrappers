@@ -54,7 +54,7 @@ external class HermiteSpline(
      * @property [outTangents] The array of outgoing tangents at each control point.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var times: ReadonlyArray<Double>
         var points: ReadonlyArray<Cartesian3>
         var inTangents: ReadonlyArray<Cartesian3>
@@ -161,7 +161,7 @@ external class HermiteSpline(
          * @property [tangents] The array of tangents at the control points.
          */
         @JsPlainObject
-        sealed interface CreateC1Options {
+        interface CreateC1Options {
             var times: ReadonlyArray<Double>
             var points: ReadonlyArray<Cartesian3>
             var tangents: ReadonlyArray<Cartesian3>
@@ -193,7 +193,7 @@ external class HermiteSpline(
          * @property [points] The array of control points.
          */
         @JsPlainObject
-        sealed interface CreateNaturalCubicOptions {
+        interface CreateNaturalCubicOptions {
             var times: ReadonlyArray<Double>
             var points: ReadonlyArray<Cartesian3>
         }
@@ -228,7 +228,7 @@ external class HermiteSpline(
          * @property [lastTangent] The incoming tangent of the last control point.
          */
         @JsPlainObject
-        sealed interface CreateClampedCubicOptions {
+        interface CreateClampedCubicOptions {
             var times: ReadonlyArray<Double>
             var points: ReadonlyArray<Cartesian3 /* or number */>
             var firstTangent: Cartesian3

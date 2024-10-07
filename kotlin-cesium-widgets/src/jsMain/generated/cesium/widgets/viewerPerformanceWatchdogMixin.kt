@@ -32,6 +32,6 @@ external fun viewerPerformanceWatchdogMixin(
  *   Default value - `'This application appears to be performing poorly on your system.  Please try using a different web browser or updating your video drivers.'`
  */
 @JsPlainObject
-sealed external interface ViewerPerformanceWatchdogMixinOptions {
+external interface ViewerPerformanceWatchdogMixinOptions {
     var lowFrameRateMessage: String?
 }

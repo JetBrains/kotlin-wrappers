@@ -24,7 +24,7 @@ external class PlaneGeometry(
      *   Default value - [VertexFormat.DEFAULT]
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var vertexFormat: VertexFormat?
     }
 

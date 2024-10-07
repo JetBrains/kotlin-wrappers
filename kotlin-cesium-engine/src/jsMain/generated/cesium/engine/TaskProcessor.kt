@@ -85,7 +85,7 @@ external class TaskProcessor(
      * @property [fallbackModulePath] The path of the fallback JavaScript module to use if web assembly is not supported.
      */
     @JsPlainObject
-    sealed interface InitWebAssemblyModuleOptions {
+    interface InitWebAssemblyModuleOptions {
         var modulePath: String?
         var wasmBinaryFile: String?
         var fallbackModulePath: String?

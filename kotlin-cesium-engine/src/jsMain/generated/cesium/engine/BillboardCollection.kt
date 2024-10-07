@@ -44,7 +44,7 @@ external class BillboardCollection(
      *   Default value - `true`
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var modelMatrix: Matrix4?
         var debugShowBoundingVolume: Boolean?
         var scene: Scene?

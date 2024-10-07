@@ -23,7 +23,7 @@ external class TimeDynamicImagery(
      * @property [reloadFunction] A function that will be called when all imagery tiles need to be reloaded.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var clock: Clock
         var times: TimeIntervalCollection
         var requestImageFunction: Function<*>

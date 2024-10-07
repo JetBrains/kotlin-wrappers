@@ -32,7 +32,7 @@ external class SphereGeometry(
      *   Default value - [VertexFormat.DEFAULT]
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var radius: Double?
         var stackPartitions: Int?
         var slicePartitions: Int?

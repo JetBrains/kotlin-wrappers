@@ -21,7 +21,7 @@ external class DataSourceDisplay(
      *   Default value - [DataSourceDisplay.defaultVisualizersCallback]
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var scene: Scene
         var dataSourceCollection: DataSourceCollection
         var visualizersCallback: VisualizersCallback?

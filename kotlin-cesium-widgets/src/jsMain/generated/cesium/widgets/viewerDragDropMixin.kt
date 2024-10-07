@@ -40,7 +40,7 @@ external fun viewerDragDropMixin(
  * @property [proxy] The proxy to be used for KML network links.
  */
 @JsPlainObject
-sealed external interface ViewerDragDropMixinOptions {
+external interface ViewerDragDropMixinOptions {
     var dropTarget: Element?
     var clearOnDrop: Boolean?
     var flyToOnDrop: Boolean?

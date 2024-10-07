@@ -40,6 +40,6 @@ external fun createWorldImageryAsync(options: CreateWorldImageryAsyncOptions? = 
  *   Default value - [IonWorldImageryStyle]
  */
 @JsPlainObject
-sealed external interface CreateWorldImageryAsyncOptions {
+external interface CreateWorldImageryAsyncOptions {
     var style: IonWorldImageryStyle?
 }

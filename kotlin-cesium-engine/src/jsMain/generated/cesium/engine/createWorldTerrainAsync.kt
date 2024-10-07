@@ -48,7 +48,7 @@ external fun createWorldTerrainAsync(options: CreateWorldTerrainAsyncOptions? = 
  *   Default value - `false`
  */
 @JsPlainObject
-sealed external interface CreateWorldTerrainAsyncOptions {
+external interface CreateWorldTerrainAsyncOptions {
     var requestVertexNormals: Boolean?
     var requestWaterMask: Boolean?
 }

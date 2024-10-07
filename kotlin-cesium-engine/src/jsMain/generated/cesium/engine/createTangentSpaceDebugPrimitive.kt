@@ -31,7 +31,7 @@ external fun createTangentSpaceDebugPrimitive(options: CreateTangentSpaceDebugPr
  *   Default value - [Matrix4.IDENTITY]
  */
 @JsPlainObject
-sealed external interface CreateTangentSpaceDebugPrimitiveOptions {
+external interface CreateTangentSpaceDebugPrimitiveOptions {
     var geometry: Geometry
     var length: Int?
     var modelMatrix: Matrix4?

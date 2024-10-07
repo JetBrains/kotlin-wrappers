@@ -201,7 +201,7 @@ external class Resource(
      *   Default value - `false`
      */
     @JsPlainObject
-    sealed interface GetDerivedResourceOptions {
+    interface GetDerivedResourceOptions {
         var url: String?
         var queryParameters: Any?
         var templateValues: Any?
@@ -317,7 +317,7 @@ external class Resource(
      *   Default value - `false`
      */
     @JsPlainObject
-    sealed interface FetchImageOptions {
+    interface FetchImageOptions {
         var preferBlob: Boolean?
         var preferImageBitmap: Boolean?
         var flipY: Boolean?
@@ -449,7 +449,7 @@ external class Resource(
      * @property [overrideMimeType] Overrides the MIME type returned by the server.
      */
     @JsPlainObject
-    sealed interface FetchOptions {
+    interface FetchOptions {
         var responseType: String?
         var headers: Any?
         var overrideMimeType: String?
@@ -483,7 +483,7 @@ external class Resource(
      * @property [overrideMimeType] Overrides the MIME type returned by the server.
      */
     @JsPlainObject
-    sealed interface DeleteOptions {
+    interface DeleteOptions {
         var responseType: String?
         var headers: Any?
         var overrideMimeType: String?
@@ -517,7 +517,7 @@ external class Resource(
      * @property [overrideMimeType] Overrides the MIME type returned by the server.
      */
     @JsPlainObject
-    sealed interface HeadOptions {
+    interface HeadOptions {
         var responseType: String?
         var headers: Any?
         var overrideMimeType: String?
@@ -551,7 +551,7 @@ external class Resource(
      * @property [overrideMimeType] Overrides the MIME type returned by the server.
      */
     @JsPlainObject
-    sealed interface OptionsOptions {
+    interface OptionsOptions {
         var responseType: String?
         var headers: Any?
         var overrideMimeType: String?
@@ -593,7 +593,7 @@ external class Resource(
      * @property [overrideMimeType] Overrides the MIME type returned by the server.
      */
     @JsPlainObject
-    sealed interface PostOptions {
+    interface PostOptions {
         var data: Any?
         var responseType: String?
         var headers: Any?
@@ -635,7 +635,7 @@ external class Resource(
      * @property [overrideMimeType] Overrides the MIME type returned by the server.
      */
     @JsPlainObject
-    sealed interface PutOptions {
+    interface PutOptions {
         var responseType: String?
         var headers: Any?
         var overrideMimeType: String?
@@ -676,7 +676,7 @@ external class Resource(
      * @property [overrideMimeType] Overrides the MIME type returned by the server.
      */
     @JsPlainObject
-    sealed interface PatchOptions {
+    interface PatchOptions {
         var responseType: String?
         var headers: Any?
         var overrideMimeType: String?
@@ -699,7 +699,7 @@ external class Resource(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.ConstructorOptions">Online Documentation</a>
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var url: String
         var queryParameters: Any?
         var templateValues: Any?
@@ -743,7 +743,7 @@ external class Resource(
          * @property [request] A Request object that will be used. Intended for internal use only.
          */
         @JsPlainObject
-        sealed interface FetchArrayBufferOptions {
+        interface FetchArrayBufferOptions {
             var url: String
             var queryParameters: Any?
             var templateValues: Any?
@@ -779,7 +779,7 @@ external class Resource(
          * @property [request] A Request object that will be used. Intended for internal use only.
          */
         @JsPlainObject
-        sealed interface FetchBlobOptions {
+        interface FetchBlobOptions {
             var url: String
             var queryParameters: Any?
             var templateValues: Any?
@@ -823,7 +823,7 @@ external class Resource(
          *   Default value - `false`
          */
         @JsPlainObject
-        sealed interface FetchImageOptions {
+        interface FetchImageOptions {
             var url: String
             var queryParameters: Any?
             var templateValues: Any?
@@ -863,7 +863,7 @@ external class Resource(
          * @property [request] A Request object that will be used. Intended for internal use only.
          */
         @JsPlainObject
-        sealed interface FetchTextOptions {
+        interface FetchTextOptions {
             var url: String
             var queryParameters: Any?
             var templateValues: Any?
@@ -899,7 +899,7 @@ external class Resource(
          * @property [request] A Request object that will be used. Intended for internal use only.
          */
         @JsPlainObject
-        sealed interface FetchJsonOptions {
+        interface FetchJsonOptions {
             var url: String
             var queryParameters: Any?
             var templateValues: Any?
@@ -935,7 +935,7 @@ external class Resource(
          * @property [request] A Request object that will be used. Intended for internal use only.
          */
         @JsPlainObject
-        sealed interface FetchXMLOptions {
+        interface FetchXMLOptions {
             var url: String
             var queryParameters: Any?
             var templateValues: Any?
@@ -973,7 +973,7 @@ external class Resource(
          *   Default value - `'callback'`
          */
         @JsPlainObject
-        sealed interface FetchJsonpOptions {
+        interface FetchJsonpOptions {
             var url: String
             var queryParameters: Any?
             var templateValues: Any?
@@ -1012,7 +1012,7 @@ external class Resource(
          * @property [overrideMimeType] Overrides the MIME type returned by the server.
          */
         @JsPlainObject
-        sealed interface FetchOptions {
+        interface FetchOptions {
             var url: String
             var queryParameters: Any?
             var templateValues: Any?
@@ -1053,7 +1053,7 @@ external class Resource(
          * @property [overrideMimeType] Overrides the MIME type returned by the server.
          */
         @JsPlainObject
-        sealed interface DeleteOptions {
+        interface DeleteOptions {
             var url: String
             var data: Any?
             var queryParameters: Any?
@@ -1094,7 +1094,7 @@ external class Resource(
          * @property [overrideMimeType] Overrides the MIME type returned by the server.
          */
         @JsPlainObject
-        sealed interface HeadOptions {
+        interface HeadOptions {
             var url: String
             var queryParameters: Any?
             var templateValues: Any?
@@ -1134,7 +1134,7 @@ external class Resource(
          * @property [overrideMimeType] Overrides the MIME type returned by the server.
          */
         @JsPlainObject
-        sealed interface OptionsOptions {
+        interface OptionsOptions {
             var url: String
             var queryParameters: Any?
             var templateValues: Any?
@@ -1175,7 +1175,7 @@ external class Resource(
          * @property [overrideMimeType] Overrides the MIME type returned by the server.
          */
         @JsPlainObject
-        sealed interface PostOptions {
+        interface PostOptions {
             var url: String
             var data: Any
             var queryParameters: Any?
@@ -1217,7 +1217,7 @@ external class Resource(
          * @property [overrideMimeType] Overrides the MIME type returned by the server.
          */
         @JsPlainObject
-        sealed interface PutOptions {
+        interface PutOptions {
             var url: String
             var data: Any
             var queryParameters: Any?
@@ -1259,7 +1259,7 @@ external class Resource(
          * @property [overrideMimeType] Overrides the MIME type returned by the server.
          */
         @JsPlainObject
-        sealed interface PatchOptions {
+        interface PatchOptions {
             var url: String
             var data: Any
             var queryParameters: Any?

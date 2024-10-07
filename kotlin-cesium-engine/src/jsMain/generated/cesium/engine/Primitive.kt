@@ -124,7 +124,7 @@ external class Primitive(
      *   Default value - [ShadowMode.DISABLED]
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var geometryInstances: ReadonlyArray<GeometryInstance>?
         var appearance: Appearance?
         var depthFailAppearance: Appearance?

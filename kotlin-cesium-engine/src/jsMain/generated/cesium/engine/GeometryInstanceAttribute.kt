@@ -40,7 +40,7 @@ external class GeometryInstanceAttribute(
      * @property [value] The value for the attribute.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var componentDatatype: ComponentDatatype
         var componentsPerAttribute: Int
         var normalize: Boolean?

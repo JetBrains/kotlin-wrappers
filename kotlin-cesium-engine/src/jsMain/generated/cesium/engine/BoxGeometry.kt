@@ -29,7 +29,7 @@ external class BoxGeometry(
      *   Default value - [VertexFormat.DEFAULT]
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var minimum: Cartesian3
         var maximum: Cartesian3
         var vertexFormat: VertexFormat?
@@ -55,7 +55,7 @@ external class BoxGeometry(
          *   Default value - [VertexFormat.DEFAULT]
          */
         @JsPlainObject
-        sealed interface FromDimensionsOptions {
+        interface FromDimensionsOptions {
             var dimensions: Cartesian3
             var vertexFormat: VertexFormat?
         }

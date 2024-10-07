@@ -14,7 +14,7 @@ import kotlinx.js.JsPlainObject
  *   Default value - `0.0`
  */
 @JsPlainObject
-sealed external interface HeadingPitchRollValues : CameraOrientation {
+external interface HeadingPitchRollValues : CameraOrientation {
     var heading: Double?
     var pitch: Double?
     var roll: Double?

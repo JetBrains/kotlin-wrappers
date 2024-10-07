@@ -219,7 +219,7 @@ external class KmlDataSource(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlDataSource.html#.ConstructorOptions">Online Documentation</a>
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var camera: Camera?
         var canvas: HTMLCanvasElement?
         var credit: Credit?
@@ -296,7 +296,7 @@ external class KmlDataSource(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlDataSource.html#.LoadOptions">Online Documentation</a>
          */
         @JsPlainObject
-        sealed interface LoadOptions {
+        interface LoadOptions {
             var sourceUri: String?
             var clampToGround: Boolean?
             var ellipsoid: Ellipsoid?

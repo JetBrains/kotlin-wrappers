@@ -19,7 +19,7 @@ import kotlinx.js.JsPlainObject
  * @property [getWebGLStub] A function to create a WebGL stub for testing
  */
 @JsPlainObject
-sealed external interface ContextOptions {
+external interface ContextOptions {
     var requestWebgl1: Boolean?
     var allowTextureFilterAnisotropic: Boolean?
     var webgl: WebGLOptions?

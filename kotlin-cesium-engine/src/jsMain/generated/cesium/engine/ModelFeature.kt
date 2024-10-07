@@ -33,7 +33,7 @@ private constructor() {
      * @property [featureId] The unique integral identifier for this feature.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var model: Model
         var featureId: Int
     }

@@ -51,7 +51,7 @@ external class GeometryInstance(
      * @property [attributes] Per-instance attributes like a show or color attribute shown in the example below.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var geometry: Any /* Geometry | GeometryFactory */
         var modelMatrix: Matrix4?
         var id: Any?

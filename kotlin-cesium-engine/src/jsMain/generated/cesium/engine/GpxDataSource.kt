@@ -129,7 +129,7 @@ external class GpxDataSource {
      * @property [routeColor] Color to use for route lines.
      */
     @JsPlainObject
-    sealed interface LoadOptions {
+    interface LoadOptions {
         var clampToGround: Boolean?
         var waypointImage: String?
         var trackImage: String?
@@ -164,7 +164,7 @@ external class GpxDataSource {
          * @property [routeColor] Color to use for route lines.
          */
         @JsPlainObject
-        sealed interface LoadOptions {
+        interface LoadOptions {
             var clampToGround: Boolean?
             var waypointImage: String?
             var trackImage: String?

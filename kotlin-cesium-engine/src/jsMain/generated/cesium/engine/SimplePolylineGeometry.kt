@@ -39,7 +39,7 @@ external class SimplePolylineGeometry(
      *   Default value - [Ellipsoid.default]
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var positions: ReadonlyArray<Cartesian3>
         var colors: ReadonlyArray<Color>?
         var colorsPerVertex: Boolean?

@@ -43,7 +43,7 @@ external class PolylineVolumeOutlineGeometry(
      *   Default value - [CornerType.ROUNDED]
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var polylinePositions: ReadonlyArray<Cartesian3>
         var shapePositions: ReadonlyArray<Cartesian2>
         var ellipsoid: Ellipsoid?

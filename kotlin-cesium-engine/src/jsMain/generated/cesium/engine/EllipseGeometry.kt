@@ -43,7 +43,7 @@ external class EllipseGeometry(
      *   Default value - [VertexFormat.DEFAULT]
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var center: Cartesian3
         var semiMajorAxis: Double
         var semiMinorAxis: Double
@@ -116,7 +116,7 @@ external class EllipseGeometry(
          *   Default value - [Math.RADIANS_PER_DEGREE]
          */
         @JsPlainObject
-        sealed interface ComputeRectangleOptions {
+        interface ComputeRectangleOptions {
             var center: Cartesian3
             var semiMajorAxis: Double
             var semiMinorAxis: Double

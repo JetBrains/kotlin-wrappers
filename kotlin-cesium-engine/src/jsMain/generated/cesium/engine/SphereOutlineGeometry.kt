@@ -33,7 +33,7 @@ external class SphereOutlineGeometry(
      *   Default value - `200`
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var radius: Double?
         var stackPartitions: Int?
         var slicePartitions: Int?

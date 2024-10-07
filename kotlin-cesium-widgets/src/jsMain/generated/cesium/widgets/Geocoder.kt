@@ -30,7 +30,7 @@ external class Geocoder(
      *   Default value - [GeocoderViewModel.flyToDestination]
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var container: Element
         var scene: Scene
         var geocoderServices: ReadonlyArray<GeocoderService>?

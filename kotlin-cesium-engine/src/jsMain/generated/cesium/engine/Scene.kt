@@ -55,7 +55,7 @@ external class Scene(
      *   Default value - `4`
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var canvas: HTMLCanvasElement
         var contextOptions: ContextOptions?
         var creditContainer: Element?

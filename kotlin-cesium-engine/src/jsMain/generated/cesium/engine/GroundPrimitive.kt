@@ -99,7 +99,7 @@ external class GroundPrimitive(
      *   Default value - `false`
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var geometryInstances: GeometryInstance?
         var appearance: Appearance?
         var show: Boolean?

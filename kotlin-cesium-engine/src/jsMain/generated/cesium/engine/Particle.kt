@@ -35,7 +35,7 @@ external class Particle(
      *   Default value - [Cartesian2(1.0, 1.0)][Cartesian2]
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var mass: Double?
         var position: Cartesian3?
         var velocity: Cartesian3?

@@ -23,7 +23,7 @@ external class MetadataEnumValue(
      * @property [extensions] An object containing extensions.
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var value: Double
         var name: String
         var description: String?

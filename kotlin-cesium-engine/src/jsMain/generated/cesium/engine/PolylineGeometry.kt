@@ -45,7 +45,7 @@ external class PolylineGeometry(
      *   Default value - [Ellipsoid.default]
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var positions: ReadonlyArray<Cartesian3>
         var width: Double?
         var colors: ReadonlyArray<Color>?

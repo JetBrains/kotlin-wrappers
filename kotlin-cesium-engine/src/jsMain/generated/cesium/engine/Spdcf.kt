@@ -61,7 +61,7 @@ external class Spdcf(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Spdcf.html#.ConstructorOptions">Online Documentation</a>
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var A: Double
         var alpha: Double
         var beta: Double

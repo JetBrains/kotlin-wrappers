@@ -201,7 +201,7 @@ external class MapboxImageryProvider(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MapboxImageryProvider.html#.ConstructorOptions">Online Documentation</a>
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var url: String?
         var mapId: String
         var accessToken: String

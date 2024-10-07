@@ -296,7 +296,7 @@ external class CzmlDataSource(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CzmlDataSource.html#.LoadOptions">Online Documentation</a>
          */
         @JsPlainObject
-        sealed interface LoadOptions {
+        interface LoadOptions {
             var sourceUri: Resource?
             var credit: Credit?
         }

@@ -29,7 +29,7 @@ external class GeographicTilingScheme(
      *   Default value - `1`
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var ellipsoid: Ellipsoid?
         var rectangle: Rectangle?
         var numberOfLevelZeroTilesX: Int?

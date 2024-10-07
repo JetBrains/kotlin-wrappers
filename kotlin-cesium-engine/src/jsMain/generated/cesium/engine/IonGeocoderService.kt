@@ -24,7 +24,7 @@ external class IonGeocoderService(
      *   Default value - [Ion.defaultServer]
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var scene: Scene
         var accessToken: String?
         var server: Resource?

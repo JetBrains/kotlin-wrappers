@@ -22,7 +22,7 @@ external class GroundGeometryUpdater(
      * @property [observedPropertyNames] The entity properties this geometry cares about
      */
     @JsPlainObject
-    sealed interface ConstructorOptions {
+    interface ConstructorOptions {
         var entity: Entity
         var scene: Scene
         var geometryOptions: Any
