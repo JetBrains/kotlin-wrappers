@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface AudioNodeOptions {
-    var channelCount: Int?
-    var channelCountMode: ChannelCountMode?
-    var channelInterpretation: ChannelInterpretation?
+    val channelCount: Int?
+    val channelCountMode: ChannelCountMode?
+    val channelInterpretation: ChannelInterpretation?
 }

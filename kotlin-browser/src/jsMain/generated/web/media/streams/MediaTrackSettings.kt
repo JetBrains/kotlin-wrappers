@@ -6,19 +6,19 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface MediaTrackSettings {
-    var aspectRatio: Double?
-    var autoGainControl: Boolean?
-    var backgroundBlur: Boolean?
-    var channelCount: Int?
-    var deviceId: String?
-    var displaySurface: String?
-    var echoCancellation: Boolean?
-    var facingMode: String?
-    var frameRate: Double?
-    var groupId: String?
-    var height: Int?
-    var noiseSuppression: Boolean?
-    var sampleRate: Int?
-    var sampleSize: Int?
-    var width: Int?
+    val aspectRatio: Double?
+    val autoGainControl: Boolean?
+    val backgroundBlur: Boolean?
+    val channelCount: Int?
+    val deviceId: String?
+    val displaySurface: String?
+    val echoCancellation: Boolean?
+    val facingMode: String?
+    val frameRate: Double?
+    val groupId: String?
+    val height: Int?
+    val noiseSuppression: Boolean?
+    val sampleRate: Int?
+    val sampleSize: Int?
+    val width: Int?
 }

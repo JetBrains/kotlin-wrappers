@@ -8,8 +8,8 @@ import web.file.File
 
 @JsPlainObject
 external interface ShareData {
-    var files: ReadonlyArray<File>?
-    var text: String?
-    var title: String?
-    var url: String?
+    val files: ReadonlyArray<File>?
+    val text: String?
+    val title: String?
+    val url: String?
 }

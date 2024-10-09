@@ -13,5 +13,5 @@ external interface ReadableStreamIteratorOptions {
      *
      * By default, calling the async iterator's return() method will also cancel the stream. To prevent this, use the stream's values() method, passing true for the preventCancel option.
      */
-    var preventCancel: Boolean?
+    val preventCancel: Boolean?
 }

@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface CryptoKeyPair {
-    var privateKey: CryptoKey
-    var publicKey: CryptoKey
+    val privateKey: CryptoKey
+    val publicKey: CryptoKey
 }

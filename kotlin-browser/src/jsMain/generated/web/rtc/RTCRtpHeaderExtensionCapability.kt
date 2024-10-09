@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface RTCRtpHeaderExtensionCapability {
-    var uri: String
+    val uri: String
 }

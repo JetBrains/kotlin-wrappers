@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface FullscreenOptions {
-    var navigationUI: FullscreenNavigationUI?
+    val navigationUI: FullscreenNavigationUI?
 }

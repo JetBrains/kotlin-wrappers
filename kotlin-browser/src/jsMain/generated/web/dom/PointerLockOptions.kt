@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface PointerLockOptions {
-    var unadjustedMovement: Boolean?
+    val unadjustedMovement: Boolean?
 }

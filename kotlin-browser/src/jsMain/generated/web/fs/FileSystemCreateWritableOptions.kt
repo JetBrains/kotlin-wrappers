@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface FileSystemCreateWritableOptions {
-    var keepExistingData: Boolean?
+    val keepExistingData: Boolean?
 }

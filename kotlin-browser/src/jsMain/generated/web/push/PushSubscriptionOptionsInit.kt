@@ -7,6 +7,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface PushSubscriptionOptionsInit {
-    var applicationServerKey: BufferSource /* | String */?
-    var userVisibleOnly: Boolean?
+    val applicationServerKey: BufferSource /* | String */?
+    val userVisibleOnly: Boolean?
 }

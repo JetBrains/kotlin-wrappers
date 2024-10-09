@@ -7,5 +7,5 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface MediaEncodingConfiguration :
     MediaConfiguration {
-    var type: MediaEncodingType
+    val type: MediaEncodingType
 }

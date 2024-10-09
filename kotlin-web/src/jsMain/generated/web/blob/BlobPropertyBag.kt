@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface BlobPropertyBag {
-    var endings: EndingType?
-    var type: String?
+    val endings: EndingType?
+    val type: String?
 }

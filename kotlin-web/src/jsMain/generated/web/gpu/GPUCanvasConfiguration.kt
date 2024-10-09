@@ -8,10 +8,10 @@ import web.images.PredefinedColorSpace
 
 @JsPlainObject
 external interface GPUCanvasConfiguration {
-    var device: GPUDevice
-    var format: GPUTextureFormat
-    var usage: GPUTextureUsage?
-    var viewFormats: ReadonlyArray<GPUTextureFormat>?
-    var colorSpace: PredefinedColorSpace?
-    var alphaMode: GPUCanvasAlphaMode?
+    val device: GPUDevice
+    val format: GPUTextureFormat
+    val usage: GPUTextureUsage?
+    val viewFormats: ReadonlyArray<GPUTextureFormat>?
+    val colorSpace: PredefinedColorSpace?
+    val alphaMode: GPUCanvasAlphaMode?
 }

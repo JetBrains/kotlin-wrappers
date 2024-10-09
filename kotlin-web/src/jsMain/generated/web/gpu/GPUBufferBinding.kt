@@ -7,7 +7,7 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface GPUBufferBinding :
     GPUBindingResource {
-    var buffer: GPUBuffer
-    var offset: GPUSize64?
-    var size: GPUSize64?
+    val buffer: GPUBuffer
+    val offset: GPUSize64?
+    val size: GPUSize64?
 }

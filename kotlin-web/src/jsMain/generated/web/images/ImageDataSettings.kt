@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface ImageDataSettings {
-    var colorSpace: PredefinedColorSpace?
+    val colorSpace: PredefinedColorSpace?
 }

@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface AssignedNodesOptions {
-    var flatten: Boolean?
+    val flatten: Boolean?
 }

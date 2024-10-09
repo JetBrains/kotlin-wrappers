@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface AudioDecoderSupport {
-    var config: AudioDecoderConfig?
-    var supported: Boolean?
+    val config: AudioDecoderConfig?
+    val supported: Boolean?
 }

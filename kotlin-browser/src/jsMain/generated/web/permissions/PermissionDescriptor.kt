@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface PermissionDescriptor {
-    var name: PermissionName
+    val name: PermissionName
 }

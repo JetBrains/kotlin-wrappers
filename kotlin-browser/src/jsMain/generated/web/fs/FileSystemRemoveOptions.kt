@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface FileSystemRemoveOptions {
-    var recursive: Boolean?
+    val recursive: Boolean?
 }

@@ -8,5 +8,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface StructuredSerializeOptions {
-    var transfer: ReadonlyArray<Transferable>?
+    val transfer: ReadonlyArray<Transferable>?
 }

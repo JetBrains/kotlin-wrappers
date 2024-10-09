@@ -7,7 +7,7 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface PerformanceObserverInit {
-    var buffered: Boolean?
-    var entryTypes: ReadonlyArray<String>?
-    var type: String?
+    val buffered: Boolean?
+    val entryTypes: ReadonlyArray<String>?
+    val type: String?
 }

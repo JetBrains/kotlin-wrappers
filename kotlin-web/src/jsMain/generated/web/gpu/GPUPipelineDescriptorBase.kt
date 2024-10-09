@@ -7,5 +7,5 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface GPUPipelineDescriptorBase :
     GPUObjectDescriptorBase {
-    var layout: Any /* GPUPipelineLayout | GPUAutoLayoutMode */
+    val layout: Any /* GPUPipelineLayout | GPUAutoLayoutMode */
 }

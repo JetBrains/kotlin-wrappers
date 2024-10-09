@@ -9,8 +9,8 @@ import web.abort.Abortable
 @JsPlainObject
 external interface StreamPipeOptions :
     Abortable {
-    var preventAbort: Boolean?
-    var preventCancel: Boolean?
+    val preventAbort: Boolean?
+    val preventCancel: Boolean?
 
     /**
      * Pipes this readable stream to a given writable stream destination. The way in which the piping process behaves under various error conditions can be customized with a number of passed options. It returns a promise that fulfills when the piping process completes successfully, or rejects if any errors were encountered.
@@ -29,6 +29,6 @@ external interface StreamPipeOptions :
      *
      * The signal option can be set to an AbortSignal to allow aborting an ongoing pipe operation via the corresponding AbortController. In this case, this source readable stream will be canceled, and destination aborted, unless the respective options preventCancel or preventAbort are set.
      */
-    var preventClose: Boolean?
-    override var signal: AbortSignal?
+    val preventClose: Boolean?
+    override val signal: AbortSignal?
 }

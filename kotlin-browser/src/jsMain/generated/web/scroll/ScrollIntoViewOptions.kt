@@ -7,6 +7,6 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface ScrollIntoViewOptions :
     ScrollOptions {
-    var block: ScrollLogicalPosition?
-    var inline: ScrollLogicalPosition?
+    val block: ScrollLogicalPosition?
+    val inline: ScrollLogicalPosition?
 }

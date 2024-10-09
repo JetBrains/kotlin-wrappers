@@ -6,14 +6,14 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface AddressErrors {
-    var addressLine: String?
-    var city: String?
-    var country: String?
-    var dependentLocality: String?
-    var organization: String?
-    var phone: String?
-    var postalCode: String?
-    var recipient: String?
-    var region: String?
-    var sortingCode: String?
+    val addressLine: String?
+    val city: String?
+    val country: String?
+    val dependentLocality: String?
+    val organization: String?
+    val phone: String?
+    val postalCode: String?
+    val recipient: String?
+    val region: String?
+    val sortingCode: String?
 }

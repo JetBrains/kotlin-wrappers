@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface MemoryDescriptor {
-    var initial: Int
-    var maximum: Int?
-    var shared: Boolean?
+    val initial: Int
+    val maximum: Int?
+    val shared: Boolean?
 }

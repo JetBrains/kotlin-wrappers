@@ -6,9 +6,9 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface CheckVisibilityOptions {
-    var checkOpacity: Boolean?
-    var checkVisibilityCSS: Boolean?
-    var contentVisibilityAuto: Boolean?
-    var opacityProperty: Boolean?
-    var visibilityProperty: Boolean?
+    val checkOpacity: Boolean?
+    val checkVisibilityCSS: Boolean?
+    val contentVisibilityAuto: Boolean?
+    val opacityProperty: Boolean?
+    val visibilityProperty: Boolean?
 }

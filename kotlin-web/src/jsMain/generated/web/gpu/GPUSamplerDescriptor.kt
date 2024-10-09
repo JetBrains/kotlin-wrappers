@@ -7,14 +7,14 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface GPUSamplerDescriptor :
     GPUObjectDescriptorBase {
-    var addressModeU: GPUAddressMode?
-    var addressModeV: GPUAddressMode?
-    var addressModeW: GPUAddressMode?
-    var magFilter: GPUFilterMode?
-    var minFilter: GPUFilterMode?
-    var mipmapFilter: GPUMipmapFilterMode?
-    var lodMinClamp: Float?
-    var lodMaxClamp: Float?
-    var compare: GPUCompareFunction?
-    var maxAnisotropy: Short?
+    val addressModeU: GPUAddressMode?
+    val addressModeV: GPUAddressMode?
+    val addressModeW: GPUAddressMode?
+    val magFilter: GPUFilterMode?
+    val minFilter: GPUFilterMode?
+    val mipmapFilter: GPUMipmapFilterMode?
+    val lodMinClamp: Float?
+    val lodMaxClamp: Float?
+    val compare: GPUCompareFunction?
+    val maxAnisotropy: Short?
 }

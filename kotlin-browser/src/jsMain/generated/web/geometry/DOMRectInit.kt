@@ -6,8 +6,8 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface DOMRectInit {
-    var height: Double?
-    var width: Double?
-    var x: Double?
-    var y: Double?
+    val height: Double?
+    val width: Double?
+    val x: Double?
+    val y: Double?
 }

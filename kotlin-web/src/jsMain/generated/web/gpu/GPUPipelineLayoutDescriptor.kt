@@ -8,5 +8,5 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface GPUPipelineLayoutDescriptor :
     GPUObjectDescriptorBase {
-    var bindGroupLayouts: ReadonlyArray<GPUBindGroupLayout>
+    val bindGroupLayouts: ReadonlyArray<GPUBindGroupLayout>
 }

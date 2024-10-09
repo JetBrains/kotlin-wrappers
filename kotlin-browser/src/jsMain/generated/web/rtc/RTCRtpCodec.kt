@@ -6,8 +6,8 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface RTCRtpCodec {
-    var channels: Short?
-    var clockRate: Int
-    var mimeType: String
-    var sdpFmtpLine: String?
+    val channels: Short?
+    val clockRate: Int
+    val mimeType: String
+    val sdpFmtpLine: String?
 }

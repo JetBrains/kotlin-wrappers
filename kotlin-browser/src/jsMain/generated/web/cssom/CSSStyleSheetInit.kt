@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface CSSStyleSheetInit {
-    var baseURL: String?
-    var disabled: Boolean?
-    var media: Any /* MediaList | string */?
+    val baseURL: String?
+    val disabled: Boolean?
+    val media: Any /* MediaList | string */?
 }

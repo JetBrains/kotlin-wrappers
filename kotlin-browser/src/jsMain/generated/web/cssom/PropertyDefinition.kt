@@ -6,8 +6,8 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface PropertyDefinition {
-    var inherits: Boolean
-    var initialValue: String?
-    var name: String
-    var syntax: String?
+    val inherits: Boolean
+    val initialValue: String?
+    val name: String
+    val syntax: String?
 }

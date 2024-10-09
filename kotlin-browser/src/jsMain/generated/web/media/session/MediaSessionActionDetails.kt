@@ -6,8 +6,8 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface MediaSessionActionDetails {
-    var action: MediaSessionAction
-    var fastSeek: Boolean?
-    var seekOffset: Double?
-    var seekTime: Double?
+    val action: MediaSessionAction
+    val fastSeek: Boolean?
+    val seekOffset: Double?
+    val seekTime: Double?
 }

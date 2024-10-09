@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface GPUImageDataLayout {
-    var offset: GPUSize64?
-    var bytesPerRow: GPUSize32?
-    var rowsPerImage: GPUSize32?
+    val offset: GPUSize64?
+    val bytesPerRow: GPUSize32?
+    val rowsPerImage: GPUSize32?
 }

@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface GPUPipelineErrorInit {
-    var reason: GPUPipelineErrorReason
+    val reason: GPUPipelineErrorReason
 }

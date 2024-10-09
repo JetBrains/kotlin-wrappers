@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface ClientQueryOptions {
-    var includeUncontrolled: Boolean?
-    var type: ClientTypes?
+    val includeUncontrolled: Boolean?
+    val type: ClientTypes?
 }

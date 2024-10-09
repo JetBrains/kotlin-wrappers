@@ -7,10 +7,10 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface OpusEncoderConfig {
-    var complexity: Int?
-    var format: OpusBitstreamFormat?
-    var frameDuration: JsLong?
-    var packetlossperc: Int?
-    var usedtx: Boolean?
-    var useinbandfec: Boolean?
+    val complexity: Int?
+    val format: OpusBitstreamFormat?
+    val frameDuration: JsLong?
+    val packetlossperc: Int?
+    val usedtx: Boolean?
+    val useinbandfec: Boolean?
 }

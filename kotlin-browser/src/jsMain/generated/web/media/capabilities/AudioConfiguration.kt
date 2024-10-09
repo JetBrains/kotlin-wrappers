@@ -7,9 +7,9 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface AudioConfiguration {
-    var bitrate: JsLong?
-    var channels: String?
-    var contentType: String
-    var samplerate: Int?
-    var spatialRendering: Boolean?
+    val bitrate: JsLong?
+    val channels: String?
+    val contentType: String
+    val samplerate: Int?
+    val spatialRendering: Boolean?
 }

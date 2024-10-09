@@ -8,5 +8,5 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface GPUFragmentState :
     GPUProgrammableStage {
-    var targets: ReadonlyArray<GPUColorTargetState?>
+    val targets: ReadonlyArray<GPUColorTargetState?>
 }

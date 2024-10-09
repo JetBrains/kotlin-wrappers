@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface GPUBindGroupEntry {
-    var binding: GPUIndex32
-    var resource: GPUBindingResource
+    val binding: GPUIndex32
+    val resource: GPUBindingResource
 }

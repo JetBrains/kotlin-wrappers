@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface GetRootNodeOptions {
-    var composed: Boolean?
+    val composed: Boolean?
 }

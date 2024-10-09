@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface WebAssemblyInstantiatedSource {
-    var instance: Instance
-    var module: Module
+    val instance: Instance
+    val module: Module
 }

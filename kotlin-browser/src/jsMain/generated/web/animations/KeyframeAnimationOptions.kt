@@ -7,6 +7,6 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface KeyframeAnimationOptions :
     KeyframeEffectOptions {
-    var id: String?
-    var timeline: AnimationTimeline?
+    val id: String?
+    val timeline: AnimationTimeline?
 }

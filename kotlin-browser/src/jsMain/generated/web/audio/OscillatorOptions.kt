@@ -7,8 +7,8 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface OscillatorOptions :
     AudioNodeOptions {
-    var detune: Float?
-    var frequency: Float?
-    var periodicWave: PeriodicWave?
-    var type: OscillatorType?
+    val detune: Float?
+    val frequency: Float?
+    val periodicWave: PeriodicWave?
+    val type: OscillatorType?
 }

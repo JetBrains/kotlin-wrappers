@@ -7,9 +7,9 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface GPURenderPipelineDescriptor :
     GPUPipelineDescriptorBase {
-    var vertex: GPUVertexState
-    var primitive: GPUPrimitiveState?
-    var depthStencil: GPUDepthStencilState?
-    var multisample: GPUMultisampleState?
-    var fragment: GPUFragmentState?
+    val vertex: GPUVertexState
+    val primitive: GPUPrimitiveState?
+    val depthStencil: GPUDepthStencilState?
+    val multisample: GPUMultisampleState?
+    val fragment: GPUFragmentState?
 }

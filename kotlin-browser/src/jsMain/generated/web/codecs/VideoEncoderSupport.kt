@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface VideoEncoderSupport {
-    var config: VideoEncoderConfig?
-    var supported: Boolean?
+    val config: VideoEncoderConfig?
+    val supported: Boolean?
 }

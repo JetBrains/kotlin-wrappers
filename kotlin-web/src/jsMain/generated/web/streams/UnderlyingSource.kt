@@ -7,9 +7,9 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface UnderlyingSource<R> {
-    var autoAllocateChunkSize: JsLong?
-    var cancel: UnderlyingSourceCancelCallback?
-    var pull: UnderlyingSourcePullCallback<R>?
-    var start: UnderlyingSourceStartCallback<R>?
-    var type: ReadableStreamType?
+    val autoAllocateChunkSize: JsLong?
+    val cancel: UnderlyingSourceCancelCallback?
+    val pull: UnderlyingSourcePullCallback<R>?
+    val start: UnderlyingSourceStartCallback<R>?
+    val type: ReadableStreamType?
 }

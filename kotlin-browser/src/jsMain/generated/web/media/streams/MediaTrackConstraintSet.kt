@@ -6,19 +6,19 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface MediaTrackConstraintSet {
-    var aspectRatio: ConstrainDouble?
-    var autoGainControl: ConstrainBoolean?
-    var backgroundBlur: ConstrainBoolean?
-    var channelCount: ConstrainULong?
-    var deviceId: ConstrainDOMString?
-    var displaySurface: ConstrainDOMString?
-    var echoCancellation: ConstrainBoolean?
-    var facingMode: ConstrainDOMString?
-    var frameRate: ConstrainDouble?
-    var groupId: ConstrainDOMString?
-    var height: ConstrainULong?
-    var noiseSuppression: ConstrainBoolean?
-    var sampleRate: ConstrainULong?
-    var sampleSize: ConstrainULong?
-    var width: ConstrainULong?
+    val aspectRatio: ConstrainDouble?
+    val autoGainControl: ConstrainBoolean?
+    val backgroundBlur: ConstrainBoolean?
+    val channelCount: ConstrainULong?
+    val deviceId: ConstrainDOMString?
+    val displaySurface: ConstrainDOMString?
+    val echoCancellation: ConstrainBoolean?
+    val facingMode: ConstrainDOMString?
+    val frameRate: ConstrainDouble?
+    val groupId: ConstrainDOMString?
+    val height: ConstrainULong?
+    val noiseSuppression: ConstrainBoolean?
+    val sampleRate: ConstrainULong?
+    val sampleSize: ConstrainULong?
+    val width: ConstrainULong?
 }

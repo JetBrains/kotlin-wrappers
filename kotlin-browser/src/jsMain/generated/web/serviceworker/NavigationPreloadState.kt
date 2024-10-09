@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface NavigationPreloadState {
-    var enabled: Boolean?
-    var headerValue: String?
+    val enabled: Boolean?
+    val headerValue: String?
 }

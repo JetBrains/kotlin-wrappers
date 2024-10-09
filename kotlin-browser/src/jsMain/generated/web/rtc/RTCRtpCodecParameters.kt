@@ -7,5 +7,5 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface RTCRtpCodecParameters :
     RTCRtpCodec {
-    var payloadType: Short /* unsigned byte */
+    val payloadType: Short /* unsigned byte */
 }

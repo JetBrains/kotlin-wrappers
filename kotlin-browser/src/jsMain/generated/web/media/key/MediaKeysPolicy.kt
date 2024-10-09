@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface MediaKeysPolicy {
-    var minHdcpVersion: String?
+    val minHdcpVersion: String?
 }

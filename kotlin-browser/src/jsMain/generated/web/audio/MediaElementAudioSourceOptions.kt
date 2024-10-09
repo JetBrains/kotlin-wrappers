@@ -7,5 +7,5 @@ import web.html.HTMLMediaElement
 
 @JsPlainObject
 external interface MediaElementAudioSourceOptions {
-    var mediaElement: HTMLMediaElement
+    val mediaElement: HTMLMediaElement
 }

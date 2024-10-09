@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface IdleRequestOptions {
-    var timeout: Int?
+    val timeout: Int?
 }

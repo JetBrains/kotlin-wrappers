@@ -7,5 +7,5 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface RsaHashedKeyAlgorithm :
     RsaKeyAlgorithm {
-    var hash: KeyAlgorithm
+    val hash: KeyAlgorithm
 }

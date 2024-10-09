@@ -9,21 +9,21 @@ import web.time.DOMHighResTimeStamp
 @JsPlainObject
 external interface RTCIceCandidatePairStats :
     RTCStats {
-    var availableIncomingBitrate: Double?
-    var availableOutgoingBitrate: Double?
-    var bytesReceived: JsLong?
-    var bytesSent: JsLong?
-    var currentRoundTripTime: Double?
-    var lastPacketReceivedTimestamp: DOMHighResTimeStamp?
-    var lastPacketSentTimestamp: DOMHighResTimeStamp?
-    var localCandidateId: String
-    var nominated: Boolean?
-    var remoteCandidateId: String
-    var requestsReceived: JsLong?
-    var requestsSent: JsLong?
-    var responsesReceived: JsLong?
-    var responsesSent: JsLong?
-    var state: RTCStatsIceCandidatePairState
-    var totalRoundTripTime: Double?
-    var transportId: String
+    val availableIncomingBitrate: Double?
+    val availableOutgoingBitrate: Double?
+    val bytesReceived: JsLong?
+    val bytesSent: JsLong?
+    val currentRoundTripTime: Double?
+    val lastPacketReceivedTimestamp: DOMHighResTimeStamp?
+    val lastPacketSentTimestamp: DOMHighResTimeStamp?
+    val localCandidateId: String
+    val nominated: Boolean?
+    val remoteCandidateId: String
+    val requestsReceived: JsLong?
+    val requestsSent: JsLong?
+    val responsesReceived: JsLong?
+    val responsesSent: JsLong?
+    val state: RTCStatsIceCandidatePairState
+    val totalRoundTripTime: Double?
+    val transportId: String
 }

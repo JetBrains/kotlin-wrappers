@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface WebTransportErrorOptions {
-    var source: WebTransportErrorSource?
-    var streamErrorCode: Int?
+    val source: WebTransportErrorSource?
+    val streamErrorCode: Int?
 }

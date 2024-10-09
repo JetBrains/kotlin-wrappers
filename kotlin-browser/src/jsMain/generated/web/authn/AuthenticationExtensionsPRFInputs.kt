@@ -7,6 +7,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface AuthenticationExtensionsPRFInputs {
-    var eval: AuthenticationExtensionsPRFValues?
-    var evalByCredential: Record<String, AuthenticationExtensionsPRFValues>?
+    val eval: AuthenticationExtensionsPRFValues?
+    val evalByCredential: Record<String, AuthenticationExtensionsPRFValues>?
 }

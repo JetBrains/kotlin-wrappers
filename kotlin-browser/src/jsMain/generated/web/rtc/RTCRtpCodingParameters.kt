@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface RTCRtpCodingParameters {
-    var rid: String?
+    val rid: String?
 }

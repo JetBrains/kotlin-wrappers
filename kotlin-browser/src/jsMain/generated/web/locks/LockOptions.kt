@@ -9,8 +9,8 @@ import web.abort.Abortable
 @JsPlainObject
 external interface LockOptions :
     Abortable {
-    var ifAvailable: Boolean?
-    var mode: LockMode?
-    override var signal: AbortSignal?
-    var steal: Boolean?
+    val ifAvailable: Boolean?
+    val mode: LockMode?
+    override val signal: AbortSignal?
+    val steal: Boolean?
 }

@@ -7,5 +7,5 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface EcdsaParams :
     Algorithm {
-    var hash: HashAlgorithmIdentifier
+    val hash: HashAlgorithmIdentifier
 }

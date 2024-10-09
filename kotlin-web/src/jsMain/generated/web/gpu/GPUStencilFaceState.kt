@@ -6,8 +6,8 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface GPUStencilFaceState {
-    var compare: GPUCompareFunction?
-    var failOp: GPUStencilOperation?
-    var depthFailOp: GPUStencilOperation?
-    var passOp: GPUStencilOperation?
+    val compare: GPUCompareFunction?
+    val failOp: GPUStencilOperation?
+    val depthFailOp: GPUStencilOperation?
+    val passOp: GPUStencilOperation?
 }

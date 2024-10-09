@@ -7,8 +7,8 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface PaymentDetailsModifier {
-    var additionalDisplayItems: ReadonlyArray<PaymentItem>?
-    var data: Any?
-    var supportedMethods: String
-    var total: PaymentItem?
+    val additionalDisplayItems: ReadonlyArray<PaymentItem>?
+    val data: Any?
+    val supportedMethods: String
+    val total: PaymentItem?
 }

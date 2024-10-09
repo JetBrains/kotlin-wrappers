@@ -6,8 +6,8 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface DOMQuadInit {
-    var p1: DOMPointInit?
-    var p2: DOMPointInit?
-    var p3: DOMPointInit?
-    var p4: DOMPointInit?
+    val p1: DOMPointInit?
+    val p2: DOMPointInit?
+    val p3: DOMPointInit?
+    val p4: DOMPointInit?
 }

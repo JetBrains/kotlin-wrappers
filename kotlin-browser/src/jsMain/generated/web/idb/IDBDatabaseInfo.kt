@@ -7,6 +7,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface IDBDatabaseInfo {
-    var name: String?
-    var version: JsLong?
+    val name: String?
+    val version: JsLong?
 }

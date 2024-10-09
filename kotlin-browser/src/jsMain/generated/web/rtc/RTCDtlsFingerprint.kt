@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface RTCDtlsFingerprint {
-    var algorithm: String?
-    var value: String?
+    val algorithm: String?
+    val value: String?
 }

@@ -8,8 +8,8 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface EncodedVideoChunkInit {
-    var data: AllowSharedBufferSource
-    var duration: JsLong?
-    var timestamp: JsLong
-    var type: EncodedVideoChunkType
+    val data: AllowSharedBufferSource
+    val duration: JsLong?
+    val timestamp: JsLong
+    val type: EncodedVideoChunkType
 }

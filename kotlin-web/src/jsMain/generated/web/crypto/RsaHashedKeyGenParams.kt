@@ -7,5 +7,5 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface RsaHashedKeyGenParams :
     RsaKeyGenParams {
-    var hash: HashAlgorithmIdentifier
+    val hash: HashAlgorithmIdentifier
 }

@@ -7,5 +7,5 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface StereoPannerOptions :
     AudioNodeOptions {
-    var pan: Float?
+    val pan: Float?
 }

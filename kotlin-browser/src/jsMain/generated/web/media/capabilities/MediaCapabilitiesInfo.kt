@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface MediaCapabilitiesInfo {
-    var powerEfficient: Boolean
-    var smooth: Boolean
-    var supported: Boolean
+    val powerEfficient: Boolean
+    val smooth: Boolean
+    val supported: Boolean
 }

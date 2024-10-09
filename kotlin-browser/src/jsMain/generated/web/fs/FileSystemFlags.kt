@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface FileSystemFlags {
-    var create: Boolean?
-    var exclusive: Boolean?
+    val create: Boolean?
+    val exclusive: Boolean?
 }

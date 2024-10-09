@@ -7,8 +7,8 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface AudioDecoderConfig {
-    var codec: String
-    var description: BufferSource?
-    var numberOfChannels: Int
-    var sampleRate: Int
+    val codec: String
+    val description: BufferSource?
+    val numberOfChannels: Int
+    val sampleRate: Int
 }

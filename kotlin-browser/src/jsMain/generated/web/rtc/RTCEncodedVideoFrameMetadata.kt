@@ -8,14 +8,14 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface RTCEncodedVideoFrameMetadata {
-    var contributingSources: ReadonlyArray<Number>?
-    var dependencies: ReadonlyArray<Number>?
-    var frameId: JsLong?
-    var height: Short?
-    var payloadType: Short /* unsigned byte */?
-    var spatialIndex: Int?
-    var synchronizationSource: Int?
-    var temporalIndex: Int?
-    var timestamp: JsLong?
-    var width: Short?
+    val contributingSources: ReadonlyArray<Number>?
+    val dependencies: ReadonlyArray<Number>?
+    val frameId: JsLong?
+    val height: Short?
+    val payloadType: Short /* unsigned byte */?
+    val spatialIndex: Int?
+    val synchronizationSource: Int?
+    val temporalIndex: Int?
+    val timestamp: JsLong?
+    val width: Short?
 }

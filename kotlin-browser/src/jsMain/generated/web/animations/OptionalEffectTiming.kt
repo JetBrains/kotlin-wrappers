@@ -6,13 +6,13 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface OptionalEffectTiming {
-    var delay: Double?
-    var direction: PlaybackDirection?
-    var duration: Double?
-    var easing: String?
-    var endDelay: Double?
-    var fill: FillMode?
-    var iterationStart: Double?
-    var iterations: Double?
-    var playbackRate: Double?
+    val delay: Double?
+    val direction: PlaybackDirection?
+    val duration: Double?
+    val easing: String?
+    val endDelay: Double?
+    val fill: FillMode?
+    val iterationStart: Double?
+    val iterations: Double?
+    val playbackRate: Double?
 }

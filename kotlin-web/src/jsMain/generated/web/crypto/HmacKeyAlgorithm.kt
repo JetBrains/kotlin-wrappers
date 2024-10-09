@@ -7,6 +7,6 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface HmacKeyAlgorithm :
     KeyAlgorithm {
-    var hash: KeyAlgorithm
-    var length: Int
+    val hash: KeyAlgorithm
+    val length: Int
 }

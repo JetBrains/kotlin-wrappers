@@ -6,24 +6,24 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface ResolvedDateTimeFormatOptions {
-    var locale: String
-    var calendar: String
-    var numberingSystem: String
-    var timeZone: String
-    var hour12: Boolean?
-    var weekday: String?
-    var era: String?
-    var year: String?
-    var month: String?
-    var day: String?
-    var hour: String?
-    var minute: String?
-    var second: String?
-    var timeZoneName: String?
-    var formatMatcher: FormatMatcher?
-    var dateStyle: DateStyle?
-    var timeStyle: TimeStyle?
-    var hourCycle: HourCycle?
-    var dayPeriod: DayPeriod?
-    var fractionalSecondDigits: Int /* 1 | 2 | 3 */?
+    val locale: String
+    val calendar: String
+    val numberingSystem: String
+    val timeZone: String
+    val hour12: Boolean?
+    val weekday: String?
+    val era: String?
+    val year: String?
+    val month: String?
+    val day: String?
+    val hour: String?
+    val minute: String?
+    val second: String?
+    val timeZoneName: String?
+    val formatMatcher: FormatMatcher?
+    val dateStyle: DateStyle?
+    val timeStyle: TimeStyle?
+    val hourCycle: HourCycle?
+    val dayPeriod: DayPeriod?
+    val fractionalSecondDigits: Int /* 1 | 2 | 3 */?
 }

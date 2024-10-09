@@ -7,8 +7,8 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface AnalyserOptions :
     AudioNodeOptions {
-    var fftSize: Int?
-    var maxDecibels: Double?
-    var minDecibels: Double?
-    var smoothingTimeConstant: Double?
+    val fftSize: Int?
+    val maxDecibels: Double?
+    val minDecibels: Double?
+    val smoothingTimeConstant: Double?
 }

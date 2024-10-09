@@ -6,9 +6,9 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface ResolvedDisplayNamesOptions {
-    var locale: UnicodeBCP47LocaleIdentifier
-    var style: RelativeTimeFormatStyle
-    var type: DisplayNamesType
-    var fallback: DisplayNamesFallback
-    var languageDisplay: DisplayNamesLanguageDisplay?
+    val locale: UnicodeBCP47LocaleIdentifier
+    val style: RelativeTimeFormatStyle
+    val type: DisplayNamesType
+    val fallback: DisplayNamesFallback
+    val languageDisplay: DisplayNamesLanguageDisplay?
 }

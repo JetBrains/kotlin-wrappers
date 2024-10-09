@@ -7,6 +7,6 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface GPURenderBundleEncoderDescriptor :
     GPURenderPassLayout {
-    var depthReadOnly: Boolean?
-    var stencilReadOnly: Boolean?
+    val depthReadOnly: Boolean?
+    val stencilReadOnly: Boolean?
 }

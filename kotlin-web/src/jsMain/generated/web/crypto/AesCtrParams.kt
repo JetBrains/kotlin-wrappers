@@ -8,6 +8,6 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface AesCtrParams :
     Algorithm {
-    var counter: BufferSource
-    var length: Short /* unsigned byte */
+    val counter: BufferSource
+    val length: Short /* unsigned byte */
 }

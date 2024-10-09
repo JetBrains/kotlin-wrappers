@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface PaymentValidationErrors {
-    var error: String?
-    var payer: PayerErrors?
-    var shippingAddress: AddressErrors?
+    val error: String?
+    val payer: PayerErrors?
+    val shippingAddress: AddressErrors?
 }

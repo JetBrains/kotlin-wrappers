@@ -7,10 +7,10 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface RTCRtpEncodingParameters :
     RTCRtpCodingParameters {
-    var active: Boolean?
-    var maxBitrate: Int?
-    var maxFramerate: Double?
-    var networkPriority: RTCPriorityType?
-    var priority: RTCPriorityType?
-    var scaleResolutionDownBy: Double?
+    val active: Boolean?
+    val maxBitrate: Int?
+    val maxFramerate: Double?
+    val networkPriority: RTCPriorityType?
+    val priority: RTCPriorityType?
+    val scaleResolutionDownBy: Double?
 }

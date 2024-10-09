@@ -7,14 +7,14 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface VideoConfiguration {
-    var bitrate: JsLong
-    var colorGamut: ColorGamut?
-    var contentType: String
-    var framerate: Double
-    var hasAlphaChannel: Boolean?
-    var hdrMetadataType: HdrMetadataType?
-    var height: Int
-    var scalabilityMode: String?
-    var transferFunction: TransferFunction?
-    var width: Int
+    val bitrate: JsLong
+    val colorGamut: ColorGamut?
+    val contentType: String
+    val framerate: Double
+    val hasAlphaChannel: Boolean?
+    val hdrMetadataType: HdrMetadataType?
+    val height: Int
+    val scalabilityMode: String?
+    val transferFunction: TransferFunction?
+    val width: Int
 }

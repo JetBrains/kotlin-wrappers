@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface ScrollOptions {
-    var behavior: ScrollBehavior?
+    val behavior: ScrollBehavior?
 }

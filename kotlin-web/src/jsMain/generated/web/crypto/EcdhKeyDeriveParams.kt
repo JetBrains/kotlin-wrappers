@@ -7,5 +7,5 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface EcdhKeyDeriveParams :
     Algorithm {
-    var public: CryptoKey
+    val public: CryptoKey
 }

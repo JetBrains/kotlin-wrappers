@@ -6,13 +6,13 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface GPURenderPassDepthStencilAttachment {
-    var view: GPUTextureView
-    var depthClearValue: Float?
-    var depthLoadOp: GPULoadOp?
-    var depthStoreOp: GPUStoreOp?
-    var depthReadOnly: Boolean?
-    var stencilClearValue: GPUStencilValue?
-    var stencilLoadOp: GPULoadOp?
-    var stencilStoreOp: GPUStoreOp?
-    var stencilReadOnly: Boolean?
+    val view: GPUTextureView
+    val depthClearValue: Float?
+    val depthLoadOp: GPULoadOp?
+    val depthStoreOp: GPUStoreOp?
+    val depthReadOnly: Boolean?
+    val stencilClearValue: GPUStencilValue?
+    val stencilLoadOp: GPULoadOp?
+    val stencilStoreOp: GPUStoreOp?
+    val stencilReadOnly: Boolean?
 }

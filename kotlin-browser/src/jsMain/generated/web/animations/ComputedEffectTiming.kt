@@ -7,10 +7,10 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface ComputedEffectTiming :
     EffectTiming {
-    var activeDuration: CSSNumberish?
-    var currentIteration: Double?
-    var endTime: CSSNumberish?
-    var localTime: CSSNumberish?
-    var progress: Double?
-    var startTime: CSSNumberish?
+    val activeDuration: CSSNumberish?
+    val currentIteration: Double?
+    val endTime: CSSNumberish?
+    val localTime: CSSNumberish?
+    val progress: Double?
+    val startTime: CSSNumberish?
 }

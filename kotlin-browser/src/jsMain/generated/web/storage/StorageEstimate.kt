@@ -7,6 +7,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface StorageEstimate {
-    var quota: JsLong?
-    var usage: JsLong?
+    val quota: JsLong?
+    val usage: JsLong?
 }

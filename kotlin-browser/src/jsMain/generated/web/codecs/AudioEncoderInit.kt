@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface AudioEncoderInit {
-    var error: WebCodecsErrorCallback
-    var output: EncodedAudioChunkOutputCallback
+    val error: WebCodecsErrorCallback
+    val output: EncodedAudioChunkOutputCallback
 }

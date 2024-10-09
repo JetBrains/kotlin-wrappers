@@ -7,6 +7,6 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface PaymentDetailsInit :
     PaymentDetailsBase {
-    var id: String?
-    var total: PaymentItem
+    val id: String?
+    val total: PaymentItem
 }

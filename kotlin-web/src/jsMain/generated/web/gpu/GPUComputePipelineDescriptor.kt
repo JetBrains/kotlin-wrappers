@@ -7,5 +7,5 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface GPUComputePipelineDescriptor :
     GPUPipelineDescriptorBase {
-    var compute: GPUProgrammableStage
+    val compute: GPUProgrammableStage
 }

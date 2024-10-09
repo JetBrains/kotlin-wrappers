@@ -6,8 +6,8 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface GPUColorDict {
-    var r: Double
-    var g: Double
-    var b: Double
-    var a: Double
+    val r: Double
+    val g: Double
+    val b: Double
+    val a: Double
 }

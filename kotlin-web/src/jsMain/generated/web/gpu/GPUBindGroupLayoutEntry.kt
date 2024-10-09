@@ -6,10 +6,10 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface GPUBindGroupLayoutEntry {
-    var binding: GPUIndex32
-    var visibility: GPUShaderStage
-    var buffer: GPUBufferBindingLayout?
-    var sampler: GPUSamplerBindingLayout?
-    var texture: GPUTextureBindingLayout?
-    var storageTexture: GPUStorageTextureBindingLayout?
+    val binding: GPUIndex32
+    val visibility: GPUShaderStage
+    val buffer: GPUBufferBindingLayout?
+    val sampler: GPUSamplerBindingLayout?
+    val texture: GPUTextureBindingLayout?
+    val storageTexture: GPUStorageTextureBindingLayout?
 }

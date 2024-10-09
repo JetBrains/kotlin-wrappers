@@ -7,8 +7,8 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface MediaMetadataInit {
-    var album: String?
-    var artist: String?
-    var artwork: ReadonlyArray<MediaImage>?
-    var title: String?
+    val album: String?
+    val artist: String?
+    val artwork: ReadonlyArray<MediaImage>?
+    val title: String?
 }

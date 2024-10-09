@@ -7,15 +7,15 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface DOMMatrixInit :
     DOMMatrix2DInit {
-    var is2D: Boolean?
-    var m13: Double?
-    var m14: Double?
-    var m23: Double?
-    var m24: Double?
-    var m31: Double?
-    var m32: Double?
-    var m33: Double?
-    var m34: Double?
-    var m43: Double?
-    var m44: Double?
+    val is2D: Boolean?
+    val m13: Double?
+    val m14: Double?
+    val m23: Double?
+    val m24: Double?
+    val m31: Double?
+    val m32: Double?
+    val m33: Double?
+    val m34: Double?
+    val m43: Double?
+    val m44: Double?
 }

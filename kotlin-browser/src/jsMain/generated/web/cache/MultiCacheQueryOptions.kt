@@ -7,5 +7,5 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface MultiCacheQueryOptions :
     CacheQueryOptions {
-    var cacheName: String?
+    val cacheName: String?
 }

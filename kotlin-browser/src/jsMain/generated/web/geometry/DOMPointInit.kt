@@ -6,8 +6,8 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface DOMPointInit {
-    var w: Double?
-    var x: Double?
-    var y: Double?
-    var z: Double?
+    val w: Double?
+    val x: Double?
+    val y: Double?
+    val z: Double?
 }

@@ -7,9 +7,9 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface Transformer<I, O> {
-    var flush: TransformerFlushCallback<O>?
-    var readableType: Void
-    var start: TransformerStartCallback<O>?
-    var transform: TransformerTransformCallback<I, O>?
-    var writableType: Void
+    val flush: TransformerFlushCallback<O>?
+    val readableType: Void
+    val start: TransformerStartCallback<O>?
+    val transform: TransformerTransformCallback<I, O>?
+    val writableType: Void
 }

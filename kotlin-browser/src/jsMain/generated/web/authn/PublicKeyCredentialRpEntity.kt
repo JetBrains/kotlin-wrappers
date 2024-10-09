@@ -7,5 +7,5 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface PublicKeyCredentialRpEntity :
     PublicKeyCredentialEntity {
-    var id: String?
+    val id: String?
 }

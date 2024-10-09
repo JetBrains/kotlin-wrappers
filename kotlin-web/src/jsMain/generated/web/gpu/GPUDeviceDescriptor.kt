@@ -9,6 +9,6 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface GPUDeviceDescriptor :
     GPUObjectDescriptorBase {
-    var requiredFeatures: ReadonlyArray<GPUFeatureName>?
-    var requiredLimits: ReadonlyRecord<String, Double>?
+    val requiredFeatures: ReadonlyArray<GPUFeatureName>?
+    val requiredLimits: ReadonlyRecord<String, Double>?
 }

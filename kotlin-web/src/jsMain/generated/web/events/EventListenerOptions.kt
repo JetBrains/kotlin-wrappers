@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface EventListenerOptions {
-    var capture: Boolean?
+    val capture: Boolean?
 }

@@ -8,6 +8,6 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface IIRFilterOptions :
     AudioNodeOptions {
-    var feedback: ReadonlyArray<Number>
-    var feedforward: ReadonlyArray<Number>
+    val feedback: ReadonlyArray<Number>
+    val feedforward: ReadonlyArray<Number>
 }

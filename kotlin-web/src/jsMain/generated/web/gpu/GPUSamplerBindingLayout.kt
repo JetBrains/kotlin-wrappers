@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface GPUSamplerBindingLayout {
-    var type: GPUSamplerBindingType?
+    val type: GPUSamplerBindingType?
 }

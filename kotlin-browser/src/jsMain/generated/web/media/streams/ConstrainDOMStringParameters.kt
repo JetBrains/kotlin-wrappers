@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface ConstrainDOMStringParameters {
-    var exact: Any /* string | string[] */?
-    var ideal: Any /* string | string[] */?
+    val exact: Any /* string | string[] */?
+    val ideal: Any /* string | string[] */?
 }

@@ -6,8 +6,8 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface VideoColorSpaceInit {
-    var fullRange: Boolean?
-    var matrix: VideoMatrixCoefficients?
-    var primaries: VideoColorPrimaries?
-    var transfer: VideoTransferCharacteristics?
+    val fullRange: Boolean?
+    val matrix: VideoMatrixCoefficients?
+    val primaries: VideoColorPrimaries?
+    val transfer: VideoTransferCharacteristics?
 }

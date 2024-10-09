@@ -7,6 +7,6 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface ScrollToOptions :
     ScrollOptions {
-    var left: Double?
-    var top: Double?
+    val left: Double?
+    val top: Double?
 }

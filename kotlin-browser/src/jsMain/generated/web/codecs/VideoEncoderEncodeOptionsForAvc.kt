@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface VideoEncoderEncodeOptionsForAvc {
-    var quantizer: Short?
+    val quantizer: Short?
 }

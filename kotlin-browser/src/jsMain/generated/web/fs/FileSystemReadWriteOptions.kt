@@ -7,5 +7,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface FileSystemReadWriteOptions {
-    var at: JsLong?
+    val at: JsLong?
 }

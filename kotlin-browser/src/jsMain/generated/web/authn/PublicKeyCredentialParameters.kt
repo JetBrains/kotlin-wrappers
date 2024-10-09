@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface PublicKeyCredentialParameters {
-    var alg: COSEAlgorithmIdentifier
-    var type: PublicKeyCredentialType
+    val alg: COSEAlgorithmIdentifier
+    val type: PublicKeyCredentialType
 }

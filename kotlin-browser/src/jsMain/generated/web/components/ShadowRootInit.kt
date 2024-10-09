@@ -6,8 +6,8 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface ShadowRootInit {
-    var delegatesFocus: Boolean?
-    var mode: ShadowRootMode
-    var serializable: Boolean?
-    var slotAssignment: SlotAssignmentMode?
+    val delegatesFocus: Boolean?
+    val mode: ShadowRootMode
+    val serializable: Boolean?
+    val slotAssignment: SlotAssignmentMode?
 }

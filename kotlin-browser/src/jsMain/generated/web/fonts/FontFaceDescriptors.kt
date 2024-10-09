@@ -6,13 +6,13 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface FontFaceDescriptors {
-    var ascentOverride: String?
-    var descentOverride: String?
-    var display: FontDisplay?
-    var featureSettings: String?
-    var lineGapOverride: String?
-    var stretch: String?
-    var style: String?
-    var unicodeRange: String?
-    var weight: String?
+    val ascentOverride: String?
+    val descentOverride: String?
+    val display: FontDisplay?
+    val featureSettings: String?
+    val lineGapOverride: String?
+    val stretch: String?
+    val style: String?
+    val unicodeRange: String?
+    val weight: String?
 }

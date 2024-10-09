@@ -8,5 +8,5 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface AesCbcParams :
     Algorithm {
-    var iv: BufferSource
+    val iv: BufferSource
 }

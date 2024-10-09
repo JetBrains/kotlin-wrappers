@@ -7,7 +7,7 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface PublicKeyCredentialDescriptorJSON {
-    var id: Base64URLString
-    var transports: ReadonlyArray<String>?
-    var type: String
+    val id: Base64URLString
+    val transports: ReadonlyArray<String>?
+    val type: String
 }

@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface IDBIndexParameters {
-    var multiEntry: Boolean?
-    var unique: Boolean?
+    val multiEntry: Boolean?
+    val unique: Boolean?
 }

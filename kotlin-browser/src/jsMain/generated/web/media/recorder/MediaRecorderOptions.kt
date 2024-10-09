@@ -6,8 +6,8 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface MediaRecorderOptions {
-    var audioBitsPerSecond: Int?
-    var bitsPerSecond: Int?
-    var mimeType: String?
-    var videoBitsPerSecond: Int?
+    val audioBitsPerSecond: Int?
+    val bitsPerSecond: Int?
+    val mimeType: String?
+    val videoBitsPerSecond: Int?
 }

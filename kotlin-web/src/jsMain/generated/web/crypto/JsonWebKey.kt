@@ -7,22 +7,22 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface JsonWebKey {
-    var alg: String?
-    var crv: String?
-    var d: String?
-    var dp: String?
-    var dq: String?
-    var e: String?
-    var ext: Boolean?
-    var k: String?
-    var key_ops: ReadonlyArray<String>?
-    var kty: String?
-    var n: String?
-    var oth: ReadonlyArray<RsaOtherPrimesInfo>?
-    var p: String?
-    var q: String?
-    var qi: String?
-    var use: String?
-    var x: String?
-    var y: String?
+    val alg: String?
+    val crv: String?
+    val d: String?
+    val dp: String?
+    val dq: String?
+    val e: String?
+    val ext: Boolean?
+    val k: String?
+    val key_ops: ReadonlyArray<String>?
+    val kty: String?
+    val n: String?
+    val oth: ReadonlyArray<RsaOtherPrimesInfo>?
+    val p: String?
+    val q: String?
+    val qi: String?
+    val use: String?
+    val x: String?
+    val y: String?
 }

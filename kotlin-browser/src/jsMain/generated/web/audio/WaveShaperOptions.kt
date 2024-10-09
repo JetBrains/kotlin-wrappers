@@ -8,6 +8,6 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface WaveShaperOptions :
     AudioNodeOptions {
-    var curve: ReadonlyArray<Double> /* | Float32Array */?
-    var oversample: OverSampleType?
+    val curve: ReadonlyArray<Double> /* | Float32Array */?
+    val oversample: OverSampleType?
 }

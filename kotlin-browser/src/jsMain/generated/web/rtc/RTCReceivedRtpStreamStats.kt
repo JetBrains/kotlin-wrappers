@@ -8,7 +8,7 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface RTCReceivedRtpStreamStats :
     RTCRtpStreamStats {
-    var jitter: Double?
-    var packetsLost: JsLong?
-    var packetsReceived: JsLong?
+    val jitter: Double?
+    val packetsLost: JsLong?
+    val packetsReceived: JsLong?
 }

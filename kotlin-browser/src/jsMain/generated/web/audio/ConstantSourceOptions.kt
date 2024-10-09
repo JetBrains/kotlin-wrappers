@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface ConstantSourceOptions {
-    var offset: Float?
+    val offset: Float?
 }

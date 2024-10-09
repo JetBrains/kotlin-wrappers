@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface TextDecoderOptions {
-    var fatal: Boolean?
-    var ignoreBOM: Boolean?
+    val fatal: Boolean?
+    val ignoreBOM: Boolean?
 }

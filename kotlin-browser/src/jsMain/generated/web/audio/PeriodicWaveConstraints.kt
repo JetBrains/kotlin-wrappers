@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface PeriodicWaveConstraints {
-    var disableNormalization: Boolean?
+    val disableNormalization: Boolean?
 }

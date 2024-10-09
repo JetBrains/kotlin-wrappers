@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface RTCRtcpParameters {
-    var cname: String?
-    var reducedSize: Boolean?
+    val cname: String?
+    val reducedSize: Boolean?
 }

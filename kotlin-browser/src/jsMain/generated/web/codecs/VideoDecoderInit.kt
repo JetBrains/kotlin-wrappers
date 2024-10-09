@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface VideoDecoderInit {
-    var error: WebCodecsErrorCallback
-    var output: VideoFrameOutputCallback
+    val error: WebCodecsErrorCallback
+    val output: VideoFrameOutputCallback
 }

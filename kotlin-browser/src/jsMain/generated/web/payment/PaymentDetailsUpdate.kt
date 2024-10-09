@@ -7,8 +7,8 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface PaymentDetailsUpdate :
     PaymentDetailsBase {
-    var error: String?
-    var paymentMethodErrors: Any?
-    var shippingAddressErrors: AddressErrors?
-    var total: PaymentItem?
+    val error: String?
+    val paymentMethodErrors: Any?
+    val shippingAddressErrors: AddressErrors?
+    val total: PaymentItem?
 }

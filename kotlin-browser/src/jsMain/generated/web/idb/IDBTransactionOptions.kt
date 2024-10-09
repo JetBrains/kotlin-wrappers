@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface IDBTransactionOptions {
-    var durability: IDBTransactionDurability?
+    val durability: IDBTransactionDurability?
 }

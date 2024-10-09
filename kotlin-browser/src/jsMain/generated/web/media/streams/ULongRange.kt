@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface ULongRange {
-    var max: Int?
-    var min: Int?
+    val max: Int?
+    val min: Int?
 }

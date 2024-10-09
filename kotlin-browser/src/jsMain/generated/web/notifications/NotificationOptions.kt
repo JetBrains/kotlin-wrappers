@@ -6,13 +6,13 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface NotificationOptions {
-    var badge: String?
-    var body: String?
-    var data: Any?
-    var dir: NotificationDirection?
-    var icon: String?
-    var lang: String?
-    var requireInteraction: Boolean?
-    var silent: Boolean?
-    var tag: String?
+    val badge: String?
+    val body: String?
+    val data: Any?
+    val dir: NotificationDirection?
+    val icon: String?
+    val lang: String?
+    val requireInteraction: Boolean?
+    val silent: Boolean?
+    val tag: String?
 }

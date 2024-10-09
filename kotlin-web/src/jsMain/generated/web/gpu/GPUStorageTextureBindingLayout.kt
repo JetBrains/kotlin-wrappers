@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface GPUStorageTextureBindingLayout {
-    var access: GPUStorageTextureAccess
-    var format: GPUTextureFormat
-    var viewDimension: GPUTextureViewDimension?
+    val access: GPUStorageTextureAccess
+    val format: GPUTextureFormat
+    val viewDimension: GPUTextureViewDimension?
 }

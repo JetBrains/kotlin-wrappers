@@ -7,6 +7,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface LockManagerSnapshot {
-    var held: ReadonlyArray<LockInfo>?
-    var pending: ReadonlyArray<LockInfo>?
+    val held: ReadonlyArray<LockInfo>?
+    val pending: ReadonlyArray<LockInfo>?
 }

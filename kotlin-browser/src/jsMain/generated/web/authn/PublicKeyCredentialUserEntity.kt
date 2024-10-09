@@ -8,6 +8,6 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface PublicKeyCredentialUserEntity :
     PublicKeyCredentialEntity {
-    var displayName: String
-    var id: BufferSource
+    val displayName: String
+    val id: BufferSource
 }

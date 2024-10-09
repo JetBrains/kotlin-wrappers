@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface PublicKeyCredentialUserEntityJSON {
-    var displayName: String
-    var id: Base64URLString
-    var name: String
+    val displayName: String
+    val id: Base64URLString
+    val name: String
 }

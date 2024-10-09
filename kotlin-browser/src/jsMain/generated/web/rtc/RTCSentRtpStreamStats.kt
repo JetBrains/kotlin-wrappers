@@ -8,6 +8,6 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface RTCSentRtpStreamStats :
     RTCRtpStreamStats {
-    var bytesSent: JsLong?
-    var packetsSent: JsLong?
+    val bytesSent: JsLong?
+    val packetsSent: JsLong?
 }

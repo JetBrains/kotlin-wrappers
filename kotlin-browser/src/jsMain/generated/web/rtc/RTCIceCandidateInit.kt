@@ -6,8 +6,8 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface RTCIceCandidateInit {
-    var candidate: String?
-    var sdpMLineIndex: Short?
-    var sdpMid: String?
-    var usernameFragment: String?
+    val candidate: String?
+    val sdpMLineIndex: Short?
+    val sdpMid: String?
+    val usernameFragment: String?
 }

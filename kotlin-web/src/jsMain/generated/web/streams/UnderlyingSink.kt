@@ -7,9 +7,9 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface UnderlyingSink<W> {
-    var abort: UnderlyingSinkAbortCallback?
-    var close: UnderlyingSinkCloseCallback?
-    var start: UnderlyingSinkStartCallback?
-    var type: Void
-    var write: UnderlyingSinkWriteCallback<W>?
+    val abort: UnderlyingSinkAbortCallback?
+    val close: UnderlyingSinkCloseCallback?
+    val start: UnderlyingSinkStartCallback?
+    val type: Void
+    val write: UnderlyingSinkWriteCallback<W>?
 }

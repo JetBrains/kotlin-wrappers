@@ -8,13 +8,13 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface RTCTransportStats :
     RTCStats {
-    var bytesReceived: JsLong?
-    var bytesSent: JsLong?
-    var dtlsCipher: String?
-    var dtlsState: RTCDtlsTransportState
-    var localCertificateId: String?
-    var remoteCertificateId: String?
-    var selectedCandidatePairId: String?
-    var srtpCipher: String?
-    var tlsVersion: String?
+    val bytesReceived: JsLong?
+    val bytesSent: JsLong?
+    val dtlsCipher: String?
+    val dtlsState: RTCDtlsTransportState
+    val localCertificateId: String?
+    val remoteCertificateId: String?
+    val selectedCandidatePairId: String?
+    val srtpCipher: String?
+    val tlsVersion: String?
 }

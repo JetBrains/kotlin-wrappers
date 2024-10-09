@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface ResizeObserverOptions {
-    var box: ResizeObserverBoxOptions?
+    val box: ResizeObserverBoxOptions?
 }

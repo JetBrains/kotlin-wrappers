@@ -8,10 +8,10 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface PublicKeyCredentialRequestOptions {
-    var allowCredentials: ReadonlyArray<PublicKeyCredentialDescriptor>?
-    var challenge: BufferSource
-    var extensions: AuthenticationExtensionsClientInputs?
-    var rpId: String?
-    var timeout: Int?
-    var userVerification: UserVerificationRequirement?
+    val allowCredentials: ReadonlyArray<PublicKeyCredentialDescriptor>?
+    val challenge: BufferSource
+    val extensions: AuthenticationExtensionsClientInputs?
+    val rpId: String?
+    val timeout: Int?
+    val userVerification: UserVerificationRequirement?
 }

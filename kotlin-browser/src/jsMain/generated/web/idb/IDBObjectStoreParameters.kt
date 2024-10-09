@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface IDBObjectStoreParameters {
-    var autoIncrement: Boolean?
-    var keyPath: Any /* string | string[] */?
+    val autoIncrement: Boolean?
+    val keyPath: Any /* string | string[] */?
 }

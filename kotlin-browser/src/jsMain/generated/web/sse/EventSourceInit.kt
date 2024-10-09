@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface EventSourceInit {
-    var withCredentials: Boolean?
+    val withCredentials: Boolean?
 }

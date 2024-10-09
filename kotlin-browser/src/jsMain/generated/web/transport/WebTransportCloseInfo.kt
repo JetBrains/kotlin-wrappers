@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface WebTransportCloseInfo {
-    var closeCode: Int?
-    var reason: String?
+    val closeCode: Int?
+    val reason: String?
 }

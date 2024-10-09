@@ -7,8 +7,8 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface RTCEncodedAudioFrameMetadata {
-    var contributingSources: ReadonlyArray<Number>?
-    var payloadType: Short /* unsigned byte */?
-    var sequenceNumber: Short?
-    var synchronizationSource: Int?
+    val contributingSources: ReadonlyArray<Number>?
+    val payloadType: Short /* unsigned byte */?
+    val sequenceNumber: Short?
+    val synchronizationSource: Int?
 }

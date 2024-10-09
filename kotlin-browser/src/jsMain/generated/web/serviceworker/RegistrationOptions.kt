@@ -7,7 +7,7 @@ import web.workers.WorkerType
 
 @JsPlainObject
 external interface RegistrationOptions {
-    var scope: String?
-    var type: WorkerType?
-    var updateViaCache: ServiceWorkerUpdateViaCache?
+    val scope: String?
+    val type: WorkerType?
+    val updateViaCache: ServiceWorkerUpdateViaCache?
 }

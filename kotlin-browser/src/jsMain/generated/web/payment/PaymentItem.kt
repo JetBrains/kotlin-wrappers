@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface PaymentItem {
-    var amount: PaymentCurrencyAmount
-    var label: String
-    var pending: Boolean?
+    val amount: PaymentCurrencyAmount
+    val label: String
+    val pending: Boolean?
 }

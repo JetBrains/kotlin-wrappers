@@ -7,6 +7,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface TextEncoderEncodeIntoResult {
-    var read: JsLong
-    var written: JsLong
+    val read: JsLong
+    val written: JsLong
 }

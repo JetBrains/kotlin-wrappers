@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface CacheQueryOptions {
-    var ignoreMethod: Boolean?
-    var ignoreSearch: Boolean?
-    var ignoreVary: Boolean?
+    val ignoreMethod: Boolean?
+    val ignoreSearch: Boolean?
+    val ignoreVary: Boolean?
 }

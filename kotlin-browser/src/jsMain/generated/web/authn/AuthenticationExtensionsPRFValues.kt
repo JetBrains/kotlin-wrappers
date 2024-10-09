@@ -7,6 +7,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface AuthenticationExtensionsPRFValues {
-    var first: BufferSource
-    var second: BufferSource?
+    val first: BufferSource
+    val second: BufferSource?
 }

@@ -8,5 +8,5 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface RsaOaepParams :
     Algorithm {
-    var label: BufferSource?
+    val label: BufferSource?
 }

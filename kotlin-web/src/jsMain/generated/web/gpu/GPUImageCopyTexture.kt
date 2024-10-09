@@ -6,8 +6,8 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface GPUImageCopyTexture {
-    var texture: GPUTexture
-    var mipLevel: GPUIntegerCoordinate?
-    var origin: GPUOrigin3D?
-    var aspect: GPUTextureAspect?
+    val texture: GPUTexture
+    val mipLevel: GPUIntegerCoordinate?
+    val origin: GPUOrigin3D?
+    val aspect: GPUTextureAspect?
 }

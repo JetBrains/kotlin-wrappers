@@ -7,8 +7,8 @@ import web.dom.Node
 
 @JsPlainObject
 external interface StaticRangeInit {
-    var endContainer: Node
-    var endOffset: Int
-    var startContainer: Node
-    var startOffset: Int
+    val endContainer: Node
+    val endOffset: Int
+    val startContainer: Node
+    val startOffset: Int
 }

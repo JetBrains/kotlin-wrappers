@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface GlobalDescriptor<T> {
-    var mutable: Boolean?
-    var value: ValueType<T>
+    val mutable: Boolean?
+    val value: ValueType<T>
 }

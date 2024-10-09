@@ -6,8 +6,8 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface ResolvedRelativeTimeFormatOptions {
-    var locale: UnicodeBCP47LocaleIdentifier
-    var style: RelativeTimeFormatStyle
-    var numeric: RelativeTimeFormatNumeric
-    var numberingSystem: String
+    val locale: UnicodeBCP47LocaleIdentifier
+    val style: RelativeTimeFormatStyle
+    val numeric: RelativeTimeFormatNumeric
+    val numberingSystem: String
 }

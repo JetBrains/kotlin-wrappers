@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface FileSystemGetFileOptions {
-    var create: Boolean?
+    val create: Boolean?
 }

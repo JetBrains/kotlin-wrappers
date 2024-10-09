@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface GPURequestAdapterOptions {
-    var powerPreference: GPUPowerPreference?
-    var forceFallbackAdapter: Boolean?
+    val powerPreference: GPUPowerPreference?
+    val forceFallbackAdapter: Boolean?
 }

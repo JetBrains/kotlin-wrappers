@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface GPUComputePassTimestampWrites {
-    var querySet: GPUQuerySet
-    var beginningOfPassWriteIndex: GPUSize32?
-    var endOfPassWriteIndex: GPUSize32?
+    val querySet: GPUQuerySet
+    val beginningOfPassWriteIndex: GPUSize32?
+    val endOfPassWriteIndex: GPUSize32?
 }

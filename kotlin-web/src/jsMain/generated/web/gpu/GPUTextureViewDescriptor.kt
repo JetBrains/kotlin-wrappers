@@ -7,11 +7,11 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface GPUTextureViewDescriptor :
     GPUObjectDescriptorBase {
-    var format: GPUTextureFormat?
-    var dimension: GPUTextureViewDimension?
-    var aspect: GPUTextureAspect?
-    var baseMipLevel: GPUIntegerCoordinate?
-    var mipLevelCount: GPUIntegerCoordinate?
-    var baseArrayLayer: GPUIntegerCoordinate?
-    var arrayLayerCount: GPUIntegerCoordinate?
+    val format: GPUTextureFormat?
+    val dimension: GPUTextureViewDimension?
+    val aspect: GPUTextureAspect?
+    val baseMipLevel: GPUIntegerCoordinate?
+    val mipLevelCount: GPUIntegerCoordinate?
+    val baseArrayLayer: GPUIntegerCoordinate?
+    val arrayLayerCount: GPUIntegerCoordinate?
 }

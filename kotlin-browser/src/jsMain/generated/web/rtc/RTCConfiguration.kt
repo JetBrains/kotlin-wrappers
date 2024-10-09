@@ -7,10 +7,10 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface RTCConfiguration {
-    var bundlePolicy: RTCBundlePolicy?
-    var certificates: ReadonlyArray<RTCCertificate>?
-    var iceCandidatePoolSize: Short /* unsigned byte */?
-    var iceServers: ReadonlyArray<RTCIceServer>?
-    var iceTransportPolicy: RTCIceTransportPolicy?
-    var rtcpMuxPolicy: RTCRtcpMuxPolicy?
+    val bundlePolicy: RTCBundlePolicy?
+    val certificates: ReadonlyArray<RTCCertificate>?
+    val iceCandidatePoolSize: Short /* unsigned byte */?
+    val iceServers: ReadonlyArray<RTCIceServer>?
+    val iceTransportPolicy: RTCIceTransportPolicy?
+    val rtcpMuxPolicy: RTCRtcpMuxPolicy?
 }

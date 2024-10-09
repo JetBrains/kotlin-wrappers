@@ -7,5 +7,5 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface GPUComputePassDescriptor :
     GPUObjectDescriptorBase {
-    var timestampWrites: GPUComputePassTimestampWrites?
+    val timestampWrites: GPUComputePassTimestampWrites?
 }

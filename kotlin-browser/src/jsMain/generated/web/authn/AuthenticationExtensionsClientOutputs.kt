@@ -6,8 +6,8 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface AuthenticationExtensionsClientOutputs {
-    var appid: Boolean?
-    var credProps: CredentialPropertiesOutput?
-    var hmacCreateSecret: Boolean?
-    var prf: AuthenticationExtensionsPRFOutputs?
+    val appid: Boolean?
+    val credProps: CredentialPropertiesOutput?
+    val hmacCreateSecret: Boolean?
+    val prf: AuthenticationExtensionsPRFOutputs?
 }

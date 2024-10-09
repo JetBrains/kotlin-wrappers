@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface GPUExtent3DDict {
-    var width: GPUIntegerCoordinate
-    var height: GPUIntegerCoordinate?
-    var depthOrArrayLayers: GPUIntegerCoordinate?
+    val width: GPUIntegerCoordinate
+    val height: GPUIntegerCoordinate?
+    val depthOrArrayLayers: GPUIntegerCoordinate?
 }

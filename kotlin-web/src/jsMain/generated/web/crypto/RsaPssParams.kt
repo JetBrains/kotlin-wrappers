@@ -7,5 +7,5 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface RsaPssParams :
     Algorithm {
-    var saltLength: Int
+    val saltLength: Int
 }

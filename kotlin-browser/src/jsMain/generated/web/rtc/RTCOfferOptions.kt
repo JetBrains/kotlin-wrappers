@@ -7,7 +7,7 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface RTCOfferOptions :
     RTCOfferAnswerOptions {
-    var iceRestart: Boolean?
-    var offerToReceiveAudio: Boolean?
-    var offerToReceiveVideo: Boolean?
+    val iceRestart: Boolean?
+    val offerToReceiveAudio: Boolean?
+    val offerToReceiveVideo: Boolean?
 }

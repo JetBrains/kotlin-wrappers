@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface PaymentCurrencyAmount {
-    var currency: String
-    var value: String
+    val currency: String
+    val value: String
 }

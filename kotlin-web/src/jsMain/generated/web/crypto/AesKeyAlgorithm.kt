@@ -7,5 +7,5 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface AesKeyAlgorithm :
     KeyAlgorithm {
-    var length: Short
+    val length: Short
 }

@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface RTCIceServer {
-    var credential: String?
-    var urls: Any /* string | string[] */
-    var username: String?
+    val credential: String?
+    val urls: Any /* string | string[] */
+    val username: String?
 }

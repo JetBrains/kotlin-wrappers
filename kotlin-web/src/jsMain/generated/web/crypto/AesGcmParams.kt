@@ -8,7 +8,7 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface AesGcmParams :
     Algorithm {
-    var additionalData: BufferSource?
-    var iv: BufferSource
-    var tagLength: Short /* unsigned byte */?
+    val additionalData: BufferSource?
+    val iv: BufferSource
+    val tagLength: Short /* unsigned byte */?
 }

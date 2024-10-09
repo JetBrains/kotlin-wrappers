@@ -8,7 +8,7 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface Pbkdf2Params :
     Algorithm {
-    var hash: HashAlgorithmIdentifier
-    var iterations: Int
-    var salt: BufferSource
+    val hash: HashAlgorithmIdentifier
+    val iterations: Int
+    val salt: BufferSource
 }

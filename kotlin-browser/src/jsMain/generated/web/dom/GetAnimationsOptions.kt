@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface GetAnimationsOptions {
-    var subtree: Boolean?
+    val subtree: Boolean?
 }

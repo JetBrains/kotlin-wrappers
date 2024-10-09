@@ -7,5 +7,5 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface ChannelMergerOptions :
     AudioNodeOptions {
-    var numberOfInputs: Int?
+    val numberOfInputs: Int?
 }

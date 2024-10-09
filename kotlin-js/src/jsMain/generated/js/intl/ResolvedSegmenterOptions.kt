@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface ResolvedSegmenterOptions {
-    var locale: String
-    var granularity: Granularity
+    val locale: String
+    val granularity: Granularity
 }

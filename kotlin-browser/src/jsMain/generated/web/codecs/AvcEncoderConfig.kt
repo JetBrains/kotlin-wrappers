@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface AvcEncoderConfig {
-    var format: AvcBitstreamFormat?
+    val format: AvcBitstreamFormat?
 }

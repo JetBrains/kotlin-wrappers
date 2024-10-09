@@ -7,9 +7,9 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface DynamicsCompressorOptions :
     AudioNodeOptions {
-    var attack: Float?
-    var knee: Float?
-    var ratio: Float?
-    var release: Float?
-    var threshold: Float?
+    val attack: Float?
+    val knee: Float?
+    val ratio: Float?
+    val release: Float?
+    val threshold: Float?
 }

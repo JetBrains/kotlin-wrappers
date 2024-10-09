@@ -7,10 +7,10 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface AudioEncoderConfig {
-    var bitrate: JsLong?
-    var bitrateMode: BitrateMode?
-    var codec: String
-    var numberOfChannels: Int
-    var opus: OpusEncoderConfig?
-    var sampleRate: Int
+    val bitrate: JsLong?
+    val bitrateMode: BitrateMode?
+    val codec: String
+    val numberOfChannels: Int
+    val opus: OpusEncoderConfig?
+    val sampleRate: Int
 }

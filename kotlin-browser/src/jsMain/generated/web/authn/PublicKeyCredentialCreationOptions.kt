@@ -8,13 +8,13 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface PublicKeyCredentialCreationOptions {
-    var attestation: AttestationConveyancePreference?
-    var authenticatorSelection: AuthenticatorSelectionCriteria?
-    var challenge: BufferSource
-    var excludeCredentials: ReadonlyArray<PublicKeyCredentialDescriptor>?
-    var extensions: AuthenticationExtensionsClientInputs?
-    var pubKeyCredParams: ReadonlyArray<PublicKeyCredentialParameters>
-    var rp: PublicKeyCredentialRpEntity
-    var timeout: Int?
-    var user: PublicKeyCredentialUserEntity
+    val attestation: AttestationConveyancePreference?
+    val authenticatorSelection: AuthenticatorSelectionCriteria?
+    val challenge: BufferSource
+    val excludeCredentials: ReadonlyArray<PublicKeyCredentialDescriptor>?
+    val extensions: AuthenticationExtensionsClientInputs?
+    val pubKeyCredParams: ReadonlyArray<PublicKeyCredentialParameters>
+    val rp: PublicKeyCredentialRpEntity
+    val timeout: Int?
+    val user: PublicKeyCredentialUserEntity
 }

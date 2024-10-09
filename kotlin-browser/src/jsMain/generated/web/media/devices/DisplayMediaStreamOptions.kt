@@ -7,6 +7,6 @@ import web.media.streams.MediaTrackConstraints
 
 @JsPlainObject
 external interface DisplayMediaStreamOptions {
-    var audio: MediaTrackConstraints /* | Boolean */?
-    var video: MediaTrackConstraints /* | Boolean */?
+    val audio: MediaTrackConstraints /* | Boolean */?
+    val video: MediaTrackConstraints /* | Boolean */?
 }

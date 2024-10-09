@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface CredentialPropertiesOutput {
-    var rk: Boolean?
+    val rk: Boolean?
 }

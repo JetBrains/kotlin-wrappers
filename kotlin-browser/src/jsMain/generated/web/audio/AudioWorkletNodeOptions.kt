@@ -9,9 +9,9 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface AudioWorkletNodeOptions :
     AudioNodeOptions {
-    var numberOfInputs: Int?
-    var numberOfOutputs: Int?
-    var outputChannelCount: ReadonlyArray<Number>?
-    var parameterData: ReadonlyRecord<String, Double>?
-    var processorOptions: Any?
+    val numberOfInputs: Int?
+    val numberOfOutputs: Int?
+    val outputChannelCount: ReadonlyArray<Number>?
+    val parameterData: ReadonlyRecord<String, Double>?
+    val processorOptions: Any?
 }

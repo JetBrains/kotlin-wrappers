@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface GPUObjectDescriptorBase {
-    var label: String?
+    val label: String?
 }

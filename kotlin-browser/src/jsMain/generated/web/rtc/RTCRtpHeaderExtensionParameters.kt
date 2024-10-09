@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface RTCRtpHeaderExtensionParameters {
-    var encrypted: Boolean?
-    var id: Short
-    var uri: String
+    val encrypted: Boolean?
+    val id: Short
+    val uri: String
 }

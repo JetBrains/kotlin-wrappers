@@ -8,7 +8,7 @@ import web.time.EpochTimeStamp
 
 @JsPlainObject
 external interface PushSubscriptionJSON {
-    var endpoint: String?
-    var expirationTime: EpochTimeStamp?
-    var keys: ReadonlyRecord<String, String>?
+    val endpoint: String?
+    val expirationTime: EpochTimeStamp?
+    val keys: ReadonlyRecord<String, String>?
 }

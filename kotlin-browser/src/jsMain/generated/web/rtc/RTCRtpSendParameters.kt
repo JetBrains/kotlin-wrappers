@@ -8,7 +8,7 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface RTCRtpSendParameters :
     RTCRtpParameters {
-    var degradationPreference: RTCDegradationPreference?
-    var encodings: ReadonlyArray<RTCRtpEncodingParameters>
-    var transactionId: String
+    val degradationPreference: RTCDegradationPreference?
+    val encodings: ReadonlyArray<RTCRtpEncodingParameters>
+    val transactionId: String
 }

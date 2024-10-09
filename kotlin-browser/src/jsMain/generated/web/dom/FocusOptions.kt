@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface FocusOptions {
-    var preventScroll: Boolean?
+    val preventScroll: Boolean?
 }

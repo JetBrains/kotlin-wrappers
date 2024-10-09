@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface MediaPositionState {
-    var duration: Double?
-    var playbackRate: Double?
-    var position: Double?
+    val duration: Double?
+    val playbackRate: Double?
+    val position: Double?
 }

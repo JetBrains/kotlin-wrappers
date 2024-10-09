@@ -7,5 +7,5 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface EcKeyImportParams :
     Algorithm {
-    var namedCurve: NamedCurve
+    val namedCurve: NamedCurve
 }

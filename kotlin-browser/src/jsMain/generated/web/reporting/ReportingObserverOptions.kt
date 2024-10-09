@@ -7,6 +7,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface ReportingObserverOptions {
-    var buffered: Boolean?
-    var types: ReadonlyArray<String>?
+    val buffered: Boolean?
+    val types: ReadonlyArray<String>?
 }

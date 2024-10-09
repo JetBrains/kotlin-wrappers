@@ -7,8 +7,8 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface WriteParams {
-    var data: Any /* BufferSource | Blob | string */?
-    var position: JsLong?
-    var size: JsLong?
-    var type: WriteCommandType
+    val data: Any /* BufferSource | Blob | string */?
+    val position: JsLong?
+    val size: JsLong?
+    val type: WriteCommandType
 }

@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface ImageBitmapRenderingContextSettings {
-    var alpha: Boolean?
+    val alpha: Boolean?
 }

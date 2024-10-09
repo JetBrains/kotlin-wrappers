@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface ClipboardItemOptions {
-    var presentationStyle: PresentationStyle?
+    val presentationStyle: PresentationStyle?
 }

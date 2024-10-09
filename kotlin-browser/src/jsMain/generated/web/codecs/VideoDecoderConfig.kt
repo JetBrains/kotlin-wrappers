@@ -7,13 +7,13 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface VideoDecoderConfig {
-    var codec: String
-    var codedHeight: Int?
-    var codedWidth: Int?
-    var colorSpace: VideoColorSpaceInit?
-    var description: AllowSharedBufferSource?
-    var displayAspectHeight: Int?
-    var displayAspectWidth: Int?
-    var hardwareAcceleration: HardwareAcceleration?
-    var optimizeForLatency: Boolean?
+    val codec: String
+    val codedHeight: Int?
+    val codedWidth: Int?
+    val colorSpace: VideoColorSpaceInit?
+    val description: AllowSharedBufferSource?
+    val displayAspectHeight: Int?
+    val displayAspectWidth: Int?
+    val hardwareAcceleration: HardwareAcceleration?
+    val optimizeForLatency: Boolean?
 }

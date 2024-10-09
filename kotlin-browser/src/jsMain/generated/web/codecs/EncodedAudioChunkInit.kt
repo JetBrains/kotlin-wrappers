@@ -10,9 +10,9 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface EncodedAudioChunkInit {
-    var data: AllowSharedBufferSource
-    var duration: JsLong?
-    var timestamp: JsLong
-    var transfer: ReadonlyArray<ArrayBuffer>?
-    var type: EncodedAudioChunkType
+    val data: AllowSharedBufferSource
+    val duration: JsLong?
+    val timestamp: JsLong
+    val transfer: ReadonlyArray<ArrayBuffer>?
+    val type: EncodedAudioChunkType
 }

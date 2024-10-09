@@ -7,7 +7,7 @@ import web.http.RequestCredentials
 
 @JsPlainObject
 external interface WorkerOptions {
-    var credentials: RequestCredentials?
-    var name: String?
-    var type: WorkerType?
+    val credentials: RequestCredentials?
+    val name: String?
+    val type: WorkerType?
 }

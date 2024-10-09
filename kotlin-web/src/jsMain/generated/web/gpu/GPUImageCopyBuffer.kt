@@ -7,5 +7,5 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface GPUImageCopyBuffer :
     GPUImageDataLayout {
-    var buffer: GPUBuffer
+    val buffer: GPUBuffer
 }

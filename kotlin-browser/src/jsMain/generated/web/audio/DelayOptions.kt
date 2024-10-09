@@ -7,6 +7,6 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface DelayOptions :
     AudioNodeOptions {
-    var delayTime: Double?
-    var maxDelayTime: Double?
+    val delayTime: Double?
+    val maxDelayTime: Double?
 }

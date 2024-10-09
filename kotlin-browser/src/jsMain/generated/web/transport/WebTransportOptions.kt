@@ -7,8 +7,8 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface WebTransportOptions {
-    var allowPooling: Boolean?
-    var congestionControl: WebTransportCongestionControl?
-    var requireUnreliable: Boolean?
-    var serverCertificateHashes: ReadonlyArray<WebTransportHash>?
+    val allowPooling: Boolean?
+    val congestionControl: WebTransportCongestionControl?
+    val requireUnreliable: Boolean?
+    val serverCertificateHashes: ReadonlyArray<WebTransportHash>?
 }

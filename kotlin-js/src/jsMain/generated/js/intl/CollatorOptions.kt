@@ -6,11 +6,11 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface CollatorOptions {
-    var usage: CollatorUsage?
-    var localeMatcher: LocaleMatcher?
-    var numeric: Boolean?
-    var caseFirst: CaseFirst?
-    var sensitivity: Sensitivity?
-    var collation: Collation?
-    var ignorePunctuation: Boolean?
+    val usage: CollatorUsage?
+    val localeMatcher: LocaleMatcher?
+    val numeric: Boolean?
+    val caseFirst: CaseFirst?
+    val sensitivity: Sensitivity?
+    val collation: Collation?
+    val ignorePunctuation: Boolean?
 }

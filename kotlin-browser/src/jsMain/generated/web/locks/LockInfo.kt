@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface LockInfo {
-    var clientId: String?
-    var mode: LockMode?
-    var name: String?
+    val clientId: String?
+    val mode: LockMode?
+    val name: String?
 }

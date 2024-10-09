@@ -7,19 +7,19 @@ import web.events.EventTarget
 
 @JsPlainObject
 external interface TouchInit {
-    var altitudeAngle: Double?
-    var azimuthAngle: Double?
-    var clientX: Double?
-    var clientY: Double?
-    var force: Float?
-    var identifier: Int
-    var pageX: Double?
-    var pageY: Double?
-    var radiusX: Float?
-    var radiusY: Float?
-    var rotationAngle: Float?
-    var screenX: Double?
-    var screenY: Double?
-    var target: EventTarget
-    var touchType: TouchType?
+    val altitudeAngle: Double?
+    val azimuthAngle: Double?
+    val clientX: Double?
+    val clientY: Double?
+    val force: Float?
+    val identifier: Int
+    val pageX: Double?
+    val pageY: Double?
+    val radiusX: Float?
+    val radiusY: Float?
+    val rotationAngle: Float?
+    val screenX: Double?
+    val screenY: Double?
+    val target: EventTarget
+    val touchType: TouchType?
 }

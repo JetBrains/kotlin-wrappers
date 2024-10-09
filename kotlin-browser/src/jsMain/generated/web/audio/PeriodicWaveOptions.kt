@@ -8,6 +8,6 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface PeriodicWaveOptions :
     PeriodicWaveConstraints {
-    var imag: ReadonlyArray<Double> /* | Float32Array */?
-    var real: ReadonlyArray<Double> /* | Float32Array */?
+    val imag: ReadonlyArray<Double> /* | Float32Array */?
+    val real: ReadonlyArray<Double> /* | Float32Array */?
 }

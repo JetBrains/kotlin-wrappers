@@ -6,14 +6,14 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface ValidityStateFlags {
-    var badInput: Boolean?
-    var customError: Boolean?
-    var patternMismatch: Boolean?
-    var rangeOverflow: Boolean?
-    var rangeUnderflow: Boolean?
-    var stepMismatch: Boolean?
-    var tooLong: Boolean?
-    var tooShort: Boolean?
-    var typeMismatch: Boolean?
-    var valueMissing: Boolean?
+    val badInput: Boolean?
+    val customError: Boolean?
+    val patternMismatch: Boolean?
+    val rangeOverflow: Boolean?
+    val rangeUnderflow: Boolean?
+    val stepMismatch: Boolean?
+    val tooLong: Boolean?
+    val tooShort: Boolean?
+    val typeMismatch: Boolean?
+    val valueMissing: Boolean?
 }

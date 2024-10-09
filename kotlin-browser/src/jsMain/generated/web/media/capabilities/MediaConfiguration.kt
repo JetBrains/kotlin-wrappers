@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface MediaConfiguration {
-    var audio: AudioConfiguration?
-    var video: VideoConfiguration?
+    val audio: AudioConfiguration?
+    val video: VideoConfiguration?
 }

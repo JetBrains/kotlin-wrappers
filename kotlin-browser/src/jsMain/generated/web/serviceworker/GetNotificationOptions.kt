@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface GetNotificationOptions {
-    var tag: String?
+    val tag: String?
 }

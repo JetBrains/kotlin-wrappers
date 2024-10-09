@@ -10,7 +10,7 @@ import web.authn.PublicKeyCredentialRequestOptions
 @JsPlainObject
 external interface CredentialRequestOptions :
     Abortable {
-    var mediation: CredentialMediationRequirement?
-    var publicKey: PublicKeyCredentialRequestOptions?
-    override var signal: AbortSignal?
+    val mediation: CredentialMediationRequirement?
+    val publicKey: PublicKeyCredentialRequestOptions?
+    override val signal: AbortSignal?
 }

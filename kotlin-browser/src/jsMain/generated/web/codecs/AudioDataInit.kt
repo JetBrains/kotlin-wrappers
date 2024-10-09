@@ -10,11 +10,11 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface AudioDataInit {
-    var data: BufferSource
-    var format: AudioSampleFormat
-    var numberOfChannels: Int
-    var numberOfFrames: Int
-    var sampleRate: Float
-    var timestamp: JsLong
-    var transfer: ReadonlyArray<ArrayBuffer>?
+    val data: BufferSource
+    val format: AudioSampleFormat
+    val numberOfChannels: Int
+    val numberOfFrames: Int
+    val sampleRate: Float
+    val timestamp: JsLong
+    val transfer: ReadonlyArray<ArrayBuffer>?
 }

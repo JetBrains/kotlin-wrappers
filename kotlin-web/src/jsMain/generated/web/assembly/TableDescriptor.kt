@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface TableDescriptor {
-    var element: TableKind
-    var initial: Int
-    var maximum: Int?
+    val element: TableKind
+    val initial: Int
+    val maximum: Int?
 }

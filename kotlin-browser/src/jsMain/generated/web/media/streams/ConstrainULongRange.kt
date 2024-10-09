@@ -7,6 +7,6 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface ConstrainULongRange :
     ULongRange {
-    var exact: Int?
-    var ideal: Int?
+    val exact: Int?
+    val ideal: Int?
 }

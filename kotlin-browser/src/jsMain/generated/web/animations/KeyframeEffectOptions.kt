@@ -7,7 +7,7 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface KeyframeEffectOptions :
     EffectTiming {
-    var composite: CompositeOperation?
-    var iterationComposite: IterationCompositeOperation?
-    var pseudoElement: String?
+    val composite: CompositeOperation?
+    val iterationComposite: IterationCompositeOperation?
+    val pseudoElement: String?
 }

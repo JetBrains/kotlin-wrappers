@@ -8,5 +8,5 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface GPUVertexState :
     GPUProgrammableStage {
-    var buffers: ReadonlyArray<GPUVertexBufferLayout?>?
+    val buffers: ReadonlyArray<GPUVertexBufferLayout?>?
 }

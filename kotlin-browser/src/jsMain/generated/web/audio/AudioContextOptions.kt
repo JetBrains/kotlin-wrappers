@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface AudioContextOptions {
-    var latencyHint: Any /* AudioContextLatencyCategory | number */?
-    var sampleRate: Float?
+    val latencyHint: Any /* AudioContextLatencyCategory | number */?
+    val sampleRate: Float?
 }

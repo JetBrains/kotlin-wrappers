@@ -7,7 +7,7 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface GPUBufferDescriptor :
     GPUObjectDescriptorBase {
-    var size: GPUSize64
-    var usage: GPUBufferUsage
-    var mappedAtCreation: Boolean?
+    val size: GPUSize64
+    val usage: GPUBufferUsage
+    val mappedAtCreation: Boolean?
 }

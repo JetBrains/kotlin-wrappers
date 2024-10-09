@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface EncodedAudioChunkMetadata {
-    var decoderConfig: AudioDecoderConfig?
+    val decoderConfig: AudioDecoderConfig?
 }

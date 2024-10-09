@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface RTCSessionDescriptionInit {
-    var sdp: String?
-    var type: RTCSdpType
+    val sdp: String?
+    val type: RTCSdpType
 }

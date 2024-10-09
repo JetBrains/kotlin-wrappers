@@ -8,5 +8,5 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface MediaTrackConstraints :
     MediaTrackConstraintSet {
-    var advanced: ReadonlyArray<MediaTrackConstraintSet>?
+    val advanced: ReadonlyArray<MediaTrackConstraintSet>?
 }

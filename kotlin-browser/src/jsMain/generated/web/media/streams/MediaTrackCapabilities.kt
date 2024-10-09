@@ -7,19 +7,19 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface MediaTrackCapabilities {
-    var aspectRatio: DoubleRange?
-    var autoGainControl: ReadonlyArray<Boolean>?
-    var backgroundBlur: ReadonlyArray<Boolean>?
-    var channelCount: ULongRange?
-    var deviceId: String?
-    var displaySurface: String?
-    var echoCancellation: ReadonlyArray<Boolean>?
-    var facingMode: ReadonlyArray<String>?
-    var frameRate: DoubleRange?
-    var groupId: String?
-    var height: ULongRange?
-    var noiseSuppression: ReadonlyArray<Boolean>?
-    var sampleRate: ULongRange?
-    var sampleSize: ULongRange?
-    var width: ULongRange?
+    val aspectRatio: DoubleRange?
+    val autoGainControl: ReadonlyArray<Boolean>?
+    val backgroundBlur: ReadonlyArray<Boolean>?
+    val channelCount: ULongRange?
+    val deviceId: String?
+    val displaySurface: String?
+    val echoCancellation: ReadonlyArray<Boolean>?
+    val facingMode: ReadonlyArray<String>?
+    val frameRate: DoubleRange?
+    val groupId: String?
+    val height: ULongRange?
+    val noiseSuppression: ReadonlyArray<Boolean>?
+    val sampleRate: ULongRange?
+    val sampleSize: ULongRange?
+    val width: ULongRange?
 }

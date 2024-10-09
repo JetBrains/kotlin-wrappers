@@ -8,5 +8,5 @@ import web.html.HtmlTagName
 
 @JsPlainObject
 external interface ElementDefinitionOptions<T : HTMLElement> {
-    var extends: HtmlTagName<T>?
+    val extends: HtmlTagName<T>?
 }

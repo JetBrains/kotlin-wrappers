@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface Algorithm {
-    var name: String
+    val name: String
 }

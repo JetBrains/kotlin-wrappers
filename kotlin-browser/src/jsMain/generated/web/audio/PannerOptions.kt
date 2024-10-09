@@ -7,18 +7,18 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface PannerOptions :
     AudioNodeOptions {
-    var coneInnerAngle: Double?
-    var coneOuterAngle: Double?
-    var coneOuterGain: Double?
-    var distanceModel: DistanceModelType?
-    var maxDistance: Double?
-    var orientationX: Float?
-    var orientationY: Float?
-    var orientationZ: Float?
-    var panningModel: PanningModelType?
-    var positionX: Float?
-    var positionY: Float?
-    var positionZ: Float?
-    var refDistance: Double?
-    var rolloffFactor: Double?
+    val coneInnerAngle: Double?
+    val coneOuterAngle: Double?
+    val coneOuterGain: Double?
+    val distanceModel: DistanceModelType?
+    val maxDistance: Double?
+    val orientationX: Float?
+    val orientationY: Float?
+    val orientationZ: Float?
+    val panningModel: PanningModelType?
+    val positionX: Float?
+    val positionY: Float?
+    val positionZ: Float?
+    val refDistance: Double?
+    val rolloffFactor: Double?
 }

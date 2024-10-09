@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface ElementCreationOptions {
-    var `is`: String?
+    val `is`: String?
 }

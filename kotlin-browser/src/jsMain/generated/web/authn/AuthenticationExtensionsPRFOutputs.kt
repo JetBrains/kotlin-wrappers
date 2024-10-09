@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface AuthenticationExtensionsPRFOutputs {
-    var enabled: Boolean?
-    var results: AuthenticationExtensionsPRFValues?
+    val enabled: Boolean?
+    val results: AuthenticationExtensionsPRFValues?
 }

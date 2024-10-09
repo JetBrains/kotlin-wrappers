@@ -8,7 +8,7 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface HkdfParams :
     Algorithm {
-    var hash: HashAlgorithmIdentifier
-    var info: BufferSource
-    var salt: BufferSource
+    val hash: HashAlgorithmIdentifier
+    val info: BufferSource
+    val salt: BufferSource
 }

@@ -7,6 +7,6 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface RsaKeyGenParams :
     Algorithm {
-    var modulusLength: Int
-    var publicExponent: BigInteger
+    val modulusLength: Int
+    val publicExponent: BigInteger
 }

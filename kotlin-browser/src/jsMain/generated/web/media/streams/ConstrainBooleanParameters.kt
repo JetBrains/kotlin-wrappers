@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface ConstrainBooleanParameters {
-    var exact: Boolean?
-    var ideal: Boolean?
+    val exact: Boolean?
+    val ideal: Boolean?
 }

@@ -7,6 +7,6 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface ConstrainDoubleRange :
     DoubleRange {
-    var exact: Double?
-    var ideal: Double?
+    val exact: Double?
+    val ideal: Double?
 }

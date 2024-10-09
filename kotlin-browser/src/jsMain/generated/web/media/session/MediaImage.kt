@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface MediaImage {
-    var sizes: String?
-    var src: String
-    var type: String?
+    val sizes: String?
+    val src: String
+    val type: String?
 }

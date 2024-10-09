@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface KeyAlgorithm {
-    var name: String
+    val name: String
 }

@@ -7,5 +7,5 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface GainOptions :
     AudioNodeOptions {
-    var gain: Float?
+    val gain: Float?
 }

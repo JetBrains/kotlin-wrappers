@@ -7,10 +7,10 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface GamepadEffectParameters {
-    var duration: JsLong?
-    var leftTrigger: Double?
-    var rightTrigger: Double?
-    var startDelay: JsLong?
-    var strongMagnitude: Double?
-    var weakMagnitude: Double?
+    val duration: JsLong?
+    val leftTrigger: Double?
+    val rightTrigger: Double?
+    val startDelay: JsLong?
+    val strongMagnitude: Double?
+    val weakMagnitude: Double?
 }

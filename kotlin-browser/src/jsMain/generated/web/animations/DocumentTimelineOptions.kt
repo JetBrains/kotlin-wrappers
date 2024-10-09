@@ -7,5 +7,5 @@ import web.time.DOMHighResTimeStamp
 
 @JsPlainObject
 external interface DocumentTimelineOptions {
-    var originTime: DOMHighResTimeStamp?
+    val originTime: DOMHighResTimeStamp?
 }

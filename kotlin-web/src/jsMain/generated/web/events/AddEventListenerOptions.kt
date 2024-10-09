@@ -10,7 +10,7 @@ import web.abort.Abortable
 external interface AddEventListenerOptions :
     EventListenerOptions,
     Abortable {
-    var once: Boolean?
-    var passive: Boolean?
-    override var signal: AbortSignal?
+    val once: Boolean?
+    val passive: Boolean?
+    override val signal: AbortSignal?
 }

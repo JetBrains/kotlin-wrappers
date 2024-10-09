@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface VideoEncoderInit {
-    var error: WebCodecsErrorCallback
-    var output: EncodedVideoChunkOutputCallback
+    val error: WebCodecsErrorCallback
+    val output: EncodedVideoChunkOutputCallback
 }

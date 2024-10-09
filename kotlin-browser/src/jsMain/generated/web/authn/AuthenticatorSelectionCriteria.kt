@@ -6,8 +6,8 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface AuthenticatorSelectionCriteria {
-    var authenticatorAttachment: AuthenticatorAttachment?
-    var requireResidentKey: Boolean?
-    var residentKey: ResidentKeyRequirement?
-    var userVerification: UserVerificationRequirement?
+    val authenticatorAttachment: AuthenticatorAttachment?
+    val requireResidentKey: Boolean?
+    val residentKey: ResidentKeyRequirement?
+    val userVerification: UserVerificationRequirement?
 }

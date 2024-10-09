@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface PositionOptions {
-    var enableHighAccuracy: Boolean?
-    var maximumAge: Int?
-    var timeout: Int?
+    val enableHighAccuracy: Boolean?
+    val maximumAge: Int?
+    val timeout: Int?
 }

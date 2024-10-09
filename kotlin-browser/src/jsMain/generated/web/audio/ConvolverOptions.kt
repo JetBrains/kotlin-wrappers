@@ -7,6 +7,6 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface ConvolverOptions :
     AudioNodeOptions {
-    var buffer: AudioBuffer?
-    var disableNormalization: Boolean?
+    val buffer: AudioBuffer?
+    val disableNormalization: Boolean?
 }

@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface ModuleExportDescriptor {
-    var kind: ImportExportKind
-    var name: String
+    val kind: ImportExportKind
+    val name: String
 }

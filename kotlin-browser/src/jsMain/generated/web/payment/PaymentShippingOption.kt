@@ -6,8 +6,8 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface PaymentShippingOption {
-    var amount: PaymentCurrencyAmount
-    var id: String
-    var label: String
-    var selected: Boolean?
+    val amount: PaymentCurrencyAmount
+    val id: String
+    val label: String
+    val selected: Boolean?
 }

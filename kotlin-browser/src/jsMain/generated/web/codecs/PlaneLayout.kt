@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface PlaneLayout {
-    var offset: Int
-    var stride: Int
+    val offset: Int
+    val stride: Int
 }

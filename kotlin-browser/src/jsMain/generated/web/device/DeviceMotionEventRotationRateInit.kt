@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface DeviceMotionEventRotationRateInit {
-    var alpha: Double?
-    var beta: Double?
-    var gamma: Double?
+    val alpha: Double?
+    val beta: Double?
+    val gamma: Double?
 }

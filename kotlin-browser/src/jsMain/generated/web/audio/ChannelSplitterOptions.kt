@@ -7,5 +7,5 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface ChannelSplitterOptions :
     AudioNodeOptions {
-    var numberOfOutputs: Int?
+    val numberOfOutputs: Int?
 }

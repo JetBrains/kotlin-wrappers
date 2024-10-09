@@ -7,6 +7,6 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface GPUShaderModuleDescriptor :
     GPUObjectDescriptorBase {
-    var code: String
-    var sourceMap: Any?
+    val code: String
+    val sourceMap: Any?
 }

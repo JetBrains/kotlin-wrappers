@@ -6,8 +6,8 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface SVGBoundingBoxOptions {
-    var clipped: Boolean?
-    var fill: Boolean?
-    var markers: Boolean?
-    var stroke: Boolean?
+    val clipped: Boolean?
+    val fill: Boolean?
+    val markers: Boolean?
+    val stroke: Boolean?
 }

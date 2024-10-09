@@ -7,7 +7,7 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface RTCRtpParameters {
-    var codecs: ReadonlyArray<RTCRtpCodecParameters>
-    var headerExtensions: ReadonlyArray<RTCRtpHeaderExtensionParameters>
-    var rtcp: RTCRtcpParameters
+    val codecs: ReadonlyArray<RTCRtpCodecParameters>
+    val headerExtensions: ReadonlyArray<RTCRtpHeaderExtensionParameters>
+    val rtcp: RTCRtcpParameters
 }

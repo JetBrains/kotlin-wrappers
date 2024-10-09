@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface GPUBufferBindingLayout {
-    var type: GPUBufferBindingType?
-    var hasDynamicOffset: Boolean?
-    var minBindingSize: GPUSize64?
+    val type: GPUBufferBindingType?
+    val hasDynamicOffset: Boolean?
+    val minBindingSize: GPUSize64?
 }

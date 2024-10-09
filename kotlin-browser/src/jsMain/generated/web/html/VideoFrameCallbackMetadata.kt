@@ -7,14 +7,14 @@ import web.time.DOMHighResTimeStamp
 
 @JsPlainObject
 external interface VideoFrameCallbackMetadata {
-    var captureTime: DOMHighResTimeStamp?
-    var expectedDisplayTime: DOMHighResTimeStamp
-    var height: Int
-    var mediaTime: Double
-    var presentationTime: DOMHighResTimeStamp
-    var presentedFrames: Int
-    var processingDuration: Double?
-    var receiveTime: DOMHighResTimeStamp?
-    var rtpTimestamp: Int?
-    var width: Int
+    val captureTime: DOMHighResTimeStamp?
+    val expectedDisplayTime: DOMHighResTimeStamp
+    val height: Int
+    val mediaTime: Double
+    val presentationTime: DOMHighResTimeStamp
+    val presentedFrames: Int
+    val processingDuration: Double?
+    val receiveTime: DOMHighResTimeStamp?
+    val rtpTimestamp: Int?
+    val width: Int
 }

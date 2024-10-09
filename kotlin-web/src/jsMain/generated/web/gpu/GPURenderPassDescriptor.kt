@@ -8,8 +8,8 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface GPURenderPassDescriptor :
     GPUObjectDescriptorBase {
-    var colorAttachments: ReadonlyArray<GPURenderPassColorAttachment?>
-    var depthStencilAttachment: GPURenderPassDepthStencilAttachment?
-    var occlusionQuerySet: GPUQuerySet?
-    var timestampWrites: GPURenderPassTimestampWrites?
+    val colorAttachments: ReadonlyArray<GPURenderPassColorAttachment?>
+    val depthStencilAttachment: GPURenderPassDepthStencilAttachment?
+    val occlusionQuerySet: GPUQuerySet?
+    val timestampWrites: GPURenderPassTimestampWrites?
 }

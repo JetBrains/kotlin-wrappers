@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface GPUColorTargetState {
-    var format: GPUTextureFormat
-    var blend: GPUBlendState?
-    var writeMask: GPUColorWrite?
+    val format: GPUTextureFormat
+    val blend: GPUBlendState?
+    val writeMask: GPUColorWrite?
 }

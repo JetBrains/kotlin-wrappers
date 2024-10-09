@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface MediaKeySystemMediaCapability {
-    var contentType: String?
-    var encryptionScheme: String?
-    var robustness: String?
+    val contentType: String?
+    val encryptionScheme: String?
+    val robustness: String?
 }
