@@ -2,9 +2,9 @@ package styled
 
 import js.array.asList
 import js.globals.globalThis
-import js.objects.jso
 import web.blob.Blob
 import web.blob.BlobPart
+import web.blob.BlobPropertyBag
 import web.cssom.CSSStyleSheet
 import web.dom.Element
 import web.dom.document
@@ -44,7 +44,7 @@ internal object GlobalCssAccess {
 
     private fun downloadFile(blob: BlobPart, name: String) {
         val binaryData = arrayOf(blob)
-        val blobUrl = URL.createObjectURL(Blob(binaryData, jso { type = "application/text" }))
+        val blobUrl = URL.createObjectURL(Blob(binaryData, BlobPropertyBag(type = "application/text")))
         val link = document.createElement(HTML.a)
         link.href = blobUrl
         link.download = name

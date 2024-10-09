@@ -11,9 +11,9 @@ internal fun <T : Abortable> patchAbortOptions(
     options: T?,
     controller: AbortController,
 ): T {
-    val abortOptions: T = jso {
+    val abortOptions = Abortable(
         signal = safeAny(options?.signal, controller.signal)
-    }
+    )
 
     return Object.assign(jso(), options, abortOptions)
 }
