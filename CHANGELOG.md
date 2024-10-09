@@ -1,3 +1,9 @@
+## pre.817
+
+**BREAKING CHANGE**
+
+* Browser. Immutable JSO interfaces
+
 ## pre.811
 
 **BREAKING CHANGE**
