@@ -74,13 +74,13 @@ external class PerInstanceColorAppearance(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var flat: Boolean?
-        var faceForward: Boolean?
-        var translucent: Boolean?
-        var closed: Boolean?
-        var vertexShaderSource: String?
-        var fragmentShaderSource: String?
-        var renderState: Any?
+        val flat: Boolean?
+        val faceForward: Boolean?
+        val translucent: Boolean?
+        val closed: Boolean?
+        val vertexShaderSource: String?
+        val fragmentShaderSource: String?
+        val renderState: Any?
     }
 
     /**

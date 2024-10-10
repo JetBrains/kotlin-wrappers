@@ -32,7 +32,7 @@ external fun createTangentSpaceDebugPrimitive(options: CreateTangentSpaceDebugPr
  */
 @JsPlainObject
 external interface CreateTangentSpaceDebugPrimitiveOptions {
-    var geometry: Geometry
-    var length: Int?
-    var modelMatrix: Matrix4?
+    val geometry: Geometry
+    val length: Int?
+    val modelMatrix: Matrix4?
 }

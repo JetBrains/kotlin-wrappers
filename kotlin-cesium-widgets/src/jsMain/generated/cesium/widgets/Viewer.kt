@@ -630,9 +630,9 @@ external class Viewer(
      */
     @JsPlainObject
     interface FlyToOptions {
-        var duration: Double?
-        var maximumHeight: Double?
-        var offset: HeadingPitchRange?
+        val duration: Double?
+        val maximumHeight: Double?
+        val offset: HeadingPitchRange?
     }
 
     @JsAsync
@@ -897,53 +897,53 @@ external class Viewer(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var animation: Boolean?
-        var baseLayerPicker: Boolean?
-        var fullscreenButton: Boolean?
-        var vrButton: Boolean?
-        var geocoder: Any /* boolean | GeocoderService[] */?
-        var homeButton: Boolean?
-        var infoBox: Boolean?
-        var sceneModePicker: Boolean?
-        var selectionIndicator: Boolean?
-        var timeline: Boolean?
-        var navigationHelpButton: Boolean?
-        var navigationInstructionsInitiallyVisible: Boolean?
-        var scene3DOnly: Boolean?
-        var shouldAnimate: Boolean?
-        var clockViewModel: ClockViewModel?
-        var selectedImageryProviderViewModel: ProviderViewModel?
-        var imageryProviderViewModels: ReadonlyArray<ProviderViewModel>?
-        var selectedTerrainProviderViewModel: ProviderViewModel?
-        var terrainProviderViewModels: ReadonlyArray<ProviderViewModel>?
-        var baseLayer: ImageryLayer /* | false */?
-        var ellipsoid: Ellipsoid?
-        var terrainProvider: TerrainProvider?
-        var terrain: Terrain?
-        var skyBox: SkyBox /* | false */?
-        var skyAtmosphere: SkyAtmosphere /* | false */?
-        var fullscreenElement: Element?
-        var useDefaultRenderLoop: Boolean?
-        var targetFrameRate: Int?
-        var showRenderLoopErrors: Boolean?
-        var useBrowserRecommendedResolution: Boolean?
-        var automaticallyTrackDataSourceClocks: Boolean?
-        var contextOptions: ContextOptions?
-        var sceneMode: SceneMode?
-        var mapProjection: MapProjection?
-        var globe: Globe /* | false */?
-        var orderIndependentTranslucency: Boolean?
-        var creditContainer: Element?
-        var creditViewport: Element?
-        var dataSources: DataSourceCollection?
-        var shadows: Boolean?
-        var terrainShadows: ShadowMode?
-        var mapMode2D: MapMode2D?
-        var projectionPicker: Boolean?
-        var blurActiveElementOnCanvasFocus: Boolean?
-        var requestRenderMode: Boolean?
-        var maximumRenderTimeChange: Double?
-        var depthPlaneEllipsoidOffset: Double?
-        var msaaSamples: Double?
+        val animation: Boolean?
+        val baseLayerPicker: Boolean?
+        val fullscreenButton: Boolean?
+        val vrButton: Boolean?
+        val geocoder: Any /* boolean | GeocoderService[] */?
+        val homeButton: Boolean?
+        val infoBox: Boolean?
+        val sceneModePicker: Boolean?
+        val selectionIndicator: Boolean?
+        val timeline: Boolean?
+        val navigationHelpButton: Boolean?
+        val navigationInstructionsInitiallyVisible: Boolean?
+        val scene3DOnly: Boolean?
+        val shouldAnimate: Boolean?
+        val clockViewModel: ClockViewModel?
+        val selectedImageryProviderViewModel: ProviderViewModel?
+        val imageryProviderViewModels: ReadonlyArray<ProviderViewModel>?
+        val selectedTerrainProviderViewModel: ProviderViewModel?
+        val terrainProviderViewModels: ReadonlyArray<ProviderViewModel>?
+        val baseLayer: ImageryLayer /* | false */?
+        val ellipsoid: Ellipsoid?
+        val terrainProvider: TerrainProvider?
+        val terrain: Terrain?
+        val skyBox: SkyBox /* | false */?
+        val skyAtmosphere: SkyAtmosphere /* | false */?
+        val fullscreenElement: Element?
+        val useDefaultRenderLoop: Boolean?
+        val targetFrameRate: Int?
+        val showRenderLoopErrors: Boolean?
+        val useBrowserRecommendedResolution: Boolean?
+        val automaticallyTrackDataSourceClocks: Boolean?
+        val contextOptions: ContextOptions?
+        val sceneMode: SceneMode?
+        val mapProjection: MapProjection?
+        val globe: Globe /* | false */?
+        val orderIndependentTranslucency: Boolean?
+        val creditContainer: Element?
+        val creditViewport: Element?
+        val dataSources: DataSourceCollection?
+        val shadows: Boolean?
+        val terrainShadows: ShadowMode?
+        val mapMode2D: MapMode2D?
+        val projectionPicker: Boolean?
+        val blurActiveElementOnCanvasFocus: Boolean?
+        val requestRenderMode: Boolean?
+        val maximumRenderTimeChange: Double?
+        val depthPlaneEllipsoidOffset: Double?
+        val msaaSamples: Double?
     }
 }

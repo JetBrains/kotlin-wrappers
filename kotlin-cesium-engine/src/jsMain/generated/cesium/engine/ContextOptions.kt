@@ -20,8 +20,8 @@ import kotlinx.js.JsPlainObject
  */
 @JsPlainObject
 external interface ContextOptions {
-    var requestWebgl1: Boolean?
-    var allowTextureFilterAnisotropic: Boolean?
-    var webgl: WebGLOptions?
-    var getWebGLStub: Function<*>?
+    val requestWebgl1: Boolean?
+    val allowTextureFilterAnisotropic: Boolean?
+    val webgl: WebGLOptions?
+    val getWebGLStub: Function<*>?
 }

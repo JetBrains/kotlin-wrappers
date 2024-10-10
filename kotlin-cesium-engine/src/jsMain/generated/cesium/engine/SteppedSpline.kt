@@ -35,8 +35,8 @@ external class SteppedSpline(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var times: ReadonlyArray<Double>
-        var points: ReadonlyArray<Any> /* number[] | Cartesian3[] | Quaternion[] */
+        val times: ReadonlyArray<Double>
+        val points: ReadonlyArray<Any> /* number[] | Cartesian3[] | Quaternion[] */
     }
 
     /**

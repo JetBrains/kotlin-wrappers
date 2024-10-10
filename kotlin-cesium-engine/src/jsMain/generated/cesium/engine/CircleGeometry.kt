@@ -40,14 +40,14 @@ external class CircleGeometry(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var center: Cartesian3
-        var radius: Double
-        var ellipsoid: Ellipsoid?
-        var height: Double?
-        var granularity: Double?
-        var vertexFormat: VertexFormat?
-        var extrudedHeight: Double?
-        var stRotation: Double?
+        val center: Cartesian3
+        val radius: Double
+        val ellipsoid: Ellipsoid?
+        val height: Double?
+        val granularity: Double?
+        val vertexFormat: VertexFormat?
+        val extrudedHeight: Double?
+        val stRotation: Double?
     }
 
     companion object : Packable<CircleGeometry> {

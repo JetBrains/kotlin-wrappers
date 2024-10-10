@@ -44,11 +44,11 @@ external class LabelCollection(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var modelMatrix: Matrix4?
-        var debugShowBoundingVolume: Boolean?
-        var scene: Scene?
-        var blendOption: BlendOption?
-        var show: Boolean?
+        val modelMatrix: Matrix4?
+        val debugShowBoundingVolume: Boolean?
+        val scene: Scene?
+        val blendOption: BlendOption?
+        val show: Boolean?
     }
 
     /**

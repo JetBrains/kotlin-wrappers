@@ -297,8 +297,8 @@ external class CzmlDataSource(
          */
         @JsPlainObject
         interface LoadOptions {
-            var sourceUri: Resource?
-            var credit: Credit?
+            val sourceUri: Resource?
+            val credit: Credit?
         }
     }
 }

@@ -38,13 +38,13 @@ external class CircleOutlineGeometry(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var center: Cartesian3
-        var radius: Double
-        var ellipsoid: Ellipsoid?
-        var height: Double?
-        var granularity: Double?
-        var extrudedHeight: Double?
-        var numberOfVerticalLines: Int?
+        val center: Cartesian3
+        val radius: Double
+        val ellipsoid: Ellipsoid?
+        val height: Double?
+        val granularity: Double?
+        val extrudedHeight: Double?
+        val numberOfVerticalLines: Int?
     }
 
     companion object : Packable<CircleOutlineGeometry> {

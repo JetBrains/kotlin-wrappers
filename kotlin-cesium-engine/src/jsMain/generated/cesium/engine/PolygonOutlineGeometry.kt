@@ -99,14 +99,14 @@ external class PolygonOutlineGeometry(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var polygonHierarchy: PolygonHierarchy
-        var height: Double?
-        var extrudedHeight: Double?
-        var vertexFormat: VertexFormat?
-        var ellipsoid: Ellipsoid?
-        var granularity: Double?
-        var perPositionHeight: Boolean?
-        var arcType: ArcType?
+        val polygonHierarchy: PolygonHierarchy
+        val height: Double?
+        val extrudedHeight: Double?
+        val vertexFormat: VertexFormat?
+        val ellipsoid: Ellipsoid?
+        val granularity: Double?
+        val perPositionHeight: Boolean?
+        val arcType: ArcType?
     }
 
     /**
@@ -181,13 +181,13 @@ external class PolygonOutlineGeometry(
          */
         @JsPlainObject
         interface FromPositionsOptions {
-            var positions: ReadonlyArray<Cartesian3>
-            var height: Double?
-            var extrudedHeight: Double?
-            var ellipsoid: Ellipsoid?
-            var granularity: Double?
-            var perPositionHeight: Boolean?
-            var arcType: ArcType?
+            val positions: ReadonlyArray<Cartesian3>
+            val height: Double?
+            val extrudedHeight: Double?
+            val ellipsoid: Ellipsoid?
+            val granularity: Double?
+            val perPositionHeight: Boolean?
+            val arcType: ArcType?
         }
 
         /**

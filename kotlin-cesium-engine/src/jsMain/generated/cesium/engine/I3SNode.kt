@@ -120,7 +120,7 @@ private constructor() {
      */
     @JsPlainObject
     interface AttributeFilter {
-        var name: String
-        var values: ReadonlyArray<Comparable<*>> /* string[] | number[] */
+        val name: String
+        val values: ReadonlyArray<Comparable<*>> /* string[] | number[] */
     }
 }

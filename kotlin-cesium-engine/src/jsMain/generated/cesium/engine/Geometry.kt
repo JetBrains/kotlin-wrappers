@@ -50,10 +50,10 @@ external class Geometry(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var attributes: GeometryAttributes
-        var primitiveType: PrimitiveType?
-        var indices: TypedArray<*, *> /* Uint16Array | Uint32Array */?
-        var boundingSphere: BoundingSphere?
+        val attributes: GeometryAttributes
+        val primitiveType: PrimitiveType?
+        val indices: TypedArray<*, *> /* Uint16Array | Uint32Array */?
+        val boundingSphere: BoundingSphere?
     }
 
     /**

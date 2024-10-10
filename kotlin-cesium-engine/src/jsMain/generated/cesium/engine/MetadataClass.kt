@@ -26,12 +26,12 @@ external class MetadataClass(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var id: String
-        var name: String?
-        var description: String?
-        var properties: ReadonlyRecord<String, MetadataClassProperty>?
-        var extras: Any?
-        var extensions: Any?
+        val id: String
+        val name: String?
+        val description: String?
+        val properties: ReadonlyRecord<String, MetadataClassProperty>?
+        val extras: Any?
+        val extensions: Any?
     }
 
     /**

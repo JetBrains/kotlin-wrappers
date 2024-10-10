@@ -28,10 +28,10 @@ external class GeocoderViewModel(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var scene: Scene
-        var geocoderServices: ReadonlyArray<GeocoderService>?
-        var flightDuration: Double?
-        var destinationFound: DestinationFoundFunction?
+        val scene: Scene
+        val geocoderServices: ReadonlyArray<GeocoderService>?
+        val flightDuration: Double?
+        val destinationFound: DestinationFoundFunction?
     }
 
     /**

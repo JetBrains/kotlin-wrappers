@@ -205,16 +205,16 @@ external class MapboxStyleImageryProvider(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var url: Resource?
-        var username: String?
-        var styleId: String
-        var accessToken: String
-        var tilesize: Int?
-        var scaleFactor: Boolean?
-        var ellipsoid: Ellipsoid?
-        var minimumLevel: Int?
-        var maximumLevel: Int?
-        var rectangle: Rectangle?
-        var credit: Credit?
+        val url: Resource?
+        val username: String?
+        val styleId: String
+        val accessToken: String
+        val tilesize: Int?
+        val scaleFactor: Boolean?
+        val ellipsoid: Ellipsoid?
+        val minimumLevel: Int?
+        val maximumLevel: Int?
+        val rectangle: Rectangle?
+        val credit: Credit?
     }
 }

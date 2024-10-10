@@ -25,7 +25,7 @@ external class PlaneGeometry(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var vertexFormat: VertexFormat?
+        val vertexFormat: VertexFormat?
     }
 
     companion object : Packable<PlaneGeometry> {

@@ -145,8 +145,8 @@ private constructor() :
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var ellipsoid: Ellipsoid?
-        var credit: Credit?
+        val ellipsoid: Ellipsoid?
+        val credit: Credit?
     }
 
     companion object {

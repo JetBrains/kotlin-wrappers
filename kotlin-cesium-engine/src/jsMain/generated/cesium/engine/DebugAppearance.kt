@@ -37,12 +37,12 @@ external class DebugAppearance(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var attributeName: String
-        var perInstanceAttribute: Boolean?
-        var glslDatatype: String?
-        var vertexShaderSource: String?
-        var fragmentShaderSource: String?
-        var renderState: Any?
+        val attributeName: String
+        val perInstanceAttribute: Boolean?
+        val glslDatatype: String?
+        val vertexShaderSource: String?
+        val fragmentShaderSource: String?
+        val renderState: Any?
     }
 
     /**

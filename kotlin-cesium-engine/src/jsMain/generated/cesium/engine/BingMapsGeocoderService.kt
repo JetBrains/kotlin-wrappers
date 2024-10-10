@@ -22,8 +22,8 @@ external class BingMapsGeocoderService(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var key: String
-        var culture: String?
+        val key: String
+        val culture: String?
     }
 
     /**

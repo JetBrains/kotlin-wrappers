@@ -27,9 +27,9 @@ external class DiscardMissingTileImagePolicy(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var missingImageUrl: Resource
-        var pixelsToCheck: ReadonlyArray<Cartesian2>
-        var disableCheckIfAllPixelsAreTransparent: Boolean?
+        val missingImageUrl: Resource
+        val pixelsToCheck: ReadonlyArray<Cartesian2>
+        val disableCheckIfAllPixelsAreTransparent: Boolean?
     }
 
     /**

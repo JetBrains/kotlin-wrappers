@@ -46,14 +46,14 @@ external class PolylineGeometry(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var positions: ReadonlyArray<Cartesian3>
-        var width: Double?
-        var colors: ReadonlyArray<Color>?
-        var colorsPerVertex: Boolean?
-        var arcType: ArcType?
-        var granularity: Double?
-        var vertexFormat: VertexFormat?
-        var ellipsoid: Ellipsoid?
+        val positions: ReadonlyArray<Cartesian3>
+        val width: Double?
+        val colors: ReadonlyArray<Color>?
+        val colorsPerVertex: Boolean?
+        val arcType: ArcType?
+        val granularity: Double?
+        val vertexFormat: VertexFormat?
+        val ellipsoid: Ellipsoid?
     }
 
     /**

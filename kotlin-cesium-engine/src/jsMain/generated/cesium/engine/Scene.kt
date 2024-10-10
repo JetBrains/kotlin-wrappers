@@ -56,20 +56,20 @@ external class Scene(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var canvas: HTMLCanvasElement
-        var contextOptions: ContextOptions?
-        var creditContainer: Element?
-        var creditViewport: Element?
-        var ellipsoid: Ellipsoid?
-        var mapProjection: MapProjection?
-        var orderIndependentTranslucency: Boolean?
-        var scene3DOnly: Boolean?
-        var shadows: Boolean?
-        var mapMode2D: MapMode2D?
-        var requestRenderMode: Boolean?
-        var maximumRenderTimeChange: Double?
-        var depthPlaneEllipsoidOffset: Double?
-        var msaaSamples: Double?
+        val canvas: HTMLCanvasElement
+        val contextOptions: ContextOptions?
+        val creditContainer: Element?
+        val creditViewport: Element?
+        val ellipsoid: Ellipsoid?
+        val mapProjection: MapProjection?
+        val orderIndependentTranslucency: Boolean?
+        val scene3DOnly: Boolean?
+        val shadows: Boolean?
+        val mapMode2D: MapMode2D?
+        val requestRenderMode: Boolean?
+        val maximumRenderTimeChange: Double?
+        val depthPlaneEllipsoidOffset: Double?
+        val msaaSamples: Double?
     }
 
     /**

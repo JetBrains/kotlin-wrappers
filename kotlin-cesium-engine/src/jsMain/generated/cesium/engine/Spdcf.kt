@@ -62,9 +62,9 @@ external class Spdcf(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var A: Double
-        var alpha: Double
-        var beta: Double
-        var T: Double
+        val A: Double
+        val alpha: Double
+        val beta: Double
+        val T: Double
     }
 }

@@ -47,12 +47,12 @@ external class CustomHeightmapTerrainProvider(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var callback: GeometryCallback
-        var width: Double
-        var height: Double
-        var tilingScheme: TilingScheme?
-        var ellipsoid: Ellipsoid?
-        var credit: Credit?
+        val callback: GeometryCallback
+        val width: Double
+        val height: Double
+        val tilingScheme: TilingScheme?
+        val ellipsoid: Ellipsoid?
+        val credit: Credit?
     }
 
     /**

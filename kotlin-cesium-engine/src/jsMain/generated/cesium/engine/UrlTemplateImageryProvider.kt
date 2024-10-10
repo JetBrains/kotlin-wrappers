@@ -352,22 +352,22 @@ external class UrlTemplateImageryProvider(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var url: Resource
-        var pickFeaturesUrl: Resource?
-        var urlSchemeZeroPadding: Any?
-        var subdomains: ReadonlyArray<String>?
-        var credit: Credit?
-        var minimumLevel: Int?
-        var maximumLevel: Int?
-        var rectangle: Rectangle?
-        var tilingScheme: TilingScheme?
-        var ellipsoid: Ellipsoid?
-        var tileWidth: Int?
-        var tileHeight: Int?
-        var hasAlphaChannel: Boolean?
-        var getFeatureInfoFormats: ReadonlyArray<GetFeatureInfoFormat>?
-        var enablePickFeatures: Boolean?
-        var tileDiscardPolicy: TileDiscardPolicy?
-        var customTags: Any?
+        val url: Resource
+        val pickFeaturesUrl: Resource?
+        val urlSchemeZeroPadding: Any?
+        val subdomains: ReadonlyArray<String>?
+        val credit: Credit?
+        val minimumLevel: Int?
+        val maximumLevel: Int?
+        val rectangle: Rectangle?
+        val tilingScheme: TilingScheme?
+        val ellipsoid: Ellipsoid?
+        val tileWidth: Int?
+        val tileHeight: Int?
+        val hasAlphaChannel: Boolean?
+        val getFeatureInfoFormats: ReadonlyArray<GetFeatureInfoFormat>?
+        val enablePickFeatures: Boolean?
+        val tileDiscardPolicy: TileDiscardPolicy?
+        val customTags: Any?
     }
 }

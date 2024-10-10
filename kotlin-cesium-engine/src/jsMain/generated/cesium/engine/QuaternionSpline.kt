@@ -22,8 +22,8 @@ external class QuaternionSpline(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var times: ReadonlyArray<Double>
-        var points: ReadonlyArray<Quaternion>
+        val times: ReadonlyArray<Double>
+        val points: ReadonlyArray<Quaternion>
     }
 
     /**

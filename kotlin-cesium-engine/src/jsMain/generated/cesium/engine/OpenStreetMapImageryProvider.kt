@@ -41,13 +41,13 @@ external class OpenStreetMapImageryProvider(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var url: String?
-        var fileExtension: String?
-        var retinaTiles: Boolean?
-        var rectangle: Rectangle?
-        var minimumLevel: Int?
-        var maximumLevel: Int?
-        var ellipsoid: Ellipsoid?
-        var credit: Credit?
+        val url: String?
+        val fileExtension: String?
+        val retinaTiles: Boolean?
+        val rectangle: Rectangle?
+        val minimumLevel: Int?
+        val maximumLevel: Int?
+        val ellipsoid: Ellipsoid?
+        val credit: Credit?
     }
 }

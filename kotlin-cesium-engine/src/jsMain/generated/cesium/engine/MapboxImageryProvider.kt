@@ -202,14 +202,14 @@ external class MapboxImageryProvider(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var url: String?
-        var mapId: String
-        var accessToken: String
-        var format: String?
-        var ellipsoid: Ellipsoid?
-        var minimumLevel: Int?
-        var maximumLevel: Int?
-        var rectangle: Rectangle?
-        var credit: Credit?
+        val url: String?
+        val mapId: String
+        val accessToken: String
+        val format: String?
+        val ellipsoid: Ellipsoid?
+        val minimumLevel: Int?
+        val maximumLevel: Int?
+        val rectangle: Rectangle?
+        val credit: Credit?
     }
 }

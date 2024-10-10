@@ -48,15 +48,15 @@ external class MaterialAppearance(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var flat: Boolean?
-        var faceForward: Boolean?
-        var translucent: Boolean?
-        var closed: Boolean?
-        var materialSupport: MaterialSupportType?
-        var material: Material?
-        var vertexShaderSource: String?
-        var fragmentShaderSource: String?
-        var renderState: Any?
+        val flat: Boolean?
+        val faceForward: Boolean?
+        val translucent: Boolean?
+        val closed: Boolean?
+        val materialSupport: MaterialSupportType?
+        val material: Material?
+        val vertexShaderSource: String?
+        val fragmentShaderSource: String?
+        val renderState: Any?
     }
 
     /**
@@ -163,9 +163,9 @@ external class MaterialAppearance(
 
     @JsPlainObject
     interface MaterialSupportType {
-        var vertexFormat: VertexFormat
-        var vertexShaderSource: String
-        var fragmentShaderSource: String
+        val vertexFormat: VertexFormat
+        val vertexShaderSource: String
+        val fragmentShaderSource: String
     }
 
     /**

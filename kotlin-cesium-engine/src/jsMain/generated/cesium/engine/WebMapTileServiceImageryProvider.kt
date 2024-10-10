@@ -266,23 +266,23 @@ external class WebMapTileServiceImageryProvider(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var url: Resource
-        var format: String?
-        var layer: String
-        var style: String
-        var tileMatrixSetID: String
-        var tileMatrixLabels: ReadonlyArray<Any>?
-        var clock: Clock?
-        var times: TimeIntervalCollection?
-        var dimensions: Any?
-        var tileWidth: Int?
-        var tileHeight: Int?
-        var tilingScheme: TilingScheme?
-        var rectangle: Rectangle?
-        var minimumLevel: Int?
-        var maximumLevel: Int?
-        var ellipsoid: Ellipsoid?
-        var credit: Credit?
-        var subdomains: ReadonlyArray<String>?
+        val url: Resource
+        val format: String?
+        val layer: String
+        val style: String
+        val tileMatrixSetID: String
+        val tileMatrixLabels: ReadonlyArray<Any>?
+        val clock: Clock?
+        val times: TimeIntervalCollection?
+        val dimensions: Any?
+        val tileWidth: Int?
+        val tileHeight: Int?
+        val tilingScheme: TilingScheme?
+        val rectangle: Rectangle?
+        val minimumLevel: Int?
+        val maximumLevel: Int?
+        val ellipsoid: Ellipsoid?
+        val credit: Credit?
+        val subdomains: ReadonlyArray<String>?
     }
 }

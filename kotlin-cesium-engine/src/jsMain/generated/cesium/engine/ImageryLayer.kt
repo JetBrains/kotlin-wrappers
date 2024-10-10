@@ -319,25 +319,25 @@ external class ImageryLayer(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var rectangle: Rectangle?
-        var alpha: Double /* | Function */?
-        var nightAlpha: Double /* | Function */?
-        var dayAlpha: Double /* | Function */?
-        var brightness: Double /* | Function */?
-        var contrast: Double /* | Function */?
-        var hue: Double /* | Function */?
-        var saturation: Double /* | Function */?
-        var gamma: Double /* | Function */?
-        var splitDirection: SplitDirection /* | Function */?
-        var minificationFilter: TextureMinificationFilter?
-        var magnificationFilter: TextureMagnificationFilter?
-        var show: Boolean?
-        var maximumAnisotropy: Double?
-        var minimumTerrainLevel: Int?
-        var maximumTerrainLevel: Int?
-        var cutoutRectangle: Rectangle?
-        var colorToAlpha: Color?
-        var colorToAlphaThreshold: Double?
+        val rectangle: Rectangle?
+        val alpha: Double /* | Function */?
+        val nightAlpha: Double /* | Function */?
+        val dayAlpha: Double /* | Function */?
+        val brightness: Double /* | Function */?
+        val contrast: Double /* | Function */?
+        val hue: Double /* | Function */?
+        val saturation: Double /* | Function */?
+        val gamma: Double /* | Function */?
+        val splitDirection: SplitDirection /* | Function */?
+        val minificationFilter: TextureMinificationFilter?
+        val magnificationFilter: TextureMagnificationFilter?
+        val show: Boolean?
+        val maximumAnisotropy: Double?
+        val minimumTerrainLevel: Int?
+        val maximumTerrainLevel: Int?
+        val cutoutRectangle: Rectangle?
+        val colorToAlpha: Color?
+        val colorToAlphaThreshold: Double?
     }
 
     companion object {

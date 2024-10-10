@@ -271,17 +271,17 @@ external class ArcGisMapServerImageryProvider(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var tileDiscardPolicy: TileDiscardPolicy?
-        var usePreCachedTilesIfAvailable: Boolean?
-        var layers: String?
-        var enablePickFeatures: Boolean?
-        var rectangle: Rectangle?
-        var tilingScheme: TilingScheme?
-        var ellipsoid: Ellipsoid?
-        var credit: Credit?
-        var tileWidth: Int?
-        var tileHeight: Int?
-        var maximumLevel: Int?
+        val tileDiscardPolicy: TileDiscardPolicy?
+        val usePreCachedTilesIfAvailable: Boolean?
+        val layers: String?
+        val enablePickFeatures: Boolean?
+        val rectangle: Rectangle?
+        val tilingScheme: TilingScheme?
+        val ellipsoid: Ellipsoid?
+        val credit: Credit?
+        val tileWidth: Int?
+        val tileHeight: Int?
+        val maximumLevel: Int?
     }
 
     companion object {

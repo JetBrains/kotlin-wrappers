@@ -100,32 +100,32 @@ external class CesiumWidget(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var clock: Clock?
-        var ellipsoid: Ellipsoid?
-        var baseLayer: ImageryLayer /* | false */?
-        var terrainProvider: TerrainProvider?
-        var terrain: Terrain?
-        var skyBox: SkyBox /* | false */?
-        var skyAtmosphere: SkyAtmosphere /* | false */?
-        var sceneMode: SceneMode?
-        var scene3DOnly: Boolean?
-        var orderIndependentTranslucency: Boolean?
-        var mapProjection: MapProjection?
-        var globe: Globe /* | false */?
-        var useDefaultRenderLoop: Boolean?
-        var useBrowserRecommendedResolution: Boolean?
-        var targetFrameRate: Int?
-        var showRenderLoopErrors: Boolean?
-        var contextOptions: ContextOptions?
-        var creditContainer: Element?
-        var creditViewport: Element?
-        var shadows: Boolean?
-        var terrainShadows: ShadowMode?
-        var mapMode2D: MapMode2D?
-        var blurActiveElementOnCanvasFocus: Boolean?
-        var requestRenderMode: Boolean?
-        var maximumRenderTimeChange: Double?
-        var msaaSamples: Double?
+        val clock: Clock?
+        val ellipsoid: Ellipsoid?
+        val baseLayer: ImageryLayer /* | false */?
+        val terrainProvider: TerrainProvider?
+        val terrain: Terrain?
+        val skyBox: SkyBox /* | false */?
+        val skyAtmosphere: SkyAtmosphere /* | false */?
+        val sceneMode: SceneMode?
+        val scene3DOnly: Boolean?
+        val orderIndependentTranslucency: Boolean?
+        val mapProjection: MapProjection?
+        val globe: Globe /* | false */?
+        val useDefaultRenderLoop: Boolean?
+        val useBrowserRecommendedResolution: Boolean?
+        val targetFrameRate: Int?
+        val showRenderLoopErrors: Boolean?
+        val contextOptions: ContextOptions?
+        val creditContainer: Element?
+        val creditViewport: Element?
+        val shadows: Boolean?
+        val terrainShadows: ShadowMode?
+        val mapMode2D: MapMode2D?
+        val blurActiveElementOnCanvasFocus: Boolean?
+        val requestRenderMode: Boolean?
+        val maximumRenderTimeChange: Double?
+        val msaaSamples: Double?
     }
 
     /**

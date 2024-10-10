@@ -282,18 +282,18 @@ external class Color(
          */
         @JsPlainObject
         interface FromRandomOptions {
-            var red: Double?
-            var minimumRed: Double?
-            var maximumRed: Double?
-            var green: Double?
-            var minimumGreen: Double?
-            var maximumGreen: Double?
-            var blue: Double?
-            var minimumBlue: Double?
-            var maximumBlue: Double?
-            var alpha: Double?
-            var minimumAlpha: Double?
-            var maximumAlpha: Double?
+            val red: Double?
+            val minimumRed: Double?
+            val maximumRed: Double?
+            val green: Double?
+            val minimumGreen: Double?
+            val maximumGreen: Double?
+            val blue: Double?
+            val minimumBlue: Double?
+            val maximumBlue: Double?
+            val alpha: Double?
+            val minimumAlpha: Double?
+            val maximumAlpha: Double?
         }
 
         /**

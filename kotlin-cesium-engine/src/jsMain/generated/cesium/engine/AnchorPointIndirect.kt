@@ -48,8 +48,8 @@ external class AnchorPointIndirect(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var position: Cartesian3
-        var adjustmentParams: Cartesian3
-        var covarianceMatrix: Matrix3
+        val position: Cartesian3
+        val adjustmentParams: Cartesian3
+        val covarianceMatrix: Matrix3
     }
 }

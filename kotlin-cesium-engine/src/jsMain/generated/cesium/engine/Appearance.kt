@@ -28,12 +28,12 @@ external class Appearance(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var translucent: Boolean?
-        var closed: Boolean?
-        var material: Material?
-        var vertexShaderSource: String?
-        var fragmentShaderSource: String?
-        var renderState: Any?
+        val translucent: Boolean?
+        val closed: Boolean?
+        val material: Material?
+        val vertexShaderSource: String?
+        val fragmentShaderSource: String?
+        val renderState: Any?
     }
 
     /**

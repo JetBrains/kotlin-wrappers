@@ -34,15 +34,15 @@ external class TimeDynamicPointCloud(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var clock: Clock
-        var intervals: TimeIntervalCollection
-        var show: Boolean?
-        var modelMatrix: Matrix4?
-        var shadows: ShadowMode?
-        var maximumMemoryUsage: Int?
-        var shading: Any?
-        var style: Cesium3DTileStyle?
-        var clippingPlanes: ClippingPlaneCollection?
+        val clock: Clock
+        val intervals: TimeIntervalCollection
+        val show: Boolean?
+        val modelMatrix: Matrix4?
+        val shadows: ShadowMode?
+        val maximumMemoryUsage: Int?
+        val shading: Any?
+        val style: Cesium3DTileStyle?
+        val clippingPlanes: ClippingPlaneCollection?
     }
 
     /**

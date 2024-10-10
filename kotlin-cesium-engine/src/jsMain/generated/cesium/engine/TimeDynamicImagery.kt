@@ -24,10 +24,10 @@ external class TimeDynamicImagery(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var clock: Clock
-        var times: TimeIntervalCollection
-        var requestImageFunction: Function<*>
-        var reloadFunction: Function<*>
+        val clock: Clock
+        val times: TimeIntervalCollection
+        val requestImageFunction: Function<*>
+        val reloadFunction: Function<*>
     }
 
     /**

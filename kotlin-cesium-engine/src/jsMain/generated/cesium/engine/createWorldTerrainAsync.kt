@@ -49,6 +49,6 @@ external fun createWorldTerrainAsync(options: CreateWorldTerrainAsyncOptions? = 
  */
 @JsPlainObject
 external interface CreateWorldTerrainAsyncOptions {
-    var requestVertexNormals: Boolean?
-    var requestWaterMask: Boolean?
+    val requestVertexNormals: Boolean?
+    val requestWaterMask: Boolean?
 }

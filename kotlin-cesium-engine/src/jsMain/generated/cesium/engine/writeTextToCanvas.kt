@@ -43,13 +43,13 @@ external fun writeTextToCanvas(
  */
 @JsPlainObject
 external interface WriteTextToCanvasOptions {
-    var font: String?
-    var textBaseline: String?
-    var fill: Boolean?
-    var stroke: Boolean?
-    var fillColor: Color?
-    var strokeColor: Color?
-    var strokeWidth: Double?
-    var backgroundColor: Color?
-    var padding: Double?
+    val font: String?
+    val textBaseline: String?
+    val fill: Boolean?
+    val stroke: Boolean?
+    val fillColor: Color?
+    val strokeColor: Color?
+    val strokeWidth: Double?
+    val backgroundColor: Color?
+    val padding: Double?
 }

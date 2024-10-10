@@ -140,10 +140,10 @@ external class Cesium3DTilesVoxelProvider(
      */
     @JsPlainObject
     interface RequestDataOptions {
-        var tileLevel: Int?
-        var tileX: Double?
-        var tileY: Double?
-        var tileZ: Double?
+        val tileLevel: Int?
+        val tileX: Double?
+        val tileY: Double?
+        val tileZ: Double?
     }
 
     companion object {

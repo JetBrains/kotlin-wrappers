@@ -232,11 +232,11 @@ private constructor() {
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var channel: Int
-        var path: String?
-        var maximumLevel: Int?
-        var tileDiscardPolicy: TileDiscardPolicy?
-        var ellipsoid: Ellipsoid?
+        val channel: Int
+        val path: String?
+        val maximumLevel: Int?
+        val tileDiscardPolicy: TileDiscardPolicy?
+        val ellipsoid: Ellipsoid?
     }
 
     companion object {

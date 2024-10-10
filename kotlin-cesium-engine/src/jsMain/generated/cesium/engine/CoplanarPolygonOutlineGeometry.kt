@@ -30,7 +30,7 @@ external class CoplanarPolygonOutlineGeometry(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var polygonHierarchy: PolygonHierarchy
+        val polygonHierarchy: PolygonHierarchy
     }
 
     /**
@@ -51,7 +51,7 @@ external class CoplanarPolygonOutlineGeometry(
          */
         @JsPlainObject
         interface FromPositionsOptions {
-            var positions: ReadonlyArray<Cartesian3>
+            val positions: ReadonlyArray<Cartesian3>
         }
 
         /**

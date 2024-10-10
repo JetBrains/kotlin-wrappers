@@ -35,11 +35,11 @@ external class WebMercatorTilingScheme(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var ellipsoid: Ellipsoid?
-        var numberOfLevelZeroTilesX: Int?
-        var numberOfLevelZeroTilesY: Int?
-        var rectangleSouthwestInMeters: Cartesian2?
-        var rectangleNortheastInMeters: Cartesian2?
+        val ellipsoid: Ellipsoid?
+        val numberOfLevelZeroTilesX: Int?
+        val numberOfLevelZeroTilesY: Int?
+        val rectangleSouthwestInMeters: Cartesian2?
+        val rectangleNortheastInMeters: Cartesian2?
     }
 
     /**

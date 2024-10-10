@@ -41,11 +41,11 @@ external class PolylineMaterialAppearance(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var translucent: Boolean?
-        var material: Material?
-        var vertexShaderSource: String?
-        var fragmentShaderSource: String?
-        var renderState: Any?
+        val translucent: Boolean?
+        val material: Material?
+        val vertexShaderSource: String?
+        val fragmentShaderSource: String?
+        val renderState: Any?
     }
 
     /**

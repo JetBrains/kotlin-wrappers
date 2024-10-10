@@ -46,5 +46,5 @@ external fun createWorldBathymetryAsync(options: CreateWorldBathymetryAsyncOptio
  */
 @JsPlainObject
 external interface CreateWorldBathymetryAsyncOptions {
-    var requestVertexNormals: Boolean?
+    val requestVertexNormals: Boolean?
 }

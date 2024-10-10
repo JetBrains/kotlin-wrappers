@@ -34,10 +34,10 @@ external class SphereOutlineGeometry(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var radius: Double?
-        var stackPartitions: Int?
-        var slicePartitions: Int?
-        var subdivisions: Double?
+        val radius: Double?
+        val stackPartitions: Int?
+        val slicePartitions: Int?
+        val subdivisions: Double?
     }
 
     companion object : Packable<SphereOutlineGeometry> {

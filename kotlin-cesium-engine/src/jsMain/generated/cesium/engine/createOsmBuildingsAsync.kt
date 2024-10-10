@@ -68,8 +68,8 @@ external fun createOsmBuildingsAsync(options: CreateOsmBuildingsAsyncOptions? = 
  */
 @JsPlainObject
 external interface CreateOsmBuildingsAsyncOptions {
-    var defaultColor: Color?
-    var style: Cesium3DTileStyle?
-    var enableShowOutline: Boolean?
-    var showOutline: Boolean?
+    val defaultColor: Color?
+    val style: Cesium3DTileStyle?
+    val enableShowOutline: Boolean?
+    val showOutline: Boolean?
 }
