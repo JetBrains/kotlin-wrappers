@@ -229,8 +229,8 @@ external interface SelectProps<Option : Any, Group : GroupBase<Option>> : PropsW
     var screenReaderStatus: (options: ScreenReaderStatusOptions) -> String
 
     @JsPlainObject
-    sealed interface ScreenReaderStatusOptions {
-        var count: Int
+    interface ScreenReaderStatusOptions {
+        val count: Int
     }
 
     /**
