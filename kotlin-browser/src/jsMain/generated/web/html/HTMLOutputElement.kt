@@ -16,12 +16,19 @@ open external class HTMLOutputElement
 protected constructor() :
     HTMLElement,
     FormControl {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/defaultValue)
+     */
     var defaultValue: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/form)
      */
     override val form: HTMLFormElement?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/htmlFor)
+     */
     val htmlFor: DOMTokenList
 
     /**

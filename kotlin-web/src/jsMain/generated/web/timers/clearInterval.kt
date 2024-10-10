@@ -3,7 +3,7 @@
 package web.timers
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/clearInterval)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/clearInterval)
  */
 external fun clearInterval(
     id: Interval?,

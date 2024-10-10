@@ -217,6 +217,10 @@ sealed external class HTMLMediaElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/volume)
      */
     var volume: Double
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/addTextTrack)
+     */
     fun addTextTrack(
         kind: TextTrackKind,
         label: String = definedExternally,

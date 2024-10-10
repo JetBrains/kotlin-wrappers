@@ -6,7 +6,7 @@ import js.promise.Promise
 import seskar.js.JsAsync
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/createImageBitmap)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/createImageBitmap)
  */
 @JsAsync
 external suspend fun createImageBitmap(

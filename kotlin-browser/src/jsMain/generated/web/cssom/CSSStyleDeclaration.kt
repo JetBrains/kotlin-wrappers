@@ -487,6 +487,11 @@ sealed external class CSSStyleDeclaration :
     var bottom: String
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-decoration-break)
+     */
+    var boxDecorationBreak: String
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/box-shadow)
      */
     var boxShadow: String
