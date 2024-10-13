@@ -61,6 +61,8 @@ external class Request(
 
     /**
      * Returns a boolean indicating whether or not request can outlive the global in which it was created.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/keepalive)
      */
     val keepalive: Boolean
 
