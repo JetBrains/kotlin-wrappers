@@ -40,6 +40,10 @@ const jsoInterfaces = [
     // dgram
     "SocketOptions",
 
+    // events
+    "StaticEventEmitterIteratorOptions",
+    "StaticEventEmitterOptions",
+
     // fs
     "ObjectEncodingOptions",
     "FlagAndOpenMode",
