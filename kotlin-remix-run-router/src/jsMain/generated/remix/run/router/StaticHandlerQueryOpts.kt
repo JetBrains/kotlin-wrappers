@@ -5,5 +5,5 @@ package remix.run.router
 sealed external interface StaticHandlerQueryOpts {
     var requestContext: Any?
     var skipLoaderErrorBubbling: Boolean?
-    var unstable_dataStrategy: DataStrategyFunction?
+    var dataStrategy: DataStrategyFunction?
 }

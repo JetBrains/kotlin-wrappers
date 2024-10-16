@@ -39,5 +39,5 @@ sealed external interface FormProps : react.Props, react.PropsWithRef<HTMLFormEl
     /**
      * Enable view transitions on this Form navigation
      */
-    var unstable_viewTransition: Boolean?
+    var viewTransition: Boolean?
 }

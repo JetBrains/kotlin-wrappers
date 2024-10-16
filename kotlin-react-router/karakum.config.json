@@ -27,8 +27,6 @@
     },
     "importMapper": {
         "@remix-run/router": {
-            "unstable_DataStrategyFunction": "remix.run.router.DataStrategyFunction as unstable_DataStrategyFunction",
-            "unstable_AgnosticPatchRoutesOnNavigationFunction": "remix.run.router.AgnosticPatchRoutesOnNavigationFunction as unstable_AgnosticPatchRoutesOnNavigationFunction",
             ".+": "remix.run.router."
         },
         "react": {

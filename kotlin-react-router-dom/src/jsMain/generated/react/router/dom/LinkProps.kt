@@ -15,7 +15,7 @@ sealed external interface LinkProps : react.Props, react.PropsWithRef<HTMLAnchor
     var preventScrollReset: Boolean?
     var relative: RelativeRoutingType?
     var to: To
-    var unstable_viewTransition: Boolean?
+    var viewTransition: Boolean?
 
     @Deprecated(message = "don't use href", level = DeprecationLevel.HIDDEN)
     override var href: String?

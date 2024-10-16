@@ -3,5 +3,5 @@
 package react.router.dom
 
 sealed external interface FetcherWithComponentsLoadOpts {
-    var unstable_flushSync: Boolean?
+    var flushSync: Boolean?
 }

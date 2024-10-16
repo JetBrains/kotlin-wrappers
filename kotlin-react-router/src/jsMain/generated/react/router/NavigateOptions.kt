@@ -9,6 +9,6 @@ sealed external interface NavigateOptions {
     var state: Any?
     var preventScrollReset: Boolean?
     var relative: RelativeRoutingType?
-    var unstable_flushSync: Boolean?
-    var unstable_viewTransition: Boolean?
+    var flushSync: Boolean?
+    var viewTransition: Boolean?
 }

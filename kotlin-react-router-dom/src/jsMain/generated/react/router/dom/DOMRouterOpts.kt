@@ -2,17 +2,17 @@
 
 package react.router.dom
 
-import react.router.unstable_PatchRoutesOnNavigationFunction
+import react.router.PatchRoutesOnNavigationFunction
+import remix.run.router.DataStrategyFunction
 import remix.run.router.HydrationState
 import web.window.Window
-import remix.run.router.DataStrategyFunction as unstable_DataStrategyFunction
 import remix.run.router.FutureConfig as RouterFutureConfig
 
 sealed external interface DOMRouterOpts {
     var basename: String?
     var future: RouterFutureConfig?
     var hydrationData: HydrationState?
-    var unstable_dataStrategy: unstable_DataStrategyFunction?
-    var unstable_patchRoutesOnNavigation: unstable_PatchRoutesOnNavigationFunction?
+    var dataStrategy: DataStrategyFunction?
+    var patchRoutesOnNavigation: PatchRoutesOnNavigationFunction?
     var window: Window?
 }

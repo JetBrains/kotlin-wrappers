@@ -2,7 +2,8 @@
 
 package remix.run.router
 
-external interface AgnosticPatchRoutesOnNavigationFunction<M : AgnosticRouteMatch<*> /* default is AgnosticRouteMatch<*> */> {
+// TODO: Fix generation
+external interface AgnosticPatchRoutesOnNavigationFunction<O : AgnosticRouteObject, M : AgnosticRouteMatch<*> /* default is AgnosticRouteMatch<*> */> {
     @seskar.js.JsNative
-    operator fun invoke(opts: AgnosticPatchRoutesOnNavigationFunctionOpts<M>): js.promise.PromiseResult<js.core.Void>
+    operator fun invoke(opts: AgnosticPatchRoutesOnNavigationFunctionArgs<O, M>): js.promise.PromiseResult<js.core.Void>
 }

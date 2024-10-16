@@ -43,5 +43,5 @@ sealed external interface SharedSubmitOptions {
     /**
      * Enable flushSync for this submission's state updates
      */
-    var unstable_flushSync: Boolean?
+    var flushSync: Boolean?
 }

@@ -20,6 +20,6 @@ sealed external interface RouterInit {
     var future: FutureConfig?
     var hydrationData: HydrationState?
     var window: Window?
-    var unstable_patchRoutesOnNavigation: AgnosticPatchRoutesOnNavigationFunction<*>?
-    var unstable_dataStrategy: DataStrategyFunction?
+    var dataStrategy: DataStrategyFunction?
+    var patchRoutesOnNavigation: AgnosticPatchRoutesOnNavigationFunction<*, *>?
 }

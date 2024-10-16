@@ -31,5 +31,5 @@ sealed external interface SubmitOptions : FetcherSubmitOptions {
     /**
      * Enable view transitions on this submission navigation
      */
-    var unstable_viewTransition: Boolean?
+    var viewTransition: Boolean?
 }
