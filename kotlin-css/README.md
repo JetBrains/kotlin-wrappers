@@ -28,6 +28,26 @@ val styles = CssBuilder().apply {
     body {
         margin = Margin(0.px)
         padding = Padding(0.px)
+
+        animation(
+            duration = 500.ms,
+            iterationCount = IterationCount.infinite,
+            fillMode = FillMode.backwards,
+            direction = AnimationDirection.alternate,
+        ) {
+            to {
+                backgroundPosition = RelativePosition.left
+            }
+        }
+
+        backgroundImage = linearGradient(90.deg) {
+            colorStop(Color.black)
+            colorStop(Color.transparent)
+        }
+
+        transform {
+            translateY(0.px)
+        }
     }
 }
 
