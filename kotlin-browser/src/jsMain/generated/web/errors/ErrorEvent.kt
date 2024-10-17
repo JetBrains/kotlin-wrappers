@@ -22,9 +22,21 @@ open external class ErrorEvent(
     init: ErrorEventInit = definedExternally,
 ) : Event {
     val colno: Int
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent/error)
+     */
     val error: Any?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent/filename)
+     */
     val filename: String
     val lineno: Int
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent/message)
+     */
     val message: String
 
     @JsAlias(THIS)

@@ -105,6 +105,8 @@ protected constructor() :
 
     /**
      * Overrides the submit method attribute previously specified on a form element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/formMethod)
      */
     var formMethod: FormMethod
 

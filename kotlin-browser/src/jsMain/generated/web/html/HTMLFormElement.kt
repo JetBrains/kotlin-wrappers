@@ -37,6 +37,8 @@ protected constructor() :
 
     /**
      * Specifies whether autocomplete is applied to an editable text field.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/autocomplete)
      */
     var autocomplete: AutoFillBase
 
