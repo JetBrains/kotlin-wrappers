@@ -221,6 +221,7 @@ var StyledElement.boxShadow by CssProperty { BoxShadows() }
 @get:Deprecated("Write-only property", level = DeprecationLevel.HIDDEN) var StyledElement.textAlign: TextAlign by CssProperty()
 @get:Deprecated("Write-only property", level = DeprecationLevel.HIDDEN) var StyledElement.textDecoration: TextDecoration by CssProperty()
 @get:Deprecated("Write-only property", level = DeprecationLevel.HIDDEN) var StyledElement.textOverflow: TextOverflow by CssProperty()
+var StyledElement.textShadow by CssProperty { TextShadows() }
 @get:Deprecated("Write-only property", level = DeprecationLevel.HIDDEN) var StyledElement.textTransform: TextTransform by CssProperty()
 @get:Deprecated("Write-only property", level = DeprecationLevel.HIDDEN) var StyledElement.textWrap: TextWrap by CssProperty()
 @get:Deprecated("Write-only property", level = DeprecationLevel.HIDDEN) var StyledElement.top: LinearDimension by CssProperty()
