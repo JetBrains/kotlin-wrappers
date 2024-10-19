@@ -1,6 +1,7 @@
 package wrappers.example.hooks
 
 import js.objects.jso
+import tanstack.query.core.InvalidateQueryFilters
 import tanstack.query.core.QueryKey
 import tanstack.react.query.useMutation
 import tanstack.react.query.useQueryClient
@@ -18,9 +19,9 @@ fun <D, M : Function<Unit>> useMutateUser(
             mutationFn = createMutationFunction(action)
             onSuccess = { _, _, _ ->
                 queryClient.invalidateQueries(
-                    filters = jso {
+                    filters = InvalidateQueryFilters(
                         queryKey = USERS_QUERY_KEY
-                    }
+                    )
                 )
             }
         }
