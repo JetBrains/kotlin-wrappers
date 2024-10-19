@@ -4,4 +4,4 @@
 
 package tanstack.query.core
 
-external val notifyManager: dynamic /* { */
+external val notifyManager: Any /* { */

@@ -4,4 +4,4 @@
 
 package tanstack.query.core
 
-external fun createNotifyManager(): dynamic /* { */
+external fun createNotifyManager(): Any /* { */
