@@ -6,8 +6,8 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface DefaultOptions<TError> {
-    var queries: QueryObserverOptions<*, TError, *, *, *, *>?
-    var mutations: MutationObserverOptions<*, TError, *, *>?
-    var hydrate: DefaultHydrateOptions?
-    var dehydrate: DehydrateOptions?
+    val queries: QueryObserverOptions<*, TError, *, *, *, *>?
+    val mutations: MutationObserverOptions<*, TError, *, *>?
+    val hydrate: DefaultHydrateOptions?
+    val dehydrate: DehydrateOptions?
 }

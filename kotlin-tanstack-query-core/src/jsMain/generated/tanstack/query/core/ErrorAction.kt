@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface ErrorAction<TError> {
-    var type: Type /* 'error' */
-    var error: TError
+    val type: Type /* 'error' */
+    val error: TError
 }

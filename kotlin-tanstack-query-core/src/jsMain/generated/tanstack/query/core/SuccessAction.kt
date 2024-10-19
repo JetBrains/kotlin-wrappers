@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface SuccessAction<TData> {
-    var type: Type /* 'success' */
-    var data: TData
+    val type: Type /* 'success' */
+    val data: TData
 }

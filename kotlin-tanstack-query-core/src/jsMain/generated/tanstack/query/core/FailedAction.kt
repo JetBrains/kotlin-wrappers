@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface FailedAction<TError> {
-    var type: Type /* 'failed' */
-    var failureCount: Int
-    var error: TError?
+    val type: Type /* 'failed' */
+    val failureCount: Int
+    val error: TError?
 }

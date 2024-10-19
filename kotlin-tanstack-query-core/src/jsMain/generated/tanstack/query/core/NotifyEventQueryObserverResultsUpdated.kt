@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface NotifyEventQueryObserverResultsUpdated : NotifyEvent {
-    override var type: NotifyEventType /* 'observerResultsUpdated' */
-    var query: Query<*, *, *, *>
+    override val type: NotifyEventType /* 'observerResultsUpdated' */
+    val query: Query<*, *, *, *>
 }

@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface NotifyEventQueryRemoved : NotifyEvent {
-    override var type: NotifyEventType /* 'removed' */
-    var query: Query<*, *, *, *>
+    override val type: NotifyEventType /* 'removed' */
+    val query: Query<*, *, *, *>
 }

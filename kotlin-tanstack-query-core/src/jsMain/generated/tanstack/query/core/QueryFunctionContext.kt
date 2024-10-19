@@ -7,9 +7,9 @@ import web.abort.AbortSignal
 
 @JsPlainObject
 external interface QueryFunctionContext<TQueryKey : QueryKey, TPageParam> {
-    var queryKey: TQueryKey
-    var signal: AbortSignal
-    var pageParam: TPageParam?
-    var direction: FetchDirection?
-    var meta: QueryMeta?
+    val queryKey: TQueryKey
+    val signal: AbortSignal
+    val pageParam: TPageParam?
+    val direction: FetchDirection?
+    val meta: QueryMeta?
 }

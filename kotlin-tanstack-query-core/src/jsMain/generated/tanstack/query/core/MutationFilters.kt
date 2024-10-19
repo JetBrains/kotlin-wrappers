@@ -6,8 +6,8 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface MutationFilters {
-    var exact: Boolean?
-    var predicate: ((mutation: Mutation<*, *, *, *>) -> Boolean)?
-    var mutationKey: MutationKey?
-    var status: MutationStatus?
+    val exact: Boolean?
+    val predicate: ((mutation: Mutation<*, *, *, *>) -> Boolean)?
+    val mutationKey: MutationKey?
+    val status: MutationStatus?
 }

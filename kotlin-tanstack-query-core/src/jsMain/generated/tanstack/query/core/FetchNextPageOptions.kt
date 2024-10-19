@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface FetchNextPageOptions : ResultOptions {
-    var cancelRefetch: Boolean?
+    val cancelRefetch: Boolean?
 }

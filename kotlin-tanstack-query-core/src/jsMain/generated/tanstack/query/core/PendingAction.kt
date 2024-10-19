@@ -6,8 +6,8 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface PendingAction<TVariables, TContext> {
-    var type: Type /* 'pending' */
-    var isPaused: Boolean
-    var variables: TVariables?
-    var context: TContext?
+    val type: Type /* 'pending' */
+    val isPaused: Boolean
+    val variables: TVariables?
+    val context: TContext?
 }

@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface NotifyEvent {
-    var type: NotifyEventType
+    val type: NotifyEventType
 }

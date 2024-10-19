@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface QueryCacheConfig {
-    var onError: ((error: DefaultError, query: Query<*, *, *, *>) -> Unit)?
-    var onSuccess: ((data: Any, query: Query<*, *, *, *>) -> Unit)?
-    var onSettled: ((data: Any?, error: DefaultError?, query: Query<*, *, *, *>) -> Unit)?
+    val onError: ((error: DefaultError, query: Query<*, *, *, *>) -> Unit)?
+    val onSuccess: ((data: Any, query: Query<*, *, *, *>) -> Unit)?
+    val onSettled: ((data: Any?, error: DefaultError?, query: Query<*, *, *, *>) -> Unit)?
 }

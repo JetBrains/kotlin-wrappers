@@ -7,6 +7,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface InfiniteData<TData, TPageParam> {
-    var pages: ReadonlyArray<TData>
-    var pageParams: ReadonlyArray<TPageParam>
+    val pages: ReadonlyArray<TData>
+    val pageParams: ReadonlyArray<TPageParam>
 }

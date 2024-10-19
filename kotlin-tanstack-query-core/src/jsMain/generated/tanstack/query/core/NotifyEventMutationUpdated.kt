@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface NotifyEventMutationUpdated : NotifyEvent {
-    override var type: NotifyEventType /* 'updated' */
-    var mutation: Mutation<*, *, *, *>
-    var action: Action<*, *, *, *>
+    override val type: NotifyEventType /* 'updated' */
+    val mutation: Mutation<*, *, *, *>
+    val action: Action<*, *, *, *>
 }

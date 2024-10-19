@@ -7,11 +7,11 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface Retryer<TData> {
-    var promise: Promise<TData>
-    var cancel: (cancelOptions: CancelOptions?) -> Unit
-    var `continue`: () -> Promise<*>
-    var cancelRetry: () -> Unit
-    var continueRetry: () -> Unit
-    var canStart: () -> Boolean
-    var start: () -> Promise<TData>
+    val promise: Promise<TData>
+    val cancel: (cancelOptions: CancelOptions?) -> Unit
+    val `continue`: () -> Promise<*>
+    val cancelRetry: () -> Unit
+    val continueRetry: () -> Unit
+    val canStart: () -> Boolean
+    val start: () -> Promise<TData>
 }

@@ -7,8 +7,8 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface MutationCacheConfig {
-    var onError: (error: DefaultError, variables: Any?, context: Any?, mutation: Mutation<*, *, *, *>) -> Promise<*>?
-    var onSuccess: (data: Any?, variables: Any?, context: Any?, mutation: Mutation<*, *, *, *>) -> Promise<*>?
-    var onMutate: (variables: Any?, mutation: Mutation<*, *, *, *>) -> Promise<*>?
-    var onSettled: (data: Any?, error: DefaultError?, variables: Any?, context: Any?, mutation: Mutation<*, *, *, *>) -> Promise<*>?
+    val onError: (error: DefaultError, variables: Any?, context: Any?, mutation: Mutation<*, *, *, *>) -> Promise<*>?
+    val onSuccess: (data: Any?, variables: Any?, context: Any?, mutation: Mutation<*, *, *, *>) -> Promise<*>?
+    val onMutate: (variables: Any?, mutation: Mutation<*, *, *, *>) -> Promise<*>?
+    val onSettled: (data: Any?, error: DefaultError?, variables: Any?, context: Any?, mutation: Mutation<*, *, *, *>) -> Promise<*>?
 }

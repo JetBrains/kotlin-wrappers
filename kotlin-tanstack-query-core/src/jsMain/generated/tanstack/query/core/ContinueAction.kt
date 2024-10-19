@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface ContinueAction {
-    var type: Type /* 'continue' */
+    val type: Type /* 'continue' */
 }

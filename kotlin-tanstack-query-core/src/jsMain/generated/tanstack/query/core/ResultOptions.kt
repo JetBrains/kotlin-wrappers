@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface ResultOptions {
-    var throwOnError: Boolean?
+    val throwOnError: Boolean?
 }

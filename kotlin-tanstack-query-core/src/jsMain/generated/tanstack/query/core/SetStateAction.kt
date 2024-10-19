@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface SetStateAction<TData, TError> {
-    var type: Type /* 'setState' */
-    var state: QueryState<TData, TError> /* Partial */
-    var setStateOptions: SetStateOptions?
+    val type: Type /* 'setState' */
+    val state: QueryState<TData, TError> /* Partial */
+    val setStateOptions: SetStateOptions?
 }

@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface FetchAction {
-    var type: Type /* 'fetch' */
-    var meta: FetchMeta?
+    val type: Type /* 'fetch' */
+    val meta: FetchMeta?
 }

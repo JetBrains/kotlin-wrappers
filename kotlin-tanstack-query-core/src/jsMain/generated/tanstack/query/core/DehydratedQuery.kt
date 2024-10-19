@@ -7,9 +7,9 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface DehydratedQuery {
-    var queryHash: String
-    var queryKey: QueryKey
-    var state: QueryState<*, *>
-    var promise: Promise<*>?
-    var meta: QueryMeta?
+    val queryHash: String
+    val queryKey: QueryKey
+    val state: QueryState<*, *>
+    val promise: Promise<*>?
+    val meta: QueryMeta?
 }

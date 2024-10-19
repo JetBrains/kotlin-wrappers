@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface QueryClientConfig {
-    var queryCache: QueryCache?
-    var mutationCache: MutationCache?
-    var defaultOptions: DefaultOptions<*>?
+    val queryCache: QueryCache?
+    val mutationCache: MutationCache?
+    val defaultOptions: DefaultOptions<*>?
 }

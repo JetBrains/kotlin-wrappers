@@ -7,8 +7,8 @@ import web.time.EpochTimeStamp
 
 @JsPlainObject
 external interface SuccessAction_1<TData> {
-    var data: TData?
-    var type: Type /* 'success' */
-    var dataUpdatedAt: EpochTimeStamp?
-    var manual: Boolean?
+    val data: TData?
+    val type: Type /* 'success' */
+    val dataUpdatedAt: EpochTimeStamp?
+    val manual: Boolean?
 }

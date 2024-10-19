@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface QueryBehavior<TQueryFnData, TError, TData, TQueryKey : QueryKey> {
-    var onFetch: (context: FetchContext<TQueryFnData, TError, TData, TQueryKey>, query: Query<*, *, *, *>) -> Unit
+    val onFetch: (context: FetchContext<TQueryFnData, TError, TData, TQueryKey>, query: Query<*, *, *, *>) -> Unit
 }

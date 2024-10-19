@@ -7,6 +7,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface DehydratedState {
-    var mutations: ReadonlyArray<DehydratedMutation>
-    var queries: ReadonlyArray<DehydratedQuery>
+    val mutations: ReadonlyArray<DehydratedMutation>
+    val queries: ReadonlyArray<DehydratedQuery>
 }

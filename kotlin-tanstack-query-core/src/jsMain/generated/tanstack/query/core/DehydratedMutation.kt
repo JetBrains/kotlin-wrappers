@@ -6,8 +6,8 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface DehydratedMutation {
-    var mutationKey: MutationKey?
-    var state: MutationState<*, *, *, *>
-    var meta: MutationMeta?
-    var scope: MutationScope?
+    val mutationKey: MutationKey?
+    val state: MutationState<*, *, *, *>
+    val meta: MutationMeta?
+    val scope: MutationScope?
 }

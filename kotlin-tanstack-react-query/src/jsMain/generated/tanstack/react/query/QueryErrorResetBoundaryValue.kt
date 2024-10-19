@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface QueryErrorResetBoundaryValue {
-    var clearReset: () -> Unit
-    var isReset: () -> Boolean
-    var reset: () -> Unit
+    val clearReset: () -> Unit
+    val isReset: () -> Boolean
+    val reset: () -> Unit
 }

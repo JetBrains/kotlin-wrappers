@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface InvalidateQueryFilters : QueryFilters {
-    var refetchType: QueryTypeFilter /* | 'none' */?
+    val refetchType: QueryTypeFilter /* | 'none' */?
 }

@@ -8,16 +8,16 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface RetryerConfig<TData, TError> {
-    var fn: () -> PromiseResult<TData>
-    var initialPromise: Promise<TData>?
-    var abort: (() -> Unit)?
-    var onError: ((error: TError) -> Unit)?
-    var onSuccess: ((data: TData) -> Unit)?
-    var onFail: ((failureCount: Int, error: TError) -> Unit)?
-    var onPause: (() -> Unit)?
-    var onContinue: (() -> Unit)?
-    var retry: RetryValue<TError>?
-    var retryDelay: RetryDelayValue<TError>?
-    var networkMode: NetworkMode?
-    var canRun: () -> Boolean
+    val fn: () -> PromiseResult<TData>
+    val initialPromise: Promise<TData>?
+    val abort: (() -> Unit)?
+    val onError: ((error: TError) -> Unit)?
+    val onSuccess: ((data: TData) -> Unit)?
+    val onFail: ((failureCount: Int, error: TError) -> Unit)?
+    val onPause: (() -> Unit)?
+    val onContinue: (() -> Unit)?
+    val retry: RetryValue<TError>?
+    val retryDelay: RetryDelayValue<TError>?
+    val networkMode: NetworkMode?
+    val canRun: () -> Boolean
 }

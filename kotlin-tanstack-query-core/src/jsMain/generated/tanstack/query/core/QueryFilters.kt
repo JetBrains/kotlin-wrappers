@@ -6,10 +6,10 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface QueryFilters {
-    var type: QueryTypeFilter?
-    var exact: Boolean?
-    var predicate: ((query: Query<*, *, *, *>) -> Boolean)?
-    var queryKey: QueryKey?
-    var stale: Boolean?
-    var fetchStatus: FetchStatus?
+    val type: QueryTypeFilter?
+    val exact: Boolean?
+    val predicate: ((query: Query<*, *, *, *>) -> Boolean)?
+    val queryKey: QueryKey?
+    val stale: Boolean?
+    val fetchStatus: FetchStatus?
 }
