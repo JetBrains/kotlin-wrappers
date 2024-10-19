@@ -9,5 +9,5 @@ import js.core.Void
 external interface FetchQueryOptions<TQueryFnData, TError, TData, TQueryKey : QueryKey, TPageParam>
     : QueryOptions<TQueryFnData, TError, TData, TQueryKey, TPageParam> {
     var initialPageParam: Void
-    var staleTime: StaleTime<TQueryFnData, TError, TData, TQueryKey>
+    var staleTime: StaleTime<TQueryFnData, TError, TData, TQueryKey>?
 }

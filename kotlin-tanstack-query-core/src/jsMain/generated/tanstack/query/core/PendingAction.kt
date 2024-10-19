@@ -8,6 +8,6 @@ import kotlinx.js.JsPlainObject
 external interface PendingAction<TVariables, TContext> {
     var type: Type /* 'pending' */
     var isPaused: Boolean
-    var variables: TVariables
-    var context: TContext
+    var variables: TVariables?
+    var context: TContext?
 }

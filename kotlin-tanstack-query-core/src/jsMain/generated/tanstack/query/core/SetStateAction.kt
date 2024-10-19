@@ -8,5 +8,5 @@ import kotlinx.js.JsPlainObject
 external interface SetStateAction<TData, TError> {
     var type: Type /* 'setState' */
     var state: QueryState<TData, TError> /* Partial */
-    var setStateOptions: SetStateOptions
+    var setStateOptions: SetStateOptions?
 }

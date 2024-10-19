@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface SetStateOptions {
-    var meta: Any
+    var meta: Any?
 }

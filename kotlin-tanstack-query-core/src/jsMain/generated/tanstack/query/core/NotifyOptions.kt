@@ -6,5 +6,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface NotifyOptions {
-    var listeners: Boolean
+    var listeners: Boolean?
 }

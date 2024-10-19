@@ -7,5 +7,5 @@ import web.time.EpochTimeStamp
 
 @JsPlainObject
 external interface SetDataOptions {
-    var updatedAt: EpochTimeStamp
+    var updatedAt: EpochTimeStamp?
 }

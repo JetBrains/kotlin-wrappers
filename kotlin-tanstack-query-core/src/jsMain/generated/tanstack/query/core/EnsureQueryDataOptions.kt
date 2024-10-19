@@ -6,5 +6,5 @@ package tanstack.query.core
 // Details - https://youtrack.jetbrains.com/issue/KT-70664
 external interface EnsureQueryDataOptions<TQueryFnData, TError, TData, TQueryKey : QueryKey, TPageParam>
     : FetchQueryOptions<TQueryFnData, TError, TData, TQueryKey, TPageParam> {
-    var revalidateIfStale: Boolean
+    var revalidateIfStale: Boolean?
 }

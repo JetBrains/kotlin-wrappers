@@ -6,5 +6,5 @@ package tanstack.query.core
 // Details - https://youtrack.jetbrains.com/issue/KT-70664
 external interface ObserverFetchOptions<TData>
     : FetchOptions<TData> {
-    var throwOnError: Boolean
+    var throwOnError: Boolean?
 }

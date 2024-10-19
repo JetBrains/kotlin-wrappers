@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface CancelOptions {
-    var revert: Boolean
-    var silent: Boolean
+    var revert: Boolean?
+    var silent: Boolean?
 }
