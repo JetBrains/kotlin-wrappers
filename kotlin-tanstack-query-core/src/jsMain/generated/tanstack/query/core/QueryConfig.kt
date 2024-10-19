@@ -2,6 +2,9 @@
 
 package tanstack.query.core
 
+import kotlinx.js.JsPlainObject
+
+@JsPlainObject
 external interface QueryConfig<TQueryFnData, TError, TData, TQueryKey : QueryKey> {
     var cache: QueryCache
     var queryKey: TQueryKey

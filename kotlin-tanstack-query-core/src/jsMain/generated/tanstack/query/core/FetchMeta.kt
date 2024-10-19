@@ -2,10 +2,14 @@
 
 package tanstack.query.core
 
-sealed external interface FetchMeta {
-    var fetchMore: FetchMore?
+import kotlinx.js.JsPlainObject
 
-    sealed interface FetchMore {
-        var direction: FetchDirection
+@JsPlainObject
+external interface FetchMeta {
+    val fetchMore: FetchMore?
+
+    @JsPlainObject
+    interface FetchMore {
+        val direction: FetchDirection
     }
 }

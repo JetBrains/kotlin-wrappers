@@ -3,8 +3,10 @@
 package tanstack.query.core
 
 import js.promise.Promise
+import kotlinx.js.JsPlainObject
 import web.abort.AbortSignal
 
+@JsPlainObject
 external interface FetchContext<TQueryFnData, TError, TData, TQueryKey : QueryKey> {
     var fetchFn: () -> Promise<*>?
     var fetchOptions: FetchOptions<*>

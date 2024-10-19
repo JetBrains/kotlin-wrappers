@@ -2,6 +2,9 @@
 
 package tanstack.query.core
 
+import kotlinx.js.JsPlainObject
+
+@JsPlainObject
 external interface NotifyEventQueryUpdated : NotifyEvent {
     override var type: NotifyEventType /* 'updated' */
     var query: Query<*, *, *, *>

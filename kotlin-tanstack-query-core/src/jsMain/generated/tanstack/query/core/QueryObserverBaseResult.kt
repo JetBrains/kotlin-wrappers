@@ -5,6 +5,8 @@ package tanstack.query.core
 import js.promise.Promise
 import web.time.EpochTimeStamp
 
+// @JsPlainObject
+// Details - https://youtrack.jetbrains.com/issue/KT-70664
 external interface QueryObserverBaseResult<TData, TError> {
     val data: TData?
     val dataUpdatedAt: EpochTimeStamp

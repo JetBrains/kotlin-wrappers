@@ -2,12 +2,16 @@
 
 package tanstack.query.core
 
+import kotlinx.js.JsPlainObject
+
+@JsPlainObject
 external interface DefaultHydrateOptions {
-    var deserializeData: TransformerFn?
-    var queries: QueryOptions<*, *, *, *, *>?
-    var mutations: MutationOptions<*, DefaultError, *, *>?
+    val deserializeData: TransformerFn?
+    val queries: QueryOptions<*, *, *, *, *>?
+    val mutations: MutationOptions<*, DefaultError, *, *>?
 }
 
+@JsPlainObject
 external interface HydrateOptions {
-    var defaultOptions: DefaultHydrateOptions?
+    val defaultOptions: DefaultHydrateOptions?
 }

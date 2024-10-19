@@ -2,5 +2,7 @@
 
 package tanstack.query.core
 
-sealed external interface DefinedInfiniteQueryObserverResult<TData, TError>
-    : InfiniteQueryObserverBaseResult<TData, TError>
+// @JsPlainObject
+// Details - https://youtrack.jetbrains.com/issue/KT-70664
+external interface DefinedInfiniteQueryObserverResult<TData, TError> :
+    InfiniteQueryObserverBaseResult<TData, TError>

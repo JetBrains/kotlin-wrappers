@@ -4,6 +4,8 @@ package tanstack.query.core
 
 import web.time.EpochTimeStamp
 
+// @JsPlainObject
+// Details - https://youtrack.jetbrains.com/issue/KT-70664
 external interface MutationState<TData, TError, TVariables, TContext> {
     val context: TContext?
     val data: TData?

@@ -2,6 +2,8 @@
 
 package tanstack.query.core
 
+// @JsPlainObject
+// Details - https://youtrack.jetbrains.com/issue/KT-70664
 external interface QueryOptions<TQueryFnData, TError, TData, TQueryKey : QueryKey, TPageParam> {
     var retry: RetryValue<TError>
     var retryDelay: RetryDelayValue<TError>

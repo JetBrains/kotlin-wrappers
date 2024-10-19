@@ -4,6 +4,8 @@ package tanstack.query.core
 
 import js.core.Void
 
+// @JsPlainObject
+// Details - https://youtrack.jetbrains.com/issue/KT-70664
 external interface QueryObserverSuccessResult<TData, TError>
     : QueryObserverResult<TData, TError> {
     override val data: TData

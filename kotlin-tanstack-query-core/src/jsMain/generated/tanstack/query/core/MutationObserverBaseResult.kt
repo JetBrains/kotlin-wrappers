@@ -2,6 +2,8 @@
 
 package tanstack.query.core
 
+// @JsPlainObject
+// Details - https://youtrack.jetbrains.com/issue/KT-70664
 external interface MutationObserverBaseResult<TData, TError, TVariables, TContext>
     : MutationState<TData, TError, TVariables, TContext> {
     override val data: TData?

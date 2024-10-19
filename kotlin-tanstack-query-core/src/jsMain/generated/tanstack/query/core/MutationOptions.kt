@@ -4,6 +4,8 @@ package tanstack.query.core
 
 import js.promise.Promise
 
+// @JsPlainObject
+// Details - https://youtrack.jetbrains.com/issue/KT-70664
 external interface MutationOptions<TData, TError, TVariables, TContext> {
     var mutationFn: MutationFunction<TData, TVariables>
     var mutationKey: MutationKey

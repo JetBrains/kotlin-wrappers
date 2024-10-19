@@ -4,7 +4,9 @@ package tanstack.query.core
 
 import js.promise.Promise
 import js.promise.PromiseResult
+import kotlinx.js.JsPlainObject
 
+@JsPlainObject
 external interface RetryerConfig<TData, TError> {
     var fn: () -> PromiseResult<TData>
     var initialPromise: Promise<TData>

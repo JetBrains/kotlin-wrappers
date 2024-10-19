@@ -2,6 +2,9 @@
 
 package tanstack.query.core
 
+import kotlinx.js.JsPlainObject
+
+@JsPlainObject
 external interface InvalidateAction {
     var type: Type /* 'invalidate' */
 }

@@ -3,7 +3,9 @@
 package tanstack.query.core
 
 import js.promise.Promise
+import kotlinx.js.JsPlainObject
 
+@JsPlainObject
 external interface Retryer<TData> {
     var promise: Promise<TData>
     var cancel: (cancelOptions: CancelOptions?) -> Unit

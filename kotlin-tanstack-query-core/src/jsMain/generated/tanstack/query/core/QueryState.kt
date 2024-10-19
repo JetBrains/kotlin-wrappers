@@ -2,8 +2,10 @@
 
 package tanstack.query.core
 
+import kotlinx.js.JsPlainObject
 import web.time.EpochTimeStamp
 
+@JsPlainObject
 external interface QueryState<TData, TError> {
     var data: TData?
     var dataUpdateCount: Int
