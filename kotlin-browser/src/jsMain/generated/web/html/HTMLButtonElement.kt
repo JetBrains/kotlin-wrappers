@@ -40,6 +40,8 @@ protected constructor() :
 
     /**
      * Used to override the encoding (formEnctype attribute) specified on the form element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/formEnctype)
      */
     var formEnctype: FormEncType
 

@@ -26,6 +26,10 @@ sealed external interface WebGLRenderingContextBase {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/drawingBufferWidth)
      */
     val drawingBufferWidth: GLsizei
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/unpackColorSpace)
+     */
     var unpackColorSpace: PredefinedColorSpace
 
     /**

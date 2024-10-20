@@ -21,6 +21,9 @@ open external class ErrorEvent(
     override val type: EventType<ErrorEvent>,
     init: ErrorEventInit = definedExternally,
 ) : Event {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent/colno)
+     */
     val colno: Int
 
     /**
@@ -32,6 +35,10 @@ open external class ErrorEvent(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent/filename)
      */
     val filename: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent/lineno)
+     */
     val lineno: Int
 
     /**
