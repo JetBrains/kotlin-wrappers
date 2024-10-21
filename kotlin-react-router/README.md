@@ -7,10 +7,7 @@ Kotlin wrapper for the [React Router](https://reactrouter.com/en/main) library.
 ### Regenerate declarations
 
 ```shell
-./gradlew \
-:kotlin-react-router:generateKarakumExternals \
-:kotlin-react-router-dom:generateKarakumExternals \
-:kotlin-remix-run-router:generateKarakumExternals
+./gradlew :kotlin-react-router:generateKarakumExternals :kotlin-react-router-dom:generateKarakumExternals :kotlin-remix-run-router:generateKarakumExternals
 ```
 
 ### TODO:
