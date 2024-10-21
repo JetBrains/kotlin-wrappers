@@ -20,4 +20,5 @@ external interface QueryObserverOptions<TQueryFnData, TError, TData, TQueryData,
     var suspense: Boolean?
     var placeholderData: Any /* NonFunctionGuard<TQueryData> | PlaceholderDataFunction<NonFunctionGuard<TQueryData>, TError, NonFunctionGuard<TQueryData>, TQueryKey> */?
     var _optimisticResults: String /* 'optimistic' | 'isRestoring' */?
+    var experimental_prefetchInRender: Boolean?
 }

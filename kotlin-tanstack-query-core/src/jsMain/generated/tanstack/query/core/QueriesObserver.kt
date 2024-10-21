@@ -14,14 +14,14 @@ import js.array.ReadonlyArray
 open external class QueriesObserver<TCombinedResult>(
     client: QueryClient,
     queries: ReadonlyArray<QueryObserverOptions<*, *, *, *, *, *>>,
-    _options: QueriesObserverOptions<TCombinedResult> = definedExternally,
+    options: QueriesObserverOptions<TCombinedResult> = definedExternally,
 ) : Subscribable<QueriesObserverListener> {
     override fun onSubscribe()
     override fun onUnsubscribe()
     open fun destroy()
     open fun setQueries(
         queries: ReadonlyArray<QueryObserverOptions<*, *, *, *, *, *>>,
-        _options: QueriesObserverOptions<TCombinedResult> = definedExternally,
+        options: QueriesObserverOptions<TCombinedResult> = definedExternally,
         notifyOptions: NotifyOptions = definedExternally,
     )
 

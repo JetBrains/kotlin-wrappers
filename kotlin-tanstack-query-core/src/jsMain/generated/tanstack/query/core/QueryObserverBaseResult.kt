@@ -32,4 +32,5 @@ external interface QueryObserverBaseResult<TData, TError> {
     val refetch: (options: RefetchOptions?) -> Promise<QueryObserverResult<TData, TError>>
     val status: QueryStatus
     val fetchStatus: FetchStatus
+    val promise: Promise<TData>
 }

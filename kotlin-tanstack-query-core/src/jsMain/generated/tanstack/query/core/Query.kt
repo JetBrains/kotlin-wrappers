@@ -14,7 +14,6 @@ open external class Query<TQueryFnData, TError, TData, TQueryKey : QueryKey>(con
     open var queryHash: String
     open var options: QueryOptions<TQueryFnData, TError, TData, TQueryKey, *>
     open var state: QueryState<TData, TError>
-    open var isFetchingOptimistic: Boolean?
     open var observers: ReadonlyArray<QueryObserver<*, *, *, *, *>>
     open var meta: QueryMeta?
     open var promise: Promise<TData>?
