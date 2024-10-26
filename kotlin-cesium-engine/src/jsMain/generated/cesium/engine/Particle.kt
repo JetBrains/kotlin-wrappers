@@ -36,16 +36,16 @@ external class Particle(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val mass: Double?
-        val position: Cartesian3?
-        val velocity: Cartesian3?
-        val life: Double?
-        val image: Any?
-        val startColor: Color?
-        val endColor: Color?
-        val startScale: Double?
-        val endScale: Double?
-        val imageSize: Cartesian2?
+        var mass: Double?
+        var position: Cartesian3?
+        var velocity: Cartesian3?
+        var life: Double?
+        var image: Any?
+        var startColor: Color?
+        var endColor: Color?
+        var startScale: Double?
+        var endScale: Double?
+        var imageSize: Cartesian2?
     }
 
     /**

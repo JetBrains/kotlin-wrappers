@@ -11,6 +11,6 @@ import kotlinx.js.JsPlainObject
  */
 @JsPlainObject
 external interface UniformSpecifier {
-    val type: UniformType
-    val value: Any /* boolean | number | Cartesian2 | Cartesian3 | Cartesian4 | Matrix2 | Matrix3 | Matrix4 | TextureUniform */
+    var type: UniformType
+    var value: Any /* boolean | number | Cartesian2 | Cartesian3 | Cartesian4 | Matrix2 | Matrix3 | Matrix4 | TextureUniform */
 }

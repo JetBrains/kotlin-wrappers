@@ -10,5 +10,5 @@ import web.blob.Blob
  */
 @JsPlainObject
 external interface exportKmlResultKmz {
-    val kmz: Blob
+    var kmz: Blob
 }

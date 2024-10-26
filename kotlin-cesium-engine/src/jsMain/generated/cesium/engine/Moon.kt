@@ -28,10 +28,10 @@ external class Moon(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val show: Boolean?
-        val textureUrl: String?
-        val ellipsoid: Ellipsoid?
-        val onlySunLighting: Boolean?
+        var show: Boolean?
+        var textureUrl: String?
+        var ellipsoid: Ellipsoid?
+        var onlySunLighting: Boolean?
     }
 
     /**

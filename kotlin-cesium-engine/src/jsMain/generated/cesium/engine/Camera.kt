@@ -260,10 +260,10 @@ external class Camera(
      */
     @JsPlainObject
     interface SetViewOptions {
-        val destination: Any /* Cartesian3 | Rectangle */?
-        val orientation: CameraOrientation?
-        val endTransform: Matrix4?
-        val convert: Boolean?
+        var destination: Any /* Cartesian3 | Rectangle */?
+        var orientation: CameraOrientation?
+        var endTransform: Matrix4?
+        var convert: Boolean?
     }
 
     /**
@@ -738,18 +738,18 @@ external class Camera(
      */
     @JsPlainObject
     interface FlyToOptions {
-        val destination: Any /* Cartesian3 | Rectangle */
-        val orientation: CameraOrientation?
-        val duration: Double?
-        val complete: FlightCompleteCallback?
-        val cancel: FlightCancelledCallback?
-        val endTransform: Matrix4?
-        val maximumHeight: Double?
-        val pitchAdjustHeight: Double?
-        val flyOverLongitude: Double?
-        val flyOverLongitudeWeight: Double?
-        val convert: Boolean?
-        val easingFunction: EasingCallback?
+        var destination: Any /* Cartesian3 | Rectangle */
+        var orientation: CameraOrientation?
+        var duration: Double?
+        var complete: FlightCompleteCallback?
+        var cancel: FlightCancelledCallback?
+        var endTransform: Matrix4?
+        var maximumHeight: Double?
+        var pitchAdjustHeight: Double?
+        var flyOverLongitude: Double?
+        var flyOverLongitudeWeight: Double?
+        var convert: Boolean?
+        var easingFunction: EasingCallback?
     }
 
     /**
@@ -806,16 +806,16 @@ external class Camera(
      */
     @JsPlainObject
     interface FlyToBoundingSphereOptions {
-        val duration: Double?
-        val offset: HeadingPitchRange?
-        val complete: FlightCompleteCallback?
-        val cancel: FlightCancelledCallback?
-        val endTransform: Matrix4?
-        val maximumHeight: Double?
-        val pitchAdjustHeight: Double?
-        val flyOverLongitude: Double?
-        val flyOverLongitudeWeight: Double?
-        val easingFunction: EasingCallback?
+        var duration: Double?
+        var offset: HeadingPitchRange?
+        var complete: FlightCompleteCallback?
+        var cancel: FlightCancelledCallback?
+        var endTransform: Matrix4?
+        var maximumHeight: Double?
+        var pitchAdjustHeight: Double?
+        var flyOverLongitude: Double?
+        var flyOverLongitudeWeight: Double?
+        var easingFunction: EasingCallback?
     }
 
     /**

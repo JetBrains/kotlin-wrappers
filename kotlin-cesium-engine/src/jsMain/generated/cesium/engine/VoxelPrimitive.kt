@@ -23,10 +23,10 @@ external class VoxelPrimitive(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val provider: VoxelProvider?
-        val modelMatrix: Matrix4?
-        val customShader: CustomShader?
-        val clock: Clock?
+        var provider: VoxelProvider?
+        var modelMatrix: Matrix4?
+        var customShader: CustomShader?
+        var clock: Clock?
     }
 
     /**

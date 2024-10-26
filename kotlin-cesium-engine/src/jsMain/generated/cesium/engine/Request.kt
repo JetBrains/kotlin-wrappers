@@ -30,15 +30,15 @@ external class Request(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val url: String?
-        val requestFunction: RequestCallback?
-        val cancelFunction: CancelCallback?
-        val priorityFunction: PriorityCallback?
-        val priority: Double?
-        val throttle: Boolean?
-        val throttleByServer: Boolean?
-        val type: RequestType?
-        val serverKey: String?
+        var url: String?
+        var requestFunction: RequestCallback?
+        var cancelFunction: CancelCallback?
+        var priorityFunction: PriorityCallback?
+        var priority: Double?
+        var throttle: Boolean?
+        var throttleByServer: Boolean?
+        var type: RequestType?
+        var serverKey: String?
     }
 
     /**

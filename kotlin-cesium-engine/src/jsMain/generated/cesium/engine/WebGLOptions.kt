@@ -17,12 +17,12 @@ import web.gl.WebGLPowerPreference
  */
 @JsPlainObject
 external interface WebGLOptions {
-    val alpha: Boolean?
-    val depth: Boolean?
-    val stencil: Boolean?
-    val antialias: Boolean?
-    val premultipliedAlpha: Boolean?
-    val preserveDrawingBuffer: Boolean?
-    val powerPreference: WebGLPowerPreference?
-    val failIfMajorPerformanceCaveat: Boolean?
+    var alpha: Boolean?
+    var depth: Boolean?
+    var stencil: Boolean?
+    var antialias: Boolean?
+    var premultipliedAlpha: Boolean?
+    var preserveDrawingBuffer: Boolean?
+    var powerPreference: WebGLPowerPreference?
+    var failIfMajorPerformanceCaveat: Boolean?
 }

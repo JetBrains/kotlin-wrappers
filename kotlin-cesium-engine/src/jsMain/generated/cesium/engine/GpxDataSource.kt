@@ -130,11 +130,11 @@ external class GpxDataSource {
      */
     @JsPlainObject
     interface LoadOptions {
-        val clampToGround: Boolean?
-        val waypointImage: String?
-        val trackImage: String?
-        val trackColor: String?
-        val routeColor: String?
+        var clampToGround: Boolean?
+        var waypointImage: String?
+        var trackImage: String?
+        var trackColor: String?
+        var routeColor: String?
     }
 
     companion object {
@@ -165,11 +165,11 @@ external class GpxDataSource {
          */
         @JsPlainObject
         interface LoadOptions {
-            val clampToGround: Boolean?
-            val waypointImage: String?
-            val trackImage: String?
-            val trackColor: String?
-            val routeColor: String?
+            var clampToGround: Boolean?
+            var waypointImage: String?
+            var trackImage: String?
+            var trackColor: String?
+            var routeColor: String?
         }
     }
 }

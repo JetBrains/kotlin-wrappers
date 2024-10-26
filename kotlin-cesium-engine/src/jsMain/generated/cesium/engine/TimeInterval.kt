@@ -147,10 +147,10 @@ external class TimeInterval {
          */
         @JsPlainObject
         interface FromIso8601Options {
-            val iso8601: String
-            val isStartIncluded: Boolean?
-            val isStopIncluded: Boolean?
-            val data: Any?
+            var iso8601: String
+            var isStartIncluded: Boolean?
+            var isStopIncluded: Boolean?
+            var data: Any?
         }
 
         /**

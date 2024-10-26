@@ -171,12 +171,12 @@ external class SingleTileImageryProvider(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val url: Resource
-        val tileWidth: Int?
-        val tileHeight: Int?
-        val rectangle: Rectangle?
-        val credit: Credit?
-        val ellipsoid: Ellipsoid?
+        var url: Resource
+        var tileWidth: Int?
+        var tileHeight: Int?
+        var rectangle: Rectangle?
+        var credit: Credit?
+        var ellipsoid: Ellipsoid?
     }
 
     companion object {
@@ -224,9 +224,9 @@ external class SingleTileImageryProvider(
          */
         @JsPlainObject
         interface fromUrlOptions {
-            val rectangle: Rectangle?
-            val credit: Credit?
-            val ellipsoid: Ellipsoid?
+            var rectangle: Rectangle?
+            var credit: Credit?
+            var ellipsoid: Ellipsoid?
         }
     }
 }

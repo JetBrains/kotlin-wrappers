@@ -44,16 +44,16 @@ external class EllipseGeometry(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val center: Cartesian3
-        val semiMajorAxis: Double
-        val semiMinorAxis: Double
-        val ellipsoid: Ellipsoid?
-        val height: Double?
-        val extrudedHeight: Double?
-        val rotation: Double?
-        val stRotation: Double?
-        val granularity: Double?
-        val vertexFormat: VertexFormat?
+        var center: Cartesian3
+        var semiMajorAxis: Double
+        var semiMinorAxis: Double
+        var ellipsoid: Ellipsoid?
+        var height: Double?
+        var extrudedHeight: Double?
+        var rotation: Double?
+        var stRotation: Double?
+        var granularity: Double?
+        var vertexFormat: VertexFormat?
     }
 
     companion object : Packable<EllipseGeometry> {
@@ -117,12 +117,12 @@ external class EllipseGeometry(
          */
         @JsPlainObject
         interface ComputeRectangleOptions {
-            val center: Cartesian3
-            val semiMajorAxis: Double
-            val semiMinorAxis: Double
-            val ellipsoid: Ellipsoid?
-            val rotation: Double?
-            val granularity: Double?
+            var center: Cartesian3
+            var semiMajorAxis: Double
+            var semiMinorAxis: Double
+            var ellipsoid: Ellipsoid?
+            var rotation: Double?
+            var granularity: Double?
         }
 
         /**

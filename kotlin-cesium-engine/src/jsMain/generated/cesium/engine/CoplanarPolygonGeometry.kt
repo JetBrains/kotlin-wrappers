@@ -37,11 +37,11 @@ external class CoplanarPolygonGeometry(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val polygonHierarchy: PolygonHierarchy
-        val stRotation: Double?
-        val vertexFormat: VertexFormat?
-        val ellipsoid: Ellipsoid?
-        val textureCoordinates: PolygonHierarchy?
+        var polygonHierarchy: PolygonHierarchy
+        var stRotation: Double?
+        var vertexFormat: VertexFormat?
+        var ellipsoid: Ellipsoid?
+        var textureCoordinates: PolygonHierarchy?
     }
 
     /**
@@ -82,11 +82,11 @@ external class CoplanarPolygonGeometry(
          */
         @JsPlainObject
         interface FromPositionsOptions {
-            val positions: ReadonlyArray<Cartesian3>
-            val vertexFormat: VertexFormat?
-            val stRotation: Double?
-            val ellipsoid: Ellipsoid?
-            val textureCoordinates: PolygonHierarchy?
+            var positions: ReadonlyArray<Cartesian3>
+            var vertexFormat: VertexFormat?
+            var stRotation: Double?
+            var ellipsoid: Ellipsoid?
+            var textureCoordinates: PolygonHierarchy?
         }
 
         /**

@@ -106,18 +106,18 @@ external class PolygonGeometry(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val polygonHierarchy: PolygonHierarchy
-        val height: Double?
-        val extrudedHeight: Double?
-        val vertexFormat: VertexFormat?
-        val stRotation: Double?
-        val ellipsoid: Ellipsoid?
-        val granularity: Double?
-        val perPositionHeight: Boolean?
-        val closeTop: Boolean?
-        val closeBottom: Boolean?
-        val arcType: ArcType?
-        val textureCoordinates: PolygonHierarchy?
+        var polygonHierarchy: PolygonHierarchy
+        var height: Double?
+        var extrudedHeight: Double?
+        var vertexFormat: VertexFormat?
+        var stRotation: Double?
+        var ellipsoid: Ellipsoid?
+        var granularity: Double?
+        var perPositionHeight: Boolean?
+        var closeTop: Boolean?
+        var closeBottom: Boolean?
+        var arcType: ArcType?
+        var textureCoordinates: PolygonHierarchy?
     }
 
     /**
@@ -171,18 +171,18 @@ external class PolygonGeometry(
          */
         @JsPlainObject
         interface FromPositionsOptions {
-            val positions: ReadonlyArray<Cartesian3>
-            val height: Double?
-            val extrudedHeight: Double?
-            val vertexFormat: VertexFormat?
-            val stRotation: Double?
-            val ellipsoid: Ellipsoid?
-            val granularity: Double?
-            val perPositionHeight: Boolean?
-            val closeTop: Boolean?
-            val closeBottom: Boolean?
-            val arcType: ArcType?
-            val textureCoordinates: PolygonHierarchy?
+            var positions: ReadonlyArray<Cartesian3>
+            var height: Double?
+            var extrudedHeight: Double?
+            var vertexFormat: VertexFormat?
+            var stRotation: Double?
+            var ellipsoid: Ellipsoid?
+            var granularity: Double?
+            var perPositionHeight: Boolean?
+            var closeTop: Boolean?
+            var closeBottom: Boolean?
+            var arcType: ArcType?
+            var textureCoordinates: PolygonHierarchy?
         }
 
         /**

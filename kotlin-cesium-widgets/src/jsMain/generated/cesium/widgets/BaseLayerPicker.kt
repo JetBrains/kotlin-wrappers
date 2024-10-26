@@ -95,11 +95,11 @@ external class BaseLayerPicker(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val globe: Globe
-        val imageryProviderViewModels: ReadonlyArray<ProviderViewModel>?
-        val selectedImageryProviderViewModel: ProviderViewModel?
-        val terrainProviderViewModels: ReadonlyArray<ProviderViewModel>?
-        val selectedTerrainProviderViewModel: ProviderViewModel?
+        var globe: Globe
+        var imageryProviderViewModels: ReadonlyArray<ProviderViewModel>?
+        var selectedImageryProviderViewModel: ProviderViewModel?
+        var terrainProviderViewModels: ReadonlyArray<ProviderViewModel>?
+        var selectedTerrainProviderViewModel: ProviderViewModel?
     }
 
     /**

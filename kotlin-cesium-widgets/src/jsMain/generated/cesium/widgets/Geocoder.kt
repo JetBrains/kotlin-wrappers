@@ -31,12 +31,12 @@ external class Geocoder(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val container: Element
-        val scene: Scene
-        val geocoderServices: ReadonlyArray<GeocoderService>?
-        val autoComplete: Boolean?
-        val flightDuration: Double?
-        val destinationFound: DestinationFoundFunction?
+        var container: Element
+        var scene: Scene
+        var geocoderServices: ReadonlyArray<GeocoderService>?
+        var autoComplete: Boolean?
+        var flightDuration: Double?
+        var destinationFound: DestinationFoundFunction?
     }
 
     /**

@@ -80,10 +80,10 @@ external class GltfGpmLocal(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val storageType: String
-        val anchorPointsIndirect: ReadonlyArray<AnchorPointIndirect>??
-        val intraTileCorrelationGroups: ReadonlyArray<CorrelationGroup>??
-        val anchorPointsDirect: ReadonlyArray<AnchorPointDirect>??
-        val covarianceDirect: Matrix3??
+        var storageType: String
+        var anchorPointsIndirect: ReadonlyArray<AnchorPointIndirect>??
+        var intraTileCorrelationGroups: ReadonlyArray<CorrelationGroup>??
+        var anchorPointsDirect: ReadonlyArray<AnchorPointDirect>??
+        var covarianceDirect: Matrix3??
     }
 }

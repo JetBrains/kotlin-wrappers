@@ -170,10 +170,10 @@ external class TileCoordinatesImageryProvider(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val tilingScheme: TilingScheme?
-        val ellipsoid: Ellipsoid?
-        val color: Color?
-        val tileWidth: Int?
-        val tileHeight: Int?
+        var tilingScheme: TilingScheme?
+        var ellipsoid: Ellipsoid?
+        var color: Color?
+        var tileWidth: Int?
+        var tileHeight: Int?
     }
 }

@@ -51,11 +51,11 @@ external class Material(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val strict: Boolean?
-        val translucent: Boolean /* | Function */?
-        val minificationFilter: TextureMinificationFilter?
-        val magnificationFilter: TextureMagnificationFilter?
-        val fabric: Any
+        var strict: Boolean?
+        var translucent: Boolean /* | Function */?
+        var minificationFilter: TextureMinificationFilter?
+        var magnificationFilter: TextureMagnificationFilter?
+        var fabric: Any
     }
 
     /**

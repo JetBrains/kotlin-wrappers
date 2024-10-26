@@ -47,6 +47,6 @@ external fun createElevationBandMaterial(options: CreateElevationBandMaterialOpt
  */
 @JsPlainObject
 external interface CreateElevationBandMaterialOptions {
-    val scene: Scene
-    val layers: ReadonlyArray<createElevationBandMaterialBand>
+    var scene: Scene
+    var layers: ReadonlyArray<createElevationBandMaterialBand>
 }

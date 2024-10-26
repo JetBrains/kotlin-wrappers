@@ -22,9 +22,9 @@ external class DirectionalLight(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val direction: Cartesian3
-        val color: Color?
-        val intensity: Double?
+        var direction: Cartesian3
+        var color: Color?
+        var intensity: Double?
     }
 
     /**

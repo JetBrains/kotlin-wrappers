@@ -33,5 +33,5 @@ external fun viewerPerformanceWatchdogMixin(
  */
 @JsPlainObject
 external interface ViewerPerformanceWatchdogMixinOptions {
-    val lowFrameRateMessage: String?
+    var lowFrameRateMessage: String?
 }

@@ -86,9 +86,9 @@ external class TaskProcessor(
      */
     @JsPlainObject
     interface InitWebAssemblyModuleOptions {
-        val modulePath: String?
-        val wasmBinaryFile: String?
-        val fallbackModulePath: String?
+        var modulePath: String?
+        var wasmBinaryFile: String?
+        var fallbackModulePath: String?
     }
 
     /**

@@ -22,9 +22,9 @@ external class DataSourceDisplay(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val scene: Scene
-        val dataSourceCollection: DataSourceCollection
-        val visualizersCallback: VisualizersCallback?
+        var scene: Scene
+        var dataSourceCollection: DataSourceCollection
+        var visualizersCallback: VisualizersCallback?
     }
 
     /**

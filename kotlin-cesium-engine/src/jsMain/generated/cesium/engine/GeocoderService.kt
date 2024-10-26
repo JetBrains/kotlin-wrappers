@@ -47,9 +47,9 @@ external class GeocoderService {
      */
     @JsPlainObject
     interface Result {
-        val displayName: String
-        val destination: Any /* Rectangle | Cartesian3 */
-        val attributions: ReadonlyArray<Any>?
+        var displayName: String
+        var destination: Any /* Rectangle | Cartesian3 */
+        var attributions: ReadonlyArray<Any>?
     }
 
     companion object {

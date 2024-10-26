@@ -43,15 +43,15 @@ external class EllipsoidGeometry(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val radii: Cartesian3?
-        val innerRadii: Cartesian3?
-        val minimumClock: Double?
-        val maximumClock: Double?
-        val minimumCone: Double?
-        val maximumCone: Double?
-        val stackPartitions: Int?
-        val slicePartitions: Int?
-        val vertexFormat: VertexFormat?
+        var radii: Cartesian3?
+        var innerRadii: Cartesian3?
+        var minimumClock: Double?
+        var maximumClock: Double?
+        var minimumCone: Double?
+        var maximumCone: Double?
+        var stackPartitions: Int?
+        var slicePartitions: Int?
+        var vertexFormat: VertexFormat?
     }
 
     companion object : Packable<EllipsoidGeometry> {

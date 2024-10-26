@@ -40,12 +40,12 @@ external class GoogleEarthEnterpriseTerrainData(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val buffer: ArrayBuffer
-        val negativeAltitudeExponentBias: Int
-        val negativeElevationThreshold: Double
-        val childTileMask: Int?
-        val createdByUpsampling: Boolean?
-        val credits: ReadonlyArray<Credit>?
+        var buffer: ArrayBuffer
+        var negativeAltitudeExponentBias: Int
+        var negativeElevationThreshold: Double
+        var childTileMask: Int?
+        var createdByUpsampling: Boolean?
+        var credits: ReadonlyArray<Credit>?
     }
 
     /**

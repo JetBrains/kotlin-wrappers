@@ -81,26 +81,26 @@ external class QuantizedMeshTerrainData(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val quantizedVertices: Uint16Array
-        val indices: TypedArray<*, *> /* Uint16Array | Uint32Array */
-        val minimumHeight: Double
-        val maximumHeight: Double
-        val boundingSphere: BoundingSphere
-        val orientedBoundingBox: OrientedBoundingBox?
-        val horizonOcclusionPoint: Cartesian3
-        val westIndices: ReadonlyArray<Double>
-        val southIndices: ReadonlyArray<Double>
-        val eastIndices: ReadonlyArray<Double>
-        val northIndices: ReadonlyArray<Double>
-        val westSkirtHeight: Double
-        val southSkirtHeight: Double
-        val eastSkirtHeight: Double
-        val northSkirtHeight: Double
-        val childTileMask: Int?
-        val createdByUpsampling: Boolean?
-        val encodedNormals: Uint8Array?
-        val waterMask: Uint8Array?
-        val credits: ReadonlyArray<Credit>?
+        var quantizedVertices: Uint16Array
+        var indices: TypedArray<*, *> /* Uint16Array | Uint32Array */
+        var minimumHeight: Double
+        var maximumHeight: Double
+        var boundingSphere: BoundingSphere
+        var orientedBoundingBox: OrientedBoundingBox?
+        var horizonOcclusionPoint: Cartesian3
+        var westIndices: ReadonlyArray<Double>
+        var southIndices: ReadonlyArray<Double>
+        var eastIndices: ReadonlyArray<Double>
+        var northIndices: ReadonlyArray<Double>
+        var westSkirtHeight: Double
+        var southSkirtHeight: Double
+        var eastSkirtHeight: Double
+        var northSkirtHeight: Double
+        var childTileMask: Int?
+        var createdByUpsampling: Boolean?
+        var encodedNormals: Uint8Array?
+        var waterMask: Uint8Array?
+        var credits: ReadonlyArray<Credit>?
     }
 
     /**

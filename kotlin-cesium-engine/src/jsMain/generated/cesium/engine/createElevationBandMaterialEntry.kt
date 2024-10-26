@@ -10,6 +10,6 @@ import kotlinx.js.JsPlainObject
  */
 @JsPlainObject
 external interface createElevationBandMaterialEntry {
-    val height: Double
-    val color: Color
+    var height: Double
+    var color: Color
 }

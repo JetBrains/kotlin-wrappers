@@ -12,6 +12,6 @@ import web.blob.Blob
  */
 @JsPlainObject
 external interface exportKmlResultKml {
-    val kml: String
-    val externalFiles: ReadonlyRecord<String, Blob>
+    var kml: String
+    var externalFiles: ReadonlyRecord<String, Blob>
 }

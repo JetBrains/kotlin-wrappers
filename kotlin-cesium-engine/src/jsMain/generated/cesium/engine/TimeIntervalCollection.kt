@@ -138,10 +138,10 @@ external class TimeIntervalCollection(
      */
     @JsPlainObject
     interface FindIntervalOptions {
-        val start: JulianDate?
-        val stop: JulianDate?
-        val isStartIncluded: Boolean?
-        val isStopIncluded: Boolean?
+        var start: JulianDate?
+        var stop: JulianDate?
+        var isStartIncluded: Boolean?
+        var isStopIncluded: Boolean?
     }
 
     /**
@@ -206,12 +206,12 @@ external class TimeIntervalCollection(
          */
         @JsPlainObject
         interface FromJulianDateArrayOptions {
-            val julianDates: ReadonlyArray<JulianDate>
-            val isStartIncluded: Boolean?
-            val isStopIncluded: Boolean?
-            val leadingInterval: Boolean?
-            val trailingInterval: Boolean?
-            val dataCallback: Function<*>?
+            var julianDates: ReadonlyArray<JulianDate>
+            var isStartIncluded: Boolean?
+            var isStopIncluded: Boolean?
+            var leadingInterval: Boolean?
+            var trailingInterval: Boolean?
+            var dataCallback: Function<*>?
         }
 
         /**
@@ -239,12 +239,12 @@ external class TimeIntervalCollection(
          */
         @JsPlainObject
         interface FromIso8601Options {
-            val iso8601: String
-            val isStartIncluded: Boolean?
-            val isStopIncluded: Boolean?
-            val leadingInterval: Boolean?
-            val trailingInterval: Boolean?
-            val dataCallback: Function<*>?
+            var iso8601: String
+            var isStartIncluded: Boolean?
+            var isStopIncluded: Boolean?
+            var leadingInterval: Boolean?
+            var trailingInterval: Boolean?
+            var dataCallback: Function<*>?
         }
 
         /**
@@ -272,12 +272,12 @@ external class TimeIntervalCollection(
          */
         @JsPlainObject
         interface FromIso8601DateArrayOptions {
-            val iso8601Dates: ReadonlyArray<String>
-            val isStartIncluded: Boolean?
-            val isStopIncluded: Boolean?
-            val leadingInterval: Boolean?
-            val trailingInterval: Boolean?
-            val dataCallback: Function<*>?
+            var iso8601Dates: ReadonlyArray<String>
+            var isStartIncluded: Boolean?
+            var isStopIncluded: Boolean?
+            var leadingInterval: Boolean?
+            var trailingInterval: Boolean?
+            var dataCallback: Function<*>?
         }
 
         /**
@@ -308,14 +308,14 @@ external class TimeIntervalCollection(
          */
         @JsPlainObject
         interface FromIso8601DurationArrayOptions {
-            val epoch: JulianDate
-            val iso8601Durations: String
-            val relativeToPrevious: Boolean?
-            val isStartIncluded: Boolean?
-            val isStopIncluded: Boolean?
-            val leadingInterval: Boolean?
-            val trailingInterval: Boolean?
-            val dataCallback: Function<*>?
+            var epoch: JulianDate
+            var iso8601Durations: String
+            var relativeToPrevious: Boolean?
+            var isStartIncluded: Boolean?
+            var isStopIncluded: Boolean?
+            var leadingInterval: Boolean?
+            var trailingInterval: Boolean?
+            var dataCallback: Function<*>?
         }
     }
 }

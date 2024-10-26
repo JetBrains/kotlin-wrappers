@@ -33,12 +33,12 @@ external class DebugCameraPrimitive(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val camera: Camera
-        val frustumSplits: ReadonlyArray<Double>?
-        val color: Color?
-        val updateOnChange: Boolean?
-        val show: Boolean?
-        val id: Any?
+        var camera: Camera
+        var frustumSplits: ReadonlyArray<Double>?
+        var color: Color?
+        var updateOnChange: Boolean?
+        var show: Boolean?
+        var id: Any?
     }
 
     /**

@@ -179,9 +179,9 @@ private constructor() {
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val ellipsoid: Ellipsoid?
-        val tileDiscardPolicy: TileDiscardPolicy?
-        val credit: Credit?
+        var ellipsoid: Ellipsoid?
+        var tileDiscardPolicy: TileDiscardPolicy?
+        var credit: Credit?
     }
 
     companion object {

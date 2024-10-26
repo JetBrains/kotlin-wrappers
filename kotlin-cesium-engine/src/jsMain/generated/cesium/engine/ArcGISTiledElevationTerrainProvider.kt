@@ -140,8 +140,8 @@ private constructor() :
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val token: String?
-        val ellipsoid: Ellipsoid?
+        var token: String?
+        var ellipsoid: Ellipsoid?
     }
 
     companion object {

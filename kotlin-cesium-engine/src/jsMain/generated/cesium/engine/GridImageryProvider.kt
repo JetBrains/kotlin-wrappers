@@ -192,15 +192,15 @@ external class GridImageryProvider(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val tilingScheme: TilingScheme?
-        val ellipsoid: Ellipsoid?
-        val cells: Int?
-        val color: Color?
-        val glowColor: Color?
-        val glowWidth: Int?
-        val backgroundColor: Color?
-        val tileWidth: Int?
-        val tileHeight: Int?
-        val canvasSize: Int?
+        var tilingScheme: TilingScheme?
+        var ellipsoid: Ellipsoid?
+        var cells: Int?
+        var color: Color?
+        var glowColor: Color?
+        var glowWidth: Int?
+        var backgroundColor: Color?
+        var tileWidth: Int?
+        var tileHeight: Int?
+        var canvasSize: Int?
     }
 }

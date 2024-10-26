@@ -37,8 +37,8 @@ external class ClippingPolygon(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val positions: ReadonlyArray<Cartesian3>
-        val ellipsoid: Ellipsoid?
+        var positions: ReadonlyArray<Cartesian3>
+        var ellipsoid: Ellipsoid?
     }
 
     /**

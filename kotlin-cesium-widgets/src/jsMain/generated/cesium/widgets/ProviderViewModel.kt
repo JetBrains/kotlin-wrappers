@@ -27,11 +27,11 @@ external class ProviderViewModel(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val name: String
-        val tooltip: String
-        val iconUrl: String
-        val category: String?
-        val creationFunction: Any /* ProviderViewModel.CreationFunction | Command */
+        var name: String
+        var tooltip: String
+        var iconUrl: String
+        var category: String?
+        var creationFunction: Any /* ProviderViewModel.CreationFunction | Command */
     }
 
     /**

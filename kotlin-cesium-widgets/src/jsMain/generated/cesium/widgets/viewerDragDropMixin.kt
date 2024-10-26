@@ -41,9 +41,9 @@ external fun viewerDragDropMixin(
  */
 @JsPlainObject
 external interface ViewerDragDropMixinOptions {
-    val dropTarget: Element?
-    val clearOnDrop: Boolean?
-    val flyToOnDrop: Boolean?
-    val clampToGround: Boolean?
-    val proxy: Proxy?
+    var dropTarget: Element?
+    var clearOnDrop: Boolean?
+    var flyToOnDrop: Boolean?
+    var clampToGround: Boolean?
+    var proxy: Proxy?
 }

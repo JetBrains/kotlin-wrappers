@@ -184,8 +184,8 @@ private constructor() {
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val accessToken: String?
-        val server: Resource?
+        var accessToken: String?
+        var server: Resource?
     }
 
     companion object {

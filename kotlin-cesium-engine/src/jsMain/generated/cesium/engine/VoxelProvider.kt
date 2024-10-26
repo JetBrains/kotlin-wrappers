@@ -137,9 +137,9 @@ abstract external class VoxelProvider {
      */
     @JsPlainObject
     interface RequestDataOptions {
-        val tileLevel: Int?
-        val tileX: Double?
-        val tileY: Double?
-        val tileZ: Double?
+        var tileLevel: Int?
+        var tileX: Double?
+        var tileY: Double?
+        var tileZ: Double?
     }
 }

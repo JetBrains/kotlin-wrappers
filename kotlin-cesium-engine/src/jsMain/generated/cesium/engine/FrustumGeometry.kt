@@ -23,10 +23,10 @@ external class FrustumGeometry(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val frustum: Any /* PerspectiveFrustum | OrthographicFrustum */
-        val origin: Cartesian3
-        val orientation: Quaternion
-        val vertexFormat: VertexFormat?
+        var frustum: Any /* PerspectiveFrustum | OrthographicFrustum */
+        var origin: Cartesian3
+        var orientation: Quaternion
+        var vertexFormat: VertexFormat?
     }
 
     /**

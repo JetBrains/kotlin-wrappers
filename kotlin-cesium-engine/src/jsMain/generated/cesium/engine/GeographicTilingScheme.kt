@@ -30,10 +30,10 @@ external class GeographicTilingScheme(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val ellipsoid: Ellipsoid?
-        val rectangle: Rectangle?
-        val numberOfLevelZeroTilesX: Int?
-        val numberOfLevelZeroTilesY: Int?
+        var ellipsoid: Ellipsoid?
+        var rectangle: Rectangle?
+        var numberOfLevelZeroTilesX: Int?
+        var numberOfLevelZeroTilesY: Int?
     }
 
     /**

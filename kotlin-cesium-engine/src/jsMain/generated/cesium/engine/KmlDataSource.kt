@@ -220,13 +220,13 @@ external class KmlDataSource(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val camera: Camera?
-        val canvas: HTMLCanvasElement?
-        val credit: Credit?
-        val sourceUri: String?
-        val clampToGround: Boolean?
-        val ellipsoid: Ellipsoid?
-        val screenOverlayContainer: Element?
+        var camera: Camera?
+        var canvas: HTMLCanvasElement?
+        var credit: Credit?
+        var sourceUri: String?
+        var clampToGround: Boolean?
+        var ellipsoid: Ellipsoid?
+        var screenOverlayContainer: Element?
     }
 
     companion object {
@@ -297,10 +297,10 @@ external class KmlDataSource(
          */
         @JsPlainObject
         interface LoadOptions {
-            val sourceUri: String?
-            val clampToGround: Boolean?
-            val ellipsoid: Ellipsoid?
-            val screenOverlayContainer: Element?
+            var sourceUri: String?
+            var clampToGround: Boolean?
+            var ellipsoid: Ellipsoid?
+            var screenOverlayContainer: Element?
         }
     }
 }

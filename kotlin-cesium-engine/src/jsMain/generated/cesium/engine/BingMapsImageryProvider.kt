@@ -216,13 +216,13 @@ private constructor() {
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val key: String?
-        val tileProtocol: String?
-        val mapStyle: BingMapsStyle?
-        val mapLayer: String?
-        val culture: String?
-        val ellipsoid: Ellipsoid?
-        val tileDiscardPolicy: TileDiscardPolicy?
+        var key: String?
+        var tileProtocol: String?
+        var mapStyle: BingMapsStyle?
+        var mapLayer: String?
+        var culture: String?
+        var ellipsoid: Ellipsoid?
+        var tileDiscardPolicy: TileDiscardPolicy?
     }
 
     companion object {

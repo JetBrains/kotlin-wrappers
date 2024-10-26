@@ -27,8 +27,8 @@ external class EllipsoidTerrainProvider(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val tilingScheme: TilingScheme?
-        val ellipsoid: Ellipsoid?
+        var tilingScheme: TilingScheme?
+        var ellipsoid: Ellipsoid?
     }
 
     /**

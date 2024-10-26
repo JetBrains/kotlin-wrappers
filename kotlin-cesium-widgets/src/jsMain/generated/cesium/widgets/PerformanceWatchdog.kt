@@ -25,9 +25,9 @@ external class PerformanceWatchdog(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val container: Element
-        val scene: Scene
-        val lowFrameRateMessage: String?
+        var container: Element
+        var scene: Scene
+        var lowFrameRateMessage: String?
     }
 
     /**

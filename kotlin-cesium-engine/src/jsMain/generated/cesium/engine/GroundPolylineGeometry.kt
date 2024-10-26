@@ -42,11 +42,11 @@ external class GroundPolylineGeometry(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val positions: ReadonlyArray<Cartesian3>
-        val width: Double?
-        val granularity: Double?
-        val loop: Boolean?
-        val arcType: ArcType?
+        var positions: ReadonlyArray<Cartesian3>
+        var width: Double?
+        var granularity: Double?
+        var loop: Boolean?
+        var arcType: ArcType?
     }
 
     /**

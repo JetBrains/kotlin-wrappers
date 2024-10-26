@@ -55,10 +55,10 @@ external class HermiteSpline(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val times: ReadonlyArray<Double>
-        val points: ReadonlyArray<Cartesian3>
-        val inTangents: ReadonlyArray<Cartesian3>
-        val outTangents: ReadonlyArray<Cartesian3>
+        var times: ReadonlyArray<Double>
+        var points: ReadonlyArray<Cartesian3>
+        var inTangents: ReadonlyArray<Cartesian3>
+        var outTangents: ReadonlyArray<Cartesian3>
     }
 
     /**
@@ -162,9 +162,9 @@ external class HermiteSpline(
          */
         @JsPlainObject
         interface CreateC1Options {
-            val times: ReadonlyArray<Double>
-            val points: ReadonlyArray<Cartesian3>
-            val tangents: ReadonlyArray<Cartesian3>
+            var times: ReadonlyArray<Double>
+            var points: ReadonlyArray<Cartesian3>
+            var tangents: ReadonlyArray<Cartesian3>
         }
 
         /**
@@ -194,8 +194,8 @@ external class HermiteSpline(
          */
         @JsPlainObject
         interface CreateNaturalCubicOptions {
-            val times: ReadonlyArray<Double>
-            val points: ReadonlyArray<Cartesian3>
+            var times: ReadonlyArray<Double>
+            var points: ReadonlyArray<Cartesian3>
         }
 
         /**
@@ -229,10 +229,10 @@ external class HermiteSpline(
          */
         @JsPlainObject
         interface CreateClampedCubicOptions {
-            val times: ReadonlyArray<Double>
-            val points: ReadonlyArray<Cartesian3 /* or number */>
-            val firstTangent: Cartesian3
-            val lastTangent: Cartesian3
+            var times: ReadonlyArray<Double>
+            var points: ReadonlyArray<Cartesian3 /* or number */>
+            var firstTangent: Cartesian3
+            var lastTangent: Cartesian3
         }
     }
 }

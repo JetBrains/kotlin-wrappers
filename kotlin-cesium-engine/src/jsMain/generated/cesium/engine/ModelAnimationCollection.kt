@@ -127,16 +127,16 @@ private constructor() {
      */
     @JsPlainObject
     interface AddOptions {
-        val name: String?
-        val index: Int?
-        val startTime: JulianDate?
-        val delay: Double?
-        val stopTime: JulianDate?
-        val removeOnStop: Boolean?
-        val multiplier: Double?
-        val reverse: Boolean?
-        val loop: ModelAnimationLoop?
-        val animationTime: AnimationTimeCallback?
+        var name: String?
+        var index: Int?
+        var startTime: JulianDate?
+        var delay: Double?
+        var stopTime: JulianDate?
+        var removeOnStop: Boolean?
+        var multiplier: Double?
+        var reverse: Boolean?
+        var loop: ModelAnimationLoop?
+        var animationTime: AnimationTimeCallback?
     }
 
     /**
@@ -172,14 +172,14 @@ private constructor() {
      */
     @JsPlainObject
     interface AddAllOptions {
-        val startTime: JulianDate?
-        val delay: Double?
-        val stopTime: JulianDate?
-        val removeOnStop: Boolean?
-        val multiplier: Double?
-        val reverse: Boolean?
-        val loop: ModelAnimationLoop?
-        val animationTime: AnimationTimeCallback?
+        var startTime: JulianDate?
+        var delay: Double?
+        var stopTime: JulianDate?
+        var removeOnStop: Boolean?
+        var multiplier: Double?
+        var reverse: Boolean?
+        var loop: ModelAnimationLoop?
+        var animationTime: AnimationTimeCallback?
     }
 
     /**

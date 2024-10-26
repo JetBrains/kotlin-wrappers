@@ -30,8 +30,8 @@ external class NavigationHelpButton(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val container: Element
-        val instructionsInitiallyVisible: Boolean?
+        var container: Element
+        var instructionsInitiallyVisible: Boolean?
     }
 
     /**

@@ -60,35 +60,35 @@ external class ParticleSystem(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val show: Boolean?
-        val updateCallback: UpdateCallback?
-        val emitter: ParticleEmitter?
-        val modelMatrix: Matrix4?
-        val emitterModelMatrix: Matrix4?
-        val emissionRate: Int?
-        val bursts: ReadonlyArray<ParticleBurst>?
-        val loop: Boolean?
-        val scale: Double?
-        val startScale: Double?
-        val endScale: Double?
-        val color: Color?
-        val startColor: Color?
-        val endColor: Color?
-        val image: Any?
-        val imageSize: Cartesian2?
-        val minimumImageSize: Cartesian2?
-        val maximumImageSize: Cartesian2?
-        val sizeInMeters: Boolean?
-        val speed: Double?
-        val minimumSpeed: Double?
-        val maximumSpeed: Double?
-        val lifetime: Double?
-        val particleLife: Double?
-        val minimumParticleLife: Double?
-        val maximumParticleLife: Double?
-        val mass: Double?
-        val minimumMass: Double?
-        val maximumMass: Double?
+        var show: Boolean?
+        var updateCallback: UpdateCallback?
+        var emitter: ParticleEmitter?
+        var modelMatrix: Matrix4?
+        var emitterModelMatrix: Matrix4?
+        var emissionRate: Int?
+        var bursts: ReadonlyArray<ParticleBurst>?
+        var loop: Boolean?
+        var scale: Double?
+        var startScale: Double?
+        var endScale: Double?
+        var color: Color?
+        var startColor: Color?
+        var endColor: Color?
+        var image: Any?
+        var imageSize: Cartesian2?
+        var minimumImageSize: Cartesian2?
+        var maximumImageSize: Cartesian2?
+        var sizeInMeters: Boolean?
+        var speed: Double?
+        var minimumSpeed: Double?
+        var maximumSpeed: Double?
+        var lifetime: Double?
+        var particleLife: Double?
+        var minimumParticleLife: Double?
+        var maximumParticleLife: Double?
+        var mass: Double?
+        var minimumMass: Double?
+        var maximumMass: Double?
     }
 
     /**

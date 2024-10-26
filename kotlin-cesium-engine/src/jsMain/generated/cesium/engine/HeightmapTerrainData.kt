@@ -87,26 +87,26 @@ external class HeightmapTerrainData(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val buffer: TypedArray<*, *> /* Int8Array | Uint8Array | Int16Array | Uint16Array | Int32Array | Uint32Array | Float32Array | Float64Array */
-        val width: Double
-        val height: Double
-        val childTileMask: Int?
-        val waterMask: Uint8Array?
-        val structure: ConstructorOptionsStructure?
-        val encoding: HeightmapEncoding?
-        val createdByUpsampling: Boolean?
+        var buffer: TypedArray<*, *> /* Int8Array | Uint8Array | Int16Array | Uint16Array | Int32Array | Uint32Array | Float32Array | Float64Array */
+        var width: Double
+        var height: Double
+        var childTileMask: Int?
+        var waterMask: Uint8Array?
+        var structure: ConstructorOptionsStructure?
+        var encoding: HeightmapEncoding?
+        var createdByUpsampling: Boolean?
     }
 
     @JsPlainObject
     interface ConstructorOptionsStructure {
-        val heightScale: Double?
-        val heightOffset: Double?
-        val elementsPerHeight: Int?
-        val stride: Int?
-        val elementMultiplier: Double?
-        val isBigEndian: Boolean?
-        val lowestEncodedHeight: Double?
-        val highestEncodedHeight: Double?
+        var heightScale: Double?
+        var heightOffset: Double?
+        var elementsPerHeight: Int?
+        var stride: Int?
+        var elementMultiplier: Double?
+        var isBigEndian: Boolean?
+        var lowestEncodedHeight: Double?
+        var highestEncodedHeight: Double?
     }
 
     /**

@@ -202,15 +202,15 @@ external class Resource(
      */
     @JsPlainObject
     interface GetDerivedResourceOptions {
-        val url: String?
-        val queryParameters: Any?
-        val templateValues: Any?
-        val headers: Any?
-        val proxy: Proxy?
-        val retryCallback: RetryCallback?
-        val retryAttempts: Int?
-        val request: Request?
-        val preserveQueryParameters: Boolean?
+        var url: String?
+        var queryParameters: Any?
+        var templateValues: Any?
+        var headers: Any?
+        var proxy: Proxy?
+        var retryCallback: RetryCallback?
+        var retryAttempts: Int?
+        var request: Request?
+        var preserveQueryParameters: Boolean?
     }
 
     /**
@@ -318,10 +318,10 @@ external class Resource(
      */
     @JsPlainObject
     interface FetchImageOptions {
-        val preferBlob: Boolean?
-        val preferImageBitmap: Boolean?
-        val flipY: Boolean?
-        val skipColorSpaceConversion: Boolean?
+        var preferBlob: Boolean?
+        var preferImageBitmap: Boolean?
+        var flipY: Boolean?
+        var skipColorSpaceConversion: Boolean?
     }
 
     /**
@@ -450,9 +450,9 @@ external class Resource(
      */
     @JsPlainObject
     interface FetchOptions {
-        val responseType: String?
-        val headers: Any?
-        val overrideMimeType: String?
+        var responseType: String?
+        var headers: Any?
+        var overrideMimeType: String?
     }
 
     /**
@@ -484,9 +484,9 @@ external class Resource(
      */
     @JsPlainObject
     interface DeleteOptions {
-        val responseType: String?
-        val headers: Any?
-        val overrideMimeType: String?
+        var responseType: String?
+        var headers: Any?
+        var overrideMimeType: String?
     }
 
     /**
@@ -518,9 +518,9 @@ external class Resource(
      */
     @JsPlainObject
     interface HeadOptions {
-        val responseType: String?
-        val headers: Any?
-        val overrideMimeType: String?
+        var responseType: String?
+        var headers: Any?
+        var overrideMimeType: String?
     }
 
     /**
@@ -552,9 +552,9 @@ external class Resource(
      */
     @JsPlainObject
     interface OptionsOptions {
-        val responseType: String?
-        val headers: Any?
-        val overrideMimeType: String?
+        var responseType: String?
+        var headers: Any?
+        var overrideMimeType: String?
     }
 
     /**
@@ -594,10 +594,10 @@ external class Resource(
      */
     @JsPlainObject
     interface PostOptions {
-        val data: Any?
-        val responseType: String?
-        val headers: Any?
-        val overrideMimeType: String?
+        var data: Any?
+        var responseType: String?
+        var headers: Any?
+        var overrideMimeType: String?
     }
 
     /**
@@ -636,9 +636,9 @@ external class Resource(
      */
     @JsPlainObject
     interface PutOptions {
-        val responseType: String?
-        val headers: Any?
-        val overrideMimeType: String?
+        var responseType: String?
+        var headers: Any?
+        var overrideMimeType: String?
     }
 
     /**
@@ -677,9 +677,9 @@ external class Resource(
      */
     @JsPlainObject
     interface PatchOptions {
-        val responseType: String?
-        val headers: Any?
-        val overrideMimeType: String?
+        var responseType: String?
+        var headers: Any?
+        var overrideMimeType: String?
     }
 
     /**
@@ -700,15 +700,15 @@ external class Resource(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val url: String
-        val queryParameters: Any?
-        val templateValues: Any?
-        val headers: Any?
-        val proxy: Proxy?
-        val retryCallback: RetryCallback?
-        val retryAttempts: Int?
-        val request: Request?
-        val parseUrl: Boolean?
+        var url: String
+        var queryParameters: Any?
+        var templateValues: Any?
+        var headers: Any?
+        var proxy: Proxy?
+        var retryCallback: RetryCallback?
+        var retryAttempts: Int?
+        var request: Request?
+        var parseUrl: Boolean?
     }
 
     companion object {
@@ -744,14 +744,14 @@ external class Resource(
          */
         @JsPlainObject
         interface FetchArrayBufferOptions {
-            val url: String
-            val queryParameters: Any?
-            val templateValues: Any?
-            val headers: Any?
-            val proxy: Proxy?
-            val retryCallback: RetryCallback?
-            val retryAttempts: Int?
-            val request: Request?
+            var url: String
+            var queryParameters: Any?
+            var templateValues: Any?
+            var headers: Any?
+            var proxy: Proxy?
+            var retryCallback: RetryCallback?
+            var retryAttempts: Int?
+            var request: Request?
         }
 
         /**
@@ -780,14 +780,14 @@ external class Resource(
          */
         @JsPlainObject
         interface FetchBlobOptions {
-            val url: String
-            val queryParameters: Any?
-            val templateValues: Any?
-            val headers: Any?
-            val proxy: Proxy?
-            val retryCallback: RetryCallback?
-            val retryAttempts: Int?
-            val request: Request?
+            var url: String
+            var queryParameters: Any?
+            var templateValues: Any?
+            var headers: Any?
+            var proxy: Proxy?
+            var retryCallback: RetryCallback?
+            var retryAttempts: Int?
+            var request: Request?
         }
 
         /**
@@ -824,18 +824,18 @@ external class Resource(
          */
         @JsPlainObject
         interface FetchImageOptions {
-            val url: String
-            val queryParameters: Any?
-            val templateValues: Any?
-            val headers: Any?
-            val proxy: Proxy?
-            val flipY: Boolean?
-            val retryCallback: RetryCallback?
-            val retryAttempts: Int?
-            val request: Request?
-            val preferBlob: Boolean?
-            val preferImageBitmap: Boolean?
-            val skipColorSpaceConversion: Boolean?
+            var url: String
+            var queryParameters: Any?
+            var templateValues: Any?
+            var headers: Any?
+            var proxy: Proxy?
+            var flipY: Boolean?
+            var retryCallback: RetryCallback?
+            var retryAttempts: Int?
+            var request: Request?
+            var preferBlob: Boolean?
+            var preferImageBitmap: Boolean?
+            var skipColorSpaceConversion: Boolean?
         }
 
         /**
@@ -864,14 +864,14 @@ external class Resource(
          */
         @JsPlainObject
         interface FetchTextOptions {
-            val url: String
-            val queryParameters: Any?
-            val templateValues: Any?
-            val headers: Any?
-            val proxy: Proxy?
-            val retryCallback: RetryCallback?
-            val retryAttempts: Int?
-            val request: Request?
+            var url: String
+            var queryParameters: Any?
+            var templateValues: Any?
+            var headers: Any?
+            var proxy: Proxy?
+            var retryCallback: RetryCallback?
+            var retryAttempts: Int?
+            var request: Request?
         }
 
         /**
@@ -900,14 +900,14 @@ external class Resource(
          */
         @JsPlainObject
         interface FetchJsonOptions {
-            val url: String
-            val queryParameters: Any?
-            val templateValues: Any?
-            val headers: Any?
-            val proxy: Proxy?
-            val retryCallback: RetryCallback?
-            val retryAttempts: Int?
-            val request: Request?
+            var url: String
+            var queryParameters: Any?
+            var templateValues: Any?
+            var headers: Any?
+            var proxy: Proxy?
+            var retryCallback: RetryCallback?
+            var retryAttempts: Int?
+            var request: Request?
         }
 
         /**
@@ -936,14 +936,14 @@ external class Resource(
          */
         @JsPlainObject
         interface FetchXMLOptions {
-            val url: String
-            val queryParameters: Any?
-            val templateValues: Any?
-            val headers: Any?
-            val proxy: Proxy?
-            val retryCallback: RetryCallback?
-            val retryAttempts: Int?
-            val request: Request?
+            var url: String
+            var queryParameters: Any?
+            var templateValues: Any?
+            var headers: Any?
+            var proxy: Proxy?
+            var retryCallback: RetryCallback?
+            var retryAttempts: Int?
+            var request: Request?
         }
 
         /**
@@ -974,15 +974,15 @@ external class Resource(
          */
         @JsPlainObject
         interface FetchJsonpOptions {
-            val url: String
-            val queryParameters: Any?
-            val templateValues: Any?
-            val headers: Any?
-            val proxy: Proxy?
-            val retryCallback: RetryCallback?
-            val retryAttempts: Int?
-            val request: Request?
-            val callbackParameterName: String?
+            var url: String
+            var queryParameters: Any?
+            var templateValues: Any?
+            var headers: Any?
+            var proxy: Proxy?
+            var retryCallback: RetryCallback?
+            var retryAttempts: Int?
+            var request: Request?
+            var callbackParameterName: String?
         }
 
         /**
@@ -1013,16 +1013,16 @@ external class Resource(
          */
         @JsPlainObject
         interface FetchOptions {
-            val url: String
-            val queryParameters: Any?
-            val templateValues: Any?
-            val headers: Any?
-            val proxy: Proxy?
-            val retryCallback: RetryCallback?
-            val retryAttempts: Int?
-            val request: Request?
-            val responseType: String?
-            val overrideMimeType: String?
+            var url: String
+            var queryParameters: Any?
+            var templateValues: Any?
+            var headers: Any?
+            var proxy: Proxy?
+            var retryCallback: RetryCallback?
+            var retryAttempts: Int?
+            var request: Request?
+            var responseType: String?
+            var overrideMimeType: String?
         }
 
         /**
@@ -1054,17 +1054,17 @@ external class Resource(
          */
         @JsPlainObject
         interface DeleteOptions {
-            val url: String
-            val data: Any?
-            val queryParameters: Any?
-            val templateValues: Any?
-            val headers: Any?
-            val proxy: Proxy?
-            val retryCallback: RetryCallback?
-            val retryAttempts: Int?
-            val request: Request?
-            val responseType: String?
-            val overrideMimeType: String?
+            var url: String
+            var data: Any?
+            var queryParameters: Any?
+            var templateValues: Any?
+            var headers: Any?
+            var proxy: Proxy?
+            var retryCallback: RetryCallback?
+            var retryAttempts: Int?
+            var request: Request?
+            var responseType: String?
+            var overrideMimeType: String?
         }
 
         /**
@@ -1095,16 +1095,16 @@ external class Resource(
          */
         @JsPlainObject
         interface HeadOptions {
-            val url: String
-            val queryParameters: Any?
-            val templateValues: Any?
-            val headers: Any?
-            val proxy: Proxy?
-            val retryCallback: RetryCallback?
-            val retryAttempts: Int?
-            val request: Request?
-            val responseType: String?
-            val overrideMimeType: String?
+            var url: String
+            var queryParameters: Any?
+            var templateValues: Any?
+            var headers: Any?
+            var proxy: Proxy?
+            var retryCallback: RetryCallback?
+            var retryAttempts: Int?
+            var request: Request?
+            var responseType: String?
+            var overrideMimeType: String?
         }
 
         /**
@@ -1135,16 +1135,16 @@ external class Resource(
          */
         @JsPlainObject
         interface OptionsOptions {
-            val url: String
-            val queryParameters: Any?
-            val templateValues: Any?
-            val headers: Any?
-            val proxy: Proxy?
-            val retryCallback: RetryCallback?
-            val retryAttempts: Int?
-            val request: Request?
-            val responseType: String?
-            val overrideMimeType: String?
+            var url: String
+            var queryParameters: Any?
+            var templateValues: Any?
+            var headers: Any?
+            var proxy: Proxy?
+            var retryCallback: RetryCallback?
+            var retryAttempts: Int?
+            var request: Request?
+            var responseType: String?
+            var overrideMimeType: String?
         }
 
         /**
@@ -1176,17 +1176,17 @@ external class Resource(
          */
         @JsPlainObject
         interface PostOptions {
-            val url: String
-            val data: Any
-            val queryParameters: Any?
-            val templateValues: Any?
-            val headers: Any?
-            val proxy: Proxy?
-            val retryCallback: RetryCallback?
-            val retryAttempts: Int?
-            val request: Request?
-            val responseType: String?
-            val overrideMimeType: String?
+            var url: String
+            var data: Any
+            var queryParameters: Any?
+            var templateValues: Any?
+            var headers: Any?
+            var proxy: Proxy?
+            var retryCallback: RetryCallback?
+            var retryAttempts: Int?
+            var request: Request?
+            var responseType: String?
+            var overrideMimeType: String?
         }
 
         /**
@@ -1218,17 +1218,17 @@ external class Resource(
          */
         @JsPlainObject
         interface PutOptions {
-            val url: String
-            val data: Any
-            val queryParameters: Any?
-            val templateValues: Any?
-            val headers: Any?
-            val proxy: Proxy?
-            val retryCallback: RetryCallback?
-            val retryAttempts: Int?
-            val request: Request?
-            val responseType: String?
-            val overrideMimeType: String?
+            var url: String
+            var data: Any
+            var queryParameters: Any?
+            var templateValues: Any?
+            var headers: Any?
+            var proxy: Proxy?
+            var retryCallback: RetryCallback?
+            var retryAttempts: Int?
+            var request: Request?
+            var responseType: String?
+            var overrideMimeType: String?
         }
 
         /**
@@ -1260,17 +1260,17 @@ external class Resource(
          */
         @JsPlainObject
         interface PatchOptions {
-            val url: String
-            val data: Any
-            val queryParameters: Any?
-            val templateValues: Any?
-            val headers: Any?
-            val proxy: Proxy?
-            val retryCallback: RetryCallback?
-            val retryAttempts: Int?
-            val request: Request?
-            val responseType: String?
-            val overrideMimeType: String?
+            var url: String
+            var data: Any
+            var queryParameters: Any?
+            var templateValues: Any?
+            var headers: Any?
+            var proxy: Proxy?
+            var retryCallback: RetryCallback?
+            var retryAttempts: Int?
+            var request: Request?
+            var responseType: String?
+            var overrideMimeType: String?
         }
 
         /**

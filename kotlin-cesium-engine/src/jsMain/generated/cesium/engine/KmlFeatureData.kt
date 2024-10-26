@@ -57,9 +57,9 @@ external class KmlFeatureData {
      */
     @JsPlainObject
     interface Author {
-        val name: String
-        val uri: String
-        val age: Double
+        var name: String
+        var uri: String
+        var age: Double
     }
 
     /**
@@ -73,11 +73,11 @@ external class KmlFeatureData {
      */
     @JsPlainObject
     interface Link {
-        val href: String
-        val hreflang: String
-        val rel: String
-        val type: String
-        val title: String
-        val length: String
+        var href: String
+        var hreflang: String
+        var rel: String
+        var type: String
+        var title: String
+        var length: String
     }
 }

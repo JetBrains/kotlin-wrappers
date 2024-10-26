@@ -49,9 +49,9 @@ external class ClippingPolygonCollection(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val polygons: ReadonlyArray<ClippingPolygon>?
-        val enabled: Boolean?
-        val inverse: Boolean?
+        var polygons: ReadonlyArray<ClippingPolygon>?
+        var enabled: Boolean?
+        var inverse: Boolean?
     }
 
     /**

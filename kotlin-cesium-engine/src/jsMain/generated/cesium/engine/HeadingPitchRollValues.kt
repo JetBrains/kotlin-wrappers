@@ -15,7 +15,7 @@ import kotlinx.js.JsPlainObject
  */
 @JsPlainObject
 external interface HeadingPitchRollValues : CameraOrientation {
-    val heading: Double?
-    val pitch: Double?
-    val roll: Double?
+    var heading: Double?
+    var pitch: Double?
+    var roll: Double?
 }

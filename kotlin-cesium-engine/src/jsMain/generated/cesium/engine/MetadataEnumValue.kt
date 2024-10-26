@@ -24,11 +24,11 @@ external class MetadataEnumValue(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val value: Double
-        val name: String
-        val description: String?
-        val extras: Any?
-        val extensions: Any?
+        var value: Double
+        var name: String
+        var description: String?
+        var extras: Any?
+        var extensions: Any?
     }
 
     /**

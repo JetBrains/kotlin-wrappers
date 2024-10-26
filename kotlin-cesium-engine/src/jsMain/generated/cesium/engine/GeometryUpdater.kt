@@ -23,11 +23,11 @@ external class GeometryUpdater(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val entity: Entity
-        val scene: Scene
-        val geometryOptions: Any
-        val geometryPropertyName: String
-        val observedPropertyNames: ReadonlyArray<String>
+        var entity: Entity
+        var scene: Scene
+        var geometryOptions: Any
+        var geometryPropertyName: String
+        var observedPropertyNames: ReadonlyArray<String>
     }
 
     /**

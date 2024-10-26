@@ -50,14 +50,14 @@ external class RectangleGeometry(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val rectangle: Rectangle
-        val vertexFormat: VertexFormat?
-        val ellipsoid: Ellipsoid?
-        val granularity: Double?
-        val height: Double?
-        val rotation: Double?
-        val stRotation: Double?
-        val extrudedHeight: Double?
+        var rectangle: Rectangle
+        var vertexFormat: VertexFormat?
+        var ellipsoid: Ellipsoid?
+        var granularity: Double?
+        var height: Double?
+        var rotation: Double?
+        var stRotation: Double?
+        var extrudedHeight: Double?
     }
 
     companion object : Packable<RectangleGeometry> {
@@ -119,10 +119,10 @@ external class RectangleGeometry(
          */
         @JsPlainObject
         interface ComputeRectangleOptions {
-            val rectangle: Rectangle
-            val ellipsoid: Ellipsoid?
-            val granularity: Double?
-            val rotation: Double?
+            var rectangle: Rectangle
+            var ellipsoid: Ellipsoid?
+            var granularity: Double?
+            var rotation: Double?
         }
 
         /**

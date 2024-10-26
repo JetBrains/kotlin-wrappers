@@ -57,12 +57,12 @@ external class ClippingPlaneCollection(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val planes: ReadonlyArray<ClippingPlane>?
-        val enabled: Boolean?
-        val modelMatrix: Matrix4?
-        val unionClippingRegions: Boolean?
-        val edgeColor: Color?
-        val edgeWidth: Double?
+        var planes: ReadonlyArray<ClippingPlane>?
+        var enabled: Boolean?
+        var modelMatrix: Matrix4?
+        var unionClippingRegions: Boolean?
+        var edgeColor: Color?
+        var edgeWidth: Double?
     }
 
     /**

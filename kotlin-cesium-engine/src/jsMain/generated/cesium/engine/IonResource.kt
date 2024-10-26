@@ -76,10 +76,10 @@ external class IonResource(
      */
     @JsPlainObject
     interface FetchImageOptions {
-        val preferBlob: Boolean?
-        val preferImageBitmap: Boolean?
-        val flipY: Boolean?
-        val skipColorSpaceConversion: Boolean?
+        var preferBlob: Boolean?
+        var preferImageBitmap: Boolean?
+        var flipY: Boolean?
+        var skipColorSpaceConversion: Boolean?
     }
 
     companion object {
@@ -126,8 +126,8 @@ external class IonResource(
          */
         @JsPlainObject
         interface FromAssetIdOptions {
-            val accessToken: String?
-            val server: Resource?
+            var accessToken: String?
+            var server: Resource?
         }
     }
 }

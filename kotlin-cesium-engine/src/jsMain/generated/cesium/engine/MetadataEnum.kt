@@ -28,13 +28,13 @@ external class MetadataEnum(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val id: String
-        val values: ReadonlyArray<MetadataEnumValue>
-        val valueType: MetadataComponentType?
-        val name: String?
-        val description: String?
-        val extras: Any?
-        val extensions: Any?
+        var id: String
+        var values: ReadonlyArray<MetadataEnumValue>
+        var valueType: MetadataComponentType?
+        var name: String?
+        var description: String?
+        var extras: Any?
+        var extensions: Any?
     }
 
     /**

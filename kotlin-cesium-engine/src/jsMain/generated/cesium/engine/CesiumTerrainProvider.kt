@@ -185,11 +185,11 @@ private constructor() :
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val requestVertexNormals: Boolean?
-        val requestWaterMask: Boolean?
-        val requestMetadata: Boolean?
-        val ellipsoid: Ellipsoid?
-        val credit: Credit?
+        var requestVertexNormals: Boolean?
+        var requestWaterMask: Boolean?
+        var requestMetadata: Boolean?
+        var ellipsoid: Ellipsoid?
+        var credit: Credit?
     }
 
     companion object {

@@ -118,8 +118,8 @@ external class Terrain(
          */
         @JsPlainObject
         interface FromWorldTerrainOptions {
-            val requestVertexNormals: Boolean?
-            val requestWaterMask: Boolean?
+            var requestVertexNormals: Boolean?
+            var requestWaterMask: Boolean?
         }
 
         /**
@@ -167,7 +167,7 @@ external class Terrain(
          */
         @JsPlainObject
         interface FromWorldBathymetryOptions {
-            val requestVertexNormals: Boolean?
+            var requestVertexNormals: Boolean?
         }
     }
 }

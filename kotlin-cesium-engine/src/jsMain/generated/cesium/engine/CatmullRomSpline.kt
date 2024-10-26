@@ -43,10 +43,10 @@ external class CatmullRomSpline(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val times: ReadonlyArray<Double>
-        val points: ReadonlyArray<Cartesian3>
-        val firstTangent: Cartesian3?
-        val lastTangent: Cartesian3?
+        var times: ReadonlyArray<Double>
+        var points: ReadonlyArray<Cartesian3>
+        var firstTangent: Cartesian3?
+        var lastTangent: Cartesian3?
     }
 
     /**

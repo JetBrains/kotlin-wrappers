@@ -25,9 +25,9 @@ external class IonGeocoderService(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val scene: Scene
-        val accessToken: String?
-        val server: Resource?
+        var scene: Scene
+        var accessToken: String?
+        var server: Resource?
     }
 
     /**

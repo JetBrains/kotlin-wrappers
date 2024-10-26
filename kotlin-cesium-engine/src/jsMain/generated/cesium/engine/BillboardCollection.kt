@@ -45,11 +45,11 @@ external class BillboardCollection(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val modelMatrix: Matrix4?
-        val debugShowBoundingVolume: Boolean?
-        val scene: Scene?
-        val blendOption: BlendOption?
-        val show: Boolean?
+        var modelMatrix: Matrix4?
+        var debugShowBoundingVolume: Boolean?
+        var scene: Scene?
+        var blendOption: BlendOption?
+        var show: Boolean?
     }
 
     /**

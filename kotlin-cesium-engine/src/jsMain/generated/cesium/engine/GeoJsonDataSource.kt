@@ -327,16 +327,16 @@ external class GeoJsonDataSource(
          */
         @JsPlainObject
         interface LoadOptions {
-            val sourceUri: String?
-            val describe: describe?
-            val markerSize: Double?
-            val markerSymbol: String?
-            val markerColor: Color?
-            val stroke: Color?
-            val strokeWidth: Double?
-            val fill: Color?
-            val clampToGround: Boolean?
-            val credit: Credit?
+            var sourceUri: String?
+            var describe: describe?
+            var markerSize: Double?
+            var markerSymbol: String?
+            var markerColor: Color?
+            var stroke: Color?
+            var strokeWidth: Double?
+            var fill: Color?
+            var clampToGround: Boolean?
+            var credit: Credit?
         }
     }
 }

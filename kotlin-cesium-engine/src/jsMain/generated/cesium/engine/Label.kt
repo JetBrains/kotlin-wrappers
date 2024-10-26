@@ -319,29 +319,29 @@ private constructor() {
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val position: Cartesian3
-        val id: Any?
-        val show: Boolean?
-        val text: String?
-        val font: String?
-        val style: LabelStyle?
-        val scale: Double?
-        val showBackground: Boolean?
-        val backgroundColor: Color?
-        val backgroundPadding: Cartesian2?
-        val pixelOffset: Cartesian2?
-        val eyeOffset: Cartesian3?
-        val horizontalOrigin: HorizontalOrigin?
-        val verticalOrigin: VerticalOrigin?
-        val heightReference: HeightReference?
-        val fillColor: Color?
-        val outlineColor: Color?
-        val outlineWidth: Double?
-        val translucencyByDistance: NearFarScalar?
-        val pixelOffsetScaleByDistance: NearFarScalar?
-        val scaleByDistance: NearFarScalar?
-        val distanceDisplayCondition: DistanceDisplayCondition?
-        val disableDepthTestDistance: Double?
+        var position: Cartesian3
+        var id: Any?
+        var show: Boolean?
+        var text: String?
+        var font: String?
+        var style: LabelStyle?
+        var scale: Double?
+        var showBackground: Boolean?
+        var backgroundColor: Color?
+        var backgroundPadding: Cartesian2?
+        var pixelOffset: Cartesian2?
+        var eyeOffset: Cartesian3?
+        var horizontalOrigin: HorizontalOrigin?
+        var verticalOrigin: VerticalOrigin?
+        var heightReference: HeightReference?
+        var fillColor: Color?
+        var outlineColor: Color?
+        var outlineWidth: Double?
+        var translucencyByDistance: NearFarScalar?
+        var pixelOffsetScaleByDistance: NearFarScalar?
+        var scaleByDistance: NearFarScalar?
+        var distanceDisplayCondition: DistanceDisplayCondition?
+        var disableDepthTestDistance: Double?
     }
 
     companion object {

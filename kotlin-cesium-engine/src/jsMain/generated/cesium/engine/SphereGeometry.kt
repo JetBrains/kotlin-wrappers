@@ -33,10 +33,10 @@ external class SphereGeometry(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val radius: Double?
-        val stackPartitions: Int?
-        val slicePartitions: Int?
-        val vertexFormat: VertexFormat?
+        var radius: Double?
+        var stackPartitions: Int?
+        var slicePartitions: Int?
+        var vertexFormat: VertexFormat?
     }
 
     companion object : Packable<SphereGeometry> {

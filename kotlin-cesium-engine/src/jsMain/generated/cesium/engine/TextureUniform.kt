@@ -35,15 +35,15 @@ external class TextureUniform(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val typedArray: Uint8Array?
-        val width: Double?
-        val height: Double?
-        val url: Resource?
-        val repeat: Boolean?
-        val pixelFormat: PixelFormat?
-        val pixelDatatype: PixelDatatype?
-        val minificationFilter: TextureMinificationFilter?
-        val magnificationFilter: TextureMagnificationFilter?
-        val maximumAnisotropy: Double?
+        var typedArray: Uint8Array?
+        var width: Double?
+        var height: Double?
+        var url: Resource?
+        var repeat: Boolean?
+        var pixelFormat: PixelFormat?
+        var pixelDatatype: PixelDatatype?
+        var minificationFilter: TextureMinificationFilter?
+        var magnificationFilter: TextureMagnificationFilter?
+        var maximumAnisotropy: Double?
     }
 }

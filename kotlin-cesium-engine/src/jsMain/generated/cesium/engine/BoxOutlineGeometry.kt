@@ -27,8 +27,8 @@ external class BoxOutlineGeometry(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val minimum: Cartesian3
-        val maximum: Cartesian3
+        var minimum: Cartesian3
+        var maximum: Cartesian3
     }
 
     companion object : Packable<BoxOutlineGeometry> {
@@ -49,7 +49,7 @@ external class BoxOutlineGeometry(
          */
         @JsPlainObject
         interface FromDimensionsOptions {
-            val dimensions: Cartesian3
+            var dimensions: Cartesian3
         }
 
         /**

@@ -38,14 +38,14 @@ external class CorridorGeometry(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val positions: ReadonlyArray<Cartesian3>
-        val width: Double
-        val ellipsoid: Ellipsoid?
-        val granularity: Double?
-        val height: Double?
-        val extrudedHeight: Double?
-        val vertexFormat: VertexFormat?
-        val cornerType: CornerType?
+        var positions: ReadonlyArray<Cartesian3>
+        var width: Double
+        var ellipsoid: Ellipsoid?
+        var granularity: Double?
+        var height: Double?
+        var extrudedHeight: Double?
+        var vertexFormat: VertexFormat?
+        var cornerType: CornerType?
     }
 
     /**
@@ -106,10 +106,10 @@ external class CorridorGeometry(
          */
         @JsPlainObject
         interface ComputeRectangleOptions {
-            val positions: ReadonlyArray<Cartesian3>
-            val width: Double
-            val ellipsoid: Ellipsoid?
-            val cornerType: CornerType?
+            var positions: ReadonlyArray<Cartesian3>
+            var width: Double
+            var ellipsoid: Ellipsoid?
+            var cornerType: CornerType?
         }
 
         /**

@@ -13,8 +13,8 @@ import kotlinx.js.JsPlainObject
  */
 @JsPlainObject
 external interface PickedMetadataInfo {
-    val schemaId: String?
-    val className: String
-    val propertyName: String
-    val classProperty: MetadataClassProperty
+    var schemaId: String?
+    var className: String
+    var propertyName: String
+    var classProperty: MetadataClassProperty
 }

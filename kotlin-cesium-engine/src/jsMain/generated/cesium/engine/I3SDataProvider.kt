@@ -208,14 +208,14 @@ external class I3SDataProvider(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val name: String?
-        val show: Boolean?
-        val geoidTiledTerrainProvider: PromiseResult<ArcGISTiledElevationTerrainProvider>?
-        val cesium3dTilesetOptions: Cesium3DTileset.ConstructorOptions?
-        val showFeatures: Boolean?
-        val adjustMaterialAlphaMode: Boolean?
-        val applySymbology: Boolean?
-        val calculateNormals: Boolean?
+        var name: String?
+        var show: Boolean?
+        var geoidTiledTerrainProvider: PromiseResult<ArcGISTiledElevationTerrainProvider>?
+        var cesium3dTilesetOptions: Cesium3DTileset.ConstructorOptions?
+        var showFeatures: Boolean?
+        var adjustMaterialAlphaMode: Boolean?
+        var applySymbology: Boolean?
+        var calculateNormals: Boolean?
     }
 
     companion object {

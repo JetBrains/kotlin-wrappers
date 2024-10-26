@@ -14,7 +14,7 @@ import kotlinx.js.JsPlainObject
  */
 @JsPlainObject
 external interface createElevationBandMaterialBand {
-    val entries: ReadonlyArray<createElevationBandMaterialEntry>
-    val extendDownwards: Boolean?
-    val extendUpwards: Boolean?
+    var entries: ReadonlyArray<createElevationBandMaterialEntry>
+    var extendDownwards: Boolean?
+    var extendUpwards: Boolean?
 }

@@ -61,17 +61,17 @@ private constructor() {
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val fileExtension: String?
-        val credit: Credit?
-        val minimumLevel: Int?
-        val maximumLevel: Int?
-        val rectangle: Rectangle?
-        val tilingScheme: TilingScheme?
-        val ellipsoid: Ellipsoid?
-        val tileWidth: Int?
-        val tileHeight: Int?
-        val flipXY: Boolean?
-        val tileDiscardPolicy: TileDiscardPolicy?
+        var fileExtension: String?
+        var credit: Credit?
+        var minimumLevel: Int?
+        var maximumLevel: Int?
+        var rectangle: Rectangle?
+        var tilingScheme: TilingScheme?
+        var ellipsoid: Ellipsoid?
+        var tileWidth: Int?
+        var tileHeight: Int?
+        var flipXY: Boolean?
+        var tileDiscardPolicy: TileDiscardPolicy?
     }
 
     companion object {

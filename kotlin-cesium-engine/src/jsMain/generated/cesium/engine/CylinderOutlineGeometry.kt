@@ -34,11 +34,11 @@ external class CylinderOutlineGeometry(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val length: Int
-        val topRadius: Double
-        val bottomRadius: Double
-        val slices: Int?
-        val numberOfVerticalLines: Int?
+        var length: Int
+        var topRadius: Double
+        var bottomRadius: Double
+        var slices: Int?
+        var numberOfVerticalLines: Int?
     }
 
     companion object : Packable<CylinderOutlineGeometry> {

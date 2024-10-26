@@ -412,28 +412,28 @@ private constructor() {
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val position: Cartesian3
-        val id: Any?
-        val show: Boolean?
-        val image: HTMLCanvasElement?
-        val scale: Double?
-        val pixelOffset: Cartesian2?
-        val eyeOffset: Cartesian3?
-        val horizontalOrigin: HorizontalOrigin?
-        val verticalOrigin: VerticalOrigin?
-        val heightReference: HeightReference?
-        val color: Color?
-        val rotation: Double?
-        val alignedAxis: Cartesian3?
-        val sizeInMeters: Boolean?
-        val width: Double?
-        val height: Double?
-        val scaleByDistance: NearFarScalar?
-        val translucencyByDistance: NearFarScalar?
-        val pixelOffsetScaleByDistance: NearFarScalar?
-        val imageSubRegion: BoundingRectangle?
-        val distanceDisplayCondition: DistanceDisplayCondition?
-        val disableDepthTestDistance: Double?
-        val splitDirection: SplitDirection?
+        var position: Cartesian3
+        var id: Any?
+        var show: Boolean?
+        var image: HTMLCanvasElement?
+        var scale: Double?
+        var pixelOffset: Cartesian2?
+        var eyeOffset: Cartesian3?
+        var horizontalOrigin: HorizontalOrigin?
+        var verticalOrigin: VerticalOrigin?
+        var heightReference: HeightReference?
+        var color: Color?
+        var rotation: Double?
+        var alignedAxis: Cartesian3?
+        var sizeInMeters: Boolean?
+        var width: Double?
+        var height: Double?
+        var scaleByDistance: NearFarScalar?
+        var translucencyByDistance: NearFarScalar?
+        var pixelOffsetScaleByDistance: NearFarScalar?
+        var imageSubRegion: BoundingRectangle?
+        var distanceDisplayCondition: DistanceDisplayCondition?
+        var disableDepthTestDistance: Double?
+        var splitDirection: SplitDirection?
     }
 }

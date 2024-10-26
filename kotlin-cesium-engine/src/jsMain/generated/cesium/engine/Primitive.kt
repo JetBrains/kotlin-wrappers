@@ -125,20 +125,20 @@ external class Primitive(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val geometryInstances: ReadonlyArray<GeometryInstance>?
-        val appearance: Appearance?
-        val depthFailAppearance: Appearance?
-        val show: Boolean?
-        val modelMatrix: Matrix4?
-        val vertexCacheOptimize: Boolean?
-        val interleave: Boolean?
-        val compressVertices: Boolean?
-        val releaseGeometryInstances: Boolean?
-        val allowPicking: Boolean?
-        val cull: Boolean?
-        val asynchronous: Boolean?
-        val debugShowBoundingVolume: Boolean?
-        val shadows: ShadowMode?
+        var geometryInstances: ReadonlyArray<GeometryInstance>?
+        var appearance: Appearance?
+        var depthFailAppearance: Appearance?
+        var show: Boolean?
+        var modelMatrix: Matrix4?
+        var vertexCacheOptimize: Boolean?
+        var interleave: Boolean?
+        var compressVertices: Boolean?
+        var releaseGeometryInstances: Boolean?
+        var allowPicking: Boolean?
+        var cull: Boolean?
+        var asynchronous: Boolean?
+        var debugShowBoundingVolume: Boolean?
+        var shadows: ShadowMode?
     }
 
     /**

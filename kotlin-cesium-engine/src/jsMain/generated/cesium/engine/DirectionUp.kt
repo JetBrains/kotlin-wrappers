@@ -11,6 +11,6 @@ import kotlinx.js.JsPlainObject
  */
 @JsPlainObject
 external interface DirectionUp : CameraOrientation {
-    val direction: Cartesian3
-    val up: Cartesian3
+    var direction: Cartesian3
+    var up: Cartesian3
 }

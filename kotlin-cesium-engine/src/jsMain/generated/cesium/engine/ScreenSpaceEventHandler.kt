@@ -88,7 +88,7 @@ external class ScreenSpaceEventHandler(
      */
     @JsPlainObject
     interface PositionedEvent {
-        val position: Cartesian2
+        var position: Cartesian2
     }
 
     /**
@@ -97,8 +97,8 @@ external class ScreenSpaceEventHandler(
      */
     @JsPlainObject
     interface MotionEvent {
-        val startPosition: Cartesian2
-        val endPosition: Cartesian2
+        var startPosition: Cartesian2
+        var endPosition: Cartesian2
     }
 
     /**
@@ -107,8 +107,8 @@ external class ScreenSpaceEventHandler(
      */
     @JsPlainObject
     interface TwoPointEvent {
-        val position1: Cartesian2
-        val position2: Cartesian2
+        var position1: Cartesian2
+        var position2: Cartesian2
     }
 
     /**
@@ -117,10 +117,10 @@ external class ScreenSpaceEventHandler(
      */
     @JsPlainObject
     interface TwoPointMotionEvent {
-        val position1: Cartesian2
-        val position2: Cartesian2
-        val previousPosition1: Cartesian2
-        val previousPosition2: Cartesian2
+        var position1: Cartesian2
+        var position2: Cartesian2
+        var previousPosition1: Cartesian2
+        var previousPosition2: Cartesian2
     }
 
     companion object {
