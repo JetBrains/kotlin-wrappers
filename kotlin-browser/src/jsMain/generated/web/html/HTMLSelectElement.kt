@@ -18,6 +18,9 @@ protected constructor() :
     HTMLElement,
     JsIterable<HTMLOptionElement>,
     FormControl {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/autocomplete)
+     */
     var autocomplete: AutoFill
 
     /**
