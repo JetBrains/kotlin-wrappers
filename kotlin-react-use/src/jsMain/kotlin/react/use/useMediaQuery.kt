@@ -4,7 +4,6 @@ import react.useEffect
 import react.useMemo
 import react.useState
 import web.cssom.MediaQuery
-import web.cssom.changeEvent
 import web.cssom.matchMedia
 import web.events.subscribe
 

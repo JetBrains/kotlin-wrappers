@@ -8,7 +8,6 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.runTest
-import web.abort.abortEvent
 import web.events.Event
 import web.events.addEventHandler
 import web.events.addHandler

@@ -5,8 +5,6 @@ import web.events.Event
 import web.events.EventInstance
 import web.events.EventTarget
 import web.events.subscribe
-import web.window.clickEvent
-import web.window.mouseUpEvent
 import web.window.window
 import kotlin.test.Test
 import kotlin.test.assertEquals
