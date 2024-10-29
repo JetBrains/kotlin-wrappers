@@ -4,8 +4,7 @@ package web.workers
 
 import js.array.ReadonlyArray
 import js.transferable.Transferable
-import web.events.EventHandler
-import web.events.EventTarget
+import web.events.*
 import web.messaging.MessageEvent
 import web.serialization.StructuredSerializeOptions
 import web.url.URL
@@ -56,4 +55,22 @@ open external class Worker(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/terminate)
      */
     fun terminate()
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/error_event)
+     */
+    @JsEvent("error")
+    val errorEvent: EventInstance<Event, Worker /* this */, Worker /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/message_event)
+     */
+    @JsEvent("message")
+    val messageEvent: EventInstance<MessageEvent<Any?>, Worker /* this */, Worker /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/messageerror_event)
+     */
+    @JsEvent("messageerror")
+    val messageErrorEvent: EventInstance<MessageEvent<Any?>, Worker /* this */, Worker /* this */>
 }

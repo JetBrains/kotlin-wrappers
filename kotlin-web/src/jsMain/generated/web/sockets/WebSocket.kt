@@ -7,9 +7,7 @@ import js.buffer.ArrayBufferLike
 import js.buffer.ArrayBufferView
 import js.core.JsLong
 import web.blob.Blob
-import web.events.Event
-import web.events.EventHandler
-import web.events.EventTarget
+import web.events.*
 import web.messaging.MessageEvent
 import web.url.URL
 
@@ -126,6 +124,30 @@ open external class WebSocket(
     val OPEN: ReadyState
     val CLOSING: ReadyState
     val CLOSED: ReadyState
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/close_event)
+     */
+    @JsEvent("close")
+    val closeEvent: EventInstance<CloseEvent, WebSocket /* this */, WebSocket /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/error_event)
+     */
+    @JsEvent("error")
+    val errorEvent: EventInstance<Event, WebSocket /* this */, WebSocket /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/message_event)
+     */
+    @JsEvent("message")
+    val messageEvent: EventInstance<MessageEvent<Any?>, WebSocket /* this */, WebSocket /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/open_event)
+     */
+    @JsEvent("open")
+    val openEvent: EventInstance<Event, WebSocket /* this */, WebSocket /* this */>
 
     companion object {
         val CONNECTING: ReadyState

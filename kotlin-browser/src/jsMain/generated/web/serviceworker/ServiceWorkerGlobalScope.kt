@@ -7,6 +7,8 @@ import js.promise.Promise
 import seskar.js.JsAsync
 import web.events.Event
 import web.events.EventHandler
+import web.events.EventInstance
+import web.events.JsEvent
 import web.messaging.MessageEvent
 import web.push.PushEvent
 import web.workers.WorkerGlobalScope
@@ -87,4 +89,46 @@ sealed external class ServiceWorkerGlobalScope :
 
     @JsName("skipWaiting")
     fun skipWaitingAsync(): Promise<Void>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/activate_event)
+     */
+    @JsEvent("activate")
+    val activateEvent: EventInstance<ExtendableEvent, ServiceWorkerGlobalScope /* this */, ServiceWorkerGlobalScope /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/fetch_event)
+     */
+    @JsEvent("fetch")
+    val fetchEvent: EventInstance<FetchEvent, ServiceWorkerGlobalScope /* this */, ServiceWorkerGlobalScope /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/message_event)
+     */
+    @JsEvent("message")
+    val messageEvent: EventInstance<ExtendableMessageEvent, ServiceWorkerGlobalScope /* this */, ServiceWorkerGlobalScope /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/messageerror_event)
+     */
+    @JsEvent("messageerror")
+    val messageErrorEvent: EventInstance<MessageEvent<Any?>, ServiceWorkerGlobalScope /* this */, ServiceWorkerGlobalScope /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/notificationclick_event)
+     */
+    @JsEvent("notificationclick")
+    val notificationClickEvent: EventInstance<NotificationEvent, ServiceWorkerGlobalScope /* this */, ServiceWorkerGlobalScope /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/notificationclose_event)
+     */
+    @JsEvent("notificationclose")
+    val notificationCloseEvent: EventInstance<NotificationEvent, ServiceWorkerGlobalScope /* this */, ServiceWorkerGlobalScope /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/push_event)
+     */
+    @JsEvent("push")
+    val pushEvent: EventInstance<PushEvent, ServiceWorkerGlobalScope /* this */, ServiceWorkerGlobalScope /* this */>
 }

@@ -5,6 +5,9 @@ package web.audio
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
+import web.errors.ErrorEvent
+import web.events.EventInstance
+import web.events.JsEvent
 import web.html.HTMLMediaElement
 import web.media.streams.MediaStream
 
@@ -72,4 +75,10 @@ open external class AudioContext(
 
     @JsName("suspend")
     fun suspendAsync(): Promise<Void>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext/error_event)
+     */
+    @JsEvent("error")
+    val errorEvent: EventInstance<ErrorEvent, AudioContext /* this */, AudioContext /* this */>
 }

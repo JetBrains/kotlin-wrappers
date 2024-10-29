@@ -7,9 +7,7 @@ import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.crypto.Algorithm
-import web.events.Event
-import web.events.EventHandler
-import web.events.EventTarget
+import web.events.*
 import web.media.streams.MediaStream
 import web.media.streams.MediaStreamTrack
 
@@ -248,6 +246,60 @@ open external class RTCPeerConnection(
 
     @JsName("setRemoteDescription")
     fun setRemoteDescriptionAsync(description: RTCSessionDescriptionInit): Promise<Void>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/connectionstatechange_event)
+     */
+    @JsEvent("connectionstatechange")
+    val connectionStateChangeEvent: EventInstance<Event, RTCPeerConnection /* this */, RTCPeerConnection /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/datachannel_event)
+     */
+    @JsEvent("datachannel")
+    val dataChannelEvent: EventInstance<RTCDataChannelEvent, RTCPeerConnection /* this */, RTCPeerConnection /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/icecandidate_event)
+     */
+    @JsEvent("icecandidate")
+    val iceCandidateEvent: EventInstance<RTCPeerConnectionIceEvent, RTCPeerConnection /* this */, RTCPeerConnection /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/icecandidateerror_event)
+     */
+    @JsEvent("icecandidateerror")
+    val iceCandidateErrorEvent: EventInstance<RTCPeerConnectionIceErrorEvent, RTCPeerConnection /* this */, RTCPeerConnection /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/iceconnectionstatechange_event)
+     */
+    @JsEvent("iceconnectionstatechange")
+    val iceConnectionStateChangeEvent: EventInstance<Event, RTCPeerConnection /* this */, RTCPeerConnection /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/icegatheringstatechange_event)
+     */
+    @JsEvent("icegatheringstatechange")
+    val iceGatheringStateChangeEvent: EventInstance<Event, RTCPeerConnection /* this */, RTCPeerConnection /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/negotiationneeded_event)
+     */
+    @JsEvent("negotiationneeded")
+    val negotiationNeededEvent: EventInstance<Event, RTCPeerConnection /* this */, RTCPeerConnection /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/signalingstatechange_event)
+     */
+    @JsEvent("signalingstatechange")
+    val signalingStateChangeEvent: EventInstance<Event, RTCPeerConnection /* this */, RTCPeerConnection /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/track_event)
+     */
+    @JsEvent("track")
+    val trackEvent: EventInstance<RTCTrackEvent, RTCPeerConnection /* this */, RTCPeerConnection /* this */>
 
     companion object {
         /**

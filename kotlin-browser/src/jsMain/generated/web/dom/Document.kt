@@ -5,24 +5,34 @@ package web.dom
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
+import web.animations.AnimationEvent
 import web.animations.DocumentTimeline
+import web.clipboard.ClipboardEvent
+import web.cssom.TransitionEvent
 import web.cssom.ViewTransition
 import web.cssom.ViewTransitionUpdateCallback
+import web.dom.*
 import web.events.Event
 import web.events.EventHandler
+import web.events.EventInstance
+import web.events.JsEvent
 import web.fonts.FontFaceSource
+import web.form.FormDataEvent
+import web.form.SubmitEvent
 import web.html.*
 import web.mathml.MATHML_NAMESPACE
 import web.mathml.MathMLElement
 import web.mathml.MathMLTagName
+import web.pip.PictureInPictureEvent
 import web.ranges.Range
 import web.selection.Selection
 import web.svg.SVGElement
 import web.svg.SVG_NAMESPACE
 import web.svg.SvgTagName
+import web.uievents.*
 import web.url.FragmentDirective
 import web.url.URL
-import web.window.WindowProxy
+import web.window.*
 import web.xpath.XPathEvaluatorBase
 
 /**
@@ -605,6 +615,456 @@ open external class Document :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/writeln)
      */
     fun writeln(vararg text: String)
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/animationcancel_event)
+     */
+    @JsEvent("animationcancel")
+    val animationCancelEvent: EventInstance<AnimationEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/animationend_event)
+     */
+    @JsEvent("animationend")
+    val animationEndEvent: EventInstance<AnimationEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/animationiteration_event)
+     */
+    @JsEvent("animationiteration")
+    val animationIterationEvent: EventInstance<AnimationEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/animationstart_event)
+     */
+    @JsEvent("animationstart")
+    val animationStartEvent: EventInstance<AnimationEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/auxclick_event)
+     */
+    @JsEvent("auxclick")
+    val auxClickEvent: EventInstance<MouseEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/beforeinput_event)
+     */
+    @JsEvent("beforeinput")
+    val beforeInputEvent: EventInstance<InputEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/cancel_event)
+     */
+    @JsEvent("cancel")
+    val cancelEvent: EventInstance<Event, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/change_event)
+     */
+    @JsEvent("change")
+    val changeEvent: EventInstance<Event, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/click_event)
+     */
+    @JsEvent("click")
+    val clickEvent: EventInstance<MouseEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/compositionend_event)
+     */
+    @JsEvent("compositionend")
+    val compositionEndEvent: EventInstance<CompositionEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/compositionstart_event)
+     */
+    @JsEvent("compositionstart")
+    val compositionStartEvent: EventInstance<CompositionEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/compositionupdate_event)
+     */
+    @JsEvent("compositionupdate")
+    val compositionUpdateEvent: EventInstance<CompositionEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/contextmenu_event)
+     */
+    @JsEvent("contextmenu")
+    val contextMenuEvent: EventInstance<MouseEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/copy_event)
+     */
+    @JsEvent("copy")
+    val copyEvent: EventInstance<ClipboardEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/cut_event)
+     */
+    @JsEvent("cut")
+    val cutEvent: EventInstance<ClipboardEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/dblclick_event)
+     */
+    @JsEvent("dblclick")
+    val dblClickEvent: EventInstance<MouseEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/DOMContentLoaded_event)
+     */
+    @JsEvent("DOMContentLoaded")
+    val domContentLoadedEvent: EventInstance<Event, Document /* this */, Window>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/drag_event)
+     */
+    @JsEvent("drag")
+    val dragEvent: EventInstance<DragEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/dragend_event)
+     */
+    @JsEvent("dragend")
+    val dragEndEvent: EventInstance<DragEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/dragenter_event)
+     */
+    @JsEvent("dragenter")
+    val dragEnterEvent: EventInstance<DragEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/dragleave_event)
+     */
+    @JsEvent("dragleave")
+    val dragLeaveEvent: EventInstance<DragEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/dragover_event)
+     */
+    @JsEvent("dragover")
+    val dragOverEvent: EventInstance<DragEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/dragstart_event)
+     */
+    @JsEvent("dragstart")
+    val dragStartEvent: EventInstance<DragEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/drop_event)
+     */
+    @JsEvent("drop")
+    val dropEvent: EventInstance<DragEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/enterpictureinpicture_event)
+     */
+    @JsEvent("enterpictureinpicture")
+    val enterPictureInPictureEvent: EventInstance<PictureInPictureEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/focusin_event)
+     */
+    @JsEvent("focusin")
+    val focusInEvent: EventInstance<FocusEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/focusout_event)
+     */
+    @JsEvent("focusout")
+    val focusOutEvent: EventInstance<FocusEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/formdata_event)
+     */
+    @JsEvent("formdata")
+    val formDataEvent: EventInstance<FormDataEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/fullscreenchange_event)
+     */
+    @JsEvent("fullscreenchange")
+    val fullscreenChangeEvent: EventInstance<Event, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/fullscreenerror_event)
+     */
+    @JsEvent("fullscreenerror")
+    val fullscreenErrorEvent: EventInstance<Event, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/gotpointercapture_event)
+     */
+    @JsEvent("gotpointercapture")
+    val gotPointerCaptureEvent: EventInstance<PointerEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/input_event)
+     */
+    @JsEvent("input")
+    val inputEvent: EventInstance<InputEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/keydown_event)
+     */
+    @JsEvent("keydown")
+    val keyDownEvent: EventInstance<KeyboardEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/keypress_event)
+     */
+    @JsEvent("keypress")
+    val keyPressEvent: EventInstance<KeyboardEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/keyup_event)
+     */
+    @JsEvent("keyup")
+    val keyUpEvent: EventInstance<KeyboardEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/leavepictureinpicture_event)
+     */
+    @JsEvent("leavepictureinpicture")
+    val leavePictureInPictureEvent: EventInstance<PictureInPictureEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/load_event)
+     */
+    @JsEvent("load")
+    val loadEvent: EventInstance<Event, Document /* this */, Document /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/lostpointercapture_event)
+     */
+    @JsEvent("lostpointercapture")
+    val lostPointerCaptureEvent: EventInstance<PointerEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/mousedown_event)
+     */
+    @JsEvent("mousedown")
+    val mouseDownEvent: EventInstance<MouseEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/mousemove_event)
+     */
+    @JsEvent("mousemove")
+    val mouseMoveEvent: EventInstance<MouseEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/mouseout_event)
+     */
+    @JsEvent("mouseout")
+    val mouseOutEvent: EventInstance<MouseEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/mouseover_event)
+     */
+    @JsEvent("mouseover")
+    val mouseOverEvent: EventInstance<MouseEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/mouseup_event)
+     */
+    @JsEvent("mouseup")
+    val mouseUpEvent: EventInstance<MouseEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/paste_event)
+     */
+    @JsEvent("paste")
+    val pasteEvent: EventInstance<ClipboardEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pointercancel_event)
+     */
+    @JsEvent("pointercancel")
+    val pointerCancelEvent: EventInstance<PointerEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pointerdown_event)
+     */
+    @JsEvent("pointerdown")
+    val pointerDownEvent: EventInstance<PointerEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pointerenter_event)
+     */
+    @JsEvent("pointerenter")
+    val pointerEnterEvent: EventInstance<PointerEvent, Document /* this */, Document /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pointerleave_event)
+     */
+    @JsEvent("pointerleave")
+    val pointerLeaveEvent: EventInstance<PointerEvent, Document /* this */, Document /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pointerlockchange_event)
+     */
+    @JsEvent("pointerlockchange")
+    val pointerLockChangeEvent: EventInstance<Event, Document /* this */, Document /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pointerlockerror_event)
+     */
+    @JsEvent("pointerlockerror")
+    val pointerLockErrorEvent: EventInstance<Event, Document /* this */, Document /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pointermove_event)
+     */
+    @JsEvent("pointermove")
+    val pointerMoveEvent: EventInstance<PointerEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pointerout_event)
+     */
+    @JsEvent("pointerout")
+    val pointerOutEvent: EventInstance<PointerEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pointerover_event)
+     */
+    @JsEvent("pointerover")
+    val pointerOverEvent: EventInstance<PointerEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pointerup_event)
+     */
+    @JsEvent("pointerup")
+    val pointerUpEvent: EventInstance<PointerEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/readystatechange_event)
+     */
+    @JsEvent("readystatechange")
+    val readyStateChangeEvent: EventInstance<Event, Document /* this */, Document /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/reset_event)
+     */
+    @JsEvent("reset")
+    val resetEvent: EventInstance<Event, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/resume_event)
+     */
+    @JsEvent("resume")
+    val resumeEvent: EventInstance<Event, Document /* this */, Document /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/scroll_event)
+     */
+    @JsEvent("scroll")
+    val scrollEvent: EventInstance<Event, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/scrollend_event)
+     */
+    @JsEvent("scrollend")
+    val scrollEndEvent: EventInstance<Event, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/select_event)
+     */
+    @JsEvent("select")
+    val selectEvent: EventInstance<Event, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/selectionchange_event)
+     */
+    @JsEvent("selectionchange")
+    val selectionChangeEvent: EventInstance<Event, Document /* this */, Document /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/selectstart_event)
+     */
+    @JsEvent("selectstart")
+    val selectStartEvent: EventInstance<Event, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/slotchange_event)
+     */
+    @JsEvent("slotchange")
+    val slotChangeEvent: EventInstance<Event, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/submit_event)
+     */
+    @JsEvent("submit")
+    val submitEvent: EventInstance<SubmitEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/touchcancel_event)
+     */
+    @JsEvent("touchcancel")
+    val touchCancelEvent: EventInstance<TouchEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/touchend_event)
+     */
+    @JsEvent("touchend")
+    val touchEndEvent: EventInstance<TouchEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/touchmove_event)
+     */
+    @JsEvent("touchmove")
+    val touchMoveEvent: EventInstance<TouchEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/touchstart_event)
+     */
+    @JsEvent("touchstart")
+    val touchStartEvent: EventInstance<TouchEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/transitioncancel_event)
+     */
+    @JsEvent("transitioncancel")
+    val transitionCancelEvent: EventInstance<TransitionEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/transitionend_event)
+     */
+    @JsEvent("transitionend")
+    val transitionEndEvent: EventInstance<TransitionEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/transitionrun_event)
+     */
+    @JsEvent("transitionrun")
+    val transitionRunEvent: EventInstance<TransitionEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/transitionstart_event)
+     */
+    @JsEvent("transitionstart")
+    val transitionStartEvent: EventInstance<TransitionEvent, Document /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/unload_event)
+     */
+    @JsEvent("unload")
+    val unloadEvent: EventInstance<Event, Document /* this */, Document /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/visibilitychange_event)
+     */
+    @JsEvent("visibilitychange")
+    val visibilityChangeEvent: EventInstance<Event, Document /* this */, Document /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/wheel_event)
+     */
+    @JsEvent("wheel")
+    val wheelEvent: EventInstance<WheelEvent, Document /* this */, Node>
 
     companion object {
         /**

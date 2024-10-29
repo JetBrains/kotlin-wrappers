@@ -2,9 +2,7 @@
 
 package web.vtt
 
-import web.events.Event
-import web.events.EventHandler
-import web.events.EventTarget
+import web.events.*
 
 /**
  * TextTrackCues represent a string of text that will be displayed for some duration of time on a TextTrack. This includes the start and end times that the cue will be displayed. A TextTrackCue cannot be used directly, instead one of the derived types (e.g. VTTCue) must be used.
@@ -65,4 +63,16 @@ sealed external class TextTrackCue :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCue/track)
      */
     val track: TextTrack?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCue/enter_event)
+     */
+    @JsEvent("enter")
+    val enterEvent: EventInstance<Event, TextTrackCue /* this */, TextTrackCue /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCue/exit_event)
+     */
+    @JsEvent("exit")
+    val exitEvent: EventInstance<Event, TextTrackCue /* this */, TextTrackCue /* this */>
 }

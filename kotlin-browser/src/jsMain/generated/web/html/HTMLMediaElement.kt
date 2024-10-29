@@ -7,6 +7,8 @@ import js.promise.Promise
 import seskar.js.JsAsync
 import web.events.Event
 import web.events.EventHandler
+import web.events.EventInstance
+import web.events.JsEvent
 import web.http.CrossOrigin
 import web.media.key.MediaKeys
 import web.media.source.TimeRanges
@@ -294,6 +296,156 @@ sealed external class HTMLMediaElement :
     val HAVE_CURRENT_DATA: ReadyState
     val HAVE_FUTURE_DATA: ReadyState
     val HAVE_ENOUGH_DATA: ReadyState
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/abort_event)
+     */
+    @JsEvent("abort")
+    override val abortEvent: EventInstance<Event, HTMLMediaElement /* this */, HTMLMediaElement /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/canplay_event)
+     */
+    @JsEvent("canplay")
+    val canPlayEvent: EventInstance<Event, HTMLMediaElement /* this */, HTMLMediaElement /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/canplaythrough_event)
+     */
+    @JsEvent("canplaythrough")
+    val canPlayThroughEvent: EventInstance<Event, HTMLMediaElement /* this */, HTMLMediaElement /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/durationchange_event)
+     */
+    @JsEvent("durationchange")
+    val durationChangeEvent: EventInstance<Event, HTMLMediaElement /* this */, HTMLMediaElement /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/emptied_event)
+     */
+    @JsEvent("emptied")
+    val emptiedEvent: EventInstance<Event, HTMLMediaElement /* this */, HTMLMediaElement /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/encrypted_event)
+     */
+    @JsEvent("encrypted")
+    val encryptedEvent: EventInstance<MediaEncryptedEvent, HTMLMediaElement /* this */, HTMLMediaElement /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/ended_event)
+     */
+    @JsEvent("ended")
+    val endedEvent: EventInstance<Event, HTMLMediaElement /* this */, HTMLMediaElement /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/error_event)
+     */
+    @JsEvent("error")
+    override val errorEvent: EventInstance<Event, HTMLMediaElement /* this */, HTMLMediaElement /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/loadeddata_event)
+     */
+    @JsEvent("loadeddata")
+    val loadedDataEvent: EventInstance<Event, HTMLMediaElement /* this */, HTMLMediaElement /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/loadedmetadata_event)
+     */
+    @JsEvent("loadedmetadata")
+    val loadedMetadataEvent: EventInstance<Event, HTMLMediaElement /* this */, HTMLMediaElement /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/loadstart_event)
+     */
+    @JsEvent("loadstart")
+    val loadStartEvent: EventInstance<Event, HTMLMediaElement /* this */, HTMLMediaElement /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/pause_event)
+     */
+    @JsEvent("pause")
+    val pauseEvent: EventInstance<Event, HTMLMediaElement /* this */, HTMLMediaElement /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/play_event)
+     */
+    @JsEvent("play")
+    val playEvent: EventInstance<Event, HTMLMediaElement /* this */, HTMLMediaElement /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/playing_event)
+     */
+    @JsEvent("playing")
+    val playingEvent: EventInstance<Event, HTMLMediaElement /* this */, HTMLMediaElement /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/progress_event)
+     */
+    @JsEvent("progress")
+    val progressEvent: EventInstance<Event, HTMLMediaElement /* this */, HTMLMediaElement /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/ratechange_event)
+     */
+    @JsEvent("ratechange")
+    val rateChangeEvent: EventInstance<Event, HTMLMediaElement /* this */, HTMLMediaElement /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/resize_event)
+     */
+    @JsEvent("resize")
+    val resizeEvent: EventInstance<Event, HTMLMediaElement /* this */, HTMLMediaElement /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/seeked_event)
+     */
+    @JsEvent("seeked")
+    val seekedEvent: EventInstance<Event, HTMLMediaElement /* this */, HTMLMediaElement /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/seeking_event)
+     */
+    @JsEvent("seeking")
+    val seekingEvent: EventInstance<Event, HTMLMediaElement /* this */, HTMLMediaElement /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/stalled_event)
+     */
+    @JsEvent("stalled")
+    val stalledEvent: EventInstance<Event, HTMLMediaElement /* this */, HTMLMediaElement /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/suspend_event)
+     */
+    @JsEvent("suspend")
+    val suspendEvent: EventInstance<Event, HTMLMediaElement /* this */, HTMLMediaElement /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/timeupdate_event)
+     */
+    @JsEvent("timeupdate")
+    val timeUpdateEvent: EventInstance<Event, HTMLMediaElement /* this */, HTMLMediaElement /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/volumechange_event)
+     */
+    @JsEvent("volumechange")
+    val volumeChangeEvent: EventInstance<Event, HTMLMediaElement /* this */, HTMLMediaElement /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/waiting_event)
+     */
+    @JsEvent("waiting")
+    val waitingEvent: EventInstance<Event, HTMLMediaElement /* this */, HTMLMediaElement /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/waitingforkey_event)
+     */
+    @JsEvent("waitingforkey")
+    val waitingForKeyEvent: EventInstance<Event, HTMLMediaElement /* this */, HTMLMediaElement /* this */>
 
     companion object {
         val NETWORK_EMPTY: NetworkState

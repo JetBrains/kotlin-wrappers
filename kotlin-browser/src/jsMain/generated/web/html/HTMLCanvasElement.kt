@@ -4,6 +4,9 @@ package web.html
 
 import web.canvas.CanvasImageSource
 import web.canvas.OffscreenCanvas
+import web.events.Event
+import web.events.EventInstance
+import web.events.JsEvent
 import web.gl.TexImageSource
 import web.media.streams.MediaStream
 import web.rendering.RenderingContext
@@ -73,4 +76,16 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/transferControlToOffscreen)
      */
     fun transferControlToOffscreen(): OffscreenCanvas
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/contextlost_event)
+     */
+    @JsEvent("contextlost")
+    val contextLostEvent: EventInstance<Event, HTMLCanvasElement /* this */, HTMLCanvasElement /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/contextrestored_event)
+     */
+    @JsEvent("contextrestored")
+    val contextRestoredEvent: EventInstance<Event, HTMLCanvasElement /* this */, HTMLCanvasElement /* this */>
 }

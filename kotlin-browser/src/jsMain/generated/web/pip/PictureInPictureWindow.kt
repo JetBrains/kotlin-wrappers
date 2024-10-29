@@ -2,9 +2,7 @@
 
 package web.pip
 
-import web.events.Event
-import web.events.EventHandler
-import web.events.EventTarget
+import web.events.*
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PictureInPictureWindow)
@@ -25,4 +23,10 @@ sealed external class PictureInPictureWindow :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PictureInPictureWindow/width)
      */
     val width: Int
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PictureInPictureWindow/resize_event)
+     */
+    @JsEvent("resize")
+    val resizeEvent: EventInstance<Event, PictureInPictureWindow /* this */, PictureInPictureWindow /* this */>
 }

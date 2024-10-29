@@ -2,6 +2,9 @@
 
 package web.html
 
+import web.events.Event
+import web.events.EventInstance
+import web.events.JsEvent
 import web.vtt.TextTrack
 
 /**
@@ -31,6 +34,24 @@ protected constructor() :
     val LOADING: ReadyState
     val LOADED: ReadyState
     val ERROR: ReadyState
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/cuechange_event)
+     */
+    @JsEvent("cuechange")
+    val cueChangeEvent: EventInstance<Event, HTMLTrackElement /* this */, HTMLTrackElement /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/error_event)
+     */
+    @JsEvent("error")
+    override val errorEvent: EventInstance<Event, HTMLTrackElement /* this */, HTMLTrackElement /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/load_event)
+     */
+    @JsEvent("load")
+    override val loadEvent: EventInstance<Event, HTMLTrackElement /* this */, HTMLTrackElement /* this */>
 
     companion object {
         val NONE: ReadyState

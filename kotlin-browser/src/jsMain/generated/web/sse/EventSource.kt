@@ -2,9 +2,7 @@
 
 package web.sse
 
-import web.events.Event
-import web.events.EventHandler
-import web.events.EventTarget
+import web.events.*
 import web.messaging.MessageEvent
 import web.url.URL
 
@@ -65,6 +63,24 @@ open external class EventSource(
     val CONNECTING: ReadyState
     val OPEN: ReadyState
     val CLOSED: ReadyState
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/error_event)
+     */
+    @JsEvent("error")
+    val errorEvent: EventInstance<Event, EventSource /* this */, EventSource /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/message_event)
+     */
+    @JsEvent("message")
+    val messageEvent: EventInstance<MessageEvent<Any?>, EventSource /* this */, EventSource /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/open_event)
+     */
+    @JsEvent("open")
+    val openEvent: EventInstance<Event, EventSource /* this */, EventSource /* this */>
 
     companion object {
         val CONNECTING: ReadyState

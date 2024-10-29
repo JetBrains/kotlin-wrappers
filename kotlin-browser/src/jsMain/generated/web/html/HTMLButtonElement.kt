@@ -3,6 +3,9 @@
 package web.html
 
 import web.dom.NodeListOf
+import web.events.Event
+import web.events.EventInstance
+import web.events.JsEvent
 import web.form.FormControl
 import web.form.FormEncType
 import web.form.FormMethod
@@ -128,4 +131,10 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/setCustomValidity)
      */
     fun setCustomValidity(error: String)
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/invalid_event)
+     */
+    @JsEvent("invalid")
+    val invalidEvent: EventInstance<Event, HTMLButtonElement /* this */, HTMLButtonElement /* this */>
 }

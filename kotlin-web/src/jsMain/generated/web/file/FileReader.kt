@@ -4,9 +4,7 @@ package web.file
 
 import web.blob.Blob
 import web.errors.DOMException
-import web.events.EventHandler
-import web.events.EventTarget
-import web.events.ProgressEvent
+import web.events.*
 
 /**
  * Lets web applications asynchronously read the contents of files (or raw data buffers) stored on the user's computer, using File or Blob objects to specify the file or data to read.
@@ -86,6 +84,42 @@ open external class FileReader :
     val EMPTY: ReadyState
     val LOADING: ReadyState
     val DONE: ReadyState
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/abort_event)
+     */
+    @JsEvent("abort")
+    val abortEvent: EventInstance<ProgressEvent, FileReader /* this */, FileReader /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/error_event)
+     */
+    @JsEvent("error")
+    val errorEvent: EventInstance<ProgressEvent, FileReader /* this */, FileReader /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/load_event)
+     */
+    @JsEvent("load")
+    val loadEvent: EventInstance<ProgressEvent, FileReader /* this */, FileReader /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/loadend_event)
+     */
+    @JsEvent("loadend")
+    val loadEndEvent: EventInstance<ProgressEvent, FileReader /* this */, FileReader /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/loadstart_event)
+     */
+    @JsEvent("loadstart")
+    val loadStartEvent: EventInstance<ProgressEvent, FileReader /* this */, FileReader /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/progress_event)
+     */
+    @JsEvent("progress")
+    val progressEvent: EventInstance<ProgressEvent, FileReader /* this */, FileReader /* this */>
 
     companion object {
         val EMPTY: ReadyState

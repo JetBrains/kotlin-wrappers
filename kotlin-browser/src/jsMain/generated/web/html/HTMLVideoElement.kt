@@ -7,6 +7,8 @@ import seskar.js.JsAsync
 import web.canvas.CanvasImageSource
 import web.dom.Node
 import web.events.EventHandler
+import web.events.EventInstance
+import web.events.JsEvent
 import web.gl.TexImageSource
 import web.pip.PictureInPictureEvent
 import web.pip.PictureInPictureWindow
@@ -99,4 +101,16 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/requestVideoFrameCallback)
      */
     fun requestVideoFrameCallback(callback: VideoFrameRequestCallback): VideoFrameRequestId
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/enterpictureinpicture_event)
+     */
+    @JsEvent("enterpictureinpicture")
+    val enterPictureInPictureEvent: EventInstance<PictureInPictureEvent, HTMLVideoElement /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/leavepictureinpicture_event)
+     */
+    @JsEvent("leavepictureinpicture")
+    val leavePictureInPictureEvent: EventInstance<PictureInPictureEvent, HTMLVideoElement /* this */, Node>
 }

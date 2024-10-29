@@ -2,9 +2,7 @@
 
 package web.vtt
 
-import web.events.Event
-import web.events.EventHandler
-import web.events.EventTarget
+import web.events.*
 
 /**
  * This interface also inherits properties from EventTarget.
@@ -93,4 +91,10 @@ sealed external class TextTrack :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/removeCue)
      */
     fun removeCue(cue: TextTrackCue)
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/cuechange_event)
+     */
+    @JsEvent("cuechange")
+    val cueChangeEvent: EventInstance<Event, TextTrack /* this */, TextTrack /* this */>
 }

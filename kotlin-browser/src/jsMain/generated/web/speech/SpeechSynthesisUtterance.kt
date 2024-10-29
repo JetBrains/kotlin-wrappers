@@ -3,7 +3,9 @@
 package web.speech
 
 import web.events.EventHandler
+import web.events.EventInstance
 import web.events.EventTarget
+import web.events.JsEvent
 
 /**
  * This Web Speech API interface represents a speech request. It contains the content the speech service should read and information about how to read it (e.g. language, pitch and volume.)
@@ -77,4 +79,46 @@ open external class SpeechSynthesisUtterance(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/volume)
      */
     var volume: Float
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/boundary_event)
+     */
+    @JsEvent("boundary")
+    val boundaryEvent: EventInstance<SpeechSynthesisEvent, SpeechSynthesisUtterance /* this */, SpeechSynthesisUtterance /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/end_event)
+     */
+    @JsEvent("end")
+    val endEvent: EventInstance<SpeechSynthesisEvent, SpeechSynthesisUtterance /* this */, SpeechSynthesisUtterance /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/error_event)
+     */
+    @JsEvent("error")
+    val errorEvent: EventInstance<SpeechSynthesisErrorEvent, SpeechSynthesisUtterance /* this */, SpeechSynthesisUtterance /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/mark_event)
+     */
+    @JsEvent("mark")
+    val markEvent: EventInstance<SpeechSynthesisEvent, SpeechSynthesisUtterance /* this */, SpeechSynthesisUtterance /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/pause_event)
+     */
+    @JsEvent("pause")
+    val pauseEvent: EventInstance<SpeechSynthesisEvent, SpeechSynthesisUtterance /* this */, SpeechSynthesisUtterance /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/resume_event)
+     */
+    @JsEvent("resume")
+    val resumeEvent: EventInstance<SpeechSynthesisEvent, SpeechSynthesisUtterance /* this */, SpeechSynthesisUtterance /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/start_event)
+     */
+    @JsEvent("start")
+    val startEvent: EventInstance<SpeechSynthesisEvent, SpeechSynthesisUtterance /* this */, SpeechSynthesisUtterance /* this */>
 }

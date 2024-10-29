@@ -2,9 +2,7 @@
 
 package web.performance
 
-import web.events.Event
-import web.events.EventHandler
-import web.events.EventTarget
+import web.events.*
 import web.time.DOMHighResTimeStamp
 
 /**
@@ -99,4 +97,10 @@ sealed external class Performance :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/toJSON)
      */
     fun toJSON(): Any
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/resourcetimingbufferfull_event)
+     */
+    @JsEvent("resourcetimingbufferfull")
+    val resourceTimingBufferFullEvent: EventInstance<Event, Performance /* this */, Performance /* this */>
 }

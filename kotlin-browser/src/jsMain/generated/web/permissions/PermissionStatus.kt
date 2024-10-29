@@ -2,9 +2,7 @@
 
 package web.permissions
 
-import web.events.Event
-import web.events.EventHandler
-import web.events.EventTarget
+import web.events.*
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PermissionStatus)
@@ -25,4 +23,10 @@ sealed external class PermissionStatus :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PermissionStatus/state)
      */
     val state: PermissionState
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PermissionStatus/change_event)
+     */
+    @JsEvent("change")
+    val changeEvent: EventInstance<Event, PermissionStatus /* this */, PermissionStatus /* this */>
 }

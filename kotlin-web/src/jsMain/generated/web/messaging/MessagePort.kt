@@ -4,8 +4,7 @@ package web.messaging
 
 import js.array.ReadonlyArray
 import js.transferable.Transferable
-import web.events.EventHandler
-import web.events.EventTarget
+import web.events.*
 import web.serialization.StructuredSerializeOptions
 
 /**
@@ -57,4 +56,22 @@ sealed external class MessagePort :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/start)
      */
     fun start()
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/close_event)
+     */
+    @JsEvent("close")
+    val closeEvent: EventInstance<Event, MessagePort /* this */, MessagePort /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/message_event)
+     */
+    @JsEvent("message")
+    val messageEvent: EventInstance<MessageEvent<Any?>, MessagePort /* this */, MessagePort /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/messageerror_event)
+     */
+    @JsEvent("messageerror")
+    val messageErrorEvent: EventInstance<MessageEvent<Any?>, MessagePort /* this */, MessagePort /* this */>
 }

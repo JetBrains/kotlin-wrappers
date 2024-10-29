@@ -4,9 +4,7 @@ package web.rtc
 
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
-import web.events.Event
-import web.events.EventHandler
-import web.events.EventTarget
+import web.events.*
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport)
@@ -29,4 +27,16 @@ sealed external class RTCDtlsTransport :
      */
     val state: RTCDtlsTransportState
     fun getRemoteCertificates(): ReadonlyArray<ArrayBuffer>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/error_event)
+     */
+    @JsEvent("error")
+    val errorEvent: EventInstance<RTCErrorEvent, RTCDtlsTransport /* this */, RTCDtlsTransport /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/statechange_event)
+     */
+    @JsEvent("statechange")
+    val stateChangeEvent: EventInstance<Event, RTCDtlsTransport /* this */, RTCDtlsTransport /* this */>
 }

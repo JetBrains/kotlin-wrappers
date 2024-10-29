@@ -2,9 +2,7 @@
 
 package web.screen
 
-import web.events.Event
-import web.events.EventHandler
-import web.events.EventTarget
+import web.events.*
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScreenOrientation)
@@ -30,4 +28,10 @@ sealed external class ScreenOrientation :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScreenOrientation/unlock)
      */
     fun unlock()
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScreenOrientation/change_event)
+     */
+    @JsEvent("change")
+    val changeEvent: EventInstance<Event, ScreenOrientation /* this */, ScreenOrientation /* this */>
 }

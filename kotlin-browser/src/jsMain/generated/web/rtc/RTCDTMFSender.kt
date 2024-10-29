@@ -3,7 +3,9 @@
 package web.rtc
 
 import web.events.EventHandler
+import web.events.EventInstance
 import web.events.EventTarget
+import web.events.JsEvent
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDTMFSender)
@@ -33,4 +35,10 @@ sealed external class RTCDTMFSender :
         duration: Int = definedExternally,
         interToneGap: Int = definedExternally,
     )
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDTMFSender/tonechange_event)
+     */
+    @JsEvent("tonechange")
+    val toneChangeEvent: EventInstance<RTCDTMFToneChangeEvent, RTCDTMFSender /* this */, RTCDTMFSender /* this */>
 }

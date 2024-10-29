@@ -3,9 +3,7 @@
 package web.media.source
 
 import js.buffer.BufferSource
-import web.events.Event
-import web.events.EventHandler
-import web.events.EventTarget
+import web.events.*
 
 /**
  * A chunk of media to be passed into an HTMLMediaElement and played, via a MediaSource object. This can be made up of one or several media segments.
@@ -71,4 +69,34 @@ sealed external class SourceBuffer :
         start: Double,
         end: Double,
     )
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/abort_event)
+     */
+    @JsEvent("abort")
+    val abortEvent: EventInstance<Event, SourceBuffer /* this */, SourceBuffer /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/error_event)
+     */
+    @JsEvent("error")
+    val errorEvent: EventInstance<Event, SourceBuffer /* this */, SourceBuffer /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/update_event)
+     */
+    @JsEvent("update")
+    val updateEvent: EventInstance<Event, SourceBuffer /* this */, SourceBuffer /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/updateend_event)
+     */
+    @JsEvent("updateend")
+    val updateEndEvent: EventInstance<Event, SourceBuffer /* this */, SourceBuffer /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/updatestart_event)
+     */
+    @JsEvent("updatestart")
+    val updateStartEvent: EventInstance<Event, SourceBuffer /* this */, SourceBuffer /* this */>
 }

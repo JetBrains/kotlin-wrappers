@@ -5,6 +5,8 @@ package web.workers
 import js.array.ReadonlyArray
 import js.transferable.Transferable
 import web.events.EventHandler
+import web.events.EventInstance
+import web.events.JsEvent
 import web.messaging.MessageEvent
 import web.rtc.RTCTransformEvent
 import web.serialization.StructuredSerializeOptions
@@ -59,4 +61,22 @@ sealed external class DedicatedWorkerGlobalScope :
         message: Any?,
         options: StructuredSerializeOptions = definedExternally,
     )
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/message_event)
+     */
+    @JsEvent("message")
+    val messageEvent: EventInstance<MessageEvent<Any?>, DedicatedWorkerGlobalScope /* this */, DedicatedWorkerGlobalScope /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/messageerror_event)
+     */
+    @JsEvent("messageerror")
+    val messageErrorEvent: EventInstance<MessageEvent<Any?>, DedicatedWorkerGlobalScope /* this */, DedicatedWorkerGlobalScope /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/rtctransform_event)
+     */
+    @JsEvent("rtctransform")
+    val rtcTransformEvent: EventInstance<RTCTransformEvent, DedicatedWorkerGlobalScope /* this */, DedicatedWorkerGlobalScope /* this */>
 }

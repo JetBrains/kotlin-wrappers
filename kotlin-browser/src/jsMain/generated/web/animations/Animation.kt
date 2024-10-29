@@ -4,7 +4,9 @@ package web.animations
 
 import js.promise.Promise
 import web.events.EventHandler
+import web.events.EventInstance
 import web.events.EventTarget
+import web.events.JsEvent
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation)
@@ -122,4 +124,22 @@ open external class Animation(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/updatePlaybackRate)
      */
     fun updatePlaybackRate(playbackRate: Double)
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/cancel_event)
+     */
+    @JsEvent("cancel")
+    val cancelEvent: EventInstance<AnimationPlaybackEvent, Animation /* this */, Animation /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/finish_event)
+     */
+    @JsEvent("finish")
+    val finishEvent: EventInstance<AnimationPlaybackEvent, Animation /* this */, Animation /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/remove_event)
+     */
+    @JsEvent("remove")
+    val removeEvent: EventInstance<AnimationPlaybackEvent, Animation /* this */, Animation /* this */>
 }

@@ -5,9 +5,7 @@ package web.abort
 import js.array.ReadonlyArray
 import js.core.JsLong
 import js.errors.JsError
-import web.events.Event
-import web.events.EventHandler
-import web.events.EventTarget
+import web.events.*
 
 /**
  * A signal object that allows you to communicate with a DOM request (such as a Fetch) and abort it if required via an AbortController object.
@@ -37,6 +35,12 @@ sealed external class AbortSignal :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/throwIfAborted)
      */
     fun throwIfAborted()
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/abort_event)
+     */
+    @JsEvent("abort")
+    val abortEvent: EventInstance<Event, AbortSignal /* this */, AbortSignal /* this */>
 
     companion object {
         /**

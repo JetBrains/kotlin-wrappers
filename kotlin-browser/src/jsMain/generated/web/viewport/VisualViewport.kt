@@ -2,9 +2,7 @@
 
 package web.viewport
 
-import web.events.Event
-import web.events.EventHandler
-import web.events.EventTarget
+import web.events.*
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport)
@@ -55,4 +53,22 @@ sealed external class VisualViewport :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/width)
      */
     val width: Double
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/resize_event)
+     */
+    @JsEvent("resize")
+    val resizeEvent: EventInstance<Event, VisualViewport /* this */, VisualViewport /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/scroll_event)
+     */
+    @JsEvent("scroll")
+    val scrollEvent: EventInstance<Event, VisualViewport /* this */, VisualViewport /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/scrollend_event)
+     */
+    @JsEvent("scrollend")
+    val scrollEndEvent: EventInstance<Event, VisualViewport /* this */, VisualViewport /* this */>
 }

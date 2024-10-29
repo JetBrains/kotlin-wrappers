@@ -5,9 +5,7 @@ package web.codecs
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
-import web.events.Event
-import web.events.EventHandler
-import web.events.EventTarget
+import web.events.*
 
 /**
  * Available only in secure contexts.
@@ -60,6 +58,12 @@ open external class VideoDecoder(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/reset)
      */
     fun reset()
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/dequeue_event)
+     */
+    @JsEvent("dequeue")
+    val dequeueEvent: EventInstance<Event, VideoDecoder /* this */, VideoDecoder /* this */>
 
     companion object {
         /**

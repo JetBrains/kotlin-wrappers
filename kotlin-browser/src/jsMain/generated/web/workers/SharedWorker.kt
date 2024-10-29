@@ -2,7 +2,10 @@
 
 package web.workers
 
+import web.events.Event
+import web.events.EventInstance
 import web.events.EventTarget
+import web.events.JsEvent
 import web.messaging.MessagePort
 import web.url.URL
 
@@ -35,4 +38,10 @@ open external class SharedWorker(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorker/port)
      */
     val port: MessagePort
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorker/error_event)
+     */
+    @JsEvent("error")
+    val errorEvent: EventInstance<Event, SharedWorker /* this */, SharedWorker /* this */>
 }

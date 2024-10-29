@@ -3,7 +3,9 @@
 package web.midi
 
 import web.events.EventHandler
+import web.events.EventInstance
 import web.events.EventTarget
+import web.events.JsEvent
 
 /**
  * Available only in secure contexts.
@@ -31,4 +33,10 @@ sealed external class MIDIAccess :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIAccess/sysexEnabled)
      */
     val sysexEnabled: Boolean
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIAccess/statechange_event)
+     */
+    @JsEvent("statechange")
+    val stateChangeEvent: EventInstance<MIDIConnectionEvent, MIDIAccess /* this */, MIDIAccess /* this */>
 }

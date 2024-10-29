@@ -5,9 +5,7 @@ package web.remoteplayback
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
-import web.events.Event
-import web.events.EventHandler
-import web.events.EventTarget
+import web.events.*
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback)
@@ -60,4 +58,22 @@ sealed external class RemotePlayback :
 
     @JsName("watchAvailability")
     fun watchAvailabilityAsync(callback: RemotePlaybackAvailabilityCallback): Promise<Number>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/connect_event)
+     */
+    @JsEvent("connect")
+    val connectEvent: EventInstance<Event, RemotePlayback /* this */, RemotePlayback /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/connecting_event)
+     */
+    @JsEvent("connecting")
+    val connectingEvent: EventInstance<Event, RemotePlayback /* this */, RemotePlayback /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/disconnect_event)
+     */
+    @JsEvent("disconnect")
+    val disconnectEvent: EventInstance<Event, RemotePlayback /* this */, RemotePlayback /* this */>
 }

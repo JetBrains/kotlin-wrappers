@@ -4,9 +4,7 @@ package web.notifications
 
 import js.promise.Promise
 import seskar.js.JsAsync
-import web.events.Event
-import web.events.EventHandler
-import web.events.EventTarget
+import web.events.*
 
 /**
  * This Notifications API interface is used to configure and display desktop notifications to the user.
@@ -91,6 +89,30 @@ open external class Notification(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/close)
      */
     fun close()
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/click_event)
+     */
+    @JsEvent("click")
+    val clickEvent: EventInstance<Event, Notification /* this */, Notification /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/close_event)
+     */
+    @JsEvent("close")
+    val closeEvent: EventInstance<Event, Notification /* this */, Notification /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/error_event)
+     */
+    @JsEvent("error")
+    val errorEvent: EventInstance<Event, Notification /* this */, Notification /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/show_event)
+     */
+    @JsEvent("show")
+    val showEvent: EventInstance<Event, Notification /* this */, Notification /* this */>
 
     companion object {
         /**

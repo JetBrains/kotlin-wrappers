@@ -7,8 +7,14 @@ import js.iterable.JsIterable
 import web.autofill.AutoFillBase
 import web.dom.DOMTokenList
 import web.dom.Element
+import web.dom.Node
+import web.events.Event
+import web.events.EventInstance
+import web.events.JsEvent
+import web.form.FormDataEvent
 import web.form.FormEncType
 import web.form.FormMethod
+import web.form.SubmitEvent
 import web.window.WindowTarget
 
 /**
@@ -129,4 +135,21 @@ protected constructor() :
      */
     fun submit()
     // [name: string]: any
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/formdata_event)
+     */
+    @JsEvent("formdata")
+    val formDataEvent: EventInstance<FormDataEvent, HTMLFormElement /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/reset_event)
+     */
+    @JsEvent("reset")
+    val resetEvent: EventInstance<Event, HTMLFormElement /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/submit_event)
+     */
+    @JsEvent("submit")
+    val submitEvent: EventInstance<SubmitEvent, HTMLFormElement /* this */, Node>
 }

@@ -6,9 +6,7 @@ import js.array.ReadonlyArray
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
-import web.events.Event
-import web.events.EventHandler
-import web.events.EventTarget
+import web.events.*
 import web.notifications.Notification
 import web.notifications.NotificationOptions
 import web.push.PushManager
@@ -102,4 +100,10 @@ sealed external class ServiceWorkerRegistration :
 
     @JsName("update")
     fun updateAsync(): Promise<Void>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/updatefound_event)
+     */
+    @JsEvent("updatefound")
+    val updateFoundEvent: EventInstance<Event, ServiceWorkerRegistration /* this */, ServiceWorkerRegistration /* this */>
 }

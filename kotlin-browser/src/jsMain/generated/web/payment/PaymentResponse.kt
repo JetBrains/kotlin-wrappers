@@ -6,7 +6,9 @@ import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.events.EventHandler
+import web.events.EventInstance
 import web.events.EventTarget
+import web.events.JsEvent
 
 /**
  * This Payment Request API interface is returned after a user selects a payment method and approves a payment request.
@@ -83,4 +85,10 @@ sealed external class PaymentResponse :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/toJSON)
      */
     fun toJSON(): Any
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/payerdetailchange_event)
+     */
+    @JsEvent("payerdetailchange")
+    val payerDetailChangeEvent: EventInstance<PaymentRequestUpdateEvent, PaymentResponse /* this */, PaymentResponse /* this */>
 }

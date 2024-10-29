@@ -5,9 +5,7 @@ package web.media.streams
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
-import web.events.Event
-import web.events.EventHandler
-import web.events.EventTarget
+import web.events.*
 
 /**
  * A single media track within a stream; typically, these are audio or video tracks, but other track types may exist as well.
@@ -99,4 +97,22 @@ sealed external class MediaStreamTrack :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/stop)
      */
     fun stop()
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/ended_event)
+     */
+    @JsEvent("ended")
+    val endedEvent: EventInstance<Event, MediaStreamTrack /* this */, MediaStreamTrack /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/mute_event)
+     */
+    @JsEvent("mute")
+    val muteEvent: EventInstance<Event, MediaStreamTrack /* this */, MediaStreamTrack /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/unmute_event)
+     */
+    @JsEvent("unmute")
+    val unmuteEvent: EventInstance<Event, MediaStreamTrack /* this */, MediaStreamTrack /* this */>
 }

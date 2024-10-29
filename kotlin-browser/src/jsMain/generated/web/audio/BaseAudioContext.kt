@@ -7,9 +7,7 @@ import js.buffer.ArrayBuffer
 import js.promise.Promise
 import js.typedarrays.Float32Array
 import seskar.js.JsAsync
-import web.events.Event
-import web.events.EventHandler
-import web.events.EventTarget
+import web.events.*
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext)
@@ -171,4 +169,10 @@ sealed external class BaseAudioContext :
         successCallback: DecodeSuccessCallback? = definedExternally,
         errorCallback: DecodeErrorCallback? = definedExternally,
     ): Promise<AudioBuffer>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/statechange_event)
+     */
+    @JsEvent("statechange")
+    val stateChangeEvent: EventInstance<Event, BaseAudioContext /* this */, BaseAudioContext /* this */>
 }

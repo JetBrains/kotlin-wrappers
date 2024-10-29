@@ -3,9 +3,7 @@
 package web.speech
 
 import js.array.ReadonlyArray
-import web.events.Event
-import web.events.EventHandler
-import web.events.EventTarget
+import web.events.*
 
 /**
  * This Web Speech API interface is the controller interface for the speech service; this can be used to retrieve information about the synthesis voices available on the device, start and pause speech, and other commands besides.
@@ -58,4 +56,10 @@ sealed external class SpeechSynthesis :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesis/speak)
      */
     fun speak(utterance: SpeechSynthesisUtterance)
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesis/voiceschanged_event)
+     */
+    @JsEvent("voiceschanged")
+    val voicesChangedEvent: EventInstance<Event, SpeechSynthesis /* this */, SpeechSynthesis /* this */>
 }

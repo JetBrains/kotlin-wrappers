@@ -3,9 +3,7 @@
 package web.idb
 
 import web.errors.DOMException
-import web.events.Event
-import web.events.EventHandler
-import web.events.EventTarget
+import web.events.*
 
 /**
  * The request object does not initially contain any information about the result of the operation, but once information becomes available, an event is fired on the request, and the information becomes available through the properties of the IDBRequest instance.
@@ -58,4 +56,16 @@ sealed external class IDBRequest<T> :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBRequest/transaction)
      */
     val transaction: IDBTransaction?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBRequest/error_event)
+     */
+    @JsEvent("error")
+    val errorEvent: EventInstance<Event, IDBRequest<T>  /* this */, IDBTransaction>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBRequest/success_event)
+     */
+    @JsEvent("success")
+    open val successEvent: EventInstance<Event, IDBRequest<T>  /* this */, IDBRequest<T>  /* this */>
 }

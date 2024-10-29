@@ -3,6 +3,8 @@
 package web.workers
 
 import web.events.EventHandler
+import web.events.EventInstance
+import web.events.JsEvent
 import web.messaging.MessageEvent
 
 /**
@@ -28,4 +30,10 @@ sealed external class SharedWorkerGlobalScope :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorkerGlobalScope/close)
      */
     fun close()
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorkerGlobalScope/connect_event)
+     */
+    @JsEvent("connect")
+    val connectEvent: EventInstance<MessageEvent<Any?>, SharedWorkerGlobalScope /* this */, SharedWorkerGlobalScope /* this */>
 }

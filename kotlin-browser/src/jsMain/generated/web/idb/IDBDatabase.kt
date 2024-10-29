@@ -5,9 +5,7 @@ package web.idb
 import js.array.ReadonlyArray
 import js.core.JsLong
 import web.dom.DOMStringList
-import web.events.Event
-import web.events.EventHandler
-import web.events.EventTarget
+import web.events.*
 
 /**
  * This IndexedDB API interface provides a connection to a database; you can use an IDBDatabase object to open a transaction on your database then create, manipulate, and delete objects (data) in that database. The interface provides the only way to get and manage versions of the database.
@@ -93,4 +91,28 @@ sealed external class IDBDatabase :
         mode: IDBTransactionMode = definedExternally,
         options: IDBTransactionOptions = definedExternally,
     ): IDBTransaction
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/abort_event)
+     */
+    @JsEvent("abort")
+    val abortEvent: EventInstance<Event, IDBDatabase /* this */, IDBDatabase>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/close_event)
+     */
+    @JsEvent("close")
+    val closeEvent: EventInstance<Event, IDBDatabase /* this */, IDBDatabase /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/error_event)
+     */
+    @JsEvent("error")
+    val errorEvent: EventInstance<Event, IDBDatabase /* this */, IDBTransaction>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/versionchange_event)
+     */
+    @JsEvent("versionchange")
+    val versionChangeEvent: EventInstance<IDBVersionChangeEvent, IDBDatabase /* this */, IDBDatabase /* this */>
 }

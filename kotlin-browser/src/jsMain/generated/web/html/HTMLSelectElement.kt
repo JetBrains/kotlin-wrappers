@@ -4,9 +4,15 @@ package web.html
 
 import js.iterable.JsIterable
 import web.autofill.AutoFill
-import web.dom.NodeListOf
+import web.dom.*
+import web.events.Event
+import web.events.EventInstance
+import web.events.JsEvent
 import web.form.FormControl
+import web.html.*
+import web.uievents.*
 import web.validation.ValidityState
+import web.window.*
 
 /**
  * A <select> HTML Element. These elements also share all of the properties and methods of other HTML elements via the HTMLElement interface.
@@ -207,4 +213,15 @@ protected constructor() :
      */
     fun showPicker()
     // [name: number]: HTMLOptionElement | HTMLOptGroupElement
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/change_event)
+     */
+    @JsEvent("change")
+    val changeEvent: EventInstance<Event, HTMLSelectElement /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/invalid_event)
+     */
+    @JsEvent("invalid")
+    val invalidEvent: EventInstance<Event, HTMLSelectElement /* this */, HTMLSelectElement /* this */>
 }

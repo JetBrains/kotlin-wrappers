@@ -3,9 +3,7 @@
 package web.media.recorder
 
 import web.errors.ErrorEvent
-import web.events.Event
-import web.events.EventHandler
-import web.events.EventTarget
+import web.events.*
 import web.media.streams.MediaStream
 
 /**
@@ -94,6 +92,42 @@ open external class MediaRecorder(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/stop)
      */
     fun stop()
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/dataavailable_event)
+     */
+    @JsEvent("dataavailable")
+    val dataAvailableEvent: EventInstance<BlobEvent, MediaRecorder /* this */, MediaRecorder /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/error_event)
+     */
+    @JsEvent("error")
+    val errorEvent: EventInstance<ErrorEvent, MediaRecorder /* this */, MediaRecorder /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/pause_event)
+     */
+    @JsEvent("pause")
+    val pauseEvent: EventInstance<Event, MediaRecorder /* this */, MediaRecorder /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/resume_event)
+     */
+    @JsEvent("resume")
+    val resumeEvent: EventInstance<Event, MediaRecorder /* this */, MediaRecorder /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/start_event)
+     */
+    @JsEvent("start")
+    val startEvent: EventInstance<Event, MediaRecorder /* this */, MediaRecorder /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/stop_event)
+     */
+    @JsEvent("stop")
+    val stopEvent: EventInstance<Event, MediaRecorder /* this */, MediaRecorder /* this */>
 
     companion object {
         /**

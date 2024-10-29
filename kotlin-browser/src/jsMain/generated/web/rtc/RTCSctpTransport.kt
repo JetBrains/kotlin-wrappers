@@ -2,9 +2,7 @@
 
 package web.rtc
 
-import web.events.Event
-import web.events.EventHandler
-import web.events.EventTarget
+import web.events.*
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSctpTransport)
@@ -35,4 +33,10 @@ sealed external class RTCSctpTransport :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSctpTransport/transport)
      */
     val transport: RTCDtlsTransport
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSctpTransport/statechange_event)
+     */
+    @JsEvent("statechange")
+    val stateChangeEvent: EventInstance<Event, RTCSctpTransport /* this */, RTCSctpTransport /* this */>
 }

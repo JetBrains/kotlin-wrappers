@@ -2,6 +2,10 @@
 
 package web.html
 
+import web.events.EventInstance
+import web.events.JsEvent
+import web.uievents.ToggleEvent
+
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDetailsElement)
  */
@@ -17,4 +21,10 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDetailsElement/open)
      */
     var open: Boolean
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDetailsElement/toggle_event)
+     */
+    @JsEvent("toggle")
+    val toggleEvent: EventInstance<ToggleEvent, HTMLDetailsElement /* this */, HTMLDetailsElement /* this */>
 }

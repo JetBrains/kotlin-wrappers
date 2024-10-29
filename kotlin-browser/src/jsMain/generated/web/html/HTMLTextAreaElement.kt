@@ -3,7 +3,11 @@
 package web.html
 
 import web.autofill.AutoFill
+import web.dom.Node
 import web.dom.NodeListOf
+import web.events.Event
+import web.events.EventInstance
+import web.events.JsEvent
 import web.form.FormControl
 import web.validation.ValidityState
 
@@ -217,4 +221,16 @@ protected constructor() :
         end: Int?,
         direction: SelectionDirection = definedExternally,
     )
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/invalid_event)
+     */
+    @JsEvent("invalid")
+    val invalidEvent: EventInstance<Event, HTMLTextAreaElement /* this */, HTMLTextAreaElement /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/select_event)
+     */
+    @JsEvent("select")
+    override val selectEvent: EventInstance<Event, HTMLTextAreaElement /* this */, Node>
 }

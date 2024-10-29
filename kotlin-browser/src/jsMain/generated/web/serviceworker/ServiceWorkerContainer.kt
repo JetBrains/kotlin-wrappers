@@ -5,9 +5,7 @@ package web.serviceworker
 import js.array.ReadonlyArray
 import js.promise.Promise
 import seskar.js.JsAsync
-import web.events.Event
-import web.events.EventHandler
-import web.events.EventTarget
+import web.events.*
 import web.messaging.MessageEvent
 import web.url.URL
 
@@ -99,4 +97,22 @@ sealed external class ServiceWorkerContainer :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/startMessages)
      */
     fun startMessages()
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/controllerchange_event)
+     */
+    @JsEvent("controllerchange")
+    val controllerChangeEvent: EventInstance<Event, ServiceWorkerContainer /* this */, ServiceWorkerContainer /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/message_event)
+     */
+    @JsEvent("message")
+    val messageEvent: EventInstance<MessageEvent<Any?>, ServiceWorkerContainer /* this */, ServiceWorkerContainer /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/messageerror_event)
+     */
+    @JsEvent("messageerror")
+    val messageErrorEvent: EventInstance<MessageEvent<Any?>, ServiceWorkerContainer /* this */, ServiceWorkerContainer /* this */>
 }

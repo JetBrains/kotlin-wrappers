@@ -11,7 +11,9 @@ import js.collections.MutableSetLike
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.events.EventHandler
+import web.events.EventInstance
 import web.events.EventTarget
+import web.events.JsEvent
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet)
@@ -66,4 +68,22 @@ sealed external interface FontFaceSet :
         font: String,
         text: String = definedExternally,
     ): Promise<ReadonlyArray<FontFace>>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/loading_event)
+     */
+    @JsEvent("loading")
+    val loadingEvent: EventInstance<FontFaceSetLoadEvent, FontFaceSet /* this */, FontFaceSet /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/loadingdone_event)
+     */
+    @JsEvent("loadingdone")
+    val loadingDoneEvent: EventInstance<FontFaceSetLoadEvent, FontFaceSet /* this */, FontFaceSet /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/loadingerror_event)
+     */
+    @JsEvent("loadingerror")
+    val loadingErrorEvent: EventInstance<FontFaceSetLoadEvent, FontFaceSet /* this */, FontFaceSet /* this */>
 }

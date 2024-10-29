@@ -4,7 +4,9 @@ package web.media.streams
 
 import js.array.ReadonlyArray
 import web.events.EventHandler
+import web.events.EventInstance
 import web.events.EventTarget
+import web.events.JsEvent
 
 /**
  * A stream of media content. A stream consists of several tracks such as video or audio tracks. Each track is specified as an instance of MediaStreamTrack.
@@ -69,4 +71,16 @@ open external class MediaStream() : EventTarget {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/removeTrack)
      */
     fun removeTrack(track: MediaStreamTrack)
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/addtrack_event)
+     */
+    @JsEvent("addtrack")
+    val addTrackEvent: EventInstance<MediaStreamTrackEvent, MediaStream /* this */, MediaStream /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/removetrack_event)
+     */
+    @JsEvent("removetrack")
+    val removeTrackEvent: EventInstance<MediaStreamTrackEvent, MediaStream /* this */, MediaStream /* this */>
 }

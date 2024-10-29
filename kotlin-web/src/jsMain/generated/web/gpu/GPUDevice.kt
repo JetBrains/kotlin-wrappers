@@ -4,7 +4,9 @@ package web.gpu
 
 import js.promise.Promise
 import seskar.js.JsAsync
+import web.events.EventInstance
 import web.events.EventTarget
+import web.events.JsEvent
 
 sealed external class GPUDevice :
     EventTarget,
@@ -48,4 +50,10 @@ sealed external class GPUDevice :
     fun createCommandEncoder(descriptor: GPUCommandEncoderDescriptor = definedExternally): GPUCommandEncoder
     fun createRenderBundleEncoder(descriptor: GPURenderBundleEncoderDescriptor): GPURenderBundleEncoder
     fun createQuerySet(descriptor: GPUQuerySetDescriptor): GPUQuerySet
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/uncapturederror_event)
+     */
+    @JsEvent("uncapturederror")
+    val uncapturedErrorEvent: EventInstance<GPUUncapturedErrorEvent, GPUDevice /* this */, GPUDevice /* this */>
 }

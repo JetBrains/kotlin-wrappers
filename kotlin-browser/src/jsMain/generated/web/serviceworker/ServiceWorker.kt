@@ -4,9 +4,7 @@ package web.serviceworker
 
 import js.array.ReadonlyArray
 import js.transferable.Transferable
-import web.events.Event
-import web.events.EventHandler
-import web.events.EventTarget
+import web.events.*
 import web.messaging.MessageEventSource
 import web.serialization.StructuredSerializeOptions
 import web.workers.AbstractWorker
@@ -48,4 +46,16 @@ sealed external class ServiceWorker :
         message: Any?,
         options: StructuredSerializeOptions = definedExternally,
     )
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/error_event)
+     */
+    @JsEvent("error")
+    val errorEvent: EventInstance<Event, ServiceWorker /* this */, ServiceWorker /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/statechange_event)
+     */
+    @JsEvent("statechange")
+    val stateChangeEvent: EventInstance<Event, ServiceWorker /* this */, ServiceWorker /* this */>
 }

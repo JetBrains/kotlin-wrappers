@@ -5,7 +5,11 @@ package web.html
 import js.array.ReadonlyArray
 import js.date.Date
 import web.autofill.AutoFill
+import web.dom.Node
 import web.dom.NodeListOf
+import web.events.Event
+import web.events.EventInstance
+import web.events.JsEvent
 import web.file.FileList
 import web.form.FormControl
 import web.form.FormEncType
@@ -390,4 +394,28 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/stepUp)
      */
     fun stepUp(n: Int = definedExternally)
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/cancel_event)
+     */
+    @JsEvent("cancel")
+    val cancelEvent: EventInstance<Event, HTMLInputElement /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/change_event)
+     */
+    @JsEvent("change")
+    val changeEvent: EventInstance<Event, HTMLInputElement /* this */, Node>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/invalid_event)
+     */
+    @JsEvent("invalid")
+    val invalidEvent: EventInstance<Event, HTMLInputElement /* this */, HTMLInputElement /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/select_event)
+     */
+    @JsEvent("select")
+    override val selectEvent: EventInstance<Event, HTMLInputElement /* this */, Node>
 }

@@ -6,9 +6,7 @@ import js.buffer.BufferSource
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
-import web.events.Event
-import web.events.EventHandler
-import web.events.EventTarget
+import web.events.*
 import web.time.EpochTimeStamp
 
 /**
@@ -99,4 +97,16 @@ sealed external class MediaKeySession :
 
     @JsName("update")
     fun updateAsync(response: BufferSource): Promise<Void>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/keystatuseschange_event)
+     */
+    @JsEvent("keystatuseschange")
+    val keyStatusesChangeEvent: EventInstance<Event, MediaKeySession /* this */, MediaKeySession /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/message_event)
+     */
+    @JsEvent("message")
+    val messageEvent: EventInstance<MediaKeyMessageEvent, MediaKeySession /* this */, MediaKeySession /* this */>
 }

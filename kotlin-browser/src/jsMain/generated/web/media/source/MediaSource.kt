@@ -2,9 +2,7 @@
 
 package web.media.source
 
-import web.events.Event
-import web.events.EventHandler
-import web.events.EventTarget
+import web.events.*
 
 /**
  * This Media Source Extensions API interface represents a source of media data for an HTMLMediaElement object. A MediaSource object can be attached to a HTMLMediaElement to be played in the user agent.
@@ -63,6 +61,24 @@ open external class MediaSource :
         start: Double,
         end: Double,
     )
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/sourceclose_event)
+     */
+    @JsEvent("sourceclose")
+    val sourceCloseEvent: EventInstance<Event, MediaSource /* this */, MediaSource /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/sourceended_event)
+     */
+    @JsEvent("sourceended")
+    val sourceEndedEvent: EventInstance<Event, MediaSource /* this */, MediaSource /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/sourceopen_event)
+     */
+    @JsEvent("sourceopen")
+    val sourceOpenEvent: EventInstance<Event, MediaSource /* this */, MediaSource /* this */>
 
     companion object {
         /**

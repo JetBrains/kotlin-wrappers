@@ -6,6 +6,8 @@ import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.events.EventHandler
+import web.events.EventInstance
+import web.events.JsEvent
 
 /**
  * An AudioContext interface representing an audio-processing graph built from linked together AudioNodes. In contrast with a standard AudioContext, an OfflineAudioContext doesn't render the audio to the device hardware; instead, it generates it, as fast as it can, and outputs the result to an AudioBuffer.
@@ -57,4 +59,10 @@ open external class OfflineAudioContext(
 
     @JsName("suspend")
     fun suspendAsync(suspendTime: Double): Promise<Void>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/complete_event)
+     */
+    @JsEvent("complete")
+    val completeEvent: EventInstance<OfflineAudioCompletionEvent, OfflineAudioContext /* this */, OfflineAudioContext /* this */>
 }

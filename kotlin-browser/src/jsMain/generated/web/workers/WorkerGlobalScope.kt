@@ -2,10 +2,9 @@
 
 package web.workers
 
+import web.csp.SecurityPolicyViolationEvent
 import web.errors.ErrorEvent
-import web.events.Event
-import web.events.EventHandler
-import web.events.EventTarget
+import web.events.*
 import web.fonts.FontFaceSource
 import web.promise.PromiseRejectionEvent
 
@@ -60,4 +59,46 @@ abstract external class WorkerGlobalScope :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/unhandledrejection_event)
      */
     var onunhandledrejection: EventHandler<PromiseRejectionEvent, WorkerGlobalScope, WorkerGlobalScope>?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/error_event)
+     */
+    @JsEvent("error")
+    val errorEvent: EventInstance<Event, WorkerGlobalScope /* this */, WorkerGlobalScope /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/languagechange_event)
+     */
+    @JsEvent("languagechange")
+    val languageChangeEvent: EventInstance<Event, WorkerGlobalScope /* this */, WorkerGlobalScope /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/offline_event)
+     */
+    @JsEvent("offline")
+    val offlineEvent: EventInstance<Event, WorkerGlobalScope /* this */, WorkerGlobalScope /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/online_event)
+     */
+    @JsEvent("online")
+    val onlineEvent: EventInstance<Event, WorkerGlobalScope /* this */, WorkerGlobalScope /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/rejectionhandled_event)
+     */
+    @JsEvent("rejectionhandled")
+    val rejectionHandledEvent: EventInstance<PromiseRejectionEvent, WorkerGlobalScope /* this */, WorkerGlobalScope /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/securitypolicyviolation_event)
+     */
+    @JsEvent("securitypolicyviolation")
+    val securityPolicyViolationEvent: EventInstance<SecurityPolicyViolationEvent, WorkerGlobalScope /* this */, WorkerGlobalScope /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/unhandledrejection_event)
+     */
+    @JsEvent("unhandledrejection")
+    val unhandledRejectionEvent: EventInstance<PromiseRejectionEvent, WorkerGlobalScope /* this */, WorkerGlobalScope /* this */>
 }

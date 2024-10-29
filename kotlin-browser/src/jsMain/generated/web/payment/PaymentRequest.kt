@@ -8,7 +8,9 @@ import js.promise.Promise
 import js.promise.PromiseLike
 import seskar.js.JsAsync
 import web.events.EventHandler
+import web.events.EventInstance
 import web.events.EventTarget
+import web.events.JsEvent
 
 /**
  * This Payment Request API interface is the primary access point into the API, and lets web content and apps accept payments from the end user.
@@ -63,4 +65,22 @@ open external class PaymentRequest(
 
     @JsName("show")
     fun showAsync(detailsPromise: PromiseLike<PaymentDetailsUpdate>): Promise<PaymentResponse>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/paymentmethodchange_event)
+     */
+    @JsEvent("paymentmethodchange")
+    val paymentMethodChangeEvent: EventInstance<PaymentMethodChangeEvent, PaymentRequest /* this */, PaymentRequest /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/shippingaddresschange_event)
+     */
+    @JsEvent("shippingaddresschange")
+    val shippingAddressChangeEvent: EventInstance<PaymentRequestUpdateEvent, PaymentRequest /* this */, PaymentRequest /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/shippingoptionchange_event)
+     */
+    @JsEvent("shippingoptionchange")
+    val shippingOptionChangeEvent: EventInstance<PaymentRequestUpdateEvent, PaymentRequest /* this */, PaymentRequest /* this */>
 }
