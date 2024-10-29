@@ -11,14 +11,12 @@ import web.animations.awaitAnimationFrame
 import web.animations.cancelAnimationFrame
 import web.animations.requestAnimationFrame
 import web.dom.document
-import web.dom.loadEvent
 import web.events.addHandler
 import web.events.once
 import web.events.subscribe
 import web.html.HTML.input
 import web.html.HTML.script
 import web.html.HTMLScriptElement
-import web.html.changeEvent
 
 val SubscribeExample = FC {
     val myInput = document.createElement(input)

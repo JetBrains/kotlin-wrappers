@@ -3,7 +3,6 @@ package example
 import web.console.console
 import web.dom.Document
 import web.dom.document
-import web.dom.dragOverEvent
 import web.events.addEventHandler
 import web.events.addHandler
 import web.uievents.DragEvent
