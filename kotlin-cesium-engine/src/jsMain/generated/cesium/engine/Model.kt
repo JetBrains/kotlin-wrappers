@@ -268,7 +268,7 @@ private constructor() {
     var enableVerticalExaggeration: Boolean
 
     /**
-     * The light color when shading the model. When `undefined` the scene's light color is used instead.
+     * The directional light color when shading the model. When `undefined` the scene's light color is used instead.
      *
      * Disabling additional light sources by setting
      * `model.imageBasedLighting.imageBasedLightingFactor = new Cartesian2(0.0, 0.0)`
@@ -282,6 +282,17 @@ private constructor() {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Model.html#imageBasedLighting">Online Documentation</a>
      */
     var imageBasedLighting: ImageBasedLighting
+
+    /**
+     * The properties for managing dynamic environment maps on this model. Affects lighting.
+     * ```
+     * // Change the ground color used for a model's environment map to a forest green
+     * const environmentMapManager = model.environmentMapManager;
+     * environmentMapManager.groundColor = Color.fromCssColorString("#203b34");
+     * ```
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Model.html#environmentMapManager">Online Documentation</a>
+     */
+    val environmentMapManager: DynamicEnvironmentMapManager
 
     /**
      * Whether to cull back-facing geometry. When true, back face culling is
@@ -594,6 +605,7 @@ private constructor() {
          * @property [clippingPolygons] The [ClippingPolygonCollection] used to selectively disable rendering the model.
          * @property [lightColor] The light color when shading the model. When `undefined` the scene's light color is used instead.
          * @property [imageBasedLighting] The properties for managing image-based lighting on this model.
+         * @property [environmentMapOptions] The properties for managing dynamic environment maps on this model.
          * @property [backFaceCulling] Whether to cull back-facing geometry. When true, back face culling is determined by the material's doubleSided property; when false, back face culling is disabled. Back faces are not culled if the model's color is translucent.
          *   Default value - `true`
          * @property [credit] A credit for the data source, which is displayed on the canvas.
@@ -654,6 +666,7 @@ private constructor() {
             var clippingPolygons: ClippingPolygonCollection?
             var lightColor: Cartesian3?
             var imageBasedLighting: ImageBasedLighting?
+            var environmentMapOptions: DynamicEnvironmentMapManager.ConstructorOptions?
             var backFaceCulling: Boolean?
             var credit: Credit?
             var showCreditsOnScreen: Boolean?

@@ -8,7 +8,10 @@
 
 package cesium.engine
 
+import js.array.ReadonlyArray
+import js.promise.Promise
 import kotlinx.js.JsPlainObject
+import seskar.js.JsAsync
 import web.dom.Element
 import web.html.HTMLCanvasElement
 
@@ -53,6 +56,8 @@ external class CesiumWidget(
     /**
      * @property [clock] The clock to use to control current time.
      *   Default value - [Clock()][Clock]
+     * @property [shouldAnimate] `true` if the clock should attempt to advance simulation time by default, `false` otherwise.
+     *   Default value - `false`
      * @property [ellipsoid] The default ellipsoid.
      *   Default value - [Ellipsoid.default]
      * @property [baseLayer] The bottommost imagery layer applied to the globe. If set to `false`, no imagery provider will be added.
@@ -79,17 +84,22 @@ external class CesiumWidget(
      * @property [targetFrameRate] The target frame rate when using the default render loop.
      * @property [showRenderLoopErrors] If true, this widget will automatically display an HTML panel to the user containing the error, if a render loop error occurs.
      *   Default value - `true`
+     * @property [automaticallyTrackDataSourceClocks] If true, this widget will automatically track the clock settings of newly added DataSources, updating if the DataSource's clock changes.  Set this to false if you want to configure the clock independently.
+     *   Default value - `true`
      * @property [contextOptions] Context and WebGL creation properties passed to [Scene].
      * @property [creditContainer] The DOM element that will contain the [CreditDisplay].  If not specified, the credits are added
      *   to the bottom of the widget itself.
      * @property [creditViewport] The DOM element that will contain the credit pop up created by the [CreditDisplay].  If not specified, it will appear over the widget itself.
+     * @property [dataSources] The collection of data sources visualized by the widget.  If this parameter is provided,
+     *   the instance is assumed to be owned by the caller and will not be destroyed when the widget is destroyed.
+     *   Default value - [DataSourceCollection()][DataSourceCollection]
      * @property [shadows] Determines if shadows are cast by light sources.
      *   Default value - `false`
      * @property [terrainShadows] Determines if the terrain casts or receives shadows from light sources.
      *   Default value - [ShadowMode.RECEIVE_ONLY]
      * @property [mapMode2D] Determines if the 2D map is rotatable or can be scrolled infinitely in the horizontal direction.
      *   Default value - [MapMode2D.INFINITE_SCROLL]
-     * @property [blurActiveElementOnCanvasFocus] If true, the active element will blur when the viewer's canvas is clicked. Setting this to false is useful for cases when the canvas is clicked only for retrieving position or an entity data without actually meaning to set the canvas to be the active element.
+     * @property [blurActiveElementOnCanvasFocus] If true, the active element will blur when the widget's canvas is clicked. Setting this to false is useful for cases when the canvas is clicked only for retrieving position or an entity data without actually meaning to set the canvas to be the active element.
      *   Default value - `true`
      * @property [requestRenderMode] If true, rendering a frame will only occur when needed as determined by changes within the scene. Enabling improves performance of the application, but requires using [Scene.requestRender] to render a new frame explicitly in this mode. This will be necessary in many cases after making changes to the scene in other parts of the API. See [Improving Performance with Explicit Rendering](https://cesium.com/blog/2018/01/24/cesium-scene-rendering-performance/).
      *   Default value - `false`
@@ -101,6 +111,7 @@ external class CesiumWidget(
     @JsPlainObject
     interface ConstructorOptions {
         var clock: Clock?
+        var shouldAnimate: Boolean?
         var ellipsoid: Ellipsoid?
         var baseLayer: ImageryLayer /* | false */?
         var terrainProvider: TerrainProvider?
@@ -116,9 +127,11 @@ external class CesiumWidget(
         var useBrowserRecommendedResolution: Boolean?
         var targetFrameRate: Int?
         var showRenderLoopErrors: Boolean?
+        var automaticallyTrackDataSourceClocks: Boolean?
         var contextOptions: ContextOptions?
         var creditContainer: Element?
         var creditViewport: Element?
+        var dataSources: DataSourceCollection?
         var shadows: Boolean?
         var terrainShadows: ShadowMode?
         var mapMode2D: MapMode2D?
@@ -169,6 +182,25 @@ external class CesiumWidget(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumWidget.html#creditDisplay">Online Documentation</a>
      */
     var creditDisplay: CreditDisplay
+
+    /**
+     * Gets the display used for [DataSource] visualization.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumWidget.html#dataSourceDisplay">Online Documentation</a>
+     */
+    val dataSourceDisplay: DataSourceDisplay
+
+    /**
+     * Gets the collection of entities not tied to a particular data source.
+     * This is a shortcut to [dataSourceDisplay.defaultDataSource.entities][CesiumWidget.dataSourceDisplay].
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumWidget.html#entities">Online Documentation</a>
+     */
+    val entities: EntityCollection
+
+    /**
+     * Gets the set of [DataSource] instances to be visualized.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumWidget.html#dataSources">Online Documentation</a>
+     */
+    val dataSources: DataSourceCollection
 
     /**
      * Gets the camera.
@@ -240,6 +272,33 @@ external class CesiumWidget(
     var useBrowserRecommendedResolution: Boolean
 
     /**
+     * Gets or sets whether or not data sources can temporarily pause
+     * animation in order to avoid showing an incomplete picture to the user.
+     * For example, if asynchronous primitives are being processed in the
+     * background, the clock will not advance until the geometry is ready.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumWidget.html#allowDataSourcesToSuspendAnimation">Online Documentation</a>
+     */
+    var allowDataSourcesToSuspendAnimation: Boolean
+
+    /**
+     * Gets or sets the Entity instance currently being tracked by the camera.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumWidget.html#trackedEntity">Online Documentation</a>
+     */
+    var trackedEntity: Entity?
+
+    /**
+     * Gets the event that is raised when the tracked entity changes.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumWidget.html#trackedEntityChanged">Online Documentation</a>
+     */
+    val trackedEntityChanged: DefaultEvent
+
+    /**
+     * Gets or sets the data source to track with the widget's clock.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumWidget.html#clockTrackedDataSource">Online Documentation</a>
+     */
+    var clockTrackedDataSource: DataSource
+
+    /**
      * Show an error panel to the user containing a title and a longer error message,
      * which can be dismissed using an OK button.  This panel is displayed automatically
      * when a render loop error occurs, if showRenderLoopErrors was not false when the
@@ -282,4 +341,414 @@ external class CesiumWidget(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumWidget.html#render">Online Documentation</a>
      */
     fun render()
+
+    /**
+     * Asynchronously sets the camera to view the provided entity, entities, or data source.
+     * If the data source is still in the process of loading or the visualization is otherwise still loading,
+     * this method waits for the data to be ready before performing the zoom.
+     *
+     * The offset is heading/pitch/range in the local east-north-up reference frame centered at the center of the bounding sphere.
+     * The heading and the pitch angles are defined in the local east-north-up reference frame.
+     * The heading is the angle from y axis and increasing towards the x axis. Pitch is the rotation from the xy-plane. Positive pitch
+     * angles are above the plane. Negative pitch angles are below the plane. The range is the distance from the center. If the range is
+     * zero, a range will be computed such that the whole bounding sphere is visible.
+     *
+     * In 2D, there must be a top down view. The camera will be placed above the target looking down. The height above the
+     * target will be the range. The heading will be determined from the offset. If the heading cannot be
+     * determined from the offset, the heading will be north.
+     * @param [target] The entity, array of entities, entity collection, data source, Cesium3DTileset, point cloud, or imagery layer to view. You can also pass a promise that resolves to one of the previously mentioned types.
+     * @param [offset] The offset from the center of the entity in the local east-north-up reference frame.
+     * @return A Promise that resolves to true if the zoom was successful or false if the target is not currently visualized in the scene or the zoom was cancelled.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumWidget.html#zoomTo">Online Documentation</a>
+     */
+    @JsAsync
+    suspend fun zoomTo(
+        target: Entity,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Boolean
+
+    @JsName("zoomTo")
+    fun zoomToAsync(
+        target: Entity,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Promise<Boolean>
+
+    @JsAsync
+    suspend fun zoomTo(
+        target: ReadonlyArray<Entity>,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Boolean
+
+    @JsName("zoomTo")
+    fun zoomToAsync(
+        target: ReadonlyArray<Entity>,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Promise<Boolean>
+
+    @JsAsync
+    suspend fun zoomTo(
+        target: EntityCollection,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Boolean
+
+    @JsName("zoomTo")
+    fun zoomToAsync(
+        target: EntityCollection,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Promise<Boolean>
+
+    @JsAsync
+    suspend fun zoomTo(
+        target: DataSource,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Boolean
+
+    @JsName("zoomTo")
+    fun zoomToAsync(
+        target: DataSource,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Promise<Boolean>
+
+    @JsAsync
+    suspend fun zoomTo(
+        target: ImageryLayer,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Boolean
+
+    @JsName("zoomTo")
+    fun zoomToAsync(
+        target: ImageryLayer,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Promise<Boolean>
+
+    @JsAsync
+    suspend fun zoomTo(
+        target: Cesium3DTileset,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Boolean
+
+    @JsName("zoomTo")
+    fun zoomToAsync(
+        target: Cesium3DTileset,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Promise<Boolean>
+
+    @JsAsync
+    suspend fun zoomTo(
+        target: TimeDynamicPointCloud,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Boolean
+
+    @JsName("zoomTo")
+    fun zoomToAsync(
+        target: TimeDynamicPointCloud,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Promise<Boolean>
+
+    @JsAsync
+    suspend fun zoomTo(
+        target: Promise<Entity>,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Boolean
+
+    @JsName("zoomTo")
+    fun zoomToAsync(
+        target: Promise<Entity>,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Promise<Boolean>
+
+    @JsAsync
+    suspend fun zoomTo(
+        target: Promise<ReadonlyArray<Entity>>,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Boolean
+
+    @JsName("zoomTo")
+    fun zoomToAsync(
+        target: Promise<ReadonlyArray<Entity>>,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Promise<Boolean>
+
+    @JsAsync
+    suspend fun zoomTo(
+        target: Promise<EntityCollection>,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Boolean
+
+    @JsName("zoomTo")
+    fun zoomToAsync(
+        target: Promise<EntityCollection>,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Promise<Boolean>
+
+    @JsAsync
+    suspend fun zoomTo(
+        target: Promise<DataSource>,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Boolean
+
+    @JsName("zoomTo")
+    fun zoomToAsync(
+        target: Promise<DataSource>,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Promise<Boolean>
+
+    @JsAsync
+    suspend fun zoomTo(
+        target: Promise<ImageryLayer>,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Boolean
+
+    @JsName("zoomTo")
+    fun zoomToAsync(
+        target: Promise<ImageryLayer>,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Promise<Boolean>
+
+    @JsAsync
+    suspend fun zoomTo(
+        target: Promise<Cesium3DTileset>,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Boolean
+
+    @JsName("zoomTo")
+    fun zoomToAsync(
+        target: Promise<Cesium3DTileset>,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Promise<Boolean>
+
+    @JsAsync
+    suspend fun zoomTo(
+        target: Promise<TimeDynamicPointCloud>,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Boolean
+
+    @JsName("zoomTo")
+    fun zoomToAsync(
+        target: Promise<TimeDynamicPointCloud>,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Promise<Boolean>
+
+    @JsAsync
+    suspend fun zoomTo(
+        target: Promise<VoxelPrimitive>,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Boolean
+
+    @JsName("zoomTo")
+    fun zoomToAsync(
+        target: Promise<VoxelPrimitive>,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Promise<Boolean>
+
+    /**
+     * Flies the camera to the provided entity, entities, or data source.
+     * If the data source is still in the process of loading or the visualization is otherwise still loading,
+     * this method waits for the data to be ready before performing the flight.
+     *
+     * The offset is heading/pitch/range in the local east-north-up reference frame centered at the center of the bounding sphere.
+     * The heading and the pitch angles are defined in the local east-north-up reference frame.
+     * The heading is the angle from y axis and increasing towards the x axis. Pitch is the rotation from the xy-plane. Positive pitch
+     * angles are above the plane. Negative pitch angles are below the plane. The range is the distance from the center. If the range is
+     * zero, a range will be computed such that the whole bounding sphere is visible.
+     *
+     * In 2D, there must be a top down view. The camera will be placed above the target looking down. The height above the
+     * target will be the range. The heading will be determined from the offset. If the heading cannot be
+     * determined from the offset, the heading will be north.
+     * @param [target] The entity, array of entities, entity collection, data source, Cesium3DTileset, point cloud, or imagery layer to view. You can also pass a promise that resolves to one of the previously mentioned types.
+     * @return A Promise that resolves to true if the flight was successful or false if the target is not currently visualized in the scene or the flight was cancelled. //TODO: Cleanup entity mentions
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumWidget.html#flyTo">Online Documentation</a>
+     */
+    @JsAsync
+    suspend fun flyTo(
+        target: Entity,
+        options: FlyToOptions? = definedExternally,
+    ): Boolean
+
+    @JsName("flyTo")
+    fun flyToAsync(
+        target: Entity,
+        options: FlyToOptions? = definedExternally,
+    ): Promise<Boolean>
+
+    /**
+     * @property [duration] The duration of the flight in seconds.
+     *   Default value - `3.0`
+     * @property [maximumHeight] The maximum height at the peak of the flight.
+     * @property [offset] The offset from the target in the local east-north-up reference frame centered at the target.
+     */
+    @JsPlainObject
+    interface FlyToOptions {
+        var duration: Double?
+        var maximumHeight: Double?
+        var offset: HeadingPitchRange?
+    }
+
+    @JsAsync
+    suspend fun flyTo(
+        target: ReadonlyArray<Entity>,
+        options: FlyToOptions? = definedExternally,
+    ): Boolean
+
+    @JsName("flyTo")
+    fun flyToAsync(
+        target: ReadonlyArray<Entity>,
+        options: FlyToOptions? = definedExternally,
+    ): Promise<Boolean>
+
+    @JsAsync
+    suspend fun flyTo(
+        target: EntityCollection,
+        options: FlyToOptions? = definedExternally,
+    ): Boolean
+
+    @JsName("flyTo")
+    fun flyToAsync(
+        target: EntityCollection,
+        options: FlyToOptions? = definedExternally,
+    ): Promise<Boolean>
+
+    @JsAsync
+    suspend fun flyTo(
+        target: DataSource,
+        options: FlyToOptions? = definedExternally,
+    ): Boolean
+
+    @JsName("flyTo")
+    fun flyToAsync(
+        target: DataSource,
+        options: FlyToOptions? = definedExternally,
+    ): Promise<Boolean>
+
+    @JsAsync
+    suspend fun flyTo(
+        target: ImageryLayer,
+        options: FlyToOptions? = definedExternally,
+    ): Boolean
+
+    @JsName("flyTo")
+    fun flyToAsync(
+        target: ImageryLayer,
+        options: FlyToOptions? = definedExternally,
+    ): Promise<Boolean>
+
+    @JsAsync
+    suspend fun flyTo(
+        target: Cesium3DTileset,
+        options: FlyToOptions? = definedExternally,
+    ): Boolean
+
+    @JsName("flyTo")
+    fun flyToAsync(
+        target: Cesium3DTileset,
+        options: FlyToOptions? = definedExternally,
+    ): Promise<Boolean>
+
+    @JsAsync
+    suspend fun flyTo(
+        target: TimeDynamicPointCloud,
+        options: FlyToOptions? = definedExternally,
+    ): Boolean
+
+    @JsName("flyTo")
+    fun flyToAsync(
+        target: TimeDynamicPointCloud,
+        options: FlyToOptions? = definedExternally,
+    ): Promise<Boolean>
+
+    @JsAsync
+    suspend fun flyTo(
+        target: Promise<Entity>,
+        options: FlyToOptions? = definedExternally,
+    ): Boolean
+
+    @JsName("flyTo")
+    fun flyToAsync(
+        target: Promise<Entity>,
+        options: FlyToOptions? = definedExternally,
+    ): Promise<Boolean>
+
+    @JsAsync
+    suspend fun flyTo(
+        target: Promise<ReadonlyArray<Entity>>,
+        options: FlyToOptions? = definedExternally,
+    ): Boolean
+
+    @JsName("flyTo")
+    fun flyToAsync(
+        target: Promise<ReadonlyArray<Entity>>,
+        options: FlyToOptions? = definedExternally,
+    ): Promise<Boolean>
+
+    @JsAsync
+    suspend fun flyTo(
+        target: Promise<EntityCollection>,
+        options: FlyToOptions? = definedExternally,
+    ): Boolean
+
+    @JsName("flyTo")
+    fun flyToAsync(
+        target: Promise<EntityCollection>,
+        options: FlyToOptions? = definedExternally,
+    ): Promise<Boolean>
+
+    @JsAsync
+    suspend fun flyTo(
+        target: Promise<DataSource>,
+        options: FlyToOptions? = definedExternally,
+    ): Boolean
+
+    @JsName("flyTo")
+    fun flyToAsync(
+        target: Promise<DataSource>,
+        options: FlyToOptions? = definedExternally,
+    ): Promise<Boolean>
+
+    @JsAsync
+    suspend fun flyTo(
+        target: Promise<ImageryLayer>,
+        options: FlyToOptions? = definedExternally,
+    ): Boolean
+
+    @JsName("flyTo")
+    fun flyToAsync(
+        target: Promise<ImageryLayer>,
+        options: FlyToOptions? = definedExternally,
+    ): Promise<Boolean>
+
+    @JsAsync
+    suspend fun flyTo(
+        target: Promise<Cesium3DTileset>,
+        options: FlyToOptions? = definedExternally,
+    ): Boolean
+
+    @JsName("flyTo")
+    fun flyToAsync(
+        target: Promise<Cesium3DTileset>,
+        options: FlyToOptions? = definedExternally,
+    ): Promise<Boolean>
+
+    @JsAsync
+    suspend fun flyTo(
+        target: Promise<TimeDynamicPointCloud>,
+        options: FlyToOptions? = definedExternally,
+    ): Boolean
+
+    @JsName("flyTo")
+    fun flyToAsync(
+        target: Promise<TimeDynamicPointCloud>,
+        options: FlyToOptions? = definedExternally,
+    ): Promise<Boolean>
+
+    @JsAsync
+    suspend fun flyTo(
+        target: Promise<VoxelPrimitive>,
+        options: FlyToOptions? = definedExternally,
+    ): Boolean
+
+    @JsName("flyTo")
+    fun flyToAsync(
+        target: Promise<VoxelPrimitive>,
+        options: FlyToOptions? = definedExternally,
+    ): Promise<Boolean>
 }

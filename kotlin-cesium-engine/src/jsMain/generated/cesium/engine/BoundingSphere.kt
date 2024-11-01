@@ -471,7 +471,7 @@ external class BoundingSphere(
 
         /**
          * Determines whether or not a sphere is hidden from view by the occluder.
-         * @param [sphere] The bounding sphere surrounding the occludee object.
+         * @param [sphere] The bounding sphere surrounding the occluded object.
          * @param [occluder] The occluder.
          * @return `true` if the sphere is not visible; otherwise `false`.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BoundingSphere.html#.isOccluded">Online Documentation</a>

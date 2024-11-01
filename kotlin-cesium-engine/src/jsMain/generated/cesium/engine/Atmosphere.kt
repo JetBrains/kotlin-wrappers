@@ -95,4 +95,14 @@ external class Atmosphere {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Atmosphere.html#dynamicLighting">Online Documentation</a>
      */
     var dynamicLighting: DynamicAtmosphereLightingType
+
+    companion object {
+        /**
+         * Returns `true` if the atmosphere shader requires a color correct step.
+         * @param [atmosphere] The atmosphere instance to check
+         * @return true if the atmosphere shader requires a color correct step
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Atmosphere.html#.requiresColorCorrect">Online Documentation</a>
+         */
+        fun requiresColorCorrect(atmosphere: Atmosphere): Boolean
+    }
 }

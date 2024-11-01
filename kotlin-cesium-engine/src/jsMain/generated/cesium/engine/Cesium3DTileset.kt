@@ -805,6 +805,17 @@ external class Cesium3DTileset(
     var imageBasedLighting: ImageBasedLighting
 
     /**
+     * The properties for managing dynamic environment maps on this model. Affects lighting.
+     * ```
+     * // Change the ground color used for a tileset's environment map to a forest green
+     * const environmentMapManager = tileset.environmentMapManager;
+     * environmentMapManager.groundColor = Color.fromCssColorString("#203b34");
+     * ```
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#environmentMapManager">Online Documentation</a>
+     */
+    val environmentMapManager: DynamicEnvironmentMapManager
+
+    /**
      * Indicates that only the tileset's vector tiles should be used for classification.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#vectorClassificationOnly">Online Documentation</a>
      */

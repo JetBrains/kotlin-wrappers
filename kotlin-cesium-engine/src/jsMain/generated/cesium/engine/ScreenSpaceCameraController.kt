@@ -200,6 +200,16 @@ external class ScreenSpaceCameraController(
     var enableCollisionDetection: Boolean
 
     /**
+     * The angle, relative to the ellipsoid normal, restricting the maximum amount that the user can tilt the camera. If `undefined`, the angle of the camera tilt is unrestricted.
+     * ```
+     * // Prevent the camera from tilting below the ellipsoid surface
+     * viewer.scene.screenSpaceCameraController.maximumTiltAngle = Math.PI / 2.0;
+     * ```
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceCameraController.html#maximumTiltAngle">Online Documentation</a>
+     */
+    var maximumTiltAngle: Double?
+
+    /**
      * Returns true if this object was destroyed; otherwise, false.
      *
      * If this object was destroyed, it should not be used; calling any function other than

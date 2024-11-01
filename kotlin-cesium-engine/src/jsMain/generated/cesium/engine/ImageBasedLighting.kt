@@ -27,15 +27,6 @@ external class ImageBasedLighting {
     var imageBasedLightingFactor: Cartesian2
 
     /**
-     * The sun's luminance at the zenith in kilo candela per meter squared
-     * to use for this model's procedural environment map. This is used when
-     * [ImageBasedLighting.specularEnvironmentMaps] and [ImageBasedLighting.sphericalHarmonicCoefficients]
-     * are not defined.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageBasedLighting.html#luminanceAtZenith">Online Documentation</a>
-     */
-    var luminanceAtZenith: Double
-
-    /**
      * The third order spherical harmonic coefficients used for the diffuse color of image-based lighting. When `undefined`, a diffuse irradiance
      * computed from the atmosphere color is used.
      *

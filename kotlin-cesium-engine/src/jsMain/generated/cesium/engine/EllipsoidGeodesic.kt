@@ -67,7 +67,7 @@ external class EllipsoidGeodesic(
 
     /**
      * Provides the location of a point at the indicated distance along the geodesic.
-     * @param [distance] The distance from the inital point to the point of interest along the geodesic
+     * @param [distance] The distance from the initial point to the point of interest along the geodesic
      * @param [result] The object in which to store the result.
      * @return The location of the point along the geodesic.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipsoidGeodesic.html#interpolateUsingSurfaceDistance">Online Documentation</a>
