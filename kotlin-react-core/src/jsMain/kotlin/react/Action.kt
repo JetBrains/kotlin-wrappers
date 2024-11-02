@@ -4,7 +4,16 @@
 
 package react
 
+import js.core.Void
 import js.promise.Promise
+import react.internal.isolatedPromise
+
+private typealias ActionFunction<T> = (T) -> Promise<Void>?
+
+private inline fun <T> toAction(
+    noinline value: ActionFunction<T>,
+): Action<T> =
+    value.unsafeCast<Action<T>>()
 
 sealed external interface Action<in T> :
     ActionOrString<T>
@@ -12,8 +21,7 @@ sealed external interface Action<in T> :
 suspend operator fun <T> Action<T>.invoke(
     data: T,
 ) {
-    val result: Any? = asDynamic()(data)
-    Promise.resolve(result).await()
+    unsafeCast<ActionFunction<T>>()(data)?.await()
 }
 
 inline fun Action(
@@ -21,12 +29,12 @@ inline fun Action(
 ): ActionOrString<*> =
     value.unsafeCast<ActionOrString<*>>()
 
-inline fun Action(
-    noinline value: () -> Unit,
-): Action<*> =
-    value.unsafeCast<Action<*>>()
-
-inline fun <T> Action(
-    noinline value: (T) -> Unit,
+fun <T> Action(
+    value: suspend (T) -> Unit,
 ): Action<T> =
-    value.unsafeCast<Action<T>>()
+    toAction { data ->
+        isolatedPromise {
+            value(data)
+            undefined
+        }
+    }
