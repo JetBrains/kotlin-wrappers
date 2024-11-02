@@ -1,6 +1,7 @@
 package node.events
 
 import js.array.JsTuple
+import js.coroutines.internal.internalSubscribeJob
 import js.iterable.SuspendableIterator
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.Channel
@@ -33,16 +34,9 @@ fun <P : JsTuple> EventInstance<P>.addHandler(
 suspend fun <P : JsTuple> EventInstance<P>.subscribe(
     handler: (P) -> Unit,
 ): Job =
-    CoroutineScope(currentCoroutineContext())
-        .launch(start = CoroutineStart.UNDISPATCHED) {
-            suspendCancellableCoroutine<Nothing> { continuation ->
-                val unsubscribe = addHandler(handler)
-
-                continuation.invokeOnCancellation {
-                    unsubscribe()
-                }
-            }
-        }
+    internalSubscribeJob {
+        addHandler(handler)
+    }
 
 suspend fun <P : JsTuple> EventInstance<P>.once(): P =
     suspendCancellableCoroutine { continuation ->
