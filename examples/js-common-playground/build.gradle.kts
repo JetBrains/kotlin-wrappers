@@ -43,6 +43,10 @@ private fun defaultHierarchyTemplate(): KotlinHierarchyTemplate =
         }
     }
 
+dependencies {
+    "jsCommonTestImplementation"(libs.kotlin.test)
+}
+
 tasks.withType<Kotlin2JsCompile>().configureEach {
     compilerOptions {
         target = "es2015"
