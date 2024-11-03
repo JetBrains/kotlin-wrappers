@@ -1,12 +1,8 @@
 @file:OptIn(
-    ExperimentalKotlinGradlePluginApi::class,
     ExperimentalWasmDsl::class,
 )
 
-import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
-import org.jetbrains.kotlin.gradle.plugin.KotlinHierarchyTemplate
-import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSetTree
 import org.jetbrains.kotlin.gradle.tasks.Kotlin2JsCompile
 
 plugins {
@@ -27,24 +23,10 @@ kotlin {
         browser()
         nodejs()
     }
-
-    applyHierarchyTemplate(defaultHierarchyTemplate())
 }
 
-private fun defaultHierarchyTemplate(): KotlinHierarchyTemplate =
-    KotlinHierarchyTemplate {
-        withSourceSetTree(KotlinSourceSetTree.main, KotlinSourceSetTree.test)
-
-        common {
-            group("jsCommon") {
-                withJs()
-                withWasmJs()
-            }
-        }
-    }
-
 dependencies {
-    "jsCommonTestImplementation"(libs.kotlin.test)
+    "commonTestImplementation"(libs.kotlin.test)
 }
 
 tasks.withType<Kotlin2JsCompile>().configureEach {
