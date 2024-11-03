@@ -34,3 +34,16 @@ tasks.withType<Kotlin2JsCompile>().configureEach {
         target = "es2015"
     }
 }
+
+// WA for tests
+sequenceOf(
+    "jsBrowserTest",
+    "jsNodeTest",
+    "wasmJsBrowserTest",
+    "wasmJsNodeTest",
+).forEach { testAggregatorTask ->
+    tasks.named(testAggregatorTask) {
+        dependsOn("jsTestTestDevelopmentExecutableCompileSync")
+        dependsOn("wasmJsTestTestDevelopmentExecutableCompileSync")
+    }
+}
