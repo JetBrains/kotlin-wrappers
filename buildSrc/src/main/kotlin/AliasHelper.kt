@@ -30,9 +30,6 @@ class AliasHelper(
             transform = { it.groupValues[1].uppercase() }
         )
 
-        if (name == "extensions")
-            name = "jsExtensions"
-
         return listOfNotNull(group, name)
             .joinToString("-")
     }
