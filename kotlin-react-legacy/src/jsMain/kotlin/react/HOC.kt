@@ -1,14 +1,12 @@
 package react
 
 external interface HOC<out P : Props, in R : Props> {
-}
-
-@Suppress("NOTHING_TO_INLINE")
-inline operator fun <P : Props, R : Props> HOC<P, R>.invoke(
-    component: ComponentType<P>,
-    vararg args: Any?,
-): ComponentClass<R> {
-    asDynamic()(component, args)
+    @nativeInvoke
+    @Suppress("DEPRECATION")
+    operator fun invoke(
+        component: ComponentType<P>,
+        vararg args: Any?,
+    ): ComponentClass<R>
 }
 
 operator fun <P : Props, R : Props> HOC<P, R>.invoke(
