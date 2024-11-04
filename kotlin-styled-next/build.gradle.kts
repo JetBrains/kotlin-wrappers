@@ -18,7 +18,6 @@ kotlin {
 }
 
 dependencies {
-    jsMainApi(projects.kotlinExtensions)
     jsMainApi(projects.kotlinJs)
     jsMainApi(projects.kotlinCss)
     jsMainApi(projects.kotlinReactLegacy)
