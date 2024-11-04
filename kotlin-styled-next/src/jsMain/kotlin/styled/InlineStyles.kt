@@ -1,7 +1,8 @@
 package styled
 
 import js.objects.Object
-import kotlinext.js.js
+import js.objects.Record
+import js.objects.jso
 import kotlinx.css.CssDeclarations
 import kotlinx.css.StyledElement
 import kotlinx.css.StyledElementBuilder
@@ -10,7 +11,11 @@ import react.dom.RDOMBuilder
 import react.dom.setProp
 
 // Inserts vendor prefixes (using inline-style-prefixer) and sets the style attribute
-fun RDOMBuilder<*>.inlineStyles(prefix: Boolean = true, preserveExisting: Boolean = false, builder: StyledElementBuilder) {
+fun RDOMBuilder<*>.inlineStyles(
+    prefix: Boolean = true,
+    preserveExisting: Boolean = false,
+    builder: StyledElementBuilder,
+) {
     val newStyle = StyledElement().also(builder).toStyle(prefix)
 
     if (preserveExisting) {
@@ -36,20 +41,20 @@ fun StyledElement.toStyle(prefix: Boolean = true): Any {
         val value = prefixed[it]
 
         if (value is Array<*>) {
-                // Find the unprefixed value in the array and use it: multiple values don't work for some reason
+            // Find the unprefixed value in the array and use it: multiple values don't work for some reason
             val displayValue = value.find {
                 (it as String).startsWith('-')
             }
 
             prefixed[it] = displayValue
-            }
+        }
     }
 
     return prefixed
 }
 
-private fun CssDeclarations.mapToObj(): dynamic {
-    val res = js { }
+private fun CssDeclarations.mapToObj(): Record<String, Any> {
+    val res: Record<String, Any> = jso()
     forEach { (key, value) ->
         res[key] = when (value) {
             is String, is Number -> value
