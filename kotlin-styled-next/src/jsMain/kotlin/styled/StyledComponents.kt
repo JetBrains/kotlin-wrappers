@@ -5,8 +5,8 @@
 package styled
 
 import js.core.delete
+import js.objects.Object
 import js.objects.jso
-import kotlinext.js.clone
 import kotlinx.css.CssBuilder
 import kotlinx.css.CssDsl
 import kotlinx.css.RuleSet
@@ -141,7 +141,7 @@ internal fun customStyled(type: dynamic): ElementType<StyledProps> {
             GlobalStyles.injectScheduled()
         }
 
-        val newProps = clone(props)
+        val newProps = Object.assign(jso(), props)
         className = listOf(props.className?.toString(), className, classes).filter { !it.isNullOrEmpty() }.joinToString(" ")
         if (className.isNotEmpty()) {
             newProps.className = web.cssom.ClassName(className)

@@ -1,6 +1,6 @@
 package react.dom
 
-import kotlinext.js.js
+import js.objects.jso
 import kotlinx.html.INPUT
 import kotlinx.html.TEXTAREA
 import kotlinx.html.Tag
@@ -242,7 +242,7 @@ var TEXTAREA.value by StringAttr
 
 var Tag.jsStyle: dynamic
     get() {
-        val value = asDynamic()[jsStyleMarker] ?: js {}
+        val value = asDynamic()[jsStyleMarker] ?: jso()
         jsStyle = value
         return value
     }

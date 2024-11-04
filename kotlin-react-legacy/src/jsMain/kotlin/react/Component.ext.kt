@@ -1,7 +1,8 @@
 package react
 
-import kotlinext.js.assign
+import js.objects.Object
+import js.objects.jso
 
 fun <S : State> Component<*, S>.setState(buildState: S.() -> Unit) {
-    setState({ assign(it, buildState) })
+    setState({ Object.assign(jso(), it).apply(buildState) })
 }
