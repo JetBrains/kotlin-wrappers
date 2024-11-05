@@ -9,6 +9,7 @@
 package react.use
 
 import js.core.Void
+import js.reflect.unsafeCast
 import react.useRef
 import kotlin.reflect.KProperty
 
@@ -21,7 +22,7 @@ fun <T> useLatest(
     val ref = useRef<T & Any>()
     ref.current = value
 
-    return ref.unsafeCast<LatestInstance<T>>()
+    return unsafeCast(ref)
 }
 
 sealed external interface LatestInstance<T> {
