@@ -6,6 +6,7 @@ package react
 
 import js.core.Void
 import js.promise.Promise
+import js.reflect.unsafeCast
 import react.internal.isolatedPromise
 
 private typealias ActionFunction<T> = (T) -> Promise<Void>?
@@ -13,7 +14,7 @@ private typealias ActionFunction<T> = (T) -> Promise<Void>?
 private inline fun <T> toAction(
     noinline value: ActionFunction<T>,
 ): Action<T> =
-    value.unsafeCast<Action<T>>()
+    unsafeCast(value)
 
 sealed external interface Action<in T> :
     ActionOrString<T>
@@ -27,7 +28,7 @@ suspend operator fun <T> Action<T>.invoke(
 inline fun Action(
     value: String,
 ): ActionOrString<*> =
-    value.unsafeCast<ActionOrString<*>>()
+    unsafeCast(value)
 
 fun <T> Action(
     value: suspend (T) -> Unit,

@@ -1,5 +1,6 @@
 package react
 
+import js.reflect.unsafeCast
 import kotlin.reflect.KClass
 
 // TODO: Should extend RComponentClassStatics, but has problems with generic params
@@ -8,7 +9,7 @@ external interface ComponentClass<in P : Props> :
     RComponentClassStatics<Props, State, Context<*>?>
 
 val <P : Props> KClass<out Component<P, *>>.react: ComponentClass<P>
-    get() = js.unsafeCast<ComponentClass<P>>()
+    get() = unsafeCast(js)
 
 external interface RComponentClassStatics<P : Props, S : State, C : Context<*>?> {
     var displayName: String?
@@ -34,4 +35,4 @@ external interface RComponentClassStatics<P : Props, S : State, C : Context<*>?>
  */
 open class RStatics<P : Props, S : State, C : Component<P, S>, CTX : Context<*>?>(
     klazz: KClass<C>,
-) : RComponentClassStatics<P, S, CTX> by klazz.js.unsafeCast<RComponentClassStatics<P, S, CTX>>()
+) : RComponentClassStatics<P, S, CTX> by unsafeCast(klazz.js)

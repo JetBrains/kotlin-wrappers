@@ -5,6 +5,7 @@
 package react
 
 import js.array.ReadonlyArray
+import js.reflect.unsafeCast
 
 @JsExternalInheritorsOnly
 sealed external interface ReactNode
@@ -12,12 +13,12 @@ sealed external interface ReactNode
 inline fun ReactNode(
     source: ReadonlyArray<ReactNode>,
 ): ReactNode =
-    source.unsafeCast<ReactNode>()
+    unsafeCast(source)
 
 inline fun ReactNode(
     source: String,
 ): ReactNode =
-    source.unsafeCast<ReactNode>()
+    unsafeCast(source)
 
 inline fun ReactNode(
     source: String?,

@@ -1,5 +1,6 @@
 package react.internal
 
+import js.reflect.unsafeCast
 import kotlinx.coroutines.CoroutineScope
 import react.Cleanup
 import react.CleanupBuilder
@@ -8,7 +9,7 @@ fun createCleanupCallback(
     block: CleanupBuilder.() -> Unit,
 ): () -> Cleanup? = {
     val cleanups = arrayOf<Cleanup>()
-    block(cleanups.unsafeCast<CleanupBuilder>())
+    block(unsafeCast(cleanups))
     buildCleanup(cleanups)
 }
 

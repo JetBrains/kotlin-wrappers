@@ -4,6 +4,7 @@
 
 package react
 
+import js.reflect.unsafeCast
 import web.cssom.Selector
 
 sealed external interface IntrinsicType<in P : PropsWithClassName> :
@@ -13,4 +14,4 @@ sealed external interface IntrinsicType<in P : PropsWithClassName> :
 inline fun <P : PropsWithClassName> IntrinsicType(
     tagName: String,
 ): IntrinsicType<P> =
-    tagName.unsafeCast<IntrinsicType<P>>()
+    unsafeCast(tagName)
