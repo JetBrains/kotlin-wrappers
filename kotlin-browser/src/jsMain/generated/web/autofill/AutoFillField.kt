@@ -6,6 +6,8 @@
 
 package web.autofill
 
+import js.reflect.unsafeCast
+
 sealed external interface AutoFillField :
     AutoFill
 
@@ -13,4 +15,4 @@ inline fun AutoFillField(
     contactKind: AutoFillContactKind,
     contactField: AutoFillContactField,
 ): AutoFillField =
-    "$contactKind $contactField".unsafeCast<AutoFillField>()
+    unsafeCast("$contactKind $contactField")

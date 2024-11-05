@@ -6,9 +6,11 @@
 
 package web.autofill
 
+import js.reflect.unsafeCast
+
 sealed interface AutoFillSection
 
 inline fun AutoFillSection(
     value: String,
 ): AutoFillSection =
-    "section-$value".unsafeCast<AutoFillSection>()
+    unsafeCast("section-$value")

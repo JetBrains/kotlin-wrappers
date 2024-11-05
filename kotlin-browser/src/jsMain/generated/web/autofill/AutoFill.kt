@@ -6,6 +6,8 @@
 
 package web.autofill
 
+import js.reflect.unsafeCast
+
 sealed external interface AutoFill
 
 inline fun AutoFill(
@@ -13,7 +15,7 @@ inline fun AutoFill(
     addressKind: AutoFillAddressKind,
     field: AutoFillField,
 ): AutoFill =
-    "$section $addressKind $field".unsafeCast<AutoFill>()
+    unsafeCast("$section $addressKind $field")
 
 inline fun AutoFill(
     section: AutoFillSection,
@@ -21,23 +23,23 @@ inline fun AutoFill(
     field: AutoFillField,
     credentialField: AutoFillCredentialField,
 ): AutoFill =
-    "$section $addressKind $field $credentialField".unsafeCast<AutoFill>()
+    unsafeCast("$section $addressKind $field $credentialField")
 
 inline fun AutoFill(
     addressKind: AutoFillAddressKind,
     field: AutoFillField,
 ): AutoFill =
-    "$addressKind $field".unsafeCast<AutoFill>()
+    unsafeCast("$addressKind $field")
 
 inline fun AutoFill(
     addressKind: AutoFillAddressKind,
     field: AutoFillField,
     credentialField: AutoFillCredentialField,
 ): AutoFill =
-    "$addressKind $field $credentialField".unsafeCast<AutoFill>()
+    unsafeCast("$addressKind $field $credentialField")
 
 inline fun AutoFill(
     field: AutoFillField,
     credentialField: AutoFillCredentialField,
 ): AutoFill =
-    "$field $credentialField".unsafeCast<AutoFill>()
+    unsafeCast("$field $credentialField")

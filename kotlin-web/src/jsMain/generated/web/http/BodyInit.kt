@@ -7,6 +7,7 @@
 package web.http
 
 import js.buffer.BufferSource
+import js.reflect.unsafeCast
 import web.blob.Blob
 import web.form.FormData
 import web.streams.ReadableStream
@@ -17,29 +18,29 @@ sealed external interface BodyInit
 inline fun BodyInit(
     value: ReadableStream<*>,
 ): BodyInit =
-    value.unsafeCast<BodyInit>()
+    unsafeCast(value)
 
 inline fun BodyInit(
     value: Blob,
 ): BodyInit =
-    value.unsafeCast<BodyInit>()
+    unsafeCast(value)
 
 inline fun BodyInit(
     value: BufferSource,
 ): BodyInit =
-    value.unsafeCast<BodyInit>()
+    unsafeCast(value)
 
 inline fun BodyInit(
     value: FormData,
 ): BodyInit =
-    value.unsafeCast<BodyInit>()
+    unsafeCast(value)
 
 inline fun BodyInit(
     value: URLSearchParams,
 ): BodyInit =
-    value.unsafeCast<BodyInit>()
+    unsafeCast(value)
 
 inline fun BodyInit(
     value: String,
 ): BodyInit =
-    value.unsafeCast<BodyInit>()
+    unsafeCast(value)

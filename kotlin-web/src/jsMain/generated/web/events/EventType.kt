@@ -6,9 +6,11 @@
 
 package web.events
 
+import js.reflect.unsafeCast
+
 sealed external interface EventType<out E : Event>
 
 inline fun <E : Event> EventType(
     value: String,
 ): EventType<E> =
-    value.unsafeCast<EventType<E>>()
+    unsafeCast(value)

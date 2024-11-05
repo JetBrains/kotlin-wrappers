@@ -7,12 +7,14 @@
 
 package web.events
 
+import js.reflect.unsafeCast
+
 sealed external interface EventHandler<in E : Event, out C : EventTarget, out T : EventTarget>
 
 inline fun EventHandler(
     noinline handler: () -> Unit,
 ): EventHandler<Event, Nothing, Nothing> {
-    return handler.unsafeCast<EventHandler<Event, Nothing, Nothing>>()
+    return unsafeCast(handler)
 }
 
 inline fun <E : Event, C : EventTarget, T : EventTarget, D> EventHandler(
@@ -20,5 +22,5 @@ inline fun <E : Event, C : EventTarget, T : EventTarget, D> EventHandler(
 ): EventHandler<E, C, T>
         where D : E,
               D : HasTargets<C, T> {
-    return handler.unsafeCast<EventHandler<E, C, T>>()
+    return unsafeCast(handler)
 }
