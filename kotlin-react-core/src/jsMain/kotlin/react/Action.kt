@@ -8,21 +8,17 @@ import js.core.Void
 import js.promise.Promise
 import js.reflect.unsafeCast
 import react.internal.isolatedPromise
-
-private typealias ActionFunction<T> = (T) -> Promise<Void>?
-
-private inline fun <T> toAction(
-    noinline value: ActionFunction<T>,
-): Action<T> =
-    unsafeCast(value)
+import seskar.js.JsAsync
 
 sealed external interface Action<in T> :
-    ActionOrString<T>
+    ActionOrString<T> {
+    @JsAsync
+    operator fun invoke(data: T)
 
-suspend operator fun <T> Action<T>.invoke(
-    data: T,
-) {
-    unsafeCast<ActionFunction<T>>()(data)?.await()
+    // TODO: use `@JsNative` instead
+    @nativeInvoke
+    @Suppress("DEPRECATION")
+    fun invokeAsync(data: T): Promise<Void>?
 }
 
 inline fun Action(
@@ -33,7 +29,7 @@ inline fun Action(
 fun <T> Action(
     value: suspend (T) -> Unit,
 ): Action<T> =
-    toAction { data ->
+    unsafeCast { data: T ->
         isolatedPromise {
             value(data)
             undefined
