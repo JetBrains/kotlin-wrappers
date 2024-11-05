@@ -13,7 +13,7 @@ import seskar.js.JsAsync
 sealed external interface Action<in T> :
     ActionOrString<T> {
     @JsAsync
-    operator fun invoke(data: T)
+    suspend operator fun invoke(data: T)
 
     // TODO: use `@JsNative` instead
     @nativeInvoke
