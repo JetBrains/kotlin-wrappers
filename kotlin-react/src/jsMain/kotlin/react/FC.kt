@@ -1,12 +1,14 @@
 package react
 
+import js.reflect.unsafeCast
+
 fun FC(
     block: @ReactDsl ChildrenBuilder.() -> Unit,
 ): FC<Props> {
     val component = {
         createElementOrNull(block)
     }
-    return component.unsafeCast<FC<Props>>()
+    return unsafeCast(component)
 }
 
 fun <P : Props> FC(
@@ -15,7 +17,7 @@ fun <P : Props> FC(
     val component = { props: P ->
         createElementOrNull { block(props) }
     }
-    return component.unsafeCast<FC<P>>()
+    return unsafeCast(component)
 }
 
 fun FC(
