@@ -8,6 +8,7 @@
 package js.lazy
 
 import js.lazy.internal.invokeLazyFunction
+import js.reflect.unsafeCast
 
 sealed external interface LazyFunction<out R> {
     suspend inline operator fun invoke(): R =
@@ -17,4 +18,4 @@ sealed external interface LazyFunction<out R> {
 fun <R> LazyFunction(
     value: LazyFunctionSource<R>,
 ): LazyFunction<R> =
-    value.unsafeCast<LazyFunction<R>>()
+    unsafeCast(value)

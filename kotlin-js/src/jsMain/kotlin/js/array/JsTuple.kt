@@ -4,6 +4,7 @@
 
 package js.array
 
+import js.reflect.unsafeCast
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
 
@@ -58,29 +59,25 @@ sealed external interface JsTuple7<out A, out B, out C, out D, out E, out F, out
 }
 
 inline fun emptyTuple(): JsTuple =
-    emptyArray<Any?>()
-        .unsafeCast<JsTuple>()
+    unsafeCast(emptyArray<Any?>())
 
 inline fun <A> tupleOf(
     first: A,
 ): JsTuple1<A> =
-    arrayOf(first)
-        .unsafeCast<JsTuple1<A>>()
+    unsafeCast(arrayOf(first))
 
 inline fun <A, B> tupleOf(
     first: A,
     second: B,
 ): JsTuple2<A, B> =
-    arrayOf(first, second)
-        .unsafeCast<JsTuple2<A, B>>()
+    unsafeCast(arrayOf(first, second))
 
 inline fun <A, B, C> tupleOf(
     first: A,
     second: B,
     third: C,
 ): JsTuple3<A, B, C> =
-    arrayOf(first, second, third)
-        .unsafeCast<JsTuple3<A, B, C>>()
+    unsafeCast(arrayOf(first, second, third))
 
 inline fun <A, B, C, D> tupleOf(
     first: A,
@@ -88,8 +85,7 @@ inline fun <A, B, C, D> tupleOf(
     third: C,
     fourth: D,
 ): JsTuple4<A, B, C, D> =
-    arrayOf(first, second, third, fourth)
-        .unsafeCast<JsTuple4<A, B, C, D>>()
+    unsafeCast(arrayOf(first, second, third, fourth))
 
 inline fun <A, B, C, D, E> tupleOf(
     first: A,
@@ -98,8 +94,7 @@ inline fun <A, B, C, D, E> tupleOf(
     fourth: D,
     fifth: E,
 ): JsTuple5<A, B, C, D, E> =
-    arrayOf(first, second, third, fourth, fifth)
-        .unsafeCast<JsTuple5<A, B, C, D, E>>()
+    unsafeCast(arrayOf(first, second, third, fourth, fifth))
 
 inline fun <A, B, C, D, E, F> tupleOf(
     first: A,
@@ -109,8 +104,7 @@ inline fun <A, B, C, D, E, F> tupleOf(
     fifth: E,
     sixth: F,
 ): JsTuple6<A, B, C, D, E, F> =
-    arrayOf(first, second, third, fourth, fifth, sixth)
-        .unsafeCast<JsTuple6<A, B, C, D, E, F>>()
+    unsafeCast(arrayOf(first, second, third, fourth, fifth, sixth))
 
 inline fun <A, B, C, D, E, F, G> tupleOf(
     first: A,
@@ -121,5 +115,4 @@ inline fun <A, B, C, D, E, F, G> tupleOf(
     sixth: F,
     seventh: G,
 ): JsTuple7<A, B, C, D, E, F, G> =
-    arrayOf(first, second, third, fourth, fifth, sixth, seventh)
-        .unsafeCast<JsTuple7<A, B, C, D, E, F, G>>()
+    unsafeCast(arrayOf(first, second, third, fourth, fifth, sixth, seventh))

@@ -8,13 +8,15 @@
 
 package js.core
 
+import js.reflect.unsafeCast
+
 @JsExternalInheritorsOnly
 external interface Bitmask<T : Bitmask<T>> {
     inline val value: Int
-        get() = unsafeCast<Int>()
+        get() = unsafeCast(this)
 
     inline operator fun plus(other: T): T =
-        (value or other.value).unsafeCast<T>()
+        unsafeCast(value or other.value)
 
     inline operator fun contains(other: T): Boolean =
         (value and other.value) == other.value

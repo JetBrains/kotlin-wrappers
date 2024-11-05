@@ -1,5 +1,6 @@
 package js.promise
 
+import js.reflect.unsafeCast
 import js.symbol.Symbol
 import js.symbol.internal.setOptionalSymbolValue
 
@@ -13,5 +14,5 @@ fun <T> DisposablePromise(
         value = dispose,
     )
 
-    return promise.unsafeCast<DisposablePromise<T>>()
+    return unsafeCast(promise)
 }

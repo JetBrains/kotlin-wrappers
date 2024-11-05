@@ -1,6 +1,7 @@
 package js.function
 
-import js.array.*
+import js.array.JsTuple
+import js.reflect.unsafeCast
 import kotlin.reflect.KClass
 
 inline fun <A : JsTuple, reified R : Any> JsConstructorFunction(): JsConstructorFunction<A, R> =
@@ -14,4 +15,4 @@ fun <A : JsTuple, R : Any> JsConstructorFunction(
 fun <A : JsTuple, R : Any> JsConstructorFunction(
     clazz: JsClass<R>,
 ): JsConstructorFunction<A, R> =
-    clazz.unsafeCast<JsConstructorFunction<A, R>>()
+    unsafeCast(clazz)
