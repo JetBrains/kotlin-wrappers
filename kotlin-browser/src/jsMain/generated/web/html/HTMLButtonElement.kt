@@ -57,11 +57,15 @@ protected constructor() :
 
     /**
      * Overrides any validation or required attributes on a form or form elements to allow it to be submitted without validation. This can be used to create a "save draft"-type submit option.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/formNoValidate)
      */
     var formNoValidate: Boolean
 
     /**
      * Overrides the target attribute on a form element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/formTarget)
      */
     var formTarget: WindowName
 

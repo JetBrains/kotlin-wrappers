@@ -21,6 +21,7 @@ import web.gamepad.GamepadEvent
 import web.history.HashChangeEvent
 import web.history.PageTransitionEvent
 import web.history.PopStateEvent
+import web.location.Location
 import web.messaging.MessageEvent
 import web.messaging.MessageEventSource
 import web.pip.PictureInPictureEvent
@@ -67,6 +68,11 @@ sealed external class Window :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/innerWidth)
      */
     val innerWidth: Int
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/location)
+     */
+    val location: Location
 
     /**
      * Returns true if the location bar is visible; otherwise, returns false.
@@ -122,6 +128,16 @@ sealed external class Window :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/outerWidth)
      */
     val outerWidth: Int
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scrollX)
+     */
+    val pageXOffset: Double
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scrollY)
+     */
+    val pageYOffset: Double
 
     /**
      * Refers to either the parent WindowProxy, or itself.

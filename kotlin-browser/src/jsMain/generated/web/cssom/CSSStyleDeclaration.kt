@@ -2060,6 +2060,11 @@ sealed external class CSSStyleDeclaration :
     var visibility: String
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-line-clamp)
+     */
+    var webkitLineClamp: String
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-text-fill-color)
      */
     var webkitTextFillColor: String

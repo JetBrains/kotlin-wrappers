@@ -20,6 +20,7 @@ import web.fonts.FontFaceSource
 import web.form.FormDataEvent
 import web.form.SubmitEvent
 import web.html.*
+import web.location.Location
 import web.mathml.MATHML_NAMESPACE
 import web.mathml.MathMLElement
 import web.mathml.MathMLTagName
@@ -210,6 +211,13 @@ open external class Document :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/links)
      */
     val links: HTMLCollectionOf<HTMLElement /* HTMLAnchorElement | HTMLAreaElement */>
+
+    /**
+     * Contains information about the current URL.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/location)
+     */
+    val location: Location
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/fullscreenchange_event)

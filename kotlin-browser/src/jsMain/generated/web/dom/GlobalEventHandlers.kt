@@ -90,7 +90,7 @@ external interface GlobalEventHandlers :
         set(value) = definedExternally
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/cancel_event)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/cancel_event)
      */
     var oncancel: EventHandler<Event, GlobalEventHandlers, GlobalEventHandlers>?
         get() = definedExternally
