@@ -3,6 +3,7 @@ package react.select
 import csstype.PropertiesBuilder
 import js.objects.Object
 import js.objects.jso
+import js.reflect.unsafeCast
 import react.Props
 
 typealias StylesConfigFunction<P /* Props */> = (
@@ -15,7 +16,7 @@ fun <P : Props> Styles(
 ): StylesConfigFunction<P> {
     return { base, props ->
         val result = Object.assign(jso(), base)
-        block(result.unsafeCast<PropertiesBuilder>(), props)
+        block(unsafeCast(result), props)
         result
     }
 }

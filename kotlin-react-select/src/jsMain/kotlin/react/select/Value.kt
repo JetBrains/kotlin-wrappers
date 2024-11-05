@@ -6,13 +6,14 @@
 package react.select
 
 import js.array.ReadonlyArray
+import js.reflect.unsafeCast
 
 sealed external interface Value<T : Any>
 
 inline fun <T : Any> Value(
     vararg value: T?,
 ): Value<T> =
-    value.unsafeCast<Value<T>>()
+    unsafeCast(value)
 
 fun <T : Any> Value<T>?.asArray(): ReadonlyArray<T> {
     val value: Any = this
@@ -22,7 +23,7 @@ fun <T : Any> Value<T>?.asArray(): ReadonlyArray<T> {
         "Multivalue required, but `$value` found instead"
     }
 
-    return value.unsafeCast<ReadonlyArray<T>>()
+    return unsafeCast(value)
 }
 
 fun <T : Any> Value<T>.single(): T {
@@ -32,5 +33,5 @@ fun <T : Any> Value<T>.single(): T {
         "Single value required, but array found instead"
     }
 
-    return value.unsafeCast<T>()
+    return unsafeCast(value)
 }
