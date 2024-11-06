@@ -23,7 +23,7 @@ inline fun ReactNode(
 inline fun ReactNode(
     source: String?,
 ): ReactNode? =
-    source.unsafeCast<ReactNode?>()
+    unsafeCast(source)
 
 inline fun ReactNode(
     source: Char,
