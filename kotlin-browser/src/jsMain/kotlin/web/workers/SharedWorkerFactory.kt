@@ -2,6 +2,7 @@ package web.workers
 
 import js.coroutines.internal.IsolatedCoroutineScope
 import js.globals.globalThis
+import js.reflect.unsafeCast
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.launch
@@ -29,7 +30,7 @@ fun SharedWorkerFactory(
             block = { block(self) },
         )
 
-    return {
+    return unsafeCast {
         error("Missed plugin integration! SharedWorker factory shouldn't be called directly!")
-    }.unsafeCast<SharedWorkerFactory>()
+    }
 }
