@@ -10,6 +10,16 @@ inline fun <T: Any> unsafeCast(
     value.unsafeCast<T>()
 
 inline fun <T: Any> unsafeCast(
+    value: String?,
+): T? =
+    value.unsafeCast<T?>()
+
+inline fun <T: Any> unsafeCast(
     value: Any,
 ): T =
     value.unsafeCast<T>()
+
+inline fun <T: Any> unsafeCast(
+    value: Any?,
+): T? =
+    value.unsafeCast<T?>()
