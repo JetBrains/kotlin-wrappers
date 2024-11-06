@@ -8,6 +8,7 @@
 
 package react
 
+import js.reflect.unsafeCast
 import kotlin.reflect.KProperty
 
 /**
@@ -15,8 +16,7 @@ import kotlin.reflect.KProperty
  * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
  */
 inline fun <T : Any> useRefValue(): RefValueInstance<T?> =
-    useRef<T>()
-        .unsafeCast<RefValueInstance<T?>>()
+    unsafeCast(useRef<T>())
 
 /**
  * Only works inside [fc]
@@ -25,8 +25,7 @@ inline fun <T : Any> useRefValue(): RefValueInstance<T?> =
 inline fun <T : Any> useRefValue(
     initialValue: T,
 ): RefValueInstance<T> =
-    useRef(initialValue)
-        .unsafeCast<RefValueInstance<T>>()
+    unsafeCast(useRef(initialValue))
 
 sealed external interface RefValueInstance<T> {
     inline operator fun getValue(
