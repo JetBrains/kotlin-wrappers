@@ -6,17 +6,19 @@
 
 package web.cssom
 
+import js.reflect.unsafeCast
+
 sealed external interface AngularColorStop
 
 inline fun stop(
     color: Color,
     value: Angle,
 ): AngularColorStop =
-    "$color $value".unsafeCast<AngularColorStop>()
+    unsafeCast("$color $value")
 
 inline fun stop(
     color: Color,
     from: Angle,
     to: Angle,
 ): AngularColorStop =
-    "$color $from $to".unsafeCast<AngularColorStop>()
+    unsafeCast("$color $from $to")

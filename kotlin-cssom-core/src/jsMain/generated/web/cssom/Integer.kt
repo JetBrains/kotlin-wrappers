@@ -6,6 +6,8 @@
 
 package web.cssom
 
+import js.reflect.unsafeCast
+
 sealed external interface IntegerType :
     ColumnCount,
     FontWeight,
@@ -22,4 +24,4 @@ sealed external interface IntegerType :
 inline fun integer(
     value: Int,
 ): IntegerType =
-    value.unsafeCast<IntegerType>()
+    unsafeCast(value)

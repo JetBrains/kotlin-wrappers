@@ -6,20 +6,22 @@
 
 package web.cssom
 
+import js.reflect.unsafeCast
+
 typealias Margin = AutoLengthProperty
 
 inline fun Margin(
     vertical: AutoLength,
     horizontal: AutoLength,
 ): Margin =
-    "$vertical $horizontal".unsafeCast<Margin>()
+    unsafeCast("$vertical $horizontal")
 
 inline fun Margin(
     top: AutoLength,
     horizontal: AutoLength,
     bottom: AutoLength,
 ): Margin =
-    "$top $horizontal $bottom".unsafeCast<Margin>()
+    unsafeCast("$top $horizontal $bottom")
 
 inline fun Margin(
     top: AutoLength,
@@ -27,4 +29,4 @@ inline fun Margin(
     bottom: AutoLength,
     left: AutoLength,
 ): Margin =
-    "$top $right $bottom $left".unsafeCast<Margin>()
+    unsafeCast("$top $right $bottom $left")

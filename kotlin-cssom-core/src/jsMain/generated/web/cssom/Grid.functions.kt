@@ -6,25 +6,27 @@
 
 package web.cssom
 
+import js.reflect.unsafeCast
+
 inline fun fitContent(
     value: Length,
 ): GridTemplateTracks =
-    "fit-content($value)".unsafeCast<GridTemplateTracks>()
+    unsafeCast("fit-content($value)")
 
 inline fun minmax(
     min: GridAutoTracks,
     max: GridAutoTracks,
 ): GridAutoTracks =
-    "minmax($min,$max)".unsafeCast<GridAutoTracks>()
+    unsafeCast("minmax($min,$max)")
 
 inline fun repeat(
     times: Int,
     value: GridTemplateTracks,
 ): GridTemplateTracks =
-    "repeat($times,$value)".unsafeCast<GridTemplateTracks>()
+    unsafeCast("repeat($times,$value)")
 
 inline fun repeat(
     repeat: AutoRepeat,
     value: GridTemplateTracks,
 ): GridTemplateTracks =
-    "repeat($repeat,$value)".unsafeCast<GridTemplateTracks>()
+    unsafeCast("repeat($repeat,$value)")

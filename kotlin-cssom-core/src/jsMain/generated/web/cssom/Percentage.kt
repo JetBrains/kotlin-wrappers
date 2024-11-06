@@ -2,8 +2,10 @@
 
 package web.cssom
 
+import js.reflect.unsafeCast
+
 sealed external interface Percentage :
     Length
 
 inline val Number.pct: Percentage
-    get() = "${this}%".unsafeCast<Percentage>()
+    get() = unsafeCast("${this}%")

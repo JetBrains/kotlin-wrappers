@@ -6,6 +6,8 @@
 
 package web.cssom
 
+import js.reflect.unsafeCast
+
 sealed external interface StringType :
     Content,
     FontFamily
@@ -13,4 +15,4 @@ sealed external interface StringType :
 inline fun string(
     value: String,
 ): StringType =
-    value.unsafeCast<StringType>()
+    unsafeCast(value)

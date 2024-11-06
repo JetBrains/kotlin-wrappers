@@ -2,10 +2,12 @@
 
 package web.cssom
 
+import js.reflect.unsafeCast
+
 sealed external interface Time : TimeProperty
 
 inline val Number.ms: Time
-    get() = "${this}ms".unsafeCast<Time>()
+    get() = unsafeCast("${this}ms")
 
 inline val Number.s: Time
-    get() = "${this}s".unsafeCast<Time>()
+    get() = unsafeCast("${this}s")

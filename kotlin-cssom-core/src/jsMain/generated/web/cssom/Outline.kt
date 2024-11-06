@@ -6,6 +6,7 @@
 
 package web.cssom
 
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 
 sealed external interface Outline {
@@ -19,11 +20,11 @@ inline fun Outline(
     width: Length,
     style: LineStyle,
 ): Outline =
-    "$width $style".unsafeCast<Outline>()
+    unsafeCast("$width $style")
 
 inline fun Outline(
     width: Length,
     style: LineStyle,
     color: Color,
 ): Outline =
-    "$width $style $color".unsafeCast<Outline>()
+    unsafeCast("$width $style $color")

@@ -6,17 +6,19 @@
 
 package web.cssom
 
+import js.reflect.unsafeCast
+
 sealed external interface LinearColorStop
 
 inline fun stop(
     color: Color,
     value: Length,
 ): LinearColorStop =
-    "$color $value".unsafeCast<LinearColorStop>()
+    unsafeCast("$color $value")
 
 inline fun stop(
     color: Color,
     from: Length,
     to: Length,
 ): LinearColorStop =
-    "$color $from $to".unsafeCast<LinearColorStop>()
+    unsafeCast("$color $from $to")

@@ -6,6 +6,7 @@
 
 package web.cssom
 
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 
 sealed external interface Font {
@@ -35,7 +36,7 @@ inline fun Font(
     size: FontSize,
     family: FontFamily,
 ): Font =
-    "$style $size $family".unsafeCast<Font>()
+    unsafeCast("$style $size $family")
 
 inline fun Font(
     style: FontStyle,
@@ -43,14 +44,14 @@ inline fun Font(
     lineHeight: LineHeight,
     family: FontFamily,
 ): Font =
-    "$style $size/$lineHeight $family".unsafeCast<Font>()
+    unsafeCast("$style $size/$lineHeight $family")
 
 inline fun Font(
     variant: FontVariant,
     size: FontSize,
     family: FontFamily,
 ): Font =
-    "$variant $size $family".unsafeCast<Font>()
+    unsafeCast("$variant $size $family")
 
 inline fun Font(
     variant: FontVariant,
@@ -58,14 +59,14 @@ inline fun Font(
     lineHeight: LineHeight,
     family: FontFamily,
 ): Font =
-    "$variant $size/$lineHeight $family".unsafeCast<Font>()
+    unsafeCast("$variant $size/$lineHeight $family")
 
 inline fun Font(
     weight: FontWeight,
     size: FontSize,
     family: FontFamily,
 ): Font =
-    "$weight $size $family".unsafeCast<Font>()
+    unsafeCast("$weight $size $family")
 
 inline fun Font(
     weight: FontWeight,
@@ -73,14 +74,14 @@ inline fun Font(
     lineHeight: LineHeight,
     family: FontFamily,
 ): Font =
-    "$weight $size/$lineHeight $family".unsafeCast<Font>()
+    unsafeCast("$weight $size/$lineHeight $family")
 
 inline fun Font(
     stretch: FontStretch,
     size: FontSize,
     family: FontFamily,
 ): Font =
-    "$stretch $size $family".unsafeCast<Font>()
+    unsafeCast("$stretch $size $family")
 
 inline fun Font(
     stretch: FontStretch,
@@ -88,7 +89,7 @@ inline fun Font(
     lineHeight: LineHeight,
     family: FontFamily,
 ): Font =
-    "$stretch $size/$lineHeight $family".unsafeCast<Font>()
+    unsafeCast("$stretch $size/$lineHeight $family")
 
 inline fun Font(
     style: FontStyle,
@@ -96,7 +97,7 @@ inline fun Font(
     size: FontSize,
     family: FontFamily,
 ): Font =
-    "$style $variant $size $family".unsafeCast<Font>()
+    unsafeCast("$style $variant $size $family")
 
 inline fun Font(
     style: FontStyle,
@@ -105,7 +106,7 @@ inline fun Font(
     lineHeight: LineHeight,
     family: FontFamily,
 ): Font =
-    "$style $variant $size/$lineHeight $family".unsafeCast<Font>()
+    unsafeCast("$style $variant $size/$lineHeight $family")
 
 inline fun Font(
     style: FontStyle,
@@ -113,7 +114,7 @@ inline fun Font(
     size: FontSize,
     family: FontFamily,
 ): Font =
-    "$style $weight $size $family".unsafeCast<Font>()
+    unsafeCast("$style $weight $size $family")
 
 inline fun Font(
     style: FontStyle,
@@ -122,7 +123,7 @@ inline fun Font(
     lineHeight: LineHeight,
     family: FontFamily,
 ): Font =
-    "$style $weight $size/$lineHeight $family".unsafeCast<Font>()
+    unsafeCast("$style $weight $size/$lineHeight $family")
 
 inline fun Font(
     style: FontStyle,
@@ -130,7 +131,7 @@ inline fun Font(
     size: FontSize,
     family: FontFamily,
 ): Font =
-    "$style $stretch $size $family".unsafeCast<Font>()
+    unsafeCast("$style $stretch $size $family")
 
 inline fun Font(
     style: FontStyle,
@@ -139,7 +140,7 @@ inline fun Font(
     lineHeight: LineHeight,
     family: FontFamily,
 ): Font =
-    "$style $stretch $size/$lineHeight $family".unsafeCast<Font>()
+    unsafeCast("$style $stretch $size/$lineHeight $family")
 
 inline fun Font(
     variant: FontVariant,
@@ -147,7 +148,7 @@ inline fun Font(
     size: FontSize,
     family: FontFamily,
 ): Font =
-    "$variant $weight $size $family".unsafeCast<Font>()
+    unsafeCast("$variant $weight $size $family")
 
 inline fun Font(
     variant: FontVariant,
@@ -156,7 +157,7 @@ inline fun Font(
     lineHeight: LineHeight,
     family: FontFamily,
 ): Font =
-    "$variant $weight $size/$lineHeight $family".unsafeCast<Font>()
+    unsafeCast("$variant $weight $size/$lineHeight $family")
 
 inline fun Font(
     variant: FontVariant,
@@ -164,7 +165,7 @@ inline fun Font(
     size: FontSize,
     family: FontFamily,
 ): Font =
-    "$variant $stretch $size $family".unsafeCast<Font>()
+    unsafeCast("$variant $stretch $size $family")
 
 inline fun Font(
     variant: FontVariant,
@@ -173,7 +174,7 @@ inline fun Font(
     lineHeight: LineHeight,
     family: FontFamily,
 ): Font =
-    "$variant $stretch $size/$lineHeight $family".unsafeCast<Font>()
+    unsafeCast("$variant $stretch $size/$lineHeight $family")
 
 inline fun Font(
     weight: FontWeight,
@@ -181,7 +182,7 @@ inline fun Font(
     size: FontSize,
     family: FontFamily,
 ): Font =
-    "$weight $stretch $size $family".unsafeCast<Font>()
+    unsafeCast("$weight $stretch $size $family")
 
 inline fun Font(
     weight: FontWeight,
@@ -190,7 +191,7 @@ inline fun Font(
     lineHeight: LineHeight,
     family: FontFamily,
 ): Font =
-    "$weight $stretch $size/$lineHeight $family".unsafeCast<Font>()
+    unsafeCast("$weight $stretch $size/$lineHeight $family")
 
 inline fun Font(
     style: FontStyle,
@@ -199,7 +200,7 @@ inline fun Font(
     size: FontSize,
     family: FontFamily,
 ): Font =
-    "$style $variant $weight $size $family".unsafeCast<Font>()
+    unsafeCast("$style $variant $weight $size $family")
 
 inline fun Font(
     style: FontStyle,
@@ -209,7 +210,7 @@ inline fun Font(
     lineHeight: LineHeight,
     family: FontFamily,
 ): Font =
-    "$style $variant $weight $size/$lineHeight $family".unsafeCast<Font>()
+    unsafeCast("$style $variant $weight $size/$lineHeight $family")
 
 inline fun Font(
     style: FontStyle,
@@ -218,7 +219,7 @@ inline fun Font(
     size: FontSize,
     family: FontFamily,
 ): Font =
-    "$style $variant $stretch $size $family".unsafeCast<Font>()
+    unsafeCast("$style $variant $stretch $size $family")
 
 inline fun Font(
     style: FontStyle,
@@ -228,7 +229,7 @@ inline fun Font(
     lineHeight: LineHeight,
     family: FontFamily,
 ): Font =
-    "$style $variant $stretch $size/$lineHeight $family".unsafeCast<Font>()
+    unsafeCast("$style $variant $stretch $size/$lineHeight $family")
 
 inline fun Font(
     variant: FontVariant,
@@ -237,7 +238,7 @@ inline fun Font(
     size: FontSize,
     family: FontFamily,
 ): Font =
-    "$variant $weight $stretch $size $family".unsafeCast<Font>()
+    unsafeCast("$variant $weight $stretch $size $family")
 
 inline fun Font(
     variant: FontVariant,
@@ -247,7 +248,7 @@ inline fun Font(
     lineHeight: LineHeight,
     family: FontFamily,
 ): Font =
-    "$variant $weight $stretch $size/$lineHeight $family".unsafeCast<Font>()
+    unsafeCast("$variant $weight $stretch $size/$lineHeight $family")
 
 inline fun Font(
     style: FontStyle,
@@ -257,7 +258,7 @@ inline fun Font(
     size: FontSize,
     family: FontFamily,
 ): Font =
-    "$style $variant $weight $stretch $size $family".unsafeCast<Font>()
+    unsafeCast("$style $variant $weight $stretch $size $family")
 
 inline fun Font(
     style: FontStyle,
@@ -268,4 +269,4 @@ inline fun Font(
     lineHeight: LineHeight,
     family: FontFamily,
 ): Font =
-    "$style $variant $weight $stretch $size/$lineHeight $family".unsafeCast<Font>()
+    unsafeCast("$style $variant $weight $stretch $size/$lineHeight $family")

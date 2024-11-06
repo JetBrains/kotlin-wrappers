@@ -2,13 +2,15 @@
 
 package web.cssom.atrule
 
+import js.reflect.unsafeCast
+
 sealed interface Resolution
 
 inline val Number.dpi: Resolution
-    get() = "${this}dpi".unsafeCast<Resolution>()
+    get() = unsafeCast("${this}dpi")
 
 inline val Number.dpcm: Resolution
-    get() = "${this}dpcm".unsafeCast<Resolution>()
+    get() = unsafeCast("${this}dpcm")
 
 inline val Number.dppx: Resolution
-    get() = "${this}dppx".unsafeCast<Resolution>()
+    get() = unsafeCast("${this}dppx")

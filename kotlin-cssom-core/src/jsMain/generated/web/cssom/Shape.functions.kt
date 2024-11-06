@@ -6,42 +6,44 @@
 
 package web.cssom
 
+import js.reflect.unsafeCast
+
 inline fun circle(): BasicShape =
-    "circle()".unsafeCast<BasicShape>()
+    unsafeCast("circle()")
 
 inline fun circle(
     r: ShapeRadius,
 ): BasicShape =
-    "circle($r)".unsafeCast<BasicShape>()
+    unsafeCast("circle($r)")
 
 inline fun circle(
     r: ShapeRadius,
     c: GeometryPosition,
 ): BasicShape =
-    "circle($r at $c)".unsafeCast<BasicShape>()
+    unsafeCast("circle($r at $c)")
 
 inline fun circle(
     r: ShapeRadius,
     cx: GeometryPosition,
     cy: GeometryPosition,
 ): BasicShape =
-    "circle($r at $cx $cy)".unsafeCast<BasicShape>()
+    unsafeCast("circle($r at $cx $cy)")
 
 inline fun ellipse(): BasicShape =
-    "ellipse()".unsafeCast<BasicShape>()
+    unsafeCast("ellipse()")
 
 inline fun ellipse(
     rx: ShapeRadius,
     ry: ShapeRadius,
 ): BasicShape =
-    "ellipse($rx $ry)".unsafeCast<BasicShape>()
+    unsafeCast("ellipse($rx $ry)")
 
 inline fun ellipse(
     rx: ShapeRadius,
     ry: ShapeRadius,
     c: GeometryPosition,
 ): BasicShape =
-    "ellipse($rx $ry at $c)".unsafeCast<BasicShape>()
+    unsafeCast("ellipse($rx $ry at $c)")
 
 inline fun ellipse(
     rx: ShapeRadius,
@@ -49,20 +51,20 @@ inline fun ellipse(
     cx: GeometryPosition,
     cy: GeometryPosition,
 ): BasicShape =
-    "ellipse($rx $ry at $cx $cy)".unsafeCast<BasicShape>()
+    unsafeCast("ellipse($rx $ry at $cx $cy)")
 
 inline fun inset(
     vertical: Length,
     horizontal: Length,
 ): BasicShape =
-    "inset($vertical $horizontal)".unsafeCast<BasicShape>()
+    unsafeCast("inset($vertical $horizontal)")
 
 inline fun inset(
     top: Length,
     horizontal: Length,
     bottom: Length,
 ): BasicShape =
-    "inset($top $horizontal $bottom)".unsafeCast<BasicShape>()
+    unsafeCast("inset($top $horizontal $bottom)")
 
 inline fun inset(
     top: Length,
@@ -70,14 +72,14 @@ inline fun inset(
     bottom: Length,
     left: Length,
 ): BasicShape =
-    "inset($top $right $bottom $left)".unsafeCast<BasicShape>()
+    unsafeCast("inset($top $right $bottom $left)")
 
 inline fun inset(
     value: Length,
     round: Round,
     borderRadius: Length,
 ): BasicShape =
-    "inset($value $round $borderRadius)".unsafeCast<BasicShape>()
+    unsafeCast("inset($value $round $borderRadius)")
 
 inline fun inset(
     vertical: Length,
@@ -85,7 +87,7 @@ inline fun inset(
     round: Round,
     borderRadius: Length,
 ): BasicShape =
-    "inset($vertical $horizontal $round $borderRadius)".unsafeCast<BasicShape>()
+    unsafeCast("inset($vertical $horizontal $round $borderRadius)")
 
 inline fun inset(
     top: Length,
@@ -94,7 +96,7 @@ inline fun inset(
     round: Round,
     borderRadius: Length,
 ): BasicShape =
-    "inset($top $horizontal $bottom $round $borderRadius)".unsafeCast<BasicShape>()
+    unsafeCast("inset($top $horizontal $bottom $round $borderRadius)")
 
 inline fun inset(
     top: Length,
@@ -104,9 +106,9 @@ inline fun inset(
     round: Round,
     borderRadius: Length,
 ): BasicShape =
-    "inset($top $right $bottom $left $round $borderRadius)".unsafeCast<BasicShape>()
+    unsafeCast("inset($top $right $bottom $left $round $borderRadius)")
 
 inline fun path(
     d: String,
 ): BasicShape =
-    "path($d)".unsafeCast<BasicShape>()
+    unsafeCast("path($d)")

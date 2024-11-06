@@ -6,17 +6,19 @@
 
 package web.cssom
 
+import js.reflect.unsafeCast
+
 inline operator fun Length.unaryMinus(): Length =
-    "-$this".unsafeCast<Length>()
+    unsafeCast("-$this")
 
 inline operator fun Length.plus(other: Length): Length =
-    "calc($this + $other)".unsafeCast<Length>()
+    unsafeCast("calc($this + $other)")
 
 inline operator fun Length.minus(other: Length): Length =
-    "calc($this - $other)".unsafeCast<Length>()
+    unsafeCast("calc($this - $other)")
 
 inline operator fun Number.times(other: Length): Length =
-    "calc($this * $other)".unsafeCast<Length>()
+    unsafeCast("calc($this * $other)")
 
 inline operator fun Length.div(other: Number): Length =
-    "calc($this / $other)".unsafeCast<Length>()
+    unsafeCast("calc($this / $other)")

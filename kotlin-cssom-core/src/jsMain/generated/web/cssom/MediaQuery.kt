@@ -6,12 +6,14 @@
 
 package web.cssom
 
+import js.reflect.unsafeCast
+
 external interface MediaQuery
 
 inline fun MediaQuery(
     value: String,
 ): MediaQuery =
-    value.unsafeCast<MediaQuery>()
+    unsafeCast(value)
 
 infix fun MediaQuery.and(
     other: MediaQuery,

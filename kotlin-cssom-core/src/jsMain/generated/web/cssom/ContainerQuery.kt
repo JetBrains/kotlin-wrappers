@@ -6,12 +6,14 @@
 
 package web.cssom
 
+import js.reflect.unsafeCast
+
 sealed external interface ContainerQuery
 
 inline fun ContainerQuery(
     value: String,
 ): ContainerQuery =
-    value.unsafeCast<ContainerQuery>()
+    unsafeCast(value)
 
 infix fun ContainerQuery.and(
     other: ContainerQuery,

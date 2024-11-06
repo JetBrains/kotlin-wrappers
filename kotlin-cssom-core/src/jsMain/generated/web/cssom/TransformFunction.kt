@@ -6,6 +6,8 @@
 
 package web.cssom
 
+import js.reflect.unsafeCast
+
 sealed external interface TransformFunction :
     Transform
 
@@ -17,7 +19,7 @@ inline fun matrix(
     tx: Number,
     ty: Number,
 ): TransformFunction =
-    "matrix($a,$b,$c,$d,$tx,$ty)".unsafeCast<TransformFunction>()
+    unsafeCast("matrix($a,$b,$c,$d,$tx,$ty)")
 
 inline fun matrix3d(
     a1: Number,
@@ -37,22 +39,22 @@ inline fun matrix3d(
     c4: Number,
     d4: Number,
 ): TransformFunction =
-    "matrix3d($a1,$b1,$c1,$d1,$a2,$b2,$c2,$d2,$a3,$b3,$c3,$d3,$a4,$b4,$c4,$d4)".unsafeCast<TransformFunction>()
+    unsafeCast("matrix3d($a1,$b1,$c1,$d1,$a2,$b2,$c2,$d2,$a3,$b3,$c3,$d3,$a4,$b4,$c4,$d4)")
 
 inline fun perspective(
     d: Length,
 ): TransformFunction =
-    "perspective($d)".unsafeCast<TransformFunction>()
+    unsafeCast("perspective($d)")
 
 inline fun rotate(
     a: Angle,
 ): TransformFunction =
-    "rotate($a)".unsafeCast<TransformFunction>()
+    unsafeCast("rotate($a)")
 
 inline fun rotate3d(
     a: Number,
 ): TransformFunction =
-    "rotate3d($a)".unsafeCast<TransformFunction>()
+    unsafeCast("rotate3d($a)")
 
 inline fun rotate3d(
     x: Number,
@@ -60,106 +62,106 @@ inline fun rotate3d(
     z: Number,
     a: Angle,
 ): TransformFunction =
-    "rotate3d($x,$y,$z,$a)".unsafeCast<TransformFunction>()
+    unsafeCast("rotate3d($x,$y,$z,$a)")
 
 inline fun rotatex(
     a: Angle,
 ): TransformFunction =
-    "rotatex($a)".unsafeCast<TransformFunction>()
+    unsafeCast("rotatex($a)")
 
 inline fun rotatey(
     a: Angle,
 ): TransformFunction =
-    "rotatey($a)".unsafeCast<TransformFunction>()
+    unsafeCast("rotatey($a)")
 
 inline fun rotatez(
     a: Angle,
 ): TransformFunction =
-    "rotatez($a)".unsafeCast<TransformFunction>()
+    unsafeCast("rotatez($a)")
 
 inline fun scale(
     sx: Number,
 ): TransformFunction =
-    "scale($sx)".unsafeCast<TransformFunction>()
+    unsafeCast("scale($sx)")
 
 inline fun scale(
     sx: Number,
     sy: Number,
 ): TransformFunction =
-    "scale($sx,$sy)".unsafeCast<TransformFunction>()
+    unsafeCast("scale($sx,$sy)")
 
 inline fun scale3d(
     sx: Number,
     sy: Number,
     sz: Number,
 ): TransformFunction =
-    "scale3d($sx,$sy,$sz)".unsafeCast<TransformFunction>()
+    unsafeCast("scale3d($sx,$sy,$sz)")
 
 inline fun scalex(
     sx: Number,
 ): TransformFunction =
-    "scalex($sx)".unsafeCast<TransformFunction>()
+    unsafeCast("scalex($sx)")
 
 inline fun scaley(
     sy: Number,
 ): TransformFunction =
-    "scaley($sy)".unsafeCast<TransformFunction>()
+    unsafeCast("scaley($sy)")
 
 inline fun scalez(
     sz: Number,
 ): TransformFunction =
-    "scalez($sz)".unsafeCast<TransformFunction>()
+    unsafeCast("scalez($sz)")
 
 inline fun skew(
     ax: Angle,
 ): TransformFunction =
-    "skew($ax)".unsafeCast<TransformFunction>()
+    unsafeCast("skew($ax)")
 
 inline fun skew(
     ax: Angle,
     ay: Angle,
 ): TransformFunction =
-    "skew($ax,$ay)".unsafeCast<TransformFunction>()
+    unsafeCast("skew($ax,$ay)")
 
 inline fun skewx(
     a: Angle,
 ): TransformFunction =
-    "skewx($a)".unsafeCast<TransformFunction>()
+    unsafeCast("skewx($a)")
 
 inline fun skewy(
     a: Angle,
 ): TransformFunction =
-    "skewy($a)".unsafeCast<TransformFunction>()
+    unsafeCast("skewy($a)")
 
 inline fun translate(
     tx: Length,
 ): TransformFunction =
-    "translate($tx)".unsafeCast<TransformFunction>()
+    unsafeCast("translate($tx)")
 
 inline fun translate(
     tx: Length,
     ty: Length,
 ): TransformFunction =
-    "translate($tx,$ty)".unsafeCast<TransformFunction>()
+    unsafeCast("translate($tx,$ty)")
 
 inline fun translate3d(
     tx: Length,
     ty: Length,
     tz: Length,
 ): TransformFunction =
-    "translate3d($tx,$ty,$tz)".unsafeCast<TransformFunction>()
+    unsafeCast("translate3d($tx,$ty,$tz)")
 
 inline fun translatex(
     tx: Length,
 ): TransformFunction =
-    "translatex($tx)".unsafeCast<TransformFunction>()
+    unsafeCast("translatex($tx)")
 
 inline fun translatey(
     ty: Length,
 ): TransformFunction =
-    "translatey($ty)".unsafeCast<TransformFunction>()
+    unsafeCast("translatey($ty)")
 
 inline fun translatez(
     tz: Length,
 ): TransformFunction =
-    "translatez($tz)".unsafeCast<TransformFunction>()
+    unsafeCast("translatez($tz)")

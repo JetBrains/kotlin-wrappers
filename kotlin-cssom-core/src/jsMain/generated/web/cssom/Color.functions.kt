@@ -6,17 +6,19 @@
 
 package web.cssom
 
+import js.reflect.unsafeCast
+
 inline fun Color(
     value: String,
 ): Color =
-    value.unsafeCast<Color>()
+    unsafeCast(value)
 
 inline fun rgb(
     red: Int,
     green: Int,
     blue: Int,
 ): Color =
-    "rgb($red $green $blue)".unsafeCast<Color>()
+    unsafeCast("rgb($red $green $blue)")
 
 inline fun rgb(
     red: Int,
@@ -24,14 +26,14 @@ inline fun rgb(
     blue: Int,
     alpha: Double,
 ): Color =
-    "rgb($red $green $blue / $alpha)".unsafeCast<Color>()
+    unsafeCast("rgb($red $green $blue / $alpha)")
 
 inline fun oklch(
     l: Percentage,
     c: Double,
     h: Double,
 ): Color =
-    "oklch($l $c $h)".unsafeCast<Color>()
+    unsafeCast("oklch($l $c $h)")
 
 inline fun oklch(
     l: Percentage,
@@ -39,4 +41,4 @@ inline fun oklch(
     h: Double,
     a: Double,
 ): Color =
-    "oklch($l $c $h / $a)".unsafeCast<Color>()
+    unsafeCast("oklch($l $c $h / $a)")

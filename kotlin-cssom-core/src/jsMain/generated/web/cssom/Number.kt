@@ -6,6 +6,8 @@
 
 package web.cssom
 
+import js.reflect.unsafeCast
+
 sealed external interface NumberType :
     AnimationIterationCount,
     AspectRatio,
@@ -20,4 +22,4 @@ sealed external interface NumberType :
 inline fun number(
     value: Double,
 ): NumberType =
-    value.unsafeCast<NumberType>()
+    unsafeCast(value)

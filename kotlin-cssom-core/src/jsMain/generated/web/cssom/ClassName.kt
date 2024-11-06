@@ -6,9 +6,11 @@
 
 package web.cssom
 
+import js.reflect.unsafeCast
+
 sealed external interface ClassName
 
 inline fun ClassName(
     value: String,
 ): ClassName =
-    value.unsafeCast<ClassName>()
+    unsafeCast(value)

@@ -6,6 +6,7 @@
 
 package web.cssom
 
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 
 sealed external interface Transition {
@@ -47,14 +48,14 @@ inline fun Transition(
     duration: Time,
     timingFunction: TransitionTimingFunction,
 ): Transition =
-    "$property $duration $timingFunction".unsafeCast<Transition>()
+    unsafeCast("$property $duration $timingFunction")
 
 inline fun Transition(
     property: TransitionProperty,
     duration: Time,
     delay: Time,
 ): Transition =
-    "$property $duration $delay".unsafeCast<Transition>()
+    unsafeCast("$property $duration $delay")
 
 inline fun Transition(
     property: TransitionProperty,
@@ -62,4 +63,4 @@ inline fun Transition(
     timingFunction: TransitionTimingFunction,
     delay: Time,
 ): Transition =
-    "$property $duration $timingFunction $delay".unsafeCast<Transition>()
+    unsafeCast("$property $duration $timingFunction $delay")

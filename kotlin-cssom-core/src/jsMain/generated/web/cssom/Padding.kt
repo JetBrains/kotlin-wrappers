@@ -6,20 +6,22 @@
 
 package web.cssom
 
+import js.reflect.unsafeCast
+
 typealias Padding = LengthProperty
 
 inline fun Padding(
     vertical: Length,
     horizontal: Length,
 ): Padding =
-    "$vertical $horizontal".unsafeCast<Padding>()
+    unsafeCast("$vertical $horizontal")
 
 inline fun Padding(
     top: Length,
     horizontal: Length,
     bottom: Length,
 ): Padding =
-    "$top $horizontal $bottom".unsafeCast<Padding>()
+    unsafeCast("$top $horizontal $bottom")
 
 inline fun Padding(
     top: Length,
@@ -27,4 +29,4 @@ inline fun Padding(
     bottom: Length,
     left: Length,
 ): Padding =
-    "$top $right $bottom $left".unsafeCast<Padding>()
+    unsafeCast("$top $right $bottom $left")

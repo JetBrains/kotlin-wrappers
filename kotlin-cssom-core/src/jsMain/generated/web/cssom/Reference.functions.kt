@@ -6,34 +6,36 @@
 
 package web.cssom
 
+import js.reflect.unsafeCast
+
 inline fun attr(
     name: String,
 ): Content =
-    "attr($name)".unsafeCast<Content>()
+    unsafeCast("attr($name)")
 
 inline fun <T : Any> env(
     id: Ident,
 ): T =
-    "env($id)".unsafeCast<T>()
+    unsafeCast("env($id)")
 
 inline fun <T : Any> env(
     id: Ident,
     fallback: T,
 ): T =
-    "env($id,$fallback)".unsafeCast<T>()
+    unsafeCast("env($id,$fallback)")
 
 inline fun url(
     value: String,
 ): Url =
-    "url($value)".unsafeCast<Url>()
+    unsafeCast("url($value)")
 
 inline fun <T : Any> `var`(
     name: CustomPropertyName<T>,
-): T? =
-    "var($name)".unsafeCast<T?>()
+): T =
+    unsafeCast("var($name)")
 
 inline fun <T : Any> `var`(
     name: CustomPropertyName<T>,
     fallback: T,
 ): T =
-    "var($name,$fallback)".unsafeCast<T>()
+    unsafeCast("var($name,$fallback)")

@@ -6,19 +6,21 @@
 
 package web.cssom
 
+import js.reflect.unsafeCast
+
 inline fun clamp(
     min: Length,
     value: Length,
     max: Length,
 ): Length =
-    "clamp($min,$value,$max)".unsafeCast<Length>()
+    unsafeCast("clamp($min,$value,$max)")
 
 inline fun max(
     vararg values: Length,
 ): Length =
-    "max($values)".unsafeCast<Length>()
+    unsafeCast("max($values)")
 
 inline fun min(
     vararg values: Length,
 ): Length =
-    "min($values)".unsafeCast<Length>()
+    unsafeCast("min($values)")

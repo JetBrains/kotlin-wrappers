@@ -6,6 +6,8 @@
 
 package web.cssom
 
+import js.reflect.unsafeCast
+
 // Globals | DataType.SingleAnimation | (string & {})
 sealed external interface Animation
 
@@ -13,14 +15,14 @@ inline fun Animation(
     name: AnimationName,
     duration: Time,
 ): Animation =
-    "$name $duration".unsafeCast<Animation>()
+    unsafeCast("$name $duration")
 
 inline fun Animation(
     name: AnimationName,
     duration: Time,
     timingFunction: AnimationTimingFunction,
 ): Animation =
-    "$name $duration $timingFunction".unsafeCast<Animation>()
+    unsafeCast("$name $duration $timingFunction")
 
 inline fun Animation(
     name: AnimationName,
@@ -28,4 +30,4 @@ inline fun Animation(
     timingFunction: AnimationTimingFunction,
     delay: Time,
 ): Animation =
-    "$name $duration $timingFunction $delay".unsafeCast<Animation>()
+    unsafeCast("$name $duration $timingFunction $delay")

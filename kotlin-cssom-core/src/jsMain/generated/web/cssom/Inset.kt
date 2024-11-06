@@ -6,20 +6,22 @@
 
 package web.cssom
 
+import js.reflect.unsafeCast
+
 typealias Inset = AutoLengthProperty
 
 inline fun Inset(
     vertical: AutoLength,
     horizontal: AutoLength,
 ): Inset =
-    "$vertical $horizontal".unsafeCast<Inset>()
+    unsafeCast("$vertical $horizontal")
 
 inline fun Inset(
     top: AutoLength,
     horizontal: AutoLength,
     bottom: AutoLength,
 ): Inset =
-    "$top $horizontal $bottom".unsafeCast<Inset>()
+    unsafeCast("$top $horizontal $bottom")
 
 inline fun Inset(
     top: AutoLength,
@@ -27,4 +29,4 @@ inline fun Inset(
     bottom: AutoLength,
     left: AutoLength,
 ): Inset =
-    "$top $right $bottom $left".unsafeCast<Inset>()
+    unsafeCast("$top $right $bottom $left")

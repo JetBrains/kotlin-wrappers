@@ -6,6 +6,8 @@
 
 package web.cssom
 
+import js.reflect.unsafeCast
+
 sealed external interface SizeQuery :
     ContainerQuery,
     MediaQuery
@@ -13,7 +15,7 @@ sealed external interface SizeQuery :
 inline fun SizeQuery(
     value: String,
 ): SizeQuery =
-    value.unsafeCast<SizeQuery>()
+    unsafeCast(value)
 
 infix fun SizeQuery.and(
     other: SizeQuery,

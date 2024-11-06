@@ -6,6 +6,7 @@
 
 package web.cssom
 
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 
 sealed external interface BoxShadow
@@ -22,7 +23,7 @@ inline fun BoxShadow(
     offsetY: Length,
     color: Color,
 ): BoxShadow =
-    "$offsetX $offsetY $color".unsafeCast<BoxShadow>()
+    unsafeCast("$offsetX $offsetY $color")
 
 inline fun BoxShadow(
     offsetX: Length,
@@ -30,40 +31,40 @@ inline fun BoxShadow(
     blurRadius: Length,
     color: Color,
 ): BoxShadow =
-    "$offsetX $offsetY $blurRadius $color".unsafeCast<BoxShadow>()
+    unsafeCast("$offsetX $offsetY $blurRadius $color")
 
 inline fun BoxShadow(
-    offsetX: Length,
-    offsetY: Length,
-    blurRadius: Length,
-    spreadRadius: Length,
-    color: Color,
-): BoxShadow =
-    "$offsetX $offsetY $blurRadius $spreadRadius $color".unsafeCast<BoxShadow>()
-
-inline fun BoxShadow(
-    inset: BoxShadowInset,
-    offsetX: Length,
-    offsetY: Length,
-    color: Color,
-): BoxShadow =
-    "$inset $offsetX $offsetY $color".unsafeCast<BoxShadow>()
-
-inline fun BoxShadow(
-    inset: BoxShadowInset,
-    offsetX: Length,
-    offsetY: Length,
-    blurRadius: Length,
-    color: Color,
-): BoxShadow =
-    "$inset $offsetX $offsetY $blurRadius $color".unsafeCast<BoxShadow>()
-
-inline fun BoxShadow(
-    inset: BoxShadowInset,
     offsetX: Length,
     offsetY: Length,
     blurRadius: Length,
     spreadRadius: Length,
     color: Color,
 ): BoxShadow =
-    "$inset $offsetX $offsetY $blurRadius $spreadRadius $color".unsafeCast<BoxShadow>()
+    unsafeCast("$offsetX $offsetY $blurRadius $spreadRadius $color")
+
+inline fun BoxShadow(
+    inset: BoxShadowInset,
+    offsetX: Length,
+    offsetY: Length,
+    color: Color,
+): BoxShadow =
+    unsafeCast("$inset $offsetX $offsetY $color")
+
+inline fun BoxShadow(
+    inset: BoxShadowInset,
+    offsetX: Length,
+    offsetY: Length,
+    blurRadius: Length,
+    color: Color,
+): BoxShadow =
+    unsafeCast("$inset $offsetX $offsetY $blurRadius $color")
+
+inline fun BoxShadow(
+    inset: BoxShadowInset,
+    offsetX: Length,
+    offsetY: Length,
+    blurRadius: Length,
+    spreadRadius: Length,
+    color: Color,
+): BoxShadow =
+    unsafeCast("$inset $offsetX $offsetY $blurRadius $spreadRadius $color")

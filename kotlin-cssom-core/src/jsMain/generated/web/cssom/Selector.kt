@@ -6,9 +6,11 @@
 
 package web.cssom
 
+import js.reflect.unsafeCast
+
 external interface Selector
 
 inline fun Selector(
     syntax: String,
 ): Selector =
-    syntax.unsafeCast<Selector>()
+    unsafeCast(syntax)

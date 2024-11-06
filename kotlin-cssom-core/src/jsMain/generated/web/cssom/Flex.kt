@@ -6,6 +6,7 @@
 
 package web.cssom
 
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 
 sealed external interface Flex {
@@ -28,17 +29,17 @@ inline fun Flex(
     grow: FlexGrow,
     basis: FlexBasis,
 ): Flex =
-    "$grow $basis".unsafeCast<Flex>()
+    unsafeCast("$grow $basis")
 
 inline fun Flex(
     grow: FlexGrow,
     shrink: FlexShrink,
 ): Flex =
-    "$grow $shrink".unsafeCast<Flex>()
+    unsafeCast("$grow $shrink")
 
 inline fun Flex(
     grow: FlexGrow,
     shrink: FlexShrink,
     basis: FlexBasis,
 ): Flex =
-    "$grow $shrink $basis".unsafeCast<Flex>()
+    unsafeCast("$grow $shrink $basis")

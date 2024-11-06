@@ -6,6 +6,8 @@
 
 package web.cssom
 
+import js.reflect.unsafeCast
+
 sealed external interface Ident :
     IdentType
 
@@ -21,4 +23,4 @@ sealed external interface IdentType :
 inline fun ident(
     value: String,
 ): Ident =
-    value.unsafeCast<Ident>()
+    unsafeCast(value)
