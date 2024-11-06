@@ -1,16 +1,18 @@
 package web.cssom
 
 import js.array.ReadonlyArray
+import js.reflect.unsafeCast
 
 fun GridTemplateAreas(
     vararg values: Ident,
 ): GridTemplateAreas =
-    values.joinToString("\n") { "'$it'" }
-        .unsafeCast<GridTemplateAreas>()
+    unsafeCast(values.joinToString("\n") { "'$it'" })
 
 fun GridTemplateAreas(
     vararg values: ReadonlyArray<Ident>,
 ): GridTemplateAreas =
-    values.joinToString("\n") {
-        "'${it.joinToString(" ")}'"
-    }.unsafeCast<GridTemplateAreas>()
+    unsafeCast(
+        values.joinToString("\n") {
+            "'${it.joinToString(" ")}'"
+        }
+    )

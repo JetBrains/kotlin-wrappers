@@ -4,7 +4,9 @@
 
 package web.cssom
 
+import js.reflect.unsafeCast
+
 inline fun <T : Any> important(
     value: T,
 ): T =
-    "$value !important".unsafeCast<T>()
+    unsafeCast("$value !important")

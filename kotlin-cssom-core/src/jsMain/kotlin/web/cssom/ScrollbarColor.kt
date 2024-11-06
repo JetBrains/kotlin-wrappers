@@ -4,8 +4,10 @@
 
 package web.cssom
 
+import js.reflect.unsafeCast
+
 inline fun ScrollbarColor(
     thumbColor: Color,
     trackColor: Color,
 ): ScrollbarColor =
-    "$thumbColor $trackColor".unsafeCast<ScrollbarColor>()
+    unsafeCast("$thumbColor $trackColor")

@@ -1,7 +1,8 @@
 package web.cssom
 
+import js.reflect.unsafeCast
+
 fun <T : Any> array(
     vararg values: T,
 ): T =
-    values.joinToString(" ")
-        .unsafeCast<T>()
+    unsafeCast(values.joinToString(" "))
