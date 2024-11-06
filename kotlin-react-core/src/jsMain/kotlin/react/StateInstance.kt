@@ -8,6 +8,7 @@
 
 package react
 
+import js.reflect.unsafeCast
 import seskar.js.JsAlias
 import kotlin.reflect.KProperty
 
@@ -33,7 +34,7 @@ sealed external interface StateInstance<T> {
         property: KProperty<*>,
         value: T,
     ) {
-        asDynamic()[1].unsafeCast<StateSetter<T>>()(value)
+        unsafeCast<StateSetter<T>>(asDynamic()[1])(value)
     }
 }
 
@@ -41,5 +42,4 @@ inline fun <T> StateInstance(
     value: T,
     setter: StateSetter<T>,
 ): StateInstance<T> =
-    arrayOf(value, setter)
-        .unsafeCast<StateInstance<T>>()
+    unsafeCast(arrayOf(value, setter))
