@@ -205,6 +205,9 @@ open external class Event(
         @JsValue("disconnect")
         val DISCONNECT: EventType<Event>
 
+        @JsValue("dispose")
+        val DISPOSE: EventType<Event>
+
         @JsValue("durationchange")
         val DURATION_CHANGE: EventType<Event>
 

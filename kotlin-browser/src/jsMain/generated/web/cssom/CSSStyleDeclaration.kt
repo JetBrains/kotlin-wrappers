@@ -2048,6 +2048,7 @@ sealed external class CSSStyleDeclaration :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/vertical-align)
      */
     var verticalAlign: String
+    var viewTransitionClass: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/view-transition-name)

@@ -23,6 +23,11 @@ protected constructor() :
     var `as`: String
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/blocking)
+     */
+    val blocking: DOMTokenList
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/crossOrigin)
      */
     var crossOrigin: CrossOrigin?

@@ -18,6 +18,7 @@ sealed external class ViewTransition {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ViewTransition/ready)
      */
     val ready: Promise<Void>
+    var types: ViewTransitionTypeSet
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ViewTransition/updateCallbackDone)

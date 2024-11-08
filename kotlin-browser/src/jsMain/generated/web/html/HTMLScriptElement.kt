@@ -2,6 +2,7 @@
 
 package web.html
 
+import web.dom.DOMTokenList
 import web.dom.HTMLOrSVGScriptElement
 import web.http.CrossOrigin
 import web.http.FetchPriority
@@ -20,6 +21,11 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/async)
      */
     var async: Boolean
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/blocking)
+     */
+    val blocking: DOMTokenList
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/crossOrigin)
