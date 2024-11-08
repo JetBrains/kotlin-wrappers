@@ -9,8 +9,6 @@ import web.animations.AnimationEvent
 import web.animations.DocumentTimeline
 import web.clipboard.ClipboardEvent
 import web.cssom.TransitionEvent
-import web.cssom.ViewTransition
-import web.cssom.ViewTransitionUpdateCallback
 import web.dom.*
 import web.events.Event
 import web.events.EventHandler
@@ -33,6 +31,8 @@ import web.svg.SvgTagName
 import web.uievents.*
 import web.url.FragmentDirective
 import web.url.URL
+import web.viewtransition.ViewTransition
+import web.viewtransition.ViewTransitionUpdateCallback
 import web.window.*
 import web.xpath.XPathEvaluatorBase
 

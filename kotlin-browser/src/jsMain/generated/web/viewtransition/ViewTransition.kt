@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package web.cssom
+package web.viewtransition
 
 import js.core.Void
 import js.promise.Promise

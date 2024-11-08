@@ -1,5 +1,5 @@
 // Automatically generated - do not modify!
 
-package web.cssom
+package web.viewtransition
 
 typealias ViewTransitionUpdateCallback = () -> Unit
