@@ -4,4 +4,4 @@
 
 package tanstack.virtual.core
 
-external val observeElementOffset: (instance: Virtualizer<*, *>, cb: (offset: Int, isScrolling: Boolean) -> Unit) -> (() -> Unit)?
+external val observeElementOffset: (instance: Virtualizer<*, *>, cb: ObserveOffsetCallBack) -> (() -> Unit)?
