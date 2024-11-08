@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
 
 /**
@@ -159,9 +160,27 @@ external class DynamicEnvironmentMapManager(
 
     companion object {
         /**
+         * Returns `true` if dynamic updates are supported in the current WebGL rendering context.
+         * Dynamic updates requires the EXT_color_buffer_float or EXT_color_buffer_half_float extension.
+         * @param [scene] The object containing the rendering context
+         * @return true if supported
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DynamicEnvironmentMapManager.html#.isDynamicUpdateSupported">Online Documentation</a>
+         */
+        fun isDynamicUpdateSupported(scene: Scene): Boolean
+
+        /**
          * Average hue of ground color on earth, a warm green-gray.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DynamicEnvironmentMapManager.html#.AVERAGE_EARTH_GROUND_COLOR">Online Documentation</a>
          */
-        var AVERAGE_EARTH_GROUND_COLOR: Color
+        val AVERAGE_EARTH_GROUND_COLOR: Color
+
+        /**
+         * The default third order spherical harmonic coefficients used for the diffuse color of image-based lighting, a white ambient light with low intensity.
+         *
+         * There are nine `Cartesian3` coefficients.
+         * The order of the coefficients is: L<sub>0,0</sub>, L<sub>1,-1</sub>, L<sub>1,0</sub>, L<sub>1,1</sub>, L<sub>2,-2</sub>, L<sub>2,-1</sub>, L<sub>2,0</sub>, L<sub>2,1</sub>, L<sub>2,2</sub>
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DynamicEnvironmentMapManager.html#.DEFAULT_SPHERICAL_HARMONIC_COEFFICIENTS">Online Documentation</a>
+         */
+        val DEFAULT_SPHERICAL_HARMONIC_COEFFICIENTS: ReadonlyArray<Cartesian3>
     }
 }
