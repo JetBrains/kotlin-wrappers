@@ -14,7 +14,8 @@
         "**/Routes.kt",
         "**/*RoutesProps.kt",
         "**/*Route.kt",
-        "**/*RouteProps.kt"
+        "**/*RouteProps.kt",
+        "**/*deprecations.kt"
     ],
     "libraryName": "react-router",
     "libraryNameOutputPrefix": true,

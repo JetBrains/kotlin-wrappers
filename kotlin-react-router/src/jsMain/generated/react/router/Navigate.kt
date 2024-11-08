@@ -11,6 +11,6 @@ package react.router
  * able to use hooks. In functional components, we recommend you use the
  * `useNavigate` hook instead.
  *
- * @see https://reactrouter.com/components/navigate
+ * @see https://reactrouter.com/v6/components/navigate
  */
 external val Navigate: react.FC<NavigateProps>

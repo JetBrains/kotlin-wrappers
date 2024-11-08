@@ -14,6 +14,6 @@ import remix.run.router.Location
  * "routing" in your app, and we'd like to know what your use case is. We may
  * be able to provide something higher-level to better suit your needs.
  *
- * @see https://reactrouter.com/hooks/use-location
+ * @see https://reactrouter.com/v6/hooks/use-location
  */
 external fun useLocation(): Location<*>

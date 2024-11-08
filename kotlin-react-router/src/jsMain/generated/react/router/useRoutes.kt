@@ -12,7 +12,7 @@ import remix.run.router.Location
  * elements in the tree must render an `<Outlet>` to render their child route's
  * element.
  *
- * @see https://reactrouter.com/hooks/use-routes
+ * @see https://reactrouter.com/v6/hooks/use-routes
  */
 external fun useRoutes(routes: js.array.ReadonlyArray<RouteObject>): react.ReactElement<*>?
 
@@ -22,7 +22,7 @@ external fun useRoutes(routes: js.array.ReadonlyArray<RouteObject>): react.React
  * elements in the tree must render an `<Outlet>` to render their child route's
  * element.
  *
- * @see https://reactrouter.com/hooks/use-routes
+ * @see https://reactrouter.com/v6/hooks/use-routes
  */
 external fun useRoutes(
     routes: js.array.ReadonlyArray<RouteObject>,
@@ -35,7 +35,7 @@ external fun useRoutes(
  * elements in the tree must render an `<Outlet>` to render their child route's
  * element.
  *
- * @see https://reactrouter.com/hooks/use-routes
+ * @see https://reactrouter.com/v6/hooks/use-routes
  */
 external fun useRoutes(
     routes: js.array.ReadonlyArray<RouteObject>,

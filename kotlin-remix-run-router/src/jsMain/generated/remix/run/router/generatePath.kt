@@ -7,7 +7,7 @@ package remix.run.router
 /**
  * Returns a path with params interpolated.
  *
- * @see https://reactrouter.com/utils/generate-path
+ * @see https://reactrouter.com/v6/utils/generate-path
  */
 external fun generatePath(
     originalPath: String,

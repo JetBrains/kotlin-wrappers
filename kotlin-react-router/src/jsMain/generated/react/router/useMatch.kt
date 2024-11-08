@@ -12,7 +12,7 @@ import remix.run.router.PathPattern
  * This is useful for components that need to know "active" state, e.g.
  * `<NavLink>`.
  *
- * @see https://reactrouter.com/hooks/use-match
+ * @see https://reactrouter.com/v6/hooks/use-match
  */
 external fun useMatch(pattern: PathPattern): PathMatch?
 
@@ -21,6 +21,6 @@ external fun useMatch(pattern: PathPattern): PathMatch?
  * This is useful for components that need to know "active" state, e.g.
  * `<NavLink>`.
  *
- * @see https://reactrouter.com/hooks/use-match
+ * @see https://reactrouter.com/v6/hooks/use-match
  */
 external fun useMatch(pattern: String): PathMatch?

@@ -7,7 +7,7 @@ package remix.run.router
 /**
  * Matches the given routes to a location and returns the match data.
  *
- * @see https://reactrouter.com/utils/match-routes
+ * @see https://reactrouter.com/v6/utils/match-routes
  */
 external fun <RouteObjectType : AgnosticRouteObject /* default is AgnosticRouteObject */> matchRoutes(
     routes: js.array.ReadonlyArray<RouteObjectType>,
@@ -18,7 +18,7 @@ external fun <RouteObjectType : AgnosticRouteObject /* default is AgnosticRouteO
 /**
  * Matches the given routes to a location and returns the match data.
  *
- * @see https://reactrouter.com/utils/match-routes
+ * @see https://reactrouter.com/v6/utils/match-routes
  */
 external fun <RouteObjectType : AgnosticRouteObject /* default is AgnosticRouteObject */> matchRoutes(
     routes: js.array.ReadonlyArray<RouteObjectType>,

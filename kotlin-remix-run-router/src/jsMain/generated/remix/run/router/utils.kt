@@ -30,9 +30,16 @@ external val normalizeHash: (hash: String) -> String
 /**
  * This is a shortcut for creating `application/json` responses. Converts `data`
  * to JSON and sets the `Content-Type` header.
+ *
+ * @deprecated The `json` method is deprecated in favor of returning raw objects.
+ * This method will be removed in v7.
  */
 external val json: JsonFunction<*>
 
+/**
+ * @deprecated The `defer` method is deprecated in favor of returning raw
+ * objects. This method will be removed in v7.
+ */
 external val defer: DeferFunction
 
 /**

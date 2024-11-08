@@ -10,6 +10,6 @@ import remix.run.router.Action as NavigationType
  * Returns the current navigation action which describes how the router came to
  * the current location, either by a pop, push, or replace on the history stack.
  *
- * @see https://reactrouter.com/hooks/use-navigation-type
+ * @see https://reactrouter.com/v6/hooks/use-navigation-type
  */
 external fun useNavigationType(): NavigationType
