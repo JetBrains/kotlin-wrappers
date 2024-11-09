@@ -13,7 +13,8 @@ import seskar.js.JsAsync
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle)
  */
-sealed external class FileSystemDirectoryHandle
+sealed /* final */
+external class FileSystemDirectoryHandle
 private constructor() :
     FileSystemHandle,
     AsyncMapLike<String, FileSystemHandle> {

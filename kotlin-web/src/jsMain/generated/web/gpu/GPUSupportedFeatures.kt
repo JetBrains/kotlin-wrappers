@@ -4,4 +4,7 @@ package web.gpu
 
 import js.collections.ReadonlySet
 
-sealed external class GPUSupportedFeatures : ReadonlySet<GPUFeatureName>
+sealed /* final */
+external class GPUSupportedFeatures
+private constructor() :
+    ReadonlySet<GPUFeatureName>
