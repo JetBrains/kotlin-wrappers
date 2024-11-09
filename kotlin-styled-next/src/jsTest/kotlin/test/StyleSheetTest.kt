@@ -12,7 +12,6 @@ import styled.*
 import styled.sheets.importStyleId
 import styled.sheets.styleElementsSelector
 import waitForAnimationFrame
-import web.cssom.CSSStyleSheet
 import web.dom.Element
 import web.dom.document
 import web.html.HTMLStyleElement
@@ -31,9 +30,9 @@ class StyleSheetTest : TestBase() {
 
     private fun getImportRules(): List<String> {
         return document.querySelectorAll(styleElementsSelector(importStyleId)).asList().flatMap { node ->
-            node.unsafeCast<HTMLStyleElement>().sheet.unsafeCast<CSSStyleSheet>().cssRules.asList().map {
-                it.cssText
-            }
+            node as HTMLStyleElement
+            val sheet = requireNotNull(node.sheet)
+            sheet.cssRules.asList().map { it.cssText }
         }
     }
 
