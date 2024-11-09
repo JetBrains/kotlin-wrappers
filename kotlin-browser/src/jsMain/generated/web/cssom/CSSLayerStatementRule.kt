@@ -7,7 +7,8 @@ import js.array.ReadonlyArray
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSLayerStatementRule)
  */
-sealed external class CSSLayerStatementRule :
+external class CSSLayerStatementRule
+private constructor() :
     CSSRule {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSLayerStatementRule/nameList)

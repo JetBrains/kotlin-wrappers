@@ -10,9 +10,15 @@ import js.iterable.JsIterable
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRuleList)
  */
-sealed external class CSSRuleList :
+external class CSSRuleList
+private constructor() :
     ArrayLike<CSSRule>,
     JsIterable<CSSRule> {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRuleList/length)
+     */
+    override val length: Int
+
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRuleList/item)
      */

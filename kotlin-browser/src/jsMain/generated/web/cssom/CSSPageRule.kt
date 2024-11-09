@@ -7,7 +7,8 @@ package web.cssom
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageRule)
  */
-sealed external class CSSPageRule :
+external class CSSPageRule
+private constructor() :
     CSSGroupingRule {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageRule/selectorText)

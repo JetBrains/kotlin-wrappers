@@ -7,7 +7,8 @@ package web.cssom
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSGroupingRule)
  */
-sealed external class CSSGroupingRule :
+open external class CSSGroupingRule
+private constructor() :
     CSSRule {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSGroupingRule/cssRules)

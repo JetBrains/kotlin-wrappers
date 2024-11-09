@@ -10,7 +10,8 @@ import js.iterable.JsIterable
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSKeyframesRule)
  */
-sealed external class CSSKeyframesRule :
+external class CSSKeyframesRule
+private constructor() :
     CSSRule,
     ArrayLike<CSSKeyframeRule>,
     JsIterable<CSSKeyframeRule> {
@@ -18,6 +19,11 @@ sealed external class CSSKeyframesRule :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSKeyframesRule/cssRules)
      */
     val cssRules: CSSRuleList
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSKeyframesRule/length)
+     */
+    override val length: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSKeyframesRule/name)

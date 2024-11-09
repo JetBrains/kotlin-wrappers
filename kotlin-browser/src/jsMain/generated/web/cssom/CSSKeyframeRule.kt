@@ -7,7 +7,8 @@ package web.cssom
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSKeyframeRule)
  */
-sealed external class CSSKeyframeRule :
+external class CSSKeyframeRule
+private constructor() :
     CSSRule {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSKeyframeRule/keyText)

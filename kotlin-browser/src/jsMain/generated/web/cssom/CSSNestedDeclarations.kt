@@ -2,7 +2,8 @@
 
 package web.cssom
 
-sealed external class CSSNestedDeclarations :
+external class CSSNestedDeclarations
+private constructor() :
     CSSRule {
     val style: CSSStyleDeclaration
 }

@@ -7,7 +7,8 @@ import web.geometry.DOMMatrix
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTransformComponent)
  */
-sealed external class CSSTransformComponent {
+open external class CSSTransformComponent
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTransformComponent/is2D)
      */

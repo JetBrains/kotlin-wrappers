@@ -5,7 +5,8 @@ package web.cssom
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPropertyRule)
  */
-sealed external class CSSPropertyRule :
+external class CSSPropertyRule
+private constructor() :
     CSSRule {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPropertyRule/inherits)

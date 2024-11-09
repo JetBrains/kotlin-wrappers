@@ -5,7 +5,8 @@ package web.cssom
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNumericValue)
  */
-sealed external class CSSNumericValue :
+open external class CSSNumericValue
+private constructor() :
     CSSStyleValue {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNumericValue/add)

@@ -4,7 +4,8 @@ package web.cssom
 
 import js.array.ReadonlyArray
 
-sealed external class CSSViewTransitionRule :
+external class CSSViewTransitionRule
+private constructor() :
     CSSRule {
     val navigation: String
     val types: ReadonlyArray<String>

@@ -7,7 +7,8 @@ package web.cssom
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleRule)
  */
-sealed external class CSSStyleRule :
+external class CSSStyleRule
+private constructor() :
     CSSGroupingRule {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleRule/selectorText)

@@ -7,7 +7,8 @@ package web.cssom
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSConditionRule)
  */
-sealed external class CSSConditionRule :
+open external class CSSConditionRule
+private constructor() :
     CSSGroupingRule {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSConditionRule/conditionText)

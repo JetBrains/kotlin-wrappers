@@ -5,7 +5,8 @@ package web.cssom
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSScopeRule)
  */
-sealed external class CSSScopeRule :
+external class CSSScopeRule
+private constructor() :
     CSSGroupingRule {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSScopeRule/end)

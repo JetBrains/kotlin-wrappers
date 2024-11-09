@@ -7,7 +7,8 @@ import js.array.ReadonlyArray
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleValue)
  */
-sealed external class CSSStyleValue {
+open external class CSSStyleValue
+private constructor() {
     companion object {
         /**
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleValue/parse_static)

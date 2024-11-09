@@ -7,7 +7,8 @@ package web.cssom
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSMediaRule)
  */
-sealed external class CSSMediaRule :
+external class CSSMediaRule
+private constructor() :
     CSSConditionRule {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSMediaRule/media)

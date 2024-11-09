@@ -7,7 +7,8 @@ package web.cssom
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRule)
  */
-sealed external class CSSRule {
+open external class CSSRule
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRule/cssText)
      */
