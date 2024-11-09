@@ -2,7 +2,8 @@
 
 package web.gpu
 
-sealed external class GPURenderPipeline :
+external class GPURenderPipeline
+private constructor() :
     GPUObjectBase,
     GPUPipelineBase {
     override var label: String

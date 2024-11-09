@@ -2,6 +2,7 @@
 
 package web.gpu
 
-sealed external class GPUError {
+open external class GPUError
+private constructor() {
     val message: String
 }

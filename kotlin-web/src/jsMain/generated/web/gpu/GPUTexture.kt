@@ -2,7 +2,8 @@
 
 package web.gpu
 
-sealed external class GPUTexture :
+external class GPUTexture
+private constructor() :
     GPUObjectBase {
     override var label: String
     fun createView(descriptor: GPUTextureViewDescriptor = definedExternally): GPUTextureView

@@ -8,7 +8,8 @@ import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
 
-sealed external class GPUQueue :
+external class GPUQueue
+private constructor() :
     GPUObjectBase {
     override var label: String
     fun submit(commandBuffers: ReadonlyArray<GPUCommandBuffer>)

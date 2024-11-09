@@ -5,7 +5,8 @@ package web.gpu
 import js.array.ReadonlyArray
 import js.typedarrays.Uint32Array
 
-sealed external class GPUComputePassEncoder :
+external class GPUComputePassEncoder
+private constructor() :
     GPUObjectBase,
     GPUProgrammablePassEncoder {
     override var label: String

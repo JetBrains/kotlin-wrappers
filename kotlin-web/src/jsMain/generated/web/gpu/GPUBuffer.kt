@@ -7,7 +7,8 @@ import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
 
-sealed external class GPUBuffer :
+external class GPUBuffer
+private constructor() :
     GPUObjectBase {
     override var label: String
     val size: GPUSize64Out

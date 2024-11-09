@@ -2,7 +2,8 @@
 
 package web.gpu
 
-sealed external class GPUCommandBuffer :
+external class GPUCommandBuffer
+private constructor() :
     GPUObjectBase {
     override var label: String
 }

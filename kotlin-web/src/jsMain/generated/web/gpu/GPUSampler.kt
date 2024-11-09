@@ -2,7 +2,8 @@
 
 package web.gpu
 
-sealed external class GPUSampler :
+external class GPUSampler
+private constructor() :
     GPUObjectBase,
     GPUBindingResource {
     override var label: String

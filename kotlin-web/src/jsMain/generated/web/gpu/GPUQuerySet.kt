@@ -2,7 +2,8 @@
 
 package web.gpu
 
-sealed external class GPUQuerySet :
+external class GPUQuerySet
+private constructor() :
     GPUObjectBase {
     override var label: String
     fun destroy()

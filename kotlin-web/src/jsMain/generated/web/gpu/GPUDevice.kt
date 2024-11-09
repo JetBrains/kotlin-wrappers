@@ -8,7 +8,8 @@ import web.events.EventInstance
 import web.events.EventTarget
 import web.events.JsEvent
 
-sealed external class GPUDevice :
+external class GPUDevice
+private constructor() :
     EventTarget,
     GPUObjectBase {
     override var label: String

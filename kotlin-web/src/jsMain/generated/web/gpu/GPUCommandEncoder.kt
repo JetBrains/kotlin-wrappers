@@ -2,7 +2,8 @@
 
 package web.gpu
 
-sealed external class GPUCommandEncoder :
+external class GPUCommandEncoder
+private constructor() :
     GPUObjectBase {
     override var label: String
     fun beginRenderPass(descriptor: GPURenderPassDescriptor): GPURenderPassEncoder

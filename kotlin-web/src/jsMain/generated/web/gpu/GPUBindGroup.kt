@@ -2,7 +2,8 @@
 
 package web.gpu
 
-sealed external class GPUBindGroup :
+external class GPUBindGroup
+private constructor() :
     GPUObjectBase {
     override var label: String
 }

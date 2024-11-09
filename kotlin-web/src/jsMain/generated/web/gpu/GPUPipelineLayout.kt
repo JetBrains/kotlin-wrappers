@@ -2,7 +2,8 @@
 
 package web.gpu
 
-sealed external class GPUPipelineLayout :
+external class GPUPipelineLayout
+private constructor() :
     GPUObjectBase {
     override var label: String
 }

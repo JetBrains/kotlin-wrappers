@@ -5,7 +5,8 @@ package web.gpu
 import js.array.ReadonlyArray
 import js.typedarrays.Uint32Array
 
-sealed external class GPURenderPassEncoder :
+external class GPURenderPassEncoder
+private constructor() :
     GPUObjectBase,
     GPUProgrammablePassEncoder,
     GPURenderEncoderBase {

@@ -2,7 +2,8 @@
 
 package web.gpu
 
-sealed external class GPUAdapterInfo {
+external class GPUAdapterInfo
+private constructor() {
     val vendor: String
     val architecture: String
     val device: String

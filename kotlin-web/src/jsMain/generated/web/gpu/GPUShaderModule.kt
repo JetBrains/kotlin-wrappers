@@ -2,7 +2,8 @@
 
 package web.gpu
 
-sealed external class GPUShaderModule :
+external class GPUShaderModule
+private constructor() :
     GPUObjectBase {
     override var label: String
 }

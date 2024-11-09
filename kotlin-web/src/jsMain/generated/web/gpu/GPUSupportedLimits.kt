@@ -4,7 +4,8 @@ package web.gpu
 
 import js.core.JsLong
 
-sealed external class GPUSupportedLimits {
+external class GPUSupportedLimits
+private constructor() {
     var maxTextureDimension1D: Int?
     var maxTextureDimension2D: Int?
     var maxTextureDimension3D: Int?

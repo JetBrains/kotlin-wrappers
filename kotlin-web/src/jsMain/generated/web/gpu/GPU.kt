@@ -5,7 +5,8 @@ package web.gpu
 import js.promise.Promise
 import seskar.js.JsAsync
 
-sealed external class GPU {
+external class GPU
+private constructor() {
     @JsAsync
     suspend fun requestAdapter(options: GPURequestAdapterOptions = definedExternally): GPUAdapter?
 
