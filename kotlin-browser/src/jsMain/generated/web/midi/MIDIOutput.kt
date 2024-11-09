@@ -10,7 +10,8 @@ import web.time.DOMHighResTimeStamp
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIOutput)
  */
-sealed external class MIDIOutput :
+external class MIDIOutput
+private constructor() :
     MIDIPort {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIOutput/send)

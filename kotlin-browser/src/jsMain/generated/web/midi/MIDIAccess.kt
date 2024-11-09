@@ -12,7 +12,8 @@ import web.events.JsEvent
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIAccess)
  */
-sealed external class MIDIAccess :
+external class MIDIAccess
+private constructor() :
     EventTarget {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIAccess/inputs)

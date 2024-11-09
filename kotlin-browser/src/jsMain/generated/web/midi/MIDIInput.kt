@@ -11,7 +11,8 @@ import web.events.JsEvent
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIInput)
  */
-sealed external class MIDIInput :
+external class MIDIInput
+private constructor() :
     MIDIPort {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIInput/midimessage_event)

@@ -14,7 +14,8 @@ import web.events.JsEvent
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIPort)
  */
-sealed external class MIDIPort :
+open external class MIDIPort
+private constructor() :
     EventTarget {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIPort/connection)
