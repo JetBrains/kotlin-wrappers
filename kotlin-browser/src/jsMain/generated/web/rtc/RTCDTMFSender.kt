@@ -10,7 +10,8 @@ import web.events.JsEvent
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDTMFSender)
  */
-sealed external class RTCDTMFSender :
+external class RTCDTMFSender
+private constructor() :
     EventTarget {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDTMFSender/canInsertDTMF)

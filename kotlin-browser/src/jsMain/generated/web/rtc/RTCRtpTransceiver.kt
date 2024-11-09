@@ -7,7 +7,8 @@ import js.array.ReadonlyArray
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpTransceiver)
  */
-sealed external class RTCRtpTransceiver {
+external class RTCRtpTransceiver
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpTransceiver/currentDirection)
      */

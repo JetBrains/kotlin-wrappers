@@ -12,7 +12,8 @@ import web.streams.WritableStream
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpScriptTransformer)
  */
-sealed external class RTCRtpScriptTransformer :
+external class RTCRtpScriptTransformer
+private constructor() :
     EventTarget {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpScriptTransformer/options)

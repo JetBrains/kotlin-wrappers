@@ -8,7 +8,8 @@ import js.core.JsLong
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedVideoFrame)
  */
-sealed external class RTCEncodedVideoFrame {
+external class RTCEncodedVideoFrame
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedVideoFrame/data)
      */

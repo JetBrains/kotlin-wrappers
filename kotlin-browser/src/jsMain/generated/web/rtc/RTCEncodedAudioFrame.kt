@@ -8,7 +8,8 @@ import js.core.JsLong
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedAudioFrame)
  */
-sealed external class RTCEncodedAudioFrame {
+external class RTCEncodedAudioFrame
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedAudioFrame/data)
      */

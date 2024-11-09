@@ -8,7 +8,8 @@ import web.time.EpochTimeStamp
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCCertificate)
  */
-sealed external class RTCCertificate {
+external class RTCCertificate
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCCertificate/expires)
      */

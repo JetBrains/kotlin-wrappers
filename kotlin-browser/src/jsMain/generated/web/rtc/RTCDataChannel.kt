@@ -13,7 +13,8 @@ import web.sockets.BinaryType
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel)
  */
-sealed external class RTCDataChannel :
+external class RTCDataChannel
+private constructor() :
     EventTarget,
     Transferable {
     /**

@@ -13,7 +13,8 @@ import web.media.streams.MediaStreamTrack
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender)
  */
-sealed external class RTCRtpSender {
+external class RTCRtpSender
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/dtmf)
      */
