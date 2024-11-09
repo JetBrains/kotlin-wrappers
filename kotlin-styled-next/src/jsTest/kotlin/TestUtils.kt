@@ -85,7 +85,10 @@ class TestScope : CoroutineScope by testScope {
 
     fun getStylesheets(): List<CSSStyleSheet> {
         val elements = document.querySelectorAll(styleElementsSelector(styleId)).asList()
-        return elements.map { it.unsafeCast<HTMLStyleElement>().sheet.unsafeCast<CSSStyleSheet>() }
+        return elements
+            .map { it as HTMLStyleElement }
+            .map { it.sheet }
+            .requireNoNulls()
     }
 
     fun getRules(): List<String> {
