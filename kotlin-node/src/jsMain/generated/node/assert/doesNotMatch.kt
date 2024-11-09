@@ -4,7 +4,7 @@
 
 package node.assert
 
-import kotlin.js.RegExp
+import js.regexp.RegExp
 
 /**
  * Expects the `string` input not to match the regular expression.

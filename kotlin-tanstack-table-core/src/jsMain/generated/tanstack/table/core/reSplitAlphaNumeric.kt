@@ -4,6 +4,6 @@
 
 package tanstack.table.core
 
-import kotlin.js.RegExp
+import js.regexp.RegExp
 
 external val reSplitAlphaNumeric: RegExp

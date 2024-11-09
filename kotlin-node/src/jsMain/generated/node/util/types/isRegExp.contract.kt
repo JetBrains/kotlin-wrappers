@@ -2,8 +2,8 @@
 
 package node.util.types
 
+import js.regexp.RegExp
 import kotlin.contracts.contract
-import kotlin.js.RegExp
 
 
 @Suppress("NOTHING_TO_INLINE", "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")

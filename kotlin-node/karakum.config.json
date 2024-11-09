@@ -417,7 +417,7 @@
             "node.events.EventEmitter"
         ],
         "assert/doesNotMatch.kt": [
-            "kotlin.js.RegExp"
+            "js.regexp.RegExp"
         ],
         "assert/doesNotReject.kt": [
             "js.promise.Promise"
@@ -426,7 +426,7 @@
             "js.promise.Promise"
         ],
         "assert/match.kt": [
-            "kotlin.js.RegExp"
+            "js.regexp.RegExp"
         ],
         "assert/rejects.kt": [
             "js.promise.Promise"
@@ -1009,7 +1009,7 @@
             "js.date.Date"
         ],
         "util/isRegExp.contract.kt": [
-            "kotlin.js.RegExp"
+            "js.regexp.RegExp"
         ],
         "util/types/isAnyArrayBuffer.contract.kt": [
             "js.buffer.ArrayBufferLike"
@@ -1054,7 +1054,7 @@
             "js.promise.Promise"
         ],
         "util/types/isRegExp.contract.kt": [
-            "kotlin.js.RegExp"
+            "js.regexp.RegExp"
         ],
         "util/types/isSharedArrayBuffer.contract.kt": [
             "js.buffer.SharedArrayBuffer"
