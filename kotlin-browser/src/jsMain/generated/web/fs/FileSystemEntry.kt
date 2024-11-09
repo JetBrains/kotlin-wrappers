@@ -5,7 +5,8 @@ package web.fs
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemEntry)
  */
-sealed external class FileSystemEntry {
+open external class FileSystemEntry
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemEntry/filesystem)
      */

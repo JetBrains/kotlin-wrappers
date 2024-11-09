@@ -5,7 +5,8 @@ package web.fs
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryEntry)
  */
-sealed external class FileSystemDirectoryEntry :
+external class FileSystemDirectoryEntry
+private constructor() :
     FileSystemEntry {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryEntry/createReader)

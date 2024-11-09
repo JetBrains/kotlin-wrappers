@@ -10,7 +10,8 @@ import js.core.JsLong
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle)
  */
-sealed external class FileSystemSyncAccessHandle {
+external class FileSystemSyncAccessHandle
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle/close)
      */

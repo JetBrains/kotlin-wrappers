@@ -5,7 +5,8 @@ package web.fs
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryReader)
  */
-sealed external class FileSystemDirectoryReader {
+external class FileSystemDirectoryReader
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryReader/readEntries)
      */

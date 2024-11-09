@@ -10,7 +10,8 @@ import seskar.js.JsAsync
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemHandle)
  */
-sealed external class FileSystemHandle {
+open external class FileSystemHandle
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemHandle/kind)
      */

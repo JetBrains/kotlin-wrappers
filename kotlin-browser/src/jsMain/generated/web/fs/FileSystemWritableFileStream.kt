@@ -13,7 +13,8 @@ import web.streams.WritableStream
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemWritableFileStream)
  */
-sealed external class FileSystemWritableFileStream :
+external class FileSystemWritableFileStream
+private constructor() :
     WritableStream<FileSystemWriteChunkType> {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemWritableFileStream/seek)

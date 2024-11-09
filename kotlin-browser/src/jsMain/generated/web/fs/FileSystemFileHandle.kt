@@ -11,7 +11,8 @@ import web.file.File
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle)
  */
-sealed external class FileSystemFileHandle :
+external class FileSystemFileHandle
+private constructor() :
     FileSystemHandle {
     override val kind: FileSystemHandleKind.file
 
