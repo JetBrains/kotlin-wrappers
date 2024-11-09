@@ -8,7 +8,8 @@ import web.worklets.WorkletGlobalScope
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletGlobalScope)
  */
-sealed external class AudioWorkletGlobalScope :
+external class AudioWorkletGlobalScope
+private constructor() :
     WorkletGlobalScope {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletGlobalScope/currentFrame)

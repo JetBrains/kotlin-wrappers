@@ -9,7 +9,8 @@ import web.events.EventTarget
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioNode)
  */
-sealed external class AudioNode :
+open external class AudioNode
+private constructor() :
     EventTarget {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioNode/channelCount)

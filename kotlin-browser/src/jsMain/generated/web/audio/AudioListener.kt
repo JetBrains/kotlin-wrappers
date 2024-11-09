@@ -7,7 +7,8 @@ package web.audio
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioListener)
  */
-sealed external class AudioListener {
+external class AudioListener
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioListener/forwardX)
      */

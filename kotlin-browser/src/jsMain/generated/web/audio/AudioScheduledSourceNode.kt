@@ -10,7 +10,8 @@ import web.events.JsEvent
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioScheduledSourceNode)
  */
-sealed external class AudioScheduledSourceNode :
+open external class AudioScheduledSourceNode
+private constructor() :
     AudioNode {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioScheduledSourceNode/ended_event)
