@@ -10,7 +10,8 @@ import web.events.*
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBRequest)
  */
-sealed external class IDBRequest<T> :
+open external class IDBRequest<T>
+private constructor() :
     EventTarget {
     /**
      * When a request is completed, returns the error (a DOMException), or null if the request succeeded. Throws a "InvalidStateError" DOMException if the request is still pending.

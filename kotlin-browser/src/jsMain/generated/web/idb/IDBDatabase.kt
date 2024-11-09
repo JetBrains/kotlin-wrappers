@@ -12,7 +12,8 @@ import web.events.*
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase)
  */
-sealed external class IDBDatabase :
+external class IDBDatabase
+private constructor() :
     EventTarget {
     /**
      * Returns the name of the database.

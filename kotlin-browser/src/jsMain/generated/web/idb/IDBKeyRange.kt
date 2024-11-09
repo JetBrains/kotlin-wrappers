@@ -7,7 +7,8 @@ package web.idb
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBKeyRange)
  */
-sealed external class IDBKeyRange {
+external class IDBKeyRange
+private constructor() {
     /**
      * Returns lower bound, or undefined if none.
      *

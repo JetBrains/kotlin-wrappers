@@ -9,7 +9,8 @@ import js.core.Void
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBCursor)
  */
-sealed external class IDBCursor {
+open external class IDBCursor
+private constructor() {
     /**
      * Returns the direction ("next", "nextunique", "prev" or "prevunique") of the cursor.
      *

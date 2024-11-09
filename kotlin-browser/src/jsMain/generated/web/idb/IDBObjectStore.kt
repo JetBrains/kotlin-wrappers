@@ -11,7 +11,8 @@ import web.dom.DOMStringList
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore)
  */
-sealed external class IDBObjectStore {
+external class IDBObjectStore
+private constructor() {
     /**
      * Returns true if the store has a key generator, and false otherwise.
      *

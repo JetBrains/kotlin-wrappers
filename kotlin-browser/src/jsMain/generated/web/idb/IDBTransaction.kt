@@ -9,7 +9,8 @@ import web.events.*
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction)
  */
-sealed external class IDBTransaction :
+external class IDBTransaction
+private constructor() :
     EventTarget {
     /**
      * Returns the transaction's connection.

@@ -7,7 +7,8 @@ package web.idb
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBCursorWithValue)
  */
-sealed external class IDBCursorWithValue :
+external class IDBCursorWithValue
+private constructor() :
     IDBCursor {
     /**
      * Returns the cursor's current value.

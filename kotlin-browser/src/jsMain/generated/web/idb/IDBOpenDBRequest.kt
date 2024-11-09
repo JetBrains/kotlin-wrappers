@@ -11,7 +11,8 @@ import web.events.JsEvent
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBOpenDBRequest)
  */
-sealed external class IDBOpenDBRequest :
+external class IDBOpenDBRequest
+private constructor() :
     IDBRequest<IDBDatabase> {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBOpenDBRequest/blocked_event)

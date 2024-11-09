@@ -9,7 +9,8 @@ import js.array.ReadonlyArray
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex)
  */
-sealed external class IDBIndex {
+external class IDBIndex
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/keyPath)
      */
