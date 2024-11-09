@@ -9,7 +9,9 @@ import web.events.EventType
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTransformEvent)
  */
-sealed external class RTCTransformEvent : Event {
+external class RTCTransformEvent
+private constructor() :
+    Event {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTransformEvent/transformer)
      */
