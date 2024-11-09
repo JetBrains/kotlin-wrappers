@@ -4,6 +4,7 @@
 
 package csstype
 
+import js.reflect.unsafeCast
 import web.cssom.CSSStyleDeclaration
 import web.cssom.CustomPropertyName
 
@@ -11,11 +12,11 @@ operator fun <T : Any> CSSStyleDeclaration.get(
     name: CustomPropertyName<T>,
 ): T? {
     val value = getPropertyValue(
-        property = name.unsafeCast<String>(),
+        property = unsafeCast(name),
     )
 
     return if (value.isNotEmpty()) {
-        value.unsafeCast<T>()
+        unsafeCast(value)
     } else null
 }
 
@@ -24,7 +25,7 @@ inline operator fun <T : Any> CSSStyleDeclaration.set(
     value: T?,
 ) {
     setProperty(
-        property = name.unsafeCast<String>(),
-        value = value.unsafeCast<String?>(),
+        property = unsafeCast(name),
+        value = unsafeCast(value),
     )
 }
