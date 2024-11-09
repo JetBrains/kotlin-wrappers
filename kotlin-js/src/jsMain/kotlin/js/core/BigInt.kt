@@ -10,6 +10,7 @@ package js.core
 
 import js.function.JsFunction
 import js.function.invoke
+import js.reflect.unsafeCast
 import seskar.js.JsPrimitive
 
 @PublishedApi
@@ -26,19 +27,19 @@ private constructor() :
     Comparable<BigInt> {
 
     inline operator fun unaryMinus(): BigInt =
-        (-unsafeCast<Double>()).unsafeCast<BigInt>()
+        unsafeCast(-unsafeCast<Double>(this))
 
     inline operator fun plus(other: BigInt): BigInt =
-        (unsafeCast<Double>() + other.unsafeCast<Double>()).unsafeCast<BigInt>()
+        unsafeCast(unsafeCast<Double>(this) + unsafeCast<Double>(other))
 
     inline operator fun minus(other: BigInt): BigInt =
-        (unsafeCast<Double>() - other.unsafeCast<Double>()).unsafeCast<BigInt>()
+        unsafeCast(unsafeCast<Double>(this) - unsafeCast<Double>(other))
 
     inline operator fun times(other: BigInt): BigInt =
-        (unsafeCast<Double>() * other.unsafeCast<Double>()).unsafeCast<BigInt>()
+        unsafeCast(unsafeCast<Double>(this) * unsafeCast<Double>(other))
 
     inline operator fun div(other: BigInt): BigInt =
-        (unsafeCast<Double>() / other.unsafeCast<Double>()).unsafeCast<BigInt>()
+        unsafeCast(unsafeCast<Double>(this) / unsafeCast<Double>(other))
 
     inline operator fun inc(): BigInt =
         this + 1.n
