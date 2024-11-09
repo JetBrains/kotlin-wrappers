@@ -9,9 +9,15 @@ import web.geometry.DOMPoint
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList)
  */
-sealed external class SVGPointList :
+external class SVGPointList
+private constructor() :
     ArrayLike<DOMPoint>,
     JsIterable<DOMPoint> {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/length)
+     */
+    override val length: Int
+
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/numberOfItems)
      */

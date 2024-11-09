@@ -10,9 +10,15 @@ import js.iterable.JsIterable
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList)
  */
-sealed external class SVGLengthList :
+external class SVGLengthList
+private constructor() :
     ArrayLike<SVGLength>,
     JsIterable<SVGLength> {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/length)
+     */
+    override val length: Int
+
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/numberOfItems)
      */

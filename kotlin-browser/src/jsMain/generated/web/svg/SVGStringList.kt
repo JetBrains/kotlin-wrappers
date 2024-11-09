@@ -10,9 +10,11 @@ import js.iterable.JsIterable
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList)
  */
-sealed external class SVGStringList :
+external class SVGStringList
+private constructor() :
     ArrayLike<String>,
     JsIterable<String> {
+    override val length: Int
     val numberOfItems: Int
     fun appendItem(newItem: String): String
     fun clear()

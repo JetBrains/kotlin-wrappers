@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedTransformList)
  */
-sealed external class SVGAnimatedTransformList {
+external class SVGAnimatedTransformList
+private constructor() {
     val animVal: SVGTransformList
     val baseVal: SVGTransformList
 }

@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedLengthList)
  */
-sealed external class SVGAnimatedLengthList {
+external class SVGAnimatedLengthList
+private constructor() {
     val animVal: SVGLengthList
     val baseVal: SVGLengthList
 }

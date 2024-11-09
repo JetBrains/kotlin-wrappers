@@ -7,7 +7,8 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedNumberList)
  */
-sealed external class SVGAnimatedNumberList {
+external class SVGAnimatedNumberList
+private constructor() {
     val animVal: SVGNumberList
     val baseVal: SVGNumberList
 }

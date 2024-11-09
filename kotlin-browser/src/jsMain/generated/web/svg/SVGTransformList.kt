@@ -12,9 +12,11 @@ import web.geometry.DOMMatrixReadOnly
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList)
  */
-sealed external class SVGTransformList :
+external class SVGTransformList
+private constructor() :
     ArrayLike<SVGTransform>,
     JsIterable<SVGTransform> {
+    override val length: Int
     val numberOfItems: Int
     fun appendItem(newItem: SVGTransform): SVGTransform
     fun clear()
