@@ -13,7 +13,8 @@ import web.events.JsEvent
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream)
  */
-open external class MediaStream() : EventTarget {
+open external class MediaStream() :
+    EventTarget {
     constructor(stream: MediaStream)
     constructor(tracks: ReadonlyArray<MediaStreamTrack>)
 
