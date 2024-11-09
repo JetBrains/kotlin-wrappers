@@ -140,7 +140,10 @@ export default {
     traverse(node, context) {
         if (ts.isStringLiteral(node)) {
             const eventContainer = extractEventContainer(node)
+            const eventPayload = extractEventPayload(node, context)
+
             if (!eventContainer) return null
+            if (!eventPayload) return null
 
             const name = eventContainer.name
             if (!name) return null
@@ -169,12 +172,11 @@ export default {
                 eventInfo: new Map()
             }
 
-            events.eventInfo.set(node.text, {
-                payload: "",
-                payloadLength: 0,
+            const [parameters, typeParameters] = eventPayload
 
-                typeParameters: "",
-                fullTypeParameters: "",
+            events.eventInfo.set(node.text, {
+                parameters,
+                typeParameters,
             })
 
             this.events.set(symbol, events)
@@ -198,42 +200,13 @@ export default {
             const events = this.events.get(symbol)
             if (!events) return null
 
-            const eventPayload = extractEventPayload(node, context)
-            const eventInfo = events.eventInfo.get(node.text)
-            if (eventPayload && eventInfo) {
-                const [parameters, typeParameters] = eventPayload
-
-                eventInfo.payload = parameters
-                    .map(parameter => (
-                        parameter.type
-                            ? next(parameter.type)
-                            : "Any?"
-                    ))
-                    .join(", ")
-
-                eventInfo.payloadLength = parameters.length
-
-                eventInfo.typeParameters = typeParameters
-                    .filter(Boolean)
-                    .map(([, declaration]) => next(declaration))
-                    .join(", ")
-
-                eventInfo.fullTypeParameters = typeParameters
-                    .map(typeParameter => (
-                        typeParameter
-                            ? next(typeParameter[0])
-                            : "*"
-                    ))
-                    .join(", ")
-            }
-
             return `${events.containerName}Event.${karakum.constIdentifier(node.text)}`
         }
 
         return null
     },
 
-    generate(context) {
+    generate(context, render) {
         const declarations = Array.from(this.events.values()).map(events => {
             const name = `${events.containerName}Event`
 
@@ -259,11 +232,32 @@ val ${key}: ${key}
                 .join("\n")
 
             const companionBody = Array.from(events.eventInfo.entries())
-                .map(([eventName, { payload, payloadLength, typeParameters, fullTypeParameters }]) => {
+                .map(([eventName, { parameters, typeParameters }]) => {
+                    const payload = parameters
+                        .map(parameter => (
+                            parameter.type
+                                ? render(parameter.type)
+                                : "Any?"
+                        ))
+                        .join(", ")
+
+                    const renderedTypeParameters = typeParameters
+                        .filter(Boolean)
+                        .map(([, declaration]) => render(declaration))
+                        .join(", ")
+
+                    const fullTypeParameters = typeParameters
+                        .map(typeParameter => (
+                            typeParameter
+                                ? render(typeParameter[0])
+                                : "*"
+                        ))
+                        .join(", ")
+
                     const key = karakum.identifier(eventName)
 
-                    const tuple = payloadLength > 0
-                        ? `js.array.JsTuple${payloadLength}<${payload}>`
+                    const tuple = parameters.length > 0
+                        ? `js.array.JsTuple${parameters.length}<${payload}>`
                         : "js.array.JsTuple"
 
                     const targetReference = fullTypeParameters !== ""
@@ -273,7 +267,7 @@ val ${key}: ${key}
                     return (
                         `
 @seskar.js.JsValue("${eventName}")
-fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${key}(): node.events.EventType<${targetReference}, ${tuple}>
+fun ${karakum.ifPresent(renderedTypeParameters, it => `<${it}> `)}${key}(): node.events.EventType<${targetReference}, ${tuple}>
                         `.trim()
                     );
                 })
