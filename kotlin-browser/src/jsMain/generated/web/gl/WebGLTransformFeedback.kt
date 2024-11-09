@@ -2,4 +2,5 @@
 
 package web.gl
 
-sealed external class WebGLTransformFeedback
+external class WebGLTransformFeedback
+private constructor()

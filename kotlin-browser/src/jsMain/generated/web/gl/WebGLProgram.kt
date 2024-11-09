@@ -2,4 +2,5 @@
 
 package web.gl
 
-sealed external class WebGLProgram
+external class WebGLProgram
+private constructor()

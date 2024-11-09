@@ -2,4 +2,5 @@
 
 package web.gl
 
-sealed external class WebGLQuery
+external class WebGLQuery
+private constructor()

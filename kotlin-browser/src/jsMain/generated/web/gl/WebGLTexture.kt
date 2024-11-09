@@ -2,4 +2,5 @@
 
 package web.gl
 
-sealed external class WebGLTexture
+external class WebGLTexture
+private constructor()

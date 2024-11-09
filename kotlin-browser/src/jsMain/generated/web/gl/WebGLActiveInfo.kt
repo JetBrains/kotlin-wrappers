@@ -2,7 +2,8 @@
 
 package web.gl
 
-sealed external class WebGLActiveInfo {
+external class WebGLActiveInfo
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLActiveInfo/name)
      */

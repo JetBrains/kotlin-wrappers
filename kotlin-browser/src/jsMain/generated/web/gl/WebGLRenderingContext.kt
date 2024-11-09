@@ -7,7 +7,9 @@ import web.rendering.OffscreenRenderingContext
 import web.rendering.RenderingContext
 import web.rendering.RenderingContextId
 
-sealed external class WebGLRenderingContext :
+sealed /* final */
+external class WebGLRenderingContext
+private constructor() :
     WebGLRenderingContextBase,
     WebGLRenderingContextOverloads,
     OffscreenRenderingContext,

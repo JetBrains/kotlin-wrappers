@@ -2,4 +2,5 @@
 
 package web.gl
 
-sealed external class WebGLSync
+external class WebGLSync
+private constructor()

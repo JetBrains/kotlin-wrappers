@@ -2,4 +2,5 @@
 
 package web.gl
 
-sealed external class WebGLShader
+external class WebGLShader
+private constructor()

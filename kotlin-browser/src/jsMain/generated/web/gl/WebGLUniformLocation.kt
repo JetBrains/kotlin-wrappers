@@ -2,4 +2,5 @@
 
 package web.gl
 
-sealed external class WebGLUniformLocation
+external class WebGLUniformLocation
+private constructor()

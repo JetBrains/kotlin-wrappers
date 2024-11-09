@@ -2,4 +2,5 @@
 
 package web.gl
 
-sealed external class WebGLSampler
+external class WebGLSampler
+private constructor()
