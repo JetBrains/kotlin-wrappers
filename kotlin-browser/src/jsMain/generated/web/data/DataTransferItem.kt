@@ -10,7 +10,8 @@ import web.fs.FileSystemEntry
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItem)
  */
-sealed external class DataTransferItem {
+external class DataTransferItem
+private constructor() {
     /**
      * Returns the drag data item kind, one of: "string", "file".
      *

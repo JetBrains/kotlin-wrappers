@@ -9,7 +9,8 @@ import web.events.*
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCue)
  */
-sealed external class TextTrackCue :
+open external class TextTrackCue
+private constructor() :
     EventTarget {
     /**
      * Returns the text track cue end time, in seconds.

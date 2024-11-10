@@ -12,7 +12,8 @@ import web.events.*
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal)
  */
-sealed external class AbortSignal :
+external class AbortSignal
+private constructor() :
     EventTarget {
     /**
      * Returns true if this AbortSignal's AbortController has signaled to abort, and false otherwise.

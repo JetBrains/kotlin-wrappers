@@ -7,7 +7,8 @@ import web.html.HTMLCanvasElement
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasCaptureMediaStreamTrack)
  */
-sealed external class CanvasCaptureMediaStreamTrack :
+external class CanvasCaptureMediaStreamTrack
+private constructor() :
     MediaStreamTrack {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasCaptureMediaStreamTrack/canvas)

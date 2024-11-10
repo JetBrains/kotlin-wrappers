@@ -9,7 +9,8 @@ import web.events.*
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack)
  */
-sealed external class TextTrack :
+external class TextTrack
+private constructor() :
     EventTarget {
     /**
      * Returns the text track cues from the text track list of cues that are currently active (i.e. that start before the current playback position and end after it), as a TextTrackCueList object.

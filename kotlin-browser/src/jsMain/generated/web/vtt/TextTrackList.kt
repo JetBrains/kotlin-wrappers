@@ -9,10 +9,16 @@ import web.events.*
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackList)
  */
-sealed external class TextTrackList :
+external class TextTrackList
+private constructor() :
     EventTarget,
     ArrayLike<TextTrack>,
     JsIterable<TextTrack> {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackList/length)
+     */
+    override val length: Int
+
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackList/addtrack_event)
      */

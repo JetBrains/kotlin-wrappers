@@ -9,7 +9,8 @@ import web.dom.Node
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLSerializer)
  */
-external class XMLSerializer {
+external class XMLSerializer
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLSerializer/serializeToString)
      */

@@ -12,7 +12,9 @@ import web.rendering.RenderingContextId
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D)
  */
-sealed external class CanvasRenderingContext2D :
+sealed /* final */
+external class CanvasRenderingContext2D
+private constructor() :
     CanvasCompositing,
     CanvasDrawImage,
     CanvasDrawPath,

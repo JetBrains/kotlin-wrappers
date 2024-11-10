@@ -9,5 +9,6 @@ import web.dom.Document
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLDocument)
  */
-sealed external class XMLDocument :
+external class XMLDocument
+private constructor() :
     Document

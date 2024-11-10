@@ -9,7 +9,8 @@ import web.events.ProgressEvent
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequestUpload)
  */
-sealed external class XMLHttpRequestUpload :
+external class XMLHttpRequestUpload
+private constructor() :
     XMLHttpRequestEventTarget {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequestUpload/abort_event)

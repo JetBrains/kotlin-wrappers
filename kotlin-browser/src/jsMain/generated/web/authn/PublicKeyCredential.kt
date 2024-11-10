@@ -12,7 +12,8 @@ import web.credentials.Credential
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential)
  */
-sealed external class PublicKeyCredential :
+external class PublicKeyCredential
+private constructor() :
     Credential {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/authenticatorAttachment)

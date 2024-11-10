@@ -9,7 +9,8 @@ import js.buffer.ArrayBuffer
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AuthenticatorResponse)
  */
-sealed external class AuthenticatorResponse {
+open external class AuthenticatorResponse
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AuthenticatorResponse/clientDataJSON)
      */

@@ -5,7 +5,8 @@ package web.animations
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationEffect)
  */
-sealed external class AnimationEffect {
+open external class AnimationEffect
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationEffect/getComputedTiming)
      */

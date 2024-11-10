@@ -5,7 +5,8 @@ package web.animations
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationTimeline)
  */
-sealed external class AnimationTimeline {
+open external class AnimationTimeline
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationTimeline/currentTime)
      */

@@ -10,7 +10,8 @@ import js.buffer.ArrayBuffer
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AuthenticatorAttestationResponse)
  */
-sealed external class AuthenticatorAttestationResponse :
+external class AuthenticatorAttestationResponse
+private constructor() :
     AuthenticatorResponse {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AuthenticatorAttestationResponse/attestationObject)

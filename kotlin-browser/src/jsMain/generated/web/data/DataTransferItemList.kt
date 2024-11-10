@@ -11,9 +11,17 @@ import web.file.File
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItemList)
  */
-sealed external class DataTransferItemList :
+external class DataTransferItemList
+private constructor() :
     ArrayLike<DataTransferItem>,
     JsIterable<DataTransferItem> {
+    /**
+     * Returns the number of items in the drag data store.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItemList/length)
+     */
+    override val length: Int
+
     /**
      * Adds a new entry for the given data to the drag data store. If the data is plain text then a type string has to be provided also.
      *
