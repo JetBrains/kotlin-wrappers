@@ -32,7 +32,7 @@ external class SharedArrayBuffer(
      *
      * [MDN](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer/maxByteLength)
      */
-    val maxByteLength: Int
+    override val maxByteLength: Int
 
     /**
      * Grows the SharedArrayBuffer to the specified size (in bytes).

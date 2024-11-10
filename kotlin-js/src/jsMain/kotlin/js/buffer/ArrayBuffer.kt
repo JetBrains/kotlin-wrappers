@@ -28,7 +28,7 @@ external class ArrayBuffer(
      *
      * [MDN](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/maxByteLength)
      */
-    val maxByteLength: Int
+    override val maxByteLength: Int
 
     /**
      * Returns true if this ArrayBuffer can be resized.
