@@ -1,5 +1,6 @@
 package wrappers.example.hooks
 
+import js.reflect.unsafeCast
 import web.http.Request
 import web.http.RequestInit
 import web.http.fetch
@@ -28,5 +29,5 @@ private suspend fun <T> fetchData(
     val data = fetch(request).json()
 
     // TODO use serialization instead
-    return data.unsafeCast<T>()
+    return unsafeCast(data)
 }
