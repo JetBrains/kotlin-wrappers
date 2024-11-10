@@ -34,333 +34,65 @@ node.http.Server<Request, Response> {
      */
     override fun closeIdleConnections(): Unit
     override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun addListener(
-        event: ServerEvent.KEYLOG,
-        listener: (line: node.buffer.Buffer, tlsSocket: node.tls.TLSSocket) -> Unit,
-    ): Unit /* this */
 
-    fun addListener(
-        event: ServerEvent.NEWSESSION,
-        listener: (sessionId: node.buffer.Buffer, sessionData: node.buffer.Buffer, callback: (err: js.errors.JsError, resp: node.buffer.Buffer) -> Unit) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: ServerEvent.OCSPREQUEST,
-        listener: (certificate: node.buffer.Buffer, issuer: node.buffer.Buffer, callback: (err: js.errors.JsError?, resp: node.buffer.Buffer) -> Unit) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: ServerEvent.RESUMESESSION,
-        listener: (sessionId: node.buffer.Buffer, callback: (err: js.errors.JsError, sessionData: node.buffer.Buffer) -> Unit) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: ServerEvent.SECURECONNECTION,
-        listener: (tlsSocket: node.tls.TLSSocket) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: ServerEvent.TLSCLIENTERROR,
-        listener: (err: js.errors.JsError, tlsSocket: node.tls.TLSSocket) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(event: ServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun addListener(event: ServerEvent.CONNECTION, listener: (socket: Duplex) -> Unit): Unit /* this */
-    fun addListener(event: ServerEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun addListener(event: ServerEvent.LISTENING, listener: () -> Unit): Unit /* this */
-    fun addListener(
-        event: ServerEvent.CHECKCONTINUE,
-        listener: node.http.RequestListener<Request, Response>,
-    ): Unit /* this */
-
-    fun addListener(
-        event: ServerEvent.CHECKEXPECTATION,
-        listener: node.http.RequestListener<Request, Response>,
-    ): Unit /* this */
-
-    fun addListener(
-        event: ServerEvent.CLIENTERROR,
-        listener: (err: js.errors.JsError, socket: Duplex) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: ServerEvent.CONNECT,
-        listener: (req: Request, socket: Duplex, head: node.buffer.Buffer) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(event: ServerEvent.REQUEST, listener: node.http.RequestListener<Request, Response>): Unit /* this */
-    fun addListener(
-        event: ServerEvent.UPGRADE,
-        listener: (req: Request, socket: Duplex, head: node.buffer.Buffer) -> Unit,
-    ): Unit /* this */
 
     override fun emit(event: String, vararg args: Any?): Boolean
-    fun emit(event: ServerEvent.KEYLOG, line: node.buffer.Buffer, tlsSocket: node.tls.TLSSocket): Boolean
-    fun emit(
-        event: ServerEvent.NEWSESSION,
-        sessionId: node.buffer.Buffer,
-        sessionData: node.buffer.Buffer,
-        callback: (err: js.errors.JsError, resp: node.buffer.Buffer) -> Unit,
-    ): Boolean
 
-    fun emit(
-        event: ServerEvent.OCSPREQUEST,
-        certificate: node.buffer.Buffer,
-        issuer: node.buffer.Buffer,
-        callback: (err: js.errors.JsError?, resp: node.buffer.Buffer) -> Unit,
-    ): Boolean
 
-    fun emit(
-        event: ServerEvent.RESUMESESSION,
-        sessionId: node.buffer.Buffer,
-        callback: (err: js.errors.JsError, sessionData: node.buffer.Buffer) -> Unit,
-    ): Boolean
-
-    fun emit(event: ServerEvent.SECURECONNECTION, tlsSocket: node.tls.TLSSocket): Boolean
-    fun emit(event: ServerEvent.TLSCLIENTERROR, err: js.errors.JsError, tlsSocket: node.tls.TLSSocket): Boolean
-    fun emit(event: ServerEvent.CLOSE): Boolean
-    fun emit(event: ServerEvent.CONNECTION, socket: Duplex): Boolean
-    fun emit(event: ServerEvent.ERROR, err: js.errors.JsError): Boolean
-    fun emit(event: ServerEvent.LISTENING): Boolean
-    fun emit(event: ServerEvent.CHECKCONTINUE, req: Request, res: Response): Boolean
-    fun emit(event: ServerEvent.CHECKEXPECTATION, req: Request, res: Response): Boolean
-    fun emit(event: ServerEvent.CLIENTERROR, err: js.errors.JsError, socket: Duplex): Boolean
-    fun emit(event: ServerEvent.CONNECT, req: Request, socket: Duplex, head: node.buffer.Buffer): Boolean
-    fun emit(event: ServerEvent.REQUEST, req: Request, res: Response): Boolean
-    fun emit(event: ServerEvent.UPGRADE, req: Request, socket: Duplex, head: node.buffer.Buffer): Boolean
     override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun on(
-        event: ServerEvent.KEYLOG,
-        listener: (line: node.buffer.Buffer, tlsSocket: node.tls.TLSSocket) -> Unit,
-    ): Unit /* this */
 
-    fun on(
-        event: ServerEvent.NEWSESSION,
-        listener: (sessionId: node.buffer.Buffer, sessionData: node.buffer.Buffer, callback: (err: js.errors.JsError, resp: node.buffer.Buffer) -> Unit) -> Unit,
-    ): Unit /* this */
-
-    fun on(
-        event: ServerEvent.OCSPREQUEST,
-        listener: (certificate: node.buffer.Buffer, issuer: node.buffer.Buffer, callback: (err: js.errors.JsError?, resp: node.buffer.Buffer) -> Unit) -> Unit,
-    ): Unit /* this */
-
-    fun on(
-        event: ServerEvent.RESUMESESSION,
-        listener: (sessionId: node.buffer.Buffer, callback: (err: js.errors.JsError, sessionData: node.buffer.Buffer) -> Unit) -> Unit,
-    ): Unit /* this */
-
-    fun on(event: ServerEvent.SECURECONNECTION, listener: (tlsSocket: node.tls.TLSSocket) -> Unit): Unit /* this */
-    fun on(
-        event: ServerEvent.TLSCLIENTERROR,
-        listener: (err: js.errors.JsError, tlsSocket: node.tls.TLSSocket) -> Unit,
-    ): Unit /* this */
-
-    fun on(event: ServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun on(event: ServerEvent.CONNECTION, listener: (socket: Duplex) -> Unit): Unit /* this */
-    fun on(event: ServerEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun on(event: ServerEvent.LISTENING, listener: () -> Unit): Unit /* this */
-    fun on(event: ServerEvent.CHECKCONTINUE, listener: node.http.RequestListener<Request, Response>): Unit /* this */
-    fun on(event: ServerEvent.CHECKEXPECTATION, listener: node.http.RequestListener<Request, Response>): Unit /* this */
-    fun on(event: ServerEvent.CLIENTERROR, listener: (err: js.errors.JsError, socket: Duplex) -> Unit): Unit /* this */
-    fun on(
-        event: ServerEvent.CONNECT,
-        listener: (req: Request, socket: Duplex, head: node.buffer.Buffer) -> Unit,
-    ): Unit /* this */
-
-    fun on(event: ServerEvent.REQUEST, listener: node.http.RequestListener<Request, Response>): Unit /* this */
-    fun on(
-        event: ServerEvent.UPGRADE,
-        listener: (req: Request, socket: Duplex, head: node.buffer.Buffer) -> Unit,
-    ): Unit /* this */
 
     override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun once(
-        event: ServerEvent.KEYLOG,
-        listener: (line: node.buffer.Buffer, tlsSocket: node.tls.TLSSocket) -> Unit,
-    ): Unit /* this */
 
-    fun once(
-        event: ServerEvent.NEWSESSION,
-        listener: (sessionId: node.buffer.Buffer, sessionData: node.buffer.Buffer, callback: (err: js.errors.JsError, resp: node.buffer.Buffer) -> Unit) -> Unit,
-    ): Unit /* this */
-
-    fun once(
-        event: ServerEvent.OCSPREQUEST,
-        listener: (certificate: node.buffer.Buffer, issuer: node.buffer.Buffer, callback: (err: js.errors.JsError?, resp: node.buffer.Buffer) -> Unit) -> Unit,
-    ): Unit /* this */
-
-    fun once(
-        event: ServerEvent.RESUMESESSION,
-        listener: (sessionId: node.buffer.Buffer, callback: (err: js.errors.JsError, sessionData: node.buffer.Buffer) -> Unit) -> Unit,
-    ): Unit /* this */
-
-    fun once(event: ServerEvent.SECURECONNECTION, listener: (tlsSocket: node.tls.TLSSocket) -> Unit): Unit /* this */
-    fun once(
-        event: ServerEvent.TLSCLIENTERROR,
-        listener: (err: js.errors.JsError, tlsSocket: node.tls.TLSSocket) -> Unit,
-    ): Unit /* this */
-
-    fun once(event: ServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun once(event: ServerEvent.CONNECTION, listener: (socket: Duplex) -> Unit): Unit /* this */
-    fun once(event: ServerEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun once(event: ServerEvent.LISTENING, listener: () -> Unit): Unit /* this */
-    fun once(event: ServerEvent.CHECKCONTINUE, listener: node.http.RequestListener<Request, Response>): Unit /* this */
-    fun once(
-        event: ServerEvent.CHECKEXPECTATION,
-        listener: node.http.RequestListener<Request, Response>,
-    ): Unit /* this */
-
-    fun once(
-        event: ServerEvent.CLIENTERROR,
-        listener: (err: js.errors.JsError, socket: Duplex) -> Unit,
-    ): Unit /* this */
-
-    fun once(
-        event: ServerEvent.CONNECT,
-        listener: (req: Request, socket: Duplex, head: node.buffer.Buffer) -> Unit,
-    ): Unit /* this */
-
-    fun once(event: ServerEvent.REQUEST, listener: node.http.RequestListener<Request, Response>): Unit /* this */
-    fun once(
-        event: ServerEvent.UPGRADE,
-        listener: (req: Request, socket: Duplex, head: node.buffer.Buffer) -> Unit,
-    ): Unit /* this */
 
     override fun prependListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
-    fun prependListener(
-        event: ServerEvent.KEYLOG,
-        listener: (line: node.buffer.Buffer, tlsSocket: node.tls.TLSSocket) -> Unit,
-    ): Unit /* this */
-
-    fun prependListener(
-        event: ServerEvent.NEWSESSION,
-        listener: (sessionId: node.buffer.Buffer, sessionData: node.buffer.Buffer, callback: (err: js.errors.JsError, resp: node.buffer.Buffer) -> Unit) -> Unit,
-    ): Unit /* this */
-
-    fun prependListener(
-        event: ServerEvent.OCSPREQUEST,
-        listener: (certificate: node.buffer.Buffer, issuer: node.buffer.Buffer, callback: (err: js.errors.JsError?, resp: node.buffer.Buffer) -> Unit) -> Unit,
-    ): Unit /* this */
-
-    fun prependListener(
-        event: ServerEvent.RESUMESESSION,
-        listener: (sessionId: node.buffer.Buffer, callback: (err: js.errors.JsError, sessionData: node.buffer.Buffer) -> Unit) -> Unit,
-    ): Unit /* this */
-
-    fun prependListener(
-        event: ServerEvent.SECURECONNECTION,
-        listener: (tlsSocket: node.tls.TLSSocket) -> Unit,
-    ): Unit /* this */
-
-    fun prependListener(
-        event: ServerEvent.TLSCLIENTERROR,
-        listener: (err: js.errors.JsError, tlsSocket: node.tls.TLSSocket) -> Unit,
-    ): Unit /* this */
-
-    fun prependListener(event: ServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: ServerEvent.CONNECTION, listener: (socket: Duplex) -> Unit): Unit /* this */
-    fun prependListener(event: ServerEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun prependListener(event: ServerEvent.LISTENING, listener: () -> Unit): Unit /* this */
-    fun prependListener(
-        event: ServerEvent.CHECKCONTINUE,
-        listener: node.http.RequestListener<Request, Response>,
-    ): Unit /* this */
-
-    fun prependListener(
-        event: ServerEvent.CHECKEXPECTATION,
-        listener: node.http.RequestListener<Request, Response>,
-    ): Unit /* this */
-
-    fun prependListener(
-        event: ServerEvent.CLIENTERROR,
-        listener: (err: js.errors.JsError, socket: Duplex) -> Unit,
-    ): Unit /* this */
-
-    fun prependListener(
-        event: ServerEvent.CONNECT,
-        listener: (req: Request, socket: Duplex, head: node.buffer.Buffer) -> Unit,
-    ): Unit /* this */
-
-    fun prependListener(
-        event: ServerEvent.REQUEST,
-        listener: node.http.RequestListener<Request, Response>,
-    ): Unit /* this */
-
-    fun prependListener(
-        event: ServerEvent.UPGRADE,
-        listener: (req: Request, socket: Duplex, head: node.buffer.Buffer) -> Unit,
-    ): Unit /* this */
 
     override fun prependOnceListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
-    fun prependOnceListener(
-        event: ServerEvent.KEYLOG,
-        listener: (line: node.buffer.Buffer, tlsSocket: node.tls.TLSSocket) -> Unit,
-    ): Unit /* this */
 
-    fun prependOnceListener(
-        event: ServerEvent.NEWSESSION,
-        listener: (sessionId: node.buffer.Buffer, sessionData: node.buffer.Buffer, callback: (err: js.errors.JsError, resp: node.buffer.Buffer) -> Unit) -> Unit,
-    ): Unit /* this */
+    @web.events.JsEvent("keylog")
+    override val keylogEvent: node.events.EventInstance<js.array.JsTuple2<node.buffer.Buffer, node.tls.TLSSocket>>
 
-    fun prependOnceListener(
-        event: ServerEvent.OCSPREQUEST,
-        listener: (certificate: node.buffer.Buffer, issuer: node.buffer.Buffer, callback: (err: js.errors.JsError?, resp: node.buffer.Buffer) -> Unit) -> Unit,
-    ): Unit /* this */
+    @web.events.JsEvent("OCSPRequest")
+    override val OCSPRequestEvent: node.events.EventInstance<js.array.JsTuple3<node.buffer.Buffer, node.buffer.Buffer, (err: js.errors.JsError?, resp: node.buffer.Buffer) -> Unit>>
 
-    fun prependOnceListener(
-        event: ServerEvent.RESUMESESSION,
-        listener: (sessionId: node.buffer.Buffer, callback: (err: js.errors.JsError, sessionData: node.buffer.Buffer) -> Unit) -> Unit,
-    ): Unit /* this */
+    @web.events.JsEvent("secureConnection")
+    override val secureConnectionEvent: node.events.EventInstance<js.array.JsTuple1<node.tls.TLSSocket>>
 
-    fun prependOnceListener(
-        event: ServerEvent.SECURECONNECTION,
-        listener: (tlsSocket: node.tls.TLSSocket) -> Unit,
-    ): Unit /* this */
+    @web.events.JsEvent("tlsClientError")
+    override val tlsClientErrorEvent: node.events.EventInstance<js.array.JsTuple2<js.errors.JsError, node.tls.TLSSocket>>
 
-    fun prependOnceListener(
-        event: ServerEvent.TLSCLIENTERROR,
-        listener: (err: js.errors.JsError, tlsSocket: node.tls.TLSSocket) -> Unit,
-    ): Unit /* this */
+    @web.events.JsEvent("close")
+    override val closeEvent: node.events.EventInstance<js.array.JsTuple>
 
-    fun prependOnceListener(event: ServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: ServerEvent.CONNECTION, listener: (socket: Duplex) -> Unit): Unit /* this */
-    fun prependOnceListener(event: ServerEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun prependOnceListener(event: ServerEvent.LISTENING, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(
-        event: ServerEvent.CHECKCONTINUE,
-        listener: node.http.RequestListener<Request, Response>,
-    ): Unit /* this */
+    @web.events.JsEvent("error")
+    override val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
 
-    fun prependOnceListener(
-        event: ServerEvent.CHECKEXPECTATION,
-        listener: node.http.RequestListener<Request, Response>,
-    ): Unit /* this */
+    @web.events.JsEvent("listening")
+    override val listeningEvent: node.events.EventInstance<js.array.JsTuple>
 
-    fun prependOnceListener(
-        event: ServerEvent.CLIENTERROR,
-        listener: (err: js.errors.JsError, socket: Duplex) -> Unit,
-    ): Unit /* this */
+    @web.events.JsEvent("checkContinue")
+    override val checkContinueEvent: node.events.EventInstance<js.array.JsTuple2<Request, Response>>
 
-    fun prependOnceListener(
-        event: ServerEvent.CONNECT,
-        listener: (req: Request, socket: Duplex, head: node.buffer.Buffer) -> Unit,
-    ): Unit /* this */
+    @web.events.JsEvent("checkExpectation")
+    override val checkExpectationEvent: node.events.EventInstance<js.array.JsTuple2<Request, Response>>
 
-    fun prependOnceListener(
-        event: ServerEvent.REQUEST,
-        listener: node.http.RequestListener<Request, Response>,
-    ): Unit /* this */
+    @web.events.JsEvent("clientError")
+    override val clientErrorEvent: node.events.EventInstance<js.array.JsTuple2<js.errors.JsError, Duplex>>
 
-    fun prependOnceListener(
-        event: ServerEvent.UPGRADE,
-        listener: (req: Request, socket: Duplex, head: node.buffer.Buffer) -> Unit,
-    ): Unit /* this */
+    @web.events.JsEvent("connect")
+    override val connectEvent: node.events.EventInstance<js.array.JsTuple3<Request, Duplex, node.buffer.Buffer>>
+
+    @web.events.JsEvent("request")
+    override val requestEvent: node.events.EventInstance<js.array.JsTuple2<Request, Response>>
+
+    @web.events.JsEvent("upgrade")
+    override val upgradeEvent: node.events.EventInstance<js.array.JsTuple3<Request, Duplex, node.buffer.Buffer>>
 }

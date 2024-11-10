@@ -542,23 +542,6 @@ external class Http2ServerResponse : node.stream.Writable {
         callback: (err: js.errors.JsError?, res: Http2ServerResponse) -> Unit,
     ): Unit
 
-    fun addListener(event: Http2ServerResponseEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun addListener(event: Http2ServerResponseEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun addListener(
-        event: Http2ServerResponseEvent.ERROR,
-        listener: (error: js.errors.JsError) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(event: Http2ServerResponseEvent.FINISH, listener: () -> Unit): Unit /* this */
-    fun addListener(
-        event: Http2ServerResponseEvent.PIPE,
-        listener: (src: node.stream.Readable) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: Http2ServerResponseEvent.UNPIPE,
-        listener: (src: node.stream.Readable) -> Unit,
-    ): Unit /* this */
 
     override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
@@ -567,50 +550,21 @@ external class Http2ServerResponse : node.stream.Writable {
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
-    fun emit(event: Http2ServerResponseEvent.CLOSE): Boolean
-    fun emit(event: Http2ServerResponseEvent.DRAIN): Boolean
-    fun emit(event: Http2ServerResponseEvent.ERROR, error: js.errors.JsError): Boolean
-    fun emit(event: Http2ServerResponseEvent.FINISH): Boolean
-    fun emit(event: Http2ServerResponseEvent.PIPE, src: node.stream.Readable): Boolean
-    fun emit(event: Http2ServerResponseEvent.UNPIPE, src: node.stream.Readable): Boolean
+
     override fun emit(event: String, vararg args: Any?): Boolean
 
     override fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
-    fun on(event: Http2ServerResponseEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun on(event: Http2ServerResponseEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun on(event: Http2ServerResponseEvent.ERROR, listener: (error: js.errors.JsError) -> Unit): Unit /* this */
-    fun on(event: Http2ServerResponseEvent.FINISH, listener: () -> Unit): Unit /* this */
-    fun on(event: Http2ServerResponseEvent.PIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
-    fun on(event: Http2ServerResponseEvent.UNPIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
+
+
     override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     override fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun once(event: Http2ServerResponseEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun once(event: Http2ServerResponseEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun once(event: Http2ServerResponseEvent.ERROR, listener: (error: js.errors.JsError) -> Unit): Unit /* this */
-    fun once(event: Http2ServerResponseEvent.FINISH, listener: () -> Unit): Unit /* this */
-    fun once(event: Http2ServerResponseEvent.PIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
-    fun once(event: Http2ServerResponseEvent.UNPIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
+
+
     override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     override fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun prependListener(event: Http2ServerResponseEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: Http2ServerResponseEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun prependListener(
-        event: Http2ServerResponseEvent.ERROR,
-        listener: (error: js.errors.JsError) -> Unit,
-    ): Unit /* this */
 
-    fun prependListener(event: Http2ServerResponseEvent.FINISH, listener: () -> Unit): Unit /* this */
-    fun prependListener(
-        event: Http2ServerResponseEvent.PIPE,
-        listener: (src: node.stream.Readable) -> Unit,
-    ): Unit /* this */
-
-    fun prependListener(
-        event: Http2ServerResponseEvent.UNPIPE,
-        listener: (src: node.stream.Readable) -> Unit,
-    ): Unit /* this */
 
     override fun prependListener(
         event: String,
@@ -622,23 +576,6 @@ external class Http2ServerResponse : node.stream.Writable {
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
-    fun prependOnceListener(event: Http2ServerResponseEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: Http2ServerResponseEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(
-        event: Http2ServerResponseEvent.ERROR,
-        listener: (error: js.errors.JsError) -> Unit,
-    ): Unit /* this */
-
-    fun prependOnceListener(event: Http2ServerResponseEvent.FINISH, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(
-        event: Http2ServerResponseEvent.PIPE,
-        listener: (src: node.stream.Readable) -> Unit,
-    ): Unit /* this */
-
-    fun prependOnceListener(
-        event: Http2ServerResponseEvent.UNPIPE,
-        listener: (src: node.stream.Readable) -> Unit,
-    ): Unit /* this */
 
     override fun prependOnceListener(
         event: String,
@@ -649,4 +586,22 @@ external class Http2ServerResponse : node.stream.Writable {
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
+
+    @web.events.JsEvent("close")
+    override val closeEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("drain")
+    override val drainEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("error")
+    override val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+
+    @web.events.JsEvent("finish")
+    override val finishEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("pipe")
+    override val pipeEvent: node.events.EventInstance<js.array.JsTuple1<node.stream.Readable>>
+
+    @web.events.JsEvent("unpipe")
+    override val unpipeEvent: node.events.EventInstance<js.array.JsTuple1<node.stream.Readable>>
 }

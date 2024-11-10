@@ -183,64 +183,40 @@ open external class Server : EventEmitter {
      *   5. drop
      */
     open fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun addListener(event: ServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun addListener(event: ServerEvent.CONNECTION, listener: (socket: Socket) -> Unit): Unit /* this */
-    fun addListener(event: ServerEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun addListener(event: ServerEvent.LISTENING, listener: () -> Unit): Unit /* this */
-    fun addListener(
-        event: ServerEvent.DROP,
-        listener: (data: DropArgument? /* use undefined for default */) -> Unit,
-    ): Unit /* this */
+
 
     open fun emit(event: String, vararg args: Any?): Boolean
 
     open fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
-    fun emit(event: ServerEvent.CLOSE): Boolean
-    fun emit(event: ServerEvent.CONNECTION, socket: Socket): Boolean
-    fun emit(event: ServerEvent.ERROR, err: js.errors.JsError): Boolean
-    fun emit(event: ServerEvent.LISTENING): Boolean
-    fun emit(event: ServerEvent.DROP, data: DropArgument = definedExternally): Boolean
+
+
     open fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun on(event: ServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun on(event: ServerEvent.CONNECTION, listener: (socket: Socket) -> Unit): Unit /* this */
-    fun on(event: ServerEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun on(event: ServerEvent.LISTENING, listener: () -> Unit): Unit /* this */
-    fun on(
-        event: ServerEvent.DROP,
-        listener: (data: DropArgument? /* use undefined for default */) -> Unit,
-    ): Unit /* this */
+
 
     open fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun once(event: ServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun once(event: ServerEvent.CONNECTION, listener: (socket: Socket) -> Unit): Unit /* this */
-    fun once(event: ServerEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun once(event: ServerEvent.LISTENING, listener: () -> Unit): Unit /* this */
-    fun once(
-        event: ServerEvent.DROP,
-        listener: (data: DropArgument? /* use undefined for default */) -> Unit,
-    ): Unit /* this */
+
 
     open fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun prependListener(event: ServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: ServerEvent.CONNECTION, listener: (socket: Socket) -> Unit): Unit /* this */
-    fun prependListener(event: ServerEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun prependListener(event: ServerEvent.LISTENING, listener: () -> Unit): Unit /* this */
-    fun prependListener(
-        event: ServerEvent.DROP,
-        listener: (data: DropArgument? /* use undefined for default */) -> Unit,
-    ): Unit /* this */
+
 
     open fun prependOnceListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
-    fun prependOnceListener(event: ServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: ServerEvent.CONNECTION, listener: (socket: Socket) -> Unit): Unit /* this */
-    fun prependOnceListener(event: ServerEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun prependOnceListener(event: ServerEvent.LISTENING, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(
-        event: ServerEvent.DROP,
-        listener: (data: DropArgument? /* use undefined for default */) -> Unit,
-    ): Unit /* this */
+
+    @web.events.JsEvent("close")
+    open val closeEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("connection")
+    open val connectionEvent: node.events.EventInstance<js.array.JsTuple1<Socket>>
+
+    @web.events.JsEvent("error")
+    open val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+
+    @web.events.JsEvent("listening")
+    open val listeningEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("drop")
+    val dropEvent: node.events.EventInstance<js.array.JsTuple1<DropArgument>>
 }

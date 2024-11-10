@@ -50,14 +50,8 @@ external class WriteStream : node.stream.Writable {
      *   2. close
      *   3. ready
      */
-    fun addListener(event: WriteStreamEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun addListener(event: WriteStreamEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun addListener(event: WriteStreamEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun addListener(event: WriteStreamEvent.FINISH, listener: () -> Unit): Unit /* this */
-    fun addListener(event: WriteStreamEvent.OPEN, listener: (fd: Double) -> Unit): Unit /* this */
-    fun addListener(event: WriteStreamEvent.PIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
-    fun addListener(event: WriteStreamEvent.READY, listener: () -> Unit): Unit /* this */
-    fun addListener(event: WriteStreamEvent.UNPIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
+
+
     override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     override fun addListener(
@@ -65,36 +59,17 @@ external class WriteStream : node.stream.Writable {
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
-    fun on(event: WriteStreamEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun on(event: WriteStreamEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun on(event: WriteStreamEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun on(event: WriteStreamEvent.FINISH, listener: () -> Unit): Unit /* this */
-    fun on(event: WriteStreamEvent.OPEN, listener: (fd: Double) -> Unit): Unit /* this */
-    fun on(event: WriteStreamEvent.PIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
-    fun on(event: WriteStreamEvent.READY, listener: () -> Unit): Unit /* this */
-    fun on(event: WriteStreamEvent.UNPIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
+
     override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     override fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun once(event: WriteStreamEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun once(event: WriteStreamEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun once(event: WriteStreamEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun once(event: WriteStreamEvent.FINISH, listener: () -> Unit): Unit /* this */
-    fun once(event: WriteStreamEvent.OPEN, listener: (fd: Double) -> Unit): Unit /* this */
-    fun once(event: WriteStreamEvent.PIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
-    fun once(event: WriteStreamEvent.READY, listener: () -> Unit): Unit /* this */
-    fun once(event: WriteStreamEvent.UNPIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
+
+
     override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     override fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun prependListener(event: WriteStreamEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: WriteStreamEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: WriteStreamEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun prependListener(event: WriteStreamEvent.FINISH, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: WriteStreamEvent.OPEN, listener: (fd: Double) -> Unit): Unit /* this */
-    fun prependListener(event: WriteStreamEvent.PIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
-    fun prependListener(event: WriteStreamEvent.READY, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: WriteStreamEvent.UNPIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
+
+
     override fun prependListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
@@ -105,21 +80,6 @@ external class WriteStream : node.stream.Writable {
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
-    fun prependOnceListener(event: WriteStreamEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: WriteStreamEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: WriteStreamEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun prependOnceListener(event: WriteStreamEvent.FINISH, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: WriteStreamEvent.OPEN, listener: (fd: Double) -> Unit): Unit /* this */
-    fun prependOnceListener(
-        event: WriteStreamEvent.PIPE,
-        listener: (src: node.stream.Readable) -> Unit,
-    ): Unit /* this */
-
-    fun prependOnceListener(event: WriteStreamEvent.READY, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(
-        event: WriteStreamEvent.UNPIPE,
-        listener: (src: node.stream.Readable) -> Unit,
-    ): Unit /* this */
 
     override fun prependOnceListener(
         event: String,
@@ -130,4 +90,28 @@ external class WriteStream : node.stream.Writable {
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
+
+    @web.events.JsEvent("close")
+    override val closeEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("drain")
+    override val drainEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("error")
+    override val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+
+    @web.events.JsEvent("finish")
+    override val finishEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("open")
+    val openEvent: node.events.EventInstance<js.array.JsTuple1<Double>>
+
+    @web.events.JsEvent("pipe")
+    override val pipeEvent: node.events.EventInstance<js.array.JsTuple1<node.stream.Readable>>
+
+    @web.events.JsEvent("ready")
+    val readyEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("unpipe")
+    override val unpipeEvent: node.events.EventInstance<js.array.JsTuple1<node.stream.Readable>>
 }

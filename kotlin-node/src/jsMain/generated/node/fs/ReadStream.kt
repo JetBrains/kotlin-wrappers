@@ -42,15 +42,8 @@ external class ReadStream : node.stream.Readable {
      *   2. close
      *   3. ready
      */
-    fun addListener(event: ReadStreamEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun addListener(event: ReadStreamEvent.DATA, listener: (chunk: Any /* Buffer | string */) -> Unit): Unit /* this */
-    fun addListener(event: ReadStreamEvent.END, listener: () -> Unit): Unit /* this */
-    fun addListener(event: ReadStreamEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun addListener(event: ReadStreamEvent.OPEN, listener: (fd: Double) -> Unit): Unit /* this */
-    fun addListener(event: ReadStreamEvent.PAUSE, listener: () -> Unit): Unit /* this */
-    fun addListener(event: ReadStreamEvent.READABLE, listener: () -> Unit): Unit /* this */
-    fun addListener(event: ReadStreamEvent.READY, listener: () -> Unit): Unit /* this */
-    fun addListener(event: ReadStreamEvent.RESUME, listener: () -> Unit): Unit /* this */
+
+
     override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     override fun addListener(
@@ -58,43 +51,17 @@ external class ReadStream : node.stream.Readable {
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
-    fun on(event: ReadStreamEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun on(event: ReadStreamEvent.DATA, listener: (chunk: Any /* Buffer | string */) -> Unit): Unit /* this */
-    fun on(event: ReadStreamEvent.END, listener: () -> Unit): Unit /* this */
-    fun on(event: ReadStreamEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun on(event: ReadStreamEvent.OPEN, listener: (fd: Double) -> Unit): Unit /* this */
-    fun on(event: ReadStreamEvent.PAUSE, listener: () -> Unit): Unit /* this */
-    fun on(event: ReadStreamEvent.READABLE, listener: () -> Unit): Unit /* this */
-    fun on(event: ReadStreamEvent.READY, listener: () -> Unit): Unit /* this */
-    fun on(event: ReadStreamEvent.RESUME, listener: () -> Unit): Unit /* this */
+
     override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     override fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun once(event: ReadStreamEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun once(event: ReadStreamEvent.DATA, listener: (chunk: Any /* Buffer | string */) -> Unit): Unit /* this */
-    fun once(event: ReadStreamEvent.END, listener: () -> Unit): Unit /* this */
-    fun once(event: ReadStreamEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun once(event: ReadStreamEvent.OPEN, listener: (fd: Double) -> Unit): Unit /* this */
-    fun once(event: ReadStreamEvent.PAUSE, listener: () -> Unit): Unit /* this */
-    fun once(event: ReadStreamEvent.READABLE, listener: () -> Unit): Unit /* this */
-    fun once(event: ReadStreamEvent.READY, listener: () -> Unit): Unit /* this */
-    fun once(event: ReadStreamEvent.RESUME, listener: () -> Unit): Unit /* this */
+
+
     override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     override fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun prependListener(event: ReadStreamEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun prependListener(
-        event: ReadStreamEvent.DATA,
-        listener: (chunk: Any /* Buffer | string */) -> Unit,
-    ): Unit /* this */
 
-    fun prependListener(event: ReadStreamEvent.END, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: ReadStreamEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun prependListener(event: ReadStreamEvent.OPEN, listener: (fd: Double) -> Unit): Unit /* this */
-    fun prependListener(event: ReadStreamEvent.PAUSE, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: ReadStreamEvent.READABLE, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: ReadStreamEvent.READY, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: ReadStreamEvent.RESUME, listener: () -> Unit): Unit /* this */
+
     override fun prependListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
@@ -105,19 +72,7 @@ external class ReadStream : node.stream.Readable {
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
-    fun prependOnceListener(event: ReadStreamEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(
-        event: ReadStreamEvent.DATA,
-        listener: (chunk: Any /* Buffer | string */) -> Unit,
-    ): Unit /* this */
 
-    fun prependOnceListener(event: ReadStreamEvent.END, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: ReadStreamEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun prependOnceListener(event: ReadStreamEvent.OPEN, listener: (fd: Double) -> Unit): Unit /* this */
-    fun prependOnceListener(event: ReadStreamEvent.PAUSE, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: ReadStreamEvent.READABLE, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: ReadStreamEvent.READY, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: ReadStreamEvent.RESUME, listener: () -> Unit): Unit /* this */
     override fun prependOnceListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
@@ -127,4 +82,31 @@ external class ReadStream : node.stream.Readable {
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
+
+    @web.events.JsEvent("close")
+    override val closeEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("data")
+    override val dataEvent: node.events.EventInstance<js.array.JsTuple1<Any /* Buffer | string */>>
+
+    @web.events.JsEvent("end")
+    override val endEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("error")
+    override val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+
+    @web.events.JsEvent("open")
+    val openEvent: node.events.EventInstance<js.array.JsTuple1<Double>>
+
+    @web.events.JsEvent("pause")
+    override val pauseEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("readable")
+    override val readableEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("ready")
+    val readyEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("resume")
+    override val resumeEvent: node.events.EventInstance<js.array.JsTuple>
 }

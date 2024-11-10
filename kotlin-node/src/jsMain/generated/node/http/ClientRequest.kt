@@ -181,28 +181,8 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
     /**
      * @deprecated
      */
-    fun addListener(event: ClientRequestEvent.ABORT, listener: () -> Unit): Unit /* this */
-    fun addListener(
-        event: ClientRequestEvent.CONNECT,
-        listener: (response: IncomingMessage, socket: Socket, head: node.buffer.Buffer) -> Unit,
-    ): Unit /* this */
 
-    fun addListener(event: ClientRequestEvent.CONTINUE, listener: () -> Unit): Unit /* this */
-    fun addListener(event: ClientRequestEvent.INFORMATION, listener: (info: InformationEvent) -> Unit): Unit /* this */
-    fun addListener(event: ClientRequestEvent.RESPONSE, listener: (response: IncomingMessage) -> Unit): Unit /* this */
-    fun addListener(event: ClientRequestEvent.SOCKET, listener: (socket: Socket) -> Unit): Unit /* this */
-    fun addListener(event: ClientRequestEvent.TIMEOUT, listener: () -> Unit): Unit /* this */
-    fun addListener(
-        event: ClientRequestEvent.UPGRADE,
-        listener: (response: IncomingMessage, socket: Socket, head: node.buffer.Buffer) -> Unit,
-    ): Unit /* this */
 
-    fun addListener(event: ClientRequestEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun addListener(event: ClientRequestEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun addListener(event: ClientRequestEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun addListener(event: ClientRequestEvent.FINISH, listener: () -> Unit): Unit /* this */
-    fun addListener(event: ClientRequestEvent.PIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
-    fun addListener(event: ClientRequestEvent.UNPIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
     override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     override fun addListener(
@@ -213,28 +193,8 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
     /**
      * @deprecated
      */
-    fun on(event: ClientRequestEvent.ABORT, listener: () -> Unit): Unit /* this */
-    fun on(
-        event: ClientRequestEvent.CONNECT,
-        listener: (response: IncomingMessage, socket: Socket, head: node.buffer.Buffer) -> Unit,
-    ): Unit /* this */
 
-    fun on(event: ClientRequestEvent.CONTINUE, listener: () -> Unit): Unit /* this */
-    fun on(event: ClientRequestEvent.INFORMATION, listener: (info: InformationEvent) -> Unit): Unit /* this */
-    fun on(event: ClientRequestEvent.RESPONSE, listener: (response: IncomingMessage) -> Unit): Unit /* this */
-    fun on(event: ClientRequestEvent.SOCKET, listener: (socket: Socket) -> Unit): Unit /* this */
-    fun on(event: ClientRequestEvent.TIMEOUT, listener: () -> Unit): Unit /* this */
-    fun on(
-        event: ClientRequestEvent.UPGRADE,
-        listener: (response: IncomingMessage, socket: Socket, head: node.buffer.Buffer) -> Unit,
-    ): Unit /* this */
 
-    fun on(event: ClientRequestEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun on(event: ClientRequestEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun on(event: ClientRequestEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun on(event: ClientRequestEvent.FINISH, listener: () -> Unit): Unit /* this */
-    fun on(event: ClientRequestEvent.PIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
-    fun on(event: ClientRequestEvent.UNPIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
     override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     override fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
@@ -242,28 +202,8 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
     /**
      * @deprecated
      */
-    fun once(event: ClientRequestEvent.ABORT, listener: () -> Unit): Unit /* this */
-    fun once(
-        event: ClientRequestEvent.CONNECT,
-        listener: (response: IncomingMessage, socket: Socket, head: node.buffer.Buffer) -> Unit,
-    ): Unit /* this */
 
-    fun once(event: ClientRequestEvent.CONTINUE, listener: () -> Unit): Unit /* this */
-    fun once(event: ClientRequestEvent.INFORMATION, listener: (info: InformationEvent) -> Unit): Unit /* this */
-    fun once(event: ClientRequestEvent.RESPONSE, listener: (response: IncomingMessage) -> Unit): Unit /* this */
-    fun once(event: ClientRequestEvent.SOCKET, listener: (socket: Socket) -> Unit): Unit /* this */
-    fun once(event: ClientRequestEvent.TIMEOUT, listener: () -> Unit): Unit /* this */
-    fun once(
-        event: ClientRequestEvent.UPGRADE,
-        listener: (response: IncomingMessage, socket: Socket, head: node.buffer.Buffer) -> Unit,
-    ): Unit /* this */
 
-    fun once(event: ClientRequestEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun once(event: ClientRequestEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun once(event: ClientRequestEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun once(event: ClientRequestEvent.FINISH, listener: () -> Unit): Unit /* this */
-    fun once(event: ClientRequestEvent.PIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
-    fun once(event: ClientRequestEvent.UNPIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
     override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     override fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
@@ -271,39 +211,7 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
     /**
      * @deprecated
      */
-    fun prependListener(event: ClientRequestEvent.ABORT, listener: () -> Unit): Unit /* this */
-    fun prependListener(
-        event: ClientRequestEvent.CONNECT,
-        listener: (response: IncomingMessage, socket: Socket, head: node.buffer.Buffer) -> Unit,
-    ): Unit /* this */
 
-    fun prependListener(event: ClientRequestEvent.CONTINUE, listener: () -> Unit): Unit /* this */
-    fun prependListener(
-        event: ClientRequestEvent.INFORMATION,
-        listener: (info: InformationEvent) -> Unit,
-    ): Unit /* this */
-
-    fun prependListener(
-        event: ClientRequestEvent.RESPONSE,
-        listener: (response: IncomingMessage) -> Unit,
-    ): Unit /* this */
-
-    fun prependListener(event: ClientRequestEvent.SOCKET, listener: (socket: Socket) -> Unit): Unit /* this */
-    fun prependListener(event: ClientRequestEvent.TIMEOUT, listener: () -> Unit): Unit /* this */
-    fun prependListener(
-        event: ClientRequestEvent.UPGRADE,
-        listener: (response: IncomingMessage, socket: Socket, head: node.buffer.Buffer) -> Unit,
-    ): Unit /* this */
-
-    fun prependListener(event: ClientRequestEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: ClientRequestEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: ClientRequestEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun prependListener(event: ClientRequestEvent.FINISH, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: ClientRequestEvent.PIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
-    fun prependListener(
-        event: ClientRequestEvent.UNPIPE,
-        listener: (src: node.stream.Readable) -> Unit,
-    ): Unit /* this */
 
     override fun prependListener(
         event: String,
@@ -318,47 +226,7 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
     /**
      * @deprecated
      */
-    fun prependOnceListener(event: ClientRequestEvent.ABORT, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(
-        event: ClientRequestEvent.CONNECT,
-        listener: (response: IncomingMessage, socket: Socket, head: node.buffer.Buffer) -> Unit,
-    ): Unit /* this */
 
-    fun prependOnceListener(event: ClientRequestEvent.CONTINUE, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(
-        event: ClientRequestEvent.INFORMATION,
-        listener: (info: InformationEvent) -> Unit,
-    ): Unit /* this */
-
-    fun prependOnceListener(
-        event: ClientRequestEvent.RESPONSE,
-        listener: (response: IncomingMessage) -> Unit,
-    ): Unit /* this */
-
-    fun prependOnceListener(event: ClientRequestEvent.SOCKET, listener: (socket: Socket) -> Unit): Unit /* this */
-    fun prependOnceListener(event: ClientRequestEvent.TIMEOUT, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(
-        event: ClientRequestEvent.UPGRADE,
-        listener: (response: IncomingMessage, socket: Socket, head: node.buffer.Buffer) -> Unit,
-    ): Unit /* this */
-
-    fun prependOnceListener(event: ClientRequestEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: ClientRequestEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(
-        event: ClientRequestEvent.ERROR,
-        listener: (err: js.errors.JsError) -> Unit,
-    ): Unit /* this */
-
-    fun prependOnceListener(event: ClientRequestEvent.FINISH, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(
-        event: ClientRequestEvent.PIPE,
-        listener: (src: node.stream.Readable) -> Unit,
-    ): Unit /* this */
-
-    fun prependOnceListener(
-        event: ClientRequestEvent.UNPIPE,
-        listener: (src: node.stream.Readable) -> Unit,
-    ): Unit /* this */
 
     override fun prependOnceListener(
         event: String,
@@ -369,4 +237,46 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
+
+    @web.events.JsEvent("abort")
+    val abortEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("connect")
+    val connectEvent: node.events.EventInstance<js.array.JsTuple3<IncomingMessage, Socket, node.buffer.Buffer>>
+
+    @web.events.JsEvent("continue")
+    val continueEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("information")
+    val informationEvent: node.events.EventInstance<js.array.JsTuple1<InformationEvent>>
+
+    @web.events.JsEvent("response")
+    val responseEvent: node.events.EventInstance<js.array.JsTuple1<IncomingMessage>>
+
+    @web.events.JsEvent("socket")
+    val socketEvent: node.events.EventInstance<js.array.JsTuple1<Socket>>
+
+    @web.events.JsEvent("timeout")
+    val timeoutEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("upgrade")
+    val upgradeEvent: node.events.EventInstance<js.array.JsTuple3<IncomingMessage, Socket, node.buffer.Buffer>>
+
+    @web.events.JsEvent("close")
+    override val closeEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("drain")
+    override val drainEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("error")
+    override val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+
+    @web.events.JsEvent("finish")
+    override val finishEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("pipe")
+    override val pipeEvent: node.events.EventInstance<js.array.JsTuple1<node.stream.Readable>>
+
+    @web.events.JsEvent("unpipe")
+    override val unpipeEvent: node.events.EventInstance<js.array.JsTuple1<node.stream.Readable>>
 }

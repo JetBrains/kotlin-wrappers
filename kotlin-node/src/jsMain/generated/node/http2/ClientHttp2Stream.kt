@@ -3,21 +3,7 @@
 package node.http2
 
 sealed external interface ClientHttp2Stream : Http2Stream {
-    fun addListener(event: ClientHttp2StreamEvent.CONTINUE, listener: () -> Any): Unit /* this */
-    fun addListener(
-        event: ClientHttp2StreamEvent.HEADERS,
-        listener: (headers: ClientHttp2StreamAddListenerListenerHeaders, flags: Double) -> Unit,
-    ): Unit /* this */
 
-    fun addListener(
-        event: ClientHttp2StreamEvent.PUSH,
-        listener: (headers: IncomingHttpHeaders, flags: Double) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: ClientHttp2StreamEvent.RESPONSE,
-        listener: (headers: ClientHttp2StreamAddListenerListenerHeaders, flags: Double) -> Unit,
-    ): Unit /* this */
 
     override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
@@ -26,66 +12,21 @@ sealed external interface ClientHttp2Stream : Http2Stream {
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
-    fun emit(event: ClientHttp2StreamEvent.CONTINUE): Boolean
-    fun emit(event: ClientHttp2StreamEvent.HEADERS, headers: ClientHttp2StreamEmitHeaders, flags: Number): Boolean
-    fun emit(event: ClientHttp2StreamEvent.PUSH, headers: IncomingHttpHeaders, flags: Number): Boolean
-    fun emit(event: ClientHttp2StreamEvent.RESPONSE, headers: ClientHttp2StreamEmitHeaders, flags: Number): Boolean
+
     override fun emit(event: String, vararg args: Any?): Boolean
 
     override fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
-    fun on(event: ClientHttp2StreamEvent.CONTINUE, listener: () -> Any): Unit /* this */
-    fun on(
-        event: ClientHttp2StreamEvent.HEADERS,
-        listener: (headers: ClientHttp2StreamOnListenerHeaders, flags: Double) -> Unit,
-    ): Unit /* this */
 
-    fun on(
-        event: ClientHttp2StreamEvent.PUSH,
-        listener: (headers: IncomingHttpHeaders, flags: Double) -> Unit,
-    ): Unit /* this */
-
-    fun on(
-        event: ClientHttp2StreamEvent.RESPONSE,
-        listener: (headers: ClientHttp2StreamOnListenerHeaders, flags: Double) -> Unit,
-    ): Unit /* this */
 
     override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     override fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun once(event: ClientHttp2StreamEvent.CONTINUE, listener: () -> Any): Unit /* this */
-    fun once(
-        event: ClientHttp2StreamEvent.HEADERS,
-        listener: (headers: ClientHttp2StreamOnceListenerHeaders, flags: Double) -> Unit,
-    ): Unit /* this */
 
-    fun once(
-        event: ClientHttp2StreamEvent.PUSH,
-        listener: (headers: IncomingHttpHeaders, flags: Double) -> Unit,
-    ): Unit /* this */
-
-    fun once(
-        event: ClientHttp2StreamEvent.RESPONSE,
-        listener: (headers: ClientHttp2StreamOnceListenerHeaders, flags: Double) -> Unit,
-    ): Unit /* this */
 
     override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     override fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun prependListener(event: ClientHttp2StreamEvent.CONTINUE, listener: () -> Any): Unit /* this */
-    fun prependListener(
-        event: ClientHttp2StreamEvent.HEADERS,
-        listener: (headers: ClientHttp2StreamPrependListenerListenerHeaders, flags: Double) -> Unit,
-    ): Unit /* this */
 
-    fun prependListener(
-        event: ClientHttp2StreamEvent.PUSH,
-        listener: (headers: IncomingHttpHeaders, flags: Double) -> Unit,
-    ): Unit /* this */
-
-    fun prependListener(
-        event: ClientHttp2StreamEvent.RESPONSE,
-        listener: (headers: ClientHttp2StreamPrependListenerListenerHeaders, flags: Double) -> Unit,
-    ): Unit /* this */
 
     override fun prependListener(
         event: String,
@@ -97,21 +38,6 @@ sealed external interface ClientHttp2Stream : Http2Stream {
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
-    fun prependOnceListener(event: ClientHttp2StreamEvent.CONTINUE, listener: () -> Any): Unit /* this */
-    fun prependOnceListener(
-        event: ClientHttp2StreamEvent.HEADERS,
-        listener: (headers: ClientHttp2StreamPrependOnceListenerListenerHeaders, flags: Double) -> Unit,
-    ): Unit /* this */
-
-    fun prependOnceListener(
-        event: ClientHttp2StreamEvent.PUSH,
-        listener: (headers: IncomingHttpHeaders, flags: Double) -> Unit,
-    ): Unit /* this */
-
-    fun prependOnceListener(
-        event: ClientHttp2StreamEvent.RESPONSE,
-        listener: (headers: ClientHttp2StreamPrependOnceListenerListenerHeaders, flags: Double) -> Unit,
-    ): Unit /* this */
 
     override fun prependOnceListener(
         event: String,
@@ -122,4 +48,16 @@ sealed external interface ClientHttp2Stream : Http2Stream {
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
+
+    @web.events.JsEvent("continue")
+    val continueEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("headers")
+    val headersEvent: node.events.EventInstance<js.array.JsTuple2<ClientHttp2StreamAddListenerListenerHeaders, Double>>
+
+    @web.events.JsEvent("push")
+    val pushEvent: node.events.EventInstance<js.array.JsTuple2<IncomingHttpHeaders, Double>>
+
+    @web.events.JsEvent("response")
+    val responseEvent: node.events.EventInstance<js.array.JsTuple2<ClientHttp2StreamAddListenerListenerHeaders, Double>>
 }

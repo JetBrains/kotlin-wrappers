@@ -89,17 +89,8 @@ Writable {
      * 10. resume
      * 11. unpipe
      */
-    fun addListener(event: DuplexEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun addListener(event: DuplexEvent.DATA, listener: (chunk: Any?) -> Unit): Unit /* this */
-    fun addListener(event: DuplexEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun addListener(event: DuplexEvent.END, listener: () -> Unit): Unit /* this */
-    fun addListener(event: DuplexEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun addListener(event: DuplexEvent.FINISH, listener: () -> Unit): Unit /* this */
-    fun addListener(event: DuplexEvent.PAUSE, listener: () -> Unit): Unit /* this */
-    fun addListener(event: DuplexEvent.PIPE, listener: (src: Readable) -> Unit): Unit /* this */
-    fun addListener(event: DuplexEvent.READABLE, listener: () -> Unit): Unit /* this */
-    fun addListener(event: DuplexEvent.RESUME, listener: () -> Unit): Unit /* this */
-    fun addListener(event: DuplexEvent.UNPIPE, listener: (src: Readable) -> Unit): Unit /* this */
+
+
     override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     override fun addListener(
@@ -107,59 +98,22 @@ Writable {
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
-    fun emit(event: DuplexEvent.CLOSE): Boolean
-    fun emit(event: DuplexEvent.DATA, chunk: Any?): Boolean
-    fun emit(event: DuplexEvent.DRAIN): Boolean
-    fun emit(event: DuplexEvent.END): Boolean
-    fun emit(event: DuplexEvent.ERROR, err: js.errors.JsError): Boolean
-    fun emit(event: DuplexEvent.FINISH): Boolean
-    fun emit(event: DuplexEvent.PAUSE): Boolean
-    fun emit(event: DuplexEvent.PIPE, src: Readable): Boolean
-    fun emit(event: DuplexEvent.READABLE): Boolean
-    fun emit(event: DuplexEvent.RESUME): Boolean
-    fun emit(event: DuplexEvent.UNPIPE, src: Readable): Boolean
+
     override fun emit(event: String, vararg args: Any?): Boolean
 
     override fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
-    fun on(event: DuplexEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun on(event: DuplexEvent.DATA, listener: (chunk: Any?) -> Unit): Unit /* this */
-    fun on(event: DuplexEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun on(event: DuplexEvent.END, listener: () -> Unit): Unit /* this */
-    fun on(event: DuplexEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun on(event: DuplexEvent.FINISH, listener: () -> Unit): Unit /* this */
-    fun on(event: DuplexEvent.PAUSE, listener: () -> Unit): Unit /* this */
-    fun on(event: DuplexEvent.PIPE, listener: (src: Readable) -> Unit): Unit /* this */
-    fun on(event: DuplexEvent.READABLE, listener: () -> Unit): Unit /* this */
-    fun on(event: DuplexEvent.RESUME, listener: () -> Unit): Unit /* this */
-    fun on(event: DuplexEvent.UNPIPE, listener: (src: Readable) -> Unit): Unit /* this */
+
+
     override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     override fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun once(event: DuplexEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun once(event: DuplexEvent.DATA, listener: (chunk: Any?) -> Unit): Unit /* this */
-    fun once(event: DuplexEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun once(event: DuplexEvent.END, listener: () -> Unit): Unit /* this */
-    fun once(event: DuplexEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun once(event: DuplexEvent.FINISH, listener: () -> Unit): Unit /* this */
-    fun once(event: DuplexEvent.PAUSE, listener: () -> Unit): Unit /* this */
-    fun once(event: DuplexEvent.PIPE, listener: (src: Readable) -> Unit): Unit /* this */
-    fun once(event: DuplexEvent.READABLE, listener: () -> Unit): Unit /* this */
-    fun once(event: DuplexEvent.RESUME, listener: () -> Unit): Unit /* this */
-    fun once(event: DuplexEvent.UNPIPE, listener: (src: Readable) -> Unit): Unit /* this */
+
+
     override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     override fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun prependListener(event: DuplexEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: DuplexEvent.DATA, listener: (chunk: Any?) -> Unit): Unit /* this */
-    fun prependListener(event: DuplexEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: DuplexEvent.END, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: DuplexEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun prependListener(event: DuplexEvent.FINISH, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: DuplexEvent.PAUSE, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: DuplexEvent.PIPE, listener: (src: Readable) -> Unit): Unit /* this */
-    fun prependListener(event: DuplexEvent.READABLE, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: DuplexEvent.RESUME, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: DuplexEvent.UNPIPE, listener: (src: Readable) -> Unit): Unit /* this */
+
+
     override fun prependListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
@@ -170,17 +124,7 @@ Writable {
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
-    fun prependOnceListener(event: DuplexEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: DuplexEvent.DATA, listener: (chunk: Any?) -> Unit): Unit /* this */
-    fun prependOnceListener(event: DuplexEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: DuplexEvent.END, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: DuplexEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun prependOnceListener(event: DuplexEvent.FINISH, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: DuplexEvent.PAUSE, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: DuplexEvent.PIPE, listener: (src: Readable) -> Unit): Unit /* this */
-    fun prependOnceListener(event: DuplexEvent.READABLE, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: DuplexEvent.RESUME, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: DuplexEvent.UNPIPE, listener: (src: Readable) -> Unit): Unit /* this */
+
     override fun prependOnceListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
@@ -191,17 +135,7 @@ Writable {
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
-    fun removeListener(event: DuplexEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun removeListener(event: DuplexEvent.DATA, listener: (chunk: Any?) -> Unit): Unit /* this */
-    fun removeListener(event: DuplexEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun removeListener(event: DuplexEvent.END, listener: () -> Unit): Unit /* this */
-    fun removeListener(event: DuplexEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun removeListener(event: DuplexEvent.FINISH, listener: () -> Unit): Unit /* this */
-    fun removeListener(event: DuplexEvent.PAUSE, listener: () -> Unit): Unit /* this */
-    fun removeListener(event: DuplexEvent.PIPE, listener: (src: Readable) -> Unit): Unit /* this */
-    fun removeListener(event: DuplexEvent.READABLE, listener: () -> Unit): Unit /* this */
-    fun removeListener(event: DuplexEvent.RESUME, listener: () -> Unit): Unit /* this */
-    fun removeListener(event: DuplexEvent.UNPIPE, listener: (src: Readable) -> Unit): Unit /* this */
+
     override fun removeListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     override fun removeListener(
@@ -209,6 +143,38 @@ Writable {
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
+    @web.events.JsEvent("close")
+    override val closeEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("data")
+    override val dataEvent: node.events.EventInstance<js.array.JsTuple1<Any?>>
+
+    @web.events.JsEvent("drain")
+    override val drainEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("end")
+    override val endEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("error")
+    override val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+
+    @web.events.JsEvent("finish")
+    override val finishEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("pause")
+    override val pauseEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("pipe")
+    override val pipeEvent: node.events.EventInstance<js.array.JsTuple1<Readable>>
+
+    @web.events.JsEvent("readable")
+    override val readableEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("resume")
+    override val resumeEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("unpipe")
+    override val unpipeEvent: node.events.EventInstance<js.array.JsTuple1<Readable>>
     override var destroyed: Boolean
     override val _construct: ((callback: (error: js.errors.JsError? /* use undefined for default */) -> Unit) -> Unit)?
     override fun destroy(error: js.errors.JsError): Unit /* this */

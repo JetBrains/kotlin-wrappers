@@ -140,105 +140,58 @@ sealed external interface Cluster : EventEmitter {
      *   7. setup
      */
     fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun addListener(event: ClusterEvent.DISCONNECT, listener: (worker: Worker) -> Unit): Unit /* this */
-    fun addListener(
-        event: ClusterEvent.EXIT,
-        listener: (worker: Worker, code: Double, signal: String) -> Unit,
-    ): Unit /* this */
 
-    fun addListener(event: ClusterEvent.FORK, listener: (worker: Worker) -> Unit): Unit /* this */
-    fun addListener(
-        event: ClusterEvent.LISTENING,
-        listener: (worker: Worker, address: Address) -> Unit,
-    ): Unit /* this */
 
-    fun addListener(
-        event: ClusterEvent.MESSAGE,
-        listener: (worker: Worker, message: Any?, handle: Any /* net.Socket | net.Server */) -> Unit,
-    ): Unit /* this */// the handle is a net.Socket or net.Server object, or undefined.
+// the handle is a net.Socket or net.Server object, or undefined.
 
-    fun addListener(event: ClusterEvent.ONLINE, listener: (worker: Worker) -> Unit): Unit /* this */
-    fun addListener(event: ClusterEvent.SETUP, listener: (settings: ClusterSettings) -> Unit): Unit /* this */
+
     fun emit(event: String, vararg args: Any?): Boolean
 
     fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
-    fun emit(event: ClusterEvent.DISCONNECT, worker: Worker): Boolean
-    fun emit(event: ClusterEvent.EXIT, worker: Worker, code: Number, signal: String): Boolean
-    fun emit(event: ClusterEvent.FORK, worker: Worker): Boolean
-    fun emit(event: ClusterEvent.LISTENING, worker: Worker, address: Address): Boolean
-    fun emit(event: ClusterEvent.MESSAGE, worker: Worker, message: Any?, handle: node.net.Socket): Boolean
 
-    fun emit(event: ClusterEvent.MESSAGE, worker: Worker, message: Any?, handle: node.net.Server): Boolean
-    fun emit(event: ClusterEvent.ONLINE, worker: Worker): Boolean
-    fun emit(event: ClusterEvent.SETUP, settings: ClusterSettings): Boolean
+
     fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun on(event: ClusterEvent.DISCONNECT, listener: (worker: Worker) -> Unit): Unit /* this */
-    fun on(event: ClusterEvent.EXIT, listener: (worker: Worker, code: Double, signal: String) -> Unit): Unit /* this */
-    fun on(event: ClusterEvent.FORK, listener: (worker: Worker) -> Unit): Unit /* this */
-    fun on(event: ClusterEvent.LISTENING, listener: (worker: Worker, address: Address) -> Unit): Unit /* this */
-    fun on(
-        event: ClusterEvent.MESSAGE,
-        listener: (worker: Worker, message: Any?, handle: Any /* net.Socket | net.Server */) -> Unit,
-    ): Unit /* this */// the handle is a net.Socket or net.Server object, or undefined.
 
-    fun on(event: ClusterEvent.ONLINE, listener: (worker: Worker) -> Unit): Unit /* this */
-    fun on(event: ClusterEvent.SETUP, listener: (settings: ClusterSettings) -> Unit): Unit /* this */
+
+// the handle is a net.Socket or net.Server object, or undefined.
+
+
     fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun once(event: ClusterEvent.DISCONNECT, listener: (worker: Worker) -> Unit): Unit /* this */
-    fun once(
-        event: ClusterEvent.EXIT,
-        listener: (worker: Worker, code: Double, signal: String) -> Unit,
-    ): Unit /* this */
 
-    fun once(event: ClusterEvent.FORK, listener: (worker: Worker) -> Unit): Unit /* this */
-    fun once(event: ClusterEvent.LISTENING, listener: (worker: Worker, address: Address) -> Unit): Unit /* this */
-    fun once(
-        event: ClusterEvent.MESSAGE,
-        listener: (worker: Worker, message: Any?, handle: Any /* net.Socket | net.Server */) -> Unit,
-    ): Unit /* this */// the handle is a net.Socket or net.Server object, or undefined.
 
-    fun once(event: ClusterEvent.ONLINE, listener: (worker: Worker) -> Unit): Unit /* this */
-    fun once(event: ClusterEvent.SETUP, listener: (settings: ClusterSettings) -> Unit): Unit /* this */
+// the handle is a net.Socket or net.Server object, or undefined.
+
+
     fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun prependListener(event: ClusterEvent.DISCONNECT, listener: (worker: Worker) -> Unit): Unit /* this */
-    fun prependListener(
-        event: ClusterEvent.EXIT,
-        listener: (worker: Worker, code: Double, signal: String) -> Unit,
-    ): Unit /* this */
 
-    fun prependListener(event: ClusterEvent.FORK, listener: (worker: Worker) -> Unit): Unit /* this */
-    fun prependListener(
-        event: ClusterEvent.LISTENING,
-        listener: (worker: Worker, address: Address) -> Unit,
-    ): Unit /* this */
 
-    // the handle is a net.Socket or net.Server object, or undefined.
-    fun prependListener(
-        event: ClusterEvent.MESSAGE,
-        listener: (worker: Worker, message: Any?, handle: (Any /* net.Socket | net.Server */)? /* use undefined for default */) -> Unit,
-    ): Unit /* this */
+// the handle is a net.Socket or net.Server object, or undefined.
 
-    fun prependListener(event: ClusterEvent.ONLINE, listener: (worker: Worker) -> Unit): Unit /* this */
-    fun prependListener(event: ClusterEvent.SETUP, listener: (settings: ClusterSettings) -> Unit): Unit /* this */
+
     fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun prependOnceListener(event: ClusterEvent.DISCONNECT, listener: (worker: Worker) -> Unit): Unit /* this */
-    fun prependOnceListener(
-        event: ClusterEvent.EXIT,
-        listener: (worker: Worker, code: Double, signal: String) -> Unit,
-    ): Unit /* this */
 
-    fun prependOnceListener(event: ClusterEvent.FORK, listener: (worker: Worker) -> Unit): Unit /* this */
-    fun prependOnceListener(
-        event: ClusterEvent.LISTENING,
-        listener: (worker: Worker, address: Address) -> Unit,
-    ): Unit /* this */
 
-    // the handle is a net.Socket or net.Server object, or undefined.
-    fun prependOnceListener(
-        event: ClusterEvent.MESSAGE,
-        listener: (worker: Worker, message: Any?, handle: Any /* net.Socket | net.Server */) -> Unit,
-    ): Unit /* this */
+// the handle is a net.Socket or net.Server object, or undefined.
 
-    fun prependOnceListener(event: ClusterEvent.ONLINE, listener: (worker: Worker) -> Unit): Unit /* this */
-    fun prependOnceListener(event: ClusterEvent.SETUP, listener: (settings: ClusterSettings) -> Unit): Unit /* this */
+
+    @web.events.JsEvent("disconnect")
+    val disconnectEvent: node.events.EventInstance<js.array.JsTuple1<Worker>>
+
+    @web.events.JsEvent("exit")
+    val exitEvent: node.events.EventInstance<js.array.JsTuple3<Worker, Double, String>>
+
+    @web.events.JsEvent("fork")
+    val forkEvent: node.events.EventInstance<js.array.JsTuple1<Worker>>
+
+    @web.events.JsEvent("listening")
+    val listeningEvent: node.events.EventInstance<js.array.JsTuple2<Worker, Address>>
+
+    @web.events.JsEvent("message")
+    val messageEvent: node.events.EventInstance<js.array.JsTuple3<Worker, Any?, Any /* net.Socket | net.Server */>>
+
+    @web.events.JsEvent("online")
+    val onlineEvent: node.events.EventInstance<js.array.JsTuple1<Worker>>
+
+    @web.events.JsEvent("setup")
+    val setupEvent: node.events.EventInstance<js.array.JsTuple1<ClusterSettings>>
 }

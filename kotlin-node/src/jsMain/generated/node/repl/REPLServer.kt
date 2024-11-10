@@ -264,73 +264,55 @@ external class REPLServer : Interface {
      * 9. reset
      */
     override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun addListener(event: REPLServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun addListener(event: REPLServerEvent.LINE, listener: (input: String) -> Unit): Unit /* this */
-    fun addListener(event: REPLServerEvent.PAUSE, listener: () -> Unit): Unit /* this */
-    fun addListener(event: REPLServerEvent.RESUME, listener: () -> Unit): Unit /* this */
-    fun addListener(event: REPLServerEvent.SIGCONT, listener: () -> Unit): Unit /* this */
-    fun addListener(event: REPLServerEvent.SIGINT, listener: () -> Unit): Unit /* this */
-    fun addListener(event: REPLServerEvent.SIGTSTP, listener: () -> Unit): Unit /* this */
-    fun addListener(event: REPLServerEvent.EXIT, listener: () -> Unit): Unit /* this */
-    fun addListener(event: REPLServerEvent.RESET, listener: (context: Context) -> Unit): Unit /* this */
+
+
     override fun emit(event: String, vararg args: Any?): Boolean
 
     override fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
-    fun emit(event: REPLServerEvent.CLOSE): Boolean
-    fun emit(event: REPLServerEvent.LINE, input: String): Boolean
-    fun emit(event: REPLServerEvent.PAUSE): Boolean
-    fun emit(event: REPLServerEvent.RESUME): Boolean
-    fun emit(event: REPLServerEvent.SIGCONT): Boolean
-    fun emit(event: REPLServerEvent.SIGINT): Boolean
-    fun emit(event: REPLServerEvent.SIGTSTP): Boolean
-    fun emit(event: REPLServerEvent.EXIT): Boolean
-    fun emit(event: REPLServerEvent.RESET, context: Context): Boolean
+
+
     override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun on(event: REPLServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun on(event: REPLServerEvent.LINE, listener: (input: String) -> Unit): Unit /* this */
-    fun on(event: REPLServerEvent.PAUSE, listener: () -> Unit): Unit /* this */
-    fun on(event: REPLServerEvent.RESUME, listener: () -> Unit): Unit /* this */
-    fun on(event: REPLServerEvent.SIGCONT, listener: () -> Unit): Unit /* this */
-    fun on(event: REPLServerEvent.SIGINT, listener: () -> Unit): Unit /* this */
-    fun on(event: REPLServerEvent.SIGTSTP, listener: () -> Unit): Unit /* this */
-    fun on(event: REPLServerEvent.EXIT, listener: () -> Unit): Unit /* this */
-    fun on(event: REPLServerEvent.RESET, listener: (context: Context) -> Unit): Unit /* this */
+
+
     override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun once(event: REPLServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun once(event: REPLServerEvent.LINE, listener: (input: String) -> Unit): Unit /* this */
-    fun once(event: REPLServerEvent.PAUSE, listener: () -> Unit): Unit /* this */
-    fun once(event: REPLServerEvent.RESUME, listener: () -> Unit): Unit /* this */
-    fun once(event: REPLServerEvent.SIGCONT, listener: () -> Unit): Unit /* this */
-    fun once(event: REPLServerEvent.SIGINT, listener: () -> Unit): Unit /* this */
-    fun once(event: REPLServerEvent.SIGTSTP, listener: () -> Unit): Unit /* this */
-    fun once(event: REPLServerEvent.EXIT, listener: () -> Unit): Unit /* this */
-    fun once(event: REPLServerEvent.RESET, listener: (context: Context) -> Unit): Unit /* this */
+
+
     override fun prependListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
-    fun prependListener(event: REPLServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: REPLServerEvent.LINE, listener: (input: String) -> Unit): Unit /* this */
-    fun prependListener(event: REPLServerEvent.PAUSE, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: REPLServerEvent.RESUME, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: REPLServerEvent.SIGCONT, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: REPLServerEvent.SIGINT, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: REPLServerEvent.SIGTSTP, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: REPLServerEvent.EXIT, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: REPLServerEvent.RESET, listener: (context: Context) -> Unit): Unit /* this */
+
     override fun prependOnceListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
-    fun prependOnceListener(event: REPLServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: REPLServerEvent.LINE, listener: (input: String) -> Unit): Unit /* this */
-    fun prependOnceListener(event: REPLServerEvent.PAUSE, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: REPLServerEvent.RESUME, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: REPLServerEvent.SIGCONT, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: REPLServerEvent.SIGINT, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: REPLServerEvent.SIGTSTP, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: REPLServerEvent.EXIT, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: REPLServerEvent.RESET, listener: (context: Context) -> Unit): Unit /* this */
+
+    @web.events.JsEvent("close")
+    override val closeEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("line")
+    override val lineEvent: node.events.EventInstance<js.array.JsTuple1<String>>
+
+    @web.events.JsEvent("pause")
+    override val pauseEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("resume")
+    override val resumeEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("SIGCONT")
+    override val SIGCONTEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("SIGINT")
+    override val SIGINTEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("SIGTSTP")
+    override val SIGTSTPEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("exit")
+    val exitEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("reset")
+    val resetEvent: node.events.EventInstance<js.array.JsTuple1<Context>>
 }

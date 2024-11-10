@@ -228,100 +228,28 @@ sealed external interface Http2Session : EventEmitter {
      * @since v9.4.0
      */
     fun unref(): Unit
-    fun addListener(event: Http2SessionEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun addListener(event: Http2SessionEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun addListener(
-        event: Http2SessionEvent.FRAMEERROR,
-        listener: (frameType: Double, errorCode: Double, streamID: Double) -> Unit,
-    ): Unit /* this */
 
-    fun addListener(
-        event: Http2SessionEvent.GOAWAY,
-        listener: (errorCode: Double, lastStreamID: Double, opaqueData: node.buffer.Buffer? /* use undefined for default */) -> Unit,
-    ): Unit /* this */
 
-    fun addListener(event: Http2SessionEvent.LOCALSETTINGS, listener: (settings: Settings) -> Unit): Unit /* this */
-    fun addListener(event: Http2SessionEvent.PING, listener: () -> Unit): Unit /* this */
-    fun addListener(event: Http2SessionEvent.REMOTESETTINGS, listener: (settings: Settings) -> Unit): Unit /* this */
-    fun addListener(event: Http2SessionEvent.TIMEOUT, listener: () -> Unit): Unit /* this */
     fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     fun addListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun emit(event: Http2SessionEvent.CLOSE): Boolean
-    fun emit(event: Http2SessionEvent.ERROR, err: js.errors.JsError): Boolean
-    fun emit(event: Http2SessionEvent.FRAMEERROR, frameType: Number, errorCode: Number, streamID: Number): Boolean
-    fun emit(
-        event: Http2SessionEvent.GOAWAY,
-        errorCode: Number,
-        lastStreamID: Number,
-        opaqueData: node.buffer.Buffer = definedExternally,
-    ): Boolean
 
-    fun emit(event: Http2SessionEvent.LOCALSETTINGS, settings: Settings): Boolean
-    fun emit(event: Http2SessionEvent.PING): Boolean
-    fun emit(event: Http2SessionEvent.REMOTESETTINGS, settings: Settings): Boolean
-    fun emit(event: Http2SessionEvent.TIMEOUT): Boolean
+
     fun emit(event: String, vararg args: Any?): Boolean
 
     fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
-    fun on(event: Http2SessionEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun on(event: Http2SessionEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun on(
-        event: Http2SessionEvent.FRAMEERROR,
-        listener: (frameType: Double, errorCode: Double, streamID: Double) -> Unit,
-    ): Unit /* this */
 
-    fun on(
-        event: Http2SessionEvent.GOAWAY,
-        listener: (errorCode: Double, lastStreamID: Double, opaqueData: node.buffer.Buffer? /* use undefined for default */) -> Unit,
-    ): Unit /* this */
 
-    fun on(event: Http2SessionEvent.LOCALSETTINGS, listener: (settings: Settings) -> Unit): Unit /* this */
-    fun on(event: Http2SessionEvent.PING, listener: () -> Unit): Unit /* this */
-    fun on(event: Http2SessionEvent.REMOTESETTINGS, listener: (settings: Settings) -> Unit): Unit /* this */
-    fun on(event: Http2SessionEvent.TIMEOUT, listener: () -> Unit): Unit /* this */
     fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun once(event: Http2SessionEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun once(event: Http2SessionEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun once(
-        event: Http2SessionEvent.FRAMEERROR,
-        listener: (frameType: Double, errorCode: Double, streamID: Double) -> Unit,
-    ): Unit /* this */
 
-    fun once(
-        event: Http2SessionEvent.GOAWAY,
-        listener: (errorCode: Double, lastStreamID: Double, opaqueData: node.buffer.Buffer? /* use undefined for default */) -> Unit,
-    ): Unit /* this */
 
-    fun once(event: Http2SessionEvent.LOCALSETTINGS, listener: (settings: Settings) -> Unit): Unit /* this */
-    fun once(event: Http2SessionEvent.PING, listener: () -> Unit): Unit /* this */
-    fun once(event: Http2SessionEvent.REMOTESETTINGS, listener: (settings: Settings) -> Unit): Unit /* this */
-    fun once(event: Http2SessionEvent.TIMEOUT, listener: () -> Unit): Unit /* this */
     fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun prependListener(event: Http2SessionEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: Http2SessionEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun prependListener(
-        event: Http2SessionEvent.FRAMEERROR,
-        listener: (frameType: Double, errorCode: Double, streamID: Double) -> Unit,
-    ): Unit /* this */
 
-    fun prependListener(
-        event: Http2SessionEvent.GOAWAY,
-        listener: (errorCode: Double, lastStreamID: Double, opaqueData: node.buffer.Buffer? /* use undefined for default */) -> Unit,
-    ): Unit /* this */
 
-    fun prependListener(event: Http2SessionEvent.LOCALSETTINGS, listener: (settings: Settings) -> Unit): Unit /* this */
-    fun prependListener(event: Http2SessionEvent.PING, listener: () -> Unit): Unit /* this */
-    fun prependListener(
-        event: Http2SessionEvent.REMOTESETTINGS,
-        listener: (settings: Settings) -> Unit,
-    ): Unit /* this */
-
-    fun prependListener(event: Http2SessionEvent.TIMEOUT, listener: () -> Unit): Unit /* this */
     fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     fun prependListener(
@@ -329,34 +257,35 @@ sealed external interface Http2Session : EventEmitter {
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
-    fun prependOnceListener(event: Http2SessionEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: Http2SessionEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun prependOnceListener(
-        event: Http2SessionEvent.FRAMEERROR,
-        listener: (frameType: Double, errorCode: Double, streamID: Double) -> Unit,
-    ): Unit /* this */
 
-    fun prependOnceListener(
-        event: Http2SessionEvent.GOAWAY,
-        listener: (errorCode: Double, lastStreamID: Double, opaqueData: node.buffer.Buffer? /* use undefined for default */) -> Unit,
-    ): Unit /* this */
-
-    fun prependOnceListener(
-        event: Http2SessionEvent.LOCALSETTINGS,
-        listener: (settings: Settings) -> Unit,
-    ): Unit /* this */
-
-    fun prependOnceListener(event: Http2SessionEvent.PING, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(
-        event: Http2SessionEvent.REMOTESETTINGS,
-        listener: (settings: Settings) -> Unit,
-    ): Unit /* this */
-
-    fun prependOnceListener(event: Http2SessionEvent.TIMEOUT, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     fun prependOnceListener(
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
+
+    @web.events.JsEvent("close")
+    val closeEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("error")
+    val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+
+    @web.events.JsEvent("frameError")
+    val frameErrorEvent: node.events.EventInstance<js.array.JsTuple3<Double, Double, Double>>
+
+    @web.events.JsEvent("goaway")
+    val goawayEvent: node.events.EventInstance<js.array.JsTuple3<Double, Double, node.buffer.Buffer>>
+
+    @web.events.JsEvent("localSettings")
+    val localSettingsEvent: node.events.EventInstance<js.array.JsTuple1<Settings>>
+
+    @web.events.JsEvent("ping")
+    val pingEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("remoteSettings")
+    val remoteSettingsEvent: node.events.EventInstance<js.array.JsTuple1<Settings>>
+
+    @web.events.JsEvent("timeout")
+    val timeoutEvent: node.events.EventInstance<js.array.JsTuple>
 }

@@ -151,28 +151,8 @@ sealed external interface Http2Stream : node.stream.Duplex {
      * @since v10.0.0
      */
     fun sendTrailers(headers: OutgoingHttpHeaders): Unit
-    fun addListener(event: Http2StreamEvent.ABORTED, listener: () -> Unit): Unit /* this */
-    fun addListener(event: Http2StreamEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun addListener(event: Http2StreamEvent.DATA, listener: (chunk: Any /* Buffer | string */) -> Unit): Unit /* this */
-    fun addListener(event: Http2StreamEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun addListener(event: Http2StreamEvent.END, listener: () -> Unit): Unit /* this */
-    fun addListener(event: Http2StreamEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun addListener(event: Http2StreamEvent.FINISH, listener: () -> Unit): Unit /* this */
-    fun addListener(
-        event: Http2StreamEvent.FRAMEERROR,
-        listener: (frameType: Double, errorCode: Double) -> Unit,
-    ): Unit /* this */
 
-    fun addListener(event: Http2StreamEvent.PIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
-    fun addListener(event: Http2StreamEvent.UNPIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
-    fun addListener(event: Http2StreamEvent.STREAMCLOSED, listener: (code: Double) -> Unit): Unit /* this */
-    fun addListener(event: Http2StreamEvent.TIMEOUT, listener: () -> Unit): Unit /* this */
-    fun addListener(
-        event: Http2StreamEvent.TRAILERS,
-        listener: (trailers: IncomingHttpHeaders, flags: Double) -> Unit,
-    ): Unit /* this */
 
-    fun addListener(event: Http2StreamEvent.WANTTRAILERS, listener: () -> Unit): Unit /* this */
     override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     override fun addListener(
@@ -180,101 +160,22 @@ sealed external interface Http2Stream : node.stream.Duplex {
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
-    fun emit(event: Http2StreamEvent.ABORTED): Boolean
-    fun emit(event: Http2StreamEvent.CLOSE): Boolean
-    fun emit(event: Http2StreamEvent.DATA, chunk: node.buffer.Buffer): Boolean
 
-    fun emit(event: Http2StreamEvent.DATA, chunk: String): Boolean
-    fun emit(event: Http2StreamEvent.DRAIN): Boolean
-    fun emit(event: Http2StreamEvent.END): Boolean
-    fun emit(event: Http2StreamEvent.ERROR, err: js.errors.JsError): Boolean
-    fun emit(event: Http2StreamEvent.FINISH): Boolean
-    fun emit(event: Http2StreamEvent.FRAMEERROR, frameType: Number, errorCode: Number): Boolean
-    fun emit(event: Http2StreamEvent.PIPE, src: node.stream.Readable): Boolean
-    fun emit(event: Http2StreamEvent.UNPIPE, src: node.stream.Readable): Boolean
-    fun emit(event: Http2StreamEvent.STREAMCLOSED, code: Number): Boolean
-    fun emit(event: Http2StreamEvent.TIMEOUT): Boolean
-    fun emit(event: Http2StreamEvent.TRAILERS, trailers: IncomingHttpHeaders, flags: Number): Boolean
-    fun emit(event: Http2StreamEvent.WANTTRAILERS): Boolean
     override fun emit(event: String, vararg args: Any?): Boolean
 
     override fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
-    fun on(event: Http2StreamEvent.ABORTED, listener: () -> Unit): Unit /* this */
-    fun on(event: Http2StreamEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun on(event: Http2StreamEvent.DATA, listener: (chunk: Any /* Buffer | string */) -> Unit): Unit /* this */
-    fun on(event: Http2StreamEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun on(event: Http2StreamEvent.END, listener: () -> Unit): Unit /* this */
-    fun on(event: Http2StreamEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun on(event: Http2StreamEvent.FINISH, listener: () -> Unit): Unit /* this */
-    fun on(
-        event: Http2StreamEvent.FRAMEERROR,
-        listener: (frameType: Double, errorCode: Double) -> Unit,
-    ): Unit /* this */
 
-    fun on(event: Http2StreamEvent.PIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
-    fun on(event: Http2StreamEvent.UNPIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
-    fun on(event: Http2StreamEvent.STREAMCLOSED, listener: (code: Double) -> Unit): Unit /* this */
-    fun on(event: Http2StreamEvent.TIMEOUT, listener: () -> Unit): Unit /* this */
-    fun on(
-        event: Http2StreamEvent.TRAILERS,
-        listener: (trailers: IncomingHttpHeaders, flags: Double) -> Unit,
-    ): Unit /* this */
 
-    fun on(event: Http2StreamEvent.WANTTRAILERS, listener: () -> Unit): Unit /* this */
     override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     override fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun once(event: Http2StreamEvent.ABORTED, listener: () -> Unit): Unit /* this */
-    fun once(event: Http2StreamEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun once(event: Http2StreamEvent.DATA, listener: (chunk: Any /* Buffer | string */) -> Unit): Unit /* this */
-    fun once(event: Http2StreamEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun once(event: Http2StreamEvent.END, listener: () -> Unit): Unit /* this */
-    fun once(event: Http2StreamEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun once(event: Http2StreamEvent.FINISH, listener: () -> Unit): Unit /* this */
-    fun once(
-        event: Http2StreamEvent.FRAMEERROR,
-        listener: (frameType: Double, errorCode: Double) -> Unit,
-    ): Unit /* this */
 
-    fun once(event: Http2StreamEvent.PIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
-    fun once(event: Http2StreamEvent.UNPIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
-    fun once(event: Http2StreamEvent.STREAMCLOSED, listener: (code: Double) -> Unit): Unit /* this */
-    fun once(event: Http2StreamEvent.TIMEOUT, listener: () -> Unit): Unit /* this */
-    fun once(
-        event: Http2StreamEvent.TRAILERS,
-        listener: (trailers: IncomingHttpHeaders, flags: Double) -> Unit,
-    ): Unit /* this */
 
-    fun once(event: Http2StreamEvent.WANTTRAILERS, listener: () -> Unit): Unit /* this */
     override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     override fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun prependListener(event: Http2StreamEvent.ABORTED, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: Http2StreamEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun prependListener(
-        event: Http2StreamEvent.DATA,
-        listener: (chunk: Any /* Buffer | string */) -> Unit,
-    ): Unit /* this */
 
-    fun prependListener(event: Http2StreamEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: Http2StreamEvent.END, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: Http2StreamEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun prependListener(event: Http2StreamEvent.FINISH, listener: () -> Unit): Unit /* this */
-    fun prependListener(
-        event: Http2StreamEvent.FRAMEERROR,
-        listener: (frameType: Double, errorCode: Double) -> Unit,
-    ): Unit /* this */
 
-    fun prependListener(event: Http2StreamEvent.PIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
-    fun prependListener(event: Http2StreamEvent.UNPIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
-    fun prependListener(event: Http2StreamEvent.STREAMCLOSED, listener: (code: Double) -> Unit): Unit /* this */
-    fun prependListener(event: Http2StreamEvent.TIMEOUT, listener: () -> Unit): Unit /* this */
-    fun prependListener(
-        event: Http2StreamEvent.TRAILERS,
-        listener: (trailers: IncomingHttpHeaders, flags: Double) -> Unit,
-    ): Unit /* this */
-
-    fun prependListener(event: Http2StreamEvent.WANTTRAILERS, listener: () -> Unit): Unit /* this */
     override fun prependListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
@@ -285,40 +186,7 @@ sealed external interface Http2Stream : node.stream.Duplex {
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
-    fun prependOnceListener(event: Http2StreamEvent.ABORTED, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: Http2StreamEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(
-        event: Http2StreamEvent.DATA,
-        listener: (chunk: Any /* Buffer | string */) -> Unit,
-    ): Unit /* this */
 
-    fun prependOnceListener(event: Http2StreamEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: Http2StreamEvent.END, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: Http2StreamEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun prependOnceListener(event: Http2StreamEvent.FINISH, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(
-        event: Http2StreamEvent.FRAMEERROR,
-        listener: (frameType: Double, errorCode: Double) -> Unit,
-    ): Unit /* this */
-
-    fun prependOnceListener(
-        event: Http2StreamEvent.PIPE,
-        listener: (src: node.stream.Readable) -> Unit,
-    ): Unit /* this */
-
-    fun prependOnceListener(
-        event: Http2StreamEvent.UNPIPE,
-        listener: (src: node.stream.Readable) -> Unit,
-    ): Unit /* this */
-
-    fun prependOnceListener(event: Http2StreamEvent.STREAMCLOSED, listener: (code: Double) -> Unit): Unit /* this */
-    fun prependOnceListener(event: Http2StreamEvent.TIMEOUT, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(
-        event: Http2StreamEvent.TRAILERS,
-        listener: (trailers: IncomingHttpHeaders, flags: Double) -> Unit,
-    ): Unit /* this */
-
-    fun prependOnceListener(event: Http2StreamEvent.WANTTRAILERS, listener: () -> Unit): Unit /* this */
     override fun prependOnceListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
@@ -328,4 +196,46 @@ sealed external interface Http2Stream : node.stream.Duplex {
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
+
+    @web.events.JsEvent("aborted")
+    val abortedEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("close")
+    override val closeEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("data")
+    override val dataEvent: node.events.EventInstance<js.array.JsTuple1<Any /* Buffer | string */>>
+
+    @web.events.JsEvent("drain")
+    override val drainEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("end")
+    override val endEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("error")
+    override val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+
+    @web.events.JsEvent("finish")
+    override val finishEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("frameError")
+    val frameErrorEvent: node.events.EventInstance<js.array.JsTuple2<Double, Double>>
+
+    @web.events.JsEvent("pipe")
+    override val pipeEvent: node.events.EventInstance<js.array.JsTuple1<node.stream.Readable>>
+
+    @web.events.JsEvent("unpipe")
+    override val unpipeEvent: node.events.EventInstance<js.array.JsTuple1<node.stream.Readable>>
+
+    @web.events.JsEvent("streamClosed")
+    val streamClosedEvent: node.events.EventInstance<js.array.JsTuple1<Double>>
+
+    @web.events.JsEvent("timeout")
+    val timeoutEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("trailers")
+    val trailersEvent: node.events.EventInstance<js.array.JsTuple2<IncomingHttpHeaders, Double>>
+
+    @web.events.JsEvent("wantTrailers")
+    val wantTrailersEvent: node.events.EventInstance<js.array.JsTuple>
 }

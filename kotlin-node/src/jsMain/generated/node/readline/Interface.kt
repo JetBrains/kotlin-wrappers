@@ -270,78 +270,49 @@ open external class _Interface : EventEmitter {
      * 8. history
      */
     open fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun addListener(event: InterfaceEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun addListener(event: InterfaceEvent.LINE, listener: (input: String) -> Unit): Unit /* this */
-    fun addListener(event: InterfaceEvent.PAUSE, listener: () -> Unit): Unit /* this */
-    fun addListener(event: InterfaceEvent.RESUME, listener: () -> Unit): Unit /* this */
-    fun addListener(event: InterfaceEvent.SIGCONT, listener: () -> Unit): Unit /* this */
-    fun addListener(event: InterfaceEvent.SIGINT, listener: () -> Unit): Unit /* this */
-    fun addListener(event: InterfaceEvent.SIGTSTP, listener: () -> Unit): Unit /* this */
-    fun addListener(
-        event: InterfaceEvent.HISTORY,
-        listener: (history: js.array.ReadonlyArray<String>) -> Unit,
-    ): Unit /* this */
+
 
     open fun emit(event: String, vararg args: Any?): Boolean
 
     open fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
-    fun emit(event: InterfaceEvent.CLOSE): Boolean
-    fun emit(event: InterfaceEvent.LINE, input: String): Boolean
-    fun emit(event: InterfaceEvent.PAUSE): Boolean
-    fun emit(event: InterfaceEvent.RESUME): Boolean
-    fun emit(event: InterfaceEvent.SIGCONT): Boolean
-    fun emit(event: InterfaceEvent.SIGINT): Boolean
-    fun emit(event: InterfaceEvent.SIGTSTP): Boolean
-    fun emit(event: InterfaceEvent.HISTORY, history: js.array.ReadonlyArray<String>): Boolean
+
+
     open fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun on(event: InterfaceEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun on(event: InterfaceEvent.LINE, listener: (input: String) -> Unit): Unit /* this */
-    fun on(event: InterfaceEvent.PAUSE, listener: () -> Unit): Unit /* this */
-    fun on(event: InterfaceEvent.RESUME, listener: () -> Unit): Unit /* this */
-    fun on(event: InterfaceEvent.SIGCONT, listener: () -> Unit): Unit /* this */
-    fun on(event: InterfaceEvent.SIGINT, listener: () -> Unit): Unit /* this */
-    fun on(event: InterfaceEvent.SIGTSTP, listener: () -> Unit): Unit /* this */
-    fun on(event: InterfaceEvent.HISTORY, listener: (history: js.array.ReadonlyArray<String>) -> Unit): Unit /* this */
+
+
     open fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun once(event: InterfaceEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun once(event: InterfaceEvent.LINE, listener: (input: String) -> Unit): Unit /* this */
-    fun once(event: InterfaceEvent.PAUSE, listener: () -> Unit): Unit /* this */
-    fun once(event: InterfaceEvent.RESUME, listener: () -> Unit): Unit /* this */
-    fun once(event: InterfaceEvent.SIGCONT, listener: () -> Unit): Unit /* this */
-    fun once(event: InterfaceEvent.SIGINT, listener: () -> Unit): Unit /* this */
-    fun once(event: InterfaceEvent.SIGTSTP, listener: () -> Unit): Unit /* this */
-    fun once(
-        event: InterfaceEvent.HISTORY,
-        listener: (history: js.array.ReadonlyArray<String>) -> Unit,
-    ): Unit /* this */
+
 
     open fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun prependListener(event: InterfaceEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: InterfaceEvent.LINE, listener: (input: String) -> Unit): Unit /* this */
-    fun prependListener(event: InterfaceEvent.PAUSE, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: InterfaceEvent.RESUME, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: InterfaceEvent.SIGCONT, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: InterfaceEvent.SIGINT, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: InterfaceEvent.SIGTSTP, listener: () -> Unit): Unit /* this */
-    fun prependListener(
-        event: InterfaceEvent.HISTORY,
-        listener: (history: js.array.ReadonlyArray<String>) -> Unit,
-    ): Unit /* this */
+
 
     open fun prependOnceListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
-    fun prependOnceListener(event: InterfaceEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: InterfaceEvent.LINE, listener: (input: String) -> Unit): Unit /* this */
-    fun prependOnceListener(event: InterfaceEvent.PAUSE, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: InterfaceEvent.RESUME, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: InterfaceEvent.SIGCONT, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: InterfaceEvent.SIGINT, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: InterfaceEvent.SIGTSTP, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(
-        event: InterfaceEvent.HISTORY,
-        listener: (history: js.array.ReadonlyArray<String>) -> Unit,
-    ): Unit /* this */
+
+    @web.events.JsEvent("close")
+    open val closeEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("line")
+    open val lineEvent: node.events.EventInstance<js.array.JsTuple1<String>>
+
+    @web.events.JsEvent("pause")
+    open val pauseEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("resume")
+    open val resumeEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("SIGCONT")
+    open val SIGCONTEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("SIGINT")
+    open val SIGINTEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("SIGTSTP")
+    open val SIGTSTPEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("history")
+    val historyEvent: node.events.EventInstance<js.array.JsTuple1<js.array.ReadonlyArray<String>>>
 }

@@ -927,191 +927,96 @@ external class _Session : EventEmitter {
     ): Unit
 
     fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-
     /**
      * Emitted when any notification from the V8 Inspector is received.
      */
-    fun addListener(
-        event: SessionEvent.INSPECTORNOTIFICATION,
-        listener: (message: InspectorNotification<Any>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Issued when new execution context is created.
      */
-    fun addListener(
-        event: SessionEvent.RUNTIME_EXECUTIONCONTEXTCREATED,
-        listener: (message: InspectorNotification<node.inspector.runtime.ExecutionContextCreatedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Issued when execution context is destroyed.
      */
-    fun addListener(
-        event: SessionEvent.RUNTIME_EXECUTIONCONTEXTDESTROYED,
-        listener: (message: InspectorNotification<node.inspector.runtime.ExecutionContextDestroyedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Issued when all executionContexts were cleared in browser
      */
-    fun addListener(event: SessionEvent.RUNTIME_EXECUTIONCONTEXTSCLEARED, listener: () -> Unit): Unit /* this */
 
     /**
      * Issued when exception was thrown and unhandled.
      */
-    fun addListener(
-        event: SessionEvent.RUNTIME_EXCEPTIONTHROWN,
-        listener: (message: InspectorNotification<node.inspector.runtime.ExceptionThrownEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Issued when unhandled exception was revoked.
      */
-    fun addListener(
-        event: SessionEvent.RUNTIME_EXCEPTIONREVOKED,
-        listener: (message: InspectorNotification<node.inspector.runtime.ExceptionRevokedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Issued when console API was called.
      */
-    fun addListener(
-        event: SessionEvent.RUNTIME_CONSOLEAPICALLED,
-        listener: (message: InspectorNotification<node.inspector.runtime.ConsoleAPICalledEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Issued when object should be inspected (for example, as a result of inspect() command line API call).
      */
-    fun addListener(
-        event: SessionEvent.RUNTIME_INSPECTREQUESTED,
-        listener: (message: InspectorNotification<node.inspector.runtime.InspectRequestedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Fired when virtual machine parses script. This event is also fired for all known and uncollected scripts upon enabling debugger.
      */
-    fun addListener(
-        event: SessionEvent.DEBUGGER_SCRIPTPARSED,
-        listener: (message: InspectorNotification<node.inspector.debugger.ScriptParsedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Fired when virtual machine fails to parse the script.
      */
-    fun addListener(
-        event: SessionEvent.DEBUGGER_SCRIPTFAILEDTOPARSE,
-        listener: (message: InspectorNotification<node.inspector.debugger.ScriptFailedToParseEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Fired when breakpoint is resolved to an actual script and location.
      */
-    fun addListener(
-        event: SessionEvent.DEBUGGER_BREAKPOINTRESOLVED,
-        listener: (message: InspectorNotification<node.inspector.debugger.BreakpointResolvedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Fired when the virtual machine stopped on breakpoint or exception or any other stop criteria.
      */
-    fun addListener(
-        event: SessionEvent.DEBUGGER_PAUSED,
-        listener: (message: InspectorNotification<node.inspector.debugger.PausedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Fired when the virtual machine resumed execution.
      */
-    fun addListener(event: SessionEvent.DEBUGGER_RESUMED, listener: () -> Unit): Unit /* this */
 
     /**
      * Issued when new console message is added.
      */
-    fun addListener(
-        event: SessionEvent.CONSOLE_MESSAGEADDED,
-        listener: (message: InspectorNotification<node.inspector.console.MessageAddedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Sent when new profile recording is started using console.profile() call.
      */
-    fun addListener(
-        event: SessionEvent.PROFILER_CONSOLEPROFILESTARTED,
-        listener: (message: InspectorNotification<node.inspector.profiler.ConsoleProfileStartedEventDataType>) -> Unit,
-    ): Unit /* this */
 
-    fun addListener(
-        event: SessionEvent.PROFILER_CONSOLEPROFILEFINISHED,
-        listener: (message: InspectorNotification<node.inspector.profiler.ConsoleProfileFinishedEventDataType>) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: SessionEvent.HEAPPROFILER_ADDHEAPSNAPSHOTCHUNK,
-        listener: (message: InspectorNotification<node.inspector.heapprofiler.AddHeapSnapshotChunkEventDataType>) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(event: SessionEvent.HEAPPROFILER_RESETPROFILES, listener: () -> Unit): Unit /* this */
-    fun addListener(
-        event: SessionEvent.HEAPPROFILER_REPORTHEAPSNAPSHOTPROGRESS,
-        listener: (message: InspectorNotification<node.inspector.heapprofiler.ReportHeapSnapshotProgressEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * If heap objects tracking has been started then backend regularly sends a current value for last seen object id and corresponding timestamp. If the were changes in the heap since last event then one or more heapStatsUpdate events will be sent before a new lastSeenObjectId event.
      */
-    fun addListener(
-        event: SessionEvent.HEAPPROFILER_LASTSEENOBJECTID,
-        listener: (message: InspectorNotification<node.inspector.heapprofiler.LastSeenObjectIdEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * If heap objects tracking has been started then backend may send update for one or more fragments
      */
-    fun addListener(
-        event: SessionEvent.HEAPPROFILER_HEAPSTATSUPDATE,
-        listener: (message: InspectorNotification<node.inspector.heapprofiler.HeapStatsUpdateEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Contains an bucket of collected trace events.
      */
-    fun addListener(
-        event: SessionEvent.NODETRACING_DATACOLLECTED,
-        listener: (message: InspectorNotification<node.inspector.nodetracing.DataCollectedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Signals that tracing is stopped and there is no trace buffers pending flush, all data were
      * delivered via dataCollected events.
      */
-    fun addListener(event: SessionEvent.NODETRACING_TRACINGCOMPLETE, listener: () -> Unit): Unit /* this */
 
     /**
      * Issued when attached to a worker.
      */
-    fun addListener(
-        event: SessionEvent.NODEWORKER_ATTACHEDTOWORKER,
-        listener: (message: InspectorNotification<node.inspector.nodeworker.AttachedToWorkerEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Issued when detached from the worker.
      */
-    fun addListener(
-        event: SessionEvent.NODEWORKER_DETACHEDFROMWORKER,
-        listener: (message: InspectorNotification<node.inspector.nodeworker.DetachedFromWorkerEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Notifies about a new protocol message received from the session
      * (session ID is provided in attachedToWorker notification).
      */
-    fun addListener(
-        event: SessionEvent.NODEWORKER_RECEIVEDMESSAGEFROMWORKER,
-        listener: (message: InspectorNotification<node.inspector.nodeworker.ReceivedMessageFromWorkerEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * This event is fired instead of `Runtime.executionContextDestroyed` when
@@ -1119,314 +1024,108 @@ external class _Session : EventEmitter {
      * It is fired when the Node process finished all code execution and is
      * waiting for all frontends to disconnect.
      */
-    fun addListener(event: SessionEvent.NODERUNTIME_WAITINGFORDISCONNECT, listener: () -> Unit): Unit /* this */
 
     /**
      * This event is fired when the runtime is waiting for the debugger. For
      * example, when inspector.waitingForDebugger is called
      */
-    fun addListener(event: SessionEvent.NODERUNTIME_WAITINGFORDEBUGGER, listener: () -> Unit): Unit /* this */
+
     fun emit(event: String, vararg args: Any?): Boolean
 
     fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
-    fun emit(event: SessionEvent.INSPECTORNOTIFICATION, message: InspectorNotification<Any>): Boolean
-    fun emit(
-        event: SessionEvent.RUNTIME_EXECUTIONCONTEXTCREATED,
-        message: InspectorNotification<node.inspector.runtime.ExecutionContextCreatedEventDataType>,
-    ): Boolean
 
-    fun emit(
-        event: SessionEvent.RUNTIME_EXECUTIONCONTEXTDESTROYED,
-        message: InspectorNotification<node.inspector.runtime.ExecutionContextDestroyedEventDataType>,
-    ): Boolean
 
-    fun emit(event: SessionEvent.RUNTIME_EXECUTIONCONTEXTSCLEARED): Boolean
-    fun emit(
-        event: SessionEvent.RUNTIME_EXCEPTIONTHROWN,
-        message: InspectorNotification<node.inspector.runtime.ExceptionThrownEventDataType>,
-    ): Boolean
-
-    fun emit(
-        event: SessionEvent.RUNTIME_EXCEPTIONREVOKED,
-        message: InspectorNotification<node.inspector.runtime.ExceptionRevokedEventDataType>,
-    ): Boolean
-
-    fun emit(
-        event: SessionEvent.RUNTIME_CONSOLEAPICALLED,
-        message: InspectorNotification<node.inspector.runtime.ConsoleAPICalledEventDataType>,
-    ): Boolean
-
-    fun emit(
-        event: SessionEvent.RUNTIME_INSPECTREQUESTED,
-        message: InspectorNotification<node.inspector.runtime.InspectRequestedEventDataType>,
-    ): Boolean
-
-    fun emit(
-        event: SessionEvent.DEBUGGER_SCRIPTPARSED,
-        message: InspectorNotification<node.inspector.debugger.ScriptParsedEventDataType>,
-    ): Boolean
-
-    fun emit(
-        event: SessionEvent.DEBUGGER_SCRIPTFAILEDTOPARSE,
-        message: InspectorNotification<node.inspector.debugger.ScriptFailedToParseEventDataType>,
-    ): Boolean
-
-    fun emit(
-        event: SessionEvent.DEBUGGER_BREAKPOINTRESOLVED,
-        message: InspectorNotification<node.inspector.debugger.BreakpointResolvedEventDataType>,
-    ): Boolean
-
-    fun emit(
-        event: SessionEvent.DEBUGGER_PAUSED,
-        message: InspectorNotification<node.inspector.debugger.PausedEventDataType>,
-    ): Boolean
-
-    fun emit(event: SessionEvent.DEBUGGER_RESUMED): Boolean
-    fun emit(
-        event: SessionEvent.CONSOLE_MESSAGEADDED,
-        message: InspectorNotification<node.inspector.console.MessageAddedEventDataType>,
-    ): Boolean
-
-    fun emit(
-        event: SessionEvent.PROFILER_CONSOLEPROFILESTARTED,
-        message: InspectorNotification<node.inspector.profiler.ConsoleProfileStartedEventDataType>,
-    ): Boolean
-
-    fun emit(
-        event: SessionEvent.PROFILER_CONSOLEPROFILEFINISHED,
-        message: InspectorNotification<node.inspector.profiler.ConsoleProfileFinishedEventDataType>,
-    ): Boolean
-
-    fun emit(
-        event: SessionEvent.HEAPPROFILER_ADDHEAPSNAPSHOTCHUNK,
-        message: InspectorNotification<node.inspector.heapprofiler.AddHeapSnapshotChunkEventDataType>,
-    ): Boolean
-
-    fun emit(event: SessionEvent.HEAPPROFILER_RESETPROFILES): Boolean
-    fun emit(
-        event: SessionEvent.HEAPPROFILER_REPORTHEAPSNAPSHOTPROGRESS,
-        message: InspectorNotification<node.inspector.heapprofiler.ReportHeapSnapshotProgressEventDataType>,
-    ): Boolean
-
-    fun emit(
-        event: SessionEvent.HEAPPROFILER_LASTSEENOBJECTID,
-        message: InspectorNotification<node.inspector.heapprofiler.LastSeenObjectIdEventDataType>,
-    ): Boolean
-
-    fun emit(
-        event: SessionEvent.HEAPPROFILER_HEAPSTATSUPDATE,
-        message: InspectorNotification<node.inspector.heapprofiler.HeapStatsUpdateEventDataType>,
-    ): Boolean
-
-    fun emit(
-        event: SessionEvent.NODETRACING_DATACOLLECTED,
-        message: InspectorNotification<node.inspector.nodetracing.DataCollectedEventDataType>,
-    ): Boolean
-
-    fun emit(event: SessionEvent.NODETRACING_TRACINGCOMPLETE): Boolean
-    fun emit(
-        event: SessionEvent.NODEWORKER_ATTACHEDTOWORKER,
-        message: InspectorNotification<node.inspector.nodeworker.AttachedToWorkerEventDataType>,
-    ): Boolean
-
-    fun emit(
-        event: SessionEvent.NODEWORKER_DETACHEDFROMWORKER,
-        message: InspectorNotification<node.inspector.nodeworker.DetachedFromWorkerEventDataType>,
-    ): Boolean
-
-    fun emit(
-        event: SessionEvent.NODEWORKER_RECEIVEDMESSAGEFROMWORKER,
-        message: InspectorNotification<node.inspector.nodeworker.ReceivedMessageFromWorkerEventDataType>,
-    ): Boolean
-
-    fun emit(event: SessionEvent.NODERUNTIME_WAITINGFORDISCONNECT): Boolean
-    fun emit(event: SessionEvent.NODERUNTIME_WAITINGFORDEBUGGER): Boolean
     fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-
     /**
      * Emitted when any notification from the V8 Inspector is received.
      */
-    fun on(
-        event: SessionEvent.INSPECTORNOTIFICATION,
-        listener: (message: InspectorNotification<Any>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Issued when new execution context is created.
      */
-    fun on(
-        event: SessionEvent.RUNTIME_EXECUTIONCONTEXTCREATED,
-        listener: (message: InspectorNotification<node.inspector.runtime.ExecutionContextCreatedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Issued when execution context is destroyed.
      */
-    fun on(
-        event: SessionEvent.RUNTIME_EXECUTIONCONTEXTDESTROYED,
-        listener: (message: InspectorNotification<node.inspector.runtime.ExecutionContextDestroyedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Issued when all executionContexts were cleared in browser
      */
-    fun on(event: SessionEvent.RUNTIME_EXECUTIONCONTEXTSCLEARED, listener: () -> Unit): Unit /* this */
 
     /**
      * Issued when exception was thrown and unhandled.
      */
-    fun on(
-        event: SessionEvent.RUNTIME_EXCEPTIONTHROWN,
-        listener: (message: InspectorNotification<node.inspector.runtime.ExceptionThrownEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Issued when unhandled exception was revoked.
      */
-    fun on(
-        event: SessionEvent.RUNTIME_EXCEPTIONREVOKED,
-        listener: (message: InspectorNotification<node.inspector.runtime.ExceptionRevokedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Issued when console API was called.
      */
-    fun on(
-        event: SessionEvent.RUNTIME_CONSOLEAPICALLED,
-        listener: (message: InspectorNotification<node.inspector.runtime.ConsoleAPICalledEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Issued when object should be inspected (for example, as a result of inspect() command line API call).
      */
-    fun on(
-        event: SessionEvent.RUNTIME_INSPECTREQUESTED,
-        listener: (message: InspectorNotification<node.inspector.runtime.InspectRequestedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Fired when virtual machine parses script. This event is also fired for all known and uncollected scripts upon enabling debugger.
      */
-    fun on(
-        event: SessionEvent.DEBUGGER_SCRIPTPARSED,
-        listener: (message: InspectorNotification<node.inspector.debugger.ScriptParsedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Fired when virtual machine fails to parse the script.
      */
-    fun on(
-        event: SessionEvent.DEBUGGER_SCRIPTFAILEDTOPARSE,
-        listener: (message: InspectorNotification<node.inspector.debugger.ScriptFailedToParseEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Fired when breakpoint is resolved to an actual script and location.
      */
-    fun on(
-        event: SessionEvent.DEBUGGER_BREAKPOINTRESOLVED,
-        listener: (message: InspectorNotification<node.inspector.debugger.BreakpointResolvedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Fired when the virtual machine stopped on breakpoint or exception or any other stop criteria.
      */
-    fun on(
-        event: SessionEvent.DEBUGGER_PAUSED,
-        listener: (message: InspectorNotification<node.inspector.debugger.PausedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Fired when the virtual machine resumed execution.
      */
-    fun on(event: SessionEvent.DEBUGGER_RESUMED, listener: () -> Unit): Unit /* this */
 
     /**
      * Issued when new console message is added.
      */
-    fun on(
-        event: SessionEvent.CONSOLE_MESSAGEADDED,
-        listener: (message: InspectorNotification<node.inspector.console.MessageAddedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Sent when new profile recording is started using console.profile() call.
      */
-    fun on(
-        event: SessionEvent.PROFILER_CONSOLEPROFILESTARTED,
-        listener: (message: InspectorNotification<node.inspector.profiler.ConsoleProfileStartedEventDataType>) -> Unit,
-    ): Unit /* this */
 
-    fun on(
-        event: SessionEvent.PROFILER_CONSOLEPROFILEFINISHED,
-        listener: (message: InspectorNotification<node.inspector.profiler.ConsoleProfileFinishedEventDataType>) -> Unit,
-    ): Unit /* this */
-
-    fun on(
-        event: SessionEvent.HEAPPROFILER_ADDHEAPSNAPSHOTCHUNK,
-        listener: (message: InspectorNotification<node.inspector.heapprofiler.AddHeapSnapshotChunkEventDataType>) -> Unit,
-    ): Unit /* this */
-
-    fun on(event: SessionEvent.HEAPPROFILER_RESETPROFILES, listener: () -> Unit): Unit /* this */
-    fun on(
-        event: SessionEvent.HEAPPROFILER_REPORTHEAPSNAPSHOTPROGRESS,
-        listener: (message: InspectorNotification<node.inspector.heapprofiler.ReportHeapSnapshotProgressEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * If heap objects tracking has been started then backend regularly sends a current value for last seen object id and corresponding timestamp. If the were changes in the heap since last event then one or more heapStatsUpdate events will be sent before a new lastSeenObjectId event.
      */
-    fun on(
-        event: SessionEvent.HEAPPROFILER_LASTSEENOBJECTID,
-        listener: (message: InspectorNotification<node.inspector.heapprofiler.LastSeenObjectIdEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * If heap objects tracking has been started then backend may send update for one or more fragments
      */
-    fun on(
-        event: SessionEvent.HEAPPROFILER_HEAPSTATSUPDATE,
-        listener: (message: InspectorNotification<node.inspector.heapprofiler.HeapStatsUpdateEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Contains an bucket of collected trace events.
      */
-    fun on(
-        event: SessionEvent.NODETRACING_DATACOLLECTED,
-        listener: (message: InspectorNotification<node.inspector.nodetracing.DataCollectedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Signals that tracing is stopped and there is no trace buffers pending flush, all data were
      * delivered via dataCollected events.
      */
-    fun on(event: SessionEvent.NODETRACING_TRACINGCOMPLETE, listener: () -> Unit): Unit /* this */
 
     /**
      * Issued when attached to a worker.
      */
-    fun on(
-        event: SessionEvent.NODEWORKER_ATTACHEDTOWORKER,
-        listener: (message: InspectorNotification<node.inspector.nodeworker.AttachedToWorkerEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Issued when detached from the worker.
      */
-    fun on(
-        event: SessionEvent.NODEWORKER_DETACHEDFROMWORKER,
-        listener: (message: InspectorNotification<node.inspector.nodeworker.DetachedFromWorkerEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Notifies about a new protocol message received from the session
      * (session ID is provided in attachedToWorker notification).
      */
-    fun on(
-        event: SessionEvent.NODEWORKER_RECEIVEDMESSAGEFROMWORKER,
-        listener: (message: InspectorNotification<node.inspector.nodeworker.ReceivedMessageFromWorkerEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * This event is fired instead of `Runtime.executionContextDestroyed` when
@@ -1434,199 +1133,103 @@ external class _Session : EventEmitter {
      * It is fired when the Node process finished all code execution and is
      * waiting for all frontends to disconnect.
      */
-    fun on(event: SessionEvent.NODERUNTIME_WAITINGFORDISCONNECT, listener: () -> Unit): Unit /* this */
 
     /**
      * This event is fired when the runtime is waiting for the debugger. For
      * example, when inspector.waitingForDebugger is called
      */
-    fun on(event: SessionEvent.NODERUNTIME_WAITINGFORDEBUGGER, listener: () -> Unit): Unit /* this */
+
     fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-
     /**
      * Emitted when any notification from the V8 Inspector is received.
      */
-    fun once(
-        event: SessionEvent.INSPECTORNOTIFICATION,
-        listener: (message: InspectorNotification<Any>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Issued when new execution context is created.
      */
-    fun once(
-        event: SessionEvent.RUNTIME_EXECUTIONCONTEXTCREATED,
-        listener: (message: InspectorNotification<node.inspector.runtime.ExecutionContextCreatedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Issued when execution context is destroyed.
      */
-    fun once(
-        event: SessionEvent.RUNTIME_EXECUTIONCONTEXTDESTROYED,
-        listener: (message: InspectorNotification<node.inspector.runtime.ExecutionContextDestroyedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Issued when all executionContexts were cleared in browser
      */
-    fun once(event: SessionEvent.RUNTIME_EXECUTIONCONTEXTSCLEARED, listener: () -> Unit): Unit /* this */
 
     /**
      * Issued when exception was thrown and unhandled.
      */
-    fun once(
-        event: SessionEvent.RUNTIME_EXCEPTIONTHROWN,
-        listener: (message: InspectorNotification<node.inspector.runtime.ExceptionThrownEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Issued when unhandled exception was revoked.
      */
-    fun once(
-        event: SessionEvent.RUNTIME_EXCEPTIONREVOKED,
-        listener: (message: InspectorNotification<node.inspector.runtime.ExceptionRevokedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Issued when console API was called.
      */
-    fun once(
-        event: SessionEvent.RUNTIME_CONSOLEAPICALLED,
-        listener: (message: InspectorNotification<node.inspector.runtime.ConsoleAPICalledEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Issued when object should be inspected (for example, as a result of inspect() command line API call).
      */
-    fun once(
-        event: SessionEvent.RUNTIME_INSPECTREQUESTED,
-        listener: (message: InspectorNotification<node.inspector.runtime.InspectRequestedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Fired when virtual machine parses script. This event is also fired for all known and uncollected scripts upon enabling debugger.
      */
-    fun once(
-        event: SessionEvent.DEBUGGER_SCRIPTPARSED,
-        listener: (message: InspectorNotification<node.inspector.debugger.ScriptParsedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Fired when virtual machine fails to parse the script.
      */
-    fun once(
-        event: SessionEvent.DEBUGGER_SCRIPTFAILEDTOPARSE,
-        listener: (message: InspectorNotification<node.inspector.debugger.ScriptFailedToParseEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Fired when breakpoint is resolved to an actual script and location.
      */
-    fun once(
-        event: SessionEvent.DEBUGGER_BREAKPOINTRESOLVED,
-        listener: (message: InspectorNotification<node.inspector.debugger.BreakpointResolvedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Fired when the virtual machine stopped on breakpoint or exception or any other stop criteria.
      */
-    fun once(
-        event: SessionEvent.DEBUGGER_PAUSED,
-        listener: (message: InspectorNotification<node.inspector.debugger.PausedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Fired when the virtual machine resumed execution.
      */
-    fun once(event: SessionEvent.DEBUGGER_RESUMED, listener: () -> Unit): Unit /* this */
 
     /**
      * Issued when new console message is added.
      */
-    fun once(
-        event: SessionEvent.CONSOLE_MESSAGEADDED,
-        listener: (message: InspectorNotification<node.inspector.console.MessageAddedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Sent when new profile recording is started using console.profile() call.
      */
-    fun once(
-        event: SessionEvent.PROFILER_CONSOLEPROFILESTARTED,
-        listener: (message: InspectorNotification<node.inspector.profiler.ConsoleProfileStartedEventDataType>) -> Unit,
-    ): Unit /* this */
 
-    fun once(
-        event: SessionEvent.PROFILER_CONSOLEPROFILEFINISHED,
-        listener: (message: InspectorNotification<node.inspector.profiler.ConsoleProfileFinishedEventDataType>) -> Unit,
-    ): Unit /* this */
-
-    fun once(
-        event: SessionEvent.HEAPPROFILER_ADDHEAPSNAPSHOTCHUNK,
-        listener: (message: InspectorNotification<node.inspector.heapprofiler.AddHeapSnapshotChunkEventDataType>) -> Unit,
-    ): Unit /* this */
-
-    fun once(event: SessionEvent.HEAPPROFILER_RESETPROFILES, listener: () -> Unit): Unit /* this */
-    fun once(
-        event: SessionEvent.HEAPPROFILER_REPORTHEAPSNAPSHOTPROGRESS,
-        listener: (message: InspectorNotification<node.inspector.heapprofiler.ReportHeapSnapshotProgressEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * If heap objects tracking has been started then backend regularly sends a current value for last seen object id and corresponding timestamp. If the were changes in the heap since last event then one or more heapStatsUpdate events will be sent before a new lastSeenObjectId event.
      */
-    fun once(
-        event: SessionEvent.HEAPPROFILER_LASTSEENOBJECTID,
-        listener: (message: InspectorNotification<node.inspector.heapprofiler.LastSeenObjectIdEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * If heap objects tracking has been started then backend may send update for one or more fragments
      */
-    fun once(
-        event: SessionEvent.HEAPPROFILER_HEAPSTATSUPDATE,
-        listener: (message: InspectorNotification<node.inspector.heapprofiler.HeapStatsUpdateEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Contains an bucket of collected trace events.
      */
-    fun once(
-        event: SessionEvent.NODETRACING_DATACOLLECTED,
-        listener: (message: InspectorNotification<node.inspector.nodetracing.DataCollectedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Signals that tracing is stopped and there is no trace buffers pending flush, all data were
      * delivered via dataCollected events.
      */
-    fun once(event: SessionEvent.NODETRACING_TRACINGCOMPLETE, listener: () -> Unit): Unit /* this */
 
     /**
      * Issued when attached to a worker.
      */
-    fun once(
-        event: SessionEvent.NODEWORKER_ATTACHEDTOWORKER,
-        listener: (message: InspectorNotification<node.inspector.nodeworker.AttachedToWorkerEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Issued when detached from the worker.
      */
-    fun once(
-        event: SessionEvent.NODEWORKER_DETACHEDFROMWORKER,
-        listener: (message: InspectorNotification<node.inspector.nodeworker.DetachedFromWorkerEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Notifies about a new protocol message received from the session
      * (session ID is provided in attachedToWorker notification).
      */
-    fun once(
-        event: SessionEvent.NODEWORKER_RECEIVEDMESSAGEFROMWORKER,
-        listener: (message: InspectorNotification<node.inspector.nodeworker.ReceivedMessageFromWorkerEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * This event is fired instead of `Runtime.executionContextDestroyed` when
@@ -1634,199 +1237,103 @@ external class _Session : EventEmitter {
      * It is fired when the Node process finished all code execution and is
      * waiting for all frontends to disconnect.
      */
-    fun once(event: SessionEvent.NODERUNTIME_WAITINGFORDISCONNECT, listener: () -> Unit): Unit /* this */
 
     /**
      * This event is fired when the runtime is waiting for the debugger. For
      * example, when inspector.waitingForDebugger is called
      */
-    fun once(event: SessionEvent.NODERUNTIME_WAITINGFORDEBUGGER, listener: () -> Unit): Unit /* this */
+
     fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-
     /**
      * Emitted when any notification from the V8 Inspector is received.
      */
-    fun prependListener(
-        event: SessionEvent.INSPECTORNOTIFICATION,
-        listener: (message: InspectorNotification<Any>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Issued when new execution context is created.
      */
-    fun prependListener(
-        event: SessionEvent.RUNTIME_EXECUTIONCONTEXTCREATED,
-        listener: (message: InspectorNotification<node.inspector.runtime.ExecutionContextCreatedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Issued when execution context is destroyed.
      */
-    fun prependListener(
-        event: SessionEvent.RUNTIME_EXECUTIONCONTEXTDESTROYED,
-        listener: (message: InspectorNotification<node.inspector.runtime.ExecutionContextDestroyedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Issued when all executionContexts were cleared in browser
      */
-    fun prependListener(event: SessionEvent.RUNTIME_EXECUTIONCONTEXTSCLEARED, listener: () -> Unit): Unit /* this */
 
     /**
      * Issued when exception was thrown and unhandled.
      */
-    fun prependListener(
-        event: SessionEvent.RUNTIME_EXCEPTIONTHROWN,
-        listener: (message: InspectorNotification<node.inspector.runtime.ExceptionThrownEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Issued when unhandled exception was revoked.
      */
-    fun prependListener(
-        event: SessionEvent.RUNTIME_EXCEPTIONREVOKED,
-        listener: (message: InspectorNotification<node.inspector.runtime.ExceptionRevokedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Issued when console API was called.
      */
-    fun prependListener(
-        event: SessionEvent.RUNTIME_CONSOLEAPICALLED,
-        listener: (message: InspectorNotification<node.inspector.runtime.ConsoleAPICalledEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Issued when object should be inspected (for example, as a result of inspect() command line API call).
      */
-    fun prependListener(
-        event: SessionEvent.RUNTIME_INSPECTREQUESTED,
-        listener: (message: InspectorNotification<node.inspector.runtime.InspectRequestedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Fired when virtual machine parses script. This event is also fired for all known and uncollected scripts upon enabling debugger.
      */
-    fun prependListener(
-        event: SessionEvent.DEBUGGER_SCRIPTPARSED,
-        listener: (message: InspectorNotification<node.inspector.debugger.ScriptParsedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Fired when virtual machine fails to parse the script.
      */
-    fun prependListener(
-        event: SessionEvent.DEBUGGER_SCRIPTFAILEDTOPARSE,
-        listener: (message: InspectorNotification<node.inspector.debugger.ScriptFailedToParseEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Fired when breakpoint is resolved to an actual script and location.
      */
-    fun prependListener(
-        event: SessionEvent.DEBUGGER_BREAKPOINTRESOLVED,
-        listener: (message: InspectorNotification<node.inspector.debugger.BreakpointResolvedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Fired when the virtual machine stopped on breakpoint or exception or any other stop criteria.
      */
-    fun prependListener(
-        event: SessionEvent.DEBUGGER_PAUSED,
-        listener: (message: InspectorNotification<node.inspector.debugger.PausedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Fired when the virtual machine resumed execution.
      */
-    fun prependListener(event: SessionEvent.DEBUGGER_RESUMED, listener: () -> Unit): Unit /* this */
 
     /**
      * Issued when new console message is added.
      */
-    fun prependListener(
-        event: SessionEvent.CONSOLE_MESSAGEADDED,
-        listener: (message: InspectorNotification<node.inspector.console.MessageAddedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Sent when new profile recording is started using console.profile() call.
      */
-    fun prependListener(
-        event: SessionEvent.PROFILER_CONSOLEPROFILESTARTED,
-        listener: (message: InspectorNotification<node.inspector.profiler.ConsoleProfileStartedEventDataType>) -> Unit,
-    ): Unit /* this */
 
-    fun prependListener(
-        event: SessionEvent.PROFILER_CONSOLEPROFILEFINISHED,
-        listener: (message: InspectorNotification<node.inspector.profiler.ConsoleProfileFinishedEventDataType>) -> Unit,
-    ): Unit /* this */
-
-    fun prependListener(
-        event: SessionEvent.HEAPPROFILER_ADDHEAPSNAPSHOTCHUNK,
-        listener: (message: InspectorNotification<node.inspector.heapprofiler.AddHeapSnapshotChunkEventDataType>) -> Unit,
-    ): Unit /* this */
-
-    fun prependListener(event: SessionEvent.HEAPPROFILER_RESETPROFILES, listener: () -> Unit): Unit /* this */
-    fun prependListener(
-        event: SessionEvent.HEAPPROFILER_REPORTHEAPSNAPSHOTPROGRESS,
-        listener: (message: InspectorNotification<node.inspector.heapprofiler.ReportHeapSnapshotProgressEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * If heap objects tracking has been started then backend regularly sends a current value for last seen object id and corresponding timestamp. If the were changes in the heap since last event then one or more heapStatsUpdate events will be sent before a new lastSeenObjectId event.
      */
-    fun prependListener(
-        event: SessionEvent.HEAPPROFILER_LASTSEENOBJECTID,
-        listener: (message: InspectorNotification<node.inspector.heapprofiler.LastSeenObjectIdEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * If heap objects tracking has been started then backend may send update for one or more fragments
      */
-    fun prependListener(
-        event: SessionEvent.HEAPPROFILER_HEAPSTATSUPDATE,
-        listener: (message: InspectorNotification<node.inspector.heapprofiler.HeapStatsUpdateEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Contains an bucket of collected trace events.
      */
-    fun prependListener(
-        event: SessionEvent.NODETRACING_DATACOLLECTED,
-        listener: (message: InspectorNotification<node.inspector.nodetracing.DataCollectedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Signals that tracing is stopped and there is no trace buffers pending flush, all data were
      * delivered via dataCollected events.
      */
-    fun prependListener(event: SessionEvent.NODETRACING_TRACINGCOMPLETE, listener: () -> Unit): Unit /* this */
 
     /**
      * Issued when attached to a worker.
      */
-    fun prependListener(
-        event: SessionEvent.NODEWORKER_ATTACHEDTOWORKER,
-        listener: (message: InspectorNotification<node.inspector.nodeworker.AttachedToWorkerEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Issued when detached from the worker.
      */
-    fun prependListener(
-        event: SessionEvent.NODEWORKER_DETACHEDFROMWORKER,
-        listener: (message: InspectorNotification<node.inspector.nodeworker.DetachedFromWorkerEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Notifies about a new protocol message received from the session
      * (session ID is provided in attachedToWorker notification).
      */
-    fun prependListener(
-        event: SessionEvent.NODEWORKER_RECEIVEDMESSAGEFROMWORKER,
-        listener: (message: InspectorNotification<node.inspector.nodeworker.ReceivedMessageFromWorkerEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * This event is fired instead of `Runtime.executionContextDestroyed` when
@@ -1834,199 +1341,103 @@ external class _Session : EventEmitter {
      * It is fired when the Node process finished all code execution and is
      * waiting for all frontends to disconnect.
      */
-    fun prependListener(event: SessionEvent.NODERUNTIME_WAITINGFORDISCONNECT, listener: () -> Unit): Unit /* this */
 
     /**
      * This event is fired when the runtime is waiting for the debugger. For
      * example, when inspector.waitingForDebugger is called
      */
-    fun prependListener(event: SessionEvent.NODERUNTIME_WAITINGFORDEBUGGER, listener: () -> Unit): Unit /* this */
+
     fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-
     /**
      * Emitted when any notification from the V8 Inspector is received.
      */
-    fun prependOnceListener(
-        event: SessionEvent.INSPECTORNOTIFICATION,
-        listener: (message: InspectorNotification<Any>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Issued when new execution context is created.
      */
-    fun prependOnceListener(
-        event: SessionEvent.RUNTIME_EXECUTIONCONTEXTCREATED,
-        listener: (message: InspectorNotification<node.inspector.runtime.ExecutionContextCreatedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Issued when execution context is destroyed.
      */
-    fun prependOnceListener(
-        event: SessionEvent.RUNTIME_EXECUTIONCONTEXTDESTROYED,
-        listener: (message: InspectorNotification<node.inspector.runtime.ExecutionContextDestroyedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Issued when all executionContexts were cleared in browser
      */
-    fun prependOnceListener(event: SessionEvent.RUNTIME_EXECUTIONCONTEXTSCLEARED, listener: () -> Unit): Unit /* this */
 
     /**
      * Issued when exception was thrown and unhandled.
      */
-    fun prependOnceListener(
-        event: SessionEvent.RUNTIME_EXCEPTIONTHROWN,
-        listener: (message: InspectorNotification<node.inspector.runtime.ExceptionThrownEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Issued when unhandled exception was revoked.
      */
-    fun prependOnceListener(
-        event: SessionEvent.RUNTIME_EXCEPTIONREVOKED,
-        listener: (message: InspectorNotification<node.inspector.runtime.ExceptionRevokedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Issued when console API was called.
      */
-    fun prependOnceListener(
-        event: SessionEvent.RUNTIME_CONSOLEAPICALLED,
-        listener: (message: InspectorNotification<node.inspector.runtime.ConsoleAPICalledEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Issued when object should be inspected (for example, as a result of inspect() command line API call).
      */
-    fun prependOnceListener(
-        event: SessionEvent.RUNTIME_INSPECTREQUESTED,
-        listener: (message: InspectorNotification<node.inspector.runtime.InspectRequestedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Fired when virtual machine parses script. This event is also fired for all known and uncollected scripts upon enabling debugger.
      */
-    fun prependOnceListener(
-        event: SessionEvent.DEBUGGER_SCRIPTPARSED,
-        listener: (message: InspectorNotification<node.inspector.debugger.ScriptParsedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Fired when virtual machine fails to parse the script.
      */
-    fun prependOnceListener(
-        event: SessionEvent.DEBUGGER_SCRIPTFAILEDTOPARSE,
-        listener: (message: InspectorNotification<node.inspector.debugger.ScriptFailedToParseEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Fired when breakpoint is resolved to an actual script and location.
      */
-    fun prependOnceListener(
-        event: SessionEvent.DEBUGGER_BREAKPOINTRESOLVED,
-        listener: (message: InspectorNotification<node.inspector.debugger.BreakpointResolvedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Fired when the virtual machine stopped on breakpoint or exception or any other stop criteria.
      */
-    fun prependOnceListener(
-        event: SessionEvent.DEBUGGER_PAUSED,
-        listener: (message: InspectorNotification<node.inspector.debugger.PausedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Fired when the virtual machine resumed execution.
      */
-    fun prependOnceListener(event: SessionEvent.DEBUGGER_RESUMED, listener: () -> Unit): Unit /* this */
 
     /**
      * Issued when new console message is added.
      */
-    fun prependOnceListener(
-        event: SessionEvent.CONSOLE_MESSAGEADDED,
-        listener: (message: InspectorNotification<node.inspector.console.MessageAddedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Sent when new profile recording is started using console.profile() call.
      */
-    fun prependOnceListener(
-        event: SessionEvent.PROFILER_CONSOLEPROFILESTARTED,
-        listener: (message: InspectorNotification<node.inspector.profiler.ConsoleProfileStartedEventDataType>) -> Unit,
-    ): Unit /* this */
 
-    fun prependOnceListener(
-        event: SessionEvent.PROFILER_CONSOLEPROFILEFINISHED,
-        listener: (message: InspectorNotification<node.inspector.profiler.ConsoleProfileFinishedEventDataType>) -> Unit,
-    ): Unit /* this */
-
-    fun prependOnceListener(
-        event: SessionEvent.HEAPPROFILER_ADDHEAPSNAPSHOTCHUNK,
-        listener: (message: InspectorNotification<node.inspector.heapprofiler.AddHeapSnapshotChunkEventDataType>) -> Unit,
-    ): Unit /* this */
-
-    fun prependOnceListener(event: SessionEvent.HEAPPROFILER_RESETPROFILES, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(
-        event: SessionEvent.HEAPPROFILER_REPORTHEAPSNAPSHOTPROGRESS,
-        listener: (message: InspectorNotification<node.inspector.heapprofiler.ReportHeapSnapshotProgressEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * If heap objects tracking has been started then backend regularly sends a current value for last seen object id and corresponding timestamp. If the were changes in the heap since last event then one or more heapStatsUpdate events will be sent before a new lastSeenObjectId event.
      */
-    fun prependOnceListener(
-        event: SessionEvent.HEAPPROFILER_LASTSEENOBJECTID,
-        listener: (message: InspectorNotification<node.inspector.heapprofiler.LastSeenObjectIdEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * If heap objects tracking has been started then backend may send update for one or more fragments
      */
-    fun prependOnceListener(
-        event: SessionEvent.HEAPPROFILER_HEAPSTATSUPDATE,
-        listener: (message: InspectorNotification<node.inspector.heapprofiler.HeapStatsUpdateEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Contains an bucket of collected trace events.
      */
-    fun prependOnceListener(
-        event: SessionEvent.NODETRACING_DATACOLLECTED,
-        listener: (message: InspectorNotification<node.inspector.nodetracing.DataCollectedEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Signals that tracing is stopped and there is no trace buffers pending flush, all data were
      * delivered via dataCollected events.
      */
-    fun prependOnceListener(event: SessionEvent.NODETRACING_TRACINGCOMPLETE, listener: () -> Unit): Unit /* this */
 
     /**
      * Issued when attached to a worker.
      */
-    fun prependOnceListener(
-        event: SessionEvent.NODEWORKER_ATTACHEDTOWORKER,
-        listener: (message: InspectorNotification<node.inspector.nodeworker.AttachedToWorkerEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Issued when detached from the worker.
      */
-    fun prependOnceListener(
-        event: SessionEvent.NODEWORKER_DETACHEDFROMWORKER,
-        listener: (message: InspectorNotification<node.inspector.nodeworker.DetachedFromWorkerEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Notifies about a new protocol message received from the session
      * (session ID is provided in attachedToWorker notification).
      */
-    fun prependOnceListener(
-        event: SessionEvent.NODEWORKER_RECEIVEDMESSAGEFROMWORKER,
-        listener: (message: InspectorNotification<node.inspector.nodeworker.ReceivedMessageFromWorkerEventDataType>) -> Unit,
-    ): Unit /* this */
 
     /**
      * This event is fired instead of `Runtime.executionContextDestroyed` when
@@ -2034,11 +1445,93 @@ external class _Session : EventEmitter {
      * It is fired when the Node process finished all code execution and is
      * waiting for all frontends to disconnect.
      */
-    fun prependOnceListener(event: SessionEvent.NODERUNTIME_WAITINGFORDISCONNECT, listener: () -> Unit): Unit /* this */
 
     /**
      * This event is fired when the runtime is waiting for the debugger. For
      * example, when inspector.waitingForDebugger is called
      */
-    fun prependOnceListener(event: SessionEvent.NODERUNTIME_WAITINGFORDEBUGGER, listener: () -> Unit): Unit /* this */
+
+    @web.events.JsEvent("inspectorNotification")
+    val inspectorNotificationEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<Any>>>
+
+    @web.events.JsEvent("Runtime.executionContextCreated")
+    val RuntimeExecutionContextCreatedEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.runtime.ExecutionContextCreatedEventDataType>>>
+
+    @web.events.JsEvent("Runtime.executionContextDestroyed")
+    val RuntimeExecutionContextDestroyedEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.runtime.ExecutionContextDestroyedEventDataType>>>
+
+    @web.events.JsEvent("Runtime.executionContextsCleared")
+    val RuntimeExecutionContextsClearedEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("Runtime.exceptionThrown")
+    val RuntimeExceptionThrownEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.runtime.ExceptionThrownEventDataType>>>
+
+    @web.events.JsEvent("Runtime.exceptionRevoked")
+    val RuntimeExceptionRevokedEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.runtime.ExceptionRevokedEventDataType>>>
+
+    @web.events.JsEvent("Runtime.consoleAPICalled")
+    val RuntimeConsoleAPICalledEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.runtime.ConsoleAPICalledEventDataType>>>
+
+    @web.events.JsEvent("Runtime.inspectRequested")
+    val RuntimeInspectRequestedEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.runtime.InspectRequestedEventDataType>>>
+
+    @web.events.JsEvent("Debugger.scriptParsed")
+    val DebuggerScriptParsedEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.debugger.ScriptParsedEventDataType>>>
+
+    @web.events.JsEvent("Debugger.scriptFailedToParse")
+    val DebuggerScriptFailedToParseEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.debugger.ScriptFailedToParseEventDataType>>>
+
+    @web.events.JsEvent("Debugger.breakpointResolved")
+    val DebuggerBreakpointResolvedEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.debugger.BreakpointResolvedEventDataType>>>
+
+    @web.events.JsEvent("Debugger.paused")
+    val DebuggerPausedEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.debugger.PausedEventDataType>>>
+
+    @web.events.JsEvent("Debugger.resumed")
+    val DebuggerResumedEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("Console.messageAdded")
+    val ConsoleMessageAddedEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.console.MessageAddedEventDataType>>>
+
+    @web.events.JsEvent("Profiler.consoleProfileStarted")
+    val ProfilerConsoleProfileStartedEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.profiler.ConsoleProfileStartedEventDataType>>>
+
+    @web.events.JsEvent("Profiler.consoleProfileFinished")
+    val ProfilerConsoleProfileFinishedEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.profiler.ConsoleProfileFinishedEventDataType>>>
+
+    @web.events.JsEvent("HeapProfiler.addHeapSnapshotChunk")
+    val HeapProfilerAddHeapSnapshotChunkEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.heapprofiler.AddHeapSnapshotChunkEventDataType>>>
+
+    @web.events.JsEvent("HeapProfiler.resetProfiles")
+    val HeapProfilerResetProfilesEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("HeapProfiler.reportHeapSnapshotProgress")
+    val HeapProfilerReportHeapSnapshotProgressEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.heapprofiler.ReportHeapSnapshotProgressEventDataType>>>
+
+    @web.events.JsEvent("HeapProfiler.lastSeenObjectId")
+    val HeapProfilerLastSeenObjectIdEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.heapprofiler.LastSeenObjectIdEventDataType>>>
+
+    @web.events.JsEvent("HeapProfiler.heapStatsUpdate")
+    val HeapProfilerHeapStatsUpdateEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.heapprofiler.HeapStatsUpdateEventDataType>>>
+
+    @web.events.JsEvent("NodeTracing.dataCollected")
+    val NodeTracingDataCollectedEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.nodetracing.DataCollectedEventDataType>>>
+
+    @web.events.JsEvent("NodeTracing.tracingComplete")
+    val NodeTracingTracingCompleteEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("NodeWorker.attachedToWorker")
+    val NodeWorkerAttachedToWorkerEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.nodeworker.AttachedToWorkerEventDataType>>>
+
+    @web.events.JsEvent("NodeWorker.detachedFromWorker")
+    val NodeWorkerDetachedFromWorkerEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.nodeworker.DetachedFromWorkerEventDataType>>>
+
+    @web.events.JsEvent("NodeWorker.receivedMessageFromWorker")
+    val NodeWorkerReceivedMessageFromWorkerEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.nodeworker.ReceivedMessageFromWorkerEventDataType>>>
+
+    @web.events.JsEvent("NodeRuntime.waitingForDisconnect")
+    val NodeRuntimeWaitingForDisconnectEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("NodeRuntime.waitingForDebugger")
+    val NodeRuntimeWaitingForDebuggerEvent: node.events.EventInstance<js.array.JsTuple>
 }

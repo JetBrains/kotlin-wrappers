@@ -597,13 +597,8 @@ open external class Readable : Stream, node.ReadableStream {
      * 6. readable
      * 7. resume
      */
-    fun addListener(event: ReadableEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun addListener(event: ReadableEvent.DATA, listener: (chunk: Any?) -> Unit): Unit /* this */
-    fun addListener(event: ReadableEvent.END, listener: () -> Unit): Unit /* this */
-    fun addListener(event: ReadableEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun addListener(event: ReadableEvent.PAUSE, listener: () -> Unit): Unit /* this */
-    fun addListener(event: ReadableEvent.READABLE, listener: () -> Unit): Unit /* this */
-    fun addListener(event: ReadableEvent.RESUME, listener: () -> Unit): Unit /* this */
+
+
     open fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     open fun addListener(
@@ -611,43 +606,22 @@ open external class Readable : Stream, node.ReadableStream {
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
-    fun emit(event: ReadableEvent.CLOSE): Boolean
-    fun emit(event: ReadableEvent.DATA, chunk: Any?): Boolean
-    fun emit(event: ReadableEvent.END): Boolean
-    fun emit(event: ReadableEvent.ERROR, err: js.errors.JsError): Boolean
-    fun emit(event: ReadableEvent.PAUSE): Boolean
-    fun emit(event: ReadableEvent.READABLE): Boolean
-    fun emit(event: ReadableEvent.RESUME): Boolean
+
     open fun emit(event: String, vararg args: Any?): Boolean
 
     open fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
-    fun on(event: ReadableEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun on(event: ReadableEvent.DATA, listener: (chunk: Any?) -> Unit): Unit /* this */
-    fun on(event: ReadableEvent.END, listener: () -> Unit): Unit /* this */
-    fun on(event: ReadableEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun on(event: ReadableEvent.PAUSE, listener: () -> Unit): Unit /* this */
-    fun on(event: ReadableEvent.READABLE, listener: () -> Unit): Unit /* this */
-    fun on(event: ReadableEvent.RESUME, listener: () -> Unit): Unit /* this */
+
+
     open fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     open fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun once(event: ReadableEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun once(event: ReadableEvent.DATA, listener: (chunk: Any?) -> Unit): Unit /* this */
-    fun once(event: ReadableEvent.END, listener: () -> Unit): Unit /* this */
-    fun once(event: ReadableEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun once(event: ReadableEvent.PAUSE, listener: () -> Unit): Unit /* this */
-    fun once(event: ReadableEvent.READABLE, listener: () -> Unit): Unit /* this */
-    fun once(event: ReadableEvent.RESUME, listener: () -> Unit): Unit /* this */
+
+
     open fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     open fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun prependListener(event: ReadableEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: ReadableEvent.DATA, listener: (chunk: Any?) -> Unit): Unit /* this */
-    fun prependListener(event: ReadableEvent.END, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: ReadableEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun prependListener(event: ReadableEvent.PAUSE, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: ReadableEvent.READABLE, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: ReadableEvent.RESUME, listener: () -> Unit): Unit /* this */
+
+
     open fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     open fun prependListener(
@@ -655,13 +629,7 @@ open external class Readable : Stream, node.ReadableStream {
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
-    fun prependOnceListener(event: ReadableEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: ReadableEvent.DATA, listener: (chunk: Any?) -> Unit): Unit /* this */
-    fun prependOnceListener(event: ReadableEvent.END, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: ReadableEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun prependOnceListener(event: ReadableEvent.PAUSE, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: ReadableEvent.READABLE, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: ReadableEvent.RESUME, listener: () -> Unit): Unit /* this */
+
     open fun prependOnceListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
@@ -672,13 +640,7 @@ open external class Readable : Stream, node.ReadableStream {
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
-    fun removeListener(event: ReadableEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun removeListener(event: ReadableEvent.DATA, listener: (chunk: Any?) -> Unit): Unit /* this */
-    fun removeListener(event: ReadableEvent.END, listener: () -> Unit): Unit /* this */
-    fun removeListener(event: ReadableEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun removeListener(event: ReadableEvent.PAUSE, listener: () -> Unit): Unit /* this */
-    fun removeListener(event: ReadableEvent.READABLE, listener: () -> Unit): Unit /* this */
-    fun removeListener(event: ReadableEvent.RESUME, listener: () -> Unit): Unit /* this */
+
     open fun removeListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     open fun removeListener(
@@ -696,6 +658,27 @@ open external class Readable : Stream, node.ReadableStream {
     override fun unshift(chunk: String, encoding: node.buffer.BufferEncoding): Unit
 
     override fun unshift(chunk: Uint8Array, encoding: node.buffer.BufferEncoding): Unit
+
+    @web.events.JsEvent("close")
+    open val closeEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("data")
+    open val dataEvent: node.events.EventInstance<js.array.JsTuple1<Any?>>
+
+    @web.events.JsEvent("end")
+    open val endEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("error")
+    open val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+
+    @web.events.JsEvent("pause")
+    open val pauseEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("readable")
+    open val readableEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("resume")
+    open val resumeEvent: node.events.EventInstance<js.array.JsTuple>
 
     companion object {
         /**

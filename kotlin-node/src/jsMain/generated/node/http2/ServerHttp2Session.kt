@@ -215,15 +215,6 @@ sealed external interface ServerHttp2Session : Http2Session {
 } */>,
     ): Unit
 
-    fun addListener(
-        event: ServerHttp2SessionEvent.CONNECT,
-        listener: (session: ServerHttp2Session, socket: Any /* net.Socket | tls.TLSSocket */) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: ServerHttp2SessionEvent.STREAM,
-        listener: (stream: ServerHttp2Stream, headers: IncomingHttpHeaders, flags: Double) -> Unit,
-    ): Unit /* this */
 
     override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
@@ -232,54 +223,21 @@ sealed external interface ServerHttp2Session : Http2Session {
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
-    fun emit(event: ServerHttp2SessionEvent.CONNECT, session: ServerHttp2Session, socket: node.net.Socket): Boolean
-
-    fun emit(event: ServerHttp2SessionEvent.CONNECT, session: ServerHttp2Session, socket: node.tls.TLSSocket): Boolean
-    fun emit(
-        event: ServerHttp2SessionEvent.STREAM,
-        stream: ServerHttp2Stream,
-        headers: IncomingHttpHeaders,
-        flags: Number,
-    ): Boolean
 
     override fun emit(event: String, vararg args: Any?): Boolean
 
     override fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
-    fun on(
-        event: ServerHttp2SessionEvent.CONNECT,
-        listener: (session: ServerHttp2Session, socket: Any /* net.Socket | tls.TLSSocket */) -> Unit,
-    ): Unit /* this */
 
-    fun on(
-        event: ServerHttp2SessionEvent.STREAM,
-        listener: (stream: ServerHttp2Stream, headers: IncomingHttpHeaders, flags: Double) -> Unit,
-    ): Unit /* this */
 
     override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     override fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun once(
-        event: ServerHttp2SessionEvent.CONNECT,
-        listener: (session: ServerHttp2Session, socket: Any /* net.Socket | tls.TLSSocket */) -> Unit,
-    ): Unit /* this */
 
-    fun once(
-        event: ServerHttp2SessionEvent.STREAM,
-        listener: (stream: ServerHttp2Stream, headers: IncomingHttpHeaders, flags: Double) -> Unit,
-    ): Unit /* this */
 
     override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     override fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun prependListener(
-        event: ServerHttp2SessionEvent.CONNECT,
-        listener: (session: ServerHttp2Session, socket: Any /* net.Socket | tls.TLSSocket */) -> Unit,
-    ): Unit /* this */
 
-    fun prependListener(
-        event: ServerHttp2SessionEvent.STREAM,
-        listener: (stream: ServerHttp2Stream, headers: IncomingHttpHeaders, flags: Double) -> Unit,
-    ): Unit /* this */
 
     override fun prependListener(
         event: String,
@@ -291,15 +249,6 @@ sealed external interface ServerHttp2Session : Http2Session {
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
-    fun prependOnceListener(
-        event: ServerHttp2SessionEvent.CONNECT,
-        listener: (session: ServerHttp2Session, socket: Any /* net.Socket | tls.TLSSocket */) -> Unit,
-    ): Unit /* this */
-
-    fun prependOnceListener(
-        event: ServerHttp2SessionEvent.STREAM,
-        listener: (stream: ServerHttp2Stream, headers: IncomingHttpHeaders, flags: Double) -> Unit,
-    ): Unit /* this */
 
     override fun prependOnceListener(
         event: String,
@@ -310,4 +259,10 @@ sealed external interface ServerHttp2Session : Http2Session {
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
+
+    @web.events.JsEvent("connect")
+    val connectEvent: node.events.EventInstance<js.array.JsTuple2<ServerHttp2Session, Any /* net.Socket | tls.TLSSocket */>>
+
+    @web.events.JsEvent("stream")
+    val streamEvent: node.events.EventInstance<js.array.JsTuple3<ServerHttp2Stream, IncomingHttpHeaders, Double>>
 }

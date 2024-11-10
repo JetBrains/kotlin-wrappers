@@ -756,56 +756,37 @@ external class Socket : EventEmitter {
      * 5. message
      */
     fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun addListener(event: SocketEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun addListener(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
-    fun addListener(event: SocketEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun addListener(event: SocketEvent.LISTENING, listener: () -> Unit): Unit /* this */
-    fun addListener(
-        event: SocketEvent.MESSAGE,
-        listener: (msg: node.buffer.Buffer, rinfo: RemoteInfo) -> Unit,
-    ): Unit /* this */
+
 
     fun emit(event: String, vararg args: Any?): Boolean
 
     fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
-    fun emit(event: SocketEvent.CLOSE): Boolean
-    fun emit(event: SocketEvent.CONNECT): Boolean
-    fun emit(event: SocketEvent.ERROR, err: js.errors.JsError): Boolean
-    fun emit(event: SocketEvent.LISTENING): Boolean
-    fun emit(event: SocketEvent.MESSAGE, msg: node.buffer.Buffer, rinfo: RemoteInfo): Boolean
+
+
     fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun on(event: SocketEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun on(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
-    fun on(event: SocketEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun on(event: SocketEvent.LISTENING, listener: () -> Unit): Unit /* this */
-    fun on(event: SocketEvent.MESSAGE, listener: (msg: node.buffer.Buffer, rinfo: RemoteInfo) -> Unit): Unit /* this */
+
+
     fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun once(event: SocketEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun once(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
-    fun once(event: SocketEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun once(event: SocketEvent.LISTENING, listener: () -> Unit): Unit /* this */
-    fun once(
-        event: SocketEvent.MESSAGE,
-        listener: (msg: node.buffer.Buffer, rinfo: RemoteInfo) -> Unit,
-    ): Unit /* this */
+
 
     fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun prependListener(event: SocketEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: SocketEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun prependListener(event: SocketEvent.LISTENING, listener: () -> Unit): Unit /* this */
-    fun prependListener(
-        event: SocketEvent.MESSAGE,
-        listener: (msg: node.buffer.Buffer, rinfo: RemoteInfo) -> Unit,
-    ): Unit /* this */
+
 
     fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun prependOnceListener(event: SocketEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: SocketEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun prependOnceListener(event: SocketEvent.LISTENING, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(
-        event: SocketEvent.MESSAGE,
-        listener: (msg: node.buffer.Buffer, rinfo: RemoteInfo) -> Unit,
-    ): Unit /* this */
+
+
+    @web.events.JsEvent("close")
+    val closeEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("connect")
+    val connectEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("error")
+    val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+
+    @web.events.JsEvent("listening")
+    val listeningEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("message")
+    val messageEvent: node.events.EventInstance<js.array.JsTuple2<node.buffer.Buffer, RemoteInfo>>
 }

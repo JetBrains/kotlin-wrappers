@@ -599,107 +599,40 @@ open external class ChildProcess : EventEmitter {
      * 6. spawn
      */
     fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun addListener(
-        event: ChildProcessEvent.CLOSE,
-        listener: (code: Double?, signal: node.process.Signals?) -> Unit,
-    ): Unit /* this */
 
-    fun addListener(event: ChildProcessEvent.DISCONNECT, listener: () -> Unit): Unit /* this */
-    fun addListener(event: ChildProcessEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun addListener(
-        event: ChildProcessEvent.EXIT,
-        listener: (code: Double?, signal: node.process.Signals?) -> Unit,
-    ): Unit /* this */
 
-    fun addListener(
-        event: ChildProcessEvent.MESSAGE,
-        listener: (message: Serializable, sendHandle: SendHandle) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(event: ChildProcessEvent.SPAWN, listener: () -> Unit): Unit /* this */
     fun emit(event: String, vararg args: Any?): Boolean
 
     fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
-    fun emit(event: ChildProcessEvent.CLOSE, code: Double?, signal: node.process.Signals?): Boolean
-    fun emit(event: ChildProcessEvent.DISCONNECT): Boolean
-    fun emit(event: ChildProcessEvent.ERROR, err: js.errors.JsError): Boolean
-    fun emit(event: ChildProcessEvent.EXIT, code: Double?, signal: node.process.Signals?): Boolean
-    fun emit(event: ChildProcessEvent.MESSAGE, message: Serializable, sendHandle: SendHandle): Boolean
-    fun emit(event: ChildProcessEvent.SPAWN, listener: () -> Unit): Boolean
+
+
     fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun on(
-        event: ChildProcessEvent.CLOSE,
-        listener: (code: Double?, signal: node.process.Signals?) -> Unit,
-    ): Unit /* this */
 
-    fun on(event: ChildProcessEvent.DISCONNECT, listener: () -> Unit): Unit /* this */
-    fun on(event: ChildProcessEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun on(
-        event: ChildProcessEvent.EXIT,
-        listener: (code: Double?, signal: node.process.Signals?) -> Unit,
-    ): Unit /* this */
 
-    fun on(
-        event: ChildProcessEvent.MESSAGE,
-        listener: (message: Serializable, sendHandle: SendHandle) -> Unit,
-    ): Unit /* this */
-
-    fun on(event: ChildProcessEvent.SPAWN, listener: () -> Unit): Unit /* this */
     fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun once(
-        event: ChildProcessEvent.CLOSE,
-        listener: (code: Double?, signal: node.process.Signals?) -> Unit,
-    ): Unit /* this */
 
-    fun once(event: ChildProcessEvent.DISCONNECT, listener: () -> Unit): Unit /* this */
-    fun once(event: ChildProcessEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun once(
-        event: ChildProcessEvent.EXIT,
-        listener: (code: Double?, signal: node.process.Signals?) -> Unit,
-    ): Unit /* this */
 
-    fun once(
-        event: ChildProcessEvent.MESSAGE,
-        listener: (message: Serializable, sendHandle: SendHandle) -> Unit,
-    ): Unit /* this */
-
-    fun once(event: ChildProcessEvent.SPAWN, listener: () -> Unit): Unit /* this */
     fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun prependListener(
-        event: ChildProcessEvent.CLOSE,
-        listener: (code: Double?, signal: node.process.Signals?) -> Unit,
-    ): Unit /* this */
 
-    fun prependListener(event: ChildProcessEvent.DISCONNECT, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: ChildProcessEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun prependListener(
-        event: ChildProcessEvent.EXIT,
-        listener: (code: Double?, signal: node.process.Signals?) -> Unit,
-    ): Unit /* this */
 
-    fun prependListener(
-        event: ChildProcessEvent.MESSAGE,
-        listener: (message: Serializable, sendHandle: SendHandle) -> Unit,
-    ): Unit /* this */
-
-    fun prependListener(event: ChildProcessEvent.SPAWN, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun prependOnceListener(
-        event: ChildProcessEvent.CLOSE,
-        listener: (code: Double?, signal: node.process.Signals?) -> Unit,
-    ): Unit /* this */
 
-    fun prependOnceListener(event: ChildProcessEvent.DISCONNECT, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: ChildProcessEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun prependOnceListener(
-        event: ChildProcessEvent.EXIT,
-        listener: (code: Double?, signal: node.process.Signals?) -> Unit,
-    ): Unit /* this */
 
-    fun prependOnceListener(
-        event: ChildProcessEvent.MESSAGE,
-        listener: (message: Serializable, sendHandle: SendHandle) -> Unit,
-    ): Unit /* this */
+    @web.events.JsEvent("close")
+    val closeEvent: node.events.EventInstance<js.array.JsTuple2<Double?, node.process.Signals?>>
 
-    fun prependOnceListener(event: ChildProcessEvent.SPAWN, listener: () -> Unit): Unit /* this */
+    @web.events.JsEvent("disconnect")
+    val disconnectEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("error")
+    val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+
+    @web.events.JsEvent("exit")
+    val exitEvent: node.events.EventInstance<js.array.JsTuple2<Double?, node.process.Signals?>>
+
+    @web.events.JsEvent("message")
+    val messageEvent: node.events.EventInstance<js.array.JsTuple2<Serializable, SendHandle>>
+
+    @web.events.JsEvent("spawn")
+    val spawnEvent: node.events.EventInstance<js.array.JsTuple>
 }

@@ -13,27 +13,24 @@ open external class WriteStream : node.net.Socket {
     constructor (fd: Number)
 
     override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun addListener(event: WriteStreamEvent.RESIZE, listener: () -> Unit): Unit /* this */
+
     override fun emit(event: String, vararg args: Any?): Boolean
 
     override fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
-    fun emit(event: WriteStreamEvent.RESIZE): Boolean
+
     override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun on(event: WriteStreamEvent.RESIZE, listener: () -> Unit): Unit /* this */
+
     override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun once(event: WriteStreamEvent.RESIZE, listener: () -> Unit): Unit /* this */
+
     override fun prependListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
-    fun prependListener(event: WriteStreamEvent.RESIZE, listener: () -> Unit): Unit /* this */
     override fun prependOnceListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
-
-    fun prependOnceListener(event: WriteStreamEvent.RESIZE, listener: () -> Unit): Unit /* this */
 
     /**
      * `writeStream.clearLine()` clears the current line of this `WriteStream` in a
@@ -151,4 +148,7 @@ open external class WriteStream : node.net.Socket {
      * @since v0.5.8
      */
     var isTTY: Boolean
+
+    @web.events.JsEvent("resize")
+    val resizeEvent: node.events.EventInstance<js.array.JsTuple>
 }

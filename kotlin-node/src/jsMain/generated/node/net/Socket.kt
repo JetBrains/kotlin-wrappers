@@ -375,173 +375,64 @@ open external class Socket : node.stream.Duplex {
      *   12. timeout
      */
     override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun addListener(event: SocketEvent.CLOSE, listener: (hadError: Boolean) -> Unit): Unit /* this */
-    fun addListener(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
-    fun addListener(
-        event: SocketEvent.CONNECTIONATTEMPT,
-        listener: (ip: String, port: Double, family: Double) -> Unit,
-    ): Unit /* this */
 
-    fun addListener(
-        event: SocketEvent.CONNECTIONATTEMPTFAILED,
-        listener: (ip: String, port: Double, family: Double) -> Unit,
-    ): Unit /* this */
 
-    fun addListener(
-        event: SocketEvent.CONNECTIONATTEMPTTIMEOUT,
-        listener: (ip: String, port: Double, family: Double) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(event: SocketEvent.DATA, listener: (data: node.buffer.Buffer) -> Unit): Unit /* this */
-    fun addListener(event: SocketEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun addListener(event: SocketEvent.END, listener: () -> Unit): Unit /* this */
-    fun addListener(event: SocketEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun addListener(
-        event: SocketEvent.LOOKUP,
-        listener: (err: js.errors.JsError, address: String, family: Any /* string | number */, host: String) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(event: SocketEvent.READY, listener: () -> Unit): Unit /* this */
-    fun addListener(event: SocketEvent.TIMEOUT, listener: () -> Unit): Unit /* this */
     override fun emit(event: String, vararg args: Any?): Boolean
 
     override fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
-    fun emit(event: SocketEvent.CLOSE, hadError: Boolean): Boolean
-    fun emit(event: SocketEvent.CONNECT): Boolean
-    fun emit(event: SocketEvent.CONNECTIONATTEMPT, ip: String, port: Number, family: Number): Boolean
-    fun emit(event: SocketEvent.CONNECTIONATTEMPTFAILED, ip: String, port: Number, family: Number): Boolean
-    fun emit(event: SocketEvent.CONNECTIONATTEMPTTIMEOUT, ip: String, port: Number, family: Number): Boolean
-    fun emit(event: SocketEvent.DATA, data: node.buffer.Buffer): Boolean
-    fun emit(event: SocketEvent.DRAIN): Boolean
-    fun emit(event: SocketEvent.END): Boolean
-    fun emit(event: SocketEvent.ERROR, err: js.errors.JsError): Boolean
-    fun emit(event: SocketEvent.LOOKUP, err: js.errors.JsError, address: String, family: String, host: String): Boolean
 
-    fun emit(event: SocketEvent.LOOKUP, err: js.errors.JsError, address: String, family: Double, host: String): Boolean
-    fun emit(event: SocketEvent.READY): Boolean
-    fun emit(event: SocketEvent.TIMEOUT): Boolean
+
     override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun on(event: SocketEvent.CLOSE, listener: (hadError: Boolean) -> Unit): Unit /* this */
-    fun on(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
-    fun on(
-        event: SocketEvent.CONNECTIONATTEMPT,
-        listener: (ip: String, port: Double, family: Double) -> Unit,
-    ): Unit /* this */
 
-    fun on(
-        event: SocketEvent.CONNECTIONATTEMPTFAILED,
-        listener: (ip: String, port: Double, family: Double) -> Unit,
-    ): Unit /* this */
 
-    fun on(
-        event: SocketEvent.CONNECTIONATTEMPTTIMEOUT,
-        listener: (ip: String, port: Double, family: Double) -> Unit,
-    ): Unit /* this */
-
-    fun on(event: SocketEvent.DATA, listener: (data: node.buffer.Buffer) -> Unit): Unit /* this */
-    fun on(event: SocketEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun on(event: SocketEvent.END, listener: () -> Unit): Unit /* this */
-    fun on(event: SocketEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun on(
-        event: SocketEvent.LOOKUP,
-        listener: (err: js.errors.JsError, address: String, family: Any /* string | number */, host: String) -> Unit,
-    ): Unit /* this */
-
-    fun on(event: SocketEvent.READY, listener: () -> Unit): Unit /* this */
-    fun on(event: SocketEvent.TIMEOUT, listener: () -> Unit): Unit /* this */
     override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun once(event: SocketEvent.CLOSE, listener: (hadError: Boolean) -> Unit): Unit /* this */
-    fun once(
-        event: SocketEvent.CONNECTIONATTEMPT,
-        listener: (ip: String, port: Double, family: Double) -> Unit,
-    ): Unit /* this */
 
-    fun once(
-        event: SocketEvent.CONNECTIONATTEMPTFAILED,
-        listener: (ip: String, port: Double, family: Double) -> Unit,
-    ): Unit /* this */
 
-    fun once(
-        event: SocketEvent.CONNECTIONATTEMPTTIMEOUT,
-        listener: (ip: String, port: Double, family: Double) -> Unit,
-    ): Unit /* this */
-
-    fun once(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
-    fun once(event: SocketEvent.DATA, listener: (data: node.buffer.Buffer) -> Unit): Unit /* this */
-    fun once(event: SocketEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun once(event: SocketEvent.END, listener: () -> Unit): Unit /* this */
-    fun once(event: SocketEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun once(
-        event: SocketEvent.LOOKUP,
-        listener: (err: js.errors.JsError, address: String, family: Any /* string | number */, host: String) -> Unit,
-    ): Unit /* this */
-
-    fun once(event: SocketEvent.READY, listener: () -> Unit): Unit /* this */
-    fun once(event: SocketEvent.TIMEOUT, listener: () -> Unit): Unit /* this */
     override fun prependListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
-    fun prependListener(event: SocketEvent.CLOSE, listener: (hadError: Boolean) -> Unit): Unit /* this */
-    fun prependListener(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
-    fun prependListener(
-        event: SocketEvent.CONNECTIONATTEMPT,
-        listener: (ip: String, port: Double, family: Double) -> Unit,
-    ): Unit /* this */
 
-    fun prependListener(
-        event: SocketEvent.CONNECTIONATTEMPTFAILED,
-        listener: (ip: String, port: Double, family: Double) -> Unit,
-    ): Unit /* this */
-
-    fun prependListener(
-        event: SocketEvent.CONNECTIONATTEMPTTIMEOUT,
-        listener: (ip: String, port: Double, family: Double) -> Unit,
-    ): Unit /* this */
-
-    fun prependListener(event: SocketEvent.DATA, listener: (data: node.buffer.Buffer) -> Unit): Unit /* this */
-    fun prependListener(event: SocketEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: SocketEvent.END, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: SocketEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun prependListener(
-        event: SocketEvent.LOOKUP,
-        listener: (err: js.errors.JsError, address: String, family: Any /* string | number */, host: String) -> Unit,
-    ): Unit /* this */
-
-    fun prependListener(event: SocketEvent.READY, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: SocketEvent.TIMEOUT, listener: () -> Unit): Unit /* this */
     override fun prependOnceListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
-    fun prependOnceListener(event: SocketEvent.CLOSE, listener: (hadError: Boolean) -> Unit): Unit /* this */
-    fun prependOnceListener(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(
-        event: SocketEvent.CONNECTIONATTEMPT,
-        listener: (ip: String, port: Double, family: Double) -> Unit,
-    ): Unit /* this */
 
-    fun prependOnceListener(
-        event: SocketEvent.CONNECTIONATTEMPTFAILED,
-        listener: (ip: String, port: Double, family: Double) -> Unit,
-    ): Unit /* this */
+    @web.events.JsEvent("close")
+    override val closeEvent: node.events.EventInstance<js.array.JsTuple1<Boolean>>
 
-    fun prependOnceListener(
-        event: SocketEvent.CONNECTIONATTEMPTTIMEOUT,
-        listener: (ip: String, port: Double, family: Double) -> Unit,
-    ): Unit /* this */
+    @web.events.JsEvent("connect")
+    val connectEvent: node.events.EventInstance<js.array.JsTuple>
 
-    fun prependOnceListener(event: SocketEvent.DATA, listener: (data: node.buffer.Buffer) -> Unit): Unit /* this */
-    fun prependOnceListener(event: SocketEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: SocketEvent.END, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: SocketEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun prependOnceListener(
-        event: SocketEvent.LOOKUP,
-        listener: (err: js.errors.JsError, address: String, family: Any /* string | number */, host: String) -> Unit,
-    ): Unit /* this */
+    @web.events.JsEvent("connectionAttempt")
+    val connectionAttemptEvent: node.events.EventInstance<js.array.JsTuple3<String, Double, Double>>
 
-    fun prependOnceListener(event: SocketEvent.READY, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: SocketEvent.TIMEOUT, listener: () -> Unit): Unit /* this */
+    @web.events.JsEvent("connectionAttemptFailed")
+    val connectionAttemptFailedEvent: node.events.EventInstance<js.array.JsTuple3<String, Double, Double>>
+
+    @web.events.JsEvent("connectionAttemptTimeout")
+    val connectionAttemptTimeoutEvent: node.events.EventInstance<js.array.JsTuple3<String, Double, Double>>
+
+    @web.events.JsEvent("data")
+    override val dataEvent: node.events.EventInstance<js.array.JsTuple1<node.buffer.Buffer>>
+
+    @web.events.JsEvent("drain")
+    override val drainEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("end")
+    override val endEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("error")
+    override val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+
+    @web.events.JsEvent("lookup")
+    val lookupEvent: node.events.EventInstance<js.array.JsTuple4<js.errors.JsError, String, Any /* string | number */, String>>
+
+    @web.events.JsEvent("ready")
+    val readyEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("timeout")
+    val timeoutEvent: node.events.EventInstance<js.array.JsTuple>
 }

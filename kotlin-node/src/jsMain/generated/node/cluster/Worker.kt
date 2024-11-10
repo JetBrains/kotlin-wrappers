@@ -236,69 +236,55 @@ external class Worker : EventEmitter {
      *   6. online
      */
     fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun addListener(event: WorkerEvent.DISCONNECT, listener: () -> Unit): Unit /* this */
-    fun addListener(event: WorkerEvent.ERROR, listener: (error: js.errors.JsError) -> Unit): Unit /* this */
-    fun addListener(event: WorkerEvent.EXIT, listener: (code: Double, signal: String) -> Unit): Unit /* this */
-    fun addListener(event: WorkerEvent.LISTENING, listener: (address: Address) -> Unit): Unit /* this */
-    fun addListener(
-        event: WorkerEvent.MESSAGE,
-        listener: (message: Any?, handle: Any /* net.Socket | net.Server */) -> Unit,
-    ): Unit /* this */// the handle is a net.Socket or net.Server object, or undefined.
 
-    fun addListener(event: WorkerEvent.ONLINE, listener: () -> Unit): Unit /* this */
+
+// the handle is a net.Socket or net.Server object, or undefined.
+
+
     fun emit(event: String, vararg args: Any?): Boolean
 
     fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
-    fun emit(event: WorkerEvent.DISCONNECT): Boolean
-    fun emit(event: WorkerEvent.ERROR, error: js.errors.JsError): Boolean
-    fun emit(event: WorkerEvent.EXIT, code: Number, signal: String): Boolean
-    fun emit(event: WorkerEvent.LISTENING, address: Address): Boolean
-    fun emit(event: WorkerEvent.MESSAGE, message: Any?, handle: node.net.Socket): Boolean
 
-    fun emit(event: WorkerEvent.MESSAGE, message: Any?, handle: node.net.Server): Boolean
-    fun emit(event: WorkerEvent.ONLINE): Boolean
+
     fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun on(event: WorkerEvent.DISCONNECT, listener: () -> Unit): Unit /* this */
-    fun on(event: WorkerEvent.ERROR, listener: (error: js.errors.JsError) -> Unit): Unit /* this */
-    fun on(event: WorkerEvent.EXIT, listener: (code: Double, signal: String) -> Unit): Unit /* this */
-    fun on(event: WorkerEvent.LISTENING, listener: (address: Address) -> Unit): Unit /* this */
-    fun on(
-        event: WorkerEvent.MESSAGE,
-        listener: (message: Any?, handle: Any /* net.Socket | net.Server */) -> Unit,
-    ): Unit /* this */// the handle is a net.Socket or net.Server object, or undefined.
 
-    fun on(event: WorkerEvent.ONLINE, listener: () -> Unit): Unit /* this */
+
+// the handle is a net.Socket or net.Server object, or undefined.
+
+
     fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun once(event: WorkerEvent.DISCONNECT, listener: () -> Unit): Unit /* this */
-    fun once(event: WorkerEvent.ERROR, listener: (error: js.errors.JsError) -> Unit): Unit /* this */
-    fun once(event: WorkerEvent.EXIT, listener: (code: Double, signal: String) -> Unit): Unit /* this */
-    fun once(event: WorkerEvent.LISTENING, listener: (address: Address) -> Unit): Unit /* this */
-    fun once(
-        event: WorkerEvent.MESSAGE,
-        listener: (message: Any?, handle: Any /* net.Socket | net.Server */) -> Unit,
-    ): Unit /* this */// the handle is a net.Socket or net.Server object, or undefined.
 
-    fun once(event: WorkerEvent.ONLINE, listener: () -> Unit): Unit /* this */
+
+// the handle is a net.Socket or net.Server object, or undefined.
+
+
     fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun prependListener(event: WorkerEvent.DISCONNECT, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: WorkerEvent.ERROR, listener: (error: js.errors.JsError) -> Unit): Unit /* this */
-    fun prependListener(event: WorkerEvent.EXIT, listener: (code: Double, signal: String) -> Unit): Unit /* this */
-    fun prependListener(event: WorkerEvent.LISTENING, listener: (address: Address) -> Unit): Unit /* this */
-    fun prependListener(
-        event: WorkerEvent.MESSAGE,
-        listener: (message: Any?, handle: Any /* net.Socket | net.Server */) -> Unit,
-    ): Unit /* this */// the handle is a net.Socket or net.Server object, or undefined.
 
-    fun prependListener(event: WorkerEvent.ONLINE, listener: () -> Unit): Unit /* this */
+
+// the handle is a net.Socket or net.Server object, or undefined.
+
+
     fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun prependOnceListener(event: WorkerEvent.DISCONNECT, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: WorkerEvent.ERROR, listener: (error: js.errors.JsError) -> Unit): Unit /* this */
-    fun prependOnceListener(event: WorkerEvent.EXIT, listener: (code: Double, signal: String) -> Unit): Unit /* this */
-    fun prependOnceListener(event: WorkerEvent.LISTENING, listener: (address: Address) -> Unit): Unit /* this */
-    fun prependOnceListener(
-        event: WorkerEvent.MESSAGE,
-        listener: (message: Any?, handle: Any /* net.Socket | net.Server */) -> Unit,
-    ): Unit /* this */// the handle is a net.Socket or net.Server object, or undefined.
 
-    fun prependOnceListener(event: WorkerEvent.ONLINE, listener: () -> Unit): Unit /* this */
+
+// the handle is a net.Socket or net.Server object, or undefined.
+
+
+    @web.events.JsEvent("disconnect")
+    val disconnectEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("error")
+    val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+
+    @web.events.JsEvent("exit")
+    val exitEvent: node.events.EventInstance<js.array.JsTuple2<Double, String>>
+
+    @web.events.JsEvent("listening")
+    val listeningEvent: node.events.EventInstance<js.array.JsTuple1<Address>>
+
+    @web.events.JsEvent("message")
+    val messageEvent: node.events.EventInstance<js.array.JsTuple2<Any?, Any /* net.Socket | net.Server */>>
+
+    @web.events.JsEvent("online")
+    val onlineEvent: node.events.EventInstance<js.array.JsTuple>
 }

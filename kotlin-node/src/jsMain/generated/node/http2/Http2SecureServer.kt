@@ -4,143 +4,27 @@ package node.http2
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 sealed external interface Http2SecureServer : node.tls.Server, HTTP2ServerCommon {
-    fun addListener(
-        event: Http2SecureServerEvent.CHECKCONTINUE,
-        listener: (request: Http2ServerRequest, response: Http2ServerResponse) -> Unit,
-    ): Unit /* this */
 
-    fun addListener(
-        event: Http2SecureServerEvent.REQUEST,
-        listener: (request: Http2ServerRequest, response: Http2ServerResponse) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: Http2SecureServerEvent.SESSION,
-        listener: (session: ServerHttp2Session) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: Http2SecureServerEvent.SESSIONERROR,
-        listener: (err: js.errors.JsError) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: Http2SecureServerEvent.STREAM,
-        listener: (stream: ServerHttp2Stream, headers: IncomingHttpHeaders, flags: Double) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(event: Http2SecureServerEvent.TIMEOUT, listener: () -> Unit): Unit /* this */
-    fun addListener(
-        event: Http2SecureServerEvent.UNKNOWNPROTOCOL,
-        listener: (socket: node.tls.TLSSocket) -> Unit,
-    ): Unit /* this */
 
     override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     fun addListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun emit(
-        event: Http2SecureServerEvent.CHECKCONTINUE,
-        request: Http2ServerRequest,
-        response: Http2ServerResponse,
-    ): Boolean
 
-    fun emit(event: Http2SecureServerEvent.REQUEST, request: Http2ServerRequest, response: Http2ServerResponse): Boolean
-    fun emit(event: Http2SecureServerEvent.SESSION, session: ServerHttp2Session): Boolean
-    fun emit(event: Http2SecureServerEvent.SESSIONERROR, err: js.errors.JsError): Boolean
-    fun emit(
-        event: Http2SecureServerEvent.STREAM,
-        stream: ServerHttp2Stream,
-        headers: IncomingHttpHeaders,
-        flags: Number,
-    ): Boolean
 
-    fun emit(event: Http2SecureServerEvent.TIMEOUT): Boolean
-    fun emit(event: Http2SecureServerEvent.UNKNOWNPROTOCOL, socket: node.tls.TLSSocket): Boolean
     override fun emit(event: String, vararg args: Any?): Boolean
 
     override fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
-    fun on(
-        event: Http2SecureServerEvent.CHECKCONTINUE,
-        listener: (request: Http2ServerRequest, response: Http2ServerResponse) -> Unit,
-    ): Unit /* this */
 
-    fun on(
-        event: Http2SecureServerEvent.REQUEST,
-        listener: (request: Http2ServerRequest, response: Http2ServerResponse) -> Unit,
-    ): Unit /* this */
-
-    fun on(event: Http2SecureServerEvent.SESSION, listener: (session: ServerHttp2Session) -> Unit): Unit /* this */
-    fun on(event: Http2SecureServerEvent.SESSIONERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun on(
-        event: Http2SecureServerEvent.STREAM,
-        listener: (stream: ServerHttp2Stream, headers: IncomingHttpHeaders, flags: Double) -> Unit,
-    ): Unit /* this */
-
-    fun on(event: Http2SecureServerEvent.TIMEOUT, listener: () -> Unit): Unit /* this */
-    fun on(
-        event: Http2SecureServerEvent.UNKNOWNPROTOCOL,
-        listener: (socket: node.tls.TLSSocket) -> Unit,
-    ): Unit /* this */
 
     override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun once(
-        event: Http2SecureServerEvent.CHECKCONTINUE,
-        listener: (request: Http2ServerRequest, response: Http2ServerResponse) -> Unit,
-    ): Unit /* this */
 
-    fun once(
-        event: Http2SecureServerEvent.REQUEST,
-        listener: (request: Http2ServerRequest, response: Http2ServerResponse) -> Unit,
-    ): Unit /* this */
-
-    fun once(event: Http2SecureServerEvent.SESSION, listener: (session: ServerHttp2Session) -> Unit): Unit /* this */
-    fun once(event: Http2SecureServerEvent.SESSIONERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun once(
-        event: Http2SecureServerEvent.STREAM,
-        listener: (stream: ServerHttp2Stream, headers: IncomingHttpHeaders, flags: Double) -> Unit,
-    ): Unit /* this */
-
-    fun once(event: Http2SecureServerEvent.TIMEOUT, listener: () -> Unit): Unit /* this */
-    fun once(
-        event: Http2SecureServerEvent.UNKNOWNPROTOCOL,
-        listener: (socket: node.tls.TLSSocket) -> Unit,
-    ): Unit /* this */
 
     override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun prependListener(
-        event: Http2SecureServerEvent.CHECKCONTINUE,
-        listener: (request: Http2ServerRequest, response: Http2ServerResponse) -> Unit,
-    ): Unit /* this */
 
-    fun prependListener(
-        event: Http2SecureServerEvent.REQUEST,
-        listener: (request: Http2ServerRequest, response: Http2ServerResponse) -> Unit,
-    ): Unit /* this */
-
-    fun prependListener(
-        event: Http2SecureServerEvent.SESSION,
-        listener: (session: ServerHttp2Session) -> Unit,
-    ): Unit /* this */
-
-    fun prependListener(
-        event: Http2SecureServerEvent.SESSIONERROR,
-        listener: (err: js.errors.JsError) -> Unit,
-    ): Unit /* this */
-
-    fun prependListener(
-        event: Http2SecureServerEvent.STREAM,
-        listener: (stream: ServerHttp2Stream, headers: IncomingHttpHeaders, flags: Double) -> Unit,
-    ): Unit /* this */
-
-    fun prependListener(event: Http2SecureServerEvent.TIMEOUT, listener: () -> Unit): Unit /* this */
-    fun prependListener(
-        event: Http2SecureServerEvent.UNKNOWNPROTOCOL,
-        listener: (socket: node.tls.TLSSocket) -> Unit,
-    ): Unit /* this */
 
     override fun prependListener(
         event: String,
@@ -152,36 +36,6 @@ sealed external interface Http2SecureServer : node.tls.Server, HTTP2ServerCommon
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
-    fun prependOnceListener(
-        event: Http2SecureServerEvent.CHECKCONTINUE,
-        listener: (request: Http2ServerRequest, response: Http2ServerResponse) -> Unit,
-    ): Unit /* this */
-
-    fun prependOnceListener(
-        event: Http2SecureServerEvent.REQUEST,
-        listener: (request: Http2ServerRequest, response: Http2ServerResponse) -> Unit,
-    ): Unit /* this */
-
-    fun prependOnceListener(
-        event: Http2SecureServerEvent.SESSION,
-        listener: (session: ServerHttp2Session) -> Unit,
-    ): Unit /* this */
-
-    fun prependOnceListener(
-        event: Http2SecureServerEvent.SESSIONERROR,
-        listener: (err: js.errors.JsError) -> Unit,
-    ): Unit /* this */
-
-    fun prependOnceListener(
-        event: Http2SecureServerEvent.STREAM,
-        listener: (stream: ServerHttp2Stream, headers: IncomingHttpHeaders, flags: Double) -> Unit,
-    ): Unit /* this */
-
-    fun prependOnceListener(event: Http2SecureServerEvent.TIMEOUT, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(
-        event: Http2SecureServerEvent.UNKNOWNPROTOCOL,
-        listener: (socket: node.tls.TLSSocket) -> Unit,
-    ): Unit /* this */
 
     override fun prependOnceListener(
         event: String,
@@ -192,4 +46,25 @@ sealed external interface Http2SecureServer : node.tls.Server, HTTP2ServerCommon
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
+
+    @web.events.JsEvent("checkContinue")
+    val checkContinueEvent: node.events.EventInstance<js.array.JsTuple2<Http2ServerRequest, Http2ServerResponse>>
+
+    @web.events.JsEvent("request")
+    val requestEvent: node.events.EventInstance<js.array.JsTuple2<Http2ServerRequest, Http2ServerResponse>>
+
+    @web.events.JsEvent("session")
+    val sessionEvent: node.events.EventInstance<js.array.JsTuple1<ServerHttp2Session>>
+
+    @web.events.JsEvent("sessionError")
+    val sessionErrorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+
+    @web.events.JsEvent("stream")
+    val streamEvent: node.events.EventInstance<js.array.JsTuple3<ServerHttp2Stream, IncomingHttpHeaders, Double>>
+
+    @web.events.JsEvent("timeout")
+    val timeoutEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("unknownProtocol")
+    val unknownProtocolEvent: node.events.EventInstance<js.array.JsTuple1<node.tls.TLSSocket>>
 }

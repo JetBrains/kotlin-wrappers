@@ -7,6 +7,7 @@ import js.collections.ReadonlySet
 import js.promise.Promise
 import node.Module
 import node.events.EventEmitter
+import node.workerThreads.Worker
 import web.url.URL
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
@@ -1717,114 +1718,70 @@ sealed external interface Process : EventEmitter {
      * @since v0.8.0
      */
     var traceDeprecation: Boolean
-
     /* EventEmitter */
-    fun addListener(event: ProcessEvent.BEFOREEXIT, listener: BeforeExitListener): Unit /* this */
-    fun addListener(event: ProcessEvent.DISCONNECT, listener: DisconnectListener): Unit /* this */
-    fun addListener(event: ProcessEvent.EXIT, listener: ExitListener): Unit /* this */
-    fun addListener(event: ProcessEvent.REJECTIONHANDLED, listener: RejectionHandledListener): Unit /* this */
-    fun addListener(event: ProcessEvent.UNCAUGHTEXCEPTION, listener: UncaughtExceptionListener): Unit /* this */
-    fun addListener(event: ProcessEvent.UNCAUGHTEXCEPTIONMONITOR, listener: UncaughtExceptionListener): Unit /* this */
-    fun addListener(event: ProcessEvent.UNHANDLEDREJECTION, listener: UnhandledRejectionListener): Unit /* this */
-    fun addListener(event: ProcessEvent.WARNING, listener: WarningListener): Unit /* this */
-    fun addListener(event: ProcessEvent.MESSAGE, listener: MessageListener): Unit /* this */
-    fun addListener(event: Signals, listener: SignalsListener): Unit /* this */
-    fun addListener(event: ProcessEvent.MULTIPLERESOLVES, listener: MultipleResolveListener): Unit /* this */
-    fun addListener(event: ProcessEvent.WORKER, listener: WorkerListener): Unit /* this */
-    fun emit(event: ProcessEvent.BEFOREEXIT, code: Number): Boolean
-    fun emit(event: ProcessEvent.DISCONNECT): Boolean
-    fun emit(event: ProcessEvent.EXIT, code: Number): Boolean
-    fun emit(event: ProcessEvent.REJECTIONHANDLED, promise: Promise<Any?>): Boolean
-    fun emit(event: ProcessEvent.UNCAUGHTEXCEPTION, error: js.errors.JsError): Boolean
-    fun emit(event: ProcessEvent.UNCAUGHTEXCEPTIONMONITOR, error: js.errors.JsError): Boolean
-    fun emit(event: ProcessEvent.UNHANDLEDREJECTION, reason: Any?, promise: Promise<Any?>): Boolean
-    fun emit(event: ProcessEvent.WARNING, warning: js.errors.JsError): Boolean
-    fun emit(event: ProcessEvent.MESSAGE, message: Any?, sendHandle: Any?): Unit /* this */
-    fun emit(event: Signals, signal: Signals = definedExternally): Boolean
-    fun emit(
-        event: ProcessEvent.MULTIPLERESOLVES,
-        type: MultipleResolveType,
-        promise: Promise<Any?>,
-        value: Any?,
-    ): Unit /* this */
 
-    fun emit(event: ProcessEvent.WORKER, listener: WorkerListener): Unit /* this */
-    fun on(event: ProcessEvent.BEFOREEXIT, listener: BeforeExitListener): Unit /* this */
-    fun on(event: ProcessEvent.DISCONNECT, listener: DisconnectListener): Unit /* this */
-    fun on(event: ProcessEvent.EXIT, listener: ExitListener): Unit /* this */
-    fun on(event: ProcessEvent.REJECTIONHANDLED, listener: RejectionHandledListener): Unit /* this */
-    fun on(event: ProcessEvent.UNCAUGHTEXCEPTION, listener: UncaughtExceptionListener): Unit /* this */
-    fun on(event: ProcessEvent.UNCAUGHTEXCEPTIONMONITOR, listener: UncaughtExceptionListener): Unit /* this */
-    fun on(event: ProcessEvent.UNHANDLEDREJECTION, listener: UnhandledRejectionListener): Unit /* this */
-    fun on(event: ProcessEvent.WARNING, listener: WarningListener): Unit /* this */
-    fun on(event: ProcessEvent.MESSAGE, listener: MessageListener): Unit /* this */
+
+    fun addListener(event: Signals, listener: SignalsListener): Unit /* this */
+
+
+    fun emit(event: Signals, signal: Signals = definedExternally): Boolean
+
+
     fun on(event: Signals, listener: SignalsListener): Unit /* this */
-    fun on(event: ProcessEvent.MULTIPLERESOLVES, listener: MultipleResolveListener): Unit /* this */
-    fun on(event: ProcessEvent.WORKER, listener: WorkerListener): Unit /* this */
+
+
     fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun once(event: ProcessEvent.BEFOREEXIT, listener: BeforeExitListener): Unit /* this */
-    fun once(event: ProcessEvent.DISCONNECT, listener: DisconnectListener): Unit /* this */
-    fun once(event: ProcessEvent.EXIT, listener: ExitListener): Unit /* this */
-    fun once(event: ProcessEvent.REJECTIONHANDLED, listener: RejectionHandledListener): Unit /* this */
-    fun once(event: ProcessEvent.UNCAUGHTEXCEPTION, listener: UncaughtExceptionListener): Unit /* this */
-    fun once(event: ProcessEvent.UNCAUGHTEXCEPTIONMONITOR, listener: UncaughtExceptionListener): Unit /* this */
-    fun once(event: ProcessEvent.UNHANDLEDREJECTION, listener: UnhandledRejectionListener): Unit /* this */
-    fun once(event: ProcessEvent.WARNING, listener: WarningListener): Unit /* this */
-    fun once(event: ProcessEvent.MESSAGE, listener: MessageListener): Unit /* this */
+
+
     fun once(event: Signals, listener: SignalsListener): Unit /* this */
-    fun once(event: ProcessEvent.MULTIPLERESOLVES, listener: MultipleResolveListener): Unit /* this */
-    fun once(event: ProcessEvent.WORKER, listener: WorkerListener): Unit /* this */
+
+
     fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun prependListener(event: ProcessEvent.BEFOREEXIT, listener: BeforeExitListener): Unit /* this */
-    fun prependListener(event: ProcessEvent.DISCONNECT, listener: DisconnectListener): Unit /* this */
-    fun prependListener(event: ProcessEvent.EXIT, listener: ExitListener): Unit /* this */
-    fun prependListener(event: ProcessEvent.REJECTIONHANDLED, listener: RejectionHandledListener): Unit /* this */
-    fun prependListener(event: ProcessEvent.UNCAUGHTEXCEPTION, listener: UncaughtExceptionListener): Unit /* this */
-    fun prependListener(
-        event: ProcessEvent.UNCAUGHTEXCEPTIONMONITOR,
-        listener: UncaughtExceptionListener,
-    ): Unit /* this */
 
-    fun prependListener(event: ProcessEvent.UNHANDLEDREJECTION, listener: UnhandledRejectionListener): Unit /* this */
-    fun prependListener(event: ProcessEvent.WARNING, listener: WarningListener): Unit /* this */
-    fun prependListener(event: ProcessEvent.MESSAGE, listener: MessageListener): Unit /* this */
+
     fun prependListener(event: Signals, listener: SignalsListener): Unit /* this */
-    fun prependListener(event: ProcessEvent.MULTIPLERESOLVES, listener: MultipleResolveListener): Unit /* this */
-    fun prependListener(event: ProcessEvent.WORKER, listener: WorkerListener): Unit /* this */
-    fun prependOnceListener(event: ProcessEvent.BEFOREEXIT, listener: BeforeExitListener): Unit /* this */
-    fun prependOnceListener(event: ProcessEvent.DISCONNECT, listener: DisconnectListener): Unit /* this */
-    fun prependOnceListener(event: ProcessEvent.EXIT, listener: ExitListener): Unit /* this */
-    fun prependOnceListener(event: ProcessEvent.REJECTIONHANDLED, listener: RejectionHandledListener): Unit /* this */
-    fun prependOnceListener(event: ProcessEvent.UNCAUGHTEXCEPTION, listener: UncaughtExceptionListener): Unit /* this */
-    fun prependOnceListener(
-        event: ProcessEvent.UNCAUGHTEXCEPTIONMONITOR,
-        listener: UncaughtExceptionListener,
-    ): Unit /* this */
 
-    fun prependOnceListener(
-        event: ProcessEvent.UNHANDLEDREJECTION,
-        listener: UnhandledRejectionListener,
-    ): Unit /* this */
 
-    fun prependOnceListener(event: ProcessEvent.WARNING, listener: WarningListener): Unit /* this */
-    fun prependOnceListener(event: ProcessEvent.MESSAGE, listener: MessageListener): Unit /* this */
     fun prependOnceListener(event: Signals, listener: SignalsListener): Unit /* this */
-    fun prependOnceListener(event: ProcessEvent.MULTIPLERESOLVES, listener: MultipleResolveListener): Unit /* this */
-    fun prependOnceListener(event: ProcessEvent.WORKER, listener: WorkerListener): Unit /* this */
-    fun listeners(event: ProcessEvent.BEFOREEXIT): ReadonlyArray<BeforeExitListener>
-    fun listeners(event: ProcessEvent.DISCONNECT): ReadonlyArray<DisconnectListener>
-    fun listeners(event: ProcessEvent.EXIT): ReadonlyArray<ExitListener>
-    fun listeners(event: ProcessEvent.REJECTIONHANDLED): ReadonlyArray<RejectionHandledListener>
-    fun listeners(event: ProcessEvent.UNCAUGHTEXCEPTION): ReadonlyArray<UncaughtExceptionListener>
-    fun listeners(event: ProcessEvent.UNCAUGHTEXCEPTIONMONITOR): ReadonlyArray<UncaughtExceptionListener>
-    fun listeners(event: ProcessEvent.UNHANDLEDREJECTION): ReadonlyArray<UnhandledRejectionListener>
-    fun listeners(event: ProcessEvent.WARNING): ReadonlyArray<WarningListener>
-    fun listeners(event: ProcessEvent.MESSAGE): ReadonlyArray<MessageListener>
+
+
     fun listeners(event: Signals): ReadonlyArray<SignalsListener>
-    fun listeners(event: ProcessEvent.MULTIPLERESOLVES): ReadonlyArray<MultipleResolveListener>
-    fun listeners(event: ProcessEvent.WORKER): ReadonlyArray<WorkerListener>
+
+
+    @web.events.JsEvent("beforeExit")
+    val beforeExitEvent: node.events.EventInstance<js.array.JsTuple1<Number>>
+
+    @web.events.JsEvent("disconnect")
+    val disconnectEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("exit")
+    val exitEvent: node.events.EventInstance<js.array.JsTuple1<Number>>
+
+    @web.events.JsEvent("rejectionHandled")
+    val rejectionHandledEvent: node.events.EventInstance<js.array.JsTuple1<Promise<Any?>>>
+
+    @web.events.JsEvent("uncaughtException")
+    val uncaughtExceptionEvent: node.events.EventInstance<js.array.JsTuple2<js.errors.JsError, UncaughtExceptionOrigin>>
+
+    @web.events.JsEvent("uncaughtExceptionMonitor")
+    val uncaughtExceptionMonitorEvent: node.events.EventInstance<js.array.JsTuple2<js.errors.JsError, UncaughtExceptionOrigin>>
+
+    @web.events.JsEvent("unhandledRejection")
+    val unhandledRejectionEvent: node.events.EventInstance<js.array.JsTuple2<Any?, Promise<Any?>>>
+
+    @web.events.JsEvent("warning")
+    val warningEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+
+    @web.events.JsEvent("message")
+    val messageEvent: node.events.EventInstance<js.array.JsTuple2<Any?, Any?>>
+
+    @web.events.JsEvent("multipleResolves")
+    val multipleResolvesEvent: node.events.EventInstance<js.array.JsTuple3<MultipleResolveType, Promise<Any?>, Any?>>
+
+    @web.events.JsEvent("worker")
+    val workerEvent: node.events.EventInstance<js.array.JsTuple1<Worker>>
 }

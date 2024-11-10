@@ -13,115 +13,66 @@ import node.stream.Readable
  * @since v18.9.0, v16.19.0
  */
 external class TestsStream : Readable, node.ReadableStream {
-    fun addListener(event: TestsStreamEvent.TEST_COVERAGE, listener: (data: TestCoverage) -> Unit): Unit /* this */
-    fun addListener(event: TestsStreamEvent.TEST_COMPLETE, listener: (data: TestComplete) -> Unit): Unit /* this */
-    fun addListener(event: TestsStreamEvent.TEST_DEQUEUE, listener: (data: TestDequeue) -> Unit): Unit /* this */
-    fun addListener(event: TestsStreamEvent.TEST_DIAGNOSTIC, listener: (data: DiagnosticData) -> Unit): Unit /* this */
-    fun addListener(event: TestsStreamEvent.TEST_ENQUEUE, listener: (data: TestEnqueue) -> Unit): Unit /* this */
-    fun addListener(event: TestsStreamEvent.TEST_FAIL, listener: (data: TestFail) -> Unit): Unit /* this */
-    fun addListener(event: TestsStreamEvent.TEST_PASS, listener: (data: TestPass) -> Unit): Unit /* this */
-    fun addListener(event: TestsStreamEvent.TEST_PLAN, listener: (data: TestPlan) -> Unit): Unit /* this */
-    fun addListener(event: TestsStreamEvent.TEST_START, listener: (data: TestStart) -> Unit): Unit /* this */
-    fun addListener(event: TestsStreamEvent.TEST_STDERR, listener: (data: TestStderr) -> Unit): Unit /* this */
-    fun addListener(event: TestsStreamEvent.TEST_STDOUT, listener: (data: TestStdout) -> Unit): Unit /* this */
-    fun addListener(event: TestsStreamEvent.TEST_WATCH_DRAINED, listener: () -> Unit): Unit /* this */
+
+
     override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun emit(event: TestsStreamEvent.TEST_COVERAGE, data: TestCoverage): Boolean
-    fun emit(event: TestsStreamEvent.TEST_COMPLETE, data: TestComplete): Boolean
-    fun emit(event: TestsStreamEvent.TEST_DEQUEUE, data: TestDequeue): Boolean
-    fun emit(event: TestsStreamEvent.TEST_DIAGNOSTIC, data: DiagnosticData): Boolean
-    fun emit(event: TestsStreamEvent.TEST_ENQUEUE, data: TestEnqueue): Boolean
-    fun emit(event: TestsStreamEvent.TEST_FAIL, data: TestFail): Boolean
-    fun emit(event: TestsStreamEvent.TEST_PASS, data: TestPass): Boolean
-    fun emit(event: TestsStreamEvent.TEST_PLAN, data: TestPlan): Boolean
-    fun emit(event: TestsStreamEvent.TEST_START, data: TestStart): Boolean
-    fun emit(event: TestsStreamEvent.TEST_STDERR, data: TestStderr): Boolean
-    fun emit(event: TestsStreamEvent.TEST_STDOUT, data: TestStdout): Boolean
-    fun emit(event: TestsStreamEvent.TEST_WATCH_DRAINED): Boolean
+
+
     override fun emit(event: String, vararg args: Any?): Boolean
 
     override fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
-    fun on(event: TestsStreamEvent.TEST_COVERAGE, listener: (data: TestCoverage) -> Unit): Unit /* this */
-    fun on(event: TestsStreamEvent.TEST_COMPLETE, listener: (data: TestComplete) -> Unit): Unit /* this */
-    fun on(event: TestsStreamEvent.TEST_DEQUEUE, listener: (data: TestDequeue) -> Unit): Unit /* this */
-    fun on(event: TestsStreamEvent.TEST_DIAGNOSTIC, listener: (data: DiagnosticData) -> Unit): Unit /* this */
-    fun on(event: TestsStreamEvent.TEST_ENQUEUE, listener: (data: TestEnqueue) -> Unit): Unit /* this */
-    fun on(event: TestsStreamEvent.TEST_FAIL, listener: (data: TestFail) -> Unit): Unit /* this */
-    fun on(event: TestsStreamEvent.TEST_PASS, listener: (data: TestPass) -> Unit): Unit /* this */
-    fun on(event: TestsStreamEvent.TEST_PLAN, listener: (data: TestPlan) -> Unit): Unit /* this */
-    fun on(event: TestsStreamEvent.TEST_START, listener: (data: TestStart) -> Unit): Unit /* this */
-    fun on(event: TestsStreamEvent.TEST_STDERR, listener: (data: TestStderr) -> Unit): Unit /* this */
-    fun on(event: TestsStreamEvent.TEST_STDOUT, listener: (data: TestStdout) -> Unit): Unit /* this */
-    fun on(event: TestsStreamEvent.TEST_WATCH_DRAINED, listener: () -> Unit): Unit /* this */
-    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun once(event: TestsStreamEvent.TEST_COVERAGE, listener: (data: TestCoverage) -> Unit): Unit /* this */
-    fun once(event: TestsStreamEvent.TEST_COMPLETE, listener: (data: TestComplete) -> Unit): Unit /* this */
-    fun once(event: TestsStreamEvent.TEST_DEQUEUE, listener: (data: TestDequeue) -> Unit): Unit /* this */
-    fun once(event: TestsStreamEvent.TEST_DIAGNOSTIC, listener: (data: DiagnosticData) -> Unit): Unit /* this */
-    fun once(event: TestsStreamEvent.TEST_ENQUEUE, listener: (data: TestEnqueue) -> Unit): Unit /* this */
-    fun once(event: TestsStreamEvent.TEST_FAIL, listener: (data: TestFail) -> Unit): Unit /* this */
-    fun once(event: TestsStreamEvent.TEST_PASS, listener: (data: TestPass) -> Unit): Unit /* this */
-    fun once(event: TestsStreamEvent.TEST_PLAN, listener: (data: TestPlan) -> Unit): Unit /* this */
-    fun once(event: TestsStreamEvent.TEST_START, listener: (data: TestStart) -> Unit): Unit /* this */
-    fun once(event: TestsStreamEvent.TEST_STDERR, listener: (data: TestStderr) -> Unit): Unit /* this */
-    fun once(event: TestsStreamEvent.TEST_STDOUT, listener: (data: TestStdout) -> Unit): Unit /* this */
-    fun once(event: TestsStreamEvent.TEST_WATCH_DRAINED, listener: () -> Unit): Unit /* this */
-    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun prependListener(event: TestsStreamEvent.TEST_COVERAGE, listener: (data: TestCoverage) -> Unit): Unit /* this */
-    fun prependListener(event: TestsStreamEvent.TEST_COMPLETE, listener: (data: TestComplete) -> Unit): Unit /* this */
-    fun prependListener(event: TestsStreamEvent.TEST_DEQUEUE, listener: (data: TestDequeue) -> Unit): Unit /* this */
-    fun prependListener(
-        event: TestsStreamEvent.TEST_DIAGNOSTIC,
-        listener: (data: DiagnosticData) -> Unit,
-    ): Unit /* this */
 
-    fun prependListener(event: TestsStreamEvent.TEST_ENQUEUE, listener: (data: TestEnqueue) -> Unit): Unit /* this */
-    fun prependListener(event: TestsStreamEvent.TEST_FAIL, listener: (data: TestFail) -> Unit): Unit /* this */
-    fun prependListener(event: TestsStreamEvent.TEST_PASS, listener: (data: TestPass) -> Unit): Unit /* this */
-    fun prependListener(event: TestsStreamEvent.TEST_PLAN, listener: (data: TestPlan) -> Unit): Unit /* this */
-    fun prependListener(event: TestsStreamEvent.TEST_START, listener: (data: TestStart) -> Unit): Unit /* this */
-    fun prependListener(event: TestsStreamEvent.TEST_STDERR, listener: (data: TestStderr) -> Unit): Unit /* this */
-    fun prependListener(event: TestsStreamEvent.TEST_STDOUT, listener: (data: TestStdout) -> Unit): Unit /* this */
-    fun prependListener(event: TestsStreamEvent.TEST_WATCH_DRAINED, listener: () -> Unit): Unit /* this */
+
+    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+
+
+    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+
+
     override fun prependListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
-    fun prependOnceListener(
-        event: TestsStreamEvent.TEST_COVERAGE,
-        listener: (data: TestCoverage) -> Unit,
-    ): Unit /* this */
 
-    fun prependOnceListener(
-        event: TestsStreamEvent.TEST_COMPLETE,
-        listener: (data: TestComplete) -> Unit,
-    ): Unit /* this */
-
-    fun prependOnceListener(
-        event: TestsStreamEvent.TEST_DEQUEUE,
-        listener: (data: TestDequeue) -> Unit,
-    ): Unit /* this */
-
-    fun prependOnceListener(
-        event: TestsStreamEvent.TEST_DIAGNOSTIC,
-        listener: (data: DiagnosticData) -> Unit,
-    ): Unit /* this */
-
-    fun prependOnceListener(
-        event: TestsStreamEvent.TEST_ENQUEUE,
-        listener: (data: TestEnqueue) -> Unit,
-    ): Unit /* this */
-
-    fun prependOnceListener(event: TestsStreamEvent.TEST_FAIL, listener: (data: TestFail) -> Unit): Unit /* this */
-    fun prependOnceListener(event: TestsStreamEvent.TEST_PASS, listener: (data: TestPass) -> Unit): Unit /* this */
-    fun prependOnceListener(event: TestsStreamEvent.TEST_PLAN, listener: (data: TestPlan) -> Unit): Unit /* this */
-    fun prependOnceListener(event: TestsStreamEvent.TEST_START, listener: (data: TestStart) -> Unit): Unit /* this */
-    fun prependOnceListener(event: TestsStreamEvent.TEST_STDERR, listener: (data: TestStderr) -> Unit): Unit /* this */
-    fun prependOnceListener(event: TestsStreamEvent.TEST_STDOUT, listener: (data: TestStdout) -> Unit): Unit /* this */
-    fun prependOnceListener(event: TestsStreamEvent.TEST_WATCH_DRAINED, listener: () -> Unit): Unit /* this */
     override fun prependOnceListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
+
+    @web.events.JsEvent("test:coverage")
+    val testCoverageEvent: node.events.EventInstance<js.array.JsTuple1<TestCoverage>>
+
+    @web.events.JsEvent("test:complete")
+    val testCompleteEvent: node.events.EventInstance<js.array.JsTuple1<TestComplete>>
+
+    @web.events.JsEvent("test:dequeue")
+    val testDequeueEvent: node.events.EventInstance<js.array.JsTuple1<TestDequeue>>
+
+    @web.events.JsEvent("test:diagnostic")
+    val testDiagnosticEvent: node.events.EventInstance<js.array.JsTuple1<DiagnosticData>>
+
+    @web.events.JsEvent("test:enqueue")
+    val testEnqueueEvent: node.events.EventInstance<js.array.JsTuple1<TestEnqueue>>
+
+    @web.events.JsEvent("test:fail")
+    val testFailEvent: node.events.EventInstance<js.array.JsTuple1<TestFail>>
+
+    @web.events.JsEvent("test:pass")
+    val testPassEvent: node.events.EventInstance<js.array.JsTuple1<TestPass>>
+
+    @web.events.JsEvent("test:plan")
+    val testPlanEvent: node.events.EventInstance<js.array.JsTuple1<TestPlan>>
+
+    @web.events.JsEvent("test:start")
+    val testStartEvent: node.events.EventInstance<js.array.JsTuple1<TestStart>>
+
+    @web.events.JsEvent("test:stderr")
+    val testStderrEvent: node.events.EventInstance<js.array.JsTuple1<TestStderr>>
+
+    @web.events.JsEvent("test:stdout")
+    val testStdoutEvent: node.events.EventInstance<js.array.JsTuple1<TestStdout>>
+
+    @web.events.JsEvent("test:watch:drained")
+    val testWatchDrainedEvent: node.events.EventInstance<js.array.JsTuple>
 }

@@ -123,174 +123,59 @@ open external class Server<Request : IncomingMessage, Response : ServerResponse<
      */
     open fun closeIdleConnections(): Unit
     override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun addListener(event: ServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun addListener(event: ServerEvent.CONNECTION, listener: (socket: Socket) -> Unit): Unit /* this */
-    fun addListener(event: ServerEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun addListener(event: ServerEvent.LISTENING, listener: () -> Unit): Unit /* this */
-    fun addListener(event: ServerEvent.CHECKCONTINUE, listener: RequestListener<Request, Response>): Unit /* this */
-    fun addListener(event: ServerEvent.CHECKEXPECTATION, listener: RequestListener<Request, Response>): Unit /* this */
-    fun addListener(
-        event: ServerEvent.CLIENTERROR,
-        listener: (err: js.errors.JsError, socket: node.stream.Duplex) -> Unit,
-    ): Unit /* this */
 
-    fun addListener(
-        event: ServerEvent.CONNECT,
-        listener: (req: Request, socket: node.stream.Duplex, head: node.buffer.Buffer) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: ServerEvent.DROPREQUEST,
-        listener: (req: Request, socket: node.stream.Duplex) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(event: ServerEvent.REQUEST, listener: RequestListener<Request, Response>): Unit /* this */
-    fun addListener(
-        event: ServerEvent.UPGRADE,
-        listener: (req: Request, socket: node.stream.Duplex, head: node.buffer.Buffer) -> Unit,
-    ): Unit /* this */
 
     override fun emit(event: String, vararg args: Any?): Boolean
-    fun emit(event: ServerEvent.CLOSE): Boolean
-    fun emit(event: ServerEvent.CONNECTION, socket: Socket): Boolean
-    fun emit(event: ServerEvent.ERROR, err: js.errors.JsError): Boolean
-    fun emit(event: ServerEvent.LISTENING): Boolean
-    fun emit(event: ServerEvent.CHECKCONTINUE, req: Request, res: Response): Boolean
-    fun emit(event: ServerEvent.CHECKEXPECTATION, req: Request, res: Response): Boolean
-    fun emit(event: ServerEvent.CLIENTERROR, err: js.errors.JsError, socket: node.stream.Duplex): Boolean
-    fun emit(event: ServerEvent.CONNECT, req: Request, socket: node.stream.Duplex, head: node.buffer.Buffer): Boolean
-    fun emit(event: ServerEvent.DROPREQUEST, req: Request, socket: node.stream.Duplex): Boolean
-    fun emit(event: ServerEvent.REQUEST, req: Request, res: Response): Boolean
-    fun emit(event: ServerEvent.UPGRADE, req: Request, socket: node.stream.Duplex, head: node.buffer.Buffer): Boolean
+
+
     override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun on(event: ServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun on(event: ServerEvent.CONNECTION, listener: (socket: Socket) -> Unit): Unit /* this */
-    fun on(event: ServerEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun on(event: ServerEvent.LISTENING, listener: () -> Unit): Unit /* this */
-    fun on(event: ServerEvent.CHECKCONTINUE, listener: RequestListener<Request, Response>): Unit /* this */
-    fun on(event: ServerEvent.CHECKEXPECTATION, listener: RequestListener<Request, Response>): Unit /* this */
-    fun on(
-        event: ServerEvent.CLIENTERROR,
-        listener: (err: js.errors.JsError, socket: node.stream.Duplex) -> Unit,
-    ): Unit /* this */
 
-    fun on(
-        event: ServerEvent.CONNECT,
-        listener: (req: Request, socket: node.stream.Duplex, head: node.buffer.Buffer) -> Unit,
-    ): Unit /* this */
-
-    fun on(
-        event: ServerEvent.DROPREQUEST,
-        listener: (req: Request, socket: node.stream.Duplex) -> Unit,
-    ): Unit /* this */
-
-    fun on(event: ServerEvent.REQUEST, listener: RequestListener<Request, Response>): Unit /* this */
-    fun on(
-        event: ServerEvent.UPGRADE,
-        listener: (req: Request, socket: node.stream.Duplex, head: node.buffer.Buffer) -> Unit,
-    ): Unit /* this */
 
     override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun once(event: ServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun once(event: ServerEvent.CONNECTION, listener: (socket: Socket) -> Unit): Unit /* this */
-    fun once(event: ServerEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun once(event: ServerEvent.LISTENING, listener: () -> Unit): Unit /* this */
-    fun once(event: ServerEvent.CHECKCONTINUE, listener: RequestListener<Request, Response>): Unit /* this */
-    fun once(event: ServerEvent.CHECKEXPECTATION, listener: RequestListener<Request, Response>): Unit /* this */
-    fun once(
-        event: ServerEvent.CLIENTERROR,
-        listener: (err: js.errors.JsError, socket: node.stream.Duplex) -> Unit,
-    ): Unit /* this */
 
-    fun once(
-        event: ServerEvent.CONNECT,
-        listener: (req: Request, socket: node.stream.Duplex, head: node.buffer.Buffer) -> Unit,
-    ): Unit /* this */
-
-    fun once(
-        event: ServerEvent.DROPREQUEST,
-        listener: (req: Request, socket: node.stream.Duplex) -> Unit,
-    ): Unit /* this */
-
-    fun once(event: ServerEvent.REQUEST, listener: RequestListener<Request, Response>): Unit /* this */
-    fun once(
-        event: ServerEvent.UPGRADE,
-        listener: (req: Request, socket: node.stream.Duplex, head: node.buffer.Buffer) -> Unit,
-    ): Unit /* this */
 
     override fun prependListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
-    fun prependListener(event: ServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: ServerEvent.CONNECTION, listener: (socket: Socket) -> Unit): Unit /* this */
-    fun prependListener(event: ServerEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun prependListener(event: ServerEvent.LISTENING, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: ServerEvent.CHECKCONTINUE, listener: RequestListener<Request, Response>): Unit /* this */
-    fun prependListener(
-        event: ServerEvent.CHECKEXPECTATION,
-        listener: RequestListener<Request, Response>,
-    ): Unit /* this */
-
-    fun prependListener(
-        event: ServerEvent.CLIENTERROR,
-        listener: (err: js.errors.JsError, socket: node.stream.Duplex) -> Unit,
-    ): Unit /* this */
-
-    fun prependListener(
-        event: ServerEvent.CONNECT,
-        listener: (req: Request, socket: node.stream.Duplex, head: node.buffer.Buffer) -> Unit,
-    ): Unit /* this */
-
-    fun prependListener(
-        event: ServerEvent.DROPREQUEST,
-        listener: (req: Request, socket: node.stream.Duplex) -> Unit,
-    ): Unit /* this */
-
-    fun prependListener(event: ServerEvent.REQUEST, listener: RequestListener<Request, Response>): Unit /* this */
-    fun prependListener(
-        event: ServerEvent.UPGRADE,
-        listener: (req: Request, socket: node.stream.Duplex, head: node.buffer.Buffer) -> Unit,
-    ): Unit /* this */
 
     override fun prependOnceListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
-    fun prependOnceListener(event: ServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: ServerEvent.CONNECTION, listener: (socket: Socket) -> Unit): Unit /* this */
-    fun prependOnceListener(event: ServerEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun prependOnceListener(event: ServerEvent.LISTENING, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(
-        event: ServerEvent.CHECKCONTINUE,
-        listener: RequestListener<Request, Response>,
-    ): Unit /* this */
 
-    fun prependOnceListener(
-        event: ServerEvent.CHECKEXPECTATION,
-        listener: RequestListener<Request, Response>,
-    ): Unit /* this */
+    @web.events.JsEvent("close")
+    override val closeEvent: node.events.EventInstance<js.array.JsTuple>
 
-    fun prependOnceListener(
-        event: ServerEvent.CLIENTERROR,
-        listener: (err: js.errors.JsError, socket: node.stream.Duplex) -> Unit,
-    ): Unit /* this */
+    @web.events.JsEvent("connection")
+    override val connectionEvent: node.events.EventInstance<js.array.JsTuple1<Socket>>
 
-    fun prependOnceListener(
-        event: ServerEvent.CONNECT,
-        listener: (req: Request, socket: node.stream.Duplex, head: node.buffer.Buffer) -> Unit,
-    ): Unit /* this */
+    @web.events.JsEvent("error")
+    override val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
 
-    fun prependOnceListener(
-        event: ServerEvent.DROPREQUEST,
-        listener: (req: Request, socket: node.stream.Duplex) -> Unit,
-    ): Unit /* this */
+    @web.events.JsEvent("listening")
+    override val listeningEvent: node.events.EventInstance<js.array.JsTuple>
 
-    fun prependOnceListener(event: ServerEvent.REQUEST, listener: RequestListener<Request, Response>): Unit /* this */
-    fun prependOnceListener(
-        event: ServerEvent.UPGRADE,
-        listener: (req: Request, socket: node.stream.Duplex, head: node.buffer.Buffer) -> Unit,
-    ): Unit /* this */
+    @web.events.JsEvent("checkContinue")
+    open val checkContinueEvent: node.events.EventInstance<js.array.JsTuple2<Request, Response>>
+
+    @web.events.JsEvent("checkExpectation")
+    open val checkExpectationEvent: node.events.EventInstance<js.array.JsTuple2<Request, Response>>
+
+    @web.events.JsEvent("clientError")
+    open val clientErrorEvent: node.events.EventInstance<js.array.JsTuple2<js.errors.JsError, node.stream.Duplex>>
+
+    @web.events.JsEvent("connect")
+    open val connectEvent: node.events.EventInstance<js.array.JsTuple3<Request, node.stream.Duplex, node.buffer.Buffer>>
+
+    @web.events.JsEvent("dropRequest")
+    val dropRequestEvent: node.events.EventInstance<js.array.JsTuple2<Request, node.stream.Duplex>>
+
+    @web.events.JsEvent("request")
+    open val requestEvent: node.events.EventInstance<js.array.JsTuple2<Request, Response>>
+
+    @web.events.JsEvent("upgrade")
+    open val upgradeEvent: node.events.EventInstance<js.array.JsTuple3<Request, node.stream.Duplex, node.buffer.Buffer>>
 }

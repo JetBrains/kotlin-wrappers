@@ -275,12 +275,8 @@ open external class Writable : Stream, node.WritableStream {
      * 5. pipe
      * 6. unpipe
      */
-    fun addListener(event: WritableEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun addListener(event: WritableEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun addListener(event: WritableEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun addListener(event: WritableEvent.FINISH, listener: () -> Unit): Unit /* this */
-    fun addListener(event: WritableEvent.PIPE, listener: (src: Readable) -> Unit): Unit /* this */
-    fun addListener(event: WritableEvent.UNPIPE, listener: (src: Readable) -> Unit): Unit /* this */
+
+
     open fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     open fun addListener(
@@ -288,39 +284,22 @@ open external class Writable : Stream, node.WritableStream {
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
-    fun emit(event: WritableEvent.CLOSE): Boolean
-    fun emit(event: WritableEvent.DRAIN): Boolean
-    fun emit(event: WritableEvent.ERROR, err: js.errors.JsError): Boolean
-    fun emit(event: WritableEvent.FINISH): Boolean
-    fun emit(event: WritableEvent.PIPE, src: Readable): Boolean
-    fun emit(event: WritableEvent.UNPIPE, src: Readable): Boolean
+
     open fun emit(event: String, vararg args: Any?): Boolean
 
     open fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
-    fun on(event: WritableEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun on(event: WritableEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun on(event: WritableEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun on(event: WritableEvent.FINISH, listener: () -> Unit): Unit /* this */
-    fun on(event: WritableEvent.PIPE, listener: (src: Readable) -> Unit): Unit /* this */
-    fun on(event: WritableEvent.UNPIPE, listener: (src: Readable) -> Unit): Unit /* this */
+
+
     open fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     open fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun once(event: WritableEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun once(event: WritableEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun once(event: WritableEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun once(event: WritableEvent.FINISH, listener: () -> Unit): Unit /* this */
-    fun once(event: WritableEvent.PIPE, listener: (src: Readable) -> Unit): Unit /* this */
-    fun once(event: WritableEvent.UNPIPE, listener: (src: Readable) -> Unit): Unit /* this */
+
+
     open fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     open fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-    fun prependListener(event: WritableEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: WritableEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: WritableEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun prependListener(event: WritableEvent.FINISH, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: WritableEvent.PIPE, listener: (src: Readable) -> Unit): Unit /* this */
-    fun prependListener(event: WritableEvent.UNPIPE, listener: (src: Readable) -> Unit): Unit /* this */
+
+
     open fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     open fun prependListener(
@@ -328,12 +307,7 @@ open external class Writable : Stream, node.WritableStream {
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
-    fun prependOnceListener(event: WritableEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: WritableEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: WritableEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun prependOnceListener(event: WritableEvent.FINISH, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: WritableEvent.PIPE, listener: (src: Readable) -> Unit): Unit /* this */
-    fun prependOnceListener(event: WritableEvent.UNPIPE, listener: (src: Readable) -> Unit): Unit /* this */
+
     open fun prependOnceListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
@@ -344,12 +318,7 @@ open external class Writable : Stream, node.WritableStream {
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
-    fun removeListener(event: WritableEvent.CLOSE, listener: () -> Unit): Unit /* this */
-    fun removeListener(event: WritableEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun removeListener(event: WritableEvent.ERROR, listener: (err: js.errors.JsError) -> Unit): Unit /* this */
-    fun removeListener(event: WritableEvent.FINISH, listener: () -> Unit): Unit /* this */
-    fun removeListener(event: WritableEvent.PIPE, listener: (src: Readable) -> Unit): Unit /* this */
-    fun removeListener(event: WritableEvent.UNPIPE, listener: (src: Readable) -> Unit): Unit /* this */
+
     open fun removeListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     open fun removeListener(
@@ -374,6 +343,24 @@ open external class Writable : Stream, node.WritableStream {
 
     override fun end(data: Uint8Array, cb: () -> Unit): Unit /* this */
     override fun end(str: String, encoding: node.buffer.BufferEncoding, cb: () -> Unit): Unit /* this */
+
+    @web.events.JsEvent("close")
+    open val closeEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("drain")
+    open val drainEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("error")
+    open val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+
+    @web.events.JsEvent("finish")
+    open val finishEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("pipe")
+    open val pipeEvent: node.events.EventInstance<js.array.JsTuple1<Readable>>
+
+    @web.events.JsEvent("unpipe")
+    open val unpipeEvent: node.events.EventInstance<js.array.JsTuple1<Readable>>
 
     companion object {
         /**

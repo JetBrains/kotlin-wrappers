@@ -105,7 +105,6 @@
         "**/events/Listener.kt",
         "**/events/Listener1.kt",
         "**/events/Listener2.kt",
-        "**/inspector/SessionEvent.kt",
         "**/module/global/**",
         "**/path/namespace.kt",
         "**/path/PlatformPathDelimiter.kt",
@@ -142,8 +141,7 @@
         "**/workerThreads/global/namespace.kt",
         "**/workerThreads/BroadcastChannel.kt",
         "**/workerThreads/MessageChannel.kt",
-        "**/workerThreads/MessagePort.kt",
-        "**/workerThreads/MessagePortEvent.kt"
+        "**/workerThreads/MessagePort.kt"
     ],
     "libraryName": "node",
     "libraryNameOutputPrefix": true,
@@ -652,10 +650,6 @@
             "node.http.IncomingMessage",
             "node.http.ServerResponse"
         ],
-        "https/ServerEvent.kt": [
-            "node.http.IncomingMessage",
-            "node.http.ServerResponse"
-        ],
         "https/ServerOptions.kt": [
             "node.http.IncomingMessage",
             "node.http.ServerResponse"
@@ -703,9 +697,6 @@
             "web.url.URL",
             "node.Module",
             "node.events.EventEmitter"
-        ],
-        "process/ProcessEvent.kt": [
-            "js.promise.Promise"
         ],
         "process/ProcessEnv.kt": [
             "node.Dict"
