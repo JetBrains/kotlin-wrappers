@@ -43,7 +43,7 @@ external class ArrayBuffer(
      * [MDN](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/resize)
      */
     fun resize(
-        newByteLength: Int = definedExternally,
+        newByteLength: Int,
     )
 
     /**
@@ -59,7 +59,7 @@ external class ArrayBuffer(
      * [MDN](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/transfer)
      */
     fun transfer(
-        newByteLength: Int = definedExternally,
+        newByteLength: Int,
     ): ArrayBuffer
 
     /**
@@ -68,7 +68,7 @@ external class ArrayBuffer(
      * [MDN](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/transferToFixedLength)
      */
     fun transferToFixedLength(
-        newByteLength: Int = definedExternally,
+        newByteLength: Int,
     ): ArrayBuffer
 
     companion object {
