@@ -7,6 +7,5 @@ package web.xpath
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XPathEvaluator)
  */
-external class XPathEvaluator
-private constructor() :
+external class XPathEvaluator :
     XPathEvaluatorBase

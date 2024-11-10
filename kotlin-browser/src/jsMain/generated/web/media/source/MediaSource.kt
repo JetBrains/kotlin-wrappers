@@ -9,8 +9,7 @@ import web.events.*
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource)
  */
-open external class MediaSource
-private constructor() :
+open external class MediaSource :
     EventTarget {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/activeSourceBuffers)

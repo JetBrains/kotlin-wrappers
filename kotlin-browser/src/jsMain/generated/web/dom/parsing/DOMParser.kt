@@ -9,8 +9,7 @@ import web.dom.Document
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMParser)
  */
-external class DOMParser
-private constructor() {
+external class DOMParser {
     /**
      * Parses string using either the HTML or XML parser, according to type, and returns the resulting Document. type can be "text/html" (which will invoke the HTML parser), or any of "text/xml", "application/xml", "application/xhtml+xml", or "image/svg+xml" (which will invoke the XML parser).
      *

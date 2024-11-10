@@ -16,8 +16,7 @@ import web.url.URLSearchParams
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)
  */
-open external class XMLHttpRequest
-private constructor() :
+open external class XMLHttpRequest :
     XMLHttpRequestEventTarget {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/readystatechange_event)
