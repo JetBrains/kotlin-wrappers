@@ -18,7 +18,8 @@ import web.media.streams.MediaTrackSupportedConstraints
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices)
  */
-sealed external class MediaDevices :
+external class MediaDevices
+private constructor() :
     EventTarget {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/devicechange_event)

@@ -7,7 +7,8 @@ package web.html
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaError)
  */
-sealed external class MediaError {
+external class MediaError
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaError/code)
      */

@@ -5,7 +5,8 @@ package web.media.session
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession)
  */
-sealed external class MediaSession {
+external class MediaSession
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession/metadata)
      */

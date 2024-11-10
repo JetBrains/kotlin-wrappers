@@ -15,7 +15,8 @@ import web.time.EpochTimeStamp
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession)
  */
-sealed external class MediaKeySession :
+external class MediaKeySession
+private constructor() :
     EventTarget {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/closed)

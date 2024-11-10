@@ -11,7 +11,8 @@ import seskar.js.JsAsync
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySystemAccess)
  */
-sealed external class MediaKeySystemAccess {
+external class MediaKeySystemAccess
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySystemAccess/keySystem)
      */

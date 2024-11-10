@@ -8,9 +8,15 @@ import js.iterable.JsIterable
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaList)
  */
-sealed external class MediaList :
+external class MediaList
+private constructor() :
     ArrayLike<MediaQuery>,
     JsIterable<MediaQuery> {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaList/length)
+     */
+    override val length: Int
+
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaList/mediaText)
      */

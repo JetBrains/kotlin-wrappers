@@ -8,7 +8,8 @@ package web.media.devices
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDeviceInfo)
  */
-sealed external class MediaDeviceInfo {
+open external class MediaDeviceInfo
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDeviceInfo/deviceId)
      */

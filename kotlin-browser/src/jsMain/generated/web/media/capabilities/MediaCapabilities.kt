@@ -8,7 +8,8 @@ import seskar.js.JsAsync
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaCapabilities)
  */
-sealed external class MediaCapabilities {
+external class MediaCapabilities
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaCapabilities/decodingInfo)
      */

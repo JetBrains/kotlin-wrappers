@@ -12,7 +12,8 @@ import seskar.js.JsAsync
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys)
  */
-sealed external class MediaKeys {
+external class MediaKeys
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/createSession)
      */
