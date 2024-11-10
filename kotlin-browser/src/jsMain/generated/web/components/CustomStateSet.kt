@@ -7,5 +7,7 @@ import js.collections.MutableSetLike
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomStateSet)
  */
-sealed external class CustomStateSet :
+sealed /* final */
+external class CustomStateSet
+private constructor() :
     MutableSetLike<String>

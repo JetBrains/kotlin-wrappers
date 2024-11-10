@@ -5,7 +5,9 @@ package web.cssom
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMap)
  */
-sealed external class StylePropertyMap :
+sealed /* final */
+external class StylePropertyMap
+private constructor() :
     StylePropertyMapReadOnly {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMap/append)

@@ -15,7 +15,8 @@ import web.url.URL
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage)
  */
-sealed external class CacheStorage {
+external class CacheStorage
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/delete)
      */

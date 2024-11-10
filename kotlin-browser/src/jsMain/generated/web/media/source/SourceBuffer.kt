@@ -10,7 +10,8 @@ import web.events.*
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer)
  */
-sealed external class SourceBuffer :
+external class SourceBuffer
+private constructor() :
     EventTarget {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/appendWindowEnd)

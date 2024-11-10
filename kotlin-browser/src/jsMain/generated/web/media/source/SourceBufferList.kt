@@ -11,10 +11,15 @@ import web.events.*
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBufferList)
  */
-sealed external class SourceBufferList :
+external class SourceBufferList
+private constructor() :
     EventTarget,
     ArrayLike<SourceBuffer>,
     JsIterable<SourceBuffer> {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBufferList/length)
+     */
+    override val length: Int
     var onaddsourcebuffer: EventHandler<Event, SourceBufferList, SourceBufferList>?
     var onremovesourcebuffer: EventHandler<Event, SourceBufferList, SourceBufferList>?
 

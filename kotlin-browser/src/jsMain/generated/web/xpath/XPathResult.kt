@@ -9,7 +9,8 @@ import web.dom.Node
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XPathResult)
  */
-sealed external class XPathResult {
+external class XPathResult
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XPathResult/booleanValue)
      */

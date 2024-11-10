@@ -7,4 +7,5 @@ package web.worklets
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkletGlobalScope)
  */
-abstract external class WorkletGlobalScope
+open external class WorkletGlobalScope
+private constructor()

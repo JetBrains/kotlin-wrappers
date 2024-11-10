@@ -4,5 +4,7 @@ package web.viewtransition
 
 import js.collections.MutableSetLike
 
-sealed external class ViewTransitionTypeSet :
+sealed /* final */
+external class ViewTransitionTypeSet
+private constructor() :
     MutableSetLike<String>

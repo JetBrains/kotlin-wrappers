@@ -11,7 +11,8 @@ import web.html.HtmlTagName
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry)
  */
-sealed external class CustomElementRegistry {
+external class CustomElementRegistry
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/define)
      */

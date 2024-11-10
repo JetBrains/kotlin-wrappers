@@ -13,7 +13,8 @@ import web.promise.PromiseRejectionEvent
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope)
  */
-abstract external class WorkerGlobalScope :
+open external class WorkerGlobalScope
+private constructor() :
     EventTarget,
     FontFaceSource {
     /**

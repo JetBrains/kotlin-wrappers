@@ -12,7 +12,8 @@ import web.url.URL
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient)
  */
-sealed external class WindowClient :
+external class WindowClient
+private constructor() :
     Client {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/focused)

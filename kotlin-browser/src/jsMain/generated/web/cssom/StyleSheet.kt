@@ -7,7 +7,8 @@ package web.cssom
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet)
  */
-sealed external class StyleSheet {
+open external class StyleSheet
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet/disabled)
      */

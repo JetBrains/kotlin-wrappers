@@ -10,7 +10,9 @@ import js.iterable.JsIterable
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMapReadOnly)
  */
-sealed external class StylePropertyMapReadOnly :
+sealed /* final */
+external class StylePropertyMapReadOnly
+private constructor() :
     MapLike<String, JsIterable<CSSStyleValue>>,
     ReadonlySetLike<String> {
     /**

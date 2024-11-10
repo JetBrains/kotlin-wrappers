@@ -16,7 +16,8 @@ import web.url.URL
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache)
  */
-sealed external class Cache {
+external class Cache
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/add)
      */

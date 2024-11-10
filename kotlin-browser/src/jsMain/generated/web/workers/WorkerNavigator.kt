@@ -16,7 +16,9 @@ import web.serviceworker.ServiceWorkerContainer
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerNavigator)
  */
-sealed external class WorkerNavigator :
+sealed /* final */
+external class WorkerNavigator
+private constructor() :
     NavigatorBadge,
     NavigatorConcurrentHardware,
     NavigatorID,

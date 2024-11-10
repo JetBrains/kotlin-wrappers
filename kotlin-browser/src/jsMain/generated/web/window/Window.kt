@@ -37,7 +37,8 @@ import web.url.URL
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window)
  */
-sealed external class Window :
+external class Window
+private constructor() :
     EventTarget,
     GlobalEventHandlers,
     WindowEventHandlers,

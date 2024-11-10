@@ -10,7 +10,8 @@ import web.dom.NodeList
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MutationRecord)
  */
-sealed external class MutationRecord {
+external class MutationRecord
+private constructor() {
     /**
      * Return the nodes added and removed respectively.
      *

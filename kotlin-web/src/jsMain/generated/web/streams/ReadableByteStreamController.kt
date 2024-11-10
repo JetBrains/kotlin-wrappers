@@ -9,7 +9,8 @@ import js.errors.JsError
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableByteStreamController)
  */
-sealed external class ReadableByteStreamController :
+external class ReadableByteStreamController
+private constructor() :
     ReadableStreamController<Void> {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableByteStreamController/byobRequest)

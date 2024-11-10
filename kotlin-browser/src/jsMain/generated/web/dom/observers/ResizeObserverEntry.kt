@@ -9,7 +9,8 @@ import web.geometry.DOMRectReadOnly
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry)
  */
-sealed external class ResizeObserverEntry {
+external class ResizeObserverEntry
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry/borderBoxSize)
      */

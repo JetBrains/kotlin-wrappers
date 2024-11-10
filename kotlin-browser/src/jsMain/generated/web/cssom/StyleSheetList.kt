@@ -10,9 +10,15 @@ import js.iterable.JsIterable
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheetList)
  */
-sealed external class StyleSheetList :
+external class StyleSheetList
+private constructor() :
     ArrayLike<CSSStyleSheet>,
     JsIterable<CSSStyleSheet> {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheetList/length)
+     */
+    override val length: Int
+
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheetList/item)
      */

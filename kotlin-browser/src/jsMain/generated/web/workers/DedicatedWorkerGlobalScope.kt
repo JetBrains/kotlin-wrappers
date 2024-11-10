@@ -16,7 +16,8 @@ import web.serialization.StructuredSerializeOptions
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope)
  */
-sealed external class DedicatedWorkerGlobalScope :
+external class DedicatedWorkerGlobalScope
+private constructor() :
     WorkerGlobalScope {
     /**
      * Returns dedicatedWorkerGlobal's name, i.e. the value given to the Worker constructor. Primarily useful for debugging.

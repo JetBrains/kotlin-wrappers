@@ -8,7 +8,8 @@ import js.promise.Promise
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ViewTransition)
  */
-sealed external class ViewTransition {
+external class ViewTransition
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ViewTransition/finished)
      */

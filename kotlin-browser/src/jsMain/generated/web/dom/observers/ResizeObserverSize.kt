@@ -5,7 +5,8 @@ package web.dom.observers
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserverSize)
  */
-sealed external class ResizeObserverSize {
+external class ResizeObserverSize
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserverSize/blockSize)
      */

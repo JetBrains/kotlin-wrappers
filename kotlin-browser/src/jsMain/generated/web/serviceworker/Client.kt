@@ -11,7 +11,8 @@ import web.serialization.StructuredSerializeOptions
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Client)
  */
-sealed external class Client {
+open external class Client
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Client/frameType)
      */

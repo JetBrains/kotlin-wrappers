@@ -7,7 +7,8 @@ package web.workers
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerLocation)
  */
-sealed external class WorkerLocation {
+external class WorkerLocation
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerLocation/hash)
      */

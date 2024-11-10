@@ -8,7 +8,8 @@ import js.core.JsLong
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBRequest)
  */
-sealed external class ReadableStreamBYOBRequest {
+external class ReadableStreamBYOBRequest
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBRequest/view)
      */

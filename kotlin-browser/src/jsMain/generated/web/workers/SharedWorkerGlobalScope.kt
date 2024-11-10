@@ -10,7 +10,8 @@ import web.messaging.MessageEvent
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorkerGlobalScope)
  */
-sealed external class SharedWorkerGlobalScope :
+external class SharedWorkerGlobalScope
+private constructor() :
     WorkerGlobalScope {
     /**
      * Returns sharedWorkerGlobal's name, i.e. the value given to the SharedWorker constructor. Multiple SharedWorker objects can correspond to the same shared worker (and SharedWorkerGlobalScope), by reusing the same name.

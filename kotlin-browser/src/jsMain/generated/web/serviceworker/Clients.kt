@@ -13,7 +13,8 @@ import web.url.URL
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients)
  */
-sealed external class Clients {
+external class Clients
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/claim)
      */
