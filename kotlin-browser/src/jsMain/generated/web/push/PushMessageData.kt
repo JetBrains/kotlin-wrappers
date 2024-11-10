@@ -12,7 +12,8 @@ import web.blob.Blob
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushMessageData)
  */
-sealed external class PushMessageData {
+external class PushMessageData
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushMessageData/arrayBuffer)
      */

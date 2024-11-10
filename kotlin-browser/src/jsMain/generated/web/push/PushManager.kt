@@ -13,7 +13,8 @@ import web.permissions.PermissionState
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager)
  */
-sealed external class PushManager {
+external class PushManager
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/getSubscription)
      */

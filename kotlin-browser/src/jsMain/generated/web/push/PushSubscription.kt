@@ -13,7 +13,8 @@ import web.time.EpochTimeStamp
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushSubscription)
  */
-sealed external class PushSubscription {
+external class PushSubscription
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushSubscription/endpoint)
      */

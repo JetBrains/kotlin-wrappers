@@ -9,7 +9,8 @@ import js.buffer.ArrayBuffer
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushSubscriptionOptions)
  */
-sealed external class PushSubscriptionOptions {
+external class PushSubscriptionOptions
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushSubscriptionOptions/applicationServerKey)
      */
