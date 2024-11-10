@@ -20,7 +20,7 @@ private fun <T> toEqualSetter(
                 if (newValue != oldValue) newValue else oldValue
             }
         } else {
-            val newValue = source.unsafeCast<T>()
+            val newValue = unsafeCast<T>(source)
             setter { oldValue ->
                 if (newValue != oldValue) newValue else oldValue
             }
