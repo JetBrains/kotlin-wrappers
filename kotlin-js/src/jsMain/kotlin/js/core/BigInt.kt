@@ -23,7 +23,6 @@ internal val POW = JsFunction<BigInt, BigInt, BigInt>(
 @JsPrimitive
 external class BigInt
 private constructor() :
-    BigIntComparableAdapter,
     Comparable<BigInt> {
 
     inline operator fun unaryMinus(): BigInt =
@@ -55,6 +54,8 @@ private constructor() :
 
     inline fun pow(x: BigInt): BigInt =
         POW(this, x)
+
+    override fun compareTo(other: BigInt): Int
 
     /**
      * Returns a string representation of an object.
