@@ -36,7 +36,8 @@ import web.uievents.*
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element)
  */
-abstract external class Element :
+open external class Element
+private constructor() :
     Node,
     ARIAMixin,
     Animatable,
