@@ -42,9 +42,9 @@ sealed external interface ClassMethodDecoratorContext<This : Any, Value : Functi
     }
 
     /**
-     * Adds a callback to be invoked either before static initializers are run (when
-     * decorating a `static` element), or before instance initializers are run (when
-     * decorating a non-`static` element).
+     * Adds a callback to be invoked either after static methods are defined but before
+     * static initializers are run (when decorating a `static` element), or before instance
+     * initializers are run (when decorating a non-`static` element).
      *
      * @example
      * ```ts

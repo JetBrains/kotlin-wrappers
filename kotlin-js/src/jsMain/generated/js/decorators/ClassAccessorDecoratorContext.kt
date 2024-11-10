@@ -50,9 +50,8 @@ sealed external interface ClassAccessorDecoratorContext<This : Any, Value : Any>
     }
 
     /**
-     * Adds a callback to be invoked either before static initializers are run (when
-     * decorating a `static` element), or before instance initializers are run (when
-     * decorating a non-`static` element).
+     * Adds a callback to be invoked immediately after the auto `accessor` being
+     * decorated is initialized (regardless if the `accessor` is `static` or not).
      */
     fun addInitializer(initializer: (/* this: This */) -> Unit)
 
