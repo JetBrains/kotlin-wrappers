@@ -11,7 +11,8 @@ import web.fs.FileSystemDirectoryHandle
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageManager)
  */
-sealed external class StorageManager {
+external class StorageManager
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageManager/estimate)
      */

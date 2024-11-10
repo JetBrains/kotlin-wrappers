@@ -7,7 +7,8 @@ import web.time.DOMHighResTimeStamp
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IdleDeadline)
  */
-sealed external class IdleDeadline {
+external class IdleDeadline
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IdleDeadline/didTimeout)
      */

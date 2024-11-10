@@ -10,7 +10,8 @@ import web.events.*
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback)
  */
-sealed external class RemotePlayback :
+external class RemotePlayback
+private constructor() :
     EventTarget {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/connect_event)

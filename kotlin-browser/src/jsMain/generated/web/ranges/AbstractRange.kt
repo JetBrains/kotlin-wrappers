@@ -7,7 +7,8 @@ import web.dom.Node
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbstractRange)
  */
-sealed external class AbstractRange {
+open external class AbstractRange
+private constructor() {
     /**
      * Returns true if range is collapsed, and false otherwise.
      *

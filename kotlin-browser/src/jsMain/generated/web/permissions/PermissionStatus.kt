@@ -7,7 +7,8 @@ import web.events.*
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PermissionStatus)
  */
-sealed external class PermissionStatus :
+external class PermissionStatus
+private constructor() :
     EventTarget {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PermissionStatus/name)

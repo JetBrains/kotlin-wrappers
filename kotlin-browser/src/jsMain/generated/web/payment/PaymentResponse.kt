@@ -16,7 +16,8 @@ import web.events.JsEvent
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse)
  */
-sealed external class PaymentResponse :
+external class PaymentResponse
+private constructor() :
     EventTarget {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/details)

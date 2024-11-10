@@ -5,7 +5,8 @@ package web.reporting
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReportBody)
  */
-sealed external class ReportBody {
+external class ReportBody
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReportBody/toJSON)
      */

@@ -7,7 +7,8 @@ import web.events.*
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PictureInPictureWindow)
  */
-sealed external class PictureInPictureWindow :
+external class PictureInPictureWindow
+private constructor() :
     EventTarget {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PictureInPictureWindow/height)

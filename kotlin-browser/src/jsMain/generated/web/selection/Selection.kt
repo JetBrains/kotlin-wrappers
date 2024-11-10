@@ -10,7 +10,8 @@ import web.ranges.Range
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection)
  */
-sealed external class Selection {
+external class Selection
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/anchorNode)
      */

@@ -7,7 +7,8 @@ package web.storage
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Storage)
  */
-sealed external class Storage {
+external class Storage
+private constructor() {
     /**
      * Returns the number of key/value pairs.
      *

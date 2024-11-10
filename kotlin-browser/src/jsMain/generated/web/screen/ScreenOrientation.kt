@@ -7,7 +7,8 @@ import web.events.*
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScreenOrientation)
  */
-sealed external class ScreenOrientation :
+external class ScreenOrientation
+private constructor() :
     EventTarget {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScreenOrientation/angle)

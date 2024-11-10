@@ -8,7 +8,8 @@ import web.time.DOMHighResTimeStamp
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LargestContentfulPaint)
  */
-sealed external class LargestContentfulPaint :
+external class LargestContentfulPaint
+private constructor() :
     PerformanceEntry {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LargestContentfulPaint/element)

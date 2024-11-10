@@ -8,7 +8,8 @@ import seskar.js.JsAsync
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Permissions)
  */
-sealed external class Permissions {
+external class Permissions
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Permissions/query)
      */

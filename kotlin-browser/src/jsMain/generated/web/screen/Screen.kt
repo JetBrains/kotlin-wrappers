@@ -12,7 +12,8 @@ import web.events.JsEvent
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen)
  */
-sealed external class Screen :
+external class Screen
+private constructor() :
     EventTarget {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/availHeight)
