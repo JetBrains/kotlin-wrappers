@@ -10,9 +10,17 @@ import js.iterable.JsIterable
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMStringList)
  */
-sealed external class DOMStringList :
+external class DOMStringList
+private constructor() :
     ArrayLike<String>,
     JsIterable<String> {
+    /**
+     * Returns the number of strings in strings.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMStringList/length)
+     */
+    override val length: Int
+
     /**
      * Returns true if strings contains string, and false otherwise.
      *

@@ -7,7 +7,8 @@ package web.html
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionsCollection)
  */
-sealed external class HTMLOptionsCollection :
+external class HTMLOptionsCollection
+private constructor() :
     HTMLCollectionOf<HTMLOptionElement> {
     /**
      * Returns the number of elements in the collection.

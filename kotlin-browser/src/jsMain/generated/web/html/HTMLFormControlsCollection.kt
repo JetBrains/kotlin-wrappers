@@ -9,8 +9,12 @@ import web.dom.Element
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormControlsCollection)
  */
-sealed external class HTMLFormControlsCollection :
+external class HTMLFormControlsCollection
+private constructor() :
     HTMLCollectionBase<Element> {
+    override val length: Int
+    override fun item(index: Int): Element?
+
     /**
      * Returns the item with ID or name name from the collection.
      *

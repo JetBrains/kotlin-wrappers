@@ -9,7 +9,8 @@ import web.xml.XMLDocument
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMImplementation)
  */
-sealed external class DOMImplementation {
+external class DOMImplementation
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMImplementation/createDocument)
      */

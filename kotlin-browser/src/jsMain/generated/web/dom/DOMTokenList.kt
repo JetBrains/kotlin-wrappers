@@ -2,15 +2,25 @@
 
 package web.dom
 
+import js.array.JsTuple2
 import js.collections.ListLike
+import js.iterable.JsIterator
 
 /**
  * A set of space-separated tokens. Such a set is returned by Element.classList, HTMLLinkElement.relList, HTMLAnchorElement.relList, HTMLAreaElement.relList, HTMLIframeElement.sandbox, or HTMLOutputElement.htmlFor. It is indexed beginning with 0 as with JavaScript Array objects. DOMTokenList is always case-sensitive.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList)
  */
-sealed external class DOMTokenList :
+external class DOMTokenList
+private constructor() :
     ListLike<String> {
+    /**
+     * Returns the number of tokens.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/length)
+     */
+    override val length: Int
+
     /**
      * Returns the associated set as string.
      *
@@ -96,4 +106,9 @@ sealed external class DOMTokenList :
         token: String,
         force: Boolean = definedExternally,
     ): Boolean
+
+    override fun entries(): JsIterator<JsTuple2<Int, String>>
+    override fun keys(): JsIterator<Int>
+    override fun values(): JsIterator<String>
+    override fun forEach(action: (item: String) -> Unit)
 }

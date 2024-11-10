@@ -4,8 +4,12 @@ package web.html
 
 import web.dom.Element
 
-sealed external class HTMLCollection<T : Element> :
+open external class HTMLCollection<T : Element>
+private constructor() :
     HTMLCollectionBase<T> {
+    override val length: Int
+    override fun item(index: Int): T?
+
     /**
      * Retrieves a select object or an object from an options collection.
      *
