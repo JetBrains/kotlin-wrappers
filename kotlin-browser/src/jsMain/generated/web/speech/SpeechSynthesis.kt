@@ -10,7 +10,8 @@ import web.events.*
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesis)
  */
-sealed external class SpeechSynthesis :
+external class SpeechSynthesis
+private constructor() :
     EventTarget {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesis/voiceschanged_event)

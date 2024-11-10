@@ -7,7 +7,8 @@ package web.speech
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisVoice)
  */
-sealed external class SpeechSynthesisVoice {
+external class SpeechSynthesisVoice
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisVoice/default)
      */

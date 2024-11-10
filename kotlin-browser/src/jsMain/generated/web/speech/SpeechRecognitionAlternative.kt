@@ -5,7 +5,8 @@ package web.speech
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechRecognitionAlternative)
  */
-sealed external class SpeechRecognitionAlternative {
+external class SpeechRecognitionAlternative
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechRecognitionAlternative/confidence)
      */
