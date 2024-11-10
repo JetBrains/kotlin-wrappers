@@ -5,7 +5,7 @@ package web.cssom
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRotate)
  */
-external class CSSRotate(
+open external class CSSRotate(
     angle: CSSNumericValue,
 ) : CSSTransformComponent {
     constructor(

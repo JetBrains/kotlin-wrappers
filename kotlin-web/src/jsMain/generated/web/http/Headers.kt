@@ -13,7 +13,7 @@ import js.objects.ReadonlyRecord
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers)
  */
-external class Headers(
+open external class Headers(
     init: ReadonlyArray<JsTuple2<String, String>> = definedExternally,
 ) : MapLike<String, String> {
     constructor(init: ReadonlyRecord<String, String>)

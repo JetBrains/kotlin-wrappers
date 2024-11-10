@@ -7,7 +7,7 @@ package web.audio
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioBufferSourceNode)
  */
-external class AudioBufferSourceNode(
+open external class AudioBufferSourceNode(
     context: BaseAudioContext,
     options: AudioBufferSourceOptions = definedExternally,
 ) : AudioScheduledSourceNode {

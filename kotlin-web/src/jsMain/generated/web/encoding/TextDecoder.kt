@@ -9,7 +9,7 @@ import js.buffer.AllowSharedBufferSource
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextDecoder)
  */
-external class TextDecoder(
+open external class TextDecoder(
     label: String = definedExternally,
     options: TextDecoderOptions = definedExternally,
 ) : TextDecoderCommon {

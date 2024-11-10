@@ -10,7 +10,7 @@ import web.dom.Node
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MutationObserver)
  */
-external class MutationObserver(
+open external class MutationObserver(
     callback: MutationCallback,
 ) {
     /**

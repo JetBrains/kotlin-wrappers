@@ -7,7 +7,7 @@ package web.audio
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ChannelSplitterNode)
  */
-external class ChannelSplitterNode(
+open external class ChannelSplitterNode(
     context: BaseAudioContext,
     options: ChannelSplitterOptions = definedExternally,
 ) : AudioNode

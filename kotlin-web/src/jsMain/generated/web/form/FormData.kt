@@ -14,7 +14,7 @@ import web.events.EventTarget
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData)
  */
-external class FormData(
+open external class FormData(
     form: EventTarget /* HTMLFormElement */ = definedExternally,
     submitter: EventTarget /* HTMLElement */? = definedExternally,
 ) : MapLike<String, FormDataEntryValue> {

@@ -7,7 +7,7 @@ import web.dom.Element
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserver)
  */
-external class ResizeObserver(
+open external class ResizeObserver(
     callback: ResizeObserverCallback,
 ) {
     /**

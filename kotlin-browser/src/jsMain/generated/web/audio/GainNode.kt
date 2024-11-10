@@ -7,7 +7,7 @@ package web.audio
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GainNode)
  */
-external class GainNode(
+open external class GainNode(
     context: BaseAudioContext,
     options: GainOptions = definedExternally,
 ) : AudioNode {

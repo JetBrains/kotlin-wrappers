@@ -10,7 +10,7 @@ import js.iterable.JsIterator
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSUnparsedValue)
  */
-external class CSSUnparsedValue(
+open external class CSSUnparsedValue(
     members: ReadonlyArray<CSSUnparsedSegment>,
 ) : CSSStyleValue,
     ListLike<CSSUnparsedSegment> {

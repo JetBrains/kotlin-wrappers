@@ -7,7 +7,7 @@ package web.assembly
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/Instance)
  */
-external class Instance(
+open external class Instance(
     module: Module,
     importObject: Imports = definedExternally,
 ) {

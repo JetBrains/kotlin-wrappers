@@ -9,7 +9,7 @@ import web.html.HTMLMediaElement
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaElementAudioSourceNode)
  */
-external class MediaElementAudioSourceNode(
+open external class MediaElementAudioSourceNode(
     context: AudioContext,
     options: MediaElementAudioSourceOptions,
 ) : AudioNode {

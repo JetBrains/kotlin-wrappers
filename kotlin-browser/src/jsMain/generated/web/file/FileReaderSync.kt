@@ -10,7 +10,7 @@ import web.blob.Blob
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReaderSync)
  */
-external class FileReaderSync {
+open external class FileReaderSync {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReaderSync/readAsArrayBuffer)
      */

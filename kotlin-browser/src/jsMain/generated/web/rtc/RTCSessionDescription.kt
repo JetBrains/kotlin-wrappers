@@ -7,7 +7,7 @@ package web.rtc
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSessionDescription)
  */
-external class RTCSessionDescription(
+open external class RTCSessionDescription(
     init: RTCSessionDescriptionInit,
 ) {
     /**

@@ -7,7 +7,7 @@ import js.array.ReadonlyArray
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)
  */
-external class PerformanceObserver(
+open external class PerformanceObserver(
     callback: PerformanceObserverCallback,
 ) {
     /**

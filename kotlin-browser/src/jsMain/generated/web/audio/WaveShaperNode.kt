@@ -9,7 +9,7 @@ import js.typedarrays.Float32Array
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WaveShaperNode)
  */
-external class WaveShaperNode(
+open external class WaveShaperNode(
     context: BaseAudioContext,
     options: WaveShaperOptions = definedExternally,
 ) : AudioNode {

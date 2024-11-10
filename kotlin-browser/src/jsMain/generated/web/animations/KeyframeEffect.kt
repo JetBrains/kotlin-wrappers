@@ -8,7 +8,7 @@ import web.dom.Element
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyframeEffect)
  */
-external class KeyframeEffect(
+open external class KeyframeEffect(
     target: Element?,
     keyframes: ReadonlyArray<Keyframe>?,
     options: Double = definedExternally,

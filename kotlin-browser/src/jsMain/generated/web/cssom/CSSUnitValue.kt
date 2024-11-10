@@ -5,7 +5,7 @@ package web.cssom
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSUnitValue)
  */
-external class CSSUnitValue(
+open external class CSSUnitValue(
     value: Double,
     unit: String,
 ) : CSSNumericValue {

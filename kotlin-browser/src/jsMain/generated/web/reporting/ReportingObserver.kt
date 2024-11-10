@@ -5,7 +5,7 @@ package web.reporting
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReportingObserver)
  */
-external class ReportingObserver(
+open external class ReportingObserver(
     callback: ReportingObserverCallback,
     options: ReportingObserverOptions = definedExternally,
 ) {

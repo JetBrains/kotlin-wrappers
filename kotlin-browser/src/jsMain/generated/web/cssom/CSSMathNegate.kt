@@ -5,7 +5,7 @@ package web.cssom
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSMathNegate)
  */
-external class CSSMathNegate(
+open external class CSSMathNegate(
     arg: CSSNumberish,
 ) : CSSMathValue {
     /**

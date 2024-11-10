@@ -9,7 +9,7 @@ import web.media.streams.MediaStream
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamAudioSourceNode)
  */
-external class MediaStreamAudioSourceNode(
+open external class MediaStreamAudioSourceNode(
     context: AudioContext,
     options: MediaStreamAudioSourceOptions,
 ) : AudioNode {

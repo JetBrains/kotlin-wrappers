@@ -8,7 +8,7 @@ import js.core.JsLong
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EncodedAudioChunk)
  */
-external class EncodedAudioChunk(
+open external class EncodedAudioChunk(
     init: EncodedAudioChunkInit,
 ) {
     /**

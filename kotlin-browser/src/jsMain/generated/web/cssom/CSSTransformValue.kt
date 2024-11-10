@@ -11,7 +11,7 @@ import web.geometry.DOMMatrix
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTransformValue)
  */
-external class CSSTransformValue(
+open external class CSSTransformValue(
     transforms: ReadonlyArray<CSSTransformComponent>,
 ) : CSSStyleValue,
     ListLike<CSSTransformComponent> {

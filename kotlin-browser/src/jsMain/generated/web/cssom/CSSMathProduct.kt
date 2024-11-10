@@ -5,7 +5,7 @@ package web.cssom
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSMathProduct)
  */
-external class CSSMathProduct(
+open external class CSSMathProduct(
     vararg values: CSSNumberish,
 ) : CSSMathValue {
     /**

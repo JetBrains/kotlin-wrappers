@@ -7,7 +7,7 @@ package web.audio
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DynamicsCompressorNode)
  */
-external class DynamicsCompressorNode(
+open external class DynamicsCompressorNode(
     context: BaseAudioContext,
     options: DynamicsCompressorOptions = definedExternally,
 ) : AudioNode {

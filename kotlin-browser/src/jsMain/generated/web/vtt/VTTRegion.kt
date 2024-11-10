@@ -5,7 +5,7 @@ package web.vtt
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VTTRegion)
  */
-external class VTTRegion {
+open external class VTTRegion {
     var id: String
     var lines: Int
     var regionAnchorX: Double

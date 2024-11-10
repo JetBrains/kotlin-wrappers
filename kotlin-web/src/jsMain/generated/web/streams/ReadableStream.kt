@@ -14,7 +14,7 @@ import seskar.js.JsAsync
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream)
  */
-external class ReadableStream<R>(
+open external class ReadableStream<R>(
     underlyingSource: UnderlyingDefaultSource<R>,
     strategy: QueuingStrategy<R> = definedExternally,
 ) : Transferable {

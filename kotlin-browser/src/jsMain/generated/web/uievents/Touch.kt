@@ -9,7 +9,7 @@ import web.events.EventTarget
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch)
  */
-external class Touch(
+open external class Touch(
     init: TouchInit,
 ) {
     /**

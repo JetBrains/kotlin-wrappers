@@ -9,7 +9,7 @@ import js.typedarrays.Float32Array
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BiquadFilterNode)
  */
-external class BiquadFilterNode(
+open external class BiquadFilterNode(
     context: BaseAudioContext,
     options: BiquadFilterOptions = definedExternally,
 ) : AudioNode {

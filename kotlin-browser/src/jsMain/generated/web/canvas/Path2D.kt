@@ -10,7 +10,7 @@ import web.geometry.DOMMatrixReadOnly
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Path2D)
  */
-external class Path2D(
+open external class Path2D(
     path: Path2D = definedExternally,
 ) : CanvasPath {
     constructor(path: String)

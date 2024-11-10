@@ -11,7 +11,7 @@ import js.objects.ReadonlyRecord
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams)
  */
-external class URLSearchParams(
+open external class URLSearchParams(
     init: ReadonlyArray<JsTuple2<String, String>> = definedExternally,
 ) : ReadonlyMap<String, String> {
     constructor(init: ReadonlyRecord<String, String>)

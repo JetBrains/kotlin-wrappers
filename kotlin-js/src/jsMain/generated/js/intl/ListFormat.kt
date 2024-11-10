@@ -7,7 +7,7 @@ package js.intl
 import js.array.ReadonlyArray
 import js.iterable.JsIterable
 
-external class ListFormat(
+open external class ListFormat(
     locales: UnicodeBCP47LocaleIdentifier = definedExternally,
     options: ListFormatOptions = definedExternally,
 ) {

@@ -7,7 +7,7 @@ package web.rtc
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate)
  */
-external class RTCIceCandidate(
+open external class RTCIceCandidate(
     init: RTCIceCandidateInit = definedExternally,
 ) {
     /**

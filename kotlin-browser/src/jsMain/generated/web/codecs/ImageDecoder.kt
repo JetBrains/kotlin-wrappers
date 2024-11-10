@@ -11,7 +11,7 @@ import seskar.js.JsAsync
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageDecoder)
  */
-external class ImageDecoder(
+open external class ImageDecoder(
     init: ImageDecoderInit,
 ) {
     /**

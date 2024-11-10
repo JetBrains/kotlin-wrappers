@@ -14,7 +14,7 @@ import web.url.URL
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport)
  */
-external class WebTransport(
+open external class WebTransport(
     url: String,
     options: WebTransportOptions = definedExternally,
 ) {

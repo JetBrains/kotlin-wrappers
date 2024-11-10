@@ -7,7 +7,7 @@ import web.errors.DOMException
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OverconstrainedError)
  */
-external class OverconstrainedError(
+open external class OverconstrainedError(
     constraint: String,
     message: String = definedExternally,
 ) : DOMException {

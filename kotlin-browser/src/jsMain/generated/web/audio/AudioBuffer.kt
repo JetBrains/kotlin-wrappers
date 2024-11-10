@@ -9,7 +9,7 @@ import js.typedarrays.Float32Array
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioBuffer)
  */
-external class AudioBuffer(
+open external class AudioBuffer(
     options: AudioBufferOptions,
 ) {
     /**

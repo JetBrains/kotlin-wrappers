@@ -7,7 +7,7 @@ import web.dom.DocumentFragment
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VTTCue)
  */
-external class VTTCue(
+open external class VTTCue(
     startTime: Double,
     endTime: Double,
     text: String,

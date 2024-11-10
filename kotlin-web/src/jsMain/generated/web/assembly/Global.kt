@@ -7,7 +7,7 @@ package web.assembly
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/Global)
  */
-external class Global<T>(
+open external class Global<T>(
     descriptor: GlobalDescriptor<T>,
     v: T = definedExternally,
 ) {

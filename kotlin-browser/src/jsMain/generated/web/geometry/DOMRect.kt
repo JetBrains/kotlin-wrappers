@@ -5,7 +5,7 @@ package web.geometry
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRect)
  */
-external class DOMRect(
+open external class DOMRect(
     x: Double = definedExternally,
     y: Double = definedExternally,
     width: Double = definedExternally,

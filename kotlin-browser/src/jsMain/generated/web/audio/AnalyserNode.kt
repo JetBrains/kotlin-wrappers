@@ -10,7 +10,7 @@ import js.typedarrays.Uint8Array
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnalyserNode)
  */
-external class AnalyserNode(
+open external class AnalyserNode(
     context: BaseAudioContext,
     options: AnalyserOptions = definedExternally,
 ) : AudioNode {

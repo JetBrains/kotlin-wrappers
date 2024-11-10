@@ -9,7 +9,7 @@ import js.typedarrays.Float32Array
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IIRFilterNode)
  */
-external class IIRFilterNode(
+open external class IIRFilterNode(
     context: BaseAudioContext,
     options: IIRFilterOptions,
 ) : AudioNode {

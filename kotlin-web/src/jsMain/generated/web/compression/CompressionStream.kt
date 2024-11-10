@@ -15,7 +15,7 @@ import web.streams.WritableStream
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CompressionStream)
  */
-external class CompressionStream(
+open external class CompressionStream(
     format: CompressionFormat,
 ) : GenericTransformStream {
     override val readable: ReadableStream<Uint8Array>

@@ -7,7 +7,7 @@ package web.audio
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DelayNode)
  */
-external class DelayNode(
+open external class DelayNode(
     context: BaseAudioContext,
     options: DelayOptions = definedExternally,
 ) : AudioNode {

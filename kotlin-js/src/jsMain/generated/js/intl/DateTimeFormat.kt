@@ -9,7 +9,7 @@ import js.core.BigInt
 import js.core.JsLong
 import js.date.Date
 
-external class DateTimeFormat(
+open external class DateTimeFormat(
     locales: String = definedExternally,
     options: DateTimeFormatOptions = definedExternally,
 ) {

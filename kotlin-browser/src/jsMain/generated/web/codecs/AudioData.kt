@@ -9,7 +9,7 @@ import js.transferable.Transferable
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioData)
  */
-external class AudioData(
+open external class AudioData(
     init: AudioDataInit,
 ) : Transferable {
     /**

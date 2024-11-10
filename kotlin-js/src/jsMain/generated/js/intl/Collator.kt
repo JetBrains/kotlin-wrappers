@@ -6,7 +6,7 @@ package js.intl
 
 import js.array.ReadonlyArray
 
-external class Collator(
+open external class Collator(
     locales: String = definedExternally,
     options: CollatorOptions = definedExternally,
 ) {

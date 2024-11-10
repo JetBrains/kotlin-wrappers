@@ -6,7 +6,7 @@ package js.intl
 
 import js.array.ReadonlyArray
 
-external class Segmenter(
+open external class Segmenter(
     locales: UnicodeBCP47LocaleIdentifier = definedExternally,
     options: SegmenterOptions = definedExternally,
 ) {

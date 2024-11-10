@@ -7,7 +7,7 @@ package web.audio
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PannerNode)
  */
-external class PannerNode(
+open external class PannerNode(
     context: BaseAudioContext,
     options: PannerOptions = definedExternally,
 ) : AudioNode {

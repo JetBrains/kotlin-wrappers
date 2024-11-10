@@ -7,7 +7,7 @@ import js.transferable.Transferable
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStream)
  */
-external class TransformStream<I, O>(
+open external class TransformStream<I, O>(
     transformer: Transformer<I, O> = definedExternally,
     writableStrategy: QueuingStrategy<I> = definedExternally,
     readableStrategy: QueuingStrategy<O> = definedExternally,

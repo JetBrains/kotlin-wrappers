@@ -5,7 +5,7 @@ package web.cssom
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSMathSum)
  */
-external class CSSMathSum(
+open external class CSSMathSum(
     vararg values: CSSNumberish,
 ) : CSSMathValue {
     /**

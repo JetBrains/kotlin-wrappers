@@ -10,7 +10,7 @@ import seskar.js.JsAsync
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader)
  */
-external class ReadableStreamBYOBReader(
+open external class ReadableStreamBYOBReader(
     stream: ReadableStream<Uint8Array>,
 ) : ReadableStreamGenericReader {
     /**

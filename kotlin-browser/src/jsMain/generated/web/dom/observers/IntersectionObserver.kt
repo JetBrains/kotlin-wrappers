@@ -11,7 +11,7 @@ import web.dom.ParentNode
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IntersectionObserver)
  */
-external class IntersectionObserver(
+open external class IntersectionObserver(
     callback: IntersectionObserverCallback,
     options: IntersectionObserverInit = definedExternally,
 ) {

@@ -2,7 +2,7 @@
 
 package web.cssom
 
-external class CSSMathClamp(
+open external class CSSMathClamp(
     lower: CSSNumberish,
     value: CSSNumberish,
     upper: CSSNumberish,

@@ -9,7 +9,7 @@ import js.buffer.ArrayBufferView
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ByteLengthQueuingStrategy)
  */
-external class ByteLengthQueuingStrategy(
+open external class ByteLengthQueuingStrategy(
     init: QueuingStrategyInit,
 ) : QueuingStrategy<ArrayBufferView> {
     /**

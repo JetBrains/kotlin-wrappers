@@ -15,7 +15,7 @@ import web.streams.WritableStream
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DecompressionStream)
  */
-external class DecompressionStream(
+open external class DecompressionStream(
     format: CompressionFormat,
 ) : GenericTransformStream {
     override val readable: ReadableStream<Uint8Array>

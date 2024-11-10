@@ -9,7 +9,7 @@ import web.url.URL
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response)
  */
-external class Response(
+open external class Response(
     body: BodyInit? = definedExternally,
     init: ResponseInit = definedExternally,
 ) : Body {

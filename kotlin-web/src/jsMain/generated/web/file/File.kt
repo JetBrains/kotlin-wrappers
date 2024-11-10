@@ -12,7 +12,7 @@ import web.time.EpochTimeStamp
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/File)
  */
-external class File(
+open external class File(
     fileBits: ReadonlyArray<BlobPart>,
     fileName: String,
     options: FilePropertyBag = definedExternally,

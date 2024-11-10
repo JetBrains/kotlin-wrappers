@@ -9,7 +9,7 @@ import web.errors.DOMException
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportError)
  */
-external class WebTransportError(
+open external class WebTransportError(
     message: String = definedExternally,
     options: WebTransportErrorOptions = definedExternally,
 ) : DOMException {

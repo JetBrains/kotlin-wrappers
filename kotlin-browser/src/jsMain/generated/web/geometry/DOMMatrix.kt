@@ -9,7 +9,7 @@ import js.typedarrays.Float64Array
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix)
  */
-external class DOMMatrix(
+open external class DOMMatrix(
     init: String = definedExternally,
 ) : DOMMatrixReadOnly {
     constructor(init: ReadonlyArray<Double>)

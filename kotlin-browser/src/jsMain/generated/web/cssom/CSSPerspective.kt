@@ -5,7 +5,7 @@ package web.cssom
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPerspective)
  */
-external class CSSPerspective(
+open external class CSSPerspective(
     length: CSSPerspectiveValue,
 ) : CSSTransformComponent {
     /**

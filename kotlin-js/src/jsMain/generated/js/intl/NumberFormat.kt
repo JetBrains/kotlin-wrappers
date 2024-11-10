@@ -7,7 +7,7 @@ package js.intl
 import js.array.ReadonlyArray
 import js.core.BigInt
 
-external class NumberFormat(
+open external class NumberFormat(
     locales: String = definedExternally,
     options: NumberFormatOptions = definedExternally,
 ) {

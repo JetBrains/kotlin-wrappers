@@ -10,7 +10,7 @@ import web.url.URL
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request)
  */
-external class Request(
+open external class Request(
     input: Request,
     init: RequestInit = definedExternally,
 ) : Body {

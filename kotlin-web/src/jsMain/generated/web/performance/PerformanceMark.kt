@@ -7,7 +7,7 @@ package web.performance
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceMark)
  */
-external class PerformanceMark(
+open external class PerformanceMark(
     markName: String,
     markOptions: PerformanceMarkOptions = definedExternally,
 ) : PerformanceEntry {

@@ -9,7 +9,7 @@ import seskar.js.JsAsync
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace)
  */
-external class FontFace(
+open external class FontFace(
     family: String,
     source: String,
     descriptors: FontFaceDescriptors = definedExternally,

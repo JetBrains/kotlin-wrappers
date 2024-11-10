@@ -5,7 +5,7 @@ package web.cssom
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSScale)
  */
-external class CSSScale(
+open external class CSSScale(
     x: CSSNumberish,
     y: CSSNumberish,
     z: CSSNumberish = definedExternally,

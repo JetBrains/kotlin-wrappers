@@ -12,7 +12,7 @@ import seskar.js.JsAsync
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter)
  */
-external class WritableStreamDefaultWriter<W>(
+open external class WritableStreamDefaultWriter<W>(
     stream: WritableStream<W>,
 ) {
     /**

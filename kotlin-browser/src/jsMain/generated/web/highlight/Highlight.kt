@@ -10,7 +10,7 @@ import web.ranges.AbstractRange
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Highlight)
  */
-external class Highlight(
+open external class Highlight(
     vararg initialRanges: AbstractRange,
 ) : MutableSetLike<AbstractRange> {
     /**

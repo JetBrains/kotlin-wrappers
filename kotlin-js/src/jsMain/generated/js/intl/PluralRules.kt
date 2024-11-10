@@ -6,7 +6,7 @@ package js.intl
 
 import js.array.ReadonlyArray
 
-external class PluralRules(
+open external class PluralRules(
     locales: String = definedExternally,
     options: PluralRulesOptions = definedExternally,
 ) {

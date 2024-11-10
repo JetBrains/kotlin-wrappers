@@ -7,7 +7,7 @@ package web.audio
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OscillatorNode)
  */
-external class OscillatorNode(
+open external class OscillatorNode(
     context: BaseAudioContext,
     options: OscillatorOptions = definedExternally,
 ) : AudioScheduledSourceNode {

@@ -9,7 +9,7 @@ import js.buffer.ArrayBuffer
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/Memory)
  */
-external class Memory(
+open external class Memory(
     descriptor: MemoryDescriptor,
 ) {
     /**

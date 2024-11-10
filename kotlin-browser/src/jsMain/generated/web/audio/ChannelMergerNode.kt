@@ -7,7 +7,7 @@ package web.audio
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ChannelMergerNode)
  */
-external class ChannelMergerNode(
+open external class ChannelMergerNode(
     context: BaseAudioContext,
     options: ChannelMergerOptions = definedExternally,
 ) : AudioNode

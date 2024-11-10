@@ -6,7 +6,7 @@ package js.intl
 
 import js.array.ReadonlyArray
 
-external class DisplayNames(
+open external class DisplayNames(
     locales: UnicodeBCP47LocaleIdentifier,
     options: DisplayNamesOptions,
 ) {

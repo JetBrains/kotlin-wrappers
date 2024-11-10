@@ -6,7 +6,7 @@ package js.intl
 
 import js.array.ReadonlyArray
 
-external class RelativeTimeFormat(
+open external class RelativeTimeFormat(
     locales: UnicodeBCP47LocaleIdentifier = definedExternally,
     options: RelativeTimeFormatOptions = definedExternally,
 ) {

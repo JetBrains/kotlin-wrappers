@@ -7,7 +7,7 @@ import js.array.ReadonlyArray
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaMetadata)
  */
-external class MediaMetadata(
+open external class MediaMetadata(
     init: MediaMetadataInit = definedExternally,
 ) {
     /**

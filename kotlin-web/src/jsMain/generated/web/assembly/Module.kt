@@ -11,7 +11,7 @@ import js.buffer.BufferSource
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/Module)
  */
-external class Module(
+open external class Module(
     bytes: BufferSource,
 ) {
     companion object {

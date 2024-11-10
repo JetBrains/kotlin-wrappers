@@ -9,7 +9,7 @@ import js.core.Void
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CountQueuingStrategy)
  */
-external class CountQueuingStrategy(
+open external class CountQueuingStrategy(
     init: QueuingStrategyInit,
 ) : QueuingStrategy<Void> {
     /**

@@ -5,7 +5,7 @@ package web.cssom
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSMathInvert)
  */
-external class CSSMathInvert(
+open external class CSSMathInvert(
     arg: CSSNumberish,
 ) : CSSMathValue {
     /**

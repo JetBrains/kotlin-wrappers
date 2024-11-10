@@ -9,7 +9,7 @@ import web.blob.Blob
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL)
  */
-external class URL(
+open external class URL(
     url: String,
     base: String = definedExternally,
 ) {

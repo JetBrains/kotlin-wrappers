@@ -7,7 +7,7 @@ package web.audio
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ConvolverNode)
  */
-external class ConvolverNode(
+open external class ConvolverNode(
     context: BaseAudioContext,
     options: ConvolverOptions = definedExternally,
 ) : AudioNode {

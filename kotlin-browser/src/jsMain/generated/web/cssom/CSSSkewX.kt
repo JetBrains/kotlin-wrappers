@@ -5,7 +5,7 @@ package web.cssom
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSSkewX)
  */
-external class CSSSkewX(
+open external class CSSSkewX(
     ax: CSSNumericValue,
 ) : CSSTransformComponent {
     /**

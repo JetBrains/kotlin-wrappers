@@ -7,7 +7,7 @@ package web.audio
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PeriodicWave)
  */
-external class PeriodicWave(
+open external class PeriodicWave(
     context: BaseAudioContext,
     options: PeriodicWaveOptions = definedExternally,
 )

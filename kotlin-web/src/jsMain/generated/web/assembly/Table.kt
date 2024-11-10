@@ -7,7 +7,7 @@ package web.assembly
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/Table)
  */
-external class Table(
+open external class Table(
     descriptor: TableDescriptor,
     value: Any? = definedExternally,
 ) {

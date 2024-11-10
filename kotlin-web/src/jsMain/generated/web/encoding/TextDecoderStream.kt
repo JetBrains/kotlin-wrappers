@@ -14,7 +14,7 @@ import web.streams.WritableStream
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextDecoderStream)
  */
-external class TextDecoderStream(
+open external class TextDecoderStream(
     label: String = definedExternally,
     options: TextDecoderOptions = definedExternally,
 ) : GenericTransformStream,
