@@ -9,7 +9,8 @@ import web.time.DOMHighResTimeStamp
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEntry)
  */
-abstract external class PerformanceEntry {
+open external class PerformanceEntry
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEntry/duration)
      */

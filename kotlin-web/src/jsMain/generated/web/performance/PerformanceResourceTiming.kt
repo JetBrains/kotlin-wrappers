@@ -11,7 +11,8 @@ import web.time.DOMHighResTimeStamp
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming)
  */
-sealed external class PerformanceResourceTiming :
+open external class PerformanceResourceTiming
+private constructor() :
     PerformanceEntry {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/connectEnd)

@@ -5,7 +5,8 @@ package web.performance
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserverEntryList)
  */
-sealed external class PerformanceObserverEntryList {
+external class PerformanceObserverEntryList
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserverEntryList/getEntries)
      */

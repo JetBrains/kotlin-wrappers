@@ -9,7 +9,8 @@ import web.time.DOMHighResTimeStamp
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming)
  */
-sealed external class PerformanceNavigationTiming :
+external class PerformanceNavigationTiming
+private constructor() :
     PerformanceResourceTiming {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/domComplete)

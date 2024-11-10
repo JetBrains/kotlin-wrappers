@@ -7,7 +7,8 @@ package web.performance
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceMeasure)
  */
-sealed external class PerformanceMeasure :
+external class PerformanceMeasure
+private constructor() :
     PerformanceEntry {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceMeasure/detail)

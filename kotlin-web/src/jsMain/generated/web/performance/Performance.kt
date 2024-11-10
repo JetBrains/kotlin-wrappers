@@ -10,7 +10,8 @@ import web.time.DOMHighResTimeStamp
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance)
  */
-sealed external class Performance :
+external class Performance
+private constructor() :
     EventTarget {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/eventCounts)

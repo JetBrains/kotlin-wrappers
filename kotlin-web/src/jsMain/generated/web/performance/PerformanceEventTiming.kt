@@ -8,7 +8,8 @@ import web.time.DOMHighResTimeStamp
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEventTiming)
  */
-sealed external class PerformanceEventTiming :
+external class PerformanceEventTiming
+private constructor() :
     PerformanceEntry {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEventTiming/cancelable)

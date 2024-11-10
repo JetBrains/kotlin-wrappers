@@ -7,7 +7,8 @@ import web.time.DOMHighResTimeStamp
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceServerTiming)
  */
-sealed external class PerformanceServerTiming {
+external class PerformanceServerTiming
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceServerTiming/description)
      */
