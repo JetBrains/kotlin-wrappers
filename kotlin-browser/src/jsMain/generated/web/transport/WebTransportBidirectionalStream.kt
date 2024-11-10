@@ -10,7 +10,8 @@ import web.streams.WritableStream
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportBidirectionalStream)
  */
-sealed external class WebTransportBidirectionalStream {
+external class WebTransportBidirectionalStream
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportBidirectionalStream/readable)
      */

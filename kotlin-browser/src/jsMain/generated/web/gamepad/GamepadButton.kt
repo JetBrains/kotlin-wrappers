@@ -7,7 +7,8 @@ package web.gamepad
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadButton)
  */
-sealed external class GamepadButton {
+external class GamepadButton
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadButton/pressed)
      */

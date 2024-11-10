@@ -15,7 +15,8 @@ import web.workers.AbstractWorker
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker)
  */
-sealed external class ServiceWorker :
+external class ServiceWorker
+private constructor() :
     EventTarget,
     AbstractWorker,
     MessageEventSource {

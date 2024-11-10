@@ -12,7 +12,8 @@ import web.events.*
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WakeLockSentinel)
  */
-sealed external class WakeLockSentinel :
+external class WakeLockSentinel
+private constructor() :
     EventTarget {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WakeLockSentinel/release_event)

@@ -11,7 +11,8 @@ import seskar.js.JsAsync
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager)
  */
-sealed external class NavigationPreloadManager {
+external class NavigationPreloadManager
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager/disable)
      */

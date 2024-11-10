@@ -10,7 +10,8 @@ import seskar.js.JsAsync
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator)
  */
-sealed external class GamepadHapticActuator {
+external class GamepadHapticActuator
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator/playEffect)
      */

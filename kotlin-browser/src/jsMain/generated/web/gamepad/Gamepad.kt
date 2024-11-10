@@ -10,7 +10,8 @@ import web.time.DOMHighResTimeStamp
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Gamepad)
  */
-sealed external class Gamepad {
+external class Gamepad
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Gamepad/axes)
      */

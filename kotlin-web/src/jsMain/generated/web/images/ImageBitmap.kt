@@ -9,7 +9,8 @@ import web.gl.TexImageSource
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmap)
  */
-sealed external class ImageBitmap :
+external class ImageBitmap
+private constructor() :
     CanvasImageSource,
     TexImageSource,
     Transferable {

@@ -12,7 +12,8 @@ import web.serialization.StructuredSerializeOptions
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort)
  */
-sealed external class MessagePort :
+external class MessagePort
+private constructor() :
     EventTarget,
     MessageEventSource,
     Transferable {

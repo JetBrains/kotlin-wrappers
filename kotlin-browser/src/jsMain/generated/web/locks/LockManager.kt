@@ -11,7 +11,8 @@ import seskar.js.JsAsync
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LockManager)
  */
-sealed external class LockManager {
+external class LockManager
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LockManager/query)
      */

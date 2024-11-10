@@ -9,7 +9,8 @@ import web.time.EpochTimeStamp
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationPosition)
  */
-sealed external class GeolocationPosition {
+external class GeolocationPosition
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationPosition/coords)
      */

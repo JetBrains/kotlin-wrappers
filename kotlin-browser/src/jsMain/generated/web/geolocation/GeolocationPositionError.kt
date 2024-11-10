@@ -5,7 +5,8 @@ package web.geolocation
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationPositionError)
  */
-sealed external class GeolocationPositionError {
+external class GeolocationPositionError
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationPositionError/code)
      */

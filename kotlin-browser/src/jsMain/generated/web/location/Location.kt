@@ -10,7 +10,8 @@ import web.url.URL
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location)
  */
-sealed external class Location {
+external class Location
+private constructor() {
     /**
      * Returns a DOMStringList object listing the origins of the ancestor browsing contexts, from the parent browsing context to the top-level browsing context.
      *

@@ -10,9 +10,15 @@ import js.promise.Promise
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageTrackList)
  */
-sealed external class ImageTrackList :
+external class ImageTrackList
+private constructor() :
     ArrayLike<ImageTrack>,
     JsIterable<ImageTrack> {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageTrackList/length)
+     */
+    override val length: Int
+
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageTrackList/ready)
      */

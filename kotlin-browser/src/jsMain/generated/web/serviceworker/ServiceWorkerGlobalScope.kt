@@ -19,7 +19,8 @@ import web.workers.WorkerGlobalScope
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope)
  */
-sealed external class ServiceWorkerGlobalScope :
+external class ServiceWorkerGlobalScope
+private constructor() :
     WorkerGlobalScope {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/clients)

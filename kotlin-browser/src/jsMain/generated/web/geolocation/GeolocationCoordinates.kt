@@ -7,7 +7,8 @@ package web.geolocation
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationCoordinates)
  */
-sealed external class GeolocationCoordinates {
+external class GeolocationCoordinates
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationCoordinates/accuracy)
      */

@@ -5,7 +5,8 @@ package web.navigation
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationActivation)
  */
-sealed external class NavigationActivation {
+external class NavigationActivation
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationActivation/entry)
      */

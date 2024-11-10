@@ -5,7 +5,8 @@ package web.codecs
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageTrack)
  */
-sealed external class ImageTrack {
+external class ImageTrack
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageTrack/animated)
      */

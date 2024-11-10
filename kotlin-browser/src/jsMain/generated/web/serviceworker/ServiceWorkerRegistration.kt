@@ -17,7 +17,8 @@ import web.push.PushManager
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration)
  */
-sealed external class ServiceWorkerRegistration :
+external class ServiceWorkerRegistration
+private constructor() :
     EventTarget {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/active)

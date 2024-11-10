@@ -8,7 +8,8 @@ import web.events.*
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationHistoryEntry)
  */
-sealed external class NavigationHistoryEntry :
+external class NavigationHistoryEntry
+private constructor() :
     EventTarget {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationHistoryEntry/id)

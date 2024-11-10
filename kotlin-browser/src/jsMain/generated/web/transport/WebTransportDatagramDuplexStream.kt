@@ -10,7 +10,8 @@ import web.streams.WritableStream
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportDatagramDuplexStream)
  */
-sealed external class WebTransportDatagramDuplexStream {
+external class WebTransportDatagramDuplexStream
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportDatagramDuplexStream/incomingHighWaterMark)
      */

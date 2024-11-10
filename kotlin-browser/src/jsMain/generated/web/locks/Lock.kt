@@ -7,7 +7,8 @@ package web.locks
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Lock)
  */
-sealed external class Lock {
+external class Lock
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Lock/mode)
      */

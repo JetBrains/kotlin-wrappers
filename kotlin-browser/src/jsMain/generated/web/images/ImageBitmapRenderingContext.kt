@@ -11,7 +11,8 @@ import web.rendering.RenderingContextId
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmapRenderingContext)
  */
-sealed external class ImageBitmapRenderingContext :
+external class ImageBitmapRenderingContext
+private constructor() :
     OffscreenRenderingContext,
     RenderingContext {
     /**
