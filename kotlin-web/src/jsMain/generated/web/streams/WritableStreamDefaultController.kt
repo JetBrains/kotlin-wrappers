@@ -10,7 +10,8 @@ import web.abort.AbortSignal
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultController)
  */
-sealed external class WritableStreamDefaultController {
+external class WritableStreamDefaultController
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultController/signal)
      */

@@ -7,7 +7,8 @@ package web.validation
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ValidityState)
  */
-sealed external class ValidityState {
+external class ValidityState
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ValidityState/badInput)
      */

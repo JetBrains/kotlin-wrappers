@@ -7,7 +7,8 @@ import web.events.*
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport)
  */
-sealed external class VisualViewport :
+external class VisualViewport
+private constructor() :
     EventTarget {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/height)

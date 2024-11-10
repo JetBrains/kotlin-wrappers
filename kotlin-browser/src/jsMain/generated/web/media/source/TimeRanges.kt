@@ -7,7 +7,8 @@ package web.media.source
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TimeRanges)
  */
-sealed external class TimeRanges {
+external class TimeRanges
+private constructor() {
     /**
      * Returns the number of ranges in the object.
      *

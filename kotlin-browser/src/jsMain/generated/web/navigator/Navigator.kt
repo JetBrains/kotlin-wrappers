@@ -31,7 +31,9 @@ import web.wakelock.WakeLock
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator)
  */
-sealed external class Navigator :
+sealed /* final */
+external class Navigator
+private constructor() :
     NavigatorAutomationInformation,
     NavigatorBadge,
     NavigatorConcurrentHardware,

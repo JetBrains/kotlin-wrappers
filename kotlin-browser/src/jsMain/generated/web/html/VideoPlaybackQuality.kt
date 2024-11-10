@@ -9,7 +9,8 @@ import web.time.DOMHighResTimeStamp
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoPlaybackQuality)
  */
-sealed external class VideoPlaybackQuality {
+external class VideoPlaybackQuality
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoPlaybackQuality/creationTime)
      */

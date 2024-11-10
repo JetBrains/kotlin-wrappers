@@ -19,7 +19,8 @@ import web.uievents.PointerEvent
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MathMLElement)
  */
-sealed external class MathMLElement :
+open external class MathMLElement
+private constructor() :
     Element,
     ElementCSSInlineStyle,
     GlobalEventHandlers,

@@ -7,7 +7,9 @@ import web.dom.NodeList
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RadioNodeList)
  */
-sealed external class RadioNodeList :
+sealed /* final */
+external class RadioNodeList
+private constructor() :
     NodeList<HTMLElement> {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RadioNodeList/value)

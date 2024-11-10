@@ -9,7 +9,8 @@ import web.url.URL
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History)
  */
-sealed external class History {
+external class History
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/length)
      */

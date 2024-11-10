@@ -7,7 +7,8 @@ import js.errors.JsError
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStreamDefaultController)
  */
-sealed external class TransformStreamDefaultController<O> {
+external class TransformStreamDefaultController<O>
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStreamDefaultController/desiredSize)
      */

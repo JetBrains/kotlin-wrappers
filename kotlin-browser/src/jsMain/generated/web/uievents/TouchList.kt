@@ -10,9 +10,15 @@ import js.iterable.JsIterable
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchList)
  */
-sealed external class TouchList :
+external class TouchList
+private constructor() :
     ArrayLike<Touch>,
     JsIterable<Touch> {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchList/length)
+     */
+    override val length: Int
+
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchList/item)
      */
