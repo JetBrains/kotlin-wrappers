@@ -7,7 +7,8 @@ package web.dom
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TreeWalker)
  */
-sealed external class TreeWalker {
+external class TreeWalker
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TreeWalker/currentNode)
      */

@@ -16,7 +16,8 @@ import web.validation.ValidityStateFlags
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals)
  */
-sealed external class ElementInternals :
+external class ElementInternals
+private constructor() :
     ARIAMixin,
     ValidationTarget {
     /**

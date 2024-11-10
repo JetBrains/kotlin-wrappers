@@ -10,7 +10,8 @@ import js.array.ReadonlyArray
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CryptoKey)
  */
-sealed external class CryptoKey {
+external class CryptoKey
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CryptoKey/algorithm)
      */

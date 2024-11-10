@@ -9,7 +9,8 @@ import js.buffer.ArrayBufferView
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Crypto)
  */
-sealed external class Crypto {
+external class Crypto
+private constructor() {
     /**
      * Available only in secure contexts.
      *

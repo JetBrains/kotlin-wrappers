@@ -7,7 +7,8 @@ package web.dom
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeIterator)
  */
-sealed external class NodeIterator {
+external class NodeIterator
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeIterator/filter)
      */

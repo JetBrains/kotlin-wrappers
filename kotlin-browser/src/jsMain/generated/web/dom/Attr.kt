@@ -7,7 +7,8 @@ package web.dom
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Attr)
  */
-sealed external class Attr :
+external class Attr
+private constructor() :
     Node {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Attr/localName)

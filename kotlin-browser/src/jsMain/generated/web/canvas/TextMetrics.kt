@@ -7,7 +7,8 @@ package web.canvas
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextMetrics)
  */
-sealed external class TextMetrics {
+external class TextMetrics
+private constructor() {
     /**
      * Returns the measurement described below.
      *

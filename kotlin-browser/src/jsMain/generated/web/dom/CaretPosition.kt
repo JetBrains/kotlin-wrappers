@@ -7,7 +7,8 @@ import web.geometry.DOMRect
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CaretPosition)
  */
-sealed external class CaretPosition {
+external class CaretPosition
+private constructor() {
     val offset: Int
     val offsetNode: Node
     fun getClientRect(): DOMRect?

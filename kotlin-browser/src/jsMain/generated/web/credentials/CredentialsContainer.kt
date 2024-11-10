@@ -11,7 +11,8 @@ import seskar.js.JsAsync
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer)
  */
-sealed external class CredentialsContainer {
+external class CredentialsContainer
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/create)
      */

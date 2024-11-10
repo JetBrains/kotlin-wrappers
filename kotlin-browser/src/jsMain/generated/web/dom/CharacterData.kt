@@ -7,7 +7,8 @@ package web.dom
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CharacterData)
  */
-sealed external class CharacterData :
+open external class CharacterData
+private constructor() :
     Node,
     ChildNode,
     NonDocumentTypeChildNode {

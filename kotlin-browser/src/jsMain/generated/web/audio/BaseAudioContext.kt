@@ -12,7 +12,8 @@ import web.events.*
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext)
  */
-sealed external class BaseAudioContext :
+open external class BaseAudioContext
+private constructor() :
     EventTarget {
     /**
      * Available only in secure contexts.

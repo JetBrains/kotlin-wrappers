@@ -10,9 +10,15 @@ import js.iterable.JsIterable
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NamedNodeMap)
  */
-sealed external class NamedNodeMap :
+external class NamedNodeMap
+private constructor() :
     ArrayLike<Attr>,
     JsIterable<Attr> {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NamedNodeMap/length)
+     */
+    override val length: Int
+
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NamedNodeMap/getNamedItem)
      */

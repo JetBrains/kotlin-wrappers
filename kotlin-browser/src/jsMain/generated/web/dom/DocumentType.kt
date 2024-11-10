@@ -7,7 +7,8 @@ package web.dom
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType)
  */
-sealed external class DocumentType :
+external class DocumentType
+private constructor() :
     Node,
     ChildNode {
     /**

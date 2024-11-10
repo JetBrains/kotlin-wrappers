@@ -12,7 +12,8 @@ import web.events.EventTarget
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard)
  */
-sealed external class Clipboard :
+external class Clipboard
+private constructor() :
     EventTarget {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/read)

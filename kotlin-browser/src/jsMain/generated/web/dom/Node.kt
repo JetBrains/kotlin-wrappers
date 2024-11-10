@@ -10,7 +10,8 @@ import web.html.HTMLElement
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node)
  */
-sealed external class Node :
+open external class Node
+private constructor() :
     EventTarget {
     /**
      * Returns node's node document's document base URL.
