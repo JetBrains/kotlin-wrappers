@@ -10,8 +10,11 @@ import seskar.js.JsSpecialName
 private const val ASYNC_GENERATOR: String = "(async function* () {}.constructor.prototype.prototype)"
 
 @JsSpecialName(ASYNC_GENERATOR)
-sealed external class AsyncGenerator<out T, TReturn, in TNext> : AsyncIterator<T> {
-    fun next(value: TNext): Promise<IteratorResult<T, TReturn>>
+external class AsyncGenerator<out T, TReturn, in TNext>
+private constructor() :
+    AsyncIterator<T> {
+    override fun next(): Promise<IteratorResult<T, TReturn>>
+    fun next(value: TNext = definedExternally): Promise<IteratorResult<T, TReturn>>
 
     fun `return`(value: TReturn): Promise<IteratorResult<T, TReturn>>
 

@@ -8,7 +8,11 @@ import seskar.js.JsSpecialName
 private const val GENERATOR: String = "(function* () {}.constructor.prototype.prototype)"
 
 @JsSpecialName(GENERATOR)
-sealed external class Generator<out T, TReturn, in TNext> : JsIterator<T> {
+external class Generator<out T, TReturn, in TNext>
+private constructor() :
+    JsIterator<T> {
+    override fun next(): IteratorResult<T, TReturn>
+
     fun next(value: TNext): IteratorResult<T, TReturn>
 
     fun `return`(value: TReturn): IteratorResult<T, TReturn>
