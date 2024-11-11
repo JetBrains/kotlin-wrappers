@@ -14,7 +14,7 @@ external object Atomics {
      * will block.
      */
     fun <T : Comparable<T>> add(
-        typedArray: TypedArray<*, T>,
+        typedArray: TypedArray<*, *, T>,
         index: Int,
         value: T,
     ): T
@@ -25,7 +25,7 @@ external object Atomics {
      * write operation against the array will block.
      */
     fun <T : Comparable<T>> and(
-        typedArray: TypedArray<*, T>,
+        typedArray: TypedArray<*, *, T>,
         index: Int,
         value: T,
     ): T
@@ -36,7 +36,7 @@ external object Atomics {
      * other read or write operation against the array will block.
      */
     fun <T : Comparable<T>> compareExchange(
-        typedArray: TypedArray<*, T>,
+        typedArray: TypedArray<*, *, T>,
         index: Int,
         expectedValue: T,
         replacementValue: T,
@@ -48,7 +48,7 @@ external object Atomics {
      * block.
      */
     fun <T : Comparable<T>> exchange(
-        typedArray: TypedArray<*, T>,
+        typedArray: TypedArray<*, *, T>,
         index: Int,
         value: T,
     ): T
@@ -65,7 +65,7 @@ external object Atomics {
      * any other read or write operation against the array will block.
      */
     fun <T : Comparable<T>> load(
-        typedArray: TypedArray<*, T>,
+        typedArray: TypedArray<*, *, T>,
         index: Int,
     ): T
 
@@ -77,7 +77,7 @@ external object Atomics {
      * @param count The number of sleeping agents to notify. Defaults to +Infinity.
      */
     fun notify(
-        typedArray: Int32Array,
+        typedArray: Int32Array<*>,
         index: Int,
         count: Int = definedExternally,
     ): Int
@@ -90,7 +90,7 @@ external object Atomics {
      * @param count The number of sleeping agents to notify. Defaults to +Infinity.
      */
     fun notify(
-        typedArray: BigInt64Array,
+        typedArray: BigInt64Array<*>,
         index: Int,
         count: Int = definedExternally,
     ): Int
@@ -101,7 +101,7 @@ external object Atomics {
      * operation against the array will block.
      */
     fun <T : Comparable<T>> or(
-        typedArray: TypedArray<*, T>,
+        typedArray: TypedArray<*, *, T>,
         index: Int,
         value: T,
     ): T
@@ -111,7 +111,7 @@ external object Atomics {
      * atomic operation completes, any other read or write operation against the array will block.
      */
     fun <T : Comparable<T>> store(
-        typedArray: TypedArray<*, T>,
+        typedArray: TypedArray<*, *, T>,
         index: Int,
         value: T,
     ): T
@@ -122,7 +122,7 @@ external object Atomics {
      * array will block.
      */
     fun <T : Comparable<T>> sub(
-        typedArray: TypedArray<*, T>,
+        typedArray: TypedArray<*, *, T>,
         index: Int,
         value: T,
     ): T
@@ -134,7 +134,7 @@ external object Atomics {
      * `"not-equal"`.
      */
     fun wait(
-        typedArray: Int32Array,
+        typedArray: Int32Array<*>,
         index: Int,
         value: Int,
         timeout: Int = definedExternally,
@@ -147,7 +147,7 @@ external object Atomics {
      * `"not-equal"`.
      */
     fun wait(
-        typedArray: BigInt64Array,
+        typedArray: BigInt64Array<*>,
         index: Int,
         value: BigInt,
         timeout: Int = definedExternally,
@@ -162,7 +162,7 @@ external object Atomics {
      * @param [timeout] The expected value to test.
      */
     fun waitAsync(
-        typedArray: Int32Array,
+        typedArray: Int32Array<*>,
         index: Int,
         value: Int,
         timeout: Int = definedExternally,
@@ -177,7 +177,7 @@ external object Atomics {
      * @param [timeout] The expected value to test.
      */
     fun waitAsync(
-        typedArray: BigInt64Array,
+        typedArray: BigInt64Array<*>,
         index: Int,
         value: BigInt,
         timeout: Int = definedExternally,
@@ -189,7 +189,7 @@ external object Atomics {
      * operation against the array will block.
      */
     fun <T : Comparable<T>> xor(
-        typedArray: TypedArray<*, T>,
+        typedArray: TypedArray<*, *, T>,
         index: Int,
         value: T,
     ): T
