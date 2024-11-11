@@ -113,6 +113,8 @@ export default (node, context) => {
 
             || node.parent.parent.name.text === "readdir"
             || node.parent.parent.name.text === "readdirSync"
+            || node.parent.parent.name.text === "mkdir"
+            || node.parent.parent.name.text === "mkdirSync"
         )
     ) {
         return `@kotlinx.js.JsPlainObject`
@@ -145,6 +147,8 @@ export default (node, context) => {
             || node.parent.parent.parent.parent.name.text === "readdirSync"
             || node.parent.parent.parent.parent.name.text === "readFile"
             || node.parent.parent.parent.parent.name.text === "readFileSync"
+            || node.parent.parent.parent.parent.name.text === "mkdir"
+            || node.parent.parent.parent.parent.name.text === "mkdirSync"
             || node.parent.parent.parent.parent.name.text === "writeFile"
             || node.parent.parent.parent.parent.name.text === "watch"
             || node.parent.parent.parent.parent.name.text === "watchFile"
