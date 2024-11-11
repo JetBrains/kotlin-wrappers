@@ -448,7 +448,7 @@ external interface WebviewTag : HTMLElement {
     /**
      * Executes editing command `redo` in page.
      */
-    fun redo()
+    fun redo(): Unit
 
     /**
      * Reloads the guest page.
@@ -708,4 +708,107 @@ external interface WebviewTag : HTMLElement {
      * `false`.
      */
     var webpreferences: String
+
+    @web.events.JsEvent("load-commit")
+    val loadCommitEvent: web.events.EventInstance<LoadCommitEvent, WebviewTag, web.dom.Node>
+
+    @web.events.JsEvent("did-finish-load")
+    val didFinishLoadEvent: web.events.EventInstance<DOMEvent, WebviewTag, web.dom.Node>
+
+    @web.events.JsEvent("did-fail-load")
+    val didFailLoadEvent: web.events.EventInstance<DidFailLoadEvent, WebviewTag, web.dom.Node>
+
+    @web.events.JsEvent("did-frame-finish-load")
+    val didFrameFinishLoadEvent: web.events.EventInstance<DidFrameFinishLoadEvent, WebviewTag, web.dom.Node>
+
+    @web.events.JsEvent("did-start-loading")
+    val didStartLoadingEvent: web.events.EventInstance<DOMEvent, WebviewTag, web.dom.Node>
+
+    @web.events.JsEvent("did-stop-loading")
+    val didStopLoadingEvent: web.events.EventInstance<DOMEvent, WebviewTag, web.dom.Node>
+
+    @web.events.JsEvent("did-attach")
+    val didAttachEvent: web.events.EventInstance<DOMEvent, WebviewTag, web.dom.Node>
+
+    @web.events.JsEvent("dom-ready")
+    val domReadyEvent: web.events.EventInstance<DOMEvent, WebviewTag, web.dom.Node>
+
+    @web.events.JsEvent("page-title-updated")
+    val pageTitleUpdatedEvent: web.events.EventInstance<PageTitleUpdatedEvent, WebviewTag, web.dom.Node>
+
+    @web.events.JsEvent("page-favicon-updated")
+    val pageFaviconUpdatedEvent: web.events.EventInstance<PageFaviconUpdatedEvent, WebviewTag, web.dom.Node>
+
+    @web.events.JsEvent("enter-html-full-screen")
+    val enterHtmlFullScreenEvent: web.events.EventInstance<DOMEvent, WebviewTag, web.dom.Node>
+
+    @web.events.JsEvent("leave-html-full-screen")
+    val leaveHtmlFullScreenEvent: web.events.EventInstance<DOMEvent, WebviewTag, web.dom.Node>
+
+    @web.events.JsEvent("console-message")
+    val consoleMessageEvent: web.events.EventInstance<ConsoleMessageEvent, WebviewTag, web.dom.Node>
+
+    @web.events.JsEvent("found-in-page")
+    val foundInPageEvent: web.events.EventInstance<FoundInPageEvent, WebviewTag, web.dom.Node>
+
+    @web.events.JsEvent("will-navigate")
+    val willNavigateEvent: web.events.EventInstance<WillNavigateEvent, WebviewTag, web.dom.Node>
+
+    @web.events.JsEvent("will-frame-navigate")
+    val willFrameNavigateEvent: web.events.EventInstance<WillFrameNavigateEvent, WebviewTag, web.dom.Node>
+
+    @web.events.JsEvent("did-start-navigation")
+    val didStartNavigationEvent: web.events.EventInstance<DidStartNavigationEvent, WebviewTag, web.dom.Node>
+
+    @web.events.JsEvent("did-redirect-navigation")
+    val didRedirectNavigationEvent: web.events.EventInstance<DidRedirectNavigationEvent, WebviewTag, web.dom.Node>
+
+    @web.events.JsEvent("did-navigate")
+    val didNavigateEvent: web.events.EventInstance<DidNavigateEvent, WebviewTag, web.dom.Node>
+
+    @web.events.JsEvent("did-frame-navigate")
+    val didFrameNavigateEvent: web.events.EventInstance<DidFrameNavigateEvent, WebviewTag, web.dom.Node>
+
+    @web.events.JsEvent("did-navigate-in-page")
+    val didNavigateInPageEvent: web.events.EventInstance<DidNavigateInPageEvent, WebviewTag, web.dom.Node>
+
+    @web.events.JsEvent("close")
+    val closeEvent: web.events.EventInstance<DOMEvent, WebviewTag, web.dom.Node>
+
+    @web.events.JsEvent("ipc-message")
+    val ipcMessageEvent: web.events.EventInstance<IpcMessageEvent, WebviewTag, web.dom.Node>
+
+    @web.events.JsEvent("render-process-gone")
+    val renderProcessGoneEvent: web.events.EventInstance<RenderProcessGoneEvent, WebviewTag, web.dom.Node>
+
+    @web.events.JsEvent("plugin-crashed")
+    val pluginCrashedEvent: web.events.EventInstance<PluginCrashedEvent, WebviewTag, web.dom.Node>
+
+    @web.events.JsEvent("destroyed")
+    val destroyedEvent: web.events.EventInstance<DOMEvent, WebviewTag, web.dom.Node>
+
+    @web.events.JsEvent("media-started-playing")
+    val mediaStartedPlayingEvent: web.events.EventInstance<DOMEvent, WebviewTag, web.dom.Node>
+
+    @web.events.JsEvent("media-paused")
+    val mediaPausedEvent: web.events.EventInstance<DOMEvent, WebviewTag, web.dom.Node>
+
+    @web.events.JsEvent("did-change-theme-color")
+    val didChangeThemeColorEvent: web.events.EventInstance<DidChangeThemeColorEvent, WebviewTag, web.dom.Node>
+
+    @web.events.JsEvent("update-target-url")
+    val updateTargetUrlEvent: web.events.EventInstance<UpdateTargetUrlEvent, WebviewTag, web.dom.Node>
+
+    @web.events.JsEvent("devtools-open-url")
+    val devtoolsOpenUrlEvent: web.events.EventInstance<DevtoolsOpenUrlEvent, WebviewTag, web.dom.Node>
+
+    @web.events.JsEvent("devtools-opened")
+    val devtoolsOpenedEvent: web.events.EventInstance<DOMEvent, WebviewTag, web.dom.Node>
+
+    @web.events.JsEvent("devtools-closed")
+    val devtoolsClosedEvent: web.events.EventInstance<DOMEvent, WebviewTag, web.dom.Node>
+
+    @web.events.JsEvent("devtools-focused")
+    val devtoolsFocusedEvent: web.events.EventInstance<DOMEvent, WebviewTag, web.dom.Node>
+
 }

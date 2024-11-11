@@ -6,6 +6,20 @@ const eventHandlerMethods = new Set([
     "removeEventListener",
 ])
 
+const openEvents = {}
+
+const overriddenEvents = {}
+
+const ignoredEvents = {
+    "electron.d.ts": {
+        "WebviewTag": [
+            "context-menu"
+        ]
+    }
+}
+
+const eventContainerMap = {}
+
 function extractEventContainer(node) {
     if (
         node.parent
@@ -74,26 +88,21 @@ function extractEventPayload(node, context) {
     ) {
         const method = node.parent.parent.parent
         const listener = method.parameters[1]
-        const container = node.parent.parent.parent.parent
-
-        const commentService = context.lookupService(karakum.commentServiceKey)
-        const comment = commentService?.renderLeadingComments(method) ?? ""
 
         if (
             listener
             && listener.type
         ) {
-            const containerTypeParameters = container.typeParameters ?? []
-            const extractedTypeParameters = karakum.extractTypeParameters(listener.type, context)
-
-            const typeParameters = containerTypeParameters.map(typeParameter => (
-                extractedTypeParameters
-                    .find(([, declaration]) => declaration === typeParameter)
-            ))
-
             if (ts.isFunctionTypeNode(listener.type)) {
-                return [listener.type.parameters, typeParameters, comment]
+                return listener.type.parameters
             } else if (ts.isTypeReferenceNode(listener.type)) {
+                if (
+                    ts.isIdentifier(listener.type.typeName)
+                    && listener.type.typeName.text === "Function"
+                ) {
+                    return []
+                }
+
                 const typeScriptService = context.lookupService(karakum.typeScriptServiceKey)
                 const typeChecker = typeScriptService?.program.getTypeChecker()
 
@@ -106,7 +115,7 @@ function extractEventPayload(node, context) {
                     && ts.isTypeAliasDeclaration(symbol.declarations[0])
                     && ts.isFunctionTypeNode(symbol.declarations[0].type)
                 ) {
-                    return [symbol.declarations[0].type.parameters, typeParameters, comment]
+                    return symbol.declarations[0].type.parameters
                 }
             }
         }
@@ -129,7 +138,10 @@ export default {
     traverse(node, context) {
         if (ts.isStringLiteral(node)) {
             const eventContainer = extractEventContainer(node)
+            const eventPayload = extractEventPayload(node, context)
+
             if (!eventContainer) return null
+            if (!eventPayload) return null
 
             const name = eventContainer.name
             if (!name) return null
@@ -140,27 +152,9 @@ export default {
             const symbol = typeChecker?.getSymbolAtLocation(name)
             if (!symbol) return
 
-            const sourceFileName = node.getSourceFile()?.fileName ?? "generated.d.ts"
-            const namespace = typeScriptService?.findClosest(node, ts.isModuleDeclaration)
+            const events = this.events.get(symbol) ?? new Map()
 
-            const events = this.events.get(symbol) ?? {
-                sourceFileName,
-                namespace,
-                containerName: name.text,
-                eventInfo: new Map()
-            }
-
-            const eventPayload = extractEventPayload(node, context)
-
-            if (eventPayload) {
-                const [parameters, typeParameters, comment] = eventPayload
-
-                events.eventInfo.set(node.text, {
-                    comment,
-                    parameters,
-                    typeParameters,
-                })
-            }
+            events.set(node.text, eventPayload)
 
             this.events.set(symbol, events)
         }
@@ -170,14 +164,10 @@ export default {
         if (
             (
                 ts.isMethodDeclaration(node)
-                && ts.isIdentifier(node.name)
-                && eventHandlerMethods.has(node.name.text)
+                || ts.isMethodSignature(node)
             )
-            || (
-                ts.isMethodSignature(node)
-                && ts.isIdentifier(node.name)
-                && eventHandlerMethods.has(node.name.text)
-            )
+            && ts.isIdentifier(node.name)
+            && eventHandlerMethods.has(node.name.text)
         ) {
             return ""
         }
@@ -185,76 +175,90 @@ export default {
         return null
     },
 
-    generate(context, render) {
-        const declarations = Array.from(this.events.values()).map(events => {
-            const name = `${events.containerName}Event`
+    inject(node, context, render) {
+        if (context.type !== karakum.InjectionType.MEMBER) return []
 
-            const legacyCompanionBody = Array.from(events.eventInfo.entries())
-                .map(([eventName, { comment, parameters }]) => {
-                    const key = karakum.constIdentifier(eventName)
+        let name
 
-                    const payload = parameters
-                        .map(parameter => (
-                            parameter.type
-                                ? render(parameter.type)
-                                : "Any?"
-                        ))
-                        .join(", ")
+        if (ts.isClassDeclaration(node) && node.name) {
+            name = node.name
+        } else if (ts.isInterfaceDeclaration(node)) {
+            name = node.name
+        }
 
-                    return (
-                        `
-${comment}
-@seskar.js.JsValue("${eventName}")
-val ${key}: web.events.EventType<${payload}>
-                        `.trim()
-                    );
-                })
-                .join("\n")
+        if (!name) return []
 
-            const companionBody = Array.from(events.eventInfo.entries())
-                .map(([eventName, { comment, parameters, typeParameters: typeParameterNodes }]) => {
-                    const key = karakum.identifier(eventName)
+        const typeScriptService = context.lookupService(karakum.typeScriptServiceKey)
+        const typeChecker = typeScriptService?.program.getTypeChecker()
 
-                    const payload = parameters
-                        .map(parameter => (
-                            parameter.type
-                                ? render(parameter.type)
-                                : "Any?"
-                        ))
-                        .join(", ")
+        const symbol = typeChecker?.getSymbolAtLocation(name)
+        if (!symbol) return []
 
-                    const typeParameters = typeParameterNodes
-                        .filter(Boolean)
-                        .map(([, declaration]) => render(declaration))
-                        .join(", ")
+        let events = this.events.get(symbol)
+        const mappedContainerName = eventContainerMap[name.text]
 
-                    return (
-                        `
-${comment}
-@seskar.js.JsValue("${eventName}")
-fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${key}(): web.events.EventType<${payload}>
-                        `.trim()
-                    );
-                })
-                .join("\n")
+        if (mappedContainerName) {
+            [, events] = Array.from(this.events.entries())
+                    .find(([eventSymbol]) => (
+                        eventSymbol.valueDeclaration
+                        && ts.isClassDeclaration(eventSymbol.valueDeclaration)
+                        && eventSymbol.valueDeclaration.name
+                        && eventSymbol.valueDeclaration.name.text === mappedContainerName
+                    ))
+                ?? []
+        }
 
-            const declaration = `
-sealed external interface ${name} {
-companion object {
-${legacyCompanionBody}
-${companionBody}
-}
-}
-            `
+        if (!events) return []
 
-            return {
-                sourceFileName: events.sourceFileName,
-                namespace: events.namespace,
-                fileName: `${name}.kt`,
-                body: declaration,
-            }
-        })
+        const sourceFileName = node.getSourceFile()?.fileName ?? "generated.d.ts"
+        const [, moduleOpenEvents] = Array.from(Object.entries(openEvents))
+            .find(([fileName]) => sourceFileName.endsWith(fileName))
+        ?? []
+        const [, moduleOverriddenEvents] = Array.from(Object.entries(overriddenEvents))
+            .find(([fileName]) => sourceFileName.endsWith(fileName))
+        ?? []
+        const [, moduleIgnoredEvents] = Array.from(Object.entries(ignoredEvents))
+            .find(([fileName]) => sourceFileName.endsWith(fileName))
+        ?? []
 
-        return karakum.generateDerivedDeclarations(declarations, context);
+        return Array.from(events.entries())
+            .map(([eventName, parameters]) => {
+                const isOpen = moduleOpenEvents?.[name.text]?.includes(eventName) ?? false
+                const isOverridden = moduleOverriddenEvents?.[name.text]?.includes(eventName) ?? false
+                const isIgnored = moduleIgnoredEvents?.[name.text]?.includes(eventName) ?? false
+
+                if (isIgnored) return ""
+
+                let modifier = ""
+
+                if (isOpen) {
+                    modifier = "open "
+                }
+
+                if (isOverridden) {
+                    modifier = "override "
+                }
+
+                const payload = parameters
+                    .map(parameter => (
+                        parameter.type
+                            ? render(parameter.type)
+                            : "Any?"
+                    ))
+                    .join(", ")
+
+                const key = karakum.identifier(eventName).replaceAll("`", "")
+
+                return (
+                    `
+@web.events.JsEvent("${eventName}")
+${modifier}val ${key}Event: web.events.EventInstance<${payload}, ${name.text}, web.dom.Node>
+                    `.trim()
+                );
+            })
+    },
+
+    generate() {
+        return []
     },
 }
