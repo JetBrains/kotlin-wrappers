@@ -3,6 +3,7 @@ package js.typedarrays
 import js.array.JsTuple2
 import js.array.MutableArrayLike
 import js.array.ReadonlyArray
+import js.buffer.ArrayBufferLike
 import js.buffer.ArrayBufferView
 import js.collections.ListLike
 import js.iterable.JsIterator
@@ -10,8 +11,8 @@ import seskar.js.JsSpecialName
 
 // language=javascript
 @JsSpecialName("(Object.getPrototypeOf(Uint8Array))")
-sealed external class TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* Number? */> :
-    ArrayBufferView,
+sealed external class TypedArray<S : TypedArray<S, B, T>, B : ArrayBufferLike, T : Comparable<T> /* Number? */> :
+    ArrayBufferView<B>,
     MutableArrayLike<T>,
     ListLike<T> {
 

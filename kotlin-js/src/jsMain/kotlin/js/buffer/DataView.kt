@@ -4,11 +4,11 @@
 
 package js.buffer
 
-external class DataView(
-    override val buffer: ArrayBuffer,
+external class DataView<B: ArrayBufferLike>(
+    override val buffer: B,
     override val byteOffset: Int = definedExternally,
     override val byteLength: Int = definedExternally,
-) : ArrayBufferView {
+) : ArrayBufferView<B> {
     fun getInt8(byteOffset: Int): Byte
     fun getUint8(byteOffset: Int): Byte
     fun getInt16(

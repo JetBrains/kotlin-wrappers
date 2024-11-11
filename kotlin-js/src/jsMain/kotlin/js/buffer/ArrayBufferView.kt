@@ -1,8 +1,8 @@
 package js.buffer
 
-external interface ArrayBufferView :
+external interface ArrayBufferView<B: ArrayBufferLike> :
     BufferSource {
-    val buffer: ArrayBufferLike
+    val buffer: B
     val byteOffset: Int
     val byteLength: Int
 }

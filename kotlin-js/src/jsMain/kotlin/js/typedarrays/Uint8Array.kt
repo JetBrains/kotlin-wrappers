@@ -9,14 +9,15 @@
 package js.typedarrays
 
 import js.array.ReadonlyArray
+import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferLike
 import js.iterable.JsIterable
 
-open external class Uint8Array(
-    override val buffer: ArrayBufferLike,
+open external class Uint8Array<B : ArrayBufferLike>(
+    override val buffer: B,
     override val byteOffset: Int = definedExternally,
     override val length: Int = definedExternally,
-) : TypedArray<Uint8Array, Byte> {
+) : TypedArray<Uint8Array<B>, B, Byte> {
     constructor()
     constructor(length: Int)
     constructor(elements: JsIterable<Byte>)
@@ -28,5 +29,5 @@ open external class Uint8Array(
     inline fun toUByteArray(): UByteArray =
         toByteArray().asUByteArray()
 
-    companion object : TypedArrayCompanion<Uint8Array, Byte>
+    companion object : TypedArrayCompanion<Uint8Array<ArrayBuffer>, Byte>
 }
