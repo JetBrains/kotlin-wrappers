@@ -17,10 +17,6 @@ open external class BrowserWindow : NodeEventEmitter {
     /**
      * Emitted when the window is set or unset to show always on top of other windows.
      */
-    fun on(
-        event: BrowserWindowEvent.ALWAYS_ON_TOP_CHANGED,
-        listener: (event: Event<*>, isAlwaysOnTop: Boolean) -> Unit,
-    ): Unit /* this */
 
     /**
      * Emitted when an App Command is invoked. These are typically related to keyboard
@@ -38,12 +34,10 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform win32,linux
      */
-    fun on(event: BrowserWindowEvent.APP_COMMAND, listener: (event: Event<*>, command: String) -> Unit): Unit /* this */
 
     /**
      * Emitted when the window loses focus.
      */
-    fun on(event: BrowserWindowEvent.BLUR, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when the window is going to be closed. It's emitted before the
@@ -61,58 +55,47 @@ open external class BrowserWindow : NodeEventEmitter {
      * instead of only returning a value, as the former works more consistently within
      * Electron._
      */
-    fun on(event: BrowserWindowEvent.CLOSE, listener: (event: Event<*>) -> Unit): Unit /* this */
 
     /**
      * Emitted when the window is closed. After you have received this event you should
      * remove the reference to the window and avoid using it any more.
      */
-    fun on(event: BrowserWindowEvent.CLOSED, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when the window enters a full-screen state.
      */
-    fun on(event: BrowserWindowEvent.ENTER_FULL_SCREEN, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when the window enters a full-screen state triggered by HTML API.
      */
-    fun on(event: BrowserWindowEvent.ENTER_HTML_FULL_SCREEN, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when the window gains focus.
      */
-    fun on(event: BrowserWindowEvent.FOCUS, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when the window is hidden.
      */
-    fun on(event: BrowserWindowEvent.HIDE, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when the window leaves a full-screen state.
      */
-    fun on(event: BrowserWindowEvent.LEAVE_FULL_SCREEN, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when the window leaves a full-screen state triggered by HTML API.
      */
-    fun on(event: BrowserWindowEvent.LEAVE_HTML_FULL_SCREEN, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when window is maximized.
      */
-    fun on(event: BrowserWindowEvent.MAXIMIZE, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when the window is minimized.
      */
-    fun on(event: BrowserWindowEvent.MINIMIZE, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when the window is being moved to a new position.
      */
-    fun on(event: BrowserWindowEvent.MOVE, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted once when the window is moved to a new position.
@@ -121,24 +104,18 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin,win32
      */
-    fun on(event: BrowserWindowEvent.MOVED, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when the native new tab button is clicked.
      *
      * @platform darwin
      */
-    fun on(event: BrowserWindowEvent.NEW_WINDOW_FOR_TAB, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when the document changed its title, calling `event.preventDefault()`
      * will prevent the native window's title from changing. `explicitSet` is false
      * when title is synthesized from file URL.
      */
-    fun on(
-        event: BrowserWindowEvent.PAGE_TITLE_UPDATED,
-        listener: (event: Event<*>, title: String, explicitSet: Boolean) -> Unit,
-    ): Unit /* this */
 
     /**
      * Emitted when the web page has been rendered (while not being shown) and window
@@ -148,12 +125,10 @@ open external class BrowserWindow : NodeEventEmitter {
      * "visible" and paint even though `show` is false.  This event will never fire if
      * you use `paintWhenInitiallyHidden: false`
      */
-    fun on(event: BrowserWindowEvent.READY_TO_SHOW, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted after the window has been resized.
      */
-    fun on(event: BrowserWindowEvent.RESIZE, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted once when the window has finished being resized.
@@ -164,17 +139,14 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin,win32
      */
-    fun on(event: BrowserWindowEvent.RESIZED, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when the unresponsive web page becomes responsive again.
      */
-    fun on(event: BrowserWindowEvent.RESPONSIVE, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when the window is restored from a minimized state.
      */
-    fun on(event: BrowserWindowEvent.RESTORE, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted on trackpad rotation gesture. Continually emitted until rotation gesture
@@ -185,10 +157,6 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    fun on(
-        event: BrowserWindowEvent.ROTATE_GESTURE,
-        listener: (event: Event<*>, rotation: Double) -> Unit,
-    ): Unit /* this */
 
     /**
      * Emitted when window session is going to end due to force shutdown or machine
@@ -196,26 +164,22 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform win32
      */
-    fun on(event: BrowserWindowEvent.SESSION_END, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when the window opens a sheet.
      *
      * @platform darwin
      */
-    fun on(event: BrowserWindowEvent.SHEET_BEGIN, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when the window has closed a sheet.
      *
      * @platform darwin
      */
-    fun on(event: BrowserWindowEvent.SHEET_END, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when the window is shown.
      */
-    fun on(event: BrowserWindowEvent.SHOW, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted on 3-finger swipe. Possible directions are `up`, `right`, `down`,
@@ -230,7 +194,6 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    fun on(event: BrowserWindowEvent.SWIPE, listener: (event: Event<*>, direction: String) -> Unit): Unit /* this */
 
     /**
      * Emitted when the system context menu is triggered on the window, this is
@@ -242,26 +205,14 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform win32
      */
-    fun on(
-        event: BrowserWindowEvent.SYSTEM_CONTEXT_MENU,
-        listener: (
-            event: Event<*>,
-            /**
-             * The screen coordinates the context menu was triggered at
-             */
-            point: Point,
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * Emitted when the window exits from a maximized state.
      */
-    fun on(event: BrowserWindowEvent.UNMAXIMIZE, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when the web page becomes unresponsive.
      */
-    fun on(event: BrowserWindowEvent.UNRESPONSIVE, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted before the window is moved. On Windows, calling `event.preventDefault()`
@@ -272,16 +223,6 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin,win32
      */
-    fun on(
-        event: BrowserWindowEvent.WILL_MOVE,
-        listener: (
-            event: Event<*>,
-            /**
-             * Location the window is being moved to.
-             */
-            newBounds: Rectangle,
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * Emitted before the window is resized. Calling `event.preventDefault()` will
@@ -301,523 +242,222 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin,win32
      */
-    fun on(
-        event: BrowserWindowEvent.WILL_RESIZE,
-        listener: (
-            event: Event<*>,
-            /**
-             * Size the window is being resized to.
-             */
-            newBounds: Rectangle,
-            details: WillResizeDetails,
-        ) -> Unit,
-    ): Unit /* this */
 
-    fun off(
-        event: BrowserWindowEvent.ALWAYS_ON_TOP_CHANGED,
-        listener: (event: Event<*>, isAlwaysOnTop: Boolean) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform win32,linux
      */
-    fun off(
-        event: BrowserWindowEvent.APP_COMMAND,
-        listener: (event: Event<*>, command: String) -> Unit,
-    ): Unit /* this */
 
-    fun off(event: BrowserWindowEvent.BLUR, listener: Function<Unit>): Unit /* this */
-    fun off(event: BrowserWindowEvent.CLOSE, listener: (event: Event<*>) -> Unit): Unit /* this */
-    fun off(event: BrowserWindowEvent.CLOSED, listener: Function<Unit>): Unit /* this */
-    fun off(event: BrowserWindowEvent.ENTER_FULL_SCREEN, listener: Function<Unit>): Unit /* this */
-    fun off(event: BrowserWindowEvent.ENTER_HTML_FULL_SCREEN, listener: Function<Unit>): Unit /* this */
-    fun off(event: BrowserWindowEvent.FOCUS, listener: Function<Unit>): Unit /* this */
-    fun off(event: BrowserWindowEvent.HIDE, listener: Function<Unit>): Unit /* this */
-    fun off(event: BrowserWindowEvent.LEAVE_FULL_SCREEN, listener: Function<Unit>): Unit /* this */
-    fun off(event: BrowserWindowEvent.LEAVE_HTML_FULL_SCREEN, listener: Function<Unit>): Unit /* this */
-    fun off(event: BrowserWindowEvent.MAXIMIZE, listener: Function<Unit>): Unit /* this */
-    fun off(event: BrowserWindowEvent.MINIMIZE, listener: Function<Unit>): Unit /* this */
-    fun off(event: BrowserWindowEvent.MOVE, listener: Function<Unit>): Unit /* this */
 
     /**
      * @platform darwin,win32
      */
-    fun off(event: BrowserWindowEvent.MOVED, listener: Function<Unit>): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun off(event: BrowserWindowEvent.NEW_WINDOW_FOR_TAB, listener: Function<Unit>): Unit /* this */
-    fun off(
-        event: BrowserWindowEvent.PAGE_TITLE_UPDATED,
-        listener: (event: Event<*>, title: String, explicitSet: Boolean) -> Unit,
-    ): Unit /* this */
 
-    fun off(event: BrowserWindowEvent.READY_TO_SHOW, listener: Function<Unit>): Unit /* this */
-    fun off(event: BrowserWindowEvent.RESIZE, listener: Function<Unit>): Unit /* this */
 
     /**
      * @platform darwin,win32
      */
-    fun off(event: BrowserWindowEvent.RESIZED, listener: Function<Unit>): Unit /* this */
-    fun off(event: BrowserWindowEvent.RESPONSIVE, listener: Function<Unit>): Unit /* this */
-    fun off(event: BrowserWindowEvent.RESTORE, listener: Function<Unit>): Unit /* this */
+
 
     /**
      * @platform darwin
      */
-    fun off(
-        event: BrowserWindowEvent.ROTATE_GESTURE,
-        listener: (event: Event<*>, rotation: Double) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform win32
      */
-    fun off(event: BrowserWindowEvent.SESSION_END, listener: Function<Unit>): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun off(event: BrowserWindowEvent.SHEET_BEGIN, listener: Function<Unit>): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun off(event: BrowserWindowEvent.SHEET_END, listener: Function<Unit>): Unit /* this */
-    fun off(event: BrowserWindowEvent.SHOW, listener: Function<Unit>): Unit /* this */
+
 
     /**
      * @platform darwin
      */
-    fun off(event: BrowserWindowEvent.SWIPE, listener: (event: Event<*>, direction: String) -> Unit): Unit /* this */
 
     /**
      * @platform win32
      */
-    fun off(
-        event: BrowserWindowEvent.SYSTEM_CONTEXT_MENU,
-        listener: (
-            event: Event<*>,
-            /**
-             * The screen coordinates the context menu was triggered at
-             */
-            point: Point,
-        ) -> Unit,
-    ): Unit /* this */
 
-    fun off(event: BrowserWindowEvent.UNMAXIMIZE, listener: Function<Unit>): Unit /* this */
-    fun off(event: BrowserWindowEvent.UNRESPONSIVE, listener: Function<Unit>): Unit /* this */
 
     /**
      * @platform darwin,win32
      */
-    fun off(
-        event: BrowserWindowEvent.WILL_MOVE,
-        listener: (
-            event: Event<*>,
-            /**
-             * Location the window is being moved to.
-             */
-            newBounds: Rectangle,
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform darwin,win32
      */
-    fun off(
-        event: BrowserWindowEvent.WILL_RESIZE,
-        listener: (
-            event: Event<*>,
-            /**
-             * Size the window is being resized to.
-             */
-            newBounds: Rectangle,
-            details: WillResizeDetails,
-        ) -> Unit,
-    ): Unit /* this */
 
-    fun once(
-        event: BrowserWindowEvent.ALWAYS_ON_TOP_CHANGED,
-        listener: (event: Event<*>, isAlwaysOnTop: Boolean) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform win32,linux
      */
-    fun once(
-        event: BrowserWindowEvent.APP_COMMAND,
-        listener: (event: Event<*>, command: String) -> Unit,
-    ): Unit /* this */
 
-    fun once(event: BrowserWindowEvent.BLUR, listener: Function<Unit>): Unit /* this */
-    fun once(event: BrowserWindowEvent.CLOSE, listener: (event: Event<*>) -> Unit): Unit /* this */
-    fun once(event: BrowserWindowEvent.CLOSED, listener: Function<Unit>): Unit /* this */
-    fun once(event: BrowserWindowEvent.ENTER_FULL_SCREEN, listener: Function<Unit>): Unit /* this */
-    fun once(event: BrowserWindowEvent.ENTER_HTML_FULL_SCREEN, listener: Function<Unit>): Unit /* this */
-    fun once(event: BrowserWindowEvent.FOCUS, listener: Function<Unit>): Unit /* this */
-    fun once(event: BrowserWindowEvent.HIDE, listener: Function<Unit>): Unit /* this */
-    fun once(event: BrowserWindowEvent.LEAVE_FULL_SCREEN, listener: Function<Unit>): Unit /* this */
-    fun once(event: BrowserWindowEvent.LEAVE_HTML_FULL_SCREEN, listener: Function<Unit>): Unit /* this */
-    fun once(event: BrowserWindowEvent.MAXIMIZE, listener: Function<Unit>): Unit /* this */
-    fun once(event: BrowserWindowEvent.MINIMIZE, listener: Function<Unit>): Unit /* this */
-    fun once(event: BrowserWindowEvent.MOVE, listener: Function<Unit>): Unit /* this */
 
     /**
      * @platform darwin,win32
      */
-    fun once(event: BrowserWindowEvent.MOVED, listener: Function<Unit>): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun once(event: BrowserWindowEvent.NEW_WINDOW_FOR_TAB, listener: Function<Unit>): Unit /* this */
-    fun once(
-        event: BrowserWindowEvent.PAGE_TITLE_UPDATED,
-        listener: (event: Event<*>, title: String, explicitSet: Boolean) -> Unit,
-    ): Unit /* this */
 
-    fun once(event: BrowserWindowEvent.READY_TO_SHOW, listener: Function<Unit>): Unit /* this */
-    fun once(event: BrowserWindowEvent.RESIZE, listener: Function<Unit>): Unit /* this */
 
     /**
      * @platform darwin,win32
      */
-    fun once(event: BrowserWindowEvent.RESIZED, listener: Function<Unit>): Unit /* this */
-    fun once(event: BrowserWindowEvent.RESPONSIVE, listener: Function<Unit>): Unit /* this */
-    fun once(event: BrowserWindowEvent.RESTORE, listener: Function<Unit>): Unit /* this */
+
 
     /**
      * @platform darwin
      */
-    fun once(
-        event: BrowserWindowEvent.ROTATE_GESTURE,
-        listener: (event: Event<*>, rotation: Double) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform win32
      */
-    fun once(event: BrowserWindowEvent.SESSION_END, listener: Function<Unit>): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun once(event: BrowserWindowEvent.SHEET_BEGIN, listener: Function<Unit>): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun once(event: BrowserWindowEvent.SHEET_END, listener: Function<Unit>): Unit /* this */
-    fun once(event: BrowserWindowEvent.SHOW, listener: Function<Unit>): Unit /* this */
+
 
     /**
      * @platform darwin
      */
-    fun once(event: BrowserWindowEvent.SWIPE, listener: (event: Event<*>, direction: String) -> Unit): Unit /* this */
 
     /**
      * @platform win32
      */
-    fun once(
-        event: BrowserWindowEvent.SYSTEM_CONTEXT_MENU,
-        listener: (
-            event: Event<*>,
-            /**
-             * The screen coordinates the context menu was triggered at
-             */
-            point: Point,
-        ) -> Unit,
-    ): Unit /* this */
 
-    fun once(event: BrowserWindowEvent.UNMAXIMIZE, listener: Function<Unit>): Unit /* this */
-    fun once(event: BrowserWindowEvent.UNRESPONSIVE, listener: Function<Unit>): Unit /* this */
 
     /**
      * @platform darwin,win32
      */
-    fun once(
-        event: BrowserWindowEvent.WILL_MOVE,
-        listener: (
-            event: Event<*>,
-            /**
-             * Location the window is being moved to.
-             */
-            newBounds: Rectangle,
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform darwin,win32
      */
-    fun once(
-        event: BrowserWindowEvent.WILL_RESIZE,
-        listener: (
-            event: Event<*>,
-            /**
-             * Size the window is being resized to.
-             */
-            newBounds: Rectangle,
-            details: WillResizeDetails,
-        ) -> Unit,
-    ): Unit /* this */
 
-    fun addListener(
-        event: BrowserWindowEvent.ALWAYS_ON_TOP_CHANGED,
-        listener: (event: Event<*>, isAlwaysOnTop: Boolean) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform win32,linux
      */
-    fun addListener(
-        event: BrowserWindowEvent.APP_COMMAND,
-        listener: (event: Event<*>, command: String) -> Unit,
-    ): Unit /* this */
 
-    fun addListener(event: BrowserWindowEvent.BLUR, listener: Function<Unit>): Unit /* this */
-    fun addListener(event: BrowserWindowEvent.CLOSE, listener: (event: Event<*>) -> Unit): Unit /* this */
-    fun addListener(event: BrowserWindowEvent.CLOSED, listener: Function<Unit>): Unit /* this */
-    fun addListener(event: BrowserWindowEvent.ENTER_FULL_SCREEN, listener: Function<Unit>): Unit /* this */
-    fun addListener(event: BrowserWindowEvent.ENTER_HTML_FULL_SCREEN, listener: Function<Unit>): Unit /* this */
-    fun addListener(event: BrowserWindowEvent.FOCUS, listener: Function<Unit>): Unit /* this */
-    fun addListener(event: BrowserWindowEvent.HIDE, listener: Function<Unit>): Unit /* this */
-    fun addListener(event: BrowserWindowEvent.LEAVE_FULL_SCREEN, listener: Function<Unit>): Unit /* this */
-    fun addListener(event: BrowserWindowEvent.LEAVE_HTML_FULL_SCREEN, listener: Function<Unit>): Unit /* this */
-    fun addListener(event: BrowserWindowEvent.MAXIMIZE, listener: Function<Unit>): Unit /* this */
-    fun addListener(event: BrowserWindowEvent.MINIMIZE, listener: Function<Unit>): Unit /* this */
-    fun addListener(event: BrowserWindowEvent.MOVE, listener: Function<Unit>): Unit /* this */
 
     /**
      * @platform darwin,win32
      */
-    fun addListener(event: BrowserWindowEvent.MOVED, listener: Function<Unit>): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun addListener(event: BrowserWindowEvent.NEW_WINDOW_FOR_TAB, listener: Function<Unit>): Unit /* this */
-    fun addListener(
-        event: BrowserWindowEvent.PAGE_TITLE_UPDATED,
-        listener: (event: Event<*>, title: String, explicitSet: Boolean) -> Unit,
-    ): Unit /* this */
 
-    fun addListener(event: BrowserWindowEvent.READY_TO_SHOW, listener: Function<Unit>): Unit /* this */
-    fun addListener(event: BrowserWindowEvent.RESIZE, listener: Function<Unit>): Unit /* this */
 
     /**
      * @platform darwin,win32
      */
-    fun addListener(event: BrowserWindowEvent.RESIZED, listener: Function<Unit>): Unit /* this */
-    fun addListener(event: BrowserWindowEvent.RESPONSIVE, listener: Function<Unit>): Unit /* this */
-    fun addListener(event: BrowserWindowEvent.RESTORE, listener: Function<Unit>): Unit /* this */
+
 
     /**
      * @platform darwin
      */
-    fun addListener(
-        event: BrowserWindowEvent.ROTATE_GESTURE,
-        listener: (event: Event<*>, rotation: Double) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform win32
      */
-    fun addListener(event: BrowserWindowEvent.SESSION_END, listener: Function<Unit>): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun addListener(event: BrowserWindowEvent.SHEET_BEGIN, listener: Function<Unit>): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun addListener(event: BrowserWindowEvent.SHEET_END, listener: Function<Unit>): Unit /* this */
-    fun addListener(event: BrowserWindowEvent.SHOW, listener: Function<Unit>): Unit /* this */
+
 
     /**
      * @platform darwin
      */
-    fun addListener(
-        event: BrowserWindowEvent.SWIPE,
-        listener: (event: Event<*>, direction: String) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform win32
      */
-    fun addListener(
-        event: BrowserWindowEvent.SYSTEM_CONTEXT_MENU,
-        listener: (
-            event: Event<*>,
-            /**
-             * The screen coordinates the context menu was triggered at
-             */
-            point: Point,
-        ) -> Unit,
-    ): Unit /* this */
 
-    fun addListener(event: BrowserWindowEvent.UNMAXIMIZE, listener: Function<Unit>): Unit /* this */
-    fun addListener(event: BrowserWindowEvent.UNRESPONSIVE, listener: Function<Unit>): Unit /* this */
 
     /**
      * @platform darwin,win32
      */
-    fun addListener(
-        event: BrowserWindowEvent.WILL_MOVE,
-        listener: (
-            event: Event<*>,
-            /**
-             * Location the window is being moved to.
-             */
-            newBounds: Rectangle,
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform darwin,win32
      */
-    fun addListener(
-        event: BrowserWindowEvent.WILL_RESIZE,
-        listener: (
-            event: Event<*>,
-            /**
-             * Size the window is being resized to.
-             */
-            newBounds: Rectangle,
-            details: WillResizeDetails,
-        ) -> Unit,
-    ): Unit /* this */
 
-    fun removeListener(
-        event: BrowserWindowEvent.ALWAYS_ON_TOP_CHANGED,
-        listener: (event: Event<*>, isAlwaysOnTop: Boolean) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform win32,linux
      */
-    fun removeListener(
-        event: BrowserWindowEvent.APP_COMMAND,
-        listener: (event: Event<*>, command: String) -> Unit,
-    ): Unit /* this */
 
-    fun removeListener(event: BrowserWindowEvent.BLUR, listener: Function<Unit>): Unit /* this */
-    fun removeListener(event: BrowserWindowEvent.CLOSE, listener: (event: Event<*>) -> Unit): Unit /* this */
-    fun removeListener(event: BrowserWindowEvent.CLOSED, listener: Function<Unit>): Unit /* this */
-    fun removeListener(event: BrowserWindowEvent.ENTER_FULL_SCREEN, listener: Function<Unit>): Unit /* this */
-    fun removeListener(event: BrowserWindowEvent.ENTER_HTML_FULL_SCREEN, listener: Function<Unit>): Unit /* this */
-    fun removeListener(event: BrowserWindowEvent.FOCUS, listener: Function<Unit>): Unit /* this */
-    fun removeListener(event: BrowserWindowEvent.HIDE, listener: Function<Unit>): Unit /* this */
-    fun removeListener(event: BrowserWindowEvent.LEAVE_FULL_SCREEN, listener: Function<Unit>): Unit /* this */
-    fun removeListener(event: BrowserWindowEvent.LEAVE_HTML_FULL_SCREEN, listener: Function<Unit>): Unit /* this */
-    fun removeListener(event: BrowserWindowEvent.MAXIMIZE, listener: Function<Unit>): Unit /* this */
-    fun removeListener(event: BrowserWindowEvent.MINIMIZE, listener: Function<Unit>): Unit /* this */
-    fun removeListener(event: BrowserWindowEvent.MOVE, listener: Function<Unit>): Unit /* this */
 
     /**
      * @platform darwin,win32
      */
-    fun removeListener(event: BrowserWindowEvent.MOVED, listener: Function<Unit>): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun removeListener(event: BrowserWindowEvent.NEW_WINDOW_FOR_TAB, listener: Function<Unit>): Unit /* this */
-    fun removeListener(
-        event: BrowserWindowEvent.PAGE_TITLE_UPDATED,
-        listener: (event: Event<*>, title: String, explicitSet: Boolean) -> Unit,
-    ): Unit /* this */
 
-    fun removeListener(event: BrowserWindowEvent.READY_TO_SHOW, listener: Function<Unit>): Unit /* this */
-    fun removeListener(event: BrowserWindowEvent.RESIZE, listener: Function<Unit>): Unit /* this */
 
     /**
      * @platform darwin,win32
      */
-    fun removeListener(event: BrowserWindowEvent.RESIZED, listener: Function<Unit>): Unit /* this */
-    fun removeListener(event: BrowserWindowEvent.RESPONSIVE, listener: Function<Unit>): Unit /* this */
-    fun removeListener(event: BrowserWindowEvent.RESTORE, listener: Function<Unit>): Unit /* this */
+
 
     /**
      * @platform darwin
      */
-    fun removeListener(
-        event: BrowserWindowEvent.ROTATE_GESTURE,
-        listener: (event: Event<*>, rotation: Double) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform win32
      */
-    fun removeListener(event: BrowserWindowEvent.SESSION_END, listener: Function<Unit>): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun removeListener(event: BrowserWindowEvent.SHEET_BEGIN, listener: Function<Unit>): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun removeListener(event: BrowserWindowEvent.SHEET_END, listener: Function<Unit>): Unit /* this */
-    fun removeListener(event: BrowserWindowEvent.SHOW, listener: Function<Unit>): Unit /* this */
+
 
     /**
      * @platform darwin
      */
-    fun removeListener(
-        event: BrowserWindowEvent.SWIPE,
-        listener: (event: Event<*>, direction: String) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform win32
      */
-    fun removeListener(
-        event: BrowserWindowEvent.SYSTEM_CONTEXT_MENU,
-        listener: (
-            event: Event<*>,
-            /**
-             * The screen coordinates the context menu was triggered at
-             */
-            point: Point,
-        ) -> Unit,
-    ): Unit /* this */
 
-    fun removeListener(event: BrowserWindowEvent.UNMAXIMIZE, listener: Function<Unit>): Unit /* this */
-    fun removeListener(event: BrowserWindowEvent.UNRESPONSIVE, listener: Function<Unit>): Unit /* this */
 
     /**
      * @platform darwin,win32
      */
-    fun removeListener(
-        event: BrowserWindowEvent.WILL_MOVE,
-        listener: (
-            event: Event<*>,
-            /**
-             * Location the window is being moved to.
-             */
-            newBounds: Rectangle,
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform darwin,win32
      */
-    fun removeListener(
-        event: BrowserWindowEvent.WILL_RESIZE,
-        listener: (
-            event: Event<*>,
-            /**
-             * Size the window is being resized to.
-             */
-            newBounds: Rectangle,
-            details: WillResizeDetails,
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * Replacement API for setBrowserView supporting work with multi browser views.
@@ -2061,6 +1701,105 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      */
     val webContents: WebContents
+
+    @web.events.JsEvent("always-on-top-changed")
+    val alwaysOnTopChangedEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Boolean>>
+
+    @web.events.JsEvent("app-command")
+    val appCommandEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, String>>
+
+    @web.events.JsEvent("blur")
+    val blurEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("close")
+    val closeEvent: node.events.EventInstance<js.array.JsTuple1<Event<*>>>
+
+    @web.events.JsEvent("closed")
+    val closedEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("enter-full-screen")
+    val enterFullScreenEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("enter-html-full-screen")
+    val enterHtmlFullScreenEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("focus")
+    val focusEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("hide")
+    val hideEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("leave-full-screen")
+    val leaveFullScreenEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("leave-html-full-screen")
+    val leaveHtmlFullScreenEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("maximize")
+    val maximizeEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("minimize")
+    val minimizeEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("move")
+    val moveEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("moved")
+    val movedEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("new-window-for-tab")
+    val newWindowForTabEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("page-title-updated")
+    val pageTitleUpdatedEvent: node.events.EventInstance<js.array.JsTuple3<Event<*>, String, Boolean>>
+
+    @web.events.JsEvent("ready-to-show")
+    val readyToShowEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("resize")
+    val resizeEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("resized")
+    val resizedEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("responsive")
+    val responsiveEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("restore")
+    val restoreEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("rotate-gesture")
+    val rotateGestureEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Double>>
+
+    @web.events.JsEvent("session-end")
+    val sessionEndEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("sheet-begin")
+    val sheetBeginEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("sheet-end")
+    val sheetEndEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("show")
+    val showEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("swipe")
+    val swipeEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, String>>
+
+    @web.events.JsEvent("system-context-menu")
+    val systemContextMenuEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Point>>
+
+    @web.events.JsEvent("unmaximize")
+    val unmaximizeEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("unresponsive")
+    val unresponsiveEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("will-move")
+    val willMoveEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Rectangle>>
+
+    @web.events.JsEvent("will-resize")
+    val willResizeEvent: node.events.EventInstance<js.array.JsTuple3<Event<*>, Rectangle, WillResizeDetails>>
 
     companion object {
         /**

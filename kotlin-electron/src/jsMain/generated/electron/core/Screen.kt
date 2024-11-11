@@ -8,81 +8,17 @@ external interface Screen : node.events.EventEmitter {
     /**
      * Emitted when `newDisplay` has been added.
      */
-    fun on(event: ScreenEvent.DISPLAY_ADDED, listener: (event: Event<*>, newDisplay: Display) -> Unit): Unit /* this */
 
     /**
      * Emitted when one or more metrics change in a `display`. The `changedMetrics` is
      * an array of strings that describe the changes. Possible changes are `bounds`,
      * `workArea`, `scaleFactor` and `rotation`.
      */
-    fun on(
-        event: ScreenEvent.DISPLAY_METRICS_CHANGED,
-        listener: (event: Event<*>, display: Display, changedMetrics: js.array.ReadonlyArray<String>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Emitted when `oldDisplay` has been removed.
      */
-    fun on(
-        event: ScreenEvent.DISPLAY_REMOVED,
-        listener: (event: Event<*>, oldDisplay: Display) -> Unit,
-    ): Unit /* this */
 
-    fun off(event: ScreenEvent.DISPLAY_ADDED, listener: (event: Event<*>, newDisplay: Display) -> Unit): Unit /* this */
-    fun off(
-        event: ScreenEvent.DISPLAY_METRICS_CHANGED,
-        listener: (event: Event<*>, display: Display, changedMetrics: js.array.ReadonlyArray<String>) -> Unit,
-    ): Unit /* this */
-
-    fun off(
-        event: ScreenEvent.DISPLAY_REMOVED,
-        listener: (event: Event<*>, oldDisplay: Display) -> Unit,
-    ): Unit /* this */
-
-    fun once(
-        event: ScreenEvent.DISPLAY_ADDED,
-        listener: (event: Event<*>, newDisplay: Display) -> Unit,
-    ): Unit /* this */
-
-    fun once(
-        event: ScreenEvent.DISPLAY_METRICS_CHANGED,
-        listener: (event: Event<*>, display: Display, changedMetrics: js.array.ReadonlyArray<String>) -> Unit,
-    ): Unit /* this */
-
-    fun once(
-        event: ScreenEvent.DISPLAY_REMOVED,
-        listener: (event: Event<*>, oldDisplay: Display) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: ScreenEvent.DISPLAY_ADDED,
-        listener: (event: Event<*>, newDisplay: Display) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: ScreenEvent.DISPLAY_METRICS_CHANGED,
-        listener: (event: Event<*>, display: Display, changedMetrics: js.array.ReadonlyArray<String>) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: ScreenEvent.DISPLAY_REMOVED,
-        listener: (event: Event<*>, oldDisplay: Display) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(
-        event: ScreenEvent.DISPLAY_ADDED,
-        listener: (event: Event<*>, newDisplay: Display) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(
-        event: ScreenEvent.DISPLAY_METRICS_CHANGED,
-        listener: (event: Event<*>, display: Display, changedMetrics: js.array.ReadonlyArray<String>) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(
-        event: ScreenEvent.DISPLAY_REMOVED,
-        listener: (event: Event<*>, oldDisplay: Display) -> Unit,
-    ): Unit /* this */
 
     /**
      * Converts a screen DIP point to a screen physical point. The DPI scale is
@@ -144,4 +80,13 @@ external interface Screen : node.events.EventEmitter {
      * @platform win32
      */
     fun screenToDipRect(window: BrowserWindow?, rect: Rectangle): Rectangle
+
+    @web.events.JsEvent("display-added")
+    val displayAddedEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Display>>
+
+    @web.events.JsEvent("display-metrics-changed")
+    val displayMetricsChangedEvent: node.events.EventInstance<js.array.JsTuple3<Event<*>, Display, js.array.ReadonlyArray<String>>>
+
+    @web.events.JsEvent("display-removed")
+    val displayRemovedEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Display>>
 }

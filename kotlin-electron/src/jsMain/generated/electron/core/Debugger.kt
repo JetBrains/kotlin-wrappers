@@ -13,168 +13,11 @@ external class Debugger : NodeEventEmitter {
      * Emitted when the debugging session is terminated. This happens either when
      * `webContents` is closed or devtools is invoked for the attached `webContents`.
      */
-    fun on(
-        event: DebuggerEvent.DETACH,
-        listener: (
-            event: Event<*>,
-            /**
-             * Reason for detaching debugger.
-             */
-            reason: String,
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * Emitted whenever the debugging target issues an instrumentation event.
      */
-    fun on(
-        event: DebuggerEvent.MESSAGE,
-        listener: (
-            event: Event<*>,
-            /**
-             * Method name.
-             */
-            method: String,
-            /**
-             * Event parameters defined by the 'parameters' attribute in the remote debugging
-             * protocol.
-             */
-            params: Any?,
-            /**
-             * Unique identifier of attached debugging session, will match the value sent from
-             * `debugger.sendCommand`.
-             */
-            sessionId: String,
-        ) -> Unit,
-    ): Unit /* this */
 
-    fun off(
-        event: DebuggerEvent.DETACH,
-        listener: (
-            event: Event<*>,
-            /**
-             * Reason for detaching debugger.
-             */
-            reason: String,
-        ) -> Unit,
-    ): Unit /* this */
-
-    fun off(
-        event: DebuggerEvent.MESSAGE,
-        listener: (
-            event: Event<*>,
-            /**
-             * Method name.
-             */
-            method: String,
-            /**
-             * Event parameters defined by the 'parameters' attribute in the remote debugging
-             * protocol.
-             */
-            params: Any?,
-            /**
-             * Unique identifier of attached debugging session, will match the value sent from
-             * `debugger.sendCommand`.
-             */
-            sessionId: String,
-        ) -> Unit,
-    ): Unit /* this */
-
-    fun once(
-        event: DebuggerEvent.DETACH,
-        listener: (
-            event: Event<*>,
-            /**
-             * Reason for detaching debugger.
-             */
-            reason: String,
-        ) -> Unit,
-    ): Unit /* this */
-
-    fun once(
-        event: DebuggerEvent.MESSAGE,
-        listener: (
-            event: Event<*>,
-            /**
-             * Method name.
-             */
-            method: String,
-            /**
-             * Event parameters defined by the 'parameters' attribute in the remote debugging
-             * protocol.
-             */
-            params: Any?,
-            /**
-             * Unique identifier of attached debugging session, will match the value sent from
-             * `debugger.sendCommand`.
-             */
-            sessionId: String,
-        ) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: DebuggerEvent.DETACH,
-        listener: (
-            event: Event<*>,
-            /**
-             * Reason for detaching debugger.
-             */
-            reason: String,
-        ) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: DebuggerEvent.MESSAGE,
-        listener: (
-            event: Event<*>,
-            /**
-             * Method name.
-             */
-            method: String,
-            /**
-             * Event parameters defined by the 'parameters' attribute in the remote debugging
-             * protocol.
-             */
-            params: Any?,
-            /**
-             * Unique identifier of attached debugging session, will match the value sent from
-             * `debugger.sendCommand`.
-             */
-            sessionId: String,
-        ) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(
-        event: DebuggerEvent.DETACH,
-        listener: (
-            event: Event<*>,
-            /**
-             * Reason for detaching debugger.
-             */
-            reason: String,
-        ) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(
-        event: DebuggerEvent.MESSAGE,
-        listener: (
-            event: Event<*>,
-            /**
-             * Method name.
-             */
-            method: String,
-            /**
-             * Event parameters defined by the 'parameters' attribute in the remote debugging
-             * protocol.
-             */
-            params: Any?,
-            /**
-             * Unique identifier of attached debugging session, will match the value sent from
-             * `debugger.sendCommand`.
-             */
-            sessionId: String,
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * Attaches the debugger to the `webContents`.
@@ -203,4 +46,10 @@ external class Debugger : NodeEventEmitter {
         commandParams: Any? = definedExternally,
         sessionId: String = definedExternally,
     ): Promise<Any?>
+
+    @web.events.JsEvent("detach")
+    val detachEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, String>>
+
+    @web.events.JsEvent("message")
+    val messageEvent: node.events.EventInstance<js.array.JsTuple4<Event<*>, String, Any?, String>>
 }

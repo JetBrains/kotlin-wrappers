@@ -11,11 +11,7 @@ external class WebFrameMain : NodeEventEmitter {
     /**
      * Emitted when the document is loaded.
      */
-    fun on(event: WebFrameMainEvent.DOM_READY, listener: Function<Unit>): Unit /* this */
-    fun off(event: WebFrameMainEvent.DOM_READY, listener: Function<Unit>): Unit /* this */
-    fun once(event: WebFrameMainEvent.DOM_READY, listener: Function<Unit>): Unit /* this */
-    fun addListener(event: WebFrameMainEvent.DOM_READY, listener: Function<Unit>): Unit /* this */
-    fun removeListener(event: WebFrameMainEvent.DOM_READY, listener: Function<Unit>): Unit /* this */
+
 
     /**
      * A promise that resolves with the result of the executed code or is rejected if
@@ -178,6 +174,9 @@ external class WebFrameMain : NodeEventEmitter {
      *
      */
     val visibilityState: String
+
+    @web.events.JsEvent("dom-ready")
+    val domReadyEvent: node.events.EventInstance<js.array.JsTuple>
 
     companion object {
 // Docs: https://electronjs.org/docs/api/web-frame-main

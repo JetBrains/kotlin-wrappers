@@ -13,100 +13,7 @@ external class Cookies : NodeEventEmitter {
      * Emitted when a cookie is changed because it was added, edited, removed, or
      * expired.
      */
-    fun on(
-        event: CookiesEvent.CHANGED,
-        listener: (
-            event: Event<*>,
-            /**
-             * The cookie that was changed.
-             */
-            cookie: Cookie,
-            /**
-             * The cause of the change with one of the following values:
-             */
-            cause: (CookiesOnListenerCause),
-            /**
-             * `true` if the cookie was removed, `false` otherwise.
-             */
-            removed: Boolean,
-        ) -> Unit,
-    ): Unit /* this */
 
-    fun off(
-        event: CookiesEvent.CHANGED,
-        listener: (
-            event: Event<*>,
-            /**
-             * The cookie that was changed.
-             */
-            cookie: Cookie,
-            /**
-             * The cause of the change with one of the following values:
-             */
-            cause: (CookiesOffListenerCause),
-            /**
-             * `true` if the cookie was removed, `false` otherwise.
-             */
-            removed: Boolean,
-        ) -> Unit,
-    ): Unit /* this */
-
-    fun once(
-        event: CookiesEvent.CHANGED,
-        listener: (
-            event: Event<*>,
-            /**
-             * The cookie that was changed.
-             */
-            cookie: Cookie,
-            /**
-             * The cause of the change with one of the following values:
-             */
-            cause: (CookiesOnceListenerCause),
-            /**
-             * `true` if the cookie was removed, `false` otherwise.
-             */
-            removed: Boolean,
-        ) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: CookiesEvent.CHANGED,
-        listener: (
-            event: Event<*>,
-            /**
-             * The cookie that was changed.
-             */
-            cookie: Cookie,
-            /**
-             * The cause of the change with one of the following values:
-             */
-            cause: (CookiesAddListenerListenerCause),
-            /**
-             * `true` if the cookie was removed, `false` otherwise.
-             */
-            removed: Boolean,
-        ) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(
-        event: CookiesEvent.CHANGED,
-        listener: (
-            event: Event<*>,
-            /**
-             * The cookie that was changed.
-             */
-            cookie: Cookie,
-            /**
-             * The cause of the change with one of the following values:
-             */
-            cause: (CookiesRemoveListenerListenerCause),
-            /**
-             * `true` if the cookie was removed, `false` otherwise.
-             */
-            removed: Boolean,
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * A promise which resolves when the cookie store has been flushed
@@ -141,4 +48,7 @@ external class Cookies : NodeEventEmitter {
      * Sets a cookie with `details`.
      */
     fun set(details: CookiesSetDetails): Promise<js.core.Void>
+
+    @web.events.JsEvent("changed")
+    val changedEvent: node.events.EventInstance<js.array.JsTuple4<Event<*>, Cookie, (CookiesAddListenerListenerCause), Boolean>>
 }

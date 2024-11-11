@@ -11,27 +11,11 @@ external class MessagePortMain : NodeEventEmitter {
     /**
      * Emitted when the remote end of a MessagePortMain object becomes disconnected.
      */
-    fun on(event: MessagePortMainEvent.CLOSE, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when a MessagePortMain object receives a message.
      */
-    fun on(event: MessagePortMainEvent.MESSAGE, listener: (messageEvent: MessageEvent) -> Unit): Unit /* this */
-    fun off(event: MessagePortMainEvent.CLOSE, listener: Function<Unit>): Unit /* this */
-    fun off(event: MessagePortMainEvent.MESSAGE, listener: (messageEvent: MessageEvent) -> Unit): Unit /* this */
-    fun once(event: MessagePortMainEvent.CLOSE, listener: Function<Unit>): Unit /* this */
-    fun once(event: MessagePortMainEvent.MESSAGE, listener: (messageEvent: MessageEvent) -> Unit): Unit /* this */
-    fun addListener(event: MessagePortMainEvent.CLOSE, listener: Function<Unit>): Unit /* this */
-    fun addListener(
-        event: MessagePortMainEvent.MESSAGE,
-        listener: (messageEvent: MessageEvent) -> Unit,
-    ): Unit /* this */
 
-    fun removeListener(event: MessagePortMainEvent.CLOSE, listener: Function<Unit>): Unit /* this */
-    fun removeListener(
-        event: MessagePortMainEvent.MESSAGE,
-        listener: (messageEvent: MessageEvent) -> Unit,
-    ): Unit /* this */
 
     /**
      * Disconnects the port, so it is no longer active.
@@ -49,4 +33,10 @@ external class MessagePortMain : NodeEventEmitter {
      * this method is called.
      */
     fun start(): Unit
+
+    @web.events.JsEvent("close")
+    val closeEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("message")
+    val messageEvent: node.events.EventInstance<js.array.JsTuple1<MessageEvent>>
 }

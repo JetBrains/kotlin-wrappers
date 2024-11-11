@@ -6,12 +6,8 @@ import js.promise.Promise
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 external interface InAppPurchase : node.events.EventEmitter {
-    // Docs: https://electronjs.org/docs/api/in-app-purchase
-    fun on(event: InAppPurchaseEvent.TRANSACTIONS_UPDATED, listener: Function<Unit>): Unit /* this */
-    fun off(event: InAppPurchaseEvent.TRANSACTIONS_UPDATED, listener: Function<Unit>): Unit /* this */
-    fun once(event: InAppPurchaseEvent.TRANSACTIONS_UPDATED, listener: Function<Unit>): Unit /* this */
-    fun addListener(event: InAppPurchaseEvent.TRANSACTIONS_UPDATED, listener: Function<Unit>): Unit /* this */
-    fun removeListener(event: InAppPurchaseEvent.TRANSACTIONS_UPDATED, listener: Function<Unit>): Unit /* this */
+// Docs: https://electronjs.org/docs/api/in-app-purchase
+
 
     /**
      * whether a user can make a payment.
@@ -74,4 +70,7 @@ external interface InAppPurchase : node.events.EventEmitter {
      * original transaction.
      */
     fun restoreCompletedTransactions(): Unit
+
+    @web.events.JsEvent("transactions-updated")
+    val transactionsUpdatedEvent: node.events.EventInstance<js.array.JsTuple>
 }

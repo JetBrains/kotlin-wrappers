@@ -15,20 +15,11 @@ open external class Menu : NodeEventEmitter {
     /**
      * Emitted when a popup is closed either manually or with `menu.closePopup()`.
      */
-    fun on(event: MenuEvent.MENU_WILL_CLOSE, listener: (event: Event<*>) -> Unit): Unit /* this */
 
     /**
      * Emitted when `menu.popup()` is called.
      */
-    fun on(event: MenuEvent.MENU_WILL_SHOW, listener: (event: Event<*>) -> Unit): Unit /* this */
-    fun off(event: MenuEvent.MENU_WILL_CLOSE, listener: (event: Event<*>) -> Unit): Unit /* this */
-    fun off(event: MenuEvent.MENU_WILL_SHOW, listener: (event: Event<*>) -> Unit): Unit /* this */
-    fun once(event: MenuEvent.MENU_WILL_CLOSE, listener: (event: Event<*>) -> Unit): Unit /* this */
-    fun once(event: MenuEvent.MENU_WILL_SHOW, listener: (event: Event<*>) -> Unit): Unit /* this */
-    fun addListener(event: MenuEvent.MENU_WILL_CLOSE, listener: (event: Event<*>) -> Unit): Unit /* this */
-    fun addListener(event: MenuEvent.MENU_WILL_SHOW, listener: (event: Event<*>) -> Unit): Unit /* this */
-    fun removeListener(event: MenuEvent.MENU_WILL_CLOSE, listener: (event: Event<*>) -> Unit): Unit /* this */
-    fun removeListener(event: MenuEvent.MENU_WILL_SHOW, listener: (event: Event<*>) -> Unit): Unit /* this */
+
 
     /**
      * Appends the `menuItem` to the menu.
@@ -62,6 +53,12 @@ open external class Menu : NodeEventEmitter {
      * submenu.
      */
     var items: js.array.ReadonlyArray<MenuItem>
+
+    @web.events.JsEvent("menu-will-close")
+    val menuWillCloseEvent: node.events.EventInstance<js.array.JsTuple1<Event<*>>>
+
+    @web.events.JsEvent("menu-will-show")
+    val menuWillShowEvent: node.events.EventInstance<js.array.JsTuple1<Event<*>>>
 
     companion object {
         /**

@@ -22,35 +22,23 @@ external class ClientRequest : NodeEventEmitter {
      * Emitted when the `request` is aborted. The `abort` event will not be fired if
      * the `request` is already closed.
      */
-    fun on(event: ClientRequestEvent.ABORT, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted as the last event in the HTTP request-response transaction. The `close`
      * event indicates that no more events will be emitted on either the `request` or
      * `response` objects.
      */
-    fun on(event: ClientRequestEvent.CLOSE, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when the `net` module fails to issue a network request. Typically when
      * the `request` object emits an `error` event, a `close` event will subsequently
      * follow and no response object will be provided.
      */
-    fun on(
-        event: ClientRequestEvent.ERROR,
-        listener: (
-            /**
-             * an error object providing some information about the failure.
-             */
-            error: js.errors.JsError,
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * Emitted just after the last chunk of the `request`'s data has been written into
      * the `request` object.
      */
-    fun on(event: ClientRequestEvent.FINISH, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when an authenticating proxy is asking for user credentials.
@@ -63,10 +51,6 @@ external class ClientRequest : NodeEventEmitter {
      * Providing empty credentials will cancel the request and report an authentication
      * error on the response object:
      */
-    fun on(
-        event: ClientRequestEvent.LOGIN,
-        listener: (authInfo: AuthInfo, callback: (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit) -> Unit,
-    ): Unit /* this */
 
     /**
      * Emitted when the server returns a redirect response (e.g. 301 Moved
@@ -74,152 +58,7 @@ external class ClientRequest : NodeEventEmitter {
      * redirection.  If this event is handled, `request.followRedirect` must be called
      * **synchronously**, otherwise the request will be cancelled.
      */
-    fun on(
-        event: ClientRequestEvent.REDIRECT,
-        listener: (statusCode: Double, method: String, redirectUrl: String, responseHeaders: js.objects.ReadonlyRecord<String, js.array.ReadonlyArray<String>>) -> Unit,
-    ): Unit /* this */
 
-    fun on(
-        event: ClientRequestEvent.RESPONSE,
-        listener: (
-            /**
-             * An object representing the HTTP response message.
-             */
-            response: IncomingMessage,
-        ) -> Unit,
-    ): Unit /* this */
-
-    fun off(event: ClientRequestEvent.ABORT, listener: Function<Unit>): Unit /* this */
-    fun off(event: ClientRequestEvent.CLOSE, listener: Function<Unit>): Unit /* this */
-    fun off(
-        event: ClientRequestEvent.ERROR,
-        listener: (
-            /**
-             * an error object providing some information about the failure.
-             */
-            error: js.errors.JsError,
-        ) -> Unit,
-    ): Unit /* this */
-
-    fun off(event: ClientRequestEvent.FINISH, listener: Function<Unit>): Unit /* this */
-    fun off(
-        event: ClientRequestEvent.LOGIN,
-        listener: (authInfo: AuthInfo, callback: (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit) -> Unit,
-    ): Unit /* this */
-
-    fun off(
-        event: ClientRequestEvent.REDIRECT,
-        listener: (statusCode: Double, method: String, redirectUrl: String, responseHeaders: js.objects.ReadonlyRecord<String, js.array.ReadonlyArray<String>>) -> Unit,
-    ): Unit /* this */
-
-    fun off(
-        event: ClientRequestEvent.RESPONSE,
-        listener: (
-            /**
-             * An object representing the HTTP response message.
-             */
-            response: IncomingMessage,
-        ) -> Unit,
-    ): Unit /* this */
-
-    fun once(event: ClientRequestEvent.ABORT, listener: Function<Unit>): Unit /* this */
-    fun once(event: ClientRequestEvent.CLOSE, listener: Function<Unit>): Unit /* this */
-    fun once(
-        event: ClientRequestEvent.ERROR,
-        listener: (
-            /**
-             * an error object providing some information about the failure.
-             */
-            error: js.errors.JsError,
-        ) -> Unit,
-    ): Unit /* this */
-
-    fun once(event: ClientRequestEvent.FINISH, listener: Function<Unit>): Unit /* this */
-    fun once(
-        event: ClientRequestEvent.LOGIN,
-        listener: (authInfo: AuthInfo, callback: (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit) -> Unit,
-    ): Unit /* this */
-
-    fun once(
-        event: ClientRequestEvent.REDIRECT,
-        listener: (statusCode: Double, method: String, redirectUrl: String, responseHeaders: js.objects.ReadonlyRecord<String, js.array.ReadonlyArray<String>>) -> Unit,
-    ): Unit /* this */
-
-    fun once(
-        event: ClientRequestEvent.RESPONSE,
-        listener: (
-            /**
-             * An object representing the HTTP response message.
-             */
-            response: IncomingMessage,
-        ) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(event: ClientRequestEvent.ABORT, listener: Function<Unit>): Unit /* this */
-    fun addListener(event: ClientRequestEvent.CLOSE, listener: Function<Unit>): Unit /* this */
-    fun addListener(
-        event: ClientRequestEvent.ERROR,
-        listener: (
-            /**
-             * an error object providing some information about the failure.
-             */
-            error: js.errors.JsError,
-        ) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(event: ClientRequestEvent.FINISH, listener: Function<Unit>): Unit /* this */
-    fun addListener(
-        event: ClientRequestEvent.LOGIN,
-        listener: (authInfo: AuthInfo, callback: (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: ClientRequestEvent.REDIRECT,
-        listener: (statusCode: Double, method: String, redirectUrl: String, responseHeaders: js.objects.ReadonlyRecord<String, js.array.ReadonlyArray<String>>) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: ClientRequestEvent.RESPONSE,
-        listener: (
-            /**
-             * An object representing the HTTP response message.
-             */
-            response: IncomingMessage,
-        ) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(event: ClientRequestEvent.ABORT, listener: Function<Unit>): Unit /* this */
-    fun removeListener(event: ClientRequestEvent.CLOSE, listener: Function<Unit>): Unit /* this */
-    fun removeListener(
-        event: ClientRequestEvent.ERROR,
-        listener: (
-            /**
-             * an error object providing some information about the failure.
-             */
-            error: js.errors.JsError,
-        ) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(event: ClientRequestEvent.FINISH, listener: Function<Unit>): Unit /* this */
-    fun removeListener(
-        event: ClientRequestEvent.LOGIN,
-        listener: (authInfo: AuthInfo, callback: (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(
-        event: ClientRequestEvent.REDIRECT,
-        listener: (statusCode: Double, method: String, redirectUrl: String, responseHeaders: js.objects.ReadonlyRecord<String, js.array.ReadonlyArray<String>>) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(
-        event: ClientRequestEvent.RESPONSE,
-        listener: (
-            /**
-             * An object representing the HTTP response message.
-             */
-            response: IncomingMessage,
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * Cancels an ongoing HTTP transaction. If the request has already emitted the
@@ -346,4 +185,25 @@ external class ClientRequest : NodeEventEmitter {
      * internally buffered inside Electron process memory.
      */
     var chunkedEncoding: Boolean
+
+    @web.events.JsEvent("abort")
+    val abortEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("close")
+    val closeEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("error")
+    val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+
+    @web.events.JsEvent("finish")
+    val finishEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("login")
+    val loginEvent: node.events.EventInstance<js.array.JsTuple2<AuthInfo, (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit>>
+
+    @web.events.JsEvent("redirect")
+    val redirectEvent: node.events.EventInstance<js.array.JsTuple4<Double, String, String, js.objects.ReadonlyRecord<String, js.array.ReadonlyArray<String>>>>
+
+    @web.events.JsEvent("response")
+    val responseEvent: node.events.EventInstance<js.array.JsTuple1<IncomingMessage>>
 }

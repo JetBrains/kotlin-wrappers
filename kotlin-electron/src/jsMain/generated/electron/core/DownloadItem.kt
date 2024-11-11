@@ -19,16 +19,6 @@ external class DownloadItem : NodeEventEmitter {
      * * `cancelled` - The download has been cancelled.
      * * `interrupted` - The download has interrupted and can not resume.
      */
-    fun on(
-        event: DownloadItemEvent.DONE,
-        listener: (
-            event: Event<*>,
-            /**
-             * Can be `completed`, `cancelled` or `interrupted`.
-             */
-            state: (DownloadItemDoneListenerState),
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * Emitted when the download has been updated and is not done.
@@ -38,104 +28,7 @@ external class DownloadItem : NodeEventEmitter {
      * * `progressing` - The download is in-progress.
      * * `interrupted` - The download has interrupted and can be resumed.
      */
-    fun on(
-        event: DownloadItemEvent.UPDATED,
-        listener: (
-            event: Event<*>,
-            /**
-             * Can be `progressing` or `interrupted`.
-             */
-            state: (DownloadItemUpdatedListenerState),
-        ) -> Unit,
-    ): Unit /* this */
 
-    fun off(
-        event: DownloadItemEvent.DONE,
-        listener: (
-            event: Event<*>,
-            /**
-             * Can be `completed`, `cancelled` or `interrupted`.
-             */
-            state: (DownloadItemDoneListenerState),
-        ) -> Unit,
-    ): Unit /* this */
-
-    fun off(
-        event: DownloadItemEvent.UPDATED,
-        listener: (
-            event: Event<*>,
-            /**
-             * Can be `progressing` or `interrupted`.
-             */
-            state: (DownloadItemUpdatedListenerState),
-        ) -> Unit,
-    ): Unit /* this */
-
-    fun once(
-        event: DownloadItemEvent.DONE,
-        listener: (
-            event: Event<*>,
-            /**
-             * Can be `completed`, `cancelled` or `interrupted`.
-             */
-            state: (DownloadItemDoneListenerState),
-        ) -> Unit,
-    ): Unit /* this */
-
-    fun once(
-        event: DownloadItemEvent.UPDATED,
-        listener: (
-            event: Event<*>,
-            /**
-             * Can be `progressing` or `interrupted`.
-             */
-            state: (DownloadItemUpdatedListenerState),
-        ) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: DownloadItemEvent.DONE,
-        listener: (
-            event: Event<*>,
-            /**
-             * Can be `completed`, `cancelled` or `interrupted`.
-             */
-            state: (DownloadItemDoneListenerState),
-        ) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: DownloadItemEvent.UPDATED,
-        listener: (
-            event: Event<*>,
-            /**
-             * Can be `progressing` or `interrupted`.
-             */
-            state: (DownloadItemUpdatedListenerState),
-        ) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(
-        event: DownloadItemEvent.DONE,
-        listener: (
-            event: Event<*>,
-            /**
-             * Can be `completed`, `cancelled` or `interrupted`.
-             */
-            state: (DownloadItemDoneListenerState),
-        ) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(
-        event: DownloadItemEvent.UPDATED,
-        listener: (
-            event: Event<*>,
-            /**
-             * Can be `progressing` or `interrupted`.
-             */
-            state: (DownloadItemUpdatedListenerState),
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * Cancels the download operation.
@@ -273,4 +166,10 @@ external class DownloadItem : NodeEventEmitter {
      * original routine to determine the save path; this usually prompts a save dialog.
      */
     var savePath: String
+
+    @web.events.JsEvent("done")
+    val doneEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, (DownloadItemDoneListenerState)>>
+
+    @web.events.JsEvent("updated")
+    val updatedEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, (DownloadItemUpdatedListenerState)>>
 }

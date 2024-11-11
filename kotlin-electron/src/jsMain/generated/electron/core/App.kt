@@ -15,16 +15,6 @@ external interface App : node.events.EventEmitter {
      *
      * @platform darwin,win32
      */
-    fun on(
-        event: AppEvent.ACCESSIBILITY_SUPPORT_CHANGED,
-        listener: (
-            event: Event<*>,
-            /**
-             * `true` when Chrome's accessibility support is enabled, `false` otherwise.
-             */
-            accessibilitySupportEnabled: Boolean,
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * Emitted when the application is activated. Various actions can trigger this
@@ -34,7 +24,6 @@ external interface App : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun on(event: AppEvent.ACTIVATE, listener: (event: Event<*>, hasVisibleWindows: Boolean) -> Unit): Unit /* this */
 
     /**
      * Emitted during Handoff after an activity from this device was successfully
@@ -42,20 +31,6 @@ external interface App : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun on(
-        event: AppEvent.ACTIVITY_WAS_CONTINUED,
-        listener: (
-            event: Event<*>,
-            /**
-             * A string identifying the activity. Maps to `NSUserActivity.activityType`.
-             */
-            type: String,
-            /**
-             * Contains app-specific state stored by the activity.
-             */
-            userInfo: Any?,
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * Emitted before the application starts closing its windows. Calling
@@ -69,54 +44,29 @@ external interface App : node.events.EventEmitter {
      * **Note:** On Windows, this event will not be emitted if the app is closed due to
      * a shutdown/restart of the system or a user logout.
      */
-    fun on(event: AppEvent.BEFORE_QUIT, listener: (event: Event<*>) -> Unit): Unit /* this */
 
     /**
      * Emitted when a browserWindow gets blurred.
      */
-    fun on(
-        event: AppEvent.BROWSER_WINDOW_BLUR,
-        listener: (event: Event<*>, window: BrowserWindow) -> Unit,
-    ): Unit /* this */
 
     /**
      * Emitted when a new browserWindow is created.
      */
-    fun on(
-        event: AppEvent.BROWSER_WINDOW_CREATED,
-        listener: (event: Event<*>, window: BrowserWindow) -> Unit,
-    ): Unit /* this */
 
     /**
      * Emitted when a browserWindow gets focused.
      */
-    fun on(
-        event: AppEvent.BROWSER_WINDOW_FOCUS,
-        listener: (event: Event<*>, window: BrowserWindow) -> Unit,
-    ): Unit /* this */
 
     /**
      * Emitted when failed to verify the `certificate` for `url`, to trust the
      * certificate you should prevent the default behavior with
      * `event.preventDefault()` and call `callback(true)`.
      */
-    fun on(
-        event: AppEvent.CERTIFICATE_ERROR,
-        listener: (
-            event: Event<*>, webContents: WebContents, url: String,
-            /**
-             * The error code
-             */
-            error: String,
-            certificate: Certificate, callback: (isTrusted: Boolean) -> Unit, isMainFrame: Boolean,
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * Emitted when the child process unexpectedly disappears. This is normally because
      * it was crashed or killed. It does not include renderer processes.
      */
-    fun on(event: AppEvent.CHILD_PROCESS_GONE, listener: (event: Event<*>, details: Details) -> Unit): Unit /* this */
 
     /**
      * Emitted during Handoff when an activity from a different device wants to be
@@ -130,21 +80,6 @@ external interface App : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun on(
-        event: AppEvent.CONTINUE_ACTIVITY,
-        listener: (
-            event: Event<*>,
-            /**
-             * A string identifying the activity. Maps to `NSUserActivity.activityType`.
-             */
-            type: String,
-            /**
-             * Contains app-specific state stored by the activity on another device.
-             */
-            userInfo: Any?,
-            details: ContinueActivityDetails,
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * Emitted during Handoff when an activity from a different device fails to be
@@ -152,20 +87,6 @@ external interface App : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun on(
-        event: AppEvent.CONTINUE_ACTIVITY_ERROR,
-        listener: (
-            event: Event<*>,
-            /**
-             * A string identifying the activity. Maps to `NSUserActivity.activityType`.
-             */
-            type: String,
-            /**
-             * A string with the error's localized description.
-             */
-            error: String,
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * Emitted when the application becomes active. This differs from the `activate`
@@ -175,7 +96,6 @@ external interface App : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun on(event: AppEvent.DID_BECOME_ACTIVE, listener: (event: Event<*>) -> Unit): Unit /* this */
 
     /**
      * Emitted when the app is no longer active and doesn’t have focus. This can be
@@ -184,12 +104,10 @@ external interface App : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun on(event: AppEvent.DID_RESIGN_ACTIVE, listener: (event: Event<*>) -> Unit): Unit /* this */
 
     /**
      * Emitted whenever there is a GPU info update.
      */
-    fun on(event: AppEvent.GPU_INFO_UPDATE, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when `webContents` wants to do basic auth.
@@ -202,10 +120,6 @@ external interface App : node.events.EventEmitter {
      * request will be cancelled and the authentication error will be returned to the
      * page.
      */
-    fun on(
-        event: AppEvent.LOGIN,
-        listener: (event: Event<*>, webContents: WebContents, authenticationResponseDetails: AuthenticationResponseDetails, authInfo: AuthInfo, callback: (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit) -> Unit,
-    ): Unit /* this */
 
     /**
      * Emitted when the user clicks the native macOS new tab button. The new tab button
@@ -213,7 +127,6 @@ external interface App : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun on(event: AppEvent.NEW_WINDOW_FOR_TAB, listener: (event: Event<*>) -> Unit): Unit /* this */
 
     /**
      * Emitted when the user wants to open a file with the application. The `open-file`
@@ -230,7 +143,6 @@ external interface App : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun on(event: AppEvent.OPEN_FILE, listener: (event: Event<*>, path: String) -> Unit): Unit /* this */
 
     /**
      * Emitted when the user wants to open a URL with the application. Your
@@ -244,7 +156,6 @@ external interface App : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun on(event: AppEvent.OPEN_URL, listener: (event: Event<*>, url: String) -> Unit): Unit /* this */
 
     /**
      * Emitted when the application is quitting.
@@ -252,7 +163,6 @@ external interface App : node.events.EventEmitter {
      * **Note:** On Windows, this event will not be emitted if the app is closed due to
      * a shutdown/restart of the system or a user logout.
      */
-    fun on(event: AppEvent.QUIT, listener: (event: Event<*>, exitCode: Double) -> Unit): Unit /* this */
 
     /**
      * Emitted once, when Electron has finished initializing. On macOS, `launchInfo`
@@ -262,26 +172,11 @@ external interface App : node.events.EventEmitter {
      * this event has already fired and `app.whenReady()` to get a Promise that is
      * fulfilled when Electron is initialized.
      */
-    fun on(
-        event: AppEvent.READY,
-        listener: (
-            event: Event<*>,
-            /**
-             * @platform darwin
-             */
-            launchInfo: Any,
-            /* (Record<string, any>) | (NotificationResponse) */
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * Emitted when the renderer process unexpectedly disappears.  This is normally
      * because it was crashed or killed.
      */
-    fun on(
-        event: AppEvent.RENDER_PROCESS_GONE,
-        listener: (event: Event<*>, webContents: WebContents, details: RenderProcessGoneDetails) -> Unit,
-    ): Unit /* this */
 
     /**
      * This event will be emitted inside the primary instance of your application when
@@ -305,24 +200,6 @@ external interface App : node.events.EventEmitter {
      * **Note:** Extra command line arguments might be added by Chromium, such as
      * `--original-process-start-time`.
      */
-    fun on(
-        event: AppEvent.SECOND_INSTANCE,
-        listener: (
-            event: Event<*>,
-            /**
-             * An array of the second instance's command line arguments
-             */
-            argv: js.array.ReadonlyArray<String>,
-            /**
-             * The second instance's working directory
-             */
-            workingDirectory: String,
-            /**
-             * A JSON object of additional data passed from the second instance
-             */
-            additionalData: Any?,
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * Emitted when a client certificate is requested.
@@ -332,15 +209,10 @@ external interface App : node.events.EventEmitter {
      * `event.preventDefault()` prevents the application from using the first
      * certificate from the store.
      */
-    fun on(
-        event: AppEvent.SELECT_CLIENT_CERTIFICATE,
-        listener: (event: Event<*>, webContents: WebContents, url: String, certificateList: js.array.ReadonlyArray<Certificate>, callback: (certificate: Certificate? /* use undefined for default */) -> Unit) -> Unit,
-    ): Unit /* this */
 
     /**
      * Emitted when Electron has created a new `session`.
      */
-    fun on(event: AppEvent.SESSION_CREATED, listener: (session: Session) -> Unit): Unit /* this */
 
     /**
      * Emitted when Handoff is about to be resumed on another device. If you need to
@@ -351,28 +223,10 @@ external interface App : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun on(
-        event: AppEvent.UPDATE_ACTIVITY_STATE,
-        listener: (
-            event: Event<*>,
-            /**
-             * A string identifying the activity. Maps to `NSUserActivity.activityType`.
-             */
-            type: String,
-            /**
-             * Contains app-specific state stored by the activity.
-             */
-            userInfo: Any?,
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * Emitted when a new webContents is created.
      */
-    fun on(
-        event: AppEvent.WEB_CONTENTS_CREATED,
-        listener: (event: Event<*>, webContents: WebContents) -> Unit,
-    ): Unit /* this */
 
     /**
      * Emitted during Handoff before an activity from a different device wants to be
@@ -381,16 +235,6 @@ external interface App : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun on(
-        event: AppEvent.WILL_CONTINUE_ACTIVITY,
-        listener: (
-            event: Event<*>,
-            /**
-             * A string identifying the activity. Maps to `NSUserActivity.activityType`.
-             */
-            type: String,
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * Emitted when the application has finished basic startup. On Windows and Linux,
@@ -400,7 +244,6 @@ external interface App : node.events.EventEmitter {
      *
      * In most cases, you should do everything in the `ready` event handler.
      */
-    fun on(event: AppEvent.WILL_FINISH_LAUNCHING, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when all windows have been closed and the application will quit. Calling
@@ -413,7 +256,6 @@ external interface App : node.events.EventEmitter {
      * **Note:** On Windows, this event will not be emitted if the app is closed due to
      * a shutdown/restart of the system or a user logout.
      */
-    fun on(event: AppEvent.WILL_QUIT, listener: (event: Event<*>) -> Unit): Unit /* this */
 
     /**
      * Emitted when all windows have been closed.
@@ -425,891 +267,218 @@ external interface App : node.events.EventEmitter {
      * `will-quit` event, and in this case the `window-all-closed` event would not be
      * emitted.
      */
-    fun on(event: AppEvent.WINDOW_ALL_CLOSED, listener: Function<Unit>): Unit /* this */
 
     /**
      * @platform darwin,win32
      */
-    fun off(
-        event: AppEvent.ACCESSIBILITY_SUPPORT_CHANGED,
-        listener: (
-            event: Event<*>,
-            /**
-             * `true` when Chrome's accessibility support is enabled, `false` otherwise.
-             */
-            accessibilitySupportEnabled: Boolean,
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun off(event: AppEvent.ACTIVATE, listener: (event: Event<*>, hasVisibleWindows: Boolean) -> Unit): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun off(
-        event: AppEvent.ACTIVITY_WAS_CONTINUED,
-        listener: (
-            event: Event<*>,
-            /**
-             * A string identifying the activity. Maps to `NSUserActivity.activityType`.
-             */
-            type: String,
-            /**
-             * Contains app-specific state stored by the activity.
-             */
-            userInfo: Any?,
-        ) -> Unit,
-    ): Unit /* this */
 
-    fun off(event: AppEvent.BEFORE_QUIT, listener: (event: Event<*>) -> Unit): Unit /* this */
-    fun off(
-        event: AppEvent.BROWSER_WINDOW_BLUR,
-        listener: (event: Event<*>, window: BrowserWindow) -> Unit,
-    ): Unit /* this */
-
-    fun off(
-        event: AppEvent.BROWSER_WINDOW_CREATED,
-        listener: (event: Event<*>, window: BrowserWindow) -> Unit,
-    ): Unit /* this */
-
-    fun off(
-        event: AppEvent.BROWSER_WINDOW_FOCUS,
-        listener: (event: Event<*>, window: BrowserWindow) -> Unit,
-    ): Unit /* this */
-
-    fun off(
-        event: AppEvent.CERTIFICATE_ERROR,
-        listener: (
-            event: Event<*>, webContents: WebContents, url: String,
-            /**
-             * The error code
-             */
-            error: String,
-            certificate: Certificate, callback: (isTrusted: Boolean) -> Unit, isMainFrame: Boolean,
-        ) -> Unit,
-    ): Unit /* this */
-
-    fun off(event: AppEvent.CHILD_PROCESS_GONE, listener: (event: Event<*>, details: Details) -> Unit): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun off(
-        event: AppEvent.CONTINUE_ACTIVITY,
-        listener: (
-            event: Event<*>,
-            /**
-             * A string identifying the activity. Maps to `NSUserActivity.activityType`.
-             */
-            type: String,
-            /**
-             * Contains app-specific state stored by the activity on another device.
-             */
-            userInfo: Any?,
-            details: ContinueActivityDetails,
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun off(
-        event: AppEvent.CONTINUE_ACTIVITY_ERROR,
-        listener: (
-            event: Event<*>,
-            /**
-             * A string identifying the activity. Maps to `NSUserActivity.activityType`.
-             */
-            type: String,
-            /**
-             * A string with the error's localized description.
-             */
-            error: String,
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun off(event: AppEvent.DID_BECOME_ACTIVE, listener: (event: Event<*>) -> Unit): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun off(event: AppEvent.DID_RESIGN_ACTIVE, listener: (event: Event<*>) -> Unit): Unit /* this */
-    fun off(event: AppEvent.GPU_INFO_UPDATE, listener: Function<Unit>): Unit /* this */
-    fun off(
-        event: AppEvent.LOGIN,
-        listener: (event: Event<*>, webContents: WebContents, authenticationResponseDetails: AuthenticationResponseDetails, authInfo: AuthInfo, callback: (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit) -> Unit,
-    ): Unit /* this */
+
 
     /**
      * @platform darwin
      */
-    fun off(event: AppEvent.NEW_WINDOW_FOR_TAB, listener: (event: Event<*>) -> Unit): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun off(event: AppEvent.OPEN_FILE, listener: (event: Event<*>, path: String) -> Unit): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun off(event: AppEvent.OPEN_URL, listener: (event: Event<*>, url: String) -> Unit): Unit /* this */
-    fun off(event: AppEvent.QUIT, listener: (event: Event<*>, exitCode: Double) -> Unit): Unit /* this */
-    fun off(
-        event: AppEvent.READY,
-        listener: (
-            event: Event<*>,
-            /**
-             * @platform darwin
-             */
-            launchInfo: Any,
-            /* (Record<string, any>) | (NotificationResponse) */
-        ) -> Unit,
-    ): Unit /* this */
 
-    fun off(
-        event: AppEvent.RENDER_PROCESS_GONE,
-        listener: (event: Event<*>, webContents: WebContents, details: RenderProcessGoneDetails) -> Unit,
-    ): Unit /* this */
-
-    fun off(
-        event: AppEvent.SECOND_INSTANCE,
-        listener: (
-            event: Event<*>,
-            /**
-             * An array of the second instance's command line arguments
-             */
-            argv: js.array.ReadonlyArray<String>,
-            /**
-             * The second instance's working directory
-             */
-            workingDirectory: String,
-            /**
-             * A JSON object of additional data passed from the second instance
-             */
-            additionalData: Any?,
-        ) -> Unit,
-    ): Unit /* this */
-
-    fun off(
-        event: AppEvent.SELECT_CLIENT_CERTIFICATE,
-        listener: (event: Event<*>, webContents: WebContents, url: String, certificateList: js.array.ReadonlyArray<Certificate>, callback: (certificate: Certificate? /* use undefined for default */) -> Unit) -> Unit,
-    ): Unit /* this */
-
-    fun off(event: AppEvent.SESSION_CREATED, listener: (session: Session) -> Unit): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun off(
-        event: AppEvent.UPDATE_ACTIVITY_STATE,
-        listener: (
-            event: Event<*>,
-            /**
-             * A string identifying the activity. Maps to `NSUserActivity.activityType`.
-             */
-            type: String,
-            /**
-             * Contains app-specific state stored by the activity.
-             */
-            userInfo: Any?,
-        ) -> Unit,
-    ): Unit /* this */
 
-    fun off(
-        event: AppEvent.WEB_CONTENTS_CREATED,
-        listener: (event: Event<*>, webContents: WebContents) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun off(
-        event: AppEvent.WILL_CONTINUE_ACTIVITY,
-        listener: (
-            event: Event<*>,
-            /**
-             * A string identifying the activity. Maps to `NSUserActivity.activityType`.
-             */
-            type: String,
-        ) -> Unit,
-    ): Unit /* this */
 
-    fun off(event: AppEvent.WILL_FINISH_LAUNCHING, listener: Function<Unit>): Unit /* this */
-    fun off(event: AppEvent.WILL_QUIT, listener: (event: Event<*>) -> Unit): Unit /* this */
-    fun off(event: AppEvent.WINDOW_ALL_CLOSED, listener: Function<Unit>): Unit /* this */
 
     /**
      * @platform darwin,win32
      */
-    fun once(
-        event: AppEvent.ACCESSIBILITY_SUPPORT_CHANGED,
-        listener: (
-            event: Event<*>,
-            /**
-             * `true` when Chrome's accessibility support is enabled, `false` otherwise.
-             */
-            accessibilitySupportEnabled: Boolean,
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun once(event: AppEvent.ACTIVATE, listener: (event: Event<*>, hasVisibleWindows: Boolean) -> Unit): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun once(
-        event: AppEvent.ACTIVITY_WAS_CONTINUED,
-        listener: (
-            event: Event<*>,
-            /**
-             * A string identifying the activity. Maps to `NSUserActivity.activityType`.
-             */
-            type: String,
-            /**
-             * Contains app-specific state stored by the activity.
-             */
-            userInfo: Any?,
-        ) -> Unit,
-    ): Unit /* this */
 
-    fun once(event: AppEvent.BEFORE_QUIT, listener: (event: Event<*>) -> Unit): Unit /* this */
-    fun once(
-        event: AppEvent.BROWSER_WINDOW_BLUR,
-        listener: (event: Event<*>, window: BrowserWindow) -> Unit,
-    ): Unit /* this */
-
-    fun once(
-        event: AppEvent.BROWSER_WINDOW_CREATED,
-        listener: (event: Event<*>, window: BrowserWindow) -> Unit,
-    ): Unit /* this */
-
-    fun once(
-        event: AppEvent.BROWSER_WINDOW_FOCUS,
-        listener: (event: Event<*>, window: BrowserWindow) -> Unit,
-    ): Unit /* this */
-
-    fun once(
-        event: AppEvent.CERTIFICATE_ERROR,
-        listener: (
-            event: Event<*>, webContents: WebContents, url: String,
-            /**
-             * The error code
-             */
-            error: String,
-            certificate: Certificate, callback: (isTrusted: Boolean) -> Unit, isMainFrame: Boolean,
-        ) -> Unit,
-    ): Unit /* this */
-
-    fun once(event: AppEvent.CHILD_PROCESS_GONE, listener: (event: Event<*>, details: Details) -> Unit): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun once(
-        event: AppEvent.CONTINUE_ACTIVITY,
-        listener: (
-            event: Event<*>,
-            /**
-             * A string identifying the activity. Maps to `NSUserActivity.activityType`.
-             */
-            type: String,
-            /**
-             * Contains app-specific state stored by the activity on another device.
-             */
-            userInfo: Any?,
-            details: ContinueActivityDetails,
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun once(
-        event: AppEvent.CONTINUE_ACTIVITY_ERROR,
-        listener: (
-            event: Event<*>,
-            /**
-             * A string identifying the activity. Maps to `NSUserActivity.activityType`.
-             */
-            type: String,
-            /**
-             * A string with the error's localized description.
-             */
-            error: String,
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun once(event: AppEvent.DID_BECOME_ACTIVE, listener: (event: Event<*>) -> Unit): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun once(event: AppEvent.DID_RESIGN_ACTIVE, listener: (event: Event<*>) -> Unit): Unit /* this */
-    fun once(event: AppEvent.GPU_INFO_UPDATE, listener: Function<Unit>): Unit /* this */
-    fun once(
-        event: AppEvent.LOGIN,
-        listener: (event: Event<*>, webContents: WebContents, authenticationResponseDetails: AuthenticationResponseDetails, authInfo: AuthInfo, callback: (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit) -> Unit,
-    ): Unit /* this */
+
 
     /**
      * @platform darwin
      */
-    fun once(event: AppEvent.NEW_WINDOW_FOR_TAB, listener: (event: Event<*>) -> Unit): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun once(event: AppEvent.OPEN_FILE, listener: (event: Event<*>, path: String) -> Unit): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun once(event: AppEvent.OPEN_URL, listener: (event: Event<*>, url: String) -> Unit): Unit /* this */
-    fun once(event: AppEvent.QUIT, listener: (event: Event<*>, exitCode: Double) -> Unit): Unit /* this */
-    fun once(
-        event: AppEvent.READY,
-        listener: (
-            event: Event<*>,
-            /**
-             * @platform darwin
-             */
-            launchInfo: Any,
-            /* (Record<string, any>) | (NotificationResponse) */
-        ) -> Unit,
-    ): Unit /* this */
 
-    fun once(
-        event: AppEvent.RENDER_PROCESS_GONE,
-        listener: (event: Event<*>, webContents: WebContents, details: RenderProcessGoneDetails) -> Unit,
-    ): Unit /* this */
-
-    fun once(
-        event: AppEvent.SECOND_INSTANCE,
-        listener: (
-            event: Event<*>,
-            /**
-             * An array of the second instance's command line arguments
-             */
-            argv: js.array.ReadonlyArray<String>,
-            /**
-             * The second instance's working directory
-             */
-            workingDirectory: String,
-            /**
-             * A JSON object of additional data passed from the second instance
-             */
-            additionalData: Any?,
-        ) -> Unit,
-    ): Unit /* this */
-
-    fun once(
-        event: AppEvent.SELECT_CLIENT_CERTIFICATE,
-        listener: (event: Event<*>, webContents: WebContents, url: String, certificateList: js.array.ReadonlyArray<Certificate>, callback: (certificate: Certificate? /* use undefined for default */) -> Unit) -> Unit,
-    ): Unit /* this */
-
-    fun once(event: AppEvent.SESSION_CREATED, listener: (session: Session) -> Unit): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun once(
-        event: AppEvent.UPDATE_ACTIVITY_STATE,
-        listener: (
-            event: Event<*>,
-            /**
-             * A string identifying the activity. Maps to `NSUserActivity.activityType`.
-             */
-            type: String,
-            /**
-             * Contains app-specific state stored by the activity.
-             */
-            userInfo: Any?,
-        ) -> Unit,
-    ): Unit /* this */
 
-    fun once(
-        event: AppEvent.WEB_CONTENTS_CREATED,
-        listener: (event: Event<*>, webContents: WebContents) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun once(
-        event: AppEvent.WILL_CONTINUE_ACTIVITY,
-        listener: (
-            event: Event<*>,
-            /**
-             * A string identifying the activity. Maps to `NSUserActivity.activityType`.
-             */
-            type: String,
-        ) -> Unit,
-    ): Unit /* this */
 
-    fun once(event: AppEvent.WILL_FINISH_LAUNCHING, listener: Function<Unit>): Unit /* this */
-    fun once(event: AppEvent.WILL_QUIT, listener: (event: Event<*>) -> Unit): Unit /* this */
-    fun once(event: AppEvent.WINDOW_ALL_CLOSED, listener: Function<Unit>): Unit /* this */
 
     /**
      * @platform darwin,win32
      */
-    fun addListener(
-        event: AppEvent.ACCESSIBILITY_SUPPORT_CHANGED,
-        listener: (
-            event: Event<*>,
-            /**
-             * `true` when Chrome's accessibility support is enabled, `false` otherwise.
-             */
-            accessibilitySupportEnabled: Boolean,
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun addListener(
-        event: AppEvent.ACTIVATE,
-        listener: (event: Event<*>, hasVisibleWindows: Boolean) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun addListener(
-        event: AppEvent.ACTIVITY_WAS_CONTINUED,
-        listener: (
-            event: Event<*>,
-            /**
-             * A string identifying the activity. Maps to `NSUserActivity.activityType`.
-             */
-            type: String,
-            /**
-             * Contains app-specific state stored by the activity.
-             */
-            userInfo: Any?,
-        ) -> Unit,
-    ): Unit /* this */
 
-    fun addListener(event: AppEvent.BEFORE_QUIT, listener: (event: Event<*>) -> Unit): Unit /* this */
-    fun addListener(
-        event: AppEvent.BROWSER_WINDOW_BLUR,
-        listener: (event: Event<*>, window: BrowserWindow) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: AppEvent.BROWSER_WINDOW_CREATED,
-        listener: (event: Event<*>, window: BrowserWindow) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: AppEvent.BROWSER_WINDOW_FOCUS,
-        listener: (event: Event<*>, window: BrowserWindow) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: AppEvent.CERTIFICATE_ERROR,
-        listener: (
-            event: Event<*>, webContents: WebContents, url: String,
-            /**
-             * The error code
-             */
-            error: String,
-            certificate: Certificate, callback: (isTrusted: Boolean) -> Unit, isMainFrame: Boolean,
-        ) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: AppEvent.CHILD_PROCESS_GONE,
-        listener: (event: Event<*>, details: Details) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun addListener(
-        event: AppEvent.CONTINUE_ACTIVITY,
-        listener: (
-            event: Event<*>,
-            /**
-             * A string identifying the activity. Maps to `NSUserActivity.activityType`.
-             */
-            type: String,
-            /**
-             * Contains app-specific state stored by the activity on another device.
-             */
-            userInfo: Any?,
-            details: ContinueActivityDetails,
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun addListener(
-        event: AppEvent.CONTINUE_ACTIVITY_ERROR,
-        listener: (
-            event: Event<*>,
-            /**
-             * A string identifying the activity. Maps to `NSUserActivity.activityType`.
-             */
-            type: String,
-            /**
-             * A string with the error's localized description.
-             */
-            error: String,
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun addListener(event: AppEvent.DID_BECOME_ACTIVE, listener: (event: Event<*>) -> Unit): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun addListener(event: AppEvent.DID_RESIGN_ACTIVE, listener: (event: Event<*>) -> Unit): Unit /* this */
-    fun addListener(event: AppEvent.GPU_INFO_UPDATE, listener: Function<Unit>): Unit /* this */
-    fun addListener(
-        event: AppEvent.LOGIN,
-        listener: (event: Event<*>, webContents: WebContents, authenticationResponseDetails: AuthenticationResponseDetails, authInfo: AuthInfo, callback: (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit) -> Unit,
-    ): Unit /* this */
+
 
     /**
      * @platform darwin
      */
-    fun addListener(event: AppEvent.NEW_WINDOW_FOR_TAB, listener: (event: Event<*>) -> Unit): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun addListener(event: AppEvent.OPEN_FILE, listener: (event: Event<*>, path: String) -> Unit): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun addListener(event: AppEvent.OPEN_URL, listener: (event: Event<*>, url: String) -> Unit): Unit /* this */
-    fun addListener(event: AppEvent.QUIT, listener: (event: Event<*>, exitCode: Double) -> Unit): Unit /* this */
-    fun addListener(
-        event: AppEvent.READY,
-        listener: (
-            event: Event<*>,
-            /**
-             * @platform darwin
-             */
-            launchInfo: Any,
-            /* (Record<string, any>) | (NotificationResponse) */
-        ) -> Unit,
-    ): Unit /* this */
 
-    fun addListener(
-        event: AppEvent.RENDER_PROCESS_GONE,
-        listener: (event: Event<*>, webContents: WebContents, details: RenderProcessGoneDetails) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: AppEvent.SECOND_INSTANCE,
-        listener: (
-            event: Event<*>,
-            /**
-             * An array of the second instance's command line arguments
-             */
-            argv: js.array.ReadonlyArray<String>,
-            /**
-             * The second instance's working directory
-             */
-            workingDirectory: String,
-            /**
-             * A JSON object of additional data passed from the second instance
-             */
-            additionalData: Any?,
-        ) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: AppEvent.SELECT_CLIENT_CERTIFICATE,
-        listener: (event: Event<*>, webContents: WebContents, url: String, certificateList: js.array.ReadonlyArray<Certificate>, callback: (certificate: Certificate? /* use undefined for default */) -> Unit) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(event: AppEvent.SESSION_CREATED, listener: (session: Session) -> Unit): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun addListener(
-        event: AppEvent.UPDATE_ACTIVITY_STATE,
-        listener: (
-            event: Event<*>,
-            /**
-             * A string identifying the activity. Maps to `NSUserActivity.activityType`.
-             */
-            type: String,
-            /**
-             * Contains app-specific state stored by the activity.
-             */
-            userInfo: Any?,
-        ) -> Unit,
-    ): Unit /* this */
 
-    fun addListener(
-        event: AppEvent.WEB_CONTENTS_CREATED,
-        listener: (event: Event<*>, webContents: WebContents) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun addListener(
-        event: AppEvent.WILL_CONTINUE_ACTIVITY,
-        listener: (
-            event: Event<*>,
-            /**
-             * A string identifying the activity. Maps to `NSUserActivity.activityType`.
-             */
-            type: String,
-        ) -> Unit,
-    ): Unit /* this */
 
-    fun addListener(event: AppEvent.WILL_FINISH_LAUNCHING, listener: Function<Unit>): Unit /* this */
-    fun addListener(event: AppEvent.WILL_QUIT, listener: (event: Event<*>) -> Unit): Unit /* this */
-    fun addListener(event: AppEvent.WINDOW_ALL_CLOSED, listener: Function<Unit>): Unit /* this */
 
     /**
      * @platform darwin,win32
      */
-    fun removeListener(
-        event: AppEvent.ACCESSIBILITY_SUPPORT_CHANGED,
-        listener: (
-            event: Event<*>,
-            /**
-             * `true` when Chrome's accessibility support is enabled, `false` otherwise.
-             */
-            accessibilitySupportEnabled: Boolean,
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun removeListener(
-        event: AppEvent.ACTIVATE,
-        listener: (event: Event<*>, hasVisibleWindows: Boolean) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun removeListener(
-        event: AppEvent.ACTIVITY_WAS_CONTINUED,
-        listener: (
-            event: Event<*>,
-            /**
-             * A string identifying the activity. Maps to `NSUserActivity.activityType`.
-             */
-            type: String,
-            /**
-             * Contains app-specific state stored by the activity.
-             */
-            userInfo: Any?,
-        ) -> Unit,
-    ): Unit /* this */
 
-    fun removeListener(event: AppEvent.BEFORE_QUIT, listener: (event: Event<*>) -> Unit): Unit /* this */
-    fun removeListener(
-        event: AppEvent.BROWSER_WINDOW_BLUR,
-        listener: (event: Event<*>, window: BrowserWindow) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(
-        event: AppEvent.BROWSER_WINDOW_CREATED,
-        listener: (event: Event<*>, window: BrowserWindow) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(
-        event: AppEvent.BROWSER_WINDOW_FOCUS,
-        listener: (event: Event<*>, window: BrowserWindow) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(
-        event: AppEvent.CERTIFICATE_ERROR,
-        listener: (
-            event: Event<*>, webContents: WebContents, url: String,
-            /**
-             * The error code
-             */
-            error: String,
-            certificate: Certificate, callback: (isTrusted: Boolean) -> Unit, isMainFrame: Boolean,
-        ) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(
-        event: AppEvent.CHILD_PROCESS_GONE,
-        listener: (event: Event<*>, details: Details) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun removeListener(
-        event: AppEvent.CONTINUE_ACTIVITY,
-        listener: (
-            event: Event<*>,
-            /**
-             * A string identifying the activity. Maps to `NSUserActivity.activityType`.
-             */
-            type: String,
-            /**
-             * Contains app-specific state stored by the activity on another device.
-             */
-            userInfo: Any?,
-            details: ContinueActivityDetails,
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun removeListener(
-        event: AppEvent.CONTINUE_ACTIVITY_ERROR,
-        listener: (
-            event: Event<*>,
-            /**
-             * A string identifying the activity. Maps to `NSUserActivity.activityType`.
-             */
-            type: String,
-            /**
-             * A string with the error's localized description.
-             */
-            error: String,
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun removeListener(event: AppEvent.DID_BECOME_ACTIVE, listener: (event: Event<*>) -> Unit): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun removeListener(event: AppEvent.DID_RESIGN_ACTIVE, listener: (event: Event<*>) -> Unit): Unit /* this */
-    fun removeListener(event: AppEvent.GPU_INFO_UPDATE, listener: Function<Unit>): Unit /* this */
-    fun removeListener(
-        event: AppEvent.LOGIN,
-        listener: (event: Event<*>, webContents: WebContents, authenticationResponseDetails: AuthenticationResponseDetails, authInfo: AuthInfo, callback: (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit) -> Unit,
-    ): Unit /* this */
+
 
     /**
      * @platform darwin
      */
-    fun removeListener(event: AppEvent.NEW_WINDOW_FOR_TAB, listener: (event: Event<*>) -> Unit): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun removeListener(event: AppEvent.OPEN_FILE, listener: (event: Event<*>, path: String) -> Unit): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun removeListener(event: AppEvent.OPEN_URL, listener: (event: Event<*>, url: String) -> Unit): Unit /* this */
-    fun removeListener(event: AppEvent.QUIT, listener: (event: Event<*>, exitCode: Double) -> Unit): Unit /* this */
-    fun removeListener(
-        event: AppEvent.READY,
-        listener: (
-            event: Event<*>,
-            /**
-             * @platform darwin
-             */
-            launchInfo: Any,
-            /* (Record<string, any>) | (NotificationResponse) */
-        ) -> Unit,
-    ): Unit /* this */
 
-    fun removeListener(
-        event: AppEvent.RENDER_PROCESS_GONE,
-        listener: (event: Event<*>, webContents: WebContents, details: RenderProcessGoneDetails) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(
-        event: AppEvent.SECOND_INSTANCE,
-        listener: (
-            event: Event<*>,
-            /**
-             * An array of the second instance's command line arguments
-             */
-            argv: js.array.ReadonlyArray<String>,
-            /**
-             * The second instance's working directory
-             */
-            workingDirectory: String,
-            /**
-             * A JSON object of additional data passed from the second instance
-             */
-            additionalData: Any?,
-        ) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(
-        event: AppEvent.SELECT_CLIENT_CERTIFICATE,
-        listener: (event: Event<*>, webContents: WebContents, url: String, certificateList: js.array.ReadonlyArray<Certificate>, callback: (certificate: Certificate? /* use undefined for default */) -> Unit) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(event: AppEvent.SESSION_CREATED, listener: (session: Session) -> Unit): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun removeListener(
-        event: AppEvent.UPDATE_ACTIVITY_STATE,
-        listener: (
-            event: Event<*>,
-            /**
-             * A string identifying the activity. Maps to `NSUserActivity.activityType`.
-             */
-            type: String,
-            /**
-             * Contains app-specific state stored by the activity.
-             */
-            userInfo: Any?,
-        ) -> Unit,
-    ): Unit /* this */
 
-    fun removeListener(
-        event: AppEvent.WEB_CONTENTS_CREATED,
-        listener: (event: Event<*>, webContents: WebContents) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun removeListener(
-        event: AppEvent.WILL_CONTINUE_ACTIVITY,
-        listener: (
-            event: Event<*>,
-            /**
-             * A string identifying the activity. Maps to `NSUserActivity.activityType`.
-             */
-            type: String,
-        ) -> Unit,
-    ): Unit /* this */
 
-    fun removeListener(event: AppEvent.WILL_FINISH_LAUNCHING, listener: Function<Unit>): Unit /* this */
-    fun removeListener(event: AppEvent.WILL_QUIT, listener: (event: Event<*>) -> Unit): Unit /* this */
-    fun removeListener(event: AppEvent.WINDOW_ALL_CLOSED, listener: Function<Unit>): Unit /* this */
 
     /**
      * Adds `path` to the recent documents list.
@@ -2238,4 +1407,94 @@ external interface App : node.events.EventEmitter {
      * app's initialization to ensure that your overridden value is used.
      */
     var userAgentFallback: String
+
+    @web.events.JsEvent("accessibility-support-changed")
+    val accessibilitySupportChangedEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Boolean>>
+
+    @web.events.JsEvent("activate")
+    val activateEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Boolean>>
+
+    @web.events.JsEvent("activity-was-continued")
+    val activityWasContinuedEvent: node.events.EventInstance<js.array.JsTuple3<Event<*>, String, Any?>>
+
+    @web.events.JsEvent("before-quit")
+    val beforeQuitEvent: node.events.EventInstance<js.array.JsTuple1<Event<*>>>
+
+    @web.events.JsEvent("browser-window-blur")
+    val browserWindowBlurEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, BrowserWindow>>
+
+    @web.events.JsEvent("browser-window-created")
+    val browserWindowCreatedEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, BrowserWindow>>
+
+    @web.events.JsEvent("browser-window-focus")
+    val browserWindowFocusEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, BrowserWindow>>
+
+    @web.events.JsEvent("certificate-error")
+    val certificateErrorEvent: node.events.EventInstance<js.array.JsTuple7<Event<*>, WebContents, String, String, Certificate, (isTrusted: Boolean) -> Unit, Boolean>>
+
+    @web.events.JsEvent("child-process-gone")
+    val childProcessGoneEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Details>>
+
+    @web.events.JsEvent("continue-activity")
+    val continueActivityEvent: node.events.EventInstance<js.array.JsTuple4<Event<*>, String, Any?, ContinueActivityDetails>>
+
+    @web.events.JsEvent("continue-activity-error")
+    val continueActivityErrorEvent: node.events.EventInstance<js.array.JsTuple3<Event<*>, String, String>>
+
+    @web.events.JsEvent("did-become-active")
+    val didBecomeActiveEvent: node.events.EventInstance<js.array.JsTuple1<Event<*>>>
+
+    @web.events.JsEvent("did-resign-active")
+    val didResignActiveEvent: node.events.EventInstance<js.array.JsTuple1<Event<*>>>
+
+    @web.events.JsEvent("gpu-info-update")
+    val gpuInfoUpdateEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("login")
+    val loginEvent: node.events.EventInstance<js.array.JsTuple5<Event<*>, WebContents, AuthenticationResponseDetails, AuthInfo, (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit>>
+
+    @web.events.JsEvent("new-window-for-tab")
+    val newWindowForTabEvent: node.events.EventInstance<js.array.JsTuple1<Event<*>>>
+
+    @web.events.JsEvent("open-file")
+    val openFileEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, String>>
+
+    @web.events.JsEvent("open-url")
+    val openUrlEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, String>>
+
+    @web.events.JsEvent("quit")
+    val quitEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Double>>
+
+    @web.events.JsEvent("ready")
+    val readyEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Any /* (Record<string, any>) | (NotificationResponse) */>>
+
+    @web.events.JsEvent("render-process-gone")
+    val renderProcessGoneEvent: node.events.EventInstance<js.array.JsTuple3<Event<*>, WebContents, RenderProcessGoneDetails>>
+
+    @web.events.JsEvent("second-instance")
+    val secondInstanceEvent: node.events.EventInstance<js.array.JsTuple4<Event<*>, js.array.ReadonlyArray<String>, String, Any?>>
+
+    @web.events.JsEvent("select-client-certificate")
+    val selectClientCertificateEvent: node.events.EventInstance<js.array.JsTuple5<Event<*>, WebContents, String, js.array.ReadonlyArray<Certificate>, (certificate: Certificate? /* use undefined for default */) -> Unit>>
+
+    @web.events.JsEvent("session-created")
+    val sessionCreatedEvent: node.events.EventInstance<js.array.JsTuple1<Session>>
+
+    @web.events.JsEvent("update-activity-state")
+    val updateActivityStateEvent: node.events.EventInstance<js.array.JsTuple3<Event<*>, String, Any?>>
+
+    @web.events.JsEvent("web-contents-created")
+    val webContentsCreatedEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, WebContents>>
+
+    @web.events.JsEvent("will-continue-activity")
+    val willContinueActivityEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, String>>
+
+    @web.events.JsEvent("will-finish-launching")
+    val willFinishLaunchingEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("will-quit")
+    val willQuitEvent: node.events.EventInstance<js.array.JsTuple1<Event<*>>>
+
+    @web.events.JsEvent("window-all-closed")
+    val windowAllClosedEvent: node.events.EventInstance<js.array.JsTuple>
 }

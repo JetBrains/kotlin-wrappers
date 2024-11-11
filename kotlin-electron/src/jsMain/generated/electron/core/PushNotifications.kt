@@ -13,42 +13,22 @@ external interface PushNotifications : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun on(
-        event: PushNotificationsEvent.RECEIVED_APNS_NOTIFICATION,
-        listener: (event: Event<*>, userInfo: js.objects.ReadonlyRecord<String, Any?>) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun off(
-        event: PushNotificationsEvent.RECEIVED_APNS_NOTIFICATION,
-        listener: (event: Event<*>, userInfo: js.objects.ReadonlyRecord<String, Any?>) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun once(
-        event: PushNotificationsEvent.RECEIVED_APNS_NOTIFICATION,
-        listener: (event: Event<*>, userInfo: js.objects.ReadonlyRecord<String, Any?>) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun addListener(
-        event: PushNotificationsEvent.RECEIVED_APNS_NOTIFICATION,
-        listener: (event: Event<*>, userInfo: js.objects.ReadonlyRecord<String, Any?>) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform darwin
      */
-    fun removeListener(
-        event: PushNotificationsEvent.RECEIVED_APNS_NOTIFICATION,
-        listener: (event: Event<*>, userInfo: js.objects.ReadonlyRecord<String, Any?>) -> Unit,
-    ): Unit /* this */
 
     /**
      * Registers the app with Apple Push Notification service (APNS) to receive Badge,
@@ -68,4 +48,7 @@ external interface PushNotifications : node.events.EventEmitter {
      * @platform darwin
      */
     fun unregisterForAPNSNotifications(): Unit
+
+    @web.events.JsEvent("received-apns-notification")
+    val receivedApnsNotificationEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, js.objects.ReadonlyRecord<String, Any?>>>
 }

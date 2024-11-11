@@ -10,100 +10,42 @@ external interface SystemPreferences : node.events.EventEmitter {
     /**
      * @platform win32
      */
-    fun on(
-        event: SystemPreferencesEvent.ACCENT_COLOR_CHANGED,
-        listener: (
-            event: Event<*>,
-            /**
-             * The new RGBA color the user assigned to be their system accent color.
-             */
-            newColor: String,
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform win32
      */
-    fun on(event: SystemPreferencesEvent.COLOR_CHANGED, listener: (event: Event<*>) -> Unit): Unit /* this */
 
     /**
      * @platform win32
      */
-    fun off(
-        event: SystemPreferencesEvent.ACCENT_COLOR_CHANGED,
-        listener: (
-            event: Event<*>,
-            /**
-             * The new RGBA color the user assigned to be their system accent color.
-             */
-            newColor: String,
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform win32
      */
-    fun off(event: SystemPreferencesEvent.COLOR_CHANGED, listener: (event: Event<*>) -> Unit): Unit /* this */
 
     /**
      * @platform win32
      */
-    fun once(
-        event: SystemPreferencesEvent.ACCENT_COLOR_CHANGED,
-        listener: (
-            event: Event<*>,
-            /**
-             * The new RGBA color the user assigned to be their system accent color.
-             */
-            newColor: String,
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform win32
      */
-    fun once(event: SystemPreferencesEvent.COLOR_CHANGED, listener: (event: Event<*>) -> Unit): Unit /* this */
 
     /**
      * @platform win32
      */
-    fun addListener(
-        event: SystemPreferencesEvent.ACCENT_COLOR_CHANGED,
-        listener: (
-            event: Event<*>,
-            /**
-             * The new RGBA color the user assigned to be their system accent color.
-             */
-            newColor: String,
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform win32
      */
-    fun addListener(event: SystemPreferencesEvent.COLOR_CHANGED, listener: (event: Event<*>) -> Unit): Unit /* this */
 
     /**
      * @platform win32
      */
-    fun removeListener(
-        event: SystemPreferencesEvent.ACCENT_COLOR_CHANGED,
-        listener: (
-            event: Event<*>,
-            /**
-             * The new RGBA color the user assigned to be their system accent color.
-             */
-            newColor: String,
-        ) -> Unit,
-    ): Unit /* this */
 
     /**
      * @platform win32
      */
-    fun removeListener(
-        event: SystemPreferencesEvent.COLOR_CHANGED,
-        listener: (event: Event<*>) -> Unit,
-    ): Unit /* this */
 
     /**
      * A promise that resolves with `true` if consent was granted and `false` if it was
@@ -425,4 +367,10 @@ external interface SystemPreferences : node.events.EventEmitter {
      * @platform darwin
      */
     val effectiveAppearance: (SystemPreferencesEffectiveAppearance)
+
+    @web.events.JsEvent("accent-color-changed")
+    val accentColorChangedEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, String>>
+
+    @web.events.JsEvent("color-changed")
+    val colorChangedEvent: node.events.EventInstance<js.array.JsTuple1<Event<*>>>
 }
