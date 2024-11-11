@@ -9,7 +9,7 @@ import kotlin.contracts.contract
 @Suppress("NOTHING_TO_INLINE", "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
 inline fun isDataView(value: Any?): Boolean /* object is DataView */ {
     contract {
-        returns(true) implies (value is DataView)
+        returns(true) implies (value is DataView<*>)
     }
 
     return isDataViewRaw(value)

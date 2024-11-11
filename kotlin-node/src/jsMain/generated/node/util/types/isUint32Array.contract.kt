@@ -9,7 +9,7 @@ import kotlin.contracts.contract
 @Suppress("NOTHING_TO_INLINE", "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
 inline fun isUint32Array(value: Any?): Boolean /* object is Uint32Array */ {
     contract {
-        returns(true) implies (value is Uint32Array)
+        returns(true) implies (value is Uint32Array<*>)
     }
 
     return isUint32ArrayRaw(value)

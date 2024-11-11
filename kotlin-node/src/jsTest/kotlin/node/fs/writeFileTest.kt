@@ -9,6 +9,6 @@ suspend fun writeFileTest() {
 
     writeFile(
         "my-path",
-        buffer.upcast<ArrayBufferView>(),
+        buffer.upcast<ArrayBufferView<*>>(),
     )
 }

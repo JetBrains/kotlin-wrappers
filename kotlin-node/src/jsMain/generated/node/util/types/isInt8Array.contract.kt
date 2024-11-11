@@ -9,7 +9,7 @@ import kotlin.contracts.contract
 @Suppress("NOTHING_TO_INLINE", "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
 inline fun isInt8Array(value: Any?): Boolean /* object is Int8Array */ {
     contract {
-        returns(true) implies (value is Int8Array)
+        returns(true) implies (value is Int8Array<*>)
     }
 
     return isInt8ArrayRaw(value)

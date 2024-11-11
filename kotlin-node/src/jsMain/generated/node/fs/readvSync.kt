@@ -16,6 +16,6 @@ import js.buffer.ArrayBufferView
  */
 external fun readvSync(
     fd: Number,
-    buffers: ReadonlyArray<ArrayBufferView>,
+    buffers: ReadonlyArray<ArrayBufferView<*>>,
     position: Number = definedExternally,
 ): Double

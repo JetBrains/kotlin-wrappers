@@ -323,7 +323,7 @@ sealed external interface FileHandle {
      */
 
     @JsName("read")
-    fun <T : ArrayBufferView> readAsync(
+    fun <T : ArrayBufferView<*>> readAsync(
         buffer: T,
         offset: Double? = definedExternally,
         length: Double? = definedExternally,
@@ -332,7 +332,7 @@ sealed external interface FileHandle {
 
 
     @seskar.js.JsAsync
-    suspend fun <T : ArrayBufferView> read(
+    suspend fun <T : ArrayBufferView<*>> read(
         buffer: T,
         offset: Double? = definedExternally,
         length: Double? = definedExternally,
@@ -341,11 +341,11 @@ sealed external interface FileHandle {
 
 
     @JsName("read")
-    fun <T : ArrayBufferView /* default is node.buffer.Buffer */> readAsync(options: FileReadOptions<T> = definedExternally): Promise<FileReadResult<T>>
+    fun <T : ArrayBufferView<*> /* default is node.buffer.Buffer */> readAsync(options: FileReadOptions<T> = definedExternally): Promise<FileReadResult<T>>
 
 
     @seskar.js.JsAsync
-    suspend fun <T : ArrayBufferView /* default is node.buffer.Buffer */> read(options: FileReadOptions<T> = definedExternally): FileReadResult<T>
+    suspend fun <T : ArrayBufferView<*> /* default is node.buffer.Buffer */> read(options: FileReadOptions<T> = definedExternally): FileReadResult<T>
 
     /**
      * Returns a `ReadableStream` that may be used to read the files data.
@@ -920,13 +920,13 @@ sealed external interface FileHandle {
 
     @JsName("writev")
     fun writevAsync(
-        buffers: ReadonlyArray<ArrayBufferView>,
+        buffers: ReadonlyArray<ArrayBufferView<*>>,
         position: Number = definedExternally,
     ): Promise<WriteVResult>
 
 
     @seskar.js.JsAsync
-    suspend fun writev(buffers: ReadonlyArray<ArrayBufferView>, position: Number = definedExternally): WriteVResult
+    suspend fun writev(buffers: ReadonlyArray<ArrayBufferView<*>>, position: Number = definedExternally): WriteVResult
 
     /**
      * Read from a file and write to an array of [ArrayBufferView](https://developer.mozilla.org/en-US/docs/Web/API/ArrayBufferView) s
@@ -936,11 +936,11 @@ sealed external interface FileHandle {
      */
 
     @JsName("readv")
-    fun readvAsync(buffers: ReadonlyArray<ArrayBufferView>, position: Number = definedExternally): Promise<ReadVResult>
+    fun readvAsync(buffers: ReadonlyArray<ArrayBufferView<*>>, position: Number = definedExternally): Promise<ReadVResult>
 
 
     @seskar.js.JsAsync
-    suspend fun readv(buffers: ReadonlyArray<ArrayBufferView>, position: Number = definedExternally): ReadVResult
+    suspend fun readv(buffers: ReadonlyArray<ArrayBufferView<*>>, position: Number = definedExternally): ReadVResult
 
     /**
      * Closes the file handle after waiting for any pending operation on the handle to

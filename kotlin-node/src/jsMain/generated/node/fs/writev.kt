@@ -29,13 +29,13 @@ import js.buffer.ArrayBufferView
  */
 external fun writev(
     fd: Number,
-    buffers: ReadonlyArray<ArrayBufferView>,
-    cb: (err: node.ErrnoException?, bytesWritten: Double, buffers: ReadonlyArray<ArrayBufferView>) -> Unit,
+    buffers: ReadonlyArray<ArrayBufferView<*>>,
+    cb: (err: node.ErrnoException?, bytesWritten: Double, buffers: ReadonlyArray<ArrayBufferView<*>>) -> Unit,
 ): Unit
 
 external fun writev(
     fd: Number,
-    buffers: ReadonlyArray<ArrayBufferView>,
+    buffers: ReadonlyArray<ArrayBufferView<*>>,
     position: Number,
-    cb: (err: node.ErrnoException?, bytesWritten: Double, buffers: ReadonlyArray<ArrayBufferView>) -> Unit,
+    cb: (err: node.ErrnoException?, bytesWritten: Double, buffers: ReadonlyArray<ArrayBufferView<*>>) -> Unit,
 ): Unit

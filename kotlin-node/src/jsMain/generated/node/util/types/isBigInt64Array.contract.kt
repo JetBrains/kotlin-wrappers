@@ -9,7 +9,7 @@ import kotlin.contracts.contract
 @Suppress("NOTHING_TO_INLINE", "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
 inline fun isBigInt64Array(value: Any?): Boolean /* value is BigInt64Array */ {
     contract {
-        returns(true) implies (value is BigInt64Array)
+        returns(true) implies (value is BigInt64Array<*>)
     }
 
     return isBigInt64ArrayRaw(value)
