@@ -37,7 +37,7 @@ external class ShowGeometryInstanceAttribute(
      * The values for the attributes stored in a typed array.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ShowGeometryInstanceAttribute.html#value">Online Documentation</a>
      */
-    var value: Uint8Array
+    var value: Uint8Array<*>
 
     /**
      * The datatype of each component in the attribute, e.g., individual elements in
@@ -74,7 +74,7 @@ external class ShowGeometryInstanceAttribute(
          */
         fun toValue(
             show: Boolean,
-            result: Uint8Array? = definedExternally,
-        ): Uint8Array
+            result: Uint8Array<*>? = definedExternally,
+        ): Uint8Array<*>
     }
 }

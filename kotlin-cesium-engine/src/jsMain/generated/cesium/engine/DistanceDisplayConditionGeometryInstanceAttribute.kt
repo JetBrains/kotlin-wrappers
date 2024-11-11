@@ -40,7 +40,7 @@ external class DistanceDisplayConditionGeometryInstanceAttribute(
      * The values for the attributes stored in a typed array.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DistanceDisplayConditionGeometryInstanceAttribute.html#value">Online Documentation</a>
      */
-    var value: Float32Array
+    var value: Float32Array<*>
 
     /**
      * The datatype of each component in the attribute, e.g., individual elements in
@@ -94,7 +94,7 @@ external class DistanceDisplayConditionGeometryInstanceAttribute(
          */
         fun toValue(
             distanceDisplayCondition: DistanceDisplayCondition,
-            result: Float32Array? = definedExternally,
-        ): Float32Array
+            result: Float32Array<*>? = definedExternally,
+        ): Float32Array<*>
     }
 }

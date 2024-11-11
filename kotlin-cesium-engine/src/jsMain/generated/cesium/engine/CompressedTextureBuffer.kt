@@ -27,19 +27,19 @@ external class CompressedTextureBuffer(
     val pixelDatatype: PixelDatatype,
     val width: Double,
     val height: Double,
-    buffer: Uint8Array,
+    buffer: Uint8Array<*>,
 ) {
     /**
      * The compressed texture buffer.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CompressedTextureBuffer.html#bufferView">Online Documentation</a>
      */
-    val bufferView: Uint8Array
+    val bufferView: Uint8Array<*>
 
     /**
      * The compressed texture buffer. Alias for bufferView.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CompressedTextureBuffer.html#arrayBufferView">Online Documentation</a>
      */
-    val arrayBufferView: Uint8Array
+    val arrayBufferView: Uint8Array<*>
 
     /**
      * Creates a shallow clone of this compressed texture buffer.

@@ -87,11 +87,11 @@ external class HeightmapTerrainData(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var buffer: TypedArray<*, *> /* Int8Array | Uint8Array | Int16Array | Uint16Array | Int32Array | Uint32Array | Float32Array | Float64Array */
+        var buffer: TypedArray<*, *, *> /* Int8Array | Uint8Array | Int16Array | Uint16Array | Int32Array | Uint32Array | Float32Array | Float64Array */
         var width: Double
         var height: Double
         var childTileMask: Int?
-        var waterMask: Uint8Array?
+        var waterMask: Uint8Array<*>?
         var structure: ConstructorOptionsStructure?
         var encoding: HeightmapEncoding?
         var createdByUpsampling: Boolean?

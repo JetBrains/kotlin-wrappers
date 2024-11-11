@@ -44,7 +44,7 @@ external class ColorGeometryInstanceAttribute(
      * The values for the attributes stored in a typed array.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ColorGeometryInstanceAttribute.html#value">Online Documentation</a>
      */
-    var value: Uint8Array
+    var value: Uint8Array<*>
 
     /**
      * The datatype of each component in the attribute, e.g., individual elements in
@@ -97,8 +97,8 @@ external class ColorGeometryInstanceAttribute(
          */
         fun toValue(
             color: Color,
-            result: Uint8Array? = definedExternally,
-        ): Uint8Array
+            result: Uint8Array<*>? = definedExternally,
+        ): Uint8Array<*>
 
         /**
          * Compares the provided ColorGeometryInstanceAttributes and returns
