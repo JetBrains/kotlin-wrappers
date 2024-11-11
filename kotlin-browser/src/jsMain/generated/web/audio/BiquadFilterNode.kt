@@ -42,8 +42,8 @@ open external class BiquadFilterNode(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BiquadFilterNode/getFrequencyResponse)
      */
     fun getFrequencyResponse(
-        frequencyHz: Float32Array,
-        magResponse: Float32Array,
-        phaseResponse: Float32Array,
+        frequencyHz: Float32Array<*>,
+        magResponse: Float32Array<*>,
+        phaseResponse: Float32Array<*>,
     )
 }

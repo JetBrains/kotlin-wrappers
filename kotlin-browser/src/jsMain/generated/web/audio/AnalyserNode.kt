@@ -42,20 +42,20 @@ open external class AnalyserNode(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnalyserNode/getByteFrequencyData)
      */
-    fun getByteFrequencyData(array: Uint8Array)
+    fun getByteFrequencyData(array: Uint8Array<*>)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnalyserNode/getByteTimeDomainData)
      */
-    fun getByteTimeDomainData(array: Uint8Array)
+    fun getByteTimeDomainData(array: Uint8Array<*>)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnalyserNode/getFloatFrequencyData)
      */
-    fun getFloatFrequencyData(array: Float32Array)
+    fun getFloatFrequencyData(array: Float32Array<*>)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnalyserNode/getFloatTimeDomainData)
      */
-    fun getFloatTimeDomainData(array: Float32Array)
+    fun getFloatTimeDomainData(array: Float32Array<*>)
 }

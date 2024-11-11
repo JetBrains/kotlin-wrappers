@@ -9,5 +9,5 @@ import web.events.EventInit
 @JsPlainObject
 external interface MIDIMessageEventInit :
     EventInit {
-    val data: Uint8Array?
+    val data: Uint8Array<*>?
 }

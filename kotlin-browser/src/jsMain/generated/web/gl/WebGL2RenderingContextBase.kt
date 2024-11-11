@@ -148,7 +148,7 @@ sealed external interface WebGL2RenderingContextBase {
         height: GLsizei,
         depth: GLsizei,
         border: GLint,
-        srcData: ArrayBufferView,
+        srcData: ArrayBufferView<*>,
         srcOffset: Int /* GLuint */?,
         srcLengthOverride: GLuint?,
     )
@@ -180,7 +180,7 @@ sealed external interface WebGL2RenderingContextBase {
         height: GLsizei,
         depth: GLsizei,
         format: GLenum,
-        srcData: ArrayBufferView,
+        srcData: ArrayBufferView<*>,
         srcOffset: Int /* GLuint */?,
         srcLengthOverride: GLuint?,
     )
@@ -355,7 +355,7 @@ sealed external interface WebGL2RenderingContextBase {
     fun getBufferSubData(
         target: GLenum,
         srcByteOffset: GLintptr,
-        dstBuffer: ArrayBufferView,
+        dstBuffer: ArrayBufferView<*>,
         dstOffset: Int /* GLuint */?,
         length: GLuint?,
     )
@@ -569,7 +569,7 @@ sealed external interface WebGL2RenderingContextBase {
         border: GLint,
         format: GLenum,
         type: GLenum,
-        srcData: ArrayBufferView?,
+        srcData: ArrayBufferView<*>?,
     )
 
     fun texImage3D(
@@ -582,7 +582,7 @@ sealed external interface WebGL2RenderingContextBase {
         border: GLint,
         format: GLenum,
         type: GLenum,
-        srcData: ArrayBufferView,
+        srcData: ArrayBufferView<*>,
         srcOffset: Int, /* GLuint */
     )
 
@@ -651,7 +651,7 @@ sealed external interface WebGL2RenderingContextBase {
         depth: GLsizei,
         format: GLenum,
         type: GLenum,
-        srcData: ArrayBufferView?,
+        srcData: ArrayBufferView<*>?,
         srcOffset: Int /* GLuint */?,
     )
 

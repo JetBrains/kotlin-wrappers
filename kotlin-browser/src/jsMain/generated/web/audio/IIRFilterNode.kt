@@ -17,8 +17,8 @@ open external class IIRFilterNode(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IIRFilterNode/getFrequencyResponse)
      */
     fun getFrequencyResponse(
-        frequencyHz: Float32Array,
-        magResponse: Float32Array,
-        phaseResponse: Float32Array,
+        frequencyHz: Float32Array<*>,
+        magResponse: Float32Array<*>,
+        phaseResponse: Float32Array<*>,
     )
 }

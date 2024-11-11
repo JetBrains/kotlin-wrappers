@@ -27,7 +27,7 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushMessageData/bytes)
      */
-    fun bytes(): Uint8Array
+    fun bytes(): Uint8Array<*>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushMessageData/json)

@@ -25,7 +25,7 @@ open external class MIDIMessageEvent(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIMessageEvent/data)
      */
-    val data: Uint8Array?
+    val data: Uint8Array<*>?
 
     @JsAlias(THIS)
     override fun asInit(): MIDIMessageEventInit

@@ -87,7 +87,7 @@ private constructor() {
     ): AudioParam
 
     fun setValueCurveAtTime(
-        values: Float32Array,
+        values: Float32Array<*>,
         startTime: Double,
         duration: Double,
     ): AudioParam

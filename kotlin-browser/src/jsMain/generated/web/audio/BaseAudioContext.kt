@@ -139,8 +139,8 @@ private constructor() :
     ): PeriodicWave
 
     fun createPeriodicWave(
-        real: Float32Array,
-        imag: Float32Array,
+        real: Float32Array<*>,
+        imag: Float32Array<*>,
         constraints: PeriodicWaveConstraints = definedExternally,
     ): PeriodicWave
 

@@ -172,8 +172,8 @@ open external class DOMMatrix(
     ): DOMMatrix
 
     companion object {
-        fun fromFloat32Array(array32: Float32Array): DOMMatrix
-        fun fromFloat64Array(array64: Float64Array): DOMMatrix
+        fun fromFloat32Array(array32: Float32Array<*>): DOMMatrix
+        fun fromFloat64Array(array64: Float64Array<*>): DOMMatrix
         fun fromMatrix(other: DOMMatrixInit = definedExternally): DOMMatrix
         fun fromMatrix(other: DOMMatrixReadOnly /* DOMMatrixInit */): DOMMatrix
     }
