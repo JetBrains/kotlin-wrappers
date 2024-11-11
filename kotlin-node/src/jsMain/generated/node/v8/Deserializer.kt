@@ -10,7 +10,7 @@ import js.buffer.ArrayBuffer
  * @since v8.0.0
  */
 open external class Deserializer {
-    constructor (data: js.typedarrays.TypedArray<*, *>)
+    constructor (data: js.typedarrays.TypedArray<*, *, *>)
 
     /**
      * Reads and validates a header (including the format version).

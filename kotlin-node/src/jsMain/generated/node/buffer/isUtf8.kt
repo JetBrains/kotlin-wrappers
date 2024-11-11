@@ -34,4 +34,4 @@ external fun isUtf8(input: ArrayBuffer): Boolean
  * @since v19.4.0, v18.14.0
  * @param input The input to validate.
  */
-external fun isUtf8(input: js.typedarrays.TypedArray<*, *>): Boolean
+external fun isUtf8(input: js.typedarrays.TypedArray<*, *, *>): Boolean

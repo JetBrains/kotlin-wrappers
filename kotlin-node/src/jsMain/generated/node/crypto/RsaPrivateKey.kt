@@ -10,6 +10,6 @@ sealed external interface RsaPrivateKey {
      * @default 'sha1'
      */
     var oaepHash: String?
-    var oaepLabel: js.typedarrays.TypedArray<*, *>?
+    var oaepLabel: js.typedarrays.TypedArray<*, *, *>?
     var padding: Double?
 }

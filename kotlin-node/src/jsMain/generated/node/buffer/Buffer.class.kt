@@ -2534,7 +2534,7 @@ sealed external class Buffer : Uint8Array<ArrayBufferLike> {
          * @param [length=view.length - offset] The number of elements from `view` to copy.
          */
         fun copyBytesFrom(
-            view: js.typedarrays.TypedArray<*, *>,
+            view: js.typedarrays.TypedArray<*, *, *>,
             offset: Number = definedExternally,
             length: Number = definedExternally,
         ): Buffer

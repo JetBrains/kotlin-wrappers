@@ -61,5 +61,5 @@ open external class Serializer {
      * will require a way to compute the length of the buffer.
      * For use inside of a custom `serializer._writeHostObject()`.
      */
-    fun writeRawBytes(buffer: js.typedarrays.TypedArray<*, *>): Unit
+    fun writeRawBytes(buffer: js.typedarrays.TypedArray<*, *, *>): Unit
 }
