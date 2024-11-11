@@ -1104,7 +1104,7 @@ external fun writeFileAsync(
  */
 
 @JsName("writeFile")
-external fun writeFileAsync(file: FileHandle, data: js.buffer.ArrayBufferView): Promise<js.core.Void>
+external fun writeFileAsync(file: FileHandle, data: js.buffer.ArrayBufferView<*>): Promise<js.core.Void>
 
 
 /**
@@ -1161,7 +1161,7 @@ external fun writeFileAsync(file: FileHandle, data: js.buffer.ArrayBufferView): 
 @JsName("writeFile")
 external fun writeFileAsync(
     file: FileHandle,
-    data: js.buffer.ArrayBufferView,
+    data: js.buffer.ArrayBufferView<*>,
     options: (WriteFileAsyncOptions)? = definedExternally,
 ): Promise<js.core.Void>
 
@@ -1220,7 +1220,7 @@ external fun writeFileAsync(
 @JsName("writeFile")
 external fun writeFileAsync(
     file: FileHandle,
-    data: js.buffer.ArrayBufferView,
+    data: js.buffer.ArrayBufferView<*>,
     options: node.buffer.BufferEncoding? = definedExternally,
 ): Promise<js.core.Void>
 

@@ -84,6 +84,6 @@ external class Certificate {
          * @param encoding The `encoding` of the `spkac` string.
          * @return `true` if the given `spkac` data structure is valid, `false` otherwise.
          */
-        fun verifySpkac(spkac: js.buffer.ArrayBufferView): Boolean
+        fun verifySpkac(spkac: js.buffer.ArrayBufferView<*>): Boolean
     }
 }

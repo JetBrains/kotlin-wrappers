@@ -22,9 +22,9 @@ package node.crypto
  */
 external fun verify(
     algorithm: String?,
-    data: js.buffer.ArrayBufferView,
+    data: js.buffer.ArrayBufferView<*>,
     key: KeyLike,
-    signature: js.buffer.ArrayBufferView,
+    signature: js.buffer.ArrayBufferView<*>,
 ): Boolean
 
 /**
@@ -45,9 +45,9 @@ external fun verify(
  */
 external fun verify(
     algorithm: String?,
-    data: js.buffer.ArrayBufferView,
+    data: js.buffer.ArrayBufferView<*>,
     key: VerifyKeyObjectInput,
-    signature: js.buffer.ArrayBufferView,
+    signature: js.buffer.ArrayBufferView<*>,
 ): Boolean
 
 /**
@@ -68,9 +68,9 @@ external fun verify(
  */
 external fun verify(
     algorithm: String?,
-    data: js.buffer.ArrayBufferView,
+    data: js.buffer.ArrayBufferView<*>,
     key: VerifyPublicKeyInput,
-    signature: js.buffer.ArrayBufferView,
+    signature: js.buffer.ArrayBufferView<*>,
 ): Boolean
 
 /**
@@ -91,39 +91,39 @@ external fun verify(
  */
 external fun verify(
     algorithm: String?,
-    data: js.buffer.ArrayBufferView,
+    data: js.buffer.ArrayBufferView<*>,
     key: VerifyJsonWebKeyInput,
-    signature: js.buffer.ArrayBufferView,
+    signature: js.buffer.ArrayBufferView<*>,
 ): Boolean
 
 external fun verify(
     algorithm: String?,
-    data: js.buffer.ArrayBufferView,
+    data: js.buffer.ArrayBufferView<*>,
     key: KeyLike,
-    signature: js.buffer.ArrayBufferView,
+    signature: js.buffer.ArrayBufferView<*>,
     callback: (error: js.errors.JsError?, result: Boolean) -> Unit,
 ): Unit
 
 external fun verify(
     algorithm: String?,
-    data: js.buffer.ArrayBufferView,
+    data: js.buffer.ArrayBufferView<*>,
     key: VerifyKeyObjectInput,
-    signature: js.buffer.ArrayBufferView,
+    signature: js.buffer.ArrayBufferView<*>,
     callback: (error: js.errors.JsError?, result: Boolean) -> Unit,
 ): Unit
 
 external fun verify(
     algorithm: String?,
-    data: js.buffer.ArrayBufferView,
+    data: js.buffer.ArrayBufferView<*>,
     key: VerifyPublicKeyInput,
-    signature: js.buffer.ArrayBufferView,
+    signature: js.buffer.ArrayBufferView<*>,
     callback: (error: js.errors.JsError?, result: Boolean) -> Unit,
 ): Unit
 
 external fun verify(
     algorithm: String?,
-    data: js.buffer.ArrayBufferView,
+    data: js.buffer.ArrayBufferView<*>,
     key: VerifyJsonWebKeyInput,
-    signature: js.buffer.ArrayBufferView,
+    signature: js.buffer.ArrayBufferView<*>,
     callback: (error: js.errors.JsError?, result: Boolean) -> Unit,
 ): Unit

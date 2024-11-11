@@ -1083,7 +1083,7 @@ suspend fun writeFile(
  * @return Fulfills with `undefined` upon success.
  */
 
-suspend fun writeFile(file: FileHandle, data: js.buffer.ArrayBufferView): js.core.Void =
+suspend fun writeFile(file: FileHandle, data: js.buffer.ArrayBufferView<*>): js.core.Void =
     writeFileAsync(
         file, data
     ).await()
@@ -1142,7 +1142,7 @@ suspend fun writeFile(file: FileHandle, data: js.buffer.ArrayBufferView): js.cor
 
 suspend fun writeFile(
     file: FileHandle,
-    data: js.buffer.ArrayBufferView,
+    data: js.buffer.ArrayBufferView<*>,
     options: (WriteFileAsyncOptions)? = undefined.unsafeCast<Nothing>(),
 ): js.core.Void =
     writeFileAsync(
@@ -1203,7 +1203,7 @@ suspend fun writeFile(
 
 suspend fun writeFile(
     file: FileHandle,
-    data: js.buffer.ArrayBufferView,
+    data: js.buffer.ArrayBufferView<*>,
     options: node.buffer.BufferEncoding? = undefined.unsafeCast<Nothing>(),
 ): js.core.Void =
     writeFileAsync(
