@@ -1,5 +1,6 @@
 package js.typedarrays
 
+import js.array.ArrayLike
 import js.buffer.ArrayBuffer
 import seskar.js.JsSpecialName
 
@@ -10,5 +11,14 @@ sealed external class TypedArrayCompanion<S : TypedArray<S, ArrayBuffer, T>, T :
 
     fun of(
         vararg items: T,
+    ): S
+
+    fun <T> from(
+        source: ArrayLike<T>,
+    ): S
+
+    fun <U> from(
+        source: ArrayLike<U>,
+        transform: (item: U, index: Int) -> T,
     ): S
 }
