@@ -4,5 +4,5 @@ package node.fs
 
 sealed external interface WriteVResult {
     var bytesWritten: Double
-    var buffers: js.array.ReadonlyArray<js.buffer.ArrayBufferView>
+    var buffers: js.array.ReadonlyArray<js.buffer.ArrayBufferView<*>>
 }

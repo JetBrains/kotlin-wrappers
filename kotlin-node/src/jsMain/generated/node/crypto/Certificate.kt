@@ -40,7 +40,7 @@ external class Certificate {
      * @returns `true` if the given `spkac` data structure is valid,
      * `false` otherwise.
      */
-    fun verifySpkac(spkac: js.buffer.ArrayBufferView): Boolean
+    fun verifySpkac(spkac: js.buffer.ArrayBufferView<*>): Boolean
 
     companion object {
         /**

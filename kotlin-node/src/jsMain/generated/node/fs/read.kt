@@ -21,7 +21,7 @@ package node.fs
  * @param position Specifies where to begin reading from in the file. If `position` is `null` or `-1 `, data will be read from the current file position, and the file position will be updated. If
  * `position` is an integer, the file position will be unchanged.
  */
-external fun <TBuffer : js.buffer.ArrayBufferView> read(
+external fun <TBuffer : js.buffer.ArrayBufferView<*>> read(
     fd: Number,
     buffer: TBuffer,
     offset: Number,
@@ -39,7 +39,7 @@ external fun <TBuffer : js.buffer.ArrayBufferView> read(
  * `position` defaults to `null`
  * @since v12.17.0, 13.11.0
  */
-external fun <TBuffer : js.buffer.ArrayBufferView> read(
+external fun <TBuffer : js.buffer.ArrayBufferView<*>> read(
     fd: Number,
     options: ReadAsyncOptions<TBuffer>,
     callback: (err: node.ErrnoException?, bytesRead: Double, buffer: TBuffer) -> Unit,
@@ -47,5 +47,5 @@ external fun <TBuffer : js.buffer.ArrayBufferView> read(
 
 external fun read(
     fd: Number,
-    callback: (err: node.ErrnoException?, bytesRead: Double, buffer: js.buffer.ArrayBufferView) -> Unit,
+    callback: (err: node.ErrnoException?, bytesRead: Double, buffer: js.buffer.ArrayBufferView<*>) -> Unit,
 ): Unit

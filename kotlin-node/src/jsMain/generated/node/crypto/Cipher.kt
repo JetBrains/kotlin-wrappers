@@ -145,7 +145,7 @@ open external class Cipher : node.stream.Transform {
     fun update(data: BinaryLike): node.buffer.Buffer
     fun update(data: String, inputEncoding: Encoding): node.buffer.Buffer
     fun update(data: String, inputEncoding: Encoding?, outputEncoding: Encoding): String
-    fun update(data: js.buffer.ArrayBufferView, inputEncoding: Nothing?, outputEncoding: Encoding): String
+    fun update(data: js.buffer.ArrayBufferView<*>, inputEncoding: Nothing?, outputEncoding: Encoding): String
 
     /**
      * Once the `cipher.final()` method has been called, the `Cipher` object can no

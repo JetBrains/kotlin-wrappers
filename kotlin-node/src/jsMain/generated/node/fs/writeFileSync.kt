@@ -32,6 +32,6 @@ external fun writeFileSync(
  */
 external fun writeFileSync(
     file: PathOrFileDescriptor,
-    data: js.buffer.ArrayBufferView,
+    data: js.buffer.ArrayBufferView<*>,
     options: WriteFileOptions = definedExternally,
 ): Unit

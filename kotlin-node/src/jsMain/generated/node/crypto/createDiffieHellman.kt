@@ -32,21 +32,21 @@ external fun createDiffieHellman(prime: ArrayBuffer, generator: ArrayBuffer = de
 
 external fun createDiffieHellman(
     prime: ArrayBuffer,
-    generator: js.buffer.ArrayBufferView = definedExternally,
+    generator: js.buffer.ArrayBufferView<*> = definedExternally,
 ): DiffieHellman
 
-external fun createDiffieHellman(prime: js.buffer.ArrayBufferView): DiffieHellman
+external fun createDiffieHellman(prime: js.buffer.ArrayBufferView<*>): DiffieHellman
 
-external fun createDiffieHellman(prime: js.buffer.ArrayBufferView, generator: Double = definedExternally): DiffieHellman
+external fun createDiffieHellman(prime: js.buffer.ArrayBufferView<*>, generator: Double = definedExternally): DiffieHellman
 
 external fun createDiffieHellman(
-    prime: js.buffer.ArrayBufferView,
+    prime: js.buffer.ArrayBufferView<*>,
     generator: ArrayBuffer = definedExternally,
 ): DiffieHellman
 
 external fun createDiffieHellman(
-    prime: js.buffer.ArrayBufferView,
-    generator: js.buffer.ArrayBufferView = definedExternally,
+    prime: js.buffer.ArrayBufferView<*>,
+    generator: js.buffer.ArrayBufferView<*> = definedExternally,
 ): DiffieHellman
 
 external fun createDiffieHellman(
@@ -56,7 +56,7 @@ external fun createDiffieHellman(
 ): DiffieHellman
 
 external fun createDiffieHellman(
-    prime: js.buffer.ArrayBufferView,
+    prime: js.buffer.ArrayBufferView<*>,
     generator: String,
     generatorEncoding: BinaryToTextEncoding,
 ): DiffieHellman
@@ -78,7 +78,7 @@ external fun createDiffieHellman(
 external fun createDiffieHellman(
     prime: String,
     primeEncoding: BinaryToTextEncoding,
-    generator: js.buffer.ArrayBufferView = definedExternally,
+    generator: js.buffer.ArrayBufferView<*> = definedExternally,
 ): DiffieHellman
 
 external fun createDiffieHellman(

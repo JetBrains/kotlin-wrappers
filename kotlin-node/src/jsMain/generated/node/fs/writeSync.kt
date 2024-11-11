@@ -15,7 +15,7 @@ package node.fs
  */
 external fun writeSync(
     fd: Number,
-    buffer: js.buffer.ArrayBufferView,
+    buffer: js.buffer.ArrayBufferView<*>,
     offset: Double? = definedExternally,
     length: Double? = definedExternally,
     position: Double? = definedExternally,

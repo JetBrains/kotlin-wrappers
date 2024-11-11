@@ -13,7 +13,7 @@ sealed external class DiffieHellmanGroup {
     fun generateKeys(): node.buffer.Buffer
     fun generateKeys(encoding: BinaryToTextEncoding): String
     fun computeSecret(
-        otherPublicKey: js.buffer.ArrayBufferView,
+        otherPublicKey: js.buffer.ArrayBufferView<*>,
         inputEncoding: Nothing? = definedExternally,
         outputEncoding: Nothing? = definedExternally,
     ): node.buffer.Buffer
@@ -25,7 +25,7 @@ sealed external class DiffieHellmanGroup {
     ): node.buffer.Buffer
 
     fun computeSecret(
-        otherPublicKey: js.buffer.ArrayBufferView,
+        otherPublicKey: js.buffer.ArrayBufferView<*>,
         inputEncoding: Nothing?,
         outputEncoding: BinaryToTextEncoding,
     ): String

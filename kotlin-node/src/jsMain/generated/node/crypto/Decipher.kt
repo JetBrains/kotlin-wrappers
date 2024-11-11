@@ -131,8 +131,8 @@ open external class Decipher : node.stream.Transform {
      * @param inputEncoding The `encoding` of the `data` string.
      * @param outputEncoding The `encoding` of the return value.
      */
-    fun update(data: js.buffer.ArrayBufferView): node.buffer.Buffer
-    fun update(data: js.buffer.ArrayBufferView, inputEncoding: Nothing?, outputEncoding: Encoding): String
+    fun update(data: js.buffer.ArrayBufferView<*>): node.buffer.Buffer
+    fun update(data: js.buffer.ArrayBufferView<*>, inputEncoding: Nothing?, outputEncoding: Encoding): String
     fun update(data: String, inputEncoding: Encoding): node.buffer.Buffer
     fun update(data: String, inputEncoding: Encoding?, outputEncoding: Encoding): String
 

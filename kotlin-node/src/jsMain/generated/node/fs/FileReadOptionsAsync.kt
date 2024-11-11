@@ -2,7 +2,7 @@
 
 package node.fs
 
-sealed external interface FileReadOptions<T : js.buffer.ArrayBufferView /* default is node.buffer.Buffer */> {
+sealed external interface FileReadOptions<T : js.buffer.ArrayBufferView<*> /* default is node.buffer.Buffer */> {
     /**
      * @default `Buffer.alloc(0xffff)`
      */

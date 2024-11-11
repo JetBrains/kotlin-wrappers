@@ -10,6 +10,6 @@ package node.crypto
  * @since v11.6.0
  * @param encoding The string encoding when `key` is a string.
  */
-external fun createSecretKey(key: js.buffer.ArrayBufferView): KeyObject
+external fun createSecretKey(key: js.buffer.ArrayBufferView<*>): KeyObject
 
 external fun createSecretKey(key: String, encoding: node.buffer.BufferEncoding): KeyObject

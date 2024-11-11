@@ -135,7 +135,7 @@ sealed external interface Http2Session : EventEmitter {
     fun goaway(
         code: Number = definedExternally,
         lastStreamID: Number = definedExternally,
-        opaqueData: js.buffer.ArrayBufferView = definedExternally,
+        opaqueData: js.buffer.ArrayBufferView<*> = definedExternally,
     ): Unit
 
     /**
@@ -168,7 +168,7 @@ sealed external interface Http2Session : EventEmitter {
      */
     fun ping(callback: (err: js.errors.JsError?, duration: Double, payload: node.buffer.Buffer) -> Unit): Boolean
     fun ping(
-        payload: js.buffer.ArrayBufferView,
+        payload: js.buffer.ArrayBufferView<*>,
         callback: (err: js.errors.JsError?, duration: Double, payload: node.buffer.Buffer) -> Unit,
     ): Boolean
 

@@ -16,7 +16,7 @@ package node.crypto
  * If the `callback` function is provided this function uses libuv's threadpool.
  * @since v12.0.0
  */
-external fun sign(algorithm: String?, data: js.buffer.ArrayBufferView, key: KeyLike): node.buffer.Buffer
+external fun sign(algorithm: String?, data: js.buffer.ArrayBufferView<*>, key: KeyLike): node.buffer.Buffer
 
 /**
  * Calculates and returns the signature for `data` using the given private key and
@@ -30,7 +30,7 @@ external fun sign(algorithm: String?, data: js.buffer.ArrayBufferView, key: KeyL
  * If the `callback` function is provided this function uses libuv's threadpool.
  * @since v12.0.0
  */
-external fun sign(algorithm: String?, data: js.buffer.ArrayBufferView, key: SignKeyObjectInput): node.buffer.Buffer
+external fun sign(algorithm: String?, data: js.buffer.ArrayBufferView<*>, key: SignKeyObjectInput): node.buffer.Buffer
 
 /**
  * Calculates and returns the signature for `data` using the given private key and
@@ -44,7 +44,7 @@ external fun sign(algorithm: String?, data: js.buffer.ArrayBufferView, key: Sign
  * If the `callback` function is provided this function uses libuv's threadpool.
  * @since v12.0.0
  */
-external fun sign(algorithm: String?, data: js.buffer.ArrayBufferView, key: SignPrivateKeyInput): node.buffer.Buffer
+external fun sign(algorithm: String?, data: js.buffer.ArrayBufferView<*>, key: SignPrivateKeyInput): node.buffer.Buffer
 
 /**
  * Calculates and returns the signature for `data` using the given private key and
@@ -58,32 +58,32 @@ external fun sign(algorithm: String?, data: js.buffer.ArrayBufferView, key: Sign
  * If the `callback` function is provided this function uses libuv's threadpool.
  * @since v12.0.0
  */
-external fun sign(algorithm: String?, data: js.buffer.ArrayBufferView, key: SignJsonWebKeyInput): node.buffer.Buffer
+external fun sign(algorithm: String?, data: js.buffer.ArrayBufferView<*>, key: SignJsonWebKeyInput): node.buffer.Buffer
 
 external fun sign(
     algorithm: String?,
-    data: js.buffer.ArrayBufferView,
+    data: js.buffer.ArrayBufferView<*>,
     key: KeyLike,
     callback: (error: js.errors.JsError?, data: node.buffer.Buffer) -> Unit,
 ): Unit
 
 external fun sign(
     algorithm: String?,
-    data: js.buffer.ArrayBufferView,
+    data: js.buffer.ArrayBufferView<*>,
     key: SignKeyObjectInput,
     callback: (error: js.errors.JsError?, data: node.buffer.Buffer) -> Unit,
 ): Unit
 
 external fun sign(
     algorithm: String?,
-    data: js.buffer.ArrayBufferView,
+    data: js.buffer.ArrayBufferView<*>,
     key: SignPrivateKeyInput,
     callback: (error: js.errors.JsError?, data: node.buffer.Buffer) -> Unit,
 ): Unit
 
 external fun sign(
     algorithm: String?,
-    data: js.buffer.ArrayBufferView,
+    data: js.buffer.ArrayBufferView<*>,
     key: SignJsonWebKeyInput,
     callback: (error: js.errors.JsError?, data: node.buffer.Buffer) -> Unit,
 ): Unit

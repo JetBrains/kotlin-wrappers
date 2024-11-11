@@ -55,7 +55,7 @@ external class Verify : node.stream.Writable {
      * be passed instead of a public key.
      * @since v0.1.92
      */
-    fun verify(value: KeyLike, signature: js.buffer.ArrayBufferView): Boolean
+    fun verify(value: KeyLike, signature: js.buffer.ArrayBufferView<*>): Boolean
 
     /**
      * Verifies the provided data using the given `object` and `signature`.
@@ -76,7 +76,7 @@ external class Verify : node.stream.Writable {
      * be passed instead of a public key.
      * @since v0.1.92
      */
-    fun verify(value: VerifyKeyObjectInput, signature: js.buffer.ArrayBufferView): Boolean
+    fun verify(value: VerifyKeyObjectInput, signature: js.buffer.ArrayBufferView<*>): Boolean
 
     /**
      * Verifies the provided data using the given `object` and `signature`.
@@ -97,7 +97,7 @@ external class Verify : node.stream.Writable {
      * be passed instead of a public key.
      * @since v0.1.92
      */
-    fun verify(value: VerifyPublicKeyInput, signature: js.buffer.ArrayBufferView): Boolean
+    fun verify(value: VerifyPublicKeyInput, signature: js.buffer.ArrayBufferView<*>): Boolean
 
     /**
      * Verifies the provided data using the given `object` and `signature`.
@@ -118,7 +118,7 @@ external class Verify : node.stream.Writable {
      * be passed instead of a public key.
      * @since v0.1.92
      */
-    fun verify(value: VerifyJsonWebKeyInput, signature: js.buffer.ArrayBufferView): Boolean
+    fun verify(value: VerifyJsonWebKeyInput, signature: js.buffer.ArrayBufferView<*>): Boolean
     fun verify(value: KeyLike, signature: String, signature_format: BinaryToTextEncoding = definedExternally): Boolean
 
     fun verify(

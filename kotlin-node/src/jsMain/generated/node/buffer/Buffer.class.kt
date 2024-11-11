@@ -2412,7 +2412,7 @@ sealed external class Buffer : Uint8Array {
          * @param [encoding='utf8'] If `string` is a string, this is its encoding.
          * @return The number of bytes contained within `string`.
          */
-        fun byteLength(string: js.buffer.ArrayBufferView, encoding: BufferEncoding = definedExternally): Double
+        fun byteLength(string: js.buffer.ArrayBufferView<*>, encoding: BufferEncoding = definedExternally): Double
 
         /**
          * Returns the byte length of a string when encoded using `encoding`.

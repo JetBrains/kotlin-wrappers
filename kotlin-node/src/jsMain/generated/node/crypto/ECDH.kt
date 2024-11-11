@@ -67,8 +67,8 @@ external class ECDH {
      * @param inputEncoding The `encoding` of the `otherPublicKey` string.
      * @param outputEncoding The `encoding` of the return value.
      */
-    fun computeSecret(otherPublicKey: js.buffer.ArrayBufferView): node.buffer.Buffer
-    fun computeSecret(otherPublicKey: js.buffer.ArrayBufferView, outputEncoding: BinaryToTextEncoding): String
+    fun computeSecret(otherPublicKey: js.buffer.ArrayBufferView<*>): node.buffer.Buffer
+    fun computeSecret(otherPublicKey: js.buffer.ArrayBufferView<*>, outputEncoding: BinaryToTextEncoding): String
     fun computeSecret(otherPublicKey: String, inputEncoding: BinaryToTextEncoding): node.buffer.Buffer
     fun computeSecret(
         otherPublicKey: String,
@@ -114,7 +114,7 @@ external class ECDH {
      * @since v0.11.14
      * @param encoding The `encoding` of the `privateKey` string.
      */
-    fun setPrivateKey(privateKey: js.buffer.ArrayBufferView): Unit
+    fun setPrivateKey(privateKey: js.buffer.ArrayBufferView<*>): Unit
     fun setPrivateKey(privateKey: String, encoding: BinaryToTextEncoding): Unit
 
     companion object {

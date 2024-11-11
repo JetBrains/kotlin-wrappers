@@ -32,4 +32,4 @@ external fun crc32(data: node.buffer.Buffer, value: Number = definedExternally):
  * @returns A 32-bit unsigned integer containing the checksum.
  * @since v22.2.0
  */
-external fun crc32(data: js.buffer.ArrayBufferView, value: Number = definedExternally): Double
+external fun crc32(data: js.buffer.ArrayBufferView<*>, value: Number = definedExternally): Double

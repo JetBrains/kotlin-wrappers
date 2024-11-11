@@ -233,7 +233,7 @@ external fun writeFileAsync(
  */
 
 @JsName("writeFile")
-external fun writeFileAsync(file: PathLike, data: js.buffer.ArrayBufferView): Promise<js.core.Void>
+external fun writeFileAsync(file: PathLike, data: js.buffer.ArrayBufferView<*>): Promise<js.core.Void>
 
 
 /**
@@ -290,7 +290,7 @@ external fun writeFileAsync(file: PathLike, data: js.buffer.ArrayBufferView): Pr
 @JsName("writeFile")
 external fun writeFileAsync(
     file: PathLike,
-    data: js.buffer.ArrayBufferView,
+    data: js.buffer.ArrayBufferView<*>,
     options: (WriteFileAsyncOptions)? = definedExternally,
 ): Promise<js.core.Void>
 
@@ -349,7 +349,7 @@ external fun writeFileAsync(
 @JsName("writeFile")
 external fun writeFileAsync(
     file: PathLike,
-    data: js.buffer.ArrayBufferView,
+    data: js.buffer.ArrayBufferView<*>,
     options: node.buffer.BufferEncoding? = definedExternally,
 ): Promise<js.core.Void>
 
@@ -408,7 +408,7 @@ external fun writeFileAsync(
 @JsName("writeFile")
 external fun writeFileAsync(
     file: PathLike,
-    data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
+    data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView<*> */>,
 ): Promise<js.core.Void>
 
 
@@ -466,7 +466,7 @@ external fun writeFileAsync(
 @JsName("writeFile")
 external fun writeFileAsync(
     file: PathLike,
-    data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
+    data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView<*> */>,
     options: (WriteFileAsyncOptions)? = definedExternally,
 ): Promise<js.core.Void>
 
@@ -525,7 +525,7 @@ external fun writeFileAsync(
 @JsName("writeFile")
 external fun writeFileAsync(
     file: PathLike,
-    data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
+    data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView<*> */>,
     options: node.buffer.BufferEncoding? = definedExternally,
 ): Promise<js.core.Void>
 
@@ -584,7 +584,7 @@ external fun writeFileAsync(
 @JsName("writeFile")
 external fun writeFileAsync(
     file: PathLike,
-    data: AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
+    data: AsyncIterable<Any /* string | NodeJS.ArrayBufferView<*> */>,
 ): Promise<js.core.Void>
 
 

@@ -31,7 +31,7 @@ package node.fs
  * @param [length=buffer.byteLength - offset]
  * @param [position='null']
  */
-external fun <TBuffer : js.buffer.ArrayBufferView> write(
+external fun <TBuffer : js.buffer.ArrayBufferView<*>> write(
     fd: Number,
     buffer: TBuffer,
     offset: Double?,
@@ -46,7 +46,7 @@ external fun <TBuffer : js.buffer.ArrayBufferView> write(
  * @param offset The part of the buffer to be written. If not supplied, defaults to `0`.
  * @param length The number of bytes to write. If not supplied, defaults to `buffer.length - offset`.
  */
-external fun <TBuffer : js.buffer.ArrayBufferView> write(
+external fun <TBuffer : js.buffer.ArrayBufferView<*>> write(
     fd: Number,
     buffer: TBuffer,
     offset: Double?,
@@ -59,7 +59,7 @@ external fun <TBuffer : js.buffer.ArrayBufferView> write(
  * @param fd A file descriptor.
  * @param offset The part of the buffer to be written. If not supplied, defaults to `0`.
  */
-external fun <TBuffer : js.buffer.ArrayBufferView> write(
+external fun <TBuffer : js.buffer.ArrayBufferView<*>> write(
     fd: Number,
     buffer: TBuffer,
     offset: Double?,
@@ -70,7 +70,7 @@ external fun <TBuffer : js.buffer.ArrayBufferView> write(
  * Asynchronously writes `buffer` to the file referenced by the supplied file descriptor.
  * @param fd A file descriptor.
  */
-external fun <TBuffer : js.buffer.ArrayBufferView> write(
+external fun <TBuffer : js.buffer.ArrayBufferView<*>> write(
     fd: Number,
     buffer: TBuffer,
     callback: (err: node.ErrnoException?, written: Double, buffer: TBuffer) -> Unit,

@@ -65,13 +65,13 @@ external class DiffieHellman {
      * @param outputEncoding The `encoding` of the return value.
      */
     fun computeSecret(
-        otherPublicKey: js.buffer.ArrayBufferView,
+        otherPublicKey: js.buffer.ArrayBufferView<*>,
         inputEncoding: Nothing? = definedExternally,
         outputEncoding: Nothing? = definedExternally,
     ): node.buffer.Buffer
 
     fun computeSecret(
-        otherPublicKey: js.buffer.ArrayBufferView,
+        otherPublicKey: js.buffer.ArrayBufferView<*>,
         inputEncoding: Nothing?,
         outputEncoding: BinaryToTextEncoding,
     ): String
@@ -135,7 +135,7 @@ external class DiffieHellman {
      * @since v0.5.0
      * @param encoding The `encoding` of the `publicKey` string.
      */
-    fun setPublicKey(publicKey: js.buffer.ArrayBufferView): Unit
+    fun setPublicKey(publicKey: js.buffer.ArrayBufferView<*>): Unit
     fun setPublicKey(publicKey: String, encoding: node.buffer.BufferEncoding): Unit
 
     /**
@@ -148,7 +148,7 @@ external class DiffieHellman {
      * @since v0.5.0
      * @param encoding The `encoding` of the `privateKey` string.
      */
-    fun setPrivateKey(privateKey: js.buffer.ArrayBufferView): Unit
+    fun setPrivateKey(privateKey: js.buffer.ArrayBufferView<*>): Unit
     fun setPrivateKey(privateKey: String, encoding: node.buffer.BufferEncoding): Unit
 
     /**

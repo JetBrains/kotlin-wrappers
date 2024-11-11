@@ -14,7 +14,7 @@ package node.fs
  */
 external fun readSync(
     fd: Number,
-    buffer: js.buffer.ArrayBufferView,
+    buffer: js.buffer.ArrayBufferView<*>,
     offset: Number,
     length: Number,
     position: ReadPosition?,
@@ -24,4 +24,4 @@ external fun readSync(
  * Similar to the above `fs.readSync` function, this version takes an optional `options` object.
  * If no `options` object is specified, it will default with the above values.
  */
-external fun readSync(fd: Number, buffer: js.buffer.ArrayBufferView, opts: ReadSyncOptions = definedExternally): Double
+external fun readSync(fd: Number, buffer: js.buffer.ArrayBufferView<*>, opts: ReadSyncOptions = definedExternally): Double
