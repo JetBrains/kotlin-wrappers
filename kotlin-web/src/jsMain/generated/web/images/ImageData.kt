@@ -17,7 +17,7 @@ open external class ImageData(
 ) : ImageBitmapSource,
     TexImageSource {
     constructor(
-        data: Uint8ClampedArray,
+        data: Uint8ClampedArray<*>,
         sw: Int,
         sh: Int = definedExternally,
         settings: ImageDataSettings = definedExternally,
@@ -33,7 +33,7 @@ open external class ImageData(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageData/data)
      */
-    val data: Uint8ClampedArray
+    val data: Uint8ClampedArray<*>
 
     /**
      * Returns the actual dimensions of the data in the ImageData object, in pixels.

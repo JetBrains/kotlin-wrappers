@@ -11,7 +11,7 @@ import js.buffer.ArrayBufferView
  */
 open external class ByteLengthQueuingStrategy(
     init: QueuingStrategyInit,
-) : QueuingStrategy<ArrayBufferView> {
+) : QueuingStrategy<ArrayBufferView<*>> {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ByteLengthQueuingStrategy/highWaterMark)
      */
@@ -20,5 +20,5 @@ open external class ByteLengthQueuingStrategy(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ByteLengthQueuingStrategy/size)
      */
-    override val size: QueuingStrategySize<ArrayBufferView>
+    override val size: QueuingStrategySize<ArrayBufferView<*>>
 }

@@ -13,7 +13,7 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBRequest/view)
      */
-    val view: ArrayBufferView?
+    val view: ArrayBufferView<*>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBRequest/respond)
@@ -23,5 +23,5 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBRequest/respondWithNewView)
      */
-    fun respondWithNewView(view: ArrayBufferView)
+    fun respondWithNewView(view: ArrayBufferView<*>)
 }

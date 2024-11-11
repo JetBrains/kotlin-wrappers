@@ -18,6 +18,6 @@ import web.streams.WritableStream
 open external class DecompressionStream(
     format: CompressionFormat,
 ) : GenericTransformStream {
-    override val readable: ReadableStream<Uint8Array>
+    override val readable: ReadableStream<Uint8Array<*>>
     override val writable: WritableStream<BufferSource>
 }

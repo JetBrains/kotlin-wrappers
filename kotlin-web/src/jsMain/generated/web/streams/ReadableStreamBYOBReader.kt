@@ -11,16 +11,16 @@ import seskar.js.JsAsync
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader)
  */
 open external class ReadableStreamBYOBReader(
-    stream: ReadableStream<Uint8Array>,
+    stream: ReadableStream<Uint8Array<*>>,
 ) : ReadableStreamGenericReader {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/read)
      */
     @JsAsync
-    suspend fun <T : ArrayBufferView> read(view: T): ReadableStreamReadResult<T>
+    suspend fun <T : ArrayBufferView<*>> read(view: T): ReadableStreamReadResult<T>
 
     @JsName("read")
-    fun <T : ArrayBufferView> readAsync(view: T): Promise<ReadableStreamReadResult<T>>
+    fun <T : ArrayBufferView<*>> readAsync(view: T): Promise<ReadableStreamReadResult<T>>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/releaseLock)

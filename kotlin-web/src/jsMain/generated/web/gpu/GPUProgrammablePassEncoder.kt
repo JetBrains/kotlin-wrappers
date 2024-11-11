@@ -15,7 +15,7 @@ sealed external interface GPUProgrammablePassEncoder {
     fun setBindGroup(
         index: Int,
         bindGroup: GPUBindGroup,
-        dynamicOffsetsData: Uint32Array,
+        dynamicOffsetsData: Uint32Array<*>,
         dynamicOffsetsDataStart: Int,
         dynamicOffsetsDataLength: Int,
     )

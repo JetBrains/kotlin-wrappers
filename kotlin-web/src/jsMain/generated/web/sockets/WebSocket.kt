@@ -119,7 +119,7 @@ open external class WebSocket(
     fun send(data: String)
     fun send(data: ArrayBufferLike)
     fun send(data: Blob)
-    fun send(data: ArrayBufferView)
+    fun send(data: ArrayBufferView<*>)
     val CONNECTING: ReadyState
     val OPEN: ReadyState
     val CLOSING: ReadyState

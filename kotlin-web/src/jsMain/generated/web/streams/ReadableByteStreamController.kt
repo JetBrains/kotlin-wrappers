@@ -30,7 +30,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableByteStreamController/enqueue)
      */
-    fun enqueue(chunk: ArrayBufferView)
+    fun enqueue(chunk: ArrayBufferView<*>)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableByteStreamController/error)

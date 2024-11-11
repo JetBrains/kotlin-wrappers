@@ -20,7 +20,7 @@ private constructor() :
     override fun setBindGroup(
         index: Int,
         bindGroup: GPUBindGroup,
-        dynamicOffsetsData: Uint32Array,
+        dynamicOffsetsData: Uint32Array<*>,
         dynamicOffsetsDataStart: Int,
         dynamicOffsetsDataLength: Int,
     )
