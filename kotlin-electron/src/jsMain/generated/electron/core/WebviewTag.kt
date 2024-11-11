@@ -443,12 +443,12 @@ external interface WebviewTag : HTMLElement {
      *
      * Prints `webview`'s web page as PDF, Same as `webContents.printToPDF(options)`.
      */
-    fun printToPDF(options: PrintToPDFOptions): Promise<Uint8Array>
+    fun printToPDF(options: PrintToPDFOptions): Promise<Uint8Array<*>>
 
     /**
      * Executes editing command `redo` in page.
      */
-    fun redo(): Unit
+    fun redo()
 
     /**
      * Reloads the guest page.
