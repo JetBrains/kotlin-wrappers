@@ -181,7 +181,11 @@ external class Http2ServerResponse : node.stream.Writable {
     override fun end(data: Uint8Array<*>, cb: () -> Unit): Unit /* this */
     override fun end(str: String, encoding: node.buffer.BufferEncoding, cb: () -> Unit): Unit /* this */
 
-    fun end(str: Uint8Array<*>, encoding: node.buffer.BufferEncoding, cb: () -> Unit = definedExternally): Unit /* this */
+    fun end(
+        str: Uint8Array<*>,
+        encoding: node.buffer.BufferEncoding,
+        cb: () -> Unit = definedExternally,
+    ): Unit /* this */
 
     /**
      * Reads out a header that has already been queued but not sent to the client.

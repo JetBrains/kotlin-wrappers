@@ -17,6 +17,6 @@ external interface ReadableStream : EventEmitter {
     fun unpipe(destination: WritableStream = definedExternally): Unit /* this */
     fun unshift(chunk: String, encoding: node.buffer.BufferEncoding = definedExternally): Unit
 
-    fun unshift(chunk: Uint8Array<*>, encoding: node.buffer.BufferEncoding = definedExternally)
+    fun unshift(chunk: Uint8Array<*>, encoding: node.buffer.BufferEncoding = definedExternally): Unit
     fun wrap(stream: ReadableStream): Unit /* this */
 }

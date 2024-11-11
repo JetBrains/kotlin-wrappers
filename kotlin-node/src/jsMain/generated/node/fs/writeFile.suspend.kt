@@ -366,7 +366,7 @@ suspend fun writeFile(
 
 suspend fun writeFile(
     file: PathLike,
-    data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView<*> */>,
+    data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
 ): js.core.Void =
     writeFileAsync(
         file, data
@@ -426,7 +426,7 @@ suspend fun writeFile(
 
 suspend fun writeFile(
     file: PathLike,
-    data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView<*> */>,
+    data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: (WriteFileAsyncOptions)? = undefined.unsafeCast<Nothing>(),
 ): js.core.Void =
     writeFileAsync(
@@ -487,7 +487,7 @@ suspend fun writeFile(
 
 suspend fun writeFile(
     file: PathLike,
-    data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView<*> */>,
+    data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: node.buffer.BufferEncoding? = undefined.unsafeCast<Nothing>(),
 ): js.core.Void =
     writeFileAsync(
@@ -546,7 +546,7 @@ suspend fun writeFile(
  * @return Fulfills with `undefined` upon success.
  */
 
-suspend fun writeFile(file: PathLike, data: AsyncIterable<Any /* string | NodeJS.ArrayBufferView<*> */>): js.core.Void =
+suspend fun writeFile(file: PathLike, data: AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>): js.core.Void =
     writeFileAsync(
         file, data
     ).await()

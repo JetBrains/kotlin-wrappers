@@ -37,7 +37,10 @@ external fun createDiffieHellman(
 
 external fun createDiffieHellman(prime: js.buffer.ArrayBufferView<*>): DiffieHellman
 
-external fun createDiffieHellman(prime: js.buffer.ArrayBufferView<*>, generator: Double = definedExternally): DiffieHellman
+external fun createDiffieHellman(
+    prime: js.buffer.ArrayBufferView<*>,
+    generator: Double = definedExternally,
+): DiffieHellman
 
 external fun createDiffieHellman(
     prime: js.buffer.ArrayBufferView<*>,

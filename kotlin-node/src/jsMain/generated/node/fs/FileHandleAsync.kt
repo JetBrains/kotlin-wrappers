@@ -936,7 +936,10 @@ sealed external interface FileHandle {
      */
 
     @JsName("readv")
-    fun readvAsync(buffers: ReadonlyArray<ArrayBufferView<*>>, position: Number = definedExternally): Promise<ReadVResult>
+    fun readvAsync(
+        buffers: ReadonlyArray<ArrayBufferView<*>>,
+        position: Number = definedExternally,
+    ): Promise<ReadVResult>
 
 
     @seskar.js.JsAsync

@@ -434,6 +434,7 @@
         ],
         "buffer/Buffer.class.kt": [
             "js.buffer.ArrayBuffer",
+            "js.buffer.ArrayBufferLike",
             "js.buffer.SharedArrayBuffer",
             "js.array.ReadonlyArray",
             "js.typedarrays.Uint8Array"

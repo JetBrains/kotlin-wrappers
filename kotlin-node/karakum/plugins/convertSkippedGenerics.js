@@ -56,7 +56,49 @@ export default function (node, context, render) {
         )
         && !node.typeArguments
     ) {
-        return `${render(node.typeName)}<*, *>`
+        return `${render(node.typeName)}<*, *, *>`
+    }
+
+    if (
+        ts.isTypeReferenceNode(node)
+        && ts.isQualifiedName(node.typeName)
+        && (
+            node.typeName.right.text === "ArrayBufferView"
+        )
+        && !node.typeArguments
+    ) {
+        return `${render(node.typeName)}<*>`
+    }
+
+    if (
+        ts.isTypeReferenceNode(node)
+        && ts.isIdentifier(node.typeName)
+        && (
+            node.typeName.text === "DataView"
+            || node.typeName.text === "Float32Array"
+            || node.typeName.text === "Float64Array"
+            || node.typeName.text === "Int8Array"
+            || node.typeName.text === "Int16Array"
+            || node.typeName.text === "Int32Array"
+            || node.typeName.text === "Uint8Array"
+            || node.typeName.text === "Uint8ClampedArray"
+            || node.typeName.text === "Uint16Array"
+            || node.typeName.text === "Uint32Array"
+            || node.typeName.text === "BigInt64Array"
+            || node.typeName.text === "BigUint64Array"
+        )
+        && !node.typeArguments
+    ) {
+        return `${render(node.typeName)}<*>`
+    }
+
+    if (
+        ts.isExpressionWithTypeArguments(node)
+        && ts.isIdentifier(node.expression)
+        && node.expression.text === "Uint8Array"
+        && !node.typeArguments
+    ) {
+        return `${render(node.expression)}<ArrayBufferLike>`
     }
 
     if (
