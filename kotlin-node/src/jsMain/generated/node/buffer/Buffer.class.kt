@@ -4,14 +4,15 @@ package node.buffer
 
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
+import js.buffer.ArrayBufferLike
 import js.buffer.SharedArrayBuffer
 import js.typedarrays.Uint8Array
 
 
-sealed external class Buffer : Uint8Array {
+sealed external class Buffer : Uint8Array<ArrayBufferLike> {
     constructor (str: String, encoding: BufferEncoding = definedExternally)
     constructor (size: Number)
-    constructor (array: Uint8Array)
+    constructor (array: Uint8Array<*>)
     constructor (arrayBuffer: ArrayBuffer)
 
     /**
@@ -149,7 +150,7 @@ sealed external class Buffer : Uint8Array {
      * @since v0.11.13
      * @param otherBuffer A `Buffer` or {@link Uint8Array} with which to compare `buf`.
      */
-    fun equals(otherBuffer: Uint8Array): Boolean
+    fun equals(otherBuffer: Uint8Array<*>): Boolean
 
     /**
      * Compares `buf` with `target` and returns a number indicating whether `buf`comes before, after, or is the same as `target` in sort order.
@@ -206,7 +207,7 @@ sealed external class Buffer : Uint8Array {
      * @param [sourceEnd=buf.length] The offset within `buf` at which to end comparison (not inclusive).
      */
     fun compare(
-        target: Uint8Array,
+        target: Uint8Array<*>,
         targetStart: Number = definedExternally,
         targetEnd: Number = definedExternally,
         sourceStart: Number = definedExternally,
@@ -267,7 +268,7 @@ sealed external class Buffer : Uint8Array {
      * @return The number of bytes copied.
      */
     fun copy(
-        target: Uint8Array,
+        target: Uint8Array<*>,
         targetStart: Number = definedExternally,
         sourceStart: Number = definedExternally,
         sourceEnd: Number = definedExternally,
@@ -1602,7 +1603,7 @@ sealed external class Buffer : Uint8Array {
      * @return A reference to `buf`.
      */
     fun fill(
-        value: Uint8Array,
+        value: Uint8Array<*>,
         offset: Number = definedExternally,
         end: Number = definedExternally,
         encoding: BufferEncoding = definedExternally,
@@ -1891,7 +1892,7 @@ sealed external class Buffer : Uint8Array {
      * @return The index of the first occurrence of `value` in `buf`, or `-1` if `buf` does not contain `value`.
      */
     fun indexOf(
-        value: Uint8Array,
+        value: Uint8Array<*>,
         byteOffset: Number = definedExternally,
         encoding: BufferEncoding = definedExternally,
     ): Double
@@ -2110,7 +2111,7 @@ sealed external class Buffer : Uint8Array {
      * @return The index of the last occurrence of `value` in `buf`, or `-1` if `buf` does not contain `value`.
      */
     fun lastIndexOf(
-        value: Uint8Array,
+        value: Uint8Array<*>,
         byteOffset: Number = definedExternally,
         encoding: BufferEncoding = definedExternally,
     ): Double
@@ -2252,7 +2253,7 @@ sealed external class Buffer : Uint8Array {
          * Creates a new Buffer using the passed {data}
          * @param data data to create a new Buffer
          */
-        fun from(data: Uint8Array): Buffer
+        fun from(data: Uint8Array<*>): Buffer
 
         /**
          * Creates a new Buffer using the passed {data}
@@ -2514,7 +2515,7 @@ sealed external class Buffer : Uint8Array {
          * @param list List of `Buffer` or {@link Uint8Array} instances to concatenate.
          * @param totalLength Total length of the `Buffer` instances in `list` when concatenated.
          */
-        fun concat(list: ReadonlyArray<Uint8Array>, totalLength: Number = definedExternally): Buffer
+        fun concat(list: ReadonlyArray<Uint8Array<*>>, totalLength: Number = definedExternally): Buffer
 
         /**
          * Copies the underlying memory of `view` into a new `Buffer`.
@@ -2555,7 +2556,7 @@ sealed external class Buffer : Uint8Array {
          * @since v0.11.13
          * @return Either `-1`, `0`, or `1`, depending on the result of the comparison. See `compare` for details.
          */
-        fun compare(buf1: Uint8Array, buf2: Uint8Array): Int /* -1 | 0 | 1 */
+        fun compare(buf1: Uint8Array<*>, buf2: Uint8Array<*>): Int /* -1 | 0 | 1 */
 
         /**
          * Allocates a new `Buffer` of `size` bytes. If `fill` is `undefined`, the`Buffer` will be zero-filled.
@@ -2704,7 +2705,7 @@ sealed external class Buffer : Uint8Array {
          */
         fun alloc(
             size: Number,
-            fill: Uint8Array = definedExternally,
+            fill: Uint8Array<*> = definedExternally,
             encoding: BufferEncoding = definedExternally,
         ): Buffer
 

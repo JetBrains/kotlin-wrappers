@@ -69,7 +69,7 @@ sealed external interface FileHandle {
      */
 
     @JsName("appendFile")
-    fun appendFileAsync(data: Uint8Array): Promise<js.core.Void>
+    fun appendFileAsync(data: Uint8Array<*>): Promise<js.core.Void>
 
 
     /**
@@ -83,7 +83,7 @@ sealed external interface FileHandle {
 
     @JsName("appendFile")
     fun appendFileAsync(
-        data: Uint8Array,
+        data: Uint8Array<*>,
         options: (FileHandleAppendFileAsyncOptions)? = definedExternally,
     ): Promise<js.core.Void>
 
@@ -99,7 +99,7 @@ sealed external interface FileHandle {
 
     @JsName("appendFile")
     fun appendFileAsync(
-        data: Uint8Array,
+        data: Uint8Array<*>,
         options: node.buffer.BufferEncoding? = definedExternally,
     ): Promise<js.core.Void>
 
@@ -144,7 +144,7 @@ sealed external interface FileHandle {
      */
 
     @seskar.js.JsAsync
-    suspend fun appendFile(data: Uint8Array): js.core.Void
+    suspend fun appendFile(data: Uint8Array<*>): js.core.Void
 
 
     /**
@@ -158,7 +158,7 @@ sealed external interface FileHandle {
 
     @seskar.js.JsAsync
     suspend fun appendFile(
-        data: Uint8Array,
+        data: Uint8Array<*>,
         options: (FileHandleAppendFileAsyncOptions)? = definedExternally,
     ): js.core.Void
 
@@ -173,7 +173,7 @@ sealed external interface FileHandle {
      */
 
     @seskar.js.JsAsync
-    suspend fun appendFile(data: Uint8Array, options: node.buffer.BufferEncoding? = definedExternally): js.core.Void
+    suspend fun appendFile(data: Uint8Array<*>, options: node.buffer.BufferEncoding? = definedExternally): js.core.Void
 
     /**
      * Changes the ownership of the file. A wrapper for [`chown(2)`](http://man7.org/linux/man-pages/man2/chown.2.html).
@@ -674,7 +674,7 @@ sealed external interface FileHandle {
      */
 
     @JsName("writeFile")
-    fun writeFileAsync(data: Uint8Array): Promise<js.core.Void>
+    fun writeFileAsync(data: Uint8Array<*>): Promise<js.core.Void>
 
 
     /**
@@ -698,7 +698,7 @@ sealed external interface FileHandle {
 
     @JsName("writeFile")
     fun writeFileAsync(
-        data: Uint8Array,
+        data: Uint8Array<*>,
         options: (FileHandleWriteFileAsyncOptions)? = definedExternally,
     ): Promise<js.core.Void>
 
@@ -724,7 +724,7 @@ sealed external interface FileHandle {
 
     @JsName("writeFile")
     fun writeFileAsync(
-        data: Uint8Array,
+        data: Uint8Array<*>,
         options: node.buffer.BufferEncoding? = definedExternally,
     ): Promise<js.core.Void>
 
@@ -799,7 +799,7 @@ sealed external interface FileHandle {
      */
 
     @seskar.js.JsAsync
-    suspend fun writeFile(data: Uint8Array): js.core.Void
+    suspend fun writeFile(data: Uint8Array<*>): js.core.Void
 
 
     /**
@@ -823,7 +823,7 @@ sealed external interface FileHandle {
 
     @seskar.js.JsAsync
     suspend fun writeFile(
-        data: Uint8Array,
+        data: Uint8Array<*>,
         options: (FileHandleWriteFileAsyncOptions)? = definedExternally,
     ): js.core.Void
 
@@ -848,7 +848,7 @@ sealed external interface FileHandle {
      */
 
     @seskar.js.JsAsync
-    suspend fun writeFile(data: Uint8Array, options: node.buffer.BufferEncoding? = definedExternally): js.core.Void
+    suspend fun writeFile(data: Uint8Array<*>, options: node.buffer.BufferEncoding? = definedExternally): js.core.Void
 
     /**
      * Write `buffer` to the file.
@@ -870,7 +870,7 @@ sealed external interface FileHandle {
      */
 
     @JsName("write")
-    fun <TBuffer : Uint8Array> writeAsync(
+    fun <TBuffer : Uint8Array<*>> writeAsync(
         buffer: TBuffer,
         offset: Double? = definedExternally,
         length: Double? = definedExternally,
@@ -879,7 +879,7 @@ sealed external interface FileHandle {
 
 
     @seskar.js.JsAsync
-    suspend fun <TBuffer : Uint8Array> write(
+    suspend fun <TBuffer : Uint8Array<*>> write(
         buffer: TBuffer,
         offset: Double? = definedExternally,
         length: Double? = definedExternally,

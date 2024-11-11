@@ -108,6 +108,6 @@ external fun appendFileSync(
  */
 external fun appendFileSync(
     path: PathOrFileDescriptor,
-    data: Uint8Array,
+    data: Uint8Array<*>,
     options: WriteFileOptions = definedExternally,
 ): Unit

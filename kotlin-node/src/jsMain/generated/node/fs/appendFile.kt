@@ -121,7 +121,7 @@ external fun appendFile(
  */
 external fun appendFile(
     path: PathOrFileDescriptor,
-    data: Uint8Array,
+    data: Uint8Array<*>,
     options: WriteFileOptions,
     callback: NoParamCallback,
 ): Unit
@@ -140,4 +140,4 @@ external fun appendFile(file: PathOrFileDescriptor, data: String, callback: NoPa
  * If a file descriptor is provided, the underlying file will _not_ be closed automatically.
  * @param data The data to write. If something other than a Buffer or Uint8Array is provided, the value is coerced to a string.
  */
-external fun appendFile(file: PathOrFileDescriptor, data: Uint8Array, callback: NoParamCallback): Unit
+external fun appendFile(file: PathOrFileDescriptor, data: Uint8Array<*>, callback: NoParamCallback): Unit

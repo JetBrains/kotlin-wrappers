@@ -88,7 +88,7 @@ external fun appendFileAsync(
  */
 
 @JsName("appendFile")
-external fun appendFileAsync(path: PathLike, data: Uint8Array): Promise<js.core.Void>
+external fun appendFileAsync(path: PathLike, data: Uint8Array<*>): Promise<js.core.Void>
 
 
 /**
@@ -109,7 +109,7 @@ external fun appendFileAsync(path: PathLike, data: Uint8Array): Promise<js.core.
 @JsName("appendFile")
 external fun appendFileAsync(
     path: PathLike,
-    data: Uint8Array,
+    data: Uint8Array<*>,
     options: (AppendFileAsyncOptions)? = definedExternally,
 ): Promise<js.core.Void>
 
@@ -132,7 +132,7 @@ external fun appendFileAsync(
 @JsName("appendFile")
 external fun appendFileAsync(
     path: PathLike,
-    data: Uint8Array,
+    data: Uint8Array<*>,
     options: node.buffer.BufferEncoding? = definedExternally,
 ): Promise<js.core.Void>
 
@@ -218,7 +218,7 @@ external fun appendFileAsync(
  */
 
 @JsName("appendFile")
-external fun appendFileAsync(path: FileHandle, data: Uint8Array): Promise<js.core.Void>
+external fun appendFileAsync(path: FileHandle, data: Uint8Array<*>): Promise<js.core.Void>
 
 
 /**
@@ -239,7 +239,7 @@ external fun appendFileAsync(path: FileHandle, data: Uint8Array): Promise<js.cor
 @JsName("appendFile")
 external fun appendFileAsync(
     path: FileHandle,
-    data: Uint8Array,
+    data: Uint8Array<*>,
     options: (AppendFileAsyncOptions)? = definedExternally,
 ): Promise<js.core.Void>
 
@@ -262,6 +262,6 @@ external fun appendFileAsync(
 @JsName("appendFile")
 external fun appendFileAsync(
     path: FileHandle,
-    data: Uint8Array,
+    data: Uint8Array<*>,
     options: node.buffer.BufferEncoding? = definedExternally,
 ): Promise<js.core.Void>

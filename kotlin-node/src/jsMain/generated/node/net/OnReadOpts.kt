@@ -12,5 +12,5 @@ sealed external interface OnReadOpts {
      * Two arguments are passed to it: the number of bytes written to buffer and a reference to buffer.
      * Return false from this function to implicitly pause() the socket.
      */
-    fun callback(bytesWritten: Number, buf: Uint8Array): Boolean
+    fun callback(bytesWritten: Number, buf: Uint8Array<*>): Boolean
 }

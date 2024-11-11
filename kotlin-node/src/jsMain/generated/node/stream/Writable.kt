@@ -328,7 +328,7 @@ open external class Writable : Stream, node.WritableStream {
 
     override var writable: Boolean
     override fun write(
-        buffer: Uint8Array,
+        buffer: Uint8Array<*>,
         cb: (err: js.errors.JsError? /* use undefined for default */) -> Unit,
     ): Boolean
 
@@ -341,7 +341,7 @@ open external class Writable : Stream, node.WritableStream {
 
     override fun end(data: String, cb: () -> Unit): Unit /* this */
 
-    override fun end(data: Uint8Array, cb: () -> Unit): Unit /* this */
+    override fun end(data: Uint8Array<*>, cb: () -> Unit): Unit /* this */
     override fun end(str: String, encoding: node.buffer.BufferEncoding, cb: () -> Unit): Unit /* this */
 
     @web.events.JsEvent("close")

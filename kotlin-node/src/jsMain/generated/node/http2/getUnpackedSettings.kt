@@ -12,4 +12,4 @@ import js.typedarrays.Uint8Array
  * @since v8.4.0
  * @param buf The packed settings.
  */
-external fun getUnpackedSettings(buf: Uint8Array): Settings
+external fun getUnpackedSettings(buf: Uint8Array<*>): Settings

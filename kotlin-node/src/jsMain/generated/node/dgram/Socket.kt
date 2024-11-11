@@ -395,7 +395,7 @@ external class Socket : EventEmitter {
      * @param callback Called when the message has been sent.
      */
     fun send(
-        msg: Uint8Array,
+        msg: Uint8Array<*>,
         port: Number = definedExternally,
         address: String = definedExternally,
         callback: (error: js.errors.JsError?, bytes: Double) -> Unit = definedExternally,
@@ -508,7 +508,7 @@ external class Socket : EventEmitter {
     ): Unit
 
     fun send(
-        msg: Uint8Array,
+        msg: Uint8Array<*>,
         port: Number = definedExternally,
         callback: (error: js.errors.JsError?, bytes: Double) -> Unit = definedExternally,
     ): Unit
@@ -521,7 +521,7 @@ external class Socket : EventEmitter {
 
     fun send(msg: String, callback: (error: js.errors.JsError?, bytes: Double) -> Unit = definedExternally): Unit
 
-    fun send(msg: Uint8Array, callback: (error: js.errors.JsError?, bytes: Double) -> Unit = definedExternally): Unit
+    fun send(msg: Uint8Array<*>, callback: (error: js.errors.JsError?, bytes: Double) -> Unit = definedExternally): Unit
 
     fun send(
         msg: ReadonlyArray<Any?>,
@@ -538,7 +538,7 @@ external class Socket : EventEmitter {
     ): Unit
 
     fun send(
-        msg: Uint8Array,
+        msg: Uint8Array<*>,
         offset: Number,
         length: Number,
         port: Number = definedExternally,
@@ -555,7 +555,7 @@ external class Socket : EventEmitter {
     ): Unit
 
     fun send(
-        msg: Uint8Array,
+        msg: Uint8Array<*>,
         offset: Number,
         length: Number,
         port: Number = definedExternally,
@@ -570,7 +570,7 @@ external class Socket : EventEmitter {
     ): Unit
 
     fun send(
-        msg: Uint8Array,
+        msg: Uint8Array<*>,
         offset: Number,
         length: Number,
         callback: (error: js.errors.JsError?, bytes: Double) -> Unit = definedExternally,

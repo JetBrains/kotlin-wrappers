@@ -76,7 +76,7 @@ suspend fun appendFile(
  * @return Fulfills with `undefined` upon success.
  */
 
-suspend fun appendFile(path: PathLike, data: Uint8Array): js.core.Void =
+suspend fun appendFile(path: PathLike, data: Uint8Array<*>): js.core.Void =
     appendFileAsync(
         path, data
     ).await()
@@ -99,7 +99,7 @@ suspend fun appendFile(path: PathLike, data: Uint8Array): js.core.Void =
 
 suspend fun appendFile(
     path: PathLike,
-    data: Uint8Array,
+    data: Uint8Array<*>,
     options: (AppendFileAsyncOptions)? = undefined.unsafeCast<Nothing>(),
 ): js.core.Void =
     appendFileAsync(
@@ -124,7 +124,7 @@ suspend fun appendFile(
 
 suspend fun appendFile(
     path: PathLike,
-    data: Uint8Array,
+    data: Uint8Array<*>,
     options: node.buffer.BufferEncoding? = undefined.unsafeCast<Nothing>(),
 ): js.core.Void =
     appendFileAsync(
@@ -218,7 +218,7 @@ suspend fun appendFile(
  * @return Fulfills with `undefined` upon success.
  */
 
-suspend fun appendFile(path: FileHandle, data: Uint8Array): js.core.Void =
+suspend fun appendFile(path: FileHandle, data: Uint8Array<*>): js.core.Void =
     appendFileAsync(
         path, data
     ).await()
@@ -241,7 +241,7 @@ suspend fun appendFile(path: FileHandle, data: Uint8Array): js.core.Void =
 
 suspend fun appendFile(
     path: FileHandle,
-    data: Uint8Array,
+    data: Uint8Array<*>,
     options: (AppendFileAsyncOptions)? = undefined.unsafeCast<Nothing>(),
 ): js.core.Void =
     appendFileAsync(
@@ -266,7 +266,7 @@ suspend fun appendFile(
 
 suspend fun appendFile(
     path: FileHandle,
-    data: Uint8Array,
+    data: Uint8Array<*>,
     options: node.buffer.BufferEncoding? = undefined.unsafeCast<Nothing>(),
 ): js.core.Void =
     appendFileAsync(

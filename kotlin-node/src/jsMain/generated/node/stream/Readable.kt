@@ -657,7 +657,7 @@ open external class Readable : Stream, node.ReadableStream {
     override fun <T : WritableStream> pipe(destination: T, options: ReadableStreamPipeOptions): T
     override fun unshift(chunk: String, encoding: node.buffer.BufferEncoding): Unit
 
-    override fun unshift(chunk: Uint8Array, encoding: node.buffer.BufferEncoding): Unit
+    override fun unshift(chunk: Uint8Array<*>, encoding: node.buffer.BufferEncoding): Unit
 
     @web.events.JsEvent("close")
     open val closeEvent: node.events.EventInstance<js.array.JsTuple>

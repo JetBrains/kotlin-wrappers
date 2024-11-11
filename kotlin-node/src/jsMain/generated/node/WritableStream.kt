@@ -9,7 +9,7 @@ import node.events.EventEmitter
 external interface WritableStream : EventEmitter {
     var writable: Boolean
     fun write(
-        buffer: Uint8Array,
+        buffer: Uint8Array<*>,
         cb: (err: js.errors.JsError? /* use undefined for default */) -> Unit = definedExternally,
     ): Boolean
 
@@ -27,7 +27,7 @@ external interface WritableStream : EventEmitter {
     fun end(cb: () -> Unit = definedExternally): Unit /* this */
     fun end(data: String, cb: () -> Unit = definedExternally): Unit /* this */
 
-    fun end(data: Uint8Array, cb: () -> Unit = definedExternally): Unit /* this */
+    fun end(data: Uint8Array<*>, cb: () -> Unit = definedExternally): Unit /* this */
     fun end(
         str: String,
         encoding: node.buffer.BufferEncoding = definedExternally,

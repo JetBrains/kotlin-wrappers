@@ -33,4 +33,4 @@ import js.typedarrays.Uint8Array
  * @param fromEnc The current encoding.
  * @param toEnc To target encoding.
  */
-external fun transcode(source: Uint8Array, fromEnc: TranscodeEncoding, toEnc: TranscodeEncoding): Buffer
+external fun transcode(source: Uint8Array<*>, fromEnc: TranscodeEncoding, toEnc: TranscodeEncoding): Buffer

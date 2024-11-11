@@ -178,10 +178,10 @@ external class Http2ServerResponse : node.stream.Writable {
     override fun end(cb: () -> Unit): Unit /* this */
     override fun end(data: String, cb: () -> Unit): Unit /* this */
 
-    override fun end(data: Uint8Array, cb: () -> Unit): Unit /* this */
+    override fun end(data: Uint8Array<*>, cb: () -> Unit): Unit /* this */
     override fun end(str: String, encoding: node.buffer.BufferEncoding, cb: () -> Unit): Unit /* this */
 
-    fun end(str: Uint8Array, encoding: node.buffer.BufferEncoding, cb: () -> Unit = definedExternally): Unit /* this */
+    fun end(str: Uint8Array<*>, encoding: node.buffer.BufferEncoding, cb: () -> Unit = definedExternally): Unit /* this */
 
     /**
      * Reads out a header that has already been queued but not sent to the client.
@@ -427,7 +427,7 @@ external class Http2ServerResponse : node.stream.Writable {
      * buffer. Returns `false` if all or part of the data was queued in user memory.`'drain'` will be emitted when the buffer is free again.
      * @since v8.4.0
      */
-    fun write(chunk: Uint8Array, callback: (err: js.errors.JsError) -> Unit = definedExternally): Boolean
+    fun write(chunk: Uint8Array<*>, callback: (err: js.errors.JsError) -> Unit = definedExternally): Boolean
     fun write(
         chunk: String,
         encoding: node.buffer.BufferEncoding,
@@ -435,7 +435,7 @@ external class Http2ServerResponse : node.stream.Writable {
     ): Boolean
 
     fun write(
-        chunk: Uint8Array,
+        chunk: Uint8Array<*>,
         encoding: node.buffer.BufferEncoding,
         callback: (err: js.errors.JsError) -> Unit = definedExternally,
     ): Boolean

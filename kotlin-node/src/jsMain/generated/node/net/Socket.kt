@@ -46,7 +46,7 @@ open external class Socket : node.stream.Duplex {
      * @param [encoding='utf8'] Only used when data is `string`.
      */
     override fun write(
-        buffer: Uint8Array,
+        buffer: Uint8Array<*>,
         cb: (err: js.errors.JsError? /* use undefined for default */) -> Unit,
     ): Boolean
 
@@ -67,7 +67,7 @@ open external class Socket : node.stream.Duplex {
      */
     override fun write(buffer: String, cb: (err: js.errors.JsError? /* use undefined for default */) -> Unit): Boolean
     fun write(
-        str: Uint8Array,
+        str: Uint8Array<*>,
         encoding: node.buffer.BufferEncoding = definedExternally,
         cb: (err: js.errors.JsError? /* use undefined for default */) -> Unit = definedExternally,
     ): Boolean
@@ -348,11 +348,11 @@ open external class Socket : node.stream.Duplex {
      * @return The socket itself.
      */
     override fun end(cb: () -> Unit): Unit /* this */
-    override fun end(data: Uint8Array, cb: () -> Unit): Unit /* this */
+    override fun end(data: Uint8Array<*>, cb: () -> Unit): Unit /* this */
 
     override fun end(data: String, cb: () -> Unit): Unit /* this */
     fun end(
-        str: Uint8Array,
+        str: Uint8Array<*>,
         encoding: node.buffer.BufferEncoding = definedExternally,
         cb: () -> Unit = definedExternally,
     ): Unit /* this */
