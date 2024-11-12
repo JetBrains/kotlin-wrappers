@@ -11,7 +11,11 @@ import seskar.js.JsSpecialName
 
 // language=javascript
 @JsSpecialName("(Object.getPrototypeOf(Uint8Array))")
-sealed external class TypedArray<S : TypedArray<S, B, T>, B : ArrayBufferLike, T : Comparable<T> /* Number? */> :
+sealed external class TypedArray<
+        S : TypedArray<S, B, T>,
+        B : ArrayBufferLike,
+        T : Comparable<T>, /* Number? */
+        > :
     ArrayBufferView<B>,
     MutableArrayLike<T>,
     ListLike<T> {
