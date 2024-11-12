@@ -6,38 +6,24 @@ import node.test.SuiteFn
 import node.test.TestOptions
 
 
-suspend fun skip(
-    name: String = undefined.unsafeCast<Nothing>(),
-    options: TestOptions = undefined.unsafeCast<Nothing>(),
-    fn: SuiteFn = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    skipAsync(
-        name, options, fn
-    ).await()
+@seskar.js.JsAsync
+external suspend fun skip(
+    name: String = definedExternally,
+    options: TestOptions = definedExternally,
+    fn: SuiteFn = definedExternally,
+): js.core.Void
 
 
-suspend fun skip(
-    name: String = undefined.unsafeCast<Nothing>(),
-    fn: SuiteFn = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    skipAsync(
-        name, fn
-    ).await()
+@seskar.js.JsAsync
+external suspend fun skip(name: String = definedExternally, fn: SuiteFn = definedExternally): js.core.Void
 
 
-suspend fun skip(
-    options: TestOptions = undefined.unsafeCast<Nothing>(),
-    fn: SuiteFn = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    skipAsync(
-        options, fn
-    ).await()
+@seskar.js.JsAsync
+external suspend fun skip(options: TestOptions = definedExternally, fn: SuiteFn = definedExternally): js.core.Void
 
 
-suspend fun skip(fn: SuiteFn = undefined.unsafeCast<Nothing>()): js.core.Void =
-    skipAsync(
-        fn
-    ).await()
+@seskar.js.JsAsync
+external suspend fun skip(fn: SuiteFn = definedExternally): js.core.Void
 
 
 suspend fun skip(): js.core.Void =

@@ -3,7 +3,5 @@
 package node.fs
 
 
-suspend fun opendir(path: PathLike, options: OpenDirOptions = undefined.unsafeCast<Nothing>()): Dir =
-    opendirAsync(
-        path, options
-    ).await()
+@seskar.js.JsAsync
+external suspend fun opendir(path: PathLike, options: OpenDirOptions = definedExternally): Dir

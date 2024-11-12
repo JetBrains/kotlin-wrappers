@@ -3,7 +3,5 @@
 package node.vm
 
 
-suspend fun measureMemory(options: MeasureMemoryOptions = undefined.unsafeCast<Nothing>()): MemoryMeasurement =
-    measureMemoryAsync(
-        options
-    ).await()
+@seskar.js.JsAsync
+external suspend fun measureMemory(options: MeasureMemoryOptions = definedExternally): MemoryMeasurement

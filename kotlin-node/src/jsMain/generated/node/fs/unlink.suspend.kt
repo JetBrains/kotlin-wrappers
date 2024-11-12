@@ -3,7 +3,5 @@
 package node.fs
 
 
-suspend fun unlink(path: PathLike): js.core.Void =
-    unlinkAsync(
-        path
-    ).await()
+@seskar.js.JsAsync
+external suspend fun unlink(path: PathLike): js.core.Void

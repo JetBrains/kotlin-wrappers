@@ -6,19 +6,13 @@ import js.iterable.AsyncIterable
 import node.stream.Readable
 
 
-suspend fun buffer(stream: node.ReadableStream): node.buffer.Buffer =
-    bufferAsync(
-        stream
-    ).await()
+@seskar.js.JsAsync
+external suspend fun buffer(stream: node.ReadableStream): node.buffer.Buffer
 
 
-suspend fun buffer(stream: Readable): node.buffer.Buffer =
-    bufferAsync(
-        stream
-    ).await()
+@seskar.js.JsAsync
+external suspend fun buffer(stream: Readable): node.buffer.Buffer
 
 
-suspend fun buffer(stream: AsyncIterable<Any?>): node.buffer.Buffer =
-    bufferAsync(
-        stream
-    ).await()
+@seskar.js.JsAsync
+external suspend fun buffer(stream: AsyncIterable<Any?>): node.buffer.Buffer

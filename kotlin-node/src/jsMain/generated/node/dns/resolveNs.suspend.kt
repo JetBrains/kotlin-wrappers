@@ -3,7 +3,5 @@
 package node.dns
 
 
-suspend fun resolveNs(hostname: String): js.array.ReadonlyArray<String> =
-    resolveNsAsync(
-        hostname
-    ).await()
+@seskar.js.JsAsync
+external suspend fun resolveNs(hostname: String): js.array.ReadonlyArray<String>

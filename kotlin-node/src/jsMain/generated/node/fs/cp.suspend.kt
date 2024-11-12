@@ -5,10 +5,8 @@ package node.fs
 import web.url.URL
 
 
-suspend fun cp(source: String, destination: String, opts: CopyOptions = undefined.unsafeCast<Nothing>()): js.core.Void =
-    cpAsync(
-        source, destination, opts
-    ).await()
+@seskar.js.JsAsync
+external suspend fun cp(source: String, destination: String, opts: CopyOptions = definedExternally): js.core.Void
 
 
 /**
@@ -24,10 +22,8 @@ suspend fun cp(source: String, destination: String, opts: CopyOptions = undefine
  * @return Fulfills with `undefined` upon success.
  */
 
-suspend fun cp(source: String, destination: URL, opts: CopyOptions = undefined.unsafeCast<Nothing>()): js.core.Void =
-    cpAsync(
-        source, destination, opts
-    ).await()
+@seskar.js.JsAsync
+external suspend fun cp(source: String, destination: URL, opts: CopyOptions = definedExternally): js.core.Void
 
 
 /**
@@ -43,10 +39,8 @@ suspend fun cp(source: String, destination: URL, opts: CopyOptions = undefined.u
  * @return Fulfills with `undefined` upon success.
  */
 
-suspend fun cp(source: URL, destination: String, opts: CopyOptions = undefined.unsafeCast<Nothing>()): js.core.Void =
-    cpAsync(
-        source, destination, opts
-    ).await()
+@seskar.js.JsAsync
+external suspend fun cp(source: URL, destination: String, opts: CopyOptions = definedExternally): js.core.Void
 
 
 /**
@@ -62,7 +56,5 @@ suspend fun cp(source: URL, destination: String, opts: CopyOptions = undefined.u
  * @return Fulfills with `undefined` upon success.
  */
 
-suspend fun cp(source: URL, destination: URL, opts: CopyOptions = undefined.unsafeCast<Nothing>()): js.core.Void =
-    cpAsync(
-        source, destination, opts
-    ).await()
+@seskar.js.JsAsync
+external suspend fun cp(source: URL, destination: URL, opts: CopyOptions = definedExternally): js.core.Void

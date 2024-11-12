@@ -6,19 +6,13 @@ import js.iterable.AsyncIterable
 import node.stream.Readable
 
 
-suspend fun json(stream: node.ReadableStream): Any? =
-    jsonAsync(
-        stream
-    ).await()
+@seskar.js.JsAsync
+external suspend fun json(stream: node.ReadableStream): Any?
 
 
-suspend fun json(stream: Readable): Any? =
-    jsonAsync(
-        stream
-    ).await()
+@seskar.js.JsAsync
+external suspend fun json(stream: Readable): Any?
 
 
-suspend fun json(stream: AsyncIterable<Any?>): Any? =
-    jsonAsync(
-        stream
-    ).await()
+@seskar.js.JsAsync
+external suspend fun json(stream: AsyncIterable<Any?>): Any?

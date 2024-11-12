@@ -3,7 +3,5 @@
 package node.dns
 
 
-suspend fun resolveCaa(hostname: String): js.array.ReadonlyArray<CaaRecord> =
-    resolveCaaAsync(
-        hostname
-    ).await()
+@seskar.js.JsAsync
+external suspend fun resolveCaa(hostname: String): js.array.ReadonlyArray<CaaRecord>

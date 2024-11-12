@@ -3,7 +3,5 @@
 package node.dns
 
 
-suspend fun resolveSoa(hostname: String): SoaRecord =
-    resolveSoaAsync(
-        hostname
-    ).await()
+@seskar.js.JsAsync
+external suspend fun resolveSoa(hostname: String): SoaRecord

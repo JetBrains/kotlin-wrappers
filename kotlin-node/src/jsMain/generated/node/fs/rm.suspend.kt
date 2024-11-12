@@ -3,7 +3,5 @@
 package node.fs
 
 
-suspend fun rm(path: PathLike, options: RmOptions = undefined.unsafeCast<Nothing>()): js.core.Void =
-    rmAsync(
-        path, options
-    ).await()
+@seskar.js.JsAsync
+external suspend fun rm(path: PathLike, options: RmOptions = definedExternally): js.core.Void

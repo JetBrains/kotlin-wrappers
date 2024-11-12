@@ -3,7 +3,5 @@
 package node.fs
 
 
-suspend fun access(path: PathLike, mode: Number = undefined.unsafeCast<Nothing>()): js.core.Void =
-    accessAsync(
-        path, mode
-    ).await()
+@seskar.js.JsAsync
+external suspend fun access(path: PathLike, mode: Number = definedExternally): js.core.Void

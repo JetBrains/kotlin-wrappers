@@ -3,22 +3,16 @@
 package node.fs
 
 
-suspend fun lstat(path: PathLike, opts: LstatOpts = undefined.unsafeCast<Nothing>()): Stats =
-    lstatAsync(
-        path, opts
-    ).await()
+@seskar.js.JsAsync
+external suspend fun lstat(path: PathLike, opts: LstatOpts = definedExternally): Stats
 
 
-suspend fun lstat(path: PathLike, opts: LstatBigIntOpts): BigIntStats =
-    lstatAsync(
-        path, opts
-    ).await()
+@seskar.js.JsAsync
+external suspend fun lstat(path: PathLike, opts: LstatBigIntOpts): BigIntStats
 
 
-suspend fun lstat(path: PathLike, opts: StatOptions = undefined.unsafeCast<Nothing>()): Any /* Stats | BigIntStats */ =
-    lstatAsync(
-        path, opts
-    ).await()
+@seskar.js.JsAsync
+external suspend fun lstat(path: PathLike, opts: StatOptions = definedExternally): Any /* Stats | BigIntStats */
 
 
 suspend fun lstat(path: PathLike): Stats =

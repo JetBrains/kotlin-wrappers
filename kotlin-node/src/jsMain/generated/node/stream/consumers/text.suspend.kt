@@ -6,19 +6,13 @@ import js.iterable.AsyncIterable
 import node.stream.Readable
 
 
-suspend fun text(stream: node.ReadableStream): String =
-    textAsync(
-        stream
-    ).await()
+@seskar.js.JsAsync
+external suspend fun text(stream: node.ReadableStream): String
 
 
-suspend fun text(stream: Readable): String =
-    textAsync(
-        stream
-    ).await()
+@seskar.js.JsAsync
+external suspend fun text(stream: Readable): String
 
 
-suspend fun text(stream: AsyncIterable<Any?>): String =
-    textAsync(
-        stream
-    ).await()
+@seskar.js.JsAsync
+external suspend fun text(stream: AsyncIterable<Any?>): String

@@ -3,19 +3,13 @@
 package node.dns
 
 
-suspend fun resolve6(hostname: String): js.array.ReadonlyArray<String> =
-    resolve6Async(
-        hostname
-    ).await()
+@seskar.js.JsAsync
+external suspend fun resolve6(hostname: String): js.array.ReadonlyArray<String>
 
 
-suspend fun resolve6(hostname: String, options: ResolveWithTtlOptions): js.array.ReadonlyArray<RecordWithTtl> =
-    resolve6Async(
-        hostname, options
-    ).await()
+@seskar.js.JsAsync
+external suspend fun resolve6(hostname: String, options: ResolveWithTtlOptions): js.array.ReadonlyArray<RecordWithTtl>
 
 
-suspend fun resolve6(hostname: String, options: ResolveOptions): Any /* string[] | RecordWithTtl[] */ =
-    resolve6Async(
-        hostname, options
-    ).await()
+@seskar.js.JsAsync
+external suspend fun resolve6(hostname: String, options: ResolveOptions): Any /* string[] | RecordWithTtl[] */

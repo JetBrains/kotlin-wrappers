@@ -6,38 +6,24 @@ import node.test.SuiteFn
 import node.test.TestOptions
 
 
-suspend fun todo(
-    name: String = undefined.unsafeCast<Nothing>(),
-    options: TestOptions = undefined.unsafeCast<Nothing>(),
-    fn: SuiteFn = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    todoAsync(
-        name, options, fn
-    ).await()
+@seskar.js.JsAsync
+external suspend fun todo(
+    name: String = definedExternally,
+    options: TestOptions = definedExternally,
+    fn: SuiteFn = definedExternally,
+): js.core.Void
 
 
-suspend fun todo(
-    name: String = undefined.unsafeCast<Nothing>(),
-    fn: SuiteFn = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    todoAsync(
-        name, fn
-    ).await()
+@seskar.js.JsAsync
+external suspend fun todo(name: String = definedExternally, fn: SuiteFn = definedExternally): js.core.Void
 
 
-suspend fun todo(
-    options: TestOptions = undefined.unsafeCast<Nothing>(),
-    fn: SuiteFn = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    todoAsync(
-        options, fn
-    ).await()
+@seskar.js.JsAsync
+external suspend fun todo(options: TestOptions = definedExternally, fn: SuiteFn = definedExternally): js.core.Void
 
 
-suspend fun todo(fn: SuiteFn = undefined.unsafeCast<Nothing>()): js.core.Void =
-    todoAsync(
-        fn
-    ).await()
+@seskar.js.JsAsync
+external suspend fun todo(fn: SuiteFn = definedExternally): js.core.Void
 
 
 suspend fun todo(): js.core.Void =

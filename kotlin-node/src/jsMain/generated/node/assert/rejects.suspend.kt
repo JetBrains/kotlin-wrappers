@@ -5,10 +5,8 @@ package node.assert
 import js.promise.Promise
 
 
-suspend fun rejects(block: () -> Promise<Any?>): js.core.Void =
-    rejectsAsync(
-        block
-    ).await()
+@seskar.js.JsAsync
+external suspend fun rejects(block: () -> Promise<Any?>): js.core.Void
 
 
 /**
@@ -75,10 +73,8 @@ suspend fun rejects(block: () -> Promise<Any?>): js.core.Void =
  * @since v10.0.0
  */
 
-suspend fun rejects(block: () -> Promise<Any?>, message: String = undefined.unsafeCast<Nothing>()): js.core.Void =
-    rejectsAsync(
-        block, message
-    ).await()
+@seskar.js.JsAsync
+external suspend fun rejects(block: () -> Promise<Any?>, message: String = definedExternally): js.core.Void
 
 
 /**
@@ -145,13 +141,8 @@ suspend fun rejects(block: () -> Promise<Any?>, message: String = undefined.unsa
  * @since v10.0.0
  */
 
-suspend fun rejects(
-    block: () -> Promise<Any?>,
-    message: js.errors.JsError = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    rejectsAsync(
-        block, message
-    ).await()
+@seskar.js.JsAsync
+external suspend fun rejects(block: () -> Promise<Any?>, message: js.errors.JsError = definedExternally): js.core.Void
 
 
 /**
@@ -218,10 +209,8 @@ suspend fun rejects(
  * @since v10.0.0
  */
 
-suspend fun rejects(block: Promise<Any?>): js.core.Void =
-    rejectsAsync(
-        block
-    ).await()
+@seskar.js.JsAsync
+external suspend fun rejects(block: Promise<Any?>): js.core.Void
 
 
 /**
@@ -288,10 +277,8 @@ suspend fun rejects(block: Promise<Any?>): js.core.Void =
  * @since v10.0.0
  */
 
-suspend fun rejects(block: Promise<Any?>, message: String = undefined.unsafeCast<Nothing>()): js.core.Void =
-    rejectsAsync(
-        block, message
-    ).await()
+@seskar.js.JsAsync
+external suspend fun rejects(block: Promise<Any?>, message: String = definedExternally): js.core.Void
 
 
 /**
@@ -358,59 +345,45 @@ suspend fun rejects(block: Promise<Any?>, message: String = undefined.unsafeCast
  * @since v10.0.0
  */
 
-suspend fun rejects(block: Promise<Any?>, message: js.errors.JsError = undefined.unsafeCast<Nothing>()): js.core.Void =
-    rejectsAsync(
-        block, message
-    ).await()
+@seskar.js.JsAsync
+external suspend fun rejects(block: Promise<Any?>, message: js.errors.JsError = definedExternally): js.core.Void
 
 
-suspend fun rejects(block: () -> Promise<Any?>, error: AssertPredicate): js.core.Void =
-    rejectsAsync(
-        block, error
-    ).await()
+@seskar.js.JsAsync
+external suspend fun rejects(block: () -> Promise<Any?>, error: AssertPredicate): js.core.Void
 
 
-suspend fun rejects(
+@seskar.js.JsAsync
+external suspend fun rejects(
     block: () -> Promise<Any?>,
     error: AssertPredicate,
-    message: String = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    rejectsAsync(
-        block, error, message
-    ).await()
+    message: String = definedExternally,
+): js.core.Void
 
 
-suspend fun rejects(
+@seskar.js.JsAsync
+external suspend fun rejects(
     block: () -> Promise<Any?>,
     error: AssertPredicate,
-    message: js.errors.JsError = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    rejectsAsync(
-        block, error, message
-    ).await()
+    message: js.errors.JsError = definedExternally,
+): js.core.Void
 
 
-suspend fun rejects(block: Promise<Any?>, error: AssertPredicate): js.core.Void =
-    rejectsAsync(
-        block, error
-    ).await()
+@seskar.js.JsAsync
+external suspend fun rejects(block: Promise<Any?>, error: AssertPredicate): js.core.Void
 
 
-suspend fun rejects(
+@seskar.js.JsAsync
+external suspend fun rejects(
     block: Promise<Any?>,
     error: AssertPredicate,
-    message: String = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    rejectsAsync(
-        block, error, message
-    ).await()
+    message: String = definedExternally,
+): js.core.Void
 
 
-suspend fun rejects(
+@seskar.js.JsAsync
+external suspend fun rejects(
     block: Promise<Any?>,
     error: AssertPredicate,
-    message: js.errors.JsError = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    rejectsAsync(
-        block, error, message
-    ).await()
+    message: js.errors.JsError = definedExternally,
+): js.core.Void

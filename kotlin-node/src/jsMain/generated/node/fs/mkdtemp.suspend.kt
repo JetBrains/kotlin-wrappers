@@ -3,10 +3,8 @@
 package node.fs
 
 
-suspend fun mkdtemp(prefix: String): String =
-    mkdtempAsync(
-        prefix
-    ).await()
+@seskar.js.JsAsync
+external suspend fun mkdtemp(prefix: String): String
 
 
 /**
@@ -39,10 +37,8 @@ suspend fun mkdtemp(prefix: String): String =
  * @return Fulfills with a string containing the file system path of the newly created temporary directory.
  */
 
-suspend fun mkdtemp(prefix: String, options: ObjectEncodingOptions? = undefined.unsafeCast<Nothing>()): String =
-    mkdtempAsync(
-        prefix, options
-    ).await()
+@seskar.js.JsAsync
+external suspend fun mkdtemp(prefix: String, options: ObjectEncodingOptions? = definedExternally): String
 
 
 /**
@@ -75,16 +71,12 @@ suspend fun mkdtemp(prefix: String, options: ObjectEncodingOptions? = undefined.
  * @return Fulfills with a string containing the file system path of the newly created temporary directory.
  */
 
-suspend fun mkdtemp(prefix: String, options: node.buffer.BufferEncoding? = undefined.unsafeCast<Nothing>()): String =
-    mkdtempAsync(
-        prefix, options
-    ).await()
+@seskar.js.JsAsync
+external suspend fun mkdtemp(prefix: String, options: node.buffer.BufferEncoding? = definedExternally): String
 
 
-suspend fun mkdtemp(prefix: String, options: BufferEncodingOption): node.buffer.Buffer =
-    mkdtempAsync(
-        prefix, options
-    ).await()
+@seskar.js.JsAsync
+external suspend fun mkdtemp(prefix: String, options: BufferEncodingOption): node.buffer.Buffer
 
 
 /**

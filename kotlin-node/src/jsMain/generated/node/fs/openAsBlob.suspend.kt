@@ -5,7 +5,5 @@ package node.fs
 import web.blob.Blob
 
 
-suspend fun openAsBlob(path: PathLike, options: OpenAsBlobOptions = undefined.unsafeCast<Nothing>()): Blob =
-    openAsBlobAsync(
-        path, options
-    ).await()
+@seskar.js.JsAsync
+external suspend fun openAsBlob(path: PathLike, options: OpenAsBlobOptions = definedExternally): Blob

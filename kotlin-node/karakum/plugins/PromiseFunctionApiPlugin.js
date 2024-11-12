@@ -145,25 +145,14 @@ export default {
 
             const body = karakum.convertParameterDeclarations(node, context, next, {
                 strategy: "function",
-                defaultValue: "undefined.unsafeCast<Nothing>()",
                 template: (parameters, signature) => {
                     if (isConflictingOverload(node, signature)) {
                         return ""
                     }
 
-                    const parameterNames = signature
-                        .map((it, index) => (
-                            ts.isIdentifier(it.parameter.name)
-                                ? karakum.escapeIdentifier(next(it.parameter.name))
-                                : `param${index}`
-                        ))
-                        .join(", ")
-
                     return `
-suspend fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${name}(${parameters})${karakum.ifPresent(returnTypePayload, it => `: ${it}`)} =
-    ${name}Async(
-        ${parameterNames}
-    ).await()
+@seskar.js.JsAsync
+external suspend fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${name}(${parameters})${karakum.ifPresent(returnTypePayload, it => `: ${it}`)}
                     `
                 }
             })

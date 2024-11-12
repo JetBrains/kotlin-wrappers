@@ -3,7 +3,5 @@
 package node.fs
 
 
-suspend fun symlink(target: PathLike, path: PathLike, type: String? = undefined.unsafeCast<Nothing>()): js.core.Void =
-    symlinkAsync(
-        target, path, type
-    ).await()
+@seskar.js.JsAsync
+external suspend fun symlink(target: PathLike, path: PathLike, type: String? = definedExternally): js.core.Void

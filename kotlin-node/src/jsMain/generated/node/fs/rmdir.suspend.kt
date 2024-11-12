@@ -3,7 +3,5 @@
 package node.fs
 
 
-suspend fun rmdir(path: PathLike, options: RmDirOptions = undefined.unsafeCast<Nothing>()): js.core.Void =
-    rmdirAsync(
-        path, options
-    ).await()
+@seskar.js.JsAsync
+external suspend fun rmdir(path: PathLike, options: RmDirOptions = definedExternally): js.core.Void

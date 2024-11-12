@@ -3,31 +3,21 @@
 package node.dns
 
 
-suspend fun lookup(hostname: String, family: Number): LookupAddress =
-    lookupAsync(
-        hostname, family
-    ).await()
+@seskar.js.JsAsync
+external suspend fun lookup(hostname: String, family: Number): LookupAddress
 
 
-suspend fun lookup(hostname: String, options: LookupOneOptions): LookupAddress =
-    lookupAsync(
-        hostname, options
-    ).await()
+@seskar.js.JsAsync
+external suspend fun lookup(hostname: String, options: LookupOneOptions): LookupAddress
 
 
-suspend fun lookup(hostname: String, options: LookupAllOptions): js.array.ReadonlyArray<LookupAddress> =
-    lookupAsync(
-        hostname, options
-    ).await()
+@seskar.js.JsAsync
+external suspend fun lookup(hostname: String, options: LookupAllOptions): js.array.ReadonlyArray<LookupAddress>
 
 
-suspend fun lookup(hostname: String, options: LookupOptions): Any /* LookupAddress | LookupAddress[] */ =
-    lookupAsync(
-        hostname, options
-    ).await()
+@seskar.js.JsAsync
+external suspend fun lookup(hostname: String, options: LookupOptions): Any /* LookupAddress | LookupAddress[] */
 
 
-suspend fun lookup(hostname: String): LookupAddress =
-    lookupAsync(
-        hostname
-    ).await()
+@seskar.js.JsAsync
+external suspend fun lookup(hostname: String): LookupAddress

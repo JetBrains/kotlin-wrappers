@@ -3,28 +3,13 @@
 package node.stream
 
 
-suspend fun finished(
-    stream: node.ReadableStream,
-    options: FinishedOptions = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    finishedAsync(
-        stream, options
-    ).await()
+@seskar.js.JsAsync
+external suspend fun finished(stream: node.ReadableStream, options: FinishedOptions = definedExternally): js.core.Void
 
 
-suspend fun finished(
-    stream: node.WritableStream,
-    options: FinishedOptions = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    finishedAsync(
-        stream, options
-    ).await()
+@seskar.js.JsAsync
+external suspend fun finished(stream: node.WritableStream, options: FinishedOptions = definedExternally): js.core.Void
 
 
-suspend fun finished(
-    stream: node.ReadWriteStream,
-    options: FinishedOptions = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    finishedAsync(
-        stream, options
-    ).await()
+@seskar.js.JsAsync
+external suspend fun finished(stream: node.ReadWriteStream, options: FinishedOptions = definedExternally): js.core.Void

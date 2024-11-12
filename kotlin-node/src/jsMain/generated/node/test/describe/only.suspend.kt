@@ -6,38 +6,24 @@ import node.test.SuiteFn
 import node.test.TestOptions
 
 
-suspend fun only(
-    name: String = undefined.unsafeCast<Nothing>(),
-    options: TestOptions = undefined.unsafeCast<Nothing>(),
-    fn: SuiteFn = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    onlyAsync(
-        name, options, fn
-    ).await()
+@seskar.js.JsAsync
+external suspend fun only(
+    name: String = definedExternally,
+    options: TestOptions = definedExternally,
+    fn: SuiteFn = definedExternally,
+): js.core.Void
 
 
-suspend fun only(
-    name: String = undefined.unsafeCast<Nothing>(),
-    fn: SuiteFn = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    onlyAsync(
-        name, fn
-    ).await()
+@seskar.js.JsAsync
+external suspend fun only(name: String = definedExternally, fn: SuiteFn = definedExternally): js.core.Void
 
 
-suspend fun only(
-    options: TestOptions = undefined.unsafeCast<Nothing>(),
-    fn: SuiteFn = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    onlyAsync(
-        options, fn
-    ).await()
+@seskar.js.JsAsync
+external suspend fun only(options: TestOptions = definedExternally, fn: SuiteFn = definedExternally): js.core.Void
 
 
-suspend fun only(fn: SuiteFn = undefined.unsafeCast<Nothing>()): js.core.Void =
-    onlyAsync(
-        fn
-    ).await()
+@seskar.js.JsAsync
+external suspend fun only(fn: SuiteFn = definedExternally): js.core.Void
 
 
 suspend fun only(): js.core.Void =

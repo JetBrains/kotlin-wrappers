@@ -3,10 +3,8 @@
 package node.fs
 
 
-suspend fun readlink(path: PathLike): String =
-    readlinkAsync(
-        path
-    ).await()
+@seskar.js.JsAsync
+external suspend fun readlink(path: PathLike): String
 
 
 /**
@@ -21,10 +19,8 @@ suspend fun readlink(path: PathLike): String =
  * @return Fulfills with the `linkString` upon success.
  */
 
-suspend fun readlink(path: PathLike, options: ObjectEncodingOptions? = undefined.unsafeCast<Nothing>()): String =
-    readlinkAsync(
-        path, options
-    ).await()
+@seskar.js.JsAsync
+external suspend fun readlink(path: PathLike, options: ObjectEncodingOptions? = definedExternally): String
 
 
 /**
@@ -39,16 +35,12 @@ suspend fun readlink(path: PathLike, options: ObjectEncodingOptions? = undefined
  * @return Fulfills with the `linkString` upon success.
  */
 
-suspend fun readlink(path: PathLike, options: node.buffer.BufferEncoding? = undefined.unsafeCast<Nothing>()): String =
-    readlinkAsync(
-        path, options
-    ).await()
+@seskar.js.JsAsync
+external suspend fun readlink(path: PathLike, options: node.buffer.BufferEncoding? = definedExternally): String
 
 
-suspend fun readlink(path: PathLike, options: BufferEncodingOption): node.buffer.Buffer =
-    readlinkAsync(
-        path, options
-    ).await()
+@seskar.js.JsAsync
+external suspend fun readlink(path: PathLike, options: BufferEncodingOption): node.buffer.Buffer
 
 
 /**
@@ -64,7 +56,5 @@ suspend fun readlink(path: PathLike, options: BufferEncodingOption): node.buffer
  * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
  */
 
-suspend fun readlink(path: PathLike, options: String? = undefined.unsafeCast<Nothing>()): Any /* string | Buffer */ =
-    readlinkAsync(
-        path, options
-    ).await()
+@seskar.js.JsAsync
+external suspend fun readlink(path: PathLike, options: String? = definedExternally): Any /* string | Buffer */

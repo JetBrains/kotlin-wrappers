@@ -7,19 +7,13 @@ import js.iterable.AsyncIterable
 import node.stream.Readable
 
 
-suspend fun arrayBuffer(stream: node.ReadableStream): ArrayBuffer =
-    arrayBufferAsync(
-        stream
-    ).await()
+@seskar.js.JsAsync
+external suspend fun arrayBuffer(stream: node.ReadableStream): ArrayBuffer
 
 
-suspend fun arrayBuffer(stream: Readable): ArrayBuffer =
-    arrayBufferAsync(
-        stream
-    ).await()
+@seskar.js.JsAsync
+external suspend fun arrayBuffer(stream: Readable): ArrayBuffer
 
 
-suspend fun arrayBuffer(stream: AsyncIterable<Any?>): ArrayBuffer =
-    arrayBufferAsync(
-        stream
-    ).await()
+@seskar.js.JsAsync
+external suspend fun arrayBuffer(stream: AsyncIterable<Any?>): ArrayBuffer

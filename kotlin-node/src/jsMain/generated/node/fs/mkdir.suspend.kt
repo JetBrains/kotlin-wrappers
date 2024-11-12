@@ -3,16 +3,12 @@
 package node.fs
 
 
-suspend fun mkdir(path: PathLike, options: MkdirRecursiveAsyncOptions): String? =
-    mkdirAsync(
-        path, options
-    ).await()
+@seskar.js.JsAsync
+external suspend fun mkdir(path: PathLike, options: MkdirRecursiveAsyncOptions): String?
 
 
-suspend fun mkdir(path: PathLike): js.core.Void =
-    mkdirAsync(
-        path
-    ).await()
+@seskar.js.JsAsync
+external suspend fun mkdir(path: PathLike): js.core.Void
 
 
 /**
@@ -22,10 +18,8 @@ suspend fun mkdir(path: PathLike): js.core.Void =
  * should be created. If a string is passed, it is parsed as an octal integer. If not specified, defaults to `0o777`.
  */
 
-suspend fun mkdir(path: PathLike, options: Mode? = undefined.unsafeCast<Nothing>()): js.core.Void =
-    mkdirAsync(
-        path, options
-    ).await()
+@seskar.js.JsAsync
+external suspend fun mkdir(path: PathLike, options: Mode? = definedExternally): js.core.Void
 
 
 /**
@@ -35,10 +29,8 @@ suspend fun mkdir(path: PathLike, options: Mode? = undefined.unsafeCast<Nothing>
  * should be created. If a string is passed, it is parsed as an octal integer. If not specified, defaults to `0o777`.
  */
 
-suspend fun mkdir(path: PathLike, options: (MkdirAsyncOptions)? = undefined.unsafeCast<Nothing>()): js.core.Void =
-    mkdirAsync(
-        path, options
-    ).await()
+@seskar.js.JsAsync
+external suspend fun mkdir(path: PathLike, options: (MkdirAsyncOptions)? = definedExternally): js.core.Void
 
 
 /**
@@ -56,7 +48,5 @@ suspend fun mkdir(path: PathLike, options: (MkdirAsyncOptions)? = undefined.unsa
  * should be created. If a string is passed, it is parsed as an octal integer. If not specified, defaults to `0o777`.
  */
 
-suspend fun mkdir(path: PathLike, options: MakeDirectoryOptions? = undefined.unsafeCast<Nothing>()): String? =
-    mkdirAsync(
-        path, options
-    ).await()
+@seskar.js.JsAsync
+external suspend fun mkdir(path: PathLike, options: MakeDirectoryOptions? = definedExternally): String?

@@ -3,13 +3,11 @@
 package node.fs
 
 
-suspend fun readFile(
+@seskar.js.JsAsync
+external suspend fun readFile(
     path: PathLike,
-    options: (ReadFileBufferAsyncOptions)? = undefined.unsafeCast<Nothing>(),
-): node.buffer.Buffer =
-    readFileAsync(
-        path, options
-    ).await()
+    options: (ReadFileBufferAsyncOptions)? = definedExternally,
+): node.buffer.Buffer
 
 
 /**
@@ -69,19 +67,15 @@ suspend fun readFile(
  * @return Fulfills with the contents of the file.
  */
 
-suspend fun readFile(
+@seskar.js.JsAsync
+external suspend fun readFile(
     path: FileHandle,
-    options: (ReadFileBufferAsyncOptions)? = undefined.unsafeCast<Nothing>(),
-): node.buffer.Buffer =
-    readFileAsync(
-        path, options
-    ).await()
+    options: (ReadFileBufferAsyncOptions)? = definedExternally,
+): node.buffer.Buffer
 
 
-suspend fun readFile(path: PathLike, options: ReadFileStringAsyncOptions): String =
-    readFileAsync(
-        path, options
-    ).await()
+@seskar.js.JsAsync
+external suspend fun readFile(path: PathLike, options: ReadFileStringAsyncOptions): String
 
 
 /**
@@ -92,10 +86,8 @@ suspend fun readFile(path: PathLike, options: ReadFileStringAsyncOptions): Strin
  * If a flag is not provided, it defaults to `'r'`.
  */
 
-suspend fun readFile(path: PathLike, options: node.buffer.BufferEncoding): String =
-    readFileAsync(
-        path, options
-    ).await()
+@seskar.js.JsAsync
+external suspend fun readFile(path: PathLike, options: node.buffer.BufferEncoding): String
 
 
 /**
@@ -106,10 +98,8 @@ suspend fun readFile(path: PathLike, options: node.buffer.BufferEncoding): Strin
  * If a flag is not provided, it defaults to `'r'`.
  */
 
-suspend fun readFile(path: FileHandle, options: ReadFileStringAsyncOptions): String =
-    readFileAsync(
-        path, options
-    ).await()
+@seskar.js.JsAsync
+external suspend fun readFile(path: FileHandle, options: ReadFileStringAsyncOptions): String
 
 
 /**
@@ -120,16 +110,12 @@ suspend fun readFile(path: FileHandle, options: ReadFileStringAsyncOptions): Str
  * If a flag is not provided, it defaults to `'r'`.
  */
 
-suspend fun readFile(path: FileHandle, options: node.buffer.BufferEncoding): String =
-    readFileAsync(
-        path, options
-    ).await()
+@seskar.js.JsAsync
+external suspend fun readFile(path: FileHandle, options: node.buffer.BufferEncoding): String
 
 
-suspend fun readFile(path: PathLike): Any /* string | Buffer */ =
-    readFileAsync(
-        path
-    ).await()
+@seskar.js.JsAsync
+external suspend fun readFile(path: PathLike): Any /* string | Buffer */
 
 
 /**
@@ -140,13 +126,11 @@ suspend fun readFile(path: PathLike): Any /* string | Buffer */ =
  * If a flag is not provided, it defaults to `'r'`.
  */
 
-suspend fun readFile(
+@seskar.js.JsAsync
+external suspend fun readFile(
     path: PathLike,
-    options: (ReadFileAsyncOptions)? = undefined.unsafeCast<Nothing>(),
-): Any /* string | Buffer */ =
-    readFileAsync(
-        path, options
-    ).await()
+    options: (ReadFileAsyncOptions)? = definedExternally,
+): Any /* string | Buffer */
 
 
 /**
@@ -157,13 +141,11 @@ suspend fun readFile(
  * If a flag is not provided, it defaults to `'r'`.
  */
 
-suspend fun readFile(
+@seskar.js.JsAsync
+external suspend fun readFile(
     path: PathLike,
-    options: node.buffer.BufferEncoding? = undefined.unsafeCast<Nothing>(),
-): Any /* string | Buffer */ =
-    readFileAsync(
-        path, options
-    ).await()
+    options: node.buffer.BufferEncoding? = definedExternally,
+): Any /* string | Buffer */
 
 
 /**
@@ -174,10 +156,8 @@ suspend fun readFile(
  * If a flag is not provided, it defaults to `'r'`.
  */
 
-suspend fun readFile(path: FileHandle): Any /* string | Buffer */ =
-    readFileAsync(
-        path
-    ).await()
+@seskar.js.JsAsync
+external suspend fun readFile(path: FileHandle): Any /* string | Buffer */
 
 
 /**
@@ -188,13 +168,11 @@ suspend fun readFile(path: FileHandle): Any /* string | Buffer */ =
  * If a flag is not provided, it defaults to `'r'`.
  */
 
-suspend fun readFile(
+@seskar.js.JsAsync
+external suspend fun readFile(
     path: FileHandle,
-    options: (ReadFileAsyncOptions)? = undefined.unsafeCast<Nothing>(),
-): Any /* string | Buffer */ =
-    readFileAsync(
-        path, options
-    ).await()
+    options: (ReadFileAsyncOptions)? = definedExternally,
+): Any /* string | Buffer */
 
 
 /**
@@ -205,10 +183,8 @@ suspend fun readFile(
  * If a flag is not provided, it defaults to `'r'`.
  */
 
-suspend fun readFile(
+@seskar.js.JsAsync
+external suspend fun readFile(
     path: FileHandle,
-    options: node.buffer.BufferEncoding? = undefined.unsafeCast<Nothing>(),
-): Any /* string | Buffer */ =
-    readFileAsync(
-        path, options
-    ).await()
+    options: node.buffer.BufferEncoding? = definedExternally,
+): Any /* string | Buffer */

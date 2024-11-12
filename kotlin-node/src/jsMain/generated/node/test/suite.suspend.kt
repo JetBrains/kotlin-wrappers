@@ -3,35 +3,21 @@
 package node.test
 
 
-suspend fun suite(
-    name: String = undefined.unsafeCast<Nothing>(),
-    options: TestOptions = undefined.unsafeCast<Nothing>(),
-    fn: SuiteFn = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    suiteAsync(
-        name, options, fn
-    ).await()
+@seskar.js.JsAsync
+external suspend fun suite(
+    name: String = definedExternally,
+    options: TestOptions = definedExternally,
+    fn: SuiteFn = definedExternally,
+): js.core.Void
 
 
-suspend fun suite(
-    name: String = undefined.unsafeCast<Nothing>(),
-    fn: SuiteFn = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    suiteAsync(
-        name, fn
-    ).await()
+@seskar.js.JsAsync
+external suspend fun suite(name: String = definedExternally, fn: SuiteFn = definedExternally): js.core.Void
 
 
-suspend fun suite(
-    options: TestOptions = undefined.unsafeCast<Nothing>(),
-    fn: SuiteFn = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    suiteAsync(
-        options, fn
-    ).await()
+@seskar.js.JsAsync
+external suspend fun suite(options: TestOptions = definedExternally, fn: SuiteFn = definedExternally): js.core.Void
 
 
-suspend fun suite(fn: SuiteFn = undefined.unsafeCast<Nothing>()): js.core.Void =
-    suiteAsync(
-        fn
-    ).await()
+@seskar.js.JsAsync
+external suspend fun suite(fn: SuiteFn = definedExternally): js.core.Void

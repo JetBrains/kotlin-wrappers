@@ -3,35 +3,21 @@
 package node.test
 
 
-suspend fun describe(
-    name: String = undefined.unsafeCast<Nothing>(),
-    options: TestOptions = undefined.unsafeCast<Nothing>(),
-    fn: SuiteFn = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    describeAsync(
-        name, options, fn
-    ).await()
+@seskar.js.JsAsync
+external suspend fun describe(
+    name: String = definedExternally,
+    options: TestOptions = definedExternally,
+    fn: SuiteFn = definedExternally,
+): js.core.Void
 
 
-suspend fun describe(
-    name: String = undefined.unsafeCast<Nothing>(),
-    fn: SuiteFn = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    describeAsync(
-        name, fn
-    ).await()
+@seskar.js.JsAsync
+external suspend fun describe(name: String = definedExternally, fn: SuiteFn = definedExternally): js.core.Void
 
 
-suspend fun describe(
-    options: TestOptions = undefined.unsafeCast<Nothing>(),
-    fn: SuiteFn = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    describeAsync(
-        options, fn
-    ).await()
+@seskar.js.JsAsync
+external suspend fun describe(options: TestOptions = definedExternally, fn: SuiteFn = definedExternally): js.core.Void
 
 
-suspend fun describe(fn: SuiteFn = undefined.unsafeCast<Nothing>()): js.core.Void =
-    describeAsync(
-        fn
-    ).await()
+@seskar.js.JsAsync
+external suspend fun describe(fn: SuiteFn = definedExternally): js.core.Void

@@ -3,7 +3,5 @@
 package node.fs
 
 
-suspend fun chmod(path: PathLike, mode: Mode): js.core.Void =
-    chmodAsync(
-        path, mode
-    ).await()
+@seskar.js.JsAsync
+external suspend fun chmod(path: PathLike, mode: Mode): js.core.Void

@@ -3,7 +3,5 @@
 package node.fs
 
 
-suspend fun chown(path: PathLike, uid: Number, gid: Number): js.core.Void =
-    chownAsync(
-        path, uid, gid
-    ).await()
+@seskar.js.JsAsync
+external suspend fun chown(path: PathLike, uid: Number, gid: Number): js.core.Void

@@ -3,7 +3,5 @@
 package node.fs
 
 
-suspend fun rename(oldPath: PathLike, newPath: PathLike): js.core.Void =
-    renameAsync(
-        oldPath, newPath
-    ).await()
+@seskar.js.JsAsync
+external suspend fun rename(oldPath: PathLike, newPath: PathLike): js.core.Void

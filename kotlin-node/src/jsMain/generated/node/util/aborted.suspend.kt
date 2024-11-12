@@ -5,7 +5,5 @@ package node.util
 import web.abort.AbortSignal
 
 
-suspend fun aborted(signal: AbortSignal, resource: Any?): js.core.Void =
-    abortedAsync(
-        signal, resource
-    ).await()
+@seskar.js.JsAsync
+external suspend fun aborted(signal: AbortSignal, resource: Any?): js.core.Void

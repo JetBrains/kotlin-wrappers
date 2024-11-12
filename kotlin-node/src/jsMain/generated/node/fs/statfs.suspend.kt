@@ -3,25 +3,16 @@
 package node.fs
 
 
-suspend fun statfs(path: PathLike, opts: StatfsOpts = undefined.unsafeCast<Nothing>()): StatsFs =
-    statfsAsync(
-        path, opts
-    ).await()
+@seskar.js.JsAsync
+external suspend fun statfs(path: PathLike, opts: StatfsOpts = definedExternally): StatsFs
 
 
-suspend fun statfs(path: PathLike, opts: StatfsBigIntOpts): BigIntStatsFs =
-    statfsAsync(
-        path, opts
-    ).await()
+@seskar.js.JsAsync
+external suspend fun statfs(path: PathLike, opts: StatfsBigIntOpts): BigIntStatsFs
 
 
-suspend fun statfs(
-    path: PathLike,
-    opts: StatFsOptions = undefined.unsafeCast<Nothing>(),
-): Any /* StatsFs | BigIntStatsFs */ =
-    statfsAsync(
-        path, opts
-    ).await()
+@seskar.js.JsAsync
+external suspend fun statfs(path: PathLike, opts: StatFsOptions = definedExternally): Any /* StatsFs | BigIntStatsFs */
 
 
 suspend fun statfs(path: PathLike): StatsFs =

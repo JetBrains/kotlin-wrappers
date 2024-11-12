@@ -3,10 +3,8 @@
 package node.fs
 
 
-suspend fun realpath(path: PathLike): String =
-    realpathAsync(
-        path
-    ).await()
+@seskar.js.JsAsync
+external suspend fun realpath(path: PathLike): String
 
 
 /**
@@ -26,10 +24,8 @@ suspend fun realpath(path: PathLike): String =
  * @return Fulfills with the resolved path upon success.
  */
 
-suspend fun realpath(path: PathLike, options: ObjectEncodingOptions? = undefined.unsafeCast<Nothing>()): String =
-    realpathAsync(
-        path, options
-    ).await()
+@seskar.js.JsAsync
+external suspend fun realpath(path: PathLike, options: ObjectEncodingOptions? = definedExternally): String
 
 
 /**
@@ -49,16 +45,12 @@ suspend fun realpath(path: PathLike, options: ObjectEncodingOptions? = undefined
  * @return Fulfills with the resolved path upon success.
  */
 
-suspend fun realpath(path: PathLike, options: node.buffer.BufferEncoding? = undefined.unsafeCast<Nothing>()): String =
-    realpathAsync(
-        path, options
-    ).await()
+@seskar.js.JsAsync
+external suspend fun realpath(path: PathLike, options: node.buffer.BufferEncoding? = definedExternally): String
 
 
-suspend fun realpath(path: PathLike, options: BufferEncodingOption): node.buffer.Buffer =
-    realpathAsync(
-        path, options
-    ).await()
+@seskar.js.JsAsync
+external suspend fun realpath(path: PathLike, options: BufferEncodingOption): node.buffer.Buffer
 
 
 /**

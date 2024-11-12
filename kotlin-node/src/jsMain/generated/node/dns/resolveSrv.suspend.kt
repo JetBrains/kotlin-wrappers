@@ -3,7 +3,5 @@
 package node.dns
 
 
-suspend fun resolveSrv(hostname: String): js.array.ReadonlyArray<SrvRecord> =
-    resolveSrvAsync(
-        hostname
-    ).await()
+@seskar.js.JsAsync
+external suspend fun resolveSrv(hostname: String): js.array.ReadonlyArray<SrvRecord>

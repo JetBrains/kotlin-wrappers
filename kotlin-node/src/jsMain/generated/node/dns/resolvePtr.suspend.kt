@@ -3,7 +3,5 @@
 package node.dns
 
 
-suspend fun resolvePtr(hostname: String): js.array.ReadonlyArray<String> =
-    resolvePtrAsync(
-        hostname
-    ).await()
+@seskar.js.JsAsync
+external suspend fun resolvePtr(hostname: String): js.array.ReadonlyArray<String>

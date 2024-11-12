@@ -3,7 +3,5 @@
 package node.fs
 
 
-suspend fun copyFile(src: PathLike, dest: PathLike, mode: Number = undefined.unsafeCast<Nothing>()): js.core.Void =
-    copyFileAsync(
-        src, dest, mode
-    ).await()
+@seskar.js.JsAsync
+external suspend fun copyFile(src: PathLike, dest: PathLike, mode: Number = definedExternally): js.core.Void

@@ -3,7 +3,5 @@
 package node.fs
 
 
-suspend fun lutimes(path: PathLike, atime: TimeLike, mtime: TimeLike): js.core.Void =
-    lutimesAsync(
-        path, atime, mtime
-    ).await()
+@seskar.js.JsAsync
+external suspend fun lutimes(path: PathLike, atime: TimeLike, mtime: TimeLike): js.core.Void

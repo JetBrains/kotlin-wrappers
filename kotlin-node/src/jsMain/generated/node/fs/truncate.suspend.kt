@@ -3,7 +3,5 @@
 package node.fs
 
 
-suspend fun truncate(path: PathLike, len: Number = undefined.unsafeCast<Nothing>()): js.core.Void =
-    truncateAsync(
-        path, len
-    ).await()
+@seskar.js.JsAsync
+external suspend fun truncate(path: PathLike, len: Number = definedExternally): js.core.Void

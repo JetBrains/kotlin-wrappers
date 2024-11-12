@@ -3,10 +3,8 @@
 package node.fs
 
 
-suspend fun open(path: PathLike): FileHandle =
-    openAsync(
-        path
-    ).await()
+@seskar.js.JsAsync
+external suspend fun open(path: PathLike): FileHandle
 
 
 /**
@@ -23,14 +21,8 @@ suspend fun open(path: PathLike): FileHandle =
  * @return Fulfills with a {FileHandle} object.
  */
 
-suspend fun open(
-    path: PathLike,
-    flags: String = undefined.unsafeCast<Nothing>(),
-    mode: Mode = undefined.unsafeCast<Nothing>(),
-): FileHandle =
-    openAsync(
-        path, flags, mode
-    ).await()
+@seskar.js.JsAsync
+external suspend fun open(path: PathLike, flags: String = definedExternally, mode: Mode = definedExternally): FileHandle
 
 
 /**
@@ -47,11 +39,5 @@ suspend fun open(
  * @return Fulfills with a {FileHandle} object.
  */
 
-suspend fun open(
-    path: PathLike,
-    flags: Double = undefined.unsafeCast<Nothing>(),
-    mode: Mode = undefined.unsafeCast<Nothing>(),
-): FileHandle =
-    openAsync(
-        path, flags, mode
-    ).await()
+@seskar.js.JsAsync
+external suspend fun open(path: PathLike, flags: Double = definedExternally, mode: Mode = definedExternally): FileHandle

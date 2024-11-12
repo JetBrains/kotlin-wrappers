@@ -3,7 +3,5 @@
 package node.fs
 
 
-suspend fun utimes(path: PathLike, atime: TimeLike, mtime: TimeLike): js.core.Void =
-    utimesAsync(
-        path, atime, mtime
-    ).await()
+@seskar.js.JsAsync
+external suspend fun utimes(path: PathLike, atime: TimeLike, mtime: TimeLike): js.core.Void

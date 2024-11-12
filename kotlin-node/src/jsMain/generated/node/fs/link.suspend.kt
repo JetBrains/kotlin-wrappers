@@ -3,7 +3,5 @@
 package node.fs
 
 
-suspend fun link(existingPath: PathLike, newPath: PathLike): js.core.Void =
-    linkAsync(
-        existingPath, newPath
-    ).await()
+@seskar.js.JsAsync
+external suspend fun link(existingPath: PathLike, newPath: PathLike): js.core.Void

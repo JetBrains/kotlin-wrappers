@@ -7,19 +7,13 @@ import node.stream.Readable
 import web.blob.Blob as NodeBlob
 
 
-suspend fun blob(stream: node.ReadableStream): NodeBlob =
-    blobAsync(
-        stream
-    ).await()
+@seskar.js.JsAsync
+external suspend fun blob(stream: node.ReadableStream): NodeBlob
 
 
-suspend fun blob(stream: Readable): NodeBlob =
-    blobAsync(
-        stream
-    ).await()
+@seskar.js.JsAsync
+external suspend fun blob(stream: Readable): NodeBlob
 
 
-suspend fun blob(stream: AsyncIterable<Any?>): NodeBlob =
-    blobAsync(
-        stream
-    ).await()
+@seskar.js.JsAsync
+external suspend fun blob(stream: AsyncIterable<Any?>): NodeBlob

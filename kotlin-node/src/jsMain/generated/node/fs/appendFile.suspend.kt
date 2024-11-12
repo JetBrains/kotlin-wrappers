@@ -5,10 +5,8 @@ package node.fs
 import js.typedarrays.Uint8Array
 
 
-suspend fun appendFile(path: PathLike, data: String): js.core.Void =
-    appendFileAsync(
-        path, data
-    ).await()
+@seskar.js.JsAsync
+external suspend fun appendFile(path: PathLike, data: String): js.core.Void
 
 
 /**
@@ -26,14 +24,12 @@ suspend fun appendFile(path: PathLike, data: String): js.core.Void =
  * @return Fulfills with `undefined` upon success.
  */
 
-suspend fun appendFile(
+@seskar.js.JsAsync
+external suspend fun appendFile(
     path: PathLike,
     data: String,
-    options: (AppendFileAsyncOptions)? = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    appendFileAsync(
-        path, data, options
-    ).await()
+    options: (AppendFileAsyncOptions)? = definedExternally,
+): js.core.Void
 
 
 /**
@@ -51,14 +47,12 @@ suspend fun appendFile(
  * @return Fulfills with `undefined` upon success.
  */
 
-suspend fun appendFile(
+@seskar.js.JsAsync
+external suspend fun appendFile(
     path: PathLike,
     data: String,
-    options: node.buffer.BufferEncoding? = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    appendFileAsync(
-        path, data, options
-    ).await()
+    options: node.buffer.BufferEncoding? = definedExternally,
+): js.core.Void
 
 
 /**
@@ -76,10 +70,8 @@ suspend fun appendFile(
  * @return Fulfills with `undefined` upon success.
  */
 
-suspend fun appendFile(path: PathLike, data: Uint8Array<*>): js.core.Void =
-    appendFileAsync(
-        path, data
-    ).await()
+@seskar.js.JsAsync
+external suspend fun appendFile(path: PathLike, data: Uint8Array<*>): js.core.Void
 
 
 /**
@@ -97,14 +89,12 @@ suspend fun appendFile(path: PathLike, data: Uint8Array<*>): js.core.Void =
  * @return Fulfills with `undefined` upon success.
  */
 
-suspend fun appendFile(
+@seskar.js.JsAsync
+external suspend fun appendFile(
     path: PathLike,
     data: Uint8Array<*>,
-    options: (AppendFileAsyncOptions)? = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    appendFileAsync(
-        path, data, options
-    ).await()
+    options: (AppendFileAsyncOptions)? = definedExternally,
+): js.core.Void
 
 
 /**
@@ -122,14 +112,12 @@ suspend fun appendFile(
  * @return Fulfills with `undefined` upon success.
  */
 
-suspend fun appendFile(
+@seskar.js.JsAsync
+external suspend fun appendFile(
     path: PathLike,
     data: Uint8Array<*>,
-    options: node.buffer.BufferEncoding? = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    appendFileAsync(
-        path, data, options
-    ).await()
+    options: node.buffer.BufferEncoding? = definedExternally,
+): js.core.Void
 
 
 /**
@@ -147,10 +135,8 @@ suspend fun appendFile(
  * @return Fulfills with `undefined` upon success.
  */
 
-suspend fun appendFile(path: FileHandle, data: String): js.core.Void =
-    appendFileAsync(
-        path, data
-    ).await()
+@seskar.js.JsAsync
+external suspend fun appendFile(path: FileHandle, data: String): js.core.Void
 
 
 /**
@@ -168,14 +154,12 @@ suspend fun appendFile(path: FileHandle, data: String): js.core.Void =
  * @return Fulfills with `undefined` upon success.
  */
 
-suspend fun appendFile(
+@seskar.js.JsAsync
+external suspend fun appendFile(
     path: FileHandle,
     data: String,
-    options: (AppendFileAsyncOptions)? = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    appendFileAsync(
-        path, data, options
-    ).await()
+    options: (AppendFileAsyncOptions)? = definedExternally,
+): js.core.Void
 
 
 /**
@@ -193,14 +177,12 @@ suspend fun appendFile(
  * @return Fulfills with `undefined` upon success.
  */
 
-suspend fun appendFile(
+@seskar.js.JsAsync
+external suspend fun appendFile(
     path: FileHandle,
     data: String,
-    options: node.buffer.BufferEncoding? = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    appendFileAsync(
-        path, data, options
-    ).await()
+    options: node.buffer.BufferEncoding? = definedExternally,
+): js.core.Void
 
 
 /**
@@ -218,10 +200,8 @@ suspend fun appendFile(
  * @return Fulfills with `undefined` upon success.
  */
 
-suspend fun appendFile(path: FileHandle, data: Uint8Array<*>): js.core.Void =
-    appendFileAsync(
-        path, data
-    ).await()
+@seskar.js.JsAsync
+external suspend fun appendFile(path: FileHandle, data: Uint8Array<*>): js.core.Void
 
 
 /**
@@ -239,14 +219,12 @@ suspend fun appendFile(path: FileHandle, data: Uint8Array<*>): js.core.Void =
  * @return Fulfills with `undefined` upon success.
  */
 
-suspend fun appendFile(
+@seskar.js.JsAsync
+external suspend fun appendFile(
     path: FileHandle,
     data: Uint8Array<*>,
-    options: (AppendFileAsyncOptions)? = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    appendFileAsync(
-        path, data, options
-    ).await()
+    options: (AppendFileAsyncOptions)? = definedExternally,
+): js.core.Void
 
 
 /**
@@ -264,11 +242,9 @@ suspend fun appendFile(
  * @return Fulfills with `undefined` upon success.
  */
 
-suspend fun appendFile(
+@seskar.js.JsAsync
+external suspend fun appendFile(
     path: FileHandle,
     data: Uint8Array<*>,
-    options: node.buffer.BufferEncoding? = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    appendFileAsync(
-        path, data, options
-    ).await()
+    options: node.buffer.BufferEncoding? = definedExternally,
+): js.core.Void

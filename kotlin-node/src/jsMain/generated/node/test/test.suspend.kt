@@ -3,38 +3,24 @@
 package node.test
 
 
-suspend fun test(
-    name: String = undefined.unsafeCast<Nothing>(),
-    fn: TestFn = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    testAsync(
-        name, fn
-    ).await()
+@seskar.js.JsAsync
+external suspend fun test(name: String = definedExternally, fn: TestFn = definedExternally): js.core.Void
 
 
-suspend fun test(
-    name: String = undefined.unsafeCast<Nothing>(),
-    options: TestOptions = undefined.unsafeCast<Nothing>(),
-    fn: TestFn = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    testAsync(
-        name, options, fn
-    ).await()
+@seskar.js.JsAsync
+external suspend fun test(
+    name: String = definedExternally,
+    options: TestOptions = definedExternally,
+    fn: TestFn = definedExternally,
+): js.core.Void
 
 
-suspend fun test(
-    options: TestOptions = undefined.unsafeCast<Nothing>(),
-    fn: TestFn = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    testAsync(
-        options, fn
-    ).await()
+@seskar.js.JsAsync
+external suspend fun test(options: TestOptions = definedExternally, fn: TestFn = definedExternally): js.core.Void
 
 
-suspend fun test(fn: TestFn = undefined.unsafeCast<Nothing>()): js.core.Void =
-    testAsync(
-        fn
-    ).await()
+@seskar.js.JsAsync
+external suspend fun test(fn: TestFn = definedExternally): js.core.Void
 
 
 suspend fun test(): js.core.Void =

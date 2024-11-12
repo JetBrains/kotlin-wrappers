@@ -3,10 +3,8 @@
 package node.fs
 
 
-suspend fun readdir(path: PathLike): js.array.ReadonlyArray<String> =
-    readdirAsync(
-        path
-    ).await()
+@seskar.js.JsAsync
+external suspend fun readdir(path: PathLike): js.array.ReadonlyArray<String>
 
 
 /**
@@ -34,13 +32,11 @@ suspend fun readdir(path: PathLike): js.array.ReadonlyArray<String> =
  * @return Fulfills with an array of the names of the files in the directory excluding `'.'` and `'..'`.
  */
 
-suspend fun readdir(
+@seskar.js.JsAsync
+external suspend fun readdir(
     path: PathLike,
-    options: (ReaddirAsyncOptions)? = undefined.unsafeCast<Nothing>(),
-): js.array.ReadonlyArray<String> =
-    readdirAsync(
-        path, options
-    ).await()
+    options: (ReaddirAsyncOptions)? = definedExternally,
+): js.array.ReadonlyArray<String>
 
 
 /**
@@ -68,31 +64,18 @@ suspend fun readdir(
  * @return Fulfills with an array of the names of the files in the directory excluding `'.'` and `'..'`.
  */
 
-suspend fun readdir(
+@seskar.js.JsAsync
+external suspend fun readdir(
     path: PathLike,
-    options: node.buffer.BufferEncoding? = undefined.unsafeCast<Nothing>(),
-): js.array.ReadonlyArray<String> =
-    readdirAsync(
-        path, options
-    ).await()
+    options: node.buffer.BufferEncoding? = definedExternally,
+): js.array.ReadonlyArray<String>
 
 
-suspend fun readdir(path: PathLike, options: ReaddirBufferAsyncOptions): js.array.ReadonlyArray<node.buffer.Buffer> =
-    readdirAsync(
-        path, options
-    ).await()
-
-
-/**
- * Asynchronous readdir(3) - read a directory.
- * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
- * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
- */
-
-suspend fun readdir(path: PathLike, options: String /* "buffer" */): js.array.ReadonlyArray<node.buffer.Buffer> =
-    readdirAsync(
-        path, options
-    ).await()
+@seskar.js.JsAsync
+external suspend fun readdir(
+    path: PathLike,
+    options: ReaddirBufferAsyncOptions,
+): js.array.ReadonlyArray<node.buffer.Buffer>
 
 
 /**
@@ -100,6 +83,9 @@ suspend fun readdir(path: PathLike, options: String /* "buffer" */): js.array.Re
  * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
  * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
  */
+
+@seskar.js.JsAsync
+external suspend fun readdir(path: PathLike, options: String /* "buffer" */): js.array.ReadonlyArray<node.buffer.Buffer>
 
 
 /**
@@ -109,7 +95,12 @@ suspend fun readdir(path: PathLike, options: String /* "buffer" */): js.array.Re
  */
 
 
-suspend fun readdir(path: PathLike, options: ReaddirWithFileTypesAsyncOptions): js.array.ReadonlyArray<Dirent> =
-    readdirAsync(
-        path, options
-    ).await()
+/**
+ * Asynchronous readdir(3) - read a directory.
+ * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
+ * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
+ */
+
+
+@seskar.js.JsAsync
+external suspend fun readdir(path: PathLike, options: ReaddirWithFileTypesAsyncOptions): js.array.ReadonlyArray<Dirent>

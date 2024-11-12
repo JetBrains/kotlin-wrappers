@@ -5,10 +5,8 @@ package node.assert
 import js.promise.Promise
 
 
-suspend fun doesNotReject(block: () -> Promise<Any?>): js.core.Void =
-    doesNotRejectAsync(
-        block
-    ).await()
+@seskar.js.JsAsync
+external suspend fun doesNotReject(block: () -> Promise<Any?>): js.core.Void
 
 
 /**
@@ -54,10 +52,8 @@ suspend fun doesNotReject(block: () -> Promise<Any?>): js.core.Void =
  * @since v10.0.0
  */
 
-suspend fun doesNotReject(block: () -> Promise<Any?>, message: String = undefined.unsafeCast<Nothing>()): js.core.Void =
-    doesNotRejectAsync(
-        block, message
-    ).await()
+@seskar.js.JsAsync
+external suspend fun doesNotReject(block: () -> Promise<Any?>, message: String = definedExternally): js.core.Void
 
 
 /**
@@ -103,13 +99,11 @@ suspend fun doesNotReject(block: () -> Promise<Any?>, message: String = undefine
  * @since v10.0.0
  */
 
-suspend fun doesNotReject(
+@seskar.js.JsAsync
+external suspend fun doesNotReject(
     block: () -> Promise<Any?>,
-    message: js.errors.JsError = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    doesNotRejectAsync(
-        block, message
-    ).await()
+    message: js.errors.JsError = definedExternally,
+): js.core.Void
 
 
 /**
@@ -155,10 +149,8 @@ suspend fun doesNotReject(
  * @since v10.0.0
  */
 
-suspend fun doesNotReject(block: Promise<Any?>): js.core.Void =
-    doesNotRejectAsync(
-        block
-    ).await()
+@seskar.js.JsAsync
+external suspend fun doesNotReject(block: Promise<Any?>): js.core.Void
 
 
 /**
@@ -204,10 +196,8 @@ suspend fun doesNotReject(block: Promise<Any?>): js.core.Void =
  * @since v10.0.0
  */
 
-suspend fun doesNotReject(block: Promise<Any?>, message: String = undefined.unsafeCast<Nothing>()): js.core.Void =
-    doesNotRejectAsync(
-        block, message
-    ).await()
+@seskar.js.JsAsync
+external suspend fun doesNotReject(block: Promise<Any?>, message: String = definedExternally): js.core.Void
 
 
 /**
@@ -253,62 +243,45 @@ suspend fun doesNotReject(block: Promise<Any?>, message: String = undefined.unsa
  * @since v10.0.0
  */
 
-suspend fun doesNotReject(
-    block: Promise<Any?>,
-    message: js.errors.JsError = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    doesNotRejectAsync(
-        block, message
-    ).await()
+@seskar.js.JsAsync
+external suspend fun doesNotReject(block: Promise<Any?>, message: js.errors.JsError = definedExternally): js.core.Void
 
 
-suspend fun doesNotReject(block: () -> Promise<Any?>, error: AssertPredicate): js.core.Void =
-    doesNotRejectAsync(
-        block, error
-    ).await()
+@seskar.js.JsAsync
+external suspend fun doesNotReject(block: () -> Promise<Any?>, error: AssertPredicate): js.core.Void
 
 
-suspend fun doesNotReject(
+@seskar.js.JsAsync
+external suspend fun doesNotReject(
     block: () -> Promise<Any?>,
     error: AssertPredicate,
-    message: String = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    doesNotRejectAsync(
-        block, error, message
-    ).await()
+    message: String = definedExternally,
+): js.core.Void
 
 
-suspend fun doesNotReject(
+@seskar.js.JsAsync
+external suspend fun doesNotReject(
     block: () -> Promise<Any?>,
     error: AssertPredicate,
-    message: js.errors.JsError = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    doesNotRejectAsync(
-        block, error, message
-    ).await()
+    message: js.errors.JsError = definedExternally,
+): js.core.Void
 
 
-suspend fun doesNotReject(block: Promise<Any?>, error: AssertPredicate): js.core.Void =
-    doesNotRejectAsync(
-        block, error
-    ).await()
+@seskar.js.JsAsync
+external suspend fun doesNotReject(block: Promise<Any?>, error: AssertPredicate): js.core.Void
 
 
-suspend fun doesNotReject(
+@seskar.js.JsAsync
+external suspend fun doesNotReject(
     block: Promise<Any?>,
     error: AssertPredicate,
-    message: String = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    doesNotRejectAsync(
-        block, error, message
-    ).await()
+    message: String = definedExternally,
+): js.core.Void
 
 
-suspend fun doesNotReject(
+@seskar.js.JsAsync
+external suspend fun doesNotReject(
     block: Promise<Any?>,
     error: AssertPredicate,
-    message: js.errors.JsError = undefined.unsafeCast<Nothing>(),
-): js.core.Void =
-    doesNotRejectAsync(
-        block, error, message
-    ).await()
+    message: js.errors.JsError = definedExternally,
+): js.core.Void
