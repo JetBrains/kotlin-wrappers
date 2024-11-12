@@ -265,8 +265,39 @@ sealed external class TypedArray<
      */
     fun toLocaleString(): String
 
+    /**
+     * Copies the array and returns the copy with the elements in reverse order.
+     */
+    fun toReversed(): R
+
+    /**
+     * Copies and sorts the array.
+     * @param compareFn Function used to determine the order of the elements. It is expected to return
+     * a negative value if the first argument is less than the second argument, zero if they're equal, and a positive
+     * value otherwise. If omitted, the elements are sorted in ascending order.
+     * ```ts
+     * const myNums = Int32Array<Buffer>.from([11, 2, -22, 1]);
+     * myNums.toSorted((a, b) => a - b) // Int32Array<Buffer>(4) [-22, 1, 2, 11]
+     * ```
+     */
+    fun toSorted(
+        comparison: (a: T, b: T) -> Int = definedExternally,
+    ): R
+
     /** Returns the primitive value of the specified object. */
     fun valueOf(): S
+
+    /**
+     * Copies the array and inserts the given number at the provided index.
+     * @param index The index of the value to overwrite. If the index is
+     * negative, then it replaces from the end of the array.
+     * @param value The value to insert into the copied array.
+     * @returns A copy of the original array with the inserted value.
+     */
+    fun with(
+        index: Int,
+        value: T,
+    ): R
 
     override fun entries(): JsIterator<JsTuple2<Int, T>>
 
