@@ -9,14 +9,14 @@ class TypedArrayTest {
     fun Int32Array_is_TypedArray() {
         val a: Any = Int32Array<ArrayBuffer>()
 
-        assertIs<TypedArray<*, *, *>>(a)
+        assertIs<TypedArray<*, *, *, *>>(a)
     }
 
     @Test
     fun BigInt64Array_is_TypedArray() {
         val a: Any = BigInt64Array<ArrayBuffer>()
 
-        assertIs<TypedArray<*, *, *>>(a)
+        assertIs<TypedArray<*, *, *, *>>(a)
     }
 
     @Test

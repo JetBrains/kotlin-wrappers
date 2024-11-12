@@ -10,4 +10,4 @@ package node.v8
  * @since v8.0.0
  * @param buffer A buffer returned by {@link serialize}.
  */
-external fun deserialize(buffer: js.typedarrays.TypedArray<*, *, *>): Any?
+external fun deserialize(buffer: js.typedarrays.TypedArray<*, *, *, *>): Any?

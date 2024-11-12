@@ -82,7 +82,7 @@ external class QuantizedMeshTerrainData(
     @JsPlainObject
     interface ConstructorOptions {
         var quantizedVertices: Uint16Array<*>
-        var indices: TypedArray<*, *, *> /* Uint16Array | Uint32Array */
+        var indices: TypedArray<*, *, *, *> /* Uint16Array | Uint32Array */
         var minimumHeight: Double
         var maximumHeight: Double
         var boundingSphere: BoundingSphere

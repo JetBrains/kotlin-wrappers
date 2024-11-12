@@ -34,4 +34,4 @@ external fun isAscii(input: ArrayBuffer): Boolean
  * @since v19.6.0, v18.15.0
  * @param input The input to validate.
  */
-external fun isAscii(input: js.typedarrays.TypedArray<*, *, *>): Boolean
+external fun isAscii(input: js.typedarrays.TypedArray<*, *, *, *>): Boolean

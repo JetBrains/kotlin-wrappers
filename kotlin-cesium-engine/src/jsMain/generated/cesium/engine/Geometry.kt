@@ -52,7 +52,7 @@ external class Geometry(
     interface ConstructorOptions {
         var attributes: GeometryAttributes
         var primitiveType: PrimitiveType?
-        var indices: TypedArray<*, *, *> /* Uint16Array | Uint32Array */?
+        var indices: TypedArray<*, *, *, *> /* Uint16Array | Uint32Array */?
         var boundingSphere: BoundingSphere?
     }
 
