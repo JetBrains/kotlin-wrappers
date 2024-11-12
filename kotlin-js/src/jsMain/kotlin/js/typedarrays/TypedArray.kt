@@ -95,7 +95,7 @@ sealed external class TypedArray<
      */
     fun filter(
         predicate: (value: T) -> Boolean,
-    ): S
+    ): R
 
     /**
      * Returns the value of the first element in the array where predicate is true, and undefined
@@ -211,7 +211,7 @@ sealed external class TypedArray<
      */
     fun map(
         transform: (value: T) -> T,
-    ): S
+    ): R
 
     // TODO: reduce methods
 
@@ -228,7 +228,7 @@ sealed external class TypedArray<
     fun slice(
         start: Int = definedExternally,
         end: Int = definedExternally,
-    ): S
+    ): R
 
     /**
      * Determines whether the specified callback function returns true for any element of an array.
