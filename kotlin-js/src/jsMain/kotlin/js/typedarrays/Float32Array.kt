@@ -13,7 +13,7 @@ open external class Float32Array<B : ArrayBufferLike>(
     override val buffer: B,
     override val byteOffset: Int = definedExternally,
     override val length: Int = definedExternally,
-) : TypedArray<Float32Array<B>, B, Float> {
+) : TypedArray<Float32Array<B>, Float32Array<ArrayBuffer>, B, Float> {
     constructor()
     constructor(length: Int)
     constructor(elements: JsIterable<Float>)

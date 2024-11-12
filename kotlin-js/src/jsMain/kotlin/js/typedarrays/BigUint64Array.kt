@@ -14,7 +14,7 @@ open external class BigUint64Array<B : ArrayBufferLike>(
     override val buffer: B,
     override val byteOffset: Int = definedExternally,
     override val length: Int = definedExternally,
-) : TypedArray<BigUint64Array<B>, B, BigInt> {
+) : TypedArray<BigUint64Array<B>, BigUint64Array<ArrayBuffer>, B, BigInt> {
     constructor()
     constructor(length: Int)
     constructor(elements: JsIterable<BigInt>)

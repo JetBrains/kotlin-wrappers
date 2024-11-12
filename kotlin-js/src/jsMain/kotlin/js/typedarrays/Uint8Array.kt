@@ -17,7 +17,7 @@ open external class Uint8Array<B : ArrayBufferLike>(
     override val buffer: B,
     override val byteOffset: Int = definedExternally,
     override val length: Int = definedExternally,
-) : TypedArray<Uint8Array<B>, B, Byte> {
+) : TypedArray<Uint8Array<B>, Uint8Array<ArrayBuffer>, B, Byte> {
     constructor()
     constructor(length: Int)
     constructor(elements: JsIterable<Byte>)

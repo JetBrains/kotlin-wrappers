@@ -14,7 +14,7 @@ open external class Float16Array<B : ArrayBufferLike>(
     override val buffer: B,
     override val byteOffset: Int = definedExternally,
     override val length: Int = definedExternally,
-) : TypedArray<Float16Array<B>, B, Float16> {
+) : TypedArray<Float16Array<B>, Float16Array<ArrayBuffer>, B, Float16> {
     constructor()
     constructor(length: Int)
     constructor(elements: JsIterable<Float16>)

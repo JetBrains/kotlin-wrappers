@@ -13,7 +13,7 @@ open external class Int32Array<B : ArrayBufferLike>(
     override val buffer: B,
     override val byteOffset: Int = definedExternally,
     override val length: Int = definedExternally,
-) : TypedArray<Int32Array<B>, B, Int> {
+) : TypedArray<Int32Array<B>, Int32Array<ArrayBuffer>, B, Int> {
     constructor()
     constructor(length: Int)
     constructor(elements: JsIterable<Int>)
