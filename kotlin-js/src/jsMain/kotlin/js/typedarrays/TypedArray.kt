@@ -255,6 +255,11 @@ sealed external class TypedArray<
         comparison: (a: T, b: T) -> Int = definedExternally,
     ): S
 
+    fun subarray(
+        start: Int,
+        end: Int,
+    ): S
+
     /**
      * Converts a number to a string by using the current locale.
      */
@@ -262,12 +267,6 @@ sealed external class TypedArray<
 
     /** Returns the primitive value of the specified object. */
     fun valueOf(): S
-
-
-    fun subarray(
-        start: Int,
-        end: Int,
-    ): S
 
     override fun entries(): JsIterator<JsTuple2<Int, T>>
 
