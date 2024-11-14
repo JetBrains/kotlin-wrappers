@@ -280,6 +280,12 @@ open external class Event(
         @JsValue("open")
         val OPEN: EventType<Event>
 
+        @JsValue("pagereveal")
+        val PAGE_REVEAL: EventType<Event>
+
+        @JsValue("pageswap")
+        val PAGE_SWAP: EventType<Event>
+
         @JsValue("pause")
         val PAUSE: EventType<Event>
 

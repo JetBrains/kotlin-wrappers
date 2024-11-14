@@ -104,9 +104,23 @@ external interface WindowEventHandlers :
         set(value) = definedExternally
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pagereveal_event)
+     */
+    var onpagereveal: EventHandler<Event, WindowEventHandlers, WindowEventHandlers>?
+        get() = definedExternally
+        set(value) = definedExternally
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pageshow_event)
      */
     var onpageshow: EventHandler<PageTransitionEvent, WindowEventHandlers, WindowEventHandlers>?
+        get() = definedExternally
+        set(value) = definedExternally
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pageswap_event)
+     */
+    var onpageswap: EventHandler<Event, WindowEventHandlers, WindowEventHandlers>?
         get() = definedExternally
         set(value) = definedExternally
 

@@ -22,7 +22,15 @@ open external class DOMQuad(
     val p2: DOMPoint
     val p3: DOMPoint
     val p4: DOMPoint
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/getBounds)
+     */
     fun getBounds(): DOMRect
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/toJSON)
+     */
     fun toJSON(): Any
 
     companion object {

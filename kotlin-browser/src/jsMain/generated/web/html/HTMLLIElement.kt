@@ -12,6 +12,8 @@ protected constructor() :
     HTMLElement {
     /**
      * Sets or retrieves the value of a list item.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLIElement/value)
      */
     var value: Int
 }

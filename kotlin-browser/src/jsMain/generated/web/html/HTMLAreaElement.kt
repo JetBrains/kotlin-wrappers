@@ -24,6 +24,10 @@ protected constructor() :
      * Sets or retrieves the coordinates of the object.
      */
     var coords: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAreaElement/download)
+     */
     var download: String
 
     /**

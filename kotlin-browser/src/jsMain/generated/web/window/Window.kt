@@ -31,6 +31,8 @@ import web.selection.Selection
 import web.storage.StorageEvent
 import web.uievents.*
 import web.url.URL
+import web.viewtransition.PageRevealEvent
+import web.viewtransition.PageSwapEvent
 
 /**
  * A window containing a DOM document; the document property points to the DOM document loaded in that window.
@@ -714,10 +716,22 @@ private constructor() :
     val pageHideEvent: EventInstance<PageTransitionEvent, Window /* this */, Window /* this */>
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pagereveal_event)
+     */
+    @JsEvent("pagereveal")
+    val pageRevealEvent: EventInstance<PageRevealEvent, Window /* this */, Window /* this */>
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pageshow_event)
      */
     @JsEvent("pageshow")
     val pageShowEvent: EventInstance<PageTransitionEvent, Window /* this */, Window /* this */>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pageswap_event)
+     */
+    @JsEvent("pageswap")
+    val pageSwapEvent: EventInstance<PageSwapEvent, Window /* this */, Window /* this */>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/paste_event)
