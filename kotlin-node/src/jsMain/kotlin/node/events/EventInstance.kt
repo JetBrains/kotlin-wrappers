@@ -12,19 +12,19 @@ import web.abort.toAbortSignal
 
 class EventInstance<out P : JsTuple>(
     internal val emitter: EventEmitter,
-    internal val type: EventType<EventEmitter, P>,
+    internal val type: EventType,
 )
 
 fun <P : JsTuple> EventInstance<P>.addHandler(
     handler: (P) -> Unit,
 ): () -> Unit {
-    emitter.onInternal(
+    emitter.on(
         type = type,
         listener = handler,
     )
 
     return {
-        emitter.offInternal(
+        emitter.off(
             type = type,
             listener = handler,
         )
@@ -40,7 +40,7 @@ suspend fun <P : JsTuple> EventInstance<P>.subscribe(
 
 suspend fun <P : JsTuple> EventInstance<P>.once(): P =
     suspendCancellableCoroutine { continuation ->
-        EventEmitter.once(
+        EventEmitter.once<P>(
             emitter = emitter,
             type = type,
             options = StaticEventEmitterOptions(

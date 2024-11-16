@@ -1,6 +1,5 @@
 package node.events
 
-import js.array.JsTuple
 import js.array.JsTuple3
 import js.array.tupleOf
 import kotlin.test.Test
@@ -15,7 +14,7 @@ class EventEmitterTest {
 
         var invocationCount = 0
 
-        val test = EventType<EventEmitter, JsTuple3<Int, String, Boolean>>("test")
+        val test = EventType("test")
         val emitter = EventEmitter()
 
         val listener = { (one, two, three): JsTuple3<Int, String, Boolean> ->
@@ -48,7 +47,7 @@ class EventEmitterTest {
     fun should_handle_optional_listeners() {
         val emitter = EventEmitter()
 
-        val test = EventType<EventEmitter, JsTuple>("test")
+        val test = EventType("test")
         val listenerCount = emitter.listenerCount(test /* optional listener is here*/)
 
         assertEquals(0, listenerCount.toInt())

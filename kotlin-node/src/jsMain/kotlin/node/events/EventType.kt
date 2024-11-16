@@ -1,19 +1,20 @@
+@file:Suppress(
+    "NOTHING_TO_INLINE",
+)
+
 package node.events
 
-import js.array.JsTuple
 import js.reflect.unsafeCast
 import js.symbol.Symbol
 
-external interface EventType<in T : EventEmitter, out P : JsTuple>
+sealed external interface EventType
 
-@Suppress("NOTHING_TO_INLINE")
-inline fun <T : EventEmitter, P : JsTuple> EventType(
+inline fun EventType(
     value: String,
-): EventType<T, P> =
+): EventType =
     unsafeCast(value)
 
-@Suppress("NOTHING_TO_INLINE")
-inline fun <T : EventEmitter, P : JsTuple> EventType(
+inline fun EventType(
     value: Symbol,
-): EventType<T, P> =
+): EventType =
     unsafeCast(value)

@@ -37,7 +37,7 @@ open external class EventEmitter {
      * @since v0.1.26
      */
 
-    fun addListener(type: EventType<*, *>, listener: Function<Unit>): Unit /* this */
+    fun addListener(type: EventType, listener: Function<Unit>): Unit /* this */
 
     /**
      * Adds the `listener` function to the end of the listeners array for the event
@@ -71,7 +71,7 @@ open external class EventEmitter {
      * @param listener The callback function
      */
 
-    fun on(type: EventType<*, *>, listener: Function<Unit>): Unit /* this */
+    fun on(type: EventType, listener: Function<Unit>): Unit /* this */
 
     /**
      * Adds a **one-time** `listener` function for the event named `eventName`. The
@@ -103,7 +103,7 @@ open external class EventEmitter {
      * @param listener The callback function
      */
 
-    fun once(type: EventType<*, *>, listener: Function<Unit>): Unit /* this */
+    fun once(type: EventType, listener: Function<Unit>): Unit /* this */
 
     /**
      * Removes the specified `listener` from the listener array for the event named `eventName`.
@@ -188,14 +188,14 @@ open external class EventEmitter {
      * @since v0.1.26
      */
 
-    fun removeListener(type: EventType<*, *>, listener: Function<Unit>): Unit /* this */
+    fun removeListener(type: EventType, listener: Function<Unit>): Unit /* this */
 
     /**
      * Alias for `emitter.removeListener()`.
      * @since v10.0.0
      */
 
-    fun off(type: EventType<*, *>, listener: Function<Unit>): Unit /* this */
+    fun off(type: EventType, listener: Function<Unit>): Unit /* this */
 
     /**
      * Removes all listeners, or those of the specified `eventName`.
@@ -208,7 +208,7 @@ open external class EventEmitter {
      * @since v0.1.26
      */
 
-    fun removeAllListeners(type: EventType<*, *> = definedExternally): Unit /* this */
+    fun removeAllListeners(type: EventType = definedExternally): Unit /* this */
 
     /**
      * By default `EventEmitter`s will print a warning if more than `10` listeners are
@@ -245,7 +245,7 @@ open external class EventEmitter {
      * @since v0.1.26
      */
 
-    fun listeners(type: EventType<*, *>): Array<Function<Unit>>
+    fun listeners(type: EventType): Array<Function<Unit>>
 
     /**
      * Returns a copy of the array of listeners for the event named `eventName`,
@@ -278,7 +278,7 @@ open external class EventEmitter {
      * @since v9.4.0
      */
 
-    fun rawListeners(type: EventType<*, *>): Array<Function<Unit>>
+    fun rawListeners(type: EventType): Array<Function<Unit>>
 
     /**
      * Synchronously calls each of the listeners registered for the event named `eventName`, in the order they were registered, passing the supplied arguments
@@ -321,7 +321,7 @@ open external class EventEmitter {
      * @since v0.1.26
      */
 
-    fun emit(type: EventType<*, *>, vararg args: Any? /* Args<K, T> */): Boolean
+    fun emit(type: EventType, vararg args: Any? /* Args<K, T> */): Boolean
 
     /**
      * Returns the number of listeners listening for the event named `eventName`.
@@ -332,7 +332,7 @@ open external class EventEmitter {
      * @param listener The event handler function
      */
 
-    fun listenerCount(type: EventType<*, *>, listener: Function<Unit> = definedExternally): Double
+    fun listenerCount(type: EventType, listener: Function<Unit> = definedExternally): Double
 
     /**
      * Adds the `listener` function to the _beginning_ of the listeners array for the
@@ -352,7 +352,7 @@ open external class EventEmitter {
      * @param listener The callback function
      */
 
-    fun prependListener(type: EventType<*, *>, listener: Function<Unit>): Unit /* this */
+    fun prependListener(type: EventType, listener: Function<Unit>): Unit /* this */
 
     /**
      * Adds a **one-time**`listener` function for the event named `eventName` to the _beginning_ of the listeners array. The next time `eventName` is triggered, this
@@ -370,7 +370,7 @@ open external class EventEmitter {
      * @param listener The callback function
      */
 
-    fun prependOnceListener(type: EventType<*, *>, listener: Function<Unit>) /* this */
+    fun prependOnceListener(type: EventType, listener: Function<Unit>) /* this */
 
     /**
      * Returns an array listing the events for which the emitter has registered
@@ -393,7 +393,7 @@ open external class EventEmitter {
      */
 
 
-    fun eventNames(): Array<Any /* (string | symbol) & Key2<unknown, T> */>
+    fun eventNames(): Array<EventType /* (string | symbol) & Key2<unknown, T> */>
 
 
     companion object {
@@ -476,9 +476,9 @@ open external class EventEmitter {
          * ```
          * @since v11.13.0, v10.16.0
          */
-        fun <T : EventEmitter, P : JsTuple> once(
-            emitter: T,
-            type: EventType<T, P>,
+        fun <P : JsTuple> once(
+            emitter: EventEmitter,
+            type: EventType,
             options: StaticEventEmitterOptions = definedExternally,
         ): Promise<P>
 
@@ -648,9 +648,9 @@ open external class EventEmitter {
          * @since v13.6.0, v12.16.0
          * @return An `AsyncIterator` that iterates `eventName` events emitted by the `emitter`
          */
-        fun <T : EventEmitter, P : JsTuple> on(
-            emitter: T,
-            type: EventType<T, P>,
+        fun <P : JsTuple> on(
+            emitter: EventEmitter,
+            type: EventType,
             options: StaticEventEmitterOptions = definedExternally,
         ): AsyncIterator<P>
 
@@ -758,7 +758,7 @@ open external class EventEmitter {
          * @param emitter The emitter to query
          * @param eventName The event name
          */
-        fun <T : EventEmitter> listenerCount(emitter: T, type: EventType<T, *>): Double
+        fun listenerCount(emitter: EventEmitter, type: EventType): Double
 
         /**
          * A class method that returns the number of listeners for the given `eventName` registered on the given `emitter`.
@@ -863,7 +863,7 @@ open external class EventEmitter {
          * ```
          * @since v15.2.0, v14.17.0
          */
-        fun <T : EventEmitter> getEventListeners(emitter: T, type: EventType<T, *>): js.array.ReadonlyArray<Function<*>>
+        fun getEventListeners(emitter: EventEmitter, type: EventType): js.array.ReadonlyArray<Function<*>>
 
         /**
          * Returns a copy of the array of listeners for the event named `eventName`.
