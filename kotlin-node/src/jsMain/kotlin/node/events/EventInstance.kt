@@ -13,21 +13,21 @@ import web.abort.toAbortSignal
 class EventInstance<out P : JsTuple>(
     internal val emitter: EventEmitter,
     internal val type: EventType,
-)
-
-fun <P : JsTuple> EventInstance<P>.addHandler(
-    handler: (P) -> Unit,
-): () -> Unit {
-    emitter.on(
-        type = type,
-        listener = handler,
-    )
-
-    return {
-        emitter.off(
+) {
+    fun addHandler(
+        handler: (P) -> Unit,
+    ): () -> Unit {
+        emitter.on(
             type = type,
             listener = handler,
         )
+
+        return {
+            emitter.off(
+                type = type,
+                listener = handler,
+            )
+        }
     }
 }
 
