@@ -101,7 +101,7 @@ export default {
 inline fun ${karakum.ifPresent(typeParameters, it => `<${it}>`)} ActionFunction(
     noinline value: (${parameters}) -> ${returnType},
 ): ActionFunction${karakum.ifPresent(typeParameterNames, it => `<${it}>`)} =
-    value.unsafeCast<ActionFunction${karakum.ifPresent(typeParameterNames, it => `<${it}>`)}>()
+    js.reflect.unsafeCast(value)
                     `
             }
         })
@@ -129,7 +129,7 @@ inline fun ${karakum.ifPresent(typeParameters, it => `<${it}>`)} ActionFunction(
 inline fun ${karakum.ifPresent(typeParameters, it => `<${it}>`)} LoaderFunction(
     noinline value: (${parameters}) -> ${returnType},
 ): LoaderFunction${karakum.ifPresent(typeParameterNames, it => `<${it}>`)} =
-    value.unsafeCast<LoaderFunction${karakum.ifPresent(typeParameterNames, it => `<${it}>`)}>()
+    js.reflect.unsafeCast(value)
                     `
             }
         })

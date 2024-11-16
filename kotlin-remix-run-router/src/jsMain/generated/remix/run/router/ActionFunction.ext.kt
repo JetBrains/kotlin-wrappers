@@ -7,4 +7,4 @@ package remix.run.router
 inline fun <Context /* default is Any? */> ActionFunction(
     noinline value: (args: ActionFunctionArgs<Context>, handlerCtx: Any? /* use undefined for default */) -> DataFunctionReturnValue,
 ): ActionFunction<Context> =
-    value.unsafeCast<ActionFunction<Context>>()
+    js.reflect.unsafeCast(value)
