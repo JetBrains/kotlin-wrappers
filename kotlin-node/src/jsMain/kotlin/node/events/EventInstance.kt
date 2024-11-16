@@ -1,7 +1,10 @@
 package node.events
 
 import js.array.JsTuple
+import js.array.JsTuple1
 import js.coroutines.internal.internalSubscribeJob
+import js.function.JsFunction
+import js.function.invoke
 import js.iterable.SuspendableIterator
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.Channel
@@ -10,6 +13,12 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import web.abort.toAbortSignal
 
+private val toNodeListener = JsFunction<JsTuple1<Function<Unit>>, Function<Unit>>(
+    parameterNames = arrayOf("handler"),
+    // language=javascript
+    body = "return (...args) => { handler(args) }",
+)
+
 class EventInstance<out P : JsTuple>(
     internal val emitter: EventEmitter,
     internal val type: EventType,
@@ -17,15 +26,17 @@ class EventInstance<out P : JsTuple>(
     fun addHandler(
         handler: (P) -> Unit,
     ): () -> Unit {
+        val listener = toNodeListener(handler)
+
         emitter.on(
             type = type,
-            listener = handler,
+            listener = listener,
         )
 
         return {
             emitter.off(
                 type = type,
-                listener = handler,
+                listener = listener,
             )
         }
     }
