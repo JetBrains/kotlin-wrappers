@@ -8,33 +8,34 @@
 package mui.system
 
 import js.array.ReadonlyArray
+import js.reflect.unsafeCast
 
 sealed external interface SpacingOptions
 
 inline fun SpacingOptions(
     value: Int,
 ): SpacingOptions =
-    value.unsafeCast<SpacingOptions>()
+    unsafeCast(value)
 
 inline fun SpacingOptions(
     value: Spacing,
 ): SpacingOptions =
-    value.unsafeCast<SpacingOptions>()
+    unsafeCast(value)
 
 inline fun SpacingOptions(
     noinline value: (abs: Int) -> web.cssom.Length,
 ): SpacingOptions =
-    value.unsafeCast<SpacingOptions>()
+    unsafeCast(value)
 
 inline fun SpacingOptions(
     noinline value: (abs: web.cssom.Length) -> web.cssom.Length,
 ): SpacingOptions =
-    value.unsafeCast<SpacingOptions>()
+    unsafeCast(value)
 
 inline fun SpacingOptions(
     value: ReadonlyArray<Int>,
 ): SpacingOptions =
-    value.unsafeCast<SpacingOptions>()
+    unsafeCast(value)
 
 typealias SpacingArgument = Int /* web.cssom.Auto */
 
