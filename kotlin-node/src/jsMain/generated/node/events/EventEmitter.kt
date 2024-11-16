@@ -37,8 +37,7 @@ open external class EventEmitter {
      * @since v0.1.26
      */
 
-    @JsName("addListener")
-    internal fun addListenerInternal(type: EventType<*, *>, listener: Function<Unit>): Unit /* this */
+    fun addListener(type: EventType<*, *>, listener: Function<Unit>): Unit /* this */
 
     /**
      * Adds the `listener` function to the end of the listeners array for the event
@@ -72,8 +71,7 @@ open external class EventEmitter {
      * @param listener The callback function
      */
 
-    @JsName("on")
-    internal fun onInternal(type: EventType<*, *>, listener: Function<Unit>): Unit /* this */
+    fun on(type: EventType<*, *>, listener: Function<Unit>): Unit /* this */
 
     /**
      * Adds a **one-time** `listener` function for the event named `eventName`. The
@@ -105,8 +103,7 @@ open external class EventEmitter {
      * @param listener The callback function
      */
 
-    @JsName("once")
-    internal fun onceInternal(type: EventType<*, *>, listener: Function<Unit>): Unit /* this */
+    fun once(type: EventType<*, *>, listener: Function<Unit>): Unit /* this */
 
     /**
      * Removes the specified `listener` from the listener array for the event named `eventName`.
@@ -191,16 +188,14 @@ open external class EventEmitter {
      * @since v0.1.26
      */
 
-    @JsName("removeListener")
-    internal fun removeListenerInternal(type: EventType<*, *>, listener: Function<Unit>): Unit /* this */
+    fun removeListener(type: EventType<*, *>, listener: Function<Unit>): Unit /* this */
 
     /**
      * Alias for `emitter.removeListener()`.
      * @since v10.0.0
      */
 
-    @JsName("off")
-    internal fun offInternal(type: EventType<*, *>, listener: Function<Unit>): Unit /* this */
+    fun off(type: EventType<*, *>, listener: Function<Unit>): Unit /* this */
 
     /**
      * Removes all listeners, or those of the specified `eventName`.
@@ -213,8 +208,7 @@ open external class EventEmitter {
      * @since v0.1.26
      */
 
-    @JsName("removeAllListeners")
-    internal fun removeAllListenersInternal(type: EventType<*, *> = definedExternally): Unit /* this */
+    fun removeAllListeners(type: EventType<*, *> = definedExternally): Unit /* this */
 
     /**
      * By default `EventEmitter`s will print a warning if more than `10` listeners are
@@ -251,8 +245,7 @@ open external class EventEmitter {
      * @since v0.1.26
      */
 
-    @JsName("listeners")
-    internal fun listenersInternal(type: EventType<*, *>): Array<Function<Unit>>
+    fun listeners(type: EventType<*, *>): Array<Function<Unit>>
 
     /**
      * Returns a copy of the array of listeners for the event named `eventName`,
@@ -285,8 +278,7 @@ open external class EventEmitter {
      * @since v9.4.0
      */
 
-    @JsName("rawListeners")
-    internal fun rawListenersInternal(type: EventType<*, *>): Array<Function<Unit>>
+    fun rawListeners(type: EventType<*, *>): Array<Function<Unit>>
 
     /**
      * Synchronously calls each of the listeners registered for the event named `eventName`, in the order they were registered, passing the supplied arguments
@@ -329,8 +321,7 @@ open external class EventEmitter {
      * @since v0.1.26
      */
 
-    @JsName("emit")
-    internal fun emitInternal(type: EventType<*, *>, vararg args: Any? /* Args<K, T> */): Boolean
+    fun emit(type: EventType<*, *>, vararg args: Any? /* Args<K, T> */): Boolean
 
     /**
      * Returns the number of listeners listening for the event named `eventName`.
@@ -341,8 +332,7 @@ open external class EventEmitter {
      * @param listener The event handler function
      */
 
-    @JsName("listenerCount")
-    internal fun listenerCountInternal(type: EventType<*, *>, listener: Function<Unit> = definedExternally): Double
+    fun listenerCount(type: EventType<*, *>, listener: Function<Unit> = definedExternally): Double
 
     /**
      * Adds the `listener` function to the _beginning_ of the listeners array for the
@@ -362,8 +352,7 @@ open external class EventEmitter {
      * @param listener The callback function
      */
 
-    @JsName("prependListener")
-    internal fun prependListenerInternal(type: EventType<*, *>, listener: Function<Unit>): Unit /* this */
+    fun prependListener(type: EventType<*, *>, listener: Function<Unit>): Unit /* this */
 
     /**
      * Adds a **one-time**`listener` function for the event named `eventName` to the _beginning_ of the listeners array. The next time `eventName` is triggered, this
@@ -381,8 +370,7 @@ open external class EventEmitter {
      * @param listener The callback function
      */
 
-    @JsName("prependOnceListener")
-    internal fun prependOnceListenerInternal(type: EventType<*, *>, listener: Function<Unit>): Unit /* this */
+    fun prependOnceListener(type: EventType<*, *>, listener: Function<Unit>) /* this */
 
     /**
      * Returns an array listing the events for which the emitter has registered
