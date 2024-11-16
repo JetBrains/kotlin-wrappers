@@ -5,6 +5,7 @@
       <name>kotlin.browser.*</name>
       <name>kotlin.js.Date</name>
       <name>kotlin.js.Promise</name>
+      <name>kotlin.js.RegExp</name>
       <name>kotlinx.browser.*</name>
       <name>kotlinx.coroutines.asDeferred</name>
       <name>kotlinx.coroutines.await</name>
