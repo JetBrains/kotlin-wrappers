@@ -1,5 +1,7 @@
 package react
 
+import js.reflect.unsafeCast
+
 
 /**
  * Get function component from [func]
@@ -12,7 +14,7 @@ fun <P : Props> fc(
             func(props)
         }
     }
-    return component.unsafeCast<FC<P>>()
+    return unsafeCast(component)
 }
 
 /**
