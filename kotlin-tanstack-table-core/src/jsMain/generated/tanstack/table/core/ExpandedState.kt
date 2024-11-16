@@ -7,15 +7,16 @@
 package tanstack.table.core
 
 import js.objects.ReadonlyRecord
+import js.reflect.unsafeCast
 
 sealed external interface ExpandedState /* true | Record<string, boolean> */
 
 inline fun ExpandedState(
     source: Boolean, /* true */
 ): ExpandedState =
-    source.unsafeCast<ExpandedState>()
+    unsafeCast(source)
 
 inline fun ExpandedState(
     source: ReadonlyRecord<String, Boolean>,
 ): ExpandedState =
-    source.unsafeCast<ExpandedState>()
+    unsafeCast(source)
