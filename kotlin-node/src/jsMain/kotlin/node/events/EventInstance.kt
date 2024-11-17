@@ -13,7 +13,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import web.abort.toAbortSignal
 
-private val toNodeListener = JsFunction<JsTuple1<Function<Unit>>, Function<Unit>>(
+private val toNodeListener = JsFunction<JsTuple1<Function<Unit>>, EventListener>(
     parameterNames = arrayOf("handler"),
     // language=javascript
     body = "return (...args) => { handler(args) }",
