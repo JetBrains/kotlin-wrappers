@@ -37,7 +37,7 @@ open external class EventEmitter {
      * @since v0.1.26
      */
 
-    fun addListener(type: EventType, listener: Function<Unit>): Unit /* this */
+    fun addListener(type: EventType, listener: EventListener) /* this */
 
     /**
      * Adds the `listener` function to the end of the listeners array for the event
@@ -71,7 +71,7 @@ open external class EventEmitter {
      * @param listener The callback function
      */
 
-    fun on(type: EventType, listener: Function<Unit>): Unit /* this */
+    fun on(type: EventType, listener: EventListener): Unit /* this */
 
     /**
      * Adds a **one-time** `listener` function for the event named `eventName`. The
@@ -103,7 +103,7 @@ open external class EventEmitter {
      * @param listener The callback function
      */
 
-    fun once(type: EventType, listener: Function<Unit>): Unit /* this */
+    fun once(type: EventType, listener: EventListener): Unit /* this */
 
     /**
      * Removes the specified `listener` from the listener array for the event named `eventName`.
@@ -188,14 +188,14 @@ open external class EventEmitter {
      * @since v0.1.26
      */
 
-    fun removeListener(type: EventType, listener: Function<Unit>): Unit /* this */
+    fun removeListener(type: EventType, listener: EventListener): Unit /* this */
 
     /**
      * Alias for `emitter.removeListener()`.
      * @since v10.0.0
      */
 
-    fun off(type: EventType, listener: Function<Unit>): Unit /* this */
+    fun off(type: EventType, listener: EventListener): Unit /* this */
 
     /**
      * Removes all listeners, or those of the specified `eventName`.
@@ -245,7 +245,7 @@ open external class EventEmitter {
      * @since v0.1.26
      */
 
-    fun listeners(type: EventType): Array<Function<Unit>>
+    fun listeners(type: EventType): Array<EventListener>
 
     /**
      * Returns a copy of the array of listeners for the event named `eventName`,
@@ -278,7 +278,7 @@ open external class EventEmitter {
      * @since v9.4.0
      */
 
-    fun rawListeners(type: EventType): Array<Function<Unit>>
+    fun rawListeners(type: EventType): Array<EventListener>
 
     /**
      * Synchronously calls each of the listeners registered for the event named `eventName`, in the order they were registered, passing the supplied arguments
@@ -332,7 +332,7 @@ open external class EventEmitter {
      * @param listener The event handler function
      */
 
-    fun listenerCount(type: EventType, listener: Function<Unit> = definedExternally): Double
+    fun listenerCount(type: EventType, listener: EventListener = definedExternally): Double
 
     /**
      * Adds the `listener` function to the _beginning_ of the listeners array for the
@@ -352,7 +352,7 @@ open external class EventEmitter {
      * @param listener The callback function
      */
 
-    fun prependListener(type: EventType, listener: Function<Unit>): Unit /* this */
+    fun prependListener(type: EventType, listener: EventListener): Unit /* this */
 
     /**
      * Adds a **one-time**`listener` function for the event named `eventName` to the _beginning_ of the listeners array. The next time `eventName` is triggered, this
@@ -370,7 +370,7 @@ open external class EventEmitter {
      * @param listener The callback function
      */
 
-    fun prependOnceListener(type: EventType, listener: Function<Unit>) /* this */
+    fun prependOnceListener(type: EventType, listener: EventListener) /* this */
 
     /**
      * Returns an array listing the events for which the emitter has registered
