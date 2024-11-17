@@ -7,6 +7,7 @@ package styled
 import js.core.delete
 import js.objects.Object
 import js.objects.jso
+import js.reflect.unsafeCast
 import kotlinx.css.CssBuilder
 import kotlinx.css.CssDsl
 import kotlinx.css.RuleSet
@@ -112,7 +113,7 @@ internal external interface StyledProps : PropsWithClassName, PropsWithRef<Any> 
 
 typealias ClassNameState = HashSet<ClassName>
 
-internal fun customStyled(type: dynamic): ElementType<StyledProps> {
+internal fun customStyled(type: Any): ElementType<StyledProps> {
     val fc = forwardRef<Any, StyledProps> { props, rRef ->
         val css = props.css
         val classes = props.classes
@@ -149,7 +150,7 @@ internal fun customStyled(type: dynamic): ElementType<StyledProps> {
         newProps.ref = rRef
         delete(newProps.css)
         delete(newProps.classes)
-        child(createElement(type.unsafeCast<ElementType<StyledProps>>(), newProps))
+        child(createElement(unsafeCast(type), newProps))
     }
     fc.displayName = "styled${type.toString().replaceFirstChar { it.titlecase() }}"
     return fc
@@ -189,16 +190,16 @@ internal fun List<String>.toClassName(): String {
 }
 
 object Styled {
-    private val cache = mutableMapOf<dynamic, dynamic>()
+    private val cache = mutableMapOf<Any, ElementType<StyledProps>>()
 
-    private fun wrap(type: dynamic) =
-        cache.getOrPut<dynamic, ElementType<StyledProps>>(type) {
+    private fun wrap(type: Any) =
+        cache.getOrPut(type) {
             customStyled(type)
         }
 
     fun createElement(type: Any, css: CssBuilder, props: PropsWithClassName, children: List<ReactNode>): ReactElement<*> {
         val wrappedType = wrap(type)
-        val styledProps = props.unsafeCast<StyledProps>()
+        val styledProps = unsafeCast<StyledProps>(props)
         styledProps.css = css
         styledProps.classes = css.classes.toClassName()
         return createElement(wrappedType, styledProps, *children.toTypedArray())
