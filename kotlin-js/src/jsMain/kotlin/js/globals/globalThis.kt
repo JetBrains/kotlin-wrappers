@@ -1,3 +1,3 @@
 package js.globals
 
-external val globalThis: dynamic
+external val globalThis: GlobalScope
