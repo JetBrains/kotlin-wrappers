@@ -19,7 +19,7 @@ private val toNodeListener = JsFunction<JsTuple1<Function<Unit>>, Function<Unit>
     body = "return (...args) => { handler(args) }",
 )
 
-class EventInstance<P : JsTuple>(
+class EventInstance<out P : JsTuple>(
     internal val emitter: EventEmitter,
     internal val type: EventType,
 ) {
@@ -42,7 +42,7 @@ class EventInstance<P : JsTuple>(
     }
 
     fun emit(
-        payload: P,
+        payload: @UnsafeVariance P,
     ) {
         emitter.emit(
             type = type,
