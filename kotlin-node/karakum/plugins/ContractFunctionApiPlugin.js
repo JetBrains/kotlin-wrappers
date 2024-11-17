@@ -54,7 +54,7 @@ export default {
 
             const body = karakum.convertParameterDeclarations(node, context, next, {
                 strategy: "function",
-                defaultValue: "undefined.unsafeCast<Nothing>()",
+                defaultValue: "undefined",
                 template: (parameters, signature) => {
                     if (isConflictingOverload(node, signature)) {
                         return ""

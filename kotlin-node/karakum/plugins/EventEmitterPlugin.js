@@ -273,7 +273,7 @@ ${members}\n${companionObject}
                         fileName: `EventEmitter.ext.kt`,
                         body: `
 ${comment}
-fun <T : EventEmitter, P : JsTuple> T.${name}(type: EventType<T, P>, listener: (P) -> Unit${isDefinedExternally ? ` = undefined.unsafeCast<Nothing>()` : ""}) =
+fun <T : EventEmitter, P : JsTuple> T.${name}(type: EventType<T, P>, listener: (P) -> Unit${isDefinedExternally ? ` = undefined` : ""}) =
     ${name}Internal(type, decorateListener(listener))
                         `,
                     }
@@ -292,7 +292,7 @@ fun <T : EventEmitter, P : JsTuple> T.${name}(type: EventType<T, P>, listener: (
                         fileName: `EventEmitter.ext.kt`,
                         body: `
 ${comment}
-fun <T : EventEmitter> T.${name}(type: EventType<T, *>${isDefinedExternally ? ` = undefined.unsafeCast<Nothing>()` : ""}) =
+fun <T : EventEmitter> T.${name}(type: EventType<T, *>${isDefinedExternally ? ` = undefined` : ""}) =
     ${name}Internal(type)
                         `,
                     }

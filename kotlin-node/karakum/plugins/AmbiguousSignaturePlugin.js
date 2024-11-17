@@ -155,7 +155,7 @@ export default {
 
                             const suspendBody = karakum.convertParameterDeclarations(declaration, context, render, {
                                 strategy: "function",
-                                defaultValue: "undefined.unsafeCast<Nothing>()",
+                                defaultValue: "undefined",
                                 template: (_, signature) => {
                                     // TODO: it cam be removed after conversion
                                     //  `describe`, `suite` and `it` namespaces as object
