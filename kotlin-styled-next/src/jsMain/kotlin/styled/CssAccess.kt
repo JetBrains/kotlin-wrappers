@@ -71,7 +71,7 @@ internal object GlobalCssAccess {
     }
 
     internal fun setupCssHelperFunctions() {
-        globalThis.StyledNext = object : StyledNext {
+        globalThis["StyledNext"] = object : StyledNext {
             override fun useDevSheet(isDev: Boolean) {
                 this@GlobalCssAccess.useDevSheet(isDev)
             }

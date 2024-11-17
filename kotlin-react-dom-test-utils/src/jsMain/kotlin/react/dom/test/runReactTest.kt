@@ -13,7 +13,7 @@ import web.html.HTMLElement
 fun runReactTest(
     testBody: suspend TestScope.(container: HTMLElement) -> Unit,
 ): TestResult {
-    globalThis.IS_REACT_ACT_ENVIRONMENT = true
+    globalThis["IS_REACT_ACT_ENVIRONMENT"] = true
 
     return runTest {
         val container = document.createElement(div)

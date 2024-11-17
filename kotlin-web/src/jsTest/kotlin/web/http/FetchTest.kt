@@ -13,13 +13,15 @@ import web.events.addEventHandler
 import web.events.addHandler
 import kotlin.test.*
 
+private const val FETCH = "fetch"
+
 class FetchTest {
     private val request = Request("localhost:8080")
-    private val originalFetch = globalThis.fetch
+    private val originalFetch = globalThis[FETCH]
 
     @AfterTest
     fun tearDown() {
-        globalThis.fetch = originalFetch
+        globalThis[FETCH] = originalFetch
     }
 
     @Test
@@ -27,7 +29,7 @@ class FetchTest {
         val expectedResult = 42
         val response = Response.json(expectedResult)
 
-        globalThis.fetch = { Promise.resolve(response) }
+        globalThis[FETCH] = { Promise.resolve(response) }
 
         val actualResult = fetch(request).json() as Int
 
@@ -36,7 +38,7 @@ class FetchTest {
 
     @Test
     fun should_throw_exception_on_error() = runTest {
-        globalThis.fetch = { Promise.reject(IllegalStateException("Test error")) }
+        globalThis[FETCH] = { Promise.reject(IllegalStateException("Test error")) }
 
         assertFailsWith<IllegalStateException> {
             fetch(request)
@@ -49,7 +51,7 @@ class FetchTest {
     fun should_be_canceled_on_parent_job_cancellation() = runTest {
         var isCanceled = false
 
-        globalThis.fetch = { request: Request ->
+        globalThis[FETCH] = { request: Request ->
             request.signal.abortEvent.addHandler {
                 isCanceled = true
             }
@@ -69,7 +71,7 @@ class FetchTest {
     fun emulate_real_fetch_which_throws_error_on_cancellation() = runTest {
         var isCanceled = false
 
-        globalThis.fetch = { request: Request ->
+        globalThis[FETCH] = { request: Request ->
             Promise<Nothing> { _, reject ->
                 request.signal.abortEvent.addHandler {
                     isCanceled = true
@@ -94,7 +96,7 @@ class FetchTest {
     fun should_be_canceled_on_parent_job_error() = runTest {
         var isCanceled = false
 
-        globalThis.fetch = { request: Request ->
+        globalThis[FETCH] = { request: Request ->
             request.signal.addEventHandler(Event.ABORT) {
                 isCanceled = true
             }

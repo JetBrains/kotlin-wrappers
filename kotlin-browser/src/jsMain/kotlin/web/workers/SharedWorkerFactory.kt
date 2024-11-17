@@ -16,7 +16,7 @@ sealed external interface SharedWorkerFactory {
 fun SharedWorkerFactory(
     block: suspend CoroutineScope.(self: SharedWorkerGlobalScope) -> Unit,
 ): SharedWorkerFactory {
-    val self = if (globalThis.SharedWorkerGlobalScope) {
+    val self = if (globalThis["SharedWorkerGlobalScope"] != null) {
         globalThis as? SharedWorkerGlobalScope
     } else null
 

@@ -40,7 +40,7 @@ internal class CSSOMSheet(
             return
         }
         setTimeout({
-            if (!!globalThis.requestIdleCallback && removeMode == RemoveMode.OnBrowserIdle) {
+            if (globalThis["requestIdleCallback"] != null && removeMode == RemoveMode.OnBrowserIdle) {
                 requestIdleCallback({
                     isCleanRequested = false
                     clean()
