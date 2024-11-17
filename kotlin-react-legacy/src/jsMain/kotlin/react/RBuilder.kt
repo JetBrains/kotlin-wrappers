@@ -109,7 +109,7 @@ open class RBuilderSingle : RBuilderImpl()
 inline fun <T : RBuilder> buildElement(rBuilder: T, handler: T.() -> Unit): ReactElement<*> =
     rBuilder.apply(handler)
         .childList.first()
-        .unsafeCast<ReactElement<*>>()
+        .unsafeCastToElement<Props>()
 
 inline fun buildElement(handler: Render): ReactElement<*> =
     buildElement(RBuilder(), handler)

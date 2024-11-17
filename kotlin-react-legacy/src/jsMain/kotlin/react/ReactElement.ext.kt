@@ -9,8 +9,8 @@ fun <P : Props> createElement(
 
     return when {
         nodes.size == 0 -> null
-        nodes.size == 1 && isValidElement(nodes.first()) -> nodes.first().unsafeCast<ReactElement<P>>()
-        else -> createElement(Fragment, children = nodes.toTypedArray()).unsafeCast<ReactElement<P>>()
+        nodes.size == 1 && isValidElement(nodes.first()) -> nodes.first().unsafeCastToElement()
+        else -> createElement(Fragment, children = nodes.toTypedArray()).unsafeCastToElement()
     }
 }
 
