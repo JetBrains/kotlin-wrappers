@@ -89,7 +89,7 @@ sealed external interface ClassName
 inline fun ClassName(
     value: String,
 ): ClassName =
-    value.unsafeCast<ClassName>()
+    unsafeCast(value)
 
 val value = ClassName("my-class")
 ```
