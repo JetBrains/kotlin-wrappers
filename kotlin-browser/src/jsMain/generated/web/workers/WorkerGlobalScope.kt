@@ -2,6 +2,7 @@
 
 package web.workers
 
+import js.globals.GlobalScope
 import web.csp.SecurityPolicyViolationEvent
 import web.errors.ErrorEvent
 import web.events.*
@@ -16,6 +17,7 @@ import web.promise.PromiseRejectionEvent
 open external class WorkerGlobalScope
 private constructor() :
     EventTarget,
+    GlobalScope,
     FontFaceSource {
     /**
      * Returns workerGlobal's WorkerLocation object.

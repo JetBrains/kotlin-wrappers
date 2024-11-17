@@ -4,6 +4,7 @@ package web.window
 
 import js.array.ArrayLike
 import js.array.ReadonlyArray
+import js.globals.GlobalScope
 import js.transferable.Transferable
 import web.animations.AnimationEvent
 import web.clipboard.ClipboardEvent
@@ -42,6 +43,7 @@ import web.viewtransition.PageSwapEvent
 external class Window
 private constructor() :
     EventTarget,
+    GlobalScope,
     GlobalEventHandlers,
     WindowEventHandlers,
     MessageEventSource {
