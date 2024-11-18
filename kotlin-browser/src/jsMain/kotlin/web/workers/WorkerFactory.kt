@@ -1,11 +1,6 @@
 package web.workers
 
-import js.coroutines.internal.IsolatedCoroutineScope
-import js.globals.globalThis
-import js.reflect.unsafeCast
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.CoroutineStart
-import kotlinx.coroutines.launch
 import seskar.js.JsNative
 
 sealed external interface WorkerFactory<T : AbstractWorker> {
@@ -15,22 +10,9 @@ sealed external interface WorkerFactory<T : AbstractWorker> {
 
 fun WorkerFactory(
     block: suspend CoroutineScope.(self: DedicatedWorkerGlobalScope) -> Unit,
-): WorkerFactory<Worker> {
-    val self = if (globalThis["DedicatedWorkerGlobalScope"] != null) {
-        globalThis as? DedicatedWorkerGlobalScope
-    } else null
-
-    requireNotNull(self) {
-        "Invalid worker context! `DedicatedWorkerGlobalScope` as `self` is required!"
-    }
-
-    IsolatedCoroutineScope()
-        .launch(
-            start = CoroutineStart.UNDISPATCHED,
-            block = { block(self) },
-        )
-
-    return unsafeCast {
-        error("Missed plugin integration! Worker factory shouldn't be called directly!")
-    }
-}
+): WorkerFactory<Worker> =
+    createWorkerFactory(
+        workerName = "Worker",
+        scopeClassName = "DedicatedWorkerGlobalScope",
+        block = block,
+    )
