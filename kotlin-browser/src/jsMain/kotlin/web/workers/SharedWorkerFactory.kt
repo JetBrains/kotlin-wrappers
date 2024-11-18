@@ -9,7 +9,7 @@ import kotlinx.coroutines.launch
 
 fun SharedWorkerFactory(
     block: suspend CoroutineScope.(self: SharedWorkerGlobalScope) -> Unit,
-): WorkerFactory<Worker> {
+): WorkerFactory<SharedWorker> {
     val self = if (globalThis["SharedWorkerGlobalScope"] != null) {
         globalThis as? SharedWorkerGlobalScope
     } else null
