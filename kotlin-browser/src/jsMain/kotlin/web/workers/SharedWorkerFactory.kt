@@ -6,16 +6,10 @@ import js.reflect.unsafeCast
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.launch
-import seskar.js.JsNative
-
-sealed external interface SharedWorkerFactory {
-    @JsNative
-    operator fun invoke(): SharedWorker
-}
 
 fun SharedWorkerFactory(
     block: suspend CoroutineScope.(self: SharedWorkerGlobalScope) -> Unit,
-): SharedWorkerFactory {
+): WorkerFactory<Worker> {
     val self = if (globalThis["SharedWorkerGlobalScope"] != null) {
         globalThis as? SharedWorkerGlobalScope
     } else null

@@ -8,14 +8,14 @@ import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.launch
 import seskar.js.JsNative
 
-sealed external interface WorkerFactory {
+sealed external interface WorkerFactory<T : AbstractWorker> {
     @JsNative
-    operator fun invoke(): Worker
+    operator fun invoke(): T
 }
 
 fun WorkerFactory(
     block: suspend CoroutineScope.(self: DedicatedWorkerGlobalScope) -> Unit,
-): WorkerFactory {
+): WorkerFactory<Worker> {
     val self = if (globalThis["DedicatedWorkerGlobalScope"] != null) {
         globalThis as? DedicatedWorkerGlobalScope
     } else null
