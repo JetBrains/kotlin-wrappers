@@ -8,6 +8,7 @@ import web.events.Event
 import web.events.EventInstance
 import web.events.JsEvent
 import web.gl.TexImageSource
+import web.gpu.GPUCopyExternalImageSource
 import web.media.streams.MediaStream
 import web.rendering.RenderingContext
 import web.rendering.RenderingContextId
@@ -21,7 +22,8 @@ open external class HTMLCanvasElement
 protected constructor() :
     HTMLElement,
     CanvasImageSource,
-    TexImageSource {
+    TexImageSource,
+    GPUCopyExternalImageSource {
     /**
      * Gets or sets the height of a canvas element on a document.
      *

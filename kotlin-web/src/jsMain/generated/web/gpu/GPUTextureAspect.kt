@@ -9,10 +9,10 @@ sealed external interface GPUTextureAspect {
         @JsValue("all")
         val all: GPUTextureAspect
 
-        @JsValue("stencil-only")
-        val stencilOnly: GPUTextureAspect
-
         @JsValue("depth-only")
         val depthOnly: GPUTextureAspect
+
+        @JsValue("stencil-only")
+        val stencilOnly: GPUTextureAspect
     }
 }

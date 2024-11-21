@@ -6,13 +6,13 @@ import seskar.js.JsValue
 
 sealed external interface GPUBufferBindingType {
     companion object {
-        @JsValue("uniform")
-        val uniform: GPUBufferBindingType
+        @JsValue("read-only-storage")
+        val readOnlyStorage: GPUBufferBindingType
 
         @JsValue("storage")
         val storage: GPUBufferBindingType
 
-        @JsValue("read-only-storage")
-        val readOnlyStorage: GPUBufferBindingType
+        @JsValue("uniform")
+        val uniform: GPUBufferBindingType
     }
 }

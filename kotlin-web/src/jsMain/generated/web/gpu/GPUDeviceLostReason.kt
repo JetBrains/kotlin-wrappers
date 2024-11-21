@@ -8,5 +8,8 @@ sealed external interface GPUDeviceLostReason {
     companion object {
         @JsValue("destroyed")
         val destroyed: GPUDeviceLostReason
+
+        @JsValue("unknown")
+        val unknown: GPUDeviceLostReason
     }
 }

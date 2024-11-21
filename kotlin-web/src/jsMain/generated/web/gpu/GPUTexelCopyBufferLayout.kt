@@ -5,8 +5,8 @@ package web.gpu
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-external interface GPUImageDataLayout {
-    val offset: GPUSize64?
+external interface GPUTexelCopyBufferLayout {
     val bytesPerRow: GPUSize32?
+    val offset: GPUSize64?
     val rowsPerImage: GPUSize32?
 }

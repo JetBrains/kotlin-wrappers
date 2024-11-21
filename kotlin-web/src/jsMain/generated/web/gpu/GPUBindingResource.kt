@@ -7,6 +7,7 @@ package web.gpu
  * - `GPUSampler`
  * - `GPUTextureView`
  * - `GPUBufferBinding`
+ * - `GPUExternalTexture`
  */
 @JsExternalInheritorsOnly
 sealed external interface GPUBindingResource

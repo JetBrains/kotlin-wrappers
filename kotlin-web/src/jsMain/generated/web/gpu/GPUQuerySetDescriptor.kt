@@ -7,6 +7,6 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface GPUQuerySetDescriptor :
     GPUObjectDescriptorBase {
-    val type: GPUQueryType
     val count: GPUSize32
+    val type: GPUQueryType
 }

@@ -2,4 +2,4 @@
 
 package web.gpu
 
-typealias GPUExtent3D = GPUExtent3DDict /* number[] */
+typealias GPUExtent3D = GPUExtent3DDict /* GPUIntegerCoordinate[] */

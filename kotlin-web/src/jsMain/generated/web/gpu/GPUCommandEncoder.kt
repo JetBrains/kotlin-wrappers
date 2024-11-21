@@ -2,12 +2,37 @@
 
 package web.gpu
 
+/**
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCommandEncoder)
+ */
 external class GPUCommandEncoder
 private constructor() :
+    GPUDebugCommandsMixin,
     GPUObjectBase {
-    override var label: String
-    fun beginRenderPass(descriptor: GPURenderPassDescriptor): GPURenderPassEncoder
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCommandEncoder/beginComputePass)
+     */
     fun beginComputePass(descriptor: GPUComputePassDescriptor = definedExternally): GPUComputePassEncoder
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCommandEncoder/beginRenderPass)
+     */
+    fun beginRenderPass(descriptor: GPURenderPassDescriptor): GPURenderPassEncoder
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCommandEncoder/clearBuffer)
+     */
+    fun clearBuffer(
+        buffer: GPUBuffer,
+        offset: GPUSize64 = definedExternally,
+        size: GPUSize64 = definedExternally,
+    )
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCommandEncoder/copyBufferToBuffer)
+     */
     fun copyBufferToBuffer(
         source: GPUBuffer,
         sourceOffset: GPUSize64,
@@ -16,38 +41,41 @@ private constructor() :
         size: GPUSize64,
     )
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCommandEncoder/copyBufferToTexture)
+     */
     fun copyBufferToTexture(
-        source: GPUImageCopyBuffer,
-        destination: GPUImageCopyTexture,
+        source: GPUTexelCopyBufferInfo,
+        destination: GPUTexelCopyTextureInfo,
         copySize: GPUExtent3D,
     )
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCommandEncoder/copyTextureToBuffer)
+     */
     fun copyTextureToBuffer(
-        source: GPUImageCopyTexture,
-        destination: GPUImageCopyBuffer,
+        source: GPUTexelCopyTextureInfo,
+        destination: GPUTexelCopyBufferInfo,
         copySize: GPUExtent3D,
     )
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCommandEncoder/copyTextureToTexture)
+     */
     fun copyTextureToTexture(
-        source: GPUImageCopyTexture,
-        destination: GPUImageCopyTexture,
+        source: GPUTexelCopyTextureInfo,
+        destination: GPUTexelCopyTextureInfo,
         copySize: GPUExtent3D,
     )
 
-    fun clearBuffer(
-        destination: GPUBuffer,
-        destinationOffset: GPUSize64 = definedExternally,
-        size: GPUSize64 = definedExternally,
-    )
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCommandEncoder/finish)
+     */
+    fun finish(descriptor: GPUCommandBufferDescriptor = definedExternally): GPUCommandBuffer
 
-    fun pushDebugGroup(groupLabel: String)
-    fun popDebugGroup()
-    fun insertDebugMarker(markerLabel: String)
-    fun writeTimestamp(
-        querySet: GPUQuerySet,
-        queryIndex: Int,
-    )
-
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCommandEncoder/resolveQuerySet)
+     */
     fun resolveQuerySet(
         querySet: GPUQuerySet,
         firstQuery: GPUSize32,
@@ -55,6 +83,4 @@ private constructor() :
         destination: GPUBuffer,
         destinationOffset: GPUSize64,
     )
-
-    fun finish(descriptor: GPUCommandBufferDescriptor = definedExternally): GPUCommandBuffer
 }

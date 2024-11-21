@@ -10,11 +10,11 @@ external interface GPUSamplerDescriptor :
     val addressModeU: GPUAddressMode?
     val addressModeV: GPUAddressMode?
     val addressModeW: GPUAddressMode?
+    val compare: GPUCompareFunction?
+    val lodMaxClamp: Float?
+    val lodMinClamp: Float?
     val magFilter: GPUFilterMode?
+    val maxAnisotropy: Short?
     val minFilter: GPUFilterMode?
     val mipmapFilter: GPUMipmapFilterMode?
-    val lodMinClamp: Float?
-    val lodMaxClamp: Float?
-    val compare: GPUCompareFunction?
-    val maxAnisotropy: Short?
 }

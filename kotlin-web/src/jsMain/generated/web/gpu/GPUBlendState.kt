@@ -6,6 +6,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface GPUBlendState {
-    val color: GPUBlendComponent
     val alpha: GPUBlendComponent
+    val color: GPUBlendComponent
 }

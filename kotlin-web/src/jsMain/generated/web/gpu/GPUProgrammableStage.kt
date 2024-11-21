@@ -7,7 +7,7 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface GPUProgrammableStage {
-    val module: GPUShaderModule
+    val constants: ReadonlyRecord<String, GPUPipelineConstantValue>?
     val entryPoint: String?
-    val constants: ReadonlyRecord<String, Double>?
+    val module: GPUShaderModule
 }

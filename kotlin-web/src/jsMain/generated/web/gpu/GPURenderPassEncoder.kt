@@ -3,71 +3,61 @@
 package web.gpu
 
 import js.array.ReadonlyArray
-import js.typedarrays.Uint32Array
 
+/**
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPURenderPassEncoder)
+ */
 external class GPURenderPassEncoder
 private constructor() :
+    GPUBindingCommandsMixin,
+    GPUDebugCommandsMixin,
     GPUObjectBase,
-    GPUProgrammablePassEncoder,
-    GPURenderEncoderBase {
-    override var label: String
-    override fun setBindGroup(
-        index: Int,
-        bindGroup: GPUBindGroup,
-        dynamicOffsets: ReadonlyArray<Double>,
+    GPURenderCommandsMixin {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPURenderPassEncoder/beginOcclusionQuery)
+     */
+    fun beginOcclusionQuery(queryIndex: GPUSize32)
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPURenderPassEncoder/end)
+     */
+    fun end()
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPURenderPassEncoder/endOcclusionQuery)
+     */
+    fun endOcclusionQuery()
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPURenderPassEncoder/executeBundles)
+     */
+    fun executeBundles(bundles: ReadonlyArray<GPURenderBundle>)
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPURenderPassEncoder/setBlendConstant)
+     */
+    fun setBlendConstant(color: GPUColor)
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPURenderPassEncoder/setScissorRect)
+     */
+    fun setScissorRect(
+        x: GPUIntegerCoordinate,
+        y: GPUIntegerCoordinate,
+        width: GPUIntegerCoordinate,
+        height: GPUIntegerCoordinate,
     )
 
-    override fun setBindGroup(
-        index: Int,
-        bindGroup: GPUBindGroup,
-        dynamicOffsetsData: Uint32Array<*>,
-        dynamicOffsetsDataStart: Int,
-        dynamicOffsetsDataLength: Int,
-    )
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPURenderPassEncoder/setStencilReference)
+     */
+    fun setStencilReference(reference: GPUStencilValue)
 
-    override fun pushDebugGroup(groupLabel: String)
-    override fun popDebugGroup()
-    override fun insertDebugMarker(markerLabel: String)
-    override fun setPipeline(pipeline: GPURenderPipeline)
-    override fun setIndexBuffer(
-        buffer: GPUBuffer,
-        indexFormat: GPUIndexFormat,
-        offset: Int,
-        size: Int,
-    )
-
-    override fun setVertexBuffer(
-        slot: Int,
-        buffer: GPUBuffer,
-        offset: Int,
-        size: Int,
-    )
-
-    override fun draw(
-        vertexCount: Int,
-        instanceCount: Int,
-        firstVertex: Int,
-        firstInstance: Int,
-    )
-
-    override fun drawIndexed(
-        indexCount: Int,
-        instanceCount: Int,
-        firstIndex: Int,
-        baseVertex: Int,
-        firstInstance: Int,
-    )
-
-    override fun drawIndirect(
-        indirectBuffer: GPUBuffer,
-        indirectOffset: Int,
-    )
-
-    override fun drawIndexedIndirect(
-        indirectBuffer: GPUBuffer,
-        indirectOffset: Int,
-    )
-
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPURenderPassEncoder/setViewport)
+     */
     fun setViewport(
         x: GPUIntegerCoordinate,
         y: GPUIntegerCoordinate,
@@ -76,18 +66,4 @@ private constructor() :
         minDepth: Float,
         maxDepth: Float,
     )
-
-    fun setScissorRect(
-        x: GPUIntegerCoordinate,
-        y: GPUIntegerCoordinate,
-        width: GPUIntegerCoordinate,
-        height: GPUIntegerCoordinate,
-    )
-
-    fun setBlendConstant(color: GPUColor)
-    fun setStencilReference(reference: GPUStencilValue)
-    fun beginOcclusionQuery(queryIndex: GPUSize32)
-    fun endOcclusionQuery()
-    fun executeBundles(bundles: ReadonlyArray<GPURenderBundle>)
-    fun end()
 }

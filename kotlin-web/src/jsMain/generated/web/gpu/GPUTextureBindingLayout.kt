@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface GPUTextureBindingLayout {
+    val multisampled: Boolean?
     val sampleType: GPUTextureSampleType?
     val viewDimension: GPUTextureViewDimension?
-    val multisampled: Boolean?
 }

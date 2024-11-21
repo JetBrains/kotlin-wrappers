@@ -6,13 +6,13 @@ import seskar.js.JsValue
 
 sealed external interface GPUBufferMapState {
     companion object {
-        @JsValue("unmapped")
-        val unmapped: GPUBufferMapState
+        @JsValue("mapped")
+        val mapped: GPUBufferMapState
 
         @JsValue("pending")
         val pending: GPUBufferMapState
 
-        @JsValue("mapped")
-        val mapped: GPUBufferMapState
+        @JsValue("unmapped")
+        val unmapped: GPUBufferMapState
     }
 }

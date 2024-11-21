@@ -8,11 +8,11 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface GPUTextureDescriptor :
     GPUObjectDescriptorBase {
-    val size: GPUExtent3D
-    val mipLevelCount: GPUIntegerCoordinate?
-    val sampleCount: GPUSize32?
     val dimension: GPUTextureDimension?
     val format: GPUTextureFormat
-    val usage: GPUTextureUsage
+    val mipLevelCount: GPUIntegerCoordinate?
+    val sampleCount: GPUSize32?
+    val size: GPUExtent3D
+    val usage: GPUTextureUsageFlags
     val viewFormats: ReadonlyArray<GPUTextureFormat>?
 }

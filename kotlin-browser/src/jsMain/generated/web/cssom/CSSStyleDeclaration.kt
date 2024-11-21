@@ -791,7 +791,15 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/float)
      */
     var float: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flood-color)
+     */
     var floodColor: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/flood-opacity)
+     */
     var floodOpacity: String
 
     /**
@@ -1088,6 +1096,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/letter-spacing)
      */
     var letterSpacing: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/lighting-color)
+     */
     var lightingColor: String
 
     /**

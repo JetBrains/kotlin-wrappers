@@ -6,43 +6,43 @@ import seskar.js.JsValue
 
 sealed external interface GPUBlendFactor {
     companion object {
-        @JsValue("zero")
-        val zero: GPUBlendFactor
-
-        @JsValue("one")
-        val one: GPUBlendFactor
-
-        @JsValue("src")
-        val src: GPUBlendFactor
-
-        @JsValue("one-minus-src")
-        val oneMinusSrc: GPUBlendFactor
-
-        @JsValue("src-alpha")
-        val srcAlpha: GPUBlendFactor
-
-        @JsValue("one-minus-src-alpha")
-        val oneMinusSrcAlpha: GPUBlendFactor
+        @JsValue("constant")
+        val constant: GPUBlendFactor
 
         @JsValue("dst")
         val dst: GPUBlendFactor
 
-        @JsValue("one-minus-dst")
-        val oneMinusDst: GPUBlendFactor
-
         @JsValue("dst-alpha")
         val dstAlpha: GPUBlendFactor
+
+        @JsValue("one")
+        val one: GPUBlendFactor
+
+        @JsValue("one-minus-constant")
+        val oneMinusConstant: GPUBlendFactor
+
+        @JsValue("one-minus-dst")
+        val oneMinusDst: GPUBlendFactor
 
         @JsValue("one-minus-dst-alpha")
         val oneMinusDstAlpha: GPUBlendFactor
 
+        @JsValue("one-minus-src")
+        val oneMinusSrc: GPUBlendFactor
+
+        @JsValue("one-minus-src-alpha")
+        val oneMinusSrcAlpha: GPUBlendFactor
+
+        @JsValue("src")
+        val src: GPUBlendFactor
+
+        @JsValue("src-alpha")
+        val srcAlpha: GPUBlendFactor
+
         @JsValue("src-alpha-saturated")
         val srcAlphaSaturated: GPUBlendFactor
 
-        @JsValue("constant")
-        val constant: GPUBlendFactor
-
-        @JsValue("one-minus-constant")
-        val oneMinusConstant: GPUBlendFactor
+        @JsValue("zero")
+        val zero: GPUBlendFactor
     }
 }

@@ -7,7 +7,7 @@
 package web.audio
 
 import js.array.ReadonlyArray
-import js.objects.Record
+import js.objects.ReadonlyRecord
 import js.typedarrays.Float32Array
 
 external interface AudioWorkletProcessorImpl :
@@ -15,6 +15,6 @@ external interface AudioWorkletProcessorImpl :
     fun process(
         inputs: ReadonlyArray<ReadonlyArray<Float32Array<*>>>,
         outputs: ReadonlyArray<ReadonlyArray<Float32Array<*>>>,
-        parameters: Record<String, Float32Array<*>>,
+        parameters: ReadonlyRecord<String, Float32Array<*>>,
     ): Boolean
 }

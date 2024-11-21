@@ -10,6 +10,7 @@ import web.blob.Blob
 import web.dom.*
 import web.events.*
 import web.gl.TexImageSource
+import web.gpu.GPUCopyExternalImageSource
 import web.html.*
 import web.images.ImageBitmap
 import web.rendering.OffscreenRenderingContext
@@ -26,6 +27,7 @@ open external class OffscreenCanvas(
 ) : EventTarget,
     CanvasImageSource,
     TexImageSource,
+    GPUCopyExternalImageSource,
     Transferable {
     /**
      * These attributes return the dimensions of the OffscreenCanvas object's bitmap.

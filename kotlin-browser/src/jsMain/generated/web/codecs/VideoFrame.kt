@@ -11,6 +11,7 @@ import seskar.js.JsAsync
 import web.canvas.CanvasImageSource
 import web.geometry.DOMRectReadOnly
 import web.gl.TexImageSource
+import web.gpu.GPUCopyExternalImageSource
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame)
@@ -20,6 +21,7 @@ open external class VideoFrame(
     init: VideoFrameInit = definedExternally,
 ) : CanvasImageSource,
     TexImageSource,
+    GPUCopyExternalImageSource,
     Transferable {
     constructor(
         data: AllowSharedBufferSource,

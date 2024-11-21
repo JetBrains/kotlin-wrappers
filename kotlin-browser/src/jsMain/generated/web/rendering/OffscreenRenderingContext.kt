@@ -8,6 +8,7 @@ package web.rendering
  * - `ImageBitmapRenderingContext`
  * - `WebGLRenderingContext`
  * - `WebGL2RenderingContext`
+ * - `GPUCanvasContext`
  */
 @JsExternalInheritorsOnly
 external interface OffscreenRenderingContext

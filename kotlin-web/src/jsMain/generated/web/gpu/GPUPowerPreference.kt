@@ -6,10 +6,10 @@ import seskar.js.JsValue
 
 sealed external interface GPUPowerPreference {
     companion object {
-        @JsValue("low-power")
-        val lowPower: GPUPowerPreference
-
         @JsValue("high-performance")
         val highPerformance: GPUPowerPreference
+
+        @JsValue("low-power")
+        val lowPower: GPUPowerPreference
     }
 }

@@ -6,10 +6,10 @@ import seskar.js.JsValue
 
 sealed external interface GPUFilterMode {
     companion object {
-        @JsValue("nearest")
-        val nearest: GPUFilterMode
-
         @JsValue("linear")
         val linear: GPUFilterMode
+
+        @JsValue("nearest")
+        val nearest: GPUFilterMode
     }
 }

@@ -2,11 +2,11 @@
 
 package web.authn
 
-import js.objects.Record
+import js.objects.ReadonlyRecord
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface AuthenticationExtensionsPRFInputs {
     val eval: AuthenticationExtensionsPRFValues?
-    val evalByCredential: Record<String, AuthenticationExtensionsPRFValues>?
+    val evalByCredential: ReadonlyRecord<String, AuthenticationExtensionsPRFValues>?
 }

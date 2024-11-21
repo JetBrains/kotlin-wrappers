@@ -6,9 +6,9 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface GPUPrimitiveState {
-    val topology: GPUPrimitiveTopology?
-    val stripIndexFormat: GPUIndexFormat?
-    val frontFace: GPUFrontFace?
     val cullMode: GPUCullMode?
+    val frontFace: GPUFrontFace?
+    val stripIndexFormat: GPUIndexFormat?
+    val topology: GPUPrimitiveTopology?
     val unclippedDepth: Boolean?
 }

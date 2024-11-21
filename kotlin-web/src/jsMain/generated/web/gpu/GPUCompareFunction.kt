@@ -6,28 +6,28 @@ import seskar.js.JsValue
 
 sealed external interface GPUCompareFunction {
     companion object {
-        @JsValue("never")
-        val never: GPUCompareFunction
-
-        @JsValue("less")
-        val less: GPUCompareFunction
+        @JsValue("always")
+        val always: GPUCompareFunction
 
         @JsValue("equal")
         val equal: GPUCompareFunction
 
-        @JsValue("less-equal")
-        val lessEqual: GPUCompareFunction
-
         @JsValue("greater")
         val greater: GPUCompareFunction
-
-        @JsValue("not-equal")
-        val notEqual: GPUCompareFunction
 
         @JsValue("greater-equal")
         val greaterEqual: GPUCompareFunction
 
-        @JsValue("always")
-        val always: GPUCompareFunction
+        @JsValue("less")
+        val less: GPUCompareFunction
+
+        @JsValue("less-equal")
+        val lessEqual: GPUCompareFunction
+
+        @JsValue("never")
+        val never: GPUCompareFunction
+
+        @JsValue("not-equal")
+        val notEqual: GPUCompareFunction
     }
 }

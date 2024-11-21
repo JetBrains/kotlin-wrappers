@@ -15,13 +15,13 @@ sealed external interface GPUTextureViewDimension {
         @JsValue("2d-array")
         val _2dArray: GPUTextureViewDimension
 
+        @JsValue("3d")
+        val _3d: GPUTextureViewDimension
+
         @JsValue("cube")
         val cube: GPUTextureViewDimension
 
         @JsValue("cube-array")
         val cubeArray: GPUTextureViewDimension
-
-        @JsValue("3d")
-        val _3d: GPUTextureViewDimension
     }
 }

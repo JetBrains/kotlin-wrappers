@@ -8,6 +8,6 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface GPUVertexBufferLayout {
     val arrayStride: GPUSize64
-    val stepMode: GPUVertexStepMode?
     val attributes: ReadonlyArray<GPUVertexAttribute>
+    val stepMode: GPUVertexStepMode?
 }

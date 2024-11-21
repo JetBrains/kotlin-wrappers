@@ -2,6 +2,11 @@
 
 package web.gpu
 
-external class GPUInternalError(
+/**
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUInternalError)
+ */
+open external class GPUInternalError(
     message: String,
 ) : GPUError

@@ -9,10 +9,10 @@ sealed external interface GPUCompilationMessageType {
         @JsValue("error")
         val error: GPUCompilationMessageType
 
-        @JsValue("warning")
-        val warning: GPUCompilationMessageType
-
         @JsValue("info")
         val info: GPUCompilationMessageType
+
+        @JsValue("warning")
+        val warning: GPUCompilationMessageType
     }
 }

@@ -2,42 +2,40 @@
 
 package web.gpu
 
-import js.array.ReadonlyArray
-import js.typedarrays.Uint32Array
-
+/**
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUComputePassEncoder)
+ */
 external class GPUComputePassEncoder
 private constructor() :
-    GPUObjectBase,
-    GPUProgrammablePassEncoder {
-    override var label: String
-    override fun setBindGroup(
-        index: Int,
-        bindGroup: GPUBindGroup,
-        dynamicOffsets: ReadonlyArray<Double>,
-    )
-
-    override fun setBindGroup(
-        index: Int,
-        bindGroup: GPUBindGroup,
-        dynamicOffsetsData: Uint32Array<*>,
-        dynamicOffsetsDataStart: Int,
-        dynamicOffsetsDataLength: Int,
-    )
-
-    override fun pushDebugGroup(groupLabel: String)
-    override fun popDebugGroup()
-    override fun insertDebugMarker(markerLabel: String)
-    fun setPipeline(pipeline: GPUComputePipeline)
+    GPUBindingCommandsMixin,
+    GPUDebugCommandsMixin,
+    GPUObjectBase {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUComputePassEncoder/dispatchWorkgroups)
+     */
     fun dispatchWorkgroups(
-        x: Int,
-        y: Int = definedExternally,
-        z: Int = definedExternally,
+        workgroupCountX: GPUSize32,
+        workgroupCountY: GPUSize32 = definedExternally,
+        workgroupCountZ: GPUSize32 = definedExternally,
     )
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUComputePassEncoder/dispatchWorkgroupsIndirect)
+     */
     fun dispatchWorkgroupsIndirect(
         indirectBuffer: GPUBuffer,
         indirectOffset: GPUSize64,
     )
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUComputePassEncoder/end)
+     */
     fun end()
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUComputePassEncoder/setPipeline)
+     */
+    fun setPipeline(pipeline: GPUComputePipeline)
 }

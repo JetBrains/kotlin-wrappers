@@ -39,6 +39,7 @@ private constructor() :
     NavigatorConcurrentHardware,
     NavigatorContentUtils,
     NavigatorCookies,
+    NavigatorGPU,
     NavigatorID,
     NavigatorLanguage,
     NavigatorLocks,

@@ -2,4 +2,4 @@
 
 package web.gpu
 
-sealed external interface GPUUsage
+typealias GPUSignedOffset32 = Int

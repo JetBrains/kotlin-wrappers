@@ -10,6 +10,7 @@ external interface GPURenderPassDescriptor :
     GPUObjectDescriptorBase {
     val colorAttachments: ReadonlyArray<GPURenderPassColorAttachment?>
     val depthStencilAttachment: GPURenderPassDepthStencilAttachment?
+    val maxDrawCount: GPUSize64?
     val occlusionQuerySet: GPUQuerySet?
     val timestampWrites: GPURenderPassTimestampWrites?
 }

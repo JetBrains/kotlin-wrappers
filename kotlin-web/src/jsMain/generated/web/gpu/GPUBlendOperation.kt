@@ -9,16 +9,16 @@ sealed external interface GPUBlendOperation {
         @JsValue("add")
         val add: GPUBlendOperation
 
-        @JsValue("subtract")
-        val subtract: GPUBlendOperation
-
-        @JsValue("reverse-subtract")
-        val reverseSubtract: GPUBlendOperation
+        @JsValue("max")
+        val max: GPUBlendOperation
 
         @JsValue("min")
         val min: GPUBlendOperation
 
-        @JsValue("max")
-        val max: GPUBlendOperation
+        @JsValue("reverse-subtract")
+        val reverseSubtract: GPUBlendOperation
+
+        @JsValue("subtract")
+        val subtract: GPUBlendOperation
     }
 }

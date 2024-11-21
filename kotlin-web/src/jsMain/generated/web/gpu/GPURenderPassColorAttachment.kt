@@ -6,9 +6,10 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface GPURenderPassColorAttachment {
-    val view: GPUTextureView
-    val resolveTarget: GPUTextureView?
     val clearValue: GPUColor?
+    val depthSlice: GPUIntegerCoordinate?
     val loadOp: GPULoadOp
+    val resolveTarget: GPUTextureView?
     val storeOp: GPUStoreOp
+    val view: GPUTextureView
 }

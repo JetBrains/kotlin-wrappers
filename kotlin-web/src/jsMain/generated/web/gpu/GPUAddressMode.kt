@@ -9,10 +9,10 @@ sealed external interface GPUAddressMode {
         @JsValue("clamp-to-edge")
         val clampToEdge: GPUAddressMode
 
-        @JsValue("repeat")
-        val repeat: GPUAddressMode
-
         @JsValue("mirror-repeat")
         val mirrorRepeat: GPUAddressMode
+
+        @JsValue("repeat")
+        val repeat: GPUAddressMode
     }
 }

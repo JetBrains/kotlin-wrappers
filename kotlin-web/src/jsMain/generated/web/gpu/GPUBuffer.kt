@@ -7,32 +7,60 @@ import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
 
+/**
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUBuffer)
+ */
 external class GPUBuffer
 private constructor() :
     GPUObjectBase {
-    override var label: String
-    val size: GPUSize64Out
-    val usage: GPUUsage
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUBuffer/mapState)
+     */
     val mapState: GPUBufferMapState
 
-    @JsAsync
-    suspend fun map(
-        mode: GPUMapMode,
-        offset: GPUSize64 = definedExternally,
-        size: GPUSize64 = definedExternally,
-    )
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUBuffer/size)
+     */
+    val size: GPUSize64Out
 
-    fun mapAsync(
-        mode: GPUMapMode,
-        offset: GPUSize64 = definedExternally,
-        size: GPUSize64 = definedExternally,
-    ): Promise<Void>
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUBuffer/usage)
+     */
+    val usage: GPUFlagsConstant
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUBuffer/destroy)
+     */
+    fun destroy()
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUBuffer/getMappedRange)
+     */
     fun getMappedRange(
         offset: GPUSize64 = definedExternally,
         size: GPUSize64 = definedExternally,
     ): ArrayBuffer
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUBuffer/mapAsync)
+     */
+    @JsAsync
+    suspend fun map(
+        mode: GPUMapModeFlags,
+        offset: GPUSize64 = definedExternally,
+        size: GPUSize64 = definedExternally,
+    )
+
+    fun mapAsync(
+        mode: GPUMapModeFlags,
+        offset: GPUSize64 = definedExternally,
+        size: GPUSize64 = definedExternally,
+    ): Promise<Void>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUBuffer/unmap)
+     */
     fun unmap()
-    fun destroy()
 }

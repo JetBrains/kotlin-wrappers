@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface GPUMultisampleState {
+    val alphaToCoverageEnabled: Boolean?
     val count: GPUSize32?
     val mask: GPUSampleMask?
-    val alphaToCoverageEnabled: Boolean?
 }

@@ -6,10 +6,10 @@ import seskar.js.JsValue
 
 sealed external interface GPUStoreOp {
     companion object {
-        @JsValue("store")
-        val store: GPUStoreOp
-
         @JsValue("discard")
         val discard: GPUStoreOp
+
+        @JsValue("store")
+        val store: GPUStoreOp
     }
 }

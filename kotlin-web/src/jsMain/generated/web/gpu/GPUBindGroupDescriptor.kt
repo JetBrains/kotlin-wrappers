@@ -8,6 +8,6 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface GPUBindGroupDescriptor :
     GPUObjectDescriptorBase {
-    val layout: GPUBindGroupLayout
     val entries: ReadonlyArray<GPUBindGroupEntry>
+    val layout: GPUBindGroupLayout
 }

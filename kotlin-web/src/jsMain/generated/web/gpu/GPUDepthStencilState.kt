@@ -6,14 +6,14 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface GPUDepthStencilState {
+    val depthBias: GPUDepthBias?
+    val depthBiasClamp: Float?
+    val depthBiasSlopeScale: Float?
+    val depthCompare: GPUCompareFunction?
+    val depthWriteEnabled: Boolean?
     val format: GPUTextureFormat
-    val depthWriteEnabled: Boolean
-    val depthCompare: GPUCompareFunction
-    val stencilFront: GPUStencilFaceState?
     val stencilBack: GPUStencilFaceState?
+    val stencilFront: GPUStencilFaceState?
     val stencilReadMask: GPUStencilValue?
     val stencilWriteMask: GPUStencilValue?
-    val depthBias: GPUDepthBias?
-    val depthBiasSlopeScale: Float?
-    val depthBiasClamp: Float?
 }

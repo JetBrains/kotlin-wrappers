@@ -10,6 +10,7 @@ import web.events.EventHandler
 import web.events.EventInstance
 import web.events.JsEvent
 import web.gl.TexImageSource
+import web.gpu.GPUCopyExternalImageSource
 import web.pip.PictureInPictureEvent
 import web.pip.PictureInPictureWindow
 
@@ -22,7 +23,8 @@ open external class HTMLVideoElement
 protected constructor() :
     HTMLMediaElement,
     CanvasImageSource,
-    TexImageSource {
+    TexImageSource,
+    GPUCopyExternalImageSource {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/disablePictureInPicture)
      */

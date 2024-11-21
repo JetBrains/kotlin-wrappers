@@ -6,10 +6,10 @@ import seskar.js.JsValue
 
 sealed external interface GPUVertexStepMode {
     companion object {
-        @JsValue("vertex")
-        val vertex: GPUVertexStepMode
-
         @JsValue("instance")
         val instance: GPUVertexStepMode
+
+        @JsValue("vertex")
+        val vertex: GPUVertexStepMode
     }
 }

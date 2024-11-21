@@ -7,6 +7,7 @@ import js.promise.Promise
 import seskar.js.JsAsync
 import web.dom.HTMLOrSVGImageElement
 import web.gl.TexImageSource
+import web.gpu.GPUCopyExternalImageSource
 import web.http.CrossOrigin
 import web.http.FetchPriority
 import web.http.ReferrerPolicy
@@ -20,7 +21,8 @@ open external class HTMLImageElement
 protected constructor() :
     HTMLElement,
     TexImageSource,
-    HTMLOrSVGImageElement {
+    HTMLOrSVGImageElement,
+    GPUCopyExternalImageSource {
     /**
      * Sets or retrieves a text alternative to the graphic.
      *

@@ -5,7 +5,6 @@ package web.gpu
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-external interface GPUImageCopyBuffer :
-    GPUImageDataLayout {
-    val buffer: GPUBuffer
+external interface GPUCanvasToneMapping {
+    val mode: GPUCanvasToneMappingMode?
 }
