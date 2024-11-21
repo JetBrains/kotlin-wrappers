@@ -5,7 +5,7 @@ package web.audio
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
-import web.errors.ErrorEvent
+import web.events.Event
 import web.events.EventInstance
 import web.events.JsEvent
 import web.html.HTMLMediaElement
@@ -80,5 +80,5 @@ open external class AudioContext(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext/error_event)
      */
     @JsEvent("error")
-    val errorEvent: EventInstance<ErrorEvent, AudioContext /* this */, AudioContext /* this */>
+    val errorEvent: EventInstance<Event, AudioContext /* this */, AudioContext /* this */>
 }
