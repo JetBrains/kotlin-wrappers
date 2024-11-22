@@ -50,6 +50,10 @@ open external class DOMRectReadOnly(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/y)
      */
     open val y: Double
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/toJSON)
+     */
     fun toJSON(): Any
 
     companion object {

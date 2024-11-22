@@ -17,6 +17,8 @@ protected constructor() :
     HTMLHyperlinkElementUtils {
     /**
      * Sets or retrieves a text alternative to the graphic.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAreaElement/alt)
      */
     var alt: String
 

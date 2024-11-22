@@ -18,9 +18,24 @@ open external class DOMQuad(
         p4: DOMPointReadOnly, /* DOMPointInit */
     )
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/p1)
+     */
     val p1: DOMPoint
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/p2)
+     */
     val p2: DOMPoint
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/p3)
+     */
     val p3: DOMPoint
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/p4)
+     */
     val p4: DOMPoint
 
     /**

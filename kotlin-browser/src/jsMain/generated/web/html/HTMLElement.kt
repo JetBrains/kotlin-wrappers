@@ -149,7 +149,7 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/togglePopover)
      */
-    fun togglePopover(force: Boolean = definedExternally): Boolean
+    fun togglePopover(options: Boolean = definedExternally): Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/animationcancel_event)
