@@ -1,14 +1,8 @@
-@file:Suppress(
-    "NOTHING_TO_INLINE",
-)
-
 package react
 
-import js.import.Module
+import kotlinx.js.JsPlainObject
 
-typealias ComponentModule<P> = Module<ComponentType<P>>
-
-inline fun <P : Props> ComponentModule(
-    default: ComponentType<P>,
-): ComponentModule<P> =
-    Module(default)
+@JsPlainObject
+external interface ComponentModule<in P : Props> {
+    val default: ComponentType<P>
+}
