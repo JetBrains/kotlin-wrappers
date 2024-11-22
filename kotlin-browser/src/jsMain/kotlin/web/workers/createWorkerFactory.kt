@@ -1,12 +1,11 @@
 package web.workers
 
 import js.coroutines.internal.IsolatedCoroutineScope
-import js.globals.globalThis
 import js.reflect.unsafeCast
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.launch
-import kotlin.reflect.cast
+import web.globals.internal.getGlobalScope
 
 internal fun <T : AbstractWorker, S : WorkerGlobalScope> createWorkerFactory(
     workerName: String,
@@ -24,14 +23,4 @@ internal fun <T : AbstractWorker, S : WorkerGlobalScope> createWorkerFactory(
     return unsafeCast {
         error("Missed plugin integration! $workerName factory shouldn't be called directly!")
     }
-}
-
-private fun <S : WorkerGlobalScope> getGlobalScope(
-    scopeClassName: String,
-): S {
-    val jsClass = globalThis[scopeClassName]
-        ?: error("Class `$scopeClassName` not found!")
-
-    val kotlinClass = unsafeCast<JsClass<S>>(jsClass).kotlin
-    return kotlinClass.cast(globalThis)
 }
