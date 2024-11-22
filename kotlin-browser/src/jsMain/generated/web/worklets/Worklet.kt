@@ -46,4 +46,16 @@ private constructor() {
         moduleURL: URL,
         options: WorkletOptions = definedExternally,
     ): Promise<Void>
+
+    @JsAsync
+    suspend fun addModule(
+        moduleURL: WorkletHandle,
+        options: WorkletOptions = definedExternally,
+    )
+
+    @JsName("addModule")
+    fun addModuleAsync(
+        moduleURL: WorkletHandle,
+        options: WorkletOptions = definedExternally,
+    ): Promise<Void>
 }

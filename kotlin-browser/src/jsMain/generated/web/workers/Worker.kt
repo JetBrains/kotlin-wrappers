@@ -24,6 +24,11 @@ open external class Worker(
         options: WorkerOptions = definedExternally,
     )
 
+    constructor(
+        scriptURL: WorkerHandle,
+        options: WorkerOptions = definedExternally,
+    )
+
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/message_event)
      */
