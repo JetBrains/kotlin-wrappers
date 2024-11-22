@@ -2,4 +2,7 @@
 
 package web.workers
 
-sealed external interface WorkerHandle
+import js.module.ModuleHandle
+
+sealed external interface WorkerHandle :
+    ModuleHandle

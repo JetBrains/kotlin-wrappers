@@ -2,4 +2,7 @@
 
 package web.worklets
 
-sealed external interface WorkletHandle
+import js.module.ModuleHandle
+
+sealed external interface WorkletHandle :
+    ModuleHandle
