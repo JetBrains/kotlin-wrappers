@@ -1,8 +1,8 @@
 // Automatically generated - do not modify!
 
-package web.audio
+package web.worklets
 
 import js.module.ModuleHandle
 
-sealed external interface AudioWorkletHandle :
+sealed external interface WorkletHandle :
     ModuleHandle
