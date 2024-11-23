@@ -23,22 +23,12 @@ open external class SharedWorker(
     )
 
     constructor(
-        scriptURL: SharedWorkerHandle,
-        options: String = definedExternally,
-    )
-
-    constructor(
         scriptURL: String,
         options: WorkerOptions,
     )
 
     constructor(
         scriptURL: URL,
-        options: WorkerOptions,
-    )
-
-    constructor(
-        scriptURL: SharedWorkerHandle,
         options: WorkerOptions,
     )
 
