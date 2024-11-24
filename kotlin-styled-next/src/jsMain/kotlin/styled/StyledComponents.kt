@@ -4,9 +4,9 @@
 
 package styled
 
-import js.core.delete
 import js.objects.Object
 import js.objects.jso
+import js.reflect.Reflect.deleteProperty
 import js.reflect.unsafeCast
 import kotlinx.css.CssBuilder
 import kotlinx.css.CssDsl
@@ -143,13 +143,14 @@ internal fun customStyled(type: Any): ElementType<StyledProps> {
         }
 
         val newProps = Object.assign(jso(), props)
-        className = listOf(props.className?.toString(), className, classes).filter { !it.isNullOrEmpty() }.joinToString(" ")
+        className =
+            listOf(props.className?.toString(), className, classes).filter { !it.isNullOrEmpty() }.joinToString(" ")
         if (className.isNotEmpty()) {
             newProps.className = web.cssom.ClassName(className)
         }
         newProps.ref = rRef
-        delete(newProps.css)
-        delete(newProps.classes)
+        deleteProperty(newProps, "css")
+        deleteProperty(newProps, "classes")
         child(createElement(unsafeCast(type), newProps))
     }
     fc.displayName = "styled${type.toString().replaceFirstChar { it.titlecase() }}"
@@ -197,7 +198,12 @@ object Styled {
             customStyled(type)
         }
 
-    fun createElement(type: Any, css: CssBuilder, props: PropsWithClassName, children: List<ReactNode>): ReactElement<*> {
+    fun createElement(
+        type: Any,
+        css: CssBuilder,
+        props: PropsWithClassName,
+        children: List<ReactNode>,
+    ): ReactElement<*> {
         val wrappedType = wrap(type)
         val styledProps = unsafeCast<StyledProps>(props)
         styledProps.css = css
