@@ -11,8 +11,8 @@
 package react
 
 import js.array.ReadonlyArray
-import js.core.delete
 import js.objects.jso
+import js.reflect.Reflect.deleteProperty
 import js.symbol.Symbol
 
 // child array
@@ -35,7 +35,7 @@ private val DEFAULT_KEY: Symbol = Symbol("@@default-key")
 
 private fun ChildrenBuilder.getDefaultKey(): Key? {
     val key: Key? = asDynamic()[DEFAULT_KEY]
-    delete(asDynamic()[DEFAULT_KEY])
+    deleteProperty(this, DEFAULT_KEY)
     return key
 }
 
