@@ -1,5 +1,6 @@
 package js.symbol.internal
 
+import js.reflect.Reflect
 import js.symbol.Symbol
 
 internal fun setOptionalSymbolValue(
@@ -9,5 +10,9 @@ internal fun setOptionalSymbolValue(
 ) {
     symbol ?: return
 
-    target.asDynamic()[symbol] = value
+    Reflect.set(
+        target = target,
+        propertyKey = symbol,
+        value = value,
+    )
 }
