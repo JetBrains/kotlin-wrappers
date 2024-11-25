@@ -6,6 +6,7 @@ package react
 
 import js.array.ReadonlyArray
 import js.reflect.unsafeCast
+import js.reflect.upcast
 
 @JsExternalInheritorsOnly
 sealed external interface ReactNode
@@ -31,7 +32,7 @@ inline fun ReactNode(
     ReactNode(source.toString())
 
 fun ReactNode.asStringOrNull(): String? =
-    asDynamic() as? String
+    upcast<Any>() as? String
 
 fun ReactNode.asElementOrNull(): ReactElement<*>? =
     if (isValidElement(this)) {
