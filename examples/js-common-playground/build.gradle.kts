@@ -18,7 +18,7 @@ kotlin {
     }
 
     wasmJs {
-        moduleName = project.name
+        moduleName = project.name + "-wasm"
 
         browser()
         nodejs()
@@ -33,22 +33,4 @@ tasks.withType<Kotlin2JsCompile>().configureEach {
     compilerOptions {
         target = "es2015"
     }
-}
-
-// WA for tests
-sequenceOf(
-    "jsBrowserTest",
-    "jsNodeTest",
-    "wasmJsBrowserTest",
-    "wasmJsNodeTest",
-).forEach { testAggregatorTask ->
-    tasks.named(testAggregatorTask) {
-        dependsOn("jsTestTestDevelopmentExecutableCompileSync")
-        dependsOn("wasmJsTestTestDevelopmentExecutableCompileSync")
-    }
-}
-
-// WA for CI
-tasks.named("jsNodeTest") {
-    enabled = false
 }
