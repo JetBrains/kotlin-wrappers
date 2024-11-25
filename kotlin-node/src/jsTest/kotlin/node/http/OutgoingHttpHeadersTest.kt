@@ -1,6 +1,7 @@
 package node.http
 
 import js.objects.jso
+import js.reflect.Reflect
 import kotlin.test.assertEquals
 
 class OutgoingHttpHeadersTest {
@@ -9,7 +10,7 @@ class OutgoingHttpHeadersTest {
             contentType = "my-content-type"
         }
 
-        assertEquals("my-content-type", headers.asDynamic()["content-type"])
+        assertEquals("my-content-type", Reflect.get(headers, "content-type"))
     }
 
     fun userAgent() {
@@ -17,6 +18,6 @@ class OutgoingHttpHeadersTest {
             userAgent = "my-user-agent"
         }
 
-        assertEquals("my-user-agent", headers.asDynamic()["user-agent"])
+        assertEquals("my-user-agent", Reflect.get(headers, "user-agent"))
     }
 }
