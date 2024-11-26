@@ -1,3 +1,8 @@
+@file:OptIn(
+    ExperimentalWasmDsl::class,
+)
+
+import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.tasks.Kotlin2JsCompile
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompilationTask
 
@@ -24,6 +29,27 @@ kotlin {
 
             JsPlatform.NODE -> {
                 nodejs()
+            }
+        }
+    }
+
+    if (project.wasmSupported) {
+        wasmJs {
+            moduleName = project.name + "-wasm"
+
+            when (project.jsPlatform) {
+                JsPlatform.WEB -> {
+                    browser()
+                    nodejs()
+                }
+
+                JsPlatform.BROWSER -> {
+                    browser()
+                }
+
+                JsPlatform.NODE -> {
+                    nodejs()
+                }
             }
         }
     }
