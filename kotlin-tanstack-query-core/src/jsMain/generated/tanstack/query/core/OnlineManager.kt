@@ -4,7 +4,7 @@
 
 package tanstack.query.core
 
-open external class OnlineManager : Subscribable<Listener> {
+open external class OnlineManager() : Subscribable<Listener> {
     override fun onSubscribe()
     override fun onUnsubscribe()
     open fun setEventListener(setup: OnlineManagerSetupFn)
