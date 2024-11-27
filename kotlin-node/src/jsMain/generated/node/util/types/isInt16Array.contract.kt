@@ -6,7 +6,7 @@ import js.typedarrays.Int16Array
 import kotlin.contracts.contract
 
 
-@Suppress("NOTHING_TO_INLINE", "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
+@Suppress("CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
 inline fun isInt16Array(value: Any?): Boolean /* object is Int16Array */ {
     contract {
         returns(true) implies (value is Int16Array<*>)

@@ -6,7 +6,7 @@ import js.generator.Generator
 import kotlin.contracts.contract
 
 
-@Suppress("NOTHING_TO_INLINE", "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
+@Suppress("CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
 inline fun isGeneratorObject(value: Any?): Boolean /* object is Generator */ {
     contract {
         returns(true) implies (value is Generator<*, *, *>)

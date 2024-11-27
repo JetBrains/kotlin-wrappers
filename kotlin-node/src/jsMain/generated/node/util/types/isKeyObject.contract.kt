@@ -6,7 +6,7 @@ import node.crypto.KeyObject
 import kotlin.contracts.contract
 
 
-@Suppress("NOTHING_TO_INLINE", "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
+@Suppress("CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
 inline fun isKeyObject(value: Any?): Boolean /* object is KeyObject */ {
     contract {
         returns(true) implies (value is KeyObject)

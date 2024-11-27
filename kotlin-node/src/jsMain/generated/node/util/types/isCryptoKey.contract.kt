@@ -5,7 +5,7 @@ package node.util.types
 import kotlin.contracts.contract
 
 
-@Suppress("NOTHING_TO_INLINE", "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
+@Suppress("CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
 inline fun isCryptoKey(value: Any?): Boolean /* object is webcrypto.CryptoKey */ {
     contract {
         returns(true) implies (value is web.crypto.CryptoKey)

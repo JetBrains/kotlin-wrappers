@@ -5,7 +5,7 @@ package node.util
 import kotlin.contracts.contract
 
 
-@Suppress("NOTHING_TO_INLINE", "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
+@Suppress("CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
 inline fun isString(value: Any?): Boolean /* object is string */ {
     contract {
         returns(true) implies (value is String)

@@ -69,7 +69,7 @@ export default {
                         .join(", ")
 
                     return `
-@Suppress("NOTHING_TO_INLINE", "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
+@Suppress("CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
 inline fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${name}(${parameters})${karakum.ifPresent(returnType, it => `: ${it}`)} {
     contract {
         ${contractReturns} implies (${parameterName} is ${contractType})

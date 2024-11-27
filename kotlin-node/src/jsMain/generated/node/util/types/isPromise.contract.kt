@@ -6,7 +6,7 @@ import js.promise.Promise
 import kotlin.contracts.contract
 
 
-@Suppress("NOTHING_TO_INLINE", "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
+@Suppress("CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
 inline fun isPromise(value: Any?): Boolean /* object is Promise<unknown> */ {
     contract {
         returns(true) implies (value is Promise<Any?>)

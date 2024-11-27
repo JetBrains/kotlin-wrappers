@@ -6,7 +6,7 @@ import js.buffer.ArrayBuffer
 import kotlin.contracts.contract
 
 
-@Suppress("NOTHING_TO_INLINE", "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
+@Suppress("CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
 inline fun isArrayBuffer(value: Any?): Boolean /* object is ArrayBuffer */ {
     contract {
         returns(true) implies (value is ArrayBuffer)
