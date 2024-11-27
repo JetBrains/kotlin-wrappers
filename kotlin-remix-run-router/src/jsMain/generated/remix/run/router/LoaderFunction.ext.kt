@@ -3,7 +3,6 @@
 package remix.run.router
 
 
-@Suppress("NOTHING_TO_INLINE")
 inline fun <Context /* default is Any? */> LoaderFunction(
     noinline value: (args: LoaderFunctionArgs<Context>, handlerCtx: Any? /* use undefined for default */) -> DataFunctionReturnValue,
 ): LoaderFunction<Context> =

@@ -7,7 +7,6 @@ import js.reflect.unsafeCast
 
 external interface ResponsiveStyleValue<T : Any>
 
-@Suppress("NOTHING_TO_INLINE")
 inline fun <T : Any> responsive(
     value: T,
 ): ResponsiveStyleValue<T> =

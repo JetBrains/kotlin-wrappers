@@ -3,7 +3,6 @@
 package remix.run.router
 
 
-@Suppress("NOTHING_TO_INLINE")
 inline fun <Context /* default is Any? */> ActionFunction(
     noinline value: (args: ActionFunctionArgs<Context>, handlerCtx: Any? /* use undefined for default */) -> DataFunctionReturnValue,
 ): ActionFunction<Context> =

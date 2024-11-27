@@ -32,7 +32,6 @@ fun injectGlobal(css: RuleSet) {
     }.apply { injectGlobal(this) }
 }
 
-@Suppress("NOTHING_TO_INLINE")
 internal inline fun isDevelopment() = js("process.env.NODE_ENV !== 'production'") as Boolean
 
 object GlobalStyles {

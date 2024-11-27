@@ -97,7 +97,6 @@ inline fun CustomStyledProps.css(noinline handler: RuleSet) {
     css = (css ?: CssBuilder(isHolder = true)).apply(handler)
 }
 
-@Suppress("NOTHING_TO_INLINE")
 inline fun <P : CustomStyledProps> RElementBuilder<P>.css(noinline handler: RuleSet) = attrs.css(handler)
 
 internal external interface StyledProps : PropsWithClassName, PropsWithRef<Any> {

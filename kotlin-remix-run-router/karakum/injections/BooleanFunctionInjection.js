@@ -97,7 +97,6 @@ export default {
                 const returnType = render(actionFunctionSignatureNode.type)
 
                 return `
-@Suppress("NOTHING_TO_INLINE")
 inline fun ${karakum.ifPresent(typeParameters, it => `<${it}>`)} ActionFunction(
     noinline value: (${parameters}) -> ${returnType},
 ): ActionFunction${karakum.ifPresent(typeParameterNames, it => `<${it}>`)} =
@@ -125,7 +124,6 @@ inline fun ${karakum.ifPresent(typeParameters, it => `<${it}>`)} ActionFunction(
                 const returnType = render(loaderFunctionSignatureNode.type)
 
                 return `
-@Suppress("NOTHING_TO_INLINE")
 inline fun ${karakum.ifPresent(typeParameters, it => `<${it}>`)} LoaderFunction(
     noinline value: (${parameters}) -> ${returnType},
 ): LoaderFunction${karakum.ifPresent(typeParameterNames, it => `<${it}>`)} =
