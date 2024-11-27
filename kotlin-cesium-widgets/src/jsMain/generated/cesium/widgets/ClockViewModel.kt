@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/widgets")
 
-@file:Suppress(
-    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
-)
-
 package cesium.widgets
 
 import cesium.engine.Clock

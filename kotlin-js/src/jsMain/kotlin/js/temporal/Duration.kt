@@ -1,9 +1,5 @@
 @file:JsQualifier("Temporal")
 
-@file:Suppress(
-    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
-)
-
 package js.temporal
 
 /**

@@ -2,10 +2,6 @@
 
 @file:JsModule("@cesium/engine")
 
-@file:Suppress(
-    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
-)
-
 package cesium.engine
 
 import js.typedarrays.Uint8Array

@@ -1,7 +1,3 @@
-@file:Suppress(
-    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
-)
-
 package js.typedarrays
 
 import js.array.ReadonlyArray

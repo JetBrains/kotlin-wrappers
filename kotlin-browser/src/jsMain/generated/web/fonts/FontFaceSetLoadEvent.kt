@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
-)
-
 package web.fonts
 
 import js.array.ReadonlyArray
