@@ -1,7 +1,3 @@
-@file:Suppress(
-    "NOTHING_TO_INLINE",
-)
-
 package react
 
 import react.raw.useMemoRaw

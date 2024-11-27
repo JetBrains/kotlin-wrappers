@@ -1,7 +1,3 @@
-@file:Suppress(
-    "NOTHING_TO_INLINE",
-)
-
 package js.promise
 
 import js.promise.legacy.LegacyPromise

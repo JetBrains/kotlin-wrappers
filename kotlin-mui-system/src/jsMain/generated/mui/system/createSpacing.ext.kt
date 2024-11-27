@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NOTHING_TO_INLINE",
-)
-
 package mui.system
 
 import js.array.ReadonlyArray

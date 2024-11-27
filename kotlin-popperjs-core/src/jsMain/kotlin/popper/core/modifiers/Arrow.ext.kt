@@ -1,7 +1,3 @@
-@file:Suppress(
-    "NOTHING_TO_INLINE",
-)
-
 package popper.core.modifiers
 
 import js.objects.jso

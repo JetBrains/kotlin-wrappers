@@ -1,7 +1,3 @@
-@file:Suppress(
-    "NOTHING_TO_INLINE",
-)
-
 package js.errors
 
 import js.reflect.unsafeCast

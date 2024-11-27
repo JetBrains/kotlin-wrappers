@@ -1,7 +1,3 @@
-@file:Suppress(
-    "NOTHING_TO_INLINE",
-)
-
 package node.events
 
 import js.reflect.unsafeCast

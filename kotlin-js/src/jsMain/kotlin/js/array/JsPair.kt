@@ -1,7 +1,3 @@
-@file:Suppress(
-    "NOTHING_TO_INLINE",
-)
-
 package js.array
 
 typealias JsPair<A, B> = JsTuple2<A, B>

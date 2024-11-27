@@ -1,7 +1,3 @@
-@file:Suppress(
-    "NOTHING_TO_INLINE",
-)
-
 package js.objects
 
 inline fun <T : Any> jso(): T =
