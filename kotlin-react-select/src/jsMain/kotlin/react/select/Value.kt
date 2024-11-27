@@ -1,6 +1,5 @@
 @file:Suppress(
     "DECLARATION_CANT_BE_INLINED",
-    "NOTHING_TO_INLINE",
 )
 
 package react.select
