@@ -67,6 +67,8 @@ tasks.withType<KotlinCompilationTask<*>>().configureEach {
         allWarningsAsErrors = true
 
         freeCompilerArgs.addAll(
+            "-Xexpect-actual-classes",
+
             "-opt-in=kotlin.ExperimentalStdlibApi",
             "-opt-in=kotlin.ExperimentalUnsignedTypes",
             "-opt-in=kotlin.contracts.ExperimentalContracts",
