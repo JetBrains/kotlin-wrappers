@@ -1,7 +1,9 @@
 name: Package Lock
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - master
 
 jobs:
   update:
