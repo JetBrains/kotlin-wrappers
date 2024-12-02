@@ -4,7 +4,10 @@ package web.messaging
 
 import js.array.ReadonlyArray
 import js.transferable.Transferable
-import web.events.*
+import web.events.Event
+import web.events.EventInstance
+import web.events.EventTarget
+import web.events.JsEvent
 import web.serialization.StructuredSerializeOptions
 
 /**
@@ -15,18 +18,9 @@ import web.serialization.StructuredSerializeOptions
 external class MessagePort
 private constructor() :
     EventTarget,
+    MessageEventTarget,
     MessageEventSource,
     Transferable {
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/message_event)
-     */
-    var onmessage: EventHandler<MessageEvent<*>, MessagePort, MessagePort>?
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/messageerror_event)
-     */
-    var onmessageerror: EventHandler<MessageEvent<*>, MessagePort, MessagePort>?
-
     /**
      * Disconnects the port, so that it is no longer active.
      *

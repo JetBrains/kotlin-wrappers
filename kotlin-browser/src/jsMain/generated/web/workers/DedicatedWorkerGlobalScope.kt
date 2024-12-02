@@ -8,6 +8,7 @@ import web.events.EventHandler
 import web.events.EventInstance
 import web.events.JsEvent
 import web.messaging.MessageEvent
+import web.messaging.MessageEventTarget
 import web.rtc.RTCTransformEvent
 import web.serialization.StructuredSerializeOptions
 
@@ -18,23 +19,14 @@ import web.serialization.StructuredSerializeOptions
  */
 external class DedicatedWorkerGlobalScope
 private constructor() :
-    WorkerGlobalScope {
+    WorkerGlobalScope,
+    MessageEventTarget {
     /**
      * Returns dedicatedWorkerGlobal's name, i.e. the value given to the Worker constructor. Primarily useful for debugging.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/name)
      */
     val name: String
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/message_event)
-     */
-    var onmessage: EventHandler<MessageEvent<*>, DedicatedWorkerGlobalScope, DedicatedWorkerGlobalScope>?
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/messageerror_event)
-     */
-    var onmessageerror: EventHandler<MessageEvent<*>, DedicatedWorkerGlobalScope, DedicatedWorkerGlobalScope>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/rtctransform_event)

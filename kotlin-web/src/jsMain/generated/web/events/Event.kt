@@ -261,6 +261,12 @@ open external class Event(
         @JsValue("loadstart")
         val LOAD_START: EventType<Event>
 
+        @JsValue("message")
+        val MESSAGE: EventType<Event>
+
+        @JsValue("messageerror")
+        val MESSAGE_ERROR: EventType<Event>
+
         @JsValue("mute")
         val MUTE: EventType<Event>
 
