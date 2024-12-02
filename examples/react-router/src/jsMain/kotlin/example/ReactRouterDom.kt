@@ -97,19 +97,19 @@ private val APP_ROUTER = createBrowserRouter(
     arrayOf(
         RouteObject(
             path = "/",
-            element = Root.create(),
+            Component = Root,
             children = arrayOf(
                 RouteObject(
                     index = true,
-                    element = Home.create(),
+                    Component = Home,
                 ),
                 RouteObject(
                     path = "about",
-                    element = About.create(),
+                    Component = About,
                 ),
                 RouteObject(
                     path = "topics",
-                    element = Topics.create(),
+                    Component = Topics,
                     children = arrayOf(
                         RouteObject(
                             index = true,
@@ -117,7 +117,7 @@ private val APP_ROUTER = createBrowserRouter(
                         ),
                         RouteObject(
                             path = ":topicId",
-                            element = Topic.create(),
+                            Component = Topic,
                         ),
                     ),
                 ),
