@@ -3,8 +3,6 @@
 package web.gpu
 
 import web.events.EventTarget
-import web.rendering.OffscreenRenderingContext
-import web.rendering.RenderingContext
 
 /**
  * Available only in secure contexts.
@@ -12,9 +10,7 @@ import web.rendering.RenderingContext
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCanvasContext)
  */
 external class GPUCanvasContext
-private constructor() :
-    OffscreenRenderingContext,
-    RenderingContext {
+private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCanvasContext/canvas)
      */

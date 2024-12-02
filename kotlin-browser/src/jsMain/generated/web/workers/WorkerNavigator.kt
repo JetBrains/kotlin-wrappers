@@ -21,7 +21,6 @@ external class WorkerNavigator
 private constructor() :
     NavigatorBadge,
     NavigatorConcurrentHardware,
-    NavigatorGPU,
     NavigatorID,
     NavigatorLanguage,
     NavigatorLocks,

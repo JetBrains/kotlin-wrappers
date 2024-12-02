@@ -8,5 +8,4 @@ import kotlinx.js.JsPlainObject
 external interface GPURequestAdapterOptions {
     val forceFallbackAdapter: Boolean?
     val powerPreference: GPUPowerPreference?
-    val xrCompatible: Boolean?
 }

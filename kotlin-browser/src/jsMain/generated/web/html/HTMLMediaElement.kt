@@ -135,6 +135,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/encrypted_event)
      */
     var onencrypted: EventHandler<MediaEncryptedEvent, HTMLMediaElement, HTMLMediaElement>?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/waitingforkey_event)
+     */
     var onwaitingforkey: EventHandler<Event, HTMLMediaElement, HTMLMediaElement>?
 
     /**
