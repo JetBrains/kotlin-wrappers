@@ -1,6 +1,6 @@
 package js.errors
 
-typealias JsError = Throwable
+actual typealias JsError = Throwable
 
 inline var JsError.name: JsErrorName
     get() = asDynamic().name
