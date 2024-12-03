@@ -739,7 +739,8 @@ external class Scene(
      *   values from
      * @param [propertyName] The name of the metadata property to pick
      *   values from
-     * @return The metadata value
+     * @return The metadata value, or `undefined` when
+     *   no matching metadata was found at the given position
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#pickMetadata">Online Documentation</a>
      */
     fun pickMetadata(
@@ -747,7 +748,7 @@ external class Scene(
         schemaId: String?,
         className: String,
         propertyName: String,
-    ): Any
+    ): MetadataValue?
 
     /**
      * Pick the schema of the metadata of the object at the given position

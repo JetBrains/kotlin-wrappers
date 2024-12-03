@@ -175,6 +175,14 @@ external class SampledProperty(
     )
 
     /**
+     * Retrieves the time of the provided sample associated with the index. A negative index accesses the list of samples in reverse order.
+     * @param [index] The index of samples list.
+     * @return The JulianDate time of the sample, or undefined if failed.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SampledProperty.html#getSample">Online Documentation</a>
+     */
+    fun getSample(index: Int): JulianDate?
+
+    /**
      * Adds samples as a single packed array where each new sample is represented as a date,
      * followed by the packed representation of the corresponding value and derivatives.
      * @param [packedSamples] The array of packed samples.

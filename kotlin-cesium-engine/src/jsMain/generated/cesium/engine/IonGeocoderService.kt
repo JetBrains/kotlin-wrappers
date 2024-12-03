@@ -22,12 +22,15 @@ external class IonGeocoderService(
      *   Default value - [Ion.defaultAccessToken]
      * @property [server] The resource to the Cesium ion API server.
      *   Default value - [Ion.defaultServer]
+     * @property [geocodeProviderType] The geocoder the Cesium ion API server should use to fulfill this request.
+     *   Default value - [IonGeocodeProviderType.DEFAULT]
      */
     @JsPlainObject
     interface ConstructorOptions {
         var scene: Scene
         var accessToken: String?
         var server: Resource?
+        var geocodeProviderType: IonGeocodeProviderType?
     }
 
     /**
@@ -36,6 +39,12 @@ external class IonGeocoderService(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/IonGeocoderService.html#credit">Online Documentation</a>
      */
     val credit: Credit?
+
+    /**
+     * The geocoding service that Cesium ion API server should use to fulfill geocding requests.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/IonGeocoderService.html#geocodeProviderType">Online Documentation</a>
+     */
+    var geocodeProviderType: IonGeocodeProviderType
 
     /**
      * @param [query] The query to be sent to the geocoder service

@@ -56,6 +56,12 @@ external class Entity {
     var show: Boolean
 
     /**
+     * Gets or sets the entity's tracking reference frame.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Entity.html#trackingReferenceFrame">Online Documentation</a>
+     */
+    var trackingReferenceFrame: TrackingReferenceFrame
+
+    /**
      * Gets whether this entity is being displayed, taking into account
      * the visibility of any ancestor entities.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Entity.html#isShowing">Online Documentation</a>

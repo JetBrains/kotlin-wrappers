@@ -166,12 +166,20 @@ external class MetadataClassProperty(
 
     /**
      * The offset to be added to property values as part of the value transform.
+     *
+     * This is always defined, even when `hasValueTransform` is `false`. If
+     * the class property JSON itself did not define it, then it will be
+     * initialized to the default value.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MetadataClassProperty.html#offset">Online Documentation</a>
      */
     val offset: Any /* number | number[] | number[][] */
 
     /**
      * The scale to be multiplied to property values as part of the value transform.
+     *
+     * This is always defined, even when `hasValueTransform` is `false`. If
+     * the class property JSON itself did not define it, then it will be
+     * initialized to the default value.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MetadataClassProperty.html#scale">Online Documentation</a>
      */
     val scale: Any /* number | number[] | number[][] */

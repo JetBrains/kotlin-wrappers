@@ -36,24 +36,17 @@ external class PostProcessStageCollection {
      * Ambient occlusion simulates shadows from ambient light. These shadows would always be present when the
      * surface receives light and regardless of the light's position.
      *
-     * The uniforms have the following properties: `intensity`, `bias`, `lengthCap`,
-     * `stepSize`, `frustumLength`, `ambientOcclusionOnly`,
-     * `delta`, `sigma`, and `blurStepSize`.
-     *
+     * The uniforms have the following properties:
      * - `intensity` is a scalar value used to lighten or darken the shadows exponentially. Higher values make the shadows darker. The default value is `3.0`.
      * - `bias` is a scalar value representing an angle in radians. If the dot product between the normal of the sample and the vector to the camera is less than this value,
      *   sampling stops in the current direction. This is used to remove shadows from near planar edges. The default value is `0.1`.
      * - `lengthCap` is a scalar value representing a length in meters. If the distance from the current sample to first sample is greater than this value,
      *   sampling stops in the current direction. The default value is `0.26`.
-     * - `stepSize` is a scalar value indicating the distance to the next texel sample in the current direction. The default value is `1.95`.
-     * - `frustumLength` is a scalar value in meters. If the current fragment has a distance from the camera greater than this value, ambient occlusion is not computed for the fragment.
-     *   The default value is `1000.0`.
+     * - `directionCount` is the number of directions along which the ray marching will search for occluders. The default value is `8`.
+     * - `stepCount` is the number of steps the ray marching will take along each direction. The default value is `32`.
+     * - `randomTexture` is a texture where the red channel is a random value in [0.0, 1.0]. The default value is `undefined`. This texture needs to be set.
      * - `ambientOcclusionOnly` is a boolean value. When `true`, only the shadows generated are written to the output. When `false`, the input texture is modulated
      *   with the ambient occlusion. This is a useful debug option for seeing the effects of changing the uniform values. The default value is `false`.
-     *
-     * `delta`, `sigma`, and `blurStepSize` are the same properties as [PostProcessStageLibrary.createBlurStage].
-     * The blur is applied to the shadows generated from the image to make them smoother.
-     *
      * When enabled, this stage will execute before all others.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PostProcessStageCollection.html#ambientOcclusion">Online Documentation</a>
      */

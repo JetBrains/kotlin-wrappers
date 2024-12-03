@@ -250,13 +250,6 @@ external class Rectangle(
         ): Boolean
 
         /**
-         * Checks a Rectangle's properties and throws if they are not in valid ranges.
-         * @param [rectangle] The rectangle to validate
-         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Rectangle.html#.validate">Online Documentation</a>
-         */
-        fun validate(rectangle: Rectangle)
-
-        /**
          * Computes the southwest corner of a rectangle.
          * @param [rectangle] The rectangle for which to find the corner
          * @param [result] The object onto which to store the result.

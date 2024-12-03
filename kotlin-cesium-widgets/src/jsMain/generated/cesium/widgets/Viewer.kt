@@ -809,8 +809,8 @@ external class Viewer(
      *   Default value - `true`
      * @property [vrButton] If set to true, the VRButton widget will be created.
      *   Default value - `false`
-     * @property [geocoder] If set to false, the Geocoder widget will not be created.
-     *   Default value - `true`
+     * @property [geocoder] The geocoding service or services to use when searching with the Geocoder widget. If set to false, the Geocoder widget will not be created.
+     *   Default value - [IonGeocodeProviderType.DEFAULT]
      * @property [homeButton] If set to false, the HomeButton widget will not be created.
      *   Default value - `true`
      * @property [infoBox] If set to false, the InfoBox widget will not be created.
@@ -837,7 +837,7 @@ external class Viewer(
      * @property [selectedTerrainProviderViewModel] The view model for the current base terrain layer, if not supplied the first available base layer is used.  This value is only valid if `baseLayerPicker` is set to true.
      * @property [terrainProviderViewModels] The array of ProviderViewModels to be selectable from the BaseLayerPicker.  This value is only valid if `baseLayerPicker` is set to true.
      *   Default value - `createDefaultTerrainProviderViewModels()`
-     * @property [baseLayer] The bottommost imagery layer applied to the globe. If set to `false`, no imagery provider will be added. This value is only valid if `baseLayerPicker` is set to false.
+     * @property [baseLayer] The bottommost imagery layer applied to the globe. If set to `false`, no imagery provider will be added. This value is only valid if `baseLayerPicker` is set to false. Cannot be used when `globe` is set to false.
      *   Default value - `ImageryLayer.fromWorldImagery()`
      * @property [ellipsoid] The default ellipsoid.
      *   Default value - [Ellipsoid.default]
@@ -897,7 +897,7 @@ external class Viewer(
         var baseLayerPicker: Boolean?
         var fullscreenButton: Boolean?
         var vrButton: Boolean?
-        var geocoder: Any /* boolean | GeocoderService[] */?
+        var geocoder: Any /* boolean | IonGeocodeProviderType | GeocoderService[] */?
         var homeButton: Boolean?
         var infoBox: Boolean?
         var sceneModePicker: Boolean?
