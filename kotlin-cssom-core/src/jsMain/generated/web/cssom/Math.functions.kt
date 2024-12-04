@@ -14,9 +14,9 @@ inline fun clamp(
 inline fun max(
     vararg values: Length,
 ): Length =
-    unsafeCast("max($values)")
+    unsafeCast("max(${values.joinToString(",")})")
 
 inline fun min(
     vararg values: Length,
 ): Length =
-    unsafeCast("min($values)")
+    unsafeCast("min(${values.joinToString(",")})")

@@ -10,21 +10,21 @@ sealed external interface Gradient :
 inline fun linearGradient(
     vararg stops: LinearColorStop,
 ): Gradient =
-    unsafeCast("linear-gradient($stops)")
+    unsafeCast("linear-gradient(${stops.joinToString(",")})")
 
 inline fun linearGradient(
     angle: Angle,
     vararg stops: LinearColorStop,
 ): Gradient =
-    unsafeCast("linear-gradient($angle,$stops)")
+    unsafeCast("linear-gradient($angle,${stops.joinToString(",")})")
 
 inline fun repeatingLinearGradient(
     vararg stops: LinearColorStop,
 ): Gradient =
-    unsafeCast("repeating-linear-gradient($stops)")
+    unsafeCast("repeating-linear-gradient(${stops.joinToString(",")})")
 
 inline fun repeatingLinearGradient(
     angle: Angle,
     vararg stops: LinearColorStop,
 ): Gradient =
-    unsafeCast("repeating-linear-gradient($angle,$stops)")
+    unsafeCast("repeating-linear-gradient($angle,${stops.joinToString(",")})")
