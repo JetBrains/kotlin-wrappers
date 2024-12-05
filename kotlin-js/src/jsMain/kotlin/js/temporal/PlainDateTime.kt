@@ -2,6 +2,8 @@
 
 package js.temporal
 
+import js.import.JsQualifier
+
 /**
  * A `Temporal.PlainDateTime` represents a calendar date and wall-clock time, with
  * a precision in nanoseconds, and without any time zone. Of the Temporal

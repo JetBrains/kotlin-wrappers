@@ -2,6 +2,8 @@
 
 package js.temporal
 
+import js.import.JsQualifier
+
 /**
  * A `Temporal.PlainTime` represents a wall-clock time, with a precision in
  * nanoseconds, and without any time zone. "Wall-clock time" refers to the

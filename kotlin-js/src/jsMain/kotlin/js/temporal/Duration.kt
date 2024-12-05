@@ -2,6 +2,8 @@
 
 package js.temporal
 
+import js.import.JsQualifier
+
 /**
  * A `Temporal.Duration` represents an immutable duration of time which can be
  * used in date/time arithmetic.

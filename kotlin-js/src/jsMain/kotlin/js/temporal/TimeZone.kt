@@ -3,6 +3,7 @@
 package js.temporal
 
 import js.array.ReadonlyArray
+import js.import.JsQualifier
 
 /**
  * A `Temporal.TimeZone` is a representation of a time zone: either an

@@ -2,6 +2,8 @@
 
 package js.temporal
 
+import js.import.JsQualifier
+
 /**
  * A `Temporal.PlainDate` represents a calendar date. "Calendar date" refers to the
  * concept of a date as expressed in everyday usage, independent of any time

@@ -4,6 +4,7 @@ package js.temporal
 
 import js.core.BigInt
 import js.core.JsLong
+import js.import.JsQualifier
 import kotlinx.js.JsPlainObject
 
 /**

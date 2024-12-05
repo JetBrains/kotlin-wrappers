@@ -2,6 +2,8 @@
 
 package js.temporal
 
+import js.import.JsQualifier
+
 external object Now {
     /**
      * Get the exact system date and time as a `Temporal.Instant`.

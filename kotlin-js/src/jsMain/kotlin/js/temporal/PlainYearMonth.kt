@@ -2,6 +2,7 @@
 
 package js.temporal
 
+import js.import.JsQualifier
 import kotlinx.js.JsPlainObject
 
 /**

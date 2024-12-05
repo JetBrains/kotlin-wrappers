@@ -3,6 +3,7 @@
 package js.temporal
 
 import js.array.ReadonlyArray
+import js.import.JsQualifier
 import js.iterable.JsIterable
 import js.objects.Record
 import js.temporal.CalendarProtocol.*

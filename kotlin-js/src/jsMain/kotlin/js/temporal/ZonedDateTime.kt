@@ -3,6 +3,7 @@
 package js.temporal
 
 import js.core.BigInt
+import js.import.JsQualifier
 
 external class ZonedDateTime(
     epochNanoseconds: BigInt,
