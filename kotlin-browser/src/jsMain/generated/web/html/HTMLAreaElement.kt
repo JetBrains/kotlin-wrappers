@@ -24,6 +24,8 @@ protected constructor() :
 
     /**
      * Sets or retrieves the coordinates of the object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAreaElement/coords)
      */
     var coords: String
 
@@ -54,6 +56,8 @@ protected constructor() :
 
     /**
      * Sets or retrieves the shape of the object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAreaElement/shape)
      */
     var shape: String
 

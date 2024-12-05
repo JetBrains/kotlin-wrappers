@@ -7,6 +7,9 @@
 package web.svg
 
 sealed external interface SVGURIReference {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/href)
+     */
     val href: SVGAnimatedString
         get() = definedExternally
 }
