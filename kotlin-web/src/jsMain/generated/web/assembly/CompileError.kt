@@ -5,6 +5,7 @@
 package web.assembly
 
 import js.errors.JsError
+import js.import.JsQualifier
 
 external class CompileError(
     message: String = definedExternally,

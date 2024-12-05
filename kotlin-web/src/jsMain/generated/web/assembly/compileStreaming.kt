@@ -4,6 +4,7 @@
 
 package web.assembly
 
+import js.import.JsQualifier
 import js.promise.Promise
 import js.promise.PromiseLike
 import seskar.js.JsAsync

@@ -5,6 +5,7 @@
 package js.intl
 
 import js.array.ReadonlyArray
+import js.import.JsQualifier
 import js.iterable.JsIterable
 
 open external class ListFormat(

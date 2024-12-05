@@ -5,6 +5,7 @@
 package web.assembly
 
 import js.buffer.BufferSource
+import js.import.JsQualifier
 import js.promise.Promise
 import seskar.js.JsAsync
 

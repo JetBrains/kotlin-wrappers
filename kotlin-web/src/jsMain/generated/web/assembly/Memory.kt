@@ -5,6 +5,7 @@
 package web.assembly
 
 import js.buffer.ArrayBuffer
+import js.import.JsQualifier
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/Memory)

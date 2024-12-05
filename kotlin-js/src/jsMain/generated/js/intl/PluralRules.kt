@@ -5,6 +5,7 @@
 package js.intl
 
 import js.array.ReadonlyArray
+import js.import.JsQualifier
 
 open external class PluralRules(
     locales: String = definedExternally,

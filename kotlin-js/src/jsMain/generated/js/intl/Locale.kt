@@ -8,6 +8,8 @@
 
 package js.intl
 
+import js.import.JsQualifier
+
 open external class Locale(
     tag: UnicodeBCP47LocaleIdentifier,
     options: LocaleOptions = definedExternally,
