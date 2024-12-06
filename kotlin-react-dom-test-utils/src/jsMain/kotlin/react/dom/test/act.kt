@@ -1,4 +1,5 @@
 package react.dom.test
+
 suspend fun <T> act(
     block: () -> T,
 ): T {
