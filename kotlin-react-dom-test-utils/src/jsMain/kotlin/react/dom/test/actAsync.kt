@@ -3,6 +3,12 @@
 package react.dom.test
 
 import js.promise.Promise
+import seskar.js.JsAsync
+
+@JsAsync
+external suspend fun <T> act(
+    block: () -> T,
+): T
 
 @JsName("act")
 external fun <T> actAsync(
