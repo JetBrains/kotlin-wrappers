@@ -43,12 +43,12 @@ external val FetchersContext: react.Context<FetchersContextObject>
 /**
  * The public API for rendering a history-aware `<a>`.
  */
-external val Link: react.ForwardRefExoticComponent<LinkProps>
+external val Link: react.FC<LinkProps>
 
 /**
  * A `<Link>` wrapper that knows if it's "active" or not.
  */
-external val NavLink: react.ForwardRefExoticComponent<NavLinkProps>
+external val NavLink: react.FC<NavLinkProps>
 
 /**
  * A `@remix-run/router`-aware `<form>`. It behaves like a normal form except
@@ -56,7 +56,7 @@ external val NavLink: react.ForwardRefExoticComponent<NavLinkProps>
  * requests, allowing components to add nicer UX to the page as the form is
  * submitted and returns with data.
  */
-external val Form: react.ForwardRefExoticComponent<FormProps>
+external val Form: react.FC<FormProps>
 
 
 /* export { useScrollRestoration as UNSAFE_useScrollRestoration }; */

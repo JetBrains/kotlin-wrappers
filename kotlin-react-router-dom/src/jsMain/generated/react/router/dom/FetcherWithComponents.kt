@@ -5,7 +5,7 @@ package react.router.dom
 import remix.run.router.Fetcher
 
 sealed external interface FetcherWithComponents<TData> : Fetcher<TData> {
-    var Form: react.ForwardRefExoticComponent<FetcherFormProps>
+    var Form: react.FC<FetcherFormProps>
     var submit: FetcherSubmitFunction
     var load: (href: String, opts: (FetcherWithComponentsLoadOpts)? /* use undefined for default */) -> Unit
 }
