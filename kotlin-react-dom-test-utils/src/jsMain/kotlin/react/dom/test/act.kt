@@ -12,5 +12,5 @@ external suspend fun <T> act(
 
 @JsName("act")
 external fun <T> actAsync(
-    callback: () -> T, /* | Promise<T> */
+    block: () -> T, /* | Promise<T> */
 ): Promise<T>
