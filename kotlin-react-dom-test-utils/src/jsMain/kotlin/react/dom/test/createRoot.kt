@@ -2,6 +2,7 @@ package react.dom.test
 
 import react.FC
 import react.Props
+import react.act
 import react.create
 import react.dom.client.Root
 import react.dom.client.createRoot

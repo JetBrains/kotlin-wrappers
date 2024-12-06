@@ -1,6 +1,6 @@
-@file:JsModule("react-dom/test-utils")
+@file:JsModule("react")
 
-package react.dom.test
+package react
 
 import js.promise.Promise
 import seskar.js.JsAsync
