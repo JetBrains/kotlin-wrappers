@@ -1,5 +1,5 @@
 package react
 
-sealed external interface HasDisplayName {
+external interface HasDisplayName {
     var displayName: String?
 }
