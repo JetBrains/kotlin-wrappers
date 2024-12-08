@@ -7,13 +7,13 @@ import react.raw.useCallbackRaw
 external interface RefCallback<in T : Any> :
     Ref<T>
 
-inline fun <T : Any> RefCallback(
-    noinline callback: (T?) -> Unit,
+fun <T : Any> RefCallback(
+    callback: (T?) -> Unit,
 ): RefCallback<T> =
     unsafeCast(callback)
 
-inline fun <T : Any> useRefCallback(
+fun <T : Any> useRefCallback(
     vararg dependencies: Any?,
-    noinline callback: (T?) -> Unit,
+    callback: (T?) -> Unit,
 ): RefCallback<T> =
     RefCallback(useCallbackRaw(callback, dependencies))
