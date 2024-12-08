@@ -4,10 +4,14 @@ import js.reflect.unsafeCast
 import kotlinx.coroutines.CoroutineScope
 import react.internal.createCleanupCallback
 import react.raw.useCallbackRaw
+import seskar.js.JsNative
 
-/* sealed */
-external interface RefCallback<in T : Any> :
-    Ref<T>
+@JsName("Function")
+external class RefCallback<T : Any> :
+    Ref<T> {
+    @JsNative
+    operator fun invoke(value: T): Cleanup?
+}
 
 fun <T : Any> RefCallback(
     block: suspend CoroutineScope.(T) -> Unit,
