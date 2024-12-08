@@ -2,7 +2,6 @@ package react.use
 
 import react.Ref
 import react.RefCallback
-import react.setRef
 import react.useMemo
 
 /**
