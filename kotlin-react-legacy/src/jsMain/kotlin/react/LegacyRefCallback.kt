@@ -9,8 +9,8 @@ external interface LegacyRefCallback<in T : Any> :
 fun <T : Any> LegacyRefCallback(
     callback: (T?) -> Unit,
 ): LegacyRefCallback<T> =
-    unsafeCast { instance: T? ->
-        callback(instance)
+    unsafeCast { value: T? ->
+        callback(value)
         undefined
     }
 
