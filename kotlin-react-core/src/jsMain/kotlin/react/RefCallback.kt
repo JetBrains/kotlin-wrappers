@@ -3,6 +3,7 @@ package react
 import js.reflect.unsafeCast
 import react.raw.useCallbackRaw
 
+/* sealed */
 external interface RefCallback<in T : Any> :
     Ref<T>
 
