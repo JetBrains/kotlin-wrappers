@@ -92,28 +92,6 @@ sealed external interface ChildrenBuilder {
             block = block,
         )
     }
-
-    @ElementBuilder
-    inline operator fun <T> ContextType<T>.invoke(
-        noinline block: @ReactDsl ProviderProps<T>.() -> Unit,
-    ) {
-        addChild(
-            type = Provider,
-            block = block,
-        )
-    }
-
-    @ElementBuilder
-    inline operator fun <T> ContextType<T>.invoke(
-        value: T,
-        noinline block: @ReactDsl ChildrenBuilder.() -> Unit,
-    ) {
-        addChild(
-            context = this,
-            value = value,
-            block = block,
-        )
-    }
 }
 
 @PublishedApi
@@ -220,18 +198,5 @@ internal fun <T> ChildrenBuilder.addChild(
             this.value = value
             block()
         }
-    )
-}
-
-@PublishedApi
-internal fun <T> ChildrenBuilder.addChild(
-    context: ContextType<T>,
-    value: T,
-    block: @ReactDsl ChildrenBuilder.() -> Unit,
-) {
-    addChild(
-        provider = context.Provider,
-        value = value,
-        block = block,
     )
 }
