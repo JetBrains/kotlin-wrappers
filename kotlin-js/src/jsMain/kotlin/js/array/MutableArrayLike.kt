@@ -6,7 +6,8 @@ package js.array
 
 import seskar.js.JsNative
 
-external interface MutableArrayLike<T> : ArrayLike<T> {
+external interface MutableArrayLike<T> :
+    ArrayLike<T> {
     @JsNative
     operator fun set(
         index: Int,
