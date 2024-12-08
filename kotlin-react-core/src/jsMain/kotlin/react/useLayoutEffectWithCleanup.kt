@@ -1,6 +1,6 @@
 package react
 
-import react.internal.createCleanupCallback
+import react.internal.buildCleanupCallback
 import react.raw.useLayoutEffectRaw
 
 /**
@@ -10,7 +10,7 @@ import react.raw.useLayoutEffectRaw
 fun useLayoutEffectWithCleanup(
     effect: CleanupBuilder.() -> Unit,
 ) {
-    val callback = createCleanupCallback(effect)
+    val callback = buildCleanupCallback(effect)
     useLayoutEffectRaw(callback)
 }
 
@@ -22,7 +22,7 @@ fun useLayoutEffectWithCleanup(
     vararg dependencies: Any?,
     effect: CleanupBuilder.() -> Unit,
 ) {
-    val callback = createCleanupCallback(effect)
+    val callback = buildCleanupCallback(effect)
     useLayoutEffectRaw(callback, dependencies)
 }
 
@@ -33,6 +33,6 @@ fun useLayoutEffectWithCleanup(
 fun useLayoutEffectOnceWithCleanup(
     effect: CleanupBuilder.() -> Unit,
 ) {
-    val callback = createCleanupCallback(effect)
+    val callback = buildCleanupCallback(effect)
     useLayoutEffectRaw(callback, emptyArray())
 }
