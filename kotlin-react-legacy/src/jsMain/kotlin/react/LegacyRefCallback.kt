@@ -18,4 +18,4 @@ fun <T : Any> useLegacyRefCallback(
     vararg dependencies: Any?,
     callback: (T?) -> Unit,
 ): LegacyRefCallback<T> =
-    LegacyRefCallback(useCallbackRaw(callback, dependencies))
+    useCallbackRaw(LegacyRefCallback(callback), dependencies)
