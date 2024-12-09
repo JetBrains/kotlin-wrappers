@@ -79,21 +79,21 @@ export default (node, context) => {
         && ts.isInterfaceDeclaration(node)
         && node.name.text === "StreamOptions"
     ) {
-        return `@kotlinx.js.JsPlainObject`
+        return `@js.objects.JsPlainObject`
     }
 
     if (
         ts.isInterfaceDeclaration(node)
         && jsoInterfaces.some(name => node.name.text === name)
     ) {
-        return `@kotlinx.js.JsPlainObject`
+        return `@js.objects.JsPlainObject`
     }
 
     if (
         ts.isInterfaceDeclaration(node)
         && jsoInterfacesWithGenerics.some(name => node.name.text === name)
     ) {
-        return `@kotlinx.js.JsPlainObject`
+        return `@js.objects.JsPlainObject`
     }
 
     if (
@@ -117,7 +117,7 @@ export default (node, context) => {
             || node.parent.parent.name.text === "mkdirSync"
         )
     ) {
-        return `@kotlinx.js.JsPlainObject`
+        return `@js.objects.JsPlainObject`
     }
 
     if (
@@ -154,7 +154,7 @@ export default (node, context) => {
             || node.parent.parent.parent.parent.name.text === "watchFile"
         )
     ) {
-        return `@kotlinx.js.JsPlainObject`
+        return `@js.objects.JsPlainObject`
     }
 
     if (
@@ -181,7 +181,7 @@ export default (node, context) => {
             || node.parent.parent.parent.parent.name.text === "writeFile"
         )
     ) {
-        return `@kotlinx.js.JsPlainObject`
+        return `@js.objects.JsPlainObject`
     }
 
     return null

@@ -4,7 +4,7 @@ package node.childProcess
 
 import web.abort.Abortable
 
-@kotlinx.js.JsPlainObject
+@js.objects.JsPlainObject
 sealed external interface CommonSpawnOptions : CommonOptions, MessagingOptions, Abortable {
     var argv0: String?
 

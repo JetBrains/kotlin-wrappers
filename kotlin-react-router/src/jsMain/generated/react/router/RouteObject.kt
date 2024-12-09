@@ -7,7 +7,7 @@ import remix.run.router.LazyRouteFunction
 import remix.run.router.LoaderLike
 import remix.run.router.ShouldRevalidateFunction
 
-@kotlinx.js.JsPlainObject
+@js.objects.JsPlainObject
 sealed external interface RouteObject {
     var caseSensitive: Boolean?
     var path: String?

@@ -4,7 +4,7 @@ package node.childProcess
 
 import web.abort.Abortable
 
-@kotlinx.js.JsPlainObject
+@js.objects.JsPlainObject
 sealed external interface ForkOptions : ProcessEnvOptions, MessagingOptions, Abortable {
     var execPath: String?
     var execArgv: js.array.ReadonlyArray<String>?

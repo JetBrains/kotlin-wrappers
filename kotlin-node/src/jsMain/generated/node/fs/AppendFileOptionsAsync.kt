@@ -2,7 +2,7 @@
 
 package node.fs
 
-@kotlinx.js.JsPlainObject
+@js.objects.JsPlainObject
 sealed external interface AppendFileAsyncOptions : ObjectEncodingOptions, FlagAndOpenMode {
     var flush: Boolean?
 }

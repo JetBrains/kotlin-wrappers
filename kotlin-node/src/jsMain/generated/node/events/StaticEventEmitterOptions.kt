@@ -4,7 +4,7 @@ package node.events
 
 import web.abort.AbortSignal
 
-@kotlinx.js.JsPlainObject
+@js.objects.JsPlainObject
 sealed external interface StaticEventEmitterOptions {
     /**
      * Can be used to cancel awaiting events.

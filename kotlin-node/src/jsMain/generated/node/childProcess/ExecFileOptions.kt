@@ -5,7 +5,7 @@ package node.childProcess
 import web.abort.AbortSignal
 import web.abort.Abortable
 
-@kotlinx.js.JsPlainObject
+@js.objects.JsPlainObject
 sealed external interface ExecFileOptions : CommonOptions, Abortable {
     var maxBuffer: Double?
     var killSignal: Any? /* NodeJS.Signals | number | undefined */

@@ -11,7 +11,7 @@ export default (node) => {
         ts.isInterfaceDeclaration(node)
         && jsoInterfaces.some(name => node.name.text === name)
     ) {
-        return `@kotlinx.js.JsPlainObject`
+        return `@js.objects.JsPlainObject`
     }
 
     return null

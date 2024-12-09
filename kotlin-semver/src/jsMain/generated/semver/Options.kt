@@ -2,7 +2,7 @@
 
 package semver
 
-@kotlinx.js.JsPlainObject
+@js.objects.JsPlainObject
 external interface Options {
     var loose: Boolean?
 }

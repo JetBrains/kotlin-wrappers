@@ -4,7 +4,7 @@ package electron.core
 
 import web.http.RequestInit
 
-@kotlinx.js.JsPlainObject
+@js.objects.JsPlainObject
 external interface NetFetchInit : RequestInit {
     var bypassCustomProtocolHandlers: Boolean?
 }

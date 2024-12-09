@@ -2,7 +2,7 @@
 
 package react.router
 
-@kotlinx.js.JsPlainObject
+@js.objects.JsPlainObject
 sealed external interface DataRouteObject : RouteObject {
 
     @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")

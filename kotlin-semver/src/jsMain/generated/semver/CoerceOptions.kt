@@ -2,7 +2,7 @@
 
 package semver
 
-@kotlinx.js.JsPlainObject
+@js.objects.JsPlainObject
 external interface CoerceOptions : Options {
     var includePrerelease: Boolean?
 

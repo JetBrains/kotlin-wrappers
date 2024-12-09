@@ -4,7 +4,7 @@ package node.stream
 
 import web.abort.Abortable
 
-@kotlinx.js.JsPlainObject
+@js.objects.JsPlainObject
 sealed external interface FinishedOptions : Abortable {
     var error: Boolean?
     var readable: Boolean?

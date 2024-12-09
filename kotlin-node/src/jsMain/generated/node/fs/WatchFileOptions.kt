@@ -48,7 +48,7 @@ package node.fs
  * * the file is renamed and then renamed a second time back to its original name
  * @since v0.1.31
  */
-@kotlinx.js.JsPlainObject
+@js.objects.JsPlainObject
 sealed external interface WatchFileOptions {
     var bigint: Boolean?
     var persistent: Boolean?

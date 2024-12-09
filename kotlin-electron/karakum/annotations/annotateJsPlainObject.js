@@ -33,7 +33,7 @@ export default (node, context) => {
             )
         )
     ) {
-        return `@kotlinx.js.JsPlainObject`
+        return `@js.objects.JsPlainObject`
     }
 
     return null

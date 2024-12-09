@@ -2,7 +2,7 @@
 
 package node.stream
 
-@kotlinx.js.JsPlainObject
+@js.objects.JsPlainObject
 sealed external interface DuplexOptions : ReadableOptions, WritableOptions {
     var allowHalfOpen: Boolean?
     var readableObjectMode: Boolean?

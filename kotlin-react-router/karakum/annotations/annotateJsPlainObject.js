@@ -14,7 +14,7 @@ export default (node, context) => {
     || context.isAnonymousDeclaration
     && ts.isIntersectionTypeNode(node)
   ) {
-    return `@kotlinx.js.JsPlainObject`
+    return `@js.objects.JsPlainObject`
   }
 
   return null
