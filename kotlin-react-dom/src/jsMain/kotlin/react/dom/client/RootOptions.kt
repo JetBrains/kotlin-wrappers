@@ -7,6 +7,6 @@ external interface RootOptions {
     /**
      * Prefix for `useId`.
      */
-    var identifierPrefix: String?
-    var onRecoverableError: ErrorHandler<RecoverableErrorInfo>?
+    val identifierPrefix: String?
+    val onRecoverableError: ErrorHandler<RecoverableErrorInfo>?
 }
