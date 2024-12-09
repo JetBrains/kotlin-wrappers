@@ -8,5 +8,5 @@ external interface HydrationOptions {
      * Prefix for `useId`.
      */
     var identifierPrefix: String?
-    var onRecoverableError: ErrorHandler?
+    var onRecoverableError: ErrorHandler<RecoverableErrorInfo>?
 }
