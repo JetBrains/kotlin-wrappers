@@ -80,6 +80,9 @@ include("kotlin-emotion")
 // Kotlin/JS: APIs missing from the standard library
 include("kotlin-js")
 
+// Kotlin/JS: Helper for `kotlin-js`
+include("kotlin-js-core")
+
 // Kotlin/JS: Material UI wrappers
 include("kotlin-mui-material")
 
