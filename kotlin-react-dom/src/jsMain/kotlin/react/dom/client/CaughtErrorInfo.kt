@@ -7,4 +7,4 @@ import react.Component
 external interface CaughtErrorInfo :
     ErrorInfo {
     val errorBoundary: Component<*, *>?
-    }
+}
