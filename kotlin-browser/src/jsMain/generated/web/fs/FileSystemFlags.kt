@@ -2,7 +2,7 @@
 
 package web.fs
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface FileSystemFlags {

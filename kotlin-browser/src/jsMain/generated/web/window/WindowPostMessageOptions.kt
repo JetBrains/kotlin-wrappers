@@ -2,7 +2,7 @@
 
 package web.window
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 import web.serialization.StructuredSerializeOptions
 
 @JsPlainObject

@@ -3,7 +3,7 @@
 package web.audio
 
 import js.array.ReadonlyArray
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface WaveShaperOptions :

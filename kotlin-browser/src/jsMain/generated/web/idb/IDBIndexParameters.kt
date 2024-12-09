@@ -2,7 +2,7 @@
 
 package web.idb
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface IDBIndexParameters {

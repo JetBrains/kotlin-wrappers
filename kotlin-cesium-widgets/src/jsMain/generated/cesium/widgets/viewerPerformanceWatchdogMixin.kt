@@ -4,7 +4,7 @@
 
 package cesium.widgets
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 /**
  * A mixin which adds the [PerformanceWatchdog] widget to the [Viewer] widget.

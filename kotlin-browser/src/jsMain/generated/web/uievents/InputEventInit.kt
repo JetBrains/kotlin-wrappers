@@ -3,7 +3,7 @@
 package web.uievents
 
 import js.array.ReadonlyArray
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 import web.data.DataTransfer
 import web.ranges.StaticRange
 

@@ -5,7 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 /**
  * A color, specified using red, green, blue, and alpha values,

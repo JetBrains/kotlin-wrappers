@@ -2,7 +2,7 @@
 
 package js.intl
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface ResolvedRelativeTimeFormatOptions {

@@ -5,7 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 /**
  * A primitive represents geometry in the [Scene].  The geometry can be from a single [GeometryInstance]

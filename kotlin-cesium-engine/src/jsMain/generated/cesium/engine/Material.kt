@@ -4,7 +4,7 @@
 
 package cesium.engine
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 /**
  * A Material defines surface appearance through a combination of diffuse, specular,

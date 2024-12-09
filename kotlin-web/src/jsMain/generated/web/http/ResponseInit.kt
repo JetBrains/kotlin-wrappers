@@ -2,7 +2,7 @@
 
 package web.http
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface ResponseInit {

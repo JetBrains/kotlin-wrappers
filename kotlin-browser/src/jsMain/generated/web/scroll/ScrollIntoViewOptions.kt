@@ -2,7 +2,7 @@
 
 package web.scroll
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface ScrollIntoViewOptions :

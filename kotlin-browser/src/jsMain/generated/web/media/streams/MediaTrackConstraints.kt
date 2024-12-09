@@ -3,7 +3,7 @@
 package web.media.streams
 
 import js.array.ReadonlyArray
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface MediaTrackConstraints :

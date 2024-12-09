@@ -3,7 +3,7 @@
 package web.idb
 
 import js.core.JsLong
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 import web.events.EventInit
 
 @JsPlainObject

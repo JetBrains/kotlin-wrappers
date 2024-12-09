@@ -3,7 +3,7 @@
 package web.dom
 
 import js.array.ReadonlyArray
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 import web.components.ShadowRoot
 
 @JsPlainObject

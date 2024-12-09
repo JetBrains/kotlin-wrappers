@@ -5,7 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 /**
  * A Hermite spline is a cubic interpolating spline. Points, incoming tangents, outgoing tangents, and times

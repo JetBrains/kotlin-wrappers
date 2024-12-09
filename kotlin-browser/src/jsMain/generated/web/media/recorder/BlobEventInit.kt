@@ -2,7 +2,7 @@
 
 package web.media.recorder
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 import web.blob.Blob
 import web.time.DOMHighResTimeStamp
 

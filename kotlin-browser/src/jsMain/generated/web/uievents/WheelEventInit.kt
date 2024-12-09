@@ -2,7 +2,7 @@
 
 package web.uievents
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface WheelEventInit :

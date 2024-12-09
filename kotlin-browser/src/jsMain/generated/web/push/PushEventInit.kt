@@ -2,7 +2,7 @@
 
 package web.push
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 import web.serviceworker.ExtendableEventInit
 
 @JsPlainObject

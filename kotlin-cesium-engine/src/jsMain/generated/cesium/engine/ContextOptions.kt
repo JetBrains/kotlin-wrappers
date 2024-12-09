@@ -2,7 +2,7 @@
 
 package cesium.engine
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 /**
  * Options to control the setting up of a WebGL Context.

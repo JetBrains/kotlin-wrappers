@@ -5,7 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 /**
  * A description of the outline of a a cartographic rectangle on an ellipsoid centered at the origin.

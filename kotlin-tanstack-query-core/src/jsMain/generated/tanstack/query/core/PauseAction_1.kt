@@ -2,7 +2,7 @@
 
 package tanstack.query.core
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface PauseAction_1 {

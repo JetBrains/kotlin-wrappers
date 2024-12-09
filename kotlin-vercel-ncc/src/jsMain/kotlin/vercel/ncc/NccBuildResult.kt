@@ -1,7 +1,7 @@
 package vercel.ncc
 
 import js.errors.JsError
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface NccBuildResult {

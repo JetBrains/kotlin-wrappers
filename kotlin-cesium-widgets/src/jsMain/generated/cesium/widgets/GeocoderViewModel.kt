@@ -8,7 +8,7 @@ import cesium.engine.DefaultEvent
 import cesium.engine.GeocoderService
 import cesium.engine.Scene
 import js.array.ReadonlyArray
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 /**
  * The view model for the [Geocoder] widget.

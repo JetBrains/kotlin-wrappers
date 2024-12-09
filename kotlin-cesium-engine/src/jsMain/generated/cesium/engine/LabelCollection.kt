@@ -4,7 +4,7 @@
 
 package cesium.engine
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 /**
  * A renderable collection of labels.  Labels are viewport-aligned text positioned in the 3D scene.

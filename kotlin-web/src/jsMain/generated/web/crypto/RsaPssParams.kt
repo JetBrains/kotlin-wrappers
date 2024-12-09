@@ -2,7 +2,7 @@
 
 package web.crypto
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface RsaPssParams :

@@ -4,7 +4,7 @@
 
 package cesium.engine
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 /**
  * An appearance for [PolylineGeometry] that supports shading with materials.

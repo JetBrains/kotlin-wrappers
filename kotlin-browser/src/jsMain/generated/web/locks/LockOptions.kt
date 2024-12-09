@@ -2,7 +2,7 @@
 
 package web.locks
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 import web.abort.AbortSignal
 import web.abort.Abortable
 

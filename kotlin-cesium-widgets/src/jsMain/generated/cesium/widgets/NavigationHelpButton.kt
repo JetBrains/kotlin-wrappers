@@ -4,7 +4,7 @@
 
 package cesium.widgets
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 import web.dom.Element
 
 /**

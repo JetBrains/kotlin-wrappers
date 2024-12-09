@@ -2,7 +2,7 @@
 
 package web.media.key
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface MediaKeySystemMediaCapability {

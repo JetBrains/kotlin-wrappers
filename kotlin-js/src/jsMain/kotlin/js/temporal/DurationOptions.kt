@@ -1,6 +1,6 @@
 package js.temporal
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 /**
  * Options for assigning fields using `Duration.prototype.with()` or entire

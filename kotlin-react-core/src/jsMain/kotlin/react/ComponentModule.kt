@@ -1,6 +1,6 @@
 package react
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface ComponentModule<in P : Props> {

@@ -2,7 +2,7 @@
 
 package web.fonts
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface FontFaceDescriptors {

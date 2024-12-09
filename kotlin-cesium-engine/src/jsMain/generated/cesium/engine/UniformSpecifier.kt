@@ -2,7 +2,7 @@
 
 package cesium.engine
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 /**
  * An object describing a uniform, its type, and an initial value

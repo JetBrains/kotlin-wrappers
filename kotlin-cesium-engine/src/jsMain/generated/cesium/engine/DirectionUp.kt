@@ -2,7 +2,7 @@
 
 package cesium.engine
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 /**
  * An orientation given by a pair of unit vectors

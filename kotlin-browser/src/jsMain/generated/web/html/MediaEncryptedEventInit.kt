@@ -3,7 +3,7 @@
 package web.html
 
 import js.buffer.ArrayBuffer
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 import web.events.EventInit
 
 @JsPlainObject

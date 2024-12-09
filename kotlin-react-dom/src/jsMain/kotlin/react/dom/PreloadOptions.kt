@@ -1,6 +1,6 @@
 package react.dom
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 import web.http.CrossOrigin
 import web.http.FetchPriority
 import web.http.ReferrerPolicy

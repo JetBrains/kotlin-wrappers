@@ -4,7 +4,7 @@ package web.authn
 
 import js.array.ReadonlyArray
 import js.buffer.BufferSource
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface PublicKeyCredentialRequestOptions {

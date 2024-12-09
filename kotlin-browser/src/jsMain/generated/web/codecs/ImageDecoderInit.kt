@@ -4,7 +4,7 @@ package web.codecs
 
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 import web.images.ColorSpaceConversion
 
 @JsPlainObject

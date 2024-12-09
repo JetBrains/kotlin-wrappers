@@ -2,7 +2,7 @@
 
 package actions.http.client
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 import web.url.URL
 
 @JsPlainObject

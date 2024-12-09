@@ -3,7 +3,7 @@
 package web.http
 
 import js.core.Void
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 import web.abort.AbortSignal
 import web.abort.Abortable
 

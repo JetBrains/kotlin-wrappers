@@ -2,7 +2,7 @@
 
 package web.html
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 import web.time.DOMHighResTimeStamp
 
 @JsPlainObject

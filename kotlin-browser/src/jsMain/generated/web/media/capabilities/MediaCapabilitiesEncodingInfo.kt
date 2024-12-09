@@ -2,7 +2,7 @@
 
 package web.media.capabilities
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface MediaCapabilitiesEncodingInfo :

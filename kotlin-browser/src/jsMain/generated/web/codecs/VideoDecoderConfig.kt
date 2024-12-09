@@ -3,7 +3,7 @@
 package web.codecs
 
 import js.buffer.AllowSharedBufferSource
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface VideoDecoderConfig {

@@ -2,7 +2,7 @@
 
 package web.viewtransition
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 import web.events.EventInit
 import web.navigation.NavigationActivation
 

@@ -2,7 +2,7 @@
 
 package tanstack.react.query
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface QueryErrorResetBoundaryValue {

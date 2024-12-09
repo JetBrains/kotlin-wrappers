@@ -2,7 +2,7 @@
 
 package web.geolocation
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface PositionOptions {

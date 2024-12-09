@@ -5,7 +5,7 @@ package js.temporal
 import js.core.BigInt
 import js.core.JsLong
 import js.import.JsQualifier
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 /**
  * A `Temporal.Instant` is an exact point in time, with a precision in

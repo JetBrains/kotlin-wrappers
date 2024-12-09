@@ -2,7 +2,7 @@
 
 package web.ranges
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 import web.dom.Node
 
 @JsPlainObject

@@ -2,7 +2,7 @@
 
 package web.pip
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 import web.events.EventInit
 
 @JsPlainObject

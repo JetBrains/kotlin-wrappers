@@ -6,7 +6,7 @@ package cesium.widgets
 
 import cesium.engine.Globe
 import js.array.ReadonlyArray
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 import web.dom.Element
 
 /**

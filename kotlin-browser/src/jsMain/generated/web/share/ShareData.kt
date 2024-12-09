@@ -3,7 +3,7 @@
 package web.share
 
 import js.array.ReadonlyArray
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 import web.file.File
 
 @JsPlainObject

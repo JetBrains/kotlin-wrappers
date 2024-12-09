@@ -1,6 +1,6 @@
 package js.temporal
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface PlainDateTimeLike {

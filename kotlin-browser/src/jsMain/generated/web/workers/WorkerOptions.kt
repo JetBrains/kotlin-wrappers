@@ -2,7 +2,7 @@
 
 package web.workers
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 import web.http.RequestCredentials
 
 @JsPlainObject

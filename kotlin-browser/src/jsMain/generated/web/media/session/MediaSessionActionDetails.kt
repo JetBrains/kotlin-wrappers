@@ -2,7 +2,7 @@
 
 package web.media.session
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface MediaSessionActionDetails {

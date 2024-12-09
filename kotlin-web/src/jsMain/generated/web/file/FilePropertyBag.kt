@@ -2,7 +2,7 @@
 
 package web.file
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 import web.blob.BlobPropertyBag
 import web.time.EpochTimeStamp
 

@@ -6,7 +6,7 @@ import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
 import js.buffer.BufferSource
 import js.core.JsLong
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface AudioDataInit {

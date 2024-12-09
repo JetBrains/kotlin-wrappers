@@ -3,7 +3,7 @@
 package web.messaging
 
 import js.array.ReadonlyArray
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 import web.events.EventInit
 
 @JsPlainObject

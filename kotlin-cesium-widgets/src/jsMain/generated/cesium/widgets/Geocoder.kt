@@ -7,7 +7,7 @@ package cesium.widgets
 import cesium.engine.GeocoderService
 import cesium.engine.Scene
 import js.array.ReadonlyArray
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 import web.dom.Element
 
 /**

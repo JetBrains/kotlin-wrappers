@@ -5,7 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 /**
  * A geodesic polygon to be used with [ClippingPlaneCollection] for selectively hiding regions in a model, a 3D tileset, or the globe.

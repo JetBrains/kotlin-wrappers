@@ -3,7 +3,7 @@
 package web.rtc
 
 import js.core.JsLong
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 import web.time.DOMHighResTimeStamp
 
 @JsPlainObject

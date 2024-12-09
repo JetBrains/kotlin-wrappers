@@ -2,8 +2,8 @@
 
 package web.authn
 
+import js.objects.JsPlainObject
 import js.objects.ReadonlyRecord
-import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface AuthenticationExtensionsPRFInputs {

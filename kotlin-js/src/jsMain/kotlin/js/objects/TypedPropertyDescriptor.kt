@@ -1,7 +1,5 @@
 package js.objects
 
-import kotlinx.js.JsPlainObject
-
 @JsPlainObject
 external interface TypedPropertyDescriptor<T> {
     val configurable: Boolean?

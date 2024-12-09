@@ -2,7 +2,7 @@
 
 package actions.exec
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 import node.buffer.Buffer
 
 @JsPlainObject

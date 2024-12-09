@@ -2,7 +2,7 @@
 
 package web.canvas
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 import web.images.PredefinedColorSpace
 
 @JsPlainObject

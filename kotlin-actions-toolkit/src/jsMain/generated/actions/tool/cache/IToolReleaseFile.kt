@@ -2,7 +2,7 @@
 
 package actions.tool.cache
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface IToolReleaseFile {

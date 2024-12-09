@@ -2,7 +2,7 @@
 
 package react.select
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 import react.ComponentClass
 import react.Key
 import react.PropsWithClassName

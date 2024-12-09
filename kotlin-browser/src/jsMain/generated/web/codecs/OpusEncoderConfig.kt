@@ -3,7 +3,7 @@
 package web.codecs
 
 import js.core.JsLong
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface OpusEncoderConfig {

@@ -2,7 +2,7 @@
 
 package web.media.devices
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 import web.media.streams.MediaTrackConstraints
 
 @JsPlainObject

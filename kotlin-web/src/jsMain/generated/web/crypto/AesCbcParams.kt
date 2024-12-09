@@ -3,7 +3,7 @@
 package web.crypto
 
 import js.buffer.BufferSource
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface AesCbcParams :

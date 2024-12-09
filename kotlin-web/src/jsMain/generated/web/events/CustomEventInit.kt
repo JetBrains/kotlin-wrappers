@@ -2,7 +2,7 @@
 
 package web.events
 
-import kotlinx.js.JsPlainObject
+import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface CustomEventInit<out D> :
