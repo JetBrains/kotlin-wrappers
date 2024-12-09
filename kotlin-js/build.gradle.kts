@@ -3,6 +3,8 @@ plugins {
 }
 
 dependencies {
+    commonMainApi(projects.kotlinJsCore)
+
     commonMainImplementation(libs.coroutines.core)
 
     commonTestImplementation(libs.coroutines.test)
