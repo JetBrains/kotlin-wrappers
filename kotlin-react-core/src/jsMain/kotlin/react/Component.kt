@@ -36,7 +36,3 @@ abstract external class Component<P : Props, S : State>(
 
     abstract fun render(): ReactNode?
 }
-
-external interface ErrorInfo {
-    val componentStack: String
-}
