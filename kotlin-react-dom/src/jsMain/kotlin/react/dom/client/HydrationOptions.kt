@@ -4,6 +4,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface HydrationOptions {
+    val formState: ReactFormState?
     /**
      * Prefix for `useId`.
      */
