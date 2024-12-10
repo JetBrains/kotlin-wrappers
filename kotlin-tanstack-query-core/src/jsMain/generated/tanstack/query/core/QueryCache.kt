@@ -19,8 +19,8 @@ open external class QueryCache(config: QueryCacheConfig = definedExternally) : S
     open fun clear()
     open fun <TQueryFnData, TError, TData, TQueryKey : QueryKey> get(queryHash: String): Query<TQueryFnData, TError, TData, TQueryKey>?
     open fun getAll(): ReadonlyArray<Query<*, *, *, *>>
-    open fun <TQueryFnData, TError, TData> find(filters: QueryFilters): Query<TQueryFnData, TError, TData, *>?
-    open fun findAll(filters: QueryFilters = definedExternally): ReadonlyArray<Query<*, *, *, *>>
+    open fun <TQueryFnData, TError, TData> find(filters: QueryFilters<*, *, *, *>): Query<TQueryFnData, TError, TData, *>?
+    open fun findAll(filters: QueryFilters<*, *, *, *> = definedExternally): ReadonlyArray<Query<*, *, *, *>>
     open fun notify(event: QueryCacheNotifyEvent)
     open fun onFocus()
     open fun onOnline()

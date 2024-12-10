@@ -6,4 +6,4 @@
 
 package tanstack.query.core
 
-typealias DataTag<TType, TValue> = Any
+typealias DataTag<TType, TValue, TError> = Any

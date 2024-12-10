@@ -8,6 +8,6 @@ import tanstack.query.core.MutationFilters
 import tanstack.query.core.QueryClient
 
 external fun useIsMutating(
-    filters: MutationFilters = definedExternally,
+    filters: MutationFilters<*, *, *, *> = definedExternally,
     queryClient: QueryClient = definedExternally,
 ): Int

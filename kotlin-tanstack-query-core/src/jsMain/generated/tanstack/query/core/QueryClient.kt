@@ -4,50 +4,38 @@
 
 package tanstack.query.core
 
-import js.array.JsTuple2
-import js.array.ReadonlyArray
 import js.core.Void
 import js.promise.Promise
 
 open external class QueryClient(config: QueryClientConfig = definedExternally) {
     open fun mount()
     open fun unmount()
-    open fun isFetching(filters: QueryFilters = definedExternally): Int
-    open fun isMutating(filters: MutationFilters = definedExternally): Int
+    open fun <TQueryFilters : QueryFilters<*, *, *, *>> isFetching(filters: TQueryFilters = definedExternally): Int
+    open fun <TMutationFilters : MutationFilters<*, *, *, *>> isMutating(filters: TMutationFilters = definedExternally): Int
     open fun <TQueryFnData> getQueryData(queryKey: QueryKey): TQueryFnData?
     open fun <TQueryFnData, TError, TData, TQueryKey : QueryKey> ensureQueryData(options: EnsureQueryDataOptions<TQueryFnData, TError, TData, TQueryKey, *>): Promise<TData>
-    open fun <TQueryFnData> getQueriesData(filters: QueryFilters): ReadonlyArray<JsTuple2<QueryKey, TQueryFnData?>>
-    open fun <TQueryFnData> setQueryData(
-        queryKey: QueryKey,
-        updater: Updater<TQueryFnData?, TQueryFnData?>,
-        options: SetDataOptions = definedExternally,
-    ): TQueryFnData?
-
-    open fun <TQueryFnData> setQueriesData(
-        filters: QueryFilters,
-        updater: Updater<TQueryFnData?, TQueryFnData?>,
-        options: SetDataOptions = definedExternally,
-    ): ReadonlyArray<JsTuple2<QueryKey, TQueryFnData?>>
-
+    open var getQueriesData: Any /* TQueryFnData>(filters: TQueryFilters): Array<[QueryKey, TInferredQueryFnData | undefined]> */
+    open var setQueryData: Any /* TQueryFnData>(queryKey: TTaggedQueryKey, updater: Updater<NoInfer<TInferredQueryFnData> | undefined, NoInfer<TInferredQueryFnData> | undefined>, options?: SetDataOptions): TInferredQueryFnData | undefined */
+    open var setQueriesData: Any /* TQueryFnData>(filters: TQueryFilters, updater: Updater<NoInfer<TInferredQueryFnData> | undefined, NoInfer<TInferredQueryFnData> | undefined>, options?: SetDataOptions): Array<[QueryKey, TInferredQueryFnData | undefined]> */
     open fun <TQueryFnData, TError> getQueryState(queryKey: QueryKey): QueryState<TQueryFnData, TError>?
-    open fun removeQueries(filters: QueryFilters = definedExternally)
-    open fun resetQueries(
-        filters: QueryFilters = definedExternally,
+    open fun <TQueryFilters : QueryFilters<*, *, *, *>> removeQueries(filters: TQueryFilters = definedExternally)
+    open fun <TQueryFilters : QueryFilters<*, *, *, *>> resetQueries(
+        filters: TQueryFilters = definedExternally,
         options: ResetOptions = definedExternally,
     ): Promise<Void>
 
-    open fun cancelQueries(
-        filters: QueryFilters = definedExternally,
+    open fun <TQueryFilters : QueryFilters<*, *, *, *>> cancelQueries(
+        filters: TQueryFilters = definedExternally,
         cancelOptions: CancelOptions = definedExternally,
     ): Promise<Void>
 
-    open fun invalidateQueries(
-        filters: InvalidateQueryFilters = definedExternally,
+    open fun <TInvalidateQueryFilters : InvalidateQueryFilters<*, *, *, *>> invalidateQueries(
+        filters: TInvalidateQueryFilters = definedExternally,
         options: InvalidateOptions = definedExternally,
     ): Promise<Void>
 
-    open fun refetchQueries(
-        filters: RefetchQueryFilters = definedExternally,
+    open fun <TRefetchQueryFilters : RefetchQueryFilters<*, *, *, *>> refetchQueries(
+        filters: TRefetchQueryFilters = definedExternally,
         options: RefetchOptions = definedExternally,
     ): Promise<Void>
 

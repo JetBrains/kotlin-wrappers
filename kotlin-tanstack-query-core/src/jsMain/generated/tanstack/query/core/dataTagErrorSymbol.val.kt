@@ -4,7 +4,6 @@
 
 package tanstack.query.core
 
-external fun matchQuery(
-    filters: QueryFilters<*, *, *, *>,
-    query: Query<*, *, *, *>,
-): Boolean
+import js.symbol.Symbol
+
+external object dataTagErrorSymbol : Symbol

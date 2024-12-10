@@ -2,7 +2,7 @@
 
 package tanstack.query.core
 
-import js.objects.JsPlainObject
-
-@JsPlainObject
-external interface RefetchQueryFilters : QueryFilters
+// @JsPlainObject
+// Details - https://youtrack.jetbrains.com/issue/KT-70664
+external interface RefetchQueryFilters<TQueryFnData, TError, TData, TQueryKey : QueryKey>
+    : QueryFilters<TQueryFnData, TError, TData, TQueryKey>

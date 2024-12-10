@@ -2,12 +2,11 @@
 
 package tanstack.query.core
 
-import js.objects.JsPlainObject
-
-@JsPlainObject
-external interface MutationFilters {
-    val exact: Boolean?
-    val predicate: ((mutation: Mutation<*, *, *, *>) -> Boolean)?
-    val mutationKey: MutationKey?
-    val status: MutationStatus?
+// @JsPlainObject
+// Details - https://youtrack.jetbrains.com/issue/KT-70664
+external interface MutationFilters<TData, TError, TVariables, TContext> {
+    var exact: Boolean?
+    var predicate: ((mutation: Mutation<TData, TError, TVariables, TContext>) -> Boolean)?
+    var mutationKey: MutationKey?
+    var status: MutationStatus?
 }
