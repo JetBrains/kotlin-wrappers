@@ -69,10 +69,6 @@ tasks.withType<KotlinCompilationTask<*>>().configureEach {
         freeCompilerArgs.addAll(
             "-Xexpect-actual-classes",
 
-            "-Xdont-warn-on-error-suppression",
-            "-Xir-generate-inline-anonymous-functions",
-            "-Xsuppress-warning=NOTHING_TO_INLINE",
-
             "-opt-in=kotlin.ExperimentalStdlibApi",
             "-opt-in=kotlin.ExperimentalUnsignedTypes",
             "-opt-in=kotlin.contracts.ExperimentalContracts",
@@ -84,5 +80,11 @@ tasks.withType<KotlinCompilationTask<*>>().configureEach {
 tasks.withType<Kotlin2JsCompile>().configureEach {
     compilerOptions {
         target = "es2015"
+
+        freeCompilerArgs.addAll(
+            "-Xdont-warn-on-error-suppression",
+            "-Xir-generate-inline-anonymous-functions",
+            "-Xsuppress-warning=NOTHING_TO_INLINE",
+        )
     }
 }
