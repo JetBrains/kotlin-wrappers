@@ -19,9 +19,9 @@ fun <D, M : Function<Unit>> useMutateUser(
             mutationFn = createMutationFunction(action)
             onSuccess = { _, _, _ ->
                 queryClient.invalidateQueries(
-                    filters = InvalidateQueryFilters(
+                    filters = jso<InvalidateQueryFilters<D, Error, User, QueryKey>> {
                         queryKey = USERS_QUERY_KEY
-                    )
+                    }
                 )
             }
         }
