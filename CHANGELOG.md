@@ -1,3 +1,10 @@
+## pre.853
+
+**BREAKING CHANGE**
+
+* React `useContext` moved to `kotlin-react-legacy`
+    * Modern replacement - `use`
+
 ## pre.817
 
 **BREAKING CHANGE**
