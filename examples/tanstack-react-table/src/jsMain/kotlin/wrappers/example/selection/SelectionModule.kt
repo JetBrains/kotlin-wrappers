@@ -10,10 +10,10 @@ private val SetSelectedUserContext: RequiredContext<StateSetter<User?>> =
     createRequiredContext()
 
 fun useSelectedUser(): User? =
-    useContext(SelectedUserContext)
+    use(SelectedUserContext)
 
 fun useSetSelectedUser(): StateSetter<User?> =
-    useRequiredContext(SetSelectedUserContext)
+    useRequired(SetSelectedUserContext)
 
 val SelectionModule = FC<PropsWithChildren> { props ->
     val (user, setUser) = useState<User>()
