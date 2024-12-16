@@ -6,7 +6,3 @@ package react
 external fun <T> useContext(
     context: Context<T>,
 ): T
-
-external fun <T : Any> useContext(
-    context: RequiredContext<T>,
-): T?
