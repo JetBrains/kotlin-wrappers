@@ -5,13 +5,13 @@ import org.jetbrains.kotlin.gradle.targets.js.npm.NpmExtension
 
 plugins.withType<NodeJsRootPlugin> {
     the<NodeJsRootExtension>().apply {
-        version = "22.12.0"
+        version = "22.12.0" // https://nodejs.org/en/download/package-manager
 
         versions.apply {
-            webpack.version = "5.97.1"
-            webpackCli.version = "5.1.4"
-            webpackDevServer.version = "5.1.0"
-            karma.version = "6.4.4"
+            webpack.version = "5.97.1" // https://www.npmjs.com/package/webpack
+            webpackCli.version = "5.1.4" // https://www.npmjs.com/package/webpack-cli
+            webpackDevServer.version = "5.2.0" // https://www.npmjs.com/package/webpack-dev-server
+            karma.version = "6.4.4" // https://www.npmjs.com/package/karma
         }
     }
 
