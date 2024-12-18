@@ -19,5 +19,5 @@ sealed external interface HTMLCollectionBase<T : Element> :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCollection/item)
      */
-    fun item(index: Int): T?
+    fun item(index: UInt): T?
 }

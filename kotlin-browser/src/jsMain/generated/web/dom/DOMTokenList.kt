@@ -19,7 +19,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/length)
      */
-    override val length: Int
+    val length: UInt
 
     /**
      * Returns the associated set as string.
@@ -53,7 +53,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/item)
      */
-    fun item(index: Int): String?
+    fun item(index: UInt): String?
 
     /**
      * Removes arguments passed, if they are present.

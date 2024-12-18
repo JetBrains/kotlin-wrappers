@@ -15,7 +15,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaList/length)
      */
-    override val length: Int
+    val length: UInt
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaList/mediaText)
@@ -35,5 +35,5 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaList/item)
      */
-    fun item(index: Int): MediaQuery?
+    fun item(index: UInt): MediaQuery?
 }

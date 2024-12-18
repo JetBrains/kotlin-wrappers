@@ -8,5 +8,5 @@ import js.objects.JsPlainObject
 external interface HmacKeyAlgorithm :
     KeyAlgorithm {
     val hash: KeyAlgorithm
-    val length: Int
+    val length: UInt
 }

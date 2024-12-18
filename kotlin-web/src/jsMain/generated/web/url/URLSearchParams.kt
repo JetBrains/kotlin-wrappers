@@ -21,7 +21,7 @@ open external class URLSearchParams(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/size)
      */
-    override val size: Int
+    val size: UInt
 
     /**
      * Appends a specified key/value pair as a new search parameter.

@@ -14,20 +14,20 @@ external class SVGStringList
 private constructor() :
     ArrayLike<String>,
     JsIterable<String> {
-    override val length: Int
+    val length: UInt
     val numberOfItems: UInt
     fun appendItem(newItem: String): String
     fun clear()
-    fun getItem(index: Int): String
+    fun getItem(index: UInt): String
     fun initialize(newItem: String): String
     fun insertItemBefore(
         newItem: String,
-        index: Int,
+        index: UInt,
     ): String
 
-    fun removeItem(index: Int): String
+    fun removeItem(index: UInt): String
     fun replaceItem(
         newItem: String,
-        index: Int,
+        index: UInt,
     ): String
 }

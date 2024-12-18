@@ -26,14 +26,14 @@ open external class CSSStyleSheet(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/deleteRule)
      */
-    fun deleteRule(index: Int)
+    fun deleteRule(index: UInt)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/insertRule)
      */
     fun insertRule(
         rule: String,
-        index: Int = definedExternally,
+        index: UInt = definedExternally,
     ): UInt
 
     /**

@@ -17,10 +17,10 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchList/length)
      */
-    override val length: Int
+    val length: UInt
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchList/item)
      */
-    fun item(index: Int): Touch?
+    fun item(index: UInt): Touch?
 }

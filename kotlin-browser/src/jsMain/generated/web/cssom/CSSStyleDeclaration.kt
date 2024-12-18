@@ -1090,7 +1090,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/length)
      */
-    override val length: Int
+    val length: UInt
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/letter-spacing)
@@ -2176,7 +2176,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/item)
      */
-    fun item(index: Int): String
+    fun item(index: UInt): String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/removeProperty)

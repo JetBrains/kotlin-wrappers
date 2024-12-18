@@ -16,7 +16,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/length)
      */
-    override val length: Int
+    val length: UInt
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/numberOfItems)
@@ -36,7 +36,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/getItem)
      */
-    fun getItem(index: Int): DOMPoint
+    fun getItem(index: UInt): DOMPoint
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/initialize)
@@ -48,19 +48,19 @@ private constructor() :
      */
     fun insertItemBefore(
         newItem: DOMPoint,
-        index: Int,
+        index: UInt,
     ): DOMPoint
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/removeItem)
      */
-    fun removeItem(index: Int): DOMPoint
+    fun removeItem(index: UInt): DOMPoint
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/replaceItem)
      */
     fun replaceItem(
         newItem: DOMPoint,
-        index: Int,
+        index: UInt,
     ): DOMPoint
 }

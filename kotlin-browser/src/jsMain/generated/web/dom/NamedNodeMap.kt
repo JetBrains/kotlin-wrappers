@@ -17,7 +17,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NamedNodeMap/length)
      */
-    override val length: Int
+    val length: UInt
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NamedNodeMap/getNamedItem)
@@ -35,7 +35,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NamedNodeMap/item)
      */
-    fun item(index: Int): Attr?
+    fun item(index: UInt): Attr?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NamedNodeMap/removeNamedItem)

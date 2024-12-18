@@ -17,10 +17,10 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileList/length)
      */
-    override val length: Int
+    val length: UInt
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileList/item)
      */
-    fun item(index: Int): File?
+    fun item(index: UInt): File?
 }

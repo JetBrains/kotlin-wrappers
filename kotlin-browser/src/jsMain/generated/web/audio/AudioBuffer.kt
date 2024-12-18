@@ -20,7 +20,7 @@ open external class AudioBuffer(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioBuffer/length)
      */
-    val length: Int
+    val length: UInt
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioBuffer/numberOfChannels)

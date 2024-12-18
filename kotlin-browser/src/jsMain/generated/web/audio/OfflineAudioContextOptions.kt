@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface OfflineAudioContextOptions {
-    val length: Int
+    val length: UInt
     val numberOfChannels: UInt?
     val sampleRate: Float
 }

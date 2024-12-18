@@ -104,7 +104,7 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/getRangeAt)
      */
-    fun getRangeAt(index: Int): Range
+    fun getRangeAt(index: UInt): Range
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/modify)

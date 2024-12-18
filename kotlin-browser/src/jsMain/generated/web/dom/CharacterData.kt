@@ -20,7 +20,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CharacterData/length)
      */
-    val length: Int
+    val length: UInt
     override val ownerDocument: Document
 
     /**

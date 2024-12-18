@@ -15,7 +15,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNumericArray/length)
      */
-    override val length: Int
+    val length: UInt
 
     override fun entries(): JsIterator<JsTuple2<Int, CSSNumericValue>>
     override fun keys(): JsIterator<Int>

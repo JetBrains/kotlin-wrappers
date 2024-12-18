@@ -74,7 +74,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/length)
      */
-    override val length: Int
+    val length: UInt
 
     /**
      * Sets or retrieves how to send the form data to the server.

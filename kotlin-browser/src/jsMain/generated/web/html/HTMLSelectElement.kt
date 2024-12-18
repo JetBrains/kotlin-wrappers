@@ -51,7 +51,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/length)
      */
-    var length: Int
+    var length: UInt
 
     /**
      * Sets or retrieves the Boolean value indicating whether multiple items can be selected from a list.
@@ -98,7 +98,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/size)
      */
-    var size: Int
+    var size: UInt
 
     /**
      * Retrieves the type of select control based on the value of the MULTIPLE attribute.
@@ -176,7 +176,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/item)
      */
-    fun item(index: Int): HTMLOptionElement?
+    fun item(index: UInt): HTMLOptionElement?
 
     /**
      * Retrieves a select object or an object from an options collection.
@@ -193,7 +193,7 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/remove)
      */
     override fun remove()
-    fun remove(index: Int)
+    fun remove(index: UInt)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/reportValidity)

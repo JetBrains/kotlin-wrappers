@@ -14,20 +14,20 @@ external class SVGNumberList
 private constructor() :
     ArrayLike<SVGNumber>,
     JsIterable<SVGNumber> {
-    override val length: Int
+    val length: UInt
     val numberOfItems: UInt
     fun appendItem(newItem: SVGNumber): SVGNumber
     fun clear()
-    fun getItem(index: Int): SVGNumber
+    fun getItem(index: UInt): SVGNumber
     fun initialize(newItem: SVGNumber): SVGNumber
     fun insertItemBefore(
         newItem: SVGNumber,
-        index: Int,
+        index: UInt,
     ): SVGNumber
 
-    fun removeItem(index: Int): SVGNumber
+    fun removeItem(index: UInt): SVGNumber
     fun replaceItem(
         newItem: SVGNumber,
-        index: Int,
+        index: UInt,
     ): SVGNumber
 }

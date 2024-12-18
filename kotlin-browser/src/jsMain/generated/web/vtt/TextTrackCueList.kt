@@ -17,7 +17,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCueList/length)
      */
-    override val length: Int
+    val length: UInt
 
     /**
      * Returns the first text track cue (in text track cue order) with text track cue identifier id.
