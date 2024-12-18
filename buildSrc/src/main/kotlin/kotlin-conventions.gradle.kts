@@ -85,7 +85,6 @@ tasks.withType<Kotlin2JsCompile>().configureEach {
             "-Xdont-warn-on-error-suppression",
             "-Xir-generate-inline-anonymous-functions",
             "-Xsuppress-warning=NOTHING_TO_INLINE",
-            "-Xsuppress-warning=INLINE_CLASS_IN_EXTERNAL_DECLARATION_WARNING",
         )
     }
 }
