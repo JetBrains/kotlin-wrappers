@@ -23,7 +23,7 @@ open external class CSSTransformValue(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTransformValue/length)
      */
-    val length: UInt
+    override val length: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTransformValue/toMatrix)

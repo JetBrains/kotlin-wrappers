@@ -19,7 +19,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBufferList/length)
      */
-    val length: UInt
+    override val length: Int
     var onaddsourcebuffer: EventHandler<Event, SourceBufferList, SourceBufferList>?
     var onremovesourcebuffer: EventHandler<Event, SourceBufferList, SourceBufferList>?
 

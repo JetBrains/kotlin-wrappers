@@ -19,7 +19,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionsCollection/length)
      */
-    var length: UInt
+    override var length: Int
 
     /**
      * Returns the index of the first selected item, if any, or −1 if there is no selected item.

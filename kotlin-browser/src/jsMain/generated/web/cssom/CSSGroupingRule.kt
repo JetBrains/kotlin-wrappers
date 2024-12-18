@@ -18,13 +18,13 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSGroupingRule/deleteRule)
      */
-    fun deleteRule(index: UInt)
+    fun deleteRule(index: Int)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSGroupingRule/insertRule)
      */
     fun insertRule(
         rule: String,
-        index: UInt = definedExternally,
+        index: Int = definedExternally,
     ): UInt
 }

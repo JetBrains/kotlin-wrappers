@@ -244,7 +244,7 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/size)
      */
-    var size: UInt
+    var size: Int
 
     /**
      * The address or URL of the a media resource that is to be considered.

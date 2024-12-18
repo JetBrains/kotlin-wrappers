@@ -17,7 +17,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageTrackList/length)
      */
-    val length: UInt
+    override val length: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageTrackList/ready)

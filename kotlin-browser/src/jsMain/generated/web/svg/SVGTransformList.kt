@@ -16,23 +16,23 @@ external class SVGTransformList
 private constructor() :
     ArrayLike<SVGTransform>,
     JsIterable<SVGTransform> {
-    val length: UInt
+    override val length: Int
     val numberOfItems: UInt
     fun appendItem(newItem: SVGTransform): SVGTransform
     fun clear()
     fun consolidate(): SVGTransform?
     fun createSVGTransformFromMatrix(matrix: DOMMatrix2DInit = definedExternally): SVGTransform
     fun createSVGTransformFromMatrix(matrix: DOMMatrixReadOnly /* DOMMatrix2DInit */): SVGTransform
-    fun getItem(index: UInt): SVGTransform
+    fun getItem(index: Int): SVGTransform
     fun initialize(newItem: SVGTransform): SVGTransform
     fun insertItemBefore(
         newItem: SVGTransform,
-        index: UInt,
+        index: Int,
     ): SVGTransform
 
-    fun removeItem(index: UInt): SVGTransform
+    fun removeItem(index: Int): SVGTransform
     fun replaceItem(
         newItem: SVGTransform,
-        index: UInt,
+        index: Int,
     ): SVGTransform
 }

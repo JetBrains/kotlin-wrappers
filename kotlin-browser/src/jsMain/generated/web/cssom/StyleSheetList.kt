@@ -17,10 +17,10 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheetList/length)
      */
-    val length: UInt
+    override val length: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheetList/item)
      */
-    fun item(index: UInt): CSSStyleSheet?
+    fun item(index: Int): CSSStyleSheet?
 }

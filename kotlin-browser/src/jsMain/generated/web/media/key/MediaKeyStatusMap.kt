@@ -18,7 +18,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyStatusMap/size)
      */
-    val size: UInt
+    override val size: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyStatusMap/get)

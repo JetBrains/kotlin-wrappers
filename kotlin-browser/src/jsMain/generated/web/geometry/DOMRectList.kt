@@ -15,10 +15,10 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectList/length)
      */
-    val length: UInt
+    override val length: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectList/item)
      */
-    fun item(index: UInt): DOMRect?
+    fun item(index: Int): DOMRect?
 }

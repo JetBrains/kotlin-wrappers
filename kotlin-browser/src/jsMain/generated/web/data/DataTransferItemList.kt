@@ -20,7 +20,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItemList/length)
      */
-    val length: UInt
+    override val length: Int
 
     /**
      * Adds a new entry for the given data to the drag data store. If the data is plain text then a type string has to be provided also.
@@ -46,5 +46,5 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItemList/remove)
      */
-    fun remove(index: UInt)
+    fun remove(index: Int)
 }

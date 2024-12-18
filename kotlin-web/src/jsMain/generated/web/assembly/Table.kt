@@ -16,12 +16,12 @@ open external class Table(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/Table/length)
      */
-    val length: UInt
+    val length: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/Table/get)
      */
-    operator fun get(index: UInt): Any
+    operator fun get(index: Int): Any
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/Table/grow)
@@ -35,7 +35,7 @@ open external class Table(
      * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/Table/set)
      */
     fun set(
-        index: UInt,
+        index: Int,
         value: Any? = definedExternally,
     )
 }

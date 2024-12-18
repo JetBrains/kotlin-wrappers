@@ -17,7 +17,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/length)
      */
-    val length: UInt
+    override val length: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/numberOfItems)
@@ -37,7 +37,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/getItem)
      */
-    fun getItem(index: UInt): SVGLength
+    fun getItem(index: Int): SVGLength
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/initialize)
@@ -49,19 +49,19 @@ private constructor() :
      */
     fun insertItemBefore(
         newItem: SVGLength,
-        index: UInt,
+        index: Int,
     ): SVGLength
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/removeItem)
      */
-    fun removeItem(index: UInt): SVGLength
+    fun removeItem(index: Int): SVGLength
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/replaceItem)
      */
     fun replaceItem(
         newItem: SVGLength,
-        index: UInt,
+        index: Int,
     ): SVGLength
 }

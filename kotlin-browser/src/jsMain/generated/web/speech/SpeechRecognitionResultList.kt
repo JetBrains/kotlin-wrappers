@@ -15,10 +15,10 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechRecognitionResultList/length)
      */
-    val length: UInt
+    override val length: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechRecognitionResultList/item)
      */
-    fun item(index: UInt): SpeechRecognitionResult
+    fun item(index: Int): SpeechRecognitionResult
 }

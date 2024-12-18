@@ -14,7 +14,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TimeRanges/length)
      */
-    val length: UInt
+    val length: Int
 
     /**
      * Returns the time for the end of the range with the given index.
@@ -23,7 +23,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TimeRanges/end)
      */
-    fun end(index: UInt): Double
+    fun end(index: Int): Double
 
     /**
      * Returns the time for the start of the range with the given index.
@@ -32,5 +32,5 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TimeRanges/start)
      */
-    fun start(index: UInt): Double
+    fun start(index: Int): Double
 }

@@ -34,7 +34,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LargestContentfulPaint/size)
      */
-    val size: UInt
+    val size: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LargestContentfulPaint/url)

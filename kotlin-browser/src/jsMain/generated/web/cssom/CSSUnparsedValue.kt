@@ -17,7 +17,7 @@ open external class CSSUnparsedValue(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSUnparsedValue/length)
      */
-    val length: UInt
+    override val length: Int
 
     override fun entries(): JsIterator<JsTuple2<Int, CSSUnparsedSegment>>
     override fun keys(): JsIterator<Int>

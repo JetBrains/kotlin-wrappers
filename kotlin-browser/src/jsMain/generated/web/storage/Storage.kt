@@ -14,7 +14,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Storage/length)
      */
-    val length: UInt
+    val length: Int
 
     /**
      * Removes all key/value pairs, if there are any.
@@ -37,7 +37,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Storage/key)
      */
-    fun key(index: UInt): String?
+    fun key(index: Int): String?
 
     /**
      * Removes the key/value pair with the given key, if a key/value pair with the given key exists.

@@ -19,7 +19,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMStringList/length)
      */
-    val length: UInt
+    override val length: Int
 
     /**
      * Returns true if strings contains string, and false otherwise.
@@ -33,5 +33,5 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMStringList/item)
      */
-    fun item(index: UInt): String?
+    fun item(index: Int): String?
 }
