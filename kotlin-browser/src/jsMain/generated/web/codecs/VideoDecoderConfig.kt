@@ -8,12 +8,12 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface VideoDecoderConfig {
     val codec: String
-    val codedHeight: Int?
-    val codedWidth: Int?
+    val codedHeight: UInt?
+    val codedWidth: UInt?
     val colorSpace: VideoColorSpaceInit?
     val description: AllowSharedBufferSource?
-    val displayAspectHeight: Int?
-    val displayAspectWidth: Int?
+    val displayAspectHeight: UInt?
+    val displayAspectWidth: UInt?
     val hardwareAcceleration: HardwareAcceleration?
     val optimizeForLatency: Boolean?
 }

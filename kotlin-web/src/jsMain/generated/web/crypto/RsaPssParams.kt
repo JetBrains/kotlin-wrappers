@@ -7,5 +7,5 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface RsaPssParams :
     Algorithm {
-    val saltLength: Int
+    val saltLength: UInt
 }

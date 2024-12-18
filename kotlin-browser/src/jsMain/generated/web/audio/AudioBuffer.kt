@@ -25,7 +25,7 @@ open external class AudioBuffer(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioBuffer/numberOfChannels)
      */
-    val numberOfChannels: Int
+    val numberOfChannels: UInt
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioBuffer/sampleRate)
@@ -37,8 +37,8 @@ open external class AudioBuffer(
      */
     fun copyFromChannel(
         destination: Float32Array<*>,
-        channelNumber: Int,
-        bufferOffset: Int = definedExternally,
+        channelNumber: UInt,
+        bufferOffset: UInt = definedExternally,
     )
 
     /**
@@ -46,12 +46,12 @@ open external class AudioBuffer(
      */
     fun copyToChannel(
         source: Float32Array<*>,
-        channelNumber: Int,
-        bufferOffset: Int = definedExternally,
+        channelNumber: UInt,
+        bufferOffset: UInt = definedExternally,
     )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioBuffer/getChannelData)
      */
-    fun getChannelData(channel: Int): Float32Array<*>
+    fun getChannelData(channel: UInt): Float32Array<*>
 }

@@ -7,6 +7,6 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface AudioBufferOptions {
     val length: Int
-    val numberOfChannels: Int?
+    val numberOfChannels: UInt?
     val sampleRate: Float
 }

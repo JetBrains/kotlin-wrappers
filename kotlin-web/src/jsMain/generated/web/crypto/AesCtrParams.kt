@@ -9,5 +9,5 @@ import js.objects.JsPlainObject
 external interface AesCtrParams :
     Algorithm {
     val counter: BufferSource
-    val length: Short /* unsigned byte */
+    val length: UByte
 }

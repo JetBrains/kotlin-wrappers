@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface IdleRequestOptions {
-    val timeout: Int?
+    val timeout: UInt?
 }

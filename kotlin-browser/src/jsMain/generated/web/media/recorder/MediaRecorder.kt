@@ -16,7 +16,7 @@ open external class MediaRecorder(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/audioBitsPerSecond)
      */
-    val audioBitsPerSecond: Int
+    val audioBitsPerSecond: UInt
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/mimeType)
@@ -66,7 +66,7 @@ open external class MediaRecorder(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/videoBitsPerSecond)
      */
-    val videoBitsPerSecond: Int
+    val videoBitsPerSecond: UInt
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/pause)
@@ -86,7 +86,7 @@ open external class MediaRecorder(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/start)
      */
-    fun start(timeslice: Int = definedExternally)
+    fun start(timeslice: UInt = definedExternally)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/stop)

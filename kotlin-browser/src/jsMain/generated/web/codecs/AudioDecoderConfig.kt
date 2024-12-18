@@ -9,6 +9,6 @@ import js.objects.JsPlainObject
 external interface AudioDecoderConfig {
     val codec: String
     val description: BufferSource?
-    val numberOfChannels: Int
-    val sampleRate: Int
+    val numberOfChannels: UInt
+    val sampleRate: UInt
 }

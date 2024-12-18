@@ -35,7 +35,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/height)
      */
-    var height: Int
+    var height: UInt
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/enterpictureinpicture_event)
@@ -64,21 +64,21 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/videoHeight)
      */
-    val videoHeight: Int
+    val videoHeight: UInt
 
     /**
      * Gets the intrinsic width of a video in CSS pixels, or zero if the dimensions are not known.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/videoWidth)
      */
-    val videoWidth: Int
+    val videoWidth: UInt
 
     /**
      * Gets or sets the width of the video element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/width)
      */
-    var width: Int
+    var width: UInt
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/cancelVideoFrameCallback)

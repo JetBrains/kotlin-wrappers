@@ -15,7 +15,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioNode/channelCount)
      */
-    var channelCount: Int
+    var channelCount: UInt
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioNode/channelCountMode)
@@ -35,47 +35,47 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioNode/numberOfInputs)
      */
-    val numberOfInputs: Int
+    val numberOfInputs: UInt
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioNode/numberOfOutputs)
      */
-    val numberOfOutputs: Int
+    val numberOfOutputs: UInt
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioNode/connect)
      */
     fun connect(
         destinationNode: AudioNode,
-        output: Int = definedExternally,
-        input: Int = definedExternally,
+        output: UInt = definedExternally,
+        input: UInt = definedExternally,
     ): AudioNode
 
     fun connect(
         destinationParam: AudioParam,
-        output: Int = definedExternally,
+        output: UInt = definedExternally,
     )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioNode/disconnect)
      */
     fun disconnect()
-    fun disconnect(output: Int)
+    fun disconnect(output: UInt)
     fun disconnect(destinationNode: AudioNode)
     fun disconnect(
         destinationNode: AudioNode,
-        output: Int,
+        output: UInt,
     )
 
     fun disconnect(
         destinationNode: AudioNode,
-        output: Int,
-        input: Int,
+        output: UInt,
+        input: UInt,
     )
 
     fun disconnect(destinationParam: AudioParam)
     fun disconnect(
         destinationParam: AudioParam,
-        output: Int,
+        output: UInt,
     )
 }

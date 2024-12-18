@@ -7,5 +7,5 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface WebTransportErrorOptions {
     val source: WebTransportErrorSource?
-    val streamErrorCode: Int?
+    val streamErrorCode: UInt?
 }

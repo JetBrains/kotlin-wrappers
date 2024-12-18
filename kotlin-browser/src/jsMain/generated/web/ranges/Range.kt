@@ -51,7 +51,7 @@ open external class Range :
      */
     fun comparePoint(
         node: Node,
-        offset: Int,
+        offset: UInt,
     ): Short
 
     /**
@@ -101,7 +101,7 @@ open external class Range :
      */
     fun isPointInRange(
         node: Node,
-        offset: Int,
+        offset: UInt,
     ): Boolean
 
     /**
@@ -119,7 +119,7 @@ open external class Range :
      */
     fun setEnd(
         node: Node,
-        offset: Int,
+        offset: UInt,
     )
 
     /**
@@ -137,7 +137,7 @@ open external class Range :
      */
     fun setStart(
         node: Node,
-        offset: Int,
+        offset: UInt,
     )
 
     /**

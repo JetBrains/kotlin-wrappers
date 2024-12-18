@@ -9,7 +9,7 @@ external interface ImageBitmapOptions {
     val colorSpaceConversion: ColorSpaceConversion?
     val imageOrientation: ImageOrientation?
     val premultiplyAlpha: PremultiplyAlpha?
-    val resizeHeight: Int?
+    val resizeHeight: UInt?
     val resizeQuality: ResizeQuality?
-    val resizeWidth: Int?
+    val resizeWidth: UInt?
 }

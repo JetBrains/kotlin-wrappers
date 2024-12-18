@@ -13,12 +13,12 @@ external interface VideoEncoderConfig {
     val bitrateMode: VideoEncoderBitrateMode?
     val codec: String
     val contentHint: String?
-    val displayHeight: Int?
-    val displayWidth: Int?
+    val displayHeight: UInt?
+    val displayWidth: UInt?
     val framerate: Double?
     val hardwareAcceleration: HardwareAcceleration?
-    val height: Int
+    val height: UInt
     val latencyMode: LatencyMode?
     val scalabilityMode: String?
-    val width: Int
+    val width: UInt
 }

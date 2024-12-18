@@ -124,7 +124,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/compareDocumentPosition)
      */
-    fun compareDocumentPosition(other: Node): Short
+    fun compareDocumentPosition(other: Node): UShort
 
     /**
      * Returns true if other is an inclusive descendant of node, and false otherwise.

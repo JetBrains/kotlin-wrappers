@@ -12,16 +12,16 @@ import web.gpu.GPUCopyExternalImageSource
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageData)
  */
 open external class ImageData(
-    sw: Int,
-    sh: Int,
+    sw: UInt,
+    sh: UInt,
     settings: ImageDataSettings = definedExternally,
 ) : ImageBitmapSource,
     TexImageSource,
     GPUCopyExternalImageSource {
     constructor(
         data: Uint8ClampedArray<*>,
-        sw: Int,
-        sh: Int = definedExternally,
+        sw: UInt,
+        sh: UInt = definedExternally,
         settings: ImageDataSettings = definedExternally,
     )
 
@@ -42,12 +42,12 @@ open external class ImageData(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageData/height)
      */
-    val height: Int
+    val height: UInt
 
     /**
      * Returns the actual dimensions of the data in the ImageData object, in pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageData/width)
      */
-    val width: Int
+    val width: UInt
 }

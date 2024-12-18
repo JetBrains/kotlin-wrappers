@@ -10,7 +10,7 @@ external interface AudioEncoderConfig {
     val bitrate: JsLong?
     val bitrateMode: BitrateMode?
     val codec: String
-    val numberOfChannels: Int
+    val numberOfChannels: UInt
     val opus: OpusEncoderConfig?
-    val sampleRate: Int
+    val sampleRate: UInt
 }

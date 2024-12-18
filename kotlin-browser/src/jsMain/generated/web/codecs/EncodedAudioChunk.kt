@@ -14,7 +14,7 @@ open external class EncodedAudioChunk(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EncodedAudioChunk/byteLength)
      */
-    val byteLength: Int
+    val byteLength: UInt
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EncodedAudioChunk/duration)

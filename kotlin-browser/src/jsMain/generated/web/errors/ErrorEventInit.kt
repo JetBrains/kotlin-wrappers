@@ -8,9 +8,9 @@ import web.events.EventInit
 @JsPlainObject
 external interface ErrorEventInit :
     EventInit {
-    val colno: Int?
+    val colno: UInt?
     val error: Any?
     val filename: String?
-    val lineno: Int?
+    val lineno: UInt?
     val message: String?
 }

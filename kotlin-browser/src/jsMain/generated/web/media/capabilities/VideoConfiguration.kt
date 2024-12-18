@@ -13,8 +13,8 @@ external interface VideoConfiguration {
     val framerate: Double
     val hasAlphaChannel: Boolean?
     val hdrMetadataType: HdrMetadataType?
-    val height: Int
+    val height: UInt
     val scalabilityMode: String?
     val transferFunction: TransferFunction?
-    val width: Int
+    val width: UInt
 }

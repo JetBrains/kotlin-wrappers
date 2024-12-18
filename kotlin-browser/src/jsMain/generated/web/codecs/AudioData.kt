@@ -25,12 +25,12 @@ open external class AudioData(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioData/numberOfChannels)
      */
-    val numberOfChannels: Int
+    val numberOfChannels: UInt
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioData/numberOfFrames)
      */
-    val numberOfFrames: Int
+    val numberOfFrames: UInt
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioData/sampleRate)
@@ -45,7 +45,7 @@ open external class AudioData(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioData/allocationSize)
      */
-    fun allocationSize(options: AudioDataCopyToOptions): Int
+    fun allocationSize(options: AudioDataCopyToOptions): UInt
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioData/clone)

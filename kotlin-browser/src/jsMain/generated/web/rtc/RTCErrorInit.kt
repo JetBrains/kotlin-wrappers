@@ -8,8 +8,8 @@ import js.objects.JsPlainObject
 external interface RTCErrorInit {
     val errorDetail: RTCErrorDetailType
     val httpRequestStatusCode: Int?
-    val receivedAlert: Int?
+    val receivedAlert: UInt?
     val sctpCauseCode: Int?
     val sdpLineNumber: Int?
-    val sentAlert: Int?
+    val sentAlert: UInt?
 }

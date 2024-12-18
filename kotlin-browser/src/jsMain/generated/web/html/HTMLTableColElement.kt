@@ -15,5 +15,5 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableColElement/span)
      */
-    var span: Int
+    var span: UInt
 }

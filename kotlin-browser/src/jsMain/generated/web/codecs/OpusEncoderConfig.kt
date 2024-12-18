@@ -7,10 +7,10 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface OpusEncoderConfig {
-    val complexity: Int?
+    val complexity: UInt?
     val format: OpusBitstreamFormat?
     val frameDuration: JsLong?
-    val packetlossperc: Int?
+    val packetlossperc: UInt?
     val usedtx: Boolean?
     val useinbandfec: Boolean?
 }

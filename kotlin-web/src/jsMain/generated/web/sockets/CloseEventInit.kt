@@ -8,7 +8,7 @@ import web.events.EventInit
 @JsPlainObject
 external interface CloseEventInit :
     EventInit {
-    val code: Short?
+    val code: UShort?
     val reason: String?
     val wasClean: Boolean?
 }

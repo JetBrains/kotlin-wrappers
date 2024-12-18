@@ -19,10 +19,10 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoPlaybackQuality/droppedVideoFrames)
      */
-    val droppedVideoFrames: Int
+    val droppedVideoFrames: UInt
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoPlaybackQuality/totalVideoFrames)
      */
-    val totalVideoFrames: Int
+    val totalVideoFrames: UInt
 }

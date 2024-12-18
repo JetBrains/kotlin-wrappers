@@ -7,6 +7,6 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface ConstrainULongRange :
     ULongRange {
-    val exact: Int?
-    val ideal: Int?
+    val exact: UInt?
+    val ideal: UInt?
 }

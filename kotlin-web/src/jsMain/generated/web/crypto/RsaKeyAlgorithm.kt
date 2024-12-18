@@ -7,6 +7,6 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface RsaKeyAlgorithm :
     KeyAlgorithm {
-    val modulusLength: Int
+    val modulusLength: UInt
     val publicExponent: BigInteger
 }

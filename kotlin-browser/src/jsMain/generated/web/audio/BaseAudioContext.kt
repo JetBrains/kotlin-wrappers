@@ -66,8 +66,8 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createBuffer)
      */
     fun createBuffer(
-        numberOfChannels: Int,
-        length: Int,
+        numberOfChannels: UInt,
+        length: UInt,
         sampleRate: Float,
     ): AudioBuffer
 
@@ -79,12 +79,12 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createChannelMerger)
      */
-    fun createChannelMerger(numberOfInputs: Int = definedExternally): ChannelMergerNode
+    fun createChannelMerger(numberOfInputs: UInt = definedExternally): ChannelMergerNode
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createChannelSplitter)
      */
-    fun createChannelSplitter(numberOfOutputs: Int = definedExternally): ChannelSplitterNode
+    fun createChannelSplitter(numberOfOutputs: UInt = definedExternally): ChannelSplitterNode
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createConstantSource)

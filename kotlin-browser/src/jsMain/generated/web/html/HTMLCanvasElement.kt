@@ -29,14 +29,14 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/height)
      */
-    var height: Int
+    var height: UInt
 
     /**
      * Gets or sets the width of a canvas element on a document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/width)
      */
-    var width: Int
+    var width: UInt
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/captureStream)

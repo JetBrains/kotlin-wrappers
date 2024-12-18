@@ -32,15 +32,15 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CharacterData/deleteData)
      */
     fun deleteData(
-        offset: Int,
-        count: Int,
+        offset: UInt,
+        count: UInt,
     )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CharacterData/insertData)
      */
     fun insertData(
-        offset: Int,
+        offset: UInt,
         data: String,
     )
 
@@ -48,8 +48,8 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CharacterData/replaceData)
      */
     fun replaceData(
-        offset: Int,
-        count: Int,
+        offset: UInt,
+        count: UInt,
         data: String,
     )
 
@@ -57,7 +57,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CharacterData/substringData)
      */
     fun substringData(
-        offset: Int,
-        count: Int,
+        offset: UInt,
+        count: UInt,
     ): String
 }

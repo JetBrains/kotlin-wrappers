@@ -9,15 +9,15 @@ import web.events.EventInit
 external interface SecurityPolicyViolationEventInit :
     EventInit {
     val blockedURI: String?
-    val columnNumber: Int?
+    val columnNumber: UInt?
     val disposition: SecurityPolicyViolationEventDisposition?
     val documentURI: String?
     val effectiveDirective: String?
-    val lineNumber: Int?
+    val lineNumber: UInt?
     val originalPolicy: String?
     val referrer: String?
     val sample: String?
     val sourceFile: String?
-    val statusCode: Short?
+    val statusCode: UShort?
     val violatedDirective: String?
 }

@@ -49,7 +49,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBCursor/advance)
      */
-    fun advance(count: Int)
+    fun advance(count: UInt)
 
     /**
      * Advances the cursor to the next record in range.

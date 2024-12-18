@@ -22,7 +22,7 @@ open external class CloseEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CloseEvent/code)
      */
-    val code: Short
+    val code: UShort
 
     /**
      * Returns the WebSocket connection close reason provided by the server.

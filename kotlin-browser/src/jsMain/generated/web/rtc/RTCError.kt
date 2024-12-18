@@ -19,7 +19,7 @@ open external class RTCError(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCError/receivedAlert)
      */
-    val receivedAlert: Int?
+    val receivedAlert: UInt?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCError/sctpCauseCode)
@@ -34,5 +34,5 @@ open external class RTCError(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCError/sentAlert)
      */
-    val sentAlert: Int?
+    val sentAlert: UInt?
 }

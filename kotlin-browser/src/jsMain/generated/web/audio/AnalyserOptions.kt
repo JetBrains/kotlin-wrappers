@@ -7,7 +7,7 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface AnalyserOptions :
     AudioNodeOptions {
-    val fftSize: Int?
+    val fftSize: UInt?
     val maxDecibels: Double?
     val minDecibels: Double?
     val smoothingTimeConstant: Double?

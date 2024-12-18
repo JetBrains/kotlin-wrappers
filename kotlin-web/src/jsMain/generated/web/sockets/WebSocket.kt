@@ -107,7 +107,7 @@ open external class WebSocket(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/close)
      */
     fun close(
-        code: Short = definedExternally,
+        code: UShort = definedExternally,
         reason: String = definedExternally,
     )
 

@@ -13,7 +13,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScreenOrientation/angle)
      */
-    val angle: Short
+    val angle: UShort
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScreenOrientation/change_event)

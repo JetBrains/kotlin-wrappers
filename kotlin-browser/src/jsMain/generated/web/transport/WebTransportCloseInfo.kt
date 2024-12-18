@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface WebTransportCloseInfo {
-    val closeCode: Int?
+    val closeCode: UInt?
     val reason: String?
 }

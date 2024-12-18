@@ -92,7 +92,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/setResourceTimingBufferSize)
      */
-    fun setResourceTimingBufferSize(maxSize: Int)
+    fun setResourceTimingBufferSize(maxSize: UInt)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/toJSON)

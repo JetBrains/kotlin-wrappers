@@ -20,7 +20,7 @@ external interface RTCIceCandidatePairStats :
     val lastPacketSentTimestamp: DOMHighResTimeStamp?
     val localCandidateId: String
     val nominated: Boolean?
-    val packetsDiscardedOnSend: Int?
+    val packetsDiscardedOnSend: UInt?
     val packetsReceived: JsLong?
     val packetsSent: JsLong?
     val remoteCandidateId: String

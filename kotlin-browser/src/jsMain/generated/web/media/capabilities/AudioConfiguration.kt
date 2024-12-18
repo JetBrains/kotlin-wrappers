@@ -10,6 +10,6 @@ external interface AudioConfiguration {
     val bitrate: JsLong?
     val channels: String?
     val contentType: String
-    val samplerate: Int?
+    val samplerate: UInt?
     val spatialRendering: Boolean?
 }

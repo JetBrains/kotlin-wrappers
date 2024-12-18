@@ -16,7 +16,7 @@ private constructor() {
      */
     fun evaluate(
         contextNode: Node,
-        type: Short = definedExternally,
+        type: UShort = definedExternally,
         result: XPathResult? = definedExternally,
     ): XPathResult
 }

@@ -28,7 +28,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbstractRange/endOffset)
      */
-    val endOffset: Int
+    val endOffset: UInt
 
     /**
      * Returns range's start node.
@@ -42,5 +42,5 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbstractRange/startOffset)
      */
-    val startOffset: Int
+    val startOffset: UInt
 }

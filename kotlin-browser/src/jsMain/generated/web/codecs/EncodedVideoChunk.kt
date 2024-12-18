@@ -14,7 +14,7 @@ open external class EncodedVideoChunk(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EncodedVideoChunk/byteLength)
      */
-    val byteLength: Int
+    val byteLength: UInt
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EncodedVideoChunk/duration)

@@ -14,7 +14,7 @@ external interface GPUSamplerDescriptor :
     val lodMaxClamp: Float?
     val lodMinClamp: Float?
     val magFilter: GPUFilterMode?
-    val maxAnisotropy: Short?
+    val maxAnisotropy: UShort?
     val minFilter: GPUFilterMode?
     val mipmapFilter: GPUMipmapFilterMode?
 }

@@ -39,7 +39,7 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XPathResult/snapshotLength)
      */
-    val snapshotLength: Int
+    val snapshotLength: UInt
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XPathResult/stringValue)

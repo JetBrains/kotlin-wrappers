@@ -18,37 +18,37 @@ external interface RTCInboundRtpStreamStats :
     val fecBytesReceived: JsLong?
     val fecPacketsDiscarded: JsLong?
     val fecPacketsReceived: JsLong?
-    val fecSsrc: Int?
-    val firCount: Int?
-    val frameHeight: Int?
-    val frameWidth: Int?
-    val framesAssembledFromMultiplePackets: Int?
-    val framesDecoded: Int?
-    val framesDropped: Int?
+    val fecSsrc: UInt?
+    val firCount: UInt?
+    val frameHeight: UInt?
+    val frameWidth: UInt?
+    val framesAssembledFromMultiplePackets: UInt?
+    val framesDecoded: UInt?
+    val framesDropped: UInt?
     val framesPerSecond: Double?
-    val framesReceived: Int?
-    val framesRendered: Int?
-    val freezeCount: Int?
+    val framesReceived: UInt?
+    val framesRendered: UInt?
+    val freezeCount: UInt?
     val headerBytesReceived: JsLong?
     val insertedSamplesForDeceleration: JsLong?
     val jitterBufferDelay: Double?
     val jitterBufferEmittedCount: JsLong?
     val jitterBufferMinimumDelay: Double?
     val jitterBufferTargetDelay: Double?
-    val keyFramesDecoded: Int?
+    val keyFramesDecoded: UInt?
     val lastPacketReceivedTimestamp: DOMHighResTimeStamp?
     val mid: String?
-    val nackCount: Int?
+    val nackCount: UInt?
     val packetsDiscarded: JsLong?
-    val pauseCount: Int?
+    val pauseCount: UInt?
     val playoutId: String?
-    val pliCount: Int?
+    val pliCount: UInt?
     val qpSum: JsLong?
     val remoteId: String?
     val removedSamplesForAcceleration: JsLong?
     val retransmittedBytesReceived: JsLong?
     val retransmittedPacketsReceived: JsLong?
-    val rtxSsrc: Int?
+    val rtxSsrc: UInt?
     val silentConcealedSamples: JsLong?
     val totalAssemblyTime: Double?
     val totalAudioEnergy: Double?

@@ -9,16 +9,16 @@ external interface MediaTrackSettings {
     val aspectRatio: Double?
     val autoGainControl: Boolean?
     val backgroundBlur: Boolean?
-    val channelCount: Int?
+    val channelCount: UInt?
     val deviceId: String?
     val displaySurface: String?
     val echoCancellation: Boolean?
     val facingMode: String?
     val frameRate: Double?
     val groupId: String?
-    val height: Int?
+    val height: UInt?
     val noiseSuppression: Boolean?
-    val sampleRate: Int?
-    val sampleSize: Int?
-    val width: Int?
+    val sampleRate: UInt?
+    val sampleSize: UInt?
+    val width: UInt?
 }

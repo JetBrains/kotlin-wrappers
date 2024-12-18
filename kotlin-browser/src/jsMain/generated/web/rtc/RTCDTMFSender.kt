@@ -33,8 +33,8 @@ private constructor() :
      */
     fun insertDTMF(
         tones: String,
-        duration: Int = definedExternally,
-        interToneGap: Int = definedExternally,
+        duration: UInt = definedExternally,
+        interToneGap: UInt = definedExternally,
     )
 
     /**

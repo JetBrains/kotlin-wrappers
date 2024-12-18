@@ -31,7 +31,7 @@ open external class Response(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/status)
      */
-    val status: Short
+    val status: UShort
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/statusText)
@@ -72,12 +72,12 @@ open external class Response(
          */
         fun redirect(
             url: String,
-            status: Short = definedExternally,
+            status: UShort = definedExternally,
         ): Response
 
         fun redirect(
             url: URL,
-            status: Short = definedExternally,
+            status: UShort = definedExternally,
         ): Response
     }
 }

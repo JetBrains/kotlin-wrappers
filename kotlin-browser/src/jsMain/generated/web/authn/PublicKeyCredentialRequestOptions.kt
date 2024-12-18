@@ -12,6 +12,6 @@ external interface PublicKeyCredentialRequestOptions {
     val challenge: BufferSource
     val extensions: AuthenticationExtensionsClientInputs?
     val rpId: String?
-    val timeout: Int?
+    val timeout: UInt?
     val userVerification: UserVerificationRequirement?
 }

@@ -21,5 +21,5 @@ open external class WebTransportError(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportError/streamErrorCode)
      */
-    val streamErrorCode: Int?
+    val streamErrorCode: UInt?
 }

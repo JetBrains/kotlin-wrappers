@@ -21,14 +21,14 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmap/height)
      */
-    val height: Int
+    val height: UInt
 
     /**
      * Returns the intrinsic width of the image, in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmap/width)
      */
-    val width: Int
+    val width: UInt
 
     /**
      * Releases imageBitmap's underlying bitmap data.

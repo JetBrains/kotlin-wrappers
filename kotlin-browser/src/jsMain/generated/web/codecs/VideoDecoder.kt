@@ -18,7 +18,7 @@ open external class VideoDecoder(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/decodeQueueSize)
      */
-    val decodeQueueSize: Int
+    val decodeQueueSize: UInt
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/dequeue_event)

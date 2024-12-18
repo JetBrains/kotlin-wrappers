@@ -28,7 +28,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/colorDepth)
      */
-    val colorDepth: Int
+    val colorDepth: UInt
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/height)
@@ -43,7 +43,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/pixelDepth)
      */
-    val pixelDepth: Int
+    val pixelDepth: UInt
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/width)

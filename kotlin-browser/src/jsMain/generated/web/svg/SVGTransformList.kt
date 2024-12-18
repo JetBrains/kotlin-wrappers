@@ -17,7 +17,7 @@ private constructor() :
     ArrayLike<SVGTransform>,
     JsIterable<SVGTransform> {
     override val length: Int
-    val numberOfItems: Int
+    val numberOfItems: UInt
     fun appendItem(newItem: SVGTransform): SVGTransform
     fun clear()
     fun consolidate(): SVGTransform?

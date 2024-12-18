@@ -18,7 +18,7 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/height)
      */
-    var height: Int
+    var height: UInt
 
     /**
      * Gets or sets the intended media type of the media source.
@@ -54,7 +54,7 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/width)
      */
-    var width: Int
+    var width: UInt
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/error_event)
