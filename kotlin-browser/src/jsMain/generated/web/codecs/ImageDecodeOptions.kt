@@ -7,5 +7,5 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface ImageDecodeOptions {
     val completeFramesOnly: Boolean?
-    val frameIndex: UInt?
+    val frameIndex: Int?
 }

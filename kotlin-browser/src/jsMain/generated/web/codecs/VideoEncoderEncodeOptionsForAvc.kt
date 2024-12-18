@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface VideoEncoderEncodeOptionsForAvc {
-    val quantizer: UShort?
+    val quantizer: Short?
 }

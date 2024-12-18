@@ -12,8 +12,8 @@ import js.objects.JsPlainObject
 external interface AudioDataInit {
     val data: BufferSource
     val format: AudioSampleFormat
-    val numberOfChannels: UInt
-    val numberOfFrames: UInt
+    val numberOfChannels: Int
+    val numberOfFrames: Int
     val sampleRate: Float
     val timestamp: JsLong
     val transfer: ReadonlyArray<ArrayBuffer>?

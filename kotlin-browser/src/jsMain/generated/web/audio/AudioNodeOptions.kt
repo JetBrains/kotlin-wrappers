@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface AudioNodeOptions {
-    val channelCount: UInt?
+    val channelCount: Int?
     val channelCountMode: ChannelCountMode?
     val channelInterpretation: ChannelInterpretation?
 }

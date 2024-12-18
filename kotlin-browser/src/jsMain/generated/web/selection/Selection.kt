@@ -20,7 +20,7 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/anchorOffset)
      */
-    val anchorOffset: UInt
+    val anchorOffset: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/direction)
@@ -35,7 +35,7 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/focusOffset)
      */
-    val focusOffset: UInt
+    val focusOffset: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/isCollapsed)
@@ -45,7 +45,7 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/rangeCount)
      */
-    val rangeCount: UInt
+    val rangeCount: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/type)
@@ -62,7 +62,7 @@ private constructor() {
      */
     fun collapse(
         node: Node?,
-        offset: UInt = definedExternally,
+        offset: Int = definedExternally,
     )
 
     /**
@@ -98,7 +98,7 @@ private constructor() {
      */
     fun extend(
         node: Node,
-        offset: UInt = definedExternally,
+        offset: Int = definedExternally,
     )
 
     /**
@@ -135,9 +135,9 @@ private constructor() {
      */
     fun setBaseAndExtent(
         anchorNode: Node,
-        anchorOffset: UInt,
+        anchorOffset: Int,
         focusNode: Node,
-        focusOffset: UInt,
+        focusOffset: Int,
     )
 
     /**
@@ -145,6 +145,6 @@ private constructor() {
      */
     fun setPosition(
         node: Node?,
-        offset: UInt = definedExternally,
+        offset: Int = definedExternally,
     )
 }

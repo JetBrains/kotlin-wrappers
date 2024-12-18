@@ -14,17 +14,17 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
      */
-    val maxBindGroups: UInt
+    val maxBindGroups: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
      */
-    val maxBindGroupsPlusVertexBuffers: UInt
+    val maxBindGroupsPlusVertexBuffers: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
      */
-    val maxBindingsPerBindGroup: UInt
+    val maxBindingsPerBindGroup: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
@@ -34,67 +34,67 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
      */
-    val maxColorAttachmentBytesPerSample: UInt
+    val maxColorAttachmentBytesPerSample: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
      */
-    val maxColorAttachments: UInt
+    val maxColorAttachments: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
      */
-    val maxComputeInvocationsPerWorkgroup: UInt
+    val maxComputeInvocationsPerWorkgroup: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
      */
-    val maxComputeWorkgroupSizeX: UInt
+    val maxComputeWorkgroupSizeX: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
      */
-    val maxComputeWorkgroupSizeY: UInt
+    val maxComputeWorkgroupSizeY: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
      */
-    val maxComputeWorkgroupSizeZ: UInt
+    val maxComputeWorkgroupSizeZ: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
      */
-    val maxComputeWorkgroupStorageSize: UInt
+    val maxComputeWorkgroupStorageSize: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
      */
-    val maxComputeWorkgroupsPerDimension: UInt
+    val maxComputeWorkgroupsPerDimension: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
      */
-    val maxDynamicStorageBuffersPerPipelineLayout: UInt
+    val maxDynamicStorageBuffersPerPipelineLayout: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
      */
-    val maxDynamicUniformBuffersPerPipelineLayout: UInt
+    val maxDynamicUniformBuffersPerPipelineLayout: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
      */
-    val maxInterStageShaderVariables: UInt
+    val maxInterStageShaderVariables: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
      */
-    val maxSampledTexturesPerShaderStage: UInt
+    val maxSampledTexturesPerShaderStage: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
      */
-    val maxSamplersPerShaderStage: UInt
+    val maxSamplersPerShaderStage: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
@@ -104,32 +104,32 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
      */
-    val maxStorageBuffersPerShaderStage: UInt
+    val maxStorageBuffersPerShaderStage: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
      */
-    val maxStorageTexturesPerShaderStage: UInt
+    val maxStorageTexturesPerShaderStage: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
      */
-    val maxTextureArrayLayers: UInt
+    val maxTextureArrayLayers: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
      */
-    val maxTextureDimension1D: UInt
+    val maxTextureDimension1D: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
      */
-    val maxTextureDimension2D: UInt
+    val maxTextureDimension2D: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
      */
-    val maxTextureDimension3D: UInt
+    val maxTextureDimension3D: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
@@ -139,30 +139,30 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
      */
-    val maxUniformBuffersPerShaderStage: UInt
+    val maxUniformBuffersPerShaderStage: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
      */
-    val maxVertexAttributes: UInt
+    val maxVertexAttributes: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
      */
-    val maxVertexBufferArrayStride: UInt
+    val maxVertexBufferArrayStride: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
      */
-    val maxVertexBuffers: UInt
+    val maxVertexBuffers: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
      */
-    val minStorageBufferOffsetAlignment: UInt
+    val minStorageBufferOffsetAlignment: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
      */
-    val minUniformBufferOffsetAlignment: UInt
+    val minUniformBufferOffsetAlignment: Int
 }

@@ -11,8 +11,8 @@ import web.images.ColorSpaceConversion
 external interface ImageDecoderInit {
     val colorSpaceConversion: ColorSpaceConversion?
     val data: ImageBufferSource
-    val desiredHeight: UInt?
-    val desiredWidth: UInt?
+    val desiredHeight: Int?
+    val desiredWidth: Int?
     val preferAnimation: Boolean?
     val transfer: ReadonlyArray<ArrayBuffer>?
     val type: String

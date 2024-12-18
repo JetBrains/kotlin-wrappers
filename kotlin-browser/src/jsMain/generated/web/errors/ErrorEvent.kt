@@ -20,7 +20,7 @@ open external class ErrorEvent(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent/colno)
      */
-    val colno: UInt
+    val colno: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent/error)
@@ -35,7 +35,7 @@ open external class ErrorEvent(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent/lineno)
      */
-    val lineno: UInt
+    val lineno: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent/message)

@@ -31,7 +31,7 @@ open external class VideoFrame(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/codedHeight)
      */
-    val codedHeight: UInt
+    val codedHeight: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/codedRect)
@@ -41,7 +41,7 @@ open external class VideoFrame(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/codedWidth)
      */
-    val codedWidth: UInt
+    val codedWidth: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/colorSpace)
@@ -51,12 +51,12 @@ open external class VideoFrame(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/displayHeight)
      */
-    val displayHeight: UInt
+    val displayHeight: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/displayWidth)
      */
-    val displayWidth: UInt
+    val displayWidth: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/duration)
@@ -81,7 +81,7 @@ open external class VideoFrame(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/allocationSize)
      */
-    fun allocationSize(options: VideoFrameCopyToOptions = definedExternally): UInt
+    fun allocationSize(options: VideoFrameCopyToOptions = definedExternally): Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/clone)

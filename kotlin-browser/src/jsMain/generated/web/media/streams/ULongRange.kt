@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface ULongRange {
-    val max: UInt?
-    val min: UInt?
+    val max: Int?
+    val min: Int?
 }

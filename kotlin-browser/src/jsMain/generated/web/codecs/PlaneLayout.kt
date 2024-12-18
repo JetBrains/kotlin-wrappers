@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface PlaneLayout {
-    val offset: UInt
-    val stride: UInt
+    val offset: Int
+    val stride: Int
 }

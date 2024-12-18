@@ -78,7 +78,7 @@ open external class XMLHttpRequest :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/status)
      */
-    val status: UShort
+    val status: Short
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/statusText)
@@ -92,7 +92,7 @@ open external class XMLHttpRequest :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/timeout)
      */
-    var timeout: UInt
+    var timeout: Int
 
     /**
      * Returns the associated XMLHttpRequestUpload object. It can be used to gather transmission information when data is transferred to a server.

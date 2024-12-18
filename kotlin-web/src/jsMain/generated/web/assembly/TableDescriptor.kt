@@ -7,6 +7,6 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface TableDescriptor {
     val element: TableKind
-    val initial: UInt
-    val maximum: UInt?
+    val initial: Int
+    val maximum: Int?
 }

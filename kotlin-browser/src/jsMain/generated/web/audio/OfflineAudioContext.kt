@@ -18,8 +18,8 @@ open external class OfflineAudioContext(
     contextOptions: OfflineAudioContextOptions,
 ) : BaseAudioContext {
     constructor(
-        numberOfChannels: UInt,
-        length: UInt,
+        numberOfChannels: Int,
+        length: Int,
         sampleRate: Float,
     )
 

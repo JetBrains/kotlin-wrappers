@@ -11,11 +11,11 @@ external interface RTCEncodedVideoFrameMetadata {
     val contributingSources: ReadonlyArray<Number>?
     val dependencies: ReadonlyArray<Number>?
     val frameId: JsLong?
-    val height: UShort?
-    val payloadType: UByte?
-    val spatialIndex: UInt?
-    val synchronizationSource: UInt?
-    val temporalIndex: UInt?
+    val height: Short?
+    val payloadType: Short /* unsigned byte */?
+    val spatialIndex: Int?
+    val synchronizationSource: Int?
+    val temporalIndex: Int?
     val timestamp: JsLong?
-    val width: UShort?
+    val width: Short?
 }

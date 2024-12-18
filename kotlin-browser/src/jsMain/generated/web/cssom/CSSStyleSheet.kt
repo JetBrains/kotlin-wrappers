@@ -34,7 +34,7 @@ open external class CSSStyleSheet(
     fun insertRule(
         rule: String,
         index: Int = definedExternally,
-    ): UInt
+    ): Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/replace)

@@ -17,12 +17,12 @@ open external class AnalyserNode(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnalyserNode/fftSize)
      */
-    var fftSize: UInt
+    var fftSize: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnalyserNode/frequencyBinCount)
      */
-    val frequencyBinCount: UInt
+    val frequencyBinCount: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnalyserNode/maxDecibels)

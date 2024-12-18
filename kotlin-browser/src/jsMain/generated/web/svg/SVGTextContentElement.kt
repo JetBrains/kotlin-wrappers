@@ -20,14 +20,14 @@ private constructor() :
     fun getCharNumAtPosition(point: DOMPointInit = definedExternally): Int
     fun getCharNumAtPosition(point: DOMPointReadOnly /* DOMPointInit */): Int
     fun getComputedTextLength(): Float
-    fun getEndPositionOfChar(charnum: UInt): DOMPoint
-    fun getExtentOfChar(charnum: UInt): DOMRect
+    fun getEndPositionOfChar(charnum: Int): DOMPoint
+    fun getExtentOfChar(charnum: Int): DOMRect
     fun getNumberOfChars(): Int
-    fun getRotationOfChar(charnum: UInt): Float
-    fun getStartPositionOfChar(charnum: UInt): DOMPoint
+    fun getRotationOfChar(charnum: Int): Float
+    fun getStartPositionOfChar(charnum: Int): DOMPoint
     fun getSubStringLength(
-        charnum: UInt,
-        nchars: UInt,
+        charnum: Int,
+        nchars: Int,
     ): Float
 
     val LENGTHADJUST_UNKNOWN: LengthAdjust

@@ -25,17 +25,17 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/bufferedAmount)
      */
-    val bufferedAmount: UInt
+    val bufferedAmount: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/bufferedAmountLowThreshold)
      */
-    var bufferedAmountLowThreshold: UInt
+    var bufferedAmountLowThreshold: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/id)
      */
-    val id: UShort?
+    val id: Short?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/label)
@@ -45,12 +45,12 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/maxPacketLifeTime)
      */
-    val maxPacketLifeTime: UShort?
+    val maxPacketLifeTime: Short?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/maxRetransmits)
      */
-    val maxRetransmits: UShort?
+    val maxRetransmits: Short?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/negotiated)

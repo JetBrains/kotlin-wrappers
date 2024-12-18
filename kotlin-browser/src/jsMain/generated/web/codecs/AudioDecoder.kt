@@ -18,7 +18,7 @@ open external class AudioDecoder(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioDecoder/decodeQueueSize)
      */
-    val decodeQueueSize: UInt
+    val decodeQueueSize: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioDecoder/dequeue_event)

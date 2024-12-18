@@ -9,8 +9,8 @@ import web.events.EventInit
 external interface RTCPeerConnectionIceErrorEventInit :
     EventInit {
     val address: String?
-    val errorCode: UShort
+    val errorCode: Short
     val errorText: String?
-    val port: UShort?
+    val port: Short?
     val url: String?
 }

@@ -24,7 +24,7 @@ external interface XPathEvaluatorBase {
         expression: String,
         contextNode: Node,
         resolver: XPathNSResolver? = definedExternally,
-        type: UShort = definedExternally,
+        type: Short = definedExternally,
         result: XPathResult? = definedExternally,
     ): XPathResult = definedExternally
 }

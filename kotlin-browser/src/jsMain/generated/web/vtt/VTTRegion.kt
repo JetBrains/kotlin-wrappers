@@ -7,7 +7,7 @@ package web.vtt
  */
 open external class VTTRegion {
     var id: String
-    var lines: UInt
+    var lines: Int
     var regionAnchorX: Double
     var regionAnchorY: Double
     var scroll: ScrollSetting

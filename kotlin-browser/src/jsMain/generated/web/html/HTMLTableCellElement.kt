@@ -29,7 +29,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/colSpan)
      */
-    var colSpan: UInt
+    var colSpan: Int
 
     /**
      * Sets or retrieves a list of header cells that provide information for the object.
@@ -43,7 +43,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/rowSpan)
      */
-    var rowSpan: UInt
+    var rowSpan: Int
 
     /**
      * Sets or retrieves the group of cells in a table to which the object's information applies.

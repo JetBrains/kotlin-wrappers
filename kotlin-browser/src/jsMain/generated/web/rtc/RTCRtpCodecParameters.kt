@@ -7,5 +7,5 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface RTCRtpCodecParameters :
     RTCRtpCodec {
-    val payloadType: UByte
+    val payloadType: Short /* unsigned byte */
 }

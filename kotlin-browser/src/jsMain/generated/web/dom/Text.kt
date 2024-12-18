@@ -29,7 +29,7 @@ open external class Text(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Text/splitText)
      */
-    fun splitText(offset: UInt): Text
+    fun splitText(offset: Int): Text
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Text/drag_event)

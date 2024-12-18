@@ -15,7 +15,7 @@ private constructor() :
     ArrayLike<SVGNumber>,
     JsIterable<SVGNumber> {
     override val length: Int
-    val numberOfItems: UInt
+    val numberOfItems: Int
     fun appendItem(newItem: SVGNumber): SVGNumber
     fun clear()
     fun getItem(index: Int): SVGNumber

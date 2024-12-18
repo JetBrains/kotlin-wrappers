@@ -30,7 +30,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/cols)
      */
-    var cols: UInt
+    var cols: Int
 
     /**
      * Sets or retrieves the initial contents of the object.
@@ -102,7 +102,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/rows)
      */
-    var rows: UInt
+    var rows: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/selectionDirection)
@@ -114,19 +114,19 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/selectionEnd)
      */
-    var selectionEnd: UInt
+    var selectionEnd: Int
 
     /**
      * Gets or sets the starting position or offset of a text selection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/selectionStart)
      */
-    var selectionStart: UInt
+    var selectionStart: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/textLength)
      */
-    val textLength: UInt
+    val textLength: Int
 
     /**
      * Retrieves the type of control.
@@ -203,8 +203,8 @@ protected constructor() :
     fun setRangeText(replacement: String)
     fun setRangeText(
         replacement: String,
-        start: UInt,
-        end: UInt,
+        start: Int,
+        end: Int,
         selectionMode: SelectionMode = definedExternally,
     )
 
@@ -217,8 +217,8 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/setSelectionRange)
      */
     fun setSelectionRange(
-        start: UInt?,
-        end: UInt?,
+        start: Int?,
+        end: Int?,
         direction: SelectionDirection = definedExternally,
     )
 

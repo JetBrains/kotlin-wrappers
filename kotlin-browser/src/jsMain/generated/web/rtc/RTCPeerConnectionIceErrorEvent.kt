@@ -19,9 +19,9 @@ open external class RTCPeerConnectionIceErrorEvent(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnectionIceErrorEvent/address)
      */
     val address: String?
-    val errorCode: UShort
+    val errorCode: Short
     val errorText: String
-    val port: UShort?
+    val port: Short?
     val url: String
 
     @JsAlias(THIS)

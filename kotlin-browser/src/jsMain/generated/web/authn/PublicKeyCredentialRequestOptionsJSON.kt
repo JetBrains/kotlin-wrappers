@@ -12,6 +12,6 @@ external interface PublicKeyCredentialRequestOptionsJSON {
     val extensions: AuthenticationExtensionsClientInputsJSON?
     val hints: ReadonlyArray<String>?
     val rpId: String?
-    val timeout: UInt?
+    val timeout: Int?
     val userVerification: String?
 }

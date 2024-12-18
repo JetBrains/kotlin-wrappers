@@ -9,11 +9,11 @@ import web.geometry.DOMRectInit
 
 @JsPlainObject
 external interface VideoFrameBufferInit {
-    val codedHeight: UInt
-    val codedWidth: UInt
+    val codedHeight: Int
+    val codedWidth: Int
     val colorSpace: VideoColorSpaceInit?
-    val displayHeight: UInt?
-    val displayWidth: UInt?
+    val displayHeight: Int?
+    val displayWidth: Int?
     val duration: JsLong?
     val format: VideoPixelFormat
     val layout: ReadonlyArray<PlaneLayout>?

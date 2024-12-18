@@ -25,7 +25,7 @@ open external class SecurityPolicyViolationEvent(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/columnNumber)
      */
-    val columnNumber: UInt
+    val columnNumber: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/disposition)
@@ -45,7 +45,7 @@ open external class SecurityPolicyViolationEvent(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/lineNumber)
      */
-    val lineNumber: UInt
+    val lineNumber: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/originalPolicy)
@@ -70,7 +70,7 @@ open external class SecurityPolicyViolationEvent(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/statusCode)
      */
-    val statusCode: UShort
+    val statusCode: Short
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/violatedDirective)

@@ -10,5 +10,5 @@ external interface AesGcmParams :
     Algorithm {
     val additionalData: BufferSource?
     val iv: BufferSource
-    val tagLength: UByte?
+    val tagLength: Short /* unsigned byte */?
 }

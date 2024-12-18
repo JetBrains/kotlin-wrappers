@@ -9,6 +9,6 @@ import js.objects.JsPlainObject
 external interface Pbkdf2Params :
     Algorithm {
     val hash: HashAlgorithmIdentifier
-    val iterations: UInt
+    val iterations: Int
     val salt: BufferSource
 }

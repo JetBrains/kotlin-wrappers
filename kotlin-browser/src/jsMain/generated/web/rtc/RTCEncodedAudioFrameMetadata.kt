@@ -8,7 +8,7 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface RTCEncodedAudioFrameMetadata {
     val contributingSources: ReadonlyArray<Number>?
-    val payloadType: UByte?
+    val payloadType: Short /* unsigned byte */?
     val sequenceNumber: Short?
-    val synchronizationSource: UInt?
+    val synchronizationSource: Int?
 }

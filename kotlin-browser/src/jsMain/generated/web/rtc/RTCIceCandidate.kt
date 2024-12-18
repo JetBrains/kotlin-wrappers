@@ -33,12 +33,12 @@ open external class RTCIceCandidate(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/port)
      */
-    val port: UShort?
+    val port: Short?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/priority)
      */
-    val priority: UInt?
+    val priority: Int?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/protocol)
@@ -53,12 +53,12 @@ open external class RTCIceCandidate(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/relatedPort)
      */
-    val relatedPort: UShort?
+    val relatedPort: Short?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/sdpMLineIndex)
      */
-    val sdpMLineIndex: UShort?
+    val sdpMLineIndex: Short?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/sdpMid)

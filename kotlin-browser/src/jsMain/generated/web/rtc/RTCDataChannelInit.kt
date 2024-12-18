@@ -6,9 +6,9 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface RTCDataChannelInit {
-    val id: UShort?
-    val maxPacketLifeTime: UShort?
-    val maxRetransmits: UShort?
+    val id: Short?
+    val maxPacketLifeTime: Short?
+    val maxRetransmits: Short?
     val negotiated: Boolean?
     val ordered: Boolean?
     val protocol: String?

@@ -69,12 +69,12 @@ private constructor() {
      */
     fun getAll(
         query: IDBValidKey? = definedExternally,
-        count: UInt = definedExternally,
+        count: Int = definedExternally,
     ): IDBRequest<ReadonlyArray<*>>
 
     fun getAll(
         query: IDBKeyRange?,
-        count: UInt = definedExternally,
+        count: Int = definedExternally,
     ): IDBRequest<ReadonlyArray<*>>
 
     /**
@@ -86,12 +86,12 @@ private constructor() {
      */
     fun getAllKeys(
         query: IDBValidKey? = definedExternally,
-        count: UInt = definedExternally,
+        count: Int = definedExternally,
     ): IDBRequest<ReadonlyArray<IDBValidKey>>
 
     fun getAllKeys(
         query: IDBKeyRange?,
-        count: UInt = definedExternally,
+        count: Int = definedExternally,
     ): IDBRequest<ReadonlyArray<IDBValidKey>>
 
     /**

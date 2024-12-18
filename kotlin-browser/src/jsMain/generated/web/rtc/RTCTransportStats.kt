@@ -20,7 +20,7 @@ external interface RTCTransportStats :
     val packetsReceived: JsLong?
     val packetsSent: JsLong?
     val remoteCertificateId: String?
-    val selectedCandidatePairChanges: UInt?
+    val selectedCandidatePairChanges: Int?
     val selectedCandidatePairId: String?
     val srtpCipher: String?
     val tlsVersion: String?

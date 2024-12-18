@@ -10,28 +10,28 @@ import js.objects.ReadonlyRecord
 external interface RTCOutboundRtpStreamStats :
     RTCSentRtpStreamStats {
     val active: Boolean?
-    val firCount: UInt?
-    val frameHeight: UInt?
-    val frameWidth: UInt?
-    val framesEncoded: UInt?
+    val firCount: Int?
+    val frameHeight: Int?
+    val frameWidth: Int?
+    val framesEncoded: Int?
     val framesPerSecond: Double?
-    val framesSent: UInt?
+    val framesSent: Int?
     val headerBytesSent: JsLong?
-    val hugeFramesSent: UInt?
-    val keyFramesEncoded: UInt?
+    val hugeFramesSent: Int?
+    val keyFramesEncoded: Int?
     val mediaSourceId: String?
     val mid: String?
-    val nackCount: UInt?
-    val pliCount: UInt?
+    val nackCount: Int?
+    val pliCount: Int?
     val qpSum: JsLong?
     val qualityLimitationDurations: ReadonlyRecord<String, Double>?
     val qualityLimitationReason: RTCQualityLimitationReason?
-    val qualityLimitationResolutionChanges: UInt?
+    val qualityLimitationResolutionChanges: Int?
     val remoteId: String?
     val retransmittedBytesSent: JsLong?
     val retransmittedPacketsSent: JsLong?
     val rid: String?
-    val rtxSsrc: UInt?
+    val rtxSsrc: Int?
     val scalabilityMode: String?
     val targetBitrate: Double?
     val totalEncodeTime: Double?

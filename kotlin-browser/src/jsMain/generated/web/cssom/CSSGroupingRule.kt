@@ -26,5 +26,5 @@ private constructor() :
     fun insertRule(
         rule: String,
         index: Int = definedExternally,
-    ): UInt
+    ): Int
 }

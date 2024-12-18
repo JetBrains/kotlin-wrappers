@@ -8,8 +8,8 @@ import web.events.EventInit
 @JsPlainObject
 external interface SpeechSynthesisEventInit :
     EventInit {
-    val charIndex: UInt?
-    val charLength: UInt?
+    val charIndex: Int?
+    val charLength: Int?
     val elapsedTime: Float?
     val name: String?
     val utterance: SpeechSynthesisUtterance

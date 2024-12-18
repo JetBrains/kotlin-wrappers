@@ -15,6 +15,6 @@ external interface PublicKeyCredentialCreationOptions {
     val extensions: AuthenticationExtensionsClientInputs?
     val pubKeyCredParams: ReadonlyArray<PublicKeyCredentialParameters>
     val rp: PublicKeyCredentialRpEntity
-    val timeout: UInt?
+    val timeout: Int?
     val user: PublicKeyCredentialUserEntity
 }

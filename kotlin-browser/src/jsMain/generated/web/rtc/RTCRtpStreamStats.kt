@@ -9,6 +9,6 @@ external interface RTCRtpStreamStats :
     RTCStats {
     val codecId: String?
     val kind: String
-    val ssrc: UInt
+    val ssrc: Int
     val transportId: String?
 }

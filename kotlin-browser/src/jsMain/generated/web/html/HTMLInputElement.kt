@@ -135,7 +135,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/height)
      */
-    var height: UInt
+    var height: Int
 
     /**
      * When set, overrides the rendering of checkbox controls so that the current value is not visible.
@@ -232,14 +232,14 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/selectionEnd)
      */
-    var selectionEnd: UInt?
+    var selectionEnd: Int?
 
     /**
      * Gets or sets the starting position or offset of a text selection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/selectionStart)
      */
-    var selectionStart: UInt?
+    var selectionStart: Int?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/size)
@@ -317,7 +317,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/width)
      */
-    var width: UInt
+    var width: Int
 
     /**
      * Returns whether an element will successfully validate based on forms validation rules and constraints.
@@ -359,8 +359,8 @@ protected constructor() :
     fun setRangeText(replacement: String)
     fun setRangeText(
         replacement: String,
-        start: UInt,
-        end: UInt,
+        start: Int,
+        end: Int,
         selectionMode: SelectionMode = definedExternally,
     )
 
@@ -373,8 +373,8 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/setSelectionRange)
      */
     fun setSelectionRange(
-        start: UInt?,
-        end: UInt?,
+        start: Int?,
+        end: Int?,
         direction: SelectionDirection = definedExternally,
     )
 

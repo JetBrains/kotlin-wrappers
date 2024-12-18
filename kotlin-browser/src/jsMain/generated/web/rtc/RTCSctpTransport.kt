@@ -13,7 +13,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSctpTransport/maxChannels)
      */
-    val maxChannels: UShort?
+    val maxChannels: Short?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSctpTransport/maxMessageSize)

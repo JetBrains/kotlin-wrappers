@@ -9,12 +9,12 @@ import web.time.DOMHighResTimeStamp
 external interface VideoFrameCallbackMetadata {
     val captureTime: DOMHighResTimeStamp?
     val expectedDisplayTime: DOMHighResTimeStamp
-    val height: UInt
+    val height: Int
     val mediaTime: Double
     val presentationTime: DOMHighResTimeStamp
-    val presentedFrames: UInt
+    val presentedFrames: Int
     val processingDuration: Double?
     val receiveTime: DOMHighResTimeStamp?
-    val rtpTimestamp: UInt?
-    val width: UInt
+    val rtpTimestamp: Int?
+    val width: Int
 }

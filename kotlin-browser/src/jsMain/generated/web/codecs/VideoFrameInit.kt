@@ -9,8 +9,8 @@ import web.geometry.DOMRectInit
 @JsPlainObject
 external interface VideoFrameInit {
     val alpha: AlphaOption?
-    val displayHeight: UInt?
-    val displayWidth: UInt?
+    val displayHeight: Int?
+    val displayWidth: Int?
     val duration: JsLong?
     val timestamp: JsLong?
     val visibleRect: DOMRectInit?

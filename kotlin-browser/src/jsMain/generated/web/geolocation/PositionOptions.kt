@@ -7,6 +7,6 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface PositionOptions {
     val enableHighAccuracy: Boolean?
-    val maximumAge: UInt?
-    val timeout: UInt?
+    val maximumAge: Int?
+    val timeout: Int?
 }

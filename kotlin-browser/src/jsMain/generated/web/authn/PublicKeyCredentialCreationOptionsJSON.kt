@@ -15,6 +15,6 @@ external interface PublicKeyCredentialCreationOptionsJSON {
     val hints: ReadonlyArray<String>?
     val pubKeyCredParams: ReadonlyArray<PublicKeyCredentialParameters>
     val rp: PublicKeyCredentialRpEntity
-    val timeout: UInt?
+    val timeout: Int?
     val user: PublicKeyCredentialUserEntityJSON
 }

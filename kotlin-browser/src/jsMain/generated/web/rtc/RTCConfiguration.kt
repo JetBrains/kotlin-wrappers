@@ -9,7 +9,7 @@ import js.objects.JsPlainObject
 external interface RTCConfiguration {
     val bundlePolicy: RTCBundlePolicy?
     val certificates: ReadonlyArray<RTCCertificate>?
-    val iceCandidatePoolSize: UByte?
+    val iceCandidatePoolSize: Short /* unsigned byte */?
     val iceServers: ReadonlyArray<RTCIceServer>?
     val iceTransportPolicy: RTCIceTransportPolicy?
     val rtcpMuxPolicy: RTCRtcpMuxPolicy?

@@ -21,7 +21,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/numberOfItems)
      */
-    val numberOfItems: UInt
+    val numberOfItems: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/appendItem)

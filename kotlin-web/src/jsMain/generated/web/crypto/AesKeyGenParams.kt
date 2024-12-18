@@ -7,5 +7,5 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface AesKeyGenParams :
     Algorithm {
-    val length: UShort
+    val length: Short
 }

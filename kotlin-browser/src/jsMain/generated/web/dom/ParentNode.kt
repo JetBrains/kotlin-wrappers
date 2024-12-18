@@ -20,7 +20,7 @@ sealed external interface ParentNode :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/childElementCount)
      */
-    val childElementCount: UInt
+    val childElementCount: Int
         get() = definedExternally
 
     /**

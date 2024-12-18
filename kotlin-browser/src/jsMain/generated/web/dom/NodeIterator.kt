@@ -32,7 +32,7 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeIterator/whatToShow)
      */
-    val whatToShow: UInt
+    val whatToShow: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeIterator/nextNode)

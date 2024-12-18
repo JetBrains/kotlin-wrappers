@@ -20,12 +20,12 @@ open external class SpeechSynthesisEvent(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisEvent/charIndex)
      */
-    val charIndex: UInt
+    val charIndex: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisEvent/charLength)
      */
-    val charLength: UInt
+    val charLength: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisEvent/elapsedTime)

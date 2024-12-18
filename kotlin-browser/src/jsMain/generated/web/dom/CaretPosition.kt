@@ -9,7 +9,7 @@ import web.geometry.DOMRect
  */
 external class CaretPosition
 private constructor() {
-    val offset: UInt
+    val offset: Int
     val offsetNode: Node
     fun getClientRect(): DOMRect?
 }
