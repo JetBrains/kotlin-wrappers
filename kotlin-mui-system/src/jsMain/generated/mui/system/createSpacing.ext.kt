@@ -36,7 +36,6 @@ inline fun SpacingOptions(
 typealias SpacingArgument = Int /* web.cssom.Auto */
 
 sealed external interface Spacing {
-
     @JsNative
     operator fun invoke(): web.cssom.Length
 
@@ -47,11 +46,7 @@ sealed external interface Spacing {
     operator fun invoke(topBottom: SpacingArgument, rightLeft: SpacingArgument): web.cssom.Length
 
     @JsNative
-    operator fun invoke(
-        top: SpacingArgument,
-        rightLeft: SpacingArgument,
-        bottom: SpacingArgument,
-    ): web.cssom.Length
+    operator fun invoke(top: SpacingArgument, rightLeft: SpacingArgument, bottom: SpacingArgument): web.cssom.Length
 
     @JsNative
     operator fun invoke(

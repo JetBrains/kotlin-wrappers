@@ -13,7 +13,7 @@ external interface UseTabParameters {
     var value: dynamic
 
     /**
-     * Callback invoked when new value is being set.
+     * If `true`, the tab will be disabled.
      */
     var onChange: ((event: react.dom.events.SyntheticEvent<*, *>, value: Any /* Number | String */) -> Unit)?
 
