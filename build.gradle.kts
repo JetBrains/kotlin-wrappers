@@ -1,6 +1,5 @@
 plugins {
     `tools-conventions`
-    `react-npm-overrides`
 }
 
 tasks.wrapper {
