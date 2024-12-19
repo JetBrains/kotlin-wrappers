@@ -52,7 +52,7 @@ external interface UseListParameters<ItemValue, State, CustomAction, CustomActio
      *
      * @param item List item to get the DOM element for.
      */
-    var getItemDomElement: ((itemValue: ItemValue) -> HTMLElement?)?
+    var getItemDomElement: ((itemValue: ItemValue) -> HTMLElement)?
 
     /**
      * A function that returns the id of an item.

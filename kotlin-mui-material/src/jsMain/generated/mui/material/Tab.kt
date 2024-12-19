@@ -45,7 +45,7 @@ external interface TabOwnProps :
     /**
      * The icon to display.
      */
-    var icon: react.ReactNode?
+    var icon: react.ReactElement<*>?
 
     /**
      * The position of the icon relative to the label.
