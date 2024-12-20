@@ -4,6 +4,8 @@
 
 package tanstack.query.core
 
+import js.array.JsTuple2
+import js.array.ReadonlyArray
 import js.core.Void
 import js.promise.Promise
 
@@ -14,9 +16,19 @@ open external class QueryClient(config: QueryClientConfig = definedExternally) {
     open fun <TMutationFilters : MutationFilters<*, *, *, *>> isMutating(filters: TMutationFilters = definedExternally): Int
     open fun <TQueryFnData> getQueryData(queryKey: QueryKey): TQueryFnData?
     open fun <TQueryFnData, TError, TData, TQueryKey : QueryKey> ensureQueryData(options: EnsureQueryDataOptions<TQueryFnData, TError, TData, TQueryKey, *>): Promise<TData>
-    open var getQueriesData: Any /* TQueryFnData>(filters: TQueryFilters): Array<[QueryKey, TInferredQueryFnData | undefined]> */
-    open var setQueryData: Any /* TQueryFnData>(queryKey: TTaggedQueryKey, updater: Updater<NoInfer<TInferredQueryFnData> | undefined, NoInfer<TInferredQueryFnData> | undefined>, options?: SetDataOptions): TInferredQueryFnData | undefined */
-    open var setQueriesData: Any /* TQueryFnData>(filters: TQueryFilters, updater: Updater<NoInfer<TInferredQueryFnData> | undefined, NoInfer<TInferredQueryFnData> | undefined>, options?: SetDataOptions): Array<[QueryKey, TInferredQueryFnData | undefined]> */
+    open fun <TQueryFnData, TQueryFilters : QueryFilters<*, *, *, *>> getQueriesData(filters: TQueryFilters): ReadonlyArray<JsTuple2<QueryKey, TQueryFnData?>>
+    open fun <TQueryFnData> setQueryData(
+        queryKey: QueryKey,
+        updater: Updater<TQueryFnData?, TQueryFnData?>,
+        options: SetDataOptions = definedExternally,
+    ): TQueryFnData?
+
+    open fun <TQueryFnData, TQueryFilters : QueryFilters<*, *, *, *>> setQueriesData(
+        filters: TQueryFilters,
+        updater: Updater<TQueryFnData?, TQueryFnData?>,
+        options: SetDataOptions = definedExternally,
+    ): ReadonlyArray<JsTuple2<QueryKey, TQueryFnData?>>
+
     open fun <TQueryFnData, TError> getQueryState(queryKey: QueryKey): QueryState<TQueryFnData, TError>?
     open fun <TQueryFilters : QueryFilters<*, *, *, *>> removeQueries(filters: TQueryFilters = definedExternally)
     open fun <TQueryFilters : QueryFilters<*, *, *, *>> resetQueries(
