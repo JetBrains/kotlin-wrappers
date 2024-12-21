@@ -26,6 +26,3 @@ include("react-lazy-modules-webpack")
 include("react-router")
 include("tanstack-react-table")
 include("tic-tac-toe")
-
-// Kotlin Wrappers
-includeBuild("../")
