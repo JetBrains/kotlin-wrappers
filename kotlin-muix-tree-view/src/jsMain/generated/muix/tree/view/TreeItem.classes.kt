@@ -28,7 +28,7 @@ sealed external interface TreeItemClasses {
     /** State class applied to the element when disabled. */
     val disabled: ClassName
 
-    /** Styles applied to the tree item icon. */
+    /** Styles applied to the Tree Item icon. */
     val iconContainer: ClassName
 
     /** Styles applied to the label element. */
@@ -36,6 +36,15 @@ sealed external interface TreeItemClasses {
 
     /** Styles applied to the checkbox element. */
     val checkbox: ClassName
+
+    /** Styles applied to the input element that is visible when editing is enabled. */
+    val labelInput: ClassName
+
+    /** Styles applied to the content element when editing is enabled. */
+    val editing: ClassName
+
+    /** Styles applied to the content of the items that are editable. */
+    val editable: ClassName
 
     /** Styles applied to the drag and drop overlay. */
     val dragAndDropOverlay: ClassName

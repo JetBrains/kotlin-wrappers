@@ -5,10 +5,9 @@
 package muix.tree.view
 
 import web.cssom.ClassName
-import web.html.HTMLElement
 
 external interface TreeItemContentProps :
-    react.dom.html.HTMLAttributes<HTMLElement>,
+    react.dom.html.HTMLAttributes<web.html.HTMLElement>,
     react.PropsWithClassName {
     override var className: ClassName?
 
@@ -26,10 +25,13 @@ external interface TreeItemContentProps :
         val iconContainer: ClassName
         val label: ClassName
         val checkbox: ClassName
+        val labelInput: ClassName
+        val editing: ClassName
+        val editable: ClassName
     }
 
     /**
-     * The tree item label.
+     * The Tree Item label.
      */
     var label: react.ReactNode?
 
@@ -39,21 +41,23 @@ external interface TreeItemContentProps :
     var itemId: String
 
     /**
-     * The icon to display next to the tree item's label.
+     * The icon to display next to the Tree Item's label.
      */
     var icon: react.ReactNode?
 
     /**
-     * The icon to display next to the tree item's label. Either an expansion or collapse icon.
+     * The icon to display next to the Tree Item's label. Either an expansion or collapse icon.
      */
     var expansionIcon: react.ReactNode?
 
     /**
-     * The icon to display next to the tree item's label. Either a parent or end icon.
+     * The icon to display next to the Tree Item's label. Either a parent or end icon.
      */
     var displayIcon: react.ReactNode?
 
     var dragAndDropOverlayProps: TreeItem2DragAndDropOverlayProps?
+
+    var labelInputProps: TreeItem2LabelInputProps?
 }
 
 /**
