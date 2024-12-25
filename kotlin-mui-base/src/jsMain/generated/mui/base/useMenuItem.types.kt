@@ -2,8 +2,6 @@
 
 package mui.base
 
-import web.dom.Element
-
 external interface MenuItemMetadata {
     var id: String
 
@@ -21,7 +19,7 @@ external interface UseMenuItemParameters {
 
     var onClick: react.dom.events.MouseEventHandler<*>?
 
-    var rootRef: react.Ref<Element>
+    var rootRef: react.Ref<web.dom.Element>
 
     /**
      * If `true`, the menu item won't receive focus when the mouse moves over it.
@@ -62,7 +60,7 @@ external interface UseMenuItemReturnValue {
     /**
      * The ref to the component's root DOM element.
      */
-    var rootRef: react.RefCallback<Element>?
+    var rootRef: react.RefCallback<web.dom.Element>?
 
     /**
      * Total number of items in the menu.

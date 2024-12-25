@@ -6,7 +6,6 @@ package mui.material
 
 import mui.material.styles.Theme
 import mui.system.SxProps
-import web.html.HTMLElement
 
 external interface TablePaginationProps :
     TablePaginationOwnProps,
@@ -109,7 +108,7 @@ external interface TablePaginationOwnProps : mui.system.PropsWithSx {
      *
      * @param {React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>} event The event source of the callback.
      */
-    var onRowsPerPageChange: react.dom.events.ChangeEventHandler<HTMLElement>?
+    var onRowsPerPageChange: react.dom.events.ChangeEventHandler<web.html.HTMLElement>?
 
     /**
      * The zero-based index of the current page.

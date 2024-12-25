@@ -2,8 +2,6 @@
 
 package mui.base
 
-import web.html.HTMLElement
-
 external interface UseInputParameters {
     /**
      * The default value. Use when the component is not controlled.
@@ -22,13 +20,13 @@ external interface UseInputParameters {
      */
     var error: Boolean?
 
-    var onBlur: react.dom.events.FocusEventHandler<HTMLElement>?
+    var onBlur: react.dom.events.FocusEventHandler<web.html.HTMLElement>?
 
     var onClick: react.dom.events.MouseEventHandler<*>?
 
-    var onChange: react.dom.events.ChangeEventHandler<HTMLElement>?
+    var onChange: react.dom.events.ChangeEventHandler<web.html.HTMLElement>?
 
-    var onFocus: react.dom.events.FocusEventHandler<HTMLElement>?
+    var onFocus: react.dom.events.FocusEventHandler<web.html.HTMLElement>?
 
     var inputRef: react.Ref<web.html.HTMLInputElement /* or web.html.HTMLTextAreaElement*/>?
 
@@ -52,11 +50,11 @@ external interface UseInputInputSlotOwnProps : react.Props {
 
     var value: dynamic
 
-    var onBlur: react.dom.events.FocusEventHandler<HTMLElement>
+    var onBlur: react.dom.events.FocusEventHandler<web.html.HTMLElement>
 
-    var onChange: react.dom.events.ChangeEventHandler<HTMLElement>
+    var onChange: react.dom.events.ChangeEventHandler<web.html.HTMLElement>
 
-    var onFocus: react.dom.events.FocusEventHandler<HTMLElement>
+    var onFocus: react.dom.events.FocusEventHandler<web.html.HTMLElement>
 
     var required: Boolean
 
