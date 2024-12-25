@@ -37,12 +37,14 @@ external interface TreeItemProps :
 
     /**
      * The component used to render the content of the item.
+     * @deprecated Consider using the `<TreeItem2 />` component or the `useTreeItem2` hook instead. For more details, see https://mui.com/x/react-tree-view/tree-item-customization/.
      * @default TreeItemContent
      */
     var ContentComponent: react.ComponentType<TreeItemContentProps>?
 
     /**
      * Props applied to ContentComponent.
+     * @deprecated Consider using the `<TreeItem2 />` component or the `useTreeItem2` hook instead. For more details, see https://mui.com/x/react-tree-view/tree-item-customization/.
      */
     var ContentProps: react.Props? /* React.HTMLAttributes<HTMLElement> & { ref?: React.Ref<HTMLElement>; } */
 
@@ -60,7 +62,7 @@ external interface TreeItemProps :
     override var onFocus: react.dom.events.FocusEventHandler<web.html.HTMLLIElement>?
 
     /**
-     * The tree item label.
+     * The Tree Item label.
      */
     var label: react.ReactNode?
 
@@ -97,7 +99,7 @@ external interface TreeItemSlots {
     var endIcon: react.ElementType<*>?
 
     /**
-     * The icon to display next to the tree item's label.
+     * The icon to display next to the Tree Item's label.
      */
     var icon: react.ElementType<*>?
 
