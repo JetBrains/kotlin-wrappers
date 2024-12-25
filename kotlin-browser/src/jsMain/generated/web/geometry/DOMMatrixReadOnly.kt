@@ -131,6 +131,10 @@ open external class DOMMatrixReadOnly(
      */
     fun flipX(): DOMMatrix
     fun flipY(): DOMMatrix
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/inverse)
+     */
     fun inverse(): DOMMatrix
     fun multiply(other: DOMMatrixInit = definedExternally): DOMMatrix
     fun multiply(other: DOMMatrixReadOnly /* DOMMatrixInit */): DOMMatrix
@@ -175,6 +179,10 @@ open external class DOMMatrixReadOnly(
     fun skewY(sy: Double = definedExternally): DOMMatrix
     fun toFloat32Array(): Float32Array<*>
     fun toFloat64Array(): Float64Array<*>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/toJSON)
+     */
     fun toJSON(): Any
     fun transformPoint(point: DOMPointInit = definedExternally): DOMPoint
     fun transformPoint(point: DOMPointReadOnly /* DOMPointInit */): DOMPoint

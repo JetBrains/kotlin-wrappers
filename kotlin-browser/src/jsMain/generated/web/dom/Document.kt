@@ -565,7 +565,7 @@ open external class Document :
      */
     fun <T : Node> importNode(
         node: T,
-        deep: Boolean = definedExternally,
+        subtree: Boolean = definedExternally,
     ): T
 
     /**
@@ -607,14 +607,6 @@ open external class Document :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/startViewTransition)
      */
     fun startViewTransition(callbackOptions: ViewTransitionUpdateCallback = definedExternally): ViewTransition
-
-    /**
-     * Writes one or more HTML expressions to a document in the specified window.
-     * @param content Specifies the text and HTML tags to write.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/write)
-     */
-    fun write(vararg text: String)
 
     /**
      * Writes one or more HTML expressions, followed by a carriage return, to a document in the specified window.

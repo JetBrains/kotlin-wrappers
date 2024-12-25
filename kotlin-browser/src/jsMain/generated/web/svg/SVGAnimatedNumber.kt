@@ -9,6 +9,13 @@ package web.svg
  */
 external class SVGAnimatedNumber
 private constructor() {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedNumber/animVal)
+     */
     val animVal: Float
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedNumber/baseVal)
+     */
     var baseVal: Float
 }

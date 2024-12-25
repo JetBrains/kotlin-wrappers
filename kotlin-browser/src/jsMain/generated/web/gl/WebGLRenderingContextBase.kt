@@ -610,6 +610,10 @@ sealed external interface WebGLRenderingContextBase {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/isTexture)
      */
     fun isTexture(texture: WebGLTexture?): GLboolean
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/lineWidth)
+     */
     fun lineWidth(width: GLfloat)
 
     /**

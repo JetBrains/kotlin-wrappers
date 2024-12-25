@@ -9,6 +9,13 @@ package web.svg
  */
 external class SVGAnimatedLengthList
 private constructor() {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedLengthList/animVal)
+     */
     val animVal: SVGLengthList
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedLengthList/baseVal)
+     */
     val baseVal: SVGLengthList
 }

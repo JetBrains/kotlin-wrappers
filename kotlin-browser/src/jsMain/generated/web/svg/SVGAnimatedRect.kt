@@ -12,6 +12,13 @@ import web.geometry.DOMRectReadOnly
  */
 external class SVGAnimatedRect
 private constructor() {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedRect/animVal)
+     */
     val animVal: DOMRectReadOnly
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedRect/baseVal)
+     */
     val baseVal: DOMRect
 }

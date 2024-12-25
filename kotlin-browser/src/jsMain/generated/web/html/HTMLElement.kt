@@ -124,6 +124,10 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/translate)
      */
     var translate: Boolean
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/writingSuggestions)
+     */
     var writingSuggestions: String
 
     /**

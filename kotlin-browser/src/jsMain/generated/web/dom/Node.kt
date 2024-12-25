@@ -117,7 +117,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/cloneNode)
      */
-    fun cloneNode(deep: Boolean = definedExternally): Node
+    fun cloneNode(subtree: Boolean = definedExternally): Node
 
     /**
      * Returns a bitmask indicating the position of other relative to node.

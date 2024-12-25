@@ -9,6 +9,13 @@ package web.svg
  */
 external class SVGAnimatedBoolean
 private constructor() {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedBoolean/animVal)
+     */
     val animVal: Boolean
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedBoolean/baseVal)
+     */
     var baseVal: Boolean
 }

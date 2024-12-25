@@ -9,6 +9,13 @@ package web.svg
  */
 external class SVGAnimatedTransformList
 private constructor() {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedTransformList/animVal)
+     */
     val animVal: SVGTransformList
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedTransformList/baseVal)
+     */
     val baseVal: SVGTransformList
 }

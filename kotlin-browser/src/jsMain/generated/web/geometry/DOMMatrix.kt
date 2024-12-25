@@ -123,6 +123,10 @@ open external class DOMMatrix(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
      */
     override var m44: Double
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/invertSelf)
+     */
     fun invertSelf(): DOMMatrix
     fun multiplySelf(other: DOMMatrixInit = definedExternally): DOMMatrix
     fun multiplySelf(other: DOMMatrixReadOnly /* DOMMatrixInit */): DOMMatrix
@@ -140,6 +144,9 @@ open external class DOMMatrix(
         y: Double = definedExternally,
     ): DOMMatrix
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/rotateSelf)
+     */
     fun rotateSelf(
         rotX: Double = definedExternally,
         rotY: Double = definedExternally,
@@ -162,9 +169,24 @@ open external class DOMMatrix(
         originZ: Double = definedExternally,
     ): DOMMatrix
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/setMatrixValue)
+     */
     fun setMatrixValue(transformList: String): DOMMatrix
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/skewXSelf)
+     */
     fun skewXSelf(sx: Double = definedExternally): DOMMatrix
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/skewYSelf)
+     */
     fun skewYSelf(sy: Double = definedExternally): DOMMatrix
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/translateSelf)
+     */
     fun translateSelf(
         tx: Double = definedExternally,
         ty: Double = definedExternally,

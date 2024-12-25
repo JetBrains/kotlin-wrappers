@@ -1568,11 +1568,6 @@ private constructor() :
     var position: String
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/position-area)
-     */
-    var positionArea: String
-
-    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/print-color-adjust)
      */
     var printColorAdjust: String
@@ -1871,6 +1866,9 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-anchor)
      */
     var textAnchor: String
+    var textBox: String
+    var textBoxEdge: String
+    var textBoxTrim: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-combine-upright)
