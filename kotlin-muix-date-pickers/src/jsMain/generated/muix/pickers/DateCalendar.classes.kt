@@ -1,12 +1,12 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/x-date-pickers/CalendarPicker")
+@file:JsModule("@mui/x-date-pickers/DateCalendar")
 
 package muix.pickers
 
 import web.cssom.ClassName
 
-sealed external interface CalendarPickerClasses {
+sealed external interface DateCalendarClasses {
     /** Styles applied to the root element. */
     val root: ClassName
 
@@ -14,4 +14,4 @@ sealed external interface CalendarPickerClasses {
     val viewTransitionContainer: ClassName
 }
 
-external val calendarPickerClasses: CalendarPickerClasses
+external val dateCalendarClasses: DateCalendarClasses

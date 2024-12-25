@@ -1,14 +1,14 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/x-date-pickers/YearPicker")
+@file:JsModule("@mui/x-date-pickers/YearCalendar")
 
 package muix.pickers
 
 import web.cssom.ClassName
 
-sealed external interface YearPickerClasses {
+sealed external interface YearCalendarClasses {
     /** Styles applied to the root element. */
     val root: ClassName
 }
 
-external val yearPickerClasses: YearPickerClasses
+external val yearCalendarClasses: YearCalendarClasses

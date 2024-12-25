@@ -1,7 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/x-date-pickers/PickersActionBar")
-
 package muix.pickers
 
 external interface PickersActionBarProps : react.Props {
@@ -20,6 +18,3 @@ external interface PickersActionBarProps : react.Props {
 
     var onSetToday: () -> Unit
 }
-
-
-external val PickersActionBar: react.FC<PickersActionBarProps>
