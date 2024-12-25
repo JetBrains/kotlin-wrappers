@@ -3,7 +3,6 @@
 package mui.base
 
 import js.array.ReadonlyArray
-import web.dom.Element
 import web.html.HTMLElement
 
 external interface ListState<ItemValue> {
@@ -80,7 +79,7 @@ external interface UseListParameters<ItemValue, State, CustomAction, CustomActio
     /**
      * Ref to the list root DOM element.
      */
-    var rootRef: react.Ref<Element>?
+    var rootRef: react.Ref<web.dom.Element>?
 
     /**
      * Callback fired when the selected value changes.
@@ -193,7 +192,7 @@ external interface UseListReturnValue {
      */
     var getRootProps: react.Props /* <ExternalProps extends Record<string, unknown> = {}>(externalProps?: ExternalProps) => UseListRootSlotProps<ExternalProps> */
 
-    var rootRef: react.RefCallback<Element>?
+    var rootRef: react.RefCallback<web.dom.Element>?
 
     var state: dynamic
 }

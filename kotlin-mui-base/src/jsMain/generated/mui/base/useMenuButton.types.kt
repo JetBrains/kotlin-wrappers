@@ -2,9 +2,6 @@
 
 package mui.base
 
-import web.dom.Element
-import web.html.HTMLElement
-
 external interface UseMenuButtonParameters {
     /**
      * If `true`, the component is disabled.
@@ -21,7 +18,7 @@ external interface UseMenuButtonParameters {
     /**
      * The ref to the root element.
      */
-    var rootRef: react.Ref<HTMLElement>?
+    var rootRef: react.Ref<web.html.HTMLElement>?
 }
 
 external interface UseMenuButtonReturnValue {
@@ -42,5 +39,5 @@ external interface UseMenuButtonReturnValue {
     /**
      * The ref to the root element.
      */
-    var rootRef: react.RefCallback<Element>?
+    var rootRef: react.RefCallback<web.dom.Element>?
 }

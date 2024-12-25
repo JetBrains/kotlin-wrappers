@@ -6,12 +6,11 @@ package mui.material
 
 import mui.material.styles.Theme
 import mui.system.SxProps
-import web.html.HTMLElement
 
 external interface PaginationProps :
     UsePaginationProps,
     mui.system.StandardProps,
-    react.dom.html.HTMLAttributes<HTMLElement>,
+    react.dom.html.HTMLAttributes<web.html.HTMLElement>,
     mui.system.PropsWithSx {
     /**
      * Override or extend the styles applied to the component.

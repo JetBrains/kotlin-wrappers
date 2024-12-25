@@ -2,8 +2,6 @@
 
 package mui.base
 
-import web.dom.Element
-
 external interface UseTabParameters {
     /**
      * The value of the tab.
@@ -36,7 +34,7 @@ external interface UseTabParameters {
     /**
      * Ref to the root slot's DOM element.
      */
-    var rootRef: react.Ref<Element>?
+    var rootRef: react.Ref<web.dom.Element>?
 }
 
 external interface UseTabReturnValue {
@@ -71,7 +69,7 @@ external interface UseTabReturnValue {
     /**
      * Ref to the root slot's DOM element.
      */
-    var rootRef: react.RefCallback<Element>?
+    var rootRef: react.RefCallback<web.dom.Element>?
 
     /**
      * If `true`, the tab is selected.
