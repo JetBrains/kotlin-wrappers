@@ -2,89 +2,89 @@
 
 package actions.http.client
 
-import seskar.js.JsIntValue
+import seskar.js.JsRawValue
 
 sealed external interface HttpCodes {
     companion object {
-        @JsIntValue(200)
+        @JsRawValue("200")
         val OK: HttpCodes
 
-        @JsIntValue(300)
+        @JsRawValue("300")
         val MultipleChoices: HttpCodes
 
-        @JsIntValue(301)
+        @JsRawValue("301")
         val MovedPermanently: HttpCodes
 
-        @JsIntValue(302)
+        @JsRawValue("302")
         val ResourceMoved: HttpCodes
 
-        @JsIntValue(303)
+        @JsRawValue("303")
         val SeeOther: HttpCodes
 
-        @JsIntValue(304)
+        @JsRawValue("304")
         val NotModified: HttpCodes
 
-        @JsIntValue(305)
+        @JsRawValue("305")
         val UseProxy: HttpCodes
 
-        @JsIntValue(306)
+        @JsRawValue("306")
         val SwitchProxy: HttpCodes
 
-        @JsIntValue(307)
+        @JsRawValue("307")
         val TemporaryRedirect: HttpCodes
 
-        @JsIntValue(308)
+        @JsRawValue("308")
         val PermanentRedirect: HttpCodes
 
-        @JsIntValue(400)
+        @JsRawValue("400")
         val BadRequest: HttpCodes
 
-        @JsIntValue(401)
+        @JsRawValue("401")
         val Unauthorized: HttpCodes
 
-        @JsIntValue(402)
+        @JsRawValue("402")
         val PaymentRequired: HttpCodes
 
-        @JsIntValue(403)
+        @JsRawValue("403")
         val Forbidden: HttpCodes
 
-        @JsIntValue(404)
+        @JsRawValue("404")
         val NotFound: HttpCodes
 
-        @JsIntValue(405)
+        @JsRawValue("405")
         val MethodNotAllowed: HttpCodes
 
-        @JsIntValue(406)
+        @JsRawValue("406")
         val NotAcceptable: HttpCodes
 
-        @JsIntValue(407)
+        @JsRawValue("407")
         val ProxyAuthenticationRequired: HttpCodes
 
-        @JsIntValue(408)
+        @JsRawValue("408")
         val RequestTimeout: HttpCodes
 
-        @JsIntValue(409)
+        @JsRawValue("409")
         val Conflict: HttpCodes
 
-        @JsIntValue(410)
+        @JsRawValue("410")
         val Gone: HttpCodes
 
-        @JsIntValue(429)
+        @JsRawValue("429")
         val TooManyRequests: HttpCodes
 
-        @JsIntValue(500)
+        @JsRawValue("500")
         val InternalServerError: HttpCodes
 
-        @JsIntValue(501)
+        @JsRawValue("501")
         val NotImplemented: HttpCodes
 
-        @JsIntValue(502)
+        @JsRawValue("502")
         val BadGateway: HttpCodes
 
-        @JsIntValue(503)
+        @JsRawValue("503")
         val ServiceUnavailable: HttpCodes
 
-        @JsIntValue(504)
+        @JsRawValue("504")
         val GatewayTimeout: HttpCodes
     }
 }
