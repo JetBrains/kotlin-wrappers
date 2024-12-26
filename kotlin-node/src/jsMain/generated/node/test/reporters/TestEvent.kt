@@ -36,6 +36,9 @@ typealias TestEvent = Any /* {
     type: "test:stdout";
     data: TestStdout;
 } | {
+    type: "test:summary";
+    data: TestSummary;
+} | {
     type: "test:watch:drained";
     data: undefined;
 } */

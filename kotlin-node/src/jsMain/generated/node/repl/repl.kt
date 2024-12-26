@@ -10,7 +10,7 @@ package node.repl
  * applications. It can be accessed using:
  *
  * ```js
- * const repl = require('node:repl');
+ * import repl from 'node:repl';
  * ```
  * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/repl.js)
  */

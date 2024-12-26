@@ -35,7 +35,7 @@ external fun native(
 external fun native(
     path: PathLike,
     options: BufferEncodingOption,
-    callback: (err: node.ErrnoException?, resolvedPath: node.buffer.Buffer) -> Unit,
+    callback: (err: node.ErrnoException?, resolvedPath: node.buffer.Buffer<*>) -> Unit,
 ): Unit
 
 external fun native(

@@ -2,7 +2,10 @@
 
 package node.fs
 
-sealed external interface CreateReadStreamOptions {
+import web.abort.Abortable
+
+@js.objects.JsPlainObject
+sealed external interface CreateReadStreamOptions : Abortable {
     var encoding: node.buffer.BufferEncoding?
     var autoClose: Boolean?
     var emitClose: Boolean?

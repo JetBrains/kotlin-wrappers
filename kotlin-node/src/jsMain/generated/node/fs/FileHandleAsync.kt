@@ -7,7 +7,7 @@ import js.buffer.ArrayBufferView
 import js.promise.Promise
 import js.typedarrays.Uint8Array
 import web.streams.ReadableStream
-import node.readline.Interface as ReadlineInterface
+import node.readline._Interface as ReadlineInterface
 
 // TODO: Add `EventEmitter` close
 sealed external interface FileHandle {
@@ -341,11 +341,25 @@ sealed external interface FileHandle {
 
 
     @JsName("read")
-    fun <T : ArrayBufferView<*> /* default is node.buffer.Buffer */> readAsync(options: FileReadOptions<T> = definedExternally): Promise<FileReadResult<T>>
+    fun <T : ArrayBufferView<*> /* default is node.buffer.Buffer<*> */> readAsync(
+        buffer: T,
+        options: FileReadOptions<T> = definedExternally,
+    ): Promise<FileReadResult<T>>
 
 
     @seskar.js.JsAsync
-    suspend fun <T : ArrayBufferView<*> /* default is node.buffer.Buffer */> read(options: FileReadOptions<T> = definedExternally): FileReadResult<T>
+    suspend fun <T : ArrayBufferView<*> /* default is node.buffer.Buffer<*> */> read(
+        buffer: T,
+        options: FileReadOptions<T> = definedExternally,
+    ): FileReadResult<T>
+
+
+    @JsName("read")
+    fun <T : ArrayBufferView<*> /* default is node.buffer.Buffer<*> */> readAsync(options: FileReadOptions<T> = definedExternally): Promise<FileReadResult<T>>
+
+
+    @seskar.js.JsAsync
+    suspend fun <T : ArrayBufferView<*> /* default is node.buffer.Buffer<*> */> read(options: FileReadOptions<T> = definedExternally): FileReadResult<T>
 
     /**
      * Returns a `ReadableStream` that may be used to read the files data.
@@ -389,11 +403,11 @@ sealed external interface FileHandle {
      */
 
     @JsName("readFile")
-    fun readFileAsync(options: (FileHandleReadFileBufferAsyncOptions)? = definedExternally): Promise<node.buffer.Buffer>
+    fun readFileAsync(options: (FileHandleReadFileBufferAsyncOptions)? = definedExternally): Promise<node.buffer.Buffer<*>>
 
 
     @seskar.js.JsAsync
-    suspend fun readFile(options: (FileHandleReadFileBufferAsyncOptions)? = definedExternally): node.buffer.Buffer
+    suspend fun readFile(options: (FileHandleReadFileBufferAsyncOptions)? = definedExternally): node.buffer.Buffer<*>
 
     /**
      * Asynchronously reads the entire contents of a file. The underlying file will _not_ be closed automatically.
@@ -884,6 +898,20 @@ sealed external interface FileHandle {
         offset: Double? = definedExternally,
         length: Double? = definedExternally,
         position: Double? = definedExternally,
+    ): FileHandleWriteResultPayload<TBuffer>
+
+
+    @JsName("write")
+    fun <TBuffer : Uint8Array<*>> writeAsync(
+        buffer: TBuffer,
+        options: FileHandleWriteAsyncOptions = definedExternally,
+    ): Promise<FileHandleWriteResultPayload<TBuffer>>
+
+
+    @seskar.js.JsAsync
+    suspend fun <TBuffer : Uint8Array<*>> write(
+        buffer: TBuffer,
+        options: FileHandleWriteAsyncOptions = definedExternally,
     ): FileHandleWriteResultPayload<TBuffer>
 
 

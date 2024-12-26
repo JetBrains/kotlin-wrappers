@@ -50,7 +50,7 @@ external fun readdir(
 external fun readdir(
     path: PathLike,
     options: ReaddirBufferOptions,
-    callback: (err: node.ErrnoException?, files: js.array.ReadonlyArray<node.buffer.Buffer>) -> Unit,
+    callback: (err: node.ErrnoException?, files: js.array.ReadonlyArray<node.buffer.Buffer<*>>) -> Unit,
 ): Unit
 
 /**
@@ -61,7 +61,7 @@ external fun readdir(
 external fun readdir(
     path: PathLike,
     options: String, /* "buffer" */
-    callback: (err: node.ErrnoException?, files: js.array.ReadonlyArray<node.buffer.Buffer>) -> Unit,
+    callback: (err: node.ErrnoException?, files: js.array.ReadonlyArray<node.buffer.Buffer<*>>) -> Unit,
 ): Unit
 
 /**

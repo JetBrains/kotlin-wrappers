@@ -220,11 +220,11 @@ external class TracingChannel<StoreType /* default is Any? */, ContextType : Any
      * @param args Optional arguments to pass to the function
      * @return The return value of the given function
      */
-    fun <Fn : Function<Any?> /* (this: any, ...args: any) => any */> traceCallback(
+    fun <Fn : Function<Any?> /* (this: any, ...args: any[]) => any */> traceCallback(
         fn: Fn,
-        position: Double?,
-        context: ContextType?,
-        thisArg: Any?,
+        position: Number = definedExternally,
+        context: ContextType = definedExternally,
+        thisArg: Any? = definedExternally,
         vararg args: Any?, /* Parameters<Fn> */
     ): Unit
 }

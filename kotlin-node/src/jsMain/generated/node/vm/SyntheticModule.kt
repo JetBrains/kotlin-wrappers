@@ -14,7 +14,7 @@ package node.vm
  * module graphs.
  *
  * ```js
- * const vm = require('node:vm');
+ * import vm from 'node:vm';
  *
  * const source = '{ "a": 1 }';
  * const module = new vm.SyntheticModule(['default'], function() {

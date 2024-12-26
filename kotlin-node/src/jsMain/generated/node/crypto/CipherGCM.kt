@@ -9,5 +9,5 @@ sealed external interface CipherGCM : Cipher {
         options: CipherGCMSetAADOptions = definedExternally,
     ): Unit /* this */
 
-    fun getAuthTag(): node.buffer.Buffer
+    fun getAuthTag(): node.buffer.Buffer<*>
 }

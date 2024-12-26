@@ -8,7 +8,7 @@ import kotlin.contracts.contract
 @Suppress("CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
 inline fun isBuffer(value: Any?): Boolean /* object is Buffer */ {
     contract {
-        returns(true) implies (value is node.buffer.Buffer)
+        returns(true) implies (value is node.buffer.Buffer<*>)
     }
 
     return isBufferRaw(value)

@@ -2,22 +2,7 @@
 
 package node.fs
 
-sealed external interface GlobOptions {
-    /**
-     * Current working directory.
-     * @default process.cwd()
-     */
-    var cwd: String?
-
-    /**
-     * Function to filter out files/directories. Return true to exclude the item, false to include it.
-     */
-    var exclude: ((fileName: String) -> Boolean)?
-
-    /**
-     * `true` if the glob should return paths as `Dirent`s, `false` otherwise.
-     * @default false
-     * @since v22.2.0
-     */
-    var withFileTypes: Boolean?
+sealed external interface GlobOptions : GlobOptionsBase {
+    @JsName("exclude")
+    var globExclude: ((fileName: Any /* Dirent | string */) -> Boolean)?
 }

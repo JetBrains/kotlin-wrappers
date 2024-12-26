@@ -274,7 +274,7 @@ open external class Readable : Stream, node.ReadableStream {
      * the method does nothing.
      *
      * ```js
-     * const fs = require('node:fs');
+     * import fs from 'node:fs';
      * const readable = getReadableStreamSomehow();
      * const writable = fs.createWriteStream('file.txt');
      * // All the data from readable goes into 'file.txt',
@@ -313,7 +313,7 @@ open external class Readable : Stream, node.ReadableStream {
      * // Pull off a header delimited by \n\n.
      * // Use unshift() if we get too much.
      * // Call the callback with (error, header, stream).
-     * const { StringDecoder } = require('node:string_decoder');
+     * import { StringDecoder } from 'node:string_decoder';
      * function parseHeader(stream, callback) {
      *   stream.on('error', callback);
      *   stream.on('readable', onReadable);
@@ -372,8 +372,8 @@ open external class Readable : Stream, node.ReadableStream {
      * libraries.
      *
      * ```js
-     * const { OldReader } = require('./old-api-module.js');
-     * const { Readable } = require('node:stream');
+     * import { OldReader } from './old-api-module.js';
+     * import { Readable } from 'node:stream';
      * const oreader = new OldReader();
      * const myReader = new Readable().wrap(oreader);
      *
@@ -647,7 +647,7 @@ open external class Readable : Stream, node.ReadableStream {
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
-    /* [Symbol.asyncIterator](): AsyncIterableIterator<any>; */
+    /* [Symbol.asyncIterator](): NodeJS.AsyncIterator<any>; */
     /**
      * Calls `readable.destroy()` with an `AbortError` and returns a promise that fulfills when the stream is finished.
      * @since v20.4.0

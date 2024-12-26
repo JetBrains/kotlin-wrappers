@@ -14,7 +14,7 @@ package node.net
  * It can be accessed using:
  *
  * ```js
- * const net = require('node:net');
+ * import net from 'node:net';
  * ```
  * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/net.js)
  */

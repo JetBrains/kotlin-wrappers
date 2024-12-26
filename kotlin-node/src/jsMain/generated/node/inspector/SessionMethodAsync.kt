@@ -79,6 +79,8 @@ sealed external interface SessionMethod {
     sealed interface NODEWORKER_ENABLE : SessionMethod
     sealed interface NODEWORKER_DISABLE : SessionMethod
     sealed interface NODEWORKER_DETACH : SessionMethod
+    sealed interface NETWORK_DISABLE : SessionMethod
+    sealed interface NETWORK_ENABLE : SessionMethod
     sealed interface NODERUNTIME_ENABLE : SessionMethod
     sealed interface NODERUNTIME_DISABLE : SessionMethod
     sealed interface NODERUNTIME_NOTIFYWHENWAITINGFORDISCONNECT : SessionMethod
@@ -308,6 +310,12 @@ sealed external interface SessionMethod {
 
         @seskar.js.JsValue("NodeWorker.detach")
         val NODEWORKER_DETACH: NODEWORKER_DETACH
+
+        @seskar.js.JsValue("Network.disable")
+        val NETWORK_DISABLE: NETWORK_DISABLE
+
+        @seskar.js.JsValue("Network.enable")
+        val NETWORK_ENABLE: NETWORK_ENABLE
 
         @seskar.js.JsValue("NodeRuntime.enable")
         val NODERUNTIME_ENABLE: NODERUNTIME_ENABLE

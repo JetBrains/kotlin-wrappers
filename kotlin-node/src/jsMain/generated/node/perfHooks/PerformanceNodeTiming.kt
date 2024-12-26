@@ -68,6 +68,17 @@ external class PerformanceNodeTiming : PerformanceEntry {
     val nodeStart: Double
 
     /**
+     * This is a wrapper to the `uv_metrics_info` function.
+     * It returns the current set of event loop metrics.
+     *
+     * It is recommended to use this property inside a function whose execution was
+     * scheduled using `setImmediate` to avoid collecting metrics before finishing all
+     * operations scheduled during the current loop iteration.
+     * @since v22.8.0, v20.18.0
+     */
+    val uvMetricsInfo: UVMetrics
+
+    /**
      * The high resolution millisecond timestamp at which the V8 platform was
      * initialized.
      * @since v8.5.0

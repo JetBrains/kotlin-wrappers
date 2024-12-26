@@ -10,7 +10,7 @@ package node.tls
  * The module can be accessed using:
  *
  * ```js
- * const tls = require('node:tls');
+ * import tls from 'node:tls';
  * ```
  * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/tls.js)
  */

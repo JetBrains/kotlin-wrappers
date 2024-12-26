@@ -6,12 +6,4 @@ package node.http2
 
 /* import EventEmitter = require("node:events"); */
 
-
 /* export { OutgoingHttpHeaders } from "node:http"; */
-
-
-/**
- * This symbol can be set as a property on the HTTP/2 headers object with
- * an array value in order to provide a list of headers considered sensitive.
- */
-external val sensitiveHeaders: js.symbol.Symbol

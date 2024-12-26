@@ -114,7 +114,7 @@ sealed external interface Http2Stream : node.stream.Duplex {
 
     /**
      * ```js
-     * const http2 = require('node:http2');
+     * import http2 from 'node:http2';
      * const client = http2.connect('http://example.org:8000');
      * const { NGHTTP2_CANCEL } = http2.constants;
      * const req = client.request({ ':path': '/' });
@@ -135,7 +135,7 @@ sealed external interface Http2Stream : node.stream.Duplex {
      * trailers can be sent.
      *
      * ```js
-     * const http2 = require('node:http2');
+     * import http2 from 'node:http2';
      * const server = http2.createServer();
      * server.on('stream', (stream) => {
      *   stream.respond(undefined, { waitForTrailers: true });

@@ -4,6 +4,7 @@ const modules = [
     "Console",
     "Debugger",
     "HeapProfiler",
+    "Network",
     "NodeRuntime",
     "NodeTracing",
     "NodeWorker",

@@ -32,7 +32,7 @@ package node.asyncHooks
  *   executionAsyncId,
  *   executionAsyncResource,
  *   createHook,
- * } from 'async_hooks';
+ * } from 'node:async_hooks';
  * const sym = Symbol('state'); // Private symbol to avoid pollution
  *
  * createHook({

@@ -16,7 +16,7 @@ package node.stream
  * To access the `node:stream` module:
  *
  * ```js
- * const stream = require('node:stream');
+ * import stream from 'node:stream';
  * ```
  *
  * The `node:stream` module is useful for creating new types of stream instances.

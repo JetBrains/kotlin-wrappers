@@ -119,6 +119,8 @@ external class Worker : EventEmitter {
      * the `'disconnect'` event has not been emitted after some time.
      *
      * ```js
+     * import net from 'node:net';
+     *
      * if (cluster.isPrimary) {
      *   const worker = cluster.fork();
      *   let timeout;
@@ -136,7 +138,6 @@ external class Worker : EventEmitter {
      *   });
      *
      * } else if (cluster.isWorker) {
-     *   const net = require('node:net');
      *   const server = net.createServer((socket) => {
      *     // Connections never end
      *   });

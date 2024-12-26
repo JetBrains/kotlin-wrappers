@@ -17,7 +17,7 @@ package node.perfHooks
  * detect.
  *
  * ```js
- * const { monitorEventLoopDelay } = require('node:perf_hooks');
+ * import { monitorEventLoopDelay } from 'node:perf_hooks';
  * const h = monitorEventLoopDelay({ resolution: 20 });
  * h.enable();
  * // Do something.

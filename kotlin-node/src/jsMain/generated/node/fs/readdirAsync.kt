@@ -109,7 +109,7 @@ external fun readdirAsync(
 external fun readdirAsync(
     path: PathLike,
     options: ReaddirBufferAsyncOptions,
-): Promise<js.array.ReadonlyArray<node.buffer.Buffer>>
+): Promise<js.array.ReadonlyArray<node.buffer.Buffer<*>>>
 
 
 /**
@@ -122,7 +122,7 @@ external fun readdirAsync(
 external fun readdirAsync(
     path: PathLike,
     options: String, /* "buffer" */
-): Promise<js.array.ReadonlyArray<node.buffer.Buffer>>
+): Promise<js.array.ReadonlyArray<node.buffer.Buffer<*>>>
 
 
 /**

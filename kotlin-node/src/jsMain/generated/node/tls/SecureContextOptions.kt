@@ -16,6 +16,13 @@ external interface SecureContextOptions {
     var ALPNCallback: ((arg: SecureContextOptionsALPNCallbackArg) -> String?)?
 
     /**
+     * Treat intermediate (non-self-signed)
+     * certificates in the trust CA certificate list as trusted.
+     * @since v22.9.0, v20.18.0
+     */
+    var allowPartialTrustChain: Boolean?
+
+    /**
      * Optionally override the trusted CA certificates. Default is to trust
      * the well-known CAs curated by Mozilla. Mozilla's CAs are completely
      * replaced when CAs are explicitly specified using this option.
@@ -183,7 +190,7 @@ external interface SecureContextOptions {
      * 48-bytes of cryptographically strong pseudo-random data.
      * See Session Resumption for more information.
      */
-    var ticketKeys: node.buffer.Buffer?
+    var ticketKeys: node.buffer.Buffer<*>?
 
     /**
      * The number of seconds after which a TLS session created by the

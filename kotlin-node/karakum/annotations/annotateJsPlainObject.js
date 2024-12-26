@@ -55,6 +55,7 @@ const jsoInterfaces = [
     "MkdirSyncOptions",
     "MkdirSyncRecursiveOptions",
     "ReadStreamOptions",
+    "CreateReadStreamOptions",
     "WriteStreamOptions",
     "WatchOptions",
     "WatchFileOptions",

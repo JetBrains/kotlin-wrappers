@@ -56,7 +56,7 @@ export default function (node, context, render) {
         )
         && !node.typeArguments
     ) {
-        return `${render(node.typeName)}<*, *, *>`
+        return `${render(node.typeName)}<*, *, *, *>`
     }
 
     if (
@@ -177,6 +177,27 @@ export default function (node, context, render) {
             ?.join(", ")
 
         return `${render(node.typeName)}<${typeArguments}, *, *>`
+    }
+
+    if (
+        ts.isTypeReferenceNode(node)
+        && ts.isIdentifier(node.typeName)
+        && node.typeName.text === "Http2ServerResponse"
+        && !node.typeArguments
+    ) {
+        return `${render(node.typeName)}<*>`
+    }
+
+    if (
+        ts.isTypeReferenceNode(node)
+        && ts.isIdentifier(node.typeName)
+        && (
+            node.typeName.text === "Http2Server"
+            || node.typeName.text === "Http2SecureServer"
+        )
+        && !node.typeArguments
+    ) {
+        return `${render(node.typeName)}<*, *, *, *>`
     }
 
     if (

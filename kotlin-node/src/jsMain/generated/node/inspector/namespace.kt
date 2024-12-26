@@ -6,9 +6,4 @@ package node.inspector
 
 /* import EventEmitter = require('node:events'); */
 
-
-/**
- * An object to send messages to the remote inspector console.
- * @since v11.0.0
- */
-external val console: InspectorConsole
+// DevTools protocol event broadcast methods

@@ -14,8 +14,8 @@ package node.tls
  * The following illustrates a simple echo server:
  *
  * ```js
- * const tls = require('node:tls');
- * const fs = require('node:fs');
+ * import tls from 'node:tls';
+ * import fs from 'node:fs';
  *
  * const options = {
  *   key: fs.readFileSync('server-key.pem'),

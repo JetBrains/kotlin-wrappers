@@ -11,9 +11,9 @@ import js.array.ReadonlyArray
  * properly cleaning up and provide a callback when the pipeline is complete.
  *
  * ```js
- * const { pipeline } = require('node:stream');
- * const fs = require('node:fs');
- * const zlib = require('node:zlib');
+ * import { pipeline } from 'node:stream';
+ * import fs from 'node:fs';
+ * import zlib from 'node:zlib';
  *
  * // Use the pipeline API to easily pipe a series of streams
  * // together and get notified when the pipeline is fully done.
@@ -53,9 +53,9 @@ import js.array.ReadonlyArray
  * See the example below:
  *
  * ```js
- * const fs = require('node:fs');
- * const http = require('node:http');
- * const { pipeline } = require('node:stream');
+ * import fs from 'node:fs';
+ * import http from 'node:http';
+ * import { pipeline } from 'node:stream';
  *
  * const server = http.createServer((req, res) => {
  *   const fileStream = fs.createReadStream('./fileNotExist.txt');

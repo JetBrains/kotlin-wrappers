@@ -8,16 +8,16 @@ import kotlin.test.assertContentEquals
 class JsAsyncTest {
     @Test
     fun checkJsAsyncForPipeline() = runTest {
-        val source = arrayOf(
+        val source: Array<Buffer<*>> = arrayOf(
             Buffer.from("hello"),
             Buffer.from("world"),
         )
 
-        val actual = mutableListOf<Buffer>()
+        val actual = mutableListOf<Buffer<*>>()
         val destination = Writable(
             opts = WritableOptions(
                 write = { chunk, encoding, callback ->
-                    actual.add(chunk as Buffer)
+                    actual.add(chunk as Buffer<*>)
                     callback(null)
                 }
             ),

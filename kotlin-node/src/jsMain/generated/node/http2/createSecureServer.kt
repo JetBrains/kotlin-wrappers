@@ -4,12 +4,15 @@
 
 package node.http2
 
+import node.http.IncomingMessage
+import node.http.ServerResponse
+
 /**
  * Returns a `tls.Server` instance that creates and manages `Http2Session` instances.
  *
  * ```js
- * const http2 = require('node:http2');
- * const fs = require('node:fs');
+ * import http2 from 'node:http2';
+ * import fs from 'node:fs';
  *
  * const options = {
  *   key: fs.readFileSync('server-key.pem'),
@@ -32,9 +35,9 @@ package node.http2
  * @since v8.4.0
  * @param onRequestHandler See `Compatibility API`
  */
-external fun createSecureServer(onRequestHandler: (request: Http2ServerRequest, response: Http2ServerResponse) -> Unit = definedExternally): Http2SecureServer
+external fun createSecureServer(onRequestHandler: (request: Http2ServerRequest, response: Http2ServerResponse<*>) -> Unit = definedExternally): Http2SecureServer<*, *, *, *>
 
-external fun createSecureServer(
-    options: SecureServerOptions,
-    onRequestHandler: (request: Http2ServerRequest, response: Http2ServerResponse) -> Unit = definedExternally,
-): Http2SecureServer
+external fun <Http1Request : IncomingMessage, Http1Response : ServerResponse<*>, Http2Request : Http2ServerRequest, Http2Response : Http2ServerResponse<*>> createSecureServer(
+    options: SecureServerOptions<Http1Request, Http1Response, Http2Request, Http2Response>,
+    onRequestHandler: (request: Http2Request, response: Http2Response) -> Unit = definedExternally,
+): Http2SecureServer<Http1Request, Http1Response, Http2Request, Http2Response>

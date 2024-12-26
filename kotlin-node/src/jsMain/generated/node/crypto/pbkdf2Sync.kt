@@ -39,4 +39,4 @@ external fun pbkdf2Sync(
     iterations: Number,
     keylen: Number,
     digest: String,
-): node.buffer.Buffer
+): node.buffer.Buffer<*>

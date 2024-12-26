@@ -15,7 +15,7 @@ package node.fs
  * stat object:
  *
  * ```js
- * import { watchFile } from 'fs';
+ * import { watchFile } from 'node:fs';
  *
  * watchFile('message.text', (curr, prev) => {
  *   console.log(`the current mtime is: ${curr.mtime}`);

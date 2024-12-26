@@ -27,7 +27,7 @@ open external class _Interface : EventEmitter {
     constructor (
         input: node.ReadableStream,
         output: node.WritableStream = definedExternally,
-        completer: Completer = definedExternally,
+        completer: _Completer = definedExternally,
         terminal: Boolean = definedExternally,
     )
 
@@ -54,7 +54,7 @@ open external class _Interface : EventEmitter {
      *
      * @see https://nodejs.org/dist/latest-v22.x/docs/api/readline.html#class-interfaceconstructor
      */
-    constructor (options: ReadLineOptions)
+    constructor (options: _ReadLineOptions)
 
     val terminal: Boolean
 
@@ -245,10 +245,10 @@ open external class _Interface : EventEmitter {
      * The `rl.write()` method will write the data to the `readline` `Interface`'s `input` _as if it were provided by the user_.
      * @since v0.1.98
      */
-    fun write(data: node.buffer.Buffer, key: Key = definedExternally): Unit
+    fun write(data: node.buffer.Buffer<*>, key: Key = definedExternally): Unit
     fun write(data: String?, key: Key): Unit
 
-    fun write(data: node.buffer.Buffer?, key: Key): Unit
+    fun write(data: node.buffer.Buffer<*>?, key: Key): Unit
 
     /**
      * Returns the real position of the cursor in relation to the input

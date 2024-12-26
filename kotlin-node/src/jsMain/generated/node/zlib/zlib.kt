@@ -11,7 +11,7 @@ package node.zlib
  * To access it:
  *
  * ```js
- * const zlib = require('node:zlib');
+ * import zlib from 'node:zlib';
  * ```
  *
  * Compression and decompression are built around the Node.js
@@ -22,12 +22,12 @@ package node.zlib
  * stream:
  *
  * ```js
- * const { createGzip } = require('node:zlib');
- * const { pipeline } = require('node:stream');
- * const {
+ * import { createGzip } from 'node:zlib';
+ * import { pipeline } from 'node:stream';
+ * import {
  *   createReadStream,
  *   createWriteStream,
- * } = require('node:fs');
+ * } from 'node:fs';
  *
  * const gzip = createGzip();
  * const source = createReadStream('input.txt');
@@ -42,7 +42,7 @@ package node.zlib
  *
  * // Or, Promisified
  *
- * const { promisify } = require('node:util');
+ * import { promisify } from 'node:util';
  * const pipe = promisify(pipeline);
  *
  * async function do_gzip(input, output) {
@@ -62,7 +62,7 @@ package node.zlib
  * It is also possible to compress or decompress data in a single step:
  *
  * ```js
- * const { deflate, unzip } = require('node:zlib');
+ * import { deflate, unzip } from 'node:zlib';
  *
  * const input = '.................................';
  * deflate(input, (err, buffer) => {
@@ -84,7 +84,7 @@ package node.zlib
  *
  * // Or, Promisified
  *
- * const { promisify } = require('node:util');
+ * import { promisify } from 'node:util';
  * const do_unzip = promisify(unzip);
  *
  * do_unzip(buffer)

@@ -4,10 +4,3 @@
 @file:JsQualifier("constants")
 
 package node.os.constants
-
-import node.os.SignalConstants
-
-external val UV_UDP_REUSEADDR: Double
-
-
-external val signals: SignalConstants

@@ -28,7 +28,7 @@ sealed external interface Tracing {
      * will be disabled.
      *
      * ```js
-     * const trace_events = require('node:trace_events');
+     * import trace_events from 'node:trace_events';
      * const t1 = trace_events.createTracing({ categories: ['node', 'v8'] });
      * const t2 = trace_events.createTracing({ categories: ['node.perf', 'node'] });
      * t1.enable();

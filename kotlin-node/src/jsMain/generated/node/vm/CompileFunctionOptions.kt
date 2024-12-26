@@ -6,7 +6,7 @@ sealed external interface CompileFunctionOptions : BaseOptions {
     /**
      * Provides an optional data with V8's code cache data for the supplied source.
      */
-    var cachedData: node.buffer.Buffer?
+    var cachedData: node.buffer.Buffer<*>?
 
     /**
      * Specifies whether to produce new cache data.

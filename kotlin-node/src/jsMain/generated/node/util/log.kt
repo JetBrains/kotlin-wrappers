@@ -9,7 +9,7 @@ package node.util
  * timestamp.
  *
  * ```js
- * const util = require('node:util');
+ * import util from 'node:util';
  *
  * util.log('Timestamped message.');
  * ```

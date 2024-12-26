@@ -29,7 +29,7 @@ sealed external interface ServerHttp2Stream : Http2Stream {
      * Initiates a push stream. The callback is invoked with the new `Http2Stream` instance created for the push stream passed as the second argument, or an `Error` passed as the first argument.
      *
      * ```js
-     * const http2 = require('node:http2');
+     * import http2 from 'node:http2';
      * const server = http2.createServer();
      * server.on('stream', (stream) => {
      *   stream.respond({ ':status': 200 });
@@ -63,7 +63,7 @@ sealed external interface ServerHttp2Stream : Http2Stream {
 
     /**
      * ```js
-     * const http2 = require('node:http2');
+     * import http2 from 'node:http2';
      * const server = http2.createServer();
      * server.on('stream', (stream) => {
      *   stream.respond({ ':status': 200 });
@@ -71,15 +71,15 @@ sealed external interface ServerHttp2Stream : Http2Stream {
      * });
      * ```
      *
-     * Initiates a response. When the `options.waitForTrailers` option is set, the`'wantTrailers'` event will be emitted immediately after queuing the last chunk
-     * of payload data to be sent. The `http2stream.sendTrailers()` method can then be
-     * used to sent trailing header fields to the peer.
+     * Initiates a response. When the `options.waitForTrailers` option is set, the `'wantTrailers'` event
+     * will be emitted immediately after queuing the last chunk of payload data to be sent.
+     * The `http2stream.sendTrailers()` method can then be used to send trailing header fields to the peer.
      *
      * When `options.waitForTrailers` is set, the `Http2Stream` will not automatically
      * close when the final `DATA` frame is transmitted. User code must call either `http2stream.sendTrailers()` or `http2stream.close()` to close the `Http2Stream`.
      *
      * ```js
-     * const http2 = require('node:http2');
+     * import http2 from 'node:http2';
      * const server = http2.createServer();
      * server.on('stream', (stream) => {
      *   stream.respond({ ':status': 200 }, { waitForTrailers: true });
@@ -106,8 +106,8 @@ sealed external interface ServerHttp2Stream : Http2Stream {
      * automatically.
      *
      * ```js
-     * const http2 = require('node:http2');
-     * const fs = require('node:fs');
+     * import http2 from 'node:http2';
+     * import fs from 'node:fs';
      *
      * const server = http2.createServer();
      * server.on('stream', (stream) => {
@@ -126,8 +126,8 @@ sealed external interface ServerHttp2Stream : Http2Stream {
      *
      * The optional `options.statCheck` function may be specified to give user code
      * an opportunity to set additional content headers based on the `fs.Stat` details
-     * of the given fd. If the `statCheck` function is provided, the `http2stream.respondWithFD()` method will perform an `fs.fstat()` call to
-     * collect details on the provided file descriptor.
+     * of the given fd. If the `statCheck` function is provided, the `http2stream.respondWithFD()` method will
+     * perform an `fs.fstat()` call to collect details on the provided file descriptor.
      *
      * The `offset` and `length` options may be used to limit the response to a
      * specific range subset. This can be used, for instance, to support HTTP Range
@@ -145,11 +145,12 @@ sealed external interface ServerHttp2Stream : Http2Stream {
      * header fields to the peer.
      *
      * When `options.waitForTrailers` is set, the `Http2Stream` will not automatically
-     * close when the final `DATA` frame is transmitted. User code _must_ call either `http2stream.sendTrailers()` or `http2stream.close()` to close the `Http2Stream`.
+     * close when the final `DATA` frame is transmitted. User code _must_ call either `http2stream.sendTrailers()`
+     * or `http2stream.close()` to close the `Http2Stream`.
      *
      * ```js
-     * const http2 = require('node:http2');
-     * const fs = require('node:fs');
+     * import http2 from 'node:http2';
+     * import fs from 'node:fs';
      *
      * const server = http2.createServer();
      * server.on('stream', (stream) => {
@@ -188,8 +189,8 @@ sealed external interface ServerHttp2Stream : Http2Stream {
      * automatically.
      *
      * ```js
-     * const http2 = require('node:http2');
-     * const fs = require('node:fs');
+     * import http2 from 'node:http2';
+     * import fs from 'node:fs';
      *
      * const server = http2.createServer();
      * server.on('stream', (stream) => {
@@ -208,8 +209,8 @@ sealed external interface ServerHttp2Stream : Http2Stream {
      *
      * The optional `options.statCheck` function may be specified to give user code
      * an opportunity to set additional content headers based on the `fs.Stat` details
-     * of the given fd. If the `statCheck` function is provided, the `http2stream.respondWithFD()` method will perform an `fs.fstat()` call to
-     * collect details on the provided file descriptor.
+     * of the given fd. If the `statCheck` function is provided, the `http2stream.respondWithFD()` method will
+     * perform an `fs.fstat()` call to collect details on the provided file descriptor.
      *
      * The `offset` and `length` options may be used to limit the response to a
      * specific range subset. This can be used, for instance, to support HTTP Range
@@ -227,11 +228,12 @@ sealed external interface ServerHttp2Stream : Http2Stream {
      * header fields to the peer.
      *
      * When `options.waitForTrailers` is set, the `Http2Stream` will not automatically
-     * close when the final `DATA` frame is transmitted. User code _must_ call either `http2stream.sendTrailers()` or `http2stream.close()` to close the `Http2Stream`.
+     * close when the final `DATA` frame is transmitted. User code _must_ call either `http2stream.sendTrailers()`
+     * or `http2stream.close()` to close the `Http2Stream`.
      *
      * ```js
-     * const http2 = require('node:http2');
-     * const fs = require('node:fs');
+     * import http2 from 'node:http2';
+     * import fs from 'node:fs';
      *
      * const server = http2.createServer();
      * server.on('stream', (stream) => {
@@ -271,14 +273,14 @@ sealed external interface ServerHttp2Stream : Http2Stream {
      * an opportunity to set additional content headers based on the `fs.Stat` details
      * of the given file:
      *
-     * If an error occurs while attempting to read the file data, the `Http2Stream` will be closed using an `RST_STREAM` frame using the standard `INTERNAL_ERROR` code. If the `onError` callback is
-     * defined, then it will be called. Otherwise
-     * the stream will be destroyed.
+     * If an error occurs while attempting to read the file data, the `Http2Stream` will be closed using an
+     * `RST_STREAM` frame using the standard `INTERNAL_ERROR` code.
+     * If the `onError` callback is defined, then it will be called. Otherwise, the stream will be destroyed.
      *
      * Example using a file path:
      *
      * ```js
-     * const http2 = require('node:http2');
+     * import http2 from 'node:http2';
      * const server = http2.createServer();
      * server.on('stream', (stream) => {
      *   function statCheck(stat, headers) {
@@ -312,7 +314,7 @@ sealed external interface ServerHttp2Stream : Http2Stream {
      * results to determine if the file has been modified to return an appropriate `304` response:
      *
      * ```js
-     * const http2 = require('node:http2');
+     * import http2 from 'node:http2';
      * const server = http2.createServer();
      * server.on('stream', (stream) => {
      *   function statCheck(stat, headers) {
@@ -345,7 +347,7 @@ sealed external interface ServerHttp2Stream : Http2Stream {
      * close when the final `DATA` frame is transmitted. User code must call either`http2stream.sendTrailers()` or `http2stream.close()` to close the`Http2Stream`.
      *
      * ```js
-     * const http2 = require('node:http2');
+     * import http2 from 'node:http2';
      * const server = http2.createServer();
      * server.on('stream', (stream) => {
      *   stream.respondWithFile('/some/file',

@@ -2,7 +2,11 @@
 
 package node.http2
 
-sealed external interface SecureServerOptions : SecureServerSessionOptions {
+import node.http.IncomingMessage
+import node.http.ServerResponse
+
+sealed external interface SecureServerOptions<Http1Request : IncomingMessage, Http1Response : ServerResponse<*>, Http2Request : Http2ServerRequest, Http2Response : Http2ServerResponse<*>> :
+    SecureServerSessionOptions<Http1Request, Http1Response, Http2Request, Http2Response> {
     var allowHTTP1: Boolean?
     var origins: js.array.ReadonlyArray<String>?
 }

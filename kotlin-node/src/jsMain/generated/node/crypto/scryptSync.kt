@@ -39,4 +39,4 @@ external fun scryptSync(
     salt: BinaryLike,
     keylen: Number,
     options: ScryptOptions = definedExternally,
-): node.buffer.Buffer
+): node.buffer.Buffer<*>

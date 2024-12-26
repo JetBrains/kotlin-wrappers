@@ -2,14 +2,18 @@
 
 package node.http2
 
-sealed external interface ServerHttp2Session : Http2Session {
-    val server: Any /* Http2Server | Http2SecureServer */
+import node.http.IncomingMessage
+import node.http.ServerResponse
+
+sealed external interface ServerHttp2Session<Http1Request : IncomingMessage, Http1Response : ServerResponse<*>, Http2Request : Http2ServerRequest, Http2Response : Http2ServerResponse<*>> :
+    Http2Session {
+    val server: Any /* Http2Server<Http1Request, Http1Response, Http2Request, Http2Response> | Http2SecureServer<Http1Request, Http1Response, Http2Request, Http2Response> */
 
     /**
      * Submits an `ALTSVC` frame (as defined by [RFC 7838](https://tools.ietf.org/html/rfc7838)) to the connected client.
      *
      * ```js
-     * const http2 = require('node:http2');
+     * import http2 from 'node:http2';
      *
      * const server = http2.createServer();
      * server.on('session', (session) => {
@@ -49,7 +53,7 @@ sealed external interface ServerHttp2Session : Http2Session {
      * Submits an `ALTSVC` frame (as defined by [RFC 7838](https://tools.ietf.org/html/rfc7838)) to the connected client.
      *
      * ```js
-     * const http2 = require('node:http2');
+     * import http2 from 'node:http2';
      *
      * const server = http2.createServer();
      * server.on('session', (session) => {
@@ -89,7 +93,7 @@ sealed external interface ServerHttp2Session : Http2Session {
      * Submits an `ALTSVC` frame (as defined by [RFC 7838](https://tools.ietf.org/html/rfc7838)) to the connected client.
      *
      * ```js
-     * const http2 = require('node:http2');
+     * import http2 from 'node:http2';
      *
      * const server = http2.createServer();
      * server.on('session', (session) => {
@@ -129,7 +133,7 @@ sealed external interface ServerHttp2Session : Http2Session {
      * Submits an `ALTSVC` frame (as defined by [RFC 7838](https://tools.ietf.org/html/rfc7838)) to the connected client.
      *
      * ```js
-     * const http2 = require('node:http2');
+     * import http2 from 'node:http2';
      *
      * const server = http2.createServer();
      * server.on('session', (session) => {
@@ -171,7 +175,7 @@ sealed external interface ServerHttp2Session : Http2Session {
      * authoritative responses.
      *
      * ```js
-     * const http2 = require('node:http2');
+     * import http2 from 'node:http2';
      * const options = getSecureOptionsSomehow();
      * const server = http2.createSecureServer(options);
      * server.on('stream', (stream) => {
@@ -197,7 +201,7 @@ sealed external interface ServerHttp2Session : Http2Session {
      * server using the `http2.createSecureServer()` method:
      *
      * ```js
-     * const http2 = require('node:http2');
+     * import http2 from 'node:http2';
      * const options = getSecureOptionsSomehow();
      * options.origins = ['https://example.com', 'https://example.org'];
      * const server = http2.createSecureServer(options);
@@ -261,7 +265,7 @@ sealed external interface ServerHttp2Session : Http2Session {
     ): Unit /* this */
 
     @web.events.JsEvent("connect")
-    val connectEvent: node.events.EventInstance<js.array.JsTuple2<ServerHttp2Session, Any /* net.Socket | tls.TLSSocket */>>
+    val connectEvent: node.events.EventInstance<js.array.JsTuple2<ServerHttp2Session<Http1Request, Http1Response, Http2Request, Http2Response>, Any /* net.Socket | tls.TLSSocket */>>
 
     @web.events.JsEvent("stream")
     val streamEvent: node.events.EventInstance<js.array.JsTuple3<ServerHttp2Stream, IncomingHttpHeaders, Double>>

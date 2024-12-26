@@ -19,7 +19,7 @@ import web.url.URL
  * upload a file with a POST request, then write to the `ClientRequest` object.
  *
  * ```js
- * const https = require('node:https');
+ * import https from 'node:https';
  *
  * const options = {
  *   hostname: 'encrypted.google.com',
@@ -92,9 +92,9 @@ import web.url.URL
  * Example pinning on certificate fingerprint, or the public key (similar to`pin-sha256`):
  *
  * ```js
- * const tls = require('node:tls');
- * const https = require('node:https');
- * const crypto = require('node:crypto');
+ * import tls from 'node:tls';
+ * import https from 'node:https';
+ * import crypto from 'node:crypto';
  *
  * function sha256(s) {
  *   return crypto.createHash('sha256').update(s).digest('base64');
@@ -204,7 +204,7 @@ external fun request(
  * upload a file with a POST request, then write to the `ClientRequest` object.
  *
  * ```js
- * const https = require('node:https');
+ * import https from 'node:https';
  *
  * const options = {
  *   hostname: 'encrypted.google.com',
@@ -277,9 +277,9 @@ external fun request(
  * Example pinning on certificate fingerprint, or the public key (similar to`pin-sha256`):
  *
  * ```js
- * const tls = require('node:tls');
- * const https = require('node:https');
- * const crypto = require('node:crypto');
+ * import tls from 'node:tls';
+ * import https from 'node:https';
+ * import crypto from 'node:crypto';
  *
  * function sha256(s) {
  *   return crypto.createHash('sha256').update(s).digest('base64');
@@ -389,7 +389,7 @@ external fun request(
  * upload a file with a POST request, then write to the `ClientRequest` object.
  *
  * ```js
- * const https = require('node:https');
+ * import https from 'node:https';
  *
  * const options = {
  *   hostname: 'encrypted.google.com',
@@ -462,9 +462,9 @@ external fun request(
  * Example pinning on certificate fingerprint, or the public key (similar to`pin-sha256`):
  *
  * ```js
- * const tls = require('node:tls');
- * const https = require('node:https');
- * const crypto = require('node:crypto');
+ * import tls from 'node:tls';
+ * import https from 'node:https';
+ * import crypto from 'node:crypto';
  *
  * function sha256(s) {
  *   return crypto.createHash('sha256').update(s).digest('base64');

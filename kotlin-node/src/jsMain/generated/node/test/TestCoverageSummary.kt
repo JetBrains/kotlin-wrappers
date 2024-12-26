@@ -9,6 +9,13 @@ sealed external interface TestCoverageSummary {
     var files: Array<TestCoverageSummaryFilesItem>
 
     /**
+     * An object containing whether or not the coverage for
+     * each coverage type.
+     * @since v22.9.0
+     */
+    var thresholds: TestCoverageSummaryThresholds
+
+    /**
      * An object containing a summary of coverage for all files.
      */
     var totals: TestCoverageSummaryTotals

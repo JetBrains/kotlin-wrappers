@@ -13,7 +13,6 @@ import web.abort.AbortSignal
 import web.events.Event
 import web.events.EventTarget
 
-
 /**
  * The `EventEmitter` class is defined and exposed by the `node:events` module:
  *
@@ -36,8 +35,7 @@ open external class EventEmitter {
      * Alias for `emitter.on(eventName, listener)`.
      * @since v0.1.26
      */
-
-    fun addListener(type: EventType, listener: EventListener) /* this */
+    fun addListener(type: EventType, listener: EventListener): Unit /* this */
 
     /**
      * Adds the `listener` function to the end of the listeners array for the event
@@ -70,7 +68,6 @@ open external class EventEmitter {
      * @param eventName The name of the event.
      * @param listener The callback function
      */
-
     fun on(type: EventType, listener: EventListener): Unit /* this */
 
     /**
@@ -102,7 +99,6 @@ open external class EventEmitter {
      * @param eventName The name of the event.
      * @param listener The callback function
      */
-
     fun once(type: EventType, listener: EventListener): Unit /* this */
 
     /**
@@ -187,14 +183,12 @@ open external class EventEmitter {
      * Returns a reference to the `EventEmitter`, so that calls can be chained.
      * @since v0.1.26
      */
-
     fun removeListener(type: EventType, listener: EventListener): Unit /* this */
 
     /**
      * Alias for `emitter.removeListener()`.
      * @since v10.0.0
      */
-
     fun off(type: EventType, listener: EventListener): Unit /* this */
 
     /**
@@ -207,7 +201,6 @@ open external class EventEmitter {
      * Returns a reference to the `EventEmitter`, so that calls can be chained.
      * @since v0.1.26
      */
-
     fun removeAllListeners(type: EventType = definedExternally): Unit /* this */
 
     /**
@@ -219,8 +212,6 @@ open external class EventEmitter {
      * Returns a reference to the `EventEmitter`, so that calls can be chained.
      * @since v0.3.5
      */
-
-
     fun setMaxListeners(n: Number): Unit /* this */
 
     /**
@@ -228,8 +219,6 @@ open external class EventEmitter {
      * set by `emitter.setMaxListeners(n)` or defaults to {@link defaultMaxListeners}.
      * @since v1.0.0
      */
-
-
     fun getMaxListeners(): Double
 
     /**
@@ -244,7 +233,6 @@ open external class EventEmitter {
      * ```
      * @since v0.1.26
      */
-
     fun listeners(type: EventType): Array<EventListener>
 
     /**
@@ -277,7 +265,6 @@ open external class EventEmitter {
      * ```
      * @since v9.4.0
      */
-
     fun rawListeners(type: EventType): Array<EventListener>
 
     /**
@@ -320,7 +307,6 @@ open external class EventEmitter {
      * ```
      * @since v0.1.26
      */
-
     fun emit(type: EventType, vararg args: Any? /* Args<K, T> */): Boolean
 
     /**
@@ -331,7 +317,6 @@ open external class EventEmitter {
      * @param eventName The name of the event being listened for
      * @param listener The event handler function
      */
-
     fun listenerCount(type: EventType, listener: EventListener = definedExternally): Double
 
     /**
@@ -351,7 +336,6 @@ open external class EventEmitter {
      * @param eventName The name of the event.
      * @param listener The callback function
      */
-
     fun prependListener(type: EventType, listener: EventListener): Unit /* this */
 
     /**
@@ -369,8 +353,7 @@ open external class EventEmitter {
      * @param eventName The name of the event.
      * @param listener The callback function
      */
-
-    fun prependOnceListener(type: EventType, listener: EventListener) /* this */
+    fun prependOnceListener(type: EventType, listener: EventListener): Unit /* this */
 
     /**
      * Returns an array listing the events for which the emitter has registered
@@ -391,10 +374,7 @@ open external class EventEmitter {
      * ```
      * @since v6.0.0
      */
-
-
-    fun eventNames(): Array<EventType /* (string | symbol) & Key2<unknown, T> */>
-
+    fun eventNames(): Array<EventType>
 
     companion object {
         /**
@@ -964,7 +944,7 @@ open external class EventEmitter {
          * ```
          * @since v15.4.0
          * @param n A non-negative number. The maximum number of listeners per `EventTarget` event.
-         * @param eventsTargets Zero or more {EventTarget} or {EventEmitter} instances. If none are specified, `n` is set as the default max for all newly created {EventTarget} and {EventEmitter}
+         * @param eventTargets Zero or more {EventTarget} or {EventEmitter} instances. If none are specified, `n` is set as the default max for all newly created {EventTarget} and {EventEmitter}
          * objects.
          */
         fun setMaxListeners(

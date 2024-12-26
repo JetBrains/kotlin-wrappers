@@ -7,6 +7,7 @@ import web.abort.AbortSignal
 sealed external interface SocketConstructorOpts {
     var fd: Double?
     var allowHalfOpen: Boolean?
+    var onread: OnReadOpts?
     var readable: Boolean?
     var writable: Boolean?
     var signal: AbortSignal?

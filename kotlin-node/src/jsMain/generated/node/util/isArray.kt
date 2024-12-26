@@ -10,7 +10,7 @@ package node.util
  * Returns `true` if the given `object` is an `Array`. Otherwise, returns `false`.
  *
  * ```js
- * const util = require('node:util');
+ * import util from 'node:util';
  *
  * util.isArray([]);
  * // Returns: true

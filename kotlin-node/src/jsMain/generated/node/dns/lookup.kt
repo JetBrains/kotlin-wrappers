@@ -28,7 +28,7 @@ package node.dns
  * Example usage:
  *
  * ```js
- * const dns = require('node:dns');
+ * import dns from 'node:dns';
  * const options = {
  *   family: 6,
  *   hints: dns.ADDRCONFIG | dns.V4MAPPED,

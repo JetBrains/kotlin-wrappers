@@ -59,7 +59,7 @@ package node.traceEvents
  * Alternatively, trace events may be enabled using the `node:trace_events` module:
  *
  * ```js
- * const trace_events = require('node:trace_events');
+ * import trace_events from 'node:trace_events';
  * const tracing = trace_events.createTracing({ categories: ['node.perf'] });
  * tracing.enable();  // Enable trace event capture for the 'node.perf' category
  *

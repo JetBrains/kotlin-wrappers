@@ -9,5 +9,5 @@ sealed external interface CipherOCB : Cipher {
         options: CipherOCBSetAADOptions = definedExternally,
     ): Unit /* this */
 
-    fun getAuthTag(): node.buffer.Buffer
+    fun getAuthTag(): node.buffer.Buffer<*>
 }

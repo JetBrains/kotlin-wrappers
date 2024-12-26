@@ -4,10 +4,6 @@
 
 package node.cluster
 
-
 /* import EventEmitter = require("node:events"); */
-
-
-external val cluster: Cluster
 
 /* export default cluster; */

@@ -23,7 +23,7 @@ package node.vm
  * code are reflected in the context object.
  *
  * ```js
- * const vm = require('node:vm');
+ * import vm from 'node:vm';
  *
  * const x = 1;
  *

@@ -8,7 +8,7 @@ package node.util
  * Returns `true` if the given `object` is a `Symbol`. Otherwise, returns `false`.
  *
  * ```js
- * const util = require('node:util');
+ * import util from 'node:util';
  *
  * util.isSymbol(5);
  * // Returns: false

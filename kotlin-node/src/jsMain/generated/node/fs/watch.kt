@@ -27,7 +27,7 @@ package node.fs
 external fun watch(
     filename: PathLike,
     options: WatchBufferOptions,
-    listener: WatchListener<node.buffer.Buffer> = definedExternally,
+    listener: WatchListener<node.buffer.Buffer<*>> = definedExternally,
 ): FSWatcher
 
 /**
@@ -53,7 +53,7 @@ external fun watch(
 external fun watch(
     filename: PathLike,
     options: String, /* "buffer" */
-    listener: WatchListener<node.buffer.Buffer> = definedExternally,
+    listener: WatchListener<node.buffer.Buffer<*>> = definedExternally,
 ): FSWatcher
 
 /**

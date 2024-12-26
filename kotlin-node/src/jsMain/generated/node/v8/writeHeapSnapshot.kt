@@ -21,12 +21,12 @@ package node.v8
  * for a duration depending on the heap size.
  *
  * ```js
- * const { writeHeapSnapshot } = require('node:v8');
- * const {
+ * import { writeHeapSnapshot } from 'node:v8';
+ * import {
  *   Worker,
  *   isMainThread,
  *   parentPort,
- * } = require('node:worker_threads');
+ * } from 'node:worker_threads';
  *
  * if (isMainThread) {
  *   const worker = new Worker(__filename);

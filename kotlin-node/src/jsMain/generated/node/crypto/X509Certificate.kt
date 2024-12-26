@@ -4,6 +4,7 @@
 
 package node.crypto
 
+import js.date.Date
 import node.tls.PeerCertificate
 
 /**
@@ -129,7 +130,7 @@ external class X509Certificate {
      * A `Buffer` containing the DER encoding of this certificate.
      * @since v15.6.0
      */
-    val raw: node.buffer.Buffer
+    val raw: node.buffer.Buffer<*>
 
     /**
      * The serial number of this certificate.
@@ -148,10 +149,22 @@ external class X509Certificate {
     val validFrom: String
 
     /**
+     * The date/time from which this certificate is valid, encapsulated in a `Date` object.
+     * @since v22.10.0
+     */
+    val validFromDate: Date
+
+    /**
      * The date/time until which this certificate is considered valid.
      * @since v15.6.0
      */
     val validTo: String
+
+    /**
+     * The date/time until which this certificate is valid, encapsulated in a `Date` object.
+     * @since v22.10.0
+     */
+    val validToDate: Date
 
     /**
      * Checks whether the certificate matches the given email address.

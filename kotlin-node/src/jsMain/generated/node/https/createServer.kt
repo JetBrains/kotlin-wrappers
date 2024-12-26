@@ -10,8 +10,8 @@ import node.http.ServerResponse
 /**
  * ```js
  * // curl -k https://localhost:8000/
- * const https = require('node:https');
- * const fs = require('node:fs');
+ * import https from 'node:https';
+ * import fs from 'node:fs';
  *
  * const options = {
  *   key: fs.readFileSync('test/fixtures/keys/agent2-key.pem'),
@@ -27,8 +27,8 @@ import node.http.ServerResponse
  * Or
  *
  * ```js
- * const https = require('node:https');
- * const fs = require('node:fs');
+ * import https from 'node:https';
+ * import fs from 'node:fs';
  *
  * const options = {
  *   pfx: fs.readFileSync('test/fixtures/test_cert.pfx'),

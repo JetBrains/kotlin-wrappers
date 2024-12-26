@@ -14,7 +14,7 @@ import js.buffer.ArrayBuffer
  * @since v19.6.0, v18.15.0
  * @param input The input to validate.
  */
-external fun isAscii(input: Buffer): Boolean
+external fun isAscii(input: Buffer<*>): Boolean
 
 /**
  * This function returns `true` if `input` contains only valid ASCII-encoded data,

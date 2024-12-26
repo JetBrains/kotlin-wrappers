@@ -16,7 +16,7 @@ package node.test
  * work:
  *
  * ```js
- * import test from 'test';
+ * import test from 'node:test';
  * ```
  *
  * Tests created via the `test` module consist of a single function that is
@@ -98,7 +98,7 @@ package node.test
  * work:
  *
  * ```js
- * import test from 'test/reporters';
+ * import test from 'node:test/reporters';
  * ```
  * @since v19.9.0
  * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/test/reporters.js)

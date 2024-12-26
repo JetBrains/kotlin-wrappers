@@ -12,8 +12,8 @@ import js.promise.Promise
  * that returns promises.
  *
  * ```js
- * const util = require('node:util');
- * const fs = require('node:fs');
+ * import util from 'node:util';
+ * import fs from 'node:fs';
  *
  * const stat = util.promisify(fs.stat);
  * stat('.').then((stats) => {
@@ -26,8 +26,8 @@ import js.promise.Promise
  * Or, equivalently using `async function`s:
  *
  * ```js
- * const util = require('node:util');
- * const fs = require('node:fs');
+ * import util from 'node:util';
+ * import fs from 'node:fs';
  *
  * const stat = util.promisify(fs.stat);
  *
@@ -50,7 +50,7 @@ import js.promise.Promise
  * work as expected unless handled specially:
  *
  * ```js
- * const util = require('node:util');
+ * import util from 'node:util';
  *
  * class Foo {
  *   constructor() {

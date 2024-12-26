@@ -3,37 +3,3 @@
 @file:JsModule("node:http")
 
 package node.http
-
-
-external val METHODS: js.array.ReadonlyArray<String>
-
-external val STATUS_CODES: HttpStatusCodes
-
-/**
- * Global instance of `Agent` which is used as the default for all HTTP client
- * requests. Diverges from a default `Agent` configuration by having `keepAlive`
- * enabled and a `timeout` of 5 seconds.
- * @since v0.5.9
- */
-external var globalAgent: Agent
-
-/**
- * Read-only property specifying the maximum allowed size of HTTP headers in bytes.
- * Defaults to 16KB. Configurable using the `--max-http-header-size` CLI option.
- */
-external val maxHeaderSize: Double
-
-/**
- * A browser-compatible implementation of [WebSocket](https://nodejs.org/docs/latest/api/http.html#websocket).
- * @since v22.5.0
- */
-
-
-/**
- * @since v22.5.0
- */
-
-
-/**
- * @since v22.5.0
- */

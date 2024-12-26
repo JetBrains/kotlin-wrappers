@@ -14,7 +14,7 @@ import js.buffer.ArrayBuffer
  * @since v19.4.0, v18.14.0
  * @param input The input to validate.
  */
-external fun isUtf8(input: Buffer): Boolean
+external fun isUtf8(input: Buffer<*>): Boolean
 
 /**
  * This function returns `true` if `input` contains only valid UTF-8-encoded data,

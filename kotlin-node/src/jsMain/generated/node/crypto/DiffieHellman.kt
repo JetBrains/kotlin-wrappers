@@ -48,7 +48,7 @@ external class DiffieHellman {
      * @since v0.5.0
      * @param encoding The `encoding` of the return value.
      */
-    fun generateKeys(): node.buffer.Buffer
+    fun generateKeys(): node.buffer.Buffer<*>
     fun generateKeys(encoding: BinaryToTextEncoding): String
 
     /**
@@ -68,7 +68,7 @@ external class DiffieHellman {
         otherPublicKey: js.buffer.ArrayBufferView<*>,
         inputEncoding: Nothing? = definedExternally,
         outputEncoding: Nothing? = definedExternally,
-    ): node.buffer.Buffer
+    ): node.buffer.Buffer<*>
 
     fun computeSecret(
         otherPublicKey: js.buffer.ArrayBufferView<*>,
@@ -80,7 +80,7 @@ external class DiffieHellman {
         otherPublicKey: String,
         inputEncoding: BinaryToTextEncoding,
         outputEncoding: Nothing? = definedExternally,
-    ): node.buffer.Buffer
+    ): node.buffer.Buffer<*>
 
     fun computeSecret(
         otherPublicKey: String,
@@ -95,7 +95,7 @@ external class DiffieHellman {
      * @since v0.5.0
      * @param encoding The `encoding` of the return value.
      */
-    fun getPrime(): node.buffer.Buffer
+    fun getPrime(): node.buffer.Buffer<*>
     fun getPrime(encoding: BinaryToTextEncoding): String
 
     /**
@@ -105,7 +105,7 @@ external class DiffieHellman {
      * @since v0.5.0
      * @param encoding The `encoding` of the return value.
      */
-    fun getGenerator(): node.buffer.Buffer
+    fun getGenerator(): node.buffer.Buffer<*>
     fun getGenerator(encoding: BinaryToTextEncoding): String
 
     /**
@@ -115,7 +115,7 @@ external class DiffieHellman {
      * @since v0.5.0
      * @param encoding The `encoding` of the return value.
      */
-    fun getPublicKey(): node.buffer.Buffer
+    fun getPublicKey(): node.buffer.Buffer<*>
     fun getPublicKey(encoding: BinaryToTextEncoding): String
 
     /**
@@ -125,7 +125,7 @@ external class DiffieHellman {
      * @since v0.5.0
      * @param encoding The `encoding` of the return value.
      */
-    fun getPrivateKey(): node.buffer.Buffer
+    fun getPrivateKey(): node.buffer.Buffer<*>
     fun getPrivateKey(encoding: BinaryToTextEncoding): String
 
     /**

@@ -7,7 +7,7 @@ package node.fs
 external suspend fun readFile(
     path: PathLike,
     options: (ReadFileBufferAsyncOptions)? = definedExternally,
-): node.buffer.Buffer
+): node.buffer.Buffer<*>
 
 
 /**
@@ -71,7 +71,7 @@ external suspend fun readFile(
 external suspend fun readFile(
     path: FileHandle,
     options: (ReadFileBufferAsyncOptions)? = definedExternally,
-): node.buffer.Buffer
+): node.buffer.Buffer<*>
 
 
 @seskar.js.JsAsync

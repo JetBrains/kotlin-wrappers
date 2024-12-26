@@ -63,10 +63,15 @@ const overriddenProps = {
     },
 
     // fs
+    "GlobOptions": {
+        "exclude": "globExclude",
+    },
     "GlobOptionsWithFileTypes": {
+        "exclude": "excludeWithFileTypes",
         "withFileTypes": "requiredWithFileTypes"
     },
     "GlobOptionsWithoutFileTypes": {
+        "exclude": "excludeWithoutFileTypes",
         "withFileTypes": null
     },
 

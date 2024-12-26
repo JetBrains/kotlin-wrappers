@@ -50,7 +50,7 @@ external suspend fun realpath(path: PathLike, options: node.buffer.BufferEncodin
 
 
 @seskar.js.JsAsync
-external suspend fun realpath(path: PathLike, options: BufferEncodingOption): node.buffer.Buffer
+external suspend fun realpath(path: PathLike, options: BufferEncodingOption): node.buffer.Buffer<*>
 
 
 /**

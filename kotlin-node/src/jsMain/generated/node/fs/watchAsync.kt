@@ -10,7 +10,7 @@ import js.iterable.AsyncIterable
  * Returns an async iterator that watches for changes on `filename`, where `filename`is either a file or a directory.
  *
  * ```js
- * const { watch } = require('node:fs/promises');
+ * import { watch } from 'node:fs/promises';
  *
  * const ac = new AbortController();
  * const { signal } = ac;
@@ -39,13 +39,13 @@ import js.iterable.AsyncIterable
 external fun watch(
     filename: PathLike,
     options: WatchBufferAsyncOptions,
-): AsyncIterable<FileChangeInfo<node.buffer.Buffer>>
+): AsyncIterable<FileChangeInfo<node.buffer.Buffer<*>>>
 
 /**
  * Returns an async iterator that watches for changes on `filename`, where `filename`is either a file or a directory.
  *
  * ```js
- * const { watch } = require('node:fs/promises');
+ * import { watch } from 'node:fs/promises';
  *
  * const ac = new AbortController();
  * const { signal } = ac;

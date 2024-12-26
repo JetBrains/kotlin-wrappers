@@ -1263,7 +1263,7 @@ sealed external interface Process : EventEmitter {
      * @since v20.12.0
      * @param path The path to the .env file
      */
-    fun loadEnvFile(path: node.buffer.Buffer = definedExternally): Unit
+    fun loadEnvFile(path: node.buffer.Buffer<*> = definedExternally): Unit
 
     /**
      * The `process.pid` property returns the PID of the process.
@@ -1531,7 +1531,7 @@ sealed external interface Process : EventEmitter {
      * @since v3.0.0
      */
     val release: ProcessRelease
-    var features: ProcessFeatures
+    val features: ProcessFeatures
 
     /**
      * `process.umask()` returns the Node.js process's file mode creation mask. Child

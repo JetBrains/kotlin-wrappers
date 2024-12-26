@@ -47,7 +47,7 @@ external class ECDH {
      * @param encoding The `encoding` of the return value.
      * @param [format='uncompressed']
      */
-    fun generateKeys(): node.buffer.Buffer
+    fun generateKeys(): node.buffer.Buffer<*>
     fun generateKeys(encoding: BinaryToTextEncoding, format: ECDHKeyFormat = definedExternally): String
 
     /**
@@ -67,9 +67,9 @@ external class ECDH {
      * @param inputEncoding The `encoding` of the `otherPublicKey` string.
      * @param outputEncoding The `encoding` of the return value.
      */
-    fun computeSecret(otherPublicKey: js.buffer.ArrayBufferView<*>): node.buffer.Buffer
+    fun computeSecret(otherPublicKey: js.buffer.ArrayBufferView<*>): node.buffer.Buffer<*>
     fun computeSecret(otherPublicKey: js.buffer.ArrayBufferView<*>, outputEncoding: BinaryToTextEncoding): String
-    fun computeSecret(otherPublicKey: String, inputEncoding: BinaryToTextEncoding): node.buffer.Buffer
+    fun computeSecret(otherPublicKey: String, inputEncoding: BinaryToTextEncoding): node.buffer.Buffer<*>
     fun computeSecret(
         otherPublicKey: String,
         inputEncoding: BinaryToTextEncoding,
@@ -83,7 +83,7 @@ external class ECDH {
      * @param encoding The `encoding` of the return value.
      * @return The EC Diffie-Hellman in the specified `encoding`.
      */
-    fun getPrivateKey(): node.buffer.Buffer
+    fun getPrivateKey(): node.buffer.Buffer<*>
     fun getPrivateKey(encoding: BinaryToTextEncoding): String
 
     /**
@@ -99,7 +99,7 @@ external class ECDH {
     fun getPublicKey(
         encoding: Nothing? = definedExternally,
         format: ECDHKeyFormat = definedExternally,
-    ): node.buffer.Buffer
+    ): node.buffer.Buffer<*>
 
     fun getPublicKey(encoding: BinaryToTextEncoding, format: ECDHKeyFormat = definedExternally): String
 

@@ -4,5 +4,4 @@
 
 package node.module
 
-
 /* export = Module; */

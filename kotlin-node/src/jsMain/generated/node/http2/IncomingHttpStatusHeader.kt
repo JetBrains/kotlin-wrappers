@@ -3,5 +3,5 @@
 package node.http2
 
 sealed external interface IncomingHttpStatusHeader {
-    /* ":status"?: number | undefined; */
+    var `:status`: Double?
 }

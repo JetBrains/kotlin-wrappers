@@ -17,6 +17,6 @@ package node.os
  * Throws a [`SystemError`](https://nodejs.org/docs/latest-v22.x/api/errors.html#class-systemerror) if a user has no `username` or `homedir`.
  * @since v6.0.0
  */
-external fun userInfo(options: UserInfoBufferOptions): UserInfo<node.buffer.Buffer>
+external fun userInfo(options: UserInfoBufferOptions): UserInfo<node.buffer.Buffer<*>>
 
 external fun userInfo(options: UserInfoStringOptions = definedExternally): UserInfo<String>

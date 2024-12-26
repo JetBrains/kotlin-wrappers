@@ -6,10 +6,13 @@
         "<nodeModules>/@types/node/ts*/**",
         "<nodeModules>/@types/node/assert/strict.d.ts",
         "<nodeModules>/@types/node/constants.d.ts",
+        "<nodeModules>/@types/node/compatibility/disposable.d.ts",
+        "<nodeModules>/@types/node/compatibility/indexable.d.ts",
+        "<nodeModules>/@types/node/compatibility/iterators.d.ts",
         "<nodeModules>/@types/node/console.d.ts",
         "<nodeModules>/@types/node/dom-events.d.ts",
         "<nodeModules>/@types/node/domain.d.ts",
-        "<nodeModules>/@types/node/globals.global.d.ts",
+        "<nodeModules>/@types/node/globals.typedarray.d.ts",
         "<nodeModules>/@types/node/punycode.d.ts",
         "<nodeModules>/@types/node/stream/web.d.ts",
         "<nodeModules>/@types/node/string_decoder.d.ts",
@@ -43,6 +46,8 @@
         "**/Array.kt",
         "**/ReadonlyArray.kt",
         "**/String.kt",
+        "**/Iterator.kt",
+        "**/AsyncIterator.kt",
         "**/structuredClone.kt",
         "**/ArrayBufferView.kt",
         "**/TypedArray.kt",
@@ -105,23 +110,34 @@
         "**/events/Listener.kt",
         "**/events/Listener1.kt",
         "**/events/Listener2.kt",
+        "**/http/WebSocket.kt",
+        "**/http/CloseEvent.kt",
+        "**/http/MessageEvent.kt",
         "**/module/global/**",
         "**/path/namespace.kt",
+        "**/path/path.kt",
         "**/path/PlatformPathDelimiter.kt",
         "**/path/PlatformPathSep.kt",
         "**/path/posix/**",
         "**/path/win32/**",
-        "**/perfHooks/global/namespace.kt",
+        "**/perfHooks/global/**",
         "**/process/global/namespace.kt",
+        "**/process/global/process.kt",
+        "**/querystring/decode.kt",
+        "**/querystring/encode.kt",
         "**/readline/createInterface.kt",
         "**/stream/internal.kt",
+        "**/stream/promises.kt",
+        "**/stream/consumers/consumers.kt",
         "**/stream/ReadableBase.kt",
         "**/stream/WritableBase.kt",
         "**/test/FunctionPropertyNames.kt",
         "**/url/global/**",
         "**/url/URL.kt",
         "**/url/URLSearchParams.kt",
+        "**/url/URLSearchParamsIterator.kt",
         "**/util/global/**",
+        "**/util/ApplyOptionalModifiers.kt",
         "**/util/ExtractOptionValue.kt",
         "**/util/IfDefaultsFalse.kt",
         "**/util/IfDefaultsTrue.kt",
@@ -138,7 +154,7 @@
         "**/util/TextDecoderOptions.kt",
         "**/util/TextEncoder.kt",
         "**/util/EncodeIntoResult.kt",
-        "**/workerThreads/global/namespace.kt",
+        "**/workerThreads/global/**",
         "**/workerThreads/BroadcastChannel.kt",
         "**/workerThreads/MessageChannel.kt",
         "**/workerThreads/MessagePort.kt"
@@ -224,6 +240,7 @@
         "^path/path": "node/path",
         "^path": "node/path",
 
+        "^perf_hooks/performance.kt": "node/perfHooks/performance.val.kt",
         "^perf_hooks": "node/perfHooks",
 
         "^process/global/nodejs/Process.kt": "node/process/Process.interface.kt",
@@ -233,8 +250,10 @@
         "^querystring": "node/querystring",
 
         "^readline/ReadLine.kt": "node/readline/ReadLine.interface.kt",
+        "^readline/ReadlineOptionsAsync.kt": "node/readline/ReadlineConstructorOptionsAsync.interface.kt",
         "^readline": "node/readline",
 
+        "^repl/writer.kt": "node/repl/writer.val.kt",
         "^repl": "node/repl",
 
         "^stream/internal/namespace.kt": "node/stream/internal.namespace.kt",
@@ -243,6 +262,7 @@
         "^stream": "node/stream",
 
         "^node/test/Test.kt": "node/test/Test.class.kt",
+        "^node/test/mock.kt": "node/test/mock.val.kt",
         "^node/test/test.kt": "node/test/test.fun.kt",
         "^node/test/test/namespace.kt": "node/test/test.fun.namespace.kt",
         "TestComplete.kt": "test/TestComplete.kt",
@@ -250,11 +270,14 @@
         "TestCoverage.kt": "test/TestCoverage.kt",
         "TestCoverageSummary.kt": "test/TestCoverageSummary.kt",
         "TestCoverageSummaryTotals.kt": "test/TestCoverageSummaryTotals.kt",
+        "TestCoverageSummaryThresholds.kt": "test/TestCoverageSummaryThresholds.kt",
         "TestCoverageSummaryFilesItem.kt": "test/TestCoverageSummaryFilesItem.kt",
         "TestCoverageSummaryFilesItemBranchesItem.kt": "test/TestCoverageSummaryFilesItemBranchesItem.kt",
         "TestCoverageSummaryFilesItemFunctionsItem.kt": "test/TestCoverageSummaryFilesItemFunctionsItem.kt",
         "TestCoverageSummaryFilesItemLinesItem.kt": "test/TestCoverageSummaryFilesItemLinesItem.kt",
         "TestLocationInfo.kt": "test/TestLocationInfo.kt",
+        "TestSummary.kt": "test/TestSummary.kt",
+        "TestSummaryCounts.kt": "test/TestSummaryCounts.kt",
         "DiagnosticData.kt": "test/DiagnosticData.kt",
         "TestError.kt": "test/TestError.kt",
         "TestFail.kt": "test/TestFail.kt",
@@ -277,8 +300,11 @@
         "^url/Url.kt": "node/url/Url.interface.kt",
         "^url": "node/url",
 
+        "^util/inspect/styles.kt": "node/util/inspect/styles.val.kt",
         "^util": "node/util",
 
+        "^v8/promiseHooks.kt": "node/v8/promiseHooks.val.kt",
+        "^v8/startupSnapshot.kt": "node/v8/startupSnapshot.val.kt",
         "^v8": "node/v8",
 
         "^vm": "node/vm",
@@ -286,6 +312,7 @@
         "^wasi/WASI.kt": "node/wasi/WASI.class.kt",
         "^wasi": "node/wasi",
 
+        "^worker_threads/resourceLimits.kt": "node/workerThreads/resourceLimits.val.kt",
         "^worker_threads": "node/workerThreads",
 
         "^zlib/Zlib.kt": "node/zlib/Zlib.interface.kt",
@@ -300,6 +327,7 @@
         "^zlib/unzip.kt": "node/zlib/unzip.fun.kt",
         "^zlib": "node/zlib",
 
+        "^node/buffer.buffer.kt": "node/buffer/buffer.buffer.kt",
         "^node/([^/]+)\\.kt": "node/$1/$1.kt",
         "^node/stream/consumers.kt": "node/stream/consumers/consumers.kt",
         "^node/globals/globals.kt": "node/globals.kt",
@@ -336,7 +364,22 @@
             "\\*": "",
             ".+": "node.http."
         },
-        "(node:)?inspector": "node.inspector",
+        "node:inspector$": {
+            "Session": "node.inspector._Session"
+        },
+        "(node:)?inspector": {
+            "Schema": "",
+            "Runtime": "",
+            "Debugger": "",
+            "Console": "",
+            "Profiler": "",
+            "HeapProfiler": "",
+            "NodeTracing": "",
+            "NodeWorker": "",
+            "Network": "",
+            "NodeRuntime": "",
+            ".+": "node.inspector."
+        },
         "node:module": "node.module",
         "node:net": {
             "\\*": "",
@@ -346,13 +389,16 @@
         "(node:)?perf_hooks": "node.perfHooks",
         "node:querystring": "node.querystring",
         "node:readline$": {
-            "Interface": "",
+            "Interface": "node.readline._Interface",
+            "ReadLineOptions": "node.readline._ReadLineOptions",
+            "Completer": "node.readline._Completer",
             ".+": "node.readline."
         },
         "node:readline/promises": {
             "\\*": ""
         },
         "(node:)?stream$": {
+            "FinishedOptions": "node.stream._FinishedOptions",
             "\\*": "",
             ".+": "node.stream."
         },
@@ -517,6 +563,9 @@
         "crypto/hkdfSync.kt": [
             "js.buffer.ArrayBuffer"
         ],
+        "crypto/X509Certificate.kt": [
+            "js.date.Date"
+        ],
         "dgram/Socket.kt": [
             "js.array.ReadonlyArray",
             "js.typedarrays.Uint8Array"
@@ -549,8 +598,7 @@
         ],
         "fs/FileHandleAsync.kt": [
             "js.array.ReadonlyArray",
-            "js.typedarrays.Uint8Array",
-            "node.readline.Interface as ReadlineInterface"
+            "js.typedarrays.Uint8Array"
         ],
         "fs/FileHandleWriteResultPayloadAsync.kt": [
             "js.typedarrays.Uint8Array"
@@ -630,7 +678,8 @@
             "web.abort.AbortSignal"
         ],
         "http/OutgoingMessage.kt": [
-            "js.array.ReadonlyArray"
+            "js.array.ReadonlyArray",
+            "web.http.Headers"
         ],
         "http2/ClientSessionRequestOptions.kt": [
             "web.abort.AbortSignal"
@@ -682,7 +731,7 @@
             "node.Require",
             "node.Require as NodeRequire"
         ],
-        "os/constants/namespace.kt": [
+        "os/constants/signals.kt": [
             "node.os.SignalConstants"
         ],
         "perfHooks/PerformanceObserverObserveTypesOptions.kt": [
@@ -714,11 +763,11 @@
         "process/UnhandledRejectionListener.kt": [
             "js.promise.Promise"
         ],
+        "readline/ReadLineOptions.kt": [
+            "web.abort.AbortSignal"
+        ],
         "repl/Recoverable.kt": [
             "js.errors.SyntaxError"
-        ],
-        "repl/REPLServer.kt": [
-            "node.readline._Interface as Interface"
         ],
         "sea/getAsset.kt": [
             "js.buffer.ArrayBuffer"
@@ -997,6 +1046,12 @@
         "util/inspect/Styles.kt": [
             "node.util.Style"
         ],
+        "util/inspect/defaultOptions.kt": [
+            "node.util.InspectOptions"
+        ],
+        "util/inspect/replDefaults.kt": [
+            "node.util.InspectOptions"
+        ],
         "util/isDate.contract.kt": [
             "js.date.Date"
         ],
@@ -1085,6 +1140,7 @@
             "js.promise.Promise"
         ],
         "vm/CompileFunctionResult.kt": [
+            "js.buffer.ArrayBufferLike",
             "node.buffer.Buffer"
         ],
         "vm/Module.kt": [
@@ -1106,7 +1162,7 @@
         "workerThreads/moveMessagePortToContext.kt": [
             "web.messaging.MessagePort"
         ],
-        "workerThreads/namespace.kt": [
+        "workerThreads/parentPort.kt": [
             "web.messaging.MessagePort"
         ],
         "workerThreads/receiveMessageOnPort.kt": [
@@ -1142,6 +1198,7 @@
         "ClientHttp2StreamPrependListenerListenerHeaders.kt": "replace",
         "ClientHttp2StreamPrependOnceListenerListenerHeaders.kt": "replace",
         "WritableOptionsWritevChunksItem.kt": "replace",
-        "WritableWritevChunksItem.kt": "replace"
+        "WritableWritevChunksItem.kt": "replace",
+        "FileHandleWriteResultPayloadAsync.kt": "replace"
     }
 }

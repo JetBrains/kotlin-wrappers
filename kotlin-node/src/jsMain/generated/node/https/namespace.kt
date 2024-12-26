@@ -3,6 +3,3 @@
 @file:JsModule("node:https")
 
 package node.https
-
-
-external var globalAgent: Agent

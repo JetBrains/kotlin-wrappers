@@ -9,7 +9,7 @@ package node.workerThreads
  * JavaScript in parallel. To access it:
  *
  * ```js
- * const worker = require('node:worker_threads');
+ * import worker from 'node:worker_threads';
  * ```
  *
  * Workers (threads) are useful for performing CPU-intensive JavaScript operations.
@@ -20,9 +20,10 @@ package node.workerThreads
  * so by transferring `ArrayBuffer` instances or sharing `SharedArrayBuffer` instances.
  *
  * ```js
- * const {
+ * import {
  *   Worker, isMainThread, parentPort, workerData,
- * } = require('node:worker_threads');
+ * } from 'node:worker_threads';
+ * import { parse } from 'some-js-parsing-library';
  *
  * if (isMainThread) {
  *   module.exports = function parseJSAsync(script) {
@@ -39,7 +40,6 @@ package node.workerThreads
  *     });
  *   };
  * } else {
- *   const { parse } = require('some-js-parsing-library');
  *   const script = workerData;
  *   parentPort.postMessage(parse(script));
  * }

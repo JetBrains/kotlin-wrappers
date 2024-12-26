@@ -13,7 +13,7 @@ package node.traceEvents
  * Given the file `test.js` below, the command `node --trace-event-categories node.perf test.js` will print `'node.async_hooks,node.perf'` to the console.
  *
  * ```js
- * const trace_events = require('node:trace_events');
+ * import trace_events from 'node:trace_events';
  * const t1 = trace_events.createTracing({ categories: ['node.async_hooks'] });
  * const t2 = trace_events.createTracing({ categories: ['node.perf'] });
  * const t3 = trace_events.createTracing({ categories: ['v8'] });

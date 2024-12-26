@@ -9,7 +9,6 @@ import web.url.URL
 import node.Module as NodeModule
 import node.Require as NodeRequire
 
-
 external class Module : NodeModule {
     constructor (id: String, parent: Module = definedExternally)
 
@@ -43,7 +42,7 @@ external class Module : NodeModule {
         fun createRequire(path: URL): NodeRequire
         var builtinModules: js.array.ReadonlyArray<String>
         fun isBuiltin(moduleName: String): Boolean
-        var Module: Any?
+        var Module: Any /* typeof Module */
         fun <Data /* default is Any? */> register(specifier: String): Unit
 
         fun <Data /* default is Any? */> register(
@@ -81,5 +80,55 @@ external class Module : NodeModule {
             specifier: URL,
             options: RegisterOptions<Data> = definedExternally,
         ): Unit
+
+        /**
+         * Enable [module compile cache](https://nodejs.org/docs/latest-v22.x/api/module.html#module-compile-cache)
+         * in the current Node.js instance.
+         *
+         * If `cacheDir` is not specified, Node.js will either use the directory specified by the
+         * `NODE_COMPILE_CACHE=dir` environment variable if it's set, or use
+         * `path.join(os.tmpdir(), 'node-compile-cache')` otherwise. For general use cases, it's
+         * recommended to call `module.enableCompileCache()` without specifying the `cacheDir`,
+         * so that the directory can be overridden by the `NODE_COMPILE_CACHE` environment
+         * variable when necessary.
+         *
+         * Since compile cache is supposed to be a quiet optimization that is not required for the
+         * application to be functional, this method is designed to not throw any exception when the
+         * compile cache cannot be enabled. Instead, it will return an object containing an error
+         * message in the `message` field to aid debugging.
+         * If compile cache is enabled successfully, the `directory` field in the returned object
+         * contains the path to the directory where the compile cache is stored. The `status`
+         * field in the returned object would be one of the `module.constants.compileCacheStatus`
+         * values to indicate the result of the attempt to enable the
+         * [module compile cache](https://nodejs.org/docs/latest-v22.x/api/module.html#module-compile-cache).
+         *
+         * This method only affects the current Node.js instance. To enable it in child worker threads,
+         * either call this method in child worker threads too, or set the
+         * `process.env.NODE_COMPILE_CACHE` value to compile cache directory so the behavior can
+         * be inherited into the child workers. The directory can be obtained either from the
+         * `directory` field returned by this method, or with {@link getCompileCacheDir}.
+         * @since v22.8.0
+         * @param cacheDir Optional path to specify the directory where the compile cache
+         * will be stored/retrieved.
+         */
+        fun enableCompileCache(cacheDir: String = definedExternally): EnableCompileCacheResult
+
+        /**
+         * @since v22.8.0
+         * @return Path to the [module compile cache](https://nodejs.org/docs/latest-v22.x/api/module.html#module-compile-cache)
+         * directory if it is enabled, or `undefined` otherwise.
+         */
+        fun getCompileCacheDir(): String?
+
+        /**
+         * Flush the [module compile cache](https://nodejs.org/docs/latest-v22.x/api/module.html#module-compile-cache)
+         * accumulated from modules already loaded
+         * in the current Node.js instance to disk. This returns after all the flushing
+         * file system operations come to an end, no matter they succeed or not. If there
+         * are any errors, this will fail silently, since compile cache misses should not
+         * interfere with the actual operation of the application.
+         * @since v22.10.0
+         */
+        fun flushCompileCache(): Unit
     }
 }

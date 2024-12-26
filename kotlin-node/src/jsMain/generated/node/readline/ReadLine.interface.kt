@@ -2,4 +2,4 @@
 
 package node.readline
 
-typealias ReadLine = Interface// type forwarded for backwards compatibility
+typealias ReadLine = _Interface// type forwarded for backwards compatibility

@@ -6,6 +6,12 @@ export default function (node, context, render) {
         && ts.isIdentifier(node.left)
         && node.left.text === "NodeJS"
     ) {
+        if (node.right.text === "Iterator") {
+            return `js.iterable.JsIterator`
+        }
+        if (node.right.text === "AsyncIterator") {
+            return `js.iterable.AsyncIterator`
+        }
         if (node.right.text === "ArrayBufferView") {
             return `js.buffer.ArrayBufferView`
         }

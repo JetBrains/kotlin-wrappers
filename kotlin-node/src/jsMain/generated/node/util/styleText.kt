@@ -10,7 +10,7 @@ package node.util
  * This function returns a formatted text considering the `format` passed.
  *
  * ```js
- * const { styleText } = require('node:util');
+ * import { styleText } from 'node:util';
  * const errorMessage = styleText('red', 'Error! Error!');
  * console.log(errorMessage);
  * ```
@@ -45,7 +45,7 @@ external fun styleText(format: ForegroundColors, text: String): String
  * This function returns a formatted text considering the `format` passed.
  *
  * ```js
- * const { styleText } = require('node:util');
+ * import { styleText } from 'node:util';
  * const errorMessage = styleText('red', 'Error! Error!');
  * console.log(errorMessage);
  * ```
@@ -80,7 +80,7 @@ external fun styleText(format: BackgroundColors, text: String): String
  * This function returns a formatted text considering the `format` passed.
  *
  * ```js
- * const { styleText } = require('node:util');
+ * import { styleText } from 'node:util';
  * const errorMessage = styleText('red', 'Error! Error!');
  * console.log(errorMessage);
  * ```
@@ -115,7 +115,7 @@ external fun styleText(format: Modifiers, text: String): String
  * This function returns a formatted text considering the `format` passed.
  *
  * ```js
- * const { styleText } = require('node:util');
+ * import { styleText } from 'node:util';
  * const errorMessage = styleText('red', 'Error! Error!');
  * console.log(errorMessage);
  * ```

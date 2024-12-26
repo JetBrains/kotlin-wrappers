@@ -76,7 +76,7 @@ external fun realpathAsync(path: PathLike, options: node.buffer.BufferEncoding? 
  */
 
 @JsName("realpath")
-external fun realpathAsync(path: PathLike, options: BufferEncodingOption): Promise<node.buffer.Buffer>
+external fun realpathAsync(path: PathLike, options: BufferEncodingOption): Promise<node.buffer.Buffer<*>>
 
 
 /**

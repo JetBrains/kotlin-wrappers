@@ -4,5 +4,4 @@
 
 package node.readline
 
-
 /* export { promises }; */

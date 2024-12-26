@@ -242,7 +242,7 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
     val abortEvent: node.events.EventInstance<js.array.JsTuple>
 
     @web.events.JsEvent("connect")
-    val connectEvent: node.events.EventInstance<js.array.JsTuple3<IncomingMessage, Socket, node.buffer.Buffer>>
+    val connectEvent: node.events.EventInstance<js.array.JsTuple3<IncomingMessage, Socket, node.buffer.Buffer<*>>>
 
     @web.events.JsEvent("continue")
     val continueEvent: node.events.EventInstance<js.array.JsTuple>
@@ -260,7 +260,7 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
     val timeoutEvent: node.events.EventInstance<js.array.JsTuple>
 
     @web.events.JsEvent("upgrade")
-    val upgradeEvent: node.events.EventInstance<js.array.JsTuple3<IncomingMessage, Socket, node.buffer.Buffer>>
+    val upgradeEvent: node.events.EventInstance<js.array.JsTuple3<IncomingMessage, Socket, node.buffer.Buffer<*>>>
 
     @web.events.JsEvent("close")
     override val closeEvent: node.events.EventInstance<js.array.JsTuple>

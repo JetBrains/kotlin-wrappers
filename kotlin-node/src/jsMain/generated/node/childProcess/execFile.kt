@@ -16,7 +16,7 @@ import js.array.ReadonlyArray
  * supported.
  *
  * ```js
- * const { execFile } = require('node:child_process');
+ * import { execFile } from 'node:child_process';
  * const child = execFile('node', ['--version'], (error, stdout, stderr) => {
  *   if (error) {
  *     throw error;
@@ -39,8 +39,9 @@ import js.array.ReadonlyArray
  * callback, but with two additional properties `stdout` and `stderr`.
  *
  * ```js
- * const util = require('node:util');
- * const execFile = util.promisify(require('node:child_process').execFile);
+ * import util from 'node:util';
+ * import child_process from 'node:child_process';
+ * const execFile = util.promisify(child_process.execFile);
  * async function getVersion() {
  *   const { stdout } = await execFile('node', ['--version']);
  *   console.log(stdout);
@@ -56,7 +57,7 @@ import js.array.ReadonlyArray
  * the error passed to the callback will be an `AbortError`:
  *
  * ```js
- * const { execFile } = require('node:child_process');
+ * import { execFile } from 'node:child_process';
  * const controller = new AbortController();
  * const { signal } = controller;
  * const child = execFile('node', ['--version'], { signal }, (error) => {
@@ -97,14 +98,14 @@ external fun execFile(
 external fun execFile(
     file: String,
     options: ExecFileOptionsWithBufferEncoding,
-    callback: (error: ExecFileException?, stdout: node.buffer.Buffer, stderr: node.buffer.Buffer) -> Unit,
+    callback: (error: ExecFileException?, stdout: node.buffer.Buffer<*>, stderr: node.buffer.Buffer<*>) -> Unit,
 ): ChildProcess
 
 external fun execFile(
     file: String,
     args: (ReadonlyArray<String>)?,
     options: ExecFileOptionsWithBufferEncoding,
-    callback: (error: ExecFileException?, stdout: node.buffer.Buffer, stderr: node.buffer.Buffer) -> Unit,
+    callback: (error: ExecFileException?, stdout: node.buffer.Buffer<*>, stderr: node.buffer.Buffer<*>) -> Unit,
 ): ChildProcess
 
 // `options` with well known `encoding` means stdout/stderr are definitely `string`.

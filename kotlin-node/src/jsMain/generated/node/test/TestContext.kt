@@ -16,7 +16,7 @@ external class TestContext {
     /**
      * An object containing assertion methods bound to the test context.
      * The top-level functions from the `node:assert` module are exposed here for the purpose of creating test plans.
-     * @since v22.2.0
+     * @since v22.2.0, v20.15.0
      */
     val assert: TestContextAssert
 
@@ -70,6 +70,13 @@ external class TestContext {
      * @param message Message to be reported.
      */
     fun diagnostic(message: String): Unit
+
+    /**
+     * The absolute path of the test file that created the current test. If a test file imports
+     * additional modules that generate tests, the imported tests will return the path of the root test file.
+     * @since v22.6.0
+     */
+    val filePath: String?
 
     /**
      * The name of the test and each of its ancestors, separated by `>`.
@@ -194,7 +201,7 @@ external class TestContext {
      * If the test uses callbacks, the callback function is passed as the second argument.
      * @returns A {@link Promise} resolved with `undefined` once the test completes.
      */
-    var test: Any?
+    var test: Any /* typeof test */
 
     /**
      * Each test provides its own MockTracker instance.

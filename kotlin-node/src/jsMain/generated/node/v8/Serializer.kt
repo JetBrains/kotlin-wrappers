@@ -28,7 +28,7 @@ open external class Serializer {
      * the buffer is released. Calling this method results in undefined behavior
      * if a previous write has failed.
      */
-    fun releaseBuffer(): node.buffer.Buffer
+    fun releaseBuffer(): node.buffer.Buffer<*>
 
     /**
      * Marks an `ArrayBuffer` as having its contents transferred out of band.

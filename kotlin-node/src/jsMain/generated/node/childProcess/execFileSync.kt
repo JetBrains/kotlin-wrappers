@@ -26,15 +26,15 @@ import js.array.ReadonlyArray
  * @param args List of string arguments.
  * @return The stdout from the command.
  */
-external fun execFileSync(file: String): node.buffer.Buffer
+external fun execFileSync(file: String): node.buffer.Buffer<*>
 
 external fun execFileSync(file: String, options: ExecFileSyncOptionsWithStringEncoding): String
 
-external fun execFileSync(file: String, options: ExecFileSyncOptionsWithBufferEncoding): node.buffer.Buffer
+external fun execFileSync(file: String, options: ExecFileSyncOptionsWithBufferEncoding): node.buffer.Buffer<*>
 
 external fun execFileSync(file: String, options: ExecFileSyncOptions = definedExternally): Any /* string | Buffer */
 
-external fun execFileSync(file: String, args: ReadonlyArray<String>): node.buffer.Buffer
+external fun execFileSync(file: String, args: ReadonlyArray<String>): node.buffer.Buffer<*>
 
 external fun execFileSync(
     file: String,
@@ -46,7 +46,7 @@ external fun execFileSync(
     file: String,
     args: ReadonlyArray<String>,
     options: ExecFileSyncOptionsWithBufferEncoding,
-): node.buffer.Buffer
+): node.buffer.Buffer<*>
 
 external fun execFileSync(
     file: String,

@@ -6,7 +6,6 @@ package node.fs
 
 import js.date.Date
 
-
 /**
  * A `fs.Stats` object provides information about a file.
  *

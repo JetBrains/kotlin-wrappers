@@ -4,7 +4,6 @@
 
 package node.stream
 
-
 /* import Stream = internal.Stream; */
 
 /* import Readable = internal.Readable; */
@@ -12,6 +11,5 @@ package node.stream
 /* import ReadableOptions = internal.ReadableOptions; */
 
 /* import WritableOptions = internal.WritableOptions; */
-
 
 /* export = internal; */

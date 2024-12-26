@@ -32,7 +32,7 @@ external fun createPrivateKey(key: String): KeyObject
  * of the passphrase is limited to 1024 bytes.
  * @since v11.6.0
  */
-external fun createPrivateKey(key: node.buffer.Buffer): KeyObject
+external fun createPrivateKey(key: node.buffer.Buffer<*>): KeyObject
 
 /**
  * Creates and returns a new key object containing a private key. If `key` is a

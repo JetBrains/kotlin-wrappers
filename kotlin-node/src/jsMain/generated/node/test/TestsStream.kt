@@ -73,6 +73,9 @@ external class TestsStream : Readable, node.ReadableStream {
     @web.events.JsEvent("test:stdout")
     val testStdoutEvent: node.events.EventInstance<js.array.JsTuple1<TestStdout>>
 
+    @web.events.JsEvent("test:summary")
+    val testSummaryEvent: node.events.EventInstance<js.array.JsTuple1<TestSummary>>
+
     @web.events.JsEvent("test:watch:drained")
     val testWatchDrainedEvent: node.events.EventInstance<js.array.JsTuple>
 }

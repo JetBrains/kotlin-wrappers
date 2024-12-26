@@ -75,7 +75,7 @@ external suspend fun readdir(
 external suspend fun readdir(
     path: PathLike,
     options: ReaddirBufferAsyncOptions,
-): js.array.ReadonlyArray<node.buffer.Buffer>
+): js.array.ReadonlyArray<node.buffer.Buffer<*>>
 
 
 /**
@@ -85,7 +85,10 @@ external suspend fun readdir(
  */
 
 @seskar.js.JsAsync
-external suspend fun readdir(path: PathLike, options: String /* "buffer" */): js.array.ReadonlyArray<node.buffer.Buffer>
+external suspend fun readdir(
+    path: PathLike,
+    options: String, /* "buffer" */
+): js.array.ReadonlyArray<node.buffer.Buffer<*>>
 
 
 /**

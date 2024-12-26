@@ -16,7 +16,7 @@ import web.abort.AbortSignal
  * stream, and `controller.error(new AbortError())` for webstreams.
  *
  * ```js
- * const fs = require('node:fs');
+ * import fs from 'node:fs';
  *
  * const controller = new AbortController();
  * const read = addAbortSignal(

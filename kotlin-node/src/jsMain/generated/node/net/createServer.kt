@@ -25,7 +25,7 @@ package node.net
  * on port 8124:
  *
  * ```js
- * const net = require('node:net');
+ * import net from 'node:net';
  * const server = net.createServer((c) => {
  *   // 'connection' listener.
  *   console.log('client connected');

@@ -6,13 +6,13 @@ sealed external interface OutgoingHttpHeaders : node.Dict<OutgoingHttpHeader> {
     var accept: Any? /* string | string[] | undefined */
 
     @JsName("accept-charset")
-    var acceptCharset: Any? /* string | string[] | undefined; */
+    var acceptCharset: Any? /* string | string[] | undefined */
 
     @JsName("accept-encoding")
-    var acceptEncoding: Any? /* string | string[] | undefined; */
+    var acceptEncoding: Any? /* string | string[] | undefined */
 
     @JsName("accept-language")
-    var acceptLanguage: Any? /* string | string[] | undefined; */
+    var acceptLanguage: Any? /* string | string[] | undefined */
 
     @JsName("accept-ranges")
     var acceptRanges: String?
@@ -61,7 +61,7 @@ sealed external interface OutgoingHttpHeaders : node.Dict<OutgoingHttpHeader> {
     var contentLanguage: String?
 
     @JsName("content-length")
-    var contentLength: Int?
+    var contentLength: Any? /* string | number | undefined */
 
     @JsName("content-location")
     var contentLocation: String?
@@ -69,14 +69,14 @@ sealed external interface OutgoingHttpHeaders : node.Dict<OutgoingHttpHeader> {
     @JsName("content-range")
     var contentRange: String?
 
-    @JsName("content-type")
-    var contentType: String?
-
     @JsName("content-security-policy")
     var contentSecurityPolicy: String?
 
     @JsName("content-security-policy-report-only")
     var contentSecurityPolicyReportOnly: String?
+
+    @JsName("content-type")
+    var contentType: String?
     var cookie: Any? /* string | string[] | undefined */
     var dav: Any? /* string | string[] | undefined */
     var dnt: String?
@@ -111,10 +111,10 @@ sealed external interface OutgoingHttpHeaders : node.Dict<OutgoingHttpHeader> {
     @JsName("max-forwards")
     var maxForwards: String?
     var origin: String?
-    var prgama: Any? /* string | string[] | undefined */
+    var pragma: Any? /* string | string[] | undefined */
 
     @JsName("proxy-authenticate")
-    var proxyAuthenticate: Any? /* string | string[] | undefined; */
+    var proxyAuthenticate: Any? /* string | string[] | undefined */
 
     @JsName("proxy-authorization")
     var proxyAuthorization: String?
@@ -138,20 +138,20 @@ sealed external interface OutgoingHttpHeaders : node.Dict<OutgoingHttpHeader> {
     var secWebsocketAccept: String?
 
     @JsName("sec-websocket-extensions")
-    var secWebsocketExtensions: Any? /* string | string[] | undefined; */
+    var secWebsocketExtensions: Any? /* string | string[] | undefined */
 
     @JsName("sec-websocket-key")
     var secWebsocketKey: String?
 
     @JsName("sec-websocket-protocol")
-    var secWebsocketProtocol: Any? /* string | string[] | undefined; */
+    var secWebsocketProtocol: Any? /* string | string[] | undefined */
 
     @JsName("sec-websocket-version")
     var secWebsocketVersion: String?
     var server: String?
 
     @JsName("set-cookie")
-    var setCookie: Any? /* string | string[] | undefined; */
+    var setCookie: Any? /* string | string[] | undefined */
 
     @JsName("strict-transport-security")
     var strictTransportSecurity: String?
@@ -172,7 +172,7 @@ sealed external interface OutgoingHttpHeaders : node.Dict<OutgoingHttpHeader> {
     var warning: String?
 
     @JsName("www-authenticate")
-    var wwwAuthenticate: Any? /* string | string[] | undefined; */
+    var wwwAuthenticate: Any? /* string | string[] | undefined */
 
     @JsName("x-content-type-options")
     var xContentTypeOptions: String?

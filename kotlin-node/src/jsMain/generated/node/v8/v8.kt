@@ -8,7 +8,7 @@ package node.v8
  * The `node:v8` module exposes APIs that are specific to the version of [V8](https://developers.google.com/v8/) built into the Node.js binary. It can be accessed using:
  *
  * ```js
- * const v8 = require('node:v8');
+ * import v8 from 'node:v8';
  * ```
  * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/v8.js)
  */

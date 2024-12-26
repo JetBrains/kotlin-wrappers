@@ -16,7 +16,7 @@ package node.sqlite
  * work:
  *
  * ```js
- * import sqlite from 'sqlite';
+ * import sqlite from 'node:sqlite';
  * ```
  *
  * The following example shows the basic usage of the `node:sqlite` module to open

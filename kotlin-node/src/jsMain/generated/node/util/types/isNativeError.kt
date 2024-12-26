@@ -24,7 +24,7 @@ package node.util.types
  * which come from a different [realm](https://tc39.es/ecma262/#realm) while `instanceof Error` returns `false` for these errors:
  *
  * ```js
- * const vm = require('node:vm');
+ * import vm from 'node:vm';
  * const context = vm.createContext({});
  * const myError = vm.runInContext('new Error()', context);
  * console.log(util.types.isNativeError(myError)); // true

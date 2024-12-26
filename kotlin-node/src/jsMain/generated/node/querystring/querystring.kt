@@ -9,7 +9,7 @@ package node.querystring
  * query strings. It can be accessed using:
  *
  * ```js
- * const querystring = require('node:querystring');
+ * import querystring from 'node:querystring';
  * ```
  *
  * `querystring` is more performant than `URLSearchParams` but is not a

@@ -31,7 +31,7 @@ package node.fs
 external fun readFileSync(
     path: PathOrFileDescriptor,
     options: (ReadFileSyncBufferOptions)? = definedExternally,
-): node.buffer.Buffer
+): node.buffer.Buffer<*>
 
 /**
  * Synchronously reads the entire contents of a file.

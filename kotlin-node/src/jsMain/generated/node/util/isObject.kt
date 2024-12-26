@@ -9,7 +9,7 @@ package node.util
  * Otherwise, returns `false`.
  *
  * ```js
- * const util = require('node:util');
+ * import util from 'node:util';
  *
  * util.isObject(5);
  * // Returns: false

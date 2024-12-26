@@ -10,7 +10,7 @@ package node.childProcess
  * is primarily provided by the {@link spawn} function:
  *
  * ```js
- * const { spawn } = require('node:child_process');
+ * import { spawn } from 'node:child_process';
  * const ls = spawn('ls', ['-lh', '/usr']);
  *
  * ls.stdout.on('data', (data) => {

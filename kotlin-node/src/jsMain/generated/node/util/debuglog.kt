@@ -10,7 +10,7 @@ package node.util
  * environment variable, then the returned function operates similar to `console.error()`. If not, then the returned function is a no-op.
  *
  * ```js
- * const util = require('node:util');
+ * import util from 'node:util';
  * const debuglog = util.debuglog('foo');
  *
  * debuglog('hello from foo [%d]', 123);
@@ -29,7 +29,7 @@ package node.util
  * The `section` supports wildcard also:
  *
  * ```js
- * const util = require('node:util');
+ * import util from 'node:util';
  * const debuglog = util.debuglog('foo-bar');
  *
  * debuglog('hi there, it\'s foo-bar [%d]', 2333);
@@ -49,7 +49,7 @@ package node.util
  * unnecessary wrapping.
  *
  * ```js
- * const util = require('node:util');
+ * import util from 'node:util';
  * let debuglog = util.debuglog('internals', (debug) => {
  *   // Replace with a logging function that optimizes out
  *   // testing if the section is enabled

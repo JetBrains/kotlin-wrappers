@@ -788,5 +788,5 @@ external class Socket : EventEmitter {
     val listeningEvent: node.events.EventInstance<js.array.JsTuple>
 
     @web.events.JsEvent("message")
-    val messageEvent: node.events.EventInstance<js.array.JsTuple2<node.buffer.Buffer, RemoteInfo>>
+    val messageEvent: node.events.EventInstance<js.array.JsTuple2<node.buffer.Buffer<*>, RemoteInfo>>
 }

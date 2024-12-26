@@ -10,9 +10,9 @@ package node.module
  * does not add or remove exported names from the `ES Modules`.
  *
  * ```js
- * const fs = require('node:fs');
- * const assert = require('node:assert');
- * const { syncBuiltinESMExports } = require('node:module');
+ * import fs from 'node:fs';
+ * import assert from 'node:assert';
+ * import { syncBuiltinESMExports } from 'node:module';
  *
  * fs.readFile = newAPI;
  *

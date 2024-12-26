@@ -4,6 +4,8 @@
 
 package node.cluster
 
+external val cluster: Cluster
+
 /**
  * Clusters of Node.js processes can be used to run multiple instances of Node.js
  * that can distribute workloads among their application threads. When process isolation

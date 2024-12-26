@@ -15,7 +15,7 @@ package node.dns
  * where `err.code` is the error code.
  *
  * ```js
- * const dns = require('node:dns');
+ * import dns from 'node:dns';
  * dns.lookupService('127.0.0.1', 22, (err, hostname, service) => {
  *   console.log(hostname, service);
  *   // Prints: localhost ssh

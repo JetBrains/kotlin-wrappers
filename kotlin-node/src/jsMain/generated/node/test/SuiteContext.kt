@@ -14,6 +14,13 @@ import web.abort.AbortSignal
  */
 external class SuiteContext {
     /**
+     * The absolute path of the test file that created the current suite. If a test file imports
+     * additional modules that generate suites, the imported suites will return the path of the root test file.
+     * @since v22.6.0
+     */
+    val filePath: String?
+
+    /**
      * The name of the suite.
      * @since v18.8.0, v16.18.0
      */

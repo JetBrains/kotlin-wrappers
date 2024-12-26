@@ -73,7 +73,7 @@ package node.fs
 external fun readFile(
     path: PathOrFileDescriptor,
     options: (ReadFileBufferOptions)?,
-    callback: (err: node.ErrnoException?, data: node.buffer.Buffer) -> Unit,
+    callback: (err: node.ErrnoException?, data: node.buffer.Buffer<*>) -> Unit,
 ): Unit
 
 /**
@@ -135,5 +135,5 @@ external fun readFile(
  */
 external fun readFile(
     path: PathOrFileDescriptor,
-    callback: (err: node.ErrnoException?, data: node.buffer.Buffer) -> Unit,
+    callback: (err: node.ErrnoException?, data: node.buffer.Buffer<*>) -> Unit,
 ): Unit

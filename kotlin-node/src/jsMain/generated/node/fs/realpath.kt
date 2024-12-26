@@ -44,7 +44,7 @@ external fun realpath(
 external fun realpath(
     path: PathLike,
     options: BufferEncodingOption,
-    callback: (err: node.ErrnoException?, resolvedPath: node.buffer.Buffer) -> Unit,
+    callback: (err: node.ErrnoException?, resolvedPath: node.buffer.Buffer<*>) -> Unit,
 ): Unit
 
 /**

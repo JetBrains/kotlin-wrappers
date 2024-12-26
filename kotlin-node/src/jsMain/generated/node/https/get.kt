@@ -13,7 +13,7 @@ import web.url.URL
  * string, it is automatically parsed with `new URL()`. If it is a `URL` object, it will be automatically converted to an ordinary `options` object.
  *
  * ```js
- * const https = require('node:https');
+ * import https from 'node:https';
  *
  * https.get('https://encrypted.google.com/', (res) => {
  *   console.log('statusCode:', res.statusCode);
@@ -42,7 +42,7 @@ external fun get(
  * string, it is automatically parsed with `new URL()`. If it is a `URL` object, it will be automatically converted to an ordinary `options` object.
  *
  * ```js
- * const https = require('node:https');
+ * import https from 'node:https';
  *
  * https.get('https://encrypted.google.com/', (res) => {
  *   console.log('statusCode:', res.statusCode);
@@ -71,7 +71,7 @@ external fun get(
  * string, it is automatically parsed with `new URL()`. If it is a `URL` object, it will be automatically converted to an ordinary `options` object.
  *
  * ```js
- * const https = require('node:https');
+ * import https from 'node:https';
  *
  * https.get('https://encrypted.google.com/', (res) => {
  *   console.log('statusCode:', res.statusCode);

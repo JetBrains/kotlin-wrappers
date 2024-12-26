@@ -11,8 +11,8 @@ package node.stream
  * or has experienced an error or a premature close event.
  *
  * ```js
- * const { finished } = require('node:stream');
- * const fs = require('node:fs');
+ * import { finished } from 'node:stream';
+ * import fs from 'node:fs';
  *
  * const rs = fs.createReadStream('archive.tar');
  *
@@ -51,7 +51,7 @@ package node.stream
  */
 external fun finished(
     stream: node.ReadableStream,
-    options: FinishedOptions,
+    options: _FinishedOptions,
     callback: (err: node.ErrnoException? /* use undefined for default */) -> Unit,
 ): () -> Unit
 
@@ -62,8 +62,8 @@ external fun finished(
  * or has experienced an error or a premature close event.
  *
  * ```js
- * const { finished } = require('node:stream');
- * const fs = require('node:fs');
+ * import { finished } from 'node:stream';
+ * import fs from 'node:fs';
  *
  * const rs = fs.createReadStream('archive.tar');
  *
@@ -102,7 +102,7 @@ external fun finished(
  */
 external fun finished(
     stream: node.WritableStream,
-    options: FinishedOptions,
+    options: _FinishedOptions,
     callback: (err: node.ErrnoException? /* use undefined for default */) -> Unit,
 ): () -> Unit
 
@@ -113,8 +113,8 @@ external fun finished(
  * or has experienced an error or a premature close event.
  *
  * ```js
- * const { finished } = require('node:stream');
- * const fs = require('node:fs');
+ * import { finished } from 'node:stream';
+ * import fs from 'node:fs';
  *
  * const rs = fs.createReadStream('archive.tar');
  *
@@ -153,7 +153,7 @@ external fun finished(
  */
 external fun finished(
     stream: node.ReadWriteStream,
-    options: FinishedOptions,
+    options: _FinishedOptions,
     callback: (err: node.ErrnoException? /* use undefined for default */) -> Unit,
 ): () -> Unit
 

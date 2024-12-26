@@ -8,7 +8,6 @@ import node.http.IncomingMessage
 import node.http.ServerResponse
 import node.stream.Duplex
 
-
 /**
  * See `http.Server` for more information.
  * @since v0.3.4
@@ -58,10 +57,10 @@ node.http.Server<Request, Response> {
 
 
     @web.events.JsEvent("keylog")
-    override val keylogEvent: node.events.EventInstance<js.array.JsTuple2<node.buffer.Buffer, node.tls.TLSSocket>>
+    override val keylogEvent: node.events.EventInstance<js.array.JsTuple2<node.buffer.Buffer<*>, node.tls.TLSSocket>>
 
     @web.events.JsEvent("OCSPRequest")
-    override val OCSPRequestEvent: node.events.EventInstance<js.array.JsTuple3<node.buffer.Buffer, node.buffer.Buffer, (err: js.errors.JsError?, resp: node.buffer.Buffer) -> Unit>>
+    override val OCSPRequestEvent: node.events.EventInstance<js.array.JsTuple3<node.buffer.Buffer<*>, node.buffer.Buffer<*>, (err: js.errors.JsError?, resp: node.buffer.Buffer<*>) -> Unit>>
 
     @web.events.JsEvent("secureConnection")
     override val secureConnectionEvent: node.events.EventInstance<js.array.JsTuple1<node.tls.TLSSocket>>
@@ -88,11 +87,11 @@ node.http.Server<Request, Response> {
     override val clientErrorEvent: node.events.EventInstance<js.array.JsTuple2<js.errors.JsError, Duplex>>
 
     @web.events.JsEvent("connect")
-    override val connectEvent: node.events.EventInstance<js.array.JsTuple3<Request, Duplex, node.buffer.Buffer>>
+    override val connectEvent: node.events.EventInstance<js.array.JsTuple3<Request, Duplex, node.buffer.Buffer<*>>>
 
     @web.events.JsEvent("request")
     override val requestEvent: node.events.EventInstance<js.array.JsTuple2<Request, Response>>
 
     @web.events.JsEvent("upgrade")
-    override val upgradeEvent: node.events.EventInstance<js.array.JsTuple3<Request, Duplex, node.buffer.Buffer>>
+    override val upgradeEvent: node.events.EventInstance<js.array.JsTuple3<Request, Duplex, node.buffer.Buffer<*>>>
 }

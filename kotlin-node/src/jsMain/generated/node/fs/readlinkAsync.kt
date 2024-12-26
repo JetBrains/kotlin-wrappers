@@ -61,7 +61,7 @@ external fun readlinkAsync(path: PathLike, options: node.buffer.BufferEncoding? 
  */
 
 @JsName("readlink")
-external fun readlinkAsync(path: PathLike, options: BufferEncodingOption): Promise<node.buffer.Buffer>
+external fun readlinkAsync(path: PathLike, options: BufferEncodingOption): Promise<node.buffer.Buffer<*>>
 
 
 /**

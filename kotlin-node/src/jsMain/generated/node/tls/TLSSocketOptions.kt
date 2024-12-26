@@ -17,7 +17,7 @@ sealed external interface TLSSocketOptions : SecureContextOptions, CommonConnect
     /**
      * An optional Buffer instance containing a TLS session.
      */
-    var session: node.buffer.Buffer?
+    var session: node.buffer.Buffer<*>?
 
     /**
      * If true, specifies that the OCSP status request extension will be

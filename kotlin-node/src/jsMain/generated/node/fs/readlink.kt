@@ -30,7 +30,7 @@ external fun readlink(
 external fun readlink(
     path: PathLike,
     options: BufferEncodingOption,
-    callback: (err: node.ErrnoException?, linkString: node.buffer.Buffer) -> Unit,
+    callback: (err: node.ErrnoException?, linkString: node.buffer.Buffer<*>) -> Unit,
 ): Unit
 
 /**

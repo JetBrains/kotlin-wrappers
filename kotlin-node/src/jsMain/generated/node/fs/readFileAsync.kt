@@ -67,7 +67,7 @@ import js.promise.Promise
 external fun readFileAsync(
     path: PathLike,
     options: (ReadFileBufferAsyncOptions)? = definedExternally,
-): Promise<node.buffer.Buffer>
+): Promise<node.buffer.Buffer<*>>
 
 
 /**
@@ -131,7 +131,7 @@ external fun readFileAsync(
 external fun readFileAsync(
     path: FileHandle,
     options: (ReadFileBufferAsyncOptions)? = definedExternally,
-): Promise<node.buffer.Buffer>
+): Promise<node.buffer.Buffer<*>>
 
 
 /**

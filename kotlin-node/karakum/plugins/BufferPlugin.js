@@ -12,7 +12,7 @@ function convertConstructSignatureDeclaration(node, context, render) {
 
 export default {
     setup(context) {
-        this.bufferConstructorNode = null
+        this.bufferConstructorNodes = []
     },
 
     traverse(node) {
@@ -20,7 +20,7 @@ export default {
             ts.isInterfaceDeclaration(node)
             && node.name.text === "BufferConstructor"
         ) {
-            this.bufferConstructorNode = node
+            this.bufferConstructorNodes.push(node)
         }
     },
 
@@ -44,35 +44,48 @@ export default {
             ts.isInterfaceDeclaration(node)
             && node.name.text === "Buffer"
         ) {
+            const declarationMergingService = context.lookupService(karakum.declarationMergingServiceKey)
+            if (declarationMergingService?.isCovered(node)) return ""
+            declarationMergingService?.cover(node)
+
+            const namespaceInfoService = context.lookupService(karakum.namespaceInfoServiceKey)
+
             const inheritanceModifierService = context.lookupService(karakum.inheritanceModifierServiceKey)
 
             const inheritanceModifier = inheritanceModifierService?.resolveInheritanceModifier(node, context)
 
-            const heritageClauses = node.heritageClauses
-                ?.map(heritageClause => next(heritageClause))
+            const typeParameters = (declarationMergingService?.getTypeParameters(node) ?? node.typeParameters)
+                ?.map(typeParameter => next(typeParameter))
+                ?.filter(Boolean)
                 ?.join(", ")
 
-            const constructors = this.bufferConstructorNode.members
+            const heritageClauses = (declarationMergingService?.getHeritageClauses(node) ?? node.heritageClauses)
+                ?.map(heritageClause => next(heritageClause))
+                ?.filter(Boolean)
+                ?.join(", ")
+
+            const constructors = this.bufferConstructorNodes
+                .flatMap(node => node.members)
                 .filter(member => ts.isConstructSignatureDeclaration(member))
                 .map(member => convertConstructSignatureDeclaration(member, context, next))
                 .join("\n")
 
-            const members = node.members
+            const resolveNamespaceStrategy = namespaceInfoService?.resolveNamespaceStrategy?.bind(namespaceInfoService)
+
+            const members = (declarationMergingService?.getMembers(node, resolveNamespaceStrategy) ?? node.members)
                 .filter(member => !(
                     ts.isMethodSignature(member)
                     && ts.isIdentifier(member.name)
                     && (
                         // overridden members from Uint8Array
                         member.name.text === "reverse"
-                        || member.name.text === "keys"
-                        || member.name.text === "values"
-                        || member.name.text === "entries"
                     )
                 ))
                 .map(member => next(member))
                 .join("\n")
 
-            const staticMembers = this.bufferConstructorNode.members
+            const staticMembers = this.bufferConstructorNodes
+                .flatMap(node => node.members)
                 .filter(member => !ts.isConstructSignatureDeclaration(member))
                 .map(member => next(member))
                 .join("\n")
@@ -84,7 +97,7 @@ ${staticMembers}
             `
 
             return `
-${karakum.ifPresent(inheritanceModifier, it => `${it} `)}external class Buffer${karakum.ifPresent(heritageClauses, it => ` : ${it}`)} {
+${karakum.ifPresent(inheritanceModifier, it => `${it} `)}external class Buffer${karakum.ifPresent(typeParameters, it => `<${it}>`)}${karakum.ifPresent(heritageClauses, it => ` : ${it}`)} {
 ${constructors}\n${members}\n${companionObject}
 }
             `

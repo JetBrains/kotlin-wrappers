@@ -17,7 +17,7 @@ sealed external interface ClientHttp2Session : Http2Session {
      * This method is only available if `http2session.type` is equal to `http2.constants.NGHTTP2_SESSION_CLIENT`.
      *
      * ```js
-     * const http2 = require('node:http2');
+     * import http2 from 'node:http2';
      * const clientSession = http2.connect('https://localhost:1234');
      * const {
      *   HTTP2_HEADER_PATH,

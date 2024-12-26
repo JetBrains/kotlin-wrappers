@@ -12,7 +12,7 @@ external interface ConnectionOptions : SecureContextOptions, CommonConnectionOpt
     var checkServerIdentity: ((hostname: String, cert: PeerCertificate) -> js.errors.JsError?)?
     var servername: String?// SNI TLS Extension
 
-    var session: node.buffer.Buffer?
+    var session: node.buffer.Buffer<*>?
     var minDHSize: Double?
     var lookup: node.net.LookupFunction?
     var timeout: Double?

@@ -56,6 +56,6 @@ package node.crypto
  * @param size The number of bytes to generate. The `size` must not be larger than `2**31 - 1`.
  * @return if the `callback` function is not provided.
  */
-external fun randomBytes(size: Number): node.buffer.Buffer
+external fun randomBytes(size: Number): node.buffer.Buffer<*>
 
-external fun randomBytes(size: Number, callback: (err: js.errors.JsError?, buf: node.buffer.Buffer) -> Unit): Unit
+external fun randomBytes(size: Number, callback: (err: js.errors.JsError?, buf: node.buffer.Buffer<*>) -> Unit): Unit

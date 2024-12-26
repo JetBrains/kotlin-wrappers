@@ -10,7 +10,7 @@ import web.url.URL
  * The `url.format()` method returns a formatted URL string derived from `urlObject`.
  *
  * ```js
- * const url = require('node:url');
+ * import url from 'node:url';
  * url.format({
  *   protocol: 'https',
  *   hostname: 'example.com',
@@ -75,7 +75,7 @@ external fun format(urlObject: URL, options: URLFormatOptions = definedExternall
  * The `url.format()` method returns a formatted URL string derived from `urlObject`.
  *
  * ```js
- * const url = require('node:url');
+ * import url from 'node:url';
  * url.format({
  *   protocol: 'https',
  *   hostname: 'example.com',
@@ -140,7 +140,7 @@ external fun format(urlObject: UrlObject): String
  * The `url.format()` method returns a formatted URL string derived from `urlObject`.
  *
  * ```js
- * const url = require('node:url');
+ * import url from 'node:url';
  * url.format({
  *   protocol: 'https',
  *   hostname: 'example.com',

@@ -178,7 +178,7 @@ open external class Writable : Stream, node.WritableStream {
      *
      * ```js
      * // Write 'hello, ' and then end with 'world!'.
-     * const fs = require('node:fs');
+     * import fs from 'node:fs';
      * const file = fs.createWriteStream('example.txt');
      * file.write('hello, ');
      * file.end('world!');

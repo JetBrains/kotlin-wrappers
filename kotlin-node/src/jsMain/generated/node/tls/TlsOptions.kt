@@ -21,7 +21,7 @@ external interface TlsOptions : SecureContextOptions, CommonConnectionOptions, n
     /**
      * 48-bytes of cryptographically strong pseudo-random data.
      */
-    override var ticketKeys: node.buffer.Buffer?
+    override var ticketKeys: node.buffer.Buffer<*>?
 
     /**
      * @param socket

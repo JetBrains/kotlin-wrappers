@@ -10,7 +10,7 @@ package node.http2
  * for use with the `HTTP2-Settings` header field.
  *
  * ```js
- * const http2 = require('node:http2');
+ * import http2 from 'node:http2';
  *
  * const packed = http2.getPackedSettings({ enablePush: false });
  *
@@ -19,4 +19,4 @@ package node.http2
  * ```
  * @since v8.4.0
  */
-external fun getPackedSettings(settings: Settings): node.buffer.Buffer
+external fun getPackedSettings(settings: Settings): node.buffer.Buffer<*>

@@ -87,7 +87,7 @@ external fun fail(
     actual: Any?,
     expected: Any?,
     message: String = definedExternally,
-    operator: String = definedExternally, // eslint-disable-next-line @typescript-eslint/ban-types
+    operator: String = definedExternally, // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
     stackStartFn: Function<*> = definedExternally,
 ): Nothing
 

@@ -3,18 +3,3 @@
 @file:JsModule("node:worker_threads")
 
 package node.workerThreads
-
-import web.messaging.MessagePort
-
-
-external val isMainThread: Boolean
-
-external val parentPort: MessagePort?
-
-external val resourceLimits: ResourceLimits
-
-external val SHARE_ENV: /* unique */ js.symbol.Symbol
-
-external val threadId: Double
-
-external val workerData: Any?

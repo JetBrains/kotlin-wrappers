@@ -27,12 +27,32 @@ sealed external interface RunOptions {
     var forceExit: Boolean?
 
     /**
+     * An array containing the list of glob patterns to match test files.
+     * This option cannot be used together with `files`. If omitted, files are run according to the
+     * [test runner execution model](https://nodejs.org/docs/latest-v22.x/api/test.html#test-runner-execution-model).
+     * @since v22.6.0
+     */
+    var globPatterns: (js.array.ReadonlyArray<String>)?
+
+    /**
      * Sets inspector port of test child process.
-     * If a nullish value is provided, each process gets its own port,
-     * incremented from the primary's `process.debugPort`.
+     * This can be a number, or a function that takes no arguments and returns a
+     * number. If a nullish value is provided, each process gets its own port,
+     * incremented from the primary's `process.debugPort`. This option is ignored
+     * if the `isolation` option is set to `'none'` as no child processes are
+     * spawned.
      * @default undefined
      */
     var inspectPort: Any? /* number | (() => number) | undefined */
+
+    /**
+     * Configures the type of test isolation. If set to
+     * `'process'`, each test file is run in a separate child process. If set to
+     * `'none'`, all test files run in the current process.
+     * @default 'process'
+     * @since v22.8.0
+     */
+    var isolation: RunOptionsIsolation?
 
     /**
      * If truthy, the test context will only run tests that have the `only` option set
@@ -44,6 +64,22 @@ sealed external interface RunOptions {
      * @default undefined
      */
     var setup: ((reporter: TestsStream) -> js.promise.PromiseResult<js.core.Void>)?
+
+    /**
+     * An array of CLI flags to pass to the `node` executable when
+     * spawning the subprocesses. This option has no effect when `isolation` is `'none`'.
+     * @since v22.10.0
+     * @default []
+     */
+    var execArgv: (js.array.ReadonlyArray<String>)?
+
+    /**
+     * An array of CLI flags to pass to each test file when spawning the
+     * subprocesses. This option has no effect when `isolation` is `'none'`.
+     * @since v22.10.0
+     * @default []
+     */
+    var argv: (js.array.ReadonlyArray<String>)?
 
     /**
      * Allows aborting an in-progress test execution.
@@ -85,4 +121,57 @@ sealed external interface RunOptions {
      * @default undefined
      */
     var shard: TestShard?
+
+    /**
+     * enable [code coverage](https://nodejs.org/docs/latest-v22.x/api/test.html#collecting-code-coverage) collection.
+     * @since v22.10.0
+     * @default false
+     */
+    var coverage: Boolean?
+
+    /**
+     * Excludes specific files from code coverage
+     * using a glob pattern, which can match both absolute and relative file paths.
+     * This property is only applicable when `coverage` was set to `true`.
+     * If both `coverageExcludeGlobs` and `coverageIncludeGlobs` are provided,
+     * files must meet **both** criteria to be included in the coverage report.
+     * @since v22.10.0
+     * @default undefined
+     */
+    var coverageExcludeGlobs: Any? /* string | readonly string[] | undefined */
+
+    /**
+     * Includes specific files in code coverage
+     * using a glob pattern, which can match both absolute and relative file paths.
+     * This property is only applicable when `coverage` was set to `true`.
+     * If both `coverageExcludeGlobs` and `coverageIncludeGlobs` are provided,
+     * files must meet **both** criteria to be included in the coverage report.
+     * @since v22.10.0
+     * @default undefined
+     */
+    var coverageIncludeGlobs: Any? /* string | readonly string[] | undefined */
+
+    /**
+     * Require a minimum percent of covered lines. If code
+     * coverage does not reach the threshold specified, the process will exit with code `1`.
+     * @since v22.10.0
+     * @default 0
+     */
+    var lineCoverage: Double?
+
+    /**
+     * Require a minimum percent of covered branches. If code
+     * coverage does not reach the threshold specified, the process will exit with code `1`.
+     * @since v22.10.0
+     * @default 0
+     */
+    var branchCoverage: Double?
+
+    /**
+     * Require a minimum percent of covered functions. If code
+     * coverage does not reach the threshold specified, the process will exit with code `1`.
+     * @since v22.10.0
+     * @default 0
+     */
+    var functionCoverage: Double?
 }

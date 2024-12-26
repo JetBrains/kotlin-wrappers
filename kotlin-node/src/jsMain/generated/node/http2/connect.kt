@@ -8,7 +8,7 @@ package node.http2
  * Returns a `ClientHttp2Session` instance.
  *
  * ```js
- * const http2 = require('node:http2');
+ * import http2 from 'node:http2';
  * const client = http2.connect('https://localhost:1234');
  *
  * // Use the client
@@ -29,7 +29,7 @@ external fun connect(
  * Returns a `ClientHttp2Session` instance.
  *
  * ```js
- * const http2 = require('node:http2');
+ * import http2 from 'node:http2';
  * const client = http2.connect('https://localhost:1234');
  *
  * // Use the client

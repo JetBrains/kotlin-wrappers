@@ -36,4 +36,11 @@ external interface ServerOpts {
      * @since v16.5.0
      */
     var keepAliveInitialDelay: Double?
+
+    /**
+     * Optionally overrides all `net.Socket`s' `readableHighWaterMark` and `writableHighWaterMark`.
+     * @default See [stream.getDefaultHighWaterMark()](https://nodejs.org/docs/latest-v22.x/api/stream.html#streamgetdefaulthighwatermarkobjectmode).
+     * @since v18.17.0, v20.1.0
+     */
+    var highWaterMark: Double?
 }

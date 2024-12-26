@@ -5,9 +5,10 @@ package node.http2
 import node.http.IncomingMessage
 import node.http.ServerResponse
 
-sealed external interface ServerSessionOptions : SessionOptions {
-    var Http1IncomingMessage: (JsClass<IncomingMessage>)?
-    var Http1ServerResponse: (JsClass<ServerResponse<*>>)?
-    var Http2ServerRequest: (JsClass<Http2ServerRequest>)?
-    var Http2ServerResponse: (JsClass<Http2ServerResponse>)?
+sealed external interface ServerSessionOptions<Http1Request : IncomingMessage, Http1Response : ServerResponse<*>, Http2Request : Http2ServerRequest, Http2Response : Http2ServerResponse<*>> :
+    SessionOptions {
+    var Http1IncomingMessage: JsClass<Http1Request>?
+    var Http1ServerResponse: JsClass<Http1Response>?
+    var Http2ServerRequest: JsClass<Http2Request>?
+    var Http2ServerResponse: JsClass<Http2Response>?
 }

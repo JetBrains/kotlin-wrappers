@@ -8,7 +8,7 @@ package node.util
  * Returns `true` if the given `object` is a `Number`. Otherwise, returns `false`.
  *
  * ```js
- * const util = require('node:util');
+ * import util from 'node:util';
  *
  * util.isNumber(false);
  * // Returns: false

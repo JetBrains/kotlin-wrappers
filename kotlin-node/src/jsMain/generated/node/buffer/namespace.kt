@@ -4,16 +4,6 @@
 
 package node.buffer
 
-
-external val INSPECT_MAX_BYTES: Double
-
-external val kMaxLength: Double
-
-external val kStringMaxLength: Double
-
-external val constants: BufferConstants
-
-
 /* export { Buffer }; */
 
 /* export import atob = globalThis.atob; */

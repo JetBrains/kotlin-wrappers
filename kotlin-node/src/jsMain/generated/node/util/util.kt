@@ -10,7 +10,7 @@ package node.util
  * it:
  *
  * ```js
- * const util = require('node:util');
+ * import util from 'node:util';
  * ```
  * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/util.js)
  */

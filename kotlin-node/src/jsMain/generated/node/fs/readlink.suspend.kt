@@ -40,7 +40,7 @@ external suspend fun readlink(path: PathLike, options: node.buffer.BufferEncodin
 
 
 @seskar.js.JsAsync
-external suspend fun readlink(path: PathLike, options: BufferEncodingOption): node.buffer.Buffer
+external suspend fun readlink(path: PathLike, options: BufferEncodingOption): node.buffer.Buffer<*>
 
 
 /**

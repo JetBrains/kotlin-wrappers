@@ -126,6 +126,17 @@ export default (node) => {
                     && node.parent.name.text === "TestError"
                 )
             )
+            || (
+                sourceFileName.endsWith("readline/promises.d.ts")
+                && (
+                    (
+                        node.name.text === "completer"
+                    )
+                    && node.parent
+                    && ts.isInterfaceDeclaration(node.parent)
+                    && node.parent.name.text === "ReadLineOptions"
+                )
+            )
         )
     ) {
         return "override"

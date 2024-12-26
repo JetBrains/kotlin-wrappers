@@ -15,7 +15,7 @@ package node.wasi
  *
  * ```js
  * import { readFile } from 'node:fs/promises';
- * import { WASI } from 'wasi';
+ * import { WASI } from 'node:wasi';
  * import { argv, env } from 'node:process';
  *
  * const wasi = new WASI({

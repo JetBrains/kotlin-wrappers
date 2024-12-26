@@ -10,6 +10,22 @@ sealed external interface TestContextAssert {
 
     /**
      * Identical to the `deepStrictEqual` function from the `node:assert` module, but bound to the test context.
+     *
+     * **Note:** as this method returns a type assertion, the context parameter in the callback signature must have a
+     * type annotation, otherwise an error will be raised by the TypeScript compiler:
+     * ```ts
+     * import { test, type TestContext } from 'node:test';
+     *
+     * // The test function's context parameter must have a type annotation.
+     * test('example', (t: TestContext) => {
+     *   t.assert.deepStrictEqual(actual, expected);
+     * });
+     *
+     * // Omitting the type annotation will result in a compilation error.
+     * test('example', t => {
+     *   t.assert.deepStrictEqual(actual, expected); // Error: 't' needs an explicit type annotation.
+     * });
+     * ```
      */
     var deepStrictEqual: js.function.JsFunction<*, *> /* typeof import("node:assert").deepStrictEqual */
 
@@ -40,6 +56,22 @@ sealed external interface TestContextAssert {
 
     /**
      * Identical to the `ifError` function from the `node:assert` module, but bound to the test context.
+     *
+     * **Note:** as this method returns a type assertion, the context parameter in the callback signature must have a
+     * type annotation, otherwise an error will be raised by the TypeScript compiler:
+     * ```ts
+     * import { test, type TestContext } from 'node:test';
+     *
+     * // The test function's context parameter must have a type annotation.
+     * test('example', (t: TestContext) => {
+     *   t.assert.ifError(err);
+     * });
+     *
+     * // Omitting the type annotation will result in a compilation error.
+     * test('example', t => {
+     *   t.assert.ifError(err); // Error: 't' needs an explicit type annotation.
+     * });
+     * ```
      */
     var ifError: js.function.JsFunction<*, *> /* typeof import("node:assert").ifError */
 
@@ -70,6 +102,22 @@ sealed external interface TestContextAssert {
 
     /**
      * Identical to the `ok` function from the `node:assert` module, but bound to the test context.
+     *
+     * **Note:** as this method returns a type assertion, the context parameter in the callback signature must have a
+     * type annotation, otherwise an error will be raised by the TypeScript compiler:
+     * ```ts
+     * import { test, type TestContext } from 'node:test';
+     *
+     * // The test function's context parameter must have a type annotation.
+     * test('example', (t: TestContext) => {
+     *   t.assert.ok(condition);
+     * });
+     *
+     * // Omitting the type annotation will result in a compilation error.
+     * test('example', t => {
+     *   t.assert.ok(condition)); // Error: 't' needs an explicit type annotation.
+     * });
+     * ```
      */
     var ok: js.function.JsFunction<*, *> /* typeof import("node:assert").ok */
 
@@ -80,6 +128,22 @@ sealed external interface TestContextAssert {
 
     /**
      * Identical to the `strictEqual` function from the `node:assert` module, but bound to the test context.
+     *
+     * **Note:** as this method returns a type assertion, the context parameter in the callback signature must have a
+     * type annotation, otherwise an error will be raised by the TypeScript compiler:
+     * ```ts
+     * import { test, type TestContext } from 'node:test';
+     *
+     * // The test function's context parameter must have a type annotation.
+     * test('example', (t: TestContext) => {
+     *   t.assert.strictEqual(actual, expected);
+     * });
+     *
+     * // Omitting the type annotation will result in a compilation error.
+     * test('example', t => {
+     *   t.assert.strictEqual(actual, expected); // Error: 't' needs an explicit type annotation.
+     * });
+     * ```
      */
     var strictEqual: js.function.JsFunction<*, *> /* typeof import("node:assert").strictEqual */
 

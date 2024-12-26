@@ -22,7 +22,7 @@ external fun crc32(data: String, value: Number = definedExternally): Double
  * @returns A 32-bit unsigned integer containing the checksum.
  * @since v22.2.0
  */
-external fun crc32(data: node.buffer.Buffer, value: Number = definedExternally): Double
+external fun crc32(data: node.buffer.Buffer<*>, value: Number = definedExternally): Double
 
 /**
  * Computes a 32-bit [Cyclic Redundancy Check](https://en.wikipedia.org/wiki/Cyclic_redundancy_check) checksum of `data`.

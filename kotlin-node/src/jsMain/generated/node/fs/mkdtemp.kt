@@ -33,7 +33,7 @@ package node.fs
  * The `fs.mkdtemp()` method will append the six randomly selected characters
  * directly to the `prefix` string. For instance, given a directory `/tmp`, if the
  * intention is to create a temporary directory _within_`/tmp`, the `prefix`must end with a trailing platform-specific path separator
- * (`require('node:path').sep`).
+ * (`import { sep } from 'node:path'`).
  *
  * ```js
  * import { tmpdir } from 'node:os';
@@ -77,7 +77,7 @@ external fun mkdtemp(
 external fun mkdtemp(
     prefix: String,
     options: String, /* "buffer" */
-    callback: (err: node.ErrnoException?, folder: node.buffer.Buffer) -> Unit,
+    callback: (err: node.ErrnoException?, folder: node.buffer.Buffer<*>) -> Unit,
 ): Unit
 
 /**
@@ -88,7 +88,7 @@ external fun mkdtemp(
 external fun mkdtemp(
     prefix: String,
     options: MkdtempOptions,
-    callback: (err: node.ErrnoException?, folder: node.buffer.Buffer) -> Unit,
+    callback: (err: node.ErrnoException?, folder: node.buffer.Buffer<*>) -> Unit,
 ): Unit
 
 /**

@@ -27,7 +27,7 @@ package node.readline
  * implement a small command-line interface:
  *
  * ```js
- * const readline = require('node:readline');
+ * import readline from 'node:readline';
  * const rl = readline.createInterface({
  *   input: process.stdin,
  *   output: process.stdout,
@@ -59,8 +59,8 @@ package node.readline
  * well as a `for await...of` loop:
  *
  * ```js
- * const fs = require('node:fs');
- * const readline = require('node:readline');
+ * import fs from 'node:fs';
+ * import readline from 'node:readline';
  *
  * async function processLineByLine() {
  *   const fileStream = fs.createReadStream('input.txt');
@@ -84,8 +84,8 @@ package node.readline
  * Alternatively, one could use the `'line'` event:
  *
  * ```js
- * const fs = require('node:fs');
- * const readline = require('node:readline');
+ * import fs from 'node:fs';
+ * import readline from 'node:readline';
  *
  * const rl = readline.createInterface({
  *   input: fs.createReadStream('sample.txt'),
@@ -100,9 +100,9 @@ package node.readline
  * Currently, `for await...of` loop can be a bit slower. If `async` / `await` flow and speed are both essential, a mixed approach can be applied:
  *
  * ```js
- * const { once } = require('node:events');
- * const { createReadStream } = require('node:fs');
- * const { createInterface } = require('node:readline');
+ * import { once } from 'node:events';
+ * import { createReadStream } from 'node:fs';
+ * import { createInterface } from 'node:readline';
  *
  * (async function processLineByLine() {
  *   try {
@@ -125,4 +125,4 @@ package node.readline
  * ```
  * @since v0.7.7
  */
-external fun emitKeypressEvents(stream: node.ReadableStream, readlineInterface: Interface = definedExternally): Unit
+external fun emitKeypressEvents(stream: node.ReadableStream, readlineInterface: _Interface = definedExternally): Unit

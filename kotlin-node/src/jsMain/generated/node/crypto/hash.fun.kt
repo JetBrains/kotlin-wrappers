@@ -13,8 +13,8 @@ package node.crypto
  * Example:
  *
  * ```js
- * const crypto = require('node:crypto');
- * const { Buffer } = require('node:buffer');
+ * import crypto from 'node:crypto';
+ * import { Buffer } from 'node:buffer';
  *
  * // Hashing a string and return the result as a hex-encoded string.
  * const string = 'Node.js';
@@ -34,6 +34,6 @@ package node.crypto
  */
 external fun hash(algorithm: String, data: BinaryLike, outputEncoding: BinaryToTextEncoding = definedExternally): String
 
-external fun hash(algorithm: String, data: BinaryLike, outputEncoding: String /* "buffer" */): node.buffer.Buffer
+external fun hash(algorithm: String, data: BinaryLike, outputEncoding: String /* "buffer" */): node.buffer.Buffer<*>
 
 external fun hash(algorithm: String, data: BinaryLike): Any /* string | Buffer */

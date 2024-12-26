@@ -525,6 +525,16 @@ external class Session : EventEmitter {
     ): Promise<js.core.Void>
 
     /**
+     * Disables network tracking, prevents network events from being sent to the client.
+     */
+    fun post(method: SessionMethod.NETWORK_DISABLE): Promise<js.core.Void>
+
+    /**
+     * Enables network tracking, network events will now be delivered to the client.
+     */
+    fun post(method: SessionMethod.NETWORK_ENABLE): Promise<js.core.Void>
+
+    /**
      * Enable the NodeRuntime events except by `NodeRuntime.waitingForDisconnect`.
      */
     fun post(method: SessionMethod.NODERUNTIME_ENABLE): Promise<js.core.Void>
@@ -633,6 +643,15 @@ external class Session : EventEmitter {
      * Notifies about a new protocol message received from the session
      * (session ID is provided in attachedToWorker notification).
      */
+
+    /**
+     * Fired when page is about to send HTTP request.
+     */
+
+    /**
+     * Fired when HTTP response is available.
+     */
+
 
     /**
      * This event is fired instead of `Runtime.executionContextDestroyed` when
@@ -744,6 +763,15 @@ external class Session : EventEmitter {
      */
 
     /**
+     * Fired when page is about to send HTTP request.
+     */
+
+    /**
+     * Fired when HTTP response is available.
+     */
+
+
+    /**
      * This event is fired instead of `Runtime.executionContextDestroyed` when
      * enabled.
      * It is fired when the Node process finished all code execution and is
@@ -846,6 +874,15 @@ external class Session : EventEmitter {
      * Notifies about a new protocol message received from the session
      * (session ID is provided in attachedToWorker notification).
      */
+
+    /**
+     * Fired when page is about to send HTTP request.
+     */
+
+    /**
+     * Fired when HTTP response is available.
+     */
+
 
     /**
      * This event is fired instead of `Runtime.executionContextDestroyed` when
@@ -952,6 +989,15 @@ external class Session : EventEmitter {
      */
 
     /**
+     * Fired when page is about to send HTTP request.
+     */
+
+    /**
+     * Fired when HTTP response is available.
+     */
+
+
+    /**
      * This event is fired instead of `Runtime.executionContextDestroyed` when
      * enabled.
      * It is fired when the Node process finished all code execution and is
@@ -1056,6 +1102,15 @@ external class Session : EventEmitter {
      */
 
     /**
+     * Fired when page is about to send HTTP request.
+     */
+
+    /**
+     * Fired when HTTP response is available.
+     */
+
+
+    /**
      * This event is fired instead of `Runtime.executionContextDestroyed` when
      * enabled.
      * It is fired when the Node process finished all code execution and is
@@ -1144,6 +1199,18 @@ external class Session : EventEmitter {
 
     @web.events.JsEvent("NodeWorker.receivedMessageFromWorker")
     val NodeWorkerReceivedMessageFromWorkerEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.nodeworker.ReceivedMessageFromWorkerEventDataType>>>
+
+    @web.events.JsEvent("Network.requestWillBeSent")
+    val NetworkRequestWillBeSentEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.network.RequestWillBeSentEventDataType>>>
+
+    @web.events.JsEvent("Network.responseReceived")
+    val NetworkResponseReceivedEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.network.ResponseReceivedEventDataType>>>
+
+    @web.events.JsEvent("Network.loadingFailed")
+    val NetworkLoadingFailedEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.network.LoadingFailedEventDataType>>>
+
+    @web.events.JsEvent("Network.loadingFinished")
+    val NetworkLoadingFinishedEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.network.LoadingFinishedEventDataType>>>
 
     @web.events.JsEvent("NodeRuntime.waitingForDisconnect")
     val NodeRuntimeWaitingForDisconnectEvent: node.events.EventInstance<js.array.JsTuple>

@@ -29,7 +29,7 @@ import js.promise.Promise
  * Example usage:
  *
  * ```js
- * const dns = require('node:dns');
+ * import dns from 'node:dns';
  * const dnsPromises = dns.promises;
  * const options = {
  *   family: 6,

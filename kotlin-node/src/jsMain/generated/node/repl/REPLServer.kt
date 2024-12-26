@@ -4,15 +4,15 @@
 
 package node.repl
 
+import node.readline._Interface
 import node.vm.Context
-import node.readline._Interface as Interface
 
 /**
  * Instances of `repl.REPLServer` are created using the {@link start} method
  * or directly using the JavaScript `new` keyword.
  *
  * ```js
- * const repl = require('node:repl');
+ * import repl from 'node:repl';
  *
  * const options = { useColors: true };
  *
@@ -21,7 +21,7 @@ import node.readline._Interface as Interface
  * ```
  * @since v0.1.91
  */
-external class REPLServer : Interface {
+external class REPLServer : _Interface {
     /**
      * The `vm.Context` provided to the `eval` function to be used for JavaScript
      * evaluation.
@@ -146,7 +146,7 @@ external class REPLServer : Interface {
      * The following example shows two new commands added to the REPL instance:
      *
      * ```js
-     * const repl = require('node:repl');
+     * import repl from 'node:repl';
      *
      * const replServer = repl.start({ prompt: '> ' });
      * replServer.defineCommand('sayhello', {
@@ -185,7 +185,7 @@ external class REPLServer : Interface {
      * The following example shows two new commands added to the REPL instance:
      *
      * ```js
-     * const repl = require('node:repl');
+     * import repl from 'node:repl';
      *
      * const replServer = repl.start({ prompt: '> ' });
      * replServer.defineCommand('sayhello', {

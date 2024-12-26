@@ -4,13 +4,16 @@
 
 package node.http2
 
+import node.http.IncomingMessage
+import node.http.ServerResponse
+
 /**
  * Create an HTTP/2 server session from an existing socket.
  * @param socket A Duplex Stream
  * @param options Any `{@link createServer}` options can be provided.
  * @since v20.12.0
  */
-external fun performServerHandshake(
+external fun <Http1Request : IncomingMessage, Http1Response : ServerResponse<*>, Http2Request : Http2ServerRequest, Http2Response : Http2ServerResponse<*>> performServerHandshake(
     socket: node.stream.Duplex,
-    options: ServerOptions = definedExternally,
-): ServerHttp2Session
+    options: ServerOptions<Http1Request, Http1Response, Http2Request, Http2Response> = definedExternally,
+): ServerHttp2Session<Http1Request, Http1Response, Http2Request, Http2Response>

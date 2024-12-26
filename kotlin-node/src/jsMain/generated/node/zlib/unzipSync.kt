@@ -8,4 +8,4 @@ package node.zlib
  * Decompress a chunk of data with `Unzip`.
  * @since v0.11.12
  */
-external fun unzipSync(buf: InputType, options: ZlibOptions = definedExternally): node.buffer.Buffer
+external fun unzipSync(buf: InputType, options: ZlibOptions = definedExternally): node.buffer.Buffer<*>

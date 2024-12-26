@@ -16,6 +16,6 @@ sealed external interface AssertionErrorOptions {
     var operator: String?
 
     /** If provided, the generated stack trace omits frames before this function. */
-// eslint-disable-next-line @typescript-eslint/ban-types
+// eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
     var stackStartFn: Function<*>?
 }

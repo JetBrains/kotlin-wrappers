@@ -29,10 +29,10 @@ package node.dgram
  */
 external fun createSocket(
     type: SocketType,
-    callback: (msg: node.buffer.Buffer, rinfo: RemoteInfo) -> Unit = definedExternally,
+    callback: (msg: node.buffer.Buffer<*>, rinfo: RemoteInfo) -> Unit = definedExternally,
 ): Socket
 
 external fun createSocket(
     options: SocketOptions,
-    callback: (msg: node.buffer.Buffer, rinfo: RemoteInfo) -> Unit = definedExternally,
+    callback: (msg: node.buffer.Buffer<*>, rinfo: RemoteInfo) -> Unit = definedExternally,
 ): Socket

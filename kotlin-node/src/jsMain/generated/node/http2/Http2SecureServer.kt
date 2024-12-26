@@ -2,8 +2,12 @@
 
 package node.http2
 
+import node.http.IncomingMessage
+import node.http.ServerResponse
+
 @Suppress("INTERFACE_WITH_SUPERCLASS")
-sealed external interface Http2SecureServer : node.tls.Server, HTTP2ServerCommon {
+sealed external interface Http2SecureServer<Http1Request : IncomingMessage, Http1Response : ServerResponse<*>, Http2Request : Http2ServerRequest, Http2Response : Http2ServerResponse<*>> :
+    node.tls.Server, HTTP2ServerCommon {
 
 
     override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
@@ -48,13 +52,13 @@ sealed external interface Http2SecureServer : node.tls.Server, HTTP2ServerCommon
     ): Unit /* this */
 
     @web.events.JsEvent("checkContinue")
-    val checkContinueEvent: node.events.EventInstance<js.array.JsTuple2<Http2ServerRequest, Http2ServerResponse>>
+    val checkContinueEvent: node.events.EventInstance<js.array.JsTuple2<Http2Request, Http2Response>>
 
     @web.events.JsEvent("request")
-    val requestEvent: node.events.EventInstance<js.array.JsTuple2<Http2ServerRequest, Http2ServerResponse>>
+    val requestEvent: node.events.EventInstance<js.array.JsTuple2<Http2Request, Http2Response>>
 
     @web.events.JsEvent("session")
-    val sessionEvent: node.events.EventInstance<js.array.JsTuple1<ServerHttp2Session>>
+    val sessionEvent: node.events.EventInstance<js.array.JsTuple1<ServerHttp2Session<Http1Request, Http1Response, Http2Request, Http2Response>>>
 
     @web.events.JsEvent("sessionError")
     val sessionErrorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>

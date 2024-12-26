@@ -12,4 +12,4 @@ package node.v8
  * larger than `buffer.constants.MAX_LENGTH`.
  * @since v8.0.0
  */
-external fun serialize(value: Any?): node.buffer.Buffer
+external fun serialize(value: Any?): node.buffer.Buffer<*>

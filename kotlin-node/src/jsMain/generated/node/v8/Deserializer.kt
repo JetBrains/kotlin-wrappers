@@ -62,5 +62,5 @@ open external class Deserializer {
      * must correspond to the length of the buffer that was passed to `serializer.writeRawBytes()`.
      * For use inside of a custom `deserializer._readHostObject()`.
      */
-    fun readRawBytes(length: Number): node.buffer.Buffer
+    fun readRawBytes(length: Number): node.buffer.Buffer<*>
 }

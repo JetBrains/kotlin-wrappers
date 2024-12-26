@@ -14,6 +14,7 @@ export default function (node, context, render) {
     if (
         !sourceFileName.endsWith("http.d.ts")
         && !sourceFileName.endsWith("https.d.ts")
+        && !sourceFileName.endsWith("http2.d.ts")
     ) return null
 
     if (
@@ -26,7 +27,15 @@ export default function (node, context, render) {
             )
             || (
                 ts.isInterfaceDeclaration(node.parent)
-                && node.parent.name.text === "ServerOptions"
+                && (
+                    node.parent.name.text === "ServerOptions"
+                    || node.parent.name.text === "SecureServerOptions"
+                    || node.parent.name.text === "Http2Server"
+                    || node.parent.name.text === "Http2SecureServer"
+                    || node.parent.name.text === "ServerHttp2Session"
+                    || node.parent.name.text === "ServerSessionOptions"
+                    || node.parent.name.text === "SecureServerSessionOptions"
+                )
             )
             || (
                 ts.isTypeAliasDeclaration(node.parent)
@@ -34,7 +43,9 @@ export default function (node, context, render) {
             )
             || (
                 ts.isFunctionDeclaration(node.parent)
-                && node.parent.name?.text === "createServer"
+                || node.parent.name?.text === "createServer"
+                || node.parent.name?.text === "createSecureServer"
+                || node.parent.name?.text === "performServerHandshake"
             )
         )
     ) {
@@ -42,8 +53,24 @@ export default function (node, context, render) {
             return `Request : IncomingMessage`
         }
 
+        if (node.name.text === "Http1Request") {
+            return `Http1Request : IncomingMessage`
+        }
+
+        if (node.name.text === "Http2Request") {
+            return `Http2Request : Http2ServerRequest`
+        }
+
         if (node.name.text === "Response") {
             return `Response : ServerResponse<*>`
+        }
+
+        if (node.name.text === "Http1Response") {
+            return `Http1Response : ServerResponse<*>`
+        }
+
+        if (node.name.text === "Http2Response") {
+            return `Http2Response : Http2ServerResponse<*>`
         }
     }
 
@@ -81,7 +108,12 @@ export default function (node, context, render) {
         && ts.isIdentifier(node.typeName)
         && (
             node.typeName.text === "Request"
+            || node.typeName.text === "Http1Request"
+            || node.typeName.text === "Http2Request"
+
             || node.typeName.text === "Response"
+            || node.typeName.text === "Http1Response"
+            || node.typeName.text === "Http2Response"
         )
     ) {
         if (
@@ -92,20 +124,34 @@ export default function (node, context, render) {
                     ts.isIdentifier(node.parent.typeName)
                     && (
                         node.parent.typeName.text === "InstanceType"
+
                         || node.parent.typeName.text === "Server"
                         || node.parent.typeName.text === "ServerOptions"
                         || node.parent.typeName.text === "RequestListener"
+
+                        || node.parent.typeName.text === "Http2Server"
+                        || node.parent.typeName.text === "ServerHttp2Session"
                     )
                 )
                 || (
                     ts.isQualifiedName(node.parent.typeName)
                     && (
-                        node.parent.typeName.right.text === "InstanceType"
-                        || node.parent.typeName.right.text === "Server"
-                        || node.parent.typeName.right.text === "ServerOptions"
+                        node.parent.typeName.right.text === "ServerOptions"
                         || node.parent.typeName.right.text === "RequestListener"
                     )
                 )
+            )
+        ) {
+            return null
+        }
+
+        if (
+            node.parent
+            && ts.isExpressionWithTypeArguments(node.parent)
+            && ts.isIdentifier(node.parent.expression)
+            && (
+                node.parent.expression.text === "ServerSessionOptions"
+                || node.parent.expression.text === "SecureServerSessionOptions"
             )
         ) {
             return null
@@ -130,7 +176,15 @@ export default function (node, context, render) {
                 )
                 || (
                     ts.isInterfaceDeclaration(typeParameterDeclaration.parent)
-                    && typeParameterDeclaration.parent.name.text === "ServerOptions"
+                    && (
+                        typeParameterDeclaration.parent.name.text === "ServerOptions"
+                        || typeParameterDeclaration.parent.name.text === "SecureServerOptions"
+                        || typeParameterDeclaration.parent.name.text === "Http2Server"
+                        || typeParameterDeclaration.parent.name.text === "Http2SecureServer"
+                        || typeParameterDeclaration.parent.name.text === "ServerHttp2Session"
+                        || typeParameterDeclaration.parent.name.text === "ServerSessionOptions"
+                        || typeParameterDeclaration.parent.name.text === "SecureServerSessionOptions"
+                    )
                 )
                 || (
                     ts.isTypeAliasDeclaration(typeParameterDeclaration.parent)

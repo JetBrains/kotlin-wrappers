@@ -16,7 +16,7 @@ package node.v8
  *
  * ```js
  * // Print GC events to stdout for one minute.
- * const v8 = require('node:v8');
+ * import v8 from 'node:v8';
  * v8.setFlagsFromString('--trace_gc');
  * setTimeout(() => { v8.setFlagsFromString('--notrace_gc'); }, 60e3);
  * ```

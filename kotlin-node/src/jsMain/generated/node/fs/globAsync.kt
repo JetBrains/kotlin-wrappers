@@ -28,12 +28,9 @@ external fun glob(
     opt: GlobOptionsWithoutFileTypes,
 ): js.iterable.AsyncIterator<String>
 
-external fun glob(
-    pattern: String,
-    opt: GlobOptions,
-): Any /* AsyncIterableIterator<Dirent> | AsyncIterableIterator<string> */
+external fun glob(pattern: String, opt: GlobOptions): js.iterable.AsyncIterator<Any /* Dirent | string */>
 
 external fun glob(
     pattern: js.array.ReadonlyArray<String>,
     opt: GlobOptions,
-): Any /* AsyncIterableIterator<Dirent> | AsyncIterableIterator<string> */
+): js.iterable.AsyncIterator<Any /* Dirent | string */>

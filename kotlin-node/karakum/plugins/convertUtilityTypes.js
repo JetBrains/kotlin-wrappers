@@ -18,6 +18,7 @@ export default function (node, context, render) {
         && ts.isIdentifier(node.expression)
         && (
             node.expression.text === "Partial"
+            || node.expression.text === "Omit"
         )
     ) {
         return render(node.typeArguments[0])

@@ -10,7 +10,7 @@ package node.repl
  * If `options` is a string, then it specifies the input prompt:
  *
  * ```js
- * const repl = require('node:repl');
+ * import repl from 'node:repl';
  *
  * // a Unix style prompt
  * repl.start('$ ');
@@ -25,7 +25,7 @@ external fun start(): REPLServer
  * If `options` is a string, then it specifies the input prompt:
  *
  * ```js
- * const repl = require('node:repl');
+ * import repl from 'node:repl';
  *
  * // a Unix style prompt
  * repl.start('$ ');
@@ -40,7 +40,7 @@ external fun start(options: String = definedExternally): REPLServer
  * If `options` is a string, then it specifies the input prompt:
  *
  * ```js
- * const repl = require('node:repl');
+ * import repl from 'node:repl';
  *
  * // a Unix style prompt
  * repl.start('$ ');

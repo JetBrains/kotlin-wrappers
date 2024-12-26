@@ -4,9 +4,6 @@
 
 package node.test
 
-
-external val mock: MockTracker
-
 /**
  * Only available through the [--experimental-test-snapshots](https://nodejs.org/api/cli.html#--experimental-test-snapshots) flag.
  * @since v22.3.0

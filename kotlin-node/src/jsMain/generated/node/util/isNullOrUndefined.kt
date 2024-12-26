@@ -9,7 +9,7 @@ package node.util
  * returns `false`.
  *
  * ```js
- * const util = require('node:util');
+ * import util from 'node:util';
  *
  * util.isNullOrUndefined(0);
  * // Returns: false

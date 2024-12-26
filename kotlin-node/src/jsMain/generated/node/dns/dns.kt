@@ -15,7 +15,7 @@ package node.dns
  * system do, use {@link lookup}.
  *
  * ```js
- * const dns = require('node:dns');
+ * import dns from 'node:dns';
  *
  * dns.lookup('example.org', (err, address, family) => {
  *   console.log('address: %j family: IPv%s', address, family);
@@ -29,7 +29,7 @@ package node.dns
  * DNS queries, bypassing other name-resolution facilities.
  *
  * ```js
- * const dns = require('node:dns');
+ * import dns from 'node:dns';
  *
  * dns.resolve4('archive.org', (err, addresses) => {
  *   if (err) throw err;

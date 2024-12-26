@@ -44,7 +44,8 @@ sealed external interface Http2Session : EventEmitter {
     val encrypted: Boolean?
 
     /**
-     * A prototype-less object describing the current local settings of this `Http2Session`. The local settings are local to _this_`Http2Session` instance.
+     * A prototype-less object describing the current local settings of this `Http2Session`.
+     * The local settings are local to _this_`Http2Session` instance.
      * @since v8.4.0
      */
     val localSettings: Settings
@@ -61,13 +62,15 @@ sealed external interface Http2Session : EventEmitter {
 
     /**
      * Indicates whether the `Http2Session` is currently waiting for acknowledgment of
-     * a sent `SETTINGS` frame. Will be `true` after calling the `http2session.settings()` method. Will be `false` once all sent `SETTINGS` frames have been acknowledged.
+     * a sent `SETTINGS` frame. Will be `true` after calling the `http2session.settings()` method.
+     * Will be `false` once all sent `SETTINGS` frames have been acknowledged.
      * @since v8.4.0
      */
     val pendingSettingsAck: Boolean
 
     /**
-     * A prototype-less object describing the current remote settings of this`Http2Session`. The remote settings are set by the _connected_ HTTP/2 peer.
+     * A prototype-less object describing the current remote settings of this`Http2Session`.
+     * The remote settings are set by the _connected_ HTTP/2 peer.
      * @since v8.4.0
      */
     val remoteSettings: Settings
@@ -166,10 +169,10 @@ sealed external interface Http2Session : EventEmitter {
      * @since v8.9.3
      * @param payload Optional ping payload.
      */
-    fun ping(callback: (err: js.errors.JsError?, duration: Double, payload: node.buffer.Buffer) -> Unit): Boolean
+    fun ping(callback: (err: js.errors.JsError?, duration: Double, payload: node.buffer.Buffer<*>) -> Unit): Boolean
     fun ping(
         payload: js.buffer.ArrayBufferView<*>,
-        callback: (err: js.errors.JsError?, duration: Double, payload: node.buffer.Buffer) -> Unit,
+        callback: (err: js.errors.JsError?, duration: Double, payload: node.buffer.Buffer<*>) -> Unit,
     ): Boolean
 
     /**
@@ -184,7 +187,7 @@ sealed external interface Http2Session : EventEmitter {
      * the delta.
      *
      * ```js
-     * const http2 = require('node:http2');
+     * import http2 from 'node:http2';
      *
      * const server = http2.createServer();
      * const expectedWindowSize = 2 ** 20;
@@ -275,7 +278,7 @@ sealed external interface Http2Session : EventEmitter {
     val frameErrorEvent: node.events.EventInstance<js.array.JsTuple3<Double, Double, Double>>
 
     @web.events.JsEvent("goaway")
-    val goawayEvent: node.events.EventInstance<js.array.JsTuple3<Double, Double, node.buffer.Buffer>>
+    val goawayEvent: node.events.EventInstance<js.array.JsTuple3<Double, Double, node.buffer.Buffer<*>>>
 
     @web.events.JsEvent("localSettings")
     val localSettingsEvent: node.events.EventInstance<js.array.JsTuple1<Settings>>

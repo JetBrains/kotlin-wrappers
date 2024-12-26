@@ -84,7 +84,7 @@ external class GCProfiler {
      * Here's an example.
      *
      * ```js
-     * const { GCProfiler } = require('v8');
+     * import { GCProfiler } from 'node:v8';
      * const profiler = new GCProfiler();
      * profiler.start();
      * setTimeout(() => {

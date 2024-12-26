@@ -154,10 +154,10 @@ sealed external interface Performance {
      * A `PerformanceObserver` must be subscribed to the `'function'` event type in order for the timing details to be accessed.
      *
      * ```js
-     * const {
+     * import {
      *   performance,
      *   PerformanceObserver,
-     * } = require('node:perf_hooks');
+     * } from 'node:perf_hooks';
      *
      * function someFunction() {
      *   console.log('hello world');

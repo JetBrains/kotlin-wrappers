@@ -39,12 +39,6 @@ external class KeyObject {
     var asymmetricKeyType: KeyType?
 
     /**
-     * For asymmetric keys, this property represents the size of the embedded key in
-     * bytes. This property is `undefined` for symmetric keys.
-     */
-    var asymmetricKeySize: Double?
-
-    /**
      * This property exists only on asymmetric keys. Depending on the type of the key,
      * this object contains information about the key. None of the information obtained
      * through this property can be used to uniquely identify a key or to compromise
@@ -58,7 +52,7 @@ external class KeyObject {
      * @since v15.7.0
      */
     var asymmetricKeyDetails: AsymmetricKeyDetails?
-    fun export(options: KeyExportOptions<KeyFormat.der> = definedExternally): node.buffer.Buffer
+    fun export(options: KeyExportOptions<KeyFormat.der> = definedExternally): node.buffer.Buffer<*>
     fun export(options: JwkKeyExportOptions = definedExternally): JsonWebKey
 
     /**
@@ -75,6 +69,46 @@ external class KeyObject {
      * @since v11.6.0
      */
     var symmetricKeySize: Double?
+
+    /**
+     * Converts a `KeyObject` instance to a `CryptoKey`.
+     * @since 22.10.0
+     */
+    fun toCryptoKey(
+        algorithm: web.crypto.AlgorithmIdentifier,
+        extractable: Boolean,
+        keyUsages: js.array.ReadonlyArray<web.crypto.KeyUsage>,
+    ): web.crypto.CryptoKey
+
+    /**
+     * Converts a `KeyObject` instance to a `CryptoKey`.
+     * @since 22.10.0
+     */
+    fun toCryptoKey(
+        algorithm: web.crypto.RsaHashedImportParams,
+        extractable: Boolean,
+        keyUsages: js.array.ReadonlyArray<web.crypto.KeyUsage>,
+    ): web.crypto.CryptoKey
+
+    /**
+     * Converts a `KeyObject` instance to a `CryptoKey`.
+     * @since 22.10.0
+     */
+    fun toCryptoKey(
+        algorithm: web.crypto.EcKeyImportParams,
+        extractable: Boolean,
+        keyUsages: js.array.ReadonlyArray<web.crypto.KeyUsage>,
+    ): web.crypto.CryptoKey
+
+    /**
+     * Converts a `KeyObject` instance to a `CryptoKey`.
+     * @since 22.10.0
+     */
+    fun toCryptoKey(
+        algorithm: web.crypto.HmacImportParams,
+        extractable: Boolean,
+        keyUsages: js.array.ReadonlyArray<web.crypto.KeyUsage>,
+    ): web.crypto.CryptoKey
 
     /**
      * Depending on the type of this `KeyObject`, this property is either`'secret'` for secret (symmetric) keys, `'public'` for public (asymmetric) keys

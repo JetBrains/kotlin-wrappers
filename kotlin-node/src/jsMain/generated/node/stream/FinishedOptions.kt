@@ -5,7 +5,7 @@ package node.stream
 import web.abort.Abortable
 
 @js.objects.JsPlainObject
-sealed external interface FinishedOptions : Abortable {
+sealed external interface _FinishedOptions : Abortable {
     var error: Boolean?
     var readable: Boolean?
     var writable: Boolean?

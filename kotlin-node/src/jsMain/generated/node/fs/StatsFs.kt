@@ -4,7 +4,6 @@
 
 package node.fs
 
-
 /**
  * Provides information about a mounted file system.
  *

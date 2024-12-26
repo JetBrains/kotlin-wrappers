@@ -16,7 +16,7 @@ package node.perfHooks
  * * [Resource Timing](https://www.w3.org/TR/resource-timing-2/)
  *
  * ```js
- * const { PerformanceObserver, performance } = require('node:perf_hooks');
+ * import { PerformanceObserver, performance } from 'node:perf_hooks';
  *
  * const obs = new PerformanceObserver((items) => {
  *   console.log(items.getEntries()[0].duration);

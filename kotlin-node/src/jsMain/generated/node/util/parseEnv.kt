@@ -9,7 +9,7 @@ package node.util
  * Given an example `.env` file:
  *
  * ```js
- * const { parseEnv } = require('node:util');
+ * import { parseEnv } from 'node:util';
  *
  * parseEnv('HELLO=world\nHELLO=oh my\n');
  * // Returns: { HELLO: 'oh my' }

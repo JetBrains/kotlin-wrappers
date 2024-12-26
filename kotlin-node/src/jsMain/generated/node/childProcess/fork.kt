@@ -42,7 +42,7 @@ import web.url.URL
  *     console.log(`Hello from ${process.argv[2]}!`);
  *   }, 1_000);
  * } else {
- *   const { fork } = require('node:child_process');
+ *   import { fork } from 'node:child_process';
  *   const controller = new AbortController();
  *   const { signal } = controller;
  *   const child = fork(__filename, ['child'], { signal });
@@ -93,7 +93,7 @@ external fun fork(modulePath: String, options: ForkOptions = definedExternally):
  *     console.log(`Hello from ${process.argv[2]}!`);
  *   }, 1_000);
  * } else {
- *   const { fork } = require('node:child_process');
+ *   import { fork } from 'node:child_process';
  *   const controller = new AbortController();
  *   const { signal } = controller;
  *   const child = fork(__filename, ['child'], { signal });
@@ -158,7 +158,7 @@ external fun fork(modulePath: String): ChildProcess
  *     console.log(`Hello from ${process.argv[2]}!`);
  *   }, 1_000);
  * } else {
- *   const { fork } = require('node:child_process');
+ *   import { fork } from 'node:child_process';
  *   const controller = new AbortController();
  *   const { signal } = controller;
  *   const child = fork(__filename, ['child'], { signal });

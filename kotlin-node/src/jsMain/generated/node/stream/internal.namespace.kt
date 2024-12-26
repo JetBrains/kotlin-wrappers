@@ -3,8 +3,3 @@
 @file:JsModule("node:stream")
 
 package node.stream
-
-
-external val promises: /* import("node:stream/promises") */ Any
-
-external val consumers: /* import("node:stream/consumers") */ Any

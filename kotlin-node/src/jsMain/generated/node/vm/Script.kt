@@ -25,7 +25,7 @@ external class Script {
      * The globals are contained in the `context` object.
      *
      * ```js
-     * const vm = require('node:vm');
+     * import vm from 'node:vm';
      *
      * const context = {
      *   animal: 'cat',
@@ -53,9 +53,16 @@ external class Script {
     fun runInContext(contextifiedObject: Context, options: RunningScriptOptions = definedExternally): Any?
 
     /**
-     * First contextifies the given `contextObject`, runs the compiled code contained
-     * by the `vm.Script` object within the created context, and returns the result.
-     * Running code does not have access to local scope.
+     * This method is a shortcut to `script.runInContext(vm.createContext(options), options)`.
+     * It does several things at once:
+     *
+     * 1. Creates a new context.
+     * 2. If `contextObject` is an object, contextifies it with the new context.
+     *    If  `contextObject` is undefined, creates a new object and contextifies it.
+     *    If `contextObject` is `vm.constants.DONT_CONTEXTIFY`, don't contextify anything.
+     * 3. Runs the compiled code contained by the `vm.Script` object within the created context. The code
+     *    does not have access to the scope in which this method is called.
+     * 4. Returns the result.
      *
      * The following example compiles code that sets a global variable, then executes
      * the code multiple times in different contexts. The globals are set on and
@@ -73,13 +80,107 @@ external class Script {
      *
      * console.log(contexts);
      * // Prints: [{ globalVar: 'set' }, { globalVar: 'set' }, { globalVar: 'set' }]
+     *
+     * // This would throw if the context is created from a contextified object.
+     * // vm.constants.DONT_CONTEXTIFY allows creating contexts with ordinary
+     * // global objects that can be frozen.
+     * const freezeScript = new vm.Script('Object.freeze(globalThis); globalThis;');
+     * const frozenContext = freezeScript.runInNewContext(vm.constants.DONT_CONTEXTIFY);
      * ```
      * @since v0.3.1
-     * @param contextObject An object that will be `contextified`. If `undefined`, a new object will be created.
+     * @param contextObject Either `vm.constants.DONT_CONTEXTIFY` or an object that will be contextified.
+     * If `undefined`, an empty contextified object will be created for backwards compatibility.
+     * @return the result of the very last statement executed in the script.
+     */
+    fun runInNewContext(): Any?
+
+    /**
+     * This method is a shortcut to `script.runInContext(vm.createContext(options), options)`.
+     * It does several things at once:
+     *
+     * 1. Creates a new context.
+     * 2. If `contextObject` is an object, contextifies it with the new context.
+     *    If  `contextObject` is undefined, creates a new object and contextifies it.
+     *    If `contextObject` is `vm.constants.DONT_CONTEXTIFY`, don't contextify anything.
+     * 3. Runs the compiled code contained by the `vm.Script` object within the created context. The code
+     *    does not have access to the scope in which this method is called.
+     * 4. Returns the result.
+     *
+     * The following example compiles code that sets a global variable, then executes
+     * the code multiple times in different contexts. The globals are set on and
+     * contained within each individual `context`.
+     *
+     * ```js
+     * const vm = require('node:vm');
+     *
+     * const script = new vm.Script('globalVar = "set"');
+     *
+     * const contexts = [{}, {}, {}];
+     * contexts.forEach((context) => {
+     *   script.runInNewContext(context);
+     * });
+     *
+     * console.log(contexts);
+     * // Prints: [{ globalVar: 'set' }, { globalVar: 'set' }, { globalVar: 'set' }]
+     *
+     * // This would throw if the context is created from a contextified object.
+     * // vm.constants.DONT_CONTEXTIFY allows creating contexts with ordinary
+     * // global objects that can be frozen.
+     * const freezeScript = new vm.Script('Object.freeze(globalThis); globalThis;');
+     * const frozenContext = freezeScript.runInNewContext(vm.constants.DONT_CONTEXTIFY);
+     * ```
+     * @since v0.3.1
+     * @param contextObject Either `vm.constants.DONT_CONTEXTIFY` or an object that will be contextified.
+     * If `undefined`, an empty contextified object will be created for backwards compatibility.
      * @return the result of the very last statement executed in the script.
      */
     fun runInNewContext(
         contextObject: Context = definedExternally,
+        options: RunningScriptInNewContextOptions = definedExternally,
+    ): Any?
+
+    /**
+     * This method is a shortcut to `script.runInContext(vm.createContext(options), options)`.
+     * It does several things at once:
+     *
+     * 1. Creates a new context.
+     * 2. If `contextObject` is an object, contextifies it with the new context.
+     *    If  `contextObject` is undefined, creates a new object and contextifies it.
+     *    If `contextObject` is `vm.constants.DONT_CONTEXTIFY`, don't contextify anything.
+     * 3. Runs the compiled code contained by the `vm.Script` object within the created context. The code
+     *    does not have access to the scope in which this method is called.
+     * 4. Returns the result.
+     *
+     * The following example compiles code that sets a global variable, then executes
+     * the code multiple times in different contexts. The globals are set on and
+     * contained within each individual `context`.
+     *
+     * ```js
+     * const vm = require('node:vm');
+     *
+     * const script = new vm.Script('globalVar = "set"');
+     *
+     * const contexts = [{}, {}, {}];
+     * contexts.forEach((context) => {
+     *   script.runInNewContext(context);
+     * });
+     *
+     * console.log(contexts);
+     * // Prints: [{ globalVar: 'set' }, { globalVar: 'set' }, { globalVar: 'set' }]
+     *
+     * // This would throw if the context is created from a contextified object.
+     * // vm.constants.DONT_CONTEXTIFY allows creating contexts with ordinary
+     * // global objects that can be frozen.
+     * const freezeScript = new vm.Script('Object.freeze(globalThis); globalThis;');
+     * const frozenContext = freezeScript.runInNewContext(vm.constants.DONT_CONTEXTIFY);
+     * ```
+     * @since v0.3.1
+     * @param contextObject Either `vm.constants.DONT_CONTEXTIFY` or an object that will be contextified.
+     * If `undefined`, an empty contextified object will be created for backwards compatibility.
+     * @return the result of the very last statement executed in the script.
+     */
+    fun runInNewContext(
+        contextObject: Double = definedExternally,
         options: RunningScriptInNewContextOptions = definedExternally,
     ): Any?
 
@@ -91,7 +192,7 @@ external class Script {
      * executes that code multiple times:
      *
      * ```js
-     * const vm = require('node:vm');
+     * import vm from 'node:vm';
      *
      * global.globalVar = 0;
      *
@@ -144,7 +245,7 @@ external class Script {
      * ```
      * @since v10.6.0
      */
-    fun createCachedData(): node.buffer.Buffer
+    fun createCachedData(): node.buffer.Buffer<*>
 
     /** @deprecated in favor of `script.createCachedData()` */
     var cachedDataProduced: Boolean?
@@ -156,7 +257,7 @@ external class Script {
      * @since v5.7.0
      */
     var cachedDataRejected: Boolean?
-    var cachedData: node.buffer.Buffer?
+    var cachedData: node.buffer.Buffer<*>?
 
     /**
      * When the script is compiled from a source that contains a source map magic

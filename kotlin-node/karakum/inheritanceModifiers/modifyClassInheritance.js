@@ -31,8 +31,16 @@ export default (node) => {
                 && (
                     node.name.text === "IncomingMessage"
                     || node.name.text === "OutgoingMessage"
+                    || node.name.text === "ServerResponse"
                     || node.name.text === "Agent"
                     || node.name.text === "Server"
+                )
+            )
+            || (
+                sourceFileName.endsWith("http2.d.ts")
+                && (
+                    node.name.text === "Http2ServerRequest"
+                    || node.name.text === "Http2ServerResponse"
                 )
             )
             || (

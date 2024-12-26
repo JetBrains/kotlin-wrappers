@@ -2,4 +2,4 @@
 
 package node.readline
 
-typealias Completer = (line: String) -> CompleterResult
+typealias _Completer = (line: String) -> CompleterResult

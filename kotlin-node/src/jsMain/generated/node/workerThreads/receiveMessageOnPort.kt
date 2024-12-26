@@ -11,7 +11,7 @@ import web.messaging.MessagePort
  * that contains the message payload, corresponding to the oldest message in the `MessagePort`'s queue.
  *
  * ```js
- * const { MessageChannel, receiveMessageOnPort } = require('node:worker_threads');
+ * import { MessageChannel, receiveMessageOnPort } from 'node:worker_threads';
  * const { port1, port2 } = new MessageChannel();
  * port1.postMessage({ hello: 'world' });
  *

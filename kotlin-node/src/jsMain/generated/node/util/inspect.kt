@@ -30,7 +30,7 @@ package node.util
  * Circular references point to their anchor by using a reference index:
  *
  * ```js
- * const { inspect } = require('node:util');
+ * import { inspect } from 'node:util';
  *
  * const obj = {};
  * obj.a = [obj];
@@ -48,7 +48,7 @@ package node.util
  * The following example inspects all properties of the `util` object:
  *
  * ```js
- * const util = require('node:util');
+ * import util from 'node:util';
  *
  * console.log(util.inspect(util, { showHidden: true, depth: null }));
  * ```
@@ -56,7 +56,7 @@ package node.util
  * The following example highlights the effect of the `compact` option:
  *
  * ```js
- * const util = require('node:util');
+ * import util from 'node:util';
  *
  * const o = {
  *   a: [1, 2, [[
@@ -113,7 +113,7 @@ package node.util
  * with no remaining strong references may be garbage collected at any time.
  *
  * ```js
- * const { inspect } = require('node:util');
+ * import { inspect } from 'node:util';
  *
  * const obj = { a: 1 };
  * const obj2 = { b: 2 };
@@ -127,8 +127,8 @@ package node.util
  * impact the result of `util.inspect()`.
  *
  * ```js
- * const { inspect } = require('node:util');
- * const assert = require('node:assert');
+ * import { inspect } from 'node:util';
+ * import assert from 'node:assert';
  *
  * const o1 = {
  *   b: [2, 3, 1],
@@ -155,7 +155,7 @@ package node.util
  * numbers.
  *
  * ```js
- * const { inspect } = require('node:util');
+ * import { inspect } from 'node:util';
  *
  * const thousand = 1_000;
  * const million = 1_000_000;

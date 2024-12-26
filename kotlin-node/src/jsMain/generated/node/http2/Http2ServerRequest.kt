@@ -10,7 +10,7 @@ package node.http2
  * data.
  * @since v8.4.0
  */
-external class Http2ServerRequest : node.stream.Readable {
+open external class Http2ServerRequest : node.stream.Readable {
     constructor (
         stream: ServerHttp2Stream,
         headers: IncomingHttpHeaders,

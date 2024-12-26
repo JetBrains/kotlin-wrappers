@@ -416,7 +416,7 @@ open external class Socket : node.stream.Duplex {
     val connectionAttemptTimeoutEvent: node.events.EventInstance<js.array.JsTuple3<String, Double, Double>>
 
     @web.events.JsEvent("data")
-    override val dataEvent: node.events.EventInstance<js.array.JsTuple1<node.buffer.Buffer>>
+    override val dataEvent: node.events.EventInstance<js.array.JsTuple1<node.buffer.Buffer<*>>>
 
     @web.events.JsEvent("drain")
     override val drainEvent: node.events.EventInstance<js.array.JsTuple>

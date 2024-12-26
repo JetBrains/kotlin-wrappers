@@ -4,156 +4,115 @@ package node.process
 
 sealed external interface BuiltInModule {
     var assert: /* import("assert") */ Any
-
-    /* "node:assert": typeof import("node:assert"); */
-    /* "assert/strict": typeof import("assert/strict"); */
-    /* "node:assert/strict": typeof import("node:assert/strict"); */
+    var `node:assert`: /* import("node:assert") */ Any
+    var `assert/strict`: /* import("assert/strict") */ Any
+    var `node:assert/strict`: /* import("node:assert/strict") */ Any
     var async_hooks: /* import("async_hooks") */ Any
-
-    /* "node:async_hooks": typeof import("node:async_hooks"); */
+    var `node:async_hooks`: /* import("node:async_hooks") */ Any
     var buffer: /* import("buffer") */ Any
-
-    /* "node:buffer": typeof import("node:buffer"); */
+    var `node:buffer`: /* import("node:buffer") */ Any
     var child_process: /* import("child_process") */ Any
-
-    /* "node:child_process": typeof import("node:child_process"); */
+    var `node:child_process`: /* import("node:child_process") */ Any
     var cluster: /* import("cluster") */ Any
-
-    /* "node:cluster": typeof import("node:cluster"); */
+    var `node:cluster`: /* import("node:cluster") */ Any
     var console: /* import("console") */ Any
-
-    /* "node:console": typeof import("node:console"); */
+    var `node:console`: /* import("node:console") */ Any
     var constants: /* import("constants") */ Any
-
-    /* "node:constants": typeof import("node:constants"); */
+    var `node:constants`: /* import("node:constants") */ Any
     var crypto: /* import("crypto") */ Any
-
-    /* "node:crypto": typeof import("node:crypto"); */
+    var `node:crypto`: /* import("node:crypto") */ Any
     var dgram: /* import("dgram") */ Any
-
-    /* "node:dgram": typeof import("node:dgram"); */
+    var `node:dgram`: /* import("node:dgram") */ Any
     var diagnostics_channel: /* import("diagnostics_channel") */ Any
-
-    /* "node:diagnostics_channel": typeof import("node:diagnostics_channel"); */
+    var `node:diagnostics_channel`: /* import("node:diagnostics_channel") */ Any
     var dns: /* import("dns") */ Any
-
-    /* "node:dns": typeof import("node:dns"); */
-    /* "dns/promises": typeof import("dns/promises"); */
-    /* "node:dns/promises": typeof import("node:dns/promises"); */
+    var `node:dns`: /* import("node:dns") */ Any
+    var `dns/promises`: /* import("dns/promises") */ Any
+    var `node:dns/promises`: /* import("node:dns/promises") */ Any
     var domain: /* import("domain") */ Any
-
-    /* "node:domain": typeof import("node:domain"); */
+    var `node:domain`: /* import("node:domain") */ Any
     var events: /* import("events") */ Any
-
-    /* "node:events": typeof import("node:events"); */
+    var `node:events`: /* import("node:events") */ Any
     var fs: /* import("fs") */ Any
-
-    /* "node:fs": typeof import("node:fs"); */
-    /* "fs/promises": typeof import("fs/promises"); */
-    /* "node:fs/promises": typeof import("node:fs/promises"); */
+    var `node:fs`: /* import("node:fs") */ Any
+    var `fs/promises`: /* import("fs/promises") */ Any
+    var `node:fs/promises`: /* import("node:fs/promises") */ Any
     var http: /* import("http") */ Any
-
-    /* "node:http": typeof import("node:http"); */
+    var `node:http`: /* import("node:http") */ Any
     var http2: /* import("http2") */ Any
-
-    /* "node:http2": typeof import("node:http2"); */
+    var `node:http2`: /* import("node:http2") */ Any
     var https: /* import("https") */ Any
-
-    /* "node:https": typeof import("node:https"); */
+    var `node:https`: /* import("node:https") */ Any
     var inspector: /* import("inspector") */ Any
-
-    /* "node:inspector": typeof import("node:inspector"); */
-    /* "inspector/promises": typeof import("inspector/promises"); */
-    /* "node:inspector/promises": typeof import("node:inspector/promises"); */
+    var `node:inspector`: /* import("node:inspector") */ Any
+    var `inspector/promises`: /* import("inspector/promises") */ Any
+    var `node:inspector/promises`: /* import("node:inspector/promises") */ Any
     var module: /* import("module") */ Any
-
-    /* "node:module": typeof import("node:module"); */
+    var `node:module`: /* import("node:module") */ Any
     var net: /* import("net") */ Any
-
-    /* "node:net": typeof import("node:net"); */
+    var `node:net`: /* import("node:net") */ Any
     var os: /* import("os") */ Any
-
-    /* "node:os": typeof import("node:os"); */
+    var `node:os`: /* import("node:os") */ Any
     var path: /* import("path") */ Any
-
-    /* "node:path": typeof import("node:path"); */
-    /* "path/posix": typeof import("path/posix"); */
-    /* "node:path/posix": typeof import("node:path/posix"); */
-    /* "path/win32": typeof import("path/win32"); */
-    /* "node:path/win32": typeof import("node:path/win32"); */
+    var `node:path`: /* import("node:path") */ Any
+    var `path/posix`: /* import("path/posix") */ Any
+    var `node:path/posix`: /* import("node:path/posix") */ Any
+    var `path/win32`: /* import("path/win32") */ Any
+    var `node:path/win32`: /* import("node:path/win32") */ Any
     var perf_hooks: /* import("perf_hooks") */ Any
-
-    /* "node:perf_hooks": typeof import("node:perf_hooks"); */
+    var `node:perf_hooks`: /* import("node:perf_hooks") */ Any
     var process: /* import("process") */ Any
-
-    /* "node:process": typeof import("node:process"); */
+    var `node:process`: /* import("node:process") */ Any
     var punycode: /* import("punycode") */ Any
-
-    /* "node:punycode": typeof import("node:punycode"); */
+    var `node:punycode`: /* import("node:punycode") */ Any
     var querystring: /* import("querystring") */ Any
-
-    /* "node:querystring": typeof import("node:querystring"); */
+    var `node:querystring`: /* import("node:querystring") */ Any
     var readline: /* import("readline") */ Any
-
-    /* "node:readline": typeof import("node:readline"); */
-    /* "readline/promises": typeof import("readline/promises"); */
-    /* "node:readline/promises": typeof import("node:readline/promises"); */
+    var `node:readline`: /* import("node:readline") */ Any
+    var `readline/promises`: /* import("readline/promises") */ Any
+    var `node:readline/promises`: /* import("node:readline/promises") */ Any
     var repl: /* import("repl") */ Any
-
-    /* "node:repl": typeof import("node:repl"); */
-    /* "node:sea": typeof import("node:sea"); */
-    /* "node:sqlite": typeof import("node:sqlite"); */
+    var `node:repl`: /* import("node:repl") */ Any
+    var `node:sea`: /* import("node:sea") */ Any
+    var `node:sqlite`: /* import("node:sqlite") */ Any
     var stream: /* import("stream") */ Any
-
-    /* "node:stream": typeof import("node:stream"); */
-    /* "stream/consumers": typeof import("stream/consumers"); */
-    /* "node:stream/consumers": typeof import("node:stream/consumers"); */
-    /* "stream/promises": typeof import("stream/promises"); */
-    /* "node:stream/promises": typeof import("node:stream/promises"); */
-    /* "stream/web": typeof import("stream/web"); */
-    /* "node:stream/web": typeof import("node:stream/web"); */
+    var `node:stream`: /* import("node:stream") */ Any
+    var `stream/consumers`: /* import("stream/consumers") */ Any
+    var `node:stream/consumers`: /* import("node:stream/consumers") */ Any
+    var `stream/promises`: /* import("stream/promises") */ Any
+    var `node:stream/promises`: /* import("node:stream/promises") */ Any
+    var `stream/web`: /* import("stream/web") */ Any
+    var `node:stream/web`: /* import("node:stream/web") */ Any
     var string_decoder: /* import("string_decoder") */ Any
-
-    /* "node:string_decoder": typeof import("node:string_decoder"); */
-    /* "node:test": typeof import("node:test"); */
-    /* "node:test/reporters": typeof import("node:test/reporters"); */
+    var `node:string_decoder`: /* import("node:string_decoder") */ Any
+    var `node:test`: /* import("node:test") */ Any
+    var `node:test/reporters`: /* import("node:test/reporters") */ Any
     var timers: /* import("timers") */ Any
-
-    /* "node:timers": typeof import("node:timers"); */
-    /* "timers/promises": typeof import("timers/promises"); */
-    /* "node:timers/promises": typeof import("node:timers/promises"); */
+    var `node:timers`: /* import("node:timers") */ Any
+    var `timers/promises`: /* import("timers/promises") */ Any
+    var `node:timers/promises`: /* import("node:timers/promises") */ Any
     var tls: /* import("tls") */ Any
-
-    /* "node:tls": typeof import("node:tls"); */
+    var `node:tls`: /* import("node:tls") */ Any
     var trace_events: /* import("trace_events") */ Any
-
-    /* "node:trace_events": typeof import("node:trace_events"); */
+    var `node:trace_events`: /* import("node:trace_events") */ Any
     var tty: /* import("tty") */ Any
-
-    /* "node:tty": typeof import("node:tty"); */
+    var `node:tty`: /* import("node:tty") */ Any
     var url: /* import("url") */ Any
-
-    /* "node:url": typeof import("node:url"); */
+    var `node:url`: /* import("node:url") */ Any
     var util: /* import("util") */ Any
-
-    /* "node:util": typeof import("node:util"); */
+    var `node:util`: /* import("node:util") */ Any
     var sys: /* import("util") */ Any
-
-    /* "node:sys": typeof import("node:util"); */
-    /* "util/types": typeof import("util/types"); */
-    /* "node:util/types": typeof import("node:util/types"); */
+    var `node:sys`: /* import("node:util") */ Any
+    var `util/types`: /* import("util/types") */ Any
+    var `node:util/types`: /* import("node:util/types") */ Any
     var v8: /* import("v8") */ Any
-
-    /* "node:v8": typeof import("node:v8"); */
+    var `node:v8`: /* import("node:v8") */ Any
     var vm: /* import("vm") */ Any
-
-    /* "node:vm": typeof import("node:vm"); */
+    var `node:vm`: /* import("node:vm") */ Any
     var wasi: /* import("wasi") */ Any
-
-    /* "node:wasi": typeof import("node:wasi"); */
+    var `node:wasi`: /* import("node:wasi") */ Any
     var worker_threads: /* import("worker_threads") */ Any
-
-    /* "node:worker_threads": typeof import("node:worker_threads"); */
+    var `node:worker_threads`: /* import("node:worker_threads") */ Any
     var zlib: /* import("zlib") */ Any
-    /* "node:zlib": typeof import("node:zlib"); */
+    var `node:zlib`: /* import("node:zlib") */ Any
 }

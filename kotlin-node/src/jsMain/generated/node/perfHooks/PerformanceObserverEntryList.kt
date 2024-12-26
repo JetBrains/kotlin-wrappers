@@ -10,10 +10,10 @@ external class PerformanceObserverEntryList {
      * with respect to `performanceEntry.startTime`.
      *
      * ```js
-     * const {
+     * import {
      *   performance,
      *   PerformanceObserver,
-     * } = require('node:perf_hooks');
+     * } from 'node:perf_hooks';
      *
      * const obs = new PerformanceObserver((perfObserverList, observer) => {
      *   console.log(perfObserverList.getEntries());
@@ -54,10 +54,10 @@ external class PerformanceObserverEntryList {
      * equal to `name`, and optionally, whose `performanceEntry.entryType` is equal to`type`.
      *
      * ```js
-     * const {
+     * import {
      *   performance,
      *   PerformanceObserver,
-     * } = require('node:perf_hooks');
+     * } from 'node:perf_hooks';
      *
      * const obs = new PerformanceObserver((perfObserverList, observer) => {
      *   console.log(perfObserverList.getEntriesByName('meow'));
@@ -106,10 +106,10 @@ external class PerformanceObserverEntryList {
      * with respect to `performanceEntry.startTime` whose `performanceEntry.entryType` is equal to `type`.
      *
      * ```js
-     * const {
+     * import {
      *   performance,
      *   PerformanceObserver,
-     * } = require('node:perf_hooks');
+     * } from 'node:perf_hooks';
      *
      * const obs = new PerformanceObserver((perfObserverList, observer) => {
      *   console.log(perfObserverList.getEntriesByType('mark'));

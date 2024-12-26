@@ -17,13 +17,31 @@ export default function (node, context, render) {
         const symbol = typeChecker?.getSymbolAtLocation(node.typeName)
         if (!symbol) return null
 
-        const [declaration] = symbol.declarations ?? []
-        if (!declaration) return null
+        const declarations = symbol.declarations ?? []
 
-        const sourceFileName = declaration.getSourceFile()?.fileName ?? "generated.d.ts"
-        if (!sourceFileName.endsWith("buffer.d.ts")) return null
+        if (
+            declarations.some(declaration => {
+                const sourceFileName = declaration.getSourceFile()?.fileName ?? "generated.d.ts"
+                return sourceFileName.endsWith("buffer.d.ts")
+            })
+        ) {
+            let typeArguments = ""
 
-        return `node.buffer.${render(node)}`
+            if (node.typeName.text === "Buffer") {
+                if (!node.typeArguments) {
+                    typeArguments = "*"
+                } else {
+                    typeArguments = node.typeArguments
+                        .map(typeArgument => render(typeArgument))
+                        .filter(Boolean)
+                        .join(", ")
+                }
+            }
+
+            return `node.buffer.${render(node.typeName)}${karakum.ifPresent(typeArguments, it => `<${it}>`)}`
+        }
+
+        return null
     }
 
 

@@ -11,12 +11,12 @@ package node.workerThreads
  * automatically.
  *
  * ```js
- * const {
+ * import {
  *   Worker,
  *   isMainThread,
  *   setEnvironmentData,
  *   getEnvironmentData,
- * } = require('node:worker_threads');
+ * } from 'node:worker_threads';
  *
  * if (isMainThread) {
  *   setEnvironmentData('Hello', 'World!');

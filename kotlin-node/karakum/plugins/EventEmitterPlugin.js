@@ -86,7 +86,17 @@ export default {
             && ts.isIdentifier(node.typeName)
             && node.typeName.text === "Key"
         ) {
-            return "EventType<*, *>"
+            return "EventType"
+        }
+
+        if (
+            ts.isIntersectionTypeNode(node)
+            && node.types[1]
+            && ts.isTypeReferenceNode(node.types[1])
+            && ts.isIdentifier(node.types[1].typeName)
+            && node.types[1].typeName.text === "Key2"
+        ) {
+            return "EventType"
         }
 
         if (
@@ -97,7 +107,7 @@ export default {
                 || node.typeName.text === "Listener2"
             )
         ) {
-            return "Function<Unit>"
+            return "EventListener"
         }
 
         if (
@@ -144,7 +154,7 @@ export default {
                             ? "Promise<P>"
                             : "AsyncIterator<P>"
 
-                        return `fun <T : EventEmitter, P : JsTuple> ${name}(emitter: T, type: EventType<T, P>, options: StaticEventEmitterOptions = definedExternally)${karakum.ifPresent(enhancedReturnType, it => `: ${it}`)}`
+                        return `fun <P : JsTuple> ${name}(emitter: EventEmitter, type: EventType, options: StaticEventEmitterOptions = definedExternally)${karakum.ifPresent(enhancedReturnType, it => `: ${it}`)}`
                     }
 
                     if (
@@ -166,7 +176,7 @@ export default {
                         && ts.isQualifiedName(signature[0].type.typeName)
                         && signature[0].type.typeName.right.text === "EventEmitter"
                     ) {
-                        return `fun <T : EventEmitter> ${name}(emitter: T, type: EventType<T, *>)${karakum.ifPresent(returnType, it => `: ${it}`)}`
+                        return `fun ${name}(emitter: EventEmitter, type: EventType)${karakum.ifPresent(returnType, it => `: ${it}`)}`
                     }
 
                     if (
@@ -177,6 +187,7 @@ export default {
                         return `fun ${name}(emitter: EventTarget, type: web.events.EventType<*>)${karakum.ifPresent(returnType, it => `: ${it}`)}`
                     }
 
+                    // remove generics
                     return `fun ${name}(${parameters})${karakum.ifPresent(returnType, it => `: ${it}`)}`
                 }
             })
@@ -190,20 +201,13 @@ export default {
         ) {
             const name = next(node.name)
 
-            const isInternal =
-                isEventMethod(node)
-                || isEventListenerMethod(node)
-                || name === "emit"
-
             const returnType = node.type && next(node.type)
 
             return karakum.convertParameterDeclarations(node, context, next, {
                 strategy: "function",
                 template: parameters => {
-                    return `
-${isInternal ? `@JsName("${name}")` : ""}
-${isInternal ? 'internal ' : ""}fun ${isInternal ? `${name}Internal` : name}(${parameters})${karakum.ifPresent(returnType, it => `: ${it}`)}
-                    `
+                    // remove generics
+                    return `fun ${name}(${parameters})${karakum.ifPresent(returnType, it => `: ${it}`)}`
                 }
             })
         }
@@ -248,81 +252,6 @@ ${members}\n${companionObject}
     },
 
     generate(context, render) {
-        const declarations = []
-
-        const sourceFileName = this.eventEmitterClassNode.getSourceFile()?.fileName ?? "generated.d.ts"
-
-        const typeScriptService = context.lookupService(karakum.typeScriptServiceKey)
-        const commentService = context.lookupService(karakum.commentServiceKey)
-
-        const namespace = typeScriptService?.findClosest(this.eventEmitterClassNode, ts.isModuleDeclaration)
-
-        for (const member of this.eventEmitterInterfaceNode.members) {
-            const comment = (commentService?.renderLeadingComments(member) ?? "")
-                .replaceAll("@param eventName ", "@param type ")
-
-            if (isEventListenerMethod(member)) {
-                const name = render(member.name)
-
-                const isDefinedExternally = Boolean(member.parameters[1].questionToken)
-
-                declarations.push(
-                    {
-                        sourceFileName,
-                        namespace,
-                        fileName: `EventEmitter.ext.kt`,
-                        body: `
-${comment}
-fun <T : EventEmitter, P : JsTuple> T.${name}(type: EventType<T, P>, listener: (P) -> Unit${isDefinedExternally ? ` = undefined` : ""}) =
-    ${name}Internal(type, decorateListener(listener))
-                        `,
-                    }
-                )
-            }
-
-            if (isEventMethod(member)) {
-                const name = render(member.name)
-
-                const isDefinedExternally = Boolean(member.parameters[0].questionToken)
-
-                declarations.push(
-                    {
-                        sourceFileName,
-                        namespace,
-                        fileName: `EventEmitter.ext.kt`,
-                        body: `
-${comment}
-fun <T : EventEmitter> T.${name}(type: EventType<T, *>${isDefinedExternally ? ` = undefined` : ""}) =
-    ${name}Internal(type)
-                        `,
-                    }
-                )
-            }
-
-            if (
-                ts.isMethodSignature(member)
-                && ts.isIdentifier(member.name)
-                && member.name.text === "emit"
-            ) {
-                declarations.push(
-                    {
-                        sourceFileName,
-                        namespace,
-                        fileName: `EventEmitter.ext.kt`,
-                        body: `
-${comment}
-fun <T : EventEmitter, P : JsTuple> T.emit(type: EventType<T, P>, payload: P) =
-    emitInternal(type, args = payload.asArray())
-
-${comment}
-fun <T : EventEmitter> T.emit(type: EventType<T, JsTuple>) =
-    emitInternal(type)
-                        `,
-                    }
-                )
-            }
-        }
-
-        return karakum.generateDerivedDeclarations(declarations, context)
+        return []
     }
 }

@@ -50,7 +50,7 @@ external fun createPublicKey(key: String): KeyObject
  * and it will be impossible to extract the private key from the returned object.
  * @since v11.6.0
  */
-external fun createPublicKey(key: node.buffer.Buffer): KeyObject
+external fun createPublicKey(key: node.buffer.Buffer<*>): KeyObject
 
 /**
  * Creates and returns a new key object containing a public key. If `key` is a

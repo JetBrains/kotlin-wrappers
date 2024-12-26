@@ -12,7 +12,8 @@ import node.http.OutgoingHttpHeaders
  * passed as the second parameter to the `'request'` event.
  * @since v8.4.0
  */
-external class Http2ServerResponse : node.stream.Writable {
+open external class Http2ServerResponse<Request : Http2ServerRequest /* default is Http2ServerRequest */> :
+    node.stream.Writable {
     constructor (stream: ServerHttp2Stream)
 
     /**
@@ -86,7 +87,7 @@ external class Http2ServerResponse : node.stream.Writable {
      * A reference to the original HTTP2 `request` object.
      * @since v15.7.0
      */
-    val req: Http2ServerRequest
+    val req: Request
 
     /**
      * Returns a `Proxy` object that acts as a `net.Socket` (or `tls.TLSSocket`) but
@@ -105,7 +106,7 @@ external class Http2ServerResponse : node.stream.Writable {
      * All other interactions will be routed directly to the socket.
      *
      * ```js
-     * const http2 = require('node:http2');
+     * import http2 from 'node:http2';
      * const server = http2.createServer((req, res) => {
      *   const ip = req.socket.remoteAddress;
      *   const port = req.socket.remotePort;
@@ -543,7 +544,7 @@ external class Http2ServerResponse : node.stream.Writable {
      */
     fun createPushResponse(
         headers: OutgoingHttpHeaders,
-        callback: (err: js.errors.JsError?, res: Http2ServerResponse) -> Unit,
+        callback: (err: js.errors.JsError?, res: Http2ServerResponse<*>) -> Unit,
     ): Unit
 
 

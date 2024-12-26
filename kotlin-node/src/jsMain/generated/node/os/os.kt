@@ -9,7 +9,7 @@ package node.os
  * properties. It can be accessed using:
  *
  * ```js
- * const os = require('node:os');
+ * import os from 'node:os';
  * ```
  * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/os.js)
  */

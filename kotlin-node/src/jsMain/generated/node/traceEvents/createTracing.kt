@@ -8,7 +8,7 @@ package node.traceEvents
  * Creates and returns a `Tracing` object for the given set of `categories`.
  *
  * ```js
- * const trace_events = require('node:trace_events');
+ * import trace_events from 'node:trace_events';
  * const categories = ['node.perf', 'node.async_hooks'];
  * const tracing = trace_events.createTracing({ categories });
  * tracing.enable();

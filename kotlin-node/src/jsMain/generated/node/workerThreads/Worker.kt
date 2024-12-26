@@ -18,8 +18,8 @@ import web.url.URL
  * Notable differences inside a Worker environment are:
  *
  * * The `process.stdin`, `process.stdout`, and `process.stderr` streams may be redirected by the parent thread.
- * * The `require('node:worker_threads').isMainThread` property is set to `false`.
- * * The `require('node:worker_threads').parentPort` message port is available.
+ * * The `import { isMainThread } from 'node:worker_threads'` variable is set to `false`.
+ * * The `import { parentPort } from 'node:worker_threads'` message port is available.
  * * `process.exit()` does not stop the whole program, just the single thread,
  * and `process.abort()` is not available.
  * * `process.chdir()` and `process` methods that set group or user ids
@@ -54,10 +54,10 @@ import web.url.URL
  * the thread barrier.
  *
  * ```js
- * const assert = require('node:assert');
- * const {
+ * import assert from 'node:assert';
+ * import {
  *   Worker, MessageChannel, MessagePort, isMainThread, parentPort,
- * } = require('node:worker_threads');
+ * } from 'node:worker_threads';
  * if (isMainThread) {
  *   const worker = new Worker(__filename);
  *   const subChannel = new MessageChannel();
@@ -114,7 +114,7 @@ external class Worker : EventEmitter {
 
     /**
      * An integer identifier for the referenced thread. Inside the worker thread,
-     * it is available as `require('node:worker_threads').threadId`.
+     * it is available as `import { threadId } from 'node:worker_threads'`.
      * This value is unique for each `Worker` instance inside a single process.
      * @since v10.5.0
      */

@@ -31,7 +31,7 @@ import js.promise.Promise
  * The `fsPromises.mkdtemp()` method will append the six randomly selected
  * characters directly to the `prefix` string. For instance, given a directory `/tmp`, if the intention is to create a temporary directory _within_ `/tmp`, the `prefix` must end with a trailing
  * platform-specific path separator
- * (`require('node:path').sep`).
+ * (`import { sep } from 'node:path'`).
  * @since v10.0.0
  * @return Fulfills with a string containing the file system path of the newly created temporary directory.
  */
@@ -65,7 +65,7 @@ external fun mkdtempAsync(prefix: String): Promise<String>
  * The `fsPromises.mkdtemp()` method will append the six randomly selected
  * characters directly to the `prefix` string. For instance, given a directory `/tmp`, if the intention is to create a temporary directory _within_ `/tmp`, the `prefix` must end with a trailing
  * platform-specific path separator
- * (`require('node:path').sep`).
+ * (`import { sep } from 'node:path'`).
  * @since v10.0.0
  * @return Fulfills with a string containing the file system path of the newly created temporary directory.
  */
@@ -99,7 +99,7 @@ external fun mkdtempAsync(prefix: String, options: ObjectEncodingOptions? = defi
  * The `fsPromises.mkdtemp()` method will append the six randomly selected
  * characters directly to the `prefix` string. For instance, given a directory `/tmp`, if the intention is to create a temporary directory _within_ `/tmp`, the `prefix` must end with a trailing
  * platform-specific path separator
- * (`require('node:path').sep`).
+ * (`import { sep } from 'node:path'`).
  * @since v10.0.0
  * @return Fulfills with a string containing the file system path of the newly created temporary directory.
  */
@@ -115,7 +115,7 @@ external fun mkdtempAsync(prefix: String, options: node.buffer.BufferEncoding? =
  */
 
 @JsName("mkdtemp")
-external fun mkdtempAsync(prefix: String, options: BufferEncodingOption): Promise<node.buffer.Buffer>
+external fun mkdtempAsync(prefix: String, options: BufferEncodingOption): Promise<node.buffer.Buffer<*>>
 
 
 /**

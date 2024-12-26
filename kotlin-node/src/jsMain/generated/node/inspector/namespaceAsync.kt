@@ -6,5 +6,4 @@ package node.inspector
 
 /* import EventEmitter = require('node:events'); */
 
-
-/* export { Session, open, close, url, waitForDebugger, console, InspectorNotification, Schema, Runtime, Debugger, Console, Profiler, HeapProfiler, NodeTracing, NodeWorker, NodeRuntime, }; */
+/* export { Session, open, close, url, waitForDebugger, console, InspectorNotification, Schema, Runtime, Debugger, Console, Profiler, HeapProfiler, NodeTracing, NodeWorker, Network, NodeRuntime, }; */

@@ -2,6 +2,6 @@
 
 package node.net
 
-sealed external interface IpcSocketConnectOpts : ConnectOpts {
+sealed external interface IpcSocketConnectOpts {
     var path: String
 }

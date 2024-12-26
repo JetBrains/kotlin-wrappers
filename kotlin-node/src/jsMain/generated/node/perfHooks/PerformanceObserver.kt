@@ -22,10 +22,10 @@ external class PerformanceObserver : AsyncResource {
      * Subscribes the `PerformanceObserver` instance to notifications of new `PerformanceEntry` instances identified either by `options.entryTypes` or `options.type`:
      *
      * ```js
-     * const {
+     * import {
      *   performance,
      *   PerformanceObserver,
-     * } = require('node:perf_hooks');
+     * } from 'node:perf_hooks';
      *
      * const obs = new PerformanceObserver((list, observer) => {
      *   // Called once asynchronously. `list` contains three items.
@@ -43,10 +43,10 @@ external class PerformanceObserver : AsyncResource {
      * Subscribes the `PerformanceObserver` instance to notifications of new `PerformanceEntry` instances identified either by `options.entryTypes` or `options.type`:
      *
      * ```js
-     * const {
+     * import {
      *   performance,
      *   PerformanceObserver,
-     * } = require('node:perf_hooks');
+     * } from 'node:perf_hooks';
      *
      * const obs = new PerformanceObserver((list, observer) => {
      *   // Called once asynchronously. `list` contains three items.
