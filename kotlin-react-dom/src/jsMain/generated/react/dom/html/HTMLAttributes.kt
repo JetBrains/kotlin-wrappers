@@ -62,7 +62,6 @@ external interface HTMLAttributes<T : Element> :
     // Non-standard Attributes
     var autoCorrect: String?
     var autoSave: String?
-    var color: String?
     var itemProp: String?
     var itemScope: Boolean?
     var itemType: String?
