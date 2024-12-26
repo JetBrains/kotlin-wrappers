@@ -70,7 +70,17 @@ external interface HTMLAttributes<T : Element> :
     var results: String?
     var security: String?
     var unselectable: Unselectable?
+
+    // Popover API
+    var popover: String? /* "" | "auto" | "manual" */
+    var popoverTargetAction: String? /* "toggle" | "show" | "hide" */
+    var popoverTarget: String?
 // Living Standard
+    /**
+     * @see https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/inert
+     */
+    var inert: Boolean?
+
     /**
      * Hints at the type of data that might be entered by the user while editing the element or its contents
      * @see {@link https://html.spec.whatwg.org/multipage/interaction.html#input-modalities:-the-inputmode-attribute}
