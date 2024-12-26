@@ -12,14 +12,14 @@ external interface SafeStorage {
      *
      * This function will throw an error if decryption fails.
      */
-    fun decryptString(encrypted: Buffer): String
+    fun decryptString(encrypted: Buffer<*>): String
 
     /**
      * An array of bytes representing the encrypted string.
      *
      * This function will throw an error if encryption fails.
      */
-    fun encryptString(plainText: String): Buffer
+    fun encryptString(plainText: String): Buffer<*>
 
     /**
      * User friendly name of the password manager selected on Linux.

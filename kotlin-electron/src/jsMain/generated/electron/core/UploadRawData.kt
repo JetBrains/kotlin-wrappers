@@ -9,7 +9,7 @@ external interface UploadRawData {
     /**
      * Data to be uploaded.
      */
-    var bytes: Buffer
+    var bytes: Buffer<*>
 
     /**
      * `rawData`.

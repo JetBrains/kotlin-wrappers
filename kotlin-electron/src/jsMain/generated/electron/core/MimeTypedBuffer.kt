@@ -14,7 +14,7 @@ external interface MimeTypedBuffer {
     /**
      * The actual Buffer content.
      */
-    var data: Buffer
+    var data: Buffer<*>
 
     /**
      * MIME type of the buffer.

@@ -23,7 +23,7 @@ external interface AddRepresentationOptions {
     /**
      * The buffer containing the raw image data.
      */
-    var buffer: Buffer?
+    var buffer: Buffer<*>?
 
     /**
      * The data URL containing either a base 64 encoded PNG or JPEG image.

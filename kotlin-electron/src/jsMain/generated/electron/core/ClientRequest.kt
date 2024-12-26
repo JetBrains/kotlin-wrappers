@@ -89,7 +89,7 @@ external class ClientRequest : NodeEventEmitter {
      * will not be allowed. The `finish` event is emitted just after the end operation.
      */
     fun end(
-        chunk: Buffer = definedExternally,
+        chunk: Buffer<*> = definedExternally,
         encoding: String = definedExternally,
         callback: () -> Unit = definedExternally,
     ): Unit /* this */
@@ -171,7 +171,7 @@ external class ClientRequest : NodeEventEmitter {
      * the request headers to be issued on the wire. After the first write operation,
      * it is not allowed to add or remove a custom header.
      */
-    fun write(chunk: Buffer, encoding: String = definedExternally, callback: () -> Unit = definedExternally): Unit
+    fun write(chunk: Buffer<*>, encoding: String = definedExternally, callback: () -> Unit = definedExternally)
 
     /**
      * A `boolean` specifying whether the request will use HTTP chunked transfer

@@ -609,7 +609,7 @@ open external class BrowserWindow : NodeEventEmitter {
      * The native type of the handle is `HWND` on Windows, `NSView*` on macOS, and
      * `Window` (`unsigned long`) on Linux.
      */
-    fun getNativeWindowHandle(): Buffer
+    fun getNativeWindowHandle(): Buffer<*>
 
     /**
      * Contains the window bounds of the normal state
@@ -681,7 +681,7 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform win32
      */
-    fun hookWindowMessage(message: Double, callback: (wParam: Buffer, lParam: Buffer) -> Unit): Unit
+    fun hookWindowMessage(message: Double, callback: (wParam: Buffer<*>, lParam: Buffer<*>) -> Unit)
 
     /**
      * Invalidates the window shadow so that it is recomputed based on the current

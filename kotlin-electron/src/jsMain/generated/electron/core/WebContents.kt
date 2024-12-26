@@ -891,7 +891,7 @@ external class WebContents : NodeEventEmitter {
      *
      * See Page.printToPdf for more information.
      */
-    fun printToPDF(options: PrintToPDFOptions): Promise<Buffer>
+    fun printToPDF(options: PrintToPDFOptions): Promise<Buffer<*>>
 
     /**
      * Executes the editing command `redo` in web page.

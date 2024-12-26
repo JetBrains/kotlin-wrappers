@@ -90,7 +90,7 @@ external class IncomingMessage : NodeEventEmitter {
     val abortedEvent: node.events.EventInstance<js.array.JsTuple>
 
     @web.events.JsEvent("data")
-    val dataEvent: node.events.EventInstance<js.array.JsTuple1<Buffer>>
+    val dataEvent: node.events.EventInstance<js.array.JsTuple1<Buffer<*>>>
 
     @web.events.JsEvent("end")
     val endEvent: node.events.EventInstance<js.array.JsTuple>

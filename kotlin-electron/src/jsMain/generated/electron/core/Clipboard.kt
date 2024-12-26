@@ -50,7 +50,7 @@ external interface Clipboard {
      *
      * @experimental
      */
-    fun readBuffer(format: String): Buffer
+    fun readBuffer(format: String): Buffer<*>
 
     /**
      * The text on the find pasteboard, which is the pasteboard that holds information
@@ -105,7 +105,7 @@ external interface Clipboard {
      *
      * @experimental
      */
-    fun writeBuffer(format: String, buffer: Buffer, type: ClipboardWriteBufferType = definedExternally): Unit
+    fun writeBuffer(format: String, buffer: Buffer<*>, type: ClipboardWriteBufferType = definedExternally)
 
     /**
      * Writes the `text` into the find pasteboard (the pasteboard that holds

@@ -14,7 +14,7 @@ external interface UploadData {
     /**
      * Content being sent.
      */
-    var bytes: Buffer
+    var bytes: Buffer<*>
 
     /**
      * Path of file being uploaded.

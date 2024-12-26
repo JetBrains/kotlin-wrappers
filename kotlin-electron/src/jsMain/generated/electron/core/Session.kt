@@ -313,7 +313,7 @@ external class Session : NodeEventEmitter {
     /**
      * resolves with blob data.
      */
-    fun getBlobData(identifier: String): Promise<Buffer>
+    fun getBlobData(identifier: String): Promise<Buffer<*>>
 
     /**
      * the session's current cache size, in bytes.

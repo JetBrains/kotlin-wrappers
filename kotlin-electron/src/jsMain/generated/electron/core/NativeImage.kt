@@ -35,7 +35,7 @@ external class NativeImage {
      * not copy the bitmap data, so you have to use the returned Buffer immediately in
      * current event loop tick; otherwise the data might be changed or destroyed.
      */
-    fun getBitmap(options: BitmapOptions = definedExternally): Buffer
+    fun getBitmap(options: BitmapOptions = definedExternally): Buffer<*>
 
     /**
      * A Buffer that stores C pointer to underlying native handle of the image. On
@@ -47,7 +47,7 @@ external class NativeImage {
      *
      * @platform darwin
      */
-    fun getNativeHandle(): Buffer
+    fun getNativeHandle(): Buffer<*>
 
     /**
      * An array of all scale factors corresponding to representations for a given
@@ -87,7 +87,7 @@ external class NativeImage {
     /**
      * A Buffer that contains a copy of the image's raw bitmap pixel data.
      */
-    fun toBitmap(options: ToBitmapOptions = definedExternally): Buffer
+    fun toBitmap(options: ToBitmapOptions = definedExternally): Buffer<*>
 
     /**
      * The Data URL of the image.
@@ -97,12 +97,12 @@ external class NativeImage {
     /**
      * A Buffer that contains the image's `JPEG` encoded data.
      */
-    fun toJPEG(quality: Double): Buffer
+    fun toJPEG(quality: Double): Buffer<*>
 
     /**
      * A Buffer that contains the image's `PNG` encoded data.
      */
-    fun toPNG(options: ToPNGOptions = definedExternally): Buffer
+    fun toPNG(options: ToPNGOptions = definedExternally): Buffer<*>
 
     /**
      * A `boolean` property that determines whether the image is considered a template
@@ -125,13 +125,13 @@ external class NativeImage {
          * Creates a new `NativeImage` instance from `buffer` that contains the raw bitmap
          * pixel data returned by `toBitmap()`. The specific format is platform-dependent.
          */
-        fun createFromBitmap(buffer: Buffer, options: CreateFromBitmapOptions): NativeImage
+        fun createFromBitmap(buffer: Buffer<*>, options: CreateFromBitmapOptions): NativeImage
 
         /**
          * Creates a new `NativeImage` instance from `buffer`. Tries to decode as PNG or
          * JPEG first.
          */
-        fun createFromBuffer(buffer: Buffer, options: CreateFromBufferOptions = definedExternally): NativeImage
+        fun createFromBuffer(buffer: Buffer<*>, options: CreateFromBufferOptions = definedExternally): NativeImage
 
         /**
          * Creates a new `NativeImage` instance from `dataUrl`, a base 64 encoded Data URL
