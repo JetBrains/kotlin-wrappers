@@ -20,7 +20,7 @@ typealias NativeTouchEvent = web.uievents.TouchEvent
 
 typealias NativePointerEvent = web.uievents.PointerEvent
 
-typealias NativeToggleEvent = web.uievents.ToggleEvent
+typealias NativeToggleEvent = web.popover.ToggleEvent
 
 typealias NativeTransitionEvent = web.cssom.TransitionEvent
 
