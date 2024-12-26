@@ -62,6 +62,7 @@ external interface HTMLAttributes<T : Element> :
     // Non-standard Attributes
     var autoCorrect: String?
     var autoSave: String?
+    var color: String?
     var itemProp: String?
     var itemScope: Boolean?
     var itemType: String?
@@ -72,8 +73,8 @@ external interface HTMLAttributes<T : Element> :
     var unselectable: Unselectable?
 
     // Popover API
-    var popover: Popover?
-    var popoverTargetAction: PopoverTargetAction?
+    var popover: String? /* "" | "auto" | "manual" */
+    var popoverTargetAction: String? /* "toggle" | "show" | "hide" */
     var popoverTarget: String?
 // Living Standard
     /**
