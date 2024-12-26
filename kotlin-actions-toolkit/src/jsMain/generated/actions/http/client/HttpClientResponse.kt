@@ -12,5 +12,5 @@ external class HttpClientResponse {
 
     var message: node.http.IncomingMessage
     fun readBody(): Promise<String>
-    val readBodyBuffer: (() -> Promise<Buffer>)?
+    val readBodyBuffer: (() -> Promise<Buffer<*>>)?
 }

@@ -36,7 +36,7 @@ external interface ExecOptions {
     val delay: Number?
 
     /** optional. input to write to the process on STDIN. */
-    val input: Buffer?
+    val input: Buffer<*>?
 
     /** optional. Listeners for output. Callback functions that will be called on these events */
     val listeners: ExecListeners?

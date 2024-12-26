@@ -8,10 +8,10 @@ import node.buffer.Buffer
 @JsPlainObject
 external interface ExecListeners {
     /** A call back for each buffer of stdout */
-    val stdout: ((data: Buffer) -> Unit)?
+    val stdout: ((data: Buffer<*>) -> Unit)?
 
     /** A call back for each buffer of stderr */
-    val stderr: ((data: Buffer) -> Unit)?
+    val stderr: ((data: Buffer<*>) -> Unit)?
 
     /** A call back for each line of stdout */
     val stdline: ((data: String) -> Unit)?
