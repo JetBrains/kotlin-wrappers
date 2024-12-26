@@ -5,6 +5,6 @@ import node.buffer.Buffer
 
 @JsPlainObject
 external interface Asset {
-    val source: Buffer
+    val source: Buffer<*>
     val permissions: Int?
 }
