@@ -32,4 +32,6 @@ typealias WheelEventHandler<T> = EventHandler<WheelEvent<T>>
 
 typealias AnimationEventHandler<T> = EventHandler<AnimationEvent<T>>
 
+typealias ToggleEventHandler<T> = EventHandler<ToggleEvent<T>>
+
 typealias TransitionEventHandler<T> = EventHandler<TransitionEvent<T>>

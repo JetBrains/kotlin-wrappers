@@ -21,4 +21,7 @@ external interface LinkHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var sizes: String?
     var type: String?
     var charSet: String?
+
+    // React props
+    var precedence: String?
 }

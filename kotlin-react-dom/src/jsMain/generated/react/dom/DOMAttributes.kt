@@ -195,9 +195,19 @@ external interface DOMAttributes<T : Element> :
     var onAnimationIteration: AnimationEventHandler<T>?
     var onAnimationIterationCapture: AnimationEventHandler<T>?
 
+    // Toggle Events
+    var onToggle: ToggleEventHandler<T>?
+    var onBeforeToggle: ToggleEventHandler<T>?
+
     // Transition Events
+    var onTransitionCancel: TransitionEventHandler<T>?
+    var onTransitionCancelCapture: TransitionEventHandler<T>?
     var onTransitionEnd: TransitionEventHandler<T>?
     var onTransitionEndCapture: TransitionEventHandler<T>?
+    var onTransitionRun: TransitionEventHandler<T>?
+    var onTransitionRunCapture: TransitionEventHandler<T>?
+    var onTransitionStart: TransitionEventHandler<T>?
+    var onTransitionStartCapture: TransitionEventHandler<T>?
 }
 
 inline var <T : Element> DOMAttributes<T>.onChange: FormEventHandler<T>?

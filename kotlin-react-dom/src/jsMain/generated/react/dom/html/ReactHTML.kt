@@ -146,7 +146,7 @@ object ReactHTML {
     inline val h6: IntrinsicType<HTMLAttributes<HTMLHeadingElement>>
         get() = IntrinsicType("h6")
 
-    inline val head: IntrinsicType<HTMLAttributes<HTMLElement>>
+    inline val head: IntrinsicType<HTMLAttributes<HTMLHeadElement>>
         get() = IntrinsicType("head")
 
     inline val header: IntrinsicType<HTMLAttributes<HTMLElement>>
@@ -217,6 +217,9 @@ object ReactHTML {
 
     inline val nav: IntrinsicType<HTMLAttributes<HTMLElement>>
         get() = IntrinsicType("nav")
+
+    inline val noindex: IntrinsicType<HTMLAttributes<HTMLElement>>
+        get() = IntrinsicType("noindex")
 
     inline val noscript: IntrinsicType<HTMLAttributes<HTMLElement>>
         get() = IntrinsicType("noscript")
