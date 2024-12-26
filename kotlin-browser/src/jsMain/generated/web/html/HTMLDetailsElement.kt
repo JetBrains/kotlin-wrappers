@@ -4,7 +4,7 @@ package web.html
 
 import web.events.EventInstance
 import web.events.JsEvent
-import web.uievents.ToggleEvent
+import web.popover.ToggleEvent
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDetailsElement)

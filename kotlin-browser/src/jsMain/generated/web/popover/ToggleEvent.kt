@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package web.uievents
+package web.popover
 
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
