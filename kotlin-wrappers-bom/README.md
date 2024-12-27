@@ -9,7 +9,7 @@ to have version mismatches.
 Usage:
 
 ```kotlin
-val kotlinWrappersVersion = "1.0.0-pre.855"
+val kotlinWrappersVersion = "1.0.0-pre.856"
 
 dependencies {
     implementation(platform("org.jetbrains.kotlin-wrappers:kotlin-wrappers-bom:$kotlinWrappersVersion"))
