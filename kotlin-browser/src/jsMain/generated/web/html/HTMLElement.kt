@@ -14,6 +14,7 @@ import web.dom.Node
 import web.events.Event
 import web.events.EventInstance
 import web.events.JsEvent
+import web.popover.Popover
 import web.popover.ToggleEvent
 import web.uievents.DragEvent
 import web.uievents.PointerEvent
@@ -108,7 +109,7 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/popover)
      */
-    var popover: String?
+    var popover: Popover?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/spellcheck)
