@@ -9,6 +9,7 @@ import web.dom.Element
 import web.html.AutoCapitalize
 import web.html.EnterKeyHint
 import web.html.InputMode
+import web.popover.Popover
 
 external interface HTMLAttributes<T : Element> :
     AriaAttributes,
@@ -72,7 +73,7 @@ external interface HTMLAttributes<T : Element> :
     var unselectable: Unselectable?
 
     // Popover API
-    var popover: String? /* "" | "auto" | "manual" */
+    var popover: Popover?
     var popoverTargetAction: String? /* "toggle" | "show" | "hide" */
     var popoverTarget: String?
 // Living Standard
