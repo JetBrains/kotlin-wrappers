@@ -18,12 +18,12 @@ open external class ToggleEvent(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ToggleEvent/newState)
      */
-    val newState: String
+    val newState: ToggleState
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ToggleEvent/oldState)
      */
-    val oldState: String
+    val oldState: ToggleState
 
     @JsAlias(THIS)
     override fun asInit(): ToggleEventInit
