@@ -14,7 +14,7 @@ external interface Details {
     var reason: (DetailsReason)
 
     /**
-     * The exit code for the process (e.g. status from waitpid if on posix, from
+     * The exit code for the process (e.g. status from waitpid if on POSIX, from
      * GetExitCodeProcess on Windows).
      */
     var exitCode: Double

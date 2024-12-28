@@ -180,9 +180,9 @@ external interface WebviewTag : HTMLElement {
      * Emitted when mouse moves over a link or the keyboard moves the focus to a link.
      */
 
+
     /**
-     * Emitted when a link is clicked in DevTools or 'Open in new tab' is selected for
-     * a link in its context menu.
+     * Emitted when 'Search' is selected for text in its context menu.
      */
 
     /**
@@ -801,6 +801,9 @@ external interface WebviewTag : HTMLElement {
 
     @web.events.JsEvent("devtools-open-url")
     val devtoolsOpenUrlEvent: web.events.EventInstance<DevtoolsOpenUrlEvent, WebviewTag, web.dom.Node>
+
+    @web.events.JsEvent("devtools-search-query")
+    val devtoolsSearchQueryEvent: web.events.EventInstance<DevtoolsSearchQueryEvent, WebviewTag, web.dom.Node>
 
     @web.events.JsEvent("devtools-opened")
     val devtoolsOpenedEvent: web.events.EventInstance<DOMEvent, WebviewTag, web.dom.Node>

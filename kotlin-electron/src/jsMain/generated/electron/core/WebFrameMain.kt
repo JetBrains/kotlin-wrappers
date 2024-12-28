@@ -26,6 +26,11 @@ external class WebFrameMain : NodeEventEmitter {
     fun executeJavaScript(code: String, userGesture: Boolean = definedExternally): Promise<Any?>
 
     /**
+     * Whether the frame is destroyed.
+     */
+    fun isDestroyed(): Boolean
+
+    /**
      * Send a message to the renderer process, optionally transferring ownership of
      * zero or more `MessagePortMain` objects.
      *
@@ -57,6 +62,15 @@ external class WebFrameMain : NodeEventEmitter {
      * `ipcRenderer` module.
      */
     fun send(channel: String, vararg args: Any?): Unit
+
+    /**
+     * A `Boolean` representing whether the frame is detached from the frame tree. If a
+     * frame is accessed while the corresponding page is running any unload listeners,
+     * it may become detached as the newly navigated page replaced it in the frame
+     * tree.
+     *
+     */
+    val detached: Boolean
 
     /**
      * A `WebFrameMain[]` collection containing the direct descendents of `frame`.

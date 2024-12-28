@@ -7,7 +7,7 @@ external interface TitleBarOverlay {
      * The CSS color of the Window Controls Overlay when enabled. Default is the system
      * color.
      *
-     * @platform win32
+     * @platform win32,linux
      */
     var color: String?
 
@@ -22,8 +22,6 @@ external interface TitleBarOverlay {
     /**
      * The height of the title bar and Window Controls Overlay in pixels. Default is
      * system height.
-     *
-     * @platform darwin,win32
      */
     var height: Double?
 }

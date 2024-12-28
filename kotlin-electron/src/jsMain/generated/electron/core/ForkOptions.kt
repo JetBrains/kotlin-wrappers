@@ -47,4 +47,11 @@ external interface ForkOptions {
      * @platform darwin
      */
     var allowLoadingUnsignedLibraries: Boolean?
+
+    /**
+     * With this flag, all HTTP 401 and 407 network requests created via the net module
+     * will allow responding to them via the `app#login` event in the main process
+     * instead of the default `login` event on the `ClientRequest` object.
+     */
+    var respondToAuthRequestsFromMainProcess: Boolean?
 }

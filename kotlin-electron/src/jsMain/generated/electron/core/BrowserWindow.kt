@@ -6,14 +6,17 @@ package electron.core
 
 import js.promise.Promise
 import node.buffer.Buffer
-import node.events.EventEmitter as NodeEventEmitter
 
-open external class BrowserWindow : NodeEventEmitter {
+open external class BrowserWindow : BaseWindow {
     /**
      * BrowserWindow
      */
     constructor (options: BrowserWindowConstructorOptions = definedExternally)
 // Docs: https://electronjs.org/docs/api/browser-window
+    /**
+     * Emitted when the window is set or unset to show always on top of other windows.
+     */
+
     /**
      * Emitted when the window is set or unset to show always on top of other windows.
      */
@@ -36,7 +39,45 @@ open external class BrowserWindow : NodeEventEmitter {
      */
 
     /**
+     * Emitted when an App Command is invoked. These are typically related to keyboard
+     * media keys or browser commands, as well as the "Back" button built into some
+     * mice on Windows.
+     *
+     * Commands are lowercased, underscores are replaced with hyphens, and the
+     * `APPCOMMAND_` prefix is stripped off. e.g. `APPCOMMAND_BROWSER_BACKWARD` is
+     * emitted as `browser-backward`.
+     *
+     * The following app commands are explicitly supported on Linux:
+     *
+     * * `browser-backward`
+     * * `browser-forward`
+     *
+     * @platform win32,linux
+     */
+
+    /**
      * Emitted when the window loses focus.
+     */
+
+    /**
+     * Emitted when the window loses focus.
+     */
+
+    /**
+     * Emitted when the window is going to be closed. It's emitted before the
+     * `beforeunload` and `unload` event of the DOM. Calling `event.preventDefault()`
+     * will cancel the close.
+     *
+     * Usually you would want to use the `beforeunload` handler to decide whether the
+     * window should be closed, which will also be called when the window is reloaded.
+     * In Electron, returning any value other than `undefined` would cancel the close.
+     * For example:
+     *
+     * _**Note**: There is a subtle difference between the behaviors of
+     * `window.onbeforeunload = handler` and `window.addEventListener('beforeunload',
+     * handler)`. It is recommended to always set the `event.returnValue` explicitly,
+     * instead of only returning a value, as the former works more consistently within
+     * Electron._
      */
 
     /**
@@ -62,6 +103,15 @@ open external class BrowserWindow : NodeEventEmitter {
      */
 
     /**
+     * Emitted when the window is closed. After you have received this event you should
+     * remove the reference to the window and avoid using it any more.
+     */
+
+    /**
+     * Emitted when the window enters a full-screen state.
+     */
+
+    /**
      * Emitted when the window enters a full-screen state.
      */
 
@@ -74,7 +124,19 @@ open external class BrowserWindow : NodeEventEmitter {
      */
 
     /**
+     * Emitted when the window gains focus.
+     */
+
+    /**
      * Emitted when the window is hidden.
+     */
+
+    /**
+     * Emitted when the window is hidden.
+     */
+
+    /**
+     * Emitted when the window leaves a full-screen state.
      */
 
     /**
@@ -90,7 +152,19 @@ open external class BrowserWindow : NodeEventEmitter {
      */
 
     /**
+     * Emitted when window is maximized.
+     */
+
+    /**
      * Emitted when the window is minimized.
+     */
+
+    /**
+     * Emitted when the window is minimized.
+     */
+
+    /**
+     * Emitted when the window is being moved to a new position.
      */
 
     /**
@@ -103,6 +177,20 @@ open external class BrowserWindow : NodeEventEmitter {
      * **Note**: On macOS this event is an alias of `move`.
      *
      * @platform darwin,win32
+     */
+
+    /**
+     * Emitted once when the window is moved to a new position.
+     *
+     * **Note**: On macOS this event is an alias of `move`.
+     *
+     * @platform darwin,win32
+     */
+
+    /**
+     * Emitted when the native new tab button is clicked.
+     *
+     * @platform darwin
      */
 
     /**
@@ -131,6 +219,20 @@ open external class BrowserWindow : NodeEventEmitter {
      */
 
     /**
+     * Emitted after the window has been resized.
+     */
+
+    /**
+     * Emitted once when the window has finished being resized.
+     *
+     * This is usually emitted when the window has been resized manually. On macOS,
+     * resizing the window with `setBounds`/`setSize` and setting the `animate`
+     * parameter to `true` will also emit this event once resizing has finished.
+     *
+     * @platform darwin,win32
+     */
+
+    /**
      * Emitted once when the window has finished being resized.
      *
      * This is usually emitted when the window has been resized manually. On macOS,
@@ -146,6 +248,20 @@ open external class BrowserWindow : NodeEventEmitter {
 
     /**
      * Emitted when the window is restored from a minimized state.
+     */
+
+    /**
+     * Emitted when the window is restored from a minimized state.
+     */
+
+    /**
+     * Emitted on trackpad rotation gesture. Continually emitted until rotation gesture
+     * is ended. The `rotation` value on each emission is the angle in degrees rotated
+     * since the last emission. The last emitted event upon a rotation gesture will
+     * always be of value `0`. Counter-clockwise rotation values are positive, while
+     * clockwise ones are negative.
+     *
+     * @platform darwin
      */
 
     /**
@@ -166,6 +282,19 @@ open external class BrowserWindow : NodeEventEmitter {
      */
 
     /**
+     * Emitted when window session is going to end due to force shutdown or machine
+     * restart or session log off.
+     *
+     * @platform win32
+     */
+
+    /**
+     * Emitted when the window opens a sheet.
+     *
+     * @platform darwin
+     */
+
+    /**
      * Emitted when the window opens a sheet.
      *
      * @platform darwin
@@ -178,7 +307,31 @@ open external class BrowserWindow : NodeEventEmitter {
      */
 
     /**
+     * Emitted when the window has closed a sheet.
+     *
+     * @platform darwin
+     */
+
+    /**
      * Emitted when the window is shown.
+     */
+
+    /**
+     * Emitted when the window is shown.
+     */
+
+    /**
+     * Emitted on 3-finger swipe. Possible directions are `up`, `right`, `down`,
+     * `left`.
+     *
+     * The method underlying this event is built to handle older macOS-style trackpad
+     * swiping, where the content on the screen doesn't move with the swipe. Most macOS
+     * trackpads are not configured to allow this kind of swiping anymore, so in order
+     * for it to emit properly the 'Swipe between pages' preference in `System
+     * Preferences > Trackpad > More Gestures` must be set to 'Swipe with two or three
+     * fingers'.
+     *
+     * @platform darwin
      */
 
     /**
@@ -207,11 +360,36 @@ open external class BrowserWindow : NodeEventEmitter {
      */
 
     /**
+     * Emitted when the system context menu is triggered on the window, this is
+     * normally only triggered when the user right clicks on the non-client area of
+     * your window.  This is the window titlebar or any area you have declared as
+     * `-webkit-app-region: drag` in a frameless window.
+     *
+     * Calling `event.preventDefault()` will prevent the menu from being displayed.
+     *
+     * @platform win32
+     */
+
+    /**
+     * Emitted when the window exits from a maximized state.
+     */
+
+    /**
      * Emitted when the window exits from a maximized state.
      */
 
     /**
      * Emitted when the web page becomes unresponsive.
+     */
+
+    /**
+     * Emitted before the window is moved. On Windows, calling `event.preventDefault()`
+     * will prevent the window from being moved.
+     *
+     * Note that this is only emitted when the window is being moved manually. Moving
+     * the window with `setPosition`/`setBounds`/`center` will not emit this event.
+     *
+     * @platform darwin,win32
      */
 
     /**
@@ -243,6 +421,29 @@ open external class BrowserWindow : NodeEventEmitter {
      * @platform darwin,win32
      */
 
+    /**
+     * Emitted before the window is resized. Calling `event.preventDefault()` will
+     * prevent the window from being resized.
+     *
+     * Note that this is only emitted when the window is being resized manually.
+     * Resizing the window with `setBounds`/`setSize` will not emit this event.
+     *
+     * The possible values and behaviors of the `edge` option are platform dependent.
+     * Possible values are:
+     *
+     * * On Windows, possible values are `bottom`, `top`, `left`, `right`, `top-left`,
+     * `top-right`, `bottom-left`, `bottom-right`.
+     * * On macOS, possible values are `bottom` and `right`.
+     *   * The value `bottom` is used to denote vertical resizing.
+     *   * The value `right` is used to denote horizontal resizing.
+     *
+     * @platform darwin,win32
+     */
+
+
+    /**
+     * @platform win32,linux
+     */
 
     /**
      * @platform win32,linux
@@ -254,6 +455,14 @@ open external class BrowserWindow : NodeEventEmitter {
      */
 
     /**
+     * @platform darwin,win32
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
      * @platform darwin
      */
 
@@ -262,9 +471,21 @@ open external class BrowserWindow : NodeEventEmitter {
      * @platform darwin,win32
      */
 
+    /**
+     * @platform darwin,win32
+     */
+
 
     /**
      * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform win32
      */
 
     /**
@@ -279,9 +500,25 @@ open external class BrowserWindow : NodeEventEmitter {
      * @platform darwin
      */
 
+    /**
+     * @platform darwin
+     */
 
     /**
      * @platform darwin
+     */
+
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform win32
      */
 
     /**
@@ -296,106 +533,6 @@ open external class BrowserWindow : NodeEventEmitter {
     /**
      * @platform darwin,win32
      */
-
-
-    /**
-     * @platform win32,linux
-     */
-
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform darwin
-     */
-
-
-    /**
-     * @platform darwin,win32
-     */
-
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform win32
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform win32
-     */
-
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform darwin,win32
-     */
-
-
-    /**
-     * @platform win32,linux
-     */
-
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform darwin
-     */
-
-
-    /**
-     * @platform darwin,win32
-     */
-
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform win32
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform win32
-     */
-
 
     /**
      * @platform darwin,win32
@@ -410,9 +547,21 @@ open external class BrowserWindow : NodeEventEmitter {
      * @platform win32,linux
      */
 
+    /**
+     * @platform win32,linux
+     */
+
 
     /**
      * @platform darwin,win32
+     */
+
+    /**
+     * @platform darwin,win32
+     */
+
+    /**
+     * @platform darwin
      */
 
     /**
@@ -424,9 +573,21 @@ open external class BrowserWindow : NodeEventEmitter {
      * @platform darwin,win32
      */
 
+    /**
+     * @platform darwin,win32
+     */
+
 
     /**
      * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform win32
      */
 
     /**
@@ -441,6 +602,18 @@ open external class BrowserWindow : NodeEventEmitter {
      * @platform darwin
      */
 
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+
+    /**
+     * @platform darwin
+     */
 
     /**
      * @platform darwin
@@ -450,6 +623,222 @@ open external class BrowserWindow : NodeEventEmitter {
      * @platform win32
      */
 
+    /**
+     * @platform win32
+     */
+
+
+    /**
+     * @platform darwin,win32
+     */
+
+    /**
+     * @platform darwin,win32
+     */
+
+    /**
+     * @platform darwin,win32
+     */
+
+    /**
+     * @platform darwin,win32
+     */
+
+
+    /**
+     * @platform win32,linux
+     */
+
+    /**
+     * @platform win32,linux
+     */
+
+
+    /**
+     * @platform darwin,win32
+     */
+
+    /**
+     * @platform darwin,win32
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+
+    /**
+     * @platform darwin,win32
+     */
+
+    /**
+     * @platform darwin,win32
+     */
+
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform win32
+     */
+
+    /**
+     * @platform win32
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform win32
+     */
+
+    /**
+     * @platform win32
+     */
+
+
+    /**
+     * @platform darwin,win32
+     */
+
+    /**
+     * @platform darwin,win32
+     */
+
+    /**
+     * @platform darwin,win32
+     */
+
+    /**
+     * @platform darwin,win32
+     */
+
+
+    /**
+     * @platform win32,linux
+     */
+
+    /**
+     * @platform win32,linux
+     */
+
+
+    /**
+     * @platform darwin,win32
+     */
+
+    /**
+     * @platform darwin,win32
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+
+    /**
+     * @platform darwin,win32
+     */
+
+    /**
+     * @platform darwin,win32
+     */
+
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform win32
+     */
+
+    /**
+     * @platform win32
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform win32
+     */
+
+    /**
+     * @platform win32
+     */
+
+
+    /**
+     * @platform darwin,win32
+     */
+
+    /**
+     * @platform darwin,win32
+     */
 
     /**
      * @platform darwin,win32
@@ -462,7 +851,11 @@ open external class BrowserWindow : NodeEventEmitter {
     /**
      * Replacement API for setBrowserView supporting work with multi browser views.
      *
+     * > **Note** The `BrowserView` class is deprecated, and replaced by the new
+     * `WebContentsView` class.
+     *
      * @experimental
+     * @deprecated
      */
     fun addBrowserView(browserView: BrowserView): Unit
 
@@ -476,7 +869,7 @@ open external class BrowserWindow : NodeEventEmitter {
     /**
      * Removes focus from the window.
      */
-    fun blur(): Unit
+    override fun blur(): Unit
     fun blurWebView(): Unit
 
     /**
@@ -493,38 +886,38 @@ open external class BrowserWindow : NodeEventEmitter {
     /**
      * Moves window to the center of the screen.
      */
-    fun center(): Unit
+    override fun center(): Unit
 
     /**
      * Try to close the window. This has the same effect as a user manually clicking
      * the close button of the window. The web page may cancel the close though. See
      * the close event.
      */
-    fun close(): Unit
+    override fun close(): Unit
 
     /**
      * Closes the currently open Quick Look panel.
      *
      * @platform darwin
      */
-    fun closeFilePreview(): Unit
+    override fun closeFilePreview(): Unit
 
     /**
      * Force closing the window, the `unload` and `beforeunload` event won't be emitted
      * for the web page, and `close` event will also not be emitted for this window,
      * but it guarantees the `closed` event will be emitted.
      */
-    fun destroy(): Unit
+    override fun destroy(): Unit
 
     /**
      * Starts or stops flashing the window to attract user's attention.
      */
-    fun flashFrame(flag: Boolean): Unit
+    override fun flashFrame(flag: Boolean): Unit
 
     /**
      * Focuses on the window.
      */
-    fun focus(): Unit
+    override fun focus(): Unit
     fun focusOnWebView(): Unit
 
     /**
@@ -535,7 +928,7 @@ open external class BrowserWindow : NodeEventEmitter {
      * **Note:** The alpha value is _not_ returned alongside the red, green, and blue
      * values.
      */
-    fun getBackgroundColor(): String
+    override fun getBackgroundColor(): String
 
     /**
      * The `bounds` of the window as `Object`.
@@ -545,13 +938,17 @@ open external class BrowserWindow : NodeEventEmitter {
      * 600 })` with a tray height of 38 means that `win.getBounds()` will return `{ x:
      * 25, y: 38, width: 800, height: 600 }`.
      */
-    fun getBounds(): Rectangle
+    override fun getBounds(): Rectangle
 
     /**
      * The `BrowserView` attached to `win`. Returns `null` if one is not attached.
      * Throws an error if multiple `BrowserView`s are attached.
      *
+     * > **Note** The `BrowserView` class is deprecated, and replaced by the new
+     * `WebContentsView` class.
+     *
      * @experimental
+     * @deprecated
      */
     fun getBrowserView(): BrowserView?
 
@@ -560,32 +957,33 @@ open external class BrowserWindow : NodeEventEmitter {
      * `addBrowserView` or `setBrowserView`. The top-most BrowserView is the last
      * element of the array.
      *
-     * **Note:** The BrowserView API is currently experimental and may change or be
-     * removed in future Electron releases.
+     * > **Note** The `BrowserView` class is deprecated, and replaced by the new
+     * `WebContentsView` class.
      *
      * @experimental
+     * @deprecated
      */
     fun getBrowserViews(): js.array.ReadonlyArray<BrowserView>
 
     /**
      * All child windows.
      */
-    fun getChildWindows(): js.array.ReadonlyArray<BrowserWindow>
+    override fun getChildWindows(): js.array.ReadonlyArray<BrowserWindow>
 
     /**
      * The `bounds` of the window's client area as `Object`.
      */
-    fun getContentBounds(): Rectangle
+    override fun getContentBounds(): Rectangle
 
     /**
      * Contains the window's client area's width and height.
      */
-    fun getContentSize(): js.array.ReadonlyArray<Double>
+    override fun getContentSize(): js.array.ReadonlyArray<Double>
 
     /**
      * Contains the window's maximum width and height.
      */
-    fun getMaximumSize(): js.array.ReadonlyArray<Double>
+    override fun getMaximumSize(): js.array.ReadonlyArray<Double>
 
     /**
      * Window id in the format of DesktopCapturerSource's id. For example
@@ -596,12 +994,12 @@ open external class BrowserWindow : NodeEventEmitter {
      * Linux. `other_id` is used to identify web contents (tabs) so within the same top
      * level window.
      */
-    fun getMediaSourceId(): String
+    override fun getMediaSourceId(): String
 
     /**
      * Contains the window's minimum width and height.
      */
-    fun getMinimumSize(): js.array.ReadonlyArray<Double>
+    override fun getMinimumSize(): js.array.ReadonlyArray<Double>
 
     /**
      * The platform-specific handle of the window.
@@ -609,7 +1007,7 @@ open external class BrowserWindow : NodeEventEmitter {
      * The native type of the handle is `HWND` on Windows, `NSView*` on macOS, and
      * `Window` (`unsigned long`) on Linux.
      */
-    fun getNativeWindowHandle(): Buffer<*>
+    override fun getNativeWindowHandle(): Buffer<*>
 
     /**
      * Contains the window bounds of the normal state
@@ -619,35 +1017,35 @@ open external class BrowserWindow : NodeEventEmitter {
      * normal state. In normal state, getBounds and getNormalBounds returns the same
      * `Rectangle`.
      */
-    fun getNormalBounds(): Rectangle
+    override fun getNormalBounds(): Rectangle
 
     /**
      * between 0.0 (fully transparent) and 1.0 (fully opaque). On Linux, always returns
      * 1.
      */
-    fun getOpacity(): Double
+    override fun getOpacity(): Double
 
     /**
      * The parent window or `null` if there is no parent.
      */
-    fun getParentWindow(): BrowserWindow?
+    override fun getParentWindow(): BrowserWindow?
 
     /**
      * Contains the window's current position.
      */
-    fun getPosition(): js.array.ReadonlyArray<Double>
+    override fun getPosition(): js.array.ReadonlyArray<Double>
 
     /**
      * The pathname of the file the window represents.
      *
      * @platform darwin
      */
-    fun getRepresentedFilename(): String
+    override fun getRepresentedFilename(): String
 
     /**
      * Contains the window's width and height.
      */
-    fun getSize(): js.array.ReadonlyArray<Double>
+    override fun getSize(): js.array.ReadonlyArray<Double>
 
     /**
      * The title of the native window.
@@ -655,7 +1053,7 @@ open external class BrowserWindow : NodeEventEmitter {
      * **Note:** The title of the web page can be different from the title of the
      * native window.
      */
-    fun getTitle(): String
+    override fun getTitle(): String
 
     /**
      * The custom position for the traffic light buttons in frameless window, `null`
@@ -663,17 +1061,17 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    fun getWindowButtonPosition(): Point?
+    override fun getWindowButtonPosition(): Point?
 
     /**
      * Whether the window has a shadow.
      */
-    fun hasShadow(): Boolean
+    override fun hasShadow(): Boolean
 
     /**
      * Hides the window.
      */
-    fun hide(): Unit
+    override fun hide(): Unit
 
     /**
      * Hooks a windows message. The `callback` is called when the message is received
@@ -681,7 +1079,7 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform win32
      */
-    fun hookWindowMessage(message: Double, callback: (wParam: Buffer<*>, lParam: Buffer<*>) -> Unit): Unit
+    override fun hookWindowMessage(message: Double, callback: (wParam: Buffer<*>, lParam: Buffer<*>) -> Unit): Unit
 
     /**
      * Invalidates the window shadow so that it is recomputed based on the current
@@ -693,12 +1091,12 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    fun invalidateShadow(): Unit
+    override fun invalidateShadow(): Unit
 
     /**
      * Whether the window is always on top of other windows.
      */
-    fun isAlwaysOnTop(): Boolean
+    override fun isAlwaysOnTop(): Boolean
 
     /**
      * Whether the window can be manually closed by user.
@@ -707,59 +1105,63 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin,win32
      */
-    fun isClosable(): Boolean
+    override fun isClosable(): Boolean
 
     /**
      * Whether the window is destroyed.
      */
-    fun isDestroyed(): Boolean
+    override fun isDestroyed(): Boolean
 
     /**
      * Whether the window's document has been edited.
      *
      * @platform darwin
      */
-    fun isDocumentEdited(): Boolean
+    override fun isDocumentEdited(): Boolean
 
     /**
      * whether the window is enabled.
      */
-    fun isEnabled(): Boolean
+    override fun isEnabled(): Boolean
 
     /**
      * Whether the window can be focused.
      *
      * @platform darwin,win32
      */
-    fun isFocusable(): Boolean
+    override fun isFocusable(): Boolean
 
     /**
      * Whether the window is focused.
      */
-    fun isFocused(): Boolean
+    override fun isFocused(): Boolean
 
     /**
      * Whether the window is in fullscreen mode.
+     *
+     * **Note:** On macOS, fullscreen transitions take place asynchronously. When
+     * querying for a BrowserWindow's fullscreen status, you should ensure that either
+     * the 'enter-full-screen' or 'leave-full-screen' events have been emitted.
      */
-    fun isFullScreen(): Boolean
+    override fun isFullScreen(): Boolean
 
     /**
      * Whether the maximize/zoom window button toggles fullscreen mode or maximizes the
      * window.
      */
-    fun isFullScreenable(): Boolean
+    override fun isFullScreenable(): Boolean
 
     /**
      * Whether the window will be hidden when the user toggles into mission control.
      *
      * @platform darwin
      */
-    fun isHiddenInMissionControl(): Boolean
+    override fun isHiddenInMissionControl(): Boolean
 
     /**
      * Whether the window is in kiosk mode.
      */
-    fun isKiosk(): Boolean
+    override fun isKiosk(): Boolean
 
     /**
      * Whether the window can be manually maximized by user.
@@ -768,26 +1170,26 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin,win32
      */
-    fun isMaximizable(): Boolean
+    override fun isMaximizable(): Boolean
 
     /**
      * Whether the window is maximized.
      */
-    fun isMaximized(): Boolean
+    override fun isMaximized(): Boolean
 
     /**
      * Whether menu bar automatically hides itself.
      *
      * @platform win32,linux
      */
-    fun isMenuBarAutoHide(): Boolean
+    override fun isMenuBarAutoHide(): Boolean
 
     /**
      * Whether the menu bar is visible.
      *
      * @platform win32,linux
      */
-    fun isMenuBarVisible(): Boolean
+    override fun isMenuBarVisible(): Boolean
 
     /**
      * Whether the window can be manually minimized by the user.
@@ -796,17 +1198,17 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin,win32
      */
-    fun isMinimizable(): Boolean
+    override fun isMinimizable(): Boolean
 
     /**
      * Whether the window is minimized.
      */
-    fun isMinimized(): Boolean
+    override fun isMinimized(): Boolean
 
     /**
      * Whether current window is a modal window.
      */
-    fun isModal(): Boolean
+    override fun isModal(): Boolean
 
     /**
      * Whether the window can be moved by user.
@@ -815,25 +1217,25 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin,win32
      */
-    fun isMovable(): Boolean
+    override fun isMovable(): Boolean
 
     /**
      * Whether the window is in normal state (not maximized, not minimized, not in
      * fullscreen mode).
      */
-    fun isNormal(): Boolean
+    override fun isNormal(): Boolean
 
     /**
      * Whether the window can be manually resized by the user.
      */
-    fun isResizable(): Boolean
+    override fun isResizable(): Boolean
 
     /**
      * Whether the window is in simple (pre-Lion) fullscreen mode.
      *
      * @platform darwin
      */
-    fun isSimpleFullScreen(): Boolean
+    override fun isSimpleFullScreen(): Boolean
 
     /**
      * Whether the window is in Windows 10 tablet mode.
@@ -847,12 +1249,12 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform win32
      */
-    fun isTabletMode(): Boolean
+    override fun isTabletMode(): Boolean
 
     /**
      * Whether the window is visible to the user in the foreground of the app.
      */
-    fun isVisible(): Boolean
+    override fun isVisible(): Boolean
 
     /**
      * Whether the window is visible on all workspaces.
@@ -861,14 +1263,14 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin,linux
      */
-    fun isVisibleOnAllWorkspaces(): Boolean
+    override fun isVisibleOnAllWorkspaces(): Boolean
 
     /**
      * `true` or `false` depending on whether the message is hooked.
      *
      * @platform win32
      */
-    fun isWindowMessageHooked(message: Double): Boolean
+    override fun isWindowMessageHooked(message: Double): Boolean
 
     /**
      * the promise will resolve when the page has finished loading (see
@@ -901,7 +1303,7 @@ open external class BrowserWindow : NodeEventEmitter {
      * Maximizes the window. This will also show (but not focus) the window if it isn't
      * being displayed already.
      */
-    fun maximize(): Unit
+    override fun maximize(): Unit
 
     /**
      * Merges all windows into one window with multiple tabs when native tabs are
@@ -909,20 +1311,20 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    fun mergeAllWindows(): Unit
+    override fun mergeAllWindows(): Unit
 
     /**
      * Minimizes the window. On some platforms the minimized window will be shown in
      * the Dock.
      */
-    fun minimize(): Unit
+    override fun minimize(): Unit
 
     /**
      * Moves window above the source window in the sense of z-order. If the
      * `mediaSourceId` is not of type window or if the window does not exist then this
      * method throws an error.
      */
-    fun moveAbove(mediaSourceId: String): Unit
+    override fun moveAbove(mediaSourceId: String): Unit
 
     /**
      * Moves the current tab into a new window if native tabs are enabled and there is
@@ -930,19 +1332,19 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    fun moveTabToNewWindow(): Unit
+    override fun moveTabToNewWindow(): Unit
 
     /**
      * Moves window to top(z-order) regardless of focus
      */
-    fun moveTop(): Unit
+    override fun moveTop(): Unit
 
     /**
      * Uses Quick Look to preview a file at a given path.
      *
      * @platform darwin
      */
-    fun previewFile(path: String, displayName: String = definedExternally): Unit
+    override fun previewFile(path: String, displayName: String): Unit
 
     /**
      * Same as `webContents.reload`.
@@ -950,7 +1352,11 @@ open external class BrowserWindow : NodeEventEmitter {
     fun reload(): Unit
 
     /**
+     * > **Note** The `BrowserView` class is deprecated, and replaced by the new
+     * `WebContentsView` class.
+     *
      * @experimental
+     * @deprecated
      */
     fun removeBrowserView(browserView: BrowserView): Unit
 
@@ -959,12 +1365,12 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform linux,win32
      */
-    fun removeMenu(): Unit
+    override fun removeMenu(): Unit
 
     /**
      * Restores the window from minimized state to its previous state.
      */
-    fun restore(): Unit
+    override fun restore(): Unit
 
     /**
      * Selects the next tab when native tabs are enabled and there are other tabs in
@@ -972,7 +1378,7 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    fun selectNextTab(): Unit
+    override fun selectNextTab(): Unit
 
     /**
      * Selects the previous tab when native tabs are enabled and there are other tabs
@@ -980,7 +1386,7 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    fun selectPreviousTab(): Unit
+    override fun selectPreviousTab(): Unit
 
     /**
      * Sets whether the window should show always on top of other windows. After
@@ -1001,7 +1407,7 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform win32
      */
-    fun setAppDetails(options: AppDetailsOptions): Unit
+    override fun setAppDetails(options: AppDetailsOptions): Unit
 
     /**
      * This will make a window maintain an aspect ratio. The extra size allows a
@@ -1024,14 +1430,14 @@ open external class BrowserWindow : NodeEventEmitter {
      * To reset an aspect ratio, pass 0 as the `aspectRatio` value:
      * `win.setAspectRatio(0)`.
      */
-    fun setAspectRatio(aspectRatio: Double, extraSize: Size = definedExternally): Unit
+    override fun setAspectRatio(aspectRatio: Double, extraSize: Size): Unit
 
     /**
      * Controls whether to hide cursor when typing.
      *
      * @platform darwin
      */
-    fun setAutoHideCursor(autoHide: Boolean): Unit
+    override fun setAutoHideCursor(autoHide: Boolean): Unit
 
     /**
      * Sets whether the window menu bar should hide itself automatically. Once set the
@@ -1042,7 +1448,7 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform win32,linux
      */
-    fun setAutoHideMenuBar(hide: Boolean): Unit
+    override fun setAutoHideMenuBar(hide: Boolean): Unit
 
     /**
      * Examples of valid `backgroundColor` values:
@@ -1053,16 +1459,16 @@ open external class BrowserWindow : NodeEventEmitter {
      *   * #ffffff (RGB)
      *   * #ffffffff (ARGB)
      * * RGB
-     *   * rgb(([\d]+),\s*([\d]+),\s*([\d]+))
+     *   * `rgb\(([\d]+),\s*([\d]+),\s*([\d]+)\)`
      *     * e.g. rgb(255, 255, 255)
      * * RGBA
-     *   * rgba(([\d]+),\s*([\d]+),\s*([\d]+),\s*([\d.]+))
+     *   * `rgba\(([\d]+),\s*([\d]+),\s*([\d]+),\s*([\d.]+)\)`
      *     * e.g. rgba(255, 255, 255, 1.0)
      * * HSL
-     *   * hsl((-?[\d.]+),\s*([\d.]+)%,\s*([\d.]+)%)
+     *   * `hsl\((-?[\d.]+),\s*([\d.]+)%,\s*([\d.]+)%\)`
      *     * e.g. hsl(200, 20%, 50%)
      * * HSLA
-     *   * hsla((-?[\d.]+),\s*([\d.]+)%,\s*([\d.]+)%,\s*([\d.]+))
+     *   * `hsla\((-?[\d.]+),\s*([\d.]+)%,\s*([\d.]+)%,\s*([\d.]+)\)`
      *     * e.g. hsla(200, 20%, 50%, 0.5)
      * * Color name
      *   * Options are listed in SkParseColor.cpp
@@ -1071,7 +1477,7 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * Sets the background color of the window. See Setting `backgroundColor`.
      */
-    fun setBackgroundColor(backgroundColor: String): Unit
+    override fun setBackgroundColor(backgroundColor: String): Unit
 
     /**
      * This method sets the browser window's system-drawn background material,
@@ -1094,10 +1500,14 @@ open external class BrowserWindow : NodeEventEmitter {
      * system, but is between 20-40px. Passing a value lower than the tray height will
      * result in a window that is flush to the tray.
      */
-    fun setBounds(bounds: Rectangle, animate: Boolean = definedExternally): Unit
+    override fun setBounds(bounds: Rectangle, animate: Boolean): Unit
 
     /**
+     * > **Note** The `BrowserView` class is deprecated, and replaced by the new
+     * `WebContentsView` class.
+     *
      * @experimental
+     * @deprecated
      */
     fun setBrowserView(browserView: BrowserView?): Unit
 
@@ -1106,13 +1516,13 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin,win32
      */
-    fun setClosable(closable: Boolean): Unit
+    override fun setClosable(closable: Boolean): Unit
 
     /**
      * Resizes and moves the window's client area (e.g. the web page) to the supplied
      * bounds.
      */
-    fun setContentBounds(bounds: Rectangle, animate: Boolean = definedExternally): Unit
+    override fun setContentBounds(bounds: Rectangle, animate: Boolean): Unit
 
     /**
      * Prevents the window contents from being captured by other apps.
@@ -1124,12 +1534,12 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin,win32
      */
-    fun setContentProtection(enable: Boolean): Unit
+    override fun setContentProtection(enable: Boolean): Unit
 
     /**
      * Resizes the window's client area (e.g. the web page) to `width` and `height`.
      */
-    fun setContentSize(width: Double, height: Double, animate: Boolean = definedExternally): Unit
+    override fun setContentSize(width: Double, height: Double, animate: Boolean): Unit
 
     /**
      * Specifies whether the window’s document has been edited, and the icon in title
@@ -1137,12 +1547,12 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    fun setDocumentEdited(edited: Boolean): Unit
+    override fun setDocumentEdited(edited: Boolean): Unit
 
     /**
      * Disable or enable the window.
      */
-    fun setEnabled(enable: Boolean): Unit
+    override fun setEnabled(enable: Boolean): Unit
 
     /**
      * Changes whether the window can be focused.
@@ -1151,7 +1561,7 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin,win32
      */
-    fun setFocusable(focusable: Boolean): Unit
+    override fun setFocusable(focusable: Boolean): Unit
 
     /**
      * Sets whether the window should be in fullscreen mode.
@@ -1160,18 +1570,18 @@ open external class BrowserWindow : NodeEventEmitter {
      * actions depend on the fullscreen state, use the 'enter-full-screen' or
      * 'leave-full-screen' events.
      */
-    fun setFullScreen(flag: Boolean): Unit
+    override fun setFullScreen(flag: Boolean): Unit
 
     /**
      * Sets whether the maximize/zoom window button toggles fullscreen mode or
      * maximizes the window.
      */
-    fun setFullScreenable(fullscreenable: Boolean): Unit
+    override fun setFullScreenable(fullscreenable: Boolean): Unit
 
     /**
      * Sets whether the window should have a shadow.
      */
-    fun setHasShadow(hasShadow: Boolean): Unit
+    override fun setHasShadow(hasShadow: Boolean): Unit
 
     /**
      * Sets whether the window will be hidden when the user toggles into mission
@@ -1179,21 +1589,21 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    fun setHiddenInMissionControl(hidden: Boolean): Unit
+    override fun setHiddenInMissionControl(hidden: Boolean): Unit
 
     /**
      * Changes window icon.
      *
      * @platform win32,linux
      */
-    fun setIcon(icon: NativeImage): Unit
+    override fun setIcon(icon: NativeImage): Unit
 
     /**
      * Changes window icon.
      *
      * @platform win32,linux
      */
-    fun setIcon(icon: String): Unit
+    override fun setIcon(icon: String): Unit
 
     /**
      * Makes the window ignore all mouse events.
@@ -1201,12 +1611,12 @@ open external class BrowserWindow : NodeEventEmitter {
      * All mouse events happened in this window will be passed to the window below this
      * window, but if this window has focus, it will still receive keyboard events.
      */
-    fun setIgnoreMouseEvents(ignore: Boolean, options: IgnoreMouseEventsOptions = definedExternally): Unit
+    override fun setIgnoreMouseEvents(ignore: Boolean, options: IgnoreMouseEventsOptions): Unit
 
     /**
      * Enters or leaves kiosk mode.
      */
-    fun setKiosk(flag: Boolean): Unit
+    override fun setKiosk(flag: Boolean): Unit
 
     /**
      * Sets whether the window can be manually maximized by user. On Linux does
@@ -1214,19 +1624,19 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin,win32
      */
-    fun setMaximizable(maximizable: Boolean): Unit
+    override fun setMaximizable(maximizable: Boolean): Unit
 
     /**
      * Sets the maximum size of window to `width` and `height`.
      */
-    fun setMaximumSize(width: Double, height: Double): Unit
+    override fun setMaximumSize(width: Double, height: Double): Unit
 
     /**
      * Sets the `menu` as the window's menu bar.
      *
      * @platform linux,win32
      */
-    fun setMenu(menu: Menu?): Unit
+    override fun setMenu(menu: Menu?): Unit
 
     /**
      * Sets whether the menu bar should be visible. If the menu bar is auto-hide, users
@@ -1234,7 +1644,7 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform win32,linux
      */
-    fun setMenuBarVisibility(visible: Boolean): Unit
+    override fun setMenuBarVisibility(visible: Boolean): Unit
 
     /**
      * Sets whether the window can be manually minimized by user. On Linux does
@@ -1242,19 +1652,19 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin,win32
      */
-    fun setMinimizable(minimizable: Boolean): Unit
+    override fun setMinimizable(minimizable: Boolean): Unit
 
     /**
      * Sets the minimum size of window to `width` and `height`.
      */
-    fun setMinimumSize(width: Double, height: Double): Unit
+    override fun setMinimumSize(width: Double, height: Double): Unit
 
     /**
      * Sets whether the window can be moved by user. On Linux does nothing.
      *
      * @platform darwin,win32
      */
-    fun setMovable(movable: Boolean): Unit
+    override fun setMovable(movable: Boolean): Unit
 
     /**
      * Sets the opacity of the window. On Linux, does nothing. Out of bound number
@@ -1262,7 +1672,7 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform win32,darwin
      */
-    fun setOpacity(opacity: Double): Unit
+    override fun setOpacity(opacity: Double): Unit
 
     /**
      * Sets a 16 x 16 pixel overlay onto the current taskbar icon, usually used to
@@ -1270,7 +1680,7 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform win32
      */
-    fun setOverlayIcon(overlay: NativeImage?, description: String): Unit
+    override fun setOverlayIcon(overlay: NativeImage?, description: String): Unit
 
     /**
      * Sets `parent` as current window's parent window, passing `null` will turn
@@ -1281,7 +1691,7 @@ open external class BrowserWindow : NodeEventEmitter {
     /**
      * Moves window to `x` and `y`.
      */
-    fun setPosition(x: Double, y: Double, animate: Boolean = definedExternally): Unit
+    override fun setPosition(x: Double, y: Double, animate: Boolean): Unit
 
     /**
      * Sets progress value in progress bar. Valid range is [0, 1.0].
@@ -1297,7 +1707,7 @@ open external class BrowserWindow : NodeEventEmitter {
      * `indeterminate`, `error`, and `paused`. If you call `setProgressBar` without a
      * mode set (but with a value within the valid range), `normal` will be assumed.
      */
-    fun setProgressBar(progress: Double, options: ProgressBarOptions = definedExternally): Unit
+    override fun setProgressBar(progress: Double, options: ProgressBarOptions): Unit
 
     /**
      * Sets the pathname of the file the window represents, and the icon of the file
@@ -1305,12 +1715,12 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    fun setRepresentedFilename(filename: String): Unit
+    override fun setRepresentedFilename(filename: String): Unit
 
     /**
      * Sets whether the window can be manually resized by the user.
      */
-    fun setResizable(resizable: Boolean): Unit
+    override fun setResizable(resizable: Boolean): Unit
 
     /**
      * Setting a window shape determines the area within the window where the system
@@ -1322,7 +1732,7 @@ open external class BrowserWindow : NodeEventEmitter {
      * @experimental
      * @platform win32,linux
      */
-    fun setShape(rects: js.array.ReadonlyArray<Rectangle>): Unit
+    override fun setShape(rects: js.array.ReadonlyArray<Rectangle>): Unit
 
     /**
      * Changes the attachment point for sheets on macOS. By default, sheets are
@@ -1331,7 +1741,7 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    fun setSheetOffset(offsetY: Double, offsetX: Double = definedExternally): Unit
+    override fun setSheetOffset(offsetY: Double, offsetX: Double): Unit
 
     /**
      * Enters or leaves simple fullscreen mode.
@@ -1341,20 +1751,20 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    fun setSimpleFullScreen(flag: Boolean): Unit
+    override fun setSimpleFullScreen(flag: Boolean): Unit
 
     /**
      * Resizes the window to `width` and `height`. If `width` or `height` are below any
      * set minimum size constraints the window will snap to its minimum size.
      */
-    fun setSize(width: Double, height: Double, animate: Boolean = definedExternally): Unit
+    override fun setSize(width: Double, height: Double, animate: Boolean): Unit
 
     /**
      * Makes the window not show in the taskbar.
      *
      * @platform darwin,win32
      */
-    fun setSkipTaskbar(skip: Boolean): Unit
+    override fun setSkipTaskbar(skip: Boolean): Unit
 
     /**
      * Whether the buttons were added successfully
@@ -1392,7 +1802,7 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform win32
      */
-    fun setThumbarButtons(buttons: js.array.ReadonlyArray<ThumbarButton>): Boolean
+    override fun setThumbarButtons(buttons: js.array.ReadonlyArray<ThumbarButton>): Boolean
 
     /**
      * Sets the region of the window to show as the thumbnail image displayed when
@@ -1402,7 +1812,7 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform win32
      */
-    fun setThumbnailClip(region: Rectangle): Unit
+    override fun setThumbnailClip(region: Rectangle): Unit
 
     /**
      * Sets the toolTip that is displayed when hovering over the window thumbnail in
@@ -1410,26 +1820,33 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform win32
      */
-    fun setThumbnailToolTip(toolTip: String): Unit
+    override fun setThumbnailToolTip(toolTip: String): Unit
 
     /**
      * Changes the title of native window to `title`.
      */
-    fun setTitle(title: String): Unit
+    override fun setTitle(title: String): Unit
 
     /**
-     * On a Window with Window Controls Overlay already enabled, this method updates
+     * On a window with Window Controls Overlay already enabled, this method updates
      * the style of the title bar overlay.
      *
-     * @platform win32
+     * On Linux, the `symbolColor` is automatically calculated to have minimum
+     * accessible contrast to the `color` if not explicitly set.
+     *
+     * @platform win32,linux
      */
-    fun setTitleBarOverlay(options: TitleBarOverlay): Unit
+    override fun setTitleBarOverlay(options: TitleBarOverlayOptions): Unit
 
     /**
      * Raises `browserView` above other `BrowserView`s attached to `win`. Throws an
      * error if `browserView` is not attached to `win`.
      *
+     * > **Note** The `BrowserView` class is deprecated, and replaced by the new
+     * `WebContentsView` class.
+     *
      * @experimental
+     * @deprecated
      */
     fun setTopBrowserView(browserView: BrowserView): Unit
 
@@ -1443,7 +1860,7 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    fun setTouchBar(touchBar: TouchBar?): Unit
+    override fun setTouchBar(touchBar: TouchBar?): Unit
 
     /**
      * Adds a vibrancy effect to the browser window. Passing `null` or an empty string
@@ -1460,7 +1877,7 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin,linux
      */
-    fun setVisibleOnAllWorkspaces(visible: Boolean, options: VisibleOnAllWorkspacesOptions = definedExternally): Unit
+    override fun setVisibleOnAllWorkspaces(visible: Boolean, options: VisibleOnAllWorkspacesOptions): Unit
 
     /**
      * Set a custom position for the traffic light buttons in frameless window. Passing
@@ -1468,26 +1885,26 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    fun setWindowButtonPosition(position: Point?): Unit
+    override fun setWindowButtonPosition(position: Point?): Unit
 
     /**
      * Sets whether the window traffic light buttons should be visible.
      *
      * @platform darwin
      */
-    fun setWindowButtonVisibility(visible: Boolean): Unit
+    override fun setWindowButtonVisibility(visible: Boolean): Unit
 
     /**
      * Shows and gives focus to the window.
      */
-    fun show(): Unit
+    override fun show(): Unit
 
     /**
      * Shows or hides the tab overview when native tabs are enabled.
      *
      * @platform darwin
      */
-    fun showAllTabs(): Unit
+    override fun showAllTabs(): Unit
 
     /**
      * Same as `webContents.showDefinitionForSelection()`.
@@ -1499,7 +1916,7 @@ open external class BrowserWindow : NodeEventEmitter {
     /**
      * Shows the window but doesn't focus on it.
      */
-    fun showInactive(): Unit
+    override fun showInactive(): Unit
 
     /**
      * Toggles the visibility of the tab bar if native tabs are enabled and there is
@@ -1507,33 +1924,33 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    fun toggleTabBar(): Unit
+    override fun toggleTabBar(): Unit
 
     /**
      * Unhooks all of the window messages.
      *
      * @platform win32
      */
-    fun unhookAllWindowMessages(): Unit
+    override fun unhookAllWindowMessages(): Unit
 
     /**
      * Unhook the window message.
      *
      * @platform win32
      */
-    fun unhookWindowMessage(message: Double): Unit
+    override fun unhookWindowMessage(message: Double): Unit
 
     /**
      * Unmaximizes the window.
      */
-    fun unmaximize(): Unit
+    override fun unmaximize(): Unit
 
     /**
      * A `string` property that defines an alternative title provided only to
      * accessibility tools such as screen readers. This string is not directly visible
      * to users.
      */
-    var accessibleTitle: String
+    override var accessibleTitle: String
 
     /**
      * A `boolean` property that determines whether the window menu bar should hide
@@ -1543,7 +1960,7 @@ open external class BrowserWindow : NodeEventEmitter {
      * If the menu bar is already visible, setting this property to `true` won't hide
      * it immediately.
      */
-    var autoHideMenuBar: Boolean
+    override var autoHideMenuBar: Boolean
 
     /**
      * A `boolean` property that determines whether the window can be manually closed
@@ -1553,7 +1970,7 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin,win32
      */
-    var closable: Boolean
+    override var closable: Boolean
 
     /**
      * A `boolean` property that specifies whether the window’s document has been
@@ -1563,7 +1980,7 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    var documentEdited: Boolean
+    override var documentEdited: Boolean
 
     /**
      * A `boolean` property that determines whether the window is excluded from the
@@ -1571,37 +1988,37 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    var excludedFromShownWindowsMenu: Boolean
+    override var excludedFromShownWindowsMenu: Boolean
 
     /**
      * A `boolean` property that determines whether the window is focusable.
      *
      * @platform win32,darwin
      */
-    var focusable: Boolean
+    override var focusable: Boolean
 
     /**
      * A `boolean` property that determines whether the window is in fullscreen mode.
      */
-    var fullScreen: Boolean
+    override var fullScreen: Boolean
 
     /**
      * A `boolean` property that determines whether the maximize/zoom window button
      * toggles fullscreen mode or maximizes the window.
      */
-    var fullScreenable: Boolean
+    override var fullScreenable: Boolean
 
     /**
      * A `Integer` property representing the unique ID of the window. Each ID is unique
      * among all `BrowserWindow` instances of the entire Electron application.
      *
      */
-    val id: Double
+    override val id: Double
 
     /**
      * A `boolean` property that determines whether the window is in kiosk mode.
      */
-    var kiosk: Boolean
+    override var kiosk: Boolean
 
     /**
      * A `boolean` property that determines whether the window can be manually
@@ -1611,7 +2028,7 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin,win32
      */
-    var maximizable: Boolean
+    override var maximizable: Boolean
 
     /**
      * A `boolean` property that determines whether the menu bar should be visible.
@@ -1621,7 +2038,7 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform win32,linux
      */
-    var menuBarVisible: Boolean
+    override var menuBarVisible: Boolean
 
     /**
      * A `boolean` property that determines whether the window can be manually
@@ -1631,7 +2048,7 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin,win32
      */
-    var minimizable: Boolean
+    override var minimizable: Boolean
 
     /**
      * A `boolean` property that determines Whether the window can be moved by user.
@@ -1640,7 +2057,7 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin,win32
      */
-    var movable: Boolean
+    override var movable: Boolean
 
     /**
      * A `string` property that determines the pathname of the file the window
@@ -1648,24 +2065,24 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    var representedFilename: String
+    override var representedFilename: String
 
     /**
      * A `boolean` property that determines whether the window can be manually resized
      * by user.
      */
-    var resizable: Boolean
+    override var resizable: Boolean
 
     /**
      * A `boolean` property that determines whether the window has a shadow.
      */
-    var shadow: Boolean
+    override var shadow: Boolean
 
     /**
      * A `boolean` property that determines whether the window is in simple (pre-Lion)
      * fullscreen mode.
      */
-    var simpleFullScreen: Boolean
+    override var simpleFullScreen: Boolean
 
     /**
      * A `string` (optional) property that is equal to the `tabbingIdentifier` passed
@@ -1673,7 +2090,7 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    val tabbingIdentifier: String?
+    override val tabbingIdentifier: String?
 
     /**
      * A `string` property that determines the title of the native window.
@@ -1681,7 +2098,7 @@ open external class BrowserWindow : NodeEventEmitter {
      * **Note:** The title of the web page can be different from the title of the
      * native window.
      */
-    var title: String
+    override var title: String
 
     /**
      * A `boolean` property that determines whether the window is visible on all
@@ -1691,7 +2108,7 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin,linux
      */
-    var visibleOnAllWorkspaces: Boolean
+    override var visibleOnAllWorkspaces: Boolean
 
     /**
      * A `WebContents` object this window owns. All web page related events and
@@ -1703,52 +2120,52 @@ open external class BrowserWindow : NodeEventEmitter {
     val webContents: WebContents
 
     @web.events.JsEvent("always-on-top-changed")
-    val alwaysOnTopChangedEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Boolean>>
+    override val alwaysOnTopChangedEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Boolean>>
 
     @web.events.JsEvent("app-command")
-    val appCommandEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, String>>
+    override val appCommandEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, String>>
 
     @web.events.JsEvent("blur")
-    val blurEvent: node.events.EventInstance<js.array.JsTuple>
+    override val blurEvent: node.events.EventInstance<js.array.JsTuple1<Event<*>>>
 
     @web.events.JsEvent("close")
-    val closeEvent: node.events.EventInstance<js.array.JsTuple1<Event<*>>>
+    override val closeEvent: node.events.EventInstance<js.array.JsTuple1<Event<*>>>
 
     @web.events.JsEvent("closed")
-    val closedEvent: node.events.EventInstance<js.array.JsTuple>
+    override val closedEvent: node.events.EventInstance<js.array.JsTuple>
 
     @web.events.JsEvent("enter-full-screen")
-    val enterFullScreenEvent: node.events.EventInstance<js.array.JsTuple>
+    override val enterFullScreenEvent: node.events.EventInstance<js.array.JsTuple>
 
     @web.events.JsEvent("enter-html-full-screen")
     val enterHtmlFullScreenEvent: node.events.EventInstance<js.array.JsTuple>
 
     @web.events.JsEvent("focus")
-    val focusEvent: node.events.EventInstance<js.array.JsTuple>
+    override val focusEvent: node.events.EventInstance<js.array.JsTuple1<Event<*>>>
 
     @web.events.JsEvent("hide")
-    val hideEvent: node.events.EventInstance<js.array.JsTuple>
+    override val hideEvent: node.events.EventInstance<js.array.JsTuple>
 
     @web.events.JsEvent("leave-full-screen")
-    val leaveFullScreenEvent: node.events.EventInstance<js.array.JsTuple>
+    override val leaveFullScreenEvent: node.events.EventInstance<js.array.JsTuple>
 
     @web.events.JsEvent("leave-html-full-screen")
     val leaveHtmlFullScreenEvent: node.events.EventInstance<js.array.JsTuple>
 
     @web.events.JsEvent("maximize")
-    val maximizeEvent: node.events.EventInstance<js.array.JsTuple>
+    override val maximizeEvent: node.events.EventInstance<js.array.JsTuple>
 
     @web.events.JsEvent("minimize")
-    val minimizeEvent: node.events.EventInstance<js.array.JsTuple>
+    override val minimizeEvent: node.events.EventInstance<js.array.JsTuple>
 
     @web.events.JsEvent("move")
-    val moveEvent: node.events.EventInstance<js.array.JsTuple>
+    override val moveEvent: node.events.EventInstance<js.array.JsTuple>
 
     @web.events.JsEvent("moved")
-    val movedEvent: node.events.EventInstance<js.array.JsTuple>
+    override val movedEvent: node.events.EventInstance<js.array.JsTuple>
 
     @web.events.JsEvent("new-window-for-tab")
-    val newWindowForTabEvent: node.events.EventInstance<js.array.JsTuple>
+    override val newWindowForTabEvent: node.events.EventInstance<js.array.JsTuple>
 
     @web.events.JsEvent("page-title-updated")
     val pageTitleUpdatedEvent: node.events.EventInstance<js.array.JsTuple3<Event<*>, String, Boolean>>
@@ -1757,54 +2174,59 @@ open external class BrowserWindow : NodeEventEmitter {
     val readyToShowEvent: node.events.EventInstance<js.array.JsTuple>
 
     @web.events.JsEvent("resize")
-    val resizeEvent: node.events.EventInstance<js.array.JsTuple>
+    override val resizeEvent: node.events.EventInstance<js.array.JsTuple>
 
     @web.events.JsEvent("resized")
-    val resizedEvent: node.events.EventInstance<js.array.JsTuple>
+    override val resizedEvent: node.events.EventInstance<js.array.JsTuple>
 
     @web.events.JsEvent("responsive")
     val responsiveEvent: node.events.EventInstance<js.array.JsTuple>
 
     @web.events.JsEvent("restore")
-    val restoreEvent: node.events.EventInstance<js.array.JsTuple>
+    override val restoreEvent: node.events.EventInstance<js.array.JsTuple>
 
     @web.events.JsEvent("rotate-gesture")
-    val rotateGestureEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Double>>
+    override val rotateGestureEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Double>>
 
     @web.events.JsEvent("session-end")
-    val sessionEndEvent: node.events.EventInstance<js.array.JsTuple>
+    override val sessionEndEvent: node.events.EventInstance<js.array.JsTuple>
 
     @web.events.JsEvent("sheet-begin")
-    val sheetBeginEvent: node.events.EventInstance<js.array.JsTuple>
+    override val sheetBeginEvent: node.events.EventInstance<js.array.JsTuple>
 
     @web.events.JsEvent("sheet-end")
-    val sheetEndEvent: node.events.EventInstance<js.array.JsTuple>
+    override val sheetEndEvent: node.events.EventInstance<js.array.JsTuple>
 
     @web.events.JsEvent("show")
-    val showEvent: node.events.EventInstance<js.array.JsTuple>
+    override val showEvent: node.events.EventInstance<js.array.JsTuple>
 
     @web.events.JsEvent("swipe")
-    val swipeEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, String>>
+    override val swipeEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, String>>
 
     @web.events.JsEvent("system-context-menu")
-    val systemContextMenuEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Point>>
+    override val systemContextMenuEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Point>>
 
     @web.events.JsEvent("unmaximize")
-    val unmaximizeEvent: node.events.EventInstance<js.array.JsTuple>
+    override val unmaximizeEvent: node.events.EventInstance<js.array.JsTuple>
 
     @web.events.JsEvent("unresponsive")
     val unresponsiveEvent: node.events.EventInstance<js.array.JsTuple>
 
     @web.events.JsEvent("will-move")
-    val willMoveEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Rectangle>>
+    override val willMoveEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Rectangle>>
 
     @web.events.JsEvent("will-resize")
-    val willResizeEvent: node.events.EventInstance<js.array.JsTuple3<Event<*>, Rectangle, WillResizeDetails>>
+    override val willResizeEvent: node.events.EventInstance<js.array.JsTuple3<Event<*>, Rectangle, WillResizeDetails>>
 
     companion object {
         /**
+         * > **Note** The `BrowserView` class is deprecated, and replaced by the new
+         * `WebContentsView` class.
+         *
          * The window that owns the given `browserView`. If the given view is not attached
          * to any window, returns `null`.
+         *
+         * @deprecated
          */
         fun fromBrowserView(browserView: BrowserView): BrowserWindow?
 

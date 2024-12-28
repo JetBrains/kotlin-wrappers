@@ -14,6 +14,10 @@ export default (node) => {
             || node.name.text === "Menu"
             || node.name.text === "BrowserWindow"
             || node.name.text === "BrowserView"
+            || node.name.text === "BaseWindow"
+            || node.name.text === "View"
+            || node.name.text === "WebContentsView"
+            || node.name.text === "BrowserWindow"
         )
     ) {
         return "open"

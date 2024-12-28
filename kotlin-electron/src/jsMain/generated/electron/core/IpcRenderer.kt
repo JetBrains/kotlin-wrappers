@@ -49,7 +49,8 @@ external interface IpcRenderer : node.events.EventEmitter {
     fun invoke(channel: String, vararg args: Any?): Promise<Any?>
 
     /**
-     * Alias for `ipcRenderer.removeListener`.
+     * Removes the specified `listener` from the listener array for the specified
+     * `channel`.
      */
     fun off(
         channel: String,
@@ -94,13 +95,13 @@ external interface IpcRenderer : node.events.EventEmitter {
     ): Unit
 
     /**
-     * Removes all listeners, or those of the specified `channel`.
+     * Removes all listeners from the specified `channel`. Removes all listeners from
+     * all channels if no channel is specified.
      */
-    fun removeAllListeners(channel: String): Unit /* this */
+    fun removeAllListeners(channel: String = definedExternally): Unit /* this */
 
     /**
-     * Removes the specified `listener` from the listener array for the specified
-     * `channel`.
+     * Alias for `ipcRenderer.off`.
      */
     fun removeListener(
         channel: String,

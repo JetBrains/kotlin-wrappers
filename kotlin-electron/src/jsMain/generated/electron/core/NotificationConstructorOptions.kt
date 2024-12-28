@@ -29,7 +29,8 @@ external interface NotificationConstructorOptions {
     var silent: Boolean?
 
     /**
-     * An icon to use in the notification.
+     * An icon to use in the notification. If a string is passed, it must be a valid
+     * path to a local icon file.
      */
     var icon: (Any /* (string) | (NativeImage) */)?
 

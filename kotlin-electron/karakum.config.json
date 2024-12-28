@@ -32,10 +32,13 @@
         "AutoUpdaterEvent.kt": [
             "js.date.Date"
         ],
-        "BrowserWindow.kt": [
-            "js.promise.Promise",
+        "BaseWindow.kt": [
             "node.buffer.Buffer",
             "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "BrowserWindow.kt": [
+            "js.promise.Promise",
+            "node.buffer.Buffer"
         ],
         "ClientRequest.kt": [
             "node.buffer.Buffer",
@@ -158,6 +161,9 @@
         "SystemPreferences.kt": [
             "js.promise.Promise"
         ],
+        "TextureInfo.kt": [
+            "node.buffer.Buffer"
+        ],
         "TouchBarColorPicker.kt": [
             "node.events.EventEmitter as NodeEventEmitter"
         ],
@@ -196,6 +202,9 @@
             "node.buffer.Buffer"
         ],
         "UtilityProcess.kt": [
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "View.kt": [
             "node.events.EventEmitter as NodeEventEmitter"
         ],
         "WebContents.kt": [

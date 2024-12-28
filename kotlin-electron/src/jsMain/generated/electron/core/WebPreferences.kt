@@ -174,7 +174,7 @@ external interface WebPreferences {
      * Whether to enable offscreen rendering for the browser window. Defaults to
      * `false`. See the offscreen rendering tutorial for more details.
      */
-    var offscreen: Boolean?
+    var offscreen: (Any /* (Offscreen) | (boolean) */)?
 
     /**
      * Sets the session used by the page according to the session's partition string.
@@ -245,6 +245,14 @@ external interface WebPreferences {
      * Make TextArea elements resizable. Default is `true`.
      */
     var textAreasAreResizable: Boolean?
+
+    /**
+     * Whether to enable background transparency for the guest page. Default is `true`.
+     * **Note:** The guest page's text and background colors are derived from the color
+     * scheme of its root element. When transparency is enabled, the text color will
+     * still change accordingly but the background will remain transparent.
+     */
+    var transparent: Boolean?
 
     /**
      * Enforces the v8 code caching policy used by blink. Accepted values are

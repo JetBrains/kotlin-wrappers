@@ -22,11 +22,11 @@ package electron.core
 
 /* declare namespace NodeJS {
     interface Process extends NodeJS.EventEmitter {
-        on(event: 'loaded', listener: Function): this;
-        off(event: 'loaded', listener: Function): this;
-        once(event: 'loaded', listener: Function): this;
-        addListener(event: 'loaded', listener: Function): this;
-        removeListener(event: 'loaded', listener: Function): this;
+        on(event: 'loaded', listener: () => void): this;
+        off(event: 'loaded', listener: () => void): this;
+        once(event: 'loaded', listener: () => void): this;
+        addListener(event: 'loaded', listener: () => void): this;
+        removeListener(event: 'loaded', listener: () => void): this;
         on(eventName: string | symbol, listener: (...args: any[]) => void): this;
         off(eventName: string | symbol, listener: (...args: any[]) => void): this;
         once(eventName: string | symbol, listener: (...args: any[]) => void): this;
@@ -37,7 +37,6 @@ package electron.core
         getCPUUsage(): Electron.CPUUsage;
         getCreationTime(): (number) | (null);
         getHeapStatistics(): Electron.HeapStatistics;
-        getIOCounters(): Electron.IOCounters;
         getProcessMemoryInfo(): Promise<Electron.ProcessMemoryInfo>;
         getSystemMemoryInfo(): Electron.SystemMemoryInfo;
         getSystemVersion(): string;

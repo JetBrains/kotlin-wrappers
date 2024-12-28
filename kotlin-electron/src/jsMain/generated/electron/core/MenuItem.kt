@@ -35,7 +35,7 @@ open external class MenuItem {
      * called with `menuItem.click(event, focusedWindow, focusedWebContents)`.
      *
      * * `event` KeyboardEvent
-     * * `focusedWindow` BrowserWindow
+     * * `focusedWindow` BaseWindow
      * * `focusedWebContents` WebContents
      */
     var click: Function<*>

@@ -9,9 +9,79 @@ const eventHandlerMethods = new Set([
     "removeListener",
 ])
 
-const openEvents = {}
+const openEvents = {
+    "electron.d.ts": {
+        "BaseWindow": [
+            "always-on-top-changed",
+            "app-command",
+            "blur",
+            "close",
+            "closed",
+            "enter-full-screen",
+            "focus",
+            "hide",
+            "leave-full-screen",
+            "maximize",
+            "minimize",
+            "move",
+            "moved",
+            "new-window-for-tab",
+            "resize",
+            "resized",
+            "restore",
+            "rotate-gesture",
+            "session-end",
+            "sheet-begin",
+            "sheet-end",
+            "show",
+            "swipe",
+            "system-context-menu",
+            "unmaximize",
+            "will-move",
+            "will-resize",
+        ],
+        "View": [
+            "bounds-changed"
+        ]
+    }
+}
 
-const overriddenEvents = {}
+const overriddenEvents = {
+    "electron.d.ts": {
+        "BrowserWindow": [
+            "always-on-top-changed",
+            "app-command",
+            "blur",
+            "close",
+            "closed",
+            "enter-full-screen",
+            "focus",
+            "hide",
+            "leave-full-screen",
+            "maximize",
+            "minimize",
+            "move",
+            "moved",
+            "new-window-for-tab",
+            "resize",
+            "resized",
+            "restore",
+            "rotate-gesture",
+            "session-end",
+            "sheet-begin",
+            "sheet-end",
+            "show",
+            "swipe",
+            "system-context-menu",
+            "unmaximize",
+            "will-move",
+            "will-resize",
+        ],
+        "WebContentsView": [
+            "bounds-changed"
+        ]
+    }
+}
 
 const ignoredEvents = {}
 

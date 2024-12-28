@@ -354,9 +354,12 @@ external interface SystemPreferences : node.events.EventEmitter {
      * semitransparent backgrounds. This maps to
      * NSWorkspace.accessibilityDisplayShouldReduceTransparency
      *
+     * **Deprecated:** Use the new `nativeTheme.prefersReducedTransparency` API.
+     *
+     * @deprecated
      * @platform darwin
      */
-    fun accessibilityDisplayShouldReduceTransparency(): Boolean
+    var accessibilityDisplayShouldReduceTransparency: Boolean
 
     /**
      * A `string` property that can be `dark`, `light` or `unknown`.

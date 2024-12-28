@@ -27,5 +27,8 @@ sealed external interface BrowserWindowSetAlwaysOnTopLevel {
 
         @seskar.js.JsValue("screen-saver")
         val screenSaver: BrowserWindowSetAlwaysOnTopLevel
+
+        @seskar.js.JsValue("dock")
+        val dock: BrowserWindowSetAlwaysOnTopLevel
     }
 }

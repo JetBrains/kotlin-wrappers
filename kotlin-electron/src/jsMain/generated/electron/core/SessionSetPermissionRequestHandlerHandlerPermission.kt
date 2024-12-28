@@ -46,6 +46,9 @@ sealed external interface SessionSetPermissionRequestHandlerHandlerPermission {
         @seskar.js.JsValue("openExternal")
         val openExternal: SessionSetPermissionRequestHandlerHandlerPermission
 
+        @seskar.js.JsValue("speaker-selection")
+        val speakerSelection: SessionSetPermissionRequestHandlerHandlerPermission
+
         @seskar.js.JsValue("storage-access")
         val storageAccess: SessionSetPermissionRequestHandlerHandlerPermission
 
@@ -57,5 +60,8 @@ sealed external interface SessionSetPermissionRequestHandlerHandlerPermission {
 
         @seskar.js.JsValue("unknown")
         val unknown: SessionSetPermissionRequestHandlerHandlerPermission
+
+        @seskar.js.JsValue("fileSystem")
+        val fileSystem: SessionSetPermissionRequestHandlerHandlerPermission
     }
 }

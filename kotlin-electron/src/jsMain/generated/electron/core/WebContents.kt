@@ -90,6 +90,10 @@ external class WebContents : NodeEventEmitter {
      */
 
     /**
+     * Emitted when 'Search' is selected for text in its context menu.
+     */
+
+    /**
      * Emitted when a `<webview>` has been attached to this web contents.
      */
 
@@ -251,6 +255,17 @@ external class WebContents : NodeEventEmitter {
     /**
      * Emitted when a new frame is generated. Only the dirty area is passed in the
      * buffer.
+     *
+     * When using shared texture (set `webPreferences.offscreen.useSharedTexture` to
+     * `true`) feature, you can pass the texture handle to external rendering pipeline
+     * without the overhead of copying data between CPU and GPU memory, with Chromium's
+     * hardware acceleration support. This feature is helpful for high-performance
+     * rendering scenarios.
+     *
+     * Only a limited number of textures can exist at the same time, so it's important
+     * that you call `texture.release()` as soon as you're done with the texture. By
+     * managing the texture lifecycle by yourself, you can safely pass the
+     * `texture.textureInfo` to other processes through IPC.
      */
 
     /**
@@ -398,13 +413,7 @@ external class WebContents : NodeEventEmitter {
      *
      * Before:
      *
-     * <img width="487" alt="Image Before Text Selection Adjustment"
-     * src="../images/web-contents-text-selection-before.png"/>
-     *
      * After:
-     *
-     * <img width="487" alt="Image After Text Selection Adjustment"
-     * src="../images/web-contents-text-selection-after.png"/>
      */
     fun adjustSelection(options: AdjustSelectionOptions): Unit
 
@@ -436,16 +445,30 @@ external class WebContents : NodeEventEmitter {
 
     /**
      * Whether the browser can go back to previous web page.
+     *
+     * **Deprecated:** Should use the new `contents.navigationHistory.canGoBack` API.
+     *
+     * @deprecated
      */
     fun canGoBack(): Boolean
 
     /**
      * Whether the browser can go forward to next web page.
+     *
+     * **Deprecated:** Should use the new `contents.navigationHistory.canGoForward`
+     * API.
+     *
+     * @deprecated
      */
     fun canGoForward(): Boolean
 
     /**
      * Whether the web page can go to `offset`.
+     *
+     * **Deprecated:** Should use the new `contents.navigationHistory.canGoToOffset`
+     * API.
+     *
+     * @deprecated
      */
     fun canGoToOffset(offset: Double): Boolean
 
@@ -466,6 +489,10 @@ external class WebContents : NodeEventEmitter {
 
     /**
      * Clears the navigation history.
+     *
+     * **Deprecated:** Should use the new `contents.navigationHistory.clear` API.
+     *
+     * @deprecated
      */
     fun clearHistory(): Unit
 
@@ -672,21 +699,37 @@ external class WebContents : NodeEventEmitter {
 
     /**
      * Makes the browser go back a web page.
+     *
+     * **Deprecated:** Should use the new `contents.navigationHistory.goBack` API.
+     *
+     * @deprecated
      */
     fun goBack(): Unit
 
     /**
      * Makes the browser go forward a web page.
+     *
+     * **Deprecated:** Should use the new `contents.navigationHistory.goForward` API.
+     *
+     * @deprecated
      */
     fun goForward(): Unit
 
     /**
      * Navigates browser to the specified absolute web page index.
+     *
+     * **Deprecated:** Should use the new `contents.navigationHistory.goToIndex` API.
+     *
+     * @deprecated
      */
     fun goToIndex(index: Double): Unit
 
     /**
      * Navigates to the specified offset from the "current entry".
+     *
+     * **Deprecated:** Should use the new `contents.navigationHistory.goToOffset` API.
+     *
+     * @deprecated
      */
     fun goToOffset(offset: Double): Unit
 
@@ -739,7 +782,7 @@ external class WebContents : NodeEventEmitter {
 
     /**
      * Whether this page is being captured. It returns true when the capturer count is
-     * large then 0.
+     * greater than 0.
      */
     fun isBeingCaptured(): Boolean
 
@@ -1117,17 +1160,11 @@ external class WebContents : NodeEventEmitter {
      * by `window.open()`, a link with `target="_blank"`, shift+clicking on a link, or
      * submitting a form with `<form target="_blank">`. See `window.open()` for more
      * details and how to use this in conjunction with `did-create-window`.
+     *
+     * An example showing how to customize the process of new `BrowserWindow` creation
+     * to be `BrowserView` attached to main window instead:
      */
-    fun setWindowOpenHandler(
-        handler: (details: HandlerDetails) -> Any,
-        /* ({
-    action: 'deny';
-}) | ({
-    action: 'allow';
-    outlivesOpener?: boolean;
-    overrideBrowserWindowOptions?: BrowserWindowConstructorOptions;
-}) */
-    ): Unit
+    fun setWindowOpenHandler(handler: (details: HandlerDetails) -> WindowOpenHandlerResponse): Unit
 
     /**
      * Changes the zoom factor to the specified factor. Zoom factor is zoom percent
@@ -1375,6 +1412,9 @@ external class WebContents : NodeEventEmitter {
     @web.events.JsEvent("devtools-reload-page")
     val devtoolsReloadPageEvent: node.events.EventInstance<js.array.JsTuple>
 
+    @web.events.JsEvent("devtools-search-query")
+    val devtoolsSearchQueryEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, String>>
+
     @web.events.JsEvent("did-attach-webview")
     val didAttachWebviewEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, WebContents>>
 
@@ -1445,7 +1485,7 @@ external class WebContents : NodeEventEmitter {
     val leaveHtmlFullScreenEvent: node.events.EventInstance<js.array.JsTuple>
 
     @web.events.JsEvent("login")
-    val loginEvent: node.events.EventInstance<js.array.JsTuple4<Event<*>, AuthenticationResponseDetails, AuthInfo, (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit>>
+    val loginEvent: node.events.EventInstance<js.array.JsTuple4<Event<*>, LoginAuthenticationResponseDetails, AuthInfo, (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit>>
 
     @web.events.JsEvent("media-paused")
     val mediaPausedEvent: node.events.EventInstance<js.array.JsTuple>
@@ -1460,7 +1500,7 @@ external class WebContents : NodeEventEmitter {
     val pageTitleUpdatedEvent: node.events.EventInstance<js.array.JsTuple3<Event<*>, String, Boolean>>
 
     @web.events.JsEvent("paint")
-    val paintEvent: node.events.EventInstance<js.array.JsTuple3<Event<*>, Rectangle, NativeImage>>
+    val paintEvent: node.events.EventInstance<js.array.JsTuple3<Event<WebContentsPaintEventParams>, Rectangle, NativeImage>>
 
     @web.events.JsEvent("plugin-crashed")
     val pluginCrashedEvent: node.events.EventInstance<js.array.JsTuple3<Event<*>, String, String>>

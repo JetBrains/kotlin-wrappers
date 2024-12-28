@@ -8,6 +8,11 @@ external interface OnHeadersReceivedListenerDetails {
     var method: String
     var webContentsId: Double?
     var webContents: WebContents?
+
+    /**
+     * Requesting frame. May be `null` if accessed after the frame has either navigated
+     * or been destroyed.
+     */
     var frame: WebFrameMain?
 
     /**

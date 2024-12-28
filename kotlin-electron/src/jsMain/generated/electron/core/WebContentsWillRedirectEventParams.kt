@@ -21,9 +21,10 @@ external interface WebContentsWillRedirectEventParams {
     var isMainFrame: Boolean
 
     /**
-     * The frame to be navigated.
+     * The frame to be navigated. May be `null` if accessed after the frame has either
+     * navigated or been destroyed.
      */
-    var frame: WebFrameMain
+    var frame: WebFrameMain?
 
     /**
      * The frame which initiated the navigation, which can be a parent frame (e.g. via

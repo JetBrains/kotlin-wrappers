@@ -38,8 +38,9 @@ external interface IpcMainEvent : Event<Any> {
     var sender: WebContents
 
     /**
-     * The frame that sent this message
+     * The frame that sent this message. May be `null` if accessed after the frame has
+     * either navigated or been destroyed.
      *
      */
-    val senderFrame: WebFrameMain
+    val senderFrame: WebFrameMain?
 }

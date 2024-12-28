@@ -110,7 +110,7 @@ external interface App : node.events.EventEmitter {
      */
 
     /**
-     * Emitted when `webContents` wants to do basic auth.
+     * Emitted when `webContents` or Utility process wants to do basic auth.
      *
      * The default behavior is to cancel all authentications. To override this you
      * should prevent the default behavior with `event.preventDefault()` and call
@@ -171,6 +171,11 @@ external interface App : node.events.EventEmitter {
      * launched from Notification Center. You can also call `app.isReady()` to check if
      * this event has already fired and `app.whenReady()` to get a Promise that is
      * fulfilled when Electron is initialized.
+     *
+     * **Note**: The `ready` event is only fired after the main process has finished
+     * running the first tick of the event loop. If an Electron API needs to be called
+     * before the `ready` event, ensure that it is called synchronously in the
+     * top-level context of the main process.
      */
 
     /**
@@ -1144,6 +1149,12 @@ external interface App : node.events.EventEmitter {
      * @platform linux,darwin
      */
     fun setBadgeCount(count: Double = definedExternally): Boolean
+
+    /**
+     * The handler is called when a password is needed to unlock a client certificate
+     * for `hostname`.
+     */
+    fun setClientCertRequestPasswordHandler(handler: (clientCertRequestParams: ClientCertRequestParams) -> Promise<String>): Unit
 
     /**
      * Sets or removes a custom Jump List for the application, and returns one of the

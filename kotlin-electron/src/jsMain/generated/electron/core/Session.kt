@@ -29,6 +29,7 @@ external class Session : NodeEventEmitter {
      * `Session.removeExtension` is called.
      */
 
+
     /**
      * Emitted after `navigator.hid.requestDevice` has been called and
      * `select-hid-device` has fired if a new device becomes available before the
@@ -183,6 +184,26 @@ external class Session : NodeEventEmitter {
      * resolves when the code cache clear operation is complete.
      */
     fun clearCodeCaches(options: ClearCodeCachesOptions): Promise<js.core.Void>
+
+    /**
+     * resolves when all data has been cleared.
+     *
+     * Clears various different types of data.
+     *
+     * This method clears more types of data and is more thorough than the
+     * `clearStorageData` method.
+     *
+     * **Note:** Cookies are stored at a broader scope than origins. When removing
+     * cookies and filtering by `origins` (or `excludeOrigins`), the cookies will be
+     * removed at the registrable domain level. For example, clearing cookies for the
+     * origin `https://really.specific.origin.example.com/` will end up clearing all
+     * cookies for `example.com`. Clearing cookies for the origin
+     * `https://my.website.example.co.uk/` will end up clearing all cookies for
+     * `example.co.uk`.
+     *
+     * For more information, refer to Chromium's `BrowsingDataRemover` interface.
+     */
+    fun clearData(options: ClearDataOptions = definedExternally): Promise<js.core.Void>
 
     /**
      * Resolves when the operation is complete.
@@ -493,12 +514,21 @@ external class Session : NodeEventEmitter {
      * via the `navigator.mediaDevices.getDisplayMedia` API. Use the desktopCapturer
      * API to choose which stream(s) to grant access to.
      *
+     * `useSystemPicker` allows an application to use the system picker instead of
+     * providing a specific video source from `getSources`. This option is
+     * experimental, and currently available for MacOS 15+ only. If the system picker
+     * is available and `useSystemPicker` is set to `true`, the handler will not be
+     * invoked.
+     *
      * Passing a WebFrameMain object as a video or audio stream will capture the video
      * or audio stream from that frame.
      *
      * Passing `null` instead of a function resets the handler to its default state.
      */
-    fun setDisplayMediaRequestHandler(handler: ((request: DisplayMediaRequestHandlerHandlerRequest, callback: (streams: Streams) -> Unit) -> Unit)?): Unit
+    fun setDisplayMediaRequestHandler(
+        handler: ((request: DisplayMediaRequestHandlerHandlerRequest, callback: (streams: Streams) -> Unit) -> Unit)?,
+        opts: DisplayMediaRequestHandlerOpts = definedExternally,
+    ): Unit
 
     /**
      * Sets download saving directory. By default, the download directory will be the
@@ -524,7 +554,7 @@ external class Session : NodeEventEmitter {
      * `setPermissionCheckHandler` to get complete permission handling. Most web APIs
      * do a permission check and then make a permission request if the check is denied.
      */
-    fun setPermissionRequestHandler(handler: ((webContents: WebContents, permission: SessionSetPermissionRequestHandlerHandlerPermission, callback: (permissionGranted: Boolean) -> Unit, details: PermissionRequestHandlerHandlerDetails) -> Unit)?): Unit
+    fun setPermissionRequestHandler(handler: ((webContents: WebContents, permission: SessionSetPermissionRequestHandlerHandlerPermission, callback: (permissionGranted: Boolean) -> Unit, details: Any /* (PermissionRequest) | (FilesystemPermissionRequest) | (MediaAccessPermissionRequest) | (OpenExternalPermissionRequest) */) -> Unit)?): Unit
 
     /**
      * Adds scripts that will be executed on ALL web contents that are associated with
@@ -680,6 +710,9 @@ external class Session : NodeEventEmitter {
 
     @web.events.JsEvent("extension-unloaded")
     val extensionUnloadedEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Extension>>
+
+    @web.events.JsEvent("file-system-access-restricted")
+    val fileSystemAccessRestrictedEvent: node.events.EventInstance<js.array.JsTuple3<Event<*>, FileSystemAccessRestrictedDetails, (action: SessionFileSystemAccessRestrictedListenerCallbackAction) -> Unit>>
 
     @web.events.JsEvent("hid-device-added")
     val hidDeviceAddedEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, HidDeviceAddedDetails>>

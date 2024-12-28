@@ -3,5 +3,9 @@
 package electron.core
 
 external interface FrameCreatedDetails {
-    var frame: WebFrameMain
+    /**
+     * The created frame. May be `null` if accessed after the frame has either
+     * navigated or been destroyed.
+     */
+    var frame: WebFrameMain?
 }

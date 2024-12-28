@@ -35,9 +35,9 @@ external class TouchBarScrubber {
 
     /**
      * A `string` representing the style that selected items in the scrubber should
-     * have. This style is overlayed on top of the scrubber item instead of being
-     * placed behind it. Updating this value immediately updates the control in the
-     * touch bar. Possible values:
+     * have. This style is overlaid on top of the scrubber item instead of being placed
+     * behind it. Updating this value immediately updates the control in the touch bar.
+     * Possible values:
      *
      * * `background` - Maps to `[NSScrubberSelectionStyle roundedBackgroundStyle]`.
      * * `outline` - Maps to `[NSScrubberSelectionStyle outlineOverlayStyle]`.

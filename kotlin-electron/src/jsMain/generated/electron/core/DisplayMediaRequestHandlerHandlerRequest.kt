@@ -4,9 +4,10 @@ package electron.core
 
 external interface DisplayMediaRequestHandlerHandlerRequest {
     /**
-     * Frame that is requesting access to media.
+     * Frame that is requesting access to media. May be `null` if accessed after the
+     * frame has either navigated or been destroyed.
      */
-    var frame: WebFrameMain
+    var frame: WebFrameMain?
 
     /**
      * Origin of the page making the request.

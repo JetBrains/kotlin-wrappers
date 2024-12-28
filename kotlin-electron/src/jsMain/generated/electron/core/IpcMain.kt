@@ -6,6 +6,14 @@ package electron.core
 external interface IpcMain : node.events.EventEmitter {
 // Docs: https://electronjs.org/docs/api/ipc-main
     /**
+     * Alias for `ipcMain.on`.
+     */
+    fun addListener(
+        channel: String,
+        listener: Function<Unit>, /* (event: IpcMainEvent, ...args: any[]) => void */
+    ): Unit /* this */
+
+    /**
      * Adds a handler for an `invoke`able IPC. This handler will be called whenever a
      * renderer calls `ipcRenderer.invoke(channel, ...args)`.
      *
@@ -36,6 +44,15 @@ external interface IpcMain : node.events.EventEmitter {
     ): Unit
 
     /**
+     * Removes the specified `listener` from the listener array for the specified
+     * `channel`.
+     */
+    fun off(
+        channel: String,
+        listener: Function<Unit>, /* (event: IpcMainEvent, ...args: any[]) => void */
+    ): Unit /* this */
+
+    /**
      * Listens to `channel`, when a new message arrives `listener` would be called with
      * `listener(event, args...)`.
      */
@@ -54,7 +71,8 @@ external interface IpcMain : node.events.EventEmitter {
     ): Unit /* this */
 
     /**
-     * Removes listeners of the specified `channel`.
+     * Removes all listeners from the specified `channel`. Removes all listeners from
+     * all channels if no channel is specified.
      */
     fun removeAllListeners(channel: String = definedExternally): Unit /* this */
 
@@ -64,8 +82,7 @@ external interface IpcMain : node.events.EventEmitter {
     fun removeHandler(channel: String): Unit
 
     /**
-     * Removes the specified `listener` from the listener array for the specified
-     * `channel`.
+     * Alias for `ipcMain.off`.
      */
     fun removeListener(channel: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 }

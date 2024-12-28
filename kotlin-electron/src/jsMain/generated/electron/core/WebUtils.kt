@@ -10,7 +10,7 @@ external interface WebUtils {
      * where the File object passed in was constructed in JS and is not backed by a
      * file on disk an empty string is returned.
      *
-     * This method superceded the previous augmentation to the `File` object with the
+     * This method superseded the previous augmentation to the `File` object with the
      * `path` property.  An example is included below.
      */
     fun getPathForFile(file: File): String

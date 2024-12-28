@@ -46,6 +46,16 @@ external class DownloadItem : NodeEventEmitter {
     fun getContentDisposition(): String
 
     /**
+     * The current download speed in bytes per second.
+     */
+    fun getCurrentBytesPerSecond(): Double
+
+    /**
+     * Number of seconds since the UNIX epoch when the download ended.
+     */
+    fun getEndTime(): Double
+
+    /**
      * ETag header value.
      */
     fun getETag(): String
@@ -68,6 +78,11 @@ external class DownloadItem : NodeEventEmitter {
      * The files mime type.
      */
     fun getMimeType(): String
+
+    /**
+     * The download completion in percent.
+     */
+    fun getPercentComplete(): Double
 
     /**
      * The received bytes of the download item.

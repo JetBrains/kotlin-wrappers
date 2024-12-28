@@ -121,14 +121,6 @@ external interface Params {
     var formControlType: (ParamsFormControlType)
 
     /**
-     * If the context menu was invoked on an input field, the type of that field.
-     * Possible values include `none`, `plainText`, `password`, `other`.
-     *
-     * @deprecated
-     */
-    var inputFieldType: (ParamsInputFieldType)
-
-    /**
      * If the context is editable, whether or not spellchecking is enabled.
      */
     var spellcheckEnabled: Boolean

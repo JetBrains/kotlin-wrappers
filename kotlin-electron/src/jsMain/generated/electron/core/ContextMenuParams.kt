@@ -14,9 +14,10 @@ external interface ContextMenuParams {
     var y: Double
 
     /**
-     * Frame from which the context menu was invoked.
+     * Frame from which the context menu was invoked. May be `null` if accessed after
+     * the frame has either navigated or been destroyed.
      */
-    var frame: WebFrameMain
+    var frame: WebFrameMain?
 
     /**
      * URL of the link that encloses the node the context menu was invoked on.
@@ -124,14 +125,6 @@ external interface ContextMenuParams {
      * `select-one`, `submit-button`, and `text-area`,
      */
     var formControlType: (ContextMenuParamsFormControlType)
-
-    /**
-     * If the context menu was invoked on an input field, the type of that field.
-     * Possible values include `none`, `plainText`, `password`, `other`.
-     *
-     * @deprecated
-     */
-    var inputFieldType: (ContextMenuParamsInputFieldType)
 
     /**
      * If the context is editable, whether or not spellchecking is enabled.

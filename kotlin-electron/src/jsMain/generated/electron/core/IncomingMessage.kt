@@ -23,10 +23,6 @@ external class IncomingMessage : NodeEventEmitter {
      */
 
     /**
-     * Returns:
-     *
-     * `error` Error - Typically holds an error string identifying failure root cause.
-     *
      * Emitted when an error was encountered while streaming response data events. For
      * instance, if the server closes the underlying while the response is still
      * streaming, an `error` event will be emitted on the response object and a `close`
@@ -96,5 +92,5 @@ external class IncomingMessage : NodeEventEmitter {
     val endEvent: node.events.EventInstance<js.array.JsTuple>
 
     @web.events.JsEvent("error")
-    val errorEvent: node.events.EventInstance<js.array.JsTuple>
+    val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
 }

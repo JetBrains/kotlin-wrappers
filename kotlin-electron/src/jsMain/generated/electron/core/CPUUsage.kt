@@ -5,6 +5,11 @@ package electron.core
 external interface CPUUsage {
 // Docs: https://electronjs.org/docs/api/structures/cpu-usage
     /**
+     * Total seconds of CPU time used since process startup.
+     */
+    var cumulativeCPUUsage: Double?
+
+    /**
      * The number of average idle CPU wakeups per second since the last call to
      * getCPUUsage. First call returns 0. Will always return 0 on Windows.
      */

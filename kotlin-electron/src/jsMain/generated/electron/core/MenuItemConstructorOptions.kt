@@ -4,10 +4,10 @@ package electron.core
 
 external interface MenuItemConstructorOptions {
     /**
-     * Will be called with `click(menuItem, browserWindow, event)` when the menu item
-     * is clicked.
+     * Will be called with `click(menuItem, window, event)` when the menu item is
+     * clicked.
      */
-    var click: ((menuItem: MenuItem, browserWindow: BrowserWindow?, event: KeyboardEvent) -> Unit)?
+    var click: ((menuItem: MenuItem, window: BaseWindow?, event: KeyboardEvent) -> Unit)?
 
     /**
      * Can be `undo`, `redo`, `cut`, `copy`, `paste`, `pasteAndMatchStyle`, `delete`,
@@ -92,30 +92,27 @@ external interface MenuItemConstructorOptions {
     var id: String?
 
     /**
-     * Inserts this item before the item with the specified label. If the referenced
-     * item doesn't exist the item will be inserted at the end of  the menu. Also
-     * implies that the menu item in question should be placed in the same “group” as
-     * the item.
+     * Inserts this item before the item with the specified id. If the referenced item
+     * doesn't exist the item will be inserted at the end of  the menu. Also implies
+     * that the menu item in question should be placed in the same “group” as the item.
      */
     var before: js.array.ReadonlyArray<String>?
 
     /**
-     * Inserts this item after the item with the specified label. If the referenced
-     * item doesn't exist the item will be inserted at the end of the menu.
+     * Inserts this item after the item with the specified id. If the referenced item
+     * doesn't exist the item will be inserted at the end of the menu.
      */
     var after: js.array.ReadonlyArray<String>?
 
     /**
      * Provides a means for a single context menu to declare the placement of their
-     * containing group before the containing group of the item with the specified
-     * label.
+     * containing group before the containing group of the item with the specified id.
      */
     var beforeGroupContaining: js.array.ReadonlyArray<String>?
 
     /**
      * Provides a means for a single context menu to declare the placement of their
-     * containing group after the containing group of the item with the specified
-     * label.
+     * containing group after the containing group of the item with the specified id.
      */
     var afterGroupContaining: js.array.ReadonlyArray<String>?
 }

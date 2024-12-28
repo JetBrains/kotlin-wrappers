@@ -23,6 +23,13 @@ external interface NativeTheme : node.events.EventEmitter {
     val inForcedColorsMode: Boolean
 
     /**
+     * A `boolean` that indicates the whether the user has chosen via system
+     * accessibility settings to reduce transparency at the OS level.
+     *
+     */
+    val prefersReducedTransparency: Boolean
+
+    /**
      * A `boolean` for if the OS / Chromium currently has a dark mode enabled or is
      * being instructed to show a dark-style UI.  If you want to modify this value you
      * should use `themeSource` below.

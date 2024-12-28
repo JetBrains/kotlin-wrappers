@@ -7,21 +7,73 @@ package electron.core
 external class NavigationHistory {
 // Docs: https://electronjs.org/docs/api/navigation-history
     /**
+     * Whether the browser can go back to previous web page.
+     */
+    fun canGoBack(): Boolean
+
+    /**
+     * Whether the browser can go forward to next web page.
+     */
+    fun canGoForward(): Boolean
+
+    /**
+     * Whether the web page can go to the specified `offset` from the current entry.
+     */
+    fun canGoToOffset(offset: Double): Boolean
+
+    /**
+     * Clears the navigation history.
+     */
+    fun clear(): Unit
+
+    /**
      * The index of the current page, from which we would go back/forward or reload.
      */
     fun getActiveIndex(): Double
 
     /**
-     * * `url` string - The URL of the navigation entry at the given index.
-     * * `title` string - The page title of the navigation entry at the given index.
+     * WebContents complete history.
+     */
+    fun getAllEntries(): js.array.ReadonlyArray<NavigationEntry>
+
+    /**
+     * Navigation entry at the given index.
      *
      * If index is out of bounds (greater than history length or less than 0), null
      * will be returned.
      */
-    fun getEntryAtIndex(index: Double): EntryAtIndex
+    fun getEntryAtIndex(index: Double): NavigationEntry
+
+    /**
+     * Makes the browser go back a web page.
+     */
+    fun goBack(): Unit
+
+    /**
+     * Makes the browser go forward a web page.
+     */
+    fun goForward(): Unit
+
+    /**
+     * Navigates browser to the specified absolute web page index.
+     */
+    fun goToIndex(index: Double): Unit
+
+    /**
+     * Navigates to the specified offset from the current entry.
+     */
+    fun goToOffset(offset: Double): Unit
 
     /**
      * History length.
      */
     fun length(): Double
+
+    /**
+     * Removes the navigation entry at the given index. Can't remove entry at the
+     * "current active index".
+     *
+     * Whether the navigation entry was removed from the webContents history.
+     */
+    fun removeEntryAtIndex(index: Double): Boolean
 }

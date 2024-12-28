@@ -9,6 +9,7 @@ const propertyNames = {
     types: "type",
     storages: "storage",
     quotas: "quota",
+    dataTypes: "dataType",
 }
 
 export default (node) => {

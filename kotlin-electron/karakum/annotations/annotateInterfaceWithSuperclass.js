@@ -19,6 +19,7 @@ const interfacesWithSuperclass = [
     "ConsoleMessageEvent",
     "ContextMenuEvent",
     "DevtoolsOpenUrlEvent",
+    "DevtoolsSearchQueryEvent",
     "DidChangeThemeColorEvent",
     "DidFailLoadEvent",
     "DidFrameFinishLoadEvent",

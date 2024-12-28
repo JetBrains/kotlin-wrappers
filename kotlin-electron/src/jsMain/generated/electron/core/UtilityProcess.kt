@@ -8,6 +8,16 @@ import node.events.EventEmitter as NodeEventEmitter
 
 external class UtilityProcess : NodeEventEmitter {
     /**
+     * Emitted when the child process needs to terminate due to non continuable error
+     * from V8.
+     *
+     * No matter if you listen to the `error` event, the `exit` event will be emitted
+     * after the child process terminates.
+     *
+     * @experimental
+     */
+
+    /**
      * Emitted after the child process ends.
      */
 
@@ -18,6 +28,25 @@ external class UtilityProcess : NodeEventEmitter {
 
     /**
      * Emitted once the child process has spawned successfully.
+     */
+
+    /**
+     * @experimental
+     */
+
+
+    /**
+     * @experimental
+     */
+
+
+    /**
+     * @experimental
+     */
+
+
+    /**
+     * @experimental
      */
 
 
@@ -38,9 +67,12 @@ external class UtilityProcess : NodeEventEmitter {
 
     /**
      * A `Integer | undefined` representing the process identifier (PID) of the child
-     * process. If the child process fails to spawn due to errors, then the value is
+     * process. Until the child process has spawned successfully, the value is
      * `undefined`. When the child process exits, then the value is `undefined` after
      * the `exit` event is emitted.
+     *
+     * **Note:** You can use the `pid` to determine if the process is currently
+     * running.
      */
     var pid: Double?
 
@@ -59,6 +91,9 @@ external class UtilityProcess : NodeEventEmitter {
      * after the `exit` event is emitted.
      */
     var stdout: node.ReadableStream?
+
+    @web.events.JsEvent("error")
+    val errorEvent: node.events.EventInstance<js.array.JsTuple3<(String /* 'FatalError' */), String, String>>
 
     @web.events.JsEvent("exit")
     val exitEvent: node.events.EventInstance<js.array.JsTuple1<Double>>

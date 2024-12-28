@@ -4,5 +4,10 @@ package electron.core
 
 external interface HidDeviceAddedDetails {
     var device: HIDDevice
-    var frame: WebFrameMain
+
+    /**
+     * The frame initiating this event. May be `null` if accessed after the frame has
+     * either navigated or been destroyed.
+     */
+    var frame: WebFrameMain?
 }
