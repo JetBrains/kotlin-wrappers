@@ -4,7 +4,6 @@
 
 package electron.core
 
-
 /* export = Electron.CrossProcessExports; */
 
 /* export = Electron.Main; */

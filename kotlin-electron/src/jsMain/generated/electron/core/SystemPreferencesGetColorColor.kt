@@ -5,19 +5,19 @@ package electron.core
 sealed external interface SystemPreferencesGetColorColor {
     companion object {
         @seskar.js.JsValue("3d-dark-shadow")
-        val _3dDarkShadow: SystemPreferencesGetColorColor
+        val `3d-dark-shadow`: SystemPreferencesGetColorColor
 
         @seskar.js.JsValue("3d-face")
-        val _3dFace: SystemPreferencesGetColorColor
+        val `3d-face`: SystemPreferencesGetColorColor
 
         @seskar.js.JsValue("3d-highlight")
-        val _3dHighlight: SystemPreferencesGetColorColor
+        val `3d-highlight`: SystemPreferencesGetColorColor
 
         @seskar.js.JsValue("3d-light")
-        val _3dLight: SystemPreferencesGetColorColor
+        val `3d-light`: SystemPreferencesGetColorColor
 
         @seskar.js.JsValue("3d-shadow")
-        val _3dShadow: SystemPreferencesGetColorColor
+        val `3d-shadow`: SystemPreferencesGetColorColor
 
         @seskar.js.JsValue("active-border")
         val activeBorder: SystemPreferencesGetColorColor

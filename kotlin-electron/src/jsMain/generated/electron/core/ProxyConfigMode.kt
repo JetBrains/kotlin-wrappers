@@ -8,13 +8,13 @@ sealed external interface ProxyConfigMode {
         val direct: ProxyConfigMode
 
         @seskar.js.JsValue("auto_detect")
-        val autoDetect: ProxyConfigMode
+        val auto_detect: ProxyConfigMode
 
         @seskar.js.JsValue("pac_script")
-        val pacScript: ProxyConfigMode
+        val pac_script: ProxyConfigMode
 
         @seskar.js.JsValue("fixed_servers")
-        val fixedServers: ProxyConfigMode
+        val fixed_servers: ProxyConfigMode
 
         @seskar.js.JsValue("system")
         val system: ProxyConfigMode

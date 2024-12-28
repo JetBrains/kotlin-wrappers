@@ -22,53 +22,53 @@ open external class TouchBar {
         /**
          * A `typeof TouchBarButton` reference to the `TouchBarButton` class.
          */
-        var TouchBarButton: Any?
+        var TouchBarButton: Any /* typeof TouchBarButton */
 
         /**
          * A `typeof TouchBarColorPicker` reference to the `TouchBarColorPicker` class.
          */
-        var TouchBarColorPicker: Any?
+        var TouchBarColorPicker: Any /* typeof TouchBarColorPicker */
 
         /**
          * A `typeof TouchBarGroup` reference to the `TouchBarGroup` class.
          */
-        var TouchBarGroup: Any?
+        var TouchBarGroup: Any /* typeof TouchBarGroup */
 
         /**
          * A `typeof TouchBarLabel` reference to the `TouchBarLabel` class.
          */
-        var TouchBarLabel: Any?
+        var TouchBarLabel: Any /* typeof TouchBarLabel */
 
         /**
          * A `typeof TouchBarOtherItemsProxy` reference to the `TouchBarOtherItemsProxy`
          * class.
          */
-        var TouchBarOtherItemsProxy: Any?
+        var TouchBarOtherItemsProxy: Any /* typeof TouchBarOtherItemsProxy */
 
         /**
          * A `typeof TouchBarPopover` reference to the `TouchBarPopover` class.
          */
-        var TouchBarPopover: Any?
+        var TouchBarPopover: Any /* typeof TouchBarPopover */
 
         /**
          * A `typeof TouchBarScrubber` reference to the `TouchBarScrubber` class.
          */
-        var TouchBarScrubber: Any?
+        var TouchBarScrubber: Any /* typeof TouchBarScrubber */
 
         /**
          * A `typeof TouchBarSegmentedControl` reference to the `TouchBarSegmentedControl`
          * class.
          */
-        var TouchBarSegmentedControl: Any?
+        var TouchBarSegmentedControl: Any /* typeof TouchBarSegmentedControl */
 
         /**
          * A `typeof TouchBarSlider` reference to the `TouchBarSlider` class.
          */
-        var TouchBarSlider: Any?
+        var TouchBarSlider: Any /* typeof TouchBarSlider */
 
         /**
          * A `typeof TouchBarSpacer` reference to the `TouchBarSpacer` class.
          */
-        var TouchBarSpacer: Any?
+        var TouchBarSpacer: Any /* typeof TouchBarSpacer */
     }
 }

@@ -16,7 +16,8 @@
     },
     "packageNameMapper": {
         "electron/([^/]+)\\.kt": "electron/core/$1.kt",
-        "electron/crossprocessexports/(.+)\\.kt": "electron/$1.kt"
+        "electron/crossprocessexports/(.+)\\.kt": "electron/$1.kt",
+        "/([a-z][^/]+)\\.kt": "/$1.val.kt"
     },
     "importInjector": {
         "AddRepresentationOptions.kt": [
@@ -125,6 +126,9 @@
         "NetLog.kt": [
             "js.promise.Promise"
         ],
+        "NodeEventEmitter.kt": [
+            "node.events.EventEmitter"
+        ],
         "Notification.kt": [
             "node.events.EventEmitter as NodeEventEmitter"
         ],
@@ -210,9 +214,6 @@
             "js.promise.Promise",
             "js.typedarrays.Uint8Array",
             "web.html.HTMLElement"
-        ],
-        "namespace.kt": [
-            "node.events.EventEmitter"
         ]
     },
     "namespaceStrategy": {

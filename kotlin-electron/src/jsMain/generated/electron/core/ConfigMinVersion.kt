@@ -8,12 +8,12 @@ sealed external interface ConfigMinVersion {
         val tls1: ConfigMinVersion
 
         @seskar.js.JsValue("tls1.1")
-        val tls11: ConfigMinVersion
+        val `tls1.1`: ConfigMinVersion
 
         @seskar.js.JsValue("tls1.2")
-        val tls12: ConfigMinVersion
+        val `tls1.2`: ConfigMinVersion
 
         @seskar.js.JsValue("tls1.3")
-        val tls13: ConfigMinVersion
+        val `tls1.3`: ConfigMinVersion
     }
 }

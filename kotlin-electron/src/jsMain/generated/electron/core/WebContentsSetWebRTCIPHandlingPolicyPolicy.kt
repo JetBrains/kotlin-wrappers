@@ -8,12 +8,12 @@ sealed external interface WebContentsSetWebRTCIPHandlingPolicyPolicy {
         val default: WebContentsSetWebRTCIPHandlingPolicyPolicy
 
         @seskar.js.JsValue("default_public_interface_only")
-        val defaultPublicInterfaceOnly: WebContentsSetWebRTCIPHandlingPolicyPolicy
+        val default_public_interface_only: WebContentsSetWebRTCIPHandlingPolicyPolicy
 
         @seskar.js.JsValue("default_public_and_private_interfaces")
-        val defaultPublicAndPrivateInterfaces: WebContentsSetWebRTCIPHandlingPolicyPolicy
+        val default_public_and_private_interfaces: WebContentsSetWebRTCIPHandlingPolicyPolicy
 
         @seskar.js.JsValue("disable_non_proxied_udp")
-        val disableNonProxiedUdp: WebContentsSetWebRTCIPHandlingPolicyPolicy
+        val disable_non_proxied_udp: WebContentsSetWebRTCIPHandlingPolicyPolicy
     }
 }

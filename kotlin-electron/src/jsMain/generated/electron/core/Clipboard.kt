@@ -105,7 +105,7 @@ external interface Clipboard {
      *
      * @experimental
      */
-    fun writeBuffer(format: String, buffer: Buffer<*>, type: ClipboardWriteBufferType = definedExternally)
+    fun writeBuffer(format: String, buffer: Buffer<*>, type: ClipboardWriteBufferType = definedExternally): Unit
 
     /**
      * Writes the `text` into the find pasteboard (the pasteboard that holds

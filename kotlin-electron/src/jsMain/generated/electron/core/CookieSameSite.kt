@@ -8,7 +8,7 @@ sealed external interface CookieSameSite {
         val unspecified: CookieSameSite
 
         @seskar.js.JsValue("no_restriction")
-        val noRestriction: CookieSameSite
+        val no_restriction: CookieSameSite
 
         @seskar.js.JsValue("lax")
         val lax: CookieSameSite

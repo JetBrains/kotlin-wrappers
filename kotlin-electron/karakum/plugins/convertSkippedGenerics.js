@@ -41,6 +41,15 @@ export default function (node, context, render) {
     }
 
     if (
+        ts.isTypeReferenceNode(node)
+        && ts.isIdentifier(node.typeName)
+        && node.typeName.text === "Buffer"
+        && !node.typeArguments
+    ) {
+        return `${render(node.typeName)}<*>`
+    }
+
+    if (
         ts.isExpressionWithTypeArguments(node)
         && ts.isIdentifier(node.expression)
         && node.expression.text === "Event"

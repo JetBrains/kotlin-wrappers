@@ -5,10 +5,10 @@ package electron.core
 sealed external interface SafeStorageGetSelectedStorageBackendResult {
     companion object {
         @seskar.js.JsValue("basic_text")
-        val basicText: SafeStorageGetSelectedStorageBackendResult
+        val basic_text: SafeStorageGetSelectedStorageBackendResult
 
         @seskar.js.JsValue("gnome_libsecret")
-        val gnomeLibsecret: SafeStorageGetSelectedStorageBackendResult
+        val gnome_libsecret: SafeStorageGetSelectedStorageBackendResult
 
         @seskar.js.JsValue("kwallet")
         val kwallet: SafeStorageGetSelectedStorageBackendResult

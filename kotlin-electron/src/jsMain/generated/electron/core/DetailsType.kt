@@ -11,16 +11,16 @@ sealed external interface DetailsType {
         val Zygote: DetailsType
 
         @seskar.js.JsValue("Sandbox helper")
-        val SandboxHelper: DetailsType
+        val `Sandbox helper`: DetailsType
 
         @seskar.js.JsValue("GPU")
         val GPU: DetailsType
 
         @seskar.js.JsValue("Pepper Plugin")
-        val PepperPlugin: DetailsType
+        val `Pepper Plugin`: DetailsType
 
         @seskar.js.JsValue("Pepper Plugin Broker")
-        val PepperPluginBroker: DetailsType
+        val `Pepper Plugin Broker`: DetailsType
 
         @seskar.js.JsValue("Unknown")
         val Unknown: DetailsType

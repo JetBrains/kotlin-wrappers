@@ -17,16 +17,16 @@ sealed external interface ProcessMetricType {
         val Zygote: ProcessMetricType
 
         @seskar.js.JsValue("Sandbox helper")
-        val SandboxHelper: ProcessMetricType
+        val `Sandbox helper`: ProcessMetricType
 
         @seskar.js.JsValue("GPU")
         val GPU: ProcessMetricType
 
         @seskar.js.JsValue("Pepper Plugin")
-        val PepperPlugin: ProcessMetricType
+        val `Pepper Plugin`: ProcessMetricType
 
         @seskar.js.JsValue("Pepper Plugin Broker")
-        val PepperPluginBroker: ProcessMetricType
+        val `Pepper Plugin Broker`: ProcessMetricType
 
         @seskar.js.JsValue("Unknown")
         val Unknown: ProcessMetricType

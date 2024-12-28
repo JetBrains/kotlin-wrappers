@@ -171,7 +171,7 @@ external class ClientRequest : NodeEventEmitter {
      * the request headers to be issued on the wire. After the first write operation,
      * it is not allowed to add or remove a custom header.
      */
-    fun write(chunk: Buffer<*>, encoding: String = definedExternally, callback: () -> Unit = definedExternally)
+    fun write(chunk: Buffer<*>, encoding: String = definedExternally, callback: () -> Unit = definedExternally): Unit
 
     /**
      * A `boolean` specifying whether the request will use HTTP chunked transfer
