@@ -28,4 +28,5 @@ sealed external interface WatchHost {
 
     /** If provided, will be used to reset existing delayed compilation */
     val clearTimeout: ((timeoutId: Any?) -> Unit)?
+    var preferNonRecursiveWatch: Boolean?
 }

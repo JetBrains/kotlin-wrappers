@@ -26,5 +26,6 @@ sealed external interface ObjectFlags {
         val ContainsSpread: ObjectFlags
         val ObjectRestType: ObjectFlags
         val InstantiationExpressionType: ObjectFlags
+        val SingleSignatureType: ObjectFlags
     }
 }

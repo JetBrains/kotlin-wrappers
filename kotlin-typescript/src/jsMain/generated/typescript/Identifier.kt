@@ -5,7 +5,7 @@ package typescript
 sealed external interface Identifier : PrimaryExpression, Declaration, JSDocContainer, FlowContainer, HasJSDoc,
     EntityName, PropertyName, MemberName, DeclarationStatementName, BindingName, TypePredicateNodeParameterName,
     PropertyNameLiteral, BindingOrAssignmentElementTarget, EntityNameExpression, JsxAttributeName, JsxTagNameExpression,
-    JsxTagNamePropertyAccessExpression, ModuleName, JSDocNamespaceBody, ImportAttributeName,
+    JsxTagNamePropertyAccessExpression, ModuleName, JSDocNamespaceBody, ImportAttributeName, ModuleExportName,
     JSDocAugmentsTagClassExpression, JSDocImplementsTagClassExpression, JSDocTypedefTagFullName,
     JSDocCallbackTagFullName, IsIdentifierOrThisTypeNodeResultPredicate {
     override val kind: SyntaxKind.Identifier
@@ -16,10 +16,4 @@ sealed external interface Identifier : PrimaryExpression, Declaration, JSDocCont
      */
     val escapedText: __String
     val text: String
-
-    /** @deprecated Use `idKeyword(identifier)` instead. */
-    val originalKeywordKind: SyntaxKind?
-
-    /** @deprecated Use `.parent` or the surrounding context to determine this instead. */
-    val isInJSDocNamespace: Boolean?
 }

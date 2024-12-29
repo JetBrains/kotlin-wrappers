@@ -26,10 +26,11 @@ sealed external interface BufferEncoding {
         val binary: BufferEncoding
 
         @seskar.js.JsValue("hex")
-        val hex: BufferEncoding/*
-Duplicated names were generated:
-utf8 for "utf-8"
-ucs2 for "ucs-2"
-*/
+        val hex: BufferEncoding
+        /*
+        Duplicated names were generated:
+        utf8 for "utf-8"
+        ucs2 for "ucs-2"
+        */
     }
 }

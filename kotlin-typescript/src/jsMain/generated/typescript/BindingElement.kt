@@ -4,7 +4,7 @@ package typescript
 
 sealed external interface BindingElement : NamedDeclaration, FlowContainer, HasExpressionInitializer,
     VariableLikeDeclaration, ObjectBindingPatternParent, ArrayBindingPatternParent, ArrayBindingElement,
-    ObjectBindingOrAssignmentElement, FlowAssignmentNode {
+    ObjectBindingOrAssignmentElement {
     override val kind: SyntaxKind.BindingElement
     override val parent: BindingPattern
     val propertyName: PropertyName?

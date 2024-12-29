@@ -7,6 +7,6 @@ sealed external interface ExportSpecifier : NamedDeclaration, JSDocContainer, Ha
     override val kind: SyntaxKind.ExportSpecifier
     override val parent: NamedExports
     val isTypeOnly: Boolean
-    val propertyName: Identifier?
-    override val name: Identifier
+    val propertyName: ModuleExportName?
+    override val name: ModuleExportName
 }

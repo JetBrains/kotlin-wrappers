@@ -35,4 +35,9 @@ sealed external interface RefactorActionInfo {
      * when calling `getEditsForRefactor`.
      */
     var isInteractive: Boolean?
+
+    /**
+     * Range of code the refactoring will be applied to.
+     */
+    var range: (RefactorActionInfoRange)?
 }

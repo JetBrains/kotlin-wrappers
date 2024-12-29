@@ -108,6 +108,16 @@ const injectCommonUnionParents = (node, context, render) => {
         && ts.isUnionTypeNode(node)
         && node.parent
         && ts.isTypeAliasDeclaration(node.parent)
+        && node.parent.name.text === "ModuleExportName"
+    ) {
+        result.push("DeclarationName")
+    }
+
+    if (
+        context.type === karakum.InjectionType.HERITAGE_CLAUSE
+        && ts.isUnionTypeNode(node)
+        && node.parent
+        && ts.isTypeAliasDeclaration(node.parent)
         && node.parent.name.text === "BindingName"
     ) {
         result.push("DeclarationName")
@@ -251,6 +261,7 @@ function decorateUnionInjection(unionInjection) {
         inject: (...args) => unionInjection.inject(...args)
                 ?.filter(it => (
                     it !== "EditorSettingsIndentStyle"
+                    && it !== "FormatCodeSettingsIndentStyle"
                     && it !== "ExternalFileScriptKind"
                     && it !== "CompilerOptionsModule"
                     && it !== "CompilerOptionsJsx"

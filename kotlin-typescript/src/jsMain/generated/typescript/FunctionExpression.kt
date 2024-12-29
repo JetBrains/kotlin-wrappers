@@ -3,8 +3,7 @@
 package typescript
 
 sealed external interface FunctionExpression : PrimaryExpression, FunctionLikeDeclarationBase, JSDocContainer,
-    LocalsContainer, FlowContainer, HasJSDoc, HasModifiers, SignatureDeclaration, FunctionLikeDeclaration,
-    FlowStartNode {
+    LocalsContainer, FlowContainer, HasJSDoc, HasModifiers, SignatureDeclaration, FunctionLikeDeclaration {
     override val kind: SyntaxKind.FunctionExpression
     val modifiers: NodeArray<Modifier>?
     override val name: Identifier?

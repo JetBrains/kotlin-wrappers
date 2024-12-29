@@ -1489,7 +1489,6 @@ sealed external interface NodeFactory {
 
     /** @deprecated */
     fun createAssertClause(elements: NodeArray<AssertEntry>, multiLine: Boolean = definedExternally): AssertClause
-
     /** @deprecated */
     fun updateAssertClause(
         node: AssertClause,
@@ -1499,10 +1498,8 @@ sealed external interface NodeFactory {
 
     /** @deprecated */
     fun createAssertEntry(name: AssertionKey, value: Expression): AssertEntry
-
     /** @deprecated */
     fun updateAssertEntry(node: AssertEntry, name: AssertionKey, value: Expression): AssertEntry
-
     /** @deprecated */
     fun createImportTypeAssertionContainer(
         clause: AssertClause,
@@ -1531,15 +1528,15 @@ sealed external interface NodeFactory {
     fun updateImportAttribute(node: ImportAttribute, name: ImportAttributeName, value: Expression): ImportAttribute
     fun createNamespaceImport(name: Identifier): NamespaceImport
     fun updateNamespaceImport(node: NamespaceImport, name: Identifier): NamespaceImport
-    fun createNamespaceExport(name: Identifier): NamespaceExport
-    fun updateNamespaceExport(node: NamespaceExport, name: Identifier): NamespaceExport
+    fun createNamespaceExport(name: ModuleExportName): NamespaceExport
+    fun updateNamespaceExport(node: NamespaceExport, name: ModuleExportName): NamespaceExport
     fun createNamedImports(elements: js.array.ReadonlyArray<ImportSpecifier>): NamedImports
     fun updateNamedImports(node: NamedImports, elements: js.array.ReadonlyArray<ImportSpecifier>): NamedImports
-    fun createImportSpecifier(isTypeOnly: Boolean, propertyName: Identifier?, name: Identifier): ImportSpecifier
+    fun createImportSpecifier(isTypeOnly: Boolean, propertyName: ModuleExportName?, name: Identifier): ImportSpecifier
     fun updateImportSpecifier(
         node: ImportSpecifier,
         isTypeOnly: Boolean,
-        propertyName: Identifier?,
+        propertyName: ModuleExportName?,
         name: Identifier,
     ): ImportSpecifier
 
@@ -1576,16 +1573,21 @@ sealed external interface NodeFactory {
     fun updateNamedExports(node: NamedExports, elements: js.array.ReadonlyArray<ExportSpecifier>): NamedExports
     fun createExportSpecifier(isTypeOnly: Boolean, propertyName: String?, name: String): ExportSpecifier
 
-    fun createExportSpecifier(isTypeOnly: Boolean, propertyName: String?, name: Identifier): ExportSpecifier
+    fun createExportSpecifier(isTypeOnly: Boolean, propertyName: String?, name: ModuleExportName): ExportSpecifier
 
-    fun createExportSpecifier(isTypeOnly: Boolean, propertyName: Identifier?, name: String): ExportSpecifier
+    fun createExportSpecifier(isTypeOnly: Boolean, propertyName: ModuleExportName?, name: String): ExportSpecifier
 
-    fun createExportSpecifier(isTypeOnly: Boolean, propertyName: Identifier?, name: Identifier): ExportSpecifier
+    fun createExportSpecifier(
+        isTypeOnly: Boolean,
+        propertyName: ModuleExportName?,
+        name: ModuleExportName,
+    ): ExportSpecifier
+
     fun updateExportSpecifier(
         node: ExportSpecifier,
         isTypeOnly: Boolean,
-        propertyName: Identifier?,
-        name: Identifier,
+        propertyName: ModuleExportName?,
+        name: ModuleExportName,
     ): ExportSpecifier
 
     fun createExternalModuleReference(expression: Expression): ExternalModuleReference
@@ -2399,6 +2401,40 @@ sealed external interface NodeFactory {
         comment: NodeArray<JSDocComment>?,
     ): JSDocSatisfiesTag
 
+    fun createJSDocImportTag(
+        tagName: Identifier?,
+        importClause: ImportClause?,
+        moduleSpecifier: Expression,
+        attributes: ImportAttributes = definedExternally,
+        comment: String = definedExternally,
+    ): JSDocImportTag
+
+    fun createJSDocImportTag(
+        tagName: Identifier?,
+        importClause: ImportClause?,
+        moduleSpecifier: Expression,
+        attributes: ImportAttributes = definedExternally,
+        comment: NodeArray<JSDocComment> = definedExternally,
+    ): JSDocImportTag
+
+    fun updateJSDocImportTag(
+        node: JSDocImportTag,
+        tagName: Identifier?,
+        importClause: ImportClause?,
+        moduleSpecifier: Expression,
+        attributes: ImportAttributes?,
+        comment: String?,
+    ): JSDocImportTag
+
+    fun updateJSDocImportTag(
+        node: JSDocImportTag,
+        tagName: Identifier?,
+        importClause: ImportClause?,
+        moduleSpecifier: Expression,
+        attributes: ImportAttributes?,
+        comment: NodeArray<JSDocComment>?,
+    ): JSDocImportTag
+
     fun createJSDocText(text: String): JSDocText
     fun updateJSDocText(node: JSDocText, text: String): JSDocText
     fun createJSDocComment(): JSDoc
@@ -2562,6 +2598,7 @@ sealed external interface NodeFactory {
     ): SourceFile
 
     fun createNotEmittedStatement(original: Node): NotEmittedStatement
+    fun createNotEmittedTypeElement(): NotEmittedTypeElement
     fun createPartiallyEmittedExpression(
         expression: Expression,
         original: Node = definedExternally,
@@ -2579,22 +2616,7 @@ sealed external interface NodeFactory {
     ): CommaListExpression
 
     fun createBundle(sourceFiles: js.array.ReadonlyArray<SourceFile>): Bundle
-
-    /** @deprecated*/
-    fun createBundle(
-        sourceFiles: js.array.ReadonlyArray<SourceFile>,
-        prepends: js.array.ReadonlyArray<(NodeFactoryCreateBundlePrependsItem)> = definedExternally,
-    ): Bundle
-
     fun updateBundle(node: Bundle, sourceFiles: js.array.ReadonlyArray<SourceFile>): Bundle
-
-    /** @deprecated*/
-    fun updateBundle(
-        node: Bundle,
-        sourceFiles: js.array.ReadonlyArray<SourceFile>,
-        prepends: js.array.ReadonlyArray<(NodeFactoryUpdateBundlePrependsItem)> = definedExternally,
-    ): Bundle
-
     fun createComma(left: Expression, right: Expression): BinaryExpression
     fun createAssignment(left: ObjectLiteralExpression, right: Expression): DestructuringAssignment
 

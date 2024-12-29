@@ -6,7 +6,7 @@ sealed external interface ImportSpecifier : NamedDeclaration, ImportOrExportSpec
     IsImportOrExportSpecifierResultPredicate {
     override val kind: SyntaxKind.ImportSpecifier
     override val parent: NamedImports
-    val propertyName: Identifier?
+    val propertyName: ModuleExportName?
     override val name: Identifier
     val isTypeOnly: Boolean
 }

@@ -47,7 +47,6 @@ sealed external interface ListFormat {
         val ArrayBindingPatternElements: ListFormat
         val ObjectLiteralExpressionProperties: ListFormat
         val ImportAttributes: ListFormat
-
         /** @deprecated */
         val ImportClauseEntries: ListFormat
         val ArrayLiteralExpressionElements: ListFormat

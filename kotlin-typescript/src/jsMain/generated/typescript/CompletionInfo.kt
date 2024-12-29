@@ -27,4 +27,9 @@ sealed external interface CompletionInfo {
      */
     var isIncomplete: Boolean /* true */?
     var entries: js.array.ReadonlyArray<CompletionEntry>
+
+    /**
+     * Default commit characters for the completion entries.
+     */
+    var defaultCommitCharacters: js.array.ReadonlyArray<String>?
 }

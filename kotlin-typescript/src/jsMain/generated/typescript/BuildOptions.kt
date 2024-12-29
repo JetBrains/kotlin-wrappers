@@ -6,6 +6,7 @@ sealed external interface BuildOptions {
     var dry: Boolean?
     var force: Boolean?
     var verbose: Boolean?
+    var stopBuildOnErrors: Boolean?
     var incremental: Boolean?
     var assumeChangesOnlyAffectDirectDependencies: Boolean?
     var declaration: Boolean?

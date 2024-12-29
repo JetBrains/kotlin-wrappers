@@ -11,12 +11,34 @@ sealed external interface TypeChecker {
     fun getPrivateIdentifierPropertyOfType(leftType: Type, name: String, location: Node): Symbol?
     fun getIndexInfoOfType(type: Type, kind: IndexKind): IndexInfo?
     fun getIndexInfosOfType(type: Type): js.array.ReadonlyArray<IndexInfo>
-    var getIndexInfosOfIndexSymbol: (indexSymbol: Symbol) -> js.array.ReadonlyArray<IndexInfo>
+    var getIndexInfosOfIndexSymbol: (indexSymbol: Symbol, siblingSymbols: js.array.ReadonlyArray<Symbol>? /* use undefined for default */) -> js.array.ReadonlyArray<IndexInfo>
     fun getSignaturesOfType(type: Type, kind: SignatureKind): js.array.ReadonlyArray<Signature>
     fun getIndexTypeOfType(type: Type, kind: IndexKind): Type?
     fun getBaseTypes(type: InterfaceType): js.array.ReadonlyArray<BaseType>
     fun getBaseTypeOfLiteralType(type: Type): Type
     fun getWidenedType(type: Type): Type
+
+    /**
+     * Gets the "awaited type" of a type.
+     *
+     * If an expression has a Promise-like type, the "awaited type" of the expression is
+     * derived from the type of the first argument of the fulfillment callback for that
+     * Promise's `then` method. If the "awaited type" is itself a Promise-like, it is
+     * recursively unwrapped in the same manner until a non-promise type is found.
+     *
+     * If an expression does not have a Promise-like type, its "awaited type" is the type
+     * of the expression.
+     *
+     * If the resulting "awaited type" is a generic object type, then it is wrapped in
+     * an `Awaited<T>`.
+     *
+     * In the event the "awaited type" circularly references itself, or is a non-Promise
+     * object-type with a callable `then()` method, an "awaited type" cannot be determined
+     * and the value `undefined` will be returned.
+     *
+     * This is used to reflect the runtime behavior of the `await` keyword.
+     */
+    fun getAwaitedType(type: Type): Type?
     fun getReturnTypeOfSignature(signature: Signature): Type
     fun getNullableType(type: Type, flags: TypeFlags): Type
     fun getNonNullableType(type: Type): Type
@@ -191,6 +213,7 @@ sealed external interface TypeChecker {
     fun getNumberType(): Type
     fun getNumberLiteralType(value: Double): NumberLiteralType
     fun getBigIntType(): Type
+    fun getBigIntLiteralType(value: PseudoBigInt): BigIntLiteralType
     fun getBooleanType(): Type
     fun getFalseType(): Type
     fun getTrueType(): Type

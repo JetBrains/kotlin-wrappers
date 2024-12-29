@@ -4,6 +4,7 @@
 
 package typescript
 
+/** @deprecated */
 sealed external interface ImportsNotUsedAsValues {
     companion object {
         val Remove: ImportsNotUsedAsValues

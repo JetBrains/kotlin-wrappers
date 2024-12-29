@@ -27,8 +27,8 @@ sealed external interface SyntaxKind {
     sealed interface TemplateTail : SyntaxKind, PseudoLiteralSyntaxKind
     sealed interface OpenBraceToken : SyntaxKind, PunctuationSyntaxKind, JsxTokenSyntaxKind, JSDocSyntaxKind
     sealed interface CloseBraceToken : SyntaxKind, PunctuationSyntaxKind, JSDocSyntaxKind
-    sealed interface OpenParenToken : SyntaxKind, PunctuationSyntaxKind
-    sealed interface CloseParenToken : SyntaxKind, PunctuationSyntaxKind
+    sealed interface OpenParenToken : SyntaxKind, PunctuationSyntaxKind, JSDocSyntaxKind
+    sealed interface CloseParenToken : SyntaxKind, PunctuationSyntaxKind, JSDocSyntaxKind
     sealed interface OpenBracketToken : SyntaxKind, PunctuationSyntaxKind, JSDocSyntaxKind
     sealed interface CloseBracketToken : SyntaxKind, PunctuationSyntaxKind, JSDocSyntaxKind
     sealed interface DotToken : SyntaxKind, PunctuationSyntaxKind, JSDocSyntaxKind
@@ -324,15 +324,8 @@ sealed external interface SyntaxKind {
     sealed interface ShorthandPropertyAssignment : SyntaxKind
     sealed interface SpreadAssignment : SyntaxKind
     sealed interface EnumMember : SyntaxKind
-    sealed interface UnparsedPrologue : SyntaxKind
-    sealed interface UnparsedPrepend : SyntaxKind
-    sealed interface UnparsedText : SyntaxKind, UnparsedTextLikeKind
-    sealed interface UnparsedInternalText : SyntaxKind, UnparsedTextLikeKind
-    sealed interface UnparsedSyntheticReference : SyntaxKind
     sealed interface SourceFile : SyntaxKind
     sealed interface Bundle : SyntaxKind
-    sealed interface UnparsedSource : SyntaxKind
-    sealed interface InputFiles : SyntaxKind
     sealed interface JSDocTypeExpression : SyntaxKind
     sealed interface JSDocNameReference : SyntaxKind
     sealed interface JSDocMemberName : SyntaxKind
@@ -376,8 +369,10 @@ sealed external interface SyntaxKind {
     sealed interface JSDocPropertyTag : SyntaxKind
     sealed interface JSDocThrowsTag : SyntaxKind
     sealed interface JSDocSatisfiesTag : SyntaxKind
+    sealed interface JSDocImportTag : SyntaxKind
     sealed interface SyntaxList : SyntaxKind
     sealed interface NotEmittedStatement : SyntaxKind
+    sealed interface NotEmittedTypeElement : SyntaxKind
     sealed interface PartiallyEmittedExpression : SyntaxKind
     sealed interface CommaListExpression : SyntaxKind
     sealed interface SyntheticReferenceExpression : SyntaxKind
@@ -720,42 +715,18 @@ sealed external interface SyntaxKind {
         val CatchClause: CatchClause
         val ImportAttributes: ImportAttributes
         val ImportAttribute: ImportAttribute
-
         /** @deprecated */
         val AssertClause: AssertClause
-
         /** @deprecated */
         val AssertEntry: AssertEntry
-
         /** @deprecated */
         val ImportTypeAssertionContainer: ImportTypeAssertionContainer
         val PropertyAssignment: PropertyAssignment
         val ShorthandPropertyAssignment: ShorthandPropertyAssignment
         val SpreadAssignment: SpreadAssignment
         val EnumMember: EnumMember
-
-        /** @deprecated */
-        val UnparsedPrologue: UnparsedPrologue
-
-        /** @deprecated */
-        val UnparsedPrepend: UnparsedPrepend
-
-        /** @deprecated */
-        val UnparsedText: UnparsedText
-
-        /** @deprecated */
-        val UnparsedInternalText: UnparsedInternalText
-
-        /** @deprecated */
-        val UnparsedSyntheticReference: UnparsedSyntheticReference
         val SourceFile: SourceFile
         val Bundle: Bundle
-
-        /** @deprecated */
-        val UnparsedSource: UnparsedSource
-
-        /** @deprecated */
-        val InputFiles: InputFiles
         val JSDocTypeExpression: JSDocTypeExpression
         val JSDocNameReference: JSDocNameReference
         val JSDocMemberName: JSDocMemberName
@@ -801,8 +772,10 @@ sealed external interface SyntaxKind {
         val JSDocPropertyTag: JSDocPropertyTag
         val JSDocThrowsTag: JSDocThrowsTag
         val JSDocSatisfiesTag: JSDocSatisfiesTag
+        val JSDocImportTag: JSDocImportTag
         val SyntaxList: SyntaxList
         val NotEmittedStatement: NotEmittedStatement
+        val NotEmittedTypeElement: NotEmittedTypeElement
         val PartiallyEmittedExpression: PartiallyEmittedExpression
         val CommaListExpression: CommaListExpression
         val SyntheticReferenceExpression: SyntheticReferenceExpression

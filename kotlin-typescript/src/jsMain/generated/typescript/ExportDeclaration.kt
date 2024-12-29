@@ -14,7 +14,6 @@ sealed external interface ExportDeclaration : DeclarationStatement, JSDocContain
 
     /** If this is not a StringLiteral it will be a grammar error. */
     val moduleSpecifier: Expression?
-
     /** @deprecated */
     val assertClause: AssertClause?
     val attributes: ImportAttributes?

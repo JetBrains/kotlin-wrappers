@@ -6,6 +6,7 @@ package typescript
 
 sealed external interface ScriptTarget {
     companion object {
+        /** @deprecated */
         val ES3: ScriptTarget
         val ES5: ScriptTarget
         val ES2015: ScriptTarget
@@ -16,6 +17,8 @@ sealed external interface ScriptTarget {
         val ES2020: ScriptTarget
         val ES2021: ScriptTarget
         val ES2022: ScriptTarget
+        val ES2023: ScriptTarget
+        val ES2024: ScriptTarget
         val ESNext: ScriptTarget
         val JSON: ScriptTarget
         val Latest: ScriptTarget

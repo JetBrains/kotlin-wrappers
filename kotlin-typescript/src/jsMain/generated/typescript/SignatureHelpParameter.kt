@@ -2,6 +2,9 @@
 
 package typescript
 
+/**
+ * Signature help information for a single parameter
+ */
 sealed external interface SignatureHelpParameter {
     var name: String
     var documentation: js.array.ReadonlyArray<SymbolDisplayPart>

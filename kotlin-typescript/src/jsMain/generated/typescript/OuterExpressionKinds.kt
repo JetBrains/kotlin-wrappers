@@ -10,6 +10,7 @@ sealed external interface OuterExpressionKinds {
         val TypeAssertions: OuterExpressionKinds
         val NonNullAssertions: OuterExpressionKinds
         val PartiallyEmittedExpressions: OuterExpressionKinds
+        val ExpressionsWithTypeArguments: OuterExpressionKinds
         val Assertions: OuterExpressionKinds
         val All: OuterExpressionKinds
         val ExcludeJSDocTypeAssertion: OuterExpressionKinds

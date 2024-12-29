@@ -4,7 +4,7 @@ package typescript
 
 sealed external interface MethodDeclaration : FunctionLikeDeclarationBase, ClassElement, ObjectLiteralElement,
     JSDocContainer, LocalsContainer, FlowContainer, HasJSDoc, HasDecorators, HasModifiers, SignatureDeclaration,
-    ObjectLiteralElementLike, FunctionLikeDeclaration, FlowStartNode, NodeFactoryReplacePropertyNameTConstraint {
+    ObjectLiteralElementLike, FunctionLikeDeclaration, NodeFactoryReplacePropertyNameTConstraint {
     override val kind: SyntaxKind.MethodDeclaration
     override val parent: MethodDeclarationParent
     val modifiers: NodeArray<ModifierLike>?

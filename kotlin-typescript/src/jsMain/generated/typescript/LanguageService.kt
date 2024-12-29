@@ -424,4 +424,6 @@ sealed external interface LanguageService {
     fun uncommentSelection(fileName: String, textRange: TextRange): js.array.ReadonlyArray<TextChange>
     fun getSupportedCodeFixes(fileName: String = definedExternally): js.array.ReadonlyArray<String>
     fun dispose(): Unit
+    fun preparePasteEditsForFile(fileName: String, copiedTextRanges: js.array.ReadonlyArray<TextRange>): Boolean
+    fun getPasteEdits(args: PasteEditsArgs, formatOptions: FormatCodeSettings): PasteEdits
 }
