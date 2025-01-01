@@ -3,9 +3,7 @@
 package react
 
 /**
- * Available since 18.0
- *
- * @see <a href="https://github.com/reactwg/react-18/discussions/86">Discussion</a>
+ * [Online Documentation](https://react.dev/reference/react/useSyncExternalStore)
  */
 external fun <Snapshot> useSyncExternalStore(
     subscribe: (onStoreChange: () -> Unit) -> Cleanup,

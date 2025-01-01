@@ -2,7 +2,9 @@
 
 package react
 
-// Ref Hook (16.8+)
+/**
+ * [Online Documentation](https://react.dev/reference/react/useRef)
+ */
 external fun <T : Any> useRef(
     initialValue: T? = definedExternally,
 ): MutableRefObject<T>
