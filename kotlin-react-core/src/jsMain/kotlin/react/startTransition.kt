@@ -1,8 +1,9 @@
-@file:JsModule("react")
-
 package react
 
-// Transitions (18.0+)
-external fun startTransition(
+import react.raw.startTransitionRaw
+
+fun startTransition(
     scope: TransitionFunction,
-)
+) {
+    startTransitionRaw(scope)
+}
