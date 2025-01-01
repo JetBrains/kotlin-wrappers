@@ -3,8 +3,7 @@ package react
 import react.raw.useMemoRaw
 
 /**
- * Only works inside [fc]
- * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
+ * [Online Documentation](https://react.dev/reference/react/useMemo)
  */
 inline fun <T> useMemo(
     vararg dependencies: Any?,
