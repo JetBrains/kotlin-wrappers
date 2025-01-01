@@ -1,3 +1,6 @@
 package react.raw
 
-typealias TransitionFunctionRaw = () -> Unit
+import js.core.Void
+import js.promise.Promise
+
+typealias TransitionFunctionRaw = () -> Promise<Void>?

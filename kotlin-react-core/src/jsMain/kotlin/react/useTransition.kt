@@ -1,6 +1,17 @@
 package react
 
+import js.array.tupleOf
+import react.internal.isolatedVoidPromise
 import react.raw.useTransitionRaw
 
-fun useTransition(): TransitionInstance =
-    useTransitionRaw()
+fun useTransition(): TransitionInstance {
+    val (isPendingRaw, startTransitionRaw) = useTransitionRaw()
+
+    val startTransition: TransitionStartFunction = useCallback { block ->
+        startTransitionRaw {
+            isolatedVoidPromise(block)
+        }
+    }
+
+    return tupleOf(isPendingRaw, startTransition)
+}

@@ -1,3 +1,5 @@
 package react
 
-typealias TransitionFunction = () -> Unit
+import kotlinx.coroutines.CoroutineScope
+
+typealias TransitionFunction = suspend CoroutineScope.() -> Unit

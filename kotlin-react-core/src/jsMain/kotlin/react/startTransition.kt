@@ -1,9 +1,12 @@
 package react
 
+import react.internal.isolatedVoidPromise
 import react.raw.startTransitionRaw
 
 fun startTransition(
-    scope: TransitionFunction,
+    block: TransitionFunction,
 ) {
-    startTransitionRaw(scope)
+    startTransitionRaw {
+        isolatedVoidPromise(block)
+    }
 }
