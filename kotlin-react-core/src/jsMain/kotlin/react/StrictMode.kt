@@ -2,5 +2,7 @@
 
 package react
 
-// StrictMode (16.3+)
+/**
+ * [Online Documentation](https://react.dev/reference/react/StrictMode)
+ */
 external val StrictMode: ExoticComponent<PropsWithChildren>

@@ -7,4 +7,7 @@ external interface ProfilerProps : PropsWithChildren {
     var onRender: ProfilerOnRenderCallback
 }
 
+/**
+ * [Online Documentation](https://react.dev/reference/react/Profiler)
+ */
 external val Profiler: ExoticComponent<ProfilerProps>

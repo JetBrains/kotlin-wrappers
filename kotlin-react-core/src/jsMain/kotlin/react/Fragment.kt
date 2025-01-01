@@ -2,5 +2,7 @@
 
 package react
 
-// Fragment (16+)
+/**
+ * [Online Documentation](https://react.dev/reference/react/Fragment)
+ */
 external val Fragment: ExoticComponent<PropsWithChildren>
