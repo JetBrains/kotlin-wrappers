@@ -4,8 +4,7 @@ import react.internal.buildCleanupCallback
 import react.raw.useEffectRaw
 
 /**
- * Only works inside [fc]
- * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
+ * [Online Documentation](https://react.dev/reference/react/useEffect)
  */
 fun useEffectWithCleanup(
     effect: CleanupBuilder.() -> Unit,
@@ -15,8 +14,7 @@ fun useEffectWithCleanup(
 }
 
 /**
- * Only works inside [fc]
- * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
+ * [Online Documentation](https://react.dev/reference/react/useEffect)
  */
 fun useEffectWithCleanup(
     vararg dependencies: Any?,
@@ -27,8 +25,7 @@ fun useEffectWithCleanup(
 }
 
 /**
- * Only works inside [fc]
- * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
+ * [Online Documentation](https://react.dev/reference/react/useEffect)
  */
 fun useEffectOnceWithCleanup(
     effect: CleanupBuilder.() -> Unit,

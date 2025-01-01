@@ -5,8 +5,7 @@ import react.internal.createCleanupCallback
 import react.raw.useEffectRaw
 
 /**
- * Only works inside [fc]
- * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
+ * [Online Documentation](https://react.dev/reference/react/useEffect)
  */
 fun useEffect(
     effect: suspend CoroutineScope.() -> Unit,
@@ -16,8 +15,7 @@ fun useEffect(
 }
 
 /**
- * Only works inside [fc]
- * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
+ * [Online Documentation](https://react.dev/reference/react/useEffect)
  */
 fun useEffect(
     vararg dependencies: Any?,
@@ -28,8 +26,7 @@ fun useEffect(
 }
 
 /**
- * Only works inside [fc]
- * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
+ * [Online Documentation](https://react.dev/reference/react/useEffect)
  */
 fun useEffectOnce(
     effect: suspend CoroutineScope.() -> Unit,
