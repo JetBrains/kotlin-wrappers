@@ -4,6 +4,9 @@ import kotlinx.coroutines.CoroutineScope
 import react.internal.isolatedPromise
 import react.raw.useActionStateRaw
 
+/**
+ * [Online Documentation](https://react.dev/reference/react/useActionState)
+ */
 fun <S> useActionState(
     initialState: S,
     permalink: String? = undefined,
@@ -17,6 +20,9 @@ fun <S> useActionState(
         permalink = permalink,
     )
 
+/**
+ * [Online Documentation](https://react.dev/reference/react/useActionState)
+ */
 fun <S, P> useActionState(
     initialState: S,
     permalink: String? = undefined,
