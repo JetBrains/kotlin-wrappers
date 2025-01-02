@@ -2,7 +2,7 @@
 
 package react.select
 
-import react.ComponentClass
+import react.ComponentType
 import react.ReactNode
 
 external interface CreatableSelectProps<Option : Any, Group : GroupBase<Option>> : SelectProps<Option, Group> {
@@ -48,4 +48,4 @@ external interface CreatableSelectProps<Option : Any, Group : GroupBase<Option>>
 }
 
 @JsName("default")
-external val CreatableSelect: ComponentClass<CreatableSelectProps<*, *>>
+external val CreatableSelect: ComponentType<CreatableSelectProps<*, *>>

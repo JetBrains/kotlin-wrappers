@@ -3,7 +3,7 @@
 package react.select
 
 import js.objects.JsPlainObject
-import react.ComponentClass
+import react.ComponentType
 import react.Key
 import react.PropsWithClassName
 import react.ReactNode
@@ -257,4 +257,4 @@ external interface SelectProps<Option : Any, Group : GroupBase<Option>> : PropsW
 }
 
 @JsName("default")
-external val Select: ComponentClass<SelectProps<*, *>>
+external val Select: ComponentType<SelectProps<*, *>>

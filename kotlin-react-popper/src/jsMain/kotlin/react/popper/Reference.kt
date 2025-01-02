@@ -12,4 +12,4 @@ external interface ReferenceProps : Props {
     var innerRef: Ref<*>
 }
 
-external val Reference: ComponentClass<ReferenceProps>
+external val Reference: ComponentType<ReferenceProps>

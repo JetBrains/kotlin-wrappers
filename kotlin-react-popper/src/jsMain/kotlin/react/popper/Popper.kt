@@ -37,4 +37,4 @@ external interface PopperProps : Props {
     var onFirstUpdate: (state: State) -> Unit
 }
 
-external val Popper: ComponentClass<PopperProps>
+external val Popper: ComponentType<PopperProps>

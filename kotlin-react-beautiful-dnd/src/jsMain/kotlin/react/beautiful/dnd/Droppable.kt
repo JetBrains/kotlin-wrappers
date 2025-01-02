@@ -2,7 +2,7 @@
 
 package react.beautiful.dnd
 
-import react.ComponentClass
+import react.ComponentType
 import react.Props
 import react.ReactElement
 import react.dom.html.HTMLAttributes
@@ -24,4 +24,4 @@ sealed external interface DroppableProps : Props {
     ) -> ReactElement<out HTMLAttributes<*>>
 }
 
-external val Droppable: ComponentClass<DroppableProps>
+external val Droppable: ComponentType<DroppableProps>
