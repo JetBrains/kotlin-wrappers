@@ -2,7 +2,9 @@
 
 package react.raw
 
-// Transitions (18.0+)
+/**
+ * [Online Documentation](https://react.dev/reference/react/startTransition)
+ */
 @JsName("startTransition")
 external fun startTransitionRaw(
     scope: TransitionFunctionRaw,

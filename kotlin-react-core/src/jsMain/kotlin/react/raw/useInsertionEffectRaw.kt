@@ -5,7 +5,9 @@ package react.raw
 import js.array.ReadonlyArray
 import react.Cleanup
 
-// Insertion Effect Hook (18.0+)
+/**
+ * [Online Documentation](https://react.dev/reference/react/useInsertionEffect)
+ */
 @JsName("useInsertionEffect")
 external fun useInsertionEffectRaw(
     effect: () -> Cleanup?,

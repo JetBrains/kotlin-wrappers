@@ -5,7 +5,9 @@ package react.raw
 import js.array.ReadonlyArray
 import react.Cleanup
 
-// Layout Effect Hook (16.8+)
+/**
+ * [Online Documentation](https://react.dev/reference/react/useLayoutEffect)
+ */
 @JsName("useLayoutEffect")
 external fun useLayoutEffectRaw(
     effect: () -> Cleanup?,

@@ -4,7 +4,9 @@ package react.raw
 
 import js.array.ReadonlyArray
 
-// Memo Hook (16.8+)
+/**
+ * [Online Documentation](https://react.dev/reference/react/useMemo)
+ */
 @JsName("useMemo")
 external fun <T> useMemoRaw(
     callback: () -> T,

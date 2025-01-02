@@ -5,7 +5,9 @@ package react.raw
 import js.array.ReadonlyArray
 import react.Cleanup
 
-// Effect Hook (16.8+)
+/**
+ * [Online Documentation](https://react.dev/reference/react/useEffect)
+ */
 @JsName("useEffect")
 external fun useEffectRaw(
     effect: () -> Cleanup?,
