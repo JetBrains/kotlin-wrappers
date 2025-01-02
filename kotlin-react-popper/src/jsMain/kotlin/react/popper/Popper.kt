@@ -4,10 +4,8 @@ package react.popper
 
 import js.array.ReadonlyArray
 import js.promise.Promise
-import popper.core.Modifier
-import popper.core.Placement
-import popper.core.PositioningStrategy
-import popper.core.ReferenceElement
+import popper.core.*
+import popper.core.State
 import react.*
 
 external interface PopperArrowProps :
