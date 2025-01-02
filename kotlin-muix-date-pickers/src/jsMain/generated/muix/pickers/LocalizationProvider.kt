@@ -4,11 +4,14 @@
 
 package muix.pickers
 
-external interface LocalizationProviderProps : react.PropsWithChildren {
+external interface LocalizationProviderProps<TDate> : react.PropsWithChildren {
     override var children: react.ReactNode?
 
-    /** DateIO adapter class function */
-    var dateAdapter: DateAdapter /* new (...args: any) => MuiPickersAdapter<unknown> */
+    /**
+     * Date library adapter class function.
+     * @see See the localization provider {@link https://mui.com/x/react-date-pickers/getting-started/#setup-your-date-library-adapter date adapter setup section} for more details.
+     */
+    var dateAdapter: DateAdapter? /* new (...args: any) => MuiPickersAdapter<TDate, TLocale> */
 
     /** Formats that are used for any child pickers */
     var dateFormats: dynamic
@@ -21,12 +24,8 @@ external interface LocalizationProviderProps : react.PropsWithChildren {
      */
     var dateLibInstance: Any?
 
-    /** Locale for the date library you are using
-     * @deprecated Use `adapterLocale` instead
-     */
-    var locale: dynamic
-
-    /** Locale for the date library you are using
+    /**
+     * Locale for the date library you are using
      */
     var adapterLocale: dynamic
 
@@ -45,4 +44,4 @@ external interface MuiPickersAdapterContextValue {
 }
 
 
-external val LocalizationProvider: react.FC<LocalizationProviderProps>
+external val LocalizationProvider: react.FC<LocalizationProviderProps<*>>

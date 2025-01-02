@@ -4,23 +4,14 @@
 
 package muix.pickers
 
-external interface MobileTimePickerProps : react.Props {
-    /**
-     * Overrideable components.
-     * @default {}
-     */
-    var components: dynamic
-
-    /**
-     * The props used for each component slot.
-     * @default {}
-     */
-    var componentsProps: MobileTimePickerSlotsComponentsProps?
-}
-
-external interface MobileTimePickerSlotsComponent
-
-external interface MobileTimePickerSlotsComponentsProps : react.Props
-
-
-external val MobileTimePicker: react.FC<MobileTimePickerProps>
+/**
+ * Demos:
+ *
+ * - [TimePicker](https://mui.com/x/react-date-pickers/time-picker/)
+ * - [Validation](https://mui.com/x/react-date-pickers/validation/)
+ *
+ * API:
+ *
+ * - [MobileTimePicker API](https://mui.com/x/api/date-pickers/mobile-time-picker/)
+ */
+external val MobileTimePicker: react.FC<MobileTimePickerProps<*, *, *>>
