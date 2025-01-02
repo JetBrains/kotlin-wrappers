@@ -14,12 +14,6 @@ external fun <P : Props> createElement(
     vararg children: ReactNode?,
 ): ReactElement<P>
 
-external fun <P : Props> cloneElement(
-    element: ReactElement<P>,
-    props: P? = definedExternally,
-    vararg children: ReactNode?,
-): ReactElement<P>
-
 external fun isValidElement(
     element: Any?,
 ): Boolean
