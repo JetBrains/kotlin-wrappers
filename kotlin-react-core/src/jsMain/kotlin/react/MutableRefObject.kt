@@ -1,6 +1,7 @@
 package react
 
-sealed external interface MutableRefObject<T : Any> :
-    RefObject<T> {
-    override var current: T?
-}
+@Deprecated(
+    message = "Legacy type alias",
+    replaceWith = ReplaceWith("RefObject", "react.RefObject"),
+)
+typealias MutableRefObject<T> = RefObject<T>

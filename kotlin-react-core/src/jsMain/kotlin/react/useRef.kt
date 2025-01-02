@@ -7,4 +7,4 @@ package react
  */
 external fun <T : Any> useRef(
     initialValue: T? = definedExternally,
-): MutableRefObject<T>
+): RefObject<T>

@@ -31,7 +31,7 @@ private data class MemoizedResult<T>(
     }
 }
 
-private fun <T> MutableRefObject<MemoizedResult<T>>.runCallback(
+private fun <T> RefObject<MemoizedResult<T>>.runCallback(
     callback: () -> T,
     args: Array<out dynamic>,
 ): T {
