@@ -2,7 +2,8 @@
 
 package react
 
-sealed external interface ReactElement<P : Props> : ReactNode {
+sealed external interface ReactElement<P : Props> :
+    ReactNode {
     val type: ElementType<P>
     val props: P
     val key: Key?
