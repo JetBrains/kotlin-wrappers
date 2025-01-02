@@ -2,6 +2,9 @@
 
 package react
 
+/**
+ * [Online Documentation](https://react.dev/reference/react/Component)
+ */
 abstract external class Component<P : Props, S : State>(
     props: P = definedExternally,
 ) {
