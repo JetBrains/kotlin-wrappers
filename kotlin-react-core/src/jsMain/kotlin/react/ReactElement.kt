@@ -13,7 +13,3 @@ external fun <P : Props> createElement(
     props: P? = definedExternally,
     vararg children: ReactNode?,
 ): ReactElement<P>
-
-external fun isValidElement(
-    element: Any?,
-): Boolean
