@@ -4,7 +4,7 @@
 
 package cesium.widgets
 
-import cesium.engine.Proxy
+import cesium.engine.*
 import js.objects.JsPlainObject
 import web.dom.Element
 

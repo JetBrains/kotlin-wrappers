@@ -2,6 +2,8 @@
 
 package cesium.widgets
 
+import cesium.engine.*
+
 /**
  * A function that handles the result of a successful geocode.
  * @param [viewModel] The view model.
