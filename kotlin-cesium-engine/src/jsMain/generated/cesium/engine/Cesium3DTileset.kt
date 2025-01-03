@@ -1001,6 +1001,7 @@ external class Cesium3DTileset(
      * @property [pointCloudShading] Options for constructing a [PointCloudShading] object to control point attenuation based on geometric error and lighting.
      * @property [lightColor] The light color when shading models. When `undefined` the scene's light color is used instead.
      * @property [imageBasedLighting] The properties for managing image-based lighting for this tileset.
+     * @property [environmentMapOptions] The properties for managing dynamic environment maps on this tileset.
      * @property [backFaceCulling] Whether to cull back-facing geometry. When true, back face culling is determined by the glTF material's doubleSided property; when false, back face culling is disabled.
      *   Default value - `true`
      * @property [enableShowOutline] Whether to enable outlines for models using the [CESIUM_primitive_outline](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Vendor/CESIUM_primitive_outline) extension. This can be set to false to avoid the additional processing of geometry at load time. When false, the showOutlines and outlineColor options are ignored.
@@ -1091,6 +1092,7 @@ external class Cesium3DTileset(
         var pointCloudShading: Any?
         var lightColor: Cartesian3?
         var imageBasedLighting: ImageBasedLighting?
+        var environmentMapOptions: DynamicEnvironmentMapManager.ConstructorOptions?
         var backFaceCulling: Boolean?
         var enableShowOutline: Boolean?
         var showOutline: Boolean?

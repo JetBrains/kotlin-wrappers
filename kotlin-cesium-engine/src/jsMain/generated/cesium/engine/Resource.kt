@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import cesium.engine.Resource.Companion.options
 import js.buffer.ArrayBuffer
 import js.objects.JsPlainObject
 import js.promise.Promise

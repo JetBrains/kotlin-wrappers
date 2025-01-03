@@ -16,7 +16,7 @@ external object ITwinPlatform {
     interface ExportType
 
     /**
-     * Types of Reality data
+     * Types of Reality data. This is a partial list of types we know we can support
      */
     interface RealityDataType
 

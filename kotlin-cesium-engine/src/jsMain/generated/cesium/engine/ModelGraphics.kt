@@ -133,6 +133,12 @@ external class ModelGraphics {
     var imageBasedLightingFactor: Property?
 
     /**
+     * Gets or sets the [DynamicEnvironmentMapManager.ConstructorOptions] to apply to this model. This is represented as an [PropertyBag].
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelGraphics.html#environmentMapOptions">Online Documentation</a>
+     */
+    var environmentMapOptions: PropertyBag
+
+    /**
      * A property specifying the [Cartesian3] light color when shading the model. When `undefined` the scene's light color is used instead.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelGraphics.html#lightColor">Online Documentation</a>
      */

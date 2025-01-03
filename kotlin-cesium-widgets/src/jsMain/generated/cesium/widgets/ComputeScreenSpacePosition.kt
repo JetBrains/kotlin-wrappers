@@ -2,7 +2,8 @@
 
 package cesium.widgets
 
-import cesium.engine.*
+import cesium.engine.Cartesian2
+import cesium.engine.Cartesian3
 
 /**
  * A function that converts the world position of an object to a screen space position.

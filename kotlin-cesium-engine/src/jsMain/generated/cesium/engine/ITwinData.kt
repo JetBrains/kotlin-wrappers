@@ -68,4 +68,32 @@ external object ITwinData {
         type: ITwinPlatform.RealityDataType? = definedExternally,
         rootDocument: String? = definedExternally,
     ): Promise<Cesium3DTileset>
+
+    /**
+     * Create a data source of the correct type for the specified reality data id.
+     * This function only works for KML and GeoJSON type data.
+     *
+     * If the `type` or `rootDocument` are not provided this function
+     * will first request the full metadata for the specified reality data to fill these values.
+     * @param [iTwinId] The id of the iTwin to load data from
+     * @param [realityDataId] The id of the reality data to load
+     * @param [type] The type of this reality data
+     * @param [rootDocument] The path of the root document for this reality data
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ITwinData.html#.createDataSourceForRealityDataId">Online Documentation</a>
+     */
+    @JsAsync
+    suspend fun createDataSourceForRealityDataId(
+        iTwinId: String,
+        realityDataId: String,
+        type: ITwinPlatform.RealityDataType? = definedExternally,
+        rootDocument: String? = definedExternally,
+    ): Any /* GeoJsonDataSource | KmlDataSource */
+
+    @JsName("createDataSourceForRealityDataId")
+    fun createDataSourceForRealityDataIdAsync(
+        iTwinId: String,
+        realityDataId: String,
+        type: ITwinPlatform.RealityDataType? = definedExternally,
+        rootDocument: String? = definedExternally,
+    ): Promise<Any /* GeoJsonDataSource | KmlDataSource */>
 }

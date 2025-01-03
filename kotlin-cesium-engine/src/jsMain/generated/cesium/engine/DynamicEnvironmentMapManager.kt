@@ -125,7 +125,7 @@ external class DynamicEnvironmentMapManager(
      * @property [enabled] If true, the environment map and related properties will continue to update.
      *   Default value - `true`
      * @property [mipmapLevels] The number of mipmap levels to generate for specular maps. More mipmap levels will produce a higher resolution specular reflection.
-     *   Default value - `10`
+     *   Default value - `7`
      * @property [maximumSecondsDifference] The maximum amount of elapsed seconds before a new environment map is created.
      *   Default value - `3600`
      * @property [maximumPositionEpsilon] The maximum difference in position before a new environment map is created, in meters. Small differences in position will not visibly affect results.

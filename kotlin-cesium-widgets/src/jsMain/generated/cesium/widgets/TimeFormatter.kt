@@ -2,7 +2,7 @@
 
 package cesium.widgets
 
-import cesium.engine.*
+import cesium.engine.JulianDate
 
 /**
  * A function that formats a time for display.
