@@ -4,7 +4,6 @@
 
 package cesium.engine
 
-import cesium.engine.Quaternion.Companion.convertPackedArrayForInterpolation
 import js.array.ReadonlyArray
 
 /**
