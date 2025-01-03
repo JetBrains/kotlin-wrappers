@@ -1,3 +1,7 @@
+## pre.859
+
+* Version catalog `1.0.0`
+
 ## pre.853
 
 **BREAKING CHANGE**
