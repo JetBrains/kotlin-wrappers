@@ -4,7 +4,6 @@
 
 package cesium.engine
 
-import cesium.engine.BoundingSphere.Companion.transform
 import js.array.ReadonlyArray
 
 /**
