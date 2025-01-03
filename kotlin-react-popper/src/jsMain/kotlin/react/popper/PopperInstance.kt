@@ -1,6 +1,6 @@
 package react.popper
 
-import js.objects.Record
+import js.objects.ReadonlyRecord
 import popper.core.ForceUpdate
 import popper.core.Name
 import popper.core.State
@@ -9,8 +9,8 @@ import react.CSSProperties
 import react.Props
 
 external interface PopperInstance {
-    val styles: Record<Name, CSSProperties>
-    val attributes: Record<Name, Props>
+    val styles: ReadonlyRecord<Name, CSSProperties>
+    val attributes: ReadonlyRecord<Name, Props>
     val state: State?
     val update: Update?
     val forceUpdate: ForceUpdate?
