@@ -29,27 +29,29 @@ dependencyResolutionManagement {
 }
 
 fun VersionCatalogBuilder.npmLibraries() {
-    file("gradle.properties").readText()
-        .splitToSequence("# https://www.npmjs.com/package/")
-        .drop(1)
-        .filter { ".npm.version=" in it }
-        .forEach { data ->
-            val packageName = data.substringBefore("\n")
-            val packageAlias = packageName
-                .removePrefix("@")
-                .replace(
-                    regex = Regex("""-(\w)"""),
-                    transform = { it.groupValues[1].uppercase() }
-                )
-                .replace("/", "-")
+    val lines = file("gradle.properties").readLines()
 
-            val version = data
-                .substringAfter("\n")
-                .substringBefore("\n")
-                .substringAfter("=", "")
+    for ((commentLine, versionLine) in lines.windowed(2)) {
+        val version = versionLine
+            .substringAfter(".npm.version=", "")
+            .ifEmpty { null }
+            ?: continue
 
-            library("npm-$packageAlias", "npm", packageName).version(version)
-        }
+        val packageName = commentLine
+            .removePrefix("# https://www.npmjs.com/package/")
+            .takeIf { it != commentLine }
+            ?: continue
+
+        val packageAlias = packageName
+            .removePrefix("@")
+            .replace(
+                regex = Regex("""-(\w)"""),
+                transform = { it.groupValues[1].uppercase() }
+            )
+            .replace("/", "-")
+
+        library("npm-$packageAlias", "npm", packageName).version(version)
+    }
 }
 
 include("docs")
