@@ -23,29 +23,33 @@ dependencyResolutionManagement {
             val htmlVersion = extra["kotlinx-html.version"] as String
             library("kotlinx-html", "org.jetbrains.kotlinx", "kotlinx-html").version(htmlVersion)
 
-            file("gradle.properties").readText()
-                .splitToSequence("# https://www.npmjs.com/package/")
-                .drop(1)
-                .filter { ".npm.version=" in it }
-                .forEach { data ->
-                    val packageName = data.substringBefore("\n")
-                    val packageAlias = packageName
-                        .removePrefix("@")
-                        .replace(
-                            regex = Regex("""-(\w)"""),
-                            transform = { it.groupValues[1].uppercase() }
-                        )
-                        .replace("/", "-")
-
-                    val version = data
-                        .substringAfter("\n")
-                        .substringBefore("\n")
-                        .substringAfter("=", "")
-
-                    library("npm-$packageAlias", "npm", packageName).version(version)
-                }
+            npmLibraries()
         }
     }
+}
+
+fun VersionCatalogBuilder.npmLibraries() {
+    file("gradle.properties").readText()
+        .splitToSequence("# https://www.npmjs.com/package/")
+        .drop(1)
+        .filter { ".npm.version=" in it }
+        .forEach { data ->
+            val packageName = data.substringBefore("\n")
+            val packageAlias = packageName
+                .removePrefix("@")
+                .replace(
+                    regex = Regex("""-(\w)"""),
+                    transform = { it.groupValues[1].uppercase() }
+                )
+                .replace("/", "-")
+
+            val version = data
+                .substringAfter("\n")
+                .substringBefore("\n")
+                .substringAfter("=", "")
+
+            library("npm-$packageAlias", "npm", packageName).version(version)
+        }
 }
 
 include("docs")
