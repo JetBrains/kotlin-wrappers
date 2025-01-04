@@ -28,7 +28,9 @@ dependencyResolutionManagement {
                 .drop(1)
                 .filter { ".npm.version=" in it }
                 .forEach { data ->
-                    val packageName = data.substringBefore("\n")
+                    val lineSeparator = System.lineSeparator()
+
+                    val packageName = data.substringBefore(lineSeparator)
                     val packageAlias = packageName
                         .removePrefix("@")
                         .replace(
@@ -38,8 +40,8 @@ dependencyResolutionManagement {
                         .replace("/", "-")
 
                     val version = data
-                        .substringAfter("\n")
-                        .substringBefore("\n")
+                        .substringAfter(lineSeparator)
+                        .substringBefore(lineSeparator)
                         .substringAfter("=", "")
 
                     library("npm-$packageAlias", "npm", packageName).version(version)
