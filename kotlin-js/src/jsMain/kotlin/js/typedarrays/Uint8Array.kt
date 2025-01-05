@@ -21,6 +21,21 @@ open external class Uint8Array<B : ArrayBufferLike>(
     constructor(elements: JsIterable<Byte>)
     constructor(elements: ReadonlyArray<Byte>)
 
+    fun setFromBase64(
+        string: String,
+        options: FromBase64Options = definedExternally,
+    ): SetFromResult
+
+    fun setFromHex(
+        string: String,
+    ): SetFromResult
+
+    fun toBase64(
+        options: ToBase64Options = definedExternally,
+    ): String
+
+    fun toHex(): String
+
     inline fun toByteArray(): ByteArray =
         Int8Array(buffer, byteOffset, length).asByteArray()
 
