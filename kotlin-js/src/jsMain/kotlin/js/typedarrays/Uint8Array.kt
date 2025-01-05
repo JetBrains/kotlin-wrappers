@@ -10,7 +10,6 @@ import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferLike
 import js.iterable.JsIterable
-import js.objects.JsPlainObject
 
 open external class Uint8Array<B : ArrayBufferLike>(
     override val buffer: B,
@@ -33,12 +32,6 @@ open external class Uint8Array<B : ArrayBufferLike>(
             string: String,
             options: FromBase64Options = definedExternally,
         )
-
-        @JsPlainObject
-        interface FromBase64Options {
-            val alphabet: Alphabet?
-            val lastChunkHandling: LastChunkHandling?
-        }
 
         fun fromHex(
             string: String,
