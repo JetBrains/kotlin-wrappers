@@ -1,5 +1,3 @@
-// Automatically generated - do not modify!
-
 package js.typedarrays
 
 import seskar.js.JsValue
