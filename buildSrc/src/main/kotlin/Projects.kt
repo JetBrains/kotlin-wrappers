@@ -5,8 +5,6 @@ private val TARGET_ALIASES = mapOf(
     "react-dom-legacy" to "react-dom",
     "react-dom-test-utils" to "react-dom",
     "react-legacy" to "react",
-
-    "emotion" to "emotion-react",
 )
 
 fun Project.publishVersion(): String =
