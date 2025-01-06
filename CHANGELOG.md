@@ -1,3 +1,19 @@
+## 2025.1.0
+
+* New versioning
+    * Formats - `YYYY.M.P`, `YYYY.M.P-NPM`
+        * `YYYY` - release year
+        * `M` - release month (`1-12`)
+        * `P` - patch, starts from `0` every month
+        * `NPM` - NPM version of related dependency
+    * Examples
+        * `kotlin-wrappers-catalog`
+            * `2025.1.0`
+            * `2025.2.42`
+        * `kotlin-react`
+            * `2025.1.0-19.0.0`
+            * `2025.2.42-19.0.0`
+
 ## pre.859
 
 * Version catalog `1.0.0`
