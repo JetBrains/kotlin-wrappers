@@ -9,16 +9,19 @@ private val TARGET_ALIASES = mapOf(
     "emotion" to "emotion-react",
 )
 
-fun Project.publishVersion(): String {
+fun Project.publishVersion(): String =
+    listOfNotNull(
+        prop("wrappers.version"),
+        publishVersionBuild(),
+    ).joinToString("-")
+
+private fun Project.publishVersionBuild(): String? {
     val originalTarget = name.removePrefix("kotlin-")
     val target = TARGET_ALIASES[originalTarget] ?: originalTarget
+    val npmVersion = propOrNull("$target.npm.version")
+        ?: return null
 
-    val version = propOrNull("$target.version")
-        ?: prop("$target.npm.version")
-            .removePrefix("^")
-            .removePrefix("~")
-
-    val build = prop("version.build")
-
-    return "$version-$build"
+    return npmVersion
+        .removePrefix("^")
+        .removePrefix("~")
 }
