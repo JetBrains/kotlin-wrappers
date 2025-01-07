@@ -4,6 +4,7 @@ package react.dom.server
 
 import react.ReactNode
 
-// See https://reactjs.org/docs/react-dom-server.html
-
+/**
+ * [Online Documentation](https://react.dev/reference/react-dom/server/renderToString)
+ */
 external fun renderToString(element: ReactNode?): String
