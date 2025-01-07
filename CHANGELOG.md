@@ -1,11 +1,11 @@
 ## 2025.1.0
 
 * New versioning
-    * Formats - `YYYY.M.P`, `YYYY.M.P-NPM`
+    * Formats: `YYYY.M.P`, `YYYY.M.P-<NPM>`
         * `YYYY` - release year
         * `M` - release month (`1-12`)
         * `P` - patch, starts from `0` every month
-        * `NPM` - NPM version of related dependency
+        * `<NPM>` - NPM version of the related dependency
     * Examples
         * `kotlin-wrappers-catalog`
             * `2025.1.0`
