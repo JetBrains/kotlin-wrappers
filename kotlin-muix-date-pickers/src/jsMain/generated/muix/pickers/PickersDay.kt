@@ -8,12 +8,7 @@
 
 package muix.pickers
 
-import mui.material.styles.Theme
-import mui.system.SxProps
-
-external interface PickersDayProps<TDate> :
-    mui.material.ButtonBaseProps,
-    mui.system.PropsWithSx {
+external interface PickersDayProps<TDate> : react.Props {
     /**
      * Override or extend the styles applied to the component.
      */
@@ -31,12 +26,6 @@ external interface PickersDayProps<TDate> :
     var disabled: Boolean?
 
     /**
-     * If `true`, today's date is rendering without highlighting with circle.
-     * @default false
-     */
-    var disableHighlightToday: Boolean?
-
-    /**
      * If `true`, days are rendering without margin. Useful for displaying linked range of days.
      * @default false
      */
@@ -50,12 +39,26 @@ external interface PickersDayProps<TDate> :
 
     var onKeyDown: ((event: react.dom.events.KeyboardEvent<web.html.HTMLButtonElement>, day: TDate) -> Unit)?
 
-    var onDaySelect: (day: TDate, isFinish: PickerSelectionState) -> Unit
+    var onMouseEnter: ((event: react.dom.events.MouseEvent<web.html.HTMLButtonElement, *>, day: TDate) -> Unit)?
+
+    var onDaySelect: (day: TDate) -> Unit
 
     /**
      * If `true`, day is outside of month and will be hidden.
      */
     var outsideCurrentMonth: Boolean
+
+    /**
+     * If `true`, day is the first visible cell of the month.
+     * Either the first day of the month or the first day of the week depending on `showDaysOutsideCurrentMonth`.
+     */
+    var isFirstVisibleCell: Boolean
+
+    /**
+     * If `true`, day is the last visible cell of the month.
+     * Either the last day of the month or the last day of the week depending on `showDaysOutsideCurrentMonth`.
+     */
+    var isLastVisibleCell: Boolean
 
     /**
      * If `true`, renders as selected.
@@ -64,21 +67,30 @@ external interface PickersDayProps<TDate> :
     var selected: Boolean?
 
     /**
-     * If `true`, days that have `outsideCurrentMonth={true}` are displayed.
-     * @default false
-     */
-    var showDaysOutsideCurrentMonth: Boolean?
-
-    /**
      * If `true`, renders as today date.
      * @default false
      */
     var today: Boolean?
+}
+
+external interface ExportedPickersDayProps : react.Props {
+    /**
+     * If `true`, today's date is rendering without highlighting with circle.
+     * @default false
+     */
+    var disableHighlightToday: Boolean?
 
     /**
-     * The system prop that allows defining system overrides as well as additional CSS styles.
+     * If `true`, days outside the current month are rendered:
+     *
+     * - if `fixedWeekNumber` is defined, renders days to have the weeks requested.
+     *
+     * - if `fixedWeekNumber` is not defined, renders day to fill the first and last week of the current month.
+     *
+     * - ignored if `calendars` equals more than `1` on range pickers.
+     * @default false
      */
-    override var sx: SxProps<Theme>?
+    var showDaysOutsideCurrentMonth: Boolean?
 }
 
 

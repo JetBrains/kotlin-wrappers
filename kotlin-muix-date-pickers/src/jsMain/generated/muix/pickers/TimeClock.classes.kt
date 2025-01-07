@@ -1,12 +1,12 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/x-date-pickers/ClockPicker")
+@file:JsModule("@mui/x-date-pickers/TimeClock")
 
 package muix.pickers
 
 import web.cssom.ClassName
 
-sealed external interface ClockPickerClasses {
+sealed external interface TimeClockClasses {
     /** Styles applied to the root element. */
     val root: ClassName
 
@@ -14,4 +14,4 @@ sealed external interface ClockPickerClasses {
     val arrowSwitcher: ClassName
 }
 
-external val clockPickerClasses: ClockPickerClasses
+external val timeClockClasses: TimeClockClasses

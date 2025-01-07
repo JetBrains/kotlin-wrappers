@@ -4,23 +4,14 @@
 
 package muix.pickers
 
-external interface DesktopDateTimePickerProps : react.Props {
-    /**
-     * Overrideable components.
-     * @default {}
-     */
-    var components: dynamic
-
-    /**
-     * The props used for each component slot.
-     * @default {}
-     */
-    var componentsProps: DesktopDateTimePickerSlotsComponentsProps?
-}
-
-external interface DesktopDateTimePickerSlotsComponent
-
-external interface DesktopDateTimePickerSlotsComponentsProps : react.Props
-
-
-external val DesktopDateTimePicker: react.FC<DesktopDateTimePickerProps>
+/**
+ * Demos:
+ *
+ * - [DateTimePicker](https://mui.com/x/react-date-pickers/date-time-picker/)
+ * - [Validation](https://mui.com/x/react-date-pickers/validation/)
+ *
+ * API:
+ *
+ * - [DesktopDateTimePicker API](https://mui.com/x/api/date-pickers/desktop-date-time-picker/)
+ */
+external val DesktopDateTimePicker: react.FC<DesktopDateTimePickerProps<*, *>>

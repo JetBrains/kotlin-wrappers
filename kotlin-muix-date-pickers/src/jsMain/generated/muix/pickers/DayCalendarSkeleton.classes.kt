@@ -1,12 +1,12 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/x-date-pickers/CalendarPickerSkeleton")
+@file:JsModule("@mui/x-date-pickers/DayCalendarSkeleton")
 
 package muix.pickers
 
 import web.cssom.ClassName
 
-sealed external interface CalendarPickerSkeletonClasses {
+sealed external interface DayCalendarSkeletonClasses {
     /** Styles applied to the root element. */
     val root: ClassName
 
@@ -17,4 +17,4 @@ sealed external interface CalendarPickerSkeletonClasses {
     val daySkeleton: ClassName
 }
 
-external val calendarPickerSkeletonClasses: CalendarPickerSkeletonClasses
+external val dayCalendarSkeletonClasses: DayCalendarSkeletonClasses

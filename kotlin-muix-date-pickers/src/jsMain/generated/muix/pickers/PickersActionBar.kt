@@ -1,8 +1,8 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/x-date-pickers/PickersActionBar")
-
 package muix.pickers
+
+import js.array.ReadonlyArray
 
 external interface PickersActionBarProps : react.Props {
     /**
@@ -10,7 +10,7 @@ external interface PickersActionBarProps : react.Props {
      * If empty, does not display that action bar.
      * @default `['cancel', 'accept']` for mobile and `[]` for desktop
      */
-    var actions: dynamic
+    var actions: ReadonlyArray<PickersActionBarAction>?
 
     var onAccept: () -> Unit
 
@@ -20,6 +20,3 @@ external interface PickersActionBarProps : react.Props {
 
     var onSetToday: () -> Unit
 }
-
-
-external val PickersActionBar: react.FC<PickersActionBarProps>
