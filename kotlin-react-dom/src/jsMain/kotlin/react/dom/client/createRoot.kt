@@ -6,20 +6,25 @@ import web.dom.Document
 import web.dom.DocumentFragment
 import web.dom.Element
 
-// See https://reactjs.org/docs/react-dom.html
-
-// 18.0+
+/**
+ * [Online Documentation](https://react.dev/reference/react-dom/client/createRoot)
+ */
 external fun createRoot(
     container: Element,
     options: RootOptions = definedExternally,
 ): Root
 
+/**
+ * [Online Documentation](https://react.dev/reference/react-dom/client/createRoot)
+ */
 external fun createRoot(
     container: DocumentFragment,
     options: RootOptions = definedExternally,
 ): Root
 
-
+/**
+ * [Online Documentation](https://react.dev/reference/react-dom/client/createRoot)
+ */
 external fun createRoot(
     container: Document,
     options: RootOptions = definedExternally,
