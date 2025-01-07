@@ -105,5 +105,5 @@ external interface ExportedYearCalendarProps : react.Props {
      * Years rendered per row.
      * @default 3
      */
-    var yearsPerRow: dynamic
+    var yearsPerRow: Number? /* 3 | 4 */
 }

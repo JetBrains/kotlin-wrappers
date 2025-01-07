@@ -4,7 +4,7 @@
 
 package muix.pickers
 
-external interface LocalizationProviderProps<TDate> : react.PropsWithChildren {
+external interface LocalizationProviderProps<TDate, TLocale> : react.PropsWithChildren {
     override var children: react.ReactNode?
 
     /**
@@ -14,7 +14,7 @@ external interface LocalizationProviderProps<TDate> : react.PropsWithChildren {
     var dateAdapter: DateAdapter? /* new (...args: any) => MuiPickersAdapter<TDate, TLocale> */
 
     /** Formats that are used for any child pickers */
-    var dateFormats: dynamic
+    var dateFormats: Any? /* Partial<AdapterFormats> */
 
     /**
      * Date library instance you are using, if it has some global overrides
@@ -27,21 +27,13 @@ external interface LocalizationProviderProps<TDate> : react.PropsWithChildren {
     /**
      * Locale for the date library you are using
      */
-    var adapterLocale: dynamic
+    var adapterLocale: Any? /* TLocale */
 
     /**
      * Locale for components texts
      */
-    var localeText: dynamic
-}
-
-external interface MuiPickersAdapterContextValue {
-    var defaultDates: dynamic
-
-    var utils: dynamic
-
-    var localeText: dynamic
+    var localeText: Any? /* PickersInputLocaleText<TDate> */
 }
 
 
-external val LocalizationProvider: react.FC<LocalizationProviderProps<*>>
+external val LocalizationProvider: react.FC<LocalizationProviderProps<*, *>>

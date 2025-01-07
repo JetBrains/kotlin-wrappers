@@ -2,12 +2,14 @@
 
 package muix.pickers
 
+import js.array.ReadonlyArray
+
 external interface MultiSectionDigitalClockProps<TDate> : react.Props {
     /**
      * Available views.
      * @default ['hours', 'minutes']
      */
-    var views: dynamic
+    var views: ReadonlyArray<String /* 'hours' | 'minutes' | 'seconds' | 'meridiem' */>?
 
     /**
      * Override or extend the styles applied to the component.

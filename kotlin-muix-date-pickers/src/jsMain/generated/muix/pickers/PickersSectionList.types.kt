@@ -2,6 +2,7 @@
 
 package muix.pickers
 
+import js.array.ReadonlyArray
 import web.dom.Element
 import web.html.HTMLElement
 
@@ -43,13 +44,13 @@ external interface PickersSectionListSlotProps : react.Props {
 }
 
 external interface PickersSectionElement {
-    var container: dynamic
+    var container: react.dom.html.HTMLAttributes<web.html.HTMLSpanElement>
 
-    var content: dynamic
+    var content: react.dom.html.HTMLAttributes<web.html.HTMLSpanElement>
 
-    var before: dynamic
+    var before: react.dom.html.HTMLAttributes<web.html.HTMLSpanElement>
 
-    var after: dynamic
+    var after: react.dom.html.HTMLAttributes<web.html.HTMLSpanElement>
 }
 
 external interface PickersSectionListRef {
@@ -67,9 +68,9 @@ external interface ExportedPickersSectionListProps : react.Props {
      * The elements to render.
      * Each element contains the prop to edit a section of the value.
      */
-    var elements: dynamic
+    var elements: ReadonlyArray<PickersSectionElement>
 
-    var sectionListRef: react.Ref<dynamic>
+    var sectionListRef: react.Ref<PickersSectionListRef>
 
     /**
      * If true, the whole element is editable.

@@ -2,11 +2,13 @@
 
 package muix.pickers
 
+import js.array.ReadonlyArray
+
 external interface DesktopTimePickerProps<TDate, TEnableAccessibleFieldDOMStructure> : react.Props {
     /**
      * Available views.
      */
-    var views: dynamic
+    var views: ReadonlyArray<String /* 'hours' | 'minutes' | 'seconds' */>?
 
     /**
      * Overridable component slots.

@@ -98,5 +98,5 @@ external interface ExportedMonthCalendarProps : react.Props {
      * Months rendered per row.
      * @default 3
      */
-    var monthsPerRow: dynamic
+    var monthsPerRow: Number? /* 3 | 4 */
 }

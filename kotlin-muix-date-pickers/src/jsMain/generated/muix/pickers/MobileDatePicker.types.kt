@@ -19,7 +19,7 @@ external interface MobileDatePickerProps<TDate, TEnableAccessibleFieldDOMStructu
      * Years rendered per row.
      * @default 3
      */
-    var yearsPerRow: dynamic
+    var yearsPerRow: Number? /* 3 | 4 */
 }
 
 external interface MobileDatePickerSlots<TDate>
