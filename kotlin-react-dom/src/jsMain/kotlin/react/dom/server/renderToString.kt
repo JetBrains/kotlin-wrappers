@@ -7,4 +7,7 @@ import react.ReactNode
 /**
  * [Online Documentation](https://react.dev/reference/react-dom/server/renderToString)
  */
-external fun renderToString(element: ReactNode?): String
+external fun renderToString(
+    element: ReactNode?,
+    options: ServerOptions? = definedExternally,
+): String
