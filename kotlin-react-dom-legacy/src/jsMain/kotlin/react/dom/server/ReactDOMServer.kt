@@ -5,7 +5,7 @@ import react.Render
 import react.createElement
 
 fun renderToString(handler: Render): String =
-    rawRenderToString(createElement<Props>(handler))
+    renderToString(element = createElement<Props>(handler))
 
 fun renderToStaticMarkup(handler: Render): String =
-    rawRenderToStaticMarkup(createElement<Props>(handler))
+    renderToStaticMarkup(element = createElement<Props>(handler))

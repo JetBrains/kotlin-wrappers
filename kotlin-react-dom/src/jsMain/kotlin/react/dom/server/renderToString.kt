@@ -6,5 +6,4 @@ import react.ReactNode
 
 // See https://reactjs.org/docs/react-dom-server.html
 
-@JsName("renderToString")
-external fun rawRenderToString(element: ReactNode?): String
+external fun renderToString(element: ReactNode?): String

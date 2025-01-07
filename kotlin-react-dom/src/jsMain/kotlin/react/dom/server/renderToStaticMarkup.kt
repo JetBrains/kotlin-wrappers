@@ -6,5 +6,4 @@ import react.ReactNode
 
 // See https://reactjs.org/docs/react-dom-server.html
 
-@JsName("renderToStaticMarkup")
-external fun rawRenderToStaticMarkup(element: ReactNode?): String
+external fun renderToStaticMarkup(element: ReactNode?): String
