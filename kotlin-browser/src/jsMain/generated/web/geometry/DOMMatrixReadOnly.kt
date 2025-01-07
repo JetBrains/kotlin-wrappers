@@ -177,13 +177,25 @@ open external class DOMMatrixReadOnly(
 
     fun skewX(sx: Double = definedExternally): DOMMatrix
     fun skewY(sy: Double = definedExternally): DOMMatrix
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/toFloat32Array)
+     */
     fun toFloat32Array(): Float32Array<*>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/toFloat64Array)
+     */
     fun toFloat64Array(): Float64Array<*>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/toJSON)
      */
     fun toJSON(): Any
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/transformPoint)
+     */
     fun transformPoint(point: DOMPointInit = definedExternally): DOMPoint
     fun transformPoint(point: DOMPointReadOnly /* DOMPointInit */): DOMPoint
 

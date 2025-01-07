@@ -27,7 +27,14 @@ private constructor() :
     ElementCSSInlineStyle,
     GlobalEventHandlers,
     HTMLOrSVGElement {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/ownerSVGElement)
+     */
     val ownerSVGElement: SVGSVGElement?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/viewportElement)
+     */
     val viewportElement: SVGElement?
 
     /**

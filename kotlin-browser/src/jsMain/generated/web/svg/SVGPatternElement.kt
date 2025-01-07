@@ -13,8 +13,20 @@ private constructor() :
     SVGFitToViewBox,
     SVGURIReference {
     val height: SVGAnimatedLength
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPatternElement/patternContentUnits)
+     */
     val patternContentUnits: SVGAnimatedEnumeration<SVGUnitTypes.Type>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPatternElement/patternTransform)
+     */
     val patternTransform: SVGAnimatedTransformList
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPatternElement/patternUnits)
+     */
     val patternUnits: SVGAnimatedEnumeration<SVGUnitTypes.Type>
     val width: SVGAnimatedLength
     val x: SVGAnimatedLength

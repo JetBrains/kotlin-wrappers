@@ -13,24 +13,57 @@ import web.geometry.DOMMatrixReadOnly
  */
 external class SVGTransform
 private constructor() {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/angle)
+     */
     val angle: Float
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/matrix)
+     */
     val matrix: DOMMatrix
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/type)
+     */
     val type: Type
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setMatrix)
+     */
     fun setMatrix(matrix: DOMMatrix2DInit = definedExternally)
     fun setMatrix(matrix: DOMMatrixReadOnly /* DOMMatrix2DInit */)
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setRotate)
+     */
     fun setRotate(
         angle: Float,
         cx: Float,
         cy: Float,
     )
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setScale)
+     */
     fun setScale(
         sx: Float,
         sy: Float,
     )
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setSkewX)
+     */
     fun setSkewX(angle: Float)
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setSkewY)
+     */
     fun setSkewY(angle: Float)
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setTranslate)
+     */
     fun setTranslate(
         tx: Float,
         ty: Float,
