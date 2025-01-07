@@ -7,4 +7,15 @@ package node.tty
  *  0 - the entire line
  *  1 - to the right from cursor
  */
-typealias Direction = Int /* -1 | 0 | 1 */
+sealed external interface Direction {
+    companion object {
+        @seskar.js.JsRawValue("-1")
+        val `-1`: Direction
+
+        @seskar.js.JsRawValue("0")
+        val `0`: Direction
+
+        @seskar.js.JsRawValue("1")
+        val `1`: Direction
+    }
+}

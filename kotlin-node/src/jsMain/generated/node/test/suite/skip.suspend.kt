@@ -26,7 +26,5 @@ external suspend fun skip(options: TestOptions = definedExternally, fn: SuiteFn 
 external suspend fun skip(fn: SuiteFn = definedExternally): js.core.Void
 
 
-suspend fun skip(): js.core.Void =
-    skipAsync(
-
-    ).await()
+@seskar.js.JsAsync
+external suspend fun skip(): js.core.Void

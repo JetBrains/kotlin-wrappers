@@ -10,11 +10,17 @@ sealed external interface ModuleFormat {
         @seskar.js.JsValue("commonjs")
         val commonjs: ModuleFormat
 
+        @seskar.js.JsValue("commonjs-typescript")
+        val commonjsTypescript: ModuleFormat
+
         @seskar.js.JsValue("json")
         val json: ModuleFormat
 
         @seskar.js.JsValue("module")
         val module: ModuleFormat
+
+        @seskar.js.JsValue("module-typescript")
+        val moduleTypescript: ModuleFormat
 
         @seskar.js.JsValue("wasm")
         val wasm: ModuleFormat

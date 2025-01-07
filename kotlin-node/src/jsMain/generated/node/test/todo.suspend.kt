@@ -23,7 +23,5 @@ external suspend fun todo(options: TestOptions = definedExternally, fn: TestFn =
 external suspend fun todo(fn: TestFn = definedExternally): js.core.Void
 
 
-suspend fun todo(): js.core.Void =
-    todoAsync(
-
-    ).await()
+@seskar.js.JsAsync
+external suspend fun todo(): js.core.Void

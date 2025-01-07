@@ -26,7 +26,5 @@ external suspend fun only(options: TestOptions = definedExternally, fn: SuiteFn 
 external suspend fun only(fn: SuiteFn = definedExternally): js.core.Void
 
 
-suspend fun only(): js.core.Void =
-    onlyAsync(
-
-    ).await()
+@seskar.js.JsAsync
+external suspend fun only(): js.core.Void

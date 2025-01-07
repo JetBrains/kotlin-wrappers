@@ -23,7 +23,5 @@ external suspend fun test(options: TestOptions = definedExternally, fn: TestFn =
 external suspend fun test(fn: TestFn = definedExternally): js.core.Void
 
 
-suspend fun test(): js.core.Void =
-    testAsync(
-
-    ).await()
+@seskar.js.JsAsync
+external suspend fun test(): js.core.Void

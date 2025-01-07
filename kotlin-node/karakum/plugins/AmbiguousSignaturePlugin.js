@@ -193,10 +193,8 @@ export default {
                                         .join(", ")
 
                                     return `
-suspend fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${originalName}(${parameters})${karakum.ifPresent(returnTypePayload, it => `: ${it}`)} =
-    ${name}(
-        ${parameterNames}
-    ).await()
+@seskar.js.JsAsync
+external suspend fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${originalName}(${parameters})${karakum.ifPresent(returnTypePayload, it => `: ${it}`)}
                                     `
                                 }
                             })

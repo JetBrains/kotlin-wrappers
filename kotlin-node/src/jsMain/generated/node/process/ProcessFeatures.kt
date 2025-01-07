@@ -63,7 +63,7 @@ sealed external interface ProcessFeatures {
      * `"transform"` if Node.js is run with `--experimental-transform-types`, and `false` otherwise.
      * @since v22.10.0
      */
-    val typescript: Any /* "strip" | "transform" | false */
+    val typescript: ProcessFeaturesTypescript
 
     /**
      * A boolean value that is `true` if the current Node.js build includes support for libuv.

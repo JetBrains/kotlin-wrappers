@@ -14,5 +14,5 @@ sealed external interface Address {
      * * `-1` (Unix domain socket)
      * * `'udp4'` or `'udp6'` (UDPv4 or UDPv6)
      */
-    var addressType: Any /* 4 | 6 | -1 | "udp4" | "udp6" */
+    var addressType: AddressAddressType
 }

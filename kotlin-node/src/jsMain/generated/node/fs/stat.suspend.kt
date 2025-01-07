@@ -15,7 +15,5 @@ external suspend fun stat(path: PathLike, opts: StatBigIntOpts): BigIntStats
 external suspend fun stat(path: PathLike, opts: StatOptions = definedExternally): Any /* Stats | BigIntStats */
 
 
-suspend fun stat(path: PathLike): Stats =
-    statAsync(
-        path
-    ).await()
+@seskar.js.JsAsync
+external suspend fun stat(path: PathLike): Stats

@@ -4,8 +4,31 @@ package node.sqlite
 
 sealed external interface DatabaseSyncOptions {
     /**
-     * If `true`, the database is opened by the constructor.
-     * When this value is `false`, the database must be opened via the `open()` method.
+     * If `true`, the database is opened by the constructor. When
+     * this value is `false`, the database must be opened via the `open()` method.
+     * @since v22.5.0
+     * @default true
      */
     var open: Boolean?
+
+    /**
+     * If `true`, foreign key constraints
+     * are enabled. This is recommended but can be disabled for compatibility with
+     * legacy database schemas. The enforcement of foreign key constraints can be
+     * enabled and disabled after opening the database using
+     * [`PRAGMA foreign_keys`](https://www.sqlite.org/pragma.html#pragma_foreign_keys).
+     * @since v22.10.0
+     * @default true
+     */
+    var enableForeignKeyConstraints: Boolean?
+
+    /**
+     * If `true`, SQLite will accept
+     * [double-quoted string literals](https://www.sqlite.org/quirks.html#dblquote).
+     * This is not recommended but can be
+     * enabled for compatibility with legacy database schemas.
+     * @since v22.10.0
+     * @default false
+     */
+    var enableDoubleQuotedStringLiterals: Boolean?
 }

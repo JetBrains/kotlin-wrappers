@@ -2,4 +2,15 @@
 
 package node.readline
 
-typealias Direction = Int /* -1 | 0 | 1 */
+sealed external interface Direction {
+    companion object {
+        @seskar.js.JsRawValue("-1")
+        val `-1`: Direction
+
+        @seskar.js.JsRawValue("0")
+        val `0`: Direction
+
+        @seskar.js.JsRawValue("1")
+        val `1`: Direction
+    }
+}
