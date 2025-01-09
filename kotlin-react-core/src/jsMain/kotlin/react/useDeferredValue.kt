@@ -7,4 +7,5 @@ package react
  */
 external fun <T> useDeferredValue(
     value: T,
+    initialValue: T = definedExternally,
 ): T
