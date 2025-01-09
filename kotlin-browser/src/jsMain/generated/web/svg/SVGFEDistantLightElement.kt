@@ -10,6 +10,13 @@ package web.svg
 open external class SVGFEDistantLightElement
 private constructor() :
     SVGElement {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDistantLightElement/azimuth)
+     */
     val azimuth: SVGAnimatedNumber
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDistantLightElement/elevation)
+     */
     val elevation: SVGAnimatedNumber
 }

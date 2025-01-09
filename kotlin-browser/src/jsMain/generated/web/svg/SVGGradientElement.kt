@@ -11,8 +11,19 @@ open external class SVGGradientElement
 private constructor() :
     SVGElement,
     SVGURIReference {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGradientElement/gradientTransform)
+     */
     val gradientTransform: SVGAnimatedTransformList
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGradientElement/gradientUnits)
+     */
     val gradientUnits: SVGAnimatedEnumeration<SVGUnitTypes.Type>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGradientElement/spreadMethod)
+     */
     val spreadMethod: SVGAnimatedEnumeration<SpreadMethod>
     val SVG_SPREADMETHOD_UNKNOWN: SpreadMethod
     val SVG_SPREADMETHOD_PAD: SpreadMethod

@@ -7,8 +7,15 @@
 package web.svg
 
 sealed external interface SVGAnimatedPoints {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPolygonElement/animatedPoints)
+     */
     val animatedPoints: SVGPointList
         get() = definedExternally
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPolygonElement/points)
+     */
     val points: SVGPointList
         get() = definedExternally
 }

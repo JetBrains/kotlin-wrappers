@@ -6,8 +6,14 @@ import seskar.js.JsValue
 
 sealed external interface PermissionName {
     companion object {
+        @JsValue("camera")
+        val camera: PermissionName
+
         @JsValue("geolocation")
         val geolocation: PermissionName
+
+        @JsValue("microphone")
+        val microphone: PermissionName
 
         @JsValue("midi")
         val midi: PermissionName
