@@ -203,6 +203,13 @@ external interface ARIAMixin {
         set(value) = definedExternally
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaRelevant)
+     */
+    var ariaRelevant: String?
+        get() = definedExternally
+        set(value) = definedExternally
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaRequired)
      */
     var ariaRequired: String?
