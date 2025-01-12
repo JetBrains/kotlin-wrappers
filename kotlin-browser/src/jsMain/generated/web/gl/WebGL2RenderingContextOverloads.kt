@@ -7,7 +7,7 @@ import js.buffer.ArrayBufferView
 
 sealed external interface WebGL2RenderingContextOverloads {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/bufferData)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bufferData)
      */
     fun bufferData(
         target: GLenum,
@@ -30,7 +30,7 @@ sealed external interface WebGL2RenderingContextOverloads {
     )
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/bufferSubData)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bufferSubData)
      */
     fun bufferSubData(
         target: GLenum,
@@ -338,7 +338,7 @@ sealed external interface WebGL2RenderingContextOverloads {
     )
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniformMatrix)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
      */
     fun uniformMatrix2fv(
         location: WebGLUniformLocation?,

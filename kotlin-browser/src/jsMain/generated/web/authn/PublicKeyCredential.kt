@@ -41,6 +41,12 @@ private constructor() :
     fun toJSON(): PublicKeyCredentialJSON
 
     companion object {
+        @JsAsync
+        suspend fun getClientCapabilities(): PublicKeyCredentialClientCapabilities
+
+        @JsName("getClientCapabilities")
+        fun getClientCapabilitiesAsync(): Promise<PublicKeyCredentialClientCapabilities>
+
         /**
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/isConditionalMediationAvailable_static)
          */

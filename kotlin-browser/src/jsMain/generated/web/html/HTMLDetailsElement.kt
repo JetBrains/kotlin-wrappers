@@ -13,7 +13,7 @@ open external class HTMLDetailsElement
 protected constructor() :
     HTMLElement {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDetailsElement/open)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDetailsElement/name)
      */
     var name: String
 

@@ -157,6 +157,8 @@ private constructor() :
 
     /**
      * Gets TimeRanges for the current media resource that has been played.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/played)
      */
     val played: TimeRanges
 
@@ -191,6 +193,8 @@ private constructor() :
 
     /**
      * Gets a flag that indicates whether the client is currently moving to a new playback position in the media resource.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/seeking)
      */
     val seeking: Boolean
 

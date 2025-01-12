@@ -9,11 +9,34 @@ package web.svg
  */
 external class SVGAngle
 private constructor() {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle/unitType)
+     */
     val unitType: UnitType
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle/value)
+     */
     var value: Float
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle/valueAsString)
+     */
     var valueAsString: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle/valueInSpecifiedUnits)
+     */
     var valueInSpecifiedUnits: Float
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle/convertToSpecifiedUnits)
+     */
     fun convertToSpecifiedUnits(unitType: UnitType)
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle/newValueSpecifiedUnits)
+     */
     fun newValueSpecifiedUnits(
         unitType: UnitType,
         valueInSpecifiedUnits: Float,

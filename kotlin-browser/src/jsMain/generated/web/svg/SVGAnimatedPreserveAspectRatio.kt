@@ -9,6 +9,13 @@ package web.svg
  */
 external class SVGAnimatedPreserveAspectRatio
 private constructor() {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedPreserveAspectRatio/animVal)
+     */
     val animVal: SVGPreserveAspectRatio
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedPreserveAspectRatio/baseVal)
+     */
     val baseVal: SVGPreserveAspectRatio
 }

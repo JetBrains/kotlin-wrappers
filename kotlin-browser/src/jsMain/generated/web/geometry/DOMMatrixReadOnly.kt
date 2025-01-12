@@ -130,6 +130,10 @@ open external class DOMMatrixReadOnly(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/flipX)
      */
     fun flipX(): DOMMatrix
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/flipY)
+     */
     fun flipY(): DOMMatrix
 
     /**

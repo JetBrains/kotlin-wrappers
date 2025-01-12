@@ -17,6 +17,9 @@ open external class PopStateEvent(
     override val type: EventType<PopStateEvent>,
     init: PopStateEventInit = definedExternally,
 ) : Event {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PopStateEvent/hasUAVisualTransition)
+     */
     val hasUAVisualTransition: Boolean
 
     /**

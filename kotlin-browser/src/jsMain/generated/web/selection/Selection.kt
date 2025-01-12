@@ -89,7 +89,7 @@ private constructor() {
     fun deleteFromDocument()
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/removeAllRanges)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/empty)
      */
     fun empty()
 
@@ -141,7 +141,7 @@ private constructor() {
     )
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/collapse)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/setPosition)
      */
     fun setPosition(
         node: Node?,

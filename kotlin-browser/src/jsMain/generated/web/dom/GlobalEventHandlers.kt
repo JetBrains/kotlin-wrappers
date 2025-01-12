@@ -141,7 +141,7 @@ external interface GlobalEventHandlers :
         set(value) = definedExternally
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/webglcontextlost_event)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/contextlost_event)
      */
     var oncontextlost: EventHandler<Event, GlobalEventHandlers, GlobalEventHandlers>?
         get() = definedExternally

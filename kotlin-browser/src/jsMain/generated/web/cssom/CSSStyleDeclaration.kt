@@ -33,6 +33,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/align-self)
      */
     var alignSelf: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/alignment-baseline)
+     */
     var alignmentBaseline: String
 
     /**
