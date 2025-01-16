@@ -40,8 +40,12 @@ val UserTable = FC {
 
             for (headerGroup in table.getHeaderGroups()) {
                 tr {
+                    key = headerGroup.id
+
                     for (header in headerGroup.headers) {
                         th {
+                            key = header.id
+
                             css {
                                 fontWeight = FontWeight.normal
                                 padding = Padding(4.px, 12.px)
@@ -69,6 +73,8 @@ val UserTable = FC {
 
             for (row in table.getRowModel().rows) {
                 tr {
+                    key = row.id
+
                     css {
                         fontSize = 16.px
                         cursor = Cursor.pointer
@@ -85,6 +91,8 @@ val UserTable = FC {
 
                     for (cell in row.getVisibleCells()) {
                         td {
+                            key = cell.id
+
                             css {
                                 padding = Padding(10.px, 12.px)
                             }
