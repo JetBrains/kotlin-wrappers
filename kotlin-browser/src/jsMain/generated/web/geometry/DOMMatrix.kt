@@ -128,8 +128,16 @@ open external class DOMMatrix(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/invertSelf)
      */
     fun invertSelf(): DOMMatrix
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/multiplySelf)
+     */
     fun multiplySelf(other: DOMMatrixInit = definedExternally): DOMMatrix
     fun multiplySelf(other: DOMMatrixReadOnly /* DOMMatrixInit */): DOMMatrix
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/preMultiplySelf)
+     */
     fun preMultiplySelf(other: DOMMatrixInit = definedExternally): DOMMatrix
     fun preMultiplySelf(other: DOMMatrixReadOnly /* DOMMatrixInit */): DOMMatrix
     fun rotateAxisAngleSelf(

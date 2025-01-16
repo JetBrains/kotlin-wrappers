@@ -10,12 +10,39 @@ package web.svg
 open external class SVGComponentTransferFunctionElement
 private constructor() :
     SVGElement {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGComponentTransferFunctionElement/amplitude)
+     */
     val amplitude: SVGAnimatedNumber
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGComponentTransferFunctionElement/exponent)
+     */
     val exponent: SVGAnimatedNumber
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGComponentTransferFunctionElement/intercept)
+     */
     val intercept: SVGAnimatedNumber
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGComponentTransferFunctionElement/offset)
+     */
     val offset: SVGAnimatedNumber
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGComponentTransferFunctionElement/slope)
+     */
     val slope: SVGAnimatedNumber
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGComponentTransferFunctionElement/tableValues)
+     */
     val tableValues: SVGAnimatedNumberList
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGComponentTransferFunctionElement/type)
+     */
     val type: SVGAnimatedEnumeration<Type>
     val SVG_FECOMPONENTTRANSFER_TYPE_UNKNOWN: Type
     val SVG_FECOMPONENTTRANSFER_TYPE_IDENTITY: Type

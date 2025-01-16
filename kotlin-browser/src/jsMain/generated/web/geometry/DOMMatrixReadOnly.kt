@@ -140,6 +140,10 @@ open external class DOMMatrixReadOnly(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/inverse)
      */
     fun inverse(): DOMMatrix
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/multiply)
+     */
     fun multiply(other: DOMMatrixInit = definedExternally): DOMMatrix
     fun multiply(other: DOMMatrixReadOnly /* DOMMatrixInit */): DOMMatrix
     fun rotate(

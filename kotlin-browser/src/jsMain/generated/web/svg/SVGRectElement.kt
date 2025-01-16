@@ -10,10 +10,33 @@ package web.svg
 open external class SVGRectElement
 private constructor() :
     SVGGeometryElement {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRectElement/height)
+     */
     val height: SVGAnimatedLength
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRectElement/rx)
+     */
     val rx: SVGAnimatedLength
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRectElement/ry)
+     */
     val ry: SVGAnimatedLength
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRectElement/width)
+     */
     val width: SVGAnimatedLength
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRectElement/x)
+     */
     val x: SVGAnimatedLength
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRectElement/y)
+     */
     val y: SVGAnimatedLength
 }
