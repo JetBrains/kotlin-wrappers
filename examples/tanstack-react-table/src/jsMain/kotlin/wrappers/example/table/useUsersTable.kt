@@ -9,8 +9,10 @@ import tanstack.table.core.Table
 import tanstack.table.core.getCoreRowModel
 import wrappers.example.entities.User
 import wrappers.example.hooks.useUsers
+import wrappers.example.table.selection.createSelectionColumn
 
 private val COLUMNS: ReadonlyArray<ColumnDef<User, String>> = arrayOf(
+    createSelectionColumn(),
     jso {
         id = "name"
         header = StringOrTemplateHeader("Name")
