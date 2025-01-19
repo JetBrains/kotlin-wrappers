@@ -2,7 +2,9 @@
 
 package react
 
-external interface ProfilerProps : PropsWithChildren {
+external interface ProfilerProps :
+    PropsWithChildren {
+
     var id: String
     var onRender: ProfilerOnRenderCallback
 }

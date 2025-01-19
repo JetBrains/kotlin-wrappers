@@ -1,5 +1,7 @@
 package react
 
-sealed external interface ReactPortal : ReactElement<Props> {
+sealed external interface ReactPortal :
+    ReactElement<Props> {
+
     val children: ReactNode?
 }
