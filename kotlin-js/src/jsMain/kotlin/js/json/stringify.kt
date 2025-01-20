@@ -12,13 +12,13 @@ import js.array.ReadonlyArray
  */
 external fun stringify(
     value: Any?,
-    replacer: (key: String, value: Any?) -> Any? = definedExternally,
+    replacer: Replacer = definedExternally,
     space: String = definedExternally,
 ): String
 
 external fun stringify(
     value: Any?,
-    replacer: (key: String, value: Any?) -> Any? = definedExternally,
+    replacer: Replacer = definedExternally,
     space: Int = definedExternally,
 ): String
 
