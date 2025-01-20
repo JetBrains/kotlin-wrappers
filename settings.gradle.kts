@@ -59,6 +59,9 @@ include("docs")
 // Kotlin/JS: GitHub Actions Toolkit wrappers
 include("kotlin-actions-toolkit")
 
+// Kotlin/JS: Ajv JSON schema validator wrappers
+include("kotlin-ajv")
+
 // Kotlin/JS: Browser APIs missing from the standard library
 include("kotlin-browser")
 
