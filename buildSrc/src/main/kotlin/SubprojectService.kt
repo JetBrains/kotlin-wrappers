@@ -5,6 +5,10 @@ import org.gradle.api.services.BuildServiceParameters
 
 abstract class SubprojectService : BuildService<BuildServiceParameters.None> {
     abstract val data: SetProperty<SubprojectData>
+
+    init {
+        data.finalizeValueOnRead()
+    }
 }
 
 fun <T : Any> SubprojectService.libraries(
