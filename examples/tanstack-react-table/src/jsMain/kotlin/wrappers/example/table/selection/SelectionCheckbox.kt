@@ -1,5 +1,6 @@
 package wrappers.example.table.selection
 
+import preact.signals.react.runtime.useSignals
 import preact.signals.react.useComputed
 import react.FC
 import react.PropsWithValue
@@ -7,7 +8,6 @@ import react.dom.events.ChangeEvent
 import react.dom.html.ReactHTML.input
 import web.html.HTMLInputElement
 import web.html.InputType.Companion.checkbox
-import wrappers.example.signals.useSignals
 
 internal external interface SelectionCheckboxProps : PropsWithValue<SelectedKeys> {
     var onChange: (event: ChangeEvent<HTMLInputElement>) -> Unit
