@@ -10,7 +10,7 @@ import js.import.JsQualifier
  * @param reviver A function that transforms the results. This function is called for each member of the object.
  * If a member contains nested objects, the nested objects are transformed before the parent object is.
  */
-external fun <T : Any> parse(
+external fun <T> parse(
     text: String,
     reviver: Reviver = definedExternally,
 ): T
