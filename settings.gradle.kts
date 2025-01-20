@@ -206,6 +206,9 @@ include("kotlin-vercel-ncc")
 // Kotlin/JS: Common web wrappers
 include("kotlin-web")
 
+// Kotlin/JS: yaml wrappers
+include("kotlin-yaml")
+
 include("kotlin-wrappers-bom")
 
 include("kotlin-wrappers-catalog")
