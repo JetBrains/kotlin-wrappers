@@ -1,17 +1,13 @@
 package wrappers.example.table.selection
 
-import js.array.ReadonlyArray
 import js.objects.jso
-import preact.signals.core.Signal
-import preact.signals.core.signal
 import react.create
 import tanstack.table.core.ColumnDef
 import tanstack.table.core.ColumnDefTemplate
 import tanstack.table.core.StringOrTemplateHeader
 
-internal typealias SelectedKeys = ReadonlyArray<String>
-
-internal val selectedKeys: Signal<SelectedKeys> = signal(emptyArray())
+internal val EMPTY_SELECTION: SelectedKeys = emptySet()
+internal typealias SelectedKeys = Set<String>
 
 internal fun <T : Any> createSelectionColumn(): ColumnDef<T, String> =
     jso {
@@ -19,20 +15,20 @@ internal fun <T : Any> createSelectionColumn(): ColumnDef<T, String> =
         size = 32
         header = StringOrTemplateHeader(
             ColumnDefTemplate { context ->
-                val allRowIds = context.table.getRowModel().rows
+                val keys = context.table.getRowModel().rows
                     .map { it.id }
-                    .toTypedArray()
+                    .toSet()
 
-                SelectionHeader.create {
-                    value = allRowIds
+                SelectionCell.create {
+                    value = keys
                 }
             }
         )
         cell = ColumnDefTemplate { context ->
-            val row = context.cell.row
+            val keys = setOf(context.cell.row.id)
 
             SelectionCell.create {
-                value = row
+                value = keys
             }
         }
     }
