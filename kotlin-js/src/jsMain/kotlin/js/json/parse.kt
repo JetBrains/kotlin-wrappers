@@ -12,5 +12,5 @@ import js.import.JsQualifier
  */
 external fun <T : Any> parse(
     text: String,
-    reviver: (key: String, value: Any?) -> Any? = definedExternally,
+    reviver: Reviver = definedExternally,
 ): T
