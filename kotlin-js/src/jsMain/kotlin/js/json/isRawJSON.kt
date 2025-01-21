@@ -1,12 +1,26 @@
-@file:JsQualifier("JSON")
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package js.json
 
-import js.import.JsQualifier
+import kotlin.contracts.contract
 
 /**
  * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/isRawJSON)
  */
-external fun isRawJSON(
+fun isRawJSON(
     value: Any?,
-): Boolean
+): Boolean {
+    contract {
+        returns(true) implies (value is RawJSON)
+    }
+
+    return JSON.isRawJSON(value)
+}
+
+private external object JSON {
+    fun isRawJSON(
+        value: Any?,
+    ): Boolean
+}
