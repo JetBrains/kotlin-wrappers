@@ -9,4 +9,4 @@ import js.import.JsQualifier
  */
 external fun rawJSON(
     value: String,
-): Any
+): RawJSON
