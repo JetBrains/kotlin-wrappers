@@ -1,20 +1,17 @@
 package wrappers.example.table.selection
 
 import preact.signals.core.Signal
-import react.RequiredContext
-import react.createRequiredContext
-import react.useRequired
+import react.use.useConstant
 import wrappers.example.entities.Key
 
 typealias SelectionHandler = (Map<Key, Boolean>) -> Unit
 
-internal val SelectionHandlerContext: RequiredContext<SelectionHandler> =
-    createRequiredContext()
+internal fun useSelectionHandler(
+    metadata: TableMetadata,
+): SelectionHandler =
+    useConstant { createSelectionHandler(metadata.selection) }
 
-internal fun useSelectionHandler(): SelectionHandler =
-    useRequired(SelectionHandlerContext)
-
-internal fun SelectionHandler(
+private fun createSelectionHandler(
     selection: Signal<SelectedKeys>,
 ): SelectionHandler = { keys ->
     val (add, remove) = keys.entries

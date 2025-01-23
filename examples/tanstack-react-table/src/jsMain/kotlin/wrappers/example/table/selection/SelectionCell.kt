@@ -1,15 +1,22 @@
 package wrappers.example.table.selection
 
 import react.FC
+import react.Key
 import react.PropsWithValue
 
-internal val SelectionCell: FC<PropsWithValue<SelectedKeys>> = FC { props ->
-    val keys = props.value
+internal external interface SelectionCellProps : PropsWithValue<Set<Key>> {
+    var metadata: TableMetadata
+}
 
-    val changeHandler = useSelectionChangeHandler(keys)
+internal val SelectionCell: FC<SelectionCellProps> = FC { props ->
+    val keys = props.value
+    val metadata = props.metadata
+
+    val checked = useIsChecked(keys, metadata)
+    val changeHandler = useSelectionChangeHandler(keys, metadata)
 
     SelectionCheckbox {
-        value = keys
+        value = checked
         onChange = changeHandler
     }
 }

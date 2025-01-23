@@ -21,6 +21,7 @@ internal fun <T : Any> createSelectionColumn(): ColumnDef<T, String> =
 
                 SelectionCell.create {
                     value = keys
+                    metadata = context.table.getMeta()
                 }
             }
         )
@@ -29,6 +30,7 @@ internal fun <T : Any> createSelectionColumn(): ColumnDef<T, String> =
 
             SelectionCell.create {
                 value = keys
+                metadata = context.table.getMeta()
             }
         }
     }
