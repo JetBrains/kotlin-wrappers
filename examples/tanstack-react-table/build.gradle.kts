@@ -9,5 +9,6 @@ dependencies {
     jsMainImplementation(kotlinWrappers.emotion)
     jsMainImplementation(kotlinWrappers.tanstack.reactQuery)
     jsMainImplementation(kotlinWrappers.tanstack.reactTable)
+    jsMainImplementation(kotlinWrappers.preact.signalsCore)
     jsMainImplementation(kotlinWrappers.preact.signalsReact)
 }
