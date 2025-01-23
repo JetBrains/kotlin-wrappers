@@ -73,7 +73,7 @@ external interface CoreInstance<TData : RowData> {
      * [API Docs](https://tanstack.com/table/v8/docs/api/core/table#options)
      * [Guide](https://tanstack.com/table/v8/docs/guide/tables)
      */
-    var options: Any /* RequiredKeys<TableOptionsResolved<TData>, 'state'> */
+    var options: TableOptionsResolved<TData>
 
     /**
      * Call this function to reset the table state to the initial state.
