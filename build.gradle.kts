@@ -1,6 +1,7 @@
 plugins {
     `tools-conventions`
     `react-npm-overrides`
+    `github-workflows`
 }
 
 tasks.wrapper {

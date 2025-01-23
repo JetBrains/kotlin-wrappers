@@ -1,0 +1,72 @@
+# This file was generated using Kotlin DSL (.github/workflows/ci-K2120.main.kts).
+# If you want to modify the workflow, please change the Kotlin file and regenerate this YAML file.
+# Generated with https://github.com/typesafegithub/github-workflows-kt
+
+name: 'CI-K2.1.20'
+on:
+  workflow_dispatch: {}
+jobs:
+  check_yaml_consistency:
+    name: 'Check YAML consistency'
+    runs-on: 'ubuntu-latest'
+    steps:
+    - id: 'step-0'
+      name: 'Check out'
+      uses: 'actions/checkout@v4'
+    - id: 'step-1'
+      name: 'Execute script'
+      run: 'rm ''.github/workflows/ci-K2120.yaml'' && ''.github/workflows/ci-K2120.main.kts'''
+    - id: 'step-2'
+      name: 'Consistency check'
+      run: 'git diff --exit-code ''.github/workflows/ci-K2120.yaml'''
+  build:
+    name: 'Build'
+    runs-on: 'ubuntu-latest'
+    needs:
+    - 'check_yaml_consistency'
+    steps:
+    - id: 'step-0'
+      name: 'Checkout the repo'
+      uses: 'actions/checkout@v4'
+    - id: 'step-1'
+      name: 'Validate Gradle Wrapper'
+      uses: 'gradle/actions/wrapper-validation@v4'
+    - id: 'step-2'
+      name: 'Set up JDK 21'
+      uses: 'actions/setup-java@v4'
+      with:
+        java-version: '21'
+        distribution: 'zulu'
+    - id: 'step-3'
+      name: 'Setup Gradle'
+      uses: 'gradle/actions/setup-gradle@v4'
+    - id: 'step-4'
+      name: 'Build'
+      run: './gradlew build -Pkotlin.version=2.1.20-Beta1'
+  build-examples:
+    name: 'Build Examples'
+    runs-on: 'ubuntu-latest'
+    needs:
+    - 'check_yaml_consistency'
+    steps:
+    - id: 'step-0'
+      name: 'Checkout the repo'
+      uses: 'actions/checkout@v4'
+    - id: 'step-1'
+      name: 'Validate Gradle Wrapper'
+      uses: 'gradle/actions/wrapper-validation@v4'
+    - id: 'step-2'
+      name: 'Set up JDK 21'
+      uses: 'actions/setup-java@v4'
+      with:
+        java-version: '21'
+        distribution: 'zulu'
+    - id: 'step-3'
+      name: 'Setup Gradle'
+      uses: 'gradle/actions/setup-gradle@v4'
+    - id: 'step-4'
+      name: 'Build Examples'
+      run: |-
+        ./gradlew publishToMavenLocal -Pkotlin.version=2.1.20-Beta1
+        cd examples/
+        ./gradlew build -Pkotlin.version=2.1.0-RC2  -Pseskar.version=3.50.1
