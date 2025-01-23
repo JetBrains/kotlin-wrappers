@@ -5,6 +5,10 @@ plugins {
 
 val aliasHelper = AliasHelper(rootDir)
 
+(rootProject.allprojects - project).forEach {
+    evaluationDependsOn(it.path)
+}
+
 catalog {
     versionCatalog {
         val libraries = subprojectService
