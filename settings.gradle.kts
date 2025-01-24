@@ -158,17 +158,11 @@ include("kotlin-react-popper")
 // Kotlin/JS: React Router wrappers
 include("kotlin-react-router")
 
-// Kotlin/JS: React Router DOM wrappers
-include("kotlin-react-router-dom")
-
 // Kotlin/JS: React Select wrappers
 include("kotlin-react-select")
 
 // Kotlin/JS: React Use wrappers
 include("kotlin-react-use")
-
-// Kotlin/JS: React Router wrappers
-include("kotlin-remix-run-router")
 
 // Kotlin/JS: semver wrappers
 include("kotlin-semver")
