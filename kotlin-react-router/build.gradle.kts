@@ -4,8 +4,9 @@ plugins {
 
 dependencies {
     jsMainApi(projects.kotlinBrowser)
-    jsMainApi(projects.kotlinRemixRunRouter)
     jsMainApi(projects.kotlinReactCore)
 
+    jsMainApi(npm(libs.npm.remixRun.router))
     jsMainApi(npm(libs.npm.reactRouter))
+    jsMainApi(npm(libs.npm.reactRouterDom))
 }
