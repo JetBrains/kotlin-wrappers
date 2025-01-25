@@ -5,42 +5,42 @@ import web.abort.toAbortSignal
 import web.url.URL
 
 suspend fun fetch(
-    input: Request,
+    request: Request,
 ): Response =
     suspendCancellableCoroutine { continuation ->
-        val request = Request(
-            input = input,
+        val finalRequest = Request(
+            request = request,
             init = RequestInit(signal = continuation.toAbortSignal())
         )
 
-        fetchAsync(request)
+        fetchAsync(finalRequest)
             .thenTo(continuation)
     }
 
 suspend fun fetch(
-    input: Request,
+    request: Request,
     init: RequestInit,
 ): Response =
-    fetch(Request(input, init))
+    fetch(Request(request, init))
 
 suspend fun fetch(
-    input: String,
+    url: String,
 ): Response =
-    fetch(Request(input))
+    fetch(Request(url))
 
 suspend fun fetch(
-    input: String,
+    url: String,
     init: RequestInit,
 ): Response =
-    fetch(Request(input, init))
+    fetch(Request(url, init))
 
 suspend fun fetch(
-    input: URL,
+    url: URL,
 ): Response =
-    fetch(Request(input))
+    fetch(Request(url))
 
 suspend fun fetch(
-    input: URL,
+    url: URL,
     init: RequestInit,
 ): Response =
-    fetch(Request(input, init))
+    fetch(Request(url, init))

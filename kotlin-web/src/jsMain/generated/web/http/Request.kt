@@ -11,16 +11,16 @@ import web.url.URL
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request)
  */
 open external class Request(
-    input: Request,
+    url: String,
     init: RequestInit = definedExternally,
 ) : Body {
     constructor(
-        input: String,
+        url: URL,
         init: RequestInit = definedExternally,
     )
 
     constructor(
-        input: URL,
+        request: Request,
         init: RequestInit = definedExternally,
     )
 

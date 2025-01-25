@@ -10,18 +10,18 @@ import web.url.URL
  */
 @JsName("fetch")
 external fun fetchAsync(
-    input: Request,
+    url: String,
     init: RequestInit? = definedExternally,
 ): Promise<Response>
 
 @JsName("fetch")
 external fun fetchAsync(
-    input: String,
+    url: URL,
     init: RequestInit? = definedExternally,
 ): Promise<Response>
 
 @JsName("fetch")
 external fun fetchAsync(
-    input: URL,
+    request: Request,
     init: RequestInit? = definedExternally,
 ): Promise<Response>
