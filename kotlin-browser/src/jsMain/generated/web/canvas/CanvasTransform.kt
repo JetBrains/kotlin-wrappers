@@ -3,7 +3,6 @@
 package web.canvas
 
 import web.geometry.DOMMatrix
-import web.geometry.DOMMatrix2DInit
 import web.geometry.DOMMatrixReadOnly
 
 sealed external interface CanvasTransform {
@@ -42,8 +41,7 @@ sealed external interface CanvasTransform {
         f: Double,
     )
 
-    fun setTransform(transform: DOMMatrix2DInit = definedExternally)
-    fun setTransform(transform: DOMMatrixReadOnly /* DOMMatrix2DInit */)
+    fun setTransform(transform: DOMMatrixReadOnly /* DOMMatrix2DInit */ = definedExternally)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/transform)

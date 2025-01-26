@@ -2,7 +2,6 @@
 
 package web.canvas
 
-import web.geometry.DOMMatrix2DInit
 import web.geometry.DOMMatrixReadOnly
 
 /**
@@ -17,6 +16,5 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasPattern/setTransform)
      */
-    fun setTransform(transform: DOMMatrix2DInit = definedExternally)
-    fun setTransform(transform: DOMMatrixReadOnly /* DOMMatrix2DInit */)
+    fun setTransform(transform: DOMMatrixReadOnly /* DOMMatrix2DInit */ = definedExternally)
 }

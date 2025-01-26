@@ -3,7 +3,6 @@
 package web.svg
 
 import web.geometry.DOMMatrix
-import web.geometry.DOMMatrix2DInit
 import web.geometry.DOMMatrixReadOnly
 
 /**
@@ -31,8 +30,7 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setMatrix)
      */
-    fun setMatrix(matrix: DOMMatrix2DInit = definedExternally)
-    fun setMatrix(matrix: DOMMatrixReadOnly /* DOMMatrix2DInit */)
+    fun setMatrix(matrix: DOMMatrixReadOnly /* DOMMatrix2DInit */ = definedExternally)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setRotate)

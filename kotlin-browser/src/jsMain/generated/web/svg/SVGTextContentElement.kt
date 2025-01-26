@@ -3,7 +3,6 @@
 package web.svg
 
 import web.geometry.DOMPoint
-import web.geometry.DOMPointInit
 import web.geometry.DOMPointReadOnly
 import web.geometry.DOMRect
 
@@ -28,8 +27,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/getCharNumAtPosition)
      */
-    fun getCharNumAtPosition(point: DOMPointInit = definedExternally): Int
-    fun getCharNumAtPosition(point: DOMPointReadOnly /* DOMPointInit */): Int
+    fun getCharNumAtPosition(point: DOMPointReadOnly = definedExternally): Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/getComputedTextLength)

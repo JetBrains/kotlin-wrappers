@@ -3,7 +3,6 @@
 package web.svg
 
 import web.geometry.DOMPoint
-import web.geometry.DOMPointInit
 import web.geometry.DOMPointReadOnly
 
 /**
@@ -30,12 +29,10 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/isPointInFill)
      */
-    fun isPointInFill(point: DOMPointInit = definedExternally): Boolean
-    fun isPointInFill(point: DOMPointReadOnly /* DOMPointInit */): Boolean
+    fun isPointInFill(point: DOMPointReadOnly = definedExternally): Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/isPointInStroke)
      */
-    fun isPointInStroke(point: DOMPointInit = definedExternally): Boolean
-    fun isPointInStroke(point: DOMPointReadOnly /* DOMPointInit */): Boolean
+    fun isPointInStroke(point: DOMPointReadOnly = definedExternally): Boolean
 }

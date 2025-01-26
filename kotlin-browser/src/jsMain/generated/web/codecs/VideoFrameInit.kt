@@ -4,7 +4,7 @@ package web.codecs
 
 import js.core.JsLong
 import js.objects.JsPlainObject
-import web.geometry.DOMRectInit
+import web.geometry.DOMRectReadOnly
 
 @JsPlainObject
 external interface VideoFrameInit {
@@ -13,5 +13,5 @@ external interface VideoFrameInit {
     val displayWidth: Int?
     val duration: JsLong?
     val timestamp: JsLong?
-    val visibleRect: DOMRectInit?
+    val visibleRect: DOMRectReadOnly?
 }

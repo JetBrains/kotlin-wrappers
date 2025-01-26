@@ -34,8 +34,7 @@ open external class DOMPointReadOnly(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/matrixTransform)
      */
-    fun matrixTransform(matrix: DOMMatrixInit = definedExternally): DOMPoint
-    fun matrixTransform(matrix: DOMMatrixReadOnly /* DOMMatrixInit */): DOMPoint
+    fun matrixTransform(matrix: DOMMatrixReadOnly = definedExternally): DOMPoint
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/toJSON)
@@ -46,7 +45,6 @@ open external class DOMPointReadOnly(
         /**
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/fromPoint_static)
          */
-        fun fromPoint(other: DOMPointInit = definedExternally): DOMPointReadOnly
-        fun fromPoint(other: DOMPointReadOnly /* DOMPointInit */): DOMPointReadOnly
+        fun fromPoint(other: DOMPointReadOnly = definedExternally): DOMPointReadOnly
     }
 }

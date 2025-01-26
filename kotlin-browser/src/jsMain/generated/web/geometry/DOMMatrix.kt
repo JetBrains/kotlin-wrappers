@@ -132,14 +132,12 @@ open external class DOMMatrix(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/multiplySelf)
      */
-    fun multiplySelf(other: DOMMatrixInit = definedExternally): DOMMatrix
-    fun multiplySelf(other: DOMMatrixReadOnly /* DOMMatrixInit */): DOMMatrix
+    fun multiplySelf(other: DOMMatrixReadOnly = definedExternally): DOMMatrix
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/preMultiplySelf)
      */
-    fun preMultiplySelf(other: DOMMatrixInit = definedExternally): DOMMatrix
-    fun preMultiplySelf(other: DOMMatrixReadOnly /* DOMMatrixInit */): DOMMatrix
+    fun preMultiplySelf(other: DOMMatrixReadOnly = definedExternally): DOMMatrix
     fun rotateAxisAngleSelf(
         x: Double = definedExternally,
         y: Double = definedExternally,
@@ -204,7 +202,6 @@ open external class DOMMatrix(
     companion object {
         fun fromFloat32Array(array32: Float32Array<*>): DOMMatrix
         fun fromFloat64Array(array64: Float64Array<*>): DOMMatrix
-        fun fromMatrix(other: DOMMatrixInit = definedExternally): DOMMatrix
-        fun fromMatrix(other: DOMMatrixReadOnly /* DOMMatrixInit */): DOMMatrix
+        fun fromMatrix(other: DOMMatrixReadOnly = definedExternally): DOMMatrix
     }
 }

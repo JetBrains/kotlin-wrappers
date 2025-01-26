@@ -60,7 +60,6 @@ open external class DOMRectReadOnly(
         /**
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/fromRect_static)
          */
-        fun fromRect(other: DOMRectInit = definedExternally): DOMRectReadOnly
-        fun fromRect(other: DOMRectReadOnly /* DOMRectInit */): DOMRectReadOnly
+        fun fromRect(other: DOMRectReadOnly = definedExternally): DOMRectReadOnly
     }
 }

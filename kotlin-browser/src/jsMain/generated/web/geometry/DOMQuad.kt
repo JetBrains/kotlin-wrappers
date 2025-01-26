@@ -6,18 +6,11 @@ package web.geometry
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad)
  */
 open external class DOMQuad(
-    p1: DOMPointInit = definedExternally,
-    p2: DOMPointInit = definedExternally,
-    p3: DOMPointInit = definedExternally,
-    p4: DOMPointInit = definedExternally,
+    p1: DOMPointReadOnly = definedExternally,
+    p2: DOMPointReadOnly = definedExternally,
+    p3: DOMPointReadOnly = definedExternally,
+    p4: DOMPointReadOnly = definedExternally,
 ) {
-    constructor(
-        p1: DOMPointReadOnly, /* DOMPointInit */
-        p2: DOMPointReadOnly, /* DOMPointInit */
-        p3: DOMPointReadOnly, /* DOMPointInit */
-        p4: DOMPointReadOnly, /* DOMPointInit */
-    )
-
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/p1)
      */
@@ -49,8 +42,7 @@ open external class DOMQuad(
     fun toJSON(): Any
 
     companion object {
-        fun fromQuad(other: DOMQuadInit = definedExternally): DOMQuad
-        fun fromRect(other: DOMRectInit = definedExternally): DOMQuad
-        fun fromRect(other: DOMRectReadOnly /* DOMRectInit */): DOMQuad
+        fun fromQuad(other: DOMQuad = definedExternally): DOMQuad
+        fun fromRect(other: DOMRectReadOnly = definedExternally): DOMQuad
     }
 }

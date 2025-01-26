@@ -144,8 +144,7 @@ open external class DOMMatrixReadOnly(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/multiply)
      */
-    fun multiply(other: DOMMatrixInit = definedExternally): DOMMatrix
-    fun multiply(other: DOMMatrixReadOnly /* DOMMatrixInit */): DOMMatrix
+    fun multiply(other: DOMMatrixReadOnly = definedExternally): DOMMatrix
     fun rotate(
         rotX: Double = definedExternally,
         rotY: Double = definedExternally,
@@ -204,8 +203,7 @@ open external class DOMMatrixReadOnly(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/transformPoint)
      */
-    fun transformPoint(point: DOMPointInit = definedExternally): DOMPoint
-    fun transformPoint(point: DOMPointReadOnly /* DOMPointInit */): DOMPoint
+    fun transformPoint(point: DOMPointReadOnly = definedExternally): DOMPoint
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/translate)
@@ -219,7 +217,6 @@ open external class DOMMatrixReadOnly(
     companion object {
         fun fromFloat32Array(array32: Float32Array<*>): DOMMatrixReadOnly
         fun fromFloat64Array(array64: Float64Array<*>): DOMMatrixReadOnly
-        fun fromMatrix(other: DOMMatrixInit = definedExternally): DOMMatrixReadOnly
-        fun fromMatrix(other: DOMMatrixReadOnly /* DOMMatrixInit */): DOMMatrixReadOnly
+        fun fromMatrix(other: DOMMatrixReadOnly = definedExternally): DOMMatrixReadOnly
     }
 }

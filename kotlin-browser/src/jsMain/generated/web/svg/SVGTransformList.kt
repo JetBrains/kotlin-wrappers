@@ -4,7 +4,6 @@ package web.svg
 
 import js.array.ArrayLike
 import js.iterable.JsIterable
-import web.geometry.DOMMatrix2DInit
 import web.geometry.DOMMatrixReadOnly
 
 /**
@@ -44,8 +43,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/createSVGTransformFromMatrix)
      */
-    fun createSVGTransformFromMatrix(matrix: DOMMatrix2DInit = definedExternally): SVGTransform
-    fun createSVGTransformFromMatrix(matrix: DOMMatrixReadOnly /* DOMMatrix2DInit */): SVGTransform
+    fun createSVGTransformFromMatrix(matrix: DOMMatrixReadOnly /* DOMMatrix2DInit */ = definedExternally): SVGTransform
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/getItem)

@@ -35,7 +35,6 @@ open external class DOMPoint(
         /**
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPoint/fromPoint_static)
          */
-        fun fromPoint(other: DOMPointInit = definedExternally): DOMPoint
-        fun fromPoint(other: DOMPointReadOnly /* DOMPointInit */): DOMPoint
+        fun fromPoint(other: DOMPointReadOnly = definedExternally): DOMPoint
     }
 }

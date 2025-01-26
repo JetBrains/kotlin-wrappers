@@ -41,8 +41,7 @@ private constructor() :
     fun createSVGPoint(): DOMPoint
     fun createSVGRect(): DOMRect
     fun createSVGTransform(): SVGTransform
-    fun createSVGTransformFromMatrix(matrix: DOMMatrix2DInit = definedExternally): SVGTransform
-    fun createSVGTransformFromMatrix(matrix: DOMMatrixReadOnly /* DOMMatrix2DInit */): SVGTransform
+    fun createSVGTransformFromMatrix(matrix: DOMMatrixReadOnly /* DOMMatrix2DInit */ = definedExternally): SVGTransform
     fun deselectAll()
     fun getCurrentTime(): Float
     fun getElementById(elementId: String): Element

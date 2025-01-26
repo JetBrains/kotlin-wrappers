@@ -2,7 +2,6 @@
 
 package web.canvas
 
-import web.geometry.DOMMatrix2DInit
 import web.geometry.DOMMatrixReadOnly
 
 /**
@@ -22,11 +21,6 @@ open external class Path2D(
      */
     fun addPath(
         path: Path2D,
-        transform: DOMMatrix2DInit = definedExternally,
-    )
-
-    fun addPath(
-        path: Path2D,
-        transform: DOMMatrixReadOnly, /* DOMMatrix2DInit */
+        transform: DOMMatrixReadOnly /* DOMMatrix2DInit */ = definedExternally,
     )
 }

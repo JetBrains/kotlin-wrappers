@@ -5,7 +5,7 @@ package web.codecs
 import js.array.ReadonlyArray
 import js.core.JsLong
 import js.objects.JsPlainObject
-import web.geometry.DOMRectInit
+import web.geometry.DOMRectReadOnly
 
 @JsPlainObject
 external interface VideoFrameBufferInit {
@@ -18,5 +18,5 @@ external interface VideoFrameBufferInit {
     val format: VideoPixelFormat
     val layout: ReadonlyArray<PlaneLayout>?
     val timestamp: JsLong
-    val visibleRect: DOMRectInit?
+    val visibleRect: DOMRectReadOnly?
 }
