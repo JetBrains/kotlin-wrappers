@@ -19,6 +19,6 @@ external interface TimeFieldProps<TValue : Any> :
     var defaultValue: TValue?
     var value: TValue?
 
-    var onChange: ((TValue?, Nothing) -> Unit)?
+    var onChange: ((TValue?, Any) -> Unit)?
     var onError: ((String?, TValue?) -> Unit)?
 }
