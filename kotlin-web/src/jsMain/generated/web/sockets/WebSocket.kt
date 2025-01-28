@@ -23,11 +23,16 @@ open external class WebSocket(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/url)
      */
     val url: String,
-    protocols: String = definedExternally,
+    /**
+     * Returns the subprotocol selected by the server, if any. It can be used in conjunction with the array form of the constructor's second argument to perform subprotocol negotiation.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/protocol)
+     */
+    val protocol: String = definedExternally,
 ) : EventTarget {
     constructor(
         url: URL,
-        protocols: String = definedExternally,
+        protocol: String = definedExternally,
     )
 
     constructor(
@@ -84,13 +89,6 @@ open external class WebSocket(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/open_event)
      */
     var onopen: EventHandler<Event, WebSocket, WebSocket>?
-
-    /**
-     * Returns the subprotocol selected by the server, if any. It can be used in conjunction with the array form of the constructor's second argument to perform subprotocol negotiation.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/protocol)
-     */
-    val protocol: String
 
     /**
      * Returns the state of the WebSocket object's connection. It can have the values described below.
