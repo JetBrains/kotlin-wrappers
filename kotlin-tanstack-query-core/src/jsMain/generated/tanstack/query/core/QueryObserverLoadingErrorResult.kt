@@ -16,5 +16,6 @@ external interface QueryObserverLoadingErrorResult<TData, TError>
     override val isLoadingError: True
     override val isRefetchError: False
     override val isSuccess: False
+    override val isPlaceholderData: False
     override val status: QueryStatus /* 'error' */
 }

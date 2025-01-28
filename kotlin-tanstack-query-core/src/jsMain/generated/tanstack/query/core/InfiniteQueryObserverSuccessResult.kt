@@ -18,5 +18,6 @@ external interface InfiniteQueryObserverSuccessResult<TData, TError>
     override val isFetchNextPageError: False
     override val isFetchPreviousPageError: False
     override val isSuccess: True
+    override val isPlaceholderData: False
     override val status: QueryStatus /* 'success' */
 }
