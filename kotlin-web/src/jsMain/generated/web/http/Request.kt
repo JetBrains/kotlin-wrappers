@@ -11,7 +11,12 @@ import web.url.URL
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request)
  */
 open external class Request(
-    url: String,
+    /**
+     * Returns the URL of request as a string.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/url)
+     */
+    val url: String,
     init: RequestInit = definedExternally,
 ) : Body {
     constructor(
@@ -107,13 +112,6 @@ open external class Request(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/signal)
      */
     val signal: AbortSignal
-
-    /**
-     * Returns the URL of request as a string.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/url)
-     */
-    val url: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/clone)

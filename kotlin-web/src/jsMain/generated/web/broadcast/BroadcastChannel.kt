@@ -12,15 +12,13 @@ import web.messaging.MessageEvent
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel)
  */
 open external class BroadcastChannel(
-    name: String,
-) : EventTarget {
     /**
      * Returns the channel name (as passed to the constructor).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/name)
      */
-    val name: String
-
+    val name: String,
+) : EventTarget {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/message_event)
      */

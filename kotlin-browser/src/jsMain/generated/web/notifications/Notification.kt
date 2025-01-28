@@ -12,7 +12,10 @@ import web.events.*
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification)
  */
 open external class Notification(
-    title: String,
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/title)
+     */
+    val title: String,
     options: NotificationOptions = definedExternally,
 ) : EventTarget {
     /**
@@ -79,11 +82,6 @@ open external class Notification(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/tag)
      */
     val tag: String
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/title)
-     */
-    val title: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/close)

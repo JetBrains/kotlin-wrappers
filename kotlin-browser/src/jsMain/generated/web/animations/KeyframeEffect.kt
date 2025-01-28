@@ -9,7 +9,10 @@ import web.dom.Element
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyframeEffect)
  */
 open external class KeyframeEffect(
-    target: Element?,
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyframeEffect/target)
+     */
+    var target: Element?,
     keyframes: ReadonlyArray<Keyframe>?,
     options: Double = definedExternally,
 ) : AnimationEffect {
@@ -47,11 +50,6 @@ open external class KeyframeEffect(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyframeEffect/pseudoElement)
      */
     var pseudoElement: String?
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyframeEffect/target)
-     */
-    var target: Element?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyframeEffect/getKeyframes)

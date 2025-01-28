@@ -17,7 +17,12 @@ import web.url.URL
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket)
  */
 open external class WebSocket(
-    url: String,
+    /**
+     * Returns the URL that was used to establish the WebSocket connection.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/url)
+     */
+    val url: String,
     protocols: String = definedExternally,
 ) : EventTarget {
     constructor(
@@ -93,13 +98,6 @@ open external class WebSocket(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/readyState)
      */
     val readyState: ReadyState
-
-    /**
-     * Returns the URL that was used to establish the WebSocket connection.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/url)
-     */
-    val url: String
 
     /**
      * Closes the WebSocket connection, optionally using code as the the WebSocket connection close code and reason as the the WebSocket connection close reason.

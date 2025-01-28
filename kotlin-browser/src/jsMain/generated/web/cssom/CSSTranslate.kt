@@ -6,22 +6,16 @@ package web.cssom
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTranslate)
  */
 open external class CSSTranslate(
-    x: CSSNumericValue,
-    y: CSSNumericValue,
-    z: CSSNumericValue = definedExternally,
-) : CSSTransformComponent {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTranslate/x)
      */
-    var x: CSSNumericValue
-
+    var x: CSSNumericValue,
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTranslate/y)
      */
-    var y: CSSNumericValue
-
+    var y: CSSNumericValue,
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTranslate/z)
      */
-    var z: CSSNumericValue
-}
+    var z: CSSNumericValue = definedExternally,
+) : CSSTransformComponent

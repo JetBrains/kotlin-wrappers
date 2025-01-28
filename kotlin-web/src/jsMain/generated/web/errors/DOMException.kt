@@ -12,19 +12,15 @@ import seskar.js.JsValue
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMException)
  */
 open external class DOMException(
-    message: String = definedExternally,
-    name: JsErrorName = definedExternally,
-) : JsError {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMException/message)
      */
-    override val message: String
-
+    override val message: String = definedExternally,
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMException/name)
      */
-    val name: JsErrorName
-
+    val name: JsErrorName = definedExternally,
+) : JsError {
     companion object {
         /**
          * The index is not in the allowed range. For example, this can be thrown by the `Range` object

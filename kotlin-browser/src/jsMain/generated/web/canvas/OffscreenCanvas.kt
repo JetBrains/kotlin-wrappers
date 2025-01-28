@@ -22,13 +22,14 @@ import web.window.*
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas)
  */
 open external class OffscreenCanvas(
-    width: JsLong,
-    height: JsLong,
-) : EventTarget,
-    CanvasImageSource,
-    TexImageSource,
-    GPUCopyExternalImageSource,
-    Transferable {
+    /**
+     * These attributes return the dimensions of the OffscreenCanvas object's bitmap.
+     *
+     * They can be set, to replace the bitmap with a new, transparent black bitmap of the specified dimensions (effectively resizing it).
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/width)
+     */
+    var width: JsLong,
     /**
      * These attributes return the dimensions of the OffscreenCanvas object's bitmap.
      *
@@ -36,8 +37,12 @@ open external class OffscreenCanvas(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/height)
      */
-    var height: JsLong
-
+    var height: JsLong,
+) : EventTarget,
+    CanvasImageSource,
+    TexImageSource,
+    GPUCopyExternalImageSource,
+    Transferable {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/contextlost_event)
      */
@@ -47,15 +52,6 @@ open external class OffscreenCanvas(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/contextrestored_event)
      */
     var oncontextrestored: EventHandler<Event, OffscreenCanvas, OffscreenCanvas>?
-
-    /**
-     * These attributes return the dimensions of the OffscreenCanvas object's bitmap.
-     *
-     * They can be set, to replace the bitmap with a new, transparent black bitmap of the specified dimensions (effectively resizing it).
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/width)
-     */
-    var width: JsLong
 
     /**
      * Returns a promise that will fulfill with a new Blob object representing a file containing the image in the OffscreenCanvas object.

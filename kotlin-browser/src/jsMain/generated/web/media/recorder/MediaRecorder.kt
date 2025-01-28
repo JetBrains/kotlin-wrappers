@@ -10,7 +10,10 @@ import web.media.streams.MediaStream
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder)
  */
 open external class MediaRecorder(
-    stream: MediaStream,
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/stream)
+     */
+    val stream: MediaStream,
     options: MediaRecorderOptions = definedExternally,
 ) : EventTarget {
     /**
@@ -57,11 +60,6 @@ open external class MediaRecorder(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/state)
      */
     val state: RecordingState
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/stream)
-     */
-    val stream: MediaStream
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/videoBitsPerSecond)

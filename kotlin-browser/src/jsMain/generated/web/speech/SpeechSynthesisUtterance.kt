@@ -13,7 +13,10 @@ import web.events.JsEvent
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance)
  */
 open external class SpeechSynthesisUtterance(
-    text: String = definedExternally,
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/text)
+     */
+    var text: String = definedExternally,
 ) : EventTarget {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/lang)
@@ -64,11 +67,6 @@ open external class SpeechSynthesisUtterance(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/rate)
      */
     var rate: Float
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/text)
-     */
-    var text: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/voice)

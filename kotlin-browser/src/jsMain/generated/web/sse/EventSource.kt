@@ -10,7 +10,12 @@ import web.url.URL
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource)
  */
 open external class EventSource(
-    url: String,
+    /**
+     * Returns the URL providing the event stream.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/url)
+     */
+    val url: String,
     init: EventSourceInit = definedExternally,
 ) : EventTarget {
     constructor(
@@ -39,13 +44,6 @@ open external class EventSource(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/readyState)
      */
     val readyState: ReadyState
-
-    /**
-     * Returns the URL providing the event stream.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/url)
-     */
-    val url: String
 
     /**
      * Returns true if the credentials mode for connection requests to the URL providing the event stream is set to "include", and false otherwise.

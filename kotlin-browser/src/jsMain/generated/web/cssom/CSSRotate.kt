@@ -6,7 +6,10 @@ package web.cssom
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRotate)
  */
 open external class CSSRotate(
-    angle: CSSNumericValue,
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRotate/angle)
+     */
+    var angle: CSSNumericValue,
 ) : CSSTransformComponent {
     constructor(
         x: CSSNumberish,
@@ -14,11 +17,6 @@ open external class CSSRotate(
         z: CSSNumberish,
         angle: CSSNumericValue,
     )
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRotate/angle)
-     */
-    var angle: CSSNumericValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRotate/x)

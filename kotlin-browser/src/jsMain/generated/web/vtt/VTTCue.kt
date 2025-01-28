@@ -10,7 +10,10 @@ import web.dom.DocumentFragment
 open external class VTTCue(
     startTime: Double,
     endTime: Double,
-    text: String,
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VTTCue/text)
+     */
+    var text: String,
 ) : TextTrackCue {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VTTCue/align)
@@ -51,11 +54,6 @@ open external class VTTCue(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VTTCue/snapToLines)
      */
     var snapToLines: Boolean
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VTTCue/text)
-     */
-    var text: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VTTCue/vertical)

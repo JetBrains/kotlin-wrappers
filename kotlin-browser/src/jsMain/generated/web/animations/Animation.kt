@@ -12,18 +12,19 @@ import web.events.JsEvent
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation)
  */
 open external class Animation(
-    effect: AnimationEffect? = definedExternally,
-    timeline: AnimationTimeline? = definedExternally,
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/effect)
+     */
+    var effect: AnimationEffect? = definedExternally,
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/timeline)
+     */
+    var timeline: AnimationTimeline? = definedExternally,
 ) : EventTarget {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/currentTime)
      */
     var currentTime: CSSNumberish?
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/effect)
-     */
-    var effect: AnimationEffect?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/finished)
@@ -79,11 +80,6 @@ open external class Animation(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/startTime)
      */
     var startTime: CSSNumberish?
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/timeline)
-     */
-    var timeline: AnimationTimeline?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/cancel)
