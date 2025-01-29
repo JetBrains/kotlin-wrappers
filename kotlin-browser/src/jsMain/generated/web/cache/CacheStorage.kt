@@ -49,6 +49,30 @@ private constructor() {
      */
     @JsAsync
     suspend fun match(
+        url: String,
+        options: MultiCacheQueryOptions = definedExternally,
+    ): Response?
+
+    @JsName("match")
+    fun matchAsync(
+        url: String,
+        options: MultiCacheQueryOptions = definedExternally,
+    ): Promise<Response?>
+
+    @JsAsync
+    suspend fun match(
+        url: URL,
+        options: MultiCacheQueryOptions = definedExternally,
+    ): Response?
+
+    @JsName("match")
+    fun matchAsync(
+        url: URL,
+        options: MultiCacheQueryOptions = definedExternally,
+    ): Promise<Response?>
+
+    @JsAsync
+    suspend fun match(
         request: Request,
         options: MultiCacheQueryOptions = definedExternally,
     ): Response?
@@ -56,30 +80,6 @@ private constructor() {
     @JsName("match")
     fun matchAsync(
         request: Request,
-        options: MultiCacheQueryOptions = definedExternally,
-    ): Promise<Response?>
-
-    @JsAsync
-    suspend fun match(
-        request: String,
-        options: MultiCacheQueryOptions = definedExternally,
-    ): Response?
-
-    @JsName("match")
-    fun matchAsync(
-        request: String,
-        options: MultiCacheQueryOptions = definedExternally,
-    ): Promise<Response?>
-
-    @JsAsync
-    suspend fun match(
-        request: URL,
-        options: MultiCacheQueryOptions = definedExternally,
-    ): Response?
-
-    @JsName("match")
-    fun matchAsync(
-        request: URL,
         options: MultiCacheQueryOptions = definedExternally,
     ): Promise<Response?>
 
