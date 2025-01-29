@@ -15,7 +15,19 @@ private constructor() :
     val pointsAtY: SVGAnimatedNumber
     val pointsAtZ: SVGAnimatedNumber
     val specularExponent: SVGAnimatedNumber
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFESpotLightElement/x)
+     */
     val x: SVGAnimatedNumber
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFESpotLightElement/y)
+     */
     val y: SVGAnimatedNumber
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFESpotLightElement/z)
+     */
     val z: SVGAnimatedNumber
 }

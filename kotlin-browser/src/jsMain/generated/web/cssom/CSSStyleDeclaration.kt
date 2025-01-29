@@ -1512,21 +1512,6 @@ private constructor() :
     var page: String
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/page-break-after)
-     */
-    var pageBreakAfter: String
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/page-break-before)
-     */
-    var pageBreakBefore: String
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/page-break-inside)
-     */
-    var pageBreakInside: String
-
-    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/paint-order)
      */
     var paintOrder: String

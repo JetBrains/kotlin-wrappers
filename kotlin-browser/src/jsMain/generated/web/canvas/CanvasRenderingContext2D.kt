@@ -25,6 +25,7 @@ private constructor() :
     CanvasPath,
     CanvasPathDrawingStyles,
     CanvasRect,
+    CanvasSettings,
     CanvasShadowStyles,
     CanvasState,
     CanvasText,
@@ -36,11 +37,6 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/canvas)
      */
     val canvas: HTMLCanvasElement
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/getContextAttributes)
-     */
-    fun getContextAttributes(): CanvasRenderingContext2DSettings
 
     companion object {
         @JsValue("2d")

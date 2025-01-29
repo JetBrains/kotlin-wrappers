@@ -43,7 +43,15 @@ open external class DOMMatrixReadOnly(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
     open val f: Double
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/is2D)
+     */
     open val is2D: Boolean
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/isIdentity)
+     */
     open val isIdentity: Boolean
 
     /**
