@@ -6,31 +6,23 @@ package web.geometry
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly)
  */
 open external class DOMPointReadOnly(
-    x: Double = definedExternally,
-    y: Double = definedExternally,
-    z: Double = definedExternally,
-    w: Double = definedExternally,
-) {
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/w)
-     */
-    open val w: Double
-
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/x)
      */
-    open val x: Double
-
+    open val x: Double = definedExternally,
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/y)
      */
-    open val y: Double
-
+    open val y: Double = definedExternally,
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/z)
      */
-    open val z: Double
-
+    open val z: Double = definedExternally,
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/w)
+     */
+    open val w: Double = definedExternally,
+) {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/matrixTransform)
      */

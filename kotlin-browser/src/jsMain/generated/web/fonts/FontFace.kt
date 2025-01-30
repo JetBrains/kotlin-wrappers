@@ -10,7 +10,10 @@ import seskar.js.JsAsync
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace)
  */
 open external class FontFace(
-    family: String,
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/family)
+     */
+    var family: String,
     source: String,
     descriptors: FontFaceDescriptors = definedExternally,
 ) {
@@ -34,11 +37,6 @@ open external class FontFace(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/display)
      */
     var display: FontDisplay
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/family)
-     */
-    var family: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/featureSettings)
