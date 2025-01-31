@@ -8,11 +8,13 @@
 package js.iterable
 
 import js.array.ReadonlyArray
+import js.disposable.Disposable
 
 @JsName("Iterator")
 abstract external class JsIterator<out T> :
     JsIteratorLike<T>,
-    JsIterable<T> {
+    JsIterable<T>,
+    Disposable {
 
     fun drop(n: Int): JsIterator<T>
     fun every(predicate: (T) -> Boolean): Boolean

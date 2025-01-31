@@ -7,11 +7,15 @@
 
 package js.iterable
 
+import js.disposable.AsyncDisposable
+
 // TODO: add `@JsName`
 @JsExternalInheritorsOnly
 abstract external class AsyncIterator<out T> :
     AsyncIteratorLike<T>,
-    AsyncIterable<T> {
+    AsyncIterable<T>,
+    AsyncDisposable {
+
     override inline operator fun iterator(): SuspendableIterator<T> =
         iteratorFromAsyncIteratorLike(this)
 }
