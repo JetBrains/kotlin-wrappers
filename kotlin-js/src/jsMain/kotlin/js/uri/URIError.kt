@@ -4,6 +4,6 @@ import js.errors.ErrorOptions
 import js.errors.JsError
 
 open external class URIError(
-    message: String? = definedExternally,
+    override val message: String? = definedExternally,
     options: ErrorOptions? = definedExternally,
 ) : JsError
