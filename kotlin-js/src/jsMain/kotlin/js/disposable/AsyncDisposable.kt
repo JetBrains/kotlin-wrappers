@@ -4,8 +4,6 @@
 
 package js.disposable
 
-import js.core.Void
-import js.promise.PromiseLike
 import js.symbol.Symbol
 import seskar.js.JsNative
 
@@ -13,5 +11,5 @@ external interface AsyncDisposable {
     @JsNative
     operator fun get(
         key: Symbol.asyncDispose,
-    ): () -> PromiseLike<Void> = definedExternally
+    ): AsyncDispose = definedExternally
 }
