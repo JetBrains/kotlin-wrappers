@@ -12,6 +12,7 @@ external interface FetchContext<TQueryFnData, TError, TData, TQueryKey : QueryKe
     val fetchOptions: FetchOptions<*>?
     val signal: AbortSignal
     val options: QueryOptions<TQueryFnData, TError, TData, *, *>
+    val client: QueryClient
     val queryKey: TQueryKey
     val state: QueryState<TData, TError>
 }

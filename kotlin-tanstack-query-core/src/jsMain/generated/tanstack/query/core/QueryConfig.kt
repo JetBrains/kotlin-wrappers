@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface QueryConfig<TQueryFnData, TError, TData, TQueryKey : QueryKey> {
-    val cache: QueryCache
+    val client: QueryClient
     val queryKey: TQueryKey
     val queryHash: String
     val options: QueryOptions<TQueryFnData, TError, TData, TQueryKey, *>?
