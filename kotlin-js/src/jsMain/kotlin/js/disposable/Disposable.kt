@@ -11,5 +11,5 @@ external interface Disposable {
     @JsNative
     operator fun get(
         key: Symbol.dispose,
-    ): () -> Unit = definedExternally
+    ): Dispose = definedExternally
 }
