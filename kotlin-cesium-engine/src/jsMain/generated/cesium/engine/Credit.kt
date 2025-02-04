@@ -39,8 +39,8 @@ external class Credit(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Credit.html#.equals">Online Documentation</a>
          */
         fun equals(
-            left: Credit,
-            right: Credit,
+            left: Credit? = definedExternally,
+            right: Credit? = definedExternally,
         ): Boolean
 
         /**

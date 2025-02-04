@@ -436,7 +436,7 @@ external class ImageryLayer(
          */
         fun fromProviderAsync(
             imageryProviderPromise: Promise<ImageryProvider>,
-            options: ConstructorOptions,
+            options: ConstructorOptions? = definedExternally,
         ): ImageryLayer
 
         /**

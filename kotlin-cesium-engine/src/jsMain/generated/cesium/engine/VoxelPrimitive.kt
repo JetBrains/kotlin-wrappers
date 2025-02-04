@@ -30,6 +30,112 @@ external class VoxelPrimitive(
     }
 
     /**
+     * The number of levels of detail containing available tiles in the tileset.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelPrimitive.html#availableLevels">Online Documentation</a>
+     */
+    val availableLevels: Double?
+
+    /**
+     * The event fired to indicate that a tile's content was loaded.
+     *
+     * This event is fired during the tileset traversal while the frame is being rendered
+     * so that updates to the tile take effect in the same frame.  Do not create or modify
+     * Cesium entities or primitives during the event listener.
+     * ```
+     * voxelPrimitive.tileLoad.addEventListener(function() {
+     *     console.log('A tile was loaded.');
+     * });
+     * ```
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelPrimitive.html#tileLoad">Online Documentation</a>
+     */
+    var tileLoad: DefaultEvent
+
+    /**
+     * This event fires once for each visible tile in a frame.
+     * This event is fired during the traversal while the frame is being rendered.
+     * ```
+     * voxelPrimitive.tileVisible.addEventListener(function() {
+     *     console.log('A tile is visible.');
+     * });
+     * ```
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelPrimitive.html#tileVisible">Online Documentation</a>
+     */
+    var tileVisible: DefaultEvent
+
+    /**
+     * The event fired to indicate that a tile's content failed to load.
+     * ```
+     * voxelPrimitive.tileFailed.addEventListener(function() {
+     *     console.log('An error occurred loading tile.');
+     * });
+     * ```
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelPrimitive.html#tileFailed">Online Documentation</a>
+     */
+    var tileFailed: DefaultEvent
+
+    /**
+     * The event fired to indicate that a tile's content was unloaded.
+     * ```
+     * voxelPrimitive.tileUnload.addEventListener(function() {
+     *     console.log('A tile was unloaded from the cache.');
+     * });
+     * ```
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelPrimitive.html#tileUnload">Online Documentation</a>
+     */
+    var tileUnload: DefaultEvent
+
+    /**
+     * The event fired to indicate progress of loading new tiles. This event is fired when a new tile
+     * is requested, when a requested tile is finished downloading, and when a downloaded tile has been
+     * processed and is ready to render.
+     *
+     * The number of pending tile requests, `numberOfPendingRequests`, and number of tiles
+     * processing, `numberOfTilesProcessing` are passed to the event listener.
+     *
+     * This event is fired at the end of the frame after the scene is rendered.
+     * ```
+     * voxelPrimitive.loadProgress.addEventListener(function(numberOfPendingRequests, numberOfTilesProcessing) {
+     *     if ((numberOfPendingRequests === 0) && (numberOfTilesProcessing === 0)) {
+     *         console.log('Finished loading');
+     *         return;
+     *     }
+     *
+     *     console.log(`Loading: requests: ${numberOfPendingRequests}, processing: ${numberOfTilesProcessing}`);
+     * });
+     * ```
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelPrimitive.html#loadProgress">Online Documentation</a>
+     */
+    var loadProgress: DefaultEvent
+
+    /**
+     * The event fired to indicate that all tiles that meet the screen space error this frame are loaded. The voxel
+     * primitive is completely loaded for this view.
+     *
+     * This event is fired at the end of the frame after the scene is rendered.
+     * ```
+     * voxelPrimitive.allTilesLoaded.addEventListener(function() {
+     *     console.log('All tiles are loaded');
+     * });
+     * ```
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelPrimitive.html#allTilesLoaded">Online Documentation</a>
+     */
+    var allTilesLoaded: DefaultEvent
+
+    /**
+     * The event fired to indicate that all tiles that meet the screen space error this frame are loaded. This event
+     * is fired once when all tiles in the initial view are loaded.
+     *
+     * This event is fired at the end of the frame after the scene is rendered.
+     * ```
+     * voxelPrimitive.initialTilesLoaded.addEventListener(function() {
+     *     console.log('Initial tiles are loaded');
+     * });
+     * ```
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelPrimitive.html#initialTilesLoaded">Online Documentation</a>
+     */
+    var initialTilesLoaded: DefaultEvent
+
+    /**
      * Gets a value indicating whether or not the primitive is ready for use.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelPrimitive.html#ready">Online Documentation</a>
      */

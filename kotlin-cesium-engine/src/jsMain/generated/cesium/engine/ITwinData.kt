@@ -96,4 +96,26 @@ external object ITwinData {
         type: ITwinPlatform.RealityDataType? = definedExternally,
         rootDocument: String? = definedExternally,
     ): Promise<Any /* GeoJsonDataSource | KmlDataSource */>
+
+    /**
+     * Load data from the Geospatial Features API as GeoJSON.
+     * @param [iTwinId] The id of the iTwin to load data from
+     * @param [collectionId] The id of the data collection to load
+     * @param [limit] number of items per page, must be between 1 and 10,000 inclusive
+     *   Default value - `10000`
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ITwinData.html#.loadGeospatialFeatures">Online Documentation</a>
+     */
+    @JsAsync
+    suspend fun loadGeospatialFeatures(
+        iTwinId: String,
+        collectionId: String,
+        limit: Double? = definedExternally,
+    ): GeoJsonDataSource
+
+    @JsName("loadGeospatialFeatures")
+    fun loadGeospatialFeaturesAsync(
+        iTwinId: String,
+        collectionId: String,
+        limit: Double? = definedExternally,
+    ): Promise<GeoJsonDataSource>
 }

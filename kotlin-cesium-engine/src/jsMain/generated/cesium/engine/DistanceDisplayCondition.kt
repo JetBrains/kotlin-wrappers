@@ -78,8 +78,8 @@ external class DistanceDisplayCondition(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DistanceDisplayCondition.html#.equals">Online Documentation</a>
          */
         fun equals(
-            left: DistanceDisplayCondition,
-            right: DistanceDisplayCondition,
+            left: DistanceDisplayCondition? = definedExternally,
+            right: DistanceDisplayCondition? = definedExternally,
         ): Boolean
 
         /**

@@ -16,7 +16,7 @@ import seskar.js.JsAsync
  * ```
  * // Example 1. USGS shaded relief tiles (KVP)
  * const shadedRelief1 = new WebMapTileServiceImageryProvider({
- *     url : 'http://basemap.nationalmap.gov/arcgis/rest/services/USGSShadedReliefOnly/MapServer/WMTS',
+ *     url : 'https://basemap.nationalmap.gov/arcgis/rest/services/USGSShadedReliefOnly/MapServer/WMTS',
  *     layer : 'USGSShadedReliefOnly',
  *     style : 'default',
  *     format : 'image/jpeg',
@@ -30,7 +30,7 @@ import seskar.js.JsAsync
  * ```
  * // Example 2. USGS shaded relief tiles (RESTful)
  * const shadedRelief2 = new WebMapTileServiceImageryProvider({
- *     url : 'http://basemap.nationalmap.gov/arcgis/rest/services/USGSShadedReliefOnly/MapServer/WMTS/tile/1.0.0/USGSShadedReliefOnly/{Style}/{TileMatrixSet}/{TileMatrix}/{TileRow}/{TileCol}.jpg',
+ *     url : 'https://basemap.nationalmap.gov/arcgis/rest/services/USGSShadedReliefOnly/MapServer/WMTS/tile/1.0.0/USGSShadedReliefOnly/{Style}/{TileMatrixSet}/{TileMatrix}/{TileRow}/{TileCol}.jpg',
  *     layer : 'USGSShadedReliefOnly',
  *     style : 'default',
  *     format : 'image/jpeg',

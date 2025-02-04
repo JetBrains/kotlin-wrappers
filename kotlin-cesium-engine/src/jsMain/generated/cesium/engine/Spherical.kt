@@ -87,8 +87,8 @@ external class Spherical(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Spherical.html#.equals">Online Documentation</a>
          */
         fun equals(
-            left: Spherical,
-            right: Spherical,
+            left: Spherical? = definedExternally,
+            right: Spherical? = definedExternally,
         ): Boolean
 
         /**

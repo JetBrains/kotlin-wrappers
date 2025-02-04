@@ -89,8 +89,8 @@ external class ClippingPolygon(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ClippingPolygon.html#.equals">Online Documentation</a>
          */
         fun equals(
-            left: Plane,
-            right: Plane,
+            left: ClippingPolygon,
+            right: ClippingPolygon,
         ): Boolean
     }
 }

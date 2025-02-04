@@ -303,8 +303,8 @@ external class OrientedBoundingBox(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/OrientedBoundingBox.html#.equals">Online Documentation</a>
          */
         fun equals(
-            left: OrientedBoundingBox,
-            right: OrientedBoundingBox,
+            left: OrientedBoundingBox? = definedExternally,
+            right: OrientedBoundingBox? = definedExternally,
         ): Boolean
     }
 }

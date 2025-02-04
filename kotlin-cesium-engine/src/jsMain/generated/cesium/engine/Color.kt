@@ -382,8 +382,8 @@ external class Color(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Color.html#.equals">Online Documentation</a>
          */
         fun equals(
-            left: Color,
-            right: Color,
+            left: Color? = definedExternally,
+            right: Color? = definedExternally,
         ): Boolean
 
         /**

@@ -24,8 +24,6 @@ external fun writeTextToCanvas(
 /**
  * @property [font] The CSS font to use.
  *   Default value - `'10px sans-serif'`
- * @property [textBaseline] The baseline of the text.
- *   Default value - `'bottom'`
  * @property [fill] Whether to fill the text.
  *   Default value - `true`
  * @property [stroke] Whether to stroke the text.
@@ -44,7 +42,6 @@ external fun writeTextToCanvas(
 @JsPlainObject
 external interface WriteTextToCanvasOptions {
     var font: String?
-    var textBaseline: String?
     var fill: Boolean?
     var stroke: Boolean?
     var fillColor: Color?
