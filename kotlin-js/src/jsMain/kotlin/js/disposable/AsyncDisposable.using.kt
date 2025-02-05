@@ -9,7 +9,7 @@ import kotlin.contracts.InvocationKind
 import kotlin.contracts.contract
 
 @PublishedApi
-internal suspend inline fun <T : AsyncDisposable?, R> using(disposable: T, block: (T) -> R): R {
+internal suspend inline fun <T : AsyncDisposable, R> using(disposable: T, block: (T) -> R): R {
     contract {
         callsInPlace(block, InvocationKind.EXACTLY_ONCE)
     }
@@ -25,8 +25,7 @@ internal suspend inline fun <T : AsyncDisposable?, R> using(disposable: T, block
 }
 
 @PublishedApi
-internal suspend fun AsyncDisposable?.closeFinally(cause: Throwable?) = when {
-    this == null -> {}
+internal suspend fun AsyncDisposable.closeFinally(cause: Throwable?) = when {
     cause == null -> this[Symbol.asyncDispose]().await()
     else ->
         try {
