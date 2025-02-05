@@ -8,7 +8,7 @@ import kotlin.contracts.InvocationKind
 import kotlin.contracts.contract
 
 @PublishedApi
-internal inline fun <T : Disposable, R> using(disposable: T, block: (T) -> R): R {
+internal inline fun <T : Disposable, R> usingSync(disposable: T, block: (T) -> R): R {
     contract {
         callsInPlace(block, InvocationKind.EXACTLY_ONCE)
     }
@@ -19,5 +19,5 @@ inline fun <R> usingSync(block: DisposableStack.() -> R): R {
     contract {
         callsInPlace(block, InvocationKind.EXACTLY_ONCE)
     }
-    return using(DisposableStack()) { it.block() }
+    return usingSync(DisposableStack()) { it.block() }
 }
