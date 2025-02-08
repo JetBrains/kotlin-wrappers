@@ -1,3 +1,5 @@
+// Automatically generated - do not modify!
+
 package tanstack.react.virtual
 
 import js.array.ReadonlyArray
