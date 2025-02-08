@@ -2,7 +2,6 @@
 
 package web.gl
 
-typealias GLbitfield = Number
 typealias GLboolean = Boolean
 typealias GLclampf = Number
 typealias GLfloat = Number
