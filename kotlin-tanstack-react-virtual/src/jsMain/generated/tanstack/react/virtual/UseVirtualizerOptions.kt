@@ -6,8 +6,8 @@ import js.array.ReadonlyArray
 import js.objects.JsPlainObject
 import tanstack.virtual.core.*
 import web.dom.Element
-import web.dom.observers.ResizeObserverEntry
 import web.events.EventTarget
+import web.resize.ResizeObserverEntry
 
 @JsPlainObject
 external interface UseVirtualizerOptions<TScrollElement : EventTarget, TItemElement : Element> {

@@ -5,8 +5,8 @@ package tanstack.virtual.core
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
 import web.dom.Element
-import web.dom.observers.ResizeObserverEntry
 import web.events.EventTarget
+import web.resize.ResizeObserverEntry
 
 @JsPlainObject
 external interface VirtualizerOptions<TScrollElement : EventTarget /* Element | Window */, TItemElement : Element> {

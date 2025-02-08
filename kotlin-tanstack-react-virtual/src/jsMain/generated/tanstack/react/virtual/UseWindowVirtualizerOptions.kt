@@ -6,7 +6,7 @@ import js.array.ReadonlyArray
 import js.objects.JsPlainObject
 import tanstack.virtual.core.*
 import web.dom.Element
-import web.dom.observers.ResizeObserverEntry
+import web.resize.ResizeObserverEntry
 import web.window.Window
 
 @JsPlainObject

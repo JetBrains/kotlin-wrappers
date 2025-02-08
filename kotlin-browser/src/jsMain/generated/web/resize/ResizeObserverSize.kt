@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package web.dom.observers
+package web.resize
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserverSize)
