@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package web.dom.observers
+package web.intersection
 
 import web.dom.Element
 import web.geometry.DOMRectReadOnly

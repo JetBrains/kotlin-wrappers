@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package web.dom.observers
+package web.intersection
 
 import js.array.ReadonlyArray
 
