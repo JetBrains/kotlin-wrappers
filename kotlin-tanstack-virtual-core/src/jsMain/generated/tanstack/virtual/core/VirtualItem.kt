@@ -2,11 +2,14 @@
 
 package tanstack.virtual.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface VirtualItem {
-    var key: Key
-    var index: Int
-    var start: Int
-    var end: Int
-    var size: Int
-    var lane: Int
+    val key: Key
+    val index: Int
+    val start: Int
+    val end: Int
+    val size: Int
+    val lane: Int
 }

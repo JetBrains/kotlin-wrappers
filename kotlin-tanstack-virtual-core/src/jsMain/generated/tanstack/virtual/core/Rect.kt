@@ -2,7 +2,10 @@
 
 package tanstack.virtual.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface Rect {
-    var width: Int
-    var height: Int
+    val width: Int
+    val height: Int
 }

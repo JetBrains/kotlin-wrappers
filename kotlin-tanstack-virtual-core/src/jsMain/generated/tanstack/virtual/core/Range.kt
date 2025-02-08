@@ -2,9 +2,12 @@
 
 package tanstack.virtual.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface Range {
-    var startIndex: Int
-    var endIndex: Int
-    var overscan: Int
-    var count: Int
+    val startIndex: Int
+    val endIndex: Int
+    val overscan: Int
+    val count: Int
 }

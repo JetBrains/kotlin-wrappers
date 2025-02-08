@@ -2,9 +2,11 @@
 
 package tanstack.virtual.core
 
+import js.objects.JsPlainObject
 import web.scroll.ScrollBehavior
 
+@JsPlainObject
 external interface ScrollOptions {
-    var adjustments: Int?
-    var behavior: ScrollBehavior?
+    val adjustments: Int?
+    val behavior: ScrollBehavior?
 }

@@ -2,7 +2,10 @@
 
 package tanstack.virtual.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface ItemRange {
-    var startIndex: Int
-    var endIndex: Int
+    val startIndex: Int
+    val endIndex: Int
 }
