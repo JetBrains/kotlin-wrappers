@@ -36,4 +36,5 @@ external interface VirtualizerOptions<TScrollElement : EventTarget /* Element | 
     var useScrollendEvent: Boolean?
     var enabled: Boolean?
     var isRtl: Boolean?
+    var useAnimationFrameWithResizeObserver: Boolean?
 }
