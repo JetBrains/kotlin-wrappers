@@ -3,40 +3,38 @@
 package tanstack.virtual.core
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
 import web.dom.Element
 import web.dom.observers.ResizeObserverEntry
 import web.events.EventTarget
 
-@JsPlainObject
 external interface VirtualizerOptions<TScrollElement : EventTarget /* Element | Window */, TItemElement : Element> {
-    val count: Int
-    val getScrollElement: () -> TScrollElement?
-    val estimateSize: (index: Int) -> Int
-    val scrollToFn: (offset: Int, options: ScrollOptions, instance: Virtualizer<TScrollElement, TItemElement>) -> Unit
-    val observeElementRect: (instance: Virtualizer<TScrollElement, TItemElement>, cb: (rect: Rect) -> Unit) -> (() -> Unit)?
-    val observeElementOffset: (instance: Virtualizer<TScrollElement, TItemElement>, cb: ObserveOffsetCallBack) -> (() -> Unit)?
-    val debug: Boolean?
-    val initialRect: Rect?
-    val onChange: ((instance: Virtualizer<TScrollElement, TItemElement>, sync: Boolean) -> Unit)?
-    val measureElement: ((element: TItemElement, entry: ResizeObserverEntry?, instance: Virtualizer<TScrollElement, TItemElement>) -> Int)?
-    val overscan: Int?
-    val horizontal: Boolean?
-    val paddingStart: Int?
-    val paddingEnd: Int?
-    val scrollPaddingStart: Int?
-    val scrollPaddingEnd: Int?
-    val initialOffset: Int /* | (() -> Int) */?
-    val getItemKey: ((index: Int) -> Key)?
-    val rangeExtractor: ((range: Range) -> ReadonlyArray<Int>)?
-    val scrollMargin: Int?
-    val gap: Int?
-    val indexAttribute: String?
-    val initialMeasurementsCache: ReadonlyArray<VirtualItem>?
-    val lanes: Int?
-    val isScrollingResetDelay: Int?
-    val useScrollendEvent: Boolean?
-    val enabled: Boolean?
-    val isRtl: Boolean?
-    val useAnimationFrameWithResizeObserver: Boolean?
+    var count: Int
+    var getScrollElement: () -> TScrollElement?
+    var estimateSize: (index: Int) -> Int
+    var scrollToFn: (offset: Int, options: ScrollOptions, instance: Virtualizer<TScrollElement, TItemElement>) -> Unit
+    var observeElementRect: (instance: Virtualizer<TScrollElement, TItemElement>, cb: (rect: Rect) -> Unit) -> (() -> Unit)?
+    var observeElementOffset: (instance: Virtualizer<TScrollElement, TItemElement>, cb: ObserveOffsetCallBack) -> (() -> Unit)?
+    var debug: Boolean?
+    var initialRect: Rect?
+    var onChange: ((instance: Virtualizer<TScrollElement, TItemElement>, sync: Boolean) -> Unit)?
+    var measureElement: ((element: TItemElement, entry: ResizeObserverEntry?, instance: Virtualizer<TScrollElement, TItemElement>) -> Int)?
+    var overscan: Int?
+    var horizontal: Boolean?
+    var paddingStart: Int?
+    var paddingEnd: Int?
+    var scrollPaddingStart: Int?
+    var scrollPaddingEnd: Int?
+    var initialOffset: Int /* | (() -> Int) */?
+    var getItemKey: ((index: Int) -> Key)?
+    var rangeExtractor: ((range: Range) -> ReadonlyArray<Int>)?
+    var scrollMargin: Int?
+    var gap: Int?
+    var indexAttribute: String?
+    var initialMeasurementsCache: ReadonlyArray<VirtualItem>?
+    var lanes: Int?
+    var isScrollingResetDelay: Int?
+    var useScrollendEvent: Boolean?
+    var enabled: Boolean?
+    var isRtl: Boolean?
+    var useAnimationFrameWithResizeObserver: Boolean?
 }
