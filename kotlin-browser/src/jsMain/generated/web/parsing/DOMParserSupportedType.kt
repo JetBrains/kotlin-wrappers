@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package web.dom.parsing
+package web.parsing
 
 import seskar.js.JsValue
 
