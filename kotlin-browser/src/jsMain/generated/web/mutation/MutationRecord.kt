@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package web.dom.observers
+package web.mutation
 
 import web.dom.Node
 import web.dom.NodeList
