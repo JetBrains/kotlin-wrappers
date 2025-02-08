@@ -4,11 +4,6 @@ package js.iterable
 internal fun <T> iteratorFromJsIteratorLike(
     source: JsIteratorLike<T>,
 ): Iterator<T> =
-    iterator {
-        do {
-            val result = source.next() as? IteratorYieldResult<T>
-                ?: break
-
-            yield(result.value)
-        } while (true)
-    }
+    generateSequence { source.next() as? IteratorYieldResult<T> }
+        .map { it.value }
+        .iterator()
