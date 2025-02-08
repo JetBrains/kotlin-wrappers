@@ -16,9 +16,9 @@ private constructor() :
     RenderingContext {
 
     companion object {
-        val DEPTH_BUFFER_BIT: GLenum
-        val STENCIL_BUFFER_BIT: GLenum
-        val COLOR_BUFFER_BIT: GLenum
+        val DEPTH_BUFFER_BIT: GLbitfield
+        val STENCIL_BUFFER_BIT: GLbitfield
+        val COLOR_BUFFER_BIT: GLbitfield
         val POINTS: GLenum
         val LINES: GLenum
         val LINE_LOOP: GLenum

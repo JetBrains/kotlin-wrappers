@@ -263,7 +263,7 @@ private constructor() :
         val TIMEOUT_EXPIRED: GLenum
         val CONDITION_SATISFIED: GLenum
         val WAIT_FAILED: GLenum
-        val SYNC_FLUSH_COMMANDS_BIT: GLenum
+        val SYNC_FLUSH_COMMANDS_BIT: GLbitfield
         val VERTEX_ATTRIB_ARRAY_DIVISOR: GLenum
         val ANY_SAMPLES_PASSED: GLenum
         val ANY_SAMPLES_PASSED_CONSERVATIVE: GLenum
@@ -279,9 +279,9 @@ private constructor() :
         val TEXTURE_IMMUTABLE_LEVELS: GLenum
         val TIMEOUT_IGNORED: GLenum
         val MAX_CLIENT_WAIT_TIMEOUT_WEBGL: GLenum
-        val DEPTH_BUFFER_BIT: GLenum
-        val STENCIL_BUFFER_BIT: GLenum
-        val COLOR_BUFFER_BIT: GLenum
+        val DEPTH_BUFFER_BIT: GLbitfield
+        val STENCIL_BUFFER_BIT: GLbitfield
+        val COLOR_BUFFER_BIT: GLbitfield
         val POINTS: GLenum
         val LINES: GLenum
         val LINE_LOOP: GLenum
