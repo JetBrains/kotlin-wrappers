@@ -1227,7 +1227,5 @@ suspend fun main() {
             "WritableWritevChunksItem.kt" to ConflictResolutionStrategy.replace,
             "FileHandleWriteResultPayloadAsync.kt" to ConflictResolutionStrategy.replace
         )
-
-        console.log("Config:", this)
     }
 }
