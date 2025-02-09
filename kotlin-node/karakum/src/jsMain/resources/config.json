@@ -1,0 +1,4 @@
+{
+    "nodeModules": "${nodeModules}",
+    "outputProject": "${outputProject}"
+}
