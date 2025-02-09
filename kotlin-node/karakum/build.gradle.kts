@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsExec
+
 plugins {
     kotlin("multiplatform")
     kotlin("plugin.js-plain-objects")
@@ -25,11 +27,6 @@ kotlin {
     }
 }
 
-tasks.named<ProcessResources>("jsProcessResources") {
-    filesMatching("config.json") {
-        expand(
-            "nodeModules" to rootProject.layout.buildDirectory.dir("js/node_modules").get().asFile.path,
-            "outputProject" to layout.projectDirectory.dir("..").asFile.path,
-        )
-    }
+tasks.named<NodeJsExec>("jsNodeProductionRun") {
+    args(layout.projectDirectory.dir("../src/jsMain/generated").asFile.path)
 }
