@@ -5,6 +5,7 @@ package web.serviceworker
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
+import web.cookie.CookieStore
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -26,6 +27,11 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/clients)
      */
     val clients: Clients
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/cookieStore)
+     */
+    val cookieStore: CookieStore
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/activate_event)

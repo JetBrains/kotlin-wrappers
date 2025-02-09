@@ -10,7 +10,7 @@ import js.promise.Promise
 import seskar.js.JsAsync
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/instantiate_static)
+ * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/instantiate_static)
  */
 @JsAsync
 external suspend fun instantiate(

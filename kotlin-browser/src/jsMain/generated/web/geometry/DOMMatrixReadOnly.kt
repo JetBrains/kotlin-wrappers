@@ -153,12 +153,19 @@ open external class DOMMatrixReadOnly(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/multiply)
      */
     fun multiply(other: DOMMatrixReadOnly = definedExternally): DOMMatrix
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/rotate)
+     */
     fun rotate(
         rotX: Double = definedExternally,
         rotY: Double = definedExternally,
         rotZ: Double = definedExternally,
     ): DOMMatrix
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/rotateAxisAngle)
+     */
     fun rotateAxisAngle(
         x: Double = definedExternally,
         y: Double = definedExternally,
@@ -166,6 +173,9 @@ open external class DOMMatrixReadOnly(
         angle: Double = definedExternally,
     ): DOMMatrix
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/rotateFromVector)
+     */
     fun rotateFromVector(
         x: Double = definedExternally,
         y: Double = definedExternally,
@@ -183,6 +193,9 @@ open external class DOMMatrixReadOnly(
         originZ: Double = definedExternally,
     ): DOMMatrix
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/scale3d)
+     */
     fun scale3d(
         scale: Double = definedExternally,
         originX: Double = definedExternally,
@@ -190,7 +203,14 @@ open external class DOMMatrixReadOnly(
         originZ: Double = definedExternally,
     ): DOMMatrix
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/skewX)
+     */
     fun skewX(sx: Double = definedExternally): DOMMatrix
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/skewY)
+     */
     fun skewY(sy: Double = definedExternally): DOMMatrix
 
     /**

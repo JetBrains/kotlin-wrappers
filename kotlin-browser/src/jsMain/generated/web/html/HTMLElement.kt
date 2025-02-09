@@ -47,6 +47,11 @@ protected constructor() :
     var autocapitalize: AutoCapitalize
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/autocorrect)
+     */
+    var autocorrect: Boolean
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dir)
      */
     var dir: String

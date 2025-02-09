@@ -11,7 +11,7 @@ import seskar.js.JsAsync
 import web.http.Response
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/instantiateStreaming_static)
+ * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/instantiateStreaming_static)
  */
 @JsAsync
 external suspend fun instantiateStreaming(

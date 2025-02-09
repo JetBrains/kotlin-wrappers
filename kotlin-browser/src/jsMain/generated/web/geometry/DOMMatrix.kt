@@ -138,6 +138,10 @@ open external class DOMMatrix(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/preMultiplySelf)
      */
     fun preMultiplySelf(other: DOMMatrixReadOnly = definedExternally): DOMMatrix
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/rotateAxisAngleSelf)
+     */
     fun rotateAxisAngleSelf(
         x: Double = definedExternally,
         y: Double = definedExternally,
@@ -145,6 +149,9 @@ open external class DOMMatrix(
         angle: Double = definedExternally,
     ): DOMMatrix
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/rotateFromVectorSelf)
+     */
     fun rotateFromVectorSelf(
         x: Double = definedExternally,
         y: Double = definedExternally,
@@ -159,6 +166,9 @@ open external class DOMMatrix(
         rotZ: Double = definedExternally,
     ): DOMMatrix
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/scale3dSelf)
+     */
     fun scale3dSelf(
         scale: Double = definedExternally,
         originX: Double = definedExternally,

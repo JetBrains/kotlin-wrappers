@@ -10,14 +10,14 @@ import js.buffer.BufferSource
 import js.import.JsQualifier
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/Module)
+ * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Module)
  */
 open external class Module(
     bytes: BufferSource,
 ) {
     companion object {
         /**
-         * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/Module/customSections_static)
+         * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Module/customSections_static)
          */
         fun customSections(
             moduleObject: Module,
@@ -25,12 +25,12 @@ open external class Module(
         ): ReadonlyArray<ArrayBuffer>
 
         /**
-         * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/Module/exports_static)
+         * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Module/exports_static)
          */
         fun exports(moduleObject: Module): ReadonlyArray<ModuleExportDescriptor>
 
         /**
-         * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/Module/imports_static)
+         * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Module/imports_static)
          */
         fun imports(moduleObject: Module): ReadonlyArray<ModuleImportDescriptor>
     }

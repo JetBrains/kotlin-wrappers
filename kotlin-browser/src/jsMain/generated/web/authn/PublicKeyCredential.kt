@@ -41,6 +41,9 @@ private constructor() :
     fun toJSON(): PublicKeyCredentialJSON
 
     companion object {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/getClientCapabilities_static)
+         */
         @JsAsync
         suspend fun getClientCapabilities(): PublicKeyCredentialClientCapabilities
 

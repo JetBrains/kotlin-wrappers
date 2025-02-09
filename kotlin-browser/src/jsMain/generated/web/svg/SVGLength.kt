@@ -9,11 +9,34 @@ package web.svg
  */
 external class SVGLength
 private constructor() {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLength/unitType)
+     */
     val unitType: UnitType
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLength/value)
+     */
     var value: Float
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLength/valueAsString)
+     */
     var valueAsString: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLength/valueInSpecifiedUnits)
+     */
     var valueInSpecifiedUnits: Float
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLength/convertToSpecifiedUnits)
+     */
     fun convertToSpecifiedUnits(unitType: UnitType)
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLength/newValueSpecifiedUnits)
+     */
     fun newValueSpecifiedUnits(
         unitType: UnitType,
         valueInSpecifiedUnits: Float,

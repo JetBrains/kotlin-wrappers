@@ -12,6 +12,9 @@ private constructor() :
     SVGElement,
     SVGFitToViewBox,
     SVGURIReference {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPatternElement/height)
+     */
     val height: SVGAnimatedLength
 
     /**
@@ -28,7 +31,19 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPatternElement/patternUnits)
      */
     val patternUnits: SVGAnimatedEnumeration<SVGUnitTypes.Type>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPatternElement/width)
+     */
     val width: SVGAnimatedLength
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPatternElement/x)
+     */
     val x: SVGAnimatedLength
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPatternElement/y)
+     */
     val y: SVGAnimatedLength
 }

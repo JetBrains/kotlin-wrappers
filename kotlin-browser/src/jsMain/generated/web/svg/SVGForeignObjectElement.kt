@@ -10,8 +10,23 @@ package web.svg
 open external class SVGForeignObjectElement
 private constructor() :
     SVGGraphicsElement {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGForeignObjectElement/height)
+     */
     val height: SVGAnimatedLength
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGForeignObjectElement/width)
+     */
     val width: SVGAnimatedLength
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGForeignObjectElement/x)
+     */
     val x: SVGAnimatedLength
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGForeignObjectElement/y)
+     */
     val y: SVGAnimatedLength
 }

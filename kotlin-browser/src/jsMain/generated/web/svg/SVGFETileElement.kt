@@ -11,5 +11,8 @@ open external class SVGFETileElement
 private constructor() :
     SVGElement,
     SVGFilterPrimitiveStandardAttributes {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFETileElement/in1)
+     */
     val in1: SVGAnimatedString
 }

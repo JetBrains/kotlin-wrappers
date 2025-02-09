@@ -7,24 +7,24 @@ package web.assembly
 import js.import.JsQualifier
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/Table)
+ * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Table)
  */
 open external class Table(
     descriptor: TableDescriptor,
     value: Any? = definedExternally,
 ) {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/Table/length)
+     * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Table/length)
      */
     val length: Int
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/Table/get)
+     * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Table/get)
      */
     operator fun get(index: Int): Any
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/Table/grow)
+     * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Table/grow)
      */
     fun grow(
         delta: Int,
@@ -32,7 +32,7 @@ open external class Table(
     ): Int
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/Table/set)
+     * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Table/set)
      */
     fun set(
         index: Int,

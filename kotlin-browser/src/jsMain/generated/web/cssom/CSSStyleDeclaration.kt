@@ -2066,7 +2066,7 @@ private constructor() :
     var visibility: String
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/-webkit-line-clamp)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/line-clamp)
      */
     var webkitLineClamp: String
 

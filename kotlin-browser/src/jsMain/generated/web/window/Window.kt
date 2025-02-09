@@ -8,6 +8,7 @@ import js.globals.GlobalScope
 import js.transferable.Transferable
 import web.animations.AnimationEvent
 import web.clipboard.ClipboardEvent
+import web.cookie.CookieStore
 import web.csp.SecurityPolicyViolationEvent
 import web.cssom.TransitionEvent
 import web.device.DeviceMotionEvent
@@ -53,6 +54,11 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/closed)
      */
     val closed: Boolean
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/cookieStore)
+     */
+    val cookieStore: CookieStore
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/frameElement)

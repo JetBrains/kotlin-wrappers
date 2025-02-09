@@ -11,8 +11,19 @@ open external class SVGFEBlendElement
 private constructor() :
     SVGElement,
     SVGFilterPrimitiveStandardAttributes {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEBlendElement/in1)
+     */
     val in1: SVGAnimatedString
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEBlendElement/in2)
+     */
     val in2: SVGAnimatedString
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEBlendElement/mode)
+     */
     val mode: SVGAnimatedEnumeration<Mode>
     val SVG_FEBLEND_MODE_UNKNOWN: Mode
     val SVG_FEBLEND_MODE_NORMAL: Mode

@@ -8,18 +8,18 @@ import js.buffer.ArrayBuffer
 import js.import.JsQualifier
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/Memory)
+ * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Memory)
  */
 open external class Memory(
     descriptor: MemoryDescriptor,
 ) {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/Memory/buffer)
+     * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Memory/buffer)
      */
     val buffer: ArrayBuffer
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/Memory/grow)
+     * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Memory/grow)
      */
     fun grow(delta: Int): Int
 }

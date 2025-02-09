@@ -11,10 +11,29 @@ open external class SVGFEDisplacementMapElement
 private constructor() :
     SVGElement,
     SVGFilterPrimitiveStandardAttributes {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDisplacementMapElement/in1)
+     */
     val in1: SVGAnimatedString
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDisplacementMapElement/in2)
+     */
     val in2: SVGAnimatedString
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDisplacementMapElement/scale)
+     */
     val scale: SVGAnimatedNumber
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDisplacementMapElement/xChannelSelector)
+     */
     val xChannelSelector: SVGAnimatedEnumeration<ChannelSelector>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDisplacementMapElement/yChannelSelector)
+     */
     val yChannelSelector: SVGAnimatedEnumeration<ChannelSelector>
     val SVG_CHANNEL_UNKNOWN: ChannelSelector
     val SVG_CHANNEL_R: ChannelSelector

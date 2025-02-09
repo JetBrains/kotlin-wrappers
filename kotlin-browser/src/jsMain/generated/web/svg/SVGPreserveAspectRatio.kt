@@ -9,7 +9,14 @@ package web.svg
  */
 external class SVGPreserveAspectRatio
 private constructor() {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPreserveAspectRatio/align)
+     */
     var align: Align
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPreserveAspectRatio/meetOrSlice)
+     */
     var meetOrSlice: MeetOrSlice
     val SVG_PRESERVEASPECTRATIO_UNKNOWN: Align
     val SVG_PRESERVEASPECTRATIO_NONE: Align
