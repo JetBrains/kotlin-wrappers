@@ -6,22 +6,18 @@ import io.github.sgrishchenko.karakum.configuration.NamespaceStrategy
 import io.github.sgrishchenko.karakum.generate
 import io.github.sgrishchenko.karakum.util.manyOf
 import io.github.sgrishchenko.karakum.util.ruleOf
-import js.json.JSON
+import js.import.import
 import js.objects.recordOf
-import node.buffer.BufferEncoding
-import node.fs.readFile
-
-external interface Config {
-    val nodeModules: String
-    val outputProject: String
-}
+import node.path.path
+import node.process.process
+import node.url.fileURLToPath
 
 suspend fun main() {
-    val configFile = readFile("kotlin/config.json", BufferEncoding.utf8)
-    val config = JSON.parse<Config>(configFile)
+    val nodePackage = import.meta.resolve("@types/node/package.json")
+        .let { fileURLToPath(it) }
+        .let { path.dirname(it) }
 
-    val nodeModules = config.nodeModules
-    val outputProject = config.outputProject
+    val outputPath = process.argv[2]
 
     generate {
         plugins = manyOf("kotlin/plugins/*.js")
@@ -31,25 +27,25 @@ suspend fun main() {
         inheritanceModifiers = manyOf("kotlin/inheritanceModifiers/*.js")
         varianceModifiers = manyOf("kotlin/varianceModifiers/*.js")
 
-        input = manyOf("$nodeModules/@types/node/**/*.d.ts")
+        input = manyOf("$nodePackage/**/*.d.ts")
         ignoreInput = manyOf(
-            "$nodeModules/@types/node/ts*/**",
-            "$nodeModules/@types/node/assert/strict.d.ts",
-            "$nodeModules/@types/node/constants.d.ts",
-            "$nodeModules/@types/node/compatibility/disposable.d.ts",
-            "$nodeModules/@types/node/compatibility/indexable.d.ts",
-            "$nodeModules/@types/node/compatibility/iterators.d.ts",
-            "$nodeModules/@types/node/console.d.ts",
-            "$nodeModules/@types/node/dom-events.d.ts",
-            "$nodeModules/@types/node/domain.d.ts",
-            "$nodeModules/@types/node/globals.typedarray.d.ts",
-            "$nodeModules/@types/node/punycode.d.ts",
-            "$nodeModules/@types/node/stream/web.d.ts",
-            "$nodeModules/@types/node/string_decoder.d.ts",
-            "$nodeModules/@types/node/timers.d.ts",
-            "$nodeModules/@types/node/timers/promises.d.ts"
+            "$nodePackage/ts*/**",
+            "$nodePackage/assert/strict.d.ts",
+            "$nodePackage/constants.d.ts",
+            "$nodePackage/compatibility/disposable.d.ts",
+            "$nodePackage/compatibility/indexable.d.ts",
+            "$nodePackage/compatibility/iterators.d.ts",
+            "$nodePackage/console.d.ts",
+            "$nodePackage/dom-events.d.ts",
+            "$nodePackage/domain.d.ts",
+            "$nodePackage/globals.typedarray.d.ts",
+            "$nodePackage/punycode.d.ts",
+            "$nodePackage/stream/web.d.ts",
+            "$nodePackage/string_decoder.d.ts",
+            "$nodePackage/timers.d.ts",
+            "$nodePackage/timers/promises.d.ts"
         )
-        output = "$outputProject/src/jsMain/generated"
+        output = outputPath
         ignoreOutput = manyOf(
             "**/_Blob.kt",
             "**/_DOMException.kt",
@@ -1231,5 +1227,7 @@ suspend fun main() {
             "WritableWritevChunksItem.kt" to ConflictResolutionStrategy.replace,
             "FileHandleWriteResultPayloadAsync.kt" to ConflictResolutionStrategy.replace
         )
+
+        console.log("Config:", this)
     }
 }
