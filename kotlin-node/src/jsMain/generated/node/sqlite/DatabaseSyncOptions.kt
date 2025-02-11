@@ -31,4 +31,21 @@ sealed external interface DatabaseSyncOptions {
      * @default false
      */
     var enableDoubleQuotedStringLiterals: Boolean?
+
+    /**
+     * If `true`, the database is opened in read-only mode.
+     * If the database does not exist, opening it will fail.
+     * @since v22.12.0
+     * @default false
+     */
+    var readOnly: Boolean?
+
+    /**
+     * If `true`, the `loadExtension` SQL function
+     * and the `loadExtension()` method are enabled.
+     * You can call `enableLoadExtension(false)` later to disable this feature.
+     * @since v22.13.0
+     * @default false
+     */
+    var allowExtension: Boolean?
 }

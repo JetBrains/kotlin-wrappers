@@ -23,4 +23,5 @@ external interface TcpSocketConnectOpts {
      * @since v18.13.0
      */
     var autoSelectFamilyAttemptTimeout: Double?
+    var blockList: BlockList?
 }

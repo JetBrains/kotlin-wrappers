@@ -5,8 +5,8 @@ package node.process
 import js.array.ReadonlyArray
 import js.collections.ReadonlySet
 import js.promise.Promise
-import node.Module
 import node.events.EventEmitter
+import node.module.Module
 import node.workerThreads.Worker
 import web.url.URL
 
@@ -1501,7 +1501,7 @@ sealed external interface Process : EventEmitter {
     fun nextTick(callback: Function<*>, vararg args: Any?): Unit
 
     /**
-     * This API is available through the [--experimental-permission](https://nodejs.org/api/cli.html#--experimental-permission) flag.
+     * This API is available through the [--permission](https://nodejs.org/api/cli.html#--permission) flag.
      *
      * `process.permission` is an object whose methods are used to manage permissions for the current process.
      * Additional documentation is available in the [Permission Model](https://nodejs.org/api/permissions.html#permission-model).

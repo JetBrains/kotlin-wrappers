@@ -12,6 +12,24 @@ import js.typedarrays.Uint8Array
 open external class Writable : Stream, node.WritableStream {
     constructor (opts: WritableOptions = definedExternally)
 
+    @web.events.JsEvent("close")
+    open val closeEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("drain")
+    open val drainEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("error")
+    open val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+
+    @web.events.JsEvent("finish")
+    open val finishEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("pipe")
+    open val pipeEvent: node.events.EventInstance<js.array.JsTuple1<Readable>>
+
+    @web.events.JsEvent("unpipe")
+    open val unpipeEvent: node.events.EventInstance<js.array.JsTuple1<Readable>>
+
     /**
      * Is `true` if it is safe to call `writable.write()`, which means
      * the stream has not been destroyed, errored, or ended.
@@ -343,24 +361,6 @@ open external class Writable : Stream, node.WritableStream {
 
     override fun end(data: Uint8Array<*>, cb: () -> Unit): Unit /* this */
     override fun end(str: String, encoding: node.buffer.BufferEncoding, cb: () -> Unit): Unit /* this */
-
-    @web.events.JsEvent("close")
-    open val closeEvent: node.events.EventInstance<js.array.JsTuple>
-
-    @web.events.JsEvent("drain")
-    open val drainEvent: node.events.EventInstance<js.array.JsTuple>
-
-    @web.events.JsEvent("error")
-    open val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
-
-    @web.events.JsEvent("finish")
-    open val finishEvent: node.events.EventInstance<js.array.JsTuple>
-
-    @web.events.JsEvent("pipe")
-    open val pipeEvent: node.events.EventInstance<js.array.JsTuple1<Readable>>
-
-    @web.events.JsEvent("unpipe")
-    open val unpipeEvent: node.events.EventInstance<js.array.JsTuple1<Readable>>
 
     companion object {
         /**

@@ -143,6 +143,11 @@ Writable {
         listener: Function<Unit>, /* (...args: any[]) => void */
     ): Unit /* this */
 
+    override var destroyed: Boolean
+    override val _construct: ((callback: (error: js.errors.JsError? /* use undefined for default */) -> Unit) -> Unit)?
+    override fun destroy(error: js.errors.JsError): Unit /* this */
+    override fun destroy(): Unit /* this */
+
     @web.events.JsEvent("close")
     override val closeEvent: node.events.EventInstance<js.array.JsTuple>
 
@@ -175,10 +180,6 @@ Writable {
 
     @web.events.JsEvent("unpipe")
     override val unpipeEvent: node.events.EventInstance<js.array.JsTuple1<Readable>>
-    override var destroyed: Boolean
-    override val _construct: ((callback: (error: js.errors.JsError? /* use undefined for default */) -> Unit) -> Unit)?
-    override fun destroy(error: js.errors.JsError): Unit /* this */
-    override fun destroy(): Unit /* this */
 
     companion object {
         /**

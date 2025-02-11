@@ -4,131 +4,76 @@
 
 package node.module
 
-import node.Require
-import web.url.URL
-import node.Module as NodeModule
-import node.Require as NodeRequire
-
-external class Module : NodeModule {
+external class Module {
     constructor (id: String, parent: Module = definedExternally)
+    /* Module */
+    /**
+     * The module objects required for the first time by this one.
+     * @since v0.1.16
+     */
+    var children: js.array.ReadonlyArray<Module>
 
-    override
-            /**
-             * `true` if the module is running during the Node.js preload
-             */
+    /**
+     * The `module.exports` object is created by the `Module` system. Sometimes this is
+     * not acceptable; many want their module to be an instance of some class. To do
+     * this, assign the desired export object to `module.exports`.
+     * @since v0.1.16
+     */
+    var exports: Any?
+
+    /**
+     * The fully resolved filename of the module.
+     * @since v0.1.16
+     */
+    var filename: String
+
+    /**
+     * The identifier for the module. Typically this is the fully resolved
+     * filename.
+     * @since v0.1.16
+     */
+    var id: String
+
+    /**
+     * `true` if the module is running during the Node.js preload
+     * phase.
+     * @since v15.4.0, v14.17.0
+     */
     var isPreloading: Boolean
-    override var exports: Any?
-    override var require: Require
-    override var id: String
-    override var filename: String
-    override var loaded: Boolean
 
-    override
-            /**
-             * @since v11.14.0
-             *
-             * The directory name of the module. This is usually the same as the path.dirname() of the module.id.
-             */
+    /**
+     * Whether or not the module is done loading, or is in the process of
+     * loading.
+     * @since v0.1.16
+     */
+    var loaded: Boolean
+
+    /**
+     * The module that first required this one, or `null` if the current module is the
+     * entry point of the current process, or `undefined` if the module was loaded by
+     * something that is not a CommonJS module (e.g. REPL or `import`).
+     * @since v0.1.16
+     * @deprecated Please use `require.main` and `module.children` instead.
+     */
+    var parent: Module?
+
+    /**
+     * The directory name of the module. This is usually the same as the
+     * `path.dirname()` of the `module.id`.
+     * @since v11.14.0
+     */
     var path: String
-    override var paths: js.array.ReadonlyArray<String>
-    override var parent: node.Module?
-    override var children: js.array.ReadonlyArray<node.Module>
 
-    companion object {
-        fun runMain(): Unit
-        fun wrap(code: String): String
-        fun createRequire(path: String): NodeRequire
+    /**
+     * The search paths for the module.
+     * @since v0.4.0
+     */
+    var paths: js.array.ReadonlyArray<String>
 
-        fun createRequire(path: URL): NodeRequire
-        var builtinModules: js.array.ReadonlyArray<String>
-        fun isBuiltin(moduleName: String): Boolean
-        var Module: Any /* typeof Module */
-        fun <Data /* default is Any? */> register(specifier: String): Unit
-
-        fun <Data /* default is Any? */> register(
-            specifier: String,
-            parentURL: String = definedExternally,
-            options: RegisterOptions<Data> = definedExternally,
-        ): Unit
-
-        fun <Data /* default is Any? */> register(
-            specifier: String,
-            parentURL: URL = definedExternally,
-            options: RegisterOptions<Data> = definedExternally,
-        ): Unit
-
-        fun <Data /* default is Any? */> register(specifier: URL): Unit
-
-        fun <Data /* default is Any? */> register(
-            specifier: URL,
-            parentURL: String = definedExternally,
-            options: RegisterOptions<Data> = definedExternally,
-        ): Unit
-
-        fun <Data /* default is Any? */> register(
-            specifier: URL,
-            parentURL: URL = definedExternally,
-            options: RegisterOptions<Data> = definedExternally,
-        ): Unit
-
-        fun <Data /* default is Any? */> register(
-            specifier: String,
-            options: RegisterOptions<Data> = definedExternally,
-        ): Unit
-
-        fun <Data /* default is Any? */> register(
-            specifier: URL,
-            options: RegisterOptions<Data> = definedExternally,
-        ): Unit
-
-        /**
-         * Enable [module compile cache](https://nodejs.org/docs/latest-v22.x/api/module.html#module-compile-cache)
-         * in the current Node.js instance.
-         *
-         * If `cacheDir` is not specified, Node.js will either use the directory specified by the
-         * `NODE_COMPILE_CACHE=dir` environment variable if it's set, or use
-         * `path.join(os.tmpdir(), 'node-compile-cache')` otherwise. For general use cases, it's
-         * recommended to call `module.enableCompileCache()` without specifying the `cacheDir`,
-         * so that the directory can be overridden by the `NODE_COMPILE_CACHE` environment
-         * variable when necessary.
-         *
-         * Since compile cache is supposed to be a quiet optimization that is not required for the
-         * application to be functional, this method is designed to not throw any exception when the
-         * compile cache cannot be enabled. Instead, it will return an object containing an error
-         * message in the `message` field to aid debugging.
-         * If compile cache is enabled successfully, the `directory` field in the returned object
-         * contains the path to the directory where the compile cache is stored. The `status`
-         * field in the returned object would be one of the `module.constants.compileCacheStatus`
-         * values to indicate the result of the attempt to enable the
-         * [module compile cache](https://nodejs.org/docs/latest-v22.x/api/module.html#module-compile-cache).
-         *
-         * This method only affects the current Node.js instance. To enable it in child worker threads,
-         * either call this method in child worker threads too, or set the
-         * `process.env.NODE_COMPILE_CACHE` value to compile cache directory so the behavior can
-         * be inherited into the child workers. The directory can be obtained either from the
-         * `directory` field returned by this method, or with {@link getCompileCacheDir}.
-         * @since v22.8.0
-         * @param cacheDir Optional path to specify the directory where the compile cache
-         * will be stored/retrieved.
-         */
-        fun enableCompileCache(cacheDir: String = definedExternally): EnableCompileCacheResult
-
-        /**
-         * @since v22.8.0
-         * @return Path to the [module compile cache](https://nodejs.org/docs/latest-v22.x/api/module.html#module-compile-cache)
-         * directory if it is enabled, or `undefined` otherwise.
-         */
-        fun getCompileCacheDir(): String?
-
-        /**
-         * Flush the [module compile cache](https://nodejs.org/docs/latest-v22.x/api/module.html#module-compile-cache)
-         * accumulated from modules already loaded
-         * in the current Node.js instance to disk. This returns after all the flushing
-         * file system operations come to an end, no matter they succeed or not. If there
-         * are any errors, this will fail silently, since compile cache misses should not
-         * interfere with the actual operation of the application.
-         * @since v22.10.0
-         */
-        fun flushCompileCache(): Unit
-    }
+    /**
+     * The `module.require()` method provides a way to load a module as if
+     * `require()` was called from the original module.
+     * @since v0.5.1
+     */
+    fun require(id: String): Any?
 }

@@ -29,6 +29,7 @@ sealed external interface ClientRequestArgs {
     var path: String?
     var port: Any? /* number | string | null | undefined */
     var protocol: String?
+    var setDefaultHeaders: Boolean?
     var setHost: Boolean?
     var signal: AbortSignal?
     var socketPath: String?

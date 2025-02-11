@@ -5,9 +5,6 @@
 package node.fs
 
 /**
- * Unlike the 16 KiB default `highWaterMark` for a `stream.Readable`, the stream
- * returned by this method has a default `highWaterMark` of 64 KiB.
- *
  * `options` can include `start` and `end` values to read a range of bytes from
  * the file instead of the entire file. Both `start` and `end` are inclusive and
  * start counting at 0, allowed values are in the
@@ -71,9 +68,6 @@ package node.fs
 external fun createReadStream(path: PathLike): ReadStream
 
 /**
- * Unlike the 16 KiB default `highWaterMark` for a `stream.Readable`, the stream
- * returned by this method has a default `highWaterMark` of 64 KiB.
- *
  * `options` can include `start` and `end` values to read a range of bytes from
  * the file instead of the entire file. Both `start` and `end` are inclusive and
  * start counting at 0, allowed values are in the
@@ -137,9 +131,6 @@ external fun createReadStream(path: PathLike): ReadStream
 external fun createReadStream(path: PathLike, options: node.buffer.BufferEncoding = definedExternally): ReadStream
 
 /**
- * Unlike the 16 KiB default `highWaterMark` for a `stream.Readable`, the stream
- * returned by this method has a default `highWaterMark` of 64 KiB.
- *
  * `options` can include `start` and `end` values to read a range of bytes from
  * the file instead of the entire file. Both `start` and `end` are inclusive and
  * start counting at 0, allowed values are in the

@@ -52,45 +52,6 @@ external class WriteStream : node.stream.Writable {
      */
 
 
-    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-
-    override fun addListener(
-        event: js.symbol.Symbol,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ): Unit /* this */
-
-
-    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-
-    override fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-
-
-    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-
-    override fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-
-
-    override fun prependListener(
-        event: String,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ): Unit /* this */
-
-    override fun prependListener(
-        event: js.symbol.Symbol,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ): Unit /* this */
-
-
-    override fun prependOnceListener(
-        event: String,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ): Unit /* this */
-
-    override fun prependOnceListener(
-        event: js.symbol.Symbol,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ): Unit /* this */
-
     @web.events.JsEvent("close")
     override val closeEvent: node.events.EventInstance<js.array.JsTuple>
 
@@ -104,7 +65,7 @@ external class WriteStream : node.stream.Writable {
     override val finishEvent: node.events.EventInstance<js.array.JsTuple>
 
     @web.events.JsEvent("open")
-    val openEvent: node.events.EventInstance<js.array.JsTuple1<Double>>
+    val openEvent: node.events.EventInstance<js.array.JsTuple1<Number>>
 
     @web.events.JsEvent("pipe")
     override val pipeEvent: node.events.EventInstance<js.array.JsTuple1<node.stream.Readable>>

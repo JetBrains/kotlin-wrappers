@@ -43,4 +43,14 @@ external interface ServerOpts {
      * @since v18.17.0, v20.1.0
      */
     var highWaterMark: Double?
+
+    /**
+     * `blockList` can be used for disabling inbound
+     * access to specific IP addresses, IP ranges, or IP subnets. This does not
+     * work if the server is behind a reverse proxy, NAT, etc. because the address
+     * checked against the block list is the address of the proxy, or the one
+     * specified by the NAT.
+     * @since v22.13.0
+     */
+    var blockList: BlockList?
 }

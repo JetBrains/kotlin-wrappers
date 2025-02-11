@@ -69,4 +69,13 @@ external class BlockList {
      * @since v15.0.0, v14.18.0
      */
     var rules: js.array.ReadonlyArray<String>
+
+    companion object {
+        /**
+         * Returns `true` if the `value` is a `net.BlockList`.
+         * @since v22.13.0
+         * @param value Any JS value
+         */
+        fun isBlockList(value: Any?): Boolean /* value is BlockList */
+    }
 }

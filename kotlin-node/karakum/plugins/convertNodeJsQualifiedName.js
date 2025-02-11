@@ -21,6 +21,12 @@ export default function (node, context, render) {
         if (node.right.text === "EventEmitter") {
             return `node.events.EventEmitter`
         }
+        if (node.right.text === "Module") {
+            return `node.module.Module`
+        }
+        if (node.right.text === "Require") {
+            return `node.module.Require`
+        }
         if (node.right.text === "Signals") {
             return `node.process.Signals`
         }

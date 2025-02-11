@@ -5,3 +5,5 @@
 package node.module
 
 /* export = Module; */
+
+/* export { Module }; */

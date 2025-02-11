@@ -6,16 +6,17 @@ import web.abort.Abortable
 
 @js.objects.JsPlainObject
 sealed external interface ListenOptions : Abortable {
-    var port: Double?
-    var host: String?
     var backlog: Double?
-    var path: String?
     var exclusive: Boolean?
-    var readableAll: Boolean?
-    var writableAll: Boolean?
+    var host: String?
 
     /**
      * @default false
      */
     var ipv6Only: Boolean?
+    var reusePort: Boolean?
+    var path: String?
+    var port: Double?
+    var readableAll: Boolean?
+    var writableAll: Boolean?
 }

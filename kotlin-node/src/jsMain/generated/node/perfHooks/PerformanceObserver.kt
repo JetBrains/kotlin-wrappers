@@ -59,4 +59,10 @@ external class PerformanceObserver : AsyncResource {
      * @since v8.5.0
      */
     fun observe(options: PerformanceObserverObserveTypeOptions): Unit
+
+    /**
+     * @since v16.0.0
+     * @returns Current list of entries stored in the performance observer, emptying it out.
+     */
+    fun takeRecords(): js.array.ReadonlyArray<PerformanceEntry>
 }

@@ -2,15 +2,15 @@
 
 package node.util
 
-sealed external interface StacktraceObject {
+sealed external interface CallSiteObject {
     /**
-     * Returns the name of the function associated with this stack frame.
+     * Returns the name of the function associated with this call site.
      */
     var functionName: String
 
     /**
      * Returns the name of the resource that contains the script for the
-     * function for this StackFrame.
+     * function for this call site.
      */
     var scriptName: String
 

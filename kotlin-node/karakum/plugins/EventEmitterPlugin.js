@@ -39,47 +39,22 @@ function isEventEmitterClassNode(node) {
     )
 }
 
-function isEventMethod(node) {
-    return (
-        ts.isMethodSignature(node)
-        && node.parameters.length === 1
-
-        && ts.isIdentifier(node.parameters[0].name)
-        && node.parameters[0].name.text === "eventName"
-    )
-}
-
-function isEventListenerMethod(node) {
-    return (
-        ts.isMethodSignature(node)
-        && node.parameters.length === 2
-
-        && ts.isIdentifier(node.parameters[0].name)
-        && node.parameters[0].name.text === "eventName"
-
-        && ts.isIdentifier(node.parameters[1].name)
-        && node.parameters[1].name.text === "listener"
-    )
-}
-
 export default {
     setup(context) {
         this.eventEmitterInterfaceNode = null
-        this.eventEmitterClassNode = null
     },
 
     traverse(node) {
         if (isEventEmitterInterfaceNode(node)) {
             this.eventEmitterInterfaceNode = node
         }
-        if (isEventEmitterClassNode(node)) {
-            this.eventEmitterClassNode = node
-        }
     },
 
     render(node, context, next) {
         const sourceFileName = node.getSourceFile()?.fileName ?? "generated.d.ts"
         if (!sourceFileName.endsWith("events.d.ts")) return null
+
+        const typeScriptService = context.lookupService(karakum.typeScriptServiceKey)
 
         if (
             ts.isTypeReferenceNode(node)
@@ -133,6 +108,10 @@ export default {
             && node.parent
             && isEventEmitterClassNode(node.parent)
         ) {
+            if (ts.isComputedPropertyName(node.name)) {
+                return `/* ${typeScriptService?.printNode(node)} */`
+            }
+
             const name = next(node.name)
 
             const returnType = node.type && next(node.type)
@@ -199,6 +178,10 @@ export default {
             && node.parent
             && isEventEmitterInterfaceNode(node.parent)
         ) {
+            if (ts.isComputedPropertyName(node.name)) {
+                return `/* ${typeScriptService?.printNode(node)} */`
+            }
+
             const name = next(node.name)
 
             const returnType = node.type && next(node.type)

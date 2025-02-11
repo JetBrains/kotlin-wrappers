@@ -5,7 +5,6 @@
 package node.dgram
 
 import js.array.ReadonlyArray
-import js.typedarrays.Uint8Array
 import node.events.EventEmitter
 import node.net.AddressInfo
 
@@ -395,7 +394,7 @@ external class Socket : EventEmitter {
      * @param callback Called when the message has been sent.
      */
     fun send(
-        msg: Uint8Array<*>,
+        msg: js.buffer.ArrayBufferView<*>,
         port: Number = definedExternally,
         address: String = definedExternally,
         callback: (error: js.errors.JsError?, bytes: Double) -> Unit = definedExternally,
@@ -508,7 +507,7 @@ external class Socket : EventEmitter {
     ): Unit
 
     fun send(
-        msg: Uint8Array<*>,
+        msg: js.buffer.ArrayBufferView<*>,
         port: Number = definedExternally,
         callback: (error: js.errors.JsError?, bytes: Double) -> Unit = definedExternally,
     ): Unit
@@ -521,7 +520,10 @@ external class Socket : EventEmitter {
 
     fun send(msg: String, callback: (error: js.errors.JsError?, bytes: Double) -> Unit = definedExternally): Unit
 
-    fun send(msg: Uint8Array<*>, callback: (error: js.errors.JsError?, bytes: Double) -> Unit = definedExternally): Unit
+    fun send(
+        msg: js.buffer.ArrayBufferView<*>,
+        callback: (error: js.errors.JsError?, bytes: Double) -> Unit = definedExternally,
+    ): Unit
 
     fun send(
         msg: ReadonlyArray<Any?>,
@@ -538,7 +540,7 @@ external class Socket : EventEmitter {
     ): Unit
 
     fun send(
-        msg: Uint8Array<*>,
+        msg: js.buffer.ArrayBufferView<*>,
         offset: Number,
         length: Number,
         port: Number = definedExternally,
@@ -555,7 +557,7 @@ external class Socket : EventEmitter {
     ): Unit
 
     fun send(
-        msg: Uint8Array<*>,
+        msg: js.buffer.ArrayBufferView<*>,
         offset: Number,
         length: Number,
         port: Number = definedExternally,
@@ -570,7 +572,7 @@ external class Socket : EventEmitter {
     ): Unit
 
     fun send(
-        msg: Uint8Array<*>,
+        msg: js.buffer.ArrayBufferView<*>,
         offset: Number,
         length: Number,
         callback: (error: js.errors.JsError?, bytes: Double) -> Unit = definedExternally,

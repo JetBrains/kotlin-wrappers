@@ -11,7 +11,7 @@ sealed external interface LoadHookContext {
     /**
      * The format optionally supplied by the `resolve` hook chain
      */
-    var format: ModuleFormat
+    var format: ModuleFormat?
 
     /**
      *  An object whose key-value pairs represent the assertions for the module to import

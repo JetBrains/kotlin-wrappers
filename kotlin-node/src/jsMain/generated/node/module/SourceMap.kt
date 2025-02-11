@@ -8,7 +8,7 @@ package node.module
  * @since v13.7.0, v12.17.0
  */
 external class SourceMap {
-    constructor (payload: SourceMapPayload)
+    constructor (payload: SourceMapPayload, options: SourceMapConstructorOptions = definedExternally)
 
     /**
      * Getter for the payload used to construct the `SourceMap` instance.
@@ -33,7 +33,7 @@ external class SourceMap {
      * @param lineOffset The zero-indexed line number offset in the generated source
      * @param columnOffset The zero-indexed column number offset in the generated source
      */
-    fun findEntry(lineOffset: Number, columnOffset: Number): SourceMapping
+    fun findEntry(lineOffset: Number, columnOffset: Number): Any /* SourceMapping | {} */
 
     /**
      * Given a 1-indexed `lineNumber` and `columnNumber` from a call site in the generated source,

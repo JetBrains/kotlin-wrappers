@@ -16,6 +16,27 @@ import node.WritableStream
 open external class Readable : Stream, node.ReadableStream {
     constructor (opts: ReadableOptions = definedExternally)
 
+    @web.events.JsEvent("close")
+    open val closeEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("data")
+    open val dataEvent: node.events.EventInstance<js.array.JsTuple1<Any?>>
+
+    @web.events.JsEvent("end")
+    open val endEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("error")
+    open val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+
+    @web.events.JsEvent("pause")
+    open val pauseEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("readable")
+    open val readableEvent: node.events.EventInstance<js.array.JsTuple>
+
+    @web.events.JsEvent("resume")
+    open val resumeEvent: node.events.EventInstance<js.array.JsTuple>
+
     /**
      * Returns whether the stream was destroyed or errored before emitting `'end'`.
      * @since v16.8.0
@@ -658,27 +679,6 @@ open external class Readable : Stream, node.ReadableStream {
     override fun unshift(chunk: String, encoding: node.buffer.BufferEncoding): Unit
 
     override fun unshift(chunk: Uint8Array<*>, encoding: node.buffer.BufferEncoding): Unit
-
-    @web.events.JsEvent("close")
-    open val closeEvent: node.events.EventInstance<js.array.JsTuple>
-
-    @web.events.JsEvent("data")
-    open val dataEvent: node.events.EventInstance<js.array.JsTuple1<Any?>>
-
-    @web.events.JsEvent("end")
-    open val endEvent: node.events.EventInstance<js.array.JsTuple>
-
-    @web.events.JsEvent("error")
-    open val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
-
-    @web.events.JsEvent("pause")
-    open val pauseEvent: node.events.EventInstance<js.array.JsTuple>
-
-    @web.events.JsEvent("readable")
-    open val readableEvent: node.events.EventInstance<js.array.JsTuple>
-
-    @web.events.JsEvent("resume")
-    open val resumeEvent: node.events.EventInstance<js.array.JsTuple>
 
     companion object {
         /**

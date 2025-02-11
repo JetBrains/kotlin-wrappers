@@ -10,4 +10,4 @@ package node.module
  * @since v13.7.0, v12.17.0
  * @return Returns `module.SourceMap` if a source map is found, `undefined` otherwise.
  */
-external fun findSourceMap(path: String, error: js.errors.JsError = definedExternally): SourceMap?
+external fun findSourceMap(path: String): SourceMap?

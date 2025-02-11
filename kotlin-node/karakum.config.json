@@ -36,9 +36,6 @@
         "**/_WebSocket.kt",
         "**/NodeDOMException.kt",
         "**/NodeDOMExceptionConstructor.kt",
-        "**/NodeRequire.kt",
-        "**/NodeRequireResolve.kt",
-        "**/NodeModule.kt",
         "**/Dict.kt",
         "**/ReadOnlyDict.kt",
         "**/AbortController.kt",
@@ -113,7 +110,15 @@
         "**/http/WebSocket.kt",
         "**/http/CloseEvent.kt",
         "**/http/MessageEvent.kt",
-        "**/module/global/**",
+        "**/module/NodeRequire.kt",
+        "**/module/NodeModule.kt",
+        "**/module/RequireResolve.legacy.kt",
+        "**/module/Module.interface.kt",
+        "**/module/__dirname.kt",
+        "**/module/__filename.kt",
+        "**/module/require.kt",
+        "**/module/exports.kt",
+        "**/module/module.val.kt",
         "**/path/namespace.kt",
         "**/path/path.kt",
         "**/path/PlatformPathDelimiter.kt",
@@ -228,6 +233,12 @@
 
         "^inspector": "node/inspector",
 
+        "^module/global/nodejs/Require.kt": "node/module/Require.interface.kt",
+        "^module/global/nodejs/Module.kt": "node/module/Module.interface.kt",
+        "^module/global/nodejs/(.+)\\.kt": "node/module/$1.kt",
+        "^module/global/module.kt": "node/module/module.val.kt",
+        "^module/global/RequireResolve.kt": "node/module/RequireResolve.legacy.kt",
+        "^module/global/(.+)\\.kt": "node/module/$1.kt",
         "^module/Module.kt": "node/module/Module.class.kt",
         "^module/module": "node/module",
         "^module": "node/module",
@@ -451,10 +462,6 @@
         "ReadableStream.kt": [
             "js.typedarrays.Uint8Array",
             "node.events.EventEmitter"
-        ],
-        "Require.kt": [
-            "node.Module",
-            "node.Module as NodeModule"
         ],
         "WritableStream.kt": [
             "js.typedarrays.Uint8Array",
@@ -726,10 +733,11 @@
         "net/SocketConstructorOpts.kt": [
             "web.abort.AbortSignal"
         ],
-        "module/Module.class.kt": [
-            "node.Module as NodeModule",
-            "node.Require",
-            "node.Require as NodeRequire"
+        "module/Require.interface.kt": [
+            "node.Dict"
+        ],
+        "module/RequireExtensions.kt": [
+            "node.Dict"
         ],
         "os/constants/signals.kt": [
             "node.os.SignalConstants"
@@ -745,7 +753,7 @@
             "js.collections.ReadonlySet",
             "js.promise.Promise",
             "web.url.URL",
-            "node.Module",
+            "node.module.Module",
             "node.events.EventEmitter"
         ],
         "process/ProcessEnv.kt": [
@@ -774,6 +782,15 @@
         ],
         "sea/getAssetAsBlob.kt": [
             "web.blob.Blob"
+        ],
+        "sea/getRawAsset.kt": [
+            "js.buffer.ArrayBuffer"
+        ],
+        "sqlite/DatabaseSync.kt": [
+            "js.typedarrays.Uint8Array"
+        ],
+        "sqlite/Session.kt": [
+            "js.typedarrays.Uint8Array"
         ],
         "stream/ArrayOptions.kt": [
             "web.abort.AbortSignal"
@@ -1066,6 +1083,9 @@
         ],
         "util/types/isBigInt64Array.contract.kt": [
             "js.typedarrays.BigInt64Array"
+        ],
+        "util/types/isBigIntObject.contract.kt": [
+            "js.core.BigInt"
         ],
         "util/types/isBigUint64Array.contract.kt": [
             "js.typedarrays.BigUint64Array"

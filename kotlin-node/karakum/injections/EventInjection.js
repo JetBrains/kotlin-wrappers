@@ -98,25 +98,6 @@ const overriddenEvents = {
             "unpipe",
         ]
     },
-    "fs.d.ts": {
-        "ReadStream": [
-            "close",
-            "data",
-            "end",
-            "error",
-            "pause",
-            "readable",
-            "resume",
-        ],
-        "WriteStream": [
-            "close",
-            "drain",
-            "error",
-            "finish",
-            "pipe",
-            "unpipe",
-        ],
-    },
     "http.d.ts": {
         "Server": [
             "close",

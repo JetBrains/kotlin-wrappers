@@ -165,10 +165,7 @@ sealed external interface TestContextAssert {
      *   });
      * });
      * ```
-     *
-     * Only available through the [--experimental-test-snapshots](https://nodejs.org/api/cli.html#--experimental-test-snapshots) flag.
      * @since v22.3.0
-     * @experimental
      */
     fun snapshot(value: Any?, options: AssertSnapshotOptions = definedExternally): Unit
 }

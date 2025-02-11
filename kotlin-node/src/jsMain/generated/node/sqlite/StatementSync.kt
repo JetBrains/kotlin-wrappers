@@ -61,6 +61,25 @@ external class StatementSync {
     ): Any?
 
     /**
+     * This method executes a prepared statement and returns an iterator of
+     * objects. If the prepared statement does not return any results, this method
+     * returns an empty iterator. The prepared statement [parameters are bound](https://www.sqlite.org/c3ref/bind_blob.html) using
+     * the values in `namedParameters` and `anonymousParameters`.
+     * @since v22.13.0
+     * @param namedParameters An optional object used to bind named parameters.
+     * The keys of this object are used to configure the mapping.
+     * @param anonymousParameters Zero or more values to bind to anonymous parameters.
+     * @returns An iterable iterator of objects. Each object corresponds to a row
+     * returned by executing the prepared statement. The keys and values of each
+     * object correspond to the column names and values of the row.
+     */
+    fun iterate(vararg anonymousParameters: SupportedValueType): js.iterable.JsIterator<Any?>
+    fun iterate(
+        namedParameters: js.objects.ReadonlyRecord<String, SupportedValueType>,
+        vararg anonymousParameters: SupportedValueType,
+    ): js.iterable.JsIterator<Any?>
+
+    /**
      * This method executes a prepared statement and returns an object summarizing the
      * resulting changes. The prepared statement [parameters are bound](https://www.sqlite.org/c3ref/bind_blob.html) using the
      * values in `namedParameters` and `anonymousParameters`.

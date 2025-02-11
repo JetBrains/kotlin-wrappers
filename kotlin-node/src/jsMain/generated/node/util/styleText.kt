@@ -5,8 +5,6 @@
 package node.util
 
 /**
- * Stability: 1.1 - Active development
- *
  * This function returns a formatted text considering the `format` passed.
  *
  * ```js
@@ -40,8 +38,6 @@ package node.util
 external fun styleText(format: ForegroundColors, text: String): String
 
 /**
- * Stability: 1.1 - Active development
- *
  * This function returns a formatted text considering the `format` passed.
  *
  * ```js
@@ -75,8 +71,6 @@ external fun styleText(format: ForegroundColors, text: String): String
 external fun styleText(format: BackgroundColors, text: String): String
 
 /**
- * Stability: 1.1 - Active development
- *
  * This function returns a formatted text considering the `format` passed.
  *
  * ```js
@@ -110,8 +104,6 @@ external fun styleText(format: BackgroundColors, text: String): String
 external fun styleText(format: Modifiers, text: String): String
 
 /**
- * Stability: 1.1 - Active development
- *
  * This function returns a formatted text considering the `format` passed.
  *
  * ```js

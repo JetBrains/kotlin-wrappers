@@ -3,10 +3,13 @@
 package node.module
 
 /**
- * The `initialize` hook provides a way to define a custom function that runs in the hooks thread
- * when the hooks module is initialized. Initialization happens when the hooks module is registered via `register`.
+ * The `initialize` hook provides a way to define a custom function that runs in
+ * the hooks thread when the hooks module is initialized. Initialization happens
+ * when the hooks module is registered via {@link register}.
  *
- * This hook can receive data from a `register` invocation, including ports and other transferrable objects.
- * The return value of `initialize` can be a `Promise`, in which case it will be awaited before the main application thread execution resumes.
+ * This hook can receive data from a {@link register} invocation, including
+ * ports and other transferable objects. The return value of `initialize` can be a
+ * `Promise`, in which case it will be awaited before the main application thread
+ * execution resumes.
  */
 typealias InitializeHook<Data /* default is Any? */> = (data: Data) -> js.promise.PromiseResult<js.core.Void>
