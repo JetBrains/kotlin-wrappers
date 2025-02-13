@@ -1,5 +1,7 @@
 package kotlinx.css
 
+import kotlinx.css.properties.KeyframesBuilder
+
 fun CssBuilder(
     indent: String = "",
     allowClasses: Boolean = true,
@@ -7,6 +9,16 @@ fun CssBuilder(
     isHolder: Boolean = false,
     isStyledComponent: Boolean = false,
 ): CssBuilder = CssBuilderImpl(indent, allowClasses, parent, isHolder, isStyledComponent)
+
+fun CssBuilder.keyframes(
+    name: String,
+    block: KeyframesBuilder.() -> Unit,
+) {
+    val builder = KeyframesBuilder().apply(block)
+    "@keyframes $name" {
+        rules += builder.rules
+    }
+}
 
 interface CssBuilder : StyledElement, RuleContainer {
     val allowClasses: Boolean
