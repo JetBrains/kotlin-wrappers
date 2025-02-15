@@ -1,5 +1,4 @@
 import ts from "typescript";
-import * as karakum from "../karakum.mjs";
 
 function isModuleInterfaceNode(node) {
     return (
