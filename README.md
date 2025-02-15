@@ -105,14 +105,9 @@ dependencies {
 2. [Building Web Applications with React and Kotlin/JS](https://play.kotlinlang.org/hands-on/Building%20Web%20Applications%20with%20React%20and%20Kotlin%20JS/01_Introduction),
    a tutorial by JetBrains.
 
-3. An [example of using react-table](https://github.com/karakum-team/kotlin-react-table-sample) that shows how to use
-   react-table with hooks API.
+3. An [example of using Material UI](https://github.com/karakum-team/kotlin-mui-showcase).
 
-4. An [example of using Material UI](https://github.com/karakum-team/kotlin-mui-showcase).
-
-5. [ByteLegend](https://github.com/ByteLegend/ByteLegend): an open-source, real-world HTML5 MMORPG game.
-
-Follow these examples to learn how to start developing your React apps with Kotlin. Good luck and have fun!
+Follow these examples to learn how to start developing your Kotlin/JS apps. Good luck and have fun!
 
 ## Contributing
 
