@@ -28,7 +28,8 @@ export default function (node, context, render) {
             || (
                 ts.isInterfaceDeclaration(node.parent)
                 && (
-                    node.parent.name.text === "ServerOptions"
+                    node.parent.name.text === "Server"
+                    || node.parent.name.text === "ServerOptions"
                     || node.parent.name.text === "SecureServerOptions"
                     || node.parent.name.text === "Http2Server"
                     || node.parent.name.text === "Http2SecureServer"
