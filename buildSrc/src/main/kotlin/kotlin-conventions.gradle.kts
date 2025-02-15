@@ -10,12 +10,11 @@ plugins {
     kotlin("multiplatform")
     kotlin("plugin.js-plain-objects")
     id("kotlin-test-conventions")
-    id("dokka-conventions")
 }
 
 kotlin {
     js {
-        moduleName = project.name
+        moduleName = project.jsModuleName ?: project.name
 
         when (project.jsPlatform) {
             JsPlatform.WEB -> {
