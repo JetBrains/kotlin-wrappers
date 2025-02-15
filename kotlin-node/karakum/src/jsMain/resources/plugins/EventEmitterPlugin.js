@@ -54,7 +54,7 @@ export default {
         const sourceFileName = node.getSourceFile()?.fileName ?? "generated.d.ts"
         if (!sourceFileName.endsWith("events.d.ts")) return null
 
-        const typeScriptService = context.lookupService(karakum.typeScriptServiceKey)
+        const typeScriptService = context.lookupService(karakum.typeScriptServiceKey.get())
 
         if (
             ts.isTypeReferenceNode(node)

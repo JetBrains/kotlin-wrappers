@@ -62,9 +62,6 @@ suspend fun main() {
             "**/_WebSocket.kt",
             "**/NodeDOMException.kt",
             "**/NodeDOMExceptionConstructor.kt",
-            "**/NodeRequire.kt",
-            "**/NodeRequireResolve.kt",
-            "**/NodeModule.kt",
             "**/Dict.kt",
             "**/ReadOnlyDict.kt",
             "**/AbortController.kt",
@@ -139,7 +136,15 @@ suspend fun main() {
             "**/http/WebSocket.kt",
             "**/http/CloseEvent.kt",
             "**/http/MessageEvent.kt",
-            "**/module/global/**",
+            "**/module/NodeRequire.kt",
+            "**/module/NodeModule.kt",
+            "**/module/RequireResolve.legacy.kt",
+            "**/module/Module.interface.kt",
+            "**/module/__dirname.kt",
+            "**/module/__filename.kt",
+            "**/module/require.kt",
+            "**/module/exports.kt",
+            "**/module/module.val.kt",
             "**/path/namespace.kt",
             "**/path/path.kt",
             "**/path/PlatformPathDelimiter.kt",
@@ -254,6 +259,12 @@ suspend fun main() {
 
             "^inspector" to "node/inspector",
 
+            "^module/global/nodejs/Require.kt" to "node/module/Require.interface.kt",
+            "^module/global/nodejs/Module.kt" to "node/module/Module.interface.kt",
+            "^module/global/nodejs/(.+)\\.kt" to "node/module/$1.kt",
+            "^module/global/module.kt" to "node/module/module.val.kt",
+            "^module/global/RequireResolve.kt" to "node/module/RequireResolve.legacy.kt",
+            "^module/global/(.+)\\.kt" to "node/module/$1.kt",
             "^module/Module.kt" to "node/module/Module.class.kt",
             "^module/module" to "node/module",
             "^module" to "node/module",
@@ -477,10 +488,6 @@ suspend fun main() {
             "ReadableStream.kt" to arrayOf(
                 "js.typedarrays.Uint8Array",
                 "node.events.EventEmitter"
-            ),
-            "Require.kt" to arrayOf(
-                "node.Module",
-                "node.Module as NodeModule"
             ),
             "WritableStream.kt" to arrayOf(
                 "js.typedarrays.Uint8Array",
@@ -752,10 +759,11 @@ suspend fun main() {
             "net/SocketConstructorOpts.kt" to arrayOf(
                 "web.abort.AbortSignal"
             ),
-            "module/Module.class.kt" to arrayOf(
-                "node.Module as NodeModule",
-                "node.Require",
-                "node.Require as NodeRequire"
+            "module/Require.interface.kt" to arrayOf(
+                "node.Dict"
+            ),
+            "module/RequireExtensions.kt" to arrayOf(
+                "node.Dict"
             ),
             "os/constants/signals.kt" to arrayOf(
                 "node.os.SignalConstants"
@@ -771,7 +779,7 @@ suspend fun main() {
                 "js.collections.ReadonlySet",
                 "js.promise.Promise",
                 "web.url.URL",
-                "node.Module",
+                "node.module.Module",
                 "node.events.EventEmitter"
             ),
             "process/ProcessEnv.kt" to arrayOf(
@@ -800,6 +808,15 @@ suspend fun main() {
             ),
             "sea/getAssetAsBlob.kt" to arrayOf(
                 "web.blob.Blob"
+            ),
+            "sea/getRawAsset.kt" to arrayOf(
+                "js.buffer.ArrayBuffer"
+            ),
+            "sqlite/DatabaseSync.kt" to arrayOf(
+                "js.typedarrays.Uint8Array"
+            ),
+            "sqlite/Session.kt" to arrayOf(
+                "js.typedarrays.Uint8Array"
             ),
             "stream/ArrayOptions.kt" to arrayOf(
                 "web.abort.AbortSignal"
@@ -1092,6 +1109,9 @@ suspend fun main() {
             ),
             "util/types/isBigInt64Array.contract.kt" to arrayOf(
                 "js.typedarrays.BigInt64Array"
+            ),
+            "util/types/isBigIntObject.contract.kt" to arrayOf(
+                "js.core.BigInt"
             ),
             "util/types/isBigUint64Array.contract.kt" to arrayOf(
                 "js.typedarrays.BigUint64Array"
