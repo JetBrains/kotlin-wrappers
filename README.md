@@ -113,5 +113,5 @@ Follow these examples to learn how to start developing your Kotlin/JS apps. Good
 
 Contributions to this project are welcome! Please see the open
 [issues](https://github.com/JetBrains/kotlin-wrappers/issues) or chat with us on
-the [#react](https://kotlinlang.slack.com/messages/react/) channel in our
+the [#javascript](https://kotlinlang.slack.com/messages/javascript/) channel in our
 [Slack](https://slack.kotlinlang.org/).
