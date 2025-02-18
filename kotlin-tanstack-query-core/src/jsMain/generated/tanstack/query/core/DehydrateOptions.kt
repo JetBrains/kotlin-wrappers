@@ -9,4 +9,5 @@ external interface DehydrateOptions {
     val serializeData: TransformerFn?
     val shouldDehydrateMutation: ((mutation: Mutation<*, *, *, *>) -> Boolean)?
     val shouldDehydrateQuery: ((query: Query<*, *, *, *>) -> Boolean)?
+    val shouldRedactErrors: ((error: Any) -> Boolean)?
 }
