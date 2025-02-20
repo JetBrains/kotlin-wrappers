@@ -15,22 +15,20 @@ internal fun <T : Any> createSelectionColumn(): ColumnDef<T, String> =
         size = 32
         header = StringOrTemplateHeader(
             ColumnDefTemplate { context ->
-                val keys = context.table.getRowModel().rows
-                    .map { it.id }
-                    .toSet()
-
                 SelectionCell.create {
-                    value = keys
-                    metadata = context.table.getMeta()
+                    value = context.table.options.meta?.getSelection()
+
+                    keys = context.table.getRowModel().rows
+                        .map { it.id }
+                        .toSet()
                 }
             }
         )
         cell = ColumnDefTemplate { context ->
-            val keys = setOf(context.cell.row.id)
-
             SelectionCell.create {
-                value = keys
-                metadata = context.table.getMeta()
+                value = context.table.options.meta?.getSelection()
+
+                keys = setOf(context.cell.row.id)
             }
         }
     }

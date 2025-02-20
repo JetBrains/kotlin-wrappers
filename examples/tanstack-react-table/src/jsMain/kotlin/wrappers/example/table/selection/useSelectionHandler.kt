@@ -7,9 +7,11 @@ import wrappers.example.entities.Key
 typealias SelectionHandler = (Map<Key, Boolean>) -> Unit
 
 internal fun useSelectionHandler(
-    metadata: TableMetadata,
+    selection: Signal<SelectedKeys>,
 ): SelectionHandler =
-    useConstant { createSelectionHandler(metadata.selection) }
+    useConstant {
+        createSelectionHandler(selection)
+    }
 
 private fun createSelectionHandler(
     selection: Signal<SelectedKeys>,

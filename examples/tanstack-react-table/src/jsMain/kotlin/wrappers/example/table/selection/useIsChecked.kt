@@ -1,11 +1,12 @@
 package wrappers.example.table.selection
 
 import preact.signals.core.ReadonlySignal
+import preact.signals.core.Signal
 import preact.signals.react.useComputed
 
 internal fun useIsChecked(
     keys: SelectedKeys,
-    metadata: TableMetadata,
+    selection: Signal<SelectedKeys>,
 ): ReadonlySignal<Boolean> = useComputed {
-    metadata.selection.value.containsAll(keys)
+    selection.value.containsAll(keys)
 }
