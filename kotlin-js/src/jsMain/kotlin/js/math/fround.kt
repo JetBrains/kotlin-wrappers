@@ -4,6 +4,7 @@ package js.math
 
 import js.import.JsQualifier
 
-external fun fround(
+@PublishedApi
+internal external fun fround(
     value: Number,
 ): Float
