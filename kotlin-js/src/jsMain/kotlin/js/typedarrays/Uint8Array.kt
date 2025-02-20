@@ -15,11 +15,11 @@ open external class Uint8Array<B : ArrayBufferLike>(
     override val buffer: B,
     override val byteOffset: Int = definedExternally,
     override val length: Int = definedExternally,
-) : TypedArray<Uint8Array<B>, Uint8Array<ArrayBuffer>, B, Byte> {
+) : TypedArray<Uint8Array<B>, Uint8Array<ArrayBuffer>, B, Short /* UByte */> {
     constructor()
     constructor(length: Int)
-    constructor(elements: JsIterable<Byte>)
-    constructor(elements: ReadonlyArray<Byte>)
+    constructor(elements: JsIterable<Short /* UByte */>)
+    constructor(elements: ReadonlyArray<Short /* UByte */>)
 
     fun setFromBase64(
         string: String,
@@ -42,7 +42,7 @@ open external class Uint8Array<B : ArrayBufferLike>(
     inline fun toUByteArray(): UByteArray =
         toByteArray().asUByteArray()
 
-    companion object : TypedArrayCompanion<Uint8Array<ArrayBuffer>, Byte> {
+    companion object : TypedArrayCompanion<Uint8Array<ArrayBuffer>, Short /* UByte */> {
         fun fromBase64(
             string: String,
             options: FromBase64Options = definedExternally,

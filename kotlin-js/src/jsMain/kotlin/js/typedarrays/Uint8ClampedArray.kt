@@ -9,11 +9,11 @@ open external class Uint8ClampedArray<B : ArrayBufferLike>(
     override val buffer: B,
     override val byteOffset: Int = definedExternally,
     override val length: Int = definedExternally,
-) : TypedArray<Uint8ClampedArray<B>, Uint8ClampedArray<ArrayBuffer>, B, Byte> {
+) : TypedArray<Uint8ClampedArray<B>, Uint8ClampedArray<ArrayBuffer>, B, Short /* UByte */> {
     constructor()
     constructor(length: Int)
-    constructor(elements: JsIterable<Byte>)
-    constructor(elements: ReadonlyArray<Byte>)
+    constructor(elements: JsIterable<Short /* UByte */>)
+    constructor(elements: ReadonlyArray<Short /* UByte */>)
 
-    companion object : TypedArrayCompanion<Uint8ClampedArray<ArrayBuffer>, Byte>
+    companion object : TypedArrayCompanion<Uint8ClampedArray<ArrayBuffer>, Short /* UByte */>
 }

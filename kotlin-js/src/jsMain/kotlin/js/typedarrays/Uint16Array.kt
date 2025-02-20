@@ -9,11 +9,11 @@ open external class Uint16Array<B : ArrayBufferLike>(
     override val buffer: B,
     override val byteOffset: Int = definedExternally,
     override val length: Int = definedExternally,
-) : TypedArray<Uint16Array<B>, Uint16Array<ArrayBuffer>, B, Short> {
+) : TypedArray<Uint16Array<B>, Uint16Array<ArrayBuffer>, B, Int /* Short */> {
     constructor()
     constructor(length: Int)
-    constructor(elements: JsIterable<Short>)
-    constructor(elements: ReadonlyArray<Short>)
+    constructor(elements: JsIterable<Int /* Short */>)
+    constructor(elements: ReadonlyArray<Int /* Short */>)
 
-    companion object : TypedArrayCompanion<Uint16Array<ArrayBuffer>, Short>
+    companion object : TypedArrayCompanion<Uint16Array<ArrayBuffer>, Int /* Short */>
 }
