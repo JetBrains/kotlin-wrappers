@@ -125,7 +125,7 @@ external interface CoreOptions<TData : RowData> {
      * [API Docs](https://tanstack.com/table/v8/docs/api/core/table#meta)
      * [Guide](https://tanstack.com/table/v8/docs/guide/tables)
      */
-    var meta: TableMeta<TData>?
+    var meta: TableMeta?
 
     /**
      * The `onStateChange` option can be used to optionally listen to state changes within the table.

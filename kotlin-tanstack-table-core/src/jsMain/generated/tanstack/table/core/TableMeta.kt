@@ -2,4 +2,7 @@
 
 package tanstack.table.core
 
-external interface TableMeta<TData : RowData>
+import js.objects.PropertyKey
+import js.objects.ReadonlyRecord
+
+typealias TableMeta = ReadonlyRecord<PropertyKey, Any>
