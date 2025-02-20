@@ -26,9 +26,25 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/currentTranslate)
      */
     val currentTranslate: DOMPointReadOnly
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/height)
+     */
     val height: SVGAnimatedLength
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/width)
+     */
     val width: SVGAnimatedLength
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/x)
+     */
     val x: SVGAnimatedLength
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/y)
+     */
     val y: SVGAnimatedLength
 
     /**
