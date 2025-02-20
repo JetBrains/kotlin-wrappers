@@ -1,5 +1,7 @@
 package js.buffer
 
+import js.core.Float16
+
 external class DataView<B: ArrayBufferLike>(
     override val buffer: B,
     override val byteOffset: Int = definedExternally,
@@ -26,6 +28,11 @@ external class DataView<B: ArrayBufferLike>(
         byteOffset: Int,
         littleEndian: Boolean = definedExternally,
     ): Int
+
+    fun getFloat16(
+        byteOffset: Int,
+        littleEndian: Boolean = definedExternally,
+    ): Float16
 
     fun getFloat32(
         byteOffset: Int,
@@ -68,6 +75,12 @@ external class DataView<B: ArrayBufferLike>(
     fun setUint32(
         byteOffset: Int,
         value: Int,
+        littleEndian: Boolean = definedExternally,
+    )
+
+    fun setFloat16(
+        byteOffset: Int,
+        value: Float16,
         littleEndian: Boolean = definedExternally,
     )
 
