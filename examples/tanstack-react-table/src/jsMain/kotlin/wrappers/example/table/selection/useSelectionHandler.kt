@@ -1,20 +1,19 @@
 package wrappers.example.table.selection
 
-import preact.signals.core.Signal
 import react.use.useConstant
 import wrappers.example.entities.Key
 
 typealias SelectionHandler = (Map<Key, Boolean>) -> Unit
 
 internal fun useSelectionHandler(
-    selection: Signal<SelectedKeys>,
+    selection: Selection,
 ): SelectionHandler =
     useConstant {
         createSelectionHandler(selection)
     }
 
 private fun createSelectionHandler(
-    selection: Signal<SelectedKeys>,
+    selection: Selection,
 ): SelectionHandler = { keys ->
     val (add, remove) = keys.entries
         .partition { it.value }

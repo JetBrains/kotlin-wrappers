@@ -1,24 +1,21 @@
 package wrappers.example.table.selection
 
-import preact.signals.core.Signal
 import react.FC
 import react.PropsWithValue
+import react.useMemo
 import wrappers.example.entities.Key
 
-internal external interface SelectionCellProps : PropsWithValue<Signal<SelectedKeys>?> {
-    var keys: Set<Key>
+internal external interface SelectionCellProps : PropsWithValue<Key> {
+    var selection: Selection
 }
 
 internal val SelectionCell: FC<SelectionCellProps> = FC { props ->
-    val keys = props.keys
-    val selection = props.value
-        ?: return@FC
+    val keys = useMemo(props.value) {
+        setOf(props.value)
+    }
 
-    val checked = useIsChecked(keys, selection)
-    val changeHandler = useSelectionChangeHandler(keys, selection)
-
-    SelectionCheckbox {
-        value = checked
-        onChange = changeHandler
+    SelectionControl {
+        selection = props.selection
+        value = keys
     }
 }

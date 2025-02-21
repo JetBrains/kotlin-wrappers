@@ -1,13 +1,12 @@
 package wrappers.example.table.selection
 
-import preact.signals.core.Signal
 import react.dom.events.ChangeEvent
 import react.useCallback
 import web.html.HTMLInputElement
 
 internal fun useSelectionChangeHandler(
     keys: SelectedKeys,
-    selection: Signal<SelectedKeys>,
+    selection: Selection,
 ): (ChangeEvent<HTMLInputElement>) -> Unit {
     val selectionHandler = useSelectionHandler(selection)
 

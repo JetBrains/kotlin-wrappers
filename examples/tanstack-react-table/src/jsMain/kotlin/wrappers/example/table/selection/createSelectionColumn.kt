@@ -1,13 +1,16 @@
 package wrappers.example.table.selection
 
 import js.objects.jso
+import preact.signals.core.Signal
 import react.create
 import tanstack.table.core.ColumnDef
 import tanstack.table.core.ColumnDefTemplate
 import tanstack.table.core.StringOrTemplateHeader
 
-internal val EMPTY_SELECTION: SelectedKeys = emptySet()
 internal typealias SelectedKeys = Set<String>
+internal typealias Selection = Signal<SelectedKeys>
+
+internal val EMPTY_SELECTION: SelectedKeys = emptySet()
 
 internal fun <T : Any> createSelectionColumn(): ColumnDef<T, String> =
     jso {
@@ -15,20 +18,16 @@ internal fun <T : Any> createSelectionColumn(): ColumnDef<T, String> =
         size = 32
         header = StringOrTemplateHeader(
             ColumnDefTemplate { context ->
-                SelectionCell.create {
-                    value = context.table.options.meta?.getSelection()
-
-                    keys = context.table.getRowModel().rows
-                        .map { it.id }
-                        .toSet()
+                SelectionHeader.create {
+                    selection = context.table.selection()
+                    value = context.table.getRowModel().rows
                 }
             }
         )
         cell = ColumnDefTemplate { context ->
             SelectionCell.create {
-                value = context.table.options.meta?.getSelection()
-
-                keys = setOf(context.cell.row.id)
+                selection = context.table.selection()
+                value = context.cell.row.id
             }
         }
     }

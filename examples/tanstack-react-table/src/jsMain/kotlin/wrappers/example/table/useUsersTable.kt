@@ -2,7 +2,6 @@ package wrappers.example.table
 
 import js.array.ReadonlyArray
 import js.objects.jso
-import js.objects.recordOf
 import preact.signals.react.useSignal
 import tanstack.react.table.useReactTable
 import tanstack.table.core.ColumnDef
@@ -12,8 +11,8 @@ import tanstack.table.core.getCoreRowModel
 import wrappers.example.entities.User
 import wrappers.example.hooks.useUsers
 import wrappers.example.table.selection.EMPTY_SELECTION
-import wrappers.example.table.selection.SELECTION_KEY
 import wrappers.example.table.selection.createSelectionColumn
+import wrappers.example.table.selection.useTableMeta
 
 private val COLUMNS: ReadonlyArray<ColumnDef<User, String>> = arrayOf(
     createSelectionColumn(),
@@ -31,6 +30,7 @@ private val COLUMNS: ReadonlyArray<ColumnDef<User, String>> = arrayOf(
 
 fun useUsersTable(): Table<User> {
     val selection = useSignal(EMPTY_SELECTION)
+    val tableMeta = useTableMeta(selection)
 
     val users = useUsers()
 
@@ -39,9 +39,7 @@ fun useUsersTable(): Table<User> {
             data = users
             columns = COLUMNS
             getCoreRowModel = getCoreRowModel()
-            meta = recordOf(
-                SELECTION_KEY to selection,
-            )
+            meta = tableMeta
         }
     )
 }
