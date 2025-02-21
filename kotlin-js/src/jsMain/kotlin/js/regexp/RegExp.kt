@@ -24,6 +24,8 @@ open external class RegExp(
      */
     val flags: String = definedExternally,
 ) {
+    constructor(pattern: RegExp)
+
     /**
      * Returns a Boolean value indicating the state of the dotAll flag (s) used with a regular expression.
      * Default is false. Read-only.
