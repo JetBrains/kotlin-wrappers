@@ -8,7 +8,7 @@ plugins.withType<NodeJsRootPlugin> {
         version = "22.13.1" // https://nodejs.org/en/download/package-manager
 
         versions.apply {
-            webpack.version = "5.97.1" // https://www.npmjs.com/package/webpack
+            webpack.version = "5.98.0" // https://www.npmjs.com/package/webpack
             webpackCli.version = "6.0.1" // https://www.npmjs.com/package/webpack-cli
             webpackDevServer.version = "5.2.0" // https://www.npmjs.com/package/webpack-dev-server
             karma.version = "6.4.4" // https://www.npmjs.com/package/karma
