@@ -27,6 +27,8 @@ package web.url
  * console.log(pattern.test("https://blog.example.com/article")); // false
  * console.log(pattern.test("https://blog.example.com/article/123")); // true
  * ```
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern)
  */
 open external class URLPattern(
     input: String = definedExternally,
@@ -68,6 +70,8 @@ open external class URLPattern(
      * // Test an object of url components.
      * console.log(pattern.test({ pathname: "/books/123" })); // true
      * ```
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/test)
      */
     fun test(
         input: String,
@@ -101,6 +105,8 @@ open external class URLPattern(
      * match = pattern.exec({ pathname: "/books/123" });
      * console.log(match.pathname.groups.id); // 123
      * ```
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/exec)
      */
     fun exec(
         input: String,
@@ -114,46 +120,64 @@ open external class URLPattern(
 
     /**
      * The pattern string for the `protocol`.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/protocol)
      */
     val protocol: String
 
     /**
      * The pattern string for the `username`.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/username)
      */
     val username: String
 
     /**
      * The pattern string for the `password`.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/password)
      */
     val password: String
 
     /**
      * The pattern string for the `hostname`.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/hostname)
      */
     val hostname: String
 
     /**
      * The pattern string for the `port`.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/port)
      */
     val port: String
 
     /**
      * The pattern string for the `pathname`.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/pathname)
      */
     val pathname: String
 
     /**
      * The pattern string for the `search`.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/search)
      */
     val search: String
 
     /**
      * The pattern string for the `hash`.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/hash)
      */
     val hash: String
 
     /**
      * Whether or not any of the specified groups use regexp groups.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/hasRegExpGroups)
      */
     val hasRegExpGroups: Boolean
 }
