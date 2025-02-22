@@ -29,6 +29,7 @@ external fun saveCacheAsync(
 external suspend fun saveCache(
     cacheId: Number,
     archivePath: String,
+    signedUploadURL: String = definedExternally,
     options: UploadOptions = definedExternally,
 )
 
@@ -36,5 +37,6 @@ external suspend fun saveCache(
 external fun saveCacheAsync(
     cacheId: Number,
     archivePath: String,
+    signedUploadURL: String = definedExternally,
     options: UploadOptions = definedExternally,
 ): Promise<Void>

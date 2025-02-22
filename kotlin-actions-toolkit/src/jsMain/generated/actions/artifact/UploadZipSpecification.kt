@@ -15,4 +15,10 @@ external interface UploadZipSpecification {
      * The destination path in a zip for a file
      */
     val destinationPath: String
+
+    /**
+     * Information about the file
+     * https://nodejs.org/api/fs.html#class-fsstats
+     */
+    val stats: node.fs.Stats
 }
