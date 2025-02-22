@@ -84,10 +84,10 @@ external interface SelectProps<Option : Any, Group : GroupBase<Option>> : PropsW
      *
      * An example can be found in the [Replacing builtins](/advanced#replacing-builtins) documentation.
      */
-    var formatGroupLabel: ((group: Group) -> ReactNode)?
+    var formatGroupLabel: ((group: Group) -> ReactNode?)?
 
     /** Formats option labels in the menu and control as React components */
-    var formatOptionLabel: ((data: Option, formatOptionLabelMeta: FormatOptionLabelMeta<Option>) -> ReactNode)?
+    var formatOptionLabel: ((data: Option, formatOptionLabelMeta: FormatOptionLabelMeta<Option>) -> ReactNode?)?
 
     /**
      * Resolves option data to a String to be displayed as the label by components
@@ -144,7 +144,7 @@ external interface SelectProps<Option : Any, Group : GroupBase<Option>> : PropsW
     var isSearchable: Boolean?
 
     /** Async: Text to display when loading options */
-    var loadingMessage: ((HasInputValue) -> ReactNode)?
+    var loadingMessage: ((HasInputValue) -> ReactNode?)?
 
     /** Minimum height of the menu before flipping */
     var minMenuHeight: Length?
@@ -181,7 +181,7 @@ external interface SelectProps<Option : Any, Group : GroupBase<Option>> : PropsW
     var name: String?
 
     /** Text to display when there are no options */
-    var noOptionsMessage: ((HasInputValue) -> ReactNode)?
+    var noOptionsMessage: ((HasInputValue) -> ReactNode?)?
 
     /** Handle blur events on the control */
     var onBlur: FocusEventHandler<HTMLInputElement>?
