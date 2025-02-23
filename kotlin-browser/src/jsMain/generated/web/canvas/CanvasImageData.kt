@@ -15,7 +15,7 @@ sealed external interface CanvasImageData {
         settings: ImageDataSettings = definedExternally,
     ): ImageData
 
-    fun createImageData(imagedata: ImageData): ImageData
+    fun createImageData(imageData: ImageData): ImageData
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/getImageData)
@@ -32,13 +32,13 @@ sealed external interface CanvasImageData {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/putImageData)
      */
     fun putImageData(
-        imagedata: ImageData,
+        imageData: ImageData,
         dx: Int,
         dy: Int,
     )
 
     fun putImageData(
-        imagedata: ImageData,
+        imageData: ImageData,
         dx: Int,
         dy: Int,
         dirtyX: Int,
