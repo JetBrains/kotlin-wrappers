@@ -14,8 +14,9 @@ internal val SelectionCell: FC<SelectionCellProps> = FC { props ->
         setOf(props.value)
     }
 
-    SelectionControl {
-        selection = props.selection
-        value = keys
+    SelectionContext(props.selection) {
+        SelectionControl {
+            value = keys
+        }
     }
 }

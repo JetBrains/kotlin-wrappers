@@ -17,8 +17,9 @@ internal val SelectionHeader: FC<SelectionHeaderProps> = FC { props ->
             .toSet()
     }
 
-    SelectionControl {
-        selection = props.selection
-        value = keys
+    SelectionContext(props.selection) {
+        SelectionControl {
+            value = keys
+        }
     }
 }

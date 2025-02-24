@@ -5,7 +5,10 @@ import preact.signals.react.useComputed
 
 internal fun useIsChecked(
     keys: SelectedKeys,
-    selection: Selection,
-): ReadonlySignal<Boolean> = useComputed {
-    selection.value.containsAll(keys)
+): ReadonlySignal<Boolean> {
+    val selection = useSelection()
+
+    return useComputed {
+        selection.value.containsAll(keys)
+    }
 }

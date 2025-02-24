@@ -4,13 +4,11 @@ import react.FC
 import react.PropsWithValue
 import wrappers.example.entities.Key
 
-internal external interface SelectionControlProps : PropsWithValue<Set<Key>> {
-    var selection: Selection
-}
+internal val SelectionControl: FC<PropsWithValue<Set<Key>>> = FC { props ->
+    val keys = props.value
 
-internal val SelectionControl: FC<SelectionControlProps> = FC { props ->
-    val checked = useIsChecked(props.value, props.selection)
-    val changeHandler = useSelectionChangeHandler(props.value, props.selection)
+    val checked = useIsChecked(keys)
+    val changeHandler = useSelectionChangeHandler(keys)
 
     SelectionCheckbox {
         value = checked
