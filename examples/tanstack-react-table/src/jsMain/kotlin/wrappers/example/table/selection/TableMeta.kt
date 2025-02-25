@@ -7,17 +7,18 @@ import js.symbol.Symbol
 import tanstack.table.core.Table
 import tanstack.table.core.TableMeta
 
-private val SELECTION_KEY = Symbol("selection-key")
+private val SELECTION = Symbol("selection")
 
 internal fun createMeta(
     selection: Selection,
 ): TableMeta =
     recordOf(
-        SELECTION_KEY to selection,
+        SELECTION to selection,
     )
 
-internal fun Table<*>.selection(): Selection {
-    val selection = options.meta?.get(SELECTION_KEY) as? Selection
+internal val Table<*>.selection: Selection
+    get() {
+        val meta = requireNotNull(options.meta)
 
-    return requireNotNull(selection)
-}
+        return meta[SELECTION] as Selection
+    }

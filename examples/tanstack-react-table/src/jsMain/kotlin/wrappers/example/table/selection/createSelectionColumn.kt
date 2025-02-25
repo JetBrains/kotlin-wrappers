@@ -19,14 +19,14 @@ internal fun <T : Any> createSelectionColumn(): ColumnDef<T, String> =
         header = StringOrTemplateHeader(
             ColumnDefTemplate { context ->
                 SelectionHeader.create {
-                    selection = context.table.selection()
+                    selection = context.table.selection
                     value = context.table.getRowModel().rows
                 }
             }
         )
         cell = ColumnDefTemplate { context ->
             SelectionCell.create {
-                selection = context.table.selection()
+                selection = context.table.selection
                 value = context.cell.row.id
             }
         }
