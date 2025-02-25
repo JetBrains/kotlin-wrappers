@@ -730,12 +730,24 @@ sealed external interface WebGLRenderingContextBase {
     fun texParameterf(
         target: GLenum,
         pname: GLenum,
+        param: GLenum,
+    )
+
+    fun texParameterf(
+        target: GLenum,
+        pname: GLenum,
         param: GLfloat,
     )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texParameter)
      */
+    fun texParameteri(
+        target: GLenum,
+        pname: GLenum,
+        param: GLenum,
+    )
+
     fun texParameteri(
         target: GLenum,
         pname: GLenum,
