@@ -2,15 +2,13 @@ package wrappers.example.table
 
 import js.array.ReadonlyArray
 import js.objects.jso
-import tanstack.react.table.useReactTable
 import tanstack.table.core.ColumnDef
 import tanstack.table.core.StringOrTemplateHeader
-import tanstack.table.core.Table
-import tanstack.table.core.getCoreRowModel
 import wrappers.example.entities.User
 import wrappers.example.hooks.useUsers
 import wrappers.example.table.selection.createSelectionColumn
-import wrappers.example.table.selection.useTableMeta
+import wrappers.example.table.simple.TableInstance
+import wrappers.example.table.simple.useSimpleTable
 
 private val COLUMNS: ReadonlyArray<ColumnDef<User, String>> = arrayOf(
     createSelectionColumn(),
@@ -26,16 +24,15 @@ private val COLUMNS: ReadonlyArray<ColumnDef<User, String>> = arrayOf(
     },
 )
 
-fun useUsersTable(): Table<User> {
+internal fun useUsersTable(): TableInstance<User> {
     val users = useUsers()
     val tableMeta = useTableMeta()
 
-    return useReactTable(
-        options = jso {
-            data = users
-            columns = COLUMNS
-            getCoreRowModel = getCoreRowModel()
-            meta = tableMeta
-        }
+    val table = useSimpleTable(
+        data = users,
+        columns = COLUMNS,
+        meta = tableMeta,
     )
+
+    return table
 }
