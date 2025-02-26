@@ -1,13 +1,13 @@
 package js.iterable
 
-import js.array.JsArray
+import js.array.JsArrays
 import js.array.ReadonlyArray
 
 fun <T> JsIterator<T>.asSequence(): Sequence<T> =
     iterator().asSequence()
 
 fun <T> JsIterator<T>.toArray(): ReadonlyArray<T> =
-    JsArray.from(this)
+    JsArrays.from(this)
 
 fun <T> JsIterator<T>.toList(): List<T> =
     toArray().toList()
