@@ -1,3 +1,5 @@
 package js.errors
 
-expect class JsError
+expect open class JsError {
+    open val message: String?
+}
