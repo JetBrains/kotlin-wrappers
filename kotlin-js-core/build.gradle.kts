@@ -7,6 +7,9 @@ plugins {
 // for `definedExternally`
 tasks.withType<KotlinCompilationTask<*>>().configureEach {
     compilerOptions {
+        // for `expect external JsError`
+        allWarningsAsErrors = false
+
         freeCompilerArgs.addAll(
             "-Xallow-kotlin-package",
         )
