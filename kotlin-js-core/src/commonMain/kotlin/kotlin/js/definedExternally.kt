@@ -1,7 +1,7 @@
 @file:Suppress(
-    "NO_ACTUAL_FOR_EXPECT",
+    "WRONG_JS_INTEROP_TYPE",
 )
 
 package kotlin.js
 
-expect val definedExternally: Nothing
+external val definedExternally: Nothing
