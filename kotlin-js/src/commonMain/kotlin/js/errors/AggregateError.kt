@@ -1,6 +1,7 @@
 package js.errors
 
 import js.array.ReadonlyArray
+import kotlin.js.definedExternally
 
 open external class AggregateError(
     val errors: ReadonlyArray<JsError>,
