@@ -1,3 +1,3 @@
 package js.array
 
-typealias ReadonlyArray<T> = Array<out T>
+typealias ReadonlyArray<T> = JsArray<out T>
