@@ -9,7 +9,11 @@ external fun encodeURIComponent(
 ): String
 
 external fun encodeURIComponent(
-    uriComponent: Number,
+    uriComponent: Int,
+): String
+
+external fun encodeURIComponent(
+    uriComponent: Double,
 ): String
 
 external fun encodeURIComponent(
