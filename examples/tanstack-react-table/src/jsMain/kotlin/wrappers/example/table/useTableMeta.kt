@@ -1,6 +1,5 @@
 package wrappers.example.table
 
-import js.objects.PropertyKey
 import js.objects.recordOf
 import react.use.useConstant
 import tanstack.table.core.TableMeta
@@ -10,13 +9,8 @@ internal fun useTableMeta(): TableMeta {
     val selection = useTableSelection()
 
     return useConstant {
-        createMeta(
+        recordOf(
             selection,
         )
     }
 }
-
-private fun createMeta(
-    vararg items: Pair<PropertyKey, Any>,
-): TableMeta =
-    recordOf(*items)
