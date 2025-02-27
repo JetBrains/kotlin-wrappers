@@ -21,5 +21,4 @@ internal fun useTableSelection(): Pair<PropertyKey, Selection> {
 }
 
 internal val TableMeta.selection: Selection
-    get() =
-        get(SELECTION) as Selection
+    get() = get(SELECTION) as Selection
