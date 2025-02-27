@@ -1,5 +1,6 @@
 package js.promise
 
+import js.errors.JsError
 import kotlinx.coroutines.test.runTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -25,7 +26,7 @@ class PromiseTest {
 
     @Test
     fun catch() = runTest {
-        val value: Int = Promise.reject(Error())
+        val value: Int = Promise.reject(JsError())
             .catch { 44 }
             .await()
 
@@ -34,7 +35,7 @@ class PromiseTest {
 
     @Test
     fun flatCatch() = runTest {
-        val value: Int = Promise.reject(Error())
+        val value: Int = Promise.reject(JsError())
             .flatCatch { Promise.resolve(44) }
             .await()
 
