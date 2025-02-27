@@ -1,5 +1,8 @@
 package js.symbol
 
+import js.reflect.JsExternalInheritorsOnly
+import kotlin.js.definedExternally
+
 @JsExternalInheritorsOnly
 open external class Symbol
 private constructor() {
