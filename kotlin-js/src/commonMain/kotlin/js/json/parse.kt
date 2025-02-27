@@ -1,8 +1,13 @@
 @file:JsQualifier("JSON")
 
+@file:Suppress(
+    "WRONG_JS_INTEROP_TYPE",
+)
+
 package js.json
 
 import js.import.JsQualifier
+import kotlin.js.definedExternally
 
 /**
  * Converts a JavaScript Object Notation (JSON) string into an object.

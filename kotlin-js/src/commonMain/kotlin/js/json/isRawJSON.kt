@@ -1,5 +1,6 @@
 @file:Suppress(
     "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+    "WRONG_JS_INTEROP_TYPE",
 )
 
 package js.json

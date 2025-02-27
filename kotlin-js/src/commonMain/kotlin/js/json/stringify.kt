@@ -1,8 +1,14 @@
 @file:JsQualifier("JSON")
 
+@file:Suppress(
+    "WRONG_JS_INTEROP_TYPE",
+)
+
 package js.json
 
+import js.import.JsQualifier
 import js.array.ReadonlyArray
+import kotlin.js.definedExternally
 
 /**
  * Converts a JavaScript value to a JavaScript Object Notation (JSON) string.
@@ -30,12 +36,12 @@ external fun stringify(
  */
 external fun stringify(
     value: Any?,
-    replacer: ReadonlyArray<Any /* number | string */> = definedExternally,
+    replacer: ReadonlyArray<* /* number | string */> = definedExternally,
     space: String = definedExternally,
 ): String
 
 external fun stringify(
     value: Any?,
-    replacer: ReadonlyArray<Any /* number | string */> = definedExternally,
+    replacer: ReadonlyArray<* /* number | string */> = definedExternally,
     space: Int = definedExternally,
 ): String
