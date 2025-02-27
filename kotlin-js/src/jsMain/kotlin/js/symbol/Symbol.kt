@@ -1,8 +1,5 @@
 package js.symbol
 
-import seskar.js.JsPrimitive
-
-@JsPrimitive
 @JsExternalInheritorsOnly
 open external class Symbol
 private constructor() {

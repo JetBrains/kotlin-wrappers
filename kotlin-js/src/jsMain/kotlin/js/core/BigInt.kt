@@ -10,7 +10,6 @@ package js.core
 import js.function.JsFunction
 import js.function.invoke
 import js.reflect.unsafeCast
-import seskar.js.JsPrimitive
 
 @PublishedApi
 internal val POW = JsFunction<BigInt, BigInt, BigInt>(
@@ -19,7 +18,6 @@ internal val POW = JsFunction<BigInt, BigInt, BigInt>(
     "return base ** exponent"
 )
 
-@JsPrimitive
 external class BigInt
 private constructor() :
     Comparable<BigInt> {
