@@ -12,7 +12,6 @@ import react.dom.html.ReactHTML.thead
 import react.dom.html.ReactHTML.tr
 import tanstack.react.table.renderCell
 import tanstack.react.table.renderHeader
-import tanstack.table.core.Row
 import web.cssom.*
 import web.cssom.Auto.Companion.auto
 import web.cssom.LineStyle.Companion.solid
@@ -20,7 +19,7 @@ import web.cssom.None.Companion.none
 import wrappers.example.theme.Theme
 
 internal external interface SimpleTableProps<D : Any> : PropsWithValue<TableInstance<D>> {
-    var onRowClick: (row: Row<D>) -> Unit
+    var onRowClick: (value: D) -> Unit
 }
 
 internal val SimpleTable: FC<SimpleTableProps<*>> = FC { props ->
@@ -95,7 +94,7 @@ private fun <D : Any> ChildrenBuilder.SimpleTable(props: SimpleTableProps<D>) {
                     }
 
                     onClick = {
-                        props.onRowClick(row)
+                        props.onRowClick(row.original)
                     }
 
                     for (cell in row.getVisibleCells()) {
