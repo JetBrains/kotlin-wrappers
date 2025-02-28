@@ -31,6 +31,7 @@ import web.svg.SvgTagName
 import web.uievents.*
 import web.url.FragmentDirective
 import web.url.URL
+import web.viewtransition.StartViewTransitionOptions
 import web.viewtransition.ViewTransition
 import web.viewtransition.ViewTransitionUpdateCallback
 import web.window.*
@@ -607,6 +608,7 @@ open external class Document :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/startViewTransition)
      */
     fun startViewTransition(callbackOptions: ViewTransitionUpdateCallback = definedExternally): ViewTransition
+    fun startViewTransition(callbackOptions: StartViewTransitionOptions): ViewTransition
 
     /**
      * Writes one or more HTML expressions, followed by a carriage return, to a document in the specified window.
