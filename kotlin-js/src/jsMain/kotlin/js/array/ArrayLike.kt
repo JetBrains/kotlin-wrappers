@@ -4,12 +4,12 @@
 
 package js.array
 
-import seskar.js.JsNative
+import seskar.js.JsNativeGetter
 
 external interface ArrayLike<out T> {
     val length: Int
 
-    @JsNative
+    @JsNativeGetter
     operator fun get(
         index: Int,
     ): T = definedExternally

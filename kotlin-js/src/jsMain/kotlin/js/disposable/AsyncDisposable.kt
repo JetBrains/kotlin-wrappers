@@ -5,10 +5,10 @@
 package js.disposable
 
 import js.symbol.Symbol
-import seskar.js.JsNative
+import seskar.js.JsNativeGetter
 
 external interface AsyncDisposable {
-    @JsNative
+    @JsNativeGetter
     operator fun get(
         key: Symbol.asyncDispose,
     ): AsyncDispose = definedExternally

@@ -4,10 +4,10 @@
 
 package js.objects
 
-import seskar.js.JsNative
+import seskar.js.JsNativeGetter
 
 external interface ReadonlyRecord<K : Any, out V> {
-    @JsNative
+    @JsNativeGetter
     operator fun get(
         key: K,
     ): V? = definedExternally

@@ -8,10 +8,10 @@
 package js.iterable
 
 import js.symbol.Symbol
-import seskar.js.JsNative
+import seskar.js.JsNativeGetter
 
 external interface JsIterable<out T> {
-    @JsNative
+    @JsNativeGetter
     operator fun get(
         key: Symbol.iterator,
     ): () -> JsIterator<T> = definedExternally

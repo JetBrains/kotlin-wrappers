@@ -4,11 +4,12 @@
 
 package js.array
 
-import seskar.js.JsNative
+import seskar.js.JsNativeSetter
 
 external interface MutableArrayLike<T> :
     ArrayLike<T> {
-    @JsNative
+
+    @JsNativeSetter
     operator fun set(
         index: Int,
         value: T,

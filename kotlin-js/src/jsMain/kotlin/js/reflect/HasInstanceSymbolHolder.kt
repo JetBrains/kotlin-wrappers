@@ -5,10 +5,10 @@
 package js.reflect
 
 import js.symbol.Symbol
-import seskar.js.JsNative
+import seskar.js.JsNativeGetter
 
 external interface HasInstanceSymbolHolder {
-    @JsNative
+    @JsNativeGetter
     operator fun get(
         key: Symbol.hasInstance,
     ): HasInstance = definedExternally

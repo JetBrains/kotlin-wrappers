@@ -4,10 +4,10 @@
 
 package js.symbol
 
-import seskar.js.JsNative
+import seskar.js.JsNativeGetter
 
 external interface ToStringSymbolHolder {
-    @JsNative
+    @JsNativeGetter
     operator fun get(
         key: Symbol.toStringTag,
     ): ToString = definedExternally
