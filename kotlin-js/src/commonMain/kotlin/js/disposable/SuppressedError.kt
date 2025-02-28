@@ -1,6 +1,7 @@
 package js.disposable
 
 import js.errors.JsError
+import kotlin.js.definedExternally
 
 open external class SuppressedError(
     val error: JsError,
