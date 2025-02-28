@@ -2,6 +2,8 @@
 
 package js.transferable
 
+import js.reflect.JsExternalInheritorsOnly
+
 /**
  * Union of:
  * - `OffscreenCanvas`

@@ -2,6 +2,8 @@
 
 package web.gpu
 
+import js.reflect.JsExternalInheritorsOnly
+
 /**
  * Union of:
  * - `GPUSampler`

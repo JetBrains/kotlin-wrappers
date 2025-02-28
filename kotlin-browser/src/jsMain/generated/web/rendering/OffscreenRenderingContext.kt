@@ -2,6 +2,8 @@
 
 package web.rendering
 
+import js.reflect.JsExternalInheritorsOnly
+
 /**
  * Union of:
  * - `OffscreenCanvasRenderingContext2D`

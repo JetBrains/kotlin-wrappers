@@ -2,6 +2,8 @@
 
 package web.messaging
 
+import js.reflect.JsExternalInheritorsOnly
+
 /**
  * Union of:
  * - `WindowProxy`

@@ -2,6 +2,8 @@
 
 package web.streams
 
+import js.reflect.JsExternalInheritorsOnly
+
 /**
  * Union of:
  * - `ReadableStreamReadValueResult`
