@@ -6,13 +6,14 @@ import kotlin.contracts.contract
 @PublishedApi
 internal inline fun <T : Disposable, R> usingSync(
     disposable: T,
-    block: (T) -> R,
+    block: T.() -> R,
 ): R {
     contract {
         callsInPlace(block, InvocationKind.EXACTLY_ONCE)
     }
 
-    return disposable.asClosable().use { block(disposable) }
+    return disposable.asClosable()
+        .use { block(disposable) }
 }
 
 inline fun <R> usingSync(
@@ -22,5 +23,5 @@ inline fun <R> usingSync(
         callsInPlace(block, InvocationKind.EXACTLY_ONCE)
     }
 
-    return usingSync(DisposableStack()) { it.block() }
+    return usingSync(DisposableStack(), block)
 }

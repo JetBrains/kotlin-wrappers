@@ -7,7 +7,7 @@ import kotlin.contracts.contract
 @PublishedApi
 internal suspend inline fun <T : AsyncDisposable, R> using(
     disposable: T,
-    block: (T) -> R,
+    block: T.() -> R,
 ): R {
     contract {
         callsInPlace(block, InvocationKind.EXACTLY_ONCE)
@@ -46,5 +46,5 @@ suspend inline fun <R> using(
         callsInPlace(block, InvocationKind.EXACTLY_ONCE)
     }
 
-    return using(AsyncDisposableStack()) { it.block() }
+    return using(AsyncDisposableStack(), block)
 }
