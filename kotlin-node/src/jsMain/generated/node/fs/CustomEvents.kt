@@ -7,10 +7,10 @@ package node.fs
  * but still allows to have auto completion for the normal events.
  */
 external interface CustomEvents {
-    @seskar.js.JsNative
+    @seskar.js.JsNativeGetter
     operator fun <Key : Any /* string & {} | symbol */> get(key: Key): (Function<Unit> /* (...args: any[]) => void */)?
 
-    @seskar.js.JsNative
+    @seskar.js.JsNativeSetter
     operator fun <Key : Any /* string & {} | symbol */> set(
         key: Key,
         value: (Function<Unit> /* (...args: any[]) => void */)?,

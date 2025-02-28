@@ -6,11 +6,11 @@ package node.os
 sealed external interface SignalConstants {
 
 
-    @seskar.js.JsNative
+    @seskar.js.JsNativeGetter
     operator fun <Key : node.process.Signals> get(key: Key): Double?
 
 
-    @seskar.js.JsNative
+    @seskar.js.JsNativeSetter
     operator fun <Key : node.process.Signals> set(key: Key, value: Double?)
 
 

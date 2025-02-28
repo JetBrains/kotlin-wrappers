@@ -131,9 +131,9 @@ sealed external interface CompilerOptions {
     var esModuleInterop: Boolean?
     var useDefineForClassFields: Boolean?
 
-    @seskar.js.JsNative
+    @seskar.js.JsNativeGetter
     operator fun get(key: String): Any? /* CompilerOptionsValue | TsConfigSourceFile | undefined */
 
-    @seskar.js.JsNative
+    @seskar.js.JsNativeSetter
     operator fun set(key: String, value: Any? /* CompilerOptionsValue | TsConfigSourceFile | undefined */)
 }

@@ -10,9 +10,9 @@ sealed external interface WatchOptions {
     var excludeDirectories: js.array.ReadonlyArray<String>?
     var excludeFiles: js.array.ReadonlyArray<String>?
 
-    @seskar.js.JsNative
+    @seskar.js.JsNativeGetter
     operator fun get(key: String): CompilerOptionsValue
 
-    @seskar.js.JsNative
+    @seskar.js.JsNativeSetter
     operator fun set(key: String, value: CompilerOptionsValue)
 }
