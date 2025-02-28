@@ -5,6 +5,6 @@ package remix.run.router
 import js.promise.Promise
 
 sealed external interface DataStrategyFunction {
-    @seskar.js.JsNative
+    @seskar.js.JsNativeInvoke
     operator fun invoke(args: DataStrategyFunctionArgs<*>): Promise<js.objects.ReadonlyRecord<String, DataStrategyResult>>
 }

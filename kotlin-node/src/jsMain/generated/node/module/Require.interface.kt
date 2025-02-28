@@ -9,7 +9,7 @@ sealed external interface Require {
      * Used to import modules, `JSON`, and local files.
      * @since v0.1.13
      */
-    @seskar.js.JsNative
+    @seskar.js.JsNativeInvoke
     operator fun invoke(id: String): Any?
 
     /**

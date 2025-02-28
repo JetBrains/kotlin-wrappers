@@ -10,6 +10,6 @@ import js.promise.Promise
  * @since v17.1.0, v16.14.0
  */
 sealed external interface Settled {
-    @seskar.js.JsNative
+    @seskar.js.JsNativeInvoke
     operator fun invoke(promise: Promise<Any?>): Unit
 }

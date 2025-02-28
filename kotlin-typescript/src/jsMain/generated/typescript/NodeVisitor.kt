@@ -15,7 +15,7 @@ package typescript
  * For the canonical implementation of this type, @see {visitNode}.
  */
 sealed external interface NodeVisitor {
-    @seskar.js.JsNative
+    @seskar.js.JsNativeInvoke
     operator fun <TIn : Node?, TVisited : Node?, TOut : Node> invoke(
         node: TIn,
         visitor: Visitor<TIn & Any, TVisited>,
@@ -23,7 +23,7 @@ sealed external interface NodeVisitor {
         lift: (node: js.array.ReadonlyArray<Node>) -> Node = definedExternally,
     ): Any /* TOut | (TIn & undefined) | (TVisited & undefined) */
 
-    @seskar.js.JsNative
+    @seskar.js.JsNativeInvoke
     operator fun <TIn : Node?, TVisited : Node?> invoke(
         node: TIn,
         visitor: Visitor<TIn & Any, TVisited>,

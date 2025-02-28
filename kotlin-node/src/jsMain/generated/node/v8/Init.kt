@@ -12,6 +12,6 @@ import js.promise.Promise
  * @param parent The promise continued from, if applicable.
  */
 sealed external interface Init {
-    @seskar.js.JsNative
+    @seskar.js.JsNativeInvoke
     operator fun invoke(promise: Promise<Any?>, parent: Promise<Any?>): Unit
 }
