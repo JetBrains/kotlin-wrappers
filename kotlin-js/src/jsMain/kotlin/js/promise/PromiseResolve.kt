@@ -1,14 +1,14 @@
 package js.promise
 
-import seskar.js.JsNative
+import seskar.js.JsNativeInvoke
 
 sealed external interface PromiseResolve<T> {
-    @JsNative
+    @JsNativeInvoke
     operator fun invoke(
         value: T,
     )
 
-    @JsNative
+    @JsNativeInvoke
     operator fun invoke(
         value: PromiseResult<T>,
     )

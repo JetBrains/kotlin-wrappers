@@ -1,31 +1,31 @@
 package js.function
 
-import seskar.js.JsNative
+import seskar.js.JsNativeInvoke
 
 @PublishedApi
 internal interface UnsafeInvoker<out R> {
-    @JsNative
+    @JsNativeInvoke
     fun invoke(): R
 
-    @JsNative
+    @JsNativeInvoke
     fun invoke(
         p1: Any?,
     ): R
 
-    @JsNative
+    @JsNativeInvoke
     fun invoke(
         p1: Any?,
         p2: Any?,
     ): R
 
-    @JsNative
+    @JsNativeInvoke
     fun invoke(
         p1: Any?,
         p2: Any?,
         p3: Any?,
     ): R
 
-    @JsNative
+    @JsNativeInvoke
     fun invoke(
         p1: Any?,
         p2: Any?,
@@ -33,7 +33,7 @@ internal interface UnsafeInvoker<out R> {
         p4: Any?,
     ): R
 
-    @JsNative
+    @JsNativeInvoke
     fun invoke(
         p1: Any?,
         p2: Any?,
@@ -42,7 +42,7 @@ internal interface UnsafeInvoker<out R> {
         p5: Any?,
     ): R
 
-    @JsNative
+    @JsNativeInvoke
     fun invoke(
         p1: Any?,
         p2: Any?,
@@ -52,7 +52,7 @@ internal interface UnsafeInvoker<out R> {
         p6: Any?,
     ): R
 
-    @JsNative
+    @JsNativeInvoke
     fun invoke(
         p1: Any?,
         p2: Any?,

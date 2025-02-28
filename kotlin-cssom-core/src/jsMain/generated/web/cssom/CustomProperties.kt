@@ -2,15 +2,15 @@
 
 package web.cssom
 
-import seskar.js.JsNative
+import seskar.js.JsNativeInvoke
 
 external interface CustomProperties {
-    @JsNative
+    @JsNativeInvoke
     operator fun <T : Any> get(
         name: CustomPropertyName<T>,
     ): T?
 
-    @JsNative
+    @JsNativeInvoke
     operator fun <T : Any> set(
         name: CustomPropertyName<T>,
         value: T?,

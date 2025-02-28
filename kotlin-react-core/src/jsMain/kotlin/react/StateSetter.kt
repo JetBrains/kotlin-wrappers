@@ -1,14 +1,14 @@
 package react
 
-import seskar.js.JsNative
+import seskar.js.JsNativeInvoke
 
 sealed external interface StateSetter<T> {
-    @JsNative
+    @JsNativeInvoke
     operator fun invoke(
         value: T,
     )
 
-    @JsNative
+    @JsNativeInvoke
     operator fun invoke(
         transform: (T) -> T,
     )

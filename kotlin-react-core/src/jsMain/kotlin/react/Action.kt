@@ -5,14 +5,14 @@ import js.promise.Promise
 import js.reflect.unsafeCast
 import react.internal.isolatedPromise
 import seskar.js.JsAsync
-import seskar.js.JsNative
+import seskar.js.JsNativeInvoke
 
 sealed external interface Action<in T> :
     ActionOrString<T> {
     @JsAsync
     suspend operator fun invoke(data: T)
 
-    @JsNative
+    @JsNativeInvoke
     fun invokeAsync(data: T): Promise<Void>?
 }
 
