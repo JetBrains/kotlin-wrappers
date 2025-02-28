@@ -7,6 +7,7 @@
 
 package js.core
 
+import js.reflect.JsExternalInheritorsOnly
 import js.reflect.unsafeCast
 
 @JsExternalInheritorsOnly

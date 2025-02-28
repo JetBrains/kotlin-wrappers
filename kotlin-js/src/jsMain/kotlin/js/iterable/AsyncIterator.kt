@@ -8,6 +8,7 @@
 package js.iterable
 
 import js.disposable.AsyncDisposable
+import js.reflect.JsExternalInheritorsOnly
 
 // TODO: add `@JsName`
 @JsExternalInheritorsOnly

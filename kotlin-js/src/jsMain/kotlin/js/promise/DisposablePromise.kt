@@ -5,6 +5,7 @@
 package js.promise
 
 import js.disposable.Disposable
+import js.reflect.JsExternalInheritorsOnly
 
 @JsExternalInheritorsOnly
 external interface DisposablePromise<out T> :
