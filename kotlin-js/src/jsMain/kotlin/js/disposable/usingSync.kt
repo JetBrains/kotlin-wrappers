@@ -11,6 +11,7 @@ internal inline fun <T : Disposable, R> usingSync(
     contract {
         callsInPlace(block, InvocationKind.EXACTLY_ONCE)
     }
+
     return disposable.asClosable().use { block(disposable) }
 }
 
@@ -20,5 +21,6 @@ inline fun <R> usingSync(
     contract {
         callsInPlace(block, InvocationKind.EXACTLY_ONCE)
     }
+
     return usingSync(DisposableStack()) { it.block() }
 }
