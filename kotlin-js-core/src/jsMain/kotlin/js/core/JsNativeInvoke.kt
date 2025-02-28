@@ -4,4 +4,4 @@
 
 package js.core
 
-actual typealias JsNativeInvoke = nativeSetter
+actual typealias JsNativeInvoke = nativeInvoke
