@@ -3,8 +3,8 @@
 package mui.system
 
 import js.array.ReadonlyArray
-import js.core.JsNativeInvoke
 import js.reflect.unsafeCast
+import seskar.js.JsNative
 
 sealed external interface SpacingOptions
 
@@ -36,19 +36,19 @@ inline fun SpacingOptions(
 typealias SpacingArgument = Int /* web.cssom.Auto */
 
 sealed external interface Spacing {
-    @JsNativeInvoke
+    @JsNative
     operator fun invoke(): web.cssom.Length
 
-    @JsNativeInvoke
+    @JsNative
     operator fun invoke(value: SpacingArgument): web.cssom.Length
 
-    @JsNativeInvoke
+    @JsNative
     operator fun invoke(topBottom: SpacingArgument, rightLeft: SpacingArgument): web.cssom.Length
 
-    @JsNativeInvoke
+    @JsNative
     operator fun invoke(top: SpacingArgument, rightLeft: SpacingArgument, bottom: SpacingArgument): web.cssom.Length
 
-    @JsNativeInvoke
+    @JsNative
     operator fun invoke(
         top: SpacingArgument,
         right: SpacingArgument,

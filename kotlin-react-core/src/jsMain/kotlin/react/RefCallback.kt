@@ -1,15 +1,15 @@
 package react
 
-import js.core.JsNativeInvoke
 import js.reflect.unsafeCast
 import kotlinx.coroutines.CoroutineScope
 import react.internal.createCleanupCallback
 import react.raw.useCallbackRaw
+import seskar.js.JsNative
 
 @JsName("Function")
 external class RefCallback<T : Any> :
     Ref<T> {
-    @JsNativeInvoke
+    @JsNative
     operator fun invoke(value: T): Cleanup?
 }
 

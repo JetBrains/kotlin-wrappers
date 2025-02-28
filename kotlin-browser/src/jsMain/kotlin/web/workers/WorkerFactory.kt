@@ -1,10 +1,10 @@
 package web.workers
 
-import js.core.JsNativeInvoke
 import kotlinx.coroutines.CoroutineScope
+import seskar.js.JsNative
 
 sealed external interface WorkerFactory<T : AbstractWorker> {
-    @JsNativeInvoke
+    @JsNative
     operator fun invoke(): T
 }
 
