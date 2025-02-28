@@ -1,10 +1,10 @@
 package ajv
 
 import js.array.ReadonlyArray
-import seskar.js.JsNative
+import js.core.JsNativeInvoke
 
 external interface ValidateFunction {
-    @JsNative
+    @JsNativeInvoke
     operator fun invoke(data: Any): Boolean
 
     val errors: ReadonlyArray<ErrorObject>?
