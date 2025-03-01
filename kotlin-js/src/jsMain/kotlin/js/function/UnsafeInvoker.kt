@@ -3,7 +3,7 @@ package js.function
 import seskar.js.JsNativeInvoke
 
 @PublishedApi
-internal interface UnsafeInvoker<out R> {
+internal external interface UnsafeInvoker<out R> {
     @JsNativeInvoke
     fun invoke(): R
 
