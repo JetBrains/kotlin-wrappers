@@ -7,6 +7,7 @@
 
 package js.iterable
 
+import js.iterable.internal.iteratorFromAsyncIterable
 import js.symbol.Symbol
 import seskar.js.JsNativeGetter
 

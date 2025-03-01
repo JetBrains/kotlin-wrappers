@@ -1,5 +1,7 @@
-package js.iterable
+package js.iterable.internal
 
+import js.iterable.AsyncIterable
+import js.iterable.SuspendableIterator
 import js.symbol.Symbol
 
 @PublishedApi

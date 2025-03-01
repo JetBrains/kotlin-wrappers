@@ -9,6 +9,7 @@ package js.iterable
 
 import js.array.ReadonlyArray
 import js.disposable.Disposable
+import js.iterable.internal.iteratorFromJsIteratorLike
 
 @JsName("Iterator")
 abstract external class JsIterator<out T> :

@@ -1,4 +1,7 @@
-package js.iterable
+package js.iterable.internal
+
+import js.iterable.IteratorYieldResult
+import js.iterable.JsIteratorLike
 
 @PublishedApi
 internal fun <T> iteratorFromJsIteratorLike(
