@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompilationTask
+
 plugins {
     `kotlin-library-conventions`
 }
@@ -10,4 +12,12 @@ dependencies {
 
     commonTestImplementation(libs.coroutines.test)
     commonTestImplementation(libs.kotlin.test)
+}
+
+tasks.withType<KotlinCompilationTask<*>>().configureEach {
+    compilerOptions {
+        freeCompilerArgs.addAll(
+            "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
+        )
+    }
 }
