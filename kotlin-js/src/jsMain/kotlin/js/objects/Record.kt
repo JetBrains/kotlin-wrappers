@@ -6,8 +6,9 @@ package js.objects
 
 import seskar.js.JsNativeSetter
 
-external interface Record<K : Any, V>
-    : ReadonlyRecord<K, V> {
+external interface Record<K : Any, V> :
+    ReadonlyRecord<K, V> {
+
     @JsNativeSetter
     operator fun set(
         key: K,
