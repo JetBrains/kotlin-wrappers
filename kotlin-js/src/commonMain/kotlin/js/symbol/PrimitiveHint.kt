@@ -1,3 +1,7 @@
+@file:Suppress(
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package js.symbol
 
 import seskar.js.JsValue
