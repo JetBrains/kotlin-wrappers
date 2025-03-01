@@ -5,6 +5,7 @@
 package js.disposable
 
 import js.symbol.Symbol
+import kotlin.js.definedExternally
 import seskar.js.JsNativeGetter
 
 external interface Disposable {
