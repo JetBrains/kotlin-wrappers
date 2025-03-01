@@ -1,9 +1,24 @@
 package js.coroutines
 
 import js.promise.Promise
-import js.reflect.unsafeCast
 import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.asPromise as asLegacyPromise
 
-inline fun <T> Deferred<T>.asPromise(): Promise<T> =
-    unsafeCast(asLegacyPromise())
+/**
+ * Converts this deferred value to the instance of [Promise].
+ *
+ * [Original](original - https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/js/src/Promise.kt)
+ */
+fun <T> Deferred<T>.asPromise(): Promise<T> {
+    val promise = Promise<T> { resolve, reject ->
+        invokeOnCompletion {
+            val e = getCompletionExceptionOrNull()
+            if (e != null) {
+                reject(e)
+            } else {
+                resolve(getCompleted())
+            }
+        }
+    }
+    promise.asDynamic().deferred = this
+    return promise
+}
