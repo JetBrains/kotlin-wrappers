@@ -77,6 +77,8 @@ tasks.withType<KotlinCompilationTask<*>>().configureEach {
             "-Xexpect-actual-classes",
             "-Xdont-warn-on-error-suppression",
 
+            "-Xsuppress-warning=NOTHING_TO_INLINE",
+
             "-opt-in=kotlin.ExperimentalStdlibApi",
             "-opt-in=kotlin.ExperimentalUnsignedTypes",
             "-opt-in=kotlin.contracts.ExperimentalContracts",
@@ -91,7 +93,6 @@ tasks.withType<Kotlin2JsCompile>().configureEach {
 
         freeCompilerArgs.addAll(
             "-Xir-generate-inline-anonymous-functions",
-            "-Xsuppress-warning=NOTHING_TO_INLINE",
         )
     }
 }
