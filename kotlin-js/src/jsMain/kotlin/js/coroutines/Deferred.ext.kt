@@ -11,9 +11,9 @@ import kotlinx.coroutines.Deferred
 fun <T> Deferred<T>.asPromise(): Promise<T> {
     val promise = Promise<T> { resolve, reject ->
         invokeOnCompletion {
-            val e = getCompletionExceptionOrNull()
-            if (e != null) {
-                reject(e)
+            val exception = getCompletionExceptionOrNull()
+            if (exception != null) {
+                reject(exception)
             } else {
                 resolve(getCompleted())
             }
