@@ -1,6 +1,6 @@
 package js.coroutines
 
-import js.promise.DisposablePromise
+import js.promise.Promise
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.async
@@ -11,10 +11,5 @@ fun <T> CoroutineScope.promise(
     context: CoroutineContext = EmptyCoroutineContext,
     start: CoroutineStart = CoroutineStart.DEFAULT,
     block: suspend CoroutineScope.() -> T,
-): DisposablePromise<T> {
-    val deferred = async(context, start, block)
-    return DisposablePromise(
-        promise = deferred.asPromise(),
-        dispose = { deferred.cancel(JsCancellationError()) },
-    )
-}
+): Promise<T> =
+    async(context, start, block).asPromise()
