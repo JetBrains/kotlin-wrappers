@@ -1,6 +1,11 @@
+@file:Suppress(
+    "WRONG_JS_INTEROP_TYPE",
+)
+
 package js.buffer
 
 import js.transferable.Transferable
+import kotlin.js.definedExternally
 
 external class ArrayBuffer(
     /**

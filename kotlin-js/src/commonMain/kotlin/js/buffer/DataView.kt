@@ -1,8 +1,9 @@
 package js.buffer
 
 import js.core.Float16
+import kotlin.js.definedExternally
 
-external class DataView<B: ArrayBufferLike>(
+external class DataView<B : ArrayBufferLike>(
     override val buffer: B,
     override val byteOffset: Int = definedExternally,
     override val byteLength: Int = definedExternally,
