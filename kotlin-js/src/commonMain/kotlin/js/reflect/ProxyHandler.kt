@@ -1,3 +1,8 @@
+@file:Suppress(
+    "WRONG_JS_INTEROP_TYPE",
+    "UPPER_BOUND_VIOLATED",
+)
+
 package js.reflect
 
 import js.array.ReadonlyArray

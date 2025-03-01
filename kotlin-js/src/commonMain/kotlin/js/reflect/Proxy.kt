@@ -1,3 +1,7 @@
+@file:Suppress(
+    "WRONG_JS_INTEROP_TYPE",
+)
+
 package js.reflect
 
 external class Proxy<T : Any>(
