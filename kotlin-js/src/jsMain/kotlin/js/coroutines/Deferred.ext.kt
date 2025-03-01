@@ -19,6 +19,6 @@ fun <T> Deferred<T>.asPromise(): Promise<T> {
             }
         }
     }
-    promise.asDynamic().deferred = this
+    promise.deferred = this
     return promise
 }

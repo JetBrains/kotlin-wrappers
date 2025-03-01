@@ -4,6 +4,7 @@ import js.array.ReadonlyArray
 import js.core.Void
 import js.errors.JsError
 import js.iterable.JsIterable
+import kotlinx.coroutines.Deferred
 
 open external class Promise<out T>(
     executor: (resolve: PromiseResolve<T>) -> Unit,
@@ -15,6 +16,9 @@ open external class Promise<out T>(
             reject: PromiseReject,
         ) -> Unit,
     )
+
+    // TODO: use symbol instead?
+    internal var deferred: Deferred<@UnsafeVariance T>?
 
     final override fun <R> then(
         onFulfilled: (T) -> R,
