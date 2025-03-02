@@ -1,11 +1,8 @@
-@file:Suppress(
-    "UPPER_BOUND_VIOLATED",
-)
-
 package js.regexp
 
 import js.array.ArrayLike
 import js.array.ReadonlyArray
+import js.core.JsString
 import js.objects.ReadonlyRecord
 import js.reflect.JsExternalInheritorsOnly
 import seskar.js.JsAlias
@@ -17,5 +14,5 @@ external interface RegExpIndicesArray :
     val groups: ReadonlyRecord<String, RegExpIndex>?
 
     @JsAlias(THIS)
-    fun asArray(): ReadonlyArray<String>
+    fun asArray(): ReadonlyArray<JsString>
 }
