@@ -1,8 +1,15 @@
+@file:Suppress(
+    "WRONG_JS_INTEROP_TYPE",
+    "UPPER_BOUND_VIOLATED",
+)
+
 package js.collections
 
 import js.array.JsTuple2
 import js.array.ReadonlyArray
 import js.iterable.JsIterator
+import kotlin.js.definedExternally
+import kotlin.js.JsName
 
 @JsName("Map")
 open external class JsMap<K, V>(

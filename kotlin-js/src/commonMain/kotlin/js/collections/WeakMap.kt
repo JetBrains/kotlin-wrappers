@@ -1,7 +1,13 @@
+@file:Suppress(
+    "WRONG_JS_INTEROP_TYPE",
+    "UPPER_BOUND_VIOLATED",
+)
+
 package js.collections
 
 import js.array.JsTuple2
 import js.array.ReadonlyArray
+import kotlin.js.definedExternally
 
 open external class WeakMap<in K : Any, V>(
     entries: ReadonlyArray<JsTuple2<K, V>>? = definedExternally,
