@@ -847,11 +847,6 @@ private constructor() :
     var fontSizeAdjust: String
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-stretch)
-     */
-    var fontStretch: String
-
-    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-style)
      */
     var fontStyle: String
@@ -1855,8 +1850,20 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-anchor)
      */
     var textAnchor: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-box)
+     */
     var textBox: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-box-edge)
+     */
     var textBoxEdge: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-box-trim)
+     */
     var textBoxTrim: String
 
     /**
