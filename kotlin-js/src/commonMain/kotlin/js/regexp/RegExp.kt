@@ -1,5 +1,7 @@
 package js.regexp
 
+import kotlin.js.definedExternally
+
 /**
  * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
  */
