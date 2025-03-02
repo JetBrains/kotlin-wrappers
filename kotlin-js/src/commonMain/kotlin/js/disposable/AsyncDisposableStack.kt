@@ -1,3 +1,8 @@
+@file:Suppress(
+    "WRONG_JS_INTEROP_TYPE",
+    "WRONG_EXTERNAL_DECLARATION",
+)
+
 package js.disposable
 
 import js.core.Void
