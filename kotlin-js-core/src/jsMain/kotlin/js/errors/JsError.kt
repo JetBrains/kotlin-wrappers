@@ -2,5 +2,5 @@ package js.errors
 
 actual typealias JsError = Throwable
 
-actual fun JsError.toThrowable(): Throwable =
+actual inline fun JsError.toThrowable(): Throwable =
     this
