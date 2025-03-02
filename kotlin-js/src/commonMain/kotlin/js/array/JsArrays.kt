@@ -1,4 +1,6 @@
 @file:Suppress(
+    "WRONG_JS_INTEROP_TYPE",
+    "UPPER_BOUND_VIOLATED",
     "INVISIBLE_MEMBER",
     "INVISIBLE_REFERENCE",
 )
@@ -11,6 +13,7 @@ import js.iterable.JsIterator
 import js.promise.Promise
 import js.promise.PromiseResult
 import kotlin.internal.LowPriorityInOverloadResolution
+import kotlin.js.JsName
 
 @JsName("Array")
 external object JsArrays {
