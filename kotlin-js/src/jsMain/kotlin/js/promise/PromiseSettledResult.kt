@@ -1,5 +1,7 @@
 package js.promise
 
+import js.errors.toThrowable
+
 sealed external interface PromiseSettledResult<T>
 
 fun <T> PromiseSettledResult<T>.toResult(): Result<T> =
@@ -8,5 +10,5 @@ fun <T> PromiseSettledResult<T>.toResult(): Result<T> =
         -> Result.success(value)
 
         is PromiseRejectedResult,
-        -> Result.failure(reason)
+            -> Result.failure(reason.toThrowable())
     }
