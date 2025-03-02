@@ -1,5 +1,10 @@
+@file:Suppress(
+    "WRONG_JS_INTEROP_TYPE",
+)
+
 package js.array
 
+import kotlin.js.JsName
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
 
@@ -8,7 +13,7 @@ sealed external interface JsTuple {
     val size: Int
 
     @JsAlias(THIS)
-    fun asArray(): ReadonlyArray<Any?>
+    fun asArray(): ReadonlyArray<*>
 }
 
 sealed external interface JsTuple1<out A> :
