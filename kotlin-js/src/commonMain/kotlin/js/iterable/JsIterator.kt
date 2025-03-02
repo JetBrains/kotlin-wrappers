@@ -1,4 +1,6 @@
 @file:Suppress(
+    "WRONG_JS_INTEROP_TYPE",
+    "UPPER_BOUND_VIOLATED",
     "WRONG_BODY_OF_EXTERNAL_DECLARATION",
     "INLINE_EXTERNAL_DECLARATION",
     "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
@@ -10,6 +12,7 @@ package js.iterable
 import js.array.ReadonlyArray
 import js.disposable.Disposable
 import js.iterable.internal.iteratorFromJsIteratorLike
+import kotlin.js.JsName
 
 @JsName("Iterator")
 abstract external class JsIterator<out T> :
