@@ -1,6 +1,7 @@
 package js.promise
 
 import js.errors.JsError
+import kotlin.js.definedExternally
 import seskar.js.JsNativeInvoke
 
 sealed external interface PromiseReject {
