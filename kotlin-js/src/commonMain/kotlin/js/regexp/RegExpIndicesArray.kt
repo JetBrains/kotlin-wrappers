@@ -1,3 +1,7 @@
+@file:Suppress(
+    "UPPER_BOUND_VIOLATED",
+)
+
 package js.regexp
 
 import js.array.ArrayLike
