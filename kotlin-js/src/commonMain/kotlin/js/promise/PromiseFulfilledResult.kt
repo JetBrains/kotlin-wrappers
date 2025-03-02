@@ -1,3 +1,7 @@
+@file:Suppress(
+    "WRONG_JS_INTEROP_TYPE",
+)
+
 package js.promise
 
 import seskar.js.JsTypeGuard
