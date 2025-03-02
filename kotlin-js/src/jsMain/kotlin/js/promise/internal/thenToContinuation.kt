@@ -1,5 +1,6 @@
 package js.promise.internal
 
+import js.errors.toThrowable
 import js.promise.PromiseLike
 import kotlin.coroutines.Continuation
 import kotlin.coroutines.resume
@@ -11,7 +12,7 @@ internal fun <T> thenToContinuation(
     continuation: Continuation<T>,
 ) {
     promise.then(
-        onFulfilled = continuation::resume,
-        onRejected = continuation::resumeWithException,
+        onFulfilled = { continuation.resume(it) },
+        onRejected = { continuation.resumeWithException(it.toThrowable()) },
     )
 }
