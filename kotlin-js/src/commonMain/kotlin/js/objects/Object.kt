@@ -1,11 +1,19 @@
+@file:Suppress(
+    "WRONG_JS_INTEROP_TYPE",
+    "UPPER_BOUND_VIOLATED",
+)
+
 package js.objects
 
 import js.array.JsTuple2
 import js.array.ReadonlyArray
 import js.iterable.JsIterable
 import js.symbol.Symbol
+import kotlin.js.definedExternally
 
-external class Object internal constructor() {
+external class Object
+private constructor() {
+
     fun hasOwnProperty(v: String): Boolean
     fun isPrototypeOf(v: Any): Boolean
     fun propertyIsEnumerable(v: String): Boolean
