@@ -1,9 +1,15 @@
+@file:Suppress(
+    "WRONG_JS_INTEROP_TYPE",
+    "UPPER_BOUND_VIOLATED",
+)
+
 package js.promise
 
 import js.array.ReadonlyArray
 import js.core.Void
 import js.errors.JsError
 import js.iterable.JsIterable
+import kotlin.js.JsName
 import kotlinx.coroutines.Deferred
 
 open external class Promise<out T>(

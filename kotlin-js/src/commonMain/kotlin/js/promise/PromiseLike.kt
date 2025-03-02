@@ -1,4 +1,7 @@
 @file:Suppress(
+    "WRONG_JS_INTEROP_TYPE",
+    "WRONG_EXTERNAL_DECLARATION",
+
     "WRONG_BODY_OF_EXTERNAL_DECLARATION",
     "INLINE_EXTERNAL_DECLARATION",
     "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
@@ -10,6 +13,7 @@ package js.promise
 import js.errors.JsError
 import js.promise.internal.awaitPromiseLike
 import js.promise.internal.thenToContinuation
+import kotlin.js.JsName
 import kotlin.coroutines.Continuation
 
 external interface PromiseLike<out T> :
