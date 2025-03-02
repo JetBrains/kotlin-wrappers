@@ -6,7 +6,7 @@ import kotlinx.coroutines.Deferred
 /**
  * Converts this deferred value to the instance of [Promise].
  *
- * [Original](original - https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/js/src/Promise.kt)
+ * [Original](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/js/src/Promise.kt)
  */
 fun <T> Deferred<T>.asPromise(): Promise<T> {
     val promise = Promise<T> { resolve, reject ->

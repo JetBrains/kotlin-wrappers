@@ -8,7 +8,7 @@ import kotlinx.coroutines.async
 /**
  * Converts this promise value to the instance of [Deferred].
  *
- * [Original](original - https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/js/src/Promise.kt)
+ * [Original](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/js/src/Promise.kt)
  */
 fun <T> Promise<T>.asDeferred(): Deferred<T> {
     return deferred
