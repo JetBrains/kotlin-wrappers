@@ -1,6 +1,7 @@
 package js.function
 
 import js.array.*
+import js.function.internal.UnsafeInvoker
 import js.reflect.unsafeCast
 
 inline operator fun <R> JsFunction<JsTuple, R>.invoke(): R =

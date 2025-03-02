@@ -1,4 +1,4 @@
-package js.function
+package js.function.internal
 
 import seskar.js.JsNativeInvoke
 
