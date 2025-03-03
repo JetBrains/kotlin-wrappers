@@ -18,7 +18,7 @@ internal val POW = JsFunction<BigInt, BigInt, BigInt>(
     "return base ** exponent"
 )
 
-external class BigInt
+actual external class BigInt
 private constructor() :
     Comparable<BigInt> {
 
@@ -52,7 +52,7 @@ private constructor() :
     inline fun pow(x: BigInt): BigInt =
         POW(this, x)
 
-    override fun compareTo(other: BigInt): Int
+    actual override fun compareTo(other: BigInt): Int
 
     /**
      * Returns a string representation of an object.
