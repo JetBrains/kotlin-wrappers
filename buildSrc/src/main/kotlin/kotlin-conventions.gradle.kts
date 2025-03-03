@@ -15,10 +15,6 @@ plugins {
 
 kotlin {
     js {
-        val projectDirectory = layout.projectDirectory.asFile
-        val rootProjectDirectory = rootProject.layout.projectDirectory.asFile
-        val projectPath = projectDirectory.relativeTo(rootProjectDirectory).path
-
         moduleName = project.path.replace(SEPARATOR, "-")
 
         when (project.jsPlatform) {
