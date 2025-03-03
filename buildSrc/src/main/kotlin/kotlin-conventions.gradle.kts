@@ -2,6 +2,7 @@
     ExperimentalWasmDsl::class,
 )
 
+import org.gradle.util.Path.SEPARATOR
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.tasks.Kotlin2JsCompile
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompilationTask
@@ -18,7 +19,7 @@ kotlin {
         val rootProjectDirectory = rootProject.layout.projectDirectory.asFile
         val projectPath = projectDirectory.relativeTo(rootProjectDirectory).path
 
-        moduleName = projectPath.replace(File.separator, "-")
+        moduleName = project.path.replace(SEPARATOR, "-")
 
         when (project.jsPlatform) {
             JsPlatform.WEB -> {
