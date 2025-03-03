@@ -1,3 +1,8 @@
+@file:Suppress(
+    "WRONG_JS_INTEROP_TYPE",
+    "UPPER_BOUND_VIOLATED",
+)
+
 package js.typedarrays
 
 import js.array.JsTuple2
@@ -8,6 +13,7 @@ import js.buffer.ArrayBufferLike
 import js.buffer.ArrayBufferView
 import js.collections.ListLike
 import js.iterable.JsIterator
+import kotlin.js.definedExternally
 import seskar.js.JsSpecialName
 
 // language=javascript

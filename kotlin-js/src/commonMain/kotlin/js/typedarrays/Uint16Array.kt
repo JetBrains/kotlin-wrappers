@@ -4,6 +4,7 @@ import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferLike
 import js.iterable.JsIterable
+import kotlin.js.definedExternally
 
 open external class Uint16Array<B : ArrayBufferLike>(
     override val buffer: B,
@@ -13,6 +14,8 @@ open external class Uint16Array<B : ArrayBufferLike>(
     constructor()
     constructor(length: Int)
     constructor(elements: JsIterable<Int /* Short */>)
+
+    @Suppress("UPPER_BOUND_VIOLATED")
     constructor(elements: ReadonlyArray<Int /* Short */>)
 
     companion object : TypedArrayCompanion<Uint16Array<ArrayBuffer>, Int /* Short */>

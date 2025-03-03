@@ -5,6 +5,7 @@ import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferLike
 import js.core.Float16
 import js.iterable.JsIterable
+import kotlin.js.definedExternally
 
 open external class Float16Array<B : ArrayBufferLike>(
     override val buffer: B,
@@ -14,6 +15,8 @@ open external class Float16Array<B : ArrayBufferLike>(
     constructor()
     constructor(length: Int)
     constructor(elements: JsIterable<Float16>)
+
+    @Suppress("UPPER_BOUND_VIOLATED")
     constructor(elements: ReadonlyArray<Float16>)
 
     companion object : TypedArrayCompanion<Float16Array<ArrayBuffer>, Float16>
