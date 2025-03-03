@@ -14,7 +14,11 @@ plugins {
 
 kotlin {
     js {
-        moduleName = project.jsModuleName ?: project.name
+        val projectDirectory = layout.projectDirectory.asFile
+        val rootProjectDirectory = rootProject.layout.projectDirectory.asFile
+        val projectPath = projectDirectory.relativeTo(rootProjectDirectory).path
+
+        moduleName = projectPath.replace(File.separator, "-")
 
         when (project.jsPlatform) {
             JsPlatform.WEB -> {
