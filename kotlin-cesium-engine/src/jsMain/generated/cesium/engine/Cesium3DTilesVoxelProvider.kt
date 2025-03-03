@@ -14,25 +14,28 @@ import seskar.js.JsAsync
  *
  * Implements the [VoxelProvider] interface.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html">Online Documentation</a>
+ *
+ * @constructor
+ * @param [options] An object describing initialization options
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html">Online Documentation</a>
  */
 external class Cesium3DTilesVoxelProvider(
-    options: Any,
+    options: ConstructorOptions,
 ) {
     /**
-     * A transform from local space to global space. If undefined, the identity matrix will be used instead.
+     * A transform from local space to global space.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#globalTransform">Online Documentation</a>
      */
-    val globalTransform: Matrix4?
+    val globalTransform: Matrix4
 
     /**
-     * A transform from shape space to local space. If undefined, the identity matrix will be used instead.
+     * A transform from shape space to local space.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#shapeTransform">Online Documentation</a>
      */
-    val shapeTransform: Matrix4?
+    val shapeTransform: Matrix4
 
     /**
      * Gets the [VoxelShapeType]
-     * This should not be called before [VoxelProvider.ready] returns true.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#shape">Online Documentation</a>
      */
     val shape: VoxelShapeType
@@ -40,7 +43,6 @@ external class Cesium3DTilesVoxelProvider(
     /**
      * Gets the minimum bounds.
      * If undefined, the shape's default minimum bounds will be used instead.
-     * This should not be called before [VoxelProvider.ready] returns true.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#minBounds">Online Documentation</a>
      */
     val minBounds: Cartesian3?
@@ -48,85 +50,94 @@ external class Cesium3DTilesVoxelProvider(
     /**
      * Gets the maximum bounds.
      * If undefined, the shape's default maximum bounds will be used instead.
-     * This should not be called before [VoxelProvider.ready] returns true.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#maxBounds">Online Documentation</a>
      */
     val maxBounds: Cartesian3?
 
     /**
      * Gets the number of voxels per dimension of a tile. This is the same for all tiles in the dataset.
-     * This should not be called before [VoxelProvider.ready] returns true.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#dimensions">Online Documentation</a>
      */
     val dimensions: Cartesian3
 
     /**
      * Gets the number of padding voxels before the tile. This improves rendering quality when sampling the edge of a tile, but it increases memory usage.
-     * This should not be called before [VoxelProvider.ready] returns true.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#paddingBefore">Online Documentation</a>
      */
-    val paddingBefore: Cartesian3?
+    val paddingBefore: Cartesian3
 
     /**
      * Gets the number of padding voxels after the tile. This improves rendering quality when sampling the edge of a tile, but it increases memory usage.
-     * This should not be called before [VoxelProvider.ready] returns true.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#paddingAfter">Online Documentation</a>
      */
-    val paddingAfter: Cartesian3?
+    val paddingAfter: Cartesian3
+
+    /**
+     * The metadata class for this tileset.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#className">Online Documentation</a>
+     */
+    val className: String
 
     /**
      * Gets the metadata names.
-     * This should not be called before [VoxelProvider.ready] returns true.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#names">Online Documentation</a>
      */
     val names: ReadonlyArray<String>
 
     /**
      * Gets the metadata types.
-     * This should not be called before [VoxelProvider.ready] returns true.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#types">Online Documentation</a>
      */
     val types: ReadonlyArray<MetadataType>
 
     /**
      * Gets the metadata component types.
-     * This should not be called before [VoxelProvider.ready] returns true.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#componentTypes">Online Documentation</a>
      */
     val componentTypes: ReadonlyArray<MetadataComponentType>
 
     /**
+     * Gets the ordering of the metadata in the buffers.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#metadataOrder">Online Documentation</a>
+     */
+    val metadataOrder: VoxelMetadataOrder
+
+    /**
      * Gets the metadata minimum values.
-     * This should not be called before [VoxelProvider.ready] returns true.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#minimumValues">Online Documentation</a>
      */
     val minimumValues: ReadonlyArray<ReadonlyArray<Double>>?
 
     /**
      * Gets the metadata maximum values.
-     * This should not be called before [VoxelProvider.ready] returns true.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#maximumValues">Online Documentation</a>
      */
     val maximumValues: ReadonlyArray<ReadonlyArray<Double>>?
 
     /**
-     * The maximum number of tiles that exist for this provider. This value is used as a hint to the voxel renderer to allocate an appropriate amount of GPU memory. If this value is not known it can be undefined.
-     * This should not be called before [VoxelProvider.ready] returns true.
+     * The maximum number of tiles that exist for this provider.
+     * This value is used as a hint to the voxel renderer to allocate an appropriate amount of GPU memory.
+     * If this value is not known it can be undefined.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#maximumTileCount">Online Documentation</a>
      */
     val maximumTileCount: Double?
 
     /**
-     * Requests the data for a given tile. The data is a flattened 3D array ordered by X, then Y, then Z.
-     * This function should not be called before [VoxelProvider.ready] returns true.
-     * @return A promise to an array of typed arrays containing the requested voxel data or undefined if there was a problem loading the data.
+     * The number of levels of detail containing available tiles in the tileset.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#availableLevels">Online Documentation</a>
+     */
+    val availableLevels: Double?
+
+    /**
+     * Requests the data for a given tile.
+     * @return A promise resolving to a VoxelContent containing the data for the tile, or undefined if the request could not be scheduled this frame.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#requestData">Online Documentation</a>
      */
     @JsAsync(optional = true)
-    suspend fun requestData(options: RequestDataOptions? = definedExternally): ReadonlyArray<ReadonlyArray<Any>>?
+    suspend fun requestData(options: RequestDataOptions? = definedExternally): VoxelContent?
 
     @JsName("requestData")
-    fun requestDataAsync(options: RequestDataOptions? = definedExternally): Promise<ReadonlyArray<ReadonlyArray<Any>>>?
+    fun requestDataAsync(options: RequestDataOptions? = definedExternally): Promise<VoxelContent>?
 
     /**
      * @property [tileLevel] The tile's level.
@@ -146,9 +157,65 @@ external class Cesium3DTilesVoxelProvider(
         var tileZ: Double?
     }
 
+    /**
+     * Initialization options for the Cesium3DTilesVoxelProvider constructor
+     * @property [className] The class in the tileset schema describing voxel metadata.
+     * @property [names] The metadata names.
+     * @property [types] The metadata types.
+     * @property [componentTypes] The metadata component types.
+     * @property [shape] The [VoxelShapeType].
+     * @property [dimensions] The number of voxels per dimension of a tile. This is the same for all tiles in the dataset.
+     * @property [paddingBefore] The number of padding voxels before the tile. This improves rendering quality when sampling the edge of a tile, but it increases memory usage.
+     *   Default value - [Cartesian3.ZERO]
+     * @property [paddingAfter] The number of padding voxels after the tile. This improves rendering quality when sampling the edge of a tile, but it increases memory usage.
+     *   Default value - [Cartesian3.ZERO]
+     * @property [globalTransform] A transform from local space to global space.
+     *   Default value - [Matrix4.IDENTITY]
+     * @property [shapeTransform] A transform from shape space to local space.
+     *   Default value - [Matrix4.IDENTITY]
+     * @property [minBounds] The minimum bounds.
+     * @property [maxBounds] The maximum bounds.
+     * @property [minimumValues] The metadata minimum values.
+     * @property [maximumValues] The metadata maximum values.
+     * @property [maximumTileCount] The maximum number of tiles that exist for this provider. This value is used as a hint to the voxel renderer to allocate an appropriate amount of GPU memory. If this value is not known it can be undefined.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#.ConstructorOptions">Online Documentation</a>
+     */
+    @JsPlainObject
+    interface ConstructorOptions {
+        var className: String
+        var names: ReadonlyArray<String>
+        var types: ReadonlyArray<MetadataType>
+        var componentTypes: ReadonlyArray<MetadataComponentType>
+        var shape: VoxelShapeType
+        var dimensions: Cartesian3
+        var paddingBefore: Cartesian3?
+        var paddingAfter: Cartesian3?
+        var globalTransform: Matrix4?
+        var shapeTransform: Matrix4?
+        var minBounds: Cartesian3?
+        var maxBounds: Cartesian3?
+        var minimumValues: ReadonlyArray<ReadonlyArray<Double>>?
+        var maximumValues: ReadonlyArray<ReadonlyArray<Double>>?
+        var maximumTileCount: Double?
+    }
+
     companion object {
         /**
-         * Creates a [VoxelProvider] that fetches voxel data from a 3D Tiles tileset.
+         * Creates a [Cesium3DTilesVoxelProvider] that fetches voxel data from a 3D Tiles tileset.
+         * ```
+         * try {
+         *   const voxelProvider = await Cesium3DTilesVoxelProvider.fromUrl(
+         *     "http://localhost:8002/tilesets/voxel/tileset.json"
+         *   );
+         *   const voxelPrimitive = new VoxelPrimitive({
+         *     provider: voxelProvider,
+         *     customShader: customShader,
+         *   });
+         *   scene.primitives.add(voxelPrimitive);
+         * } catch (error) {
+         *   console.error(`Error creating voxel primitive: ${error}`);
+         * }
+         * ```
          * @param [url] The URL to a tileset JSON file
          * @return The created provider
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#.fromUrl">Online Documentation</a>

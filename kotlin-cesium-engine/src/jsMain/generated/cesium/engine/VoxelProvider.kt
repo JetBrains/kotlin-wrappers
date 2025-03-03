@@ -16,20 +16,19 @@ import seskar.js.JsAsync
  */
 abstract external class VoxelProvider {
     /**
-     * A transform from local space to global space. If undefined, the identity matrix will be used instead.
+     * A transform from local space to global space.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelProvider.html#globalTransform">Online Documentation</a>
      */
-    abstract val globalTransform: Matrix4?
+    abstract val globalTransform: Matrix4
 
     /**
-     * A transform from shape space to local space. If undefined, the identity matrix will be used instead.
+     * A transform from shape space to local space.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelProvider.html#shapeTransform">Online Documentation</a>
      */
-    abstract val shapeTransform: Matrix4?
+    abstract val shapeTransform: Matrix4
 
     /**
      * Gets the [VoxelShapeType]
-     * This should not be called before [VoxelProvider.ready] returns true.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelProvider.html#shape">Online Documentation</a>
      */
     abstract val shape: VoxelShapeType
@@ -37,7 +36,6 @@ abstract external class VoxelProvider {
     /**
      * Gets the minimum bounds.
      * If undefined, the shape's default minimum bounds will be used instead.
-     * This should not be called before [VoxelProvider.ready] returns true.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelProvider.html#minBounds">Online Documentation</a>
      */
     abstract val minBounds: Cartesian3?
@@ -45,85 +43,82 @@ abstract external class VoxelProvider {
     /**
      * Gets the maximum bounds.
      * If undefined, the shape's default maximum bounds will be used instead.
-     * This should not be called before [VoxelProvider.ready] returns true.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelProvider.html#maxBounds">Online Documentation</a>
      */
     abstract val maxBounds: Cartesian3?
 
     /**
      * Gets the number of voxels per dimension of a tile. This is the same for all tiles in the dataset.
-     * This should not be called before [VoxelProvider.ready] returns true.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelProvider.html#dimensions">Online Documentation</a>
      */
     abstract val dimensions: Cartesian3
 
     /**
      * Gets the number of padding voxels before the tile. This improves rendering quality when sampling the edge of a tile, but it increases memory usage.
-     * This should not be called before [VoxelProvider.ready] returns true.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelProvider.html#paddingBefore">Online Documentation</a>
      */
-    abstract val paddingBefore: Cartesian3?
+    abstract val paddingBefore: Cartesian3
 
     /**
      * Gets the number of padding voxels after the tile. This improves rendering quality when sampling the edge of a tile, but it increases memory usage.
-     * This should not be called before [VoxelProvider.ready] returns true.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelProvider.html#paddingAfter">Online Documentation</a>
      */
-    abstract val paddingAfter: Cartesian3?
+    abstract val paddingAfter: Cartesian3
 
     /**
      * Gets the metadata names.
-     * This should not be called before [VoxelProvider.ready] returns true.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelProvider.html#names">Online Documentation</a>
      */
     abstract val names: ReadonlyArray<String>
 
     /**
      * Gets the metadata types.
-     * This should not be called before [VoxelProvider.ready] returns true.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelProvider.html#types">Online Documentation</a>
      */
     abstract val types: ReadonlyArray<MetadataType>
 
     /**
      * Gets the metadata component types.
-     * This should not be called before [VoxelProvider.ready] returns true.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelProvider.html#componentTypes">Online Documentation</a>
      */
     abstract val componentTypes: ReadonlyArray<MetadataComponentType>
 
     /**
+     * Gets the ordering of the metadata in the buffers.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelProvider.html#metadataOrder">Online Documentation</a>
+     */
+    abstract val metadataOrder: VoxelMetadataOrder
+
+    /**
      * Gets the metadata minimum values.
-     * This should not be called before [VoxelProvider.ready] returns true.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelProvider.html#minimumValues">Online Documentation</a>
      */
     abstract val minimumValues: ReadonlyArray<ReadonlyArray<Double>>?
 
     /**
      * Gets the metadata maximum values.
-     * This should not be called before [VoxelProvider.ready] returns true.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelProvider.html#maximumValues">Online Documentation</a>
      */
     abstract val maximumValues: ReadonlyArray<ReadonlyArray<Double>>?
 
     /**
-     * The maximum number of tiles that exist for this provider. This value is used as a hint to the voxel renderer to allocate an appropriate amount of GPU memory. If this value is not known it can be undefined.
-     * This should not be called before [VoxelProvider.ready] returns true.
+     * The maximum number of tiles that exist for this provider.
+     * This value is used as a hint to the voxel renderer to allocate an appropriate amount of GPU memory.
+     * If this value is not known it can be undefined.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelProvider.html#maximumTileCount">Online Documentation</a>
      */
     abstract val maximumTileCount: Double?
 
     /**
-     * Requests the data for a given tile. The data is a flattened 3D array ordered by X, then Y, then Z.
-     * This function should not be called before [VoxelProvider.ready] returns true.
-     * @return A promise to an array of typed arrays containing the requested voxel data or undefined if there was a problem loading the data.
+     * Requests the data for a given tile.
+     * @return A promise resolving to a VoxelContent containing the data for the tile, or undefined if the request could not be scheduled this frame.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelProvider.html#requestData">Online Documentation</a>
      */
     @JsAsync(optional = true)
-    suspend fun requestData(options: RequestDataOptions? = definedExternally): ReadonlyArray<ReadonlyArray<Any>>?
+    suspend fun requestData(options: RequestDataOptions? = definedExternally): VoxelContent?
 
     @JsName("requestData")
-    abstract fun requestDataAsync(options: RequestDataOptions? = definedExternally): Promise<ReadonlyArray<ReadonlyArray<Any>>>?
+    abstract fun requestDataAsync(options: RequestDataOptions? = definedExternally): Promise<VoxelContent>?
 
     /**
      * @property [tileLevel] The tile's level.

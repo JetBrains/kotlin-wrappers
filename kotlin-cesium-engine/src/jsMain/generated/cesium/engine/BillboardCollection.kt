@@ -118,7 +118,7 @@ external class BillboardCollection(
      * in the collection.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BillboardCollection.html#length">Online Documentation</a>
      */
-    var length: Int
+    val length: Int
 
     /**
      * Creates and adds a billboard with the specified initial properties to the collection.

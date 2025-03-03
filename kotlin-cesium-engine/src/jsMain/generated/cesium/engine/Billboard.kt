@@ -223,13 +223,13 @@ private constructor() {
      * Gets or sets a width for the billboard. If undefined, the image width will be used.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Billboard.html#width">Online Documentation</a>
      */
-    var width: Double
+    var width: Double?
 
     /**
      * Gets or sets a height for the billboard. If undefined, the image height will be used.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Billboard.html#height">Online Documentation</a>
      */
-    var height: Double
+    var height: Double?
 
     /**
      * Gets or sets if the billboard size is in meters or pixels. `true` to size the billboard in meters;

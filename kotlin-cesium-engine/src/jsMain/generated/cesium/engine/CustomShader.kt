@@ -141,4 +141,28 @@ external class CustomShader(
         uniformName: String,
         value: Any, /* boolean | number | Cartesian2 | Cartesian3 | Cartesian4 | Matrix2 | Matrix3 | Matrix4 | string | Resource | TextureUniform */
     )
+
+    /**
+     * Returns true if this object was destroyed; otherwise, false.
+     *
+     * If this object was destroyed, it should not be used; calling any function other than
+     * `isDestroyed` will result in a [DeveloperError] exception.
+     * @return True if this object was destroyed; otherwise, false.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CustomShader.html#isDestroyed">Online Documentation</a>
+     */
+    fun isDestroyed(): Boolean
+
+    /**
+     * Destroys the WebGL resources held by this object.  Destroying an object allows for deterministic
+     * release of WebGL resources, instead of relying on the garbage collector to destroy this object.
+     *
+     * Once an object is destroyed, it should not be used; calling any function other than
+     * `isDestroyed` will result in a [DeveloperError] exception.  Therefore,
+     * assign the return value (`undefined`) to the object as done in the example.
+     * ```
+     * customShader = customShader && customShader.destroy();
+     * ```
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CustomShader.html#destroy">Online Documentation</a>
+     */
+    fun destroy()
 }

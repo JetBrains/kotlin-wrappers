@@ -672,14 +672,14 @@ external class Camera(
 
     /**
      * Cancels the current camera flight and leaves the camera at its current location.
-     * If no flight is in progress, this this function does nothing.
+     * If no flight is in progress, this function does nothing.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Camera.html#cancelFlight">Online Documentation</a>
      */
     fun cancelFlight()
 
     /**
      * Completes the current camera flight and moves the camera immediately to its final destination.
-     * If no flight is in progress, this this function does nothing.
+     * If no flight is in progress, this function does nothing.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Camera.html#completeFlight">Online Documentation</a>
      */
     fun completeFlight()

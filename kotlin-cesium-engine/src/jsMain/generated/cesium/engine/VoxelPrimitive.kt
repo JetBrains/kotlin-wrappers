@@ -20,6 +20,7 @@ external class VoxelPrimitive(
      *   Default value - [Matrix4.IDENTITY]
      * @property [customShader] The custom shader used to style the primitive.
      * @property [clock] The clock used to control time dynamic behavior.
+     * @property [calculateStatistics] Generate statistics for performance profile.
      */
     @JsPlainObject
     interface ConstructorOptions {
@@ -27,13 +28,8 @@ external class VoxelPrimitive(
         var modelMatrix: Matrix4?
         var customShader: CustomShader?
         var clock: Clock?
+        var calculateStatistics: Boolean?
     }
-
-    /**
-     * The number of levels of detail containing available tiles in the tileset.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelPrimitive.html#availableLevels">Online Documentation</a>
-     */
-    val availableLevels: Double?
 
     /**
      * The event fired to indicate that a tile's content was loaded.
@@ -172,10 +168,30 @@ external class VoxelPrimitive(
     val shape: VoxelShapeType
 
     /**
-     * Gets the voxel dimensions.
+     * Gets the dimensions of each voxel tile, in z-up orientation.
+     * Does not include padding.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelPrimitive.html#dimensions">Online Documentation</a>
      */
     val dimensions: Cartesian3
+
+    /**
+     * Gets the dimensions of one tile of the input voxel data, in the input orientation.
+     * Includes padding.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelPrimitive.html#inputDimensions">Online Documentation</a>
+     */
+    val inputDimensions: Cartesian3
+
+    /**
+     * Gets the padding before the voxel data.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelPrimitive.html#paddingBefore">Online Documentation</a>
+     */
+    val paddingBefore: Cartesian3
+
+    /**
+     * Gets the padding after the voxel data.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelPrimitive.html#paddingAfter">Online Documentation</a>
+     */
+    val paddingAfter: Cartesian3
 
     /**
      * Gets the minimum value per channel of the voxel data.

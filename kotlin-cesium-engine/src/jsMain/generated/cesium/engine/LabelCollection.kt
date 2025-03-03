@@ -109,7 +109,7 @@ external class LabelCollection(
      * in the collection.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/LabelCollection.html#length">Online Documentation</a>
      */
-    var length: Int
+    val length: Int
 
     /**
      * Creates and adds a label with the specified initial properties to the collection.
