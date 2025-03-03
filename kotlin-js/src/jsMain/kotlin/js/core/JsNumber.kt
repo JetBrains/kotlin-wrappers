@@ -9,12 +9,13 @@ external class JsNumber {
     fun toExponential(fractionDigits: Int = definedExternally): String
 
     companion object {
+        val MAX_SAFE_INTEGER: Double
+        val MIN_SAFE_INTEGER: Double
+
         fun isFinite(number: Any?): Boolean
         fun isInteger(number: Any?): Boolean
         fun isNaN(number: Any?): Boolean
         fun isSafeInteger(number: Any?): Boolean
-        val MAX_SAFE_INTEGER: Number
-        val MIN_SAFE_INTEGER: Number
     }
 }
 
