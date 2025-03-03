@@ -1,4 +1,11 @@
+@file:Suppress(
+    "WRONG_JS_INTEROP_TYPE",
+)
+
 package js.core
+
+import kotlin.js.definedExternally
+import kotlin.js.JsName
 
 @JsName("Number")
 external class JsNumber {
