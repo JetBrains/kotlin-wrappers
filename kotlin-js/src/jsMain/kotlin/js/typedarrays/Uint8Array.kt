@@ -1,9 +1,3 @@
-@file:Suppress(
-    "INLINE_EXTERNAL_DECLARATION",
-    "INLINE_CLASS_IN_EXTERNAL_DECLARATION_WARNING",
-    "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-)
-
 package js.typedarrays
 
 import js.array.ReadonlyArray
@@ -35,12 +29,6 @@ open external class Uint8Array<B : ArrayBufferLike>(
     ): String
 
     fun toHex(): String
-
-    inline fun toByteArray(): ByteArray =
-        Int8Array(buffer, byteOffset, length).asByteArray()
-
-    inline fun toUByteArray(): UByteArray =
-        toByteArray().asUByteArray()
 
     companion object : TypedArrayCompanion<Uint8Array<ArrayBuffer>, Short /* UByte */> {
         fun fromBase64(
