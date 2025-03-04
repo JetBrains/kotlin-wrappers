@@ -1,5 +1,4 @@
 @file:Suppress(
-    "WRONG_JS_INTEROP_TYPE",
     "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
 )
 
