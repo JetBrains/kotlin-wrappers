@@ -1,5 +1,4 @@
 @file:Suppress(
-    "WRONG_JS_INTEROP_TYPE",
     "UPPER_BOUND_VIOLATED",
 )
 
@@ -7,6 +6,7 @@ package js.objects
 
 import js.array.JsTuple2
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.iterable.JsIterable
 import js.symbol.Symbol
 import kotlin.js.definedExternally
@@ -15,41 +15,41 @@ external class Object
 private constructor() {
 
     fun hasOwnProperty(v: String): Boolean
-    fun isPrototypeOf(v: Any): Boolean
+    fun isPrototypeOf(v: JsAny): Boolean
     fun propertyIsEnumerable(v: String): Boolean
     fun toLocaleString(): String
-    fun valueOf(): Any
+    fun valueOf(): JsAny
 
     companion object {
-        fun <T : Any, R : T> assign(dest: R, vararg src: T?): R
-        fun <T : Any> create(o: T?, properties: PropertyDescriptorMap = definedExternally): T
-        fun <T : Any> defineProperties(o: T, properties: PropertyDescriptorMap): T
-        fun <T : Any, P> defineProperty(o: T, p: PropertyKey, attributes: TypedPropertyDescriptor<P>): T
-        fun <T> entries(o: ReadonlyRecord<String, T>): ReadonlyArray<JsTuple2<String, T>>
-        fun entries(o: Any): ReadonlyArray<JsTuple2<String, Any?>>
-        fun <R, T : R> freeze(o: T): R
-        fun <T> fromEntries(entries: JsIterable<JsTuple2<String, T>>): ReadonlyRecord<String, T>
-        fun <T> fromEntries(entries: ReadonlyArray<JsTuple2<String, T>>): ReadonlyRecord<String, T>
-        fun <T> getOwnPropertyDescriptor(o: Any, p: PropertyKey): TypedPropertyDescriptor<T>?
-        fun getOwnPropertyNames(o: Any): ReadonlyArray<String>
-        fun getOwnPropertySymbols(o: Any): ReadonlyArray<Symbol>
-        fun <P : Any, T : P> getPrototypeOf(o: T): P
+        fun <T : JsAny, R : T> assign(dest: R, vararg src: T?): R
+        fun <T : JsAny> create(o: T?, properties: PropertyDescriptorMap = definedExternally): T
+        fun <T : JsAny> defineProperties(o: T, properties: PropertyDescriptorMap): T
+        fun <T : JsAny, P : JsAny?> defineProperty(o: T, p: PropertyKey, attributes: TypedPropertyDescriptor<P>): T
+        fun <T : JsAny?> entries(o: ReadonlyRecord<String, T>): ReadonlyArray<JsTuple2<String, T>>
+        fun entries(o: JsAny): ReadonlyArray<JsTuple2<String, JsAny?>>
+        fun <R : JsAny?, T : R> freeze(o: T): R
+        fun <T : JsAny?> fromEntries(entries: JsIterable<JsTuple2<String, T>>): ReadonlyRecord<String, T>
+        fun <T : JsAny?> fromEntries(entries: ReadonlyArray<JsTuple2<String, T>>): ReadonlyRecord<String, T>
+        fun <T : JsAny?> getOwnPropertyDescriptor(o: JsAny, p: PropertyKey): TypedPropertyDescriptor<T>?
+        fun getOwnPropertyNames(o: JsAny): ReadonlyArray<String>
+        fun getOwnPropertySymbols(o: JsAny): ReadonlyArray<Symbol>
+        fun <P : JsAny, T : P> getPrototypeOf(o: T): P
 
-        fun <T : Any, K : PropertyKey> groupBy(
+        fun <T : JsAny, K : PropertyKey> groupBy(
             items: ReadonlyArray<T>,
             keySelector: (value: T, index: Int) -> K,
         ): ReadonlyRecord<K, ReadonlyArray<T>>
 
-        fun hasOwn(o: Any, v: PropertyKey): Boolean
-        fun `is`(value1: Any?, value2: Any?): Boolean
-        fun isExtensible(o: Any): Boolean
-        fun isFrozen(o: Any): Boolean
-        fun isSealed(o: Any): Boolean
-        fun keys(o: Any): ReadonlyArray<String>
-        fun <T> preventExtensions(o: T): T
-        fun <T> seal(o: T): T
-        fun <T : Any> setPrototypeOf(o: T, proto: Any?): T
-        fun <T : Any> values(o: ReadonlyRecord<*, T>): ReadonlyArray<T>
-        fun values(o: Any): ReadonlyArray<Any?>
+        fun hasOwn(o: JsAny, v: PropertyKey): Boolean
+        fun `is`(value1: JsAny?, value2: JsAny?): Boolean
+        fun isExtensible(o: JsAny): Boolean
+        fun isFrozen(o: JsAny): Boolean
+        fun isSealed(o: JsAny): Boolean
+        fun keys(o: JsAny): ReadonlyArray<String>
+        fun <T : JsAny?> preventExtensions(o: T): T
+        fun <T : JsAny?> seal(o: T): T
+        fun <T : JsAny> setPrototypeOf(o: T, proto: JsAny?): T
+        fun <T : JsAny> values(o: ReadonlyRecord<*, T>): ReadonlyArray<T>
+        fun values(o: JsAny): ReadonlyArray<JsAny?>
     }
 }

@@ -1,11 +1,9 @@
-@file:Suppress(
-    "WRONG_JS_INTEROP_TYPE",
-)
-
 package js.objects
 
+import js.core.JsAny
+
 @JsPlainObject
-external interface TypedPropertyDescriptor<T> {
+external interface TypedPropertyDescriptor<T : JsAny?> {
     val configurable: Boolean?
     val enumerable: Boolean?
     val value: T?
