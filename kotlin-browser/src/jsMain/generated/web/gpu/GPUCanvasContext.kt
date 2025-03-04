@@ -2,7 +2,9 @@
 
 package web.gpu
 
+import seskar.js.JsValue
 import web.events.EventTarget
+import web.rendering.RenderingContextId
 
 /**
  * Available only in secure contexts.
@@ -30,4 +32,9 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCanvasContext/unconfigure)
      */
     fun unconfigure()
+
+    companion object {
+        @JsValue("webgpu")
+        val ID: RenderingContextId<GPUCanvasContext, GPUCanvasConfiguration>
+    }
 }
