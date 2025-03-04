@@ -1,9 +1,6 @@
-@file:Suppress(
-    "WRONG_JS_INTEROP_TYPE",
-)
-
 package js.buffer
 
+import js.core.JsAny
 import js.transferable.Transferable
 import kotlin.js.definedExternally
 
@@ -73,6 +70,6 @@ external class ArrayBuffer(
     ): ArrayBuffer
 
     companion object {
-        fun isView(value: Any?): Boolean
+        fun isView(value: JsAny?): Boolean
     }
 }
