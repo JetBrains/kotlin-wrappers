@@ -15,7 +15,9 @@ plugins {
 
 kotlin {
     js {
-        moduleName = project.path.replace(SEPARATOR, "-")
+        moduleName = project.path
+            .removePrefix(SEPARATOR)
+            .replace(SEPARATOR, "-")
 
         when (project.jsPlatform) {
             JsPlatform.WEB -> {
