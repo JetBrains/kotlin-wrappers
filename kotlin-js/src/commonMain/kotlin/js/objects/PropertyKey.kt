@@ -1,3 +1,5 @@
 package js.objects
 
-typealias PropertyKey = Any /* string | number | symbol */
+import js.core.JsAny
+
+typealias PropertyKey = JsAny /* string | number | symbol */

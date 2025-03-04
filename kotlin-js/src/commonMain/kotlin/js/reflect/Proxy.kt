@@ -1,20 +1,18 @@
-@file:Suppress(
-    "WRONG_JS_INTEROP_TYPE",
-)
-
 package js.reflect
 
-external class Proxy<T : Any>(
+import js.core.JsAny
+
+external class Proxy<T : JsAny>(
     target: T,
     handler: ProxyHandler<T>,
 ) {
-    sealed interface Revocable<T : Any> {
+    sealed interface Revocable<T : JsAny> {
         val proxy: T
         fun revoke()
     }
 
     companion object {
-        fun <T : Any> revocable(
+        fun <T : JsAny> revocable(
             target: T,
             handler: ProxyHandler<T>,
         ): Revocable<T>

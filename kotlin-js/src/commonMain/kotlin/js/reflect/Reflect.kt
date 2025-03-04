@@ -1,12 +1,8 @@
-@file:Suppress(
-    "WRONG_JS_INTEROP_TYPE",
-    "UPPER_BOUND_VIOLATED",
-)
-
 package js.reflect
 
 import js.array.JsTuple
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.function.JsConstructorFunction
 import js.objects.PropertyKey
 import js.objects.TypedPropertyDescriptor
@@ -18,14 +14,14 @@ external object Reflect {
      * @param target The constructor to invoke.
      * @param argumentsList An array of argument values to be passed to the constructor.
      */
-    fun <T : Any, A: JsTuple> construct(
+    fun <T : JsAny, A : JsTuple> construct(
         target: JsConstructorFunction<A, T>,
         argumentsList: A,
     ): T
 
-    fun <T : Any> construct(
+    fun <T : JsAny> construct(
         target: JsClass<T>,
-        argumentsList: ReadonlyArray<Any?>,
+        argumentsList: ReadonlyArray<JsAny?>,
     ): T
 
     /**
@@ -36,7 +32,7 @@ external object Reflect {
      * @param attributes Descriptor for the property. It can be for a data property or an accessor property.
      */
     fun defineProperty(
-        target: Any,
+        target: JsAny,
         propertyKey: PropertyKey,
         attributes: TypedPropertyDescriptor<*>,
     ): Boolean
@@ -48,7 +44,7 @@ external object Reflect {
      * @param propertyKey The property name.
      */
     fun deleteProperty(
-        target: Any,
+        target: JsAny,
         propertyKey: PropertyKey,
     ): Boolean
 
@@ -58,9 +54,9 @@ external object Reflect {
      * @param propertyKey The property name.
      */
     fun get(
-        target: Any,
+        target: JsAny,
         propertyKey: PropertyKey,
-    ): Any?
+    ): JsAny?
 
     /**
      * Gets the own property descriptor of the specified object.
@@ -69,7 +65,7 @@ external object Reflect {
      * @param propertyKey The property name.
      */
     fun getOwnPropertyDescriptor(
-        target: Any,
+        target: JsAny,
         propertyKey: PropertyKey,
     ): TypedPropertyDescriptor<*>
 
@@ -77,34 +73,34 @@ external object Reflect {
      * Returns the prototype of an object.
      * @param target The object that references the prototype.
      */
-    fun getPrototypeOf(target: Any): Any?
+    fun getPrototypeOf(target: JsAny): JsAny?
 
     /**
      * Equivalent to `propertyKey in target`.
      * @param target Object that contains the property on itself or in its prototype chain.
      * @param propertyKey Name of the property.
      */
-    fun has(target: Any, propertyKey: PropertyKey): Boolean
+    fun has(target: JsAny, propertyKey: PropertyKey): Boolean
 
     /**
      * Returns a value that indicates whether new properties can be added to an object.
      * @param target Object to test.
      */
-    fun isExtensible(target: Any): Boolean
+    fun isExtensible(target: JsAny): Boolean
 
     /**
      * Returns the string and symbol keys of the own properties of an object. The own properties of an object
      * are those that are defined directly on that object, and are not inherited from the object's prototype.
      * @param target Object that contains the own properties.
      */
-    fun ownKeys(target: Any): ReadonlyArray<PropertyKey>
+    fun ownKeys(target: JsAny): ReadonlyArray<PropertyKey>
 
     /**
      * Prevents the addition of new properties to an object.
      * @param target Object to make non-extensible.
      * @return Whether the object has been made non-extensible.
      */
-    fun preventExtensions(target: Any): Boolean
+    fun preventExtensions(target: JsAny): Boolean
 
     /**
      * Sets the property of target, equivalent to `target[propertyKey] = value` when `receiver === target`.
@@ -112,9 +108,9 @@ external object Reflect {
      * @param propertyKey Name of the property.
      */
     fun set(
-        target: Any,
+        target: JsAny,
         propertyKey: PropertyKey,
-        value: Any?,
+        value: JsAny?,
     ): Boolean
 
     /**
@@ -124,7 +120,7 @@ external object Reflect {
      * @return Whether setting the prototype was successful.
      */
     fun setPrototypeOf(
-        target: Any,
-        proto: Any?,
+        target: JsAny,
+        proto: JsAny?,
     ): Boolean
 }

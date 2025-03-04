@@ -1,3 +1,5 @@
 package js.reflect
 
-typealias HasInstance = (instance: Any?) -> Boolean
+import js.core.JsAny
+
+typealias HasInstance = (instance: JsAny?) -> Boolean
