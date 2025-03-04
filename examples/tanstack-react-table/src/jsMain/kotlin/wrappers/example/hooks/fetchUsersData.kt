@@ -29,5 +29,5 @@ private suspend fun <T> fetchData(
     val data = fetch(request).json()
 
     // TODO use serialization instead
-    return unsafeCast(data)
+    return unsafeCast(data!!)
 }
