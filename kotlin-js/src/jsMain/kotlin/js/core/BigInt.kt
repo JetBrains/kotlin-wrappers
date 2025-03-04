@@ -1,8 +1,6 @@
 @file:Suppress(
     "WRONG_BODY_OF_EXTERNAL_DECLARATION",
     "INLINE_EXTERNAL_DECLARATION",
-
-    "EXTERNAL_TYPE_EXTENDS_NON_EXTERNAL_TYPE",
 )
 
 package js.core
@@ -19,8 +17,7 @@ internal val POW = JsFunction<BigInt, BigInt, BigInt>(
 )
 
 actual external class BigInt
-private constructor() :
-    Comparable<BigInt> {
+private constructor() {
 
     inline operator fun unaryMinus(): BigInt =
         unsafeCast(-unsafeCast<Double>(this))
@@ -51,8 +48,6 @@ private constructor() :
 
     inline fun pow(x: BigInt): BigInt =
         POW(this, x)
-
-    actual override fun compareTo(other: BigInt): Int
 
     /**
      * Returns a string representation of an object.

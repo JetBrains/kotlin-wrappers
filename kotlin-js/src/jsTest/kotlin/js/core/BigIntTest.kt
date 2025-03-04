@@ -93,15 +93,4 @@ class BigIntTest {
         assertEquals(1024.n, 4.n.pow(5L))
         assertEquals(125.n, 5.n.pow(3.n))
     }
-
-    @Ignore
-    @Test
-    fun comparable() {
-        val sortedNumbers = listOf(13.n, 42.n, 7.n).sorted()
-
-        assertEquals(
-            listOf(7.n, 13.n, 42.n),
-            sortedNumbers,
-        )
-    }
 }

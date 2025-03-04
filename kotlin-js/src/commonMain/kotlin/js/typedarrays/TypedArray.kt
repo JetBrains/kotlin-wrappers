@@ -22,7 +22,7 @@ sealed external class TypedArray<
         S : TypedArray<S, R, B, T>,
         R : TypedArray<R, R, ArrayBuffer, T>,
         B : ArrayBufferLike,
-        T : Comparable<T>, /* Number? */
+        T : Any, /* Number? */
         > :
     ArrayBufferView<B>,
     MutableArrayLike<T>,

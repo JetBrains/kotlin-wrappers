@@ -10,7 +10,7 @@ import seskar.js.JsSpecialName
 
 // language=javascript
 @JsSpecialName("(Object.getPrototypeOf(Uint8Array).constructor)")
-sealed external class TypedArrayCompanion<S : TypedArray<S, S, ArrayBuffer, T>, T : Comparable<T> /* Number? */> {
+sealed external class TypedArrayCompanion<S : TypedArray<S, S, ArrayBuffer, T>, T : Any /* Number? */> {
     val BYTES_PER_ELEMENT: Int
 
     fun of(
