@@ -1,17 +1,17 @@
 @file:Suppress(
     "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
-    "WRONG_JS_INTEROP_TYPE",
 )
 
 package js.json
 
+import js.core.JsAny
 import kotlin.contracts.contract
 
 /**
  * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/isRawJSON)
  */
 fun isRawJSON(
-    value: Any?,
+    value: JsAny?,
 ): Boolean {
     contract {
         returns(true) implies (value is RawJSON)
@@ -22,6 +22,6 @@ fun isRawJSON(
 
 private external object JSON {
     fun isRawJSON(
-        value: Any?,
+        value: JsAny?,
     ): Boolean
 }

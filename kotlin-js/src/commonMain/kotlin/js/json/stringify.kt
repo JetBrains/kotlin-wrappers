@@ -1,13 +1,10 @@
 @file:JsQualifier("JSON")
 
-@file:Suppress(
-    "WRONG_JS_INTEROP_TYPE",
-)
-
 package js.json
 
 import js.import.JsQualifier
 import js.array.ReadonlyArray
+import js.core.JsAny
 import kotlin.js.definedExternally
 
 /**
@@ -17,13 +14,13 @@ import kotlin.js.definedExternally
  * @param space Adds indentation, white space, and line break characters to the return-value JSON text to make it easier to read.
  */
 external fun stringify(
-    value: Any?,
+    value: JsAny?,
     replacer: Replacer = definedExternally,
     space: String = definedExternally,
 ): String
 
 external fun stringify(
-    value: Any?,
+    value: JsAny?,
     replacer: Replacer = definedExternally,
     space: Int = definedExternally,
 ): String
@@ -35,13 +32,13 @@ external fun stringify(
  * @param space Adds indentation, white space, and line break characters to the return-value JSON text to make it easier to read.
  */
 external fun stringify(
-    value: Any?,
-    replacer: ReadonlyArray<* /* number | string */> = definedExternally,
+    value: JsAny?,
+    replacer: ReadonlyArray<JsAny /* number | string */> = definedExternally,
     space: String = definedExternally,
 ): String
 
 external fun stringify(
-    value: Any?,
-    replacer: ReadonlyArray<* /* number | string */> = definedExternally,
+    value: JsAny?,
+    replacer: ReadonlyArray<JsAny /* number | string */> = definedExternally,
     space: Int = definedExternally,
 ): String

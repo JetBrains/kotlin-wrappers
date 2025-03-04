@@ -1,5 +1,7 @@
 package js.json
 
+import js.core.JsAny
+
 /**
  * Can transform the value, which was parsed for a particular object key from the JSON input.
  *
@@ -11,5 +13,5 @@ package js.json
  */
 typealias Reviver = (
     key: String,
-    value: Any?,
-) -> Any?
+    value: JsAny?,
+) -> JsAny?
