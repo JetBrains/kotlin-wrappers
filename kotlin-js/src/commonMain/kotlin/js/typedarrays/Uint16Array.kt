@@ -3,6 +3,7 @@ package js.typedarrays
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferLike
+import js.core.JsUShort
 import js.iterable.JsIterable
 import kotlin.js.definedExternally
 
@@ -10,13 +11,11 @@ open external class Uint16Array<B : ArrayBufferLike>(
     override val buffer: B,
     override val byteOffset: Int = definedExternally,
     override val length: Int = definedExternally,
-) : TypedArray<Uint16Array<B>, Uint16Array<ArrayBuffer>, B, Int /* Short */> {
+) : TypedArray<Uint16Array<B>, Uint16Array<ArrayBuffer>, B, JsUShort> {
     constructor()
     constructor(length: Int)
-    constructor(elements: JsIterable<Int /* Short */>)
+    constructor(elements: JsIterable<JsUShort>)
+    constructor(elements: ReadonlyArray<JsUShort>)
 
-    @Suppress("UPPER_BOUND_VIOLATED")
-    constructor(elements: ReadonlyArray<Int /* Short */>)
-
-    companion object : TypedArrayCompanion<Uint16Array<ArrayBuffer>, Int /* Short */>
+    companion object : TypedArrayCompanion<Uint16Array<ArrayBuffer>, JsUShort>
 }

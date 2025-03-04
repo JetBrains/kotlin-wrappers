@@ -15,8 +15,6 @@ open external class BigInt64Array<B : ArrayBufferLike>(
     constructor()
     constructor(length: Int)
     constructor(elements: JsIterable<BigInt>)
-
-    @Suppress("UPPER_BOUND_VIOLATED")
     constructor(elements: ReadonlyArray<BigInt>)
 
     companion object : TypedArrayCompanion<BigInt64Array<ArrayBuffer>, BigInt>

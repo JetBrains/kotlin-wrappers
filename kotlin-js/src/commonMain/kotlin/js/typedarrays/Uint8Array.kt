@@ -3,6 +3,7 @@ package js.typedarrays
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferLike
+import js.core.JsUByte
 import js.iterable.JsIterable
 import kotlin.js.definedExternally
 
@@ -10,13 +11,11 @@ open external class Uint8Array<B : ArrayBufferLike>(
     override val buffer: B,
     override val byteOffset: Int = definedExternally,
     override val length: Int = definedExternally,
-) : TypedArray<Uint8Array<B>, Uint8Array<ArrayBuffer>, B, Short /* UByte */> {
+) : TypedArray<Uint8Array<B>, Uint8Array<ArrayBuffer>, B, JsUByte> {
     constructor()
     constructor(length: Int)
-    constructor(elements: JsIterable<Short /* UByte */>)
-
-    @Suppress("UPPER_BOUND_VIOLATED")
-    constructor(elements: ReadonlyArray<Short /* UByte */>)
+    constructor(elements: JsIterable<JsUByte>)
+    constructor(elements: ReadonlyArray<JsUByte>)
 
     fun setFromBase64(
         string: String,
@@ -33,7 +32,7 @@ open external class Uint8Array<B : ArrayBufferLike>(
 
     fun toHex(): String
 
-    companion object : TypedArrayCompanion<Uint8Array<ArrayBuffer>, Short /* UByte */> {
+    companion object : TypedArrayCompanion<Uint8Array<ArrayBuffer>, JsUByte> {
         fun fromBase64(
             string: String,
             options: FromBase64Options = definedExternally,

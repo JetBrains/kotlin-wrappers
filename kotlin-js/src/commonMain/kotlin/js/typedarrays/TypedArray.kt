@@ -1,8 +1,3 @@
-@file:Suppress(
-    "WRONG_JS_INTEROP_TYPE",
-    "UPPER_BOUND_VIOLATED",
-)
-
 package js.typedarrays
 
 import js.array.JsTuple2
@@ -12,6 +7,7 @@ import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferLike
 import js.buffer.ArrayBufferView
 import js.collections.ListLike
+import js.core.JsAny
 import js.iterable.JsIterator
 import kotlin.js.definedExternally
 import seskar.js.JsSpecialName
@@ -22,7 +18,7 @@ sealed external class TypedArray<
         S : TypedArray<S, R, B, T>,
         R : TypedArray<R, R, ArrayBuffer, T>,
         B : ArrayBufferLike,
-        T : Any, /* Number? */
+        T : JsAny, /* Number? */
         > :
     ArrayBufferView<B>,
     MutableArrayLike<T>,
@@ -243,7 +239,7 @@ sealed external class TypedArray<
      * the accumulation. The first call to the callbackfn function provides this value as an argument
      * instead of an array value.
      */
-    fun <U> reduce(
+    fun <U : JsAny?> reduce(
         operation: (previousValue: U, currentValue: T, currentIndex: Int) -> U,
         initialValue: U,
     ): U
@@ -272,7 +268,7 @@ sealed external class TypedArray<
      * the accumulation. The first call to the callbackfn function provides this value as an argument
      * instead of an array value.
      */
-    fun <U> reduceRight(
+    fun <U : JsAny?> reduceRight(
         operation: (previousValue: U, currentValue: T, currentIndex: Int) -> U,
         initialValue: U,
     ): U
