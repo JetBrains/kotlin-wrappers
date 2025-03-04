@@ -1,3 +1,4 @@
 package js.core
 
-actual external class BigInt
+actual external class BigInt :
+    JsAny

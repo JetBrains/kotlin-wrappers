@@ -4,7 +4,8 @@
 
 package js.core
 
-expect external class BigInt
+expect external class BigInt :
+    JsAny
 
 external fun BigInt(
     value: Int,

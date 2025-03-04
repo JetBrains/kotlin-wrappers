@@ -1,4 +1,5 @@
 @file:Suppress(
+    "ACTUAL_WITHOUT_EXPECT",
     "WRONG_BODY_OF_EXTERNAL_DECLARATION",
     "INLINE_EXTERNAL_DECLARATION",
 )
@@ -17,7 +18,8 @@ internal val POW = JsFunction<BigInt, BigInt, BigInt>(
 )
 
 actual external class BigInt
-private constructor() {
+private constructor() :
+    JsAny {
 
     inline operator fun unaryMinus(): BigInt =
         unsafeCast(-unsafeCast<Double>(this))
