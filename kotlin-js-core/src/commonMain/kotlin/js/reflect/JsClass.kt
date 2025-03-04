@@ -1,10 +1,11 @@
 @file:Suppress(
-    "WRONG_JS_INTEROP_TYPE",
     "EXPECTED_EXTERNAL_DECLARATION",
 )
 
 package js.reflect
 
-expect external interface JsClass<T : Any /* JsAny */> {
+import js.core.JsAny
+
+expect external interface JsClass<T : JsAny> {
     val name: String
 }
