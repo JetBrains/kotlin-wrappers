@@ -4,4 +4,5 @@
 
 package js.core
 
-expect external class JsString
+expect external class JsString :
+    JsAny

@@ -4,7 +4,11 @@
 
 package js.errors
 
-expect open external class JsError {
+import js.core.JsAny
+
+expect open external class JsError :
+    JsAny {
+
     constructor()
     constructor(message: String?)
 
