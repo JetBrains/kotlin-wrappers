@@ -1,19 +1,15 @@
-@file:Suppress(
-    "WRONG_JS_INTEROP_TYPE",
-    "UPPER_BOUND_VIOLATED",
-)
-
 package js.collections
 
 import js.array.JsTuple2
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.iterable.JsIterable
 import js.iterable.JsIterator
 import kotlin.js.definedExternally
 import kotlin.js.JsName
 
 @JsName("Set")
-open external class JsSet<T>(
+open external class JsSet<T : JsAny?>(
     values: JsIterable<T> = definedExternally,
 ) : MutableSetLike<T> {
     constructor(values: ReadonlyArray<T>)

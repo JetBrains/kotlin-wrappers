@@ -1,11 +1,8 @@
-@file:Suppress(
-    "WRONG_JS_INTEROP_TYPE",
-)
-
 package js.collections
 
 import js.array.ArrayLike
+import js.core.JsAny
 
-external interface ListLike<out T> :
+external interface ListLike<out T : JsAny?> :
     ArrayLike<T>,
     CollectionLike<Int, T>

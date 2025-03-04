@@ -1,14 +1,11 @@
-@file:Suppress(
-    "WRONG_JS_INTEROP_TYPE",
-)
-
 package js.collections
 
 import js.array.JsTuple2
+import js.core.JsAny
 import js.iterable.JsIterable
 import js.iterable.JsIterator
 
-external interface MapLike<K, out V> :
+external interface MapLike<K : JsAny?, out V : JsAny?> :
     JsIterable<JsTuple2<K, V>> {
 
     fun entries(): JsIterator<JsTuple2<K, V>>

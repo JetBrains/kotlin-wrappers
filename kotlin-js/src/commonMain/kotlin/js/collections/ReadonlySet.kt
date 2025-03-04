@@ -1,10 +1,8 @@
-@file:Suppress(
-    "WRONG_JS_INTEROP_TYPE",
-)
-
 package js.collections
 
-external interface ReadonlySet<out T> :
+import js.core.JsAny
+
+external interface ReadonlySet<out T : JsAny?> :
     CollectionLike<@UnsafeVariance T, T>,
     ReadonlySetLike<T> {
 

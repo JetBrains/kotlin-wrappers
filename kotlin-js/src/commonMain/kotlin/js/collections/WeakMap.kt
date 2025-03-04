@@ -1,5 +1,4 @@
 @file:Suppress(
-    "WRONG_JS_INTEROP_TYPE",
     "UPPER_BOUND_VIOLATED",
 )
 
@@ -7,9 +6,10 @@ package js.collections
 
 import js.array.JsTuple2
 import js.array.ReadonlyArray
+import js.core.JsAny
 import kotlin.js.definedExternally
 
-open external class WeakMap<in K : Any, V>(
+open external class WeakMap<in K : JsAny, V : JsAny?>(
     entries: ReadonlyArray<JsTuple2<K, V>>? = definedExternally,
 ) {
     fun delete(key: K): Boolean

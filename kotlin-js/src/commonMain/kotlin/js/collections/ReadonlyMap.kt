@@ -1,10 +1,8 @@
-@file:Suppress(
-    "WRONG_JS_INTEROP_TYPE",
-)
-
 package js.collections
 
-external interface ReadonlyMap<K, out V> :
+import js.core.JsAny
+
+external interface ReadonlyMap<K : JsAny?, out V : JsAny?> :
     MapLike<K, V>,
     ReadonlySetLike<K> {
 
