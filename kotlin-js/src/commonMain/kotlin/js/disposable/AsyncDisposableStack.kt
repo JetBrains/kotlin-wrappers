@@ -1,10 +1,10 @@
 @file:Suppress(
-    "WRONG_JS_INTEROP_TYPE",
     "WRONG_EXTERNAL_DECLARATION",
 )
 
 package js.disposable
 
+import js.core.JsAny
 import js.core.Void
 import js.promise.Promise
 import js.promise.PromiseLike
@@ -43,7 +43,7 @@ open external class AsyncDisposableStack :
      * as the first parameter.
      * @returns The provided {@link value}.
      */
-    fun <T> adopt(value: T, onDisposeAsync: (value: T) -> PromiseLike<Void>?): T
+    fun <T : JsAny?> adopt(value: T, onDisposeAsync: (value: T) -> PromiseLike<Void>?): T
 
     /**
      * Adds a callback to be invoked when the stack is disposed.

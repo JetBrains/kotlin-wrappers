@@ -1,8 +1,6 @@
-@file:Suppress(
-    "WRONG_JS_INTEROP_TYPE",
-)
-
 package js.disposable
+
+import js.core.JsAny
 
 open external class DisposableStack :
     Disposable {
@@ -30,7 +28,7 @@ open external class DisposableStack :
      * as the first parameter.
      * @returns The provided {@link value}.
      */
-    fun <T> adopt(
+    fun <T : JsAny?> adopt(
         value: T,
         onDispose: (value: T) -> Unit,
     ): T
