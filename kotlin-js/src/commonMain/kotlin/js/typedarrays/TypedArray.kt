@@ -8,6 +8,7 @@ import js.buffer.ArrayBufferLike
 import js.buffer.ArrayBufferView
 import js.collections.ListLike
 import js.core.JsAny
+import js.core.JsInt
 import js.iterable.JsIterator
 import kotlin.js.definedExternally
 import seskar.js.JsSpecialName
@@ -357,9 +358,9 @@ sealed external class TypedArray<
         value: T,
     ): R
 
-    override fun entries(): JsIterator<JsTuple2<Int, T>>
+    override fun entries(): JsIterator<JsTuple2<JsInt, T>>
 
-    override fun keys(): JsIterator<Int>
+    override fun keys(): JsIterator<JsInt>
 
     override fun values(): JsIterator<T>
 }
