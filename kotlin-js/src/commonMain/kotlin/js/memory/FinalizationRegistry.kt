@@ -1,9 +1,6 @@
-@file:Suppress(
-    "WRONG_JS_INTEROP_TYPE",
-)
-
 package js.memory
 
+import js.core.JsAny
 import kotlin.js.definedExternally
 
 /**
@@ -11,7 +8,7 @@ import kotlin.js.definedExternally
  * Creates a finalization registry with an associated cleanup callback
  * @param cleanupCallback The callback to call after an object in the registry has been reclaimed.
  */
-external class FinalizationRegistry<T>(
+external class FinalizationRegistry<T : JsAny?>(
     cleanupCallback: (heldValue: T) -> Unit,
 ) {
     /**
@@ -24,9 +21,9 @@ external class FinalizationRegistry<T>(
      * cannot be unregistered.
      */
     fun register(
-        target: Any,
+        target: JsAny,
         heldValue: T,
-        unregisterToken: Any = definedExternally,
+        unregisterToken: JsAny = definedExternally,
     )
 
     /**
@@ -35,6 +32,6 @@ external class FinalizationRegistry<T>(
      * register to register the target object.
      */
     fun unregister(
-        unregisterToken: Any,
+        unregisterToken: JsAny,
     )
 }

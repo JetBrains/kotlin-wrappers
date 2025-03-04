@@ -1,10 +1,8 @@
-@file:Suppress(
-    "WRONG_JS_INTEROP_TYPE",
-)
-
 package js.memory
 
-external class WeakRef<T : Any>(
+import js.core.JsAny
+
+external class WeakRef<T : JsAny>(
     target: T,
 ) {
     /**
