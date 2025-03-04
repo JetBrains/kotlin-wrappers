@@ -1,9 +1,6 @@
-@file:Suppress(
-    "WRONG_JS_INTEROP_TYPE",
-)
-
 package js.generator
 
+import js.core.JsAny
 import js.errors.JsError
 import js.iterable.IteratorResult
 import js.iterable.JsIterator
@@ -12,7 +9,7 @@ import seskar.js.JsSpecialName
 private const val GENERATOR: String = "(function* () {}.constructor.prototype.prototype)"
 
 @JsSpecialName(GENERATOR)
-external class Generator<out T, TReturn, in TNext>
+external class Generator<out T : JsAny?, TReturn : JsAny?, in TNext : JsAny?>
 private constructor() :
     JsIterator<T> {
     override fun next(): IteratorResult<T, TReturn>

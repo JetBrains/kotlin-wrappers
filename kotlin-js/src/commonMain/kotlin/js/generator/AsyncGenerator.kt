@@ -1,9 +1,6 @@
-@file:Suppress(
-    "WRONG_JS_INTEROP_TYPE",
-)
-
 package js.generator
 
+import js.core.JsAny
 import js.errors.JsError
 import js.iterable.AsyncIterator
 import js.iterable.IteratorResult
@@ -15,7 +12,7 @@ import seskar.js.JsSpecialName
 private const val ASYNC_GENERATOR: String = "(async function* () {}.constructor.prototype.prototype)"
 
 @JsSpecialName(ASYNC_GENERATOR)
-external class AsyncGenerator<out T, TReturn, in TNext>
+external class AsyncGenerator<out T : JsAny?, TReturn : JsAny?, in TNext : JsAny?>
 private constructor() :
     AsyncIterator<T> {
     override fun next(): Promise<IteratorResult<T, TReturn>>
