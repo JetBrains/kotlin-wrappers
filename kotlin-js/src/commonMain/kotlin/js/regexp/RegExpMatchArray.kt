@@ -21,7 +21,7 @@ external interface RegExpMatchArray :
      */
     val input: String?
 
-    val groups: ReadonlyRecord<String, String>?
+    val groups: ReadonlyRecord<JsString, JsString>?
 
     val indices: RegExpIndicesArray?
 

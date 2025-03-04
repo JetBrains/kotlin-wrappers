@@ -11,7 +11,7 @@ import seskar.js.JsAlias.Companion.THIS
 @JsExternalInheritorsOnly
 external interface RegExpIndicesArray :
     ArrayLike<RegExpIndex> {
-    val groups: ReadonlyRecord<String, RegExpIndex>?
+    val groups: ReadonlyRecord<JsString, RegExpIndex>?
 
     @JsAlias(THIS)
     fun asArray(): ReadonlyArray<JsString>
