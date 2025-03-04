@@ -1,11 +1,11 @@
 package js.reflect
 
-inline fun <T: Any> unsafeCast(
+inline fun <T : Any> unsafeCast(
     value: String,
 ): T =
     value.unsafeCast<T>()
 
-inline fun <T: Any> unsafeCast(
+inline fun <T : Any> unsafeCast(
     value: String?,
 ): T? =
     value.unsafeCast<T?>()
