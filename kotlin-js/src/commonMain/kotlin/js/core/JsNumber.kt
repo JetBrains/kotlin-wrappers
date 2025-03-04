@@ -1,7 +1,3 @@
-@file:Suppress(
-    "WRONG_JS_INTEROP_TYPE",
-)
-
 package js.core
 
 import kotlin.js.definedExternally
@@ -19,10 +15,10 @@ external class JsNumber {
         val MAX_SAFE_INTEGER: Double
         val MIN_SAFE_INTEGER: Double
 
-        fun isFinite(number: Any?): Boolean
-        fun isInteger(number: Any?): Boolean
-        fun isNaN(number: Any?): Boolean
-        fun isSafeInteger(number: Any?): Boolean
+        fun isFinite(number: JsAny?): Boolean
+        fun isInteger(number: JsAny?): Boolean
+        fun isNaN(number: JsAny?): Boolean
+        fun isSafeInteger(number: JsAny?): Boolean
     }
 }
 
