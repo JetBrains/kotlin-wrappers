@@ -10,7 +10,12 @@ inline fun <T : Any> unsafeCast(
 ): T? =
     value.unsafeCast<T?>()
 
-inline fun <T> unsafeCast(
-    value: Any?,
+inline fun <T : Any> unsafeCast(
+    value: Any,
 ): T =
     value.unsafeCast<T>()
+
+inline fun <T : Any> unsafeCast(
+    value: Any?,
+): T? =
+    value.unsafeCast<T?>()

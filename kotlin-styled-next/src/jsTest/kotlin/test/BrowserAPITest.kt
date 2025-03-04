@@ -1,7 +1,7 @@
 package test
 
 import js.globals.globalThis
-import js.reflect.unsafeCast
+import js.reflect.unsafeSpecialCast
 import kotlinx.css.backgroundColor
 import react.Props
 import react.fc
@@ -23,7 +23,7 @@ class BrowserAPITest : TestBase() {
             styledSpan { css { backgroundColor = firstColor } }
         }
         clearAndInject(styledComponent)
-        val css = unsafeCast<StyledNext>(globalThis["StyledNext"]).getCss(undefined)
+        val css = unsafeSpecialCast<StyledNext>(globalThis["StyledNext"]).getCss(undefined)
         assertContains(css, ".ksc-${GlobalStyles.incrementedClassName - 1} { background-color: rgb(1, 1, 1); }")
     }
 }

@@ -1,8 +1,8 @@
 package js.promise
 
-import js.reflect.unsafeCast
+import js.reflect.unsafeSpecialCast
 
 inline fun <T> PromiseResult(
     value: T,
 ): PromiseResult<T> =
-    unsafeCast(value)
+    unsafeSpecialCast(value)

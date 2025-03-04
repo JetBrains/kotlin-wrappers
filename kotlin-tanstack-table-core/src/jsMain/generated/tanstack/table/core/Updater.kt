@@ -3,13 +3,14 @@
 package tanstack.table.core
 
 import js.reflect.unsafeCast
+import js.reflect.unsafeSpecialCast
 
 sealed external interface Updater<T> /* T | ((old: T) -> T) */
 
 inline fun <T> Updater(
     source: T,
 ): Updater<T> =
-    unsafeCast(source)
+    unsafeSpecialCast(source)
 
 inline fun <T> Updater(
     noinline source: (old: T) -> T,

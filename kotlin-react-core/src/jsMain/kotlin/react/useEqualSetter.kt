@@ -1,6 +1,7 @@
 package react
 
 import js.reflect.unsafeCast
+import js.reflect.unsafeSpecialCast
 
 fun <T> useEqualSetter(
     setter: StateSetter<T>,
@@ -20,7 +21,7 @@ private fun <T> toEqualSetter(
                 if (newValue != oldValue) newValue else oldValue
             }
         } else {
-            val newValue = unsafeCast<T>(source)
+            val newValue = unsafeSpecialCast<T>(source)
             setter { oldValue ->
                 if (newValue != oldValue) newValue else oldValue
             }
