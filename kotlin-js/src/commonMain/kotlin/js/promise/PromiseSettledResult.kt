@@ -1,14 +1,11 @@
-@file:Suppress(
-    "WRONG_JS_INTEROP_TYPE",
-)
-
 package js.promise
 
+import js.core.JsAny
 import js.errors.toThrowable
 
-sealed external interface PromiseSettledResult<T>
+sealed external interface PromiseSettledResult<T : JsAny?>
 
-fun <T> PromiseSettledResult<T>.toResult(): Result<T> =
+fun <T : JsAny?> PromiseSettledResult<T>.toResult(): Result<T> =
     when (this) {
         is PromiseFulfilledResult,
         -> Result.success(value)
