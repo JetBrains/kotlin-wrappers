@@ -1,5 +1,6 @@
 @file:Suppress(
     "WRONG_JS_INTEROP_TYPE",
+    "INTERFACE_WITH_SUPERCLASS",
 )
 
 package js.array
@@ -9,7 +10,8 @@ import kotlin.js.JsName
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
 
-sealed external interface JsTuple {
+sealed external interface JsTuple :
+    JsAny {
     @JsName("length")
     val size: Int
 
