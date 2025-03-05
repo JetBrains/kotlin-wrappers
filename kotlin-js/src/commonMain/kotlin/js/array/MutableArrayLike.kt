@@ -5,8 +5,8 @@
 package js.array
 
 import js.core.JsAny
-import seskar.js.JsNativeSetter
 import kotlin.js.definedExternally as definedExternally_
+import seskar.js.JsNativeSetter
 
 external interface MutableArrayLike<T : JsAny?> :
     ArrayLike<T> {

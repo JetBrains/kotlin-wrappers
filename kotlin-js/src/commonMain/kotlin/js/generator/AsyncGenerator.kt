@@ -6,8 +6,8 @@ import js.iterable.AsyncIterator
 import js.iterable.IteratorResult
 import js.promise.Promise
 import js.promise.PromiseLike
-import seskar.js.JsSpecialName
 import kotlin.js.definedExternally as definedExternally_
+import seskar.js.JsSpecialName
 
 private const val ASYNC_GENERATOR: String = "(async function* () {}.constructor.prototype.prototype)"
 

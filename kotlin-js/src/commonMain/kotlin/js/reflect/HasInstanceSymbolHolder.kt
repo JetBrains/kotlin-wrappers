@@ -5,8 +5,8 @@
 package js.reflect
 
 import js.symbol.Symbol
-import seskar.js.JsNativeGetter
 import kotlin.js.definedExternally as definedExternally_
+import seskar.js.JsNativeGetter
 
 external interface HasInstanceSymbolHolder {
     @JsNativeGetter
