@@ -5,12 +5,12 @@
 package js.objects
 
 import js.core.JsAny
-import kotlin.js.definedExternally
+import kotlin.js.definedExternally as definedExternally_
 import seskar.js.JsNativeGetter
 
 external interface ReadonlyRecord<K : JsAny, out V : JsAny?> {
     @JsNativeGetter
     operator fun get(
         key: K,
-    ): V? = definedExternally
+    ): V? = definedExternally_
 }

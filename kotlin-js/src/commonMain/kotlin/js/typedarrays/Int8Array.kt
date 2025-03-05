@@ -5,12 +5,12 @@ import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferLike
 import js.core.JsByte
 import js.iterable.JsIterable
-import kotlin.js.definedExternally
+import kotlin.js.definedExternally as definedExternally_
 
 open external class Int8Array<B : ArrayBufferLike>(
     override val buffer: B,
-    override val byteOffset: Int = definedExternally,
-    override val length: Int = definedExternally,
+    override val byteOffset: Int = definedExternally_,
+    override val length: Int = definedExternally_,
 ) : TypedArray<Int8Array<B>, Int8Array<ArrayBuffer>, B, JsByte> {
     constructor()
     constructor(length: Int)

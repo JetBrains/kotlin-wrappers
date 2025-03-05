@@ -3,10 +3,10 @@ package js.collections
 import js.array.JsTuple2
 import js.array.ReadonlyArray
 import js.core.JsAny
-import kotlin.js.definedExternally
+import kotlin.js.definedExternally as definedExternally_
 
 open external class WeakMap<in K : JsAny, V : JsAny?>(
-    entries: ReadonlyArray<JsTuple2<K, V>>? = definedExternally,
+    entries: ReadonlyArray<JsTuple2<K, V>>? = definedExternally_,
 ) {
     fun delete(key: K): Boolean
     operator fun get(key: K): V?

@@ -1,6 +1,6 @@
 package js.regexp
 
-import kotlin.js.definedExternally
+import kotlin.js.definedExternally as definedExternally_
 
 /**
  * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
@@ -24,7 +24,7 @@ open external class RegExp(
      *
      * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/flags)
      */
-    val flags: String = definedExternally,
+    val flags: String = definedExternally_,
 ) {
     constructor(pattern: RegExp)
 

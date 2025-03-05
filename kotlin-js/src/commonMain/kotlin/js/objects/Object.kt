@@ -6,7 +6,7 @@ import js.core.JsAny
 import js.core.JsString
 import js.iterable.JsIterable
 import js.symbol.Symbol
-import kotlin.js.definedExternally
+import kotlin.js.definedExternally as definedExternally_
 
 external class Object
 private constructor() {
@@ -19,7 +19,7 @@ private constructor() {
 
     companion object {
         fun <T : JsAny, R : T> assign(dest: R, vararg src: T?): R
-        fun <T : JsAny> create(o: T?, properties: PropertyDescriptorMap = definedExternally): T
+        fun <T : JsAny> create(o: T?, properties: PropertyDescriptorMap = definedExternally_): T
         fun <T : JsAny> defineProperties(o: T, properties: PropertyDescriptorMap): T
         fun <T : JsAny, P : JsAny?> defineProperty(o: T, p: PropertyKey, attributes: TypedPropertyDescriptor<P>): T
         fun <T : JsAny?> entries(o: ReadonlyRecord<JsString, T>): ReadonlyArray<JsTuple2<JsString, T>>

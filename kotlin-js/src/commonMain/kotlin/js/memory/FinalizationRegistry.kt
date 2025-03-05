@@ -1,7 +1,7 @@
 package js.memory
 
 import js.core.JsAny
-import kotlin.js.definedExternally
+import kotlin.js.definedExternally as definedExternally_
 
 /**
  * @constructor
@@ -23,7 +23,7 @@ external class FinalizationRegistry<T : JsAny?>(
     fun register(
         target: JsAny,
         heldValue: T,
-        unregisterToken: JsAny = definedExternally,
+        unregisterToken: JsAny = definedExternally_,
     )
 
     /**

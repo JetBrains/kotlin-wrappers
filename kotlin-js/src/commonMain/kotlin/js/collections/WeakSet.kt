@@ -2,10 +2,10 @@ package js.collections
 
 import js.array.ReadonlyArray
 import js.core.JsAny
-import kotlin.js.definedExternally
+import kotlin.js.definedExternally as definedExternally_
 
 open external class WeakSet<in T : JsAny?>(
-    values: ReadonlyArray<T>? = definedExternally,
+    values: ReadonlyArray<T>? = definedExternally_,
 ) {
     fun add(value: T): WeakSet<T>
     fun delete(value: T): Boolean

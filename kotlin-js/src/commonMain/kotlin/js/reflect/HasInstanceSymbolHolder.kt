@@ -5,12 +5,12 @@
 package js.reflect
 
 import js.symbol.Symbol
-import kotlin.js.definedExternally
+import kotlin.js.definedExternally as definedExternally_
 import seskar.js.JsNativeGetter
 
 external interface HasInstanceSymbolHolder {
     @JsNativeGetter
     operator fun get(
         key: Symbol.hasInstance,
-    ): HasInstance = definedExternally
+    ): HasInstance = definedExternally_
 }

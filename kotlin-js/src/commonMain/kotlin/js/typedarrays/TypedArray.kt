@@ -10,7 +10,7 @@ import js.collections.ListLike
 import js.core.JsAny
 import js.core.JsInt
 import js.iterable.JsIterator
-import kotlin.js.definedExternally
+import kotlin.js.definedExternally as definedExternally_
 import seskar.js.JsSpecialName
 
 // language=javascript
@@ -40,12 +40,12 @@ sealed external class TypedArray<
 
     fun set(
         array: S,
-        offset: Int = definedExternally,
+        offset: Int = definedExternally_,
     )
 
     fun set(
         array: ReadonlyArray<T>,
-        offset: Int = definedExternally,
+        offset: Int = definedExternally_,
     )
 
     /**
@@ -60,7 +60,7 @@ sealed external class TypedArray<
     fun copyWithin(
         target: Int,
         start: Int,
-        end: Int = definedExternally,
+        end: Int = definedExternally_,
     ): S
 
     /**
@@ -85,8 +85,8 @@ sealed external class TypedArray<
      */
     fun fill(
         value: T,
-        start: Int = definedExternally,
-        end: Int = definedExternally,
+        start: Int = definedExternally_,
+        end: Int = definedExternally_,
     ): S
 
     /**
@@ -170,7 +170,7 @@ sealed external class TypedArray<
      */
     fun includes(
         searchElement: T,
-        fromIndex: Int = definedExternally,
+        fromIndex: Int = definedExternally_,
     ): Boolean
 
     /**
@@ -181,7 +181,7 @@ sealed external class TypedArray<
      */
     fun indexOf(
         searchElement: T,
-        fromIndex: Int = definedExternally,
+        fromIndex: Int = definedExternally_,
     ): Int
 
     /**
@@ -190,7 +190,7 @@ sealed external class TypedArray<
      * resulting String. If omitted, the array elements are separated with a comma.
      */
     fun join(
-        separator: String = definedExternally,
+        separator: String = definedExternally_,
     ): String
 
     /**
@@ -201,7 +201,7 @@ sealed external class TypedArray<
      */
     fun lastIndexOf(
         searchElement: T,
-        fromIndex: Int = definedExternally,
+        fromIndex: Int = definedExternally_,
     ): Int
 
     /**
@@ -285,8 +285,8 @@ sealed external class TypedArray<
      * @param end The end of the specified portion of the array. This is exclusive of the element at the index 'end'.
      */
     fun slice(
-        start: Int = definedExternally,
-        end: Int = definedExternally,
+        start: Int = definedExternally_,
+        end: Int = definedExternally_,
     ): R
 
     /**
@@ -311,7 +311,7 @@ sealed external class TypedArray<
      * ```
      */
     fun sort(
-        comparison: (a: T, b: T) -> Int = definedExternally,
+        comparison: (a: T, b: T) -> Int = definedExternally_,
     ): S
 
     fun subarray(
@@ -340,7 +340,7 @@ sealed external class TypedArray<
      * ```
      */
     fun toSorted(
-        comparison: (a: T, b: T) -> Int = definedExternally,
+        comparison: (a: T, b: T) -> Int = definedExternally_,
     ): R
 
     /** Returns the primitive value of the specified object. */

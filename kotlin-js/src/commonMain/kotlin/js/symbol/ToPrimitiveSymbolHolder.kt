@@ -4,12 +4,12 @@
 
 package js.symbol
 
-import kotlin.js.definedExternally
+import kotlin.js.definedExternally as definedExternally_
 import seskar.js.JsNativeGetter
 
 external interface ToPrimitiveSymbolHolder {
     @JsNativeGetter
     operator fun get(
         key: Symbol.toPrimitive,
-    ): ToPrimitive = definedExternally
+    ): ToPrimitive = definedExternally_
 }

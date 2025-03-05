@@ -5,7 +5,7 @@
 package js.objects
 
 import js.core.JsAny
-import kotlin.js.definedExternally
+import kotlin.js.definedExternally as definedExternally_
 import seskar.js.JsNativeSetter
 
 external interface Record<K : JsAny, V : JsAny?> :
@@ -15,7 +15,7 @@ external interface Record<K : JsAny, V : JsAny?> :
     operator fun set(
         key: K,
         value: V,
-    ): Unit = definedExternally
+    ): Unit = definedExternally_
 }
 
 fun <K : JsAny, V : JsAny?> Record(): Record<K, V> =

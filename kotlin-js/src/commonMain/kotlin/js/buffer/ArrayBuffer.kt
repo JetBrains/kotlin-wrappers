@@ -2,14 +2,14 @@ package js.buffer
 
 import js.core.JsAny
 import js.transferable.Transferable
-import kotlin.js.definedExternally
+import kotlin.js.definedExternally as definedExternally_
 
 external class ArrayBuffer(
     /**
      * Read-only. The length of the ArrayBuffer (in bytes).
      */
     override val byteLength: Int,
-    options: ArrayBufferOptions? = definedExternally,
+    options: ArrayBufferOptions? = definedExternally_,
 ) : ArrayBufferLike,
     BufferSource,
     Transferable {
