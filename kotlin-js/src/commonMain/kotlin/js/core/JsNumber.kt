@@ -1,7 +1,7 @@
 package js.core
 
-import kotlin.js.definedExternally
 import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 @JsName("Number")
 external class JsNumber {

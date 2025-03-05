@@ -4,8 +4,8 @@
 
 package js.symbol
 
-import kotlin.js.definedExternally
 import seskar.js.JsNativeGetter
+import kotlin.js.definedExternally
 
 external interface ToStringSymbolHolder {
     @JsNativeGetter

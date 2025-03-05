@@ -10,8 +10,8 @@ import js.collections.ListLike
 import js.core.JsAny
 import js.core.JsInt
 import js.iterable.JsIterator
-import kotlin.js.definedExternally
 import seskar.js.JsSpecialName
+import kotlin.js.definedExternally
 
 // language=javascript
 @JsSpecialName("(Object.getPrototypeOf(Uint8Array))")

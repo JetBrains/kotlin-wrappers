@@ -4,8 +4,8 @@ import js.array.JsTuple2
 import js.array.ReadonlyArray
 import js.core.JsAny
 import js.iterable.JsIterator
-import kotlin.js.definedExternally
 import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 @JsName("Map")
 open external class JsMap<K : JsAny?, V : JsAny?>(

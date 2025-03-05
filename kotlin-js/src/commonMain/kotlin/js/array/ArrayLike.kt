@@ -5,8 +5,8 @@
 package js.array
 
 import js.core.JsAny
-import kotlin.js.definedExternally
 import seskar.js.JsNativeGetter
+import kotlin.js.definedExternally
 
 external interface ArrayLike<out T : JsAny?> {
     val length: Int

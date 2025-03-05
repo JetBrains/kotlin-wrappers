@@ -5,8 +5,8 @@
 package js.objects
 
 import js.core.JsAny
-import kotlin.js.definedExternally
 import seskar.js.JsNativeSetter
+import kotlin.js.definedExternally
 
 external interface Record<K : JsAny, V : JsAny?> :
     ReadonlyRecord<K, V> {
