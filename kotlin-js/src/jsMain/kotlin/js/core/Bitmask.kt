@@ -11,7 +11,7 @@ import js.reflect.JsExternalInheritorsOnly
 import js.reflect.unsafeCast
 
 @JsExternalInheritorsOnly
-external interface Bitmask<T : Bitmask<T>> {
+actual external interface Bitmask<T : Bitmask<T>> {
     inline val value: Int
         get() = unsafeCast(this)
 
