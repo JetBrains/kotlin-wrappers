@@ -1,7 +1,3 @@
-@file:Suppress(
-    "UPPER_BOUND_VIOLATED",
-)
-
 package js.collections
 
 import js.array.JsTuple2
