@@ -1,12 +1,9 @@
-@file:Suppress(
-    "UPPER_BOUND_VIOLATED",
-)
-
 package js.objects
 
 import js.array.JsTuple2
 import js.array.ReadonlyArray
 import js.core.JsAny
+import js.core.JsString
 import js.iterable.JsIterable
 import js.symbol.Symbol
 import kotlin.js.definedExternally
@@ -25,13 +22,13 @@ private constructor() {
         fun <T : JsAny> create(o: T?, properties: PropertyDescriptorMap = definedExternally): T
         fun <T : JsAny> defineProperties(o: T, properties: PropertyDescriptorMap): T
         fun <T : JsAny, P : JsAny?> defineProperty(o: T, p: PropertyKey, attributes: TypedPropertyDescriptor<P>): T
-        fun <T : JsAny?> entries(o: ReadonlyRecord<String, T>): ReadonlyArray<JsTuple2<String, T>>
+        fun <T : JsAny?> entries(o: ReadonlyRecord<JsString, T>): ReadonlyArray<JsTuple2<String, T>>
         fun entries(o: JsAny): ReadonlyArray<JsTuple2<String, JsAny?>>
         fun <R : JsAny?, T : R> freeze(o: T): R
-        fun <T : JsAny?> fromEntries(entries: JsIterable<JsTuple2<String, T>>): ReadonlyRecord<String, T>
-        fun <T : JsAny?> fromEntries(entries: ReadonlyArray<JsTuple2<String, T>>): ReadonlyRecord<String, T>
+        fun <T : JsAny?> fromEntries(entries: JsIterable<JsTuple2<String, T>>): ReadonlyRecord<JsString, T>
+        fun <T : JsAny?> fromEntries(entries: ReadonlyArray<JsTuple2<String, T>>): ReadonlyRecord<JsString, T>
         fun <T : JsAny?> getOwnPropertyDescriptor(o: JsAny, p: PropertyKey): TypedPropertyDescriptor<T>?
-        fun getOwnPropertyNames(o: JsAny): ReadonlyArray<String>
+        fun getOwnPropertyNames(o: JsAny): ReadonlyArray<JsString>
         fun getOwnPropertySymbols(o: JsAny): ReadonlyArray<Symbol>
         fun <P : JsAny, T : P> getPrototypeOf(o: T): P
 
@@ -45,7 +42,7 @@ private constructor() {
         fun isExtensible(o: JsAny): Boolean
         fun isFrozen(o: JsAny): Boolean
         fun isSealed(o: JsAny): Boolean
-        fun keys(o: JsAny): ReadonlyArray<String>
+        fun keys(o: JsAny): ReadonlyArray<JsString>
         fun <T : JsAny?> preventExtensions(o: T): T
         fun <T : JsAny?> seal(o: T): T
         fun <T : JsAny> setPrototypeOf(o: T, proto: JsAny?): T
