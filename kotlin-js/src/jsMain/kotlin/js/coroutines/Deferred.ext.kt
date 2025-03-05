@@ -1,6 +1,7 @@
 package js.coroutines
 
 import js.promise.Promise
+import js.promise.deferred
 import kotlinx.coroutines.Deferred
 
 /**

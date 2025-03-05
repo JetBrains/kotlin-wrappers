@@ -1,7 +1,3 @@
-@file:Suppress(
-    "WRONG_JS_INTEROP_TYPE",
-)
-
 package js.promise
 
 import js.array.ReadonlyArray
@@ -10,7 +6,6 @@ import js.core.Void
 import js.errors.JsError
 import js.iterable.JsIterable
 import kotlin.js.JsName
-import kotlinx.coroutines.Deferred
 
 open external class Promise<out T : JsAny?>(
     executor: (resolve: PromiseResolve<T>) -> Unit,
@@ -22,9 +17,6 @@ open external class Promise<out T : JsAny?>(
             reject: PromiseReject,
         ) -> Unit,
     )
-
-    // TODO: use symbol instead?
-    internal var deferred: Deferred<@UnsafeVariance T>?
 
     final override fun <R : JsAny?> then(
         onFulfilled: (T) -> R,
