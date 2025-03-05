@@ -4,6 +4,8 @@ package web.gpu
 
 import seskar.js.JsValue
 import web.events.EventTarget
+import web.rendering.OffscreenRenderingContext
+import web.rendering.RenderingContext
 import web.rendering.RenderingContextId
 
 /**
@@ -12,7 +14,9 @@ import web.rendering.RenderingContextId
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCanvasContext)
  */
 external class GPUCanvasContext
-private constructor() {
+private constructor() :
+    OffscreenRenderingContext,
+    RenderingContext {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCanvasContext/canvas)
      */
