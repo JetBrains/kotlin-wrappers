@@ -1,11 +1,14 @@
 package js.symbol
 
+import js.core.JsAny
 import js.reflect.JsExternalInheritorsOnly
 import kotlin.js.definedExternally
 
 @JsExternalInheritorsOnly
 open external class Symbol
-private constructor() {
+private constructor() :
+    JsAny {
+
     val description: String?
 
     object asyncDispose : Symbol
