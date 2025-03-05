@@ -2,9 +2,9 @@
 
 package js.json
 
-import js.import.JsQualifier
 import js.array.ReadonlyArray
 import js.core.JsAny
+import js.import.JsQualifier
 import kotlin.js.definedExternally as definedExternally_
 
 /**

@@ -11,8 +11,8 @@ package js.iterable
 import js.core.JsAny
 import js.iterable.internal.iteratorFromAsyncIterable
 import js.symbol.Symbol
-import kotlin.js.definedExternally as definedExternally_
 import seskar.js.JsNativeGetter
+import kotlin.js.definedExternally as definedExternally_
 
 external interface AsyncIterable<out T : JsAny?> {
     @JsNativeGetter
