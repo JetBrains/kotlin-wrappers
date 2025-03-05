@@ -1,13 +1,14 @@
 package js.iterable
 
+import js.core.JsAny
 import kotlinx.coroutines.channels.ChannelIterator
 
-interface SuspendableIterator<out T> {
+interface SuspendableIterator<out T : JsAny?> {
     suspend operator fun hasNext(): Boolean
     operator fun next(): T
 }
 
-fun <T> SuspendableIterator(
+fun <T : JsAny?> SuspendableIterator(
     source: ChannelIterator<T>,
 ): SuspendableIterator<T> =
     object : SuspendableIterator<T> {

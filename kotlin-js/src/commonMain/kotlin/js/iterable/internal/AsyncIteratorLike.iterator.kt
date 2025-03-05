@@ -1,17 +1,18 @@
 package js.iterable.internal
 
+import js.core.JsAny
 import js.iterable.AsyncIteratorLike
 import js.iterable.IteratorResult
 import js.iterable.IteratorYieldResult
 import js.iterable.SuspendableIterator
 
 @PublishedApi
-internal fun <T> iteratorFromAsyncIteratorLike(
+internal fun <T : JsAny?> iteratorFromAsyncIteratorLike(
     source: AsyncIteratorLike<T>,
 ): SuspendableIterator<T> =
     AsyncIteratorAdapter(source)
 
-private class AsyncIteratorAdapter<T>(
+private class AsyncIteratorAdapter<T : JsAny?>(
     private val source: AsyncIteratorLike<T>,
 ) : SuspendableIterator<T> {
     private var lastResult: IteratorResult<T, *>? = null
@@ -32,7 +33,7 @@ private class AsyncIteratorAdapter<T>(
 
         lastResult = null
 
-        result as IteratorYieldResult<T>
+        result
         return result.value
     }
 }

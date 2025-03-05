@@ -8,12 +8,13 @@
 
 package js.iterable
 
+import js.core.JsAny
 import js.iterable.internal.iteratorFromJsIterable
 import js.symbol.Symbol
 import kotlin.js.definedExternally
 import seskar.js.JsNativeGetter
 
-external interface JsIterable<out T> {
+external interface JsIterable<out T : JsAny?> {
     @JsNativeGetter
     operator fun get(
         key: Symbol.iterator,

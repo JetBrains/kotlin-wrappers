@@ -10,12 +10,13 @@
 package js.iterable
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.disposable.Disposable
 import js.iterable.internal.iteratorFromJsIteratorLike
 import kotlin.js.JsName
 
 @JsName("Iterator")
-abstract external class JsIterator<out T> :
+abstract external class JsIterator<out T : JsAny?> :
     JsIteratorLike<T>,
     JsIterable<T>,
     Disposable {
