@@ -10,7 +10,7 @@ import seskar.js.JsAlias.Companion.THIS
 
 @JsExternalInheritorsOnly
 external interface RegExpMatchArray :
-    ArrayLike<String> {
+    ArrayLike<JsString> {
     /**
      * The index of the search at which the result was found.
      */

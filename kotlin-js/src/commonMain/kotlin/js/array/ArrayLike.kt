@@ -1,14 +1,14 @@
 @file:Suppress(
-    "WRONG_JS_INTEROP_TYPE",
     "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
 )
 
 package js.array
 
+import js.core.JsAny
 import kotlin.js.definedExternally
 import seskar.js.JsNativeGetter
 
-external interface ArrayLike<out T> {
+external interface ArrayLike<out T : JsAny?> {
     val length: Int
 
     @JsNativeGetter
@@ -17,7 +17,7 @@ external interface ArrayLike<out T> {
     ): T = definedExternally
 }
 
-fun <T> ArrayLike<T>.asList(): List<T> =
+fun <T : JsAny?> ArrayLike<T>.asList(): List<T> =
     object : AbstractList<T>() {
         override val size: Int
             get() = this@asList.length
