@@ -33,7 +33,7 @@ private class AsyncIteratorAdapter<T : JsAny?>(
 
         lastResult = null
 
-        result
+        result as IteratorYieldResult<T>
         return result.value
     }
 }

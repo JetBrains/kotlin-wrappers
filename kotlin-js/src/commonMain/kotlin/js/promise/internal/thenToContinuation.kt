@@ -13,7 +13,7 @@ internal fun <T : JsAny?> thenToContinuation(
     continuation: Continuation<T>,
 ) {
     promise.then(
-        onFulfilled = { continuation.resume(it) },
-        onRejected = { continuation.resumeWithException(it.toThrowable()) },
+        onFulfilled = { continuation.resume(it); null },
+        onRejected = { continuation.resumeWithException(it.toThrowable()); null },
     )
 }
