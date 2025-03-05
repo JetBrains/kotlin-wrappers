@@ -1,14 +1,14 @@
 @file:Suppress(
-    "WRONG_JS_INTEROP_TYPE",
     "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
 )
 
 package js.objects
 
+import js.core.JsAny
 import kotlin.js.definedExternally
 import seskar.js.JsNativeSetter
 
-external interface Record<K : Any, V> :
+external interface Record<K : JsAny, V : JsAny?> :
     ReadonlyRecord<K, V> {
 
     @JsNativeSetter
@@ -18,10 +18,10 @@ external interface Record<K : Any, V> :
     ): Unit = definedExternally
 }
 
-fun <K : Any, V> Record(): Record<K, V> =
+fun <K : JsAny, V : JsAny?> Record(): Record<K, V> =
     jso()
 
-fun <K : Any, V> Record(
+fun <K : JsAny, V : JsAny?> Record(
     block: Record<K, V>.() -> Unit,
 ): Record<K, V> =
     jso(block)
