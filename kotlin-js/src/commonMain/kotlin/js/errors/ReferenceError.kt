@@ -1,8 +1,8 @@
 package js.errors
 
-import kotlin.js.definedExternally as definedExternally_
+import kotlin.js.definedExternally
 
 open external class ReferenceError(
-    override val message: String? = definedExternally_,
-    options: ErrorOptions? = definedExternally_,
+    override val message: String? = definedExternally,
+    options: ErrorOptions? = definedExternally,
 ) : JsError

@@ -4,7 +4,7 @@ package js.json
 
 import js.core.JsAny
 import js.import.JsQualifier
-import kotlin.js.definedExternally as definedExternally_
+import kotlin.js.definedExternally
 
 /**
  * Converts a JavaScript Object Notation (JSON) string into an object.
@@ -14,5 +14,5 @@ import kotlin.js.definedExternally as definedExternally_
  */
 external fun <T : JsAny?> parse(
     text: String,
-    reviver: Reviver = definedExternally_,
+    reviver: Reviver = definedExternally,
 ): T

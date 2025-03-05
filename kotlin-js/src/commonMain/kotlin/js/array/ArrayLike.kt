@@ -5,7 +5,7 @@
 package js.array
 
 import js.core.JsAny
-import kotlin.js.definedExternally as definedExternally_
+import kotlin.js.definedExternally
 import seskar.js.JsNativeGetter
 
 external interface ArrayLike<out T : JsAny?> {
@@ -14,7 +14,7 @@ external interface ArrayLike<out T : JsAny?> {
     @JsNativeGetter
     operator fun get(
         index: Int,
-    ): T = definedExternally_
+    ): T = definedExternally
 }
 
 fun <T : JsAny?> ArrayLike<T>.asList(): List<T> =

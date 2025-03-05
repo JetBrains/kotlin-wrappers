@@ -5,7 +5,7 @@ package js.json
 import js.import.JsQualifier
 import js.array.ReadonlyArray
 import js.core.JsAny
-import kotlin.js.definedExternally as definedExternally_
+import kotlin.js.definedExternally
 
 /**
  * Converts a JavaScript value to a JavaScript Object Notation (JSON) string.
@@ -15,14 +15,14 @@ import kotlin.js.definedExternally as definedExternally_
  */
 external fun stringify(
     value: JsAny?,
-    replacer: Replacer = definedExternally_,
-    space: String = definedExternally_,
+    replacer: Replacer = definedExternally,
+    space: String = definedExternally,
 ): String
 
 external fun stringify(
     value: JsAny?,
-    replacer: Replacer = definedExternally_,
-    space: Int = definedExternally_,
+    replacer: Replacer = definedExternally,
+    space: Int = definedExternally,
 ): String
 
 /**
@@ -33,12 +33,12 @@ external fun stringify(
  */
 external fun stringify(
     value: JsAny?,
-    replacer: ReadonlyArray<JsAny /* number | string */> = definedExternally_,
-    space: String = definedExternally_,
+    replacer: ReadonlyArray<JsAny /* number | string */> = definedExternally,
+    space: String = definedExternally,
 ): String
 
 external fun stringify(
     value: JsAny?,
-    replacer: ReadonlyArray<JsAny /* number | string */> = definedExternally_,
-    space: Int = definedExternally_,
+    replacer: ReadonlyArray<JsAny /* number | string */> = definedExternally,
+    space: Int = definedExternally,
 ): String

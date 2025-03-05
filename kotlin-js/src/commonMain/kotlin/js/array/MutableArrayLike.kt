@@ -5,7 +5,7 @@
 package js.array
 
 import js.core.JsAny
-import kotlin.js.definedExternally as definedExternally_
+import kotlin.js.definedExternally
 import seskar.js.JsNativeSetter
 
 external interface MutableArrayLike<T : JsAny?> :
@@ -15,5 +15,5 @@ external interface MutableArrayLike<T : JsAny?> :
     operator fun set(
         index: Int,
         value: T,
-    ): Unit = definedExternally_
+    ): Unit = definedExternally
 }

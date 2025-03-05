@@ -5,12 +5,12 @@ import js.array.ReadonlyArray
 import js.core.JsAny
 import js.iterable.JsIterable
 import js.iterable.JsIterator
-import kotlin.js.definedExternally as definedExternally_
+import kotlin.js.definedExternally
 import kotlin.js.JsName
 
 @JsName("Set")
 open external class JsSet<T : JsAny?>(
-    values: JsIterable<T> = definedExternally_,
+    values: JsIterable<T> = definedExternally,
 ) : MutableSetLike<T> {
     constructor(values: ReadonlyArray<T>)
 

@@ -4,12 +4,12 @@ import js.array.JsTuple2
 import js.array.ReadonlyArray
 import js.core.JsAny
 import js.iterable.JsIterator
-import kotlin.js.definedExternally as definedExternally_
+import kotlin.js.definedExternally
 import kotlin.js.JsName
 
 @JsName("Map")
 open external class JsMap<K : JsAny?, V : JsAny?>(
-    values: ReadonlyArray<JsTuple2<K, V>> = definedExternally_,
+    values: ReadonlyArray<JsTuple2<K, V>> = definedExternally,
 ) : MutableMapLike<K, V> {
     override val size: Int
 

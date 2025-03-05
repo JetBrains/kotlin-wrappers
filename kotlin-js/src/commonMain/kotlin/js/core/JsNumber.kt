@@ -1,6 +1,6 @@
 package js.core
 
-import kotlin.js.definedExternally as definedExternally_
+import kotlin.js.definedExternally
 import kotlin.js.JsName
 
 @JsName("Number")
@@ -9,7 +9,7 @@ external class JsNumber {
     internal constructor(value: Double)
     internal constructor(value: String)
 
-    fun toExponential(fractionDigits: Int = definedExternally_): String
+    fun toExponential(fractionDigits: Int = definedExternally): String
 
     companion object {
         val MAX_SAFE_INTEGER: Double

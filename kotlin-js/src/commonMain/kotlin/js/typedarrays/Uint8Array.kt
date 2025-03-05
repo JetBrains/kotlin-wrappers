@@ -5,12 +5,12 @@ import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferLike
 import js.core.JsUByte
 import js.iterable.JsIterable
-import kotlin.js.definedExternally as definedExternally_
+import kotlin.js.definedExternally
 
 open external class Uint8Array<B : ArrayBufferLike>(
     override val buffer: B,
-    override val byteOffset: Int = definedExternally_,
-    override val length: Int = definedExternally_,
+    override val byteOffset: Int = definedExternally,
+    override val length: Int = definedExternally,
 ) : TypedArray<Uint8Array<B>, Uint8Array<ArrayBuffer>, B, JsUByte> {
     constructor()
     constructor(length: Int)
@@ -19,7 +19,7 @@ open external class Uint8Array<B : ArrayBufferLike>(
 
     fun setFromBase64(
         string: String,
-        options: FromBase64Options = definedExternally_,
+        options: FromBase64Options = definedExternally,
     ): SetFromResult
 
     fun setFromHex(
@@ -27,7 +27,7 @@ open external class Uint8Array<B : ArrayBufferLike>(
     ): SetFromResult
 
     fun toBase64(
-        options: ToBase64Options = definedExternally_,
+        options: ToBase64Options = definedExternally,
     ): String
 
     fun toHex(): String
@@ -35,7 +35,7 @@ open external class Uint8Array<B : ArrayBufferLike>(
     companion object : TypedArrayCompanion<Uint8Array<ArrayBuffer>, JsUByte> {
         fun fromBase64(
             string: String,
-            options: FromBase64Options = definedExternally_,
+            options: FromBase64Options = definedExternally,
         )
 
         fun fromHex(

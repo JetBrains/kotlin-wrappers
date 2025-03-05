@@ -4,12 +4,12 @@
 
 package js.symbol
 
-import kotlin.js.definedExternally as definedExternally_
+import kotlin.js.definedExternally
 import seskar.js.JsNativeGetter
 
 external interface ToStringSymbolHolder {
     @JsNativeGetter
     operator fun get(
         key: Symbol.toStringTag,
-    ): ToString = definedExternally_
+    ): ToString = definedExternally
 }

@@ -2,7 +2,7 @@ package js.symbol
 
 import js.core.JsAny
 import js.reflect.JsExternalInheritorsOnly
-import kotlin.js.definedExternally as definedExternally_
+import kotlin.js.definedExternally
 
 @JsExternalInheritorsOnly
 open external class Symbol
@@ -36,5 +36,5 @@ private constructor() :
 }
 
 external fun Symbol(
-    description: String = definedExternally_,
+    description: String = definedExternally,
 ): Symbol

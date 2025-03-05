@@ -1,13 +1,13 @@
 package js.buffer
 
-import kotlin.js.definedExternally as definedExternally_
+import kotlin.js.definedExternally
 
 external class SharedArrayBuffer(
     /**
      * Read-only. The length of the SharedArrayBuffer (in bytes).
      */
     override val byteLength: Int,
-    options: SharedArrayBufferOptions? = definedExternally_,
+    options: SharedArrayBufferOptions? = definedExternally,
 ) : ArrayBufferLike,
     AllowSharedBufferSource {
     /**
