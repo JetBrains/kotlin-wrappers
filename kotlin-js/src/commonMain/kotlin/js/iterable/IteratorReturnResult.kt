@@ -1,9 +1,6 @@
-@file:Suppress(
-    "WRONG_JS_INTEROP_TYPE",
-)
-
 package js.iterable
 
+import js.core.JsAny
 import js.core.Void
 import seskar.js.JsTypeGuard
 
@@ -11,7 +8,7 @@ import seskar.js.JsTypeGuard
     property = "done",
     value = "true",
 )
-external class IteratorReturnResult<out TReturn>
+external class IteratorReturnResult<out TReturn : JsAny?>
 private constructor() :
     IteratorResult<Void, TReturn> {
     val value: TReturn

@@ -1,12 +1,9 @@
-@file:Suppress(
-    "WRONG_JS_INTEROP_TYPE",
-)
-
 package js.promise
 
+import js.core.JsAny
 import seskar.js.JsNativeInvoke
 
-sealed external interface PromiseResolve<T> {
+sealed external interface PromiseResolve<T : JsAny?> {
     @JsNativeInvoke
     operator fun invoke(
         value: T,

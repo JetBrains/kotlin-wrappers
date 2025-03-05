@@ -1,9 +1,6 @@
-@file:Suppress(
-    "WRONG_JS_INTEROP_TYPE",
-)
-
 package js.iterable
 
+import js.core.JsAny
 import js.core.Void
 import seskar.js.JsTypeGuard
 
@@ -11,7 +8,7 @@ import seskar.js.JsTypeGuard
     property = "done",
     value = "false",
 )
-external class IteratorYieldResult<out TYield>
+external class IteratorYieldResult<out TYield : JsAny?>
 private constructor() :
     IteratorResult<TYield, Void> {
     val value: TYield

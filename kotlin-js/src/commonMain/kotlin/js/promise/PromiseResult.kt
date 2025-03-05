@@ -1,5 +1,4 @@
 @file:Suppress(
-    "WRONG_JS_INTEROP_TYPE",
     "INTERFACE_WITH_SUPERCLASS",
     "WRONG_EXTERNAL_DECLARATION",
 
@@ -15,12 +14,12 @@ import js.core.JsAny
 import js.promise.internal.awaitPromiseResult
 
 // T | PromiseLike<T>
-sealed external interface PromiseResult<out T> :
+sealed external interface PromiseResult<out T : JsAny?> :
     JsAny {
 
     suspend inline fun await(): T =
         awaitPromiseResult(this)
 }
 
-inline fun <T> PromiseResult<T>.toPromise(): Promise<T> =
+inline fun <T : JsAny?> PromiseResult<T>.toPromise(): Promise<T> =
     Promise.resolve(this)

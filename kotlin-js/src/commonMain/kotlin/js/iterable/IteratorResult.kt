@@ -1,7 +1,10 @@
 @file:Suppress(
-    "WRONG_JS_INTEROP_TYPE",
+    "INTERFACE_WITH_SUPERCLASS",
 )
 
 package js.iterable
 
-sealed external interface IteratorResult<out T, out TReturn>
+import js.core.JsAny
+
+sealed external interface IteratorResult<out T : JsAny?, out TReturn : JsAny?> :
+    JsAny

@@ -1,5 +1,4 @@
 @file:Suppress(
-    "WRONG_JS_INTEROP_TYPE",
     "WRONG_EXTERNAL_DECLARATION",
 
     "WRONG_BODY_OF_EXTERNAL_DECLARATION",
@@ -10,30 +9,31 @@
 
 package js.promise
 
+import js.core.JsAny
 import js.errors.JsError
 import js.promise.internal.awaitPromiseLike
 import js.promise.internal.thenToContinuation
 import kotlin.js.JsName
 import kotlin.coroutines.Continuation
 
-external interface PromiseLike<out T> :
+external interface PromiseLike<out T : JsAny?> :
     PromiseResult<T> {
-    fun <R> then(
+    fun <R : JsAny?> then(
         onFulfilled: (T) -> R,
     ): PromiseLike<R>
 
-    fun <R> then(
+    fun <R : JsAny?> then(
         onFulfilled: (T) -> R,
         onRejected: (JsError) -> R,
     ): PromiseLike<R>
 
     @JsName("then")
-    fun <R> flatThen(
+    fun <R : JsAny?> flatThen(
         onFulfilled: (T) -> PromiseResult<R>,
     ): PromiseLike<R>
 
     @JsName("then")
-    fun <R> flatThen(
+    fun <R : JsAny?> flatThen(
         onFulfilled: (T) -> PromiseResult<R>,
         onRejected: (JsError) -> PromiseResult<R>,
     ): PromiseLike<R>
