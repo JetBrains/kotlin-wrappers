@@ -6,4 +6,5 @@ package js.array
 
 import js.core.JsAny
 
-expect external class JsArray<T : JsAny?>
+expect external class JsArray<T : JsAny?> :
+    JsAny
