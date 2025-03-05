@@ -1,5 +1,4 @@
 @file:Suppress(
-    "UPPER_BOUND_VIOLATED",
     "INVISIBLE_MEMBER",
     "INVISIBLE_REFERENCE",
 )
