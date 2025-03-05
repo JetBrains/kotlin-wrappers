@@ -14,7 +14,7 @@ open external class Uint32Array<B : ArrayBufferLike>(
 ) : TypedArray<Uint32Array<B>, Uint32Array<ArrayBuffer>, B, JsUInt> {
     constructor()
     constructor(length: Int)
-    constructor(elements: JsIterable<Int>)
+    constructor(elements: JsIterable<JsUInt>)
     constructor(elements: ReadonlyArray<JsUInt>)
 
     companion object : TypedArrayCompanion<Uint32Array<ArrayBuffer>, JsUInt>
