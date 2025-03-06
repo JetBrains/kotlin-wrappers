@@ -1,7 +1,8 @@
 @file:Suppress(
-    "EXPECTED_EXTERNAL_DECLARATION",
+    "EXTERNAL_TYPE_EXTENDS_NON_EXTERNAL_TYPE",
 )
 
 package js.core
 
-expect external interface JsAnyMarker
+external interface JsAnyMarker :
+    JsAny
