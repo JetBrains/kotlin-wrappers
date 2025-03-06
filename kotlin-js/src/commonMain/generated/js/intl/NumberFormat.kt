@@ -27,8 +27,8 @@ open external class NumberFormat(
     fun formatToParts(value: BigInt): ReadonlyArray<NumberFormatPart>
     fun formatToParts(value: StringNumericLiteral): ReadonlyArray<NumberFormatPart>
     fun formatRange(
-        start: Double /* Number */,
-        end: Double /* Number */,
+        start: Double, /* Number */
+        end: Double, /* Number */
     ): String
 
     fun formatRange(
@@ -42,8 +42,8 @@ open external class NumberFormat(
     ): String
 
     fun formatRangeToParts(
-        start: Double /* Number */,
-        end: Double /* Number */,
+        start: Double, /* Number */
+        end: Double, /* Number */
     ): ReadonlyArray<NumberRangeFormatPart>
 
     fun formatRangeToParts(
