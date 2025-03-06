@@ -1,10 +1,18 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "INTERFACE_WITH_SUPERCLASS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package js.atomic
 
+import js.core.JsAny
 import seskar.js.JsValue
 
-sealed external interface WaitStatus {
+sealed external interface WaitStatus :
+    JsAny {
+
     companion object {
 
         @JsValue("ok")

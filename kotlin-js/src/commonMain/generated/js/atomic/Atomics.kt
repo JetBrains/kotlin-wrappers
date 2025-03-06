@@ -3,9 +3,11 @@
 package js.atomic
 
 import js.core.BigInt
+import js.core.JsAny
 import js.typedarrays.BigInt64Array
 import js.typedarrays.Int32Array
 import js.typedarrays.TypedArray
+import kotlin.js.definedExternally
 
 external object Atomics {
     /**
@@ -13,7 +15,7 @@ external object Atomics {
      * Until this atomic operation completes, any other read or write operation against the array
      * will block.
      */
-    fun <T : Any> add(
+    fun <T : JsAny> add(
         typedArray: TypedArray<*, *, *, T>,
         index: Int,
         value: T,
@@ -24,7 +26,7 @@ external object Atomics {
      * returning the original value. Until this atomic operation completes, any other read or
      * write operation against the array will block.
      */
-    fun <T : Any> and(
+    fun <T : JsAny> and(
         typedArray: TypedArray<*, *, *, T>,
         index: Int,
         value: T,
@@ -35,7 +37,7 @@ external object Atomics {
      * expected value, returning the original value. Until this atomic operation completes, any
      * other read or write operation against the array will block.
      */
-    fun <T : Any> compareExchange(
+    fun <T : JsAny> compareExchange(
         typedArray: TypedArray<*, *, *, T>,
         index: Int,
         expectedValue: T,
@@ -47,7 +49,7 @@ external object Atomics {
      * this atomic operation completes, any other read or write operation against the array will
      * block.
      */
-    fun <T : Any> exchange(
+    fun <T : JsAny> exchange(
         typedArray: TypedArray<*, *, *, T>,
         index: Int,
         value: T,
@@ -64,7 +66,7 @@ external object Atomics {
      * Returns the value at the given position in the array. Until this atomic operation completes,
      * any other read or write operation against the array will block.
      */
-    fun <T : Any> load(
+    fun <T : JsAny> load(
         typedArray: TypedArray<*, *, *, T>,
         index: Int,
     ): T
@@ -100,7 +102,7 @@ external object Atomics {
      * returning the original value. Until this atomic operation completes, any other read or write
      * operation against the array will block.
      */
-    fun <T : Any> or(
+    fun <T : JsAny> or(
         typedArray: TypedArray<*, *, *, T>,
         index: Int,
         value: T,
@@ -110,7 +112,7 @@ external object Atomics {
      * Stores a value at the given position in the array, returning the new value. Until this
      * atomic operation completes, any other read or write operation against the array will block.
      */
-    fun <T : Any> store(
+    fun <T : JsAny> store(
         typedArray: TypedArray<*, *, *, T>,
         index: Int,
         value: T,
@@ -121,7 +123,7 @@ external object Atomics {
      * value. Until this atomic operation completes, any other read or write operation against the
      * array will block.
      */
-    fun <T : Any> sub(
+    fun <T : JsAny> sub(
         typedArray: TypedArray<*, *, *, T>,
         index: Int,
         value: T,
@@ -188,7 +190,7 @@ external object Atomics {
      * returning the original value. Until this atomic operation completes, any other read or write
      * operation against the array will block.
      */
-    fun <T : Any> xor(
+    fun <T : JsAny> xor(
         typedArray: TypedArray<*, *, *, T>,
         index: Int,
         value: T,
