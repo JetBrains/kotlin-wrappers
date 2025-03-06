@@ -2,6 +2,7 @@
 
 package js.decorators
 
+import js.core.JsAny
 import js.objects.PropertyKey
 
 /**
@@ -10,7 +11,7 @@ import js.objects.PropertyKey
  * the type of the constructor. For a non-static class element, this will be the type of the instance.
  * @template Value The type of the decorated class field.
  */
-sealed external interface ClassFieldDecoratorContext<This : Any, Value : Any> {
+sealed external interface ClassFieldDecoratorContext<This : JsAny, Value : JsAny> {
     /** The kind of class element that was decorated. */
     val kind: DecoratorContextKind.field
 
@@ -26,7 +27,7 @@ sealed external interface ClassFieldDecoratorContext<This : Any, Value : Any> {
     /** An object that can be used to access the current value of the class element at runtime. */
     val access: Access<This, Value>
 
-    interface Access<This : Any, Value : Any> {
+    interface Access<This : JsAny, Value : JsAny> {
         /**
          * Determines whether an object has a property with the same name as the decorated element.
          */

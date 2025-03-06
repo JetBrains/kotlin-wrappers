@@ -2,6 +2,8 @@
 
 package js.decorators
 
+import js.reflect.JsClass
+
 /**
  * Context provided to a class decorator.
  * @template Class The type of the decorated class associated with this context.
