@@ -1,17 +1,16 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "INTERFACE_WITH_SUPERCLASS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package js.intl
 
-import js.core.JsAny
+import js.core.JsAnyMarker
 import seskar.js.JsValue
 
 sealed external interface LDMLPluralRule :
-    JsAny {
+    JsAnyMarker {
 
     companion object {
         @JsValue("zero")

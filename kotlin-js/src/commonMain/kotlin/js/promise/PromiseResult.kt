@@ -1,5 +1,4 @@
 @file:Suppress(
-    "INTERFACE_WITH_SUPERCLASS",
     "WRONG_EXTERNAL_DECLARATION",
 
     "WRONG_BODY_OF_EXTERNAL_DECLARATION",
@@ -11,11 +10,12 @@
 package js.promise
 
 import js.core.JsAny
+import js.core.JsAnyMarker
 import js.promise.internal.awaitPromiseResult
 
 // T | PromiseLike<T>
 sealed external interface PromiseResult<out T : JsAny?> :
-    JsAny {
+    JsAnyMarker {
 
     suspend inline fun await(): T =
         awaitPromiseResult(this)

@@ -1,14 +1,11 @@
-@file:Suppress(
-    "INTERFACE_WITH_SUPERCLASS",
-)
-
 package js.objects
 
 import js.core.JsAny
+import js.core.JsAnyMarker
 
 @JsPlainObject
 external interface TypedPropertyDescriptor<T : JsAny?> :
-    JsAny {
+    JsAnyMarker {
     val configurable: Boolean?
     val enumerable: Boolean?
     val value: T?

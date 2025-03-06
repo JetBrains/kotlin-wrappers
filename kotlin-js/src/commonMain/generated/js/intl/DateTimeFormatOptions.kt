@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "INTERFACE_WITH_SUPERCLASS",
-)
-
 package js.intl
 
-import js.core.JsAny
+import js.core.JsAnyMarker
 import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface DateTimeFormatOptions :
-    JsAny {
+    JsAnyMarker {
     val localeMatcher: LocaleMatcher?
     val weekday: WeekdayFormat?
     val era: EraFormat?

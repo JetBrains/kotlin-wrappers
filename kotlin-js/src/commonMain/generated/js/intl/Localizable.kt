@@ -1,7 +1,6 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "INTERFACE_WITH_SUPERCLASS",
     "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
 )
 
@@ -9,10 +8,11 @@ package js.intl
 
 import js.array.ReadonlyArray
 import js.core.JsAny
+import js.core.JsAnyMarker
 import kotlin.js.definedExternally
 
 external interface Localizable<in O : JsAny> :
-    JsAny {
+    JsAnyMarker {
     /**
      * Returns a value as a string value appropriate to the host environment's current locale.
      *

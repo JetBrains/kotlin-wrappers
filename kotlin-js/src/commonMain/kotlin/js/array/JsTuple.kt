@@ -1,16 +1,13 @@
-@file:Suppress(
-    "INTERFACE_WITH_SUPERCLASS",
-)
-
 package js.array
 
 import js.core.JsAny
+import js.core.JsAnyMarker
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
 import kotlin.js.JsName
 
 sealed external interface JsTuple :
-    JsAny {
+    JsAnyMarker {
     @JsName("length")
     val size: Int
 

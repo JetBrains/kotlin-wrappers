@@ -1,16 +1,12 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "INTERFACE_WITH_SUPERCLASS",
-)
-
 package js.intl
 
-import js.core.JsAny
+import js.core.JsAnyMarker
 import kotlin.js.definedExternally
 
 sealed external interface LocaleOptions :
-    JsAny {
+    JsAnyMarker {
     /**
      * A string containing the language, and the script and region if available.
      */

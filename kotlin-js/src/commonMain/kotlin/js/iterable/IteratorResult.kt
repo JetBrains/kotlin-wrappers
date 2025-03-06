@@ -1,10 +1,7 @@
-@file:Suppress(
-    "INTERFACE_WITH_SUPERCLASS",
-)
-
 package js.iterable
 
 import js.core.JsAny
+import js.core.JsAnyMarker
 
 sealed external interface IteratorResult<out T : JsAny?, out TReturn : JsAny?> :
-    JsAny
+    JsAnyMarker

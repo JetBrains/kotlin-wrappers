@@ -1,14 +1,11 @@
-@file:Suppress(
-    "INTERFACE_WITH_SUPERCLASS",
-)
-
 package js.promise
 
 import js.core.JsAny
+import js.core.JsAnyMarker
 import js.errors.toThrowable
 
 sealed external interface PromiseSettledResult<T : JsAny?> :
-    JsAny
+    JsAnyMarker
 
 fun <T : JsAny?> PromiseSettledResult<T>.toResult(): Result<T> =
     when (this) {

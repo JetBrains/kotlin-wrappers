@@ -1,10 +1,6 @@
-@file:Suppress(
-    "INTERFACE_WITH_SUPERCLASS",
-)
-
 package js.temporal
 
-import js.core.JsAny
+import js.core.JsAnyMarker
 import js.objects.JsPlainObject
 
 /**
@@ -13,7 +9,7 @@ import js.objects.JsPlainObject
  */
 @JsPlainObject
 external interface AssignmentOptions :
-    JsAny {
+    JsAnyMarker {
     /**
      * How to deal with out-of-range values
      *

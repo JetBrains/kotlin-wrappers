@@ -1,10 +1,7 @@
-@file:Suppress(
-    "INTERFACE_WITH_SUPERCLASS",
-)
-
 package js.temporal
 
 import js.core.JsAny
+import js.core.JsAnyMarker
 import js.objects.JsPlainObject
 
 /**
@@ -13,7 +10,7 @@ import js.objects.JsPlainObject
  */
 @JsPlainObject
 external interface DurationArithmeticOptions :
-    JsAny {
+    JsAnyMarker {
     /**
      * The starting point to use when variable-length units (years, months,
      * weeks depending on the calendar) are involved. This option is required if

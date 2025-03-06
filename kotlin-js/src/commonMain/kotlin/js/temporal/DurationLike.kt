@@ -1,15 +1,11 @@
-@file:Suppress(
-    "INTERFACE_WITH_SUPERCLASS",
-)
-
 package js.temporal
 
-import js.core.JsAny
+import js.core.JsAnyMarker
 import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface DurationLike :
-    JsAny {
+    JsAnyMarker {
 
     val years: Int?
     val months: Int?
