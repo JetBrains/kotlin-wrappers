@@ -15,7 +15,7 @@ open external class EventTarget {
 
     internal fun addEventListener(
         type: EventType<*>,
-        callback: Function<Unit>,
+        callback: (Nothing) -> Unit,
         options: AddEventListenerOptions? = definedExternally,
     )
 
@@ -27,7 +27,7 @@ open external class EventTarget {
 
     internal fun removeEventListener(
         type: EventType<*>,
-        callback: Function<Unit>,
+        callback: (Nothing) -> Unit,
         options: EventListenerOptions? = definedExternally,
     )
 
