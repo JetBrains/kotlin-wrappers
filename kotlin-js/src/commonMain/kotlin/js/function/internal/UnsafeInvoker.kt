@@ -1,10 +1,13 @@
 package js.function.internal
 
 import js.core.JsAny
+import js.core.JsAnyMarker
 import seskar.js.JsNativeInvoke
 
 @PublishedApi
-internal external interface UnsafeInvoker<out R : JsAny?> {
+internal external interface UnsafeInvoker<out R : JsAny?> :
+    JsAnyMarker {
+
     @JsNativeInvoke
     fun invoke(): R
 
