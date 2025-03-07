@@ -2,6 +2,7 @@
     ExperimentalWasmDsl::class,
 )
 
+import org.gradle.util.Path.SEPARATOR
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.tasks.Kotlin2JsCompile
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompilationTask
@@ -10,12 +11,13 @@ plugins {
     kotlin("multiplatform")
     kotlin("plugin.js-plain-objects")
     id("kotlin-test-conventions")
-    id("dokka-conventions")
 }
 
 kotlin {
     js {
-        moduleName = project.name
+        moduleName = project.path
+            .removePrefix(SEPARATOR)
+            .replace(SEPARATOR, "-")
 
         when (project.jsPlatform) {
             JsPlatform.WEB -> {
