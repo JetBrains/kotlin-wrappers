@@ -9,7 +9,6 @@ import web.animations.AnimationEvent
 import web.animations.DocumentTimeline
 import web.clipboard.ClipboardEvent
 import web.cssom.TransitionEvent
-import web.dom.*
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -34,7 +33,8 @@ import web.url.URL
 import web.viewtransition.StartViewTransitionOptions
 import web.viewtransition.ViewTransition
 import web.viewtransition.ViewTransitionUpdateCallback
-import web.window.*
+import web.window.Window
+import web.window.WindowProxy
 import web.xpath.XPathEvaluatorBase
 
 /**

@@ -4,15 +4,13 @@ package web.html
 
 import js.iterable.JsIterable
 import web.autofill.AutoFill
-import web.dom.*
+import web.dom.Node
+import web.dom.NodeListOf
 import web.events.Event
 import web.events.EventInstance
 import web.events.JsEvent
 import web.form.FormControl
-import web.html.*
-import web.uievents.*
 import web.validation.ValidityState
-import web.window.*
 
 /**
  * A <select> HTML Element. These elements also share all of the properties and methods of other HTML elements via the HTMLElement interface.
