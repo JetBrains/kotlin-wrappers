@@ -1,7 +1,7 @@
 package js.coroutines
 
 import js.core.JsAny
-import js.errors.toJsError
+import js.errors.toJsErrorLike
 import js.promise.Promise
 import js.promise.deferred
 import kotlinx.coroutines.Deferred
@@ -16,7 +16,7 @@ fun <T : JsAny?> Deferred<T>.asPromise(): Promise<T> {
         invokeOnCompletion {
             val exception = getCompletionExceptionOrNull()
             if (exception != null) {
-                reject(exception.toJsError())
+                reject(exception.toJsErrorLike())
             } else {
                 resolve(getCompleted())
             }

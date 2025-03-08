@@ -1,7 +1,7 @@
 package js.promise
 
 import js.core.Void
-import js.errors.JsError
+import js.errors.JsErrorLike
 import seskar.js.JsTypeGuard
 
 @JsTypeGuard(
@@ -11,5 +11,5 @@ import seskar.js.JsTypeGuard
 external class PromiseRejectedResult
 private constructor() :
     PromiseSettledResult<Void> {
-    val reason: JsError
+    val reason: JsErrorLike?
 }

@@ -11,7 +11,7 @@
 package js.promise
 
 import js.core.JsAny
-import js.errors.JsError
+import js.errors.JsErrorLike
 import js.promise.internal.awaitPromiseLike
 import js.promise.internal.thenToContinuation
 import kotlin.coroutines.Continuation
@@ -25,7 +25,7 @@ external interface PromiseLike<out T : JsAny?> :
 
     fun <R : JsAny?> then(
         onFulfilled: (T) -> R,
-        onRejected: (JsError) -> R,
+        onRejected: (JsErrorLike?) -> R,
     ): PromiseLike<R>
 
     @JsName("then")
@@ -36,7 +36,7 @@ external interface PromiseLike<out T : JsAny?> :
     @JsName("then")
     fun <R : JsAny?> flatThen(
         onFulfilled: (T) -> PromiseResult<R>,
-        onRejected: (JsError) -> PromiseResult<R>,
+        onRejected: (JsErrorLike?) -> PromiseResult<R>,
     ): PromiseLike<R>
 
     override suspend inline fun await(): T =

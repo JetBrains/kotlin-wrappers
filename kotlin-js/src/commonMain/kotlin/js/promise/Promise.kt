@@ -4,6 +4,7 @@ import js.array.ReadonlyArray
 import js.core.JsAny
 import js.core.Void
 import js.errors.JsError
+import js.errors.JsErrorLike
 import js.iterable.JsIterable
 import kotlin.js.JsName
 
@@ -24,7 +25,7 @@ open external class Promise<out T : JsAny?>(
 
     final override fun <R : JsAny?> then(
         onFulfilled: (T) -> R,
-        onRejected: (JsError) -> R,
+        onRejected: (JsErrorLike?) -> R,
     ): Promise<R>
 
     final override fun <R : JsAny?> flatThen(
@@ -33,19 +34,19 @@ open external class Promise<out T : JsAny?>(
 
     final override fun <R : JsAny?> flatThen(
         onFulfilled: (T) -> PromiseResult<R>,
-        onRejected: (JsError) -> PromiseResult<R>,
+        onRejected: (JsErrorLike?) -> PromiseResult<R>,
     ): Promise<R>
 
     @PublishedApi
     @JsName("catch")
     internal fun catchInternal(
-        onRejected: (JsError) -> @UnsafeVariance T,
+        onRejected: (JsErrorLike?) -> @UnsafeVariance T,
     ): Promise<T>
 
     @PublishedApi
     @JsName("catch")
     internal fun flatCatchInternal(
-        onRejected: (JsError) -> PromiseResult<@UnsafeVariance T>,
+        onRejected: (JsErrorLike?) -> PromiseResult<@UnsafeVariance T>,
     ): Promise<T>
 
     fun finally(
@@ -81,11 +82,11 @@ open external class Promise<out T : JsAny?>(
 }
 
 inline fun <T : JsAny?> Promise<T>.catch(
-    noinline onRejected: (JsError) -> T,
+    noinline onRejected: (JsErrorLike?) -> T,
 ): Promise<T> =
     catchInternal(onRejected = onRejected)
 
 inline fun <T : JsAny?> Promise<T>.flatCatch(
-    noinline onRejected: (JsError) -> PromiseResult<T>,
+    noinline onRejected: (JsErrorLike?) -> PromiseResult<T>,
 ): Promise<T> =
     flatCatchInternal(onRejected = onRejected)
