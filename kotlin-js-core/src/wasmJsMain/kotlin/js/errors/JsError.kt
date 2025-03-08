@@ -5,6 +5,8 @@
 
 package js.errors
 
+import js.reflect.unsafeCast
+
 @JsName("Error")
 actual open external class JsError :
     JsAny {
@@ -17,3 +19,7 @@ actual open external class JsError :
 
 actual fun JsError.toThrowable(): Throwable =
     JsException(this)
+
+// TODO: check implementation
+actual fun Throwable.toJsError(): JsError =
+    unsafeCast(toJsReference())

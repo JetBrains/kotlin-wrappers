@@ -16,3 +16,5 @@ expect open external class JsError :
 }
 
 expect fun JsError.toThrowable(): Throwable
+
+expect fun Throwable.toJsError(): JsError

@@ -8,3 +8,6 @@ actual typealias JsError = Throwable
 
 actual inline fun JsError.toThrowable(): Throwable =
     this
+
+actual fun Throwable.toJsError(): JsError =
+    this
