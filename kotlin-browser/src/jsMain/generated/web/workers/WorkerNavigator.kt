@@ -18,7 +18,7 @@ import web.serviceworker.ServiceWorkerContainer
  */
 sealed /* final */
 external class WorkerNavigator
-private constructor() :
+protected /* private */ constructor() :
     NavigatorBadge,
     NavigatorConcurrentHardware,
     NavigatorID,

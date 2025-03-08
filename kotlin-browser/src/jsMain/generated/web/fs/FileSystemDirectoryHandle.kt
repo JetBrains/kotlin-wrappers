@@ -15,7 +15,7 @@ import seskar.js.JsAsync
  */
 sealed /* final */
 external class FileSystemDirectoryHandle
-private constructor() :
+protected /* private */ constructor() :
     FileSystemHandle,
     AsyncMapLike<String, FileSystemHandle> {
     override val kind: FileSystemHandleKind.directory

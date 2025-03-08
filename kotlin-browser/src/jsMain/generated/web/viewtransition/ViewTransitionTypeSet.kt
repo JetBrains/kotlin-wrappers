@@ -6,5 +6,5 @@ import js.collections.MutableSetLike
 
 sealed /* final */
 external class ViewTransitionTypeSet
-private constructor() :
+protected /* private */ constructor() :
     MutableSetLike<String>

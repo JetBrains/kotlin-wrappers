@@ -13,7 +13,7 @@ import js.collections.ReadonlyMap
  */
 sealed /* final */
 external class MediaKeyStatusMap
-private constructor() :
+protected /* private */ constructor() :
     ReadonlyMap<BufferSource, MediaKeyStatus> {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyStatusMap/size)

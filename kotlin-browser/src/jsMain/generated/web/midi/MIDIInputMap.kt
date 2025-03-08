@@ -11,5 +11,5 @@ import js.collections.ReadonlyMap
  */
 sealed /* final */
 external class MIDIInputMap
-private constructor() :
+protected /* private */ constructor() :
     ReadonlyMap<String, MIDIInput>

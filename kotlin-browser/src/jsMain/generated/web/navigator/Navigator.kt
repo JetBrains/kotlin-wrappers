@@ -33,7 +33,7 @@ import web.wakelock.WakeLock
  */
 sealed /* final */
 external class Navigator
-private constructor() :
+protected /* private */ constructor() :
     NavigatorAutomationInformation,
     NavigatorBadge,
     NavigatorConcurrentHardware,

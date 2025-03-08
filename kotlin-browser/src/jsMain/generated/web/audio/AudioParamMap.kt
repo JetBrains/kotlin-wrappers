@@ -9,5 +9,5 @@ import js.collections.ReadonlyMap
  */
 sealed /* final */
 external class AudioParamMap
-private constructor() :
+protected /* private */ constructor() :
     ReadonlyMap<String, AudioParam>

@@ -14,7 +14,7 @@ import web.rendering.RenderingContextId
  */
 sealed /* final */
 external class CanvasRenderingContext2D
-private constructor() :
+protected /* private */ constructor() :
     CanvasCompositing,
     CanvasDrawImage,
     CanvasDrawPath,

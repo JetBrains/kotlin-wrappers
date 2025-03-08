@@ -11,7 +11,7 @@ import web.rendering.RenderingContextId
  */
 sealed /* final */
 external class OffscreenCanvasRenderingContext2D
-private constructor() :
+protected /* private */ constructor() :
     CanvasCompositing,
     CanvasDrawImage,
     CanvasDrawPath,

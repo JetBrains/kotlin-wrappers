@@ -7,5 +7,5 @@ import web.events.EventType
 
 sealed /* final */
 external class EventCounts
-private constructor() :
+protected /* private */ constructor() :
     ReadonlyMap<EventType<*>, Int>

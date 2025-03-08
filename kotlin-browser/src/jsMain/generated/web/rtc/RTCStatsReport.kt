@@ -9,5 +9,5 @@ import js.collections.ReadonlyMap
  */
 sealed /* final */
 external class RTCStatsReport
-private constructor() :
+protected /* private */ constructor() :
     ReadonlyMap<String, Any?>

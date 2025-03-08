@@ -9,5 +9,5 @@ import js.collections.MutableSetLike
  */
 sealed /* final */
 external class CustomStateSet
-private constructor() :
+protected /* private */ constructor() :
     MutableSetLike<String>

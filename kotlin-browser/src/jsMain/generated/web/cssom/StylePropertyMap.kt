@@ -7,7 +7,7 @@ package web.cssom
  */
 sealed /* final */
 external class StylePropertyMap
-private constructor() :
+protected /* private */ constructor() :
     StylePropertyMapReadOnly {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMap/append)

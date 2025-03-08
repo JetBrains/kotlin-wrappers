@@ -9,5 +9,5 @@ import js.collections.MutableMapLike
  */
 sealed /* final */
 external class HighlightRegistry
-private constructor() :
+protected /* private */ constructor() :
     MutableMapLike<String, Highlight>

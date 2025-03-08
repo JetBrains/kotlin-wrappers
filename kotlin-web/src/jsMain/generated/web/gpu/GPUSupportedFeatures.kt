@@ -11,7 +11,7 @@ import js.collections.ReadonlySet
  */
 sealed /* final */
 external class GPUSupportedFeatures
-private constructor() :
+protected /* private */ constructor() :
     ReadonlySet<String> {
     override fun forEach(action: (item: String) -> Unit)
 }

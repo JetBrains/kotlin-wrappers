@@ -12,7 +12,7 @@ import js.iterable.JsIterable
  */
 sealed /* final */
 external class StylePropertyMapReadOnly
-private constructor() :
+protected /* private */ constructor() :
     MapLike<String, JsIterable<CSSStyleValue>>,
     ReadonlySetLike<String> {
     /**
