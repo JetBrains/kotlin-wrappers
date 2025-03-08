@@ -9,3 +9,10 @@ sealed external interface JsErrorLike :
 
 inline fun JsErrorLike?.toJsErrorOrNull(): JsError? =
     upcast<JsAny?>() as? JsError
+
+fun JsErrorLike?.toJsError(): JsError =
+    toJsErrorOrNull() ?: JsError("Non-Kotlin exception $this")
+
+expect fun JsErrorLike?.toThrowable(): Throwable
+
+expect fun Throwable.toJsErrorLike(): JsErrorLike
