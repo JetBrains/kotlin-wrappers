@@ -2,6 +2,7 @@
 
 package web.cssom
 
+import js.core.JsAny
 import js.reflect.unsafeCast
 
 inline fun attr(
@@ -9,12 +10,12 @@ inline fun attr(
 ): Content =
     unsafeCast("attr($name)")
 
-inline fun <T : Any> env(
+inline fun <T : JsAny> env(
     id: Ident,
 ): T =
     unsafeCast("env($id)")
 
-inline fun <T : Any> env(
+inline fun <T : JsAny> env(
     id: Ident,
     fallback: T,
 ): T =
@@ -25,12 +26,12 @@ inline fun url(
 ): Url =
     unsafeCast("url($value)")
 
-inline fun <T : Any> `var`(
+inline fun <T : JsAny> `var`(
     name: CustomPropertyName<T>,
 ): T? =
     unsafeCast("var($name)")
 
-inline fun <T : Any> `var`(
+inline fun <T : JsAny> `var`(
     name: CustomPropertyName<T>,
     fallback: T,
 ): T =

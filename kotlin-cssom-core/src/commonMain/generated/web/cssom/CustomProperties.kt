@@ -2,17 +2,18 @@
 
 package web.cssom
 
+import js.core.JsAny
 import seskar.js.JsNativeGetter
 import seskar.js.JsNativeSetter
 
 external interface CustomProperties {
     @JsNativeGetter
-    operator fun <T : Any> get(
+    operator fun <T : JsAny> get(
         name: CustomPropertyName<T>,
     ): T?
 
     @JsNativeSetter
-    operator fun <T : Any> set(
+    operator fun <T : JsAny> set(
         name: CustomPropertyName<T>,
         value: T?,
     )
