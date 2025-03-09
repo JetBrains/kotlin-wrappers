@@ -7,6 +7,7 @@
 
 package react
 
+import js.array.ReadonlyArray
 import js.reflect.unsafeCast
 import seskar.js.JsAlias
 import kotlin.reflect.KProperty
@@ -33,7 +34,7 @@ sealed external interface StateInstance<T> {
         property: KProperty<*>,
         value: T,
     ) {
-        unsafeCast<StateSetter<T>>(asDynamic()[1])(value)
+        unsafeCast<ReadonlyArray<StateSetter<T>>>(this)[1](value)
     }
 }
 
