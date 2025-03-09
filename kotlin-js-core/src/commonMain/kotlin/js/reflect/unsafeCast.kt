@@ -11,6 +11,14 @@ expect fun <T : JsAny> unsafeCast(
 ): T?
 
 expect fun <T : JsAny> unsafeCast(
+    value: Int,
+): T
+
+expect fun <T : JsAny> unsafeCast(
+    value: Double,
+): T
+
+expect fun <T : JsAny> unsafeCast(
     value: JsAny,
 ): T
 

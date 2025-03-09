@@ -13,6 +13,16 @@ actual fun <T : JsAny> unsafeCast(
     } else null
 
 actual inline fun <T : JsAny> unsafeCast(
+    value: Int,
+): T =
+    value.toJsNumber().unsafeCast()
+
+actual inline fun <T : JsAny> unsafeCast(
+    value: Double,
+): T =
+    value.toJsNumber().unsafeCast()
+
+actual inline fun <T : JsAny> unsafeCast(
     value: JsAny,
 ): T =
     value.unsafeCast()
