@@ -1,3 +1,5 @@
 package js.objects
 
-expect fun <T : Any> jso(): T
+import js.core.JsAny
+
+expect fun <T : JsAny> jso(): T
