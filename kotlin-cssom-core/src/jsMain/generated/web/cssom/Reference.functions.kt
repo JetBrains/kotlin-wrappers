@@ -27,7 +27,7 @@ inline fun url(
 
 inline fun <T : Any> `var`(
     name: CustomPropertyName<T>,
-): T =
+): T? =
     unsafeCast("var($name)")
 
 inline fun <T : Any> `var`(
