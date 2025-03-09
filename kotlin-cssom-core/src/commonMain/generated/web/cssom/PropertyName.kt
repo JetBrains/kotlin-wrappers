@@ -8,6 +8,8 @@ package web.cssom
 
 import seskar.js.JsValue
 
+// TEMP
+@Suppress("WRONG_JS_INTEROP_TYPE")
 sealed external interface PropertyName<T : Any> : Ident {
     companion object {
         @JsValue("accent-color")
