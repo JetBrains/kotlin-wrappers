@@ -3,11 +3,11 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(projects.kotlinJs)
-    jsMainApi(projects.kotlinCssomCore)
-    jsMainApi(projects.kotlinWeb)
+    commonMainApi(projects.kotlinJs)
+    commonMainApi(projects.kotlinCssomCore)
+    commonMainApi(projects.kotlinWeb)
 
-    jsMainImplementation(libs.coroutines.core)
+    commonMainImplementation(libs.coroutines.core)
 
     jsTestImplementation(libs.kotlin.test)
 }
