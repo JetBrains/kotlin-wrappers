@@ -4,6 +4,7 @@ package web.cssom
 
 import js.array.JsTuple2
 import js.collections.ListLike
+import js.core.JsInt
 import js.iterable.JsIterator
 
 /**
@@ -17,8 +18,8 @@ private constructor() :
      */
     override val length: Int
 
-    override fun entries(): JsIterator<JsTuple2<Int, CSSNumericValue>>
-    override fun keys(): JsIterator<Int>
+    override fun entries(): JsIterator<JsTuple2<JsInt, CSSNumericValue>>
+    override fun keys(): JsIterator<JsInt>
     override fun values(): JsIterator<CSSNumericValue>
     override fun forEach(action: (item: CSSNumericValue) -> Unit)
 }

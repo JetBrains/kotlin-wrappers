@@ -4,6 +4,7 @@ package web.idb
 
 import js.array.ReadonlyArray
 import js.core.JsAny
+import js.core.JsInt
 import js.core.JsString
 import js.core.Void
 import web.dom.DOMStringList
@@ -82,8 +83,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/count)
      */
-    fun count(query: IDBValidKey = definedExternally): IDBRequest<Int>
-    fun count(query: IDBKeyRange): IDBRequest<Int>
+    fun count(query: IDBValidKey = definedExternally): IDBRequest<JsInt>
+    fun count(query: IDBKeyRange): IDBRequest<JsInt>
 
     /**
      * Creates a new index in store with the given name, keyPath and options and returns a new IDBIndex. If the keyPath and options define constraints that cannot be satisfied with the data already in store the upgrade transaction will abort with a "ConstraintError" DOMException.

@@ -4,6 +4,7 @@ package web.geometry
 
 import js.array.ReadonlyArray
 import js.core.JsAny
+import js.core.JsDouble
 import js.typedarrays.Float32Array
 import js.typedarrays.Float64Array
 
@@ -13,7 +14,7 @@ import js.typedarrays.Float64Array
 open external class DOMMatrixReadOnly(
     init: String = definedExternally,
 ) {
-    constructor(init: ReadonlyArray<Double>)
+    constructor(init: ReadonlyArray<JsDouble>)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)

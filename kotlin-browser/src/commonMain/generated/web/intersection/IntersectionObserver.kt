@@ -3,6 +3,7 @@
 package web.intersection
 
 import js.array.ReadonlyArray
+import js.core.JsDouble
 import web.dom.Element
 import web.dom.ParentNode
 
@@ -28,7 +29,7 @@ open external class IntersectionObserver(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IntersectionObserver/thresholds)
      */
-    val thresholds: ReadonlyArray<Double>
+    val thresholds: ReadonlyArray<JsDouble>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IntersectionObserver/disconnect)

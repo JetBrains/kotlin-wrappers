@@ -4,6 +4,7 @@ package web.idb
 
 import js.array.ReadonlyArray
 import js.core.JsAny
+import js.core.JsInt
 
 /**
  * IDBIndex interface of the IndexedDB API provides asynchronous access to an index in a database. An index is a kind of object store for looking up records in another object store, called the referenced object store. You use this interface to retrieve data.
@@ -48,8 +49,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/count)
      */
-    fun count(query: IDBValidKey = definedExternally): IDBRequest<Int>
-    fun count(query: IDBKeyRange): IDBRequest<Int>
+    fun count(query: IDBValidKey = definedExternally): IDBRequest<JsInt>
+    fun count(query: IDBKeyRange): IDBRequest<JsInt>
 
     /**
      * Retrieves the value of the first record matching the given key or key range in query.

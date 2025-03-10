@@ -3,6 +3,7 @@
 package web.audio
 
 import js.array.ReadonlyArray
+import js.core.JsDouble
 import js.typedarrays.Float32Array
 
 /**
@@ -81,7 +82,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioParam/setValueCurveAtTime)
      */
     fun setValueCurveAtTime(
-        values: ReadonlyArray<Double>,
+        values: ReadonlyArray<JsDouble>,
         startTime: Double,
         duration: Double,
     ): AudioParam

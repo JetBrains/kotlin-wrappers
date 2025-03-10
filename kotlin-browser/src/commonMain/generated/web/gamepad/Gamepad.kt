@@ -3,6 +3,7 @@
 package web.gamepad
 
 import js.array.ReadonlyArray
+import js.core.JsDouble
 import web.time.DOMHighResTimeStamp
 
 /**
@@ -15,7 +16,7 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Gamepad/axes)
      */
-    val axes: ReadonlyArray<Double>
+    val axes: ReadonlyArray<JsDouble>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Gamepad/buttons)

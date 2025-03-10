@@ -4,6 +4,7 @@ package web.audio
 
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
+import js.core.JsDouble
 import js.promise.Promise
 import js.typedarrays.Float32Array
 import seskar.js.JsAsync
@@ -115,8 +116,8 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createIIRFilter)
      */
     fun createIIRFilter(
-        feedforward: ReadonlyArray<Double>,
-        feedback: ReadonlyArray<Double>,
+        feedforward: ReadonlyArray<JsDouble>,
+        feedback: ReadonlyArray<JsDouble>,
     ): IIRFilterNode
 
     /**
@@ -133,8 +134,8 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createPeriodicWave)
      */
     fun createPeriodicWave(
-        real: ReadonlyArray<Double>,
-        imag: ReadonlyArray<Double>,
+        real: ReadonlyArray<JsDouble>,
+        imag: ReadonlyArray<JsDouble>,
         constraints: PeriodicWaveConstraints = definedExternally,
     ): PeriodicWave
 

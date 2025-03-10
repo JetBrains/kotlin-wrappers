@@ -3,6 +3,7 @@
 package web.canvas
 
 import js.array.ReadonlyArray
+import js.core.JsDouble
 
 sealed external interface CanvasPathDrawingStyles {
     /**
@@ -33,10 +34,10 @@ sealed external interface CanvasPathDrawingStyles {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/getLineDash)
      */
-    fun getLineDash(): ReadonlyArray<Double>
+    fun getLineDash(): ReadonlyArray<JsDouble>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setLineDash)
      */
-    fun setLineDash(segments: ReadonlyArray<Double>)
+    fun setLineDash(segments: ReadonlyArray<JsDouble>)
 }

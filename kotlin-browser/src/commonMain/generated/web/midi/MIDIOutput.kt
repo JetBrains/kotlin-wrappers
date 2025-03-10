@@ -3,6 +3,7 @@
 package web.midi
 
 import js.array.ReadonlyArray
+import js.core.JsDouble
 import web.time.DOMHighResTimeStamp
 
 /**
@@ -17,7 +18,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIOutput/send)
      */
     fun send(
-        data: ReadonlyArray<Double>,
+        data: ReadonlyArray<JsDouble>,
         timestamp: DOMHighResTimeStamp = definedExternally,
     )
 }
