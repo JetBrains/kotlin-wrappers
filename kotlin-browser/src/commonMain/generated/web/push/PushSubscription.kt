@@ -3,6 +3,7 @@
 package web.push
 
 import js.buffer.ArrayBuffer
+import js.core.JsBoolean
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.time.EpochTimeStamp
@@ -48,5 +49,5 @@ private constructor() {
     suspend fun unsubscribe(): Boolean
 
     @JsName("unsubscribe")
-    fun unsubscribeAsync(): Promise<Boolean>
+    fun unsubscribeAsync(): Promise<JsBoolean>
 }

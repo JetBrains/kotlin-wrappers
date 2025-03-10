@@ -3,6 +3,7 @@
 package web.media.key
 
 import js.buffer.BufferSource
+import js.core.JsBoolean
 import js.promise.Promise
 import seskar.js.JsAsync
 
@@ -37,5 +38,5 @@ private constructor() {
     suspend fun setServerCertificate(serverCertificate: BufferSource): Boolean
 
     @JsName("setServerCertificate")
-    fun setServerCertificateAsync(serverCertificate: BufferSource): Promise<Boolean>
+    fun setServerCertificateAsync(serverCertificate: BufferSource): Promise<JsBoolean>
 }

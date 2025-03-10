@@ -3,6 +3,7 @@
 package web.media.key
 
 import js.buffer.BufferSource
+import js.core.JsBoolean
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
@@ -82,7 +83,7 @@ private constructor() :
     suspend fun load(sessionId: String): Boolean
 
     @JsName("load")
-    fun loadAsync(sessionId: String): Promise<Boolean>
+    fun loadAsync(sessionId: String): Promise<JsBoolean>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/remove)

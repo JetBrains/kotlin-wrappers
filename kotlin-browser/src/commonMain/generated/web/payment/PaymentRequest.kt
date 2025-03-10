@@ -3,6 +3,7 @@
 package web.payment
 
 import js.array.ReadonlyArray
+import js.core.JsBoolean
 import js.core.Void
 import js.promise.Promise
 import js.promise.PromiseLike
@@ -51,7 +52,7 @@ open external class PaymentRequest(
     suspend fun canMakePayment(): Boolean
 
     @JsName("canMakePayment")
-    fun canMakePaymentAsync(): Promise<Boolean>
+    fun canMakePaymentAsync(): Promise<JsBoolean>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/show)

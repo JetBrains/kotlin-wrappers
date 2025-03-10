@@ -2,6 +2,7 @@
 
 package web.fs
 
+import js.core.JsBoolean
 import js.promise.Promise
 import seskar.js.JsAsync
 
@@ -30,5 +31,5 @@ private constructor() {
     suspend fun isSameEntry(other: FileSystemHandle): Boolean
 
     @JsName("isSameEntry")
-    fun isSameEntryAsync(other: FileSystemHandle): Promise<Boolean>
+    fun isSameEntryAsync(other: FileSystemHandle): Promise<JsBoolean>
 }

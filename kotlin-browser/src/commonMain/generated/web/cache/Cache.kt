@@ -3,6 +3,7 @@
 package web.cache
 
 import js.array.ReadonlyArray
+import js.core.JsBoolean
 import js.core.JsString
 import js.core.Void
 import js.promise.Promise
@@ -74,7 +75,7 @@ private constructor() {
     fun deleteAsync(
         url: String,
         options: CacheQueryOptions = definedExternally,
-    ): Promise<Boolean>
+    ): Promise<JsBoolean>
 
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
@@ -87,7 +88,7 @@ private constructor() {
     fun deleteAsync(
         url: URL,
         options: CacheQueryOptions = definedExternally,
-    ): Promise<Boolean>
+    ): Promise<JsBoolean>
 
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
@@ -100,7 +101,7 @@ private constructor() {
     fun deleteAsync(
         request: Request,
         options: CacheQueryOptions = definedExternally,
-    ): Promise<Boolean>
+    ): Promise<JsBoolean>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/keys)

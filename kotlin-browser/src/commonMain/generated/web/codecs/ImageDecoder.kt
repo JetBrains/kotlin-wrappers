@@ -2,6 +2,7 @@
 
 package web.codecs
 
+import js.core.JsBoolean
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
@@ -63,6 +64,6 @@ open external class ImageDecoder(
         suspend fun isTypeSupported(type: String): Boolean
 
         @JsName("isTypeSupported")
-        fun isTypeSupportedAsync(type: String): Promise<Boolean>
+        fun isTypeSupportedAsync(type: String): Promise<JsBoolean>
     }
 }

@@ -6,6 +6,7 @@ import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
 import js.buffer.BufferSource
 import js.core.JsAny
+import js.core.JsBoolean
 import js.promise.Promise
 import seskar.js.JsAsync
 
@@ -2094,7 +2095,7 @@ private constructor() {
         key: CryptoKey,
         signature: BufferSource,
         data: BufferSource,
-    ): Promise<Boolean>
+    ): Promise<JsBoolean>
 
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
@@ -2111,7 +2112,7 @@ private constructor() {
         key: CryptoKey,
         signature: BufferSource,
         data: BufferSource,
-    ): Promise<Boolean>
+    ): Promise<JsBoolean>
 
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
@@ -2128,7 +2129,7 @@ private constructor() {
         key: CryptoKey,
         signature: BufferSource,
         data: BufferSource,
-    ): Promise<Boolean>
+    ): Promise<JsBoolean>
 
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
@@ -2145,7 +2146,7 @@ private constructor() {
         key: CryptoKey,
         signature: BufferSource,
         data: BufferSource,
-    ): Promise<Boolean>
+    ): Promise<JsBoolean>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/wrapKey)

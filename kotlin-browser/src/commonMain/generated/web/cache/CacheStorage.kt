@@ -3,6 +3,7 @@
 package web.cache
 
 import js.array.ReadonlyArray
+import js.core.JsBoolean
 import js.core.JsString
 import js.promise.Promise
 import seskar.js.JsAsync
@@ -26,7 +27,7 @@ private constructor() {
     suspend fun delete(cacheName: String): Boolean
 
     @JsName("delete")
-    fun deleteAsync(cacheName: String): Promise<Boolean>
+    fun deleteAsync(cacheName: String): Promise<JsBoolean>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/has)
@@ -36,7 +37,7 @@ private constructor() {
     suspend fun has(cacheName: String): Boolean
 
     @JsName("has")
-    fun hasAsync(cacheName: String): Promise<Boolean>
+    fun hasAsync(cacheName: String): Promise<JsBoolean>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/keys)

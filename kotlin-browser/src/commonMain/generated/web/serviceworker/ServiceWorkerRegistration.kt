@@ -3,6 +3,7 @@
 package web.serviceworker
 
 import js.array.ReadonlyArray
+import js.core.JsBoolean
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
@@ -94,7 +95,7 @@ private constructor() :
     suspend fun unregister(): Boolean
 
     @JsName("unregister")
-    fun unregisterAsync(): Promise<Boolean>
+    fun unregisterAsync(): Promise<JsBoolean>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/update)

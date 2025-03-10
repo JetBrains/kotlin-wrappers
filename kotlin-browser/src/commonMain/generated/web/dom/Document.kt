@@ -2,6 +2,7 @@
 
 package web.dom
 
+import js.core.JsBoolean
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
@@ -558,7 +559,7 @@ open external class Document :
     suspend fun hasStorageAccess(): Boolean
 
     @JsName("hasStorageAccess")
-    fun hasStorageAccessAsync(): Promise<Boolean>
+    fun hasStorageAccessAsync(): Promise<JsBoolean>
 
     /**
      * Returns a copy of node. If deep is true, the copy also includes the node's descendants.

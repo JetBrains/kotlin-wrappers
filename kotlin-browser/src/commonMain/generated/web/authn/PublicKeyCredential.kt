@@ -3,6 +3,7 @@
 package web.authn
 
 import js.buffer.ArrayBuffer
+import js.core.JsBoolean
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.credentials.Credential
@@ -59,7 +60,7 @@ private constructor() :
         suspend fun isConditionalMediationAvailable(): Boolean
 
         @JsName("isConditionalMediationAvailable")
-        fun isConditionalMediationAvailableAsync(): Promise<Boolean>
+        fun isConditionalMediationAvailableAsync(): Promise<JsBoolean>
 
         /**
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/isUserVerifyingPlatformAuthenticatorAvailable_static)
@@ -69,7 +70,7 @@ private constructor() :
         suspend fun isUserVerifyingPlatformAuthenticatorAvailable(): Boolean
 
         @JsName("isUserVerifyingPlatformAuthenticatorAvailable")
-        fun isUserVerifyingPlatformAuthenticatorAvailableAsync(): Promise<Boolean>
+        fun isUserVerifyingPlatformAuthenticatorAvailableAsync(): Promise<JsBoolean>
 
         /**
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/parseCreationOptionsFromJSON_static)

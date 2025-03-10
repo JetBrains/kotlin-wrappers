@@ -2,6 +2,7 @@
 
 package web.storage
 
+import js.core.JsBoolean
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.fs.FileSystemDirectoryHandle
@@ -41,7 +42,7 @@ private constructor() {
     suspend fun persist(): Boolean
 
     @JsName("persist")
-    fun persistAsync(): Promise<Boolean>
+    fun persistAsync(): Promise<JsBoolean>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageManager/persisted)
@@ -51,5 +52,5 @@ private constructor() {
     suspend fun persisted(): Boolean
 
     @JsName("persisted")
-    fun persistedAsync(): Promise<Boolean>
+    fun persistedAsync(): Promise<JsBoolean>
 }
