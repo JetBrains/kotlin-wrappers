@@ -41,6 +41,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/whenDefined)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun <T : HTMLElement> whenDefined(name: HtmlTagName<T>): CustomElementConstructor<T>
 
     @JsName("whenDefined")

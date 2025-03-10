@@ -127,6 +127,7 @@ protected /* private */ constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/requestMIDIAccess)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun requestMIDIAccess(options: MIDIOptions = definedExternally): MIDIAccess
 
     @JsName("requestMIDIAccess")
@@ -138,6 +139,7 @@ protected /* private */ constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/requestMediaKeySystemAccess)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun requestMediaKeySystemAccess(
         keySystem: String,
         supportedConfigurations: ReadonlyArray<MediaKeySystemConfiguration>,
@@ -168,6 +170,7 @@ protected /* private */ constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/share)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun share(data: ShareData = definedExternally)
 
     @JsName("share")

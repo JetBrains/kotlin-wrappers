@@ -52,6 +52,7 @@ open external class VideoEncoder(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/flush)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun flush()
 
     @JsName("flush")
@@ -73,6 +74,7 @@ open external class VideoEncoder(
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/isConfigSupported_static)
          */
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun isConfigSupported(config: VideoEncoderConfig): VideoEncoderSupport
 
         @JsName("isConfigSupported")

@@ -17,6 +17,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LockManager/query)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun query(): LockManagerSnapshot
 
     @JsName("query")
@@ -26,6 +27,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LockManager/request)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun request(
         name: String,
         callback: LockGrantedCallback,
@@ -38,6 +40,7 @@ private constructor() {
     ): Promise<Void>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun request(
         name: String,
         options: LockOptions,

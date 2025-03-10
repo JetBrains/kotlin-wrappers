@@ -26,6 +26,7 @@ open external class WritableStream<W>(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStream/abort)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun abort(reason: JsError? = definedExternally)
 
     @JsName("abort")
@@ -35,6 +36,7 @@ open external class WritableStream<W>(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStream/close)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun close()
 
     @JsName("close")

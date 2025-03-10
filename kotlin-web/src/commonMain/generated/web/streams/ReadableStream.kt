@@ -32,6 +32,7 @@ open external class ReadableStream<R>(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/cancel)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun cancel(reason: JsError? = definedExternally)
 
     @JsName("cancel")
@@ -55,6 +56,7 @@ open external class ReadableStream<R>(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/pipeTo)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun pipeTo(
         destination: WritableStream<R>,
         options: StreamPipeOptions = definedExternally,

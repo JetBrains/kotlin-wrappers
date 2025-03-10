@@ -21,6 +21,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/delete)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun delete(cacheName: String): Boolean
 
     @JsName("delete")
@@ -30,6 +31,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/has)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun has(cacheName: String): Boolean
 
     @JsName("has")
@@ -39,6 +41,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/keys)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun keys(): ReadonlyArray<String>
 
     @JsName("keys")
@@ -48,6 +51,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/match)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun match(
         url: String,
         options: MultiCacheQueryOptions = definedExternally,
@@ -60,6 +64,7 @@ private constructor() {
     ): Promise<Response?>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun match(
         url: URL,
         options: MultiCacheQueryOptions = definedExternally,
@@ -72,6 +77,7 @@ private constructor() {
     ): Promise<Response?>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun match(
         request: Request,
         options: MultiCacheQueryOptions = definedExternally,
@@ -87,6 +93,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/open)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun open(cacheName: String): Cache
 
     @JsName("open")

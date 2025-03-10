@@ -22,6 +22,7 @@ open external class ImageCapture(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/getPhotoCapabilities)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun getPhotoCapabilities(): PhotoCapabilities
 
     @JsName("getPhotoCapabilities")
@@ -31,6 +32,7 @@ open external class ImageCapture(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/getPhotoSettings)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun getPhotoSettings(): PhotoSettings
 
     @JsName("getPhotoSettings")
@@ -40,6 +42,7 @@ open external class ImageCapture(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/takePhoto)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun takePhoto(photoSettings: PhotoSettings = definedExternally): Blob
 
     @JsName("takePhoto")

@@ -13,6 +13,7 @@ import seskar.js.JsAsync
  * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/instantiate_static)
  */
 @JsAsync
+@Suppress("WRONG_EXTERNAL_DECLARATION")
 external suspend fun instantiate(
     bytes: BufferSource,
     importObject: Imports = definedExternally,
@@ -25,6 +26,7 @@ external fun instantiateAsync(
 ): Promise<WebAssemblyInstantiatedSource>
 
 @JsAsync
+@Suppress("WRONG_EXTERNAL_DECLARATION")
 external suspend fun instantiate(
     moduleObject: Module,
     importObject: Imports = definedExternally,

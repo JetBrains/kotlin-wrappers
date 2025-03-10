@@ -19,6 +19,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/getSubscription)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun getSubscription(): PushSubscription?
 
     @JsName("getSubscription")
@@ -28,6 +29,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/permissionState)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun permissionState(options: PushSubscriptionOptionsInit = definedExternally): PermissionState
 
     @JsName("permissionState")
@@ -37,6 +39,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/subscribe)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun subscribe(options: PushSubscriptionOptionsInit = definedExternally): PushSubscription
 
     @JsName("subscribe")

@@ -19,6 +19,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/claim)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun claim()
 
     @JsName("claim")
@@ -28,6 +29,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/get)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun get(id: String): Client?
 
     @JsName("get")
@@ -37,6 +39,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/matchAll)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun <T : ClientQueryOptions> matchAll(options: T = definedExternally): ReadonlyArray<Client /* | WindowClient */>
 
     @JsName("matchAll")
@@ -46,12 +49,14 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/openWindow)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun openWindow(url: String): WindowClient?
 
     @JsName("openWindow")
     fun openWindowAsync(url: String): Promise<WindowClient?>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun openWindow(url: URL): WindowClient?
 
     @JsName("openWindow")

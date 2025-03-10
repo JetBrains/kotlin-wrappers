@@ -27,12 +27,14 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/delete)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun delete(name: String)
 
     @JsName("delete")
     fun deleteAsync(name: String): Promise<Void>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun delete(options: CookieStoreDeleteOptions)
 
     @JsName("delete")
@@ -42,12 +44,14 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/get)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun get(name: String): CookieListItem?
 
     @JsName("get")
     fun getAsync(name: String): Promise<CookieListItem?>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun get(options: CookieStoreGetOptions = definedExternally): CookieListItem?
 
     @JsName("get")
@@ -57,12 +61,14 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/getAll)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun getAll(name: String): CookieList
 
     @JsName("getAll")
     fun getAllAsync(name: String): Promise<CookieList>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun getAll(options: CookieStoreGetOptions = definedExternally): CookieList
 
     @JsName("getAll")
@@ -72,6 +78,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/set)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun set(
         name: String,
         value: String,
@@ -84,6 +91,7 @@ private constructor() :
     ): Promise<Void>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun set(options: CookieInit)
 
     @JsName("set")

@@ -26,6 +26,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemHandle/isSameEntry)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun isSameEntry(other: FileSystemHandle): Boolean
 
     @JsName("isSameEntry")

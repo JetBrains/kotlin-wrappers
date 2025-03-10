@@ -37,6 +37,7 @@ open external class OfflineAudioContext(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/resume)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun resume()
 
     @JsName("resume")
@@ -46,6 +47,7 @@ open external class OfflineAudioContext(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/startRendering)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun startRendering(): AudioBuffer
 
     @JsName("startRendering")
@@ -55,6 +57,7 @@ open external class OfflineAudioContext(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/suspend)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun suspend(suspendTime: Double)
 
     @JsName("suspend")

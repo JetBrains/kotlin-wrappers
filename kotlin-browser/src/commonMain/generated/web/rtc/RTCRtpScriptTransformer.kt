@@ -34,6 +34,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpScriptTransformer/generateKeyFrame)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun generateKeyFrame(rid: String = definedExternally): Number
 
     @JsName("generateKeyFrame")
@@ -43,6 +44,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpScriptTransformer/sendKeyFrameRequest)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun sendKeyFrameRequest()
 
     @JsName("sendKeyFrameRequest")

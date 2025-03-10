@@ -158,6 +158,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/decodeAudioData)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun decodeAudioData(
         audioData: ArrayBuffer,
         successCallback: DecodeSuccessCallback? = definedExternally,

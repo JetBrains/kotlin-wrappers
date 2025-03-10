@@ -22,6 +22,7 @@ sealed external interface ReadableStreamGenericReader {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/cancel)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun cancel(reason: JsError? = definedExternally): Unit = definedExternally
 
     @JsName("cancel")

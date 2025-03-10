@@ -97,6 +97,7 @@ open external class VideoFrame(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/copyTo)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun copyTo(
         destination: AllowSharedBufferSource,
         options: VideoFrameCopyToOptions = definedExternally,

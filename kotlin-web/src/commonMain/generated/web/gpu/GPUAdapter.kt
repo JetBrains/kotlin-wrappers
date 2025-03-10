@@ -36,6 +36,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUAdapter/requestDevice)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun requestDevice(descriptor: GPUDeviceDescriptor = definedExternally): GPUDevice
 
     @JsName("requestDevice")

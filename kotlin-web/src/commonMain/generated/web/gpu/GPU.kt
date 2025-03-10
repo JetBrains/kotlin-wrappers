@@ -26,6 +26,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPU/requestAdapter)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun requestAdapter(options: GPURequestAdapterOptions = definedExternally): GPUAdapter?
 
     @JsName("requestAdapter")

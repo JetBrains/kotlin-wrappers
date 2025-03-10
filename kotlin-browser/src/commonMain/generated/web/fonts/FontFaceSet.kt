@@ -58,6 +58,7 @@ sealed external interface FontFaceSet :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/load)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun load(
         font: String,
         text: String = definedExternally,

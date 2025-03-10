@@ -15,6 +15,7 @@ sealed external interface NavigatorBadge {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/clearAppBadge)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun clearAppBadge()
 
     @JsName("clearAppBadge")
@@ -24,6 +25,7 @@ sealed external interface NavigatorBadge {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/setAppBadge)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun setAppBadge(contents: JsLong = definedExternally)
 
     @JsName("setAppBadge")

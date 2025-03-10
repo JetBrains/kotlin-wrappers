@@ -45,6 +45,7 @@ private constructor() :
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/getClientCapabilities_static)
          */
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun getClientCapabilities(): PublicKeyCredentialClientCapabilities
 
         @JsName("getClientCapabilities")
@@ -54,6 +55,7 @@ private constructor() :
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/isConditionalMediationAvailable_static)
          */
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun isConditionalMediationAvailable(): Boolean
 
         @JsName("isConditionalMediationAvailable")
@@ -63,6 +65,7 @@ private constructor() :
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/isUserVerifyingPlatformAuthenticatorAvailable_static)
          */
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun isUserVerifyingPlatformAuthenticatorAvailable(): Boolean
 
         @JsName("isUserVerifyingPlatformAuthenticatorAvailable")

@@ -40,6 +40,7 @@ open external class CSSStyleSheet(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/replace)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun replace(text: String): CSSStyleSheet
 
     @JsName("replace")

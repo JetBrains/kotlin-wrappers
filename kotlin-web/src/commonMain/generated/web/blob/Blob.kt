@@ -34,6 +34,7 @@ open external class Blob(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/arrayBuffer)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun arrayBuffer(): ArrayBuffer
 
     @JsName("arrayBuffer")
@@ -43,6 +44,7 @@ open external class Blob(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/bytes)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun bytes(): Uint8Array<*>
 
     @JsName("bytes")
@@ -66,6 +68,7 @@ open external class Blob(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/text)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun text(): String
 
     @JsName("text")

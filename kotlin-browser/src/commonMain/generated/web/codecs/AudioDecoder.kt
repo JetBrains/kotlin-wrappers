@@ -49,6 +49,7 @@ open external class AudioDecoder(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioDecoder/flush)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun flush()
 
     @JsName("flush")
@@ -70,6 +71,7 @@ open external class AudioDecoder(
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioDecoder/isConfigSupported_static)
          */
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun isConfigSupported(config: AudioDecoderConfig): AudioDecoderSupport
 
         @JsName("isConfigSupported")

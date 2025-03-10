@@ -82,6 +82,7 @@ open external class FontFace(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/load)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun load(): FontFace
 
     @JsName("load")

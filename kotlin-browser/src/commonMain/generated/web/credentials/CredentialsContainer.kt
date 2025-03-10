@@ -17,6 +17,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/create)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun create(options: CredentialCreationOptions = definedExternally): Credential?
 
     @JsName("create")
@@ -26,6 +27,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/get)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun get(options: CredentialRequestOptions = definedExternally): Credential?
 
     @JsName("get")
@@ -35,6 +37,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/preventSilentAccess)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun preventSilentAccess()
 
     @JsName("preventSilentAccess")
@@ -44,6 +47,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/store)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun store(credential: Credential)
 
     @JsName("store")

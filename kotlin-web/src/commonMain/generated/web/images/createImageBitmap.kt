@@ -9,6 +9,7 @@ import seskar.js.JsAsync
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/createImageBitmap)
  */
 @JsAsync
+@Suppress("WRONG_EXTERNAL_DECLARATION")
 external suspend fun createImageBitmap(
     image: ImageBitmapSource,
     options: ImageBitmapOptions? = definedExternally,
@@ -21,6 +22,7 @@ external fun createImageBitmapAsync(
 ): Promise<ImageBitmap>
 
 @JsAsync
+@Suppress("WRONG_EXTERNAL_DECLARATION")
 external suspend fun createImageBitmap(
     image: ImageBitmapSource,
     sx: Int,

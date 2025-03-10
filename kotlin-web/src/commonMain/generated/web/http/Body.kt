@@ -31,6 +31,7 @@ sealed external interface Body {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/arrayBuffer)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun arrayBuffer(): ArrayBuffer = definedExternally
 
     @JsName("arrayBuffer")
@@ -40,6 +41,7 @@ sealed external interface Body {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/blob)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun blob(): Blob = definedExternally
 
     @JsName("blob")
@@ -49,6 +51,7 @@ sealed external interface Body {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/bytes)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun bytes(): Uint8Array<*> = definedExternally
 
     @JsName("bytes")
@@ -58,6 +61,7 @@ sealed external interface Body {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/formData)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun formData(): FormData = definedExternally
 
     @JsName("formData")
@@ -67,6 +71,7 @@ sealed external interface Body {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/json)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun json(): Any? = definedExternally
 
     @JsName("json")
@@ -76,6 +81,7 @@ sealed external interface Body {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/text)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun text(): String = definedExternally
 
     @JsName("text")

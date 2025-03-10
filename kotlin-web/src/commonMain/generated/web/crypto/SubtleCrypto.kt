@@ -20,6 +20,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/decrypt)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun decrypt(
         algorithm: Algorithm,
         key: CryptoKey,
@@ -34,6 +35,7 @@ private constructor() {
     ): Promise<ArrayBuffer>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun decrypt(
         algorithm: String,
         key: CryptoKey,
@@ -48,6 +50,7 @@ private constructor() {
     ): Promise<ArrayBuffer>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun decrypt(
         algorithm: RsaOaepParams,
         key: CryptoKey,
@@ -62,6 +65,7 @@ private constructor() {
     ): Promise<ArrayBuffer>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun decrypt(
         algorithm: AesCtrParams,
         key: CryptoKey,
@@ -76,6 +80,7 @@ private constructor() {
     ): Promise<ArrayBuffer>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun decrypt(
         algorithm: AesCbcParams,
         key: CryptoKey,
@@ -90,6 +95,7 @@ private constructor() {
     ): Promise<ArrayBuffer>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun decrypt(
         algorithm: AesGcmParams,
         key: CryptoKey,
@@ -107,6 +113,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun deriveBits(
         algorithm: Algorithm,
         baseKey: CryptoKey,
@@ -121,6 +128,7 @@ private constructor() {
     ): Promise<ArrayBuffer>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun deriveBits(
         algorithm: String,
         baseKey: CryptoKey,
@@ -135,6 +143,7 @@ private constructor() {
     ): Promise<ArrayBuffer>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun deriveBits(
         algorithm: EcdhKeyDeriveParams,
         baseKey: CryptoKey,
@@ -149,6 +158,7 @@ private constructor() {
     ): Promise<ArrayBuffer>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun deriveBits(
         algorithm: HkdfParams,
         baseKey: CryptoKey,
@@ -163,6 +173,7 @@ private constructor() {
     ): Promise<ArrayBuffer>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun deriveBits(
         algorithm: Pbkdf2Params,
         baseKey: CryptoKey,
@@ -180,6 +191,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun deriveKey(
         algorithm: Algorithm,
         baseKey: CryptoKey,
@@ -198,6 +210,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun deriveKey(
         algorithm: String,
         baseKey: CryptoKey,
@@ -216,6 +229,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun deriveKey(
         algorithm: EcdhKeyDeriveParams,
         baseKey: CryptoKey,
@@ -234,6 +248,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun deriveKey(
         algorithm: EcdhKeyDeriveParams,
         baseKey: CryptoKey,
@@ -252,6 +267,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun deriveKey(
         algorithm: HkdfParams,
         baseKey: CryptoKey,
@@ -270,6 +286,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun deriveKey(
         algorithm: HkdfParams,
         baseKey: CryptoKey,
@@ -288,6 +305,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun deriveKey(
         algorithm: Pbkdf2Params,
         baseKey: CryptoKey,
@@ -306,6 +324,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun deriveKey(
         algorithm: Pbkdf2Params,
         baseKey: CryptoKey,
@@ -324,6 +343,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun deriveKey(
         algorithm: Algorithm,
         baseKey: CryptoKey,
@@ -342,6 +362,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun deriveKey(
         algorithm: String,
         baseKey: CryptoKey,
@@ -360,6 +381,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun deriveKey(
         algorithm: EcdhKeyDeriveParams,
         baseKey: CryptoKey,
@@ -378,6 +400,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun deriveKey(
         algorithm: HkdfParams,
         baseKey: CryptoKey,
@@ -396,6 +419,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun deriveKey(
         algorithm: Pbkdf2Params,
         baseKey: CryptoKey,
@@ -414,6 +438,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun deriveKey(
         algorithm: Algorithm,
         baseKey: CryptoKey,
@@ -432,6 +457,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun deriveKey(
         algorithm: String,
         baseKey: CryptoKey,
@@ -450,6 +476,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun deriveKey(
         algorithm: EcdhKeyDeriveParams,
         baseKey: CryptoKey,
@@ -468,6 +495,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun deriveKey(
         algorithm: HkdfParams,
         baseKey: CryptoKey,
@@ -486,6 +514,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun deriveKey(
         algorithm: Pbkdf2Params,
         baseKey: CryptoKey,
@@ -504,6 +533,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun deriveKey(
         algorithm: Algorithm,
         baseKey: CryptoKey,
@@ -522,6 +552,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun deriveKey(
         algorithm: String,
         baseKey: CryptoKey,
@@ -540,6 +571,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun deriveKey(
         algorithm: EcdhKeyDeriveParams,
         baseKey: CryptoKey,
@@ -558,6 +590,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun deriveKey(
         algorithm: HkdfParams,
         baseKey: CryptoKey,
@@ -576,6 +609,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun deriveKey(
         algorithm: Pbkdf2Params,
         baseKey: CryptoKey,
@@ -594,6 +628,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun deriveKey(
         algorithm: Algorithm,
         baseKey: CryptoKey,
@@ -612,6 +647,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun deriveKey(
         algorithm: String,
         baseKey: CryptoKey,
@@ -630,6 +666,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun deriveKey(
         algorithm: EcdhKeyDeriveParams,
         baseKey: CryptoKey,
@@ -648,6 +685,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun deriveKey(
         algorithm: HkdfParams,
         baseKey: CryptoKey,
@@ -666,6 +704,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun deriveKey(
         algorithm: Pbkdf2Params,
         baseKey: CryptoKey,
@@ -687,6 +726,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/digest)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun digest(
         algorithm: Algorithm,
         data: BufferSource,
@@ -699,6 +739,7 @@ private constructor() {
     ): Promise<ArrayBuffer>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun digest(
         algorithm: String,
         data: BufferSource,
@@ -714,6 +755,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/encrypt)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun encrypt(
         algorithm: Algorithm,
         key: CryptoKey,
@@ -728,6 +770,7 @@ private constructor() {
     ): Promise<ArrayBuffer>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun encrypt(
         algorithm: String,
         key: CryptoKey,
@@ -742,6 +785,7 @@ private constructor() {
     ): Promise<ArrayBuffer>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun encrypt(
         algorithm: RsaOaepParams,
         key: CryptoKey,
@@ -756,6 +800,7 @@ private constructor() {
     ): Promise<ArrayBuffer>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun encrypt(
         algorithm: AesCtrParams,
         key: CryptoKey,
@@ -770,6 +815,7 @@ private constructor() {
     ): Promise<ArrayBuffer>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun encrypt(
         algorithm: AesCbcParams,
         key: CryptoKey,
@@ -784,6 +830,7 @@ private constructor() {
     ): Promise<ArrayBuffer>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun encrypt(
         algorithm: AesGcmParams,
         key: CryptoKey,
@@ -801,6 +848,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/exportKey)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun exportKey(
         format: KeyFormat.jwk,
         key: CryptoKey,
@@ -813,6 +861,7 @@ private constructor() {
     ): Promise<JsonWebKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun exportKey(
         format: KeyFormat,
         key: CryptoKey,
@@ -828,6 +877,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/generateKey)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun generateKey(
         algorithm: Ed25519,
         extractable: Boolean,
@@ -842,6 +892,7 @@ private constructor() {
     ): Promise<CryptoKeyPair>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun generateKey(
         algorithm: RsaHashedKeyGenParams,
         extractable: Boolean,
@@ -856,6 +907,7 @@ private constructor() {
     ): Promise<CryptoKeyPair>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun generateKey(
         algorithm: EcKeyGenParams,
         extractable: Boolean,
@@ -870,6 +922,7 @@ private constructor() {
     ): Promise<CryptoKeyPair>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun generateKey(
         algorithm: AesKeyGenParams,
         extractable: Boolean,
@@ -884,6 +937,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun generateKey(
         algorithm: HmacKeyGenParams,
         extractable: Boolean,
@@ -898,6 +952,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun generateKey(
         algorithm: Pbkdf2Params,
         extractable: Boolean,
@@ -912,6 +967,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun generateKey(
         algorithm: Algorithm,
         extractable: Boolean,
@@ -926,6 +982,7 @@ private constructor() {
     ): Promise<Any /* CryptoKeyPair | CryptoKey */>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun generateKey(
         algorithm: String,
         extractable: Boolean,
@@ -943,6 +1000,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/importKey)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun importKey(
         format: KeyFormat.jwk,
         keyData: JsonWebKey,
@@ -961,6 +1019,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun importKey(
         format: KeyFormat.jwk,
         keyData: JsonWebKey,
@@ -979,6 +1038,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun importKey(
         format: KeyFormat.jwk,
         keyData: JsonWebKey,
@@ -997,6 +1057,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun importKey(
         format: KeyFormat.jwk,
         keyData: JsonWebKey,
@@ -1015,6 +1076,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun importKey(
         format: KeyFormat.jwk,
         keyData: JsonWebKey,
@@ -1033,6 +1095,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun importKey(
         format: KeyFormat.jwk,
         keyData: JsonWebKey,
@@ -1051,6 +1114,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun importKey(
         format: KeyFormat,
         keyData: BufferSource,
@@ -1069,6 +1133,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun importKey(
         format: KeyFormat,
         keyData: BufferSource,
@@ -1087,6 +1152,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun importKey(
         format: KeyFormat,
         keyData: BufferSource,
@@ -1105,6 +1171,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun importKey(
         format: KeyFormat,
         keyData: BufferSource,
@@ -1123,6 +1190,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun importKey(
         format: KeyFormat,
         keyData: BufferSource,
@@ -1141,6 +1209,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun importKey(
         format: KeyFormat,
         keyData: BufferSource,
@@ -1162,6 +1231,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/sign)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun sign(
         algorithm: Algorithm,
         key: CryptoKey,
@@ -1176,6 +1246,7 @@ private constructor() {
     ): Promise<ArrayBuffer>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun sign(
         algorithm: String,
         key: CryptoKey,
@@ -1190,6 +1261,7 @@ private constructor() {
     ): Promise<ArrayBuffer>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun sign(
         algorithm: RsaPssParams,
         key: CryptoKey,
@@ -1204,6 +1276,7 @@ private constructor() {
     ): Promise<ArrayBuffer>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun sign(
         algorithm: EcdsaParams,
         key: CryptoKey,
@@ -1221,6 +1294,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1243,6 +1317,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1265,6 +1340,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1287,6 +1363,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1309,6 +1386,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1331,6 +1409,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1353,6 +1432,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1375,6 +1455,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1397,6 +1478,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1419,6 +1501,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1441,6 +1524,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1463,6 +1547,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1485,6 +1570,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1507,6 +1593,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1529,6 +1616,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1551,6 +1639,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1573,6 +1662,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1595,6 +1685,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1617,6 +1708,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1639,6 +1731,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1661,6 +1754,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1683,6 +1777,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1705,6 +1800,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1727,6 +1823,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1749,6 +1846,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1771,6 +1869,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1793,6 +1892,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1815,6 +1915,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1837,6 +1938,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1859,6 +1961,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1881,6 +1984,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1903,6 +2007,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1925,6 +2030,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1947,6 +2053,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1972,6 +2079,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/verify)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun verify(
         algorithm: Algorithm,
         key: CryptoKey,
@@ -1988,6 +2096,7 @@ private constructor() {
     ): Promise<Boolean>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun verify(
         algorithm: String,
         key: CryptoKey,
@@ -2004,6 +2113,7 @@ private constructor() {
     ): Promise<Boolean>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun verify(
         algorithm: RsaPssParams,
         key: CryptoKey,
@@ -2020,6 +2130,7 @@ private constructor() {
     ): Promise<Boolean>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun verify(
         algorithm: EcdsaParams,
         key: CryptoKey,
@@ -2039,6 +2150,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/wrapKey)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun wrapKey(
         format: KeyFormat,
         key: CryptoKey,
@@ -2055,6 +2167,7 @@ private constructor() {
     ): Promise<ArrayBuffer>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun wrapKey(
         format: KeyFormat,
         key: CryptoKey,
@@ -2071,6 +2184,7 @@ private constructor() {
     ): Promise<ArrayBuffer>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun wrapKey(
         format: KeyFormat,
         key: CryptoKey,
@@ -2087,6 +2201,7 @@ private constructor() {
     ): Promise<ArrayBuffer>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun wrapKey(
         format: KeyFormat,
         key: CryptoKey,
@@ -2103,6 +2218,7 @@ private constructor() {
     ): Promise<ArrayBuffer>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun wrapKey(
         format: KeyFormat,
         key: CryptoKey,
@@ -2119,6 +2235,7 @@ private constructor() {
     ): Promise<ArrayBuffer>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun wrapKey(
         format: KeyFormat,
         key: CryptoKey,

@@ -29,6 +29,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/focus)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun focus(): WindowClient
 
     @JsName("focus")
@@ -38,12 +39,14 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/navigate)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun navigate(url: String): WindowClient?
 
     @JsName("navigate")
     fun navigateAsync(url: String): Promise<WindowClient?>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun navigate(url: URL): WindowClient?
 
     @JsName("navigate")

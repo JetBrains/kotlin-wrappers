@@ -49,6 +49,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/getStats)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun getStats(): RTCStatsReport
 
     @JsName("getStats")

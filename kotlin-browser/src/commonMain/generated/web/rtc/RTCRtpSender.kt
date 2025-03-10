@@ -44,6 +44,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/getStats)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun getStats(): RTCStatsReport
 
     @JsName("getStats")
@@ -53,6 +54,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/replaceTrack)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun replaceTrack(withTrack: MediaStreamTrack?)
 
     @JsName("replaceTrack")
@@ -62,6 +64,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/setParameters)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun setParameters(
         parameters: RTCRtpSendParameters,
         setParameterOptions: RTCSetParameterOptions = definedExternally,

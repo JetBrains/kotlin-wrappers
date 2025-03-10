@@ -43,6 +43,7 @@ open external class ImageDecoder(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageDecoder/decode)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun decode(options: ImageDecodeOptions = definedExternally): ImageDecodeResult
 
     @JsName("decode")
@@ -58,6 +59,7 @@ open external class ImageDecoder(
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageDecoder/isTypeSupported_static)
          */
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun isTypeSupported(type: String): Boolean
 
         @JsName("isTypeSupported")

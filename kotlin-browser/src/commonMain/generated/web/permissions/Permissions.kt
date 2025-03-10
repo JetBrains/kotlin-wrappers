@@ -14,6 +14,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Permissions/query)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun query(permissionDesc: PermissionDescriptor): PermissionStatus
 
     @JsName("query")

@@ -49,6 +49,7 @@ open external class VideoDecoder(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/flush)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun flush()
 
     @JsName("flush")
@@ -70,6 +71,7 @@ open external class VideoDecoder(
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/isConfigSupported_static)
          */
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun isConfigSupported(config: VideoDecoderConfig): VideoDecoderSupport
 
         @JsName("isConfigSupported")

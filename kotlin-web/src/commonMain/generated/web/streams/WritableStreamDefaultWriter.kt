@@ -34,6 +34,7 @@ open external class WritableStreamDefaultWriter<W>(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/abort)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun abort(reason: JsError? = definedExternally)
 
     @JsName("abort")
@@ -43,6 +44,7 @@ open external class WritableStreamDefaultWriter<W>(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/close)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun close()
 
     @JsName("close")
@@ -57,6 +59,7 @@ open external class WritableStreamDefaultWriter<W>(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/write)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun write(chunk: W = definedExternally)
 
     @JsName("write")

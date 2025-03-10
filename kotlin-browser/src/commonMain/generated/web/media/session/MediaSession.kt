@@ -33,6 +33,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession/setCameraActive)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun setCameraActive(active: Boolean)
 
     @JsName("setCameraActive")
@@ -42,6 +43,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession/setMicrophoneActive)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun setMicrophoneActive(active: Boolean)
 
     @JsName("setMicrophoneActive")

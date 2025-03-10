@@ -17,6 +17,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageManager/estimate)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun estimate(): StorageEstimate
 
     @JsName("estimate")
@@ -26,6 +27,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageManager/getDirectory)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun getDirectory(): FileSystemDirectoryHandle
 
     @JsName("getDirectory")
@@ -35,6 +37,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageManager/persist)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun persist(): Boolean
 
     @JsName("persist")
@@ -44,6 +47,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageManager/persisted)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun persisted(): Boolean
 
     @JsName("persisted")

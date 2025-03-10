@@ -22,18 +22,21 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/add)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun add(url: String)
 
     @JsName("add")
     fun addAsync(url: String): Promise<Void>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun add(url: URL)
 
     @JsName("add")
     fun addAsync(url: URL): Promise<Void>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun add(request: Request)
 
     @JsName("add")
@@ -43,12 +46,14 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/addAll)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun addAll(requests: ReadonlyArray<Request>)
 
     @JsName("addAll")
     fun addAllAsync(requests: ReadonlyArray<Request>): Promise<Void>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun addAll(urls: ReadonlyArray<String>)
 
     @JsName("addAll")
@@ -58,6 +63,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/delete)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun delete(
         url: String,
         options: CacheQueryOptions = definedExternally,
@@ -70,6 +76,7 @@ private constructor() {
     ): Promise<Boolean>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun delete(
         url: URL,
         options: CacheQueryOptions = definedExternally,
@@ -82,6 +89,7 @@ private constructor() {
     ): Promise<Boolean>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun delete(
         request: Request,
         options: CacheQueryOptions = definedExternally,
@@ -97,6 +105,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/keys)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun keys(
         url: String = definedExternally,
         options: CacheQueryOptions = definedExternally,
@@ -109,6 +118,7 @@ private constructor() {
     ): Promise<ReadonlyArray<Request>>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun keys(
         url: URL,
         options: CacheQueryOptions = definedExternally,
@@ -121,6 +131,7 @@ private constructor() {
     ): Promise<ReadonlyArray<Request>>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun keys(
         request: Request,
         options: CacheQueryOptions = definedExternally,
@@ -136,6 +147,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/match)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun match(
         url: String,
         options: CacheQueryOptions = definedExternally,
@@ -148,6 +160,7 @@ private constructor() {
     ): Promise<Response?>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun match(
         url: URL,
         options: CacheQueryOptions = definedExternally,
@@ -160,6 +173,7 @@ private constructor() {
     ): Promise<Response?>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun match(
         request: Request,
         options: CacheQueryOptions = definedExternally,
@@ -175,6 +189,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/matchAll)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun matchAll(
         url: String = definedExternally,
         options: CacheQueryOptions = definedExternally,
@@ -187,6 +202,7 @@ private constructor() {
     ): Promise<ReadonlyArray<Response>>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun matchAll(
         url: URL,
         options: CacheQueryOptions = definedExternally,
@@ -199,6 +215,7 @@ private constructor() {
     ): Promise<ReadonlyArray<Response>>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun matchAll(
         request: Request,
         options: CacheQueryOptions = definedExternally,
@@ -214,6 +231,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/put)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun put(
         url: String,
         response: Response,
@@ -226,6 +244,7 @@ private constructor() {
     ): Promise<Void>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun put(
         url: URL,
         response: Response,
@@ -238,6 +257,7 @@ private constructor() {
     ): Promise<Void>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun put(
         request: Request,
         response: Response,

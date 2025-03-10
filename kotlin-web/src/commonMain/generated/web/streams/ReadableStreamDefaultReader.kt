@@ -15,6 +15,7 @@ open external class ReadableStreamDefaultReader<R>(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader/read)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun read(): ReadableStreamReadResult<R>
 
     @JsName("read")

@@ -17,6 +17,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager/disable)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun disable()
 
     @JsName("disable")
@@ -26,6 +27,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager/enable)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun enable()
 
     @JsName("enable")
@@ -35,6 +37,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager/getState)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun getState(): NavigationPreloadState
 
     @JsName("getState")
@@ -44,6 +47,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager/setHeaderValue)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun setHeaderValue(value: String)
 
     @JsName("setHeaderValue")

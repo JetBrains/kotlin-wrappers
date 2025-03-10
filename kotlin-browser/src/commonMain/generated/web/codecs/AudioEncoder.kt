@@ -49,6 +49,7 @@ open external class AudioEncoder(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioEncoder/flush)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun flush()
 
     @JsName("flush")
@@ -70,6 +71,7 @@ open external class AudioEncoder(
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioEncoder/isConfigSupported_static)
          */
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun isConfigSupported(config: AudioEncoderConfig): AudioEncoderSupport
 
         @JsName("isConfigSupported")

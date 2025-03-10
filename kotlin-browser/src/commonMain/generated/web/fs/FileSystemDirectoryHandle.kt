@@ -24,6 +24,7 @@ protected /* private */ constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/getDirectoryHandle)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun getDirectoryHandle(
         name: String,
         options: FileSystemGetDirectoryOptions = definedExternally,
@@ -39,6 +40,7 @@ protected /* private */ constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/getFileHandle)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun getFileHandle(
         name: String,
         options: FileSystemGetFileOptions = definedExternally,
@@ -54,6 +56,7 @@ protected /* private */ constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/removeEntry)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun removeEntry(
         name: String,
         options: FileSystemRemoveOptions = definedExternally,
@@ -69,6 +72,7 @@ protected /* private */ constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/resolve)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun resolve(possibleDescendant: FileSystemHandle): ReadonlyArray<String>?
 
     @JsName("resolve")

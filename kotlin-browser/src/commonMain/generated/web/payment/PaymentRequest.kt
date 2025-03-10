@@ -37,6 +37,7 @@ open external class PaymentRequest(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/abort)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun abort()
 
     @JsName("abort")
@@ -46,6 +47,7 @@ open external class PaymentRequest(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/canMakePayment)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun canMakePayment(): Boolean
 
     @JsName("canMakePayment")
@@ -55,12 +57,14 @@ open external class PaymentRequest(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/show)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun show(detailsPromise: PaymentDetailsUpdate = definedExternally): PaymentResponse
 
     @JsName("show")
     fun showAsync(detailsPromise: PaymentDetailsUpdate = definedExternally): Promise<PaymentResponse>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun show(detailsPromise: PromiseLike<PaymentDetailsUpdate>): PaymentResponse
 
     @JsName("show")

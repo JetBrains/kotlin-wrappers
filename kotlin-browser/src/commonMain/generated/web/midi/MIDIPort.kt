@@ -61,6 +61,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIPort/close)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun close(): MIDIPort
 
     @JsName("close")
@@ -70,6 +71,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIPort/open)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun open(): MIDIPort
 
     @JsName("open")

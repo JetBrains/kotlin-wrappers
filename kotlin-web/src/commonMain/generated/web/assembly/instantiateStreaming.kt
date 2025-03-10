@@ -14,6 +14,7 @@ import web.http.Response
  * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/instantiateStreaming_static)
  */
 @JsAsync
+@Suppress("WRONG_EXTERNAL_DECLARATION")
 external suspend fun instantiateStreaming(
     source: Response,
     importObject: Imports = definedExternally,
@@ -26,6 +27,7 @@ external fun instantiateStreamingAsync(
 ): Promise<WebAssemblyInstantiatedSource>
 
 @JsAsync
+@Suppress("WRONG_EXTERNAL_DECLARATION")
 external suspend fun instantiateStreaming(
     source: PromiseLike<Response>,
     importObject: Imports = definedExternally,

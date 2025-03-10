@@ -33,6 +33,7 @@ open external class AudioContext(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext/close)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun close()
 
     @JsName("close")
@@ -62,6 +63,7 @@ open external class AudioContext(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext/resume)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun resume()
 
     @JsName("resume")
@@ -71,6 +73,7 @@ open external class AudioContext(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext/suspend)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun suspend()
 
     @JsName("suspend")

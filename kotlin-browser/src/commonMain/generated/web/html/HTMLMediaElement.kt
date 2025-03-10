@@ -270,6 +270,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/play)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun play()
 
     @JsName("play")
@@ -281,6 +282,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/setMediaKeys)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun setMediaKeys(mediaKeys: MediaKeys?)
 
     @JsName("setMediaKeys")
@@ -292,6 +294,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/setSinkId)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun setSinkId(sinkId: String)
 
     @JsName("setSinkId")

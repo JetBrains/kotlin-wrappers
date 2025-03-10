@@ -30,6 +30,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/enumerateDevices)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun enumerateDevices(): ReadonlyArray<MediaDeviceInfo>
 
     @JsName("enumerateDevices")
@@ -39,6 +40,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getDisplayMedia)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun getDisplayMedia(options: DisplayMediaStreamOptions = definedExternally): MediaStream
 
     @JsName("getDisplayMedia")
@@ -53,6 +55,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun getUserMedia(constraints: MediaStreamConstraints = definedExternally): MediaStream
 
     @JsName("getUserMedia")

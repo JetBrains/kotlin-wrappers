@@ -67,6 +67,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createComputePipelineAsync)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun createComputePipeline(descriptor: GPUComputePipelineDescriptor): GPUComputePipeline
 
     fun createComputePipelineAsync(descriptor: GPUComputePipelineDescriptor): Promise<GPUComputePipeline>
@@ -96,6 +97,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createRenderPipelineAsync)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun createRenderPipeline(descriptor: GPURenderPipelineDescriptor): GPURenderPipeline
 
     fun createRenderPipelineAsync(descriptor: GPURenderPipelineDescriptor): Promise<GPURenderPipeline>
@@ -129,6 +131,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/popErrorScope)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun popErrorScope(): GPUError?
 
     @JsName("popErrorScope")

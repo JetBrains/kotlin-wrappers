@@ -31,6 +31,7 @@ open external class ClipboardItem(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem/getType)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun getType(type: String): Blob
 
     @JsName("getType")

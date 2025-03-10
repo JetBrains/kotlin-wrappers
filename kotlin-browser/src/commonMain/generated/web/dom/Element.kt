@@ -387,6 +387,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/requestFullscreen)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun requestFullscreen(options: FullscreenOptions = definedExternally)
 
     @JsName("requestFullscreen")
@@ -396,6 +397,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/requestPointerLock)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun requestPointerLock(options: PointerLockOptions = definedExternally)
 
     @JsName("requestPointerLock")

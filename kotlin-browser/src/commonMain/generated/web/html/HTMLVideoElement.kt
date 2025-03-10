@@ -94,6 +94,7 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/requestPictureInPicture)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun requestPictureInPicture(): PictureInPictureWindow
 
     @JsName("requestPictureInPicture")

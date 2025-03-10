@@ -69,6 +69,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/applyConstraints)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun applyConstraints(constraints: MediaTrackConstraints = definedExternally)
 
     @JsName("applyConstraints")

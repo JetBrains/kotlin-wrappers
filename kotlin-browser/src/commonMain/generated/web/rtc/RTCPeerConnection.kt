@@ -128,6 +128,7 @@ open external class RTCPeerConnection(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/addIceCandidate)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun addIceCandidate(candidate: RTCIceCandidateInit? = definedExternally)
 
     @JsName("addIceCandidate")
@@ -163,6 +164,7 @@ open external class RTCPeerConnection(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createAnswer)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun createAnswer(options: RTCAnswerOptions = definedExternally): RTCSessionDescriptionInit
 
     @JsName("createAnswer")
@@ -180,6 +182,7 @@ open external class RTCPeerConnection(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createOffer)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun createOffer(options: RTCOfferOptions = definedExternally): RTCSessionDescriptionInit
 
     @JsName("createOffer")
@@ -204,6 +207,7 @@ open external class RTCPeerConnection(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getStats)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun getStats(selector: MediaStreamTrack? = definedExternally): RTCStatsReport
 
     @JsName("getStats")
@@ -233,6 +237,7 @@ open external class RTCPeerConnection(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setLocalDescription)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun setLocalDescription(description: RTCLocalSessionDescriptionInit = definedExternally)
 
     @JsName("setLocalDescription")
@@ -242,6 +247,7 @@ open external class RTCPeerConnection(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setRemoteDescription)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun setRemoteDescription(description: RTCSessionDescriptionInit)
 
     @JsName("setRemoteDescription")
@@ -306,12 +312,14 @@ open external class RTCPeerConnection(
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/generateCertificate_static)
          */
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun generateCertificate(keygenAlgorithm: Algorithm): RTCCertificate
 
         @JsName("generateCertificate")
         fun generateCertificateAsync(keygenAlgorithm: Algorithm): Promise<RTCCertificate>
 
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun generateCertificate(keygenAlgorithm: String): RTCCertificate
 
         @JsName("generateCertificate")

@@ -47,6 +47,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUBuffer/mapAsync)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun map(
         mode: GPUMapModeFlags,
         offset: GPUSize64 = definedExternally,

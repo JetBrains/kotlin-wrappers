@@ -17,6 +17,7 @@ open external class ReadableStreamBYOBReader(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/read)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun <T : ArrayBufferView<*>> read(view: T): ReadableStreamReadResult<T>
 
     @JsName("read")

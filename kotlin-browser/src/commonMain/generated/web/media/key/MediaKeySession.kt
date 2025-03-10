@@ -52,6 +52,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/close)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun close()
 
     @JsName("close")
@@ -61,6 +62,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/generateRequest)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun generateRequest(
         initDataType: String,
         initData: BufferSource,
@@ -76,6 +78,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/load)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun load(sessionId: String): Boolean
 
     @JsName("load")
@@ -85,6 +88,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/remove)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun remove()
 
     @JsName("remove")
@@ -94,6 +98,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/update)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun update(response: BufferSource)
 
     @JsName("update")

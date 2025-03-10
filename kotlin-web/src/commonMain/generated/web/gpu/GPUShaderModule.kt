@@ -17,6 +17,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUShaderModule/getCompilationInfo)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun getCompilationInfo(): GPUCompilationInfo
 
     @JsName("getCompilationInfo")

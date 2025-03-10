@@ -19,6 +19,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/read)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun read(): ClipboardItems
 
     @JsName("read")
@@ -28,6 +29,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/readText)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun readText(): String
 
     @JsName("readText")
@@ -37,6 +39,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/write)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun write(data: ClipboardItems)
 
     @JsName("write")
@@ -46,6 +49,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/writeText)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun writeText(data: String)
 
     @JsName("writeText")

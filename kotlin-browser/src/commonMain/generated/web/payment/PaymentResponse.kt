@@ -68,6 +68,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/complete)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun complete(result: PaymentComplete = definedExternally)
 
     @JsName("complete")
@@ -77,6 +78,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/retry)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun retry(errorFields: PaymentValidationErrors = definedExternally)
 
     @JsName("retry")

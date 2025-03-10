@@ -16,6 +16,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator/playEffect)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun playEffect(
         type: GamepadHapticEffectType,
         params: GamepadEffectParameters = definedExternally,
@@ -31,6 +32,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator/reset)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun reset(): GamepadHapticsResult
 
     @JsName("reset")

@@ -47,12 +47,14 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistration)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun getRegistration(clientURL: String = definedExternally): ServiceWorkerRegistration?
 
     @JsName("getRegistration")
     fun getRegistrationAsync(clientURL: String = definedExternally): Promise<ServiceWorkerRegistration?>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun getRegistration(clientURL: URL): ServiceWorkerRegistration?
 
     @JsName("getRegistration")
@@ -62,6 +64,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistrations)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun getRegistrations(): ReadonlyArray<ServiceWorkerRegistration>
 
     @JsName("getRegistrations")
@@ -71,6 +74,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun register(
         scriptURL: String,
         options: RegistrationOptions = definedExternally,
@@ -83,6 +87,7 @@ private constructor() :
     ): Promise<ServiceWorkerRegistration>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun register(
         scriptURL: URL,
         options: RegistrationOptions = definedExternally,

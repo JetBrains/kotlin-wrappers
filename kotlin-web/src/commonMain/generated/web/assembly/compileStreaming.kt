@@ -14,6 +14,7 @@ import web.http.Response
  * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/compileStreaming_static)
  */
 @JsAsync
+@Suppress("WRONG_EXTERNAL_DECLARATION")
 external suspend fun compileStreaming(
     source: Response,
 ): Module
@@ -24,6 +25,7 @@ external fun compileStreamingAsync(
 ): Promise<Module>
 
 @JsAsync
+@Suppress("WRONG_EXTERNAL_DECLARATION")
 external suspend fun compileStreaming(
     source: PromiseLike<Response>,
 ): Module

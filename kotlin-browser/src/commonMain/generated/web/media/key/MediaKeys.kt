@@ -23,6 +23,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/getStatusForPolicy)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun getStatusForPolicy(policy: MediaKeysPolicy = definedExternally): MediaKeyStatus
 
     @JsName("getStatusForPolicy")
@@ -32,6 +33,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/setServerCertificate)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun setServerCertificate(serverCertificate: BufferSource): Boolean
 
     @JsName("setServerCertificate")

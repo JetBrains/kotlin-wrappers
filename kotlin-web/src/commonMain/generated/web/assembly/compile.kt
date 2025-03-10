@@ -13,6 +13,7 @@ import seskar.js.JsAsync
  * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/compile_static)
  */
 @JsAsync
+@Suppress("WRONG_EXTERNAL_DECLARATION")
 external suspend fun compile(
     bytes: BufferSource,
 ): Module

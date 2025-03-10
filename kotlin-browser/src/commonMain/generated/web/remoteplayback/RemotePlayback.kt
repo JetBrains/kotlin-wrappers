@@ -37,6 +37,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/cancelWatchAvailability)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun cancelWatchAvailability(id: Int = definedExternally)
 
     @JsName("cancelWatchAvailability")
@@ -46,6 +47,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/prompt)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun prompt()
 
     @JsName("prompt")
@@ -55,6 +57,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/watchAvailability)
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun watchAvailability(callback: RemotePlaybackAvailabilityCallback): Number
 
     @JsName("watchAvailability")
