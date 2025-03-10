@@ -3,6 +3,7 @@
 package web.crypto
 
 import js.array.ReadonlyArray
+import js.core.JsString
 import js.objects.JsPlainObject
 
 @JsPlainObject
@@ -15,7 +16,7 @@ external interface JsonWebKey {
     val e: String?
     val ext: Boolean?
     val k: String?
-    val key_ops: ReadonlyArray<String>?
+    val key_ops: ReadonlyArray<JsString>?
     val kty: String?
     val n: String?
     val oth: ReadonlyArray<RsaOtherPrimesInfo>?

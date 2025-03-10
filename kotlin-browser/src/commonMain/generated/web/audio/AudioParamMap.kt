@@ -3,6 +3,7 @@
 package web.audio
 
 import js.collections.ReadonlyMap
+import js.core.JsString
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioParamMap)
@@ -10,4 +11,4 @@ import js.collections.ReadonlyMap
 sealed /* final */
 external class AudioParamMap
 protected /* private */ constructor() :
-    ReadonlyMap<String, AudioParam>
+    ReadonlyMap<JsString, AudioParam>

@@ -3,6 +3,7 @@
 package web.cssom
 
 import js.array.ReadonlyArray
+import js.core.JsString
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSLayerStatementRule)
@@ -13,5 +14,5 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSLayerStatementRule/nameList)
      */
-    val nameList: ReadonlyArray<String>
+    val nameList: ReadonlyArray<JsString>
 }

@@ -7,6 +7,7 @@
 package web.encoding
 
 import js.buffer.BufferSource
+import js.core.JsString
 import web.streams.GenericTransformStream
 import web.streams.ReadableStream
 import web.streams.WritableStream
@@ -19,6 +20,6 @@ open external class TextDecoderStream(
     options: TextDecoderOptions = definedExternally,
 ) : GenericTransformStream,
     TextDecoderCommon {
-    override val readable: ReadableStream<String>
+    override val readable: ReadableStream<JsString>
     override val writable: WritableStream<BufferSource>
 }

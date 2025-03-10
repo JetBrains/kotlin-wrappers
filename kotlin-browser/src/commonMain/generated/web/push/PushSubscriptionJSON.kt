@@ -2,6 +2,7 @@
 
 package web.push
 
+import js.core.JsString
 import js.objects.JsPlainObject
 import js.objects.ReadonlyRecord
 import web.time.EpochTimeStamp
@@ -10,5 +11,5 @@ import web.time.EpochTimeStamp
 external interface PushSubscriptionJSON {
     val endpoint: String?
     val expirationTime: EpochTimeStamp?
-    val keys: ReadonlyRecord<String, String>?
+    val keys: ReadonlyRecord<JsString, JsString>?
 }

@@ -3,15 +3,16 @@
 package web.media.key
 
 import js.array.ReadonlyArray
+import js.core.JsString
 import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface MediaKeySystemConfiguration {
     val audioCapabilities: ReadonlyArray<MediaKeySystemMediaCapability>?
     val distinctiveIdentifier: MediaKeysRequirement?
-    val initDataTypes: ReadonlyArray<String>?
+    val initDataTypes: ReadonlyArray<JsString>?
     val label: String?
     val persistentState: MediaKeysRequirement?
-    val sessionTypes: ReadonlyArray<String>?
+    val sessionTypes: ReadonlyArray<JsString>?
     val videoCapabilities: ReadonlyArray<MediaKeySystemMediaCapability>?
 }

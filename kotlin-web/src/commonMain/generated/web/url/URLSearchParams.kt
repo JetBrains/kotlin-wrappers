@@ -5,6 +5,7 @@ package web.url
 import js.array.JsTuple2
 import js.array.ReadonlyArray
 import js.collections.ReadonlyMap
+import js.core.JsString
 import js.iterable.JsIterator
 import js.objects.ReadonlyRecord
 
@@ -12,9 +13,9 @@ import js.objects.ReadonlyRecord
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams)
  */
 open external class URLSearchParams(
-    init: ReadonlyArray<JsTuple2<String, String>> = definedExternally,
-) : ReadonlyMap<String, String> {
-    constructor(init: ReadonlyRecord<String, String>)
+    init: ReadonlyArray<JsTuple2<JsString, JsString>> = definedExternally,
+) : ReadonlyMap<JsString, JsString> {
+    constructor(init: ReadonlyRecord<JsString, JsString>)
     constructor(init: String)
     constructor(init: URLSearchParams)
 
@@ -55,7 +56,7 @@ open external class URLSearchParams(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/getAll)
      */
-    fun getAll(key: String): ReadonlyArray<String>
+    fun getAll(key: String): ReadonlyArray<JsString>
 
     /**
      * Returns a Boolean indicating if such a search parameter exists.
@@ -83,8 +84,8 @@ open external class URLSearchParams(
      */
     fun sort()
 
-    override fun entries(): JsIterator<JsTuple2<String, String>>
-    override fun keys(): JsIterator<String>
-    override fun values(): JsIterator<String>
+    override fun entries(): JsIterator<JsTuple2<JsString, JsString>>
+    override fun keys(): JsIterator<JsString>
+    override fun values(): JsIterator<JsString>
     override fun forEach(action: (value: String, key: String) -> Unit)
 }

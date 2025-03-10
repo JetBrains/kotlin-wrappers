@@ -4,6 +4,7 @@ package web.console
 
 import js.array.ReadonlyArray
 import js.core.JsAny
+import js.core.JsString
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/console)
@@ -85,7 +86,7 @@ sealed external interface Console {
      */
     fun table(
         tabularData: JsAny? = definedExternally,
-        properties: ReadonlyArray<String> = definedExternally,
+        properties: ReadonlyArray<JsString> = definedExternally,
     )
 
     /**

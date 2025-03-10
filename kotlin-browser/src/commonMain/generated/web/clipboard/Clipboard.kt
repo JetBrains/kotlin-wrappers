@@ -2,6 +2,7 @@
 
 package web.clipboard
 
+import js.core.JsString
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
@@ -33,7 +34,7 @@ private constructor() :
     suspend fun readText(): String
 
     @JsName("readText")
-    fun readTextAsync(): Promise<String>
+    fun readTextAsync(): Promise<JsString>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/write)

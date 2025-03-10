@@ -4,6 +4,7 @@ package web.payment
 
 import js.array.ReadonlyArray
 import js.core.JsAny
+import js.core.JsString
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ContactAddress)
@@ -13,7 +14,7 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ContactAddress/addressLine)
      */
-    val addressLine: ReadonlyArray<String>
+    val addressLine: ReadonlyArray<JsString>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ContactAddress/city)

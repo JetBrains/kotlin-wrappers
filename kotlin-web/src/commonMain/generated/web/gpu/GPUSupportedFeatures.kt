@@ -3,6 +3,7 @@
 package web.gpu
 
 import js.collections.ReadonlySet
+import js.core.JsString
 
 /**
  * Available only in secure contexts.
@@ -12,6 +13,6 @@ import js.collections.ReadonlySet
 sealed /* final */
 external class GPUSupportedFeatures
 protected /* private */ constructor() :
-    ReadonlySet<String> {
+    ReadonlySet<JsString> {
     override fun forEach(action: (item: String) -> Unit)
 }

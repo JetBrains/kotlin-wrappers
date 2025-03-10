@@ -3,6 +3,7 @@
 package web.media.streams
 
 import js.array.ReadonlyArray
+import js.core.JsString
 import js.objects.JsPlainObject
 
 @JsPlainObject
@@ -14,7 +15,7 @@ external interface MediaTrackCapabilities {
     val deviceId: String?
     val displaySurface: String?
     val echoCancellation: ReadonlyArray<Boolean>?
-    val facingMode: ReadonlyArray<String>?
+    val facingMode: ReadonlyArray<JsString>?
     val frameRate: DoubleRange?
     val groupId: String?
     val height: ULongRange?

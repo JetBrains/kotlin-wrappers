@@ -4,6 +4,7 @@ package web.dom
 
 import js.array.JsTuple2
 import js.collections.ListLike
+import js.core.JsString
 import js.iterable.JsIterator
 
 /**
@@ -13,7 +14,7 @@ import js.iterable.JsIterator
  */
 external class DOMTokenList
 private constructor() :
-    ListLike<String> {
+    ListLike<JsString> {
     /**
      * Returns the number of tokens.
      *
@@ -107,8 +108,8 @@ private constructor() :
         force: Boolean = definedExternally,
     ): Boolean
 
-    override fun entries(): JsIterator<JsTuple2<Int, String>>
+    override fun entries(): JsIterator<JsTuple2<Int, JsString>>
     override fun keys(): JsIterator<Int>
-    override fun values(): JsIterator<String>
+    override fun values(): JsIterator<JsString>
     override fun forEach(action: (item: String) -> Unit)
 }

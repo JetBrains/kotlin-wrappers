@@ -3,6 +3,7 @@
 package web.push
 
 import js.array.ReadonlyArray
+import js.core.JsString
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.permissions.PermissionState
@@ -49,6 +50,6 @@ private constructor() {
         /**
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/supportedContentEncodings_static)
          */
-        val supportedContentEncodings: ReadonlyArray<String>
+        val supportedContentEncodings: ReadonlyArray<JsString>
     }
 }

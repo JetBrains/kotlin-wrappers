@@ -3,6 +3,7 @@
 package web.highlight
 
 import js.collections.MutableMapLike
+import js.core.JsString
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HighlightRegistry)
@@ -10,4 +11,4 @@ import js.collections.MutableMapLike
 sealed /* final */
 external class HighlightRegistry
 protected /* private */ constructor() :
-    MutableMapLike<String, Highlight>
+    MutableMapLike<JsString, Highlight>

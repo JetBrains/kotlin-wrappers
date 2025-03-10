@@ -3,6 +3,7 @@
 package web.data
 
 import js.array.ReadonlyArray
+import js.core.JsString
 import web.dom.Element
 import web.file.FileList
 
@@ -53,7 +54,7 @@ open external class DataTransfer {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransfer/types)
      */
-    val types: ReadonlyArray<String>
+    val types: ReadonlyArray<JsString>
 
     /**
      * Removes the data of the specified formats. Removes all data if the argument is omitted.

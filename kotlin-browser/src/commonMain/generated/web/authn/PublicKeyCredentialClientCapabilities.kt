@@ -2,6 +2,7 @@
 
 package web.authn
 
+import js.core.JsString
 import js.objects.ReadonlyRecord
 
-typealias PublicKeyCredentialClientCapabilities = ReadonlyRecord<String, Boolean>
+typealias PublicKeyCredentialClientCapabilities = ReadonlyRecord<JsString, Boolean>

@@ -3,6 +3,7 @@
 package web.dom
 
 import js.array.ReadonlyArray
+import js.core.JsString
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
@@ -233,7 +234,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getAttributeNames)
      */
-    fun getAttributeNames(): ReadonlyArray<String>
+    fun getAttributeNames(): ReadonlyArray<JsString>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getAttributeNode)

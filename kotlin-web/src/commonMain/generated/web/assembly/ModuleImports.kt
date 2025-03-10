@@ -2,6 +2,7 @@
 
 package web.assembly
 
+import js.core.JsString
 import js.objects.ReadonlyRecord
 
-typealias ModuleImports = ReadonlyRecord<String, ImportValue>
+typealias ModuleImports = ReadonlyRecord<JsString, ImportValue>

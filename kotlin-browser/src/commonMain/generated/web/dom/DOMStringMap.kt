@@ -2,6 +2,7 @@
 
 package web.dom
 
+import js.core.JsString
 import js.objects.Record
 
 /**
@@ -11,4 +12,4 @@ import js.objects.Record
  */
 external class DOMStringMap
 private constructor() :
-    Record<String, String>
+    Record<JsString, JsString>

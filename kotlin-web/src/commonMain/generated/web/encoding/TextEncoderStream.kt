@@ -6,6 +6,7 @@
 
 package web.encoding
 
+import js.core.JsString
 import js.typedarrays.Uint8Array
 import web.streams.GenericTransformStream
 import web.streams.ReadableStream
@@ -18,5 +19,5 @@ open external class TextEncoderStream :
     GenericTransformStream,
     TextEncoderCommon {
     override val readable: ReadableStream<Uint8Array<*>>
-    override val writable: WritableStream<String>
+    override val writable: WritableStream<JsString>
 }

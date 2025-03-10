@@ -4,6 +4,7 @@ package web.gl
 
 import js.array.ReadonlyArray
 import js.core.JsAny
+import js.core.JsString
 import web.events.EventTarget
 import web.images.PredefinedColorSpace
 
@@ -522,7 +523,7 @@ sealed external interface WebGLRenderingContextBase {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getSupportedExtensions)
      */
-    fun getSupportedExtensions(): ReadonlyArray<String>?
+    fun getSupportedExtensions(): ReadonlyArray<JsString>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getTexParameter)

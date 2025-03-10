@@ -5,6 +5,7 @@ package web.blob
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
 import js.core.JsLong
+import js.core.JsString
 import js.promise.Promise
 import js.typedarrays.Uint8Array
 import seskar.js.JsAsync
@@ -72,5 +73,5 @@ open external class Blob(
     suspend fun text(): String
 
     @JsName("text")
-    fun textAsync(): Promise<String>
+    fun textAsync(): Promise<JsString>
 }

@@ -3,6 +3,7 @@
 package web.mutation
 
 import js.array.ReadonlyArray
+import js.core.JsString
 import js.objects.JsPlainObject
 
 @JsPlainObject
@@ -10,7 +11,7 @@ external interface MutationObserverInit {
     /**
      * Set to a list of attribute local names (without namespace) if not all attribute mutations need to be observed and attributes is true or omitted.
      */
-    val attributeFilter: ReadonlyArray<String>?
+    val attributeFilter: ReadonlyArray<JsString>?
 
     /**
      * Set to true if attributes is true or omitted and target's attribute value before the mutation needs to be recorded.

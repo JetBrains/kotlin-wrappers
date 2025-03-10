@@ -4,6 +4,7 @@ package web.fs
 
 import js.array.ReadonlyArray
 import js.collections.AsyncMapLike
+import js.core.JsString
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
@@ -17,7 +18,7 @@ sealed /* final */
 external class FileSystemDirectoryHandle
 protected /* private */ constructor() :
     FileSystemHandle,
-    AsyncMapLike<String, FileSystemHandle> {
+    AsyncMapLike<JsString, FileSystemHandle> {
     override val kind: FileSystemHandleKind.directory
 
     /**
@@ -73,8 +74,8 @@ protected /* private */ constructor() :
      */
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun resolve(possibleDescendant: FileSystemHandle): ReadonlyArray<String>?
+    suspend fun resolve(possibleDescendant: FileSystemHandle): ReadonlyArray<JsString>?
 
     @JsName("resolve")
-    fun resolveAsync(possibleDescendant: FileSystemHandle): Promise<ReadonlyArray<String>?>
+    fun resolveAsync(possibleDescendant: FileSystemHandle): Promise<ReadonlyArray<JsString>?>
 }

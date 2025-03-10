@@ -4,6 +4,7 @@ package web.idb
 
 import js.array.ReadonlyArray
 import js.core.JsAny
+import js.core.JsString
 import js.core.Void
 import web.dom.DOMStringList
 
@@ -99,7 +100,7 @@ private constructor() {
 
     fun createIndex(
         name: String,
-        keyPath: ReadonlyArray<String>,
+        keyPath: ReadonlyArray<JsString>,
         options: IDBIndexParameters = definedExternally,
     ): IDBIndex
 

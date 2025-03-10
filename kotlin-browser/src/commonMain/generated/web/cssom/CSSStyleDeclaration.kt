@@ -3,6 +3,7 @@
 package web.cssom
 
 import js.array.ArrayLike
+import js.core.JsString
 import js.iterable.JsIterable
 
 /**
@@ -12,8 +13,8 @@ import js.iterable.JsIterable
  */
 external class CSSStyleDeclaration
 private constructor() :
-    ArrayLike<String>,
-    JsIterable<String> {
+    ArrayLike<JsString>,
+    JsIterable<JsString> {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/accent-color)
      */

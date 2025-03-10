@@ -3,6 +3,7 @@
 package web.midi
 
 import js.collections.ReadonlyMap
+import js.core.JsString
 
 /**
  * Available only in secure contexts.
@@ -12,4 +13,4 @@ import js.collections.ReadonlyMap
 sealed /* final */
 external class MIDIOutputMap
 protected /* private */ constructor() :
-    ReadonlyMap<String, MIDIOutput>
+    ReadonlyMap<JsString, MIDIOutput>

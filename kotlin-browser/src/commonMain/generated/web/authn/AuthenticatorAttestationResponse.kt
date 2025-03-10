@@ -4,6 +4,7 @@ package web.authn
 
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
+import js.core.JsString
 
 /**
  * Available only in secure contexts.
@@ -36,5 +37,5 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AuthenticatorAttestationResponse/getTransports)
      */
-    fun getTransports(): ReadonlyArray<String>
+    fun getTransports(): ReadonlyArray<JsString>
 }

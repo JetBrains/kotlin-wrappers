@@ -3,6 +3,7 @@
 package web.components
 
 import js.collections.MutableSetLike
+import js.core.JsString
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomStateSet)
@@ -10,4 +11,4 @@ import js.collections.MutableSetLike
 sealed /* final */
 external class CustomStateSet
 protected /* private */ constructor() :
-    MutableSetLike<String>
+    MutableSetLike<JsString>

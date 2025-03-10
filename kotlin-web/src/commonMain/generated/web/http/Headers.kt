@@ -5,6 +5,7 @@ package web.http
 import js.array.JsTuple2
 import js.array.ReadonlyArray
 import js.collections.MapLike
+import js.core.JsString
 import js.iterable.JsIterator
 import js.objects.ReadonlyRecord
 
@@ -14,9 +15,9 @@ import js.objects.ReadonlyRecord
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers)
  */
 open external class Headers(
-    init: ReadonlyArray<JsTuple2<String, String>> = definedExternally,
-) : MapLike<String, String> {
-    constructor(init: ReadonlyRecord<String, String>)
+    init: ReadonlyArray<JsTuple2<JsString, JsString>> = definedExternally,
+) : MapLike<JsString, JsString> {
+    constructor(init: ReadonlyRecord<JsString, JsString>)
     constructor(init: Headers)
 
     /**
@@ -40,7 +41,7 @@ open external class Headers(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/getSetCookie)
      */
-    fun getSetCookie(): ReadonlyArray<String>
+    fun getSetCookie(): ReadonlyArray<JsString>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/has)
@@ -55,8 +56,8 @@ open external class Headers(
         value: String,
     )
 
-    override fun entries(): JsIterator<JsTuple2<String, String>>
-    override fun keys(): JsIterator<String>
-    override fun values(): JsIterator<String>
+    override fun entries(): JsIterator<JsTuple2<JsString, JsString>>
+    override fun keys(): JsIterator<JsString>
+    override fun values(): JsIterator<JsString>
     override fun forEach(action: (value: String, key: String) -> Unit)
 }

@@ -3,6 +3,7 @@
 package web.dom
 
 import js.array.ArrayLike
+import js.core.JsString
 import js.iterable.JsIterable
 
 /**
@@ -12,8 +13,8 @@ import js.iterable.JsIterable
  */
 external class DOMStringList
 private constructor() :
-    ArrayLike<String>,
-    JsIterable<String> {
+    ArrayLike<JsString>,
+    JsIterable<JsString> {
     /**
      * Returns the number of strings in strings.
      *

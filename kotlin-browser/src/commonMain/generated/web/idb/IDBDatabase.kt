@@ -4,6 +4,7 @@ package web.idb
 
 import js.array.ReadonlyArray
 import js.core.JsLong
+import js.core.JsString
 import web.dom.DOMStringList
 import web.events.*
 
@@ -88,7 +89,7 @@ private constructor() :
     ): IDBTransaction
 
     fun transaction(
-        storeNames: ReadonlyArray<String>,
+        storeNames: ReadonlyArray<JsString>,
         mode: IDBTransactionMode = definedExternally,
         options: IDBTransactionOptions = definedExternally,
     ): IDBTransaction

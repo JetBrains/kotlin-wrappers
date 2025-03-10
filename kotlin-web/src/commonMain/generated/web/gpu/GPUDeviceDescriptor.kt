@@ -3,6 +3,7 @@
 package web.gpu
 
 import js.array.ReadonlyArray
+import js.core.JsString
 import js.objects.JsPlainObject
 import js.objects.ReadonlyRecord
 
@@ -11,5 +12,5 @@ external interface GPUDeviceDescriptor :
     GPUObjectDescriptorBase {
     val defaultQueue: GPUQueueDescriptor?
     val requiredFeatures: ReadonlyArray<GPUFeatureName>?
-    val requiredLimits: ReadonlyRecord<String, GPUSize64?>?
+    val requiredLimits: ReadonlyRecord<JsString, GPUSize64?>?
 }

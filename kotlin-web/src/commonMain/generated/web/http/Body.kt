@@ -7,6 +7,7 @@
 package web.http
 
 import js.buffer.ArrayBuffer
+import js.core.JsString
 import js.promise.Promise
 import js.typedarrays.Uint8Array
 import seskar.js.JsAsync
@@ -85,5 +86,5 @@ sealed external interface Body {
     suspend fun text(): String = definedExternally
 
     @JsName("text")
-    fun textAsync(): Promise<String> = definedExternally
+    fun textAsync(): Promise<JsString> = definedExternally
 }

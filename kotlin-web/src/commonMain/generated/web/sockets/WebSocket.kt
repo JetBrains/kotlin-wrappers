@@ -7,6 +7,7 @@ import js.buffer.ArrayBufferLike
 import js.buffer.ArrayBufferView
 import js.core.JsAny
 import js.core.JsLong
+import js.core.JsString
 import web.blob.Blob
 import web.events.*
 import web.messaging.MessageEvent
@@ -38,12 +39,12 @@ open external class WebSocket(
 
     constructor(
         url: String,
-        protocols: ReadonlyArray<String>,
+        protocols: ReadonlyArray<JsString>,
     )
 
     constructor(
         url: URL,
-        protocols: ReadonlyArray<String>,
+        protocols: ReadonlyArray<JsString>,
     )
 
     /**

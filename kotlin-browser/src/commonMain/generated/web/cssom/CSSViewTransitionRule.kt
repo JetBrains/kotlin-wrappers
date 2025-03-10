@@ -3,10 +3,11 @@
 package web.cssom
 
 import js.array.ReadonlyArray
+import js.core.JsString
 
 external class CSSViewTransitionRule
 private constructor() :
     CSSRule {
     val navigation: String
-    val types: ReadonlyArray<String>
+    val types: ReadonlyArray<JsString>
 }

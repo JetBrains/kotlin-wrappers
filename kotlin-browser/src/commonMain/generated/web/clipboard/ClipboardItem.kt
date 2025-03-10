@@ -4,6 +4,7 @@ package web.clipboard
 
 import js.array.ReadonlyArray
 import js.core.JsAny
+import js.core.JsString
 import js.objects.ReadonlyRecord
 import js.promise.Promise
 import seskar.js.JsAsync
@@ -15,7 +16,7 @@ import web.blob.Blob
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem)
  */
 open external class ClipboardItem(
-    items: ReadonlyRecord<String, JsAny /* String | Blob | PromiseLike<String | Blob> */>,
+    items: ReadonlyRecord<JsString, JsAny /* String | Blob | PromiseLike<String | Blob> */>,
     options: ClipboardItemOptions = definedExternally,
 ) {
     /**
@@ -26,7 +27,7 @@ open external class ClipboardItem(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem/types)
      */
-    val types: ReadonlyArray<String>
+    val types: ReadonlyArray<JsString>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem/getType)

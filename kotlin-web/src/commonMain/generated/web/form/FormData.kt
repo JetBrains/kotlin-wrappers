@@ -5,6 +5,7 @@ package web.form
 import js.array.JsTuple2
 import js.array.ReadonlyArray
 import js.collections.MapLike
+import js.core.JsString
 import js.iterable.JsIterator
 import web.blob.Blob
 import web.events.EventTarget
@@ -17,7 +18,7 @@ import web.events.EventTarget
 open external class FormData(
     form: EventTarget /* HTMLFormElement */ = definedExternally,
     submitter: EventTarget /* HTMLElement */? = definedExternally,
-) : MapLike<String, FormDataEntryValue> {
+) : MapLike<JsString, FormDataEntryValue> {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData/append)
      */
@@ -76,8 +77,8 @@ open external class FormData(
         filename: String = definedExternally,
     )
 
-    override fun entries(): JsIterator<JsTuple2<String, FormDataEntryValue>>
-    override fun keys(): JsIterator<String>
+    override fun entries(): JsIterator<JsTuple2<JsString, FormDataEntryValue>>
+    override fun keys(): JsIterator<JsString>
     override fun values(): JsIterator<FormDataEntryValue>
     override fun forEach(action: (value: FormDataEntryValue, key: String) -> Unit)
 }

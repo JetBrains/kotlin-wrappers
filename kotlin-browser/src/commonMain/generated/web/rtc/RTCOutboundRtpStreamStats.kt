@@ -3,6 +3,7 @@
 package web.rtc
 
 import js.core.JsLong
+import js.core.JsString
 import js.objects.JsPlainObject
 import js.objects.ReadonlyRecord
 
@@ -24,7 +25,7 @@ external interface RTCOutboundRtpStreamStats :
     val nackCount: Int?
     val pliCount: Int?
     val qpSum: JsLong?
-    val qualityLimitationDurations: ReadonlyRecord<String, Double>?
+    val qualityLimitationDurations: ReadonlyRecord<JsString, Double>?
     val qualityLimitationReason: RTCQualityLimitationReason?
     val qualityLimitationResolutionChanges: Int?
     val remoteId: String?

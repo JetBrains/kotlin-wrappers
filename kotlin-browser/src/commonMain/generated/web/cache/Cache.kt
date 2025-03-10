@@ -3,6 +3,7 @@
 package web.cache
 
 import js.array.ReadonlyArray
+import js.core.JsString
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
@@ -54,10 +55,10 @@ private constructor() {
 
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun addAll(urls: ReadonlyArray<String>)
+    suspend fun addAll(urls: ReadonlyArray<JsString>)
 
     @JsName("addAll")
-    fun addAllAsync(urls: ReadonlyArray<String>): Promise<Void>
+    fun addAllAsync(urls: ReadonlyArray<JsString>): Promise<Void>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/delete)

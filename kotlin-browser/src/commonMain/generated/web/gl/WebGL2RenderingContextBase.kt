@@ -5,6 +5,7 @@ package web.gl
 import js.array.ReadonlyArray
 import js.buffer.ArrayBufferView
 import js.core.JsAny
+import js.core.JsString
 
 sealed external interface WebGL2RenderingContextBase {
     /**
@@ -439,7 +440,7 @@ sealed external interface WebGL2RenderingContextBase {
      */
     fun getUniformIndices(
         program: WebGLProgram,
-        uniformNames: ReadonlyArray<String>,
+        uniformNames: ReadonlyArray<JsString>,
     ): ReadonlyArray<GLuint>?
 
     /**
@@ -661,7 +662,7 @@ sealed external interface WebGL2RenderingContextBase {
      */
     fun transformFeedbackVaryings(
         program: WebGLProgram,
-        varyings: ReadonlyArray<String>,
+        varyings: ReadonlyArray<JsString>,
         bufferMode: GLenum,
     )
 

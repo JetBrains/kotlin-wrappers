@@ -3,6 +3,7 @@
 package web.components
 
 import js.array.ReadonlyArray
+import js.core.JsString
 
 external interface CustomElementCompanion {
     val formAssociated: Boolean?
@@ -11,6 +12,6 @@ external interface CustomElementCompanion {
     /**
      * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements#responding_to_attribute_changes)
      */
-    val observedAttributes: ReadonlyArray<String>?
+    val observedAttributes: ReadonlyArray<JsString>?
         get() = definedExternally
 }

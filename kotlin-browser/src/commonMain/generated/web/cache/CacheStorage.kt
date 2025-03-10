@@ -3,6 +3,7 @@
 package web.cache
 
 import js.array.ReadonlyArray
+import js.core.JsString
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.http.Request
@@ -42,10 +43,10 @@ private constructor() {
      */
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun keys(): ReadonlyArray<String>
+    suspend fun keys(): ReadonlyArray<JsString>
 
     @JsName("keys")
-    fun keysAsync(): Promise<ReadonlyArray<String>>
+    fun keysAsync(): Promise<ReadonlyArray<JsString>>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/match)

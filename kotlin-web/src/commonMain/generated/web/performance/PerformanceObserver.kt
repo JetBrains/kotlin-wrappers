@@ -3,6 +3,7 @@
 package web.performance
 
 import js.array.ReadonlyArray
+import js.core.JsString
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)
@@ -29,6 +30,6 @@ open external class PerformanceObserver(
         /**
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserver/supportedEntryTypes_static)
          */
-        val supportedEntryTypes: ReadonlyArray<String>
+        val supportedEntryTypes: ReadonlyArray<JsString>
     }
 }
