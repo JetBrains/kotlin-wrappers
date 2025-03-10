@@ -2,7 +2,14 @@
 
 package web.aria
 
+import js.array.ReadonlyArray
+import web.dom.Element
+
 external interface ARIAMixin {
+    var ariaActiveDescendantElement: Element?
+        get() = definedExternally
+        set(value) = definedExternally
+
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaAtomic)
      */
@@ -72,11 +79,17 @@ external interface ARIAMixin {
     var ariaColSpan: String?
         get() = definedExternally
         set(value) = definedExternally
+    var ariaControlsElements: ReadonlyArray<Element>?
+        get() = definedExternally
+        set(value) = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaCurrent)
      */
     var ariaCurrent: String?
+        get() = definedExternally
+        set(value) = definedExternally
+    var ariaDescribedByElements: ReadonlyArray<Element>?
         get() = definedExternally
         set(value) = definedExternally
 
@@ -86,6 +99,9 @@ external interface ARIAMixin {
     var ariaDescription: String?
         get() = definedExternally
         set(value) = definedExternally
+    var ariaDetailsElements: ReadonlyArray<Element>?
+        get() = definedExternally
+        set(value) = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaDisabled)
@@ -93,11 +109,17 @@ external interface ARIAMixin {
     var ariaDisabled: String?
         get() = definedExternally
         set(value) = definedExternally
+    var ariaErrorMessageElements: ReadonlyArray<Element>?
+        get() = definedExternally
+        set(value) = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaExpanded)
      */
     var ariaExpanded: String?
+        get() = definedExternally
+        set(value) = definedExternally
+    var ariaFlowToElements: ReadonlyArray<Element>?
         get() = definedExternally
         set(value) = definedExternally
 
@@ -129,6 +151,9 @@ external interface ARIAMixin {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaLabel)
      */
     var ariaLabel: String?
+        get() = definedExternally
+        set(value) = definedExternally
+    var ariaLabelledByElements: ReadonlyArray<Element>?
         get() = definedExternally
         set(value) = definedExternally
 
@@ -171,6 +196,9 @@ external interface ARIAMixin {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaOrientation)
      */
     var ariaOrientation: String?
+        get() = definedExternally
+        set(value) = definedExternally
+    var ariaOwnsElements: ReadonlyArray<Element>?
         get() = definedExternally
         set(value) = definedExternally
 

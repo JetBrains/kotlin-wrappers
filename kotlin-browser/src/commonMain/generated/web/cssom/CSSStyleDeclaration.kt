@@ -1013,6 +1013,11 @@ private constructor() :
     var hyphenateCharacter: String
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/hyphenate-limit-chars)
+     */
+    var hyphenateLimitChars: String
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/hyphens)
      */
     var hyphens: String
@@ -1403,9 +1408,19 @@ private constructor() :
     var overflowAnchor: String
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overflow-block)
+     */
+    var overflowBlock: String
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overflow-clip-margin)
      */
     var overflowClipMargin: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overflow-inline)
+     */
+    var overflowInline: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/overflow-wrap)
