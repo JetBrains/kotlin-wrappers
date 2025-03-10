@@ -32,7 +32,7 @@ external interface StylesConfig<Option : Any, Group : GroupBase<Option>> {
     var indicatorSeparator: StylesConfigFunction<IndicatorSeparatorProps>?
     var input: StylesConfigFunction<InputSpecificProps>?
     var loadingIndicator: StylesConfigFunction<LoadingIndicatorProps>?
-    var menu: StylesConfigFunction<MenuProps>?
+    var menu: StylesConfigFunction<MenuProps<Option, Group>>?
     var menuList: StylesConfigFunction<MenuListProps<Option, Group>>?
     var menuPortal: StylesConfigFunction<MenuPortalProps>? /* PortalStyleArgs */
     var multiValue: StylesConfigFunction<MultiValueProps<Option, Group>>?
