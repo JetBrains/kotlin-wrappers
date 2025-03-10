@@ -2,4 +2,6 @@
 
 package web.authn
 
-typealias PublicKeyCredentialJSON = Any
+import js.core.JsAny
+
+typealias PublicKeyCredentialJSON = JsAny

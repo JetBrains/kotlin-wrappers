@@ -2,4 +2,6 @@
 
 package web.fs
 
-typealias FileSystemWriteChunkType = Any /* BufferSource | Blob | string | WriteParams */
+import js.core.JsAny
+
+typealias FileSystemWriteChunkType = JsAny /* BufferSource | Blob | string | WriteParams */

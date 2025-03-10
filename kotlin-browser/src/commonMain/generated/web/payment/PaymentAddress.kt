@@ -3,6 +3,7 @@
 package web.payment
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ContactAddress)
@@ -62,5 +63,5 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ContactAddress/toJSON)
      */
-    fun toJSON(): Any
+    fun toJSON(): JsAny
 }

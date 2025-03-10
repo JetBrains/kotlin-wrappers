@@ -4,6 +4,7 @@ package web.rtc
 
 import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferView
+import js.core.JsAny
 import js.transferable.Transferable
 import web.blob.Blob
 import web.events.*
@@ -143,7 +144,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/message_event)
      */
     @JsEvent("message")
-    val messageEvent: EventInstance<MessageEvent<Any?>, RTCDataChannel /* this */, RTCDataChannel /* this */>
+    val messageEvent: EventInstance<MessageEvent<JsAny?>, RTCDataChannel /* this */, RTCDataChannel /* this */>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/open_event)

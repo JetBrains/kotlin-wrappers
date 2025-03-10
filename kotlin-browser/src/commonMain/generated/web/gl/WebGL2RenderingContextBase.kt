@@ -4,6 +4,7 @@ package web.gl
 
 import js.array.ReadonlyArray
 import js.buffer.ArrayBufferView
+import js.core.JsAny
 
 sealed external interface WebGL2RenderingContextBase {
     /**
@@ -338,7 +339,7 @@ sealed external interface WebGL2RenderingContextBase {
         program: WebGLProgram,
         uniformBlockIndex: GLuint,
         pname: GLenum,
-    ): Any?
+    ): JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getActiveUniforms)
@@ -347,7 +348,7 @@ sealed external interface WebGL2RenderingContextBase {
         program: WebGLProgram,
         uniformIndices: ReadonlyArray<GLuint>,
         pname: GLenum,
-    ): Any?
+    ): JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getBufferSubData)
@@ -374,7 +375,7 @@ sealed external interface WebGL2RenderingContextBase {
     fun getIndexedParameter(
         target: GLenum,
         index: GLuint,
-    ): Any?
+    ): JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getInternalformatParameter)
@@ -383,7 +384,7 @@ sealed external interface WebGL2RenderingContextBase {
         target: GLenum,
         internalformat: GLenum,
         pname: GLenum,
-    ): Any?
+    ): JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getQuery)
@@ -399,7 +400,7 @@ sealed external interface WebGL2RenderingContextBase {
     fun getQueryParameter(
         query: WebGLQuery,
         pname: GLenum,
-    ): Any?
+    ): JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getSamplerParameter)
@@ -407,7 +408,7 @@ sealed external interface WebGL2RenderingContextBase {
     fun getSamplerParameter(
         sampler: WebGLSampler,
         pname: GLenum,
-    ): Any?
+    ): JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getSyncParameter)
@@ -415,7 +416,7 @@ sealed external interface WebGL2RenderingContextBase {
     fun getSyncParameter(
         sync: WebGLSync,
         pname: GLenum,
-    ): Any?
+    ): JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getTransformFeedbackVarying)

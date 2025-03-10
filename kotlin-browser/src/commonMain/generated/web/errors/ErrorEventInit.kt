@@ -2,6 +2,7 @@
 
 package web.errors
 
+import js.core.JsAny
 import js.objects.JsPlainObject
 import web.events.EventInit
 
@@ -9,7 +10,7 @@ import web.events.EventInit
 external interface ErrorEventInit :
     EventInit {
     val colno: Int?
-    val error: Any?
+    val error: JsAny?
     val filename: String?
     val lineno: Int?
     val message: String?

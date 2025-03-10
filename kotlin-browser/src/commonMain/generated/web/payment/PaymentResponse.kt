@@ -2,6 +2,7 @@
 
 package web.payment
 
+import js.core.JsAny
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
@@ -22,7 +23,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/details)
      */
-    val details: Any?
+    val details: JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/methodName)
@@ -87,7 +88,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/toJSON)
      */
-    fun toJSON(): Any
+    fun toJSON(): JsAny
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/payerdetailchange_event)

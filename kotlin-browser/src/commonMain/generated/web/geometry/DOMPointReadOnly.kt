@@ -2,6 +2,8 @@
 
 package web.geometry
 
+import js.core.JsAny
+
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly)
  */
@@ -31,7 +33,7 @@ open external class DOMPointReadOnly(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/toJSON)
      */
-    fun toJSON(): Any
+    fun toJSON(): JsAny
 
     companion object {
         /**

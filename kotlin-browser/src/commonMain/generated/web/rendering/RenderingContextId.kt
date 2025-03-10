@@ -2,4 +2,6 @@
 
 package web.rendering
 
-sealed interface RenderingContextId<T : Any, O : Any>
+import js.core.JsAny
+
+sealed interface RenderingContextId<T : JsAny, O : JsAny>

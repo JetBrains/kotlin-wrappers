@@ -2,6 +2,8 @@
 
 package web.idb
 
+import js.core.JsAny
+
 /**
  * A key range can be a single value or a range with upper and lower bounds or endpoints. If the key range has both upper and lower bounds, then it is bounded; if it has no bounds, it is unbounded. A bounded key range can either be open (the endpoints are excluded) or closed (the endpoints are included). To retrieve all keys within a certain range, you can use the following code constructs:
  *
@@ -14,7 +16,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBKeyRange/lower)
      */
-    val lower: Any?
+    val lower: JsAny?
 
     /**
      * Returns true if the lower open flag is set, and false otherwise.
@@ -28,7 +30,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBKeyRange/upper)
      */
-    val upper: Any?
+    val upper: JsAny?
 
     /**
      * Returns true if the upper open flag is set, and false otherwise.
@@ -42,7 +44,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBKeyRange/includes)
      */
-    fun includes(key: Any?): Boolean
+    fun includes(key: JsAny?): Boolean
 
     companion object {
         /**
@@ -51,8 +53,8 @@ private constructor() {
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBKeyRange/bound_static)
          */
         fun bound(
-            lower: Any?,
-            upper: Any?,
+            lower: JsAny?,
+            upper: JsAny?,
             lowerOpen: Boolean = definedExternally,
             upperOpen: Boolean = definedExternally,
         ): IDBKeyRange
@@ -63,7 +65,7 @@ private constructor() {
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBKeyRange/lowerBound_static)
          */
         fun lowerBound(
-            lower: Any?,
+            lower: JsAny?,
             open: Boolean = definedExternally,
         ): IDBKeyRange
 
@@ -72,7 +74,7 @@ private constructor() {
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBKeyRange/only_static)
          */
-        fun only(value: Any?): IDBKeyRange
+        fun only(value: JsAny?): IDBKeyRange
 
         /**
          * Returns a new IDBKeyRange with no lower bound and ending at key. If open is true, key is not included in the range.
@@ -80,7 +82,7 @@ private constructor() {
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBKeyRange/upperBound_static)
          */
         fun upperBound(
-            upper: Any?,
+            upper: JsAny?,
             open: Boolean = definedExternally,
         ): IDBKeyRange
     }

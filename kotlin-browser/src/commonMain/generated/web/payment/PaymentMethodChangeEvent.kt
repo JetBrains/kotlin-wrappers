@@ -2,6 +2,7 @@
 
 package web.payment
 
+import js.core.JsAny
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
 import seskar.js.JsValue
@@ -19,7 +20,7 @@ open external class PaymentMethodChangeEvent(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentMethodChangeEvent/methodDetails)
      */
-    val methodDetails: Any?
+    val methodDetails: JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentMethodChangeEvent/methodName)

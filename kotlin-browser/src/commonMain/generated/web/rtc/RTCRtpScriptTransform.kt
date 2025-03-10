@@ -3,6 +3,7 @@
 package web.rtc
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import web.workers.Worker
 
 /**
@@ -10,6 +11,6 @@ import web.workers.Worker
  */
 open external class RTCRtpScriptTransform(
     worker: Worker,
-    options: Any? = definedExternally,
+    options: JsAny? = definedExternally,
     transfer: ReadonlyArray<*> = definedExternally,
 )

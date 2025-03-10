@@ -2,6 +2,8 @@
 
 package web.components
 
+import js.core.JsAny
+
 external interface CustomElement {
     interface WithCallbacks :
         WithConnectedCallback,
@@ -36,8 +38,8 @@ external interface CustomElement {
          */
         fun attributeChangedCallback(
             name: String,
-            oldValue: Any?,
-            newValue: Any?,
+            oldValue: JsAny?,
+            newValue: JsAny?,
         )
     }
 }

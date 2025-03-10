@@ -3,6 +3,7 @@
 package web.idb
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.core.JsLong
 import js.promise.Promise
 import seskar.js.JsAsync
@@ -22,8 +23,8 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBFactory/cmp)
      */
     fun cmp(
-        first: Any?,
-        second: Any?,
+        first: JsAny?,
+        second: JsAny?,
     ): Short
 
     /**

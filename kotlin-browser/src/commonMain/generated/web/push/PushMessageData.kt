@@ -3,6 +3,7 @@
 package web.push
 
 import js.buffer.ArrayBuffer
+import js.core.JsAny
 import js.typedarrays.Uint8Array
 import web.blob.Blob
 
@@ -32,7 +33,7 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushMessageData/json)
      */
-    fun json(): Any
+    fun json(): JsAny
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushMessageData/text)

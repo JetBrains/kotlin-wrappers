@@ -2,4 +2,6 @@
 
 package web.crypto
 
-typealias HashAlgorithmIdentifier = Any /* AlgorithmIdentifier */
+import js.core.JsAny
+
+typealias HashAlgorithmIdentifier = JsAny /* AlgorithmIdentifier */

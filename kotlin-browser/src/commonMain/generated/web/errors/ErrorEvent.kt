@@ -2,6 +2,7 @@
 
 package web.errors
 
+import js.core.JsAny
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
 import seskar.js.JsValue
@@ -25,7 +26,7 @@ open external class ErrorEvent(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent/error)
      */
-    val error: Any?
+    val error: JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent/filename)

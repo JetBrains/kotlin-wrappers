@@ -2,10 +2,11 @@
 
 package web.gpu
 
+import js.core.JsAny
 import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface GPUPipelineDescriptorBase :
     GPUObjectDescriptorBase {
-    val layout: Any /* GPUPipelineLayout | GPUAutoLayoutMode */
+    val layout: JsAny /* GPUPipelineLayout | GPUAutoLayoutMode */
 }

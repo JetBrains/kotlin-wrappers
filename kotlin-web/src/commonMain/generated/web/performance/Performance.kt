@@ -2,6 +2,7 @@
 
 package web.performance
 
+import js.core.JsAny
 import web.events.*
 import web.time.DOMHighResTimeStamp
 
@@ -97,7 +98,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/toJSON)
      */
-    fun toJSON(): Any
+    fun toJSON(): JsAny
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/resourcetimingbufferfull_event)

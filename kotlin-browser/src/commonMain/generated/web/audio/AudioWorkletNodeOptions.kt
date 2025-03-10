@@ -3,6 +3,7 @@
 package web.audio
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.objects.JsPlainObject
 import js.objects.ReadonlyRecord
 
@@ -13,5 +14,5 @@ external interface AudioWorkletNodeOptions :
     val numberOfOutputs: Int?
     val outputChannelCount: ReadonlyArray<Number>?
     val parameterData: ReadonlyRecord<String, Double>?
-    val processorOptions: Any?
+    val processorOptions: JsAny?
 }

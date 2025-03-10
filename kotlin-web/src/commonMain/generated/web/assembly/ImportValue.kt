@@ -2,4 +2,6 @@
 
 package web.assembly
 
-typealias ImportValue = Any /* ExportValue | number */
+import js.core.JsAny
+
+typealias ImportValue = JsAny /* ExportValue | number */

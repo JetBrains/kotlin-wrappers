@@ -2,4 +2,6 @@
 
 package web.push
 
-typealias PushMessageDataInit = Any /* BufferSource | string */
+import js.core.JsAny
+
+typealias PushMessageDataInit = JsAny /* BufferSource | string */

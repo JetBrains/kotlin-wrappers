@@ -3,6 +3,7 @@
 package web.idb
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.core.Void
 import web.dom.DOMStringList
 
@@ -32,7 +33,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/keyPath)
      */
-    val keyPath: Any /* string | string[] */
+    val keyPath: JsAny /* string | string[] */
 
     /**
      * Returns the name of the store.
@@ -60,7 +61,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/add)
      */
     fun add(
-        value: Any?,
+        value: JsAny?,
         key: IDBValidKey = definedExternally,
     ): IDBRequest<IDBValidKey>
 
@@ -226,7 +227,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/put)
      */
     fun put(
-        value: Any?,
+        value: JsAny?,
         key: IDBValidKey = definedExternally,
     ): IDBRequest<IDBValidKey>
 }

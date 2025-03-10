@@ -2,6 +2,7 @@
 
 package web.idb
 
+import js.core.JsAny
 import js.core.Void
 
 /**
@@ -42,7 +43,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBCursor/source)
      */
-    val source: Any /* IDBObjectStore | IDBIndex */
+    val source: JsAny /* IDBObjectStore | IDBIndex */
 
     /**
      * Advances the cursor through the next count records in range.
@@ -86,5 +87,5 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBCursor/update)
      */
-    fun update(value: Any?): IDBRequest<IDBValidKey>
+    fun update(value: JsAny?): IDBRequest<IDBValidKey>
 }

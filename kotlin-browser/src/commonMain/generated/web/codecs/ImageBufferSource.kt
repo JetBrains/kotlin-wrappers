@@ -2,4 +2,6 @@
 
 package web.codecs
 
-typealias ImageBufferSource = Any /* AllowSharedBufferSource | ReadableStream */
+import js.core.JsAny
+
+typealias ImageBufferSource = JsAny /* AllowSharedBufferSource | ReadableStream */

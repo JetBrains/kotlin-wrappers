@@ -2,6 +2,8 @@
 
 package web.geolocation
 
+import js.core.JsAny
+
 /**
  * Available only in secure contexts.
  *
@@ -47,5 +49,5 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationCoordinates/toJSON)
      */
-    fun toJSON(): Any
+    fun toJSON(): JsAny
 }

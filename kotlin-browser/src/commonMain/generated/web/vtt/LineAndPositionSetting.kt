@@ -2,4 +2,6 @@
 
 package web.vtt
 
-typealias LineAndPositionSetting = Any /* number | AutoKeyword */
+import js.core.JsAny
+
+typealias LineAndPositionSetting = JsAny /* number | AutoKeyword */

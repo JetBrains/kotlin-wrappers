@@ -4,6 +4,7 @@
 
 package web.assembly
 
+import js.core.JsAny
 import js.import.JsQualifier
 
 /**
@@ -11,7 +12,7 @@ import js.import.JsQualifier
  */
 open external class Table(
     descriptor: TableDescriptor,
-    value: Any? = definedExternally,
+    value: JsAny? = definedExternally,
 ) {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Table/length)
@@ -21,14 +22,14 @@ open external class Table(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Table/get)
      */
-    operator fun get(index: Int): Any
+    operator fun get(index: Int): JsAny
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Table/grow)
      */
     fun grow(
         delta: Int,
-        value: Any? = definedExternally,
+        value: JsAny? = definedExternally,
     ): Int
 
     /**
@@ -36,6 +37,6 @@ open external class Table(
      */
     fun set(
         index: Int,
-        value: Any? = definedExternally,
+        value: JsAny? = definedExternally,
     )
 }

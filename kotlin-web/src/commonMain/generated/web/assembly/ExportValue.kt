@@ -2,4 +2,6 @@
 
 package web.assembly
 
-typealias ExportValue = Any /* Function | Global | Memory | Table */
+import js.core.JsAny
+
+typealias ExportValue = JsAny /* Function | Global | Memory | Table */

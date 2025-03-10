@@ -2,6 +2,8 @@
 
 package web.reporting
 
+import js.core.JsAny
+
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Report)
  */
@@ -21,5 +23,5 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Report/url)
      */
     val url: String
-    fun toJSON(): Any
+    fun toJSON(): JsAny
 }

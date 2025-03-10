@@ -2,6 +2,8 @@
 
 package web.cssom
 
+import js.core.JsAny
+
 /**
  * A single style sheet. CSS style sheets will further implement the more specialized CSSStyleSheet interface.
  *
@@ -27,7 +29,7 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet/ownerNode)
      */
-    val ownerNode: Any /* Element | ProcessingInstruction */?
+    val ownerNode: JsAny /* Element | ProcessingInstruction */?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet/parentStyleSheet)

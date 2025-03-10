@@ -2,6 +2,8 @@
 
 package web.geometry
 
+import js.core.JsAny
+
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad)
  */
@@ -39,7 +41,7 @@ open external class DOMQuad(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/toJSON)
      */
-    fun toJSON(): Any
+    fun toJSON(): JsAny
 
     companion object {
         fun fromQuad(other: DOMQuad = definedExternally): DOMQuad

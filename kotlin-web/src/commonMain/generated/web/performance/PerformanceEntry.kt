@@ -2,6 +2,7 @@
 
 package web.performance
 
+import js.core.JsAny
 import web.time.DOMHighResTimeStamp
 
 /**
@@ -34,5 +35,5 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEntry/toJSON)
      */
-    open fun toJSON(): Any
+    open fun toJSON(): JsAny
 }

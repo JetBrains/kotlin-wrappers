@@ -2,6 +2,7 @@
 
 package web.html
 
+import js.core.JsAny
 import web.dom.Element
 
 /**
@@ -22,5 +23,5 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormControlsCollection/namedItem)
      */
-    fun namedItem(name: String): Any? /* RadioNodeList | Element */
+    fun namedItem(name: String): JsAny? /* RadioNodeList | Element */
 }

@@ -2,4 +2,6 @@
 
 package web.html
 
-typealias MediaProvider = Any /* MediaStream | MediaSource | Blob */
+import js.core.JsAny
+
+typealias MediaProvider = JsAny /* MediaStream | MediaSource | Blob */

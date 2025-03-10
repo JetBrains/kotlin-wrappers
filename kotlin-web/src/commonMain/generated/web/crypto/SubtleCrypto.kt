@@ -5,6 +5,7 @@ package web.crypto
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
 import js.buffer.BufferSource
+import js.core.JsAny
 import js.promise.Promise
 import seskar.js.JsAsync
 
@@ -972,14 +973,14 @@ private constructor() {
         algorithm: Algorithm,
         extractable: Boolean,
         keyUsages: ReadonlyArray<KeyUsage>,
-    ): Any /* CryptoKeyPair | CryptoKey */
+    ): JsAny /* CryptoKeyPair | CryptoKey */
 
     @JsName("generateKey")
     fun generateKeyAsync(
         algorithm: Algorithm,
         extractable: Boolean,
         keyUsages: ReadonlyArray<KeyUsage>,
-    ): Promise<Any /* CryptoKeyPair | CryptoKey */>
+    ): Promise<JsAny /* CryptoKeyPair | CryptoKey */>
 
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
@@ -987,14 +988,14 @@ private constructor() {
         algorithm: String,
         extractable: Boolean,
         keyUsages: ReadonlyArray<KeyUsage>,
-    ): Any /* CryptoKeyPair | CryptoKey */
+    ): JsAny /* CryptoKeyPair | CryptoKey */
 
     @JsName("generateKey")
     fun generateKeyAsync(
         algorithm: String,
         extractable: Boolean,
         keyUsages: ReadonlyArray<KeyUsage>,
-    ): Promise<Any /* CryptoKeyPair | CryptoKey */>
+    ): Promise<JsAny /* CryptoKeyPair | CryptoKey */>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/importKey)

@@ -6,6 +6,8 @@
 
 package web.canvas
 
+import js.core.JsAny
+
 sealed external interface CanvasPath {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/arc)
@@ -105,6 +107,6 @@ sealed external interface CanvasPath {
         y: Double,
         w: Double,
         h: Double,
-        radii: Any /* number | DOMPointInit | (number | DOMPointInit)[] */ = definedExternally,
+        radii: JsAny /* number | DOMPointInit | (number | DOMPointInit)[] */ = definedExternally,
     ): Unit = definedExternally
 }

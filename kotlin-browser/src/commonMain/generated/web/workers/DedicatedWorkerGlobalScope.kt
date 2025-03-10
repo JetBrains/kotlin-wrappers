@@ -3,6 +3,7 @@
 package web.workers
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.transferable.Transferable
 import web.events.EventHandler
 import web.events.EventInstance
@@ -46,12 +47,12 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/postMessage)
      */
     fun postMessage(
-        message: Any?,
+        message: JsAny?,
         transfer: ReadonlyArray<Transferable>,
     )
 
     fun postMessage(
-        message: Any?,
+        message: JsAny?,
         options: StructuredSerializeOptions = definedExternally,
     )
 
@@ -59,13 +60,13 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/message_event)
      */
     @JsEvent("message")
-    val messageEvent: EventInstance<MessageEvent<Any?>, DedicatedWorkerGlobalScope /* this */, DedicatedWorkerGlobalScope /* this */>
+    val messageEvent: EventInstance<MessageEvent<JsAny?>, DedicatedWorkerGlobalScope /* this */, DedicatedWorkerGlobalScope /* this */>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/messageerror_event)
      */
     @JsEvent("messageerror")
-    val messageErrorEvent: EventInstance<MessageEvent<Any?>, DedicatedWorkerGlobalScope /* this */, DedicatedWorkerGlobalScope /* this */>
+    val messageErrorEvent: EventInstance<MessageEvent<JsAny?>, DedicatedWorkerGlobalScope /* this */, DedicatedWorkerGlobalScope /* this */>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/rtctransform_event)

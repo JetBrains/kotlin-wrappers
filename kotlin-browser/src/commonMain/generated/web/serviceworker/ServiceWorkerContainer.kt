@@ -3,6 +3,7 @@
 package web.serviceworker
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.events.*
@@ -114,11 +115,11 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/message_event)
      */
     @JsEvent("message")
-    val messageEvent: EventInstance<MessageEvent<Any?>, ServiceWorkerContainer /* this */, ServiceWorkerContainer /* this */>
+    val messageEvent: EventInstance<MessageEvent<JsAny?>, ServiceWorkerContainer /* this */, ServiceWorkerContainer /* this */>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/messageerror_event)
      */
     @JsEvent("messageerror")
-    val messageErrorEvent: EventInstance<MessageEvent<Any?>, ServiceWorkerContainer /* this */, ServiceWorkerContainer /* this */>
+    val messageErrorEvent: EventInstance<MessageEvent<JsAny?>, ServiceWorkerContainer /* this */, ServiceWorkerContainer /* this */>
 }

@@ -3,6 +3,7 @@
 package web.console
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/console)
@@ -13,7 +14,7 @@ sealed external interface Console {
      */
     fun assert(
         condition: Boolean = definedExternally,
-        vararg data: Any?,
+        vararg data: JsAny?,
     )
 
     /**
@@ -34,35 +35,35 @@ sealed external interface Console {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/console/debug_static)
      */
-    fun debug(vararg data: Any?)
+    fun debug(vararg data: JsAny?)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/console/dir_static)
      */
     fun dir(
-        item: Any? = definedExternally,
-        options: Any? = definedExternally,
+        item: JsAny? = definedExternally,
+        options: JsAny? = definedExternally,
     )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/console/dirxml_static)
      */
-    fun dirxml(vararg data: Any?)
+    fun dirxml(vararg data: JsAny?)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/console/error_static)
      */
-    fun error(vararg data: Any?)
+    fun error(vararg data: JsAny?)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/console/group_static)
      */
-    fun group(vararg data: Any?)
+    fun group(vararg data: JsAny?)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/console/groupCollapsed_static)
      */
-    fun groupCollapsed(vararg data: Any?)
+    fun groupCollapsed(vararg data: JsAny?)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/console/groupEnd_static)
@@ -72,18 +73,18 @@ sealed external interface Console {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/console/info_static)
      */
-    fun info(vararg data: Any?)
+    fun info(vararg data: JsAny?)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/console/log_static)
      */
-    fun log(vararg data: Any?)
+    fun log(vararg data: JsAny?)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/console/table_static)
      */
     fun table(
-        tabularData: Any? = definedExternally,
+        tabularData: JsAny? = definedExternally,
         properties: ReadonlyArray<String> = definedExternally,
     )
 
@@ -102,7 +103,7 @@ sealed external interface Console {
      */
     fun timeLog(
         label: String = definedExternally,
-        vararg data: Any?,
+        vararg data: JsAny?,
     )
 
     fun timeStamp(label: String = definedExternally)
@@ -110,10 +111,10 @@ sealed external interface Console {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/console/trace_static)
      */
-    fun trace(vararg data: Any?)
+    fun trace(vararg data: JsAny?)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/console/warn_static)
      */
-    fun warn(vararg data: Any?)
+    fun warn(vararg data: JsAny?)
 }

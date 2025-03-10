@@ -2,11 +2,12 @@
 
 package web.payment
 
+import js.core.JsAny
 import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface PaymentMethodChangeEventInit :
     PaymentRequestUpdateEventInit {
-    val methodDetails: Any?
+    val methodDetails: JsAny?
     val methodName: String?
 }

@@ -2,16 +2,18 @@
 
 package web.canvas
 
+import js.core.JsAny
+
 sealed external interface CanvasFillStrokeStyles {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fillStyle)
      */
-    var fillStyle: Any /* string | CanvasGradient | CanvasPattern */
+    var fillStyle: JsAny /* string | CanvasGradient | CanvasPattern */
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/strokeStyle)
      */
-    var strokeStyle: Any /* string | CanvasGradient | CanvasPattern */
+    var strokeStyle: JsAny /* string | CanvasGradient | CanvasPattern */
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/createConicGradient)

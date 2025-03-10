@@ -3,6 +3,7 @@
 package web.gl
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import web.events.EventTarget
 import web.images.PredefinedColorSpace
 
@@ -406,7 +407,7 @@ sealed external interface WebGLRenderingContextBase {
     fun getBufferParameter(
         target: GLenum,
         pname: GLenum,
-    ): Any?
+    ): JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getContextAttributes)
@@ -455,7 +456,7 @@ sealed external interface WebGLRenderingContextBase {
     fun getExtension(extensionName: WebGLExtension.WEBGL_draw_buffers): WEBGL_draw_buffers?
     fun getExtension(extensionName: WebGLExtension.WEBGL_lose_context): WEBGL_lose_context?
     fun getExtension(extensionName: WebGLExtension.WEBGL_multi_draw): WEBGL_multi_draw?
-    fun getExtension(name: String): Any?
+    fun getExtension(name: String): JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getFramebufferAttachmentParameter)
@@ -464,12 +465,12 @@ sealed external interface WebGLRenderingContextBase {
         target: GLenum,
         attachment: GLenum,
         pname: GLenum,
-    ): Any?
+    ): JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getParameter)
      */
-    fun getParameter(pname: GLenum): Any?
+    fun getParameter(pname: GLenum): JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getProgramInfoLog)
@@ -482,7 +483,7 @@ sealed external interface WebGLRenderingContextBase {
     fun getProgramParameter(
         program: WebGLProgram,
         pname: GLenum,
-    ): Any?
+    ): JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getRenderbufferParameter)
@@ -490,7 +491,7 @@ sealed external interface WebGLRenderingContextBase {
     fun getRenderbufferParameter(
         target: GLenum,
         pname: GLenum,
-    ): Any?
+    ): JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getShaderInfoLog)
@@ -503,7 +504,7 @@ sealed external interface WebGLRenderingContextBase {
     fun getShaderParameter(
         shader: WebGLShader,
         pname: GLenum,
-    ): Any?
+    ): JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getShaderPrecisionFormat)
@@ -529,7 +530,7 @@ sealed external interface WebGLRenderingContextBase {
     fun getTexParameter(
         target: GLenum,
         pname: GLenum,
-    ): Any?
+    ): JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getUniform)
@@ -537,7 +538,7 @@ sealed external interface WebGLRenderingContextBase {
     fun getUniform(
         program: WebGLProgram,
         location: WebGLUniformLocation,
-    ): Any?
+    ): JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getUniformLocation)
@@ -553,7 +554,7 @@ sealed external interface WebGLRenderingContextBase {
     fun getVertexAttrib(
         index: GLuint,
         pname: GLenum,
-    ): Any?
+    ): JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getVertexAttribOffset)

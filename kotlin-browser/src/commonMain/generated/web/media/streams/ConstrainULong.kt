@@ -2,4 +2,6 @@
 
 package web.media.streams
 
-typealias ConstrainULong = Any /* number | ConstrainULongRange */
+import js.core.JsAny
+
+typealias ConstrainULong = JsAny /* number | ConstrainULongRange */

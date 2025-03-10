@@ -2,6 +2,7 @@
 
 package web.history
 
+import js.core.JsAny
 import web.url.URL
 
 /**
@@ -24,7 +25,7 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/state)
      */
-    val state: Any?
+    val state: JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/back)
@@ -45,13 +46,13 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/pushState)
      */
     fun pushState(
-        data: Any?,
+        data: JsAny?,
         unused: String,
         url: String? = definedExternally,
     )
 
     fun pushState(
-        data: Any?,
+        data: JsAny?,
         unused: String,
         url: URL?,
     )
@@ -60,13 +61,13 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/replaceState)
      */
     fun replaceState(
-        data: Any?,
+        data: JsAny?,
         unused: String,
         url: String? = definedExternally,
     )
 
     fun replaceState(
-        data: Any?,
+        data: JsAny?,
         unused: String,
         url: URL?,
     )

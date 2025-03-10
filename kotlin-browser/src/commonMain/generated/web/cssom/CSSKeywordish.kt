@@ -2,4 +2,6 @@
 
 package web.cssom
 
-typealias CSSKeywordish = Any /* string | CSSKeywordValue */
+import js.core.JsAny
+
+typealias CSSKeywordish = JsAny /* string | CSSKeywordValue */

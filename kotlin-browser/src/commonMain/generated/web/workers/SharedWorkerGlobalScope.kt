@@ -2,6 +2,7 @@
 
 package web.workers
 
+import js.core.JsAny
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.JsEvent
@@ -36,5 +37,5 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorkerGlobalScope/connect_event)
      */
     @JsEvent("connect")
-    val connectEvent: EventInstance<MessageEvent<Any?>, SharedWorkerGlobalScope /* this */, SharedWorkerGlobalScope /* this */>
+    val connectEvent: EventInstance<MessageEvent<JsAny?>, SharedWorkerGlobalScope /* this */, SharedWorkerGlobalScope /* this */>
 }

@@ -2,4 +2,6 @@
 
 package web.media.streams
 
-typealias ConstrainDouble = Any /* number | ConstrainDoubleRange */
+import js.core.JsAny
+
+typealias ConstrainDouble = JsAny /* number | ConstrainDoubleRange */

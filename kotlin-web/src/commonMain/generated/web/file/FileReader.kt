@@ -2,6 +2,7 @@
 
 package web.file
 
+import js.core.JsAny
 import web.blob.Blob
 import web.errors.DOMException
 import web.events.*
@@ -56,7 +57,7 @@ open external class FileReader :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/result)
      */
-    val result: Any /* string | ArrayBuffer */?
+    val result: JsAny /* string | ArrayBuffer */?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/abort)

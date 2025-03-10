@@ -2,6 +2,7 @@
 
 package web.idb
 
+import js.core.JsAny
 import web.errors.DOMException
 import web.events.*
 
@@ -49,7 +50,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBRequest/source)
      */
-    val source: Any /* IDBObjectStore | IDBIndex | IDBCursor */
+    val source: JsAny /* IDBObjectStore | IDBIndex | IDBCursor */
 
     /**
      * Returns the IDBTransaction the request was made within. If this as an open request, then it returns an upgrade transaction while it is running, or null otherwise.

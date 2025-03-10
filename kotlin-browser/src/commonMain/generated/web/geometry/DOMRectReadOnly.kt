@@ -2,6 +2,8 @@
 
 package web.geometry
 
+import js.core.JsAny
+
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly)
  */
@@ -46,7 +48,7 @@ open external class DOMRectReadOnly(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/toJSON)
      */
-    fun toJSON(): Any
+    fun toJSON(): JsAny
 
     companion object {
         /**

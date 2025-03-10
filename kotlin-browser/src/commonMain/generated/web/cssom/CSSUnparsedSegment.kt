@@ -2,4 +2,6 @@
 
 package web.cssom
 
-typealias CSSUnparsedSegment = Any /* string | CSSVariableReferenceValue */
+import js.core.JsAny
+
+typealias CSSUnparsedSegment = JsAny /* string | CSSVariableReferenceValue */

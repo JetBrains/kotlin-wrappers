@@ -2,6 +2,8 @@
 
 package web.reporting
 
+import js.core.JsAny
+
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReportBody)
  */
@@ -10,5 +12,5 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReportBody/toJSON)
      */
-    fun toJSON(): Any
+    fun toJSON(): JsAny
 }

@@ -3,6 +3,7 @@
 package web.geometry
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.typedarrays.Float32Array
 import js.typedarrays.Float64Array
 
@@ -226,7 +227,7 @@ open external class DOMMatrixReadOnly(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/toJSON)
      */
-    fun toJSON(): Any
+    fun toJSON(): JsAny
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/transformPoint)

@@ -2,6 +2,8 @@
 
 package web.cssom
 
+import js.core.JsAny
+
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMap)
  */
@@ -14,7 +16,7 @@ protected /* private */ constructor() :
      */
     fun append(
         property: String,
-        vararg values: Any, /* CSSStyleValue | string */
+        vararg values: JsAny, /* CSSStyleValue | string */
     )
 
     /**
@@ -32,6 +34,6 @@ protected /* private */ constructor() :
      */
     fun set(
         property: String,
-        vararg values: Any, /* CSSStyleValue | string */
+        vararg values: JsAny, /* CSSStyleValue | string */
     )
 }

@@ -2,6 +2,7 @@
 
 package web.history
 
+import js.core.JsAny
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
 import seskar.js.JsValue
@@ -27,7 +28,7 @@ open external class PopStateEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PopStateEvent/state)
      */
-    val state: Any?
+    val state: JsAny?
 
     @JsAlias(THIS)
     override fun asInit(): PopStateEventInit

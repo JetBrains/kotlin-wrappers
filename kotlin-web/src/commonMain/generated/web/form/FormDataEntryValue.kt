@@ -2,4 +2,6 @@
 
 package web.form
 
-typealias FormDataEntryValue = Any /* File | string */
+import js.core.JsAny
+
+typealias FormDataEntryValue = JsAny /* File | string */

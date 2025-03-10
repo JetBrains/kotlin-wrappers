@@ -2,4 +2,6 @@
 
 package web.cssom
 
-typealias CSSPerspectiveValue = Any /* CSSNumericValue | CSSKeywordish */
+import js.core.JsAny
+
+typealias CSSPerspectiveValue = JsAny /* CSSNumericValue | CSSKeywordish */

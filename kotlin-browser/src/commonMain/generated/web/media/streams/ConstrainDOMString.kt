@@ -2,4 +2,6 @@
 
 package web.media.streams
 
-typealias ConstrainDOMString = Any /* string | string[] | ConstrainDOMStringParameters */
+import js.core.JsAny
+
+typealias ConstrainDOMString = JsAny /* string | string[] | ConstrainDOMStringParameters */

@@ -3,6 +3,7 @@
 package web.serviceworker
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.transferable.Transferable
 import web.serialization.StructuredSerializeOptions
 
@@ -37,12 +38,12 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Client/postMessage)
      */
     fun postMessage(
-        message: Any?,
+        message: JsAny?,
         transfer: ReadonlyArray<Transferable>,
     )
 
     fun postMessage(
-        message: Any?,
+        message: JsAny?,
         options: StructuredSerializeOptions = definedExternally,
     )
 }

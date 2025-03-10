@@ -2,6 +2,7 @@
 
 package web.navigation
 
+import js.core.JsAny
 import js.core.JsLong
 import web.events.*
 
@@ -44,7 +45,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationHistoryEntry/getState)
      */
-    fun getState(): Any
+    fun getState(): JsAny
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationHistoryEntry/dispose_event)

@@ -4,6 +4,7 @@ package web.window
 
 import js.array.ArrayLike
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.globals.GlobalScope
 import js.transferable.Transferable
 import web.animations.AnimationEvent
@@ -128,7 +129,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/opener)
      */
-    var opener: Any?
+    var opener: JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/outerHeight)
@@ -286,13 +287,13 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/postMessage)
      */
     fun postMessage(
-        message: Any?,
+        message: JsAny?,
         targetOrigin: String,
         transfer: ReadonlyArray<Transferable> = definedExternally,
     )
 
     fun postMessage(
-        message: Any?,
+        message: JsAny?,
         options: WindowPostMessageOptions = definedExternally,
     )
 
@@ -667,13 +668,13 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/message_event)
      */
     @JsEvent("message")
-    val messageEvent: EventInstance<MessageEvent<Any?>, Window /* this */, Window /* this */>
+    val messageEvent: EventInstance<MessageEvent<JsAny?>, Window /* this */, Window /* this */>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/messageerror_event)
      */
     @JsEvent("messageerror")
-    val messageErrorEvent: EventInstance<MessageEvent<Any?>, Window /* this */, Window /* this */>
+    val messageErrorEvent: EventInstance<MessageEvent<JsAny?>, Window /* this */, Window /* this */>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/mousedown_event)

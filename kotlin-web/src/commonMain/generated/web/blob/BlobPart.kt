@@ -2,4 +2,6 @@
 
 package web.blob
 
-typealias BlobPart = Any /* BufferSource | Blob | string */
+import js.core.JsAny
+
+typealias BlobPart = JsAny /* BufferSource | Blob | string */

@@ -2,4 +2,6 @@
 
 package web.cssom
 
-typealias CSSNumberish = Any /* number | CSSNumericValue */
+import js.core.JsAny
+
+typealias CSSNumberish = JsAny /* number | CSSNumericValue */

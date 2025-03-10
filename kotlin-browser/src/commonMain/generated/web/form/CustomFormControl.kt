@@ -2,6 +2,7 @@
 
 package web.form
 
+import js.core.JsAny
 import web.html.HTMLFormElement
 
 external interface CustomFormControl :
@@ -27,7 +28,7 @@ external interface CustomFormControl :
 
     interface WithFormStateRestoreCallback {
         fun formStateRestoreCallback(
-            state: Any?, /* File | string | FormData */
+            state: JsAny?, /* File | string | FormData */
             mode: FormStateRestoreMode,
         )
     }

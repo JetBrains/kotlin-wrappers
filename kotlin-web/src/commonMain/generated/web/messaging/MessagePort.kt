@@ -3,6 +3,7 @@
 package web.messaging
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.transferable.Transferable
 import web.events.Event
 import web.events.EventInstance
@@ -36,12 +37,12 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/postMessage)
      */
     fun postMessage(
-        message: Any?,
+        message: JsAny?,
         transfer: ReadonlyArray<Transferable>,
     )
 
     fun postMessage(
-        message: Any?,
+        message: JsAny?,
         options: StructuredSerializeOptions = definedExternally,
     )
 
@@ -62,11 +63,11 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/message_event)
      */
     @JsEvent("message")
-    val messageEvent: EventInstance<MessageEvent<Any?>, MessagePort /* this */, MessagePort /* this */>
+    val messageEvent: EventInstance<MessageEvent<JsAny?>, MessagePort /* this */, MessagePort /* this */>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/messageerror_event)
      */
     @JsEvent("messageerror")
-    val messageErrorEvent: EventInstance<MessageEvent<Any?>, MessagePort /* this */, MessagePort /* this */>
+    val messageErrorEvent: EventInstance<MessageEvent<JsAny?>, MessagePort /* this */, MessagePort /* this */>
 }

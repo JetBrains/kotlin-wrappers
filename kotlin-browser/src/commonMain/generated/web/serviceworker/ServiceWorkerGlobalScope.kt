@@ -2,6 +2,7 @@
 
 package web.serviceworker
 
+import js.core.JsAny
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
@@ -120,7 +121,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/messageerror_event)
      */
     @JsEvent("messageerror")
-    val messageErrorEvent: EventInstance<MessageEvent<Any?>, ServiceWorkerGlobalScope /* this */, ServiceWorkerGlobalScope /* this */>
+    val messageErrorEvent: EventInstance<MessageEvent<JsAny?>, ServiceWorkerGlobalScope /* this */, ServiceWorkerGlobalScope /* this */>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/notificationclick_event)

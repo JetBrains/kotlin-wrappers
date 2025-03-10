@@ -2,6 +2,8 @@
 
 package web.idb
 
+import js.core.JsAny
+
 /**
  * This IndexedDB API interface represents a cursor for traversing or iterating over multiple records in a database. It is the same as the IDBCursor, except that it includes the value property.
  *
@@ -15,5 +17,5 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBCursorWithValue/value)
      */
-    val value: Any?
+    val value: JsAny?
 }

@@ -2,4 +2,6 @@
 
 package web.media.streams
 
-typealias ConstrainBoolean = Any /* boolean | ConstrainBooleanParameters */
+import js.core.JsAny
+
+typealias ConstrainBoolean = JsAny /* boolean | ConstrainBooleanParameters */

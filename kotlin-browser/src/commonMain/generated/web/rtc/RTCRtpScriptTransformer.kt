@@ -2,6 +2,7 @@
 
 package web.rtc
 
+import js.core.JsAny
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
@@ -18,7 +19,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpScriptTransformer/options)
      */
-    val options: Any?
+    val options: JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpScriptTransformer/readable)

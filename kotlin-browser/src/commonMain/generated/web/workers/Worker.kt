@@ -3,6 +3,7 @@
 package web.workers
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.transferable.Transferable
 import web.events.Event
 import web.events.EventInstance
@@ -35,12 +36,12 @@ open external class Worker(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/postMessage)
      */
     fun postMessage(
-        message: Any?,
+        message: JsAny?,
         transfer: ReadonlyArray<Transferable>,
     )
 
     fun postMessage(
-        message: Any?,
+        message: JsAny?,
         options: StructuredSerializeOptions = definedExternally,
     )
 
@@ -61,11 +62,11 @@ open external class Worker(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/message_event)
      */
     @JsEvent("message")
-    val messageEvent: EventInstance<MessageEvent<Any?>, Worker /* this */, Worker /* this */>
+    val messageEvent: EventInstance<MessageEvent<JsAny?>, Worker /* this */, Worker /* this */>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/messageerror_event)
      */
     @JsEvent("messageerror")
-    val messageErrorEvent: EventInstance<MessageEvent<Any?>, Worker /* this */, Worker /* this */>
+    val messageErrorEvent: EventInstance<MessageEvent<JsAny?>, Worker /* this */, Worker /* this */>
 }

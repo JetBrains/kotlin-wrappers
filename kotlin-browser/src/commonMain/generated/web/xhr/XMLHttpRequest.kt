@@ -3,6 +3,7 @@
 package web.xhr
 
 import js.buffer.BufferSource
+import js.core.JsAny
 import web.blob.Blob
 import web.dom.Document
 import web.events.*
@@ -35,7 +36,7 @@ open external class XMLHttpRequest :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/response)
      */
-    val response: Any?
+    val response: JsAny?
 
     /**
      * Returns response as text.

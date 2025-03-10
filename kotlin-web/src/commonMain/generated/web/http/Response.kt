@@ -2,6 +2,7 @@
 
 package web.http
 
+import js.core.JsAny
 import web.url.URL
 
 /**
@@ -63,7 +64,7 @@ open external class Response(
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/json_static)
          */
         fun json(
-            data: Any?,
+            data: JsAny?,
             init: ResponseInit = definedExternally,
         ): Response
 

@@ -2,6 +2,7 @@
 
 package web.sse
 
+import js.core.JsAny
 import web.events.*
 import web.messaging.MessageEvent
 import web.url.URL
@@ -72,7 +73,7 @@ open external class EventSource(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/message_event)
      */
     @JsEvent("message")
-    val messageEvent: EventInstance<MessageEvent<Any?>, EventSource /* this */, EventSource /* this */>
+    val messageEvent: EventInstance<MessageEvent<JsAny?>, EventSource /* this */, EventSource /* this */>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/open_event)

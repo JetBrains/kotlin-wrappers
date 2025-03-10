@@ -2,6 +2,7 @@
 
 package web.geolocation
 
+import js.core.JsAny
 import web.time.EpochTimeStamp
 
 /**
@@ -24,5 +25,5 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationPosition/toJSON)
      */
-    fun toJSON(): Any
+    fun toJSON(): JsAny
 }

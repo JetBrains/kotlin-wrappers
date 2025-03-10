@@ -7,6 +7,7 @@
 package web.assembly
 
 import js.core.BigInt
+import js.core.JsAny
 import js.core.Void
 import seskar.js.JsValue
 
@@ -16,7 +17,7 @@ sealed external interface ValueType<T> {
         val anyfunc: ValueType<Function<*>>
 
         @JsValue("externref")
-        val externref: ValueType<Any?>
+        val externref: ValueType<JsAny?>
 
         @JsValue("f32")
         val f32: ValueType<Number>

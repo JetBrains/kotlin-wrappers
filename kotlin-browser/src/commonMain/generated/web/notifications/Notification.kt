@@ -2,6 +2,7 @@
 
 package web.notifications
 
+import js.core.JsAny
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.events.*
@@ -31,7 +32,7 @@ open external class Notification(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/data)
      */
-    val data: Any?
+    val data: JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/dir)

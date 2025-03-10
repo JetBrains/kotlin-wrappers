@@ -2,6 +2,8 @@
 
 package web.media.devices
 
+import js.core.JsAny
+
 /**
  * The MediaDevicesInfo interface contains information that describes a single media input or output device.
  * Available only in secure contexts.
@@ -33,5 +35,5 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDeviceInfo/toJSON)
      */
-    fun toJSON(): Any
+    fun toJSON(): JsAny
 }

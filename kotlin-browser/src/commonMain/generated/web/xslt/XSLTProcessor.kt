@@ -2,6 +2,7 @@
 
 package web.xslt
 
+import js.core.JsAny
 import web.dom.Document
 import web.dom.DocumentFragment
 import web.dom.Node
@@ -23,7 +24,7 @@ open external class XSLTProcessor {
     fun getParameter(
         namespaceURI: String?,
         localName: String,
-    ): Any
+    ): JsAny
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XSLTProcessor/importStylesheet)
@@ -49,7 +50,7 @@ open external class XSLTProcessor {
     fun setParameter(
         namespaceURI: String?,
         localName: String,
-        value: Any?,
+        value: JsAny?,
     )
 
     /**

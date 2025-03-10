@@ -5,6 +5,7 @@ package web.sockets
 import js.array.ReadonlyArray
 import js.buffer.ArrayBufferLike
 import js.buffer.ArrayBufferView
+import js.core.JsAny
 import js.core.JsLong
 import web.blob.Blob
 import web.events.*
@@ -137,7 +138,7 @@ open external class WebSocket(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/message_event)
      */
     @JsEvent("message")
-    val messageEvent: EventInstance<MessageEvent<Any?>, WebSocket /* this */, WebSocket /* this */>
+    val messageEvent: EventInstance<MessageEvent<JsAny?>, WebSocket /* this */, WebSocket /* this */>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/open_event)

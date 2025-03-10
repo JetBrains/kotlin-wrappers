@@ -2,6 +2,7 @@
 
 package web.html
 
+import js.core.JsAny
 import web.canvas.CanvasImageSource
 import web.canvas.OffscreenCanvas
 import web.events.Event
@@ -49,7 +50,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/getContext)
      */
-    fun <T : RenderingContext, O : Any> getContext(
+    fun <T : RenderingContext, O : JsAny> getContext(
         contextId: RenderingContextId<T, O>,
         options: O? = definedExternally,
     ): T?

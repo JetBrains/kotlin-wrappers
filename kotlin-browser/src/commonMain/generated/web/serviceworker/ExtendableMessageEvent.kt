@@ -3,6 +3,7 @@
 package web.serviceworker
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
 import seskar.js.JsValue
@@ -21,7 +22,7 @@ open external class ExtendableMessageEvent(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/data)
      */
-    val data: Any?
+    val data: JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/lastEventId)
@@ -41,7 +42,7 @@ open external class ExtendableMessageEvent(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/source)
      */
-    val source: Any /* Client | ServiceWorker | MessagePort */?
+    val source: JsAny /* Client | ServiceWorker | MessagePort */?
 
     @JsAlias(THIS)
     override fun asInit(): ExtendableMessageEventInit
