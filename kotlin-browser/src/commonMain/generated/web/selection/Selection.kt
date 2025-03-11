@@ -4,6 +4,7 @@ package web.selection
 
 import web.dom.Node
 import web.ranges.Range
+import kotlin.js.definedExternally
 
 /**
  * A Selection object represents the range of text selected by the user or the current position of the caret. To obtain a Selection object for examination or modification, call Window.getSelection().

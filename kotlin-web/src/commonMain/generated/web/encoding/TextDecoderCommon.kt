@@ -6,6 +6,8 @@
 
 package web.encoding
 
+import kotlin.js.definedExternally
+
 sealed external interface TextDecoderCommon {
     /**
      * Returns encoding's name, lowercased.

@@ -8,6 +8,7 @@ import seskar.js.JsAlias.Companion.THIS
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
+import kotlin.js.definedExternally
 
 /**
  * This IndexedDB API interface indicates that the version of the database has changed, as the result of an IDBOpenDBRequest.onupgradeneeded event handler function.

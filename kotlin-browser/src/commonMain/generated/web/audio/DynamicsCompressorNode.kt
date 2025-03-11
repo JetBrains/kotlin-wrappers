@@ -2,6 +2,8 @@
 
 package web.audio
 
+import kotlin.js.definedExternally
+
 /**
  * Inherits properties from its parent, AudioNode.
  *

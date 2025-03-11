@@ -25,6 +25,8 @@ import web.url.URL
 import web.useractivation.UserActivation
 import web.vibration.VibratePattern
 import web.wakelock.WakeLock
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * The state and the identity of the user agent. It allows scripts to query it and to register themselves to carry on some activities.

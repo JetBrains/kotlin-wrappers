@@ -13,6 +13,7 @@ import web.messaging.MessageEvent
 import web.messaging.MessageEventTarget
 import web.serialization.StructuredSerializeOptions
 import web.url.URL
+import kotlin.js.definedExternally
 
 /**
  * This Web Workers API interface represents a background task that can be easily created and can send messages back to its creator. Creating a worker is as simple as calling the Worker() constructor and specifying a script to be run in the worker thread.

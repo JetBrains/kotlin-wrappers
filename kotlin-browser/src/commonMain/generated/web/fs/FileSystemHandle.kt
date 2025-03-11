@@ -5,6 +5,7 @@ package web.fs
 import js.core.JsBoolean
 import js.promise.Promise
 import seskar.js.JsAsync
+import kotlin.js.JsName
 
 /**
  * Available only in secure contexts.

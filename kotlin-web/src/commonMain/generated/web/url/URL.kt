@@ -3,6 +3,7 @@
 package web.url
 
 import web.blob.Blob
+import kotlin.js.definedExternally
 
 /**
  * The URL interface represents an object providing static methods used for creating object URLs.

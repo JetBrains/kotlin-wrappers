@@ -8,6 +8,7 @@ import seskar.js.JsAlias.Companion.THIS
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
+import kotlin.js.definedExternally
 
 /**
  * This Payment Request API interface enables a web page to update the details of a PaymentRequest in response to a user action.

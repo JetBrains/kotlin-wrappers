@@ -7,6 +7,7 @@
 package web.xpath
 
 import web.dom.Node
+import kotlin.js.definedExternally
 
 external interface XPathEvaluatorBase {
     /**

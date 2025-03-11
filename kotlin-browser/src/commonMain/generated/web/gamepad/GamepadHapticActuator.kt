@@ -4,6 +4,8 @@ package web.gamepad
 
 import js.promise.Promise
 import seskar.js.JsAsync
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * This Gamepad API interface represents hardware in the controller designed to provide haptic feedback to the user (if available), most commonly vibration hardware.

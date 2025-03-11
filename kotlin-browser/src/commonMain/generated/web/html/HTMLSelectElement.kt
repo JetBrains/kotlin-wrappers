@@ -10,7 +10,9 @@ import web.events.Event
 import web.events.EventInstance
 import web.events.JsEvent
 import web.form.FormControl
+import web.html.*
 import web.validation.ValidityState
+import kotlin.js.definedExternally
 
 /**
  * A <select> HTML Element. These elements also share all of the properties and methods of other HTML elements via the HTMLElement interface.

@@ -7,6 +7,7 @@ import seskar.js.JsAlias.Companion.THIS
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
+import kotlin.js.definedExternally
 
 /**
  * Events sent to indicate that DTMF tones have started or finished playing. This interface is used by the tonechange event.

@@ -6,6 +6,7 @@ import web.dom.NodeListOf
 import web.html.HTMLFormElement
 import web.html.HTMLLabelElement
 import web.validation.ValidationTarget
+import kotlin.js.definedExternally
 
 external interface FormControl :
     ValidationTarget {

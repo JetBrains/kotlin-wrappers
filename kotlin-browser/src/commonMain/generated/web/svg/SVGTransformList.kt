@@ -5,6 +5,7 @@ package web.svg
 import js.array.ArrayLike
 import js.iterable.JsIterable
 import web.geometry.DOMMatrixReadOnly
+import kotlin.js.definedExternally
 
 /**
  * The SVGTransformList defines a list of SVGTransform objects.

@@ -8,6 +8,8 @@ import seskar.js.JsAsync
 import web.streams.ReadableStream
 import web.streams.WritableStream
 import web.url.URL
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * Available only in secure contexts.

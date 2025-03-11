@@ -4,6 +4,7 @@ package web.permissions
 
 import js.promise.Promise
 import seskar.js.JsAsync
+import kotlin.js.JsName
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Permissions)

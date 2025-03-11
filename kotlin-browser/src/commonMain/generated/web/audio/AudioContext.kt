@@ -10,6 +10,8 @@ import web.events.EventInstance
 import web.events.JsEvent
 import web.html.HTMLMediaElement
 import web.media.streams.MediaStream
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * An audio-processing graph built from audio modules linked together, each represented by an AudioNode.

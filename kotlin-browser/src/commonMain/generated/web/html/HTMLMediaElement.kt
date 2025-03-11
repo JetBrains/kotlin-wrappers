@@ -9,6 +9,7 @@ import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.JsEvent
+import web.html.*
 import web.http.CrossOrigin
 import web.media.key.MediaKeys
 import web.media.source.TimeRanges
@@ -16,6 +17,8 @@ import web.remoteplayback.RemotePlayback
 import web.vtt.TextTrack
 import web.vtt.TextTrackKind
 import web.vtt.TextTrackList
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * Adds to HTMLElement the properties and methods needed to support basic media-related capabilities that are common to audio and video.

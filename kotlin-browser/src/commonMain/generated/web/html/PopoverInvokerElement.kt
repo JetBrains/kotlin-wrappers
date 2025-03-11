@@ -8,6 +8,7 @@ package web.html
 
 import web.dom.Element
 import web.popover.PopoverTargetAction
+import kotlin.js.definedExternally
 
 sealed external interface PopoverInvokerElement {
     /**

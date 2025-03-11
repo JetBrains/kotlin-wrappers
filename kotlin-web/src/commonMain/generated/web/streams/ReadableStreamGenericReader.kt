@@ -10,6 +10,8 @@ import js.core.Void
 import js.errors.JsError
 import js.promise.Promise
 import seskar.js.JsAsync
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 sealed external interface ReadableStreamGenericReader {
     /**

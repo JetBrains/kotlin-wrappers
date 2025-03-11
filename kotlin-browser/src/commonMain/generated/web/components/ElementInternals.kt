@@ -12,6 +12,7 @@ import web.html.HTMLLabelElement
 import web.validation.ValidationTarget
 import web.validation.ValidityState
 import web.validation.ValidityStateFlags
+import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals)

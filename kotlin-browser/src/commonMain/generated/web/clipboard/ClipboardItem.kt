@@ -9,6 +9,8 @@ import js.objects.ReadonlyRecord
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.blob.Blob
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * Available only in secure contexts.

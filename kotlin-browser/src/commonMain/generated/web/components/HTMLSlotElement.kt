@@ -9,6 +9,7 @@ import web.events.Event
 import web.events.EventInstance
 import web.events.JsEvent
 import web.html.HTMLElement
+import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSlotElement)

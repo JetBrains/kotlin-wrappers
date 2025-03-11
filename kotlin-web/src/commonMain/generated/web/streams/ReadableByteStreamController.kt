@@ -5,6 +5,7 @@ package web.streams
 import js.buffer.ArrayBufferView
 import js.core.Void
 import js.errors.JsError
+import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableByteStreamController)

@@ -7,6 +7,7 @@ import js.core.JsBoolean
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.credentials.Credential
+import kotlin.js.JsName
 
 /**
  * Available only in secure contexts.

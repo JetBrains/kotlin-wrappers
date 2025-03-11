@@ -3,6 +3,7 @@
 package web.audio
 
 import js.typedarrays.Float32Array
+import kotlin.js.definedExternally
 
 /**
  * A simple low-order filter, and is created using the AudioContext.createBiquadFilter() method. It is an AudioNode that can represent different kinds of filters, tone control devices, and graphic equalizers.

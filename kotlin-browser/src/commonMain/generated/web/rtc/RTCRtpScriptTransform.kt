@@ -5,6 +5,7 @@ package web.rtc
 import js.array.ReadonlyArray
 import js.core.JsAny
 import web.workers.Worker
+import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpScriptTransform)

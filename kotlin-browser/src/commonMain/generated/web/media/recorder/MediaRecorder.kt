@@ -3,8 +3,13 @@
 package web.media.recorder
 
 import web.errors.ErrorEvent
-import web.events.*
+import web.events.Event
+import web.events.EventHandler
+import web.events.EventInstance
+import web.events.EventTarget
+import web.events.JsEvent
 import web.media.streams.MediaStream
+import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder)

@@ -4,6 +4,7 @@ package web.fs
 
 import js.buffer.AllowSharedBufferSource
 import js.core.JsLong
+import kotlin.js.definedExternally
 
 /**
  * Available only in secure contexts.

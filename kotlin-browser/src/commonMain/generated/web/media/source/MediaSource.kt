@@ -2,7 +2,12 @@
 
 package web.media.source
 
-import web.events.*
+import web.events.Event
+import web.events.EventHandler
+import web.events.EventInstance
+import web.events.EventTarget
+import web.events.JsEvent
+import kotlin.js.definedExternally
 
 /**
  * This Media Source Extensions API interface represents a source of media data for an HTMLMediaElement object. A MediaSource object can be attached to a HTMLMediaElement to be played in the user agent.

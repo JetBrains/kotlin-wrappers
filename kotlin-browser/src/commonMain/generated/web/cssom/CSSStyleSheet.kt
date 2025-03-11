@@ -4,6 +4,8 @@ package web.cssom
 
 import js.promise.Promise
 import seskar.js.JsAsync
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * A single CSS style sheet. It inherits properties and methods from its parent, StyleSheet.

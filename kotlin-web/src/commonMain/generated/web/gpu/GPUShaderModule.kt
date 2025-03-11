@@ -4,6 +4,7 @@ package web.gpu
 
 import js.promise.Promise
 import seskar.js.JsAsync
+import kotlin.js.JsName
 
 /**
  * Available only in secure contexts.

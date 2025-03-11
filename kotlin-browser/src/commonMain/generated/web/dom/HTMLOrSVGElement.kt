@@ -6,6 +6,8 @@
 
 package web.dom
 
+import kotlin.js.definedExternally
+
 external interface HTMLOrSVGElement {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/autofocus)

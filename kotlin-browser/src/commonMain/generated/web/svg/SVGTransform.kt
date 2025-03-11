@@ -4,6 +4,7 @@ package web.svg
 
 import web.geometry.DOMMatrix
 import web.geometry.DOMMatrixReadOnly
+import kotlin.js.definedExternally
 
 /**
  * SVGTransform is the interface for one of the component transformations within an SVGTransformList; thus, an SVGTransform object corresponds to a single component (e.g., scale(…) or matrix(…)) within a transform attribute.

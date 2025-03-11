@@ -5,6 +5,7 @@ package web.html
 import web.events.Event
 import web.events.EventInstance
 import web.events.JsEvent
+import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement)

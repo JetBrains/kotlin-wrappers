@@ -8,6 +8,7 @@ import seskar.js.JsValue
 import web.events.EventType
 import web.keyboard.KeyCode
 import web.keyboard.ModifierKeyCode
+import kotlin.js.definedExternally
 
 /**
  * KeyboardEvent objects describe a user interaction with the keyboard; each event describes a single interaction between the user and a key (or combination of a key with modifier keys) on the keyboard.

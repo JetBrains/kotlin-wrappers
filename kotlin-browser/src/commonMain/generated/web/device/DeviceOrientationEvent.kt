@@ -7,6 +7,7 @@ import seskar.js.JsAlias.Companion.THIS
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
+import kotlin.js.definedExternally
 
 /**
  * The DeviceOrientationEvent provides web developers with information from the physical orientation of the device running the web page.

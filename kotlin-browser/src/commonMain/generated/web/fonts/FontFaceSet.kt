@@ -14,6 +14,8 @@ import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
 import web.events.JsEvent
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet)

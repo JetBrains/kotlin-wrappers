@@ -3,6 +3,7 @@
 package web.dom
 
 import web.cssom.CSSStyleDeclaration
+import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/getComputedStyle)

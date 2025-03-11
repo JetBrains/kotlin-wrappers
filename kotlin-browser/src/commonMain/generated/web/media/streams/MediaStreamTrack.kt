@@ -5,7 +5,13 @@ package web.media.streams
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
-import web.events.*
+import web.events.Event
+import web.events.EventHandler
+import web.events.EventInstance
+import web.events.EventTarget
+import web.events.JsEvent
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * A single media track within a stream; typically, these are audio or video tracks, but other track types may exist as well.

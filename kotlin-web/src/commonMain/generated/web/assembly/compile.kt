@@ -8,6 +8,7 @@ import js.buffer.BufferSource
 import js.import.JsQualifier
 import js.promise.Promise
 import seskar.js.JsAsync
+import kotlin.js.JsName
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/compile_static)

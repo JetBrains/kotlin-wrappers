@@ -8,6 +8,7 @@ import js.collections.ReadonlyMap
 import js.core.JsString
 import js.iterable.JsIterator
 import js.objects.ReadonlyRecord
+import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams)

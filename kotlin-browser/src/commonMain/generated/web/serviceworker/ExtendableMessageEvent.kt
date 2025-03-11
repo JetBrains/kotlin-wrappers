@@ -9,6 +9,7 @@ import seskar.js.JsAlias.Companion.THIS
 import seskar.js.JsValue
 import web.events.EventType
 import web.messaging.MessagePort
+import kotlin.js.definedExternally
 
 /**
  * This ServiceWorker API interface represents the event object of a message event fired on a service worker (when a channel message is received on the ServiceWorkerGlobalScope from another context) — extends the lifetime of such events.

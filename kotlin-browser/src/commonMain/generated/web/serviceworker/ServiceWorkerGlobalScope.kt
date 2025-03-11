@@ -14,6 +14,7 @@ import web.events.JsEvent
 import web.messaging.MessageEvent
 import web.push.PushEvent
 import web.workers.WorkerGlobalScope
+import kotlin.js.JsName
 
 /**
  * This ServiceWorker API interface represents the global execution context of a service worker.

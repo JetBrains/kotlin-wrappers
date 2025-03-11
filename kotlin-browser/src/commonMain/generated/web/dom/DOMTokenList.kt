@@ -7,6 +7,7 @@ import js.collections.ListLike
 import js.core.JsInt
 import js.core.JsString
 import js.iterable.JsIterator
+import kotlin.js.definedExternally
 
 /**
  * A set of space-separated tokens. Such a set is returned by Element.classList, HTMLLinkElement.relList, HTMLAnchorElement.relList, HTMLAreaElement.relList, HTMLIframeElement.sandbox, or HTMLOutputElement.htmlFor. It is indexed beginning with 0 as with JavaScript Array objects. DOMTokenList is always case-sensitive.

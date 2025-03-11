@@ -11,6 +11,7 @@ import web.gpu.GPUCopyExternalImageSource
 import web.http.CrossOrigin
 import web.http.FetchPriority
 import web.http.ReferrerPolicy
+import kotlin.js.JsName
 
 /**
  * Provides special properties and methods for manipulating <img> elements.

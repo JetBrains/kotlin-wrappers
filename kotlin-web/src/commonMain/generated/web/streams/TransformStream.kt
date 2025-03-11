@@ -3,6 +3,7 @@
 package web.streams
 
 import js.transferable.Transferable
+import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStream)

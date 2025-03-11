@@ -6,6 +6,7 @@ import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.events.*
+import kotlin.js.JsName
 
 /**
  * Available only in secure contexts.

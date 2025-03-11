@@ -5,6 +5,7 @@ package web.components
 import web.dom.*
 import web.events.Event
 import web.events.EventHandler
+import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ShadowRoot)

@@ -7,6 +7,7 @@ import seskar.js.JsAlias.Companion.THIS
 import seskar.js.JsValue
 import web.events.EventTarget
 import web.events.EventType
+import kotlin.js.definedExternally
 
 /**
  * Focus-related events like focus, blur, focusin, or focusout.

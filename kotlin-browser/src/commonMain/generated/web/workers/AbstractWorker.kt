@@ -9,6 +9,7 @@ package web.workers
 import web.errors.ErrorEvent
 import web.events.EventHandler
 import web.events.EventTarget
+import kotlin.js.definedExternally
 
 external interface AbstractWorker :
     EventTarget {

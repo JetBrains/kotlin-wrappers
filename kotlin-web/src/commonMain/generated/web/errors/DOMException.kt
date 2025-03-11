@@ -5,6 +5,7 @@ package web.errors
 import js.errors.JsError
 import js.errors.JsErrorName
 import seskar.js.JsValue
+import kotlin.js.definedExternally
 
 /**
  * An abnormal event (called an exception) which occurs as a result of calling a method or accessing a property of a web API.

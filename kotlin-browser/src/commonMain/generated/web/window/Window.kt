@@ -36,6 +36,8 @@ import web.uievents.*
 import web.url.URL
 import web.viewtransition.PageRevealEvent
 import web.viewtransition.PageSwapEvent
+import web.window.*
+import kotlin.js.definedExternally
 
 /**
  * A window containing a DOM document; the document property points to the DOM document loaded in that window.

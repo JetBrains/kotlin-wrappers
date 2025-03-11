@@ -1,5 +1,7 @@
 package web.url
 
+import kotlin.js.definedExternally
+
 /**
  * The URLPattern API provides a web platform primitive for matching URLs based
  * on a convenient pattern syntax.

@@ -10,6 +10,7 @@ import web.animations.AnimationEvent
 import web.animations.DocumentTimeline
 import web.clipboard.ClipboardEvent
 import web.cssom.TransitionEvent
+import web.dom.*
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -37,6 +38,8 @@ import web.viewtransition.ViewTransitionUpdateCallback
 import web.window.Window
 import web.window.WindowProxy
 import web.xpath.XPathEvaluatorBase
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * Any web page loaded in the browser and serves as an entry point into the web page's content, which is the DOM tree.

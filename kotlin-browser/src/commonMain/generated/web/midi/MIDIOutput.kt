@@ -5,6 +5,7 @@ package web.midi
 import js.array.ReadonlyArray
 import js.core.JsDouble
 import web.time.DOMHighResTimeStamp
+import kotlin.js.definedExternally
 
 /**
  * Available only in secure contexts.

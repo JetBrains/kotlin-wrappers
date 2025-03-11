@@ -6,6 +6,7 @@ import web.dom.Element
 import web.dom.NodeListOf
 import web.geometry.*
 import web.window.WindowEventHandlers
+import kotlin.js.definedExternally
 
 /**
  * Provides access to the properties of <svg> elements, as well as methods to manipulate them. This interface contains also various miscellaneous commonly-used utility methods, such as matrix operations and the ability to control the time of redraw on visual rendering devices.

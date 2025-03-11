@@ -7,6 +7,7 @@ import js.core.JsBoolean
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.time.EpochTimeStamp
+import kotlin.js.JsName
 
 /**
  * This Push API interface provides a subcription's URL endpoint and allows unsubscription from a push service.

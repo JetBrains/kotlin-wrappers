@@ -12,6 +12,8 @@ import web.canvas.CanvasImageSource
 import web.geometry.DOMRectReadOnly
 import web.gl.TexImageSource
 import web.gpu.GPUCopyExternalImageSource
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame)

@@ -7,6 +7,7 @@ import seskar.js.JsAlias.Companion.THIS
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
+import kotlin.js.definedExternally
 
 /**
  * Inherits from Event, and represents the event object of an event sent on a document or worker when its content security policy is violated.

@@ -6,6 +6,7 @@ import js.array.ReadonlyArray
 import web.blob.Blob
 import web.blob.BlobPart
 import web.time.EpochTimeStamp
+import kotlin.js.definedExternally
 
 /**
  * Provides information about files and allows JavaScript in a web page to access their content.

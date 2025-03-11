@@ -4,6 +4,7 @@ package web.idb
 
 import js.core.JsAny
 import js.core.Void
+import kotlin.js.definedExternally
 
 /**
  * This IndexedDB API interface represents a cursor for traversing or iterating over multiple records in a database.

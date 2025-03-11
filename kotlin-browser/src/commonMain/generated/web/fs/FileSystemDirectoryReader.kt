@@ -2,6 +2,8 @@
 
 package web.fs
 
+import kotlin.js.definedExternally
+
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryReader)
  */

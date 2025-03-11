@@ -2,6 +2,8 @@
 
 package web.cssom
 
+import kotlin.js.definedExternally
+
 /**
  * Any CSS at-rule that contains other rules nested within it.
  *

@@ -16,6 +16,7 @@ import web.history.PopStateEvent
 import web.messaging.MessageEvent
 import web.promise.PromiseRejectionEvent
 import web.storage.StorageEvent
+import kotlin.js.definedExternally
 
 external interface WindowEventHandlers :
     EventTarget {

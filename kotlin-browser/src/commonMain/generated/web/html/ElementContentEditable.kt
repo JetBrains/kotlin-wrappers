@@ -6,6 +6,8 @@
 
 package web.html
 
+import kotlin.js.definedExternally
+
 sealed external interface ElementContentEditable {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/contentEditable)

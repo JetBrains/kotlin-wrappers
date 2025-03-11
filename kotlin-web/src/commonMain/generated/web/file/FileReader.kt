@@ -6,6 +6,7 @@ import js.core.JsAny
 import web.blob.Blob
 import web.errors.DOMException
 import web.events.*
+import kotlin.js.definedExternally
 
 /**
  * Lets web applications asynchronously read the contents of files (or raw data buffers) stored on the user's computer, using File or Blob objects to specify the file or data to read.

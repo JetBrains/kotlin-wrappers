@@ -9,6 +9,8 @@ import js.promise.Promise
 import js.promise.PromiseLike
 import seskar.js.JsAsync
 import web.http.Response
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/instantiateStreaming_static)

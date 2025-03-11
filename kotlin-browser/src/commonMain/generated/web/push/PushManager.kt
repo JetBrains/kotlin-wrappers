@@ -7,6 +7,8 @@ import js.core.JsString
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.permissions.PermissionState
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * This Push API interface provides a way to receive notifications from third-party servers as well as request URLs for push notifications.

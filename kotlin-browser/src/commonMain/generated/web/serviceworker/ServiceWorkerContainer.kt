@@ -9,6 +9,8 @@ import seskar.js.JsAsync
 import web.events.*
 import web.messaging.MessageEvent
 import web.url.URL
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * The ServiceWorkerContainer interface of the ServiceWorker API provides an object representing the service worker as an overall unit in the network ecosystem, including facilities to register, unregister and update service workers, and access the state of service workers and their registrations.

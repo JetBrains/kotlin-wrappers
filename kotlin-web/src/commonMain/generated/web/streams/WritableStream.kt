@@ -7,6 +7,8 @@ import js.errors.JsError
 import js.promise.Promise
 import js.transferable.Transferable
 import seskar.js.JsAsync
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * This Streams API interface provides a standard abstraction for writing streaming data to a destination, known as a sink. This object comes with built-in backpressure and queuing.

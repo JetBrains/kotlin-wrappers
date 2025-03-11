@@ -6,6 +6,7 @@ import js.array.ReadonlyArray
 import js.core.JsDouble
 import js.typedarrays.Float32Array
 import js.typedarrays.Float64Array
+import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix)

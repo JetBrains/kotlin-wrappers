@@ -9,6 +9,7 @@ import js.promise.Promise
 import seskar.js.JsAsync
 import web.events.*
 import web.time.EpochTimeStamp
+import kotlin.js.JsName
 
 /**
  * This EncryptedMediaExtensions API interface represents a context for message exchange with a content decryption module (CDM).

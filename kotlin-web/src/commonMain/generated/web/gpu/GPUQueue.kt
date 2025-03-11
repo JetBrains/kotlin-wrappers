@@ -7,6 +7,8 @@ import js.buffer.AllowSharedBufferSource
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * Available only in secure contexts.

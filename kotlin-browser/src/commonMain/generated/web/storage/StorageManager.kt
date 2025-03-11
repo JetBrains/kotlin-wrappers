@@ -6,6 +6,7 @@ import js.core.JsBoolean
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.fs.FileSystemDirectoryHandle
+import kotlin.js.JsName
 
 /**
  * Available only in secure contexts.

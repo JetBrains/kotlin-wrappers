@@ -11,6 +11,7 @@ import js.core.JsString
 import web.streams.GenericTransformStream
 import web.streams.ReadableStream
 import web.streams.WritableStream
+import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextDecoderStream)

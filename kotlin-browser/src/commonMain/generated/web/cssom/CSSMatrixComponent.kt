@@ -4,6 +4,7 @@ package web.cssom
 
 import web.geometry.DOMMatrix
 import web.geometry.DOMMatrixReadOnly
+import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSMatrixComponent)

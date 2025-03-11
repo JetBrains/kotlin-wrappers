@@ -4,6 +4,7 @@ package web.file
 
 import js.buffer.ArrayBuffer
 import web.blob.Blob
+import kotlin.js.definedExternally
 
 /**
  * Allows to read File or Blob objects in a synchronous way.

@@ -3,6 +3,7 @@
 package web.audio
 
 import web.events.EventTarget
+import kotlin.js.definedExternally
 
 /**
  * A generic interface for representing an audio processing module. Examples include:

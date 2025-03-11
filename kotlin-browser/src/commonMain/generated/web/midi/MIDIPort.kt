@@ -8,6 +8,7 @@ import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
 import web.events.JsEvent
+import kotlin.js.JsName
 
 /**
  * Available only in secure contexts.

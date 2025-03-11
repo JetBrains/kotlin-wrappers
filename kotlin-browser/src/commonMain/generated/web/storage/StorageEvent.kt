@@ -7,6 +7,7 @@ import seskar.js.JsAlias.Companion.THIS
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
+import kotlin.js.definedExternally
 
 /**
  * A StorageEvent is sent to a window when a storage area it has access to is changed within the context of another document.

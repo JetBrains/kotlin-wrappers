@@ -17,6 +17,7 @@ import web.events.ProgressEvent
 import web.form.FormDataEvent
 import web.form.SubmitEvent
 import web.uievents.*
+import kotlin.js.definedExternally
 
 external interface GlobalEventHandlers :
     EventTarget {

@@ -3,6 +3,7 @@
 package web.dom
 
 import web.xml.XMLDocument
+import kotlin.js.definedExternally
 
 /**
  * An object providing methods which are not dependent on any particular document. Such an object is returned by the Document.implementation property.

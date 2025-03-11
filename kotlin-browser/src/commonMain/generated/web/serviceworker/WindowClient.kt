@@ -6,6 +6,7 @@ import js.promise.Promise
 import seskar.js.JsAsync
 import web.dom.DocumentVisibilityState
 import web.url.URL
+import kotlin.js.JsName
 
 /**
  * This ServiceWorker API interface represents the scope of a service worker client that is a document in a browser context, controlled by an active worker. The service worker client independently selects and uses a service worker for its own loading and sub-resources.

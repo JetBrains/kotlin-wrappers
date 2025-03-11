@@ -6,6 +6,7 @@ import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
 import web.events.EventType
+import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PageRevealEvent)

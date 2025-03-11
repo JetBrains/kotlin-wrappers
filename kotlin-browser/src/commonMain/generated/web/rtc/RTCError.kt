@@ -3,6 +3,7 @@
 package web.rtc
 
 import web.errors.DOMException
+import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCError)

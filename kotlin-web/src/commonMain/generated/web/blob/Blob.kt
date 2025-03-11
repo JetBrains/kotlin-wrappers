@@ -11,6 +11,8 @@ import js.typedarrays.Uint8Array
 import seskar.js.JsAsync
 import web.images.ImageBitmapSource
 import web.streams.ReadableStream
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * A file-like object of immutable, raw data. Blobs represent data that isn't necessarily in a JavaScript-native format. The File interface is based on Blob, inheriting blob functionality and expanding it to support files on the user's system.

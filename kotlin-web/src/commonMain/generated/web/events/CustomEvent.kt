@@ -4,6 +4,7 @@ package web.events
 
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomEvent)

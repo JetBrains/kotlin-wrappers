@@ -8,6 +8,7 @@ package web.messaging
 
 import web.events.EventHandler
 import web.events.EventTarget
+import kotlin.js.definedExternally
 
 external interface MessageEventTarget :
     EventTarget {

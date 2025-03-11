@@ -4,6 +4,7 @@ package web.aria
 
 import js.array.ReadonlyArray
 import web.dom.Element
+import kotlin.js.definedExternally
 
 external interface ARIAMixin {
     var ariaActiveDescendantElement: Element?

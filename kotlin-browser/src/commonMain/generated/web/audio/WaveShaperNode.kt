@@ -3,6 +3,7 @@
 package web.audio
 
 import js.typedarrays.Float32Array
+import kotlin.js.definedExternally
 
 /**
  * A WaveShaperNode always has exactly one input and one output.

@@ -7,6 +7,7 @@
 package web.canvas
 
 import js.core.JsAny
+import kotlin.js.definedExternally
 
 sealed external interface CanvasPath {
     /**

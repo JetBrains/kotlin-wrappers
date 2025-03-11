@@ -4,6 +4,7 @@ package web.canvas
 
 import web.images.ImageData
 import web.images.ImageDataSettings
+import kotlin.js.definedExternally
 
 sealed external interface CanvasImageData {
     /**

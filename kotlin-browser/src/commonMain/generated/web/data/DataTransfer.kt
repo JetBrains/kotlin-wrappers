@@ -6,6 +6,7 @@ import js.array.ReadonlyArray
 import js.core.JsString
 import web.dom.Element
 import web.file.FileList
+import kotlin.js.definedExternally
 
 /**
  * Used to hold the data that is being dragged during a drag and drop operation. It may hold one or more data items, each of one or more data types. For more information about drag and drop, see HTML Drag and Drop API.

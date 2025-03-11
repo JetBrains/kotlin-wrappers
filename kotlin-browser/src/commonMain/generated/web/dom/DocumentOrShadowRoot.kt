@@ -10,6 +10,8 @@ import js.array.ReadonlyArray
 import web.animations.Animation
 import web.cssom.CSSStyleSheet
 import web.cssom.StyleSheetList
+import web.dom.*
+import kotlin.js.definedExternally
 
 external interface DocumentOrShadowRoot {
     /**

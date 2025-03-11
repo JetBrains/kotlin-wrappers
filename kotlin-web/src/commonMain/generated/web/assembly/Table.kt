@@ -6,6 +6,7 @@ package web.assembly
 
 import js.core.JsAny
 import js.import.JsQualifier
+import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Table)

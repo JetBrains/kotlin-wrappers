@@ -7,6 +7,7 @@ import seskar.js.JsAlias.Companion.THIS
 import web.events.Event
 import web.events.EventType
 import web.navigation.NavigationActivation
+import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PageSwapEvent)

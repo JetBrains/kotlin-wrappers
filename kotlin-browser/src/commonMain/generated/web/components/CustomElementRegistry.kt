@@ -7,6 +7,8 @@ import seskar.js.JsAsync
 import web.dom.Node
 import web.html.HTMLElement
 import web.html.HtmlTagName
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry)

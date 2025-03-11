@@ -15,8 +15,10 @@ import web.form.FormControl
 import web.form.FormEncType
 import web.form.FormMethod
 import web.fs.FileSystemEntry
+import web.html.*
 import web.validation.ValidityState
 import web.window.WindowName
+import kotlin.js.definedExternally
 
 /**
  * Provides special properties and methods for manipulating the options, layout, and presentation of <input> elements.

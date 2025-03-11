@@ -6,6 +6,8 @@ import js.core.JsAny
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.events.*
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * This Notifications API interface is used to configure and display desktop notifications to the user.

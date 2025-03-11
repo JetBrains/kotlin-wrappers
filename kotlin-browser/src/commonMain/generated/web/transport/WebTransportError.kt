@@ -3,6 +3,7 @@
 package web.transport
 
 import web.errors.DOMException
+import kotlin.js.definedExternally
 
 /**
  * Available only in secure contexts.

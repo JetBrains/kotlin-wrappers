@@ -7,6 +7,7 @@ import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
 import seskar.js.JsValue
 import web.time.DOMHighResTimeStamp
+import kotlin.js.definedExternally
 
 /**
  * An event which takes place in the DOM.

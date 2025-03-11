@@ -9,6 +9,8 @@ import seskar.js.JsAsync
 import web.events.EventTarget
 import web.streams.ReadableStream
 import web.streams.WritableStream
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpScriptTransformer)

@@ -5,6 +5,7 @@ package web.idb
 import js.array.ReadonlyArray
 import js.core.JsAny
 import js.core.JsInt
+import kotlin.js.definedExternally
 
 /**
  * IDBIndex interface of the IndexedDB API provides asynchronous access to an index in a database. An index is a kind of object store for looking up records in another object store, called the referenced object store. You use this interface to retrieve data.

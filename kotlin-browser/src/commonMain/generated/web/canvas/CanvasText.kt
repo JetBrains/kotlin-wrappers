@@ -2,6 +2,8 @@
 
 package web.canvas
 
+import kotlin.js.definedExternally
+
 sealed external interface CanvasText {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fillText)

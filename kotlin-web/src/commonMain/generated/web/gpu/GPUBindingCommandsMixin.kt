@@ -8,6 +8,7 @@ package web.gpu
 
 import js.array.ReadonlyArray
 import js.typedarrays.Uint32Array
+import kotlin.js.definedExternally
 
 sealed external interface GPUBindingCommandsMixin {
     /**

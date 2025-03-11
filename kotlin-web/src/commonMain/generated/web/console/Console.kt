@@ -5,6 +5,7 @@ package web.console
 import js.array.ReadonlyArray
 import js.core.JsAny
 import js.core.JsString
+import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/console)

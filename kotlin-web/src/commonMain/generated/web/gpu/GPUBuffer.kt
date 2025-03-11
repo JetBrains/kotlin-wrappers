@@ -6,6 +6,7 @@ import js.buffer.ArrayBuffer
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
+import kotlin.js.definedExternally
 
 /**
  * Available only in secure contexts.

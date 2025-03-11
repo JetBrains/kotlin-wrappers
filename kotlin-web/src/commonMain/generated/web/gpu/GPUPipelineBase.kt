@@ -6,6 +6,8 @@
 
 package web.gpu
 
+import kotlin.js.definedExternally
+
 sealed external interface GPUPipelineBase {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUComputePipeline/getBindGroupLayout)

@@ -8,6 +8,7 @@ import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 import web.window.Window
+import kotlin.js.definedExternally
 
 /**
  * Simple user interface events.

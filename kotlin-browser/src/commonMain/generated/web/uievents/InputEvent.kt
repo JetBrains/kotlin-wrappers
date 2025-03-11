@@ -9,6 +9,7 @@ import seskar.js.JsValue
 import web.data.DataTransfer
 import web.events.EventType
 import web.ranges.StaticRange
+import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputEvent)

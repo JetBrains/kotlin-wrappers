@@ -5,6 +5,7 @@ package web.performance
 import js.core.JsAny
 import web.events.*
 import web.time.DOMHighResTimeStamp
+import kotlin.js.definedExternally
 
 /**
  * Provides access to performance-related information for the current page. It's part of the High Resolution Time API, but is enhanced by the Performance Timeline API, the Navigation Timing API, the User Timing API, and the Resource Timing API.

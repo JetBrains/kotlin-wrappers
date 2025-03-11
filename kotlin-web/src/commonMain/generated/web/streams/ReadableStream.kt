@@ -8,6 +8,8 @@ import js.errors.JsError
 import js.promise.Promise
 import js.transferable.Transferable
 import seskar.js.JsAsync
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * This Streams API interface represents a readable stream of byte data. The Fetch API offers a concrete instance of a ReadableStream through the body property of a Response object.

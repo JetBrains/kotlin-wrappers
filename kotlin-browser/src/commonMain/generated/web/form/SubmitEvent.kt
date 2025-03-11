@@ -8,6 +8,7 @@ import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 import web.html.HTMLElement
+import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubmitEvent)

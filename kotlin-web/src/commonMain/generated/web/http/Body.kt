@@ -14,6 +14,8 @@ import seskar.js.JsAsync
 import web.blob.Blob
 import web.form.FormData
 import web.streams.ReadableStream
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 sealed external interface Body {
     /**

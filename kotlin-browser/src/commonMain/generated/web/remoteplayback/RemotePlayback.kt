@@ -6,6 +6,8 @@ import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.events.*
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback)

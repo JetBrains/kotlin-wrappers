@@ -6,6 +6,8 @@
 
 package web.svg
 
+import kotlin.js.definedExternally
+
 sealed external interface SVGURIReference {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/href)

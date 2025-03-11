@@ -6,6 +6,7 @@ import js.buffer.ArrayBufferView
 import js.promise.Promise
 import js.typedarrays.Uint8Array
 import seskar.js.JsAsync
+import kotlin.js.JsName
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader)

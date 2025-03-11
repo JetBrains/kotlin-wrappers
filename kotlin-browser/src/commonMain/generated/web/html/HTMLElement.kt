@@ -14,10 +14,12 @@ import web.dom.Node
 import web.events.Event
 import web.events.EventInstance
 import web.events.JsEvent
+import web.html.*
 import web.popover.Popover
 import web.popover.ToggleEvent
 import web.uievents.DragEvent
 import web.uievents.PointerEvent
+import kotlin.js.definedExternally
 
 /**
  * Any HTML element. Some elements directly implement this interface, while others implement it via an interface that inherits it.

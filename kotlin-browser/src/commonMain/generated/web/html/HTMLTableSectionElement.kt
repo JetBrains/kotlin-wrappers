@@ -2,6 +2,8 @@
 
 package web.html
 
+import kotlin.js.definedExternally
+
 /**
  * Provides special properties and methods (beyond the HTMLElement interface it also has available to it by inheritance) for manipulating the layout and presentation of sections, that is headers, footers and bodies, in an HTML table.
  *

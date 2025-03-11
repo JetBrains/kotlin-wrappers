@@ -4,6 +4,7 @@ package web.components
 
 import js.array.ReadonlyArray
 import js.core.JsString
+import kotlin.js.definedExternally
 
 external interface CustomElementCompanion {
     val formAssociated: Boolean?

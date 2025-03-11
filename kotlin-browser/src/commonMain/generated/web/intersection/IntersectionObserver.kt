@@ -6,6 +6,7 @@ import js.array.ReadonlyArray
 import js.core.JsDouble
 import web.dom.Element
 import web.dom.ParentNode
+import kotlin.js.definedExternally
 
 /**
  * provides a way to asynchronously observe changes in the intersection of a target element with an ancestor element or with a top-level document's viewport.

@@ -7,6 +7,7 @@ import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
 import seskar.js.JsValue
 import web.events.EventType
+import kotlin.js.definedExternally
 
 /**
  * Available only in secure contexts.

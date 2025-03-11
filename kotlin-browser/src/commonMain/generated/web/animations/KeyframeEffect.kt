@@ -4,6 +4,7 @@ package web.animations
 
 import js.array.ReadonlyArray
 import web.dom.Element
+import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyframeEffect)

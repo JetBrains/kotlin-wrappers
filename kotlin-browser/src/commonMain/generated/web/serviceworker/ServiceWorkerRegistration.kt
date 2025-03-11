@@ -11,6 +11,8 @@ import web.events.*
 import web.notifications.Notification
 import web.notifications.NotificationOptions
 import web.push.PushManager
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * This ServiceWorker API interface represents the service worker registration. You register a service worker to control one or more pages that share the same origin.

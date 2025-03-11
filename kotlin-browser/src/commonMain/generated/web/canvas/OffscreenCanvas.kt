@@ -14,6 +14,8 @@ import web.gpu.GPUCopyExternalImageSource
 import web.images.ImageBitmap
 import web.rendering.OffscreenRenderingContext
 import web.rendering.RenderingContextId
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas)

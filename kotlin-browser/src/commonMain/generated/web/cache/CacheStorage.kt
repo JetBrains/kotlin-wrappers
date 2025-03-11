@@ -10,6 +10,8 @@ import seskar.js.JsAsync
 import web.http.Request
 import web.http.Response
 import web.url.URL
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * The storage for Cache objects.

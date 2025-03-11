@@ -12,6 +12,7 @@ import web.blob.Blob
 import web.events.*
 import web.messaging.MessageEvent
 import web.url.URL
+import kotlin.js.definedExternally
 
 /**
  * Provides the API for creating and managing a WebSocket connection to a server, as well as for sending and receiving data on the connection.

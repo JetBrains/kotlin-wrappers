@@ -4,6 +4,7 @@ package web.svg
 
 import web.geometry.DOMPoint
 import web.geometry.DOMPointReadOnly
+import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement)

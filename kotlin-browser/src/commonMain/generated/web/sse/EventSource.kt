@@ -6,6 +6,7 @@ import js.core.JsAny
 import web.events.*
 import web.messaging.MessageEvent
 import web.url.URL
+import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource)

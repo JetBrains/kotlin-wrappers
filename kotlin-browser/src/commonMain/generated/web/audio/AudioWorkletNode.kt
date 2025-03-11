@@ -7,6 +7,7 @@ import web.events.EventHandler
 import web.events.EventInstance
 import web.events.JsEvent
 import web.messaging.MessagePort
+import kotlin.js.definedExternally
 
 /**
  * Available only in secure contexts.

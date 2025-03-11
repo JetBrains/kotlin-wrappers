@@ -6,6 +6,8 @@
 
 package web.fonts
 
+import kotlin.js.definedExternally
+
 external interface FontFaceSource {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/fonts)

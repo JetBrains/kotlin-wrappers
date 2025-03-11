@@ -6,6 +6,8 @@
 
 package web.svg
 
+import kotlin.js.definedExternally
+
 sealed external interface SVGTests {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimationElement/requiredExtensions)

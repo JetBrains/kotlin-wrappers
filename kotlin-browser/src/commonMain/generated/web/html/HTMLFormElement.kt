@@ -15,7 +15,9 @@ import web.form.FormDataEvent
 import web.form.FormEncType
 import web.form.FormMethod
 import web.form.SubmitEvent
+import web.html.*
 import web.window.WindowTarget
+import kotlin.js.definedExternally
 
 /**
  * A <form> element in the DOM; it allows access to and in some cases modification of aspects of the form, as well as access to its component elements.

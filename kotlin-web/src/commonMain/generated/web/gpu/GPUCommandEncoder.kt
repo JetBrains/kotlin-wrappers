@@ -2,6 +2,8 @@
 
 package web.gpu
 
+import kotlin.js.definedExternally
+
 /**
  * Available only in secure contexts.
  *

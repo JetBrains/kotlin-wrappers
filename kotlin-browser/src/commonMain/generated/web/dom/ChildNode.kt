@@ -8,6 +8,7 @@
 package web.dom
 
 import js.core.JsAny
+import kotlin.js.definedExternally
 
 sealed external interface ChildNode :
     Node {

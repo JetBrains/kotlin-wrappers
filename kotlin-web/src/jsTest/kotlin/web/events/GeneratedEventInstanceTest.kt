@@ -3,6 +3,7 @@ package web.events
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertIs
+import kotlin.js.JsName
 
 @JsName("EventTarget")
 private external class MyTarget {

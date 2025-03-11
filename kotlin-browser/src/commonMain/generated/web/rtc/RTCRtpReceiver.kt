@@ -7,6 +7,7 @@ import js.promise.Promise
 import seskar.js.JsAsync
 import web.media.streams.MediaStreamTrack
 import web.time.DOMHighResTimeStamp
+import kotlin.js.JsName
 
 /**
  * This WebRTC API interface manages the reception and decoding of data for a MediaStreamTrack on an RTCPeerConnection.

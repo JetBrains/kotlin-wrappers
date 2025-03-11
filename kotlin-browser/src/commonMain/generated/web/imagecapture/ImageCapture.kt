@@ -6,6 +6,8 @@ import js.promise.Promise
 import seskar.js.JsAsync
 import web.blob.Blob
 import web.media.streams.MediaStreamTrack
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture)

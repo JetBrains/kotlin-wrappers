@@ -7,6 +7,8 @@ import seskar.js.JsAsync
 import web.events.EventInstance
 import web.events.EventTarget
 import web.events.JsEvent
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * Available only in secure contexts.

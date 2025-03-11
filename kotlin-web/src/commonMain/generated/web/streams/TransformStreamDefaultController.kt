@@ -3,6 +3,7 @@
 package web.streams
 
 import js.errors.JsError
+import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStreamDefaultController)

@@ -4,6 +4,7 @@ package web.canvas
 
 import web.geometry.DOMMatrix
 import web.geometry.DOMMatrixReadOnly
+import kotlin.js.definedExternally
 
 sealed external interface CanvasTransform {
     /**

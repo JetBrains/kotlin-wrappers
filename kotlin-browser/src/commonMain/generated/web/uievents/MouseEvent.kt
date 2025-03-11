@@ -8,6 +8,7 @@ import seskar.js.JsValue
 import web.events.EventTarget
 import web.events.EventType
 import web.keyboard.ModifierKeyCode
+import kotlin.js.definedExternally
 
 /**
  * Events that occur due to the user interacting with a pointing device (such as a mouse). Common events using this interface include click, dblclick, mouseup, mousedown.

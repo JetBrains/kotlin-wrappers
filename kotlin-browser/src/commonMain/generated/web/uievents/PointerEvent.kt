@@ -7,6 +7,7 @@ import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
 import seskar.js.JsValue
 import web.events.EventType
+import kotlin.js.definedExternally
 
 /**
  * The state of a DOM event produced by a pointer such as the geometry of the contact point, the device type that generated the event, the amount of pressure that was applied on the contact surface, etc.
