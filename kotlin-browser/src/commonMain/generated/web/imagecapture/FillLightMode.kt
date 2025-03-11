@@ -1,7 +1,7 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.imagecapture
