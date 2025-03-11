@@ -14,9 +14,13 @@ import kotlinx.coroutines.channels.ReceiveChannel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlin.coroutines.resume
+import kotlin.js.JsName
 
-class EventInstance<out E : Event, out C : EventTarget, out T : EventTarget>(
+@JsName("Array")
+external class EventInstance<out E : Event, out C : EventTarget, out T : EventTarget>(
+    @JsName("0")
     internal val target: C,
+    @JsName("1")
     internal val type: EventType<E>,
 )
 
