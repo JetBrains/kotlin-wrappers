@@ -1,14 +1,11 @@
 package js.errors
 
-import js.core.JsAny
-import js.core.JsAnyMarker
 import js.reflect.upcast
 
-sealed external interface JsErrorLike :
-    JsAnyMarker
+sealed external interface JsErrorLike
 
 inline fun JsErrorLike?.toJsErrorOrNull(): JsError? =
-    upcast<JsAny?>() as? JsError
+    upcast<Any?>() as? JsError
 
 fun JsErrorLike?.toJsError(): JsError =
     toJsErrorOrNull() ?: JsError("Non-Kotlin exception $this")
