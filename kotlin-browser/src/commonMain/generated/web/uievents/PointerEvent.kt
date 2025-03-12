@@ -94,6 +94,12 @@ open external class PointerEvent(
     override fun asInit(): PointerEventInit
 
     companion object {
+        @JsValue("auxclick")
+        val AUX_CLICK: EventType<PointerEvent>
+
+        @JsValue("contextmenu")
+        val CONTEXT_MENU: EventType<PointerEvent>
+
         @JsValue("gotpointercapture")
         val GOT_POINTER_CAPTURE: EventType<PointerEvent>
 

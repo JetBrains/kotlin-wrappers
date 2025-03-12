@@ -133,14 +133,8 @@ open external class MouseEvent(
     override fun asInit(): MouseEventInit
 
     companion object {
-        @JsValue("auxclick")
-        val AUX_CLICK: EventType<MouseEvent>
-
         @JsValue("click")
         val CLICK: EventType<MouseEvent>
-
-        @JsValue("contextmenu")
-        val CONTEXT_MENU: EventType<MouseEvent>
 
         @JsValue("dblclick")
         val DBL_CLICK: EventType<MouseEvent>

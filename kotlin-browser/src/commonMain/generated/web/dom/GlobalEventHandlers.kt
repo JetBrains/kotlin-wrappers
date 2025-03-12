@@ -62,7 +62,7 @@ external interface GlobalEventHandlers :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/auxclick_event)
      */
-    var onauxclick: EventHandler<MouseEvent, GlobalEventHandlers, Node>?
+    var onauxclick: EventHandler<PointerEvent, GlobalEventHandlers, Node>?
         get() = definedExternally
         set(value) = definedExternally
 
@@ -154,7 +154,7 @@ external interface GlobalEventHandlers :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/contextmenu_event)
      */
-    var oncontextmenu: EventHandler<MouseEvent, GlobalEventHandlers, Node>?
+    var oncontextmenu: EventHandler<PointerEvent, GlobalEventHandlers, Node>?
         get() = definedExternally
         set(value) = definedExternally
 
