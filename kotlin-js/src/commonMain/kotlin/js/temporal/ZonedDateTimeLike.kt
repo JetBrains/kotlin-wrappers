@@ -1,11 +1,9 @@
 package js.temporal
 
-import js.core.JsAnyMarker
 import js.objects.JsPlainObject
 
 @JsPlainObject
-external interface ZonedDateTimeLike :
-    JsAnyMarker {
+external interface ZonedDateTimeLike {
 
     val era: String?
     val eraYear: Int?

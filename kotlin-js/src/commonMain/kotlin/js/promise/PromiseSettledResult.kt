@@ -1,11 +1,9 @@
 package js.promise
 
 import js.core.JsAny
-import js.core.JsAnyMarker
 import js.errors.toThrowable
 
-sealed external interface PromiseSettledResult<T : JsAny?> :
-    JsAnyMarker
+sealed external interface PromiseSettledResult<T : JsAny?>
 
 fun <T : JsAny?> PromiseSettledResult<T>.toResult(): Result<T> =
     when (this) {

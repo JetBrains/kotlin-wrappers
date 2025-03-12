@@ -2,10 +2,7 @@
 
 package js.intl
 
-import js.core.JsAnyMarker
-
-sealed external interface DateTimeFormatPart :
-    JsAnyMarker {
+sealed external interface DateTimeFormatPart {
     var type: String /* DateTimeFormatPartTypes */
     var value: String
 }

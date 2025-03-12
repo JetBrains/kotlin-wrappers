@@ -2,10 +2,7 @@
 
 package js.intl
 
-import js.core.JsAnyMarker
-
-sealed external interface NumberFormatPart :
-    JsAnyMarker {
+sealed external interface NumberFormatPart {
     var type: NumberFormatPartType
     var value: String
 }

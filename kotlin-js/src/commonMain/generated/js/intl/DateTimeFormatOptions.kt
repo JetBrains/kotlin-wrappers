@@ -2,12 +2,10 @@
 
 package js.intl
 
-import js.core.JsAnyMarker
 import js.objects.JsPlainObject
 
 @JsPlainObject
-external interface DateTimeFormatOptions :
-    JsAnyMarker {
+external interface DateTimeFormatOptions {
     val localeMatcher: LocaleMatcher?
     val weekday: WeekdayFormat?
     val era: EraFormat?

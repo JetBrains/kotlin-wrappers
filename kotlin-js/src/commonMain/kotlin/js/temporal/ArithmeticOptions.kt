@@ -1,14 +1,12 @@
 package js.temporal
 
-import js.core.JsAnyMarker
 import js.objects.JsPlainObject
 
 /**
  * Options for arithmetic operations like `add()` and `subtract()`
  */
 @JsPlainObject
-external interface ArithmeticOptions :
-    JsAnyMarker {
+external interface ArithmeticOptions {
 
     /**
      * Controls handling of out-of-range arithmetic results.

@@ -6,11 +6,9 @@
 
 package js.atomic
 
-import js.core.JsAnyMarker
 import seskar.js.JsValue
 
-sealed external interface WaitStatus :
-    JsAnyMarker {
+sealed external interface WaitStatus {
 
     companion object {
 

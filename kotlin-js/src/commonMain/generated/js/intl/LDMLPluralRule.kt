@@ -6,11 +6,9 @@
 
 package js.intl
 
-import js.core.JsAnyMarker
 import seskar.js.JsValue
 
-sealed external interface LDMLPluralRule :
-    JsAnyMarker {
+sealed external interface LDMLPluralRule {
 
     companion object {
         @JsValue("zero")

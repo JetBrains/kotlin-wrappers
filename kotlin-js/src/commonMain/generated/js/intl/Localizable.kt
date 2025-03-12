@@ -8,11 +8,9 @@ package js.intl
 
 import js.array.ReadonlyArray
 import js.core.JsAny
-import js.core.JsAnyMarker
 import kotlin.js.definedExternally
 
-external interface Localizable<in O : JsAny> :
-    JsAnyMarker {
+external interface Localizable<in O : JsAny> {
     /**
      * Returns a value as a string value appropriate to the host environment's current locale.
      *

@@ -1,11 +1,9 @@
 package js.temporal
 
-import js.core.JsAnyMarker
 import js.objects.JsPlainObject
 
 @JsPlainObject
-external interface PlainDateLike :
-    JsAnyMarker {
+external interface PlainDateLike {
 
     val era: String?
     val eraYear: Int?

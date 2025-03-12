@@ -1,6 +1,5 @@
 package js.temporal
 
-import js.core.JsAnyMarker
 import js.objects.JsPlainObject
 
 /**
@@ -8,8 +7,7 @@ import js.objects.JsPlainObject
  * `from()`.
  */
 @JsPlainObject
-external interface AssignmentOptions :
-    JsAnyMarker {
+external interface AssignmentOptions {
     /**
      * How to deal with out-of-range values
      *

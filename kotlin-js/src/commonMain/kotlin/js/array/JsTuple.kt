@@ -1,13 +1,11 @@
 package js.array
 
 import js.core.JsAny
-import js.core.JsAnyMarker
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
 import kotlin.js.JsName
 
-sealed external interface JsTuple :
-    JsAnyMarker {
+sealed external interface JsTuple {
     @JsName("length")
     val size: Int
 

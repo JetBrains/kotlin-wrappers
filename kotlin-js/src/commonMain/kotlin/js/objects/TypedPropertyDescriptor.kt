@@ -1,11 +1,9 @@
 package js.objects
 
 import js.core.JsAny
-import js.core.JsAnyMarker
 
 @JsPlainObject
-external interface TypedPropertyDescriptor<T : JsAny?> :
-    JsAnyMarker {
+external interface TypedPropertyDescriptor<T : JsAny?> {
     val configurable: Boolean?
     val enumerable: Boolean?
     val value: T?

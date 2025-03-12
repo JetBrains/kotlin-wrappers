@@ -1,11 +1,9 @@
 package js.temporal
 
-import js.core.JsAnyMarker
 import js.objects.JsPlainObject
 
 @JsPlainObject
-external interface DurationLike :
-    JsAnyMarker {
+external interface DurationLike {
 
     val years: Int?
     val months: Int?

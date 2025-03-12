@@ -1,6 +1,5 @@
 package js.errors
 
-import js.core.JsAnyMarker
 import js.reflect.unsafeCast
 
 inline var JsError.name: JsErrorName
@@ -10,8 +9,7 @@ inline var JsError.name: JsErrorName
     }
 
 @PublishedApi
-internal external interface HasErrorName :
-    JsAnyMarker {
+internal external interface HasErrorName {
 
     var name: JsErrorName
 }

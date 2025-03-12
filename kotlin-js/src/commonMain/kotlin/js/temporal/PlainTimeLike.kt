@@ -1,11 +1,9 @@
 package js.temporal
 
-import js.core.JsAnyMarker
 import js.objects.JsPlainObject
 
 @JsPlainObject
-external interface PlainTimeLike :
-    JsAnyMarker {
+external interface PlainTimeLike {
 
     var hour: Int?
     var minute: Int?
