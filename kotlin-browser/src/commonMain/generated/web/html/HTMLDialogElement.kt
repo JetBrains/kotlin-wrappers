@@ -33,6 +33,11 @@ protected constructor() :
     fun close(returnValue: String = definedExternally)
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/requestClose)
+     */
+    fun requestClose(returnValue: String = definedExternally)
+
+    /**
      * Displays the dialog element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/show)

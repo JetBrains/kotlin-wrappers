@@ -36,7 +36,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/keyPath)
      */
-    val keyPath: JsAny /* string | string[] */
+    val keyPath: JsAny /* string | string[] */?
 
     /**
      * Returns the name of the store.

@@ -365,7 +365,7 @@ external interface GlobalEventHandlers :
      * Fires immediately after the browser loads the object.
      * @param ev The event.
      *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/load_event)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/load_event)
      */
     var onload: EventHandler<Event, GlobalEventHandlers, GlobalEventHandlers>?
         get() = definedExternally
