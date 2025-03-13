@@ -2,4 +2,6 @@
 
 package web.gpu
 
-typealias GPUShaderStageFlags = Int /* Bitmask */
+import js.core.JsInt
+
+typealias GPUShaderStageFlags = JsInt /* Bitmask */

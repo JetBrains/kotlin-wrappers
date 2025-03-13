@@ -2,4 +2,6 @@
 
 package web.authn
 
-typealias COSEAlgorithmIdentifier = Int
+import js.core.JsInt
+
+typealias COSEAlgorithmIdentifier = JsInt

@@ -2,4 +2,6 @@
 
 package web.crypto
 
-typealias NamedCurve = String
+import js.core.JsString
+
+typealias NamedCurve = JsString

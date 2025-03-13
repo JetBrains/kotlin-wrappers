@@ -2,4 +2,6 @@
 
 package web.gpu
 
-typealias GPUIntegerCoordinateOut = Int
+import js.core.JsInt
+
+typealias GPUIntegerCoordinateOut = JsInt

@@ -2,4 +2,6 @@
 
 package web.gpu
 
-typealias GPUMapModeFlags = Int /* Bitmask */
+import js.core.JsInt
+
+typealias GPUMapModeFlags = JsInt /* Bitmask */

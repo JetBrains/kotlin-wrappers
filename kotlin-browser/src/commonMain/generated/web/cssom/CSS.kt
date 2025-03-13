@@ -13,108 +13,108 @@ external object CSS {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun Hz(value: Number): CSSUnitValue
+    fun Hz(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun Q(value: Number): CSSUnitValue
-    fun cap(value: Number): CSSUnitValue
+    fun Q(value: Double): CSSUnitValue
+    fun cap(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun ch(value: Number): CSSUnitValue
+    fun ch(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun cm(value: Number): CSSUnitValue
+    fun cm(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun cqb(value: Number): CSSUnitValue
+    fun cqb(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun cqh(value: Number): CSSUnitValue
+    fun cqh(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun cqi(value: Number): CSSUnitValue
+    fun cqi(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun cqmax(value: Number): CSSUnitValue
+    fun cqmax(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun cqmin(value: Number): CSSUnitValue
+    fun cqmin(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun cqw(value: Number): CSSUnitValue
+    fun cqw(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun deg(value: Number): CSSUnitValue
+    fun deg(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun dpcm(value: Number): CSSUnitValue
+    fun dpcm(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun dpi(value: Number): CSSUnitValue
+    fun dpi(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun dppx(value: Number): CSSUnitValue
+    fun dppx(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun dvb(value: Number): CSSUnitValue
+    fun dvb(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun dvh(value: Number): CSSUnitValue
+    fun dvh(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun dvi(value: Number): CSSUnitValue
+    fun dvi(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun dvmax(value: Number): CSSUnitValue
+    fun dvmax(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun dvmin(value: Number): CSSUnitValue
+    fun dvmin(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun dvw(value: Number): CSSUnitValue
+    fun dvw(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun em(value: Number): CSSUnitValue
+    fun em(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/escape_static)
@@ -124,96 +124,96 @@ external object CSS {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun ex(value: Number): CSSUnitValue
+    fun ex(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun fr(value: Number): CSSUnitValue
+    fun fr(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun grad(value: Number): CSSUnitValue
-    fun ic(value: Number): CSSUnitValue
+    fun grad(value: Double): CSSUnitValue
+    fun ic(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun kHz(value: Number): CSSUnitValue
-    fun lh(value: Number): CSSUnitValue
+    fun kHz(value: Double): CSSUnitValue
+    fun lh(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun lvb(value: Number): CSSUnitValue
+    fun lvb(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun lvh(value: Number): CSSUnitValue
+    fun lvh(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun lvi(value: Number): CSSUnitValue
+    fun lvi(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun lvmax(value: Number): CSSUnitValue
+    fun lvmax(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun lvmin(value: Number): CSSUnitValue
+    fun lvmin(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun lvw(value: Number): CSSUnitValue
+    fun lvw(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun mm(value: Number): CSSUnitValue
+    fun mm(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun ms(value: Number): CSSUnitValue
+    fun ms(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun number(value: Number): CSSUnitValue
+    fun number(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun pc(value: Number): CSSUnitValue
+    fun pc(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun percent(value: Number): CSSUnitValue
+    fun percent(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun pt(value: Number): CSSUnitValue
+    fun pt(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun px(value: Number): CSSUnitValue
+    fun px(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun rad(value: Number): CSSUnitValue
-    fun rcap(value: Number): CSSUnitValue
-    fun rch(value: Number): CSSUnitValue
+    fun rad(value: Double): CSSUnitValue
+    fun rcap(value: Double): CSSUnitValue
+    fun rch(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/registerProperty_static)
@@ -223,15 +223,15 @@ external object CSS {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun rem(value: Number): CSSUnitValue
-    fun rex(value: Number): CSSUnitValue
-    fun ric(value: Number): CSSUnitValue
-    fun rlh(value: Number): CSSUnitValue
+    fun rem(value: Double): CSSUnitValue
+    fun rex(value: Double): CSSUnitValue
+    fun ric(value: Double): CSSUnitValue
+    fun rlh(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun s(value: Number): CSSUnitValue
+    fun s(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/supports_static)
@@ -242,65 +242,65 @@ external object CSS {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun svb(value: Number): CSSUnitValue
+    fun svb(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun svh(value: Number): CSSUnitValue
+    fun svh(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun svi(value: Number): CSSUnitValue
+    fun svi(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun svmax(value: Number): CSSUnitValue
+    fun svmax(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun svmin(value: Number): CSSUnitValue
+    fun svmin(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun svw(value: Number): CSSUnitValue
+    fun svw(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun turn(value: Number): CSSUnitValue
+    fun turn(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun vb(value: Number): CSSUnitValue
+    fun vb(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun vh(value: Number): CSSUnitValue
+    fun vh(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun vi(value: Number): CSSUnitValue
+    fun vi(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun vmax(value: Number): CSSUnitValue
+    fun vmax(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun vmin(value: Number): CSSUnitValue
+    fun vmin(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
-    fun vw(value: Number): CSSUnitValue
+    fun vw(value: Double): CSSUnitValue
 }

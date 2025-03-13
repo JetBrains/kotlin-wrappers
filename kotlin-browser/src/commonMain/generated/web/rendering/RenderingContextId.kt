@@ -4,4 +4,4 @@ package web.rendering
 
 import js.core.JsAny
 
-sealed interface RenderingContextId<T : JsAny, O : JsAny>
+sealed external interface RenderingContextId<T : JsAny, O : JsAny>

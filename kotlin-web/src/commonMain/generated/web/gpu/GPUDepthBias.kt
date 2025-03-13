@@ -2,4 +2,6 @@
 
 package web.gpu
 
-typealias GPUDepthBias = Int
+import js.core.JsInt
+
+typealias GPUDepthBias = JsInt

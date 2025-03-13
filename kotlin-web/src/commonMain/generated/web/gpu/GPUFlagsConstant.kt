@@ -2,4 +2,6 @@
 
 package web.gpu
 
-typealias GPUFlagsConstant = Int
+import js.core.JsInt
+
+typealias GPUFlagsConstant = JsInt

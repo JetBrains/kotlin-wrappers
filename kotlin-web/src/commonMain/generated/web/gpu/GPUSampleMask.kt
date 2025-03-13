@@ -2,4 +2,6 @@
 
 package web.gpu
 
-typealias GPUSampleMask = Int
+import js.core.JsInt
+
+typealias GPUSampleMask = JsInt

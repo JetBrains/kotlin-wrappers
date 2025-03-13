@@ -2,4 +2,6 @@
 
 package web.gpu
 
-typealias GPUSize32 = Int
+import js.core.JsInt
+
+typealias GPUSize32 = JsInt

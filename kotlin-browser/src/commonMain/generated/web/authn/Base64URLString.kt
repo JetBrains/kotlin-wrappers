@@ -2,4 +2,6 @@
 
 package web.authn
 
-typealias Base64URLString = String
+import js.core.JsString
+
+typealias Base64URLString = JsString

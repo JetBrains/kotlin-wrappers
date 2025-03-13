@@ -2,4 +2,6 @@
 
 package web.gpu
 
-typealias GPUStencilValue = Int
+import js.core.JsInt
+
+typealias GPUStencilValue = JsInt

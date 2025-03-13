@@ -2,4 +2,6 @@
 
 package web.gpu
 
-typealias GPUSignedOffset32 = Int
+import js.core.JsInt
+
+typealias GPUSignedOffset32 = JsInt

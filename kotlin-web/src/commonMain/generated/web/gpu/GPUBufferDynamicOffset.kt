@@ -2,4 +2,6 @@
 
 package web.gpu
 
-typealias GPUBufferDynamicOffset = Int
+import js.core.JsInt
+
+typealias GPUBufferDynamicOffset = JsInt

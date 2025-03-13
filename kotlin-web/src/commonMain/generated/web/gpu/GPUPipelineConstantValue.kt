@@ -2,4 +2,6 @@
 
 package web.gpu
 
-typealias GPUPipelineConstantValue = Int
+import js.core.JsInt
+
+typealias GPUPipelineConstantValue = JsInt

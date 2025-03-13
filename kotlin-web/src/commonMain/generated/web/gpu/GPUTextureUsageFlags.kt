@@ -2,4 +2,6 @@
 
 package web.gpu
 
-typealias GPUTextureUsageFlags = Int /* Bitmask */
+import js.core.JsInt
+
+typealias GPUTextureUsageFlags = JsInt /* Bitmask */

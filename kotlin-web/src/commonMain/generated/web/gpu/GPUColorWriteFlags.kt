@@ -2,4 +2,6 @@
 
 package web.gpu
 
-typealias GPUColorWriteFlags = Int /* Bitmask */
+import js.core.JsInt
+
+typealias GPUColorWriteFlags = JsInt /* Bitmask */
