@@ -5,7 +5,7 @@ import react.RefCallback
 import react.dom.html.HTMLAttributes
 import web.html.HTMLDivElement
 
-external interface OptionProps<Option, Group : GroupBase<Option>> : PropsWithChildren {
+external interface OptionProps<Option : Any, Group : GroupBase<Option>> : PropsWithChildren {
     /** Reference to the internal element, consumed by the MenuPlacer component */
     var innerRef: RefCallback<HTMLDivElement>
     var innerProps: HTMLAttributes<HTMLDivElement>?
@@ -18,4 +18,5 @@ external interface OptionProps<Option, Group : GroupBase<Option>> : PropsWithChi
     var isDisabled: Boolean
     var isFocused: Boolean
     var isSelected: Boolean
+    var selectProps: SelectProps<Option, Group>
 }

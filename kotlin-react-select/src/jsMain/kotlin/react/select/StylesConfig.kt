@@ -22,25 +22,25 @@ fun <P : Props> Styles(
 }
 
 external interface StylesConfig<Option : Any, Group : GroupBase<Option>> {
-    var clearIndicator: StylesConfigFunction<ClearIndicatorProps>?
-    var container: StylesConfigFunction<ContainerProps>?
-    var control: StylesConfigFunction<ControlProps>
-    var dropdownIndicator: StylesConfigFunction<DropdownIndicatorProps>?
+    var clearIndicator: StylesConfigFunction<ClearIndicatorProps<Option, Group>>?
+    var container: StylesConfigFunction<ContainerProps<Option, Group>>?
+    var control: StylesConfigFunction<ControlProps<Option, Group>>
+    var dropdownIndicator: StylesConfigFunction<DropdownIndicatorProps<Option, Group>>?
     var group: StylesConfigFunction<GroupProps<Option, Group>>?
     var groupHeading: StylesConfigFunction<GroupHeadingProps<Option, Group>>?
-    var indicatorsContainer: StylesConfigFunction<IndicatorsContainerProps>?
-    var indicatorSeparator: StylesConfigFunction<IndicatorSeparatorProps>?
-    var input: StylesConfigFunction<InputSpecificProps>?
-    var loadingIndicator: StylesConfigFunction<LoadingIndicatorProps>?
+    var indicatorsContainer: StylesConfigFunction<IndicatorsContainerProps<Option, Group>>?
+    var indicatorSeparator: StylesConfigFunction<IndicatorSeparatorProps<Option, Group>>?
+    var input: StylesConfigFunction<InputSpecificProps<Option, Group>>?
+    var loadingIndicator: StylesConfigFunction<LoadingIndicatorProps<Option, Group>>?
     var menu: StylesConfigFunction<MenuProps<Option, Group>>?
     var menuList: StylesConfigFunction<MenuListProps<Option, Group>>?
-    var menuPortal: StylesConfigFunction<MenuPortalProps>? /* PortalStyleArgs */
+    var menuPortal: StylesConfigFunction<MenuPortalProps<Option, Group>>? /* PortalStyleArgs */
     var multiValue: StylesConfigFunction<MultiValueProps<Option, Group>>?
     var multiValueLabel: StylesConfigFunction<MultiValueProps<Option, Group>>?
     var multiValueRemove: StylesConfigFunction<MultiValueProps<Option, Group>>?
-    var noOptionsMessage: StylesConfigFunction<NoOptionsMessageProps>?
+    var noOptionsMessage: StylesConfigFunction<NoOptionsMessageProps<Option, Group>>?
     var option: StylesConfigFunction<OptionProps<Option, Group>>?
-    var placeholder: StylesConfigFunction<PlaceholderProps>?
+    var placeholder: StylesConfigFunction<PlaceholderProps<Option, Group>>?
     var singleValue: StylesConfigFunction<SingleValueProps<Option, Group>>?
     var valueContainer: StylesConfigFunction<ValueContainerProps<Option, Group>>?
 }
