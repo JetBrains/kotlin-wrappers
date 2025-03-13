@@ -1,7 +1,7 @@
 @file:Suppress(
-    "ACTUAL_WITHOUT_EXPECT",
+    "WRONG_JS_INTEROP_TYPE",
 )
 
 package kotlin.js
 
-actual external val undefined: JsAny?
+actual external val undefined: Nothing?
