@@ -5,7 +5,7 @@ import react.Ref
 import react.dom.html.HTMLAttributes
 import web.html.HTMLDivElement
 
-external interface ControlProps : PropsWithChildren {
+external interface ControlProps<Option : Any, Group : GroupBase<Option>> : PropsWithChildren {
     var innerRef: Ref<HTMLDivElement>
 
     /** The mouse down event and the innerRef to pass down to the controller element. */
@@ -19,4 +19,6 @@ external interface ControlProps : PropsWithChildren {
 
     /** Whether the select is expanded. */
     var menuIsOpen: Boolean
+
+    var selectProps: SelectProps<Option, Group>
 }
