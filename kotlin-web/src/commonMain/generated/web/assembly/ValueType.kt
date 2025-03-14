@@ -9,12 +9,13 @@ package web.assembly
 import js.core.BigInt
 import js.core.JsAny
 import js.core.Void
+import js.function.JsFunction
 import seskar.js.JsValue
 
 sealed external interface ValueType<T> {
     companion object {
         @JsValue("anyfunc")
-        val anyfunc: ValueType<Function<*>>
+        val anyfunc: ValueType<JsFunction<*, *>>
 
         @JsValue("externref")
         val externref: ValueType<JsAny?>

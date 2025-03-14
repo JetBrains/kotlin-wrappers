@@ -6,6 +6,7 @@
 
 package web.dom
 
+import js.function.JsFunction
 import web.animations.AnimationEvent
 import web.clipboard.ClipboardEvent
 import web.csp.SecurityPolicyViolationEvent
@@ -299,7 +300,7 @@ external interface GlobalEventHandlers :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/error_event)
      */
-    var onerror: Function<Unit>? /* OnErrorEventHandler */
+    var onerror: JsFunction<*, *>? /* OnErrorEventHandler */
         get() = definedExternally
         set(value) = definedExternally
 
