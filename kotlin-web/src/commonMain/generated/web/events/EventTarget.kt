@@ -7,6 +7,7 @@
 package web.events
 
 import kotlin.js.definedExternally
+import kotlin.js.undefined
 
 open external class EventTarget {
     internal fun <E : Event> addEventListener(

@@ -15,6 +15,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlin.coroutines.resume
 import kotlin.js.JsName
+import kotlin.js.undefined
 
 @JsName("Array")
 external class EventInstance<out E : Event, out C : EventTarget, out T : EventTarget>(
