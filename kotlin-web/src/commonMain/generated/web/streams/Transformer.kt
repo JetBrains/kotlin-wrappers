@@ -2,14 +2,11 @@
 
 package web.streams
 
-import js.core.Void
 import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface Transformer<I, O> {
     val flush: TransformerFlushCallback<O>?
-    val readableType: Void
     val start: TransformerStartCallback<O>?
     val transform: TransformerTransformCallback<I, O>?
-    val writableType: Void
 }
