@@ -256,7 +256,7 @@ open external class Document :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/visibilitychange_event)
      */
     var onvisibilitychange: EventHandler<Event, Document, Document>?
-    override val ownerDocument: Void
+    override val ownerDocument: Document? /* Void - WA for WasmJS */
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pictureInPictureEnabled)
