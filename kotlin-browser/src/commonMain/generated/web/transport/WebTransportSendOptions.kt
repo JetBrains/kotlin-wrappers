@@ -2,8 +2,10 @@
 
 package web.transport
 
+import js.core.JsLong
 import js.objects.JsPlainObject
 
 @JsPlainObject
-external interface WebTransportSendStreamOptions :
-    WebTransportSendOptions
+external interface WebTransportSendOptions {
+    val sendOrder: JsLong?
+}
