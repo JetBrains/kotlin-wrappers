@@ -10,7 +10,7 @@ import js.reflect.unsafeCast
 sealed external interface IDBValidKey
 
 inline fun IDBValidKey(
-    value: Number,
+    value: Int,
 ): IDBValidKey =
     unsafeCast(value)
 
