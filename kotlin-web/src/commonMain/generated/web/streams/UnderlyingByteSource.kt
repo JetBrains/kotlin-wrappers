@@ -9,7 +9,7 @@ import js.promise.PromiseLike
 sealed external interface UnderlyingByteSource {
     var autoAllocateChunkSize: JsLong?
     var cancel: UnderlyingSourceCancelCallback?
-    var pull: (controller: ReadableByteStreamController) -> PromiseLike<Void>?
-    var start: (controller: ReadableByteStreamController) -> Unit?
+    var pull: ((controller: ReadableByteStreamController) -> PromiseLike<Void>?)?
+    var start: ((controller: ReadableByteStreamController) -> Unit)?
     var type: String /* "bytes" */
 }
