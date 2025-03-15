@@ -2,13 +2,14 @@
 
 package web.streams
 
+import js.core.JsAny
 import js.errors.JsError
 import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStreamDefaultController)
  */
-external class TransformStreamDefaultController<O>
+external class TransformStreamDefaultController<O : JsAny?>
 private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStreamDefaultController/desiredSize)

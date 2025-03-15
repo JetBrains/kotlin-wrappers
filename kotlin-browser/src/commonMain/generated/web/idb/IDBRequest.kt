@@ -11,7 +11,7 @@ import web.events.*
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBRequest)
  */
-open external class IDBRequest<T>
+open external class IDBRequest<T : JsAny?>
 private constructor() :
     EventTarget {
     /**

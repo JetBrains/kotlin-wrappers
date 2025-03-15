@@ -2,6 +2,7 @@
 
 package web.streams
 
+import js.core.JsAny
 import js.core.Void
 import js.errors.JsError
 import js.promise.Promise
@@ -14,7 +15,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter)
  */
-open external class WritableStreamDefaultWriter<W>(
+open external class WritableStreamDefaultWriter<W : JsAny?>(
     stream: WritableStream<W>,
 ) {
     /**

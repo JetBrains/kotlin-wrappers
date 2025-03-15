@@ -2,6 +2,7 @@
 
 package web.streams
 
+import js.core.JsAny
 import js.core.Void
 import js.errors.JsError
 import js.promise.Promise
@@ -15,7 +16,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStream)
  */
-open external class WritableStream<W>(
+open external class WritableStream<W : JsAny?>(
     underlyingSink: UnderlyingSink<W> = definedExternally,
     strategy: QueuingStrategy<W> = definedExternally,
 ) : Transferable {

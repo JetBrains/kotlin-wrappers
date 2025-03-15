@@ -3,6 +3,7 @@
 package web.streams
 
 import js.array.JsTuple2
+import js.core.JsAny
 import js.core.Void
 import js.errors.JsError
 import js.promise.Promise
@@ -16,7 +17,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream)
  */
-open external class ReadableStream<R>(
+open external class ReadableStream<R : JsAny?>(
     underlyingSource: UnderlyingDefaultSource<R>,
     strategy: QueuingStrategy<R> = definedExternally,
 ) : Transferable {

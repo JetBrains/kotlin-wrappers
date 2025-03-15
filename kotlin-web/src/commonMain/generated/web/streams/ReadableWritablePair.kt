@@ -2,10 +2,11 @@
 
 package web.streams
 
+import js.core.JsAny
 import js.objects.JsPlainObject
 
 @JsPlainObject
-external interface ReadableWritablePair<R, W> {
+external interface ReadableWritablePair<R : JsAny?, W : JsAny?> {
     val readable: ReadableStream<R>
 
     /**

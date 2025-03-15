@@ -2,13 +2,14 @@
 
 package web.streams
 
+import js.core.JsAny
 import js.transferable.Transferable
 import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStream)
  */
-open external class TransformStream<I, O>(
+open external class TransformStream<I : JsAny?, O : JsAny?>(
     transformer: Transformer<I, O> = definedExternally,
     writableStrategy: QueuingStrategy<I> = definedExternally,
     readableStrategy: QueuingStrategy<O> = definedExternally,

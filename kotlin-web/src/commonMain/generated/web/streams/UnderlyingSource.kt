@@ -2,11 +2,12 @@
 
 package web.streams
 
+import js.core.JsAny
 import js.core.JsLong
 import js.objects.JsPlainObject
 
 @JsPlainObject
-external interface UnderlyingSource<R> {
+external interface UnderlyingSource<R : JsAny?> {
     val autoAllocateChunkSize: JsLong?
     val cancel: UnderlyingSourceCancelCallback?
     val pull: UnderlyingSourcePullCallback<R>?

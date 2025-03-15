@@ -2,13 +2,14 @@
 
 package web.streams
 
+import js.core.JsAny
 import js.errors.JsError
 import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultController)
  */
-external class ReadableStreamDefaultController<R>
+external class ReadableStreamDefaultController<R : JsAny?>
 private constructor() :
     ReadableStreamController<R> {
     /**

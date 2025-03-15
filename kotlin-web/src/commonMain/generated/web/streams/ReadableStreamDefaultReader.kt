@@ -2,6 +2,7 @@
 
 package web.streams
 
+import js.core.JsAny
 import js.promise.Promise
 import seskar.js.JsAsync
 import kotlin.js.JsName
@@ -9,7 +10,7 @@ import kotlin.js.JsName
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader)
  */
-open external class ReadableStreamDefaultReader<R>(
+open external class ReadableStreamDefaultReader<R : JsAny?>(
     stream: ReadableStream<R>,
 ) : ReadableStreamGenericReader {
     /**
