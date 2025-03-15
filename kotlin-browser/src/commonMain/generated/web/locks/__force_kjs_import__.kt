@@ -1,6 +1,0 @@
-// TODO: remove after WasmJS target support
-
-package web.locks
-
-internal sealed external interface JsName
-internal external object definedExternally
