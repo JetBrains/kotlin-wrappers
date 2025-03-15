@@ -3,8 +3,8 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(projects.kotlinJs)
-    jsMainApi(projects.kotlinBrowser)
+    commonMainApi(projects.kotlinJs)
+    commonMainApi(projects.kotlinBrowser)
 
     jsMainApi(npm(libs.npm.cesium.engine))
 }
