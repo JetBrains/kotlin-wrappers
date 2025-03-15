@@ -113,5 +113,5 @@ private constructor() :
     override fun entries(): JsIterator<JsTuple2<JsInt, JsString>>
     override fun keys(): JsIterator<JsInt>
     override fun values(): JsIterator<JsString>
-    override fun forEach(action: (item: String) -> Unit)
+    override fun forEach(action: (item: JsString) -> Unit)
 }

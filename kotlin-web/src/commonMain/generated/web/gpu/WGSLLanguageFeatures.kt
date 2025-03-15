@@ -14,5 +14,5 @@ sealed /* final */
 external class WGSLLanguageFeatures
 protected /* private */ constructor() :
     ReadonlySet<JsString> {
-    override fun forEach(action: (item: String) -> Unit)
+    override fun forEach(action: (item: JsString) -> Unit)
 }

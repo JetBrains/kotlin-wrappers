@@ -50,7 +50,7 @@ open external class URLSearchParams(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/get)
      */
-    override operator fun get(key: String): String?
+    override operator fun get(key: JsString): String?
 
     /**
      * Returns all the values association with a given search parameter.
@@ -64,7 +64,7 @@ open external class URLSearchParams(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/has)
      */
-    override fun has(key: String): Boolean
+    override fun has(key: JsString): Boolean
     fun has(
         key: String,
         value: String,
@@ -88,5 +88,5 @@ open external class URLSearchParams(
     override fun entries(): JsIterator<JsTuple2<JsString, JsString>>
     override fun keys(): JsIterator<JsString>
     override fun values(): JsIterator<JsString>
-    override fun forEach(action: (value: String, key: String) -> Unit)
+    override fun forEach(action: (value: JsString, key: JsString) -> Unit)
 }

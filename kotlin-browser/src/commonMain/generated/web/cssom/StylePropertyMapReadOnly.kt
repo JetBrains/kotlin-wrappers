@@ -34,5 +34,5 @@ protected /* private */ constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMapReadOnly/has)
      */
-    override fun has(key: String): Boolean
+    override fun has(key: JsString): Boolean
 }

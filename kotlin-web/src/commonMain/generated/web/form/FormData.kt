@@ -81,5 +81,5 @@ open external class FormData(
     override fun entries(): JsIterator<JsTuple2<JsString, FormDataEntryValue>>
     override fun keys(): JsIterator<JsString>
     override fun values(): JsIterator<FormDataEntryValue>
-    override fun forEach(action: (value: FormDataEntryValue, key: String) -> Unit)
+    override fun forEach(action: (value: FormDataEntryValue, key: JsString) -> Unit)
 }

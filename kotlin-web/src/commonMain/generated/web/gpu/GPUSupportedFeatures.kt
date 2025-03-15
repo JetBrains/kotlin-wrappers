@@ -14,5 +14,5 @@ sealed /* final */
 external class GPUSupportedFeatures
 protected /* private */ constructor() :
     ReadonlySet<JsString> {
-    override fun forEach(action: (item: String) -> Unit)
+    override fun forEach(action: (item: JsString) -> Unit)
 }

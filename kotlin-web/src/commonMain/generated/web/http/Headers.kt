@@ -60,5 +60,5 @@ open external class Headers(
     override fun entries(): JsIterator<JsTuple2<JsString, JsString>>
     override fun keys(): JsIterator<JsString>
     override fun values(): JsIterator<JsString>
-    override fun forEach(action: (value: String, key: String) -> Unit)
+    override fun forEach(action: (value: JsString, key: JsString) -> Unit)
 }
