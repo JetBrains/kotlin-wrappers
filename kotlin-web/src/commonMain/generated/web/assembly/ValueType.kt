@@ -10,7 +10,7 @@ import js.core.*
 import js.function.JsFunction
 import seskar.js.JsValue
 
-sealed external interface ValueType<T> {
+sealed external interface ValueType<T : JsAny?> {
     companion object {
         @JsValue("anyfunc")
         val anyfunc: ValueType<JsFunction<*, *>>
