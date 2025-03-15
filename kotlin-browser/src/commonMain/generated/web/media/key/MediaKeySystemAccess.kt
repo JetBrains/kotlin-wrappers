@@ -4,6 +4,7 @@ package web.media.key
 
 import js.promise.Promise
 import seskar.js.JsAsync
+import kotlin.js.JsName
 
 /**
  * This EncryptedMediaExtensions API interface provides access to a Key System for decryption and/or a content protection provider. You can request an instance of this object using the Navigator.requestMediaKeySystemAccess method.

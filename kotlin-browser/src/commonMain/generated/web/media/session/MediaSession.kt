@@ -5,6 +5,8 @@ package web.media.session
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession)

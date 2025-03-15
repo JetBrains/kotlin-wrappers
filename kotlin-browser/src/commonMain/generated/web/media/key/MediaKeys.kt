@@ -6,6 +6,8 @@ import js.buffer.BufferSource
 import js.core.JsBoolean
 import js.promise.Promise
 import seskar.js.JsAsync
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * This EncryptedMediaExtensions API interface the represents a set of keys that an associated HTMLMediaElement can use for decryption of media data during playback.
