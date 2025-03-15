@@ -13,6 +13,7 @@ import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.ReceiveChannel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import web.events.internal.createAddEventListenerOptions
 import kotlin.coroutines.resume
 import kotlin.js.JsName
 import kotlin.js.undefined
@@ -92,7 +93,7 @@ suspend fun <E : Event, C : EventTarget, T : EventTarget, D> EventInstance<E, C,
     return suspendCancellableCoroutine { continuation ->
         val unsubscribe = addHandler(
             handler = continuation::resume,
-            options = AddEventListenerOptions(once = true),
+            options = createAddEventListenerOptions(once = true),
         )
 
         continuation.invokeOnCancellation {
