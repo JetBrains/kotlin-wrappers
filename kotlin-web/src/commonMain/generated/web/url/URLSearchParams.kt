@@ -50,7 +50,7 @@ open external class URLSearchParams(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/get)
      */
-    override operator fun get(key: JsString): String?
+    override operator fun get(key: JsString): JsString?
 
     /**
      * Returns all the values association with a given search parameter.
