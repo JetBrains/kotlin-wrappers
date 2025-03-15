@@ -2,6 +2,6 @@
 
 package web.gpu
 
-import js.core.JsLong
+import js.core.JsInt
 
-typealias GPUSize64 = JsLong
+typealias GPUSize64 = JsInt /* JsLong */
