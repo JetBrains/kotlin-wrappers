@@ -23,6 +23,11 @@ actual inline fun <T : JsAny> unsafeCast(
     value.toJsNumber().unsafeCast()
 
 actual inline fun <T : JsAny> unsafeCast(
+    value: Function<*>,
+): T =
+    value.toJsReference().unsafeCast()
+
+actual inline fun <T : JsAny> unsafeCast(
     value: JsAny,
 ): T =
     value.unsafeCast()

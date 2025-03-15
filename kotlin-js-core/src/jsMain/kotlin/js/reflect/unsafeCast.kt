@@ -21,6 +21,11 @@ actual inline fun <T : Any> unsafeCast(
     value.unsafeCast<T>()
 
 actual inline fun <T : Any> unsafeCast(
+    value: Function<*>,
+): T =
+    value.unsafeCast<T>()
+
+actual inline fun <T : Any> unsafeCast(
     value: Any,
 ): T =
     value.unsafeCast<T>()
