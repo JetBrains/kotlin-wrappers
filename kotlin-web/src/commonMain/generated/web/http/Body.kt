@@ -7,6 +7,7 @@
 package web.http
 
 import js.buffer.ArrayBuffer
+import js.core.JsAny
 import js.core.JsString
 import js.promise.Promise
 import js.typedarrays.Uint8Array
@@ -75,7 +76,7 @@ sealed external interface Body {
      */
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun json(): Any? = definedExternally
+    suspend fun json(): JsAny? = definedExternally
 
     @JsName("json")
     fun jsonAsync(): Promise<*> = definedExternally
