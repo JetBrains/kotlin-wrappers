@@ -3,6 +3,7 @@
 package web.rtc
 
 import js.core.JsAny
+import js.core.JsInt
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
@@ -38,10 +39,10 @@ private constructor() :
      */
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun generateKeyFrame(rid: String = definedExternally): Number
+    suspend fun generateKeyFrame(rid: String = definedExternally): Int
 
     @JsName("generateKeyFrame")
-    fun generateKeyFrameAsync(rid: String = definedExternally): Promise<Number>
+    fun generateKeyFrameAsync(rid: String = definedExternally): Promise<JsInt>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpScriptTransformer/sendKeyFrameRequest)

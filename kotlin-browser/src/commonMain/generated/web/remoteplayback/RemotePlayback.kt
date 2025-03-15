@@ -2,6 +2,7 @@
 
 package web.remoteplayback
 
+import js.core.JsInt
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
@@ -60,10 +61,10 @@ private constructor() :
      */
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun watchAvailability(callback: RemotePlaybackAvailabilityCallback): Number
+    suspend fun watchAvailability(callback: RemotePlaybackAvailabilityCallback): Int
 
     @JsName("watchAvailability")
-    fun watchAvailabilityAsync(callback: RemotePlaybackAvailabilityCallback): Promise<Number>
+    fun watchAvailabilityAsync(callback: RemotePlaybackAvailabilityCallback): Promise<JsInt>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/connect_event)
