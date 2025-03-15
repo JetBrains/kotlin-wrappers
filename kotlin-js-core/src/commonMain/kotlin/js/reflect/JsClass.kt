@@ -6,6 +6,8 @@ package js.reflect
 
 import js.core.JsAny
 
-expect external interface JsClass<T : JsAny> {
+expect external interface JsClass<T : JsAny> :
+    JsAny {
+
     val name: String
 }
