@@ -2,6 +2,7 @@
 
 package web.streams
 
+import js.core.JsAny
 import js.reflect.JsExternalInheritorsOnly
 
 /**
@@ -10,4 +11,4 @@ import js.reflect.JsExternalInheritorsOnly
  * - `ReadableByteStreamController`
  */
 @JsExternalInheritorsOnly
-sealed external interface ReadableStreamController<T>
+sealed external interface ReadableStreamController<T : JsAny?>

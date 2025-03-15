@@ -50,7 +50,7 @@ open external class ReadableStream<R : JsAny?>(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/pipeThrough)
      */
-    fun <T> pipeThrough(
+    fun <T : JsAny?> pipeThrough(
         transform: ReadableWritablePair<T, R>,
         options: StreamPipeOptions = definedExternally,
     ): ReadableStream<T>
