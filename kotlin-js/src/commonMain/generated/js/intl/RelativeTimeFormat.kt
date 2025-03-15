@@ -53,7 +53,7 @@ open external class RelativeTimeFormat(
      * [MDN](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat/format).
      */
     fun format(
-        value: Double, /* Number */
+        value: Double,
         unit: RelativeTimeFormatUnit,
     ): String
 
@@ -69,7 +69,7 @@ open external class RelativeTimeFormat(
      *  [MDN](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat/formatToParts).
      */
     fun formatToParts(
-        value: Double, /* Number */
+        value: Double,
         unit: RelativeTimeFormatUnit,
     ): ReadonlyArray<JsAny /* RelativeTimeFormatPart */>
 

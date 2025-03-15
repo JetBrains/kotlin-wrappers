@@ -12,7 +12,7 @@ import js.objects.PropertyKey
  * the type of the constructor. For a non-static class element, this will be the type of the instance.
  * @template Value The type of the decorated class method.
  */
-sealed external interface ClassMethodDecoratorContext<This : JsAny, Value : JsFunction<*, *>> {
+sealed external interface ClassMethodDecoratorContext<This : JsAny, Value : JsFunction<*, *> /* generic function */> {
     /** The kind of class element that was decorated. */
     val kind: DecoratorContextKind.method
 
@@ -28,7 +28,7 @@ sealed external interface ClassMethodDecoratorContext<This : JsAny, Value : JsFu
     /** An object that can be used to access the current value of the class element at runtime. */
     val access: Access<This, Value>
 
-    interface Access<This : JsAny, Value : JsFunction<*, *>> {
+    interface Access<This : JsAny, Value : JsFunction<*, *> /* generic function */> {
         /**
          * Determines whether an object has a property with the same name as the decorated element.
          */

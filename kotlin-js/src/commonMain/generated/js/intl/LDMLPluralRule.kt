@@ -9,7 +9,6 @@ package js.intl
 import seskar.js.JsValue
 
 sealed external interface LDMLPluralRule {
-
     companion object {
         @JsValue("zero")
         val zero: LDMLPluralRule

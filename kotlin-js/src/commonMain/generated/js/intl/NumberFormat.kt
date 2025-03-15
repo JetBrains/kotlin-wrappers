@@ -19,16 +19,16 @@ open external class NumberFormat(
         options: NumberFormatOptions = definedExternally,
     )
 
-    fun format(value: Double /* Number */): String
+    fun format(value: Double): String
     fun resolvedOptions(): ResolvedNumberFormatOptions
     fun format(value: BigInt): String
     fun format(value: StringNumericLiteral): String
-    fun formatToParts(value: Double /* Number */): ReadonlyArray<NumberFormatPart>
+    fun formatToParts(value: Double): ReadonlyArray<NumberFormatPart>
     fun formatToParts(value: BigInt): ReadonlyArray<NumberFormatPart>
     fun formatToParts(value: StringNumericLiteral): ReadonlyArray<NumberFormatPart>
     fun formatRange(
-        start: Double, /* Number */
-        end: Double, /* Number */
+        start: Double,
+        end: Double,
     ): String
 
     fun formatRange(
@@ -42,8 +42,8 @@ open external class NumberFormat(
     ): String
 
     fun formatRangeToParts(
-        start: Double, /* Number */
-        end: Double, /* Number */
+        start: Double,
+        end: Double,
     ): ReadonlyArray<NumberRangeFormatPart>
 
     fun formatRangeToParts(
