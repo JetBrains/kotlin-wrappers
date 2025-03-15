@@ -11,7 +11,7 @@ internal fun <T : Abortable> patchAbortOptions(
     options: T?,
     controller: AbortController,
 ): T {
-    val abortOptions = Abortable(
+    val abortOptions = createAbortable(
         signal = safeAny(options?.signal, controller.signal)
     )
 
