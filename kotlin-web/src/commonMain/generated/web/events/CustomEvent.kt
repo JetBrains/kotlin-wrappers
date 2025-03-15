@@ -2,6 +2,7 @@
 
 package web.events
 
+import js.core.JsAny
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
 import kotlin.js.definedExternally
@@ -9,7 +10,7 @@ import kotlin.js.definedExternally
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomEvent)
  */
-open external class CustomEvent<out D>(
+open external class CustomEvent<out D : JsAny?>(
     override val type: EventType<CustomEvent<D>>,
     init: CustomEventInit<D> = definedExternally,
 ) : Event {

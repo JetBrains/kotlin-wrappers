@@ -3,6 +3,7 @@
 package web.messaging
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
 import seskar.js.JsValue
@@ -15,7 +16,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent)
  */
-open external class MessageEvent<out D>(
+open external class MessageEvent<out D : JsAny?>(
     override val type: EventType<MessageEvent<D>>,
     init: MessageEventInit<D> = definedExternally,
 ) : Event {
