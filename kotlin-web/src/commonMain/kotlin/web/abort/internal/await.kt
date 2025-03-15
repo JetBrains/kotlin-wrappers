@@ -1,5 +1,6 @@
 package web.abort.internal
 
+import js.core.JsAny
 import js.objects.Object
 import js.objects.jso
 import js.promise.PromiseLike
@@ -18,7 +19,7 @@ internal fun <T : Abortable> patchAbortOptions(
     return Object.assign(jso(), options, abortOptions)
 }
 
-internal suspend fun <T> awaitPromiseLike(
+internal suspend fun <T : JsAny?> awaitPromiseLike(
     promise: PromiseLike<T>,
     controller: AbortController,
 ): T =
