@@ -12,7 +12,6 @@ import web.components.ShadowRoot
 import web.components.ShadowRootInit
 import web.components.Slottable
 import web.cssom.StylePropertyMapReadOnly
-import web.dom.*
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance

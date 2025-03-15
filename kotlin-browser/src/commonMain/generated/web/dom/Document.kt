@@ -10,7 +10,6 @@ import web.animations.AnimationEvent
 import web.animations.DocumentTimeline
 import web.clipboard.ClipboardEvent
 import web.cssom.TransitionEvent
-import web.dom.*
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance

@@ -36,7 +36,6 @@ import web.uievents.*
 import web.url.URL
 import web.viewtransition.PageRevealEvent
 import web.viewtransition.PageSwapEvent
-import web.window.*
 import kotlin.js.definedExternally
 
 /**

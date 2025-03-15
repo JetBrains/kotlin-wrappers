@@ -14,7 +14,6 @@ import web.dom.Node
 import web.events.Event
 import web.events.EventInstance
 import web.events.JsEvent
-import web.html.*
 import web.popover.Popover
 import web.popover.ToggleEvent
 import web.uievents.DragEvent

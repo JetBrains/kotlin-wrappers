@@ -10,7 +10,6 @@ import web.events.EventInstance
 import web.events.JsEvent
 import web.gl.TexImageSource
 import web.gpu.GPUCopyExternalImageSource
-import web.html.*
 import web.media.streams.MediaStream
 import web.rendering.RenderingContext
 import web.rendering.RenderingContextId

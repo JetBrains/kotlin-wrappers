@@ -5,11 +5,7 @@ package web.media.streams
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
-import web.events.Event
-import web.events.EventHandler
-import web.events.EventInstance
-import web.events.EventTarget
-import web.events.JsEvent
+import web.events.*
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 

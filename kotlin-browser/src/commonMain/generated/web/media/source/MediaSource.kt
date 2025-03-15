@@ -2,11 +2,7 @@
 
 package web.media.source
 
-import web.events.Event
-import web.events.EventHandler
-import web.events.EventInstance
-import web.events.EventTarget
-import web.events.JsEvent
+import web.events.*
 import kotlin.js.definedExternally
 
 /**

@@ -3,7 +3,6 @@
 package web.dom
 
 import web.components.Slottable
-import web.dom.*
 import web.events.EventInstance
 import web.events.JsEvent
 import web.uievents.DragEvent

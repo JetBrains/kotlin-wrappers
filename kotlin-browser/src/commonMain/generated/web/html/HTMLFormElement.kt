@@ -15,7 +15,6 @@ import web.form.FormDataEvent
 import web.form.FormEncType
 import web.form.FormMethod
 import web.form.SubmitEvent
-import web.html.*
 import web.window.WindowTarget
 import kotlin.js.definedExternally
 

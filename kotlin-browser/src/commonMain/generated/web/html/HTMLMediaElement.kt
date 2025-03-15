@@ -9,7 +9,6 @@ import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.JsEvent
-import web.html.*
 import web.http.CrossOrigin
 import web.media.key.MediaKeys
 import web.media.source.TimeRanges

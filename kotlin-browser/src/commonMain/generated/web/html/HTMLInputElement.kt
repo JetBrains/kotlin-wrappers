@@ -15,7 +15,6 @@ import web.form.FormControl
 import web.form.FormEncType
 import web.form.FormMethod
 import web.fs.FileSystemEntry
-import web.html.*
 import web.validation.ValidityState
 import web.window.WindowName
 import kotlin.js.definedExternally

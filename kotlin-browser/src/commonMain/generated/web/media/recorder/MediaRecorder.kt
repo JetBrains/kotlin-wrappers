@@ -3,11 +3,7 @@
 package web.media.recorder
 
 import web.errors.ErrorEvent
-import web.events.Event
-import web.events.EventHandler
-import web.events.EventInstance
-import web.events.EventTarget
-import web.events.JsEvent
+import web.events.*
 import web.media.streams.MediaStream
 import kotlin.js.definedExternally
 
