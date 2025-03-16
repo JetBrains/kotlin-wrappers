@@ -2,8 +2,6 @@
 
 package cesium.widgets
 
-import cesium.engine.*
-
 /**
  * A function that augments a Viewer instance with additional functionality.
  * @param [viewer] The viewer instance.

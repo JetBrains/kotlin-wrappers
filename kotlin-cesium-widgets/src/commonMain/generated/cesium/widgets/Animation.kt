@@ -5,7 +5,6 @@
 package cesium.widgets
 
 import cesium.engine.Clock
-import cesium.engine.ClockRange
 import web.dom.Element
 
 /**
