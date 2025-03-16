@@ -4,6 +4,7 @@ package web.gl
 
 import js.core.Int53
 import js.core.JsUInt
+import js.core.UInt53
 
 typealias GLboolean = Boolean
 typealias GLclampf = Float
@@ -14,4 +15,4 @@ typealias GLintptr = Int
 typealias GLsizei = Int
 typealias GLsizeiptr = Int
 typealias GLuint = JsUInt
-typealias GLuint64 = Int53
+typealias GLuint64 = UInt53

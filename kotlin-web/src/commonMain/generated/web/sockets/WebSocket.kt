@@ -6,8 +6,8 @@ import js.array.ReadonlyArray
 import js.buffer.ArrayBufferLike
 import js.buffer.ArrayBufferView
 import js.core.JsAny
-import js.core.Int53
 import js.core.JsString
+import js.core.UInt53
 import web.blob.Blob
 import web.events.*
 import web.messaging.MessageEvent
@@ -64,7 +64,7 @@ open external class WebSocket(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/bufferedAmount)
      */
-    val bufferedAmount: Int53
+    val bufferedAmount: UInt53
 
     /**
      * Returns the extensions selected by the server, if any.

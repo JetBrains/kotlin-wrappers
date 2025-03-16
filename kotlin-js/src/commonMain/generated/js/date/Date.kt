@@ -3,8 +3,8 @@
 package js.date
 
 import js.array.ReadonlyArray
-import js.core.JsAny
 import js.core.Int53
+import js.core.JsAny
 import js.intl.DateTimeFormatOptions
 import js.intl.Locale
 import js.intl.Localizable

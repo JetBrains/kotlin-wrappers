@@ -6,6 +6,7 @@ import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
 import js.core.Int53
 import js.core.JsString
+import js.core.UInt53
 import js.promise.Promise
 import js.typedarrays.Uint8Array
 import seskar.js.JsAsync
@@ -26,7 +27,7 @@ open external class Blob(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/size)
      */
-    val size: Int53
+    val size: UInt53
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/type)

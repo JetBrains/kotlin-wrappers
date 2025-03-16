@@ -2,7 +2,7 @@
 
 package web.gpu
 
-import js.core.Int53
+import js.core.UInt53
 
 /**
  * Available only in secure contexts.
@@ -14,17 +14,17 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCompilationMessage/length)
      */
-    val length: Int53
+    val length: UInt53
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCompilationMessage/lineNum)
      */
-    val lineNum: Int53
+    val lineNum: UInt53
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCompilationMessage/linePos)
      */
-    val linePos: Int53
+    val linePos: UInt53
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCompilationMessage/message)
@@ -34,7 +34,7 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCompilationMessage/offset)
      */
-    val offset: Int53
+    val offset: UInt53
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCompilationMessage/type)

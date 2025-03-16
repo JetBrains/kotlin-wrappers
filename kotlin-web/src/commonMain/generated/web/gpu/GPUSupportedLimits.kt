@@ -2,7 +2,7 @@
 
 package web.gpu
 
-import js.core.Int53
+import js.core.UInt53
 
 /**
  * Available only in secure contexts.
@@ -29,7 +29,7 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
      */
-    val maxBufferSize: Int53
+    val maxBufferSize: UInt53
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
@@ -99,7 +99,7 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
      */
-    val maxStorageBufferBindingSize: Int53
+    val maxStorageBufferBindingSize: UInt53
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
@@ -134,7 +134,7 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
      */
-    val maxUniformBufferBindingSize: Int53
+    val maxUniformBufferBindingSize: UInt53
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
