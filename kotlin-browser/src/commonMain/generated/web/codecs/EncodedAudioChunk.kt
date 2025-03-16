@@ -3,7 +3,7 @@
 package web.codecs
 
 import js.buffer.AllowSharedBufferSource
-import js.core.JsLong
+import js.core.Int53
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EncodedAudioChunk)
@@ -19,12 +19,12 @@ open external class EncodedAudioChunk(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EncodedAudioChunk/duration)
      */
-    val duration: JsLong?
+    val duration: Int53?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EncodedAudioChunk/timestamp)
      */
-    val timestamp: JsLong
+    val timestamp: Int53
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EncodedAudioChunk/type)

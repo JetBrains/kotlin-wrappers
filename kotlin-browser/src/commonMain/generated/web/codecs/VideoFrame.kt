@@ -4,7 +4,7 @@ package web.codecs
 
 import js.array.ReadonlyArray
 import js.buffer.AllowSharedBufferSource
-import js.core.JsLong
+import js.core.Int53
 import js.promise.Promise
 import js.transferable.Transferable
 import seskar.js.JsAsync
@@ -63,7 +63,7 @@ open external class VideoFrame(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/duration)
      */
-    val duration: JsLong?
+    val duration: Int53?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/format)
@@ -73,7 +73,7 @@ open external class VideoFrame(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/timestamp)
      */
-    val timestamp: JsLong
+    val timestamp: Int53
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/visibleRect)

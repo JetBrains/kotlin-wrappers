@@ -3,7 +3,7 @@
 package web.abort
 
 import js.array.ReadonlyArray
-import js.core.JsLong
+import js.core.Int53
 import js.errors.JsError
 import web.events.*
 import kotlin.js.definedExternally
@@ -58,6 +58,6 @@ private constructor() :
         /**
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/timeout_static)
          */
-        fun timeout(milliseconds: JsLong): AbortSignal
+        fun timeout(milliseconds: Int53): AbortSignal
     }
 }

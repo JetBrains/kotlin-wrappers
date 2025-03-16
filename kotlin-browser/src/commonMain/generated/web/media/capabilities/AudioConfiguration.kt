@@ -2,12 +2,12 @@
 
 package web.media.capabilities
 
-import js.core.JsLong
+import js.core.Int53
 import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface AudioConfiguration {
-    val bitrate: JsLong?
+    val bitrate: Int53?
     val channels: String?
     val contentType: String
     val samplerate: Int?

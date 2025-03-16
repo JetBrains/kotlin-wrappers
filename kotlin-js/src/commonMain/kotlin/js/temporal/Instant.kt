@@ -3,7 +3,7 @@
 package js.temporal
 
 import js.core.BigInt
-import js.core.JsLong
+import js.core.Int53
 import js.import.JsQualifier
 import js.objects.JsPlainObject
 import kotlin.js.definedExternally
@@ -27,8 +27,8 @@ external class Instant(
 ) : HasArithmeticOperations<Instant, Nothing, TimeUnit<*>>,
     Roundable<Instant, TimeUnit<*>>,
     LocalizableDateTime {
-    val epochSeconds: JsLong
-    val epochMilliseconds: JsLong
+    val epochSeconds: Int53
+    val epochMilliseconds: Int53
     val epochMicroseconds: BigInt
 
     // fun equals(other: Instant): Boolean
@@ -53,8 +53,8 @@ external class Instant(
         Factory<Instant, Nothing, Nothing>,
         Comparator<Instant, Nothing> {
 
-        fun fromEpochSeconds(epochSeconds: JsLong): Instant
-        fun fromEpochMilliseconds(epochMilliseconds: JsLong): Instant
+        fun fromEpochSeconds(epochSeconds: Int53): Instant
+        fun fromEpochMilliseconds(epochMilliseconds: Int53): Instant
         fun fromEpochMicroseconds(epochMicroseconds: BigInt): Instant
         fun fromEpochNanoseconds(epochNanoseconds: BigInt): Instant
     }

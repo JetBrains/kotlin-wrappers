@@ -4,7 +4,7 @@ package web.blob
 
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
-import js.core.JsLong
+import js.core.Int53
 import js.core.JsString
 import js.promise.Promise
 import js.typedarrays.Uint8Array
@@ -26,7 +26,7 @@ open external class Blob(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/size)
      */
-    val size: JsLong
+    val size: Int53
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/type)
@@ -57,8 +57,8 @@ open external class Blob(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/slice)
      */
     fun slice(
-        start: JsLong = definedExternally,
-        end: JsLong = definedExternally,
+        start: Int53 = definedExternally,
+        end: Int53 = definedExternally,
         contentType: String = definedExternally,
     ): Blob
 

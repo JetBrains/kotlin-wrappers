@@ -3,7 +3,7 @@
 package web.navigation
 
 import js.core.JsAny
-import js.core.JsLong
+import js.core.Int53
 import web.events.*
 
 /**
@@ -20,7 +20,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationHistoryEntry/index)
      */
-    val index: JsLong
+    val index: Int53
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationHistoryEntry/key)

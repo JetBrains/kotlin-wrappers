@@ -2,11 +2,11 @@
 
 package web.encoding
 
-import js.core.JsLong
+import js.core.Int53
 import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface TextEncoderEncodeIntoResult {
-    val read: JsLong
-    val written: JsLong
+    val read: Int53
+    val written: Int53
 }

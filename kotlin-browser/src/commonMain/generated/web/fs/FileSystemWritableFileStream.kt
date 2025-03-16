@@ -2,7 +2,7 @@
 
 package web.fs
 
-import js.core.JsLong
+import js.core.Int53
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
@@ -22,20 +22,20 @@ private constructor() :
      */
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun seek(position: JsLong)
+    suspend fun seek(position: Int53)
 
     @JsName("seek")
-    fun seekAsync(position: JsLong): Promise<Void>
+    fun seekAsync(position: Int53): Promise<Void>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemWritableFileStream/truncate)
      */
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun truncate(size: JsLong)
+    suspend fun truncate(size: Int53)
 
     @JsName("truncate")
-    fun truncateAsync(size: JsLong): Promise<Void>
+    fun truncateAsync(size: Int53): Promise<Void>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemWritableFileStream/write)

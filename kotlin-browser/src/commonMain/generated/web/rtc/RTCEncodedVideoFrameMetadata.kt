@@ -3,7 +3,7 @@
 package web.rtc
 
 import js.array.ReadonlyArray
-import js.core.JsLong
+import js.core.Int53
 import js.core.JsUInt
 import js.objects.JsPlainObject
 
@@ -11,12 +11,12 @@ import js.objects.JsPlainObject
 external interface RTCEncodedVideoFrameMetadata {
     val contributingSources: ReadonlyArray<JsUInt>?
     val dependencies: ReadonlyArray<JsUInt /* JsULong */>?
-    val frameId: JsLong?
+    val frameId: Int53?
     val height: Short?
     val payloadType: Short /* unsigned byte */?
     val spatialIndex: Int?
     val synchronizationSource: Int?
     val temporalIndex: Int?
-    val timestamp: JsLong?
+    val timestamp: Int53?
     val width: Short?
 }

@@ -4,7 +4,7 @@ package web.performance
 
 import js.array.ReadonlyArray
 import js.core.JsAny
-import js.core.JsLong
+import js.core.Int53
 import web.time.DOMHighResTimeStamp
 
 /**
@@ -28,7 +28,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/decodedBodySize)
      */
-    val decodedBodySize: JsLong
+    val decodedBodySize: Int53
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/domainLookupEnd)
@@ -43,7 +43,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/encodedBodySize)
      */
-    val encodedBodySize: JsLong
+    val encodedBodySize: Int53
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/fetchStart)
@@ -103,7 +103,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/transferSize)
      */
-    val transferSize: JsLong
+    val transferSize: Int53
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/workerStart)

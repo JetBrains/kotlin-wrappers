@@ -3,7 +3,7 @@
 package web.idb
 
 import js.array.ReadonlyArray
-import js.core.JsLong
+import js.core.Int53
 import js.core.JsString
 import web.dom.DOMStringList
 import web.events.*
@@ -48,7 +48,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/version)
      */
-    val version: JsLong
+    val version: Int53
 
     /**
      * Closes the connection once all running transactions have finished.

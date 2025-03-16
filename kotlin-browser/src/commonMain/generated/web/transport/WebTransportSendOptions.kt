@@ -2,10 +2,10 @@
 
 package web.transport
 
-import js.core.JsLong
+import js.core.Int53
 import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface WebTransportSendOptions {
-    val sendOrder: JsLong?
+    val sendOrder: Int53?
 }

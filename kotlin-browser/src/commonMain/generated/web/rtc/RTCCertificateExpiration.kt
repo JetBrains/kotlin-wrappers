@@ -2,10 +2,10 @@
 
 package web.rtc
 
-import js.core.JsLong
+import js.core.Int53
 import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface RTCCertificateExpiration {
-    val expires: JsLong?
+    val expires: Int53?
 }

@@ -6,7 +6,7 @@ import js.array.ReadonlyArray
 import js.buffer.ArrayBufferLike
 import js.buffer.ArrayBufferView
 import js.core.JsAny
-import js.core.JsLong
+import js.core.Int53
 import js.core.JsString
 import web.blob.Blob
 import web.events.*
@@ -64,7 +64,7 @@ open external class WebSocket(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/bufferedAmount)
      */
-    val bufferedAmount: JsLong
+    val bufferedAmount: Int53
 
     /**
      * Returns the extensions selected by the server, if any.

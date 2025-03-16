@@ -2,11 +2,11 @@
 
 package web.storage
 
-import js.core.JsLong
+import js.core.Int53
 import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface StorageEstimate {
-    val quota: JsLong?
-    val usage: JsLong?
+    val quota: Int53?
+    val usage: Int53?
 }

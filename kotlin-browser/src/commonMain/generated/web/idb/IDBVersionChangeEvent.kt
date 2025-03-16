@@ -2,7 +2,7 @@
 
 package web.idb
 
-import js.core.JsLong
+import js.core.Int53
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
 import seskar.js.JsValue
@@ -22,12 +22,12 @@ open external class IDBVersionChangeEvent(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBVersionChangeEvent/newVersion)
      */
-    val newVersion: JsLong?
+    val newVersion: Int53?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBVersionChangeEvent/oldVersion)
      */
-    val oldVersion: JsLong
+    val oldVersion: Int53
 
     @JsAlias(THIS)
     override fun asInit(): IDBVersionChangeEventInit

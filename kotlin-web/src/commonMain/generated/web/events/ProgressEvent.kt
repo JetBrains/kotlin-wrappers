@@ -2,7 +2,7 @@
 
 package web.events
 
-import js.core.JsLong
+import js.core.Int53
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
 import seskar.js.JsValue
@@ -25,12 +25,12 @@ open external class ProgressEvent(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ProgressEvent/loaded)
      */
-    val loaded: JsLong
+    val loaded: Int53
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ProgressEvent/total)
      */
-    val total: JsLong
+    val total: Int53
 
     @JsAlias(THIS)
     override fun asInit(): ProgressEventInit

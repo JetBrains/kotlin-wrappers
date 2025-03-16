@@ -3,7 +3,7 @@
 package web.rtc
 
 import js.buffer.ArrayBuffer
-import js.core.JsLong
+import js.core.Int53
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedAudioFrame)
@@ -18,7 +18,7 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedAudioFrame/timestamp)
      */
-    val timestamp: JsLong
+    val timestamp: Int53
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedAudioFrame/getMetadata)

@@ -4,7 +4,7 @@ package web.idb
 
 import js.array.ReadonlyArray
 import js.core.JsAny
-import js.core.JsLong
+import js.core.Int53
 import js.promise.Promise
 import seskar.js.JsAsync
 import kotlin.js.JsName
@@ -53,6 +53,6 @@ private constructor() {
      */
     fun open(
         name: String,
-        version: JsLong = definedExternally,
+        version: Int53 = definedExternally,
     ): IDBOpenDBRequest
 }

@@ -2,12 +2,12 @@
 
 package js.typedarrays
 
-import js.core.JsLong
+import js.core.Int53
 import js.objects.JsPlainObject
 
 // TODO: merge with `TextEncoderEncodeIntoResult`?
 @JsPlainObject
 external interface SetFromResult {
-    val read: JsLong
-    val written: JsLong
+    val read: Int53
+    val written: Int53
 }

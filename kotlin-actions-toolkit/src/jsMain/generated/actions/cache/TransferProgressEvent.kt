@@ -2,7 +2,7 @@
 
 package actions.cache
 
-import js.core.JsLong
+import js.core.Int53
 import js.objects.JsPlainObject
 
 // Copy of `TransferProgressEvent` from '@azure/ms-rest-js'
@@ -11,5 +11,5 @@ external interface TransferProgressEvent {
     /**
      * The number of bytes loaded so far.
      */
-    val loadedBytes: JsLong
+    val loadedBytes: Int53
 }

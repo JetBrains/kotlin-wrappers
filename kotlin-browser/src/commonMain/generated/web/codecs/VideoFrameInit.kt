@@ -2,7 +2,7 @@
 
 package web.codecs
 
-import js.core.JsLong
+import js.core.Int53
 import js.objects.JsPlainObject
 import web.geometry.DOMRectReadOnly
 
@@ -11,7 +11,7 @@ external interface VideoFrameInit {
     val alpha: AlphaOption?
     val displayHeight: Int?
     val displayWidth: Int?
-    val duration: JsLong?
-    val timestamp: JsLong?
+    val duration: Int53?
+    val timestamp: Int53?
     val visibleRect: DOMRectReadOnly?
 }

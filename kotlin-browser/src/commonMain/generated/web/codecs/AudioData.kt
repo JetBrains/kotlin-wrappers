@@ -3,7 +3,7 @@
 package web.codecs
 
 import js.buffer.AllowSharedBufferSource
-import js.core.JsLong
+import js.core.Int53
 import js.transferable.Transferable
 
 /**
@@ -15,7 +15,7 @@ open external class AudioData(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioData/duration)
      */
-    val duration: JsLong
+    val duration: Int53
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioData/format)
@@ -40,7 +40,7 @@ open external class AudioData(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioData/timestamp)
      */
-    val timestamp: JsLong
+    val timestamp: Int53
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioData/allocationSize)

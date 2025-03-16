@@ -2,13 +2,13 @@
 
 package web.events
 
-import js.core.JsLong
+import js.core.Int53
 import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface ProgressEventInit :
     EventInit {
     val lengthComputable: Boolean?
-    val loaded: JsLong?
-    val total: JsLong?
+    val loaded: Int53?
+    val total: Int53?
 }

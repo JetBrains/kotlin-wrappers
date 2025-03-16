@@ -2,15 +2,15 @@
 
 package web.gamepad
 
-import js.core.JsLong
+import js.core.Int53
 import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface GamepadEffectParameters {
-    val duration: JsLong?
+    val duration: Int53?
     val leftTrigger: Double?
     val rightTrigger: Double?
-    val startDelay: JsLong?
+    val startDelay: Int53?
     val strongMagnitude: Double?
     val weakMagnitude: Double?
 }

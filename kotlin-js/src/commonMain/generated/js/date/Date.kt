@@ -4,7 +4,7 @@ package js.date
 
 import js.array.ReadonlyArray
 import js.core.JsAny
-import js.core.JsLong
+import js.core.Int53
 import js.intl.DateTimeFormatOptions
 import js.intl.Locale
 import js.intl.Localizable
@@ -17,7 +17,7 @@ import kotlin.js.definedExternally
  */
 external class Date() :
     Localizable<DateTimeFormatOptions> {
-    constructor(value: JsLong)
+    constructor(value: Int53)
     constructor(value: String)
     constructor(value: Date)
 
@@ -76,14 +76,14 @@ external class Date() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/valueOf)
      */
-    fun valueOf(): JsLong
+    fun valueOf(): Int53
 
     /**
      * Returns the stored time value in milliseconds since midnight, January 1, 1970 UTC.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime)
      */
-    fun getTime(): JsLong
+    fun getTime(): Int53
 
     /**
      * Gets the year, using local time.
@@ -210,7 +210,7 @@ external class Date() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/setTime)
      */
-    fun setTime(time: JsLong): JsLong
+    fun setTime(time: Int53): Int53
 
     /**
      * Sets the milliseconds value in the Date object using local time.
@@ -464,7 +464,7 @@ external class Date() :
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/parse)
          */
-        fun parse(s: String): JsLong
+        fun parse(s: String): Int53
 
         /**
          * Returns the number of milliseconds between midnight, January 1, 1970 Universal Coordinated Time (UTC) (or GMT) and the specified date.
@@ -486,13 +486,13 @@ external class Date() :
             minutes: Int = definedExternally,
             seconds: Int = definedExternally,
             milliseconds: Int = definedExternally,
-        ): JsLong
+        ): Int53
 
         /**
          * Returns the number of milliseconds elapsed since midnight, January 1, 1970 Universal Coordinated Time (UTC).
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/now)
          */
-        fun now(): JsLong
+        fun now(): Int53
     }
 }
