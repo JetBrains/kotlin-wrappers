@@ -14,3 +14,5 @@ expect external class JsShort : JsAny
 expect external class JsUShort : JsAny
 expect external class JsInt : JsAny
 expect external class JsUInt : JsAny
+expect external class JsInt53 : JsAny
+expect external class JsUInt53 : JsAny

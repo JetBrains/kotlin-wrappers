@@ -10,3 +10,5 @@ actual typealias JsShort = JsNumber
 actual typealias JsUShort = JsNumber
 actual typealias JsInt = JsNumber
 actual typealias JsUInt = JsNumber
+actual typealias JsInt53 = JsNumber
+actual typealias JsUInt53 = JsNumber
