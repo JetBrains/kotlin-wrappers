@@ -11,6 +11,7 @@ dependencyResolutionManagement {
         create("libs") {
             val karakumVersion = extra["karakum.version"] as String
             plugin("karakum", "io.github.sgrishchenko.karakum").version(karakumVersion)
+            library("karakum", "io.github.sgrishchenko", "karakum").version(karakumVersion)
 
             val kotlinVersion = extra["kotlin.version"] as String
             library("kotlin-test", "org.jetbrains.kotlin", "kotlin-test").version(kotlinVersion)
@@ -118,6 +119,7 @@ include("kotlin-muix-tree-view")
 
 // Kotlin/JS: Node.js wrappers
 include("kotlin-node")
+include("kotlin-node:karakum")
 
 // Kotlin/JS: null-writable wrappers
 include("kotlin-null-writable")
