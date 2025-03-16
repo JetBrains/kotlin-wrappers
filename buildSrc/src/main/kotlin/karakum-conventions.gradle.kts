@@ -1,10 +1,26 @@
+import org.gradle.util.Path.SEPARATOR
 import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsExec
 
 plugins {
-    id("kotlin-conventions")
+    kotlin("multiplatform")
+    kotlin("plugin.js-plain-objects")
 }
 
-kotlin.js().binaries.executable()
+kotlin {
+    js {
+        moduleName = project.path
+            .removePrefix(SEPARATOR)
+            .replace(SEPARATOR, "-")
+
+        nodejs()
+
+        compilerOptions {
+            target = "es2015"
+        }
+
+        binaries.executable()
+    }
+}
 
 val outputPath: String = layout.projectDirectory.dir("../src/jsMain/generated").asFile.path
 
