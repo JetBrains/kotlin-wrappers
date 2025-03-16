@@ -15,11 +15,12 @@ export default {
             && ts.isIdentifier(node.name)
             && (
                 node.name.text === "_construct"
+                || node.name.text === "_destroy"
                 || node.name.text === "destroy"
             )
 
             && ts.isClassDeclaration(node.parent)
-            && node.parent.name?.text === "ReadableBase"
+            && node.parent.name?.text === "Readable"
         ) {
             this.readableMemberNodes.push(node)
         }
@@ -28,10 +29,14 @@ export default {
             sourceFileName.endsWith("stream.d.ts")
             && ts.isPropertyDeclaration(node)
             && ts.isIdentifier(node.name)
-            && node.name.text === "destroyed"
+            && (
+                node.name.text === "destroyed"
+                || node.name.text === "closed"
+                || node.name.text === "errored"
+            )
 
             && ts.isClassDeclaration(node.parent)
-            && node.parent.name?.text === "ReadableBase"
+            && node.parent.name?.text === "Readable"
         ) {
             this.readableMemberNodes.push(node)
         }

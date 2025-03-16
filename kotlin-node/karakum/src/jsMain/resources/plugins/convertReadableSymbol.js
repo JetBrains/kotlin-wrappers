@@ -8,7 +8,7 @@ export default function (node, context) {
 
         && node.parent
         && ts.isClassDeclaration(node.parent)
-        && node.parent.name?.text === "ReadableBase"
+        && node.parent.name?.text === "Readable"
     ) {
         const typeScriptService = context.lookupService(karakum.typeScriptServiceKey.get())
 

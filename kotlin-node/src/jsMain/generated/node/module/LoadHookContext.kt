@@ -9,9 +9,9 @@ sealed external interface LoadHookContext {
     var conditions: js.array.ReadonlyArray<String>
 
     /**
-     * The format optionally supplied by the `resolve` hook chain
+     * The format optionally supplied by the `resolve` hook chain (can be an intermediary value).
      */
-    var format: ModuleFormat?
+    var format: String?
 
     /**
      *  An object whose key-value pairs represent the assertions for the module to import

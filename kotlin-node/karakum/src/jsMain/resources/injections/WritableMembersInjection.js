@@ -1,37 +1,13 @@
 import ts from "typescript";
 import * as karakum from "../karakum.mjs";
 
-function extractModifiers(member) {
-    if (
-        ts.isPropertyDeclaration(member)
-        || ts.isMethodDeclaration(member)
-        || ts.isConstructorDeclaration(member)
-        || ts.isGetAccessorDeclaration(member)
-        || ts.isSetAccessorDeclaration(member)
-        || ts.isIndexSignatureDeclaration(member)
-    ) {
-        return Array.from(member.modifiers ?? [])
-    }
-
-    return []
-}
-
 export default {
     setup(context) {
-        this.writableBaseNode = null
         this.writableStreamMemberNodes = []
     },
 
     traverse(node) {
         const sourceFileName = node.getSourceFile()?.fileName ?? "generated.d.ts"
-
-        if (
-            sourceFileName.endsWith("stream.d.ts")
-            && ts.isClassDeclaration(node)
-            && node.name?.text === "WritableBase"
-        ) {
-            this.writableBaseNode = node
-        }
 
         if (
             sourceFileName.endsWith("globals.d.ts")
@@ -65,40 +41,6 @@ export default {
     },
 
     render(node, context, next) {
-        const sourceFileName = node.getSourceFile()?.fileName ?? "generated.d.ts"
-
-        if (
-            sourceFileName.endsWith("stream.d.ts")
-            && ts.isClassDeclaration(node)
-            && node.name?.text === "WritableBase"
-        ) {
-            return ""
-        }
-
-        if (
-            sourceFileName.endsWith("stream.d.ts")
-            && ts.isHeritageClause(node)
-
-            && node.parent
-            && ts.isClassDeclaration(node.parent)
-            && node.parent.name?.text === "Writable"
-        ) {
-            return this.writableBaseNode.heritageClauses
-                ?.map(heritageClause => next(heritageClause))
-                ?.join(", ")
-        }
-
-        if (
-            sourceFileName.endsWith("stream.d.ts")
-            && ts.isIdentifier(node)
-            && node.text === "WritableBase"
-
-            && node.parent
-            && ts.isExpressionWithTypeArguments(node.parent)
-        ) {
-            return "Writable"
-        }
-
         return null
     },
 
@@ -111,7 +53,7 @@ export default {
             && node?.name.text === "Writable"
             && context.type === "MEMBER"
         ) {
-            const writableStreamMembers = this.writableStreamMemberNodes
+            return this.writableStreamMemberNodes
                 .map(member => {
                     if (ts.isPropertySignature(member)) {
                         return `override ${render(member)}`
@@ -133,27 +75,6 @@ export default {
                         }
                     })
                 })
-
-            const writableBaseMembers = this.writableBaseNode.members
-                .filter(member => !ts.isConstructorDeclaration(member))
-                .filter(member => extractModifiers(member).every(it => it.kind !== ts.SyntaxKind.StaticKeyword))
-                .map(member => render(member))
-
-            return [
-                ...writableBaseMembers,
-                ...writableStreamMembers,
-            ]
-        }
-
-        if (
-            sourceFileName.endsWith("stream.d.ts")
-            && ts.isClassDeclaration(node)
-            && node?.name.text === "Writable"
-            && context.type === "STATIC_MEMBER"
-        ) {
-            return this.writableBaseNode.members
-                .filter(member => extractModifiers(member).some(it => it.kind === ts.SyntaxKind.StaticKeyword))
-                .map(member => render(member))
         }
 
         return []

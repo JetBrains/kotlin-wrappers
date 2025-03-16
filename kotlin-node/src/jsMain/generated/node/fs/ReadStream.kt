@@ -11,7 +11,7 @@ import node.stream.ReadableOptions
  * @since v0.1.93
  */
 external class ReadStream : node.stream.Readable {
-    constructor (opts: ReadableOptions = definedExternally)
+    constructor (opts: ReadableOptions<*> = definedExternally)
 
     fun close(callback: (err: node.ErrnoException? /* use undefined for default */) -> Unit = definedExternally): Unit
 

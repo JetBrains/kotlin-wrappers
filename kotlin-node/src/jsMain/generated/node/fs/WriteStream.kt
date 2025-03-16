@@ -13,7 +13,7 @@ import node.stream.WritableOptions
  * @since v0.1.93
  */
 external class WriteStream : node.stream.Writable {
-    constructor (opts: WritableOptions = definedExternally)
+    constructor (opts: WritableOptions<*> = definedExternally)
 
     /**
      * Closes `writeStream`. Optionally accepts a

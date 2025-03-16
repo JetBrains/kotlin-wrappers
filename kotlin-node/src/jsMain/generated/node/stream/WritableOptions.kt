@@ -3,10 +3,10 @@
 package node.stream
 
 @js.objects.JsPlainObject
-sealed external interface WritableOptions : StreamOptions<Stream /* Writable */> {
+sealed external interface WritableOptions<T : Writable /* default is Writable */> : StreamOptions<T> {
     var decodeStrings: Boolean?
     var defaultEncoding: node.buffer.BufferEncoding?
-    val write: ((/* this: Writable, */ chunk: Any?, encoding: node.buffer.BufferEncoding, callback: (error: js.errors.JsError? /* use undefined for default */) -> Unit) -> Unit)?
-    val writev: ((/* this: Writable, */ chunks: Array<WritableOptionsWritevChunksItem>, callback: (error: js.errors.JsError? /* use undefined for default */) -> Unit) -> Unit)?
-    val final: ((/* this: Writable, */ callback: (error: js.errors.JsError? /* use undefined for default */) -> Unit) -> Unit)?
+    val write: ((/* this: T, */ chunk: Any?, encoding: node.buffer.BufferEncoding, callback: (error: js.errors.JsError? /* use undefined for default */) -> Unit) -> Unit)?
+    val writev: ((/* this: T, */ chunks: Array<WritableOptionsWritevChunksItem>, callback: (error: js.errors.JsError? /* use undefined for default */) -> Unit) -> Unit)?
+    val final: ((/* this: T, */ callback: (error: js.errors.JsError? /* use undefined for default */) -> Unit) -> Unit)?
 }

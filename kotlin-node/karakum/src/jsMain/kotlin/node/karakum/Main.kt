@@ -3,6 +3,8 @@ package node.karakum
 import io.github.sgrishchenko.karakum.configuration.ConflictResolutionStrategy
 import io.github.sgrishchenko.karakum.configuration.Granularity
 import io.github.sgrishchenko.karakum.configuration.NamespaceStrategy
+import io.github.sgrishchenko.karakum.configuration.loadExtensions
+import io.github.sgrishchenko.karakum.extension.*
 import io.github.sgrishchenko.karakum.generate
 import io.github.sgrishchenko.karakum.util.manyOf
 import io.github.sgrishchenko.karakum.util.ruleOf
@@ -11,6 +13,7 @@ import js.objects.recordOf
 import node.path.path
 import node.process.process
 import node.url.fileURLToPath
+import typescript.Node
 
 suspend fun main() {
     val nodePackage = import.meta.resolve("@types/node/package.json")
@@ -19,13 +22,64 @@ suspend fun main() {
 
     val outputPath = process.argv[2]
 
+    val cwd = process.cwd()
+
+    val plugins = loadExtensions<ConverterPlugin<Node>>(
+        "Plugin",
+        arrayOf("kotlin/plugins/*.js"),
+        cwd
+    ) { plugin ->
+        if (jsTypeOf(plugin) == "function") {
+            createSimplePlugin(plugin as SimpleConverterPlugin<Node>)
+        } else {
+            plugin as ConverterPlugin<Node>
+        }
+    }
+
+    val injections = loadExtensions<Injection<Node, Node>>(
+        "Injection",
+        arrayOf("kotlin/injections/*.js"),
+        cwd
+    ) { injection ->
+        if (jsTypeOf(injection) == "function") {
+            createSimpleInjection(injection as SimpleInjection<Node>)
+        } else {
+            injection as Injection<Node, Node>
+        }
+    }
+
+    val annotations = loadExtensions<Annotation<Node>>(
+        "Annotation",
+        arrayOf("kotlin/annotations/*.js"),
+        cwd,
+    )
+
+    val nameResolvers = loadExtensions<NameResolver<Node>>(
+        "Name Resolver",
+        arrayOf("kotlin/nameResolvers/*.js"),
+        cwd,
+    )
+
+    val inheritanceModifiers = loadExtensions<InheritanceModifier<Node>>(
+        "Inheritance Modifier",
+        arrayOf("kotlin/inheritanceModifiers/*.js"),
+        cwd,
+    )
+
+    val varianceModifiers = loadExtensions<VarianceModifier<Node>>(
+        "Variance Modifier",
+        arrayOf("kotlin/varianceModifiers/*.js"),
+        cwd,
+    )
+
+
     generate {
-        plugins = manyOf("kotlin/plugins/*.js")
-        injections = manyOf("kotlin/injections/*.js")
-        annotations = manyOf("kotlin/annotations/*.js")
-        nameResolvers = manyOf("kotlin/nameResolvers/*.js")
-        inheritanceModifiers = manyOf("kotlin/inheritanceModifiers/*.js")
-        varianceModifiers = manyOf("kotlin/varianceModifiers/*.js")
+        this.plugins = manyOf(values = plugins)
+        this.injections = manyOf(values = injections)
+        this.annotations = manyOf(values = annotations)
+        this.nameResolvers = manyOf(values = nameResolvers)
+        this.inheritanceModifiers = manyOf(values = inheritanceModifiers)
+        this.varianceModifiers = manyOf(values = varianceModifiers)
 
         input = manyOf("$nodePackage/**/*.d.ts")
         ignoreInput = manyOf(
@@ -160,8 +214,6 @@ suspend fun main() {
             "**/stream/internal.kt",
             "**/stream/promises.kt",
             "**/stream/consumers/consumers.kt",
-            "**/stream/ReadableBase.kt",
-            "**/stream/WritableBase.kt",
             "**/test/FunctionPropertyNames.kt",
             "**/url/global/**",
             "**/url/URL.kt",
@@ -293,9 +345,9 @@ suspend fun main() {
             "^repl/writer.kt" to "node/repl/writer.val.kt",
             "^repl" to "node/repl",
 
-            "^stream/internal/namespace.kt" to "node/stream/internal.namespace.kt",
-            "^stream/internal/Stream.kt" to "node/stream/Stream.class.kt",
-            "^stream/internal/(.+)\\.kt" to "node/stream/$1.kt",
+            "^stream/Stream.kt" to "node/stream/Stream.class.kt",
+            "^stream/stream/namespace.kt" to "node/stream/Stream.namespace.kt",
+            "^stream/stream" to "node/stream",
             "^stream" to "node/stream",
 
             "^node/test/Test.kt" to "node/test/Test.class.kt",
@@ -512,10 +564,10 @@ suspend fun main() {
                 "js.promise.Promise"
             ),
             "buffer/Buffer.class.kt" to arrayOf(
+                "js.array.ArrayLike",
                 "js.buffer.ArrayBuffer",
                 "js.buffer.ArrayBufferLike",
                 "js.buffer.SharedArrayBuffer",
-                "js.array.ReadonlyArray",
                 "js.typedarrays.Uint8Array"
             ),
             "buffer/File.kt" to arrayOf(

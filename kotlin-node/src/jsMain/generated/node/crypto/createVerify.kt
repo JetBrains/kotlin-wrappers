@@ -17,4 +17,4 @@ package node.crypto
  * @since v0.1.92
  * @param options `stream.Writable` options
  */
-external fun createVerify(algorithm: String, options: node.stream.WritableOptions = definedExternally): Verify
+external fun createVerify(algorithm: String, options: node.stream.WritableOptions<*> = definedExternally): Verify

@@ -15,7 +15,7 @@ export default (node) => {
         sourceFileName.endsWith("stream.d.ts")
         && ts.isExpressionWithTypeArguments(node)
         && ts.isIdentifier(node.expression)
-        && node.expression.text === "WritableBase"
+        && node.expression.text === "Writable"
 
         && node.parent
         && ts.isHeritageClause(node.parent)

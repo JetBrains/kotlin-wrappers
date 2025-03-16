@@ -21,7 +21,7 @@ import node.stream.WritableOptions
  * @since v0.1.92
  */
 external class Verify : node.stream.Writable {
-    constructor (opts: WritableOptions = definedExternally)
+    constructor (opts: WritableOptions<*> = definedExternally)
 
     /**
      * Updates the `Verify` content with the given `data`, the encoding of which

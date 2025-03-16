@@ -71,7 +71,7 @@ import node.stream.TransformOptions
  * @since v0.1.92
  */
 external class Hash : node.stream.Transform {
-    constructor (opts: TransformOptions = definedExternally)
+    constructor (opts: TransformOptions<*> = definedExternally)
 
     /**
      * Creates a new `Hash` object that contains a deep copy of the internal state

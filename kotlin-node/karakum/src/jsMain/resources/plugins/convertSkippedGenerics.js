@@ -21,6 +21,7 @@ export default function (node, context, render) {
         && (
             node.typeName.right.text === "ReadableStream"
             || node.typeName.right.text === "WritableStream"
+            || node.typeName.right.text === "QueuingStrategy"
         )
         && !node.typeArguments
         && sourceFileName.endsWith("stream.d.ts")
@@ -198,6 +199,48 @@ export default function (node, context, render) {
         && !node.typeArguments
     ) {
         return `${render(node.typeName)}<*, *, *, *>`
+    }
+
+    if (
+        ts.isTypeReferenceNode(node)
+        && ts.isIdentifier(node.typeName)
+        && (
+            node.typeName.text === "ReadableOptions"
+            || node.typeName.text === "WritableOptions"
+            || node.typeName.text === "DuplexOptions"
+            || node.typeName.text === "TransformOptions"
+        )
+        && !node.typeArguments
+    ) {
+        return `${render(node.typeName)}<*>`
+    }
+
+    if (
+        ts.isTypeReferenceNode(node)
+        && ts.isQualifiedName(node.typeName)
+        && ts.isIdentifier(node.typeName.left)
+        && node.typeName.left.text === "stream"
+        && (
+            node.typeName.right.text === "ReadableOptions"
+            || node.typeName.right.text === "WritableOptions"
+            || node.typeName.right.text === "TransformOptions"
+        )
+        && !node.typeArguments
+    ) {
+        return `${render(node.typeName)}<*>`
+    }
+
+    if (
+        ts.isExpressionWithTypeArguments(node)
+        && ts.isPropertyAccessExpression(node.expression)
+        && ts.isIdentifier(node.expression.expression)
+        && node.expression.expression.text === "stream"
+        && ts.isIdentifier(node.expression.name)
+        && node.expression.name.text === "TransformOptions"
+        && !node.typeArguments
+        && sourceFileName.endsWith("crypto.d.ts")
+    ) {
+        return `${render(node.expression)}<node.stream.Transform>`
     }
 
     if (

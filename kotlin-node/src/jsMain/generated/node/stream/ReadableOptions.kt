@@ -3,7 +3,7 @@
 package node.stream
 
 @js.objects.JsPlainObject
-sealed external interface ReadableOptions : StreamOptions<Stream /* Readable */> {
+sealed external interface ReadableOptions<T : Readable /* default is Readable */> : StreamOptions<T> {
     var encoding: node.buffer.BufferEncoding?
-    val read: ((/* this: Readable, */ size: Number) -> Unit)?
+    val read: ((/* this: T, */ size: Number) -> Unit)?
 }

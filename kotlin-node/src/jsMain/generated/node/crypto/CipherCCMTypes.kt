@@ -12,8 +12,5 @@ sealed external interface CipherCCMTypes {
 
         @seskar.js.JsValue("aes-256-ccm")
         val aes256Ccm: CipherCCMTypes
-
-        @seskar.js.JsValue("chacha20-poly1305")
-        val chacha20Poly1305: CipherCCMTypes
     }
 }

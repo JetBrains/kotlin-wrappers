@@ -5,6 +5,23 @@ export default function (node, context, render) {
     const sourceFileName = node.getSourceFile()?.fileName ?? "generated.d.ts"
 
     if (
+        sourceFileName.endsWith("buffer.buffer.d.ts")
+        && ts.isTypeParameterDeclaration(node)
+        && node.parent
+        && ts.isTypeAliasDeclaration(node.parent)
+        && node.parent.name.text === "ImplicitArrayBuffer"
+    ) {
+        const name = render(node.name)
+
+        const constraintType = node.constraint && render(node.constraint)
+        const defaultType = node.default && render(node.default)
+
+        const bound = `${karakum.ifPresent(constraintType, it => ` : ${it}`)}${karakum.ifPresent(defaultType, it => ` default is ${it}`)}`
+
+        return `${name}${karakum.ifPresent(bound, it => ` /* ${it} */`)}`
+    }
+
+    if (
         sourceFileName.endsWith("stream.d.ts")
         && ts.isTypeParameterDeclaration(node)
         && node.parent

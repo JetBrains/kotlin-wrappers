@@ -56,8 +56,15 @@ external fun createCipheriv(
 ): CipherGCM
 
 external fun createCipheriv(
+    algorithm: CipherChaCha20Poly1305Types,
+    key: CipherKey,
+    iv: BinaryLike,
+    options: CipherChaCha20Poly1305Options = definedExternally,
+): CipherChaCha20Poly1305
+
+external fun createCipheriv(
     algorithm: String,
     key: CipherKey,
     iv: BinaryLike?,
-    options: node.stream.TransformOptions = definedExternally,
+    options: node.stream.TransformOptions<*> = definedExternally,
 ): Cipher

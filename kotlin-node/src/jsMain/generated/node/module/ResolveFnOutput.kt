@@ -4,9 +4,9 @@ package node.module
 
 sealed external interface ResolveFnOutput {
     /**
-     * A hint to the load hook (it might be ignored)
+     * A hint to the load hook (it might be ignored); can be an intermediary value.
      */
-    var format: ModuleFormat?
+    var format: String?
 
     /**
      * The import attributes to use when caching the module (optional; if excluded the input will be used)

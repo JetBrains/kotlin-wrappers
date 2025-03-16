@@ -3,7 +3,7 @@ import * as karakum from "../karakum.mjs";
 
 const overriddenProps = {
     // stream
-    "ReadableBase": {
+    "Readable": {
         "read": "readOrNull"
     },
 

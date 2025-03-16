@@ -2,6 +2,6 @@
 
 package node.stream
 
-sealed external interface ReadableBaseIteratorOptions {
+sealed external interface ReadableIteratorOptions {
     var destroyOnReturn: Boolean?
 }

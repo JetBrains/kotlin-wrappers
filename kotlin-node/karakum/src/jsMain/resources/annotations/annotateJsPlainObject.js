@@ -36,6 +36,7 @@ const jsoInterfaces = [
     "CipherCCMOptions",
     "CipherOCBOptions",
     "HashOptions",
+    "CipherChaCha20Poly1305Options",
 
     // dgram
     "SocketOptions",

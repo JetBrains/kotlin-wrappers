@@ -88,7 +88,7 @@ export default (node, context) => {
                         || node.name.text === "read"
                     )
                     && node.parent
-                    && node.parent.name?.text === "ReadableBase"
+                    && node.parent.name?.text === "Readable"
                 )
             )
             || (
@@ -111,7 +111,7 @@ export default (node, context) => {
                         || node.name.text === "destroy"
                     )
                     && node.parent
-                    && node.parent.name?.text === "WritableBase"
+                    && node.parent.name?.text === "Writable"
                 )
             )
             || (
@@ -120,8 +120,8 @@ export default (node, context) => {
                     isEventEmitterMethodName(node.name.text)
                     && node.parent
                     && (
-                        node.parent.name?.text === "ReadableBase"
-                        || node.parent.name?.text === "WritableBase"
+                        node.parent.name?.text === "Readable"
+                        || node.parent.name?.text === "Writable"
                     )
                     && isGenericEventEmitterSignature(context)
                 )
@@ -284,7 +284,7 @@ export default (node, context) => {
                         || node.name.text === "wrap"
                     )
                     && node.parent
-                    && node.parent.name?.text === "ReadableBase"
+                    && node.parent.name?.text === "Readable"
                 )
             )
             || (
@@ -295,7 +295,7 @@ export default (node, context) => {
                     && context.signature?.[0]?.parameter.type
                     && ts.isFunctionTypeNode(context.signature[0].parameter.type)
                     && node.parent
-                    && node.parent.name?.text === "WritableBase"
+                    && node.parent.name?.text === "Writable"
                 )
             )
             || (

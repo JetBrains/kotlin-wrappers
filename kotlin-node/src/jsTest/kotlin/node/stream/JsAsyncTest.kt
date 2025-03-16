@@ -15,7 +15,7 @@ class JsAsyncTest {
 
         val actual = mutableListOf<Buffer<*>>()
         val destination = Writable(
-            opts = WritableOptions(
+            opts = WritableOptions<Writable>(
                 write = { chunk, encoding, callback ->
                     actual.add(chunk as Buffer<*>)
                     callback(null)

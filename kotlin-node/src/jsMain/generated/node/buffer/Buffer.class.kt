@@ -2,7 +2,7 @@
 
 package node.buffer
 
-import js.array.ReadonlyArray
+import js.array.ArrayLike
 import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferLike
 import js.buffer.SharedArrayBuffer
@@ -13,10 +13,8 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
     Uint8Array<TArrayBuffer> {
     constructor (str: String, encoding: BufferEncoding = definedExternally)
     constructor (size: Number)
-    constructor (array: Uint8Array<*>)
+    constructor (array: ArrayLike<Double>)
     constructor (arrayBuffer: TArrayBuffer)
-    constructor (array: ReadonlyArray<Any?>)
-    constructor (buffer: Buffer<*>)
 // see buffer.d.ts for implementation shared with all TypeScript versions
     /**
      * Returns a new `Buffer` that references the same memory as the original, but
@@ -2226,49 +2224,123 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
          * const buf = Buffer.from([0x62, 0x75, 0x66, 0x66, 0x65, 0x72]);
          * ```
          *
-         * If `array` is an `Array`\-like object (that is, one with a `length` property of
+         * If `array` is an `Array`-like object (that is, one with a `length` property of
          * type `number`), it is treated as if it is an array, unless it is a `Buffer` or
-         * a `Uint8Array`. This means all other `TypedArray` variants get treated as an `Array`. To create a `Buffer` from the bytes backing a `TypedArray`, use `Buffer.copyBytesFrom()`.
+         * a `Uint8Array`. This means all other `TypedArray` variants get treated as an
+         * `Array`. To create a `Buffer` from the bytes backing a `TypedArray`, use
+         * `Buffer.copyBytesFrom()`.
          *
          * A `TypeError` will be thrown if `array` is not an `Array` or another type
          * appropriate for `Buffer.from()` variants.
          *
-         * `Buffer.from(array)` and `Buffer.from(string)` may also use the internal `Buffer` pool like `Buffer.allocUnsafe()` does.
+         * `Buffer.from(array)` and `Buffer.from(string)` may also use the internal
+         * `Buffer` pool like `Buffer.allocUnsafe()` does.
          * @since v5.10.0
          */
-        fun <TArrayBuffer : ArrayBufferLike> from(
-            arrayBuffer: WithImplicitCoercion<TArrayBuffer>,
+        fun from(array: WithImplicitCoercion<ArrayLike<Double>>): Buffer<ArrayBuffer>
+
+        /**
+         * This creates a view of the `ArrayBuffer` without copying the underlying
+         * memory. For example, when passed a reference to the `.buffer` property of a
+         * `TypedArray` instance, the newly created `Buffer` will share the same
+         * allocated memory as the `TypedArray`'s underlying `ArrayBuffer`.
+         *
+         * ```js
+         * import { Buffer } from 'node:buffer';
+         *
+         * const arr = new Uint16Array(2);
+         *
+         * arr[0] = 5000;
+         * arr[1] = 4000;
+         *
+         * // Shares memory with `arr`.
+         * const buf = Buffer.from(arr.buffer);
+         *
+         * console.log(buf);
+         * // Prints: <Buffer 88 13 a0 0f>
+         *
+         * // Changing the original Uint16Array changes the Buffer also.
+         * arr[1] = 6000;
+         *
+         * console.log(buf);
+         * // Prints: <Buffer 88 13 70 17>
+         * ```
+         *
+         * The optional `byteOffset` and `length` arguments specify a memory range within
+         * the `arrayBuffer` that will be shared by the `Buffer`.
+         *
+         * ```js
+         * import { Buffer } from 'node:buffer';
+         *
+         * const ab = new ArrayBuffer(10);
+         * const buf = Buffer.from(ab, 0, 2);
+         *
+         * console.log(buf.length);
+         * // Prints: 2
+         * ```
+         *
+         * A `TypeError` will be thrown if `arrayBuffer` is not an `ArrayBuffer` or a
+         * `SharedArrayBuffer` or another type appropriate for `Buffer.from()`
+         * variants.
+         *
+         * It is important to remember that a backing `ArrayBuffer` can cover a range
+         * of memory that extends beyond the bounds of a `TypedArray` view. A new
+         * `Buffer` created using the `buffer` property of a `TypedArray` may extend
+         * beyond the range of the `TypedArray`:
+         *
+         * ```js
+         * import { Buffer } from 'node:buffer';
+         *
+         * const arrA = Uint8Array.from([0x63, 0x64, 0x65, 0x66]); // 4 elements
+         * const arrB = new Uint8Array(arrA.buffer, 1, 2); // 2 elements
+         * console.log(arrA.buffer === arrB.buffer); // true
+         *
+         * const buf = Buffer.from(arrB.buffer);
+         * console.log(buf);
+         * // Prints: <Buffer 63 64 65 66>
+         * ```
+         * @since v5.10.0
+         * @param arrayBuffer An `ArrayBuffer`, `SharedArrayBuffer`, for example the
+         * `.buffer` property of a `TypedArray`.
+         * @param byteOffset Index of first byte to expose. **Default:** `0`.
+         * @param length Number of bytes to expose. **Default:**
+         * `arrayBuffer.byteLength - byteOffset`.
+         */
+        fun <TArrayBuffer : WithImplicitCoercion<ArrayBufferLike>> from(
+            arrayBuffer: TArrayBuffer,
             byteOffset: Number = definedExternally,
             length: Number = definedExternally,
-        ): Buffer<TArrayBuffer>
+        ): Buffer<ImplicitArrayBuffer<TArrayBuffer>>
 
         /**
-         * Creates a new Buffer using the passed {data}
-         * @param data data to create a new Buffer
-         */
-        fun from(data: Uint8Array<*>): Buffer<ArrayBuffer>
-
-        /**
-         * Creates a new Buffer using the passed {data}
-         * @param data data to create a new Buffer
-         */
-        fun from(data: ReadonlyArray<Double>): Buffer<ArrayBuffer>
-        fun from(data: WithImplicitCoercion<Any /* Uint8Array | readonly number[] | string */>): Buffer<ArrayBuffer>
-
-        /**
-         * Creates a new Buffer containing the given JavaScript string {str}.
-         * If provided, the {encoding} parameter identifies the character encoding.
-         * If not provided, {encoding} defaults to 'utf8'.
-         */
-        fun from(str: WithImplicitCoercion<String>, encoding: BufferEncoding = definedExternally): Buffer<ArrayBuffer>
-
-        /**
-         * Creates a new Buffer containing the given JavaScript string {str}.
-         * If provided, the {encoding} parameter identifies the character encoding.
-         * If not provided, {encoding} defaults to 'utf8'.
+         * Creates a new `Buffer` containing `string`. The `encoding` parameter identifies
+         * the character encoding to be used when converting `string` into bytes.
+         *
+         * ```js
+         * import { Buffer } from 'node:buffer';
+         *
+         * const buf1 = Buffer.from('this is a tést');
+         * const buf2 = Buffer.from('7468697320697320612074c3a97374', 'hex');
+         *
+         * console.log(buf1.toString());
+         * // Prints: this is a tést
+         * console.log(buf2.toString());
+         * // Prints: this is a tést
+         * console.log(buf1.toString('latin1'));
+         * // Prints: this is a tÃ©st
+         * ```
+         *
+         * A `TypeError` will be thrown if `string` is not a string or another type
+         * appropriate for `Buffer.from()` variants.
+         *
+         * `Buffer.from(string)` may also use the internal `Buffer` pool like
+         * `Buffer.allocUnsafe()` does.
+         * @since v5.10.0
+         * @param string A string to encode.
+         * @param encoding The encoding of `string`. **Default:** `'utf8'`.
          */
         fun from(
-            str: js.symbol.ToPrimitiveSymbolHolder,
+            string: WithImplicitCoercion<String>,
             encoding: BufferEncoding = definedExternally,
         ): Buffer<ArrayBuffer>
 
@@ -2317,7 +2389,10 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
          * @param list List of `Buffer` or {@link Uint8Array} instances to concatenate.
          * @param totalLength Total length of the `Buffer` instances in `list` when concatenated.
          */
-        fun concat(list: ReadonlyArray<Uint8Array<*>>, totalLength: Number = definedExternally): Buffer<ArrayBuffer>
+        fun concat(
+            list: js.array.ReadonlyArray<Uint8Array<*>>,
+            totalLength: Number = definedExternally,
+        ): Buffer<ArrayBuffer>
 
         /**
          * Copies the underlying memory of `view` into a new `Buffer`.

@@ -16,6 +16,23 @@ external class TestContext {
     /**
      * An object containing assertion methods bound to the test context.
      * The top-level functions from the `node:assert` module are exposed here for the purpose of creating test plans.
+     *
+     * **Note:** Some of the functions from `node:assert` contain type assertions. If these are called via the
+     * TestContext `assert` object, then the context parameter in the test's function signature **must be explicitly typed**
+     * (ie. the parameter must have a type annotation), otherwise an error will be raised by the TypeScript compiler:
+     * ```ts
+     * import { test, type TestContext } from 'node:test';
+     *
+     * // The test function's context parameter must have a type annotation.
+     * test('example', (t: TestContext) => {
+     *   t.assert.deepStrictEqual(actual, expected);
+     * });
+     *
+     * // Omitting the type annotation will result in a compilation error.
+     * test('example', t => {
+     *   t.assert.deepStrictEqual(actual, expected); // Error: 't' needs an explicit type annotation.
+     * });
+     * ```
      * @since v22.2.0, v20.15.0
      */
     val assert: TestContextAssert

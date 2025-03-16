@@ -4,12 +4,4 @@
 
 package node.stream
 
-/* import Stream = internal.Stream; */
-
-/* import Readable = internal.Readable; */
-
-/* import ReadableOptions = internal.ReadableOptions; */
-
-/* import WritableOptions = internal.WritableOptions; */
-
-/* export = internal; */
+/* export = Stream; */

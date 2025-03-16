@@ -29,7 +29,7 @@ export default (node) => {
                         || node.name.text === "destroyed"
                     )
                     && node.parent
-                    && node.parent.name?.text === "ReadableBase"
+                    && node.parent.name?.text === "Readable"
                 )
             )
             || (
@@ -48,7 +48,7 @@ export default (node) => {
                         || node.name.text === "destroyed"
                     )
                     && node.parent
-                    && node.parent.name?.text === "WritableBase"
+                    && node.parent.name?.text === "Writable"
                 )
             )
             || (

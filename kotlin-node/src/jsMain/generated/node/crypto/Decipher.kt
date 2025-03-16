@@ -115,7 +115,7 @@ import node.stream.TransformOptions
  * @since v0.1.94
  */
 open external class Decipher : node.stream.Transform {
-    constructor (opts: TransformOptions = definedExternally)
+    constructor (opts: TransformOptions<*> = definedExternally)
 
     /**
      * Updates the decipher with `data`. If the `inputEncoding` argument is given,

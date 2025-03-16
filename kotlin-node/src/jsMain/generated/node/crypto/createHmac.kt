@@ -51,7 +51,7 @@ package node.crypto
 external fun createHmac(
     algorithm: String,
     key: BinaryLike,
-    options: node.stream.TransformOptions = definedExternally,
+    options: node.stream.TransformOptions<*> = definedExternally,
 ): Hmac
 
 /**
@@ -101,5 +101,5 @@ external fun createHmac(
 external fun createHmac(
     algorithm: String,
     key: KeyObject,
-    options: node.stream.TransformOptions = definedExternally,
+    options: node.stream.TransformOptions<*> = definedExternally,
 ): Hmac

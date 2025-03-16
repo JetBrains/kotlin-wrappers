@@ -7,4 +7,6 @@ typealias WithImplicitCoercion<
         T,
         > = Any /* T | {
     valueOf(): T;
-} */
+} | (T extends string ? {
+    [Symbol.toPrimitive](hint: "string"): T;
+} : never) */

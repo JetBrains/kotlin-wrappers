@@ -70,7 +70,7 @@ import node.stream.WritableOptions
  * @since v0.1.92
  */
 external class Sign : node.stream.Writable {
-    constructor (opts: WritableOptions = definedExternally)
+    constructor (opts: WritableOptions<*> = definedExternally)
 
     /**
      * Updates the `Sign` content with the given `data`, the encoding of which

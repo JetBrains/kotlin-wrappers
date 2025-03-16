@@ -19,9 +19,11 @@ const interfacesWithSuperclass = [
     "CipherCCM",
     "CipherGCM",
     "CipherOCB",
+    "CipherChaCha20Poly1305",
     "DecipherCCM",
     "DecipherGCM",
     "DecipherOCB",
+    "DecipherChaCha20Poly1305",
 
     // events
     "EventEmitterReferencingAsyncResource",

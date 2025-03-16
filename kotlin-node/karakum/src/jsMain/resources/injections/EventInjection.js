@@ -191,10 +191,7 @@ const ignoredEvents = {
     }
 }
 
-const eventContainerMap = {
-    "Readable": "ReadableBase",
-    "Writable": "WritableBase",
-}
+const eventContainerMap = {}
 
 function extractEventContainer(node) {
     if (

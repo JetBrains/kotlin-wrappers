@@ -8,5 +8,5 @@ import node.stream.Transform
 import node.stream.TransformOptions
 
 external class LcovReporter : Transform {
-    constructor (opts: TransformOptions = definedExternally)
+    constructor (opts: TransformOptions<*> = definedExternally)
 }

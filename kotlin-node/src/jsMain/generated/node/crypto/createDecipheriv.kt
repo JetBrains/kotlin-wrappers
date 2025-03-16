@@ -55,8 +55,15 @@ external fun createDecipheriv(
 ): DecipherGCM
 
 external fun createDecipheriv(
+    algorithm: CipherChaCha20Poly1305Types,
+    key: CipherKey,
+    iv: BinaryLike,
+    options: CipherChaCha20Poly1305Options = definedExternally,
+): DecipherChaCha20Poly1305
+
+external fun createDecipheriv(
     algorithm: String,
     key: CipherKey,
     iv: BinaryLike?,
-    options: node.stream.TransformOptions = definedExternally,
+    options: node.stream.TransformOptions<*> = definedExternally,
 ): Decipher

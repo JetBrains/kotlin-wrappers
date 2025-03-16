@@ -35,7 +35,7 @@ export default (node, context) => {
 
     let parentName = classNode.name.text
     if (
-        parentName === "WritableBase"
+        parentName === "Writable"
         || parentName === "Duplex"
     ) {
         parentName = "Writable"
