@@ -2,7 +2,7 @@
 
 package web.rtc
 
-import js.core.Int53
+import js.core.UInt53
 import js.objects.JsPlainObject
 import web.time.DOMHighResTimeStamp
 
@@ -10,14 +10,14 @@ import web.time.DOMHighResTimeStamp
 external interface RTCInboundRtpStreamStats :
     RTCReceivedRtpStreamStats {
     val audioLevel: Double?
-    val bytesReceived: Int53?
-    val concealedSamples: Int53?
-    val concealmentEvents: Int53?
+    val bytesReceived: UInt53?
+    val concealedSamples: UInt53?
+    val concealmentEvents: UInt53?
     val decoderImplementation: String?
     val estimatedPlayoutTimestamp: DOMHighResTimeStamp?
-    val fecBytesReceived: Int53?
-    val fecPacketsDiscarded: Int53?
-    val fecPacketsReceived: Int53?
+    val fecBytesReceived: UInt53?
+    val fecPacketsDiscarded: UInt53?
+    val fecPacketsReceived: UInt53?
     val fecSsrc: Int?
     val firCount: Int?
     val frameHeight: Int?
@@ -29,27 +29,27 @@ external interface RTCInboundRtpStreamStats :
     val framesReceived: Int?
     val framesRendered: Int?
     val freezeCount: Int?
-    val headerBytesReceived: Int53?
-    val insertedSamplesForDeceleration: Int53?
+    val headerBytesReceived: UInt53?
+    val insertedSamplesForDeceleration: UInt53?
     val jitterBufferDelay: Double?
-    val jitterBufferEmittedCount: Int53?
+    val jitterBufferEmittedCount: UInt53?
     val jitterBufferMinimumDelay: Double?
     val jitterBufferTargetDelay: Double?
     val keyFramesDecoded: Int?
     val lastPacketReceivedTimestamp: DOMHighResTimeStamp?
     val mid: String?
     val nackCount: Int?
-    val packetsDiscarded: Int53?
+    val packetsDiscarded: UInt53?
     val pauseCount: Int?
     val playoutId: String?
     val pliCount: Int?
-    val qpSum: Int53?
+    val qpSum: UInt53?
     val remoteId: String?
-    val removedSamplesForAcceleration: Int53?
-    val retransmittedBytesReceived: Int53?
-    val retransmittedPacketsReceived: Int53?
+    val removedSamplesForAcceleration: UInt53?
+    val retransmittedBytesReceived: UInt53?
+    val retransmittedPacketsReceived: UInt53?
     val rtxSsrc: Int?
-    val silentConcealedSamples: Int53?
+    val silentConcealedSamples: UInt53?
     val totalAssemblyTime: Double?
     val totalAudioEnergy: Double?
     val totalDecodeTime: Double?
@@ -58,7 +58,7 @@ external interface RTCInboundRtpStreamStats :
     val totalPausesDuration: Double?
     val totalProcessingDelay: Double?
     val totalSamplesDuration: Double?
-    val totalSamplesReceived: Int53?
+    val totalSamplesReceived: UInt53?
     val totalSquaredInterFrameDelay: Double?
     val trackIdentifier: String
 }

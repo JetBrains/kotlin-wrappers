@@ -5,6 +5,7 @@ package web.codecs
 import js.array.ReadonlyArray
 import js.buffer.AllowSharedBufferSource
 import js.core.Int53
+import js.core.UInt53
 import js.promise.Promise
 import js.transferable.Transferable
 import seskar.js.JsAsync
@@ -63,7 +64,7 @@ open external class VideoFrame(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/duration)
      */
-    val duration: Int53?
+    val duration: UInt53?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/format)

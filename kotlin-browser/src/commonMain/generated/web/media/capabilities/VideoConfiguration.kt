@@ -2,12 +2,12 @@
 
 package web.media.capabilities
 
-import js.core.Int53
+import js.core.UInt53
 import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface VideoConfiguration {
-    val bitrate: Int53
+    val bitrate: UInt53
     val colorGamut: ColorGamut?
     val contentType: String
     val framerate: Double

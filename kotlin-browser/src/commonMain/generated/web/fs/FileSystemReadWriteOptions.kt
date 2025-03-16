@@ -2,10 +2,10 @@
 
 package web.fs
 
-import js.core.Int53
+import js.core.UInt53
 import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface FileSystemReadWriteOptions {
-    val at: Int53?
+    val at: UInt53?
 }

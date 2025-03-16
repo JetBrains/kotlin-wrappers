@@ -2,7 +2,7 @@
 
 package web.navigator
 
-import js.core.Int53
+import js.core.UInt53
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
@@ -28,8 +28,8 @@ sealed external interface NavigatorBadge {
      */
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun setAppBadge(contents: Int53 = definedExternally)
+    suspend fun setAppBadge(contents: UInt53 = definedExternally)
 
     @JsName("setAppBadge")
-    fun setAppBadgeAsync(contents: Int53 = definedExternally): Promise<Void>
+    fun setAppBadgeAsync(contents: UInt53 = definedExternally): Promise<Void>
 }

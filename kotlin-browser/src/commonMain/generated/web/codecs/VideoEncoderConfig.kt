@@ -2,14 +2,14 @@
 
 package web.codecs
 
-import js.core.Int53
+import js.core.UInt53
 import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface VideoEncoderConfig {
     val alpha: AlphaOption?
     val avc: AvcEncoderConfig?
-    val bitrate: Int53?
+    val bitrate: UInt53?
     val bitrateMode: VideoEncoderBitrateMode?
     val codec: String
     val contentHint: String?

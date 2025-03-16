@@ -2,12 +2,12 @@
 
 package web.rtc
 
-import js.core.Int53
+import js.core.UInt53
 import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface RTCSentRtpStreamStats :
     RTCRtpStreamStats {
-    val bytesSent: Int53?
-    val packetsSent: Int53?
+    val bytesSent: UInt53?
+    val packetsSent: UInt53?
 }

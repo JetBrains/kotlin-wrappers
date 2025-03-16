@@ -4,6 +4,7 @@ package web.codecs
 
 import js.buffer.AllowSharedBufferSource
 import js.core.Int53
+import js.core.UInt53
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EncodedVideoChunk)
@@ -19,7 +20,7 @@ open external class EncodedVideoChunk(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EncodedVideoChunk/duration)
      */
-    val duration: Int53?
+    val duration: UInt53?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EncodedVideoChunk/timestamp)

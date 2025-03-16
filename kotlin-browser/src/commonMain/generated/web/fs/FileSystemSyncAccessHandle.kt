@@ -3,7 +3,7 @@
 package web.fs
 
 import js.buffer.AllowSharedBufferSource
-import js.core.Int53
+import js.core.UInt53
 import kotlin.js.definedExternally
 
 /**
@@ -26,7 +26,7 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle/getSize)
      */
-    fun getSize(): Int53
+    fun getSize(): UInt53
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle/read)
@@ -34,12 +34,12 @@ private constructor() {
     fun read(
         buffer: AllowSharedBufferSource,
         options: FileSystemReadWriteOptions = definedExternally,
-    ): Int53
+    ): UInt53
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle/truncate)
      */
-    fun truncate(newSize: Int53)
+    fun truncate(newSize: UInt53)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle/write)
@@ -47,5 +47,5 @@ private constructor() {
     fun write(
         buffer: AllowSharedBufferSource,
         options: FileSystemReadWriteOptions = definedExternally,
-    ): Int53
+    ): UInt53
 }

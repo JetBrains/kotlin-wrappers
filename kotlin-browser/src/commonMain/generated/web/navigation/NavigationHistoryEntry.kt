@@ -2,8 +2,8 @@
 
 package web.navigation
 
-import js.core.JsAny
 import js.core.Int53
+import js.core.JsAny
 import web.events.*
 
 /**

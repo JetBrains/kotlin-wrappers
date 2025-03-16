@@ -2,13 +2,13 @@
 
 package web.idb
 
-import js.core.Int53
+import js.core.UInt53
 import js.objects.JsPlainObject
 import web.events.EventInit
 
 @JsPlainObject
 external interface IDBVersionChangeEventInit :
     EventInit {
-    val newVersion: Int53?
-    val oldVersion: Int53?
+    val newVersion: UInt53?
+    val oldVersion: UInt53?
 }

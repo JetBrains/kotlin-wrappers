@@ -2,7 +2,7 @@
 
 package web.rtc
 
-import js.core.Int53
+import js.core.UInt53
 import js.objects.JsPlainObject
 import web.time.DOMHighResTimeStamp
 
@@ -11,23 +11,23 @@ external interface RTCIceCandidatePairStats :
     RTCStats {
     val availableIncomingBitrate: Double?
     val availableOutgoingBitrate: Double?
-    val bytesDiscardedOnSend: Int53?
-    val bytesReceived: Int53?
-    val bytesSent: Int53?
-    val consentRequestsSent: Int53?
+    val bytesDiscardedOnSend: UInt53?
+    val bytesReceived: UInt53?
+    val bytesSent: UInt53?
+    val consentRequestsSent: UInt53?
     val currentRoundTripTime: Double?
     val lastPacketReceivedTimestamp: DOMHighResTimeStamp?
     val lastPacketSentTimestamp: DOMHighResTimeStamp?
     val localCandidateId: String
     val nominated: Boolean?
     val packetsDiscardedOnSend: Int?
-    val packetsReceived: Int53?
-    val packetsSent: Int53?
+    val packetsReceived: UInt53?
+    val packetsSent: UInt53?
     val remoteCandidateId: String
-    val requestsReceived: Int53?
-    val requestsSent: Int53?
-    val responsesReceived: Int53?
-    val responsesSent: Int53?
+    val requestsReceived: UInt53?
+    val requestsSent: UInt53?
+    val responsesReceived: UInt53?
+    val responsesSent: UInt53?
     val state: RTCStatsIceCandidatePairState
     val totalRoundTripTime: Double?
     val transportId: String

@@ -2,14 +2,14 @@
 
 package web.rtc
 
-import js.core.Int53
+import js.core.UInt53
 import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface RTCTransportStats :
     RTCStats {
-    val bytesReceived: Int53?
-    val bytesSent: Int53?
+    val bytesReceived: UInt53?
+    val bytesSent: UInt53?
     val dtlsCipher: String?
     val dtlsRole: RTCDtlsRole?
     val dtlsState: RTCDtlsTransportState
@@ -17,8 +17,8 @@ external interface RTCTransportStats :
     val iceRole: RTCIceRole?
     val iceState: RTCIceTransportState?
     val localCertificateId: String?
-    val packetsReceived: Int53?
-    val packetsSent: Int53?
+    val packetsReceived: UInt53?
+    val packetsSent: UInt53?
     val remoteCertificateId: String?
     val selectedCandidatePairChanges: Int?
     val selectedCandidatePairId: String?

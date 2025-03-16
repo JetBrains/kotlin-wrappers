@@ -2,11 +2,11 @@
 
 package web.idb
 
-import js.core.Int53
+import js.core.UInt53
 import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface IDBDatabaseInfo {
     val name: String?
-    val version: Int53?
+    val version: UInt53?
 }

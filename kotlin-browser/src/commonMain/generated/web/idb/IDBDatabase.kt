@@ -3,8 +3,8 @@
 package web.idb
 
 import js.array.ReadonlyArray
-import js.core.Int53
 import js.core.JsString
+import js.core.UInt53
 import web.dom.DOMStringList
 import web.events.*
 import kotlin.js.definedExternally
@@ -48,7 +48,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/version)
      */
-    val version: Int53
+    val version: UInt53
 
     /**
      * Closes the connection once all running transactions have finished.

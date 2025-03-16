@@ -3,7 +3,7 @@
 package web.canvas
 
 import js.core.JsAny
-import js.core.Int53
+import js.core.UInt53
 import js.promise.Promise
 import js.transferable.Transferable
 import seskar.js.JsAsync
@@ -28,7 +28,7 @@ open external class OffscreenCanvas(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/width)
      */
-    var width: Int53,
+    var width: UInt53,
     /**
      * These attributes return the dimensions of the OffscreenCanvas object's bitmap.
      *
@@ -36,7 +36,7 @@ open external class OffscreenCanvas(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/height)
      */
-    var height: Int53,
+    var height: UInt53,
 ) : EventTarget,
     CanvasImageSource,
     TexImageSource,

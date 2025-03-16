@@ -2,7 +2,7 @@
 
 package web.audio
 
-import js.core.Int53
+import js.core.UInt53
 import web.worklets.WorkletGlobalScope
 
 /**
@@ -14,7 +14,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletGlobalScope/currentFrame)
      */
-    val currentFrame: Int53
+    val currentFrame: UInt53
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletGlobalScope/currentTime)
