@@ -15,13 +15,13 @@ import kotlin.js.definedExternally
  */
 external fun stringify(
     value: JsAny?,
-    replacer: Replacer = definedExternally,
+    replacer: Replacer? = definedExternally,
     space: String = definedExternally,
 ): String
 
 external fun stringify(
     value: JsAny?,
-    replacer: Replacer = definedExternally,
+    replacer: Replacer? = definedExternally,
     space: Int = definedExternally,
 ): String
 
